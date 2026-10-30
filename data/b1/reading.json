@@ -1,0 +1,214 @@
+{
+ "passages": [
+  {
+   "title": "The Whispering Trees",
+   "text": "Long ago, the trees of the forest could speak, but only to people who were patient enough to listen. A young woodcutter named Edwin often sat beneath an old oak to eat his lunch. One day, he heard a faint voice warning him that a storm was coming. Although the sky was clear, Edwin decided to trust the tree and hurried home. That night, a terrible storm destroyed half of the village's fields, but Edwin had already brought his goats inside. From then on, the villagers stopped laughing at him for talking to trees.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Who could hear the trees speak?",
+     "options": [
+      "people who were patient",
+      "only children",
+      "everyone in the village",
+      "all woodcutters"
+     ],
+     "answer": 0,
+     "explain": "'…only to people who were patient enough to listen.'"
+    },
+    {
+     "type": "mcq",
+     "q": "Why did Edwin hurry home?",
+     "options": [
+      "A tree warned him about a storm.",
+      "The sky was full of dark storm clouds.",
+      "His goats were hungry and needed feeding.",
+      "The villagers told him a storm was coming."
+     ],
+     "answer": 0,
+     "explain": "He trusted the tree even though the sky was clear."
+    },
+    {
+     "type": "mcq",
+     "q": "How did the villagers change?",
+     "options": [
+      "They stopped laughing at him.",
+      "They asked him to leave the village.",
+      "They became afraid of the talking trees.",
+      "They cut down the old oak tree."
+     ],
+     "answer": 0,
+     "explain": "'The villagers stopped laughing at him.'"
+    }
+   ]
+  },
+  {
+   "title": "Forest Schools",
+   "text": "Forest schools are becoming popular in the UK. Children spend at least one day a week outdoors, whatever the weather, building shelters, identifying plants and learning to work in teams. Teachers say that pupils who struggle in the classroom often do well outside, and many become more confident. However, some parents worry about safety and the cost of waterproof clothing.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How often do children go outside?",
+     "options": [
+      "at least once a week",
+      "every single school day",
+      "only when the weather is dry",
+      "about once a month in summer"
+     ],
+     "answer": 0,
+     "explain": "'At least one day a week… whatever the weather.'"
+    },
+    {
+     "type": "mcq",
+     "q": "According to teachers, who often benefits?",
+     "options": [
+      "pupils who struggle in class",
+      "the pupils who get top marks",
+      "the youngest children in the school",
+      "children who already love sport"
+     ],
+     "answer": 0,
+     "explain": "'Pupils who struggle in the classroom often do well outside.'"
+    },
+    {
+     "type": "mcq",
+     "q": "What is one worry for parents?",
+     "options": [
+      "the cost of clothing",
+      "too much outdoor homework",
+      "untrained forest teachers",
+      "children getting bored outside"
+     ],
+     "answer": 0,
+     "explain": "'…the cost of waterproof clothing.'"
+    }
+   ]
+  },
+  {
+   "title": "Review: Moonlight Mushroom Café",
+   "text": "The setting is magical: tables among glowing mushrooms and fairy lights. The staff were friendly, although our food took nearly an hour to arrive. The berry pie was delicious, but the soup was cold and rather salty. It's worth visiting for the atmosphere, but I'd recommend booking ahead and going on a weekday when it's quieter.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What did the reviewer like most?",
+     "options": [
+      "the atmosphere",
+      "the soup",
+      "the speed of service",
+      "the prices"
+     ],
+     "answer": 0,
+     "explain": "'It's worth visiting for the atmosphere.'"
+    },
+    {
+     "type": "mcq",
+     "q": "What was wrong with the soup?",
+     "options": [
+      "It was cold and salty.",
+      "It was too hot to eat at first.",
+      "It was far too expensive for the size.",
+      "It never arrived at the table at all."
+     ],
+     "answer": 0,
+     "explain": "'The soup was cold and rather salty.'"
+    },
+    {
+     "type": "mcq",
+     "q": "What does the reviewer advise?",
+     "options": [
+      "Book ahead and go on a weekday.",
+      "Avoid the berry pie and order soup.",
+      "Go at the weekend when it's livelier.",
+      "Turn up without booking and sit outside."
+     ],
+     "answer": 0,
+     "explain": "'…booking ahead and going on a weekday.'"
+    }
+   ]
+  },
+  {
+   "title": "Gina's Diary",
+   "text": "I've always been scared of heights, so when my friends suggested the treetop adventure trail, I nearly said no. In the end I went, mainly because I didn't want to be the only one left behind. The first bridge was terrifying and my legs were shaking. But by the third platform, I was actually enjoying the view. I'm not saying I've completely got over my fear, but I'm proud I didn't give up.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Why did Gina go on the trail?",
+     "options": [
+      "She didn't want to be left behind.",
+      "She has always loved being up high.",
+      "The trail was free for her school group.",
+      "Her teacher said she had to go with them."
+     ],
+     "answer": 0,
+     "explain": "'…mainly because I didn't want to be the only one left behind.'"
+    },
+    {
+     "type": "mcq",
+     "q": "How did she feel on the first bridge?",
+     "options": [
+      "terrified",
+      "delighted",
+      "exhausted",
+      "relaxed"
+     ],
+     "answer": 0,
+     "explain": "'The first bridge was terrifying.'"
+    },
+    {
+     "type": "mcq",
+     "q": "Which is true at the end?",
+     "options": [
+      "She is proud but still a bit afraid.",
+      "She is no longer afraid of heights at all.",
+      "She regrets going and won't do it again.",
+      "She wants to work as a treetop guide now."
+     ],
+     "answer": 0,
+     "explain": "'Not completely got over my fear, but I'm proud.'"
+    }
+   ]
+  },
+  {
+   "title": "Make a Bird Feeder",
+   "text": "First, tie a piece of string around a pine cone. Next, spread peanut butter all over it — if anyone in your house has a nut allergy, use vegetable fat instead. Then roll the cone in birdseed until it's completely covered. Finally, hang it from a branch that cats can't reach. Remember to keep it filled during winter, when food is hardest for birds to find.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What do you do first?",
+     "options": [
+      "tie string around a pine cone",
+      "spread peanut butter all over it",
+      "roll the pine cone in birdseed",
+      "hang the cone from a high branch"
+     ],
+     "answer": 0,
+     "explain": "'First, tie a piece of string…'"
+    },
+    {
+     "type": "mcq",
+     "q": "Why might you use vegetable fat?",
+     "options": [
+      "because of a nut allergy",
+      "because it's cheaper",
+      "because birds prefer it",
+      "because it sticks better"
+     ],
+     "answer": 0,
+     "explain": "'If anyone… has a nut allergy, use vegetable fat instead.'"
+    },
+    {
+     "type": "mcq",
+     "q": "Why should you choose the branch carefully?",
+     "options": [
+      "so cats can't reach it",
+      "so the seed doesn't get wet in rain",
+      "so passing birds can see it easily",
+      "so it looks pretty from the window"
+     ],
+     "answer": 0,
+     "explain": "'…a branch that cats can't reach.'"
+    }
+   ]
+  }
+ ]
+}

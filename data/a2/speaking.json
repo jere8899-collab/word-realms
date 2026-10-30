@@ -1,0 +1,156 @@
+[
+ {
+  "type": "read",
+  "text": "Yesterday I walked to the village with my friend.",
+  "focus": "-ed endings /t/",
+  "tip": "'walked' ends in /t/: /wɔːkt/. It is one syllable, not 'walk-ed'. The 'l' is silent too!",
+  "id": "a2-sp01"
+ },
+ {
+  "type": "read",
+  "text": "We visited my grandparents last weekend.",
+  "focus": "-ed endings /ɪd/",
+  "tip": "After t or d, -ed adds a syllable: VIS-it-ed /ˈvɪzɪtɪd/.",
+  "id": "a2-sp02"
+ },
+ {
+  "type": "read",
+  "text": "She played the piano at the party.",
+  "focus": "-ed endings /d/",
+  "tip": "'played' is one syllable /pleɪd/. Stress pi-A-no and PAR-ty.",
+  "id": "a2-sp03"
+ },
+ {
+  "type": "read",
+  "text": "I'm going to buy some sweets tomorrow.",
+  "focus": "Weak forms: going to",
+  "tip": "Keep 'to' short and weak: /ˈɡəʊɪŋ tə/. Stress SWEETS and to-MOR-row.",
+  "id": "a2-sp04"
+ },
+ {
+  "type": "read",
+  "text": "The castle is bigger than our school.",
+  "focus": "Weak form: than",
+  "tip": "'than' is weak /ðən/. Stress the important words: CAS-tle, BIG-ger, SCHOOL.",
+  "id": "a2-sp05"
+ },
+ {
+  "type": "read",
+  "text": "Could you tell me the way to the station?",
+  "focus": "Polite requests",
+  "tip": "'Could you' joins into /kʊdʒu/. Stress WAY and STA-tion.",
+  "id": "a2-sp06"
+ },
+ {
+  "type": "read",
+  "text": "It was the best day of my life.",
+  "focus": "Sentence stress",
+  "tip": "Stress BEST, DAY and LIFE. Say 'of my' quickly and lightly.",
+  "id": "a2-sp07"
+ },
+ {
+  "type": "read",
+  "text": "There's a bakery next to the post office.",
+  "focus": "Linking: consonants",
+  "tip": "In 'next to', say just one /t/: /neks tə/. Stress BAK-er-y and POST of-fice.",
+  "id": "a2-sp08"
+ },
+ {
+  "type": "read",
+  "text": "He usually has cereal for breakfast.",
+  "focus": "Sound: /ʒ/",
+  "tip": "'usually' /ˈjuːʒuəli/ has the soft /ʒ/ sound from 'television'. 'breakfast' is BREK-fust.",
+  "id": "a2-sp09"
+ },
+ {
+  "type": "read",
+  "text": "My sister is taller than me.",
+  "focus": "Comparatives",
+  "tip": "Stress TALL-er. British English doesn't say the final r: /ˈtɔːlə/.",
+  "id": "a2-sp10"
+ },
+ {
+  "type": "read",
+  "text": "We're going to the beach if it's sunny.",
+  "focus": "Contractions",
+  "tip": "'We're' /wɪə/ and 'it's' /ɪts/ are one beat each. Don't confuse 'beach' /iː/ with a short /ɪ/.",
+  "id": "a2-sp11"
+ },
+ {
+  "type": "read",
+  "text": "I've never eaten candy floss before.",
+  "focus": "Linking /r/",
+  "tip": "'I've' is a quick /aɪv/. Link 'never eaten' with an r: 'neve-reaten'.",
+  "id": "a2-sp12"
+ },
+ {
+  "type": "read",
+  "text": "What did you do at the weekend?",
+  "focus": "Connected speech: did you",
+  "tip": "'did you' often sounds like /dɪdʒu/. British English says 'at the weekend'.",
+  "id": "a2-sp13"
+ },
+ {
+  "type": "read",
+  "text": "The shop opens at nine and closes at six.",
+  "focus": "Final -s: /z/ and /ɪz/",
+  "tip": "'opens' ends in /z/. 'closes' has an extra syllable: /ˈkləʊzɪz/.",
+  "id": "a2-sp14"
+ },
+ {
+  "type": "read",
+  "text": "I want to learn how to make chocolate.",
+  "focus": "Weak form: to",
+  "tip": "Both 'to's are weak /tə/. 'chocolate' has two syllables: /ˈtʃɒklət/.",
+  "id": "a2-sp15"
+ },
+ {
+  "type": "read",
+  "text": "My little brother was frightened of the dragon.",
+  "focus": "-ed endings /d/",
+  "tip": "'frightened' has two syllables /ˈfraɪtnd/. Stress DRAG-on.",
+  "id": "a2-sp16"
+ },
+ {
+  "type": "read",
+  "text": "Can I have a glass of water, please?",
+  "focus": "British vowels /ɑː/ and /ɔː/",
+  "tip": "In British English 'glass' has a long /ɑː/ and 'water' is /ˈwɔːtə/ with a clear /t/.",
+  "id": "a2-sp17"
+ },
+ {
+  "type": "read",
+  "text": "The weather was cold, so we stayed inside.",
+  "focus": "Sounds: /w/ and /ð/",
+  "tip": "'weather' is /ˈweðə/: round lips, then tongue between teeth. 'stayed' is one syllable.",
+  "id": "a2-sp18"
+ },
+ {
+  "type": "read",
+  "text": "Which one is cheaper, the red one or the blue one?",
+  "focus": "Intonation: choice questions",
+  "tip": "Your voice goes up on 'red one' and down on 'blue one'. That's how English offers a choice.",
+  "id": "a2-sp19"
+ },
+ {
+  "type": "read",
+  "text": "I usually walk to school, but today I took the bus.",
+  "focus": "Contrast stress",
+  "tip": "Stress the contrast: WALK … but … BUS.",
+  "id": "a2-sp20"
+ },
+ {
+  "type": "read",
+  "text": "She's wearing a beautiful purple dress.",
+  "focus": "Word stress",
+  "tip": "BEAU-ti-ful /ˈbjuːtɪfl/ has three syllables with stress on the first. PUR-ple.",
+  "id": "a2-sp21"
+ },
+ {
+  "type": "read",
+  "text": "Thirteen thirsty frogs jumped into the pond.",
+  "focus": "Sound: /θ/ and -ed /t/",
+  "tip": "Lots of /θ/! thir-TEEN is stressed at the end. 'jumped' ends in /t/: /dʒʌmpt/.",
+  "id": "a2-sp22"
+ }
+]

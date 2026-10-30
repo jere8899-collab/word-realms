@@ -1,0 +1,206 @@
+[
+ {
+  "type": "mcq",
+  "q": "After years of rivalry, the two scholars decided to bury the ___.",
+  "options": [
+   "hatchet",
+   "sword",
+   "grudge",
+   "daggers"
+  ],
+  "answer": 0,
+  "explain": "bury the hatchet = make peace."
+ },
+ {
+  "type": "mcq",
+  "q": "The dragon's offer seemed generous, but there were strings ___.",
+  "options": [
+   "attached",
+   "tied",
+   "pulled",
+   "dangling"
+  ],
+  "answer": 0,
+  "explain": "strings attached = hidden conditions."
+ },
+ {
+  "type": "mcq",
+  "q": "His story was a ___ herring, designed to distract us.",
+  "options": [
+   "red",
+   "blue",
+   "white",
+   "golden"
+  ],
+  "answer": 0,
+  "explain": "red herring = something misleading."
+ },
+ {
+  "type": "mcq",
+  "q": "She has an ___ to grind with the council; she's never forgiven them.",
+  "options": [
+   "axe",
+   "knife",
+   "sword",
+   "stone"
+  ],
+  "answer": 0,
+  "explain": "have an axe to grind = have a private grievance."
+ },
+ {
+  "type": "mcq",
+  "q": "To praise someone so weakly that it sounds like criticism is to ___ them with faint praise.",
+  "options": [
+   "damn",
+   "doom",
+   "drown",
+   "dim"
+  ],
+  "answer": 0,
+  "explain": "damn with faint praise."
+ },
+ {
+  "type": "mcq",
+  "q": "The plan is ___ by a thread; one more setback and it fails.",
+  "options": [
+   "hanging",
+   "held",
+   "stitched",
+   "tied"
+  ],
+  "answer": 0,
+  "explain": "hang by a thread = be in great danger of failing."
+ },
+ {
+  "type": "mcq",
+  "q": "Which word means 'deliberately vague to avoid commitment'?",
+  "options": [
+   "equivocal",
+   "unequivocal",
+   "eloquent",
+   "egregious"
+  ],
+  "answer": 0,
+  "explain": "equivocal = ambiguous, often deliberately."
+ },
+ {
+  "type": "mcq",
+  "q": "The prophecy's language was so ___ that only the oldest dragon could interpret it.",
+  "options": [
+   "arcane",
+   "mundane",
+   "candid",
+   "lucid"
+  ],
+  "answer": 0,
+  "explain": "arcane = understood by few; mysterious."
+ },
+ {
+  "type": "mcq",
+  "q": "His speech was full of ___ — pompous words used to sound important.",
+  "options": [
+   "grandiloquence",
+   "brevity",
+   "candour",
+   "understatement"
+  ],
+  "answer": 0,
+  "explain": "grandiloquence = pompous, inflated language."
+ },
+ {
+  "type": "mcq",
+  "q": "To 'have your cake and eat it' means to ___.",
+  "options": [
+   "want two incompatible advantages",
+   "celebrate a birthday with friends",
+   "be greedy whenever you go to parties",
+   "share everything fairly with others"
+  ],
+  "answer": 0,
+  "explain": "You can't keep the cake AND eat it."
+ },
+ {
+  "type": "mcq",
+  "q": "'The proof of the pudding is in the eating' means ___.",
+  "options": [
+   "you judge something by trying it",
+   "desserts are the most important course",
+   "cooking well takes years of practice",
+   "you should never eat too fast at dinner"
+  ],
+  "answer": 0,
+  "explain": "Real worth is shown in use."
+ },
+ {
+  "type": "mcq",
+  "q": "The scholar's ___ remarks hinted at a deep resentment.",
+  "options": [
+   "barbed",
+   "blunt",
+   "bland",
+   "benign"
+  ],
+  "answer": 0,
+  "explain": "barbed = subtly hurtful."
+ },
+ {
+  "type": "mcq",
+  "q": "To 'steal someone's thunder' means to ___.",
+  "options": [
+   "take the attention they expected",
+   "make a lot of noise in a storm",
+   "ruin the weather for their picnic",
+   "borrow their ideas without asking"
+  ],
+  "answer": 0,
+  "explain": "Getting the credit or attention meant for someone else."
+ },
+ {
+  "type": "mcq",
+  "q": "She remained ___ despite the dragon's provocations — utterly calm.",
+  "options": [
+   "imperturbable",
+   "impetuous",
+   "irascible",
+   "temperamental"
+  ],
+  "answer": 0,
+  "explain": "imperturbable = impossible to upset."
+ },
+ {
+  "type": "mcq",
+  "q": "The difference between the two translations is ___, yet it changes the meaning entirely.",
+  "options": [
+   "subtle",
+   "blatant",
+   "glaring",
+   "stark"
+  ],
+  "answer": 0,
+  "explain": "subtle = small and hard to notice."
+ },
+ {
+  "type": "mcq",
+  "q": "A 'Pyrrhic victory' is one that ___.",
+  "options": [
+   "costs so much it is hardly worth winning",
+   "is won very easily against a weak enemy",
+   "is won by cheating or breaking the rules",
+   "ends a long war that both sides wanted over"
+  ],
+  "answer": 0,
+  "explain": "From King Pyrrhus, whose victories ruined his army."
+ },
+ {
+  "type": "mcq",
+  "q": "To 'cut to the chase' means to ___.",
+  "options": [
+   "get to the point",
+   "run faster",
+   "stop a hunt",
+   "edit a film scene"
+  ],
+  "answer": 0,
+  "explain": "Skip the unimportant parts."
+ }
+]

@@ -1,0 +1,30 @@
+{
+ "outfits": [
+  {"id":"o_flower","name":"Flower Crown","icon":"🌸","price":20,"desc":"A crown of meadow blossoms."},
+  {"id":"o_bow","name":"Candy Bow","icon":"🎀","price":25,"desc":"Sweet as Candy Village."},
+  {"id":"o_leaf","name":"Forest Cloak Pin","icon":"🍃","price":40,"desc":"Whispering-leaf brooch."},
+  {"id":"o_crystal","name":"Crystal Tiara","icon":"💎","price":60,"desc":"Shines like Crystal Lake."},
+  {"id":"o_crown","name":"Royal Cloud Crown","icon":"👑","price":90,"desc":"Worn by Cloud Council champions."},
+  {"id":"o_moon","name":"Moonlight Halo","icon":"🌙","price":0,"cash":"$1.99","premium":true,"desc":"Premium: a glowing starlit halo."},
+  {"id":"o_rainbow","name":"Rainbow Wings","icon":"🪽","price":0,"cash":"$2.99","premium":true,"desc":"Premium: shimmering rainbow wings."}
+ ],
+ "petskins": [
+  {"id":"s_strawberry","name":"Strawberry Milk","icon":"🍓","price":30,"filter":"hue-rotate(-25deg) saturate(1.35)","desc":"Pink and creamy."},
+  {"id":"s_mint","name":"Mint Sorbet","icon":"🍃","price":30,"filter":"hue-rotate(70deg) saturate(1.2)","desc":"Fresh and minty."},
+  {"id":"s_sky","name":"Sky Blue","icon":"☁️","price":45,"filter":"hue-rotate(160deg) saturate(1.1)","desc":"Soft as a cloud."},
+  {"id":"s_golden","name":"Golden Honey","icon":"🍯","price":70,"filter":"sepia(.55) saturate(1.8) hue-rotate(-10deg)","desc":"Shiny gold."},
+  {"id":"s_galaxy","name":"Galaxy Dream","icon":"🌌","price":0,"cash":"$1.99","premium":true,"filter":"hue-rotate(220deg) saturate(1.6) contrast(1.05)","sparkle":true,"desc":"Premium: sparkling starry fur."},
+  {"id":"s_rainbow","name":"Rainbow Shimmer","icon":"🌈","price":0,"cash":"$2.99","premium":true,"filter":"","rainbow":true,"desc":"Premium: colour-changing shimmer."}
+ ],
+ "themes": [
+  {"id":"t_sakura","name":"Sakura Dream","icon":"🌸","price":35,"vars":{"--bg1":"#FFE3EC","--bg2":"#FFF0F5","--accent":"#FF8FB1"},"desc":"Cherry-blossom pink."},
+  {"id":"t_mint","name":"Mint Breeze","icon":"🌿","price":35,"vars":{"--bg1":"#D8F7E8","--bg2":"#F0FFF8","--accent":"#4CC9A0"},"desc":"Cool mint."},
+  {"id":"t_ocean","name":"Baby Ocean","icon":"🐚","price":50,"vars":{"--bg1":"#D6EEFF","--bg2":"#F2FAFF","--accent":"#6AB7FF"},"desc":"Soft sea blues."},
+  {"id":"t_night","name":"Midnight Stars","icon":"✨","price":0,"cash":"$1.49","premium":true,"vars":{"--bg1":"#C9C1F0","--bg2":"#E9E4FF","--accent":"#8A6FE0"},"desc":"Premium: dreamy lavender night."}
+ ],
+ "snacks": [
+  {"id":"f_cookie","name":"Carrot Cookie","icon":"🍪","price":2,"hunger":20,"happy":5},
+  {"id":"f_mochi","name":"Berry Mochi","icon":"🍡","price":4,"hunger":35,"happy":12},
+  {"id":"f_cake","name":"Star Cake","icon":"🍰","price":8,"hunger":60,"happy":25}
+ ]
+}

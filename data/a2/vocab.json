@@ -1,0 +1,206 @@
+[
+ {
+  "type": "mcq",
+  "q": "You buy bread at a ___.",
+  "options": [
+   "bakery",
+   "pharmacy",
+   "library",
+   "bank"
+  ],
+  "answer": 0,
+  "explain": "A bakery makes and sells bread and cakes."
+ },
+ {
+  "type": "mcq",
+  "q": "I feel ___. I need to go to bed.",
+  "options": [
+   "tired",
+   "hungry",
+   "angry",
+   "thirsty"
+  ],
+  "answer": 0,
+  "explain": "When you're tired, you need sleep."
+ },
+ {
+  "type": "mcq",
+  "q": "The opposite of 'cheap' is ___.",
+  "options": [
+   "expensive",
+   "free",
+   "easy",
+   "heavy"
+  ],
+  "answer": 0,
+  "explain": "Cheap ↔ expensive."
+ },
+ {
+  "type": "mcq",
+  "q": "A person who serves food in a restaurant is a ___.",
+  "options": [
+   "waiter",
+   "chef",
+   "farmer",
+   "pilot"
+  ],
+  "answer": 0,
+  "explain": "A waiter serves; a chef cooks."
+ },
+ {
+  "type": "mcq",
+  "q": "Can you ___ me some money? I'll pay you back.",
+  "options": [
+   "lend",
+   "borrow",
+   "spend",
+   "owe"
+  ],
+  "answer": 0,
+  "explain": "You LEND to someone; you BORROW from someone."
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ my homework every evening.",
+  "options": [
+   "do",
+   "make",
+   "take",
+   "play"
+  ],
+  "answer": 0,
+  "explain": "We say 'do homework'."
+ },
+ {
+  "type": "mcq",
+  "q": "We ___ a photo of the castle.",
+  "options": [
+   "took",
+   "did",
+   "made",
+   "had"
+  ],
+  "answer": 0,
+  "explain": "We say 'take a photo'."
+ },
+ {
+  "type": "mcq",
+  "q": "The train was ___, so we arrived late.",
+  "options": [
+   "delayed",
+   "early",
+   "fast",
+   "empty"
+  ],
+  "answer": 0,
+  "explain": "Delayed = later than planned."
+ },
+ {
+  "type": "mcq",
+  "q": "Which one is a vegetable?",
+  "options": [
+   "carrot",
+   "strawberry",
+   "cherry",
+   "lemon"
+  ],
+  "answer": 0,
+  "explain": "A carrot is a vegetable; the others are fruit."
+ },
+ {
+  "type": "mcq",
+  "q": "Put on your ___ — it's raining!",
+  "options": [
+   "raincoat",
+   "sunglasses",
+   "swimsuit",
+   "sandals"
+  ],
+  "answer": 0,
+  "explain": "A raincoat keeps you dry."
+ },
+ {
+  "type": "mcq",
+  "q": "My mother's brother is my ___.",
+  "options": [
+   "uncle",
+   "cousin",
+   "nephew",
+   "grandfather"
+  ],
+  "answer": 0,
+  "explain": "Your parent's brother is your uncle."
+ },
+ {
+  "type": "mcq",
+  "q": "I'm very ___ in history. I love old castles.",
+  "options": [
+   "interested",
+   "interesting",
+   "bored",
+   "boring"
+  ],
+  "answer": 0,
+  "explain": "People FEEL interested; things ARE interesting."
+ },
+ {
+  "type": "mcq",
+  "q": "Could you ___ the window? It's hot in here.",
+  "options": [
+   "open",
+   "close",
+   "turn",
+   "break"
+  ],
+  "answer": 0,
+  "explain": "When it's hot, open the window."
+ },
+ {
+  "type": "mcq",
+  "q": "The film was really ___. I laughed a lot.",
+  "options": [
+   "funny",
+   "sad",
+   "scary",
+   "boring"
+  ],
+  "answer": 0,
+  "explain": "Funny things make you laugh."
+ },
+ {
+  "type": "mcq",
+  "q": "A ___ is where you can see old and interesting things.",
+  "options": [
+   "museum",
+   "stadium",
+   "airport",
+   "garage"
+  ],
+  "answer": 0,
+  "explain": "Museums show old and interesting things."
+ },
+ {
+  "type": "mcq",
+  "q": "I need to ___ the bus at the next stop.",
+  "options": [
+   "get off",
+   "get on",
+   "get up",
+   "get in"
+  ],
+  "answer": 0,
+  "explain": "Get off = leave a bus or train."
+ },
+ {
+  "type": "mcq",
+  "q": "Turn ___ the light, please. It's dark.",
+  "options": [
+   "on",
+   "off",
+   "up",
+   "down"
+  ],
+  "answer": 0,
+  "explain": "When it's dark, turn ON the light."
+ }
+]

@@ -1,0 +1,194 @@
+[
+ {
+  "type": "mcq",
+  "q": "We had to ___ the picnic because of the storm.",
+  "options": [
+   "call off",
+   "call up",
+   "put up",
+   "take off"
+  ],
+  "answer": 0,
+  "explain": "call off = cancel."
+ },
+ {
+  "type": "mcq",
+  "q": "The fox was ___ to find its way out of the maze.",
+  "options": [
+   "unable",
+   "impossible",
+   "incapable",
+   "unlikely"
+  ],
+  "answer": 0,
+  "explain": "be unable to + verb. (incapable OF + -ing)"
+ },
+ {
+  "type": "mcq",
+  "q": "I can't ___ up with this noise any longer!",
+  "options": [
+   "put",
+   "get",
+   "keep",
+   "make"
+  ],
+  "answer": 0,
+  "explain": "put up with = tolerate."
+ },
+ {
+  "type": "mcq",
+  "q": "Can you ___ after my plants while I'm away?",
+  "options": [
+   "look",
+   "take",
+   "care",
+   "see"
+  ],
+  "answer": 0,
+  "explain": "look after = take care of."
+ },
+ {
+  "type": "mcq",
+  "q": "The journey took longer than we ___.",
+  "options": [
+   "expected",
+   "waited",
+   "remembered",
+   "wondered"
+  ],
+  "answer": 0,
+  "explain": "longer than expected = longer than we thought."
+ },
+ {
+  "type": "mcq",
+  "q": "She ___ a promise to return before sunset.",
+  "options": [
+   "made",
+   "did",
+   "took",
+   "had"
+  ],
+  "answer": 0,
+  "explain": "Collocation: make a promise."
+ },
+ {
+  "type": "mcq",
+  "q": "The castle guard was very ___; he never let anyone break the rules.",
+  "options": [
+   "strict",
+   "generous",
+   "cheerful",
+   "relaxed"
+  ],
+  "answer": 0,
+  "explain": "Strict = insisting rules are obeyed."
+ },
+ {
+  "type": "mcq",
+  "q": "We need to ___ a decision soon.",
+  "options": [
+   "make",
+   "do",
+   "say",
+   "get"
+  ],
+  "answer": 0,
+  "explain": "Collocation: make a decision."
+ },
+ {
+  "type": "mcq",
+  "q": "I'm really ___ forward to the festival.",
+  "options": [
+   "looking",
+   "waiting",
+   "seeing",
+   "hoping"
+  ],
+  "answer": 0,
+  "explain": "look forward to = be excited about something in the future."
+ },
+ {
+  "type": "mcq",
+  "q": "The old bridge is ___ — please don't cross it.",
+  "options": [
+   "dangerous",
+   "dangerously",
+   "danger",
+   "endangered"
+  ],
+  "answer": 0,
+  "explain": "After 'is' we need an adjective."
+ },
+ {
+  "type": "mcq",
+  "q": "Which word means the same as 'enormous'?",
+  "options": [
+   "huge",
+   "tiny",
+   "narrow",
+   "ordinary"
+  ],
+  "answer": 0,
+  "explain": "Enormous = huge."
+ },
+ {
+  "type": "mcq",
+  "q": "The wizard's ___ was that it would rain for a week.",
+  "options": [
+   "prediction",
+   "prescription",
+   "production",
+   "protection"
+  ],
+  "answer": 0,
+  "explain": "A prediction says what will happen."
+ },
+ {
+  "type": "mcq",
+  "q": "Could you ___ me how to get to the lake?",
+  "options": [
+   "tell",
+   "say",
+   "speak",
+   "explain"
+  ],
+  "answer": 0,
+  "explain": "tell someone something; 'explain me' is a common mistake."
+ },
+ {
+  "type": "mcq",
+  "q": "He ___ the bus, so he walked to the village.",
+  "options": [
+   "missed",
+   "lost",
+   "failed",
+   "lacked"
+  ],
+  "answer": 0,
+  "explain": "miss a bus = arrive too late to catch it."
+ },
+ {
+  "type": "mcq",
+  "q": "That song ___ me of my summer holidays.",
+  "options": [
+   "reminds",
+   "remembers",
+   "recalls",
+   "memorises"
+  ],
+  "answer": 0,
+  "explain": "remind someone of something."
+ },
+ {
+  "type": "mcq",
+  "q": "We've run ___ of milk. Can you buy some?",
+  "options": [
+   "out",
+   "off",
+   "down",
+   "away"
+  ],
+  "answer": 0,
+  "explain": "run out of = have none left."
+ }
+]

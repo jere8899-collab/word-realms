@@ -1,0 +1,32 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Word Realms – Asset Preview</title>
+<style>
+:root{--ink:#7a5c8f;--pink:#ffd6e0;--mint:#c8f2dc;--lav:#e2d6ff;--blue:#d6eeff;--butter:#fff4c2;--r:24px}
+*{box-sizing:border-box}body{margin:0;font-family:"Nunito","Baloo 2","Comic Sans MS",system-ui,sans-serif;color:var(--ink);
+background:linear-gradient(160deg,#fff0f6,#eef6ff 50%,#f3fff8);min-height:100vh}
+header{text-align:center;padding:28px 16px 8px}h1{margin:0;font-size:2.2rem;letter-spacing:.5px}h1 span{color:#ff8fb1}
+.sub{opacity:.75}h2{margin:28px 20px 12px;font-size:1.4rem}
+.grid{display:grid;gap:18px;padding:0 20px;grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}
+.grid.bg{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:#fff;border-radius:var(--r);padding:12px;box-shadow:0 8px 20px rgba(160,120,200,.15);border:3px solid #fff;
+transition:transform .2s}.card:hover{transform:translateY(-4px) rotate(-1deg)}
+.card img{width:100%;border-radius:18px;display:block;background:var(--butter)}
+.card .n{font-weight:800;margin-top:8px}.tag{display:inline-block;font-size:.75rem;padding:2px 10px;border-radius:99px;background:var(--lav);margin-top:4px}
+.tag.ok{background:var(--mint)}button{font:inherit;font-weight:800;color:var(--ink);background:var(--pink);border:0;border-radius:99px;
+padding:10px 22px;box-shadow:0 4px 0 #f3b3c6;cursor:pointer;margin:6px}button:active{transform:translateY(3px);box-shadow:0 1px 0 #f3b3c6}
+footer{text-align:center;padding:30px;opacity:.6;font-size:.9rem}
+</style></head><body>
+<header><h1>✨ Word <span>Realms</span> ✨</h1><div class="sub">Kawaii asset preview · placeholders until real art lands</div>
+<button onclick="location.reload()">🔄 Refresh</button></header>
+<h2>🐾 Starter Pets</h2><div class="grid" id="pet"></div>
+<h2>🧚 Player Avatars</h2><div class="grid" id="avatar"></div>
+<h2>🏰 CEFR Realms</h2><div class="grid bg" id="background"></div>
+<footer>Drop PNGs at the manifest <code>path</code> and they replace placeholders automatically.</footer>
+<script>
+fetch('assets/manifest.json').then(r=>r.json()).then(m=>{for(const a of m.assets){
+ const c=document.createElement('div');c.className='card';const img=new Image();img.alt=a.name;
+ const t=document.createElement('div');t.className='tag ok';t.textContent='final art';
+ img.onerror=()=>{img.onerror=null;img.src=a.placeholder;t.className='tag';t.textContent='placeholder'};img.src=a.path;
+ c.append(img);const n=document.createElement('div');n.className='n';n.textContent=(a.realm?a.realm+' · ':'')+a.name;c.append(n,t);
+ c.title=a.prompt;document.getElementById(a.type).append(c)}});
+</script></body></html>

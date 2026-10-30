@@ -1,0 +1,194 @@
+[
+ {
+  "type": "mcq",
+  "q": "Under no circumstances ___ the dragon's hoard.",
+  "options": [
+   "should you touch",
+   "you should touch",
+   "touch you should",
+   "should touch you"
+  ],
+  "answer": 0,
+  "explain": "Negative adverbial → inversion: should you touch."
+ },
+ {
+  "type": "mcq",
+  "q": "So fierce ___ that even the bravest knights fled.",
+  "options": [
+   "was the dragon's roar",
+   "the dragon's roar was",
+   "did the dragon roar",
+   "the roar was"
+  ],
+  "answer": 0,
+  "explain": "So + adjective + be + subject (inversion)."
+ },
+ {
+  "type": "mcq",
+  "q": "___ it not for your warning, I would be lost in these stacks forever.",
+  "options": [
+   "Were",
+   "Had",
+   "Was",
+   "If"
+  ],
+  "answer": 0,
+  "explain": "Were it not for = If it weren't for (formal inversion)."
+ },
+ {
+  "type": "mcq",
+  "q": "Much ___ I admire her work, I cannot endorse this book.",
+  "options": [
+   "as",
+   "though",
+   "while",
+   "that"
+  ],
+  "answer": 0,
+  "explain": "Much as = although (very much)."
+ },
+ {
+  "type": "mcq",
+  "q": "Try ___ he might, he could not decipher the runes.",
+  "options": [
+   "as",
+   "though",
+   "so",
+   "how"
+  ],
+  "answer": 0,
+  "explain": "Try as he might = however hard he tried."
+ },
+ {
+  "type": "mcq",
+  "q": "The riddle, ___ answer had eluded scholars for centuries, was finally solved.",
+  "options": [
+   "whose",
+   "the",
+   "of which",
+   "which its"
+  ],
+  "answer": 0,
+  "explain": "whose + noun."
+ },
+ {
+  "type": "mcq",
+  "q": "Little did she suspect that the librarian ___ her all along.",
+  "options": [
+   "had been watching",
+   "was watched",
+   "watches",
+   "has watched"
+  ],
+  "answer": 0,
+  "explain": "Past perfect continuous: an ongoing earlier action."
+ },
+ {
+  "type": "mcq",
+  "q": "It is imperative that the scroll ___ returned before dawn.",
+  "options": [
+   "be",
+   "is",
+   "will be",
+   "was"
+  ],
+  "answer": 0,
+  "explain": "Mandative subjunctive: imperative that + be."
+ },
+ {
+  "type": "mcq",
+  "q": "Not a single word ___ during the entire ceremony.",
+  "options": [
+   "was spoken",
+   "spoke",
+   "did speak",
+   "spoken"
+  ],
+  "answer": 0,
+  "explain": "Passive: words are spoken by people."
+ },
+ {
+  "type": "mcq",
+  "q": "The more obscure the text, ___ the scholars become.",
+  "options": [
+   "the more intrigued",
+   "more intrigued",
+   "the most intrigued",
+   "intrigued more"
+  ],
+  "answer": 0,
+  "explain": "the + comparative, the + comparative."
+ },
+ {
+  "type": "mcq",
+  "q": "No sooner had the clock struck midnight ___ the books began to whisper.",
+  "options": [
+   "than",
+   "when",
+   "then",
+   "that"
+  ],
+  "answer": 0,
+  "explain": "No sooner… than."
+ },
+ {
+  "type": "mcq",
+  "q": "Should the dragon ___, offer it a riddle.",
+  "options": [
+   "awaken",
+   "awakens",
+   "awakened",
+   "to awaken"
+  ],
+  "answer": 0,
+  "explain": "Should + subject + base verb = If the dragon awakens."
+ },
+ {
+  "type": "mcq",
+  "q": "She talks as though she ___ the library herself.",
+  "options": [
+   "owned",
+   "owns",
+   "would own",
+   "has owned"
+  ],
+  "answer": 0,
+  "explain": "as though + past = unreal comparison."
+ },
+ {
+  "type": "mcq",
+  "q": "Be that as it ___, the prophecy must be fulfilled.",
+  "options": [
+   "may",
+   "might",
+   "can",
+   "will"
+  ],
+  "answer": 0,
+  "explain": "Fixed phrase: Be that as it may = nevertheless."
+ },
+ {
+  "type": "mcq",
+  "q": "Only by reading between the lines ___ the poem's true meaning.",
+  "options": [
+   "can one grasp",
+   "one can grasp",
+   "one grasps",
+   "grasp one"
+  ],
+  "answer": 0,
+  "explain": "Only by… → inversion."
+ },
+ {
+  "type": "mcq",
+  "q": "Scarcely ___ the final page when the candles went out.",
+  "options": [
+   "had he turned",
+   "he had turned",
+   "did he turn",
+   "he turned"
+  ],
+  "answer": 0,
+  "explain": "Scarcely had… when."
+ }
+]

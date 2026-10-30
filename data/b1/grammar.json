@@ -1,0 +1,194 @@
+[
+ {
+  "type": "mcq",
+  "q": "If I ___ more time, I'd learn to play the harp.",
+  "options": [
+   "had",
+   "have",
+   "would have",
+   "will have"
+  ],
+  "answer": 0,
+  "explain": "Second conditional: If + past simple, would + verb (imaginary situation)."
+ },
+ {
+  "type": "mcq",
+  "q": "The forest path ___ by the fairies every spring.",
+  "options": [
+   "is repaired",
+   "repairs",
+   "is repairing",
+   "has repair"
+  ],
+  "answer": 0,
+  "explain": "Passive present simple: is + past participle."
+ },
+ {
+  "type": "mcq",
+  "q": "She asked me where I ___.",
+  "options": [
+   "lived",
+   "live",
+   "do live",
+   "am living"
+  ],
+  "answer": 0,
+  "explain": "Reported questions move back a tense and use statement word order."
+ },
+ {
+  "type": "mcq",
+  "q": "I'm used to ___ up early.",
+  "options": [
+   "getting",
+   "get",
+   "got",
+   "be getting"
+  ],
+  "answer": 0,
+  "explain": "'be used to' + -ing = be familiar with."
+ },
+ {
+  "type": "mcq",
+  "q": "By the time we arrived, the owl ___.",
+  "options": [
+   "had already flown away",
+   "has already flown away",
+   "already flies away",
+   "was already fly away"
+  ],
+  "answer": 0,
+  "explain": "Past perfect for an action before another past action."
+ },
+ {
+  "type": "mcq",
+  "q": "You ___ have told me! I would have helped.",
+  "options": [
+   "should",
+   "must",
+   "can",
+   "will"
+  ],
+  "answer": 0,
+  "explain": "'should have' + past participle = criticism of a past action."
+ },
+ {
+  "type": "mcq",
+  "q": "The forest, ___ is very old, is full of secrets.",
+  "options": [
+   "which",
+   "that",
+   "who",
+   "what"
+  ],
+  "answer": 0,
+  "explain": "Non-defining clauses (with commas) use 'which' for things, never 'that'."
+ },
+ {
+  "type": "mcq",
+  "q": "I've been waiting here ___ two hours.",
+  "options": [
+   "for",
+   "since",
+   "during",
+   "while"
+  ],
+  "answer": 0,
+  "explain": "'for' + length of time."
+ },
+ {
+  "type": "mcq",
+  "q": "He suggested ___ the river path.",
+  "options": [
+   "taking",
+   "to take",
+   "take",
+   "took"
+  ],
+  "answer": 0,
+  "explain": "suggest + -ing."
+ },
+ {
+  "type": "mcq",
+  "q": "Unless you hurry, you ___ the last boat.",
+  "options": [
+   "will miss",
+   "miss",
+   "won't miss",
+   "would miss"
+  ],
+  "answer": 0,
+  "explain": "Unless = if not → 'If you don't hurry, you will miss…'"
+ },
+ {
+  "type": "mcq",
+  "q": "She ___ be at home — her lights are on.",
+  "options": [
+   "must",
+   "can't",
+   "mustn't",
+   "needn't"
+  ],
+  "answer": 0,
+  "explain": "'must' for a logical conclusion (I'm almost sure)."
+ },
+ {
+  "type": "mcq",
+  "q": "I wish I ___ speak to animals.",
+  "options": [
+   "could",
+   "can",
+   "will",
+   "would can"
+  ],
+  "answer": 0,
+  "explain": "wish + could for abilities we don't have."
+ },
+ {
+  "type": "mcq",
+  "q": "It's the most beautiful place I ___ visited.",
+  "options": [
+   "have ever",
+   "ever have",
+   "had never",
+   "did ever"
+  ],
+  "answer": 0,
+  "explain": "Superlative + present perfect + ever."
+ },
+ {
+  "type": "mcq",
+  "q": "We'd better ___ before it gets dark.",
+  "options": [
+   "go",
+   "to go",
+   "going",
+   "went"
+  ],
+  "answer": 0,
+  "explain": "had better + base verb."
+ },
+ {
+  "type": "mcq",
+  "q": "Neither Tom ___ Sara knew the way.",
+  "options": [
+   "nor",
+   "or",
+   "and",
+   "but"
+  ],
+  "answer": 0,
+  "explain": "neither … nor."
+ },
+ {
+  "type": "mcq",
+  "q": "The map was ___ old that we couldn't read it.",
+  "options": [
+   "so",
+   "such",
+   "too",
+   "very"
+  ],
+  "answer": 0,
+  "explain": "so + adjective + that (result)."
+ }
+]

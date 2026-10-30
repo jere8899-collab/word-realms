@@ -1,0 +1,618 @@
+[
+ {
+  "genre": "essay",
+  "part": "B2 First · Writing Part 1 (essay)",
+  "title": "A Year of Helping Others",
+  "task": "In your English class you have been talking about young people and their communities. Write an essay using all the notes and give reasons for your point of view. Essay question: “Young people in the Lake Kingdom should spend a year helping their community before university or work. Do you agree?” Notes: 1. skills and experience 2. money 3. ……… (your own idea). Write 140–190 words.",
+  "points": [
+   {
+    "label": "Note 1: skills and experience",
+    "keys": [
+     "skill",
+     "experience",
+     "learn",
+     "confidence",
+     "responsib",
+     "matur"
+    ]
+   },
+   {
+    "label": "Note 2: money",
+    "keys": [
+     "money",
+     "earn",
+     "pay",
+     "cost",
+     "financ",
+     "afford",
+     "wage",
+     "salary",
+     "saving"
+    ]
+   },
+   {
+    "label": "Note 3: your own idea",
+    "keys": [
+     "re:\\b(another|a further|a third|finally|lastly|last but not least|moreover|furthermore|what is more|in addition|additionally)\\b"
+    ]
+   },
+   {
+    "label": "Give your opinion",
+    "keys": [
+     "in my opinion",
+     "in my view",
+     "i believe",
+     "i think",
+     "personally",
+     "to my mind",
+     "i feel",
+     "i agree",
+     "i disagree",
+     "i am convinced",
+     "i would argue",
+     "from my point of view"
+    ]
+   }
+  ],
+  "words": [
+   140,
+   190
+  ],
+  "model": "Many people believe that a year of community work is the perfect bridge between school and adult life. However, is it really a good idea for everyone?\n\nFirstly, a year spent helping others can teach valuable skills. Young people who work in hospitals, schools or lake clean-up teams learn to communicate, solve problems and take responsibility, and these experiences are often more useful than anything learnt from a textbook.\n\nOn the other hand, money is a serious concern. If volunteers are not paid, students from poorer families may not be able to afford a year without a salary. As a result, the scheme could become something only rich families can enjoy.\n\nAnother point to consider is that some young people already know exactly what they want to study. For them, a compulsory year might feel like a delay rather than an opportunity.\n\nIn my opinion, a community year is an excellent idea, but it should be optional and every volunteer should receive a small wage. That way, everyone could benefit.",
+  "id": "b2-w01",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "It is often argued that …",
+     "One clear advantage is that …",
+     "On the other hand, …",
+     "Another point to consider is …"
+    ]
+   },
+   {
+    "g": "🔗 Linking devices",
+    "p": [
+     "Moreover, …",
+     "Furthermore, …",
+     "Nevertheless, …",
+     "whereas",
+     "As a result, …",
+     "Therefore, …",
+     "In spite of …",
+     "To sum up, …",
+     "In conclusion, …"
+    ]
+   },
+   {
+    "g": "🧭 Opinions & arguments",
+    "p": [
+     "In my view, …",
+     "There are several reasons why …",
+     "It is worth noting that …",
+     "All things considered, …"
+    ]
+   },
+   {
+    "g": "✉️ Formal phrases",
+    "p": [
+     "Dear Sir or Madam,",
+     "I am writing to …",
+     "I look forward to hearing from you.",
+     "Yours faithfully,"
+    ]
+   }
+  ],
+  "level": "b2"
+ },
+ {
+  "genre": "essay",
+  "part": "B2 First · Writing Part 1 (essay)",
+  "title": "Screens or Storybooks?",
+  "task": "In your English class you have been talking about reading. Write an essay using all the notes and give reasons for your point of view. Essay question: “Children today spend too much time on screens and not enough time reading books. Do you agree?” Notes: 1. imagination 2. learning 3. ……… (your own idea). Write 140–190 words.",
+  "points": [
+   {
+    "label": "Note 1: imagination",
+    "keys": [
+     "imagin",
+     "creativ",
+     "fantasy",
+     "dream",
+     "picture"
+    ]
+   },
+   {
+    "label": "Note 2: learning",
+    "keys": [
+     "learn",
+     "educat",
+     "school",
+     "knowledge",
+     "vocabulary",
+     "information",
+     "study"
+    ]
+   },
+   {
+    "label": "Note 3: your own idea",
+    "keys": [
+     "re:\\b(another|a further|a third|finally|lastly|last but not least|moreover|furthermore|what is more|in addition|additionally)\\b"
+    ]
+   },
+   {
+    "label": "Give your opinion",
+    "keys": [
+     "in my opinion",
+     "in my view",
+     "i believe",
+     "i think",
+     "personally",
+     "to my mind",
+     "i feel",
+     "i agree",
+     "i disagree",
+     "i am convinced",
+     "i would argue",
+     "from my point of view"
+    ]
+   }
+  ],
+  "words": [
+   140,
+   190
+  ],
+  "model": "These days it is hard to find a child who does not own a tablet. But are screens really taking the place of books?\n\nTo begin with, reading develops imagination in a way that screens rarely do. When children read a fairy tale, they have to picture the castle and the dragon themselves, whereas a cartoon shows them everything.\n\nHowever, it would be unfair to say that screens are bad for learning. Educational apps and videos can explain difficult ideas clearly, and many children have improved their vocabulary by watching programmes in English.\n\nWhat is more, the problem is not the screen itself but how it is used. A child who reads e-books on a tablet is still reading, while a child who plays the same game for hours is not learning much at all.\n\nIn my view, children do spend too much time on screens, but the answer is balance rather than banning them. Parents should make time for books every day, especially at bedtime, so that reading becomes a pleasure, not a duty.",
+  "id": "b2-w02",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "There is no doubt that …",
+     "Not only … but also …",
+     "Whereas books …, screens …",
+     "To sum up, …"
+    ]
+   },
+   {
+    "g": "🔗 Linking devices",
+    "p": [
+     "Moreover, …",
+     "Furthermore, …",
+     "Nevertheless, …",
+     "whereas",
+     "As a result, …",
+     "Therefore, …",
+     "In spite of …",
+     "To sum up, …",
+     "In conclusion, …"
+    ]
+   },
+   {
+    "g": "🧭 Opinions & arguments",
+    "p": [
+     "In my view, …",
+     "There are several reasons why …",
+     "It is worth noting that …",
+     "All things considered, …"
+    ]
+   },
+   {
+    "g": "✉️ Formal phrases",
+    "p": [
+     "Dear Sir or Madam,",
+     "I am writing to …",
+     "I look forward to hearing from you.",
+     "Yours faithfully,"
+    ]
+   }
+  ],
+  "level": "b2"
+ },
+ {
+  "genre": "review",
+  "part": "B2 First · Writing Part 2 (review)",
+  "title": "Review: The Glimmerfin Water Show",
+  "task": "You see this announcement on the Lake Times website: “Reviews wanted! Have you seen a show, film or performance recently? Tell us what it was about, what you liked and didn't like, and whether you would recommend it.” Write your review in 140–190 words.",
+  "points": [
+   {
+    "label": "What it was about",
+    "keys": [
+     "about",
+     "story",
+     "plot",
+     "tells",
+     "follows",
+     "set in",
+     "features"
+    ]
+   },
+   {
+    "label": "What you liked",
+    "keys": [
+     "enjoy",
+     "liked",
+     "loved",
+     "best",
+     "impressive",
+     "impressed",
+     "amazing",
+     "highlight",
+     "stunning"
+    ]
+   },
+   {
+    "label": "What you didn't like",
+    "keys": [
+     "however",
+     "although",
+     "disappoint",
+     "too long",
+     "drawback",
+     "downside",
+     "i wish",
+     "could have",
+     "would have been"
+    ]
+   },
+   {
+    "label": "Would you recommend it?",
+    "keys": [
+     "recommend",
+     "worth",
+     "must-see",
+     "don't miss",
+     "should see",
+     "suitable",
+     "ideal for"
+    ]
+   }
+  ],
+  "words": [
+   140,
+   190
+  ],
+  "model": "The Glimmerfin Water Show: a splash of magic!\n\nIf you're looking for an unforgettable evening, head to Crystal Lake. The Glimmerfin Water Show tells the story of a young fish who is chosen to protect the lake from a mysterious storm, and it is performed by dancers, acrobats and hundreds of lights on the water.\n\nWhat impressed me most was the final battle. Fountains shot thirty metres into the air while the music grew louder and louder, and the whole audience gasped. The costumes were stunning too, especially Glimmerfin's silver scales, which seemed to change colour as she moved.\n\nHowever, the show was not perfect. The first half was a little too long, and some of the jokes were clearly written for very young children. I also wish the seats had been more comfortable, as we had to sit on hard wooden benches for two hours.\n\nOverall, I would highly recommend it to families and anyone who loves spectacular effects. Just remember to bring a cushion!",
+  "id": "b2-w03",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "If you're looking for …, …",
+     "What impressed me most was …",
+     "The only drawback was …",
+     "I would highly recommend it to …"
+    ]
+   },
+   {
+    "g": "🔗 Linking devices",
+    "p": [
+     "Moreover, …",
+     "Furthermore, …",
+     "Nevertheless, …",
+     "whereas",
+     "As a result, …",
+     "Therefore, …",
+     "In spite of …",
+     "To sum up, …",
+     "In conclusion, …"
+    ]
+   },
+   {
+    "g": "🧭 Opinions & arguments",
+    "p": [
+     "In my view, …",
+     "There are several reasons why …",
+     "It is worth noting that …",
+     "All things considered, …"
+    ]
+   },
+   {
+    "g": "✉️ Formal phrases",
+    "p": [
+     "Dear Sir or Madam,",
+     "I am writing to …",
+     "I look forward to hearing from you.",
+     "Yours faithfully,"
+    ]
+   }
+  ],
+  "level": "b2"
+ },
+ {
+  "genre": "article",
+  "part": "B2 First · Writing Part 2 (article)",
+  "title": "Making Friends in a New Town",
+  "task": "You see this notice in an English-language magazine: “Moving to a new town? How can people make new friends after moving? What worked for you? Is it easier to make friends online or in person?” Write an article answering these questions in 140–190 words.",
+  "points": [
+   {
+    "label": "Ways to make new friends",
+    "keys": [
+     "club",
+     "join",
+     "volunteer",
+     "team",
+     "class",
+     "hobby",
+     "invite",
+     "neighbour",
+     "introduce"
+    ]
+   },
+   {
+    "label": "What worked for you",
+    "keys": [
+     "when i",
+     "i moved",
+     "i remember",
+     "my own experience",
+     "for me",
+     "personally",
+     "i found"
+    ]
+   },
+   {
+    "label": "Online or in person?",
+    "keys": [
+     "online",
+     "social media",
+     "internet",
+     "app",
+     "face to face",
+     "face-to-face",
+     "in person"
+    ]
+   }
+  ],
+  "words": [
+   140,
+   190
+  ],
+  "model": "New Town, New Friends?\n\nHave you ever stood in a new street and realised that you didn't know a single person? It's a lonely feeling, but it doesn't have to last long.\n\nThe secret is to go where people with the same interests meet. Joining a club or a sports team gives you something to talk about straight away, and volunteering is a brilliant way to meet kind, friendly people. Even saying hello to your neighbours can open doors.\n\nWhen I moved to Crystal Lake two years ago, I found it hard at first. Then I signed up for a rowing class, and after a few weeks I was invited to a barbecue. Most of my closest friends today were sitting in that boat with me!\n\nSo, is it easier online or in person? Social media can help you find events and stay in touch, but in my experience real friendships grow face to face. A chat on an app is nice, but nothing beats laughing together over a cup of hot chocolate.",
+  "id": "b2-w04",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "Have you ever …?",
+     "The secret is …",
+     "In my experience, …",
+     "Whether you … or …, …"
+    ]
+   },
+   {
+    "g": "🔗 Linking devices",
+    "p": [
+     "Moreover, …",
+     "Furthermore, …",
+     "Nevertheless, …",
+     "whereas",
+     "As a result, …",
+     "Therefore, …",
+     "In spite of …",
+     "To sum up, …",
+     "In conclusion, …"
+    ]
+   },
+   {
+    "g": "🧭 Opinions & arguments",
+    "p": [
+     "In my view, …",
+     "There are several reasons why …",
+     "It is worth noting that …",
+     "All things considered, …"
+    ]
+   },
+   {
+    "g": "✉️ Formal phrases",
+    "p": [
+     "Dear Sir or Madam,",
+     "I am writing to …",
+     "I look forward to hearing from you.",
+     "Yours faithfully,"
+    ]
+   }
+  ],
+  "level": "b2"
+ },
+ {
+  "genre": "report",
+  "part": "B2 First · Writing Part 2 (report)",
+  "title": "Report: Improving the Lake Youth Club",
+  "task": "The manager of the Crystal Lake Youth Club wants to improve it. Write a report for the manager saying what is good about the club now, what problems members mention and what you recommend. Write 140–190 words.",
+  "points": [
+   {
+    "label": "What is good now",
+    "keys": [
+     "currently",
+     "at present",
+     "popular",
+     "strength",
+     "positive",
+     "enjoy",
+     "well-equipped"
+    ]
+   },
+   {
+    "label": "Problems members mention",
+    "keys": [
+     "problem",
+     "lack",
+     "not enough",
+     "outdated",
+     "complain",
+     "issue",
+     "however"
+    ]
+   },
+   {
+    "label": "Your recommendation",
+    "keys": [
+     "recommend",
+     "suggest",
+     "should",
+     "propose",
+     "would be a good idea"
+    ]
+   }
+  ],
+  "words": [
+   140,
+   190
+  ],
+  "model": "Introduction\nThe aim of this report is to describe the strengths of the Crystal Lake Youth Club, to outline the main problems mentioned by members and to recommend some improvements.\n\nCurrent strengths\nThe club is currently very popular, with over eighty regular members. Most people enjoy the friendly atmosphere, and the boat trips on Saturdays are described as the highlight of the week.\n\nProblems\nHowever, several members complain that there is not enough to do on weekday evenings. In addition, the games room is outdated: the computers are slow and the table-tennis equipment is broken. A lack of quiet space also means that it is difficult to do homework at the club.\n\nRecommendations\nI would recommend replacing the old computers and repairing the games equipment as soon as possible. It would also be a good idea to turn the small storeroom into a study area. Finally, I suggest organising a weekly cooking or music workshop, which would attract more members during the week.",
+  "id": "b2-w05",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "The aim of this report is to …",
+     "According to most members, …",
+     "A common complaint is that …",
+     "It is recommended that …"
+    ]
+   },
+   {
+    "g": "🔗 Linking devices",
+    "p": [
+     "Moreover, …",
+     "Furthermore, …",
+     "Nevertheless, …",
+     "whereas",
+     "As a result, …",
+     "Therefore, …",
+     "In spite of …",
+     "To sum up, …",
+     "In conclusion, …"
+    ]
+   },
+   {
+    "g": "🧭 Opinions & arguments",
+    "p": [
+     "In my view, …",
+     "There are several reasons why …",
+     "It is worth noting that …",
+     "All things considered, …"
+    ]
+   },
+   {
+    "g": "✉️ Formal phrases",
+    "p": [
+     "Dear Sir or Madam,",
+     "I am writing to …",
+     "I look forward to hearing from you.",
+     "Yours faithfully,"
+    ]
+   }
+  ],
+  "level": "b2"
+ },
+ {
+  "genre": "email",
+  "part": "B2 First · Writing Part 2 (email of application)",
+  "title": "Apply to Be a Lake Guide",
+  "task": "You see this advertisement: “Summer Lake Guides wanted! Do you love nature? Are you good with people? Write to Mr Reed telling us why you are interested, what experience you have, what qualities you could bring and when you are available.” Write your email in 140–190 words.",
+  "formal": true,
+  "points": [
+   {
+    "label": "Why you are interested",
+    "keys": [
+     "interested",
+     "apply",
+     "application",
+     "would love",
+     "keen",
+     "position",
+     "role"
+    ]
+   },
+   {
+    "label": "Your experience",
+    "keys": [
+     "experience",
+     "have worked",
+     "have been",
+     "previously",
+     "last summer",
+     "worked",
+     "volunteered"
+    ]
+   },
+   {
+    "label": "Your personal qualities",
+    "keys": [
+     "patient",
+     "friendly",
+     "reliable",
+     "organised",
+     "responsible",
+     "hard-working",
+     "confident",
+     "good at",
+     "enthusiastic"
+    ]
+   },
+   {
+    "label": "When you are available",
+    "keys": [
+     "available",
+     "until",
+     "july",
+     "august",
+     "june",
+     "weekends"
+    ]
+   }
+  ],
+  "words": [
+   140,
+   190
+  ],
+  "model": "Dear Mr Reed,\n\nI am writing to apply for the position of Summer Lake Guide, which I saw advertised on your website. I have loved Crystal Lake since I was a child, and I would be delighted to share its secrets with visitors.\n\nAs for experience, I have been a member of the lake rowing club for three years, and last summer I volunteered at the nature centre, where I led short walks for primary school groups. This taught me how to keep a group safe and interested at the same time.\n\nI believe I would be suitable for the role because I am patient, reliable and confident when speaking to strangers. I also speak English, Spanish and a little French, which could be useful with international tourists.\n\nI am available from the end of June until the beginning of September, including weekends.\n\nThank you for considering my application. I look forward to hearing from you.\n\nYours sincerely,\nElena Ruiz",
+  "id": "b2-w06",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "Dear Mr …,",
+     "I am writing to apply for …",
+     "I believe I would be suitable because …",
+     "I look forward to hearing from you.",
+     "Yours sincerely,"
+    ]
+   },
+   {
+    "g": "🔗 Linking devices",
+    "p": [
+     "Moreover, …",
+     "Furthermore, …",
+     "Nevertheless, …",
+     "whereas",
+     "As a result, …",
+     "Therefore, …",
+     "In spite of …",
+     "To sum up, …",
+     "In conclusion, …"
+    ]
+   },
+   {
+    "g": "🧭 Opinions & arguments",
+    "p": [
+     "In my view, …",
+     "There are several reasons why …",
+     "It is worth noting that …",
+     "All things considered, …"
+    ]
+   },
+   {
+    "g": "✉️ Formal phrases",
+    "p": [
+     "Dear Sir or Madam,",
+     "I am writing to …",
+     "I look forward to hearing from you.",
+     "Yours faithfully,"
+    ]
+   }
+  ],
+  "level": "b2"
+ }
+]

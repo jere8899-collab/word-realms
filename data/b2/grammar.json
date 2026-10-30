@@ -1,0 +1,206 @@
+[
+ {
+  "type": "mcq",
+  "q": "Had I known about the storm, I ___ the trip.",
+  "options": [
+   "would have cancelled",
+   "would cancel",
+   "had cancelled",
+   "will have cancelled"
+  ],
+  "answer": 0,
+  "explain": "Inverted third conditional: Had I known… = If I had known…, would have + p.p."
+ },
+ {
+  "type": "mcq",
+  "q": "The bridge is thought ___ over 500 years ago.",
+  "options": [
+   "to have been built",
+   "to be built",
+   "being built",
+   "that it was built"
+  ],
+  "answer": 0,
+  "explain": "Passive reporting about the past: is thought + to have been + p.p."
+ },
+ {
+  "type": "mcq",
+  "q": "I'd rather you ___ tell anyone.",
+  "options": [
+   "didn't",
+   "don't",
+   "wouldn't",
+   "not"
+  ],
+  "answer": 0,
+  "explain": "would rather + someone + past simple for present/future preferences."
+ },
+ {
+  "type": "mcq",
+  "q": "She denied ___ the crystal.",
+  "options": [
+   "taking",
+   "to take",
+   "take",
+   "that take"
+  ],
+  "answer": 0,
+  "explain": "deny + -ing."
+ },
+ {
+  "type": "mcq",
+  "q": "By next summer, they ___ the new castle.",
+  "options": [
+   "will have finished",
+   "will finish",
+   "finish",
+   "are finishing"
+  ],
+  "answer": 0,
+  "explain": "Future perfect: completed before a future time."
+ },
+ {
+  "type": "mcq",
+  "q": "It's high time we ___ home.",
+  "options": [
+   "went",
+   "go",
+   "are going",
+   "will go"
+  ],
+  "answer": 0,
+  "explain": "It's (high) time + past simple."
+ },
+ {
+  "type": "mcq",
+  "q": "The swans, ___ feathers shimmered, glided past.",
+  "options": [
+   "whose",
+   "which",
+   "who's",
+   "that"
+  ],
+  "answer": 0,
+  "explain": "'whose' shows possession."
+ },
+ {
+  "type": "mcq",
+  "q": "He must ___ the wrong path; he's still not here.",
+  "options": [
+   "have taken",
+   "take",
+   "had taken",
+   "taking"
+  ],
+  "answer": 0,
+  "explain": "must have + p.p. = deduction about the past."
+ },
+ {
+  "type": "mcq",
+  "q": "I'm not used to ___ so much attention.",
+  "options": [
+   "receiving",
+   "receive",
+   "received",
+   "have received"
+  ],
+  "answer": 0,
+  "explain": "be used to + -ing."
+ },
+ {
+  "type": "mcq",
+  "q": "She'd have won the race if she ___ fallen.",
+  "options": [
+   "hadn't",
+   "didn't",
+   "wouldn't have",
+   "hasn't"
+  ],
+  "answer": 0,
+  "explain": "Third conditional: if + past perfect."
+ },
+ {
+  "type": "mcq",
+  "q": "___ by the long journey, the knight fell asleep.",
+  "options": [
+   "Exhausted",
+   "Exhausting",
+   "Having exhaust",
+   "Exhaust"
+  ],
+  "answer": 0,
+  "explain": "Past participle clause = 'Because he was exhausted…'"
+ },
+ {
+  "type": "mcq",
+  "q": "You ___ have brought a gift, but it's very kind of you.",
+  "options": [
+   "needn't",
+   "mustn't",
+   "couldn't",
+   "shouldn't"
+  ],
+  "answer": 0,
+  "explain": "needn't have + p.p. = you did it, but it wasn't necessary."
+ },
+ {
+  "type": "mcq",
+  "q": "She's one of the few people ___ can solve the riddle.",
+  "options": [
+   "who",
+   "which",
+   "whom",
+   "whose"
+  ],
+  "answer": 0,
+  "explain": "'who' as subject for people."
+ },
+ {
+  "type": "mcq",
+  "q": "I regret ___ you that the boat has sunk.",
+  "options": [
+   "to tell",
+   "telling",
+   "tell",
+   "told"
+  ],
+  "answer": 0,
+  "explain": "regret to tell/inform = formal bad news now; regret telling = sorry about the past."
+ },
+ {
+  "type": "mcq",
+  "q": "The more you practise, ___ you become.",
+  "options": [
+   "the better",
+   "better",
+   "the best",
+   "more better"
+  ],
+  "answer": 0,
+  "explain": "the + comparative…, the + comparative."
+ },
+ {
+  "type": "mcq",
+  "q": "Not until the lake froze ___ how cold it was.",
+  "options": [
+   "did we realise",
+   "we realised",
+   "we did realise",
+   "had realised we"
+  ],
+  "answer": 0,
+  "explain": "After 'Not until…' at the start, invert: did we realise."
+ },
+ {
+  "type": "mcq",
+  "q": "Whatever happens, we ___ to the plan.",
+  "options": [
+   "will stick",
+   "would stick",
+   "stuck",
+   "had stuck"
+  ],
+  "answer": 0,
+  "explain": "Real future: will + verb."
+ }
+]

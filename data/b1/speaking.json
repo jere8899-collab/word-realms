@@ -1,0 +1,178 @@
+[
+ {
+  "type": "read",
+  "text": "If I had more time, I'd learn to play the harp.",
+  "focus": "Second conditional",
+  "tip": "'I'd' is a short /aɪd/. Stress TIME and HARP. Pause a little at the comma.",
+  "id": "b1-sp01"
+ },
+ {
+  "type": "read",
+  "text": "I've been living here for nearly three years.",
+  "focus": "Present perfect continuous",
+  "tip": "'I've been' squeezes into /aɪv bɪn/ because 'been' is weak. Stress LIV-ing, NEAR-ly and THREE.",
+  "id": "b1-sp02"
+ },
+ {
+  "type": "read",
+  "text": "The bridge was built by the villagers a hundred years ago.",
+  "focus": "Passive: weak 'was'",
+  "tip": "'was' is weak /wəz/. 'built' rhymes with 'kilt' because the 'u' is silent.",
+  "id": "b1-sp03"
+ },
+ {
+  "type": "read",
+  "text": "She asked me whether I'd ever been to Scotland.",
+  "focus": "-ed endings /t/",
+  "tip": "'asked' is /ɑːskt/, which is tricky! In fast speech many people say /ɑːst/. Stress SCOT-land.",
+  "id": "b1-sp04"
+ },
+ {
+  "type": "read",
+  "text": "You should have told me you were coming.",
+  "focus": "Weak forms: should have",
+  "tip": "'should have' sounds like /ˈʃʊdəv/. Never write 'should of'!",
+  "id": "b1-sp05"
+ },
+ {
+  "type": "read",
+  "text": "Although it was raining, we decided to go for a walk.",
+  "focus": "Pausing and -ed /ɪd/",
+  "tip": "'decided' has /ɪd/: de-CI-ded. Pause briefly after 'raining'.",
+  "id": "b1-sp06"
+ },
+ {
+  "type": "read",
+  "text": "I'm used to getting up early because of my job.",
+  "focus": "used to /ˈjuːstə/",
+  "tip": "'used to' has an /s/, not a /z/: /ˈjuːstə/. Link 'getting up' into 'gettin-gup'.",
+  "id": "b1-sp07"
+ },
+ {
+  "type": "read",
+  "text": "The museum, which is in the city centre, is free on Sundays.",
+  "focus": "Pausing with commas",
+  "tip": "Pause at both commas because the 'which' clause is extra information. Stress mu-SE-um.",
+  "id": "b1-sp08"
+ },
+ {
+  "type": "read",
+  "text": "I'm thinking of applying for a job at the bookshop.",
+  "focus": "Word stress: -ing",
+  "tip": "ap-PLY-ing has the stress in the middle. Link 'thinking of' into 'thinkin-gof'.",
+  "id": "b1-sp09"
+ },
+ {
+  "type": "read",
+  "text": "We'd better hurry, or we'll miss the last train.",
+  "focus": "Contractions: we'd, we'll",
+  "tip": "Keep the end sound: 'we'd' /wiːd/ and 'we'll' /wiːl/ must sound different.",
+  "id": "b1-sp10"
+ },
+ {
+  "type": "read",
+  "text": "Have you ever tried the cheese they make in this valley?",
+  "focus": "Intonation: yes/no questions",
+  "tip": "Yes/no questions usually rise at the end. Keep /tr/ together in 'tried' /traɪd/.",
+  "id": "b1-sp11"
+ },
+ {
+  "type": "read",
+  "text": "It's the most interesting story I've ever read.",
+  "focus": "Word stress",
+  "tip": "'interesting' often has three syllables: /ˈɪntrəstɪŋ/. Here 'read' is past, so say /red/.",
+  "id": "b1-sp12"
+ },
+ {
+  "type": "read",
+  "text": "Unless the weather improves, the festival will be cancelled.",
+  "focus": "-ed and -s endings",
+  "tip": "'improves' ends in /vz/. 'cancelled' is /ˈkænsld/ with two syllables.",
+  "id": "b1-sp13"
+ },
+ {
+  "type": "read",
+  "text": "I'd rather stay at home than go to the crowded market.",
+  "focus": "Sound: /ð/",
+  "tip": "'rather' and 'than' both have a buzzy /ð/. 'crowded' ends in /ɪd/.",
+  "id": "b1-sp14"
+ },
+ {
+  "type": "read",
+  "text": "The owl, who had been asleep all day, suddenly opened its eyes.",
+  "focus": "Chunking",
+  "tip": "Say it in three chunks: The owl | who had been asleep all day | suddenly opened its eyes.",
+  "id": "b1-sp15"
+ },
+ {
+  "type": "read",
+  "text": "Could you tell me what time the next boat leaves?",
+  "focus": "Indirect questions",
+  "tip": "Indirect questions often fall at the end. In 'next boat', say just one /t/: /neks bəʊt/.",
+  "id": "b1-sp16"
+ },
+ {
+  "type": "read",
+  "text": "My grandmother used to tell us stories about the old castle.",
+  "focus": "Sentence stress",
+  "tip": "Stress GRAND-mother, STOR-ies and CAS-tle. 'used to' is /ˈjuːstə/.",
+  "id": "b1-sp17"
+ },
+ {
+  "type": "read",
+  "text": "Neither my brother nor I could find the way home.",
+  "focus": "Sounds: /aɪ/ and /ð/",
+  "tip": "British 'neither' is usually /ˈnaɪðə/. Stress BROTH-er and I.",
+  "id": "b1-sp18"
+ },
+ {
+  "type": "answer",
+  "q": "Describe your perfect weekend. Use 'would' and 'because'.",
+  "keywords": [
+   "would",
+   "because"
+  ],
+  "model": "My perfect weekend would start with a long walk because I love being outside.",
+  "focus": "Speaking Part 2: Long turn",
+  "tip": "Make it one smooth sentence. 'would' is often weak /wəd/, or you can say 'it'd'.",
+  "id": "b1-sp19",
+  "minWords": 5
+ },
+ {
+  "type": "answer",
+  "q": "Tell me about something you have never done. Start with 'I've never…'.",
+  "keywords": [
+   "have never"
+  ],
+  "model": "I've never been to Japan, but I would love to go one day.",
+  "focus": "Present perfect: experience",
+  "tip": "'I've never' links into /aɪv ˈnevə/. Stress NEV-er and the place.",
+  "id": "b1-sp20",
+  "minWords": 5
+ },
+ {
+  "type": "answer",
+  "q": "Give some advice to a friend who always feels tired. Use 'should'.",
+  "keywords": [
+   "should"
+  ],
+  "model": "You should go to bed earlier and drink more water during the day.",
+  "focus": "Giving advice",
+  "tip": "'should' is weak /ʃəd/. Stress the advice itself: BED, EAR-li-er, WA-ter.",
+  "id": "b1-sp21",
+  "minWords": 5
+ },
+ {
+  "type": "answer",
+  "q": "What will you do if it rains tomorrow? Begin with 'If it rains'.",
+  "keywords": [
+   "if it rains",
+   "will"
+  ],
+  "model": "If it rains tomorrow, I'll stay at home and read a good book.",
+  "focus": "First conditional",
+  "tip": "'I'll' counts as 'I will'. Pause after the 'if' part and stress the main verb.",
+  "id": "b1-sp22",
+  "minWords": 5
+ }
+]

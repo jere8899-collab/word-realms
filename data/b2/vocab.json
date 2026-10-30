@@ -1,0 +1,206 @@
+[
+ {
+  "type": "mcq",
+  "q": "The queen's speech had a profound ___ on everyone.",
+  "options": [
+   "impact",
+   "affect",
+   "result",
+   "consequence"
+  ],
+  "answer": 0,
+  "explain": "have an impact on. ('affect' is a verb.)"
+ },
+ {
+  "type": "mcq",
+  "q": "After months of practice, her efforts finally paid ___.",
+  "options": [
+   "off",
+   "out",
+   "back",
+   "up"
+  ],
+  "answer": 0,
+  "explain": "pay off = be successful."
+ },
+ {
+  "type": "mcq",
+  "q": "The evidence was ___; nobody could argue with it.",
+  "options": [
+   "overwhelming",
+   "overwhelmed",
+   "overdone",
+   "overcome"
+  ],
+  "answer": 0,
+  "explain": "Overwhelming evidence = very strong."
+ },
+ {
+  "type": "mcq",
+  "q": "We need to ___ the pros and cons before deciding.",
+  "options": [
+   "weigh up",
+   "look up",
+   "bring up",
+   "turn up"
+  ],
+  "answer": 0,
+  "explain": "weigh up = consider carefully."
+ },
+ {
+  "type": "mcq",
+  "q": "He's ___ to win — he's the best by far.",
+  "options": [
+   "bound",
+   "liable",
+   "prone",
+   "keen"
+  ],
+  "answer": 0,
+  "explain": "be bound to = be certain to."
+ },
+ {
+  "type": "mcq",
+  "q": "Swimming is ___ prohibited in the north lake.",
+  "options": [
+   "strictly",
+   "strongly",
+   "hardly",
+   "deeply"
+  ],
+  "answer": 0,
+  "explain": "Collocation: strictly prohibited."
+ },
+ {
+  "type": "mcq",
+  "q": "The new rules will come into ___ next month.",
+  "options": [
+   "force",
+   "power",
+   "practice",
+   "play"
+  ],
+  "answer": 0,
+  "explain": "come into force = start to apply (laws/rules)."
+ },
+ {
+  "type": "mcq",
+  "q": "She ___ out of the competition due to injury.",
+  "options": [
+   "pulled",
+   "broke",
+   "fell",
+   "gave"
+  ],
+  "answer": 0,
+  "explain": "pull out = withdraw."
+ },
+ {
+  "type": "mcq",
+  "q": "I can't ___ the difference between the two crystals.",
+  "options": [
+   "tell",
+   "say",
+   "speak",
+   "know"
+  ],
+  "answer": 0,
+  "explain": "tell the difference."
+ },
+ {
+  "type": "mcq",
+  "q": "The manager ___ the blame for the mistake.",
+  "options": [
+   "took",
+   "made",
+   "did",
+   "put"
+  ],
+  "answer": 0,
+  "explain": "take the blame."
+ },
+ {
+  "type": "mcq",
+  "q": "There has been a sharp ___ in the number of visitors.",
+  "options": [
+   "rise",
+   "raise",
+   "arise",
+   "rouse"
+  ],
+  "answer": 0,
+  "explain": "a rise (noun) in numbers; 'raise' is mainly a verb."
+ },
+ {
+  "type": "mcq",
+  "q": "He has a reputation ___ being honest.",
+  "options": [
+   "for",
+   "of",
+   "about",
+   "with"
+  ],
+  "answer": 0,
+  "explain": "a reputation for something."
+ },
+ {
+  "type": "mcq",
+  "q": "Her explanation was ___; I understood instantly.",
+  "options": [
+   "crystal clear",
+   "sky high",
+   "stone cold",
+   "brand new"
+  ],
+  "answer": 0,
+  "explain": "crystal clear = very easy to understand."
+ },
+ {
+  "type": "mcq",
+  "q": "We managed to ___ the problem by working together.",
+  "options": [
+   "overcome",
+   "overtake",
+   "overlook",
+   "overdo"
+  ],
+  "answer": 0,
+  "explain": "overcome a problem = deal with it successfully."
+ },
+ {
+  "type": "mcq",
+  "q": "He's very ___; he always finishes what he starts.",
+  "options": [
+   "determined",
+   "determining",
+   "determination",
+   "determine"
+  ],
+  "answer": 0,
+  "explain": "Adjective needed: determined."
+ },
+ {
+  "type": "mcq",
+  "q": "Which word is the opposite of 'reluctant'?",
+  "options": [
+   "willing",
+   "hesitant",
+   "unwilling",
+   "doubtful"
+  ],
+  "answer": 0,
+  "explain": "Reluctant = not wanting to; willing = happy to."
+ },
+ {
+  "type": "mcq",
+  "q": "Let's try to ___ a compromise.",
+  "options": [
+   "reach",
+   "arrive",
+   "get",
+   "do"
+  ],
+  "answer": 0,
+  "explain": "reach a compromise / an agreement."
+ }
+]

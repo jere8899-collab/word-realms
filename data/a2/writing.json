@@ -1,0 +1,555 @@
+[
+ {
+  "genre": "email",
+  "part": "A2 Key · Writing Part 6 (email)",
+  "title": "Invite a Friend to the Candy Fair",
+  "task": "Write an email to your English friend Sam. In your email: • invite Sam to the Candy Fair • say when it is • say what you can do there.",
+  "points": [
+   {
+    "label": "Invite Sam",
+    "keys": [
+     "would you like",
+     "do you want",
+     "come with",
+     "come to",
+     "join",
+     "invite",
+     "let's"
+    ]
+   },
+   {
+    "label": "Say when it is",
+    "keys": [
+     "monday",
+     "tuesday",
+     "wednesday",
+     "thursday",
+     "friday",
+     "saturday",
+     "sunday",
+     "weekend",
+     "tomorrow",
+     "tonight",
+     "next week",
+     "o'clock",
+     "morning",
+     "afternoon",
+     "evening",
+     "re:\\b\\d{1,2}(:\\d\\d)?\\s?(am|pm)\\b",
+     "re:\\bat \\d"
+    ]
+   },
+   {
+    "label": "Say what you can do",
+    "keys": [
+     "we can",
+     "you can",
+     "eat",
+     "buy",
+     "ride",
+     "watch",
+     "try",
+     "dance",
+     "play"
+    ]
+   }
+  ],
+  "words": [
+   25,
+   40
+  ],
+  "model": "Hi Sam,\nWould you like to come to the Candy Fair with me? It is on Saturday afternoon at two o'clock. We can ride the lollipop wheel and buy some chocolate frogs!\nSee you soon,\nLily",
+  "id": "a2-w01",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "Would you like to come to …?",
+     "It is on … at …",
+     "We can …"
+    ]
+   },
+   {
+    "g": "🔗 Linking words",
+    "p": [
+     "and",
+     "but",
+     "because",
+     "so",
+     "then",
+     "after that",
+     "when"
+    ]
+   },
+   {
+    "g": "💌 Notes & emails",
+    "p": [
+     "Hi …,",
+     "Dear …,",
+     "Thanks for …",
+     "See you soon,",
+     "Love,"
+    ]
+   },
+   {
+    "g": "📖 Stories",
+    "p": [
+     "One day, …",
+     "Suddenly, …",
+     "In the end, …"
+    ]
+   }
+  ],
+  "level": "a2"
+ },
+ {
+  "genre": "email",
+  "part": "A2 Key · Writing Part 6 (email)",
+  "title": "Sorry, I Missed Your Party",
+  "task": "You didn't go to your friend Ana's party. Write an email to Ana. In your email: • say sorry • explain why you didn't go • suggest another day to meet.",
+  "points": [
+   {
+    "label": "Say sorry",
+    "keys": [
+     "sorry",
+     "apologise",
+     "apologize"
+    ]
+   },
+   {
+    "label": "Explain why",
+    "keys": [
+     "because",
+     "ill",
+     "sick",
+     "cold",
+     "had to",
+     "couldn't",
+     "could not",
+     "busy",
+     "headache"
+    ]
+   },
+   {
+    "label": "Suggest another day",
+    "keys": [
+     "shall we",
+     "let's",
+     "let us",
+     "how about",
+     "what about",
+     "why don't",
+     "we could",
+     "would you like",
+     "do you want",
+     "maybe we",
+     "could we",
+     "can we",
+     "monday",
+     "tuesday",
+     "wednesday",
+     "thursday",
+     "friday",
+     "saturday",
+     "sunday",
+     "weekend",
+     "tomorrow",
+     "tonight",
+     "next week"
+    ]
+   }
+  ],
+  "words": [
+   25,
+   40
+  ],
+  "model": "Dear Ana,\nI'm really sorry I didn't come to your party yesterday. I had a bad cold and stayed in bed all day. Shall we meet at the Gingerbread Cafe on Friday after school?\nLove,\nKai",
+  "id": "a2-w02",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "I'm really sorry I …",
+     "I couldn't come because …",
+     "Shall we meet on …?"
+    ]
+   },
+   {
+    "g": "🔗 Linking words",
+    "p": [
+     "and",
+     "but",
+     "because",
+     "so",
+     "then",
+     "after that",
+     "when"
+    ]
+   },
+   {
+    "g": "💌 Notes & emails",
+    "p": [
+     "Hi …,",
+     "Dear …,",
+     "Thanks for …",
+     "See you soon,",
+     "Love,"
+    ]
+   },
+   {
+    "g": "📖 Stories",
+    "p": [
+     "One day, …",
+     "Suddenly, …",
+     "In the end, …"
+    ]
+   }
+  ],
+  "level": "a2"
+ },
+ {
+  "genre": "story",
+  "part": "A2 Key · Writing Part 7 (picture story)",
+  "title": "The Lost Candy Dragon",
+  "task": "Look at the three pictures and write the story (35 words or more). 🖼️ 1: Mia sees a tiny dragon crying in the candy shop. 🖼️ 2: She gives it a big lollipop. 🖼️ 3: The happy dragon flies Mia home.",
+  "points": [
+   {
+    "label": "Picture 1: Mia finds the dragon",
+    "keys": [
+     "saw",
+     "found",
+     "met",
+     "crying",
+     "cried",
+     "sad"
+    ]
+   },
+   {
+    "label": "Picture 2: she gives it a lollipop",
+    "keys": [
+     "gave",
+     "lollipop",
+     "shared",
+     "sweet",
+     "ate"
+    ]
+   },
+   {
+    "label": "Picture 3: the dragon flies her home",
+    "keys": [
+     "flew",
+     "fly",
+     "home",
+     "sky",
+     "rode"
+    ]
+   }
+  ],
+  "words": [
+   35,
+   45
+  ],
+  "model": "One day, Mia was in the candy shop when she saw a tiny dragon. It was crying because it was hungry. Mia gave it a big pink lollipop. The happy dragon ate it and then flew Mia home!",
+  "id": "a2-w03",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "One day, …",
+     "Then …",
+     "In the end, …",
+     "… was very happy."
+    ]
+   },
+   {
+    "g": "🔗 Linking words",
+    "p": [
+     "and",
+     "but",
+     "because",
+     "so",
+     "then",
+     "after that",
+     "when"
+    ]
+   },
+   {
+    "g": "💌 Notes & emails",
+    "p": [
+     "Hi …,",
+     "Dear …,",
+     "Thanks for …",
+     "See you soon,",
+     "Love,"
+    ]
+   },
+   {
+    "g": "📖 Stories",
+    "p": [
+     "One day, …",
+     "Suddenly, …",
+     "In the end, …"
+    ]
+   }
+  ],
+  "level": "a2"
+ },
+ {
+  "genre": "postcard",
+  "part": "A2 Key · Writing Part 6 (postcard)",
+  "title": "A Postcard from Candy Village",
+  "task": "You are on holiday in Candy Village. Write a postcard to your grandma. Tell her: • where you are staying • what you did yesterday • what you are going to do tomorrow.",
+  "points": [
+   {
+    "label": "Where you are staying",
+    "keys": [
+     "staying",
+     "hotel",
+     "house",
+     "tent",
+     "cottage",
+     "we are in",
+     "i'm in",
+     "i am in"
+    ]
+   },
+   {
+    "label": "What you did yesterday",
+    "keys": [
+     "yesterday",
+     "last night",
+     "re:\\b(went|visited|saw|ate|played|bought|had|swam|rode|made)\\b"
+    ]
+   },
+   {
+    "label": "Plans for tomorrow",
+    "keys": [
+     "tomorrow",
+     "going to",
+     "we will",
+     "i will",
+     "we'll",
+     "i'll"
+    ]
+   }
+  ],
+  "words": [
+   25,
+   40
+  ],
+  "model": "Dear Grandma,\nI'm staying in a pretty gingerbread hotel in Candy Village. Yesterday we visited the chocolate river and I ate a huge ice cream. Tomorrow we're going to ride the sugar train!\nLove,\nLily",
+  "id": "a2-w04",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "I'm staying in …",
+     "Yesterday we …",
+     "Tomorrow we're going to …"
+    ]
+   },
+   {
+    "g": "🔗 Linking words",
+    "p": [
+     "and",
+     "but",
+     "because",
+     "so",
+     "then",
+     "after that",
+     "when"
+    ]
+   },
+   {
+    "g": "💌 Notes & emails",
+    "p": [
+     "Hi …,",
+     "Dear …,",
+     "Thanks for …",
+     "See you soon,",
+     "Love,"
+    ]
+   },
+   {
+    "g": "📖 Stories",
+    "p": [
+     "One day, …",
+     "Suddenly, …",
+     "In the end, …"
+    ]
+   }
+  ],
+  "level": "a2"
+ },
+ {
+  "genre": "note",
+  "part": "A2 Key · Writing Part 6 (note)",
+  "title": "A Note for Your Neighbour",
+  "task": "You are going away for the weekend. Write a note to your neighbour, Mrs Plum. • Ask her to feed your pet. • Say what it eats. • Say when you will be back.",
+  "points": [
+   {
+    "label": "Ask her to feed your pet",
+    "keys": [
+     "could you",
+     "can you",
+     "would you",
+     "please",
+     "feed"
+    ]
+   },
+   {
+    "label": "Say what it eats",
+    "keys": [
+     "eats",
+     "food",
+     "carrot",
+     "seed",
+     "fish",
+     "give her",
+     "give him"
+    ]
+   },
+   {
+    "label": "Say when you will be back",
+    "keys": [
+     "back",
+     "return",
+     "come home",
+     "home on"
+    ]
+   }
+  ],
+  "words": [
+   25,
+   40
+  ],
+  "model": "Dear Mrs Plum,\nCould you please feed my bunny, Puffbun, this weekend? She eats two carrots in the morning and some seeds in the evening. I'll be back on Sunday night. Thank you so much!\nTom",
+  "id": "a2-w05",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "Could you please …?",
+     "She eats …",
+     "I'll be back on …",
+     "Thank you so much!"
+    ]
+   },
+   {
+    "g": "🔗 Linking words",
+    "p": [
+     "and",
+     "but",
+     "because",
+     "so",
+     "then",
+     "after that",
+     "when"
+    ]
+   },
+   {
+    "g": "💌 Notes & emails",
+    "p": [
+     "Hi …,",
+     "Dear …,",
+     "Thanks for …",
+     "See you soon,",
+     "Love,"
+    ]
+   },
+   {
+    "g": "📖 Stories",
+    "p": [
+     "One day, …",
+     "Suddenly, …",
+     "In the end, …"
+    ]
+   }
+  ],
+  "level": "a2"
+ },
+ {
+  "genre": "story",
+  "part": "A2 Key · Writing Part 7 (picture story)",
+  "title": "The Magic Umbrella",
+  "task": "Look at the three pictures and write the story (35 words or more). 🖼️ 1: Leo finds an old umbrella in the rain. 🖼️ 2: He opens it and the wind lifts him up. 🖼️ 3: He lands on a cloud made of candy floss.",
+  "points": [
+   {
+    "label": "Picture 1: Leo finds the umbrella",
+    "keys": [
+     "found",
+     "saw",
+     "umbrella",
+     "rain"
+    ]
+   },
+   {
+    "label": "Picture 2: he opens it and flies",
+    "keys": [
+     "opened",
+     "open",
+     "flew",
+     "float",
+     "wind",
+     "lifted"
+    ]
+   },
+   {
+    "label": "Picture 3: he lands on a cloud",
+    "keys": [
+     "landed",
+     "cloud",
+     "arrived",
+     "candy floss"
+    ]
+   }
+  ],
+  "words": [
+   35,
+   45
+  ],
+  "model": "It was raining when Leo found an old blue umbrella in the park. He opened it and suddenly the wind lifted him up into the sky. Finally, he landed on a soft pink cloud made of candy floss!",
+  "id": "a2-w06",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "It was raining when …",
+     "Suddenly, …",
+     "Finally, …"
+    ]
+   },
+   {
+    "g": "🔗 Linking words",
+    "p": [
+     "and",
+     "but",
+     "because",
+     "so",
+     "then",
+     "after that",
+     "when"
+    ]
+   },
+   {
+    "g": "💌 Notes & emails",
+    "p": [
+     "Hi …,",
+     "Dear …,",
+     "Thanks for …",
+     "See you soon,",
+     "Love,"
+    ]
+   },
+   {
+    "g": "📖 Stories",
+    "p": [
+     "One day, …",
+     "Suddenly, …",
+     "In the end, …"
+    ]
+   }
+  ],
+  "level": "a2"
+ }
+]

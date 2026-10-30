@@ -1,0 +1,210 @@
+[
+ {
+  "type": "listen",
+  "say": "I was going to take the train, but there's a strike, so I'm getting a lift with my cousin instead.",
+  "q": "How will the speaker travel?",
+  "options": [
+   "in her cousin's car",
+   "by train",
+   "by bus",
+   "on foot"
+  ],
+  "answer": 0,
+  "explain": "'Getting a lift' = travelling in someone's car."
+ },
+ {
+  "type": "listen",
+  "say": "The concert has been moved from Friday to Sunday because the singer is unwell.",
+  "q": "Why was the concert moved?",
+  "options": [
+   "The singer is ill.",
+   "The weather is bad.",
+   "Tickets didn't sell.",
+   "The venue is closed."
+  ],
+  "answer": 0,
+  "explain": "Unwell = ill."
+ },
+ {
+  "type": "listen",
+  "say": "I don't mind cooking, but I really hate washing up afterwards.",
+  "q": "What does the speaker dislike?",
+  "options": [
+   "washing up",
+   "cooking",
+   "shopping",
+   "eating out"
+  ],
+  "answer": 0,
+  "explain": "'I don't mind' = it's OK; 'I really hate washing up'."
+ },
+ {
+  "type": "listen",
+  "say": "If you'd like a refund, you'll need to bring the receipt within thirty days.",
+  "q": "What do you need for a refund?",
+  "options": [
+   "the receipt",
+   "your ID card",
+   "the original box",
+   "a form"
+  ],
+  "answer": 0,
+  "explain": "'You'll need to bring the receipt.'"
+ },
+ {
+  "type": "listen",
+  "say": "Honestly, the book was much better than the film. They left out all the best parts.",
+  "q": "What does the speaker think?",
+  "options": [
+   "The book is better.",
+   "The film is better.",
+   "They are equally good.",
+   "She hasn't read the book."
+  ],
+  "answer": 0,
+  "explain": "'The book was much better than the film.'"
+ },
+ {
+  "type": "listen",
+  "say": "We're meeting at the café at ten. Oh wait, Jack can't make it until half ten, so let's say ten thirty.",
+  "q": "When will they meet?",
+  "options": [
+   "10:30",
+   "10:00",
+   "11:00",
+   "9:30"
+  ],
+  "answer": 0,
+  "explain": "They changed the time to half past ten."
+ },
+ {
+  "type": "listen",
+  "say": "Sorry, I didn't catch that. Could you say it again more slowly?",
+  "q": "What does the speaker want?",
+  "options": [
+   "to hear it again, slower",
+   "the other person to leave",
+   "the other person to speak louder",
+   "to write it down"
+  ],
+  "answer": 0,
+  "explain": "'Didn't catch that' = didn't hear or understand."
+ },
+ {
+  "type": "listen",
+  "say": "Turn left at the roundabout, go past the petrol station, and the hotel's on your right.",
+  "q": "Where is the hotel?",
+  "options": [
+   "on the right after the petrol station",
+   "on the left at the roundabout",
+   "opposite the petrol station",
+   "before the roundabout"
+  ],
+  "answer": 0,
+  "explain": "Left at the roundabout, past the petrol station, on your right."
+ },
+ {
+  "type": "listen",
+  "say": "I used to play the violin, but I gave it up when I started secondary school.",
+  "q": "Does the speaker play the violin now?",
+  "options": [
+   "No, not any more.",
+   "Yes, every day.",
+   "Yes, she teaches it.",
+   "She has just started."
+  ],
+  "answer": 0,
+  "explain": "'Used to' + 'gave it up' = not now."
+ },
+ {
+  "type": "listen",
+  "say": "Tickets are twelve pounds for adults, half price for children, and free for under-fives.",
+  "q": "How much is a ticket for an eight-year-old?",
+  "options": [
+   "£6",
+   "£12",
+   "free",
+   "£5"
+  ],
+  "answer": 0,
+  "explain": "Children pay half of £12 = £6."
+ },
+ {
+  "type": "listen",
+  "say": "The forecast says it'll clear up by lunchtime, so we might still have our picnic.",
+  "q": "How does the speaker feel?",
+  "options": [
+   "hopeful",
+   "disappointed",
+   "angry",
+   "completely certain"
+  ],
+  "answer": 0,
+  "explain": "'Might still' shows hope."
+ },
+ {
+  "type": "listen",
+  "say": "Could everyone please make sure their phones are switched off before the performance begins.",
+  "q": "Where is the speaker probably?",
+  "options": [
+   "in a theatre",
+   "in a hospital",
+   "in a library",
+   "in a classroom"
+  ],
+  "answer": 0,
+  "explain": "'Performance' suggests a theatre."
+ },
+ {
+  "type": "listen",
+  "say": "I'd recommend the fish. It's caught locally every morning.",
+  "q": "Why does the waiter recommend the fish?",
+  "options": [
+   "It's very fresh.",
+   "It's the cheapest.",
+   "It's the chef's favourite.",
+   "It's vegetarian."
+  ],
+  "answer": 0,
+  "explain": "Caught every morning = fresh."
+ },
+ {
+  "type": "listen",
+  "say": "Despite the rain, more than two thousand people turned up to the festival.",
+  "q": "How many people came?",
+  "options": [
+   "over 2,000",
+   "under 2,000",
+   "about 200",
+   "20,000"
+  ],
+  "answer": 0,
+  "explain": "'More than two thousand.'"
+ },
+ {
+  "type": "listen",
+  "say": "My manager asked me to work on Saturday, so I'll have to cancel our trip to the coast.",
+  "q": "Why is the trip cancelled?",
+  "options": [
+   "The speaker has to work.",
+   "The speaker is ill.",
+   "The weather is bad.",
+   "The car broke down."
+  ],
+  "answer": 0,
+  "explain": "The manager asked her to work on Saturday."
+ },
+ {
+  "type": "listen",
+  "say": "She's not just my sister. She's my best friend. We tell each other everything.",
+  "q": "What is their relationship like?",
+  "options": [
+   "very close",
+   "They often argue.",
+   "They rarely meet.",
+   "They don't trust each other."
+  ],
+  "answer": 0,
+  "explain": "Best friends who tell each other everything."
+ }
+]

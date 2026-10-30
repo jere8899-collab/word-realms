@@ -1,0 +1,194 @@
+[
+ {
+  "type": "mcq",
+  "q": "I ___ a student.",
+  "options": [
+   "am",
+   "is",
+   "are",
+   "be"
+  ],
+  "answer": 0,
+  "explain": "Use 'am' with 'I': I am, you are, he/she/it is."
+ },
+ {
+  "type": "mcq",
+  "q": "She ___ two brothers.",
+  "options": [
+   "has",
+   "have",
+   "haves",
+   "having"
+  ],
+  "answer": 0,
+  "explain": "With he/she/it we say 'has', not 'have'."
+ },
+ {
+  "type": "mcq",
+  "q": "They ___ from Spain.",
+  "options": [
+   "are",
+   "is",
+   "am",
+   "be"
+  ],
+  "answer": 0,
+  "explain": "'They' takes 'are'."
+ },
+ {
+  "type": "mcq",
+  "q": "This is ___ apple.",
+  "options": [
+   "an",
+   "a",
+   "two",
+   "many"
+  ],
+  "answer": 0,
+  "explain": "Use 'an' before a vowel sound: an apple, an egg."
+ },
+ {
+  "type": "mcq",
+  "q": "___ is your name?",
+  "options": [
+   "What",
+   "Who",
+   "Where",
+   "When"
+  ],
+  "answer": 0,
+  "explain": "We ask 'What is your name?'"
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ like coffee.",
+  "options": [
+   "don't",
+   "doesn't",
+   "not",
+   "no"
+  ],
+  "answer": 0,
+  "explain": "With 'I' the negative is 'don't' (do not)."
+ },
+ {
+  "type": "mcq",
+  "q": "He ___ football every Sunday.",
+  "options": [
+   "plays",
+   "play",
+   "playing",
+   "is play"
+  ],
+  "answer": 0,
+  "explain": "Present simple with he/she/it adds -s: he plays."
+ },
+ {
+  "type": "mcq",
+  "q": "There ___ three cats in the garden.",
+  "options": [
+   "are",
+   "is",
+   "am",
+   "be"
+  ],
+  "answer": 0,
+  "explain": "Plural nouns use 'there are'."
+ },
+ {
+  "type": "mcq",
+  "q": "The book is ___ the table.",
+  "options": [
+   "on",
+   "at",
+   "to",
+   "from"
+  ],
+  "answer": 0,
+  "explain": "Something touching the top surface is 'on' it."
+ },
+ {
+  "type": "mcq",
+  "q": "Can you ___?",
+  "options": [
+   "swim",
+   "swims",
+   "swimming",
+   "to swim"
+  ],
+  "answer": 0,
+  "explain": "After 'can' we use the base verb: can swim."
+ },
+ {
+  "type": "mcq",
+  "q": "These are my ___.",
+  "options": [
+   "shoes",
+   "shoe",
+   "shoeses",
+   "a shoe"
+  ],
+  "answer": 0,
+  "explain": "'These' is plural, so we need 'shoes'."
+ },
+ {
+  "type": "mcq",
+  "q": "___ you like ice cream?",
+  "options": [
+   "Do",
+   "Does",
+   "Are",
+   "Is"
+  ],
+  "answer": 0,
+  "explain": "Questions with 'you' + action verb use 'Do'."
+ },
+ {
+  "type": "mcq",
+  "q": "My birthday is ___ May.",
+  "options": [
+   "in",
+   "on",
+   "at",
+   "to"
+  ],
+  "answer": 0,
+  "explain": "Use 'in' with months: in May."
+ },
+ {
+  "type": "mcq",
+  "q": "Look! The baby ___.",
+  "options": [
+   "is sleeping",
+   "sleep",
+   "sleeps",
+   "are sleeping"
+  ],
+  "answer": 0,
+  "explain": "'Look!' shows it is happening now: present continuous."
+ },
+ {
+  "type": "mcq",
+  "q": "This is Tom. ___ is my friend.",
+  "options": [
+   "He",
+   "She",
+   "It",
+   "They"
+  ],
+  "answer": 0,
+  "explain": "Tom is a boy, so we use 'he'."
+ },
+ {
+  "type": "mcq",
+  "q": "We ___ at home yesterday.",
+  "options": [
+   "were",
+   "was",
+   "are",
+   "is"
+  ],
+  "answer": 0,
+  "explain": "Past of 'are' is 'were': we were."
+ }
+]

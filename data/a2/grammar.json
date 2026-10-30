@@ -1,0 +1,158 @@
+[
+ {
+  "type": "order",
+  "q": "Build the sentence in the candy shop!",
+  "answer": "She went to the market yesterday.",
+  "explain": "Past simple: subject + went + place + time."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence in the candy shop!",
+  "answer": "We are going to bake a cake.",
+  "explain": "'be going to' + verb for plans."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence in the candy shop!",
+  "answer": "Have you ever eaten candy floss?",
+  "explain": "Present perfect question: Have + you + ever + past participle."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence in the candy shop!",
+  "answer": "The bakery is bigger than the sweet shop.",
+  "explain": "Comparative: bigger than."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence in the candy shop!",
+  "answer": "I was walking home when it started to rain.",
+  "explain": "Past continuous (was walking) interrupted by past simple (started)."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence in the candy shop!",
+  "answer": "You mustn't eat sweets before dinner.",
+  "explain": "'mustn't' = it is not allowed."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence in the candy shop!",
+  "answer": "There isn't much sugar in the jar.",
+  "explain": "'much' with uncountable nouns like sugar."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence in the candy shop!",
+  "answer": "He has lived here since 2020.",
+  "explain": "Present perfect + since + a point in time."
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ to the cinema last night.",
+  "options": [
+   "went",
+   "go",
+   "have gone",
+   "goes"
+  ],
+  "answer": 0,
+  "explain": "'Last night' = finished past time → past simple."
+ },
+ {
+  "type": "mcq",
+  "q": "This cake is ___ than that one.",
+  "options": [
+   "sweeter",
+   "more sweet",
+   "sweetest",
+   "sweet"
+  ],
+  "answer": 0,
+  "explain": "Short adjectives: sweet → sweeter than."
+ },
+ {
+  "type": "mcq",
+  "q": "How ___ apples do you need?",
+  "options": [
+   "many",
+   "much",
+   "lot",
+   "any"
+  ],
+  "answer": 0,
+  "explain": "Apples are countable → how many."
+ },
+ {
+  "type": "mcq",
+  "q": "We ___ for the bus when it finally arrived.",
+  "options": [
+   "were waiting",
+   "are waiting",
+   "wait",
+   "have waited"
+  ],
+  "answer": 0,
+  "explain": "A longer past action (were waiting) interrupted by a short one."
+ },
+ {
+  "type": "mcq",
+  "q": "I've lived here ___ three years.",
+  "options": [
+   "for",
+   "since",
+   "from",
+   "during"
+  ],
+  "answer": 0,
+  "explain": "'for' + a period of time; 'since' + a starting point."
+ },
+ {
+  "type": "mcq",
+  "q": "You ___ wear a coat. It's warm today.",
+  "options": [
+   "don't have to",
+   "mustn't",
+   "have to",
+   "must"
+  ],
+  "answer": 0,
+  "explain": "'don't have to' = it isn't necessary."
+ },
+ {
+  "type": "mcq",
+  "q": "It's the ___ shop in the village.",
+  "options": [
+   "best",
+   "goodest",
+   "better",
+   "most good"
+  ],
+  "answer": 0,
+  "explain": "good → better → the best."
+ },
+ {
+  "type": "mcq",
+  "q": "Did you ___ the new bakery?",
+  "options": [
+   "visit",
+   "visited",
+   "visiting",
+   "visits"
+  ],
+  "answer": 0,
+  "explain": "After 'Did' use the base verb."
+ },
+ {
+  "type": "mcq",
+  "q": "If it rains, we ___ stay inside.",
+  "options": [
+   "will",
+   "would",
+   "are",
+   "did"
+  ],
+  "answer": 0,
+  "explain": "First conditional: If + present, will + verb."
+ }
+]

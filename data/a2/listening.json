@@ -1,0 +1,210 @@
+[
+ {
+  "type": "listen",
+  "say": "Excuse me, how do I get to the station? — Go straight on and take the second street on the left.",
+  "q": "How do you get to the station?",
+  "options": [
+   "second street on the left",
+   "first street on the left",
+   "second street on the right",
+   "straight on only"
+  ],
+  "answer": 0,
+  "explain": "'Take the second street on the left.'"
+ },
+ {
+  "type": "listen",
+  "say": "The museum opens at nine thirty, but the café doesn't open until eleven.",
+  "q": "When does the café open?",
+  "options": [
+   "11:00",
+   "9:30",
+   "10:00",
+   "12:00"
+  ],
+  "answer": 0,
+  "explain": "The café opens at eleven; the museum at 9:30."
+ },
+ {
+  "type": "listen",
+  "say": "I usually walk to school, but today I'm going by bike because I'm late.",
+  "q": "How is the speaker going to school today?",
+  "options": [
+   "by bike",
+   "on foot",
+   "by bus",
+   "by car"
+  ],
+  "answer": 0,
+  "explain": "Usually walks, but TODAY by bike."
+ },
+ {
+  "type": "listen",
+  "say": "These shoes were forty pounds, but in the sale they're only twenty-five.",
+  "q": "How much are the shoes now?",
+  "options": [
+   "£25",
+   "£40",
+   "£15",
+   "£45"
+  ],
+  "answer": 0,
+  "explain": "Now they cost twenty-five pounds."
+ },
+ {
+  "type": "listen",
+  "say": "Let's meet outside the cinema at quarter to seven.",
+  "q": "What time will they meet?",
+  "options": [
+   "6:45",
+   "7:15",
+   "7:45",
+   "6:15"
+  ],
+  "answer": 0,
+  "explain": "Quarter to seven = 6:45."
+ },
+ {
+  "type": "listen",
+  "say": "I'd like a cheese sandwich and a cup of tea, but no sugar, thanks.",
+  "q": "What does the speaker NOT want?",
+  "options": [
+   "sugar",
+   "cheese",
+   "tea",
+   "a sandwich"
+  ],
+  "answer": 0,
+  "explain": "'No sugar, thanks.'"
+ },
+ {
+  "type": "listen",
+  "say": "My sister is taller than me, but my brother is the tallest in the family.",
+  "q": "Who is the tallest?",
+  "options": [
+   "the brother",
+   "the sister",
+   "the speaker",
+   "the mother"
+  ],
+  "answer": 0,
+  "explain": "'My brother is the tallest.'"
+ },
+ {
+  "type": "listen",
+  "say": "Tomorrow will be cloudy in the morning, with sunshine in the afternoon.",
+  "q": "What will the afternoon be like?",
+  "options": [
+   "sunny",
+   "cloudy",
+   "rainy",
+   "snowy"
+  ],
+  "answer": 0,
+  "explain": "'Sunshine in the afternoon.'"
+ },
+ {
+  "type": "listen",
+  "say": "I've been to Paris twice, but I've never been to Rome.",
+  "q": "Where has the speaker never been?",
+  "options": [
+   "Rome",
+   "Paris",
+   "London",
+   "Madrid"
+  ],
+  "answer": 0,
+  "explain": "'I've never been to Rome.'"
+ },
+ {
+  "type": "listen",
+  "say": "The train to Oxford will leave from platform four. It's running ten minutes late.",
+  "q": "How late is the train?",
+  "options": [
+   "10 minutes",
+   "4 minutes",
+   "14 minutes",
+   "40 minutes"
+  ],
+  "answer": 0,
+  "explain": "'Ten minutes late.' Platform four is a distractor."
+ },
+ {
+  "type": "listen",
+  "say": "Can you buy some eggs and milk on your way home? We've got enough bread.",
+  "q": "What do they NOT need?",
+  "options": [
+   "bread",
+   "eggs",
+   "milk",
+   "butter"
+  ],
+  "answer": 0,
+  "explain": "'We've got enough bread.'"
+ },
+ {
+  "type": "listen",
+  "say": "The party is on Saturday the twenty-first, not Friday.",
+  "q": "When is the party?",
+  "options": [
+   "Saturday 21st",
+   "Friday 21st",
+   "Saturday 1st",
+   "Friday 20th"
+  ],
+  "answer": 0,
+  "explain": "Saturday the twenty-first."
+ },
+ {
+  "type": "listen",
+  "say": "I'm sorry, I can't come to football practice. I've got a terrible headache.",
+  "q": "Why can't the speaker go?",
+  "options": [
+   "a headache",
+   "homework",
+   "a sore leg",
+   "the rain"
+  ],
+  "answer": 0,
+  "explain": "'I've got a terrible headache.'"
+ },
+ {
+  "type": "listen",
+  "say": "My new flat has two bedrooms, a small kitchen and a lovely balcony.",
+  "q": "What is lovely?",
+  "options": [
+   "the balcony",
+   "the kitchen",
+   "the bedrooms",
+   "the garden"
+  ],
+  "answer": 0,
+  "explain": "'A lovely balcony.'"
+ },
+ {
+  "type": "listen",
+  "say": "The swimming pool is closed on Mondays for cleaning.",
+  "q": "Why is the pool closed on Mondays?",
+  "options": [
+   "for cleaning",
+   "for a holiday",
+   "for repairs",
+   "for a competition"
+  ],
+  "answer": 0,
+  "explain": "'Closed on Mondays for cleaning.'"
+ },
+ {
+  "type": "listen",
+  "say": "You can borrow three books for two weeks.",
+  "q": "How long can you keep the books?",
+  "options": [
+   "two weeks",
+   "three weeks",
+   "two days",
+   "three days"
+  ],
+  "answer": 0,
+  "explain": "Three books, two weeks."
+ }
+]

@@ -1,0 +1,194 @@
+[
+ {
+  "type": "mcq",
+  "q": "The ambassador's remarks were deliberately ___, allowing several interpretations.",
+  "options": [
+   "ambiguous",
+   "unequivocal",
+   "transparent",
+   "forthright"
+  ],
+  "answer": 0,
+  "explain": "Ambiguous = open to more than one meaning."
+ },
+ {
+  "type": "mcq",
+  "q": "That argument doesn't ___ water.",
+  "options": [
+   "hold",
+   "carry",
+   "keep",
+   "bear"
+  ],
+  "answer": 0,
+  "explain": "hold water = be logically sound."
+ },
+ {
+  "type": "mcq",
+  "q": "We must not ___ the importance of public trust.",
+  "options": [
+   "underestimate",
+   "undermine",
+   "undertake",
+   "understatement"
+  ],
+  "answer": 0,
+  "explain": "underestimate = think something is less important than it is."
+ },
+ {
+  "type": "mcq",
+  "q": "Her proposal was met with widespread ___.",
+  "options": [
+   "scepticism",
+   "sceptical",
+   "sceptic",
+   "scepticise"
+  ],
+  "answer": 0,
+  "explain": "A noun is needed after 'widespread'."
+ },
+ {
+  "type": "mcq",
+  "q": "The council ___ a compromise after hours of negotiation.",
+  "options": [
+   "hammered out",
+   "hammered in",
+   "knocked about",
+   "pulled through"
+  ],
+  "answer": 0,
+  "explain": "hammer out = reach an agreement after long discussion."
+ },
+ {
+  "type": "mcq",
+  "q": "The lord's claims are not ___ by the evidence.",
+  "options": [
+   "substantiated",
+   "substituted",
+   "subsidised",
+   "subordinated"
+  ],
+  "answer": 0,
+  "explain": "substantiate = support with proof."
+ },
+ {
+  "type": "mcq",
+  "q": "He tends to ___ around the bush instead of answering directly.",
+  "options": [
+   "beat",
+   "hit",
+   "shake",
+   "run"
+  ],
+  "answer": 0,
+  "explain": "beat around the bush = avoid the main point."
+ },
+ {
+  "type": "mcq",
+  "q": "The decision will have far-___ consequences.",
+  "options": [
+   "reaching",
+   "fetched",
+   "extending",
+   "flung"
+  ],
+  "answer": 0,
+  "explain": "far-reaching = wide-ranging. (far-fetched = unlikely)"
+ },
+ {
+  "type": "mcq",
+  "q": "Her ___ analysis exposed several flaws in the plan.",
+  "options": [
+   "incisive",
+   "indecisive",
+   "incessant",
+   "inclusive"
+  ],
+  "answer": 0,
+  "explain": "incisive = sharp and clear-thinking."
+ },
+ {
+  "type": "mcq",
+  "q": "The debate became increasingly ___, with insults on both sides.",
+  "options": [
+   "acrimonious",
+   "harmonious",
+   "ceremonious",
+   "unanimous"
+  ],
+  "answer": 0,
+  "explain": "acrimonious = angry and bitter."
+ },
+ {
+  "type": "mcq",
+  "q": "With ___, it's clear the plan was flawed from the start.",
+  "options": [
+   "hindsight",
+   "foresight",
+   "insight",
+   "oversight"
+  ],
+  "answer": 0,
+  "explain": "hindsight = understanding after the event."
+ },
+ {
+  "type": "mcq",
+  "q": "The treaty was a ___ moment in the kingdom's history.",
+  "options": [
+   "pivotal",
+   "marginal",
+   "trivial",
+   "peripheral"
+  ],
+  "answer": 0,
+  "explain": "pivotal = crucially important."
+ },
+ {
+  "type": "mcq",
+  "q": "She ___ her opponent's argument point by point.",
+  "options": [
+   "dismantled",
+   "disbanded",
+   "dislodged",
+   "disentangled"
+  ],
+  "answer": 0,
+  "explain": "dismantle an argument = take it apart."
+ },
+ {
+  "type": "mcq",
+  "q": "His apology seemed ___ rather than sincere.",
+  "options": [
+   "perfunctory",
+   "profound",
+   "heartfelt",
+   "wholehearted"
+  ],
+  "answer": 0,
+  "explain": "perfunctory = done with minimum effort, as a formality."
+ },
+ {
+  "type": "mcq",
+  "q": "Let's not jump to ___.",
+  "options": [
+   "conclusions",
+   "results",
+   "judgements",
+   "consequences"
+  ],
+  "answer": 0,
+  "explain": "jump to conclusions = decide too quickly."
+ },
+ {
+  "type": "mcq",
+  "q": "The new policy aims to ___ the gap between rich and poor.",
+  "options": [
+   "bridge",
+   "build",
+   "raise",
+   "broaden"
+  ],
+  "answer": 0,
+  "explain": "bridge the gap = reduce the difference."
+ }
+]

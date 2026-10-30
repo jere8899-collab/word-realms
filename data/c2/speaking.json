@@ -1,0 +1,182 @@
+[
+ {
+  "type": "read",
+  "text": "Under no circumstances should the ancient scrolls be removed from the library.",
+  "focus": "Negative inversion",
+  "tip": "Stress NO CIR-cum-stan-ces. 'ancient' is /ˈeɪnʃənt/. Keep /skr/ together in 'scrolls'.",
+  "id": "c2-sp01"
+ },
+ {
+  "type": "read",
+  "text": "Scarcely had the dragon closed its eyes when a faint rustling stirred the shadows.",
+  "focus": "Inversion: scarcely … when",
+  "tip": "The t in 'rustling' is silent: /ˈrʌslɪŋ/. Stress SCARCE-ly.",
+  "id": "c2-sp02"
+ },
+ {
+  "type": "read",
+  "text": "Her argument, though ostensibly watertight, rests on a rather tenuous assumption.",
+  "focus": "Nuanced vocabulary",
+  "tip": "os-TEN-si-bly, TEN-u-ous /ˈtenjuəs/, as-SUMP-tion. Lower your pitch for the inserted clause.",
+  "id": "c2-sp03"
+ },
+ {
+  "type": "read",
+  "text": "It goes without saying that the committee will have to bite the bullet sooner or later.",
+  "focus": "Idioms",
+  "tip": "'goes without saying' is one chunk. Stress BITE and BUL-let, and link 'sooner or later' with an r.",
+  "id": "c2-sp04"
+ },
+ {
+  "type": "read",
+  "text": "Much as I admire his tenacity, I can't condone the way he treated his rivals.",
+  "focus": "Concession: much as",
+  "tip": "te-NAC-i-ty /təˈnæsəti/ and con-DONE. Contrast ad-MIRE with CAN'T.",
+  "id": "c2-sp05"
+ },
+ {
+  "type": "read",
+  "text": "The historian's account, meticulously researched as it is, glosses over several inconvenient truths.",
+  "focus": "Word stress in long words",
+  "tip": "me-TIC-u-lous-ly and in-con-VEN-ient. 'truths' can be /truːðz/ or /truːθs/.",
+  "id": "c2-sp06"
+ },
+ {
+  "type": "read",
+  "text": "Only by acknowledging our mistakes can we hope to learn from them.",
+  "focus": "Inversion: only by",
+  "tip": "The k in 'acknowledging' is silent: /əkˈnɒlɪdʒɪŋ/. Stress ON-ly and LEARN.",
+  "id": "c2-sp07"
+ },
+ {
+  "type": "read",
+  "text": "To all intents and purposes, the treaty had become a dead letter.",
+  "focus": "Idiom: to all intents and purposes",
+  "tip": "Not 'intensive purposes'! A 'dead letter' is a rule that nobody follows any more.",
+  "id": "c2-sp08"
+ },
+ {
+  "type": "read",
+  "text": "Were the proposal to be rejected, the consequences would be far-reaching.",
+  "focus": "Formal inversion: were … to",
+  "tip": "Stress WERE at the start. 'far-reaching' has two strong beats: FAR-REACH-ing.",
+  "id": "c2-sp09"
+ },
+ {
+  "type": "read",
+  "text": "She has a knack for cutting through the jargon and getting to the heart of the matter.",
+  "focus": "Idioms and silent letters",
+  "tip": "The k in 'knack' is silent: /næk/. 'jargon' is /ˈdʒɑːɡən/. Stress HEART and MAT-ter.",
+  "id": "c2-sp10"
+ },
+ {
+  "type": "read",
+  "text": "The novelist's prose is so luminous that one almost forgives the meandering plot.",
+  "focus": "Vowels /uː/ and /ə/",
+  "tip": "LU-mi-nous /ˈluːmɪnəs/ and me-AN-der-ing /miˈændərɪŋ/.",
+  "id": "c2-sp11"
+ },
+ {
+  "type": "read",
+  "text": "Should you require any further assistance, please do not hesitate to contact us.",
+  "focus": "Formal register: inversion",
+  "tip": "'Should you' replaces 'If you'. HES-i-tate and as-SIS-tance.",
+  "id": "c2-sp12"
+ },
+ {
+  "type": "read",
+  "text": "No sooner had the ink dried on the contract than the dispute flared up again.",
+  "focus": "Inversion: no sooner … than",
+  "tip": "Stress NO SOON-er and pause before 'than'. Link 'flared up again' into 'flair-dup-a-gain'.",
+  "id": "c2-sp13"
+ },
+ {
+  "type": "read",
+  "text": "His remarks, however well-intentioned, struck many listeners as patronising.",
+  "focus": "Intonation: inserted clauses",
+  "tip": "PAT-ron-is-ing is /ˈpætrənaɪzɪŋ/ in British English. Drop your pitch for 'however well-intentioned'.",
+  "id": "c2-sp14"
+ },
+ {
+  "type": "read",
+  "text": "Far from being a hindrance, her unconventional background proved to be her greatest asset.",
+  "focus": "Fronted phrases",
+  "tip": "HIN-drance has two syllables. un-con-VEN-tion-al, AS-set.",
+  "id": "c2-sp15"
+ },
+ {
+  "type": "read",
+  "text": "The village elders were loath to admit that the prophecy had, in fact, been a hoax.",
+  "focus": "Easily confused: loath and loathe",
+  "tip": "'loath' (unwilling) ends in /θ/; 'loathe' (hate) ends in /ð/. PROPH-e-cy is /ˈprɒfəsi/.",
+  "id": "c2-sp16"
+ },
+ {
+  "type": "read",
+  "text": "Little by little, the once-thriving port fell into disrepair, its warehouses left to the mercy of the elements.",
+  "focus": "Long sentence: chunking",
+  "tip": "Chunks: Little by little | the once-thriving port fell into disrepair | its warehouses left to the mercy of the elements.",
+  "id": "c2-sp17"
+ },
+ {
+  "type": "answer",
+  "q": "To what extent should governments regulate artificial intelligence? Hedge your view with 'arguably'.",
+  "keywords": [
+   "arguably"
+  ],
+  "model": "Arguably, some regulation is essential, although too much of it could stifle innovation.",
+  "focus": "Speaking Part 4: Hedging",
+  "tip": "AR-gu-a-bly is stressed on the first syllable. Pause after it.",
+  "id": "c2-sp18",
+  "minWords": 8
+ },
+ {
+  "type": "answer",
+  "q": "Describe a turning point in your life using an inversion such as 'Only then did I…' or 'Never before had I…'.",
+  "keywords": [
+   "only then|never before|not until|little did|rarely|seldom|no sooner|only when"
+  ],
+  "model": "Only then did I realise how much my family had sacrificed for me.",
+  "focus": "Emphatic inversion",
+  "tip": "Stress the fronted phrase (ON-ly THEN) and keep the auxiliary 'did' light.",
+  "id": "c2-sp19",
+  "minWords": 8
+ },
+ {
+  "type": "answer",
+  "q": "'Exams are the fairest way to assess students.' Concede a point with 'Admittedly' or 'Granted', then disagree.",
+  "keywords": [
+   "admittedly|granted",
+   "but|however|yet|although|though"
+  ],
+  "model": "Admittedly, exams are consistent, but they reward memorisation rather than genuine understanding.",
+  "focus": "Speaking Part 4: Concession",
+  "tip": "Pause after the concession word and stress the contrast that follows.",
+  "id": "c2-sp20",
+  "minWords": 8
+ },
+ {
+  "type": "answer",
+  "q": "Describe something that went wrong but turned out well. Use the idiom 'a blessing in disguise'.",
+  "keywords": [
+   "blessing in disguise"
+  ],
+  "model": "Missing the train was a blessing in disguise, because I met my best friend on the next one.",
+  "focus": "Idiomatic language",
+  "tip": "'disguise' is /dɪsˈɡaɪz/ with a /z/ at the end. Stress BLESS-ing and dis-GUISE.",
+  "id": "c2-sp21",
+  "minWords": 8
+ },
+ {
+  "type": "answer",
+  "q": "Explain a tricky idea, such as inflation or gravity, in simple terms. Use 'In other words'.",
+  "keywords": [
+   "in other words"
+  ],
+  "model": "Inflation means prices rise over time. In other words, the same money buys you less.",
+  "focus": "Paraphrasing",
+  "tip": "Pause before and after 'In other words' and stress OTH-er.",
+  "id": "c2-sp22",
+  "minWords": 8
+ }
+]

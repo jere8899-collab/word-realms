@@ -1,0 +1,761 @@
+[
+ {
+  "genre": "summary",
+  "part": "C2 Proficiency · Writing Part 1 (essay on two texts)",
+  "title": "Should Magic Be Taught to Everyone?",
+  "task": "Read the two texts below. Write an essay summarising and evaluating the key points from both texts. Use your own words throughout as far as possible, and include your own ideas in your answer. Write 240–280 words.",
+  "texts": [
+   {
+    "title": "Text 1: A Gift for All",
+    "text": "Magic should no longer be the privilege of a gifted few. When spellcraft is confined to elite academies, the kingdom wastes the talents of thousands of children who never get the chance to discover their abilities. Universal teaching would not only uncover hidden potential but also demystify magic, making it less frightening to ordinary citizens."
+   },
+   {
+    "title": "Text 2: The Weight of Power",
+    "text": "Teaching magic to everyone sounds generous, but power without wisdom is dangerous. Most children lack the patience required to master even simple charms safely, and a single careless spell can cause lasting harm. Resources would be better spent on training fewer students thoroughly, ensuring that those who wield magic understand the responsibility it carries."
+   }
+  ],
+  "points": [
+   {
+    "label": "Summarise Text 1 (talent is wasted; teach everyone)",
+    "sets": [
+     [
+      "first text",
+      "first writer",
+      "text 1",
+      "the former",
+      "first author",
+      "first extract"
+     ],
+     [
+      "talent",
+      "potential",
+      "privilege",
+      "elite",
+      "few",
+      "everyone",
+      "universal"
+     ]
+    ],
+    "need": 2
+   },
+   {
+    "label": "Summarise Text 2 (danger; train fewer, thoroughly)",
+    "sets": [
+     [
+      "second text",
+      "second writer",
+      "text 2",
+      "the latter",
+      "second author",
+      "second extract"
+     ],
+     [
+      "danger",
+      "disaster",
+      "risk",
+      "harm",
+      "responsib",
+      "wisdom",
+      "fewer",
+      "thorough"
+     ]
+    ],
+    "need": 2
+   },
+   {
+    "label": "Evaluate both writers' arguments",
+    "keys": [
+     "convincing",
+     "persuasive",
+     "valid",
+     "overlook",
+     "fail to",
+     "underestimate",
+     "compelling",
+     "flawed",
+     "oversimplif"
+    ]
+   },
+   {
+    "label": "Give your own view",
+    "keys": [
+     "on balance",
+     "ultimately",
+     "in conclusion",
+     "to conclude",
+     "all things considered",
+     "overall",
+     "to sum up",
+     "taking everything into account",
+     "my own view",
+     "i would contend",
+     "i am inclined"
+    ]
+   }
+  ],
+  "words": [
+   240,
+   280
+  ],
+  "model": "Both texts address whether magic should be taught to every child, yet they reach strikingly different conclusions.\n\nThe first text contends that restricting magical education to elite academies squanders the talent of countless children who are never given the opportunity to discover what they can do. Universal teaching, the writer argues, would reveal this hidden potential and, as a welcome side effect, make magic seem less threatening to the general population. This is a compelling point, not least because fear of the unknown has historically fuelled prejudice. However, the writer rather glosses over the practical question of how such teaching would be made safe.\n\nThis is precisely the concern of the second writer, who maintains that power in the hands of the immature is a recipe for disaster. Since most children lack the patience to learn even basic charms properly, it would be wiser to train fewer students in depth. The argument is persuasive insofar as safety must come first, but it rests on the questionable assumption that only a select few are capable of responsibility. Were that true, we would hardly allow teenagers to learn to drive.\n\nUltimately, I would contend that the two positions are less incompatible than they appear. Rather than choosing between universal access and rigorous training, the kingdom could offer every child a foundation course focused on safety and ethics, reserving advanced study for those who demonstrate both aptitude and maturity. In this way, talent would be discovered without being recklessly unleashed, and responsibility would be taught as a core part of magic itself rather than as an afterthought.",
+  "id": "c2-w01",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "The first text contends that …",
+     "The second writer, by contrast, …",
+     "While both writers acknowledge …",
+     "This argument rests on the assumption that …",
+     "Ultimately, I would contend that …"
+    ]
+   },
+   {
+    "g": "🔗 Cohesion",
+    "p": [
+     "albeit",
+     "insofar as",
+     "Notwithstanding …,",
+     "By the same token, …",
+     "That said, …",
+     "Be that as it may, …",
+     "whereby"
+    ]
+   },
+   {
+    "g": "📚 Summarising & evaluating",
+    "p": [
+     "The first text contends that …",
+     "The second writer, by contrast, …",
+     "Both writers acknowledge that …",
+     "This argument rests on the assumption that …",
+     "This view overlooks …"
+    ]
+   },
+   {
+    "g": "✨ Advanced structures",
+    "p": [
+     "Rarely has …",
+     "Little do we realise …",
+     "It is precisely … that …",
+     "Were it not for …",
+     "Had … , … would have …"
+    ]
+   }
+  ],
+  "level": "c2"
+ },
+ {
+  "genre": "summary",
+  "part": "C2 Proficiency · Writing Part 1 (essay on two texts)",
+  "title": "The Value of Failure",
+  "task": "Read the two texts below. Write an essay summarising and evaluating the key points from both texts. Use your own words throughout as far as possible, and include your own ideas in your answer. Write 240–280 words.",
+  "texts": [
+   {
+    "title": "Text 1: Fall Seven Times",
+    "text": "Every great knight has fallen from a horse. Failure is not the opposite of success but its apprenticeship: it exposes our weaknesses, builds resilience and teaches lessons that no triumph ever could. Schools that shield pupils from failure produce young people who crumble at the first setback."
+   },
+   {
+    "title": "Text 2: In Praise of Getting It Right",
+    "text": "The fashionable celebration of failure has gone too far. Failing is often simply painful and discouraging, and repeated failure can convince young people that they are incapable. Rather than romanticising mistakes, we should design learning so that pupils experience frequent, well-earned success, which is what truly builds confidence."
+   }
+  ],
+  "points": [
+   {
+    "label": "Summarise Text 1 (failure builds resilience)",
+    "sets": [
+     [
+      "first text",
+      "first writer",
+      "text 1",
+      "the former",
+      "first author",
+      "first extract"
+     ],
+     [
+      "resilien",
+      "lesson",
+      "weakness",
+      "shortcoming",
+      "setback",
+      "shield",
+      "protected",
+      "apprentice"
+     ]
+    ],
+    "need": 2
+   },
+   {
+    "label": "Summarise Text 2 (success builds confidence)",
+    "sets": [
+     [
+      "second text",
+      "second writer",
+      "text 2",
+      "the latter",
+      "second author",
+      "second extract"
+     ],
+     [
+      "success",
+      "confiden",
+      "discourag",
+      "romantic",
+      "incapable",
+      "painful",
+      "self-belief"
+     ]
+    ],
+    "need": 2
+   },
+   {
+    "label": "Evaluate both writers' arguments",
+    "keys": [
+     "convincing",
+     "persuasive",
+     "valid",
+     "overlook",
+     "fail to",
+     "underestimate",
+     "compelling",
+     "flawed",
+     "oversimplif"
+    ]
+   },
+   {
+    "label": "Give your own view",
+    "keys": [
+     "on balance",
+     "ultimately",
+     "in conclusion",
+     "to conclude",
+     "all things considered",
+     "overall",
+     "to sum up",
+     "taking everything into account",
+     "my own view",
+     "i would contend",
+     "i am inclined"
+    ]
+   }
+  ],
+  "words": [
+   240,
+   280
+  ],
+  "model": "The two texts take opposing views on the role that failure should play in education, although, on closer inspection, they share more common ground than first appears.\n\nThe first writer maintains that failure is an essential stage on the road to success. Setbacks, it is argued, reveal our shortcomings and develop the resilience that achievement alone cannot provide, so pupils who are protected from failure will struggle to cope with adult life. The image of the fallen knight is memorable, and the underlying point is valid: anyone who has learnt a skill knows that mistakes are unavoidable.\n\nThe second text, however, takes issue with what it sees as a romantic glorification of failure. Its author points out that repeated failure is more likely to crush a learner's self-belief than to strengthen it, and that confidence is actually built through regular, deserved success. This is a persuasive corrective, particularly for struggling pupils, for whom yet another failure is hardly an inspiring lesson.\n\nBe that as it may, the second writer arguably oversimplifies the first text, which never suggests that failure should be pursued for its own sake. What both writers would no doubt agree on is that the experience of failure matters less than how it is handled.\n\nOn balance, it seems to me that the most effective classrooms combine the two insights. Tasks should be pitched so that success is usually within reach, yet pupils should also be given safe opportunities to fail and, crucially, guidance on how to learn from it. Failure, in other words, is valuable only when it is followed by a way forward.",
+  "id": "c2-w02",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "The first writer maintains that …",
+     "The second text takes issue with …",
+     "Both writers would no doubt agree that …",
+     "Be that as it may, …",
+     "On balance, it seems to me that …"
+    ]
+   },
+   {
+    "g": "🔗 Cohesion",
+    "p": [
+     "albeit",
+     "insofar as",
+     "Notwithstanding …,",
+     "By the same token, …",
+     "That said, …",
+     "Be that as it may, …",
+     "whereby"
+    ]
+   },
+   {
+    "g": "📚 Summarising & evaluating",
+    "p": [
+     "The first text contends that …",
+     "The second writer, by contrast, …",
+     "Both writers acknowledge that …",
+     "This argument rests on the assumption that …",
+     "This view overlooks …"
+    ]
+   },
+   {
+    "g": "✨ Advanced structures",
+    "p": [
+     "Rarely has …",
+     "Little do we realise …",
+     "It is precisely … that …",
+     "Were it not for …",
+     "Had … , … would have …"
+    ]
+   }
+  ],
+  "level": "c2"
+ },
+ {
+  "genre": "summary",
+  "part": "C2 Proficiency · Writing Part 1 (essay on two texts)",
+  "title": "Libraries in the Digital Age",
+  "task": "Read the two texts below. Write an essay summarising and evaluating the key points from both texts. Use your own words throughout as far as possible, and include your own ideas in your answer. Write 240–280 words.",
+  "texts": [
+   {
+    "title": "Text 1: Dusty Shelves",
+    "text": "Public libraries are relics of a world without the internet. Almost any book can now be downloaded in seconds, and maintaining vast buildings full of paper is an expensive indulgence. The money would be better invested in digital resources that every citizen can access from home."
+   },
+   {
+    "title": "Text 2: More Than Books",
+    "text": "To judge libraries purely by their books is to misunderstand them. They are among the last public spaces where anyone may stay without spending money: a warm refuge for the lonely, a study room for students without quiet homes and a place where those without technology can still get online."
+   }
+  ],
+  "points": [
+   {
+    "label": "Summarise Text 1 (libraries are outdated)",
+    "sets": [
+     [
+      "first text",
+      "first writer",
+      "text 1",
+      "the former",
+      "first author",
+      "first extract"
+     ],
+     [
+      "relic",
+      "outdated",
+      "obsolete",
+      "download",
+      "digital",
+      "expensive",
+      "financial"
+     ]
+    ],
+    "need": 2
+   },
+   {
+    "label": "Summarise Text 2 (libraries as public spaces)",
+    "sets": [
+     [
+      "second text",
+      "second writer",
+      "text 2",
+      "the latter",
+      "second author",
+      "second extract"
+     ],
+     [
+      "space",
+      "refuge",
+      "shelter",
+      "lonely",
+      "isolated",
+      "community",
+      "study",
+      "free",
+      "without spending"
+     ]
+    ],
+    "need": 2
+   },
+   {
+    "label": "Evaluate both writers' arguments",
+    "keys": [
+     "convincing",
+     "persuasive",
+     "valid",
+     "overlook",
+     "fail to",
+     "underestimate",
+     "compelling",
+     "flawed",
+     "oversimplif"
+    ]
+   },
+   {
+    "label": "Give your own view",
+    "keys": [
+     "on balance",
+     "ultimately",
+     "in conclusion",
+     "to conclude",
+     "all things considered",
+     "overall",
+     "to sum up",
+     "taking everything into account",
+     "my own view",
+     "i would contend",
+     "i am inclined"
+    ]
+   }
+  ],
+  "words": [
+   240,
+   280
+  ],
+  "model": "The question of whether public libraries still have a place in a digital society divides the two writers sharply.\n\nThe first text dismisses libraries as outdated institutions, arguing that since books can now be downloaded almost instantly, it makes little financial sense to maintain enormous buildings filled with paper. Public money, the writer suggests, should instead be spent on digital collections accessible from anyone's home. The argument has a certain economic logic, yet it rests on the assumption that every citizen has a reliable device and internet connection, which is far from the case.\n\nIt is precisely this oversight that the second writer exposes. By contrast with the first text, it contends that a library's true value lies not in its shelves but in its function as one of the few remaining public spaces where nobody is required to spend money. Libraries offer shelter to isolated people, a quiet place to study for those who lack one and free access to technology for those who cannot afford it. This is, in my view, the more convincing analysis, because it considers who actually uses libraries rather than who could theoretically do without them.\n\nThat said, the first writer is right that libraries cannot remain unchanged. A library that ignores the digital revolution will struggle to justify its funding.\n\nUltimately, I would contend that the choice between paper and pixels is a false one. The most successful libraries are already becoming community hubs that lend e-books as well as novels, run digital skills classes and host local events. Far from being relics, such libraries may prove more necessary than ever in an increasingly isolated world.",
+  "id": "c2-w03",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "The first text dismisses … as …",
+     "By contrast, the second writer …",
+     "This view, however, overlooks …",
+     "It is precisely … that …",
+     "Ultimately, …"
+    ]
+   },
+   {
+    "g": "🔗 Cohesion",
+    "p": [
+     "albeit",
+     "insofar as",
+     "Notwithstanding …,",
+     "By the same token, …",
+     "That said, …",
+     "Be that as it may, …",
+     "whereby"
+    ]
+   },
+   {
+    "g": "📚 Summarising & evaluating",
+    "p": [
+     "The first text contends that …",
+     "The second writer, by contrast, …",
+     "Both writers acknowledge that …",
+     "This argument rests on the assumption that …",
+     "This view overlooks …"
+    ]
+   },
+   {
+    "g": "✨ Advanced structures",
+    "p": [
+     "Rarely has …",
+     "Little do we realise …",
+     "It is precisely … that …",
+     "Were it not for …",
+     "Had … , … would have …"
+    ]
+   }
+  ],
+  "level": "c2"
+ },
+ {
+  "genre": "letter",
+  "part": "C2 Proficiency · Writing Part 2 (formal letter)",
+  "title": "Letter to the Starlight Library Board",
+  "task": "The board of the Starlight Library plans to sell its collection of rare dragon manuscripts to a private collector to pay for repairs. Write a letter to the board objecting to the sale, acknowledging the financial pressures and proposing an alternative. Write 240–280 words.",
+  "formal": true,
+  "points": [
+   {
+    "label": "State your purpose",
+    "keys": [
+     "i am writing",
+     "i write",
+     "regarding",
+     "with reference",
+     "to express"
+    ]
+   },
+   {
+    "label": "Explain why the sale is wrong",
+    "keys": [
+     "irreplaceable",
+     "irreversible",
+     "heritage",
+     "public access",
+     "scholars",
+     "lost",
+     "never be"
+    ]
+   },
+   {
+    "label": "Acknowledge the board's position",
+    "keys": [
+     "i appreciate",
+     "i recognise",
+     "i recognize",
+     "admittedly",
+     "understandabl",
+     "i acknowledge",
+     "i am aware"
+    ]
+   },
+   {
+    "label": "Propose an alternative",
+    "keys": [
+     "alternative",
+     "propose",
+     "instead",
+     "rather than",
+     "suggest"
+    ]
+   }
+  ],
+  "words": [
+   240,
+   280
+  ],
+  "model": "Dear Members of the Board,\n\nI write to express my deep concern at the proposal to sell the library's collection of dragon manuscripts to a private buyer. Having consulted these documents for my own research over many years, I am convinced that their sale would be an irreversible mistake.\n\nWhilst I fully appreciate the financial pressures the library faces, and I recognise that the roof repairs cannot be postponed indefinitely, the manuscripts are not merely assets to be traded. They are the only surviving record of the dragon dialects, and scholars from across the continent travel here specifically to study them. Were they to disappear into a private collection, public access would almost certainly be lost for generations, and with it a significant part of our shared heritage.\n\nMoreover, the sale would set a troubling precedent. If the board is prepared to part with its rarest treasures to solve one crisis, what is to prevent the same reasoning being applied the next time funds run short?\n\nI would therefore like to propose an alternative. Rather than selling the collection, the library could launch a public appeal, offering supporters the chance to sponsor the conservation of individual manuscripts. A touring exhibition of high-quality facsimiles could also generate considerable income while the originals remain safely at home. Should the board wish to explore these ideas, I would be glad to help draft a funding application to the Royal Heritage Trust.\n\nI urge you to reconsider before a decision is made that cannot be undone.\n\nYours faithfully,\nDr Imogen Vale",
+  "id": "c2-w04",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "I write to express my deep concern at …",
+     "Whilst I fully appreciate …",
+     "Were the manuscripts to be sold, …",
+     "Should the board wish to …",
+     "Yours faithfully,"
+    ]
+   },
+   {
+    "g": "🔗 Cohesion",
+    "p": [
+     "albeit",
+     "insofar as",
+     "Notwithstanding …,",
+     "By the same token, …",
+     "That said, …",
+     "Be that as it may, …",
+     "whereby"
+    ]
+   },
+   {
+    "g": "📚 Summarising & evaluating",
+    "p": [
+     "The first text contends that …",
+     "The second writer, by contrast, …",
+     "Both writers acknowledge that …",
+     "This argument rests on the assumption that …",
+     "This view overlooks …"
+    ]
+   },
+   {
+    "g": "✨ Advanced structures",
+    "p": [
+     "Rarely has …",
+     "Little do we realise …",
+     "It is precisely … that …",
+     "Were it not for …",
+     "Had … , … would have …"
+    ]
+   }
+  ],
+  "level": "c2"
+ },
+ {
+  "genre": "review",
+  "part": "C2 Proficiency · Writing Part 2 (review)",
+  "title": "Review: An Evening at the Dragon Opera",
+  "task": "An arts magazine has invited readers to review a live performance they attended recently. Write a review evaluating the production, comparing it with your expectations and saying which audiences it would suit. Write 240–280 words.",
+  "points": [
+   {
+    "label": "What you saw",
+    "keys": [
+     "production",
+     "opera",
+     "performance",
+     "staged",
+     "perform"
+    ]
+   },
+   {
+    "label": "Evaluate its strengths",
+    "keys": [
+     "voice",
+     "staging",
+     "costume",
+     "score",
+     "captivat",
+     "remarkable",
+     "masterful",
+     "superb"
+    ]
+   },
+   {
+    "label": "Your reservations",
+    "keys": [
+     "albeit",
+     "if anything",
+     "falter",
+     "drawback",
+     "misstep",
+     "uneven",
+     "reservation"
+    ]
+   },
+   {
+    "label": "Compare with your expectations",
+    "keys": [
+     "expect",
+     "anticipat",
+     "had assumed",
+     "surpass",
+     "exceed",
+     "fell short"
+    ]
+   },
+   {
+    "label": "Who it would suit",
+    "keys": [
+     "recommend",
+     "worth",
+     "audience",
+     "anyone who",
+     "those who",
+     "should not miss",
+     "not to be missed"
+    ]
+   }
+  ],
+  "words": [
+   240,
+   280
+  ],
+  "model": "Fire and Feeling: The Dragon's Lament\n\nI confess that I arrived at the Starlight Opera House expecting little more than an expensive spectacle. The Dragon's Lament had been marketed almost entirely on its special effects, and I had assumed that the music would play second fiddle to the pyrotechnics. Rarely have I been so pleased to be proved wrong.\n\nThe production tells the story of an ageing dragon who must decide whether to surrender her hoard to save the city that despises her. What lingers in the memory is not the fire, impressive as it is, but the extraordinary performance of Mara Kell in the title role. Her voice moves effortlessly from a menacing growl to a fragile whisper, and her final aria, sung almost motionless in a single shaft of light, left much of the audience in tears.\n\nThe staging is equally remarkable. Rather than relying on a mechanical dragon, the director uses twelve dancers in shimmering costumes who together form the creature's body, a device that is both ingenious and strangely moving.\n\nIf anything, the production falters only in its second act, where a subplot involving two squabbling knights adds comic relief, albeit at the expense of momentum. The score, too, occasionally borrows rather too obviously from more famous works.\n\nThese are minor reservations, however. The opera surpassed my expectations in every way that matters, and it deserves to be remembered for its heart rather than its flames. Seasoned opera lovers will find much to admire, while those who have never set foot in an opera house could hardly hope for a more captivating introduction. It is not to be missed.",
+  "id": "c2-w05",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "Rarely has a production …",
+     "What lingers in the memory is …",
+     "If anything, …",
+     "…, albeit …",
+     "Those who … should not miss it."
+    ]
+   },
+   {
+    "g": "🔗 Cohesion",
+    "p": [
+     "albeit",
+     "insofar as",
+     "Notwithstanding …,",
+     "By the same token, …",
+     "That said, …",
+     "Be that as it may, …",
+     "whereby"
+    ]
+   },
+   {
+    "g": "📚 Summarising & evaluating",
+    "p": [
+     "The first text contends that …",
+     "The second writer, by contrast, …",
+     "Both writers acknowledge that …",
+     "This argument rests on the assumption that …",
+     "This view overlooks …"
+    ]
+   },
+   {
+    "g": "✨ Advanced structures",
+    "p": [
+     "Rarely has …",
+     "Little do we realise …",
+     "It is precisely … that …",
+     "Were it not for …",
+     "Had … , … would have …"
+    ]
+   }
+  ],
+  "level": "c2"
+ },
+ {
+  "genre": "article",
+  "part": "C2 Proficiency · Writing Part 2 (article)",
+  "title": "The Lost Art of Doing Nothing",
+  "task": "A magazine is publishing a series on modern life. Write an article entitled “The Lost Art of Doing Nothing”, explaining why people find it so hard to be idle, what we lose as a result and how readers might rediscover the value of doing nothing. Write 240–280 words.",
+  "points": [
+   {
+    "label": "Why idleness is hard today",
+    "keys": [
+     "busy",
+     "productiv",
+     "guilt",
+     "phone",
+     "screen",
+     "constant",
+     "pressure",
+     "notification",
+     "scroll"
+    ]
+   },
+   {
+    "label": "What we lose",
+    "keys": [
+     "creativ",
+     "rest",
+     "reflect",
+     "wander",
+     "ideas",
+     "imagination",
+     "wellbeing",
+     "well-being",
+     "recharge"
+    ]
+   },
+   {
+    "label": "How readers can rediscover it",
+    "keys": [
+     "try",
+     "next time",
+     "why not",
+     "consider",
+     "start by",
+     "set aside",
+     "resist"
+    ]
+   }
+  ],
+  "words": [
+   240,
+   280
+  ],
+  "model": "The Lost Art of Doing Nothing\n\nWhen did you last sit on a bench and simply watch the clouds drift by, without reaching for your phone? If you cannot remember, you are in good company. Doing nothing has become one of the rarest activities of modern life.\n\nIt is not that we lack free moments, but rather that we have learnt to fill every one of them. Waiting for a bus, queuing for coffee, even lying in bed, we scroll, check and reply. Behind this constant activity lies a quiet sense of guilt: in a culture that measures our worth by our productivity, an idle hour feels like a small moral failure.\n\nLittle do we realise how much this costs us. Psychologists have long observed that the wandering mind is far from inactive; it is in moments of apparent idleness that the brain connects distant ideas, processes experiences and stumbles upon creative solutions. Paradoxically, the people who never stop working may be depriving themselves of their best ideas. Our wellbeing suffers too, since a mind that is never allowed to rest can never fully recharge.\n\nRediscovering the art of doing nothing does not require a retreat to a mountain monastery. Start by setting aside ten minutes a day with no screen, no task and no goal. Resist the urge to call it meditation or to measure its benefits, which would only turn it into another chore. Simply sit, look and let your thoughts go wherever they please.\n\nSo the next time you find yourself with an empty moment, consider leaving it empty. You may be surprised by what fills it.",
+  "id": "c2-w06",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "When did you last …?",
+     "It is not that … but rather that …",
+     "Little do we realise …",
+     "Paradoxically, …",
+     "So the next time …, …"
+    ]
+   },
+   {
+    "g": "🔗 Cohesion",
+    "p": [
+     "albeit",
+     "insofar as",
+     "Notwithstanding …,",
+     "By the same token, …",
+     "That said, …",
+     "Be that as it may, …",
+     "whereby"
+    ]
+   },
+   {
+    "g": "📚 Summarising & evaluating",
+    "p": [
+     "The first text contends that …",
+     "The second writer, by contrast, …",
+     "Both writers acknowledge that …",
+     "This argument rests on the assumption that …",
+     "This view overlooks …"
+    ]
+   },
+   {
+    "g": "✨ Advanced structures",
+    "p": [
+     "Rarely has …",
+     "Little do we realise …",
+     "It is precisely … that …",
+     "Were it not for …",
+     "Had … , … would have …"
+    ]
+   }
+  ],
+  "level": "c2"
+ }
+]

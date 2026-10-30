@@ -1,0 +1,156 @@
+[
+ {
+  "type": "read",
+  "text": "Hello! My name is Lily.",
+  "focus": "Intonation: greetings",
+  "tip": "Let your voice go up on 'Hello!' and stress the first part of LI-ly /ˈlɪli/.",
+  "id": "a1-sp01"
+ },
+ {
+  "type": "read",
+  "text": "I am seven years old.",
+  "focus": "Numbers",
+  "tip": "'Seven' has two syllables: SEV-en /ˈsevn/. Touch your top teeth to your bottom lip for /v/.",
+  "id": "a1-sp02"
+ },
+ {
+  "type": "read",
+  "text": "This is my little cat.",
+  "focus": "Short vowels /ɪ/ and /æ/",
+  "tip": "'This' and 'little' have a short /ɪ/. For 'cat' /æ/, open your mouth wide.",
+  "id": "a1-sp03"
+ },
+ {
+  "type": "read",
+  "text": "I like apples and bananas.",
+  "focus": "Linking",
+  "tip": "Join the words: 'like apples' sounds like 'li-kapples'. Stress ba-NA-nas.",
+  "id": "a1-sp04"
+ },
+ {
+  "type": "read",
+  "text": "She has a red bag.",
+  "focus": "Sound: /h/",
+  "tip": "Breathe out for the /h/ in 'has'. Don't drop it!",
+  "id": "a1-sp05"
+ },
+ {
+  "type": "read",
+  "text": "We live in a small house.",
+  "focus": "Sounds: /w/ and /v/",
+  "tip": "'We' starts with round lips /w/. 'live' ends with teeth on your lip /v/.",
+  "id": "a1-sp06"
+ },
+ {
+  "type": "read",
+  "text": "The sun is hot today.",
+  "focus": "Sound: /ð/ (voiced th)",
+  "tip": "Put your tongue between your teeth for 'the' /ð/ and make it buzz.",
+  "id": "a1-sp07"
+ },
+ {
+  "type": "read",
+  "text": "I have three brothers.",
+  "focus": "Sounds: /θ/ and /ð/",
+  "tip": "'Three' has /θ/ (no buzz) and 'brothers' has /ð/ (buzz). Your tongue goes between your teeth for both!",
+  "id": "a1-sp08"
+ },
+ {
+  "type": "read",
+  "text": "My dog runs in the park.",
+  "focus": "Final -s /z/",
+  "tip": "'runs' ends with a buzzy /z/: /rʌnz/. In British English 'park' has a long /ɑː/ and no 'r' sound.",
+  "id": "a1-sp09"
+ },
+ {
+  "type": "read",
+  "text": "He gets up at seven o'clock.",
+  "focus": "Linking",
+  "tip": "Link 'gets up at' so it sounds like 'get-sup-at'. Stress SEV-en and o'CLOCK.",
+  "id": "a1-sp10"
+ },
+ {
+  "type": "read",
+  "text": "Can you help me, please?",
+  "focus": "Intonation: requests",
+  "tip": "Say 'can' softly as /kən/. Your voice goes up politely on 'please?'",
+  "id": "a1-sp11"
+ },
+ {
+  "type": "read",
+  "text": "The princess has long yellow hair.",
+  "focus": "Sound: /h/ and silent r",
+  "tip": "British English doesn't say the 'r' in 'hair' /heə/. Breathe out for the /h/.",
+  "id": "a1-sp12"
+ },
+ {
+  "type": "read",
+  "text": "There are four birds in the tree.",
+  "focus": "Sounds: /tr/ and /θ/",
+  "tip": "'tree' starts with /t/, not /θ/ ('three'). 'four' rhymes with 'door' /fɔː/.",
+  "id": "a1-sp13"
+ },
+ {
+  "type": "read",
+  "text": "I don't like milk.",
+  "focus": "Contractions",
+  "tip": "Say 'don't' as one beat /dəʊnt/. It's 'do' and 'not' joined together.",
+  "id": "a1-sp14"
+ },
+ {
+  "type": "read",
+  "text": "What is your favourite colour?",
+  "focus": "Intonation: wh- questions",
+  "tip": "Wh- questions usually go DOWN at the end. 'favourite' often has two syllables: /ˈfeɪvrɪt/.",
+  "id": "a1-sp15"
+ },
+ {
+  "type": "read",
+  "text": "It is a big green frog.",
+  "focus": "Consonant clusters /gr/ /fr/",
+  "tip": "Don't add a vowel: say 'green' /ɡriːn/, not 'ge-reen', and 'frog' /frɒɡ/.",
+  "id": "a1-sp16"
+ },
+ {
+  "type": "read",
+  "text": "My mum makes cakes on Sundays.",
+  "focus": "Final -s /s/",
+  "tip": "'makes' and 'cakes' end with a hissing /s/. 'Sundays' ends with a buzzy /z/.",
+  "id": "a1-sp17"
+ },
+ {
+  "type": "read",
+  "text": "The fairy lives in the forest.",
+  "focus": "Word stress",
+  "tip": "Stress the first syllable of each long word: FAI-ry, FOR-est.",
+  "id": "a1-sp18"
+ },
+ {
+  "type": "read",
+  "text": "We play football after school.",
+  "focus": "Long vowel /uː/",
+  "tip": "'school' has a long /uː/: /skuːl/. Stress FOOT-ball and AF-ter.",
+  "id": "a1-sp19"
+ },
+ {
+  "type": "read",
+  "text": "I can swim, but I can't fly.",
+  "focus": "can vs can't",
+  "tip": "Weak 'can' is /kən/. Strong 'can't' is /kɑːnt/ with a long British /ɑː/. The difference matters!",
+  "id": "a1-sp20"
+ },
+ {
+  "type": "read",
+  "text": "Thank you for the birthday present.",
+  "focus": "Sound: /θ/",
+  "tip": "'Thank' and 'birthday' both have /θ/: tongue between your teeth and push air out. Stress PRES-ent.",
+  "id": "a1-sp21"
+ },
+ {
+  "type": "read",
+  "text": "Where is the castle?",
+  "focus": "Silent letters",
+  "tip": "The 't' in 'castle' is silent: /ˈkɑːsl/.",
+  "id": "a1-sp22"
+ }
+]

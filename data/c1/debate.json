@@ -1,0 +1,98 @@
+[
+ {
+  "motion": "The castle should open its library to all villagers.",
+  "prompt": "Which is the STRONGEST argument FOR the motion?",
+  "options": [
+   "Free access to books has been shown to raise literacy across a whole community.",
+   "Libraries are lovely places, and everybody I know enjoys spending time in them.",
+   "My cousin started reading every day after visiting a library in another town.",
+   "Other castles might decide to open their libraries one day, so we should go first."
+  ],
+  "answer": 0,
+  "explain": "It gives a general, evidence-based benefit; the others are vague, anecdotal or speculative."
+ },
+ {
+  "motion": "Dragons should be allowed to vote.",
+  "prompt": "Councillor Fen says: 'Dragons can't vote — they're too big for the voting hall.' What is the BEST counter?",
+  "options": [
+   "Size is a practical issue about the venue, not a reason to deny a right.",
+   "Dragons are actually quite small compared with most of the voting hall.",
+   "Fen is far too big for the hall as well, so Fen shouldn't vote either.",
+   "Voting is boring anyway, so dragons won't really be missing anything."
+  ],
+  "answer": 0,
+  "explain": "It separates a logistical problem from the principle being debated."
+ },
+ {
+  "motion": "Homework should be banned in the kingdom's schools.",
+  "prompt": "Which statement is a LOGICAL FALLACY?",
+  "options": [
+   "If we ban homework, next they'll ban lessons and then schools entirely.",
+   "Some studies link moderate amounts of homework to slightly better exam results.",
+   "Younger pupils may benefit less from homework than older pupils preparing for exams.",
+   "Teachers should design meaningful homework rather than setting worksheets for the sake of it."
+  ],
+  "answer": 0,
+  "explain": "That's a 'slippery slope' fallacy: it assumes an extreme chain of events without evidence."
+ },
+ {
+  "motion": "The royal bakery should only use local flour.",
+  "prompt": "Which argument best balances both sides?",
+  "options": [
+   "Local flour supports farmers, but a gradual switch would avoid price rises.",
+   "Local flour is always better, so the bakery should switch to it immediately.",
+   "Imported flour is simply wrong, and anyone who buys it is harming the kingdom.",
+   "Nobody really cares where the bakery's flour comes from, as long as bread is cheap."
+  ],
+  "answer": 0,
+  "explain": "A nuanced position acknowledges a benefit and manages a cost."
+ },
+ {
+  "motion": "Knights should be chosen by exam, not by birth.",
+  "prompt": "Lady Vane says: 'My family has produced knights for 300 years, so birth clearly works.' Which flaw does this show?",
+  "options": [
+   "Appeal to tradition — longevity doesn't prove it's the best method.",
+   "It is a perfectly valid argument based on three centuries of evidence.",
+   "It is an argument from statistics, because 300 years is a large sample.",
+   "It attacks Lady Vane personally instead of discussing the exam idea."
+  ],
+  "answer": 0,
+  "explain": "Appeal to tradition: 'we've always done it' isn't evidence it's better."
+ },
+ {
+  "motion": "The kingdom should build a bridge to the Cloud Castle.",
+  "prompt": "Which piece of evidence would be MOST persuasive?",
+  "options": [
+   "An engineers' report showing the bridge would cut travel time by 80% safely.",
+   "A moving poem about bridges written by the kingdom's most famous court poet.",
+   "A celebrity knight saying in a speech that bridges are cool and modern.",
+   "A survey of three people at a party who all said they would use a bridge."
+  ],
+  "answer": 0,
+  "explain": "Expert, specific, relevant data beats anecdote and opinion."
+ },
+ {
+  "motion": "Pets should be allowed in the castle council.",
+  "prompt": "Councillor Bram says: 'You only support this because you own a cat!' This is…",
+  "options": [
+   "an ad hominem attack on the speaker rather than the argument",
+   "a strong counter-argument that exposes a weakness in the proposal",
+   "an appeal to evidence that shows how pets behave in meetings",
+   "a statistical claim about how many councillors own cats"
+  ],
+  "answer": 0,
+  "explain": "Ad hominem: attacking the person instead of their reasoning."
+ },
+ {
+  "motion": "All magic shops should close at sunset.",
+  "prompt": "Which is a CONCESSION that still supports opposing the motion?",
+  "options": [
+   "Admittedly, night-time sales can be noisy; however, a curfew would ruin small traders.",
+   "Magic shops are simply the best shops in the kingdom, so they should never close.",
+   "Sunset is too early for everything, not just for magic shops and their customers.",
+   "I don't like curfews of any kind, and I never have, so I oppose this one too."
+  ],
+  "answer": 0,
+  "explain": "A concession admits a point ('admittedly…') before rebutting it ('however…')."
+ }
+]

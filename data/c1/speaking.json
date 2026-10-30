@@ -1,0 +1,183 @@
+[
+ {
+  "type": "read",
+  "text": "Were it not for the lighthouse, many more ships would have been lost at sea.",
+  "focus": "Inversion: conditionals",
+  "tip": "Start firmly on WERE, pause at the comma, and stress MAN-y MORE.",
+  "id": "c1-sp01"
+ },
+ {
+  "type": "read",
+  "text": "Rarely have I come across such a compelling argument.",
+  "focus": "Negative inversion",
+  "tip": "Stress RARE-ly at the start because the inversion is for emphasis. 'compelling' is com-PEL-ling.",
+  "id": "c1-sp02"
+ },
+ {
+  "type": "read",
+  "text": "The council's decision, controversial though it was, has largely been accepted.",
+  "focus": "Concessive clauses",
+  "tip": "Drop your pitch slightly for 'controversial though it was'. Stress con-tro-VER-sial.",
+  "id": "c1-sp03"
+ },
+ {
+  "type": "read",
+  "text": "It's worth bearing in mind that first impressions aren't always accurate.",
+  "focus": "Linking /r/ and stress",
+  "tip": "'bearing in mind' flows as 'bear-ring-in-mind'. AC-cu-rate is stressed on the first syllable.",
+  "id": "c1-sp04"
+ },
+ {
+  "type": "read",
+  "text": "She was on the verge of giving up when the breakthrough finally came.",
+  "focus": "Idiom: on the verge of",
+  "tip": "Link 'verge of' into 'ver-jov'. Stress BREAK-through.",
+  "id": "c1-sp05"
+ },
+ {
+  "type": "read",
+  "text": "Had we set off earlier, we might have avoided the worst of the traffic.",
+  "focus": "Inversion: third conditional",
+  "tip": "'Had we' replaces 'If we had', so stress HAD. 'might have' is /ˈmaɪtəv/.",
+  "id": "c1-sp06"
+ },
+ {
+  "type": "read",
+  "text": "The findings suggest that sleep plays a far greater role in memory than previously thought.",
+  "focus": "Academic sentence stress",
+  "tip": "Stress FAR GREAT-er, MEM-o-ry and PRE-vi-ous-ly. 'thought' is /θɔːt/.",
+  "id": "c1-sp07"
+ },
+ {
+  "type": "read",
+  "text": "What struck me most was the sheer generosity of the villagers.",
+  "focus": "Cleft sentences",
+  "tip": "Cleft sentences save the weight for the end: stress SHEER and gen-er-OS-i-ty.",
+  "id": "c1-sp08"
+ },
+ {
+  "type": "read",
+  "text": "I can't help feeling that we've overlooked something rather important.",
+  "focus": "Word stress: compounds",
+  "tip": "Stress FEEL-ing, o-ver-LOOKED (ending in /t/) and im-POR-tant.",
+  "id": "c1-sp09"
+ },
+ {
+  "type": "read",
+  "text": "Not until the final chapter does the author reveal the thief's true identity.",
+  "focus": "Negative inversion",
+  "tip": "'thief's' ends in /fs/. Stress NOT UN-til and i-DEN-ti-ty.",
+  "id": "c1-sp10"
+ },
+ {
+  "type": "read",
+  "text": "Whether or not the plan succeeds depends largely on the weather.",
+  "focus": "Homophones: whether and weather",
+  "tip": "In British English 'whether' and 'weather' sound the same: /ˈweðə/!",
+  "id": "c1-sp11"
+ },
+ {
+  "type": "read",
+  "text": "The dragon's hoard was rumoured to be worth a small fortune.",
+  "focus": "Vowels /ɔː/ and /ɜː/",
+  "tip": "'hoard' /hɔːd/ and 'fortune' /ˈfɔːtʃuːn/ share /ɔː/, but 'worth' is /wɜːθ/.",
+  "id": "c1-sp12"
+ },
+ {
+  "type": "read",
+  "text": "Admittedly, the new library has its drawbacks, but on balance it's a vast improvement.",
+  "focus": "Discourse markers",
+  "tip": "Pause after 'Admittedly' and 'on balance'. 'vast' has a long British /ɑː/.",
+  "id": "c1-sp13"
+ },
+ {
+  "type": "read",
+  "text": "He's prone to exaggerating, so I'd take his story with a pinch of salt.",
+  "focus": "Idiom: a pinch of salt",
+  "tip": "ex-AG-ger-at-ing is /ɪɡˈzædʒəreɪtɪŋ/. Link 'pinch of' into 'pin-chov'.",
+  "id": "c1-sp14"
+ },
+ {
+  "type": "read",
+  "text": "So exhausted was the messenger that he collapsed at the castle gates.",
+  "focus": "Inversion: so … that",
+  "tip": "Stress SO ex-HAUST-ed. 'collapsed' ends in /pst/: /kəˈlæpst/.",
+  "id": "c1-sp15"
+ },
+ {
+  "type": "read",
+  "text": "The proposal, while ambitious, fails to address the underlying causes of the problem.",
+  "focus": "Chunking",
+  "tip": "Three chunks: The proposal | while ambitious | fails to address the underlying causes. The verb 'address' is ad-DRESS.",
+  "id": "c1-sp16"
+ },
+ {
+  "type": "read",
+  "text": "Little did she know that the old map would change her life completely.",
+  "focus": "Negative inversion: little did",
+  "tip": "Stress LIT-tle and KNOW. com-PLETE-ly is stressed in the middle.",
+  "id": "c1-sp17"
+ },
+ {
+  "type": "answer",
+  "q": "Is technology making us less sociable? Give a nuanced view using 'to some extent'.",
+  "keywords": [
+   "to some extent"
+  ],
+  "model": "To some extent it is, although it also helps us keep in touch with friends who live far away.",
+  "focus": "Speaking Part 4: Hedging",
+  "tip": "Pause after the hedge 'To some extent' and stress ex-TENT.",
+  "id": "c1-sp18",
+  "minWords": 7
+ },
+ {
+  "type": "answer",
+  "q": "Describe a challenge you overcame. Use a cleft sentence: 'What helped me most was…'.",
+  "keywords": [
+   "what helped me most was"
+  ],
+  "model": "What helped me most was having a friend who genuinely believed in me.",
+  "focus": "Cleft sentences for emphasis",
+  "tip": "Rise a little on 'most', pause, then stress the key idea at the end.",
+  "id": "c1-sp19",
+  "minWords": 7
+ },
+ {
+  "type": "answer",
+  "q": "Why might a village have been abandoned? Speculate with 'might have', 'may have' or 'must have'.",
+  "keywords": [
+   "might have|must have|may have|could have"
+  ],
+  "model": "The villagers might have left because the river dried up and the crops failed.",
+  "focus": "Speculating about the past",
+  "tip": "'might have' is /ˈmaɪtəv/. Keep 'have' weak and stress the reasons.",
+  "id": "c1-sp20",
+  "minWords": 7
+ },
+ {
+  "type": "answer",
+  "q": "What would you change about your education? Begin with 'If I could go back'.",
+  "keywords": [
+   "if i could go back",
+   "would"
+  ],
+  "model": "If I could go back, I would spend far more time learning languages.",
+  "focus": "Hypothetical past",
+  "tip": "Pause after 'If I could go back'. 'I'd' counts as 'I would'.",
+  "id": "c1-sp21",
+  "minWords": 7
+ },
+ {
+  "type": "answer",
+  "q": "Persuade the council to build a new park. Use 'Not only … but … also'.",
+  "keywords": [
+   "not only",
+   "also"
+  ],
+  "model": "Not only would a park improve people's health, but it would also bring the community together.",
+  "focus": "Persuasion: emphatic inversion",
+  "tip": "After 'Not only' the verb comes first: 'Not only WOULD a park…'. Stress ON-ly and AL-so.",
+  "id": "c1-sp22",
+  "minWords": 7
+ }
+]

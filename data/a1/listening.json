@@ -1,0 +1,210 @@
+[
+ {
+  "type": "listen",
+  "say": "The cat is under the table.",
+  "q": "Where is the cat?",
+  "options": [
+   "under the table",
+   "on the table",
+   "next to the bed",
+   "in the box"
+  ],
+  "answer": 0,
+  "explain": "You heard: 'under the table'."
+ },
+ {
+  "type": "listen",
+  "say": "I have two brothers and one sister.",
+  "q": "How many sisters?",
+  "options": [
+   "one",
+   "two",
+   "three",
+   "none"
+  ],
+  "answer": 0,
+  "explain": "'Two brothers and ONE sister.'"
+ },
+ {
+  "type": "listen",
+  "say": "My name is Anna. That's A, N, N, A.",
+  "q": "How do you spell her name?",
+  "options": [
+   "ANNA",
+   "ANA",
+   "HANNA",
+   "ANNE"
+  ],
+  "answer": 0,
+  "explain": "A-N-N-A: Anna."
+ },
+ {
+  "type": "listen",
+  "say": "It's half past three.",
+  "q": "What time is it?",
+  "options": [
+   "3:30",
+   "3:00",
+   "2:30",
+   "4:30"
+  ],
+  "answer": 0,
+  "explain": "Half past three = 3:30."
+ },
+ {
+  "type": "listen",
+  "say": "I'd like a banana, please.",
+  "q": "What does she want?",
+  "options": [
+   "a banana",
+   "an apple",
+   "an orange",
+   "a cake"
+  ],
+  "answer": 0,
+  "explain": "'I'd like a banana.'"
+ },
+ {
+  "type": "listen",
+  "say": "The bus leaves at eight fifteen.",
+  "q": "When does the bus leave?",
+  "options": [
+   "8:15",
+   "8:50",
+   "7:15",
+   "9:15"
+  ],
+  "answer": 0,
+  "explain": "Eight fifteen = 8:15. (Fifty = 50.)"
+ },
+ {
+  "type": "listen",
+  "say": "My favourite colour is green.",
+  "q": "What is the favourite colour?",
+  "options": [
+   "green",
+   "blue",
+   "red",
+   "yellow"
+  ],
+  "answer": 0,
+  "explain": "'My favourite colour is green.'"
+ },
+ {
+  "type": "listen",
+  "say": "Ben is ten years old.",
+  "q": "How old is Ben?",
+  "options": [
+   "10",
+   "12",
+   "7",
+   "9"
+  ],
+  "answer": 0,
+  "explain": "Ben is ten."
+ },
+ {
+  "type": "listen",
+  "say": "It is cold and snowy today.",
+  "q": "What is the weather like?",
+  "options": [
+   "snowy",
+   "sunny",
+   "hot",
+   "rainy"
+  ],
+  "answer": 0,
+  "explain": "'Cold and snowy.'"
+ },
+ {
+  "type": "listen",
+  "say": "Open your books at page fourteen.",
+  "q": "Which page?",
+  "options": [
+   "14",
+   "40",
+   "4",
+   "41"
+  ],
+  "answer": 0,
+  "explain": "Fourteen = 14. Forty = 40."
+ },
+ {
+  "type": "listen",
+  "say": "My dad is a doctor. He works in a hospital.",
+  "q": "What is Dad's job?",
+  "options": [
+   "doctor",
+   "teacher",
+   "cook",
+   "farmer"
+  ],
+  "answer": 0,
+  "explain": "He is a doctor in a hospital."
+ },
+ {
+  "type": "listen",
+  "say": "The shop is next to the park.",
+  "q": "Where is the shop?",
+  "options": [
+   "next to the park",
+   "behind the school",
+   "in the park",
+   "opposite the bank"
+  ],
+  "answer": 0,
+  "explain": "'Next to the park.'"
+ },
+ {
+  "type": "listen",
+  "say": "I play tennis on Saturdays.",
+  "q": "When does the speaker play tennis?",
+  "options": [
+   "on Saturdays",
+   "on Sundays",
+   "on Mondays",
+   "every day"
+  ],
+  "answer": 0,
+  "explain": "'On Saturdays.'"
+ },
+ {
+  "type": "listen",
+  "say": "Can I have a glass of milk, please?",
+  "q": "What drink does he want?",
+  "options": [
+   "milk",
+   "water",
+   "juice",
+   "tea"
+  ],
+  "answer": 0,
+  "explain": "'A glass of milk.'"
+ },
+ {
+  "type": "listen",
+  "say": "My phone number is oh seven nine, three two one.",
+  "q": "What is the number?",
+  "options": [
+   "079 321",
+   "097 321",
+   "079 312",
+   "709 321"
+  ],
+  "answer": 0,
+  "explain": "'Oh' means zero: 0-7-9, 3-2-1."
+ },
+ {
+  "type": "listen",
+  "say": "We go swimming in the summer.",
+  "q": "When do they go swimming?",
+  "options": [
+   "in the summer",
+   "in the winter",
+   "in the spring",
+   "in the autumn"
+  ],
+  "answer": 0,
+  "explain": "'In the summer.'"
+ }
+]

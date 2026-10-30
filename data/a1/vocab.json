@@ -1,0 +1,208 @@
+[
+ {
+  "type": "mcq",
+  "q": "What is this?",
+  "options": [
+   "apple",
+   "banana",
+   "orange",
+   "grape"
+  ],
+  "answer": 0,
+  "explain": "🍎 is an apple.",
+  "pic": "🍎"
+ },
+ {
+  "type": "mcq",
+  "q": "What is this?",
+  "options": [
+   "dog",
+   "cat",
+   "horse",
+   "bird"
+  ],
+  "answer": 0,
+  "explain": "🐶 is a dog. Woof!",
+  "pic": "🐶"
+ },
+ {
+  "type": "mcq",
+  "q": "What is this?",
+  "options": [
+   "house",
+   "school",
+   "shop",
+   "car"
+  ],
+  "answer": 0,
+  "explain": "🏠 is a house — where you live.",
+  "pic": "🏠"
+ },
+ {
+  "type": "mcq",
+  "q": "What is this?",
+  "options": [
+   "sun",
+   "moon",
+   "star",
+   "rain"
+  ],
+  "answer": 0,
+  "explain": "☀️ is the sun. It is hot and bright.",
+  "pic": "☀️"
+ },
+ {
+  "type": "mcq",
+  "q": "What are these?",
+  "options": [
+   "books",
+   "pens",
+   "bags",
+   "desks"
+  ],
+  "answer": 0,
+  "explain": "📚 shows books. You read a book.",
+  "pic": "📚"
+ },
+ {
+  "type": "mcq",
+  "q": "What is this?",
+  "options": [
+   "bike",
+   "bus",
+   "train",
+   "car"
+  ],
+  "answer": 0,
+  "explain": "🚲 is a bike (bicycle).",
+  "pic": "🚲"
+ },
+ {
+  "type": "mcq",
+  "q": "What is this?",
+  "options": [
+   "bread",
+   "cheese",
+   "milk",
+   "egg"
+  ],
+  "answer": 0,
+  "explain": "🍞 is bread.",
+  "pic": "🍞"
+ },
+ {
+  "type": "mcq",
+  "q": "What is this?",
+  "options": [
+   "shoe",
+   "hat",
+   "sock",
+   "coat"
+  ],
+  "answer": 0,
+  "explain": "👟 A shoe goes on your foot.",
+  "pic": "👟"
+ },
+ {
+  "type": "mcq",
+  "q": "What is this?",
+  "options": [
+   "fish",
+   "frog",
+   "duck",
+   "cow"
+  ],
+  "answer": 0,
+  "explain": "🐟 is a fish. It swims.",
+  "pic": "🐟"
+ },
+ {
+  "type": "mcq",
+  "q": "What is the weather like?",
+  "options": [
+   "rainy",
+   "snowy",
+   "windy",
+   "sunny"
+  ],
+  "answer": 0,
+  "explain": "🌧️ means it is rainy.",
+  "pic": "🌧️"
+ },
+ {
+  "type": "mcq",
+  "q": "What is this?",
+  "options": [
+   "cake",
+   "pizza",
+   "soup",
+   "salad"
+  ],
+  "answer": 0,
+  "explain": "🎂 is a birthday cake.",
+  "pic": "🎂"
+ },
+ {
+  "type": "mcq",
+  "q": "The opposite of 'big' is ___.",
+  "options": [
+   "small",
+   "tall",
+   "long",
+   "old"
+  ],
+  "answer": 0,
+  "explain": "Big ↔ small."
+ },
+ {
+  "type": "mcq",
+  "q": "Monday, Tuesday, ___",
+  "options": [
+   "Wednesday",
+   "Thursday",
+   "Friday",
+   "Sunday"
+  ],
+  "answer": 0,
+  "explain": "The days go Monday, Tuesday, Wednesday…"
+ },
+ {
+  "type": "mcq",
+  "q": "You sleep in a ___.",
+  "options": [
+   "bed",
+   "cup",
+   "door",
+   "window"
+  ],
+  "answer": 0,
+  "explain": "We sleep in a bed. 🛏️",
+  "pic": "🛏️"
+ },
+ {
+  "type": "mcq",
+  "q": "Which number is 'twelve'?",
+  "options": [
+   "12",
+   "20",
+   "2",
+   "11"
+  ],
+  "answer": 0,
+  "explain": "Twelve = 12. Twenty = 20.",
+  "pic": "🔢"
+ },
+ {
+  "type": "mcq",
+  "q": "A person who cooks food is a ___.",
+  "options": [
+   "cook",
+   "doctor",
+   "teacher",
+   "driver"
+  ],
+  "answer": 0,
+  "explain": "A cook makes food.",
+  "pic": "🧑‍🍳"
+ }
+]

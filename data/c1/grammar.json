@@ -1,0 +1,194 @@
+[
+ {
+  "type": "mcq",
+  "q": "Were the council to approve the plan, construction ___ next year.",
+  "options": [
+   "would begin",
+   "will begin",
+   "began",
+   "had begun"
+  ],
+  "answer": 0,
+  "explain": "Were + subject + to-infinitive = formal hypothetical → would."
+ },
+ {
+  "type": "mcq",
+  "q": "Little ___ that the castle had been watching them.",
+  "options": [
+   "did they know",
+   "they knew",
+   "they did know",
+   "knew they"
+  ],
+  "answer": 0,
+  "explain": "Negative adverbial at the start → inversion: Little did they know."
+ },
+ {
+  "type": "mcq",
+  "q": "Only after the gates had closed ___ their mistake.",
+  "options": [
+   "did they realise",
+   "they realised",
+   "realised they",
+   "they did realise"
+  ],
+  "answer": 0,
+  "explain": "Only after… + inversion in the main clause."
+ },
+ {
+  "type": "mcq",
+  "q": "It's essential that every member ___ present.",
+  "options": [
+   "be",
+   "is being",
+   "will be",
+   "being"
+  ],
+  "answer": 0,
+  "explain": "Formal subjunctive after 'essential that': be."
+ },
+ {
+  "type": "mcq",
+  "q": "___ the heavy rain, the ceremony went ahead.",
+  "options": [
+   "Despite",
+   "Although",
+   "However",
+   "In spite"
+  ],
+  "answer": 0,
+  "explain": "Despite + noun; Although + clause; In spite OF."
+ },
+ {
+  "type": "mcq",
+  "q": "The proposal, ___ merits are obvious, was rejected.",
+  "options": [
+   "whose",
+   "which",
+   "its",
+   "of which"
+  ],
+  "answer": 0,
+  "explain": "whose + noun = possession."
+ },
+ {
+  "type": "mcq",
+  "q": "She'd sooner resign than ___ the truth.",
+  "options": [
+   "hide",
+   "hiding",
+   "to hide",
+   "hidden"
+  ],
+  "answer": 0,
+  "explain": "would sooner X than Y — both bare infinitives."
+ },
+ {
+  "type": "mcq",
+  "q": "Not only ___ the treaty, but he also broke it.",
+  "options": [
+   "did he sign",
+   "he signed",
+   "he did sign",
+   "signed he"
+  ],
+  "answer": 0,
+  "explain": "Not only + inversion."
+ },
+ {
+  "type": "mcq",
+  "q": "Hardly had the debate started ___ the lights went out.",
+  "options": [
+   "when",
+   "than",
+   "then",
+   "that"
+  ],
+  "answer": 0,
+  "explain": "Hardly… when; No sooner… than."
+ },
+ {
+  "type": "mcq",
+  "q": "Should you need assistance, ___ hesitate to ask.",
+  "options": [
+   "don't",
+   "not",
+   "no",
+   "doesn't"
+  ],
+  "answer": 0,
+  "explain": "Should you… = If you…; an imperative follows."
+ },
+ {
+  "type": "mcq",
+  "q": "The minister is said ___ the decision before the vote.",
+  "options": [
+   "to have made",
+   "to make",
+   "having made",
+   "that made"
+  ],
+  "answer": 0,
+  "explain": "is said + perfect infinitive for an earlier action."
+ },
+ {
+  "type": "mcq",
+  "q": "What I find most frustrating ___ the lack of transparency.",
+  "options": [
+   "is",
+   "are",
+   "being",
+   "to be"
+  ],
+  "answer": 0,
+  "explain": "A what-clause subject takes a singular verb."
+ },
+ {
+  "type": "mcq",
+  "q": "Rarely ___ such eloquence in the council chamber.",
+  "options": [
+   "have we heard",
+   "we have heard",
+   "we heard",
+   "heard we"
+  ],
+  "answer": 0,
+  "explain": "Rarely at the start → inversion."
+ },
+ {
+  "type": "mcq",
+  "q": "It was the knight's courage, rather than his skill, ___ won the day.",
+  "options": [
+   "that",
+   "what",
+   "who",
+   "whom"
+  ],
+  "answer": 0,
+  "explain": "Cleft sentence: It was X that…"
+ },
+ {
+  "type": "mcq",
+  "q": "Had it not been for her intervention, the talks ___.",
+  "options": [
+   "would have collapsed",
+   "would collapse",
+   "had collapsed",
+   "collapsed"
+  ],
+  "answer": 0,
+  "explain": "Had it not been for = If it hadn't been for → would have + p.p."
+ },
+ {
+  "type": "mcq",
+  "q": "So convincing ___ that the council changed its mind.",
+  "options": [
+   "was her argument",
+   "her argument was",
+   "her argument",
+   "did her argument"
+  ],
+  "answer": 0,
+  "explain": "So + adjective at the start → inversion with 'be'."
+ }
+]

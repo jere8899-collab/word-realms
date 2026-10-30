@@ -1,0 +1,210 @@
+[
+ {
+  "type": "listen",
+  "say": "I'm afraid the proposal, ingenious as it is, simply doesn't hold water.",
+  "q": "What does the speaker think of the proposal?",
+  "options": [
+   "clever but logically flawed",
+   "brilliant and completely sound",
+   "dull but basically correct",
+   "affordable but badly presented"
+  ],
+  "answer": 0,
+  "explain": "'Ingenious as it is' (concession) + 'doesn't hold water'."
+ },
+ {
+  "type": "listen",
+  "say": "Not once in all my years at the library have I seen a book return itself.",
+  "q": "What does the speaker mean?",
+  "options": [
+   "He has never seen it happen.",
+   "He sees it happen about once a year.",
+   "He saw it happen only once, long ago.",
+   "He works at a bookshop, not a library."
+  ],
+  "answer": 0,
+  "explain": "'Not once… have I seen' = never."
+ },
+ {
+  "type": "listen",
+  "say": "He's been resting on his laurels ever since that first prize.",
+  "q": "What is the criticism?",
+  "options": [
+   "He relies on past success and doesn't try.",
+   "He is too tired to compete after winning.",
+   "He has won far too many prizes to count.",
+   "He spends all his free time growing plants."
+  ],
+  "answer": 0,
+  "explain": "Resting on your laurels = complacency."
+ },
+ {
+  "type": "listen",
+  "say": "Were I in your shoes, I'd think twice before signing.",
+  "q": "What is the advice?",
+  "options": [
+   "Be cautious about signing.",
+   "Sign the contract immediately.",
+   "Buy a new pair of shoes first.",
+   "Sign two copies, just in case."
+  ],
+  "answer": 0,
+  "explain": "Were I in your shoes = If I were you."
+ },
+ {
+  "type": "listen",
+  "say": "That's rather a moot point now that the funding's been withdrawn.",
+  "q": "What does the speaker mean?",
+  "options": [
+   "The question is no longer relevant.",
+   "The point is now more important than ever.",
+   "They should keep arguing about it at length.",
+   "The funding has been increased, not cut."
+  ],
+  "answer": 0,
+  "explain": "Here 'moot' = no longer of practical importance."
+ },
+ {
+  "type": "listen",
+  "say": "She's not one to suffer fools gladly.",
+  "q": "What is she like?",
+  "options": [
+   "impatient with foolish people",
+   "very patient with everyone",
+   "rather foolish herself at times",
+   "always cheerful, whatever happens"
+  ],
+  "answer": 0,
+  "explain": "She doesn't tolerate foolishness."
+ },
+ {
+  "type": "listen",
+  "say": "Talk about adding insult to injury. They lost my luggage and then charged me for the phone call.",
+  "q": "What does the speaker mean?",
+  "options": [
+   "A bad situation was made worse.",
+   "Someone was physically hurt at the airport.",
+   "A friend insulted him about his luggage.",
+   "The phone call turned out to be free."
+  ],
+  "answer": 0,
+  "explain": "Adding insult to injury."
+ },
+ {
+  "type": "listen",
+  "say": "Honestly, it's six of one and half a dozen of the other.",
+  "q": "What does the speaker mean?",
+  "options": [
+   "Both options are about the same.",
+   "One option is exactly twice as good.",
+   "There are six different options to choose from.",
+   "He would prefer to have a dozen of them."
+  ],
+  "answer": 0,
+  "explain": "Six = half a dozen."
+ },
+ {
+  "type": "listen",
+  "say": "Let's not split hairs. The gist is the same.",
+  "q": "What does the speaker want?",
+  "options": [
+   "to stop arguing about tiny differences",
+   "to book a haircut before the meeting",
+   "to divide the work into equal parts",
+   "to start the whole discussion again"
+  ],
+  "answer": 0,
+  "explain": "Splitting hairs = focusing on trivial details."
+ },
+ {
+  "type": "listen",
+  "say": "She said nothing, but her silence spoke volumes.",
+  "q": "What does the speaker mean?",
+  "options": [
+   "Her silence revealed a lot.",
+   "She was busy reading a book.",
+   "She was speaking very loudly.",
+   "She simply had nothing to say."
+  ],
+  "answer": 0,
+  "explain": "Speak volumes = communicate a lot without words."
+ },
+ {
+  "type": "listen",
+  "say": "A dragon who lends books for free? I'll believe it when I see it.",
+  "q": "What is the speaker's attitude?",
+  "options": [
+   "sceptical",
+   "delighted",
+   "frightened",
+   "convinced"
+  ],
+  "answer": 0,
+  "explain": "Won't believe it without proof."
+ },
+ {
+  "type": "listen",
+  "say": "The patient's improving, but we're not out of the woods yet.",
+  "q": "What does the speaker mean?",
+  "options": [
+   "There is still some danger.",
+   "They are lost somewhere in a forest.",
+   "The patient has already gone home.",
+   "Everything is perfect now, thankfully."
+  ],
+  "answer": 0,
+  "explain": "Not out of the woods = still in difficulty."
+ },
+ {
+  "type": "listen",
+  "say": "He let the cat out of the bag about the surprise party.",
+  "q": "What did he do?",
+  "options": [
+   "revealed a secret",
+   "freed an animal",
+   "ruined the food",
+   "arrived too early"
+  ],
+  "answer": 0,
+  "explain": "Let the cat out of the bag = reveal a secret."
+ },
+ {
+  "type": "listen",
+  "say": "Hardly a day goes by without some new scandal at the palace.",
+  "q": "What does the speaker mean?",
+  "options": [
+   "Scandals happen almost daily.",
+   "Scandals at the palace are very rare.",
+   "Life at the palace is quiet and calm.",
+   "The days at the palace pass quickly."
+  ],
+  "answer": 0,
+  "explain": "Hardly a day without = nearly every day."
+ },
+ {
+  "type": "listen",
+  "say": "That's the last straw. I'm cancelling my membership.",
+  "q": "What does the speaker mean?",
+  "options": [
+   "This final problem has made him act.",
+   "He has run out of straws at the café.",
+   "He is about to join a new sports club.",
+   "He is very patient and will stay a member."
+  ],
+  "answer": 0,
+  "explain": "The last straw = the final annoyance that causes action."
+ },
+ {
+  "type": "listen",
+  "say": "Losing that job was a blessing in disguise. It led me here.",
+  "q": "What does the speaker mean?",
+  "options": [
+   "Something bad turned out to be good.",
+   "She was blessed by a priest at her new job.",
+   "She wore a clever disguise to the interview.",
+   "She still deeply regrets losing that job."
+  ],
+  "answer": 0,
+  "explain": "A blessing in disguise."
+ }
+]

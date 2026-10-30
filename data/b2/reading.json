@@ -1,0 +1,214 @@
+{
+ "passages": [
+  {
+   "title": "The Secret of Crystal Lake",
+   "text": "Scientists studying Crystal Lake have discovered that its famous clarity is partly due to tiny freshwater mussels. Each mussel filters up to a litre of water a day, removing algae and particles. However, the population has fallen by a third in the last decade, which researchers link to rising water temperatures. Local authorities are now considering limiting boat traffic during the summer months, although some businesses argue that this would damage tourism, the area's main source of income.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What helps keep the lake clear?",
+     "options": [
+      "mussels filtering the water",
+      "very cold water temperatures",
+      "the small number of boats",
+      "the great depth of the lake"
+     ],
+     "answer": 0,
+     "explain": "Mussels filter up to a litre a day."
+    },
+    {
+     "type": "mcq",
+     "q": "What do researchers link the decline to?",
+     "options": [
+      "rising water temperatures",
+      "tourism",
+      "pollution from businesses",
+      "fishing"
+     ],
+     "answer": 0,
+     "explain": "'…which researchers link to rising water temperatures.'"
+    },
+    {
+     "type": "mcq",
+     "q": "Why do some businesses object to the plan?",
+     "options": [
+      "It could harm tourism.",
+      "They think mussels aren't important.",
+      "It is too expensive.",
+      "They think the scientists are wrong."
+     ],
+     "answer": 0,
+     "explain": "Tourism is 'the area's main source of income'."
+    }
+   ]
+  },
+  {
+   "title": "Quiet Voices",
+   "text": "Many people assume that introverts dislike other people. In reality, introversion is more about where we get our energy. An introvert may enjoy a party but feel drained afterwards and need time alone to recharge, whereas an extrovert often feels energised by social contact. Problems arise when schools and workplaces reward only the loudest voices, overlooking quieter people who may have equally valuable ideas.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What common belief does the writer challenge?",
+     "options": [
+      "that introverts dislike people",
+      "that extroverts are always loud",
+      "that parties are tiring for everyone",
+      "that schools treat all pupils fairly"
+     ],
+     "answer": 0,
+     "explain": "'Many people assume that introverts dislike other people. In reality…'"
+    },
+    {
+     "type": "mcq",
+     "q": "How might an introvert feel after a party?",
+     "options": [
+      "drained",
+      "energised",
+      "angry",
+      "lonely"
+     ],
+     "answer": 0,
+     "explain": "'…feel drained afterwards and need time alone to recharge.'"
+    },
+    {
+     "type": "mcq",
+     "q": "What does the writer criticise?",
+     "options": [
+      "institutions favouring loud people",
+      "extroverts being selfish at work",
+      "parties being pointless and draining",
+      "introverts refusing to change at all"
+     ],
+     "answer": 0,
+     "explain": "'Schools and workplaces reward only the loudest voices.'"
+    }
+   ]
+  },
+  {
+   "title": "The Swan Maiden",
+   "text": "The swan maiden had waited three winters for the prince to return. When at last a rider appeared on the bridge, she did not run to meet him. She had heard the rumours: that he had stayed away not because of the war, but because of a duchess in the south. 'You've come back,' she said simply. He knelt, offering a ring of lake-crystal. She turned it over in her fingers, then placed it on the water, where it sank without a sound.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Why didn't she run to meet him?",
+     "options": [
+      "She believed rumours he'd been unfaithful.",
+      "She was ill and too weak to run to him.",
+      "She didn't recognise him on his horse.",
+      "The bridge was broken after the winter."
+     ],
+     "answer": 0,
+     "explain": "The rumours said he stayed away because of a duchess."
+    },
+    {
+     "type": "mcq",
+     "q": "What does her action with the ring suggest?",
+     "options": [
+      "She rejects him.",
+      "She accepts his proposal.",
+      "She wants to keep it safe.",
+      "She is giving a gift to the lake."
+     ],
+     "answer": 0,
+     "explain": "Letting the ring sink is a quiet rejection."
+    },
+    {
+     "type": "mcq",
+     "q": "How does she speak to him?",
+     "options": [
+      "calmly and coolly",
+      "joyfully and warmly",
+      "furiously and loudly",
+      "fearfully and nervously"
+     ],
+     "answer": 0,
+     "explain": "'She said simply' — controlled and distant."
+    }
+   ]
+  },
+  {
+   "title": "Time or Money?",
+   "text": "A survey of 2,000 teenagers found that 68% would prefer to work fewer hours for less pay than earn more by working longer. Interestingly, the figure was lower among those from lower-income families, at 52%. The researchers suggest that financial security strongly influences attitudes to work–life balance, and warn against assuming that the younger generation is simply 'lazy'.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What did most teenagers prefer?",
+     "options": [
+      "fewer hours for less pay",
+      "more money for longer hours",
+      "not working at all",
+      "studying part-time"
+     ],
+     "answer": 0,
+     "explain": "68% preferred fewer hours for less pay."
+    },
+    {
+     "type": "mcq",
+     "q": "What was different about teens from lower-income families?",
+     "options": [
+      "Fewer of them preferred shorter hours.",
+      "More of them preferred shorter hours.",
+      "They gave exactly the same answers as others.",
+      "They refused to answer the survey questions."
+     ],
+     "answer": 0,
+     "explain": "52% is lower than 68%."
+    },
+    {
+     "type": "mcq",
+     "q": "What do the researchers warn against?",
+     "options": [
+      "calling young people lazy",
+      "paying teenagers higher wages",
+      "trusting surveys of teenagers",
+      "letting teenagers work long hours"
+     ],
+     "answer": 0,
+     "explain": "'…warn against assuming that the younger generation is simply lazy.'"
+    }
+   ]
+  },
+  {
+   "title": "Your Application",
+   "text": "Dear Ms Hart, Thank you for your application for the position of Lakeside Guide. We were impressed by your experience, but we feel your knowledge of local wildlife is not yet sufficient for this role. However, we are running a free six-week training course starting in March, and we would strongly encourage you to attend. Successful participants will be invited to reapply in the summer. Yours sincerely, R. Fenwick",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What is the result of the application?",
+     "options": [
+      "She hasn't got the job for now.",
+      "She has been offered the guide job.",
+      "She has been invited to an interview.",
+      "She has been put on a waiting list."
+     ],
+     "answer": 0,
+     "explain": "Her knowledge 'is not yet sufficient' — a polite refusal."
+    },
+    {
+     "type": "mcq",
+     "q": "Why was she unsuccessful?",
+     "options": [
+      "She needs more wildlife knowledge.",
+      "She doesn't have enough work experience.",
+      "She sent her application in too late.",
+      "She can't afford the training course fee."
+     ],
+     "answer": 0,
+     "explain": "'…your knowledge of local wildlife is not yet sufficient.'"
+    },
+    {
+     "type": "mcq",
+     "q": "What is she encouraged to do?",
+     "options": [
+      "Take a free course and reapply.",
+      "Apply for a different job at the lake.",
+      "Pay for some extra training this summer.",
+      "Volunteer as a guide from March onwards."
+     ],
+     "answer": 0,
+     "explain": "Free course, then reapply in summer."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,653 @@
+[
+ {
+  "genre": "email",
+  "part": "B1 Preliminary · Writing Part 1 (email)",
+  "title": "Reply to Ranger Fern",
+  "task": "Read the email from Ranger Fern and the notes you have made. Write your email to Fern using all the notes. Write about 100 words.",
+  "email": {
+   "from": "Ranger Fern",
+   "text": "Hi! Thanks for volunteering for the Lantern Festival clean-up next Saturday. Would you prefer to collect rubbish or decorate the trees? Could you bring anything? We start at 9 am. Is that OK for you?",
+   "notes": [
+    "Great!",
+    "Say which and why",
+    "Offer something",
+    "Explain"
+   ]
+  },
+  "points": [
+   {
+    "label": "Great! (say you're excited)",
+    "keys": [
+     "thank",
+     "great",
+     "looking forward",
+     "can't wait",
+     "excited",
+     "happy to",
+     "love to",
+     "glad"
+    ]
+   },
+   {
+    "label": "Say which job and why",
+    "keys": [
+     "i'd prefer",
+     "i would prefer",
+     "i'd rather",
+     "i would rather",
+     "i'd like to",
+     "i would like to",
+     "prefer"
+    ]
+   },
+   {
+    "label": "Offer to bring something",
+    "keys": [
+     "bring",
+     "i can take",
+     "lantern",
+     "gloves",
+     "bags",
+     "snacks"
+    ]
+   },
+   {
+    "label": "Explain about the 9 am start",
+    "keys": [
+     "9",
+     "nine",
+     "late",
+     "early",
+     "arrive",
+     "fine for me",
+     "ok for me",
+     "okay for me"
+    ]
+   }
+  ],
+  "words": [
+   80,
+   100
+  ],
+  "model": "Hi Fern,\n\nThanks for your email! I'm really excited about the clean-up because I've never done anything like this before.\n\nI'd prefer to decorate the trees, as I love making things and I'm quite good at climbing. If you want, I can bring some paper lanterns and a big bag of fairy lights from home.\n\nStarting at 9 am is fine for me, but I might be a few minutes late because the first forest bus only arrives at 8.55.\n\nSee you on Saturday!\nBest wishes,\nMia",
+  "id": "b1-w01",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "Thanks for your email!",
+     "I'd prefer to … because …",
+     "If you want, I can bring …",
+     "… is fine for me, but …"
+    ]
+   },
+   {
+    "g": "🔗 Linking words",
+    "p": [
+     "However, …",
+     "although",
+     "In addition, …",
+     "for example",
+     "On the other hand, …",
+     "as soon as",
+     "Finally, …"
+    ]
+   },
+   {
+    "g": "💌 Emails",
+    "p": [
+     "It was great to hear from you.",
+     "Let me know if …",
+     "I'm sure …",
+     "Best wishes,"
+    ]
+   },
+   {
+    "g": "📖 Stories & articles",
+    "p": [
+     "At first, …",
+     "Just then, …",
+     "From that day on, …",
+     "Have you ever …?"
+    ]
+   }
+  ],
+  "level": "b1"
+ },
+ {
+  "genre": "email",
+  "part": "B1 Preliminary · Writing Part 1 (email)",
+  "title": "Your Pen Friend Is Coming!",
+  "task": "Read the email from your pen friend Arlo and the notes you have made. Write your email to Arlo using all the notes. Write about 100 words.",
+  "email": {
+   "from": "Arlo",
+   "text": "Great news: I'm coming to visit your town next month! What should I see while I'm there? What should I pack? And could we go somewhere special together?",
+   "notes": [
+    "Fantastic!",
+    "Recommend",
+    "Tell Arlo",
+    "Suggest"
+   ]
+  },
+  "points": [
+   {
+    "label": "Fantastic! (say you're happy)",
+    "keys": [
+     "great news",
+     "can't wait",
+     "happy",
+     "glad",
+     "wonderful",
+     "fantastic",
+     "excited"
+    ]
+   },
+   {
+    "label": "Recommend what to see",
+    "keys": [
+     "should see",
+     "must see",
+     "you should",
+     "visit",
+     "museum",
+     "castle",
+     "market",
+     "show you"
+    ]
+   },
+   {
+    "label": "Tell Arlo what to pack",
+    "keys": [
+     "bring",
+     "pack",
+     "umbrella",
+     "jacket",
+     "coat",
+     "boots",
+     "warm clothes",
+     "sun cream"
+    ]
+   },
+   {
+    "label": "Suggest somewhere special",
+    "keys": [
+     "shall we",
+     "let's",
+     "let us",
+     "how about",
+     "what about",
+     "why don't",
+     "we could",
+     "would you like",
+     "do you want",
+     "maybe we",
+     "could we",
+     "can we"
+    ]
+   }
+  ],
+  "words": [
+   80,
+   100
+  ],
+  "model": "Hi Arlo,\n\nIt's fantastic news that you're coming! I can't wait to show you my town.\n\nYou should definitely visit the old castle on the hill, because the view from the tower is amazing. The flower market on Sunday mornings is lovely too.\n\nThe weather here changes quickly, so don't forget to pack an umbrella and a warm jacket.\n\nWhy don't we take the little boat to the Whispering Islands? I've been there twice and it's the most magical place I know.\n\nLet me know when you arrive!\nBest wishes,\nNoor",
+  "id": "b1-w02",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "It's fantastic news that …",
+     "You should definitely visit …",
+     "Don't forget to pack …",
+     "Why don't we …?"
+    ]
+   },
+   {
+    "g": "🔗 Linking words",
+    "p": [
+     "However, …",
+     "although",
+     "In addition, …",
+     "for example",
+     "On the other hand, …",
+     "as soon as",
+     "Finally, …"
+    ]
+   },
+   {
+    "g": "💌 Emails",
+    "p": [
+     "It was great to hear from you.",
+     "Let me know if …",
+     "I'm sure …",
+     "Best wishes,"
+    ]
+   },
+   {
+    "g": "📖 Stories & articles",
+    "p": [
+     "At first, …",
+     "Just then, …",
+     "From that day on, …",
+     "Have you ever …?"
+    ]
+   }
+  ],
+  "level": "b1"
+ },
+ {
+  "genre": "story",
+  "part": "B1 Preliminary · Writing Part 2 (story)",
+  "title": "The Old Wooden Box",
+  "task": "Your English teacher has asked you to write a story. Your story must begin with this sentence: “As soon as Mia opened the old wooden box, the forest went completely silent.” Write about 100 words.",
+  "firstLine": "As soon as Mia opened the old wooden box, the forest went completely silent.",
+  "points": [
+   {
+    "label": "Begin with the given sentence",
+    "keys": [
+     "as soon as mia opened"
+    ]
+   },
+   {
+    "label": "A problem",
+    "keys": [
+     "suddenly",
+     "lost",
+     "couldn't",
+     "could not",
+     "scared",
+     "afraid",
+     "dark",
+     "trapped",
+     "stuck",
+     "problem"
+    ]
+   },
+   {
+    "label": "How it was solved",
+    "keys": [
+     "decided",
+     "tried",
+     "helped",
+     "managed",
+     "idea",
+     "so she",
+     "so he"
+    ]
+   },
+   {
+    "label": "How the story ended",
+    "keys": [
+     "in the end",
+     "at last",
+     "finally",
+     "ever since",
+     "from that day",
+     "happily",
+     "never forgot"
+    ]
+   }
+  ],
+  "words": [
+   80,
+   100
+  ],
+  "model": "As soon as Mia opened the old wooden box, the forest went completely silent. Inside, there was a tiny golden key and a note that said: \"Give me back my song.\"\n\nSuddenly, Mia realised that all the birds had stopped singing. She was scared, but she decided to follow the path to the oldest tree. There, she found a small door with a lock.\n\nMia turned the key and hundreds of songs flew out like butterflies. In the end, the whole forest was singing again, and from that day on the birds always sang a little louder near Mia's house.",
+  "id": "b1-w03",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "At first, …",
+     "Suddenly, …",
+     "She decided to …",
+     "In the end, …",
+     "From that day on, …"
+    ]
+   },
+   {
+    "g": "🔗 Linking words",
+    "p": [
+     "However, …",
+     "although",
+     "In addition, …",
+     "for example",
+     "On the other hand, …",
+     "as soon as",
+     "Finally, …"
+    ]
+   },
+   {
+    "g": "💌 Emails",
+    "p": [
+     "It was great to hear from you.",
+     "Let me know if …",
+     "I'm sure …",
+     "Best wishes,"
+    ]
+   },
+   {
+    "g": "📖 Stories & articles",
+    "p": [
+     "At first, …",
+     "Just then, …",
+     "From that day on, …",
+     "Have you ever …?"
+    ]
+   }
+  ],
+  "level": "b1"
+ },
+ {
+  "genre": "article",
+  "part": "B1 Preliminary · Writing Part 2 (article)",
+  "title": "My Favourite Place to Relax",
+  "task": "You see this notice in the Forest Gazette: “Articles wanted! Where is your favourite place to relax? What do you do there? Why is it special to you?” Write your article in about 100 words.",
+  "points": [
+   {
+    "label": "Where your place is",
+    "keys": [
+     "my favourite place",
+     "is in",
+     "near",
+     "by the",
+     "under",
+     "river",
+     "lake",
+     "garden",
+     "room",
+     "tree",
+     "beach",
+     "hill"
+    ]
+   },
+   {
+    "label": "What you do there",
+    "keys": [
+     "read",
+     "relax",
+     "sit",
+     "listen",
+     "walk",
+     "draw",
+     "swim",
+     "watch",
+     "sleep",
+     "think"
+    ]
+   },
+   {
+    "label": "Why it is special",
+    "keys": [
+     "because",
+     "special",
+     "makes me",
+     "feel",
+     "reminds",
+     "peaceful",
+     "quiet",
+     "calm"
+    ]
+   }
+  ],
+  "words": [
+   80,
+   100
+  ],
+  "model": "The Secret Willow\n\nHave you ever wanted to hide from the world for an hour? My favourite place to relax is under an old willow tree by the river, just ten minutes from my house.\n\nWhen I get there, I usually sit on its roots, listen to the water and read a good book. Sometimes I draw the ducks that swim past.\n\nWhat makes it special is the quiet. Nobody can find me there, so I always feel calm and peaceful. I've been going there since I was little, and it still feels like my own secret world.",
+  "id": "b1-w04",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "Have you ever …?",
+     "My favourite place is …",
+     "What makes it special is …",
+     "Whenever I feel …, I …"
+    ]
+   },
+   {
+    "g": "🔗 Linking words",
+    "p": [
+     "However, …",
+     "although",
+     "In addition, …",
+     "for example",
+     "On the other hand, …",
+     "as soon as",
+     "Finally, …"
+    ]
+   },
+   {
+    "g": "💌 Emails",
+    "p": [
+     "It was great to hear from you.",
+     "Let me know if …",
+     "I'm sure …",
+     "Best wishes,"
+    ]
+   },
+   {
+    "g": "📖 Stories & articles",
+    "p": [
+     "At first, …",
+     "Just then, …",
+     "From that day on, …",
+     "Have you ever …?"
+    ]
+   }
+  ],
+  "level": "b1"
+ },
+ {
+  "genre": "email",
+  "part": "B1 Preliminary · Writing Part 1 (email)",
+  "title": "Advice for a Nervous Friend",
+  "task": "Read the email from your friend Jade and the notes you have made. Write your email to Jade using all the notes. Write about 100 words.",
+  "email": {
+   "from": "Jade",
+   "text": "I've got my first big exam next week and I'm so nervous! Have you got any advice? How do you relax before exams? Do you think I should study all night?",
+   "notes": [
+    "Don't worry!",
+    "Give advice",
+    "Tell Jade",
+    "No, because…"
+   ]
+  },
+  "points": [
+   {
+    "label": "Don't worry! (be kind)",
+    "keys": [
+     "don't worry",
+     "do not worry",
+     "sorry to hear",
+     "understand",
+     "normal",
+     "poor you",
+     "i know how"
+    ]
+   },
+   {
+    "label": "Give advice",
+    "keys": [
+     "you should",
+     "try to",
+     "why don't you",
+     "good idea",
+     "make sure",
+     "if i were you"
+    ]
+   },
+   {
+    "label": "Tell Jade how you relax",
+    "keys": [
+     "relax",
+     "i usually",
+     "when i",
+     "music",
+     "walk",
+     "bath",
+     "yoga",
+     "breath"
+    ]
+   },
+   {
+    "label": "Answer about studying all night",
+    "keys": [
+     "all night",
+     "sleep",
+     "bed",
+     "rest",
+     "tired",
+     "stay up"
+    ]
+   }
+  ],
+  "words": [
+   80,
+   100
+  ],
+  "model": "Hi Jade,\n\nDon't worry, it's completely normal to feel nervous before a big exam! If I were you, I'd make a simple plan and revise a little every day.\n\nBefore exams, I usually go for a walk in the forest or listen to some calm music. It really helps me relax.\n\nPlease don't study all night! You won't remember much if you're tired. It's much better to go to bed early and have a good breakfast in the morning.\n\nGood luck! I'm sure you'll do brilliantly.\nLove,\nSam",
+  "id": "b1-w05",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "Don't worry, it's normal to …",
+     "If I were you, I'd …",
+     "Before exams I usually …",
+     "You'll feel much better if …"
+    ]
+   },
+   {
+    "g": "🔗 Linking words",
+    "p": [
+     "However, …",
+     "although",
+     "In addition, …",
+     "for example",
+     "On the other hand, …",
+     "as soon as",
+     "Finally, …"
+    ]
+   },
+   {
+    "g": "💌 Emails",
+    "p": [
+     "It was great to hear from you.",
+     "Let me know if …",
+     "I'm sure …",
+     "Best wishes,"
+    ]
+   },
+   {
+    "g": "📖 Stories & articles",
+    "p": [
+     "At first, …",
+     "Just then, …",
+     "From that day on, …",
+     "Have you ever …?"
+    ]
+   }
+  ],
+  "level": "b1"
+ },
+ {
+  "genre": "story",
+  "part": "B1 Preliminary · Writing Part 2 (story)",
+  "title": "The Owl's Secret Message",
+  "task": "Your English teacher has asked you to write a story. Your story must begin with this sentence: “When Leo heard a tap on his window at midnight, he couldn't believe his eyes.” Write about 100 words.",
+  "firstLine": "When Leo heard a tap on his window at midnight, he couldn't believe his eyes.",
+  "points": [
+   {
+    "label": "Begin with the given sentence",
+    "keys": [
+     "when leo heard a tap"
+    ]
+   },
+   {
+    "label": "A message",
+    "keys": [
+     "message",
+     "note",
+     "letter",
+     "wrote",
+     "written",
+     "said"
+    ]
+   },
+   {
+    "label": "A journey",
+    "keys": [
+     "flew",
+     "followed",
+     "travelled",
+     "walked",
+     "through",
+     "across",
+     "path"
+    ]
+   },
+   {
+    "label": "How Leo felt at the end",
+    "keys": [
+     "felt",
+     "proud",
+     "relieved",
+     "glad",
+     "excited",
+     "smiled",
+     "laughed"
+    ]
+   }
+  ],
+  "words": [
+   80,
+   100
+  ],
+  "model": "When Leo heard a tap on his window at midnight, he couldn't believe his eyes. A snowy owl was sitting there with a tiny letter in its beak.\n\nThe message said: \"The moon has fallen into the lake. Please help!\" Without thinking, Leo put on his coat and followed the owl through the dark forest.\n\nAt the lake, the moon was floating like a giant pearl. Leo pushed it gently with a long branch until it rose back into the sky.\n\nWhen he got home, he felt tired but incredibly proud, and he smiled all the way to bed.",
+  "id": "b1-w06",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "To his surprise, …",
+     "Just then, …",
+     "Without thinking, he …",
+     "He felt so … that …"
+    ]
+   },
+   {
+    "g": "🔗 Linking words",
+    "p": [
+     "However, …",
+     "although",
+     "In addition, …",
+     "for example",
+     "On the other hand, …",
+     "as soon as",
+     "Finally, …"
+    ]
+   },
+   {
+    "g": "💌 Emails",
+    "p": [
+     "It was great to hear from you.",
+     "Let me know if …",
+     "I'm sure …",
+     "Best wishes,"
+    ]
+   },
+   {
+    "g": "📖 Stories & articles",
+    "p": [
+     "At first, …",
+     "Just then, …",
+     "From that day on, …",
+     "Have you ever …?"
+    ]
+   }
+  ],
+  "level": "b1"
+ }
+]

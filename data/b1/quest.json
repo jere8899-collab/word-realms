@@ -1,0 +1,110 @@
+{
+ "start": "n1",
+ "nodes": {
+  "n1": {
+   "text": "You enter the Whispering Forest. A tired old badger blocks the path. He looks grumpy. What do you say?",
+   "choices": [
+    {
+     "text": "Excuse me, sir. Would you mind letting us pass?",
+     "next": "n2",
+     "good": true,
+     "explain": "Polite request: 'Would you mind + -ing?'"
+    },
+    {
+     "text": "Move! We want go now.",
+     "next": "n1b",
+     "good": false,
+     "explain": "Rude, and 'want go' should be 'want to go'."
+    }
+   ]
+  },
+  "n1b": {
+   "text": "The badger huffs and sits down even harder. 'Manners, little traveller!' Try again.",
+   "choices": [
+    {
+     "text": "I'm sorry. Could you possibly let us through, please?",
+     "next": "n2",
+     "good": true,
+     "explain": "'Could you possibly…' is very polite."
+    }
+   ]
+  },
+  "n2": {
+   "text": "The badger smiles. 'Two paths lie ahead. The left one is shorter, but its bridge is broken. The right one is longer, but safe.' Which do you choose?",
+   "choices": [
+    {
+     "text": "We'd better take the right path, even though it's longer.",
+     "next": "n3",
+     "good": true,
+     "explain": "'had better' + verb; 'even though' contrasts two facts."
+    },
+    {
+     "text": "If we would take the left path, we will be faster.",
+     "next": "n2b",
+     "good": false,
+     "explain": "No 'would' in the if-clause: 'If we take…, we'll be faster.'"
+    }
+   ]
+  },
+  "n2b": {
+   "text": "You reach the broken bridge and get your boots soaked. Splash! You trudge back to the fork.",
+   "choices": [
+    {
+     "text": "OK, let's go the safe way this time.",
+     "next": "n3",
+     "good": true,
+     "explain": "Learning from mistakes is part of every quest!"
+    }
+   ]
+  },
+  "n3": {
+   "text": "A lost fairy is crying beside a glowing mushroom. 'I've lost my lantern!' she sobs.",
+   "choices": [
+    {
+     "text": "Don't worry. When did you last see it?",
+     "next": "n4",
+     "good": true,
+     "explain": "Reassure, then ask a helpful past simple question."
+    },
+    {
+     "text": "Where you lose it?",
+     "next": "n3b",
+     "good": false,
+     "explain": "Past questions need 'did': 'Where did you lose it?'"
+    }
+   ]
+  },
+  "n3b": {
+   "text": "The fairy looks confused. 'Pardon?' Ask her properly.",
+   "choices": [
+    {
+     "text": "Where did you lose it?",
+     "next": "n4",
+     "good": true,
+     "explain": "did + subject + base verb."
+    }
+   ]
+  },
+  "n4": {
+   "text": "'I had it when I was dancing by the stream,' she says. At the stream you find the lantern caught in the reeds.",
+   "choices": [
+    {
+     "text": "Here it is! It must have fallen while you were dancing.",
+     "next": "end",
+     "good": true,
+     "explain": "'must have + past participle' = a confident guess about the past."
+    },
+    {
+     "text": "Here it is! It must fall when you dance.",
+     "next": "end",
+     "good": false,
+     "explain": "For a past deduction use 'must have fallen'."
+    }
+   ]
+  },
+  "end": {
+   "text": "The fairy's lantern glows golden. 'Thank you, kind traveller!' She gives you a Forest Star. Quest complete!",
+   "choices": []
+  }
+ }
+}

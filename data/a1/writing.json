@@ -1,0 +1,558 @@
+[
+ {
+  "genre": "about",
+  "part": "A1 Movers-style · Write about you",
+  "title": "All About Me for the Meadow Book",
+  "task": "The Meadow Fairy is making a big book about every child in the meadow. Write 3–4 short sentences about you.",
+  "points": [
+   {
+    "label": "Your name",
+    "keys": [
+     "my name",
+     "name is",
+     "i'm ",
+     "called"
+    ]
+   },
+   {
+    "label": "Your age",
+    "keys": [
+     "years old",
+     "re:\\bi am (\\d+|five|six|seven|eight|nine|ten|eleven|twelve)\\b"
+    ]
+   },
+   {
+    "label": "Where you live",
+    "keys": [
+     "i live",
+     "live in",
+     "my house",
+     "my home",
+     "my flat"
+    ]
+   },
+   {
+    "label": "Something you like",
+    "keys": [
+     "i like",
+     "i love",
+     "favourite",
+     "i enjoy"
+    ]
+   }
+  ],
+  "words": [
+   20,
+   30
+  ],
+  "model": "Hello! My name is Lily. I am nine years old. I live in a small house with my mum and dad. I like apples and I love drawing flowers.",
+  "id": "a1-w01",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "My name is …",
+     "I am … years old.",
+     "I live in …",
+     "I like … and …"
+    ]
+   },
+   {
+    "g": "🔗 Joining words",
+    "p": [
+     "and",
+     "but",
+     "because",
+     "also",
+     "too"
+    ]
+   },
+   {
+    "g": "🌼 Sentence starters",
+    "p": [
+     "I have got …",
+     "There is …",
+     "There are …",
+     "It is …",
+     "I can …"
+    ]
+   }
+  ],
+  "level": "a1"
+ },
+ {
+  "genre": "about",
+  "part": "A1 Movers-style · Describe an animal",
+  "title": "My Magic Pet",
+  "task": "Write 3–4 sentences about your pet. It can be a real pet or a magic pet!",
+  "points": [
+   {
+    "label": "Its name",
+    "keys": [
+     "name",
+     "called"
+    ]
+   },
+   {
+    "label": "What it looks like",
+    "keys": [
+     "red",
+     "blue",
+     "green",
+     "yellow",
+     "pink",
+     "white",
+     "black",
+     "brown",
+     "orange",
+     "purple",
+     "grey",
+     "gray",
+     "gold",
+     "silver",
+     "big",
+     "small",
+     "little",
+     "fluffy",
+     "long",
+     "short",
+     "tail",
+     "ears",
+     "eyes",
+     "wings"
+    ]
+   },
+   {
+    "label": "What it eats",
+    "keys": [
+     "eat",
+     "food",
+     "drink",
+     "carrot",
+     "apple",
+     "cake",
+     "cookie",
+     "fish",
+     "milk",
+     "seeds",
+     "grass"
+    ]
+   },
+   {
+    "label": "What it can do",
+    "keys": [
+     "can "
+    ]
+   }
+  ],
+  "words": [
+   20,
+   30
+  ],
+  "model": "My pet is a little white bunny. Her name is Puffbun. She has long ears and big blue eyes. She eats carrot cookies. She can jump very high!",
+  "id": "a1-w02",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "My pet is a …",
+     "Her name is …",
+     "She has got …",
+     "She can …"
+    ]
+   },
+   {
+    "g": "🔗 Joining words",
+    "p": [
+     "and",
+     "but",
+     "because",
+     "also",
+     "too"
+    ]
+   },
+   {
+    "g": "🌼 Sentence starters",
+    "p": [
+     "I have got …",
+     "There is …",
+     "There are …",
+     "It is …",
+     "I can …"
+    ]
+   }
+  ],
+  "level": "a1"
+ },
+ {
+  "genre": "about",
+  "part": "A1 Movers-style · Write about your family",
+  "title": "My Fairy Family",
+  "task": "The Story Owl wants to meet your family. Write 3–4 sentences about them.",
+  "points": [
+   {
+    "label": "Who is in your family",
+    "keys": [
+     "mum",
+     "dad",
+     "mother",
+     "father",
+     "brother",
+     "sister",
+     "grandma",
+     "grandpa",
+     "baby",
+     "family",
+     "aunt",
+     "uncle",
+     "cousin"
+    ]
+   },
+   {
+    "label": "One thing about a person",
+    "keys": [
+     "re:\\b(he|she) (is|has|likes|can|loves)\\b",
+     "tall",
+     "kind",
+     "funny",
+     "hair",
+     "re:\\bmy (mum|dad|brother|sister|grandma|grandpa) (is|has|likes|can|loves)\\b"
+    ]
+   },
+   {
+    "label": "Something you do together",
+    "keys": [
+     "together",
+     "we play",
+     "we eat",
+     "we go",
+     "we watch",
+     "we read",
+     "we cook",
+     "we like",
+     "we sing",
+     "we walk"
+    ]
+   }
+  ],
+  "words": [
+   20,
+   30
+  ],
+  "model": "There are four people in my family. My mum is tall and she has long brown hair. My brother is six. We play in the garden together on Sundays.",
+  "id": "a1-w03",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "There are … people in my family.",
+     "My mum is …",
+     "My brother has got …",
+     "We … together."
+    ]
+   },
+   {
+    "g": "🔗 Joining words",
+    "p": [
+     "and",
+     "but",
+     "because",
+     "also",
+     "too"
+    ]
+   },
+   {
+    "g": "🌼 Sentence starters",
+    "p": [
+     "I have got …",
+     "There is …",
+     "There are …",
+     "It is …",
+     "I can …"
+    ]
+   }
+  ],
+  "level": "a1"
+ },
+ {
+  "genre": "form",
+  "part": "A1 Starters-style · Complete a club card",
+  "title": "Join the Fairy Pet Club",
+  "task": "Fill in your Fairy Pet Club card. Write one short sentence for each line of the card: name, age, favourite animal, something you can do.",
+  "points": [
+   {
+    "label": "Name",
+    "keys": [
+     "my name",
+     "name is",
+     "called"
+    ]
+   },
+   {
+    "label": "Age",
+    "keys": [
+     "years old",
+     "re:\\bi am (\\d+|five|six|seven|eight|nine|ten|eleven|twelve)\\b"
+    ]
+   },
+   {
+    "label": "Favourite animal",
+    "keys": [
+     "cat",
+     "dog",
+     "bunny",
+     "rabbit",
+     "horse",
+     "bird",
+     "fish",
+     "dragon",
+     "fox",
+     "owl",
+     "unicorn",
+     "animal",
+     "frog",
+     "duck",
+     "mouse",
+     "pony",
+     "puppy",
+     "kitten"
+    ]
+   },
+   {
+    "label": "Something you can do",
+    "keys": [
+     "i can",
+     "can ride",
+     "can swim",
+     "can run",
+     "can sing",
+     "can draw",
+     "can dance",
+     "can read"
+    ]
+   }
+  ],
+  "words": [
+   20,
+   30
+  ],
+  "model": "My name is Kai. I am eight years old. My favourite animal is the fox because it is orange and clever. I can ride a bike and I can swim.",
+  "id": "a1-w04",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "My name is …",
+     "I am … years old.",
+     "My favourite animal is …",
+     "I can …"
+    ]
+   },
+   {
+    "g": "🔗 Joining words",
+    "p": [
+     "and",
+     "but",
+     "because",
+     "also",
+     "too"
+    ]
+   },
+   {
+    "g": "🌼 Sentence starters",
+    "p": [
+     "I have got …",
+     "There is …",
+     "There are …",
+     "It is …",
+     "I can …"
+    ]
+   }
+  ],
+  "level": "a1"
+ },
+ {
+  "genre": "about",
+  "part": "A1 Movers-style · Write about your day",
+  "title": "My Favourite Day",
+  "task": "Write 3–4 sentences about your favourite day of the week.",
+  "points": [
+   {
+    "label": "Which day",
+    "keys": [
+     "monday",
+     "tuesday",
+     "wednesday",
+     "thursday",
+     "friday",
+     "saturday",
+     "sunday",
+     "weekend",
+     "tomorrow",
+     "tonight",
+     "next week",
+     "birthday",
+     "holiday"
+    ]
+   },
+   {
+    "label": "What you do",
+    "keys": [
+     "play",
+     "go to",
+     "swim",
+     "read",
+     "ride",
+     "visit",
+     "watch",
+     "draw",
+     "dance",
+     "sing"
+    ]
+   },
+   {
+    "label": "What you eat",
+    "keys": [
+     "eat",
+     "pizza",
+     "cake",
+     "ice cream",
+     "breakfast",
+     "lunch",
+     "dinner",
+     "pancake",
+     "sandwich"
+    ]
+   },
+   {
+    "label": "Who you are with",
+    "keys": [
+     "with",
+     "friend",
+     "mum",
+     "dad",
+     "grandma",
+     "grandpa",
+     "family"
+    ]
+   }
+  ],
+  "words": [
+   20,
+   30
+  ],
+  "model": "My favourite day is Saturday. In the morning I go to the park with my friend Tom. We play football. For lunch I eat pizza and ice cream.",
+  "id": "a1-w05",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "My favourite day is …",
+     "In the morning I …",
+     "For lunch I eat …",
+     "I play with …"
+    ]
+   },
+   {
+    "g": "🔗 Joining words",
+    "p": [
+     "and",
+     "but",
+     "because",
+     "also",
+     "too"
+    ]
+   },
+   {
+    "g": "🌼 Sentence starters",
+    "p": [
+     "I have got …",
+     "There is …",
+     "There are …",
+     "It is …",
+     "I can …"
+    ]
+   }
+  ],
+  "level": "a1"
+ },
+ {
+  "genre": "note",
+  "part": "A1 Flyers-style · Write a short note",
+  "title": "A Note to the Tooth Fairy",
+  "task": "You lost a tooth! Write a short note to the Tooth Fairy. Say hello, say how old you are, ask for something and say thank you.",
+  "points": [
+   {
+    "label": "Say hello",
+    "keys": [
+     "dear",
+     "hello",
+     "hi "
+    ]
+   },
+   {
+    "label": "Your age",
+    "keys": [
+     "years old",
+     "re:\\bi am (\\d+|five|six|seven|eight|nine|ten|eleven|twelve)\\b"
+    ]
+   },
+   {
+    "label": "Ask for something",
+    "keys": [
+     "can i",
+     "please",
+     "i want",
+     "i would like",
+     "i'd like",
+     "could i"
+    ]
+   },
+   {
+    "label": "Say thank you",
+    "keys": [
+     "thank"
+    ]
+   }
+  ],
+  "words": [
+   20,
+   30
+  ],
+  "model": "Dear Tooth Fairy,\nHello! I am seven years old. Here is my little tooth. I like your shiny wings. Can I have a star coin, please? Thank you!\nLove,\nMia",
+  "id": "a1-w06",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "Dear …,",
+     "Here is …",
+     "Can I have …, please?",
+     "Thank you!",
+     "Love, …"
+    ]
+   },
+   {
+    "g": "🔗 Joining words",
+    "p": [
+     "and",
+     "but",
+     "because",
+     "also",
+     "too"
+    ]
+   },
+   {
+    "g": "🌼 Sentence starters",
+    "p": [
+     "I have got …",
+     "There is …",
+     "There are …",
+     "It is …",
+     "I can …"
+    ]
+   }
+  ],
+  "level": "a1"
+ }
+]

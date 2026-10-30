@@ -1,0 +1,691 @@
+[
+ {
+  "genre": "essay",
+  "part": "C1 Advanced · Writing Part 1 (essay)",
+  "title": "Preserving the Cloud Castle's Heritage",
+  "task": "Your class has attended a panel discussion on how governments can best protect ancient castles, libraries and forests. Notes: funding · tourism · education. Write an essay discussing TWO of the methods in your notes. Explain which method you think is more important, giving reasons. Write 220–260 words.",
+  "points": [
+   {
+    "label": "Discuss one method (funding, tourism or education)",
+    "sets": [
+     [
+      "fund",
+      "invest",
+      "grant",
+      "tax",
+      "financ",
+      "budget"
+     ],
+     [
+      "touris",
+      "visitor",
+      "ticket"
+     ],
+     [
+      "educat",
+      "school",
+      "awareness",
+      "curriculum",
+      "teach"
+     ]
+    ],
+    "need": 1
+   },
+   {
+    "label": "Discuss a second method",
+    "sets": [
+     [
+      "fund",
+      "invest",
+      "grant",
+      "tax",
+      "financ",
+      "budget"
+     ],
+     [
+      "touris",
+      "visitor",
+      "ticket"
+     ],
+     [
+      "educat",
+      "school",
+      "awareness",
+      "curriculum",
+      "teach"
+     ]
+    ],
+    "need": 2
+   },
+   {
+    "label": "Say which is more important and why",
+    "keys": [
+     "more important",
+     "most effective",
+     "more effective",
+     "outweigh",
+     "crucial",
+     "priority",
+     "on balance",
+     "ultimately"
+    ]
+   }
+  ],
+  "words": [
+   220,
+   260
+  ],
+  "model": "Few would dispute that ancient castles, libraries and forests are worth protecting. The real question is how governments can do so most effectively, and two approaches stand out: direct funding and education.\n\nThe case for funding is obvious. Crumbling towers do not repair themselves, and without regular investment even the most famous sites can deteriorate beyond rescue within a generation. Government grants, perhaps financed through a modest tax on tourism, allow experts to carry out specialist restoration work that no volunteer group could afford. Admittedly, money alone is no guarantee of success, since poorly planned projects have sometimes damaged the very buildings they were meant to save.\n\nEducation, by contrast, works more slowly but reaches further. When schools take pupils to ancient forests and teach them the stories behind each stone, they create a generation that genuinely values its heritage. Such awareness has practical consequences: citizens who care about the past are more likely to vote for conservation, to report vandalism and to support local museums.\n\nOn balance, I would argue that education is the more important of the two. This is not to say that funding is unnecessary; in an emergency, only money can prevent a collapse. However, funding depends entirely on political will, and political will ultimately depends on what ordinary people care about. Only by teaching the young to treasure their heritage can we ensure that the money will still be there in fifty years' time.",
+  "id": "c1-w01",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "It is widely accepted that …",
+     "There is a strong case for …",
+     "Admittedly, …",
+     "This is not to say that …",
+     "On balance, …"
+    ]
+   },
+   {
+    "g": "🔗 Cohesion",
+    "p": [
+     "Nonetheless, …",
+     "Admittedly, …",
+     "Conversely, …",
+     "Consequently, …",
+     "Given that …",
+     "By contrast, …",
+     "On balance, …",
+     "Ultimately, …"
+    ]
+   },
+   {
+    "g": "🧭 Arguing & hedging",
+    "p": [
+     "It could be argued that …",
+     "There is a strong case for …",
+     "This is not to say that …",
+     "to a certain extent",
+     "It is worth bearing in mind that …"
+    ]
+   },
+   {
+    "g": "✨ Advanced structures",
+    "p": [
+     "Not only does …, but it also …",
+     "What is particularly striking is …",
+     "Only by … can we …",
+     "Were it not for …"
+    ]
+   }
+  ],
+  "level": "c1"
+ },
+ {
+  "genre": "essay",
+  "part": "C1 Advanced · Writing Part 1 (essay)",
+  "title": "Bringing Young Readers Back",
+  "task": "Your class has listened to a radio discussion about how to encourage young people to read more. Notes: libraries · technology · families. Write an essay discussing TWO of the methods in your notes. Explain which method you think is more effective, giving reasons. Write 220–260 words.",
+  "points": [
+   {
+    "label": "Discuss one method (libraries, technology or families)",
+    "sets": [
+     [
+      "librar"
+     ],
+     [
+      "technolog",
+      "digital",
+      "app",
+      "e-book",
+      "online",
+      "device"
+     ],
+     [
+      "famil",
+      "parent",
+      "bedtime"
+     ]
+    ],
+    "need": 1
+   },
+   {
+    "label": "Discuss a second method",
+    "sets": [
+     [
+      "librar"
+     ],
+     [
+      "technolog",
+      "digital",
+      "app",
+      "e-book",
+      "online",
+      "device"
+     ],
+     [
+      "famil",
+      "parent",
+      "bedtime"
+     ]
+    ],
+    "need": 2
+   },
+   {
+    "label": "Say which is more effective and why",
+    "keys": [
+     "more effective",
+     "most effective",
+     "more important",
+     "outweigh",
+     "crucial",
+     "on balance",
+     "ultimately",
+     "all things considered"
+    ]
+   }
+  ],
+  "words": [
+   220,
+   260
+  ],
+  "model": "It is often claimed that young people have abandoned books in favour of screens. Whether or not this is entirely true, there is general agreement that more could be done to nurture a love of reading, and both technology and families have a role to play.\n\nTechnology is frequently blamed for the problem, yet it may also offer part of the solution. Reading apps can recommend titles based on a child's interests, while e-books allow reluctant readers to adjust the font or listen along with an audio version. What is particularly striking is that many teenagers who claim to hate reading happily spend hours on online fan fiction, which suggests that the appetite for stories has not disappeared at all.\n\nFamilies, conversely, shape reading habits long before any device does. A child who grows up surrounded by books, who sees their parents reading for pleasure and who is read to at bedtime is far more likely to become a lifelong reader. Admittedly, not every family has the time or the confidence to do this, particularly when parents work long hours.\n\nAll things considered, I believe that families are the more effective influence. Technology can certainly make reading more accessible, but it cannot create the emotional connection that turns reading into a habit. Consequently, rather than investing only in new apps, governments would be wise to support parents, for instance by giving free books to every newborn child and running reading workshops in local communities.",
+  "id": "c1-w02",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "It has been suggested that …",
+     "One compelling argument is that …",
+     "Conversely, …",
+     "What is particularly striking is …",
+     "All things considered, …"
+    ]
+   },
+   {
+    "g": "🔗 Cohesion",
+    "p": [
+     "Nonetheless, …",
+     "Admittedly, …",
+     "Conversely, …",
+     "Consequently, …",
+     "Given that …",
+     "By contrast, …",
+     "On balance, …",
+     "Ultimately, …"
+    ]
+   },
+   {
+    "g": "🧭 Arguing & hedging",
+    "p": [
+     "It could be argued that …",
+     "There is a strong case for …",
+     "This is not to say that …",
+     "to a certain extent",
+     "It is worth bearing in mind that …"
+    ]
+   },
+   {
+    "g": "✨ Advanced structures",
+    "p": [
+     "Not only does …, but it also …",
+     "What is particularly striking is …",
+     "Only by … can we …",
+     "Were it not for …"
+    ]
+   }
+  ],
+  "level": "c1"
+ },
+ {
+  "genre": "proposal",
+  "part": "C1 Advanced · Writing Part 2 (proposal)",
+  "title": "Proposal: A Festival for Cloud Castle",
+  "task": "The Cloud Castle council wants to organise a new annual festival and has asked residents for proposals. Write a proposal describing the festival you would organise, explaining how it would benefit residents and suggesting how it could be funded and run. Write 220–260 words.",
+  "points": [
+   {
+    "label": "The purpose of the proposal",
+    "keys": [
+     "purpose",
+     "aim",
+     "this proposal",
+     "intended"
+    ]
+   },
+   {
+    "label": "What the festival would include",
+    "keys": [
+     "stall",
+     "workshop",
+     "concert",
+     "perform",
+     "parade",
+     "competition",
+     "exhibition",
+     "activit"
+    ]
+   },
+   {
+    "label": "How residents would benefit",
+    "keys": [
+     "benefit",
+     "boost",
+     "attract",
+     "community",
+     "local business",
+     "residents"
+    ]
+   },
+   {
+    "label": "Funding and organisation",
+    "keys": [
+     "cost",
+     "fund",
+     "budget",
+     "sponsor",
+     "volunteer",
+     "organis",
+     "venue",
+     "ticket"
+    ]
+   },
+   {
+    "label": "A clear recommendation",
+    "keys": [
+     "recommend",
+     "propose",
+     "i would suggest",
+     "advisable"
+    ]
+   }
+  ],
+  "words": [
+   220,
+   260
+  ],
+  "model": "Introduction\nThe aim of this proposal is to outline a new annual event, the Festival of Floating Lights, and to explain how it could be funded and organised at minimal cost to the council.\n\nThe festival\nThe festival would take place over one weekend each spring. During the day, the main square would host craft workshops, a storytelling competition for children and stalls selling local food. As night fell, residents would release hundreds of paper lanterns from the castle walls, followed by an open-air concert performed by local musicians.\n\nBenefits for residents\nNot only would the festival bring the community together, but it would also boost local businesses. Cafes and guesthouses would almost certainly benefit from the extra visitors, and young people would gain valuable experience by helping to run the event. Perhaps most importantly, it would give Cloud Castle a distinctive identity that residents could take pride in.\n\nFunding and organisation\nIt is worth bearing in mind that the council's budget is limited. I would therefore suggest a combination of local business sponsorship and a small entrance fee for the evening concert. A committee of volunteers, supported by one council officer, could handle the planning, while the castle grounds would provide a free and spectacular venue.\n\nRecommendation\nI would strongly recommend that the council approves a trial festival next spring. If it proves successful, it could become a much-loved tradition for years to come.",
+  "id": "c1-w03",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "The aim of this proposal is to …",
+     "The festival would feature …",
+     "Not only would …, but …",
+     "It is worth bearing in mind that …",
+     "I would strongly recommend that …"
+    ]
+   },
+   {
+    "g": "🔗 Cohesion",
+    "p": [
+     "Nonetheless, …",
+     "Admittedly, …",
+     "Conversely, …",
+     "Consequently, …",
+     "Given that …",
+     "By contrast, …",
+     "On balance, …",
+     "Ultimately, …"
+    ]
+   },
+   {
+    "g": "🧭 Arguing & hedging",
+    "p": [
+     "It could be argued that …",
+     "There is a strong case for …",
+     "This is not to say that …",
+     "to a certain extent",
+     "It is worth bearing in mind that …"
+    ]
+   },
+   {
+    "g": "✨ Advanced structures",
+    "p": [
+     "Not only does …, but it also …",
+     "What is particularly striking is …",
+     "Only by … can we …",
+     "Were it not for …"
+    ]
+   }
+  ],
+  "level": "c1"
+ },
+ {
+  "genre": "report",
+  "part": "C1 Advanced · Writing Part 2 (report)",
+  "title": "Report: The Royal Library's Opening Hours",
+  "task": "The head librarian of the Royal Library is considering three changes: opening later in the evening, opening at weekends, or starting an online lending service. Write a report evaluating at least two of these options and recommending the best one. Write 220–260 words.",
+  "points": [
+   {
+    "label": "The purpose of the report",
+    "keys": [
+     "purpose",
+     "aim",
+     "this report"
+    ]
+   },
+   {
+    "label": "Evaluate one option (evenings, weekends or online)",
+    "sets": [
+     [
+      "evening",
+      "later",
+      "late"
+     ],
+     [
+      "weekend",
+      "saturday",
+      "sunday"
+     ],
+     [
+      "online",
+      "digital",
+      "e-book",
+      "website"
+     ]
+    ],
+    "need": 1
+   },
+   {
+    "label": "Evaluate a second option",
+    "sets": [
+     [
+      "evening",
+      "later",
+      "late"
+     ],
+     [
+      "weekend",
+      "saturday",
+      "sunday"
+     ],
+     [
+      "online",
+      "digital",
+      "e-book",
+      "website"
+     ]
+    ],
+    "need": 2
+   },
+   {
+    "label": "Recommend the best option",
+    "keys": [
+     "recommend",
+     "propose",
+     "advisable",
+     "the best option",
+     "most effective"
+    ]
+   }
+  ],
+  "words": [
+   220,
+   260
+  ],
+  "model": "Purpose\nThis report sets out to evaluate two of the proposed changes to the Royal Library's opening hours, namely weekend opening and an online lending service, and to recommend the more suitable option.\n\nWeekend opening\nThe main advantage of opening on Saturdays and Sundays is that it would allow working adults and families to visit together. In a recent survey of readers, nearly half said that they rarely visit because the library is closed when they are free. A potential drawback, however, is cost: staff would have to be paid overtime, and heating the building for two extra days would add considerably to the energy bill.\n\nOnline lending\nAn online service, by contrast, would make thousands of e-books available at any hour, which would be particularly valuable for elderly readers and those living in remote villages. Although the initial investment in software would be significant, running costs would be relatively low. It should be noted, nevertheless, that some readers value the library as a meeting place, and an online service would do nothing to meet that need.\n\nRecommendation\nIn light of the above, it is recommended that the library introduces online lending first, since it would reach the largest number of readers at the lowest long-term cost. Weekend opening could then be trialled on Saturday mornings only, which would allow the library to assess demand before committing to a more expensive timetable.",
+  "id": "c1-w04",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "This report sets out to …",
+     "The main advantage of … is that …",
+     "A potential drawback is that …",
+     "In light of the above, …",
+     "It is therefore recommended that …"
+    ]
+   },
+   {
+    "g": "🔗 Cohesion",
+    "p": [
+     "Nonetheless, …",
+     "Admittedly, …",
+     "Conversely, …",
+     "Consequently, …",
+     "Given that …",
+     "By contrast, …",
+     "On balance, …",
+     "Ultimately, …"
+    ]
+   },
+   {
+    "g": "🧭 Arguing & hedging",
+    "p": [
+     "It could be argued that …",
+     "There is a strong case for …",
+     "This is not to say that …",
+     "to a certain extent",
+     "It is worth bearing in mind that …"
+    ]
+   },
+   {
+    "g": "✨ Advanced structures",
+    "p": [
+     "Not only does …, but it also …",
+     "What is particularly striking is …",
+     "Only by … can we …",
+     "Were it not for …"
+    ]
+   }
+  ],
+  "level": "c1"
+ },
+ {
+  "genre": "review",
+  "part": "C1 Advanced · Writing Part 2 (review)",
+  "title": "Review: A Book That Changed My Mind",
+  "task": "A literary magazine is running a series called “A book that changed the way I think”. Write a review of a book (real or imaginary) briefly describing it, explaining how it changed your thinking and saying who would appreciate it. Write 220–260 words.",
+  "points": [
+   {
+    "label": "Briefly describe the book",
+    "keys": [
+     "story",
+     "plot",
+     "author",
+     "novel",
+     "tells",
+     "follows",
+     "centres"
+    ]
+   },
+   {
+    "label": "How it changed your thinking",
+    "keys": [
+     "made me",
+     "changed",
+     "realise",
+     "realize",
+     "reflect",
+     "reconsider",
+     "perspective",
+     "insight",
+     "think differently"
+    ]
+   },
+   {
+    "label": "A balanced view (any weaknesses)",
+    "keys": [
+     "admittedly",
+     "however",
+     "flaw",
+     "drawback",
+     "slow",
+     "at times",
+     "nevertheless"
+    ]
+   },
+   {
+    "label": "Who would appreciate it",
+    "keys": [
+     "recommend",
+     "would appeal",
+     "worth reading",
+     "ideal for",
+     "must-read",
+     "anyone who"
+    ]
+   }
+  ],
+  "words": [
+   220,
+   260
+  ],
+  "model": "The Cartographer of Clouds\n\nAt first glance, The Cartographer of Clouds looks like a simple children's adventure. The novel follows Ada, a young mapmaker who is ordered by the king to chart the kingdom's ever-changing sky. Yet behind this playful premise lies a surprisingly profound meditation on the limits of knowledge.\n\nWhat sets the book apart is the way the author turns Ada's failure into its central theme. Every map she draws is out of date by the time the ink dries, and the king grows increasingly furious. Rather than rescuing her with a clever trick, the story allows Ada to accept that some things can only be understood, never controlled.\n\nThis made me reconsider my own obsession with planning. Like many students, I had always believed that with enough effort every outcome could be predicted. Ada's quiet acceptance gave me a new perspective: uncertainty is not a problem to be solved but a condition to be lived with, and there is a kind of freedom in that realisation.\n\nAdmittedly, the novel is not flawless. The middle chapters are slow at times, and some of the minor characters are rather thinly drawn. Nevertheless, the final pages are so moving that these weaknesses are easily forgiven.\n\nI would wholeheartedly recommend it to anyone who feels overwhelmed by pressure to have everything under control. Younger readers will enjoy the adventure, while older ones will find themselves thinking about it long after the last page.",
+  "id": "c1-w05",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "At first glance, …",
+     "What sets this novel apart is …",
+     "Admittedly, …",
+     "It made me reconsider …",
+     "I would wholeheartedly recommend it to …"
+    ]
+   },
+   {
+    "g": "🔗 Cohesion",
+    "p": [
+     "Nonetheless, …",
+     "Admittedly, …",
+     "Conversely, …",
+     "Consequently, …",
+     "Given that …",
+     "By contrast, …",
+     "On balance, …",
+     "Ultimately, …"
+    ]
+   },
+   {
+    "g": "🧭 Arguing & hedging",
+    "p": [
+     "It could be argued that …",
+     "There is a strong case for …",
+     "This is not to say that …",
+     "to a certain extent",
+     "It is worth bearing in mind that …"
+    ]
+   },
+   {
+    "g": "✨ Advanced structures",
+    "p": [
+     "Not only does …, but it also …",
+     "What is particularly striking is …",
+     "Only by … can we …",
+     "Were it not for …"
+    ]
+   }
+  ],
+  "level": "c1"
+ },
+ {
+  "genre": "letter",
+  "part": "C1 Advanced · Writing Part 2 (letter)",
+  "title": "Letter to the Editor: Save the Sky Bridge",
+  "task": "Your local newspaper has published an article suggesting that the old Sky Bridge should be closed to save money. Write a letter to the editor explaining why the bridge matters to the community, responding to the argument about cost and suggesting an alternative. Write 220–260 words.",
+  "formal": true,
+  "points": [
+   {
+    "label": "Your reason for writing",
+    "keys": [
+     "writing in response",
+     "i am writing",
+     "regarding",
+     "with reference",
+     "response to your article"
+    ]
+   },
+   {
+    "label": "Why the bridge matters",
+    "keys": [
+     "community",
+     "residents",
+     "connect",
+     "access",
+     "history",
+     "heritage",
+     "livelihood"
+    ]
+   },
+   {
+    "label": "Respond to the cost argument",
+    "keys": [
+     "cost",
+     "savings",
+     "money",
+     "budget",
+     "expensive",
+     "repair",
+     "maintenance",
+     "short-term",
+     "long-term"
+    ]
+   },
+   {
+    "label": "Suggest an alternative",
+    "keys": [
+     "instead",
+     "alternative",
+     "propose",
+     "suggest",
+     "rather than"
+    ]
+   }
+  ],
+  "words": [
+   220,
+   260
+  ],
+  "model": "Dear Editor,\n\nI am writing in response to your article of 12 March, which suggested that the Sky Bridge should be closed in order to reduce the council's spending. While I appreciate that the council faces difficult choices, I believe this proposal would be a serious mistake.\n\nFor many residents, the bridge is far more than a convenient shortcut. It connects the eastern villages to the only hospital and secondary school in the area, and without it some families would face a journey of over an hour. Moreover, the bridge is part of our heritage: it has stood for three centuries and appears in countless local stories and paintings.\n\nYour article argued that closing the bridge would save money on maintenance. However, this argument ignores the long-term costs. Extra bus services would have to be provided, local shops would lose customers and, once the structure is abandoned, repairing it later would be far more expensive than maintaining it now. In other words, the savings are short-term and largely illusory.\n\nA far more sensible approach would be to share the cost. The council could introduce a small voluntary toll for tourists, who cross the bridge in large numbers during the summer, and invite local businesses to sponsor its upkeep. Rather than closing a vital link, the council should be looking for ways to protect it.\n\nYours faithfully,\nThomas Hale",
+  "id": "c1-w06",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "I am writing in response to …",
+     "While I appreciate that …",
+     "It is short-sighted to …",
+     "A far more sensible approach would be to …",
+     "Yours faithfully,"
+    ]
+   },
+   {
+    "g": "🔗 Cohesion",
+    "p": [
+     "Nonetheless, …",
+     "Admittedly, …",
+     "Conversely, …",
+     "Consequently, …",
+     "Given that …",
+     "By contrast, …",
+     "On balance, …",
+     "Ultimately, …"
+    ]
+   },
+   {
+    "g": "🧭 Arguing & hedging",
+    "p": [
+     "It could be argued that …",
+     "There is a strong case for …",
+     "This is not to say that …",
+     "to a certain extent",
+     "It is worth bearing in mind that …"
+    ]
+   },
+   {
+    "g": "✨ Advanced structures",
+    "p": [
+     "Not only does …, but it also …",
+     "What is particularly striking is …",
+     "Only by … can we …",
+     "Were it not for …"
+    ]
+   }
+  ],
+  "level": "c1"
+ }
+]

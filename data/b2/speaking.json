@@ -1,0 +1,182 @@
+[
+ {
+  "type": "read",
+  "text": "If I'd known about the storm, I wouldn't have set sail.",
+  "focus": "Third conditional: weak forms",
+  "tip": "'wouldn't have' sounds like /ˈwʊdntəv/. Stress KNOWN, STORM and SAIL.",
+  "id": "b2-sp01"
+ },
+ {
+  "type": "read",
+  "text": "The lake is said to have been home to a dragon for centuries.",
+  "focus": "Passive reporting",
+  "tip": "Chunk it: The lake is said | to have been home to a dragon | for centuries. 'centuries' is /ˈsentʃəriz/.",
+  "id": "b2-sp02"
+ },
+ {
+  "type": "read",
+  "text": "Not only did she win the race, but she also broke the record.",
+  "focus": "Emphatic stress",
+  "tip": "Stress ON-ly, WIN, AL-so and REC-ord (the noun has stress on the first syllable).",
+  "id": "b2-sp03"
+ },
+ {
+  "type": "read",
+  "text": "By this time next year, I'll have finished my degree.",
+  "focus": "Future perfect",
+  "tip": "'I'll have' squeezes into /aɪl əv/. 'finished' ends in /t/: /ˈfɪnɪʃt/.",
+  "id": "b2-sp04"
+ },
+ {
+  "type": "read",
+  "text": "She's been working on the project for months, so she must be exhausted.",
+  "focus": "Silent h",
+  "tip": "'exhausted' is /ɪɡˈzɔːstɪd/: the h is silent and the stress is on the second syllable.",
+  "id": "b2-sp05"
+ },
+ {
+  "type": "read",
+  "text": "Despite the heavy rain, thousands of people turned up for the concert.",
+  "focus": "Sound: /θ/ and linking",
+  "tip": "'thousands' /ˈθaʊzndz/ starts with tongue between teeth. 'turned up' links into 'tur-nup'.",
+  "id": "b2-sp06"
+ },
+ {
+  "type": "read",
+  "text": "I'd rather you didn't mention it to anyone else.",
+  "focus": "Linking",
+  "tip": "'mention it' links into 'men-shun-it', and 'anyone else' flows together: /ˈeniwʌn els/.",
+  "id": "b2-sp07"
+ },
+ {
+  "type": "read",
+  "text": "The knight, whose armour was dented, refused to give up.",
+  "focus": "Silent letters",
+  "tip": "'knight' has a silent k: /naɪt/. 'armour' is /ˈɑːmə/ in British English. 'dented' ends in /ɪd/.",
+  "id": "b2-sp08"
+ },
+ {
+  "type": "read",
+  "text": "It's high time we did something about the pollution in the river.",
+  "focus": "Sentence stress",
+  "tip": "Stress HIGH TIME, SOME-thing, pol-LU-tion and RIV-er.",
+  "id": "b2-sp09"
+ },
+ {
+  "type": "read",
+  "text": "You can't have seen her at the market; she was with me all morning.",
+  "focus": "Deduction: weak 'have'",
+  "tip": "'can't have' is /kɑːnt əv/. Make a short pause at the semicolon.",
+  "id": "b2-sp10"
+ },
+ {
+  "type": "read",
+  "text": "Having finished her homework, Mia went outside to play with the fox.",
+  "focus": "Participle clauses",
+  "tip": "Pause after 'homework'. 'finished' ends in /t/, not /ɪd/.",
+  "id": "b2-sp11"
+ },
+ {
+  "type": "read",
+  "text": "The more you practise, the more confident you'll become.",
+  "focus": "Rhythm: the more … the more",
+  "tip": "Give both halves the same beat: the MORE you PRAC-tise | the MORE CON-fident you'll be-COME.",
+  "id": "b2-sp12"
+ },
+ {
+  "type": "read",
+  "text": "Hardly anyone noticed that the crown had been stolen.",
+  "focus": "Diphthongs /aʊ/ /əʊ/",
+  "tip": "'crown' rhymes with 'brown' /aʊ/. 'stolen' and 'noticed' have /əʊ/.",
+  "id": "b2-sp13"
+ },
+ {
+  "type": "read",
+  "text": "I'm considering whether to accept the job or carry on studying.",
+  "focus": "Linking /j/ and stress",
+  "tip": "'carry on' links with a little y sound: 'carry-yon'. Stress con-SID-er-ing and ac-CEPT.",
+  "id": "b2-sp14"
+ },
+ {
+  "type": "read",
+  "text": "The bakery was so crowded that we had to wait outside for ages.",
+  "focus": "so … that",
+  "tip": "'crowded' has an extra syllable /ˈkraʊdɪd/. 'had to' is /ˈhæd tə/ with one t.",
+  "id": "b2-sp15"
+ },
+ {
+  "type": "read",
+  "text": "Whatever happens, make sure you keep the map somewhere safe.",
+  "focus": "Sounds: /ʃ/ and /s/",
+  "tip": "'sure' is /ʃɔː/ in British English and 'safe' is /seɪf/. Don't mix up /ʃ/ and /s/.",
+  "id": "b2-sp16"
+ },
+ {
+  "type": "read",
+  "text": "He apologised for being late, claiming that his horse had lost a shoe.",
+  "focus": "-ed endings and word stress",
+  "tip": "a-POL-o-gised ends in /d/: /əˈpɒlədʒaɪzd/. 'horse' has /ɔː/ and no 'r' sound.",
+  "id": "b2-sp17"
+ },
+ {
+  "type": "answer",
+  "q": "What would you have done differently last year? Use 'I would have' or 'I wish I had'.",
+  "keywords": [
+   "would have|wish i had|wish i would"
+  ],
+  "model": "Looking back, I would have spent less time online and more time outdoors.",
+  "focus": "Past regrets",
+  "tip": "'would have' is often /ˈwʊdəv/, and 'I'd have' is fine too. Stress the things you'd change.",
+  "id": "b2-sp18",
+  "minWords": 6
+ },
+ {
+  "type": "answer",
+  "q": "Should people work from home? Give both sides with 'On the one hand' and 'on the other hand'.",
+  "keywords": [
+   "on the one hand",
+   "on the other hand"
+  ],
+  "model": "On the one hand, working from home saves time, but on the other hand, people can feel lonely.",
+  "focus": "Speaking Part 4: Balanced opinion",
+  "tip": "Pause after each signpost phrase and stress ONE and OTH-er.",
+  "id": "b2-sp19",
+  "minWords": 6
+ },
+ {
+  "type": "answer",
+  "q": "Describe a place you would like to visit. Use 'I've always wanted to'.",
+  "keywords": [
+   "always wanted to"
+  ],
+  "model": "I've always wanted to visit Iceland because I'd love to see the northern lights.",
+  "focus": "Speaking Part 2: Long turn",
+  "tip": "'wanted to' is /ˈwɒntɪd tə/ with a weak 'to'. Stress AL-ways and the place name.",
+  "id": "b2-sp20",
+  "minWords": 6
+ },
+ {
+  "type": "answer",
+  "q": "Tell me about a problem in your town. Use a passive like 'needs to be' or 'should be' + past participle.",
+  "keywords": [
+   "needs to be|need to be|should be|must be|ought to be|has to be|have to be"
+  ],
+  "model": "The old bridge needs to be repaired because it's getting dangerous.",
+  "focus": "Speaking Part 3: Passive for problems",
+  "tip": "Keep 'to be' weak /tə bi/ and stress the participle: re-PAIRED.",
+  "id": "b2-sp21",
+  "minWords": 6
+ },
+ {
+  "type": "answer",
+  "q": "Compare life in a city and life in a village. Use 'whereas' or 'while'.",
+  "keywords": [
+   "whereas|while"
+  ],
+  "model": "City life is exciting and fast, whereas village life is quieter and more relaxed.",
+  "focus": "Speaking Part 3: Comparing",
+  "tip": "'whereas' is /weərˈæz/ with stress on the second syllable. Pause just before it.",
+  "id": "b2-sp22",
+  "minWords": 6
+ }
+]

@@ -1,0 +1,214 @@
+{
+ "passages": [
+  {
+   "title": "Candy Village Summer Fair",
+   "text": "Candy Village Summer Fair — Saturday 14th July, 10 a.m. to 4 p.m., in the village square. Cake competition at 2 p.m.: please bring your cake to the bakery by 12 o'clock. Face painting for children: £2. Entry is free! If it rains, the fair will move to the school hall.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Where must you take your cake before the competition?",
+     "options": [
+      "to the bakery",
+      "to the school hall",
+      "to the village square",
+      "to the judges' table"
+     ],
+     "answer": 0,
+     "explain": "'Please bring your cake to the bakery by 12 o'clock.'"
+    },
+    {
+     "type": "mcq",
+     "q": "What do you have to pay for?",
+     "options": [
+      "face painting",
+      "entry to the fair",
+      "the cake competition",
+      "the music"
+     ],
+     "answer": 0,
+     "explain": "Face painting costs £2; entry is free."
+    },
+    {
+     "type": "mcq",
+     "q": "What happens if it rains?",
+     "options": [
+      "The fair moves to the school hall.",
+      "The fair is cancelled.",
+      "The fair moves to next Saturday.",
+      "The fair starts later."
+     ],
+     "answer": 0,
+     "explain": "'If it rains, the fair will move to the school hall.'"
+    }
+   ]
+  },
+  {
+   "title": "An Email from Ella",
+   "text": "Hi Leo, Thanks for inviting me to your birthday party on Friday. I'd love to come, but I have a piano lesson until five. Can I arrive at about half past five? Also, my brother wants to know if he can come too. He doesn't know many people here because we only moved last month. See you soon, Ella",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Why will Ella be late?",
+     "options": [
+      "She has a piano lesson.",
+      "She has homework.",
+      "Her brother is ill.",
+      "She doesn't know the address."
+     ],
+     "answer": 0,
+     "explain": "'I have a piano lesson until five.'"
+    },
+    {
+     "type": "mcq",
+     "q": "What does Ella ask Leo?",
+     "options": [
+      "if her brother can come",
+      "if she can bring food",
+      "what time the party ends",
+      "where the party is"
+     ],
+     "answer": 0,
+     "explain": "'My brother wants to know if he can come too.'"
+    },
+    {
+     "type": "mcq",
+     "q": "What do we learn about Ella's family?",
+     "options": [
+      "They moved recently.",
+      "Her brother is older than her.",
+      "They have a piano shop.",
+      "They live next to Leo."
+     ],
+     "answer": 0,
+     "explain": "'We only moved last month.'"
+    }
+   ]
+  },
+  {
+   "title": "The Gingerbread Baker",
+   "text": "Mr Crumb opened his bakery forty years ago. At first he only sold bread, but one winter he made gingerbread houses for the village children. They were so popular that people came from other towns to buy them. Now his granddaughter Poppy helps him. She decorates the houses with sweets while Mr Crumb bakes. He says he will never stop working because he loves seeing children smile.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What did the bakery sell at first?",
+     "options": [
+      "only bread",
+      "gingerbread houses",
+      "sweets",
+      "birthday cakes"
+     ],
+     "answer": 0,
+     "explain": "'At first he only sold bread.'"
+    },
+    {
+     "type": "mcq",
+     "q": "Who decorates the gingerbread houses?",
+     "options": [
+      "Poppy",
+      "Mr Crumb",
+      "the village children",
+      "his daughter"
+     ],
+     "answer": 0,
+     "explain": "'She (Poppy) decorates the houses with sweets.'"
+    },
+    {
+     "type": "mcq",
+     "q": "Why won't Mr Crumb stop working?",
+     "options": [
+      "He loves seeing children smile.",
+      "He needs the money.",
+      "Poppy is too young.",
+      "The town needs bread."
+     ],
+     "answer": 0,
+     "explain": "'…because he loves seeing children smile.'"
+    }
+   ]
+  },
+  {
+   "title": "Camping by the River",
+   "text": "Last weekend my family went camping by the river. On Saturday we went fishing, but we didn't catch anything! In the evening it got very cold, so we made a fire and cooked sausages. On Sunday morning it rained heavily and our tent got wet. We packed up early and drove home, but we all agreed it was a great adventure.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How many fish did they catch?",
+     "options": [
+      "none",
+      "two",
+      "one",
+      "lots"
+     ],
+     "answer": 0,
+     "explain": "'We didn't catch anything!'"
+    },
+    {
+     "type": "mcq",
+     "q": "Why did they make a fire?",
+     "options": [
+      "It was very cold.",
+      "To cook the fish.",
+      "To dry the tent.",
+      "To see in the dark."
+     ],
+     "answer": 0,
+     "explain": "'It got very cold, so we made a fire.'"
+    },
+    {
+     "type": "mcq",
+     "q": "What happened on Sunday?",
+     "options": [
+      "It rained and the tent got wet.",
+      "They went fishing again.",
+      "They lost the car keys.",
+      "They stayed another night."
+     ],
+     "answer": 0,
+     "explain": "'It rained heavily and our tent got wet.'"
+    }
+   ]
+  },
+  {
+   "title": "Lost Kitten!",
+   "text": "LOST: small grey kitten wearing a blue collar with a bell. Last seen near the library on Tuesday evening. She is very shy and may hide under cars. Please call Jack on 07700 900123. Reward!",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What colour is the kitten's collar?",
+     "options": [
+      "blue",
+      "grey",
+      "red",
+      "green"
+     ],
+     "answer": 0,
+     "explain": "'…wearing a blue collar with a bell.'"
+    },
+    {
+     "type": "mcq",
+     "q": "Where was the kitten last seen?",
+     "options": [
+      "near the library",
+      "in the park",
+      "at school",
+      "in Jack's garden"
+     ],
+     "answer": 0,
+     "explain": "'Last seen near the library.'"
+    },
+    {
+     "type": "mcq",
+     "q": "What is the kitten like?",
+     "options": [
+      "shy",
+      "friendly",
+      "noisy",
+      "brave"
+     ],
+     "answer": 0,
+     "explain": "'She is very shy.'"
+    }
+   ]
+  }
+ ]
+}

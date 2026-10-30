@@ -1,0 +1,210 @@
+[
+ {
+  "type": "listen",
+  "say": "Well, it's certainly... an unusual choice of colour for a kitchen.",
+  "q": "What does the speaker really think?",
+  "options": [
+   "She doesn't like it.",
+   "She loves it.",
+   "She has no opinion.",
+   "She thinks it was cheap."
+  ],
+  "answer": 0,
+  "explain": "The pause and 'unusual' are a polite way to show dislike."
+ },
+ {
+  "type": "listen",
+  "say": "I'm not saying the plan is flawed. I'm saying it hasn't been tested.",
+  "q": "What is the speaker's position?",
+  "options": [
+   "It should be tested before being approved.",
+   "The plan is badly designed and should be dropped.",
+   "He approves of the plan fully and without reservation.",
+   "He doesn't really care whether it goes ahead or not."
+  ],
+  "answer": 0,
+  "explain": "The concern is the lack of testing, not the plan itself."
+ },
+ {
+  "type": "listen",
+  "say": "Oh, brilliant. Another meeting that could have been an email.",
+  "q": "What is the speaker's tone?",
+  "options": [
+   "sarcastic",
+   "enthusiastic",
+   "grateful",
+   "nervous"
+  ],
+  "answer": 0,
+  "explain": "'Brilliant' is used ironically."
+ },
+ {
+  "type": "listen",
+  "say": "Given the circumstances, I think we did remarkably well to break even.",
+  "q": "What was the result?",
+  "options": [
+   "no profit and no loss, seen positively",
+   "a large profit that surprised everyone",
+   "a big loss, but less than they feared",
+   "the business had to close for good"
+  ],
+  "answer": 0,
+  "explain": "Break even = neither gain nor lose money."
+ },
+ {
+  "type": "listen",
+  "say": "Far be it from me to criticise, but wasn't the deadline last Tuesday?",
+  "q": "What is the speaker implying?",
+  "options": [
+   "The work is late.",
+   "The deadline is next week.",
+   "She likes the work.",
+   "She forgot the deadline."
+  ],
+  "answer": 0,
+  "explain": "'Far be it from me to criticise' introduces a criticism."
+ },
+ {
+  "type": "listen",
+  "say": "Let's just say she wasn't exactly thrilled when she heard the news.",
+  "q": "How did she react?",
+  "options": [
+   "She was displeased.",
+   "She was delighted.",
+   "She was indifferent.",
+   "She was pleasantly surprised."
+  ],
+  "answer": 0,
+  "explain": "Understatement: 'not exactly thrilled' = unhappy."
+ },
+ {
+  "type": "listen",
+  "say": "The figures speak for themselves. Although, admittedly, we're only looking at one region.",
+  "q": "What does the speaker admit?",
+  "options": [
+   "The data is limited.",
+   "The figures are wrong.",
+   "The region is large.",
+   "Nobody has seen the figures."
+  ],
+  "answer": 0,
+  "explain": "'Admittedly… only one region' = a limitation."
+ },
+ {
+  "type": "listen",
+  "say": "I'd take what he says with a pinch of salt. He's been known to exaggerate.",
+  "q": "What is the advice?",
+  "options": [
+   "Don't completely believe him.",
+   "You can trust everything he says.",
+   "Ignore him completely from now on.",
+   "Ask him to explain it more simply."
+  ],
+  "answer": 0,
+  "explain": "With a pinch of salt = with some doubt."
+ },
+ {
+  "type": "listen",
+  "say": "It's not the money as such. It's the principle of the thing.",
+  "q": "What concerns the speaker?",
+  "options": [
+   "what is fair or right",
+   "the amount of money involved",
+   "the risk of losing his job",
+   "the time the whole thing takes"
+  ],
+  "answer": 0,
+  "explain": "The principle = what's right, not the cost."
+ },
+ {
+  "type": "listen",
+  "say": "Had we listened to the engineers in the first place, none of this would have happened.",
+  "q": "What does the speaker mean?",
+  "options": [
+   "The engineers' warnings were ignored.",
+   "The engineers caused the problem themselves.",
+   "Nothing bad has actually happened so far.",
+   "They always listen to the engineers' advice."
+  ],
+  "answer": 0,
+  "explain": "Inverted third conditional: they didn't listen."
+ },
+ {
+  "type": "listen",
+  "say": "She's hardly the most reliable witness, given that she wasn't wearing her glasses.",
+  "q": "What is the speaker's view?",
+  "options": [
+   "Her account is doubtful.",
+   "She is a very reliable witness.",
+   "She urgently needs new glasses.",
+   "She wasn't there when it happened."
+  ],
+  "answer": 0,
+  "explain": "'Hardly the most reliable' = not reliable."
+ },
+ {
+  "type": "listen",
+  "say": "We'll cross that bridge when we come to it.",
+  "q": "What does the speaker mean?",
+  "options": [
+   "We'll deal with that problem if it happens.",
+   "We need to plan the route over the bridge now.",
+   "We should leave at once before it gets worse.",
+   "That problem has already been completely solved."
+  ],
+  "answer": 0,
+  "explain": "Don't worry about a future problem yet."
+ },
+ {
+  "type": "listen",
+  "say": "In principle, I'm all for it. In practice, I can see a few hurdles.",
+  "q": "What is the speaker's stance?",
+  "options": [
+   "supports the idea but sees practical difficulties",
+   "completely against the idea for reasons of principle",
+   "fully in favour and sees no obstacles at all",
+   "undecided until he hears more about the costs"
+  ],
+  "answer": 0,
+  "explain": "Theory vs practice."
+ },
+ {
+  "type": "listen",
+  "say": "Not to put too fine a point on it, the proposal is a disaster.",
+  "q": "How is the speaker talking?",
+  "options": [
+   "very bluntly",
+   "very politely and vaguely",
+   "jokingly",
+   "nervously"
+  ],
+  "answer": 0,
+  "explain": "'Not to put too fine a point on it' introduces a blunt statement."
+ },
+ {
+  "type": "listen",
+  "say": "I could have sworn I left my keys on the table.",
+  "q": "What does the speaker mean?",
+  "options": [
+   "She was sure, but the keys aren't there.",
+   "She is angry and swearing about the keys.",
+   "She knows exactly where she put the keys.",
+   "She has never owned a set of keys at all."
+  ],
+  "answer": 0,
+  "explain": "'Could have sworn' = was certain (but was wrong)."
+ },
+ {
+  "type": "listen",
+  "say": "Considering he'd never cooked before, the meal was surprisingly edible.",
+  "q": "What does the speaker imply?",
+  "options": [
+   "The meal was acceptable but not great.",
+   "The meal was excellent, even by restaurant standards.",
+   "The meal was so bad that nobody could eat it.",
+   "He cooks professionally, so the meal was no surprise."
+  ],
+  "answer": 0,
+  "explain": "'Surprisingly edible' is faint praise."
+ }
+]

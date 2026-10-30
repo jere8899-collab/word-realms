@@ -1,0 +1,210 @@
+[
+ {
+  "type": "listen",
+  "say": "To be honest, I wasn't expecting much from the sequel, but it actually turned out to be better than the original.",
+  "q": "How does the speaker feel about the sequel?",
+  "options": [
+   "pleasantly surprised",
+   "mildly disappointed",
+   "completely indifferent",
+   "annoyed it was so long"
+  ],
+  "answer": 0,
+  "explain": "Low expectations + 'better than the original'."
+ },
+ {
+  "type": "listen",
+  "say": "I'd have gone to the meeting if anyone had bothered to tell me about it.",
+  "q": "Why didn't the speaker go?",
+  "options": [
+   "Nobody told him about it.",
+   "He forgot it was happening.",
+   "He was ill and stayed at home.",
+   "He decided he didn't want to go."
+  ],
+  "answer": 0,
+  "explain": "Third conditional: nobody told him."
+ },
+ {
+  "type": "listen",
+  "say": "It's not that I don't like the job. It's just that the commute is wearing me down.",
+  "q": "What is the problem?",
+  "options": [
+   "the journey to work",
+   "the job itself, which bores him",
+   "his colleagues at the office",
+   "the salary he is being paid"
+  ],
+  "answer": 0,
+  "explain": "Commute = daily journey to work."
+ },
+ {
+  "type": "listen",
+  "say": "The project was due on Friday, but they've given us an extension until Wednesday.",
+  "q": "What is the new deadline?",
+  "options": [
+   "Wednesday",
+   "Friday",
+   "Thursday",
+   "Monday next week"
+  ],
+  "answer": 0,
+  "explain": "Extension until Wednesday."
+ },
+ {
+  "type": "listen",
+  "say": "Sales went up by fifteen percent in the first quarter, but fell slightly in the second.",
+  "q": "What happened in the second quarter?",
+  "options": [
+   "Sales fell a little.",
+   "Sales rose by 15%.",
+   "Sales stayed the same.",
+   "Sales fell sharply."
+  ],
+  "answer": 0,
+  "explain": "'Fell slightly.'"
+ },
+ {
+  "type": "listen",
+  "say": "I'm torn between the two flats. One's closer to work, but the other has a garden.",
+  "q": "How does the speaker feel?",
+  "options": [
+   "undecided",
+   "certain",
+   "regretful",
+   "angry"
+  ],
+  "answer": 0,
+  "explain": "'Torn between' = can't decide."
+ },
+ {
+  "type": "listen",
+  "say": "Frankly, I think the council should have consulted residents before closing the library.",
+  "q": "What is the speaker's opinion?",
+  "options": [
+   "The council should have asked residents.",
+   "The library should close as soon as possible.",
+   "Residents are to blame for the closure.",
+   "The council made the right decision quickly."
+  ],
+  "answer": 0,
+  "explain": "'Should have consulted' = criticism."
+ },
+ {
+  "type": "listen",
+  "say": "We're fully booked tonight, I'm afraid, but I can put you on the waiting list in case there's a cancellation.",
+  "q": "What does the speaker offer?",
+  "options": [
+   "a place on the waiting list",
+   "a table for tomorrow night",
+   "a seat at another restaurant",
+   "a discount on a later booking"
+  ],
+  "answer": 0,
+  "explain": "Waiting list in case of a cancellation."
+ },
+ {
+  "type": "listen",
+  "say": "It's a lovely hotel. Mind you, it's not cheap. You'd be looking at around three hundred for the whole weekend.",
+  "q": "Roughly how much would the weekend cost?",
+  "options": [
+   "about £300",
+   "about £30",
+   "about £3,000",
+   "about £130"
+  ],
+  "answer": 0,
+  "explain": "'Around three hundred.' 'Mind you' adds a reservation."
+ },
+ {
+  "type": "listen",
+  "say": "She's very bright, but she tends to rush her work and make careless mistakes.",
+  "q": "What is her weakness?",
+  "options": [
+   "She rushes her work.",
+   "She isn't intelligent.",
+   "She is lazy.",
+   "She works too slowly."
+  ],
+  "answer": 0,
+  "explain": "'Tends to rush… careless mistakes.'"
+ },
+ {
+  "type": "listen",
+  "say": "Apparently the ferry's been cancelled due to high winds, so we'll have to stay another night.",
+  "q": "What will they do?",
+  "options": [
+   "stay another night",
+   "take a plane home instead",
+   "wait at the port until morning",
+   "catch the train back tonight"
+  ],
+  "answer": 0,
+  "explain": "'We'll have to stay another night.'"
+ },
+ {
+  "type": "listen",
+  "say": "I couldn't agree more. That's exactly what I've been saying for months.",
+  "q": "What does the speaker mean?",
+  "options": [
+   "He agrees completely.",
+   "He disagrees.",
+   "He isn't sure.",
+   "He has changed his mind."
+  ],
+  "answer": 0,
+  "explain": "'I couldn't agree more' = total agreement."
+ },
+ {
+  "type": "listen",
+  "say": "You might want to double-check those figures before you send the report to the board.",
+  "q": "What is the speaker doing?",
+  "options": [
+   "politely suggesting a check",
+   "praising the report",
+   "ordering the report to be resent",
+   "refusing to help"
+  ],
+  "answer": 0,
+  "explain": "'You might want to…' is a polite suggestion."
+ },
+ {
+  "type": "listen",
+  "say": "The trail is about twelve kilometres long and takes most people around four hours to complete.",
+  "q": "How long does the trail take?",
+  "options": [
+   "about four hours",
+   "about twelve hours",
+   "about two hours",
+   "about forty minutes"
+  ],
+  "answer": 0,
+  "explain": "Twelve km, four hours."
+ },
+ {
+  "type": "listen",
+  "say": "It goes without saying that safety must come first.",
+  "q": "What does the speaker mean?",
+  "options": [
+   "Safety is obviously the priority.",
+   "Nobody ever wants to talk about safety.",
+   "Safety is less important than speed here.",
+   "He forgot to mention safety until now."
+  ],
+  "answer": 0,
+  "explain": "'It goes without saying' = it's obvious."
+ },
+ {
+  "type": "listen",
+  "say": "I wouldn't say no to another slice of that cake.",
+  "q": "What does the speaker mean?",
+  "options": [
+   "He would like more cake.",
+   "He doesn't want any more cake.",
+   "He is too full to eat anything.",
+   "He doesn't really like the cake."
+  ],
+  "answer": 0,
+  "explain": "A polite way of saying 'yes, please'."
+ }
+]
