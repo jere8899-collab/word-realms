@@ -1,0 +1,81 @@
+{
+ "title": "The Owl's Riddle",
+ "focus": "past continuous · present perfect · first conditional · should",
+ "img": "story_b1",
+ "pages": [
+  {
+   "text": "It was getting dark when {hero} and {pet} reached the Whispering Forest. The trees were so tall that they hid the moon, and the leaves seemed to whisper their names. {pet} stayed close to {hero}, which was [[unusual|not normal or not common]], because {pet} is normally very brave.",
+   "q": {
+    "q": "How was {pet} behaving differently from usual?",
+    "options": [
+     "staying close, as if nervous",
+     "running ahead to explore the path",
+     "whispering to the trees",
+     "looking up at the moon"
+    ],
+    "answer": 0,
+    "explain": "{pet} “stayed close… which was unusual, because {pet} is normally very brave” — so {pet} was a little scared.",
+    "kind": "infer"
+   }
+  },
+  {
+   "text": "After a while they came to a fork in the path. An old sign said “Left: the River. Right: the Hollow Oak.” While they were deciding, a firefly landed on {hero}'s hand. “I've lived here all my life,” it buzzed. “If you go left, you'll get lost in the [[mist|a thin cloud near the ground that is hard to see through]].”",
+   "q": {
+    "q": "Why did the firefly warn them about the left path?",
+    "options": [
+     "They would lose their way in the mist.",
+     "The river there was much too deep to cross.",
+     "The Hollow Oak was on that side.",
+     "Its family lived on that path."
+    ],
+    "answer": 0,
+    "explain": "“If you go left, you'll get lost in the mist.” (first conditional: if + present, will + verb)",
+    "kind": "fact"
+   }
+  },
+  {
+   "text": "They took the right path and soon found the Hollow Oak. Inside, a white owl was [[guarding|watching something to keep it safe]] a glowing page. “I have kept this safe for a hundred nights,” she said, “but I can only give it to someone who answers my riddle: what gets bigger the more you take away?”",
+   "q": {
+    "q": "Why hasn't the owl given the page to anyone yet?",
+    "options": [
+     "Nobody has answered her riddle.",
+     "She wants to keep the page forever.",
+     "Nobody has visited the oak.",
+     "The page is too heavy."
+    ],
+    "answer": 0,
+    "explain": "She can only give it to “someone who answers my riddle” — so nobody has answered it yet.",
+    "kind": "infer"
+   }
+  },
+  {
+   "text": "{hero} thought for a moment and then smiled. “A hole!” The owl's eyes sparkled. “Correct. You should keep going — I think the next page is somewhere near the lake.” As they walked out of the forest, {hero} noticed that the trees had stopped whispering. Perhaps they were [[relieved|happy because something worrying has ended]] too.",
+   "q": {
+    "q": "Where does the owl think the next page is?",
+    "options": [
+     "near the lake",
+     "inside the oak",
+     "by the river",
+     "in Candy Village"
+    ],
+    "answer": 0,
+    "explain": "“I think the next page is somewhere near the lake.”",
+    "kind": "fact"
+   }
+  }
+ ],
+ "final": {
+  "q": "Which word from the story means “watching something to keep it safe”?",
+  "options": [
+   "guarding",
+   "whispering",
+   "deciding",
+   "sparkling"
+  ],
+  "answer": 0,
+  "explain": "The owl was guarding the page: keeping it safe.",
+  "kind": "vocab"
+ },
+ "id": "b1-story",
+ "level": "b1"
+}

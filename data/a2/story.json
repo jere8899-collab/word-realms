@@ -1,0 +1,81 @@
+{
+ "title": "The Cake Thief",
+ "focus": "past simple · comparatives · going to",
+ "img": "story_a2",
+ "pages": [
+  {
+   "text": "The next day, {hero} and {pet} walked to Candy Village. The houses were made of cake, and the roofs were [[covered|with something all over the top]] in pink icing. The whole village smelled sweeter than a birthday party.",
+   "q": {
+    "q": "What were the roofs covered in?",
+    "options": [
+     "pink icing",
+     "chocolate",
+     "white snow",
+     "green leaves"
+    ],
+    "answer": 0,
+    "explain": "“The roofs were covered in pink icing.”",
+    "kind": "fact"
+   }
+  },
+  {
+   "text": "In the market they met Mrs Toffee, the baker. She looked [[worried|unhappy because you think something bad may happen]]. “Someone took my best cake last night,” she said. “And I found this strange paper next to my oven.” It was the second page!",
+   "q": {
+    "q": "Why was Mrs Toffee worried?",
+    "options": [
+     "Her best cake was gone.",
+     "Her oven was broken.",
+     "She lost her shop keys.",
+     "Nobody came to buy cakes."
+    ],
+    "answer": 0,
+    "explain": "“Someone took my best cake last night.”",
+    "kind": "fact"
+   }
+  },
+  {
+   "text": "The page had a [[clue|something that helps you find an answer]] on it: “Follow the crumbs.” {hero} looked down. There was a line of tiny cake crumbs on the road. It went past the school and into the park.",
+   "q": {
+    "q": "What did the clue tell them to do?",
+    "options": [
+     "follow the crumbs",
+     "bake a new cake",
+     "ask at the school",
+     "wait by the oven"
+    ],
+    "answer": 0,
+    "explain": "The page said: “Follow the crumbs.”",
+    "kind": "fact"
+   }
+  },
+  {
+   "text": "In the park they found a very small dragon. It was eating the cake. “Sorry!” it said. “I was so hungry.” Mrs Toffee [[laughed|made a happy sound because something was funny]]. “Next time, just ask! I'm going to bake you your own cake.” {hero} put the page in the book.",
+   "q": {
+    "q": "What is Mrs Toffee going to do?",
+    "options": [
+     "bake the dragon a cake",
+     "send the dragon away",
+     "close her cake shop",
+     "call the village guard"
+    ],
+    "answer": 0,
+    "explain": "“I'm going to bake you your own cake.” — going to = a plan.",
+    "kind": "grammar"
+   }
+  }
+ ],
+ "final": {
+  "q": "In the story, a “clue” is something that…",
+  "options": [
+   "helps you find an answer",
+   "you eat at a party",
+   "keeps rain off a roof",
+   "makes a cake sweeter"
+  ],
+  "answer": 0,
+  "explain": "A clue helps you find the answer to a mystery.",
+  "kind": "vocab"
+ },
+ "id": "a2-story",
+ "level": "a2"
+}

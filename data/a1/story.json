@@ -1,0 +1,81 @@
+{
+ "title": "The Lost Pages",
+ "focus": "present simple · there is / there are · can",
+ "img": "story_a1",
+ "pages": [
+  {
+   "text": "This is {hero}. {hero} has a little pet called {pet}. They live in a small house near the [[meadow|a big field with grass and flowers]]. Today the sun is warm. The flowers are yellow and white.",
+   "q": {
+    "q": "Where is {hero}'s house?",
+    "options": [
+     "near the meadow",
+     "in a castle",
+     "next to the sea",
+     "in the forest"
+    ],
+    "answer": 0,
+    "explain": "“They live in a small house near the meadow.”",
+    "kind": "fact"
+   }
+  },
+  {
+   "text": "In the morning, {hero} sees an old book on the grass. It is big and blue. There are gold stars on it. But the book is sad. Its pages are [[gone|not there any more]]!",
+   "q": {
+    "q": "What colour is the book?",
+    "options": [
+     "blue",
+     "gold",
+     "green",
+     "white"
+    ],
+    "answer": 0,
+    "explain": "“It is big and blue.” The stars on it are gold, but the book is blue.",
+    "kind": "fact"
+   }
+  },
+  {
+   "text": "“Hello,” says the book. “I am the Starlight Storybook. The wind takes my pages. There are six pages, in six [[realms|lands or kingdoms in a story]]. Can you help me?”",
+   "q": {
+    "q": "How many pages does the book need?",
+    "options": [
+     "six",
+     "two",
+     "ten",
+     "one"
+    ],
+    "answer": 0,
+    "explain": "“There are six pages, in six realms.”",
+    "kind": "fact"
+   }
+  },
+  {
+   "text": "{hero} looks at {pet}. {pet} jumps up and down. “Yes, we can help!” says {hero}. Under a big pink flower, {pet} finds the first page. It is [[shiny|bright, like a star]]. The book smiles.",
+   "q": {
+    "q": "Who finds the first page?",
+    "options": [
+     "{pet}",
+     "{hero}",
+     "the book",
+     "the wind"
+    ],
+    "answer": 0,
+    "explain": "“Under a big pink flower, {pet} finds the first page.”",
+    "kind": "fact"
+   }
+  }
+ ],
+ "final": {
+  "q": "In the story, a “meadow” is…",
+  "options": [
+   "a field of grass and flowers",
+   "a little house of wood",
+   "a very old blue book",
+   "a river near a town"
+  ],
+  "answer": 0,
+  "explain": "A meadow is a big field with grass and flowers.",
+  "kind": "vocab"
+ },
+ "id": "a1-story",
+ "level": "a1"
+}

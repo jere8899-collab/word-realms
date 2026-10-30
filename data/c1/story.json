@@ -1,0 +1,81 @@
+{
+ "title": "The Council of Clouds",
+ "focus": "inversion · cleft sentences · hedging · tone and attitude",
+ "img": "story_c1",
+ "pages": [
+  {
+   "text": "Cloud Castle was not so much built as persuaded into existence: its towers, the legend went, had been argued up out of the mist by generations of eloquent councillors. On arrival, {hero} learnt that the fifth page had been [[confiscated|officially taken away from someone]] by the council, who were now debating whether a mere visitor could be trusted with it.",
+   "q": {
+    "q": "What does the opening sentence suggest about Cloud Castle?",
+    "options": [
+     "Its people prize persuasive argument.",
+     "It was built quickly by skilled workers.",
+     "Nobody knows who designed it.",
+     "It is slowly vanishing into the mist."
+    ],
+    "answer": 0,
+    "explain": "Towers “argued up out of the mist” is a playful way of saying the castle runs on argument and persuasion.",
+    "kind": "infer"
+   }
+  },
+  {
+   "text": "The chief councillor, a silver-haired heron named Lady Quillon, opened proceedings with a speech that was, on the face of it, entirely courteous. Yet beneath the compliments ran an unmistakable thread of doubt. “We are, of course, delighted to welcome our young guest,” she said, “although one might wonder why a stranger should succeed where our own scholars have so [[conspicuously|in a way that is very easy to notice]] failed.”",
+   "q": {
+    "q": "What is Lady Quillon's real attitude towards {hero}?",
+    "options": [
+     "politely sceptical",
+     "openly hostile",
+     "genuinely delighted",
+     "quietly impressed"
+    ],
+    "answer": 0,
+    "explain": "Courteous on the surface (“delighted”), but “an unmistakable thread of doubt” underneath: polite scepticism.",
+    "kind": "infer"
+   }
+  },
+  {
+   "text": "{hero} chose not to answer the [[jibe|a short unkind remark meant to hurt]] directly. “What matters,” {hero} replied, “is not who reads the Storybook, but whether its stories are shared. Locked in your vault, the page helps no one. Returned to the book, it helps every child who opens it.” A murmur rippled through the hall; rarely had the council heard its own logic turned so neatly against it.",
+   "q": {
+    "q": "Why was the council's reaction significant?",
+    "options": [
+     "{hero} had beaten them at their own game.",
+     "{hero} had insulted them in public.",
+     "Visitors were seldom allowed to speak.",
+     "Nobody had read the Storybook before."
+    ],
+    "answer": 0,
+    "explain": "“Rarely had the council heard its own logic turned… against it” — {hero} out-argued the arguers.",
+    "kind": "infer"
+   }
+  },
+  {
+   "text": "The vote was close, but the page was returned. As {hero} left, Lady Quillon fell into step beside them. “I may have been a little [[hasty|too quick, without thinking carefully]],” she conceded, with what was almost a smile. “Should you ever wish to join the council, the door will be open.”",
+   "q": {
+    "q": "“Should you ever wish to join” means…",
+    "options": [
+     "If you ever want to join",
+     "You ought to join soon",
+     "You should not wish to join",
+     "Whenever you were asked to join"
+    ],
+    "answer": 0,
+    "explain": "Inverted conditional: Should you ever wish… = If you ever wish…",
+    "kind": "grammar"
+   }
+  }
+ ],
+ "final": {
+  "q": "The scholars “conspicuously failed”, meaning they failed…",
+  "options": [
+   "in a way everyone could see",
+   "without anyone noticing",
+   "by only a tiny margin",
+   "because they gave up early"
+  ],
+  "answer": 0,
+  "explain": "Conspicuously = very noticeably.",
+  "kind": "vocab"
+ },
+ "id": "c1-story",
+ "level": "c1"
+}

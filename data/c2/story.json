@@ -1,0 +1,81 @@
+{
+ "title": "The Page That Hid",
+ "focus": "irony and tone · idiom · implied meaning · sophisticated cohesion",
+ "img": "story_c2",
+ "pages": [
+  {
+   "text": "The Starlight Library had a reputation for swallowing visitors whole — not literally, the guidebooks hastened to add, but scholars who wandered in for an afternoon had been known to [[resurface|appear again after being gone a long time]] decades later, blinking and bearded. It was here, among a million muttering volumes, that the final page was said to lie.",
+   "q": {
+    "q": "What is the tone of the opening paragraph?",
+    "options": [
+     "humorous exaggeration",
+     "genuine fear",
+     "dry scientific description",
+     "bitter criticism"
+    ],
+    "answer": 0,
+    "explain": "Scholars resurfacing “decades later, blinking and bearded” is comic exaggeration, and “not literally” winks at the reader.",
+    "kind": "infer"
+   }
+  },
+  {
+   "text": "Its guardian, an ancient dragon called Vellum, was courteous to the point of [[absurdity|being silly or ridiculous]]. “By all means search,” he purred, “though I should warn you that the page has hidden itself. Pages do that, when they have been through a great deal. It will come out only for someone who has understood what the other five were trying to say.”",
+   "q": {
+    "q": "According to Vellum, what will make the page come out?",
+    "options": [
+     "someone seeing what links the other pages",
+     "a careful search of every single shelf",
+     "the dragon's formal permission to take it",
+     "reading the five pages aloud in order"
+    ],
+    "answer": 0,
+    "explain": "“Only for someone who has understood what the other five were trying to say.”",
+    "kind": "fact"
+   }
+  },
+  {
+   "text": "{hero} sat down and laid the five pages side by side. A sleepy meadow; a greedy little dragon forgiven; a riddle in a hollow tree; a serpent freed from somebody else's carelessness; a council talked round. It dawned on {hero} that not one page had been won by force. Each had been [[earned|got because you deserved it through your actions]] through kindness, patience or wit.",
+   "q": {
+    "q": "What realisation does {hero} come to?",
+    "options": [
+     "No page was won by force.",
+     "The pages follow a fixed order.",
+     "Each realm tried to keep its page.",
+     "Dragons appear in most chapters."
+    ],
+    "answer": 0,
+    "explain": "“Not one page had been won by force. Each had been earned through kindness, patience or wit.”",
+    "kind": "infer"
+   }
+  },
+  {
+   "text": "“Kindness, patience and wit,” {hero} said aloud. There was a rustle high above, and a page fluttered down like a falling leaf, settling in {hero}'s hands. Vellum inclined his great head. “Few manage it,” he said. “Most come looking for the page; you came looking for the point.” The Storybook closed with a contented sigh, whole at last — and {pet}, who had slept through the entire [[ordeal|a very difficult, unpleasant experience]], chose that moment to wake up.",
+   "q": {
+    "q": "What does Vellum mean by “you came looking for the point”?",
+    "options": [
+     "{hero} sought the meaning, not the object.",
+     "{hero} wanted the sharpest page.",
+     "{hero} came to argue with him.",
+     "{hero} brought a map of the library."
+    ],
+    "answer": 0,
+    "explain": "A play on words: others hunt the page itself; {hero} looked for its meaning (“the point”).",
+    "kind": "infer"
+   }
+  }
+ ],
+ "final": {
+  "q": "Why is {pet}'s waking up at the very end funny?",
+  "options": [
+   "It sleeps through it all, then wakes when it's over.",
+   "It wakes just in time to find the page.",
+   "It finally frightens the dragon away.",
+   "It wakes up and reads the book aloud."
+  ],
+  "answer": 0,
+  "explain": "Comic timing: {pet} misses the whole adventure and wakes the moment everything is solved.",
+  "kind": "infer"
+ },
+ "id": "c2-story",
+ "level": "c2"
+}

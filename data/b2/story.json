@@ -1,0 +1,81 @@
+{
+ "title": "The Silent Lake",
+ "focus": "past perfect · passive · mixed / third conditional · should have",
+ "img": "story_b2",
+ "pages": [
+  {
+   "text": "Crystal Lake was said to have the clearest water in all the realms, yet when {hero} and {pet} arrived, it was grey and still. A fisherman explained that it had looked like that ever since Glimmerfin, the lake serpent, had stopped coming to the [[surface|the top of the water]]. “Without her song,” he sighed, “the water simply loses its colour.”",
+   "q": {
+    "q": "According to the fisherman, why had the lake turned grey?",
+    "options": [
+     "Glimmerfin no longer sang at the surface.",
+     "Fishermen had polluted the water.",
+     "A storm had stirred up mud.",
+     "A page had fallen into the water."
+    ],
+    "answer": 0,
+    "explain": "“Without her song… the water simply loses its colour.”",
+    "kind": "fact"
+   }
+  },
+  {
+   "text": "{hero} borrowed a small boat and rowed out to the middle. Looking down, they could just make out a faint light far below. “If I could swim like a fish,” {hero} muttered, “I'd have that page by now.” {pet}, however, was staring at something else: a tangle of old fishing nets [[wrapped around|circling something tightly so it can't move]] a huge silver tail.",
+   "q": {
+    "q": "What did {pet} notice that {hero} had missed?",
+    "options": [
+     "a tail caught in old nets",
+     "a light far below the boat",
+     "a fish that could swim to the page",
+     "the fisherman rowing after them"
+    ],
+    "answer": 0,
+    "explain": "{hero} was looking at the light; {pet} was “staring at something else”: the nets around a silver tail.",
+    "kind": "infer"
+   }
+  },
+  {
+   "text": "It took them nearly an hour to cut the nets away. When the last knot was finally undone, Glimmerfin rose from the water, her scales flashing in the sun. “I had been [[trapped|caught and not able to escape]] for weeks,” she said. “Had you not come, I might never have sung again.” She opened her mouth, and there, resting on her tongue, was the fourth page.",
+   "q": {
+    "q": "“Had you not come” means…",
+    "options": [
+     "If you hadn't come",
+     "Because you came late",
+     "Although you came",
+     "When you come again"
+    ],
+    "answer": 0,
+    "explain": "Inversion of the third conditional: Had you not come = If you hadn't come.",
+    "kind": "grammar"
+   }
+  },
+  {
+   "text": "That evening, Glimmerfin's song drifted across the lake, and the water slowly turned a brilliant blue again. The fisherman admitted that the nets might have been his. “I should have cleared them up years ago,” he said, looking [[ashamed|feeling bad about something wrong you did]]. He promised that the lake would be checked every week from then on.",
+   "q": {
+    "q": "How did the fisherman feel about the nets?",
+    "options": [
+     "guilty that he hadn't removed them",
+     "angry that someone had left them",
+     "proud that he had freed Glimmerfin",
+     "worried the song would stop"
+    ],
+    "answer": 0,
+    "explain": "“I should have cleared them up years ago” — should have + past participle = regret about the past.",
+    "kind": "infer"
+   }
+  }
+ ],
+ "final": {
+  "q": "“Ashamed” is closest in meaning to…",
+  "options": [
+   "embarrassed and guilty",
+   "tired and bored",
+   "surprised and pleased",
+   "nervous and excited"
+  ],
+  "answer": 0,
+  "explain": "Ashamed = feeling bad (guilty, embarrassed) about something you did.",
+  "kind": "vocab"
+ },
+ "id": "b2-story",
+ "level": "b2"
+}

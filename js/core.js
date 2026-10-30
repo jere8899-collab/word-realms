@@ -30,6 +30,7 @@ const QUEST_POOL = [
   { id: "write1", icon: "✒️", label: "Write a Story Quill task", goal: 1, reward: 6 },
   { id: "math1", icon: "🔢", label: "Finish a Number Kingdom maths lesson", goal: 1, reward: 6 },
   { id: "dojo1", icon: "🗼", label: "Climb the Times-Table Tower (practice or sprint)", goal: 1, reward: 5 },
+  { id: "story1", icon: "📜", label: "Read a Storybook chapter", goal: 1, reward: 6 },
   { id: "model1", icon: "🧮", label: "Solve 3 maths questions with a Model Magic picture", goal: 3, reward: 5 }
 ];
 Object.assign(WR, { SKILLS, PETS, AVATARS, QUEST_POOL, data: {}, manifest: null, screens: {} });
@@ -78,7 +79,8 @@ function freshState() {
     streak: { count: 0, last: null }, daily: null,
     progress: {}, owned: [], equipped: { outfit: null, petskin: null, theme: null },
     settings: { rate: 0.9, sound: true, unlockAll: false }, mistakes: [], lessonsDone: 0,
-    speaking: freshSpeaking(), writing: freshWriting(), math: freshMath()
+    speaking: freshSpeaking(), writing: freshWriting(), math: freshMath(),
+    stories: { done: {}, words: {}, reads: 0 }
   };
 }
 // ✒️ Story Quill: best result per prompt ({ total, crowns, scales, at }) and saved drafts per prompt ({ plan, text, at })
@@ -95,6 +97,7 @@ function migrate(s) {
   s.writing.best = s.writing.best || {}; s.writing.drafts = s.writing.drafts || {};
   s.settings = Object.assign({ rate: 0.9, sound: true, unlockAll: false }, s.settings || {});
   s.progress = s.progress || {}; s.mistakes = s.mistakes || [];
+  s.stories = Object.assign({ done: {}, words: {}, reads: 0 }, s.stories || {}); s.stories.done = s.stories.done || {}; s.stories.words = s.stories.words || {};
   const fm = freshMath(); s.math = Object.assign(fm, s.math || {}); s.math.topics = s.math.topics || {}; s.math.facts = s.math.facts || {}; s.math.dojo = Object.assign(freshMath().dojo, s.math.dojo || {});
   return s;
 }

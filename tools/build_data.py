@@ -4,6 +4,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from c_a1 import A1; from c_a2 import A2; from c_b1 import B1, QUEST; from c_b2 import B2; from c_c1 import C1, DEBATE; from c_c2 import C2
 from c_speaking import SPEAKING
 from c_writing import WRITING, LEVEL_BANK
+from c_stories import STORIES  # 📜 Storybook Chapters
 from w1_a import W1A; from w1_b import W1B  # Content Wave 1 (2026-10-30)
 ROOT = os.path.join(os.path.dirname(__file__), "..", "data")
 D = {"a1": A1, "a2": A2, "b1": B1, "b2": B2, "c1": C1, "c2": C2}
@@ -89,8 +90,23 @@ for lvl, items in WRITING.items():
         it["bank"] = bank; it["level"] = lvl
     json.dump(items, open(f"{ROOT}/{lvl}/writing.json", "w"), ensure_ascii=False, indent=1)
     counts[f"{lvl}/writing"] = len(items); wr_tot += len(items)
+# ---- 📜 Storybook Chapters (bonus; not part of the 3-of-4 unlock rule) ----
+GLOSS_RE = re.compile(r"\[\[([^|\]]+)\|([^\]]+)\]\]")
+st_tot = 0
+for lvl, ch in STORIES.items():
+    assert len(ch["pages"]) == 4, lvl
+    assert os.path.exists(f"{ROOT}/../assets/stories/{ch['img']}.jpg"), ch["img"]
+    qs = [p["q"] for p in ch["pages"]] + [ch["final"]]
+    for q in qs:
+        o = q["options"]; assert len(o) == 4 and len(set(o)) == 4 and q["answer"] == 0 and q["explain"], (lvl, q["q"])
+    for p in ch["pages"]:
+        assert GLOSS_RE.search(p["text"]) and "[[" not in GLOSS_RE.sub("", p["text"]), (lvl, p["text"][:30])
+    check_fair(f"{lvl}/story", qs)
+    out = dict(ch, id=f"{lvl}-story", level=lvl)
+    json.dump(out, open(f"{ROOT}/{lvl}/story.json", "w"), ensure_ascii=False, indent=1)
+    counts[f"{lvl}/story"] = len(qs); st_tot += 1
 json.dump(QUEST, open(f"{ROOT}/b1/quest.json", "w"), ensure_ascii=False, indent=1)
 json.dump(DEBATE, open(f"{ROOT}/c1/debate.json", "w"), ensure_ascii=False, indent=1)
 check_fair("c1/debate", DEBATE)
-json.dump({"counts": counts, "total": tot + sp_tot + wr_tot, "questions": tot, "speaking": sp_tot, "writing": wr_tot}, open(f"{ROOT}/counts.json", "w"), indent=1)
+json.dump({"counts": counts, "total": tot + sp_tot + wr_tot, "questions": tot, "speaking": sp_tot, "writing": wr_tot, "stories": st_tot}, open(f"{ROOT}/counts.json", "w"), indent=1)
 print(counts); print("QUESTIONS", tot, "SPEAKING", sp_tot, "WRITING", wr_tot, "TOTAL", tot + sp_tot + wr_tot)
