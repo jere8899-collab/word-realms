@@ -20,7 +20,8 @@ WR.navActive = k => document.querySelectorAll("#navbar button").forEach(b => b.c
 function renderNav() {
   const n = WR.$("#navbar"); n.style.display = "flex";
   n.innerHTML = NAV.map(([k, i, l]) => `<button data-k="${k}"><span>${i}</span>${l}</button>`).join("");
-  n.querySelectorAll("button").forEach(b => b.onclick = () => WR.go(b.dataset.k));
+  // one delegated listener on the bar itself, so no screen can overwrite a tab button's handler
+  if (!n.dataset.wired) { n.dataset.wired = "1"; n.addEventListener("click", e => { const b = e.target.closest("button[data-k]"); if (b && n.contains(b)) WR.go(b.dataset.k); }); }
 }
 WR.go = (screen, arg) => {
   WR.stopLesson && WR.stopLesson(); WR.stopSpeaking && WR.stopSpeaking(); WR.stopWriting && WR.stopWriting(); WR.stopPlacement && WR.stopPlacement(); window.Speech && Speech.stop();
@@ -115,7 +116,8 @@ WR.screens.realm = rid => {
     ${WR.WRITING ? (() => { const w = WR.writingRealmCrowns(rid), n = sizes[rid + "/writing"] || ""; return `<div class="card skill-card quill-tile" data-write="1"><span class="bonus-tag">Bonus</span><img class="ico quill-ico" src="assets/web/quill.webp" onerror="this.onerror=null;this.src='assets/ui/quill.png'" alt=""><h3>Writing</h3><div class="muted" style="font-size:.85rem;font-weight:700">Story Quill: plan, write, get feedback</div><div class="crowns">${w.done ? "👑".repeat(w.crowns) + `<span style="opacity:.2">${"👑".repeat(3 - w.crowns)}</span>` : '<span class="muted" style="font-size:.8rem">not played</span>'}</div><div class="muted" style="font-size:.72rem">${w.done}/${n} tasks written · not needed to unlock</div></div>`; })() : ""}
     <div class="card skill-card special" data-sp="1"><span class="ico">${r.special.emoji}</span><h3>${r.special.name}</h3><div class="muted" style="font-size:.85rem;font-weight:700">${r.special.desc}</div><div class="crowns">${crowns("special")}</div><div class="muted" style="font-size:.72rem">Special game</div></div></div></div>`);
   WR.$("#backMap").onclick = () => WR.go("home");
-  document.querySelectorAll("[data-k]").forEach(c => c.onclick = () => { const k = WR.SKILLS.find(x => x.id === c.dataset.k); WR.startLesson({ realm: rid, skill: k.id, key: k.id, title: `${k.name} · ${r.modeName}` }); });
+  // only the skill cards: the bottom tab bar buttons also carry data-k and must keep their own handler
+  WR.$("#main").querySelectorAll(".skill-card[data-k]").forEach(c => c.onclick = () => { const k = WR.SKILLS.find(x => x.id === c.dataset.k); if (!k) return; WR.startLesson({ realm: rid, skill: k.id, key: k.id, title: `${k.name} · ${r.modeName}` }); });
   WR.$("[data-sp]").onclick = () => WR.playSpecial(rid);
   const spk = WR.$("[data-speak]"); if (spk) spk.onclick = () => WR.startSpeaking(rid);
   const wrt = WR.$("[data-write]"); if (wrt) wrt.onclick = () => WR.startWriting(rid);
