@@ -398,6 +398,1104 @@
      }
     }
    ]
+  },
+  {
+   "title": "Notice: Lost Kitten",
+   "text": "LOST! Our kitten, Pepper, went missing on Tuesday evening near Elm Park. She is grey with a white tail and wears a pink collar with a little bell. She is very shy, so please don't chase her. If you see her, call Ana on 0791 345 678. Reward: £20!",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "When did Pepper go missing?",
+     "options": [
+      "on Tuesday evening",
+      "on Tuesday morning",
+      "on Thursday",
+      "last weekend"
+     ],
+     "answer": 0,
+     "explain": "'Went missing on Tuesday evening.'",
+     "notes": {
+      "on Tuesday morning": "Evening, not morning.",
+      "on Thursday": "Thursday isn't in the notice.",
+      "last weekend": "The weekend isn't in the notice."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How can you recognise Pepper?",
+     "options": [
+      "she's grey and has a bell",
+      "she's white with a grey tail",
+      "she has a blue collar",
+      "she's very big and fluffy"
+     ],
+     "answer": 0,
+     "explain": "'Grey with a white tail… a pink collar with a little bell.'",
+     "notes": {
+      "she's white with a grey tail": "It's the other way round: grey with a white tail.",
+      "she has a blue collar": "Her collar is pink.",
+      "she's very big and fluffy": "She's a kitten, so small."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What should you NOT do if you see her?",
+     "options": [
+      "run after her",
+      "phone Ana",
+      "tell a grown-up",
+      "look at her collar"
+     ],
+     "answer": 0,
+     "explain": "'Please don't chase her' (chase = run after).",
+     "notes": {
+      "phone Ana": "The notice asks you to phone Ana.",
+      "tell a grown-up": "Telling a grown-up is fine.",
+      "look at her collar": "Looking is fine; chasing isn't."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What will Ana give the finder?",
+     "options": [
+      "some money",
+      "a new kitten",
+      "a pink collar",
+      "a little bell"
+     ],
+     "answer": 0,
+     "explain": "'Reward: £20!'",
+     "notes": {
+      "a new kitten": "She wants her kitten back, not to give one.",
+      "a pink collar": "The collar is Pepper's.",
+      "a little bell": "The bell is on Pepper's collar."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Email from Camp",
+   "text": "Hi Mum! Camp is brilliant. Yesterday we went canoeing on the lake. I fell in the water, but it was really funny and I wasn't hurt. The food is OK, but I miss your pancakes! Tomorrow we're going to climb a hill and have a picnic at the top. See you on Saturday! Love, Sam",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What did Sam do yesterday?",
+     "options": [
+      "went on the lake in a canoe",
+      "climbed a hill",
+      "had a picnic",
+      "made pancakes"
+     ],
+     "answer": 0,
+     "explain": "'Yesterday we went canoeing on the lake.'",
+     "notes": {
+      "climbed a hill": "The hill is tomorrow.",
+      "had a picnic": "The picnic is tomorrow.",
+      "made pancakes": "Pancakes are Mum's, at home."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How did Sam feel when he fell in?",
+     "options": [
+      "he thought it was funny",
+      "he was scared",
+      "he was hurt",
+      "he was angry"
+     ],
+     "answer": 0,
+     "explain": "'It was really funny and I wasn't hurt.'",
+     "notes": {
+      "he was scared": "He says it was funny.",
+      "he was hurt": "'I wasn't hurt.'",
+      "he was angry": "He laughed about it."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does Sam think of the camp food?",
+     "options": [
+      "it's all right",
+      "it's the best ever",
+      "it's terrible",
+      "he hasn't tried it"
+     ],
+     "answer": 0,
+     "explain": "'The food is OK' = all right, not great.",
+     "notes": {
+      "it's the best ever": "OK isn't 'the best'.",
+      "it's terrible": "OK isn't terrible.",
+      "he hasn't tried it": "He has eaten it."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "When will Sam come home?",
+     "options": [
+      "on Saturday",
+      "tomorrow",
+      "on Sunday",
+      "next week"
+     ],
+     "answer": 0,
+     "explain": "'See you on Saturday!'",
+     "notes": {
+      "tomorrow": "Tomorrow is the hill walk.",
+      "on Sunday": "Sunday isn't in the email.",
+      "next week": "Next week isn't in the email."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The School Garden",
+   "text": "Last spring, Class 4B started a garden behind the school. They planted tomatoes, beans and sunflowers. Every Friday, two students watered the plants. In July, the sunflowers were taller than the teacher! The class sold their tomatoes at the summer fair and used the money to buy books for the library.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Where is the garden?",
+     "options": [
+      "behind the school",
+      "next to the library",
+      "in the park",
+      "on the roof"
+     ],
+     "answer": 0,
+     "explain": "'Behind the school.'",
+     "notes": {
+      "next to the library": "The library got books, but the garden isn't next to it.",
+      "in the park": "The park isn't in the text.",
+      "on the roof": "The roof isn't in the text."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How often were the plants watered?",
+     "options": [
+      "once a week",
+      "every day",
+      "twice a week",
+      "once a month"
+     ],
+     "answer": 0,
+     "explain": "'Every Friday' = once a week.",
+     "notes": {
+      "every day": "Only on Fridays.",
+      "twice a week": "Only one day a week.",
+      "once a month": "Every Friday is more than once a month."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What was surprising about the sunflowers?",
+     "options": [
+      "they grew very tall",
+      "they were blue",
+      "they all died",
+      "a teacher planted them"
+     ],
+     "answer": 0,
+     "explain": "'Taller than the teacher!'",
+     "notes": {
+      "they were blue": "Colour isn't in the text.",
+      "they all died": "They grew well.",
+      "a teacher planted them": "Class 4B planted them."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What did the class buy with the money?",
+     "options": [
+      "library books",
+      "more seeds",
+      "a new garden",
+      "ice cream"
+     ],
+     "answer": 0,
+     "explain": "'Used the money to buy books for the library.'",
+     "notes": {
+      "more seeds": "Seeds aren't in the text.",
+      "a new garden": "They already had a garden.",
+      "ice cream": "Ice cream isn't in the text."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Robo the Helper",
+   "text": "Leo's grandpa built a little robot called Robo. Robo can carry cups, water plants and tell jokes. But Robo isn't perfect. Last week he tried to water the cat! Now Grandpa is teaching Robo the difference between plants and pets. Leo thinks Robo is the best invention in the world.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Who made Robo?",
+     "options": [
+      "Leo's grandpa",
+      "Leo",
+      "a shop",
+      "Leo's teacher"
+     ],
+     "answer": 0,
+     "explain": "'Leo's grandpa built a little robot.'",
+     "notes": {
+      "Leo": "Leo loves Robo but didn't build him.",
+      "a shop": "He wasn't bought.",
+      "Leo's teacher": "No teacher is in the text."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Which of these can Robo do?",
+     "options": [
+      "make people laugh",
+      "cook dinner",
+      "drive a car",
+      "fly"
+     ],
+     "answer": 0,
+     "explain": "'Tell jokes' = make people laugh.",
+     "notes": {
+      "cook dinner": "Cooking isn't on the list.",
+      "drive a car": "Driving isn't on the list.",
+      "fly": "Flying isn't on the list."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What went wrong last week?",
+     "options": [
+      "Robo watered the cat",
+      "Robo broke a cup",
+      "Robo got lost",
+      "Robo stopped working"
+     ],
+     "answer": 0,
+     "explain": "'He tried to water the cat!'",
+     "notes": {
+      "Robo broke a cup": "He carries cups; nothing broke.",
+      "Robo got lost": "He didn't get lost.",
+      "Robo stopped working": "He still works."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does Leo think of Robo?",
+     "options": [
+      "he loves him",
+      "he's scared of him",
+      "he's bored of him",
+      "he wants a new one"
+     ],
+     "answer": 0,
+     "explain": "'The best invention in the world.'",
+     "notes": {
+      "he's scared of him": "He isn't scared.",
+      "he's bored of him": "He isn't bored.",
+      "he wants a new one": "He thinks Robo is the best."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Candy Village Bake-Off",
+   "text": "Every year, Candy Village has a baking competition. This year, the theme was 'rainbows'. Mia made a cake with seven coloured layers. It took her five hours! Tom made rainbow cookies, but he burnt the first batch. The judges loved Mia's cake, but the prize went to old Mrs Plum for her rainbow jelly.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What was this year's theme?",
+     "options": [
+      "rainbows",
+      "animals",
+      "chocolate",
+      "castles"
+     ],
+     "answer": 0,
+     "explain": "'The theme was rainbows.'",
+     "notes": {
+      "animals": "Animals aren't the theme.",
+      "chocolate": "Chocolate isn't the theme.",
+      "castles": "Castles aren't the theme."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How long did Mia's cake take?",
+     "options": [
+      "five hours",
+      "seven hours",
+      "one hour",
+      "two days"
+     ],
+     "answer": 0,
+     "explain": "'It took her five hours!'",
+     "notes": {
+      "seven hours": "Seven is the number of layers.",
+      "one hour": "One hour isn't in the text.",
+      "two days": "Two days isn't in the text."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What happened to Tom's first cookies?",
+     "options": [
+      "they were cooked too long",
+      "they were eaten",
+      "they won",
+      "they fell on the floor"
+     ],
+     "answer": 0,
+     "explain": "'He burnt the first batch' = cooked too long.",
+     "notes": {
+      "they were eaten": "Nobody ate them.",
+      "they won": "Mrs Plum won.",
+      "they fell on the floor": "Falling isn't in the text."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Who won the competition?",
+     "options": [
+      "Mrs Plum",
+      "Mia",
+      "Tom",
+      "the judges"
+     ],
+     "answer": 0,
+     "explain": "'The prize went to old Mrs Plum.'",
+     "notes": {
+      "Mia": "The judges loved Mia's cake, but she didn't win.",
+      "Tom": "Tom burnt his first cookies.",
+      "the judges": "The judges chose the winner."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Poster: Starlight Library Club",
+   "text": "Do you love stories? Join the Starlight Library Club! We meet every Wednesday from 3.30 to 4.30 p.m. in the library's Blue Room. Each week we read a short story, play word games and make bookmarks. The club is free, but please bring a snack to share. Children aged 8 to 11 only. To join, speak to Miss Rose at the front desk before Friday.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How long is each meeting?",
+     "options": [
+      "one hour",
+      "thirty minutes",
+      "two hours",
+      "all afternoon"
+     ],
+     "answer": 0,
+     "explain": "3.30 to 4.30 = one hour.",
+     "notes": {
+      "thirty minutes": "Half an hour is too short.",
+      "two hours": "Two hours is too long.",
+      "all afternoon": "It ends at 4.30."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Where does the club meet?",
+     "options": [
+      "in a room in the library",
+      "at the front desk",
+      "in a classroom",
+      "in the park"
+     ],
+     "answer": 0,
+     "explain": "'In the library's Blue Room.'",
+     "notes": {
+      "at the front desk": "You join at the front desk, but meet in the Blue Room.",
+      "in a classroom": "A classroom isn't mentioned.",
+      "in the park": "The park isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What should members bring?",
+     "options": [
+      "food for everyone",
+      "money",
+      "a story they wrote",
+      "a bookmark"
+     ],
+     "answer": 0,
+     "explain": "'Bring a snack to share.'",
+     "notes": {
+      "money": "The club is free.",
+      "a story they wrote": "They read a story together; they don't bring one.",
+      "a bookmark": "They make bookmarks there."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Who can join?",
+     "options": [
+      "a ten-year-old",
+      "a six-year-old",
+      "a thirteen-year-old",
+      "any parent"
+     ],
+     "answer": 0,
+     "explain": "'Children aged 8 to 11 only.' Ten is between 8 and 11.",
+     "notes": {
+      "a six-year-old": "Six is under 8.",
+      "a thirteen-year-old": "Thirteen is over 11.",
+      "any parent": "It's for children only."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What must you do to join?",
+     "options": [
+      "talk to Miss Rose",
+      "send an email",
+      "pay at the desk",
+      "write a story"
+     ],
+     "answer": 0,
+     "explain": "'Speak to Miss Rose at the front desk before Friday.'",
+     "notes": {
+      "send an email": "Email isn't mentioned.",
+      "pay at the desk": "It's free.",
+      "write a story": "Writing isn't needed."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Missing Football",
+   "text": "On Monday, Kai's football disappeared from the garden. He looked everywhere: under the bushes, behind the shed and even in the pond. He was sure his neighbour's dog, Buster, had taken it. But on Thursday his little sister laughed and opened her wardrobe. The ball was inside! She had hidden it as a joke. Kai wasn't angry for long, and Buster got an extra biscuit to say sorry.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Where did Kai NOT look?",
+     "options": [
+      "in the house",
+      "under the bushes",
+      "behind the shed",
+      "in the pond"
+     ],
+     "answer": 0,
+     "explain": "He looked in the garden: bushes, shed, pond. The ball was in the house.",
+     "notes": {
+      "under the bushes": "He looked under the bushes.",
+      "behind the shed": "He looked behind the shed.",
+      "in the pond": "He even looked in the pond."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Who did Kai think took the ball?",
+     "options": [
+      "the dog next door",
+      "his sister",
+      "his best friend",
+      "a bird"
+     ],
+     "answer": 0,
+     "explain": "'He was sure his neighbour's dog, Buster, had taken it.'",
+     "notes": {
+      "his sister": "He found out about his sister later.",
+      "his best friend": "A friend isn't mentioned.",
+      "a bird": "A bird isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How long was the ball missing?",
+     "options": [
+      "three days",
+      "one day",
+      "a week",
+      "a month"
+     ],
+     "answer": 0,
+     "explain": "Monday to Thursday = three days.",
+     "notes": {
+      "one day": "It was gone from Monday.",
+      "a week": "It came back on Thursday.",
+      "a month": "Far too long."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why did his sister hide it?",
+     "options": [
+      "to play a trick",
+      "to keep it safe",
+      "to stop the dog",
+      "she wanted it"
+     ],
+     "answer": 0,
+     "explain": "'She had hidden it as a joke.'",
+     "notes": {
+      "to keep it safe": "Keeping it safe isn't the reason.",
+      "to stop the dog": "The dog wasn't involved.",
+      "she wanted it": "It was a joke."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why did Buster get a biscuit?",
+     "options": [
+      "they had blamed him wrongly",
+      "he found the ball",
+      "it was his birthday",
+      "he did a clever trick"
+     ],
+     "answer": 0,
+     "explain": "'To say sorry': Kai blamed him, but he didn't do it.",
+     "notes": {
+      "he found the ball": "The sister showed the ball.",
+      "it was his birthday": "A birthday isn't mentioned.",
+      "he did a clever trick": "No trick is mentioned."
+     }
+    }
+   ]
+  },
+  {
+   "title": "A Letter to Grandma",
+   "text": "Dear Grandma, Thank you for the telescope! Last night Dad and I took it into the garden. At first I couldn't see anything because it was cloudy. Then the clouds moved and I saw the moon. It was bigger and brighter than I expected, and I could see grey spots on it. Next week we're going to look for Jupiter. I'll tell you what I see! Love, Mina",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Why is Mina writing?",
+     "options": [
+      "to thank Grandma for a present",
+      "to invite Grandma",
+      "to ask for a telescope",
+      "to say she is ill"
+     ],
+     "answer": 0,
+     "explain": "'Thank you for the telescope!'",
+     "notes": {
+      "to invite Grandma": "She doesn't invite her.",
+      "to ask for a telescope": "She already has the telescope.",
+      "to say she is ill": "She isn't ill."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why couldn't she see anything at first?",
+     "options": [
+      "there were clouds",
+      "it was too bright",
+      "the telescope was broken",
+      "Dad had it"
+     ],
+     "answer": 0,
+     "explain": "'Because it was cloudy.'",
+     "notes": {
+      "it was too bright": "It was night.",
+      "the telescope was broken": "The telescope worked later.",
+      "Dad had it": "They used it together."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What surprised Mina about the moon?",
+     "options": [
+      "its size and brightness",
+      "its colour",
+      "it was moving",
+      "it was very, very small"
+     ],
+     "answer": 0,
+     "explain": "'Bigger and brighter than I expected.'",
+     "notes": {
+      "its colour": "She saw grey spots, but colour wasn't the surprise.",
+      "it was moving": "Moving isn't mentioned.",
+      "it was very, very small": "It was bigger, not small."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What will they do next week?",
+     "options": [
+      "try to find a planet",
+      "go to the moon",
+      "buy a new telescope",
+      "visit Grandma"
+     ],
+     "answer": 0,
+     "explain": "'Next week we're going to look for Jupiter' (a planet).",
+     "notes": {
+      "go to the moon": "They'll look, not go.",
+      "buy a new telescope": "They have one.",
+      "visit Grandma": "A visit isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Who used the telescope with Mina?",
+     "options": [
+      "her dad",
+      "her grandma",
+      "her brother",
+      "her teacher"
+     ],
+     "answer": 0,
+     "explain": "'Last night Dad and I took it into the garden.'",
+     "notes": {
+      "her grandma": "Grandma gave it.",
+      "her brother": "A brother isn't mentioned.",
+      "her teacher": "A teacher isn't mentioned."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Marco's Pancake Disaster",
+   "text": "On Sunday, Marco wanted to make pancakes for his mum's birthday. He got up early and found a recipe online. He mixed the flour, eggs and milk, but he put in salt instead of sugar! The pancakes looked perfect but tasted terrible. Marco felt awful. His mum laughed and said it was the best birthday surprise ever. Then they made a new batch together.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Why did Marco make pancakes?",
+     "options": [
+      "it was his mum's special day",
+      "he was hungry",
+      "his teacher asked him",
+      "it was Pancake Day"
+     ],
+     "answer": 0,
+     "explain": "'For his mum's birthday.'",
+     "notes": {
+      "he was hungry": "Hunger isn't the reason.",
+      "his teacher asked him": "No teacher is mentioned.",
+      "it was Pancake Day": "It was a birthday."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What went wrong?",
+     "options": [
+      "he used the wrong ingredient",
+      "he burnt them",
+      "he dropped them",
+      "he had no eggs at all"
+     ],
+     "answer": 0,
+     "explain": "'He put in salt instead of sugar!'",
+     "notes": {
+      "he burnt them": "They 'looked perfect'.",
+      "he dropped them": "Dropping isn't mentioned.",
+      "he had no eggs at all": "He used eggs."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How did the pancakes look?",
+     "options": [
+      "very good",
+      "burnt",
+      "too small",
+      "strange"
+     ],
+     "answer": 0,
+     "explain": "'The pancakes looked perfect.'",
+     "notes": {
+      "burnt": "They looked perfect.",
+      "too small": "Size isn't mentioned.",
+      "strange": "They looked perfect; they tasted strange."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How did his mum react?",
+     "options": [
+      "she found it funny",
+      "she was angry",
+      "she cried",
+      "she didn't notice"
+     ],
+     "answer": 0,
+     "explain": "'His mum laughed.'",
+     "notes": {
+      "she was angry": "She laughed.",
+      "she cried": "She laughed, not cried.",
+      "she didn't notice": "She tasted them."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What happened at the end?",
+     "options": [
+      "they cooked together",
+      "they went to a café",
+      "Marco went to bed",
+      "Mum cooked alone"
+     ],
+     "answer": 0,
+     "explain": "'They made a new batch together.'",
+     "notes": {
+      "they went to a café": "A café isn't mentioned.",
+      "Marco went to bed": "Bed isn't mentioned.",
+      "Mum cooked alone": "Together, not alone."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Ella's Diary: First Day at a New School",
+   "text": "Today was my first day at Hilltop School. I was really nervous this morning. The building is much bigger than my old school, and I got lost twice! At lunch, a girl called Priya asked me to sit with her. She likes drawing, like me. My new teacher, Mr Diaz, is strict but kind. I think I'm going to like it here.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How did Ella feel in the morning?",
+     "options": [
+      "worried",
+      "excited",
+      "bored",
+      "angry"
+     ],
+     "answer": 0,
+     "explain": "'I was really nervous' = worried.",
+     "notes": {
+      "excited": "She was nervous, not excited.",
+      "bored": "Bored isn't mentioned.",
+      "angry": "Angry isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is different about the new school?",
+     "options": [
+      "it's larger",
+      "it's older",
+      "it's smaller",
+      "it's nearer"
+     ],
+     "answer": 0,
+     "explain": "'Much bigger than my old school.'",
+     "notes": {
+      "it's older": "Age isn't mentioned.",
+      "it's smaller": "It's bigger.",
+      "it's nearer": "Distance isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What happened twice?",
+     "options": [
+      "she couldn't find her way",
+      "she was late",
+      "she fell over",
+      "she lost her bag"
+     ],
+     "answer": 0,
+     "explain": "'I got lost twice!'",
+     "notes": {
+      "she was late": "Late isn't mentioned.",
+      "she fell over": "Falling isn't mentioned.",
+      "she lost her bag": "Her bag isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why might Ella and Priya become friends?",
+     "options": [
+      "they share a hobby",
+      "they live on the same street",
+      "they are cousins",
+      "they sit in the same class"
+     ],
+     "answer": 0,
+     "explain": "'She likes drawing, like me.'",
+     "notes": {
+      "they live on the same street": "Where they live isn't mentioned.",
+      "they are cousins": "They just met.",
+      "they sit in the same class": "They sat together at lunch."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is Mr Diaz like?",
+     "options": [
+      "strict but kind",
+      "funny and loud",
+      "young and shy",
+      "unkind"
+     ],
+     "answer": 0,
+     "explain": "'Mr Diaz is strict but kind.'",
+     "notes": {
+      "funny and loud": "Funny isn't mentioned.",
+      "young and shy": "Young and shy aren't mentioned.",
+      "unkind": "He's kind."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Penguin Webcam",
+   "text": "Every day, thousands of children around the world watch the penguins at Frostbay Zoo on a webcam. The camera is in the penguins' pool, so you can see them swim underwater. Feeding time is at 11 a.m. and 3 p.m., and it's the most popular time to watch. Last month, a baby penguin was born. The zoo asked viewers to choose its name. The winner was 'Pebble'.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Where is the camera?",
+     "options": [
+      "in the water",
+      "above the pool",
+      "in the zoo shop",
+      "in the penguins' house"
+     ],
+     "answer": 0,
+     "explain": "'The camera is in the penguins' pool… underwater.'",
+     "notes": {
+      "above the pool": "It's in the pool, not above it.",
+      "in the zoo shop": "The shop isn't mentioned.",
+      "in the penguins' house": "It's in the pool."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "When do most people watch?",
+     "options": [
+      "when the penguins eat",
+      "at night",
+      "early in the morning",
+      "when they sleep"
+     ],
+     "answer": 0,
+     "explain": "Feeding time 'is the most popular time to watch'.",
+     "notes": {
+      "at night": "Night isn't mentioned.",
+      "early in the morning": "11 a.m. isn't early morning.",
+      "when they sleep": "Sleeping isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How many feeding times are there each day?",
+     "options": [
+      "two",
+      "one",
+      "three",
+      "four"
+     ],
+     "answer": 0,
+     "explain": "11 a.m. and 3 p.m. = two.",
+     "notes": {
+      "one": "There are two times.",
+      "three": "Only two are given.",
+      "four": "Only two are given."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What happened last month?",
+     "options": [
+      "a penguin chick arrived",
+      "a penguin escaped",
+      "the camera broke",
+      "the zoo closed"
+     ],
+     "answer": 0,
+     "explain": "'A baby penguin was born.'",
+     "notes": {
+      "a penguin escaped": "Escaping isn't mentioned.",
+      "the camera broke": "The camera still works.",
+      "the zoo closed": "The zoo is open."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Who chose the name Pebble?",
+     "options": [
+      "people watching online",
+      "the zookeeper",
+      "the baby's mother",
+      "a teacher at a school"
+     ],
+     "answer": 0,
+     "explain": "'The zoo asked viewers to choose its name.'",
+     "notes": {
+      "the zookeeper": "The keeper asked viewers.",
+      "the baby's mother": "Penguins can't vote!",
+      "a teacher at a school": "A teacher isn't mentioned."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Text Messages",
+   "text": "Jay: Hi Sam! Are you still coming to the cinema at 6? | Sam: Sorry, my mum says I have to finish my homework first. Can we go at 8 instead? | Jay: The 8 o'clock show is sold out. What about tomorrow at 5? | Sam: Perfect! I'll bring the popcorn. | Jay: Great, I'll buy the tickets online tonight.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Why can't Sam go at 6?",
+     "options": [
+      "he has schoolwork to do",
+      "he's ill",
+      "he has no money",
+      "the film is sold out"
+     ],
+     "answer": 0,
+     "explain": "'I have to finish my homework first.'",
+     "notes": {
+      "he's ill": "Illness isn't mentioned.",
+      "he has no money": "Money isn't mentioned.",
+      "the film is sold out": "The 8 o'clock show is sold out."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why can't they go at 8?",
+     "options": [
+      "there are no tickets left",
+      "it's too late",
+      "Jay is busy",
+      "the cinema is closed that night"
+     ],
+     "answer": 0,
+     "explain": "'The 8 o'clock show is sold out.'",
+     "notes": {
+      "it's too late": "Lateness isn't the reason.",
+      "Jay is busy": "Jay suggests another time.",
+      "the cinema is closed that night": "It's open, just full."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "When will they see the film?",
+     "options": [
+      "tomorrow at five",
+      "today at six",
+      "today at eight",
+      "tomorrow at eight"
+     ],
+     "answer": 0,
+     "explain": "'What about tomorrow at 5?' — 'Perfect!'",
+     "notes": {
+      "today at six": "Sam can't go at 6.",
+      "today at eight": "8 is sold out.",
+      "tomorrow at eight": "The new time is 5."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What will Sam bring?",
+     "options": [
+      "popcorn",
+      "the tickets",
+      "drinks",
+      "his homework"
+     ],
+     "answer": 0,
+     "explain": "'I'll bring the popcorn.'",
+     "notes": {
+      "the tickets": "Jay buys the tickets.",
+      "drinks": "Drinks aren't mentioned.",
+      "his homework": "Homework isn't for the cinema."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How will Jay get the tickets?",
+     "options": [
+      "on the internet",
+      "at the cinema",
+      "from Sam's mum",
+      "by phone"
+     ],
+     "answer": 0,
+     "explain": "'I'll buy the tickets online.'",
+     "notes": {
+      "at the cinema": "Online, not at the cinema.",
+      "from Sam's mum": "Sam's mum isn't buying.",
+      "by phone": "Phone isn't mentioned."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Kindest Dragon in Candy Village",
+   "text": "Long ago, a dragon called Toffee lived near Candy Village. The villagers were scared of her because she was huge. One winter, the village ovens stopped working and nobody could bake bread. Toffee flew down and gently breathed fire into every oven. After that, the villagers made her a giant honey cake every year. Now children ride on her back at the spring festival.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Why were people scared of Toffee at first?",
+     "options": [
+      "she was very big",
+      "she was angry",
+      "she ate their bread",
+      "she was noisy"
+     ],
+     "answer": 0,
+     "explain": "'They were scared of her because she was huge.'",
+     "notes": {
+      "she was angry": "Angry isn't mentioned.",
+      "she ate their bread": "She helped with bread.",
+      "she was noisy": "Noise isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What was the problem in winter?",
+     "options": [
+      "the ovens didn't work",
+      "there was no flour",
+      "it was too hot",
+      "Toffee left"
+     ],
+     "answer": 0,
+     "explain": "'The village ovens stopped working.'",
+     "notes": {
+      "there was no flour": "Flour isn't mentioned.",
+      "it was too hot": "It was winter.",
+      "Toffee left": "She came to help."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How did Toffee help?",
+     "options": [
+      "she heated the ovens",
+      "she baked the bread",
+      "she bought new ovens",
+      "she brought wood"
+     ],
+     "answer": 0,
+     "explain": "'Gently breathed fire into every oven.'",
+     "notes": {
+      "she baked the bread": "She lit the ovens; the villagers baked.",
+      "she bought new ovens": "Buying isn't mentioned.",
+      "she brought wood": "Wood isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How do the villagers thank her?",
+     "options": [
+      "with a cake every year",
+      "with a party just once",
+      "with gold",
+      "with a new cave"
+     ],
+     "answer": 0,
+     "explain": "'Made her a giant honey cake every year.'",
+     "notes": {
+      "with a party just once": "Every year, not once.",
+      "with gold": "Gold isn't mentioned.",
+      "with a new cave": "A cave isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What happens now at the spring festival?",
+     "options": [
+      "children ride on Toffee",
+      "Toffee bakes cakes",
+      "the ovens are fixed",
+      "Toffee flies away"
+     ],
+     "answer": 0,
+     "explain": "'Children ride on her back.'",
+     "notes": {
+      "Toffee bakes cakes": "The villagers bake the cake.",
+      "the ovens are fixed": "That was long ago.",
+      "Toffee flies away": "She stays and gives rides."
+     }
+    }
+   ]
   }
  ]
 }

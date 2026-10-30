@@ -504,6 +504,1082 @@
   }
  },
  {
+  "type": "listen",
+  "say": "I'd been looking forward to the concert for weeks, but in the end it was a bit disappointing; the sound was terrible.",
+  "q": "How did the speaker feel about the concert?",
+  "options": [
+   "it wasn't as good as hoped",
+   "it was the best concert ever",
+   "they didn't go in the end",
+   "the music was too quiet"
+  ],
+  "answer": 0,
+  "explain": "'A bit disappointing' = not as good as hoped.",
+  "notes": {
+   "it was the best concert ever": "They were disappointed.",
+   "they didn't go in the end": "They did go.",
+   "the music was too quiet": "The sound was terrible, but 'too quiet' wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "You don't need to bring lunch on Friday. The school is providing pizza for everyone.",
+  "q": "What should students do about lunch on Friday?",
+  "options": [
+   "nothing: food will be given",
+   "bring their own packed lunch",
+   "buy pizza at the shop",
+   "go home to eat"
+  ],
+  "answer": 0,
+  "explain": "'The school is providing pizza' = food is given.",
+  "notes": {
+   "bring their own packed lunch": "'You don't need to bring lunch.'",
+   "buy pizza at the shop": "They don't buy it; the school provides it.",
+   "go home to eat": "Going home wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The library will be closed for repairs until the twentieth, so please return books to the office instead.",
+  "q": "Where should books go for now?",
+  "options": [
+   "to the office",
+   "to the library",
+   "to the teacher",
+   "to the classroom"
+  ],
+  "answer": 0,
+  "explain": "'Return books to the office instead.'",
+  "notes": {
+   "to the library": "The library is closed.",
+   "to the teacher": "The teacher wasn't mentioned.",
+   "to the classroom": "The classroom wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "If it's still raining at two, we'll cancel the match and play next week instead.",
+  "q": "What happens if the rain continues?",
+  "options": [
+   "the match is put off",
+   "they play in the rain",
+   "they play indoors",
+   "the match starts later today"
+  ],
+  "answer": 0,
+  "explain": "'Cancel… and play next week instead' = postponed.",
+  "notes": {
+   "they play in the rain": "They won't play in the rain.",
+   "they play indoors": "Indoors wasn't mentioned.",
+   "the match starts later today": "It moves to next week, not later today."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I used to hate broccoli, but now I actually quite like it, especially with cheese.",
+  "q": "How does the speaker feel about broccoli now?",
+  "options": [
+   "they enjoy it",
+   "they still hate it",
+   "they've never tried it",
+   "they only eat cheese"
+  ],
+  "answer": 0,
+  "explain": "'Used to hate… now I actually quite like it.'",
+  "notes": {
+   "they still hate it": "Hating it was in the past.",
+   "they've never tried it": "They've eaten it.",
+   "they only eat cheese": "Cheese goes with it."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Sorry, I can't make it on Saturday. Could we do Sunday afternoon instead?",
+  "q": "What is the speaker suggesting?",
+  "options": [
+   "a different day",
+   "Saturday morning",
+   "cancelling for good",
+   "Sunday morning"
+  ],
+  "answer": 0,
+  "explain": "They can't do Saturday, so they suggest Sunday afternoon.",
+  "notes": {
+   "Saturday morning": "They can't do Saturday at all.",
+   "cancelling for good": "They want to change, not cancel.",
+   "Sunday morning": "Afternoon, not morning."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The museum is about a ten-minute walk from here, or you can take the number six bus, which stops right outside.",
+  "q": "How can you get to the museum?",
+  "options": [
+   "on foot or by bus",
+   "only by bus, it's too far",
+   "only by taxi",
+   "by train"
+  ],
+  "answer": 0,
+  "explain": "Walk (ten minutes) or take the bus.",
+  "notes": {
+   "only by bus, it's too far": "Walking is also possible.",
+   "only by taxi": "A taxi wasn't mentioned.",
+   "by train": "A train wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Tickets are usually eight pounds, but students get twenty-five percent off.",
+  "q": "How much does a student pay?",
+  "options": [
+   "£6",
+   "£8",
+   "£2",
+   "£5"
+  ],
+  "answer": 0,
+  "explain": "25% of £8 is £2, so £8 − £2 = £6.",
+  "notes": {
+   "£8": "£8 is the full price.",
+   "£2": "£2 is the discount, not the price.",
+   "£5": "£5 isn't 75% of £8."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The trip's been brought forward. We're leaving at seven instead of eight, so don't be late!",
+  "q": "When will they leave?",
+  "options": [
+   "an hour earlier than planned",
+   "an hour later than planned",
+   "at eight",
+   "at nine"
+  ],
+  "answer": 0,
+  "explain": "'Brought forward… seven instead of eight' = one hour earlier.",
+  "notes": {
+   "an hour later than planned": "Brought forward means earlier.",
+   "at eight": "Eight was the old time.",
+   "at nine": "Nine wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I'm not sure whether to join the drama club or the chess club. Drama sounds fun, but chess is on the same day as football.",
+  "q": "Why might the speaker not choose chess?",
+  "options": [
+   "it clashes with football",
+   "it's too boring for them",
+   "it's expensive",
+   "it's already full"
+  ],
+  "answer": 0,
+  "explain": "Chess is on the same day as football.",
+  "notes": {
+   "it's too boring for them": "Boring wasn't said.",
+   "it's expensive": "Price wasn't mentioned.",
+   "it's already full": "Full wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Our neighbours are going away, so we're looking after their goldfish for a week.",
+  "q": "What is the family doing?",
+  "options": [
+   "caring for some pets",
+   "buying a new goldfish",
+   "going on holiday",
+   "moving house"
+  ],
+  "answer": 0,
+  "explain": "'Looking after their goldfish' = caring for pets.",
+  "notes": {
+   "buying a new goldfish": "They're not buying one.",
+   "going on holiday": "The neighbours are going away, not them.",
+   "moving house": "Moving wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Despite the bad weather, the sports day went ahead, and our class came second.",
+  "q": "What happened at sports day?",
+  "options": [
+   "it took place and the class did well",
+   "it was cancelled",
+   "the class won",
+   "the class came last"
+  ],
+  "answer": 0,
+  "explain": "'Went ahead' = it happened; 'came second' = did well.",
+  "notes": {
+   "it was cancelled": "Went ahead means it wasn't cancelled.",
+   "the class won": "Second isn't first.",
+   "the class came last": "Second isn't last."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Jade: Have you finished the book?|Omar: Almost. I've got two chapters left.",
+  "q": "Has Omar finished the book?",
+  "options": [
+   "not quite",
+   "yes",
+   "he hasn't started",
+   "he lost it"
+  ],
+  "answer": 0,
+  "explain": "'Almost… two chapters left.'",
+  "dialogue": true,
+  "notes": {
+   "yes": "He has two chapters left.",
+   "he hasn't started": "He's nearly finished.",
+   "he lost it": "He didn't lose it."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Coach: You played well, but you need to pass the ball more.|Leo: OK, I'll try to do that next time.",
+  "q": "What does the coach want Leo to improve?",
+  "options": [
+   "sharing the ball with others",
+   "running faster in the game",
+   "scoring more goals",
+   "arriving on time"
+  ],
+  "answer": 0,
+  "explain": "'Pass the ball more' = share it with teammates.",
+  "dialogue": true,
+  "notes": {
+   "running faster in the game": "Speed wasn't mentioned.",
+   "scoring more goals": "Goals weren't mentioned.",
+   "arriving on time": "Time wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Mum: Why are you so tired?|Ella: I stayed up late finishing my project, and then I couldn't sleep.",
+  "q": "Why is Ella tired?",
+  "options": [
+   "she went to bed late",
+   "she got up very early",
+   "she was ill",
+   "she ran a long race"
+  ],
+  "answer": 0,
+  "explain": "'I stayed up late' = went to bed late.",
+  "dialogue": true,
+  "notes": {
+   "she got up very early": "Getting up early wasn't said.",
+   "she was ill": "Illness wasn't mentioned.",
+   "she ran a long race": "A race wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Ravi: Shall I bring anything to the barbecue?|Kate: Just yourself! Well, maybe some drinks, if you can.",
+  "q": "What does Kate ask Ravi to bring?",
+  "options": [
+   "something to drink",
+   "nothing at all",
+   "food for the grill",
+   "chairs"
+  ],
+  "answer": 0,
+  "explain": "She first says 'just yourself', then adds 'maybe some drinks'.",
+  "dialogue": true,
+  "notes": {
+   "nothing at all": "She changed her mind and asked for drinks.",
+   "food for the grill": "Food wasn't asked for.",
+   "chairs": "Chairs weren't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Tom: Is the new café any good?|Amy: The cakes are lovely, but it's always really crowded.",
+  "q": "What's the problem with the café?",
+  "options": [
+   "there are too many people",
+   "the cakes are not very nice",
+   "it's expensive",
+   "it's far away"
+  ],
+  "answer": 0,
+  "explain": "'Always really crowded' = too many people.",
+  "dialogue": true,
+  "notes": {
+   "the cakes are not very nice": "The cakes are lovely.",
+   "it's expensive": "Price wasn't mentioned.",
+   "it's far away": "Distance wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The forecast said sunshine all day, but it's clouded over, so take an umbrella just in case.",
+  "q": "Why should you take an umbrella?",
+  "options": [
+   "it might rain",
+   "it's raining now",
+   "it's very sunny",
+   "the forecast said rain"
+  ],
+  "answer": 0,
+  "explain": "'Clouded over… just in case' = it might rain.",
+  "notes": {
+   "it's raining now": "It isn't raining yet.",
+   "it's very sunny": "It was supposed to be sunny, but it's cloudy now.",
+   "the forecast said rain": "The forecast said sunshine."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I'd love to come camping, but I'll have to ask my parents first.",
+  "q": "What will the speaker do before saying yes?",
+  "options": [
+   "get permission",
+   "buy a tent",
+   "check the weather",
+   "pack a bag"
+  ],
+  "answer": 0,
+  "explain": "'Ask my parents first' = get permission.",
+  "notes": {
+   "buy a tent": "Buying a tent wasn't mentioned.",
+   "check the weather": "Weather wasn't mentioned.",
+   "pack a bag": "Packing wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The new sports centre has a climbing wall, which is great, although the pool is smaller than the old one.",
+  "q": "What does the speaker NOT like?",
+  "options": [
+   "the size of the pool",
+   "the new climbing wall",
+   "the location",
+   "the price"
+  ],
+  "answer": 0,
+  "explain": "'Although the pool is smaller' is the downside.",
+  "notes": {
+   "the new climbing wall": "The climbing wall is great.",
+   "the location": "Location wasn't mentioned.",
+   "the price": "Price wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "We were halfway up the hill when Max realised he'd left the map in the car.",
+  "q": "What was the problem?",
+  "options": [
+   "Max had forgotten the map",
+   "they got lost on the hill",
+   "the car broke down",
+   "Max hurt his leg"
+  ],
+  "answer": 0,
+  "explain": "'He'd left the map in the car' = forgotten.",
+  "notes": {
+   "they got lost on the hill": "Getting lost wasn't said.",
+   "the car broke down": "The car was fine.",
+   "Max hurt his leg": "No one got hurt."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Our teacher said we can choose any animal for the project, as long as it's not a pet.",
+  "q": "Which animal could you choose?",
+  "options": [
+   "a tiger",
+   "a pet hamster",
+   "your cat",
+   "a goldfish at home"
+  ],
+  "answer": 0,
+  "explain": "Any animal 'as long as it's not a pet': a tiger is fine.",
+  "notes": {
+   "a pet hamster": "A pet hamster is a pet.",
+   "your cat": "Your cat is a pet.",
+   "a goldfish at home": "A goldfish at home is a pet."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The fair was meant to finish at six, but they kept it open an extra hour because so many people came.",
+  "q": "When did the fair close?",
+  "options": [
+   "at seven",
+   "at six",
+   "at five",
+   "at eight"
+  ],
+  "answer": 0,
+  "explain": "Six + an extra hour = seven.",
+  "notes": {
+   "at six": "Six was the plan.",
+   "at five": "Five wasn't said.",
+   "at eight": "Eight wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I've been learning the guitar for a year, but I still can't play a whole song without stopping.",
+  "q": "How well can the speaker play?",
+  "options": [
+   "they are still improving",
+   "they're already an expert",
+   "they've only just started",
+   "they gave up"
+  ],
+  "answer": 0,
+  "explain": "A year of learning, but still stopping: still improving.",
+  "notes": {
+   "they're already an expert": "They can't play a whole song yet.",
+   "they've only just started": "They've been learning for a year.",
+   "they gave up": "They're still learning."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Nina: Do you want to watch the match at my house?|Sam: I'd love to, but my cousins are visiting.",
+  "q": "Will Sam come?",
+  "options": [
+   "no, he has visitors",
+   "yes, with his cousins",
+   "yes, later",
+   "he isn't sure"
+  ],
+  "answer": 0,
+  "explain": "'I'd love to, but my cousins are visiting' = a polite no.",
+  "dialogue": true,
+  "notes": {
+   "yes, with his cousins": "He didn't offer to bring them.",
+   "yes, later": "He didn't say later.",
+   "he isn't sure": "He gave a clear reason."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The shop assistant said the shoes would be back in stock next week, so I've asked them to keep a pair for me.",
+  "q": "What did the speaker do?",
+  "options": [
+   "reserved some shoes",
+   "bought the shoes",
+   "chose different shoes",
+   "got a refund"
+  ],
+  "answer": 0,
+  "explain": "'Asked them to keep a pair' = reserved them.",
+  "notes": {
+   "bought the shoes": "They're not in stock yet.",
+   "chose different shoes": "They want the same shoes.",
+   "got a refund": "No refund was mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "If you join the club before the end of the month, you'll get a free T-shirt.",
+  "q": "How can you get a free T-shirt?",
+  "options": [
+   "sign up soon",
+   "win a game",
+   "buy two",
+   "bring a friend"
+  ],
+  "answer": 0,
+  "explain": "Join 'before the end of the month' = sign up soon.",
+  "notes": {
+   "win a game": "Winning wasn't mentioned.",
+   "buy two": "Buying wasn't mentioned.",
+   "bring a friend": "A friend wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Lena: Did you enjoy the film?|Jo: The beginning was slow, but the ending was amazing.",
+  "q": "What did Jo think of the film?",
+  "options": [
+   "it got better",
+   "it was boring all the way",
+   "the start was the best part",
+   "she left early"
+  ],
+  "answer": 0,
+  "explain": "Slow beginning, amazing ending: it got better.",
+  "dialogue": true,
+  "notes": {
+   "it was boring all the way": "The ending was amazing.",
+   "the start was the best part": "The start was slow.",
+   "she left early": "She saw the ending."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Please hand in your forms by Wednesday. Anyone who's late won't get a place on the trip.",
+  "q": "What happens if your form is late?",
+  "options": [
+   "you can't go on the trip",
+   "you pay more",
+   "you go on a later trip",
+   "nothing happens"
+  ],
+  "answer": 0,
+  "explain": "'Won't get a place on the trip.'",
+  "notes": {
+   "you pay more": "Price wasn't mentioned.",
+   "you go on a later trip": "A later trip wasn't mentioned.",
+   "nothing happens": "There is a result."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I thought the quiz was on Thursday, but Mr Lee just told us it's tomorrow. I'd better start revising!",
+  "q": "Why is the speaker worried?",
+  "options": [
+   "the quiz is sooner than expected",
+   "the quiz has been cancelled",
+   "they missed the quiz",
+   "the quiz is very long"
+  ],
+  "answer": 0,
+  "explain": "It's tomorrow, not Thursday: sooner than they thought.",
+  "notes": {
+   "the quiz has been cancelled": "It's still happening.",
+   "they missed the quiz": "It hasn't happened yet.",
+   "the quiz is very long": "Length wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The match was supposed to start at three, but the referee was stuck in traffic, so it kicked off forty minutes late.",
+  "q": "When did the match start?",
+  "options": [
+   "at 3:40",
+   "at 3:00",
+   "at 3:14",
+   "at 4:00"
+  ],
+  "answer": 0,
+  "explain": "Three o'clock + forty minutes = 3:40.",
+  "notes": {
+   "at 3:00": "3:00 was the plan.",
+   "at 3:14": "Fourteen isn't forty.",
+   "at 4:00": "4:00 is an hour late, not forty minutes."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I wasn't going to enter the race, but my coach persuaded me, and I'm really glad she did.",
+  "q": "How does the speaker feel now?",
+  "options": [
+   "pleased about joining in",
+   "sorry they entered",
+   "angry with the coach",
+   "they didn't enter in the end"
+  ],
+  "answer": 0,
+  "explain": "'I'm really glad she did' = pleased.",
+  "notes": {
+   "sorry they entered": "They're glad, not sorry.",
+   "angry with the coach": "They're grateful, not angry.",
+   "they didn't enter in the end": "The coach persuaded them, so they entered."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "You can borrow up to five books at a time, and you keep them for three weeks.",
+  "q": "What are the library rules?",
+  "options": [
+   "five books, for three weeks",
+   "three books, for five weeks",
+   "five books, for one week",
+   "any number, for three weeks"
+  ],
+  "answer": 0,
+  "explain": "'Up to five books… three weeks.'",
+  "notes": {
+   "three books, for five weeks": "The numbers are the other way round.",
+   "five books, for one week": "The time is three weeks.",
+   "any number, for three weeks": "There's a limit of five."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Our flight's been delayed by two hours, so instead of landing at six, we'll land at eight.",
+  "q": "What's the new landing time?",
+  "options": [
+   "two hours later than planned",
+   "at six, as planned",
+   "two hours earlier",
+   "the flight is cancelled"
+  ],
+  "answer": 0,
+  "explain": "Delayed by two hours: eight instead of six.",
+  "notes": {
+   "at six, as planned": "Six was the original time.",
+   "two hours earlier": "Delayed means later, not earlier.",
+   "the flight is cancelled": "It's delayed, not cancelled."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The baking club is for anyone in Years 5 to 8. It costs nothing, but you need to bring an apron.",
+  "q": "What must members bring?",
+  "options": [
+   "something to protect their clothes",
+   "money for the club",
+   "ingredients",
+   "a cake tin"
+  ],
+  "answer": 0,
+  "explain": "An apron protects your clothes; the club is free.",
+  "notes": {
+   "money for the club": "It costs nothing.",
+   "ingredients": "Ingredients weren't mentioned.",
+   "a cake tin": "A tin wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I meant to text you last night, but my phone battery died.",
+  "q": "Why didn't the speaker text?",
+  "options": [
+   "their phone ran out of power",
+   "they forgot about it",
+   "they lost the phone",
+   "they were angry"
+  ],
+  "answer": 0,
+  "explain": "'My phone battery died' = it ran out of power.",
+  "notes": {
+   "they forgot about it": "They meant to; they didn't forget.",
+   "they lost the phone": "The phone wasn't lost.",
+   "they were angry": "Anger wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Normally I'd take the train, but there's a strike today, so my aunt is giving me a lift.",
+  "q": "How is the speaker travelling today?",
+  "options": [
+   "in a relative's car",
+   "by train as usual",
+   "by bus",
+   "on foot"
+  ],
+  "answer": 0,
+  "explain": "'My aunt is giving me a lift' = in her car.",
+  "notes": {
+   "by train as usual": "The trains are on strike.",
+   "by bus": "A bus wasn't mentioned.",
+   "on foot": "Walking wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The school play is on Thursday and Friday. Thursday's sold out, but there are still a few seats for Friday.",
+  "q": "When can you still get tickets?",
+  "options": [
+   "Friday only",
+   "Thursday only",
+   "both nights",
+   "neither night"
+  ],
+  "answer": 0,
+  "explain": "Thursday is sold out; Friday has a few seats.",
+  "notes": {
+   "Thursday only": "Thursday is sold out.",
+   "both nights": "Only Friday has seats.",
+   "neither night": "There are still a few seats on Friday."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Three tickets at seven pounds each, please. Oh, and my little brother is under five, so he's free.",
+  "q": "How much do they pay?",
+  "options": [
+   "£21",
+   "£28",
+   "£7",
+   "£14"
+  ],
+  "answer": 0,
+  "explain": "3 × £7 = £21; the brother is free.",
+  "notes": {
+   "£28": "£28 would include the brother, but he's free.",
+   "£7": "£7 is one ticket.",
+   "£14": "£14 is two tickets."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I've been practising every day, and my teacher says I'm ready to take the grade three exam.",
+  "q": "What does the teacher think?",
+  "options": [
+   "the speaker can do the exam now",
+   "they need a lot more practice",
+   "they failed the exam",
+   "the exam is too easy"
+  ],
+  "answer": 0,
+  "explain": "'I'm ready to take the exam.'",
+  "notes": {
+   "they need a lot more practice": "The teacher says they're ready.",
+   "they failed the exam": "They haven't taken it yet.",
+   "the exam is too easy": "Difficulty wasn't discussed."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "If you're coming to the beach clean-up, wear old clothes and bring gloves. We'll provide the bags.",
+  "q": "What do volunteers NOT need to bring?",
+  "options": [
+   "bags",
+   "gloves",
+   "old clothes",
+   "nothing; they need all three"
+  ],
+  "answer": 0,
+  "explain": "'We'll provide the bags.'",
+  "notes": {
+   "gloves": "Gloves must be brought.",
+   "old clothes": "Old clothes must be worn.",
+   "nothing; they need all three": "The organisers give the bags."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Jay: Did you get the tickets?|Sara: I tried, but they'd sold out in ten minutes.|Jay: Oh no!",
+  "q": "What happened?",
+  "options": [
+   "all the tickets had gone",
+   "Sara forgot to try",
+   "the tickets were too expensive",
+   "the concert was cancelled"
+  ],
+  "answer": 0,
+  "explain": "'They'd sold out in ten minutes.'",
+  "dialogue": true,
+  "notes": {
+   "Sara forgot to try": "She tried.",
+   "the tickets were too expensive": "Price wasn't mentioned.",
+   "the concert was cancelled": "Cancelled wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Mum: You can go to the party if you finish your chores.|Leo: I've already done them!",
+  "q": "Can Leo go?",
+  "options": [
+   "yes, because he has done his jobs",
+   "no, he hasn't finished",
+   "only if he finishes them later",
+   "Mum hasn't decided"
+  ],
+  "answer": 0,
+  "explain": "The condition was chores; Leo has already done them.",
+  "dialogue": true,
+  "notes": {
+   "no, he hasn't finished": "He says he's already done them.",
+   "only if he finishes them later": "They're already finished.",
+   "Mum hasn't decided": "Mum gave a clear condition, and it's met."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Ana: Let's meet at the café at four.|Ben: Can we make it half four? My lesson finishes at four.",
+  "q": "When does Ben want to meet?",
+  "options": [
+   "thirty minutes later than Ana said",
+   "at four",
+   "an hour later",
+   "earlier than four"
+  ],
+  "answer": 0,
+  "explain": "'Half four' = 4:30, half an hour after Ana's time.",
+  "dialogue": true,
+  "notes": {
+   "at four": "His lesson finishes at four.",
+   "an hour later": "Half an hour, not an hour.",
+   "earlier than four": "He wants later, not earlier."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Kim: Which film shall we see?|Ravi: Not the space one, I've seen it. The dragon one looks good.",
+  "q": "Which film does Ravi suggest?",
+  "options": [
+   "the one about dragons",
+   "the space film",
+   "a funny comedy",
+   "he doesn't mind which"
+  ],
+  "answer": 0,
+  "explain": "'The dragon one looks good.'",
+  "dialogue": true,
+  "notes": {
+   "the space film": "He's already seen it.",
+   "a funny comedy": "A comedy wasn't mentioned.",
+   "he doesn't mind which": "He has an opinion."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Coach: We're training indoors today.|Mia: Because of the rain?|Coach: No, the field's being cut.",
+  "q": "Why are they training indoors?",
+  "options": [
+   "the grass is being mowed",
+   "it's raining outside",
+   "it's too cold",
+   "the coach is ill"
+  ],
+  "answer": 0,
+  "explain": "'The field's being cut' = mowed. The coach said no to rain.",
+  "dialogue": true,
+  "notes": {
+   "it's raining outside": "The coach said no, it isn't the rain.",
+   "it's too cold": "Cold wasn't mentioned.",
+   "the coach is ill": "The coach is there."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Dad: How was the school trip?|Ella: The museum was boring, but the boat ride back was brilliant.",
+  "q": "Which part did Ella enjoy?",
+  "options": [
+   "the journey home",
+   "the museum",
+   "nothing at all",
+   "lunch"
+  ],
+  "answer": 0,
+  "explain": "'The boat ride back' = the journey home.",
+  "dialogue": true,
+  "notes": {
+   "the museum": "She found the museum boring.",
+   "nothing at all": "She loved the boat ride.",
+   "lunch": "Lunch wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Tom: Are you going camping this weekend?|Lily: We were, but the forecast's terrible, so we've put it off.",
+  "q": "What has Lily's family done?",
+  "options": [
+   "delayed the trip",
+   "gone already",
+   "booked a hotel",
+   "cancelled forever"
+  ],
+  "answer": 0,
+  "explain": "'Put it off' = delayed.",
+  "dialogue": true,
+  "notes": {
+   "gone already": "They haven't gone.",
+   "booked a hotel": "A hotel wasn't mentioned.",
+   "cancelled forever": "Put off means later, not never."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Jo: How long have you had your dog?|Sam: Since I was six. I'm eleven now.",
+  "q": "How long has Sam had his dog?",
+  "options": [
+   "five years",
+   "six years",
+   "eleven years",
+   "seventeen years"
+  ],
+  "answer": 0,
+  "explain": "From six to eleven = five years.",
+  "dialogue": true,
+  "notes": {
+   "six years": "Six was his age when he got it.",
+   "eleven years": "Eleven is his age now.",
+   "seventeen years": "Seventeen adds the numbers."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Nina: Can you come to my house on Saturday?|Omar: I'll ask my mum, but I think so.",
+  "q": "What is Omar's answer?",
+  "options": [
+   "probably yes",
+   "definitely yes",
+   "definitely no",
+   "he doesn't want to"
+  ],
+  "answer": 0,
+  "explain": "'I'll ask my mum, but I think so' = probably.",
+  "dialogue": true,
+  "notes": {
+   "definitely yes": "He still needs to ask his mum.",
+   "definitely no": "He thinks he can come.",
+   "he doesn't want to": "He sounds keen."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Leah: Is the new climbing centre expensive?|Max: It's twelve pounds, but it's half price before ten.",
+  "q": "How much is it at nine o'clock?",
+  "options": [
+   "£6",
+   "£12",
+   "£10",
+   "£24"
+  ],
+  "answer": 0,
+  "explain": "Before ten it's half of £12 = £6.",
+  "dialogue": true,
+  "notes": {
+   "£12": "£12 is the full price.",
+   "£10": "Ten is the time, not the price.",
+   "£24": "£24 is double."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Teacher: The test is next Tuesday.|Ivy: Is it on fractions?|Teacher: Fractions and decimals.",
+  "q": "What is the test on?",
+  "options": [
+   "fractions and decimals",
+   "only fractions",
+   "decimals and times tables",
+   "times tables"
+  ],
+  "answer": 0,
+  "explain": "'Fractions and decimals.'",
+  "dialogue": true,
+  "notes": {
+   "only fractions": "Decimals are also in it.",
+   "decimals and times tables": "Times tables weren't mentioned; it's fractions, not times tables.",
+   "times tables": "Times tables weren't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Sam: Why weren't you at practice?|Kai: I was going to come, but I had to look after my little sister.",
+  "q": "Why did Kai miss practice?",
+  "options": [
+   "he was babysitting",
+   "he was ill",
+   "he forgot",
+   "he didn't want to go"
+  ],
+  "answer": 0,
+  "explain": "'Look after my little sister' = babysitting.",
+  "dialogue": true,
+  "notes": {
+   "he was ill": "Illness wasn't mentioned.",
+   "he forgot": "He hadn't forgotten.",
+   "he didn't want to go": "He was going to come."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Amy: This pizza is cold!|Waiter: I'm so sorry. I'll bring you a fresh one, and there's no charge.",
+  "q": "What will the waiter do?",
+  "options": [
+   "replace it for free",
+   "heat it up",
+   "give her a discount",
+   "bring a salad"
+  ],
+  "answer": 0,
+  "explain": "'A fresh one, and there's no charge' = replace it for free.",
+  "dialogue": true,
+  "notes": {
+   "heat it up": "He'll bring a new one.",
+   "give her a discount": "It's free, not cheaper.",
+   "bring a salad": "A salad wasn't offered."
+  }
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "I've been waiting for twenty minutes.",
+  "answer": "I've been waiting for twenty minutes.",
+  "explain": "Present perfect continuous: have been + -ing."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "If it rains, we'll stay at home.",
+  "answer": "If it rains, we'll stay at home.",
+  "explain": "First conditional: if + present, will + verb."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "The museum was built in 1850.",
+  "answer": "The museum was built in 1850.",
+  "explain": "Passive: was + built."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "She asked me where I lived.",
+  "answer": "She asked me where I lived.",
+  "explain": "Reported question: where I lived."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "We're not allowed to use phones in class.",
+  "answer": "We're not allowed to use phones in class.",
+  "explain": "Not allowed to + verb."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "He's the funniest person I know.",
+  "answer": "He's the funniest person I know.",
+  "explain": "Superlative: the funniest."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "I wish I had more free time.",
+  "answer": "I wish I had more free time.",
+  "explain": "I wish + past simple."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "The cake was eaten by the dog.",
+  "answer": "The cake was eaten by the dog.",
+  "explain": "Passive: was + eaten + by."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "She has lived here since 2019.",
+  "answer": "She has lived here since 2019.",
+  "explain": "Since + a point in time."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "You should wear a helmet when cycling.",
+  "answer": "You should wear a helmet when cycling.",
+  "explain": "Should + verb for advice."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "Unless you hurry, you'll miss the bus.",
+  "answer": "Unless you hurry, you'll miss the bus.",
+  "explain": "Unless = if not."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "Although it was cold, we went swimming.",
+  "answer": "Although it was cold, we went swimming.",
+  "explain": "Although + contrast."
+ },
+ {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "I've never been on a plane before.",

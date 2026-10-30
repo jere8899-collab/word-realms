@@ -398,6 +398,1104 @@
      }
     }
    ]
+  },
+  {
+   "title": "The Night Museum Sleepover",
+   "text": "Last Friday, our class spent a night at the Natural History Museum. After the museum closed, a guide took us on a torch-lit tour. The dinosaur skeleton looked much scarier in the dark! We slept in sleeping bags under a giant whale model. I hardly slept because my friend Jay kept telling ghost stories. In the morning, we had breakfast in the café before the first visitors arrived.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "When did the tour happen?",
+     "options": [
+      "after the museum had closed",
+      "early in the morning",
+      "before lunch on Friday",
+      "while visitors were there"
+     ],
+     "answer": 0,
+     "explain": "'After the museum closed, a guide took us on a torch-lit tour.'",
+     "notes": {
+      "early in the morning": "Breakfast was in the morning, not the tour.",
+      "before lunch on Friday": "Lunch isn't in the text.",
+      "while visitors were there": "The museum had closed."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why did the dinosaur seem scarier?",
+     "options": [
+      "it was dark",
+      "it moved",
+      "it was new",
+      "it made a noise"
+     ],
+     "answer": 0,
+     "explain": "'Much scarier in the dark!'",
+     "notes": {
+      "it moved": "It's a skeleton; it didn't move.",
+      "it was new": "New isn't in the text.",
+      "it made a noise": "No noise is mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why didn't the writer sleep well?",
+     "options": [
+      "a friend kept talking",
+      "the floor was very cold",
+      "the whale model fell",
+      "they were hungry"
+     ],
+     "answer": 0,
+     "explain": "'Jay kept telling ghost stories.'",
+     "notes": {
+      "the floor was very cold": "The floor isn't mentioned.",
+      "the whale model fell": "The whale model didn't fall.",
+      "they were hungry": "Hunger isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "When did they have breakfast?",
+     "options": [
+      "before the museum opened",
+      "after the visitors came in",
+      "at midnight",
+      "at home"
+     ],
+     "answer": 0,
+     "explain": "'Before the first visitors arrived.'",
+     "notes": {
+      "after the visitors came in": "Before, not after.",
+      "at midnight": "Midnight isn't in the text.",
+      "at home": "They ate in the café."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Should Schools Have Longer Breaks?",
+   "text": "Many students say a 15-minute break is too short. By the time they've queued for a snack, it's time to go back. Some teachers agree: they think students concentrate better after a proper rest. However, others worry that longer breaks would mean a longer school day. One idea is to make lunch shorter and morning break longer, so the day stays the same length.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What is the students' main complaint?",
+     "options": [
+      "break doesn't last long enough",
+      "snacks are too expensive",
+      "lessons are boring",
+      "the day is too long"
+     ],
+     "answer": 0,
+     "explain": "'A 15-minute break is too short.'",
+     "notes": {
+      "snacks are too expensive": "The queue is the problem, not the price.",
+      "lessons are boring": "Lessons aren't criticised.",
+      "the day is too long": "That's the teachers' worry about longer breaks."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why do some teachers support longer breaks?",
+     "options": [
+      "students may focus better",
+      "teachers need more coffee",
+      "it's the law now",
+      "students asked politely"
+     ],
+     "answer": 0,
+     "explain": "'Students concentrate better after a proper rest.'",
+     "notes": {
+      "teachers need more coffee": "Coffee isn't mentioned.",
+      "it's the law now": "No law is mentioned.",
+      "students asked politely": "How students asked isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is the worry about longer breaks?",
+     "options": [
+      "school might finish later",
+      "students might get lost",
+      "the snack queue would grow",
+      "teachers would leave"
+     ],
+     "answer": 0,
+     "explain": "'Longer breaks would mean a longer school day.'",
+     "notes": {
+      "students might get lost": "Getting lost isn't mentioned.",
+      "the snack queue would grow": "The queue is the students' point.",
+      "teachers would leave": "Teachers leaving isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does the final idea try to do?",
+     "options": [
+      "keep the day the same length",
+      "remove lunch completely",
+      "add an extra afternoon break",
+      "start school earlier"
+     ],
+     "answer": 0,
+     "explain": "'So the day stays the same length.'",
+     "notes": {
+      "remove lunch completely": "Lunch gets shorter, not removed.",
+      "add an extra afternoon break": "The breaks are changed, not added.",
+      "start school earlier": "Start times aren't mentioned."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Mira and the Recycling Robot",
+   "text": "When Mira noticed that her school's recycling bins were always full of the wrong things, she decided to do something about it. With help from the science club, she built a robot that could recognise plastic, paper and metal using a small camera. The robot wasn't always right at first; it once put a banana skin in the paper bin. After a month of improvements, though, it was correct nine times out of ten, and the school asked her to build two more.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Why did Mira build the robot?",
+     "options": [
+      "people were sorting rubbish badly",
+      "she wanted to win a big prize",
+      "the bins were broken",
+      "her teacher told her to"
+     ],
+     "answer": 0,
+     "explain": "'Full of the wrong things.'",
+     "notes": {
+      "she wanted to win a big prize": "A prize isn't mentioned.",
+      "the bins were broken": "The bins weren't broken, just wrongly filled.",
+      "her teacher told her to": "She decided herself."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How did the robot know what things were?",
+     "options": [
+      "it used a camera",
+      "it weighed them",
+      "it smelled them",
+      "students told it"
+     ],
+     "answer": 0,
+     "explain": "'Recognise plastic, paper and metal using a small camera.'",
+     "notes": {
+      "it weighed them": "Weight isn't mentioned.",
+      "it smelled them": "Smell isn't mentioned.",
+      "students told it": "It worked alone."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does the banana story show?",
+     "options": [
+      "the robot made mistakes at first",
+      "the robot liked fruit",
+      "bananas count as paper",
+      "the camera broke"
+     ],
+     "answer": 0,
+     "explain": "'Wasn't always right at first.'",
+     "notes": {
+      "the robot liked fruit": "Robots don't like food.",
+      "bananas count as paper": "That was the mistake.",
+      "the camera broke": "The camera still worked."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How successful was the robot in the end?",
+     "options": [
+      "right about 90% of the time",
+      "always right, every time",
+      "right half the time",
+      "it was switched off"
+     ],
+     "answer": 0,
+     "explain": "'Correct nine times out of ten' = 90%.",
+     "notes": {
+      "always right, every time": "Nine out of ten isn't always.",
+      "right half the time": "Half would be five out of ten.",
+      "it was switched off": "The school wanted two more."
+     }
+    }
+   ]
+  },
+  {
+   "title": "A Message from the Forest Ranger",
+   "text": "Visitors to Whispering Forest: please stay on the marked paths. In spring, many birds build their nests close to the ground, and walking off the path can scare them away. Dogs must be kept on a lead between March and July. Campfires are not allowed anywhere in the forest, but there are picnic tables near the main gate. Thank you for helping us protect the forest!",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Why should visitors stay on the paths?",
+     "options": [
+      "to avoid disturbing birds",
+      "to avoid getting lost",
+      "because of snakes",
+      "so they don't get muddy"
+     ],
+     "answer": 0,
+     "explain": "'Walking off the path can scare them away.'",
+     "notes": {
+      "to avoid getting lost": "Getting lost isn't the reason given.",
+      "because of snakes": "Snakes aren't mentioned.",
+      "so they don't get muddy": "Mud isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "When must dogs be on a lead?",
+     "options": [
+      "in spring and early summer",
+      "all year round",
+      "only at night",
+      "only in winter"
+     ],
+     "answer": 0,
+     "explain": "'Between March and July.'",
+     "notes": {
+      "all year round": "Only March to July.",
+      "only at night": "Night isn't mentioned.",
+      "only in winter": "Winter is outside March–July."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Which of these is allowed?",
+     "options": [
+      "eating at the picnic tables",
+      "lighting a small fire",
+      "camping by the river",
+      "letting dogs run free in April"
+     ],
+     "answer": 0,
+     "explain": "'There are picnic tables near the main gate.'",
+     "notes": {
+      "lighting a small fire": "'Campfires are not allowed anywhere.'",
+      "camping by the river": "Camping isn't offered.",
+      "letting dogs run free in April": "April is between March and July."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is the main purpose of the message?",
+     "options": [
+      "to protect the forest",
+      "to sell tickets",
+      "to advertise a café",
+      "to find a dog that is lost"
+     ],
+     "answer": 0,
+     "explain": "'Thank you for helping us protect the forest!'",
+     "notes": {
+      "to sell tickets": "Tickets aren't mentioned.",
+      "to advertise a café": "No café is mentioned.",
+      "to find a dog that is lost": "No lost dog is mentioned."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Upside-Down Day",
+   "text": "On the last day of term, our head teacher announced an 'Upside-Down Day'. Students became teachers for an hour, and teachers sat at our desks. I taught Year 3 how to fold paper cranes. It was much harder than I expected: some children finished in a minute, while others needed help with every fold. By the end, I understood why our teacher always says, 'Patience is a superpower.'",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What happened on Upside-Down Day?",
+     "options": [
+      "students and teachers swapped places",
+      "everyone wore clothes inside out",
+      "lessons were held outside",
+      "school started at night"
+     ],
+     "answer": 0,
+     "explain": "'Students became teachers… teachers sat at our desks.'",
+     "notes": {
+      "everyone wore clothes inside out": "Clothes aren't mentioned.",
+      "lessons were held outside": "Lessons outside aren't mentioned.",
+      "school started at night": "Night isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What did the writer teach?",
+     "options": [
+      "how to make paper birds",
+      "a maths lesson",
+      "a song",
+      "how to draw cranes and birds"
+     ],
+     "answer": 0,
+     "explain": "'Fold paper cranes' (a crane is a bird).",
+     "notes": {
+      "a maths lesson": "Maths isn't mentioned.",
+      "a song": "A song isn't mentioned.",
+      "how to draw cranes and birds": "They folded, not drew."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why was teaching difficult?",
+     "options": [
+      "children worked at different speeds",
+      "the children were rude",
+      "there was no paper",
+      "the writer forgot the steps"
+     ],
+     "answer": 0,
+     "explain": "'Some finished in a minute, while others needed help.'",
+     "notes": {
+      "the children were rude": "Nobody was rude.",
+      "there was no paper": "They had paper.",
+      "the writer forgot the steps": "Forgetting isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What did the writer learn?",
+     "options": [
+      "teachers need to be patient",
+      "paper cranes are very easy",
+      "Year 3 is noisy",
+      "teaching is boring"
+     ],
+     "answer": 0,
+     "explain": "'Patience is a superpower.'",
+     "notes": {
+      "paper cranes are very easy": "It was 'much harder than I expected'.",
+      "Year 3 is noisy": "Noise isn't mentioned.",
+      "teaching is boring": "Boring isn't the lesson."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Young Inventors' Fair",
+   "text": "This year's Young Inventors' Fair was the biggest ever, with over 200 projects. The winner, 12-year-old Aisha Khan, designed a school bag that weighs itself and warns you, with a small light, when it is too heavy for your back. Aisha got the idea after her younger brother started complaining of back pain. The judges praised the bag because it was cheap to make and solved a real problem. Second place went to a pair of twins who built a bird feeder that takes photos of every visitor.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What makes this year's fair special?",
+     "options": [
+      "it had more projects than before",
+      "it was held in a new city",
+      "only twins could enter",
+      "it was the first one ever"
+     ],
+     "answer": 0,
+     "explain": "'The biggest ever, with over 200 projects.'",
+     "notes": {
+      "it was held in a new city": "The place isn't mentioned.",
+      "only twins could enter": "Twins came second, but anyone could enter.",
+      "it was the first one ever": "'Biggest ever' means there were earlier fairs."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does Aisha's bag do?",
+     "options": [
+      "warns you when it's too heavy",
+      "carries itself up the stairs",
+      "takes photos of your homework",
+      "lights up the road at night"
+     ],
+     "answer": 0,
+     "explain": "'Weighs itself and warns you… when it is too heavy.'",
+     "notes": {
+      "carries itself up the stairs": "It doesn't move by itself.",
+      "takes photos of your homework": "The bird feeder takes photos.",
+      "lights up the road at night": "The light is a warning, not a lamp."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Where did the idea come from?",
+     "options": [
+      "a problem in her family",
+      "a book she read",
+      "a teacher's homework task",
+      "a television show"
+     ],
+     "answer": 0,
+     "explain": "'After her younger brother started complaining of back pain.'",
+     "notes": {
+      "a book she read": "A book isn't mentioned.",
+      "a teacher's homework task": "Homework isn't mentioned.",
+      "a television show": "TV isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why did the judges like the bag?",
+     "options": [
+      "it was cheap and useful",
+      "it looked beautiful",
+      "it was very big",
+      "it used a clever camera"
+     ],
+     "answer": 0,
+     "explain": "'Cheap to make and solved a real problem.'",
+     "notes": {
+      "it looked beautiful": "Looks aren't mentioned.",
+      "it was very big": "Size isn't mentioned.",
+      "it used a clever camera": "The camera is the twins' feeder."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does the twins' invention do?",
+     "options": [
+      "photographs the birds that come",
+      "keeps cats away from birds",
+      "feeds birds automatically at night",
+      "counts how many eggs are laid"
+     ],
+     "answer": 0,
+     "explain": "'A bird feeder that takes photos of every visitor.'",
+     "notes": {
+      "keeps cats away from birds": "Cats aren't mentioned.",
+      "feeds birds automatically at night": "Night feeding isn't mentioned.",
+      "counts how many eggs are laid": "Eggs aren't mentioned."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Why Do Cats Purr?",
+   "text": "Most people think cats purr only when they are happy, but scientists have found that's not the whole story. Cats also purr when they are hurt, frightened or giving birth. One idea is that purring helps them calm down. Another is that the low sound may even help bones heal faster. Kittens can purr when they are just a few days old, which helps their mother know they are safe and well fed.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What is the common belief about purring?",
+     "options": [
+      "it shows a cat is content",
+      "it means a cat is hungry",
+      "only kittens can do it",
+      "it means a cat is ill"
+     ],
+     "answer": 0,
+     "explain": "'Most people think cats purr only when they are happy.'",
+     "notes": {
+      "it means a cat is hungry": "Hunger isn't the common belief.",
+      "only kittens can do it": "Adult cats purr too.",
+      "it means a cat is ill": "That's a scientists' finding, not the common belief."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What have scientists discovered?",
+     "options": [
+      "cats purr in bad situations too",
+      "purring is always a happy sign",
+      "cats can't purr when scared",
+      "only male cats purr"
+     ],
+     "answer": 0,
+     "explain": "'Cats also purr when they are hurt, frightened…'",
+     "notes": {
+      "purring is always a happy sign": "That's what most people think, not the discovery.",
+      "cats can't purr when scared": "They do purr when frightened.",
+      "only male cats purr": "Male and female isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Which is a possible reason for purring?",
+     "options": [
+      "to help the cat relax",
+      "to scare other cats",
+      "to call humans for food",
+      "to keep the cat warm"
+     ],
+     "answer": 0,
+     "explain": "'Purring helps them calm down.'",
+     "notes": {
+      "to scare other cats": "Scaring isn't mentioned.",
+      "to call humans for food": "Food isn't mentioned.",
+      "to keep the cat warm": "Warmth isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What surprising idea is mentioned?",
+     "options": [
+      "the sound might help bones get better",
+      "cats purr to make music",
+      "purring makes cats grow faster",
+      "cats purr to find their way"
+     ],
+     "answer": 0,
+     "explain": "'The low sound may even help bones heal faster.'",
+     "notes": {
+      "cats purr to make music": "Music isn't mentioned.",
+      "purring makes cats grow faster": "Growing isn't mentioned.",
+      "cats purr to find their way": "Direction isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why do very young kittens purr?",
+     "options": [
+      "to tell their mother they're OK",
+      "because they are cold",
+      "to ask to go outside",
+      "because they are frightened"
+     ],
+     "answer": 0,
+     "explain": "'Helps their mother know they are safe and well fed.'",
+     "notes": {
+      "because they are cold": "Cold isn't mentioned.",
+      "to ask to go outside": "Going outside isn't mentioned.",
+      "because they are frightened": "For kittens, it's a 'safe and well fed' signal."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Review: Escape from Cloud Castle (video game)",
+   "text": "I'd been waiting months for Escape from Cloud Castle, and mostly it was worth it. The puzzles are clever and the floating islands look amazing. You can play alone or with a friend online, which is much more fun. However, the game is quite short: I finished it in about six hours. Also, the music gets repetitive after a while. If you love puzzles, buy it, but maybe wait until the price drops.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What is the reviewer's general opinion?",
+     "options": [
+      "mostly positive",
+      "completely negative",
+      "they didn't finish it",
+      "it was a waste of time"
+     ],
+     "answer": 0,
+     "explain": "'Mostly it was worth it.'",
+     "notes": {
+      "completely negative": "They liked most of it.",
+      "they didn't finish it": "They finished it in six hours.",
+      "it was a waste of time": "'Worth it' is the opposite."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does the reviewer say about playing with a friend?",
+     "options": [
+      "it's more enjoyable",
+      "it isn't possible",
+      "it's far too difficult",
+      "it costs extra"
+     ],
+     "answer": 0,
+     "explain": "'Much more fun.'",
+     "notes": {
+      "it isn't possible": "You can play with a friend online.",
+      "it's far too difficult": "Difficulty isn't mentioned.",
+      "it costs extra": "Cost for this isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is one problem with the game?",
+     "options": [
+      "it doesn't last long",
+      "the puzzles are too easy",
+      "the islands look bad",
+      "it's hard to play online"
+     ],
+     "answer": 0,
+     "explain": "'The game is quite short.'",
+     "notes": {
+      "the puzzles are too easy": "The puzzles are 'clever'.",
+      "the islands look bad": "They 'look amazing'.",
+      "it's hard to play online": "Online play is praised."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is said about the music?",
+     "options": [
+      "it repeats too much",
+      "it's too loud",
+      "it's the best part of it",
+      "there isn't any"
+     ],
+     "answer": 0,
+     "explain": "'The music gets repetitive.'",
+     "notes": {
+      "it's too loud": "Volume isn't mentioned.",
+      "it's the best part of it": "It's a downside.",
+      "there isn't any": "There is music."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What advice does the reviewer give?",
+     "options": [
+      "buy it later when it's cheaper",
+      "never buy it",
+      "only play it alone",
+      "buy two copies now"
+     ],
+     "answer": 0,
+     "explain": "'Maybe wait until the price drops.'",
+     "notes": {
+      "never buy it": "They recommend it to puzzle fans.",
+      "only play it alone": "Playing with a friend is better.",
+      "buy two copies now": "Two copies isn't advised."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Leo's Volunteering Weekend",
+   "text": "Last weekend I volunteered at the animal rescue centre for the first time. I'd expected to spend the day playing with puppies, but actually most of the work was cleaning cages and preparing food. It was tiring, but the staff explained why every job mattered. The best moment came at the end, when a family adopted Rusty, an old dog who'd been at the centre for over a year. Seeing his tail wag as he left made all the hard work feel worthwhile.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Had Leo volunteered there before?",
+     "options": [
+      "no, it was his first time",
+      "yes, every weekend",
+      "yes, once last year",
+      "the text doesn't tell us"
+     ],
+     "answer": 0,
+     "explain": "'For the first time.'",
+     "notes": {
+      "yes, every weekend": "It was his first time.",
+      "yes, once last year": "It was his first time.",
+      "the text doesn't tell us": "The text says 'for the first time'."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How was the work different from what he expected?",
+     "options": [
+      "it was mostly cleaning and food",
+      "there were no animals",
+      "it was easier than he thought",
+      "he only played with puppies"
+     ],
+     "answer": 0,
+     "explain": "'Most of the work was cleaning cages and preparing food.'",
+     "notes": {
+      "there were no animals": "There were animals, like Rusty.",
+      "it was easier than he thought": "It was tiring.",
+      "he only played with puppies": "That's what he expected, not what happened."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How did the staff help him?",
+     "options": [
+      "they told him why the jobs were important",
+      "they did the cleaning for him",
+      "they paid him for his time",
+      "they let him leave early"
+     ],
+     "answer": 0,
+     "explain": "'The staff explained why every job mattered.'",
+     "notes": {
+      "they did the cleaning for him": "He did the cleaning.",
+      "they paid him for his time": "Volunteers aren't paid.",
+      "they let him leave early": "He stayed to the end."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Who is Rusty?",
+     "options": [
+      "an older dog who found a home",
+      "a new puppy at the rescue centre",
+      "a member of staff",
+      "Leo's own pet"
+     ],
+     "answer": 0,
+     "explain": "'An old dog who'd been at the centre for over a year' and was adopted.",
+     "notes": {
+      "a new puppy at the rescue centre": "Rusty is old, not new.",
+      "a member of staff": "Rusty is a dog.",
+      "Leo's own pet": "A family adopted him."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How did Leo feel at the end?",
+     "options": [
+      "the effort had been worth it",
+      "too tired to ever come back",
+      "sad that Rusty left",
+      "bored with the work"
+     ],
+     "answer": 0,
+     "explain": "'Made all the hard work feel worthwhile.'",
+     "notes": {
+      "too tired to ever come back": "He doesn't say he won't return.",
+      "sad that Rusty left": "He was happy to see him go home.",
+      "bored with the work": "He felt it was worthwhile."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Lighthouse Cat",
+   "text": "For fifteen years, a ginger cat named Captain lived at Gull Point lighthouse. Nobody knew where he had come from; he simply arrived one stormy night and refused to leave. The lighthouse keeper, Mrs Ward, said he always seemed to know when a storm was coming, because he would sit by the window and stare at the sea. When Captain died, the village put a small statue of him by the lighthouse door, and tourists still rub his nose for luck.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How did Captain come to the lighthouse?",
+     "options": [
+      "he turned up one night and stayed",
+      "Mrs Ward bought him",
+      "he was born there",
+      "a fisherman brought him"
+     ],
+     "answer": 0,
+     "explain": "'He simply arrived one stormy night and refused to leave.'",
+     "notes": {
+      "Mrs Ward bought him": "Buying isn't mentioned.",
+      "he was born there": "'Nobody knew where he had come from.'",
+      "a fisherman brought him": "A fisherman isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What did Captain seem able to do?",
+     "options": [
+      "sense bad weather coming",
+      "catch fish in the sea",
+      "switch on the big light",
+      "find lost boats"
+     ],
+     "answer": 0,
+     "explain": "'He always seemed to know when a storm was coming.'",
+     "notes": {
+      "catch fish in the sea": "Fishing isn't mentioned.",
+      "switch on the big light": "The light isn't mentioned.",
+      "find lost boats": "Boats aren't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How did he show this?",
+     "options": [
+      "by watching the sea from the window",
+      "by hiding under the bed",
+      "by meowing loudly all night",
+      "by running down to the beach"
+     ],
+     "answer": 0,
+     "explain": "'He would sit by the window and stare at the sea.'",
+     "notes": {
+      "by hiding under the bed": "Hiding isn't mentioned.",
+      "by meowing loudly all night": "Meowing isn't mentioned.",
+      "by running down to the beach": "He stayed by the window."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How did the village remember him?",
+     "options": [
+      "they made a statue",
+      "they named a boat after him",
+      "they wrote a song",
+      "they renamed the lighthouse"
+     ],
+     "answer": 0,
+     "explain": "'Put a small statue of him by the lighthouse door.'",
+     "notes": {
+      "they named a boat after him": "A boat isn't mentioned.",
+      "they wrote a song": "A song isn't mentioned.",
+      "they renamed the lighthouse": "It's still Gull Point lighthouse."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why do tourists touch the statue?",
+     "options": [
+      "they believe it brings good luck",
+      "to clean it for the village",
+      "because Mrs Ward asks them",
+      "to check that it is warm"
+     ],
+     "answer": 0,
+     "explain": "'Tourists still rub his nose for luck.'",
+     "notes": {
+      "to clean it for the village": "Cleaning isn't mentioned.",
+      "because Mrs Ward asks them": "Mrs Ward isn't mentioned here.",
+      "to check that it is warm": "Warmth isn't mentioned."
+     }
+    }
+   ]
+  },
+  {
+   "title": "School News: The Phone-Free Lunch Trial",
+   "text": "For one month, Year 7 tried a phone-free lunch break. Phones stayed in lockers from 12 until 1. At first, many students complained that they had nothing to do. By the second week, though, the library's board-game club had doubled in size, and the football pitch was busier than ever. In a survey at the end, 60% of students said they wanted to continue, while 25% wanted phones back and the rest didn't mind.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Where were phones kept during the trial?",
+     "options": [
+      "in lockers",
+      "in the office",
+      "in students' bags",
+      "at home"
+     ],
+     "answer": 0,
+     "explain": "'Phones stayed in lockers.'",
+     "notes": {
+      "in the office": "The office isn't mentioned.",
+      "in students' bags": "They weren't in bags.",
+      "at home": "Students brought them to school."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How did students feel at first?",
+     "options": [
+      "they were bored",
+      "they were excited",
+      "they didn't notice",
+      "they were relieved"
+     ],
+     "answer": 0,
+     "explain": "'Many students complained that they had nothing to do.'",
+     "notes": {
+      "they were excited": "They complained.",
+      "they didn't notice": "They noticed and complained.",
+      "they were relieved": "Relief came later for some."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What changed by the second week?",
+     "options": [
+      "more students joined activities",
+      "the trial was stopped",
+      "phones were allowed again at lunch",
+      "the library closed"
+     ],
+     "answer": 0,
+     "explain": "The board-game club 'doubled' and the pitch 'was busier than ever'.",
+     "notes": {
+      "the trial was stopped": "It ran for a month.",
+      "phones were allowed again at lunch": "Phones were still in lockers.",
+      "the library closed": "The library club grew."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What percentage of students didn't mind either way?",
+     "options": [
+      "15%",
+      "25%",
+      "40%",
+      "60%"
+     ],
+     "answer": 0,
+     "explain": "100% − 60% − 25% = 15%.",
+     "notes": {
+      "25%": "25% wanted phones back.",
+      "40%": "40% is everyone who didn't vote to continue.",
+      "60%": "60% wanted to continue."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What was the overall result?",
+     "options": [
+      "most students wanted to keep it",
+      "most wanted their phones back",
+      "nobody liked it",
+      "the teachers decided to stop it"
+     ],
+     "answer": 0,
+     "explain": "'60% of students said they wanted to continue.'",
+     "notes": {
+      "most wanted their phones back": "Only 25% wanted phones back.",
+      "nobody liked it": "60% liked it.",
+      "the teachers decided to stop it": "Teachers' decision isn't mentioned."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Map in the Attic",
+   "text": "While clearing out her grandfather's attic, Sofia found an old map of her town drawn in pencil. In one corner, someone had marked an X beside the old oak tree in the park, with the words 'For the next explorer'. Sofia and her cousin dug carefully at the spot and found a tin box. Inside were marbles, a compass and a note from her grandfather, written when he was ten: 'If you found this, you are a true explorer.'",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Where did Sofia find the map?",
+     "options": [
+      "in her grandfather's attic",
+      "under the old oak tree",
+      "in the town library",
+      "in a tin box"
+     ],
+     "answer": 0,
+     "explain": "'While clearing out her grandfather's attic, Sofia found an old map.'",
+     "notes": {
+      "under the old oak tree": "The box was under the tree.",
+      "in the town library": "A library isn't mentioned.",
+      "in a tin box": "The tin held marbles and a note."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What did the X mark?",
+     "options": [
+      "a place near a tree",
+      "her grandfather's house",
+      "the town museum",
+      "a lake in the park"
+     ],
+     "answer": 0,
+     "explain": "'An X beside the old oak tree in the park.'",
+     "notes": {
+      "her grandfather's house": "The house isn't marked.",
+      "the town museum": "A museum isn't mentioned.",
+      "a lake in the park": "A lake isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Who helped Sofia dig?",
+     "options": [
+      "her cousin",
+      "her grandfather",
+      "a friend from school",
+      "nobody"
+     ],
+     "answer": 0,
+     "explain": "'Sofia and her cousin dug.'",
+     "notes": {
+      "her grandfather": "Her grandfather hid the box long ago.",
+      "a friend from school": "A school friend isn't mentioned.",
+      "nobody": "Her cousin helped."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Which item was NOT in the box?",
+     "options": [
+      "a map",
+      "marbles",
+      "a compass",
+      "a note"
+     ],
+     "answer": 0,
+     "explain": "Inside were 'marbles, a compass and a note'. The map was in the attic.",
+     "notes": {
+      "marbles": "Marbles were inside.",
+      "a compass": "A compass was inside.",
+      "a note": "A note was inside."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "When did her grandfather write the note?",
+     "options": [
+      "when he was a child",
+      "last year",
+      "just before he died",
+      "when he drew the town map for work"
+     ],
+     "answer": 0,
+     "explain": "'Written when he was ten.'",
+     "notes": {
+      "last year": "Last year isn't mentioned.",
+      "just before he died": "It was written at age ten.",
+      "when he drew the town map for work": "He was ten, not working."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Ask Dr Paws: Help, My Dog Hates Baths!",
+   "text": "Dear Dr Paws, my dog Bean runs away every time I get the bath ready. What can I do? — Mia, 11. | Dear Mia, many dogs feel nervous in the bath because the floor is slippery. Try putting a rubber mat in the bottom. Use warm, not hot, water, and give Bean a treat before, during and after. Keep the first baths very short. Most importantly, stay calm: dogs can tell when you are stressed!",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What is Mia's problem?",
+     "options": [
+      "her dog avoids having a bath",
+      "her dog is ill",
+      "her dog won't eat",
+      "her dog is far too noisy"
+     ],
+     "answer": 0,
+     "explain": "'Bean runs away every time I get the bath ready.'",
+     "notes": {
+      "her dog is ill": "Illness isn't mentioned.",
+      "her dog won't eat": "Eating isn't mentioned.",
+      "her dog is far too noisy": "Noise isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "According to Dr Paws, why are many dogs nervous in the bath?",
+     "options": [
+      "they might slip",
+      "the water is too cold",
+      "they don't like soap",
+      "they want to play"
+     ],
+     "answer": 0,
+     "explain": "'Because the floor is slippery.'",
+     "notes": {
+      "the water is too cold": "Cold water isn't the reason given.",
+      "they don't like soap": "Soap isn't mentioned.",
+      "they want to play": "Play isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What temperature should the water be?",
+     "options": [
+      "warm",
+      "hot",
+      "cold",
+      "it doesn't matter"
+     ],
+     "answer": 0,
+     "explain": "'Use warm, not hot, water.'",
+     "notes": {
+      "hot": "'Not hot.'",
+      "cold": "Cold isn't advised.",
+      "it doesn't matter": "Dr Paws says warm."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "When should Bean get treats?",
+     "options": [
+      "throughout the bath",
+      "only afterwards",
+      "only before",
+      "never during a bath"
+     ],
+     "answer": 0,
+     "explain": "'Before, during and after.'",
+     "notes": {
+      "only afterwards": "During and before too.",
+      "only before": "During and after too.",
+      "never during a bath": "Treats during the bath are advised."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is the most important tip?",
+     "options": [
+      "keep calm yourself",
+      "make the bath long",
+      "use a lot of soap",
+      "bath the dog every day"
+     ],
+     "answer": 0,
+     "explain": "'Most importantly, stay calm.'",
+     "notes": {
+      "make the bath long": "Keep the first baths short.",
+      "use a lot of soap": "Soap isn't mentioned.",
+      "bath the dog every day": "How often isn't mentioned."
+     }
+    }
+   ]
   }
  ]
 }

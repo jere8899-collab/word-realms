@@ -2,6 +2,13 @@
 # Each mcq: (question, right, [wrong1, wrong2, wrong3], rule + example, [why-not for each wrong option]) – kid topics only.
 from qb import mcq
 def m(q, right, wrong, ex, notes): return {**mcq(q, [right] + wrong, ex), "_notes": notes}
+# Listening + reading chunks use the same shape: L() is a listen item (a "Name: line|Name: line" recording becomes a
+# two-voice dialogue), P() a reading passage whose questions are m() items.
+def L(say, q, right, wrong, ex, notes):
+    d = {"type": "listen", "say": say, "q": q, "options": [right] + wrong, "answer": 0, "explain": ex, "_notes": notes}
+    if "|" in say: d["dialogue"] = True
+    return d
+def P(title, text, qs): return {"title": title, "text": text, "questions": qs}
 GROW = {"a1": {"grammar": [
  m("I ___ a big brother.", "have", ["has", "am", "is"], "I/you/we/they have; he/she/it has. Example: I have a cat.", ["Has is for he/she/it.", "Am is for 'I am…', not for owning things.", "Is is for he/she/it, and not for owning."]),
  m("She ___ my teacher.", "is", ["am", "are", "be"], "He/she/it is. Example: She is kind.", ["Am goes only with I.", "Are goes with you/we/they.", "Be needs a form: is."]),
@@ -78,14 +85,20 @@ GROW = {"a1": {"grammar": [
  m("___ you happy? — Yes, I am.", "Are", ["Do", "Is", "Am"], "Are you + adjective? Example: Are you cold?", ["Do doesn't go with an adjective.", "Is is for he/she/it.", "Am is for I."]),
  m("My grandma ___ in a small village.", "lives", ["live", "living", "is live"], "He/she + -s for every day. Example: He lives in Tokyo.", ["Add -s for one person.", "Living needs is.", "Is live mixes two forms."]),
 ]}}
-# more C1 chunks: one file per level/skill (tools/c1_<level><g|v>.py), each item with its own C3 notes.
-# To add a chunk, add one row here: (level, skill, module, list name).
+# more C1 chunks: one file per level/skill (tools/c1_<level><g|v>.py, c1_listen*.py, c1_read*.py), each item with its own C3 notes.
+# To add a chunk, add one row here: (level, skill, module, list name). Reading chunks are lists of P() passages.
 import importlib
 CHUNKS = [("a1", "vocab", "c1_a1v", "A1V"),
           ("a2", "grammar", "c1_a2g", "A2G"), ("a2", "vocab", "c1_a2v", "A2V"),
           ("b1", "grammar", "c1_b1g", "B1G"), ("b1", "vocab", "c1_b1v", "B1V"),
           ("b2", "grammar", "c1_b2g", "B2G"), ("b2", "vocab", "c1_b2v", "B2V"),
           ("c1", "grammar", "c1_c1g", "C1G"), ("c1", "vocab", "c1_c1v", "C1V"),
-          ("c2", "grammar", "c1_c2g", "C2G"), ("c2", "vocab", "c1_c2v", "C2V")]
+          ("c2", "grammar", "c1_c2g", "C2G"), ("c2", "vocab", "c1_c2v", "C2V"),
+          ("a1", "listening", "c1_listen", "A1L"), ("a2", "listening", "c1_listen", "A2L"), ("b1", "listening", "c1_listen", "B1L"),
+          ("a1", "reading", "c1_read", "A1R"), ("a2", "reading", "c1_read", "A2R"), ("b1", "reading", "c1_read", "B1R")]
+def _add(lvl, sk, val):
+    bank = GROW.setdefault(lvl, {})
+    if sk == "reading": bank.setdefault(sk, {"passages": []})["passages"].extend(val)
+    else: bank.setdefault(sk, []).extend(val)
 for _lvl, _sk, _mod, _name in CHUNKS:
-    GROW.setdefault(_lvl, {})[_sk] = getattr(importlib.import_module(_mod), _name)
+    _add(_lvl, _sk, getattr(importlib.import_module(_mod), _name))

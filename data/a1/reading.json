@@ -398,6 +398,1104 @@
      }
     }
    ]
+  },
+  {
+   "title": "Pip the Puppy",
+   "text": "This is Pip. Pip is a small puppy. He is brown with one white ear. Pip likes balls and bones. He sleeps in a red basket in the kitchen. Every morning, Pip runs in the garden with Mia.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What colour is Pip?",
+     "options": [
+      "brown",
+      "white",
+      "red",
+      "black"
+     ],
+     "answer": 0,
+     "explain": "'He is brown with one white ear.'",
+     "notes": {
+      "white": "Only one ear is white.",
+      "red": "Red is his basket.",
+      "black": "Black isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Where does Pip sleep?",
+     "options": [
+      "in a basket in the kitchen",
+      "in the garden with Mia",
+      "on Mia's bed",
+      "in a box by the door"
+     ],
+     "answer": 0,
+     "explain": "'He sleeps in a red basket in the kitchen.'",
+     "notes": {
+      "in the garden with Mia": "He runs in the garden; he doesn't sleep there.",
+      "on Mia's bed": "Mia's bed isn't in the story.",
+      "in a box by the door": "A box isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does Pip like?",
+     "options": [
+      "balls and bones",
+      "cats and birds",
+      "milk and cake",
+      "shoes and socks"
+     ],
+     "answer": 0,
+     "explain": "'Pip likes balls and bones.'",
+     "notes": {
+      "cats and birds": "Cats and birds aren't in the story.",
+      "milk and cake": "Milk and cake aren't in the story.",
+      "shoes and socks": "Shoes and socks aren't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "When does Pip run in the garden?",
+     "options": [
+      "every morning",
+      "every night",
+      "on Sundays",
+      "after lunch"
+     ],
+     "answer": 0,
+     "explain": "'Every morning, Pip runs in the garden.'",
+     "notes": {
+      "every night": "Morning, not night.",
+      "on Sundays": "Every morning, not only Sundays.",
+      "after lunch": "Lunch isn't in the story."
+     }
+    }
+   ]
+  },
+  {
+   "title": "My Classroom",
+   "text": "My classroom is big and bright. There are twenty desks and one big board. Our teacher is Mr Ong. He is tall and funny. There is a fish tank by the window. The fish are orange. Their names are Sunny and Bubbles.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How many desks are there?",
+     "options": [
+      "twenty",
+      "twelve",
+      "two",
+      "thirty"
+     ],
+     "answer": 0,
+     "explain": "'There are twenty desks.'",
+     "notes": {
+      "twelve": "Twelve is 12; the story says twenty.",
+      "two": "Two isn't the number.",
+      "thirty": "Thirty is 30."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is Mr Ong like?",
+     "options": [
+      "tall and funny",
+      "short and quiet",
+      "old and sad",
+      "young and angry"
+     ],
+     "answer": 0,
+     "explain": "'He is tall and funny.'",
+     "notes": {
+      "short and quiet": "He is tall, not short.",
+      "old and sad": "Old and sad aren't in the story.",
+      "young and angry": "Angry isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Where is the fish tank?",
+     "options": [
+      "by the window",
+      "by the door",
+      "on the teacher's desk",
+      "under the board"
+     ],
+     "answer": 0,
+     "explain": "'There is a fish tank by the window.'",
+     "notes": {
+      "by the door": "The door isn't in the story.",
+      "on the teacher's desk": "The desk isn't where it is.",
+      "under the board": "The board is a different thing."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What are the fish called?",
+     "options": [
+      "Sunny and Bubbles",
+      "Sunny and Mr Ong",
+      "Bubbles and Pip",
+      "Orange and Sunny"
+     ],
+     "answer": 0,
+     "explain": "'Their names are Sunny and Bubbles.'",
+     "notes": {
+      "Sunny and Mr Ong": "Mr Ong is the teacher.",
+      "Bubbles and Pip": "Pip isn't in this story.",
+      "Orange and Sunny": "Orange is their colour."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Lily's Lunch Box",
+   "text": "Today Lily has a sandwich, an apple and some carrots in her lunch box. She has a bottle of water too. She doesn't have a cake. Lily eats lunch with her friend Zara at twelve o'clock.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What fruit does Lily have?",
+     "options": [
+      "an apple",
+      "a banana",
+      "some grapes",
+      "an orange"
+     ],
+     "answer": 0,
+     "explain": "'A sandwich, an apple and some carrots.'",
+     "notes": {
+      "a banana": "A banana isn't in her box.",
+      "some grapes": "Grapes aren't in her box.",
+      "an orange": "An orange isn't in her box."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does Lily drink?",
+     "options": [
+      "water",
+      "juice",
+      "milk",
+      "tea"
+     ],
+     "answer": 0,
+     "explain": "'She has a bottle of water.'",
+     "notes": {
+      "juice": "Juice isn't in the story.",
+      "milk": "Milk isn't in the story.",
+      "tea": "Tea isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does Lily NOT have?",
+     "options": [
+      "a cake",
+      "a sandwich",
+      "carrots",
+      "water"
+     ],
+     "answer": 0,
+     "explain": "'She doesn't have a cake.'",
+     "notes": {
+      "a sandwich": "She has a sandwich.",
+      "carrots": "She has carrots.",
+      "water": "She has water."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Who eats with Lily?",
+     "options": [
+      "Zara",
+      "Mia",
+      "her mum",
+      "Mr Ong"
+     ],
+     "answer": 0,
+     "explain": "'Lily eats lunch with her friend Zara.'",
+     "notes": {
+      "Mia": "Mia isn't in this story.",
+      "her mum": "Her mum isn't in the story.",
+      "Mr Ong": "Mr Ong isn't in this story."
+     }
+    }
+   ]
+  },
+  {
+   "title": "A Day at the Beach",
+   "text": "It is hot and sunny. Ben and his dad are at the beach. Ben makes a big sandcastle. Dad reads a book under an umbrella. Then they swim in the sea. At four o'clock they eat ice cream and go home.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What is the weather like at the beach?",
+     "options": [
+      "hot and sunny",
+      "cold and rainy",
+      "very windy",
+      "snowy"
+     ],
+     "answer": 0,
+     "explain": "'It is hot and sunny.'",
+     "notes": {
+      "cold and rainy": "It's hot, not cold.",
+      "very windy": "Wind isn't in the story.",
+      "snowy": "Snow isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does Ben make?",
+     "options": [
+      "a sandcastle",
+      "a kite",
+      "a cake",
+      "a boat"
+     ],
+     "answer": 0,
+     "explain": "'Ben makes a big sandcastle.'",
+     "notes": {
+      "a kite": "A kite isn't in the story.",
+      "a cake": "A cake isn't in the story.",
+      "a boat": "A boat isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does Dad do under the umbrella?",
+     "options": [
+      "reads a book",
+      "sleeps",
+      "eats ice cream",
+      "swims"
+     ],
+     "answer": 0,
+     "explain": "'Dad reads a book under an umbrella.'",
+     "notes": {
+      "sleeps": "Sleeping isn't in the story.",
+      "eats ice cream": "They eat ice cream later.",
+      "swims": "They swim in the sea, not under the umbrella."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "When do they eat ice cream?",
+     "options": [
+      "at four o'clock",
+      "at two o'clock",
+      "in the morning",
+      "at night"
+     ],
+     "answer": 0,
+     "explain": "'At four o'clock they eat ice cream.'",
+     "notes": {
+      "at two o'clock": "Two isn't the time.",
+      "in the morning": "Morning isn't the time.",
+      "at night": "They go home at four, before night."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Little Dragon's Birthday",
+   "text": "Today is Minty's birthday. Minty is a little green dragon. She is five. Her friends come to the party: a bunny, a fox and an owl. They play games and sing songs. Minty's cake has five candles. She blows them out with a tiny puff of smoke!",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How old is Minty?",
+     "options": [
+      "five",
+      "four",
+      "six",
+      "ten"
+     ],
+     "answer": 0,
+     "explain": "'She is five.'",
+     "notes": {
+      "four": "Four isn't her age.",
+      "six": "Six isn't her age.",
+      "ten": "Ten isn't her age."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What colour is Minty?",
+     "options": [
+      "green",
+      "red",
+      "blue",
+      "pink"
+     ],
+     "answer": 0,
+     "explain": "'A little green dragon.'",
+     "notes": {
+      "red": "Red isn't in the story.",
+      "blue": "Blue isn't in the story.",
+      "pink": "Pink isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Who comes to the party?",
+     "options": [
+      "a bunny, a fox and an owl",
+      "a cat, a dog and a fish",
+      "three big dragons",
+      "her teacher and her mum"
+     ],
+     "answer": 0,
+     "explain": "'A bunny, a fox and an owl.'",
+     "notes": {
+      "a cat, a dog and a fish": "Those animals aren't at the party.",
+      "three big dragons": "Minty is the only dragon.",
+      "her teacher and her mum": "No grown-ups are in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How does Minty blow out the candles?",
+     "options": [
+      "with a puff of smoke",
+      "with a cup of water",
+      "with her big wings",
+      "with a little fan"
+     ],
+     "answer": 0,
+     "explain": "'She blows them out with a tiny puff of smoke!'",
+     "notes": {
+      "with a cup of water": "Water isn't in the story.",
+      "with her big wings": "Her wings aren't in the story.",
+      "with a little fan": "A fan isn't in the story."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Bunny's Big Carrot",
+   "text": "Bun is a white bunny. She lives in a small house in the garden. Today Bun finds a very big carrot. It is orange and long. Bun can't carry it! Her friend Fox helps her. They carry the carrot home. Then they eat it for dinner. Yum!",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What colour is Bun?",
+     "options": [
+      "white",
+      "brown",
+      "orange",
+      "grey"
+     ],
+     "answer": 0,
+     "explain": "'Bun is a white bunny.'",
+     "notes": {
+      "brown": "Brown isn't in the story.",
+      "orange": "Orange is the carrot.",
+      "grey": "Grey isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Where does Bun live?",
+     "options": [
+      "in a small house in the garden",
+      "in a big house",
+      "in the forest",
+      "in a box"
+     ],
+     "answer": 0,
+     "explain": "'She lives in a small house in the garden.'",
+     "notes": {
+      "in a big house": "Her house is small.",
+      "in the forest": "The forest isn't in the story.",
+      "in a box": "A box isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is the problem?",
+     "options": [
+      "the carrot is too big to carry",
+      "Bun is hungry",
+      "Fox is sad",
+      "the carrot is bad"
+     ],
+     "answer": 0,
+     "explain": "'Bun can't carry it!'",
+     "notes": {
+      "Bun is hungry": "Hunger isn't the problem.",
+      "Fox is sad": "Fox helps; he isn't sad.",
+      "the carrot is bad": "The carrot is fine; they eat it."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Who helps Bun?",
+     "options": [
+      "Fox",
+      "Owl",
+      "Mia",
+      "her mum"
+     ],
+     "answer": 0,
+     "explain": "'Her friend Fox helps her.'",
+     "notes": {
+      "Owl": "Owl isn't in this story.",
+      "Mia": "Mia isn't in this story.",
+      "her mum": "Her mum isn't in this story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "When do they eat the carrot?",
+     "options": [
+      "for dinner",
+      "for breakfast",
+      "for lunch",
+      "the next day"
+     ],
+     "answer": 0,
+     "explain": "'They eat it for dinner.'",
+     "notes": {
+      "for breakfast": "Breakfast isn't in the story.",
+      "for lunch": "Lunch isn't in the story.",
+      "the next day": "They eat it that day."
+     }
+    }
+   ]
+  },
+  {
+   "title": "My Robot Toy",
+   "text": "I have a robot toy. His name is Beep. He is silver and blue. He has two big eyes and four small wheels. Beep can walk and talk. He can't fly. I play with Beep after school. My little brother likes Beep too.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What is the robot's name?",
+     "options": [
+      "Beep",
+      "Bop",
+      "Robo",
+      "Blue"
+     ],
+     "answer": 0,
+     "explain": "'His name is Beep.'",
+     "notes": {
+      "Bop": "Bop isn't his name.",
+      "Robo": "Robo isn't in this story.",
+      "Blue": "Blue is a colour."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What colours is Beep?",
+     "options": [
+      "silver and blue",
+      "silver and red",
+      "black and blue",
+      "all blue"
+     ],
+     "answer": 0,
+     "explain": "'He is silver and blue.'",
+     "notes": {
+      "silver and red": "Red isn't in the story.",
+      "black and blue": "Black isn't in the story.",
+      "all blue": "He is two colours."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How many wheels has Beep got?",
+     "options": [
+      "four",
+      "two",
+      "three",
+      "six"
+     ],
+     "answer": 0,
+     "explain": "'Four small wheels.'",
+     "notes": {
+      "two": "Two is his eyes.",
+      "three": "Three isn't in the story.",
+      "six": "Six isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What can't Beep do?",
+     "options": [
+      "fly",
+      "walk",
+      "talk",
+      "move"
+     ],
+     "answer": 0,
+     "explain": "'He can't fly.'",
+     "notes": {
+      "walk": "He can walk.",
+      "talk": "He can talk.",
+      "move": "He has wheels, so he moves."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "When does the writer play with Beep?",
+     "options": [
+      "after school",
+      "before school",
+      "at night",
+      "on Monday only"
+     ],
+     "answer": 0,
+     "explain": "'I play with Beep after school.'",
+     "notes": {
+      "before school": "After, not before.",
+      "at night": "Night isn't in the story.",
+      "on Monday only": "Every day after school, not one day."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Rainy Day",
+   "text": "It is Saturday. It is rainy and cold. Ella can't go to the park. She is sad. Then Mum has an idea. They make a tent in the living room with blankets and chairs. They read books in the tent and eat popcorn. Now Ella is happy!",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What day is it?",
+     "options": [
+      "Saturday",
+      "Sunday",
+      "Friday",
+      "Monday"
+     ],
+     "answer": 0,
+     "explain": "'It is Saturday.'",
+     "notes": {
+      "Sunday": "Sunday isn't in the story.",
+      "Friday": "Friday isn't in the story.",
+      "Monday": "Monday isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why can't Ella go to the park?",
+     "options": [
+      "the weather is bad",
+      "the park is closed",
+      "she is ill",
+      "Mum is busy"
+     ],
+     "answer": 0,
+     "explain": "'It is rainy and cold.'",
+     "notes": {
+      "the park is closed": "A closed park isn't in the story.",
+      "she is ill": "She isn't ill.",
+      "Mum is busy": "Mum plays with her."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Where do they make the tent?",
+     "options": [
+      "in the living room",
+      "in the garden",
+      "in the park",
+      "in the kitchen"
+     ],
+     "answer": 0,
+     "explain": "'They make a tent in the living room.'",
+     "notes": {
+      "in the garden": "It's raining outside.",
+      "in the park": "They can't go to the park.",
+      "in the kitchen": "The kitchen isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What do they eat?",
+     "options": [
+      "popcorn",
+      "pizza",
+      "cake",
+      "apples"
+     ],
+     "answer": 0,
+     "explain": "'They read books in the tent and eat popcorn.'",
+     "notes": {
+      "pizza": "Pizza isn't in the story.",
+      "cake": "Cake isn't in the story.",
+      "apples": "Apples aren't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How does Ella feel at the end?",
+     "options": [
+      "happy",
+      "sad",
+      "cold",
+      "tired"
+     ],
+     "answer": 0,
+     "explain": "'Now Ella is happy!'",
+     "notes": {
+      "sad": "She is sad at the start.",
+      "cold": "Cold is the weather.",
+      "tired": "Tired isn't in the story."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Owl at School",
+   "text": "Hoo is a little owl. He goes to Night School in the big tree. School starts at eight o'clock at night! Hoo's teacher is Mrs Feather. In class, the owls learn to fly and count stars. Hoo's best friend is Twit. They sit together.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Where is Night School?",
+     "options": [
+      "in the big tree",
+      "in a house",
+      "in the sky",
+      "by the river"
+     ],
+     "answer": 0,
+     "explain": "'Night School in the big tree.'",
+     "notes": {
+      "in a house": "A house isn't in the story.",
+      "in the sky": "They fly in the sky, but school is in the tree.",
+      "by the river": "A river isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "When does school start?",
+     "options": [
+      "at 8 p.m.",
+      "at 8 a.m.",
+      "at 9 p.m.",
+      "at noon"
+     ],
+     "answer": 0,
+     "explain": "'Eight o'clock at night' = 8 p.m.",
+     "notes": {
+      "at 8 a.m.": "a.m. is the morning; this is night.",
+      "at 9 p.m.": "Nine isn't the time.",
+      "at noon": "Noon is the middle of the day."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Who is Mrs Feather?",
+     "options": [
+      "Hoo's teacher",
+      "Hoo's mum",
+      "Hoo's friend",
+      "a star"
+     ],
+     "answer": 0,
+     "explain": "'Hoo's teacher is Mrs Feather.'",
+     "notes": {
+      "Hoo's mum": "His mum isn't in the story.",
+      "Hoo's friend": "His friend is Twit.",
+      "a star": "They count stars."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What do the owls learn?",
+     "options": [
+      "to fly and count stars",
+      "to swim and sing",
+      "to read and write",
+      "to run and jump"
+     ],
+     "answer": 0,
+     "explain": "'The owls learn to fly and count stars.'",
+     "notes": {
+      "to swim and sing": "Swimming isn't in the story.",
+      "to read and write": "Reading isn't in the story.",
+      "to run and jump": "Running isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Who does Hoo sit with?",
+     "options": [
+      "Twit",
+      "Mrs Feather",
+      "his brother",
+      "nobody"
+     ],
+     "answer": 0,
+     "explain": "'Hoo's best friend is Twit. They sit together.'",
+     "notes": {
+      "Mrs Feather": "She's the teacher.",
+      "his brother": "A brother isn't in the story.",
+      "nobody": "He sits with Twit."
+     }
+    }
+   ]
+  },
+  {
+   "title": "At the Farm",
+   "text": "Today Leo is at his uncle's farm. There are cows, sheep and chickens. The cows are black and white. Leo feeds the chickens in the morning. He finds six eggs! In the afternoon, he rides on a big red tractor with his uncle.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Whose farm is it?",
+     "options": [
+      "Leo's uncle's",
+      "Leo's",
+      "Leo's dad's",
+      "a teacher's"
+     ],
+     "answer": 0,
+     "explain": "'Leo is at his uncle's farm.'",
+     "notes": {
+      "Leo's": "Leo is visiting.",
+      "Leo's dad's": "His dad isn't in the story.",
+      "a teacher's": "A teacher isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What colour are the cows?",
+     "options": [
+      "black and white",
+      "brown",
+      "red and white",
+      "all black"
+     ],
+     "answer": 0,
+     "explain": "'The cows are black and white.'",
+     "notes": {
+      "brown": "Brown isn't in the story.",
+      "red and white": "Red is the tractor.",
+      "all black": "They are two colours."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does Leo do in the morning?",
+     "options": [
+      "feeds the chickens",
+      "rides the tractor",
+      "milks the cows",
+      "sleeps"
+     ],
+     "answer": 0,
+     "explain": "'Leo feeds the chickens in the morning.'",
+     "notes": {
+      "rides the tractor": "The tractor is in the afternoon.",
+      "milks the cows": "Milking isn't in the story.",
+      "sleeps": "Sleeping isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How many eggs does he find?",
+     "options": [
+      "six",
+      "two",
+      "seven",
+      "ten"
+     ],
+     "answer": 0,
+     "explain": "'He finds six eggs!'",
+     "notes": {
+      "two": "Two isn't the number.",
+      "seven": "Seven isn't the number.",
+      "ten": "Ten isn't the number."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does he ride?",
+     "options": [
+      "a tractor",
+      "a horse",
+      "a bike",
+      "a cow"
+     ],
+     "answer": 0,
+     "explain": "'He rides on a big red tractor.'",
+     "notes": {
+      "a horse": "A horse isn't in the story.",
+      "a bike": "A bike isn't in the story.",
+      "a cow": "He feeds animals but rides the tractor."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Zara's New Shoes",
+   "text": "Zara has new shoes. They are pink with yellow flowers. They are for her birthday. Zara's old shoes are too small. She wears her new shoes to school. Her friends say, 'Your shoes are beautiful!' Zara smiles.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What is on the new shoes?",
+     "options": [
+      "yellow flowers",
+      "pink flowers",
+      "yellow stars",
+      "red hearts"
+     ],
+     "answer": 0,
+     "explain": "'Pink with yellow flowers.'",
+     "notes": {
+      "pink flowers": "The shoes are pink; the flowers are yellow.",
+      "yellow stars": "Stars aren't in the story.",
+      "red hearts": "Hearts aren't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why has Zara got new shoes?",
+     "options": [
+      "it's her birthday",
+      "she lost her shoes",
+      "it's Christmas",
+      "her shoes are dirty"
+     ],
+     "answer": 0,
+     "explain": "'They are for her birthday.'",
+     "notes": {
+      "she lost her shoes": "Losing shoes isn't in the story.",
+      "it's Christmas": "Christmas isn't in the story.",
+      "her shoes are dirty": "Dirty isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is wrong with the old shoes?",
+     "options": [
+      "they are too small",
+      "they are too big",
+      "they are broken",
+      "they are wet"
+     ],
+     "answer": 0,
+     "explain": "'Zara's old shoes are too small.'",
+     "notes": {
+      "they are too big": "Small, not big.",
+      "they are broken": "Broken isn't in the story.",
+      "they are wet": "Wet isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Where does Zara wear her new shoes?",
+     "options": [
+      "to school",
+      "to the park",
+      "to a party",
+      "to bed"
+     ],
+     "answer": 0,
+     "explain": "'She wears her new shoes to school.'",
+     "notes": {
+      "to the park": "The park isn't in the story.",
+      "to a party": "A party isn't in the story.",
+      "to bed": "Bed isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What do her friends think?",
+     "options": [
+      "the shoes are lovely",
+      "the shoes are too pink",
+      "the shoes are old",
+      "the shoes are small"
+     ],
+     "answer": 0,
+     "explain": "'Your shoes are beautiful!' = lovely.",
+     "notes": {
+      "the shoes are too pink": "They like the colour.",
+      "the shoes are old": "The shoes are new.",
+      "the shoes are small": "The OLD shoes are small."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Dragon's Garden",
+   "text": "Ember is a red dragon. She doesn't like fire. She likes flowers! Ember has a big garden on a hill. There are red roses, blue flowers and tall sunflowers. Every day she gives the flowers water. Her favourite flowers are the sunflowers.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What does Ember like?",
+     "options": [
+      "flowers",
+      "fire",
+      "rain",
+      "fish"
+     ],
+     "answer": 0,
+     "explain": "'She doesn't like fire. She likes flowers!'",
+     "notes": {
+      "fire": "She doesn't like fire.",
+      "rain": "Rain isn't in the story.",
+      "fish": "Fish aren't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Where is the garden?",
+     "options": [
+      "on a hill",
+      "by the sea",
+      "in a cave",
+      "in the town"
+     ],
+     "answer": 0,
+     "explain": "'A big garden on a hill.'",
+     "notes": {
+      "by the sea": "The sea isn't in the story.",
+      "in a cave": "A cave isn't in the story.",
+      "in the town": "A town isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What colour are the roses?",
+     "options": [
+      "red",
+      "blue",
+      "yellow",
+      "pink"
+     ],
+     "answer": 0,
+     "explain": "'Red roses.'",
+     "notes": {
+      "blue": "The other flowers are blue.",
+      "yellow": "Yellow isn't said for roses.",
+      "pink": "Pink isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does Ember do every day?",
+     "options": [
+      "waters the flowers",
+      "picks the flowers",
+      "sleeps on the hill",
+      "makes a fire"
+     ],
+     "answer": 0,
+     "explain": "'Every day she gives the flowers water.'",
+     "notes": {
+      "picks the flowers": "Picking isn't in the story.",
+      "sleeps on the hill": "Sleeping isn't in the story.",
+      "makes a fire": "She doesn't like fire."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Which flowers does she like best?",
+     "options": [
+      "sunflowers",
+      "roses",
+      "blue flowers",
+      "all the same"
+     ],
+     "answer": 0,
+     "explain": "'Her favourite flowers are the sunflowers.'",
+     "notes": {
+      "roses": "Roses aren't her favourite.",
+      "blue flowers": "Blue flowers aren't her favourite.",
+      "all the same": "She has one favourite."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Sports Day",
+   "text": "It is Sports Day at school. Ben runs in the big race. He is fast, but Amy is faster. Amy is first and Ben is second. Then Ben jumps very far. He wins a gold star! After the races, all the children have orange juice in the sun.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Who wins the race?",
+     "options": [
+      "Amy",
+      "Ben",
+      "the teacher",
+      "nobody"
+     ],
+     "answer": 0,
+     "explain": "'Amy is first.'",
+     "notes": {
+      "Ben": "Ben is second.",
+      "the teacher": "The teacher doesn't run.",
+      "nobody": "Amy is first."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Where is Ben in the race?",
+     "options": [
+      "second",
+      "first",
+      "third",
+      "last"
+     ],
+     "answer": 0,
+     "explain": "'Ben is second.'",
+     "notes": {
+      "first": "Amy is first.",
+      "third": "Third isn't in the story.",
+      "last": "He is second."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does Ben win?",
+     "options": [
+      "a gold star",
+      "a cup",
+      "a silver star",
+      "a book"
+     ],
+     "answer": 0,
+     "explain": "'He wins a gold star!'",
+     "notes": {
+      "a cup": "A cup isn't in the story.",
+      "a silver star": "The star is gold.",
+      "a book": "A book isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does he win it for?",
+     "options": [
+      "a long jump",
+      "the race",
+      "a song",
+      "a picture"
+     ],
+     "answer": 0,
+     "explain": "'Then Ben jumps very far. He wins a gold star!'",
+     "notes": {
+      "the race": "He's second in the race.",
+      "a song": "Singing isn't in the story.",
+      "a picture": "A picture isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What do the children drink?",
+     "options": [
+      "orange juice",
+      "water",
+      "milk",
+      "apple juice"
+     ],
+     "answer": 0,
+     "explain": "'All the children have orange juice.'",
+     "notes": {
+      "water": "Water isn't in the story.",
+      "milk": "Milk isn't in the story.",
+      "apple juice": "The juice is orange."
+     }
+    }
+   ]
   }
  ]
 }

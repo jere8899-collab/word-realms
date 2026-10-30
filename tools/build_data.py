@@ -23,18 +23,19 @@ _merge(GROW)
 # ---- C2 (review 2026-10-30): new question types (spell, picq, mistake, gaps, dictate, listen-and-order, dialogues) ----
 from c2_types import C2T
 _WORD_ART = {a["id"] for a in json.load(open(os.path.join(os.path.dirname(__file__), "..", "assets", "manifest.json")))["assets"] if a.get("type") == "word"}
-for lvl, extra in C2T.items():
-    for sk, val in extra.items():
-        for q in val:
-            t = q["type"]
-            if t == "spell": assert re.fullmatch(r"[a-z]+", q["answer"]) and (q.get("art") in _WORD_ART or ":" in q["q"]), q
-            elif t == "picq": assert all("word_" + o in _WORD_ART for o in q["options"]), q
-            elif t == "mistake": assert 0 <= q["wrong"] < len(q["words"]) and q["fix"] and q["fix"] != q["words"][q["wrong"]], q
-            elif t == "gaps": assert q["text"].count("___") == len(q["answers"]) and len(set(q["bank"])) == len(q["bank"]) and len(q["bank"]) > len(q["answers"]), q
-            elif t == "dictate": assert q["say"] == q["answer"], q
-            elif t == "order": assert q["answer"] == q.get("say", q["answer"]) and len(q["answer"].split()) >= 3, q
-            elif t == "listen": assert q.get("dialogue") and all(re.match(r"^[A-Z][\w ]*: ", ln) for ln in q["say"].split("|")), q
-        D[lvl][sk].extend(val)
+def _check_c2(q):  # shape checks for the C2 question types (and two-voice dialogues)
+    t = q["type"]
+    if t == "spell": assert re.fullmatch(r"[a-z]+", q["answer"]) and (q.get("art") in _WORD_ART or ":" in q["q"]), q
+    elif t == "picq": assert all("word_" + o in _WORD_ART for o in q["options"]), q
+    elif t == "mistake": assert 0 <= q["wrong"] < len(q["words"]) and q["fix"] and q["fix"] != q["words"][q["wrong"]], q
+    elif t == "gaps": assert q["text"].count("___") == len(q["answers"]) and len(set(q["bank"])) == len(q["bank"]) and len(q["bank"]) > len(q["answers"]), q
+    elif t == "dictate": assert q["say"] == q["answer"], q
+    elif t == "order": assert q["answer"] == q.get("say", q["answer"]) and len(q["answer"].split()) >= 3, q
+    elif t == "listen": assert q.get("dialogue") and all(re.match(r"^[A-Z][\w ]*: ", ln) for ln in q["say"].split("|")), q
+for _lvl, _extra in C2T.items():
+    for _val in _extra.values():
+        for q in _val: _check_c2(q)
+_merge(C2T)
 # ---- C4 (review 2026-10-30): listening that tests understanding (paraphrased right options + numbers/times/changes of mind) ----
 from c4 import C4P, C4NEW
 _c4_hit = set()
@@ -94,6 +95,8 @@ for lvl, skills in D.items():
                 raise AssertionError(f"C3: no notes for {lvl}/{sk}: {q['q']}")
 _c3_missing = [(s, k) for s, d in C3.items() for k in d if (s, k) not in _c3_used]
 assert not _c3_missing, f"C3 overlay keys that match no item: {_c3_missing[:5]}"
+def _key(q):  # duplicate-check key: two items with the same key would look identical to a child
+    return "|".join([q.get("say", ""), q.get("q", ""), str(q.get("answer")), q.get("pic", ""), "/".join(q.get("options", [])[:1]), " ".join(q.get("words", [])), q.get("text", "")])
 FAIR_MAX = 0.40  # "Fair Play" guard: the right answer may be the uniquely longest option in at most 40% of a skill's items
 def check_fair(name, items):
     mc = [q for q in items if q.get("options")]
@@ -106,10 +109,11 @@ for lvl, skills in D.items():
         json.dump(val, open(f"{ROOT}/{lvl}/{sk}.json", "w"), ensure_ascii=False, indent=1)
         items = _items(sk, val); n = len(items)
         assert n >= 15, (lvl, sk, n)
-        keys = [(q.get("say", "") + "|" + q.get("q", "") + "|" + str(q.get("answer")) + "|" + q.get("pic", "") + "|" + "/".join(q.get("options", [])[:1]) + "|" + " ".join(q.get("words", [])) + "|" + q.get("text", "")) for q in items]
+        keys = [_key(q) for q in items]
         dup = {k for k in keys if keys.count(k) > 1}; assert not dup, (lvl, sk, dup)
         for q in items:
             if q["type"] in ("mcq", "listen", "picq"): assert len(set(q["options"])) == len(q["options"]) == 4, q
+            if q["type"] == "listen" and "|" in q["say"]: _check_c2(q)  # every two-voice recording is a well-formed dialogue
         counts[f"{lvl}/{sk}"] = n; tot += n
         check_fair(f"{lvl}/{sk}", items)
 # ---- Echo Well speaking prompts (bonus skill; not part of the 3-of-4 unlock rule) ----

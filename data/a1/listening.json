@@ -504,6 +504,1095 @@
   }
  },
  {
+  "type": "listen",
+  "say": "My rabbit is brown and white.",
+  "q": "What colour is the rabbit?",
+  "options": [
+   "brown and white",
+   "black and white",
+   "all brown",
+   "grey"
+  ],
+  "answer": 0,
+  "explain": "You heard: 'brown and white'.",
+  "notes": {
+   "black and white": "The rabbit isn't black.",
+   "all brown": "It's brown AND white.",
+   "grey": "Grey wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I've got three pencils in my bag.",
+  "q": "How many pencils?",
+  "options": [
+   "three",
+   "two",
+   "four",
+   "five"
+  ],
+  "answer": 0,
+  "explain": "'Three pencils.'",
+  "notes": {
+   "two": "Two wasn't said.",
+   "four": "Four wasn't said.",
+   "five": "Five wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Sam is in the kitchen. He's making a sandwich.",
+  "q": "Where is Sam?",
+  "options": [
+   "in the kitchen",
+   "in the garden",
+   "in the bedroom",
+   "at school"
+  ],
+  "answer": 0,
+  "explain": "'Sam is in the kitchen.'",
+  "notes": {
+   "in the garden": "The garden wasn't said.",
+   "in the bedroom": "The bedroom wasn't said.",
+   "at school": "He's at home, in the kitchen."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "It's sunny today. Let's go to the beach!",
+  "q": "What's the weather like?",
+  "options": [
+   "sunny",
+   "rainy",
+   "snowy",
+   "windy"
+  ],
+  "answer": 0,
+  "explain": "'It's sunny today.'",
+  "notes": {
+   "rainy": "Rain wasn't said.",
+   "snowy": "Snow wasn't said.",
+   "windy": "Wind wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "My birthday is in May.",
+  "q": "When is the birthday?",
+  "options": [
+   "in May",
+   "in March",
+   "in June",
+   "in July"
+  ],
+  "answer": 0,
+  "explain": "'In May.'",
+  "notes": {
+   "in March": "March wasn't said.",
+   "in June": "June wasn't said.",
+   "in July": "July wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The red ball is under the chair.",
+  "q": "Where is the ball?",
+  "options": [
+   "under the chair",
+   "on the chair",
+   "under the table",
+   "in the box"
+  ],
+  "answer": 0,
+  "explain": "'Under the chair.'",
+  "notes": {
+   "on the chair": "On is different from under.",
+   "under the table": "It's the chair, not the table.",
+   "in the box": "The box wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I like swimming, but I don't like running.",
+  "q": "What does the speaker like?",
+  "options": [
+   "swimming",
+   "running",
+   "dancing",
+   "football"
+  ],
+  "answer": 0,
+  "explain": "'I like swimming, but I don't like running.'",
+  "notes": {
+   "running": "The speaker doesn't like running.",
+   "dancing": "Dancing wasn't said.",
+   "football": "Football wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "There are five ducks on the pond.",
+  "q": "How many ducks?",
+  "options": [
+   "five",
+   "four",
+   "six",
+   "nine"
+  ],
+  "answer": 0,
+  "explain": "'Five ducks.'",
+  "notes": {
+   "four": "Four wasn't said.",
+   "six": "Six wasn't said.",
+   "nine": "Nine wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "My sister is six. My brother is nine.",
+  "q": "How old is the brother?",
+  "options": [
+   "nine",
+   "six",
+   "seven",
+   "ten"
+  ],
+  "answer": 0,
+  "explain": "'My brother is nine.' Six is the sister.",
+  "notes": {
+   "six": "Six is the sister's age.",
+   "seven": "Seven wasn't said.",
+   "ten": "Ten wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Please put your coat on. It's cold outside.",
+  "q": "What must you put on?",
+  "options": [
+   "a coat",
+   "a hat",
+   "shoes",
+   "gloves"
+  ],
+  "answer": 0,
+  "explain": "'Put your coat on.'",
+  "notes": {
+   "a hat": "A hat wasn't said.",
+   "shoes": "Shoes weren't said.",
+   "gloves": "Gloves weren't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "We have English on Monday and music on Friday.",
+  "q": "When is music?",
+  "options": [
+   "on Friday",
+   "on Monday",
+   "on Tuesday",
+   "on Sunday"
+  ],
+  "answer": 0,
+  "explain": "'Music on Friday.' English is on Monday.",
+  "notes": {
+   "on Monday": "Monday is English.",
+   "on Tuesday": "Tuesday wasn't said.",
+   "on Sunday": "Sunday wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The baby is sleeping. Please be quiet.",
+  "q": "What is the baby doing?",
+  "options": [
+   "sleeping",
+   "eating",
+   "crying",
+   "playing"
+  ],
+  "answer": 0,
+  "explain": "'The baby is sleeping.'",
+  "notes": {
+   "eating": "Eating wasn't said.",
+   "crying": "Crying wasn't said.",
+   "playing": "Playing wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I want a big ice cream, please. Strawberry!",
+  "q": "Which ice cream?",
+  "options": [
+   "strawberry",
+   "chocolate",
+   "banana",
+   "lemon"
+  ],
+  "answer": 0,
+  "explain": "'Strawberry!'",
+  "notes": {
+   "chocolate": "Chocolate wasn't said.",
+   "banana": "Banana wasn't said.",
+   "lemon": "Lemon wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "My school bag is purple with yellow stars.",
+  "q": "What's on the bag?",
+  "options": [
+   "yellow stars",
+   "purple stars",
+   "yellow moons",
+   "red hearts"
+  ],
+  "answer": 0,
+  "explain": "'Purple with yellow stars': the bag is purple, the stars are yellow.",
+  "notes": {
+   "purple stars": "The bag is purple; the stars are yellow.",
+   "yellow moons": "Moons weren't said.",
+   "red hearts": "Hearts weren't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "It's seven o'clock. Time to get up!",
+  "q": "What time is it?",
+  "options": [
+   "7:00",
+   "11:00",
+   "6:00",
+   "7:30"
+  ],
+  "answer": 0,
+  "explain": "'Seven o'clock' = 7:00.",
+  "notes": {
+   "11:00": "Eleven wasn't said.",
+   "6:00": "Six wasn't said.",
+   "7:30": "O'clock means :00, not half past."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Tom has got a dog and two cats.",
+  "q": "How many cats has Tom got?",
+  "options": [
+   "two",
+   "one",
+   "three",
+   "none"
+  ],
+  "answer": 0,
+  "explain": "'A dog and two cats.'",
+  "notes": {
+   "one": "One is the dog.",
+   "three": "Three wasn't said.",
+   "none": "He has two cats."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Can you see the bird? It's in the tree.",
+  "q": "Where is the bird?",
+  "options": [
+   "in the tree",
+   "on the house",
+   "in the sky",
+   "on the car"
+  ],
+  "answer": 0,
+  "explain": "'It's in the tree.'",
+  "notes": {
+   "on the house": "The house wasn't said.",
+   "in the sky": "The sky wasn't said.",
+   "on the car": "The car wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "My favourite food is pizza.",
+  "q": "What is the favourite food?",
+  "options": [
+   "pizza",
+   "pasta",
+   "chicken",
+   "rice"
+  ],
+  "answer": 0,
+  "explain": "'Pizza.'",
+  "notes": {
+   "pasta": "Pasta wasn't said.",
+   "chicken": "Chicken wasn't said.",
+   "rice": "Rice wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Mum is a teacher. Dad is a cook.",
+  "q": "What is Dad's job?",
+  "options": [
+   "a cook",
+   "a teacher",
+   "a doctor",
+   "a farmer"
+  ],
+  "answer": 0,
+  "explain": "'Dad is a cook.' Mum is the teacher.",
+  "notes": {
+   "a teacher": "Mum is the teacher.",
+   "a doctor": "Doctor wasn't said.",
+   "a farmer": "Farmer wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Close the window, please. It's windy.",
+  "q": "What should you close?",
+  "options": [
+   "the window",
+   "the door",
+   "the book",
+   "your eyes"
+  ],
+  "answer": 0,
+  "explain": "'Close the window.'",
+  "notes": {
+   "the door": "The door wasn't said.",
+   "the book": "The book wasn't said.",
+   "your eyes": "Eyes weren't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I'm hungry. Can I have an apple?",
+  "q": "What does the speaker want?",
+  "options": [
+   "an apple",
+   "a drink",
+   "a sandwich",
+   "a banana"
+  ],
+  "answer": 0,
+  "explain": "'Can I have an apple?'",
+  "notes": {
+   "a drink": "A drink is for thirsty.",
+   "a sandwich": "A sandwich wasn't said.",
+   "a banana": "A banana wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The shoes are fifteen pounds.",
+  "q": "How much are the shoes?",
+  "options": [
+   "£15",
+   "£50",
+   "£5",
+   "£13"
+  ],
+  "answer": 0,
+  "explain": "'Fifteen' = 15, not fifty (50).",
+  "notes": {
+   "£50": "Fifty is 50: listen to the end of the word.",
+   "£5": "Five is 5.",
+   "£13": "Thirteen is 13."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Grandma lives in a little house by the sea.",
+  "q": "Where does Grandma live?",
+  "options": [
+   "by the sea",
+   "in the city",
+   "on a farm",
+   "in a flat"
+  ],
+  "answer": 0,
+  "explain": "'By the sea.'",
+  "notes": {
+   "in the city": "The city wasn't said.",
+   "on a farm": "A farm wasn't said.",
+   "in a flat": "A flat wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Lily can ride a bike, but she can't swim.",
+  "q": "What can't Lily do?",
+  "options": [
+   "swim",
+   "ride a bike",
+   "sing",
+   "read"
+  ],
+  "answer": 0,
+  "explain": "'She can't swim.'",
+  "notes": {
+   "ride a bike": "She CAN ride a bike.",
+   "sing": "Singing wasn't said.",
+   "read": "Reading wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Let's play football after school.",
+  "q": "When will they play?",
+  "options": [
+   "after school",
+   "before school",
+   "at lunchtime",
+   "on Sunday"
+  ],
+  "answer": 0,
+  "explain": "'After school.'",
+  "notes": {
+   "before school": "Before is the opposite.",
+   "at lunchtime": "Lunchtime wasn't said.",
+   "on Sunday": "Sunday wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Kai: Where's my hat?|Mum: It's on your bed.",
+  "q": "Where is the hat?",
+  "options": [
+   "on the bed",
+   "under the bed",
+   "on the chair",
+   "in the bag"
+  ],
+  "answer": 0,
+  "explain": "Mum says: 'It's on your bed.'",
+  "dialogue": true,
+  "notes": {
+   "under the bed": "On, not under.",
+   "on the chair": "The chair wasn't said.",
+   "in the bag": "The bag wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Zoe: What's your pet's name?|Ben: His name is Rocket. He's a hamster.",
+  "q": "What is Rocket?",
+  "options": [
+   "a hamster",
+   "a rabbit",
+   "a dog",
+   "a fish"
+  ],
+  "answer": 0,
+  "explain": "'He's a hamster.'",
+  "dialogue": true,
+  "notes": {
+   "a rabbit": "A rabbit wasn't said.",
+   "a dog": "A dog wasn't said.",
+   "a fish": "A fish wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Mia: Do you like oranges?|Leo: Yes, I do. And I love grapes!",
+  "q": "What does Leo love?",
+  "options": [
+   "grapes",
+   "oranges",
+   "apples",
+   "pears"
+  ],
+  "answer": 0,
+  "explain": "He likes oranges, but he LOVES grapes.",
+  "dialogue": true,
+  "notes": {
+   "oranges": "He likes oranges; he loves grapes.",
+   "apples": "Apples weren't said.",
+   "pears": "Pears weren't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Ana: How many chairs are there?|Sam: Eight, I think. No, nine!",
+  "q": "How many chairs?",
+  "options": [
+   "nine",
+   "eight",
+   "ten",
+   "seven"
+  ],
+  "answer": 0,
+  "explain": "Sam changes his answer: 'No, nine!'",
+  "dialogue": true,
+  "notes": {
+   "eight": "Sam said eight first, then changed it.",
+   "ten": "Ten wasn't said.",
+   "seven": "Seven wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Dad: What colour is your new kite?|Lily: It's pink and orange.",
+  "q": "What colour is the kite?",
+  "options": [
+   "pink and orange",
+   "pink and purple",
+   "red and orange",
+   "all pink"
+  ],
+  "answer": 0,
+  "explain": "'Pink and orange.'",
+  "dialogue": true,
+  "notes": {
+   "pink and purple": "Purple wasn't said.",
+   "red and orange": "Red wasn't said.",
+   "all pink": "It's two colours."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I've got a green bike. My brother's bike is red.",
+  "q": "What colour is the speaker's bike?",
+  "options": [
+   "green",
+   "red",
+   "blue",
+   "yellow"
+  ],
+  "answer": 0,
+  "explain": "'I've got a green bike.' The red one is the brother's.",
+  "notes": {
+   "red": "Red is the brother's bike.",
+   "blue": "Blue wasn't said.",
+   "yellow": "Yellow wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The cat is sleeping on the sofa.",
+  "q": "Where is the cat?",
+  "options": [
+   "on the sofa",
+   "under the sofa",
+   "on the bed",
+   "in the garden"
+  ],
+  "answer": 0,
+  "explain": "'On the sofa.'",
+  "notes": {
+   "under the sofa": "On, not under.",
+   "on the bed": "The bed wasn't said.",
+   "in the garden": "The garden wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "We've got maths at nine and art at ten.",
+  "q": "When is art?",
+  "options": [
+   "at ten",
+   "at nine",
+   "at eleven",
+   "at two"
+  ],
+  "answer": 0,
+  "explain": "'Art at ten.' Maths is at nine.",
+  "notes": {
+   "at nine": "Nine is maths.",
+   "at eleven": "Eleven wasn't said.",
+   "at two": "Two wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "My pencil case is blue. No, sorry, it's purple!",
+  "q": "What colour is the pencil case?",
+  "options": [
+   "purple",
+   "blue",
+   "pink",
+   "green"
+  ],
+  "answer": 0,
+  "explain": "The speaker changes: 'No, sorry, it's purple!'",
+  "notes": {
+   "blue": "Blue was a mistake; the speaker changed it.",
+   "pink": "Pink wasn't said.",
+   "green": "Green wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "This book is three pounds.",
+  "q": "How much is the book?",
+  "options": [
+   "£3",
+   "£13",
+   "£30",
+   "£2"
+  ],
+  "answer": 0,
+  "explain": "'Three pounds' = £3.",
+  "notes": {
+   "£13": "Thirteen is 13.",
+   "£30": "Thirty is 30.",
+   "£2": "Two wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I've got four sweets. I give one to my friend.",
+  "q": "How many sweets has the speaker got now?",
+  "options": [
+   "three",
+   "four",
+   "five",
+   "one"
+  ],
+  "answer": 0,
+  "explain": "Four, then give one away: 4 − 1 = 3.",
+  "notes": {
+   "four": "Four was before giving one away.",
+   "five": "Five would be one more, not one less.",
+   "one": "One is the sweet the friend got."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Let's meet at the park at two o'clock.",
+  "q": "What time will they meet?",
+  "options": [
+   "2:00",
+   "12:00",
+   "10:00",
+   "2:30"
+  ],
+  "answer": 0,
+  "explain": "'At two o'clock' = 2:00.",
+  "notes": {
+   "12:00": "Twelve wasn't said.",
+   "10:00": "Ten wasn't said.",
+   "2:30": "O'clock means :00, not half past."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "My dog is big, but my cat is very small.",
+  "q": "What is small?",
+  "options": [
+   "the cat",
+   "the dog",
+   "the house",
+   "the bird"
+  ],
+  "answer": 0,
+  "explain": "'My cat is very small.' The dog is big.",
+  "notes": {
+   "the dog": "The dog is big.",
+   "the house": "A house wasn't said.",
+   "the bird": "A bird wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Put the books on the table, please.",
+  "q": "Where do the books go?",
+  "options": [
+   "on the table",
+   "in the bag",
+   "under the table",
+   "on the chair"
+  ],
+  "answer": 0,
+  "explain": "'On the table.'",
+  "notes": {
+   "in the bag": "The bag wasn't said.",
+   "under the table": "On, not under.",
+   "on the chair": "The chair wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I'm wearing a yellow T-shirt and blue shorts.",
+  "q": "What colour are the shorts?",
+  "options": [
+   "blue",
+   "yellow",
+   "red",
+   "white"
+  ],
+  "answer": 0,
+  "explain": "'Blue shorts.' The T-shirt is yellow.",
+  "notes": {
+   "yellow": "Yellow is the T-shirt.",
+   "red": "Red wasn't said.",
+   "white": "White wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "There are ten children in the pool.",
+  "q": "How many children are in the pool?",
+  "options": [
+   "ten",
+   "two",
+   "twelve",
+   "six"
+  ],
+  "answer": 0,
+  "explain": "'Ten children.'",
+  "notes": {
+   "two": "Two wasn't said.",
+   "twelve": "Twelve is 12.",
+   "six": "Six wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I go swimming on Wednesday.",
+  "q": "When does the speaker swim?",
+  "options": [
+   "on Wednesday",
+   "on Monday",
+   "on Thursday",
+   "on Saturday"
+  ],
+  "answer": 0,
+  "explain": "'On Wednesday.'",
+  "notes": {
+   "on Monday": "Monday wasn't said.",
+   "on Thursday": "Thursday wasn't said.",
+   "on Saturday": "Saturday wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "My grandpa is old. He has got white hair and glasses.",
+  "q": "What has Grandpa got?",
+  "options": [
+   "white hair and glasses",
+   "black hair and glasses",
+   "white hair and a hat",
+   "a beard and glasses"
+  ],
+  "answer": 0,
+  "explain": "'White hair and glasses.'",
+  "notes": {
+   "black hair and glasses": "His hair is white, not black.",
+   "white hair and a hat": "A hat wasn't said.",
+   "a beard and glasses": "A beard wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The fox lives in the forest.",
+  "q": "Where does the fox live?",
+  "options": [
+   "in the forest",
+   "in the sea",
+   "in a house",
+   "on a farm"
+  ],
+  "answer": 0,
+  "explain": "'In the forest.'",
+  "notes": {
+   "in the sea": "The sea wasn't said.",
+   "in a house": "A house wasn't said.",
+   "on a farm": "A farm wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I don't want milk. Can I have water, please?",
+  "q": "What does the speaker want?",
+  "options": [
+   "water",
+   "milk",
+   "juice",
+   "tea"
+  ],
+  "answer": 0,
+  "explain": "'I don't want milk… water, please.'",
+  "notes": {
+   "milk": "The speaker doesn't want milk.",
+   "juice": "Juice wasn't said.",
+   "tea": "Tea wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Jo: Is your bag blue?|Ken: No, it's black.",
+  "q": "What colour is Ken's bag?",
+  "options": [
+   "black",
+   "blue",
+   "brown",
+   "grey"
+  ],
+  "answer": 0,
+  "explain": "Ken says: 'No, it's black.'",
+  "dialogue": true,
+  "notes": {
+   "blue": "Jo asked about blue, but Ken said no.",
+   "brown": "Brown wasn't said.",
+   "grey": "Grey wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Mum: How many apples do you want?|Ali: Two, please.",
+  "q": "How many apples does Ali want?",
+  "options": [
+   "two",
+   "one",
+   "three",
+   "ten"
+  ],
+  "answer": 0,
+  "explain": "'Two, please.'",
+  "dialogue": true,
+  "notes": {
+   "one": "One wasn't said.",
+   "three": "Three wasn't said.",
+   "ten": "Ten wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Tia: Where's the cat?|Dad: She's behind the door.",
+  "q": "Where is the cat?",
+  "options": [
+   "behind the door",
+   "in front of the door",
+   "under the bed",
+   "on the table"
+  ],
+  "answer": 0,
+  "explain": "'She's behind the door.'",
+  "dialogue": true,
+  "notes": {
+   "in front of the door": "Behind, not in front of.",
+   "under the bed": "The bed wasn't said.",
+   "on the table": "The table wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Teacher: Open your books at page six.|Max: Page six?|Teacher: Sorry, page seven!",
+  "q": "Which page?",
+  "options": [
+   "page seven",
+   "page six",
+   "page eight",
+   "page eleven"
+  ],
+  "answer": 0,
+  "explain": "The teacher changes it: 'Sorry, page seven!'",
+  "dialogue": true,
+  "notes": {
+   "page six": "Six was the teacher's mistake.",
+   "page eight": "Eight wasn't said.",
+   "page eleven": "Eleven wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Sam: Do you like cats?|Ivy: No, I don't. I like dogs.",
+  "q": "What does Ivy like?",
+  "options": [
+   "dogs",
+   "cats",
+   "birds",
+   "fish"
+  ],
+  "answer": 0,
+  "explain": "'No, I don't. I like dogs.'",
+  "dialogue": true,
+  "notes": {
+   "cats": "Ivy doesn't like cats.",
+   "birds": "Birds weren't said.",
+   "fish": "Fish weren't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Nan: What's your favourite colour?|Leo: Orange! Like a pumpkin.",
+  "q": "What is Leo's favourite colour?",
+  "options": [
+   "orange",
+   "yellow",
+   "green",
+   "red"
+  ],
+  "answer": 0,
+  "explain": "'Orange! Like a pumpkin.'",
+  "dialogue": true,
+  "notes": {
+   "yellow": "Yellow wasn't said.",
+   "green": "Green wasn't said.",
+   "red": "Red wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Ella: How old is your sister?|Ben: She's four. My brother is ten.",
+  "q": "How old is Ben's sister?",
+  "options": [
+   "four",
+   "ten",
+   "fourteen",
+   "nine"
+  ],
+  "answer": 0,
+  "explain": "'She's four.' Ten is the brother.",
+  "dialogue": true,
+  "notes": {
+   "ten": "Ten is the brother.",
+   "fourteen": "Fourteen wasn't said.",
+   "nine": "Nine wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Pip: Can you swim?|Zoe: Yes, I can. And I can dance too!",
+  "q": "What can Zoe do?",
+  "options": [
+   "swim and dance",
+   "only swim",
+   "only dance",
+   "sing and dance"
+  ],
+  "answer": 0,
+  "explain": "'Yes, I can… And I can dance too!'",
+  "dialogue": true,
+  "notes": {
+   "only swim": "She can dance too.",
+   "only dance": "She can swim too.",
+   "sing and dance": "Singing wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Dad: Where are my keys?|Mia: They're in your coat.",
+  "q": "Where are the keys?",
+  "options": [
+   "in the coat",
+   "in the car",
+   "on the table",
+   "in the bag"
+  ],
+  "answer": 0,
+  "explain": "'They're in your coat.'",
+  "dialogue": true,
+  "notes": {
+   "in the car": "The car wasn't said.",
+   "on the table": "The table wasn't said.",
+   "in the bag": "The bag wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Kim: Is it cold today?|Raj: No, it's hot! Let's get ice cream.",
+  "q": "What is the weather like?",
+  "options": [
+   "hot",
+   "cold",
+   "rainy",
+   "snowy"
+  ],
+  "answer": 0,
+  "explain": "'No, it's hot!'",
+  "dialogue": true,
+  "notes": {
+   "cold": "Raj says no, it isn't cold.",
+   "rainy": "Rain wasn't said.",
+   "snowy": "Snow wasn't said."
+  }
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "I like my red hat.",
+  "answer": "I like my red hat.",
+  "explain": "I like + my red hat."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "The dog can run.",
+  "answer": "The dog can run.",
+  "explain": "The dog + can run."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "We have two cats.",
+  "answer": "We have two cats.",
+  "explain": "We have + two cats: cats with -s."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "It is a big tree.",
+  "answer": "It is a big tree.",
+  "explain": "It is + a big tree."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "My mum is happy.",
+  "answer": "My mum is happy.",
+  "explain": "My mum + is happy."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "Look at the moon.",
+  "answer": "Look at the moon.",
+  "explain": "Look at + the moon."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "She has a pink bag.",
+  "answer": "She has a pink bag.",
+  "explain": "She has + a pink bag."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "I can see a bird.",
+  "answer": "I can see a bird.",
+  "explain": "I can see + what."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "The fish is in the water.",
+  "answer": "The fish is in the water.",
+  "explain": "The fish + is + where."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "We play in the park.",
+  "answer": "We play in the park.",
+  "explain": "We play + where."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "Is your cat black?",
+  "answer": "Is your cat black?",
+  "explain": "Is + your cat + colour?"
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "My bike is new.",
+  "answer": "My bike is new.",
+  "explain": "My bike + is new."
+ },
+ {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "I like red apples.",

@@ -504,6 +504,1098 @@
   }
  },
  {
+  "type": "listen",
+  "say": "I usually walk to school, but today my dad is driving me because it's raining.",
+  "q": "How is the speaker getting to school today?",
+  "options": [
+   "by car",
+   "on foot",
+   "by bus",
+   "by bike"
+  ],
+  "answer": 0,
+  "explain": "'My dad is driving me' = by car. Usually walks, but not today.",
+  "notes": {
+   "on foot": "Walking is usual, but not today.",
+   "by bus": "The bus wasn't mentioned.",
+   "by bike": "A bike wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The swimming pool opens at nine, but on Sundays it doesn't open until ten.",
+  "q": "When does the pool open on Sunday?",
+  "options": [
+   "at ten",
+   "at nine",
+   "at eleven",
+   "it's closed"
+  ],
+  "answer": 0,
+  "explain": "'On Sundays… not until ten.'",
+  "notes": {
+   "at nine": "Nine is the other days.",
+   "at eleven": "Eleven wasn't said.",
+   "it's closed": "It does open, just later."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "We wanted to have a picnic, but it was too windy, so we ate at home.",
+  "q": "Where did they eat?",
+  "options": [
+   "indoors at home",
+   "in the park",
+   "at a café",
+   "on the beach"
+  ],
+  "answer": 0,
+  "explain": "'We ate at home' = indoors.",
+  "notes": {
+   "in the park": "They wanted a picnic, but it was too windy.",
+   "at a café": "A café wasn't mentioned.",
+   "on the beach": "A beach wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "My brother is older than me, but my sister is the oldest.",
+  "q": "Who is the oldest?",
+  "options": [
+   "the sister",
+   "the brother",
+   "the speaker",
+   "they are the same age"
+  ],
+  "answer": 0,
+  "explain": "'My sister is the oldest.'",
+  "notes": {
+   "the brother": "He's older than the speaker, but not the oldest.",
+   "the speaker": "The speaker is the youngest.",
+   "they are the same age": "They're different ages."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The museum is free for children. Adults pay six pounds.",
+  "q": "How much does a child pay?",
+  "options": [
+   "nothing",
+   "six pounds",
+   "three pounds",
+   "one pound"
+  ],
+  "answer": 0,
+  "explain": "'Free for children' = they pay nothing.",
+  "notes": {
+   "six pounds": "Six pounds is for adults.",
+   "three pounds": "Three pounds wasn't said.",
+   "one pound": "One pound wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Can you buy some milk on the way home? Oh, and we need eggs too.",
+  "q": "What must the person buy?",
+  "options": [
+   "milk and eggs",
+   "only milk",
+   "only eggs",
+   "bread and eggs"
+  ],
+  "answer": 0,
+  "explain": "Milk… 'and we need eggs too'.",
+  "notes": {
+   "only milk": "Eggs were added at the end.",
+   "only eggs": "Milk was asked first.",
+   "bread and eggs": "Bread wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I've lost my scarf. It's long and stripy, with a little pocket.",
+  "q": "Which scarf is it?",
+  "options": [
+   "a long one with stripes",
+   "a short spotty one",
+   "a long plain one",
+   "a short stripy one"
+  ],
+  "answer": 0,
+  "explain": "'Long and stripy' = long with stripes.",
+  "notes": {
+   "a short spotty one": "It's long and stripy.",
+   "a long plain one": "Plain means no stripes.",
+   "a short stripy one": "It's long, not short."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The film starts at quarter to seven, so let's meet at half past six.",
+  "q": "What time will they meet?",
+  "options": [
+   "6:30",
+   "6:45",
+   "7:15",
+   "6:15"
+  ],
+  "answer": 0,
+  "explain": "'Half past six' = 6:30. The film starts at 6:45.",
+  "notes": {
+   "6:45": "6:45 is when the film starts.",
+   "7:15": "7:15 wasn't said.",
+   "6:15": "6:15 wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I was going to wear my blue dress, but I spilt juice on it, so I'm wearing the green one.",
+  "q": "What is she wearing?",
+  "options": [
+   "the green dress",
+   "the blue dress",
+   "jeans",
+   "a red dress"
+  ],
+  "answer": 0,
+  "explain": "The blue one has juice on it, so the green one.",
+  "notes": {
+   "the blue dress": "The blue one got juice on it.",
+   "jeans": "Jeans weren't mentioned.",
+   "a red dress": "Red wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Our teacher is ill today, so Mr Patel is teaching us.",
+  "q": "Who is teaching today?",
+  "options": [
+   "a different teacher",
+   "their usual teacher",
+   "the head teacher",
+   "nobody"
+  ],
+  "answer": 0,
+  "explain": "Their teacher is ill, so Mr Patel is taking the class instead.",
+  "notes": {
+   "their usual teacher": "The usual teacher is ill.",
+   "the head teacher": "The head teacher wasn't mentioned.",
+   "nobody": "Mr Patel is teaching."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Turn left at the bakery, and the library is the second building on your right.",
+  "q": "Where is the library?",
+  "options": [
+   "two buildings along, on the right",
+   "the first building on the left",
+   "next to the bakery",
+   "opposite the bakery, on the left"
+  ],
+  "answer": 0,
+  "explain": "'Second building on your right.'",
+  "notes": {
+   "the first building on the left": "It's the second, on the right.",
+   "next to the bakery": "You turn at the bakery; the library isn't next to it.",
+   "opposite the bakery, on the left": "It's on the right."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The tickets were twelve pounds each, and we bought two.",
+  "q": "How much did they pay?",
+  "options": [
+   "£24",
+   "£12",
+   "£20",
+   "£14"
+  ],
+  "answer": 0,
+  "explain": "£12 × 2 = £24.",
+  "notes": {
+   "£12": "£12 is for one ticket.",
+   "£20": "£20 isn't 2 × 12.",
+   "£14": "£14 isn't 2 × 12."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Sorry I'm late! I missed the bus and had to wait twenty minutes for the next one.",
+  "q": "Why is the speaker late?",
+  "options": [
+   "the bus went without them",
+   "the bus was broken",
+   "they got up late",
+   "the traffic was bad"
+  ],
+  "answer": 0,
+  "explain": "'I missed the bus' = it left before they got there.",
+  "notes": {
+   "the bus was broken": "Nothing was broken.",
+   "they got up late": "Getting up late wasn't said.",
+   "the traffic was bad": "Traffic wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I don't eat meat, so can I have the vegetable soup instead of the chicken?",
+  "q": "What does the speaker want?",
+  "options": [
+   "the soup without meat",
+   "the chicken",
+   "chicken soup",
+   "nothing"
+  ],
+  "answer": 0,
+  "explain": "'Vegetable soup instead of the chicken.'",
+  "notes": {
+   "the chicken": "They don't eat meat.",
+   "chicken soup": "Chicken soup has meat.",
+   "nothing": "They want soup."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The school trip is on Thursday. Oh no, wait, it's been moved to Friday.",
+  "q": "When is the trip now?",
+  "options": [
+   "on Friday",
+   "on Thursday",
+   "on Wednesday",
+   "it's cancelled"
+  ],
+  "answer": 0,
+  "explain": "Change of mind: 'moved to Friday'.",
+  "notes": {
+   "on Thursday": "Thursday was the old day.",
+   "on Wednesday": "Wednesday wasn't said.",
+   "it's cancelled": "It was moved, not cancelled."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Lucy: Shall we go to the park?|Max: I'd love to, but I have to finish my homework first.",
+  "q": "What will Max do first?",
+  "options": [
+   "his homework",
+   "go to the park",
+   "have dinner",
+   "phone Lucy"
+  ],
+  "answer": 0,
+  "explain": "'I have to finish my homework first.'",
+  "dialogue": true,
+  "notes": {
+   "go to the park": "The park comes later.",
+   "have dinner": "Dinner wasn't mentioned.",
+   "phone Lucy": "Phoning wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Ella: Is your cat black?|Noah: Mostly, but she's got white paws.",
+  "q": "What does the cat look like?",
+  "options": [
+   "black with white feet",
+   "all black",
+   "white with black feet",
+   "grey"
+  ],
+  "answer": 0,
+  "explain": "'Mostly black, with white paws' (paws = feet).",
+  "dialogue": true,
+  "notes": {
+   "all black": "She has white paws.",
+   "white with black feet": "It's the other way round.",
+   "grey": "Grey wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Mum: How was the test?|Jack: Easier than I thought! I finished early.",
+  "q": "How did Jack feel about the test?",
+  "options": [
+   "it wasn't as hard as he expected",
+   "it was too difficult",
+   "he didn't finish",
+   "he forgot it"
+  ],
+  "answer": 0,
+  "explain": "'Easier than I thought.'",
+  "dialogue": true,
+  "notes": {
+   "it was too difficult": "He said it was easier.",
+   "he didn't finish": "He finished early.",
+   "he forgot it": "He did the test."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Ava: Where did you go on holiday?|Ben: We went to the mountains. We wanted to go to the beach, but it was too expensive.",
+  "q": "Where did Ben go?",
+  "options": [
+   "the mountains",
+   "the beach",
+   "a big city",
+   "his grandma's"
+  ],
+  "answer": 0,
+  "explain": "They wanted the beach, but went to the mountains.",
+  "dialogue": true,
+  "notes": {
+   "the beach": "The beach was too expensive.",
+   "a big city": "A city wasn't mentioned.",
+   "his grandma's": "Grandma wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Grandpa: Can you help me in the garden on Saturday?|Mia: Saturday's my dance class. What about Sunday?",
+  "q": "When can Mia help?",
+  "options": [
+   "on Sunday",
+   "on Saturday",
+   "after school",
+   "tomorrow"
+  ],
+  "answer": 0,
+  "explain": "Saturday is her dance class, so she offers Sunday.",
+  "dialogue": true,
+  "notes": {
+   "on Saturday": "Saturday is dance class.",
+   "after school": "After school wasn't offered.",
+   "tomorrow": "Tomorrow wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The bakery sells bread, cakes and biscuits, but not sandwiches.",
+  "q": "What can't you buy there?",
+  "options": [
+   "sandwiches",
+   "bread",
+   "cakes",
+   "biscuits"
+  ],
+  "answer": 0,
+  "explain": "'But not sandwiches.'",
+  "notes": {
+   "bread": "Bread is sold there.",
+   "cakes": "Cakes are sold there.",
+   "biscuits": "Biscuits are sold there."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I'm saving my pocket money. I've got thirty pounds, and the skateboard costs fifty.",
+  "q": "How much more money does the speaker need?",
+  "options": [
+   "£20",
+   "£30",
+   "£50",
+   "£80"
+  ],
+  "answer": 0,
+  "explain": "£50 − £30 = £20.",
+  "notes": {
+   "£30": "£30 is what they have.",
+   "£50": "£50 is the price.",
+   "£80": "£80 is both added together."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Football practice is every Tuesday, but this week it's on Wednesday because of the school concert.",
+  "q": "When is practice this week?",
+  "options": [
+   "on Wednesday",
+   "on Tuesday",
+   "on Thursday",
+   "there is no practice"
+  ],
+  "answer": 0,
+  "explain": "This week only: Wednesday.",
+  "notes": {
+   "on Tuesday": "Tuesday is the usual day.",
+   "on Thursday": "Thursday wasn't said.",
+   "there is no practice": "Practice is moved, not cancelled."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Don't forget your swimming things. We're going to the pool after lunch.",
+  "q": "What should you bring?",
+  "options": [
+   "a swimsuit and towel",
+   "a football",
+   "a raincoat",
+   "your lunch"
+  ],
+  "answer": 0,
+  "explain": "'Swimming things' = a swimsuit and a towel.",
+  "notes": {
+   "a football": "Football wasn't mentioned.",
+   "a raincoat": "A raincoat wasn't mentioned.",
+   "your lunch": "Lunch wasn't the thing to bring."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "My cousin can't come to the party because she's got a cold.",
+  "q": "Why can't the cousin come?",
+  "options": [
+   "she's ill",
+   "she's busy",
+   "she's on holiday",
+   "she forgot"
+  ],
+  "answer": 0,
+  "explain": "'She's got a cold' = she's ill.",
+  "notes": {
+   "she's busy": "Being busy wasn't the reason.",
+   "she's on holiday": "A holiday wasn't mentioned.",
+   "she forgot": "She didn't forget."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The train to London leaves from platform four, not platform two as it says on the board.",
+  "q": "Which platform is correct?",
+  "options": [
+   "platform 4",
+   "platform 2",
+   "platform 14",
+   "platform 3"
+  ],
+  "answer": 0,
+  "explain": "'From platform four, not platform two.'",
+  "notes": {
+   "platform 2": "Two is the wrong one on the board.",
+   "platform 14": "Fourteen wasn't said.",
+   "platform 3": "Three wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "We need six plates, but we've only got four. Can you get two more?",
+  "q": "How many more plates are needed?",
+  "options": [
+   "two",
+   "four",
+   "six",
+   "eight"
+  ],
+  "answer": 0,
+  "explain": "Six needed − four = two more.",
+  "notes": {
+   "four": "Four is what they have.",
+   "six": "Six is the total needed.",
+   "eight": "Eight wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "This jacket is too big. Have you got it in a smaller size?",
+  "q": "What's the problem with the jacket?",
+  "options": [
+   "it doesn't fit",
+   "it's the wrong colour",
+   "it's too expensive",
+   "it's dirty"
+  ],
+  "answer": 0,
+  "explain": "'Too big' = it doesn't fit.",
+  "notes": {
+   "it's the wrong colour": "Colour wasn't mentioned.",
+   "it's too expensive": "Price wasn't mentioned.",
+   "it's dirty": "Dirty wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I'll meet you outside the cinema. No, actually, let's meet inside. It's cold.",
+  "q": "Where will they meet?",
+  "options": [
+   "inside the cinema",
+   "outside the cinema",
+   "at the bus stop",
+   "at home"
+  ],
+  "answer": 0,
+  "explain": "Change of mind: 'let's meet inside'.",
+  "notes": {
+   "outside the cinema": "Outside was the first idea.",
+   "at the bus stop": "The bus stop wasn't mentioned.",
+   "at home": "Home wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Our dog is called Biscuit. He's three, and he loves chasing balls.",
+  "q": "What does Biscuit like doing?",
+  "options": [
+   "running after balls",
+   "eating biscuits",
+   "sleeping",
+   "swimming"
+  ],
+  "answer": 0,
+  "explain": "'Chasing balls' = running after them.",
+  "notes": {
+   "eating biscuits": "Biscuit is his name, not his food.",
+   "sleeping": "Sleeping wasn't mentioned.",
+   "swimming": "Swimming wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The bus usually comes at ten past eight, but this morning it was fifteen minutes late.",
+  "q": "What time did the bus come this morning?",
+  "options": [
+   "8:25",
+   "8:10",
+   "8:15",
+   "8:50"
+  ],
+  "answer": 0,
+  "explain": "Ten past eight (8:10) + fifteen minutes = 8:25.",
+  "notes": {
+   "8:10": "8:10 is the usual time.",
+   "8:15": "8:15 is just the number fifteen, not the new time.",
+   "8:50": "8:50 is far too late."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I'd like two sandwiches and an orange juice, please. Oh, and a banana.",
+  "q": "How many things is the speaker buying?",
+  "options": [
+   "four",
+   "three",
+   "two",
+   "five"
+  ],
+  "answer": 0,
+  "explain": "Two sandwiches + one juice + one banana = four things.",
+  "notes": {
+   "three": "Three forgets the banana, added at the end.",
+   "two": "Two is just the sandwiches.",
+   "five": "Five is one too many."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "My friend Ana lives next door, so we always walk to school together.",
+  "q": "Where does Ana live?",
+  "options": [
+   "in the house beside the speaker's",
+   "near the school",
+   "in another town",
+   "in the same house"
+  ],
+  "answer": 0,
+  "explain": "'Next door' = in the house beside yours.",
+  "notes": {
+   "near the school": "They walk to school together, but she lives next door.",
+   "in another town": "Another town wasn't said.",
+   "in the same house": "Next door is a different house."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The park closes at six in winter and at nine in summer.",
+  "q": "When does the park close in July?",
+  "options": [
+   "at nine",
+   "at six",
+   "at seven",
+   "it doesn't close"
+  ],
+  "answer": 0,
+  "explain": "July is summer, so nine.",
+  "notes": {
+   "at six": "Six is the winter time.",
+   "at seven": "Seven wasn't said.",
+   "it doesn't close": "It does close."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I've got piano on Monday, swimming on Wednesday and nothing on Friday.",
+  "q": "When is the speaker free?",
+  "options": [
+   "on Friday",
+   "on Monday",
+   "on Wednesday",
+   "on Tuesday"
+  ],
+  "answer": 0,
+  "explain": "'Nothing on Friday' = free.",
+  "notes": {
+   "on Monday": "Monday is piano.",
+   "on Wednesday": "Wednesday is swimming.",
+   "on Tuesday": "Tuesday wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Can you bring the chairs in? It's going to rain soon.",
+  "q": "Why should the chairs come in?",
+  "options": [
+   "the weather will get wet",
+   "it's dark",
+   "the chairs are broken",
+   "visitors are coming"
+  ],
+  "answer": 0,
+  "explain": "'It's going to rain soon' = the weather will get wet.",
+  "notes": {
+   "it's dark": "Darkness wasn't mentioned.",
+   "the chairs are broken": "Nothing is broken.",
+   "visitors are coming": "Visitors weren't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "This T-shirt was twelve pounds, but it's half price today.",
+  "q": "How much is the T-shirt today?",
+  "options": [
+   "£6",
+   "£12",
+   "£2",
+   "£24"
+  ],
+  "answer": 0,
+  "explain": "Half of £12 is £6.",
+  "notes": {
+   "£12": "£12 was the old price.",
+   "£2": "£2 isn't half of £12.",
+   "£24": "£24 is double, not half."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Sorry, I can't come to your party. We're visiting my grandma that weekend.",
+  "q": "Why can't the speaker come?",
+  "options": [
+   "the family has a visit planned",
+   "they are ill",
+   "they don't like parties",
+   "they forgot"
+  ],
+  "answer": 0,
+  "explain": "'We're visiting my grandma' = a family visit.",
+  "notes": {
+   "they are ill": "Illness wasn't mentioned.",
+   "they don't like parties": "They said sorry, so they'd like to come.",
+   "they forgot": "They didn't forget; they remembered to say sorry."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The film was really long. It started at four and finished at seven.",
+  "q": "How long was the film?",
+  "options": [
+   "three hours",
+   "four hours",
+   "seven hours",
+   "two hours"
+  ],
+  "answer": 0,
+  "explain": "From four to seven = three hours.",
+  "notes": {
+   "four hours": "Four is the start time.",
+   "seven hours": "Seven is the end time.",
+   "two hours": "Two hours is too short."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I'm not going to wear my boots. It's too hot. I'll wear my sandals.",
+  "q": "What will the speaker wear?",
+  "options": [
+   "open summer shoes",
+   "boots",
+   "trainers",
+   "wellies"
+  ],
+  "answer": 0,
+  "explain": "Sandals are open summer shoes; boots are too hot.",
+  "notes": {
+   "boots": "Boots are too hot today.",
+   "trainers": "Trainers weren't mentioned.",
+   "wellies": "Wellies are for rain."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Our classroom is on the second floor, next to the library.",
+  "q": "Where is the classroom?",
+  "options": [
+   "beside the library, upstairs",
+   "on the ground floor",
+   "inside the library",
+   "opposite the library"
+  ],
+  "answer": 0,
+  "explain": "'Second floor' = upstairs; 'next to' = beside.",
+  "notes": {
+   "on the ground floor": "The ground floor is the bottom floor.",
+   "inside the library": "It's next to the library, not in it.",
+   "opposite the library": "Opposite isn't next to."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Let's get pizza. Actually, no, we had pizza yesterday. What about pasta?",
+  "q": "What does the speaker want now?",
+  "options": [
+   "pasta",
+   "pizza",
+   "burgers",
+   "soup"
+  ],
+  "answer": 0,
+  "explain": "Change of mind: 'we had pizza yesterday. What about pasta?'",
+  "notes": {
+   "pizza": "Pizza was the first idea.",
+   "burgers": "Burgers weren't mentioned.",
+   "soup": "Soup wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Ivy: What time does the zoo open?|Man: Half past nine, and the penguins are fed at eleven.",
+  "q": "When are the penguins fed?",
+  "options": [
+   "at 11:00",
+   "at 9:30",
+   "at 9:00",
+   "at 10:30"
+  ],
+  "answer": 0,
+  "explain": "'The penguins are fed at eleven.' 9:30 is when the zoo opens.",
+  "dialogue": true,
+  "notes": {
+   "at 9:30": "9:30 is when the zoo opens.",
+   "at 9:00": "9:00 wasn't said.",
+   "at 10:30": "10:30 wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Ben: Is this your jumper?|Kai: No, mine's got a hood. That's Sam's.",
+  "q": "Whose jumper is it?",
+  "options": [
+   "Sam's",
+   "Kai's",
+   "Ben's",
+   "nobody's"
+  ],
+  "answer": 0,
+  "explain": "'That's Sam's.' Kai's has a hood.",
+  "dialogue": true,
+  "notes": {
+   "Kai's": "Kai's jumper has a hood.",
+   "Ben's": "Ben is asking, so it's not his.",
+   "nobody's": "It belongs to Sam."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Mum: Did you feed the fish?|Lia: Yes, and I cleaned the tank too.",
+  "q": "What did Lia do?",
+  "options": [
+   "fed the fish and cleaned their home",
+   "only fed the fish",
+   "forgot the fish",
+   "bought a new fish"
+  ],
+  "answer": 0,
+  "explain": "'Yes, and I cleaned the tank too.' The tank is the fish's home.",
+  "dialogue": true,
+  "notes": {
+   "only fed the fish": "She cleaned the tank too.",
+   "forgot the fish": "She did remember.",
+   "bought a new fish": "Buying wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Leo: Shall we go by bus?|Amy: It's only five minutes on foot. Let's walk.",
+  "q": "How will they go?",
+  "options": [
+   "they'll walk",
+   "by bus",
+   "by bike",
+   "by car"
+  ],
+  "answer": 0,
+  "explain": "'Let's walk.'",
+  "dialogue": true,
+  "notes": {
+   "by bus": "Leo suggested the bus, but Amy said walk.",
+   "by bike": "A bike wasn't mentioned.",
+   "by car": "A car wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Ana: How much is the cake?|Baker: Four pounds fifty, or two pounds for a slice.",
+  "q": "How much is one slice?",
+  "options": [
+   "£2",
+   "£4.50",
+   "£4",
+   "£2.50"
+  ],
+  "answer": 0,
+  "explain": "'Two pounds for a slice.'",
+  "dialogue": true,
+  "notes": {
+   "£4.50": "£4.50 is the whole cake.",
+   "£4": "£4 wasn't said.",
+   "£2.50": "£2.50 wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Tom: Are you coming to football?|Raj: I've hurt my knee, so I'll just watch.",
+  "q": "What will Raj do at football?",
+  "options": [
+   "watch, not play",
+   "play in goal",
+   "stay at home",
+   "be the coach"
+  ],
+  "answer": 0,
+  "explain": "'I'll just watch' because of his knee.",
+  "dialogue": true,
+  "notes": {
+   "play in goal": "He won't play at all.",
+   "stay at home": "He's still coming.",
+   "be the coach": "Coaching wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Zoe: When's your birthday?|Max: The third of June. No wait, that's my brother's. Mine's the thirteenth.",
+  "q": "When is Max's birthday?",
+  "options": [
+   "13th June",
+   "3rd June",
+   "30th June",
+   "13th July"
+  ],
+  "answer": 0,
+  "explain": "Change of mind: 'Mine's the thirteenth.' The third is his brother's.",
+  "dialogue": true,
+  "notes": {
+   "3rd June": "The third is his brother's.",
+   "30th June": "Thirtieth wasn't said.",
+   "13th July": "The month is June."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Gran: Would you like more soup?|Ella: No, thanks. I'm full. But I'd love some cake!",
+  "q": "What does Ella want?",
+  "options": [
+   "something sweet",
+   "more soup",
+   "nothing at all",
+   "some bread"
+  ],
+  "answer": 0,
+  "explain": "She says no to soup but 'I'd love some cake!'",
+  "dialogue": true,
+  "notes": {
+   "more soup": "She said no to soup.",
+   "nothing at all": "She does want cake.",
+   "some bread": "Bread wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Mia: Where did you find the kitten?|Jay: Under a car in the car park. She was very hungry.",
+  "q": "What was wrong with the kitten?",
+  "options": [
+   "she needed food",
+   "she was hurt",
+   "she was cold",
+   "she was lost in a tree"
+  ],
+  "answer": 0,
+  "explain": "'She was very hungry' = needed food.",
+  "dialogue": true,
+  "notes": {
+   "she was hurt": "Being hurt wasn't mentioned.",
+   "she was cold": "Cold wasn't mentioned.",
+   "she was lost in a tree": "She was under a car, not in a tree."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Sam: Can I borrow your ruler?|Ivy: Sorry, I need it now. Ask Tom, he's got two.",
+  "q": "Who can lend Sam a ruler?",
+  "options": [
+   "Tom",
+   "Ivy",
+   "the teacher",
+   "nobody"
+  ],
+  "answer": 0,
+  "explain": "'Ask Tom, he's got two.'",
+  "dialogue": true,
+  "notes": {
+   "Ivy": "Ivy needs hers now.",
+   "the teacher": "The teacher wasn't mentioned.",
+   "nobody": "Tom has a spare one."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Dad: The shop shuts at five.|Lucy: It's quarter to five now! Let's run!",
+  "q": "How long until the shop shuts?",
+  "options": [
+   "fifteen minutes",
+   "five minutes",
+   "forty-five minutes",
+   "an hour"
+  ],
+  "answer": 0,
+  "explain": "Quarter to five → five o'clock = 15 minutes.",
+  "dialogue": true,
+  "notes": {
+   "five minutes": "Five is the closing hour, not the minutes left.",
+   "forty-five minutes": "Forty-five minutes is too long.",
+   "an hour": "An hour is too long."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Teacher: Bring your project on Monday.|Kim: Not Friday?|Teacher: No, I've changed it to Monday.",
+  "q": "When is the project due?",
+  "options": [
+   "on Monday",
+   "on Friday",
+   "on Tuesday",
+   "today"
+  ],
+  "answer": 0,
+  "explain": "The teacher has changed the day to Monday.",
+  "dialogue": true,
+  "notes": {
+   "on Friday": "Friday was the old day.",
+   "on Tuesday": "Tuesday wasn't said.",
+   "today": "Today wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Noah: Is the swimming pool far?|Lady: Not really. Go past the bank and it's on the corner.",
+  "q": "Where is the pool?",
+  "options": [
+   "on the corner after the bank",
+   "inside the bank",
+   "behind the bank",
+   "very far away"
+  ],
+  "answer": 0,
+  "explain": "'Go past the bank and it's on the corner.'",
+  "dialogue": true,
+  "notes": {
+   "inside the bank": "It's past the bank, not in it.",
+   "behind the bank": "Behind wasn't said.",
+   "very far away": "'Not really' far."
+  }
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "We went to the beach on Sunday.",
+  "answer": "We went to the beach on Sunday.",
+  "explain": "Past simple: went."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "My brother is taller than me.",
+  "answer": "My brother is taller than me.",
+  "explain": "Comparative: taller than."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "Can you help me with my homework?",
+  "answer": "Can you help me with my homework?",
+  "explain": "Can you + help…?"
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "There isn't any milk in the fridge.",
+  "answer": "There isn't any milk in the fridge.",
+  "explain": "There isn't any + uncountable noun."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "I'm going to visit my cousin.",
+  "answer": "I'm going to visit my cousin.",
+  "explain": "Going to for plans."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "She doesn't like cold weather.",
+  "answer": "She doesn't like cold weather.",
+  "explain": "She doesn't + like."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "We didn't go out because it rained.",
+  "answer": "We didn't go out because it rained.",
+  "explain": "Because joins the reason."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "My cat is sleeping on the sofa.",
+  "answer": "My cat is sleeping on the sofa.",
+  "explain": "is + -ing for now."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "How much are these shoes?",
+  "answer": "How much are these shoes?",
+  "explain": "How much + are + these shoes?"
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "I have never seen a whale.",
+  "answer": "I have never seen a whale.",
+  "explain": "Have + never + seen."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "Let's meet outside the cinema.",
+  "answer": "Let's meet outside the cinema.",
+  "explain": "Let's + verb + place."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "He usually walks to school.",
+  "answer": "He usually walks to school.",
+  "explain": "Usually goes before the verb."
+ },
+ {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "We are going to the beach tomorrow.",
