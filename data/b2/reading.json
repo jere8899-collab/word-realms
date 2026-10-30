@@ -398,6 +398,552 @@
      }
     }
    ]
+  },
+  {
+   "title": "The Boy Who Mapped the Stars",
+   "text": "When fourteen-year-old Tomás moved to a remote village in Chile, he was miserable: there was no cinema, the internet was patchy, and he didn't know a soul. What the village did have, however, was some of the darkest skies on Earth. A retired astronomer next door lent him an old telescope, and within a year Tomás had logged over three hundred observations. Last spring, one of his photographs revealed a faint comet that professional observatories had overlooked. It has since been named after him. 'I used to think I'd moved to the middle of nowhere,' he says. 'Now I know I moved to the middle of everything.'",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How did Tomás feel when he first arrived?",
+     "options": [
+      "unhappy and lonely",
+      "excited about the night sky",
+      "relieved to escape the city",
+      "curious about his neighbour"
+     ],
+     "answer": 0,
+     "explain": "'He was miserable… he didn't know a soul.'",
+     "notes": {
+      "excited about the night sky": "The sky interested him later, not at first.",
+      "relieved to escape the city": "Relief isn't mentioned; he missed the cinema and internet.",
+      "curious about his neighbour": "Curiosity about the neighbour isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What was special about the village?",
+     "options": [
+      "its unusually dark skies",
+      "its excellent internet connection",
+      "its famous observatory",
+      "its large population of scientists"
+     ],
+     "answer": 0,
+     "explain": "'Some of the darkest skies on Earth.'",
+     "notes": {
+      "its excellent internet connection": "'The internet was patchy.'",
+      "its famous observatory": "Professional observatories are elsewhere.",
+      "its large population of scientists": "Only one retired astronomer is mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How did Tomás get started in astronomy?",
+     "options": [
+      "a neighbour lent him equipment",
+      "he bought a telescope online",
+      "his school started a club",
+      "he visited an observatory"
+     ],
+     "answer": 0,
+     "explain": "'A retired astronomer next door lent him an old telescope.'",
+     "notes": {
+      "he bought a telescope online": "He was lent one.",
+      "his school started a club": "No club is mentioned.",
+      "he visited an observatory": "No visit is mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why is his discovery impressive?",
+     "options": [
+      "experts had missed the comet",
+      "it was the brightest comet ever",
+      "he found it on his first night",
+      "he used a brand-new telescope"
+     ],
+     "answer": 0,
+     "explain": "'A faint comet that professional observatories had overlooked.'",
+     "notes": {
+      "it was the brightest comet ever": "It was faint, not bright.",
+      "he found it on his first night": "It came after a year of observations.",
+      "he used a brand-new telescope": "The telescope was old."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does his final comment suggest?",
+     "options": [
+      "his view of the village has completely changed",
+      "he still wants to move back to the city",
+      "he finds the village too quiet",
+      "he thinks the comet was luck"
+     ],
+     "answer": 0,
+     "explain": "From 'the middle of nowhere' to 'the middle of everything'.",
+     "notes": {
+      "he still wants to move back to the city": "He now values the village.",
+      "he finds the village too quiet": "He's positive about it now.",
+      "he thinks the comet was luck": "Luck isn't mentioned."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Should Zoos Still Exist?",
+   "text": "Few topics divide a classroom as quickly as zoos. Critics argue that even the best enclosures can't replace the vast territories that animals such as elephants and polar bears roam in the wild, and that many zoo animals show signs of stress. Supporters counter that modern zoos are no longer mere entertainment: they run breeding programmes for endangered species, fund conservation work abroad, and inspire millions of children to care about wildlife. Some experts suggest a middle way: zoos should stop keeping species that clearly suffer in captivity and focus on those they can genuinely help.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What does the writer say about the topic?",
+     "options": [
+      "it quickly causes disagreement",
+      "most students agree about it",
+      "it is rarely discussed at school",
+      "it only interests scientists"
+     ],
+     "answer": 0,
+     "explain": "'Few topics divide a classroom as quickly as zoos.'",
+     "notes": {
+      "most students agree about it": "'Divide' means people disagree.",
+      "it is rarely discussed at school": "It's discussed in classrooms.",
+      "it only interests scientists": "Classrooms are full of students, not only scientists."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is one criticism of zoos?",
+     "options": [
+      "enclosures are too small for some animals",
+      "zoos are too expensive to visit",
+      "zoo animals are dangerous to visitors",
+      "zoos don't have enough visitors"
+     ],
+     "answer": 0,
+     "explain": "'Can't replace the vast territories… elephants and polar bears roam.'",
+     "notes": {
+      "zoos are too expensive to visit": "Price isn't mentioned.",
+      "zoo animals are dangerous to visitors": "Danger to visitors isn't mentioned.",
+      "zoos don't have enough visitors": "Visitor numbers aren't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "According to supporters, how have zoos changed?",
+     "options": [
+      "they now do more than entertain",
+      "they have become cheaper",
+      "they no longer keep any large animals",
+      "they are now run by schools"
+     ],
+     "answer": 0,
+     "explain": "'Modern zoos are no longer mere entertainment.'",
+     "notes": {
+      "they have become cheaper": "Price isn't mentioned.",
+      "they no longer keep any large animals": "That's the middle-way idea, not what has happened.",
+      "they are now run by schools": "Schools don't run them."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Which is NOT given as a benefit of zoos?",
+     "options": [
+      "giving animals more space",
+      "breeding endangered species",
+      "funding conservation abroad",
+      "inspiring children"
+     ],
+     "answer": 0,
+     "explain": "Space is the critics' point; the other three are listed benefits.",
+     "notes": {
+      "breeding endangered species": "Breeding programmes are listed.",
+      "funding conservation abroad": "Funding conservation is listed.",
+      "inspiring children": "Inspiring children is listed."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does the 'middle way' propose?",
+     "options": [
+      "keeping only animals that zoos can truly help",
+      "closing all zoos immediately",
+      "keeping every species as now",
+      "moving all zoos to the wild"
+     ],
+     "answer": 0,
+     "explain": "'Stop keeping species that clearly suffer… focus on those they can genuinely help.'",
+     "notes": {
+      "closing all zoos immediately": "It doesn't close all zoos.",
+      "keeping every species as now": "It changes which species are kept.",
+      "moving all zoos to the wild": "Moving zoos isn't mentioned."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Diary of a Reluctant Drummer",
+   "text": "Mum signed me up for drum lessons without asking, which I thought was outrageous. For the first month, I practised as little as I could get away with, and my teacher, Mr Okafor, must have noticed, because he stopped giving me exercises and instead asked me to play along to my favourite songs. That changed everything. Suddenly, I was practising for an hour a day without being told. Last night, I played in the school concert, and although I came in too early in one song, nobody seemed to mind. I hate to admit it, but Mum was right.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Why was the writer annoyed at first?",
+     "options": [
+      "they hadn't been asked about the lessons",
+      "the lessons were too expensive",
+      "the teacher was strict",
+      "they wanted guitar lessons"
+     ],
+     "answer": 0,
+     "explain": "'Mum signed me up… without asking.'",
+     "notes": {
+      "the lessons were too expensive": "Price isn't mentioned.",
+      "the teacher was strict": "Mr Okafor was flexible.",
+      "they wanted guitar lessons": "Guitar isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How did the writer behave during the first month?",
+     "options": [
+      "they did the minimum practice",
+      "they practised every day",
+      "they refused to go to lessons",
+      "they asked for harder exercises"
+     ],
+     "answer": 0,
+     "explain": "'Practised as little as I could get away with.'",
+     "notes": {
+      "they practised every day": "That came later.",
+      "they refused to go to lessons": "They went to the lessons.",
+      "they asked for harder exercises": "The teacher dropped the exercises."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What did Mr Okafor do differently?",
+     "options": [
+      "let the writer play songs they liked",
+      "gave the writer more exercises",
+      "told Mum about the problem",
+      "made the lessons longer"
+     ],
+     "answer": 0,
+     "explain": "'Asked me to play along to my favourite songs.'",
+     "notes": {
+      "gave the writer more exercises": "He stopped giving exercises.",
+      "told Mum about the problem": "Telling Mum isn't mentioned.",
+      "made the lessons longer": "Length isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What happened at the concert?",
+     "options": [
+      "a small mistake that didn't matter",
+      "a perfect performance",
+      "the writer forgot the songs",
+      "the audience complained"
+     ],
+     "answer": 0,
+     "explain": "'Came in too early in one song… nobody seemed to mind.'",
+     "notes": {
+      "a perfect performance": "There was one mistake.",
+      "the writer forgot the songs": "They only came in early once.",
+      "the audience complained": "'Nobody seemed to mind.'"
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does the final sentence show?",
+     "options": [
+      "the writer reluctantly agrees with Mum",
+      "the writer is still angry",
+      "the writer wants to quit",
+      "Mum admitted she was wrong"
+     ],
+     "answer": 0,
+     "explain": "'I hate to admit it, but Mum was right.'",
+     "notes": {
+      "the writer is still angry": "They admit Mum was right.",
+      "the writer wants to quit": "They love drumming now.",
+      "Mum admitted she was wrong": "The writer is the one admitting it."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Library That Travels by Boat",
+   "text": "Along the rivers of northern Norway, a boat called the Epos has been delivering books to isolated villages since 1963. Each autumn, it sails from village to village carrying around 6,000 books, and its arrival is something of a festival: children come aboard for storytelling sessions, and adults swap news as well as novels. Funding has been threatened several times, but each time local people have campaigned successfully to save it. For many readers, the boat is the only library they have ever known.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What is the Epos?",
+     "options": [
+      "a floating library",
+      "a ferry for tourists",
+      "a fishing boat",
+      "a bookshop on land"
+     ],
+     "answer": 0,
+     "explain": "A boat delivering books to villages = a floating library.",
+     "notes": {
+      "a ferry for tourists": "It carries books, not tourists.",
+      "a fishing boat": "Fishing isn't mentioned.",
+      "a bookshop on land": "It's a boat, on the river."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How long has the service been running?",
+     "options": [
+      "for more than sixty years",
+      "for about ten years",
+      "since last autumn",
+      "since the 1990s"
+     ],
+     "answer": 0,
+     "explain": "Since 1963 = over sixty years.",
+     "notes": {
+      "for about ten years": "It's far older.",
+      "since last autumn": "It started in 1963.",
+      "since the 1990s": "1963 is earlier."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why is the boat's arrival described as 'a festival'?",
+     "options": [
+      "it's a lively social event",
+      "there's a music competition",
+      "the villages close their schools",
+      "the boat gives away food"
+     ],
+     "answer": 0,
+     "explain": "Storytelling for children and adults swapping news.",
+     "notes": {
+      "there's a music competition": "Music isn't mentioned.",
+      "the villages close their schools": "Schools aren't mentioned.",
+      "the boat gives away food": "Food isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What has happened when funding was threatened?",
+     "options": [
+      "locals fought to keep it",
+      "the boat stopped for a year",
+      "the government bought it",
+      "it started charging readers"
+     ],
+     "answer": 0,
+     "explain": "'Local people have campaigned successfully to save it.'",
+     "notes": {
+      "the boat stopped for a year": "No pause is mentioned.",
+      "the government bought it": "The government isn't mentioned.",
+      "it started charging readers": "Charges aren't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does the last sentence suggest?",
+     "options": [
+      "some people have no other library",
+      "most readers prefer e-books",
+      "the boat is very old-fashioned",
+      "villages will build libraries soon"
+     ],
+     "answer": 0,
+     "explain": "'The only library they have ever known.'",
+     "notes": {
+      "most readers prefer e-books": "E-books aren't mentioned.",
+      "the boat is very old-fashioned": "It's valued, not criticised.",
+      "villages will build libraries soon": "New libraries aren't mentioned."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Email: Volunteering at the Science Festival",
+   "text": "Hi Jess, Thanks so much for signing up to volunteer at the Junior Science Festival! You'll be on the 'Slime Lab' stand on Saturday from 10 until 2, with a half-hour lunch break whenever it quietens down. Please wear the green T-shirt we'll give you at the welcome desk, and comfortable shoes, as you'll be on your feet most of the day. You don't need any science knowledge, but please read the safety sheet attached before you arrive. If you can no longer come, let me know by Wednesday so I can find a replacement. Cheers, Dan",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How long is Jess's shift, including the break?",
+     "options": [
+      "four hours",
+      "three and a half hours",
+      "two hours",
+      "all day"
+     ],
+     "answer": 0,
+     "explain": "From 10 until 2 = four hours.",
+     "notes": {
+      "three and a half hours": "The break is part of the shift.",
+      "two hours": "10 to 2 is four hours.",
+      "all day": "It ends at 2."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "When will Jess have lunch?",
+     "options": [
+      "when the stand is less busy",
+      "at exactly 12 o'clock",
+      "after the shift ends",
+      "before the festival opens"
+     ],
+     "answer": 0,
+     "explain": "'Whenever it quietens down.'",
+     "notes": {
+      "at exactly 12 o'clock": "No fixed time is given.",
+      "after the shift ends": "The break is during the shift.",
+      "before the festival opens": "Before opening isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Where will she get her T-shirt?",
+     "options": [
+      "at the welcome desk",
+      "by post before Saturday",
+      "at the Slime Lab stand",
+      "she must bring her own"
+     ],
+     "answer": 0,
+     "explain": "'We'll give you at the welcome desk.'",
+     "notes": {
+      "by post before Saturday": "It isn't posted.",
+      "at the Slime Lab stand": "It's at the welcome desk.",
+      "she must bring her own": "They'll give it to her."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What must she do before arriving?",
+     "options": [
+      "read some safety information",
+      "learn some science facts",
+      "buy comfortable shoes",
+      "make some slime"
+     ],
+     "answer": 0,
+     "explain": "'Please read the safety sheet attached before you arrive.'",
+     "notes": {
+      "learn some science facts": "'You don't need any science knowledge.'",
+      "buy comfortable shoes": "She should wear them, not necessarily buy them.",
+      "make some slime": "Making slime isn't asked."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why does Dan mention Wednesday?",
+     "options": [
+      "he'll need time to find someone else",
+      "it's the day of the festival",
+      "it's when the T-shirts arrive",
+      "Jess must send a form then"
+     ],
+     "answer": 0,
+     "explain": "'Let me know by Wednesday so I can find a replacement.'",
+     "notes": {
+      "it's the day of the festival": "The festival is Saturday.",
+      "it's when the T-shirts arrive": "T-shirts are given on the day.",
+      "Jess must send a form then": "No form is mentioned."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Why Teenagers Really Need More Sleep",
+   "text": "Parents often complain that teenagers are lazy because they stay up late and struggle to get up. Scientists, however, say this has little to do with laziness. During puberty, the body starts producing the sleep hormone melatonin about two hours later than in childhood, so many teenagers genuinely don't feel tired until 11 p.m. or later. Yet most still need nine hours' sleep. Some schools that have experimented with a later start have reported better attendance, fewer car accidents among older students and, in some cases, improved exam results.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What do parents often believe?",
+     "options": [
+      "teenagers are simply lazy",
+      "teenagers need less sleep",
+      "teenagers sleep too much at night",
+      "teenagers have too much homework"
+     ],
+     "answer": 0,
+     "explain": "'Parents often complain that teenagers are lazy.'",
+     "notes": {
+      "teenagers need less sleep": "Less sleep isn't the parents' belief.",
+      "teenagers sleep too much at night": "They complain about late nights.",
+      "teenagers have too much homework": "Homework isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "According to scientists, why do teenagers stay up late?",
+     "options": [
+      "their body clock shifts later",
+      "they use their phones too much",
+      "they drink too much cola",
+      "they don't need much sleep"
+     ],
+     "answer": 0,
+     "explain": "'Melatonin about two hours later than in childhood.'",
+     "notes": {
+      "they use their phones too much": "Phones aren't mentioned.",
+      "they drink too much cola": "Drinks aren't mentioned.",
+      "they don't need much sleep": "'Most still need nine hours.'"
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How much sleep do most teenagers need?",
+     "options": [
+      "nine hours",
+      "seven hours",
+      "eleven hours",
+      "two hours more than adults"
+     ],
+     "answer": 0,
+     "explain": "'Most still need nine hours' sleep.'",
+     "notes": {
+      "seven hours": "Seven isn't mentioned.",
+      "eleven hours": "Eleven is the time (11 p.m.).",
+      "two hours more than adults": "Two hours is the melatonin shift."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does 'genuinely' suggest in this text?",
+     "options": [
+      "they really aren't tired, not just pretending",
+      "they are lying about being tired",
+      "they are always very tired",
+      "they feel tired earlier than adults"
+     ],
+     "answer": 0,
+     "explain": "'Genuinely don't feel tired' = truly, not pretending.",
+     "notes": {
+      "they are lying about being tired": "'Genuinely' means the opposite.",
+      "they are always very tired": "They don't feel tired until late.",
+      "they feel tired earlier than adults": "They feel tired later."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Which is NOT a reported result of later school starts?",
+     "options": [
+      "students went to bed earlier",
+      "better attendance",
+      "fewer car accidents",
+      "better exam results in some cases"
+     ],
+     "answer": 0,
+     "explain": "Going to bed earlier isn't listed.",
+     "notes": {
+      "better attendance": "Better attendance is listed.",
+      "fewer car accidents": "Fewer accidents are listed.",
+      "better exam results in some cases": "Improved results are listed."
+     }
+    }
+   ]
   }
  ]
 }

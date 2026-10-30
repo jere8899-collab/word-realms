@@ -398,6 +398,552 @@
      }
     }
    ]
+  },
+  {
+   "title": "The Octopus Who Escaped",
+   "text": "Inky, a common New Zealand octopus, had lived contentedly at the National Aquarium for two years when, one night, he staged what staff later called 'the great escape'. Having squeezed through a small gap left at the top of his tank, he slid across the floor and slipped down a fifty-metre drainpipe that led straight to the sea. Keepers were not entirely surprised: octopuses are notorious escape artists, capable of unscrewing jar lids and, in some aquariums, of switching off lights they find irritating by squirting water at them. Rather than replacing Inky, the aquarium decided to celebrate him, and visitor numbers rose sharply in the months that followed.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How had Inky seemed before the escape?",
+     "options": [
+      "settled and content",
+      "restless and unhappy",
+      "ill and weak",
+      "aggressive towards keepers"
+     ],
+     "answer": 0,
+     "explain": "'Had lived contentedly… for two years.'",
+     "notes": {
+      "restless and unhappy": "'Contentedly' means the opposite.",
+      "ill and weak": "Illness isn't mentioned.",
+      "aggressive towards keepers": "Aggression isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How did Inky get out of his tank?",
+     "options": [
+      "through a gap someone had left",
+      "by unscrewing the lid",
+      "by breaking the glass",
+      "when a keeper carried him out"
+     ],
+     "answer": 0,
+     "explain": "'Squeezed through a small gap left at the top of his tank.'",
+     "notes": {
+      "by unscrewing the lid": "Unscrewing jar lids is a general fact about octopuses.",
+      "by breaking the glass": "Nothing was broken.",
+      "when a keeper carried him out": "He escaped alone at night."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why were the keepers 'not entirely surprised'?",
+     "options": [
+      "octopuses are known for escaping",
+      "Inky had escaped before",
+      "the drainpipe was always open",
+      "they had planned to release him"
+     ],
+     "answer": 0,
+     "explain": "'Octopuses are notorious escape artists.'",
+     "notes": {
+      "Inky had escaped before": "No earlier escape is mentioned.",
+      "the drainpipe was always open": "The pipe's state isn't the reason given.",
+      "they had planned to release him": "They didn't plan it."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does the example about lights show?",
+     "options": [
+      "they can act on purpose",
+      "octopuses are afraid of the dark",
+      "aquariums waste electricity",
+      "octopuses enjoy bright lights"
+     ],
+     "answer": 0,
+     "explain": "Squirting water at lights they find irritating = deliberate action.",
+     "notes": {
+      "octopuses are afraid of the dark": "They switch lights off, not on.",
+      "aquariums waste electricity": "Electricity isn't discussed.",
+      "octopuses enjoy bright lights": "They find the lights irritating."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How did the aquarium respond?",
+     "options": [
+      "it celebrated the escape",
+      "it bought a new octopus at once",
+      "it closed for repairs",
+      "it tried to catch Inky again"
+     ],
+     "answer": 0,
+     "explain": "'Rather than replacing Inky, the aquarium decided to celebrate him.'",
+     "notes": {
+      "it bought a new octopus at once": "'Rather than replacing' him.",
+      "it closed for repairs": "Closing isn't mentioned.",
+      "it tried to catch Inky again": "Recapture isn't mentioned."
+     }
+    }
+   ]
+  },
+  {
+   "title": "In Praise of Boredom",
+   "text": "We tend to treat boredom as a problem to be solved, usually by reaching for a screen. Yet a growing body of research suggests that boredom may be quietly useful. In one well-known study, participants who first spent fifteen minutes copying numbers from a phone book came up with markedly more creative uses for a pair of plastic cups than those who went straight to the task. Psychologists believe that when the mind has nothing to engage it, it begins to wander, making unexpected connections. This is not to say that endless boredom is healthy; rather, the occasional empty afternoon may be worth protecting.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What is our usual reaction to boredom, according to the writer?",
+     "options": [
+      "we try to avoid it",
+      "we enjoy it as a chance to rest",
+      "we use it to be creative",
+      "we ignore it completely"
+     ],
+     "answer": 0,
+     "explain": "'Treat boredom as a problem to be solved, usually by reaching for a screen.'",
+     "notes": {
+      "we enjoy it as a chance to rest": "We treat it as a problem.",
+      "we use it to be creative": "That's the research's suggestion, not our habit.",
+      "we ignore it completely": "We try to solve it."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What did the study participants who copied numbers do?",
+     "options": [
+      "they produced more original ideas",
+      "they gave up on the task",
+      "they found the cups task harder",
+      "they worked more slowly afterwards"
+     ],
+     "answer": 0,
+     "explain": "'Came up with markedly more creative uses.'",
+     "notes": {
+      "they gave up on the task": "They completed it.",
+      "they found the cups task harder": "They did better.",
+      "they worked more slowly afterwards": "Speed isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does 'markedly' mean here?",
+     "options": [
+      "noticeably",
+      "slightly",
+      "surprisingly slowly",
+      "on paper"
+     ],
+     "answer": 0,
+     "explain": "'Markedly more' = clearly, noticeably more.",
+     "notes": {
+      "slightly": "'Markedly' means a big difference.",
+      "surprisingly slowly": "It describes amount, not speed.",
+      "on paper": "It isn't about writing."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How do psychologists explain the result?",
+     "options": [
+      "an idle mind makes connections",
+      "boring tasks improve memory",
+      "phone books teach creativity",
+      "plastic cups are easy to think about"
+     ],
+     "answer": 0,
+     "explain": "'When the mind has nothing to engage it, it begins to wander, making unexpected connections.'",
+     "notes": {
+      "boring tasks improve memory": "Memory isn't mentioned.",
+      "phone books teach creativity": "The phone book was only the boring task.",
+      "plastic cups are easy to think about": "The cups were just the test."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is the writer's final position?",
+     "options": [
+      "a little boredom is useful",
+      "boredom is always harmful",
+      "we should be bored all the time",
+      "screens should be banned"
+     ],
+     "answer": 0,
+     "explain": "'Not to say endless boredom is healthy… the occasional empty afternoon may be worth protecting.'",
+     "notes": {
+      "boredom is always harmful": "They argue it can be useful.",
+      "we should be bored all the time": "'Not to say endless boredom is healthy.'",
+      "screens should be banned": "Banning isn't suggested."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Girl Who Taught a Village to Code",
+   "text": "When the only computer at her school in rural Kenya broke down, twelve-year-old Wanjiru refused to let the coding club die. Instead, she taught her classmates programming logic using cardboard 'robots', pebbles and chalk grids drawn in the playground. Her unplugged lessons proved so popular that younger children began turning up after school, and eventually parents asked to join too. When a charity later donated ten laptops, the teachers found that Wanjiru's students picked up real programming languages far faster than expected. 'They already understood how to think like a computer,' one teacher remarked. 'All they lacked was the machine.'",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What prompted Wanjiru's idea?",
+     "options": [
+      "the school computer broke",
+      "a charity asked her to teach",
+      "her teacher was ill",
+      "she wanted to win a competition"
+     ],
+     "answer": 0,
+     "explain": "'When the only computer at her school… broke down.'",
+     "notes": {
+      "a charity asked her to teach": "The charity came later.",
+      "her teacher was ill": "Illness isn't mentioned.",
+      "she wanted to win a competition": "A competition isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What was unusual about her lessons?",
+     "options": [
+      "they used no electronic devices",
+      "they took place at night",
+      "they were only for adults",
+      "they were taught online"
+     ],
+     "answer": 0,
+     "explain": "Cardboard, pebbles and chalk = 'unplugged lessons'.",
+     "notes": {
+      "they took place at night": "Night isn't mentioned.",
+      "they were only for adults": "Children came first; parents later.",
+      "they were taught online": "There was no working computer."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How did the lessons spread?",
+     "options": [
+      "more and more people joined",
+      "the government made them compulsory",
+      "they were shown on television",
+      "other schools copied them at once"
+     ],
+     "answer": 0,
+     "explain": "'Younger children began turning up… eventually parents asked to join too.'",
+     "notes": {
+      "the government made them compulsory": "The government isn't mentioned.",
+      "they were shown on television": "TV isn't mentioned.",
+      "other schools copied them at once": "Other schools aren't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What surprised the teachers when the laptops arrived?",
+     "options": [
+      "how quickly the students learned",
+      "how few students wanted to use them",
+      "how difficult the laptops were",
+      "how many laptops broke"
+     ],
+     "answer": 0,
+     "explain": "'Picked up real programming languages far faster than expected.'",
+     "notes": {
+      "how few students wanted to use them": "They were keen.",
+      "how difficult the laptops were": "The students found it easy.",
+      "how many laptops broke": "Breakages aren't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does the teacher's comment suggest?",
+     "options": [
+      "the thinking mattered most",
+      "the laptops were unnecessary",
+      "the students needed more machines",
+      "computers think like children"
+     ],
+     "answer": 0,
+     "explain": "'They already understood how to think like a computer. All they lacked was the machine.'",
+     "notes": {
+      "the laptops were unnecessary": "The laptops helped them use real languages.",
+      "the students needed more machines": "The point is about their skills.",
+      "computers think like children": "It's the other way round."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Ask the Editor: Are Book Reviews by Kids Worth Reading?",
+   "text": "Dear Editor, my class has started writing book reviews for our school website, but my older brother says nobody cares what an eleven-year-old thinks. Is he right? — Leo | Dear Leo, your brother couldn't be more mistaken. Publishers increasingly seek out young reviewers precisely because adults are notoriously poor at predicting what children will love. A good review, whatever the writer's age, does three things: it explains what the book is about without spoiling the ending, it gives honest reasons for the reviewer's opinion, and it helps readers decide whether the book is for them. Keep writing, and you might be surprised who's reading.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What is Leo worried about?",
+     "options": [
+      "that nobody will care",
+      "that his reviews contain spoilers",
+      "that his brother writes better",
+      "that the website will close"
+     ],
+     "answer": 0,
+     "explain": "'My older brother says nobody cares what an eleven-year-old thinks.'",
+     "notes": {
+      "that his reviews contain spoilers": "Spoilers are mentioned later as advice.",
+      "that his brother writes better": "His brother's writing isn't mentioned.",
+      "that the website will close": "Closure isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is the editor's view of the brother's opinion?",
+     "options": [
+      "it is completely wrong",
+      "it is partly true",
+      "it is fair for younger children",
+      "it is a matter of taste"
+     ],
+     "answer": 0,
+     "explain": "'Your brother couldn't be more mistaken.'",
+     "notes": {
+      "it is partly true": "'Couldn't be more mistaken' = totally wrong.",
+      "it is fair for younger children": "Leo's age is the point, and the editor disagrees.",
+      "it is a matter of taste": "The editor is certain."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why do publishers want young reviewers?",
+     "options": [
+      "adults misjudge children",
+      "young reviewers work for free",
+      "children write more quickly",
+      "adults don't read children's books"
+     ],
+     "answer": 0,
+     "explain": "'Adults are notoriously poor at predicting what children will love.'",
+     "notes": {
+      "young reviewers work for free": "Payment isn't mentioned.",
+      "children write more quickly": "Speed isn't mentioned.",
+      "adults don't read children's books": "Adults read them; they just misjudge them."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Which of these should a good review avoid?",
+     "options": [
+      "revealing how the story ends",
+      "explaining the plot",
+      "giving honest reasons",
+      "helping readers choose"
+     ],
+     "answer": 0,
+     "explain": "'Without spoiling the ending.'",
+     "notes": {
+      "explaining the plot": "Explaining what it's about is advised.",
+      "giving honest reasons": "Honest reasons are advised.",
+      "helping readers choose": "Helping readers decide is advised."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does the last sentence hint at?",
+     "options": [
+      "important people may read them",
+      "his brother reads them secretly",
+      "nobody reads the website",
+      "he should stop writing reviews"
+     ],
+     "answer": 0,
+     "explain": "'You might be surprised who's reading.'",
+     "notes": {
+      "his brother reads them secretly": "The brother isn't hinted at.",
+      "nobody reads the website": "The opposite is suggested.",
+      "he should stop writing reviews": "'Keep writing.'"
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Mystery of the Singing Sands",
+   "text": "In a handful of deserts around the world, sand dunes produce a deep humming sound, sometimes loud enough to be heard ten kilometres away. Marco Polo described the noise in the thirteenth century, attributing it to desert spirits. Scientists have long argued over the real cause. The current consensus is that the sound occurs when dry grains of a particular size avalanche down a slope in unison, their collisions synchronising like the members of a choir. Curiously, the note each dune 'sings' depends not on the dune's size but on the size of its grains, which is why sand from the same dune hums the same note even in a laboratory.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What is unusual about the 'singing' dunes?",
+     "options": [
+      "they make a loud humming noise",
+      "they move very fast",
+      "they are found everywhere",
+      "they glow at night"
+     ],
+     "answer": 0,
+     "explain": "'Sand dunes produce a deep humming sound.'",
+     "notes": {
+      "they move very fast": "Speed isn't mentioned.",
+      "they are found everywhere": "Only 'a handful of deserts'.",
+      "they glow at night": "Glowing isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How did Marco Polo explain the sound?",
+     "options": [
+      "as the work of spirits",
+      "as wind blowing through rocks",
+      "as falling sand grains",
+      "as animals under the sand"
+     ],
+     "answer": 0,
+     "explain": "'Attributing it to desert spirits.'",
+     "notes": {
+      "as wind blowing through rocks": "Wind isn't his explanation.",
+      "as falling sand grains": "That's the modern explanation.",
+      "as animals under the sand": "Animals aren't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does 'consensus' mean here?",
+     "options": [
+      "a view most experts share",
+      "a heated argument",
+      "an old legend",
+      "a new experiment"
+     ],
+     "answer": 0,
+     "explain": "'The current consensus' = the generally agreed view.",
+     "notes": {
+      "a heated argument": "The argument was in the past.",
+      "an old legend": "The legend is Marco Polo's.",
+      "a new experiment": "It's a view, not an experiment."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why is the choir comparison used?",
+     "options": [
+      "the grains move together in time",
+      "the sound is very beautiful",
+      "people sing in the desert",
+      "the dunes sound like voices"
+     ],
+     "answer": 0,
+     "explain": "'Collisions synchronising like the members of a choir.'",
+     "notes": {
+      "the sound is very beautiful": "Beauty isn't the point of the comparison.",
+      "people sing in the desert": "No people sing.",
+      "the dunes sound like voices": "It's about timing, not voices."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What determines the note a dune produces?",
+     "options": [
+      "the size of its grains",
+      "the height of the dune",
+      "the speed of the wind",
+      "the temperature of the desert"
+     ],
+     "answer": 0,
+     "explain": "'Depends not on the dune's size but on the size of its grains.'",
+     "notes": {
+      "the height of the dune": "The dune's size doesn't matter.",
+      "the speed of the wind": "Wind isn't mentioned.",
+      "the temperature of the desert": "Temperature isn't mentioned."
+     }
+    }
+   ]
+  },
+  {
+   "title": "A Letter from the Head of the Robotics Team",
+   "text": "Dear parents, I am delighted to report that our robot, Sparky, finished third out of forty teams at the regional championships. This is all the more remarkable given that, two days before the event, a software update wiped most of the team's code. Rather than panicking, the students divided the work, rewrote the essential functions overnight and stripped out every feature that wasn't strictly necessary. Ironically, the judges praised Sparky's 'elegant simplicity'. We now qualify for the national finals in March, for which we will need help with transport and, as ever, snacks.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How well did the team do?",
+     "options": [
+      "they came third out of forty",
+      "they won the championship",
+      "they came fortieth",
+      "they were disqualified"
+     ],
+     "answer": 0,
+     "explain": "'Finished third out of forty teams.'",
+     "notes": {
+      "they won the championship": "Third, not first.",
+      "they came fortieth": "Forty is the number of teams.",
+      "they were disqualified": "They qualified for the finals."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why was the result 'all the more remarkable'?",
+     "options": [
+      "the code was wiped",
+      "the robot was brand new",
+      "the students were very young",
+      "they had no coach"
+     ],
+     "answer": 0,
+     "explain": "'A software update wiped most of the team's code.'",
+     "notes": {
+      "the robot was brand new": "Newness isn't mentioned.",
+      "the students were very young": "Age isn't mentioned.",
+      "they had no coach": "A coach isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How did the students respond to the problem?",
+     "options": [
+      "they split the work and simplified",
+      "they gave up and entered an old robot",
+      "they asked the judges for more time",
+      "they borrowed another team's code"
+     ],
+     "answer": 0,
+     "explain": "'Divided the work, rewrote the essential functions… stripped out every feature that wasn't strictly necessary.'",
+     "notes": {
+      "they gave up and entered an old robot": "They didn't give up.",
+      "they asked the judges for more time": "No extra time is mentioned.",
+      "they borrowed another team's code": "Borrowing code isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why is the judges' praise described as ironic?",
+     "options": [
+      "the simplicity was forced on them",
+      "the judges didn't like the robot",
+      "the robot was actually very complicated",
+      "the team had expected to lose"
+     ],
+     "answer": 0,
+     "explain": "They praised 'elegant simplicity' that was forced on the team by the crisis.",
+     "notes": {
+      "the judges didn't like the robot": "They praised it.",
+      "the robot was actually very complicated": "It had been stripped down.",
+      "the team had expected to lose": "Expectations aren't the irony."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does the writer ask parents for?",
+     "options": [
+      "help with travel and food",
+      "money for a new robot",
+      "help writing code",
+      "ideas for new features"
+     ],
+     "answer": 0,
+     "explain": "'Help with transport and, as ever, snacks.'",
+     "notes": {
+      "money for a new robot": "A new robot isn't mentioned.",
+      "help writing code": "The students wrote the code.",
+      "ideas for new features": "Features were removed."
+     }
+    }
+   ]
   }
  ]
 }

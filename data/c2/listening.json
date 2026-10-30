@@ -504,6 +504,550 @@
   }
  },
  {
+  "type": "listen",
+  "say": "It's not that the play was bad, exactly; it's more that it never quite lived up to the hype.",
+  "q": "What is the speaker's view?",
+  "options": [
+   "it was decent but overrated",
+   "it was terrible",
+   "it was even better than people said",
+   "it was too short to judge"
+  ],
+  "answer": 0,
+  "explain": "'Not bad, exactly… never quite lived up to the hype' = overrated.",
+  "notes": {
+   "it was terrible": "'It's not that the play was bad.'",
+   "it was even better than people said": "It didn't live up to the hype.",
+   "it was too short to judge": "Length isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Far be it from me to criticise, but the decision to hold the sports day in the middle of the exam season seems a touch ill-judged.",
+  "q": "What is the speaker really doing?",
+  "options": [
+   "politely criticising the timing",
+   "praising the decision",
+   "refusing to give an opinion",
+   "asking for the exams to be moved"
+  ],
+  "answer": 0,
+  "explain": "'Far be it from me to criticise, but…' introduces a polite criticism.",
+  "notes": {
+   "praising the decision": "'Ill-judged' is critical.",
+   "refusing to give an opinion": "They do give an opinion.",
+   "asking for the exams to be moved": "They question the sports day, not the exams."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The orchestra's tour, originally pencilled in for twelve cities, has been whittled down to eight, with the final four shows cancelled.",
+  "q": "How many cities will the tour visit now?",
+  "options": [
+   "eight",
+   "twelve",
+   "four",
+   "sixteen"
+  ],
+  "answer": 0,
+  "explain": "Whittled down from twelve to eight; four cancelled.",
+  "notes": {
+   "twelve": "Twelve was the original plan.",
+   "four": "Four is the number cancelled.",
+   "sixteen": "Sixteen adds the two."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "To say she was taken aback would be putting it mildly; she'd had no inkling the surprise party was for her.",
+  "q": "How did she react?",
+  "options": [
+   "she was astonished",
+   "she was slightly surprised",
+   "she had guessed already",
+   "she was annoyed"
+  ],
+  "answer": 0,
+  "explain": "'Putting it mildly' = she was far more than taken aback; 'no inkling' = no idea.",
+  "notes": {
+   "she was slightly surprised": "'Putting it mildly' means more than slightly.",
+   "she had guessed already": "She had 'no inkling'.",
+   "she was annoyed": "Annoyance isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "For all its glossy graphics, the new game is, at heart, a rather shallow puzzle that wears thin after an hour.",
+  "q": "What does the speaker think of the game?",
+  "options": [
+   "it looks good but lacks depth",
+   "it's deep and long-lasting",
+   "its graphics are disappointing",
+   "it's too difficult to finish"
+  ],
+  "answer": 0,
+  "explain": "'For all its glossy graphics' (despite) + 'shallow… wears thin'.",
+  "notes": {
+   "it's deep and long-lasting": "'Shallow… wears thin' is the opposite.",
+   "its graphics are disappointing": "The graphics are glossy.",
+   "it's too difficult to finish": "Difficulty isn't the problem."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "We'd have been there by noon had the satnav not insisted on taking us through every village in the county.",
+  "q": "Why were they late?",
+  "options": [
+   "a very long route",
+   "they left after noon",
+   "the car broke down",
+   "they forgot the satnav"
+  ],
+  "answer": 0,
+  "explain": "Inverted conditional: the satnav sent them through every village.",
+  "notes": {
+   "they left after noon": "Leaving time isn't the reason.",
+   "the car broke down": "A breakdown isn't mentioned.",
+   "they forgot the satnav": "They had the satnav."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The reading challenge asks pupils to read twenty books by July; Ava has already read fifteen, and at her current pace she'll finish with two months to spare.",
+  "q": "When will Ava probably finish?",
+  "options": [
+   "in May",
+   "in July",
+   "in September",
+   "she has finished"
+  ],
+  "answer": 0,
+  "explain": "Two months to spare before July = May.",
+  "notes": {
+   "in July": "July is the deadline.",
+   "in September": "That would be after the deadline.",
+   "she has finished": "She has read fifteen of twenty."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I'm loath to admit it, but my little brother's suggestion was the one that cracked the puzzle.",
+  "q": "How does the speaker feel about admitting this?",
+  "options": [
+   "reluctant",
+   "delighted",
+   "indifferent",
+   "proud of themselves"
+  ],
+  "answer": 0,
+  "explain": "'Loath to admit' = reluctant to admit.",
+  "notes": {
+   "delighted": "'Loath' means unwilling, not delighted.",
+   "indifferent": "They clearly care.",
+   "proud of themselves": "The credit goes to the brother."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Whereas the first expedition relied on paper maps and guesswork, this year's team has drones and satellite data at its disposal.",
+  "q": "What contrast is drawn?",
+  "options": [
+   "old methods versus modern technology",
+   "two teams that used the same tools",
+   "the first team was more successful",
+   "this year's team has no maps"
+  ],
+  "answer": 0,
+  "explain": "'Whereas… paper maps and guesswork… drones and satellite data.'",
+  "notes": {
+   "two teams that used the same tools": "The tools are contrasted.",
+   "the first team was more successful": "Success isn't compared.",
+   "this year's team has no maps": "Satellite data replaces paper maps."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Mercifully, the downpour held off until the last runner had crossed the line.",
+  "q": "What happened?",
+  "options": [
+   "the rain started only after the race",
+   "the race was rained off",
+   "it poured all through the race",
+   "the last runner got soaked"
+  ],
+  "answer": 0,
+  "explain": "'Held off until the last runner had crossed the line.'",
+  "notes": {
+   "the race was rained off": "It wasn't called off.",
+   "it poured all through the race": "It held off until the end.",
+   "the last runner got soaked": "The rain came after they'd finished."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Ostensibly the club is about chess, but in reality it's an excuse for an hour of biscuits and gossip.",
+  "q": "What is the club really like?",
+  "options": [
+   "more social than serious",
+   "very competitive",
+   "strictly about chess",
+   "full of serious chess experts"
+  ],
+  "answer": 0,
+  "explain": "'Ostensibly' = apparently; 'in reality… biscuits and gossip'.",
+  "notes": {
+   "very competitive": "Competition isn't suggested.",
+   "strictly about chess": "'Ostensibly' signals it isn't.",
+   "full of serious chess experts": "Experts aren't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Ticket prices were slashed from sixty pounds to forty-five, though booking fees add another five.",
+  "q": "What is the real price now?",
+  "options": [
+   "£50",
+   "£45",
+   "£60",
+   "£65"
+  ],
+  "answer": 0,
+  "explain": "£45 + £5 booking fee = £50.",
+  "notes": {
+   "£45": "£45 ignores the booking fee.",
+   "£60": "£60 was the old price.",
+   "£65": "£65 adds the fee to the old price."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Leo: You must be thrilled with your result.|Nina: I'd be lying if I said I wasn't, but I'm trying not to let it go to my head.",
+  "q": "How does Nina feel?",
+  "options": [
+   "pleased, but trying to stay modest",
+   "disappointed with the result",
+   "openly boastful",
+   "indifferent to it"
+  ],
+  "answer": 0,
+  "explain": "'I'd be lying if I said I wasn't' = she is thrilled; 'not let it go to my head' = modest.",
+  "dialogue": true,
+  "notes": {
+   "disappointed with the result": "She's thrilled.",
+   "openly boastful": "She's trying not to boast.",
+   "indifferent to it": "She clearly cares."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Jay: Shall we tell Mr Hart about the broken microscope?|Priya: I'd sooner own up now than have him find out later.",
+  "q": "What does Priya want to do?",
+  "options": [
+   "admit it straight away",
+   "hide the microscope",
+   "wait and see if he notices",
+   "blame someone else"
+  ],
+  "answer": 0,
+  "explain": "'I'd sooner own up now' = admit it now.",
+  "dialogue": true,
+  "notes": {
+   "hide the microscope": "She wants to be honest.",
+   "wait and see if he notices": "She doesn't want him to find out later.",
+   "blame someone else": "Blame isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Ava: The director's cut is three hours long.|Max: Three hours? I'll give it a miss, then, much as I loved the original.",
+  "q": "What will Max do?",
+  "options": [
+   "not watch the longer version",
+   "watch it tonight",
+   "watch the original film again",
+   "persuade Ava to go"
+  ],
+  "answer": 0,
+  "explain": "'I'll give it a miss' = not watch it.",
+  "dialogue": true,
+  "notes": {
+   "watch it tonight": "He's put off by the length.",
+   "watch the original film again": "Re-watching isn't mentioned.",
+   "persuade Ava to go": "Persuading isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Coach: You held your nerve brilliantly.|Sam: Did I? I was a bag of nerves inside!|Coach: Well, it didn't show.",
+  "q": "What does the coach mean?",
+  "options": [
+   "Sam seemed calm even though he wasn't",
+   "Sam looked very nervous",
+   "Sam should have been more nervous",
+   "Sam didn't play well"
+  ],
+  "answer": 0,
+  "explain": "'It didn't show' = his nerves weren't visible.",
+  "dialogue": true,
+  "notes": {
+   "Sam looked very nervous": "The coach says the nerves didn't show.",
+   "Sam should have been more nervous": "That isn't suggested.",
+   "Sam didn't play well": "He 'held his nerve brilliantly'."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Gran: Is that the essay you've been agonising over?|Ella: Yes, and having rewritten the opening four times, I've come full circle back to my first version.",
+  "q": "What has Ella done?",
+  "options": [
+   "returned to her original opening",
+   "finished a brand-new fifth opening",
+   "given up on the essay",
+   "asked Gran to write it"
+  ],
+  "answer": 0,
+  "explain": "'Come full circle back to my first version.'",
+  "dialogue": true,
+  "notes": {
+   "finished a brand-new fifth opening": "She went back to her first one.",
+   "given up on the essay": "She's still working on it.",
+   "asked Gran to write it": "Gran isn't helping."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Teacher: Your project shows real flair.|Raj: But?|Teacher: But the conclusion rather fizzles out; it needs a stronger finish.",
+  "q": "What does the teacher criticise?",
+  "options": [
+   "the weak ending",
+   "the lack of originality",
+   "the opening section",
+   "the length"
+  ],
+  "answer": 0,
+  "explain": "'The conclusion rather fizzles out' = it's a weak ending.",
+  "dialogue": true,
+  "notes": {
+   "the lack of originality": "'Real flair' = it's original.",
+   "the opening section": "The opening isn't mentioned.",
+   "the length": "Length isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Kai: Did the debate go well?|Mia: We won, though I suspect it was more down to the other team's blunders than our brilliance.",
+  "q": "How does Mia explain the win?",
+  "options": [
+   "the other team made mistakes",
+   "their arguments were outstanding",
+   "the judges were unfair",
+   "they practised more"
+  ],
+  "answer": 0,
+  "explain": "'More down to the other team's blunders than our brilliance.'",
+  "dialogue": true,
+  "notes": {
+   "their arguments were outstanding": "She plays down their own brilliance.",
+   "the judges were unfair": "The judges aren't mentioned.",
+   "they practised more": "Practice isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Zoe: Is the café on the corner any good?|Omar: It's a far cry from what it used to be, sadly.",
+  "q": "What does Omar think of the café?",
+  "options": [
+   "it has got much worse",
+   "it's better than before",
+   "it has always been bad",
+   "it's exactly as it was"
+  ],
+  "answer": 0,
+  "explain": "'A far cry from what it used to be' = very different (worse), 'sadly'.",
+  "dialogue": true,
+  "notes": {
+   "it's better than before": "'Sadly' shows it's worse.",
+   "it has always been bad": "It used to be better.",
+   "it's exactly as it was": "It has changed a lot."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Ivy: Will the trip still happen?|Mr Lee: It hinges on whether we get ten more sign-ups by Friday.",
+  "q": "What does the trip depend on?",
+  "options": [
+   "enough students joining in time",
+   "the weather on Friday",
+   "Mr Lee being free",
+   "the cost of hiring the coach"
+  ],
+  "answer": 0,
+  "explain": "'Hinges on whether we get ten more sign-ups by Friday.'",
+  "dialogue": true,
+  "notes": {
+   "the weather on Friday": "Weather isn't mentioned.",
+   "Mr Lee being free": "Mr Lee's availability isn't mentioned.",
+   "the cost of hiring the coach": "Cost isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Ben: I thought you'd hate the camping trip.|Leah: So did I, but it grew on me, apart from the midges.",
+  "q": "What does Leah say about the trip?",
+  "options": [
+   "she came to like it, except the insects",
+   "she hated every minute",
+   "she loved it from the start",
+   "the insects were the best part"
+  ],
+  "answer": 0,
+  "explain": "'It grew on me' = she came to like it; 'apart from the midges' (tiny insects).",
+  "dialogue": true,
+  "notes": {
+   "she hated every minute": "It grew on her.",
+   "she loved it from the start": "'So did I' (expected to hate it).",
+   "the insects were the best part": "The midges were the exception."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Granted, the bridge model is ingenious; whether it would bear the weight of an actual car is another matter entirely.",
+  "q": "What doubt does the speaker express?",
+  "options": [
+   "whether it would work in real life",
+   "whether it's clever",
+   "whether it's finished",
+   "whether it looks attractive enough"
+  ],
+  "answer": 0,
+  "explain": "'Whether it would bear the weight of an actual car is another matter.'",
+  "notes": {
+   "whether it's clever": "'Granted… ingenious' accepts it's clever.",
+   "whether it's finished": "Being finished isn't questioned.",
+   "whether it looks attractive enough": "Looks aren't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Of the thirty students who auditioned, only a third made the cut, and of those, half were offered speaking parts.",
+  "q": "How many students got speaking parts?",
+  "options": [
+   "five",
+   "ten",
+   "fifteen",
+   "three"
+  ],
+  "answer": 0,
+  "explain": "A third of 30 = 10; half of 10 = 5.",
+  "notes": {
+   "ten": "Ten made the cut.",
+   "fifteen": "Fifteen is half of thirty.",
+   "three": "Three isn't the result."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Had it not been for the librarian's tip-off, the rare atlas would have been sold to a collector abroad.",
+  "q": "What does the speaker imply?",
+  "options": [
+   "the librarian helped keep the atlas",
+   "the atlas was sold abroad",
+   "the librarian tried to sell it",
+   "the collector later gave it back"
+  ],
+  "answer": 0,
+  "explain": "Inverted conditional: thanks to the tip-off, it wasn't sold.",
+  "notes": {
+   "the atlas was sold abroad": "It would have been, but wasn't.",
+   "the librarian tried to sell it": "The librarian warned people.",
+   "the collector later gave it back": "It was never sold."
+  }
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "Seldom have I come across such a convincing argument.",
+  "answer": "Seldom have I come across such a convincing argument.",
+  "explain": "Inversion after 'seldom'."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "Be that as it may, we still need to finish by Friday.",
+  "answer": "Be that as it may, we still need to finish by Friday.",
+  "explain": "Fixed phrase: be that as it may."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "Were the bridge to collapse, the village would be cut off.",
+  "answer": "Were the bridge to collapse, the village would be cut off.",
+  "explain": "Inverted conditional: were + to-infinitive."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "Much as I admire her, I can't agree with her plan.",
+  "answer": "Much as I admire her, I can't agree with her plan.",
+  "explain": "Concession: much as."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "So intricate was the design that it took months to copy.",
+  "answer": "So intricate was the design that it took months to copy.",
+  "explain": "So + adjective + inversion."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "The fewer distractions there are, the more you'll get done.",
+  "answer": "The fewer distractions there are, the more you'll get done.",
+  "explain": "The fewer…, the more…"
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "Under no circumstances should you open the door.",
+  "answer": "Under no circumstances should you open the door.",
+  "explain": "Under no circumstances + inversion."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "It was only when she smiled that I recognised her.",
+  "answer": "It was only when she smiled that I recognised her.",
+  "explain": "Cleft: it was only when… that."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "Such was the noise that nobody could hear the alarm.",
+  "answer": "Such was the noise that nobody could hear the alarm.",
+  "explain": "Such + be + inversion."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "Not once did he complain about the cold.",
+  "answer": "Not once did he complain about the cold.",
+  "explain": "Not once + did + subject."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "Whichever route you take, it will be a long journey.",
+  "answer": "Whichever route you take, it will be a long journey.",
+  "explain": "Whichever = no matter which."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "Should you need any help, just ask.",
+  "answer": "Should you need any help, just ask.",
+  "explain": "Should + subject = if."
+ },
+ {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "Never before had the scholars seen such a manuscript.",

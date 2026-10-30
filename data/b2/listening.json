@@ -504,6 +504,607 @@
   }
  },
  {
+  "type": "listen",
+  "say": "I'd assumed the robotics club would be full of experts, but most people there had never built anything before, which was a relief.",
+  "q": "How did the speaker feel about the club?",
+  "options": [
+   "relieved others were beginners",
+   "worried that everyone was an expert",
+   "annoyed that nobody knew anything",
+   "disappointed that it wasn't harder"
+  ],
+  "answer": 0,
+  "explain": "'Most people… had never built anything before, which was a relief.'",
+  "notes": {
+   "worried that everyone was an expert": "That was the assumption, which turned out wrong.",
+   "annoyed that nobody knew anything": "'A relief' is positive, not annoyed.",
+   "disappointed that it wasn't harder": "Nothing suggests they wanted it harder."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The trip to the aquarium is going ahead, but because the coach company let us down, we'll be taking the train instead, leaving at half eight rather than nine.",
+  "q": "What has changed about the trip?",
+  "options": [
+   "the transport and the departure time",
+   "the destination and the date",
+   "only the time that the train leaves",
+   "it has been called off"
+  ],
+  "answer": 0,
+  "explain": "Train instead of coach; 8:30 instead of 9:00.",
+  "notes": {
+   "the destination and the date": "They're still going to the aquarium.",
+   "only the time that the train leaves": "The transport changed too.",
+   "it has been called off": "'Going ahead' means it's still on."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "To be honest, the sequel isn't a patch on the first film; the jokes fall flat and the plot's all over the place.",
+  "q": "What does the speaker think of the sequel?",
+  "options": [
+   "it's far worse than the first",
+   "it's as good as the first one",
+   "it's funnier but more confusing",
+   "it's better than people say"
+  ],
+  "answer": 0,
+  "explain": "'Isn't a patch on' = nowhere near as good as.",
+  "notes": {
+   "it's as good as the first one": "'Not a patch on' means much worse.",
+   "it's funnier but more confusing": "'The jokes fall flat' = not funny.",
+   "it's better than people say": "No comparison with others' views is made."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "We'd budgeted forty pounds for the class party, but the cake alone came to twenty-eight, so we've only got twelve left for decorations and drinks.",
+  "q": "How much is left for everything except the cake?",
+  "options": [
+   "£12",
+   "£28",
+   "£40",
+   "£68"
+  ],
+  "answer": 0,
+  "explain": "£40 − £28 = £12.",
+  "notes": {
+   "£28": "£28 is the cake.",
+   "£40": "£40 was the whole budget.",
+   "£68": "£68 adds the two figures."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I was all set to quit the swimming team, but after Coach moved me to backstroke, I've actually started looking forward to training.",
+  "q": "What is the speaker's attitude now?",
+  "options": [
+   "keen to carry on",
+   "still planning to leave",
+   "unsure about backstroke",
+   "angry with the coach"
+  ],
+  "answer": 0,
+  "explain": "'Started looking forward to training' = keen.",
+  "notes": {
+   "still planning to leave": "They were going to quit, but changed their mind.",
+   "unsure about backstroke": "Backstroke is what changed their mind.",
+   "angry with the coach": "They seem grateful."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Applications for the young journalists' scheme close on the fifteenth, not the fifth as the leaflet says; that was a misprint.",
+  "q": "When is the real deadline?",
+  "options": [
+   "the 15th",
+   "the 5th",
+   "the 50th",
+   "the 1st"
+  ],
+  "answer": 0,
+  "explain": "'On the fifteenth, not the fifth… a misprint.'",
+  "notes": {
+   "the 5th": "The fifth is the misprint.",
+   "the 50th": "There's no 50th day.",
+   "the 1st": "The 1st isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Our science teacher doesn't so much give lessons as run experiments with us; you learn without realising it.",
+  "q": "How does the speaker describe the teacher's lessons?",
+  "options": [
+   "practical and enjoyable",
+   "boring and full of notes",
+   "hard to follow",
+   "dangerous at times"
+  ],
+  "answer": 0,
+  "explain": "'Run experiments… you learn without realising it.'",
+  "notes": {
+   "boring and full of notes": "The opposite of what's described.",
+   "hard to follow": "'You learn without realising' suggests it's easy.",
+   "dangerous at times": "Danger isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "If I'd known the museum was shut on Mondays, I'd never have dragged everyone across town.",
+  "q": "What happened?",
+  "options": [
+   "they went to the museum on a closed day",
+   "the museum was too crowded",
+   "they didn't go to the museum",
+   "they arrived after it closed for the evening"
+  ],
+  "answer": 0,
+  "explain": "Third conditional: they didn't know, so they went, and it was shut.",
+  "notes": {
+   "the museum was too crowded": "Crowds aren't mentioned.",
+   "they didn't go to the museum": "They went ('dragged everyone across town').",
+   "they arrived after it closed for the evening": "It was shut all day Monday."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Tickets are fifteen pounds, but members get a third off, and under-twelves go half price.",
+  "q": "How much does a member pay?",
+  "options": [
+   "£10",
+   "£5",
+   "£7.50",
+   "£12"
+  ],
+  "answer": 0,
+  "explain": "A third of £15 is £5; £15 − £5 = £10.",
+  "notes": {
+   "£5": "£5 is the discount.",
+   "£7.50": "£7.50 is the under-twelves' price.",
+   "£12": "£12 isn't a third off."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Honestly, I could take or leave video games; I'd much rather be out on my bike.",
+  "q": "What can we say about the speaker?",
+  "options": [
+   "they prefer cycling to gaming",
+   "they love video games",
+   "they don't own a bike",
+   "they play games every single day"
+  ],
+  "answer": 0,
+  "explain": "'Take or leave' = not bothered; 'much rather… my bike'.",
+  "notes": {
+   "they love video games": "'Could take or leave' means not keen.",
+   "they don't own a bike": "They mention their bike.",
+   "they play games every single day": "That isn't suggested."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The forecast was for storms, so we'd packed waterproofs, but in the end it turned out to be the hottest day of the year.",
+  "q": "What was the weather like?",
+  "options": [
+   "very hot, unlike the forecast",
+   "stormy, just as forecast",
+   "wet but warm",
+   "cold and windy all day"
+  ],
+  "answer": 0,
+  "explain": "'Turned out to be the hottest day of the year.'",
+  "notes": {
+   "stormy, just as forecast": "The storms were only forecast.",
+   "wet but warm": "It didn't rain.",
+   "cold and windy all day": "It was hot."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I'm not saying the new canteen menu is bad, it's just that there's hardly anything for vegetarians.",
+  "q": "What is the speaker's complaint?",
+  "options": [
+   "few meat-free choices",
+   "the food tastes awful",
+   "the portions are small",
+   "it's too expensive"
+  ],
+  "answer": 0,
+  "explain": "'Hardly anything for vegetarians' = few meat-free choices.",
+  "notes": {
+   "the food tastes awful": "'I'm not saying it's bad.'",
+   "the portions are small": "Portion size isn't mentioned.",
+   "it's too expensive": "Price isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Mia: Did you finish the poster?|Jake: Nearly. I've just got to add the title.|Mia: Brilliant, can you send it to me by tonight?",
+  "q": "What does Jake still need to do?",
+  "options": [
+   "put a heading on it",
+   "start the poster",
+   "send it to Mia now",
+   "print several copies"
+  ],
+  "answer": 0,
+  "explain": "'I've just got to add the title' (a title = a heading).",
+  "dialogue": true,
+  "notes": {
+   "start the poster": "It's nearly finished.",
+   "send it to Mia now": "She wants it by tonight, after he finishes.",
+   "print several copies": "Printing isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Raj: Shall we get the bus to the match?|Leah: It'll be packed. Why don't we cycle? It's only twenty minutes.|Raj: Fair enough.",
+  "q": "How will they get to the match?",
+  "options": [
+   "by bike",
+   "by bus",
+   "on foot",
+   "by car"
+  ],
+  "answer": 0,
+  "explain": "Leah suggests cycling; Raj agrees: 'Fair enough.'",
+  "dialogue": true,
+  "notes": {
+   "by bus": "Raj suggested the bus first, but it will be packed.",
+   "on foot": "Walking isn't mentioned.",
+   "by car": "A car isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Coach: Your passing's improved no end.|Sam: Thanks! What should I work on next?|Coach: Your positioning, you're often in the wrong place.",
+  "q": "What does the coach say Sam needs to improve?",
+  "options": [
+   "where he stands during play",
+   "his passing",
+   "his fitness",
+   "his attitude to the team"
+  ],
+  "answer": 0,
+  "explain": "'Your positioning' = where you stand on the pitch.",
+  "dialogue": true,
+  "notes": {
+   "his passing": "His passing has 'improved no end'.",
+   "his fitness": "Fitness isn't mentioned.",
+   "his attitude to the team": "Attitude isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Zoe: I thought you hated horror films.|Ben: I used to, but this one's more funny than scary.",
+  "q": "Why is Ben willing to see the film?",
+  "options": [
+   "it's more comedy than horror",
+   "he's always loved horror",
+   "his friends are going to see it",
+   "it's very frightening"
+  ],
+  "answer": 0,
+  "explain": "'More funny than scary.'",
+  "dialogue": true,
+  "notes": {
+   "he's always loved horror": "He used to hate horror.",
+   "his friends are going to see it": "Friends aren't mentioned.",
+   "it's very frightening": "It's more funny than scary."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Ella: Can you come to the beach on Saturday?|Tom: I'd love to, but I've promised to help my gran move house.|Ella: What about Sunday?|Tom: Sunday works.",
+  "q": "When will Tom go to the beach?",
+  "options": [
+   "on Sunday",
+   "on Saturday",
+   "next weekend",
+   "he can't go at all"
+  ],
+  "answer": 0,
+  "explain": "'Sunday works.'",
+  "dialogue": true,
+  "notes": {
+   "on Saturday": "Saturday he's helping his gran.",
+   "next weekend": "Next weekend isn't mentioned.",
+   "he can't go at all": "He can go on Sunday."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Ivy: Was the climbing wall hard?|Omar: The first half was a breeze, but I got stuck right near the top.",
+  "q": "How did Omar find the climb?",
+  "options": [
+   "easy at first, then difficult",
+   "difficult all the way",
+   "easy all the way",
+   "he didn't try it"
+  ],
+  "answer": 0,
+  "explain": "'A breeze' (very easy) at first, then 'stuck near the top'.",
+  "dialogue": true,
+  "notes": {
+   "difficult all the way": "The first half was a breeze.",
+   "easy all the way": "He got stuck near the top.",
+   "he didn't try it": "He did try it."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Mum: Your room is a tip.|Kai: I know, I'll sort it out after dinner, I promise.|Mum: Before dinner, please.",
+  "q": "When does Mum want the room tidied?",
+  "options": [
+   "before they eat",
+   "after dinner",
+   "tomorrow",
+   "at the weekend"
+  ],
+  "answer": 0,
+  "explain": "'Before dinner, please.'",
+  "dialogue": true,
+  "notes": {
+   "after dinner": "That's what Kai offered, but Mum said before.",
+   "tomorrow": "Tomorrow isn't mentioned.",
+   "at the weekend": "The weekend isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Lily: How much was your new skateboard?|Ravi: It should've been eighty, but I got it for sixty in the sale.",
+  "q": "How much did Ravi save?",
+  "options": [
+   "£20",
+   "£60",
+   "£80",
+   "£140"
+  ],
+  "answer": 0,
+  "explain": "£80 − £60 = £20 saved.",
+  "dialogue": true,
+  "notes": {
+   "£60": "£60 is what he paid.",
+   "£80": "£80 was the full price.",
+   "£140": "£140 adds the two."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Teacher: The deadline is Friday.|Nina: Is there any chance of an extension?|Teacher: Only if you've got a really good reason.",
+  "q": "What does the teacher say about extra time?",
+  "options": [
+   "only with a good reason",
+   "it's never allowed",
+   "everyone gets an extension",
+   "the deadline is Monday"
+  ],
+  "answer": 0,
+  "explain": "'Only if you've got a really good reason.'",
+  "dialogue": true,
+  "notes": {
+   "it's never allowed": "It's possible with a good reason.",
+   "everyone gets an extension": "Only with a good reason.",
+   "the deadline is Monday": "The deadline is Friday."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Max: The concert's sold out!|Jo: Not quite, there are some returns released at nine tomorrow morning.",
+  "q": "How might Max still get a ticket?",
+  "options": [
+   "by trying for returned tickets tomorrow",
+   "by queuing at the door tonight",
+   "by buying from a friend",
+   "he can't get one at all"
+  ],
+  "answer": 0,
+  "explain": "'Some returns released at nine tomorrow morning.'",
+  "dialogue": true,
+  "notes": {
+   "by queuing at the door tonight": "Queuing tonight isn't mentioned.",
+   "by buying from a friend": "A friend isn't mentioned.",
+   "he can't get one at all": "Jo says 'not quite' sold out."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Gran: You look shattered!|Leo: We had a fire drill at three in the morning at camp.",
+  "q": "Why is Leo tired?",
+  "options": [
+   "he was woken up in the night",
+   "he ran a long race",
+   "he stayed up late gaming",
+   "he has a cold"
+  ],
+  "answer": 0,
+  "explain": "'Shattered' = exhausted; a fire drill at 3 a.m. woke him.",
+  "dialogue": true,
+  "notes": {
+   "he ran a long race": "A race isn't mentioned.",
+   "he stayed up late gaming": "Gaming isn't mentioned.",
+   "he has a cold": "Illness isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Amy: Is the new café any good?|Sam: The cakes are amazing, but you'll wait ages to be served.",
+  "q": "What is the downside of the café?",
+  "options": [
+   "the slow service",
+   "the cakes",
+   "the prices",
+   "the location of it"
+  ],
+  "answer": 0,
+  "explain": "'You'll wait ages to be served.'",
+  "dialogue": true,
+  "notes": {
+   "the cakes": "The cakes are amazing.",
+   "the prices": "Prices aren't mentioned.",
+   "the location of it": "Location isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Jay: Did you enjoy the book?|Priya: I struggled with the first few chapters, but I couldn't put it down after that.",
+  "q": "What was Priya's experience of the book?",
+  "options": [
+   "slow to start, then gripping",
+   "boring throughout",
+   "gripping from page one",
+   "she gave up on it halfway"
+  ],
+  "answer": 0,
+  "explain": "Struggled at first; then 'couldn't put it down' = gripping.",
+  "dialogue": true,
+  "notes": {
+   "boring throughout": "She loved it later.",
+   "gripping from page one": "The start was a struggle.",
+   "she gave up on it halfway": "She kept reading."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The organisers said that, owing to the high winds, the kite festival would be moved from the cliff top to the sports field.",
+  "q": "Why was the festival moved?",
+  "options": [
+   "it was too windy up there",
+   "the sports field is bigger",
+   "the cliff was closed for repairs",
+   "too many people came"
+  ],
+  "answer": 0,
+  "explain": "'Owing to the high winds' = because of the dangerous weather.",
+  "notes": {
+   "the sports field is bigger": "Size isn't the reason given.",
+   "the cliff was closed for repairs": "Repairs aren't mentioned.",
+   "too many people came": "Crowds aren't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I wouldn't say I'm a natural at chess, but I've improved a lot since I started playing online every evening.",
+  "q": "What does the speaker say about their chess?",
+  "options": [
+   "practice has made them better",
+   "they're a natural talent",
+   "they've stopped playing",
+   "they now only play at weekends"
+  ],
+  "answer": 0,
+  "explain": "'Improved a lot since I started playing… every evening.'",
+  "notes": {
+   "they're a natural talent": "'I wouldn't say I'm a natural.'",
+   "they've stopped playing": "They play every evening.",
+   "they now only play at weekends": "Every evening, not weekends."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The museum's dinosaur exhibition, which was due to close in May, has been so popular that it's been extended until September.",
+  "q": "What has happened to the exhibition?",
+  "options": [
+   "it will stay open for longer",
+   "it closed in May",
+   "it has moved to a new museum",
+   "it will open in September"
+  ],
+  "answer": 0,
+  "explain": "'Extended until September' = it stays open longer.",
+  "notes": {
+   "it closed in May": "It was due to close in May, but it was extended.",
+   "it has moved to a new museum": "No move is mentioned.",
+   "it will open in September": "It's already open."
+  }
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "If I hadn't missed the bus, I'd have been on time.",
+  "answer": "If I hadn't missed the bus, I'd have been on time.",
+  "explain": "Third conditional: if + had + past participle, would have."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "The results will be announced next week.",
+  "answer": "The results will be announced next week.",
+  "explain": "Future passive: will be + announced."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "She's been training for the marathon since January.",
+  "answer": "She's been training for the marathon since January.",
+  "explain": "Present perfect continuous + since."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "I'd rather you didn't tell anyone yet.",
+  "answer": "I'd rather you didn't tell anyone yet.",
+  "explain": "I'd rather + past simple for someone else."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "By the time we arrived, the film had already started.",
+  "answer": "By the time we arrived, the film had already started.",
+  "explain": "Past perfect: had + started."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "Not only did we win, but we also broke a record.",
+  "answer": "Not only did we win, but we also broke a record.",
+  "explain": "Inversion after 'not only'."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "The book is said to be based on a true story.",
+  "answer": "The book is said to be based on a true story.",
+  "explain": "Passive report: is said to be."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "I wish I had practised more before the concert.",
+  "answer": "I wish I had practised more before the concert.",
+  "explain": "Wish + past perfect for past regret."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "Despite feeling nervous, she gave a brilliant speech.",
+  "answer": "Despite feeling nervous, she gave a brilliant speech.",
+  "explain": "Despite + -ing."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "We should have booked the tickets earlier.",
+  "answer": "We should have booked the tickets earlier.",
+  "explain": "Should have + past participle."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "Having finished his homework, he went outside.",
+  "answer": "Having finished his homework, he went outside.",
+  "explain": "Perfect participle clause."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "The more you practise, the better you get.",
+  "answer": "The more you practise, the better you get.",
+  "explain": "The + comparative, the + comparative."
+ },
+ {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "I wish I had brought my umbrella.",

@@ -95,7 +95,9 @@ CHUNKS = [("a1", "vocab", "c1_a1v", "A1V"),
           ("c1", "grammar", "c1_c1g", "C1G"), ("c1", "vocab", "c1_c1v", "C1V"),
           ("c2", "grammar", "c1_c2g", "C2G"), ("c2", "vocab", "c1_c2v", "C2V"),
           ("a1", "listening", "c1_listen", "A1L"), ("a2", "listening", "c1_listen", "A2L"), ("b1", "listening", "c1_listen", "B1L"),
-          ("a1", "reading", "c1_read", "A1R"), ("a2", "reading", "c1_read", "A2R"), ("b1", "reading", "c1_read", "B1R")]
+          ("a1", "reading", "c1_read", "A1R"), ("a2", "reading", "c1_read", "A2R"), ("b1", "reading", "c1_read", "B1R"),
+          ("b2", "listening", "c1_listen_bc", "B2L"), ("c1", "listening", "c1_listen_bc", "C1L"), ("c2", "listening", "c1_listen_bc", "C2L"),
+          ("b2", "reading", "c1_read_bc", "B2R"), ("c1", "reading", "c1_read_bc", "C1R"), ("c2", "reading", "c1_read_bc", "C2R")]
 def _add(lvl, sk, val):
     bank = GROW.setdefault(lvl, {})
     if sk == "reading": bank.setdefault(sk, {"passages": []})["passages"].extend(val)

@@ -398,6 +398,552 @@
      }
     }
    ]
+  },
+  {
+   "title": "The Apprentice of the Starlight Library",
+   "text": "Nobody had told Ilse that the Starlight Library rearranged itself at midnight. On her first night as apprentice, she watched, aghast, as the shelves of astronomy slid silently into the poetry wing and a whole staircase folded itself into a cupboard. The Head Librarian, unperturbed, merely remarked that the library 'preferred to be read rather than searched'. Only weeks later did Ilse grasp what he meant: whenever she stopped hunting for a particular book and simply wandered, the book she needed would, as often as not, find its way into her hands. She came to suspect that the library was less a building than a temperament.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How did Ilse react to the first night?",
+     "options": [
+      "she was horrified",
+      "she was amused",
+      "she was unsurprised",
+      "she was bored"
+     ],
+     "answer": 0,
+     "explain": "'Watched, aghast' = shocked and horrified.",
+     "notes": {
+      "she was amused": "'Aghast' isn't amused.",
+      "she was unsurprised": "Nobody had told her, so she was surprised.",
+      "she was bored": "She was far from bored."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does 'unperturbed' tell us about the Head Librarian?",
+     "options": [
+      "he was calm",
+      "he was equally shocked",
+      "he was angry with Ilse",
+      "he had caused the change"
+     ],
+     "answer": 0,
+     "explain": "'Unperturbed' = not worried or disturbed.",
+     "notes": {
+      "he was equally shocked": "He was calm, unlike Ilse.",
+      "he was angry with Ilse": "No anger is shown.",
+      "he had caused the change": "Nothing says he caused it."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What did the librarian's remark eventually mean to Ilse?",
+     "options": [
+      "browsing works better than searching",
+      "the books must be read in order",
+      "visitors should not search the shelves",
+      "the library dislikes poetry"
+     ],
+     "answer": 0,
+     "explain": "When she 'simply wandered', the right book found her.",
+     "notes": {
+      "the books must be read in order": "Order isn't mentioned.",
+      "visitors should not search the shelves": "It's advice, not a rule for visitors.",
+      "the library dislikes poetry": "Poetry isn't the point."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does 'as often as not' suggest?",
+     "options": [
+      "it happened fairly often",
+      "it never happened",
+      "it happened only once",
+      "it happened every single time"
+     ],
+     "answer": 0,
+     "explain": "'As often as not' = quite frequently, but not always.",
+     "notes": {
+      "it never happened": "It did happen.",
+      "it happened only once": "It happened repeatedly.",
+      "it happened every single time": "It's not always."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does the final sentence imply?",
+     "options": [
+      "the library has a character",
+      "the library is falling apart",
+      "Ilse wants to leave her job",
+      "the building is badly designed"
+     ],
+     "answer": 0,
+     "explain": "'Less a building than a temperament' = more like a character with moods.",
+     "notes": {
+      "the library is falling apart": "Nothing suggests collapse.",
+      "Ilse wants to leave her job": "She is coming to understand it.",
+      "the building is badly designed": "Design isn't criticised."
+     }
+    }
+   ]
+  },
+  {
+   "title": "On Being Wrong",
+   "text": "There is a peculiar pleasure, rarely acknowledged, in discovering that one has been wrong. Admittedly, the pleasure arrives late; the first sensation is closer to embarrassment. But once the sting fades, what remains is a world that has become slightly larger and more interesting than the one we had imagined. Scientists, at their best, cultivate this feeling deliberately, framing each experiment as an attempt to prove themselves mistaken. The rest of us might do well to follow suit, not least because those who can never admit error tend to stop learning altogether.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What claim does the writer make in the first sentence?",
+     "options": [
+      "being wrong can be enjoyable",
+      "being wrong is always painful",
+      "most people enjoy being wrong",
+      "nobody has ever been wrong"
+     ],
+     "answer": 0,
+     "explain": "'A peculiar pleasure… in discovering that one has been wrong.'",
+     "notes": {
+      "being wrong is always painful": "The writer says pleasure follows.",
+      "most people enjoy being wrong": "It's 'rarely acknowledged'.",
+      "nobody has ever been wrong": "The text is about being wrong."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does 'Admittedly' introduce?",
+     "options": [
+      "a small concession",
+      "the writer's main conclusion",
+      "a scientific fact",
+      "a personal story"
+     ],
+     "answer": 0,
+     "explain": "'Admittedly' concedes: the pleasure comes late, after embarrassment.",
+     "notes": {
+      "the writer's main conclusion": "The conclusion comes at the end.",
+      "a scientific fact": "It isn't a scientific fact.",
+      "a personal story": "No story follows."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is left after the embarrassment passes?",
+     "options": [
+      "a richer view of the world",
+      "a feeling of shame",
+      "a desire to argue",
+      "a wish to forget"
+     ],
+     "answer": 0,
+     "explain": "'A world that has become slightly larger and more interesting.'",
+     "notes": {
+      "a feeling of shame": "The sting fades.",
+      "a desire to argue": "Arguing isn't mentioned.",
+      "a wish to forget": "Forgetting isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How do good scientists treat being wrong?",
+     "options": [
+      "they try to prove themselves wrong",
+      "they avoid experiments that might fail",
+      "they hide their mistakes",
+      "they blame others for errors"
+     ],
+     "answer": 0,
+     "explain": "'Framing each experiment as an attempt to prove themselves mistaken.'",
+     "notes": {
+      "they avoid experiments that might fail": "They seek it out.",
+      "they hide their mistakes": "Hiding is the opposite.",
+      "they blame others for errors": "Blaming isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why does the writer recommend this attitude for everyone?",
+     "options": [
+      "denying mistakes stops learning",
+      "it makes people more popular",
+      "it helps people win arguments",
+      "it is required at school"
+     ],
+     "answer": 0,
+     "explain": "'Those who can never admit error tend to stop learning altogether.'",
+     "notes": {
+      "it makes people more popular": "Popularity isn't mentioned.",
+      "it helps people win arguments": "Winning isn't the point.",
+      "it is required at school": "School rules aren't mentioned."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Clockmaker's Riddle",
+   "text": "When old Master Varga died, he left his workshop not to his son, as everyone had assumed, but to whichever of his three apprentices could repair the great astronomical clock in the town square, which had been silent for forty years. Two of them set to work at once, dismantling the mechanism with feverish haste. The third, a quiet girl named Dora, spent the first week merely watching the clock, notebook in hand. It was she who noticed that the hands had not seized at all; they had been deliberately locked by a tiny brass pin, placed there, it later emerged, by Varga himself, so that only someone patient enough to look before touching would ever find it.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What surprised the town about Varga's will?",
+     "options": [
+      "his son didn't get it",
+      "he left it to the town",
+      "he had no apprentices",
+      "he left nothing at all"
+     ],
+     "answer": 0,
+     "explain": "'Not to his son, as everyone had assumed.'",
+     "notes": {
+      "he left it to the town": "It went to an apprentice.",
+      "he had no apprentices": "He had three.",
+      "he left nothing at all": "He left the workshop."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How did two apprentices approach the task?",
+     "options": [
+      "they rushed to take it apart",
+      "they refused to try",
+      "they asked Dora for help",
+      "they studied the clock for a week"
+     ],
+     "answer": 0,
+     "explain": "'Dismantling the mechanism with feverish haste.'",
+     "notes": {
+      "they refused to try": "They set to work at once.",
+      "they asked Dora for help": "No help was asked.",
+      "they studied the clock for a week": "That was Dora."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What was different about Dora's approach?",
+     "options": [
+      "she watched first",
+      "she worked through the night",
+      "she bought new parts",
+      "she copied the others"
+     ],
+     "answer": 0,
+     "explain": "'Spent the first week merely watching the clock, notebook in hand.'",
+     "notes": {
+      "she worked through the night": "Night work isn't mentioned.",
+      "she bought new parts": "Parts aren't mentioned.",
+      "she copied the others": "She did the opposite."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What had actually stopped the clock?",
+     "options": [
+      "a pin placed there on purpose",
+      "rust in the gears",
+      "a broken spring",
+      "damage from a storm"
+     ],
+     "answer": 0,
+     "explain": "'Deliberately locked by a tiny brass pin.'",
+     "notes": {
+      "rust in the gears": "The hands 'had not seized'.",
+      "a broken spring": "Nothing was broken.",
+      "damage from a storm": "Storms aren't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What was Varga's apparent intention?",
+     "options": [
+      "to reward patience over haste",
+      "to stop the clock forever",
+      "to test his son's strength",
+      "to punish the town"
+     ],
+     "answer": 0,
+     "explain": "'So that only someone patient enough to look before touching would ever find it.'",
+     "notes": {
+      "to stop the clock forever": "He wanted someone to find it.",
+      "to test his son's strength": "His son wasn't tested.",
+      "to punish the town": "Punishment isn't suggested."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Should Robots Have Rights?",
+   "text": "The question sounds absurd until one considers how readily children form attachments to robotic pets, mourning them when they break and protesting when adults treat them roughly. Some philosophers argue that the issue is not whether machines can suffer, which for now they almost certainly cannot, but what our treatment of them says about us. If kicking a lifelike robot dog makes cruelty feel normal, the argument runs, then perhaps we should discourage it, not for the robot's sake but for ours. Critics counter that this risks muddling our moral priorities when real animals still suffer neglect.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Why might the question seem less absurd than it sounds?",
+     "options": [
+      "children love their robot pets",
+      "robots can now feel pain",
+      "robots have asked for rights",
+      "adults are kinder to robots than to pets"
+     ],
+     "answer": 0,
+     "explain": "'Children form attachments to robotic pets, mourning them when they break.'",
+     "notes": {
+      "robots can now feel pain": "Machines 'almost certainly cannot' suffer.",
+      "robots have asked for rights": "Robots asking isn't mentioned.",
+      "adults are kinder to robots than to pets": "Adults treat them roughly."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What do some philosophers say the real issue is?",
+     "options": [
+      "what our behaviour says about us",
+      "whether robots can suffer",
+      "how expensive robots are",
+      "whether robots are intelligent"
+     ],
+     "answer": 0,
+     "explain": "'Not whether machines can suffer… but what our treatment of them says about us.'",
+     "notes": {
+      "whether robots can suffer": "That is explicitly not the issue.",
+      "how expensive robots are": "Cost isn't mentioned.",
+      "whether robots are intelligent": "Intelligence isn't the focus."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "According to the argument, why might we discourage kicking a robot dog?",
+     "options": [
+      "it may make cruelty seem normal",
+      "the robot would be damaged",
+      "the robot might fight back",
+      "it is against the law"
+     ],
+     "answer": 0,
+     "explain": "'If kicking a lifelike robot dog makes cruelty feel normal…'",
+     "notes": {
+      "the robot would be damaged": "It's 'not for the robot's sake'.",
+      "the robot might fight back": "Fighting back isn't mentioned.",
+      "it is against the law": "Law isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does 'not for the robot's sake but for ours' mean?",
+     "options": [
+      "it helps people, not robots",
+      "robots and humans benefit equally",
+      "robots matter more than humans",
+      "humans should stop making robots"
+     ],
+     "answer": 0,
+     "explain": "The reason is our own character, not the robot's welfare.",
+     "notes": {
+      "robots and humans benefit equally": "Only humans benefit, in this argument.",
+      "robots matter more than humans": "The opposite is said.",
+      "humans should stop making robots": "Stopping production isn't suggested."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is the critics' objection?",
+     "options": [
+      "real animals matter more",
+      "robots are too expensive for children",
+      "children should not have pets",
+      "philosophers know nothing about robots"
+     ],
+     "answer": 0,
+     "explain": "'Risks muddling our moral priorities when real animals still suffer neglect.'",
+     "notes": {
+      "robots are too expensive for children": "Cost isn't mentioned.",
+      "children should not have pets": "Pets aren't criticised.",
+      "philosophers know nothing about robots": "Expertise isn't questioned."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Last Speaker of the Whistled Language",
+   "text": "On the steep island of La Gomera, shepherds once communicated across deep ravines by whistling: not a simple code, but a full version of Spanish in which tones and pitches stand in for vowels and consonants. By the 1990s, the language, known as Silbo, was on the verge of extinction, kept alive by a dwindling number of elderly whistlers. Its revival owes much to an unlikely decision: in 1999, the island made Silbo compulsory in primary schools. Today, schoolchildren whistle their homework answers, and the language has been recognised by UNESCO as part of the world's cultural heritage. Whether it will survive as more than a classroom curiosity, however, remains an open question.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What is Silbo?",
+     "options": [
+      "a whistled version of Spanish",
+      "a simple code of a few signals",
+      "a type of birdsong",
+      "a shepherds' song"
+     ],
+     "answer": 0,
+     "explain": "'Not a simple code, but a full version of Spanish.'",
+     "notes": {
+      "a simple code of a few signals": "'Not a simple code.'",
+      "a type of birdsong": "It's human language.",
+      "a shepherds' song": "It's a language, not a song."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why did shepherds use it?",
+     "options": [
+      "to talk across wide valleys",
+      "to call their sheep",
+      "to keep secrets from visitors",
+      "to entertain tourists"
+     ],
+     "answer": 0,
+     "explain": "'Communicated across deep ravines by whistling.'",
+     "notes": {
+      "to call their sheep": "They communicated with each other.",
+      "to keep secrets from visitors": "Secrecy isn't mentioned.",
+      "to entertain tourists": "Tourists aren't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What was the state of Silbo by the 1990s?",
+     "options": [
+      "close to dying out",
+      "spoken by most islanders",
+      "taught in every school",
+      "already completely extinct"
+     ],
+     "answer": 0,
+     "explain": "'On the verge of extinction… a dwindling number of elderly whistlers.'",
+     "notes": {
+      "spoken by most islanders": "Few people used it.",
+      "taught in every school": "School teaching came in 1999.",
+      "already completely extinct": "It was still alive."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why is the 1999 decision described as 'unlikely'?",
+     "options": [
+      "it was a bold, unexpected rule",
+      "the decision was later reversed",
+      "nobody agreed with it",
+      "it happened by accident"
+     ],
+     "answer": 0,
+     "explain": "Requiring children to learn an almost-extinct language was an unexpected choice.",
+     "notes": {
+      "the decision was later reversed": "It wasn't reversed.",
+      "nobody agreed with it": "Agreement isn't discussed.",
+      "it happened by accident": "It was a deliberate decision."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What doubt does the writer express at the end?",
+     "options": [
+      "if it will live beyond school",
+      "whether UNESCO will recognise it",
+      "whether children enjoy learning it",
+      "whether it is really a language"
+     ],
+     "answer": 0,
+     "explain": "'Whether it will survive as more than a classroom curiosity.'",
+     "notes": {
+      "whether UNESCO will recognise it": "UNESCO already has.",
+      "whether children enjoy learning it": "Enjoyment isn't questioned.",
+      "whether it is really a language": "It's called a language throughout."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Notes from a Reluctant Debater",
+   "text": "I joined the debate club under duress, my form tutor having decided that my habit of arguing with everyone might as well be put to some use. What I hadn't bargained for was being made to argue, week after week, for positions I found indefensible. The first time I had to defend the idea that homework should be doubled, I could barely keep a straight face. Yet somewhere along the way, a disconcerting thing happened: I began to understand, if not agree with, people I had previously dismissed. Being forced to build the strongest case for the other side, it turns out, is the surest way of discovering the weaknesses in your own.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Why did the writer join the debate club?",
+     "options": [
+      "a teacher pushed them into it",
+      "they had always wanted to",
+      "their friends were members",
+      "they wanted to win prizes"
+     ],
+     "answer": 0,
+     "explain": "'Under duress, my form tutor having decided…'",
+     "notes": {
+      "they had always wanted to": "'Under duress' means unwillingly.",
+      "their friends were members": "Friends aren't mentioned.",
+      "they wanted to win prizes": "Prizes aren't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What hadn't the writer expected?",
+     "options": [
+      "arguing for views they disagreed with",
+      "having to speak in public",
+      "losing every debate",
+      "the club meeting every day"
+     ],
+     "answer": 0,
+     "explain": "'Made to argue… for positions I found indefensible.'",
+     "notes": {
+      "having to speak in public": "Public speaking isn't the surprise.",
+      "losing every debate": "Losing isn't mentioned.",
+      "the club meeting every day": "It met weekly."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How did the writer feel about doubling homework?",
+     "options": [
+      "found it hard to argue seriously",
+      "genuinely supported the idea",
+      "refused to debate it",
+      "won the debate easily"
+     ],
+     "answer": 0,
+     "explain": "'Could barely keep a straight face.'",
+     "notes": {
+      "genuinely supported the idea": "They found it indefensible.",
+      "refused to debate it": "They did debate it.",
+      "won the debate easily": "Winning isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What was 'disconcerting' about the change?",
+     "options": [
+      "they began to understand others",
+      "they started to agree with everyone",
+      "they lost interest in arguing",
+      "they became less confident"
+     ],
+     "answer": 0,
+     "explain": "'I began to understand, if not agree with, people I had previously dismissed.'",
+     "notes": {
+      "they started to agree with everyone": "'If not agree with' = understanding, not agreement.",
+      "they lost interest in arguing": "They still argue.",
+      "they became less confident": "Confidence isn't discussed."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is the writer's conclusion?",
+     "options": [
+      "the other side shows your flaws",
+      "debating is a waste of time",
+      "you should never change your mind",
+      "homework should be doubled"
+     ],
+     "answer": 0,
+     "explain": "'The surest way of discovering the weaknesses in your own.'",
+     "notes": {
+      "debating is a waste of time": "They found it valuable.",
+      "you should never change your mind": "They did change how they think.",
+      "homework should be doubled": "That was a debating position only."
+     }
+    }
+   ]
   }
  ]
 }

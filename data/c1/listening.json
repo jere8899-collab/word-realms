@@ -504,6 +504,550 @@
   }
  },
  {
+  "type": "listen",
+  "say": "Far from being a waste of time, the extra rehearsal turned out to be what saved the show; half the cast had forgotten their cues.",
+  "q": "What does the speaker think of the extra rehearsal?",
+  "options": [
+   "it was essential",
+   "it was a complete waste of time",
+   "it made the cast forget their lines",
+   "it should have been shorter"
+  ],
+  "answer": 0,
+  "explain": "'Far from being a waste of time… what saved the show.'",
+  "notes": {
+   "it was a complete waste of time": "'Far from being' denies this.",
+   "it made the cast forget their lines": "They had already forgotten their cues before it.",
+   "it should have been shorter": "Length isn't criticised."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I'm not against homework as such; what gets me is when it's set just for the sake of it.",
+  "q": "What is the speaker's real objection?",
+  "options": [
+   "pointless tasks",
+   "all homework of any kind",
+   "homework that is too difficult",
+   "having to hand it in online"
+  ],
+  "answer": 0,
+  "explain": "'Not against homework as such'… objects to work 'set just for the sake of it'.",
+  "notes": {
+   "all homework of any kind": "'Not against homework as such.'",
+   "homework that is too difficult": "Difficulty isn't the complaint.",
+   "having to hand it in online": "Online submission isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Had the referee not spotted the handball, we'd have lost the final.",
+  "q": "What actually happened?",
+  "options": [
+   "the referee saw it and they didn't lose",
+   "the referee missed it and they lost",
+   "they lost despite the referee",
+   "the final was abandoned"
+  ],
+  "answer": 0,
+  "explain": "Inverted third conditional: he did spot it, so they didn't lose.",
+  "notes": {
+   "the referee missed it and they lost": "He did spot it.",
+   "they lost despite the referee": "They didn't lose.",
+   "the final was abandoned": "The match was finished."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The school trip to Iceland was meant to cost four hundred pounds, but after the fundraiser, each family only has to pay a quarter of that.",
+  "q": "How much does each family pay?",
+  "options": [
+   "£100",
+   "£400",
+   "£300",
+   "£25"
+  ],
+  "answer": 0,
+  "explain": "A quarter of £400 = £100.",
+  "notes": {
+   "£400": "£400 was the original cost.",
+   "£300": "£300 is what the fundraiser covered.",
+   "£25": "£25 isn't a quarter of £400."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "To say the new science lab is an improvement would be an understatement; it's in a different league altogether.",
+  "q": "What is the speaker's opinion of the lab?",
+  "options": [
+   "it's vastly better",
+   "it's slightly better",
+   "it's no better than before",
+   "it's too advanced to use"
+  ],
+  "answer": 0,
+  "explain": "'An understatement… a different league' = far, far better.",
+  "notes": {
+   "it's slightly better": "'An understatement' means it's much more than slightly.",
+   "it's no better than before": "They say it's far better.",
+   "it's too advanced to use": "Nothing says it's hard to use."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I was going to enter the coding competition on my own, but in the end I teamed up with Priya, and frankly she did most of the clever bits.",
+  "q": "What does the speaker admit?",
+  "options": [
+   "Priya contributed more of the best ideas",
+   "they entered alone in the end",
+   "they did most of the work themselves",
+   "they didn't enter in the end"
+  ],
+  "answer": 0,
+  "explain": "'Frankly she did most of the clever bits.'",
+  "notes": {
+   "they entered alone in the end": "They teamed up with Priya.",
+   "they did most of the work themselves": "They say Priya did most of the clever bits.",
+   "they didn't enter in the end": "They entered with Priya."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The museum's open until six, although the last entry is an hour before, and the planetarium show runs only at two and four.",
+  "q": "What is the latest time you can go in?",
+  "options": [
+   "5 p.m.",
+   "6 p.m.",
+   "4 p.m.",
+   "2 p.m."
+  ],
+  "answer": 0,
+  "explain": "Open until six; last entry an hour before = 5 p.m.",
+  "notes": {
+   "6 p.m.": "Six is closing time.",
+   "4 p.m.": "Four is the last planetarium show.",
+   "2 p.m.": "Two is the first show."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "It's not that I don't trust the new app; I'd just rather keep a paper diary, the way my gran taught me.",
+  "q": "Why doesn't the speaker use the app?",
+  "options": [
+   "they prefer a familiar habit",
+   "they think it's unsafe",
+   "it costs too much",
+   "they can't download it"
+  ],
+  "answer": 0,
+  "explain": "'I'd just rather keep a paper diary, the way my gran taught me.'",
+  "notes": {
+   "they think it's unsafe": "'It's not that I don't trust it.'",
+   "it costs too much": "Cost isn't mentioned.",
+   "they can't download it": "Downloading isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "No sooner had we set up the tent than the heavens opened.",
+  "q": "What happened?",
+  "options": [
+   "it rained heavily straight after",
+   "it rained before they set up",
+   "the tent blew away",
+   "they couldn't set up the tent"
+  ],
+  "answer": 0,
+  "explain": "'No sooner… than' = immediately after; 'the heavens opened' = heavy rain.",
+  "notes": {
+   "it rained before they set up": "The tent was set up first.",
+   "the tent blew away": "Wind isn't mentioned.",
+   "they couldn't set up the tent": "They did set it up."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The volunteers, most of whom were teenagers, cleared over two tonnes of litter from the beach in a single weekend.",
+  "q": "What do we learn about the volunteers?",
+  "options": [
+   "mostly young people did a huge job",
+   "they were all adults",
+   "the work took a month",
+   "they found very little litter"
+  ],
+  "answer": 0,
+  "explain": "'Most of whom were teenagers… over two tonnes… in a single weekend.'",
+  "notes": {
+   "they were all adults": "Most were teenagers.",
+   "the work took a month": "It was one weekend.",
+   "they found very little litter": "Two tonnes is a lot."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Granted, the book's a bit long-winded in places, but the ending more than makes up for it.",
+  "q": "What is the speaker's overall view of the book?",
+  "options": [
+   "positive, despite a weakness",
+   "negative because it's too long",
+   "neutral, neither good nor bad",
+   "they didn't finish reading it"
+  ],
+  "answer": 0,
+  "explain": "'Granted' admits a weakness; 'more than makes up for it' = positive overall.",
+  "notes": {
+   "negative because it's too long": "The ending makes up for the length.",
+   "neutral, neither good nor bad": "They clearly liked the ending.",
+   "they didn't finish reading it": "They read the ending."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "We were told to arrive at quarter past eight, but the coach left at eight sharp, so anyone who followed the letter missed it.",
+  "q": "What was the problem?",
+  "options": [
+   "the letter gave the wrong time",
+   "the coach was late",
+   "nobody followed the letter",
+   "the coach left at quarter past"
+  ],
+  "answer": 0,
+  "explain": "People who followed the letter (8:15) missed the coach that left at 8:00.",
+  "notes": {
+   "the coach was late": "It left early, not late.",
+   "nobody followed the letter": "Some did follow it, and missed the coach.",
+   "the coach left at quarter past": "It left at eight sharp."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Mia: Are you entering the art prize?|Leo: I was going to, but I'm not convinced my painting's up to scratch.|Mia: Don't be daft, it's brilliant!",
+  "q": "Why is Leo hesitating?",
+  "options": [
+   "he doubts his work is good enough",
+   "he hasn't finished his painting",
+   "he's missed the deadline",
+   "he thinks the prize is unfair"
+  ],
+  "answer": 0,
+  "explain": "'Not convinced my painting's up to scratch' = not good enough.",
+  "dialogue": true,
+  "notes": {
+   "he hasn't finished his painting": "Finishing isn't the issue.",
+   "he's missed the deadline": "A deadline isn't mentioned.",
+   "he thinks the prize is unfair": "Fairness isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Coach: Strictly speaking, you're not old enough for the senior squad.|Ava: So I can't try out?|Coach: I didn't say that. I'll have a word with the organisers.",
+  "q": "What does the coach suggest?",
+  "options": [
+   "she might be allowed to try out",
+   "she definitely can't try out",
+   "she is old enough after all",
+   "she should join a different club"
+  ],
+  "answer": 0,
+  "explain": "'I didn't say that. I'll have a word' = there may be an exception.",
+  "dialogue": true,
+  "notes": {
+   "she definitely can't try out": "The coach says 'I didn't say that.'",
+   "she is old enough after all": "'Strictly speaking, you're not.'",
+   "she should join a different club": "Another club isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Sam: I thought you'd gone off football.|Jay: I had, until I started refereeing the under-nines. Now I'm hooked again.",
+  "q": "What renewed Jay's interest?",
+  "options": [
+   "being a referee for young players",
+   "watching the World Cup",
+   "joining a new team",
+   "his friends persuading him"
+  ],
+  "answer": 0,
+  "explain": "'Until I started refereeing the under-nines.'",
+  "dialogue": true,
+  "notes": {
+   "watching the World Cup": "The World Cup isn't mentioned.",
+   "joining a new team": "He referees; he didn't join a team.",
+   "his friends persuading him": "Friends aren't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Teacher: Your essay's well argued, but you've rather skated over the counter-arguments.|Nina: So I need to deal with them properly?|Teacher: Exactly.",
+  "q": "What should Nina improve?",
+  "options": [
+   "address opposing views in more depth",
+   "make her argument clearer",
+   "write a shorter essay",
+   "use more examples"
+  ],
+  "answer": 0,
+  "explain": "'Skated over the counter-arguments' = didn't treat them properly.",
+  "dialogue": true,
+  "notes": {
+   "make her argument clearer": "Her argument is already 'well argued'.",
+   "write a shorter essay": "Length isn't mentioned.",
+   "use more examples": "Examples aren't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Ivy: Shall we book the escape room for Saturday?|Omar: It's thirty pounds for four, or forty for six.|Ivy: There are six of us, so the bigger option.",
+  "q": "How much will they pay?",
+  "options": [
+   "£40",
+   "£30",
+   "£60",
+   "£70"
+  ],
+  "answer": 0,
+  "explain": "Six people: the 'forty for six' option.",
+  "dialogue": true,
+  "notes": {
+   "£30": "£30 is for four people.",
+   "£60": "£60 isn't an option given.",
+   "£70": "£70 adds both options."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Gran: You've been quiet since the match.|Kai: We lost, and I keep thinking I should've passed instead of shooting.",
+  "q": "How does Kai feel?",
+  "options": [
+   "he regrets a decision he made",
+   "he's pleased with his goal",
+   "he blames the referee",
+   "he's angry with his team"
+  ],
+  "answer": 0,
+  "explain": "'I should've passed instead of shooting' = regret.",
+  "dialogue": true,
+  "notes": {
+   "he's pleased with his goal": "They lost; he didn't score.",
+   "he blames the referee": "The referee isn't mentioned.",
+   "he's angry with his team": "He blames himself."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Ella: Did the experiment work?|Raj: Not the way we planned, but what went wrong turned out to be more interesting than what we were testing.",
+  "q": "What does Raj suggest?",
+  "options": [
+   "an unexpected result was valuable",
+   "the experiment was a total success",
+   "they should give up",
+   "the results were boring"
+  ],
+  "answer": 0,
+  "explain": "What went wrong was 'more interesting than what we were testing'.",
+  "dialogue": true,
+  "notes": {
+   "the experiment was a total success": "It didn't work as planned.",
+   "they should give up": "He sounds enthusiastic, not ready to quit.",
+   "the results were boring": "It was more interesting."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Leah: Is the new climbing centre worth it?|Tom: It's pricey, but you get what you pay for; the routes are superb.",
+  "q": "What is Tom's view?",
+  "options": [
+   "expensive but good value",
+   "cheap but poor quality",
+   "too expensive to be worth it",
+   "the routes are disappointing"
+  ],
+  "answer": 0,
+  "explain": "'Pricey, but you get what you pay for' = worth the price.",
+  "dialogue": true,
+  "notes": {
+   "cheap but poor quality": "It's pricey, and the routes are superb.",
+   "too expensive to be worth it": "He says it's worth it.",
+   "the routes are disappointing": "'The routes are superb.'"
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Mum: You said you'd be back by six.|Ben: I know, but the bus broke down and my phone had died, so I couldn't let you know.",
+  "q": "Why didn't Ben tell his mum he'd be late?",
+  "options": [
+   "he had no way of contacting her",
+   "he forgot to call",
+   "he didn't think it mattered",
+   "he was back by six"
+  ],
+  "answer": 0,
+  "explain": "'My phone had died, so I couldn't let you know.'",
+  "dialogue": true,
+  "notes": {
+   "he forgot to call": "He couldn't, rather than forgot.",
+   "he didn't think it mattered": "He's apologising.",
+   "he was back by six": "He was late."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Zoe: Do you fancy the robotics workshop?|Max: Normally I'd jump at it, but I've got far too much on this term.",
+  "q": "What is Max's answer?",
+  "options": [
+   "no, because he is too busy",
+   "yes, he's very excited",
+   "maybe next week",
+   "no, he isn't interested in robots"
+  ],
+  "answer": 0,
+  "explain": "'Normally I'd jump at it, but I've got far too much on.'",
+  "dialogue": true,
+  "notes": {
+   "yes, he's very excited": "He says 'but…'.",
+   "maybe next week": "Next week isn't mentioned.",
+   "no, he isn't interested in robots": "He normally would be keen."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Our head of year insists the uniform rules are there for a reason, though she's never quite said what that reason is.",
+  "q": "What is the speaker implying?",
+  "options": [
+   "the rules may not be well justified",
+   "the head explains the rules clearly",
+   "the rules are about to change",
+   "they agree with all the rules"
+  ],
+  "answer": 0,
+  "explain": "'Never quite said what that reason is' hints the reason is unclear.",
+  "notes": {
+   "the head explains the rules clearly": "The reason has never been given.",
+   "the rules are about to change": "Change isn't mentioned.",
+   "they agree with all the rules": "The tone is doubtful."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The dragon exhibit is drawing such crowds that timed tickets are being introduced; you'll have to book a half-hour slot in advance.",
+  "q": "What's changing at the exhibit?",
+  "options": [
+   "visitors must reserve a time",
+   "it is closing early",
+   "it's moving to a bigger room",
+   "children go free"
+  ],
+  "answer": 0,
+  "explain": "'Book a half-hour slot in advance' = reserve a time.",
+  "notes": {
+   "it is closing early": "Closing isn't mentioned.",
+   "it's moving to a bigger room": "Moving isn't mentioned.",
+   "children go free": "Prices aren't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Only after reading the instructions for the third time did I realise the model had been missing a piece all along.",
+  "q": "What did the speaker discover?",
+  "options": [
+   "the kit was incomplete",
+   "they had built it wrongly",
+   "the instructions were wrong",
+   "they had lost a piece themselves"
+  ],
+  "answer": 0,
+  "explain": "'Missing a piece all along' = it was missing from the start.",
+  "notes": {
+   "they had built it wrongly": "The problem was a missing piece.",
+   "the instructions were wrong": "The instructions weren't the problem.",
+   "they had lost a piece themselves": "'All along' means it was never there."
+  }
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "Hardly had the bell rung when everyone rushed outside.",
+  "answer": "Hardly had the bell rung when everyone rushed outside.",
+  "explain": "Inversion after 'hardly… when'."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "It's high time we started revising for the exams.",
+  "answer": "It's high time we started revising for the exams.",
+  "explain": "It's high time + past simple."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "Were it not for her help, I'd never have finished.",
+  "answer": "Were it not for her help, I'd never have finished.",
+  "explain": "Inverted conditional: were it not for."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "The match, which had been postponed twice, finally went ahead.",
+  "answer": "The match, which had been postponed twice, finally went ahead.",
+  "explain": "Non-defining relative clause."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "I'd sooner walk than wait another hour for the bus.",
+  "answer": "I'd sooner walk than wait another hour for the bus.",
+  "explain": "I'd sooner + verb + than."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "Little did they know that the castle had a secret passage.",
+  "answer": "Little did they know that the castle had a secret passage.",
+  "explain": "Inversion: little did they know."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "What I enjoy most is building things from scratch.",
+  "answer": "What I enjoy most is building things from scratch.",
+  "explain": "Cleft sentence: What I enjoy most is…"
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "Not until the lights went out did we notice the stars.",
+  "answer": "Not until the lights went out did we notice the stars.",
+  "explain": "Not until… did + subject."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "She is thought to have discovered a new species.",
+  "answer": "She is thought to have discovered a new species.",
+  "explain": "Passive report with perfect infinitive."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "Rarely have I seen such a beautiful sunset.",
+  "answer": "Rarely have I seen such a beautiful sunset.",
+  "explain": "Rarely + have + subject."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "Whatever happens, we will finish the project.",
+  "answer": "Whatever happens, we will finish the project.",
+  "explain": "Whatever = no matter what."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "Had we left earlier, we would have caught the train.",
+  "answer": "Had we left earlier, we would have caught the train.",
+  "explain": "Inverted third conditional."
+ },
+ {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "Not once did the referee look our way.",
