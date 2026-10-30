@@ -944,6 +944,552 @@
      }
     }
    ]
+  },
+  {
+   "title": "The Cartographer's Daughter",
+   "text": "Maps, her father liked to say, were not pictures of the world but arguments about it. Every map decided what mattered: which rivers were named, which villages vanished beneath a convenient blank. As a child, Mira had thought this a pleasantly eccentric remark. Only when she began drawing maps of her own did its full weight settle on her. To map the forest behind her house, she had to decide whether the badgers' sett deserved a symbol, whether the path the dog-walkers had worn counted as a path at all. Each choice, she realised, quietly told the reader what to notice and what to ignore.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What did Mira's father mean about maps?",
+     "options": [
+      "they show what someone chose",
+      "they are always accurate",
+      "they are works of art",
+      "they cause arguments between people"
+     ],
+     "answer": 0,
+     "explain": "'Every map decided what mattered.'",
+     "notes": {
+      "they are always accurate": "The point is that they select, not that they're accurate.",
+      "they are works of art": "'Not pictures' — arguments.",
+      "they cause arguments between people": "'Arguments' here means points of view, not quarrels."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How did Mira view the remark as a child?",
+     "options": [
+      "as an odd but charming saying",
+      "as completely wrong",
+      "as deeply important",
+      "as a family secret"
+     ],
+     "answer": 0,
+     "explain": "'A pleasantly eccentric remark.'",
+     "notes": {
+      "as completely wrong": "She didn't reject it.",
+      "as deeply important": "Its weight came later.",
+      "as a family secret": "Secrecy isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "When did she understand it fully?",
+     "options": [
+      "when she made her own maps",
+      "when her father died",
+      "when she read about maps",
+      "when she got lost in the forest"
+     ],
+     "answer": 0,
+     "explain": "'Only when she began drawing maps of her own.'",
+     "notes": {
+      "when her father died": "Death isn't mentioned.",
+      "when she read about maps": "Reading isn't mentioned.",
+      "when she got lost in the forest": "Getting lost isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why does the writer mention the badgers' sett?",
+     "options": [
+      "as an example of a mapping decision",
+      "because badgers are dangerous",
+      "because it was her favourite place",
+      "because her father asked her to draw it"
+     ],
+     "answer": 0,
+     "explain": "She had to decide 'whether the badgers' sett deserved a symbol'.",
+     "notes": {
+      "because badgers are dangerous": "Danger isn't mentioned.",
+      "because it was her favourite place": "Preference isn't mentioned.",
+      "because her father asked her to draw it": "Her father didn't ask."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does 'quietly' suggest in the last sentence?",
+     "options": [
+      "maps steer readers subtly",
+      "maps should be read in silence",
+      "Mira worked very quietly",
+      "readers ignore most maps"
+     ],
+     "answer": 0,
+     "explain": "The choices steer attention without announcing it.",
+     "notes": {
+      "maps should be read in silence": "It's not about silence.",
+      "Mira worked very quietly": "It describes the choices, not Mira.",
+      "readers ignore most maps": "Readers are guided, not ignoring."
+     }
+    }
+   ]
+  },
+  {
+   "title": "In Defence of the Unfinished",
+   "text": "We revere the completed work: the published novel, the polished symphony. Yet history is littered with masterpieces that were never finished, from Schubert's 'Unfinished' Symphony to Gaudí's still-rising basilica, and their incompleteness is often part of their power. An unfinished work invites the audience in; it asks us to imagine what might have been. There is a lesson here for anyone paralysed by perfectionism. The draft abandoned in a drawer achieves nothing, but the half-built project shared with others can inspire, provoke and, occasionally, be completed by hands other than our own.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What does the writer say we usually admire?",
+     "options": [
+      "finished works",
+      "unfinished drafts",
+      "famous architects",
+      "short pieces"
+     ],
+     "answer": 0,
+     "explain": "'We revere the completed work.'",
+     "notes": {
+      "unfinished drafts": "That's the writer's surprising point.",
+      "famous architects": "Architects are one example.",
+      "short pieces": "Length isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why are Schubert and Gaudí mentioned?",
+     "options": [
+      "as famous unfinished masterpieces",
+      "as perfectionists",
+      "as failures",
+      "as people who worked together"
+     ],
+     "answer": 0,
+     "explain": "Examples of 'masterpieces that were never finished'.",
+     "notes": {
+      "as perfectionists": "Perfectionism is a separate point.",
+      "as failures": "Their works are called masterpieces.",
+      "as people who worked together": "They didn't work together."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "According to the writer, how does an unfinished work affect audiences?",
+     "options": [
+      "it makes them imagine",
+      "it disappoints them",
+      "it confuses them",
+      "it bores them"
+     ],
+     "answer": 0,
+     "explain": "'It asks us to imagine what might have been.'",
+     "notes": {
+      "it disappoints them": "Its incompleteness is 'part of their power'.",
+      "it confuses them": "Confusion isn't mentioned.",
+      "it bores them": "Boredom isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Who is the 'lesson' aimed at?",
+     "options": [
+      "perfectionists",
+      "professional musicians",
+      "art critics",
+      "people who never start projects"
+     ],
+     "answer": 0,
+     "explain": "'Anyone paralysed by perfectionism.'",
+     "notes": {
+      "professional musicians": "Musicians are just an example.",
+      "art critics": "Critics aren't addressed.",
+      "people who never start projects": "The lesson is about not finishing, not not starting."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What contrast is made in the final sentence?",
+     "options": [
+      "hidden drafts die; shared ones grow",
+      "drafts are better than finished work",
+      "projects should always be finished alone",
+      "nobody should share unfinished work"
+     ],
+     "answer": 0,
+     "explain": "'The draft abandoned in a drawer achieves nothing, but the half-built project shared… can inspire.'",
+     "notes": {
+      "drafts are better than finished work": "Not a general claim.",
+      "projects should always be finished alone": "Others may finish it.",
+      "nobody should share unfinished work": "The opposite is advised."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Lost Hour",
+   "text": "Each spring, when the clocks went forward, Grandpa Tobias insisted that the missing hour had not vanished but merely been 'mislaid', and that it could be found by anyone sufficiently determined. My cousins and I spent years searching: under floorboards, inside the grandfather clock, in the pages of his oldest books. It was not until after his death that we found, tucked inside his watch, a note in his spidery hand: 'The hour was always in the searching. Thank you for spending it with me.' We wept, of course; but we also laughed, for we understood at last that we had been not detectives but guests.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What did Grandpa claim about the lost hour?",
+     "options": [
+      "it was mislaid, not gone",
+      "it never existed",
+      "he had stolen it",
+      "it came back in autumn"
+     ],
+     "answer": 0,
+     "explain": "'Had not vanished but merely been mislaid.'",
+     "notes": {
+      "it never existed": "He said it could be found.",
+      "he had stolen it": "Stealing isn't claimed.",
+      "it came back in autumn": "Autumn isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Where did the children search?",
+     "options": [
+      "all over the house",
+      "in the garden",
+      "at the clockmaker's",
+      "in the town library"
+     ],
+     "answer": 0,
+     "explain": "Floorboards, the grandfather clock, his oldest books.",
+     "notes": {
+      "in the garden": "The garden isn't mentioned.",
+      "at the clockmaker's": "A clockmaker isn't mentioned.",
+      "in the town library": "The library isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Where was the note found?",
+     "options": [
+      "in his watch",
+      "under a floorboard",
+      "in a book",
+      "in the grandfather clock"
+     ],
+     "answer": 0,
+     "explain": "'Tucked inside his watch.'",
+     "notes": {
+      "under a floorboard": "They searched there, but didn't find it.",
+      "in a book": "They searched books, but the note was in the watch.",
+      "in the grandfather clock": "They searched the clock too."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What did the note reveal?",
+     "options": [
+      "searching was the point",
+      "where the hour was hidden",
+      "that he had lied to them",
+      "that the hour was in the clock"
+     ],
+     "answer": 0,
+     "explain": "'The hour was always in the searching.'",
+     "notes": {
+      "where the hour was hidden": "It didn't give a location.",
+      "that he had lied to them": "It reframes, not confesses a lie.",
+      "that the hour was in the clock": "No location is given."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does 'not detectives but guests' mean?",
+     "options": [
+      "they'd been sharing his time",
+      "they had failed to solve a crime",
+      "they had visited too often",
+      "they had never really searched"
+     ],
+     "answer": 0,
+     "explain": "The searching was time spent together, like guests at his invitation.",
+     "notes": {
+      "they had failed to solve a crime": "There was no crime.",
+      "they had visited too often": "Frequency isn't the point.",
+      "they had never really searched": "They searched for years."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Can Animals Be Bored?",
+   "text": "Anyone who has watched a caged parrot pluck out its own feathers may suspect that animals experience something like boredom. Proving it is another matter. In one study, mink kept in bare cages were found to spend more time lying awake but inactive, and, crucially, to investigate any new object, even unpleasant ones, far more eagerly than mink in enriched enclosures. Researchers argue that this hunger for stimulation, regardless of its quality, is precisely what boredom looks like. If they are right, the implications for how we house farm, zoo and even pet animals are considerable.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What does the parrot example suggest?",
+     "options": [
+      "animals might feel bored",
+      "parrots are always unhappy",
+      "feathers grow back quickly",
+      "cages are always cruel"
+     ],
+     "answer": 0,
+     "explain": "It 'may suspect that animals experience something like boredom'.",
+     "notes": {
+      "parrots are always unhappy": "Not all parrots are described.",
+      "feathers grow back quickly": "Regrowth isn't mentioned.",
+      "cages are always cruel": "That's not the claim."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does 'Proving it is another matter' mean?",
+     "options": [
+      "it's hard to prove",
+      "it has already been proven",
+      "it doesn't matter",
+      "proof isn't needed"
+     ],
+     "answer": 0,
+     "explain": "Suspecting is easy; proving is much harder.",
+     "notes": {
+      "it has already been proven": "The text says it's difficult.",
+      "it doesn't matter": "It does matter.",
+      "proof isn't needed": "Studies try to prove it."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What did mink in bare cages do?",
+     "options": [
+      "explored any new object eagerly",
+      "slept more deeply",
+      "avoided new objects",
+      "became more aggressive"
+     ],
+     "answer": 0,
+     "explain": "'Investigate any new object… far more eagerly.'",
+     "notes": {
+      "slept more deeply": "They lay awake, not asleep.",
+      "avoided new objects": "The opposite.",
+      "became more aggressive": "Aggression isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why is 'even unpleasant ones' important?",
+     "options": [
+      "it shows they wanted any stimulation",
+      "it shows they liked unpleasant things",
+      "it proves the cages were dirty",
+      "it shows they were afraid"
+     ],
+     "answer": 0,
+     "explain": "A 'hunger for stimulation, regardless of its quality'.",
+     "notes": {
+      "it shows they liked unpleasant things": "They wanted stimulation, not unpleasantness itself.",
+      "it proves the cages were dirty": "Dirt isn't mentioned.",
+      "it shows they were afraid": "Fear isn't the point."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does the final sentence suggest?",
+     "options": [
+      "animal housing may need rethinking",
+      "all zoos should close",
+      "pets don't get bored",
+      "farms are better than zoos"
+     ],
+     "answer": 0,
+     "explain": "'The implications for how we house… animals are considerable.'",
+     "notes": {
+      "all zoos should close": "Closure isn't suggested.",
+      "pets don't get bored": "Pets are included.",
+      "farms are better than zoos": "No comparison is made."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Echo Chamber Problem",
+   "text": "Recommendation algorithms are designed to show us more of what we already like, which sounds harmless enough. Over time, however, they can narrow our horizons without our noticing: the music fan who once explored widely finds her playlist shrinking to a single genre; the curious reader is offered only opinions that echo his own. The danger is not that algorithms lie, but that they flatter. Some designers now build in deliberate 'serendipity', occasionally slipping in something unexpected. Whether users will tolerate being surprised, rather than pleased, remains to be seen.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What are recommendation algorithms designed to do?",
+     "options": [
+      "show us more of what we like",
+      "challenge our opinions",
+      "find new friends for us",
+      "stop us using screens"
+     ],
+     "answer": 0,
+     "explain": "'Designed to show us more of what we already like.'",
+     "notes": {
+      "challenge our opinions": "That's what serendipity tries to add.",
+      "find new friends for us": "Friends aren't mentioned.",
+      "stop us using screens": "Screen time isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is the gradual effect described?",
+     "options": [
+      "our interests narrow unnoticed",
+      "we become more curious",
+      "we stop listening to music",
+      "we read more widely"
+     ],
+     "answer": 0,
+     "explain": "'Narrow our horizons without our noticing.'",
+     "notes": {
+      "we become more curious": "The opposite.",
+      "we stop listening to music": "The playlist shrinks, but she still listens.",
+      "we read more widely": "The opposite."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does 'they flatter' mean here?",
+     "options": [
+      "they please us",
+      "they give us false information",
+      "they praise our taste openly",
+      "they make us feel guilty"
+     ],
+     "answer": 0,
+     "explain": "Flattering = pleasing us by confirming our views, unlike lying.",
+     "notes": {
+      "they give us false information": "'Not that algorithms lie.'",
+      "they praise our taste openly": "It's not open praise.",
+      "they make us feel guilty": "Guilt isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is 'serendipity' in this context?",
+     "options": [
+      "planned unexpected suggestions",
+      "a new type of algorithm error",
+      "a music genre",
+      "a way to block adverts"
+     ],
+     "answer": 0,
+     "explain": "'Occasionally slipping in something unexpected' on purpose.",
+     "notes": {
+      "a new type of algorithm error": "It's deliberate, not an error.",
+      "a music genre": "It isn't a genre.",
+      "a way to block adverts": "Adverts aren't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What uncertainty does the writer end with?",
+     "options": [
+      "if users will like surprises",
+      "whether algorithms will improve",
+      "whether designers will be paid",
+      "whether music will survive"
+     ],
+     "answer": 0,
+     "explain": "'Whether users will tolerate being surprised, rather than pleased.'",
+     "notes": {
+      "whether algorithms will improve": "Improvement isn't the question.",
+      "whether designers will be paid": "Payment isn't mentioned.",
+      "whether music will survive": "Music's survival isn't questioned."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Girl Who Talked to Glaciers",
+   "text": "Freya had grown up beside the Sólheimajökull glacier, and in her family it was a standing joke that she spoke to it each morning. What began as a childish game became, by the age of fifteen, a meticulous diary: every day she photographed the glacier's edge from the same rock and recorded the distance to a marker her grandfather had painted decades earlier. Her photographs, posted online, attracted the attention of a university team, who found that her amateur record was more continuous than their own. The glacier, she says, has retreated nearly a kilometre in her lifetime. 'I used to talk to it. Now I feel I'm keeping it company.'",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How did her family see her habit at first?",
+     "options": [
+      "as a running joke",
+      "as a scientific project",
+      "as a worrying obsession",
+      "as a school assignment"
+     ],
+     "answer": 0,
+     "explain": "'It was a standing joke.'",
+     "notes": {
+      "as a scientific project": "The science came later.",
+      "as a worrying obsession": "Worry isn't mentioned.",
+      "as a school assignment": "School isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does 'meticulous' tell us about her diary?",
+     "options": [
+      "it was very careful and precise",
+      "it was very short",
+      "it was secret",
+      "it was written in a hurry"
+     ],
+     "answer": 0,
+     "explain": "Same rock, daily photos, measured distances = meticulous.",
+     "notes": {
+      "it was very short": "It was daily for years.",
+      "it was secret": "It was posted online.",
+      "it was written in a hurry": "The opposite of careful."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What did she use as a reference point?",
+     "options": [
+      "a marker her grandfather painted",
+      "a university sign",
+      "a tree by the glacier",
+      "a GPS device"
+     ],
+     "answer": 0,
+     "explain": "'A marker her grandfather had painted decades earlier.'",
+     "notes": {
+      "a university sign": "The university came later.",
+      "a tree by the glacier": "A tree isn't mentioned.",
+      "a GPS device": "GPS isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why was her record valuable to the scientists?",
+     "options": [
+      "it had fewer gaps than theirs",
+      "it used better cameras",
+      "it was older than theirs",
+      "it was written in Icelandic"
+     ],
+     "answer": 0,
+     "explain": "'More continuous than their own.'",
+     "notes": {
+      "it used better cameras": "Cameras aren't compared.",
+      "it was older than theirs": "Age isn't the point.",
+      "it was written in Icelandic": "Language isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does her final remark suggest?",
+     "options": [
+      "a sad, loyal bond",
+      "she no longer cares about it",
+      "she hopes it will grow back soon",
+      "she wants to leave the area"
+     ],
+     "answer": 0,
+     "explain": "'Keeping it company' as it retreats suggests loyalty and sadness.",
+     "notes": {
+      "she no longer cares about it": "She clearly still cares.",
+      "she hopes it will grow back soon": "Growth isn't suggested.",
+      "she wants to leave the area": "Leaving isn't mentioned."
+     }
+    }
+   ]
   }
  ]
 }

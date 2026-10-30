@@ -1048,6 +1048,284 @@
   "explain": "Inverted third conditional."
  },
  {
+  "type": "listen",
+  "say": "Admittedly, the opening chapters drag, but persevere and you'll be rewarded with one of the cleverest twists I've read.",
+  "q": "What does the speaker advise?",
+  "options": [
+   "keep reading",
+   "skip the twist",
+   "read only the start",
+   "give the book up"
+  ],
+  "answer": 0,
+  "explain": "'Persevere and you'll be rewarded.'",
+  "notes": {
+   "skip the twist": "The twist is the reward.",
+   "read only the start": "The start drags.",
+   "give the book up": "They advise persevering."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "What struck me most about the exchange trip wasn't the scenery, stunning as it was, but how welcoming the host families were.",
+  "q": "What impressed the speaker most?",
+  "options": [
+   "the people's warmth",
+   "the scenery",
+   "the food",
+   "the weather"
+  ],
+  "answer": 0,
+  "explain": "'Not the scenery… but how welcoming the host families were.'",
+  "notes": {
+   "the scenery": "The scenery was stunning, but not the most striking.",
+   "the food": "Food isn't mentioned.",
+   "the weather": "Weather isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "We'd set aside two hours for the escape room and got out in forty minutes, a record, apparently.",
+  "q": "How long did they take?",
+  "options": [
+   "forty minutes",
+   "two hours",
+   "eighty minutes",
+   "four minutes"
+  ],
+  "answer": 0,
+  "explain": "'Got out in forty minutes.'",
+  "notes": {
+   "two hours": "Two hours was what they'd allowed.",
+   "eighty minutes": "Eighty isn't mentioned.",
+   "four minutes": "Four isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I'm all for school uniforms in principle; it's the itchy blazers I object to.",
+  "q": "What is the speaker's complaint?",
+  "options": [
+   "the blazers",
+   "uniforms in general",
+   "the colours",
+   "the price"
+  ],
+  "answer": 0,
+  "explain": "'All for school uniforms in principle; it's the itchy blazers.'",
+  "notes": {
+   "uniforms in general": "They support uniforms in principle.",
+   "the colours": "Colours aren't mentioned.",
+   "the price": "Price isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The planetarium show, normally twelve pounds, is free on the first Sunday of each month, though you still have to book.",
+  "q": "What must you do on the free day?",
+  "options": [
+   "reserve a place",
+   "pay twelve pounds",
+   "arrive very early",
+   "bring a member"
+  ],
+  "answer": 0,
+  "explain": "'You still have to book.'",
+  "notes": {
+   "pay twelve pounds": "It's free that day.",
+   "arrive very early": "Arriving early isn't mentioned.",
+   "bring a member": "Members aren't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Little did we realise, as we waved goodbye to the ferry, that it was the last one off the island that day.",
+  "q": "What does the speaker imply?",
+  "options": [
+   "they were stuck there",
+   "they caught the ferry",
+   "the ferry sank",
+   "they wanted to stay"
+  ],
+  "answer": 0,
+  "explain": "'Little did we realise… the last one' = they missed the last ferry.",
+  "notes": {
+   "they caught the ferry": "They waved goodbye to it.",
+   "the ferry sank": "Sinking isn't mentioned.",
+   "they wanted to stay": "They didn't realise; it wasn't a choice."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Raj: Are you going to try out for the play?|Mia: I've half a mind to, but the thought of singing solo fills me with dread.",
+  "q": "How does Mia feel?",
+  "options": [
+   "tempted but nervous",
+   "certain she'll audition",
+   "uninterested",
+   "excited about singing"
+  ],
+  "answer": 0,
+  "explain": "'Half a mind to' = tempted; singing 'fills me with dread' = nervous.",
+  "dialogue": true,
+  "notes": {
+   "certain she'll audition": "She's undecided.",
+   "uninterested": "She is tempted.",
+   "excited about singing": "Singing fills her with dread."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Teacher: You can redo the test if you like.|Sam: Will the higher mark count?|Teacher: I'm afraid it'll be an average of the two.",
+  "q": "How will the mark be worked out?",
+  "options": [
+   "averaging both tests",
+   "the higher mark counts",
+   "only the new mark counts",
+   "the first mark counts"
+  ],
+  "answer": 0,
+  "explain": "'An average of the two.'",
+  "dialogue": true,
+  "notes": {
+   "the higher mark counts": "Sam hoped so, but no.",
+   "only the new mark counts": "Both count.",
+   "the first mark counts": "Both count."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Jay: Did you hear the robotics club's been scrapped?|Leah: Only temporarily, while they refurbish the lab. It's back after half-term.",
+  "q": "What has really happened to the club?",
+  "options": [
+   "it's paused for a while",
+   "it's closed for good",
+   "it's moved to another school",
+   "it's getting a new teacher"
+  ],
+  "answer": 0,
+  "explain": "'Only temporarily… back after half-term.'",
+  "dialogue": true,
+  "notes": {
+   "it's closed for good": "It's temporary.",
+   "it's moved to another school": "Moving isn't mentioned.",
+   "it's getting a new teacher": "A new teacher isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Ana: You look pleased with yourself!|Ben: I finally beat Dad at chess. Mind you, I suspect he let me win.",
+  "q": "What does Ben suspect?",
+  "options": [
+   "his dad lost on purpose",
+   "he cheated",
+   "his dad is improving",
+   "the game wasn't finished"
+  ],
+  "answer": 0,
+  "explain": "'I suspect he let me win.'",
+  "dialogue": true,
+  "notes": {
+   "he cheated": "Ben didn't cheat.",
+   "his dad is improving": "Improvement isn't mentioned.",
+   "the game wasn't finished": "He 'finally beat' him."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Gran: You'll catch your death out there without a coat.|Kai: I'll only be a minute, I'm just fetching the post!",
+  "q": "Why doesn't Kai take a coat?",
+  "options": [
+   "he won't be long",
+   "he isn't cold",
+   "he lost his coat",
+   "it's sunny"
+  ],
+  "answer": 0,
+  "explain": "'I'll only be a minute.'",
+  "dialogue": true,
+  "notes": {
+   "he isn't cold": "He doesn't say he isn't cold.",
+   "he lost his coat": "His coat isn't lost.",
+   "it's sunny": "Weather isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Ella: Is the documentary worth watching?|Omar: The footage is breathtaking, though the narrator's a bit smug.",
+  "q": "What does Omar criticise?",
+  "options": [
+   "the narrator's tone",
+   "the camerawork",
+   "the length",
+   "the music"
+  ],
+  "answer": 0,
+  "explain": "'The narrator's a bit smug.'",
+  "dialogue": true,
+  "notes": {
+   "the camerawork": "The footage is breathtaking.",
+   "the length": "Length isn't mentioned.",
+   "the music": "Music isn't mentioned."
+  }
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "Scarcely had we sat down when the fire alarm went off.",
+  "answer": "Scarcely had we sat down when the fire alarm went off.",
+  "explain": "Inversion after 'scarcely… when'."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "You needn't have brought a present, but thank you.",
+  "answer": "You needn't have brought a present, but thank you.",
+  "explain": "Needn't have + past participle."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "It's no use complaining about the weather.",
+  "answer": "It's no use complaining about the weather.",
+  "explain": "It's no use + -ing."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "The castle is believed to have been built in the twelfth century.",
+  "answer": "The castle is believed to have been built in the twelfth century.",
+  "explain": "Passive report with perfect infinitive."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "It was the dog that ate my homework.",
+  "answer": "It was the dog that ate my homework.",
+  "explain": "Cleft: it was… that."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "Not only is she clever, but she's also kind.",
+  "answer": "Not only is she clever, but she's also kind.",
+  "explain": "Not only + inversion."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "Should it rain, the picnic will be moved indoors.",
+  "answer": "Should it rain, the picnic will be moved indoors.",
+  "explain": "Should + subject = if."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "I'd rather we left a bit earlier.",
+  "answer": "I'd rather we left a bit earlier.",
+  "explain": "I'd rather + subject + past simple."
+ },
+ {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "Not once did the referee look our way.",

@@ -1105,6 +1105,284 @@
   "explain": "The + comparative, the + comparative."
  },
  {
+  "type": "listen",
+  "say": "The bake sale raised three hundred and twenty pounds, which is eighty more than last year.",
+  "q": "How much did last year's sale raise?",
+  "options": [
+   "£240",
+   "£320",
+   "£400",
+   "£80"
+  ],
+  "answer": 0,
+  "explain": "£320 − £80 = £240.",
+  "notes": {
+   "£320": "£320 is this year's total.",
+   "£400": "£400 would be eighty more, not less.",
+   "£80": "£80 is the difference."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I'd intended to stay for the whole festival, but by Saturday afternoon I'd had more than enough of the mud.",
+  "q": "Why did the speaker leave early?",
+  "options": [
+   "the muddy ground",
+   "the music was poor",
+   "they ran out of money",
+   "the weather was too hot"
+  ],
+  "answer": 0,
+  "explain": "'I'd had more than enough of the mud.'",
+  "notes": {
+   "the music was poor": "Music isn't criticised.",
+   "they ran out of money": "Money isn't mentioned.",
+   "the weather was too hot": "Mud suggests rain, not heat."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Contrary to what the poster says, the art workshop isn't just for beginners; anyone's welcome, whatever their level.",
+  "q": "Who can join the workshop?",
+  "options": [
+   "people of any level",
+   "only beginners",
+   "only advanced artists",
+   "only people who saw the poster"
+  ],
+  "answer": 0,
+  "explain": "'Anyone's welcome, whatever their level.'",
+  "notes": {
+   "only beginners": "That's what the poster wrongly says.",
+   "only advanced artists": "'Whatever their level.'",
+   "only people who saw the poster": "The poster isn't a condition."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "My brother reckons the new climbing gym is overpriced, but given how much equipment they lend you, I think it's a bargain.",
+  "q": "What does the speaker think of the gym?",
+  "options": [
+   "it's good value",
+   "it's too expensive",
+   "the equipment is poor",
+   "they agree with the brother"
+  ],
+  "answer": 0,
+  "explain": "'Given how much equipment they lend you… a bargain.'",
+  "notes": {
+   "it's too expensive": "That's the brother's view.",
+   "the equipment is poor": "They lend lots of equipment.",
+   "they agree with the brother": "They disagree with him."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The library's moving the homework club from Tuesdays to Thursdays, and it'll start half an hour later, at four.",
+  "q": "When will the club start now?",
+  "options": [
+   "Thursdays at four",
+   "Tuesdays at four",
+   "Thursdays at half three",
+   "Tuesdays at half four"
+  ],
+  "answer": 0,
+  "explain": "Thursdays; half an hour later = 4:00.",
+  "notes": {
+   "Tuesdays at four": "Tuesday is the old day.",
+   "Thursdays at half three": "Half three was the old time.",
+   "Tuesdays at half four": "The day and time are both wrong."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Had I realised how steep the path was, I'd have worn proper boots instead of trainers.",
+  "q": "What did the speaker wear?",
+  "options": [
+   "trainers",
+   "proper boots",
+   "sandals",
+   "wellies"
+  ],
+  "answer": 0,
+  "explain": "Third conditional: they didn't realise, so they wore trainers.",
+  "notes": {
+   "proper boots": "They wish they had.",
+   "sandals": "Sandals aren't mentioned.",
+   "wellies": "Wellies aren't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Dan: Shall I bring my guitar to the campfire?|Ella: Go on then, but only if you promise not to play that one song all night!",
+  "q": "How does Ella respond?",
+  "options": [
+   "yes, with a joking condition",
+   "no, she hates guitars",
+   "she isn't sure yet",
+   "yes, and to play all night"
+  ],
+  "answer": 0,
+  "explain": "'Go on then, but only if…' = yes, jokingly.",
+  "dialogue": true,
+  "notes": {
+   "no, she hates guitars": "She says 'go on then'.",
+   "she isn't sure yet": "She answers clearly.",
+   "yes, and to play all night": "She jokes about not playing one song all night."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Ivy: I can't believe you've finished the whole series already.|Sam: I'll admit I binge-watched the last six episodes in one go.",
+  "q": "What does Sam admit?",
+  "options": [
+   "watching six episodes at once",
+   "not finishing the series",
+   "watching one a week",
+   "falling asleep during it"
+  ],
+  "answer": 0,
+  "explain": "'Binge-watched the last six episodes in one go.'",
+  "dialogue": true,
+  "notes": {
+   "not finishing the series": "He has finished.",
+   "watching one a week": "The opposite of bingeing.",
+   "falling asleep during it": "Sleep isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Mum: Did you remember to book the dentist?|Kai: Ah. It completely slipped my mind. I'll do it first thing tomorrow.",
+  "q": "What happened?",
+  "options": [
+   "Kai forgot",
+   "Kai booked it",
+   "the dentist was closed",
+   "Mum booked it"
+  ],
+  "answer": 0,
+  "explain": "'It completely slipped my mind' = he forgot.",
+  "dialogue": true,
+  "notes": {
+   "Kai booked it": "He hasn't booked it.",
+   "the dentist was closed": "Closure isn't mentioned.",
+   "Mum booked it": "Kai will do it tomorrow."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Coach: You've been picked for the county squad.|Leah: Seriously? I thought I'd blown it in the trial!|Coach: Not at all.",
+  "q": "How had Leah felt about the trial?",
+  "options": [
+   "she thought it had gone badly",
+   "she was sure she'd done well",
+   "she didn't go to it",
+   "she didn't care about it"
+  ],
+  "answer": 0,
+  "explain": "'I thought I'd blown it' = ruined my chance.",
+  "dialogue": true,
+  "notes": {
+   "she was sure she'd done well": "She was worried.",
+   "she didn't go to it": "She took part.",
+   "she didn't care about it": "She's clearly excited."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Omar: Is it worth getting the bus pass?|Jo: If you take more than eight trips a month, definitely. It pays for itself.",
+  "q": "When is the pass worth buying?",
+  "options": [
+   "for frequent travellers",
+   "for any bus trip",
+   "only for students",
+   "for fewer than eight trips"
+  ],
+  "answer": 0,
+  "explain": "'More than eight trips a month… it pays for itself.'",
+  "dialogue": true,
+  "notes": {
+   "for any bus trip": "Only with more than eight trips.",
+   "only for students": "Students aren't mentioned.",
+   "for fewer than eight trips": "That's the opposite."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Gran: That jumper's lovely. Is it new?|Ana: Actually, it was Mum's. I rescued it from the charity bag.",
+  "q": "Where did the jumper come from?",
+  "options": [
+   "her mum's old clothes",
+   "a new shop",
+   "Gran",
+   "a market"
+  ],
+  "answer": 0,
+  "explain": "'It was Mum's. I rescued it from the charity bag.'",
+  "dialogue": true,
+  "notes": {
+   "a new shop": "It isn't new.",
+   "Gran": "Gran is admiring it.",
+   "a market": "A market isn't mentioned."
+  }
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "The match has been called off owing to the snow.",
+  "answer": "The match has been called off owing to the snow.",
+  "explain": "Called off = cancelled; owing to = because of."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "I'd have helped if you'd asked me.",
+  "answer": "I'd have helped if you'd asked me.",
+  "explain": "Third conditional in speech: I'd have, you'd asked."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "She's used to getting up early for training.",
+  "answer": "She's used to getting up early for training.",
+  "explain": "Be used to + -ing."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "They had the roof repaired after the storm.",
+  "answer": "They had the roof repaired after the storm.",
+  "explain": "Have something done."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "No matter how hard I try, I can't whistle.",
+  "answer": "No matter how hard I try, I can't whistle.",
+  "explain": "No matter how + adjective/adverb."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "He apologised for being late again.",
+  "answer": "He apologised for being late again.",
+  "explain": "Apologise for + -ing."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "The tickets, which cost ten pounds, sold out quickly.",
+  "answer": "The tickets, which cost ten pounds, sold out quickly.",
+  "explain": "Non-defining relative clause with commas."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "I'm looking forward to seeing the dolphins.",
+  "answer": "I'm looking forward to seeing the dolphins.",
+  "explain": "Look forward to + -ing."
+ },
+ {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "I wish I had brought my umbrella.",

@@ -944,6 +944,552 @@
      }
     }
    ]
+  },
+  {
+   "title": "Why Pandas Are Picky Eaters",
+   "text": "Giant pandas belong to the bear family and have the digestive system of a meat-eater, yet around 99% of their diet is bamboo. Since their bodies extract very little energy from it, they must eat for up to fourteen hours a day, consuming as much as 38 kilograms. This also explains why pandas move slowly and avoid steep slopes: they are saving energy. Scientists believe pandas switched to bamboo millions of years ago because it was plentiful and few other animals competed for it. The downside is that when bamboo forests flower and die, which happens every few decades, pandas can face starvation.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What is surprising about the panda's diet?",
+     "options": [
+      "a meat-eater's gut, but bamboo",
+      "it eats mainly fish and meat",
+      "it eats very little each day",
+      "it only eats once a week"
+     ],
+     "answer": 0,
+     "explain": "'The digestive system of a meat-eater, yet around 99% of their diet is bamboo.'",
+     "notes": {
+      "it eats mainly fish and meat": "Bamboo is 99% of the diet.",
+      "it eats very little each day": "They eat up to 38 kg a day.",
+      "it only eats once a week": "They eat for up to fourteen hours a day."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why do pandas eat for so long?",
+     "options": [
+      "bamboo gives little energy",
+      "they are always hungry for meat",
+      "they enjoy the taste",
+      "bamboo is hard to find"
+     ],
+     "answer": 0,
+     "explain": "'Their bodies extract very little energy from it.'",
+     "notes": {
+      "they are always hungry for meat": "Meat isn't the reason.",
+      "they enjoy the taste": "Taste isn't mentioned.",
+      "bamboo is hard to find": "It was 'plentiful'."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why do pandas avoid steep slopes?",
+     "options": [
+      "to conserve energy",
+      "they are afraid of heights",
+      "bamboo doesn't grow there",
+      "they can't climb"
+     ],
+     "answer": 0,
+     "explain": "'They are saving energy.'",
+     "notes": {
+      "they are afraid of heights": "Fear isn't mentioned.",
+      "bamboo doesn't grow there": "Where bamboo grows isn't mentioned.",
+      "they can't climb": "Climbing ability isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why might pandas have chosen bamboo?",
+     "options": [
+      "there was lots and little competition",
+      "it was the tastiest food",
+      "meat became poisonous",
+      "humans fed it to them"
+     ],
+     "answer": 0,
+     "explain": "'Plentiful and few other animals competed for it.'",
+     "notes": {
+      "it was the tastiest food": "Taste isn't mentioned.",
+      "meat became poisonous": "Poison isn't mentioned.",
+      "humans fed it to them": "It was millions of years ago."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What danger is mentioned at the end?",
+     "options": [
+      "starving when bamboo dies",
+      "hunters in the forests",
+      "disease from eating bamboo",
+      "too many pandas in one place"
+     ],
+     "answer": 0,
+     "explain": "'When bamboo forests flower and die… pandas can face starvation.'",
+     "notes": {
+      "hunters in the forests": "Hunters aren't mentioned.",
+      "disease from eating bamboo": "Disease isn't mentioned.",
+      "too many pandas in one place": "Overcrowding isn't mentioned."
+     }
+    }
+   ]
+  },
+  {
+   "title": "My Gap Year in a Treehouse Village (blog)",
+   "text": "Before university, I spent six months volunteering at an eco-village in Costa Rica where everyone lives in treehouses. I'll be honest: the first fortnight was tough. There was no hot water, the insects were enormous and I missed my phone far more than I'd admit to my friends. But gradually I adjusted. I learned to cook on a wood stove, helped build two new treehouses and discovered that I'm actually quite good at teaching English to the local kids. Coming home, what surprised me most was how loud everything seemed.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How long did the writer stay?",
+     "options": [
+      "half a year",
+      "a fortnight",
+      "two years",
+      "a summer holiday"
+     ],
+     "answer": 0,
+     "explain": "'Six months' = half a year.",
+     "notes": {
+      "a fortnight": "A fortnight was the hard start.",
+      "two years": "Six months, not two years.",
+      "a summer holiday": "Six months is longer than a summer holiday."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How did the writer find the first two weeks?",
+     "options": [
+      "difficult",
+      "relaxing",
+      "exciting",
+      "boring"
+     ],
+     "answer": 0,
+     "explain": "'The first fortnight was tough.'",
+     "notes": {
+      "relaxing": "'Tough' isn't relaxing.",
+      "exciting": "They struggled at first.",
+      "boring": "Boredom isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does the writer admit about their phone?",
+     "options": [
+      "they missed it a lot",
+      "they lost it in the forest",
+      "they used it secretly",
+      "they didn't miss it at all"
+     ],
+     "answer": 0,
+     "explain": "'Missed my phone far more than I'd admit to my friends.'",
+     "notes": {
+      "they lost it in the forest": "Losing it isn't mentioned.",
+      "they used it secretly": "Secret use isn't mentioned.",
+      "they didn't miss it at all": "They missed it a lot."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What did the writer discover about themselves?",
+     "options": [
+      "they had a talent for teaching",
+      "they were a brilliant cook",
+      "they hated building things",
+      "they wanted to stay forever"
+     ],
+     "answer": 0,
+     "explain": "'I'm actually quite good at teaching English.'",
+     "notes": {
+      "they were a brilliant cook": "They learned to cook, but talent isn't claimed.",
+      "they hated building things": "They helped build treehouses.",
+      "they wanted to stay forever": "They came home."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What surprised them on returning?",
+     "options": [
+      "the noise",
+      "the hot water",
+      "the food",
+      "the weather"
+     ],
+     "answer": 0,
+     "explain": "'How loud everything seemed.'",
+     "notes": {
+      "the hot water": "Hot water isn't the surprise mentioned.",
+      "the food": "Food isn't mentioned.",
+      "the weather": "Weather isn't mentioned."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Rise of Esports in Schools",
+   "text": "A growing number of schools now have esports teams that compete in video-game tournaments, much as they would in football or netball. Supporters say the teams attract students who have never felt at home in traditional sports, and that players develop genuine teamwork, communication and strategic thinking. Coaches also set strict rules: players must keep their grades up and take regular breaks from the screen. Not everyone is convinced, however. Some parents worry that school esports will simply give children another excuse to spend hours gaming, and they question whether it should count as a sport at all.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How are school esports teams similar to other teams?",
+     "options": [
+      "they compete in tournaments",
+      "they train outdoors",
+      "they need a large field",
+      "they only play football games"
+     ],
+     "answer": 0,
+     "explain": "'Compete in video-game tournaments, much as they would in football or netball.'",
+     "notes": {
+      "they train outdoors": "They play video games.",
+      "they need a large field": "No field is needed.",
+      "they only play football games": "Football is just a comparison."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Who, according to supporters, do the teams attract?",
+     "options": [
+      "students who avoid normal sports",
+      "only the best athletes",
+      "students with poor grades",
+      "teachers who love games"
+     ],
+     "answer": 0,
+     "explain": "'Students who have never felt at home in traditional sports.'",
+     "notes": {
+      "only the best athletes": "Athletes aren't the target.",
+      "students with poor grades": "Grades must be kept up.",
+      "teachers who love games": "Teachers aren't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Which skill is NOT mentioned as a benefit?",
+     "options": [
+      "typing speed",
+      "teamwork",
+      "communication",
+      "strategic thinking"
+     ],
+     "answer": 0,
+     "explain": "Typing speed isn't in the list.",
+     "notes": {
+      "teamwork": "Teamwork is listed.",
+      "communication": "Communication is listed.",
+      "strategic thinking": "Strategic thinking is listed."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What rules do coaches set?",
+     "options": [
+      "good grades and screen breaks",
+      "no gaming at home at all",
+      "only one tournament per year",
+      "parents must attend every match"
+     ],
+     "answer": 0,
+     "explain": "'Players must keep their grades up and take regular breaks.'",
+     "notes": {
+      "no gaming at home at all": "Home gaming isn't banned.",
+      "only one tournament per year": "Tournament numbers aren't limited.",
+      "parents must attend every match": "Parents attending isn't required."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is one concern some parents have?",
+     "options": [
+      "more time spent gaming",
+      "the cost of the computers",
+      "injuries during matches",
+      "students losing friends"
+     ],
+     "answer": 0,
+     "explain": "'Another excuse to spend hours gaming.'",
+     "notes": {
+      "the cost of the computers": "Cost isn't mentioned.",
+      "injuries during matches": "Injuries aren't mentioned.",
+      "students losing friends": "Friendship isn't mentioned."
+     }
+    }
+   ]
+  },
+  {
+   "title": "A Message from Mountain Rescue",
+   "text": "Every summer, our volunteers are called out to help walkers who are lost, injured or simply exhausted. The majority of these incidents could easily have been avoided. Before setting out, always check the weather forecast and tell someone your route and the time you expect to be back. Don't rely on your phone for navigation: batteries drain quickly in the cold, and signal is patchy in the hills. Carry a paper map and compass, and know how to use them. Finally, remember that turning back is not failure. The mountain will still be there next weekend.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What does the writer say about most call-outs?",
+     "options": [
+      "they were preventable",
+      "they were caused by bad luck",
+      "they happened in winter",
+      "they involved climbers only"
+     ],
+     "answer": 0,
+     "explain": "'The majority… could easily have been avoided.'",
+     "notes": {
+      "they were caused by bad luck": "Bad luck isn't the cause given.",
+      "they happened in winter": "The text says 'every summer'.",
+      "they involved climbers only": "Walkers are mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What should you tell someone before setting off?",
+     "options": [
+      "your route and return time",
+      "your phone number",
+      "your height and weight",
+      "how fit you are"
+     ],
+     "answer": 0,
+     "explain": "'Tell someone your route and the time you expect to be back.'",
+     "notes": {
+      "your phone number": "The phone number isn't mentioned.",
+      "your height and weight": "Height and weight aren't mentioned.",
+      "how fit you are": "Fitness isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why shouldn't you rely on a phone?",
+     "options": [
+      "power and signal can fail",
+      "phones are too heavy",
+      "maps on phones are wrong",
+      "phones are banned on mountains"
+     ],
+     "answer": 0,
+     "explain": "'Batteries drain quickly… signal is patchy.'",
+     "notes": {
+      "phones are too heavy": "Weight isn't mentioned.",
+      "maps on phones are wrong": "Accuracy isn't the problem.",
+      "phones are banned on mountains": "No ban is mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What should walkers carry?",
+     "options": [
+      "a map and compass",
+      "a second phone",
+      "extra batteries only",
+      "a tent"
+     ],
+     "answer": 0,
+     "explain": "'Carry a paper map and compass.'",
+     "notes": {
+      "a second phone": "A second phone isn't advised.",
+      "extra batteries only": "The text advises a map and compass.",
+      "a tent": "A tent isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is the message of the last two sentences?",
+     "options": [
+      "it's OK to turn back",
+      "you must always reach the top",
+      "mountains are getting smaller",
+      "only go walking at weekends"
+     ],
+     "answer": 0,
+     "explain": "'Turning back is not failure. The mountain will still be there.'",
+     "notes": {
+      "you must always reach the top": "The opposite.",
+      "mountains are getting smaller": "It's a figure of speech about trying again.",
+      "only go walking at weekends": "Weekends are just an example."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Inside the Chocolate Factory (a school trip report)",
+   "text": "Our trip to the Cocoa Works was not quite the Willy Wonka experience some of us had been hoping for; there were no rivers of chocolate, and nobody was turned into a blueberry. Still, it was fascinating. We learned that cocoa beans taste bitter until they are fermented and roasted, and that it takes around 400 beans to make a single kilogram of chocolate. The highlight was designing our own bars, although Zak's chilli-and-marshmallow creation was, let's say, an acquired taste. Each of us left with a bag of samples, most of which didn't survive the coach journey home.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How did the trip compare with expectations?",
+     "options": [
+      "less magical, but still interesting",
+      "exactly like the film",
+      "boring and disappointing",
+      "too scary for students"
+     ],
+     "answer": 0,
+     "explain": "'Not quite the Willy Wonka experience… Still, it was fascinating.'",
+     "notes": {
+      "exactly like the film": "There were no chocolate rivers.",
+      "boring and disappointing": "'It was fascinating.'",
+      "too scary for students": "Nothing scary is mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What makes cocoa beans less bitter?",
+     "options": [
+      "fermenting and roasting",
+      "adding milk",
+      "freezing them",
+      "picking them early"
+     ],
+     "answer": 0,
+     "explain": "'Bitter until they are fermented and roasted.'",
+     "notes": {
+      "adding milk": "Milk isn't mentioned.",
+      "freezing them": "Freezing isn't mentioned.",
+      "picking them early": "Picking time isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How many beans make one kilogram of chocolate?",
+     "options": [
+      "about 400",
+      "about 40",
+      "about 4,000",
+      "exactly 100"
+     ],
+     "answer": 0,
+     "explain": "'Around 400 beans.'",
+     "notes": {
+      "about 40": "Forty is far too few.",
+      "about 4,000": "Four thousand is too many.",
+      "exactly 100": "One hundred isn't the number."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does 'an acquired taste' suggest about Zak's bar?",
+     "options": [
+      "most people didn't like it",
+      "everyone loved it",
+      "it won a prize",
+      "it was the sweetest bar"
+     ],
+     "answer": 0,
+     "explain": "'An acquired taste' politely means few people like it at first.",
+     "notes": {
+      "everyone loved it": "The phrase suggests the opposite.",
+      "it won a prize": "Prizes aren't mentioned.",
+      "it was the sweetest bar": "Sweetness isn't the point."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What happened to most of the samples?",
+     "options": [
+      "they got eaten",
+      "they melted in the sun",
+      "they were given to teachers",
+      "they were left on the coach"
+     ],
+     "answer": 0,
+     "explain": "'Most of which didn't survive the coach journey home' = eaten.",
+     "notes": {
+      "they melted in the sun": "Melting isn't mentioned.",
+      "they were given to teachers": "Teachers aren't mentioned.",
+      "they were left on the coach": "'Didn't survive' is a joke about eating them."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Teenager Who Cleaned the Ocean",
+   "text": "At sixteen, Boyan Slat went diving in Greece and found more plastic bags than fish. Rather than shrugging it off, he spent the next two years designing a system that would use ocean currents to collect floating plastic, instead of sending boats to chase it. Many experts dismissed the idea as naïve, and the first prototypes broke apart in rough seas. Undeterred, his team kept redesigning, and their equipment has now removed hundreds of tonnes of rubbish. Slat himself admits the problem is far from solved: the most important step, he says, is stopping plastic reaching the sea in the first place.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What made Boyan want to act?",
+     "options": [
+      "seeing so much plastic while diving",
+      "a school project on fish",
+      "a film about the ocean",
+      "a holiday job on a boat"
+     ],
+     "answer": 0,
+     "explain": "'Found more plastic bags than fish.'",
+     "notes": {
+      "a school project on fish": "A school project isn't mentioned.",
+      "a film about the ocean": "A film isn't mentioned.",
+      "a holiday job on a boat": "A job isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What was clever about his design?",
+     "options": [
+      "it lets currents bring the plastic",
+      "it uses very fast boats",
+      "it sinks plastic to the seabed",
+      "it is cheap to build"
+     ],
+     "answer": 0,
+     "explain": "'Use ocean currents to collect floating plastic, instead of sending boats to chase it.'",
+     "notes": {
+      "it uses very fast boats": "It avoids chasing with boats.",
+      "it sinks plastic to the seabed": "It collects, not sinks.",
+      "it is cheap to build": "Cost isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How did many experts react at first?",
+     "options": [
+      "they thought it was unrealistic",
+      "they offered to fund it",
+      "they copied the idea",
+      "they ignored the problem"
+     ],
+     "answer": 0,
+     "explain": "'Dismissed the idea as naïve.'",
+     "notes": {
+      "they offered to fund it": "Funding isn't mentioned.",
+      "they copied the idea": "Copying isn't mentioned.",
+      "they ignored the problem": "They criticised the idea, not the problem."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does 'Undeterred' show about the team?",
+     "options": [
+      "they kept going despite setbacks",
+      "they gave up quickly",
+      "they blamed the weather",
+      "they asked experts for help"
+     ],
+     "answer": 0,
+     "explain": "'Undeterred' = not put off.",
+     "notes": {
+      "they gave up quickly": "They kept redesigning.",
+      "they blamed the weather": "Blame isn't mentioned.",
+      "they asked experts for help": "Experts were doubtful."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does Slat say is most important?",
+     "options": [
+      "stopping plastic at the source",
+      "building more collection systems",
+      "diving to find more plastic",
+      "removing the old prototypes"
+     ],
+     "answer": 0,
+     "explain": "'Stopping plastic reaching the sea in the first place.'",
+     "notes": {
+      "building more collection systems": "He says prevention matters most.",
+      "diving to find more plastic": "Diving isn't the solution.",
+      "removing the old prototypes": "Old prototypes aren't mentioned."
+     }
+    }
+   ]
   }
  ]
 }

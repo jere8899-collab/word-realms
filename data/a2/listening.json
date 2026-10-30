@@ -909,13 +909,13 @@
   "say": "Football practice is every Tuesday, but this week it's on Wednesday because of the school concert.",
   "q": "When is practice this week?",
   "options": [
-   "on Wednesday",
+   "a day later than usual",
    "on Tuesday",
    "on Thursday",
    "there is no practice"
   ],
   "answer": 0,
-  "explain": "This week only: Wednesday.",
+  "explain": "This week only: Wednesday, the day after the usual Tuesday.",
   "notes": {
    "on Tuesday": "Tuesday is the usual day.",
    "on Thursday": "Thursday wasn't said.",
@@ -1288,7 +1288,7 @@
   "say": "Ben: Is this your jumper?|Kai: No, mine's got a hood. That's Sam's.",
   "q": "Whose jumper is it?",
   "options": [
-   "Sam's",
+   "it belongs to Sam",
    "Kai's",
    "Ben's",
    "nobody's"
@@ -1478,7 +1478,7 @@
   "say": "Teacher: Bring your project on Monday.|Kim: Not Friday?|Teacher: No, I've changed it to Monday.",
   "q": "When is the project due?",
   "options": [
-   "on Monday",
+   "Monday, not Friday",
    "on Friday",
    "on Tuesday",
    "today"

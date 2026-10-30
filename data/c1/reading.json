@@ -944,6 +944,552 @@
      }
     }
    ]
+  },
+  {
+   "title": "The Art of Getting Lost",
+   "text": "In an age of satellite navigation, getting genuinely lost has become something of a rarity, and some psychologists think we are poorer for it. Studies of London taxi drivers, who must memorise thousands of streets, found that the part of the brain associated with spatial memory grew measurably larger over the course of their training. Habitual satnav users, by contrast, show far less activity in that region while travelling. None of this means we should abandon technology; but switching off the app occasionally, and trusting our own sense of direction, may keep our mental maps in better shape.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Why is getting lost now 'a rarity'?",
+     "options": [
+      "navigation apps guide us everywhere",
+      "cities have fewer streets",
+      "people travel less than before",
+      "maps are more accurate"
+     ],
+     "answer": 0,
+     "explain": "'In an age of satellite navigation.'",
+     "notes": {
+      "cities have fewer streets": "Street numbers aren't mentioned.",
+      "people travel less than before": "Travel amount isn't mentioned.",
+      "maps are more accurate": "Paper maps aren't the point."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What did the taxi-driver studies show?",
+     "options": [
+      "part of the brain grew",
+      "drivers got lost more often",
+      "drivers preferred satnav",
+      "the brain shrank during training"
+     ],
+     "answer": 0,
+     "explain": "'The part of the brain associated with spatial memory grew measurably larger.'",
+     "notes": {
+      "drivers got lost more often": "They memorised the streets.",
+      "drivers preferred satnav": "Preference isn't mentioned.",
+      "the brain shrank during training": "It grew, not shrank."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What contrast is made with satnav users?",
+     "options": [
+      "their brains do less",
+      "they drive more safely",
+      "they have larger brains",
+      "they never get lost"
+     ],
+     "answer": 0,
+     "explain": "'Show far less activity in that region while travelling.'",
+     "notes": {
+      "they drive more safely": "Safety isn't mentioned.",
+      "they have larger brains": "That's the taxi drivers.",
+      "they never get lost": "Getting lost isn't measured."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Does the writer think we should give up technology?",
+     "options": [
+      "no, but use it less sometimes",
+      "yes, completely",
+      "only in big cities",
+      "only taxi drivers should"
+     ],
+     "answer": 0,
+     "explain": "'None of this means we should abandon technology; but switching off… occasionally.'",
+     "notes": {
+      "yes, completely": "'None of this means we should abandon technology.'",
+      "only in big cities": "Cities aren't the condition.",
+      "only taxi drivers should": "The advice is for everyone."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does 'mental maps' refer to?",
+     "options": [
+      "our inner sense of where things are",
+      "maps we draw at school",
+      "apps on our phones",
+      "dreams about travelling"
+     ],
+     "answer": 0,
+     "explain": "The brain's spatial memory = our 'mental maps'.",
+     "notes": {
+      "maps we draw at school": "School drawings aren't meant.",
+      "apps on our phones": "Apps are the technology.",
+      "dreams about travelling": "Dreams aren't mentioned."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Notes from the School Beekeeping Club",
+   "text": "When Ms Adeyemi first proposed keeping bees on the school roof, the reaction from parents was, to put it diplomatically, mixed. Three years on, the club has thirty members, two thriving hives and a waiting list. Members wear full protective suits and are never allowed near the hives unsupervised. Contrary to popular belief, honeybees are rarely aggressive unless their hive is threatened; in three years, there has been only one sting, and that was Ms Adeyemi herself, who had forgotten her gloves. Last year's honey sold out at the summer fair within an hour, raising enough to buy a third hive.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How did parents first react to the idea?",
+     "options": [
+      "some were against it",
+      "they all loved it",
+      "nobody noticed",
+      "they offered to build the hives"
+     ],
+     "answer": 0,
+     "explain": "'To put it diplomatically, mixed' = some opposed it.",
+     "notes": {
+      "they all loved it": "'Mixed' isn't all positive.",
+      "nobody noticed": "They reacted.",
+      "they offered to build the hives": "Building isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What suggests the club is popular now?",
+     "options": [
+      "there's a waiting list",
+      "it has a new teacher",
+      "it meets every day",
+      "it's free to join"
+     ],
+     "answer": 0,
+     "explain": "'Thirty members… and a waiting list.'",
+     "notes": {
+      "it has a new teacher": "A new teacher isn't mentioned.",
+      "it meets every day": "Frequency isn't mentioned.",
+      "it's free to join": "Cost isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What safety rule is mentioned?",
+     "options": [
+      "students are always supervised",
+      "only adults can open hives",
+      "the roof is locked at lunch",
+      "bees are kept in cages"
+     ],
+     "answer": 0,
+     "explain": "'Never allowed near the hives unsupervised.'",
+     "notes": {
+      "only adults can open hives": "Students do work with the hives.",
+      "the roof is locked at lunch": "Locks aren't mentioned.",
+      "bees are kept in cages": "Cages aren't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does the writer say about honeybees?",
+     "options": [
+      "they sting mainly to defend",
+      "they are very aggressive",
+      "they never sting at all",
+      "they only sting teachers"
+     ],
+     "answer": 0,
+     "explain": "'Rarely aggressive unless their hive is threatened.'",
+     "notes": {
+      "they are very aggressive": "'Contrary to popular belief.'",
+      "they never sting at all": "There was one sting.",
+      "they only sting teachers": "The teacher's sting is a joke, not a rule."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What was the honey money used for?",
+     "options": [
+      "another hive",
+      "new protective suits",
+      "a school trip",
+      "more gloves"
+     ],
+     "answer": 0,
+     "explain": "'Raising enough to buy a third hive.'",
+     "notes": {
+      "new protective suits": "Suits aren't mentioned.",
+      "a school trip": "A trip isn't mentioned.",
+      "more gloves": "Gloves are a joke about the sting."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Museum of Broken Friendships",
+   "text": "In a small gallery in Zagreb, visitors wander past exhibits that have nothing in common except that each represents the end of a relationship: a teddy bear, a toaster, a single roller skate. Each object is donated anonymously, along with a short story explaining its significance. What began as an art project between two friends has since toured more than fifty countries. Curators say the appeal lies in the paradox at the museum's heart: though every story is about loss, visitors frequently leave feeling comforted, reassured that heartache is universal.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What links the exhibits?",
+     "options": [
+      "each marks the end of a relationship",
+      "they are all toys",
+      "they were all expensive",
+      "they belonged to one person"
+     ],
+     "answer": 0,
+     "explain": "'Each represents the end of a relationship.'",
+     "notes": {
+      "they are all toys": "A toaster isn't a toy.",
+      "they were all expensive": "Value isn't mentioned.",
+      "they belonged to one person": "Many people donated them."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What comes with each object?",
+     "options": [
+      "a short story about it",
+      "the owner's name",
+      "a photograph",
+      "a price tag"
+     ],
+     "answer": 0,
+     "explain": "'Along with a short story explaining its significance.'",
+     "notes": {
+      "the owner's name": "Donations are anonymous.",
+      "a photograph": "Photos aren't mentioned.",
+      "a price tag": "Prices aren't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How did the museum start?",
+     "options": [
+      "as two friends' art project",
+      "as a government idea",
+      "as a shop",
+      "as a school project"
+     ],
+     "answer": 0,
+     "explain": "'What began as an art project between two friends.'",
+     "notes": {
+      "as a government idea": "The government isn't mentioned.",
+      "as a shop": "It isn't a shop.",
+      "as a school project": "A school isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is the 'paradox' the curators mention?",
+     "options": [
+      "sad stories comfort people",
+      "the museum is small but famous",
+      "the objects are cheap but valued",
+      "visitors come but don't donate"
+     ],
+     "answer": 0,
+     "explain": "'Though every story is about loss, visitors frequently leave feeling comforted.'",
+     "notes": {
+      "the museum is small but famous": "Size isn't the paradox described.",
+      "the objects are cheap but valued": "Value isn't discussed.",
+      "visitors come but don't donate": "Donations aren't the paradox."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why do visitors feel reassured?",
+     "options": [
+      "they see everyone feels heartache",
+      "the stories have happy endings",
+      "they get their objects back",
+      "the exhibits are funny"
+     ],
+     "answer": 0,
+     "explain": "'Reassured that heartache is universal.'",
+     "notes": {
+      "the stories have happy endings": "The stories are about loss.",
+      "they get their objects back": "Objects are donated.",
+      "the exhibits are funny": "Humour isn't mentioned."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Should Homework Be Banned?",
+   "text": "Every few years, a headline announces that some school has abolished homework, and the debate reignites. Research offers less clarity than either side would like. For primary-age children, studies find little link between homework and achievement; for older students, a moderate amount, roughly one to two hours a night, appears beneficial, but returns diminish sharply beyond that. Much depends on the type of task: practising a skill already taught seems more useful than tackling new material alone. Perhaps the question, then, is not whether homework should exist, but what it should be for.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What does the writer say about the research?",
+     "options": [
+      "it isn't as clear as people want",
+      "it proves homework is useless",
+      "it proves homework is essential",
+      "there is no research at all"
+     ],
+     "answer": 0,
+     "explain": "'Research offers less clarity than either side would like.'",
+     "notes": {
+      "it proves homework is useless": "It doesn't prove that.",
+      "it proves homework is essential": "It doesn't prove that either.",
+      "there is no research at all": "Studies are described."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What do studies find for young children?",
+     "options": [
+      "homework makes little difference",
+      "homework greatly improves results",
+      "homework harms them",
+      "they need two hours a night"
+     ],
+     "answer": 0,
+     "explain": "'Little link between homework and achievement.'",
+     "notes": {
+      "homework greatly improves results": "Little link, not a big improvement.",
+      "homework harms them": "Harm isn't claimed.",
+      "they need two hours a night": "Two hours is for older students."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does 'returns diminish sharply' mean?",
+     "options": [
+      "extra homework helps much less",
+      "students hand in less work",
+      "teachers give back fewer marks",
+      "students go home earlier"
+     ],
+     "answer": 0,
+     "explain": "Beyond two hours, each extra hour brings much less benefit.",
+     "notes": {
+      "students hand in less work": "It's about benefit, not handing in.",
+      "teachers give back fewer marks": "Marks aren't meant.",
+      "students go home earlier": "Going home isn't meant."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Which homework seems most useful?",
+     "options": [
+      "practising what was taught",
+      "learning new topics alone",
+      "long research projects",
+      "copying from textbooks"
+     ],
+     "answer": 0,
+     "explain": "'Practising a skill already taught seems more useful.'",
+     "notes": {
+      "learning new topics alone": "That seems less useful.",
+      "long research projects": "Projects aren't mentioned.",
+      "copying from textbooks": "Copying isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How does the writer reframe the debate?",
+     "options": [
+      "ask what homework is for",
+      "ban it in all schools",
+      "double it for older students",
+      "let parents decide"
+     ],
+     "answer": 0,
+     "explain": "'Not whether homework should exist, but what it should be for.'",
+     "notes": {
+      "ban it in all schools": "No ban is suggested.",
+      "double it for older students": "Doubling isn't suggested.",
+      "let parents decide": "Parents aren't mentioned."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Night the Lights Went Out",
+   "text": "When a storm knocked out power across the island for three days, my family discovered that we had no idea how to entertain ourselves without electricity. The first evening was a disaster of sulking and dead phones. By the second, however, my dad had dug out a battered board game, my sister was reading by candlelight, and I'd started writing a story in a notebook I'd forgotten I owned. When the lights flickered back on, there was a moment of genuine disappointment. We now hold a 'blackout night' once a month, though I suspect my sister cheats by charging her phone in secret.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How long did the power cut last?",
+     "options": [
+      "three days",
+      "one evening",
+      "a week",
+      "a month"
+     ],
+     "answer": 0,
+     "explain": "'For three days.'",
+     "notes": {
+      "one evening": "The first evening was just the start.",
+      "a week": "Three days, not a week.",
+      "a month": "Monthly is the new tradition."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How did the first evening go?",
+     "options": [
+      "badly",
+      "peacefully",
+      "brilliantly",
+      "quickly"
+     ],
+     "answer": 0,
+     "explain": "'A disaster of sulking and dead phones.'",
+     "notes": {
+      "peacefully": "Sulking isn't peaceful.",
+      "brilliantly": "It was 'a disaster'.",
+      "quickly": "Speed isn't the point."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What did the writer start doing?",
+     "options": [
+      "writing a story",
+      "playing a board game alone",
+      "reading by candlelight",
+      "fixing the electricity"
+     ],
+     "answer": 0,
+     "explain": "'I'd started writing a story in a notebook.'",
+     "notes": {
+      "playing a board game alone": "Dad got the board game out.",
+      "reading by candlelight": "That was the sister.",
+      "fixing the electricity": "Fixing isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How did the family feel when power returned?",
+     "options": [
+      "a little sorry",
+      "hugely relieved",
+      "angry with the storm",
+      "frightened"
+     ],
+     "answer": 0,
+     "explain": "'A moment of genuine disappointment.'",
+     "notes": {
+      "hugely relieved": "They were disappointed, not relieved.",
+      "angry with the storm": "Anger isn't mentioned.",
+      "frightened": "Fear isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does the writer suspect?",
+     "options": [
+      "the sister secretly uses her phone",
+      "dad hides the board game",
+      "the power will go off again",
+      "nobody enjoys blackout night"
+     ],
+     "answer": 0,
+     "explain": "'My sister cheats by charging her phone in secret.'",
+     "notes": {
+      "dad hides the board game": "Dad found the game.",
+      "the power will go off again": "That isn't suggested.",
+      "nobody enjoys blackout night": "They hold it monthly by choice."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Why We Remember Embarrassing Moments",
+   "text": "Most of us can recall, in excruciating detail, a moment of embarrassment from years ago, while countless pleasant afternoons have vanished without trace. Psychologists attribute this to the brain's threat-detection system: emotionally charged events, particularly social blunders, are tagged as important and stored more vividly, presumably because, for our ancestors, being rejected by the group could be genuinely dangerous. The good news is that other people remember our embarrassing moments far less clearly than we do; most, in fact, were too preoccupied with their own to notice.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What contrast is drawn in the first sentence?",
+     "options": [
+      "we keep the bad, lose the good",
+      "happy moments are remembered best",
+      "we forget everything after a year",
+      "embarrassment fades very quickly"
+     ],
+     "answer": 0,
+     "explain": "Embarrassment recalled 'in excruciating detail'; pleasant afternoons 'vanished'.",
+     "notes": {
+      "happy moments are remembered best": "The opposite.",
+      "we forget everything after a year": "Embarrassing memories last years.",
+      "embarrassment fades very quickly": "It lasts for years."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why does the brain store these moments vividly?",
+     "options": [
+      "it treats them as possible threats",
+      "they happen more often",
+      "we talk about them a lot",
+      "they are usually funny"
+     ],
+     "answer": 0,
+     "explain": "'The brain's threat-detection system… tagged as important.'",
+     "notes": {
+      "they happen more often": "Frequency isn't mentioned.",
+      "we talk about them a lot": "Talking isn't mentioned.",
+      "they are usually funny": "Humour isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why might this have mattered for our ancestors?",
+     "options": [
+      "rejection by the group was dangerous",
+      "they had no way to write things down",
+      "they were often embarrassed",
+      "they lived alone"
+     ],
+     "answer": 0,
+     "explain": "'Being rejected by the group could be genuinely dangerous.'",
+     "notes": {
+      "they had no way to write things down": "Writing isn't mentioned.",
+      "they were often embarrassed": "Frequency isn't the point.",
+      "they lived alone": "They lived in groups."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does 'presumably' show about the explanation?",
+     "options": [
+      "it's a likely guess",
+      "it's been proven",
+      "it's a joke",
+      "it's widely rejected"
+     ],
+     "answer": 0,
+     "explain": "'Presumably' = probably, a reasonable assumption.",
+     "notes": {
+      "it's been proven": "It isn't presented as proven.",
+      "it's a joke": "It isn't a joke.",
+      "it's widely rejected": "Rejection isn't suggested."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is the 'good news'?",
+     "options": [
+      "others hardly notice",
+      "embarrassment is good for us",
+      "we can erase bad memories",
+      "our ancestors were kinder"
+     ],
+     "answer": 0,
+     "explain": "'Other people remember our embarrassing moments far less clearly.'",
+     "notes": {
+      "embarrassment is good for us": "That isn't claimed.",
+      "we can erase bad memories": "Erasing isn't mentioned.",
+      "our ancestors were kinder": "Kindness isn't mentioned."
+     }
+    }
+   ]
   }
  ]
 }

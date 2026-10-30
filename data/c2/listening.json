@@ -1048,6 +1048,284 @@
   "explain": "Should + subject = if."
  },
  {
+  "type": "listen",
+  "say": "Notwithstanding the glowing reviews, I found the exhibition curiously lifeless.",
+  "q": "What is the speaker's opinion?",
+  "options": [
+   "they disliked it",
+   "they loved it",
+   "they agree with the reviews",
+   "they didn't go"
+  ],
+  "answer": 0,
+  "explain": "'Notwithstanding' (despite) the reviews, they found it 'lifeless'.",
+  "notes": {
+   "they loved it": "They found it lifeless.",
+   "they agree with the reviews": "They disagree with the reviews.",
+   "they didn't go": "They saw it."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The fun run attracted some four hundred entrants, a quarter of whom were in fancy dress, and the dinosaurs alone accounted for half of those.",
+  "q": "How many runners dressed as dinosaurs?",
+  "options": [
+   "fifty",
+   "a hundred",
+   "two hundred",
+   "twenty-five"
+  ],
+  "answer": 0,
+  "explain": "A quarter of 400 = 100 in fancy dress; half of those = 50 dinosaurs.",
+  "notes": {
+   "a hundred": "100 is everyone in fancy dress.",
+   "two hundred": "200 is half of all entrants.",
+   "twenty-five": "25 isn't the result."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "To call the tournament a success would be stretching it, but at least nobody fell in the river this year.",
+  "q": "How does the speaker view the tournament?",
+  "options": [
+   "it was only so-so",
+   "a complete triumph",
+   "a disaster",
+   "the best ever"
+  ],
+  "answer": 0,
+  "explain": "'Stretching it' to call it a success; just 'at least' one good thing.",
+  "notes": {
+   "a complete triumph": "'Stretching it' means not really a success.",
+   "a disaster": "One thing went right.",
+   "the best ever": "Not a success."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I'm not one for horror films, as a rule, but this one is so cleverly made that I'd make an exception.",
+  "q": "What does the speaker say?",
+  "options": [
+   "they'd watch this one",
+   "they love all horror",
+   "they won't watch it",
+   "it's badly made"
+  ],
+  "answer": 0,
+  "explain": "'I'd make an exception' for this film.",
+  "notes": {
+   "they love all horror": "'Not one for horror films, as a rule.'",
+   "they won't watch it": "They'd make an exception.",
+   "it's badly made": "It's 'so cleverly made'."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The expedition, which was to have set off in June, now won't depart until the ice has thinned, probably late August.",
+  "q": "When will the expedition probably leave?",
+  "options": [
+   "late August",
+   "June",
+   "early August",
+   "next June"
+  ],
+  "answer": 0,
+  "explain": "'Probably late August.'",
+  "notes": {
+   "June": "June was the plan.",
+   "early August": "Late, not early, August.",
+   "next June": "Next June isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Far from discouraging her, the rejection letters only stiffened her resolve to get the story published.",
+  "q": "How did the rejections affect her?",
+  "options": [
+   "made her more determined",
+   "made her give up",
+   "made her angry with publishers",
+   "made her change the story"
+  ],
+  "answer": 0,
+  "explain": "'Stiffened her resolve' = made her more determined.",
+  "notes": {
+   "made her give up": "'Far from discouraging her.'",
+   "made her angry with publishers": "Anger isn't mentioned.",
+   "made her change the story": "Changes aren't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Leo: You've redone the model three times!|Nina: Third time lucky, I hope. The first two collapsed under their own weight.",
+  "q": "Why has Nina rebuilt the model?",
+  "options": [
+   "it kept collapsing",
+   "it was too small",
+   "she lost it",
+   "the teacher asked her to"
+  ],
+  "answer": 0,
+  "explain": "'The first two collapsed under their own weight.'",
+  "dialogue": true,
+  "notes": {
+   "it was too small": "Size isn't mentioned.",
+   "she lost it": "Losing it isn't mentioned.",
+   "the teacher asked her to": "The teacher isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Mia: I gather the trip's in doubt.|Mr Cole: It's touch and go; it depends on whether the coach firm can find a driver.",
+  "q": "How certain is the trip?",
+  "options": [
+   "very uncertain",
+   "definitely on",
+   "definitely off",
+   "postponed until spring"
+  ],
+  "answer": 0,
+  "explain": "'Touch and go' = very uncertain.",
+  "dialogue": true,
+  "notes": {
+   "definitely on": "It depends on a driver.",
+   "definitely off": "It isn't decided.",
+   "postponed until spring": "Spring isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Ben: Your speech went down a storm!|Ava: Did it? I was convinced they were only clapping out of politeness.",
+  "q": "What had Ava believed?",
+  "options": [
+   "the applause wasn't sincere",
+   "the speech was brilliant",
+   "nobody clapped",
+   "she'd forgotten her lines"
+  ],
+  "answer": 0,
+  "explain": "'Only clapping out of politeness.'",
+  "dialogue": true,
+  "notes": {
+   "the speech was brilliant": "She doubted it.",
+   "nobody clapped": "They clapped.",
+   "she'd forgotten her lines": "Lines aren't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Gran: Do you want me to drive you?|Kai: That's kind, but I'd rather cycle; it clears my head before exams.",
+  "q": "Why does Kai prefer to cycle?",
+  "options": [
+   "it helps him think",
+   "it's quicker",
+   "Gran's car is broken",
+   "he's training for a race"
+  ],
+  "answer": 0,
+  "explain": "'It clears my head before exams.'",
+  "dialogue": true,
+  "notes": {
+   "it's quicker": "Speed isn't mentioned.",
+   "Gran's car is broken": "The car is fine.",
+   "he's training for a race": "A race isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Jo: You must be gutted about the match.|Sam: Gutted is an understatement; we were three–nil up at half-time.",
+  "q": "How does Sam feel?",
+  "options": [
+   "devastated",
+   "mildly upset",
+   "relieved",
+   "pleased"
+  ],
+  "answer": 0,
+  "explain": "'Gutted is an understatement' = even worse than very disappointed.",
+  "dialogue": true,
+  "notes": {
+   "mildly upset": "An understatement means far more.",
+   "relieved": "They lost a big lead.",
+   "pleased": "They lost."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Priya: Is the new science teacher strict?|Omar: Strict but scrupulously fair; you always know where you stand.",
+  "q": "How does Omar describe the teacher?",
+  "options": [
+   "firm but just",
+   "unfair and strict",
+   "relaxed and fun",
+   "unpredictable"
+  ],
+  "answer": 0,
+  "explain": "'Strict but scrupulously fair.'",
+  "dialogue": true,
+  "notes": {
+   "unfair and strict": "He's fair.",
+   "relaxed and fun": "He's strict.",
+   "unpredictable": "'You always know where you stand.'"
+  }
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "Not until the following morning did we discover the damage.",
+  "answer": "Not until the following morning did we discover the damage.",
+  "explain": "Not until… did + subject."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "Were you to ask me, I'd say the plan is flawed.",
+  "answer": "Were you to ask me, I'd say the plan is flawed.",
+  "explain": "Inverted conditional: were you to."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "Try as she might, she couldn't open the jar.",
+  "answer": "Try as she might, she couldn't open the jar.",
+  "explain": "Concession: try as she might."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "Only by working together can we finish in time.",
+  "answer": "Only by working together can we finish in time.",
+  "explain": "Only by + -ing + inversion."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "On no account should you feed the animals.",
+  "answer": "On no account should you feed the animals.",
+  "explain": "On no account + inversion."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "So exhausted was he that he fell asleep at once.",
+  "answer": "So exhausted was he that he fell asleep at once.",
+  "explain": "So + adjective + inversion."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "Come what may, I'll be there for the final.",
+  "answer": "Come what may, I'll be there for the final.",
+  "explain": "Fixed phrase: come what may."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "Little did she know what awaited her inside.",
+  "answer": "Little did she know what awaited her inside.",
+  "explain": "Little did + subject + know."
+ },
+ {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "Never before had the scholars seen such a manuscript.",

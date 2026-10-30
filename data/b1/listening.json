@@ -544,7 +544,7 @@
   "say": "The library will be closed for repairs until the twentieth, so please return books to the office instead.",
   "q": "Where should books go for now?",
   "options": [
-   "to the office",
+   "to the school office",
    "to the library",
    "to the teacher",
    "to the classroom"
@@ -1443,7 +1443,7 @@
   "say": "Teacher: The test is next Tuesday.|Ivy: Is it on fractions?|Teacher: Fractions and decimals.",
   "q": "What is the test on?",
   "options": [
-   "fractions and decimals",
+   "both fractions and decimals",
    "only fractions",
    "decimals and times tables",
    "times tables"
