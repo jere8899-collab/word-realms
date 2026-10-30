@@ -82,3 +82,5 @@ from c1_a1v import A1V; from c1_a2g import A2G; from c1_a2v import A2V; from c1_
 GROW["a1"]["vocab"] = A1V
 GROW.setdefault("a2", {}).update({"grammar": A2G, "vocab": A2V})
 GROW.setdefault("b1", {}).update({"grammar": B1G, "vocab": B1V})
+from c1_b2g import B2G; from c1_b2v import B2V
+GROW.setdefault("b2", {}).update({"grammar": B2G, "vocab": B2V})

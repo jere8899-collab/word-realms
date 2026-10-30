@@ -525,5 +525,1586 @@
    "got across": "Get across = make understood.",
    "got by": "Get by = manage with little."
   }
+ },
+ {
+  "type": "mcq",
+  "q": "The astronauts had to ___ the mission because of a fuel leak.",
+  "options": [
+   "call off",
+   "call up",
+   "call for",
+   "call in"
+  ],
+  "answer": 0,
+  "explain": "Call off = cancel. Example: They called off the match.",
+  "notes": {
+   "call up": "Call up = phone, or pick someone for a team.",
+   "call for": "Call for = need or demand.",
+   "call in": "Call in = visit briefly, or ask an expert to come."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I can't ___ how this puzzle works. It's too tricky.",
+  "options": [
+   "figure out",
+   "figure in",
+   "make up",
+   "look up"
+  ],
+  "answer": 0,
+  "explain": "Figure out = understand after thinking. Example: I figured out the answer.",
+  "notes": {
+   "figure in": "Figure in = include in a calculation.",
+   "make up": "Make up = invent.",
+   "look up": "Look up = find in a book or online."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Our class ___ a brilliant idea for the charity fair.",
+  "options": [
+   "came up with",
+   "came across",
+   "came down with",
+   "came round to"
+  ],
+  "answer": 0,
+  "explain": "Come up with = think of an idea. Example: She came up with a plan.",
+  "notes": {
+   "came across": "Come across = find by chance.",
+   "came down with": "Come down with = start to have an illness.",
+   "came round to": "Come round to = finally agree with."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ an old photo of my grandpa while tidying the attic.",
+  "options": [
+   "came across",
+   "came up with",
+   "came over",
+   "came along"
+  ],
+  "answer": 0,
+  "explain": "Come across = find by chance. Example: I came across a rare stamp.",
+  "notes": {
+   "came up with": "Come up with = think of an idea.",
+   "came over": "Come over = visit.",
+   "came along": "Come along = go somewhere with someone."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Don't ___ on your dreams just because one test went badly.",
+  "options": [
+   "give up",
+   "give in",
+   "give out",
+   "give away"
+  ],
+  "answer": 0,
+  "explain": "Give up (on) = stop trying. Example: Never give up!",
+  "notes": {
+   "give in": "Give in = finally agree after arguing.",
+   "give out": "Give out = hand to many people.",
+   "give away": "Give away = give for free, or reveal a secret."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "After hours of begging, Mum finally ___ and let us get a puppy.",
+  "options": [
+   "gave in",
+   "gave up",
+   "gave off",
+   "gave back"
+  ],
+  "answer": 0,
+  "explain": "Give in = stop resisting and agree. Example: He gave in to the pressure.",
+  "notes": {
+   "gave up": "Give up = stop trying.",
+   "gave off": "Give off = produce a smell or light.",
+   "gave back": "Give back = return."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Volcanoes ___ huge clouds of gas and ash.",
+  "options": [
+   "give off",
+   "give out",
+   "give in",
+   "give up"
+  ],
+  "answer": 0,
+  "explain": "Give off = produce (smell, heat, light, gas). Example: The flowers gave off a sweet smell.",
+  "notes": {
+   "give out": "Give out = hand out to many people.",
+   "give in": "Give in = surrender or agree.",
+   "give up": "Give up = stop trying."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The detective promised to ___ the mystery of the missing trophy.",
+  "options": [
+   "look into",
+   "look up to",
+   "look down on",
+   "look forward to"
+  ],
+  "answer": 0,
+  "explain": "Look into = investigate. Example: The police are looking into it.",
+  "notes": {
+   "look up to": "Look up to = admire.",
+   "look down on": "Look down on = think you're better than.",
+   "look forward to": "Look forward to = be excited about something coming."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Younger players really ___ the team captain.",
+  "options": [
+   "look up to",
+   "look into",
+   "look out for",
+   "look over"
+  ],
+  "answer": 0,
+  "explain": "Look up to = admire and respect. Example: I look up to my sister.",
+  "notes": {
+   "look into": "Look into = investigate.",
+   "look out for": "Look out for = watch carefully for.",
+   "look over": "Look over = check quickly."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I can't ___ with all this noise! I'm trying to study.",
+  "options": [
+   "put up",
+   "put off",
+   "put down",
+   "put out"
+  ],
+  "answer": 0,
+  "explain": "Put up with = tolerate. Example: I can't put up with his jokes.",
+  "notes": {
+   "put off": "Put off = postpone.",
+   "put down": "Put down = place on a surface, or criticise.",
+   "put out": "Put out = stop a fire."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We need to ___ ideas for the school magazine.",
+  "options": [
+   "bring up",
+   "bring about",
+   "bring back",
+   "bring round"
+  ],
+  "answer": 0,
+  "explain": "Bring up = mention a topic. Example: She brought up an interesting point.",
+  "notes": {
+   "bring about": "Bring about = cause something to happen.",
+   "bring back": "Bring back = return, or make you remember.",
+   "bring round": "Bring round = wake someone up, or persuade."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The new phones ___ big changes in how teens talk to each other.",
+  "options": [
+   "brought about",
+   "brought up",
+   "brought out",
+   "brought on"
+  ],
+  "answer": 0,
+  "explain": "Bring about = cause to happen. Example: The storm brought about floods.",
+  "notes": {
+   "brought up": "Bring up = mention, or raise a child.",
+   "brought out": "Bring out = release a product.",
+   "brought on": "Bring on = cause something bad, like an illness."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The band will ___ a new album next month.",
+  "options": [
+   "bring out",
+   "bring about",
+   "bring up",
+   "bring in"
+  ],
+  "answer": 0,
+  "explain": "Bring out = release (a product). Example: They're bringing out a new game.",
+  "notes": {
+   "bring about": "Bring about = cause a change.",
+   "bring up": "Bring up = mention a topic.",
+   "bring in": "Bring in = introduce a rule."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The school plans to ___ a new rule about phones.",
+  "options": [
+   "bring in",
+   "bring out",
+   "bring up",
+   "bring off"
+  ],
+  "answer": 0,
+  "explain": "Bring in = introduce (a law or rule). Example: They brought in a new uniform.",
+  "notes": {
+   "bring out": "Bring out = release a product.",
+   "bring up": "Bring up = mention.",
+   "bring off": "Bring off = succeed at something difficult."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The rocket ___ smoothly at dawn.",
+  "options": [
+   "took off",
+   "took up",
+   "took over",
+   "took on"
+  ],
+  "answer": 0,
+  "explain": "Take off = leave the ground (a plane or rocket). Example: The plane took off late.",
+  "notes": {
+   "took up": "Take up = start a hobby.",
+   "took over": "Take over = take control.",
+   "took on": "Take on = accept work, or employ."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "She ___ too many clubs and now she has no free time.",
+  "options": [
+   "took on",
+   "took off",
+   "took in",
+   "took after"
+  ],
+  "answer": 0,
+  "explain": "Take on = accept work or responsibility. Example: Don't take on too much.",
+  "notes": {
+   "took off": "Take off = remove, or leave the ground.",
+   "took in": "Take in = understand, or trick.",
+   "took after": "Take after = be like a parent."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The lesson was so fast that I couldn't ___ it all.",
+  "options": [
+   "take in",
+   "take up",
+   "take on",
+   "take apart"
+  ],
+  "answer": 0,
+  "explain": "Take in = understand and remember. Example: It was a lot to take in.",
+  "notes": {
+   "take up": "Take up = start a hobby.",
+   "take on": "Take on = accept work.",
+   "take apart": "Take apart = separate into pieces."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We ___ at dawn to climb the mountain.",
+  "options": [
+   "set off",
+   "set up",
+   "set in",
+   "set back"
+  ],
+  "answer": 0,
+  "explain": "Set off = start a journey. Example: We set off early.",
+  "notes": {
+   "set up": "Set up = start or prepare.",
+   "set in": "Set in = begin and continue (bad weather).",
+   "set back": "Set back = delay progress."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Winter ___ early this year, and the lake froze in November.",
+  "options": [
+   "set in",
+   "set off",
+   "set out",
+   "set about"
+  ],
+  "answer": 0,
+  "explain": "Set in = start and probably continue (weather, a feeling). Example: Boredom set in.",
+  "notes": {
+   "set off": "Set off = start a journey.",
+   "set out": "Set out = start a journey with a goal.",
+   "set about": "Set about = start doing a task."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Losing the instructions ___ our robot project by a week.",
+  "options": [
+   "set back",
+   "set up",
+   "set aside",
+   "set off"
+  ],
+  "answer": 0,
+  "explain": "Set back = delay progress. Example: The injury set him back.",
+  "notes": {
+   "set up": "Set up = start or prepare.",
+   "set aside": "Set aside = keep for later.",
+   "set off": "Set off = start a journey, or make an alarm ring."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The two friends ___ after an argument about a game.",
+  "options": [
+   "fell out",
+   "fell through",
+   "fell for",
+   "fell behind"
+  ],
+  "answer": 0,
+  "explain": "Fall out (with) = stop being friends after an argument. Example: They fell out over money.",
+  "notes": {
+   "fell through": "Fall through = fail to happen (a plan).",
+   "fell for": "Fall for = be tricked by, or fall in love with.",
+   "fell behind": "Fall behind = not keep up."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Our holiday plans ___ when the hotel closed.",
+  "options": [
+   "fell through",
+   "fell out",
+   "fell apart",
+   "fell over"
+  ],
+  "answer": 0,
+  "explain": "Fall through = a plan fails and doesn't happen. Example: The deal fell through.",
+  "notes": {
+   "fell out": "Fall out = argue.",
+   "fell apart": "Fall apart = break into pieces.",
+   "fell over": "Fall over = trip and fall down."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I was ill for a week and ___ with my schoolwork.",
+  "options": [
+   "fell behind",
+   "fell out",
+   "fell for",
+   "fell back"
+  ],
+  "answer": 0,
+  "explain": "Fall behind = not keep up. Example: Don't fall behind with homework.",
+  "notes": {
+   "fell out": "Fall out = argue.",
+   "fell for": "Fall for = be tricked, or fall in love.",
+   "fell back": "Fall back = move backwards, or rely on."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I can't believe you ___ that silly prank!",
+  "options": [
+   "fell for",
+   "fell behind",
+   "fell through",
+   "fell out"
+  ],
+  "answer": 0,
+  "explain": "Fall for = be tricked by. Example: Everyone fell for the April Fool's joke.",
+  "notes": {
+   "fell behind": "Fall behind = not keep up.",
+   "fell through": "Fall through = fail to happen.",
+   "fell out": "Fall out = argue."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We need to ___ a plan before the treasure hunt starts.",
+  "options": [
+   "draw up",
+   "draw on",
+   "draw back",
+   "draw in"
+  ],
+  "answer": 0,
+  "explain": "Draw up = prepare a plan or list. Example: We drew up a timetable.",
+  "notes": {
+   "draw on": "Draw on = use knowledge or experience.",
+   "draw back": "Draw back = move away.",
+   "draw in": "Draw in = get dark earlier (days)."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Can you ___ the music? I can't hear the film.",
+  "options": [
+   "turn down",
+   "turn up",
+   "turn over",
+   "turn out"
+  ],
+  "answer": 0,
+  "explain": "Turn down = make quieter (or refuse). Example: Turn the TV down.",
+  "notes": {
+   "turn up": "Turn up would make it louder.",
+   "turn over": "Turn over = flip.",
+   "turn out": "Turn out = have a result."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The mysterious stranger ___ to be our new teacher!",
+  "options": [
+   "turned out",
+   "turned up",
+   "turned into",
+   "turned over"
+  ],
+  "answer": 0,
+  "explain": "Turn out = be discovered to be. Example: It turned out to be easy.",
+  "notes": {
+   "turned up": "Turn up = arrive.",
+   "turned into": "Turn into = change into.",
+   "turned over": "Turn over = flip."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I'm ___ this weekend! I can finally sleep in.",
+  "options": [
+   "looking forward to",
+   "looking up to",
+   "looking out for",
+   "looking into"
+  ],
+  "answer": 0,
+  "explain": "Look forward to = be excited about. Example: I look forward to seeing you.",
+  "notes": {
+   "looking up to": "Look up to = admire.",
+   "looking out for": "Look out for = watch for.",
+   "looking into": "Look into = investigate."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The scientist ___ her theory with lots of evidence.",
+  "options": [
+   "backed up",
+   "backed down",
+   "backed out",
+   "backed off"
+  ],
+  "answer": 0,
+  "explain": "Back up = support (an idea, with evidence). Example: Can you back up your claim?",
+  "notes": {
+   "backed down": "Back down = stop arguing and accept defeat.",
+   "backed out": "Back out = stop being part of a plan.",
+   "backed off": "Back off = move away."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "He promised to help with the play but ___ at the last minute.",
+  "options": [
+   "backed out",
+   "backed up",
+   "backed down",
+   "backed into"
+  ],
+  "answer": 0,
+  "explain": "Back out = withdraw from an agreement. Example: She backed out of the deal.",
+  "notes": {
+   "backed up": "Back up = support.",
+   "backed down": "Back down = admit you were wrong.",
+   "backed into": "Back into = hit while reversing."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Our class ___ a survey about favourite pets.",
+  "options": [
+   "carried out",
+   "made out",
+   "did up",
+   "took out"
+  ],
+  "answer": 0,
+  "explain": "Carry out = do (research, a survey, an experiment). Example: We carried out an experiment.",
+  "notes": {
+   "made out": "Make out = see with difficulty.",
+   "did up": "Do up = fasten, or decorate.",
+   "took out": "Take out = remove."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The heavy rain ___ serious damage to the garden.",
+  "options": [
+   "caused",
+   "made",
+   "did up",
+   "brought up"
+  ],
+  "answer": 0,
+  "explain": "Cause damage. You can also say 'do damage'. Example: The storm caused damage.",
+  "notes": {
+   "made": "We don't say make damage.",
+   "did up": "Do up = fasten or decorate.",
+   "brought up": "Bring up = mention."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I always ___ my best in tests.",
+  "options": [
+   "do",
+   "make",
+   "give",
+   "take"
+  ],
+  "answer": 0,
+  "explain": "Do your best. Example: Just do your best.",
+  "notes": {
+   "make": "We don't say make your best.",
+   "give": "Give your best is possible in sport, but do your best is the fixed phrase.",
+   "take": "We don't say take your best."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You have to ___ the rules, or you'll be sent off.",
+  "options": [
+   "obey",
+   "follow up",
+   "keep up",
+   "hold"
+  ],
+  "answer": 0,
+  "explain": "Obey / follow the rules. Example: Players must obey the referee.",
+  "notes": {
+   "follow up": "Follow up = do more about something later.",
+   "keep up": "Keep up = continue, or stay level.",
+   "hold": "We don't say hold the rules."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Can you ___ a secret?",
+  "options": [
+   "keep",
+   "hold",
+   "save",
+   "take"
+  ],
+  "answer": 0,
+  "explain": "Keep a secret. Example: She can't keep a secret.",
+  "notes": {
+   "hold": "We don't say hold a secret.",
+   "save": "We don't say save a secret.",
+   "take": "We don't say take a secret."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We ___ a great time at the theme park.",
+  "options": [
+   "had",
+   "made",
+   "did",
+   "spent"
+  ],
+  "answer": 0,
+  "explain": "Have a good/great time. Example: Have fun!",
+  "notes": {
+   "made": "We don't say made a great time.",
+   "did": "We don't say did a great time.",
+   "spent": "Spend time, but not spend a great time."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "He ___ a promise to help me, and he kept it.",
+  "options": [
+   "made",
+   "did",
+   "gave out",
+   "took"
+  ],
+  "answer": 0,
+  "explain": "Make a promise. Example: I made a promise.",
+  "notes": {
+   "did": "We don't say did a promise.",
+   "gave out": "Give out = hand to many people.",
+   "took": "We don't say took a promise."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "She ___ a speech at the end-of-year assembly.",
+  "options": [
+   "gave",
+   "made up",
+   "said",
+   "told"
+  ],
+  "answer": 0,
+  "explain": "Give (or make) a speech. Example: The head gave a speech.",
+  "notes": {
+   "made up": "Make up = invent.",
+   "said": "Say isn't used with speech.",
+   "told": "Tell is used with stories and jokes."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ a joke and everyone laughed.",
+  "options": [
+   "told",
+   "said",
+   "spoke",
+   "talked"
+  ],
+  "answer": 0,
+  "explain": "Tell a joke / story / lie. Example: Tell me a story.",
+  "notes": {
+   "said": "We don't say said a joke.",
+   "spoke": "Speak is for languages.",
+   "talked": "Talk needs about."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Our team ___ a lot of progress this term.",
+  "options": [
+   "made",
+   "did",
+   "had",
+   "took"
+  ],
+  "answer": 0,
+  "explain": "Make progress. Example: You've made great progress.",
+  "notes": {
+   "did": "We don't say did progress.",
+   "had": "We don't say had progress.",
+   "took": "We don't say took progress."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Let's ___ a break and get some snacks.",
+  "options": [
+   "take",
+   "make",
+   "do",
+   "give"
+  ],
+  "answer": 0,
+  "explain": "Take a break. Example: Take a five-minute break.",
+  "notes": {
+   "make": "We don't say make a break here.",
+   "do": "We don't say do a break.",
+   "give": "Give is used for 'give me a break' (stop annoying me)."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ an effort to talk to the new student.",
+  "options": [
+   "made",
+   "did",
+   "took",
+   "had"
+  ],
+  "answer": 0,
+  "explain": "Make an effort. Example: Make an effort to listen.",
+  "notes": {
+   "did": "We don't say did an effort.",
+   "took": "We don't say took an effort.",
+   "had": "We don't say had an effort."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The heavy rain was a ___ blow to our picnic plans.",
+  "options": [
+   "major",
+   "large",
+   "tall",
+   "wide"
+  ],
+  "answer": 0,
+  "explain": "A major blow = a serious setback. Example: The injury was a major blow.",
+  "notes": {
+   "large": "Large is about size, not a setback.",
+   "tall": "Tall is for height.",
+   "wide": "Wide is for width."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "There was ___ rain all night, and the river flooded.",
+  "options": [
+   "heavy",
+   "strong",
+   "big",
+   "hard"
+  ],
+  "answer": 0,
+  "explain": "Heavy rain / snow / traffic. Example: Heavy snow closed the school.",
+  "notes": {
+   "strong": "Strong goes with wind, not rain.",
+   "big": "We don't say big rain.",
+   "hard": "Hard rain is less natural than heavy rain."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "There was a ___ wind, so the kites flew really high.",
+  "options": [
+   "strong",
+   "heavy",
+   "powerful",
+   "thick"
+  ],
+  "answer": 0,
+  "explain": "Strong wind. Example: A strong wind blew the door shut.",
+  "notes": {
+   "heavy": "Heavy goes with rain, not wind.",
+   "powerful": "Powerful wind is possible but less usual than strong.",
+   "thick": "Thick goes with fog."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We couldn't see the path because of the ___ fog.",
+  "options": [
+   "thick",
+   "strong",
+   "heavy",
+   "fat"
+  ],
+  "answer": 0,
+  "explain": "Thick fog. Example: Thick fog delayed the plane.",
+  "notes": {
+   "strong": "Strong goes with wind.",
+   "heavy": "Heavy goes with rain and snow.",
+   "fat": "Fat isn't used for fog."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The ___ of the light bulb changed the world.",
+  "options": [
+   "invention",
+   "inventor",
+   "inventive",
+   "invent"
+  ],
+  "answer": 0,
+  "explain": "Verb + -ion → noun for the thing. Example: discover → discovery.",
+  "notes": {
+   "inventor": "Inventor is the person.",
+   "inventive": "Inventive is an adjective.",
+   "invent": "Invent is the verb."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "She's very ___. She always has new ideas for stories.",
+  "options": [
+   "imaginative",
+   "imaginary",
+   "imagination",
+   "imaginable"
+  ],
+  "answer": 0,
+  "explain": "Imaginative = good at thinking of new ideas. Example: an imaginative writer.",
+  "notes": {
+   "imaginary": "Imaginary = not real: an imaginary friend.",
+   "imagination": "Imagination is a noun.",
+   "imaginable": "Imaginable = possible to imagine."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "My little brother has an ___ friend called Zog.",
+  "options": [
+   "imaginary",
+   "imaginative",
+   "imagined",
+   "imagining"
+  ],
+  "answer": 0,
+  "explain": "Imaginary = existing only in your mind. Example: an imaginary world.",
+  "notes": {
+   "imaginative": "Imaginative = creative.",
+   "imagined": "Imagined is a past form, less natural here.",
+   "imagining": "Imagining is a verb form."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The ___ of the comet surprised scientists.",
+  "options": [
+   "appearance",
+   "appearing",
+   "appearence",
+   "apparent"
+  ],
+  "answer": 0,
+  "explain": "Appear → appearance (noun). Example: His sudden appearance.",
+  "notes": {
+   "appearing": "Appearing is a verb form.",
+   "appearence": "Appearence is misspelled: appearance.",
+   "apparent": "Apparent is an adjective."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "It's ___ to swim in the river after a storm.",
+  "options": [
+   "dangerous",
+   "danger",
+   "endangered",
+   "dangerously"
+  ],
+  "answer": 0,
+  "explain": "Danger → dangerous (adjective). Example: a dangerous road.",
+  "notes": {
+   "danger": "Danger is a noun.",
+   "endangered": "Endangered = at risk of dying out.",
+   "dangerously": "Dangerously is an adverb."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Pandas are an ___ species.",
+  "options": [
+   "endangered",
+   "dangerous",
+   "endangering",
+   "danger"
+  ],
+  "answer": 0,
+  "explain": "Endangered = at risk of disappearing. Example: endangered tigers.",
+  "notes": {
+   "dangerous": "Dangerous = could hurt you.",
+   "endangering": "Endangering = putting something in danger.",
+   "danger": "Danger is a noun."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The team showed great ___ when they were losing.",
+  "options": [
+   "determination",
+   "determined",
+   "determine",
+   "determinedly"
+  ],
+  "answer": 0,
+  "explain": "Determine → determination (noun). Example: her determination to win.",
+  "notes": {
+   "determined": "Determined is an adjective.",
+   "determine": "Determine is a verb.",
+   "determinedly": "Determinedly is an adverb."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The story was ___. I didn't believe a word of it.",
+  "options": [
+   "unbelievable",
+   "disbelieving",
+   "believable",
+   "unbelief"
+  ],
+  "answer": 0,
+  "explain": "un- + believable = impossible to believe. Example: an unbelievable excuse.",
+  "notes": {
+   "disbelieving": "Disbelieving describes the person who doesn't believe.",
+   "believable": "Believable means the opposite.",
+   "unbelief": "Unbelief is a noun."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "It's ___ to talk loudly in the library.",
+  "options": [
+   "inappropriate",
+   "unappropriate",
+   "disappropriate",
+   "inappropriately"
+  ],
+  "answer": 0,
+  "explain": "The negative of appropriate is inappropriate. Example: an inappropriate joke.",
+  "notes": {
+   "unappropriate": "Unappropriate isn't a word.",
+   "disappropriate": "Disappropriate isn't a word.",
+   "inappropriately": "Inappropriately is an adverb."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ with you. I think cats are better than dogs!",
+  "options": [
+   "disagree",
+   "unagree",
+   "misagree",
+   "inagree"
+  ],
+  "answer": 0,
+  "explain": "dis- + agree = disagree. Example: We disagree about films.",
+  "notes": {
+   "unagree": "Unagree isn't a word.",
+   "misagree": "Misagree isn't a word.",
+   "inagree": "Inagree isn't a word."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ the instructions and built the model upside down.",
+  "options": [
+   "misunderstood",
+   "disunderstood",
+   "ununderstood",
+   "overunderstood"
+  ],
+  "answer": 0,
+  "explain": "mis- = wrongly. Example: misspell, misread.",
+  "notes": {
+   "disunderstood": "Disunderstood isn't a word.",
+   "ununderstood": "Ununderstood isn't a word.",
+   "overunderstood": "Overunderstood isn't a word."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The robot was ___ in helping the old lady cross the road.",
+  "options": [
+   "helpful",
+   "helpless",
+   "helping",
+   "helped"
+  ],
+  "answer": 0,
+  "explain": "-ful = full of. Example: careful, useful.",
+  "notes": {
+   "helpless": "Helpless = not able to help yourself.",
+   "helping": "Helping is a verb form or noun.",
+   "helped": "Helped is past."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Without its shell, the snail was totally ___.",
+  "options": [
+   "defenceless",
+   "defensive",
+   "defended",
+   "defenceful"
+  ],
+  "answer": 0,
+  "explain": "-less = without. Example: homeless, fearless.",
+  "notes": {
+   "defensive": "Defensive = ready to protect yourself.",
+   "defended": "Defended means someone protected it.",
+   "defenceful": "Defenceful isn't a word."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The magician performed his tricks ___.",
+  "options": [
+   "skilfully",
+   "skilful",
+   "skill",
+   "skilled"
+  ],
+  "answer": 0,
+  "explain": "Adjective + -ly → adverb (how). Example: carefully, quickly.",
+  "notes": {
+   "skilful": "Skilful is an adjective.",
+   "skill": "Skill is a noun.",
+   "skilled": "Skilled is an adjective."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The ___ of the game is to collect all the stars.",
+  "options": [
+   "aim",
+   "end",
+   "finish",
+   "result"
+  ],
+  "answer": 0,
+  "explain": "The aim of = the purpose. Example: The aim is to win.",
+  "notes": {
+   "end": "The end is when it finishes, not its purpose.",
+   "finish": "The finish is the last part of a race.",
+   "result": "The result is what happens at the end, not the purpose."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Eating vegetables ___ your health.",
+  "options": [
+   "affects",
+   "effects",
+   "infects",
+   "reflects"
+  ],
+  "answer": 0,
+  "explain": "Affect is a verb; effect is a noun. Example: Sleep affects your mood.",
+  "notes": {
+   "effects": "Effect is usually a noun: a good effect.",
+   "infects": "Infect = pass on a disease.",
+   "reflects": "Reflect = send back light, or think deeply."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Sugar has a bad ___ on your teeth.",
+  "options": [
+   "effect",
+   "affect",
+   "affection",
+   "efficiency"
+  ],
+  "answer": 0,
+  "explain": "Effect (noun) on. Example: The film had a big effect on me.",
+  "notes": {
+   "affect": "Affect is usually a verb.",
+   "affection": "Affection = love.",
+   "efficiency": "Efficiency = working well without waste."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The magician's trick was so ___ that we gasped.",
+  "options": [
+   "impressive",
+   "impressed",
+   "impression",
+   "impressing"
+  ],
+  "answer": 0,
+  "explain": "-ive adjective describes the thing. Example: an impressive goal.",
+  "notes": {
+   "impressed": "Impressed is how we felt.",
+   "impression": "Impression is a noun.",
+   "impressing": "Impressing is a verb form."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I'm ___ in learning about volcanoes.",
+  "options": [
+   "interested",
+   "interesting",
+   "interest",
+   "interestingly"
+  ],
+  "answer": 0,
+  "explain": "-ed adjective = how you feel. Example: I'm bored.",
+  "notes": {
+   "interesting": "Interesting describes the thing.",
+   "interest": "Interest is a noun or verb.",
+   "interestingly": "Interestingly is an adverb."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Please be ___ not to wake the baby.",
+  "options": [
+   "careful",
+   "careless",
+   "caring",
+   "cared"
+  ],
+  "answer": 0,
+  "explain": "Careful = paying attention to avoid harm. Example: Be careful on the stairs.",
+  "notes": {
+   "careless": "Careless means the opposite.",
+   "caring": "Caring = kind and helpful.",
+   "cared": "Cared is past."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We ___ the competition, so we got a medal.",
+  "options": [
+   "won",
+   "earned",
+   "beat",
+   "gained"
+  ],
+  "answer": 0,
+  "explain": "Win a competition. Example: She won the race.",
+  "notes": {
+   "earned": "You earn money.",
+   "beat": "You beat a person or team.",
+   "gained": "You gain experience or weight."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The ___ of the class is twenty-eight students.",
+  "options": [
+   "size",
+   "measure",
+   "amount",
+   "large"
+  ],
+  "answer": 0,
+  "explain": "Size of a group. Example: the size of the room.",
+  "notes": {
+   "measure": "Measure is a verb or tool.",
+   "amount": "Amount is for uncountable things.",
+   "large": "Large is an adjective."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I didn't ___ that the test was today!",
+  "options": [
+   "realise",
+   "notice of",
+   "recognise",
+   "remark"
+  ],
+  "answer": 0,
+  "explain": "Realise = become aware of a fact. Example: I realised I was late.",
+  "notes": {
+   "notice of": "Notice of isn't English.",
+   "recognise": "Recognise = know someone/something you've seen before.",
+   "remark": "Remark = say."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I didn't ___ my old friend; she'd grown so tall!",
+  "options": [
+   "recognise",
+   "realise",
+   "remember of",
+   "know about"
+  ],
+  "answer": 0,
+  "explain": "Recognise = know who someone is when you see them. Example: I recognised her voice.",
+  "notes": {
+   "realise": "Realise is for facts, not faces.",
+   "remember of": "Remember of isn't English.",
+   "know about": "Know about = have information about."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The robot can ___ the stairs on its own.",
+  "options": [
+   "climb",
+   "rise",
+   "raise",
+   "lift"
+  ],
+  "answer": 0,
+  "explain": "Climb = go up using feet/hands. Example: climb a tree.",
+  "notes": {
+   "rise": "Rise = go up by itself; it isn't used with an object.",
+   "raise": "Raise = lift something up.",
+   "lift": "Lift = pick something up."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "If you know the answer, ___ your hand.",
+  "options": [
+   "raise",
+   "rise",
+   "arise",
+   "grow"
+  ],
+  "answer": 0,
+  "explain": "Raise + object (lift up). Example: Raise your hand.",
+  "notes": {
+   "rise": "Rise has no object: The sun rises.",
+   "arise": "Arise = happen (a problem).",
+   "grow": "Grow = get bigger."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The sun ___ in the east.",
+  "options": [
+   "rises",
+   "raises",
+   "arouses",
+   "lifts"
+  ],
+  "answer": 0,
+  "explain": "Rise (no object) = go up. Example: Prices rise.",
+  "notes": {
+   "raises": "Raise needs an object.",
+   "arouses": "Arouse = cause a feeling.",
+   "lifts": "Lift needs an object."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Can you ___ me how to do this sum?",
+  "options": [
+   "show",
+   "explain",
+   "say",
+   "learn"
+  ],
+  "answer": 0,
+  "explain": "Show someone how to do something. Example: Show me how it works.",
+  "notes": {
+   "explain": "Explain needs to: explain to me.",
+   "say": "Say doesn't take a person directly.",
+   "learn": "Learn is what the student does."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Don't worry about the test. It'll be a piece of ___.",
+  "options": [
+   "cake",
+   "bread",
+   "pie",
+   "toast"
+  ],
+  "answer": 0,
+  "explain": "A piece of cake = very easy. Example: The quiz was a piece of cake.",
+  "notes": {
+   "bread": "Bread isn't part of this idiom.",
+   "pie": "Pie is in 'easy as pie', not 'a piece of'.",
+   "toast": "Toast isn't part of this idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I'm feeling a bit under the ___. I think I've got a cold.",
+  "options": [
+   "weather",
+   "rain",
+   "clouds",
+   "sky"
+  ],
+  "answer": 0,
+  "explain": "Under the weather = slightly ill. Example: She's under the weather today.",
+  "notes": {
+   "rain": "Rain isn't part of this idiom.",
+   "clouds": "Clouds isn't part of this idiom.",
+   "sky": "Sky isn't part of this idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We were all in the same ___: nobody knew the answer.",
+  "options": [
+   "boat",
+   "ship",
+   "car",
+   "house"
+  ],
+  "answer": 0,
+  "explain": "In the same boat = in the same difficult situation. Example: We're all in the same boat.",
+  "notes": {
+   "ship": "Ship isn't used in this idiom.",
+   "car": "Car isn't used in this idiom.",
+   "house": "House isn't used in this idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I'll keep my fingers ___ for your audition!",
+  "options": [
+   "crossed",
+   "closed",
+   "tight",
+   "folded"
+  ],
+  "answer": 0,
+  "explain": "Keep your fingers crossed = hope for good luck. Example: Fingers crossed it's sunny!",
+  "notes": {
+   "closed": "Closed isn't used in this idiom.",
+   "tight": "Tight isn't used in this idiom.",
+   "folded": "Folded isn't used in this idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "When I saw the spider, my heart was in my ___.",
+  "options": [
+   "mouth",
+   "hand",
+   "throat",
+   "head"
+  ],
+  "answer": 0,
+  "explain": "Heart in your mouth = very scared or nervous. Example: My heart was in my mouth on the ride.",
+  "notes": {
+   "hand": "Hand isn't used in this idiom.",
+   "throat": "Throat isn't used in this idiom.",
+   "head": "Head isn't used in this idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "It was a ___ in the dark, but my guess was right!",
+  "options": [
+   "shot",
+   "step",
+   "jump",
+   "walk"
+  ],
+  "answer": 0,
+  "explain": "A shot in the dark = a complete guess. Example: My answer was a shot in the dark.",
+  "notes": {
+   "step": "Step in the dark isn't the idiom.",
+   "jump": "Jump in the dark isn't the idiom.",
+   "walk": "Walk in the dark isn't the idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Ollie spilled the ___ about the surprise party.",
+  "options": [
+   "beans",
+   "peas",
+   "milk",
+   "secrets"
+  ],
+  "answer": 0,
+  "explain": "Spill the beans = tell a secret. Example: Who spilled the beans?",
+  "notes": {
+   "peas": "Peas isn't part of this idiom.",
+   "milk": "Milk isn't part of this idiom.",
+   "secrets": "Secrets is the meaning, not the idiom's word."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You hit the ___ on the head! That's exactly the problem.",
+  "options": [
+   "nail",
+   "hammer",
+   "point",
+   "spot"
+  ],
+  "answer": 0,
+  "explain": "Hit the nail on the head = say exactly the right thing. Example: You've hit the nail on the head.",
+  "notes": {
+   "hammer": "The hammer hits the nail; it isn't the object.",
+   "point": "Point isn't used in this idiom.",
+   "spot": "Spot is in 'hit the spot' (be just right), a different idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Getting up at 5 a.m. is not my cup of ___.",
+  "options": [
+   "tea",
+   "coffee",
+   "milk",
+   "juice"
+  ],
+  "answer": 0,
+  "explain": "Not my cup of tea = not something I like. Example: Horror films aren't my cup of tea.",
+  "notes": {
+   "coffee": "Coffee isn't used in this idiom.",
+   "milk": "Milk isn't used in this idiom.",
+   "juice": "Juice isn't used in this idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I've been so busy that I'm ___ the clock.",
+  "options": [
+   "racing against",
+   "running into",
+   "going over",
+   "looking at"
+  ],
+  "answer": 0,
+  "explain": "Race against the clock = hurry to finish before a deadline. Example: We raced against the clock.",
+  "notes": {
+   "running into": "Run into = meet by chance.",
+   "going over": "Go over = check again.",
+   "looking at": "Look at the clock just means check the time."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The joke went over my ___. I didn't get it.",
+  "options": [
+   "head",
+   "hair",
+   "face",
+   "ears"
+  ],
+  "answer": 0,
+  "explain": "Go over your head = be too difficult to understand. Example: The science talk went over my head.",
+  "notes": {
+   "hair": "Hair isn't used in this idiom.",
+   "face": "Face isn't used in this idiom.",
+   "ears": "Ears isn't used in this idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Learning to juggle is easier said than ___.",
+  "options": [
+   "done",
+   "made",
+   "tried",
+   "learnt"
+  ],
+  "answer": 0,
+  "explain": "Easier said than done = harder than it sounds. Example: Waking up early is easier said than done.",
+  "notes": {
+   "made": "Made isn't part of this idiom.",
+   "tried": "Tried isn't part of this idiom.",
+   "learnt": "Learnt isn't part of this idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We missed the bus, and to ___ it all, it started raining.",
+  "options": [
+   "top",
+   "cap off",
+   "end",
+   "finish"
+  ],
+  "answer": 0,
+  "explain": "To top it all (off) = and the worst thing was… Example: To top it all, I lost my keys.",
+  "notes": {
+   "cap off": "Cap off isn't used in this phrase.",
+   "end": "End isn't used in this phrase.",
+   "finish": "Finish isn't used in this phrase."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "My grandma is seventy but still as fit as a ___.",
+  "options": [
+   "fiddle",
+   "fish",
+   "horse",
+   "flower"
+  ],
+  "answer": 0,
+  "explain": "As fit as a fiddle = very healthy. Example: He's as fit as a fiddle.",
+  "notes": {
+   "fish": "Fish isn't used in this simile.",
+   "horse": "Horse is in 'eat like a horse', a different idiom.",
+   "flower": "Flower isn't used in this simile."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The new student was a fish out of ___ on her first day.",
+  "options": [
+   "water",
+   "sea",
+   "river",
+   "tank"
+  ],
+  "answer": 0,
+  "explain": "A fish out of water = someone who feels uncomfortable in a new place. Example: I felt like a fish out of water.",
+  "notes": {
+   "sea": "Sea isn't used in this idiom.",
+   "river": "River isn't used in this idiom.",
+   "tank": "Tank isn't used in this idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I had to bite my ___ to stop myself laughing.",
+  "options": [
+   "tongue",
+   "lip",
+   "teeth",
+   "nails"
+  ],
+  "answer": 0,
+  "explain": "Bite your tongue = stop yourself saying something. Example: I bit my tongue and said nothing.",
+  "notes": {
+   "lip": "Bite your lip is similar but used for holding back feelings, not words.",
+   "teeth": "Bite your teeth isn't English.",
+   "nails": "Bite your nails = be nervous."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Stop beating about the ___ and tell me what happened!",
+  "options": [
+   "bush",
+   "tree",
+   "garden",
+   "field"
+  ],
+  "answer": 0,
+  "explain": "Beat about the bush = avoid saying something directly. Example: Don't beat about the bush.",
+  "notes": {
+   "tree": "Tree isn't used in this idiom.",
+   "garden": "Garden isn't used in this idiom.",
+   "field": "Field isn't used in this idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "My grandma adores her puppy. He's the apple of her ___.",
+  "options": [
+   "eye",
+   "heart",
+   "face",
+   "hand"
+  ],
+  "answer": 0,
+  "explain": "The apple of someone's eye = the person or pet they love most. Example: The baby is the apple of his eye.",
+  "notes": {
+   "heart": "Heart isn't used in this idiom.",
+   "face": "Face isn't used in this idiom.",
+   "hand": "Hand isn't used in this idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Gaming all night was a real ___ of time.",
+  "options": [
+   "waste",
+   "lose",
+   "loss out",
+   "spend"
+  ],
+  "answer": 0,
+  "explain": "A waste of time = time used for nothing useful. Example: That meeting was a waste of time.",
+  "notes": {
+   "lose": "Lose is a verb.",
+   "loss out": "Loss out isn't English.",
+   "spend": "Spend is a verb."
+  }
  }
 ]
