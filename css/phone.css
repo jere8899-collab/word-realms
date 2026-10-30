@@ -1,0 +1,285 @@
+/* 📱 Phone pass (REVIEW-2026-10-30.md T1–T15, T19). Loaded last, after style.css and math.css. */
+
+/* ---------- T1: nothing wider than the screen ---------- */
+#app{overflow-x:clip}
+.navbar button{flex:1 1 0;min-width:0;max-width:130px;min-height:48px}
+.navbar{gap:2px;padding-left:max(4px,env(safe-area-inset-left));padding-right:max(4px,env(safe-area-inset-right))}
+.topbar{min-width:0}
+.chips{min-width:0;flex-shrink:1;gap:4px}
+.brand{min-width:0;overflow:hidden;text-overflow:ellipsis}
+@media (max-width:380px){.brand{display:none}.chips{margin-left:auto}.topbar{gap:6px;padding:8px 10px}.chip{padding:4px 7px;font-size:.82rem}}
+@media (max-width:360px){.navbar button{font-size:.68rem;padding:4px 1px}.navbar button span{font-size:1.25rem}}
+@media (max-width:340px){.navbar button{font-size:0;gap:0}.navbar button span{font-size:1.45rem}}
+img,svg,video,canvas{max-width:100%}
+.realm-node{min-width:0}.realm-node>div{min-width:0}
+.homehead>div{min-width:0}
+.hero-nm{overflow-wrap:anywhere}
+
+/* ---------- T2: focus mode — no tab bar in lessons, specials, speaking, writing, placement, maths practice ---------- */
+body.wr-focus #navbar,body.kbd-open #navbar{display:none !important}
+body.wr-focus #app{padding-bottom:calc(20px + env(safe-area-inset-bottom))}
+body.wr-focus{scroll-padding-bottom:20px}
+html:has(body.wr-focus){scroll-padding-bottom:16px}
+/* lesson header: "← Leave" + title on one compact line */
+.lesson-top{margin:4px 0 8px !important;flex-wrap:nowrap !important;min-width:0}
+.lesson-top .title{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:1.05rem}
+/* progress bar + pet bubble share one row (.lesson.lhud is built by js/ux.js from the old hud card + side card) */
+.lesson.lhud{grid-template-columns:1fr 210px;grid-template-areas:"bar side" "q side";align-items:start}
+.lesson.lhud>.lbar{grid-area:bar}
+.lesson.lhud>.side{grid-area:side}
+.lesson.lhud>.qcard{grid-area:q}
+.lbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:10px 14px;min-width:0}
+.lbar .hud{margin:0;flex:1 1 auto;min-width:0;padding:0;background:none;border:0;box-shadow:none}
+.lbar .lchip{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:999px;background:var(--butter);font-weight:800;font-size:.78rem;color:var(--ink);white-space:nowrap}
+@media (max-width:760px){
+  .lesson.lhud{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"bar side" "q q";gap:8px}
+  .lesson.lhud>.side{order:0;display:flex;align-items:center;gap:6px;padding:4px 8px 4px 4px;max-width:46vw;min-height:0;align-self:stretch}
+  .lesson.lhud>.side .petbox{width:46px;height:46px;flex:none;margin:0}
+  .lesson.lhud>.side .bubble{font-size:.72rem;line-height:1.2;margin:0;padding:5px 8px;min-height:0;max-width:none;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .lesson.lhud>.side .bubble:after{top:50%;left:-7px;margin:-7px 0 0;border:7px solid transparent;border-left:0;border-right-color:#fff}
+  .lesson.lhud>.side .btn{padding:4px 8px;font-size:.75rem;margin:0 !important}
+  .lesson.lhud>.side .side-sumi{width:46px}
+  .lbar{padding:6px 10px;gap:4px 6px;min-height:58px}
+  .lbar .hud{gap:4px 6px}
+  .lbar .hud .pill{display:none}
+  .lbar .blooms,.lbar .path{font-size:.86rem;letter-spacing:0;white-space:nowrap;overflow:hidden;flex:1 1 100%}
+  .lbar .jar{font-size:.85rem;padding:2px 6px;min-height:0;flex:1 1 100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .lbar .hud .meter{min-width:0;flex:1 1 100%}
+  .lbar .boss .face{font-size:1.5rem}.lbar .boss b{font-size:.78rem}.lbar .hp{height:10px}.lbar .timer{height:6px;margin-top:3px}
+  .lbar .hearts{font-size:.85rem;letter-spacing:0}
+  .lbar .gems{font-size:.8rem}
+  .lbar .meterbar{height:12px}.lbar .meterbar .knob{width:20px;height:20px;margin:-10px 0 0 -10px;font-size:.7rem}
+  .lbar .meter>.row{display:none}
+  .lbar .lchip{font-size:.7rem;padding:2px 8px}
+  .qcard{padding:12px 14px}
+  .qtext{margin:4px 0 10px;font-size:1.12rem}
+  .qpic{font-size:3.2rem}
+  .opts{gap:8px}
+  .opt{padding:10px 12px;font-size:.98rem;min-height:48px}
+  .dragon-scroll{padding:4px 10px;font-size:.88rem}
+  .lesson .qcard>.muted:first-child{font-size:.85rem}
+}
+/* boss timer waits until the options are on screen (and the audio has played once) */
+.timer.waiting>i{opacity:.35}
+
+/* ---------- T3: confetti stays inside the screen; reduced motion ---------- */
+.confetti-layer{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:60;contain:strict}
+.confetti-layer .confetti{position:absolute;top:-30px}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
+  .confetti-layer,.confetti,.sparkles,.heart-pop{display:none !important}
+}
+body.reduce-motion *,body.reduce-motion *::before,body.reduce-motion *::after{animation-iteration-count:1 !important}
+body.reduce-motion .confetti-layer,body.reduce-motion .sparkles{display:none !important}
+
+/* ---------- T4: toasts never cover the header or buttons ---------- */
+.toast{pointer-events:none;max-width:calc(100vw - 24px);text-align:center;transition:opacity .3s}
+.toast.out{opacity:0}
+@media (max-width:760px){
+  .toast{top:auto;bottom:calc(92px + env(safe-area-inset-bottom));font-size:.9rem;padding:8px 14px;border-radius:18px;box-shadow:0 6px 22px rgba(122,92,143,.28)}
+  body.wr-focus .toast{bottom:calc(16px + env(safe-area-inset-bottom))}
+  .toast+.toast{bottom:calc(140px + env(safe-area-inset-bottom))}
+}
+
+/* ---------- T5: tap targets ≥ 44 px ---------- */
+.btn.small{min-height:44px}
+.btn{min-height:44px}
+.topbar .chip[id],.topbar button.chip{min-width:44px;min-height:44px;justify-content:center}
+.hero-edit{min-width:44px;min-height:44px;justify-content:center;padding:4px}
+.homehead .pill[id]{min-height:40px;display:inline-flex;align-items:center;padding:4px 12px;font-size:.8rem;cursor:pointer}
+input[type=range].slider{height:44px;background:transparent;margin:0;-webkit-appearance:none;appearance:none;width:150px;max-width:100%}
+input[type=range].slider::-webkit-slider-runnable-track{height:8px;border-radius:99px;background:linear-gradient(90deg,#E2D6FF,#FFD6E0)}
+input[type=range].slider::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;border-radius:50%;margin-top:-10px;background:#fff;border:4px solid #B98BFF;box-shadow:0 2px 6px rgba(122,92,143,.3)}
+input[type=range].slider::-moz-range-track{height:8px;border-radius:99px;background:linear-gradient(90deg,#E2D6FF,#FFD6E0)}
+input[type=range].slider::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:#fff;border:4px solid #B98BFF}
+.q-step{min-height:44px}
+.bank-chip{min-height:40px}
+.tabs button,.cc-tabs button{min-height:44px}
+.lvlpick button{min-height:48px}
+.tile{min-height:44px;min-width:44px}
+.sdot{width:40px;height:40px}
+.set-row{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:48px;cursor:pointer;font-weight:800}
+.set-row input[type=checkbox]{width:26px;height:26px;accent-color:#B98BFF;flex:none}
+.stage-chip,.plot button{min-height:40px}
+.gloss,.gl-hint{min-height:0}
+
+/* ---------- T6: onboarding steps that fit one phone screen ---------- */
+.onb-dots{display:flex;gap:6px;justify-content:center;margin:2px 0 8px}
+.onb-dots i{width:9px;height:9px;border-radius:50%;background:#E6DCF5}.onb-dots i.on{background:var(--accent);width:22px;border-radius:9px}
+.onb .hero{padding:10px 8px 2px}
+.onb-heroes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.onb-pets{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.onb .pick{padding:8px 4px}
+.onb .pick img{max-width:120px}
+.onb-next{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:14px}
+@media (max-width:600px){
+  .onb .hero h1{font-size:2rem}.onb .hero p{font-size:.95rem !important;margin:.2em 0}
+  .onb .card{padding:12px}
+  .onb h2{font-size:1.2rem}
+  .onb-pets{grid-template-columns:repeat(2,1fr);gap:8px}
+  .onb .pick img{max-width:86px}
+  .onb .pick .nm{font-size:1rem}
+  .onb .pick .muted{font-size:.72rem !important}
+  .onb .lvlpick{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+  .onb .lvlpick button{padding:6px 4px;font-size:.88rem}
+  .onb .mirror-pick{margin-top:10px;padding:8px 10px}.onb .mirror-pick img{width:40px}
+  .onb .cc-onb{padding:10px;margin-top:10px}.onb .cc-onb img{width:44px;height:44px}
+}
+
+/* ---------- T7: home — Continue first, map before the Number Kingdom ---------- */
+.continue{display:flex;align-items:center;gap:12px;margin-top:12px;padding:12px 14px;background:linear-gradient(135deg,#FFF6D6,#FFE9F1 55%,#EDE4FF);cursor:pointer}
+.continue .btn{flex:none;font-size:1.05rem;padding:12px 18px}
+.continue .ct{flex:1;min-width:0}
+.continue .ct b{display:block;font-family:"Baloo 2";font-size:1.08rem;line-height:1.2}
+.continue .ct small{display:block;font-weight:800;color:var(--ink2);font-size:.8rem;margin-top:2px}
+@media (max-width:600px){
+  .homehead{gap:10px;padding:12px}
+  .homehead .av-big{width:72px;height:72px}
+  .homehead h1{font-size:1.35rem}
+  .homehead .muted{font-size:.85rem}
+  .continue{flex-direction:column;align-items:stretch;text-align:center;gap:6px;padding:10px 12px}
+  .continue .btn{width:100%}
+  .map{gap:12px;padding-top:4px}
+  .realm-node{grid-template-columns:108px 1fr;gap:10px;padding:10px}
+  .realm-node:nth-child(even){grid-template-columns:1fr 108px}
+  .realm-node .thumb{width:108px;height:76px}
+  h2.map-h{margin:12px 0 6px;font-size:1.25rem}
+}
+.waiting-tag{font-size:.72rem;font-weight:900;color:#B0628A}
+
+/* ---------- T8: result screen ---------- */
+.result .next-row{display:flex;flex-direction:column;align-items:center;gap:10px;margin:12px 0 6px}
+.result .next-row .sec{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.result #nextStep{font-size:1.1rem;padding:14px 26px}
+@media (max-width:600px){
+  .result{padding:14px 12px}
+  .result h1{font-size:1.5rem}.result h2{font-size:1.15rem;margin:.1em 0}
+  .result .big{font-size:2.4rem}
+  .result .petbox{width:96px !important;height:96px !important}
+  .result p{margin:.4em 0}
+  .result #nextStep{width:100%}
+}
+
+/* ---------- T9: reading — no inner scroll on phones, 📜 Story chip + bottom sheet ---------- */
+@media (max-width:520px){.passage{max-height:none;overflow:visible}}
+.story-chip{position:sticky;top:64px;z-index:15;display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:8px 14px;border-radius:999px;background:linear-gradient(135deg,#FFF6D6,#FFE3EF);font-weight:900;box-shadow:var(--shadow);margin-bottom:8px}
+.sheet-bg{place-items:end center;padding:0}
+.story-sheet{width:100%;max-width:640px;max-height:82vh;overflow:auto;border-radius:24px 24px 0 0;text-align:left;padding:14px 16px calc(16px + env(safe-area-inset-bottom));animation:sheetUp .25s ease}
+.story-sheet .passage{max-height:none;overflow:visible;margin:8px 0 0}
+.story-sheet .grab{width:44px;height:5px;border-radius:9px;background:#E6DCF5;margin:0 auto 8px}
+@keyframes sheetUp{from{transform:translateY(40%);opacity:0}to{transform:none;opacity:1}}
+
+/* ---------- T10: speaking — sticky action bar on phones ---------- */
+@media (max-width:760px){
+  .echo .echo-controls{position:sticky;bottom:0;z-index:12;margin:10px -14px -12px;padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:rgba(255,255,255,.95);border-top:2px solid #F1E9FA;border-radius:0 0 var(--r) var(--r);flex-direction:row !important;align-items:center !important;flex-wrap:nowrap;gap:8px;box-shadow:0 -6px 16px rgba(122,92,143,.12)}
+  .echo .hearbox{flex-direction:row;align-items:center;gap:6px;flex:1;min-width:0;flex-wrap:wrap}
+  .echo .hearbox .row{display:none}
+  .echo .hearbox .btn{padding:8px 12px;font-size:.88rem}
+  .echo .micbox{margin:0;flex-direction:row;gap:6px}
+  .echo .micbtn{width:64px !important;height:64px !important;font-size:1.9rem}
+  .echo .micbox b{font-size:.8rem;max-width:64px;line-height:1.1}
+  .echo .selfbox{margin:0;gap:2px}.echo .selfbox b{font-size:.75rem}.echo .selfbox .btn{padding:6px 8px;font-size:.78rem}
+  .echo .echo-text{font-size:1.2rem;margin:4px 0 8px}
+  .echo .echo-tip{font-size:.85rem;margin:6px 0}
+}
+
+/* ---------- T11: first listening question — tap to listen ---------- */
+.tap-listen{display:flex;align-items:center;gap:12px;width:100%;padding:12px 16px;border-radius:22px;background:linear-gradient(135deg,#F3ECFF,#FFE9F1);font-weight:900;font-size:1.1rem;color:var(--ink);box-shadow:0 5px 0 #E2D6FF,var(--shadow);animation:pulse 1.4s infinite;margin-bottom:8px}
+.tap-listen .playbtn{width:60px;height:60px;font-size:1.8rem;flex:none;animation:none}
+@media (max-width:760px){
+  .listenbox{gap:8px;margin-bottom:8px}
+  .listenbox .playbtn{width:64px;height:64px;font-size:1.9rem}
+}
+
+/* ---------- T12: maths grade picker — 4×3 grid on phones ---------- */
+@media (max-width:600px){
+  .gchips{display:grid !important;grid-template-columns:repeat(4,minmax(0,1fr));overflow:visible !important;gap:6px;padding:2px 0 8px}
+  .gchip{min-width:0 !important;padding:6px 4px 8px}
+  .gchip b{font-size:.9rem}.gchip small{font-size:.62rem}
+}
+.grownup-note{margin-top:8px;font-size:.8rem;font-weight:700;color:var(--ink2)}
+.grownup-note summary{cursor:pointer;min-height:40px;display:inline-flex;align-items:center;font-weight:900}
+
+/* ---------- T13: phones held sideways ---------- */
+@media (orientation:landscape) and (max-height:500px){
+  .topbar{padding:3px 10px;margin-bottom:4px}
+  .topbar .mini-av{width:30px;height:30px}
+  .topbar .chip{padding:2px 8px}
+  .topbar .chip[id],.topbar button.chip{min-height:40px;min-width:40px}
+  .brand{font-size:1rem}
+  .navbar{padding-top:2px;padding-bottom:max(2px,env(safe-area-inset-bottom))}
+  .navbar button{flex-direction:row;gap:6px;min-height:42px;padding:2px 6px}.navbar button span{font-size:1.15rem}
+  #app{padding-bottom:calc(60px + env(safe-area-inset-bottom))}
+  body.wr-focus .topbar{display:none}
+  .lesson-top{margin:4px 0 4px !important}
+  .lesson.lhud{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"bar side" "q q";gap:6px}
+  .lesson.lhud>.side{display:flex;align-items:center;gap:6px;padding:3px 8px 3px 3px;max-width:40vw}
+  .lesson.lhud>.side .petbox{width:40px;height:40px;margin:0}
+  .lesson.lhud>.side .bubble{font-size:.72rem;margin:0;padding:4px 8px;min-height:0;max-width:none}
+  .lesson.lhud>.side .bubble:after{display:none}
+  .lesson.lhud>.side #lstats{display:none}
+  .lbar{padding:4px 10px;min-height:0}.lbar .hud .pill{display:none}
+  .lbar .blooms,.lbar .path{font-size:.9rem;white-space:nowrap}
+  .qcard{padding:8px 12px}
+  .qcard:not(.mq){display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:4px 14px;align-items:start}
+  .qcard:not(.mq)>*{grid-column:1}
+  .qcard:not(.mq)>.opts,.qcard:not(.mq)>.tiles,.qcard:not(.mq)>.row,.qcard:not(.mq)>#explain{grid-column:2}
+  .qcard:not(.mq)>.opts{grid-row:1 / span 6;grid-template-columns:1fr}
+  .qcard:not(.mq)>#explain{grid-row:auto}
+  .qtext{font-size:1.05rem;margin:2px 0}
+  .qpic{font-size:2.6rem}
+  .opt{padding:7px 10px;min-height:42px;font-size:.92rem}
+  .opts{gap:6px}
+  .passage{max-height:none;font-size:.95rem}
+  .result .petbox{width:80px !important;height:80px !important}.result .big{font-size:2rem}.result{padding:10px}
+  .result .next-row{flex-direction:row;justify-content:center;flex-wrap:wrap}
+  .onb .hero{display:none}
+  .continue{padding:8px 12px}
+}
+
+/* ---------- T14: on-screen keyboard ---------- */
+body.kbd-open .toast{display:none}
+
+/* ---------- T15: grown-up text lives in Settings ---------- */
+.set-note{font-size:.8rem;text-align:left;font-weight:700}
+
+/* ---------- T19: parent gate + Grown-ups area ---------- */
+.pgate{text-align:center}
+.pgate .lock{font-size:2.4rem;line-height:1}
+.pgate .pq{font-family:"Baloo 2";font-size:1.25rem;font-weight:800;margin:6px 0;line-height:1.3}
+.pgate .pq em{font-style:normal;background:#FFF4C2;border-radius:10px;padding:0 6px}
+.pgate .pin-dots{font-size:1.6rem;letter-spacing:10px;min-height:2.1rem;font-weight:900}
+.pgate .pans{font-family:"Baloo 2";font-size:1.8rem;font-weight:800;min-height:2.6rem;background:#fff;border:3px solid var(--lav);border-radius:16px;margin:6px auto;max-width:200px;letter-spacing:4px}
+.pgate .pad{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:260px;margin:8px auto}
+.pgate .pad button{min-height:48px;border-radius:16px;background:#fff;font-weight:900;font-size:1.25rem;box-shadow:0 4px 0 #EADFF5,var(--shadow)}
+.pgate .pad button:active{transform:translateY(3px);box-shadow:0 1px 0 #EADFF5}
+.pgate .perr{min-height:1.3em;color:#E0587A;font-weight:800;font-size:.9rem}
+.pgate.locked .pad button{opacity:.4;pointer-events:none}
+.pgate .row{justify-content:center}
+@media (max-height:700px){.pgate .lock{font-size:1.8rem}.pgate .pq{font-size:1.1rem}.pgate .pad{gap:6px}.pgate .pad button{min-height:44px}.pgate h2{font-size:1.25rem;margin:.1em 0}.pgate p{margin:.3em 0}}
+.ask-grownup{background:linear-gradient(135deg,#FFE9F1,#F3ECFF) !important;color:var(--ink) !important;text-shadow:none !important}
+.grownups-btn{background:linear-gradient(135deg,#FFF6D6,#EDE4FF) !important;color:var(--ink) !important;text-shadow:none !important}
+.gu-list{display:grid;gap:8px;text-align:left;margin:10px 0}
+.gu-item{display:flex;align-items:center;gap:10px;background:#fff;border-radius:16px;padding:8px 10px;box-shadow:var(--shadow)}
+.gu-item .ic{font-size:1.8rem}
+.gu-item .nm{flex:1;min-width:0;font-weight:800}
+.gu-item small{display:block;color:var(--ink2);font-weight:700}
+.gu-note{font-size:.82rem;font-weight:700;text-align:left;background:#FFF6D6;border-radius:14px;padding:8px 10px}
+/* landscape phones: speaking bar, grade grid, and the parent gate side by side */
+@media (max-width:900px){.gchips{display:grid !important;grid-template-columns:repeat(6,minmax(0,1fr));overflow:visible !important}.gchip{min-width:0 !important}}
+@media (max-width:600px){.gchips{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (orientation:landscape) and (max-height:500px){
+  .echo .echo-controls{position:sticky;bottom:0;z-index:12;margin:8px -12px -8px;padding:6px 12px;background:rgba(255,255,255,.95);border-top:2px solid #F1E9FA;flex-direction:row;align-items:center;flex-wrap:nowrap;gap:8px}
+  .echo .hearbox{flex-direction:row;align-items:center;gap:6px;flex:1}.echo .hearbox .row{display:none}
+  .echo .micbox{margin:0;flex-direction:row}.echo .micbtn{width:56px !important;height:56px !important;font-size:1.6rem}
+  .echo .echo-tip{display:none}
+  .modal:has(.pgate){max-width:620px}
+  .pgate{display:grid;grid-template-columns:minmax(0,1fr) 230px;column-gap:14px;align-items:center}
+  .pgate>*{grid-column:1}
+  .pgate>.pad{grid-column:2;grid-row:1 / span 7;margin:0}
+  .pgate .lock{display:none}
+  .modal-bg{padding-top:8px;padding-bottom:8px}
+  .pgate .pad button{min-height:42px}
+}
+.lesson-top .btn{flex:none;white-space:nowrap}
+.lbar .lchip{white-space:normal;max-width:100%}

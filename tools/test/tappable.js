@@ -83,7 +83,7 @@ const audit = () => {
     /* onboarding */
     await page.goto(BASE + 'index.html'); await page.evaluate(() => localStorage.clear()); await page.reload({ waitUntil: 'networkidle' });
     await page.waitForSelector('#nm'); await check('onboarding1', true);
-    await page.fill('#nm', 'Jeremy'); await page.click('#n1'); await page.waitForSelector('#go'); await check('onboarding2');
+    await page.fill('#nm', 'Jeremy'); await page.click('#n1'); await page.waitForSelector('#n2'); await check('onboarding2'); await page.click('#n2'); await page.waitForSelector('#go'); await check('onboarding3');
 
     /* seeded player */
     await page.evaluate(s => localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)), save());
@@ -110,13 +110,16 @@ const audit = () => {
     ok(nb === 'ok', `${S.name} lesson: Next button is tappable where it lands after answering (${nb})`);
     if (SHOT && S.name === 'phone390') await page.screenshot({ path: `${OUT}tapfix_${SHOT}_lesson_next.png` });
     await check('lesson_answered');
-    await tapNav('pet', 'during lesson'); await tapNav('home', 'during lesson');
+    // focus mode (review T2): no tab bar during a lesson; "← Leave" brings it back and the tabs take real taps again
+    const hiddenIn = async lab => { const h = await page.evaluate(() => getComputedStyle(document.getElementById('navbar')).display === 'none'); ok(h, `${S.name} ${lab}: tab bar hidden while playing`); };
+    const leave = async () => { const q = await page.$('#quitBtn') || await page.$('#qBackRealm'); if (q) { await q.scrollIntoViewIfNeeded(); await q.click(); } else await page.evaluate(() => WR.go('home')); await page.waitForTimeout(250); };
+    await hiddenIn('lesson'); await leave(); await tapNav('pet', 'after leaving a lesson'); await tapNav('home', 'after leaving a lesson');
     // speaking, writing, special, placement
     for (const [lab, sel, wait] of [['speaking', '[data-speak]', '#quitBtn'], ['writing', '[data-write]', '#quitBtn,.quill-task'], ['special', '[data-sp]', '#quitBtn']]) {
       await page.evaluate(() => WR.go('realm', 'a1')); await page.waitForSelector('[data-k="vocab"]');
       if (!await page.$(sel)) continue;
       await page.click(sel); await page.waitForSelector(wait, { timeout: 8000 }); await check(lab, lab !== 'special');
-      await tapNav('home', 'in ' + lab);
+      await hiddenIn(lab); await leave(); await tapNav('home', 'after ' + lab);
     }
     await page.evaluate(() => WR.go('home')); await page.click('#mirrorPill'); await page.waitForSelector('.mirror-card', { timeout: 8000 }); await check('placement');
     ok(errs.length === 0, `${S.name}: no page errors ${errs.join(' | ')}`);

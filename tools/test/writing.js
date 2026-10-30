@@ -95,7 +95,7 @@ On balance, I believe that education is the more important method. Not only does
   const before = await page.evaluate(() => ({ stars: WR.state.stars, xp: WR.state.pet.xp, passed: WR.realmProgress('a1').passed }));
   await page.evaluate(() => WR.go('realm', 'a1'));
   await page.waitForSelector('[data-write]'); await clean(page);
-  assert(/not needed to unlock/.test(await page.textContent('[data-write]')), 'bonus writing tile in the realm');
+  assert(/Bonus/.test(await page.textContent('[data-write]')), 'bonus writing tile in the realm');
   await page.screenshot({ path: OUT + 'writing_01_realm_tile.png' });
   await page.click('[data-write]'); await page.waitForSelector('.quill-task');
   assert((await page.$$('.quill-task')).length === 6, 'A1 task picker lists 6 tasks');

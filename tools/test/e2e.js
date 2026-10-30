@@ -15,6 +15,7 @@ const OUT = '/workspace/cefr-quest/screenshots/';
   await page.screenshot({ path: OUT + '00_onboarding.png' });
   await page.click('#n1');
   await page.click('[data-pet="pet_fox"]');
+  await page.click('#n2');   // onboarding is 3 short steps (name+hero → pet → level)
   await page.click('[data-lv="a1"]');
   await page.screenshot({ path: OUT + '01_adopt_pet.png' });
   await page.click('#go');
@@ -115,7 +116,10 @@ const OUT = '/workspace/cefr-quest/screenshots/';
   await page.click('.tabs button[data-t="petskins"]'); await page.waitForSelector('.item');
   await page.click('.buy'); await page.waitForTimeout(300);
   await page.screenshot({ path: OUT + '05_shop.png', fullPage: true });
-  await page.click('.cash'); await page.waitForSelector('.modal');
+  // premium items sit behind the parent gate (T19): Ask a grown-up → gate → Grown-ups list → cash stub → demo unlock
+  await page.click('.askgu'); await page.waitForSelector('.pgate');
+  await page.evaluate(() => { const a = WR.parentGate._answer(); [...a].forEach(d => document.querySelector(`.pgate [data-d="${d}"]`).click()); document.getElementById('pgOk').click(); });
+  await page.waitForSelector('.gu-item .cash'); await page.click('.gu-item .cash'); await page.waitForSelector('#demo');
   await page.screenshot({ path: OUT + '06_shop_cash_stub.png' });
   await page.click('#demo'); await page.waitForTimeout(300);
   await page.click('.tabs button[data-t="themes"]'); await page.click('.buy'); await page.waitForTimeout(300);

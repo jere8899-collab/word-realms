@@ -4,6 +4,7 @@ const WR = window.WR;
 const app = document.getElementById("app");
 let current = "home";
 WR.view = html => { WR.$("#main").innerHTML = html; window.scrollTo({ top: 0 }); };
+WR.current = () => current;
 WR.renderTop = () => {
   const t = WR.$("#top"); if (!t || !WR.state.pet) return;
   const s = WR.state;
@@ -33,30 +34,37 @@ WR.go = (screen, arg) => {
 function onboarding() {
   WR.$("#navbar").style.display = "none";
   const draft = { name: "", avatar: "avatar_girl", pet: "pet_bunny", level: "a1" };
+  // 📱 T6: three short steps (name + hero → pet → starting realm), each fitting one phone screen with its button visible
+  const dots = n => `<div class="onb-dots" aria-label="Step ${n} of 3">${[1, 2, 3].map(k => `<i class="${k === n ? "on" : ""}"></i>`).join("")}</div>`;
   const step1 = () => {
-    WR.view(`<div class="hero fade-in"><h1>Word Realms</h1><p style="font-size:1.15rem;font-weight:800">A fairytale English adventure from A1 to C2 ✨</p></div>
-    <div class="card fade-in"><h2>1. What's your name, adventurer?</h2><input class="input" id="nm" maxlength="20" placeholder="Type your name…">
-    <h2 style="margin-top:18px">2. Choose your hero</h2><div class="grid g3">${WR.AVATARS.map(a => `<div class="card pick ${draft.avatar === a.id ? "sel" : ""}" data-av="${a.id}">${WR.img(a.id)}<div class="nm">${a.name}</div></div>`).join("")}</div>
-    <div class="row" style="justify-content:flex-end;margin-top:16px"><button class="btn" id="n1">Next →</button></div></div>
-    ${WR.Cloud ? `<div class="card fade-in cc-onb" id="ccOnb"><img src="assets/web/cloud_castle.webp" onerror="this.onerror=null;this.src='assets/ui/cloud_castle.png'" alt=""><div style="flex:1"><b>Already have a Cloud Castle account? ☁️</b><div class="muted" style="font-size:.85rem;font-weight:700">Log in to bring back your stars, pet and skins.</div></div><span class="btn small mint">Log in →</span></div>` : ""}`);
+    WR.view(`<div class="onb"><div class="hero fade-in"><h1>Word Realms</h1><p style="font-size:1.15rem;font-weight:800">A fairytale English adventure from A1 to C2 ✨</p></div>${dots(1)}
+    <div class="card fade-in"><h2>What's your name, adventurer?</h2><input class="input" id="nm" maxlength="20" placeholder="Type your name…" autocomplete="nickname">
+    <h2 style="margin-top:14px">Choose your hero</h2><div class="onb-heroes">${WR.AVATARS.map(a => `<div class="card pick ${draft.avatar === a.id ? "sel" : ""}" data-av="${a.id}" role="button" tabindex="0">${WR.img(a.id)}<div class="nm">${a.name}</div></div>`).join("")}</div>
+    <div class="onb-next" style="justify-content:flex-end"><button class="btn" id="n1">Next →</button></div></div>
+    ${WR.Cloud ? `<div class="card fade-in cc-onb" id="ccOnb"><img src="assets/web/cloud_castle.webp" onerror="this.onerror=null;this.src='assets/ui/cloud_castle.png'" alt=""><div style="flex:1"><b>Already have a Cloud Castle account? ☁️</b><div class="muted" style="font-size:.85rem;font-weight:700">Log in to bring back your stars, pet and skins.</div></div><span class="btn small mint">Log in →</span></div>` : ""}</div>`);
     const onb = WR.$("#ccOnb"); if (onb) onb.onclick = () => WR.Cloud.open("login");
     const nm = WR.$("#nm"); nm.value = draft.name; nm.oninput = () => draft.name = nm.value;
+    nm.onkeydown = e => { if (e.key === "Enter") { nm.blur(); } };
     document.querySelectorAll("[data-av]").forEach(c => c.onclick = () => { draft.avatar = c.dataset.av; document.querySelectorAll("[data-av]").forEach(x => x.classList.toggle("sel", x === c)); WR.sfx("tap"); });
     WR.$("#n1").onclick = () => { if (!draft.name.trim()) { nm.focus(); return WR.toast("Please type your name 💖"); } step2(); };
   };
   const step2 = () => {
-    WR.view(`<div class="card fade-in"><h2>3. Adopt your magical pet 🐾</h2><p class="muted" style="font-weight:700">Your pet learns with you, cheers you on, and evolves as you grow!</p>
-    <div class="grid g4">${WR.PETS.map(p => `<div class="card pick ${draft.pet === p.id ? "sel" : ""}" data-pet="${p.id}">${WR.img(p.id)}<div class="nm">${p.name}</div><div class="muted" style="font-size:.8rem">Loves ${p.likes}</div></div>`).join("")}</div>
-    <h2 style="margin-top:18px">4. Where should your journey begin?</h2><p class="muted" style="font-weight:700">New to English? Start at A1. Already confident? Jump ahead — earlier realms stay open for practice.</p>
-    <div class="lvlpick">${WR.realms.map(r => `<button data-lv="${r.id}" class="${draft.level === r.id ? "sel" : ""}">${r.emoji} ${r.level}<br><small>${r.name}</small></button>`).join("")}</div>
-    <div class="mirror-pick" id="mirrorBtn"><img src="assets/web/mirror.webp" onerror="this.onerror=null;this.src='assets/ui/mirror.png'" alt=""><div style="flex:1"><b>Not sure? Ask the Magic Mirror 🪞</b><div class="muted" style="font-size:.85rem;font-weight:700">A 3-minute quiz that finds your level (A1–C2) for you.</div></div><span class="btn small">Try it →</span></div>
-    <div class="row" style="justify-content:space-between;margin-top:16px"><button class="btn ghost" id="b2">← Back</button><button class="btn mint" id="go">Begin the adventure ✨</button></div></div>`);
+    WR.view(`<div class="onb">${dots(2)}<div class="card fade-in"><h2>Adopt your magical pet 🐾</h2><p class="muted" style="font-weight:700;margin:.2em 0 .6em">Your pet learns with you, cheers you on, and grows as you do!</p>
+    <div class="onb-pets">${WR.PETS.map(p => `<div class="card pick ${draft.pet === p.id ? "sel" : ""}" data-pet="${p.id}" role="button" tabindex="0">${WR.img(p.id)}<div class="nm">${p.name}</div><div class="muted" style="font-size:.8rem">Loves ${p.likes}</div></div>`).join("")}</div>
+    <div class="onb-next"><button class="btn ghost" id="b1">← Back</button><button class="btn" id="n2">Next →</button></div></div></div>`);
     document.querySelectorAll("[data-pet]").forEach(c => c.onclick = () => { draft.pet = c.dataset.pet; document.querySelectorAll("[data-pet]").forEach(x => x.classList.toggle("sel", x === c)); WR.sfx("tap"); });
+    WR.$("#b1").onclick = step1; WR.$("#n2").onclick = step3;
+  };
+  const step3 = () => {
+    WR.view(`<div class="onb">${dots(3)}<div class="card fade-in"><h2>Where should your journey begin?</h2><p class="muted" style="font-weight:700;margin:.2em 0 .6em">New to English? Start at A1. Already confident? Jump ahead. Earlier realms stay open for practice.</p>
+    <div class="lvlpick">${WR.realms.map(r => `<button data-lv="${r.id}" class="${draft.level === r.id ? "sel" : ""}">${r.emoji} ${r.level}<br><small>${r.name}</small></button>`).join("")}</div>
+    <div class="mirror-pick" id="mirrorBtn" role="button" tabindex="0"><img src="assets/web/mirror.webp" onerror="this.onerror=null;this.src='assets/ui/mirror.png'" alt=""><div style="flex:1"><b>Not sure? Ask the Magic Mirror 🪞</b><div class="muted" style="font-size:.85rem;font-weight:700">A 3-minute quiz finds your level for you.</div></div><span class="btn small">Try it →</span></div>
+    <div class="onb-next"><button class="btn ghost" id="b2">← Back</button><button class="btn mint" id="go">Begin the adventure ✨</button></div></div></div>`);
     document.querySelectorAll("[data-lv]").forEach(c => c.onclick = () => { draft.level = c.dataset.lv; document.querySelectorAll("[data-lv]").forEach(x => x.classList.toggle("sel", x === c)); });
-    WR.$("#b2").onclick = step1;
+    WR.$("#b2").onclick = step2;
     WR.$("#mirrorBtn").onclick = () => WR.startPlacement({
       onAccept: lv => { draft.level = lv; finish(); },
-      onBack: lv => { if (lv) draft.level = lv; step2(); }
+      onBack: lv => { if (lv) draft.level = lv; step3(); }
     });
     WR.$("#go").onclick = () => finish();
   };
@@ -65,28 +73,52 @@ function onboarding() {
       const s = WR.state, info = WR.PETS.find(p => p.id === draft.pet);
       s.name = draft.name.trim(); s.avatar = draft.avatar; s.startLevel = draft.level;
       s.pet = { species: draft.pet, name: info.name, xp: 0, happiness: 80, hunger: 30, skin: null, lastTick: Date.now(), adopted: Date.now() };
-      WR.save(); start(); WR.confetti(); WR.toast(`${info.emoji} ${info.name} is so happy to meet you!`, 2500);
+      WR.save(); start(); WR.sfx("level"); WR.toast(`${info.emoji} ${info.name} is so happy to meet you!`, 2500);
     }
   };
   step1();
 }
 
 /* ---------------- home / realm map ---------------- */
+// ▶ T7: what to play next — the first open realm (from the starting level) that hasn't opened the next one yet, and its
+// next unplayed (else weakest) skill; plus a child-facing goal ("2 more skills to open Candy Village 🍬")
+WR.continueTarget = () => {
+  if (!WR.realms) return null;
+  const s = WR.state, start = Math.max(0, WR.realms.findIndex(r => r.id === s.startLevel));
+  let idx = -1;
+  for (let i = start; i < WR.realms.length; i++) { if (!WR.isUnlocked(i)) break; if (WR.realmProgress(WR.realms[i].id).passed < 3) { idx = i; break; } }
+  if (idx < 0) for (let i = WR.realms.length - 1; i >= start; i--) if (WR.isUnlocked(i) && WR.realmProgress(WR.realms[i].id).passed < 4) { idx = i; break; }
+  if (idx < 0) idx = WR.realms.length - 1;
+  const realm = WR.realms[idx], pr = WR.realmProgress(realm.id), skill = WR.nextSkill ? WR.nextSkill(realm.id) : WR.SKILLS[0];
+  const plays = (pr.p[skill.id] && pr.p[skill.id].plays) || 0, nx = WR.realms[idx + 1], need = 3 - pr.passed;
+  const goal = nx && need > 0 ? `${need} more skill${need > 1 ? "s" : ""} to open ${nx.name} ${nx.emoji}` : nx ? `${nx.name} ${nx.emoji} is open! Collect all 4 skill crowns here too 👑` : pr.passed < 4 ? `${4 - pr.passed} more skill${4 - pr.passed > 1 ? "s" : ""} to master the last realm 👑` : "Every realm is yours! Keep polishing your crowns 👑";
+  return { realm, skill, lesson: plays + 1, goal };
+};
+// friendly "what's waiting" line for a skill tile (T15: instead of "30 in bank")
+WR.waitingText = (rid, k) => {
+  const size = (WR.counts && WR.counts.counts && WR.counts.counts[rid + "/" + k]) || 0, seen = ((WR.state.seen || {})[rid + "/" + k] || []).length;
+  const p = (WR.state.progress[rid] || {})[k];
+  const lessons = k === "reading" ? Math.floor((Math.round(size / 3.5) - seen) / 2) : Math.floor((size - seen) / 8);
+  if (!p) return "✨ New adventure!";
+  return lessons >= 1 ? `🎁 ${lessons} new lesson${lessons > 1 ? "s" : ""} waiting!` : "🔁 Practise to polish your crowns";
+};
 WR.screens.home = () => {
   WR.ensureDaily();
-  const s = WR.state, total = WR.counts ? (WR.counts.questions || WR.counts.total) : 0, spk = WR.counts ? WR.counts.speaking || 0 : 0;
+  const s = WR.state, cont = WR.continueTarget();
   const qs = s.daily.quests.map(q => { const d = WR.questDef(q.id); return `<div class="q"><span class="qi">${d.icon}</span><div class="qb"><b>${d.label}</b><div class="prog"><i style="width:${q.progress / d.goal * 100}%"></i></div></div>
     ${q.claimed ? '<span class="pill" style="background:var(--mint)">Done ✓</span>' : q.progress >= d.goal ? `<button class="btn small mint claim" data-id="${q.id}">Claim ${d.reward}⭐</button>` : `<span class="pill">${q.progress}/${d.goal} · ${d.reward}⭐</span>`}</div>`; }).join("");
   WR.view(`<div class="fade-in"><div class="card homehead"><div class="av-big">${WR.avatarHTML(110)}</div>
     <div><h1 style="margin:0">Hello, <span class="hero-nm">${WR.esc(s.name)}</span>! 🌸 <button class="chip hero-edit" id="heroEditHome" aria-label="Change my hero name" title="Change my hero name">✏️</button></h1><div class="muted" style="font-weight:800">${WR.esc(s.pet.name)} says: “${WR.esc(WR.petMood())}”</div>
-    <div class="row" style="margin-top:6px"><span class="pill">✅ ${s.totalCorrect} correct answers</span><span class="pill" style="background:var(--butter)">📚 ${total} questions in the realms</span>${spk ? `<span class="pill" style="background:var(--mint)">🎤 ${spk} speaking prompts</span>` : ""}${WR.counts && WR.counts.writing ? `<span class="pill" style="background:#FFE3EF">✒️ ${WR.counts.writing} writing tasks</span>` : ""}${WR.STORY ? `<span class="pill" id="bookPill" style="background:#FFF1D6;cursor:pointer">📜 Storybook ${WR.storyPagesFound()}/6 pages</span>` : ""}${s.placement ? `<span class="pill mirror-pill" id="mirrorPill" style="background:#F3ECFF;cursor:pointer">🪞 Mirror says ${s.placement.level.toUpperCase()}</span>` : `<span class="pill mirror-pill" id="mirrorPill" style="background:#F3ECFF;cursor:pointer">🪞 Find my level</span>`}</div></div></div>
+    <div class="row" style="margin-top:6px"><span class="pill">✅ ${s.totalCorrect} correct answers</span>${WR.STORY ? `<span class="pill" id="bookPill" style="background:#FFF1D6;cursor:pointer">📜 Storybook ${WR.storyPagesFound()}/6 pages</span>` : ""}${s.placement ? `<span class="pill mirror-pill" id="mirrorPill" style="background:#F3ECFF;cursor:pointer">🪞 Mirror says ${s.placement.level.toUpperCase()}</span>` : `<span class="pill mirror-pill" id="mirrorPill" style="background:#F3ECFF;cursor:pointer">🪞 Find my level</span>`}</div></div></div>
+    ${cont ? `<div class="card continue" id="continueCard"><div class="ct"><b>${cont.realm.emoji} ${cont.realm.level} ${WR.esc(cont.skill.name)} <span style="font-weight:700">(lesson ${cont.lesson})</span></b><small>${WR.esc(cont.goal)}</small></div><button class="btn mint" id="continueBtn">▶ Continue</button></div>` : ""}
     <div class="grid g2" style="margin-top:14px;align-items:start">
-      <div>${WR.Math ? `<div class="card math-node" id="mathNode">${WR.img("bg_math", "thumb", "", true)}<div style="flex:1"><div><span class="lvl-badge">G1–12</span><b>🔢 Number Kingdom</b></div><div class="muted" style="font-size:.85rem;font-weight:700">Maths quests + 🗼 Times-Table Tower</div><div class="muted" style="font-size:.75rem;font-weight:800">👑 ${WR.Math.totalCrowns()} crowns · 🌟 ${WR.Math.mastered()}/132 facts${s.math && s.math.grade ? ` · Grade ${s.math.grade}` : ""}</div></div></div>` : ""}<h2>🗺️ The Realm Map</h2><div class="map"><div class="map-path"></div>${WR.realms.map((r, i) => {
+      <div><h2 class="map-h">🗺️ The Realm Map</h2><div class="map"><div class="map-path"></div>${WR.realms.map((r, i) => {
         const un = WR.isUnlocked(i), pr = WR.realmProgress(r.id);
         return `<div class="card realm-node ${un ? "" : "locked"}" data-r="${r.id}" data-i="${i}">${WR.img(r.bg, "thumb", "", true)}
           <div><div><span class="lvl-badge">${r.level}</span><b>${r.emoji} ${r.name}</b>${un ? "" : " 🔒"}</div><div class="muted" style="font-size:.85rem;font-weight:700">${r.modeName}</div>
           <div class="prog"><i style="width:${pr.passed / 4 * 100}%"></i></div><div class="muted" style="font-size:.75rem;font-weight:800">${pr.passed}/4 skills passed</div></div>
-          </div>`; }).join("")}</div></div>
+          </div>`; }).join("")}</div>
+      ${WR.Math ? `<div class="card math-node" id="mathNode" style="margin-top:14px">${WR.img("bg_math", "thumb", "", true)}<div style="flex:1"><div><span class="lvl-badge">G1–12</span><b>🔢 Number Kingdom</b></div><div class="muted" style="font-size:.85rem;font-weight:700">Maths quests + 🗼 Times-Table Tower</div><div class="muted" style="font-size:.75rem;font-weight:800">👑 ${WR.Math.totalCrowns()} crowns · 🌟 ${WR.Math.mastered()}/132 facts${s.math && s.math.grade ? ` · Grade ${s.math.grade}` : ""}</div></div></div>` : ""}</div>
       <div><h2>🎯 Daily Quests</h2><div class="card quests">${qs}<p class="muted" style="font-size:.8rem;font-weight:700;margin-bottom:0">New quests every day. Keep your 🔥 streak by finishing one lesson a day!</p></div>
       ${WR.Garden && WR.Garden.dueCount() ? `<div class="card row garden-nudge" id="gardenNudge"><span style="font-size:2rem">💧</span><div style="flex:1"><b>${WR.Garden.dueCount()} plant${WR.Garden.dueCount() > 1 ? "s" : ""} in your Mistake Garden ${WR.Garden.dueCount() > 1 ? "are" : "is"} thirsty</b><div class="muted" style="font-size:.85rem;font-weight:700">A quick review helps tricky words stick.</div></div><button class="btn small mint">Water →</button></div>` : ""}
       <h2>🐾 ${WR.esc(s.pet.name)}</h2><div class="card row" style="cursor:pointer" id="petCard"><div style="width:110px;height:110px">${WR.petHTML()}</div><div style="flex:1">
@@ -102,6 +134,7 @@ WR.screens.home = () => {
   const he = WR.$("#heroEditHome"); if (he) he.onclick = e => { e.stopPropagation(); WR.openRename(); };
   const mn = WR.$("#mathNode"); if (mn) mn.onclick = () => WR.go("math");
   const gn = WR.$("#gardenNudge"); if (gn) gn.onclick = () => WR.go("review");
+  const cc = WR.$("#continueCard"); if (cc) cc.onclick = () => WR.startLesson({ realm: cont.realm.id, skill: cont.skill.id, key: cont.skill.id, title: `${cont.skill.name} · ${cont.realm.modeName}` });
   WR.$("#mirrorPill").onclick = () => WR.retakePlacement();
   const bp = WR.$("#bookPill"); if (bp) bp.onclick = () => WR.openStorybook();
 };
@@ -114,9 +147,9 @@ WR.screens.realm = rid => {
   WR.view(`<div class="fade-in"><div class="realm-hero">${WR.img(r.bg, "bg")}<div class="ov"><span class="lvl-badge">${r.level}</span><b class="title" style="font-size:1.5rem">${r.emoji} ${r.name}</b>
     <p style="margin:.3em 0;font-weight:700">${WR.esc(r.blurb)}</p><span class="pill">Game mode: ${r.modeName}</span></div></div>
     <div class="row" style="margin:12px 0"><button class="btn ghost small" id="backMap">← Map</button></div>
-    <div class="grid g4">${WR.SKILLS.map(k => `<div class="card skill-card" data-k="${k.id}"><span class="ico">${k.icon}</span><h3>${k.name}</h3><div class="muted" style="font-size:.85rem;font-weight:700">${k.desc}</div><div class="crowns">${crowns(k.id)}</div><div class="muted" style="font-size:.72rem">${sizes[rid + "/" + k.id] || ""} in bank</div></div>`).join("")}
-    ${WR.SPEAKING ? `<div class="card skill-card speak" data-speak="1"><span class="bonus-tag">Bonus</span><span class="ico">🎤</span><h3>Speaking</h3><div class="muted" style="font-size:.85rem;font-weight:700">Echo Well: say it aloud</div><div class="crowns">${crowns("speaking")}</div><div class="muted" style="font-size:.72rem">${sizes[rid + "/speaking"] || ""} prompts · not needed to unlock</div></div>` : ""}
-    ${WR.WRITING ? (() => { const w = WR.writingRealmCrowns(rid), n = sizes[rid + "/writing"] || ""; return `<div class="card skill-card quill-tile" data-write="1"><span class="bonus-tag">Bonus</span><img class="ico quill-ico" src="assets/web/quill.webp" onerror="this.onerror=null;this.src='assets/ui/quill.png'" alt=""><h3>Writing</h3><div class="muted" style="font-size:.85rem;font-weight:700">Story Quill: plan, write, get feedback</div><div class="crowns">${w.done ? "👑".repeat(w.crowns) + `<span style="opacity:.2">${"👑".repeat(3 - w.crowns)}</span>` : '<span class="muted" style="font-size:.8rem">not played</span>'}</div><div class="muted" style="font-size:.72rem">${w.done}/${n} tasks written · not needed to unlock</div></div>`; })() : ""}
+    <div class="grid g4">${WR.SKILLS.map(k => `<div class="card skill-card" data-k="${k.id}"><span class="ico">${k.icon}</span><h3>${k.name}</h3><div class="muted" style="font-size:.85rem;font-weight:700">${k.desc}</div><div class="crowns">${crowns(k.id)}</div><div class="waiting-tag">${WR.waitingText(rid, k.id)}</div></div>`).join("")}
+    ${WR.SPEAKING ? `<div class="card skill-card speak" data-speak="1"><span class="bonus-tag">Bonus</span><span class="ico">🎤</span><h3>Speaking</h3><div class="muted" style="font-size:.85rem;font-weight:700">Echo Well: say it aloud</div><div class="crowns">${crowns("speaking")}</div><div class="waiting-tag">🎶 Bonus fun!</div></div>` : ""}
+    ${WR.WRITING ? (() => { const w = WR.writingRealmCrowns(rid), n = sizes[rid + "/writing"] || ""; return `<div class="card skill-card quill-tile" data-write="1"><span class="bonus-tag">Bonus</span><img class="ico quill-ico" src="assets/web/quill.webp" onerror="this.onerror=null;this.src='assets/ui/quill.png'" alt=""><h3>Writing</h3><div class="muted" style="font-size:.85rem;font-weight:700">Story Quill: plan, write, get feedback</div><div class="crowns">${w.done ? "👑".repeat(w.crowns) + `<span style="opacity:.2">${"👑".repeat(3 - w.crowns)}</span>` : '<span class="muted" style="font-size:.8rem">not played</span>'}</div><div class="waiting-tag">${w.done ? `✒️ ${w.done}/${n} stories written` : "🎶 Bonus fun!"}</div></div>`; })() : ""}
     ${WR.STORY ? WR.storyTile(rid) : ""}
     <div class="card skill-card special" data-sp="1"><span class="ico">${r.special.emoji}</span><h3>${r.special.name}</h3><div class="muted" style="font-size:.85rem;font-weight:700">${r.special.desc}</div><div class="crowns">${crowns("special")}</div><div class="muted" style="font-size:.72rem">Special game</div></div></div></div>`);
   WR.$("#backMap").onclick = () => WR.go("home");
@@ -173,14 +206,12 @@ function settings() {
   const s = WR.state;
   WR.modal(`<h2>⚙️ Settings</h2>
     <div class="row hero-row" style="justify-content:space-between;margin-bottom:8px"><b>🦸 Hero name</b><span class="hero-cur"><span id="heroCur">${WR.esc(s.name)}</span> <button class="btn ghost small" id="heroEdit">✏️ Change</button></span></div>
-    <div class="row" style="justify-content:space-between"><b>🔊 Sound effects</b><input type="checkbox" id="snd" ${s.settings.sound ? "checked" : ""}></div>
-    <div class="row" style="justify-content:space-between;margin-top:8px"><b>🗣️ Listening speed</b><input type="range" class="slider" id="rt" min="0.5" max="1.3" step="0.1" value="${s.settings.rate}"></div>
-    <div class="muted" style="font-size:.8rem;text-align:left">Voice: ${WR.esc(Speech.voiceName())}</div>
-    <div class="row" style="justify-content:space-between;margin-top:8px"><b>🗝️ Teacher mode (unlock all realms)</b><input type="checkbox" id="ul" ${s.settings.unlockAll ? "checked" : ""}></div>
-    <div class="row" style="justify-content:center;margin-top:16px"><button class="btn ghost small" id="test">🔈 Test voice</button><button class="btn ghost small" id="plRe">🪞 Placement quiz</button>${WR.Cloud ? '<button class="btn ghost small" id="ccSet">🏰 Cloud save</button>' : ""}<button class="btn peach small" id="rst">Reset progress</button><button class="btn small" id="cls">Done</button></div>`, (bg, close) => {
+    <label class="set-row"><span>🔊 Sound effects</span><input type="checkbox" id="snd" ${s.settings.sound ? "checked" : ""}></label>
+    <div class="set-row" style="cursor:default"><span>🗣️ Listening speed</span><input type="range" class="slider" id="rt" min="0.5" max="1.3" step="0.1" value="${s.settings.rate}" aria-label="Listening speed"></div>
+    <div class="row" style="justify-content:center;margin-top:16px"><button class="btn ghost small grownups-btn" id="guBtn">👪 Grown-ups</button><button class="btn ghost small" id="test">🔈 Test voice</button><button class="btn ghost small" id="plRe">🪞 Placement quiz</button>${WR.Cloud ? '<button class="btn ghost small" id="ccSet">🏰 Cloud save</button>' : ""}<button class="btn peach small" id="rst">Reset progress</button><button class="btn small" id="cls">Done</button></div>`, (bg, close) => {
     bg.querySelector("#snd").onchange = e => { s.settings.sound = e.target.checked; WR.save(); };
     bg.querySelector("#rt").oninput = e => { s.settings.rate = +e.target.value; WR.save(); };
-    bg.querySelector("#ul").onchange = e => { s.settings.unlockAll = e.target.checked; WR.save(); if (current === "home") WR.screens.home(); };
+    bg.querySelector("#guBtn").onclick = () => { close(); WR.openGrownups(); };
     bg.querySelector("#test").onclick = () => Speech.speak("Welcome to Word Realms! Let's learn English together.", s.settings.rate);
     bg.querySelector("#rst").onclick = () => { if (confirm("Reset all progress, stars and your pet?")) { WR.reset(); close(); boot(); } };
     bg.querySelector("#cls").onclick = close;

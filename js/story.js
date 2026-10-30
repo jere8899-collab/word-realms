@@ -32,7 +32,7 @@ WR.storyTile = rid => {
   const d = st().done[rid], n = WR.realms.findIndex(r => r.id === rid) + 1;
   const cr = d ? "👑".repeat(d.crowns) + `<span style="opacity:.2">${"👑".repeat(3 - d.crowns)}</span>` : '<span class="muted" style="font-size:.8rem">not read yet</span>';
   return `<div class="card skill-card story-tile" data-story="1"><span class="bonus-tag">Bonus</span><img class="ico story-ico" src="assets/web/story_${rid}.webp" onerror="this.onerror=null;this.src='assets/stories/story_${rid}.jpg'" alt=""><h3>Story</h3>
-    <div class="muted" style="font-size:.85rem;font-weight:700">Chapter ${n} of the Starlight Storybook</div><div class="crowns">${cr}</div><div class="muted" style="font-size:.72rem">${d ? "📄 page restored" : "4 pages + 5 questions"} · not needed to unlock</div></div>`;
+    <div class="muted" style="font-size:.85rem;font-weight:700">Chapter ${n} of the Starlight Storybook</div><div class="crowns">${cr}</div><div class="waiting-tag">${d ? "📄 Page restored!" : "📜 A new chapter waits"}</div></div>`;
 };
 WR.storyPagesFound = () => Object.keys(st().done).length;
 

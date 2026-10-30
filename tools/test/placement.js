@@ -40,7 +40,7 @@ const LV = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2'];
 
   // onboarding → mirror; learner solid up to B1 should be placed in B2
   await page.fill('#nm', 'Jeremy'); await page.click('[data-av="avatar_girl"]'); await page.click('#n1');
-  await page.click('[data-pet="pet_bunny"]');
+  await page.click('[data-pet="pet_bunny"]'); await page.click('#n2');
   await page.screenshot({ path: OUT + 'placement_00_onboarding_entry.png' });
   await page.click('#mirrorBtn');
   let r = await runQuiz(2, true);

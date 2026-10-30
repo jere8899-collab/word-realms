@@ -82,13 +82,13 @@ WR.screens.shop = () => {
       if (slot === "petskin") prev = `<div style="width:90px;height:90px;margin:auto" class="${it.sparkle ? "sparkle-skin" : ""} ${it.rainbow ? "rainbow-skin" : ""}">${WR.img(s.pet.species, "prev", it.filter ? "filter:" + it.filter : "")}</div>`;
       if (slot === "theme") prev = `<div style="height:60px;border-radius:14px;margin:6px 0;background:linear-gradient(135deg,${it.vars["--bg1"]},${it.vars["--bg2"]});border:3px solid ${it.vars["--accent"]}"></div>`;
       const action = own ? `<button class="btn small ${eq ? "ghost" : "mint"} eq" data-id="${it.id}" data-slot="${slot}">${eq ? "Unequip" : "Equip"}</button>`
-        : it.premium ? `<button class="btn small peach cash" data-id="${it.id}" data-tab="${tab}">💳 Buy with cash ${it.cash}</button>`
+        : it.premium ? `<button class="btn small ask-grownup askgu" data-id="${it.id}" data-tab="${tab}">Ask a grown-up 💖</button>`
         : `<button class="btn small buy" data-id="${it.id}" data-tab="${tab}" ${s.stars < it.price ? "disabled" : ""}>⭐ ${it.price}</button>`;
       return `<div class="card item ${it.premium ? "premium" : ""}">${it.premium ? '<span class="badge">PREMIUM</span>' : ""}${prev}<div><b>${WR.esc(it.name)}</b></div><p class="muted" style="font-size:.85rem;min-height:2.4em">${WR.esc(it.desc)}</p>${action}</div>`;
     }).join("");
   }
   WR.view(`<div class="fade-in"><div class="row" style="justify-content:space-between"><h1>🛍️ Star Shop</h1><span class="chip star">⭐ ${s.stars}</span></div>
-    <p class="muted" style="font-weight:700">Earn stars from lessons, combos and daily quests. Premium items use the cash button (payments not live yet).</p>
+    <div class="row" style="justify-content:space-between;align-items:center"><p class="muted" style="font-weight:700;margin:.4em 0;flex:1;min-width:200px">Earn stars from lessons, combos and daily quests ✨ Special ✨ items need a grown-up.</p><button class="btn small grownups-btn" id="grownups">👪 Grown-ups</button></div>
     <div class="row" style="gap:16px"><div>${WR.avatarHTML(120)}</div><div style="width:120px;height:120px">${WR.petHTML()}</div></div>
     <div class="tabs">${tabs.map(([k, l]) => `<button data-t="${k}" class="${tab === k ? "on" : ""}">${l}</button>`).join("")}</div>
     <div class="grid g4">${items}</div></div>`);
@@ -100,16 +100,32 @@ WR.screens.shop = () => {
     WR.grantItem(it.id); WR.sfx("level"); WR.confetti(12); WR.toast(`${it.icon} ${it.name} unlocked!`); equip(it.id, { outfits: "outfit", petskins: "petskin", themes: "theme" }[b.dataset.tab]);
   });
   document.querySelectorAll(".eq").forEach(b => b.onclick = () => equip(b.dataset.id, b.dataset.slot, true));
-  document.querySelectorAll(".cash").forEach(b => b.onclick = async () => {
-    const it = WR.shop[b.dataset.tab].find(x => x.id === b.dataset.id);
-    const res = await PaymentHook.purchase(it);
-    WR.modal(`<h2>💳 Cash checkout</h2><div style="font-size:3rem">${it.icon}</div><p><b>${WR.esc(it.name)}</b> · ${it.cash}</p>
-      <p class="muted" style="font-weight:700">Real payments aren't connected yet. This button calls the <code>PaymentHook</code> stub in <code>js/payments.js</code>, ready to wire to Stripe Checkout later. No money is charged.</p>
-      <div class="row" style="justify-content:center">${res.status === "demo" ? `<button class="btn peach" id="demo">✨ Demo unlock (no charge)</button>` : ""}<button class="btn ghost" id="cl">Close</button></div>`, (bg, close) => {
-      bg.querySelector("#cl").onclick = close;
-      const d = bg.querySelector("#demo"); if (d) d.onclick = () => { WR.grantItem(it.id); close(); WR.toast(`${it.icon} Demo unlocked`); WR.screens.shop(); };
-    });
-  });
+  // 👪 T19: children see "Ask a grown-up 💖"; prices and cash buttons only appear behind the parent gate
+  document.querySelectorAll(".askgu").forEach(b => b.onclick = () => grownupShop(b.dataset.id));
+  WR.$("#grownups").onclick = () => grownupShop();
+  function grownupShop(focusId) {
+    WR.parentGate(() => {
+      const all = ["outfits", "petskins", "themes"].flatMap(t => WR.shop[t].filter(x => x.premium).map(x => ({ ...x, _tab: t })));
+      WR.modal(`<h2>👪 Grown-ups · Special items</h2>
+        <div class="gu-note">💡 Real payments aren't switched on yet. "Buy" calls the <code>PaymentHook</code> stub in <code>js/payments.js</code>; no money is ever charged.</div>
+        <div class="gu-list">${all.map(x => `<div class="gu-item" ${x.id === focusId ? 'style="outline:3px solid var(--accent)"' : ""}><span class="ic">${x.icon}</span><div class="nm">${WR.esc(x.name)}<small>${WR.esc(x.desc)}</small></div>${s.owned.includes(x.id) ? '<span class="pill" style="background:var(--mint)">Owned ✓</span>' : `<button class="btn small peach cash" data-id="${x.id}" data-tab="${x._tab}">💳 Buy ${WR.esc(x.cash)}</button>`}</div>`).join("")}</div>
+        <div class="row" style="justify-content:center"><button class="btn ghost small" id="guShopClose">Close</button></div>`, (bg, close) => {
+        bg.querySelector("#guShopClose").onclick = close;
+        bg.querySelectorAll(".cash").forEach(b => b.onclick = () => { close(); cashCheckout(WR.shop[b.dataset.tab].find(x => x.id === b.dataset.id)); });
+      });
+    }, { why: "Special items are bought by a grown-up." });
+  }
+  function cashCheckout(it) {
+    WR.parentGate(async () => {
+      const res = await PaymentHook.purchase(it);
+      WR.modal(`<h2>💳 Cash checkout</h2><div style="font-size:3rem">${it.icon}</div><p><b>${WR.esc(it.name)}</b> · ${it.cash}</p>
+        <p class="muted" style="font-weight:700">Real payments aren't connected yet. This button calls the <code>PaymentHook</code> stub in <code>js/payments.js</code>, ready to wire to Stripe Checkout later. No money is charged.</p>
+        <div class="row" style="justify-content:center">${res.status === "demo" ? `<button class="btn peach" id="demo">✨ Demo unlock (no charge)</button>` : ""}<button class="btn ghost" id="cl">Close</button></div>`, (bg, close) => {
+        bg.querySelector("#cl").onclick = close;
+        const d = bg.querySelector("#demo"); if (d) d.onclick = () => WR.parentGate(() => { WR.grantItem(it.id); close(); WR.toast(`${it.icon} Demo unlocked`); WR.screens.shop(); }, { why: "Unlocking a special item." });
+      });
+    }, { why: "Special items are bought by a grown-up." });
+  }
   function equip(id, slot, toggle) {
     if (slot === "petskin") s.pet.skin = toggle && s.pet.skin === id ? null : id;
     else s.equipped[slot] = toggle && s.equipped[slot] === id ? null : id;

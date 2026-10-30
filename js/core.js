@@ -137,20 +137,40 @@ WR.sfx = type => {
 };
 
 /* ---------- UI helpers ---------- */
-WR.toast = (msg, ms = 1800) => { const t = document.createElement("div"); t.className = "toast"; t.innerHTML = msg; document.body.appendChild(t); setTimeout(() => t.remove(), ms); };
+// 🍞 Toasts (review T4): at most 2 on screen, auto-hide within 2.5 s, never take taps (pointer-events:none in css/phone.css),
+// sit at the bottom on phones, and are cleared by WR.go() (see WR.clearFx) so none follows the child to the next screen.
+WR.toast = (msg, ms = 1800) => {
+  ms = Math.min(ms, 2500);
+  const old = [...document.querySelectorAll(".toast")]; old.slice(0, Math.max(0, old.length - 1)).forEach(x => x.remove());
+  const t = document.createElement("div"); t.className = "toast"; t.setAttribute("role", "status"); t.innerHTML = msg; t.dataset.born = Date.now();
+  document.body.appendChild(t); setTimeout(() => t.classList.add("out"), ms - 300); setTimeout(() => t.remove(), ms);
+};
 WR.modal = (html, onMount) => {
   const bg = document.createElement("div"); bg.className = "modal-bg";
   bg.innerHTML = `<div class="card modal">${html}</div>`;
   bg.addEventListener("click", e => { if (e.target === bg) bg.remove(); });
   document.body.appendChild(bg); onMount && onMount(bg, () => bg.remove()); return bg;
 };
+// 🎉 Confetti (review T3): one fixed, clipped layer, so pieces can never widen the page; skipped for reduced motion;
+// pieces older than 0.3 s are cleared when the screen changes (WR.clearFx), so nothing falls over the next question.
+WR.reducedMotion = () => !!(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches);
 WR.confetti = (n = 26) => {
-  const em = ["⭐", "✨", "🌸", "💖", "🍬", "🌟", "🎀"];
+  if (WR.reducedMotion()) return;
+  let layer = document.querySelector(".confetti-layer");
+  if (!layer) { layer = document.createElement("div"); layer.className = "confetti-layer"; layer.setAttribute("aria-hidden", "true"); document.body.appendChild(layer); }
+  const em = ["⭐", "✨", "🌸", "💖", "🍬", "🌟", "🎀"], born = Date.now();
   for (let i = 0; i < n; i++) {
-    const c = document.createElement("div"); c.className = "confetti"; c.textContent = em[i % em.length];
-    c.style.left = Math.random() * 100 + "vw"; c.style.animationDuration = 1.6 + Math.random() * 1.6 + "s"; c.style.animationDelay = Math.random() * .4 + "s";
-    document.body.appendChild(c); setTimeout(() => c.remove(), 3800);
+    const c = document.createElement("div"); c.className = "confetti"; c.textContent = em[i % em.length]; c.dataset.born = born;
+    c.style.left = Math.random() * 92 + "%"; c.style.animationDuration = 1.6 + Math.random() * 1.6 + "s"; c.style.animationDelay = Math.random() * .4 + "s";
+    layer.appendChild(c); setTimeout(() => { c.remove(); if (!layer.children.length) layer.remove(); }, 3800);
   }
+};
+// clear celebrations left over from the previous screen (keeps anything fired in the last 0.3 s, e.g. a toast fired right before WR.go)
+WR.clearFx = (toasts = true) => {
+  const cut = Date.now() - 300;
+  document.querySelectorAll(".confetti-layer .confetti").forEach(c => { if (+c.dataset.born < cut) c.remove(); });
+  const l = document.querySelector(".confetti-layer"); if (l && !l.children.length) l.remove();
+  if (toasts) document.querySelectorAll(".toast").forEach(t => { if (+t.dataset.born < cut) t.remove(); });
 };
 WR.applyTheme = () => {
   const root = document.documentElement.style;

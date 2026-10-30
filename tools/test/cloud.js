@@ -146,7 +146,7 @@ const waitStatus = (page, st, t = 15000) => page.waitForFunction(s => WR.Cloud &
   ok(await stars(A.page) === 96, 'background push noticed newer cloud data and took it (96)');
   // log out & clear device
   await A.page.click('#cloudChip'); await A.page.waitForSelector('#ccOutClear');
-  A.page.once('dialog', d => d.accept()); await A.page.click('#ccOutClear');
+  A.page.once('dialog', d => d.accept()); await A.page.click('#ccOutClear'); await A.page.waitForSelector('.pgate'); await A.page.evaluate(() => { if (!document.querySelector('.pgate')) return; [...WR.parentGate._answer()].forEach(d => document.querySelector(`.pgate [data-d="${d}"]`).click()); document.getElementById('pgOk').click(); });  // 👪 grown-up gate (T19)
   await A.page.waitForSelector('#nm', { timeout: 10000 });
   ok(await status(A.page) === 'guest' && await A.page.evaluate(() => !localStorage.getItem('wordRealms.save.v1') || !JSON.parse(localStorage.getItem('wordRealms.save.v1')).pet), 'log out & clear returns to onboarding as a guest');
   ok(A.page.errors.length === 0 && B.page.errors.length === 0, 'no page errors during the round trip ' + JSON.stringify(A.page.errors.concat(B.page.errors)));

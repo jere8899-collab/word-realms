@@ -43,8 +43,10 @@ WR.buildItems = async (rid, skill, n = 8) => {
 WR.normalize = normalize;
 
 let L = null; // current lesson state
+let heardOnce = false; // has speech played to the end once this session? (then later listening questions auto-play)
+const phone = () => (window.innerWidth || 1024) <= 520;
 let timerId = null;
-function clearTimer() { if (timerId) { clearInterval(timerId); timerId = null; } }
+function clearTimer() { if (timerId) { clearInterval(timerId); timerId = null; } if (L && L._io) { L._io.disconnect(); L._io = null; } }
 
 WR.startLesson = async (opts) => {
   clearTimer(); WR.Speech && Speech.stop();
@@ -80,12 +82,20 @@ function flavour(it) {
 }
 function qBody(it) {
   let h = flavour(it);
-  if (it.passage) h += `<div class="passage"><h3>📜 ${WR.esc(it.passage.title)}</h3>${WR.esc(it.passage.text)}</div>`;
+  // 📜 T9: on phones the story shows in full on its first question; on the next questions of the same story a sticky
+  // "📜 Story" chip opens it in a bottom sheet, so the question and answers stay together on screen
+  if (it.passage) {
+    const prev = L.items[L.i - 1], again = prev && prev.passage === it.passage;
+    h += again && phone() ? `<button class="story-chip" id="storyChip">📜 Story: ${WR.esc(it.passage.title)}</button>`
+      : `<div class="passage"><h3>📜 ${WR.esc(it.passage.title)}</h3>${WR.esc(it.passage.text)}</div>`;
+  }
   if (it.type === "listen") {
-    h += `<div class="listenbox"><button class="playbtn" id="playBtn" aria-label="Play audio">🔊</button>
+    // 🔊 T11: the first listening question waits for a tap (iPhones block speech that doesn't start from a tap)
+    const tap = !heardOnce && Speech.supported;
+    h += `<div class="listenbox">${tap ? `<button class="tap-listen" id="playBtn" aria-label="Tap to listen"><span class="playbtn">🔊</span>Tap to listen</button>` : `<button class="playbtn" id="playBtn" aria-label="Play audio">🔊</button>`}
       <div><button class="btn ghost small" id="slowBtn">🐢 Slow</button>
-      <div class="row muted" style="margin-top:6px;font-size:.85rem">Speed <input type="range" class="slider" id="rate" min="0.5" max="1.3" step="0.1" value="${WR.state.settings.rate}"><span id="rateVal">${WR.state.settings.rate}×</span></div>
-      <div class="muted" style="font-size:.75rem">Voice: ${WR.esc(Speech.voiceName())}${Speech.supported ? "" : " — your browser can't speak; the transcript will show instead."}</div></div></div>`;
+      <div class="row muted" style="margin-top:2px;font-size:.85rem">Speed <input type="range" class="slider" id="rate" min="0.5" max="1.3" step="0.1" value="${WR.state.settings.rate}" aria-label="Listening speed"><span id="rateVal">${WR.state.settings.rate}×</span></div>
+      ${Speech.supported ? "" : `<div class="muted" style="font-size:.75rem">Read the words below 👇</div>`}</div></div>`;
     if (!Speech.supported) h += `<div class="transcript">“${WR.esc(it.say)}”</div>`;
   }
   if (it.pic) h += `<div class="qpic">${it.pic}</div>`;
@@ -115,14 +125,40 @@ function render() {
   if (it.type === "order") bindOrder(it);
   else document.querySelectorAll(".opt").forEach(b => b.onclick = () => pick(b, it));
   if (it.type === "listen") bindListen(it);
-  if (L.mode === "boss") startTimer(it);
+  const sc = WR.$("#storyChip"); if (sc) sc.onclick = () => storySheet(it.passage);
+  if (L.mode === "boss") armTimer(it);
+}
+// 📜 the story in a bottom sheet (phones, questions 2+ of a reading story)
+function storySheet(p) {
+  const bg = WR.modal(`<div class="grab"></div><div class="row" style="justify-content:space-between;flex-wrap:nowrap"><b class="title">📜 ${WR.esc(p.title)}</b><button class="btn ghost small" id="sheetClose">Close ✕</button></div><div class="passage">${WR.esc(p.text)}</div>`, (bg, close) => { bg.querySelector("#sheetClose").onclick = close; });
+  bg.classList.add("sheet-bg"); const m = bg.querySelector(".modal"); m.classList.add("story-sheet");
+}
+// ⏱️ T2/T11: the boss timer only starts once the question's options are on screen and, for listening, after the audio has
+// played to the end once. Until then the bar is shown dimmed ("waiting").
+function armTimer(it) {
+  clearTimer(); const me = L, bar = document.querySelector(".timer"); if (bar) bar.classList.add("waiting");
+  let seen = false, heard = it.type !== "listen" || !Speech.supported;
+  const go = () => { if (L !== me || L.answered || timerId || !seen || !heard) return; if (bar) bar.classList.remove("waiting"); startTimer(it); };
+  it._heard = () => { heard = true; go(); };
+  const last = [...document.querySelectorAll(".opt")].pop() || WR.$("#checkBtn");
+  if (!last || !("IntersectionObserver" in window)) { seen = true; return go(); }
+  const io = new IntersectionObserver(es => { if (es.some(e => e.intersectionRatio >= 0.85 || e.isIntersecting && e.intersectionRect.height >= e.boundingClientRect.height - 2)) { seen = true; io.disconnect(); go(); } }, { threshold: [0, .5, .85, 1] });
+  io.observe(last); me._io = io;
 }
 function bindListen(it) {
-  const play = (rate) => { const b = WR.$("#playBtn"); b && b.classList.add("playing"); Speech.speak(it.say, rate || WR.state.settings.rate, () => { const bb = WR.$("#playBtn"); bb && bb.classList.remove("playing"); }); };
+  const me = L;
+  const ended = ok => { const bb = WR.$("#playBtn"); bb && bb.classList.remove("playing"); if (ok) heardOnce = true; it._heard && it._heard(); };
+  const play = (rate) => {
+    const b = WR.$("#playBtn"); if (b) { b.classList.add("playing"); if (b.classList.contains("tap-listen")) { b.outerHTML = `<button class="playbtn playing" id="playBtn" aria-label="Play audio">🔊</button>`; WR.$("#playBtn").onclick = () => play(); } }
+    let done = false; const fin = ok => { if (done) return; done = true; if (L === me) ended(ok); };
+    // some browsers never fire "end" (no voices): treat the clip as played after its rough length + 4 s
+    setTimeout(() => fin(false), Math.min(20000, 4000 + String(it.say || "").length * 90 / (rate || WR.state.settings.rate || 1)));
+    Speech.speak(it.say, rate || WR.state.settings.rate, () => fin(true));
+  };
   WR.$("#playBtn").onclick = () => play();
   WR.$("#slowBtn").onclick = () => play(0.6);
   WR.$("#rate").oninput = e => { WR.state.settings.rate = +e.target.value; WR.$("#rateVal").textContent = e.target.value + "×"; WR.save(); };
-  setTimeout(() => play(), 350);
+  if (heardOnce) setTimeout(() => L === me && !L.answered && play(), 350);
 }
 function bindOrder(it) {
   const draw = () => {
@@ -208,21 +244,33 @@ function finish(lost) {
   WR.save(); WR.renderTop();
   const title = lost ? (L.mode === "dragon" ? "The candles went out… 🕯️" : "Glimmerfin escaped! 🌊") :
     (L.mode === "boss" && L.bossHP <= 0) ? "Boss defeated! ⚔️✨" : crowns === 3 ? "Perfect! 👑" : crowns >= 1 ? "Well done! 🌟" : "Keep practising! 🌱";
+  // ➡️ T8: one clear next step (the next unplayed, else weakest, skill in this realm), with Play again / Back as secondaries
+  const nx = L.review ? null : WR.nextSkill(L.realm.id, L.skill);
+  const mainBtn = L.review ? `<button class="btn mint" id="nextStep">Back to the garden 🌷</button>`
+    : nx ? `<button class="btn mint" id="nextStep">Next: ${nx.icon} ${WR.esc(nx.name)} →</button>` : `<button class="btn mint" id="nextStep">Back to ${WR.esc(L.realm.name)} →</button>`;
   WR.view(`<div class="card result fade-in"><h1>${title}</h1>
     <div class="big">${"👑".repeat(crowns)}${"<span style='opacity:.2'>👑</span>".repeat(3 - crowns)}</div>
     <h2>${L.correct} / ${n} correct</h2>
     <p class="muted" style="font-weight:800">⭐ ${L.starsEarned} stars earned · best combo ${L.maxCombo} ${newStreak ? `· 🔥 streak ${WR.state.streak.count} day${WR.state.streak.count > 1 ? "s" : ""}!` : ""}</p>
+    <div class="next-row">${mainBtn}<div class="sec"><button class="btn ghost small" id="again">↻ Play again</button>${L.review || !nx ? "" : `<button class="btn ghost small" id="back">← ${WR.esc(L.realm.name)}</button>`}</div></div>
     <div class="petbox bounce" style="margin:10px auto">${WR.petHTML()}</div>
     <div class="bubble">${lv ? (lv.evolved ? `I evolved into ${WR.petInfo().stages[WR.petStage(lv.level)]}! 🌟` : `I reached level ${lv.level}! 🎉`) : crowns >= 2 ? "That was so fun! 💖" : "Let's try again together! 🫶"}</div>
     ${L.review ? `<p class="muted" style="font-weight:800">🌸 ${L.bloomed || 0} flower${L.bloomed === 1 ? "" : "s"} fully bloomed${L.bloomed ? ` (+${L.bloomed * 2}⭐)` : ""} · ${WR.Garden.dueCount()} still thirsty</p>` : ""}
-    ${score < 0.6 && L.key ? `<p class="muted">Score 60% or more to count this skill towards unlocking the next realm.</p>` : ""}
-    <div class="row" style="justify-content:center;margin-top:16px"><button class="btn" id="again">↻ Play again</button><button class="btn mint" id="back">${L.review ? "Back to the garden 🌷" : "Back to " + WR.esc(L.realm.name)}</button></div></div>`);
+    ${score < 0.6 && L.key ? `<p class="muted">Score 60% or more to count this skill towards unlocking the next realm.</p>` : ""}</div>`);
   if (crowns >= 2 || lv) WR.confetti(); WR.sfx(lv ? "level" : "good");
   const opts = L;
   WR.$("#again").onclick = () => opts.replay ? opts.replay() : WR.startLesson({ realm: opts.realm.id, skill: opts.skill, key: opts.key, title: opts.title });
-  WR.$("#back").onclick = () => opts.review ? WR.go("review") : WR.go("realm", opts.realm.id);
+  const bk = WR.$("#back"); if (bk) bk.onclick = () => WR.go("realm", opts.realm.id);
+  WR.$("#nextStep").onclick = () => opts.review ? WR.go("review") : nx ? WR.startLesson({ realm: opts.realm.id, skill: nx.id, key: nx.id, title: `${nx.name} · ${opts.realm.modeName}` }) : WR.go("realm", opts.realm.id);
   if (lv && lv.evolved) setTimeout(() => WR.modal(`<h2>✨ Evolution! ✨</h2><div class="petbox cheer" style="width:180px;height:180px;margin:auto">${WR.petHTML()}</div><p><b>${WR.esc(WR.state.pet.name)}</b> became <b>${WR.petInfo().stages[WR.petStage(lv.level)]}</b>!</p><button class="btn" onclick="this.closest('.modal-bg').remove()">Hooray!</button>`), 600);
 }
+// the next core skill to play in a realm: first one never played, else the weakest (lowest best score); never the one just played
+WR.nextSkill = (rid, justPlayed) => {
+  const p = (WR.state.progress[rid] || {});
+  const cands = WR.SKILLS.filter(k => k.id !== justPlayed);
+  const fresh = cands.find(k => !p[k.id]); if (fresh) return fresh;
+  return cands.slice().sort((a, b) => (p[a.id].best - p[b.id].best) || (p[a.id].plays - p[b.id].plays))[0] || null;
+};
 WR.stopLesson = () => { clearTimer(); L = null; };
 WR._dbg = () => L && (L.items[L.i].correct || L.items[L.i].answer); // test hook (used by the headless test)
 })();

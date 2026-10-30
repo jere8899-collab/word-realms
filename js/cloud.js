@@ -284,7 +284,9 @@ C.open = (startMode) => {
       paint();
       root.querySelector("#ccSync").onclick = async () => { await C.push(); paint(); if (C.status === "saved") WR.toast("☁️ Saved to the Cloud Castle!"); };
       root.querySelector("#ccOut").onclick = async () => { await C.signOut(false); WR.toast("👋 Logged out. You can keep playing as a guest."); form(); };
-      root.querySelector("#ccOutClear").onclick = async () => { if (!confirm("Log out and remove this adventure from this device? (It stays safe in your Cloud Castle.)")) return; await C.signOut(true); close(); };
+      // 👪 T19: clearing the device needs a grown-up
+      root.querySelector("#ccOutClear").onclick = () => WR.parentGate ? WR.parentGate(clearDev, { why: "Removing this adventure from the device." }) : clearDev();
+      const clearDev = async () => { if (!confirm("Log out and remove this adventure from this device? (It stays safe in your Cloud Castle.)")) return; await C.signOut(true); close(); };
       root.querySelector("#ccDone").onclick = close;
       root.querySelector("#ccPw").onclick = pwView;
     };
