@@ -325,3 +325,31 @@ body.kbd-open .toast{display:none}
 .navbar{-webkit-backdrop-filter:blur(10px)}
 .realm-hero .ov{-webkit-backdrop-filter:blur(6px)}
 .modal-bg{-webkit-backdrop-filter:blur(4px)}
+/* 🏆 C6: goals card, sticker book, realm bosses */
+.goals{display:flex;flex-direction:column;gap:10px}
+.goals .goal{display:flex;align-items:center;gap:10px;cursor:pointer;min-height:48px}
+.goals .gpet{width:56px;height:56px;flex:0 0 56px}
+.goals .gi{font-size:1.7rem;width:56px;text-align:center;flex:0 0 56px}
+.goals .gb{flex:1;min-width:0}.goals .gb b{display:block;font-size:.95rem;line-height:1.25}
+.goals .gb small{color:var(--muted,#8a7aa0);font-weight:700;font-size:.76rem}
+.goals .prog{margin:4px 0 2px}
+.rboss{display:flex;align-items:center;gap:12px;margin-top:14px;cursor:pointer;background:linear-gradient(135deg,rgba(255,240,250,.95),rgba(236,230,255,.95))}
+.rboss .rb-art{width:96px;height:96px;object-fit:contain;flex:0 0 96px;filter:drop-shadow(0 4px 10px rgba(90,60,140,.25))}
+.rboss.locked .rb-art{filter:grayscale(.75) brightness(1.05) drop-shadow(0 4px 10px rgba(90,60,140,.15));opacity:.75}
+.rboss .btn{margin-top:6px}
+.sticker-row{margin-top:12px;cursor:pointer;gap:10px}
+.sbook .spage{margin:0 0 18px}
+.sbook .spage h3{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:.2em 0 .5em}
+.sbook .sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.sbook .stk{display:flex;flex-direction:column;align-items:center;text-align:center;gap:3px;background:rgba(255,255,255,.85);border-radius:18px;padding:10px 6px;box-shadow:0 4px 12px rgba(122,92,143,.12)}
+.sbook .stk b{font-size:.82rem;line-height:1.15}.sbook .stk small{font-size:.68rem;color:var(--muted,#8a7aa0);font-weight:700;line-height:1.2}
+.sbook .disc{position:relative;width:68px;height:68px;border-radius:50%;overflow:hidden;border:3px solid #fff;box-shadow:0 3px 10px rgba(122,92,143,.25)}
+.sbook .disc .sbg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.sbook .disc.ev{background:linear-gradient(135deg,#FFD6EC,#D9CCFF)}
+.sbook .disc .si{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:2rem;text-shadow:0 2px 6px rgba(255,255,255,.9)}
+.sbook .stk.has .disc{animation:stkPop .5s ease}
+.sbook .stk.no .disc{filter:grayscale(1) brightness(1.15);opacity:.55}.sbook .stk.no .si{color:#9a8ab0;font-weight:900}
+@keyframes stkPop{0%{transform:scale(.7)}70%{transform:scale(1.08)}100%{transform:scale(1)}}
+@media (max-width:520px){.sbook .sgrid{grid-template-columns:repeat(2,1fr)}.rboss .rb-art{width:76px;height:76px;flex-basis:76px}}
+@media (prefers-reduced-motion:reduce){.sbook .stk.has .disc{animation:none}}
+.goals .wk-act{margin-top:4px}

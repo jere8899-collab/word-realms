@@ -675,6 +675,78 @@
         "large": "assets/web/boss_archivus.webp",
         "small": "assets/web/boss_archivus.webp"
       }
+    },
+    {
+      "id": "boss_buzzbloom",
+      "type": "boss",
+      "name": "Queen Buzzbloom",
+      "path": "assets/ui/boss_buzzbloom.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "cute kawaii chibi realm boss portrait (mischievous but friendly), big sparkly anime eyes, soft pastel palette, clean soft lineart, gentle cel shading, storybook illustration, white background (cut out)",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/boss_buzzbloom.webp",
+        "small": "assets/web/boss_buzzbloom.webp"
+      }
+    },
+    {
+      "id": "boss_gumdrop",
+      "type": "boss",
+      "name": "Baron Gumdrop",
+      "path": "assets/ui/boss_gumdrop.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "cute kawaii chibi realm boss portrait (mischievous but friendly), big sparkly anime eyes, soft pastel palette, clean soft lineart, gentle cel shading, storybook illustration, white background (cut out)",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/boss_gumdrop.webp",
+        "small": "assets/web/boss_gumdrop.webp"
+      }
+    },
+    {
+      "id": "boss_mossbeard",
+      "type": "boss",
+      "name": "Old Mossbeard",
+      "path": "assets/ui/boss_mossbeard.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "cute kawaii chibi realm boss portrait (mischievous but friendly), big sparkly anime eyes, soft pastel palette, clean soft lineart, gentle cel shading, storybook illustration, white background (cut out)",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/boss_mossbeard.webp",
+        "small": "assets/web/boss_mossbeard.webp"
+      }
+    },
+    {
+      "id": "boss_nimbus",
+      "type": "boss",
+      "name": "Nimbus the Cloud Griffin",
+      "path": "assets/ui/boss_nimbus.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "cute kawaii chibi realm boss portrait (mischievous but friendly), big sparkly anime eyes, soft pastel palette, clean soft lineart, gentle cel shading, storybook illustration, white background (cut out)",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/boss_nimbus.webp",
+        "small": "assets/web/boss_nimbus.webp"
+      }
     }
   ]
 }

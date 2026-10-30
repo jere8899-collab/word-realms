@@ -9,6 +9,7 @@ const SAVE = JSON.stringify({
   v: 1, name: 'Jeremy', avatar: 'avatar_mage', startLevel: 'a1', stars: 40, totalCorrect: 30, totalAnswered: 40,
   pet: { species: 'pet_fox', name: 'Mochi', xp: 420, happiness: 82, hunger: 35, skin: null, lastTick: Date.now() },
   streak: { count: 3, last: today() }, progress: { a1: { grammar: { best: 1, plays: 1 }, vocab: { best: .9, plays: 1 } } },
+  stickers: { got: { a1: ['first', 'grammar', 'vocab', 'crown3'] }, full: [] },   // C6: stickers this progress earns are already collected
   daily: { day: today(), quests: [{ id: 'write1', progress: 0, claimed: false }, { id: 'correct10', progress: 0, claimed: false }, { id: 'feed1', progress: 0, claimed: false }] },
   owned: [], equipped: { outfit: null, petskin: null, theme: null }, settings: { rate: .9, sound: false, unlockAll: true }, mistakes: [], lessonsDone: 2 });
 const STRONG_B1 = `Hi Fern,

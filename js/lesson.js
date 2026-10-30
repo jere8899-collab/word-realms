@@ -5,6 +5,8 @@ const CHEER = ["Yay! ✨", "You're amazing! 💖", "Sparkly smart! 🌟", "Wooho
 const COMFORT = ["It's okay, we learn together 🫶", "Oopsie! Next one! 🍀", "Don't worry, read the tip 💭", "Almost! You've got this 💪"];
 const MODE_TIME = { mcq: 25, order: 40, listen: 35, reading: 50, picq: 25, spell: 45, mistake: 35, gaps: 55, dictate: 60 };
 const BOSS = { b2: { name: "Glimmerfin", face: "🐍", art: "boss_glimmerfin", hp: 100 }, c2: { name: "Archivus the Library Dragon", face: "🐲", art: "boss_archivus", hp: 100 } };
+const curBoss = () => L.boss || BOSS[L.realm.id] || BOSS.b2;                 // 🏆 C6: realm bosses pass their own { name, face, art }
+const bossBeaten = () => L.mode === "boss" && L.bossHP <= 0;
 
 /* 🧩 C2 question types: spell (letter tiles), picq (picture choice), mistake (tap the wrong word), gaps (word bank),
    dictate (listen + type), order with "say" (listen and build), listen with dialogue:true (two voices). */
@@ -78,9 +80,9 @@ function hud() {
     case "candy": return `${base}<div class="jar" title="Candy jar">🫙 ${L.jar.join("") || '<span class="muted">Fill the jar with correct answers!</span>'}</div>`;
     case "forest": return `${base}<div class="path">${Array.from({ length: n }, (_, k) => `<span class="st ${k < L.lit ? "lit" : ""}">${k < L.lit ? "🏮" : "·"}</span>`).join("")}<span>🧚</span></div>`;
     case "boss": case "dragon": {
-      const b = BOSS[L.realm.id] || BOSS.b2;
+      const b = curBoss();
       const lives = L.mode === "dragon" ? "🕯️".repeat(L.hearts) + "<span style='opacity:.3'>" + "🕯️".repeat(3 - L.hearts) + "</span>" : "💖".repeat(L.hearts) + "🤍".repeat(3 - L.hearts);
-      return `${base}<div class="meter boss"><span class="face${WR.asset(b.art) ? " painted" : ""}" id="bossFace">${WR.asset(b.art) ? WR.img(b.art, "bossimg") : b.face}</span><div style="flex:1"><b>${b.name}</b><div class="hp"><i style="width:${L.bossHP}%"></i></div>${L.mode === "boss" ? '<div class="timer"><i id="timerBar"></i></div>' : ""}</div></div><span class="hearts">${lives}</span>`;
+      return `${base}<div class="meter boss"><span class="face${WR.asset(b.art) ? " painted" : ""}" id="bossFace">${WR.asset(b.art) ? WR.img(b.art, "bossimg") : b.face}</span><div style="flex:1"><b>${b.name}</b><div class="hp"><i style="width:${L.bossHP}%"></i></div>${L.mode === "boss" && !L.noTimer ? '<div class="timer"><i id="timerBar"></i></div>' : ""}</div></div><span class="hearts">${lives}</span>`;
     }
     case "council": return `${base}<div class="meter"><b>Council vote</b><div class="meterbar"><span class="knob" style="left:${L.meter}%">⚖️</span></div><div class="row muted" style="justify-content:space-between;font-size:.75rem"><span>Against</span><span>For you</span></div></div>`;
   }
@@ -89,7 +91,7 @@ function hud() {
 function flavour(it) {
   if (L.mode === "dragon") return `<div class="dragon-scroll">🐲 “Answer my riddle, little scholar…”</div>`;
   if (L.mode === "council") return `<div class="muted" style="font-weight:800">🏰 The Council awaits your reasoning…</div>`;
-  if (L.mode === "boss") return `<div class="muted" style="font-weight:800">⚔️ Answer fast to strike Glimmerfin!</div>`;
+  if (L.mode === "boss") return `<div class="muted" style="font-weight:800">⚔️ ${L.noTimer ? "Answer right to strike" : "Answer fast to strike"} ${WR.esc(curBoss().name)}!</div>`;
   return "";
 }
 function qBody(it) {
@@ -161,7 +163,7 @@ function render() {
   else document.querySelectorAll(".opt").forEach(b => b.onclick = () => pick(b, it));
   if (WR.$("#playBtn")) bindListen(it);
   const sc = WR.$("#storyChip"); if (sc) sc.onclick = () => storySheet(it.passage);
-  if (L.mode === "boss") armTimer(it);
+  if (L.mode === "boss" && !L.noTimer) armTimer(it);
 }
 // 📜 the story in a bottom sheet (phones, questions 2+ of a reading story)
 function storySheet(p) {
@@ -327,8 +329,9 @@ function answer(ok, it, extra = "") {
 }
 function finish(lost) {
   clearTimer();
-  const n = L.items.length, score = L.correct / n, crowns = WR.crowns(score);
-  const bonus = crowns * 2 + (L.mode === "boss" && L.bossHP <= 0 ? 5 : 0);
+  const beat = bossBeaten();
+  const n = beat ? L.i + 1 : L.items.length, score = L.correct / n, crowns = WR.crowns(score);   // a boss beaten early is scored on the questions asked
+  const bonus = crowns * 2 + (beat ? 5 : 0);
   if (bonus) { WR.state.stars += bonus; L.starsEarned += bonus; }
   if (L.key) WR.recordLesson(L.realm.id, L.key, score);
   WR.questEvent("lesson2");
@@ -340,8 +343,9 @@ function finish(lost) {
   const newStreak = WR.bumpStreak();
   const lv = WR.petGainXP(L.correct * 6 + 10);
   WR.save(); WR.renderTop();
-  const title = lost ? (L.mode === "dragon" ? "The candles went out… 🕯️" : "Glimmerfin escaped! 🌊") :
-    (L.mode === "boss" && L.bossHP <= 0) ? "Boss defeated! ⚔️✨" : crowns === 3 ? "Perfect! 👑" : crowns >= 1 ? "Well done! 🌟" : "Keep practising! 🌱";
+  const won = beat && !lost;
+  const title = lost ? (L.mode === "dragon" ? "The candles went out… 🕯️" : `${WR.esc(curBoss().name)} escaped! ${L.boss ? "💨" : "🌊"}`) :
+    beat ? "Boss defeated! ⚔️✨" : crowns === 3 ? "Perfect! 👑" : crowns >= 1 ? "Well done! 🌟" : "Keep practising! 🌱";
   // ➡️ T8: one clear next step (the next unplayed, else weakest, skill in this realm), with Play again / Back as secondaries
   const nx = L.review ? null : WR.nextSkill(L.realm.id, L.skill);
   const mainBtn = L.review ? `<button class="btn mint" id="nextStep">Back to the garden 🌷</button>`
@@ -357,9 +361,11 @@ function finish(lost) {
     ${score < 0.6 && L.key ? `<p class="muted">Score 60% or more to count this skill towards unlocking the next realm.</p>` : ""}</div>`);
   if (crowns >= 2 || lv) WR.confetti(); WR.sfx(lv ? "level" : "good");
   const opts = L;
+  if (opts.onFinish) opts.onFinish({ won, lost: !!lost, score, crowns });   // 🏆 C6 hook (realm bosses, stickers)
+  if (opts.nextLabel) WR.$("#nextStep").textContent = opts.nextLabel;
   WR.$("#again").onclick = () => opts.replay ? opts.replay() : WR.startLesson({ realm: opts.realm.id, skill: opts.skill, key: opts.key, title: opts.title });
   const bk = WR.$("#back"); if (bk) bk.onclick = () => WR.go("realm", opts.realm.id);
-  WR.$("#nextStep").onclick = () => opts.review ? WR.go("review") : nx ? WR.startLesson({ realm: opts.realm.id, skill: nx.id, key: nx.id, title: `${nx.name} · ${opts.realm.modeName}` }) : WR.go("realm", opts.realm.id);
+  WR.$("#nextStep").onclick = () => opts.onNext ? opts.onNext() : opts.review ? WR.go("review") : nx ? WR.startLesson({ realm: opts.realm.id, skill: nx.id, key: nx.id, title: `${nx.name} · ${opts.realm.modeName}` }) : WR.go("realm", opts.realm.id);
   if (lv && lv.evolved) setTimeout(() => WR.modal(`<h2>✨ Evolution! ✨</h2><div class="petbox cheer" style="width:180px;height:180px;margin:auto">${WR.petHTML()}</div><p><b>${WR.esc(WR.state.pet.name)}</b> became <b>${WR.petInfo().stages[WR.petStage(lv.level)]}</b>!</p><button class="btn" onclick="this.closest('.modal-bg').remove()">Hooray!</button>`), 600);
 }
 // the next core skill to play in a realm: first one never played, else the weakest (lowest best score); never the one just played

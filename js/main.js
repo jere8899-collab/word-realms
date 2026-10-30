@@ -104,7 +104,7 @@ WR.waitingText = (rid, k) => {
 };
 WR.screens.home = () => {
   WR.ensureDaily();
-  const s = WR.state, cont = WR.continueTarget();
+  const s = WR.state, cont = WR.continueTarget(), due = WR.Garden ? WR.Garden.dueCount() : 0;
   const qs = s.daily.quests.map(q => { const d = WR.questDef(q.id); return `<div class="q"><span class="qi">${d.icon}</span><div class="qb"><b>${d.label}</b><div class="prog"><i style="width:${q.progress / d.goal * 100}%"></i></div></div>
     ${q.claimed ? '<span class="pill" style="background:var(--mint)">Done ✓</span>' : q.progress >= d.goal ? `<button class="btn small mint claim" data-id="${q.id}">Claim ${d.reward}⭐</button>` : `<span class="pill">${q.progress}/${d.goal} · ${d.reward}⭐</span>`}</div>`; }).join("");
   WR.view(`<div class="fade-in"><div class="card homehead"><div class="av-big">${WR.avatarHTML(110)}</div>
@@ -119,8 +119,8 @@ WR.screens.home = () => {
           <div class="prog"><i style="width:${pr.passed / 4 * 100}%"></i></div><div class="muted" style="font-size:.75rem;font-weight:800">${pr.passed}/4 skills passed</div></div>
           </div>`; }).join("")}</div>
       ${WR.Math ? `<div class="card math-node" id="mathNode" style="margin-top:14px">${WR.img("bg_math", "thumb", "", true)}<div style="flex:1"><div><span class="lvl-badge">G1–12</span><b>🔢 Number Kingdom</b></div><div class="muted" style="font-size:.85rem;font-weight:700">Maths quests + 🗼 Times-Table Tower</div><div class="muted" style="font-size:.75rem;font-weight:800">👑 ${WR.Math.totalCrowns()} crowns · 🌟 ${WR.Math.mastered()}/132 facts${s.math && s.math.grade ? ` · Grade ${s.math.grade}` : ""}</div></div></div>` : ""}</div>
-      <div><h2>🎯 Daily Quests</h2><div class="card quests">${qs}<p class="muted" style="font-size:.8rem;font-weight:700;margin-bottom:0">New quests every day. Keep your 🔥 streak by finishing one lesson a day!</p></div>
-      ${WR.Garden && WR.Garden.dueCount() ? `<div class="card row garden-nudge" id="gardenNudge"><span style="font-size:2rem">💧</span><div style="flex:1"><b>${WR.Garden.dueCount()} plant${WR.Garden.dueCount() > 1 ? "s" : ""} in your Mistake Garden ${WR.Garden.dueCount() > 1 ? "are" : "is"} thirsty</b><div class="muted" style="font-size:.85rem;font-weight:700">A quick review helps tricky words stick.</div></div><button class="btn small mint">Water →</button></div>` : ""}
+      <div><div id="homeGoals"></div><h2>🎯 Daily Quests</h2><div class="card quests">${qs}<p class="muted" style="font-size:.8rem;font-weight:700;margin-bottom:0">New quests every day. Keep your 🔥 streak by finishing one lesson a day!</p></div>
+      ${due ? `<div class="card row garden-nudge" id="gardenNudge"><span style="font-size:2rem">💧</span><div style="flex:1"><b>${due} plant${due > 1 ? "s" : ""} in your Mistake Garden ${due > 1 ? "are" : "is"} thirsty</b><div class="muted" style="font-size:.85rem;font-weight:700">A quick review helps tricky words stick.</div></div><button class="btn small mint">Water →</button></div>` : ""}
       <h2>🐾 ${WR.esc(s.pet.name)}</h2><div class="card row" style="cursor:pointer" id="petCard"><div style="width:110px;height:110px">${WR.petHTML()}</div><div style="flex:1">
         <div class="stat" style="grid-template-columns:24px 1fr 34px"><span>💖</span><div class="prog" style="margin:0"><i style="width:${s.pet.happiness}%"></i></div><span>${Math.round(s.pet.happiness)}</span></div>
         <div class="stat" style="grid-template-columns:24px 1fr 34px"><span>🍽️</span><div class="prog" style="margin:0"><i style="width:${100 - s.pet.hunger}%;background:linear-gradient(90deg,#FFE29A,#FFB48A)"></i></div><span>${Math.round(100 - s.pet.hunger)}</span></div>

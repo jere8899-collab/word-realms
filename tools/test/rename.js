@@ -12,7 +12,8 @@ let fails = 0; const ok = (c, m) => { if (!c) { fails++; console.error('FAIL - '
 const today = () => { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
 const seed = (stars = 60, name = 'Jeremy') => ({ v: 1, name, avatar: 'avatar_girl', startLevel: 'a1', stars, totalCorrect: stars, totalAnswered: stars + 5,
   pet: { species: 'pet_fox', name: 'Mochi', xp: stars * 2, happiness: 80, hunger: 30, skin: null, lastTick: Date.now() },
-  streak: { count: 2, last: today() }, progress: { a1: { grammar: { best: 0.9, plays: 1 } } }, owned: [], equipped: { outfit: null, petskin: null, theme: null },
+  streak: { count: 2, last: today() }, progress: { a1: { grammar: { best: 0.9, plays: 1 } } },
+  stickers: { got: { a1: ['first', 'grammar', 'crown3'] }, full: [] }, owned: [], equipped: { outfit: null, petskin: null, theme: null },
   settings: { rate: .9, sound: false, unlockAll: false }, mistakes: [], lessonsDone: Math.round(stars / 10) });
 const PHONE = { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true };
 const H = t => Object.assign({ apikey: KEY, 'Content-Type': 'application/json' }, t ? { Authorization: 'Bearer ' + t } : {});
