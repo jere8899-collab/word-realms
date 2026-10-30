@@ -77,3 +77,8 @@ GROW = {"a1": {"grammar": [
  m("___ you happy? — Yes, I am.", "Are", ["Do", "Is", "Am"], "Are you + adjective? Example: Are you cold?", ["Do doesn't go with an adjective.", "Is is for he/she/it.", "Am is for I."]),
  m("My grandma ___ in a small village.", "lives", ["live", "living", "is live"], "He/she + -s for every day. Example: He lives in Tokyo.", ["Add -s for one person.", "Living needs is.", "Is live mixes two forms."]),
 ]}}
+# more C1 chunks (one file per level/skill, each item with its own C3 notes)
+from c1_a1v import A1V; from c1_a2g import A2G; from c1_a2v import A2V; from c1_b1g import B1G; from c1_b1v import B1V
+GROW["a1"]["vocab"] = A1V
+GROW.setdefault("a2", {}).update({"grammar": A2G, "vocab": A2V})
+GROW.setdefault("b1", {}).update({"grammar": B1G, "vocab": B1V})

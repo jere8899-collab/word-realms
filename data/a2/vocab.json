@@ -527,6 +527,1383 @@
   }
  },
  {
+  "type": "mcq",
+  "q": "You borrow books from a ___.",
+  "options": [
+   "library",
+   "bookshop",
+   "bakery",
+   "museum"
+  ],
+  "answer": 0,
+  "explain": "A library lends books for free; a bookshop sells them.",
+  "notes": {
+   "bookshop": "A bookshop sells books; you don't borrow them.",
+   "bakery": "A bakery sells bread.",
+   "museum": "A museum shows old things."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You buy medicine at a ___.",
+  "options": [
+   "pharmacy",
+   "bakery",
+   "post office",
+   "garage"
+  ],
+  "answer": 0,
+  "explain": "A pharmacy (chemist's) sells medicine.",
+  "notes": {
+   "bakery": "A bakery sells bread.",
+   "post office": "A post office sends letters.",
+   "garage": "A garage fixes cars."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You send a parcel at the ___.",
+  "options": [
+   "post office",
+   "police station",
+   "pharmacy",
+   "stadium"
+  ],
+  "answer": 0,
+  "explain": "You post letters and parcels at the post office.",
+  "notes": {
+   "police station": "The police station is for the police.",
+   "pharmacy": "A pharmacy sells medicine.",
+   "stadium": "A stadium is for sport."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We watched the football match at the ___.",
+  "options": [
+   "stadium",
+   "airport",
+   "library",
+   "hospital"
+  ],
+  "answer": 0,
+  "explain": "A stadium is a big place for sport and concerts.",
+  "notes": {
+   "airport": "Planes leave from an airport.",
+   "library": "A library is quiet, for books.",
+   "hospital": "A hospital is for sick people."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Our plane leaves from the ___ at six.",
+  "options": [
+   "airport",
+   "station",
+   "harbour",
+   "bus stop"
+  ],
+  "answer": 0,
+  "explain": "Planes use an airport.",
+  "notes": {
+   "station": "Trains use a station.",
+   "harbour": "Boats use a harbour.",
+   "bus stop": "Buses stop at a bus stop."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I'm ___ of the dark. Can you leave the light on?",
+  "options": [
+   "scared",
+   "bored",
+   "proud",
+   "angry"
+  ],
+  "answer": 0,
+  "explain": "Feelings: scared (of) = afraid.",
+  "notes": {
+   "bored": "Bored means nothing interesting is happening.",
+   "proud": "Proud is a good feeling about something you did.",
+   "angry": "Angry means very cross."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I got 100% in the test! I feel so ___.",
+  "options": [
+   "proud",
+   "nervous",
+   "lonely",
+   "upset"
+  ],
+  "answer": 0,
+  "explain": "Proud = pleased about something you did.",
+  "notes": {
+   "nervous": "Nervous is how you feel before the test.",
+   "lonely": "Lonely means you're alone and sad.",
+   "upset": "Upset means sad or worried."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I have nothing to do. I'm so ___.",
+  "options": [
+   "bored",
+   "boring",
+   "busy",
+   "excited"
+  ],
+  "answer": 0,
+  "explain": "-ed adjectives = how you feel; -ing = what something is like.",
+  "notes": {
+   "boring": "Boring describes the thing, not your feeling.",
+   "busy": "Busy means you have lots to do.",
+   "excited": "Excited means looking forward to something."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The film was so ___ that I fell asleep.",
+  "options": [
+   "boring",
+   "bored",
+   "exciting",
+   "frightened"
+  ],
+  "answer": 0,
+  "explain": "-ing adjective describes the film.",
+  "notes": {
+   "bored": "Bored is how you feel.",
+   "exciting": "An exciting film keeps you awake.",
+   "frightened": "Frightened is how a person feels."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Tomorrow is my birthday! I'm really ___.",
+  "options": [
+   "excited",
+   "exciting",
+   "tired",
+   "worried"
+  ],
+  "answer": 0,
+  "explain": "Excited = happy because something good is coming.",
+  "notes": {
+   "exciting": "Exciting describes the thing (an exciting party).",
+   "tired": "Tired means you need rest.",
+   "worried": "Worried means you think something bad may happen."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I'm ___ about the test. I hope I pass.",
+  "options": [
+   "nervous",
+   "relaxed",
+   "proud",
+   "sleepy"
+  ],
+  "answer": 0,
+  "explain": "Nervous = a bit worried before something.",
+  "notes": {
+   "relaxed": "Relaxed means calm, not worried.",
+   "proud": "Proud comes after you do well.",
+   "sleepy": "Sleepy means tired."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Please ___ your shoes before you come in.",
+  "options": [
+   "take off",
+   "put on",
+   "get up",
+   "turn off"
+  ],
+  "answer": 0,
+  "explain": "Phrasal verbs: take off clothes/shoes = remove them.",
+  "notes": {
+   "put on": "Put on is the opposite.",
+   "get up": "Get up means leave your bed.",
+   "turn off": "Turn off is for machines and lights."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ at seven o'clock every morning.",
+  "options": [
+   "get up",
+   "get on",
+   "give up",
+   "look after"
+  ],
+  "answer": 0,
+  "explain": "Get up = get out of bed.",
+  "notes": {
+   "get on": "Get on is for buses and trains.",
+   "give up": "Give up means stop trying.",
+   "look after": "Look after means take care of."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Can you ___ my cat while I'm away?",
+  "options": [
+   "look after",
+   "look for",
+   "look at",
+   "look like"
+  ],
+  "answer": 0,
+  "explain": "Look after = take care of.",
+  "notes": {
+   "look for": "Look for means try to find.",
+   "look at": "Look at means turn your eyes to.",
+   "look like": "Look like means seem similar to."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Don't ___! You can do it!",
+  "options": [
+   "give up",
+   "give back",
+   "get up",
+   "pick up"
+  ],
+  "answer": 0,
+  "explain": "Give up = stop trying.",
+  "notes": {
+   "give back": "Give back means return something.",
+   "get up": "Get up means out of bed.",
+   "pick up": "Pick up means lift."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Please ___ your toys and put them in the box.",
+  "options": [
+   "pick up",
+   "take off",
+   "wake up",
+   "go out"
+  ],
+  "answer": 0,
+  "explain": "Pick up = lift from the floor.",
+  "notes": {
+   "take off": "Take off is for clothes.",
+   "wake up": "Wake up means stop sleeping.",
+   "go out": "Go out means leave the house."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I'll ___ the music. It's too loud.",
+  "options": [
+   "turn down",
+   "turn up",
+   "turn into",
+   "turn around"
+  ],
+  "answer": 0,
+  "explain": "Turn down = make quieter.",
+  "notes": {
+   "turn up": "Turn up makes it louder.",
+   "turn into": "Turn into means become.",
+   "turn around": "Turn around means face the other way."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The opposite of 'early' is ___.",
+  "options": [
+   "late",
+   "soon",
+   "fast",
+   "slow"
+  ],
+  "answer": 0,
+  "explain": "Opposites: early ↔ late.",
+  "notes": {
+   "soon": "Soon means in a short time.",
+   "fast": "Fast is about speed.",
+   "slow": "Slow is about speed."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The opposite of 'heavy' is ___.",
+  "options": [
+   "light",
+   "soft",
+   "thin",
+   "easy"
+  ],
+  "answer": 0,
+  "explain": "Opposites: heavy ↔ light (weight).",
+  "notes": {
+   "soft": "Soft is the opposite of hard.",
+   "thin": "Thin is the opposite of thick or fat.",
+   "easy": "Easy is the opposite of difficult."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The opposite of 'difficult' is ___.",
+  "options": [
+   "easy",
+   "hard",
+   "simple-minded",
+   "tricky"
+  ],
+  "answer": 0,
+  "explain": "Opposites: difficult ↔ easy.",
+  "notes": {
+   "hard": "Hard means difficult.",
+   "simple-minded": "Simple-minded is about people, and unkind.",
+   "tricky": "Tricky means difficult."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The opposite of 'wet' is ___.",
+  "options": [
+   "dry",
+   "cold",
+   "clean",
+   "warm"
+  ],
+  "answer": 0,
+  "explain": "Opposites: wet ↔ dry.",
+  "notes": {
+   "cold": "Cold is the opposite of hot.",
+   "clean": "Clean is the opposite of dirty.",
+   "warm": "Warm is about temperature."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The opposite of 'win' is ___.",
+  "options": [
+   "lose",
+   "loose",
+   "fail",
+   "miss"
+  ],
+  "answer": 0,
+  "explain": "Opposites: win ↔ lose a game.",
+  "notes": {
+   "loose": "Loose means not tight (spelling trap!).",
+   "fail": "Fail is for tests, not games.",
+   "miss": "Miss means not hit or not catch."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The opposite of 'remember' is ___.",
+  "options": [
+   "forget",
+   "remind",
+   "learn",
+   "know"
+  ],
+  "answer": 0,
+  "explain": "Opposites: remember ↔ forget.",
+  "notes": {
+   "remind": "Remind means help someone remember.",
+   "learn": "Learn means get new knowledge.",
+   "know": "Know means have the information."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Can you ___ me to feed the fish?",
+  "options": [
+   "remind",
+   "remember",
+   "forget",
+   "repeat"
+  ],
+  "answer": 0,
+  "explain": "Remind someone to do something = help them remember.",
+  "notes": {
+   "remember": "Remember is what you do yourself.",
+   "forget": "Forget is the opposite.",
+   "repeat": "Repeat means say again."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Please ___ me how to play this game.",
+  "options": [
+   "show",
+   "say",
+   "look",
+   "see"
+  ],
+  "answer": 0,
+  "explain": "Show someone how to do something.",
+  "notes": {
+   "say": "Say needs 'to': say to me.",
+   "look": "Look needs at.",
+   "see": "See is what your eyes do."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Can you ___ me a story?",
+  "options": [
+   "tell",
+   "say",
+   "speak",
+   "talk"
+  ],
+  "answer": 0,
+  "explain": "Tell + person + a story/joke.",
+  "notes": {
+   "say": "Say doesn't take a person directly.",
+   "speak": "Speak is about languages or talking.",
+   "talk": "Talk needs to/about."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I always ___ my bed in the morning.",
+  "options": [
+   "make",
+   "do",
+   "get",
+   "put"
+  ],
+  "answer": 0,
+  "explain": "Collocation: make your bed.",
+  "notes": {
+   "do": "We say do homework, not do your bed.",
+   "get": "Get doesn't go with bed here.",
+   "put": "Put needs a place."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Let's ___ a picnic in the park!",
+  "options": [
+   "have",
+   "make",
+   "do",
+   "take"
+  ],
+  "answer": 0,
+  "explain": "Collocation: have a picnic / have a party.",
+  "notes": {
+   "make": "Make a picnic means prepare the food, but we say have a picnic.",
+   "do": "Do doesn't go with picnic.",
+   "take": "Take doesn't go with picnic."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We ___ a lot of fun at the fair.",
+  "options": [
+   "had",
+   "made",
+   "did",
+   "got"
+  ],
+  "answer": 0,
+  "explain": "Collocation: have fun.",
+  "notes": {
+   "made": "We don't say make fun here; make fun of is unkind.",
+   "did": "Do doesn't go with fun.",
+   "got": "Got isn't used with fun."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Don't ___ a noise! The baby is asleep.",
+  "options": [
+   "make",
+   "do",
+   "have",
+   "give"
+  ],
+  "answer": 0,
+  "explain": "Collocation: make a noise.",
+  "notes": {
+   "do": "We don't say do a noise.",
+   "have": "Have doesn't go with noise.",
+   "give": "Give doesn't go with noise."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Let's ___ the washing-up together.",
+  "options": [
+   "do",
+   "make",
+   "have",
+   "take"
+  ],
+  "answer": 0,
+  "explain": "Collocation: do the washing-up / do homework.",
+  "notes": {
+   "make": "Make doesn't go with washing-up.",
+   "have": "Have doesn't go with washing-up.",
+   "take": "Take doesn't go with washing-up."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Smile! I'm going to ___ a photo.",
+  "options": [
+   "take",
+   "make",
+   "do",
+   "draw"
+  ],
+  "answer": 0,
+  "explain": "Collocation: take a photo.",
+  "notes": {
+   "make": "We don't say make a photo in English.",
+   "do": "Do doesn't go with photo.",
+   "draw": "You draw a picture, not a photo."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "A ___ is a small river.",
+  "options": [
+   "stream",
+   "lake",
+   "ocean",
+   "hill"
+  ],
+  "answer": 0,
+  "explain": "Nature: a stream is a small river.",
+  "notes": {
+   "lake": "A lake is water with land all around.",
+   "ocean": "An ocean is a huge sea.",
+   "hill": "A hill is a small mountain."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "A ___ is a very high hill.",
+  "options": [
+   "mountain",
+   "valley",
+   "island",
+   "field"
+  ],
+  "answer": 0,
+  "explain": "A mountain is very high.",
+  "notes": {
+   "valley": "A valley is low land between hills.",
+   "island": "An island has water all around it.",
+   "field": "A field is flat land with grass."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Land with water all around it is an ___.",
+  "options": [
+   "island",
+   "ocean",
+   "desert",
+   "forest"
+  ],
+  "answer": 0,
+  "explain": "An island is surrounded by water.",
+  "notes": {
+   "ocean": "An ocean is the water itself.",
+   "desert": "A desert is dry and sandy.",
+   "forest": "A forest has many trees."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "A ___ is very dry and sandy, with almost no rain.",
+  "options": [
+   "desert",
+   "dessert",
+   "jungle",
+   "beach"
+  ],
+  "answer": 0,
+  "explain": "Desert (one s) = dry land; dessert (two s) = sweet food.",
+  "notes": {
+   "dessert": "Dessert is pudding (spelling trap!).",
+   "jungle": "A jungle is wet and green.",
+   "beach": "A beach is next to the sea."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "After dinner we had ice cream for ___.",
+  "options": [
+   "dessert",
+   "desert",
+   "starter",
+   "breakfast"
+  ],
+  "answer": 0,
+  "explain": "Dessert = the sweet course at the end.",
+  "notes": {
+   "desert": "Desert is dry, sandy land.",
+   "starter": "A starter comes first.",
+   "breakfast": "Breakfast is the morning meal."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "A ___ is a hot, wet forest with lots of animals.",
+  "options": [
+   "jungle",
+   "desert",
+   "village",
+   "farm"
+  ],
+  "answer": 0,
+  "explain": "A jungle (rainforest) is hot and wet.",
+  "notes": {
+   "desert": "A desert is dry.",
+   "village": "A village is a small town.",
+   "farm": "A farm grows food."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Please ___ the plants. They look thirsty.",
+  "options": [
+   "water",
+   "wash",
+   "drink",
+   "pour"
+  ],
+  "answer": 0,
+  "explain": "Water (verb) = give water to plants.",
+  "notes": {
+   "wash": "You wash dishes, not plants.",
+   "drink": "You drink water yourself.",
+   "pour": "Pour needs an object: pour water on."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I'll ___ the table for dinner.",
+  "options": [
+   "set",
+   "put",
+   "make",
+   "do"
+  ],
+  "answer": 0,
+  "explain": "Collocation: set/lay the table.",
+  "notes": {
+   "put": "Put needs a thing and a place.",
+   "make": "Make the table means build it.",
+   "do": "Do doesn't go with table."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I'm saving my pocket ___ to buy a game.",
+  "options": [
+   "money",
+   "coin",
+   "purse",
+   "price"
+  ],
+  "answer": 0,
+  "explain": "Pocket money = money parents give children.",
+  "notes": {
+   "coin": "Coin is one piece of money.",
+   "purse": "A purse holds money.",
+   "price": "A price is how much something costs."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "How much does this toy ___?",
+  "options": [
+   "cost",
+   "pay",
+   "buy",
+   "spend"
+  ],
+  "answer": 0,
+  "explain": "How much does it cost? asks the price.",
+  "notes": {
+   "pay": "You pay for something.",
+   "buy": "You buy something.",
+   "spend": "You spend money."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ all my money on sweets!",
+  "options": [
+   "spent",
+   "paid",
+   "cost",
+   "bought"
+  ],
+  "answer": 0,
+  "explain": "Spend money on something.",
+  "notes": {
+   "paid": "Pay needs for: paid for sweets.",
+   "cost": "Cost is for the thing: the sweets cost £2.",
+   "bought": "Bought needs the thing directly, not money on."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The ___ of this book is £5.",
+  "options": [
+   "price",
+   "prize",
+   "money",
+   "bill"
+  ],
+  "answer": 0,
+  "explain": "Price = how much something costs.",
+  "notes": {
+   "prize": "A prize is something you win.",
+   "money": "Money is what you pay with.",
+   "bill": "A bill is the paper that tells you what to pay."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "She won first ___ in the drawing competition.",
+  "options": [
+   "prize",
+   "price",
+   "place-card",
+   "score"
+  ],
+  "answer": 0,
+  "explain": "Prize = something you win.",
+  "notes": {
+   "price": "Price is how much something costs.",
+   "place-card": "A place-card shows where to sit.",
+   "score": "Score is the points; you win a prize."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Turn ___ at the traffic lights.",
+  "options": [
+   "left",
+   "lift",
+   "leave",
+   "light"
+  ],
+  "answer": 0,
+  "explain": "Directions: turn left / turn right.",
+  "notes": {
+   "lift": "A lift takes you up and down.",
+   "leave": "Leave means go away.",
+   "light": "Light is for seeing."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Go ___ on, then turn right.",
+  "options": [
+   "straight",
+   "strong",
+   "street",
+   "strange"
+  ],
+  "answer": 0,
+  "explain": "Go straight on = don't turn.",
+  "notes": {
+   "strong": "Strong means powerful.",
+   "street": "Street is a road.",
+   "strange": "Strange means unusual."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The café is ___ the bank. You can see it across the road.",
+  "options": [
+   "opposite",
+   "inside",
+   "under",
+   "behind of"
+  ],
+  "answer": 0,
+  "explain": "Opposite = on the other side of the road.",
+  "notes": {
+   "inside": "Inside means in it.",
+   "under": "Under means below.",
+   "behind of": "We say behind, not behind of."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ my keys. I can't find them anywhere!",
+  "options": [
+   "have lost",
+   "have missed",
+   "have found",
+   "have kept"
+  ],
+  "answer": 0,
+  "explain": "Lose = can't find something any more. Example: I've lost my pencil.",
+  "notes": {
+   "have missed": "Miss is for buses or people you want to see.",
+   "have found": "Found is the opposite: you have them again.",
+   "have kept": "Kept means you still have them."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Hurry, or we'll ___ the bus!",
+  "options": [
+   "miss",
+   "lose",
+   "lost",
+   "leave"
+  ],
+  "answer": 0,
+  "explain": "Miss the bus = be too late for it.",
+  "notes": {
+   "lose": "You lose things, not buses.",
+   "lost": "Lost is past.",
+   "leave": "Leave means go away from."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "A ___ is a book of words and their meanings.",
+  "options": [
+   "dictionary",
+   "diary",
+   "comic",
+   "menu"
+  ],
+  "answer": 0,
+  "explain": "A dictionary explains words.",
+  "notes": {
+   "diary": "A diary is where you write your day.",
+   "comic": "A comic tells a story in pictures.",
+   "menu": "A menu lists food."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I write about my day in my ___.",
+  "options": [
+   "diary",
+   "dairy",
+   "dictionary",
+   "calendar"
+  ],
+  "answer": 0,
+  "explain": "Diary = your personal daily book.",
+  "notes": {
+   "dairy": "Dairy is milk and cheese (spelling trap!).",
+   "dictionary": "A dictionary explains words.",
+   "calendar": "A calendar shows dates."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "At a restaurant, you look at the ___ to choose food.",
+  "options": [
+   "menu",
+   "map",
+   "recipe",
+   "list"
+  ],
+  "answer": 0,
+  "explain": "A menu shows the food you can order.",
+  "notes": {
+   "map": "A map shows places.",
+   "recipe": "A recipe tells you how to cook.",
+   "list": "A list is any set of things."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I need flour, eggs and milk. Let's read the ___.",
+  "options": [
+   "recipe",
+   "receipt",
+   "menu",
+   "report"
+  ],
+  "answer": 0,
+  "explain": "A recipe tells you how to cook something.",
+  "notes": {
+   "receipt": "A receipt is the paper after you pay.",
+   "menu": "A menu is in a restaurant.",
+   "report": "A report gives information."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Keep your ___ in case you want to return the toy.",
+  "options": [
+   "receipt",
+   "recipe",
+   "ticket",
+   "price"
+  ],
+  "answer": 0,
+  "explain": "Receipt = the paper that shows you paid.",
+  "notes": {
+   "recipe": "A recipe is for cooking.",
+   "ticket": "A ticket lets you in.",
+   "price": "The price is the cost."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You need a ___ to get on the train.",
+  "options": [
+   "ticket",
+   "passport",
+   "menu",
+   "stamp"
+  ],
+  "answer": 0,
+  "explain": "A ticket lets you travel or go in.",
+  "notes": {
+   "passport": "A passport is for other countries.",
+   "menu": "A menu is for food.",
+   "stamp": "A stamp goes on a letter."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "My little brother has a ___. He's got a high temperature.",
+  "options": [
+   "fever",
+   "cough",
+   "headache",
+   "toothache"
+  ],
+  "answer": 0,
+  "explain": "Fever = a high temperature.",
+  "notes": {
+   "cough": "A cough is a noise from your throat.",
+   "headache": "A headache is pain in your head.",
+   "toothache": "Toothache is pain in your tooth."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I ate too much cake. Now I have a ___.",
+  "options": [
+   "stomach ache",
+   "sore throat",
+   "earache",
+   "backache"
+  ],
+  "answer": 0,
+  "explain": "Too much food → stomach ache.",
+  "notes": {
+   "sore throat": "A sore throat hurts when you swallow.",
+   "earache": "Earache is in your ear.",
+   "backache": "Backache is in your back."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "A ___ is a person who writes books.",
+  "options": [
+   "writer",
+   "reader",
+   "painter",
+   "builder"
+  ],
+  "answer": 0,
+  "explain": "Jobs from verbs: write → writer.",
+  "notes": {
+   "reader": "A reader reads books.",
+   "painter": "A painter paints.",
+   "builder": "A builder builds houses."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "A ___ works on a farm.",
+  "options": [
+   "farmer",
+   "fisherman",
+   "plumber",
+   "mechanic"
+  ],
+  "answer": 0,
+  "explain": "A farmer works on a farm.",
+  "notes": {
+   "fisherman": "A fisherman catches fish.",
+   "plumber": "A plumber fixes pipes.",
+   "mechanic": "A mechanic fixes cars."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "A ___ fixes cars.",
+  "options": [
+   "mechanic",
+   "dentist",
+   "chef",
+   "pilot"
+  ],
+  "answer": 0,
+  "explain": "A mechanic repairs cars.",
+  "notes": {
+   "dentist": "A dentist looks after teeth.",
+   "chef": "A chef cooks.",
+   "pilot": "A pilot flies planes."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "A ___ looks after your teeth.",
+  "options": [
+   "dentist",
+   "nurse",
+   "vet",
+   "barber"
+  ],
+  "answer": 0,
+  "explain": "A dentist checks and fixes teeth.",
+  "notes": {
+   "nurse": "A nurse helps doctors.",
+   "vet": "A vet treats animals.",
+   "barber": "A barber cuts hair."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "It's ___ outside. I can't see the trees.",
+  "options": [
+   "foggy",
+   "sunny",
+   "dry",
+   "bright"
+  ],
+  "answer": 0,
+  "explain": "Foggy = thick cloud near the ground.",
+  "notes": {
+   "sunny": "Sunny means bright with sun.",
+   "dry": "Dry means no rain.",
+   "bright": "Bright means lots of light."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "There was a big ___ with thunder and lightning.",
+  "options": [
+   "storm",
+   "breeze",
+   "shower",
+   "rainbow"
+  ],
+  "answer": 0,
+  "explain": "A storm has strong wind, rain and thunder.",
+  "notes": {
+   "breeze": "A breeze is a light wind.",
+   "shower": "A shower is short, light rain.",
+   "rainbow": "A rainbow comes after rain."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The ___ will tell us if it will rain tomorrow.",
+  "options": [
+   "weather forecast",
+   "weather map",
+   "news story",
+   "calendar"
+  ],
+  "answer": 0,
+  "explain": "Weather forecast = what the weather will be.",
+  "notes": {
+   "weather map": "A weather map only shows the weather, it doesn't tell you.",
+   "news story": "A news story is about events.",
+   "calendar": "A calendar shows dates."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I keep my clothes in a ___.",
+  "options": [
+   "wardrobe",
+   "cupboard in the kitchen",
+   "fridge",
+   "bookcase"
+  ],
+  "answer": 0,
+  "explain": "A wardrobe is a tall cupboard for clothes.",
+  "notes": {
+   "cupboard in the kitchen": "Kitchen cupboards hold food and plates.",
+   "fridge": "A fridge keeps food cold.",
+   "bookcase": "A bookcase holds books."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Put the milk back in the ___.",
+  "options": [
+   "fridge",
+   "oven",
+   "sink",
+   "drawer"
+  ],
+  "answer": 0,
+  "explain": "A fridge keeps food cold.",
+  "notes": {
+   "oven": "An oven makes food hot.",
+   "sink": "A sink is for washing up.",
+   "drawer": "A drawer is for small things."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Bake the cake in the ___ for 30 minutes.",
+  "options": [
+   "oven",
+   "fridge",
+   "freezer",
+   "dishwasher"
+  ],
+  "answer": 0,
+  "explain": "You bake in an oven.",
+  "notes": {
+   "fridge": "A fridge keeps things cold.",
+   "freezer": "A freezer freezes things.",
+   "dishwasher": "A dishwasher cleans plates."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Our class went on a school ___ to the zoo.",
+  "options": [
+   "trip",
+   "travel",
+   "journey home",
+   "holiday"
+  ],
+  "answer": 0,
+  "explain": "A school trip = a short visit with your class.",
+  "notes": {
+   "travel": "Travel is a verb or uncountable noun.",
+   "journey home": "A journey home is going back.",
+   "holiday": "A holiday is time off school."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We need to ___ our bags for the holiday.",
+  "options": [
+   "pack",
+   "fill up",
+   "wrap",
+   "load"
+  ],
+  "answer": 0,
+  "explain": "Pack = put things in a bag for a trip.",
+  "notes": {
+   "fill up": "Fill up is for petrol or a glass.",
+   "wrap": "Wrap is for presents.",
+   "load": "Load is for lorries and machines."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Let's ___ a tent by the lake.",
+  "options": [
+   "put up",
+   "put on",
+   "set off",
+   "pick up"
+  ],
+  "answer": 0,
+  "explain": "Put up a tent = build it.",
+  "notes": {
+   "put on": "Put on is for clothes.",
+   "set off": "Set off means start a journey.",
+   "pick up": "Pick up means lift."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We ___ very early to catch the train.",
+  "options": [
+   "set off",
+   "set up",
+   "put off",
+   "took off"
+  ],
+  "answer": 0,
+  "explain": "Set off = start a journey.",
+  "notes": {
+   "set up": "Set up means prepare something.",
+   "put off": "Put off means delay.",
+   "took off": "Planes take off."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The plane will ___ in five minutes.",
+  "options": [
+   "take off",
+   "set off",
+   "get off",
+   "turn off"
+  ],
+  "answer": 0,
+  "explain": "A plane takes off when it leaves the ground.",
+  "notes": {
+   "set off": "People set off; planes take off.",
+   "get off": "You get off a bus.",
+   "turn off": "Turn off is for lights."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "A ___ carries letters to your house.",
+  "options": [
+   "postman",
+   "fireman",
+   "cleaner",
+   "waiter"
+  ],
+  "answer": 0,
+  "explain": "A postman (post carrier) brings letters.",
+  "notes": {
+   "fireman": "A fireman puts out fires.",
+   "cleaner": "A cleaner cleans.",
+   "waiter": "A waiter serves food."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I'm going to ___ for the swimming team.",
+  "options": [
+   "try out",
+   "try on",
+   "find out",
+   "work out"
+  ],
+  "answer": 0,
+  "explain": "Try out for a team = do a test to join.",
+  "notes": {
+   "try on": "Try on is for clothes.",
+   "find out": "Find out means discover.",
+   "work out": "Work out means exercise or solve."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Can you ___ what time the film starts?",
+  "options": [
+   "find out",
+   "look after",
+   "try on",
+   "give up"
+  ],
+  "answer": 0,
+  "explain": "Find out = discover information.",
+  "notes": {
+   "look after": "Look after means take care of.",
+   "try on": "Try on is for clothes.",
+   "give up": "Give up means stop trying."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I can't ___ this sum. Can you help?",
+  "options": [
+   "work out",
+   "make up",
+   "take off",
+   "turn on"
+  ],
+  "answer": 0,
+  "explain": "Work out = solve.",
+  "notes": {
+   "make up": "Make up means invent.",
+   "take off": "Take off is for clothes or planes.",
+   "turn on": "Turn on is for machines."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Let's ___ a story about a pirate cat!",
+  "options": [
+   "make up",
+   "make out",
+   "look up",
+   "fill in"
+  ],
+  "answer": 0,
+  "explain": "Make up = invent.",
+  "notes": {
+   "make out": "Make out means see with difficulty.",
+   "look up": "Look up is for a dictionary.",
+   "fill in": "Fill in is for forms."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "If you don't know a word, ___ it ___ in the dictionary.",
+  "options": [
+   "look … up",
+   "look … for",
+   "look … after",
+   "look … at"
+  ],
+  "answer": 0,
+  "explain": "Look a word up = find it in a dictionary.",
+  "notes": {
+   "look … for": "Look for means search for something lost.",
+   "look … after": "Look after means take care of.",
+   "look … at": "Look at means turn your eyes to."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "She's very ___. She always shares her sweets.",
+  "options": [
+   "generous",
+   "selfish",
+   "lazy",
+   "shy"
+  ],
+  "answer": 0,
+  "explain": "Generous = happy to give and share.",
+  "notes": {
+   "selfish": "Selfish is the opposite.",
+   "lazy": "Lazy means doesn't want to work.",
+   "shy": "Shy means nervous with new people."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "He's ___. He doesn't like talking to new people.",
+  "options": [
+   "shy",
+   "friendly",
+   "brave",
+   "rude"
+  ],
+  "answer": 0,
+  "explain": "Shy = quiet and nervous with people you don't know.",
+  "notes": {
+   "friendly": "Friendly people enjoy meeting others.",
+   "brave": "Brave means not afraid of danger.",
+   "rude": "Rude means not polite."
+  }
+ },
+ {
   "type": "spell",
   "q": "Spell the word: a place where you borrow books",
   "answer": "library",

@@ -395,6 +395,1349 @@
   }
  },
  {
+  "type": "mcq",
+  "q": "We ___ a sandcastle at the beach yesterday.",
+  "options": [
+   "built",
+   "build",
+   "builded",
+   "are building"
+  ],
+  "answer": 0,
+  "explain": "Past simple for finished actions; build → built (irregular). Example: I built a den last week.",
+  "notes": {
+   "build": "Build is present; 'yesterday' needs the past.",
+   "builded": "Build is irregular: built, not builded.",
+   "are building": "Are building is happening now, not yesterday."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "She ___ her lunch box at school on Monday.",
+  "options": [
+   "forgot",
+   "forget",
+   "forgets",
+   "forgetted"
+  ],
+  "answer": 0,
+  "explain": "Forget → forgot (irregular past). Example: I forgot my hat.",
+  "notes": {
+   "forget": "Forget is present.",
+   "forgets": "Forgets is present, for every day.",
+   "forgetted": "Forget is irregular: forgot."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "___ you see the rainbow this morning?",
+  "options": [
+   "Did",
+   "Do",
+   "Were",
+   "Have"
+  ],
+  "answer": 0,
+  "explain": "Past simple question: Did + subject + plain verb. Example: Did you eat breakfast?",
+  "notes": {
+   "Do": "Do is for the present.",
+   "Were": "Were goes with -ing or an adjective: Were you happy?",
+   "Have": "Have you seen…? doesn't fit 'this morning' with 'see'."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I didn't ___ the answer to question five.",
+  "options": [
+   "know",
+   "knew",
+   "knows",
+   "knowing"
+  ],
+  "answer": 0,
+  "explain": "Didn't + plain verb. Example: He didn't come.",
+  "notes": {
+   "knew": "After didn't, use the plain verb, not the past.",
+   "knows": "No -s after didn't.",
+   "knowing": "No -ing after didn't."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The puppy ___ under the bed all afternoon.",
+  "options": [
+   "slept",
+   "sleeped",
+   "sleeps",
+   "sleep"
+  ],
+  "answer": 0,
+  "explain": "Sleep → slept. Example: I slept well.",
+  "notes": {
+   "sleeped": "Sleep is irregular: slept.",
+   "sleeps": "Sleeps is present.",
+   "sleep": "Sleep is present."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We ___ at home last Sunday because it rained.",
+  "options": [
+   "stayed",
+   "stay",
+   "staied",
+   "were stay"
+  ],
+  "answer": 0,
+  "explain": "Regular past: add -ed (stay → stayed).",
+  "notes": {
+   "stay": "Stay is present.",
+   "staied": "Stay keeps the y: stayed.",
+   "were stay": "Were stay mixes two forms."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Mia ___ a beautiful picture of a unicorn.",
+  "options": [
+   "drew",
+   "drawed",
+   "draws",
+   "drawn"
+  ],
+  "answer": 0,
+  "explain": "Draw → drew → drawn. Past simple: drew. Example: He drew a map.",
+  "notes": {
+   "drawed": "Draw is irregular: drew.",
+   "draws": "Draws is present.",
+   "drawn": "Drawn needs has/have: has drawn."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Where ___ you go on holiday last summer?",
+  "options": [
+   "did",
+   "do",
+   "were",
+   "are"
+  ],
+  "answer": 0,
+  "explain": "Wh- question in the past: Where did you go?",
+  "notes": {
+   "do": "Do is present.",
+   "were": "Were doesn't go with 'go'.",
+   "are": "Are is present."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "At 8 p.m. yesterday I ___ my homework.",
+  "options": [
+   "was doing",
+   "did",
+   "am doing",
+   "were doing"
+  ],
+  "answer": 0,
+  "explain": "Past continuous (was/were + -ing) for an action in progress at a past time.",
+  "notes": {
+   "did": "Did shows a finished action, not one in progress at 8 p.m.",
+   "am doing": "Am doing is now.",
+   "were doing": "Were goes with you/we/they, not I."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "While we ___ football, it started to snow.",
+  "options": [
+   "were playing",
+   "played",
+   "was playing",
+   "are playing"
+  ],
+  "answer": 0,
+  "explain": "While + past continuous for the longer action. Example: While I was reading, the phone rang.",
+  "notes": {
+   "played": "Played is a finished action; 'while' needs the longer one in progress.",
+   "was playing": "Was is for I/he/she/it; we → were.",
+   "are playing": "Are playing is now."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The children were sleeping when the owl ___.",
+  "options": [
+   "hooted",
+   "was hooting",
+   "hoots",
+   "hoot"
+  ],
+  "answer": 0,
+  "explain": "Long action (past continuous) + short action (past simple). Example: I was walking when I saw a fox.",
+  "notes": {
+   "was hooting": "The short action that interrupts uses the past simple.",
+   "hoots": "Hoots is present.",
+   "hoot": "Hoot is present."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I've ___ been to the seaside. I'd love to go!",
+  "options": [
+   "never",
+   "ever",
+   "already",
+   "yet"
+  ],
+  "answer": 0,
+  "explain": "Present perfect + never = not at any time. Example: I've never flown a kite.",
+  "notes": {
+   "ever": "Ever is for questions: Have you ever…?",
+   "already": "Already means it has happened.",
+   "yet": "Yet goes at the end in questions or negatives."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Have you ___ seen a real penguin?",
+  "options": [
+   "ever",
+   "never",
+   "yet",
+   "since"
+  ],
+  "answer": 0,
+  "explain": "Have you ever…? asks about experience in your life.",
+  "notes": {
+   "never": "Never is for statements: I've never…",
+   "yet": "Yet goes at the end of a sentence.",
+   "since": "Since needs a start time: since Monday."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We've ___ finished the puzzle! Look!",
+  "options": [
+   "just",
+   "yet",
+   "ever",
+   "for"
+  ],
+  "answer": 0,
+  "explain": "Just = a very short time ago. Example: I've just eaten.",
+  "notes": {
+   "yet": "Yet goes at the end in questions and negatives.",
+   "ever": "Ever is for questions about experience.",
+   "for": "For needs a time: for two hours."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "She has lived in Penang ___ she was five.",
+  "options": [
+   "since",
+   "for",
+   "from",
+   "ago"
+  ],
+  "answer": 0,
+  "explain": "Since + a start point; for + a length of time. Example: since Monday, for three days.",
+  "notes": {
+   "for": "For needs a length of time: for five years.",
+   "from": "From needs 'to': from 2019 to 2022.",
+   "ago": "Ago goes with the past simple: five years ago."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "They've had their hamster ___ two years.",
+  "options": [
+   "for",
+   "since",
+   "ago",
+   "during"
+  ],
+  "answer": 0,
+  "explain": "For + a length of time. Example: for ten minutes.",
+  "notes": {
+   "since": "Since needs a start point: since 2024.",
+   "ago": "Ago goes with the past simple.",
+   "during": "During needs a noun: during the holiday."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I haven't tidied my room ___.",
+  "options": [
+   "yet",
+   "already",
+   "just",
+   "ever"
+  ],
+  "answer": 0,
+  "explain": "Not… yet = it hasn't happened, but it will. Example: I haven't eaten yet.",
+  "notes": {
+   "already": "Already is for things that have happened.",
+   "just": "Just means a moment ago.",
+   "ever": "Ever is for questions about experience."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Tom ___ his arm, so he can't play today.",
+  "options": [
+   "has broken",
+   "has broke",
+   "have broken",
+   "is breaking"
+  ],
+  "answer": 0,
+  "explain": "Present perfect for a past action with a result now: has + past participle (broken).",
+  "notes": {
+   "has broke": "The participle is broken, not broke.",
+   "have broken": "He/she/it → has, not have.",
+   "is breaking": "Is breaking means it's happening now."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Look at that wobbly tower! It's ___ fall!",
+  "options": [
+   "going to",
+   "will to",
+   "go to",
+   "goes to"
+  ],
+  "answer": 0,
+  "explain": "Going to for something we can see is about to happen.",
+  "notes": {
+   "will to": "Will doesn't take 'to'.",
+   "go to": "We need 'going to'.",
+   "goes to": "Goes to isn't a future form."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I'm cold. — I ___ close the window for you.",
+  "options": [
+   "'ll",
+   "'m going",
+   "close",
+   "am"
+  ],
+  "answer": 0,
+  "explain": "Will ('ll) for a quick offer or decision made now.",
+  "notes": {
+   "'m going": "Going to is for plans made before.",
+   "close": "We need 'll before close.",
+   "am": "Am doesn't make an offer here."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We ___ visit Grandma next Saturday. It's planned.",
+  "options": [
+   "are going to",
+   "will to",
+   "go",
+   "visited"
+  ],
+  "answer": 0,
+  "explain": "Going to for plans. Example: I'm going to learn the piano.",
+  "notes": {
+   "will to": "Will doesn't take to.",
+   "go": "Go is present.",
+   "visited": "Visited is past."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "What ___ you do this weekend? — We're going camping!",
+  "options": [
+   "are",
+   "do",
+   "did",
+   "will to"
+  ],
+  "answer": 0,
+  "explain": "Present continuous for fixed plans: What are you doing this weekend?",
+  "notes": {
+   "do": "Do asks about habits.",
+   "did": "Did asks about the past.",
+   "will to": "Will doesn't take to."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I think it ___ be sunny tomorrow.",
+  "options": [
+   "will",
+   "is",
+   "going",
+   "does"
+  ],
+  "answer": 0,
+  "explain": "I think + will for a prediction. Example: I think you'll win.",
+  "notes": {
+   "is": "Is be isn't right.",
+   "going": "Going needs is + to.",
+   "does": "Does doesn't go with be."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "A cheetah is ___ than a tortoise.",
+  "options": [
+   "faster",
+   "more fast",
+   "fastest",
+   "fast"
+  ],
+  "answer": 0,
+  "explain": "Short adjective + -er + than. Example: tall → taller than.",
+  "notes": {
+   "more fast": "Short adjectives take -er, not more.",
+   "fastest": "Fastest is for the top of a group.",
+   "fast": "We need the -er form before than."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "This is the ___ story in the whole book!",
+  "options": [
+   "funniest",
+   "funnier",
+   "most funny",
+   "funnyest"
+  ],
+  "answer": 0,
+  "explain": "the + adjective + -est for the top one; y → iest.",
+  "notes": {
+   "funnier": "Funnier compares two.",
+   "most funny": "Two-syllable -y adjectives take -iest.",
+   "funnyest": "Change y to i: funniest."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "My new bike is ___ than my old one.",
+  "options": [
+   "more comfortable",
+   "comfortabler",
+   "most comfortable",
+   "comfortable"
+  ],
+  "answer": 0,
+  "explain": "Long adjectives: more + adjective + than.",
+  "notes": {
+   "comfortabler": "Long adjectives don't take -er.",
+   "most comfortable": "Most is for the top of a group.",
+   "comfortable": "We need more … than."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Today is ___ than yesterday. I need a coat!",
+  "options": [
+   "colder",
+   "more cold",
+   "coldest",
+   "the colder"
+  ],
+  "answer": 0,
+  "explain": "cold → colder than.",
+  "notes": {
+   "more cold": "Short adjectives use -er.",
+   "coldest": "Coldest compares more than two.",
+   "the colder": "No 'the' with a comparative + than."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "This maze is ___ the one at school. Both are hard!",
+  "options": [
+   "as hard as",
+   "as hard than",
+   "harder as",
+   "so hard than"
+  ],
+  "answer": 0,
+  "explain": "as + adjective + as = the same.",
+  "notes": {
+   "as hard than": "As goes with as, not than.",
+   "harder as": "Harder goes with than.",
+   "so hard than": "We say as… as."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Ben's drawing is good, but Ana's is ___.",
+  "options": [
+   "better",
+   "gooder",
+   "more good",
+   "best"
+  ],
+  "answer": 0,
+  "explain": "good → better → best (irregular).",
+  "notes": {
+   "gooder": "Good is irregular: better.",
+   "more good": "We don't say more good.",
+   "best": "Best is for the top of a group."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "That was the ___ day of my life!",
+  "options": [
+   "worst",
+   "baddest",
+   "worse",
+   "most bad"
+  ],
+  "answer": 0,
+  "explain": "bad → worse → worst.",
+  "notes": {
+   "baddest": "Bad is irregular: worst.",
+   "worse": "Worse compares two.",
+   "most bad": "We don't say most bad."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "A whale is ___ animal in the sea.",
+  "options": [
+   "the biggest",
+   "the bigger",
+   "biggest",
+   "the most big"
+  ],
+  "answer": 0,
+  "explain": "the + -est; double the last letter: big → biggest.",
+  "notes": {
+   "the bigger": "The bigger compares two.",
+   "biggest": "Superlatives need 'the'.",
+   "the most big": "Short adjectives take -est."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "There isn't ___ juice left. Can we buy some?",
+  "options": [
+   "much",
+   "many",
+   "a few",
+   "lots"
+  ],
+  "answer": 0,
+  "explain": "Much for things we can't count (juice, milk) in questions and negatives.",
+  "notes": {
+   "many": "Many is for countable things: many cups.",
+   "a few": "A few is for countable things.",
+   "lots": "Lots needs 'of': lots of juice."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "How ___ sweets are in the jar?",
+  "options": [
+   "many",
+   "much",
+   "lot",
+   "any"
+  ],
+  "answer": 0,
+  "explain": "How many + plural countable noun.",
+  "notes": {
+   "much": "Much is for uncountable things.",
+   "lot": "Lot needs a: a lot of.",
+   "any": "Any doesn't go after how."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I have ___ friends in my new class. Only three!",
+  "options": [
+   "a few",
+   "a little",
+   "much",
+   "a lot"
+  ],
+  "answer": 0,
+  "explain": "A few + plural countable noun = a small number.",
+  "notes": {
+   "a little": "A little is for uncountable things.",
+   "much": "Much is for uncountable things.",
+   "a lot": "A lot needs 'of', and three isn't a lot."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Can I have ___ milk in my tea, please? Just a bit.",
+  "options": [
+   "a little",
+   "a few",
+   "many",
+   "several"
+  ],
+  "answer": 0,
+  "explain": "A little + uncountable = a small amount.",
+  "notes": {
+   "a few": "A few is for countable things.",
+   "many": "Many is for countable things.",
+   "several": "Several is for countable things."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Is there ___ cheese in the fridge?",
+  "options": [
+   "any",
+   "some",
+   "a",
+   "many"
+  ],
+  "answer": 0,
+  "explain": "Any in questions and negatives. Example: Have you got any pets?",
+  "notes": {
+   "some": "Some is usually for positive sentences and offers.",
+   "a": "A isn't used with cheese (uncountable).",
+   "many": "Many is for countable things."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Would you like ___ grapes?",
+  "options": [
+   "some",
+   "any",
+   "a",
+   "much"
+  ],
+  "answer": 0,
+  "explain": "Some in offers: Would you like some cake?",
+  "notes": {
+   "any": "Any is for questions that aren't offers, and negatives.",
+   "a": "A is for one thing.",
+   "much": "Much is for uncountable things."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You ___ run near the pool. It's dangerous!",
+  "options": [
+   "mustn't",
+   "don't have to",
+   "needn't",
+   "can"
+  ],
+  "answer": 0,
+  "explain": "Mustn't = it's not allowed.",
+  "notes": {
+   "don't have to": "Don't have to = it's not necessary, but OK.",
+   "needn't": "Needn't = not necessary.",
+   "can": "Can means it's allowed, the opposite."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You ___ bring a pen. We have lots.",
+  "options": [
+   "don't have to",
+   "mustn't",
+   "can't",
+   "shouldn't"
+  ],
+  "answer": 0,
+  "explain": "Don't have to = it isn't necessary.",
+  "notes": {
+   "mustn't": "Mustn't means it isn't allowed.",
+   "can't": "Can't means you aren't able or allowed.",
+   "shouldn't": "Shouldn't means it's a bad idea."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You look tired. You ___ go to bed early.",
+  "options": [
+   "should",
+   "must to",
+   "would",
+   "can't"
+  ],
+  "answer": 0,
+  "explain": "Should + verb for advice.",
+  "notes": {
+   "must to": "Must doesn't take to.",
+   "would": "Would isn't advice here.",
+   "can't": "Can't is the opposite of advice."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "___ I borrow your rubber, please?",
+  "options": [
+   "Could",
+   "Must",
+   "Should",
+   "Will I"
+  ],
+  "answer": 0,
+  "explain": "Could I…? is a polite request.",
+  "notes": {
+   "Must": "Must I…? asks if it's necessary.",
+   "Should": "Should I…? asks for advice.",
+   "Will I": "Will I…? asks about the future."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "When I was four, I ___ read. Now I can!",
+  "options": [
+   "couldn't",
+   "can't",
+   "mustn't",
+   "shouldn't"
+  ],
+  "answer": 0,
+  "explain": "Couldn't = past of can't.",
+  "notes": {
+   "can't": "Can't is present.",
+   "mustn't": "Mustn't is about rules.",
+   "shouldn't": "Shouldn't is about advice."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ finish my project tonight. It's due tomorrow!",
+  "options": [
+   "have to",
+   "has to",
+   "must to",
+   "can to"
+  ],
+  "answer": 0,
+  "explain": "I have to + verb = it's necessary.",
+  "notes": {
+   "has to": "Has to is for he/she/it.",
+   "must to": "Must doesn't take to.",
+   "can to": "Can doesn't take to."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I enjoy ___ in the rain.",
+  "options": [
+   "dancing",
+   "to dance",
+   "dance",
+   "danced"
+  ],
+  "answer": 0,
+  "explain": "Enjoy + -ing. Example: She enjoys reading.",
+  "notes": {
+   "to dance": "Enjoy isn't followed by to.",
+   "dance": "We need the -ing form.",
+   "danced": "Danced is past."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We want ___ the dinosaur museum.",
+  "options": [
+   "to visit",
+   "visiting",
+   "visit",
+   "visited"
+  ],
+  "answer": 0,
+  "explain": "Want + to + verb.",
+  "notes": {
+   "visiting": "Want isn't followed by -ing.",
+   "visit": "We need to before the verb.",
+   "visited": "Visited is past."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "My brother is good at ___ jokes.",
+  "options": [
+   "telling",
+   "tell",
+   "to tell",
+   "tells"
+  ],
+  "answer": 0,
+  "explain": "Preposition (at) + -ing.",
+  "notes": {
+   "tell": "After 'at' use -ing.",
+   "to tell": "No 'to' after at.",
+   "tells": "Tells is present."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Let's stop ___ and start the game!",
+  "options": [
+   "talking",
+   "talk",
+   "to talk",
+   "talked"
+  ],
+  "answer": 0,
+  "explain": "Stop + -ing = finish doing something.",
+  "notes": {
+   "talk": "We need -ing after stop.",
+   "to talk": "Stop to talk means you stop in order to talk.",
+   "talked": "Talked is past."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "She decided ___ a cake for her mum.",
+  "options": [
+   "to bake",
+   "baking",
+   "bake",
+   "baked"
+  ],
+  "answer": 0,
+  "explain": "Decide + to + verb.",
+  "notes": {
+   "baking": "Decide isn't followed by -ing.",
+   "bake": "We need to before bake.",
+   "baked": "Baked is past."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "This is the dragon ___ lives in the cave.",
+  "options": [
+   "which",
+   "who",
+   "where",
+   "what"
+  ],
+  "answer": 0,
+  "explain": "Which/that for animals and things.",
+  "notes": {
+   "who": "Who is usually for people.",
+   "where": "Where is for places.",
+   "what": "What isn't used like this."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "That's the park ___ we had our picnic.",
+  "options": [
+   "where",
+   "which",
+   "who",
+   "when"
+  ],
+  "answer": 0,
+  "explain": "Where for places.",
+  "notes": {
+   "which": "Which needs 'in': which we had our picnic in.",
+   "who": "Who is for people.",
+   "when": "When is for times."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "She's the teacher ___ helped me with maths.",
+  "options": [
+   "who",
+   "which",
+   "where",
+   "whose"
+  ],
+  "answer": 0,
+  "explain": "Who for people.",
+  "notes": {
+   "which": "Which is for things and animals.",
+   "where": "Where is for places.",
+   "whose": "Whose shows owning."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I'm really good ___ swimming.",
+  "options": [
+   "at",
+   "in",
+   "on",
+   "for"
+  ],
+  "answer": 0,
+  "explain": "good at + -ing / noun.",
+  "notes": {
+   "in": "We say good at, not good in.",
+   "on": "On isn't used with good.",
+   "for": "Good for means healthy."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Are you afraid ___ spiders?",
+  "options": [
+   "of",
+   "from",
+   "at",
+   "with"
+  ],
+  "answer": 0,
+  "explain": "afraid of + noun.",
+  "notes": {
+   "from": "We don't say afraid from.",
+   "at": "At isn't used with afraid.",
+   "with": "With isn't used with afraid."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We're going to the beach ___ bus.",
+  "options": [
+   "by",
+   "on",
+   "with",
+   "in"
+  ],
+  "answer": 0,
+  "explain": "by + transport (no 'the'): by bus, by car.",
+  "notes": {
+   "on": "On needs 'the': on the bus.",
+   "with": "With isn't used with transport.",
+   "in": "In needs 'the' or a car: in the car."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "My birthday is ___ 5th May.",
+  "options": [
+   "on",
+   "in",
+   "at",
+   "by"
+  ],
+  "answer": 0,
+  "explain": "On + a date. Example: on 1st June.",
+  "notes": {
+   "in": "In is for months alone: in May.",
+   "at": "At is for times.",
+   "by": "By means 'not later than'."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I'll see you ___ the weekend.",
+  "options": [
+   "at",
+   "in",
+   "on in",
+   "by the"
+  ],
+  "answer": 0,
+  "explain": "British English: at the weekend.",
+  "notes": {
+   "in": "In the weekend isn't usual in British English.",
+   "on in": "Don't use two prepositions.",
+   "by the": "By the weekend means 'before it ends'."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "She plays ___ piano every day.",
+  "options": [
+   "the",
+   "a",
+   "(no word)",
+   "an"
+  ],
+  "answer": 0,
+  "explain": "Play + the + instrument: play the guitar.",
+  "notes": {
+   "a": "We use the, not a, with instruments.",
+   "(no word)": "We need 'the' here.",
+   "an": "Piano starts with p, so not an."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We go to ___ school by bike.",
+  "options": [
+   "(no word)",
+   "the",
+   "a",
+   "an"
+  ],
+  "answer": 0,
+  "explain": "go to school (no article) when you go there to learn.",
+  "notes": {
+   "the": "Go to the school is for visiting the building.",
+   "a": "A school means any school.",
+   "an": "An is before a vowel sound."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The tortoise walked very ___.",
+  "options": [
+   "slowly",
+   "slow",
+   "slower",
+   "slowest"
+  ],
+  "answer": 0,
+  "explain": "Adverb (how?) = adjective + -ly.",
+  "notes": {
+   "slow": "Slow is an adjective; we need slowly after walked.",
+   "slower": "Slower compares.",
+   "slowest": "Slowest compares more than two."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "She sings ___!",
+  "options": [
+   "beautifully",
+   "beautiful",
+   "beauty",
+   "more beautiful"
+  ],
+  "answer": 0,
+  "explain": "beautiful → beautifully (adverb).",
+  "notes": {
+   "beautiful": "Beautiful describes a noun.",
+   "beauty": "Beauty is a noun.",
+   "more beautiful": "More beautiful compares."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "He did ___ in the spelling test. 20 out of 20!",
+  "options": [
+   "well",
+   "good",
+   "nice",
+   "fine"
+  ],
+  "answer": 0,
+  "explain": "good (adjective) → well (adverb).",
+  "notes": {
+   "good": "Good describes a noun: a good test.",
+   "nice": "Nice is an adjective.",
+   "fine": "Fine is an adjective here."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ eat vegetables. I love broccoli!",
+  "options": [
+   "always",
+   "never",
+   "rarely",
+   "hardly"
+  ],
+  "answer": 0,
+  "explain": "Frequency adverbs go before the main verb. Always = every time.",
+  "notes": {
+   "never": "Never means not at any time, but you love broccoli.",
+   "rarely": "Rarely means not often.",
+   "hardly": "Hardly means almost not."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You like chocolate, ___ you?",
+  "options": [
+   "don't",
+   "do",
+   "aren't",
+   "doesn't"
+  ],
+  "answer": 0,
+  "explain": "Positive sentence → negative tag: You like…, don't you?",
+  "notes": {
+   "do": "The tag must be negative here.",
+   "aren't": "Like uses do, not be.",
+   "doesn't": "You → don't, not doesn't."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "It isn't raining, ___ it?",
+  "options": [
+   "is",
+   "isn't",
+   "does",
+   "doesn't"
+  ],
+  "answer": 0,
+  "explain": "Negative sentence → positive tag.",
+  "notes": {
+   "isn't": "The tag must be positive here.",
+   "does": "Is raining uses be, not do.",
+   "doesn't": "Be, not do, and positive."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "___ did you get to the party? — By car.",
+  "options": [
+   "How",
+   "What",
+   "Who",
+   "Which"
+  ],
+  "answer": 0,
+  "explain": "How asks about the way.",
+  "notes": {
+   "What": "What asks about a thing.",
+   "Who": "Who asks about a person.",
+   "Which": "Which asks for a choice."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "___ bag is this? — It's Lily's.",
+  "options": [
+   "Whose",
+   "Who",
+   "Who's",
+   "Which's"
+  ],
+  "answer": 0,
+  "explain": "Whose asks who owns something.",
+  "notes": {
+   "Who": "Who asks about a person.",
+   "Who's": "Who's = who is.",
+   "Which's": "Which's isn't a word."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "___ do you go to the dentist? — Twice a year.",
+  "options": [
+   "How often",
+   "How much",
+   "When time",
+   "How long"
+  ],
+  "answer": 0,
+  "explain": "How often asks about frequency.",
+  "notes": {
+   "How much": "How much asks about amount or price.",
+   "When time": "When time isn't English.",
+   "How long": "How long asks about time length."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "These aren't my crayons. They're ___.",
+  "options": [
+   "yours",
+   "your",
+   "you",
+   "your's"
+  ],
+  "answer": 0,
+  "explain": "Possessive pronouns stand alone: mine, yours, his, hers, ours, theirs.",
+  "notes": {
+   "your": "Your goes before a noun.",
+   "you": "You isn't possessive.",
+   "your's": "No apostrophe: yours."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The twins love ___ new kitten.",
+  "options": [
+   "their",
+   "there",
+   "they're",
+   "theirs"
+  ],
+  "answer": 0,
+  "explain": "Their + noun = belonging to them.",
+  "notes": {
+   "there": "There is a place.",
+   "they're": "They're = they are.",
+   "theirs": "Theirs stands alone."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Did you make this card ___?",
+  "options": [
+   "yourself",
+   "you",
+   "yours",
+   "your"
+  ],
+  "answer": 0,
+  "explain": "Reflexive pronoun: you → yourself.",
+  "notes": {
+   "you": "You doesn't give the meaning 'on your own'.",
+   "yours": "Yours means belonging to you.",
+   "your": "Your needs a noun."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The dog wagged ___ tail.",
+  "options": [
+   "its",
+   "it's",
+   "his's",
+   "it"
+  ],
+  "answer": 0,
+  "explain": "Its = belonging to it (no apostrophe).",
+  "notes": {
+   "it's": "It's = it is.",
+   "his's": "His's isn't a word.",
+   "it": "It isn't possessive."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "If you heat ice, it ___.",
+  "options": [
+   "melts",
+   "melt",
+   "will melted",
+   "melting"
+  ],
+  "answer": 0,
+  "explain": "Zero conditional for facts: If + present, present.",
+  "notes": {
+   "melt": "It → melts with -s.",
+   "will melted": "Will melted mixes forms.",
+   "melting": "Melting needs is."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "If we finish early, we ___ play a game.",
+  "options": [
+   "will",
+   "would",
+   "did",
+   "are"
+  ],
+  "answer": 0,
+  "explain": "First conditional: If + present, will + verb.",
+  "notes": {
+   "would": "Would is for imaginary situations.",
+   "did": "Did is past.",
+   "are": "Are play isn't right."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I wanted to go out, ___ it was raining.",
+  "options": [
+   "but",
+   "because",
+   "so",
+   "or"
+  ],
+  "answer": 0,
+  "explain": "But shows a contrast.",
+  "notes": {
+   "because": "Because gives a reason, not a contrast.",
+   "so": "So gives a result.",
+   "or": "Or gives a choice."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We took umbrellas ___ it was raining.",
+  "options": [
+   "because",
+   "but",
+   "so",
+   "although"
+  ],
+  "answer": 0,
+  "explain": "Because gives the reason.",
+  "notes": {
+   "but": "But shows a contrast.",
+   "so": "So gives a result, not a reason.",
+   "although": "Although shows a surprise contrast."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "It was late, ___ we went home.",
+  "options": [
+   "so",
+   "because",
+   "but",
+   "if"
+  ],
+  "answer": 0,
+  "explain": "So gives the result.",
+  "notes": {
+   "because": "Because gives a reason.",
+   "but": "But shows a contrast.",
+   "if": "If is for conditions."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I'll wait here ___ you come back.",
+  "options": [
+   "until",
+   "since",
+   "during",
+   "for"
+  ],
+  "answer": 0,
+  "explain": "Until = up to the time when.",
+  "notes": {
+   "since": "Since needs a past start point.",
+   "during": "During needs a noun.",
+   "for": "For needs a length of time."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Brush your teeth ___ you go to bed.",
+  "options": [
+   "before",
+   "after",
+   "while",
+   "since"
+  ],
+  "answer": 0,
+  "explain": "Before = earlier than.",
+  "notes": {
+   "after": "After would mean brushing in bed!",
+   "while": "While means at the same time.",
+   "since": "Since needs a past start point."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "My cousin ___ in Japan since last summer.",
+  "options": [
+   "has been",
+   "was",
+   "is",
+   "goes"
+  ],
+  "answer": 0,
+  "explain": "Present perfect + since for something that started in the past and is still true. Example: I've been at this school since 2024.",
+  "notes": {
+   "was": "Was would mean it's finished, but since shows it's still true.",
+   "is": "Is doesn't go with since.",
+   "goes": "Goes doesn't go with in Japan since."
+  }
+ },
+ {
   "type": "mistake",
   "q": "Tap the word that is wrong.",
   "words": [

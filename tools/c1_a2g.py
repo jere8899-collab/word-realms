@@ -93,4 +93,5 @@ A2G = [
  m("It was late, ___ we went home.", "so", ["because", "but", "if"], "So gives the result.", ["Because gives a reason.", "But shows a contrast.", "If is for conditions."]),
  m("I'll wait here ___ you come back.", "until", ["since", "during", "for"], "Until = up to the time when.", ["Since needs a past start point.", "During needs a noun.", "For needs a length of time."]),
  m("Brush your teeth ___ you go to bed.", "before", ["after", "while", "since"], "Before = earlier than.", ["After would mean brushing in bed!", "While means at the same time.", "Since needs a past start point."]),
+ m("My cousin ___ in Japan since last summer.", "has been", ["was", "is", "goes"], "Present perfect + since for something that started in the past and is still true. Example: I've been at this school since 2024.", ["Was would mean it's finished, but since shows it's still true.", "Is doesn't go with since.", "Goes doesn't go with in Japan since."]),
 ]

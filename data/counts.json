@@ -1,15 +1,15 @@
 {
  "counts": {
   "a1/grammar": 120,
-  "a1/vocab": 54,
+  "a1/vocab": 120,
   "a1/reading": 21,
   "a1/listening": 40,
-  "a2/grammar": 41,
-  "a2/vocab": 39,
+  "a2/grammar": 120,
+  "a2/vocab": 120,
   "a2/reading": 21,
   "a2/listening": 41,
-  "b1/grammar": 45,
-  "b1/vocab": 30,
+  "b1/grammar": 120,
+  "b1/vocab": 122,
   "b1/reading": 21,
   "b1/listening": 42,
   "b2/grammar": 46,
@@ -43,8 +43,8 @@
   "c1/story": 5,
   "c2/story": 5
  },
- "total": 1085,
- "questions": 917,
+ "total": 1478,
+ "questions": 1310,
  "speaking": 132,
  "writing": 36,
  "stories": 6

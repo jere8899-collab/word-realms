@@ -531,6 +531,1128 @@
   }
  },
  {
+  "type": "mcq",
+  "q": "A baby cat is a ___.",
+  "options": [
+   "kitten",
+   "puppy",
+   "chick",
+   "lamb"
+  ],
+  "answer": 0,
+  "explain": "Baby animals have their own names. A baby cat is a kitten. Example: The kitten is asleep.",
+  "notes": {
+   "puppy": "A puppy is a baby dog.",
+   "chick": "A chick is a baby bird.",
+   "lamb": "A lamb is a baby sheep."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "A baby dog is a ___.",
+  "options": [
+   "puppy",
+   "kitten",
+   "calf",
+   "duckling"
+  ],
+  "answer": 0,
+  "explain": "A baby dog is a puppy. Example: Our puppy loves balls.",
+  "notes": {
+   "kitten": "A kitten is a baby cat.",
+   "calf": "A calf is a baby cow.",
+   "duckling": "A duckling is a baby duck."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You see with your ___.",
+  "options": [
+   "eyes",
+   "ears",
+   "nose",
+   "hands"
+  ],
+  "answer": 0,
+  "explain": "Body words: we see with our eyes. Example: Close your eyes!",
+  "notes": {
+   "ears": "You hear with your ears.",
+   "nose": "You smell with your nose.",
+   "hands": "You hold things with your hands."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You hear with your ___.",
+  "options": [
+   "ears",
+   "eyes",
+   "mouth",
+   "feet"
+  ],
+  "answer": 0,
+  "explain": "We hear with our ears. Example: A rabbit has long ears.",
+  "notes": {
+   "eyes": "You see with your eyes.",
+   "mouth": "You eat and talk with your mouth.",
+   "feet": "You walk with your feet."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You smell a flower with your ___.",
+  "options": [
+   "nose",
+   "ear",
+   "knee",
+   "hair"
+  ],
+  "answer": 0,
+  "explain": "We smell with our nose. Example: My nose is cold.",
+  "notes": {
+   "ear": "You hear with your ear.",
+   "knee": "Your knee is in your leg.",
+   "hair": "Hair grows on your head."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "A cow says ___.",
+  "options": [
+   "moo",
+   "woof",
+   "quack",
+   "meow"
+  ],
+  "answer": 0,
+  "explain": "Animal sounds: a cow says moo. Example: The cow says moo!",
+  "notes": {
+   "woof": "A dog says woof.",
+   "quack": "A duck says quack.",
+   "meow": "A cat says meow."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "A duck says ___.",
+  "options": [
+   "quack",
+   "moo",
+   "baa",
+   "oink"
+  ],
+  "answer": 0,
+  "explain": "A duck says quack. Example: Quack, quack, says the duck.",
+  "notes": {
+   "moo": "A cow says moo.",
+   "baa": "A sheep says baa.",
+   "oink": "A pig says oink."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Seven, eight, ___, ten.",
+  "options": [
+   "nine",
+   "six",
+   "eleven",
+   "five"
+  ],
+  "answer": 0,
+  "explain": "Count in order: seven, eight, nine, ten.",
+  "notes": {
+   "six": "Six comes before seven.",
+   "eleven": "Eleven comes after ten.",
+   "five": "Five comes before six."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "What is 3 + 2? It's ___.",
+  "options": [
+   "five",
+   "four",
+   "six",
+   "three"
+  ],
+  "answer": 0,
+  "explain": "Number words: 3 + 2 = 5, five.",
+  "notes": {
+   "four": "Four is 4.",
+   "six": "Six is 6.",
+   "three": "Three is 3."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Grass is ___.",
+  "options": [
+   "green",
+   "blue",
+   "pink",
+   "purple"
+  ],
+  "answer": 0,
+  "explain": "Colour words: grass is green. Example: a green frog.",
+  "notes": {
+   "blue": "The sky is blue.",
+   "pink": "Pink is the colour of candyfloss.",
+   "purple": "Purple is like grapes."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The sky on a sunny day is ___.",
+  "options": [
+   "blue",
+   "green",
+   "brown",
+   "orange"
+  ],
+  "answer": 0,
+  "explain": "The sky is blue on a sunny day.",
+  "notes": {
+   "green": "Grass is green.",
+   "brown": "Tree trunks are brown.",
+   "orange": "An orange is orange."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Snow is ___.",
+  "options": [
+   "white",
+   "black",
+   "red",
+   "yellow"
+  ],
+  "answer": 0,
+  "explain": "Snow is white. Example: a white cloud.",
+  "notes": {
+   "black": "Black is the colour of night.",
+   "red": "Red is like a strawberry.",
+   "yellow": "Yellow is like a banana."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "A banana is ___.",
+  "options": [
+   "yellow",
+   "blue",
+   "grey",
+   "pink"
+  ],
+  "answer": 0,
+  "explain": "A ripe banana is yellow.",
+  "notes": {
+   "blue": "Blue is the sky's colour.",
+   "grey": "Grey is like an elephant.",
+   "pink": "Pink is like a pig."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Your dad's dad is your ___.",
+  "options": [
+   "grandpa",
+   "uncle",
+   "brother",
+   "cousin"
+  ],
+  "answer": 0,
+  "explain": "Family words: your dad's dad is your grandpa.",
+  "notes": {
+   "uncle": "Your uncle is your mum's or dad's brother.",
+   "brother": "Your brother is a boy in your family with the same parents.",
+   "cousin": "Your cousin is your uncle's or aunt's child."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Your mum's sister is your ___.",
+  "options": [
+   "aunt",
+   "grandma",
+   "sister",
+   "niece"
+  ],
+  "answer": 0,
+  "explain": "Your mum's or dad's sister is your aunt.",
+  "notes": {
+   "grandma": "Your grandma is your mum's or dad's mum.",
+   "sister": "Your sister has the same parents as you.",
+   "niece": "A niece is your brother's or sister's daughter."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We eat ___ at lunchtime.",
+  "options": [
+   "lunch",
+   "breakfast",
+   "dinner",
+   "bedtime"
+  ],
+  "answer": 0,
+  "explain": "Meals: breakfast (morning), lunch (middle of the day), dinner (evening).",
+  "notes": {
+   "breakfast": "Breakfast is in the morning.",
+   "dinner": "Dinner is in the evening.",
+   "bedtime": "Bedtime isn't a meal."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You drink ___ from a cow.",
+  "options": [
+   "milk",
+   "juice",
+   "water",
+   "tea"
+  ],
+  "answer": 0,
+  "explain": "Milk comes from cows. Example: a glass of milk.",
+  "notes": {
+   "juice": "Juice comes from fruit.",
+   "water": "Water comes from the tap or rain.",
+   "tea": "Tea is made from leaves."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You write with a ___.",
+  "options": [
+   "pencil",
+   "ruler",
+   "rubber",
+   "bag"
+  ],
+  "answer": 0,
+  "explain": "School things: you write with a pencil.",
+  "notes": {
+   "ruler": "A ruler draws straight lines.",
+   "rubber": "A rubber takes away pencil marks.",
+   "bag": "A bag carries your things."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You cut paper with ___.",
+  "options": [
+   "scissors",
+   "glue",
+   "crayons",
+   "a book"
+  ],
+  "answer": 0,
+  "explain": "Scissors cut paper. Example: Be careful with scissors!",
+  "notes": {
+   "glue": "Glue sticks paper together.",
+   "crayons": "Crayons colour pictures.",
+   "a book": "You read a book."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The opposite of 'happy' is ___.",
+  "options": [
+   "sad",
+   "glad",
+   "tall",
+   "funny"
+  ],
+  "answer": 0,
+  "explain": "Opposites: happy ↔ sad.",
+  "notes": {
+   "glad": "Glad means happy, not the opposite.",
+   "tall": "Tall is about size.",
+   "funny": "Funny makes you laugh."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The opposite of 'old' (for a toy) is ___.",
+  "options": [
+   "new",
+   "young",
+   "big",
+   "short"
+  ],
+  "answer": 0,
+  "explain": "For things: old ↔ new. For people: old ↔ young.",
+  "notes": {
+   "young": "Young is for people and animals.",
+   "big": "Big is about size.",
+   "short": "Short is about length or height."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The opposite of 'fast' is ___.",
+  "options": [
+   "slow",
+   "quick",
+   "loud",
+   "long"
+  ],
+  "answer": 0,
+  "explain": "Opposites: fast ↔ slow. Example: a slow snail.",
+  "notes": {
+   "quick": "Quick means fast.",
+   "loud": "Loud is about sound.",
+   "long": "Long is about length."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The opposite of 'open' is ___.",
+  "options": [
+   "closed",
+   "empty",
+   "under",
+   "clean"
+  ],
+  "answer": 0,
+  "explain": "Opposites: open ↔ closed. Example: The door is closed.",
+  "notes": {
+   "empty": "Empty means nothing inside.",
+   "under": "Under is a place word.",
+   "clean": "Clean is the opposite of dirty."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The opposite of 'up' is ___.",
+  "options": [
+   "down",
+   "on",
+   "over",
+   "in"
+  ],
+  "answer": 0,
+  "explain": "Opposites: up ↔ down.",
+  "notes": {
+   "on": "On is a place word: on the table.",
+   "over": "Over means above.",
+   "in": "In means inside."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "A ___ lives in the sea and has eight arms.",
+  "options": [
+   "octopus",
+   "spider",
+   "starfish",
+   "horse"
+  ],
+  "answer": 0,
+  "explain": "An octopus has eight arms and lives in the sea.",
+  "notes": {
+   "spider": "A spider has eight legs but lives on land.",
+   "starfish": "A starfish usually has five arms.",
+   "horse": "A horse lives on a farm."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "A ___ has a long neck and eats leaves from trees.",
+  "options": [
+   "giraffe",
+   "zebra",
+   "hippo",
+   "lion"
+  ],
+  "answer": 0,
+  "explain": "A giraffe has a very long neck.",
+  "notes": {
+   "zebra": "A zebra has black and white stripes.",
+   "hippo": "A hippo is big and loves water.",
+   "lion": "A lion eats meat."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "A ___ is big and grey, with a long nose.",
+  "options": [
+   "elephant",
+   "mouse",
+   "monkey",
+   "parrot"
+  ],
+  "answer": 0,
+  "explain": "An elephant's long nose is called a trunk.",
+  "notes": {
+   "mouse": "A mouse is very small.",
+   "monkey": "A monkey climbs trees.",
+   "parrot": "A parrot is a colourful bird."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "A ___ can fly and sings in the tree.",
+  "options": [
+   "bird",
+   "frog",
+   "snake",
+   "goat"
+  ],
+  "answer": 0,
+  "explain": "Birds have wings and can fly.",
+  "notes": {
+   "frog": "A frog jumps and swims.",
+   "snake": "A snake has no legs.",
+   "goat": "A goat lives on a farm."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You wear ___ on your hands when it's cold.",
+  "options": [
+   "gloves",
+   "socks",
+   "boots",
+   "a scarf"
+  ],
+  "answer": 0,
+  "explain": "Clothes: gloves go on your hands.",
+  "notes": {
+   "socks": "Socks go on your feet.",
+   "boots": "Boots go on your feet.",
+   "a scarf": "A scarf goes round your neck."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You wear a ___ round your neck.",
+  "options": [
+   "scarf",
+   "belt",
+   "glove",
+   "ring"
+  ],
+  "answer": 0,
+  "explain": "A scarf keeps your neck warm.",
+  "notes": {
+   "belt": "A belt goes round your middle.",
+   "glove": "A glove goes on your hand.",
+   "ring": "A ring goes on your finger."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "When it rains, you wear a ___.",
+  "options": [
+   "raincoat",
+   "swimsuit",
+   "T-shirt",
+   "crown"
+  ],
+  "answer": 0,
+  "explain": "A raincoat keeps you dry in the rain.",
+  "notes": {
+   "swimsuit": "A swimsuit is for swimming.",
+   "T-shirt": "A T-shirt doesn't keep the rain off.",
+   "crown": "A crown is for a king or queen."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You go swimming in a ___.",
+  "options": [
+   "pool",
+   "kitchen",
+   "library",
+   "garden"
+  ],
+  "answer": 0,
+  "explain": "Places: you swim in a swimming pool.",
+  "notes": {
+   "kitchen": "You cook in a kitchen.",
+   "library": "You read books in a library.",
+   "garden": "Flowers grow in a garden."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You see a doctor at the ___.",
+  "options": [
+   "hospital",
+   "zoo",
+   "cinema",
+   "park"
+  ],
+  "answer": 0,
+  "explain": "Doctors work at a hospital.",
+  "notes": {
+   "zoo": "You see animals at the zoo.",
+   "cinema": "You watch films at the cinema.",
+   "park": "You play at the park."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You watch a film at the ___.",
+  "options": [
+   "cinema",
+   "bakery",
+   "school",
+   "beach"
+  ],
+  "answer": 0,
+  "explain": "A cinema shows films.",
+  "notes": {
+   "bakery": "A bakery sells bread.",
+   "school": "You learn at school.",
+   "beach": "You build sandcastles at the beach."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You see lions and monkeys at the ___.",
+  "options": [
+   "zoo",
+   "shop",
+   "bank",
+   "farm"
+  ],
+  "answer": 0,
+  "explain": "A zoo has wild animals from around the world.",
+  "notes": {
+   "shop": "A shop sells things.",
+   "bank": "A bank keeps money.",
+   "farm": "A farm has cows, pigs and sheep."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You cook food in the ___.",
+  "options": [
+   "kitchen",
+   "bedroom",
+   "bathroom",
+   "garage"
+  ],
+  "answer": 0,
+  "explain": "Rooms: you cook in the kitchen.",
+  "notes": {
+   "bedroom": "You sleep in the bedroom.",
+   "bathroom": "You wash in the bathroom.",
+   "garage": "You keep a car in the garage."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You have a bath in the ___.",
+  "options": [
+   "bathroom",
+   "kitchen",
+   "living room",
+   "garden"
+  ],
+  "answer": 0,
+  "explain": "You wash and have a bath in the bathroom.",
+  "notes": {
+   "kitchen": "You cook in the kitchen.",
+   "living room": "You watch TV in the living room.",
+   "garden": "Plants grow in the garden."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You sit on a ___.",
+  "options": [
+   "chair",
+   "lamp",
+   "window",
+   "door"
+  ],
+  "answer": 0,
+  "explain": "Furniture: you sit on a chair.",
+  "notes": {
+   "lamp": "A lamp gives light.",
+   "window": "You look out of a window.",
+   "door": "You open a door to go in."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The day after Friday is ___.",
+  "options": [
+   "Saturday",
+   "Thursday",
+   "Sunday",
+   "Monday"
+  ],
+  "answer": 0,
+  "explain": "Days in order: Friday, Saturday, Sunday.",
+  "notes": {
+   "Thursday": "Thursday comes before Friday.",
+   "Sunday": "Sunday comes after Saturday.",
+   "Monday": "Monday is after Sunday."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The day before Tuesday is ___.",
+  "options": [
+   "Monday",
+   "Wednesday",
+   "Sunday",
+   "Friday"
+  ],
+  "answer": 0,
+  "explain": "Monday, Tuesday, Wednesday…",
+  "notes": {
+   "Wednesday": "Wednesday comes after Tuesday.",
+   "Sunday": "Sunday comes before Monday.",
+   "Friday": "Friday is near the weekend."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "It's hot and sunny. It's ___.",
+  "options": [
+   "summer",
+   "winter",
+   "night",
+   "snowy"
+  ],
+  "answer": 0,
+  "explain": "Seasons: summer is hot.",
+  "notes": {
+   "winter": "Winter is cold.",
+   "night": "Night is a time of day.",
+   "snowy": "Snowy weather is cold, not hot."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "It's very cold and there is snow. It's ___.",
+  "options": [
+   "winter",
+   "summer",
+   "spring",
+   "sunny"
+  ],
+  "answer": 0,
+  "explain": "Winter is the cold season.",
+  "notes": {
+   "summer": "Summer is hot.",
+   "spring": "Spring is warm, with new flowers.",
+   "sunny": "Sunny isn't a season."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "There is a big wind today. It's ___.",
+  "options": [
+   "windy",
+   "sunny",
+   "cloudy",
+   "foggy"
+  ],
+  "answer": 0,
+  "explain": "Weather words: wind → windy.",
+  "notes": {
+   "sunny": "Sunny means lots of sun.",
+   "cloudy": "Cloudy means lots of clouds.",
+   "foggy": "Foggy means you can't see far."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "A ___ helps sick animals.",
+  "options": [
+   "vet",
+   "pilot",
+   "farmer",
+   "chef"
+  ],
+  "answer": 0,
+  "explain": "Jobs: a vet is a doctor for animals.",
+  "notes": {
+   "pilot": "A pilot flies a plane.",
+   "farmer": "A farmer grows food and keeps animals.",
+   "chef": "A chef cooks food."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "A ___ flies a plane.",
+  "options": [
+   "pilot",
+   "driver",
+   "nurse",
+   "dancer"
+  ],
+  "answer": 0,
+  "explain": "A pilot flies planes.",
+  "notes": {
+   "driver": "A driver drives a car or bus.",
+   "nurse": "A nurse helps sick people.",
+   "dancer": "A dancer dances."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "A ___ helps when there's a fire.",
+  "options": [
+   "firefighter",
+   "police officer",
+   "teacher",
+   "baker"
+  ],
+  "answer": 0,
+  "explain": "Firefighters put out fires.",
+  "notes": {
+   "police officer": "A police officer keeps people safe from crime.",
+   "teacher": "A teacher works at a school.",
+   "baker": "A baker makes bread."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "A ___ drives a bus.",
+  "options": [
+   "bus driver",
+   "pilot",
+   "singer",
+   "doctor"
+  ],
+  "answer": 0,
+  "explain": "A bus driver drives a bus.",
+  "notes": {
+   "pilot": "A pilot flies a plane.",
+   "singer": "A singer sings songs.",
+   "doctor": "A doctor helps sick people."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You play football with a ___.",
+  "options": [
+   "ball",
+   "bat",
+   "kite",
+   "doll"
+  ],
+  "answer": 0,
+  "explain": "Toys and games: football uses a ball.",
+  "notes": {
+   "bat": "A bat is for cricket or baseball.",
+   "kite": "A kite flies in the wind.",
+   "doll": "A doll is a toy person."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "A ___ flies high on a windy day.",
+  "options": [
+   "kite",
+   "robot",
+   "puzzle",
+   "teddy"
+  ],
+  "answer": 0,
+  "explain": "You fly a kite in the wind.",
+  "notes": {
+   "robot": "A robot is a toy machine.",
+   "puzzle": "A puzzle has pieces.",
+   "teddy": "A teddy is a soft toy bear."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "A teddy ___ is a soft toy.",
+  "options": [
+   "bear",
+   "car",
+   "train",
+   "drum"
+  ],
+  "answer": 0,
+  "explain": "A teddy bear is a soft toy.",
+  "notes": {
+   "car": "A car isn't soft.",
+   "train": "A train runs on tracks.",
+   "drum": "A drum makes a loud sound."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You bang a ___ to make music.",
+  "options": [
+   "drum",
+   "guitar",
+   "piano",
+   "flute"
+  ],
+  "answer": 0,
+  "explain": "You hit a drum with sticks.",
+  "notes": {
+   "guitar": "You pick the strings of a guitar.",
+   "piano": "You press the keys of a piano.",
+   "flute": "You blow into a flute."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "A ___ has strings. You play it with your fingers.",
+  "options": [
+   "guitar",
+   "drum",
+   "trumpet",
+   "whistle"
+  ],
+  "answer": 0,
+  "explain": "A guitar has strings.",
+  "notes": {
+   "drum": "A drum has no strings.",
+   "trumpet": "You blow a trumpet.",
+   "whistle": "You blow a whistle."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Carrots and peas are ___.",
+  "options": [
+   "vegetables",
+   "fruit",
+   "drinks",
+   "sweets"
+  ],
+  "answer": 0,
+  "explain": "Food groups: carrots and peas are vegetables.",
+  "notes": {
+   "fruit": "Apples and bananas are fruit.",
+   "drinks": "Milk and juice are drinks.",
+   "sweets": "Sweets are made with sugar."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Apples and pears are ___.",
+  "options": [
+   "fruit",
+   "vegetables",
+   "meat",
+   "bread"
+  ],
+  "answer": 0,
+  "explain": "Apples and pears are fruit.",
+  "notes": {
+   "vegetables": "Carrots are vegetables.",
+   "meat": "Chicken is meat.",
+   "bread": "Bread is made from flour."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You need a ___ to eat soup.",
+  "options": [
+   "spoon",
+   "fork",
+   "knife",
+   "plate"
+  ],
+  "answer": 0,
+  "explain": "You eat soup with a spoon.",
+  "notes": {
+   "fork": "A fork is for pasta and salad.",
+   "knife": "A knife cuts food.",
+   "plate": "A plate holds food, but you don't eat soup with it."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You drink water from a ___.",
+  "options": [
+   "cup",
+   "plate",
+   "bowl",
+   "pan"
+  ],
+  "answer": 0,
+  "explain": "You drink from a cup or glass.",
+  "notes": {
+   "plate": "A plate is flat, for food.",
+   "bowl": "A bowl is for soup or cereal.",
+   "pan": "A pan is for cooking."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You clean your teeth with a ___.",
+  "options": [
+   "toothbrush",
+   "hairbrush",
+   "towel",
+   "soap"
+  ],
+  "answer": 0,
+  "explain": "You brush your teeth with a toothbrush.",
+  "notes": {
+   "hairbrush": "A hairbrush is for hair.",
+   "towel": "A towel dries you.",
+   "soap": "Soap washes your hands."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You dry your hands on a ___.",
+  "options": [
+   "towel",
+   "pillow",
+   "sock",
+   "map"
+  ],
+  "answer": 0,
+  "explain": "A towel dries you after washing.",
+  "notes": {
+   "pillow": "A pillow is for your head in bed.",
+   "sock": "A sock goes on your foot.",
+   "map": "A map shows places."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "A ___ has four wheels. You ride in it.",
+  "options": [
+   "car",
+   "bike",
+   "plane",
+   "boat"
+  ],
+  "answer": 0,
+  "explain": "A car has four wheels.",
+  "notes": {
+   "bike": "A bike has two wheels.",
+   "plane": "A plane flies.",
+   "boat": "A boat floats on water."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "A ___ goes on tracks.",
+  "options": [
+   "train",
+   "bus",
+   "ship",
+   "helicopter"
+  ],
+  "answer": 0,
+  "explain": "A train runs on tracks.",
+  "notes": {
+   "bus": "A bus drives on the road.",
+   "ship": "A ship sails on the sea.",
+   "helicopter": "A helicopter flies."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You have ten ___ on your hands.",
+  "options": [
+   "fingers",
+   "toes",
+   "teeth",
+   "ears"
+  ],
+  "answer": 0,
+  "explain": "Hands have fingers; feet have toes.",
+  "notes": {
+   "toes": "Toes are on your feet.",
+   "teeth": "Teeth are in your mouth.",
+   "ears": "You have two ears."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "There are ___ days in a week.",
+  "options": [
+   "seven",
+   "five",
+   "ten",
+   "twelve"
+  ],
+  "answer": 0,
+  "explain": "A week has seven days.",
+  "notes": {
+   "five": "Five is the school days only.",
+   "ten": "Ten is too many.",
+   "twelve": "Twelve is the months in a year."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "There are ___ months in a year.",
+  "options": [
+   "twelve",
+   "seven",
+   "ten",
+   "four"
+  ],
+  "answer": 0,
+  "explain": "A year has twelve months.",
+  "notes": {
+   "seven": "Seven is the days in a week.",
+   "ten": "Ten is too few.",
+   "four": "Four is the seasons."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The moon and stars come out at ___.",
+  "options": [
+   "night",
+   "noon",
+   "lunchtime",
+   "morning"
+  ],
+  "answer": 0,
+  "explain": "Times of day: night is dark.",
+  "notes": {
+   "noon": "Noon is the middle of the day.",
+   "lunchtime": "Lunchtime is in the day.",
+   "morning": "Morning is when the sun comes up."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I'm very tired. I want to ___.",
+  "options": [
+   "sleep",
+   "run",
+   "dance",
+   "shout"
+  ],
+  "answer": 0,
+  "explain": "When you're tired, you want to sleep.",
+  "notes": {
+   "run": "Running makes you more tired.",
+   "dance": "Dancing needs energy.",
+   "shout": "Shouting won't help you rest."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I'm thirsty. Can I have a ___?",
+  "options": [
+   "drink",
+   "sandwich",
+   "pillow",
+   "pencil"
+  ],
+  "answer": 0,
+  "explain": "Thirsty = you want a drink.",
+  "notes": {
+   "sandwich": "A sandwich is for when you're hungry.",
+   "pillow": "A pillow is for sleeping.",
+   "pencil": "A pencil is for writing."
+  }
+ },
+ {
   "type": "spell",
   "q": "Spell the word.",
   "art": "word_apple",

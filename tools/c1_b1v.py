@@ -52,9 +52,9 @@ B1V = [
  # word formation
  m("Please be ___ with that vase. It's old.", "careful", ["careless", "carefully", "care"], "Adjective after be: careful.", ["Careless is the opposite.", "Carefully is an adverb.", "Care is a noun/verb."]),
  m("It was ___ of you to leave the door open.", "careless", ["careful", "caring", "cared"], "Careless = not careful.", ["Careful is the opposite meaning.", "Caring means kind.", "Cared is past."]),
- m("That's ___! A cat can't drive a bus.", "impossible", ["unpossible", "inpossible", "dispossible"], "Opposite prefix: im- before p.", ["Not un-.", "In- becomes im- before p.", "Dis- isn't used here."]),
+ m("That's ___! A cat can't drive a bus.", "impossible", ["unpossible", "inpossible", "dispossible"], "Opposite prefix: im- before p.", ["Possible takes im-, not un-.", "In- becomes im- before p.", "Dis- isn't used with possible."]),
  m("I ___ with you. I think it's a great idea.", "agree", ["disagree", "agreement", "agreeable"], "Agree with someone.", ["Disagree is the opposite.", "Agreement is a noun.", "Agreeable is an adjective."]),
- m("It's ___ to talk with your mouth full.", "impolite", ["unpolite", "dispolite", "nonpolite"], "Polite → impolite.", ["Not un-.", "Not dis-.", "Not non-."]),
+ m("It's ___ to talk with your mouth full.", "impolite", ["unpolite", "dispolite", "nonpolite"], "Polite → impolite.", ["Polite takes im-, not un-.", "Polite takes im-, not dis-.", "Polite takes im-, not non-."]),
  m("The ___ of the bridge took two years.", "construction", ["construct", "constructive", "constructor"], "Verb → noun with -ion.", ["Construct is the verb.", "Constructive is an adjective.", "A constructor is a person."]),
  m("We need more ___ for the school garden.", "volunteers", ["volunteering", "voluntary", "volunteer's"], "A volunteer = a person who helps for free.", ["Volunteering is the activity.", "Voluntary is an adjective.", "Volunteer's is possessive."]),
  m("He's a very ___ dancer.", "talented", ["talent", "talents", "talenting"], "Talent (noun) → talented (adjective).", ["Talent is a noun.", "Talents is a plural noun.", "Talenting isn't a word."]),

@@ -508,5 +508,1569 @@
    "took": "Take an effort isn't English.",
    "gave": "Give an effort isn't natural."
   }
+ },
+ {
+  "type": "mcq",
+  "q": "The fire alarm ___ during the maths test.",
+  "options": [
+   "went off",
+   "went out",
+   "went on",
+   "went over"
+  ],
+  "answer": 0,
+  "explain": "Go off = an alarm starts ringing (or a bomb explodes).",
+  "notes": {
+   "went out": "Go out = stop burning, or leave home.",
+   "went on": "Go on = continue.",
+   "went over": "Go over = check again."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Our teacher ___ the class into four teams.",
+  "options": [
+   "split up",
+   "split off",
+   "made up",
+   "set up"
+  ],
+  "answer": 0,
+  "explain": "Split up = divide into groups.",
+  "notes": {
+   "split off": "Split off isn't used for teams here.",
+   "made up": "Make up = invent.",
+   "set up": "Set up = start or prepare."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Let's ___ a lemonade stall on Saturday.",
+  "options": [
+   "set up",
+   "set off",
+   "put off",
+   "take up"
+  ],
+  "answer": 0,
+  "explain": "Set up = start or prepare something.",
+  "notes": {
+   "set off": "Set off = start a journey.",
+   "put off": "Put off = delay.",
+   "take up": "Take up = start a hobby."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I've decided to ___ chess. My grandpa will teach me.",
+  "options": [
+   "take up",
+   "take off",
+   "take after",
+   "take over"
+  ],
+  "answer": 0,
+  "explain": "Take up = start a new hobby.",
+  "notes": {
+   "take off": "Take off = remove, or a plane leaving.",
+   "take after": "Take after = look like a family member.",
+   "take over": "Take over = take control."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The match was ___ until next week because of rain.",
+  "options": [
+   "put off",
+   "put out",
+   "put up",
+   "put on"
+  ],
+  "answer": 0,
+  "explain": "Put off = postpone.",
+  "notes": {
+   "put out": "Put out = stop a fire.",
+   "put up": "Put up = build or let someone stay.",
+   "put on": "Put on = wear, or start a show."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The firefighters ___ the fire quickly.",
+  "options": [
+   "put out",
+   "put off",
+   "put away",
+   "put down"
+  ],
+  "answer": 0,
+  "explain": "Put out a fire = make it stop burning.",
+  "notes": {
+   "put off": "Put off = delay.",
+   "put away": "Put away = tidy into its place.",
+   "put down": "Put down = place on a surface."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Please ___ your books now. The lesson is over.",
+  "options": [
+   "put away",
+   "put out",
+   "put off",
+   "put through"
+  ],
+  "answer": 0,
+  "explain": "Put away = put back in its place.",
+  "notes": {
+   "put out": "Put out = stop a fire.",
+   "put off": "Put off = postpone.",
+   "put through": "Put through = connect on the phone."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ an old friend at the park yesterday.",
+  "options": [
+   "ran into",
+   "ran out",
+   "ran over",
+   "ran after"
+  ],
+  "answer": 0,
+  "explain": "Run into = meet by chance.",
+  "notes": {
+   "ran out": "Run out = have none left.",
+   "ran over": "Run over = hit with a vehicle.",
+   "ran after": "Run after = chase."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We've ___ glue. Can you get some more?",
+  "options": [
+   "run out of",
+   "run into",
+   "run over",
+   "run away from"
+  ],
+  "answer": 0,
+  "explain": "Run out of = have none left.",
+  "notes": {
+   "run into": "Run into = meet by chance.",
+   "run over": "Run over = hit with a vehicle.",
+   "run away from": "Run away from = escape."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The plan didn't ___. We had to try something else.",
+  "options": [
+   "work out",
+   "work up",
+   "work on",
+   "work off"
+  ],
+  "answer": 0,
+  "explain": "Work out = succeed, have a good result.",
+  "notes": {
+   "work up": "Work up = build up slowly.",
+   "work on": "Work on = spend time improving.",
+   "work off": "Work off = get rid of by exercise."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ well with my cousin. We're best friends.",
+  "options": [
+   "get on",
+   "get over",
+   "get away",
+   "get by"
+  ],
+  "answer": 0,
+  "explain": "Get on (well) with = have a good relationship.",
+  "notes": {
+   "get over": "Get over = recover from.",
+   "get away": "Get away = escape.",
+   "get by": "Get by = manage with little."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "It took me a week to ___ my cold.",
+  "options": [
+   "get over",
+   "get on",
+   "get through to",
+   "get round"
+  ],
+  "answer": 0,
+  "explain": "Get over = recover from an illness or sad event.",
+  "notes": {
+   "get on": "Get on = have a good relationship.",
+   "get through to": "Get through to = reach on the phone.",
+   "get round": "Get round = avoid a rule."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Can you ___ the meaning of this word for me?",
+  "options": [
+   "look up",
+   "look into",
+   "look out",
+   "look over"
+  ],
+  "answer": 0,
+  "explain": "Look up a word = find it in a dictionary.",
+  "notes": {
+   "look into": "Look into = investigate.",
+   "look out": "Look out = be careful.",
+   "look over": "Look over = check quickly."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "___! There's a bike coming!",
+  "options": [
+   "Look out",
+   "Look up",
+   "Look after",
+   "Look into"
+  ],
+  "answer": 0,
+  "explain": "Look out! = be careful.",
+  "notes": {
+   "Look up": "Look up = find in a dictionary.",
+   "Look after": "Look after = take care of.",
+   "Look into": "Look into = investigate."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ my coat because it was getting cold.",
+  "options": [
+   "put on",
+   "took off",
+   "got on",
+   "turned on"
+  ],
+  "answer": 0,
+  "explain": "Put on = start wearing.",
+  "notes": {
+   "took off": "Take off is the opposite.",
+   "got on": "Get on = board a bus or train.",
+   "turned on": "Turn on is for machines."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "She ___ the invitation because she was busy.",
+  "options": [
+   "turned down",
+   "turned up",
+   "turned off",
+   "turned into"
+  ],
+  "answer": 0,
+  "explain": "Turn down an invitation = say no to it.",
+  "notes": {
+   "turned up": "Turn up = arrive.",
+   "turned off": "Turn off = switch off.",
+   "turned into": "Turn into = become."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Only five people ___ for the club meeting.",
+  "options": [
+   "turned up",
+   "turned down",
+   "turned over",
+   "turned out"
+  ],
+  "answer": 0,
+  "explain": "Turn up = arrive, appear.",
+  "notes": {
+   "turned down": "Turn down = refuse.",
+   "turned over": "Turn over = flip.",
+   "turned out": "Turn out = have a result."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The caterpillar ___ a butterfly.",
+  "options": [
+   "turned into",
+   "turned up",
+   "turned on",
+   "turned back"
+  ],
+  "answer": 0,
+  "explain": "Turn into = become.",
+  "notes": {
+   "turned up": "Turn up = arrive.",
+   "turned on": "Turn on = switch on.",
+   "turned back": "Turn back = return."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The baby ___ her mum. They have the same smile.",
+  "options": [
+   "takes after",
+   "looks after",
+   "takes over",
+   "gets over"
+  ],
+  "answer": 0,
+  "explain": "Take after = look or act like an older relative.",
+  "notes": {
+   "looks after": "Look after = care for.",
+   "takes over": "Take over = take control.",
+   "gets over": "Get over = recover from."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You have to ___ attention in class.",
+  "options": [
+   "pay",
+   "give",
+   "make",
+   "do"
+  ],
+  "answer": 0,
+  "explain": "Collocation: pay attention.",
+  "notes": {
+   "give": "We don't say give attention here.",
+   "make": "We don't say make attention.",
+   "do": "We don't say do attention."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ a mistake in my spelling.",
+  "options": [
+   "made",
+   "did",
+   "took",
+   "had"
+  ],
+  "answer": 0,
+  "explain": "Collocation: make a mistake.",
+  "notes": {
+   "did": "We don't say do a mistake.",
+   "took": "We don't say take a mistake.",
+   "had": "Had isn't used with mistake."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Can you ___ me a favour and hold this?",
+  "options": [
+   "do",
+   "make",
+   "give",
+   "take"
+  ],
+  "answer": 0,
+  "explain": "Collocation: do someone a favour.",
+  "notes": {
+   "make": "We don't say make a favour.",
+   "give": "Give isn't used here.",
+   "take": "Take isn't used here."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We need to ___ a decision before Friday.",
+  "options": [
+   "come to",
+   "do",
+   "get to",
+   "go to"
+  ],
+  "answer": 0,
+  "explain": "Come to / make / reach a decision.",
+  "notes": {
+   "do": "We don't say do a decision.",
+   "get to": "Get to a decision isn't usual.",
+   "go to": "Go to a decision isn't English."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Please ___ care when you cross the road.",
+  "options": [
+   "take",
+   "have",
+   "make",
+   "do"
+  ],
+  "answer": 0,
+  "explain": "Collocation: take care.",
+  "notes": {
+   "have": "We don't say have care.",
+   "make": "We don't say make care.",
+   "do": "We don't say do care."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Our team ___ the match 3–1.",
+  "options": [
+   "won",
+   "beat",
+   "earned",
+   "gained"
+  ],
+  "answer": 0,
+  "explain": "You win a match/game; you beat a team.",
+  "notes": {
+   "beat": "Beat needs a team: we beat them.",
+   "earned": "You earn money.",
+   "gained": "You gain weight or experience."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We ___ the other team 3–1.",
+  "options": [
+   "beat",
+   "won",
+   "earned",
+   "succeeded"
+  ],
+  "answer": 0,
+  "explain": "Beat + opponent; win + game.",
+  "notes": {
+   "won": "Win + match, not a team.",
+   "earned": "You earn money.",
+   "succeeded": "Succeed needs in."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I'm saving up to ___ a new skateboard.",
+  "options": [
+   "afford",
+   "earn",
+   "owe",
+   "lend"
+  ],
+  "answer": 0,
+  "explain": "Afford = have enough money for.",
+  "notes": {
+   "earn": "Earn = get money for work.",
+   "owe": "Owe = need to pay back.",
+   "lend": "Lend = give for a short time."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ my brother £2. I'll pay him back tomorrow.",
+  "options": [
+   "owe",
+   "lend",
+   "borrow",
+   "afford"
+  ],
+  "answer": 0,
+  "explain": "Owe = have to pay back.",
+  "notes": {
+   "lend": "Lend means you give it.",
+   "borrow": "Borrow needs from: borrow from him.",
+   "afford": "Afford = have enough money."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Can I ___ your ruler? I'll give it back.",
+  "options": [
+   "borrow",
+   "lend",
+   "owe",
+   "loan you"
+  ],
+  "answer": 0,
+  "explain": "Borrow = take for a short time; lend = give for a short time.",
+  "notes": {
+   "lend": "Lend is what the owner does.",
+   "owe": "Owe = need to pay back.",
+   "loan you": "Loan you would mean giving your ruler away."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "She ___ pocket money by washing the car.",
+  "options": [
+   "earns",
+   "wins",
+   "gains",
+   "spends"
+  ],
+  "answer": 0,
+  "explain": "Earn money for work.",
+  "notes": {
+   "wins": "Win is for prizes and games.",
+   "gains": "Gain is for weight or experience.",
+   "spends": "Spend is the opposite."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The ___ was hard. I only got half the questions.",
+  "options": [
+   "exam",
+   "exercise book",
+   "examiner",
+   "excuse"
+  ],
+  "answer": 0,
+  "explain": "An exam is a test.",
+  "notes": {
+   "exercise book": "An exercise book is for writing in.",
+   "examiner": "An examiner is the person who checks it.",
+   "excuse": "An excuse is a reason you give."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ my homework at home!",
+  "options": [
+   "left",
+   "forgot",
+   "missed",
+   "lost"
+  ],
+  "answer": 0,
+  "explain": "Leave something somewhere = not bring it.",
+  "notes": {
+   "forgot": "Forget doesn't take a place: I forgot my homework.",
+   "missed": "Miss is for buses or people.",
+   "lost": "Lose = can't find."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Please ___ quiet in the library.",
+  "options": [
+   "keep",
+   "hold",
+   "stay to",
+   "make"
+  ],
+  "answer": 0,
+  "explain": "Keep quiet = stay silent.",
+  "notes": {
+   "hold": "Hold is for things in your hand.",
+   "stay to": "Stay quiet works, but not stay to.",
+   "make": "Make quiet isn't English."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The movie was ___. Everyone cried at the end.",
+  "options": [
+   "moving",
+   "moved",
+   "movement",
+   "removing"
+  ],
+  "answer": 0,
+  "explain": "-ing adjective: something is moving (makes you feel emotion).",
+  "notes": {
+   "moved": "Moved is how the people felt.",
+   "movement": "Movement is a noun.",
+   "removing": "Removing means taking away."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I was ___ by the magic show!",
+  "options": [
+   "amazed",
+   "amazing",
+   "amazement",
+   "amaze"
+  ],
+  "answer": 0,
+  "explain": "-ed = how you feel.",
+  "notes": {
+   "amazing": "Amazing describes the show.",
+   "amazement": "Amazement is a noun.",
+   "amaze": "Amaze is the verb."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The ___ of the race was a girl from my class.",
+  "options": [
+   "winner",
+   "winning",
+   "win",
+   "loser"
+  ],
+  "answer": 0,
+  "explain": "Word family: win → winner (person).",
+  "notes": {
+   "winning": "Winning is the -ing form.",
+   "win": "Win is the verb.",
+   "loser": "The loser didn't win."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Thanks for your ___. It really helped.",
+  "options": [
+   "advice",
+   "advise",
+   "advices",
+   "adviser"
+  ],
+  "answer": 0,
+  "explain": "Advice (noun, uncountable); advise (verb).",
+  "notes": {
+   "advise": "Advise is the verb.",
+   "advices": "Advice has no plural.",
+   "adviser": "An adviser is a person."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Could you ___ me which book to read?",
+  "options": [
+   "advise",
+   "advice",
+   "suggest",
+   "recommend me"
+  ],
+  "answer": 0,
+  "explain": "Advise someone (verb).",
+  "notes": {
+   "advice": "Advice is the noun.",
+   "suggest": "Suggest doesn't take me directly.",
+   "recommend me": "Recommend me isn't the right pattern here."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I need some ___ about the school trip.",
+  "options": [
+   "information",
+   "informations",
+   "inform",
+   "an information"
+  ],
+  "answer": 0,
+  "explain": "Information is uncountable.",
+  "notes": {
+   "informations": "No plural -s.",
+   "inform": "Inform is the verb.",
+   "an information": "No 'an' with information."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The ___ in the park was beautiful.",
+  "options": [
+   "scenery",
+   "sceneries",
+   "scene's",
+   "seen"
+  ],
+  "answer": 0,
+  "explain": "Scenery is uncountable.",
+  "notes": {
+   "sceneries": "No plural.",
+   "scene's": "Scene's is possessive.",
+   "seen": "Seen is a past participle."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ a lot about volcanoes from that video.",
+  "options": [
+   "learned",
+   "taught",
+   "studied by",
+   "knew"
+  ],
+  "answer": 0,
+  "explain": "Learn = get knowledge; teach = give it.",
+  "notes": {
+   "taught": "Teach is what the video does to you.",
+   "studied by": "Studied by is wrong.",
+   "knew": "Knew doesn't show getting new knowledge."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Mr Tan ___ us how to make paper boats.",
+  "options": [
+   "taught",
+   "learned",
+   "teached",
+   "studied"
+  ],
+  "answer": 0,
+  "explain": "Teach → taught.",
+  "notes": {
+   "learned": "Learn is what we did.",
+   "teached": "Teach is irregular.",
+   "studied": "Studied isn't with 'us how'."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Can you ___ me up at 7?",
+  "options": [
+   "wake",
+   "awake",
+   "rise",
+   "raise"
+  ],
+  "answer": 0,
+  "explain": "Wake someone up.",
+  "notes": {
+   "awake": "Awake is an adjective.",
+   "rise": "Rise has no object.",
+   "raise": "Raise = lift."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Please ___ your hand if you know the answer.",
+  "options": [
+   "raise",
+   "rise",
+   "arise",
+   "grow"
+  ],
+  "answer": 0,
+  "explain": "Raise + object; rise has no object.",
+  "notes": {
+   "rise": "Rise has no object: the sun rises.",
+   "arise": "Arise means appear.",
+   "grow": "Grow is for size."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The sun ___ in the east.",
+  "options": [
+   "rises",
+   "raises",
+   "lifts",
+   "rose up it"
+  ],
+  "answer": 0,
+  "explain": "Rise (no object).",
+  "notes": {
+   "raises": "Raise needs an object.",
+   "lifts": "Lift needs an object.",
+   "rose up it": "Rose is past and 'up it' is wrong."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Please be ___ with that vase. It's old.",
+  "options": [
+   "careful",
+   "careless",
+   "carefully",
+   "care"
+  ],
+  "answer": 0,
+  "explain": "Adjective after be: careful.",
+  "notes": {
+   "careless": "Careless is the opposite.",
+   "carefully": "Carefully is an adverb.",
+   "care": "Care is a noun/verb."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "It was ___ of you to leave the door open.",
+  "options": [
+   "careless",
+   "careful",
+   "caring",
+   "cared"
+  ],
+  "answer": 0,
+  "explain": "Careless = not careful.",
+  "notes": {
+   "careful": "Careful is the opposite meaning.",
+   "caring": "Caring means kind.",
+   "cared": "Cared is past."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "That's ___! A cat can't drive a bus.",
+  "options": [
+   "impossible",
+   "unpossible",
+   "inpossible",
+   "dispossible"
+  ],
+  "answer": 0,
+  "explain": "Opposite prefix: im- before p.",
+  "notes": {
+   "unpossible": "Possible takes im-, not un-.",
+   "inpossible": "In- becomes im- before p.",
+   "dispossible": "Dis- isn't used with possible."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ with you. I think it's a great idea.",
+  "options": [
+   "agree",
+   "disagree",
+   "agreement",
+   "agreeable"
+  ],
+  "answer": 0,
+  "explain": "Agree with someone.",
+  "notes": {
+   "disagree": "Disagree is the opposite.",
+   "agreement": "Agreement is a noun.",
+   "agreeable": "Agreeable is an adjective."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "It's ___ to talk with your mouth full.",
+  "options": [
+   "impolite",
+   "unpolite",
+   "dispolite",
+   "nonpolite"
+  ],
+  "answer": 0,
+  "explain": "Polite → impolite.",
+  "notes": {
+   "unpolite": "Polite takes im-, not un-.",
+   "dispolite": "Polite takes im-, not dis-.",
+   "nonpolite": "Polite takes im-, not non-."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The ___ of the bridge took two years.",
+  "options": [
+   "construction",
+   "construct",
+   "constructive",
+   "constructor"
+  ],
+  "answer": 0,
+  "explain": "Verb → noun with -ion.",
+  "notes": {
+   "construct": "Construct is the verb.",
+   "constructive": "Constructive is an adjective.",
+   "constructor": "A constructor is a person."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We need more ___ for the school garden.",
+  "options": [
+   "volunteers",
+   "volunteering",
+   "voluntary",
+   "volunteer's"
+  ],
+  "answer": 0,
+  "explain": "A volunteer = a person who helps for free.",
+  "notes": {
+   "volunteering": "Volunteering is the activity.",
+   "voluntary": "Voluntary is an adjective.",
+   "volunteer's": "Volunteer's is possessive."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "He's a very ___ dancer.",
+  "options": [
+   "talented",
+   "talent",
+   "talents",
+   "talenting"
+  ],
+  "answer": 0,
+  "explain": "Talent (noun) → talented (adjective).",
+  "notes": {
+   "talent": "Talent is a noun.",
+   "talents": "Talents is a plural noun.",
+   "talenting": "Talenting isn't a word."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I'm ___ forward to the holidays.",
+  "options": [
+   "looking",
+   "seeing",
+   "watching",
+   "waiting"
+  ],
+  "answer": 0,
+  "explain": "Look forward to = be excited about.",
+  "notes": {
+   "seeing": "We don't say see forward.",
+   "watching": "We don't say watch forward.",
+   "waiting": "Wait needs for."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The ___ was full of colourful fish.",
+  "options": [
+   "aquarium",
+   "aquarius",
+   "aqua",
+   "aqueduct"
+  ],
+  "answer": 0,
+  "explain": "An aquarium has fish tanks.",
+  "notes": {
+   "aquarius": "Aquarius is a star sign.",
+   "aqua": "Aqua is a colour.",
+   "aqueduct": "An aqueduct carries water."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We ___ plastic bottles to help the planet.",
+  "options": [
+   "recycle",
+   "reuse once",
+   "rebuild",
+   "refill up"
+  ],
+  "answer": 0,
+  "explain": "Recycle = make used things into new things.",
+  "notes": {
+   "reuse once": "Reuse once isn't a set phrase.",
+   "rebuild": "Rebuild = build again.",
+   "refill up": "Refill up repeats 'up'."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Turn off the lights to save ___.",
+  "options": [
+   "energy",
+   "power cut",
+   "fuel tank",
+   "battery life"
+  ],
+  "answer": 0,
+  "explain": "Save energy = use less electricity.",
+  "notes": {
+   "power cut": "A power cut is when electricity stops.",
+   "fuel tank": "A fuel tank holds petrol.",
+   "battery life": "Battery life is for a device."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Too much rubbish causes ___ in the sea.",
+  "options": [
+   "pollution",
+   "polluted",
+   "pollute",
+   "polluter"
+  ],
+  "answer": 0,
+  "explain": "Pollution (noun).",
+  "notes": {
+   "polluted": "Polluted is an adjective.",
+   "pollute": "Pollute is the verb.",
+   "polluter": "A polluter is a person or company."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Pandas are an ___ species. There are very few left.",
+  "options": [
+   "endangered",
+   "dangerous",
+   "extinct",
+   "endangering"
+  ],
+  "answer": 0,
+  "explain": "Endangered = in danger of disappearing.",
+  "notes": {
+   "dangerous": "Dangerous means it can hurt you.",
+   "extinct": "Extinct means none are left.",
+   "endangering": "Endangering means putting in danger."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Dinosaurs are ___. There are none left.",
+  "options": [
+   "extinct",
+   "endangered",
+   "ancient-ish",
+   "missing"
+  ],
+  "answer": 0,
+  "explain": "Extinct = no longer exist.",
+  "notes": {
+   "endangered": "Endangered means few are left.",
+   "ancient-ish": "Ancient-ish isn't a real word.",
+   "missing": "Missing means can't be found."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I need to ___ my phone. The battery is low.",
+  "options": [
+   "charge",
+   "change",
+   "fill",
+   "plug"
+  ],
+  "answer": 0,
+  "explain": "Charge a battery.",
+  "notes": {
+   "change": "Change = replace.",
+   "fill": "Fill is for containers.",
+   "plug": "Plug needs in: plug it in."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Don't forget to ___ your work before you close the file.",
+  "options": [
+   "save",
+   "keep",
+   "store up",
+   "safe"
+  ],
+  "answer": 0,
+  "explain": "Save a file.",
+  "notes": {
+   "keep": "Keep isn't used for files.",
+   "store up": "Store up isn't used here.",
+   "safe": "Safe is an adjective."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I typed my ___ wrong, so I couldn't log in.",
+  "options": [
+   "password",
+   "passport",
+   "username's",
+   "keyword"
+  ],
+  "answer": 0,
+  "explain": "A password lets you log in.",
+  "notes": {
+   "passport": "A passport is for travel.",
+   "username's": "Username's is possessive.",
+   "keyword": "A keyword is for searching."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The ___ blew the whistle at the end of the match.",
+  "options": [
+   "referee",
+   "coach",
+   "captain",
+   "goalkeeper"
+  ],
+  "answer": 0,
+  "explain": "The referee controls the match.",
+  "notes": {
+   "coach": "The coach trains the team.",
+   "captain": "The captain leads the players.",
+   "goalkeeper": "The goalkeeper stops goals."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Our ___ makes us run ten laps every practice.",
+  "options": [
+   "coach",
+   "referee",
+   "fan",
+   "spectator"
+  ],
+  "answer": 0,
+  "explain": "A coach trains a team.",
+  "notes": {
+   "referee": "A referee controls a match.",
+   "fan": "A fan supports a team.",
+   "spectator": "A spectator watches."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Thousands of ___ watched the final.",
+  "options": [
+   "spectators",
+   "players",
+   "referees",
+   "coaches"
+  ],
+  "answer": 0,
+  "explain": "Spectators = people who watch.",
+  "notes": {
+   "players": "Players play.",
+   "referees": "There are only a few referees.",
+   "coaches": "Coaches train teams."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "She ___ the world record for the 100 metres.",
+  "options": [
+   "broke",
+   "beat up",
+   "won over",
+   "made out"
+  ],
+  "answer": 0,
+  "explain": "Break a record = do better than the record.",
+  "notes": {
+   "beat up": "Beat up means attack.",
+   "won over": "Win over means persuade.",
+   "made out": "Make out means see with difficulty."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I can't ___ which colour to choose.",
+  "options": [
+   "decide",
+   "decision",
+   "decisive",
+   "decided on"
+  ],
+  "answer": 0,
+  "explain": "Can't + base verb: decide.",
+  "notes": {
+   "decision": "Decision is a noun.",
+   "decisive": "Decisive is an adjective.",
+   "decided on": "Decided is past."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Let's have a ___ about our class project.",
+  "options": [
+   "discussion",
+   "discuss",
+   "discussing",
+   "argue"
+  ],
+  "answer": 0,
+  "explain": "Discussion (noun) after a.",
+  "notes": {
+   "discuss": "Discuss is a verb.",
+   "discussing": "Discussing is -ing.",
+   "argue": "Argue is a verb."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ my little sister to do her puzzle.",
+  "options": [
+   "encouraged",
+   "discouraged",
+   "courage",
+   "encouraging"
+  ],
+  "answer": 0,
+  "explain": "Encourage someone to do something = give them confidence.",
+  "notes": {
+   "discouraged": "Discouraged means the opposite.",
+   "courage": "Courage is a noun.",
+   "encouraging": "Encouraging needs was."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "It took a lot of ___ to sing on stage.",
+  "options": [
+   "courage",
+   "courageous",
+   "encourage",
+   "cowardice"
+  ],
+  "answer": 0,
+  "explain": "Courage = bravery (noun).",
+  "notes": {
+   "courageous": "Courageous is an adjective.",
+   "encourage": "Encourage is a verb.",
+   "cowardice": "Cowardice is the opposite."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "My brother is ___ of spiders. He runs away!",
+  "options": [
+   "terrified",
+   "terrific",
+   "terrible",
+   "terrifying"
+  ],
+  "answer": 0,
+  "explain": "Terrified = very scared.",
+  "notes": {
+   "terrific": "Terrific means great.",
+   "terrible": "Terrible means very bad.",
+   "terrifying": "Terrifying describes the spider."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The roller coaster was ___!",
+  "options": [
+   "terrifying",
+   "terrified",
+   "terror",
+   "terrifies"
+  ],
+  "answer": 0,
+  "explain": "-ing adjective describes the ride.",
+  "notes": {
+   "terrified": "Terrified is how you feel.",
+   "terror": "Terror is a noun.",
+   "terrifies": "Terrifies is a verb."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We had to ___ for an hour to see the koalas.",
+  "options": [
+   "queue",
+   "cue",
+   "line",
+   "row"
+  ],
+  "answer": 0,
+  "explain": "Queue = wait in a line (British).",
+  "notes": {
+   "cue": "Cue is a signal (sounds the same!).",
+   "line": "Line isn't a verb here.",
+   "row": "Row isn't used for waiting."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The museum has an ___ about space.",
+  "options": [
+   "exhibition",
+   "exhibit",
+   "exhibitor",
+   "expedition"
+  ],
+  "answer": 0,
+  "explain": "Exhibition = a public show of things.",
+  "notes": {
+   "exhibit": "An exhibit is one item.",
+   "exhibitor": "An exhibitor is a person.",
+   "expedition": "An expedition is a journey."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "They went on an ___ to the North Pole.",
+  "options": [
+   "expedition",
+   "exhibition",
+   "excursion lunch",
+   "experience"
+  ],
+  "answer": 0,
+  "explain": "Expedition = a long journey with a purpose.",
+  "notes": {
+   "exhibition": "An exhibition is a show.",
+   "excursion lunch": "Excursion lunch isn't a phrase.",
+   "experience": "Experience is something you live through."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I'm ___ to peanuts. I can't eat them.",
+  "options": [
+   "allergic",
+   "allergy",
+   "addicted",
+   "afraid"
+  ],
+  "answer": 0,
+  "explain": "Allergic to = your body reacts badly.",
+  "notes": {
+   "allergy": "Allergy is a noun.",
+   "addicted": "Addicted means can't stop.",
+   "afraid": "Afraid means scared."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "My cut is ___ better.",
+  "options": [
+   "getting",
+   "making",
+   "doing",
+   "turning to"
+  ],
+  "answer": 0,
+  "explain": "Get + comparative = become.",
+  "notes": {
+   "making": "Make needs an object.",
+   "doing": "Do isn't used like this.",
+   "turning to": "Turn to isn't used with better."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The test was ___ easier than I expected.",
+  "options": [
+   "much",
+   "very",
+   "more",
+   "too"
+  ],
+  "answer": 0,
+  "explain": "Much + comparative.",
+  "notes": {
+   "very": "Very doesn't go with comparatives.",
+   "more": "More easier is wrong.",
+   "too": "Too easier is wrong."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I've ___ finished my book. Just one page left!",
+  "options": [
+   "nearly",
+   "near",
+   "nearby",
+   "never"
+  ],
+  "answer": 0,
+  "explain": "Nearly = almost.",
+  "notes": {
+   "near": "Near is about place.",
+   "nearby": "Nearby means close.",
+   "never": "Never is the opposite."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ forgot my lines in the play, but I remembered just in time!",
+  "options": [
+   "almost",
+   "most",
+   "mostly",
+   "at most"
+  ],
+  "answer": 0,
+  "explain": "Almost = nearly.",
+  "notes": {
+   "most": "Most is a quantity.",
+   "mostly": "Mostly means mainly.",
+   "at most": "At most means not more than."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "There was a ___ of the new film in the newspaper.",
+  "options": [
+   "review",
+   "revision",
+   "view",
+   "preview's"
+  ],
+  "answer": 0,
+  "explain": "A review gives an opinion about a film or book.",
+  "notes": {
+   "revision": "Revision is studying again.",
+   "view": "A view is what you see.",
+   "preview's": "Preview's is possessive."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I'm doing ___ for my exams.",
+  "options": [
+   "revision",
+   "review",
+   "revisions",
+   "revise"
+  ],
+  "answer": 0,
+  "explain": "British English: do revision = study for exams.",
+  "notes": {
+   "review": "A review is an opinion.",
+   "revisions": "Revision is usually uncountable here.",
+   "revise": "Revise is the verb."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The ___ to the castle costs £5.",
+  "options": [
+   "entrance fee",
+   "exit fee",
+   "entry way",
+   "ticket office"
+  ],
+  "answer": 0,
+  "explain": "Entrance fee = money to go in.",
+  "notes": {
+   "exit fee": "You don't pay to leave.",
+   "entry way": "An entry way is a door.",
+   "ticket office": "A ticket office is where you pay."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Please write your ___ here so we can post the prize.",
+  "options": [
+   "address",
+   "adress",
+   "addresses",
+   "dress"
+  ],
+  "answer": 0,
+  "explain": "Address: two d's, two s's.",
+  "notes": {
+   "adress": "Spelling trap: two d's.",
+   "addresses": "We need one address.",
+   "dress": "A dress is clothing."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ my mum with the cooking.",
+  "options": [
+   "helped",
+   "assisted to",
+   "served",
+   "supported for"
+  ],
+  "answer": 0,
+  "explain": "Help someone with something.",
+  "notes": {
+   "assisted to": "Assisted to is wrong.",
+   "served": "Serve = give food to.",
+   "supported for": "Supported for is wrong."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Could you ___ the dishes, please?",
+  "options": [
+   "dry",
+   "dried",
+   "drying",
+   "dryer"
+  ],
+  "answer": 0,
+  "explain": "Could you + base verb?",
+  "notes": {
+   "dried": "Dried is past.",
+   "drying": "Drying needs be.",
+   "dryer": "A dryer is a machine."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I'd like to ___ a complaint. My pizza is cold!",
+  "options": [
+   "make",
+   "do",
+   "say",
+   "tell"
+  ],
+  "answer": 0,
+  "explain": "Collocation: make a complaint.",
+  "notes": {
+   "do": "We don't say do a complaint.",
+   "say": "Say doesn't take complaint.",
+   "tell": "Tell needs a person."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "She ___ her best friend's secret. Now they aren't talking.",
+  "options": [
+   "gave away",
+   "gave up",
+   "gave in",
+   "gave back"
+  ],
+  "answer": 0,
+  "explain": "Give away a secret = tell it by accident or on purpose.",
+  "notes": {
+   "gave up": "Give up = stop trying.",
+   "gave in": "Give in = stop arguing and agree.",
+   "gave back": "Give back = return."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "After hours of begging, Dad finally ___ and let us get a puppy.",
+  "options": [
+   "gave in",
+   "gave away",
+   "gave out",
+   "gave off"
+  ],
+  "answer": 0,
+  "explain": "Give in = finally agree after saying no.",
+  "notes": {
+   "gave away": "Give away = tell a secret or give for free.",
+   "gave out": "Give out = hand to many people.",
+   "gave off": "Give off = send out a smell or heat."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The teacher ___ the worksheets to everyone.",
+  "options": [
+   "handed out",
+   "handed in",
+   "handed over to",
+   "handed down"
+  ],
+  "answer": 0,
+  "explain": "Hand out = give to each person.",
+  "notes": {
+   "handed in": "Hand in = give your work to the teacher.",
+   "handed over to": "Handed over to needs a person after it.",
+   "handed down": "Hand down = pass to younger family."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Please ___ your homework by Friday.",
+  "options": [
+   "hand in",
+   "hand out",
+   "hand down",
+   "hand on"
+  ],
+  "answer": 0,
+  "explain": "Hand in = give your work to the teacher.",
+  "notes": {
+   "hand out": "Hand out = give to everyone.",
+   "hand down": "Hand down = pass to the next generation.",
+   "hand on": "Hand on isn't used for homework."
+  }
  }
 ]
