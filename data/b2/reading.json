@@ -1490,6 +1490,757 @@
      }
     }
    ]
+  },
+  {
+   "title": "How Clever Are Crows?",
+   "text": "Most people think of crows as noisy pests, but scientists increasingly rank them among the cleverest animals on the planet. New Caledonian crows, for example, bend twigs into hooks to pull insects out of holes in trees – something even chimpanzees rarely manage. In one experiment, crows were shown a narrow tube of water with a treat floating out of reach. Rather than giving up, they dropped stones into the tube until the water rose high enough for them to grab it. Crows also seem to remember faces: researchers who once caught crows while wearing a particular mask found that the birds scolded anyone in that mask for years afterwards, even people who had done nothing wrong.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What is the common view of crows, according to the writer?",
+     "options": [
+      "they're annoying",
+      "they're among the cleverest animals",
+      "they're rare and shy",
+      "they're dangerous to people"
+     ],
+     "answer": 0,
+     "explain": "'Most people think of crows as noisy pests.'",
+     "notes": {
+      "they're among the cleverest animals": "That's what scientists say, not most people.",
+      "they're rare and shy": "Nothing suggests they are rare or shy.",
+      "they're dangerous to people": "Danger to people isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does the writer suggest about making hooks?",
+     "options": [
+      "it's an unusual skill",
+      "chimpanzees taught the crows",
+      "all birds can do it",
+      "crows use hooks to build nests"
+     ],
+     "answer": 0,
+     "explain": "'Something even chimpanzees rarely manage.'",
+     "notes": {
+      "chimpanzees taught the crows": "Chimpanzees are compared, not teachers.",
+      "all birds can do it": "Only New Caledonian crows are mentioned.",
+      "crows use hooks to build nests": "They pull insects out of holes, not build nests."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How did the crows reach the treat?",
+     "options": [
+      "they made the water level rise",
+      "they used a hooked twig to pull it out",
+      "they broke the narrow tube",
+      "they gave up and flew off"
+     ],
+     "answer": 0,
+     "explain": "'Dropped stones into the tube until the water rose high enough.'",
+     "notes": {
+      "they used a hooked twig to pull it out": "Hooks are a different example.",
+      "they broke the narrow tube": "Nothing was broken.",
+      "they gave up and flew off": "'Rather than giving up…'"
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Who did the crows scold?",
+     "options": [
+      "anybody in the mask",
+      "only the researchers who caught them",
+      "every human they saw",
+      "people who had harmed other birds"
+     ],
+     "answer": 0,
+     "explain": "'Scolded anyone in that mask… even people who had done nothing wrong.'",
+     "notes": {
+      "only the researchers who caught them": "Innocent people in the mask were scolded too.",
+      "every human they saw": "Only people in that mask.",
+      "people who had harmed other birds": "Harming other birds isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does the mask experiment show?",
+     "options": [
+      "crows can remember for a long time",
+      "crows are afraid of people in masks",
+      "crows dislike all humans",
+      "crows forget faces quickly"
+     ],
+     "answer": 0,
+     "explain": "'For years afterwards.'",
+     "notes": {
+      "crows are afraid of people in masks": "They scold, which isn't the same as fear.",
+      "crows dislike all humans": "Only the mask-wearers were scolded.",
+      "crows forget faces quickly": "It's the opposite: years later."
+     }
+    }
+   ]
+  },
+  {
+   "title": "My First Week at Space Camp (blog)",
+   "text": "I'd been dreaming about Space Camp for ages, so when I finally got there I was slightly disappointed to discover that the first two days were mostly classroom lessons on rocket science. By Wednesday, though, we were strapped into a machine that spins you in three directions at once, which is supposed to show how astronauts feel when a spacecraft tumbles. I lasted forty seconds before begging to stop! The highlight was Friday's mission simulation: my team had to 'land' a shuttle while dealing with a series of surprise emergencies. We crash-landed twice, but on the third attempt we touched down perfectly. Our instructor said that failing in practice is exactly what keeps real astronauts safe.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How did the writer feel at the start of camp?",
+     "options": [
+      "a little let down",
+      "thrilled from the first minute",
+      "too scared to take part",
+      "bored by the spinning machine"
+     ],
+     "answer": 0,
+     "explain": "'I was slightly disappointed to discover that the first two days were mostly classroom lessons.'",
+     "notes": {
+      "thrilled from the first minute": "They were slightly disappointed at first.",
+      "too scared to take part": "Fear came later, in the machine, and only briefly.",
+      "bored by the spinning machine": "The machine wasn't boring — they begged to stop."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is the spinning machine meant to show?",
+     "options": [
+      "what a tumbling spacecraft feels like",
+      "how rockets are designed and built",
+      "how fast a shuttle lands",
+      "how to be sick safely"
+     ],
+     "answer": 0,
+     "explain": "'Supposed to show how astronauts feel when a spacecraft tumbles.'",
+     "notes": {
+      "how rockets are designed and built": "Rocket science was the classroom part.",
+      "how fast a shuttle lands": "Landing was Friday's simulation.",
+      "how to be sick safely": "Being sick isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How long did the writer stay in the machine?",
+     "options": [
+      "under a minute",
+      "three minutes",
+      "the whole morning",
+      "forty minutes"
+     ],
+     "answer": 0,
+     "explain": "'I lasted forty seconds before begging to stop!'",
+     "notes": {
+      "three minutes": "Three is the number of directions it spins.",
+      "the whole morning": "Forty seconds is far less.",
+      "forty minutes": "Seconds, not minutes."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What happened during the mission simulation?",
+     "options": [
+      "the team succeeded after two failures",
+      "they landed perfectly at the very first attempt",
+      "they crashed every time",
+      "the emergencies were cancelled"
+     ],
+     "answer": 0,
+     "explain": "'We crash-landed twice, but on the third attempt we touched down perfectly.'",
+     "notes": {
+      "they landed perfectly at the very first attempt": "They crash-landed twice first.",
+      "they crashed every time": "The third attempt worked.",
+      "the emergencies were cancelled": "They had to deal with surprise emergencies."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What was the instructor's point?",
+     "options": [
+      "practice mistakes make real flights safer",
+      "the team should be ashamed of crashing twice",
+      "real astronauts never fail",
+      "the simulation was too hard"
+     ],
+     "answer": 0,
+     "explain": "'Failing in practice is exactly what keeps real astronauts safe.'",
+     "notes": {
+      "the team should be ashamed of crashing twice": "He's encouraging, not critical.",
+      "real astronauts never fail": "He talks about failing in practice.",
+      "the simulation was too hard": "Difficulty isn't his point."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Volcano That Wouldn't Erupt",
+   "text": "For this year's science fair, Ruby and her friend Kofi decided to build the biggest baking-soda volcano the school had ever seen. They spent two weekends shaping it out of papier-mâché and painting it a fiery orange. On the morning of the fair, however, nothing happened when they poured in the vinegar – just a sad little fizz. Instead of panicking, the pair turned their stand into an investigation. They tested different amounts of baking soda in front of the judges and worked out that the mixture had been far too weak for such a big volcano. They didn't win first prize, but the judges gave them a special award for 'thinking like real scientists'.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What was Ruby and Kofi's original aim?",
+     "options": [
+      "to make a record-breaking volcano",
+      "to win a painting prize",
+      "to investigate a failed experiment",
+      "to build a volcano in one day"
+     ],
+     "answer": 0,
+     "explain": "'The biggest baking-soda volcano the school had ever seen.'",
+     "notes": {
+      "to win a painting prize": "Painting was only part of building it.",
+      "to investigate a failed experiment": "That came later, after it failed.",
+      "to build a volcano in one day": "It took two weekends."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What went wrong on the day?",
+     "options": [
+      "the reaction was much too weak",
+      "the papier-mâché volcano fell apart",
+      "they forgot the vinegar",
+      "the paint caught fire"
+     ],
+     "answer": 0,
+     "explain": "'Nothing happened… just a sad little fizz.'",
+     "notes": {
+      "the papier-mâché volcano fell apart": "The volcano itself was fine.",
+      "they forgot the vinegar": "They poured the vinegar in.",
+      "the paint caught fire": "'Fiery orange' is only the colour."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How did they react to the problem?",
+     "options": [
+      "they stayed calm and tested it",
+      "they packed up the stand and went home early",
+      "they blamed each other",
+      "they borrowed another volcano"
+     ],
+     "answer": 0,
+     "explain": "'Instead of panicking, the pair turned their stand into an investigation.'",
+     "notes": {
+      "they packed up the stand and went home early": "They kept the stand open.",
+      "they blamed each other": "No blame is mentioned.",
+      "they borrowed another volcano": "They used their own."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why did they get a special award?",
+     "options": [
+      "for their scientific approach",
+      "for building the biggest volcano in the school",
+      "for winning first prize",
+      "for the best paint colour"
+     ],
+     "answer": 0,
+     "explain": "'For thinking like real scientists.'",
+     "notes": {
+      "for building the biggest volcano in the school": "Size wasn't the reason.",
+      "for winning first prize": "'They didn't win first prize.'",
+      "for the best paint colour": "The colour isn't why."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Review: Kingdom of Tides (board game)",
+   "text": "Kingdom of Tides is a board game for two to five players in which you build harbour towns on islands that slowly sink as the tide rises. The artwork is gorgeous, and the little wooden boats are a joy to handle. The rules, on the other hand, are a bit of a challenge: our group needed nearly an hour to get through the instruction booklet, and we still got several things wrong in our first game. Once we got the hang of it, though, it became our go-to game for rainy afternoons. My only real complaint is that with five players, you can wait a long time for your turn. With three, it's close to perfect.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What happens to the islands during the game?",
+     "options": [
+      "they gradually go under water",
+      "they are hit by storms and destroyed",
+      "they float away",
+      "players swap them"
+     ],
+     "answer": 0,
+     "explain": "'Islands that slowly sink as the tide rises.'",
+     "notes": {
+      "they are hit by storms and destroyed": "Storms aren't mentioned.",
+      "they float away": "They sink rather than float away.",
+      "players swap them": "Swapping isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does the reviewer say about the rules?",
+     "options": [
+      "they take time to learn",
+      "they are very short",
+      "they are badly printed",
+      "they spoil the game"
+     ],
+     "answer": 0,
+     "explain": "'Our group needed nearly an hour to get through the instruction booklet.'",
+     "notes": {
+      "they are very short": "It took nearly an hour to read them.",
+      "they are badly printed": "Printing isn't criticised.",
+      "they spoil the game": "It became their go-to game."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How does the reviewer feel about the game now?",
+     "options": [
+      "it's a favourite",
+      "it's too hard to enjoy",
+      "it's only good for parties",
+      "they've stopped playing it"
+     ],
+     "answer": 0,
+     "explain": "'It became our go-to game for rainy afternoons.'",
+     "notes": {
+      "it's too hard to enjoy": "They got the hang of it.",
+      "it's only good for parties": "Parties aren't mentioned.",
+      "they've stopped playing it": "They play it often."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is the reviewer's main criticism?",
+     "options": [
+      "long waits in big groups",
+      "the boats break easily",
+      "the artwork is dull",
+      "it only suits two players"
+     ],
+     "answer": 0,
+     "explain": "'With five players, you can wait a long time for your turn.'",
+     "notes": {
+      "the boats break easily": "The boats are 'a joy to handle'.",
+      "the artwork is dull": "The artwork is 'gorgeous'.",
+      "it only suits two players": "It's best with three, not two."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Notice: The Starlight Library Summer Reading Quest",
+   "text": "This summer, the Starlight Library invites readers aged 8 to 14 to join our Reading Quest. Collect a quest card from the front desk and read any six books between 20 July and 31 August – they can be novels, comics, poetry or non-fiction. After each book, tell a librarian about it in a few sentences and you'll receive a sticker. Readers who complete their card will be invited to a celebration evening with a mystery guest author. Please note that e-books and audiobooks count too, but books read for school homework do not.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Where do you get a quest card?",
+     "options": [
+      "from the main desk",
+      "online",
+      "from your school",
+      "at the celebration evening"
+     ],
+     "answer": 0,
+     "explain": "'Collect a quest card from the front desk.'",
+     "notes": {
+      "online": "The website isn't mentioned.",
+      "from your school": "School only appears in the homework rule.",
+      "at the celebration evening": "That's the reward at the end."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Which books can you choose?",
+     "options": [
+      "almost any kind",
+      "only novels",
+      "only library books",
+      "only books set for school"
+     ],
+     "answer": 0,
+     "explain": "'They can be novels, comics, poetry or non-fiction.'",
+     "notes": {
+      "only novels": "Comics, poetry and non-fiction count too.",
+      "only library books": "E-books and audiobooks count as well.",
+      "only books set for school": "Homework books don't count."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How do you get a sticker?",
+     "options": [
+      "by talking about the book",
+      "by writing a long review of each book",
+      "by reading six books",
+      "by meeting the author"
+     ],
+     "answer": 0,
+     "explain": "'Tell a librarian about it in a few sentences.'",
+     "notes": {
+      "by writing a long review of each book": "Just a few spoken sentences.",
+      "by reading six books": "You get one after each book.",
+      "by meeting the author": "The author comes at the end."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does 'mystery guest author' mean?",
+     "options": [
+      "the author's name is a secret",
+      "the author writes mystery stories",
+      "nobody knows if anyone will come",
+      "the author is very famous"
+     ],
+     "answer": 0,
+     "explain": "A mystery guest is someone whose identity isn't revealed yet.",
+     "notes": {
+      "the author writes mystery stories": "'Mystery' describes the guest, not the genre.",
+      "nobody knows if anyone will come": "The evening is definitely happening.",
+      "the author is very famous": "Fame isn't mentioned."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Why Do Some Animals Glow?",
+   "text": "In the deep ocean, where sunlight never reaches, around three-quarters of animals can make their own light. This ability, known as bioluminescence, is produced by a chemical reaction inside the animal's body. Creatures use it in surprisingly different ways. The anglerfish dangles a glowing lure in front of its mouth to tempt smaller fish closer. Some squid squirt out clouds of glowing ink to confuse attackers while they escape. On land, fireflies flash in particular patterns to attract a partner, and each species has its own code. Scientists are now studying these natural lights in the hope of using them in medicine, for example to make diseased cells easier to see.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How common is glowing in the deep ocean?",
+     "options": [
+      "most animals there can do it",
+      "only a few kinds of fish can do it",
+      "about a quarter of animals",
+      "all deep-sea animals glow"
+     ],
+     "answer": 0,
+     "explain": "'Around three-quarters of animals can make their own light.'",
+     "notes": {
+      "only a few kinds of fish can do it": "Three-quarters is most, not a few.",
+      "about a quarter of animals": "Three-quarters, not a quarter.",
+      "all deep-sea animals glow": "Not all — around three-quarters."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How does the anglerfish use its light?",
+     "options": [
+      "to catch food",
+      "to escape attackers",
+      "to find a partner",
+      "to see in the dark"
+     ],
+     "answer": 0,
+     "explain": "'Dangles a glowing lure… to tempt smaller fish closer.'",
+     "notes": {
+      "to escape attackers": "That's the squid.",
+      "to find a partner": "That's fireflies.",
+      "to see in the dark": "Seeing isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why do some squid squirt glowing ink?",
+     "options": [
+      "to get away safely",
+      "to attract smaller fish",
+      "to signal to their family",
+      "to light up the sea floor"
+     ],
+     "answer": 0,
+     "explain": "'To confuse attackers while they escape.'",
+     "notes": {
+      "to attract smaller fish": "That's the anglerfish's trick.",
+      "to signal to their family": "Family isn't mentioned.",
+      "to light up the sea floor": "Lighting the floor isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is special about firefly flashes?",
+     "options": [
+      "each type flashes differently",
+      "they only flash underwater",
+      "they warn other insects",
+      "they use sunlight"
+     ],
+     "answer": 0,
+     "explain": "'Each species has its own code.'",
+     "notes": {
+      "they only flash underwater": "Fireflies live on land.",
+      "they warn other insects": "They flash to attract a partner.",
+      "they use sunlight": "It's a chemical reaction, not sunlight."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why are scientists interested in bioluminescence?",
+     "options": [
+      "it could help doctors",
+      "to make glowing toys",
+      "to light up cities",
+      "to farm more squid"
+     ],
+     "answer": 0,
+     "explain": "'Using them in medicine… to make diseased cells easier to see.'",
+     "notes": {
+      "to make glowing toys": "Toys aren't mentioned.",
+      "to light up cities": "Cities aren't mentioned.",
+      "to farm more squid": "Farming isn't mentioned."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Wheelchair Basketball Taster Day",
+   "text": "When our PE teacher announced a wheelchair basketball taster day, a few of us assumed it would be easier than normal basketball. We couldn't have been more wrong. Just pushing the sports chairs in a straight line was exhausting, and turning quickly while bouncing the ball felt impossible at first. Our coach, Amira, who plays for the national under-21 team, made it look effortless. She explained that players are allowed two pushes of the wheels for every bounce of the ball. By the end of the afternoon, my arms were aching, but I'd scored three baskets and had a completely new respect for the sport. Half the class have now asked to start a club.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What did some students expect?",
+     "options": [
+      "an easy session",
+      "a dangerous game",
+      "a boring lesson",
+      "a lesson about rules"
+     ],
+     "answer": 0,
+     "explain": "'A few of us assumed it would be easier than normal basketball.'",
+     "notes": {
+      "a dangerous game": "Danger isn't mentioned.",
+      "a boring lesson": "Boredom isn't mentioned.",
+      "a lesson about rules": "Rules came up, but weren't expected."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What was hardest at first?",
+     "options": [
+      "controlling the chair and ball together",
+      "throwing the ball high enough to reach the basket",
+      "remembering the rules",
+      "finding a chair that fitted"
+     ],
+     "answer": 0,
+     "explain": "'Turning quickly while bouncing the ball felt impossible at first.'",
+     "notes": {
+      "throwing the ball high enough to reach the basket": "Throwing isn't described as hard.",
+      "remembering the rules": "The rules were just explained.",
+      "finding a chair that fitted": "Fitting isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is the rule about pushes?",
+     "options": [
+      "two pushes per bounce",
+      "three pushes per basket",
+      "one push per bounce",
+      "unlimited pushes"
+     ],
+     "answer": 0,
+     "explain": "'Two pushes of the wheels for every bounce of the ball.'",
+     "notes": {
+      "three pushes per basket": "Three is the number of baskets scored.",
+      "one push per bounce": "Two, not one.",
+      "unlimited pushes": "There is a limit."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How did the writer feel at the end?",
+     "options": [
+      "tired but impressed",
+      "bored and disappointed",
+      "too sore to play again",
+      "sure it was easy"
+     ],
+     "answer": 0,
+     "explain": "'My arms were aching… a completely new respect for the sport.'",
+     "notes": {
+      "bored and disappointed": "They scored and respected it.",
+      "too sore to play again": "Aching, but positive.",
+      "sure it was easy": "They were 'wrong' that it was easy."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What has happened since?",
+     "options": [
+      "many classmates want a club",
+      "the school bought new chairs",
+      "Amira joined the school",
+      "the class entered a tournament"
+     ],
+     "answer": 0,
+     "explain": "'Half the class have now asked to start a club.'",
+     "notes": {
+      "the school bought new chairs": "Buying chairs isn't mentioned.",
+      "Amira joined the school": "Amira was the coach for the day.",
+      "the class entered a tournament": "No tournament is mentioned."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Girl Who Invented a Smarter Lunchbox",
+   "text": "Eleven-year-old Priya was fed up with soggy sandwiches. Every day, the cold drink in her lunchbox leaked condensation onto her bread. Rather than complaining, she designed a lunchbox with two separate sections and a thin layer of cork between them, which stopped the cold from spreading. Her first version was too heavy to carry comfortably, so she replaced the plastic frame with bamboo. She entered the design in a national young inventors' competition and came second out of four hundred entries. A small company has since offered to help her make a few hundred to sell at local markets – although Priya insists she'll keep testing it on her own sandwiches first.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What problem did Priya want to solve?",
+     "options": [
+      "wet bread at lunchtime",
+      "warm drinks",
+      "a broken lunchbox",
+      "forgetting her lunch"
+     ],
+     "answer": 0,
+     "explain": "'Fed up with soggy sandwiches… condensation onto her bread.'",
+     "notes": {
+      "warm drinks": "The drink was cold, which caused the problem.",
+      "a broken lunchbox": "Nothing was broken.",
+      "forgetting her lunch": "Forgetting isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What did the cork layer do?",
+     "options": [
+      "kept the cold in one part",
+      "made the box lighter",
+      "kept the drink warm",
+      "made the box waterproof outside"
+     ],
+     "answer": 0,
+     "explain": "'Which stopped the cold from spreading.'",
+     "notes": {
+      "made the box lighter": "Bamboo made it lighter.",
+      "kept the drink warm": "The drink was cold.",
+      "made the box waterproof outside": "The outside isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why did she change the frame?",
+     "options": [
+      "the box weighed too much",
+      "the plastic frame leaked",
+      "bamboo looked nicer",
+      "the judges asked her to"
+     ],
+     "answer": 0,
+     "explain": "'Her first version was too heavy to carry comfortably.'",
+     "notes": {
+      "the plastic frame leaked": "Leaking was the drink's condensation.",
+      "bamboo looked nicer": "Looks aren't mentioned.",
+      "the judges asked her to": "The change came before the competition."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How did she do in the competition?",
+     "options": [
+      "she was the runner-up",
+      "she won it",
+      "she came fourth",
+      "she didn't enter"
+     ],
+     "answer": 0,
+     "explain": "'Came second out of four hundred entries.'",
+     "notes": {
+      "she won it": "Second, not first.",
+      "she came fourth": "Four hundred is the number of entries.",
+      "she didn't enter": "She did enter."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does the last sentence suggest about Priya?",
+     "options": [
+      "she's careful",
+      "she's lost interest",
+      "she wants to get rich",
+      "she doesn't trust the company"
+     ],
+     "answer": 0,
+     "explain": "'She'll keep testing it on her own sandwiches first.'",
+     "notes": {
+      "she's lost interest": "She's still testing it.",
+      "she wants to get rich": "Money isn't her focus.",
+      "she doesn't trust the company": "Nothing suggests distrust."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Email from a Pen Friend in Japan",
+   "text": "Hi Sam! You asked what school is like here. The biggest difference is probably that we don't have cleaners – the students clean the classrooms, corridors and even the toilets every afternoon! I hated it at first, but now I quite like it, and it means nobody drops litter. Lunch is eaten in our classroom, and we take turns serving it to each other wearing white hats and aprons. After lessons, almost everyone joins a club. I'm in the astronomy club, which meets four times a week, so I don't usually get home before six. Is your school day longer or shorter than mine? Write soon! Haru",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What surprises Haru's readers most, in his opinion?",
+     "options": [
+      "pupils do the cleaning",
+      "the school has no toilets",
+      "lunch is served by teachers",
+      "there are no clubs"
+     ],
+     "answer": 0,
+     "explain": "'The biggest difference… the students clean the classrooms.'",
+     "notes": {
+      "the school has no toilets": "They clean the toilets, so there are toilets.",
+      "lunch is served by teachers": "Students serve lunch.",
+      "there are no clubs": "Almost everyone joins a club."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How has Haru's attitude to cleaning changed?",
+     "options": [
+      "he's come to enjoy it",
+      "he still hates it",
+      "he has always liked it",
+      "he wants to stop doing it"
+     ],
+     "answer": 0,
+     "explain": "'I hated it at first, but now I quite like it.'",
+     "notes": {
+      "he still hates it": "That was at first.",
+      "he has always liked it": "He hated it at first.",
+      "he wants to stop doing it": "He quite likes it now."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Where is lunch eaten?",
+     "options": [
+      "in the classroom",
+      "in a canteen",
+      "at home",
+      "outside in the yard"
+     ],
+     "answer": 0,
+     "explain": "'Lunch is eaten in our classroom.'",
+     "notes": {
+      "in a canteen": "No canteen is mentioned.",
+      "at home": "They eat at school.",
+      "outside in the yard": "Outside isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why does Haru get home late?",
+     "options": [
+      "his club meets most days",
+      "he cleans the whole school",
+      "he lives far away",
+      "lunch finishes late"
+     ],
+     "answer": 0,
+     "explain": "'The astronomy club, which meets four times a week… not before six.'",
+     "notes": {
+      "he cleans the whole school": "Cleaning is every afternoon, but the club is the reason.",
+      "he lives far away": "Distance isn't mentioned.",
+      "lunch finishes late": "Lunch isn't the reason."
+     }
+    }
+   ]
   }
  ]
 }

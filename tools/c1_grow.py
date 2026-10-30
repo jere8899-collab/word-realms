@@ -85,19 +85,23 @@ GROW = {"a1": {"grammar": [
  m("___ you happy? — Yes, I am.", "Are", ["Do", "Is", "Am"], "Are you + adjective? Example: Are you cold?", ["Do doesn't go with an adjective.", "Is is for he/she/it.", "Am is for I."]),
  m("My grandma ___ in a small village.", "lives", ["live", "living", "is live"], "He/she + -s for every day. Example: He lives in Tokyo.", ["Add -s for one person.", "Living needs is.", "Is live mixes two forms."]),
 ]}}
-# more C1 chunks: one file per level/skill (tools/c1_<level><g|v>.py, c1_listen*.py, c1_read*.py), each item with its own C3 notes.
-# To add a chunk, add one row here: (level, skill, module, list name). Reading chunks are lists of P() passages.
+# more C1 chunks: one file per level/skill group (tools/c1_<level><g|v>.py, c1_listen*.py, c1_read*.py), each item with its
+# own C3 notes. Each module exposes one list per level named <LEVEL><G|V|L|R>, e.g. A1R or C2L (reading lists hold P() passages).
+# To add a chunk, add one SOURCES row: (module, skill, levels). Rows are loaded in order, so later rows append to earlier ones.
 import importlib
-CHUNKS = [("a1", "vocab", "c1_a1v", "A1V"),
-          ("a2", "grammar", "c1_a2g", "A2G"), ("a2", "vocab", "c1_a2v", "A2V"),
-          ("b1", "grammar", "c1_b1g", "B1G"), ("b1", "vocab", "c1_b1v", "B1V"),
-          ("b2", "grammar", "c1_b2g", "B2G"), ("b2", "vocab", "c1_b2v", "B2V"),
-          ("c1", "grammar", "c1_c1g", "C1G"), ("c1", "vocab", "c1_c1v", "C1V"),
-          ("c2", "grammar", "c1_c2g", "C2G"), ("c2", "vocab", "c1_c2v", "C2V"),
-          ("a1", "listening", "c1_listen", "A1L"), ("a2", "listening", "c1_listen", "A2L"), ("b1", "listening", "c1_listen", "B1L"),
-          ("a1", "reading", "c1_read", "A1R"), ("a2", "reading", "c1_read", "A2R"), ("b1", "reading", "c1_read", "B1R"),
-          ("b2", "listening", "c1_listen_bc", "B2L"), ("c1", "listening", "c1_listen_bc", "C1L"), ("c2", "listening", "c1_listen_bc", "C2L"),
-          ("b2", "reading", "c1_read_bc", "B2R"), ("c1", "reading", "c1_read_bc", "C1R"), ("c2", "reading", "c1_read_bc", "C2R")]
+AB, BC = ("a1", "a2", "b1"), ("b2", "c1", "c2")
+SOURCES = [("c1_a1v", "vocab", ("a1",)),
+           ("c1_a2g", "grammar", ("a2",)), ("c1_a2v", "vocab", ("a2",)),
+           ("c1_b1g", "grammar", ("b1",)), ("c1_b1v", "vocab", ("b1",)),
+           ("c1_b2g", "grammar", ("b2",)), ("c1_b2v", "vocab", ("b2",)),
+           ("c1_c1g", "grammar", ("c1",)), ("c1_c1v", "vocab", ("c1",)),
+           ("c1_c2g", "grammar", ("c2",)), ("c1_c2v", "vocab", ("c2",)),
+           ("c1_listen", "listening", AB), ("c1_read", "reading", AB),
+           ("c1_listen_bc", "listening", BC), ("c1_read_bc", "reading", BC),
+           # part 4: top reading and listening up to 120 per level
+           ("c1_listen2", "listening", AB), ("c1_read2", "reading", AB),
+           ("c1_listen2_bc", "listening", BC), ("c1_read2_bc", "reading", BC)]
+CHUNKS = [(lvl, sk, mod, lvl.upper() + sk[0].upper()) for mod, sk, lvls in SOURCES for lvl in lvls]
 def _add(lvl, sk, val):
     bank = GROW.setdefault(lvl, {})
     if sk == "reading": bank.setdefault(sk, {"passages": []})["passages"].extend(val)

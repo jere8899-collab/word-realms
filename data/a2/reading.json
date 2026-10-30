@@ -1496,6 +1496,774 @@
      }
     }
    ]
+  },
+  {
+   "title": "Poster: Space Camp for Kids",
+   "text": "Do you love stars and planets? Come to Space Camp at Riverside Science Centre! The camp is for children aged 8 to 12 and runs from 3 to 7 August, 9 am to 3 pm. You will build a model rocket, try on a real space helmet and watch a film in our star dome. Bring a packed lunch and a water bottle. The camp costs £60, and brothers and sisters pay only £45. Book at the front desk before 20 July.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Who can go to the camp?",
+     "options": [
+      "children between 8 and 12",
+      "children under 8",
+      "anyone over 12",
+      "only scientists"
+     ],
+     "answer": 0,
+     "explain": "'For children aged 8 to 12.'",
+     "notes": {
+      "children under 8": "Eight is the youngest age.",
+      "anyone over 12": "Twelve is the oldest age.",
+      "only scientists": "Scientists aren't in the poster."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How long is each camp day?",
+     "options": [
+      "six hours",
+      "three hours",
+      "seven hours",
+      "nine hours"
+     ],
+     "answer": 0,
+     "explain": "'9 am to 3 pm' = six hours.",
+     "notes": {
+      "three hours": "3 is the finish time, not the hours.",
+      "seven hours": "7 is a date (7 August).",
+      "nine hours": "9 is the start time."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What will children NOT do at camp?",
+     "options": [
+      "fly in a real rocket",
+      "build a model rocket",
+      "wear a space helmet",
+      "see a film"
+     ],
+     "answer": 0,
+     "explain": "'Build a model rocket, try on a real space helmet and watch a film.' Only the helmet is real.",
+     "notes": {
+      "build a model rocket": "Building a model rocket is on the list.",
+      "wear a space helmet": "Trying on a helmet is on the list.",
+      "see a film": "Watching a film is on the list."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What should children bring?",
+     "options": [
+      "food and a drink",
+      "a space helmet",
+      "a model rocket",
+      "their own film"
+     ],
+     "answer": 0,
+     "explain": "'Bring a packed lunch and a water bottle.'",
+     "notes": {
+      "a space helmet": "The centre has the helmet.",
+      "a model rocket": "They build the rocket at camp.",
+      "their own film": "The film is in the star dome."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is the last day you can book?",
+     "options": [
+      "19 July",
+      "20 July",
+      "3 August",
+      "7 August"
+     ],
+     "answer": 0,
+     "explain": "'Book… before 20 July', so the 19th is the last day.",
+     "notes": {
+      "20 July": "Before the 20th means the 20th is too late.",
+      "3 August": "3 August is when the camp starts.",
+      "7 August": "7 August is the last day of camp."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Hamster Who Escaped",
+   "text": "Last Thursday, our class hamster, Nibbles, escaped from his cage. Our teacher, Mrs Patel, forgot to close the door after she cleaned it. We looked everywhere: under the desks, behind the bookshelf and inside the bins. We couldn't find him. The next morning, Jamie opened his school bag and screamed. Nibbles was inside, eating Jamie's crisps! Now there is a lock on the cage.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How did Nibbles get out?",
+     "options": [
+      "the cage was left open",
+      "Jamie let him out",
+      "the cage broke",
+      "he bit through the lock"
+     ],
+     "answer": 0,
+     "explain": "'Mrs Patel forgot to close the door after she cleaned it.'",
+     "notes": {
+      "Jamie let him out": "Jamie only found him later.",
+      "the cage broke": "Nothing broke; the door wasn't closed.",
+      "he bit through the lock": "There was no lock then; it came later."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Where did the class NOT look?",
+     "options": [
+      "in school bags",
+      "under the desks",
+      "behind the bookshelf",
+      "inside the bins"
+     ],
+     "answer": 0,
+     "explain": "'Under the desks, behind the bookshelf and inside the bins.'",
+     "notes": {
+      "under the desks": "They looked under the desks.",
+      "behind the bookshelf": "They looked behind the bookshelf.",
+      "inside the bins": "They looked inside the bins."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "When did they find Nibbles?",
+     "options": [
+      "on Friday morning",
+      "on Thursday evening",
+      "last Thursday",
+      "a week later"
+     ],
+     "answer": 0,
+     "explain": "'Last Thursday'… 'The next morning' = Friday morning.",
+     "notes": {
+      "on Thursday evening": "They couldn't find him on Thursday.",
+      "last Thursday": "Thursday is when he escaped.",
+      "a week later": "It was the next morning."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why did Jamie scream?",
+     "options": [
+      "he got a surprise",
+      "Nibbles bit him",
+      "he lost his bag",
+      "Mrs Patel shouted at him"
+     ],
+     "answer": 0,
+     "explain": "'Jamie opened his school bag and screamed. Nibbles was inside.'",
+     "notes": {
+      "Nibbles bit him": "The story doesn't say Nibbles bit him.",
+      "he lost his bag": "His bag was there; he opened it.",
+      "Mrs Patel shouted at him": "Mrs Patel doesn't shout in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What has changed since then?",
+     "options": [
+      "the cage can be locked",
+      "there's a new hamster",
+      "Nibbles lives with Jamie",
+      "bags must stay outside"
+     ],
+     "answer": 0,
+     "explain": "'Now there is a lock on the cage.'",
+     "notes": {
+      "there's a new hamster": "Nibbles is still the class hamster.",
+      "Nibbles lives with Jamie": "Nibbles was only in Jamie's bag for one night.",
+      "bags must stay outside": "Bags aren't in any new rule."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Email: The Dinosaur Museum",
+   "text": "Hi Grandpa, Guess what? On Saturday Dad took me to the Dinosaur Museum. The T. rex skeleton was enormous, much bigger than our house! My favourite part was the dig pit, where we used brushes to find fake bones. I found a tooth! We wanted to see the flying reptile show, but it was full, so we're going to go back next month. I bought you a postcard. Love, Kayla",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Who went to the museum with Kayla?",
+     "options": [
+      "her father",
+      "her grandpa",
+      "her class",
+      "her mum"
+     ],
+     "answer": 0,
+     "explain": "'Dad took me to the Dinosaur Museum.'",
+     "notes": {
+      "her grandpa": "Grandpa is who she's writing to.",
+      "her class": "Her class isn't in the email.",
+      "her mum": "Mum isn't in the email."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does Kayla say about the T. rex?",
+     "options": [
+      "it was huge",
+      "it was smaller than their house",
+      "it was only a toy",
+      "it could move"
+     ],
+     "answer": 0,
+     "explain": "'Enormous, much bigger than our house!'",
+     "notes": {
+      "it was smaller than their house": "It was bigger, not smaller.",
+      "it was only a toy": "It was a real skeleton.",
+      "it could move": "Moving isn't in the email."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What did Kayla like best?",
+     "options": [
+      "searching for bones",
+      "the T. rex",
+      "the flying reptile show",
+      "the gift shop"
+     ],
+     "answer": 0,
+     "explain": "'My favourite part was the dig pit, where we used brushes to find fake bones.'",
+     "notes": {
+      "the T. rex": "The T. rex was big, but it wasn't her favourite.",
+      "the flying reptile show": "They didn't see the show.",
+      "the gift shop": "A gift shop isn't in the email."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why didn't they see the show?",
+     "options": [
+      "there were no seats left",
+      "it was cancelled",
+      "it was next month",
+      "Dad didn't want to"
+     ],
+     "answer": 0,
+     "explain": "'It was full.'",
+     "notes": {
+      "it was cancelled": "It wasn't cancelled; it was full.",
+      "it was next month": "Next month is when they'll go back.",
+      "Dad didn't want to": "Dad isn't the reason."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What did Kayla buy for Grandpa?",
+     "options": [
+      "a card with a picture",
+      "a dinosaur tooth",
+      "a fake bone",
+      "a museum ticket"
+     ],
+     "answer": 0,
+     "explain": "'I bought you a postcard.'",
+     "notes": {
+      "a dinosaur tooth": "She found a tooth in the dig pit; she didn't buy it.",
+      "a fake bone": "The bones were in the dig pit.",
+      "a museum ticket": "A ticket isn't in the email."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Football in the Rain",
+   "text": "On Sunday, the Green Foxes played against the Blue Bears. It started to rain ten minutes into the game, and soon the pitch was very muddy. At half-time, the Bears were winning 2–0. Then our goalkeeper, Lucy, had an idea: 'Let's pass the ball more and run less!' In the second half, the Foxes scored three goals. Everyone was covered in mud, but we were the happiest team in town.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "When did it start raining?",
+     "options": [
+      "soon after the start",
+      "before the game",
+      "at half-time",
+      "at the end"
+     ],
+     "answer": 0,
+     "explain": "'It started to rain ten minutes into the game.'",
+     "notes": {
+      "before the game": "The game had started.",
+      "at half-time": "Half-time was later.",
+      "at the end": "The end was much later."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What was the score at half-time?",
+     "options": [
+      "Bears 2, Foxes 0",
+      "Foxes 2, Bears 0",
+      "Foxes 3, Bears 2",
+      "nobody had scored"
+     ],
+     "answer": 0,
+     "explain": "'At half-time, the Bears were winning 2–0.'",
+     "notes": {
+      "Foxes 2, Bears 0": "The Bears were winning, not the Foxes.",
+      "Foxes 3, Bears 2": "That's the final score.",
+      "nobody had scored": "The Bears had two goals."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Who is Lucy?",
+     "options": [
+      "the Foxes' goalkeeper",
+      "a Blue Bears player",
+      "the coach",
+      "the referee"
+     ],
+     "answer": 0,
+     "explain": "'Our goalkeeper, Lucy.' The writer is a Fox.",
+     "notes": {
+      "a Blue Bears player": "She plays for 'our' team, the Foxes.",
+      "the coach": "She's a player, not the coach.",
+      "the referee": "A referee isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What was Lucy's idea?",
+     "options": [
+      "to pass more",
+      "to run faster",
+      "to stop the game",
+      "to change the goalkeeper"
+     ],
+     "answer": 0,
+     "explain": "'Let's pass the ball more and run less!'",
+     "notes": {
+      "to run faster": "She said 'run less'.",
+      "to stop the game": "She didn't want to stop.",
+      "to change the goalkeeper": "Changing players isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Who won the match?",
+     "options": [
+      "the Green Foxes",
+      "the Blue Bears",
+      "nobody: it was a draw",
+      "the game didn't finish"
+     ],
+     "answer": 0,
+     "explain": "Three Foxes goals in the second half: 3–2 to the Foxes.",
+     "notes": {
+      "the Blue Bears": "The Bears had only two goals.",
+      "nobody: it was a draw": "3–2 isn't a draw.",
+      "the game didn't finish": "They played the second half."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Diary: The Night Hedgehog",
+   "text": "Dear Diary, Tonight I couldn't sleep, so I looked out of my window. There was a small hedgehog in the garden! It was eating the cat food from the bowl by the back door. Mum said hedgehogs come out at night because it's safer for them. She also said we mustn't give them milk because it makes them ill. Tomorrow we're going to build a little hedgehog house from an old box.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Why did the writer look out of the window?",
+     "options": [
+      "she was awake",
+      "she heard a noise",
+      "Mum called her",
+      "the cat was outside"
+     ],
+     "answer": 0,
+     "explain": "'I couldn't sleep, so I looked out of my window.'",
+     "notes": {
+      "she heard a noise": "A noise isn't in the diary.",
+      "Mum called her": "Mum told her facts later.",
+      "the cat was outside": "The cat isn't outside in the diary."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What was the hedgehog doing?",
+     "options": [
+      "eating the cat's dinner",
+      "drinking milk",
+      "sleeping in a box",
+      "playing with the cat"
+     ],
+     "answer": 0,
+     "explain": "'It was eating the cat food from the bowl.'",
+     "notes": {
+      "drinking milk": "Milk makes hedgehogs ill; it wasn't drinking it.",
+      "sleeping in a box": "The box house is for tomorrow.",
+      "playing with the cat": "The cat isn't in this part."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why do hedgehogs come out at night?",
+     "options": [
+      "it's less dangerous",
+      "they can find milk",
+      "they like the moon",
+      "cats are asleep"
+     ],
+     "answer": 0,
+     "explain": "'Because it's safer for them.'",
+     "notes": {
+      "they can find milk": "Milk is bad for them.",
+      "they like the moon": "The moon isn't in the diary.",
+      "cats are asleep": "Cats aren't the reason given."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What will they do tomorrow?",
+     "options": [
+      "make a home for it",
+      "buy more cat food",
+      "give it some milk",
+      "take it to the vet"
+     ],
+     "answer": 0,
+     "explain": "'Build a little hedgehog house from an old box.'",
+     "notes": {
+      "buy more cat food": "Cat food isn't the plan.",
+      "give it some milk": "'We mustn't give them milk.'",
+      "take it to the vet": "A vet isn't in the diary."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Rules for the Treehouse Club",
+   "text": "Welcome to the Treehouse Club! 1. Only four people can be in the treehouse at the same time. 2. Take your shoes off before you climb the ladder. 3. No food inside, because it brings ants. Drinks are OK. 4. The club meets on Wednesdays and Saturdays after lunch. 5. New members must bring a joke to their first meeting!",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How many people can be inside together?",
+     "options": [
+      "no more than four",
+      "at least four",
+      "five",
+      "as many as you like"
+     ],
+     "answer": 0,
+     "explain": "'Only four people can be in the treehouse at the same time.'",
+     "notes": {
+      "at least four": "'Only four' is the most, not the least.",
+      "five": "Five is too many.",
+      "as many as you like": "There is a limit of four."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why is food not allowed?",
+     "options": [
+      "insects come",
+      "it's messy",
+      "it costs money",
+      "drinks are better"
+     ],
+     "answer": 0,
+     "explain": "'No food inside, because it brings ants.'",
+     "notes": {
+      "it's messy": "Mess isn't the reason given.",
+      "it costs money": "Money isn't in the rules.",
+      "drinks are better": "Drinks are OK, but that isn't the reason."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "When does the club meet?",
+     "options": [
+      "twice a week, in the afternoon",
+      "every day after lunch",
+      "on Wednesday mornings",
+      "only on Saturdays"
+     ],
+     "answer": 0,
+     "explain": "'On Wednesdays and Saturdays after lunch.'",
+     "notes": {
+      "every day after lunch": "Only two days, not every day.",
+      "on Wednesday mornings": "After lunch, not in the morning.",
+      "only on Saturdays": "Wednesdays too."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What must new members do?",
+     "options": [
+      "tell something funny",
+      "bring a drink",
+      "build a ladder",
+      "take their shoes home"
+     ],
+     "answer": 0,
+     "explain": "'New members must bring a joke to their first meeting!'",
+     "notes": {
+      "bring a drink": "Drinks are OK, but not a must.",
+      "build a ladder": "The ladder is already there.",
+      "take their shoes home": "Shoes come off, but they don't go home."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Dragon Who Was Afraid of the Dark",
+   "text": "Blaze was a young dragon who lived in a cave on Cloud Mountain. All the other dragons slept in the dark cave, but Blaze was too scared. Every night he made a small fire to light the cave, and the smoke woke everyone up. One night, a firefly called Glim flew into the cave. 'I can be your light,' she said. 'I don't make any smoke!' Since that night, Blaze has slept well, and so have the other dragons.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Where did Blaze live?",
+     "options": [
+      "in a mountain cave",
+      "in a forest",
+      "in a castle on a cloud",
+      "near the sea"
+     ],
+     "answer": 0,
+     "explain": "'A cave on Cloud Mountain.'",
+     "notes": {
+      "in a forest": "A forest isn't in the story.",
+      "in a castle on a cloud": "Cloud is the mountain's name; there's no castle.",
+      "near the sea": "The sea isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What was Blaze's problem?",
+     "options": [
+      "he was scared of the dark",
+      "he couldn't make fire",
+      "he had no friends",
+      "he was too big for the cave"
+     ],
+     "answer": 0,
+     "explain": "'All the other dragons slept in the dark cave, but Blaze was too scared.'",
+     "notes": {
+      "he couldn't make fire": "He made a fire every night.",
+      "he had no friends": "Friends aren't the problem.",
+      "he was too big for the cave": "Size isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why were the other dragons unhappy?",
+     "options": [
+      "the smoke woke them",
+      "the fire was too hot",
+      "Blaze snored",
+      "Glim was too bright"
+     ],
+     "answer": 0,
+     "explain": "'The smoke woke everyone up.'",
+     "notes": {
+      "the fire was too hot": "Heat isn't in the story.",
+      "Blaze snored": "Snoring isn't in the story.",
+      "Glim was too bright": "Glim helped; she came later."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is good about Glim's light?",
+     "options": [
+      "it's smoke-free",
+      "it's very hot",
+      "it's bigger than a fire",
+      "it's red"
+     ],
+     "answer": 0,
+     "explain": "'I don't make any smoke!'",
+     "notes": {
+      "it's very hot": "Heat isn't in the story.",
+      "it's bigger than a fire": "Size isn't in the story.",
+      "it's red": "Colour isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How are things now?",
+     "options": [
+      "everyone sleeps well",
+      "Blaze still can't sleep",
+      "Glim lives in another cave",
+      "the cave is always smoky"
+     ],
+     "answer": 0,
+     "explain": "'Blaze has slept well, and so have the other dragons.'",
+     "notes": {
+      "Blaze still can't sleep": "He sleeps well now.",
+      "Glim lives in another cave": "Glim is his light, in his cave.",
+      "the cave is always smoky": "Glim makes no smoke."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Our Class Pet Show",
+   "text": "Last Friday, Class 3 had a pet show. Everyone brought a photo of their pet, and some children brought real pets. Omar's parrot said 'Hello, teacher!' and everyone laughed. Hana's tortoise was the oldest pet: he is forty years old, older than Hana's mum! The prize for the funniest pet went to Omar's parrot, and Hana's tortoise won the prize for the calmest pet.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What did every child bring?",
+     "options": [
+      "a picture of their pet",
+      "a real pet",
+      "a prize",
+      "a parrot"
+     ],
+     "answer": 0,
+     "explain": "'Everyone brought a photo of their pet.'",
+     "notes": {
+      "a real pet": "Only some children brought real pets.",
+      "a prize": "Prizes were given, not brought.",
+      "a parrot": "Only Omar brought a parrot."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What made everyone laugh?",
+     "options": [
+      "a bird talking",
+      "a tortoise",
+      "Hana's mum",
+      "the teacher's joke"
+     ],
+     "answer": 0,
+     "explain": "'Omar's parrot said \"Hello, teacher!\" and everyone laughed.'",
+     "notes": {
+      "a tortoise": "The tortoise was calm, not funny.",
+      "Hana's mum": "Hana's mum wasn't there.",
+      "the teacher's joke": "The teacher didn't tell a joke."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How old is Hana's tortoise?",
+     "options": [
+      "40",
+      "14",
+      "4",
+      "younger than Hana's mum"
+     ],
+     "answer": 0,
+     "explain": "'He is forty years old.'",
+     "notes": {
+      "14": "Fourteen isn't forty.",
+      "4": "Four isn't forty.",
+      "younger than Hana's mum": "He is older than Hana's mum."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Which prize did the tortoise win?",
+     "options": [
+      "the most relaxed pet",
+      "the funniest pet",
+      "the oldest pet",
+      "the best photo"
+     ],
+     "answer": 0,
+     "explain": "'Hana's tortoise won the prize for the calmest pet.'",
+     "notes": {
+      "the funniest pet": "The parrot was the funniest.",
+      "the oldest pet": "He is the oldest, but that wasn't the prize.",
+      "the best photo": "Photos didn't get prizes."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Lost Train Ticket",
+   "text": "Jack and his mum were going to the zoo by train. At the station, Jack couldn't find his ticket. He checked his pockets and his backpack, but it wasn't there. The train was leaving in five minutes! Then a woman from the café came over. 'Is this yours?' she asked. Jack had left the ticket next to his hot chocolate. They ran to platform 6 and caught the train just in time.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Where were Jack and his mum going?",
+     "options": [
+      "to see animals",
+      "to a café",
+      "to Jack's school",
+      "to the beach"
+     ],
+     "answer": 0,
+     "explain": "'They were going to the zoo by train.'",
+     "notes": {
+      "to a café": "The café was at the station.",
+      "to Jack's school": "School isn't in the story.",
+      "to the beach": "The beach isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Where did Jack look for the ticket?",
+     "options": [
+      "in his pockets and bag",
+      "in the café",
+      "on the train",
+      "on platform 6"
+     ],
+     "answer": 0,
+     "explain": "'He checked his pockets and his backpack.'",
+     "notes": {
+      "in the café": "The woman found it in the café.",
+      "on the train": "They weren't on the train yet.",
+      "on platform 6": "They ran to platform 6 later."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Who found the ticket?",
+     "options": [
+      "someone from the café",
+      "Jack's mum",
+      "the train driver",
+      "Jack"
+     ],
+     "answer": 0,
+     "explain": "'A woman from the café came over. \"Is this yours?\"'",
+     "notes": {
+      "Jack's mum": "Mum didn't find it.",
+      "the train driver": "A driver isn't in the story.",
+      "Jack": "Jack couldn't find it."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Where was the ticket?",
+     "options": [
+      "beside his drink",
+      "in his backpack",
+      "on the train",
+      "in Mum's pocket"
+     ],
+     "answer": 0,
+     "explain": "'Jack had left the ticket next to his hot chocolate.'",
+     "notes": {
+      "in his backpack": "It wasn't in his backpack.",
+      "on the train": "They weren't on the train yet.",
+      "in Mum's pocket": "Mum's pocket isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Did they catch the train?",
+     "options": [
+      "yes, but only just",
+      "no, it left without them",
+      "yes, they were early",
+      "no, they took a bus"
+     ],
+     "answer": 0,
+     "explain": "'Caught the train just in time.'",
+     "notes": {
+      "no, it left without them": "They caught it.",
+      "yes, they were early": "'Just in time' isn't early.",
+      "no, they took a bus": "A bus isn't in the story."
+     }
+    }
+   ]
   }
  ]
 }

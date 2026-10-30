@@ -1596,6 +1596,254 @@
   "explain": "Usually goes before the verb."
  },
  {
+  "type": "listen",
+  "say": "The swimming lesson starts at half past four and finishes at quarter past five.",
+  "q": "How long is the lesson?",
+  "options": [
+   "45 minutes",
+   "30 minutes",
+   "an hour",
+   "15 minutes"
+  ],
+  "answer": 0,
+  "explain": "4:30 to 5:15 = 45 minutes.",
+  "notes": {
+   "30 minutes": "Half past is a time, not the length.",
+   "an hour": "4:30 to 5:30 would be an hour.",
+   "15 minutes": "Quarter past is a time, not the length."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I was going to wear my red dress to the party, but it's too small now, so I'm wearing the blue one.",
+  "q": "What will she wear?",
+  "options": [
+   "the dress that fits",
+   "the red dress",
+   "a small red skirt",
+   "the dress she wore last year"
+  ],
+  "answer": 0,
+  "explain": "The red dress is too small, so 'I'm wearing the blue one', the one that fits.",
+  "notes": {
+   "the red dress": "The red dress is too small now.",
+   "a small red skirt": "She talks about dresses, not a skirt.",
+   "the dress she wore last year": "Last year wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "We've got three tickets for the space show, but there are five of us.",
+  "q": "How many more tickets do they need?",
+  "options": [
+   "two",
+   "three",
+   "five",
+   "eight"
+  ],
+  "answer": 0,
+  "explain": "Five people − three tickets = two more.",
+  "notes": {
+   "three": "Three is what they have.",
+   "five": "Five is how many people.",
+   "eight": "Eight is 3 + 5, not what they need."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Our new puppy chewed my school shoes, so I wore my trainers today.",
+  "q": "Why did the speaker wear trainers?",
+  "options": [
+   "the dog damaged the shoes",
+   "the school shoes were too small",
+   "it was sports day",
+   "the puppy likes trainers"
+  ],
+  "answer": 0,
+  "explain": "'Our new puppy chewed my school shoes.'",
+  "notes": {
+   "the school shoes were too small": "Size wasn't the problem.",
+   "it was sports day": "Sports day wasn't mentioned.",
+   "the puppy likes trainers": "The puppy chewed the shoes, not the trainers."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The zoo opens at nine, but the penguin feeding isn't until eleven.",
+  "q": "When can you watch the penguins eat?",
+  "options": [
+   "two hours after opening",
+   "at nine",
+   "at ten",
+   "at twelve"
+  ],
+  "answer": 0,
+  "explain": "Opens at nine, feeding at eleven: two hours later.",
+  "notes": {
+   "at nine": "Nine is when the zoo opens.",
+   "at ten": "Ten wasn't said.",
+   "at twelve": "Twelve wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Excuse me, the toilets are upstairs, next to the gift shop.",
+  "q": "Where are the toilets?",
+  "options": [
+   "on the floor above",
+   "downstairs",
+   "inside the gift shop",
+   "outside the building"
+  ],
+  "answer": 0,
+  "explain": "'Upstairs' = on the floor above. They're next to the shop, not in it.",
+  "notes": {
+   "downstairs": "Up, not down.",
+   "inside the gift shop": "Next to the gift shop, not inside it.",
+   "outside the building": "Outside wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Sorry, the dragon book is out. It'll be back on Friday, so come in on Saturday morning.",
+  "q": "When should the child come back?",
+  "options": [
+   "the day after it returns",
+   "on Friday",
+   "right now",
+   "next month"
+  ],
+  "answer": 0,
+  "explain": "Back on Friday, so 'come in on Saturday', the next day.",
+  "notes": {
+   "on Friday": "Friday is when it returns, not when to come.",
+   "right now": "It's out now.",
+   "next month": "Next month wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Training is at four today, not five, because the field is busy later.",
+  "q": "When is training today?",
+  "options": [
+   "an hour early",
+   "at five",
+   "at half past four",
+   "it's cancelled"
+  ],
+  "answer": 0,
+  "explain": "'At four today, not five': one hour earlier.",
+  "notes": {
+   "at five": "Five is the usual time, not today.",
+   "at half past four": "Half past wasn't said.",
+   "it's cancelled": "It's moved, not cancelled."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Zoe: Shall we play football?|Dan: It's too hot. Let's go swimming instead.",
+  "q": "What does Dan want to do?",
+  "options": [
+   "go to the pool",
+   "play football",
+   "stay at home",
+   "play in the sun"
+  ],
+  "answer": 0,
+  "explain": "'Let's go swimming instead.'",
+  "dialogue": true,
+  "notes": {
+   "play football": "Dan says it's too hot for football.",
+   "stay at home": "Staying home wasn't said.",
+   "play in the sun": "It's too hot for the sun."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Mum: Did you feed the fish?|Tom: Not yet. I'll do it after I finish my homework.",
+  "q": "What will Tom do first?",
+  "options": [
+   "his schoolwork",
+   "feed the fish",
+   "play a game",
+   "have dinner"
+  ],
+  "answer": 0,
+  "explain": "'After I finish my homework': homework comes first.",
+  "dialogue": true,
+  "notes": {
+   "feed the fish": "The fish come after his homework.",
+   "play a game": "A game wasn't mentioned.",
+   "have dinner": "Dinner wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Kate: How was the school trip?|Ali: The castle was boring, but the picnic was great.",
+  "q": "What did Ali enjoy?",
+  "options": [
+   "eating outside",
+   "the castle",
+   "nothing at all",
+   "the bus ride"
+  ],
+  "answer": 0,
+  "explain": "'The picnic was great.' A picnic = eating outside.",
+  "dialogue": true,
+  "notes": {
+   "the castle": "The castle was boring.",
+   "nothing at all": "He enjoyed the picnic.",
+   "the bus ride": "The bus wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Nina: Can I borrow your bike?|Ben: Sorry, it's broken. Ask Sara. She's got two.",
+  "q": "Who can lend Nina a bike?",
+  "options": [
+   "Sara",
+   "Ben",
+   "nobody",
+   "Ben's brother"
+  ],
+  "answer": 0,
+  "explain": "'Ask Sara. She's got two.'",
+  "dialogue": true,
+  "notes": {
+   "Ben": "Ben's bike is broken.",
+   "nobody": "Sara has two bikes.",
+   "Ben's brother": "Ben's brother wasn't mentioned."
+  }
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "We're going to have a picnic on Saturday.",
+  "answer": "We're going to have a picnic on Saturday.",
+  "explain": "Going to for plans."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "My brother was born in December.",
+  "answer": "My brother was born in December.",
+  "explain": "Past: was born + in + month."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "The kitten is smaller than the puppy.",
+  "answer": "The kitten is smaller than the puppy.",
+  "explain": "Comparative: smaller than."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "Did you see the dragon yesterday?",
+  "answer": "Did you see the dragon yesterday?",
+  "explain": "Did + you + see + when?"
+ },
+ {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "We are going to the beach tomorrow.",

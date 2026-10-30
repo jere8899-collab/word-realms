@@ -1580,6 +1580,254 @@
   "explain": "Although + contrast."
  },
  {
+  "type": "listen",
+  "say": "I've been learning the piano for two years, but last month I switched to the drums because they're more fun.",
+  "q": "What instrument does the speaker play now?",
+  "options": [
+   "drums",
+   "piano",
+   "guitar",
+   "violin"
+  ],
+  "answer": 0,
+  "explain": "'Last month I switched to the drums.'",
+  "notes": {
+   "piano": "The piano was before the change.",
+   "guitar": "Guitar wasn't mentioned.",
+   "violin": "Violin wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "If the weather's nice tomorrow, we'll take the boat to Seal Island; otherwise we'll visit the aquarium.",
+  "q": "What will they do if it rains?",
+  "options": [
+   "see sea creatures indoors",
+   "take the boat",
+   "go to Seal Island",
+   "stay at home"
+  ],
+  "answer": 0,
+  "explain": "'Otherwise' (if it's not nice) 'we'll visit the aquarium'.",
+  "notes": {
+   "take the boat": "The boat is only if the weather's nice.",
+   "go to Seal Island": "Seal Island is only if it's nice.",
+   "stay at home": "Staying home wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The school play was supposed to start at seven, but the lights stopped working, so it began forty minutes late.",
+  "q": "What time did the play start?",
+  "options": [
+   "7:40",
+   "7:00",
+   "7:14",
+   "6:20"
+  ],
+  "answer": 0,
+  "explain": "Seven + forty minutes late = 7:40.",
+  "notes": {
+   "7:00": "Seven was the plan.",
+   "7:14": "Forty, not fourteen.",
+   "6:20": "Late means after seven, not before."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Honestly, I didn't expect to enjoy the robot workshop, but it turned out to be the best part of the week.",
+  "q": "How did the speaker feel about the workshop?",
+  "options": [
+   "it was a nice surprise",
+   "it was boring",
+   "it was as bad as expected",
+   "they missed it"
+  ],
+  "answer": 0,
+  "explain": "'Didn't expect to enjoy… the best part of the week.'",
+  "notes": {
+   "it was boring": "It was the best part.",
+   "it was as bad as expected": "It was better than expected.",
+   "they missed it": "They went and enjoyed it."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Please don't feed the ducks bread. It's bad for them. You can buy special duck food at the kiosk for a pound.",
+  "q": "What are visitors asked to do?",
+  "options": [
+   "give the ducks the right food",
+   "feed the ducks bread",
+   "stay away from the ducks",
+   "buy bread at the kiosk"
+  ],
+  "answer": 0,
+  "explain": "Bread is bad; buy 'special duck food' instead.",
+  "notes": {
+   "feed the ducks bread": "'Don't feed the ducks bread.'",
+   "stay away from the ducks": "You can still feed them.",
+   "buy bread at the kiosk": "The kiosk sells duck food, not bread."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "We were halfway up the mountain when it started snowing, so we turned back and had hot chocolate at the café instead.",
+  "q": "Did they reach the top?",
+  "options": [
+   "no, they went back down",
+   "yes, in the snow",
+   "yes, after the café",
+   "no, they never started"
+  ],
+  "answer": 0,
+  "explain": "'Halfway up… so we turned back.'",
+  "notes": {
+   "yes, in the snow": "They turned back when it snowed.",
+   "yes, after the café": "The café was instead of the top.",
+   "no, they never started": "They got halfway."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Our cat used to sleep all day, but since we got a puppy, she's been much more active.",
+  "q": "How has the cat changed?",
+  "options": [
+   "she moves around more now",
+   "she sleeps all day",
+   "she's frightened of the puppy",
+   "she's stopped eating"
+  ],
+  "answer": 0,
+  "explain": "'Used to sleep all day… now much more active.'",
+  "notes": {
+   "she sleeps all day": "That's how she used to be.",
+   "she's frightened of the puppy": "Fear wasn't mentioned.",
+   "she's stopped eating": "Eating wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Tickets for the planetarium are eight pounds, or five if you're under twelve. My sister's ten and I'm thirteen.",
+  "q": "How much will the two of them pay altogether?",
+  "options": [
+   "£13",
+   "£16",
+   "£10",
+   "£8"
+  ],
+  "answer": 0,
+  "explain": "Speaker (13) pays £8, sister (10) pays £5: £13.",
+  "notes": {
+   "£16": "£16 would be two full tickets.",
+   "£10": "£10 would be two child tickets.",
+   "£8": "£8 is only the speaker's ticket."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Leah: Have you finished the dragon book yet?|Max: Not quite. I've got two chapters left, and I'm reading one a night.",
+  "q": "When will Max finish the book?",
+  "options": [
+   "in two nights",
+   "tonight",
+   "in a week",
+   "he already has"
+  ],
+  "answer": 0,
+  "explain": "Two chapters, one a night = two nights.",
+  "dialogue": true,
+  "notes": {
+   "tonight": "One chapter tonight leaves one more.",
+   "in a week": "A week wasn't said.",
+   "he already has": "'Not quite' = not yet."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Jade: Did you hear? Our trip to the science museum has been put off.|Omar: Oh no! Until when?|Jade: Next Thursday, I think.",
+  "q": "What has happened to the trip?",
+  "options": [
+   "it's been delayed",
+   "it's been cancelled",
+   "it's tomorrow",
+   "it's moved to another museum"
+  ],
+  "answer": 0,
+  "explain": "'Put off' = moved to a later date (next Thursday).",
+  "dialogue": true,
+  "notes": {
+   "it's been cancelled": "It's still happening, later.",
+   "it's tomorrow": "Tomorrow wasn't said.",
+   "it's moved to another museum": "It's still the science museum."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Coach: You played well, but you need to pass the ball more.|Ella: So I shouldn't try to score by myself so often?|Coach: Exactly.",
+  "q": "What advice does the coach give?",
+  "options": [
+   "share the ball with the team",
+   "score more goals alone",
+   "run faster",
+   "practise every day"
+  ],
+  "answer": 0,
+  "explain": "'Pass the ball more' and don't score by yourself so often.",
+  "dialogue": true,
+  "notes": {
+   "score more goals alone": "That's the opposite of the advice.",
+   "run faster": "Speed wasn't mentioned.",
+   "practise every day": "Practice wasn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Sam: Do you fancy coming to the pet show on Saturday?|Lily: I'd love to, but I'm at my cousin's all weekend.",
+  "q": "Why can't Lily go?",
+  "options": [
+   "she'll be away",
+   "she doesn't like pets",
+   "she's ill",
+   "she has a match"
+  ],
+  "answer": 0,
+  "explain": "'I'm at my cousin's all weekend.'",
+  "dialogue": true,
+  "notes": {
+   "she doesn't like pets": "She'd love to go.",
+   "she's ill": "Illness wasn't mentioned.",
+   "she has a match": "A match wasn't mentioned."
+  }
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "We've already finished our science project.",
+  "answer": "We've already finished our science project.",
+  "explain": "Present perfect with already."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "If you need help, just ask your teacher.",
+  "answer": "If you need help, just ask your teacher.",
+  "explain": "If + present, then an instruction."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "The castle was built hundreds of years ago.",
+  "answer": "The castle was built hundreds of years ago.",
+  "explain": "Passive past: was + built."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "I was reading when the lights went out.",
+  "answer": "I was reading when the lights went out.",
+  "explain": "Past continuous + when + past simple."
+ },
+ {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "I've never been on a plane before.",

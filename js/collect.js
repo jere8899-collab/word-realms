@@ -87,7 +87,9 @@ C.check = (quiet) => {
 C.got = gotIn;
 C.count = () => C.pages().reduce((a, p) => a + gotIn(p.id).filter(id => p.defs.some(d => d.id === id)).length, 0) + gotIn("events").length;
 C.total = () => C.pages().reduce((a, p) => a + p.defs.length, 0) + EVENTS.length;
-const stickerHTML = (st, has, bg) => `<div class="stk ${has ? "has" : "no"}" title="${WR.esc(st.how)}"><div class="disc${bg ? "" : " ev"}">${bg ? WR.img(bg, "sbg", "", true) : ""}<span class="si">${has ? st.icon : "?"}</span></div><b>${WR.esc(has ? st.name : "???")}</b><small>${WR.esc(st.how)}</small></div>`;
+// a sticker shows its painted art (st.art, e.g. a Grade Guardian portrait) once earned, else its emoji
+const stickerFace = (st, has) => !has ? "?" : st.art && WR.asset(st.art) ? WR.img(st.art, "sart") : st.icon;
+const stickerHTML = (st, has, bg) => `<div class="stk ${has ? "has" : "no"}" title="${WR.esc(st.how)}"><div class="disc${bg ? "" : " ev"}">${bg ? WR.img(bg, "sbg", "", true) : ""}<span class="si">${stickerFace(st, has)}</span></div><b>${WR.esc(has ? st.name : "???")}</b><small>${WR.esc(st.how)}</small></div>`;
 const pageHTML = (p, got, full) => `<section class="spage" id="sp_${p.id}"><h3>${p.icon} ${WR.esc(p.title)} <span class="pill">${got.filter(id => p.defs.some(d => d.id === id)).length}/${p.defs.length}</span>${full ? ' <span class="pill" style="background:var(--mint)">🌟 Complete</span>' : ""}</h3>
     <div class="sgrid">${p.defs.map(st => stickerHTML(st, got.includes(st.id), p.bg)).join("")}</div></section>`;
 C.openBook = (focus) => {

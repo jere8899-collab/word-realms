@@ -1593,6 +1593,254 @@
   "explain": "My bike + is new."
  },
  {
+  "type": "listen",
+  "say": "I've got two brothers and one sister.",
+  "q": "How many sisters has the speaker got?",
+  "options": [
+   "one",
+   "two",
+   "three",
+   "none"
+  ],
+  "answer": 0,
+  "explain": "'And one sister.' Two is the brothers.",
+  "notes": {
+   "two": "Two is the brothers.",
+   "three": "Three is all of them together.",
+   "none": "The speaker has got one sister."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "My birthday is in May. My sister's birthday is in June.",
+  "q": "When is the speaker's birthday?",
+  "options": [
+   "in May",
+   "in June",
+   "in March",
+   "in July"
+  ],
+  "answer": 0,
+  "explain": "'My birthday is in May.' June is the sister's.",
+  "notes": {
+   "in June": "June is the sister's birthday.",
+   "in March": "March wasn't said.",
+   "in July": "July wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The dragon has got big green wings and a small red tail.",
+  "q": "What colour is the dragon's tail?",
+  "options": [
+   "red",
+   "green",
+   "blue",
+   "yellow"
+  ],
+  "answer": 0,
+  "explain": "'A small red tail.' The wings are green.",
+  "notes": {
+   "green": "Green is the wings.",
+   "blue": "Blue wasn't said.",
+   "yellow": "Yellow wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I want a cheese sandwich. No, wait, an egg sandwich, please!",
+  "q": "What sandwich does the speaker want?",
+  "options": [
+   "egg",
+   "cheese",
+   "fish",
+   "chicken"
+  ],
+  "answer": 0,
+  "explain": "The speaker changes: 'No, wait, an egg sandwich.'",
+  "notes": {
+   "cheese": "Cheese was first, then the speaker changed.",
+   "fish": "Fish wasn't said.",
+   "chicken": "Chicken wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "There are five ducks on the pond and two in the grass.",
+  "q": "How many ducks are there?",
+  "options": [
+   "seven",
+   "five",
+   "two",
+   "three"
+  ],
+  "answer": 0,
+  "explain": "Five + two = seven ducks.",
+  "notes": {
+   "five": "Five is only the ducks on the pond.",
+   "two": "Two is only the ducks in the grass.",
+   "three": "Three isn't 5 + 2."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I play tennis on Tuesday and football on Friday.",
+  "q": "When does the speaker play football?",
+  "options": [
+   "on Friday",
+   "on Tuesday",
+   "on Thursday",
+   "on Sunday"
+  ],
+  "answer": 0,
+  "explain": "'Football on Friday.' Tuesday is tennis.",
+  "notes": {
+   "on Tuesday": "Tuesday is tennis.",
+   "on Thursday": "Thursday wasn't said.",
+   "on Sunday": "Sunday wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The rocket goes up at six o'clock.",
+  "q": "When does the rocket go up?",
+  "options": [
+   "6:00",
+   "7:00",
+   "6:30",
+   "8:00"
+  ],
+  "answer": 0,
+  "explain": "'At six o'clock' = 6:00.",
+  "notes": {
+   "7:00": "Seven wasn't said.",
+   "6:30": "O'clock means :00, not half past.",
+   "8:00": "Eight wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The unicorn is white, and the fairy is pink.",
+  "q": "What colour is the fairy?",
+  "options": [
+   "pink",
+   "white",
+   "purple",
+   "blue"
+  ],
+  "answer": 0,
+  "explain": "'The fairy is pink.' The unicorn is white.",
+  "notes": {
+   "white": "White is the unicorn.",
+   "purple": "Purple wasn't said.",
+   "blue": "Blue wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Anna: What's in your bag?|Leo: My lunch and a book.",
+  "q": "What is in Leo's bag?",
+  "options": [
+   "food and a book",
+   "a book and a ball",
+   "his lunch and a pen",
+   "only a book"
+  ],
+  "answer": 0,
+  "explain": "'My lunch and a book.' Lunch is food.",
+  "dialogue": true,
+  "notes": {
+   "a book and a ball": "A ball wasn't said.",
+   "his lunch and a pen": "A pen wasn't said.",
+   "only a book": "His lunch is there too."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Dad: Where's your cat?|Ruby: She's in the tree!",
+  "q": "Where is the cat?",
+  "options": [
+   "up a tree",
+   "under the tree",
+   "in the house",
+   "in the car"
+  ],
+  "answer": 0,
+  "explain": "'She's in the tree!'",
+  "dialogue": true,
+  "notes": {
+   "under the tree": "In the tree, not under it.",
+   "in the house": "The house wasn't said.",
+   "in the car": "The car wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Teacher: How many legs has a spider got?|Omar: Eight!",
+  "q": "What does Omar say?",
+  "options": [
+   "eight",
+   "six",
+   "four",
+   "ten"
+  ],
+  "answer": 0,
+  "explain": "'Eight!'",
+  "dialogue": true,
+  "notes": {
+   "six": "Six wasn't said.",
+   "four": "Four wasn't said.",
+   "ten": "Ten wasn't said."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Mia: Do you want an apple?|Sam: No, thanks. I want a banana.",
+  "q": "What does Sam want?",
+  "options": [
+   "a banana",
+   "an apple",
+   "an orange",
+   "a pear"
+  ],
+  "answer": 0,
+  "explain": "'No, thanks. I want a banana.'",
+  "dialogue": true,
+  "notes": {
+   "an apple": "Sam says no to the apple.",
+   "an orange": "An orange wasn't said.",
+   "a pear": "A pear wasn't said."
+  }
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "My cat likes fish.",
+  "answer": "My cat likes fish.",
+  "explain": "My cat + likes fish: likes with -s."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "I can see three stars.",
+  "answer": "I can see three stars.",
+  "explain": "I can see + three stars: stars with -s."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "The dragon is very big.",
+  "answer": "The dragon is very big.",
+  "explain": "The dragon + is + very big."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "Can you ride a bike?",
+  "answer": "Can you ride a bike?",
+  "explain": "Can + you + ride a bike?"
+ },
+ {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "I like red apples.",

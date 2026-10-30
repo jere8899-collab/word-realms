@@ -1496,6 +1496,791 @@
      }
     }
    ]
+  },
+  {
+   "title": "Goldie the Goldfish",
+   "text": "Tom has a goldfish. Her name is Goldie. She is orange and very small. Goldie lives in a round bowl on Tom's desk. Tom gives her food two times a day, in the morning and at night. On Sundays, Tom's dad cleans the bowl. Goldie likes the little green plant in her bowl.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What colour is Goldie?",
+     "options": [
+      "orange",
+      "green",
+      "white and gold",
+      "red"
+     ],
+     "answer": 0,
+     "explain": "'She is orange and very small.'",
+     "notes": {
+      "green": "Green is the plant in her bowl.",
+      "white and gold": "White isn't in the story.",
+      "red": "Red isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Where is Goldie's bowl?",
+     "options": [
+      "on a desk",
+      "on the kitchen floor",
+      "in the garden",
+      "under Tom's bed"
+     ],
+     "answer": 0,
+     "explain": "'Goldie lives in a round bowl on Tom's desk.'",
+     "notes": {
+      "on the kitchen floor": "The kitchen isn't in the story.",
+      "in the garden": "The garden isn't in the story.",
+      "under Tom's bed": "The bed isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How many times a day does Goldie eat?",
+     "options": [
+      "twice",
+      "once",
+      "three times",
+      "four times"
+     ],
+     "answer": 0,
+     "explain": "'Two times a day, in the morning and at night.'",
+     "notes": {
+      "once": "She eats in the morning and at night: that's two.",
+      "three times": "Morning and night is two, not three.",
+      "four times": "Four isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Who cleans the bowl?",
+     "options": [
+      "Tom's father",
+      "Tom",
+      "Tom's mum",
+      "Tom's sister"
+     ],
+     "answer": 0,
+     "explain": "'On Sundays, Tom's dad cleans the bowl.'",
+     "notes": {
+      "Tom": "Tom gives her food; Dad cleans.",
+      "Tom's mum": "Mum isn't in the story.",
+      "Tom's sister": "A sister isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does Goldie like?",
+     "options": [
+      "a plant",
+      "a toy castle",
+      "big stones",
+      "the cat"
+     ],
+     "answer": 0,
+     "explain": "'Goldie likes the little green plant in her bowl.'",
+     "notes": {
+      "a toy castle": "A castle isn't in the story.",
+      "big stones": "Stones aren't in the story.",
+      "the cat": "A cat isn't in the story."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Picnic on the Moon",
+   "text": "Rosa is an astronaut. Today she is on the Moon with her robot, Zip. They have a picnic. Rosa has a sandwich and a banana. Zip doesn't eat food. He drinks oil! The Moon is grey and very quiet. Rosa can see the Earth. It is blue and white. She is very happy.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Who is with Rosa?",
+     "options": [
+      "a robot",
+      "her mum",
+      "a space dog",
+      "two astronauts"
+     ],
+     "answer": 0,
+     "explain": "'She is on the Moon with her robot, Zip.'",
+     "notes": {
+      "her mum": "Her mum isn't in the story.",
+      "a space dog": "A dog isn't in the story.",
+      "two astronauts": "Rosa is the only astronaut."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What fruit does Rosa have?",
+     "options": [
+      "a banana",
+      "an apple",
+      "a sandwich",
+      "some grapes"
+     ],
+     "answer": 0,
+     "explain": "'Rosa has a sandwich and a banana.'",
+     "notes": {
+      "an apple": "An apple isn't in the story.",
+      "a sandwich": "She has a sandwich, but it isn't fruit.",
+      "some grapes": "Grapes aren't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does Zip drink?",
+     "options": [
+      "oil",
+      "water",
+      "milk",
+      "orange juice"
+     ],
+     "answer": 0,
+     "explain": "'Zip doesn't eat food. He drinks oil!'",
+     "notes": {
+      "water": "Water isn't in the story.",
+      "milk": "Milk isn't in the story.",
+      "orange juice": "Juice isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What colour is the Moon?",
+     "options": [
+      "grey",
+      "blue and white",
+      "yellow",
+      "black"
+     ],
+     "answer": 0,
+     "explain": "'The Moon is grey and very quiet.'",
+     "notes": {
+      "blue and white": "Blue and white is the Earth.",
+      "yellow": "Yellow isn't in the story.",
+      "black": "Black isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How does Rosa feel?",
+     "options": [
+      "happy",
+      "sad",
+      "tired",
+      "scared"
+     ],
+     "answer": 0,
+     "explain": "'She is very happy.'",
+     "notes": {
+      "sad": "She is happy, not sad.",
+      "tired": "Tired isn't in the story.",
+      "scared": "Scared isn't in the story."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Milo's Kite",
+   "text": "Milo has a new kite. It is a big yellow fish with a long tail. On Saturday, Milo and his sister Ana go to the hill. It is windy. The kite flies very high! Then it goes into a tree. Ana is tall. She gets the kite down. Milo says, 'Thank you, Ana!'",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What does the kite look like?",
+     "options": [
+      "a yellow fish",
+      "a red bird",
+      "a long green snake",
+      "a blue fish"
+     ],
+     "answer": 0,
+     "explain": "'It is a big yellow fish with a long tail.'",
+     "notes": {
+      "a red bird": "A bird isn't in the story.",
+      "a long green snake": "It has a long tail, but it isn't a snake.",
+      "a blue fish": "The fish is yellow, not blue."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "When do they go to the hill?",
+     "options": [
+      "on Saturday",
+      "on Sunday",
+      "after school on Friday",
+      "on Monday"
+     ],
+     "answer": 0,
+     "explain": "'On Saturday, Milo and his sister Ana go to the hill.'",
+     "notes": {
+      "on Sunday": "Sunday isn't in the story.",
+      "after school on Friday": "Friday isn't in the story.",
+      "on Monday": "Monday isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is the weather like?",
+     "options": [
+      "windy",
+      "rainy",
+      "hot and sunny",
+      "snowy"
+     ],
+     "answer": 0,
+     "explain": "'It is windy.'",
+     "notes": {
+      "rainy": "Rain isn't in the story.",
+      "hot and sunny": "Sun isn't in the story.",
+      "snowy": "Snow isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Where does the kite go?",
+     "options": [
+      "up into a tree",
+      "into the sea",
+      "onto a roof",
+      "under the hill"
+     ],
+     "answer": 0,
+     "explain": "'Then it goes into a tree.'",
+     "notes": {
+      "into the sea": "The sea isn't in the story.",
+      "onto a roof": "A roof isn't in the story.",
+      "under the hill": "It goes up high, not under the hill."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Who gets the kite down?",
+     "options": [
+      "Milo's sister",
+      "Milo",
+      "Milo's dad",
+      "a tall man"
+     ],
+     "answer": 0,
+     "explain": "'Ana is tall. She gets the kite down.'",
+     "notes": {
+      "Milo": "Milo says thank you; he doesn't get it.",
+      "Milo's dad": "Dad isn't in the story.",
+      "a tall man": "Ana is tall, but she isn't a man."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Snow Day",
+   "text": "It is Monday morning. There is a lot of snow, and there is no school today! Kim and her brother Sam put on their hats, coats and boots. They make a snowman in the garden. He has a carrot nose and two black buttons for eyes. Then they drink hot chocolate in the kitchen.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What day is it?",
+     "options": [
+      "Monday",
+      "Sunday",
+      "Friday",
+      "Saturday"
+     ],
+     "answer": 0,
+     "explain": "'It is Monday morning.'",
+     "notes": {
+      "Sunday": "Sunday isn't in the story.",
+      "Friday": "Friday isn't in the story.",
+      "Saturday": "Saturday isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What do Kim and Sam NOT put on?",
+     "options": [
+      "gloves",
+      "hats",
+      "coats",
+      "boots"
+     ],
+     "answer": 0,
+     "explain": "'They put on their hats, coats and boots.' Gloves aren't in the list.",
+     "notes": {
+      "hats": "They put on hats.",
+      "coats": "They put on coats.",
+      "boots": "They put on boots."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is the snowman's nose?",
+     "options": [
+      "a carrot",
+      "a button",
+      "a banana",
+      "a stone"
+     ],
+     "answer": 0,
+     "explain": "'He has a carrot nose.'",
+     "notes": {
+      "a button": "Buttons are his eyes.",
+      "a banana": "A banana isn't in the story.",
+      "a stone": "A stone isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Where do they drink hot chocolate?",
+     "options": [
+      "in the kitchen",
+      "in the garden",
+      "at school",
+      "in the bedroom"
+     ],
+     "answer": 0,
+     "explain": "'Then they drink hot chocolate in the kitchen.'",
+     "notes": {
+      "in the garden": "The garden is where they make the snowman.",
+      "at school": "There is no school today.",
+      "in the bedroom": "The bedroom isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Who is Sam?",
+     "options": [
+      "Kim's brother",
+      "Kim's dad",
+      "the snowman",
+      "Kim's friend from school"
+     ],
+     "answer": 0,
+     "explain": "'Kim and her brother Sam.'",
+     "notes": {
+      "Kim's dad": "Dad isn't in the story.",
+      "the snowman": "The snowman has no name.",
+      "Kim's friend from school": "Sam is her brother, not a school friend."
+     }
+    }
+   ]
+  },
+  {
+   "title": "My Best Friend Nina",
+   "text": "My best friend is Nina. She is eight, like me. She has short black hair and big brown eyes. Nina can't swim, but she can dance very well. We sit next to each other at school. After school, we play with her rabbit, Snowball. Snowball is white and fluffy, and he loves lettuce.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How old is the writer?",
+     "options": [
+      "eight",
+      "seven",
+      "nine",
+      "eighteen"
+     ],
+     "answer": 0,
+     "explain": "'She is eight, like me.'",
+     "notes": {
+      "seven": "Seven isn't in the story.",
+      "nine": "Nine isn't in the story.",
+      "eighteen": "Eighteen isn't eight."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What can Nina do well?",
+     "options": [
+      "dance",
+      "swim",
+      "sing",
+      "draw"
+     ],
+     "answer": 0,
+     "explain": "'Nina can't swim, but she can dance very well.'",
+     "notes": {
+      "swim": "Nina can't swim.",
+      "sing": "Singing isn't in the story.",
+      "draw": "Drawing isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What colour is Nina's hair?",
+     "options": [
+      "black",
+      "brown",
+      "white",
+      "yellow"
+     ],
+     "answer": 0,
+     "explain": "'She has short black hair.'",
+     "notes": {
+      "brown": "Brown is her eyes.",
+      "white": "White is Snowball.",
+      "yellow": "Yellow isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does Snowball like to eat?",
+     "options": [
+      "lettuce",
+      "carrots",
+      "apples",
+      "cake"
+     ],
+     "answer": 0,
+     "explain": "'He loves lettuce.'",
+     "notes": {
+      "carrots": "Carrots aren't in the story.",
+      "apples": "Apples aren't in the story.",
+      "cake": "Cake isn't in the story."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Spark Goes to School",
+   "text": "Spark is a tiny purple dragon. Today is his first day at school. His teacher is Miss Fern. She is a kind fairy. There are ten pupils in his class: four dragons, three unicorns and three elves. In the morning they learn to count. After lunch they learn to fly! Spark can't fly well, but his friend Pearl the unicorn helps him.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What colour is Spark?",
+     "options": [
+      "purple",
+      "pink",
+      "green",
+      "red"
+     ],
+     "answer": 0,
+     "explain": "'Spark is a tiny purple dragon.'",
+     "notes": {
+      "pink": "Pink isn't in the story.",
+      "green": "Green isn't in the story.",
+      "red": "Red isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Who is Miss Fern?",
+     "options": [
+      "Spark's teacher",
+      "a purple dragon",
+      "a unicorn",
+      "Spark's mum"
+     ],
+     "answer": 0,
+     "explain": "'His teacher is Miss Fern. She is a kind fairy.'",
+     "notes": {
+      "a purple dragon": "Spark is the purple dragon.",
+      "a unicorn": "Pearl is the unicorn.",
+      "Spark's mum": "His mum isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How many unicorns are in the class?",
+     "options": [
+      "three",
+      "four",
+      "ten",
+      "two"
+     ],
+     "answer": 0,
+     "explain": "'Four dragons, three unicorns and three elves.'",
+     "notes": {
+      "four": "Four is the dragons.",
+      "ten": "Ten is all the pupils.",
+      "two": "Two isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What do they do after lunch?",
+     "options": [
+      "a flying lesson",
+      "they count to ten",
+      "they play football",
+      "they go home"
+     ],
+     "answer": 0,
+     "explain": "'After lunch they learn to fly!'",
+     "notes": {
+      "they count to ten": "Counting is in the morning.",
+      "they play football": "Football isn't in the story.",
+      "they go home": "Going home isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Who helps Spark?",
+     "options": [
+      "a unicorn",
+      "Miss Fern",
+      "an elf",
+      "a big dragon"
+     ],
+     "answer": 0,
+     "explain": "'His friend Pearl the unicorn helps him.'",
+     "notes": {
+      "Miss Fern": "Miss Fern is the teacher; Pearl helps.",
+      "an elf": "The elves don't help in the story.",
+      "a big dragon": "Pearl is a unicorn, not a dragon."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Fairy's Shoes",
+   "text": "Bella is a little fairy. She has blue wings and a long pink dress. Today she can't find her shoes! She looks under her bed. No shoes. She looks in the kitchen. No shoes. Then she sees her cat, Moss. Moss is sleeping in a shoe! The other shoe is under the cat's tail.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What colour are Bella's wings?",
+     "options": [
+      "blue",
+      "pink",
+      "green",
+      "white"
+     ],
+     "answer": 0,
+     "explain": "'She has blue wings.'",
+     "notes": {
+      "pink": "Pink is her dress.",
+      "green": "Green isn't in the story.",
+      "white": "White isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is Bella's problem?",
+     "options": [
+      "her shoes are lost",
+      "she can't fly",
+      "her dress is dirty",
+      "her cat is lost"
+     ],
+     "answer": 0,
+     "explain": "'Today she can't find her shoes!'",
+     "notes": {
+      "she can't fly": "Flying isn't the problem.",
+      "her dress is dirty": "Her dress is fine.",
+      "her cat is lost": "The cat isn't lost; it's sleeping."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Where does Bella look first?",
+     "options": [
+      "under her bed",
+      "in the kitchen",
+      "in the garden",
+      "under the table"
+     ],
+     "answer": 0,
+     "explain": "'She looks under her bed… She looks in the kitchen.'",
+     "notes": {
+      "in the kitchen": "The kitchen is the second place.",
+      "in the garden": "The garden isn't in the story.",
+      "under the table": "The table isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Where are the shoes?",
+     "options": [
+      "with the cat",
+      "under the bed",
+      "in the kitchen",
+      "on her feet"
+     ],
+     "answer": 0,
+     "explain": "'Moss is sleeping in a shoe! The other shoe is under the cat's tail.'",
+     "notes": {
+      "under the bed": "'No shoes' under the bed.",
+      "in the kitchen": "'No shoes' in the kitchen.",
+      "on her feet": "She can't find them, so they aren't on her feet."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Panda at the Pool",
+   "text": "Bo is a big black and white panda. He lives at the zoo. Bo doesn't like hot days. In summer, the zoo keeper, Mr Tan, fills a small pool with cold water. Bo sits in the pool and eats bamboo. The children at the zoo laugh and take photos. Bo is happy and cool!",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Where does Bo live?",
+     "options": [
+      "at the zoo",
+      "in a forest",
+      "on a farm",
+      "in Mr Tan's house"
+     ],
+     "answer": 0,
+     "explain": "'He lives at the zoo.'",
+     "notes": {
+      "in a forest": "A forest isn't in the story.",
+      "on a farm": "A farm isn't in the story.",
+      "in Mr Tan's house": "Mr Tan works at the zoo; Bo doesn't live in his house."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What doesn't Bo like?",
+     "options": [
+      "hot weather",
+      "cold water",
+      "bamboo",
+      "the children"
+     ],
+     "answer": 0,
+     "explain": "'Bo doesn't like hot days.'",
+     "notes": {
+      "cold water": "He sits in the cold water and he's happy.",
+      "bamboo": "He eats bamboo.",
+      "the children": "The children laugh; Bo doesn't mind them."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Who is Mr Tan?",
+     "options": [
+      "he works at the zoo",
+      "a boy at the zoo",
+      "Bo's panda friend",
+      "a teacher"
+     ],
+     "answer": 0,
+     "explain": "'The zoo keeper, Mr Tan.'",
+     "notes": {
+      "a boy at the zoo": "He's a zoo keeper, not a boy.",
+      "Bo's panda friend": "He isn't a panda.",
+      "a teacher": "A teacher isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does Bo eat in the pool?",
+     "options": [
+      "bamboo",
+      "fish",
+      "ice cream",
+      "apples"
+     ],
+     "answer": 0,
+     "explain": "'Bo sits in the pool and eats bamboo.'",
+     "notes": {
+      "fish": "Fish aren't in the story.",
+      "ice cream": "Ice cream isn't in the story.",
+      "apples": "Apples aren't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What do the children do?",
+     "options": [
+      "take pictures",
+      "swim with Bo",
+      "feed Bo bamboo",
+      "jump in the pool"
+     ],
+     "answer": 0,
+     "explain": "'The children at the zoo laugh and take photos.'",
+     "notes": {
+      "swim with Bo": "Only Bo is in the pool.",
+      "feed Bo bamboo": "Bo eats bamboo, but the children don't give it.",
+      "jump in the pool": "Only Bo sits in the pool."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Toy Shop",
+   "text": "Max and his grandma go to the toy shop. Max has five pounds. He likes a red car, but it is eight pounds. A ball is three pounds and a yo-yo is two pounds. Max buys the ball and the yo-yo. Now he has no money, but he has two new toys!",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Who goes to the shop with Max?",
+     "options": [
+      "his grandmother",
+      "his mum",
+      "his grandpa",
+      "his friend"
+     ],
+     "answer": 0,
+     "explain": "'Max and his grandma go to the toy shop.'",
+     "notes": {
+      "his mum": "Mum isn't in the story.",
+      "his grandpa": "It's his grandma, not his grandpa.",
+      "his friend": "A friend isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How much money has Max got?",
+     "options": [
+      "£5",
+      "£8",
+      "£3",
+      "£2"
+     ],
+     "answer": 0,
+     "explain": "'Max has five pounds.'",
+     "notes": {
+      "£8": "£8 is the car.",
+      "£3": "£3 is the ball.",
+      "£2": "£2 is the yo-yo."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why doesn't Max buy the car?",
+     "options": [
+      "it costs too much",
+      "it is red",
+      "it is broken",
+      "Grandma says no"
+     ],
+     "answer": 0,
+     "explain": "'It is eight pounds', and Max has only five.",
+     "notes": {
+      "it is red": "He likes red; colour isn't the problem.",
+      "it is broken": "Broken isn't in the story.",
+      "Grandma says no": "Grandma doesn't say no in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does Max buy?",
+     "options": [
+      "two toys: a ball and a yo-yo",
+      "a red car",
+      "a ball and a car",
+      "two yo-yos"
+     ],
+     "answer": 0,
+     "explain": "'Max buys the ball and the yo-yo.'",
+     "notes": {
+      "a red car": "The car is too much money.",
+      "a ball and a car": "He doesn't buy the car.",
+      "two yo-yos": "He buys one yo-yo and one ball."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How much money does Max have at the end?",
+     "options": [
+      "nothing",
+      "£1",
+      "£5",
+      "£2"
+     ],
+     "answer": 0,
+     "explain": "'Now he has no money.'",
+     "notes": {
+      "£1": "£3 + £2 = £5, so nothing is left.",
+      "£5": "£5 is what he had before.",
+      "£2": "£2 is the yo-yo."
+     }
+    }
+   ]
   }
  ]
 }

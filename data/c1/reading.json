@@ -1490,6 +1490,740 @@
      }
     }
    ]
+  },
+  {
+   "title": "The Robot That Learned to Fail",
+   "text": "When the Greenfield Robotics Club built their first maze-solving robot, it crashed into the very first wall and spun helplessly in circles. Most teams would have rewritten the program from scratch. Instead, their mentor, a retired engineer called Mr Basu, insisted they keep a 'failure diary', recording every crash and what they thought had caused it. The diary grew to forty pages. Gradually, a pattern emerged: almost every crash happened when the robot turned left, which led them to a faulty sensor rather than a flaw in their code. By the regional final, the robot completed the maze in under a minute. Asked about their success, the team captain was quick to credit the diary rather than the robot.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What would most teams have done, according to the writer?",
+     "options": [
+      "started the program again",
+      "kept a failure diary",
+      "replaced the robot's sensors",
+      "given up on the maze"
+     ],
+     "answer": 0,
+     "explain": "'Most teams would have rewritten the program from scratch.'",
+     "notes": {
+      "kept a failure diary": "That's what this team did instead.",
+      "replaced the robot's sensors": "That happened only after the pattern emerged.",
+      "given up on the maze": "Giving up isn't suggested."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why did Mr Basu want a diary?",
+     "options": [
+      "to spot the causes of mistakes",
+      "to punish members who made careless mistakes",
+      "to impress the judges",
+      "to practise writing skills"
+     ],
+     "answer": 0,
+     "explain": "'Recording every crash and what they thought had caused it.'",
+     "notes": {
+      "to punish members who made careless mistakes": "Punishment isn't implied.",
+      "to impress the judges": "Judges aren't mentioned.",
+      "to practise writing skills": "Writing skills aren't the aim."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What did the diary eventually reveal?",
+     "options": [
+      "a hardware fault",
+      "a mistake in the code",
+      "a problem with the maze",
+      "that left turns are impossible"
+     ],
+     "answer": 0,
+     "explain": "'Led them to a faulty sensor rather than a flaw in their code.'",
+     "notes": {
+      "a mistake in the code": "'Rather than a flaw in their code.'",
+      "a problem with the maze": "The maze wasn't at fault.",
+      "that left turns are impossible": "Left turns just exposed the sensor."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does the captain's answer suggest?",
+     "options": [
+      "the method mattered more than the machine",
+      "the robot itself deserved all the credit for winning",
+      "the diary was a waste of time",
+      "Mr Basu should get the prize"
+     ],
+     "answer": 0,
+     "explain": "'Quick to credit the diary rather than the robot.'",
+     "notes": {
+      "the robot itself deserved all the credit for winning": "The diary gets the credit, not the robot.",
+      "the diary was a waste of time": "It's credited with their success.",
+      "Mr Basu should get the prize": "Mr Basu isn't credited directly."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Tardigrades: The Toughest Animals on Earth",
+   "text": "At barely half a millimetre long, tardigrades – affectionately nicknamed 'water bears' – hardly look like champions. Yet these eight-legged creatures can survive conditions that would kill virtually anything else. When their surroundings dry out, they curl into a ball, lose almost all the water in their bodies and effectively switch themselves off, sometimes for decades. In this state, they have withstood temperatures close to absolute zero, crushing pressures and even a trip into open space aboard a satellite. Remarkably, when rehydrated, many simply carry on as if nothing had happened. Scientists hope that understanding how they protect their cells could, one day, help keep vaccines safe without refrigeration.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What does the first sentence imply?",
+     "options": [
+      "their appearance is misleading",
+      "they are very easy to see without a microscope",
+      "they are true bears",
+      "they win animal contests"
+     ],
+     "answer": 0,
+     "explain": "'Hardly look like champions. Yet…' — they are far tougher than they appear.",
+     "notes": {
+      "they are very easy to see without a microscope": "Half a millimetre is tiny.",
+      "they are true bears": "'Water bears' is only a nickname.",
+      "they win animal contests": "'Champions' is a metaphor."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What do tardigrades do when things dry out?",
+     "options": [
+      "shut down their bodies",
+      "drink as much as they can",
+      "lay eggs and die",
+      "move to wetter places"
+     ],
+     "answer": 0,
+     "explain": "'Lose almost all the water in their bodies and effectively switch themselves off.'",
+     "notes": {
+      "drink as much as they can": "They lose water, not drink it.",
+      "lay eggs and die": "They survive, sometimes for decades.",
+      "move to wetter places": "Moving isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Which has a tardigrade NOT survived, according to the text?",
+     "options": [
+      "boiling lava",
+      "extreme cold",
+      "very high pressure",
+      "a journey into space"
+     ],
+     "answer": 0,
+     "explain": "Lava isn't mentioned; the others are all listed.",
+     "notes": {
+      "extreme cold": "'Temperatures close to absolute zero' are listed.",
+      "very high pressure": "'Crushing pressures' are listed.",
+      "a journey into space": "'A trip into open space' is listed."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does 'as if nothing had happened' suggest?",
+     "options": [
+      "they recover completely",
+      "they forget their past",
+      "they are slightly damaged",
+      "they need weeks to wake"
+     ],
+     "answer": 0,
+     "explain": "'Many simply carry on' = they return to normal.",
+     "notes": {
+      "they forget their past": "Memory isn't the point.",
+      "they are slightly damaged": "They carry on normally.",
+      "they need weeks to wake": "'Simply carry on' suggests no long delay."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How might tardigrades help people?",
+     "options": [
+      "by keeping medicines usable without fridges",
+      "by cleaning dirty water in rivers and lakes",
+      "by travelling to other planets",
+      "by curing all diseases"
+     ],
+     "answer": 0,
+     "explain": "'Help keep vaccines safe without refrigeration.'",
+     "notes": {
+      "by cleaning dirty water in rivers and lakes": "Cleaning water isn't mentioned.",
+      "by travelling to other planets": "Their space trip was an experiment.",
+      "by curing all diseases": "Only vaccines are mentioned, and only 'one day'."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Confessions of a Reluctant Goalkeeper",
+   "text": "Nobody chooses to be a goalkeeper at the age of ten; you are chosen, usually because you were the last to arrive at practice. That, at least, is how it happened to me. For the first season, I regarded the goal as a kind of punishment, a place where I could only be blamed and never praised. It was a single match that changed my mind. We were losing two–nil when I saved a penalty, and the whole team came sprinting back to hug me. I realised then that a goalkeeper doesn't just stop goals; they can change the mood of an entire side. I've been in goal ever since, and I wouldn't swap it for anything – not even for the chance to score.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "According to the writer, how do children become goalkeepers?",
+     "options": [
+      "by bad luck rather than choice",
+      "by being the most talented player in the squad",
+      "by volunteering eagerly",
+      "by winning a trial"
+     ],
+     "answer": 0,
+     "explain": "'You are chosen, usually because you were the last to arrive.'",
+     "notes": {
+      "by being the most talented player in the squad": "Talent isn't the reason given.",
+      "by volunteering eagerly": "'Nobody chooses to be a goalkeeper.'",
+      "by winning a trial": "No trial is mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How did the writer see the role at first?",
+     "options": [
+      "as thankless",
+      "as an honour",
+      "as the easiest position",
+      "as a chance to score"
+     ],
+     "answer": 0,
+     "explain": "'A place where I could only be blamed and never praised.'",
+     "notes": {
+      "as an honour": "They saw it as 'a kind of punishment'.",
+      "as the easiest position": "Ease isn't mentioned.",
+      "as a chance to score": "Goalkeepers rarely score; they say so."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What was the score when the penalty was saved?",
+     "options": [
+      "the team was two goals down",
+      "it was two–all",
+      "the team was winning",
+      "it was nil–nil"
+     ],
+     "answer": 0,
+     "explain": "'We were losing two–nil.'",
+     "notes": {
+      "it was two–all": "Two–nil is not a draw.",
+      "the team was winning": "They were losing.",
+      "it was nil–nil": "The other team had two."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What did the writer learn from that match?",
+     "options": [
+      "a keeper affects team spirit",
+      "penalties are easy to save",
+      "attackers deserve more praise",
+      "it's better to arrive early"
+     ],
+     "answer": 0,
+     "explain": "'They can change the mood of an entire side.'",
+     "notes": {
+      "penalties are easy to save": "Nothing says penalties are easy.",
+      "attackers deserve more praise": "The point is the keeper's importance.",
+      "it's better to arrive early": "That's a joke from the start, not the lesson."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does the final sentence emphasise?",
+     "options": [
+      "the writer's strong commitment",
+      "the writer's secret wish to score goals one day",
+      "the writer's regret",
+      "the writer's plan to retire"
+     ],
+     "answer": 0,
+     "explain": "'I wouldn't swap it for anything – not even for the chance to score.'",
+     "notes": {
+      "the writer's secret wish to score goals one day": "They'd give up scoring to stay in goal.",
+      "the writer's regret": "There's no regret.",
+      "the writer's plan to retire": "They've 'been in goal ever since'."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Speedrunning: Racing Through Games",
+   "text": "To most players, finishing a video game is the goal. To speedrunners, it is merely the starting point. These dedicated gamers compete to complete games as fast as humanly possible, often spending thousands of hours shaving fractions of a second off their times. Some exploit glitches – mistakes in the game's code – to pass through walls or skip whole levels, which purists consider cheating and others regard as a legitimate skill. What surprises many outsiders is how cooperative the community is: rivals routinely share newly discovered tricks, knowing full well this may cost them their own records. Every year, charity marathons of speedrunning raise millions, proving that watching someone else play can be strangely gripping.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How do speedrunners view finishing a game?",
+     "options": [
+      "as only the beginning",
+      "as the final aim",
+      "as something to avoid",
+      "as too easy to bother with"
+     ],
+     "answer": 0,
+     "explain": "'To speedrunners, it is merely the starting point.'",
+     "notes": {
+      "as the final aim": "That's how most players see it.",
+      "as something to avoid": "They do finish — very fast.",
+      "as too easy to bother with": "They spend thousands of hours on it."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does the text say about using glitches?",
+     "options": [
+      "players disagree about it",
+      "it's banned in all competitions",
+      "everyone thinks it's cheating",
+      "it makes games slower"
+     ],
+     "answer": 0,
+     "explain": "'Which purists consider cheating and others regard as a legitimate skill.'",
+     "notes": {
+      "it's banned in all competitions": "No ban is mentioned.",
+      "everyone thinks it's cheating": "Only purists think so.",
+      "it makes games slower": "Glitches let players skip levels."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What surprises outsiders?",
+     "options": [
+      "competitors help one another",
+      "players keep their newest tricks to themselves",
+      "the games are very short",
+      "records are rarely broken"
+     ],
+     "answer": 0,
+     "explain": "'Rivals routinely share newly discovered tricks.'",
+     "notes": {
+      "players keep their newest tricks to themselves": "It's the opposite: they share.",
+      "the games are very short": "They spend thousands of hours.",
+      "records are rarely broken": "Shaving seconds means records do fall."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does 'knowing full well' suggest about the sharing?",
+     "options": [
+      "it's generous",
+      "it's accidental",
+      "it's required by rules",
+      "it's a way of showing off"
+     ],
+     "answer": 0,
+     "explain": "They share although they know they may lose their records.",
+     "notes": {
+      "it's accidental": "They know the risk, so it's deliberate.",
+      "it's required by rules": "No rule is mentioned.",
+      "it's a way of showing off": "The point is generosity, not boasting."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What do charity marathons show, according to the writer?",
+     "options": [
+      "watching can be exciting",
+      "speedrunners are rich",
+      "games are better than sport",
+      "glitches should be fixed"
+     ],
+     "answer": 0,
+     "explain": "'Watching someone else play can be strangely gripping.'",
+     "notes": {
+      "speedrunners are rich": "The money goes to charity.",
+      "games are better than sport": "Sport isn't compared.",
+      "glitches should be fixed": "Fixing glitches isn't discussed."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Lost Property Office of the Starlight Library",
+   "text": "Every library has a lost property box, but the Starlight Library's is a whole office, staffed by a tortoise named Hollis who has worked there for three hundred years. The things left behind are rarely umbrellas. Readers have abandoned half-finished wishes, forgotten nicknames and, on one memorable occasion, an entire thunderstorm, which Hollis kept in a jam jar until its owner returned. Apprentices are warned never to open the cabinet marked 'Lost Tempers', a lesson the current apprentice, Tamsin, learned the hard way. Yet Hollis insists that the saddest objects are not the strangest ones but the ordinary bookmarks, each marking a story that somebody never came back to finish.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What is unusual about the lost property, compared with a normal library?",
+     "options": [
+      "the items are magical",
+      "the box is very small",
+      "most of it is umbrellas",
+      "nobody works there"
+     ],
+     "answer": 0,
+     "explain": "'The things left behind are rarely umbrellas… half-finished wishes… an entire thunderstorm.'",
+     "notes": {
+      "the box is very small": "It's a whole office, not a box.",
+      "most of it is umbrellas": "'Rarely umbrellas.'",
+      "nobody works there": "Hollis staffs it."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What happened to the thunderstorm?",
+     "options": [
+      "it was stored until someone claimed it",
+      "it escaped into the library",
+      "Hollis threw it out of the window into the sky",
+      "Tamsin let it out"
+     ],
+     "answer": 0,
+     "explain": "'Kept in a jam jar until its owner returned.'",
+     "notes": {
+      "it escaped into the library": "It was kept safe in a jar.",
+      "Hollis threw it out of the window into the sky": "He kept it.",
+      "Tamsin let it out": "Tamsin's mistake was a different cabinet."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What can we infer about Tamsin?",
+     "options": [
+      "she opened the forbidden cabinet",
+      "she has worked there for centuries",
+      "she lost her temper with Hollis",
+      "she obeyed every warning"
+     ],
+     "answer": 0,
+     "explain": "'A lesson the current apprentice, Tamsin, learned the hard way.'",
+     "notes": {
+      "she has worked there for centuries": "That's Hollis.",
+      "she lost her temper with Hollis": "She opened the cabinet; we aren't told she lost her own temper.",
+      "she obeyed every warning": "'The hard way' means she didn't."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why does Hollis find bookmarks the saddest objects?",
+     "options": [
+      "they stand for unfinished stories",
+      "they are very old",
+      "nobody wants them",
+      "they are the strangest things"
+     ],
+     "answer": 0,
+     "explain": "'Each marking a story that somebody never came back to finish.'",
+     "notes": {
+      "they are very old": "Age isn't the reason.",
+      "nobody wants them": "Being unwanted isn't the point.",
+      "they are the strangest things": "'Not the strangest ones but the ordinary bookmarks.'"
+     }
+    }
+   ]
+  },
+  {
+   "title": "Should Every School Teach Chess?",
+   "text": "Chess enthusiasts have long claimed that the game makes children cleverer, and several countries now include it in their primary school timetable. The evidence, however, is more mixed than its champions admit. Some studies have found that pupils who play chess improve in maths, but others suggest that these gains fade within a year or so, or that they appear only among children who already enjoyed the game. What seems clearer is that chess teaches patience and the ability to lose gracefully. Perhaps, then, the strongest case for chess in schools is not that it turns pupils into geniuses, but that it gives them a calm, shared challenge in an increasingly hurried world.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What does the writer imply about chess enthusiasts?",
+     "options": [
+      "they may overstate the benefits",
+      "they are always right",
+      "they dislike schools",
+      "most of them are scientists who study children"
+     ],
+     "answer": 0,
+     "explain": "'The evidence… is more mixed than its champions admit.'",
+     "notes": {
+      "they are always right": "The evidence doesn't fully support them.",
+      "they dislike schools": "Nothing suggests that.",
+      "most of them are scientists who study children": "Their background isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What do some studies suggest about maths gains?",
+     "options": [
+      "they may not last",
+      "they are huge for everyone",
+      "they appear immediately in all pupils",
+      "they never happen"
+     ],
+     "answer": 0,
+     "explain": "'These gains fade within a year or so.'",
+     "notes": {
+      "they are huge for everyone": "The evidence is 'mixed'.",
+      "they appear immediately in all pupils": "Possibly only for keen players.",
+      "they never happen": "Some studies did find improvement."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "According to the writer, what is more certain?",
+     "options": [
+      "chess builds patience",
+      "chess makes children geniuses",
+      "chess improves maths",
+      "chess is faster than other games"
+     ],
+     "answer": 0,
+     "explain": "'What seems clearer is that chess teaches patience and the ability to lose gracefully.'",
+     "notes": {
+      "chess makes children geniuses": "The writer rejects that claim.",
+      "chess improves maths": "That evidence is mixed.",
+      "chess is faster than other games": "Speed isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is the writer's overall position?",
+     "options": [
+      "in favour, for different reasons",
+      "strongly against chess",
+      "neutral, because the evidence is too mixed to decide",
+      "in favour because of maths"
+     ],
+     "answer": 0,
+     "explain": "'The strongest case… is not that it turns pupils into geniuses, but that it gives them a calm, shared challenge.'",
+     "notes": {
+      "strongly against chess": "They suggest a 'strongest case' for it.",
+      "neutral, because the evidence is too mixed to decide": "They reach a view at the end.",
+      "in favour because of maths": "Maths is the doubtful benefit."
+     }
+    }
+   ]
+  },
+  {
+   "title": "A Diary from the Space Station",
+   "text": "Day 12. I still haven't got used to sleeping upright in a sleeping bag strapped to the wall, though the crew assure me that by the end of the month I won't be able to sleep any other way. Eating is a performance in itself: crumbs are banned, because they drift into equipment, so bread has been replaced by tortillas. This morning we watched sixteen sunrises in a single day – it never stops being astonishing. If I'm honest, though, what I miss most isn't anything grand. It's rain. I would happily trade one of those sunrises for ten minutes standing in a proper downpour back home.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What do the crew predict about sleeping?",
+     "options": [
+      "the writer will get used to it",
+      "the writer will never adapt to sleeping on the wall",
+      "the bags will be moved",
+      "sleeping will get harder"
+     ],
+     "answer": 0,
+     "explain": "'By the end of the month I won't be able to sleep any other way.'",
+     "notes": {
+      "the writer will never adapt to sleeping on the wall": "They predict the opposite.",
+      "the bags will be moved": "Moving the bags isn't mentioned.",
+      "sleeping will get harder": "They think it will become natural."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why are tortillas eaten instead of bread?",
+     "options": [
+      "they don't leave bits floating around",
+      "they taste better in space",
+      "the crew dislike the taste of bread in space",
+      "bread goes stale too fast"
+     ],
+     "answer": 0,
+     "explain": "'Crumbs are banned, because they drift into equipment.'",
+     "notes": {
+      "they taste better in space": "Taste isn't mentioned.",
+      "the crew dislike the taste of bread in space": "Preference isn't the reason.",
+      "bread goes stale too fast": "Staleness isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How does the writer feel about the sunrises?",
+     "options": [
+      "still amazed",
+      "bored of them now",
+      "unable to see them",
+      "they happen too rarely"
+     ],
+     "answer": 0,
+     "explain": "'It never stops being astonishing.'",
+     "notes": {
+      "bored of them now": "'Never stops being astonishing.'",
+      "unable to see them": "They watched sixteen.",
+      "they happen too rarely": "Sixteen a day is very often."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does the ending reveal?",
+     "options": [
+      "the writer misses everyday things",
+      "the writer dislikes the station",
+      "it often rains inside the space station",
+      "the writer wants to go home now"
+     ],
+     "answer": 0,
+     "explain": "'What I miss most isn't anything grand. It's rain.'",
+     "notes": {
+      "the writer dislikes the station": "They still find it astonishing.",
+      "it often rains inside the space station": "Rain is what they miss, so it doesn't rain there.",
+      "the writer wants to go home now": "They'd 'trade one sunrise', not leave."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Hedgehog Highways",
+   "text": "Hedgehogs may travel up to two kilometres a night in search of food and mates, but in modern towns their journeys are increasingly blocked by solid fences and walls. Numbers in some countries have fallen dramatically, and while there are several causes, wildlife charities believe that lost routes are a major one. Their solution is refreshingly simple: cut a hole about the size of a CD in the bottom of your garden fence. Linked together, these gaps form so-called 'hedgehog highways'. One school in Bristol persuaded every house on its street to take part, and within a year night-time cameras had recorded hedgehogs in gardens where none had been seen for a decade.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What is a major problem for hedgehogs, according to charities?",
+     "options": [
+      "barriers between gardens",
+      "a lack of food in towns",
+      "busy roads at night",
+      "too many predators"
+     ],
+     "answer": 0,
+     "explain": "'Their journeys are increasingly blocked by solid fences and walls.'",
+     "notes": {
+      "a lack of food in towns": "They search for food, but the problem is access.",
+      "busy roads at night": "Roads aren't mentioned.",
+      "too many predators": "Predators aren't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does 'refreshingly simple' suggest about the solution?",
+     "options": [
+      "it's pleasantly easy",
+      "it's too simple to work",
+      "it's expensive",
+      "it needs expert builders"
+     ],
+     "answer": 0,
+     "explain": "A hole the size of a CD is quick and easy, and the writer welcomes this.",
+     "notes": {
+      "it's too simple to work": "The results show it works.",
+      "it's expensive": "Cost isn't mentioned, and it's just a hole.",
+      "it needs expert builders": "Anyone can cut it."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How big should the hole be?",
+     "options": [
+      "roughly as wide as a CD",
+      "two kilometres wide",
+      "as big as a door",
+      "the size of a hedgehog's nose"
+     ],
+     "answer": 0,
+     "explain": "'A hole about the size of a CD.'",
+     "notes": {
+      "two kilometres wide": "Two kilometres is their nightly distance.",
+      "as big as a door": "That's far too big.",
+      "the size of a hedgehog's nose": "That's far too small."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What did the Bristol cameras show?",
+     "options": [
+      "hedgehogs had returned",
+      "hedgehogs were stuck in fences",
+      "foxes were using the holes",
+      "numbers were still falling"
+     ],
+     "answer": 0,
+     "explain": "'Recorded hedgehogs in gardens where none had been seen for a decade.'",
+     "notes": {
+      "hedgehogs were stuck in fences": "Nothing says they were stuck.",
+      "foxes were using the holes": "Foxes aren't mentioned.",
+      "numbers were still falling": "It shows the opposite."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Science Fair Judge",
+   "text": "I had always assumed that judging a science fair would be easy – you simply pick the project with the most impressive results. My first year as a student judge cured me of that idea. The project that lingered in my mind wasn't the glossy one about rocket fuel, whose author couldn't explain half of what was on his poster. It was a modest experiment on whether snails prefer cucumber or lettuce. The girl behind it had tested her hypothesis three times, admitted that one result contradicted the others and suggested why. Her conclusion was hardly earth-shattering, but her honesty about the messy bits was exactly what science is meant to be.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What did the writer believe before judging?",
+     "options": [
+      "the best results would win",
+      "judging would be very hard",
+      "honesty mattered most",
+      "every project was equally good"
+     ],
+     "answer": 0,
+     "explain": "'You simply pick the project with the most impressive results.'",
+     "notes": {
+      "judging would be very hard": "They assumed it would be easy.",
+      "honesty mattered most": "That's what they learned later.",
+      "every project was equally good": "They expected a clear winner."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What was wrong with the rocket fuel project?",
+     "options": [
+      "its creator didn't understand it fully",
+      "its poster was dull and badly organised",
+      "it was about snails",
+      "its results were dishonest"
+     ],
+     "answer": 0,
+     "explain": "'Whose author couldn't explain half of what was on his poster.'",
+     "notes": {
+      "its poster was dull and badly organised": "It was 'glossy'.",
+      "it was about snails": "That was the other project.",
+      "its results were dishonest": "Dishonesty isn't stated."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How did the girl deal with the result that didn't fit?",
+     "options": [
+      "she reported and explained it",
+      "she removed it",
+      "she ignored it",
+      "she repeated the test until it fitted"
+     ],
+     "answer": 0,
+     "explain": "'Admitted that one result contradicted the others and suggested why.'",
+     "notes": {
+      "she removed it": "She included it.",
+      "she ignored it": "She suggested why it happened.",
+      "she repeated the test until it fitted": "She tested three times, then reported honestly."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is the writer's attitude to the snail project?",
+     "options": [
+      "it was modest but admirable",
+      "it was the most exciting",
+      "it was too simple to count",
+      "it should have been about rockets"
+     ],
+     "answer": 0,
+     "explain": "'Hardly earth-shattering, but her honesty… was exactly what science is meant to be.'",
+     "notes": {
+      "it was the most exciting": "'Hardly earth-shattering.'",
+      "it was too simple to count": "They praise it.",
+      "it should have been about rockets": "The rocket project was the weaker one."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does 'cured me of that idea' mean?",
+     "options": [
+      "showed me I was wrong",
+      "made me feel ill",
+      "made me stop judging",
+      "confirmed my belief"
+     ],
+     "answer": 0,
+     "explain": "Being cured of an idea = no longer believing it.",
+     "notes": {
+      "made me feel ill": "It's figurative, not about illness.",
+      "made me stop judging": "Nothing says they stopped.",
+      "confirmed my belief": "It's the opposite."
+     }
+    }
+   ]
   }
  ]
 }

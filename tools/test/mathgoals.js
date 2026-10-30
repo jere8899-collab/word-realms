@@ -1,6 +1,6 @@
 // 🏆 Number Kingdom goals: maths Sticker Book pages (paid once, worked out from the save), 🛡️ Grade Guardians
 // (unlock, 10-question band fight with grade-accurate generators, no timer, Model Magic, first win +15⭐ + sticker),
-// the next-goal card in the hub, old-save migration, saving in wordRealms.save.v1, phone + desktop screenshots.
+// the next-goal card in the hub, painted guardian portraits (cards, fight, stickers) load, old-save migration, saving in wordRealms.save.v1, phone + desktop screenshots.
 // Run: node tools/test/mathgoals.js  (game served on port 18642)
 const path = require('path');
 const { chromium } = require('playwright-core');
@@ -20,6 +20,10 @@ const SAVE = () => ({ v: 1, name: 'Number Nia', avatar: 'avatar_girl', startLeve
   math: { grade: 1, placed: 1, xp: 300, correct: 40, answered: 45, lessons: 5, models: 6, modelSolved: 5,
     topics: { 'g1.count': { best: 1, plays: 2, last: 1 }, 'g1.add20': { best: 0.75, plays: 1, last: 1 }, 'g2.add': { best: 0.625, plays: 1, last: 1 }, 'g1.sub20': { best: 0.5, plays: 1, last: 1 } },
     facts: facts(12), dojo: { tables: [2, 3], op: 'x', best: 9, sprints: 1, practice: 2, history: [] } } });
+// every <img> under sel has finished loading a real picture (not broken), returns [{ src, w }]
+const imgsLoaded = (page, sel) => page.evaluate(async sel => { const ims = [...document.querySelectorAll(sel)];
+  await Promise.all(ims.map(im => im.complete ? 0 : new Promise(r => { im.onload = im.onerror = r; setTimeout(r, 4000); })));
+  await new Promise(r => setTimeout(r, 50)); return ims.map(im => ({ src: im.currentSrc || im.src, w: im.naturalWidth, ok: im.complete && im.naturalWidth > 0 })); }, sel);
 async function answer(page, right) {
   const q = await page.evaluate(() => { const q = WR.Math._dbg(); return q && { kind: q.kind, a: q.a, options: q.options, grade: q.grade, topic: q.topic }; });
   if (q.kind === 'mcq') { const idx = right ? q.options.indexOf(q.a) : await page.evaluate(a => [...document.querySelectorAll('.mopts .opt')].findIndex((b, k) => !b.disabled && WR.Math._dbg().options[k] !== a), q.a); if (idx >= 0) await page.click(`.mopts .opt[data-k="${idx}"]`); }
@@ -77,6 +81,15 @@ async function answer(page, right) {
     ok(/Pass 1 more Grade 1–2 topic \(60%\+\) to wake Bramble/.test(hub.goal), `${tag} hub: next maths goal (${hub.goal.replace(/\n/g, ' ')})`);
     ok(hub.cards === 6 && hub.locked === 6 && hub.here && hub.here.gb === 'g12', `${tag} hub: 6 Grade Guardian cards, all asleep, the Grade 1–2 one marked as yours`);
     ok(hub.ov <= 0, `${tag} hub: no sideways overflow`);
+    // 🎨 painted Grade Guardian portraits (assets/ui/mboss_*.png → assets/web/mboss_*.webp), not the Sumi fallback
+    const art = await page.evaluate(() => WR.MathGoals.GUARDIANS.map(gd => ({ id: gd.id, art: gd.art, inManifest: !!WR.asset(gd.art), src: WR.src(gd.art) })));
+    for (const a of art) {
+      ok(a.inManifest && a.src === `assets/web/${a.art}.webp`, `${tag} guardian ${a.id}: ${a.art} is in the manifest and served as WebP (${a.src})`);
+      const ld = await page.evaluate(src => new Promise(r => { const im = new Image(); im.onload = () => r(im.naturalWidth); im.onerror = () => r(0); im.src = src; }), a.src);
+      ok(ld >= 256, `${tag} guardian ${a.id}: ${a.src} loads (${ld}px wide)`);
+    }
+    const cardImgs = await imgsLoaded(page, '.guards .gcard img.rb-art');
+    ok(cardImgs.length === 6 && cardImgs.every((im, k) => im.ok && im.src.includes(art[k].art + '.webp')) && !(await page.$('.guards .gfb, .guards .sumi')), `${tag} hub: all 6 guardian cards show their painted portrait, no Sumi fallback ${JSON.stringify(cardImgs.map(i => i.w))}`);
     const shot = vp.phone ? 'phone' : 'desktop';
     await page.evaluate(() => document.querySelector('#mathGoal').scrollIntoView({ block: 'start' })); await page.waitForTimeout(700);
     await page.screenshot({ path: OUT + `mathgoals_${shot}_hub_goal.png` });
@@ -97,6 +110,8 @@ async function answer(page, right) {
     await page.click('#mathGoalGo'); await page.waitForSelector('#bossFace');
     const f = await page.evaluate(() => ({ n: document.querySelector('.qnum').textContent, hud: document.querySelector('#gstrip').innerText + document.querySelector('.hud').innerText, timer: !!document.querySelector('.timer, #timerBar'), img: !!document.querySelector('#bossFace img'), nav: getComputedStyle(document.querySelector('#navbar')).display }));
     ok(/\/10$/.test(f.n) && /Bramble/.test(f.hud) && /0\/7/.test(f.hud) && !f.timer && f.img, `${tag} fight: 10 questions, guardian portrait + sparkle bar, no timer ${JSON.stringify(f)}`);
+    const fImg = await imgsLoaded(page, '#bossFace img');
+    ok(fImg.length === 1 && fImg[0].ok && /mboss_bramble\.webp/.test(fImg[0].src) && !(await page.$('#bossFace .sumi')), `${tag} fight: Bramble's painted portrait loads in the sparkle bar (${fImg.map(i => i.src.split('/').pop() + ' ' + i.w + 'px')})`);
     await page.waitForTimeout(500); await page.screenshot({ path: OUT + `mathgoals_${shot}_fight.png` });
     let sawModel = false, grades = [];
     for (let i = 0; i < 10; i++) {
@@ -124,8 +139,12 @@ async function answer(page, right) {
     ok(sb.pages === 9 && sb.math === 5 && sb.guard === 1 && sb.gn === 6, `${tag} Sticker Book: Number Kingdom 5/8 and Grade Guardians 1/6 pages ${JSON.stringify(sb)}`);
     ok(sb.tot === 6 * 8 + 8 + 6 + 6 && new RegExp(`${sb.cnt}/${sb.tot}`).test(sb.t), `${tag} Sticker Book total counts the maths pages (${sb.t})`);
     ok(sb.ov <= 0, `${tag} sticker book: no sideways overflow`);
+    const stk = await imgsLoaded(page, '#sp_guard .stk.has .sart');
+    ok(stk.length === 1 && stk[0].ok && /mboss_bramble\.webp/.test(stk[0].src) && await page.$$eval('#sp_guard .stk.no .sart', e => e.length) === 0, `${tag} stickers: the earned guardian sticker shows Bramble's portrait, unearned ones stay "?" (${stk.map(i => i.w + 'px')})`);
     await page.evaluate(() => document.querySelector('#sp_math').scrollIntoView({ block: 'start' })); await page.waitForTimeout(700);
     await page.screenshot({ path: OUT + `mathgoals_${shot}_stickers.png` });
+    await page.evaluate(() => document.querySelector('#sp_guard').scrollIntoView({ block: 'start' })); await page.waitForTimeout(700);
+    await page.screenshot({ path: OUT + `mathgoals_${shot}_stickers_guard.png` });
     // rematch, lost: no second +15
     await page.evaluate(() => WR.go('math')); await page.waitForSelector('.gcard[data-gb="g12"] .btn');
     ok(/Rematch/.test(await page.textContent('.gcard[data-gb="g12"] .btn')), `${tag} beaten guardian offers a rematch`);

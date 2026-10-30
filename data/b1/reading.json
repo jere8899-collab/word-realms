@@ -1496,6 +1496,774 @@
      }
     }
    ]
+  },
+  {
+   "title": "Blog: How I Taught My Puppy to Fetch",
+   "text": "When we adopted Waffles from the animal shelter, he was scared of almost everything, even his own toys. My aunt, who trains dogs, told me to be patient and to keep lessons short, no more than ten minutes a day. At first, Waffles just watched the ball roll away. After two weeks, he started chasing it, but he wouldn't bring it back. The trick, it turned out, was to swap: every time he dropped the ball, he got a tiny piece of cheese. Now he fetches so much that I'm the one who gets tired first!",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How did Waffles behave when he first arrived?",
+     "options": [
+      "he was nervous",
+      "he was very playful",
+      "he chewed his toys",
+      "he kept running away"
+     ],
+     "answer": 0,
+     "explain": "'He was scared of almost everything, even his own toys.'",
+     "notes": {
+      "he was very playful": "He was scared, not playful.",
+      "he chewed his toys": "Chewing isn't in the blog.",
+      "he kept running away": "Running away isn't in the blog."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What advice did the aunt give?",
+     "options": [
+      "train him a little each day",
+      "train him for an hour a day",
+      "buy him new toys",
+      "use a bigger ball"
+     ],
+     "answer": 0,
+     "explain": "'Keep lessons short, no more than ten minutes a day.'",
+     "notes": {
+      "train him for an hour a day": "Ten minutes at most, not an hour.",
+      "buy him new toys": "New toys weren't her advice.",
+      "use a bigger ball": "Ball size isn't in the blog."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What happened after two weeks?",
+     "options": [
+      "he chased the ball but kept it",
+      "he brought the ball back",
+      "he still only watched the ball",
+      "he lost the ball in the garden"
+     ],
+     "answer": 0,
+     "explain": "'He started chasing it, but he wouldn't bring it back.'",
+     "notes": {
+      "he brought the ball back": "He wouldn't bring it back yet.",
+      "he still only watched the ball": "Watching was at first, before two weeks.",
+      "he lost the ball in the garden": "Losing the ball isn't in the blog."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What finally worked?",
+     "options": [
+      "a reward for letting go",
+      "a louder voice",
+      "throwing the ball further away",
+      "a ball that smells of cheese"
+     ],
+     "answer": 0,
+     "explain": "'Every time he dropped the ball, he got a tiny piece of cheese.'",
+     "notes": {
+      "a louder voice": "Shouting isn't in the blog.",
+      "throwing the ball further away": "Distance isn't in the blog.",
+      "a ball that smells of cheese": "The cheese was a treat, not on the ball."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does the last sentence tell us?",
+     "options": [
+      "the writer tires before Waffles",
+      "Waffles gets tired quickly",
+      "the writer has stopped playing fetch",
+      "Waffles doesn't like fetch any more"
+     ],
+     "answer": 0,
+     "explain": "'Now he fetches so much that I'm the one who gets tired first!'",
+     "notes": {
+      "Waffles gets tired quickly": "The writer gets tired first, not Waffles.",
+      "the writer has stopped playing fetch": "They still play; he fetches a lot.",
+      "Waffles doesn't like fetch any more": "He fetches so much, so he likes it."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Report: Our Visit to Blue Bay Aquarium",
+   "text": "On Tuesday, Year 6 visited Blue Bay Aquarium. The highlight for most of us was the tunnel, where sharks and rays swam right over our heads. A guide explained that the aquarium's sea turtles had all been rescued after getting caught in fishing nets; they will be returned to the ocean once they are strong enough. Later, we were allowed to touch a starfish, although we had to wash our hands first. The only disappointment was the penguin feeding, which had been cancelled because one penguin was unwell.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What did most students enjoy most?",
+     "options": [
+      "walking under the fish",
+      "touching a starfish",
+      "feeding the penguins",
+      "listening to the guide's talk"
+     ],
+     "answer": 0,
+     "explain": "'The highlight for most of us was the tunnel, where sharks and rays swam right over our heads.'",
+     "notes": {
+      "touching a starfish": "They touched a starfish, but the tunnel was the highlight.",
+      "feeding the penguins": "The penguin feeding was cancelled.",
+      "listening to the guide's talk": "The guide explained things, but wasn't the highlight."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why are the sea turtles at the aquarium?",
+     "options": [
+      "they were saved from danger",
+      "they were born there",
+      "fishermen sold them",
+      "they are too old to swim in the sea"
+     ],
+     "answer": 0,
+     "explain": "'Had all been rescued after getting caught in fishing nets.'",
+     "notes": {
+      "they were born there": "They came from the sea.",
+      "fishermen sold them": "They were rescued, not sold.",
+      "they are too old to swim in the sea": "They'll go back when they're strong."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What will happen to the turtles?",
+     "options": [
+      "they'll go free when they're well",
+      "they'll stay forever",
+      "they'll move to a zoo",
+      "they'll be caught in fishing nets again"
+     ],
+     "answer": 0,
+     "explain": "'They will be returned to the ocean once they are strong enough.'",
+     "notes": {
+      "they'll stay forever": "They'll be returned to the ocean.",
+      "they'll move to a zoo": "A zoo isn't in the report.",
+      "they'll be caught in fishing nets again": "Nets are why they were rescued."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What did students have to do before touching the starfish?",
+     "options": [
+      "clean their hands",
+      "put on gloves",
+      "ask the guide's permission",
+      "pay extra"
+     ],
+     "answer": 0,
+     "explain": "'We had to wash our hands first.'",
+     "notes": {
+      "put on gloves": "Gloves aren't in the report.",
+      "ask the guide's permission": "Asking isn't the rule given.",
+      "pay extra": "Money isn't in the report."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why was the penguin feeding cancelled?",
+     "options": [
+      "a penguin was sick",
+      "it was too late in the day",
+      "the guide was ill",
+      "the penguins weren't hungry"
+     ],
+     "answer": 0,
+     "explain": "'Cancelled because one penguin was unwell.'",
+     "notes": {
+      "it was too late in the day": "Time isn't the reason.",
+      "the guide was ill": "A penguin was ill, not the guide.",
+      "the penguins weren't hungry": "Hunger isn't the reason."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Girl Who Talked to Clouds",
+   "text": "In the village of Thistledown, it hadn't rained for three months, and the crops were dying. Everyone had tried something: the miller had danced, the baker had sung, and the queen had even promised a white pony to anyone who could bring rain. A quiet girl called Wren, who spent hours watching the sky, climbed the tallest hill and simply asked the clouds what was wrong. 'Nobody ever says thank you,' they grumbled. So the next morning, the whole village wrote thank-you notes and tied them to kites. By lunchtime, it was pouring.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What was the problem in Thistledown?",
+     "options": [
+      "a long time without rain",
+      "too much rain",
+      "the miller was ill",
+      "the clouds were too low"
+     ],
+     "answer": 0,
+     "explain": "'It hadn't rained for three months, and the crops were dying.'",
+     "notes": {
+      "too much rain": "The problem was no rain.",
+      "the miller was ill": "The miller danced; he wasn't ill.",
+      "the clouds were too low": "Low clouds aren't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What had the queen offered?",
+     "options": [
+      "a pony",
+      "a bag of gold",
+      "a kite",
+      "a thank-you note"
+     ],
+     "answer": 0,
+     "explain": "'The queen had even promised a white pony.'",
+     "notes": {
+      "a bag of gold": "Gold isn't in the story.",
+      "a kite": "The kites came later, from the village.",
+      "a thank-you note": "The notes were from the villagers."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What was special about Wren?",
+     "options": [
+      "she often watched the sky",
+      "she was the loudest girl",
+      "she could dance well",
+      "she lived on a hill"
+     ],
+     "answer": 0,
+     "explain": "'A quiet girl… who spent hours watching the sky.'",
+     "notes": {
+      "she was the loudest girl": "She was quiet.",
+      "she could dance well": "The miller danced.",
+      "she lived on a hill": "She climbed the hill; she didn't live there."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why were the clouds unhappy?",
+     "options": [
+      "people never thanked them",
+      "people sang badly",
+      "the kites hit them",
+      "nobody looked at them"
+     ],
+     "answer": 0,
+     "explain": "'Nobody ever says thank you.'",
+     "notes": {
+      "people sang badly": "The baker's singing isn't the reason.",
+      "the kites hit them": "The kites came afterwards.",
+      "nobody looked at them": "Wren looked at them a lot."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What happened in the end?",
+     "options": [
+      "it rained heavily",
+      "the clouds flew away",
+      "the kites got lost",
+      "it rained the next week"
+     ],
+     "answer": 0,
+     "explain": "'By lunchtime, it was pouring.'",
+     "notes": {
+      "the clouds flew away": "The clouds stayed and rained.",
+      "the kites got lost": "Lost kites aren't in the story.",
+      "it rained the next week": "It rained by lunchtime the same day."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Interview: The Young Chess Champion",
+   "text": "Twelve-year-old Ravi Kumar has just won the National Junior Chess Cup. We asked him a few questions. How did you start? 'My grandad taught me when I was six. I lost every game for a year!' How much do you practise? 'About an hour a day, but never on Sundays, because that's football day.' What's the hardest part? 'Staying calm. If I get nervous, I make silly mistakes.' What's next? 'I'd like to play in the world championship one day, but first I need to pass my maths test!'",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Who first taught Ravi chess?",
+     "options": [
+      "his grandfather",
+      "his dad",
+      "a teacher",
+      "a coach"
+     ],
+     "answer": 0,
+     "explain": "'My grandad taught me when I was six.'",
+     "notes": {
+      "his dad": "His dad isn't in the interview.",
+      "a teacher": "A teacher isn't mentioned.",
+      "a coach": "A coach isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What was Ravi's first year of chess like?",
+     "options": [
+      "he didn't win at all",
+      "he won every game",
+      "he played only on Sundays",
+      "he got bored"
+     ],
+     "answer": 0,
+     "explain": "'I lost every game for a year!'",
+     "notes": {
+      "he won every game": "He lost every game.",
+      "he played only on Sundays": "Sundays are football day.",
+      "he got bored": "Boredom isn't in the interview."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why doesn't Ravi practise on Sundays?",
+     "options": [
+      "he plays another sport",
+      "he visits his grandad",
+      "he does maths",
+      "he needs a rest"
+     ],
+     "answer": 0,
+     "explain": "'Never on Sundays, because that's football day.'",
+     "notes": {
+      "he visits his grandad": "Grandad isn't the reason.",
+      "he does maths": "Maths is a test, not the Sunday reason.",
+      "he needs a rest": "Resting isn't the reason."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does Ravi find most difficult?",
+     "options": [
+      "not getting nervous",
+      "learning the rules",
+      "practising every day",
+      "playing football"
+     ],
+     "answer": 0,
+     "explain": "'Staying calm. If I get nervous, I make silly mistakes.'",
+     "notes": {
+      "learning the rules": "Rules aren't the hard part.",
+      "practising every day": "Practice isn't the hard part.",
+      "playing football": "Football is his Sunday fun."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does Ravi need to do first?",
+     "options": [
+      "do well in a school test",
+      "win the world championship",
+      "practise for an hour",
+      "play more football"
+     ],
+     "answer": 0,
+     "explain": "'But first I need to pass my maths test!'",
+     "notes": {
+      "win the world championship": "That's 'one day', after the test.",
+      "practise for an hour": "Practice is daily, but not the 'first' thing.",
+      "play more football": "Football isn't next."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Ask the Space Expert",
+   "text": "Dear Space Expert, my brother says astronauts float because there's no gravity in space. Is he right? Amir, age 10. Dear Amir, it's a great question, but your brother isn't quite right. Gravity is still there in space; in fact, it's what keeps the Moon going round the Earth. Astronauts on the space station float because they are falling around the Earth all the time, together with the station. Since everything falls at the same speed, they feel weightless. It's a bit like the moment at the top of a roller coaster, but it lasts for months!",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What does Amir's brother believe?",
+     "options": [
+      "space has no gravity",
+      "astronauts can fly",
+      "the Moon has no gravity",
+      "roller coasters work in space"
+     ],
+     "answer": 0,
+     "explain": "'My brother says astronauts float because there's no gravity in space.'",
+     "notes": {
+      "astronauts can fly": "Floating isn't flying, and that isn't his reason.",
+      "the Moon has no gravity": "The Moon isn't his idea.",
+      "roller coasters work in space": "Roller coasters are the expert's example."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does the expert think of the brother's idea?",
+     "options": [
+      "it isn't correct",
+      "it's completely right",
+      "it's only true on the Moon",
+      "nobody knows"
+     ],
+     "answer": 0,
+     "explain": "'Your brother isn't quite right. Gravity is still there in space.'",
+     "notes": {
+      "it's completely right": "The expert says he isn't right.",
+      "it's only true on the Moon": "Gravity keeps the Moon going round; it's not about the Moon.",
+      "nobody knows": "The expert explains the answer."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why do astronauts feel weightless?",
+     "options": [
+      "they and the station fall together",
+      "there is no air",
+      "they wear special suits",
+      "the station is very light"
+     ],
+     "answer": 0,
+     "explain": "'They are falling around the Earth all the time, together with the station.'",
+     "notes": {
+      "there is no air": "Air isn't in the answer.",
+      "they wear special suits": "Suits aren't in the answer.",
+      "the station is very light": "The station's weight isn't in the answer."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How is it different from a roller coaster?",
+     "options": [
+      "it goes on much longer",
+      "it's faster",
+      "it's scarier",
+      "it only happens at the top"
+     ],
+     "answer": 0,
+     "explain": "'Like the moment at the top of a roller coaster, but it lasts for months!'",
+     "notes": {
+      "it's faster": "Speed isn't compared.",
+      "it's scarier": "Fear isn't compared.",
+      "it only happens at the top": "At the top is the roller coaster, for a moment."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Robot Football Tournament",
+   "text": "Last Saturday, twelve schools brought robots they had built themselves to the Robot Football Tournament. Each robot had to be smaller than a shoebox and was controlled by a tablet. Our robot, Kicky, was knocked out in the first round because its battery died after only three minutes. We were disappointed, but the judges gave us the 'Best Design' award because Kicky could change direction faster than any other robot. Next year we're definitely bringing a spare battery!",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What was one rule for the robots?",
+     "options": [
+      "they had to be quite small",
+      "they had to be bigger than a shoebox",
+      "they had to be bought in a shop",
+      "they had to obey voices"
+     ],
+     "answer": 0,
+     "explain": "'Each robot had to be smaller than a shoebox.'",
+     "notes": {
+      "they had to be bigger than a shoebox": "Smaller, not bigger.",
+      "they had to be bought in a shop": "Schools built them themselves.",
+      "they had to obey voices": "They were controlled by a tablet."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why did Kicky stop playing?",
+     "options": [
+      "it ran out of power",
+      "it lost a wheel",
+      "it was too big",
+      "the tablet broke"
+     ],
+     "answer": 0,
+     "explain": "'Its battery died after only three minutes.'",
+     "notes": {
+      "it lost a wheel": "Wheels aren't in the report.",
+      "it was too big": "Size wasn't the problem.",
+      "the tablet broke": "The tablet isn't the reason."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why did the team win an award?",
+     "options": [
+      "Kicky could turn very quickly",
+      "Kicky scored the most goals",
+      "they won the first round",
+      "their battery lasted longest"
+     ],
+     "answer": 0,
+     "explain": "'Kicky could change direction faster than any other robot.'",
+     "notes": {
+      "Kicky scored the most goals": "Goals aren't mentioned.",
+      "they won the first round": "Kicky was knocked out in the first round.",
+      "their battery lasted longest": "The battery died after three minutes."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What will they do differently next year?",
+     "options": [
+      "take an extra battery",
+      "build a smaller robot",
+      "use a different tablet",
+      "not take part"
+     ],
+     "answer": 0,
+     "explain": "'Next year we're definitely bringing a spare battery!'",
+     "notes": {
+      "build a smaller robot": "Size isn't the plan.",
+      "use a different tablet": "The tablet isn't mentioned.",
+      "not take part": "They're coming back next year."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Camping in the Storm",
+   "text": "Our family had planned to camp by the lake for three nights, but on the second evening a storm arrived. The wind was so strong that it bent one of our tent poles. While Dad was trying to fix it, my little sister noticed that the farmer next to the campsite had left his barn door open. He kindly let us sleep in the barn, which smelled of hay and was surprisingly cosy. In the morning, we woke up to find three curious goats staring at us. We went home a day early, but it's the trip we talk about most.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How many nights did the family spend away?",
+     "options": [
+      "two",
+      "three",
+      "one",
+      "four"
+     ],
+     "answer": 0,
+     "explain": "They planned three nights but 'went home a day early', so two.",
+     "notes": {
+      "three": "Three was the plan, not what happened.",
+      "one": "The storm came on the second evening, so they stayed two.",
+      "four": "Four isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What did the storm do?",
+     "options": [
+      "damaged the tent",
+      "flooded the lake",
+      "blew the tent away",
+      "knocked over the barn"
+     ],
+     "answer": 0,
+     "explain": "'It bent one of our tent poles.'",
+     "notes": {
+      "flooded the lake": "Flooding isn't in the story.",
+      "blew the tent away": "The tent was bent, not blown away.",
+      "knocked over the barn": "They slept in the barn."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Who noticed the open barn?",
+     "options": [
+      "the writer's sister",
+      "Dad",
+      "the farmer",
+      "the writer"
+     ],
+     "answer": 0,
+     "explain": "'My little sister noticed that the farmer… had left his barn door open.'",
+     "notes": {
+      "Dad": "Dad was fixing the tent.",
+      "the farmer": "The farmer left it open.",
+      "the writer": "The writer's sister saw it."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What did the writer think of the barn?",
+     "options": [
+      "it was nicer than expected",
+      "it was too smelly to sleep in",
+      "it was freezing",
+      "it was full of goats all night"
+     ],
+     "answer": 0,
+     "explain": "'It smelled of hay and was surprisingly cosy.'",
+     "notes": {
+      "it was too smelly to sleep in": "It smelled of hay, but it was cosy.",
+      "it was freezing": "Cosy isn't freezing.",
+      "it was full of goats all night": "The goats were there in the morning."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How does the family feel about the trip now?",
+     "options": [
+      "they love remembering it",
+      "they want to forget it",
+      "they wish they had stayed longer",
+      "they're cross with the farmer"
+     ],
+     "answer": 0,
+     "explain": "'It's the trip we talk about most.'",
+     "notes": {
+      "they want to forget it": "They talk about it a lot.",
+      "they wish they had stayed longer": "They don't say this.",
+      "they're cross with the farmer": "The farmer was kind."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Why Do Leaves Change Colour?",
+   "text": "In autumn, many trees turn from green to bright red, orange and yellow. Leaves are green because they contain chlorophyll, which helps trees make food from sunlight. When the days get shorter and colder, trees stop making chlorophyll to save energy for winter. As the green disappears, other colours that were hidden in the leaf all summer can finally be seen. Some red colours, however, are actually made in autumn, especially when there are sunny days and cool nights.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What does chlorophyll do?",
+     "options": [
+      "helps trees use sunlight for food",
+      "turns leaves orange in autumn",
+      "keeps trees warm through the cold winter",
+      "makes the leaves fall"
+     ],
+     "answer": 0,
+     "explain": "'Chlorophyll, which helps trees make food from sunlight.'",
+     "notes": {
+      "turns leaves orange in autumn": "Orange shows when chlorophyll goes.",
+      "keeps trees warm through the cold winter": "Warmth isn't in the text.",
+      "makes the leaves fall": "Falling isn't in the text."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why do trees stop making chlorophyll?",
+     "options": [
+      "to keep energy for the cold months",
+      "because it's too sunny",
+      "because the leaves are red",
+      "to grow new leaves"
+     ],
+     "answer": 0,
+     "explain": "'Trees stop making chlorophyll to save energy for winter.'",
+     "notes": {
+      "because it's too sunny": "The days are shorter, not sunnier.",
+      "because the leaves are red": "Red comes after, not before.",
+      "to grow new leaves": "New leaves aren't in the text."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Where do yellow and orange come from?",
+     "options": [
+      "they were there all along",
+      "they're made in winter",
+      "they come from the soil",
+      "sunlight paints them"
+     ],
+     "answer": 0,
+     "explain": "'Other colours that were hidden in the leaf all summer can finally be seen.'",
+     "notes": {
+      "they're made in winter": "Winter isn't in this part.",
+      "they come from the soil": "Soil isn't in the text.",
+      "sunlight paints them": "Sunlight makes food, not colours."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "When are some red colours made?",
+     "options": [
+      "in autumn, after sunny days and chilly nights",
+      "after rainy days",
+      "in the middle of summer",
+      "on warm nights"
+     ],
+     "answer": 0,
+     "explain": "'Some red colours… are actually made in autumn, especially when there are sunny days and cool nights.'",
+     "notes": {
+      "after rainy days": "Sunny days, not rainy.",
+      "in the middle of summer": "Autumn, not summer.",
+      "on warm nights": "Cool nights, not warm."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Secret of the Old Clock Tower",
+   "text": "Nobody in Marlow had heard the old clock tower ring for fifty years. When Tom and his best friend Ada found a rusty key in the school garden, they guessed it might open the tower's door. They were right. Inside, they discovered that a family of owls had built a nest in the bell, which was why it couldn't ring. Instead of moving the owls, the town decided to build them a new home nearby. The bell was finally repaired last spring, and now it rings every hour, except at night, so the owls can hunt in peace.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How long had the clock been silent?",
+     "options": [
+      "half a century",
+      "fifteen years",
+      "since last spring",
+      "an hour"
+     ],
+     "answer": 0,
+     "explain": "'Nobody… had heard the old clock tower ring for fifty years.'",
+     "notes": {
+      "fifteen years": "Fifteen isn't fifty.",
+      "since last spring": "Last spring is when it was repaired.",
+      "an hour": "It rings every hour now."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Where did they find the key?",
+     "options": [
+      "at school",
+      "inside the tower",
+      "in an owl's nest",
+      "at Ada's house"
+     ],
+     "answer": 0,
+     "explain": "'Found a rusty key in the school garden.'",
+     "notes": {
+      "inside the tower": "The key opened the tower.",
+      "in an owl's nest": "The nest was in the bell.",
+      "at Ada's house": "Ada's house isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why couldn't the bell ring?",
+     "options": [
+      "birds were living in it",
+      "it was rusty",
+      "the key was lost",
+      "a storm had broken it"
+     ],
+     "answer": 0,
+     "explain": "'A family of owls had built a nest in the bell, which was why it couldn't ring.'",
+     "notes": {
+      "it was rusty": "The key was rusty, not the bell.",
+      "the key was lost": "They found the key.",
+      "a storm had broken it": "A storm isn't in the story."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What did the town do about the owls?",
+     "options": [
+      "gave them somewhere else to live",
+      "moved them far away",
+      "left them in the bell",
+      "chased them out"
+     ],
+     "answer": 0,
+     "explain": "'The town decided to build them a new home nearby.'",
+     "notes": {
+      "moved them far away": "Nearby, not far away.",
+      "left them in the bell": "The bell rings again, so they aren't in it.",
+      "chased them out": "'Instead of moving the owls' they built a home."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "When doesn't the bell ring?",
+     "options": [
+      "after dark",
+      "every hour",
+      "in spring",
+      "on Sundays"
+     ],
+     "answer": 0,
+     "explain": "'It rings every hour, except at night.'",
+     "notes": {
+      "every hour": "Every hour is when it does ring.",
+      "in spring": "Spring is when it was repaired.",
+      "on Sundays": "Sundays aren't in the story."
+     }
+    }
+   ]
   }
  ]
 }

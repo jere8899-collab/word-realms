@@ -1490,6 +1490,808 @@
      }
     }
    ]
+  },
+  {
+   "title": "The Clockwork Nightingale",
+   "text": "The emperor's new nightingale was, by every measurable standard, superior to the old one. It never tired, never sang off-key and could perform the same twelve melodies with flawless precision for as long as anyone cared to listen. The court was enchanted; the real bird, a drab little thing that sang only when it felt like it, was quietly forgotten and flew back to the forest. It was not until the mechanism wound down one winter's night, and the palace fell utterly silent, that anyone noticed what had been lost. The clockwork bird had never once surprised them. The real one, whose songs no one could predict, had done so every single evening.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How is the clockwork bird presented in the first two sentences?",
+     "options": [
+      "technically perfect",
+      "deeply moving to everyone who heard it",
+      "badly made",
+      "tired and off-key"
+     ],
+     "answer": 0,
+     "explain": "'By every measurable standard, superior… flawless precision.'",
+     "notes": {
+      "deeply moving to everyone who heard it": "The story suggests it moved no one in the end.",
+      "badly made": "It worked flawlessly.",
+      "tired and off-key": "'Never tired, never sang off-key.'"
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does 'by every measurable standard' imply?",
+     "options": [
+      "some qualities can't be measured",
+      "the bird was weighed carefully",
+      "the old bird was better in every way",
+      "the emperor loved measuring things"
+     ],
+     "answer": 0,
+     "explain": "The phrase hints that unmeasurable qualities, like surprise, are what matter.",
+     "notes": {
+      "the bird was weighed carefully": "It's not literal measuring.",
+      "the old bird was better in every way": "The new bird was better on measured points.",
+      "the emperor loved measuring things": "The emperor's hobbies aren't described."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What happened to the real bird?",
+     "options": [
+      "it was neglected and left",
+      "it was put in a cage",
+      "it learnt the twelve melodies",
+      "it was given to the forest by the emperor"
+     ],
+     "answer": 0,
+     "explain": "'Quietly forgotten and flew back to the forest.'",
+     "notes": {
+      "it was put in a cage": "No cage is mentioned.",
+      "it learnt the twelve melodies": "That's the clockwork bird's repertoire.",
+      "it was given to the forest by the emperor": "It flew back on its own."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What finally made the court realise their mistake?",
+     "options": [
+      "silence after the machine stopped",
+      "the real nightingale's sudden return to the palace",
+      "a visitor's complaint",
+      "a broken melody"
+     ],
+     "answer": 0,
+     "explain": "'Not until the mechanism wound down… and the palace fell utterly silent.'",
+     "notes": {
+      "the real nightingale's sudden return to the palace": "The bird doesn't come back in this passage.",
+      "a visitor's complaint": "No visitor appears.",
+      "a broken melody": "It stopped completely; it didn't play wrongly."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is the passage's central contrast?",
+     "options": [
+      "predictable perfection versus surprise",
+      "the cold of winter versus the warmth of summer",
+      "the forest versus the palace",
+      "loud songs versus quiet ones"
+     ],
+     "answer": 0,
+     "explain": "'Never once surprised them… had done so every single evening.'",
+     "notes": {
+      "the cold of winter versus the warmth of summer": "Winter is only the setting.",
+      "the forest versus the palace": "Places aren't the main contrast.",
+      "loud songs versus quiet ones": "Volume isn't discussed."
+     }
+    }
+   ]
+  },
+  {
+   "title": "On the Tyranny of the High Score",
+   "text": "Few inventions have been as quietly influential as the high-score table. Before it appeared, a game was simply played; afterwards, it was played against everyone who had ever played it before. The effect on players was, and remains, double-edged. On one hand, the scoreboard turned a solitary pastime into a kind of conversation across time, the initials of strangers taunting or inspiring you. On the other, it introduced a nagging sense that no performance, however enjoyable, was quite good enough. Anyone who has abandoned a perfectly pleasant game the moment it became clear that no record was within reach will recognise the problem. The score, designed to measure the fun, had begun to replace it.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What changed, according to the writer, when high scores appeared?",
+     "options": [
+      "players competed with past players",
+      "games became much shorter and simpler to finish",
+      "people stopped playing alone",
+      "games became easier to win"
+     ],
+     "answer": 0,
+     "explain": "'Played against everyone who had ever played it before.'",
+     "notes": {
+      "games became much shorter and simpler to finish": "Length isn't mentioned.",
+      "people stopped playing alone": "It felt like a 'conversation', but they still played alone.",
+      "games became easier to win": "Difficulty isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does 'double-edged' mean here?",
+     "options": [
+      "having good and bad effects",
+      "dangerously sharp on both sides",
+      "completely harmful",
+      "affecting two players"
+     ],
+     "answer": 0,
+     "explain": "The writer gives 'on one hand… on the other'.",
+     "notes": {
+      "dangerously sharp on both sides": "It's figurative, not about blades.",
+      "completely harmful": "There's a positive side too.",
+      "affecting two players": "It isn't about the number of players."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What positive effect is described?",
+     "options": [
+      "a sense of connection with other players",
+      "far more realistic and colourful graphics",
+      "more money for players",
+      "friendlier arcades"
+     ],
+     "answer": 0,
+     "explain": "'A kind of conversation across time, the initials of strangers taunting or inspiring you.'",
+     "notes": {
+      "far more realistic and colourful graphics": "Graphics aren't mentioned.",
+      "more money for players": "Money isn't mentioned.",
+      "friendlier arcades": "Arcades aren't described."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does the example of abandoning a game illustrate?",
+     "options": [
+      "chasing records can spoil enjoyment",
+      "the game itself was badly designed and dull",
+      "players get bored quickly",
+      "records are easy to beat"
+     ],
+     "answer": 0,
+     "explain": "'Abandoned a perfectly pleasant game the moment… no record was within reach.'",
+     "notes": {
+      "the game itself was badly designed and dull": "The game was 'perfectly pleasant'.",
+      "players get bored quickly": "They quit because of the score, not boredom.",
+      "records are easy to beat": "The record was out of reach."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is ironic about the final sentence?",
+     "options": [
+      "a measure of fun replaced the fun",
+      "high-score tables were never actually popular with players",
+      "games became too difficult",
+      "players forgot their initials"
+     ],
+     "answer": 0,
+     "explain": "'The score, designed to measure the fun, had begun to replace it.'",
+     "notes": {
+      "high-score tables were never actually popular with players": "It was 'quietly influential'.",
+      "games became too difficult": "Difficulty isn't the irony.",
+      "players forgot their initials": "Initials are just a detail."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Book That Wrote Back",
+   "text": "On the third evening of her apprenticeship, Ilse discovered that one book in the Starlight Library answered back. She had scribbled a question in its margin – a habit the Head Librarian deplored – and by morning a reply had appeared beneath it in faded violet ink. The reply was, admittedly, not an answer. It was another question, sharper than her own. Over the following weeks, a curious correspondence developed, the book never once conceding a point, Ilse growing steadily better at asking. When at last she confessed it to the Head Librarian, expecting a reprimand, he merely smiled. 'Ah,' he said. 'So it's chosen you. It did the same to me, a very long time ago.'",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How did the Head Librarian feel about writing in margins?",
+     "options": [
+      "he strongly disapproved",
+      "he encouraged it",
+      "he did not know about it",
+      "he found it amusing"
+     ],
+     "answer": 0,
+     "explain": "'A habit the Head Librarian deplored.'",
+     "notes": {
+      "he encouraged it": "'Deplored' means the opposite.",
+      "he did not know about it": "It describes his known attitude.",
+      "he found it amusing": "'Deplored' is strong disapproval."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What did the book's reply consist of?",
+     "options": [
+      "a harder question",
+      "a full answer",
+      "an apology",
+      "a warning to stop"
+     ],
+     "answer": 0,
+     "explain": "'It was another question, sharper than her own.'",
+     "notes": {
+      "a full answer": "'Not an answer.'",
+      "an apology": "No apology is mentioned.",
+      "a warning to stop": "It encouraged more writing."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does 'never once conceding a point' suggest about the book?",
+     "options": [
+      "it never admitted she was right",
+      "it agreed with everything Ilse wrote in the margins",
+      "it stopped replying",
+      "it lost interest quickly"
+     ],
+     "answer": 0,
+     "explain": "To concede = to admit someone is right.",
+     "notes": {
+      "it agreed with everything Ilse wrote in the margins": "It's the opposite.",
+      "it stopped replying": "The correspondence continued.",
+      "it lost interest quickly": "It went on 'over the following weeks'."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What did Ilse gain from the exchange?",
+     "options": [
+      "skill in asking questions",
+      "the answers to her questions",
+      "a reward from the library",
+      "a new job"
+     ],
+     "answer": 0,
+     "explain": "'Ilse growing steadily better at asking.'",
+     "notes": {
+      "the answers to her questions": "The book never answered.",
+      "a reward from the library": "No reward is mentioned.",
+      "a new job": "She stays an apprentice."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does the librarian's reaction imply?",
+     "options": [
+      "the book is a kind of teacher",
+      "Ilse would be punished for writing in the books",
+      "the book was dangerous",
+      "he had forgotten about it"
+     ],
+     "answer": 0,
+     "explain": "'So it's chosen you. It did the same to me.'",
+     "notes": {
+      "Ilse would be punished for writing in the books": "He 'merely smiled'.",
+      "the book was dangerous": "He seems pleased.",
+      "he had forgotten about it": "He remembers it clearly."
+     }
+    }
+   ]
+  },
+  {
+   "title": "What the Whales Are Singing",
+   "text": "Male humpback whales are celebrated for their songs – long, complex sequences that can be heard across many kilometres of ocean. What is less widely known is that these songs behave rather like pop music. Within a population, all males sing broadly the same song, yet that song is constantly evolving, and every so often an entirely new tune sweeps through. Researchers tracking whales in the South Pacific have watched songs spread eastward from Australia, island group by island group, over a period of two years. Quite why whales adopt a novel song so readily remains unclear; one intriguing possibility is that novelty itself is attractive, a preference that will be familiar to anyone who has watched a playground craze come and go.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What does the writer compare whale songs to?",
+     "options": [
+      "changing fashions in music",
+      "classical concerts performed by large orchestras",
+      "bird calls",
+      "human speech"
+     ],
+     "answer": 0,
+     "explain": "'These songs behave rather like pop music.'",
+     "notes": {
+      "classical concerts performed by large orchestras": "Pop, not classical.",
+      "bird calls": "Birds aren't mentioned.",
+      "human speech": "Speech isn't the comparison."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is true of the song within one group?",
+     "options": [
+      "all males share a song that keeps changing",
+      "each male sings his own completely different tune all year",
+      "the song never changes",
+      "only one male sings"
+     ],
+     "answer": 0,
+     "explain": "'All males sing broadly the same song, yet that song is constantly evolving.'",
+     "notes": {
+      "each male sings his own completely different tune all year": "They sing 'broadly the same song'.",
+      "the song never changes": "It is 'constantly evolving'.",
+      "only one male sings": "All males sing."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How did new songs travel in the South Pacific?",
+     "options": [
+      "eastward, step by step",
+      "westward, very fast",
+      "all at once",
+      "from island to Australia"
+     ],
+     "answer": 0,
+     "explain": "'Spread eastward from Australia, island group by island group.'",
+     "notes": {
+      "westward, very fast": "East, over two years.",
+      "all at once": "Group by group, not at once.",
+      "from island to Australia": "It spread from Australia."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How certain are scientists about why songs are adopted?",
+     "options": [
+      "they have a theory but no proof",
+      "they know exactly why and have proved it in experiments",
+      "they have no ideas at all",
+      "they think it's random"
+     ],
+     "answer": 0,
+     "explain": "'Remains unclear; one intriguing possibility is…'",
+     "notes": {
+      "they know exactly why and have proved it in experiments": "It 'remains unclear'.",
+      "they have no ideas at all": "They have 'one intriguing possibility'.",
+      "they think it's random": "Randomness isn't suggested."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why does the writer mention a playground craze?",
+     "options": [
+      "to make the theory relatable",
+      "to criticise children",
+      "to prove the theory",
+      "to describe whale behaviour exactly"
+     ],
+     "answer": 0,
+     "explain": "It's an everyday example of novelty being attractive.",
+     "notes": {
+      "to criticise children": "It isn't critical.",
+      "to prove the theory": "An analogy doesn't prove anything.",
+      "to describe whale behaviour exactly": "It's a comparison, not a description."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Gracious Loser",
+   "text": "At the junior chess championship, the final game was decided not by a brilliant sacrifice but by a single careless pawn move in the thirtieth minute. Leila, who had been favourite to win, saw her mistake the instant she let go of the piece. What happened next was, to my mind, more impressive than any checkmate. She did not sulk, nor did she offer the limp, unwilling handshake that losing players so often manage. Instead, she congratulated her opponent warmly and stayed behind to analyse the game with him, pointing out a clever idea of his that even the commentators had missed. Had she won, she would have been a champion; losing as she did, she was something rarer.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How was the final decided?",
+     "options": [
+      "by one slip",
+      "by a brilliant sacrifice",
+      "by running out of time",
+      "by a draw"
+     ],
+     "answer": 0,
+     "explain": "'Not by a brilliant sacrifice but by a single careless pawn move.'",
+     "notes": {
+      "by a brilliant sacrifice": "That's explicitly ruled out.",
+      "by running out of time": "Time isn't mentioned.",
+      "by a draw": "Someone won."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "When did Leila realise her mistake?",
+     "options": [
+      "immediately",
+      "after the game",
+      "when the commentators said so",
+      "in the thirtieth move"
+     ],
+     "answer": 0,
+     "explain": "'The instant she let go of the piece.'",
+     "notes": {
+      "after the game": "She saw it at once.",
+      "when the commentators said so": "She noticed it herself.",
+      "in the thirtieth move": "It was the thirtieth minute, not move."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does the writer imply about most losing players?",
+     "options": [
+      "they shake hands grudgingly",
+      "they refuse to play again",
+      "they analyse games afterwards",
+      "they congratulate warmly"
+     ],
+     "answer": 0,
+     "explain": "'The limp, unwilling handshake that losing players so often manage.'",
+     "notes": {
+      "they refuse to play again": "Not playing again isn't mentioned.",
+      "they analyse games afterwards": "That's what made Leila unusual.",
+      "they congratulate warmly": "That's Leila, not most players."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What did Leila notice in the analysis?",
+     "options": [
+      "an idea the experts overlooked",
+      "her own winning move",
+      "a rule her opponent broke",
+      "a mistake by the commentators' board"
+     ],
+     "answer": 0,
+     "explain": "'A clever idea of his that even the commentators had missed.'",
+     "notes": {
+      "her own winning move": "She praised his idea.",
+      "a rule her opponent broke": "No rule was broken.",
+      "a mistake by the commentators' board": "The board isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does the final sentence suggest?",
+     "options": [
+      "her sportsmanship was worth more than winning",
+      "she deserved to win and was unlucky to lose the final",
+      "champions are always rare",
+      "she will win next time"
+     ],
+     "answer": 0,
+     "explain": "'Losing as she did, she was something rarer.'",
+     "notes": {
+      "she deserved to win and was unlucky to lose the final": "The writer praises how she lost.",
+      "champions are always rare": "'Rarer' compares her to champions.",
+      "she will win next time": "The future isn't mentioned."
+     }
+    }
+   ]
+  },
+  {
+   "title": "Slime Moulds: Brainless Problem-Solvers",
+   "text": "If intelligence requires a brain, then the slime mould Physarum polycephalum ought to be hopeless. It is a single, sprawling cell, bright yellow and faintly unappetising, with no nervous system whatsoever. And yet, placed at the entrance of a maze with food at the exit, it will find the shortest route. In a now-famous experiment, Japanese researchers arranged oat flakes in the pattern of the cities around Tokyo; the mould spread out and then pruned itself into a network strikingly similar to the region's actual railway system, which engineers had taken decades to design. None of this means the mould is 'thinking'. It does, however, oblige us to ask whether our definition of problem-solving has been too narrow.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What does the first sentence set up?",
+     "options": [
+      "an expectation the text then challenges",
+      "a scientific fact that the writer fully agrees with",
+      "a joke about brains",
+      "a description of the maze"
+     ],
+     "answer": 0,
+     "explain": "'If intelligence requires a brain… ought to be hopeless. And yet…'",
+     "notes": {
+      "a scientific fact that the writer fully agrees with": "The writer goes on to question it.",
+      "a joke about brains": "It's an argument, not a joke.",
+      "a description of the maze": "The maze comes later."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "How is the slime mould described?",
+     "options": [
+      "as unappealing in appearance",
+      "as having a tiny but very efficient brain",
+      "as many separate cells",
+      "as beautiful and bright"
+     ],
+     "answer": 0,
+     "explain": "'Bright yellow and faintly unappetising.'",
+     "notes": {
+      "as having a tiny but very efficient brain": "'No nervous system whatsoever.'",
+      "as many separate cells": "'A single, sprawling cell.'",
+      "as beautiful and bright": "Bright, yes, but 'unappetising'."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What did the oat flake experiment show?",
+     "options": [
+      "the mould made an efficient network",
+      "the mould preferred Tokyo",
+      "railway engineers had copied the mould's design",
+      "the railway was badly designed"
+     ],
+     "answer": 0,
+     "explain": "'A network strikingly similar to the region's actual railway system.'",
+     "notes": {
+      "the mould preferred Tokyo": "The oats just marked cities.",
+      "railway engineers had copied the mould's design": "The engineers came first, over decades.",
+      "the railway was badly designed": "It matched the railway, suggesting it's good."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "Why does the writer mention 'decades'?",
+     "options": [
+      "to stress the mould's achievement",
+      "to criticise slow engineers",
+      "to show how old the mould is",
+      "to describe the length of the experiment"
+     ],
+     "answer": 0,
+     "explain": "Engineers took decades; the mould reached a similar result itself.",
+     "notes": {
+      "to criticise slow engineers": "It's a contrast, not criticism.",
+      "to show how old the mould is": "The mould's age isn't given.",
+      "to describe the length of the experiment": "The experiment's length isn't given."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is the writer's conclusion?",
+     "options": [
+      "we may need a broader idea of problem-solving",
+      "the slime mould is truly thinking, just like an animal with a brain",
+      "brains are unnecessary",
+      "the experiment was flawed"
+     ],
+     "answer": 0,
+     "explain": "'None of this means the mould is \"thinking\"… whether our definition… has been too narrow.'",
+     "notes": {
+      "the slime mould is truly thinking, just like an animal with a brain": "The writer says it does not mean that.",
+      "brains are unnecessary": "That's too strong a claim.",
+      "the experiment was flawed": "The experiment is called 'famous', not flawed."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Lighthouse Keeper's Apprentice",
+   "text": "Old Maren had kept the lighthouse on Gull Rock for fifty years, and she had no intention of being replaced by anyone, least of all a boy of twelve who was frightened of the dark. Tobias, for his part, had not asked to be sent. For the first month, they communicated chiefly in grunts. It was the storm that changed things. With the generator failing and a fishing boat drifting towards the rocks, Maren's hands were shaking too badly to light the old oil lamp, and it was Tobias – trembling, but steady enough – who struck the match. Neither of them mentioned it afterwards. But from that night on, Maren left the door to the lamp room unlocked.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How did Maren feel about Tobias's arrival?",
+     "options": [
+      "resentful",
+      "grateful",
+      "curious",
+      "indifferent"
+     ],
+     "answer": 0,
+     "explain": "'No intention of being replaced by anyone, least of all a boy of twelve.'",
+     "notes": {
+      "grateful": "She didn't want him there.",
+      "curious": "There's no interest in him at first.",
+      "indifferent": "She clearly had strong feelings."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does 'Tobias, for his part, had not asked to be sent' suggest?",
+     "options": [
+      "he didn't want to be there either",
+      "he had volunteered eagerly for the job at the lighthouse",
+      "Maren had invited him",
+      "he was lost"
+     ],
+     "answer": 0,
+     "explain": "It mirrors Maren's reluctance: neither chose this.",
+     "notes": {
+      "he had volunteered eagerly for the job at the lighthouse": "He 'had not asked'.",
+      "Maren had invited him": "She didn't want him.",
+      "he was lost": "He was sent, not lost."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What happened during the storm?",
+     "options": [
+      "the boy lit the lamp",
+      "the generator was repaired",
+      "the fishing boat sank",
+      "Maren lit the lamp alone"
+     ],
+     "answer": 0,
+     "explain": "'It was Tobias… who struck the match.'",
+     "notes": {
+      "the generator was repaired": "It was failing.",
+      "the fishing boat sank": "The light was lit to save it.",
+      "Maren lit the lamp alone": "Her hands were shaking too badly."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does the unlocked door symbolise?",
+     "options": [
+      "Maren's new trust in Tobias",
+      "Maren's growing forgetfulness in her old age",
+      "a safety rule",
+      "Tobias's fear of the dark"
+     ],
+     "answer": 0,
+     "explain": "'Neither mentioned it… But from that night on, Maren left the door… unlocked.'",
+     "notes": {
+      "Maren's growing forgetfulness in her old age": "It's a deliberate choice 'from that night on'.",
+      "a safety rule": "No rule is mentioned.",
+      "Tobias's fear of the dark": "It's about her attitude, not his fear."
+     }
+    }
+   ]
+  },
+  {
+   "title": "In Defence of the Unanswerable Question",
+   "text": "Science fairs tend to reward projects with tidy conclusions: a hypothesis, an experiment, a neat graph confirming that plants do indeed grow better in sunlight. There is nothing wrong with this, as far as it goes. But it risks teaching young scientists that a good question is one whose answer is already known. Some of the most valuable projects I have seen ended in genuine bafflement – a student who could not explain why her ants always turned left, another whose ice cubes stubbornly froze faster in warm water. Neither won a prize. Both, I suspect, came closer to real science than the sunlit plants ever did, for science begins precisely where the expected answer fails to arrive.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What is the writer's view of projects with tidy conclusions?",
+     "options": [
+      "acceptable but limited",
+      "completely worthless",
+      "the best kind of science",
+      "too difficult for students"
+     ],
+     "answer": 0,
+     "explain": "'Nothing wrong with this, as far as it goes. But…'",
+     "notes": {
+      "completely worthless": "'There is nothing wrong with this.'",
+      "the best kind of science": "The writer prefers other projects.",
+      "too difficult for students": "Difficulty isn't the issue."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does the plant example illustrate?",
+     "options": [
+      "an experiment with a predictable result",
+      "a surprising discovery that changed the student's mind",
+      "a project that failed",
+      "the writer's own project"
+     ],
+     "answer": 0,
+     "explain": "'Confirming that plants do indeed grow better in sunlight.'",
+     "notes": {
+      "a surprising discovery that changed the student's mind": "'Do indeed' shows it was expected.",
+      "a project that failed": "It worked as expected.",
+      "the writer's own project": "It's a general example."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What do the ants and ice cubes have in common?",
+     "options": [
+      "puzzling results that weren't explained",
+      "they both won prizes at the science fair",
+      "they were about plants",
+      "they proved a hypothesis"
+     ],
+     "answer": 0,
+     "explain": "'Ended in genuine bafflement… could not explain why.'",
+     "notes": {
+      "they both won prizes at the science fair": "'Neither won a prize.'",
+      "they were about plants": "Ants and ice aren't plants.",
+      "they proved a hypothesis": "They ended in bafflement."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does 'stubbornly' add to the ice cube example?",
+     "options": [
+      "the result kept happening against expectation",
+      "the student was stubborn and refused to give up",
+      "the freezer was broken",
+      "the ice melted slowly"
+     ],
+     "answer": 0,
+     "explain": "'Stubbornly' suggests it refused to behave as expected, repeatedly.",
+     "notes": {
+      "the student was stubborn and refused to give up": "It describes the ice, not the student.",
+      "the freezer was broken": "Nothing suggests a fault.",
+      "the ice melted slowly": "They froze faster."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is the writer's main argument?",
+     "options": [
+      "real science starts with the unexpected",
+      "science fair prizes should be abolished completely",
+      "students should study plants",
+      "fairs are a waste of time"
+     ],
+     "answer": 0,
+     "explain": "'Science begins precisely where the expected answer fails to arrive.'",
+     "notes": {
+      "science fair prizes should be abolished completely": "Prizes aren't attacked directly.",
+      "students should study plants": "Plants are the weaker example.",
+      "fairs are a waste of time": "The writer values the right projects."
+     }
+    }
+   ]
+  },
+  {
+   "title": "The Unreliable Narrator Club",
+   "text": "Our reading group adopted its rather grand name after a heated argument about a mystery novel told by a cheerful, helpful butler. Half of us had trusted him completely; the other half had smelt a rat by chapter three, noting how often he happened to be just outside a door when something went missing. The final chapter, needless to say, vindicated the sceptics. What fascinated us afterwards was not the twist itself, but how skilfully the author had planted clues in plain sight – clues we had all read and most of us had dismissed. Since then, we have treated every narrator with polite suspicion, which has, admittedly, made our meetings longer, if rather more entertaining.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How did the club get its name?",
+     "options": [
+      "from a disagreement about a book",
+      "from a famous author",
+      "from a butler who joined",
+      "from a school competition"
+     ],
+     "answer": 0,
+     "explain": "'Adopted its rather grand name after a heated argument about a mystery novel.'",
+     "notes": {
+      "from a famous author": "No author named it.",
+      "from a butler who joined": "The butler is a character.",
+      "from a school competition": "No competition is mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What made some readers suspicious of the butler?",
+     "options": [
+      "he was often conveniently nearby",
+      "he was rude to everyone",
+      "he told the story badly",
+      "he disappeared in chapter three"
+     ],
+     "answer": 0,
+     "explain": "'How often he happened to be just outside a door when something went missing.'",
+     "notes": {
+      "he was rude to everyone": "He was 'cheerful, helpful'.",
+      "he told the story badly": "His storytelling wasn't the clue.",
+      "he disappeared in chapter three": "Chapter three is when they became suspicious."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What does 'vindicated the sceptics' mean?",
+     "options": [
+      "proved the doubters right",
+      "surprised every reader",
+      "punished the butler",
+      "confused the group"
+     ],
+     "answer": 0,
+     "explain": "To vindicate = to show someone was right.",
+     "notes": {
+      "surprised every reader": "Half had suspected it.",
+      "punished the butler": "The meaning is about the readers.",
+      "confused the group": "It settled the argument."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What interested the group most afterwards?",
+     "options": [
+      "the author's clever hiding of clues",
+      "the twist itself",
+      "the butler's motives",
+      "who had guessed first"
+     ],
+     "answer": 0,
+     "explain": "'Not the twist itself, but how skilfully the author had planted clues in plain sight.'",
+     "notes": {
+      "the twist itself": "'Not the twist itself.'",
+      "the butler's motives": "Motives aren't discussed.",
+      "who had guessed first": "Guessing first isn't mentioned."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": "What is the tone of the final sentence?",
+     "options": [
+      "wry and good-humoured",
+      "bitter",
+      "anxious",
+      "formal and serious"
+     ],
+     "answer": 0,
+     "explain": "'Admittedly, made our meetings longer, if rather more entertaining.'",
+     "notes": {
+      "bitter": "They enjoy it.",
+      "anxious": "There's no worry.",
+      "formal and serious": "It's playful."
+     }
+    }
+   ]
   }
  ]
 }

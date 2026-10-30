@@ -1326,6 +1326,421 @@
   "explain": "I'd rather + subject + past simple."
  },
  {
+  "type": "listen",
+  "say": "I'd been dreading the debate all week, yet once I was on my feet the words just flowed.",
+  "q": "How did the debate go for the speaker?",
+  "options": [
+   "better than feared",
+   "as badly as they had dreaded",
+   "they couldn't say a word",
+   "they didn't take part"
+  ],
+  "answer": 0,
+  "explain": "'Dreading… yet once I was on my feet the words just flowed.'",
+  "notes": {
+   "as badly as they had dreaded": "The dread was before; it went well.",
+   "they couldn't say a word": "'The words just flowed.'",
+   "they didn't take part": "They were 'on my feet', speaking."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The marine biologist, who'd come to talk about sharks, ended up spending most of the hour answering questions about her submarine.",
+  "q": "What did the talk mostly focus on?",
+  "options": [
+   "the vessel she uses",
+   "sharks",
+   "her childhood",
+   "the school's own aquarium"
+  ],
+  "answer": 0,
+  "explain": "'Most of the hour answering questions about her submarine.'",
+  "notes": {
+   "sharks": "That was the plan, not what happened.",
+   "her childhood": "Her childhood isn't mentioned.",
+   "the school's own aquarium": "No school aquarium is mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Hardly a week goes by without someone asking me to fix their bike; I should start charging!",
+  "q": "What is the speaker's tone?",
+  "options": [
+   "jokingly complaining",
+   "genuinely furious with everyone",
+   "proud and boastful",
+   "sad and lonely"
+  ],
+  "answer": 0,
+  "explain": "'I should start charging!' is a light-hearted grumble.",
+  "notes": {
+   "genuinely furious with everyone": "The joke shows they're not truly angry.",
+   "proud and boastful": "They're grumbling, not boasting.",
+   "sad and lonely": "People ask them often, so they're not lonely."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Entries for the photography contest have doubled since last year, when we had a hundred and twenty, so the judges have their work cut out.",
+  "q": "How many entries are there this year?",
+  "options": [
+   "240",
+   "120",
+   "60",
+   "220"
+  ],
+  "answer": 0,
+  "explain": "Doubled from 120 = 240.",
+  "notes": {
+   "120": "120 was last year.",
+   "60": "That's half, not double.",
+   "220": "That isn't double 120."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Granted, the campsite was basic, but waking up to deer outside the tent more than made up for it.",
+  "q": "Overall, how does the speaker feel about the campsite?",
+  "options": [
+   "positive",
+   "it was too basic to enjoy",
+   "the deer were a nuisance",
+   "they'd have preferred a hotel"
+  ],
+  "answer": 0,
+  "explain": "'Granted… basic, but… more than made up for it.'",
+  "notes": {
+   "it was too basic to enjoy": "'More than made up for it.'",
+   "the deer were a nuisance": "The deer were the highlight.",
+   "they'd have preferred a hotel": "A hotel isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Were the school to extend the lunch break, I suspect most of us would just spend it in the queue.",
+  "q": "What does the speaker suggest?",
+  "options": [
+   "a longer break wouldn't help much",
+   "the school has just extended the break",
+   "they want a much longer break",
+   "the lunch queue is short"
+  ],
+  "answer": 0,
+  "explain": "'Were the school to…' is hypothetical; the extra time would go on queuing.",
+  "notes": {
+   "the school has just extended the break": "'Were… to' means it hasn't happened.",
+   "they want a much longer break": "They doubt it would help.",
+   "the lunch queue is short": "They suggest the queue is long."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The launch of the student satellite has been pushed back from March to May, owing to a fault in its solar panel.",
+  "q": "Why has the launch been delayed?",
+  "options": [
+   "a technical problem",
+   "bad weather in March",
+   "a lack of money for the launch",
+   "the students weren't ready"
+  ],
+  "answer": 0,
+  "explain": "'Owing to a fault in its solar panel.'",
+  "notes": {
+   "bad weather in March": "March was just the old date.",
+   "a lack of money for the launch": "Money isn't mentioned.",
+   "the students weren't ready": "The students aren't blamed."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I wouldn't go so far as to say the sequel is better, but it certainly holds its own.",
+  "q": "What is the speaker's view of the sequel?",
+  "options": [
+   "it's about as good",
+   "it's far better than the first",
+   "it's much worse than the first",
+   "they haven't seen it yet"
+  ],
+  "answer": 0,
+  "explain": "'Holds its own' = stands up well in comparison.",
+  "notes": {
+   "it's far better than the first": "'I wouldn't go so far as to say… better.'",
+   "it's much worse than the first": "It 'holds its own'.",
+   "they haven't seen it yet": "They clearly have."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "What I hadn't bargained for was how cold it gets in the desert at night.",
+  "q": "What surprised the speaker?",
+  "options": [
+   "the temperature after dark",
+   "the heat during the day",
+   "the lack of water",
+   "how huge the desert was"
+  ],
+  "answer": 0,
+  "explain": "'Hadn't bargained for' = hadn't expected.",
+  "notes": {
+   "the heat during the day": "They mention the night, not the day.",
+   "the lack of water": "Water isn't mentioned.",
+   "how huge the desert was": "Size isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Only after we'd climbed for three hours did the guide mention that there was a cable car to the top.",
+  "q": "What is implied?",
+  "options": [
+   "they needn't have walked",
+   "the cable car was closed",
+   "the guide had got lost",
+   "they took the cable car up"
+  ],
+  "answer": 0,
+  "explain": "Inversion 'only after… did': the cable car was mentioned too late.",
+  "notes": {
+   "the cable car was closed": "Nothing says it was closed.",
+   "the guide had got lost": "Getting lost isn't suggested.",
+   "they took the cable car up": "They climbed for three hours first."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Our team came fourth out of twelve, which, considering half of us had never played before, is nothing to be sniffed at.",
+  "q": "How does the speaker feel about the result?",
+  "options": [
+   "pleased",
+   "disappointed not to win",
+   "embarrassed by fourth place",
+   "surprised they played at all"
+  ],
+  "answer": 0,
+  "explain": "'Nothing to be sniffed at' = not bad at all.",
+  "notes": {
+   "disappointed not to win": "They're satisfied.",
+   "embarrassed by fourth place": "The phrase means it's respectable.",
+   "surprised they played at all": "They chose to play."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Maya: I can't believe you turned down the lead role!|Josh: I'd much rather paint the scenery, to be honest. Being on stage terrifies me.",
+  "q": "Why did Josh refuse the part?",
+  "options": [
+   "he has stage fright",
+   "he wasn't offered it",
+   "he can't paint scenery",
+   "he wanted a bigger part"
+  ],
+  "answer": 0,
+  "explain": "'Being on stage terrifies me.'",
+  "dialogue": true,
+  "notes": {
+   "he wasn't offered it": "Maya says he turned it down, so he was offered it.",
+   "he can't paint scenery": "He'd rather paint.",
+   "he wanted a bigger part": "The lead is the biggest part."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Leo: The planetarium tickets were sixteen pounds each.|Aisha: Ouch. Did you get the family deal?|Leo: Yes, four of us for fifty.",
+  "q": "How much did Leo's family save?",
+  "options": [
+   "£14",
+   "£16",
+   "£50",
+   "£64"
+  ],
+  "answer": 0,
+  "explain": "4 × £16 = £64; £64 − £50 = £14.",
+  "dialogue": true,
+  "notes": {
+   "£16": "£16 is one ticket.",
+   "£50": "£50 is what they paid.",
+   "£64": "£64 is the full price for four."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Coach: You lot looked half asleep in the first half.|Priya: The pitch was like a swamp!|Coach: Same pitch for both teams, Priya.",
+  "q": "What is the coach implying?",
+  "options": [
+   "the pitch is no excuse",
+   "the pitch should be repaired",
+   "Priya played very well",
+   "the other team was tired"
+  ],
+  "answer": 0,
+  "explain": "'Same pitch for both teams' = the other team coped.",
+  "dialogue": true,
+  "notes": {
+   "the pitch should be repaired": "He isn't talking about repairs.",
+   "Priya played very well": "He says they looked half asleep.",
+   "the other team was tired": "His team looked tired."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Ethan: Have you finished the history essay?|Chloe: Finished? I've barely started. I spent all weekend at the science fair.|Ethan: Ah, the deadline's tomorrow!",
+  "q": "What is Chloe's situation?",
+  "options": [
+   "she's far behind",
+   "she's nearly finished",
+   "she missed the science fair",
+   "the deadline is next week"
+  ],
+  "answer": 0,
+  "explain": "'I've barely started'; the deadline's tomorrow.",
+  "dialogue": true,
+  "notes": {
+   "she's nearly finished": "'Barely started.'",
+   "she missed the science fair": "She spent all weekend there.",
+   "the deadline is next week": "'The deadline's tomorrow.'"
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Gran: You've grown out of those boots already?|Sam: They pinch my toes, honestly.|Gran: Well, pass them on to your cousin, then.",
+  "q": "What does Gran suggest?",
+  "options": [
+   "giving them to a relative",
+   "buying a bigger pair",
+   "stretching the boots",
+   "throwing them away"
+  ],
+  "answer": 0,
+  "explain": "'Pass them on to your cousin.'",
+  "dialogue": true,
+  "notes": {
+   "buying a bigger pair": "She doesn't mention buying.",
+   "stretching the boots": "Stretching isn't mentioned.",
+   "throwing them away": "She suggests reusing them."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Ms Ortiz: The volcano model is impressive, but where's your explanation?|Raf: I thought the model spoke for itself.|Ms Ortiz: Judges need words, not just lava.",
+  "q": "What does Ms Ortiz want Raf to add?",
+  "options": [
+   "a written account of the science",
+   "a bigger model",
+   "more lava effects",
+   "a different topic"
+  ],
+  "answer": 0,
+  "explain": "'Where's your explanation?… Judges need words.'",
+  "dialogue": true,
+  "notes": {
+   "a bigger model": "She calls the model impressive.",
+   "more lava effects": "'Not just lava.'",
+   "a different topic": "She likes the model."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Ana: Are you coming to the sleepover?|Kit: I'd love to, if I can persuade my parents. They're not keen after last time.|Ana: What happened last time?|Kit: Let's just say pillows were involved.",
+  "q": "What is implied?",
+  "options": [
+   "things got out of hand before",
+   "Kit's parents are hosting it",
+   "Kit doesn't want to go",
+   "the sleepover is cancelled"
+  ],
+  "answer": 0,
+  "explain": "'Not keen after last time… pillows were involved' hints at a wild pillow fight.",
+  "dialogue": true,
+  "notes": {
+   "Kit's parents are hosting it": "Ana is asking Kit to come.",
+   "Kit doesn't want to go": "'I'd love to.'",
+   "the sleepover is cancelled": "Nothing suggests that."
+  }
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "Had I known about the traffic, I'd have left earlier.",
+  "answer": "Had I known about the traffic, I'd have left earlier.",
+  "explain": "Inverted third conditional: had I known."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "Rarely have I seen such a determined team.",
+  "answer": "Rarely have I seen such a determined team.",
+  "explain": "Inversion after rarely."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "The bridge is thought to have been built by the Romans.",
+  "answer": "The bridge is thought to have been built by the Romans.",
+  "explain": "Passive report + perfect passive infinitive."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "She insisted on paying for the tickets herself.",
+  "answer": "She insisted on paying for the tickets herself.",
+  "explain": "Insist on + -ing."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "Not until the end of the film did we understand the title.",
+  "answer": "Not until the end of the film did we understand the title.",
+  "explain": "Not until… did + subject."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "It's no use complaining once the deadline has passed.",
+  "answer": "It's no use complaining once the deadline has passed.",
+  "explain": "It's no use + -ing."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "Only by working together can we solve this puzzle.",
+  "answer": "Only by working together can we solve this puzzle.",
+  "explain": "Only by + -ing + inversion."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "He denied having eaten the last biscuit.",
+  "answer": "He denied having eaten the last biscuit.",
+  "explain": "Deny + perfect -ing."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "The castle, parts of which are very old, is open daily.",
+  "answer": "The castle, parts of which are very old, is open daily.",
+  "explain": "Non-defining relative: parts of which."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "Were you to ask me, I'd choose the blue one.",
+  "answer": "Were you to ask me, I'd choose the blue one.",
+  "explain": "Inverted conditional: were you to."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "I'd rather have stayed at home than gone to the party.",
+  "answer": "I'd rather have stayed at home than gone to the party.",
+  "explain": "Would rather + perfect infinitive."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "What surprised me was how friendly the dolphins were.",
+  "answer": "What surprised me was how friendly the dolphins were.",
+  "explain": "Cleft: what surprised me was…"
+ },
+ {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "Not once did the referee look our way.",

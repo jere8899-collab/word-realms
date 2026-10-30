@@ -1326,6 +1326,421 @@
   "explain": "Little did + subject + know."
  },
  {
+  "type": "listen",
+  "say": "It would be churlish to complain about the food, given that the volunteers had cooked for two hundred people, but the soup was, let us say, adventurous.",
+  "q": "What is the speaker hinting about the soup?",
+  "options": [
+   "it wasn't very nice",
+   "it was the best dish of the meal",
+   "it was cooked for twenty people",
+   "they complained to the volunteers"
+  ],
+  "answer": 0,
+  "explain": "'Churlish to complain… but… let us say, adventurous' is a polite criticism.",
+  "notes": {
+   "it was the best dish of the meal": "'Adventurous' here is a tactful complaint.",
+   "it was cooked for twenty people": "Two hundred, not twenty.",
+   "they complained to the volunteers": "They say it would be churlish to complain."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Scarcely had the curtain gone up when the fire alarm went off, sending a hundred bewildered dancers into the car park.",
+  "q": "When did the alarm go off?",
+  "options": [
+   "just as the show began",
+   "halfway through the show",
+   "at the very end of the show",
+   "before anyone had arrived"
+  ],
+  "answer": 0,
+  "explain": "'Scarcely had… when' = immediately after the curtain went up.",
+  "notes": {
+   "halfway through the show": "It was right at the start.",
+   "at the very end of the show": "It was at the beginning.",
+   "before anyone had arrived": "The dancers were there."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Much as I'd love to take the credit, the idea for the bird-feeder was entirely my sister's.",
+  "q": "Whose idea was the bird-feeder?",
+  "options": [
+   "the sister thought of it",
+   "the speaker invented it alone",
+   "they shared the idea equally",
+   "nobody knows whose idea it was"
+  ],
+  "answer": 0,
+  "explain": "'Much as I'd love to take the credit… entirely my sister's.'",
+  "notes": {
+   "the speaker invented it alone": "They'd love the credit, but it isn't theirs.",
+   "they shared the idea equally": "'Entirely' my sister's.",
+   "nobody knows whose idea it was": "They say clearly whose it was."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The comet, which last passed by in 1986, isn't due back until 2061, so I'd mark your calendar now, if I were you.",
+  "q": "How long is the gap between the comet's visits?",
+  "options": [
+   "75 years",
+   "86 years",
+   "61 years",
+   "20 years"
+  ],
+  "answer": 0,
+  "explain": "2061 − 1986 = 75 years.",
+  "notes": {
+   "86 years": "86 comes from 1986.",
+   "61 years": "61 comes from 2061.",
+   "20 years": "That's far too short."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Not for nothing is Mrs Patel known as 'the human encyclopaedia'; I have yet to ask her something she couldn't answer.",
+  "q": "What does the speaker imply?",
+  "options": [
+   "her nickname is deserved",
+   "she once couldn't answer a question",
+   "she wrote an encyclopaedia",
+   "the nickname is unkind"
+  ],
+  "answer": 0,
+  "explain": "'Not for nothing' = there's a good reason.",
+  "notes": {
+   "she once couldn't answer a question": "'I have yet to ask her something she couldn't answer.'",
+   "she wrote an encyclopaedia": "It's a nickname.",
+   "the nickname is unkind": "It's a compliment."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "If anything, the second half of the novel is even more gripping than the first, which I'd have said was impossible.",
+  "q": "What does the speaker say about the novel?",
+  "options": [
+   "it gets better",
+   "the first half is the best part",
+   "both halves are rather dull",
+   "they couldn't finish it"
+  ],
+  "answer": 0,
+  "explain": "'Even more gripping than the first.'",
+  "notes": {
+   "the first half is the best part": "The second half is even more gripping.",
+   "both halves are rather dull": "Both are gripping.",
+   "they couldn't finish it": "They've read the second half."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The robotics final was a closer-run thing than the score suggests; we were trailing until the last thirty seconds.",
+  "q": "What does the speaker say about the final?",
+  "options": [
+   "the scoreline hides how tight it was",
+   "they were ahead throughout",
+   "they lost in the final seconds",
+   "it was an easy victory"
+  ],
+  "answer": 0,
+  "explain": "'Closer-run… than the score suggests'; they were behind until the end.",
+  "notes": {
+   "they were ahead throughout": "They were 'trailing' — behind.",
+   "they lost in the final seconds": "They came back to win.",
+   "it was an easy victory": "It was close."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Ordinarily I'd balk at getting up at four, but the chance to see the puffins was too good to pass up.",
+  "q": "What does the speaker say?",
+  "options": [
+   "the birds were worth the early start",
+   "they always get up at four",
+   "they refused to go",
+   "they missed the puffins"
+  ],
+  "answer": 0,
+  "explain": "'Ordinarily I'd balk… but… too good to pass up.'",
+  "notes": {
+   "they always get up at four": "'Ordinarily' they'd refuse.",
+   "they refused to go": "They didn't pass it up.",
+   "they missed the puffins": "Nothing suggests they missed them."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Say what you like about the old gym, at least the roof didn't leak, which is more than can be said for its replacement.",
+  "q": "What is the speaker's point?",
+  "options": [
+   "rain gets into the new gym",
+   "the old gym leaked badly",
+   "both gyms are excellent",
+   "the old gym was knocked down for leaking"
+  ],
+  "answer": 0,
+  "explain": "'Which is more than can be said for its replacement' = the new one leaks.",
+  "notes": {
+   "the old gym leaked badly": "'At least the roof didn't leak.'",
+   "both gyms are excellent": "The new one has a problem.",
+   "the old gym was knocked down for leaking": "The reason isn't given."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "With hindsight, starting the ascent so late in the afternoon was asking for trouble.",
+  "q": "What does the speaker now think?",
+  "options": [
+   "it was unwise",
+   "they started early in the morning",
+   "the climb went perfectly",
+   "they plan to start late next time"
+  ],
+  "answer": 0,
+  "explain": "'With hindsight… asking for trouble.'",
+  "notes": {
+   "they started early in the morning": "'So late in the afternoon.'",
+   "the climb went perfectly": "'Asking for trouble' suggests problems.",
+   "they plan to start late next time": "They regret it."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "She's nothing if not persistent: thirteen attempts at the triple jump, and she finally landed it on the fourteenth.",
+  "q": "How many tries did it take her in total?",
+  "options": [
+   "14",
+   "13",
+   "3",
+   "30"
+  ],
+  "answer": 0,
+  "explain": "Thirteen failures, then success on the fourteenth.",
+  "notes": {
+   "13": "Thirteen is the failed attempts.",
+   "3": "'Triple' isn't the count.",
+   "30": "Thirty isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Isla: You must be thrilled with the result.|Noah: Thrilled is a strong word. Relieved, more like.|Isla: Relieved?|Noah: I was convinced I'd failed the practical.",
+  "q": "How does Noah feel?",
+  "options": [
+   "more relieved than overjoyed",
+   "thrilled with his result",
+   "certain that he has failed",
+   "disappointed by his mark"
+  ],
+  "answer": 0,
+  "explain": "'Thrilled is a strong word. Relieved, more like.'",
+  "dialogue": true,
+  "notes": {
+   "thrilled with his result": "He rejects 'thrilled'.",
+   "certain that he has failed": "He was convinced before; now he knows he passed.",
+   "disappointed by his mark": "Relief isn't disappointment."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Mr Grant: I gather the chemistry club's experiment went off with a bang.|Zoe: Rather more literally than we'd planned, sir.|Mr Grant: I'll fetch the mop.",
+  "q": "What actually happened?",
+  "options": [
+   "something exploded by accident",
+   "the experiment was a huge success",
+   "the club has been cancelled",
+   "Mr Grant caused the mess"
+  ],
+  "answer": 0,
+  "explain": "'Went off with a bang' usually means a success; Zoe says it was 'literally' a bang.",
+  "dialogue": true,
+  "notes": {
+   "the experiment was a huge success": "That's the idiom's usual meaning, which Zoe corrects.",
+   "the club has been cancelled": "Nothing is cancelled.",
+   "Mr Grant caused the mess": "He offers to clean it up."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Felix: Shall we take the scenic route?|Ruby: As long as 'scenic' doesn't mean another three hours in the car.|Felix: Two and a half, tops.",
+  "q": "What is Ruby's attitude?",
+  "options": [
+   "wary",
+   "excited about the scenery",
+   "happy to drive three hours",
+   "she'd rather go by plane"
+  ],
+  "answer": 0,
+  "explain": "'As long as \"scenic\" doesn't mean another three hours…' shows suspicion.",
+  "dialogue": true,
+  "notes": {
+   "excited about the scenery": "She's suspicious, not excited.",
+   "happy to drive three hours": "She doesn't want three hours.",
+   "she'd rather go by plane": "Planes aren't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Sana: Did the judges like your invention?|Theo: Let's just say they were polite.|Sana: Oh dear.|Theo: Next year I'll test it before I show it.",
+  "q": "What is implied about the invention?",
+  "options": [
+   "it didn't impress them",
+   "the judges loved it",
+   "it won a prize",
+   "he had tested it carefully"
+  ],
+  "answer": 0,
+  "explain": "'They were polite' hints they weren't impressed; he'll test it next year.",
+  "dialogue": true,
+  "notes": {
+   "the judges loved it": "'Polite' suggests the opposite.",
+   "it won a prize": "Nothing suggests a prize.",
+   "he had tested it carefully": "He'll test it next time, so he didn't."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Ivy: That's the third time you've checked the telescope.|Max: The clouds are supposed to clear by midnight.|Ivy: Supposed to.|Max: Ever the optimist, aren't you?",
+  "q": "What does Max's last remark suggest about Ivy?",
+  "options": [
+   "she's doubtful",
+   "she's cheerfully hopeful",
+   "she wants to go to bed",
+   "she broke the telescope"
+  ],
+  "answer": 0,
+  "explain": "'Ever the optimist' is ironic: Ivy doubts the clouds will clear.",
+  "dialogue": true,
+  "notes": {
+   "she's cheerfully hopeful": "It's ironic; she's the opposite.",
+   "she wants to go to bed": "Bed isn't mentioned.",
+   "she broke the telescope": "Max is checking it, not repairing it."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Coach Bell: That was a gutsy performance.|Amir: We lost six–one, Coach.|Coach Bell: The scoreline doesn't tell the whole story.",
+  "q": "What is the coach doing?",
+  "options": [
+   "praising their effort",
+   "celebrating a six–one win",
+   "telling them off angrily",
+   "saying the score was close"
+  ],
+  "answer": 0,
+  "explain": "'A gutsy performance… doesn't tell the whole story.'",
+  "dialogue": true,
+  "notes": {
+   "celebrating a six–one win": "They lost six–one.",
+   "telling them off angrily": "He's encouraging.",
+   "saying the score was close": "Six–one isn't close."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Lena: Have you read the sequel?|Omar: I started it. Then I remembered life is short.|Lena: That bad?",
+  "q": "What does Omar mean?",
+  "options": [
+   "he gave up on it",
+   "he loved it",
+   "he hasn't started it",
+   "he read it twice"
+  ],
+  "answer": 0,
+  "explain": "'Life is short' = not worth his time; Lena: 'That bad?'",
+  "dialogue": true,
+  "notes": {
+   "he loved it": "Lena understands he didn't like it.",
+   "he hasn't started it": "'I started it.'",
+   "he read it twice": "He didn't finish it once."
+  }
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "Seldom has a science fair produced so many original ideas.",
+  "answer": "Seldom has a science fair produced so many original ideas.",
+  "explain": "Inversion after seldom."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "On no account should the hamster be let out at night.",
+  "answer": "On no account should the hamster be let out at night.",
+  "explain": "On no account + inversion."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "Had it not been for the lifeguard, things could have been far worse.",
+  "answer": "Had it not been for the lifeguard, things could have been far worse.",
+  "explain": "Inverted third conditional: had it not been for."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "The more I learn about octopuses, the stranger they seem.",
+  "answer": "The more I learn about octopuses, the stranger they seem.",
+  "explain": "The + comparative, the + comparative."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "Hardly anyone noticed that the clock had stopped.",
+  "answer": "Hardly anyone noticed that the clock had stopped.",
+  "explain": "Hardly anyone + past perfect."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "Little by little, the frozen lake began to thaw.",
+  "answer": "Little by little, the frozen lake began to thaw.",
+  "explain": "Little by little = gradually."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "So loud was the thunder that the dog hid under the bed.",
+  "answer": "So loud was the thunder that the dog hid under the bed.",
+  "explain": "So + adjective + inversion."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "Never before had the village seen such a snowfall.",
+  "answer": "Never before had the village seen such a snowfall.",
+  "explain": "Never before + past perfect inversion."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "Were it not for the map, we would be lost.",
+  "answer": "Were it not for the map, we would be lost.",
+  "explain": "Inverted second conditional: were it not for."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "Only when the bell rang did they stop arguing.",
+  "answer": "Only when the bell rang did they stop arguing.",
+  "explain": "Only when… did + subject."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "It was her patience that won her the match.",
+  "answer": "It was her patience that won her the match.",
+  "explain": "Cleft: it was… that."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "Not only did the robot dance, but it also sang.",
+  "answer": "Not only did the robot dance, but it also sang.",
+  "explain": "Not only + inversion, but also."
+ },
+ {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "Never before had the scholars seen such a manuscript.",

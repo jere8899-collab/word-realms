@@ -55,7 +55,7 @@ G.STICKERS = [
   { id: "gradefull", icon: "💯", name: "Grade Champion", how: "Get 3 crowns in every topic of one grade", test: fullGrade },
   { id: "guardian", icon: "🛡️", name: "Guardian Badge", how: "Beat any Grade Guardian", test: () => G.GUARDIANS.some(g => won(g.id)) }
 ];
-const guardDefs = () => G.GUARDIANS.map(gd => ({ id: gd.id, icon: gd.face, name: gd.name, how: `Beat the Grade ${gd.band} Guardian`, test: () => won(gd.id) }));
+const guardDefs = () => G.GUARDIANS.map(gd => ({ id: gd.id, icon: gd.face, art: gd.art, name: gd.name, how: `Beat the Grade ${gd.band} Guardian`, test: () => won(gd.id) }));
 C.addPages(() => [
   { id: "math", icon: "🔢", title: "Number Kingdom", name: "Number Kingdom", bg: "bg_math", defs: G.STICKERS },
   { id: "guard", icon: "🛡️", title: "Grade Guardians", name: "Grade Guardians", bg: "bg_math", defs: guardDefs() }

@@ -1383,6 +1383,353 @@
   "explain": "Look forward to + -ing."
  },
  {
+  "type": "listen",
+  "say": "We were supposed to meet at the skate park at two, but Leo texted to say he'd be an hour late, so in the end we didn't start until three.",
+  "q": "When did they start skating?",
+  "options": [
+   "3 p.m.",
+   "2 p.m.",
+   "1 p.m.",
+   "4 p.m."
+  ],
+  "answer": 0,
+  "explain": "Planned for two; Leo was an hour late, so they started at three.",
+  "notes": {
+   "2 p.m.": "Two was the plan before Leo's text.",
+   "1 p.m.": "Nobody mentions one o'clock.",
+   "4 p.m.": "An hour late makes it three, not four."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I thought the escape room would be terrifying, but it was more like a big puzzle, and honestly the hardest part was agreeing as a team.",
+  "q": "What did the speaker find most difficult?",
+  "options": [
+   "working together",
+   "the terrifying atmosphere",
+   "solving the puzzles alone",
+   "finding the escape room"
+  ],
+  "answer": 0,
+  "explain": "'The hardest part was agreeing as a team.'",
+  "notes": {
+   "the terrifying atmosphere": "They expected it to be terrifying, but it wasn't.",
+   "solving the puzzles alone": "They played as a team, not alone.",
+   "finding the escape room": "Finding the room isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The swimming gala's been moved indoors because of the thunderstorm warning, but it's still on Saturday morning.",
+  "q": "What has changed about the gala?",
+  "options": [
+   "where it takes place",
+   "the day it happens",
+   "the time it starts",
+   "it has been cancelled"
+  ],
+  "answer": 0,
+  "explain": "'Moved indoors… but it's still on Saturday morning.'",
+  "notes": {
+   "the day it happens": "'It's still on Saturday.'",
+   "the time it starts": "It's still in the morning.",
+   "it has been cancelled": "It's moved, not cancelled."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Normally I can't stand documentaries, but the one about octopuses was so gripping that I watched it twice.",
+  "q": "What does the speaker say about the octopus film?",
+  "options": [
+   "it held their attention",
+   "it was as dull as most documentaries",
+   "they only watched half of it",
+   "it was too long to finish"
+  ],
+  "answer": 0,
+  "explain": "'So gripping that I watched it twice.'",
+  "notes": {
+   "it was as dull as most documentaries": "They say this one was an exception.",
+   "they only watched half of it": "They watched it twice.",
+   "it was too long to finish": "They finished it twice."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The school fair raised nine hundred pounds; a third of it will go to the animal shelter and the rest to new library books.",
+  "q": "How much will be spent on library books?",
+  "options": [
+   "£600",
+   "£300",
+   "£900",
+   "£1,200"
+  ],
+  "answer": 0,
+  "explain": "A third of £900 is £300 for the shelter; the rest, £600, is for books.",
+  "notes": {
+   "£300": "£300 is the animal shelter's share.",
+   "£900": "£900 is the total raised.",
+   "£1,200": "That's more than was raised."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I wasn't going to bother entering the poetry competition, but my teacher talked me into it, and I ended up getting a commendation.",
+  "q": "Why did the speaker enter?",
+  "options": [
+   "someone persuaded them",
+   "they were sure they'd win a prize",
+   "all their friends entered too",
+   "they enter every single year"
+  ],
+  "answer": 0,
+  "explain": "'My teacher talked me into it.'",
+  "notes": {
+   "they were sure they'd win a prize": "They almost didn't bother.",
+   "all their friends entered too": "Friends aren't mentioned.",
+   "they enter every single year": "They weren't going to enter at all."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "If it hadn't been for the map on my phone, we'd still be wandering round the forest now.",
+  "q": "What does the speaker mean?",
+  "options": [
+   "the phone got them out",
+   "they are still lost in the forest",
+   "they didn't take a phone with them",
+   "the map on the phone was wrong"
+  ],
+  "answer": 0,
+  "explain": "Third/mixed conditional: they had the map, so they aren't lost now.",
+  "notes": {
+   "they are still lost in the forest": "They aren't — thanks to the map.",
+   "they didn't take a phone with them": "They had the phone.",
+   "the map on the phone was wrong": "The map worked."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Apparently the new aquarium's sharks are only babies at the moment, so don't expect anything like the ones in films.",
+  "q": "What is the speaker suggesting?",
+  "options": [
+   "the sharks are still small",
+   "the sharks are very dangerous",
+   "the aquarium has no sharks yet",
+   "a shark film is showing there"
+  ],
+  "answer": 0,
+  "explain": "'Only babies at the moment.'",
+  "notes": {
+   "the sharks are very dangerous": "Babies aren't scary, the speaker suggests.",
+   "the aquarium has no sharks yet": "It has baby sharks.",
+   "a shark film is showing there": "Films are only a comparison."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Sophie: Are you coming to the robotics workshop on Thursday?|Arjun: I was, but it clashes with my piano exam.|Sophie: Oh no! They're running it again next month, though.",
+  "q": "Why can't Arjun go on Thursday?",
+  "options": [
+   "he's got something else on",
+   "he doesn't like robotics",
+   "the workshop's been cancelled",
+   "the workshop is next month"
+  ],
+  "answer": 0,
+  "explain": "'It clashes with my piano exam.'",
+  "dialogue": true,
+  "notes": {
+   "he doesn't like robotics": "He was planning to go.",
+   "the workshop's been cancelled": "It's happening; he just can't go.",
+   "the workshop is next month": "It's on Thursday and again next month."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Kim: These trainers were forty pounds, but they gave me ten percent off because of a scratch.|Dev: Bargain!",
+  "q": "How much did Kim pay?",
+  "options": [
+   "£36",
+   "£40",
+   "£30",
+   "£4"
+  ],
+  "answer": 0,
+  "explain": "10% of £40 is £4; £40 − £4 = £36.",
+  "dialogue": true,
+  "notes": {
+   "£40": "£40 was the full price.",
+   "£30": "That would be £10 off.",
+   "£4": "£4 is the discount."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Lucas: Shall we watch the match at mine?|Grace: I'd rather go to the stadium. The atmosphere's amazing.|Lucas: True, but the tickets are thirty quid each.|Grace: Fine, yours it is.",
+  "q": "Where will they watch the match?",
+  "options": [
+   "at Lucas's place",
+   "at the stadium",
+   "at Grace's house",
+   "in a café nearby"
+  ],
+  "answer": 0,
+  "explain": "Grace agrees: 'Fine, yours it is.'",
+  "dialogue": true,
+  "notes": {
+   "at the stadium": "Grace wanted that, but the tickets are expensive.",
+   "at Grace's house": "'Yours' means Lucas's.",
+   "in a café nearby": "A café isn't mentioned."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Teacher: Who'd like to read their story aloud?|Ben: Er… mine's not quite finished.|Teacher: That's alright, read what you've got.",
+  "q": "What does the teacher want Ben to do?",
+  "options": [
+   "share the part he's written",
+   "finish it at home first",
+   "read someone else's story",
+   "wait until next lesson"
+  ],
+  "answer": 0,
+  "explain": "'Read what you've got.'",
+  "dialogue": true,
+  "notes": {
+   "finish it at home first": "She wants to hear it now.",
+   "read someone else's story": "She means his own story.",
+   "wait until next lesson": "She says it's alright now."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Nadia: Did you see the meteor shower last night?|Finn: I set my alarm for two, but it was too cloudy to see a thing.",
+  "q": "What happened to Finn?",
+  "options": [
+   "the sky wasn't clear",
+   "he slept through his alarm",
+   "he saw dozens of meteors",
+   "he forgot to set his alarm"
+  ],
+  "answer": 0,
+  "explain": "'Too cloudy to see a thing.'",
+  "dialogue": true,
+  "notes": {
+   "he slept through his alarm": "He woke up but couldn't see.",
+   "he saw dozens of meteors": "He saw nothing.",
+   "he forgot to set his alarm": "He set it for two."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Mr Hale: The trip's been moved from Friday to Wednesday.|Rosa: Will we still be back before the end of school?|Mr Hale: Yes, by half past three.",
+  "q": "What has changed?",
+  "options": [
+   "the date",
+   "the time they get back",
+   "the place they're visiting",
+   "nothing at all"
+  ],
+  "answer": 0,
+  "explain": "Moved from Friday to Wednesday.",
+  "dialogue": true,
+  "notes": {
+   "the time they get back": "They'll still be back by half past three.",
+   "the place they're visiting": "The place isn't changed.",
+   "nothing at all": "The day has changed."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Ollie: Want to try my homemade lemonade?|Zara: Hmm… it's a bit sour. Did you forget the sugar?|Ollie: No, I just used less than the recipe said.",
+  "q": "Why is the lemonade sour?",
+  "options": [
+   "Ollie cut down the sugar",
+   "Ollie forgot the sugar",
+   "the lemons were bad",
+   "he followed a new recipe"
+  ],
+  "answer": 0,
+  "explain": "'I just used less than the recipe said.'",
+  "dialogue": true,
+  "notes": {
+   "Ollie forgot the sugar": "That's Zara's guess; Ollie says no.",
+   "the lemons were bad": "The lemons aren't criticised.",
+   "he followed a new recipe": "He didn't follow the recipe exactly."
+  }
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "The museum is closed for repairs until further notice.",
+  "answer": "The museum is closed for repairs until further notice.",
+  "explain": "Passive + until further notice."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "We'd better leave now, or we'll miss the start.",
+  "answer": "We'd better leave now, or we'll miss the start.",
+  "explain": "Had better + verb for advice."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "He suggested going to the aquarium instead.",
+  "answer": "He suggested going to the aquarium instead.",
+  "explain": "Suggest + -ing."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "If it rains tomorrow, the picnic will be held indoors.",
+  "answer": "If it rains tomorrow, the picnic will be held indoors.",
+  "explain": "First conditional with a future passive."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "I've never seen such a beautiful sunset.",
+  "answer": "I've never seen such a beautiful sunset.",
+  "explain": "Such + a + adjective + noun."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "She asked me whether I had finished my project.",
+  "answer": "She asked me whether I had finished my project.",
+  "explain": "Reported question: asked whether + past perfect."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "The game was so exciting that nobody wanted to leave.",
+  "answer": "The game was so exciting that nobody wanted to leave.",
+  "explain": "So + adjective + that."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "You needn't bring any food to the party.",
+  "answer": "You needn't bring any food to the party.",
+  "explain": "Needn't = it isn't necessary."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "My bike was stolen while I was in the library.",
+  "answer": "My bike was stolen while I was in the library.",
+  "explain": "Past passive + while + past continuous."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "Although it was raining, we went for a walk.",
+  "answer": "Although it was raining, we went for a walk.",
+  "explain": "Although + clause for contrast."
+ },
+ {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "I wish I had brought my umbrella.",

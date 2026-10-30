@@ -747,6 +747,114 @@
         "large": "assets/web/boss_nimbus.webp",
         "small": "assets/web/boss_nimbus.webp"
       }
+    },
+    {
+      "id": "mboss_bramble",
+      "type": "boss",
+      "name": "Bramble the Button Bear",
+      "path": "assets/ui/mboss_bramble.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "cute kawaii chibi realm boss portrait (mischievous but friendly), big sparkly anime eyes, soft pastel palette, clean soft lineart, gentle cel shading, storybook illustration, white background (cut out)",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/mboss_bramble.webp",
+        "small": "assets/web/mboss_bramble.webp"
+      }
+    },
+    {
+      "id": "mboss_hootsworth",
+      "type": "boss",
+      "name": "Professor Hootsworth",
+      "path": "assets/ui/mboss_hootsworth.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "cute kawaii chibi realm boss portrait (mischievous but friendly), big sparkly anime eyes, soft pastel palette, clean soft lineart, gentle cel shading, storybook illustration, white background (cut out)",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/mboss_hootsworth.webp",
+        "small": "assets/web/mboss_hootsworth.webp"
+      }
+    },
+    {
+      "id": "mboss_ottilie",
+      "type": "boss",
+      "name": "Captain Ottilie the Otter",
+      "path": "assets/ui/mboss_ottilie.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "cute kawaii chibi realm boss portrait (mischievous but friendly), big sparkly anime eyes, soft pastel palette, clean soft lineart, gentle cel shading, storybook illustration, white background (cut out)",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/mboss_ottilie.webp",
+        "small": "assets/web/mboss_ottilie.webp"
+      }
+    },
+    {
+      "id": "mboss_shellby",
+      "type": "boss",
+      "name": "Sage Shellby the Turtle",
+      "path": "assets/ui/mboss_shellby.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "cute kawaii chibi realm boss portrait (mischievous but friendly), big sparkly anime eyes, soft pastel palette, clean soft lineart, gentle cel shading, storybook illustration, white background (cut out)",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/mboss_shellby.webp",
+        "small": "assets/web/mboss_shellby.webp"
+      }
+    },
+    {
+      "id": "mboss_quartzy",
+      "type": "boss",
+      "name": "Quartzy the Crystal Golem",
+      "path": "assets/ui/mboss_quartzy.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "cute kawaii chibi realm boss portrait (mischievous but friendly), big sparkly anime eyes, soft pastel palette, clean soft lineart, gentle cel shading, storybook illustration, white background (cut out)",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/mboss_quartzy.webp",
+        "small": "assets/web/mboss_quartzy.webp"
+      }
+    },
+    {
+      "id": "mboss_lumina",
+      "type": "boss",
+      "name": "Lumina the Calculus Unicorn",
+      "path": "assets/ui/mboss_lumina.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "cute kawaii chibi realm boss portrait (mischievous but friendly), big sparkly anime eyes, soft pastel palette, clean soft lineart, gentle cel shading, storybook illustration, white background (cut out)",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/mboss_lumina.webp",
+        "small": "assets/web/mboss_lumina.webp"
+      }
     }
   ]
 }
