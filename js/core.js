@@ -27,7 +27,9 @@ const QUEST_POOL = [
   { id: "special1", icon: "✨", label: "Play a realm special game", goal: 1, reward: 6 },
   { id: "review1", icon: "💧", label: "Water your Mistake Garden (finish a review)", goal: 1, reward: 6 },
   { id: "speak1", icon: "🎤", label: "Finish an Echo Well speaking round", goal: 1, reward: 5 },
-  { id: "write1", icon: "✒️", label: "Write a Story Quill task", goal: 1, reward: 6 }
+  { id: "write1", icon: "✒️", label: "Write a Story Quill task", goal: 1, reward: 6 },
+  { id: "math1", icon: "🔢", label: "Finish a Number Kingdom maths lesson", goal: 1, reward: 6 },
+  { id: "dojo1", icon: "🗼", label: "Climb the Times-Table Tower (practice or sprint)", goal: 1, reward: 5 }
 ];
 Object.assign(WR, { SKILLS, PETS, AVATARS, QUEST_POOL, data: {}, manifest: null, screens: {} });
 
@@ -75,11 +77,15 @@ function freshState() {
     streak: { count: 0, last: null }, daily: null,
     progress: {}, owned: [], equipped: { outfit: null, petskin: null, theme: null },
     settings: { rate: 0.9, sound: true, unlockAll: false }, mistakes: [], lessonsDone: 0,
-    speaking: freshSpeaking(), writing: freshWriting()
+    speaking: freshSpeaking(), writing: freshWriting(), math: freshMath()
   };
 }
 // ✒️ Story Quill: best result per prompt ({ total, crowns, scales, at }) and saved drafts per prompt ({ plan, text, at })
 const freshWriting = () => ({ checks: 0, crowns: 0, best: {}, drafts: {} });
+// 🔢 Number Kingdom: chosen grade, best score per topic ("g3.times", "g7.mixed", "dojo.clongdiv"), Times-Table Tower facts
+// ({ "7x8": { b: Leitner box 0–5, r: right, w: wrong, d: next review time, t: last answer ms, l: last seen } }) and dojo stats
+const freshMath = () => ({ grade: null, placed: null, xp: 0, correct: 0, answered: 0, lessons: 0, topics: {}, facts: {}, dojo: { tables: [2, 3, 4, 5], op: "x", best: 0, sprints: 0, practice: 0, history: [] } });
+WR.freshMath = freshMath;
 const freshSpeaking = () => ({ rounds: 0, attempts: 0, passed: 0, perfect: 0, preferShadow: false, shadowWhy: null });
 // older saves (before the Echo Well / Story Quill) simply gain the speaking and writing stats; nothing else changes
 function migrate(s) {
@@ -88,6 +94,7 @@ function migrate(s) {
   s.writing.best = s.writing.best || {}; s.writing.drafts = s.writing.drafts || {};
   s.settings = Object.assign({ rate: 0.9, sound: true, unlockAll: false }, s.settings || {});
   s.progress = s.progress || {}; s.mistakes = s.mistakes || [];
+  const fm = freshMath(); s.math = Object.assign(fm, s.math || {}); s.math.topics = s.math.topics || {}; s.math.facts = s.math.facts || {}; s.math.dojo = Object.assign(freshMath().dojo, s.math.dojo || {});
   return s;
 }
 WR.load = () => { try { const s = JSON.parse(localStorage.getItem(SAVE_KEY)); if (s && s.v === 1) return migrate(Object.assign(freshState(), s)); } catch (e) { } return freshState(); };

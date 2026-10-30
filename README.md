@@ -1,4 +1,4 @@
-# Word Realms — a fairytale English quest (Cambridge CEFR A1 → C2)
+# Word Realms — a fairytale English quest (Cambridge CEFR A1 → C2) + 🔢 Number Kingdom maths (Grade 1 → 12)
 
 Cute-anime storybook web game that teaches **grammar, vocabulary, reading and listening**, plus bonus **🎤 speaking** and **✒️ writing** modes, across six realms, one per CEFR level.
 
@@ -76,6 +76,49 @@ No build step and no dependencies. (It must be served over http so the JSON data
   * **Offline-safe**: supabase-js v2.118.0 loads from jsDelivr only when the panel is opened or a session exists, with a 9 s timeout. If the CDN or network fails, the game keeps working on the local save.
   * Art: `assets/ui/cloud_castle.png` (Grok Bot image generator, not Higgsfield) and its WebP copy. Test: `node tools/test/cloud.js` covers guest mode with the CDN blocked, validation, the UI, and a live round trip with a fresh `wrtest_*` user: sign-up, debounced push, taken name, wrong password, the chooser, a fresh-device restore, session resume, a cross-device pull and log out & clear. `BASE=https://jere8899-collab.github.io/word-realms/ node tools/test/cloud.js` runs it against the live site. Screenshots: `screenshots/cloud_*.png`.
   * Cash purchases are still a demo stub. Stars and items bought in the shop are part of the save, so they sync too.
+
+## 🔢 Number Kingdom (maths, Grade 1 → Grade 12)
+Open it from the **🔢 Maths** tab or the Number Kingdom card above the realm map. Files: `js/math-gen.js` (seeded generators, answer checker, spaced repetition), `js/math-topics-p.js` (G1–4), `js/math-topics-m.js` (G5–8), `js/math-topics-h.js` (G9–12), `js/math.js` (hub, lessons, numpad, KaTeX), `js/math-dojo.js` (Times-Table Tower, mastery grid, grade finder) and `css/math.css`.
+
+* **Grades** follow the Singapore MOE syllabus (P1–P6 = Grade 1–6, Sec 1–4 = Grade 7–10, JC1–2 / H2 = Grade 11–12), with plain names so they make sense anywhere. There are 102 topics, and every grade has a fairytale **word problem** topic:
+
+| Grade | Land | Topics |
+|---|---|---|
+| 1 | Button Meadow | counting, add/subtract within 20, number bonds, shapes, money, telling time, stories |
+| 2 | Gumdrop Bridge | add/subtract to 1000, place value, ×2 ×5 ×10 tables, sharing, money, time, simple fractions, stories |
+| 3 | Abacus Orchard | times tables, division with remainders, 4-digit add/subtract, multiplication, equivalent fractions, measures, durations, perimeter, stories |
+| 4 | Fraction Fair | long multiplication, long division, factors and multiples, adding fractions, fraction of a set, decimals, rounding, area, angles, stories |
+| 5 | Decimal Docks | multiplying fractions, ×/÷ by 10/100/1000, percentages, ratio, triangle area, volume, averages, order of operations, rates, stories |
+| 6 | Ratio Riverboat | dividing fractions, percentage change, ratio sharing, circles, algebra, speed, stories |
+| 7 | Integer Isles | integers, HCF/LCM, simplifying, expanding, linear equations, angles, percentages, stories |
+| 8 | Algebra Archway | expanding brackets, factorising, Pythagoras, gradient, proportion, statistics, probability, fractional equations, stories |
+| 9 | Quadratic Quarry | quadratics, simultaneous equations, indices, standard form, trigonometry, coordinate geometry, inequalities, stories |
+| 10 | Trigon Towers | quadratic formula, sine/cosine rules, combined probability, frequency tables, arcs and sectors, vectors, interest, stories |
+| 11 | Function Falls | functions, exponentials and logs, differentiation, stationary points, AP, GP, 3-D vectors, stories |
+| 12 | Calculus Crown | integration, chain rule, area under a curve, binomial distribution, complex numbers, sigma notation, exponential calculus, stories |
+
+* **Questions** are made by seeded generators, so they don't repeat and duplicates are dropped. The answer checker accepts fractions, mixed numbers, decimals, − or -, commas, units, %, $, `x =`, sets in any order, pairs, remainders (`7 r 3`), times and ratios. An empty or unreadable answer is flagged rather than marked wrong. Multiple choice is used where typing would be awkward. A first wrong answer gives a 💡 hint and a second try. A second wrong answer shows the answer and a step-by-step worked solution.
+* **Maths notation** is rendered with KaTeX 0.16.22, loaded lazily from jsDelivr. If the CDN is blocked, a built-in plain-HTML fallback draws fractions, roots, vectors and binomials, so raw TeX never appears on screen.
+* **Number pad**: a calculator-style on-screen pad with extra keys per question (− . / r :). On touch devices the phone keyboard stays hidden (`inputmode="none"`). On a computer you can just type and press Enter.
+* **🗼 Times-Table Tower**: pick any of the tables from 2 to 12, then choose ×, ÷ or mixed.
+  * *Practice* is steady and untimed. *60-second Sprint* keeps a best score.
+  * Each fact (2×1 … 12×12, 132 in all) sits in a Leitner box: due again after 0 min, 10 min, 1 day, 3 days, 7 days or 21 days. Box 3 or higher counts as mastered.
+  * A missed fact comes back 3 questions later, and the next rounds favour missed and due facts first.
+  * The **mastery grid** is a 132-square heatmap. Tap a square to see that fact's history, or use "practise weakest facts".
+  * Harder floors: 2-digit × 1-digit, division with remainders, long multiplication, long division (with worked steps), and decimal × and ÷.
+  * Sumi and your pet react as you go.
+* **Rewards**: a lesson is 8 questions. You earn 1⭐ per right answer, combo bonuses, and up to 3 👑 crowns per grade-topic (crowns ×2 in stars when first earned). You also get maths XP and pet XP, plus streak credit. Two new daily quests are added: 🔢 "Finish a Number Kingdom maths lesson" and 🗼 "Climb the Times-Table Tower".
+* **Where to start**: pick "start at my grade", or use **Find my grade**, a short binary-search quiz (3 questions per round, with an "I'm not sure" button) that suggests a grade. It is an estimate, not a formal assessment.
+* **Save**: everything lives inside `wordRealms.save.v1` under `math` (`grade, placed, xp, correct, answered, lessons, topics{"g4.longdiv":{best,plays,last}}, facts{"7x8":{b,r,w,d,t,l}}, dojo{tables,op,best,sprints,practice,history}`), so it syncs through the Cloud Castle. Older saves gain an empty `math` block on load. The cloud chooser also counts maths progress.
+* **Art** (Grok Bot image generator, not Higgsfield): `assets/backgrounds/bg_math.png` (+ thumb), `assets/ui/math_mascot.png` (Sumi the star fairy), `assets/ui/times_tower.png`, with WebP copies in `assets/web/` from `tools/optimize_art.py`.
+* **Test**: `node tools/test/math.js` covers:
+  * every generator (30,600 questions with no NaN, no empty or duplicate options, and answers that pass their own checker), plus independent re-computation for 30 topics;
+  * the 132 facts, the challenge floors, the checker's tolerance cases and spaced repetition;
+  * a phone flow: number pad, wrong → hint → worked solution, saving, quests, G11 notation, the sprint, the mastery grid and long division;
+  * a desktop keyboard flow, placement, reload persistence, the cloud score and migration;
+  * the CDN-blocked fallback.
+
+  Screenshots: `screenshots/math_*.png`.
 
 ## Art
 All 13 manifest images (4 pets, 3 avatars, 6 realm backgrounds) were made with Grok Bot's built-in image generator, **not Higgsfield**. They are saved at the manifest `path`s, character backgrounds were made transparent, and backgrounds have `thumb` JPGs for the map. If a PNG is missing, the game falls back to the SVG placeholders.

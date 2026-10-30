@@ -292,6 +292,29 @@
         "small": "assets/web/bg_c2_720.webp",
         "thumb": "assets/web/bg_c2_thumb.webp"
       }
+    },
+    {
+      "id": "bg_math",
+      "type": "background",
+      "realm": "MATH",
+      "name": "Number Kingdom",
+      "priority": 1,
+      "path": "assets/backgrounds/bg_math.png",
+      "placeholder": "assets/backgrounds/bg_math.png",
+      "aspect_ratio": "16:9",
+      "size": [
+        1600,
+        900
+      ],
+      "transparent": false,
+      "prompt": "A whimsical pastel fairytale kingdom made of numbers: castle of number blocks, floating digits and operation symbols, rainbow abacus-bead bridge, crystal shapes in a flower meadow; cute anime pastel storybook style",
+      "thumb": "assets/backgrounds/thumbs/bg_math.jpg",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/bg_math_1280.webp",
+        "small": "assets/web/bg_math_720.webp",
+        "thumb": "assets/web/bg_math_thumb.webp"
+      }
     }
   ]
 }

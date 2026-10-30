@@ -15,7 +15,7 @@ WR.renderTop = () => {
   if (WR.Cloud) { WR.$("#cloudChip").onclick = () => WR.Cloud.open(); WR.Cloud.paint(); }
   WR.Garden && WR.Garden.badge();
 };
-const NAV = [["home", "🗺️", "Map"], ["pet", "🐾", "Pet"], ["shop", "🛍️", "Shop"], ["review", "🌷", "Garden"]];
+const NAV = [["home", "🗺️", "Map"], ["math", "🔢", "Maths"], ["pet", "🐾", "Pet"], ["shop", "🛍️", "Shop"], ["review", "🌷", "Garden"]];
 WR.navActive = k => document.querySelectorAll("#navbar button").forEach(b => b.classList.toggle("on", b.dataset.k === k));
 function renderNav() {
   const n = WR.$("#navbar"); n.style.display = "flex";
@@ -24,8 +24,8 @@ function renderNav() {
   if (!n.dataset.wired) { n.dataset.wired = "1"; n.addEventListener("click", e => { const b = e.target.closest("button[data-k]"); if (b && n.contains(b)) WR.go(b.dataset.k); }); }
 }
 WR.go = (screen, arg) => {
-  WR.stopLesson && WR.stopLesson(); WR.stopSpeaking && WR.stopSpeaking(); WR.stopWriting && WR.stopWriting(); WR.stopPlacement && WR.stopPlacement(); window.Speech && Speech.stop();
-  current = screen; WR.navActive(screen === "realm" ? "home" : screen);
+  WR.stopLesson && WR.stopLesson(); WR.stopSpeaking && WR.stopSpeaking(); WR.stopWriting && WR.stopWriting(); WR.stopPlacement && WR.stopPlacement(); WR.stopMath && WR.stopMath(); window.Speech && Speech.stop();
+  current = screen; WR.navActive(screen === "realm" ? "home" : /^(math|dojo|dojoGrid)$/.test(screen) ? "math" : screen);
   WR.screens[screen](arg); WR.renderTop();
 };
 
@@ -81,7 +81,7 @@ WR.screens.home = () => {
     <div><h1 style="margin:0">Hello, ${WR.esc(s.name)}! 🌸</h1><div class="muted" style="font-weight:800">${WR.esc(s.pet.name)} says: “${WR.esc(WR.petMood())}”</div>
     <div class="row" style="margin-top:6px"><span class="pill">✅ ${s.totalCorrect} correct answers</span><span class="pill" style="background:var(--butter)">📚 ${total} questions in the realms</span>${spk ? `<span class="pill" style="background:var(--mint)">🎤 ${spk} speaking prompts</span>` : ""}${WR.counts && WR.counts.writing ? `<span class="pill" style="background:#FFE3EF">✒️ ${WR.counts.writing} writing tasks</span>` : ""}${s.placement ? `<span class="pill mirror-pill" id="mirrorPill" style="background:#F3ECFF;cursor:pointer">🪞 Mirror says ${s.placement.level.toUpperCase()}</span>` : `<span class="pill mirror-pill" id="mirrorPill" style="background:#F3ECFF;cursor:pointer">🪞 Find my level</span>`}</div></div></div>
     <div class="grid g2" style="margin-top:14px;align-items:start">
-      <div><h2>🗺️ The Realm Map</h2><div class="map"><div class="map-path"></div>${WR.realms.map((r, i) => {
+      <div>${WR.Math ? `<div class="card math-node" id="mathNode">${WR.img("bg_math", "thumb", "", true)}<div style="flex:1"><div><span class="lvl-badge">G1–12</span><b>🔢 Number Kingdom</b></div><div class="muted" style="font-size:.85rem;font-weight:700">Maths quests + 🗼 Times-Table Tower</div><div class="muted" style="font-size:.75rem;font-weight:800">👑 ${WR.Math.totalCrowns()} crowns · 🌟 ${WR.Math.mastered()}/132 facts${s.math && s.math.grade ? ` · Grade ${s.math.grade}` : ""}</div></div></div>` : ""}<h2>🗺️ The Realm Map</h2><div class="map"><div class="map-path"></div>${WR.realms.map((r, i) => {
         const un = WR.isUnlocked(i), pr = WR.realmProgress(r.id);
         return `<div class="card realm-node ${un ? "" : "locked"}" data-r="${r.id}" data-i="${i}">${WR.img(r.bg, "thumb", "", true)}
           <div><div><span class="lvl-badge">${r.level}</span><b>${r.emoji} ${r.name}</b>${un ? "" : " 🔒"}</div><div class="muted" style="font-size:.85rem;font-weight:700">${r.modeName}</div>
@@ -99,6 +99,7 @@ WR.screens.home = () => {
   });
   document.querySelectorAll(".claim").forEach(b => b.onclick = () => { WR.claimQuest(b.dataset.id); WR.screens.home(); });
   WR.$("#petCard").onclick = () => WR.go("pet");
+  const mn = WR.$("#mathNode"); if (mn) mn.onclick = () => WR.go("math");
   const gn = WR.$("#gardenNudge"); if (gn) gn.onclick = () => WR.go("review");
   WR.$("#mirrorPill").onclick = () => WR.retakePlacement();
 };
