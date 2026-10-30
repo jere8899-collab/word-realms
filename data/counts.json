@@ -20,8 +20,8 @@
   "c1/vocab": 126,
   "c1/reading": 21,
   "c1/listening": 36,
-  "c2/grammar": 45,
-  "c2/vocab": 31,
+  "c2/grammar": 120,
+  "c2/vocab": 124,
   "c2/reading": 21,
   "c2/listening": 36,
   "a1/speaking": 22,
@@ -43,8 +43,8 @@
   "c1/story": 5,
   "c2/story": 5
  },
- "total": 1823,
- "questions": 1655,
+ "total": 1991,
+ "questions": 1823,
  "speaking": 132,
  "writing": 36,
  "stories": 6

@@ -85,6 +85,7 @@ CHUNKS = [("a1", "vocab", "c1_a1v", "A1V"),
           ("a2", "grammar", "c1_a2g", "A2G"), ("a2", "vocab", "c1_a2v", "A2V"),
           ("b1", "grammar", "c1_b1g", "B1G"), ("b1", "vocab", "c1_b1v", "B1V"),
           ("b2", "grammar", "c1_b2g", "B2G"), ("b2", "vocab", "c1_b2v", "B2V"),
-          ("c1", "grammar", "c1_c1g", "C1G"), ("c1", "vocab", "c1_c1v", "C1V")]
+          ("c1", "grammar", "c1_c1g", "C1G"), ("c1", "vocab", "c1_c1v", "C1V"),
+          ("c2", "grammar", "c1_c2g", "C2G"), ("c2", "vocab", "c1_c2v", "C2V")]
 for _lvl, _sk, _mod, _name in CHUNKS:
     GROW.setdefault(_lvl, {})[_sk] = getattr(importlib.import_module(_mod), _name)

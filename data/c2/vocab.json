@@ -525,5 +525,1586 @@
    "perpetual": "Perpetual = never ending.",
    "pertinent": "Pertinent = relevant."
   }
+ },
+ {
+  "type": "mcq",
+  "q": "The fox's ___ plan to steal the cheese fooled every crow in the forest.",
+  "options": [
+   "cunning",
+   "candid",
+   "callow",
+   "cordial"
+  ],
+  "answer": 0,
+  "explain": "Cunning = clever at tricking others. Example: a cunning trick.",
+  "notes": {
+   "candid": "Candid = honest and open.",
+   "callow": "Callow = young and inexperienced.",
+   "cordial": "Cordial = warm and friendly."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The ___ young knight had never held a sword before.",
+  "options": [
+   "callow",
+   "cunning",
+   "venerable",
+   "vigilant"
+  ],
+  "answer": 0,
+  "explain": "Callow = young and inexperienced. Example: a callow recruit.",
+  "notes": {
+   "cunning": "Cunning = clever at tricking.",
+   "venerable": "Venerable = respected because of age.",
+   "vigilant": "Vigilant = watchful."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The ___ old oak had stood in the schoolyard for three hundred years.",
+  "options": [
+   "venerable",
+   "vulnerable",
+   "venomous",
+   "vehement"
+  ],
+  "answer": 0,
+  "explain": "Venerable = respected because of age or wisdom. Example: a venerable professor.",
+  "notes": {
+   "vulnerable": "Vulnerable = easily hurt.",
+   "venomous": "Venomous = producing poison.",
+   "vehement": "Vehement = showing strong feeling."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Baby turtles are extremely ___ as they crawl towards the sea.",
+  "options": [
+   "vulnerable",
+   "venerable",
+   "invincible",
+   "vigilant"
+  ],
+  "answer": 0,
+  "explain": "Vulnerable = easily harmed. Example: vulnerable to attack.",
+  "notes": {
+   "venerable": "Venerable = respected for age.",
+   "invincible": "Invincible = impossible to defeat, the opposite.",
+   "vigilant": "Vigilant = watchful."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The guards remained ___ all night, watching for the dragon.",
+  "options": [
+   "vigilant",
+   "vigorous",
+   "vehement",
+   "vacant"
+  ],
+  "answer": 0,
+  "explain": "Vigilant = carefully watching for danger. Example: Stay vigilant.",
+  "notes": {
+   "vigorous": "Vigorous = strong and energetic.",
+   "vehement": "Vehement = expressing strong feelings.",
+   "vacant": "Vacant = empty."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "She was ___ in her refusal: absolutely no pets in the library!",
+  "options": [
+   "vehement",
+   "vague",
+   "vigilant",
+   "vacant"
+  ],
+  "answer": 0,
+  "explain": "Vehement = showing very strong feeling. Example: a vehement denial.",
+  "notes": {
+   "vague": "Vague = unclear.",
+   "vigilant": "Vigilant = watchful.",
+   "vacant": "Vacant = empty or blank."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The professor's instructions were so ___ that nobody knew what to do.",
+  "options": [
+   "nebulous",
+   "lucid",
+   "meticulous",
+   "concise"
+  ],
+  "answer": 0,
+  "explain": "Nebulous = vague and unclear. Example: a nebulous idea.",
+  "notes": {
+   "lucid": "Lucid = clear, the opposite.",
+   "meticulous": "Meticulous = very careful and precise.",
+   "concise": "Concise = short and clear."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "His answer was ___: three words that said everything.",
+  "options": [
+   "laconic",
+   "verbose",
+   "loquacious",
+   "rambling"
+  ],
+  "answer": 0,
+  "explain": "Laconic = using very few words. Example: a laconic reply.",
+  "notes": {
+   "verbose": "Verbose = using too many words.",
+   "loquacious": "Loquacious = very talkative.",
+   "rambling": "Rambling = long and wandering."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The ___ parrot never stopped chattering, even at night.",
+  "options": [
+   "loquacious",
+   "laconic",
+   "taciturn",
+   "reticent"
+  ],
+  "answer": 0,
+  "explain": "Loquacious = very talkative. Example: a loquacious guide.",
+  "notes": {
+   "laconic": "Laconic = using few words.",
+   "taciturn": "Taciturn = saying very little.",
+   "reticent": "Reticent = unwilling to share thoughts."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The ___ lighthouse keeper rarely spoke to visitors.",
+  "options": [
+   "taciturn",
+   "talkative",
+   "gregarious",
+   "garrulous"
+  ],
+  "answer": 0,
+  "explain": "Taciturn = habitually quiet. Example: a taciturn farmer.",
+  "notes": {
+   "talkative": "Talkative is the opposite.",
+   "gregarious": "Gregarious = loving company.",
+   "garrulous": "Garrulous = talking too much about unimportant things."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Dolphins are ___ animals that live in large, playful groups.",
+  "options": [
+   "gregarious",
+   "solitary",
+   "taciturn",
+   "reclusive"
+  ],
+  "answer": 0,
+  "explain": "Gregarious = liking company. Example: a gregarious host.",
+  "notes": {
+   "solitary": "Solitary = living alone.",
+   "taciturn": "Taciturn = quiet.",
+   "reclusive": "Reclusive = avoiding other people."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The ___ inventor hadn't left his workshop in years.",
+  "options": [
+   "reclusive",
+   "gregarious",
+   "renowned",
+   "resplendent"
+  ],
+  "answer": 0,
+  "explain": "Reclusive = avoiding contact with others. Example: a reclusive author.",
+  "notes": {
+   "gregarious": "Gregarious = sociable.",
+   "renowned": "Renowned = famous.",
+   "resplendent": "Resplendent = dazzlingly beautiful."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The peacock looked ___ in its shimmering feathers.",
+  "options": [
+   "resplendent",
+   "reclusive",
+   "repugnant",
+   "redundant"
+  ],
+  "answer": 0,
+  "explain": "Resplendent = splendidly colourful. Example: resplendent in gold.",
+  "notes": {
+   "reclusive": "Reclusive = avoiding people.",
+   "repugnant": "Repugnant = disgusting.",
+   "redundant": "Redundant = no longer needed."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "With a calculator, learning the times tables isn't ___: you still need them!",
+  "options": [
+   "redundant",
+   "resplendent",
+   "relevant",
+   "repetitive"
+  ],
+  "answer": 0,
+  "explain": "Redundant = no longer needed or useful. Example: The old machine became redundant.",
+  "notes": {
+   "resplendent": "Resplendent = splendid.",
+   "relevant": "Relevant would mean connected, which reverses the point.",
+   "repetitive": "Repetitive = repeating many times."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The troll's table manners were utterly ___.",
+  "options": [
+   "uncouth",
+   "uncanny",
+   "unkempt",
+   "unwitting"
+  ],
+  "answer": 0,
+  "explain": "Uncouth = rude and lacking good manners. Example: uncouth behaviour.",
+  "notes": {
+   "uncanny": "Uncanny = strange and mysterious.",
+   "unkempt": "Unkempt = untidy in appearance.",
+   "unwitting": "Unwitting = not knowing."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The robot had an ___ ability to guess what we were thinking.",
+  "options": [
+   "uncanny",
+   "uncouth",
+   "unkempt",
+   "uncalled-for"
+  ],
+  "answer": 0,
+  "explain": "Uncanny = strange in a way that's hard to explain. Example: an uncanny resemblance.",
+  "notes": {
+   "uncouth": "Uncouth = rude.",
+   "unkempt": "Unkempt = untidy.",
+   "uncalled-for": "Uncalled-for = unfair and unnecessary."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "After a week in the forest, the explorers looked ___.",
+  "options": [
+   "unkempt",
+   "uncanny",
+   "unwitting",
+   "uncouth"
+  ],
+  "answer": 0,
+  "explain": "Unkempt = untidy, messy (hair, appearance). Example: unkempt hair.",
+  "notes": {
+   "uncanny": "Uncanny = strangely mysterious.",
+   "unwitting": "Unwitting = unaware.",
+   "uncouth": "Uncouth = rude."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The squirrel was an ___ accomplice: it carried the key away without knowing.",
+  "options": [
+   "unwitting",
+   "unkempt",
+   "unruly",
+   "unerring"
+  ],
+  "answer": 0,
+  "explain": "Unwitting = not aware of what you are doing. Example: an unwitting helper.",
+  "notes": {
+   "unkempt": "Unkempt = untidy.",
+   "unruly": "Unruly = hard to control.",
+   "unerring": "Unerring = always accurate."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The archer's aim was ___: every arrow hit the centre.",
+  "options": [
+   "unerring",
+   "unwitting",
+   "uneven",
+   "unruly"
+  ],
+  "answer": 0,
+  "explain": "Unerring = always accurate. Example: an unerring instinct.",
+  "notes": {
+   "unwitting": "Unwitting = unaware.",
+   "uneven": "Uneven = not level or equal.",
+   "unruly": "Unruly = hard to control."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The ___ puppies knocked over every potted plant.",
+  "options": [
+   "unruly",
+   "unerring",
+   "unanimous",
+   "unassuming"
+  ],
+  "answer": 0,
+  "explain": "Unruly = difficult to control. Example: an unruly class.",
+  "notes": {
+   "unerring": "Unerring = always accurate.",
+   "unanimous": "Unanimous = with everyone agreeing.",
+   "unassuming": "Unassuming = modest."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Despite her fame, the astronaut was modest and ___.",
+  "options": [
+   "unassuming",
+   "unruly",
+   "ostentatious",
+   "pompous"
+  ],
+  "answer": 0,
+  "explain": "Unassuming = modest, not wanting attention. Example: an unassuming hero.",
+  "notes": {
+   "unruly": "Unruly = hard to control.",
+   "ostentatious": "Ostentatious = showing off.",
+   "pompous": "Pompous = self-important."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The dragon's ___ golden throne was covered in jewels.",
+  "options": [
+   "ostentatious",
+   "unassuming",
+   "austere",
+   "frugal"
+  ],
+  "answer": 0,
+  "explain": "Ostentatious = designed to impress or show off. Example: an ostentatious car.",
+  "notes": {
+   "unassuming": "Unassuming = modest.",
+   "austere": "Austere = plain and simple.",
+   "frugal": "Frugal = careful with money."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The monks lived in ___ rooms with only a bed and a candle.",
+  "options": [
+   "austere",
+   "ostentatious",
+   "lavish",
+   "opulent"
+  ],
+  "answer": 0,
+  "explain": "Austere = very plain, without comfort. Example: an austere lifestyle.",
+  "notes": {
+   "ostentatious": "Ostentatious = showy.",
+   "lavish": "Lavish = rich and generous.",
+   "opulent": "Opulent = luxurious."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Squirrels are ___: they store food for the winter.",
+  "options": [
+   "provident",
+   "profligate",
+   "prodigal",
+   "prolific"
+  ],
+  "answer": 0,
+  "explain": "Provident = careful to plan for the future. Example: a provident saver.",
+  "notes": {
+   "profligate": "Profligate = wasteful.",
+   "prodigal": "Prodigal = spending wastefully.",
+   "prolific": "Prolific = producing a lot."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Agatha Christie was a ___ writer, with over sixty novels.",
+  "options": [
+   "prolific",
+   "provident",
+   "prodigious",
+   "profound"
+  ],
+  "answer": 0,
+  "explain": "Prolific = producing a great amount. Example: a prolific inventor.",
+  "notes": {
+   "provident": "Provident = planning for the future.",
+   "prodigious": "Prodigious = remarkably impressive or large, not about quantity of works.",
+   "profound": "Profound = very deep."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Mozart showed ___ talent as a young child.",
+  "options": [
+   "prodigious",
+   "prolific",
+   "profligate",
+   "prosaic"
+  ],
+  "answer": 0,
+  "explain": "Prodigious = remarkably impressive. Example: a prodigious memory.",
+  "notes": {
+   "prolific": "Prolific = producing a lot.",
+   "profligate": "Profligate = wasteful.",
+   "prosaic": "Prosaic = ordinary and dull."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The ending of the fairy tale was rather ___: no magic, no surprise.",
+  "options": [
+   "prosaic",
+   "prodigious",
+   "poetic",
+   "provocative"
+  ],
+  "answer": 0,
+  "explain": "Prosaic = ordinary and unimaginative. Example: a prosaic explanation.",
+  "notes": {
+   "prodigious": "Prodigious = remarkably impressive.",
+   "poetic": "Poetic is the opposite.",
+   "provocative": "Provocative = causing a strong reaction."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The magician tried to ___ the audience with smoke and mirrors.",
+  "options": [
+   "beguile",
+   "bewail",
+   "bequeath",
+   "berate"
+  ],
+  "answer": 0,
+  "explain": "Beguile = charm or trick. Example: beguiled by her smile.",
+  "notes": {
+   "bewail": "Bewail = express sorrow about.",
+   "bequeath": "Bequeath = leave in a will.",
+   "berate": "Berate = scold angrily."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The coach ___ the team for not taking the match seriously.",
+  "options": [
+   "berated",
+   "beguiled",
+   "bequeathed",
+   "belittled to"
+  ],
+  "answer": 0,
+  "explain": "Berate = scold angrily. Example: She berated him for being late.",
+  "notes": {
+   "beguiled": "Beguiled = charmed.",
+   "bequeathed": "Bequeathed = left in a will.",
+   "belittled to": "Belittle doesn't take to."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The old wizard ___ his spellbook to his favourite apprentice.",
+  "options": [
+   "bequeathed",
+   "berated",
+   "bewildered",
+   "besieged"
+  ],
+  "answer": 0,
+  "explain": "Bequeath = pass on after death, or hand down. Example: She bequeathed her house to the school.",
+  "notes": {
+   "berated": "Berated = scolded.",
+   "bewildered": "Bewildered = confused.",
+   "besieged": "Besieged = surrounded and attacked."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Older kids sometimes ___ the ideas of younger ones, which isn't fair.",
+  "options": [
+   "belittle",
+   "bequeath",
+   "bolster",
+   "bewitch"
+  ],
+  "answer": 0,
+  "explain": "Belittle = make something seem unimportant. Example: Don't belittle her achievement.",
+  "notes": {
+   "bequeath": "Bequeath = leave in a will.",
+   "bolster": "Bolster = support, the opposite.",
+   "bewitch": "Bewitch = enchant."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The kind words ___ her confidence before the audition.",
+  "options": [
+   "bolstered",
+   "belittled",
+   "undermined",
+   "curtailed"
+  ],
+  "answer": 0,
+  "explain": "Bolster = support or strengthen. Example: bolster morale.",
+  "notes": {
+   "belittled": "Belittled = made seem unimportant.",
+   "undermined": "Undermined = weakened.",
+   "curtailed": "Curtailed = cut short."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Constant teasing can ___ a child's self-belief.",
+  "options": [
+   "undermine",
+   "underline",
+   "underpin",
+   "understate"
+  ],
+  "answer": 0,
+  "explain": "Undermine = gradually weaken. Example: Lack of sleep undermines your health.",
+  "notes": {
+   "underline": "Underline = emphasise.",
+   "underpin": "Underpin = support from below.",
+   "understate": "Understate = make seem smaller than it is."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Careful research ___ every claim in her science report.",
+  "options": [
+   "underpins",
+   "undermines",
+   "understates",
+   "underestimates"
+  ],
+  "answer": 0,
+  "explain": "Underpin = support or form the basis of. Example: Trust underpins friendship.",
+  "notes": {
+   "undermines": "Undermines = weakens.",
+   "understates": "Understates = makes seem smaller.",
+   "underestimates": "Underestimates = guesses too low."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The heavy snow ___ our school trip, cutting it to one day.",
+  "options": [
+   "curtailed",
+   "curated",
+   "cultivated",
+   "corroborated"
+  ],
+  "answer": 0,
+  "explain": "Curtail = cut short or reduce. Example: Rain curtailed the match.",
+  "notes": {
+   "curated": "Curated = selected for a collection.",
+   "cultivated": "Cultivated = grew.",
+   "corroborated": "Corroborated = confirmed."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Two witnesses ___ the girl's story about the glowing fox.",
+  "options": [
+   "corroborated",
+   "curtailed",
+   "contradicted",
+   "concocted"
+  ],
+  "answer": 0,
+  "explain": "Corroborate = confirm with evidence. Example: The video corroborated his account.",
+  "notes": {
+   "curtailed": "Curtailed = cut short.",
+   "contradicted": "Contradicted = said the opposite.",
+   "concocted": "Concocted = invented."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "He ___ an elaborate excuse involving aliens and a lost bus.",
+  "options": [
+   "concocted",
+   "corroborated",
+   "conceded",
+   "confiscated"
+  ],
+  "answer": 0,
+  "explain": "Concoct = invent a story, or mix a dish. Example: concoct a plan.",
+  "notes": {
+   "corroborated": "Corroborated = confirmed.",
+   "conceded": "Conceded = admitted.",
+   "confiscated": "Confiscated = took away as punishment."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The teacher ___ the phone until the end of the day.",
+  "options": [
+   "confiscated",
+   "concocted",
+   "consolidated",
+   "convened"
+  ],
+  "answer": 0,
+  "explain": "Confiscate = take away officially. Example: The guard confiscated the sword.",
+  "notes": {
+   "concocted": "Concocted = invented.",
+   "consolidated": "Consolidated = made stronger or combined.",
+   "convened": "Convened = called a meeting."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The elders ___ a meeting under the great tree.",
+  "options": [
+   "convened",
+   "confiscated",
+   "conveyed",
+   "conversed"
+  ],
+  "answer": 0,
+  "explain": "Convene = call people together for a meeting. Example: convene a council.",
+  "notes": {
+   "confiscated": "Confiscated = took away.",
+   "conveyed": "Conveyed = communicated or carried.",
+   "conversed": "Conversed = talked, and isn't used with a meeting as object."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Her face ___ more than words ever could.",
+  "options": [
+   "conveyed",
+   "convened",
+   "conceived",
+   "conferred"
+  ],
+  "answer": 0,
+  "explain": "Convey = communicate. Example: Music conveys emotion.",
+  "notes": {
+   "convened": "Convened = called together.",
+   "conceived": "Conceived = imagined or created.",
+   "conferred": "Conferred = gave an honour, or discussed."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The queen ___ a knighthood on the brave baker.",
+  "options": [
+   "conferred",
+   "conveyed",
+   "confided",
+   "confronted"
+  ],
+  "answer": 0,
+  "explain": "Confer (on) = give an honour. Example: The title was conferred on her.",
+  "notes": {
+   "conveyed": "Conveyed = communicated.",
+   "confided": "Confided = told a secret.",
+   "confronted": "Confronted = faced."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The rumour about the haunted lab ___ through the school in minutes.",
+  "options": [
+   "permeated",
+   "perforated",
+   "perpetrated",
+   "perused"
+  ],
+  "answer": 0,
+  "explain": "Permeate = spread through every part. Example: The smell permeated the house.",
+  "notes": {
+   "perforated": "Perforated = made holes in.",
+   "perpetrated": "Perpetrated = committed a crime.",
+   "perused": "Perused = read carefully."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "She ___ the ancient map, searching for hidden symbols.",
+  "options": [
+   "perused",
+   "permeated",
+   "persevered",
+   "perplexed"
+  ],
+  "answer": 0,
+  "explain": "Peruse = read carefully. Example: peruse the menu.",
+  "notes": {
+   "permeated": "Permeated = spread through.",
+   "persevered": "Persevered = kept trying; it needs with or in.",
+   "perplexed": "Perplexed = confused someone."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The final riddle ___ even the cleverest apprentices.",
+  "options": [
+   "perplexed",
+   "perused",
+   "persisted",
+   "perpetuated"
+  ],
+  "answer": 0,
+  "explain": "Perplex = completely confuse. Example: The question perplexed me.",
+  "notes": {
+   "perused": "Perused = read carefully.",
+   "persisted": "Persisted = continued; it doesn't take an object.",
+   "perpetuated": "Perpetuated = made something continue."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Old cartoons can ___ silly stereotypes about scientists.",
+  "options": [
+   "perpetuate",
+   "perplex",
+   "perforate",
+   "permeate"
+  ],
+  "answer": 0,
+  "explain": "Perpetuate = make something (often bad) continue. Example: perpetuate a myth.",
+  "notes": {
+   "perplex": "Perplex = confuse.",
+   "perforate": "Perforate = make holes in.",
+   "permeate": "Permeate = spread through."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The dragon gave a ___ of contentment as it curled up by the fire.",
+  "options": [
+   "sigh",
+   "gasp",
+   "groan",
+   "wail"
+  ],
+  "answer": 0,
+  "explain": "A sigh can express relief or contentment. Example: a sigh of relief.",
+  "notes": {
+   "gasp": "A gasp is a sudden breath of surprise.",
+   "groan": "A groan expresses pain or annoyance.",
+   "wail": "A wail is a long cry of grief."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The crowd ___ in surprise as the rabbit vanished.",
+  "options": [
+   "gasped",
+   "sighed",
+   "mumbled",
+   "snorted"
+  ],
+  "answer": 0,
+  "explain": "Gasp = take a sudden breath in surprise. Example: She gasped in horror.",
+  "notes": {
+   "sighed": "Sighed suggests relief or tiredness.",
+   "mumbled": "Mumbled = spoke unclearly.",
+   "snorted": "Snorted = made a rude nose sound."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The kitten ___ at the bright, flashing toy.",
+  "options": [
+   "gazed",
+   "glanced",
+   "glimpsed",
+   "peeked through"
+  ],
+  "answer": 0,
+  "explain": "Gaze = look steadily for a long time. Example: gaze at the stars.",
+  "notes": {
+   "glanced": "Glance = a quick look.",
+   "glimpsed": "Glimpse = see very briefly.",
+   "peeked through": "Peek through needs something to look through."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I only ___ the shooting star before it disappeared.",
+  "options": [
+   "glimpsed",
+   "gazed",
+   "stared",
+   "scrutinised"
+  ],
+  "answer": 0,
+  "explain": "Glimpse = see for a very short time. Example: I glimpsed a fox.",
+  "notes": {
+   "gazed": "Gazed = looked for a long time.",
+   "stared": "Stared = looked fixedly for a long time.",
+   "scrutinised": "Scrutinised = examined closely."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The judges ___ every detail of the sandcastle.",
+  "options": [
+   "scrutinised",
+   "glimpsed",
+   "glanced",
+   "skimmed"
+  ],
+  "answer": 0,
+  "explain": "Scrutinise = examine very carefully. Example: scrutinise the evidence.",
+  "notes": {
+   "glimpsed": "Glimpsed = saw briefly.",
+   "glanced": "Glanced = looked quickly.",
+   "skimmed": "Skimmed = read quickly."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The tiny stream ___ through the meadow.",
+  "options": [
+   "meandered",
+   "hurtled",
+   "plunged",
+   "surged"
+  ],
+  "answer": 0,
+  "explain": "Meander = wind slowly. Example: a meandering path.",
+  "notes": {
+   "hurtled": "Hurtled = moved very fast.",
+   "plunged": "Plunged = fell suddenly.",
+   "surged": "Surged = rushed forward powerfully."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The runaway cart ___ down the hill.",
+  "options": [
+   "hurtled",
+   "meandered",
+   "ambled",
+   "sauntered"
+  ],
+  "answer": 0,
+  "explain": "Hurtle = move very fast, out of control. Example: The rock hurtled towards us.",
+  "notes": {
+   "meandered": "Meandered = wandered slowly.",
+   "ambled": "Ambled = walked slowly.",
+   "sauntered": "Sauntered = walked in a relaxed way."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The cat ___ across the garden as if it owned the place.",
+  "options": [
+   "sauntered",
+   "hurtled",
+   "scurried",
+   "stumbled"
+  ],
+  "answer": 0,
+  "explain": "Saunter = walk slowly and confidently. Example: He sauntered in late.",
+  "notes": {
+   "hurtled": "Hurtled = moved too fast.",
+   "scurried": "Scurried = ran with quick small steps, nervously.",
+   "stumbled": "Stumbled = nearly fell."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The mice ___ into their holes when the cat appeared.",
+  "options": [
+   "scurried",
+   "sauntered",
+   "strolled",
+   "lumbered"
+  ],
+  "answer": 0,
+  "explain": "Scurry = move quickly with small steps. Example: Ants scurried everywhere.",
+  "notes": {
+   "sauntered": "Sauntered = walked confidently and slowly.",
+   "strolled": "Strolled = walked slowly for pleasure.",
+   "lumbered": "Lumbered = moved heavily and clumsily."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The giant ___ through the forest, crushing bushes.",
+  "options": [
+   "lumbered",
+   "scurried",
+   "tiptoed",
+   "darted"
+  ],
+  "answer": 0,
+  "explain": "Lumber = move heavily and awkwardly. Example: The bear lumbered off.",
+  "notes": {
+   "scurried": "Scurried = quick small steps.",
+   "tiptoed": "Tiptoed = walked very quietly.",
+   "darted": "Darted = moved suddenly and fast."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Sorting the library's million books is no ___ in the park.",
+  "options": [
+   "walk",
+   "stroll",
+   "picnic",
+   "run"
+  ],
+  "answer": 0,
+  "explain": "No walk in the park = not easy. Example: Training for a marathon is no walk in the park.",
+  "notes": {
+   "stroll": "Stroll isn't the fixed idiom.",
+   "picnic": "No picnic is a different idiom with the same meaning, but not 'in the park'.",
+   "run": "Run isn't the idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Don't put all your eggs in one ___: enter more than one competition.",
+  "options": [
+   "basket",
+   "box",
+   "nest",
+   "bag"
+  ],
+  "answer": 0,
+  "explain": "Don't put all your eggs in one basket = don't risk everything on one thing. Example: Apply to several schools; don't put all your eggs in one basket.",
+  "notes": {
+   "box": "Box isn't used in this idiom.",
+   "nest": "Nest isn't used in this idiom.",
+   "bag": "Bag isn't used in this idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The inventor was ahead of her ___: nobody understood her machine.",
+  "options": [
+   "time",
+   "age",
+   "clock",
+   "days"
+  ],
+  "answer": 0,
+  "explain": "Ahead of your time = with ideas too modern for your era. Example: Da Vinci was ahead of his time.",
+  "notes": {
+   "age": "Age isn't the fixed idiom.",
+   "clock": "Clock isn't the idiom.",
+   "days": "Days isn't the idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "When the dragon smiled, the knight smelled a ___.",
+  "options": [
+   "rat",
+   "mouse",
+   "skunk",
+   "fox"
+  ],
+  "answer": 0,
+  "explain": "Smell a rat = suspect a trick. Example: When he offered free sweets, I smelled a rat.",
+  "notes": {
+   "mouse": "Mouse isn't used in this idiom.",
+   "skunk": "Skunk isn't used in this idiom.",
+   "fox": "Fox isn't used in this idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The apprentice was left holding the ___ when the others ran away.",
+  "options": [
+   "baby",
+   "bag",
+   "book",
+   "candle"
+  ],
+  "answer": 0,
+  "explain": "Left holding the baby = left with responsibility for a problem. Example: They left me holding the baby.",
+  "notes": {
+   "bag": "Holding the bag is the American version; this is the British idiom.",
+   "book": "Book isn't used in this idiom.",
+   "candle": "Candle is in 'can't hold a candle to', a different idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The new robot can't hold a ___ to the old one.",
+  "options": [
+   "candle",
+   "torch",
+   "light",
+   "lamp"
+  ],
+  "answer": 0,
+  "explain": "Can't hold a candle to = is much worse than. Example: The sequel can't hold a candle to the original.",
+  "notes": {
+   "torch": "Torch is in 'carry a torch for', a different idiom.",
+   "light": "Light isn't used in this idiom.",
+   "lamp": "Lamp isn't used in this idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Her prize-winning story was a ___ above the rest.",
+  "options": [
+   "cut",
+   "slice",
+   "step",
+   "notch up"
+  ],
+  "answer": 0,
+  "explain": "A cut above = clearly better. Example: This café is a cut above the others.",
+  "notes": {
+   "slice": "Slice isn't used in this idiom.",
+   "step": "Step above isn't the idiom.",
+   "notch up": "Notch up = achieve; 'a notch above' exists, but not 'a notch up above'."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The mystery was finally solved, and the penny ___.",
+  "options": [
+   "dropped",
+   "fell over",
+   "rolled",
+   "spun"
+  ],
+  "answer": 0,
+  "explain": "The penny dropped = someone finally understood. Example: After a minute, the penny dropped.",
+  "notes": {
+   "fell over": "Fell over isn't the idiom.",
+   "rolled": "Rolled isn't the idiom.",
+   "spun": "Spun isn't the idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You can't judge a book by its ___.",
+  "options": [
+   "cover",
+   "title",
+   "spine",
+   "page"
+  ],
+  "answer": 0,
+  "explain": "Don't judge a book by its cover = don't judge by appearances. Example: The shy boy turned out to be hilarious.",
+  "notes": {
+   "title": "Title isn't the proverb.",
+   "spine": "Spine isn't the proverb.",
+   "page": "Page isn't the proverb."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The two scholars don't see eye to ___ on anything.",
+  "options": [
+   "eye",
+   "face",
+   "nose",
+   "ear"
+  ],
+  "answer": 0,
+  "explain": "See eye to eye = agree. Example: We don't always see eye to eye.",
+  "notes": {
+   "face": "Face isn't used in this idiom.",
+   "nose": "Nose isn't used in this idiom.",
+   "ear": "Ear isn't used in this idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "After the argument, there was some bad ___ between the two teams.",
+  "options": [
+   "blood",
+   "water",
+   "air",
+   "feeling to"
+  ],
+  "answer": 0,
+  "explain": "Bad blood = lasting dislike between people. Example: There's bad blood between the clubs.",
+  "notes": {
+   "water": "Bad water isn't the idiom.",
+   "air": "Bad air isn't the idiom.",
+   "feeling to": "Bad feeling exists, but not 'bad feeling to'."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The detective decided to play it by ___ and see what happened.",
+  "options": [
+   "ear",
+   "eye",
+   "heart",
+   "hand"
+  ],
+  "answer": 0,
+  "explain": "Play it by ear = decide as you go. Example: We'll play it by ear.",
+  "notes": {
+   "eye": "Eye isn't used in this idiom.",
+   "heart": "Heart isn't used in this idiom.",
+   "hand": "Hand isn't used in this idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The robot's answer was so long-winded; I wish it would get to the ___.",
+  "options": [
+   "point",
+   "end",
+   "fact",
+   "bottom of"
+  ],
+  "answer": 0,
+  "explain": "Get to the point = say the important thing. Example: Please get to the point.",
+  "notes": {
+   "end": "Get to the end means finish, not focus.",
+   "fact": "Fact isn't used here.",
+   "bottom of": "Get to the bottom of = find the truth."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We need to get to the ___ of this mystery.",
+  "options": [
+   "bottom",
+   "base",
+   "root of",
+   "floor"
+  ],
+  "answer": 0,
+  "explain": "Get to the bottom of = discover the real cause. Example: We'll get to the bottom of this.",
+  "notes": {
+   "base": "Base isn't used in this idiom.",
+   "root of": "The of is already there, so root of repeats it.",
+   "floor": "Floor isn't used in this idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Our science project is still up in the ___: we haven't chosen a topic.",
+  "options": [
+   "air",
+   "sky",
+   "clouds",
+   "wind"
+  ],
+  "answer": 0,
+  "explain": "Up in the air = undecided. Example: Our plans are up in the air.",
+  "notes": {
+   "sky": "Sky isn't used in this idiom.",
+   "clouds": "Clouds is in 'head in the clouds', a different idiom.",
+   "wind": "Wind isn't used in this idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The dreamy inventor always had her head in the ___.",
+  "options": [
+   "clouds",
+   "air",
+   "stars",
+   "sky"
+  ],
+  "answer": 0,
+  "explain": "Head in the clouds = not paying attention to real life. Example: Stop daydreaming; get your head out of the clouds.",
+  "notes": {
+   "air": "Up in the air means undecided, a different idiom.",
+   "stars": "Stars isn't used in this idiom.",
+   "sky": "Sky isn't used in this idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Finishing the quest in one night was a tall ___.",
+  "options": [
+   "order",
+   "request",
+   "task",
+   "demand"
+  ],
+  "answer": 0,
+  "explain": "A tall order = a very difficult request. Example: Winning every game is a tall order.",
+  "notes": {
+   "request": "Tall request isn't the idiom.",
+   "task": "Tall task isn't the idiom.",
+   "demand": "Tall demand isn't the idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The scholars argued until the ___ came home.",
+  "options": [
+   "cows",
+   "sheep",
+   "birds",
+   "horses"
+  ],
+  "answer": 0,
+  "explain": "Until the cows come home = for a very long time. Example: You can argue until the cows come home.",
+  "notes": {
+   "sheep": "Sheep isn't used in this idiom.",
+   "birds": "Birds isn't used in this idiom.",
+   "horses": "Horses isn't used in this idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The village library is in a ___ state after the storm.",
+  "options": [
+   "parlous",
+   "pernicious",
+   "perilous to",
+   "precarious of"
+  ],
+  "answer": 0,
+  "explain": "A parlous state = a dangerously bad condition (formal). Example: The roof is in a parlous state.",
+  "notes": {
+   "pernicious": "Pernicious = harmful in a slow, hidden way.",
+   "perilous to": "Perilous to isn't the collocation.",
+   "precarious of": "Precarious of isn't English."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Too much screen time can have a ___ effect on sleep.",
+  "options": [
+   "pernicious",
+   "parlous",
+   "propitious",
+   "precocious"
+  ],
+  "answer": 0,
+  "explain": "Pernicious = harmful, often gradually. Example: a pernicious habit.",
+  "notes": {
+   "parlous": "Parlous = in a bad state, used with 'state'.",
+   "propitious": "Propitious = favourable, the opposite.",
+   "precocious": "Precocious = advanced for one's age."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Clear skies made it a ___ night for stargazing.",
+  "options": [
+   "propitious",
+   "pernicious",
+   "precarious",
+   "portentous"
+  ],
+  "answer": 0,
+  "explain": "Propitious = favourable. Example: a propitious moment.",
+  "notes": {
+   "pernicious": "Pernicious = harmful.",
+   "precarious": "Precarious = unstable.",
+   "portentous": "Portentous = ominous or pompous."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The ___ seven-year-old was already doing algebra.",
+  "options": [
+   "precocious",
+   "propitious",
+   "precarious",
+   "preposterous"
+  ],
+  "answer": 0,
+  "explain": "Precocious = developed earlier than usual. Example: a precocious talent.",
+  "notes": {
+   "propitious": "Propitious = favourable.",
+   "precarious": "Precarious = unstable.",
+   "preposterous": "Preposterous = ridiculous."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The stack of books was balanced in a very ___ position.",
+  "options": [
+   "precarious",
+   "precocious",
+   "precious",
+   "precise"
+  ],
+  "answer": 0,
+  "explain": "Precarious = unstable, likely to fall. Example: a precarious ledge.",
+  "notes": {
+   "precocious": "Precocious = advanced for one's age.",
+   "precious": "Precious = valuable.",
+   "precise": "Precise = exact."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The idea that the moon is made of cheese is ___.",
+  "options": [
+   "preposterous",
+   "precarious",
+   "propitious",
+   "prosperous"
+  ],
+  "answer": 0,
+  "explain": "Preposterous = absurd, ridiculous. Example: a preposterous excuse.",
+  "notes": {
+   "precarious": "Precarious = unstable.",
+   "propitious": "Propitious = favourable.",
+   "prosperous": "Prosperous = successful and wealthy."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "She has a ___ memory for dates and names.",
+  "options": [
+   "prodigious",
+   "prodigal",
+   "prolix",
+   "protracted"
+  ],
+  "answer": 0,
+  "explain": "A prodigious memory = an amazingly good one. Example: prodigious strength.",
+  "notes": {
+   "prodigal": "Prodigal = wasteful.",
+   "prolix": "Prolix = using too many words.",
+   "protracted": "Protracted = lasting too long."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "After ___ negotiations, the cats and dogs agreed to share the garden.",
+  "options": [
+   "protracted",
+   "prodigious",
+   "prolific",
+   "protruding"
+  ],
+  "answer": 0,
+  "explain": "Protracted = lasting longer than expected. Example: a protracted illness.",
+  "notes": {
+   "prodigious": "Prodigious = amazingly great.",
+   "prolific": "Prolific = producing a lot.",
+   "protruding": "Protruding = sticking out."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The witch gave a ___ laugh that echoed through the tower.",
+  "options": [
+   "sinister",
+   "sincere",
+   "sinuous",
+   "singular"
+  ],
+  "answer": 0,
+  "explain": "Sinister = suggesting evil. Example: a sinister smile.",
+  "notes": {
+   "sincere": "Sincere = honest.",
+   "sinuous": "Sinuous = curving and graceful.",
+   "singular": "Singular = unusual, or single."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The snake moved with ___ grace through the grass.",
+  "options": [
+   "sinuous",
+   "sinister",
+   "stilted",
+   "stocky"
+  ],
+  "answer": 0,
+  "explain": "Sinuous = curving and graceful. Example: the sinuous river.",
+  "notes": {
+   "sinister": "Sinister = evil-seeming.",
+   "stilted": "Stilted = stiff and unnatural.",
+   "stocky": "Stocky = short and solid."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The robot's speech sounded ___ and unnatural.",
+  "options": [
+   "stilted",
+   "sinuous",
+   "fluent",
+   "lyrical"
+  ],
+  "answer": 0,
+  "explain": "Stilted = stiff and awkward. Example: a stilted conversation.",
+  "notes": {
+   "sinuous": "Sinuous = smooth and curving.",
+   "fluent": "Fluent is the opposite.",
+   "lyrical": "Lyrical = beautifully expressive."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Her ___ in the face of the storm inspired the whole crew.",
+  "options": [
+   "equanimity",
+   "equality",
+   "equivalence",
+   "equator"
+  ],
+  "answer": 0,
+  "explain": "Equanimity = calmness under pressure. Example: She accepted the news with equanimity.",
+  "notes": {
+   "equality": "Equality = being equal.",
+   "equivalence": "Equivalence = being equal in value.",
+   "equator": "Equator = the line around Earth's middle."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The ___ of the ancient manuscript was questioned by experts.",
+  "options": [
+   "authenticity",
+   "authority",
+   "authorship of",
+   "authentication of"
+  ],
+  "answer": 0,
+  "explain": "Authentic → authenticity (being real). Example: the authenticity of the painting.",
+  "notes": {
+   "authority": "Authority = power to control.",
+   "authorship of": "Authorship of repeats of.",
+   "authentication of": "Authentication of repeats of."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The two stories have a striking ___ to each other.",
+  "options": [
+   "resemblance",
+   "semblance",
+   "assembly",
+   "resemble"
+  ],
+  "answer": 0,
+  "explain": "Resemblance to = similarity. Example: a strong resemblance to her mother.",
+  "notes": {
+   "semblance": "Semblance = an outward appearance, often false.",
+   "assembly": "Assembly = a gathering.",
+   "resemble": "Resemble is the verb."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "There was no ___ of order in the dragon's cave.",
+  "options": [
+   "semblance",
+   "resemblance",
+   "assembly",
+   "simulation"
+  ],
+  "answer": 0,
+  "explain": "A semblance of = a small amount or appearance of. Example: a semblance of normality.",
+  "notes": {
+   "resemblance": "Resemblance = similarity between two things.",
+   "assembly": "Assembly = a gathering.",
+   "simulation": "Simulation = imitation of a process."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The fairy's ___ made her the best negotiator in the kingdom.",
+  "options": [
+   "diplomacy",
+   "diploma",
+   "diplomat",
+   "diplomatic"
+  ],
+  "answer": 0,
+  "explain": "Diplomacy = skill in dealing with people sensitively. Example: She handled it with diplomacy.",
+  "notes": {
+   "diploma": "Diploma = a certificate.",
+   "diplomat": "Diplomat is the person.",
+   "diplomatic": "Diplomatic is an adjective."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The magician's ___ of hand amazed everyone.",
+  "options": [
+   "sleight",
+   "slight",
+   "slate",
+   "sleigh"
+  ],
+  "answer": 0,
+  "explain": "Sleight of hand = skilful, quick hand tricks. Example: a card trick done by sleight of hand.",
+  "notes": {
+   "slight": "Slight = small; it sounds the same but is spelled differently.",
+   "slate": "Slate = a type of rock.",
+   "sleigh": "Sleigh = a sledge pulled by animals."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Ignoring the warning was the ___ of foolishness.",
+  "options": [
+   "height",
+   "highness",
+   "highest",
+   "heightening"
+  ],
+  "answer": 0,
+  "explain": "The height of + noun = the most extreme example. Example: the height of rudeness.",
+  "notes": {
+   "highness": "Highness is a royal title.",
+   "highest": "Highest is an adjective.",
+   "heightening": "Heightening = making stronger."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The wizard spoke with such ___ that the class hung on every word.",
+  "options": [
+   "eloquence",
+   "elegance",
+   "eloquent",
+   "elocution of"
+  ],
+  "answer": 0,
+  "explain": "Eloquent → eloquence (noun). Example: She argued with great eloquence.",
+  "notes": {
+   "elegance": "Elegance = style and grace.",
+   "eloquent": "Eloquent is an adjective.",
+   "elocution of": "Elocution of needs a noun after it."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The penguins showed remarkable ___ in surviving the blizzard.",
+  "options": [
+   "fortitude",
+   "fortune",
+   "fortress",
+   "fortnight"
+  ],
+  "answer": 0,
+  "explain": "Fortitude = courage in pain or difficulty. Example: She bore the pain with fortitude.",
+  "notes": {
+   "fortune": "Fortune = luck or wealth.",
+   "fortress": "Fortress = a castle.",
+   "fortnight": "Fortnight = two weeks."
+  }
  }
 ]
