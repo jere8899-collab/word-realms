@@ -1,3 +1,5 @@
+-- ⚠️ UNUSED, DO NOT RUN. Kept for reference only (30 Oct 2026): Jeremy decided login names do not need renaming;
+-- only the in-game hero name can change. The game has no button that calls this function.
 -- ☁️ Cloud Castle: let a signed-in player change their login (castle) name.
 -- Why a function: Supabase Auth always emails a confirmation link for an email change (even with
 -- "Confirm email" off, and with "Secure email change" off it still mails the new address), and the

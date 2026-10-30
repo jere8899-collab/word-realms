@@ -372,9 +372,8 @@ mark.qf-style{background:#E2D6FF;box-shadow:inset 0 -2px 0 #B98BFF}
 .cc-best{position:absolute;top:-10px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:.7rem;font-weight:900;background:linear-gradient(135deg,#FFD66B,#FF9FC0);color:#fff;padding:3px 9px;border-radius:999px}
 .cc-onb{display:flex;gap:12px;align-items:center;margin-top:12px;cursor:pointer}
 .cc-onb img{width:64px;height:64px;object-fit:contain}
-/* ---- ✏️ renaming: hero name + Cloud Castle login name ---- */
+/* ---- ✏️ hero rename ---- */
 .hero-edit{font-size:.9rem;padding:3px 8px;vertical-align:middle;cursor:pointer;margin-left:2px}
 .hero-cur{display:flex;align-items:center;gap:6px;font-weight:800;max-width:62%;overflow:hidden}
 .hero-cur #heroCur{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .rename-panel{text-align:center}
-.cc-off{background:#FFF6D6;color:#8A6A12;border-radius:16px;padding:12px 14px;font-weight:800;font-size:.9rem;text-align:left}
