@@ -92,3 +92,21 @@
 @keyframes mvhop{to{stroke-dashoffset:0}}
 @keyframes mvpop{from{transform:scale(0)}to{transform:scale(1)}}
 @media (prefers-reduced-motion:reduce){.mviz-svg .hop{animation:none;stroke-dashoffset:0}.mviz-svg .pop{animation:none}}
+/* 🛡️ Grade Guardians + 🎯 next maths goal (js/math-goals.js) */
+.math-hub .mgoal{margin:12px 0 4px;background:linear-gradient(135deg,rgba(255,250,232,.96),rgba(255,236,246,.96))}
+.math-hub .mgoal .btn{flex:0 0 auto;max-width:44%;white-space:normal;line-height:1.15}
+.math-hub .guards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.math-hub .guards .rboss{margin-top:0}
+.math-hub .gcard.here{outline:3px solid #FFC6E0;outline-offset:2px}
+.rboss .gfb{position:relative;display:inline-block}
+.rboss .gfb img{width:100%;height:100%;object-fit:contain}
+.gfb i{position:absolute;right:-2px;bottom:-2px;font-style:normal;font-size:1.7rem;background:#fff;border-radius:50%;width:2.2rem;height:2.2rem;display:grid;place-items:center;box-shadow:0 3px 8px rgba(90,60,140,.25)}
+.gstrip{padding:8px 12px;margin-bottom:8px;background:linear-gradient(135deg,rgba(255,240,250,.96),rgba(236,230,255,.96))}
+.gmeter{display:flex;align-items:center;gap:10px}
+.gmeter .face.painted{width:52px;height:52px;flex:0 0 52px}
+.gmeter .face.painted img{width:100%;height:100%;object-fit:contain}
+.gmeter .gm-b{flex:1;min-width:0}.gmeter .gm-b b{display:block;font-size:.95rem;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gmeter .hp{margin-top:4px}.gmeter .gm-n{flex:0 0 auto;font-weight:900}
+.result .gres{width:150px;height:150px;object-fit:contain}
+@media (max-width:640px){.math-hub .guards{grid-template-columns:1fr}}
+@media (max-width:520px){.math-hub .mgoal .goal{flex-wrap:wrap}.math-hub .mgoal .gi{width:40px;flex-basis:40px;font-size:1.5rem}.math-hub .mgoal .gb{flex:1 1 calc(100% - 52px)}.math-hub .mgoal .btn{flex:1 1 100%;max-width:none}}

@@ -3,7 +3,7 @@
    • Realm Bosses: a cute painted boss at the end of every realm, unlocked once 3 of 4 skills are passed (the same rule that opens the next realm).
    • Pet goal on the map: the next evolution ("Lv 5 → Bloom Puffbun with an aura") with an XP bar.
    • Weekly Events: one themed challenge a week (Mon–Sun, the player's own clock), +20⭐ and an event sticker.
-   Save: state.stickers = { got: { a1: [ids] , events: [ids] }, full: [rids] }, state.bosses = { a1: { won, best, tries, at } }, state.weekly = { wk, id, progress, claimed }. */
+   Save: state.stickers = { got: { a1: [ids], events: [ids], math: [ids], guard: [ids] }, full: [page ids] }, state.bosses = { a1: { won, best, tries, at } }, state.weekly = { wk, id, progress, claimed }. */
 (function () {
 const WR = window.WR;
 const C = WR.Collect = {};
@@ -62,14 +62,21 @@ C.claimWeekly = () => {
   if (!ev.includes(w.def.id)) ev.push(w.def.id);
   WR.addStars(20, `${w.def.name} prize!`); WR.confetti && WR.confetti(18); WR.save(); return true;
 };
-/* ---------- stickers ---------- */
+/* ---------- stickers ----------
+   A sticker page is { id, icon, title, name, bg, defs: [{ id, icon, name, how, test() }] }. Every English realm gets one page
+   (STICKERS bound to that realm); other modules (js/math-goals.js) add their own pages with C.addPages(). Every page is paid the
+   same way: +2⭐ per new sticker and +10⭐ the first time the page is full, worked out from the save so nothing pays twice. */
+const extra = [];
+C.addPages = fn => extra.push(fn);                    // fn() → [page, …] (called each time, so pages can read the live save)
+const realmPage = r => ({ id: r.id, icon: r.emoji, title: `${r.level} · ${r.name}`, name: r.name, bg: r.bg, defs: STICKERS.map(st => Object.assign({}, st, { test: () => st.test(r.id) })) });
+C.pages = () => WR.realms.map(realmPage).concat(...extra.map(fn => fn()));
 C.check = (quiet) => {
   if (!WR.state || !WR.state.pet || !WR.realms) return [];
   const s = ensure(), fresh = [];
-  for (const r of WR.realms) {
-    const got = s.stickers.got[r.id] = s.stickers.got[r.id] || [];
-    for (const st of STICKERS) if (!got.includes(st.id) && st.test(r.id)) { got.push(st.id); fresh.push({ r, st }); }
-    if (got.length === STICKERS.length && !s.stickers.full.includes(r.id)) { s.stickers.full.push(r.id); s.stars += 10; fresh.push({ r, st: { icon: "🌟", name: `${r.name} page complete (+10⭐)` }, full: true }); }
+  for (const p of C.pages()) {
+    const got = s.stickers.got[p.id] = s.stickers.got[p.id] || [];
+    for (const st of p.defs) if (!got.includes(st.id) && st.test()) { got.push(st.id); fresh.push({ p, st }); }
+    if (p.defs.every(st => got.includes(st.id)) && !s.stickers.full.includes(p.id)) { s.stickers.full.push(p.id); s.stars += 10; fresh.push({ p, st: { icon: "🌟", name: `${p.name} page complete (+10⭐)` }, full: true }); }
   }
   if (fresh.length) {
     const n = fresh.filter(f => !f.full).length; s.stars += n * 2; WR.save(); WR.renderTop && WR.renderTop();
@@ -77,21 +84,33 @@ C.check = (quiet) => {
   }
   return fresh;
 };
-C.count = () => WR.realms.reduce((a, r) => a + gotIn(r.id).length, 0) + gotIn("events").length;
-C.total = () => WR.realms.length * STICKERS.length + EVENTS.length;
-const stickerHTML = (r, st, has) => `<div class="stk ${has ? "has" : "no"}" title="${WR.esc(st.how)}"><div class="disc">${WR.img(r.bg, "sbg", "", true)}<span class="si">${has ? st.icon : "?"}</span></div><b>${WR.esc(has ? st.name : "???")}</b><small>${WR.esc(st.how)}</small></div>`;
+C.got = gotIn;
+C.count = () => C.pages().reduce((a, p) => a + gotIn(p.id).filter(id => p.defs.some(d => d.id === id)).length, 0) + gotIn("events").length;
+C.total = () => C.pages().reduce((a, p) => a + p.defs.length, 0) + EVENTS.length;
+const stickerHTML = (st, has, bg) => `<div class="stk ${has ? "has" : "no"}" title="${WR.esc(st.how)}"><div class="disc${bg ? "" : " ev"}">${bg ? WR.img(bg, "sbg", "", true) : ""}<span class="si">${has ? st.icon : "?"}</span></div><b>${WR.esc(has ? st.name : "???")}</b><small>${WR.esc(st.how)}</small></div>`;
+const pageHTML = (p, got, full) => `<section class="spage" id="sp_${p.id}"><h3>${p.icon} ${WR.esc(p.title)} <span class="pill">${got.filter(id => p.defs.some(d => d.id === id)).length}/${p.defs.length}</span>${full ? ' <span class="pill" style="background:var(--mint)">🌟 Complete</span>' : ""}</h3>
+    <div class="sgrid">${p.defs.map(st => stickerHTML(st, got.includes(st.id), p.bg)).join("")}</div></section>`;
 C.openBook = (focus) => {
   C.check(true); const s = ensure();
-  const pages = WR.realms.map(r => { const got = gotIn(r.id); return `<section class="spage" id="sp_${r.id}"><h3>${r.emoji} ${r.level} · ${WR.esc(r.name)} <span class="pill">${got.length}/${STICKERS.length}</span>${s.stickers.full.includes(r.id) ? ' <span class="pill" style="background:var(--mint)">🌟 Complete</span>' : ""}</h3>
-    <div class="sgrid">${STICKERS.map(st => stickerHTML(r, st, got.includes(st.id))).join("")}</div></section>`; }).join("");
-  const ev = gotIn("events");
-  const evPage = `<section class="spage"><h3>🎉 Weekly Events <span class="pill">${ev.length}/${EVENTS.length}</span></h3><div class="sgrid">${EVENTS.map(e => `<div class="stk ${ev.includes(e.id) ? "has" : "no"}"><div class="disc ev"><span class="si">${ev.includes(e.id) ? e.icon : "?"}</span></div><b>${ev.includes(e.id) ? e.name : "???"}</b><small>${e.desc}</small></div>`).join("")}</div></section>`;
+  const pages = C.pages().map(p => pageHTML(p, gotIn(p.id), s.stickers.full.includes(p.id))).join("");
+  const evPage = pageHTML({ id: "events", icon: "🎉", title: "Weekly Events", defs: EVENTS.map(e => ({ id: e.id, icon: e.icon, name: e.name, how: e.desc })) }, gotIn("events"), false);
   WR.view(`<div class="fade-in sbook"><div class="row lesson-top" style="margin:6px 0 8px"><button class="btn ghost small" id="sbBack">← Map</button><b class="title">🏷️ Sticker Book · ${C.count()}/${C.total()}</b></div>
-    <p class="muted" style="font-weight:800;margin:.2em 0 .8em">Collect all 8 stickers in a realm for a 🌟 bonus! Each new sticker gives +2⭐.</p>${pages}${evPage}</div>`);
+    <p class="muted" style="font-weight:800;margin:.2em 0 .8em">Fill a whole page for a 🌟 +10⭐ bonus! Each new sticker gives +2⭐.</p>${pages}${evPage}</div>`);
   WR.$("#sbBack").onclick = () => WR.go("home");
   if (focus) { const el = WR.$("#sp_" + focus); if (el) el.scrollIntoView({ block: "start" }); }
 };
 WR.screens.stickers = rid => C.openBook(rid);
+/* ---------- bosses (shared by the realm bosses here and the 🛡️ Grade Guardians in js/math-goals.js) ---------- */
+// first win only: +15⭐, a toast and the badge sticker (worked out by C.check from rec.won)
+C.winBoss = (rec, name, prize) => {
+  if (rec.won) return false;
+  rec.won = true; rec.at = Date.now(); WR.state.stars += 15; WR.save(); WR.renderTop();
+  setTimeout(() => WR.toast(`🏆 You beat ${name}! +15⭐ and ${prize}`, 2600), 300); return true;
+};
+// o: { art | artHTML, name, line, ready, won, lock (text), pct, badge, cls, id, goId, data }
+C.bossCard = o => `<div class="card rboss ${o.cls || ""} ${o.ready ? "" : "locked"}"${o.id ? ` id="${o.id}"` : ""}${o.data ? ` data-gb="${o.data}"` : ""} role="button" tabindex="0">${o.artHTML || WR.img(o.art, "rb-art")}<div style="flex:1;min-width:0"><div><span class="lvl-badge">${o.badge || "Boss"}</span><b>${WR.esc(o.name)}</b>${o.won ? ' <span class="pill" style="background:var(--mint)">Beaten 🏆</span>' : ""}</div>
+    <div class="muted" style="font-size:.86rem;font-weight:700">${o.ready ? `“${WR.esc(o.line)}”` : `🔒 ${WR.esc(o.lock)}`}</div>
+    ${o.ready ? `<button class="btn small ${o.won ? "ghost" : "mint"}"${o.goId ? ` id="${o.goId}"` : ""}>${o.won ? "↻ Rematch" : "⚔️ Challenge"}</button>` : `<div class="prog"><i style="width:${o.pct}%"></i></div>`}</div></div>`;
 /* ---------- realm bosses ---------- */
 C.bossReady = rid => WR.realmProgress(rid).passed >= 3;
 C.startBoss = async rid => {
@@ -103,16 +122,14 @@ C.startBoss = async rid => {
     replay: () => C.startBoss(rid), nextLabel: "🏷️ Open my Sticker Book →", onNext: () => WR.go("stickers", rid),
     onFinish: res => {
       const st = WR.state.bosses[rid]; st.best = Math.max(st.best || 0, res.score);
-      if (res.won && !st.won) { st.won = true; st.at = Date.now(); WR.state.stars += 15; WR.save(); WR.renderTop(); setTimeout(() => WR.toast(`🏆 You beat ${b.name}! +15⭐ and the Boss Badge`, 2600), 300); }
+      if (res.won) C.winBoss(st, b.name, "the Boss Badge");
       WR.save(); C.check();
     } });
 };
 const bossCard = rid => {
   const b = RB[rid]; if (!b) return "";
-  const ready = C.bossReady(rid), st = (WR.state.bosses || {})[rid] || {}, pr = WR.realmProgress(rid).passed;
-  return `<div class="card rboss ${ready ? "" : "locked"}" id="rbossCard" role="button" tabindex="0">${WR.img(b.art, "rb-art")}<div style="flex:1"><div><span class="lvl-badge">Boss</span><b>${WR.esc(b.name)}</b>${st.won ? ' <span class="pill" style="background:var(--mint)">Beaten 🏆</span>' : ""}</div>
-    <div class="muted" style="font-size:.86rem;font-weight:700">${ready ? `“${WR.esc(b.line)}”` : `🔒 Pass 3 of 4 skills to challenge the boss (${pr}/3)`}</div>
-    ${ready ? `<button class="btn small ${st.won ? "ghost" : "mint"}" id="rbossGo">${st.won ? "↻ Rematch" : "⚔️ Challenge"}</button>` : `<div class="prog"><i style="width:${Math.min(3, pr) / 3 * 100}%"></i></div>`}</div></div>`;
+  const pr = WR.realmProgress(rid).passed;
+  return C.bossCard({ art: b.art, name: b.name, line: b.line, ready: C.bossReady(rid), won: ((WR.state.bosses || {})[rid] || {}).won, lock: `Pass 3 of 4 skills to challenge the boss (${pr}/3)`, pct: Math.min(3, pr) / 3 * 100, id: "rbossCard", goId: "rbossGo" });
 };
 /* ---------- pet goal ---------- */
 C.petGoal = () => {

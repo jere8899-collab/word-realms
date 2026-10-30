@@ -1,9 +1,7 @@
 /* 🗼 Times-Table Tower (multiplication & division dojo) and 🔮 Sumi's grade finder for the Number Kingdom. */
 (function () {
 const WR = window.WR, MG = window.MathGen, MW = WR.Math, esc = WR.esc;
-const tower = (cls = "") => `<img class="tower-art ${cls}" src="assets/web/times_tower.webp" onerror="this.onerror=null;this.src='assets/ui/times_tower.png'" alt="The Times-Table Tower">`;
-const mascot = (cls = "") => `<img class="sumi ${cls}" src="assets/web/math_mascot.webp" onerror="this.onerror=null;this.src='assets/ui/math_mascot.png'" alt="Sumi">`;
-const coarse = () => window.matchMedia && matchMedia("(pointer: coarse)").matches;
+const { tower, mascot, coarse } = MW;   // shared helpers from math.js
 let D = null, timer = null;
 const stopTimer = () => { if (timer) { clearInterval(timer); timer = null; } };
 MW.stopDojo = () => { stopTimer(); D = null; };

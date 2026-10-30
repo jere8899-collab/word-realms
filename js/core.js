@@ -87,8 +87,14 @@ function freshState() {
 const freshWriting = () => ({ checks: 0, crowns: 0, best: {}, drafts: {} });
 // 🔢 Number Kingdom: chosen grade, best score per topic ("g3.times", "g7.mixed", "dojo.clongdiv"), Times-Table Tower facts
 // ({ "7x8": { b: Leitner box 0–5, r: right, w: wrong, d: next review time, t: last answer ms, l: last seen } }) and dojo stats
-const freshMath = () => ({ grade: null, placed: null, xp: 0, correct: 0, answered: 0, lessons: 0, models: 0, modelSolved: 0, topics: {}, facts: {}, dojo: { tables: [2, 3, 4, 5], op: "x", best: 0, sprints: 0, practice: 0, history: [] } });
+// 🛡️ bosses: Grade Guardian results per band ({ g12: { won, best, tries, at } })
+const freshMath = () => ({ grade: null, placed: null, xp: 0, correct: 0, answered: 0, lessons: 0, models: 0, modelSolved: 0, topics: {}, facts: {}, bosses: {}, dojo: { tables: [2, 3, 4, 5], op: "x", best: 0, sprints: 0, practice: 0, history: [] } });
 WR.freshMath = freshMath;
+// one place that completes a (possibly old or partial) maths block in place; used on load and by WR.Math.st()
+// (in place, so objects other code holds, like math.dojo, stay the same objects)
+WR.fixMath = m => { const f = freshMath(); m = m || f;
+  for (const k in f) if (m[k] === undefined || (m[k] === null && f[k] && typeof f[k] === "object")) m[k] = f[k];
+  for (const k in f.dojo) if (m.dojo[k] === undefined) m.dojo[k] = f.dojo[k]; return m; };
 const freshSpeaking = () => ({ rounds: 0, attempts: 0, passed: 0, perfect: 0, preferShadow: false, shadowWhy: null });
 // older saves (before the Echo Well / Story Quill) simply gain the speaking and writing stats; nothing else changes
 function migrate(s) {
@@ -98,7 +104,7 @@ function migrate(s) {
   s.settings = Object.assign({ rate: 0.9, sound: true, unlockAll: false }, s.settings || {});
   s.progress = s.progress || {}; s.mistakes = s.mistakes || [];
   s.stories = Object.assign({ done: {}, words: {}, reads: 0 }, s.stories || {}); s.stories.done = s.stories.done || {}; s.stories.words = s.stories.words || {};
-  const fm = freshMath(); s.math = Object.assign(fm, s.math || {}); s.math.topics = s.math.topics || {}; s.math.facts = s.math.facts || {}; s.math.dojo = Object.assign(freshMath().dojo, s.math.dojo || {});
+  s.math = WR.fixMath(s.math);
   return s;
 }
 WR.load = () => { try { const s = JSON.parse(localStorage.getItem(SAVE_KEY)); if (s && s.v === 1) return migrate(Object.assign(freshState(), s)); } catch (e) { } return freshState(); };
