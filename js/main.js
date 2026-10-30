@@ -10,8 +10,9 @@ WR.renderTop = () => {
   t.innerHTML = `<div class="topbar">${WR.asset(s.avatar) ? WR.img(s.avatar, "mini-av") : '<img class="mini-av" alt="">'}
     <div class="brand">Word Realms <small>${WR.esc(s.name)}</small></div>
     <div class="chips"><span class="chip star" id="starChip">⭐ ${s.stars}</span><span class="chip fire" title="Daily streak">🔥 ${WR.streakAlive()}</span>
-    <button class="chip" id="setBtn" aria-label="Settings">⚙️</button></div></div>`;
+    ${WR.Cloud ? WR.Cloud.chipHTML() : ""}<button class="chip" id="setBtn" aria-label="Settings">⚙️</button></div></div>`;
   WR.$("#setBtn").onclick = settings;
+  if (WR.Cloud) { WR.$("#cloudChip").onclick = () => WR.Cloud.open(); WR.Cloud.paint(); }
   WR.Garden && WR.Garden.badge();
 };
 const NAV = [["home", "🗺️", "Map"], ["pet", "🐾", "Pet"], ["shop", "🛍️", "Shop"], ["review", "🌷", "Garden"]];
@@ -35,7 +36,9 @@ function onboarding() {
     WR.view(`<div class="hero fade-in"><h1>Word Realms</h1><p style="font-size:1.15rem;font-weight:800">A fairytale English adventure from A1 to C2 ✨</p></div>
     <div class="card fade-in"><h2>1. What's your name, adventurer?</h2><input class="input" id="nm" maxlength="18" placeholder="Type your name…">
     <h2 style="margin-top:18px">2. Choose your hero</h2><div class="grid g3">${WR.AVATARS.map(a => `<div class="card pick ${draft.avatar === a.id ? "sel" : ""}" data-av="${a.id}">${WR.img(a.id)}<div class="nm">${a.name}</div></div>`).join("")}</div>
-    <div class="row" style="justify-content:flex-end;margin-top:16px"><button class="btn" id="n1">Next →</button></div></div>`);
+    <div class="row" style="justify-content:flex-end;margin-top:16px"><button class="btn" id="n1">Next →</button></div></div>
+    ${WR.Cloud ? `<div class="card fade-in cc-onb" id="ccOnb"><img src="assets/web/cloud_castle.webp" onerror="this.onerror=null;this.src='assets/ui/cloud_castle.png'" alt=""><div style="flex:1"><b>Already have a Cloud Castle account? ☁️</b><div class="muted" style="font-size:.85rem;font-weight:700">Log in to bring back your stars, pet and skins.</div></div><span class="btn small mint">Log in →</span></div>` : ""}`);
+    const onb = WR.$("#ccOnb"); if (onb) onb.onclick = () => WR.Cloud.open("login");
     const nm = WR.$("#nm"); nm.value = draft.name; nm.oninput = () => draft.name = nm.value;
     document.querySelectorAll("[data-av]").forEach(c => c.onclick = () => { draft.avatar = c.dataset.av; document.querySelectorAll("[data-av]").forEach(x => x.classList.toggle("sel", x === c)); WR.sfx("tap"); });
     WR.$("#n1").onclick = () => { if (!draft.name.trim()) { nm.focus(); return WR.toast("Please type your name 💖"); } step2(); };
@@ -128,7 +131,7 @@ function settings() {
     <div class="row" style="justify-content:space-between;margin-top:8px"><b>🗣️ Listening speed</b><input type="range" class="slider" id="rt" min="0.5" max="1.3" step="0.1" value="${s.settings.rate}"></div>
     <div class="muted" style="font-size:.8rem;text-align:left">Voice: ${WR.esc(Speech.voiceName())}</div>
     <div class="row" style="justify-content:space-between;margin-top:8px"><b>🗝️ Teacher mode (unlock all realms)</b><input type="checkbox" id="ul" ${s.settings.unlockAll ? "checked" : ""}></div>
-    <div class="row" style="justify-content:center;margin-top:16px"><button class="btn ghost small" id="test">🔈 Test voice</button><button class="btn ghost small" id="plRe">🪞 Placement quiz</button><button class="btn peach small" id="rst">Reset progress</button><button class="btn small" id="cls">Done</button></div>`, (bg, close) => {
+    <div class="row" style="justify-content:center;margin-top:16px"><button class="btn ghost small" id="test">🔈 Test voice</button><button class="btn ghost small" id="plRe">🪞 Placement quiz</button>${WR.Cloud ? '<button class="btn ghost small" id="ccSet">🏰 Cloud save</button>' : ""}<button class="btn peach small" id="rst">Reset progress</button><button class="btn small" id="cls">Done</button></div>`, (bg, close) => {
     bg.querySelector("#snd").onchange = e => { s.settings.sound = e.target.checked; WR.save(); };
     bg.querySelector("#rt").oninput = e => { s.settings.rate = +e.target.value; WR.save(); };
     bg.querySelector("#ul").onchange = e => { s.settings.unlockAll = e.target.checked; WR.save(); if (current === "home") WR.screens.home(); };
@@ -136,6 +139,7 @@ function settings() {
     bg.querySelector("#rst").onclick = () => { if (confirm("Reset all progress, stars and your pet?")) { WR.reset(); close(); boot(); } };
     bg.querySelector("#cls").onclick = close;
     bg.querySelector("#plRe").onclick = () => { close(); WR.retakePlacement(); };
+    const cs = bg.querySelector("#ccSet"); if (cs) cs.onclick = () => { close(); WR.Cloud.open(); };
   });
 }
 
@@ -153,6 +157,14 @@ function start() {
   app.innerHTML = `<div id="top"></div><div id="main"></div>`;
   renderNav(); WR.renderTop(); WR.go("home");
 }
+// redraw after the save was replaced (cloud login / log out & clear); before the data has loaded, boot() draws it
+WR.restart = () => {
+  if (!WR.realms || !WR.shop) return;
+  document.querySelectorAll(".modal-bg").forEach(m => { if (!m.querySelector("#cloudPanel")) m.remove(); });
+  WR.tickPet(); WR.ensureDaily(); WR.applyTheme();
+  if (!WR.state.pet || !WR.state.name) { app.innerHTML = `<div id="top"></div><div id="main"></div>`; onboarding(); }
+  else start();
+};
 async function boot() {
   try { await WR.init(); }
   catch (e) { app.innerHTML = `<div class="card center" style="margin-top:40px"><h2>😿 Couldn't load the game data</h2><p>Run it from a web server: <code>python3 -m http.server</code> in the game folder, then open <code>http://localhost:8000</code>.</p><pre>${WR.esc(e.message)}</pre></div>`; return; }

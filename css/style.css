@@ -333,3 +333,40 @@ mark.qf-style{background:#E2D6FF;box-shadow:inset 0 -2px 0 #B98BFF}
 .model-text{white-space:pre-wrap;line-height:1.65;font-weight:700;margin-top:6px}
 @media (max-width:640px){.q-texts{grid-template-columns:1fr}.scales{grid-template-columns:1fr}.quill-head{flex-direction:column;text-align:center}.quill-head .row{justify-content:center}.quill-art{width:110px}
   .quill-hud{flex-direction:column;align-items:stretch}.q-steps{justify-content:space-between}.q-step{padding:6px 8px;font-size:.78rem}.fb-total b{font-size:2rem}.q-actions .btn{flex:1 1 auto}}
+/* ---- ☁️ Cloud Castle (accounts + cloud saves) ---- */
+.cloud-chip{gap:5px;background:linear-gradient(135deg,#EEF6FF,#F3ECFF)}
+.cloud-chip .cc-tx{max-width:110px;overflow:hidden;text-overflow:ellipsis;font-size:.82rem}
+.cloud-chip.st-saved{background:linear-gradient(135deg,#DFF8EC,#E6F3FF)}
+.cloud-chip.st-saving,.cloud-chip.st-loading{background:linear-gradient(135deg,#FFF6D6,#F3ECFF)}
+.cloud-chip.st-offline{background:linear-gradient(135deg,#FFE6EC,#F1EAF7)}
+@media (max-width:520px){.cloud-chip .cc-tx{display:none}}
+.cloud-panel{position:relative}
+.cloud-panel h2{margin-top:0}
+.cc-castle{width:112px;height:112px;object-fit:contain;display:block;margin:-6px auto 2px;filter:drop-shadow(0 8px 12px rgba(150,110,200,.25));animation:ccFloat 3.2s ease-in-out infinite}
+@keyframes ccFloat{50%{transform:translateY(-6px)}}
+.cc-tabs{display:flex;gap:6px;background:#F3ECFF;border-radius:999px;padding:4px;margin:6px 0 12px}
+.cc-tabs button{flex:1;border-radius:999px;padding:8px;font-weight:800;background:transparent}
+.cc-tabs button.on{background:#fff;box-shadow:var(--shadow)}
+.cc-lbl{display:block;text-align:left;font-weight:800;margin:8px 0}
+.cc-lbl small{color:var(--ink2);font-weight:700}
+.cc-lbl .input{margin-top:4px;width:100%}
+.cc-err{min-height:1.3em;color:#E0587A;font-weight:800;font-size:.88rem;text-align:left}
+.cc-user{display:flex;gap:10px;align-items:center;justify-content:center;margin:6px 0}
+.cc-crest{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-family:"Baloo 2";font-weight:800;font-size:1.4rem;color:#fff;background:linear-gradient(135deg,#C9B3FF,#FFB8D1);border:3px solid #fff;box-shadow:var(--shadow)}
+.cc-name{font-size:1.2rem}
+.cc-status{display:inline-block;padding:5px 14px;border-radius:999px;font-weight:900;font-size:.88rem;background:#F3ECFF}
+.cc-status.st-saved{background:var(--mint);color:#2E8F6C}
+.cc-status.st-saving,.cc-status.st-loading{background:var(--butter);color:#A27C1E}
+.cc-status.st-offline{background:#FFE0E8;color:#C9506E}
+.cc-stats{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;font-weight:800;font-size:.85rem}
+.cc-stats span{background:#fff;border-radius:999px;padding:3px 9px;box-shadow:0 2px 6px rgba(122,92,143,.12)}
+.cc-stats.big{font-size:.95rem}
+.cc-picks{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cc-pick{position:relative;padding:14px 8px;cursor:pointer;transition:.15s}
+.cc-pick:hover{transform:translateY(-2px)}
+.cc-pick.best{border-color:#B98BFF;background:linear-gradient(160deg,#fff,#F3ECFF)}
+.cc-pick-ic{font-size:2rem}
+.cc-pick-nm{font-weight:800;color:var(--ink2);margin-bottom:6px}
+.cc-best{position:absolute;top:-10px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:.7rem;font-weight:900;background:linear-gradient(135deg,#FFD66B,#FF9FC0);color:#fff;padding:3px 9px;border-radius:999px}
+.cc-onb{display:flex;gap:12px;align-items:center;margin-top:12px;cursor:pointer}
+.cc-onb img{width:64px;height:64px;object-fit:contain}

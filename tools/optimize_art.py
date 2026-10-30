@@ -1,7 +1,7 @@
 """Make the light WebP copies of all game art in assets/web/ (run after adding or replacing art).
 
 Backgrounds -> <id>_1280.webp (desktop) and <id>_720.webp (phones), map thumbnails -> <id>_thumb.webp (360 px),
-pets/avatars -> <id>.webp (512 px, transparent), UI art (mirror, quill) -> <name>.webp.
+pets/avatars -> <id>.webp (512 px, transparent), UI art (mirror, quill, cloud_castle) -> <name>.webp.
 The original PNGs stay as fallbacks; the manifest gains a "web" block per asset.
 """
 import json, os
@@ -36,7 +36,7 @@ for a in m["assets"]:
         im.convert("RGBA").save(f, "WEBP", quality=82, method=6)
         a["web"] = {"large": f, "small": f}
         after += os.path.getsize(f)
-for name in ("mirror", "quill"):
+for name in ("mirror", "quill", "cloud_castle"):
     src = f"assets/ui/{name}.png"
     if os.path.exists(src):
         Image.open(src).convert("RGBA").save(f"{OUT}/{name}.webp", "WEBP", quality=85, method=6)
