@@ -110,3 +110,17 @@
 .result .gres{width:150px;height:150px;object-fit:contain}
 @media (max-width:640px){.math-hub .guards{grid-template-columns:1fr}}
 @media (max-width:520px){.math-hub .mgoal .goal{flex-wrap:wrap}.math-hub .mgoal .gi{width:40px;flex-basis:40px;font-size:1.5rem}.math-hub .mgoal .gb{flex:1 1 calc(100% - 52px)}.math-hub .mgoal .btn{flex:1 1 100%;max-width:none}}
+/* ⚖️ balance scale (Model Magic for Grade 6–8 equations) */
+.mbal .bal-q{font-size:.86rem;font-weight:800;color:var(--ink2);margin:6px 2px 4px;text-align:left}
+.bal-dots{display:inline-flex;gap:3px;vertical-align:middle;margin-right:4px}.bal-dots i{width:9px;height:9px;border-radius:50%;background:#efe6f7;border:1.5px solid #c9b3ff}.bal-dots i.on{background:#FFB8D1;border-color:#e0607a}
+.bmoves{display:grid;grid-template-columns:1fr;gap:6px;margin-top:4px}
+.bmoves .bmove{min-height:44px;width:100%;justify-content:center;text-align:center;white-space:normal;line-height:1.2}
+@media (min-width:640px){.bmoves{grid-template-columns:repeat(3,1fr)}}
+.bmove.glow{box-shadow:0 0 0 3px #FFE79A,0 0 14px #ffd65a;animation:bglow 1.2s ease-in-out infinite alternate}
+@keyframes bglow{from{box-shadow:0 0 0 3px #FFE79A,0 0 6px #ffd65a}to{box-shadow:0 0 0 4px #FFE79A,0 0 18px #ffd65a}}
+.bal-msg{margin-top:6px;padding:6px 10px;border-radius:12px;background:#FFF0F5;color:#a83a59;font-weight:800;font-size:.86rem;text-align:left}
+.bal-done{margin-top:6px;padding:8px 10px;border-radius:12px;background:#F3FFF8;border:2px solid #BDEFD3;font-weight:800;font-size:.9rem;color:#2f7a5a}
+.mviz-svg .btip{animation:bwob .5s ease-in-out 2}
+@keyframes bwob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+.mviz-svg .bbag,.mviz-svg .bblk{transform-box:fill-box;transform-origin:bottom center;animation:mvpop .35s ease-out both}
+@media (prefers-reduced-motion:reduce){.mviz-svg .btip,.mviz-svg .bbag,.mviz-svg .bblk,.bmove.glow{animation:none}}

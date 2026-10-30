@@ -1,5 +1,5 @@
 /* 🏆 Goals between lessons for the 🔢 Number Kingdom (C6 for maths).
-   • Sticker Book pages: "Number Kingdom" (8 maths stickers) and "Grade Guardians" (one per guardian), worked out from the save
+   • Sticker Book pages: "Number Kingdom" (9 maths stickers) and "Grade Guardians" (one per guardian), worked out from the save
      and paid exactly like the English pages (+2⭐ each, +10⭐ for a full page; js/collect.js C.addPages / C.check).
    • 🛡️ Grade Guardians: one friendly boss per two grades (G1–2 … G11–12, following the Singapore MOE stages P1–2, P3–4, P5–6,
      Sec 1–2, Sec 3–4, JC 1–2). A guardian wakes once 4 topics in its two grades are passed (60%+). The fight is 10 questions
@@ -52,6 +52,7 @@ G.STICKERS = [
   { id: "tower12", icon: "🗼", name: "Tower Climber", how: "Master 12 times-table facts", test: () => MW.mastered() >= 12, prog: () => [Math.min(12, MW.mastered()), 12] },
   { id: "tower66", icon: "🌈", name: "Halfway Up", how: "Master 66 facts (half the Tower)", test: () => MW.mastered() >= 66, prog: () => [Math.min(66, MW.mastered()), 66] },
   { id: "model5", icon: "🧮", name: "Model Maker", how: "Solve 5 questions with Model Magic", test: () => (MW.st().modelSolved || 0) >= 5, prog: () => [Math.min(5, MW.st().modelSolved || 0), 5] },
+  { id: "balance3", icon: "⚖️", name: "Balance Keeper", how: "Balance 3 equation scales all the way to x", test: () => MW.st().balance.done >= 3, prog: () => [Math.min(3, MW.st().balance.done), 3] },
   { id: "gradefull", icon: "💯", name: "Grade Champion", how: "Get 3 crowns in every topic of one grade", test: fullGrade },
   { id: "guardian", icon: "🛡️", name: "Guardian Badge", how: "Beat any Grade Guardian", test: () => G.GUARDIANS.some(g => won(g.id)) }
 ];

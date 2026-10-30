@@ -36,6 +36,9 @@ const poly = (terms, v = "x") => { let s = "", first = true; for (const [c, p] o
   const co = (a === 1 && p !== 0) ? "" : fmt(a); s += sgn(c, first) + co + (p === 0 ? "" : p === 1 ? v : `${v}^{${p}}`); first = false; } return s || "0"; };
 const lin = (a, b, v = "x") => poly([[a, 1], [b, 0]], v);
 const paren = x => x < 0 ? `(${x})` : String(x);
+// signed terms for worked steps: pm(-3) → "- 3", pm(3) → "+ 3"; undo(b) is the move that cancels "+ b" ("- b"; "- 0" for 0)
+const pm = n => `${n < 0 ? "-" : "+"} ${Math.abs(n)}`;
+const undo = n => `${n < 0 ? "+" : "-"} ${Math.abs(n)}`;
 M.util = { gcd, lcm, rd, fmt, fdp, simp, fracTex, fracStr, poly };
 
 /* ---------- question builders ---------- */
@@ -96,7 +99,7 @@ M.longMulSteps = (a, b) => { const bs = String(b).split("").reverse(); const out
 /* ====================== TOPICS ====================== */
 const TOPICS = [];
 const topic = (grade, id, name, icon, desc, gen, opt = {}) => TOPICS.push(Object.assign({ grade, id: `g${grade}.${id}`, name, icon, desc, gen }, opt));
-M._internal = { Q, num, mcq, T, NAMES, THINGS, COUNT_EMOJI, svgClock, SHAPES, svgShape, svgPie, coin, emojiRows, table, colAdd, colSub, topic, TOPICS, gcd, lcm, rd, fmt, fdp, money, simp, fracTex, fracStr, mixedTex, sgn, poly, lin, paren };
+M._internal = { Q, num, mcq, T, NAMES, THINGS, COUNT_EMOJI, svgClock, SHAPES, svgShape, svgPie, coin, emojiRows, table, colAdd, colSub, topic, TOPICS, gcd, lcm, rd, fmt, fdp, money, simp, fracTex, fracStr, mixedTex, sgn, poly, lin, paren, pm, undo };
 M.TOPICS = TOPICS;
 M.topic = id => TOPICS.find(t => t.id === id);
 M.gradeTopics = g => TOPICS.filter(t => t.grade === g);

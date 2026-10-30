@@ -3,7 +3,7 @@
    MathViz.svg(spec, opt) draws it as a pastel SVG. Models never print the answer unless opt.reveal is set:
    the unknown is always shown as "?". Pure JS with no DOM, so tests can run it in Node.
    Spec types: numberline · tenframe · bar (part-whole / comparison bar models) · array · groups (sharing, with
-   "deal one each") · blocks (base-ten) · fracbars · grid (area / perimeter). */
+   "deal one each") · blocks (base-ten) · fracbars · grid (area / perimeter) · balance (Grades 6–8 equations, tap-to-solve). */
 (function (root) {
 const V = {};
 const INK = "#6d4f86", LINE = "#9b84b0", PINK = "#FFB8D1", MINT = "#BDEFD3", LILAC = "#E2D6FF", SKY = "#CDE8FF", SUN = "#FFE79A", CREAM = "#FFF8EE";
@@ -137,6 +137,90 @@ V.grid = (s, o = {}) => {
   return wrap(W, oy + gh + (s.note ? 30 : 12), b, s.perim ? "perimeter" : "area grid", "grid");
 };
 
+/* ---------- ⚖️ balance scale (Grades 6–8 linear equations: "do the same to both sides") ----------
+   A side is { n, d, c }: (n/d)·x + c. Pink bags are +x, blue bags −x, mint blocks +1, lilac balloons −1;
+   a crate holds more than 12 blocks. spec.states[i] is the scale after i moves; spec.moves[i] is move i. */
+const B = V.bal = {};
+const fr = (n, d) => { const g = gcd(Math.abs(n), Math.abs(d)); return d < 0 ? [-n / g, -d / g] : [n / g, d / g]; };
+const MINUS = "\u2212", sg = n => n < 0 ? MINUS + Math.abs(n) : String(n);
+B.side = (n, d, c) => { const [a, b] = fr(n, d); return { n: a, d: b, c }; };
+// one move on one side; op: sub (take k, k < 0 means add) · subx (take kx) · div · mul
+B.apply = (sd, m) => m.op === "sub" ? B.side(sd.n, sd.d, sd.c - m.k) : m.op === "subx" ? B.side(sd.n - m.k * sd.d, sd.d, sd.c)
+  : m.op === "div" ? B.side(sd.n, sd.d * m.k, sd.c / m.k) : B.side(sd.n * m.k, sd.d, sd.c * m.k);
+B.move = (st, m, leftOnly) => ({ L: B.apply(st.L, m), R: leftOnly ? st.R : B.apply(st.R, m) });
+const has = sd => sd.n !== 0;
+// MOE order: share out a bracket · gather the bags on the side with more · clear the blocks next to x · make one whole bag
+B.solve = (L, R, g) => {
+  const moves = [], states = [{ L, R }]; let st = states[0];
+  const go = m => { moves.push(m); st = B.move(st, m); states.push(st); };
+  if (g > 1) go({ op: "div", k: g });
+  if (has(st.L) && has(st.R)) go({ op: "subx", k: st.L.n > 0 && st.R.n > st.L.n ? st.L.n : st.R.n });
+  const X = has(st.L) ? "L" : "R", N = X === "L" ? "R" : "L";
+  if (st[X].c) go({ op: "sub", k: st[X].c });
+  if (st[X].d !== 1) go({ op: "mul", k: st[X].d });
+  if (st[X].n !== 1) go({ op: "div", k: st[X].n });
+  return { moves, states, xSide: X, ans: st[N].c };
+};
+const vt = (k, v) => (k === 1 ? "" : k === -1 ? MINUS : sg(k)) + v;
+B.label = (m, v, leftOnly) => {
+  const both = leftOnly ? "the left side only" : "both sides", k = m.k;
+  if (m.op === "sub") return k > 0 ? `➖ Take ${k} from ${both}` : `➕ Add ${-k} to ${both}`;
+  if (m.op === "subx") return k > 0 ? `➖ Take ${vt(k, v)} from ${both}` : `➕ Add ${vt(-k, v)} to ${both}`;
+  if (m.op === "div") return `➗ Divide ${both} by ${sg(k)}`;
+  return `✖️ Multiply ${both} by ${sg(k)}`;
+};
+const opposite = m => m.op === "sub" || m.op === "subx" ? { op: m.op, k: -m.k } : { op: m.op === "div" ? "mul" : "div", k: m.k };
+// three buttons for move i: the right move, the same move on one side only (tips the scale), and the opposite move
+// (still balanced, but no closer). Dividing by −1 is its own opposite, so that one gets "divide by 1" instead.
+B.choices = (s, i) => {
+  const m = s.moves[i]; if (!m) return [];
+  const opp = (m.op === "div" || m.op === "mul") && Math.abs(m.k) === 1 ? { op: m.op, k: 1, same: 1 } : opposite(m);
+  // when x = 0 (or one side is 0) a one-sided move can stay balanced; then the second button is a balanced move that doesn't help
+  const st = s.states[i], next = JSON.stringify(s.states[i + 1]), tips = Math.abs(B.weight(B.move(st, m, true).L, s.ans) - B.weight(st.R, s.ans)) > 1e-9;
+  const nohelp = [{ op: "mul", k: 2 }, { op: "mul", k: 3 }, { op: "sub", k: -1 }].find(a => JSON.stringify(B.move(st, a)) !== next && B.label(a, s.v) !== B.label(opp, s.v) && B.label(a, s.v) !== B.label(m, s.v));
+  const c = [{ kind: "good", m, label: B.label(m, s.v) }, tips ? { kind: "oneside", m, label: B.label(m, s.v, true) } : { kind: "nohelp", m: nohelp, label: B.label(nohelp, s.v) }, { kind: opp.same ? "nothing" : "opposite", m: opp, label: B.label(opp, s.v) }];
+  const r = (i * 7 + Math.abs(m.k) + s.states[0].R.c) % 3, o = ((r % 3) + 3) % 3;
+  return c.slice(o).concat(c.slice(0, o));
+};
+B.why = (ch, s) => ch.kind === "oneside" ? "Oops, the scale tipped! ⚖️ Whatever you do to one side, do to the other side too."
+  : ch.kind === "nothing" ? "Dividing by 1 changes nothing. Try the other move! 💭"
+  : ch.kind === "nohelp" ? `Still balanced, but that doesn't get ${s.v} on its own. Try another move! 💭`
+  : ch.m.op === "sub" || ch.m.op === "subx" ? `Still balanced, but now there's even more next to the ${s.v}-bags! Do the opposite to clear them away. 💭`
+  : ch.m.op === "mul" ? `Still balanced, but now there are more bags, not fewer! Share both sides out instead. 💭`
+  : `Still balanced, but now each bag is cut into pieces! Make whole bags instead. 💭`;
+B.text = (sd, v) => { let t = "";
+  if (sd.n) t = sd.d === 1 ? vt(sd.n, v) : `${sd.n === 1 ? "" : sd.n === -1 ? MINUS : sg(sd.n)}${v}/${sd.d}`;
+  if (sd.c) t += t ? ` ${sd.c < 0 ? MINUS : "+"} ${Math.abs(sd.c)}` : sg(sd.c);
+  return t || "0"; };
+B.weight = (sd, x) => sd.n / sd.d * x + sd.c;
+const bag = (x, y, neg, lab) => `<g class="bbag"><path d="M${f1(x - 11)},${f1(y + 26)} Q${f1(x - 14)},${f1(y + 9)} ${f1(x - 5)},${f1(y + 6)} L${f1(x - 3)},${f1(y + 2)} L${f1(x + 3)},${f1(y + 2)} L${f1(x + 5)},${f1(y + 6)} Q${f1(x + 14)},${f1(y + 9)} ${f1(x + 11)},${f1(y + 26)} Z" fill="${neg ? SKY : PINK}" stroke="${neg ? "#6aa7d8" : "#e0607a"}" stroke-width="1.6" stroke-linejoin="round"/><path d="M${f1(x - 5)},${f1(y + 5)} h10" stroke="${neg ? "#6aa7d8" : "#e0607a"}" stroke-width="2.2" stroke-linecap="round"/>` + txt(x, y + 21, lab, { size: lab.length > 3 ? 8 : 10, fill: neg ? "#3d6f99" : "#a83a59" }) + `</g>`;
+const block = (x, y, neg) => neg ? `<g class="bblk"><path d="M${f1(x + 8)},${f1(y + 16)} q-2,3 0,5" stroke="#9b84b0" stroke-width="1" fill="none"/><ellipse cx="${f1(x + 8)}" cy="${f1(y + 8)}" rx="7.5" ry="8" fill="${LILAC}" stroke="#9b7fd0" stroke-width="1.4"/><path d="M${f1(x + 5)},${f1(y + 4)} q2,-2 4,-1" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round"/></g>`
+  : `<rect class="bblk" x="${f1(x + 1)}" y="${f1(y + 1)}" width="15" height="15" rx="4" fill="${MINT}" stroke="#3f9a73" stroke-width="1.4"/>`;
+// everything on one plate, stacked upwards from the plate top (py), centred on cx
+const plate = (sd, cx, py, v) => {
+  let b = "", y = py; const c = Math.abs(sd.c), neg = sd.c < 0;
+  if (c > 12) { y -= 26; const w = 64; b += `<rect x="${f1(cx - w / 2)}" y="${f1(y)}" width="${w}" height="24" rx="7" fill="${neg ? LILAC : MINT}" stroke="${neg ? "#9b7fd0" : "#3f9a73"}" stroke-width="1.6"/>` + txt(cx - 8, y + 16.5, `${neg ? MINUS : ""}${c}`, { size: 13 }) + block(cx + 10, y + 4, neg); y -= 2; }
+  else if (c) { const rows = Math.ceil(c / 6); for (let i = 0; i < c; i++) { const row = Math.floor(i / 6), inRow = Math.min(6, c - row * 6), col = i % 6; b += block(cx - inRow * 9 + col * 18, py - (row + 1) * 18, neg); } y -= rows * 18 + 2; }
+  const n = Math.abs(sd.n);
+  if (sd.n && (sd.d !== 1 || n > 10)) { b += bag(cx, y - 30, sd.n < 0, sd.d !== 1 ? `${v}/${sd.d}` : `${n}${v}`); }
+  else for (let i = 0; i < n; i++) { const row = Math.floor(i / 5), inRow = Math.min(5, n - row * 5), col = i % 5; b += bag(cx - inRow * 13 + 13 + col * 26, y - (row + 1) * 30, sd.n < 0, (sd.n < 0 ? MINUS : "") + v); }
+  return b;
+};
+V.balance = (s, o = {}) => {
+  const last = s.states.length - 1, step = o.reveal ? last : Math.min(last, o.step || 0), st = o.state || s.states[step], done = step === last && !o.state;
+  const W = 360, by = 176, tilt = o.tilt || 0, dy = tilt * 13, P = { L: 90, R: 270 }, yL = by - 26 - dy, yR = by - 26 + dy;
+  let b = `<rect x="118" y="${by + 36}" width="124" height="8" rx="4" fill="#E9DDF7"/><path d="M180,${by} L152,${by + 37} L208,${by + 37} Z" fill="${SUN}" stroke="#e8b84a" stroke-width="2" stroke-linejoin="round"/>`;
+  b += `<circle cx="172" cy="${by + 22}" r="2.6" fill="${INK}"/><circle cx="188" cy="${by + 22}" r="2.6" fill="${INK}"/><path d="M175,${by + 28} q5,${tilt ? -3 : 4} 10,0" stroke="${INK}" stroke-width="1.8" fill="none" stroke-linecap="round"/><circle cx="166" cy="${by + 28}" r="3" fill="#FFB8D1" opacity=".7"/><circle cx="194" cy="${by + 28}" r="3" fill="#FFB8D1" opacity=".7"/>`;
+  b += `<g class="${tilt ? "btip" : ""}"><path d="M${P.L - 6},${f1(by - dy)} L${P.R + 6},${f1(by + dy)}" stroke="${LINE}" stroke-width="7" stroke-linecap="round"/><path d="M${P.L - 6},${f1(by - dy)} L${P.R + 6},${f1(by + dy)}" stroke="#F5EEFF" stroke-width="2.5" stroke-linecap="round"/>`;
+  [["L", yL], ["R", yR]].forEach(([k, y]) => { b += `<path d="M${P[k]},${f1(y + 8)} V${f1(by + (k === "L" ? -dy : dy))}" stroke="${LINE}" stroke-width="3"/><rect x="${P[k] - 70}" y="${f1(y)}" width="140" height="9" rx="4.5" fill="#FFE3EC" stroke="#ff8fa3" stroke-width="2"/>` + plate(st[k], P[k], y, s.v); });
+  b += `</g><circle cx="180" cy="${by}" r="6" fill="${PINK}" stroke="${INK}" stroke-width="1.6"/><path d="M180,${by - 4} l1.3,2.7 3,.4 -2.2,2 .6,3 -2.7,-1.5 -2.7,1.5 .6,-3 -2.2,-2 3,-.4z" fill="#fff"/>`;
+  const X = s.xSide, lt = done && !o.reveal && X === "R" ? "?" : B.text(st.L, s.v), rt = done && !o.reveal && X === "L" ? "?" : B.text(st.R, s.v);
+  b += txt(168, 22, lt, { anchor: "end", size: 17, fill: done && X === "R" ? "#e0607a" : INK }) + txt(180, 22, "=", { size: 17, fill: tilt ? "#e0607a" : INK }) + txt(192, 22, rt, { anchor: "start", size: 17, fill: done && X === "L" ? "#e0607a" : INK });
+  if (tilt) b += txt(180, by + 58, "⚠️ not balanced!", { size: 12, fill: "#e0607a" });
+  return wrap(W, by + (tilt ? 64 : 48), b, s.label || "balance scale", "balance");
+};
+const balSpec = (L, R, v, g, tip) => Object.assign({ type: "balance", v, tip }, B.solve(L, R, g));
+
 /* ---------- question → spec ---------- */
 const nl = (a, hops) => { let pts = [a], c = a; hops.forEach(h => { c += h; pts.push(c); }); const mn = Math.min(...pts), mx = Math.max(...pts);
   const span = mx - mn, st = span <= 16 ? 1 : span <= 100 ? 10 : 100; let lo = Math.floor(mn / st) * st, hi = Math.ceil(mx / st) * st; if (st === 1) { lo = Math.max(0, Math.min(lo, mx - 20 < 0 ? 0 : lo)); hi = Math.max(hi, lo + 10); if (mx <= 20 && mn >= 0) { lo = 0; hi = 20; } } if (hi === lo) hi = lo + st; return { type: "numberline", lo, hi, start: a, hops }; };
@@ -156,6 +240,11 @@ const BY = {
   "g4.round": d => d.t >= 10 ? { type: "numberline", lo: Math.floor(d.n / d.t) * d.t, hi: Math.floor(d.n / d.t) * d.t + d.t, start: Math.floor(d.n / d.t) * d.t, hops: [], marks: [{ v: d.n, t: d.n }, { v: Math.floor(d.n / d.t) * d.t + d.t / 2, t: "halfway", c: "#b59bd6" }], ask: `${d.n} rounds to ?`, ans: Math.round(d.n / d.t) * d.t, tip: "Is the pink flag before or after halfway?" } : null,
   "g4.fracadd": d => { const k = d.d2 / d.d1, n = d.sub ? d.a * k - d.b : d.a * k + d.b; return { type: "fracbars", tip: `Cut each ${d.d1}th into ${k} to make ${d.d2}ths.`, bars: [{ n: d.a, d: d.d1, t: `${d.a}/${d.d1}` }, { n: d.a * k, d: d.d2, t: `= ${d.a * k}/${d.d2}`, note: "same amount" }, { n: d.b, d: d.d2, t: `${d.sub ? "−" : "+"} ${d.b}/${d.d2}` }, { n: Math.min(n, d.d2), d: d.d2, t: `= ${n}/${d.d2}${gcd(n, d.d2) > 1 ? ` = ${n / gcd(n, d.d2)}/${d.d2 / gcd(n, d.d2)}` : ""}`, reveal: 1, q: 1 }, n > d.d2 ? { n: n - d.d2, d: d.d2, t: "", reveal: 1 } : null].filter(Boolean) }; },
   "g5.percent": d => d.p != null ? { type: "bar", tip: "The whole bar is 100%. Each block is 10%.", max: 100, rows: [{ parts: Array.from({ length: 10 }, (_, i) => ({ v: 10, t: i === 0 ? "10%" : "", fill: (i + 1) * 10 <= d.p ? PINK : i * 10 < d.p ? SUN : "#fff" })), braces: [{ from: 0, to: d.p, t: `${d.p}% = ?`, q: 1, rt: `${d.p}% = ${+(d.p * d.n / 100).toFixed(2)}` }, { from: 0, to: 100, t: `100% = ${d.n}`, below: 1 }] }] } : null,
+  "g6.algebra": d => d.L ? balSpec(B.side(d.L[0], 1, d.L[1]), B.side(d.R[0], 1, d.R[1]), d.v || "x", 0, `The bag holds ${d.v || "x"} pearls. Tap a move that keeps the scale balanced!`) : null,
+  "g7.lineq": d => balSpec(B.side(d.L[0], 1, d.L[1]), B.side(d.R[0], 1, d.R[1]), "x", d.g, d.g ? `${d.g} equal groups on the left, so share both sides into ${d.g} first.` : "Each bag holds x. Do the same to both sides to keep it balanced!"),
+  "g7.story": d => balSpec(B.side(d.L[0], 1, d.L[1]), B.side(0, 1, d.R[1]), "x", 0, `Collect first: x + ${d.k}x = ${d.k + 1}x and ${d.d} + ${d.d} = ${2 * d.d}. Now balance it!`),
+  "g8.fraceq": d => balSpec(B.side(1, d.a, d.b), B.side(0, 1, d.c), "x", 0, `The bag is cut into ${d.a} pieces: x/${d.a} is one piece. Clear the blocks, then make a whole bag.`),
+  "g8.story": d => balSpec(B.side(d.s - d.b, 1, d.b * d.N), B.side(0, 1, d.cost), "x", 0, `Collect first: ${d.s}x + ${d.b}(${d.N} − x) = ${d.s - d.b}x + ${d.b * d.N}. Now balance it!`),
   "g6.share": d => { const k = d.tot / (d.a + d.b), u = (n, ask) => Array.from({ length: n }, () => ({ v: 1, t: "", fill: ask ? PINK : MINT })); return { type: "bar", tip: `Hansel has ${d.a} units, Gretel has ${d.b}. Find 1 unit first.`, max: Math.max(d.a, d.b), total: d.tot, rows: [{ name: "Hansel", parts: u(d.a, d.who), braces: d.who ? [{ from: 0, to: d.a, t: "?", rt: d.a * k, q: 1 }] : [] }, { name: "Gretel", parts: u(d.b, !d.who), braces: !d.who ? [{ from: 0, to: d.b, t: "?", rt: d.b * k, q: 1, below: 1 }] : [] }] }; }
 };
 V.spec = q => {
@@ -167,7 +256,7 @@ V.spec = q => {
 V.has = q => !!V.spec(q);
 V.svg = (spec, opt = {}) => { if (!spec || !V[spec.type] || typeof V[spec.type] !== "function") return ""; return V[spec.type](spec, opt); };
 V.render = (q, opt = {}) => V.svg(V.spec(q), opt);
-V.TYPES = ["numberline", "tenframe", "bar", "array", "groups", "blocks", "fracbars", "grid"];
+V.TYPES = ["numberline", "tenframe", "bar", "array", "groups", "blocks", "fracbars", "grid", "balance"];
 
 if (typeof module !== "undefined" && module.exports) module.exports = V; else root.MathViz = V;
 })(typeof window !== "undefined" ? window : globalThis);

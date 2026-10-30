@@ -31,7 +31,8 @@ const QUEST_POOL = [
   { id: "math1", icon: "🔢", label: "Finish a Number Kingdom maths lesson", goal: 1, reward: 6 },
   { id: "dojo1", icon: "🗼", label: "Climb the Times-Table Tower (practice or sprint)", goal: 1, reward: 5 },
   { id: "story1", icon: "📜", label: "Read a Storybook chapter", goal: 1, reward: 6 },
-  { id: "model1", icon: "🧮", label: "Solve 3 maths questions with a Model Magic picture", goal: 3, reward: 5 }
+  { id: "model1", icon: "🧮", label: "Solve 3 maths questions with a Model Magic picture", goal: 3, reward: 5 },
+  { id: "balance1", icon: "⚖️", label: "Balance an equation scale all the way to x (Grades 6–8 maths)", goal: 1, reward: 5 }
 ];
 Object.assign(WR, { SKILLS, PETS, AVATARS, QUEST_POOL, data: {}, manifest: null, screens: {} });
 
@@ -88,13 +89,13 @@ const freshWriting = () => ({ checks: 0, crowns: 0, best: {}, drafts: {} });
 // 🔢 Number Kingdom: chosen grade, best score per topic ("g3.times", "g7.mixed", "dojo.clongdiv"), Times-Table Tower facts
 // ({ "7x8": { b: Leitner box 0–5, r: right, w: wrong, d: next review time, t: last answer ms, l: last seen } }) and dojo stats
 // 🛡️ bosses: Grade Guardian results per band ({ g12: { won, best, tries, at } })
-const freshMath = () => ({ grade: null, placed: null, xp: 0, correct: 0, answered: 0, lessons: 0, models: 0, modelSolved: 0, topics: {}, facts: {}, bosses: {}, dojo: { tables: [2, 3, 4, 5], op: "x", best: 0, sprints: 0, practice: 0, history: [] } });
+const freshMath = () => ({ grade: null, placed: null, xp: 0, correct: 0, answered: 0, lessons: 0, models: 0, modelSolved: 0, balance: { opened: 0, moves: 0, done: 0 }, topics: {}, facts: {}, bosses: {}, dojo: { tables: [2, 3, 4, 5], op: "x", best: 0, sprints: 0, practice: 0, history: [] } });
 WR.freshMath = freshMath;
 // one place that completes a (possibly old or partial) maths block in place; used on load and by WR.Math.st()
 // (in place, so objects other code holds, like math.dojo, stay the same objects)
 WR.fixMath = m => { const f = freshMath(); m = m || f;
   for (const k in f) if (m[k] === undefined || (m[k] === null && f[k] && typeof f[k] === "object")) m[k] = f[k];
-  for (const k in f.dojo) if (m.dojo[k] === undefined) m.dojo[k] = f.dojo[k]; return m; };
+  for (const box of ["dojo", "balance"]) for (const k in f[box]) if (m[box][k] === undefined) m[box][k] = f[box][k]; return m; };
 const freshSpeaking = () => ({ rounds: 0, attempts: 0, passed: 0, perfect: 0, preferShadow: false, shadowWhy: null });
 // older saves (before the Echo Well / Story Quill) simply gain the speaking and writing stats; nothing else changes
 function migrate(s) {

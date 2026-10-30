@@ -1,7 +1,7 @@
 /* 🔢 Number Kingdom topics, Grades 5–8 (Singapore Primary 5–6, Secondary 1–2). */
 (function () {
 const M = (typeof module !== "undefined" && module.exports) ? require("./math-gen.js") : window.MathGen;
-const { Q, num, mcq, T, NAMES, topic, gcd, lcm, rd, fmt, simp, fracTex, fracStr, mixedTex, poly, lin, paren } = M._internal;
+const { Q, num, mcq, T, NAMES, topic, gcd, lcm, rd, fmt, simp, fracTex, fracStr, mixedTex, poly, lin, paren, pm, undo } = M._internal;
 
 /* ---------- Grade 5 (Primary 5) ---------- */
 topic(5, "fracmul", "Fraction Spells", "✨", "Multiply fractions", r => {
@@ -78,7 +78,7 @@ topic(6, "algebra", "Letter Magic", "🔤", "Simple algebra with letters", r => 
   const t = r.int(0, 2), a = r.int(2, 9), b = r.int(1, 20), x = r.int(2, 12);
   if (t === 0) return num(`Find the value of ${T(`${a}y + ${b}`)} when ${T(`y = ${x}`)}.`, a * x + b, `Replace y with ${x}.`, [`$${a} \\times ${x} + ${b} = ${a * x} + ${b} = ${a * x + b}$`]);
   if (t === 1) { const c = r.int(2, 9); return num(`Simplify ${T(`${a}k + ${c}k - k`)}. How many k's are there?`, a + c - 1, "Collect the like terms: add and subtract the numbers in front of k.", [`$${a} + ${c} - 1 = ${a + c - 1}$, so the answer is $${a + c - 1}k$`]); }
-  return num(`A magic box holds ${T("n")} pearls. Ariel adds ${b} more and then has ${x + b}. What is ${T("n")}?`, x, "Work backwards: undo the adding.", [`$n + ${b} = ${x + b}$`, `$n = ${x + b} - ${b} = ${x}$`]);
+  return num(`A magic box holds ${T("n")} pearls. Ariel adds ${b} more and then has ${x + b}. What is ${T("n")}?`, x, "Work backwards: undo the adding.", [`$n + ${b} = ${x + b}$`, `$n = ${x + b} - ${b} = ${x}$`], { data: { L: [1, b], R: [0, x + b], v: "n" } });
 });
 topic(6, "speed", "Speedy Broomsticks", "🧹", "Speed, distance and time", r => {
   const s = r.int(4, 90), t = r.int(2, 8), which = r.int(0, 2);
@@ -123,10 +123,10 @@ topic(7, "expand", "Bracket Breakers", "🔓", "Expand a(bx + c)", r => {
 });
 topic(7, "lineq", "Equation Elixirs", "⚗️", "Solve linear equations", r => {
   const x = r.int(-10, 12), t = r.int(0, 2);
-  if (t === 0) { const a = r.nz(-9, 9), b = r.nz(-20, 20), c = a * x + b; return num(`Solve ${T(`${lin(a, b)} = ${c}`)}`, x, "Undo the + or −, then divide by the number in front of x.", [`$${poly([[a, 1]])} = ${c} ${b < 0 ? "+" : "-"} ${Math.abs(b)} = ${c - b}$`, `$x = ${c - b} \\div ${paren(a)} = ${x}$`], { keys: ["-"], data: { L: [a, b], R: [0, c] } }); }
-  if (t === 1) { const a = r.int(2, 6), b = r.nz(-9, 9), c = a * (x + b); return num(`Solve ${T(`${a}(${lin(1, b)}) = ${c}`)}`, x, `Divide both sides by ${a} first (or expand).`, [`$${lin(1, b)} = ${c} \\div ${a} = ${c / a}$`, `$x = ${c / a} ${b < 0 ? "+" : "-"} ${Math.abs(b)} = ${x}$`], { keys: ["-"], data: { L: [a, a * b], R: [0, c] } }); }
+  if (t === 0) { const a = r.nz(-9, 9), b = r.nz(-20, 20), c = a * x + b; return num(`Solve ${T(`${lin(a, b)} = ${c}`)}`, x, "Undo the + or −, then divide by the number in front of x.", [`$${poly([[a, 1]])} = ${c} ${undo(b)} = ${c - b}$`, `$x = ${c - b} \\div ${paren(a)} = ${x}$`], { keys: ["-"], data: { L: [a, b], R: [0, c] } }); }
+  if (t === 1) { const a = r.int(2, 6), b = r.nz(-9, 9), c = a * (x + b); return num(`Solve ${T(`${a}(${lin(1, b)}) = ${c}`)}`, x, `Divide both sides by ${a} first (or expand).`, [`$${lin(1, b)} = ${c} \\div ${a} = ${c / a}$`, `$x = ${c / a} ${undo(b)} = ${x}$`], { keys: ["-"], data: { L: [a, a * b], R: [0, c], g: a } }); }
   let a = r.int(2, 9), c = r.int(1, 8); if (a === c) a++; const b = r.int(-12, 12), d = (a - c) * x + b;
-  return num(`Solve ${T(`${lin(a, b)} = ${lin(c, d)}`)}`, x, "Get the x-terms on one side and the numbers on the other.", [`$${a}x - ${c === 1 ? "" : c}x = ${d} ${b < 0 ? "+" : "-"} ${Math.abs(b)}$`, `$${a - c === 1 ? "" : a - c}x = ${d - b}$`, `$x = ${x}$`], { keys: ["-"], data: { L: [a, b], R: [c, d] } });
+  return num(`Solve ${T(`${lin(a, b)} = ${lin(c, d)}`)}`, x, "Get the x-terms on one side and the numbers on the other.", [`$${a}x - ${c === 1 ? "" : c}x = ${d} ${undo(b)}$`, `$${a - c === 1 ? "" : a - c}x = ${d - b}$`, `$x = ${x}$`], { keys: ["-"], data: { L: [a, b], R: [c, d] } });
 });
 topic(7, "angles", "Angle Archery", "🏹", "Angles on lines, at points, in triangles", r => {
   const t = r.int(0, 3);
@@ -141,7 +141,7 @@ topic(7, "pct", "Percentage Puzzles", "🔮", "Reverse and percentage change", r
 });
 topic(7, "story", "Royal Challenges", "📜", "Sec 1 word problems", r => {
   const x = r.int(5, 30), k = r.int(2, 4), d = r.int(3, 15);
-  return num(`The queen is ${k} times as old as the princess. In ${d} years' time, the sum of their ages will be ${(k + 1) * x + 2 * d}. How old is the princess now?`, x, "Let the princess be x years old; write an equation.", [`Princess = x, Queen = ${k}x`, `$(x + ${d}) + (${k}x + ${d}) = ${(k + 1) * x + 2 * d}$`, `$${k + 1}x = ${(k + 1) * x}$, so $x = ${x}$`]);
+  return num(`The queen is ${k} times as old as the princess. In ${d} years' time, the sum of their ages will be ${(k + 1) * x + 2 * d}. How old is the princess now?`, x, "Let the princess be x years old; write an equation.", [`Princess = x, Queen = ${k}x`, `$(x + ${d}) + (${k}x + ${d}) = ${(k + 1) * x + 2 * d}$`, `$${k + 1}x = ${(k + 1) * x}$, so $x = ${x}$`], { data: { L: [k + 1, 2 * d], R: [0, (k + 1) * x + 2 * d], k, d } });
 }, { story: true });
 
 /* ---------- Grade 8 (Secondary 2) ---------- */
@@ -166,7 +166,7 @@ topic(8, "gradient", "Gradient Hills", "⛰️", "Gradient and straight lines", 
   if (t === 0) { const x1 = r.int(-6, 6), y1 = r.int(-6, 6), dx = r.nz(-5, 5) * 2, m = r.nz(-8, 8) / 2, x2 = x1 + dx, y2 = y1 + m * dx; return num(`Find the gradient of the line through ${T(`(${x1}, ${y1})`)} and ${T(`(${x2}, ${y2})`)}.`, m, "Gradient = rise ÷ run = (y₂ − y₁) ÷ (x₂ − x₁).", [`$m = \\frac{${y2} - ${paren(y1)}}{${x2} - ${paren(x1)}} = \\frac{${y2 - y1}}{${dx}} = ${fmt(m)}$`], { keys: ["-", ".", "/"], data: { x1, y1, x2, y2 } }); }
   const m = r.nz(-6, 6), c = r.int(-10, 10), x = r.int(-5, 5);
   if (t === 1) return num(`The line ${T(`y = ${lin(m, c)}`)} meets the y-axis at (0, c). What is c?`, c, "In y = mx + c, c is the y-intercept.", [`Put x = 0: y = ${c}`], { keys: ["-"] });
-  return num(`On the line ${T(`y = ${lin(m, c)}`)}, what is y when ${T(`x = ${x}`)}?`, m * x + c, "Substitute the x value.", [`$y = ${m}(${x}) ${c < 0 ? "-" : "+"} ${Math.abs(c)} = ${m * x + c}$`], { keys: ["-"], data: { m, c, x } });
+  return num(`On the line ${T(`y = ${lin(m, c)}`)}, what is y when ${T(`x = ${x}`)}?`, m * x + c, "Substitute the x value.", [`$y = ${m}(${x}) ${pm(c)} = ${m * x + c}$`], { keys: ["-"], data: { m, c, x } });
 });
 topic(8, "proportion", "Proportion Potions", "🫖", "Direct and inverse proportion", r => {
   if (r.chance(.5)) { const k = r.int(2, 12), x1 = r.int(2, 10), x2 = r.int(11, 25); return num(`y is directly proportional to x. When x = ${x1}, y = ${k * x1}. Find y when x = ${x2}.`, k * x2, "Direct: y = kx. Find k first.", [`$k = ${k * x1} \\div ${x1} = ${k}$`, `$y = ${k} \\times ${x2} = ${k * x2}$`]); }
@@ -188,7 +188,7 @@ topic(8, "prob", "Wishing-Well Probability", "🎲", "Simple probability as a fr
 });
 topic(8, "fraceq", "Fraction Equations", "🪶", "Equations with fractions", r => {
   const a = r.int(2, 6), x = a * r.int(-5, 8), b = r.nz(-9, 9), c = x / a + b;
-  return num(`Solve ${T(`\\frac{x}{${a}} ${b < 0 ? "-" : "+"} ${Math.abs(b)} = ${c}`)}`, x, `Undo the ${b < 0 ? "−" : "+"} first, then multiply by ${a}.`, [`$\\frac{x}{${a}} = ${c - b}$`, `$x = ${c - b} \\times ${a} = ${x}$`], { keys: ["-"], data: { a, b, c } });
+  return num(`Solve ${T(`\\frac{x}{${a}} ${pm(b)} = ${c}`)}`, x, `Undo the ${b < 0 ? "−" : "+"} first, then multiply by ${a}.`, [`$\\frac{x}{${a}} = ${c - b}$`, `$x = ${c - b} \\times ${a} = ${x}$`], { keys: ["-"], data: { a, b, c } });
 });
 topic(8, "story", "Royal Challenges", "📜", "Sec 2 problem solving", r => {
   const s = r.int(4, 9), b = r.int(2, s - 1), ns = r.int(3, 12), nb = r.int(3, 12), N = ns + nb, cost = s * ns + b * nb;

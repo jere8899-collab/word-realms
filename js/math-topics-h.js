@@ -1,7 +1,7 @@
 /* 🔢 Number Kingdom topics, Grades 9–12 (Singapore Secondary 3–4, JC 1–2 / Years 10–13). */
 (function () {
 const M = (typeof module !== "undefined" && module.exports) ? require("./math-gen.js") : window.MathGen;
-const { Q, num, mcq, T, topic, table, gcd, rd, fmt, fdp, fracTex, fracStr, poly, lin, paren, sgn } = M._internal;
+const { Q, num, mcq, T, topic, table, gcd, rd, fmt, fdp, fracTex, fracStr, poly, lin, paren, sgn, pm } = M._internal;
 const sf3 = v => +(+v.toFixed(12)).toPrecision(3);
 const tol3 = v => Math.max(1e-9, Math.pow(10, Math.floor(Math.log10(Math.abs(v) || 1)) - 2) * 0.51);
 const V2 = v => `\\begin{pmatrix} ${v[0]} \\\\ ${v[1]} \\end{pmatrix}`, V3 = v => `\\begin{pmatrix} ${v[0]} \\\\ ${v[1]} \\\\ ${v[2]} \\end{pmatrix}`;
@@ -103,8 +103,8 @@ topic(10, "story", "Royal Challenges", "📜", "O-Level style applications", r =
 /* ---------- Grade 11 (JC 1 / Year 12) ---------- */
 topic(11, "func", "Function Fountains", "⛲", "Composite and inverse functions", r => {
   const a = r.nz(-4, 5), b = r.int(-6, 6), c = r.int(-5, 5), k = r.int(-4, 4), t = r.int(0, 2), f = `f(x) = ${lin(a, b)}`, g = `g(x) = ${poly([[1, 2], [c, 0]])}`;
-  if (t === 0) return num(`${T(f)} and ${T(g)}. Find ${T(`fg(${k})`)}.`, a * (k * k + c) + b, "fg(x) means apply g first, then f.", [`$g(${k}) = ${k * k + c}$`, `$f(${k * k + c}) = ${a}(${k * k + c}) ${b < 0 ? "-" : "+"} ${Math.abs(b)} = ${a * (k * k + c) + b}$`], { keys: ["-"], data: { a, b, c, k, t } });
-  if (t === 1) return num(`${T(f)} and ${T(g)}. Find ${T(`gf(${k})`)}.`, (a * k + b) ** 2 + c, "gf(x) means apply f first, then g.", [`$f(${k}) = ${a * k + b}$`, `$g(${a * k + b}) = ${paren(a * k + b)}^2 ${c < 0 ? "-" : "+"} ${Math.abs(c)} = ${(a * k + b) ** 2 + c}$`], { keys: ["-"], data: { a, b, c, k, t } });
+  if (t === 0) return num(`${T(f)} and ${T(g)}. Find ${T(`fg(${k})`)}.`, a * (k * k + c) + b, "fg(x) means apply g first, then f.", [`$g(${k}) = ${k * k + c}$`, `$f(${k * k + c}) = ${a}(${k * k + c}) ${pm(b)} = ${a * (k * k + c) + b}$`], { keys: ["-"], data: { a, b, c, k, t } });
+  if (t === 1) return num(`${T(f)} and ${T(g)}. Find ${T(`gf(${k})`)}.`, (a * k + b) ** 2 + c, "gf(x) means apply f first, then g.", [`$f(${k}) = ${a * k + b}$`, `$g(${a * k + b}) = ${paren(a * k + b)}^2 ${pm(c)} = ${(a * k + b) ** 2 + c}$`], { keys: ["-"], data: { a, b, c, k, t } });
   const y = a * k + b; return num(`${T(f)}. Find ${T(`f^{-1}(${y})`)}.`, k, `Solve f(x) = ${y} for x.`, [`$${lin(a, b)} = ${y}$`, `$x = \\frac{${y} - ${paren(b)}}{${a}} = ${k}$`], { keys: ["-"], data: { a, b, c, k, t } });
 });
 topic(11, "explog", "Log Lagoon", "🪷", "Exponentials and logarithms", r => {
@@ -193,7 +193,7 @@ topic(12, "sigma", "Sigma Spellbook", "📕", "Series and Σ notation", r => {
   if (t === 0) return num(`Evaluate ${T(`\\sum_{r=1}^{${n}} r`)}`, n * (n + 1) / 2, "Σr = n(n + 1)/2", [`$\\frac{${n}(${n + 1})}{2} = ${n * (n + 1) / 2}$`], { data: { f: [0, 1], m: n } });
   if (t === 1) { const m = r.int(5, 15); return num(`Evaluate ${T(`\\sum_{r=1}^{${m}} r^2`)}`, m * (m + 1) * (2 * m + 1) / 6, "Σr² = n(n + 1)(2n + 1)/6", [`$\\frac{${m}(${m + 1})(${2 * m + 1})}{6} = ${m * (m + 1) * (2 * m + 1) / 6}$`], { data: { f: [0, 0, 1], m } }); }
   const a = r.int(1, 5), b = r.nz(-3, 6), m = r.int(5, 20), v = a * m * (m + 1) / 2 + b * m;
-  return num(`Evaluate ${T(`\\sum_{r=1}^{${m}} (${lin(a, b, "r")})`)}`, v, "Split it: a·Σr + Σb", [`$${a}\\cdot\\frac{${m}(${m + 1})}{2} ${b < 0 ? "-" : "+"} ${Math.abs(b)}(${m}) = ${v}$`], { keys: ["-"], data: { f: [b, a], m } });
+  return num(`Evaluate ${T(`\\sum_{r=1}^{${m}} (${lin(a, b, "r")})`)}`, v, "Split it: a·Σr + Σb", [`$${a}\\cdot\\frac{${m}(${m + 1})}{2} ${pm(b)}(${m}) = ${v}$`], { keys: ["-"], data: { f: [b, a], m } });
 });
 topic(12, "expcalc", "Euler's Enchanted Forest", "🌲", "Calculus with e and ln", r => {
   const t = r.int(0, 2);

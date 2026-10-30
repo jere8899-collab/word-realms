@@ -156,7 +156,7 @@ function hud() {
   return `<span class="pill">${L.guardian ? "🛡️ Guardian" : L.challenge ? "🗼 Tower" : "Grade " + L.grade} · ${esc(L.title)}</span><span class="qnum">${Math.min(L.i + 1, n)}/${n}</span><div class="gems">${L.items.map((_, k) => `<span class="${k < L.i ? (L.res[k] === 1 ? "g1" : L.res[k] ? "g5" : "g0") : k === L.i ? "cur" : ""}">${k < L.i ? (L.res[k] === 1 ? "💎" : L.res[k] ? "🔹" : "🫧") : "·"}</span>`).join("")}</div>`;
 }
 function render() {
-  const q = L.items[L.i]; L.tries = 0; L.done = false; L.res = L.res || []; L.viz = window.MathViz ? window.MathViz.spec(q) : null; L.vizOpen = false; L.vizUsed = false; L.dealt = 0;
+  const q = L.items[L.i]; L.tries = 0; L.done = false; L.res = L.res || []; L.viz = window.MathViz ? window.MathViz.spec(q) : null; Object.assign(L, { vizOpen: false, vizUsed: false, dealt: 0, bstep: 0, bmsg: "", bwob: null, bmiss: false });
   WR.view(`<div class="lesson-bg" style="background-image:${WR.bgCss("bg_math")}"></div>
     <div class="row" style="margin:6px 0 8px"><button class="btn ghost small" id="quitBtn">← Leave</button><b class="title">🔢 ${esc(L.title)}</b></div>
     ${L.guardian ? `<div class="card gstrip" id="gstrip">${guardMeter()}</div>` : ""}<div class="card hud">${hud()}</div>
@@ -164,25 +164,65 @@ function render() {
       ${q.kind === "mcq" ? `<div class="opts mopts">${q.options.map((o, k) => `<button class="opt" data-k="${k}"><span class="k">${"ABCD"[k]}</span>${MW.html(o)}</button>`).join("")}</div>` : padHTML(q, L.grade)}
       <div id="mexplain"></div></div>
       <div class="card side"><div class="petbox" id="lpet">${WR.petHTML()}</div><div class="bubble" id="lbubble">${esc(L.i === 0 ? "Let's solve it together! ✨" : WR.petMood())}</div>
-      <div class="muted" id="lstats" style="font-size:.85rem;font-weight:800">⭐ ${L.starsEarned} earned · 🔥 combo ${L.combo}</div><button class="btn ghost small" id="hintBtn" style="margin-top:6px">💡 Hint</button>${L.viz ? `<button class="btn ghost small" id="vizBtn" style="margin-top:6px">🧮 Model</button>` : ""}</div></div>`);
-  const vb = WR.$("#vizBtn"); if (vb) vb.onclick = () => { if (L.vizOpen && !L.done) { L.vizOpen = false; WR.$("#mviz").innerHTML = ""; vb.textContent = "🧮 Model"; } else showViz(); };
+      <div class="muted" id="lstats" style="font-size:.85rem;font-weight:800">⭐ ${L.starsEarned} earned · 🔥 combo ${L.combo}</div><button class="btn ghost small" id="hintBtn" style="margin-top:6px">💡 Hint</button>${L.viz ? `<button class="btn ghost small" id="vizBtn" style="margin-top:6px">${vizLabel()}</button>` : ""}</div></div>`);
+  const vb = WR.$("#vizBtn"); if (vb) vb.onclick = () => { if (L.vizOpen && !L.done) { L.vizOpen = false; WR.$("#mviz").innerHTML = ""; vb.textContent = vizLabel(); } else showViz(); };
   WR.$("#quitBtn").onclick = () => { const o = L; L = null; o.challenge ? WR.go("dojo") : WR.go("math"); };
   WR.$("#hintBtn").onclick = () => { if (L.done) return; showMsg("hint", `💡 ${MW.html(q.hint)}`); };
   if (q.kind === "mcq") document.querySelectorAll("#main .mopts .opt[data-k]").forEach(b => b.onclick = () => submit(q.options[+b.dataset.k], b));
   else bindPad(() => submit(WR.$("#mans").value));
 }
-/* 🧮 Model Magic: a Singapore-style picture model (bar model, number line, ten frames, arrays, sharing groups, blocks, fraction bars) */
+/* 🧮 Model Magic: a Singapore-style picture model (bar model, number line, ten frames, arrays, sharing groups, blocks,
+   fraction bars) or, for Grade 6–8 equations, a ⚖️ balance scale. Interactive kinds have a tool: its opt() feeds the
+   drawing, html() adds the buttons under it and bind() wires them (none of it shows once the model is revealed). */
+const isBal = () => L && L.viz && L.viz.type === "balance";
+const vizLabel = () => isBal() ? "⚖️ Balance" : "🧮 Model";
+const TOOLS = {
+  deal: {
+    opt: () => ({ dealt: L.dealt }),
+    html: v => L.dealt < v.s ? `<div class="row" style="justify-content:center;margin-top:6px"><button class="btn small" id="vizDeal">🃏 Deal one each</button><button class="btn ghost small" id="vizDealAll">Deal them all</button></div>` : "",
+    bind: v => { const d1 = WR.$("#vizDeal"), da = WR.$("#vizDealAll");
+      if (d1) d1.onclick = () => { L.dealt++; WR.sfx("tap"); showViz(); };
+      if (da) da.onclick = () => { L.dealt = v.s; WR.sfx("tap"); showViz(); }; }
+  },
+  // ⚖️ tap the move that keeps the scale balanced and gets x alone; a one-sided move tips the scale for a moment
+  balance: {
+    opt: () => L.bwob ? { state: L.bwob.state, tilt: L.bwob.tilt } : { step: L.bstep },
+    html: v => {
+      const B = window.MathViz.bal, n = v.moves.length, dots = v.moves.map((_, k) => `<i class="${k < L.bstep ? "on" : ""}"></i>`).join("");
+      if (L.bstep >= n) return `<div class="bal-done">🎉 Balanced! One ${esc(v.v)}-bag weighs the same as the other side. What is ${esc(v.v)}? Type it in!</div>`;
+      return `<div class="bal-q"><span class="bal-dots" aria-label="move ${L.bstep + 1} of ${n}">${dots}</span> Move ${L.bstep + 1} of ${n}: which move keeps it balanced <i>and</i> gets ${esc(v.v)} on its own?</div>
+        <div class="bmoves">${B.choices(v, L.bstep).map((c, k) => `<button class="btn small bmove${L.bmiss && c.kind === "good" ? " glow" : ""}" data-b="${k}">${esc(c.label)}</button>`).join("")}</div>${L.bmsg ? `<div class="bal-msg">${esc(L.bmsg)}</div>` : ""}`;
+    },
+    bind: v => {
+      const B = window.MathViz.bal, chs = B.choices(v, L.bstep), m = MW.st(), me = L;
+      document.querySelectorAll("#mviz .bmove").forEach(btn => btn.onclick = () => {
+        if (L !== me || L.done || L.bwob) return;
+        const ch = chs[+btn.dataset.b];
+        if (ch.kind === "good") {
+          L.bstep++; L.bmsg = ""; L.bmiss = false; m.balance.moves++; WR.sfx("tap");
+          if (L.bstep >= v.moves.length) { m.balance.done++; WR.questEvent("balance1"); WR.sfx("good"); }
+          WR.save(); return showViz();
+        }
+        L.bmiss = true; L.bmsg = B.why(ch, v); WR.sfx("bad");
+        if (ch.kind === "oneside") {
+          const st = B.move(v.states[L.bstep], ch.m, true), x = v.ans;
+          L.bwob = { state: st, tilt: B.weight(st.R, x) > B.weight(st.L, x) ? 1 : -1 };
+          setTimeout(() => { if (L === me && L.bwob) { L.bwob = null; if (L.vizOpen) showViz(L.done); } }, 1600);
+        }
+        showViz();
+      });
+    }
+  }
+};
 function showViz(reveal) {
   const box = WR.$("#mviz"); if (!box || !L || !L.viz) return;
-  const v = L.viz, m = MW.st();
-  if (!L.vizUsed && !L.done) { L.vizUsed = true; m.models = (m.models || 0) + 1; WR.save(); }
+  const v = L.viz, m = MW.st(), tool = TOOLS[v.type === "balance" ? "balance" : v.deal ? "deal" : ""], live = tool && !reveal;
+  if (!L.vizUsed && !L.done) { L.vizUsed = true; m.models = (m.models || 0) + 1; if (isBal()) m.balance.opened++; WR.save(); }
+  if (reveal) L.bwob = null;
   L.vizOpen = true;
-  const deal = v.deal && !reveal && L.dealt < v.s;
-  box.innerHTML = `<div class="mviz fade-in${reveal ? " reveal" : ""}"><div class="mviz-tip">🧮 <b>Model Magic</b> · ${esc(v.tip || "Draw it to see it!")}</div>${window.MathViz.svg(v, { reveal, dealt: v.deal ? L.dealt : undefined })}${deal ? `<div class="row" style="justify-content:center;margin-top:6px"><button class="btn small" id="vizDeal">🃏 Deal one each</button><button class="btn ghost small" id="vizDealAll">Deal them all</button></div>` : ""}</div>`;
-  const vb = WR.$("#vizBtn"); if (vb) vb.textContent = reveal ? "🧮 Model" : "🙈 Hide";
-  const d1 = WR.$("#vizDeal"), da = WR.$("#vizDealAll");
-  if (d1) d1.onclick = () => { L.dealt++; WR.sfx("tap"); showViz(); };
-  if (da) da.onclick = () => { L.dealt = v.s; WR.sfx("tap"); showViz(); };
+  box.innerHTML = `<div class="mviz fade-in${reveal ? " reveal" : ""}${isBal() ? " mbal" : ""}"><div class="mviz-tip">${isBal() ? "⚖️ <b>Balance Scale</b>" : "🧮 <b>Model Magic</b>"} · ${esc(v.tip || "Draw it to see it!")}</div>${window.MathViz.svg(v, Object.assign({ reveal }, live ? tool.opt() : {}))}${live ? tool.html(v) : ""}</div>`;
+  const vb = WR.$("#vizBtn"); if (vb) vb.textContent = reveal ? vizLabel() : "🙈 Hide";
+  if (live) tool.bind(v);
 }
 function showMsg(cls, html) { const e = WR.$("#mexplain"); if (e) e.innerHTML = `<div class="explain ${cls === "hint" ? "" : cls}" style="${cls === "hint" ? "background:#FFF7D6" : ""}">${html}</div>`; }
 function petReact(ok) {
@@ -210,7 +250,7 @@ function submit(val, btn) {
   } else if (L.tries === 1) {
     WR.sfx("bad"); L.combo = 0; if (btn) { btn.classList.add("wrong"); btn.disabled = true; }
     const inp = WR.$("#mans"); if (inp) { inp.classList.add("shake"); setTimeout(() => inp.classList.remove("shake"), 450); inp.select && inp.select(); }
-    showMsg("bad", `💭 Not quite — have another go!<div style="margin-top:4px">💡 ${MW.html(q.hint)}</div>${L.viz ? `<div class="muted" style="margin-top:2px;font-weight:800">🧮 Sumi drew a model to help you!</div>` : ""}`);
+    showMsg("bad", `💭 Not quite — have another go!<div style="margin-top:4px">💡 ${MW.html(q.hint)}</div>${L.viz ? `<div class="muted" style="margin-top:2px;font-weight:800">${isBal() ? "⚖️ Sumi brought a balance scale to help you!" : "🧮 Sumi drew a model to help you!"}</div>` : ""}`);
     if (L.viz && !L.vizOpen) showViz();
   } else {
     L.done = true; L.res[L.i] = 0; s.totalAnswered++; m.answered = (m.answered || 0) + 1; WR.sfx("bad");
