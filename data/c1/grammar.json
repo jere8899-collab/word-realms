@@ -510,6 +510,1332 @@
   }
  },
  {
+  "type": "mcq",
+  "q": "Seldom ___ a comet so bright from our school observatory.",
+  "options": [
+   "have we seen",
+   "we have seen",
+   "we saw",
+   "did we saw"
+  ],
+  "answer": 0,
+  "explain": "Negative/limiting adverb first (seldom, rarely, never) → auxiliary + subject. Example: Seldom have I laughed so much.",
+  "notes": {
+   "we have seen": "After seldom at the start we invert: have we.",
+   "we saw": "Past simple needs did: did we see.",
+   "did we saw": "Did is followed by the base form: see."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Under no circumstances ___ the dragon eggs be touched.",
+  "options": [
+   "should",
+   "you should",
+   "must not",
+   "don't"
+  ],
+  "answer": 0,
+  "explain": "Under no circumstances + auxiliary + subject. Example: Under no circumstances should you leave.",
+  "notes": {
+   "you should": "The auxiliary must come before the subject after this phrase.",
+   "must not": "The phrase is already negative, so no not.",
+   "don't": "Don't can't go before 'the dragon eggs be'."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "At no point ___ that the robot would actually work.",
+  "options": [
+   "did anyone imagine",
+   "anyone imagined",
+   "anyone did imagine",
+   "imagined anyone"
+  ],
+  "answer": 0,
+  "explain": "At no point + inversion with do/does/did. Example: At no point did she complain.",
+  "notes": {
+   "anyone imagined": "After at no point we invert.",
+   "anyone did imagine": "The auxiliary must come first: did anyone.",
+   "imagined anyone": "We need an auxiliary, not the main verb, before the subject."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Only later ___ that the map had been drawn upside down.",
+  "options": [
+   "did the explorers notice",
+   "the explorers noticed",
+   "noticed the explorers",
+   "had noticed the explorers"
+  ],
+  "answer": 0,
+  "explain": "Only + time expression first → inversion. Example: Only then did I understand.",
+  "notes": {
+   "the explorers noticed": "After only later we invert.",
+   "noticed the explorers": "The main verb can't go before the subject here.",
+   "had noticed the explorers": "Had noticed the explorers puts the subject after the participle."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Scarcely had the bell rung ___ the students raced outside.",
+  "options": [
+   "when",
+   "than",
+   "that",
+   "then"
+  ],
+  "answer": 0,
+  "explain": "Scarcely/hardly/barely had … when. Example: Barely had we sat down when the phone rang.",
+  "notes": {
+   "than": "Than goes with no sooner.",
+   "that": "That doesn't follow scarcely.",
+   "then": "Then isn't used in this pattern."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "No sooner ___ the castle gates than it began to snow.",
+  "options": [
+   "had we reached",
+   "we had reached",
+   "did we reach",
+   "we reached"
+  ],
+  "answer": 0,
+  "explain": "No sooner + had + subject + p.p. + than. Example: No sooner had I sat down than the bell rang.",
+  "notes": {
+   "we had reached": "After no sooner we invert: had we.",
+   "did we reach": "The pattern uses the past perfect.",
+   "we reached": "No inversion: past simple doesn't fit here."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "So loud ___ that the bats flew out of the cave.",
+  "options": [
+   "was the explosion",
+   "the explosion was",
+   "the explosion",
+   "had the explosion"
+  ],
+  "answer": 0,
+  "explain": "So + adjective first → be + subject. Example: So bright was the moon that we could read.",
+  "notes": {
+   "the explosion was": "After so + adjective at the start we invert.",
+   "the explosion": "A verb is missing.",
+   "had the explosion": "Had the explosion would need a past participle."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Such ___ her enthusiasm that the whole class joined the chess club.",
+  "options": [
+   "was",
+   "is being",
+   "were",
+   "has"
+  ],
+  "answer": 0,
+  "explain": "Such + be + noun + that = it was so great that. Example: Such was the noise that we left.",
+  "notes": {
+   "is being": "Is being doesn't fit a past story.",
+   "were": "Enthusiasm is singular: was.",
+   "has": "Has doesn't fit this pattern."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Not once ___ the captain lose her temper during the storm.",
+  "options": [
+   "did",
+   "has",
+   "was",
+   "had"
+  ],
+  "answer": 0,
+  "explain": "Not once + did + subject + base verb. Example: Not once did he thank me.",
+  "notes": {
+   "has": "Has would need lost.",
+   "was": "Was would need losing, which changes the meaning.",
+   "had": "Had would need lost."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Little ___ that the quiet new girl was a chess champion.",
+  "options": [
+   "did we suspect",
+   "we suspected",
+   "suspected we",
+   "we did suspect"
+  ],
+  "answer": 0,
+  "explain": "Little + did + subject + verb = we had no idea. Example: Little did he realise the danger.",
+  "notes": {
+   "we suspected": "After little at the start we invert.",
+   "suspected we": "The main verb can't come first.",
+   "we did suspect": "We need inversion: did we."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Were the comet ___ closer, we would see it without a telescope.",
+  "options": [
+   "to pass",
+   "passing",
+   "passed",
+   "pass"
+  ],
+  "answer": 0,
+  "explain": "Were + subject + to-infinitive = If + past (formal). Example: Were it to rain, we'd stay inside.",
+  "notes": {
+   "passing": "Passing doesn't follow were here in a conditional.",
+   "passed": "Were … passed would be passive.",
+   "pass": "We need to before pass."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "___ we not found the shortcut, we'd still be in the maze.",
+  "options": [
+   "Had",
+   "If",
+   "Were",
+   "Should"
+  ],
+  "answer": 0,
+  "explain": "Had + subject + not + p.p. = If … hadn't (third conditional). Example: Had I not stopped, I'd have fallen.",
+  "notes": {
+   "If": "If would need had: If we had not found.",
+   "Were": "Were is for present imaginary situations.",
+   "Should": "Should is for possible future events."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Should anyone ___ the secret password, the vault will lock.",
+  "options": [
+   "guess",
+   "guesses",
+   "guessed",
+   "to guess"
+  ],
+  "answer": 0,
+  "explain": "Should + subject + base verb = if (formal). Example: Should you need help, call me.",
+  "notes": {
+   "guesses": "After should we use the base form, no -es.",
+   "guessed": "Guessed doesn't follow should.",
+   "to guess": "No to after should."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "On no account ___ to feed the gremlins after midnight.",
+  "options": [
+   "are you",
+   "you are",
+   "you should",
+   "do you"
+  ],
+  "answer": 0,
+  "explain": "On no account + inversion. Example: On no account must you open it.",
+  "notes": {
+   "you are": "After on no account we invert.",
+   "you should": "Needs inversion: should you.",
+   "do you": "Do you to feed isn't English."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "___ I love most about astronomy is the feeling of wonder.",
+  "options": [
+   "What",
+   "That",
+   "Which",
+   "It"
+  ],
+  "answer": 0,
+  "explain": "Wh-cleft: What + clause + is … Example: What I need is a nap.",
+  "notes": {
+   "That": "That can't start a cleft clause like this.",
+   "Which": "Which needs a noun before it.",
+   "It": "It-clefts take the form 'It is … that'."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "It was my grandma ___ taught me to play chess.",
+  "options": [
+   "who",
+   "which",
+   "whom she",
+   "what"
+  ],
+  "answer": 0,
+  "explain": "It-cleft: It is/was + person + who/that. Example: It was Tom who broke it.",
+  "notes": {
+   "which": "Which is for things.",
+   "whom she": "Whom she adds an extra subject.",
+   "what": "What can't follow a noun in a cleft."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "It wasn't until the lights went out ___ we saw the glowing fungi.",
+  "options": [
+   "that",
+   "when",
+   "then",
+   "which"
+  ],
+  "answer": 0,
+  "explain": "It wasn't until … that = only at that moment. Example: It wasn't until I got home that I noticed.",
+  "notes": {
+   "when": "The cleft pattern uses that, not when.",
+   "then": "Then isn't used in this pattern.",
+   "which": "Which can't introduce this clause."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "All ___ want for my birthday is a telescope.",
+  "options": [
+   "I",
+   "what I",
+   "that I'm",
+   "which I"
+  ],
+  "answer": 0,
+  "explain": "All (that) I want is… = the only thing. Example: All we need is time.",
+  "notes": {
+   "what I": "All what I is not standard English.",
+   "that I'm": "That I'm want isn't grammatical.",
+   "which I": "Which doesn't follow all."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The reason ___ the bridge collapsed was a tiny crack.",
+  "options": [
+   "why",
+   "because",
+   "of",
+   "that's"
+  ],
+  "answer": 0,
+  "explain": "The reason why/that + clause + was … Example: The reason why I'm late is the bus.",
+  "notes": {
+   "because": "The reason … was because repeats the idea.",
+   "of": "Reason of isn't used here.",
+   "that's": "That's would add a second verb."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "___ happened next astonished the whole class.",
+  "options": [
+   "What",
+   "That",
+   "It",
+   "Which"
+  ],
+  "answer": 0,
+  "explain": "What + clause as a subject. Example: What she said made me laugh.",
+  "notes": {
+   "That": "That happened next isn't a complete subject here.",
+   "It": "It would need a different structure: It astonished…",
+   "Which": "Which needs a noun before it."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The coach insisted that every player ___ a helmet.",
+  "options": [
+   "wear",
+   "wears",
+   "wore",
+   "to wear"
+  ],
+  "answer": 0,
+  "explain": "Subjunctive after insist/demand/recommend that: base verb for all persons. Example: I suggest that he leave.",
+  "notes": {
+   "wears": "No -s in the subjunctive.",
+   "wore": "Wore is past; the subjunctive uses the base form.",
+   "to wear": "No to after that."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "It's vital that the hamster ___ fresh water every day.",
+  "options": [
+   "have",
+   "has",
+   "had",
+   "having"
+  ],
+  "answer": 0,
+  "explain": "It's vital/essential that + base verb (subjunctive). Example: It's essential that she be on time.",
+  "notes": {
+   "has": "No -s in the subjunctive.",
+   "had": "Had is past.",
+   "having": "Having isn't a finite verb."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The head teacher proposed that the trip ___ until spring.",
+  "options": [
+   "be postponed",
+   "is postponing",
+   "be postpone",
+   "postponed"
+  ],
+  "answer": 0,
+  "explain": "Passive subjunctive: that + be + p.p. Example: They demanded that he be removed.",
+  "notes": {
+   "is postponing": "The trip can't postpone itself.",
+   "be postpone": "We need the past participle: postponed.",
+   "postponed": "Postponed alone suggests it already happened."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "If the wizard ___ here, he would know the spell.",
+  "options": [
+   "were",
+   "is",
+   "would be",
+   "be"
+  ],
+  "answer": 0,
+  "explain": "If + were for imaginary present (all persons, formal). Example: If I were you, I'd rest.",
+  "notes": {
+   "is": "Is would be a real possibility.",
+   "would be": "Would doesn't go in the if-clause.",
+   "be": "Be is the subjunctive for 'that' clauses, not if."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "She acts as if she ___ the queen of the playground.",
+  "options": [
+   "were",
+   "is being",
+   "would be",
+   "has been"
+  ],
+  "answer": 0,
+  "explain": "As if + past (were) for something untrue. Example: He talks as if he knew everything.",
+  "notes": {
+   "is being": "Is being suggests a temporary behaviour, not an unreal comparison.",
+   "would be": "Would be doesn't follow as if here.",
+   "has been": "Has been means it was true."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Suppose the robot ___ to malfunction during the show. What then?",
+  "options": [
+   "were",
+   "will",
+   "would",
+   "is going"
+  ],
+  "answer": 0,
+  "explain": "Suppose/Supposing + were to = an imaginary future. Example: Suppose you were to win.",
+  "notes": {
+   "will": "Will doesn't follow suppose.",
+   "would": "Would doesn't follow suppose + subject.",
+   "is going": "Is going would need to: is going to."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "If it ___ for the sheepdog, the lambs would have wandered off.",
+  "options": [
+   "hadn't been",
+   "wasn't",
+   "wouldn't be",
+   "isn't"
+  ],
+  "answer": 0,
+  "explain": "If it hadn't been for = without (past). Example: If it hadn't been for you, I'd have failed.",
+  "notes": {
+   "wasn't": "Wasn't is for the present: If it wasn't for…",
+   "wouldn't be": "No would in the if-clause.",
+   "isn't": "Isn't is a real present situation."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I'd sooner you ___ the class pet over the holidays.",
+  "options": [
+   "looked after",
+   "look after",
+   "will look after",
+   "looking after"
+  ],
+  "answer": 0,
+  "explain": "I'd sooner/rather + person + past simple = preference about now. Example: I'd sooner you didn't go.",
+  "notes": {
+   "look after": "The base form doesn't follow I'd sooner + person.",
+   "will look after": "Will doesn't follow I'd sooner.",
+   "looking after": "Looking isn't a finite verb."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You ___ have warned me the soup was so spicy!",
+  "options": [
+   "might",
+   "must",
+   "can",
+   "would rather"
+  ],
+  "answer": 0,
+  "explain": "Might/could have + p.p. = mild criticism (you should have). Example: You might have told me!",
+  "notes": {
+   "must": "Must have is a deduction, not criticism.",
+   "can": "Can have isn't used here.",
+   "would rather": "Would rather have isn't used for criticism."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We ___ have taken the shortcut. The path was flooded.",
+  "options": [
+   "couldn't",
+   "mustn't",
+   "needn't",
+   "shouldn't to"
+  ],
+  "answer": 0,
+  "explain": "Couldn't have + p.p. = it wasn't possible. Example: We couldn't have known.",
+  "notes": {
+   "mustn't": "Mustn't have isn't standard.",
+   "needn't": "Needn't have = it wasn't necessary, but we did it.",
+   "shouldn't to": "Shouldn't to isn't a form."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The fossil ___ have belonged to a baby dinosaur, judging by its size.",
+  "options": [
+   "may well",
+   "must not",
+   "can well",
+   "ought"
+  ],
+  "answer": 0,
+  "explain": "May well have + p.p. = it's quite likely. Example: She may well have left already.",
+  "notes": {
+   "must not": "Must not isn't used for past deduction.",
+   "can well": "Can well isn't used.",
+   "ought": "Ought needs to: ought to have."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ go to the party, but I'd rather finish my model.",
+  "options": [
+   "might as well",
+   "had better",
+   "would sooner",
+   "may well not"
+  ],
+  "answer": 0,
+  "explain": "Might as well = there's no strong reason not to. Example: We might as well start now.",
+  "notes": {
+   "had better": "Had better is a warning; it doesn't fit 'but I'd rather'.",
+   "would sooner": "Would sooner means prefer, which contradicts 'but I'd rather'.",
+   "may well not": "May well not means it's likely I won't."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "You ___ better hand in your project today, or you'll lose marks.",
+  "options": [
+   "had",
+   "would",
+   "should",
+   "have"
+  ],
+  "answer": 0,
+  "explain": "Had better + base verb = strong advice with a warning. Example: You'd better hurry.",
+  "notes": {
+   "would": "Would better isn't English.",
+   "should": "Should better isn't English.",
+   "have": "Have better isn't the pattern."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "He ___ to have finished the puzzle by now, but he's still stuck.",
+  "options": [
+   "was supposed",
+   "must",
+   "should",
+   "had better"
+  ],
+  "answer": 0,
+  "explain": "Be supposed to = it was expected. Example: I'm supposed to be at home.",
+  "notes": {
+   "must": "Must doesn't take to.",
+   "should": "Should doesn't take to.",
+   "had better": "Had better doesn't take to."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "She's bound ___ the science prize. Her project is brilliant.",
+  "options": [
+   "to win",
+   "winning",
+   "win",
+   "for winning"
+  ],
+  "answer": 0,
+  "explain": "Be bound to + verb = certain to. Example: It's bound to rain.",
+  "notes": {
+   "winning": "Bound isn't followed by -ing here.",
+   "win": "We need to.",
+   "for winning": "Bound for = travelling to."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "___ the instructions carefully, she assembled the telescope in minutes.",
+  "options": [
+   "Having read",
+   "Being read",
+   "Read",
+   "To have read"
+  ],
+  "answer": 0,
+  "explain": "Having + p.p. = first action before the main one. Example: Having eaten, we set off.",
+  "notes": {
+   "Being read": "Being read is passive: she was read.",
+   "Read": "Read alone is ambiguous here and sounds passive.",
+   "To have read": "To have read doesn't start this clause."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The lesson ___, the students rushed to the playground.",
+  "options": [
+   "over",
+   "overing",
+   "was over",
+   "being overed"
+  ],
+  "answer": 0,
+  "explain": "Absolute construction: noun + adjective/participle. Example: The work done, we relaxed.",
+  "notes": {
+   "overing": "Overing isn't a word.",
+   "was over": "Was over would need a conjunction: When the lesson was over.",
+   "being overed": "Overed isn't a word."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "___ from space, the Great Barrier Reef looks like a ribbon.",
+  "options": [
+   "Seen",
+   "Seeing",
+   "Having seen",
+   "To see"
+  ],
+  "answer": 0,
+  "explain": "Past participle clause = passive: when it is seen. Example: Viewed from above, the town is tiny.",
+  "notes": {
+   "Seeing": "Seeing would mean the reef is looking.",
+   "Having seen": "Having seen means the reef saw something.",
+   "To see": "To see means purpose."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "There being no wind, the sailing race ___ cancelled.",
+  "options": [
+   "was",
+   "being",
+   "had",
+   "is being"
+  ],
+  "answer": 0,
+  "explain": "There being = because there was. Example: There being no bus, we walked.",
+  "notes": {
+   "being": "Being can't be the main verb.",
+   "had": "Had cancelled is active.",
+   "is being": "Is being is present, but this is a past event."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "All things ___, the school fair was a big success.",
+  "options": [
+   "considered",
+   "considering",
+   "consider",
+   "to consider"
+  ],
+  "answer": 0,
+  "explain": "All things considered = after thinking about everything. Example: All things considered, it went well.",
+  "notes": {
+   "considering": "Considering is used differently: Considering the rain, …",
+   "consider": "Consider is the base form.",
+   "to consider": "To consider doesn't fit this fixed phrase."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "___ how tired we were, we did well to finish the hike.",
+  "options": [
+   "Considering",
+   "Considered",
+   "To consider",
+   "Consider"
+  ],
+  "answer": 0,
+  "explain": "Considering + noun/clause = when you think about. Example: Considering his age, he's very tall.",
+  "notes": {
+   "Considered": "Considered is the fixed phrase with 'all things'.",
+   "To consider": "To consider doesn't start a clause like this.",
+   "Consider": "Consider is an instruction."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The ___ of the new library has been delayed again.",
+  "options": [
+   "opening",
+   "open",
+   "opener",
+   "opened"
+  ],
+  "answer": 0,
+  "explain": "Nominalisation: verb → noun to make writing more formal. Example: The arrival of the train.",
+  "notes": {
+   "open": "Open is a verb or adjective.",
+   "opener": "Opener is a tool.",
+   "opened": "Opened is a past form."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Her ___ to give up inspired the whole team.",
+  "options": [
+   "refusal",
+   "refusing",
+   "refuse",
+   "refusement"
+  ],
+  "answer": 0,
+  "explain": "Refuse → refusal (noun). Example: His refusal to help surprised us.",
+  "notes": {
+   "refusing": "Refusing is a gerund, but refusal is the natural noun here.",
+   "refuse": "Refuse is the verb (or rubbish!).",
+   "refusement": "Refusement isn't a word."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The fact ___ nobody noticed the dragon is astonishing.",
+  "options": [
+   "that",
+   "what",
+   "which",
+   "of"
+  ],
+  "answer": 0,
+  "explain": "The fact that + clause. Example: The fact that it's free helps.",
+  "notes": {
+   "what": "What can't follow the fact.",
+   "which": "Which would make it a relative clause, which doesn't fit.",
+   "of": "Of needs a noun or -ing."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "___ hard she tried, she couldn't open the treasure chest.",
+  "options": [
+   "However",
+   "Although",
+   "Whatever",
+   "Despite"
+  ],
+  "answer": 0,
+  "explain": "However + adjective/adverb + subject + verb = no matter how. Example: However fast he ran, he was late.",
+  "notes": {
+   "Although": "Although can't go before hard like this.",
+   "Whatever": "Whatever is for things: whatever she did.",
+   "Despite": "Despite needs a noun or -ing."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "___ his fear of heights, he climbed to the top of the tower.",
+  "options": [
+   "Notwithstanding",
+   "Although",
+   "Albeit",
+   "Nonetheless"
+  ],
+  "answer": 0,
+  "explain": "Notwithstanding + noun = despite (formal). Example: Notwithstanding the rain, we played.",
+  "notes": {
+   "Although": "Although needs a clause.",
+   "Albeit": "Albeit is followed by an adjective or adverb, not a noun phrase.",
+   "Nonetheless": "Nonetheless is an adverb used after a full sentence."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The plan was clever, ___ a little risky.",
+  "options": [
+   "albeit",
+   "despite",
+   "whereas",
+   "notwithstanding"
+  ],
+  "answer": 0,
+  "explain": "Albeit + adjective = although (formal). Example: He agreed, albeit reluctantly.",
+  "notes": {
+   "despite": "Despite needs a noun.",
+   "whereas": "Whereas compares two different things.",
+   "notwithstanding": "Notwithstanding needs a noun."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Some owls hunt at night, ___ others are active by day.",
+  "options": [
+   "whereas",
+   "albeit",
+   "despite",
+   "nevertheless"
+  ],
+  "answer": 0,
+  "explain": "Whereas = contrast between two facts. Example: I like cats, whereas my sister likes dogs.",
+  "notes": {
+   "albeit": "Albeit is followed by an adjective.",
+   "despite": "Despite needs a noun.",
+   "nevertheless": "Nevertheless starts a new idea, usually after a full stop."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We'll go stargazing ___ the sky is clear.",
+  "options": [
+   "providing",
+   "unless",
+   "lest",
+   "whereas"
+  ],
+  "answer": 0,
+  "explain": "Providing/provided (that) = only if. Example: You can come providing you're quiet.",
+  "notes": {
+   "unless": "Unless means if not.",
+   "lest": "Lest means in case (formal) and needs should.",
+   "whereas": "Whereas shows contrast."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Keep the cage locked ___ the parrot escape again.",
+  "options": [
+   "lest",
+   "unless",
+   "so that",
+   "provided"
+  ],
+  "answer": 0,
+  "explain": "Lest + (should) + base verb = so that … not (formal). Example: Speak quietly lest you wake her.",
+  "notes": {
+   "unless": "Unless means if not.",
+   "so that": "So that would need a negative: so that it doesn't escape.",
+   "provided": "Provided means only if."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "___ the forecast, the comet should be visible tonight.",
+  "options": [
+   "According to",
+   "Owing to",
+   "Thanks for",
+   "Due"
+  ],
+  "answer": 0,
+  "explain": "According to = as said by. Example: According to Mia, the test is easy.",
+  "notes": {
+   "Owing to": "Owing to = because of.",
+   "Thanks for": "Thanks for is used when thanking.",
+   "Due": "Due needs to: due to."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The launch was delayed ___ a fault in the rocket's engine.",
+  "options": [
+   "owing to",
+   "according to",
+   "thanks for",
+   "in spite"
+  ],
+  "answer": 0,
+  "explain": "Owing to / due to + noun = because of. Example: Owing to the rain, we stayed in.",
+  "notes": {
+   "according to": "According to means as said by.",
+   "thanks for": "Thanks for is for thanking.",
+   "in spite": "In spite needs of and means despite."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "___ the fact that she was the youngest, she led the expedition.",
+  "options": [
+   "Despite",
+   "In spite",
+   "Although",
+   "Even"
+  ],
+  "answer": 0,
+  "explain": "Despite the fact that + clause. Example: Despite the fact that it rained, we went.",
+  "notes": {
+   "In spite": "In spite needs of: in spite of the fact.",
+   "Although": "Although doesn't go before the fact that.",
+   "Even": "Even needs though or if."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "By the time the rescue team arrives, the climbers ___ in the cave for two days.",
+  "options": [
+   "will have been waiting",
+   "will wait",
+   "are waiting",
+   "have been waiting"
+  ],
+  "answer": 0,
+  "explain": "Future perfect continuous: duration up to a future point. Example: By June, I'll have been learning for a year.",
+  "notes": {
+   "will wait": "Will wait doesn't show duration up to then.",
+   "are waiting": "Are waiting is now.",
+   "have been waiting": "Have been waiting is up to now, not a future point."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ to ask you: can I borrow your telescope?",
+  "options": [
+   "was wondering",
+   "wonder",
+   "am wondered",
+   "had wondered"
+  ],
+  "answer": 0,
+  "explain": "Past continuous for polite requests. Example: I was hoping you could help.",
+  "notes": {
+   "wonder": "Wonder sounds more direct than the polite form.",
+   "am wondered": "Am wondered isn't a form.",
+   "had wondered": "Had wondered suggests you stopped wondering."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The museum ___ renovated when we visited, so half of it was closed.",
+  "options": [
+   "was being",
+   "was",
+   "has been",
+   "had been being"
+  ],
+  "answer": 0,
+  "explain": "Past continuous passive: was/were being + p.p. Example: The road was being repaired.",
+  "notes": {
+   "was": "Was renovated suggests it was finished.",
+   "has been": "Has been is present perfect.",
+   "had been being": "Had been being isn't natural English."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "She ___ for the competition for months, so she was exhausted.",
+  "options": [
+   "had been training",
+   "has been training",
+   "was trained",
+   "trains"
+  ],
+  "answer": 0,
+  "explain": "Past perfect continuous: an activity up to a past moment. Example: He had been running, so he was out of breath.",
+  "notes": {
+   "has been training": "Has been is up to now, not a past moment.",
+   "was trained": "Was trained is passive.",
+   "trains": "Trains is present."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The penguins ___ to the sea every spring for thousands of years.",
+  "options": [
+   "have been migrating",
+   "are migrating",
+   "migrated",
+   "had migrate"
+  ],
+  "answer": 0,
+  "explain": "Present perfect continuous: a repeated activity from the past to now. Example: People have been telling this story for centuries.",
+  "notes": {
+   "are migrating": "Are migrating is only now.",
+   "migrated": "Migrated suggests it's finished.",
+   "had migrate": "Had migrate isn't a form."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The ___ you practise, the more natural it feels.",
+  "options": [
+   "more",
+   "most",
+   "much",
+   "many"
+  ],
+  "answer": 0,
+  "explain": "The + comparative …, the + comparative. Example: The sooner, the better.",
+  "notes": {
+   "most": "Most is superlative.",
+   "much": "Much can't replace more here.",
+   "many": "Many can't replace more here."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "This puzzle is ___ harder than the last one.",
+  "options": [
+   "considerably",
+   "very",
+   "too",
+   "so"
+  ],
+  "answer": 0,
+  "explain": "Considerably/far/much + comparative. Example: far better, much bigger.",
+  "notes": {
+   "very": "Very doesn't go before comparatives.",
+   "too": "Too doesn't go before comparatives with than.",
+   "so": "So doesn't go before comparatives with than."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "She's by ___ the fastest runner in our year.",
+  "options": [
+   "far",
+   "much",
+   "very",
+   "most"
+  ],
+  "answer": 0,
+  "explain": "By far + superlative. Example: It's by far the best film.",
+  "notes": {
+   "much": "We don't say by much + superlative.",
+   "very": "We don't say by very.",
+   "most": "By most isn't a phrase."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Hardly ___ of the students had heard of the comet.",
+  "options": [
+   "any",
+   "no",
+   "some",
+   "none"
+  ],
+  "answer": 0,
+  "explain": "Hardly any = almost none. Example: There's hardly any milk left.",
+  "notes": {
+   "no": "Hardly is already negative, so no would make a double negative.",
+   "some": "Some isn't used after hardly.",
+   "none": "None of wouldn't follow hardly."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "___ student in the class received a certificate.",
+  "options": [
+   "Every",
+   "All",
+   "Each of",
+   "Both"
+  ],
+  "answer": 0,
+  "explain": "Every + singular noun. Example: Every child loves stories.",
+  "notes": {
+   "All": "All needs a plural noun: all students.",
+   "Each of": "Each of needs the: each of the students.",
+   "Both": "Both is for two."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Not ___ of the rumours about the haunted tower were true.",
+  "options": [
+   "all",
+   "every",
+   "each",
+   "much"
+  ],
+  "answer": 0,
+  "explain": "Not all of = some weren't. Example: Not all of us agreed.",
+  "notes": {
+   "every": "Every can't be followed by of.",
+   "each": "Each of needs a singular verb: was.",
+   "much": "Much is for uncountable nouns; rumours are countable."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The rain prevented us ___ the summit.",
+  "options": [
+   "from reaching",
+   "to reach",
+   "reaching to",
+   "for reaching"
+  ],
+  "answer": 0,
+  "explain": "Prevent/stop someone from + -ing. Example: Nothing will stop me from trying.",
+  "notes": {
+   "to reach": "Prevent isn't followed by to-infinitive.",
+   "reaching to": "Reaching to adds a wrong preposition.",
+   "for reaching": "Prevent goes with from, not for."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I object ___ treated like a little kid!",
+  "options": [
+   "to being",
+   "to be",
+   "being",
+   "for being"
+  ],
+  "answer": 0,
+  "explain": "Object to + -ing (to is a preposition). Example: I object to waiting.",
+  "notes": {
+   "to be": "To here is a preposition, so we need -ing.",
+   "being": "We need the preposition to.",
+   "for being": "Object goes with to, not for."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "She succeeded ___ the ancient code.",
+  "options": [
+   "in cracking",
+   "to crack",
+   "cracking",
+   "at crack"
+  ],
+  "answer": 0,
+  "explain": "Succeed in + -ing. Example: He succeeded in escaping.",
+  "notes": {
+   "to crack": "Succeed isn't followed by to-infinitive.",
+   "cracking": "We need the preposition in.",
+   "at crack": "Succeed goes with in, and we need -ing."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The guide urged us ___ close together in the forest.",
+  "options": [
+   "to stay",
+   "staying",
+   "stay",
+   "that staying"
+  ],
+  "answer": 0,
+  "explain": "Urge someone to do something. Example: She urged me to apply.",
+  "notes": {
+   "staying": "Urge isn't followed by person + -ing.",
+   "stay": "We need to.",
+   "that staying": "That staying isn't grammatical."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "He's thinking ___ joining the robotics club.",
+  "options": [
+   "about",
+   "to",
+   "on",
+   "for"
+  ],
+  "answer": 0,
+  "explain": "Think about/of + -ing. Example: I'm thinking of learning Japanese.",
+  "notes": {
+   "to": "Think to isn't used here.",
+   "on": "Think on is old-fashioned.",
+   "for": "Think for isn't used here."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We were made ___ the whole poem by heart.",
+  "options": [
+   "to learn",
+   "learn",
+   "learning",
+   "learnt"
+  ],
+  "answer": 0,
+  "explain": "Make + object + base verb (active), but be made + to-infinitive (passive). Example: He was made to wait.",
+  "notes": {
+   "learn": "In the passive, made needs to.",
+   "learning": "Made isn't followed by -ing.",
+   "learnt": "Learnt is past."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I can't help but ___ that the cat is planning something.",
+  "options": [
+   "feel",
+   "feeling",
+   "to feel",
+   "felt"
+  ],
+  "answer": 0,
+  "explain": "Can't help but + base verb. Example: I can't help but smile.",
+  "notes": {
+   "feeling": "Can't help feeling is right, but after 'but' we use the base form.",
+   "to feel": "No to after can't help but.",
+   "felt": "Felt is past."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The spy was seen ___ the building at midnight.",
+  "options": [
+   "to leave",
+   "leave",
+   "left",
+   "to leaving"
+  ],
+  "answer": 0,
+  "explain": "Active: see someone leave; passive: be seen to leave. Example: He was heard to say…",
+  "notes": {
+   "leave": "The passive needs to.",
+   "left": "Left is past.",
+   "to leaving": "To leaving isn't a form."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "It's no good ___ about the lost match now.",
+  "options": [
+   "complaining",
+   "to complain",
+   "complain",
+   "complained"
+  ],
+  "answer": 0,
+  "explain": "It's no good/use + -ing. Example: It's no use crying.",
+  "notes": {
+   "to complain": "It's no good isn't followed by to-infinitive.",
+   "complain": "We need -ing.",
+   "complained": "Complained is past."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "She has a habit of ___ her pencil when she's thinking.",
+  "options": [
+   "chewing",
+   "to chew",
+   "chew",
+   "chewed"
+  ],
+  "answer": 0,
+  "explain": "Noun + of + -ing. Example: the idea of leaving.",
+  "notes": {
+   "to chew": "After of we use -ing.",
+   "chew": "We need -ing.",
+   "chewed": "Chewed is past."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Rather than ___ the bus, let's cycle to the museum.",
+  "options": [
+   "take",
+   "taking to",
+   "to taking",
+   "took"
+  ],
+  "answer": 0,
+  "explain": "Rather than + base verb (or -ing). Example: Rather than wait, we walked.",
+  "notes": {
+   "taking to": "Taking to adds an extra to.",
+   "to taking": "To taking isn't a form.",
+   "took": "Took is past."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The task, ___ seemed easy at first, took us all afternoon.",
+  "options": [
+   "which",
+   "that",
+   "what",
+   "whose"
+  ],
+  "answer": 0,
+  "explain": "Non-defining relative clause (between commas): which. Example: The film, which was long, was great.",
+  "notes": {
+   "that": "That isn't used between commas.",
+   "what": "What can't follow a noun.",
+   "whose": "Whose shows possession."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The island, ___ only access is by boat, is home to rare tortoises.",
+  "options": [
+   "whose",
+   "which",
+   "where its",
+   "that"
+  ],
+  "answer": 0,
+  "explain": "Whose can refer to things: the island whose access… Example: a house whose roof leaks.",
+  "notes": {
+   "which": "Which would need: to which the only access.",
+   "where its": "Where its adds an extra possessive.",
+   "that": "That isn't used between commas."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "There are several reasons, the most important of ___ is safety.",
+  "options": [
+   "which",
+   "them",
+   "that",
+   "whom"
+  ],
+  "answer": 0,
+  "explain": "Quantifier/superlative + of which. Example: three books, one of which is mine.",
+  "notes": {
+   "them": "Them would create a run-on sentence.",
+   "that": "That doesn't follow of.",
+   "whom": "Whom is for people."
+  }
+ },
+ {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "Little did they know that the map was a fake.",

@@ -508,5 +508,1637 @@
    "floor": "Floor isn't the collocation.",
    "minimum level": "Minimum level isn't the idiom."
   }
+ },
+ {
+  "type": "mcq",
+  "q": "The new student was so ___ that she hardly said a word all week.",
+  "options": [
+   "reticent",
+   "resilient",
+   "relentless",
+   "reluctant to"
+  ],
+  "answer": 0,
+  "explain": "Reticent = not willing to say much. Example: He was reticent about his plans.",
+  "notes": {
+   "resilient": "Resilient = able to recover quickly.",
+   "relentless": "Relentless = never stopping.",
+   "reluctant to": "Reluctant to needs a verb after it."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Tardigrades are incredibly ___: they can survive even in space.",
+  "options": [
+   "resilient",
+   "fragile",
+   "dormant",
+   "reticent"
+  ],
+  "answer": 0,
+  "explain": "Resilient = able to survive or recover from difficult conditions. Example: a resilient plant.",
+  "notes": {
+   "fragile": "Fragile means easily broken, the opposite.",
+   "dormant": "Dormant = inactive or sleeping.",
+   "reticent": "Reticent = quiet and unwilling to talk."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The volcano has been ___ for centuries, but it could erupt again.",
+  "options": [
+   "dormant",
+   "extinct",
+   "obsolete",
+   "inert"
+  ],
+  "answer": 0,
+  "explain": "Dormant = sleeping or inactive for now. Example: a dormant volcano.",
+  "notes": {
+   "extinct": "Extinct = will never erupt again.",
+   "obsolete": "Obsolete = no longer used, for objects or ideas.",
+   "inert": "Inert = not chemically active."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Floppy disks are now completely ___.",
+  "options": [
+   "obsolete",
+   "dormant",
+   "extinct",
+   "ancient"
+  ],
+  "answer": 0,
+  "explain": "Obsolete = out of date, no longer used. Example: obsolete technology.",
+  "notes": {
+   "dormant": "Dormant = inactive for now.",
+   "extinct": "Extinct is for animals and volcanoes.",
+   "ancient": "Ancient means very old, but not necessarily unused."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Her excuse for missing practice was ___: nobody believed it.",
+  "options": [
+   "implausible",
+   "impeccable",
+   "inevitable",
+   "immaculate"
+  ],
+  "answer": 0,
+  "explain": "Implausible = hard to believe. Example: an implausible story.",
+  "notes": {
+   "impeccable": "Impeccable = perfect.",
+   "inevitable": "Inevitable = certain to happen.",
+   "immaculate": "Immaculate = perfectly clean."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "After the storm, a power cut was ___.",
+  "options": [
+   "inevitable",
+   "implausible",
+   "invaluable",
+   "indifferent"
+  ],
+  "answer": 0,
+  "explain": "Inevitable = certain to happen. Example: Change is inevitable.",
+  "notes": {
+   "implausible": "Implausible = hard to believe.",
+   "invaluable": "Invaluable = extremely useful.",
+   "indifferent": "Indifferent = not caring."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Your advice on the science project was ___. Thank you!",
+  "options": [
+   "invaluable",
+   "valueless",
+   "invalid",
+   "unvalued"
+  ],
+  "answer": 0,
+  "explain": "Invaluable = extremely useful (NOT 'not valuable'). Example: invaluable help.",
+  "notes": {
+   "valueless": "Valueless means worthless.",
+   "invalid": "Invalid = not legally or officially acceptable.",
+   "unvalued": "Unvalued = not appreciated."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "He seemed completely ___ to the result; he just shrugged.",
+  "options": [
+   "indifferent",
+   "different",
+   "indignant",
+   "inevitable"
+  ],
+  "answer": 0,
+  "explain": "Indifferent = not interested or caring. Example: She was indifferent to praise.",
+  "notes": {
+   "different": "Different = not the same.",
+   "indignant": "Indignant = angry at unfairness.",
+   "inevitable": "Inevitable = certain to happen."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Pip was ___ when he was blamed for something his brother did.",
+  "options": [
+   "indignant",
+   "indifferent",
+   "ingenious",
+   "inquisitive"
+  ],
+  "answer": 0,
+  "explain": "Indignant = angry because something is unfair. Example: She was indignant at the accusation.",
+  "notes": {
+   "indifferent": "Indifferent = not caring.",
+   "ingenious": "Ingenious = very clever and original.",
+   "inquisitive": "Inquisitive = curious."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The inventor came up with an ___ way to recycle plastic bottles.",
+  "options": [
+   "ingenious",
+   "ingenuous",
+   "indigenous",
+   "indignant"
+  ],
+  "answer": 0,
+  "explain": "Ingenious = cleverly original. Example: an ingenious gadget.",
+  "notes": {
+   "ingenuous": "Ingenuous = innocent and trusting.",
+   "indigenous": "Indigenous = native to a place.",
+   "indignant": "Indignant = angry at unfairness."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Kangaroos are ___ to Australia.",
+  "options": [
+   "indigenous",
+   "ingenious",
+   "exotic",
+   "foreign"
+  ],
+  "answer": 0,
+  "explain": "Indigenous = native to a place. Example: indigenous plants.",
+  "notes": {
+   "ingenious": "Ingenious = cleverly original.",
+   "exotic": "Exotic = from a faraway place.",
+   "foreign": "Foreign = from another country, the opposite."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Toddlers are naturally ___; they ask 'why?' all day.",
+  "options": [
+   "inquisitive",
+   "inquiring to",
+   "invasive",
+   "intrusive"
+  ],
+  "answer": 0,
+  "explain": "Inquisitive = curious, eager to learn. Example: an inquisitive puppy.",
+  "notes": {
+   "inquiring to": "Inquiring to isn't a phrase.",
+   "invasive": "Invasive = spreading harmfully.",
+   "intrusive": "Intrusive = annoyingly entering someone's privacy."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Grey squirrels are an ___ species in Britain.",
+  "options": [
+   "invasive",
+   "inquisitive",
+   "endemic",
+   "evasive"
+  ],
+  "answer": 0,
+  "explain": "Invasive = spreading into a new place and causing harm. Example: invasive weeds.",
+  "notes": {
+   "inquisitive": "Inquisitive = curious.",
+   "endemic": "Endemic = found naturally only in one place.",
+   "evasive": "Evasive = avoiding answers."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "When I asked who ate the cake, my brother was very ___.",
+  "options": [
+   "evasive",
+   "invasive",
+   "explicit",
+   "candid"
+  ],
+  "answer": 0,
+  "explain": "Evasive = avoiding giving a clear answer. Example: an evasive reply.",
+  "notes": {
+   "invasive": "Invasive = spreading harmfully.",
+   "explicit": "Explicit = very clear.",
+   "candid": "Candid = honest and direct, the opposite."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "She gave a ___ account of her mistake, hiding nothing.",
+  "options": [
+   "candid",
+   "evasive",
+   "covert",
+   "cryptic"
+  ],
+  "answer": 0,
+  "explain": "Candid = honest and direct. Example: a candid interview.",
+  "notes": {
+   "evasive": "Evasive = avoiding the truth.",
+   "covert": "Covert = secret.",
+   "cryptic": "Cryptic = mysterious and hard to understand."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The pirate left a ___ message that took weeks to decode.",
+  "options": [
+   "cryptic",
+   "candid",
+   "lucid",
+   "blunt"
+  ],
+  "answer": 0,
+  "explain": "Cryptic = mysterious, with a hidden meaning. Example: a cryptic crossword.",
+  "notes": {
+   "candid": "Candid = honest.",
+   "lucid": "Lucid = clear and easy to understand.",
+   "blunt": "Blunt = direct, sometimes rudely."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The teacher's explanation of black holes was wonderfully ___.",
+  "options": [
+   "lucid",
+   "cryptic",
+   "opaque",
+   "obscure"
+  ],
+  "answer": 0,
+  "explain": "Lucid = clear and easy to understand. Example: a lucid explanation.",
+  "notes": {
+   "cryptic": "Cryptic = deliberately mysterious.",
+   "opaque": "Opaque = hard to understand (or see through).",
+   "obscure": "Obscure = not well known or unclear."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The robot's movements were so ___ that it looked almost human.",
+  "options": [
+   "fluid",
+   "rigid",
+   "jerky",
+   "stagnant"
+  ],
+  "answer": 0,
+  "explain": "Fluid = smooth and graceful. Example: fluid dance moves.",
+  "notes": {
+   "rigid": "Rigid = stiff.",
+   "jerky": "Jerky = sudden and uneven.",
+   "stagnant": "Stagnant = not moving, often dirty water."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The pond water was ___ and smelled terrible.",
+  "options": [
+   "stagnant",
+   "fluid",
+   "stationary",
+   "static"
+  ],
+  "answer": 0,
+  "explain": "Stagnant (water) = not flowing, often dirty. Example: stagnant water breeds mosquitoes.",
+  "notes": {
+   "fluid": "Fluid = flowing smoothly.",
+   "stationary": "Stationary = not moving, used for vehicles and objects.",
+   "static": "Static = not changing, or electricity."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Our team's ___ effort finally paid off in the final.",
+  "options": [
+   "relentless",
+   "reticent",
+   "reluctant",
+   "relevant"
+  ],
+  "answer": 0,
+  "explain": "Relentless = never stopping or easing. Example: relentless rain.",
+  "notes": {
+   "reticent": "Reticent = not saying much.",
+   "reluctant": "Reluctant = unwilling.",
+   "relevant": "Relevant = connected to the topic."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Please keep your answers ___ to the question.",
+  "options": [
+   "relevant",
+   "relentless",
+   "relative",
+   "reliant"
+  ],
+  "answer": 0,
+  "explain": "Relevant to = connected with. Example: That's not relevant to the debate.",
+  "notes": {
+   "relentless": "Relentless = never stopping.",
+   "relative": "Relative to = compared with.",
+   "reliant": "Reliant on = depending on."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Bats are ___ on their hearing to find food in the dark.",
+  "options": [
+   "reliant",
+   "reliable",
+   "relevant",
+   "reluctant"
+  ],
+  "answer": 0,
+  "explain": "Reliant on = depending on. Example: We're reliant on volunteers.",
+  "notes": {
+   "reliable": "Reliable = can be trusted; it doesn't take on.",
+   "relevant": "Relevant = connected.",
+   "reluctant": "Reluctant = unwilling."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The new rule aims to ___ bullying in the playground.",
+  "options": [
+   "curb",
+   "curve",
+   "carve",
+   "cultivate"
+  ],
+  "answer": 0,
+  "explain": "Curb = limit or control something bad. Example: curb your spending.",
+  "notes": {
+   "curve": "Curve = bend.",
+   "carve": "Carve = cut into a shape.",
+   "cultivate": "Cultivate = grow or develop, the opposite."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Reading widely helps you ___ a love of language.",
+  "options": [
+   "cultivate",
+   "curb",
+   "deplete",
+   "eradicate"
+  ],
+  "answer": 0,
+  "explain": "Cultivate = develop carefully over time. Example: cultivate a habit.",
+  "notes": {
+   "curb": "Curb = limit.",
+   "deplete": "Deplete = use up.",
+   "eradicate": "Eradicate = destroy completely."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Overfishing has ___ the number of cod in the North Sea.",
+  "options": [
+   "depleted",
+   "replenished",
+   "deployed",
+   "depicted"
+  ],
+  "answer": 0,
+  "explain": "Deplete = reduce the amount of something. Example: depleted energy.",
+  "notes": {
+   "replenished": "Replenished = filled up again, the opposite.",
+   "deployed": "Deployed = put into use (troops, equipment).",
+   "depicted": "Depicted = shown in a picture."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Scientists hope to ___ malaria within twenty years.",
+  "options": [
+   "eradicate",
+   "cultivate",
+   "evacuate",
+   "irrigate"
+  ],
+  "answer": 0,
+  "explain": "Eradicate = destroy completely. Example: eradicate a disease.",
+  "notes": {
+   "cultivate": "Cultivate = grow or develop.",
+   "evacuate": "Evacuate = move people out of danger.",
+   "irrigate": "Irrigate = water crops."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The ancient wall painting ___ a battle between two dragons.",
+  "options": [
+   "depicts",
+   "deplete",
+   "depicts of",
+   "denotes to"
+  ],
+  "answer": 0,
+  "explain": "Depict = show in a picture or describe. Example: The film depicts life in space.",
+  "notes": {
+   "deplete": "Deplete = use up.",
+   "depicts of": "Depict doesn't take of.",
+   "denotes to": "Denote doesn't take to."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The team tried to ___ the new kid, inviting him to every game.",
+  "options": [
+   "include",
+   "exclude",
+   "conclude",
+   "preclude"
+  ],
+  "answer": 0,
+  "explain": "Include = make someone part of a group. Example: include everyone.",
+  "notes": {
+   "exclude": "Exclude = leave out, the opposite.",
+   "conclude": "Conclude = finish, or decide.",
+   "preclude": "Preclude = make impossible."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Bad weather may ___ a launch this week.",
+  "options": [
+   "preclude",
+   "include",
+   "precede",
+   "prescribe"
+  ],
+  "answer": 0,
+  "explain": "Preclude = prevent, make impossible. Example: His injury precludes him from playing.",
+  "notes": {
+   "include": "Include = make part of.",
+   "precede": "Precede = come before.",
+   "prescribe": "Prescribe = officially recommend medicine."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "A short speech will ___ the awards ceremony.",
+  "options": [
+   "precede",
+   "proceed",
+   "preclude",
+   "recede"
+  ],
+  "answer": 0,
+  "explain": "Precede = come before. Example: Lightning precedes thunder.",
+  "notes": {
+   "proceed": "Proceed = continue.",
+   "preclude": "Preclude = make impossible.",
+   "recede": "Recede = move back."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "After the floods, the water slowly began to ___.",
+  "options": [
+   "recede",
+   "proceed",
+   "precede",
+   "concede"
+  ],
+  "answer": 0,
+  "explain": "Recede = move back or further away. Example: The tide receded.",
+  "notes": {
+   "proceed": "Proceed = go on.",
+   "precede": "Precede = come before.",
+   "concede": "Concede = admit or give up."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Finally, the champion had to ___ that her rival had played better.",
+  "options": [
+   "concede",
+   "recede",
+   "conceive",
+   "conceal"
+  ],
+  "answer": 0,
+  "explain": "Concede = admit, often unwillingly. Example: He conceded defeat.",
+  "notes": {
+   "recede": "Recede = move back.",
+   "conceive": "Conceive = imagine or form an idea.",
+   "conceal": "Conceal = hide."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Chameleons can ___ themselves by changing colour.",
+  "options": [
+   "camouflage",
+   "conceal to",
+   "reveal",
+   "expose"
+  ],
+  "answer": 0,
+  "explain": "Camouflage = hide by blending in. Example: Tigers' stripes camouflage them.",
+  "notes": {
+   "conceal to": "Conceal doesn't take to.",
+   "reveal": "Reveal = show, the opposite.",
+   "expose": "Expose = make visible."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The detective managed to ___ the culprit's plan.",
+  "options": [
+   "thwart",
+   "thrive",
+   "thrust",
+   "throb"
+  ],
+  "answer": 0,
+  "explain": "Thwart = stop someone's plan. Example: Police thwarted the robbery.",
+  "notes": {
+   "thrive": "Thrive = grow strongly.",
+   "thrust": "Thrust = push suddenly.",
+   "throb": "Throb = beat strongly with pain."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Cacti ___ in hot, dry deserts.",
+  "options": [
+   "thrive",
+   "thwart",
+   "wither",
+   "dwindle"
+  ],
+  "answer": 0,
+  "explain": "Thrive = grow and develop well. Example: Children thrive on praise.",
+  "notes": {
+   "thwart": "Thwart = stop a plan.",
+   "wither": "Wither = dry up and die.",
+   "dwindle": "Dwindle = get smaller."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Without rain, the sunflowers began to ___.",
+  "options": [
+   "wither",
+   "thrive",
+   "flourish",
+   "blossom"
+  ],
+  "answer": 0,
+  "explain": "Wither = become dry and weak. Example: The leaves withered.",
+  "notes": {
+   "thrive": "Thrive is the opposite.",
+   "flourish": "Flourish = grow well.",
+   "blossom": "Blossom = produce flowers."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The number of wild tigers has ___ to just a few thousand.",
+  "options": [
+   "dwindled",
+   "swelled",
+   "soared",
+   "flourished"
+  ],
+  "answer": 0,
+  "explain": "Dwindle = gradually become smaller. Example: Our supplies dwindled.",
+  "notes": {
+   "swelled": "Swelled = became bigger.",
+   "soared": "Soared = rose quickly.",
+   "flourished": "Flourished = grew strongly."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Ticket sales for the school play ___ after the great reviews.",
+  "options": [
+   "soared",
+   "dwindled",
+   "plummeted",
+   "stagnated"
+  ],
+  "answer": 0,
+  "explain": "Soar = rise quickly to a high level. Example: Temperatures soared.",
+  "notes": {
+   "dwindled": "Dwindled = got smaller.",
+   "plummeted": "Plummeted = fell quickly.",
+   "stagnated": "Stagnated = stopped growing."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The temperature ___ to minus twenty overnight.",
+  "options": [
+   "plummeted",
+   "soared",
+   "escalated",
+   "rallied"
+  ],
+  "answer": 0,
+  "explain": "Plummet = fall very fast. Example: The rock plummeted into the sea.",
+  "notes": {
+   "soared": "Soared = rose fast.",
+   "escalated": "Escalated = became more serious or intense.",
+   "rallied": "Rallied = recovered."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The small argument ___ into a huge row about the game rules.",
+  "options": [
+   "escalated",
+   "plummeted",
+   "subsided",
+   "diminished"
+  ],
+  "answer": 0,
+  "explain": "Escalate = become more serious. Example: The conflict escalated.",
+  "notes": {
+   "plummeted": "Plummeted = fell fast.",
+   "subsided": "Subsided = became calmer.",
+   "diminished": "Diminished = became smaller."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Once the storm ___, we went out to look at the damage.",
+  "options": [
+   "subsided",
+   "escalated",
+   "intensified",
+   "erupted"
+  ],
+  "answer": 0,
+  "explain": "Subside = become less strong. Example: The pain subsided.",
+  "notes": {
+   "escalated": "Escalated = got worse.",
+   "intensified": "Intensified = became stronger.",
+   "erupted": "Erupted = burst out suddenly."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The scientist's theory ___ a lot of attention online.",
+  "options": [
+   "attracted",
+   "pulled up",
+   "earned up",
+   "dragged"
+  ],
+  "answer": 0,
+  "explain": "Attract attention. Example: The bright colours attracted attention.",
+  "notes": {
+   "pulled up": "Pull up = stop a vehicle.",
+   "earned up": "Earn up isn't a phrase.",
+   "dragged": "Drag attention isn't a collocation."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The two friends ___ a lasting friendship at summer camp.",
+  "options": [
+   "forged",
+   "forgot",
+   "faked",
+   "founded on"
+  ],
+  "answer": 0,
+  "explain": "Forge a friendship/link = build a strong one. Example: They forged close ties.",
+  "notes": {
+   "forgot": "Forgot = didn't remember.",
+   "faked": "Faked = pretended.",
+   "founded on": "Founded on needs a noun after it."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We had to ___ a balance between homework and fun.",
+  "options": [
+   "strike",
+   "hit",
+   "beat",
+   "punch"
+  ],
+  "answer": 0,
+  "explain": "Strike a balance = find a good middle point. Example: strike a balance between work and play.",
+  "notes": {
+   "hit": "Hit a balance isn't the collocation.",
+   "beat": "Beat a balance isn't English.",
+   "punch": "Punch a balance isn't English."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "His speech ___ a chord with everyone who had moved schools.",
+  "options": [
+   "struck",
+   "played",
+   "hit on",
+   "rang"
+  ],
+  "answer": 0,
+  "explain": "Strike a chord = make people feel sympathy or connection. Example: Her story struck a chord with me.",
+  "notes": {
+   "played": "Played a chord is music, not this idiom.",
+   "hit on": "Hit on = think of an idea.",
+   "rang": "Rang a bell = sounded familiar, a different idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The robot competition ___ fierce rivalry between the schools.",
+  "options": [
+   "sparked",
+   "lit up",
+   "flashed",
+   "burnt"
+  ],
+  "answer": 0,
+  "explain": "Spark rivalry/debate/interest = cause it to start. Example: The film sparked a debate.",
+  "notes": {
+   "lit up": "Lit up = became bright.",
+   "flashed": "Flashed doesn't collocate with rivalry.",
+   "burnt": "Burnt doesn't collocate with rivalry."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The class ___ a heated debate about zoos.",
+  "options": [
+   "engaged in",
+   "engaged to",
+   "involved on",
+   "joined to"
+  ],
+  "answer": 0,
+  "explain": "Engage in = take part in (formal). Example: engage in conversation.",
+  "notes": {
+   "engaged to": "Engaged to = going to marry.",
+   "involved on": "Involved on isn't English: involved in.",
+   "joined to": "Joined to isn't the collocation."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Our school places great ___ on kindness.",
+  "options": [
+   "emphasis",
+   "stress on",
+   "focus at",
+   "weight in"
+  ],
+  "answer": 0,
+  "explain": "Place emphasis on = treat as important. Example: We place emphasis on safety.",
+  "notes": {
+   "stress on": "The on is already in the sentence, so stress on repeats it.",
+   "focus at": "Focus at isn't English.",
+   "weight in": "Weight in isn't the collocation."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The new evidence ___ doubt on the old theory.",
+  "options": [
+   "casts",
+   "throws on",
+   "puts",
+   "drops"
+  ],
+  "answer": 0,
+  "explain": "Cast doubt on = make something seem less certain. Example: The results cast doubt on his claim.",
+  "notes": {
+   "throws on": "Throws on repeats on.",
+   "puts": "Put doubt isn't the collocation.",
+   "drops": "Drop doubt isn't English."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "She ___ a lot of thought into her birthday present for me.",
+  "options": [
+   "put",
+   "made",
+   "gave out",
+   "did"
+  ],
+  "answer": 0,
+  "explain": "Put thought/effort into. Example: He put a lot of effort into it.",
+  "notes": {
+   "made": "Made thought isn't English.",
+   "gave out": "Gave out = distributed.",
+   "did": "Did thought isn't English."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The rescue dog ___ a vital role in finding the lost hikers.",
+  "options": [
+   "played",
+   "did",
+   "made",
+   "acted"
+  ],
+  "answer": 0,
+  "explain": "Play a role/part in. Example: Diet plays a role in health.",
+  "notes": {
+   "did": "Did a role isn't the collocation.",
+   "made": "Made a role isn't English.",
+   "acted": "Acted a role is theatre language, not this meaning."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We need to ___ into account how tired the younger kids are.",
+  "options": [
+   "take",
+   "put",
+   "bring",
+   "keep"
+  ],
+  "answer": 0,
+  "explain": "Take into account = consider. Example: Take the weather into account.",
+  "notes": {
+   "put": "Put into account isn't English.",
+   "bring": "Bring into account isn't English.",
+   "keep": "Keep into account isn't English."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The professor's talk ___ light on how stars are born.",
+  "options": [
+   "shed",
+   "threw up",
+   "gave off",
+   "made"
+  ],
+  "answer": 0,
+  "explain": "Shed (or throw) light on = help explain. Example: The diary sheds light on her life.",
+  "notes": {
+   "threw up": "Threw up = was sick.",
+   "gave off": "Gave off = produced, like heat or smell.",
+   "made": "Made light of = treated as unimportant."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Our teacher ___ the importance of checking our work.",
+  "options": [
+   "stressed",
+   "pressured",
+   "tensed",
+   "pushed on"
+  ],
+  "answer": 0,
+  "explain": "Stress the importance of = emphasise. Example: She stressed the need for safety.",
+  "notes": {
+   "pressured": "Pressured = pushed someone to do something.",
+   "tensed": "Tensed = made muscles tight.",
+   "pushed on": "Pushed on = continued."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The flood caused ___ damage to the village library.",
+  "options": [
+   "extensive",
+   "expansive",
+   "expensive",
+   "extended"
+  ],
+  "answer": 0,
+  "explain": "Extensive damage = a large amount. Example: extensive research.",
+  "notes": {
+   "expansive": "Expansive = covering a wide area, or friendly and open.",
+   "expensive": "Expensive = costing a lot.",
+   "extended": "Extended = made longer."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The game has a ___ following among teenagers.",
+  "options": [
+   "loyal",
+   "royal",
+   "legal",
+   "faithful to"
+  ],
+  "answer": 0,
+  "explain": "A loyal following = fans who stay with it. Example: The band has a loyal following.",
+  "notes": {
+   "royal": "Royal = connected with kings and queens.",
+   "legal": "Legal = allowed by law.",
+   "faithful to": "Faithful to needs an object and doesn't fit before following."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "There's a ___ chance the comet will be visible tonight.",
+  "options": [
+   "slim",
+   "thin",
+   "narrow",
+   "skinny"
+  ],
+  "answer": 0,
+  "explain": "A slim chance = very small. Example: a slim chance of winning.",
+  "notes": {
+   "thin": "Thin chance isn't the usual collocation.",
+   "narrow": "Narrow goes with escape or victory.",
+   "skinny": "Skinny describes people."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We won by a ___ margin: just one point.",
+  "options": [
+   "narrow",
+   "slim to",
+   "thin",
+   "tight in"
+  ],
+  "answer": 0,
+  "explain": "A narrow margin/victory/escape. Example: a narrow escape.",
+  "notes": {
+   "slim to": "Slim to isn't a phrase.",
+   "thin": "Thin margin isn't the usual collocation.",
+   "tight in": "Tight in isn't English."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The penguins huddled together to ___ the bitter cold.",
+  "options": [
+   "withstand",
+   "withdraw",
+   "withhold",
+   "uphold"
+  ],
+  "answer": 0,
+  "explain": "Withstand = resist something strong. Example: built to withstand earthquakes.",
+  "notes": {
+   "withdraw": "Withdraw = take back or leave.",
+   "withhold": "Withhold = refuse to give.",
+   "uphold": "Uphold = support a rule or decision."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The fire alarm ___ just as the exam began.",
+  "options": [
+   "went off",
+   "went on with",
+   "set about",
+   "broke out"
+  ],
+  "answer": 0,
+  "explain": "Go off = start ringing (an alarm). Example: My alarm went off at six.",
+  "notes": {
+   "went on with": "Go on with = continue.",
+   "set about": "Set about = start a task.",
+   "broke out": "Break out = start suddenly (a fire, war)."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "A fire ___ in the science lab, but nobody was hurt.",
+  "options": [
+   "broke out",
+   "broke up",
+   "broke down",
+   "broke off"
+  ],
+  "answer": 0,
+  "explain": "Break out = start suddenly (fire, war, disease). Example: Chickenpox broke out at school.",
+  "notes": {
+   "broke up": "Break up = end a relationship, or a term ending.",
+   "broke down": "Break down = stop working.",
+   "broke off": "Break off = stop suddenly, or separate."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The team ___ the challenge with enthusiasm.",
+  "options": [
+   "rose to",
+   "rose up",
+   "rose over",
+   "rose from"
+  ],
+  "answer": 0,
+  "explain": "Rise to the challenge/occasion = deal with it well. Example: She rose to the occasion.",
+  "notes": {
+   "rose up": "Rise up = rebel.",
+   "rose over": "Rise over isn't used here.",
+   "rose from": "Rise from = recover from."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "It took the class a while to ___ the new seating plan.",
+  "options": [
+   "warm to",
+   "warm up",
+   "warm through",
+   "warm against"
+  ],
+  "answer": 0,
+  "explain": "Warm to = start to like. Example: I warmed to the idea.",
+  "notes": {
+   "warm up": "Warm up = get ready, or get hotter.",
+   "warm through": "Warm through = heat completely.",
+   "warm against": "Warm against isn't a phrase."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The clues didn't ___. Someone must be lying.",
+  "options": [
+   "add up",
+   "add on",
+   "add to",
+   "add in"
+  ],
+  "answer": 0,
+  "explain": "Add up = make sense. Example: His story doesn't add up.",
+  "notes": {
+   "add on": "Add on = include extra.",
+   "add to": "Add to = increase.",
+   "add in": "Add in = include."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I can't ___ what the sign says. It's too far away.",
+  "options": [
+   "make out",
+   "make up",
+   "make for",
+   "make off"
+  ],
+  "answer": 0,
+  "explain": "Make out = see or hear with difficulty. Example: I could just make out a figure.",
+  "notes": {
+   "make up": "Make up = invent, or become friends again.",
+   "make for": "Make for = go towards.",
+   "make off": "Make off = escape quickly."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The thief ___ with the golden egg!",
+  "options": [
+   "made off",
+   "made out",
+   "made up",
+   "made over"
+  ],
+  "answer": 0,
+  "explain": "Make off with = steal and escape. Example: They made off with the jewels.",
+  "notes": {
+   "made out": "Make out = see with difficulty.",
+   "made up": "Make up = invent.",
+   "made over": "Make over = give ownership, or redecorate."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We're ___ a big storm tonight, so bring the plants in.",
+  "options": [
+   "in for",
+   "out for",
+   "up for",
+   "on for"
+  ],
+  "answer": 0,
+  "explain": "Be in for = going to experience (often bad). Example: You're in for a surprise!",
+  "notes": {
+   "out for": "Be out for = trying to get.",
+   "up for": "Be up for = willing to do.",
+   "on for": "On for isn't used this way."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Is anyone ___ a game of chess?",
+  "options": [
+   "up for",
+   "in for",
+   "out for",
+   "down for"
+  ],
+  "answer": 0,
+  "explain": "Be up for = keen to do. Example: Who's up for pizza?",
+  "notes": {
+   "in for": "In for = about to experience.",
+   "out for": "Out for = trying to get.",
+   "down for": "Down for = on a list for."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The sloth's fur is ___ with tiny green algae.",
+  "options": [
+   "teeming",
+   "swarming to",
+   "bursting out",
+   "filling up"
+  ],
+  "answer": 0,
+  "explain": "Teem with = be full of living things. Example: The river teems with fish.",
+  "notes": {
+   "swarming to": "Swarming to isn't the pattern: swarm with.",
+   "bursting out": "Bursting out doesn't take with here.",
+   "filling up": "Filling up with is possible but doesn't mean full of living things."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The excitement ___ off after the first week of the holidays.",
+  "options": [
+   "wore",
+   "wore out",
+   "put",
+   "took"
+  ],
+  "answer": 0,
+  "explain": "Wear off = gradually disappear. Example: The anaesthetic wore off.",
+  "notes": {
+   "wore out": "Wear out = become tired, or damaged by use.",
+   "put": "Put off = delay.",
+   "took": "Take off = remove, or succeed quickly."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Please don't ___ the issue. Tell me what happened.",
+  "options": [
+   "skirt around",
+   "skirt into",
+   "rush around",
+   "jump around"
+  ],
+  "answer": 0,
+  "explain": "Skirt around (an issue) = avoid talking about it. Example: She skirted around the question.",
+  "notes": {
+   "skirt into": "Skirt into isn't a phrase.",
+   "rush around": "Rush around = hurry from place to place.",
+   "jump around": "Jump around = move about energetically."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The new games console ___ instantly with teenagers.",
+  "options": [
+   "caught on",
+   "caught up",
+   "caught out",
+   "caught in"
+  ],
+  "answer": 0,
+  "explain": "Catch on = become popular. Example: The trend caught on fast.",
+  "notes": {
+   "caught up": "Catch up = reach the same level.",
+   "caught out": "Catch out = trick someone into a mistake.",
+   "caught in": "Caught in = trapped in."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The tricky question was designed to ___ careless readers.",
+  "options": [
+   "catch out",
+   "catch on",
+   "catch up",
+   "catch at"
+  ],
+  "answer": 0,
+  "explain": "Catch someone out = trick them into a mistake. Example: The quiz caught me out.",
+  "notes": {
+   "catch on": "Catch on = become popular.",
+   "catch up": "Catch up = reach the same level.",
+   "catch at": "Catch at = try to grab."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Winning the science fair was the icing on the ___ after a great year.",
+  "options": [
+   "cake",
+   "biscuit",
+   "bun",
+   "pie"
+  ],
+  "answer": 0,
+  "explain": "The icing on the cake = something that makes a good situation even better. Example: The sunny weather was the icing on the cake.",
+  "notes": {
+   "biscuit": "Biscuit isn't used in this idiom.",
+   "bun": "Bun isn't used in this idiom.",
+   "pie": "Pie isn't used in this idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Finding the lost puppy was like looking for a needle in a ___.",
+  "options": [
+   "haystack",
+   "field",
+   "forest",
+   "barn"
+  ],
+  "answer": 0,
+  "explain": "A needle in a haystack = almost impossible to find. Example: Finding one shell on the beach was a needle in a haystack.",
+  "notes": {
+   "field": "Field isn't used in this idiom.",
+   "forest": "Forest isn't used in this idiom.",
+   "barn": "Barn isn't used in this idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Let's not count our ___ before they hatch; the final isn't over.",
+  "options": [
+   "chickens",
+   "eggs",
+   "ducks",
+   "birds"
+  ],
+  "answer": 0,
+  "explain": "Don't count your chickens before they hatch = don't be too sure of success. Example: We might win, but let's not count our chickens.",
+  "notes": {
+   "eggs": "Eggs are what hatch, but the idiom counts chickens.",
+   "ducks": "Ducks isn't used in this idiom.",
+   "birds": "Birds isn't used in this idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The new robotics club is still finding its ___.",
+  "options": [
+   "feet",
+   "legs",
+   "hands",
+   "way out"
+  ],
+  "answer": 0,
+  "explain": "Find your feet = become confident in a new situation. Example: It took me a week to find my feet.",
+  "notes": {
+   "legs": "Legs is used in 'have legs' (last a long time).",
+   "hands": "Hands isn't used in this idiom.",
+   "way out": "Way out = an escape."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We're on the same ___ about the project, so let's start.",
+  "options": [
+   "page",
+   "line",
+   "book",
+   "paper"
+  ],
+  "answer": 0,
+  "explain": "On the same page = in agreement. Example: Are we all on the same page?",
+  "notes": {
+   "line": "Same line isn't the idiom.",
+   "book": "Same book isn't the idiom.",
+   "paper": "Same paper isn't the idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The plan to sneak a puppy into school was doomed from the ___.",
+  "options": [
+   "outset",
+   "outcome",
+   "outlook",
+   "output"
+  ],
+  "answer": 0,
+  "explain": "From the outset = from the beginning. Example: It was clear from the outset.",
+  "notes": {
+   "outcome": "Outcome = result.",
+   "outlook": "Outlook = view of the future.",
+   "output": "Output = amount produced."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Missing the bus turned out to be a blessing in ___: we saw a rainbow.",
+  "options": [
+   "disguise",
+   "secret",
+   "hiding",
+   "costume"
+  ],
+  "answer": 0,
+  "explain": "A blessing in disguise = something bad that turns out good. Example: Losing that game was a blessing in disguise.",
+  "notes": {
+   "secret": "Secret isn't used in this idiom.",
+   "hiding": "Hiding isn't used in this idiom.",
+   "costume": "Costume isn't used in this idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The final exam is just around the ___.",
+  "options": [
+   "corner",
+   "bend",
+   "street",
+   "block"
+  ],
+  "answer": 0,
+  "explain": "Just around the corner = coming very soon. Example: Summer is just around the corner.",
+  "notes": {
+   "bend": "Bend isn't used in this idiom.",
+   "street": "Street isn't used in this idiom.",
+   "block": "Block isn't used in this idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "He's always first to volunteer: he's as keen as ___.",
+  "options": [
+   "mustard",
+   "honey",
+   "pepper",
+   "lemon"
+  ],
+  "answer": 0,
+  "explain": "As keen as mustard = very enthusiastic (British). Example: The new players are keen as mustard.",
+  "notes": {
+   "honey": "Honey is for sweet, not keen.",
+   "pepper": "Pepper isn't used in this simile.",
+   "lemon": "Lemon isn't used in this simile."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "She was over the ___ when she got the lead role.",
+  "options": [
+   "moon",
+   "stars",
+   "sun",
+   "clouds"
+  ],
+  "answer": 0,
+  "explain": "Over the moon = extremely happy. Example: I was over the moon with my results.",
+  "notes": {
+   "stars": "Stars isn't used in this idiom.",
+   "sun": "Sun isn't used in this idiom.",
+   "clouds": "Clouds is in 'on cloud nine', a different idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Building the treehouse cost an arm and a ___.",
+  "options": [
+   "leg",
+   "foot",
+   "hand",
+   "head"
+  ],
+  "answer": 0,
+  "explain": "Cost an arm and a leg = be very expensive. Example: The tickets cost an arm and a leg.",
+  "notes": {
+   "foot": "Foot isn't used in this idiom.",
+   "hand": "Hand isn't used in this idiom.",
+   "head": "Head isn't used in this idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I'll ___ on it and give you my answer tomorrow.",
+  "options": [
+   "sleep",
+   "dream",
+   "rest",
+   "nap"
+  ],
+  "answer": 0,
+  "explain": "Sleep on it = wait until tomorrow before deciding. Example: Don't decide now; sleep on it.",
+  "notes": {
+   "dream": "Dream on = that won't happen.",
+   "rest": "Rest on = depend on.",
+   "nap": "Nap on isn't the idiom."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The ___ of the comet's path took months of calculation.",
+  "options": [
+   "prediction",
+   "predictability",
+   "predicament",
+   "predictor"
+  ],
+  "answer": 0,
+  "explain": "Predict → prediction (the act of predicting). Example: weather predictions.",
+  "notes": {
+   "predictability": "Predictability = how easy something is to predict.",
+   "predicament": "Predicament = a difficult situation.",
+   "predictor": "Predictor = something that predicts."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The wizard found himself in quite a ___: no wand, no map, no friends.",
+  "options": [
+   "predicament",
+   "prediction",
+   "precaution",
+   "preference"
+  ],
+  "answer": 0,
+  "explain": "Predicament = a difficult situation. Example: How did we get into this predicament?",
+  "notes": {
+   "prediction": "Prediction = saying what will happen.",
+   "precaution": "Precaution = an action to prevent harm.",
+   "preference": "Preference = what you like more."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Wear goggles as a ___ when you do the experiment.",
+  "options": [
+   "precaution",
+   "predicament",
+   "precision",
+   "prevention"
+  ],
+  "answer": 0,
+  "explain": "A precaution = something done to avoid danger. Example: as a precaution.",
+  "notes": {
+   "predicament": "Predicament = a difficult situation.",
+   "precision": "Precision = exactness.",
+   "prevention": "Prevention = stopping something, not a single action you take 'as a'."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The surgeon robot works with incredible ___.",
+  "options": [
+   "precision",
+   "precaution",
+   "precise",
+   "preciseness of"
+  ],
+  "answer": 0,
+  "explain": "Precise → precision (noun). Example: She drew the map with precision.",
+  "notes": {
+   "precaution": "Precaution = an action to avoid danger.",
+   "precise": "Precise is an adjective.",
+   "preciseness of": "Preciseness of needs a noun after it."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Her ___ to detail made her the best map-maker in the kingdom.",
+  "options": [
+   "attention",
+   "attentive",
+   "attending",
+   "attendance"
+  ],
+  "answer": 0,
+  "explain": "Attention to detail = care with small things. Example: great attention to detail.",
+  "notes": {
+   "attentive": "Attentive is an adjective.",
+   "attending": "Attending is a verb form.",
+   "attendance": "Attendance = being present."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The ___ of the dodo was caused by humans.",
+  "options": [
+   "extinction",
+   "extinguisher",
+   "extension",
+   "extinct"
+  ],
+  "answer": 0,
+  "explain": "Extinct → extinction (noun). Example: the extinction of the dinosaurs.",
+  "notes": {
+   "extinguisher": "Extinguisher = a device that puts out fires.",
+   "extension": "Extension = making longer or bigger.",
+   "extinct": "Extinct is an adjective."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The robot's behaviour was completely ___: nobody knew what it would do.",
+  "options": [
+   "unpredictable",
+   "unpredicted",
+   "predictive",
+   "mispredicted"
+  ],
+  "answer": 0,
+  "explain": "un- + predictable = can't be predicted. Example: unpredictable weather.",
+  "notes": {
+   "unpredicted": "Unpredicted = not expected, for a specific event.",
+   "predictive": "Predictive = able to predict.",
+   "mispredicted": "Mispredicted = predicted wrongly."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The ___ between the two theories is tiny.",
+  "options": [
+   "discrepancy",
+   "discretion",
+   "discipline",
+   "discourse"
+  ],
+  "answer": 0,
+  "explain": "Discrepancy = a difference that shouldn't be there. Example: a discrepancy in the figures.",
+  "notes": {
+   "discretion": "Discretion = good judgement, or keeping secrets.",
+   "discipline": "Discipline = training to obey rules.",
+   "discourse": "Discourse = serious discussion."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Please use your ___ when sharing the surprise party plans.",
+  "options": [
+   "discretion",
+   "discrepancy",
+   "discrimination",
+   "disclosure"
+  ],
+  "answer": 0,
+  "explain": "Discretion = carefulness about what you say. Example: I trust your discretion.",
+  "notes": {
+   "discrepancy": "Discrepancy = a difference.",
+   "discrimination": "Discrimination = unfair treatment.",
+   "disclosure": "Disclosure = revealing information, the opposite."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Owls are ___ creatures, hunting mostly at night.",
+  "options": [
+   "nocturnal",
+   "diurnal",
+   "nautical",
+   "nomadic"
+  ],
+  "answer": 0,
+  "explain": "Nocturnal = active at night. Example: Bats are nocturnal.",
+  "notes": {
+   "diurnal": "Diurnal = active during the day.",
+   "nautical": "Nautical = about ships and sailing.",
+   "nomadic": "Nomadic = moving from place to place."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Some desert tribes and reindeer herders lead a ___ life, always on the move.",
+  "options": [
+   "nomadic",
+   "nocturnal",
+   "sedentary",
+   "monastic"
+  ],
+  "answer": 0,
+  "explain": "Nomadic = moving from place to place. Example: a nomadic people.",
+  "notes": {
+   "nocturnal": "Nocturnal = active at night.",
+   "sedentary": "Sedentary = sitting a lot, or staying in one place.",
+   "monastic": "Monastic = like monks."
+  }
  }
 ]

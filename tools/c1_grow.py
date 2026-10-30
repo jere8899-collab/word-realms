@@ -1,6 +1,7 @@
 # C1 (review 2026-10-30): grow the banks towards 120 items per skill per level, starting at A1.
 # Each mcq: (question, right, [wrong1, wrong2, wrong3], rule + example, [why-not for each wrong option]) – kid topics only.
-def m(q, right, wrong, ex, notes): return {"type": "mcq", "q": q, "options": [right] + wrong, "answer": 0, "explain": ex, "_notes": notes}
+from qb import mcq
+def m(q, right, wrong, ex, notes): return {**mcq(q, [right] + wrong, ex), "_notes": notes}
 GROW = {"a1": {"grammar": [
  m("I ___ a big brother.", "have", ["has", "am", "is"], "I/you/we/they have; he/she/it has. Example: I have a cat.", ["Has is for he/she/it.", "Am is for 'I am…', not for owning things.", "Is is for he/she/it, and not for owning."]),
  m("She ___ my teacher.", "is", ["am", "are", "be"], "He/she/it is. Example: She is kind.", ["Am goes only with I.", "Are goes with you/we/they.", "Be needs a form: is."]),
@@ -77,10 +78,13 @@ GROW = {"a1": {"grammar": [
  m("___ you happy? — Yes, I am.", "Are", ["Do", "Is", "Am"], "Are you + adjective? Example: Are you cold?", ["Do doesn't go with an adjective.", "Is is for he/she/it.", "Am is for I."]),
  m("My grandma ___ in a small village.", "lives", ["live", "living", "is live"], "He/she + -s for every day. Example: He lives in Tokyo.", ["Add -s for one person.", "Living needs is.", "Is live mixes two forms."]),
 ]}}
-# more C1 chunks (one file per level/skill, each item with its own C3 notes)
-from c1_a1v import A1V; from c1_a2g import A2G; from c1_a2v import A2V; from c1_b1g import B1G; from c1_b1v import B1V
-GROW["a1"]["vocab"] = A1V
-GROW.setdefault("a2", {}).update({"grammar": A2G, "vocab": A2V})
-GROW.setdefault("b1", {}).update({"grammar": B1G, "vocab": B1V})
-from c1_b2g import B2G; from c1_b2v import B2V
-GROW.setdefault("b2", {}).update({"grammar": B2G, "vocab": B2V})
+# more C1 chunks: one file per level/skill (tools/c1_<level><g|v>.py), each item with its own C3 notes.
+# To add a chunk, add one row here: (level, skill, module, list name).
+import importlib
+CHUNKS = [("a1", "vocab", "c1_a1v", "A1V"),
+          ("a2", "grammar", "c1_a2g", "A2G"), ("a2", "vocab", "c1_a2v", "A2V"),
+          ("b1", "grammar", "c1_b1g", "B1G"), ("b1", "vocab", "c1_b1v", "B1V"),
+          ("b2", "grammar", "c1_b2g", "B2G"), ("b2", "vocab", "c1_b2v", "B2V"),
+          ("c1", "grammar", "c1_c1g", "C1G"), ("c1", "vocab", "c1_c1v", "C1V")]
+for _lvl, _sk, _mod, _name in CHUNKS:
+    GROW.setdefault(_lvl, {})[_sk] = getattr(importlib.import_module(_mod), _name)

@@ -9,14 +9,17 @@ from w1_a import W1A; from w1_b import W1B  # Content Wave 1 (2026-10-30)
 ROOT = os.path.join(os.path.dirname(__file__), "..", "data")
 D = {"a1": A1, "a2": A2, "b1": B1, "b2": B2, "c1": C1, "c2": C2}
 tot = 0; counts = {}
-for lvl, extra in {**W1A, **W1B}.items():  # merge extra items into the base banks
-    for sk, val in extra.items():
-        if sk == "reading": D[lvl][sk]["passages"].extend(val["passages"])
-        else: D[lvl][sk].extend(val)
+def _items(sk, val):  # every question in a skill bank (reading banks hold their questions inside passages)
+    return [q for p in val["passages"] for q in p["questions"]] if sk == "reading" else val
+def _merge(extra_by_level):  # append extra items (or reading passages) onto the base banks in D
+    for lvl, extra in extra_by_level.items():
+        for sk, val in extra.items():
+            if sk == "reading": D[lvl][sk]["passages"].extend(val["passages"])
+            else: D[lvl][sk].extend(val)
+_merge({**W1A, **W1B})
 # ---- C1 (review 2026-10-30): grow the banks (tools/c1_grow.py); items carry their own C3 notes ----
 from c1_grow import GROW
-for lvl, extra in GROW.items():
-    for sk, val in extra.items(): D[lvl][sk].extend(val)
+_merge(GROW)
 # ---- C2 (review 2026-10-30): new question types (spell, picq, mistake, gaps, dictate, listen-and-order, dialogues) ----
 from c2_types import C2T
 _WORD_ART = {a["id"] for a in json.load(open(os.path.join(os.path.dirname(__file__), "..", "assets", "manifest.json")))["assets"] if a.get("type") == "word"}
@@ -63,7 +66,7 @@ def _short(t, n=90):
 _c3_used = set()
 for lvl, skills in D.items():
     for sk, val in skills.items():
-        items = [q for p in val["passages"] for q in p["questions"]] if sk == "reading" else val
+        items = _items(sk, val)
         ov = C3.get(f"{lvl}/{sk}", {})
         for q in items:
             if q["type"] not in ("mcq", "listen", "picq"): continue
@@ -101,9 +104,8 @@ for lvl, skills in D.items():
     os.makedirs(f"{ROOT}/{lvl}", exist_ok=True)
     for sk, val in skills.items():
         json.dump(val, open(f"{ROOT}/{lvl}/{sk}.json", "w"), ensure_ascii=False, indent=1)
-        n = sum(len(p["questions"]) for p in val["passages"]) if sk == "reading" else len(val)
+        items = _items(sk, val); n = len(items)
         assert n >= 15, (lvl, sk, n)
-        items = [q for p in val["passages"] for q in p["questions"]] if sk == "reading" else val
         keys = [(q.get("say", "") + "|" + q.get("q", "") + "|" + str(q.get("answer")) + "|" + q.get("pic", "") + "|" + "/".join(q.get("options", [])[:1]) + "|" + " ".join(q.get("words", [])) + "|" + q.get("text", "")) for q in items]
         dup = {k for k in keys if keys.count(k) > 1}; assert not dup, (lvl, sk, dup)
         for q in items:

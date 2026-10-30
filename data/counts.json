@@ -16,8 +16,8 @@
   "b2/vocab": 124,
   "b2/reading": 21,
   "b2/listening": 39,
-  "c1/grammar": 45,
-  "c1/vocab": 30,
+  "c1/grammar": 123,
+  "c1/vocab": 126,
   "c1/reading": 21,
   "c1/listening": 36,
   "c2/grammar": 45,
@@ -43,8 +43,8 @@
   "c1/story": 5,
   "c2/story": 5
  },
- "total": 1649,
- "questions": 1481,
+ "total": 1823,
+ "questions": 1655,
  "speaking": 132,
  "writing": 36,
  "stories": 6
