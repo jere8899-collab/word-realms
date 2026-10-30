@@ -212,6 +212,71 @@ C.signIn = async (name, pass) => {
   C.user = data.user; C.username = (data.user.user_metadata && data.user.user_metadata.username) || uname;
   return afterSignIn(false);
 };
+/* ---------- change login name (keeps the same user_id, so all progress stays) ----------
+   Supabase Auth always mails a confirmation link for an email change, and our synthetic addresses
+   can't get mail, so auth.updateUser({ email }) is rejected for this project. The rename runs in the
+   database instead: public.rename_login(new_name) in supabase/rename_login.sql (renames only the caller). */
+const RENAME_OFF = "Changing your castle name isn't switched on in the Cloud Castle yet. Your current name and password still work, and your progress is safe. 🛠️";
+C.RENAME_OFF = RENAME_OFF;
+C.renameErr = e => {
+  const m = String((e && (e.message || e.details || e.hint)) || "").toLowerCase(), code = e && e.code;
+  if (code === "PGRST202" || code === "42883" || /could not find the function|schema cache/.test(m)) return { off: true, msg: RENAME_OFF };
+  if (code === "23505" || /name taken|already|exists/.test(m)) return { msg: "That name is taken. Try another one! 🌸" };
+  if (code === "53400" || /rate limit|too many|429/.test(m)) return { msg: "You just changed your name. Please wait a minute and try again ⏳" };
+  if (code === "22023" || /invalid name/.test(m)) return { msg: "Use 3–20 letters, numbers or _ (no spaces)." };
+  if (code === "28000" || /jwt|not signed in|session/.test(m)) return { msg: "Please log in again, then try once more." };
+  if (/fetch|network|load|offline|timeout/.test(m)) return { msg: UNREACHABLE };
+  return { msg: "Couldn't change your name. Please try again." };
+};
+// is the rename function installed? (a harmless call: an empty name is rejected before anything changes)
+C.renameReady = async (force) => {
+  if (C._renameReady !== undefined && !force) return C._renameReady;
+  if (!C.user) return false;
+  try {
+    const c = await C.client(), { error } = await withTimeout(c.rpc("rename_login", { new_name: "" }), 9000);
+    const r = C.renameErr(error);
+    C._renameReady = !(error && r.off);
+    if (error && !r.off && r.msg === UNREACHABLE) { C._renameReady = undefined; return null; } // offline: unknown
+  } catch (e) { return null; }
+  return C._renameReady;
+};
+C.renameLogin = async newName => {
+  const ne = C.nameError(newName); if (ne) throw Object.assign(new Error(ne), { friendly: ne });
+  if (!C.user) throw Object.assign(new Error("not signed in"), { friendly: "Please log in first." });
+  const uname = String(newName).trim().toLowerCase();
+  if (uname === C.username) return uname;
+  const c = await C.client();
+  const { data, error } = await withTimeout(c.rpc("rename_login", { new_name: uname }));
+  if (error) { const r = C.renameErr(error); if (r.off) C._renameReady = false; throw Object.assign(new Error(error.message || r.msg), { friendly: r.msg, off: !!r.off }); }
+  // fresh token so the session carries the new name; the user_id is unchanged
+  try { const { data: d } = await withTimeout(c.auth.refreshSession(), 9000); if (d && d.user) C.user = d.user; } catch (e) { }
+  C.username = data || uname;
+  setMeta({ username: C.username, user: C.user.id });
+  paint();
+  return C.username;
+};
+/* ---------- change password (signed in) ---------- */
+C.changePassword = async (current, next) => {
+  const pe = C.passError(next); if (pe) throw Object.assign(new Error(pe), { friendly: pe });
+  if (!C.user) throw Object.assign(new Error("not signed in"), { friendly: "Please log in first." });
+  if (current === next) throw Object.assign(new Error("same"), { friendly: "Your new password is the same as the old one." });
+  const c = await C.client();
+  // check the current password first, so a borrowed device can't change it
+  const chk = await withTimeout(c.auth.signInWithPassword({ email: C.email(C.username), password: current }));
+  if (chk.error) { const m = C.friendly(chk.error, "login"); throw Object.assign(chk.error, { friendly: /Wrong name/.test(m) ? "Your current password isn't right. Try again 💖" : m }); }
+  if (chk.data && chk.data.user) C.user = chk.data.user;
+  const { error } = await withTimeout(c.auth.updateUser({ password: next }));
+  if (error) {
+    const m = String(error.message || "").toLowerCase(), code = error.code;
+    const f = code === "same_password" || /different from the old/.test(m) ? "Your new password is the same as the old one."
+      : code === "weak_password" || /weak|short|least/.test(m) ? "Please choose a longer secret password."
+      : code === "reauthentication_needed" || /reauthenticat/.test(m) ? "Changing passwords isn't switched on in the Cloud Castle yet. Your current password still works."
+      : C.friendly(error, "login").replace("Couldn't log in", "Couldn't change your password");
+    throw Object.assign(error, { friendly: f });
+  }
+  return true;
+};
+
 C.signOut = async (clearDevice) => {
   clearTimeout(timer);
   if (C.user && meta().dirty) { try { await C.push(); } catch (e) { } }
@@ -256,12 +321,62 @@ C.open = (startMode) => {
         <div id="ccStatus" class="cc-status st-${C.status}"></div>
         <p class="muted" style="font-weight:700">Your stars, pet, skins and progress are kept safe in the clouds. Log in with the same name on any device to keep playing! ✨</p>
         ${s ? `<div class="cc-stats big"><span>⭐ ${s.stars}</span><span>✅ ${s.correct}</span><span>📚 ${s.lessons}</span><span>🐾 ${s.xp} XP</span></div>` : ""}
-        <div class="row" style="justify-content:center;margin-top:14px;flex-wrap:wrap"><button class="btn mint small" id="ccSync">☁️ Save now</button><button class="btn ghost small" id="ccOut">Log out</button><button class="btn ghost small" id="ccOutClear" title="For shared computers">Log out &amp; clear device</button><button class="btn small" id="ccDone">Done</button></div>`;
+        <div class="row" style="justify-content:center;margin-top:10px;flex-wrap:wrap"><button class="btn ghost small" id="ccRename">✏️ Change login name</button><button class="btn ghost small" id="ccPw">🔑 Change password</button></div>
+        <div class="row" style="justify-content:center;margin-top:8px;flex-wrap:wrap"><button class="btn mint small" id="ccSync">☁️ Save now</button><button class="btn ghost small" id="ccOut">Log out</button><button class="btn ghost small" id="ccOutClear" title="For shared computers">Log out &amp; clear device</button><button class="btn small" id="ccDone">Done</button></div>`;
       paint();
       root.querySelector("#ccSync").onclick = async () => { await C.push(); paint(); if (C.status === "saved") WR.toast("☁️ Saved to the Cloud Castle!"); };
       root.querySelector("#ccOut").onclick = async () => { await C.signOut(false); WR.toast("👋 Logged out. You can keep playing as a guest."); form(); };
       root.querySelector("#ccOutClear").onclick = async () => { if (!confirm("Log out and remove this adventure from this device? (It stays safe in your Cloud Castle.)")) return; await C.signOut(true); close(); };
       root.querySelector("#ccDone").onclick = close;
+      root.querySelector("#ccRename").onclick = renameView;
+      root.querySelector("#ccPw").onclick = pwView;
+    };
+    const renameView = () => {
+      root.innerHTML = `${castle}<h2>✏️ Change login name</h2>
+        <p class="muted" style="font-weight:700;margin-top:0">Now: <b class="cc-name">${WR.esc(C.username || "")}</b>. Next time, log in with your new name. Your password, stars, pet and progress stay the same.</p>
+        <div id="ccRenBody"><div class="cc-status st-loading">⏳ Checking the castle gates…</div></div>
+        <div class="row" style="justify-content:center;margin-top:8px"><button class="btn ghost small" type="button" id="ccBack">← Back</button></div>`;
+      root.querySelector("#ccBack").onclick = signedIn;
+      const body = root.querySelector("#ccRenBody");
+      C.renameReady().then(ok => {
+        if (!document.body.contains(body)) return;
+        if (ok === false) { body.innerHTML = `<div class="cc-off" id="ccRenOff" role="status">${WR.esc(RENAME_OFF)}</div>`; return; }
+        if (ok === null) { body.innerHTML = `<div class="cc-off" id="ccRenOff" role="status">${WR.esc(UNREACHABLE)}</div>`; return; }
+        body.innerHTML = `<form id="ccRenForm" novalidate><label class="cc-lbl">New castle name <small>(3–20 letters, numbers or _)</small><input class="input" id="ccNewName" autocomplete="username" autocapitalize="none" spellcheck="false" maxlength="20" placeholder="e.g. lily_star"></label>
+          <div class="cc-err" id="ccRenErr" role="alert"></div><button class="btn mint" id="ccRenGo" type="submit" style="width:100%;margin-top:6px">✨ Change my name</button></form>`;
+        const i = body.querySelector("#ccNewName"), err = body.querySelector("#ccRenErr"), go = body.querySelector("#ccRenGo");
+        i.oninput = () => { const e = i.value && C.nameError(i.value); err.textContent = e || (i.value.trim().toLowerCase() === C.username ? "That's already your castle name 😊" : ""); };
+        setTimeout(() => i.focus(), 30);
+        body.querySelector("#ccRenForm").onsubmit = async ev => {
+          ev.preventDefault();
+          const e = C.nameError(i.value); if (e) { err.textContent = e; return; }
+          if (i.value.trim().toLowerCase() === C.username) { err.textContent = "That's already your castle name 😊"; return; }
+          err.textContent = ""; go.disabled = true; const label = go.innerHTML; go.innerHTML = "☁️ Repainting the castle sign…";
+          try { const n = await C.renameLogin(i.value); WR.sfx("level"); WR.toast(`🏰 Your castle name is now ${WR.esc(n)}!`, 2600); if (document.body.contains(root)) signedIn(); }
+          catch (x) { if (x.off) { body.innerHTML = `<div class="cc-off" id="ccRenOff" role="status">${WR.esc(RENAME_OFF)}</div>`; return; } err.textContent = x.friendly || C.renameErr(x).msg; go.disabled = false; go.innerHTML = label; }
+        };
+      });
+    };
+    const pwView = () => {
+      root.innerHTML = `${castle}<h2>🔑 Change password</h2>
+        <form id="ccPwForm" novalidate>
+          <input type="text" name="username" autocomplete="username" value="${WR.esc(C.username || "")}" hidden>
+          <label class="cc-lbl">Current password<input class="input" id="ccPwOld" type="password" autocomplete="current-password" placeholder="••••••"></label>
+          <label class="cc-lbl">New password <small>(6+ characters)</small><input class="input" id="ccPwNew" type="password" autocomplete="new-password" placeholder="••••••"></label>
+          <div class="cc-err" id="ccPwErr" role="alert"></div>
+          <button class="btn mint" id="ccPwGo" type="submit" style="width:100%;margin-top:6px">🔐 Save new password</button></form>
+        <div class="row" style="justify-content:center;margin-top:8px"><button class="btn ghost small" type="button" id="ccBack">← Back</button></div>`;
+      root.querySelector("#ccBack").onclick = signedIn;
+      const o = root.querySelector("#ccPwOld"), n = root.querySelector("#ccPwNew"), err = root.querySelector("#ccPwErr"), go = root.querySelector("#ccPwGo");
+      setTimeout(() => o.focus(), 30);
+      root.querySelector("#ccPwForm").onsubmit = async ev => {
+        ev.preventDefault();
+        if (!o.value) { err.textContent = "Please type your current password."; return; }
+        const e = C.passError(n.value); if (e) { err.textContent = e; return; }
+        err.textContent = ""; go.disabled = true; const label = go.innerHTML; go.innerHTML = "🔐 Saving…";
+        try { await C.changePassword(o.value, n.value); WR.sfx("level"); WR.toast("🔐 New password saved! Use it next time you log in.", 2600); if (document.body.contains(root)) signedIn(); }
+        catch (x) { err.textContent = x.friendly || "Couldn't change your password. Please try again."; go.disabled = false; go.innerHTML = label; }
+      };
     };
     const form = () => {
       const up = mode === "signup";

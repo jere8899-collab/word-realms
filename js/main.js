@@ -35,7 +35,7 @@ function onboarding() {
   const draft = { name: "", avatar: "avatar_girl", pet: "pet_bunny", level: "a1" };
   const step1 = () => {
     WR.view(`<div class="hero fade-in"><h1>Word Realms</h1><p style="font-size:1.15rem;font-weight:800">A fairytale English adventure from A1 to C2 ✨</p></div>
-    <div class="card fade-in"><h2>1. What's your name, adventurer?</h2><input class="input" id="nm" maxlength="18" placeholder="Type your name…">
+    <div class="card fade-in"><h2>1. What's your name, adventurer?</h2><input class="input" id="nm" maxlength="20" placeholder="Type your name…">
     <h2 style="margin-top:18px">2. Choose your hero</h2><div class="grid g3">${WR.AVATARS.map(a => `<div class="card pick ${draft.avatar === a.id ? "sel" : ""}" data-av="${a.id}">${WR.img(a.id)}<div class="nm">${a.name}</div></div>`).join("")}</div>
     <div class="row" style="justify-content:flex-end;margin-top:16px"><button class="btn" id="n1">Next →</button></div></div>
     ${WR.Cloud ? `<div class="card fade-in cc-onb" id="ccOnb"><img src="assets/web/cloud_castle.webp" onerror="this.onerror=null;this.src='assets/ui/cloud_castle.png'" alt=""><div style="flex:1"><b>Already have a Cloud Castle account? ☁️</b><div class="muted" style="font-size:.85rem;font-weight:700">Log in to bring back your stars, pet and skins.</div></div><span class="btn small mint">Log in →</span></div>` : ""}`);
@@ -78,7 +78,7 @@ WR.screens.home = () => {
   const qs = s.daily.quests.map(q => { const d = WR.questDef(q.id); return `<div class="q"><span class="qi">${d.icon}</span><div class="qb"><b>${d.label}</b><div class="prog"><i style="width:${q.progress / d.goal * 100}%"></i></div></div>
     ${q.claimed ? '<span class="pill" style="background:var(--mint)">Done ✓</span>' : q.progress >= d.goal ? `<button class="btn small mint claim" data-id="${q.id}">Claim ${d.reward}⭐</button>` : `<span class="pill">${q.progress}/${d.goal} · ${d.reward}⭐</span>`}</div>`; }).join("");
   WR.view(`<div class="fade-in"><div class="card homehead"><div class="av-big">${WR.avatarHTML(110)}</div>
-    <div><h1 style="margin:0">Hello, ${WR.esc(s.name)}! 🌸</h1><div class="muted" style="font-weight:800">${WR.esc(s.pet.name)} says: “${WR.esc(WR.petMood())}”</div>
+    <div><h1 style="margin:0">Hello, <span class="hero-nm">${WR.esc(s.name)}</span>! 🌸 <button class="chip hero-edit" id="heroEditHome" aria-label="Change my hero name" title="Change my hero name">✏️</button></h1><div class="muted" style="font-weight:800">${WR.esc(s.pet.name)} says: “${WR.esc(WR.petMood())}”</div>
     <div class="row" style="margin-top:6px"><span class="pill">✅ ${s.totalCorrect} correct answers</span><span class="pill" style="background:var(--butter)">📚 ${total} questions in the realms</span>${spk ? `<span class="pill" style="background:var(--mint)">🎤 ${spk} speaking prompts</span>` : ""}${WR.counts && WR.counts.writing ? `<span class="pill" style="background:#FFE3EF">✒️ ${WR.counts.writing} writing tasks</span>` : ""}${s.placement ? `<span class="pill mirror-pill" id="mirrorPill" style="background:#F3ECFF;cursor:pointer">🪞 Mirror says ${s.placement.level.toUpperCase()}</span>` : `<span class="pill mirror-pill" id="mirrorPill" style="background:#F3ECFF;cursor:pointer">🪞 Find my level</span>`}</div></div></div>
     <div class="grid g2" style="margin-top:14px;align-items:start">
       <div>${WR.Math ? `<div class="card math-node" id="mathNode">${WR.img("bg_math", "thumb", "", true)}<div style="flex:1"><div><span class="lvl-badge">G1–12</span><b>🔢 Number Kingdom</b></div><div class="muted" style="font-size:.85rem;font-weight:700">Maths quests + 🗼 Times-Table Tower</div><div class="muted" style="font-size:.75rem;font-weight:800">👑 ${WR.Math.totalCrowns()} crowns · 🌟 ${WR.Math.mastered()}/132 facts${s.math && s.math.grade ? ` · Grade ${s.math.grade}` : ""}</div></div></div>` : ""}<h2>🗺️ The Realm Map</h2><div class="map"><div class="map-path"></div>${WR.realms.map((r, i) => {
@@ -99,6 +99,7 @@ WR.screens.home = () => {
   });
   document.querySelectorAll(".claim").forEach(b => b.onclick = () => { WR.claimQuest(b.dataset.id); WR.screens.home(); });
   WR.$("#petCard").onclick = () => WR.go("pet");
+  const he = WR.$("#heroEditHome"); if (he) he.onclick = e => { e.stopPropagation(); WR.openRename(); };
   const mn = WR.$("#mathNode"); if (mn) mn.onclick = () => WR.go("math");
   const gn = WR.$("#gardenNudge"); if (gn) gn.onclick = () => WR.go("review");
   WR.$("#mirrorPill").onclick = () => WR.retakePlacement();
@@ -126,10 +127,49 @@ WR.screens.realm = rid => {
 
 /* review screen (Mistake Garden) lives in js/garden.js */
 
+/* ---------------- hero (display) name ---------------- */
+WR.HERO_MAX = 20;
+WR.cleanHeroName = n => String(n == null ? "" : n).replace(/[\u0000-\u001f\u007f<>]/g, "").replace(/\s+/g, " ").trim();
+WR.heroNameError = n => {
+  const c = WR.cleanHeroName(n);
+  if (!c) return "Please type a name for your hero 💖";
+  if ([...c].length > WR.HERO_MAX) return `Please keep your hero name to ${WR.HERO_MAX} characters or fewer.`;
+  return null;
+};
+// rename the hero everywhere: the save (so it cloud-syncs), the top bar and the map greeting
+WR.renameHero = n => {
+  const e = WR.heroNameError(n); if (e) throw new Error(e);
+  const c = WR.cleanHeroName(n), s = WR.state;
+  if (c === s.name) return c;
+  s.name = c; WR.save(); WR.renderTop();
+  document.querySelectorAll(".hero-nm").forEach(x => x.textContent = c);
+  if (current === "home" && WR.screens.home) WR.screens.home();
+  return c;
+};
+WR.openRename = () => {
+  const s = WR.state;
+  WR.modal(`<div class="rename-panel"><div style="width:96px;height:96px;margin:0 auto">${WR.avatarHTML(96)}</div><h2 style="margin:.3em 0">🦸 Change your hero name</h2>
+    <p class="muted" style="font-weight:700;margin-top:0">This is the name the realms call you. Your stars, pet and progress stay the same.</p>
+    <form id="heroForm" novalidate><label class="cc-lbl">Hero name <small>(1–${WR.HERO_MAX} characters)</small><input class="input" id="heroName" maxlength="${WR.HERO_MAX + 10}" autocomplete="nickname" value="${WR.esc(s.name || "")}"></label>
+    <div class="row" style="justify-content:space-between"><div class="cc-err" id="heroErr" role="alert"></div><small class="muted" id="heroCount" style="font-weight:800"></small></div>
+    <div class="row" style="justify-content:center;margin-top:10px"><button class="btn ghost small" type="button" id="heroCancel">Cancel</button><button class="btn mint" type="submit" id="heroSave">✨ Save name</button></div></form></div>`, (bg, close) => {
+    const i = bg.querySelector("#heroName"), err = bg.querySelector("#heroErr"), cnt = bg.querySelector("#heroCount"), go = bg.querySelector("#heroSave");
+    const upd = () => { const c = WR.cleanHeroName(i.value), e = i.value ? WR.heroNameError(i.value) : null; cnt.textContent = `${[...c].length}/${WR.HERO_MAX}`; err.textContent = e || ""; go.disabled = !!WR.heroNameError(i.value); };
+    i.oninput = upd; upd(); setTimeout(() => { i.focus(); i.select(); }, 30);
+    bg.querySelector("#heroCancel").onclick = close;
+    bg.querySelector("#heroForm").onsubmit = ev => {
+      ev.preventDefault();
+      try { const was = s.name, c = WR.renameHero(i.value); close(); WR.sfx("level"); WR.toast(c === was ? "That's already your name 😊" : `✨ Hello, ${WR.esc(c)}!`, 2200); }
+      catch (x) { err.textContent = x.message; }
+    };
+  });
+};
+
 /* ---------------- settings ---------------- */
 function settings() {
   const s = WR.state;
   WR.modal(`<h2>⚙️ Settings</h2>
+    <div class="row hero-row" style="justify-content:space-between;margin-bottom:8px"><b>🦸 Hero name</b><span class="hero-cur"><span id="heroCur">${WR.esc(s.name)}</span> <button class="btn ghost small" id="heroEdit">✏️ Change</button></span></div>
     <div class="row" style="justify-content:space-between"><b>🔊 Sound effects</b><input type="checkbox" id="snd" ${s.settings.sound ? "checked" : ""}></div>
     <div class="row" style="justify-content:space-between;margin-top:8px"><b>🗣️ Listening speed</b><input type="range" class="slider" id="rt" min="0.5" max="1.3" step="0.1" value="${s.settings.rate}"></div>
     <div class="muted" style="font-size:.8rem;text-align:left">Voice: ${WR.esc(Speech.voiceName())}</div>
@@ -141,6 +181,7 @@ function settings() {
     bg.querySelector("#test").onclick = () => Speech.speak("Welcome to Word Realms! Let's learn English together.", s.settings.rate);
     bg.querySelector("#rst").onclick = () => { if (confirm("Reset all progress, stars and your pet?")) { WR.reset(); close(); boot(); } };
     bg.querySelector("#cls").onclick = close;
+    bg.querySelector("#heroEdit").onclick = () => { close(); WR.openRename(); };
     bg.querySelector("#plRe").onclick = () => { close(); WR.retakePlacement(); };
     const cs = bg.querySelector("#ccSet"); if (cs) cs.onclick = () => { close(); WR.Cloud.open(); };
   });
