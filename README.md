@@ -63,6 +63,8 @@ No build step and no dependencies. (It must be served over http so the JSON data
   * **Save**: `state.writing = { checks, crowns, best: { <taskId>: { total, crowns, scales, at } }, drafts: { <taskId>: { plan, text, at } } }`. Older saves gain this block in place; a partial block is completed without losing data.
   * Art: `assets/ui/quill.png` (a magic quill, a glowing storybook and a tiny sparkle fairy; 420 px, transparent), painted with Grok Bot's image generator, **not Higgsfield**. The earlier flat SVG version is kept as `assets/ui/quill.svg` / `quill_svg_backup.png`.
 
+* **📱 Light art for phones** (2026-10-30): every image now has a WebP copy in `assets/web/`, made by `python3 tools/optimize_art.py` (rerun it after adding art). Realm backgrounds come in 1280 px (desktop) and 720 px (screens ≤ 820 px wide), map thumbnails are 360 px WebP, and pets, avatars, the mirror and the quill are WebP with transparency. `WR.src`/`WR.img`/`WR.bgCss` in `js/core.js` pick the right size; `<img>` tags fall back WebP → PNG → SVG placeholder. The manifest art went from 14.3 MB of PNG to about 0.9 MB, and a phone loading the map plus a lesson now downloads about 300 KB of images instead of about 3.9 MB. Map thumbnails are lazy-loaded. Test: `tools/test/lightart.js` (phone and desktop sizes, no big PNGs, fallback with WebP blocked, no errors); screenshots `screenshots/lightart_*.png`.
+
 ## Art
 All 13 manifest images (4 pets, 3 avatars, 6 realm backgrounds) were made with Grok Bot's built-in image generator, **not Higgsfield**. They are saved at the manifest `path`s, character backgrounds were made transparent, and backgrounds have `thumb` JPGs for the map. If a PNG is missing, the game falls back to the SVG placeholders.
 

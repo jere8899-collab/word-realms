@@ -42,10 +42,29 @@ const fetchJSON = p => fetch(p).then(r => { if (!r.ok) throw new Error(p + " " +
 
 /* ---------- art from manifest, with placeholder fallback ---------- */
 WR.asset = id => (WR.manifest && WR.manifest.assets.find(a => a.id === id)) || null;
+// 📱 Light art: every image has a small WebP copy in assets/web (made by tools/optimize_art.py).
+// Phones (≤ 820 px wide) get the 720 px backgrounds, bigger screens the 1280 px ones; the original PNG
+// and then the SVG placeholder are the fallbacks if a WebP can't load.
+WR.small = () => (window.innerWidth || 1024) <= 820;
+WR.src = (id, kind = "auto") => {
+  const a = WR.asset(id); if (!a) return "";
+  const w = a.web || {};
+  if (kind === "thumb") return w.thumb || a.thumb || a.path;
+  if (kind === "orig") return a.path;
+  return (WR.small() ? w.small : w.large) || w.large || a.path;
+};
+// CSS background: WebP when available (every current browser supports it; only one layer, so nothing is downloaded twice)
+WR.bgCss = id => { const s = WR.src(id); return s ? `url('${s}')` : "none"; };
+WR.fallbackChain = (img) => {
+  const chain = (img.dataset.fbs || "").split("|").filter(Boolean);
+  const next = chain.shift(); img.dataset.fbs = chain.join("|");
+  if (next) img.src = next; else img.onerror = null;
+};
 WR.img = (id, cls = "", style = "", thumb = false) => {
   const a = WR.asset(id); if (!a) return "";
-  const src = thumb && a.thumb ? a.thumb : a.path;
-  return `<img class="${cls}" style="${style}" src="${src}" data-fb="${a.placeholder}" alt="${WR.esc(a.name)}" onerror="if(this.dataset.fb&&this.src.indexOf(this.dataset.fb)<0){this.src=this.dataset.fb}">`;
+  const src = WR.src(id, thumb ? "thumb" : "auto");
+  const fbs = [thumb && a.thumb, a.path, a.placeholder].filter(x => x && x !== src).join("|");
+  return `<img class="${cls}" style="${style}" src="${src}" data-fbs="${fbs}" alt="${WR.esc(a.name)}" decoding="async"${thumb ? ' loading="lazy"' : ""} onerror="WR.fallbackChain(this)">`;
 };
 
 /* ---------- state ---------- */

@@ -166,7 +166,7 @@ function render() {
     : `<div class="echo-text" id="echoText">${wordsHTML(it.text.split(/\s+/).map(w => ({ w })))}</div>`;
   const banner = !mic ? `<div class="echo-banner"><b>🌙 The Echo Well is listening in shadowing mode.</b> ${WR.esc(WHY[S.why] || "You chose to practise without the microphone.")}
       Listen 🔊, say it aloud, then tell me how it went. It's a great way to practise rhythm and sounds! ${SR() ? `<button class="btn ghost small" id="tryMic">🎤 Try the microphone</button>` : ""}</div>` : "";
-  WR.view(`<div class="lesson-bg" style="background-image:url('${bgA ? bgA.path : ""}')"></div>
+  WR.view(`<div class="lesson-bg" style="background-image:${bgA ? WR.bgCss(bgA.id) : "none"}"></div>
     <div class="row" style="margin:6px 0 8px"><button class="btn ghost small" id="quitBtn">← Leave</button><b class="title">🎤 Echo Well · ${WR.esc(S.realm.name)}</b></div>
     <div class="card hud">${hud()}</div>
     <div class="lesson fade-in echo"><div class="card qcard">${banner}

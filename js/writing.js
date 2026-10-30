@@ -296,9 +296,9 @@ WR.startWriting = async rid => {
   WR.stopWriting(); window.Speech && Speech.stop();
   const realm = WR.realms.find(r => r.id === rid), list = await WR.bank(rid, "writing");
   const bgA = WR.asset(realm.bg), w = W(), done = list.filter(p => w.best[p.id]).length;
-  WR.view(`<div class="lesson-bg" style="background-image:url('${bgA ? bgA.path : ""}')"></div>
+  WR.view(`<div class="lesson-bg" style="background-image:${bgA ? WR.bgCss(bgA.id) : "none"}"></div>
     <div class="row" style="margin:6px 0 8px"><button class="btn ghost small" id="qBackRealm">← ${WR.esc(realm.name)}</button><b class="title">✒️ The Story Quill · ${realm.level}</b></div>
-    <div class="card quill-head fade-in"><img class="quill-art" src="assets/ui/quill.png" alt="The Story Quill">
+    <div class="card quill-head fade-in"><img class="quill-art" src="assets/web/quill.webp" onerror="this.onerror=null;this.src='assets/ui/quill.png'" alt="The Story Quill">
       <div style="flex:1"><h2 style="margin:0">Write your own fairytale magic ✨</h2>
       <p class="muted" style="font-weight:700;margin:.3em 0">Pick a task, make a quick plan, write, then tap <b>Check my writing</b>. The Quill gives feedback on the four Cambridge writing scales: Content, Communicative Achievement, Organisation and Language.</p>
       <div class="row"><span class="pill">${realm.level} · ${list[0].words[0]}–${Math.max(...list.map(p => p.words[1]))} words</span><span class="pill" style="background:var(--mint)">✒️ ${done}/${list.length} written</span><span class="pill" style="background:var(--butter)">+1⭐ per new crown</span></div></div></div>
@@ -336,7 +336,7 @@ function stepsBar() {
 }
 function render() {
   const p = Q.p, bgA = WR.asset(Q.realm.bg), b = bestOf(p.id);
-  WR.view(`<div class="lesson-bg" style="background-image:url('${bgA ? bgA.path : ""}')"></div>
+  WR.view(`<div class="lesson-bg" style="background-image:${bgA ? WR.bgCss(bgA.id) : "none"}"></div>
     <div class="row" style="margin:6px 0 8px"><button class="btn ghost small" id="qList">← Tasks</button><b class="title">✒️ ${WR.esc(p.title)}</b></div>
     <div class="card hud quill-hud">${stepsBar()}</div>
     <div class="lesson fade-in quill"><div class="card qcard">${Q.step === "feedback" ? "" : taskCard(p)}<div id="qStep"></div></div>

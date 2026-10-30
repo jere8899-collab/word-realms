@@ -51,7 +51,7 @@ WR.startPlacement = async (opts = {}) => {
   intro();
 };
 WR.stopPlacement = () => { P = null; };
-const mirrorImg = (cls = "mirror") => `<img class="${cls}" src="assets/ui/mirror.png" alt="The Magic Mirror" onerror="this.outerHTML='<div class=&quot;${cls}&quot; style=&quot;font-size:4rem;text-align:center&quot;>🪞</div>'">`;
+const mirrorImg = (cls = "mirror") => `<img class="${cls}" src="assets/web/mirror.webp" alt="The Magic Mirror" onerror="if(this.src.indexOf('.webp')>0){this.src='assets/ui/mirror.png';return}this.outerHTML='<div class=&quot;${cls}&quot; style=&quot;font-size:4rem;text-align:center&quot;>🪞</div>'">`;
 
 function intro() {
   WR.view(`<div class="card mirror-card fade-in center">${mirrorImg()}

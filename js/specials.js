@@ -26,7 +26,7 @@ WR.playSpecial = async rid => {
   }
 };
 function header(realm, title) {
-  return `<div class="lesson-bg" style="background-image:url('${WR.asset(realm.bg).path}')"></div>
+  return `<div class="lesson-bg" style="background-image:${WR.bgCss(realm.bg)}"></div>
   <div class="row" style="margin:6px 0 8px"><button class="btn ghost small" id="quitBtn">← Leave</button><b class="title">${realm.special.emoji} ${WR.esc(title)}</b></div>`;
 }
 function finishSpecial(realm, score, stars, msg) {

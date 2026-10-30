@@ -29,7 +29,11 @@
       ],
       "transparent": true,
       "prompt": "a fluffy cream bunny with floppy ears tied with a pink ribbon, starter pet companion, cute anime style, kawaii chibi proportions (big head, small body), big sparkly eyes with star highlights, soft pastel palette (peach, mint, lavender, baby blue, butter yellow), clean soft lineart, gentle cel shading, storybook fairytale illustration, warm soft lighting, full body, centered, plain transparent/white background, no text, no watermark",
-      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield"
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/pet_bunny.webp",
+        "small": "assets/web/pet_bunny.webp"
+      }
     },
     {
       "id": "pet_fox",
@@ -45,7 +49,11 @@
       ],
       "transparent": true,
       "prompt": "a tiny peach-orange fox kit with a cloud-puff tail and a star-shaped forehead mark, starter pet companion, cute anime style, kawaii chibi proportions (big head, small body), big sparkly eyes with star highlights, soft pastel palette (peach, mint, lavender, baby blue, butter yellow), clean soft lineart, gentle cel shading, storybook fairytale illustration, warm soft lighting, full body, centered, plain transparent/white background, no text, no watermark",
-      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield"
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/pet_fox.webp",
+        "small": "assets/web/pet_fox.webp"
+      }
     },
     {
       "id": "pet_dragon",
@@ -61,7 +69,11 @@
       ],
       "transparent": true,
       "prompt": "a baby mint-green dragon with tiny wings and a round belly, starter pet companion, cute anime style, kawaii chibi proportions (big head, small body), big sparkly eyes with star highlights, soft pastel palette (peach, mint, lavender, baby blue, butter yellow), clean soft lineart, gentle cel shading, storybook fairytale illustration, warm soft lighting, full body, centered, plain transparent/white background, no text, no watermark",
-      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield"
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/pet_dragon.webp",
+        "small": "assets/web/pet_dragon.webp"
+      }
     },
     {
       "id": "pet_owl",
@@ -77,7 +89,11 @@
       ],
       "transparent": true,
       "prompt": "a round lavender owlet wearing little round reading glasses holding a tiny book, starter pet companion, cute anime style, kawaii chibi proportions (big head, small body), big sparkly eyes with star highlights, soft pastel palette (peach, mint, lavender, baby blue, butter yellow), clean soft lineart, gentle cel shading, storybook fairytale illustration, warm soft lighting, full body, centered, plain transparent/white background, no text, no watermark",
-      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield"
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/pet_owl.webp",
+        "small": "assets/web/pet_owl.webp"
+      }
     },
     {
       "id": "avatar_girl",
@@ -93,7 +109,11 @@
       ],
       "transparent": true,
       "prompt": "a chibi girl adventurer with a short pastel-pink bob, flower hairclip, cape and satchel of books, player avatar, cute anime style, kawaii chibi proportions (big head, small body), big sparkly eyes with star highlights, soft pastel palette (peach, mint, lavender, baby blue, butter yellow), clean soft lineart, gentle cel shading, storybook fairytale illustration, warm soft lighting, full body, centered, plain transparent/white background, no text, no watermark",
-      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield"
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/avatar_girl.webp",
+        "small": "assets/web/avatar_girl.webp"
+      }
     },
     {
       "id": "avatar_boy",
@@ -109,7 +129,11 @@
       ],
       "transparent": true,
       "prompt": "a chibi boy adventurer with fluffy baby-blue hair, explorer cap, scarf and a quill pen, player avatar, cute anime style, kawaii chibi proportions (big head, small body), big sparkly eyes with star highlights, soft pastel palette (peach, mint, lavender, baby blue, butter yellow), clean soft lineart, gentle cel shading, storybook fairytale illustration, warm soft lighting, full body, centered, plain transparent/white background, no text, no watermark",
-      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield"
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/avatar_boy.webp",
+        "small": "assets/web/avatar_boy.webp"
+      }
     },
     {
       "id": "avatar_mage",
@@ -125,7 +149,11 @@
       ],
       "transparent": true,
       "prompt": "a chibi apprentice mage with long lavender twin-tails, starry wizard hat and a wand, player avatar, cute anime style, kawaii chibi proportions (big head, small body), big sparkly eyes with star highlights, soft pastel palette (peach, mint, lavender, baby blue, butter yellow), clean soft lineart, gentle cel shading, storybook fairytale illustration, warm soft lighting, full body, centered, plain transparent/white background, no text, no watermark",
-      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield"
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/avatar_mage.webp",
+        "small": "assets/web/avatar_mage.webp"
+      }
     },
     {
       "id": "bg_a1",
@@ -143,7 +171,12 @@
       "transparent": false,
       "prompt": "a sunny flower meadow with a little cottage, rainbow and floating letter-shaped clouds, CEFR A1 realm 'Meadow of First Words', storybook fairytale landscape background, wide 16:9, no characters, no text, no watermark, soft painterly pastel, cute anime style, kawaii chibi proportions (big head, small body), big sparkly eyes with star highlights, soft pastel palette (peach, mint, lavender, baby blue, butter yellow), clean soft lineart, gentle cel shading, storybook fairytale illustration, warm soft lighting",
       "thumb": "assets/backgrounds/thumbs/bg_a1.jpg",
-      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield"
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/bg_a1_1280.webp",
+        "small": "assets/web/bg_a1_720.webp",
+        "thumb": "assets/web/bg_a1_thumb.webp"
+      }
     },
     {
       "id": "bg_a2",
@@ -161,7 +194,12 @@
       "transparent": false,
       "prompt": "a cozy candy-roofed village with cobble paths, lanterns and a bakery, CEFR A2 realm 'Candy Village', storybook fairytale landscape background, wide 16:9, no characters, no text, no watermark, soft painterly pastel, cute anime style, kawaii chibi proportions (big head, small body), big sparkly eyes with star highlights, soft pastel palette (peach, mint, lavender, baby blue, butter yellow), clean soft lineart, gentle cel shading, storybook fairytale illustration, warm soft lighting",
       "thumb": "assets/backgrounds/thumbs/bg_a2.jpg",
-      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield"
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/bg_a2_1280.webp",
+        "small": "assets/web/bg_a2_720.webp",
+        "thumb": "assets/web/bg_a2_thumb.webp"
+      }
     },
     {
       "id": "bg_b1",
@@ -179,7 +217,12 @@
       "transparent": false,
       "prompt": "an enchanted pastel forest with glowing mushrooms, fairy lights and a winding path, CEFR B1 realm 'Whispering Forest', storybook fairytale landscape background, wide 16:9, no characters, no text, no watermark, soft painterly pastel, cute anime style, kawaii chibi proportions (big head, small body), big sparkly eyes with star highlights, soft pastel palette (peach, mint, lavender, baby blue, butter yellow), clean soft lineart, gentle cel shading, storybook fairytale illustration, warm soft lighting",
       "thumb": "assets/backgrounds/thumbs/bg_b1.jpg",
-      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield"
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/bg_b1_1280.webp",
+        "small": "assets/web/bg_b1_720.webp",
+        "thumb": "assets/web/bg_b1_thumb.webp"
+      }
     },
     {
       "id": "bg_b2",
@@ -197,7 +240,12 @@
       "transparent": false,
       "prompt": "a shimmering crystal lake with a wooden bridge, swans and distant castle towers, CEFR B2 realm 'Crystal Lake', storybook fairytale landscape background, wide 16:9, no characters, no text, no watermark, soft painterly pastel, cute anime style, kawaii chibi proportions (big head, small body), big sparkly eyes with star highlights, soft pastel palette (peach, mint, lavender, baby blue, butter yellow), clean soft lineart, gentle cel shading, storybook fairytale illustration, warm soft lighting",
       "thumb": "assets/backgrounds/thumbs/bg_b2.jpg",
-      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield"
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/bg_b2_1280.webp",
+        "small": "assets/web/bg_b2_720.webp",
+        "thumb": "assets/web/bg_b2_thumb.webp"
+      }
     },
     {
       "id": "bg_c1",
@@ -215,7 +263,12 @@
       "transparent": false,
       "prompt": "a floating castle on fluffy clouds at sunset with hot-air balloons, CEFR C1 realm 'Cloud Castle', storybook fairytale landscape background, wide 16:9, no characters, no text, no watermark, soft painterly pastel, cute anime style, kawaii chibi proportions (big head, small body), big sparkly eyes with star highlights, soft pastel palette (peach, mint, lavender, baby blue, butter yellow), clean soft lineart, gentle cel shading, storybook fairytale illustration, warm soft lighting",
       "thumb": "assets/backgrounds/thumbs/bg_c1.jpg",
-      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield"
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/bg_c1_1280.webp",
+        "small": "assets/web/bg_c1_720.webp",
+        "thumb": "assets/web/bg_c1_thumb.webp"
+      }
     },
     {
       "id": "bg_c2",
@@ -233,7 +286,12 @@
       "transparent": false,
       "prompt": "a grand celestial library tower among stars and moons, books floating in the night sky, CEFR C2 realm 'Starlight Library', storybook fairytale landscape background, wide 16:9, no characters, no text, no watermark, soft painterly pastel, cute anime style, kawaii chibi proportions (big head, small body), big sparkly eyes with star highlights, soft pastel palette (peach, mint, lavender, baby blue, butter yellow), clean soft lineart, gentle cel shading, storybook fairytale illustration, warm soft lighting",
       "thumb": "assets/backgrounds/thumbs/bg_c2.jpg",
-      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield"
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/bg_c2_1280.webp",
+        "small": "assets/web/bg_c2_720.webp",
+        "thumb": "assets/web/bg_c2_thumb.webp"
+      }
     }
   ]
 }

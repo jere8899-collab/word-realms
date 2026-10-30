@@ -85,7 +85,7 @@ function qBody(it) {
 function render() {
   const it = L.items[L.i]; L.answered = false;
   const bgA = WR.asset(L.realm.bg);
-  WR.view(`<div class="lesson-bg" style="background-image:url('${bgA ? bgA.path : ""}')"></div>
+  WR.view(`<div class="lesson-bg" style="background-image:${bgA ? WR.bgCss(bgA.id) : "none"}"></div>
     <div class="row" style="margin:6px 0 8px"><button class="btn ghost small" id="quitBtn">← Leave</button><b class="title">${L.realm.emoji} ${WR.esc(L.title || "")}</b></div>
     <div class="card hud">${hud()}</div>
     <div class="lesson fade-in"><div class="card qcard">${qBody(it)}</div>
