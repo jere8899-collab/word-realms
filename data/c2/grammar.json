@@ -9,7 +9,12 @@
    "should touch you"
   ],
   "answer": 0,
-  "explain": "Negative adverbial → inversion: should you touch."
+  "explain": "Under no circumstances → inversion: should you + verb. Example: Under no circumstances should you open it.",
+  "notes": {
+   "you should touch": "Normal order isn't allowed.",
+   "touch you should": "The word order is scrambled.",
+   "should touch you": "'Should touch you' changes the meaning."
+  }
  },
  {
   "type": "mcq",
@@ -21,7 +26,12 @@
    "the roar was"
   ],
   "answer": 0,
-  "explain": "So + adjective + be + subject (inversion)."
+  "explain": "So + adjective fronted → inversion with be. Example: So bright was the light that we shut our eyes.",
+  "notes": {
+   "the dragon's roar was": "Normal order isn't allowed.",
+   "did the dragon roar": "Did roar doesn't follow an adjective.",
+   "the roar was": "Normal order again."
+  }
  },
  {
   "type": "mcq",
@@ -33,7 +43,12 @@
    "If"
   ],
   "answer": 0,
-  "explain": "Were it not for = If it weren't for (formal inversion)."
+  "explain": "Were it not for = if it were not for (present). Example: Were it not for you, I'd be lost.",
+  "notes": {
+   "Had": "Had it not been for is the past version.",
+   "Was": "Was isn't used in this inversion.",
+   "If": "If needs 'were': If it were not for."
+  }
  },
  {
   "type": "mcq",
@@ -45,7 +60,12 @@
    "that"
   ],
   "answer": 0,
-  "explain": "Much as = although (very much)."
+  "explain": "Much as = although (very much). Example: Much as I'd love to, I can't.",
+  "notes": {
+   "though": "Though doesn't follow much.",
+   "while": "While doesn't follow much.",
+   "that": "That doesn't fit."
+  }
  },
  {
   "type": "mcq",
@@ -57,7 +77,12 @@
    "how"
   ],
   "answer": 0,
-  "explain": "Try as he might = however hard he tried."
+  "explain": "Try as he might = however hard he tried. Example: Try as I might, I couldn't sleep.",
+  "notes": {
+   "though": "Though isn't used here.",
+   "so": "So isn't used here.",
+   "how": "How isn't used here."
+  }
  },
  {
   "type": "mcq",
@@ -69,7 +94,12 @@
    "which its"
   ],
   "answer": 0,
-  "explain": "whose + noun."
+  "explain": "Whose for possession. Example: a riddle whose answer is simple.",
+  "notes": {
+   "the": "The needs 'the answer to which'.",
+   "of which": "Of which needs 'the answer of which'.",
+   "which its": "Which its is not English."
+  }
  },
  {
   "type": "mcq",
@@ -81,7 +111,12 @@
    "has watched"
   ],
   "answer": 0,
-  "explain": "Past perfect continuous: an ongoing earlier action."
+  "explain": "Past perfect continuous for a long action before a past moment. Example: He had been waiting all day.",
+  "notes": {
+   "was watched": "Was watched is passive.",
+   "watches": "Watches is present.",
+   "has watched": "Has watched is present perfect."
+  }
  },
  {
   "type": "mcq",
@@ -93,7 +128,12 @@
    "was"
   ],
   "answer": 0,
-  "explain": "Mandative subjunctive: imperative that + be."
+  "explain": "Imperative that + subjunctive be. Example: It is imperative that she be told.",
+  "notes": {
+   "is": "Is isn't subjunctive.",
+   "will be": "Will be isn't used here.",
+   "was": "Was isn't subjunctive."
+  }
  },
  {
   "type": "mcq",
@@ -105,7 +145,12 @@
    "spoken"
   ],
   "answer": 0,
-  "explain": "Passive: words are spoken by people."
+  "explain": "Passive: was spoken (nobody spoke it). Example: Not a word was said.",
+  "notes": {
+   "spoke": "Spoke is active: a word can't speak.",
+   "did speak": "Did speak is active.",
+   "spoken": "Spoken alone needs 'was'."
+  }
  },
  {
   "type": "mcq",
@@ -117,7 +162,12 @@
    "intrigued more"
   ],
   "answer": 0,
-  "explain": "the + comparative, the + comparative."
+  "explain": "The + comparative, the + comparative. Example: The harder the puzzle, the happier I am.",
+  "notes": {
+   "more intrigued": "Needs 'the'.",
+   "the most intrigued": "Superlative is wrong here.",
+   "intrigued more": "Word order is wrong."
+  }
  },
  {
   "type": "mcq",
@@ -129,7 +179,12 @@
    "that"
   ],
   "answer": 0,
-  "explain": "No sooner… than."
+  "explain": "No sooner had... than. Example: No sooner had I left than it rained.",
+  "notes": {
+   "when": "When goes with hardly/scarcely.",
+   "then": "Then isn't used.",
+   "that": "That isn't used."
+  }
  },
  {
   "type": "mcq",
@@ -141,7 +196,12 @@
    "to awaken"
   ],
   "answer": 0,
-  "explain": "Should + subject + base verb = If the dragon awakens."
+  "explain": "Should + subject + plain verb = if. Example: Should you see her, say hi.",
+  "notes": {
+   "awakens": "No -s after should.",
+   "awakened": "No -ed after should.",
+   "to awaken": "No 'to' after should."
+  }
  },
  {
   "type": "mcq",
@@ -153,7 +213,12 @@
    "has owned"
   ],
   "answer": 0,
-  "explain": "as though + past = unreal comparison."
+  "explain": "As though + past simple for something unreal now. Example: He acts as though he were king.",
+  "notes": {
+   "owns": "Owns suggests it's true.",
+   "would own": "Would own isn't used here.",
+   "has owned": "Has owned changes the meaning."
+  }
  },
  {
   "type": "mcq",
@@ -165,7 +230,12 @@
    "will"
   ],
   "answer": 0,
-  "explain": "Fixed phrase: Be that as it may = nevertheless."
+  "explain": "Be that as it may = even so (fixed phrase).",
+  "notes": {
+   "might": "Might isn't the fixed phrase.",
+   "can": "Can isn't the fixed phrase.",
+   "will": "Will isn't the fixed phrase."
+  }
  },
  {
   "type": "mcq",
@@ -177,7 +247,12 @@
    "grasp one"
   ],
   "answer": 0,
-  "explain": "Only by… → inversion."
+  "explain": "Only by... → inversion: can one grasp. Example: Only by practising can you improve.",
+  "notes": {
+   "one can grasp": "Normal order isn't allowed.",
+   "one grasps": "Normal order again.",
+   "grasp one": "Scrambled order."
+  }
  },
  {
   "type": "mcq",
@@ -189,7 +264,12 @@
    "he turned"
   ],
   "answer": 0,
-  "explain": "Scarcely had… when."
+  "explain": "Scarcely had + subject + past participle ... when. Example: Scarcely had we begun when it rained.",
+  "notes": {
+   "he had turned": "Normal order isn't allowed.",
+   "did he turn": "Did turn isn't used with 'when' here.",
+   "he turned": "Normal order again."
+  }
  },
  {
   "type": "mcq",
@@ -201,7 +281,12 @@
    "the scholars saw"
   ],
   "answer": 0,
-  "explain": "Negative inversion with 'Never before'."
+  "explain": "Never before → inversion; past perfect for before then. Example: Never before had I seen snow.",
+  "notes": {
+   "the scholars had seen": "Normal order isn't allowed.",
+   "have seen the scholars": "Wrong order and tense.",
+   "the scholars saw": "Normal order."
+  }
  },
  {
   "type": "mcq",
@@ -213,7 +298,12 @@
    "can"
   ],
   "answer": 0,
-  "explain": "Fixed subjunctive phrase: come what may."
+  "explain": "Come what may = whatever happens (fixed phrase).",
+  "notes": {
+   "might": "Might isn't the fixed phrase.",
+   "will": "Will isn't the fixed phrase.",
+   "can": "Can isn't the fixed phrase."
+  }
  },
  {
   "type": "mcq",
@@ -225,7 +315,12 @@
    "won't be"
   ],
   "answer": 0,
-  "explain": "'It's not as though' + past perfect for an unreal past situation."
+  "explain": "It's not as though + past perfect = he WAS warned (so no excuse). Example: It's not as though I hadn't told you.",
+  "notes": {
+   "wasn't being": "Wasn't being is continuous and odd.",
+   "isn't": "Isn't is present.",
+   "won't be": "Won't be is future."
+  }
  },
  {
   "type": "mcq",
@@ -237,7 +332,12 @@
    "However baffling"
   ],
   "answer": 0,
-  "explain": "Adjective + though + subject + verb = although it was baffling."
+  "explain": "Adjective + though + it was = although it was... Example: Tired though she was, she kept going.",
+  "notes": {
+   "Baffled": "Baffled describes a person.",
+   "Bafflingly": "An adverb can't start this pattern.",
+   "However baffling": "However baffling needs 'it was' without though."
+  }
  },
  {
   "type": "mcq",
@@ -249,7 +349,12 @@
    "have resigned to"
   ],
   "answer": 0,
-  "explain": "would sooner + base verb."
+  "explain": "Would sooner + plain verb. Example: I'd sooner walk.",
+  "notes": {
+   "resigned": "Resigned is past.",
+   "to resign": "No 'to' after would sooner.",
+   "have resigned to": "Have resigned to is wrong."
+  }
  },
  {
   "type": "mcq",
@@ -261,7 +366,12 @@
    "still"
   ],
   "answer": 0,
-  "explain": "'Were it ever to…' (formal, hypothetical)."
+  "explain": "Were it ever to... = if it ever... (formal). Example: Were it ever to happen, we'd be ready.",
+  "notes": {
+   "never": "Never makes no sense here.",
+   "yet": "Yet doesn't fit.",
+   "still": "Still doesn't fit."
+  }
  },
  {
   "type": "mcq",
@@ -273,11 +383,16 @@
    "did she"
   ],
   "answer": 0,
-  "explain": "Inversion after 'So + adjective'."
+  "explain": "So + adjective fronted → inversion: was she. Example: So tired was he that he slept at once.",
+  "notes": {
+   "she was": "Normal order isn't allowed.",
+   "she had": "Had doesn't go with engrossed here.",
+   "did she": "Did doesn't go with an adjective."
+  }
  },
  {
   "type": "mcq",
-  "q": "It is vital that no one ___ informed until the vote.",
+  "q": "It is vital that no one ___ informed until the birthday surprise.",
   "options": [
    "be",
    "is",
@@ -285,7 +400,12 @@
    "was"
   ],
   "answer": 0,
-  "explain": "Formal subjunctive after 'vital that'."
+  "explain": "Vital that + subjunctive be. Example: It's vital that he be ready.",
+  "notes": {
+   "is": "Is isn't subjunctive.",
+   "will be": "Will be isn't used.",
+   "was": "Was isn't subjunctive."
+  }
  },
  {
   "type": "mcq",
@@ -297,7 +417,12 @@
    "would mind it"
   ],
   "answer": 0,
-  "explain": "'Not that I mind' = I don't mind, but…"
+  "explain": "Not that I mind = I don't mind, but... (fixed). Example: Not that I mind, but you're late.",
+  "notes": {
+   "minded": "Minded is past.",
+   "am minding": "Am minding is odd.",
+   "would mind it": "Would mind it doesn't fit."
+  }
  },
  {
   "type": "mcq",
@@ -309,7 +434,12 @@
    "Did"
   ],
   "answer": 0,
-  "explain": "Inverted third conditional."
+  "explain": "Had + subject + not + past participle = if... hadn't. Example: Had she not called, I'd have left.",
+  "notes": {
+   "If": "If needs 'had': If the archivist had not.",
+   "Should": "Should is for future.",
+   "Did": "Did isn't used here."
+  }
  },
  {
   "type": "mcq",
@@ -321,7 +451,12 @@
    "beyond"
   ],
   "answer": 0,
-  "explain": "far from + -ing = not at all."
+  "explain": "Far from + -ing = not at all. Example: Far from being angry, she laughed.",
+  "notes": {
+   "off": "Off isn't used.",
+   "away": "Away isn't used.",
+   "beyond": "Beyond isn't used."
+  }
  },
  {
   "type": "mcq",
@@ -333,7 +468,12 @@
    "would"
   ],
   "answer": 0,
-  "explain": "Inversion with 'Little did…'."
+  "explain": "Little did + subject + plain verb. Example: Little did we know.",
+  "notes": {
+   "had": "Had needs a past participle.",
+   "was": "Was doesn't go with know.",
+   "would": "Would changes the meaning."
+  }
  },
  {
   "type": "mcq",
@@ -345,11 +485,16 @@
    "does"
   ],
   "answer": 0,
-  "explain": "Inversion after a fronted 'Only' adverbial: Only in… + is + subject + past participle."
+  "explain": "Only in... → inversion; passive is revealed. Example: Only then is the secret told.",
+  "notes": {
+   "was being": "Was being is continuous.",
+   "has": "Has needs 'been'.",
+   "does": "Does doesn't go with revealed."
+  }
  },
  {
   "type": "mcq",
-  "q": "Such ___ the force of her argument that the council fell silent.",
+  "q": "Such ___ the force of her argument that the whole class fell silent.",
   "options": [
    "was",
    "were",
@@ -357,6 +502,11 @@
    "did"
   ],
   "answer": 0,
-  "explain": "Such + be + noun phrase + that (inversion); 'the force' is singular."
+  "explain": "Such + be + noun (inverted) + that. Example: Such was the noise that we left.",
+  "notes": {
+   "were": "Were is plural.",
+   "had": "Had doesn't fit.",
+   "did": "Did doesn't fit."
+  }
  }
 ]

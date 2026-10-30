@@ -14,7 +14,12 @@
       "the great depth of the lake"
      ],
      "answer": 0,
-     "explain": "Mussels filter up to a litre a day."
+     "explain": "Mussels filter up to a litre a day.",
+     "notes": {
+      "very cold water temperatures": "The story doesn't say “very cold water temperatures”. Look for the line that answers the question.",
+      "the small number of boats": "The story doesn't say “the small number of boats”. Look for the line that answers the question.",
+      "the great depth of the lake": "The story doesn't say “the great depth of the lake”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -26,7 +31,12 @@
       "fishing"
      ],
      "answer": 0,
-     "explain": "'…which researchers link to rising water temperatures.'"
+     "explain": "'…which researchers link to rising water temperatures.'",
+     "notes": {
+      "tourism": "The story doesn't say “tourism”. Look for the line that answers the question.",
+      "pollution from businesses": "The story doesn't say “pollution from businesses”. Look for the line that answers the question.",
+      "fishing": "The story doesn't say “fishing”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -38,7 +48,12 @@
       "They think the scientists are wrong."
      ],
      "answer": 0,
-     "explain": "Tourism is 'the area's main source of income'."
+     "explain": "Tourism is 'the area's main source of income'.",
+     "notes": {
+      "They think mussels aren't important.": "The story doesn't say “They think mussels aren't important.”. Look for the line that answers the question.",
+      "It is too expensive.": "The story doesn't say “It is too expensive.”. Look for the line that answers the question.",
+      "They think the scientists are wrong.": "The story doesn't say “They think the scientists are wrong.”. Look for the line that answers the question."
+     }
     }
    ]
   },
@@ -56,7 +71,12 @@
       "that schools treat all pupils fairly"
      ],
      "answer": 0,
-     "explain": "'Many people assume that introverts dislike other people. In reality…'"
+     "explain": "'Many people assume that introverts dislike other people. In reality…'",
+     "notes": {
+      "that extroverts are always loud": "The story doesn't say “that extroverts are always loud”. Look for the line that answers the question.",
+      "that parties are tiring for everyone": "The story doesn't say “that parties are tiring for everyone”. Look for the line that answers the question.",
+      "that schools treat all pupils fairly": "The story doesn't say “that schools treat all pupils fairly”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -68,7 +88,12 @@
       "lonely"
      ],
      "answer": 0,
-     "explain": "'…feel drained afterwards and need time alone to recharge.'"
+     "explain": "'…feel drained afterwards and need time alone to recharge.'",
+     "notes": {
+      "energised": "The story doesn't say “energised”. Look for the line that answers the question.",
+      "angry": "The story doesn't say “angry”. Look for the line that answers the question.",
+      "lonely": "The story doesn't say “lonely”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -80,7 +105,12 @@
       "introverts refusing to change at all"
      ],
      "answer": 0,
-     "explain": "'Schools and workplaces reward only the loudest voices.'"
+     "explain": "'Schools and workplaces reward only the loudest voices.'",
+     "notes": {
+      "extroverts being selfish at work": "The story doesn't say “extroverts being selfish at work”. Look for the line that answers the question.",
+      "parties being pointless and draining": "The story doesn't say “parties being pointless and draining”. Look for the line that answers the question.",
+      "introverts refusing to change at all": "The story doesn't say “introverts refusing to change at all”. Look for the line that answers the question."
+     }
     }
    ]
   },
@@ -98,7 +128,12 @@
       "The bridge was broken after the winter."
      ],
      "answer": 0,
-     "explain": "The rumours said he stayed away because of a duchess."
+     "explain": "The rumours said he stayed away because of a duchess.",
+     "notes": {
+      "She was ill and too weak to run to him.": "The story doesn't say “She was ill and too weak to run to him.”. Look for the line that answers the question.",
+      "She didn't recognise him on his horse.": "The story doesn't say “She didn't recognise him on his horse.”. Look for the line that answers the question.",
+      "The bridge was broken after the winter.": "The story doesn't say “The bridge was broken after the winter.”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -110,7 +145,12 @@
       "She is giving a gift to the lake."
      ],
      "answer": 0,
-     "explain": "Letting the ring sink is a quiet rejection."
+     "explain": "Letting the ring sink is a quiet rejection.",
+     "notes": {
+      "She accepts his proposal.": "The story doesn't say “She accepts his proposal.”. Look for the line that answers the question.",
+      "She wants to keep it safe.": "The story doesn't say “She wants to keep it safe.”. Look for the line that answers the question.",
+      "She is giving a gift to the lake.": "The story doesn't say “She is giving a gift to the lake.”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -122,7 +162,12 @@
       "fearfully and nervously"
      ],
      "answer": 0,
-     "explain": "'She said simply' — controlled and distant."
+     "explain": "'She said simply' — controlled and distant.",
+     "notes": {
+      "joyfully and warmly": "The story doesn't say “joyfully and warmly”. Look for the line that answers the question.",
+      "furiously and loudly": "The story doesn't say “furiously and loudly”. Look for the line that answers the question.",
+      "fearfully and nervously": "The story doesn't say “fearfully and nervously”. Look for the line that answers the question."
+     }
     }
    ]
   },
@@ -140,7 +185,12 @@
       "studying part-time"
      ],
      "answer": 0,
-     "explain": "68% preferred fewer hours for less pay."
+     "explain": "68% preferred fewer hours for less pay.",
+     "notes": {
+      "more money for longer hours": "The story doesn't say “more money for longer hours”. Look for the line that answers the question.",
+      "not working at all": "The story doesn't say “not working at all”. Look for the line that answers the question.",
+      "studying part-time": "The story doesn't say “studying part-time”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -152,7 +202,12 @@
       "They refused to answer the survey questions."
      ],
      "answer": 0,
-     "explain": "52% is lower than 68%."
+     "explain": "52% is lower than 68%.",
+     "notes": {
+      "More of them preferred shorter hours.": "The story doesn't say “More of them preferred shorter hours.”. Look for the line that answers the question.",
+      "They gave exactly the same answers as others.": "The story doesn't say “They gave exactly the same answers as others.”. Look for the line that answers the question.",
+      "They refused to answer the survey questions.": "The story doesn't say “They refused to answer the survey questions.”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -164,7 +219,12 @@
       "letting teenagers work long hours"
      ],
      "answer": 0,
-     "explain": "'…warn against assuming that the younger generation is simply lazy.'"
+     "explain": "'…warn against assuming that the younger generation is simply lazy.'",
+     "notes": {
+      "paying teenagers higher wages": "The story doesn't say “paying teenagers higher wages”. Look for the line that answers the question.",
+      "trusting surveys of teenagers": "The story doesn't say “trusting surveys of teenagers”. Look for the line that answers the question.",
+      "letting teenagers work long hours": "The story doesn't say “letting teenagers work long hours”. Look for the line that answers the question."
+     }
     }
    ]
   },
@@ -182,7 +242,12 @@
       "She has been put on a waiting list."
      ],
      "answer": 0,
-     "explain": "Her knowledge 'is not yet sufficient' — a polite refusal."
+     "explain": "Her knowledge 'is not yet sufficient' — a polite refusal.",
+     "notes": {
+      "She has been offered the guide job.": "The story doesn't say “She has been offered the guide job.”. Look for the line that answers the question.",
+      "She has been invited to an interview.": "The story doesn't say “She has been invited to an interview.”. Look for the line that answers the question.",
+      "She has been put on a waiting list.": "The story doesn't say “She has been put on a waiting list.”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -194,7 +259,12 @@
       "She can't afford the training course fee."
      ],
      "answer": 0,
-     "explain": "'…your knowledge of local wildlife is not yet sufficient.'"
+     "explain": "'…your knowledge of local wildlife is not yet sufficient.'",
+     "notes": {
+      "She doesn't have enough work experience.": "The story doesn't say “She doesn't have enough work experience.”. Look for the line that answers the question.",
+      "She sent her application in too late.": "The story doesn't say “She sent her application in too late.”. Look for the line that answers the question.",
+      "She can't afford the training course fee.": "The story doesn't say “She can't afford the training course fee.”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -206,7 +276,12 @@
       "Volunteer as a guide from March onwards."
      ],
      "answer": 0,
-     "explain": "Free course, then reapply in summer."
+     "explain": "Free course, then reapply in summer.",
+     "notes": {
+      "Apply for a different job at the lake.": "The story doesn't say “Apply for a different job at the lake.”. Look for the line that answers the question.",
+      "Pay for some extra training this summer.": "The story doesn't say “Pay for some extra training this summer.”. Look for the line that answers the question.",
+      "Volunteer as a guide from March onwards.": "The story doesn't say “Volunteer as a guide from March onwards.”. Look for the line that answers the question."
+     }
     }
    ]
   },
@@ -224,7 +299,12 @@
       "It lets them hide among glass stones."
      ],
      "answer": 0,
-     "explain": "'A hungry heron sees only the stones on the lakebed.'"
+     "explain": "'A hungry heron sees only the stones on the lakebed.'",
+     "notes": {
+      "It makes them look like small fish.": "The story doesn't say “It makes them look like small fish.”. Look for the line that answers the question.",
+      "It reflects sunlight into a heron's eyes.": "The story doesn't say “It reflects sunlight into a heron's eyes.”. Look for the line that answers the question.",
+      "It lets them hide among glass stones.": "The story doesn't say “It lets them hide among glass stones.”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -236,7 +316,12 @@
       "The lakes are getting much warmer."
      ],
      "answer": 0,
-     "explain": "'In murky conditions the newts lose their advantage.'"
+     "explain": "'In murky conditions the newts lose their advantage.'",
+     "notes": {
+      "Tourists keep catching the newts.": "The story doesn't say “Tourists keep catching the newts.”. Look for the line that answers the question.",
+      "Herons have learned to find them.": "The story doesn't say “Herons have learned to find them.”. Look for the line that answers the question.",
+      "The lakes are getting much warmer.": "The story doesn't say “The lakes are getting much warmer.”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -248,7 +333,12 @@
       "Critical of the volunteers' work."
      ],
      "answer": 0,
-     "explain": "'Scientists warn it is too early to celebrate.'"
+     "explain": "'Scientists warn it is too early to celebrate.'",
+     "notes": {
+      "Delighted: the newts are now safe.": "The story doesn't say “Delighted: the newts are now safe.”. Look for the line that answers the question.",
+      "Pessimistic: the newts will die out.": "The story doesn't say “Pessimistic: the newts will die out.”. Look for the line that answers the question.",
+      "Critical of the volunteers' work.": "The story doesn't say “Critical of the volunteers' work.”. Look for the line that answers the question."
+     }
     }
    ]
   },
@@ -266,7 +356,12 @@
       "Parents bought more books at home."
      ],
      "answer": 0,
-     "explain": "'Library borrowing went up by a fifth.'"
+     "explain": "'Library borrowing went up by a fifth.'",
+     "notes": {
+      "Students wrote more book reviews.": "The story doesn't say “Students wrote more book reviews.”. Look for the line that answers the question.",
+      "Teachers set extra reading tasks.": "The story doesn't say “Teachers set extra reading tasks.”. Look for the line that answers the question.",
+      "Parents bought more books at home.": "The story doesn't say “Parents bought more books at home.”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -278,7 +373,12 @@
       "Lessons became too easy for everyone."
      ],
      "answer": 0,
-     "explain": "'Weaker students fell further behind without regular practice.'"
+     "explain": "'Weaker students fell further behind without regular practice.'",
+     "notes": {
+      "Students were too tired in class.": "The story doesn't say “Students were too tired in class.”. Look for the line that answers the question.",
+      "Parents did their children's work.": "The story doesn't say “Parents did their children's work.”. Look for the line that answers the question.",
+      "Lessons became too easy for everyone.": "The story doesn't say “Lessons became too easy for everyone.”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -290,7 +390,12 @@
       "to let each teacher decide alone"
      ],
      "answer": 0,
-     "explain": "'…short, optional tasks, with a weekly family project.'"
+     "explain": "'…short, optional tasks, with a weekly family project.'",
+     "notes": {
+      "to ban homework permanently": "The story doesn't say “to ban homework permanently”. Look for the line that answers the question.",
+      "to return to the old system": "The story doesn't say “to return to the old system”. Look for the line that answers the question.",
+      "to let each teacher decide alone": "The story doesn't say “to let each teacher decide alone”. Look for the line that answers the question."
+     }
     }
    ]
   }

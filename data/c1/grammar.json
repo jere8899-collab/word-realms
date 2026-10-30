@@ -1,7 +1,7 @@
 [
  {
   "type": "mcq",
-  "q": "Were the council to approve the plan, construction ___ next year.",
+  "q": "Were the school council to approve the treehouse plan, building ___ next term.",
   "options": [
    "would begin",
    "will begin",
@@ -9,7 +9,12 @@
    "had begun"
   ],
   "answer": 0,
-  "explain": "Were + subject + to-infinitive = formal hypothetical → would."
+  "explain": "'Were + subject + to + verb' is a formal unreal 'if', so the result uses would + verb. Example: Were it to snow, school would close.",
+  "notes": {
+   "will begin": "Will begin is a real future; this is a hypothetical.",
+   "began": "Began is past and doesn't fit 'next term'.",
+   "had begun": "Had begun is past perfect, not a result form."
+  }
  },
  {
   "type": "mcq",
@@ -21,7 +26,12 @@
    "knew they"
   ],
   "answer": 0,
-  "explain": "Negative adverbial at the start → inversion: Little did they know."
+  "explain": "After negative words like Little at the start, invert: did + subject + verb. Example: Little did I expect a surprise party.",
+  "notes": {
+   "they knew": "Normal order isn't allowed after a fronted 'Little'.",
+   "they did know": "'They did know' still has subject first.",
+   "knew they": "'Knew they' needs did: did they know."
+  }
  },
  {
   "type": "mcq",
@@ -33,11 +43,16 @@
    "they did realise"
   ],
   "answer": 0,
-  "explain": "Only after… + inversion in the main clause."
+  "explain": "'Only after...' at the start triggers inversion in the main clause. Example: Only after dinner did we open the presents.",
+  "notes": {
+   "they realised": "Normal order isn't allowed after 'Only after...'.",
+   "realised they": "'Realised they' isn't inversion; we need did.",
+   "they did realise": "'They did realise' keeps subject first."
+  }
  },
  {
   "type": "mcq",
-  "q": "It's essential that every member ___ present.",
+  "q": "It's essential that every team member ___ at practice on Saturday.",
   "options": [
    "be",
    "is being",
@@ -45,11 +60,16 @@
    "being"
   ],
   "answer": 0,
-  "explain": "Formal subjunctive after 'essential that': be."
+  "explain": "After essential/vital/important that, formal English uses the plain verb (subjunctive) for everyone. Example: It's vital that he be on time.",
+  "notes": {
+   "is being": "Is being is continuous and not the subjunctive.",
+   "will be": "Will be isn't used after 'essential that' in formal style.",
+   "being": "Being has no subject verb."
+  }
  },
  {
   "type": "mcq",
-  "q": "___ the heavy rain, the ceremony went ahead.",
+  "q": "___ the heavy rain, the sports day went ahead.",
   "options": [
    "Despite",
    "Although",
@@ -57,11 +77,16 @@
    "In spite"
   ],
   "answer": 0,
-  "explain": "Despite + noun; Although + clause; In spite OF."
+  "explain": "Despite + noun (no 'of'). Example: Despite the noise, I slept.",
+  "notes": {
+   "Although": "Although needs a clause: Although it rained heavily.",
+   "However": "However joins two sentences: It rained. However, ...",
+   "In spite": "In spite needs 'of': in spite of the rain."
+  }
  },
  {
   "type": "mcq",
-  "q": "The proposal, ___ merits are obvious, was rejected.",
+  "q": "The robot design, ___ merits are obvious, was rejected by the judges.",
   "options": [
    "whose",
    "which",
@@ -69,11 +94,16 @@
    "of which"
   ],
   "answer": 0,
-  "explain": "whose + noun = possession."
+  "explain": "Whose shows possession for things too. Example: a book whose cover is torn.",
+  "notes": {
+   "which": "Which can't show possession.",
+   "its": "Its can't join two clauses.",
+   "of which": "Of which would need 'the merits of which'."
+  }
  },
  {
   "type": "mcq",
-  "q": "She'd sooner resign than ___ the truth.",
+  "q": "She'd sooner quit the team than ___ the truth.",
   "options": [
    "hide",
    "hiding",
@@ -81,11 +111,16 @@
    "hidden"
   ],
   "answer": 0,
-  "explain": "would sooner X than Y — both bare infinitives."
+  "explain": "Would sooner X than Y: both verbs are plain forms. Example: I'd sooner walk than wait.",
+  "notes": {
+   "hiding": "-ing doesn't match 'quit'.",
+   "to hide": "No 'to' after than here.",
+   "hidden": "Hidden is a past participle."
+  }
  },
  {
   "type": "mcq",
-  "q": "Not only ___ the treaty, but he also broke it.",
+  "q": "Not only ___ the class promise, but he also broke it.",
   "options": [
    "did he sign",
    "he signed",
@@ -93,11 +128,16 @@
    "signed he"
   ],
   "answer": 0,
-  "explain": "Not only + inversion."
+  "explain": "Not only at the start → inversion: did he sign. Example: Not only did she win, she also broke the record.",
+  "notes": {
+   "he signed": "Normal order isn't allowed after 'Not only'.",
+   "he did sign": "'He did sign' keeps subject first.",
+   "signed he": "'Signed he' is old-fashioned and wrong here."
+  }
  },
  {
   "type": "mcq",
-  "q": "Hardly had the debate started ___ the lights went out.",
+  "q": "Hardly had the school play started ___ the lights went out.",
   "options": [
    "when",
    "than",
@@ -105,7 +145,12 @@
    "that"
   ],
   "answer": 0,
-  "explain": "Hardly… when; No sooner… than."
+  "explain": "Hardly had... when (no sooner had... than). Example: Hardly had I sat down when the phone rang.",
+  "notes": {
+   "than": "Than goes with no sooner.",
+   "then": "Then isn't used in this pattern.",
+   "that": "That isn't used in this pattern."
+  }
  },
  {
   "type": "mcq",
@@ -117,11 +162,16 @@
    "doesn't"
   ],
   "answer": 0,
-  "explain": "Should you… = If you…; an imperative follows."
+  "explain": "'Should you...' = if you...; the instruction is an imperative: don't + verb. Example: Should you get lost, don't panic.",
+  "notes": {
+   "not": "Not alone can't make an imperative.",
+   "no": "No isn't used before a verb like this.",
+   "doesn't": "Doesn't needs he/she/it."
+  }
  },
  {
   "type": "mcq",
-  "q": "The minister is said ___ the decision before the vote.",
+  "q": "The inventor is said ___ the discovery years before anyone else.",
   "options": [
    "to have made",
    "to make",
@@ -129,11 +179,16 @@
    "that made"
   ],
   "answer": 0,
-  "explain": "is said + perfect infinitive for an earlier action."
+  "explain": "Is said to have + past participle reports something earlier. Example: She's said to have learned five languages.",
+  "notes": {
+   "to make": "To make is about now or the future.",
+   "having made": "Having made doesn't follow 'is said'.",
+   "that made": "That made needs 'It is said that...'."
+  }
  },
  {
   "type": "mcq",
-  "q": "What I find most frustrating ___ the lack of transparency.",
+  "q": "What I find most frustrating ___ the lack of save points in this game.",
   "options": [
    "is",
    "are",
@@ -141,11 +196,16 @@
    "to be"
   ],
   "answer": 0,
-  "explain": "A what-clause subject takes a singular verb."
+  "explain": "A What-clause subject is singular: What I need is... Example: What I love is the music.",
+  "notes": {
+   "are": "Are is plural; the What-clause is singular.",
+   "being": "Being has no main verb.",
+   "to be": "To be isn't a finite verb."
+  }
  },
  {
   "type": "mcq",
-  "q": "Rarely ___ such eloquence in the council chamber.",
+  "q": "Rarely ___ such eloquence at a school assembly.",
   "options": [
    "have we heard",
    "we have heard",
@@ -153,7 +213,12 @@
    "heard we"
   ],
   "answer": 0,
-  "explain": "Rarely at the start → inversion."
+  "explain": "Fronted Rarely → inversion with an auxiliary. Example: Rarely have I seen such snow.",
+  "notes": {
+   "we have heard": "Normal order isn't allowed after 'Rarely'.",
+   "we heard": "'We heard' is normal order.",
+   "heard we": "'Heard we' needs an auxiliary."
+  }
  },
  {
   "type": "mcq",
@@ -165,11 +230,16 @@
    "whom"
   ],
   "answer": 0,
-  "explain": "Cleft sentence: It was X that…"
+  "explain": "A cleft sentence: It was X that... Example: It was the dog that ate it.",
+  "notes": {
+   "what": "What doesn't follow 'It was X'.",
+   "who": "Who would need a person; courage is a thing.",
+   "whom": "Whom is an object pronoun."
+  }
  },
  {
   "type": "mcq",
-  "q": "Had it not been for her intervention, the talks ___.",
+  "q": "Had it not been for her quick thinking, the sandcastle ___.",
   "options": [
    "would have collapsed",
    "would collapse",
@@ -177,11 +247,16 @@
    "collapsed"
   ],
   "answer": 0,
-  "explain": "Had it not been for = If it hadn't been for → would have + p.p."
+  "explain": "Had it not been for... = without (past); result: would have + past participle. Example: Had it not been for you, I'd have failed.",
+  "notes": {
+   "would collapse": "Would fail is present/future.",
+   "had collapsed": "Had failed isn't a result form.",
+   "collapsed": "Failed is plain past."
+  }
  },
  {
   "type": "mcq",
-  "q": "So convincing ___ that the council changed its mind.",
+  "q": "So convincing ___ that the teacher changed her mind.",
   "options": [
    "was her argument",
    "her argument was",
@@ -189,11 +264,16 @@
    "did her argument"
   ],
   "answer": 0,
-  "explain": "So + adjective at the start → inversion with 'be'."
+  "explain": "So + adjective at the start → inversion: was her argument. Example: So loud was the music that we left.",
+  "notes": {
+   "her argument was": "Normal order isn't allowed after a fronted 'So convincing'.",
+   "her argument": "We need a verb.",
+   "did her argument": "Did doesn't go with an adjective here."
+  }
  },
  {
   "type": "mcq",
-  "q": "Not until much later ___ the full extent of the damage.",
+  "q": "Not until much later ___ how big the comet really was.",
   "options": [
    "did we realise",
    "we realised",
@@ -201,7 +281,12 @@
    "we did realise"
   ],
   "answer": 0,
-  "explain": "Inversion after 'Not until…'."
+  "explain": "Not until... at the start → did + subject + verb. Example: Not until I got home did I notice.",
+  "notes": {
+   "we realised": "Normal order isn't allowed.",
+   "had we realise": "Had we realise mixes forms.",
+   "we did realise": "'We did realise' keeps subject first."
+  }
  },
  {
   "type": "mcq",
@@ -213,11 +298,16 @@
    "How strange"
   ],
   "answer": 0,
-  "explain": "Adjective + as + subject + may seem = although it may seem strange."
+  "explain": "Adjective + as + it may seem = although it seems... Example: Odd as it sounds, it's true.",
+  "notes": {
+   "Strangely": "An adverb can't start this pattern.",
+   "Stranger": "Stranger is comparative.",
+   "How strange": "How strange is an exclamation."
+  }
  },
  {
   "type": "mcq",
-  "q": "The council recommended that the bridge ___ closed immediately.",
+  "q": "The vet recommended that the injured owl ___ kept indoors for a week.",
   "options": [
    "be",
    "is",
@@ -225,11 +315,16 @@
    "will be"
   ],
   "answer": 0,
-  "explain": "Subjunctive after 'recommend that': base form."
+  "explain": "Recommend that + plain verb (subjunctive). Example: I suggest that he rest.",
+  "notes": {
+   "is": "Is isn't the subjunctive.",
+   "was": "Was isn't the subjunctive.",
+   "will be": "Will be isn't used after 'recommend that'."
+  }
  },
  {
   "type": "mcq",
-  "q": "What the kingdom needs ___ fewer promises and more action.",
+  "q": "What our team needs ___ fewer excuses and more practice.",
   "options": [
    "is",
    "are",
@@ -237,11 +332,16 @@
    "have"
   ],
   "answer": 0,
-  "explain": "A 'what' cleft takes a singular verb."
+  "explain": "What-clauses take a singular verb. Example: What I want is a dog.",
+  "notes": {
+   "are": "Are is plural.",
+   "were": "Were is past/plural.",
+   "have": "Have changes the meaning."
+  }
  },
  {
   "type": "mcq",
-  "q": "___ the evidence, the jury had no choice but to acquit.",
+  "q": "___ the clues, the young detectives had no choice but to free the parrot.",
   "options": [
    "Given",
    "Giving",
@@ -249,7 +349,12 @@
    "Having given"
   ],
   "answer": 0,
-  "explain": "'Given' (= considering) introduces a reason."
+  "explain": "Given = considering. Example: Given the weather, we stayed in.",
+  "notes": {
+   "Giving": "Giving would mean they gave something.",
+   "To give": "To give doesn't start this clause.",
+   "Having given": "Having given means they gave it."
+  }
  },
  {
   "type": "mcq",
@@ -261,11 +366,16 @@
    "need"
   ],
   "answer": 0,
-  "explain": "Negative inversion: On no account + should + subject."
+  "explain": "On no account → inversion with a modal: should the gates be. Example: On no account should you feed the dragon.",
+  "notes": {
+   "would": "Would doesn't express a rule.",
+   "must not": "Must not adds a double negative.",
+   "need": "Need doesn't fit."
+  }
  },
  {
   "type": "mcq",
-  "q": "She is thought ___ in secret for years before the treaty was signed.",
+  "q": "She is thought ___ with the dragons in secret for years before peace was agreed.",
   "options": [
    "to have been negotiating",
    "to negotiate",
@@ -273,11 +383,16 @@
    "to be negotiated"
   ],
   "answer": 0,
-  "explain": "Passive reporting + perfect continuous infinitive for a long earlier action."
+  "explain": "Is thought to have been + -ing = a long action earlier. Example: He's thought to have been living abroad.",
+  "notes": {
+   "to negotiate": "To build is present or future.",
+   "negotiating": "Negotiating doesn't follow 'is thought'; it needs 'to'.",
+   "to be negotiated": "To be negotiated is passive: she isn't the thing being negotiated."
+  }
  },
  {
   "type": "mcq",
-  "q": "___ the proposal been better presented, it might have passed.",
+  "q": "___ the project been better presented, it might have won.",
   "options": [
    "Had",
    "If",
@@ -285,11 +400,16 @@
    "Should"
   ],
   "answer": 0,
-  "explain": "Inverted third conditional."
+  "explain": "Had + subject + past participle = if... had (third conditional). Example: Had I known, I'd have come.",
+  "notes": {
+   "If": "If needs 'had': If the project had been.",
+   "Were": "Were is for present unreal.",
+   "Should": "Should is for the future."
+  }
  },
  {
   "type": "mcq",
-  "q": "Much as I respect his experience, I ___ with his conclusions.",
+  "q": "Much as I respect my coach's experience, I ___ with his plan.",
   "options": [
    "can't agree",
    "can agree",
@@ -297,11 +417,16 @@
    "don't disagree"
   ],
   "answer": 0,
-  "explain": "'Much as' = although; the clause contrasts respect with disagreement."
+  "explain": "Much as = although. The second clause contrasts. Example: Much as I like it, I can't afford it.",
+  "notes": {
+   "can agree": "Can agree doesn't contrast.",
+   "couldn't have agreed": "Couldn't have agreed is past.",
+   "don't disagree": "Don't disagree doesn't contrast."
+  }
  },
  {
   "type": "mcq",
-  "q": "The more evidence emerged, ___ the minister's position became.",
+  "q": "The more clues emerged, ___ the villain's story became.",
   "options": [
    "the weaker",
    "weaker",
@@ -309,11 +434,16 @@
    "more weak"
   ],
   "answer": 0,
-  "explain": "The + comparative…, the + comparative."
+  "explain": "The more..., the + comparative. Example: The more you read, the better you write.",
+  "notes": {
+   "weaker": "The second part needs 'the'.",
+   "the weakest": "Weakest is superlative.",
+   "more weak": "More weak is wrong for a short adjective."
+  }
  },
  {
   "type": "mcq",
-  "q": "It's high time the council ___ responsibility.",
+  "q": "It's high time the class ___ responsibility for the messy garden.",
   "options": [
    "took",
    "take",
@@ -321,11 +451,16 @@
    "has taken"
   ],
   "answer": 0,
-  "explain": "It's high time + past simple."
+  "explain": "It's high time + past simple. Example: It's high time we left.",
+  "notes": {
+   "take": "Present take isn't used after 'high time'.",
+   "takes": "Takes isn't used.",
+   "has taken": "Has taken isn't used."
+  }
  },
  {
   "type": "mcq",
-  "q": "Only when the treaty was signed ___ relax.",
+  "q": "Only when the dragons and knights made peace ___ relax.",
   "options": [
    "could the envoys",
    "the envoys could",
@@ -333,11 +468,16 @@
    "the envoys did"
   ],
   "answer": 0,
-  "explain": "Inversion after 'Only when…'."
+  "explain": "Only when... at the start → inversion: could the engineers. Example: Only when it stopped could we go out.",
+  "notes": {
+   "the envoys could": "Normal order isn't allowed.",
+   "could envoys to": "No 'to' after could.",
+   "the envoys did": "Did doesn't fit with relax here."
+  }
  },
  {
   "type": "mcq",
-  "q": "Were the plan ___, thousands would lose their homes.",
+  "q": "Were the new motorway plan ___, the forest animals would lose their homes.",
   "options": [
    "to go ahead",
    "going ahead",
@@ -345,11 +485,16 @@
    "gone ahead"
   ],
   "answer": 0,
-  "explain": "Were + subject + to-infinitive (formal conditional)."
+  "explain": "Were + subject + to + verb = a formal unreal 'if'. Example: Were the match to go ahead, we'd play.",
+  "notes": {
+   "going ahead": "Going ahead isn't the pattern.",
+   "go ahead": "Plain verb needs 'to'.",
+   "gone ahead": "Past participle doesn't fit."
+  }
  },
  {
   "type": "mcq",
-  "q": "Not a word of complaint ___ from her during the whole ordeal.",
+  "q": "Not a word of complaint ___ from her during the whole hike.",
   "options": [
    "did we hear",
    "we heard",
@@ -357,6 +502,11 @@
    "we did hear"
   ],
   "answer": 0,
-  "explain": "Inversion after a fronted negative object."
+  "explain": "Negative object at the start → inversion: did we hear. Example: Not a sound did we make.",
+  "notes": {
+   "we heard": "Normal order isn't allowed.",
+   "heard we": "'Heard we' needs did.",
+   "we did hear": "'We did hear' keeps subject first."
+  }
  }
 ]

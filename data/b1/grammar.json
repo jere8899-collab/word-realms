@@ -9,7 +9,12 @@
    "will have"
   ],
   "answer": 0,
-  "explain": "Second conditional: If + past simple, would + verb (imaginary situation)."
+  "explain": "Second conditional (unreal now): if + past simple, would + verb. Example: If I had wings, I'd fly.",
+  "notes": {
+   "have": "Have is for real possibilities (first conditional), but this is a wish-like 'if'.",
+   "would have": "Would never goes in the if-part.",
+   "will have": "Will have is a future form; it doesn't fit an unreal 'if'."
+  }
  },
  {
   "type": "mcq",
@@ -21,7 +26,12 @@
    "has repair"
   ],
   "answer": 0,
-  "explain": "Passive present simple: is + past participle."
+  "explain": "Passive present simple: is/are + past participle. The path doesn't repair itself. Example: The room is cleaned every day.",
+  "notes": {
+   "repairs": "Repairs is active: the path would be doing the repairing.",
+   "is repairing": "Is repairing is active and about now, not every spring.",
+   "has repair": "Has repair isn't a correct form."
+  }
  },
  {
   "type": "mcq",
@@ -33,7 +43,12 @@
    "am living"
   ],
   "answer": 0,
-  "explain": "Reported questions move back a tense and use statement word order."
+  "explain": "In reported questions, the tense moves back and there's no question word order. Example: He asked what I wanted.",
+  "notes": {
+   "live": "Live doesn't move back after 'asked'.",
+   "do live": "No 'do' in a reported question.",
+   "am living": "Am living is present and doesn't move back."
+  }
  },
  {
   "type": "mcq",
@@ -45,7 +60,12 @@
    "be getting"
   ],
   "answer": 0,
-  "explain": "'be used to' + -ing = be familiar with."
+  "explain": "Be used to + -ing = be familiar with. Example: She's used to walking to school.",
+  "notes": {
+   "get": "After 'used to' meaning 'familiar', we need -ing, not the plain verb.",
+   "got": "Got is past; it can't follow 'to' here.",
+   "be getting": "Be getting isn't used after 'used to'."
+  }
  },
  {
   "type": "mcq",
@@ -57,7 +77,12 @@
    "was already fly away"
   ],
   "answer": 0,
-  "explain": "Past perfect for an action before another past action."
+  "explain": "Past perfect (had + past participle) shows the earlier of two past actions. Example: When I got there, the film had started.",
+  "notes": {
+   "has already flown away": "Has flown is present perfect; the story is in the past.",
+   "already flies away": "Flies is present.",
+   "was already fly away": "Was fly isn't a correct form."
+  }
  },
  {
   "type": "mcq",
@@ -69,7 +94,12 @@
    "will"
   ],
   "answer": 0,
-  "explain": "'should have' + past participle = criticism of a past action."
+  "explain": "Should have + past participle = a past action that was the right thing but didn't happen. Example: I should have brought an umbrella.",
+  "notes": {
+   "must": "Must have is a guess about the past, not advice.",
+   "can": "Can have isn't used like this.",
+   "will": "Will have is future."
+  }
  },
  {
   "type": "mcq",
@@ -81,7 +111,12 @@
    "what"
   ],
   "answer": 0,
-  "explain": "Non-defining clauses (with commas) use 'which' for things, never 'that'."
+  "explain": "Commas around the clause = extra information; use which for things (not that). Example: My bike, which is red, is new.",
+  "notes": {
+   "that": "That can't be used after a comma.",
+   "who": "Who is for people.",
+   "what": "What doesn't join clauses like this."
+  }
  },
  {
   "type": "mcq",
@@ -93,7 +128,12 @@
    "while"
   ],
   "answer": 0,
-  "explain": "'for' + length of time."
+  "explain": "For + a length of time. Example: for ten minutes.",
+  "notes": {
+   "since": "Since needs a start point: since 3 o'clock.",
+   "during": "During needs a noun: during the film.",
+   "while": "While needs a clause: while I was waiting."
+  }
  },
  {
   "type": "mcq",
@@ -105,7 +145,12 @@
    "took"
   ],
   "answer": 0,
-  "explain": "suggest + -ing."
+  "explain": "Suggest + -ing. Example: She suggested going home.",
+  "notes": {
+   "to take": "Suggest isn't followed by 'to + verb'.",
+   "take": "The plain verb can't follow suggest.",
+   "took": "Took is past and doesn't fit."
+  }
  },
  {
   "type": "mcq",
@@ -117,7 +162,12 @@
    "would miss"
   ],
   "answer": 0,
-  "explain": "Unless = if not → 'If you don't hurry, you will miss…'"
+  "explain": "Unless = if not; use it like a first conditional. Example: Unless it rains, we'll play.",
+  "notes": {
+   "miss": "The result part needs will.",
+   "won't miss": "Won't miss gives the opposite meaning.",
+   "would miss": "Would is for unreal situations."
+  }
  },
  {
   "type": "mcq",
@@ -129,7 +179,12 @@
    "needn't"
   ],
   "answer": 0,
-  "explain": "'must' for a logical conclusion (I'm almost sure)."
+  "explain": "Must = I'm almost sure (deduction). Example: You must be tired after the trip.",
+  "notes": {
+   "can't": "Can't = I'm sure it's NOT true, but the lights suggest she IS home.",
+   "mustn't": "Mustn't means not allowed.",
+   "needn't": "Needn't means not necessary."
+  }
  },
  {
   "type": "mcq",
@@ -141,7 +196,12 @@
    "would can"
   ],
   "answer": 0,
-  "explain": "wish + could for abilities we don't have."
+  "explain": "Wish + could for abilities we don't have. Example: I wish I could fly.",
+  "notes": {
+   "can": "Can is present real, not a wish.",
+   "will": "Will isn't used for an ability wish.",
+   "would can": "Would can is never correct."
+  }
  },
  {
   "type": "mcq",
@@ -153,7 +213,12 @@
    "did ever"
   ],
   "answer": 0,
-  "explain": "Superlative + present perfect + ever."
+  "explain": "Superlative + present perfect with ever. Example: It's the best book I have ever read.",
+  "notes": {
+   "ever have": "Ever goes after have, not before it.",
+   "had never": "Had never is past perfect and the meaning is wrong.",
+   "did ever": "Did ever isn't used with a superlative like this."
+  }
  },
  {
   "type": "mcq",
@@ -165,7 +230,12 @@
    "went"
   ],
   "answer": 0,
-  "explain": "had better + base verb."
+  "explain": "Had better + plain verb (no to). Example: You'd better hurry.",
+  "notes": {
+   "to go": "No 'to' after had better.",
+   "going": "No -ing after had better.",
+   "went": "Went is past."
+  }
  },
  {
   "type": "mcq",
@@ -177,7 +247,12 @@
    "but"
   ],
   "answer": 0,
-  "explain": "neither … nor."
+  "explain": "Neither ... nor. Example: Neither cats nor dogs can fly.",
+  "notes": {
+   "or": "Or goes with either: either Tom or Sara.",
+   "and": "And goes with both.",
+   "but": "But doesn't pair with neither."
+  }
  },
  {
   "type": "mcq",
@@ -189,7 +264,12 @@
    "very"
   ],
   "answer": 0,
-  "explain": "so + adjective + that (result)."
+  "explain": "So + adjective + that = result. Example: It was so cold that we stayed in.",
+  "notes": {
+   "such": "Such needs a noun: such an old map.",
+   "too": "Too goes with 'to': too old to read.",
+   "very": "Very can't be followed by 'that' to show a result."
+  }
  },
  {
   "type": "mcq",
@@ -201,7 +281,12 @@
    "would rain"
   ],
   "answer": 0,
-  "explain": "First conditional: If + present simple, will + verb."
+  "explain": "First conditional: if + present simple. Example: If it snows, we'll build a snowman.",
+  "notes": {
+   "will rain": "No will in the if-part.",
+   "rained": "Rained is for unreal second conditionals.",
+   "would rain": "Would isn't used in the if-part."
+  }
  },
  {
   "type": "mcq",
@@ -213,7 +298,12 @@
    "had delivered"
   ],
   "answer": 0,
-  "explain": "Past perfect passive: had been + past participle."
+  "explain": "Past perfect passive: had been + past participle. Example: The cake had been eaten.",
+  "notes": {
+   "has been delivered": "Has been is present perfect, not a past story.",
+   "was delivering": "Was delivering is active: the letter can't deliver.",
+   "had delivered": "Had delivered is active: the letter delivered something?"
+  }
  },
  {
   "type": "mcq",
@@ -225,7 +315,12 @@
    "was see"
   ],
   "answer": 0,
-  "explain": "Reported speech: past simple → past perfect."
+  "explain": "Reported speech moves back: saw → had seen. Example: She said she had lost her key.",
+  "notes": {
+   "has seen": "Has seen doesn't move back after 'told'.",
+   "sees": "Sees is present.",
+   "was see": "Was see is not a correct form."
+  }
  },
  {
   "type": "mcq",
@@ -237,7 +332,12 @@
    "at"
   ],
   "answer": 0,
-  "explain": "think of/about + -ing."
+  "explain": "Think of/about + -ing = consider. Example: I'm thinking of learning piano.",
+  "notes": {
+   "to": "Think to isn't used like this.",
+   "for": "Think for isn't used like this.",
+   "at": "Think at isn't used."
+  }
  },
  {
   "type": "mcq",
@@ -249,7 +349,12 @@
    "shouldn't to"
   ],
   "answer": 0,
-  "explain": "'don't have to' = not necessary (but allowed)."
+  "explain": "Don't have to = not necessary. Example: You don't have to come.",
+  "notes": {
+   "mustn't": "Mustn't = not allowed, but you can if you want.",
+   "haven't to": "Haven't to isn't correct English.",
+   "shouldn't to": "Shouldn't is followed by the plain verb, not 'to'."
+  }
  },
  {
   "type": "mcq",
@@ -261,7 +366,12 @@
    "what"
   ],
   "answer": 0,
-  "explain": "'where' for places in relative clauses."
+  "explain": "Where for places in relative clauses. Example: the house where I live.",
+  "notes": {
+   "which": "Which would need 'in': which my grandmother was born in.",
+   "who": "Who is for people.",
+   "what": "What doesn't join clauses."
+  }
  },
  {
   "type": "mcq",
@@ -273,7 +383,12 @@
    "during"
   ],
   "answer": 0,
-  "explain": "'since' + a point in time."
+  "explain": "Since + a starting point. Example: since Monday, since I was small.",
+  "notes": {
+   "for": "For needs a length of time: for six years.",
+   "from": "From needs 'to' or 'until'.",
+   "during": "During needs a noun."
+  }
  },
  {
   "type": "mcq",
@@ -285,7 +400,12 @@
    "stayed"
   ],
   "answer": 0,
-  "explain": "would rather + base verb."
+  "explain": "Would rather + plain verb. Example: I'd rather walk.",
+  "notes": {
+   "to stay": "No 'to' after would rather.",
+   "staying": "No -ing after would rather.",
+   "stayed": "Stayed is used when another person follows: I'd rather you stayed."
+  }
  },
  {
   "type": "mcq",
@@ -297,7 +417,12 @@
    "very"
   ],
   "answer": 0,
-  "explain": "such + (a/an) + adjective + noun + that."
+  "explain": "Such + (a/an) + adjective + noun + that. Example: It was such a good film that I saw it twice.",
+  "notes": {
+   "so": "So goes before an adjective alone: so amazing.",
+   "too": "Too doesn't go with 'that'.",
+   "very": "Very can't start a 'that' result."
+  }
  },
  {
   "type": "mcq",
@@ -309,7 +434,12 @@
    "bought"
   ],
   "answer": 0,
-  "explain": "afford + to-infinitive."
+  "explain": "Afford + to + verb. Example: We can't afford to waste time.",
+  "notes": {
+   "buying": "Afford isn't followed by -ing.",
+   "buy": "We need 'to' before the verb.",
+   "bought": "Bought is past."
+  }
  },
  {
   "type": "mcq",
@@ -321,7 +451,12 @@
    "am walking"
   ],
   "answer": 0,
-  "explain": "Past continuous for the background action."
+  "explain": "While + past continuous for the longer background action. Example: While I was cooking, the doorbell rang.",
+  "notes": {
+   "walked": "Walked is a short finished action; 'while' wants a longer one.",
+   "have walked": "Have walked doesn't fit a past story.",
+   "am walking": "Am walking is now."
+  }
  },
  {
   "type": "mcq",
@@ -333,7 +468,12 @@
    "the shop does close"
   ],
   "answer": 0,
-  "explain": "Indirect questions use statement word order."
+  "explain": "In indirect questions, use normal word order (subject + verb). Example: Can you tell me where the station is?",
+  "notes": {
+   "does the shop close": "No 'does' inside an indirect question.",
+   "closes the shop": "Verb before subject is question order, wrong here.",
+   "the shop does close": "The 'does' isn't needed."
+  }
  },
  {
   "type": "mcq",
@@ -345,7 +485,12 @@
    "shouldn't"
   ],
   "answer": 0,
-  "explain": "'can't' for a logical impossibility."
+  "explain": "Can't = I'm sure it's impossible. Example: That can't be true!",
+  "notes": {
+   "mustn't": "Mustn't = not allowed, not a deduction.",
+   "needn't": "Needn't = not necessary.",
+   "shouldn't": "Shouldn't is advice."
+  }
  },
  {
   "type": "mcq",
@@ -357,6 +502,11 @@
    "in case"
   ],
   "answer": 0,
-  "explain": "'as long as' = only if."
+  "explain": "As long as = only if. Example: You can play as long as you finish your homework.",
+  "notes": {
+   "unless": "Unless = if not, the opposite meaning.",
+   "even though": "Even though shows contrast.",
+   "in case": "In case = to be ready for something that might happen."
+  }
  }
 ]

@@ -10,7 +10,12 @@
    "in the box"
   ],
   "answer": 0,
-  "explain": "You heard: 'under the table'."
+  "explain": "You heard: 'under the table'.",
+  "notes": {
+   "on the table": "You didn't hear “on the table”. Listen again for the key words.",
+   "next to the bed": "You didn't hear “next to the bed”. Listen again for the key words.",
+   "in the box": "You didn't hear “in the box”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -23,7 +28,12 @@
    "none"
   ],
   "answer": 0,
-  "explain": "'Two brothers and ONE sister.'"
+  "explain": "'Two brothers and ONE sister.'",
+  "notes": {
+   "two": "You didn't hear “two”. Listen again for the key words.",
+   "three": "You didn't hear “three”. Listen again for the key words.",
+   "none": "You didn't hear “none”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -36,7 +46,12 @@
    "ANNE"
   ],
   "answer": 0,
-  "explain": "A-N-N-A: Anna."
+  "explain": "A-N-N-A: Anna.",
+  "notes": {
+   "ANA": "You didn't hear “ANA”. Listen again for the key words.",
+   "HANNA": "You didn't hear “HANNA”. Listen again for the key words.",
+   "ANNE": "You didn't hear “ANNE”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -49,7 +64,12 @@
    "4:30"
   ],
   "answer": 0,
-  "explain": "Half past three = 3:30."
+  "explain": "Half past three = 3:30.",
+  "notes": {
+   "3:00": "You didn't hear “3:00”. Listen again for the key words.",
+   "2:30": "You didn't hear “2:30”. Listen again for the key words.",
+   "4:30": "You didn't hear “4:30”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -62,7 +82,12 @@
    "a cake"
   ],
   "answer": 0,
-  "explain": "'I'd like a banana.'"
+  "explain": "'I'd like a banana.'",
+  "notes": {
+   "an apple": "You didn't hear “an apple”. Listen again for the key words.",
+   "an orange": "You didn't hear “an orange”. Listen again for the key words.",
+   "a cake": "You didn't hear “a cake”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -75,7 +100,12 @@
    "9:15"
   ],
   "answer": 0,
-  "explain": "Eight fifteen = 8:15. (Fifty = 50.)"
+  "explain": "Eight fifteen = 8:15. (Fifty = 50.)",
+  "notes": {
+   "8:50": "You didn't hear “8:50”. Listen again for the key words.",
+   "7:15": "You didn't hear “7:15”. Listen again for the key words.",
+   "9:15": "You didn't hear “9:15”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -88,7 +118,12 @@
    "yellow"
   ],
   "answer": 0,
-  "explain": "'My favourite colour is green.'"
+  "explain": "'My favourite colour is green.'",
+  "notes": {
+   "blue": "You didn't hear “blue”. Listen again for the key words.",
+   "red": "You didn't hear “red”. Listen again for the key words.",
+   "yellow": "You didn't hear “yellow”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -101,7 +136,12 @@
    "9"
   ],
   "answer": 0,
-  "explain": "Ben is ten."
+  "explain": "Ben is ten.",
+  "notes": {
+   "12": "You didn't hear “12”. Listen again for the key words.",
+   "7": "You didn't hear “7”. Listen again for the key words.",
+   "9": "You didn't hear “9”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -114,7 +154,12 @@
    "rainy"
   ],
   "answer": 0,
-  "explain": "'Cold and snowy.'"
+  "explain": "'Cold and snowy.'",
+  "notes": {
+   "sunny": "You didn't hear “sunny”. Listen again for the key words.",
+   "hot": "You didn't hear “hot”. Listen again for the key words.",
+   "rainy": "You didn't hear “rainy”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -127,7 +172,12 @@
    "41"
   ],
   "answer": 0,
-  "explain": "Fourteen = 14. Forty = 40."
+  "explain": "Fourteen = 14. Forty = 40.",
+  "notes": {
+   "40": "You didn't hear “40”. Listen again for the key words.",
+   "4": "You didn't hear “4”. Listen again for the key words.",
+   "41": "You didn't hear “41”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -140,7 +190,12 @@
    "farmer"
   ],
   "answer": 0,
-  "explain": "He is a doctor in a hospital."
+  "explain": "He is a doctor in a hospital.",
+  "notes": {
+   "teacher": "You didn't hear “teacher”. Listen again for the key words.",
+   "cook": "You didn't hear “cook”. Listen again for the key words.",
+   "farmer": "You didn't hear “farmer”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -153,7 +208,12 @@
    "opposite the bank"
   ],
   "answer": 0,
-  "explain": "'Next to the park.'"
+  "explain": "'Next to the park.'",
+  "notes": {
+   "behind the school": "You didn't hear “behind the school”. Listen again for the key words.",
+   "in the park": "You didn't hear “in the park”. Listen again for the key words.",
+   "opposite the bank": "You didn't hear “opposite the bank”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -166,7 +226,12 @@
    "every day"
   ],
   "answer": 0,
-  "explain": "'On Saturdays.'"
+  "explain": "'On Saturdays.'",
+  "notes": {
+   "on Sundays": "You didn't hear “on Sundays”. Listen again for the key words.",
+   "on Mondays": "You didn't hear “on Mondays”. Listen again for the key words.",
+   "every day": "You didn't hear “every day”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -179,7 +244,12 @@
    "tea"
   ],
   "answer": 0,
-  "explain": "'A glass of milk.'"
+  "explain": "'A glass of milk.'",
+  "notes": {
+   "water": "You didn't hear “water”. Listen again for the key words.",
+   "juice": "You didn't hear “juice”. Listen again for the key words.",
+   "tea": "You didn't hear “tea”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -192,7 +262,12 @@
    "709 321"
   ],
   "answer": 0,
-  "explain": "'Oh' means zero: 0-7-9, 3-2-1."
+  "explain": "'Oh' means zero: 0-7-9, 3-2-1.",
+  "notes": {
+   "097 321": "You didn't hear “097 321”. Listen again for the key words.",
+   "079 312": "You didn't hear “079 312”. Listen again for the key words.",
+   "709 321": "You didn't hear “709 321”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -205,7 +280,12 @@
    "in the autumn"
   ],
   "answer": 0,
-  "explain": "'In the summer.'"
+  "explain": "'In the summer.'",
+  "notes": {
+   "in the winter": "You didn't hear “in the winter”. Listen again for the key words.",
+   "in the spring": "You didn't hear “in the spring”. Listen again for the key words.",
+   "in the autumn": "You didn't hear “in the autumn”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -218,7 +298,12 @@
    "yellow"
   ],
   "answer": 0,
-  "explain": "'A red bag.'"
+  "explain": "'A red bag.'",
+  "notes": {
+   "blue": "You didn't hear “blue”. Listen again for the key words.",
+   "green": "You didn't hear “green”. Listen again for the key words.",
+   "yellow": "You didn't hear “yellow”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -231,7 +316,12 @@
    "grey"
   ],
   "answer": 0,
-  "explain": "'She's white.'"
+  "explain": "'She's white.'",
+  "notes": {
+   "black": "You didn't hear “black”. Listen again for the key words.",
+   "brown": "You didn't hear “brown”. Listen again for the key words.",
+   "grey": "You didn't hear “grey”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -244,7 +334,12 @@
    "by bike"
   ],
   "answer": 0,
-  "explain": "'By bus.'"
+  "explain": "'By bus.'",
+  "notes": {
+   "by car": "You didn't hear “by car”. Listen again for the key words.",
+   "on foot": "You didn't hear “on foot”. Listen again for the key words.",
+   "by bike": "You didn't hear “by bike”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -257,7 +352,12 @@
    "two"
   ],
   "answer": 0,
-  "explain": "Mum + dad + brother + me = four."
+  "explain": "Mum + dad + brother + me = four.",
+  "notes": {
+   "three": "You didn't hear “three”. Listen again for the key words.",
+   "five": "You didn't hear “five”. Listen again for the key words.",
+   "two": "You didn't hear “two”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -270,7 +370,12 @@
    "11:30"
   ],
   "answer": 0,
-  "explain": "'Twelve thirty' = 12:30."
+  "explain": "'Twelve thirty' = 12:30.",
+  "notes": {
+   "12:13": "You didn't hear “12:13”. Listen again for the key words.",
+   "2:30": "You didn't hear “2:30”. Listen again for the key words.",
+   "11:30": "You didn't hear “11:30”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -283,7 +388,12 @@
    "peas"
   ],
   "answer": 0,
-  "explain": "'I love potatoes.'"
+  "explain": "'I love potatoes.'",
+  "notes": {
+   "carrots": "You didn't hear “carrots”. Listen again for the key words.",
+   "tomatoes": "You didn't hear “tomatoes”. Listen again for the key words.",
+   "peas": "You didn't hear “peas”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -296,7 +406,12 @@
    "on Friday"
   ],
   "answer": 0,
-  "explain": "Tomorrow after Wednesday is Thursday."
+  "explain": "Tomorrow after Wednesday is Thursday.",
+  "notes": {
+   "on Wednesday": "You didn't hear “on Wednesday”. Listen again for the key words.",
+   "on Tuesday": "You didn't hear “on Tuesday”. Listen again for the key words.",
+   "on Friday": "You didn't hear “on Friday”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -309,7 +424,12 @@
    "your eyes"
   ],
   "answer": 0,
-  "explain": "'Close the door.'"
+  "explain": "'Close the door.'",
+  "notes": {
+   "the window": "You didn't hear “the window”. Listen again for the key words.",
+   "your book": "You didn't hear “your book”. Listen again for the key words.",
+   "your eyes": "You didn't hear “your eyes”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -322,7 +442,12 @@
    "walking"
   ],
   "answer": 0,
-  "explain": "'He's reading the newspaper.'"
+  "explain": "'He's reading the newspaper.'",
+  "notes": {
+   "sleeping": "You didn't hear “sleeping”. Listen again for the key words.",
+   "cooking": "You didn't hear “cooking”. Listen again for the key words.",
+   "walking": "You didn't hear “walking”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -335,7 +460,12 @@
    "two pounds"
   ],
   "answer": 0,
-  "explain": "'One pound for three.'"
+  "explain": "'One pound for three.'",
+  "notes": {
+   "three pounds": "You didn't hear “three pounds”. Listen again for the key words.",
+   "thirty pence": "You didn't hear “thirty pence”. Listen again for the key words.",
+   "two pounds": "You didn't hear “two pounds”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -348,7 +478,12 @@
    "grey"
   ],
   "answer": 0,
-  "explain": "'Green eyes.' Her hair is brown."
+  "explain": "'Green eyes.' Her hair is brown.",
+  "notes": {
+   "brown": "You didn't hear “brown”. Listen again for the key words.",
+   "blue": "You didn't hear “blue”. Listen again for the key words.",
+   "grey": "You didn't hear “grey”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -361,6 +496,11 @@
    "in the café"
   ],
   "answer": 0,
-  "explain": "'The toilets are upstairs.'"
+  "explain": "'The toilets are upstairs.'",
+  "notes": {
+   "downstairs": "You didn't hear “downstairs”. Listen again for the key words.",
+   "outside": "You didn't hear “outside”. Listen again for the key words.",
+   "in the café": "You didn't hear “in the café”. Listen again for the key words."
+  }
  }
 ]

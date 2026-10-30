@@ -14,7 +14,12 @@
       "The merchants' guild strongly dislikes him."
      ],
      "answer": 0,
-     "explain": "His relative owns land beside the site — he could profit."
+     "explain": "His relative owns land beside the site — he could profit.",
+     "notes": {
+      "He is completely neutral about the market.": "The story doesn't say “He is completely neutral about the market.”. Look for the line that answers the question.",
+      "He secretly opposes the market expansion.": "The story doesn't say “He secretly opposes the market expansion.”. Look for the line that answers the question.",
+      "The merchants' guild strongly dislikes him.": "The story doesn't say “The merchants' guild strongly dislikes him.”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -26,7 +31,12 @@
       "They are bored."
      ],
      "answer": 0,
-     "explain": "A silent reaction to his claim of no personal interest."
+     "explain": "A silent reaction to his claim of no personal interest.",
+     "notes": {
+      "They agree enthusiastically.": "The story doesn't say “They agree enthusiastically.”. Look for the line that answers the question.",
+      "They are confused about the market.": "The story doesn't say “They are confused about the market.”. Look for the line that answers the question.",
+      "They are bored.": "The story doesn't say “They are bored.”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -38,7 +48,12 @@
       "to praise Ashby for being open and honest"
      ],
      "answer": 0,
-     "explain": "It undercuts his claim about 'personal interest'."
+     "explain": "It undercuts his claim about 'personal interest'.",
+     "notes": {
+      "to show that his family is very wealthy": "The story doesn't say “to show that his family is very wealthy”. Look for the line that answers the question.",
+      "to describe the land beside the market site": "The story doesn't say “to describe the land beside the market site”. Look for the line that answers the question.",
+      "to praise Ashby for being open and honest": "The story doesn't say “to praise Ashby for being open and honest”. Look for the line that answers the question."
+     }
     }
    ]
   },
@@ -56,7 +71,12 @@
       "We should stop using digital messages and return to writing letters."
      ],
      "answer": 0,
-     "explain": "'What we mourn… is the slowness… that forced writers to weigh their words.'"
+     "explain": "'What we mourn… is the slowness… that forced writers to weigh their words.'",
+     "notes": {
+      "Letters were always affectionate, unlike the messages we send today.": "The story doesn't say “Letters were always affectionate, unlike the messages we send today.”. Look for the line that answers the question.",
+      "Digital messages are always careless, so they cannot replace letters.": "The story doesn't say “Digital messages are always careless, so they cannot replace letters.”. Look for the line that answers the question.",
+      "We should stop using digital messages and return to writing letters.": "The story doesn't say “We should stop using digital messages and return to writing letters.”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -68,7 +88,12 @@
       "They were a kind of music played on instruments."
      ],
      "answer": 0,
-     "explain": "Orders, debts, deception — not just affection."
+     "explain": "Orders, debts, deception — not just affection.",
+     "notes": {
+      "They were difficult and slow for most people to write.": "The story doesn't say “They were difficult and slow for most people to write.”. Look for the line that answers the question.",
+      "They were controlled and read by the government.": "The story doesn't say “They were controlled and read by the government.”. Look for the line that answers the question.",
+      "They were a kind of music played on instruments.": "The story doesn't say “They were a kind of music played on instruments.”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -80,7 +105,12 @@
       "indifferent: the writer has no real view on digital messages"
      ],
      "answer": 0,
-     "explain": "'Need not be careless, but… carelessness easy.'"
+     "explain": "'Need not be careless, but… carelessness easy.'",
+     "notes": {
+      "entirely negative: digital messages have destroyed careful writing": "The story doesn't say “entirely negative: digital messages have destroyed careful writing”. Look for the line that answers the question.",
+      "entirely positive: speed has made communication better in every way": "The story doesn't say “entirely positive: speed has made communication better in every way”. Look for the line that answers the question.",
+      "indifferent: the writer has no real view on digital messages": "The story doesn't say “indifferent: the writer has no real view on digital messages”. Look for the line that answers the question."
+     }
     }
    ]
   },
@@ -98,7 +128,12 @@
       "The old town is thriving and doesn't need any help."
      ],
      "answer": 0,
-     "explain": "He attacks the comparison: Lindhaven had a railway."
+     "explain": "He attacks the comparison: Lindhaven had a railway.",
+     "notes": {
+      "Carriages are cheap and popular with old-town visitors.": "The story doesn't say “Carriages are cheap and popular with old-town visitors.”. Look for the line that answers the question.",
+      "The carriage ban actually failed badly in Lindhaven.": "The story doesn't say “The carriage ban actually failed badly in Lindhaven.”. Look for the line that answers the question.",
+      "The old town is thriving and doesn't need any help.": "The story doesn't say “The old town is thriving and doesn't need any help.”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -110,7 +145,12 @@
       "the history of the old town"
      ],
      "answer": 0,
-     "explain": "Reyes argues by analogy; Mbeki shows the analogy is weak."
+     "explain": "Reyes argues by analogy; Mbeki shows the analogy is weak.",
+     "notes": {
+      "the cost of the ban": "The story doesn't say “the cost of the ban”. Look for the line that answers the question.",
+      "the safety of carriages": "The story doesn't say “the safety of carriages”. Look for the line that answers the question.",
+      "the history of the old town": "The story doesn't say “the history of the old town”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -122,7 +162,12 @@
       "photos showing how beautiful the old town is"
      ],
      "answer": 0,
-     "explain": "It removes Mbeki's objection directly."
+     "explain": "It removes Mbeki's objection directly.",
+     "notes": {
+      "proof that Lindhaven is popular with tourists": "The story doesn't say “proof that Lindhaven is popular with tourists”. Look for the line that answers the question.",
+      "proof that carriages are noisy and dangerous": "The story doesn't say “proof that carriages are noisy and dangerous”. Look for the line that answers the question.",
+      "photos showing how beautiful the old town is": "The story doesn't say “photos showing how beautiful the old town is”. Look for the line that answers the question."
+     }
     }
    ]
   },
@@ -140,7 +185,12 @@
       "It referred to a long-planned technology upgrade."
      ],
      "answer": 0,
-     "explain": "Whole sections vanished — far beyond tidying."
+     "explain": "Whole sections vanished — far beyond tidying.",
+     "notes": {
+      "It was a popular change that every member of staff welcomed.": "The story doesn't say “It was a popular change that every member of staff welcomed.”. Look for the line that answers the question.",
+      "It simply meant tidying the overcrowded shelves.": "The story doesn't say “It simply meant tidying the overcrowded shelves.”. Look for the line that answers the question.",
+      "It referred to a long-planned technology upgrade.": "The story doesn't say “It referred to a long-planned technology upgrade.”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -152,7 +202,12 @@
       "amused and light-hearted"
      ],
      "answer": 0,
-     "explain": "Quotation marks and the final sentence signal doubt."
+     "explain": "Quotation marks and the final sentence signal doubt.",
+     "notes": {
+      "warmly admiring": "The story doesn't say “warmly admiring”. Look for the line that answers the question.",
+      "completely neutral": "The story doesn't say “completely neutral”. Look for the line that answers the question.",
+      "amused and light-hearted": "The story doesn't say “amused and light-hearted”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -164,7 +219,12 @@
       "how popular the board has become"
      ],
      "answer": 0,
-     "explain": "No one knows who decided — nobody is responsible."
+     "explain": "No one knows who decided — nobody is responsible.",
+     "notes": {
+      "a technical failure in the archive": "The story doesn't say “a technical failure in the archive”. Look for the line that answers the question.",
+      "incompetence among the library staff": "The story doesn't say “incompetence among the library staff”. Look for the line that answers the question.",
+      "how popular the board has become": "The story doesn't say “how popular the board has become”. Look for the line that answers the question."
+     }
     }
    ]
   },
@@ -182,7 +242,12 @@
       "It contained the medals he had won."
      ],
      "answer": 0,
-     "explain": "A yearly ritual shows it mattered deeply."
+     "explain": "A yearly ritual shows it mattered deeply.",
+     "notes": {
+      "It was worthless to him after the war.": "The story doesn't say “It was worthless to him after the war.”. Look for the line that answers the question.",
+      "He had forgotten what was inside it.": "The story doesn't say “He had forgotten what was inside it.”. Look for the line that answers the question.",
+      "It contained the medals he had won.": "The story doesn't say “It contained the medals he had won.”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -194,7 +259,12 @@
       "He didn't know there was anything inside."
      ],
      "answer": 0,
-     "explain": "He cared for it but avoided its contents."
+     "explain": "He cared for it but avoided its contents.",
+     "notes": {
+      "The box was locked and he had lost the key.": "The story doesn't say “The box was locked and he had lost the key.”. Look for the line that answers the question.",
+      "He was saving it to sell after the war.": "The story doesn't say “He was saving it to sell after the war.”. Look for the line that answers the question.",
+      "He didn't know there was anything inside.": "The story doesn't say “He didn't know there was anything inside.”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -206,7 +276,12 @@
       "the narrator's father before he married"
      ],
      "answer": 0,
-     "explain": "Signed 'T.' to Grandfather; 'Until we meet again' suggests loss."
+     "explain": "Signed 'T.' to Grandfather; 'Until we meet again' suggests loss.",
+     "notes": {
+      "Grandfather himself as a young soldier": "The story doesn't say “Grandfather himself as a young soldier”. Look for the line that answers the question.",
+      "a famous actor Grandfather admired": "The story doesn't say “a famous actor Grandfather admired”. Look for the line that answers the question.",
+      "the narrator's father before he married": "The story doesn't say “the narrator's father before he married”. Look for the line that answers the question."
+     }
     }
    ]
   },
@@ -224,7 +299,12 @@
       "They left out the kingdom's largest towns entirely."
      ],
      "answer": 0,
-     "explain": "Three 'rivers' were dry ditches drawn 'to strengthen land claims'."
+     "explain": "Three 'rivers' were dry ditches drawn 'to strengthen land claims'.",
+     "notes": {
+      "They were more accurate than the Society thought.": "The story doesn't say “They were more accurate than the Society thought.”. Look for the line that answers the question.",
+      "They had been copied from foreign maps.": "The story doesn't say “They had been copied from foreign maps.”. Look for the line that answers the question.",
+      "They left out the kingdom's largest towns entirely.": "The story doesn't say “They left out the kingdom's largest towns entirely.”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -236,7 +316,12 @@
       "It was too expensive to print in colour."
      ],
      "answer": 0,
-     "explain": "It 'undermined the boundaries on which several noble estates depended'."
+     "explain": "It 'undermined the boundaries on which several noble estates depended'.",
+     "notes": {
+      "It contained serious measuring errors.": "The story doesn't say “It contained serious measuring errors.”. Look for the line that answers the question.",
+      "She refused to let the Society publish it.": "The story doesn't say “She refused to let the Society publish it.”. Look for the line that answers the question.",
+      "It was too expensive to print in colour.": "The story doesn't say “It was too expensive to print in colour.”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -248,7 +333,12 @@
       "The Royal Society was right to be careful."
      ],
      "answer": 0,
-     "explain": "'Maps are never merely descriptive; they are arguments about who owns the world.'"
+     "explain": "'Maps are never merely descriptive; they are arguments about who owns the world.'",
+     "notes": {
+      "Old maps should never be trusted at all.": "The story doesn't say “Old maps should never be trusted at all.”. Look for the line that answers the question.",
+      "Cartographers should avoid politics completely.": "The story doesn't say “Cartographers should avoid politics completely.”. Look for the line that answers the question.",
+      "The Royal Society was right to be careful.": "The story doesn't say “The Royal Society was right to be careful.”. Look for the line that answers the question."
+     }
     }
    ]
   },
@@ -266,7 +356,12 @@
       "as a modern invention"
      ],
      "answer": 0,
-     "explain": "'Boredom is not a malfunction but a signal.'"
+     "explain": "'Boredom is not a malfunction but a signal.'",
+     "notes": {
+      "as a harmless habit": "The story doesn't say “as a harmless habit”. Look for the line that answers the question.",
+      "as a sign of illness": "The story doesn't say “as a sign of illness”. Look for the line that answers the question.",
+      "as a modern invention": "The story doesn't say “as a modern invention”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -278,7 +373,12 @@
       "Plastic cups make tasks less boring."
      ],
      "answer": 0,
-     "explain": "Those who did the dull task produced more creative ideas."
+     "explain": "Those who did the dull task produced more creative ideas.",
+     "notes": {
+      "Phone directories are useful for memory.": "The story doesn't say “Phone directories are useful for memory.”. Look for the line that answers the question.",
+      "Creative people rarely feel bored at all.": "The story doesn't say “Creative people rarely feel bored at all.”. Look for the line that answers the question.",
+      "Plastic cups make tasks less boring.": "The story doesn't say “Plastic cups make tasks less boring.”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -290,7 +390,12 @@
       "Modern jobs leave no time to feel bored."
      ],
      "answer": 0,
-     "explain": "'The payoff comes later, while the discomfort is immediate.'"
+     "explain": "'The payoff comes later, while the discomfort is immediate.'",
+     "notes": {
+      "Psychologists have told them it is dangerous.": "The story doesn't say “Psychologists have told them it is dangerous.”. Look for the line that answers the question.",
+      "Boredom always makes people less productive.": "The story doesn't say “Boredom always makes people less productive.”. Look for the line that answers the question.",
+      "Modern jobs leave no time to feel bored.": "The story doesn't say “Modern jobs leave no time to feel bored.”. Look for the line that answers the question."
+     }
     }
    ]
   }

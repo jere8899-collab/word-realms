@@ -33,7 +33,7 @@ const Garden = WR.Garden = {
     s.mistakes.unshift({
       id, realm, skill: skill || "special", type: it.type, q: it.q, say: it.say || null, said: it.say || null, pic: it.pic || null,
       passage: it.passage ? { title: it.passage.title, text: it.passage.text } : null,
-      options: it.options ? it.options.slice() : null, correct, explain: it.explain,
+      options: it.options ? it.options.slice() : null, correct, explain: it.explain, notes: it.notes || null,
       at: Date.now(), due: Date.now(), box: 0, misses: (prev ? prev.misses || 1 : 0) + 1, bloomed: false
     });
     // keep the newest; drop the oldest bloomed first, then the oldest active
@@ -71,7 +71,7 @@ const Garden = WR.Garden = {
       .sort((a, b) => b.w - a.w).slice(0, n).map(x => x.m);
     return WR.shuffle(due).map(m => m.type === "order"
       ? { type: "order", q: m.q, answer: m.correct, explain: m.explain, _mid: m.id }
-      : { type: m.type, q: m.q, say: m.say, pic: m.pic, passage: m.passage, options: WR.shuffle(m.options), correct: m.correct, explain: m.explain, _mid: m.id });
+      : { type: m.type, q: m.q, say: m.say, pic: m.pic, passage: m.passage, options: WR.shuffle(m.options), correct: m.correct, explain: m.explain, notes: m.notes || null, _mid: m.id });
   },
   water() {
     const items = Garden.roundItems(); if (!items.length) return WR.toast("🌤️ Nothing is thirsty right now!");

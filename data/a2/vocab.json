@@ -9,7 +9,12 @@
    "bank"
   ],
   "answer": 0,
-  "explain": "A bakery makes and sells bread and cakes."
+  "explain": "A bakery makes and sells bread and cakes. Example: The bakery smells lovely.",
+  "notes": {
+   "pharmacy": "A pharmacy sells medicine.",
+   "library": "A library lends books.",
+   "bank": "A bank keeps money."
+  }
  },
  {
   "type": "mcq",
@@ -21,7 +26,12 @@
    "thirsty"
   ],
   "answer": 0,
-  "explain": "When you're tired, you need sleep."
+  "explain": "Tired means you need sleep. Example: I'm tired after football.",
+  "notes": {
+   "hungry": "Hungry means you need food.",
+   "angry": "Angry means cross, not sleepy.",
+   "thirsty": "Thirsty means you need a drink."
+  }
  },
  {
   "type": "mcq",
@@ -33,7 +43,12 @@
    "heavy"
   ],
   "answer": 0,
-  "explain": "Cheap ↔ expensive."
+  "explain": "Cheap costs little; expensive costs a lot. Example: Diamonds are expensive.",
+  "notes": {
+   "free": "Free costs nothing, even less than cheap.",
+   "easy": "Easy is the opposite of difficult.",
+   "heavy": "Heavy is the opposite of light."
+  }
  },
  {
   "type": "mcq",
@@ -45,7 +60,12 @@
    "pilot"
   ],
   "answer": 0,
-  "explain": "A waiter serves; a chef cooks."
+  "explain": "A waiter brings food to your table. Example: The waiter brought our pizza.",
+  "notes": {
+   "chef": "A chef cooks the food in the kitchen.",
+   "farmer": "A farmer grows food.",
+   "pilot": "A pilot flies planes."
+  }
  },
  {
   "type": "mcq",
@@ -57,7 +77,12 @@
    "owe"
   ],
   "answer": 0,
-  "explain": "You LEND to someone; you BORROW from someone."
+  "explain": "Lend = give for a while. Borrow = take for a while. Example: Can I borrow your pen? / Can you lend me your pen?",
+  "notes": {
+   "borrow": "Borrow is what YOU do: Can I borrow some money?",
+   "spend": "Spend means use money to buy things.",
+   "owe": "Owe means you must pay someone back."
+  }
  },
  {
   "type": "mcq",
@@ -69,7 +94,12 @@
    "play"
   ],
   "answer": 0,
-  "explain": "We say 'do homework'."
+  "explain": "We say do homework. Example: Did you do your homework?",
+  "notes": {
+   "make": "We make a cake, but we do homework.",
+   "take": "Take is for photos or buses.",
+   "play": "Play is for games and sports."
+  }
  },
  {
   "type": "mcq",
@@ -81,7 +111,12 @@
    "had"
   ],
   "answer": 0,
-  "explain": "We say 'take a photo'."
+  "explain": "We take a photo. Example: Take a picture of me!",
+  "notes": {
+   "did": "We do homework, not photos.",
+   "made": "Make a photo isn't natural English.",
+   "had": "Had a photo means owned one."
+  }
  },
  {
   "type": "mcq",
@@ -93,7 +128,12 @@
    "empty"
   ],
   "answer": 0,
-  "explain": "Delayed = later than planned."
+  "explain": "Delayed means later than planned. Example: Our flight was delayed.",
+  "notes": {
+   "early": "Early would make you arrive early.",
+   "fast": "Fast would make you arrive early too.",
+   "empty": "Empty means no people, not late."
+  }
  },
  {
   "type": "mcq",
@@ -105,7 +145,12 @@
    "lemon"
   ],
   "answer": 0,
-  "explain": "A carrot is a vegetable; the others are fruit."
+  "explain": "A carrot is a vegetable. Example: Rabbits love carrots.",
+  "notes": {
+   "strawberry": "A strawberry is a fruit.",
+   "cherry": "A cherry is a fruit.",
+   "lemon": "A lemon is a fruit."
+  }
  },
  {
   "type": "mcq",
@@ -117,7 +162,12 @@
    "sandals"
   ],
   "answer": 0,
-  "explain": "A raincoat keeps you dry."
+  "explain": "A raincoat keeps you dry. Example: Take your raincoat to school.",
+  "notes": {
+   "sunglasses": "Sunglasses are for sunny days.",
+   "swimsuit": "A swimsuit is for swimming.",
+   "sandals": "Sandals are for hot days."
+  }
  },
  {
   "type": "mcq",
@@ -129,7 +179,12 @@
    "grandfather"
   ],
   "answer": 0,
-  "explain": "Your parent's brother is your uncle."
+  "explain": "Your mum's or dad's brother is your uncle. Example: Uncle Ben tells jokes.",
+  "notes": {
+   "cousin": "A cousin is your uncle's child.",
+   "nephew": "A nephew is your brother's or sister's son.",
+   "grandfather": "A grandfather is your mum's or dad's dad."
+  }
  },
  {
   "type": "mcq",
@@ -141,7 +196,12 @@
    "boring"
   ],
   "answer": 0,
-  "explain": "People FEEL interested; things ARE interesting."
+  "explain": "-ed words say how you feel; -ing words describe the thing. Example: I'm interested in this interesting book.",
+  "notes": {
+   "interesting": "Interesting describes the thing: History is interesting.",
+   "bored": "Bored doesn't fit 'I love old castles'.",
+   "boring": "Boring describes a thing, and doesn't fit."
+  }
  },
  {
   "type": "mcq",
@@ -153,7 +213,12 @@
    "break"
   ],
   "answer": 0,
-  "explain": "When it's hot, open the window."
+  "explain": "Open the window to let air in. Example: Open the door, please.",
+  "notes": {
+   "close": "Close would make it hotter.",
+   "turn": "We turn a key or a tap, not a window.",
+   "break": "Break would be naughty!"
+  }
  },
  {
   "type": "mcq",
@@ -165,7 +230,12 @@
    "boring"
   ],
   "answer": 0,
-  "explain": "Funny things make you laugh."
+  "explain": "Funny makes you laugh. Example: a funny clown.",
+  "notes": {
+   "sad": "Sad makes you cry.",
+   "scary": "Scary makes you afraid.",
+   "boring": "Boring doesn't make you laugh."
+  }
  },
  {
   "type": "mcq",
@@ -177,7 +247,12 @@
    "garage"
   ],
   "answer": 0,
-  "explain": "Museums show old and interesting things."
+  "explain": "A museum shows old and interesting things. Example: We saw dinosaur bones at the museum.",
+  "notes": {
+   "stadium": "A stadium is for sport and concerts.",
+   "airport": "An airport is for planes.",
+   "garage": "A garage is for cars."
+  }
  },
  {
   "type": "mcq",
@@ -189,7 +264,12 @@
    "get in"
   ],
   "answer": 0,
-  "explain": "Get off = leave a bus or train."
+  "explain": "Get off = leave a bus or train. Example: Get off at the park.",
+  "notes": {
+   "get on": "Get on means go into the bus.",
+   "get up": "Get up means leave your bed.",
+   "get in": "Get in is for cars, not buses."
+  }
  },
  {
   "type": "mcq",
@@ -201,7 +281,12 @@
    "down"
   ],
   "answer": 0,
-  "explain": "When it's dark, turn ON the light."
+  "explain": "Turn on = start a light or machine. Example: Turn on the TV.",
+  "notes": {
+   "off": "Turn off makes it darker.",
+   "up": "Turn up is for volume.",
+   "down": "Turn down is for volume or an offer."
+  }
  },
  {
   "type": "mcq",
@@ -213,7 +298,12 @@
    "angry"
   ],
   "answer": 0,
-  "explain": "Thirsty = you need a drink."
+  "explain": "Thirsty means you need a drink. Example: Running makes me thirsty.",
+  "notes": {
+   "hungry": "Hungry means you need food.",
+   "sleepy": "Sleepy means you need sleep.",
+   "angry": "Angry is a feeling, not about water."
+  }
  },
  {
   "type": "mcq",
@@ -225,7 +315,12 @@
    "stayed"
   ],
   "answer": 0,
-  "explain": "spend time/a holiday somewhere."
+  "explain": "We spend time somewhere. Example: I spent the day at the beach.",
+  "notes": {
+   "passed": "Passed isn't used with holiday like this.",
+   "made": "Make a holiday isn't natural.",
+   "stayed": "Stayed needs 'in': We stayed in Scotland."
+  }
  },
  {
   "type": "mcq",
@@ -237,7 +332,12 @@
    "comb"
   ],
   "answer": 0,
-  "explain": "Collocation: brush your teeth."
+  "explain": "We brush our teeth. Example: Brush your teeth twice a day.",
+  "notes": {
+   "wash": "We wash our hands or face.",
+   "clean up": "Clean up is for a messy room.",
+   "comb": "We comb our hair."
+  }
  },
  {
   "type": "mcq",
@@ -249,7 +349,12 @@
    "ends up"
   ],
   "answer": 0,
-  "explain": "Shops open and close."
+  "explain": "Shops open and close. Example: The bank closes at five.",
+  "notes": {
+   "finishes": "A film or lesson finishes, not a shop.",
+   "stops": "A bus stops; a shop closes.",
+   "ends up": "End up means arrive somewhere in the end."
+  }
  },
  {
   "type": "mcq",
@@ -261,7 +366,12 @@
    "chemist"
   ],
   "answer": 0,
-  "explain": "A vet looks after sick animals."
+  "explain": "A vet looks after sick animals. Example: We took our cat to the vet.",
+  "notes": {
+   "nurse": "A nurse helps doctors with people.",
+   "dentist": "A dentist looks after teeth.",
+   "chemist": "A chemist sells medicine."
+  }
  },
  {
   "type": "mcq",
@@ -273,7 +383,12 @@
    "find"
   ],
   "answer": 0,
-  "explain": "look for = try to find."
+  "explain": "Look for = try to find. Example: I'm looking for my keys.",
+  "notes": {
+   "see": "See doesn't go with 'for'.",
+   "watch": "Watch is for TV or games.",
+   "find": "Find doesn't go with 'for'. Find them."
+  }
  },
  {
   "type": "mcq",
@@ -285,7 +400,12 @@
    "calm down"
   ],
   "answer": 0,
-  "explain": "Noisy ↔ quiet."
+  "explain": "Noisy and quiet are opposites. Example: Be quiet in the library.",
+  "notes": {
+   "empty": "Empty is the opposite of full.",
+   "slow": "Slow is the opposite of fast.",
+   "calm down": "Calm down is a verb: Calm down, please."
+  }
  },
  {
   "type": "mcq",
@@ -297,7 +417,12 @@
    "did"
   ],
   "answer": 0,
-  "explain": "have a cold."
+  "explain": "We have a cold. Example: I have a cold and a sore throat.",
+  "notes": {
+   "made": "We don't make a cold.",
+   "took": "We take medicine, not a cold.",
+   "did": "We don't do a cold."
+  }
  },
  {
   "type": "mcq",
@@ -309,7 +434,12 @@
    "belts"
   ],
   "answer": 0,
-  "explain": "Gloves keep your hands warm."
+  "explain": "Gloves go on your hands. Example: Wear gloves in the snow.",
+  "notes": {
+   "boots": "Boots go on your feet.",
+   "scarves": "Scarves go around your neck.",
+   "belts": "Belts go around your waist."
+  }
  },
  {
   "type": "mcq",
@@ -321,7 +451,12 @@
    "dress"
   ],
   "answer": 0,
-  "explain": "try on = put clothes on to see if they fit."
+  "explain": "Try on = put on clothes to see if they fit. Example: Try on these shoes.",
+  "notes": {
+   "put": "Put on is for getting dressed, not testing in a shop.",
+   "wear": "Wear doesn't go with 'on' here.",
+   "dress": "Dress doesn't go with 'on this dress'."
+  }
  },
  {
   "type": "mcq",
@@ -333,7 +468,12 @@
    "snowing"
   ],
   "answer": 0,
-  "explain": "Windy = lots of wind."
+  "explain": "Windy = lots of wind. Example: It's windy, let's fly a kite!",
+  "notes": {
+   "sunny": "Sunny wouldn't blow your hat away.",
+   "foggy": "Foggy means you can't see far.",
+   "snowing": "Snowing is a verb: It's snowing."
+  }
  },
  {
   "type": "mcq",
@@ -345,7 +485,12 @@
    "early"
   ],
   "answer": 0,
-  "explain": "'Elderly' is a polite word for old."
+  "explain": "Elderly is a kind word for old people. Example: an elderly neighbour.",
+  "notes": {
+   "young": "Young is the opposite.",
+   "modern": "Modern is for things, not people's age.",
+   "early": "Early is about time, not age."
+  }
  },
  {
   "type": "mcq",
@@ -357,7 +502,12 @@
    "put in"
   ],
   "answer": 0,
-  "explain": "fill in a form = write the information."
+  "explain": "Fill in a form = write the answers. Example: Fill in your name.",
+  "notes": {
+   "fill up": "Fill up is for a glass or a car's tank.",
+   "write on": "Write on a form isn't how we say it.",
+   "put in": "Put in means place inside."
+  }
  },
  {
   "type": "mcq",
@@ -369,6 +519,11 @@
    "buy"
   ],
   "answer": 0,
-  "explain": "book a table = reserve it."
+  "explain": "Book a table = reserve it. Example: We booked a table for Gran's birthday.",
+  "notes": {
+   "order": "Order is for food: I'd like to order pizza.",
+   "keep": "Keep means not give away.",
+   "buy": "You can't buy a restaurant table!"
+  }
  }
 ]

@@ -14,7 +14,12 @@
       "time"
      ],
      "answer": 0,
-     "explain": "The more steps you take, the more you leave behind."
+     "explain": "The more steps you take, the more you leave behind.",
+     "notes": {
+      "memories": "The story doesn't say “memories”. Look for the line that answers the question.",
+      "candlelight": "The story doesn't say “candlelight”. Look for the line that answers the question.",
+      "time": "The story doesn't say “time”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -26,7 +31,12 @@
       "nothing important"
      ],
      "answer": 0,
-     "explain": "Wrong = lose memories; refuse = lose the library."
+     "explain": "Wrong = lose memories; refuse = lose the library.",
+     "notes": {
+      "her life only": "The story doesn't say “her life only”. Look for the line that answers the question.",
+      "her friendship with the dragon": "The story doesn't say “her friendship with the dragon”. Look for the line that answers the question.",
+      "nothing important": "The story doesn't say “nothing important”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -38,7 +48,12 @@
       "It was frightened."
      ],
      "answer": 0,
-     "explain": "'Perilously close to delight.'"
+     "explain": "'Perilously close to delight.'",
+     "notes": {
+      "It was furious.": "The story doesn't say “It was furious.”. Look for the line that answers the question.",
+      "It was disappointed.": "The story doesn't say “It was disappointed.”. Look for the line that answers the question.",
+      "It was frightened.": "The story doesn't say “It was frightened.”. Look for the line that answers the question."
+     }
     }
    ]
   },
@@ -56,7 +71,12 @@
       "It is an old-fashioned image no longer in use."
      ],
      "answer": 0,
-     "explain": "'…the traveller arrives unchanged' — untrue of translation."
+     "explain": "'…the traveller arrives unchanged' — untrue of translation.",
+     "notes": {
+      "Bridges are too expensive a metaphor to use.": "The story doesn't say “Bridges are too expensive a metaphor to use.”. Look for the line that answers the question.",
+      "Translators have always disliked bridge imagery.": "The story doesn't say “Translators have always disliked bridge imagery.”. Look for the line that answers the question.",
+      "It is an old-fashioned image no longer in use.": "The story doesn't say “It is an old-fashioned image no longer in use.”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -68,7 +88,12 @@
       "the high cost of travelling between languages"
      ],
      "answer": 0,
-     "explain": "'…decide… which cargo can survive the water.'"
+     "explain": "'…decide… which cargo can survive the water.'",
+     "notes": {
+      "the speed at which a skilled translator works": "The story doesn't say “the speed at which a skilled translator works”. Look for the line that answers the question.",
+      "the danger of translating across rough water": "The story doesn't say “the danger of translating across rough water”. Look for the line that answers the question.",
+      "the high cost of travelling between languages": "The story doesn't say “the high cost of travelling between languages”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -80,7 +105,12 @@
       "wistful and nostalgic"
      ],
      "answer": 0,
-     "explain": "A careful argument built through metaphor."
+     "explain": "A careful argument built through metaphor.",
+     "notes": {
+      "angry and polemical": "The story doesn't say “angry and polemical”. Look for the line that answers the question.",
+      "light and humorous": "The story doesn't say “light and humorous”. Look for the line that answers the question.",
+      "wistful and nostalgic": "The story doesn't say “wistful and nostalgic”. Look for the line that answers the question."
+     }
     }
    ]
   },
@@ -98,7 +128,12 @@
       "It is too complex."
      ],
      "answer": 0,
-     "explain": "'So ubiquitous… as to be almost meaningless.'"
+     "explain": "'So ubiquitous… as to be almost meaningless.'",
+     "notes": {
+      "It is perfectly accurate.": "The story doesn't say “It is perfectly accurate.”. Look for the line that answers the question.",
+      "It is offensive.": "The story doesn't say “It is offensive.”. Look for the line that answers the question.",
+      "It is too complex.": "The story doesn't say “It is too complex.”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -110,7 +145,12 @@
       "shocking and scandalous"
      ],
      "answer": 0,
-     "explain": "'Carefully arranged disclosures that flatter the narrator.'"
+     "explain": "'Carefully arranged disclosures that flatter the narrator.'",
+     "notes": {
+      "raw, painful and genuine": "The story doesn't say “raw, painful and genuine”. Look for the line that answers the question.",
+      "dull and repetitive": "The story doesn't say “dull and repetitive”. Look for the line that answers the question.",
+      "shocking and scandalous": "The story doesn't say “shocking and scandalous”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -122,7 +162,12 @@
       "a perfect novel without any flaws"
      ],
      "answer": 0,
-     "explain": "Skill is 'undeniable'; candour is 'another matter'."
+     "explain": "Skill is 'undeniable'; candour is 'another matter'.",
+     "notes": {
+      "honest, but clumsily written": "The story doesn't say “honest, but clumsily written”. Look for the line that answers the question.",
+      "a complete failure on every level": "The story doesn't say “a complete failure on every level”. Look for the line that answers the question.",
+      "a perfect novel without any flaws": "The story doesn't say “a perfect novel without any flaws”. Look for the line that answers the question."
+     }
     }
    ]
   },
@@ -140,7 +185,12 @@
       "from serving the public to serving private clients"
      ],
      "answer": 0,
-     "explain": "'…from access to discernment.'"
+     "explain": "'…from access to discernment.'",
+     "notes": {
+      "from lending printed books to running computer games": "The story doesn't say “from lending printed books to running computer games”. Look for the line that answers the question.",
+      "from offering free services to charging for them": "The story doesn't say “from offering free services to charging for them”. Look for the line that answers the question.",
+      "from serving the public to serving private clients": "The story doesn't say “from serving the public to serving private clients”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -152,7 +202,12 @@
       "written by famous and respected authors"
      ],
      "answer": 0,
-     "explain": "Provenance = origin; dubious = doubtful."
+     "explain": "Provenance = origin; dubious = doubtful.",
+     "notes": {
+      "very old and in poor physical condition": "The story doesn't say “very old and in poor physical condition”. Look for the line that answers the question.",
+      "expensive and difficult to obtain": "The story doesn't say “expensive and difficult to obtain”. Look for the line that answers the question.",
+      "written by famous and respected authors": "The story doesn't say “written by famous and respected authors”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -164,7 +219,12 @@
       "Librarians are not trained to judge information."
      ],
      "answer": 0,
-     "explain": "'Whether funding bodies grasp this shift is… far from certain.'"
+     "explain": "'Whether funding bodies grasp this shift is… far from certain.'",
+     "notes": {
+      "Libraries are closing faster than ever before.": "The story doesn't say “Libraries are closing faster than ever before.”. Look for the line that answers the question.",
+      "People simply don't read printed books any more.": "The story doesn't say “People simply don't read printed books any more.”. Look for the line that answers the question.",
+      "Librarians are not trained to judge information.": "The story doesn't say “Librarians are not trained to judge information.”. Look for the line that answers the question."
+     }
     }
    ]
   },
@@ -182,7 +242,12 @@
       "she was busy"
      ],
      "answer": 0,
-     "explain": "'The politest form of no.'"
+     "explain": "'The politest form of no.'",
+     "notes": {
+      "a definite yes": "The story doesn't say “a definite yes”. Look for the line that answers the question.",
+      "she needed more information": "The story doesn't say “she needed more information”. Look for the line that answers the question.",
+      "she was busy": "The story doesn't say “she was busy”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -194,7 +259,12 @@
       "the travel plans she made for the family each year"
      ],
      "answer": 0,
-     "explain": "Pauses and tone revealed her feelings."
+     "explain": "Pauses and tone revealed her feelings.",
+     "notes": {
+      "her habit of always talking about the weather first": "The story doesn't say “her habit of always talking about the weather first”. Look for the line that answers the question.",
+      "how loudly or softly she usually spoke at dinner": "The story doesn't say “how loudly or softly she usually spoke at dinner”. Look for the line that answers the question.",
+      "the travel plans she made for the family each year": "The story doesn't say “the travel plans she made for the family each year”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -206,7 +276,12 @@
       "She was obviously joking, but nobody laughed."
      ],
      "answer": 0,
-     "explain": "It invokes the late grandfather — approval mixed with grief."
+     "explain": "It invokes the late grandfather — approval mixed with grief.",
+     "notes": {
+      "She spoke too quietly for anyone to hear her.": "The story doesn't say “She spoke too quietly for anyone to hear her.”. Look for the line that answers the question.",
+      "They had never met or known their grandfather.": "The story doesn't say “They had never met or known their grandfather.”. Look for the line that answers the question.",
+      "She was obviously joking, but nobody laughed.": "The story doesn't say “She was obviously joking, but nobody laughed.”. Look for the line that answers the question."
+     }
     }
    ]
   },
@@ -224,7 +299,12 @@
       "He found the old index full of errors."
      ],
      "answer": 0,
-     "explain": "'…not for lack of diligence but because… it can never be finished.'"
+     "explain": "'…not for lack of diligence but because… it can never be finished.'",
+     "notes": {
+      "He lacked the patience to continue.": "The story doesn't say “He lacked the patience to continue.”. Look for the line that answers the question.",
+      "The council withdrew its funding.": "The story doesn't say “The council withdrew its funding.”. Look for the line that answers the question.",
+      "He found the old index full of errors.": "The story doesn't say “He found the old index full of errors.”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -236,7 +316,12 @@
       "How books are physically moved around"
      ],
      "answer": 0,
-     "explain": "Categories change: a book 'migrates' from one heading to another."
+     "explain": "Categories change: a book 'migrates' from one heading to another.",
+     "notes": {
+      "How careless earlier librarians were": "The story doesn't say “How careless earlier librarians were”. Look for the line that answers the question.",
+      "How science replaced mythology": "The story doesn't say “How science replaced mythology”. Look for the line that answers the question.",
+      "How books are physically moved around": "The story doesn't say “How books are physically moved around”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -248,7 +333,12 @@
       "It is easy once the shelves are organised."
      ],
      "answer": 0,
-     "explain": "'To index is not to record knowledge but to take a position on it.'"
+     "explain": "'To index is not to record knowledge but to take a position on it.'",
+     "notes": {
+      "It should be left to machines in future.": "The story doesn't say “It should be left to machines in future.”. Look for the line that answers the question.",
+      "It is the least important job in a library.": "The story doesn't say “It is the least important job in a library.”. Look for the line that answers the question.",
+      "It is easy once the shelves are organised.": "The story doesn't say “It is easy once the shelves are organised.”. Look for the line that answers the question."
+     }
     }
    ]
   },
@@ -266,7 +356,12 @@
       "that Italian is hard to translate"
      ],
      "answer": 0,
-     "explain": "'The charge assumes that an original possesses a single, fixed meaning.'"
+     "explain": "'The charge assumes that an original possesses a single, fixed meaning.'",
+     "notes": {
+      "that puns cannot be translated": "The story doesn't say “that puns cannot be translated”. Look for the line that answers the question.",
+      "that writers dislike translators": "The story doesn't say “that writers dislike translators”. Look for the line that answers the question.",
+      "that Italian is hard to translate": "The story doesn't say “that Italian is hard to translate”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -278,7 +373,12 @@
       "refuses to translate poetry at all"
      ],
      "answer": 0,
-     "explain": "'She makes choices, sacrifices one quality to save another.'"
+     "explain": "'She makes choices, sacrifices one quality to save another.'",
+     "notes": {
+      "keeps every sound and rhythm intact": "The story doesn't say “keeps every sound and rhythm intact”. Look for the line that answers the question.",
+      "rewrites the poem in her own style": "The story doesn't say “rewrites the poem in her own style”. Look for the line that answers the question.",
+      "refuses to translate poetry at all": "The story doesn't say “refuses to translate poetry at all”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -290,7 +390,12 @@
       "Readers prefer translations to original texts."
      ],
      "answer": 0,
-     "explain": "'…may, on occasion, illuminate what the original concealed.'"
+     "explain": "'…may, on occasion, illuminate what the original concealed.'",
+     "notes": {
+      "Translations are usually better than originals.": "The story doesn't say “Translations are usually better than originals.”. Look for the line that answers the question.",
+      "Original authors should translate their own work.": "The story doesn't say “Original authors should translate their own work.”. Look for the line that answers the question.",
+      "Readers prefer translations to original texts.": "The story doesn't say “Readers prefer translations to original texts.”. Look for the line that answers the question."
+     }
     }
    ]
   }

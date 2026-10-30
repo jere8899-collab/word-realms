@@ -57,7 +57,12 @@
    "goes"
   ],
   "answer": 0,
-  "explain": "'Last night' = finished past time → past simple."
+  "explain": "Last night is a finished past time, so use the past simple: go → went. Example: I went home.",
+  "notes": {
+   "go": "Go is the present.",
+   "have gone": "Have gone can't go with a finished time like 'last night'.",
+   "goes": "Goes is present, for he/she/it."
+  }
  },
  {
   "type": "mcq",
@@ -69,7 +74,12 @@
    "sweet"
   ],
   "answer": 0,
-  "explain": "Short adjectives: sweet → sweeter than."
+  "explain": "Short adjectives add -er to compare: sweet → sweeter. Example: A cat is smaller than a dog.",
+  "notes": {
+   "more sweet": "More is for long adjectives: more beautiful. Sweet is short.",
+   "sweetest": "Sweetest compares three or more: the sweetest.",
+   "sweet": "With 'than' we need the comparative form."
+  }
  },
  {
   "type": "mcq",
@@ -81,7 +91,12 @@
    "any"
   ],
   "answer": 0,
-  "explain": "Apples are countable → how many."
+  "explain": "How many is for things we can count. Example: How many eggs?",
+  "notes": {
+   "much": "How much is for things we can't count: How much milk?",
+   "lot": "Lot needs 'a lot of', and doesn't follow 'how'.",
+   "any": "Any is not used after 'how'."
+  }
  },
  {
   "type": "mcq",
@@ -93,7 +108,12 @@
    "have waited"
   ],
   "answer": 0,
-  "explain": "A longer past action (were waiting) interrupted by a short one."
+  "explain": "A longer past action that was interrupted uses was/were + -ing. Example: I was reading when you called.",
+  "notes": {
+   "are waiting": "Are waiting is the present.",
+   "wait": "Wait is the present simple.",
+   "have waited": "Have waited doesn't fit a finished past story."
+  }
  },
  {
   "type": "mcq",
@@ -105,7 +125,12 @@
    "during"
   ],
   "answer": 0,
-  "explain": "'for' + a period of time; 'since' + a starting point."
+  "explain": "For + a length of time; since + a starting point. Example: for two weeks, since Monday.",
+  "notes": {
+   "since": "Since needs a starting point: since 2023.",
+   "from": "From needs 'to': from 2020 to 2023.",
+   "during": "During means inside a period: during the summer."
+  }
  },
  {
   "type": "mcq",
@@ -117,7 +142,12 @@
    "must"
   ],
   "answer": 0,
-  "explain": "'don't have to' = it isn't necessary."
+  "explain": "Don't have to = it isn't necessary. Example: You don't have to come, but you can.",
+  "notes": {
+   "mustn't": "Mustn't means it is not allowed. Wearing a coat isn't wrong!",
+   "have to": "Have to means it IS necessary, but it's warm.",
+   "must": "Must also means it is necessary."
+  }
  },
  {
   "type": "mcq",
@@ -129,7 +159,12 @@
    "most good"
   ],
   "answer": 0,
-  "explain": "good → better → the best."
+  "explain": "Good → better → best. Example: She is my best friend.",
+  "notes": {
+   "goodest": "Goodest isn't a word. Good is irregular.",
+   "better": "Better compares two things.",
+   "most good": "Most good isn't used. Say best."
+  }
  },
  {
   "type": "mcq",
@@ -141,7 +176,12 @@
    "visits"
   ],
   "answer": 0,
-  "explain": "After 'Did' use the base verb."
+  "explain": "After did, use the plain verb. Example: Did you see it?",
+  "notes": {
+   "visited": "Did already shows the past, so no -ed.",
+   "visiting": "No -ing after did.",
+   "visits": "No -s after did."
+  }
  },
  {
   "type": "mcq",
@@ -153,7 +193,12 @@
    "did"
   ],
   "answer": 0,
-  "explain": "First conditional: If + present, will + verb."
+  "explain": "First conditional: if + present, will + verb. Example: If you call, I will come.",
+  "notes": {
+   "would": "Would is for unreal situations: If I had wings, I would fly.",
+   "are": "Are can't go before 'stay' like this.",
+   "did": "Did is past."
+  }
  },
  {
   "type": "order",
@@ -189,7 +234,12 @@
    "was"
   ],
   "answer": 0,
-  "explain": "Present perfect with 'already': have + past participle."
+  "explain": "Present perfect: have + past participle, often with already. Example: I have already finished.",
+  "notes": {
+   "did": "Did doesn't go with 'eaten'.",
+   "am": "Am doesn't go with 'eaten'.",
+   "was": "Was eaten would mean the slices ate you!"
+  }
  },
  {
   "type": "mcq",
@@ -201,7 +251,12 @@
    "am used to"
   ],
   "answer": 0,
-  "explain": "'used to' + verb for past habits."
+  "explain": "Used to + verb = a past habit that has stopped. Example: I used to have long hair.",
+  "notes": {
+   "use to": "After 'I' in the past it's used to, with a d.",
+   "was used": "Was used means someone used you.",
+   "am used to": "Am used to means 'I'm comfortable with' now."
+  }
  },
  {
   "type": "mcq",
@@ -213,7 +268,12 @@
    "a"
   ],
   "answer": 0,
-  "explain": "Use 'any' in questions with uncountable nouns."
+  "explain": "In questions we usually use any. Example: Is there any milk?",
+  "notes": {
+   "some": "Some is mostly in positive sentences: There is some bread.",
+   "many": "Many is for countable plurals: many apples.",
+   "a": "A is for one countable thing. Bread is uncountable."
+  }
  },
  {
   "type": "mcq",
@@ -225,7 +285,12 @@
    "most fast"
   ],
   "answer": 0,
-  "explain": "Short adjective/adverb + -er: faster."
+  "explain": "Fast → faster. Example: A horse is faster than a dog.",
+  "notes": {
+   "more fast": "Fast is short, so no 'more'.",
+   "fastest": "Fastest compares three or more.",
+   "most fast": "Most fast isn't used. Say fastest."
+  }
  },
  {
   "type": "mcq",
@@ -237,7 +302,12 @@
    "is raining to"
   ],
   "answer": 0,
-  "explain": "'going to' for a prediction based on what we can see."
+  "explain": "Going to = a prediction from what we can see now. Example: Look! He's going to fall!",
+  "notes": {
+   "will to": "We say 'will rain', never 'will to'.",
+   "goes to": "Goes to is a movement: He goes to school.",
+   "is raining to": "Is raining to isn't English."
+  }
  },
  {
   "type": "mcq",
@@ -249,7 +319,12 @@
    "am having"
   ],
   "answer": 0,
-  "explain": "Past continuous for the longer action, interrupted by the past simple."
+  "explain": "Past continuous for the longer action, past simple for the short one. Example: I was eating when he arrived.",
+  "notes": {
+   "had": "Had would mean the shower came after the call.",
+   "have had": "Have had is present perfect, not a story.",
+   "am having": "Am having is now."
+  }
  },
  {
   "type": "mcq",
@@ -261,7 +336,12 @@
    "can't to"
   ],
   "answer": 0,
-  "explain": "'don't have to' = it isn't necessary."
+  "explain": "Don't have to = not necessary. Example: I don't have to get up early on Sunday.",
+  "notes": {
+   "mustn't": "Mustn't means it's not allowed. Going isn't wrong!",
+   "haven't": "Haven't needs a past participle: haven't gone.",
+   "can't to": "We say 'can't go', with no 'to'."
+  }
  },
  {
   "type": "mcq",
@@ -273,7 +353,12 @@
    "what"
   ],
   "answer": 0,
-  "explain": "'who' for people in relative clauses."
+  "explain": "Who is for people. Example: the boy who sings.",
+  "notes": {
+   "which": "Which is for things and animals.",
+   "where": "Where is for places.",
+   "what": "What isn't used to join a person to a sentence."
+  }
  },
  {
   "type": "mcq",
@@ -285,7 +370,12 @@
    "so much"
   ],
   "answer": 0,
-  "explain": "too + adjective + to-infinitive."
+  "explain": "Too + adjective + to = more than is OK. Example: It's too hot to play.",
+  "notes": {
+   "enough": "Enough comes after the adjective: old enough.",
+   "very much": "Very much doesn't go before an adjective.",
+   "so much": "So much doesn't go before an adjective."
+  }
  },
  {
   "type": "mcq",
@@ -297,6 +387,11 @@
    "ever"
   ],
   "answer": 0,
-  "explain": "'yet' at the end of present perfect questions."
+  "explain": "Yet goes at the end of questions and negatives. Example: Has he arrived yet?",
+  "notes": {
+   "already": "Already usually goes in the middle of a positive sentence.",
+   "still": "Still is for something that hasn't stopped.",
+   "ever": "Ever asks 'at any time in your life'."
+  }
  }
 ]

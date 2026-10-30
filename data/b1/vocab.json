@@ -9,7 +9,12 @@
    "take off"
   ],
   "answer": 0,
-  "explain": "call off = cancel."
+  "explain": "Call off = cancel. Example: The match was called off.",
+  "notes": {
+   "call up": "Call up = phone.",
+   "put up": "Put up = build or let someone stay.",
+   "take off": "Take off = remove clothes, or a plane leaving."
+  }
  },
  {
   "type": "mcq",
@@ -21,7 +26,12 @@
    "unlikely"
   ],
   "answer": 0,
-  "explain": "be unable to + verb. (incapable OF + -ing)"
+  "explain": "Unable to + verb = can't. Example: I was unable to sleep.",
+  "notes": {
+   "impossible": "Impossible describes the task, not the fox.",
+   "incapable": "Incapable needs 'of': incapable of finding.",
+   "unlikely": "Unlikely means probably not."
+  }
  },
  {
   "type": "mcq",
@@ -33,7 +43,12 @@
    "make"
   ],
   "answer": 0,
-  "explain": "put up with = tolerate."
+  "explain": "Put up with = accept something annoying. Example: I can't put up with the cold.",
+  "notes": {
+   "get": "Get up = leave bed.",
+   "keep": "Keep up with = go at the same speed.",
+   "make": "Make up = invent or become friends again."
+  }
  },
  {
   "type": "mcq",
@@ -45,7 +60,12 @@
    "see"
   ],
   "answer": 0,
-  "explain": "look after = take care of."
+  "explain": "Look after = take care of. Example: She looks after her little brother.",
+  "notes": {
+   "take": "Take care needs 'of': take care of.",
+   "care": "Care for means love or nurse, not 'care after'.",
+   "see": "See after isn't English."
+  }
  },
  {
   "type": "mcq",
@@ -57,7 +77,12 @@
    "wondered"
   ],
   "answer": 0,
-  "explain": "longer than expected = longer than we thought."
+  "explain": "Expect = think something will happen. Example: It was easier than I expected.",
+  "notes": {
+   "waited": "Wait needs 'for'.",
+   "remembered": "Remember is about the past.",
+   "wondered": "Wonder means ask yourself."
+  }
  },
  {
   "type": "mcq",
@@ -69,7 +94,12 @@
    "had"
   ],
   "answer": 0,
-  "explain": "Collocation: make a promise."
+  "explain": "We make a promise. Example: He made a promise to help.",
+  "notes": {
+   "did": "Do a promise isn't English.",
+   "took": "Take a promise isn't English.",
+   "had": "Had a promise isn't natural."
+  }
  },
  {
   "type": "mcq",
@@ -81,7 +111,12 @@
    "relaxed"
   ],
   "answer": 0,
-  "explain": "Strict = insisting rules are obeyed."
+  "explain": "Strict = makes people follow rules. Example: Our teacher is strict about homework.",
+  "notes": {
+   "generous": "Generous means kind with money or gifts.",
+   "cheerful": "Cheerful means happy.",
+   "relaxed": "Relaxed is the opposite of strict."
+  }
  },
  {
   "type": "mcq",
@@ -93,7 +128,12 @@
    "get"
   ],
   "answer": 0,
-  "explain": "Collocation: make a decision."
+  "explain": "We make a decision. Example: It's hard to make decisions.",
+  "notes": {
+   "do": "Do a decision isn't English.",
+   "say": "Say a decision isn't English.",
+   "get": "Get a decision isn't natural."
+  }
  },
  {
   "type": "mcq",
@@ -105,7 +145,12 @@
    "hoping"
   ],
   "answer": 0,
-  "explain": "look forward to = be excited about something in the future."
+  "explain": "Look forward to = be happy about something coming. Example: I look forward to seeing you.",
+  "notes": {
+   "waiting": "Wait forward isn't English.",
+   "seeing": "See forward isn't English.",
+   "hoping": "Hope forward isn't English."
+  }
  },
  {
   "type": "mcq",
@@ -117,7 +162,12 @@
    "endangered"
   ],
   "answer": 0,
-  "explain": "After 'is' we need an adjective."
+  "explain": "After is we need an adjective: dangerous. Example: That road is dangerous.",
+  "notes": {
+   "dangerously": "Dangerously is an adverb: drive dangerously.",
+   "danger": "Danger is a noun.",
+   "endangered": "Endangered is for animals at risk of dying out."
+  }
  },
  {
   "type": "mcq",
@@ -129,7 +179,12 @@
    "ordinary"
   ],
   "answer": 0,
-  "explain": "Enormous = huge."
+  "explain": "Enormous = huge = very big. Example: a huge whale.",
+  "notes": {
+   "tiny": "Tiny is the opposite.",
+   "narrow": "Narrow means not wide.",
+   "ordinary": "Ordinary means normal."
+  }
  },
  {
   "type": "mcq",
@@ -141,7 +196,12 @@
    "protection"
   ],
   "answer": 0,
-  "explain": "A prediction says what will happen."
+  "explain": "A prediction says what will happen. Example: The weather prediction was right.",
+  "notes": {
+   "prescription": "A prescription is from a doctor.",
+   "production": "Production means making things.",
+   "protection": "Protection keeps you safe."
+  }
  },
  {
   "type": "mcq",
@@ -153,7 +213,12 @@
    "explain"
   ],
   "answer": 0,
-  "explain": "tell someone something; 'explain me' is a common mistake."
+  "explain": "Tell + person + how. Example: Tell me your name.",
+  "notes": {
+   "say": "Say isn't followed directly by 'me'.",
+   "speak": "Speak isn't followed by 'me how'.",
+   "explain": "Explain needs 'to': explain to me how."
+  }
  },
  {
   "type": "mcq",
@@ -165,7 +230,12 @@
    "lacked"
   ],
   "answer": 0,
-  "explain": "miss a bus = arrive too late to catch it."
+  "explain": "Miss = be too late for transport. Example: I missed the train.",
+  "notes": {
+   "lost": "Lose is for things you can't find.",
+   "failed": "Fail is for tests.",
+   "lacked": "Lack means not have enough."
+  }
  },
  {
   "type": "mcq",
@@ -177,7 +247,12 @@
    "memorises"
   ],
   "answer": 0,
-  "explain": "remind someone of something."
+  "explain": "Remind someone of = make them think of. Example: You remind me of my sister.",
+  "notes": {
+   "remembers": "Remember doesn't take 'me of'.",
+   "recalls": "Recall doesn't take 'me of'.",
+   "memorises": "Memorise means learn by heart."
+  }
  },
  {
   "type": "mcq",
@@ -189,7 +264,12 @@
    "away"
   ],
   "answer": 0,
-  "explain": "run out of = have none left."
+  "explain": "Run out of = have none left. Example: We ran out of time.",
+  "notes": {
+   "off": "Run off = run away.",
+   "down": "Run down = lose power or criticise.",
+   "away": "Run away = escape."
+  }
  },
  {
   "type": "mcq",
@@ -201,7 +281,12 @@
    "take"
   ],
   "answer": 0,
-  "explain": "turn down = make quieter."
+  "explain": "Turn down = make quieter. Example: Turn down the TV.",
+  "notes": {
+   "put": "Put down = place on a surface.",
+   "get": "Get down = come down or make sad.",
+   "take": "Take down = write or remove."
+  }
  },
  {
   "type": "mcq",
@@ -213,7 +298,12 @@
    "profit"
   ],
   "answer": 0,
-  "explain": "be a success."
+  "explain": "A success = something that goes well. Example: The party was a success.",
+  "notes": {
+   "winner": "A winner is a person.",
+   "victory": "A victory is for a battle or game.",
+   "profit": "A profit is money earned."
+  }
  },
  {
   "type": "mcq",
@@ -225,7 +315,12 @@
    "look up to"
   ],
   "answer": 0,
-  "explain": "take after = be similar to an older relative."
+  "explain": "Take after = be like an older family member. Example: She takes after her mum.",
+  "notes": {
+   "look after": "Look after = care for.",
+   "take up": "Take up = start a hobby.",
+   "look up to": "Look up to = admire."
+  }
  },
  {
   "type": "mcq",
@@ -237,7 +332,12 @@
    "comfortably"
   ],
   "answer": 0,
-  "explain": "After 'was' we need an adjective."
+  "explain": "Comfortable = nice to be in. Example: a comfortable bed.",
+  "notes": {
+   "comforting": "Comforting means making you feel less sad.",
+   "comfort": "Comfort is a noun or verb.",
+   "comfortably": "Comfortably is an adverb."
+  }
  },
  {
   "type": "mcq",
@@ -249,7 +349,12 @@
    "put"
   ],
   "answer": 0,
-  "explain": "Collocation: take a break."
+  "explain": "Take a break = rest. Example: Let's take a break.",
+  "notes": {
+   "do": "Do a break isn't English.",
+   "get": "Get a break means a lucky chance.",
+   "put": "Put a break isn't English."
+  }
  },
  {
   "type": "mcq",
@@ -261,7 +366,12 @@
    "modest"
   ],
   "answer": 0,
-  "explain": "Honest = truthful."
+  "explain": "Honest = tells the truth. Example: an honest answer.",
+  "notes": {
+   "polite": "Polite = good manners.",
+   "patient": "Patient = can wait calmly.",
+   "modest": "Modest = doesn't boast."
+  }
  },
  {
   "type": "mcq",
@@ -273,7 +383,12 @@
    "involves"
   ],
   "answer": 0,
-  "explain": "include = have as part of the total."
+  "explain": "Include = have as part of the whole. Example: The ticket includes a drink.",
+  "notes": {
+   "contains": "Contain is for what's inside a container.",
+   "consists": "Consist needs 'of'.",
+   "involves": "Involve means take part or need."
+  }
  },
  {
   "type": "mcq",
@@ -285,7 +400,12 @@
    "refused"
   ],
   "answer": 0,
-  "explain": "fail to + verb = not succeed."
+  "explain": "Fail to = not succeed. Example: He failed to reach the top.",
+  "notes": {
+   "missed": "Miss isn't followed by 'to get'.",
+   "lost": "Lose isn't followed by 'to'.",
+   "refused": "Refuse means say no on purpose."
+  }
  },
  {
   "type": "mcq",
@@ -297,7 +417,12 @@
    "have"
   ],
   "answer": 0,
-  "explain": "bear in mind = remember."
+  "explain": "Bear in mind = remember. Example: Bear in mind it might rain.",
+  "notes": {
+   "take": "Take in mind isn't the phrase.",
+   "hold": "Hold in mind isn't the phrase.",
+   "have": "Have in mind means plan or think of."
+  }
  },
  {
   "type": "mcq",
@@ -309,7 +434,12 @@
    "stuck"
   ],
   "answer": 0,
-  "explain": "A blocked road can't be used."
+  "explain": "Blocked = nobody can pass. Example: A tree blocked the road.",
+  "notes": {
+   "locked": "Locked needs a key.",
+   "shut up": "Shut up means be quiet (rude).",
+   "stuck": "Stuck means can't move."
+  }
  },
  {
   "type": "mcq",
@@ -321,7 +451,12 @@
    "hurt himself"
   ],
   "answer": 0,
-  "explain": "twist your ankle = injure it by turning it."
+  "explain": "Twist your ankle = hurt it by turning it. Example: I twisted my ankle on the stairs.",
+  "notes": {
+   "broke down": "Break down is for machines.",
+   "damaged": "Damage is for things, not body parts.",
+   "hurt himself": "Hurt himself can't be followed by 'his ankle'."
+  }
  },
  {
   "type": "mcq",
@@ -333,7 +468,12 @@
    "amazed"
   ],
   "answer": 0,
-  "explain": "Exhausted = extremely tired."
+  "explain": "Exhausted = very, very tired. Example: I was exhausted after the race.",
+  "notes": {
+   "annoyed": "Annoyed = a bit angry.",
+   "confused": "Confused = not understanding.",
+   "amazed": "Amazed = very surprised."
+  }
  },
  {
   "type": "mcq",
@@ -345,7 +485,12 @@
    "in"
   ],
   "answer": 0,
-  "explain": "set off = start a journey."
+  "explain": "Set off = start a journey. Example: We set off at dawn.",
+  "notes": {
+   "up": "Set up = start a business or prepare.",
+   "down": "Set down = put down.",
+   "in": "Set in = begin and continue (bad weather)."
+  }
  },
  {
   "type": "mcq",
@@ -357,6 +502,11 @@
    "gave"
   ],
   "answer": 0,
-  "explain": "Collocation: make an effort."
+  "explain": "Make an effort = try hard. Example: Make an effort to listen.",
+  "notes": {
+   "did": "Do an effort isn't English.",
+   "took": "Take an effort isn't English.",
+   "gave": "Give an effort isn't natural."
+  }
  }
 ]

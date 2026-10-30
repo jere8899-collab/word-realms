@@ -10,7 +10,7 @@ function normalize(item, passage) {
   if (item.type === "order") return { type: "order", q: item.q, answer: item.answer, explain: item.explain };
   const correct = item.options[item.answer];
   return { type: item.type === "listen" ? "listen" : "mcq", q: item.q, say: item.say, pic: item.pic, passage,
-    options: WR.shuffle(item.options), correct, explain: item.explain };
+    options: WR.shuffle(item.options), correct, explain: item.explain, notes: item.notes };
 }
 /* Fresh-first picking: remember which items a learner has recently seen (per realm + skill) and serve unseen
    ones first, so the whole bank rotates before anything repeats. state.seen = { "<rid>/<skill>": [itemKey, ...] }. */
@@ -189,7 +189,7 @@ function pick(btn, it) {
   const chosen = it.options[+btn.dataset.k], ok = chosen === it.correct;
   document.querySelectorAll(".opt").forEach(b => { b.disabled = true; if (it.options[+b.dataset.k] === it.correct) b.classList.add("right"); });
   if (!ok) btn.classList.add("wrong");
-  answer(ok, it);
+  it._picked = chosen; answer(ok, it);
 }
 function petReact(ok) {
   const box = WR.$("#lpet"), bub = WR.$("#lbubble"); if (!box) return;
@@ -197,6 +197,12 @@ function petReact(ok) {
   box.classList.add(ok ? (L.combo >= 3 ? "cheer" : "bounce") : "sad");
   bub.textContent = ok ? (L.combo >= 3 ? `${L.combo} in a row! You're on fire! 🔥` : CHEER[Math.floor(Math.random() * CHEER.length)]) : COMFORT[Math.floor(Math.random() * COMFORT.length)];
 }
+/* C3: when a child picks a wrong option, say why THAT option is wrong before the rule + example. */
+function whyNot(ok, it) {
+  const n = !ok && it._picked && it.notes && it.notes[it._picked];
+  return n ? `<div class="why-not">🤔 <b>Why not “${WR.esc(it._picked)}”?</b> ${WR.esc(n)}</div>` : "";
+}
+WR._whyNot = whyNot;
 function answer(ok, it, extra = "") {
   L.answered = true; clearTimer();
   const s = WR.state; s.totalAnswered++;
@@ -221,7 +227,7 @@ function answer(ok, it, extra = "") {
   const transcript = it.type === "listen" ? `<div class="transcript">🎧 “${WR.esc(it.say)}” <button class="btn ghost small" id="replay">🔁 Replay</button></div>` : "";
   const lost = (L.mode === "boss" || L.mode === "dragon") && L.hearts === 0;
   const last = L.i >= L.items.length - 1 || lost || ((L.mode === "boss" || L.mode === "dragon") && L.bossHP <= 0);
-  WR.$("#explain").innerHTML = `<div class="explain ${ok ? "good" : "bad"}">${ok ? "✅ Correct!" : "💭 Not quite."} ${extra} <div style="font-weight:700;margin-top:4px">💡 ${WR.esc(it.explain)}</div>${transcript}</div>
+  WR.$("#explain").innerHTML = `<div class="explain ${ok ? "good" : "bad"}">${ok ? "✅ Correct!" : "💭 Not quite."} ${extra}${whyNot(ok, it)} <div class="why-rule" style="font-weight:700;margin-top:4px">💡 ${WR.esc(it.explain)}</div>${transcript}</div>
     <div class="row" style="margin-top:12px;justify-content:flex-end"><button class="btn ${ok ? "mint" : ""}" id="nextBtn">${last ? "See results ✨" : "Next →"}</button></div>`;
   const rp = WR.$("#replay"); if (rp) rp.onclick = () => Speech.speak(it.say, WR.state.settings.rate);
   WR.$("#nextBtn").onclick = () => { Speech.stop(); if (last) finish(lost); else { L.i++; render(); } };

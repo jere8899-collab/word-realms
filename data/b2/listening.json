@@ -10,7 +10,12 @@
    "annoyed it was so long"
   ],
   "answer": 0,
-  "explain": "Low expectations + 'better than the original'."
+  "explain": "Low expectations + 'better than the original'.",
+  "notes": {
+   "mildly disappointed": "You didn't hear “mildly disappointed”. Listen again for the key words.",
+   "completely indifferent": "You didn't hear “completely indifferent”. Listen again for the key words.",
+   "annoyed it was so long": "You didn't hear “annoyed it was so long”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -23,7 +28,12 @@
    "He decided he didn't want to go."
   ],
   "answer": 0,
-  "explain": "Third conditional: nobody told him."
+  "explain": "Third conditional: nobody told him.",
+  "notes": {
+   "He forgot it was happening.": "You didn't hear “He forgot it was happening.”. Listen again for the key words.",
+   "He was ill and stayed at home.": "You didn't hear “He was ill and stayed at home.”. Listen again for the key words.",
+   "He decided he didn't want to go.": "You didn't hear “He decided he didn't want to go.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -36,7 +46,12 @@
    "the salary he is being paid"
   ],
   "answer": 0,
-  "explain": "Commute = daily journey to work."
+  "explain": "Commute = daily journey to work.",
+  "notes": {
+   "the job itself, which bores him": "You didn't hear “the job itself, which bores him”. Listen again for the key words.",
+   "his colleagues at the office": "You didn't hear “his colleagues at the office”. Listen again for the key words.",
+   "the salary he is being paid": "You didn't hear “the salary he is being paid”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -49,7 +64,12 @@
    "Monday next week"
   ],
   "answer": 0,
-  "explain": "Extension until Wednesday."
+  "explain": "Extension until Wednesday.",
+  "notes": {
+   "Friday": "You didn't hear “Friday”. Listen again for the key words.",
+   "Thursday": "You didn't hear “Thursday”. Listen again for the key words.",
+   "Monday next week": "You didn't hear “Monday next week”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -62,7 +82,12 @@
    "Sales fell sharply."
   ],
   "answer": 0,
-  "explain": "'Fell slightly.'"
+  "explain": "'Fell slightly.'",
+  "notes": {
+   "Sales rose by 15%.": "You didn't hear “Sales rose by 15%.”. Listen again for the key words.",
+   "Sales stayed the same.": "You didn't hear “Sales stayed the same.”. Listen again for the key words.",
+   "Sales fell sharply.": "You didn't hear “Sales fell sharply.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -75,7 +100,12 @@
    "angry"
   ],
   "answer": 0,
-  "explain": "'Torn between' = can't decide."
+  "explain": "'Torn between' = can't decide.",
+  "notes": {
+   "certain": "You didn't hear “certain”. Listen again for the key words.",
+   "regretful": "You didn't hear “regretful”. Listen again for the key words.",
+   "angry": "You didn't hear “angry”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -88,7 +118,12 @@
    "The council made the right decision quickly."
   ],
   "answer": 0,
-  "explain": "'Should have consulted' = criticism."
+  "explain": "'Should have consulted' = criticism.",
+  "notes": {
+   "The library should close as soon as possible.": "You didn't hear “The library should close as soon as possible.”. Listen again for the key words.",
+   "Residents are to blame for the closure.": "You didn't hear “Residents are to blame for the closure.”. Listen again for the key words.",
+   "The council made the right decision quickly.": "You didn't hear “The council made the right decision quickly.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -101,7 +136,12 @@
    "a discount on a later booking"
   ],
   "answer": 0,
-  "explain": "Waiting list in case of a cancellation."
+  "explain": "Waiting list in case of a cancellation.",
+  "notes": {
+   "a table for tomorrow night": "You didn't hear “a table for tomorrow night”. Listen again for the key words.",
+   "a seat at another restaurant": "You didn't hear “a seat at another restaurant”. Listen again for the key words.",
+   "a discount on a later booking": "You didn't hear “a discount on a later booking”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -114,7 +154,12 @@
    "about £130"
   ],
   "answer": 0,
-  "explain": "'Around three hundred.' 'Mind you' adds a reservation."
+  "explain": "'Around three hundred.' 'Mind you' adds a reservation.",
+  "notes": {
+   "about £30": "You didn't hear “about £30”. Listen again for the key words.",
+   "about £3,000": "You didn't hear “about £3,000”. Listen again for the key words.",
+   "about £130": "You didn't hear “about £130”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -127,7 +172,12 @@
    "She works too slowly."
   ],
   "answer": 0,
-  "explain": "'Tends to rush… careless mistakes.'"
+  "explain": "'Tends to rush… careless mistakes.'",
+  "notes": {
+   "She isn't intelligent.": "You didn't hear “She isn't intelligent.”. Listen again for the key words.",
+   "She is lazy.": "You didn't hear “She is lazy.”. Listen again for the key words.",
+   "She works too slowly.": "You didn't hear “She works too slowly.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -140,7 +190,12 @@
    "catch the train back tonight"
   ],
   "answer": 0,
-  "explain": "'We'll have to stay another night.'"
+  "explain": "'We'll have to stay another night.'",
+  "notes": {
+   "take a plane home instead": "You didn't hear “take a plane home instead”. Listen again for the key words.",
+   "wait at the port until morning": "You didn't hear “wait at the port until morning”. Listen again for the key words.",
+   "catch the train back tonight": "You didn't hear “catch the train back tonight”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -153,7 +208,12 @@
    "He has changed his mind."
   ],
   "answer": 0,
-  "explain": "'I couldn't agree more' = total agreement."
+  "explain": "'I couldn't agree more' = total agreement.",
+  "notes": {
+   "He disagrees.": "You didn't hear “He disagrees.”. Listen again for the key words.",
+   "He isn't sure.": "You didn't hear “He isn't sure.”. Listen again for the key words.",
+   "He has changed his mind.": "You didn't hear “He has changed his mind.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -166,7 +226,12 @@
    "refusing to help"
   ],
   "answer": 0,
-  "explain": "'You might want to…' is a polite suggestion."
+  "explain": "'You might want to…' is a polite suggestion.",
+  "notes": {
+   "praising the report": "You didn't hear “praising the report”. Listen again for the key words.",
+   "ordering the report to be resent": "You didn't hear “ordering the report to be resent”. Listen again for the key words.",
+   "refusing to help": "You didn't hear “refusing to help”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -179,7 +244,12 @@
    "about forty minutes"
   ],
   "answer": 0,
-  "explain": "Twelve km, four hours."
+  "explain": "Twelve km, four hours.",
+  "notes": {
+   "about twelve hours": "You didn't hear “about twelve hours”. Listen again for the key words.",
+   "about two hours": "You didn't hear “about two hours”. Listen again for the key words.",
+   "about forty minutes": "You didn't hear “about forty minutes”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -192,7 +262,12 @@
    "He forgot to mention safety until now."
   ],
   "answer": 0,
-  "explain": "'It goes without saying' = it's obvious."
+  "explain": "'It goes without saying' = it's obvious.",
+  "notes": {
+   "Nobody ever wants to talk about safety.": "You didn't hear “Nobody ever wants to talk about safety.”. Listen again for the key words.",
+   "Safety is less important than speed here.": "You didn't hear “Safety is less important than speed here.”. Listen again for the key words.",
+   "He forgot to mention safety until now.": "You didn't hear “He forgot to mention safety until now.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -205,7 +280,12 @@
    "He doesn't really like the cake."
   ],
   "answer": 0,
-  "explain": "A polite way of saying 'yes, please'."
+  "explain": "A polite way of saying 'yes, please'.",
+  "notes": {
+   "He doesn't want any more cake.": "You didn't hear “He doesn't want any more cake.”. Listen again for the key words.",
+   "He is too full to eat anything.": "You didn't hear “He is too full to eat anything.”. Listen again for the key words.",
+   "He doesn't really like the cake.": "You didn't hear “He doesn't really like the cake.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -218,7 +298,12 @@
    "Dinner was cancelled."
   ],
   "answer": 0,
-  "explain": "'That's extra' = it costs more."
+  "explain": "'That's extra' = it costs more.",
+  "notes": {
+   "Dinner is included.": "You didn't hear “Dinner is included.”. Listen again for the key words.",
+   "The ticket is cheaper.": "You didn't hear “The ticket is cheaper.”. Listen again for the key words.",
+   "Dinner was cancelled.": "You didn't hear “Dinner was cancelled.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -231,7 +316,12 @@
    "He works too fast."
   ],
   "answer": 0,
-  "explain": "Perfectionism is 'terrible for deadlines'."
+  "explain": "Perfectionism is 'terrible for deadlines'.",
+  "notes": {
+   "His work is poor.": "You didn't hear “His work is poor.”. Listen again for the key words.",
+   "He doesn't care about details.": "You didn't hear “He doesn't care about details.”. Listen again for the key words.",
+   "He works too fast.": "You didn't hear “He works too fast.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -244,7 +334,12 @@
    "the idea of a car park"
   ],
   "answer": 0,
-  "explain": "'It's in the wrong place.'"
+  "explain": "'It's in the wrong place.'",
+  "notes": {
+   "the cost": "You didn't hear “the cost”. Listen again for the key words.",
+   "the size": "You didn't hear “the size”. Listen again for the key words.",
+   "the idea of a car park": "You didn't hear “the idea of a car park”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -257,7 +352,12 @@
    "the cold"
   ],
   "answer": 0,
-  "explain": "Fog = they'd hardly see anything."
+  "explain": "Fog = they'd hardly see anything.",
+  "notes": {
+   "heavy rain": "You didn't hear “heavy rain”. Listen again for the key words.",
+   "an injury": "You didn't hear “an injury”. Listen again for the key words.",
+   "the cold": "You didn't hear “the cold”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -270,7 +370,12 @@
    "going at all"
   ],
   "answer": 0,
-  "explain": "Third conditional expressing regret."
+  "explain": "Third conditional expressing regret.",
+  "notes": {
+   "booking online": "You didn't hear “booking online”. Listen again for the key words.",
+   "arriving early": "You didn't hear “arriving early”. Listen again for the key words.",
+   "going at all": "You didn't hear “going at all”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -283,7 +388,12 @@
    "rather shy"
   ],
   "answer": 0,
-  "explain": "Approachable = easy to talk to."
+  "explain": "Approachable = easy to talk to.",
+  "notes": {
+   "very strict": "You didn't hear “very strict”. Listen again for the key words.",
+   "often absent": "You didn't hear “often absent”. Listen again for the key words.",
+   "rather shy": "You didn't hear “rather shy”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -296,7 +406,12 @@
    "changing the subject"
   ],
   "answer": 0,
-  "explain": "Polite interruption to correct a misunderstanding."
+  "explain": "Polite interruption to correct a misunderstanding.",
+  "notes": {
+   "ending the meeting": "You didn't hear “ending the meeting”. Listen again for the key words.",
+   "agreeing with the plan": "You didn't hear “agreeing with the plan”. Listen again for the key words.",
+   "changing the subject": "You didn't hear “changing the subject”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -309,7 +424,12 @@
    "The event was closed."
   ],
   "answer": 0,
-  "explain": "Roughly doubled = about twice as many."
+  "explain": "Roughly doubled = about twice as many.",
+  "notes": {
+   "Fewer people came.": "You didn't hear “Fewer people came.”. Listen again for the key words.",
+   "Attendance stayed the same.": "You didn't hear “Attendance stayed the same.”. Listen again for the key words.",
+   "The event was closed.": "You didn't hear “The event was closed.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -322,7 +442,12 @@
    "indifferent"
   ],
   "answer": 0,
-  "explain": "She accepts the point but isn't persuaded."
+  "explain": "She accepts the point but isn't persuaded.",
+  "notes": {
+   "enthusiastic": "You didn't hear “enthusiastic”. Listen again for the key words.",
+   "angry": "You didn't hear “angry”. Listen again for the key words.",
+   "indifferent": "You didn't hear “indifferent”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -335,7 +460,12 @@
    "He doesn't know how to ride."
   ],
   "answer": 0,
-  "explain": "Putting it off = delaying."
+  "explain": "Putting it off = delaying.",
+  "notes": {
+   "He can't afford the repair.": "You didn't hear “He can't afford the repair.”. Listen again for the key words.",
+   "The repair shop is closed.": "You didn't hear “The repair shop is closed.”. Listen again for the key words.",
+   "He doesn't know how to ride.": "You didn't hear “He doesn't know how to ride.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -348,7 +478,12 @@
    "It will be held at the lake."
   ],
   "answer": 0,
-  "explain": "'Weather permitting' = only if the weather is good enough."
+  "explain": "'Weather permitting' = only if the weather is good enough.",
+  "notes": {
+   "It will be in the gardens whatever happens.": "You didn't hear “It will be in the gardens whatever happens.”. Listen again for the key words.",
+   "The ceremony has been cancelled.": "You didn't hear “The ceremony has been cancelled.”. Listen again for the key words.",
+   "It will be held at the lake.": "You didn't hear “It will be held at the lake.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -361,6 +496,11 @@
    "She lives with her mother."
   ],
   "answer": 0,
-  "explain": "Take after = resemble a parent."
+  "explain": "Take after = resemble a parent.",
+  "notes": {
+   "She looks after her mother.": "You didn't hear “She looks after her mother.”. Listen again for the key words.",
+   "She disagrees with her mother.": "You didn't hear “She disagrees with her mother.”. Listen again for the key words.",
+   "She lives with her mother.": "You didn't hear “She lives with her mother.”. Listen again for the key words."
+  }
  }
 ]

@@ -1,7 +1,7 @@
 [
  {
   "type": "mcq",
-  "q": "The ambassador's remarks were deliberately ___, allowing several interpretations.",
+  "q": "The fortune teller's words were deliberately ___, allowing several interpretations.",
   "options": [
    "ambiguous",
    "unequivocal",
@@ -9,7 +9,12 @@
    "forthright"
   ],
   "answer": 0,
-  "explain": "Ambiguous = open to more than one meaning."
+  "explain": "Ambiguous = can be understood in more than one way. Example: an ambiguous ending.",
+  "notes": {
+   "unequivocal": "Unequivocal = completely clear.",
+   "transparent": "Transparent = clear and honest.",
+   "forthright": "Forthright = direct and honest."
+  }
  },
  {
   "type": "mcq",
@@ -21,11 +26,16 @@
    "bear"
   ],
   "answer": 0,
-  "explain": "hold water = be logically sound."
+  "explain": "Hold water = be logical. Example: His excuse doesn't hold water.",
+  "notes": {
+   "carry": "Carry water is literal.",
+   "keep": "Keep water isn't the idiom.",
+   "bear": "Bear water isn't the idiom."
+  }
  },
  {
   "type": "mcq",
-  "q": "We must not ___ the importance of public trust.",
+  "q": "We must not ___ how important sleep is for learning.",
   "options": [
    "underestimate",
    "undermine",
@@ -33,11 +43,16 @@
    "understatement"
   ],
   "answer": 0,
-  "explain": "underestimate = think something is less important than it is."
+  "explain": "Underestimate = think something is smaller than it is. Example: Don't underestimate her.",
+  "notes": {
+   "undermine": "Undermine = weaken secretly.",
+   "undertake": "Undertake = begin a task.",
+   "understatement": "Understatement is a noun."
+  }
  },
  {
   "type": "mcq",
-  "q": "Her proposal was met with widespread ___.",
+  "q": "Her idea for a school on Mars was met with widespread ___.",
   "options": [
    "scepticism",
    "sceptical",
@@ -45,11 +60,16 @@
    "scepticise"
   ],
   "answer": 0,
-  "explain": "A noun is needed after 'widespread'."
+  "explain": "Scepticism (noun) = doubt. Example: The news was met with scepticism.",
+  "notes": {
+   "sceptical": "Sceptical is an adjective.",
+   "sceptic": "A sceptic is a person.",
+   "scepticise": "Scepticise isn't a word."
+  }
  },
  {
   "type": "mcq",
-  "q": "The council ___ a compromise after hours of negotiation.",
+  "q": "The two teams ___ a compromise after hours of arguing about the rules.",
   "options": [
    "hammered out",
    "hammered in",
@@ -57,11 +77,16 @@
    "pulled through"
   ],
   "answer": 0,
-  "explain": "hammer out = reach an agreement after long discussion."
+  "explain": "Hammer out = reach an agreement after hard discussion. Example: They hammered out a deal.",
+  "notes": {
+   "hammered in": "Hammer in is literal (nails).",
+   "knocked about": "Knock about = hit or wander.",
+   "pulled through": "Pull through = recover."
+  }
  },
  {
   "type": "mcq",
-  "q": "The lord's claims are not ___ by the evidence.",
+  "q": "The pirate's claims are not ___ by the evidence.",
   "options": [
    "substantiated",
    "substituted",
@@ -69,7 +94,12 @@
    "subordinated"
   ],
   "answer": 0,
-  "explain": "substantiate = support with proof."
+  "explain": "Substantiate = prove with evidence. Example: Can you substantiate that?",
+  "notes": {
+   "substituted": "Substitute = replace.",
+   "subsidised": "Subsidise = pay part of the cost.",
+   "subordinated": "Subordinate = put below."
+  }
  },
  {
   "type": "mcq",
@@ -81,11 +111,16 @@
    "run"
   ],
   "answer": 0,
-  "explain": "beat around the bush = avoid the main point."
+  "explain": "Beat around the bush = avoid the main point. Example: Stop beating around the bush!",
+  "notes": {
+   "hit": "Hit isn't the idiom.",
+   "shake": "Shake isn't the idiom.",
+   "run": "Run isn't the idiom."
+  }
  },
  {
   "type": "mcq",
-  "q": "The decision will have far-___ consequences.",
+  "q": "Discovering water on the Moon will have far-___ consequences.",
   "options": [
    "reaching",
    "fetched",
@@ -93,11 +128,16 @@
    "flung"
   ],
   "answer": 0,
-  "explain": "far-reaching = wide-ranging. (far-fetched = unlikely)"
+  "explain": "Far-reaching = affecting many things. Example: far-reaching changes.",
+  "notes": {
+   "fetched": "Far-fetched = hard to believe.",
+   "extending": "Far-extending isn't a collocation.",
+   "flung": "Far-flung = very distant."
+  }
  },
  {
   "type": "mcq",
-  "q": "Her ___ analysis exposed several flaws in the plan.",
+  "q": "Her ___ analysis exposed several flaws in the escape plan.",
   "options": [
    "incisive",
    "indecisive",
@@ -105,11 +145,16 @@
    "inclusive"
   ],
   "answer": 0,
-  "explain": "incisive = sharp and clear-thinking."
+  "explain": "Incisive = sharp and clear. Example: an incisive question.",
+  "notes": {
+   "indecisive": "Indecisive = can't decide.",
+   "incessant": "Incessant = never stopping.",
+   "inclusive": "Inclusive = including everyone."
+  }
  },
  {
   "type": "mcq",
-  "q": "The debate became increasingly ___, with insults on both sides.",
+  "q": "The online game chat became increasingly ___, with insults on both sides.",
   "options": [
    "acrimonious",
    "harmonious",
@@ -117,7 +162,12 @@
    "unanimous"
   ],
   "answer": 0,
-  "explain": "acrimonious = angry and bitter."
+  "explain": "Acrimonious = angry and bitter. Example: an acrimonious argument.",
+  "notes": {
+   "harmonious": "Harmonious = peaceful.",
+   "ceremonious": "Ceremonious = formal.",
+   "unanimous": "Unanimous = everyone agrees."
+  }
  },
  {
   "type": "mcq",
@@ -129,11 +179,16 @@
    "oversight"
   ],
   "answer": 0,
-  "explain": "hindsight = understanding after the event."
+  "explain": "Hindsight = understanding after something happens. Example: In hindsight, I should have studied.",
+  "notes": {
+   "foresight": "Foresight = seeing ahead.",
+   "insight": "Insight = deep understanding.",
+   "oversight": "Oversight = a mistake by not noticing."
+  }
  },
  {
   "type": "mcq",
-  "q": "The treaty was a ___ moment in the kingdom's history.",
+  "q": "The first Moon landing was a ___ moment in human history.",
   "options": [
    "pivotal",
    "marginal",
@@ -141,11 +196,16 @@
    "peripheral"
   ],
   "answer": 0,
-  "explain": "pivotal = crucially important."
+  "explain": "Pivotal = central, causing change. Example: a pivotal match.",
+  "notes": {
+   "marginal": "Marginal = small, at the edge.",
+   "trivial": "Trivial = unimportant.",
+   "peripheral": "Peripheral = at the edge."
+  }
  },
  {
   "type": "mcq",
-  "q": "She ___ her opponent's argument point by point.",
+  "q": "She ___ her rival's argument point by point in the debate club.",
   "options": [
    "dismantled",
    "disbanded",
@@ -153,7 +213,12 @@
    "disentangled"
   ],
   "answer": 0,
-  "explain": "dismantle an argument = take it apart."
+  "explain": "Dismantle = take apart (also arguments). Example: She dismantled his excuse.",
+  "notes": {
+   "disbanded": "Disband = break up a group.",
+   "dislodged": "Dislodge = knock out of place.",
+   "disentangled": "Disentangle = untie."
+  }
  },
  {
   "type": "mcq",
@@ -165,7 +230,12 @@
    "wholehearted"
   ],
   "answer": 0,
-  "explain": "perfunctory = done with minimum effort, as a formality."
+  "explain": "Perfunctory = done quickly without care. Example: a perfunctory wave.",
+  "notes": {
+   "profound": "Profound = deep.",
+   "heartfelt": "Heartfelt = sincere.",
+   "wholehearted": "Wholehearted = completely sincere."
+  }
  },
  {
   "type": "mcq",
@@ -177,11 +247,16 @@
    "consequences"
   ],
   "answer": 0,
-  "explain": "jump to conclusions = decide too quickly."
+  "explain": "Jump to conclusions = decide too fast. Example: Don't jump to conclusions!",
+  "notes": {
+   "results": "Results isn't the idiom.",
+   "judgements": "Judgements isn't the idiom.",
+   "consequences": "Consequences isn't the idiom."
+  }
  },
  {
   "type": "mcq",
-  "q": "The new policy aims to ___ the gap between rich and poor.",
+  "q": "The new buddy scheme aims to ___ the gap between older and younger pupils.",
   "options": [
    "bridge",
    "build",
@@ -189,11 +264,16 @@
    "broaden"
   ],
   "answer": 0,
-  "explain": "bridge the gap = reduce the difference."
+  "explain": "Bridge the gap = make a difference smaller. Example: bridge the gap between cultures.",
+  "notes": {
+   "build": "Build the gap isn't a collocation.",
+   "raise": "Raise widens nothing here.",
+   "broaden": "Broaden would make the gap bigger."
+  }
  },
  {
   "type": "mcq",
-  "q": "The minister's comments ___ a storm of criticism.",
+  "q": "The referee's decision ___ a storm of criticism.",
   "options": [
    "sparked",
    "lit",
@@ -201,11 +281,16 @@
    "flamed"
   ],
   "answer": 0,
-  "explain": "spark criticism/a debate = cause it suddenly."
+  "explain": "Spark = cause suddenly. Example: The news sparked excitement.",
+  "notes": {
+   "lit": "Lit is literal (a fire).",
+   "fuelled up": "Fuelled up isn't the phrase.",
+   "flamed": "Flamed isn't used like this."
+  }
  },
  {
   "type": "mcq",
-  "q": "The report paints a rather ___ picture of the economy.",
+  "q": "The report paints a rather ___ picture of the coral reef's future.",
   "options": [
    "bleak",
    "blunt",
@@ -213,11 +298,16 @@
    "brisk"
   ],
   "answer": 0,
-  "explain": "A bleak picture = depressing, without hope."
+  "explain": "Bleak = without hope. Example: a bleak winter.",
+  "notes": {
+   "blunt": "Blunt = direct or not sharp.",
+   "bland": "Bland = without flavour.",
+   "brisk": "Brisk = quick."
+  }
  },
  {
   "type": "mcq",
-  "q": "She has a ___ grasp of constitutional law.",
+  "q": "She has a ___ grasp of how black holes work.",
   "options": [
    "firm",
    "hard",
@@ -225,11 +315,16 @@
    "rigid"
   ],
   "answer": 0,
-  "explain": "Collocation: a firm grasp of."
+  "explain": "A firm grasp = good understanding. Example: a firm grasp of maths.",
+  "notes": {
+   "hard": "Hard grasp isn't a collocation.",
+   "stiff": "Stiff grasp isn't used.",
+   "rigid": "Rigid grasp isn't used."
+  }
  },
  {
   "type": "mcq",
-  "q": "The two sides remain ___ apart on the key issues.",
+  "q": "The two clubs remain ___ apart on where to go for the trip.",
   "options": [
    "poles",
    "miles",
@@ -237,11 +332,16 @@
    "worlds away"
   ],
   "answer": 0,
-  "explain": "be poles apart = completely different."
+  "explain": "Poles apart = completely different. Example: The twins are poles apart.",
+  "notes": {
+   "miles": "People say 'miles apart', but the idiom for completely opposite views is 'poles apart'.",
+   "streets": "Streets ahead means much better, not different.",
+   "worlds away": "'Worlds away apart' repeats itself."
+  }
  },
  {
   "type": "mcq",
-  "q": "His argument ___ on the assumption that people act rationally.",
+  "q": "His plan ___ on the assumption that the cat will stay asleep.",
   "options": [
    "hinges",
    "hangs up",
@@ -249,11 +349,16 @@
    "leans"
   ],
   "answer": 0,
-  "explain": "hinge on = depend entirely on."
+  "explain": "Hinge on = depend completely on. Example: Everything hinges on the weather.",
+  "notes": {
+   "hangs up": "Hang up = end a call.",
+   "pivots round": "Pivot round isn't the phrase.",
+   "leans": "Lean on = depend on a person."
+  }
  },
  {
   "type": "mcq",
-  "q": "The scheme was ___ from the start by poor planning.",
+  "q": "The school trip was ___ from the start by bad weather.",
   "options": [
    "dogged",
    "doomed in",
@@ -261,7 +366,12 @@
    "dotted"
   ],
   "answer": 0,
-  "explain": "be dogged by problems = repeatedly affected."
+  "explain": "Dogged by = troubled again and again by. Example: dogged by injuries.",
+  "notes": {
+   "doomed in": "Doomed in isn't the phrase.",
+   "plagued at": "Plagued would need 'by', not 'at'.",
+   "dotted": "Dotted means scattered."
+  }
  },
  {
   "type": "mcq",
@@ -273,11 +383,16 @@
    "expedite"
   ],
   "answer": 0,
-  "explain": "Exacerbate = make worse."
+  "explain": "Exacerbate = make worse. Example: Scratching exacerbates the itch.",
+  "notes": {
+   "exonerate": "Exonerate = show someone is not guilty.",
+   "extrapolate": "Extrapolate = estimate from data.",
+   "expedite": "Expedite = speed up."
+  }
  },
  {
   "type": "mcq",
-  "q": "Her resignation came as a bolt from the ___.",
+  "q": "Her decision to leave the band came as a bolt from the ___.",
   "options": [
    "blue",
    "sky",
@@ -285,11 +400,16 @@
    "dark"
   ],
   "answer": 0,
-  "explain": "A bolt from the blue = a complete surprise."
+  "explain": "A bolt from the blue = a total surprise. Example: The news came as a bolt from the blue.",
+  "notes": {
+   "sky": "Sky isn't the idiom.",
+   "clouds": "Clouds isn't the idiom.",
+   "dark": "Dark isn't the idiom."
+  }
  },
  {
   "type": "mcq",
-  "q": "The proposal received ___ support from all parties.",
+  "q": "The plan for a school garden received ___ support from every class.",
   "options": [
    "unanimous",
    "unanimously",
@@ -297,11 +417,16 @@
    "universal agreement"
   ],
   "answer": 0,
-  "explain": "An adjective is needed before 'support'; unanimous = everyone agreed."
+  "explain": "Unanimous = everyone agrees. Example: a unanimous vote.",
+  "notes": {
+   "unanimously": "Unanimously is an adverb.",
+   "uniform": "Uniform = all the same.",
+   "universal agreement": "Universal agreement is a noun phrase, not an adjective."
+  }
  },
  {
   "type": "mcq",
-  "q": "The council will ___ the matter at its next session.",
+  "q": "The student council will ___ the matter at its next meeting.",
   "options": [
    "address",
    "attend",
@@ -309,11 +434,16 @@
    "adjourn"
   ],
   "answer": 0,
-  "explain": "address an issue = deal with it."
+  "explain": "Address a matter = deal with it. Example: We'll address your question.",
+  "notes": {
+   "attend": "Attend means go to.",
+   "adhere": "Adhere needs 'to'.",
+   "adjourn": "Adjourn = pause a meeting."
+  }
  },
  {
   "type": "mcq",
-  "q": "Critics ___ the plan as unrealistic.",
+  "q": "Critics ___ the inventor's plan as unrealistic.",
   "options": [
    "dismissed",
    "discarded",
@@ -321,7 +451,12 @@
    "disposed"
   ],
   "answer": 0,
-  "explain": "dismiss something as… = reject it as not worth considering."
+  "explain": "Dismiss as = reject as not worth considering. Example: She dismissed it as a joke.",
+  "notes": {
+   "discarded": "Discard = throw away.",
+   "displaced": "Displace = force out.",
+   "disposed": "Dispose needs 'of'."
+  }
  },
  {
   "type": "mcq",
@@ -333,11 +468,16 @@
    "momentary"
   ],
   "answer": 0,
-  "explain": "Meticulous = very careful and detailed."
+  "explain": "Meticulous = very careful about details. Example: meticulous notes.",
+  "notes": {
+   "meddlesome": "Meddlesome = interfering.",
+   "melodious": "Melodious = musical.",
+   "momentary": "Momentary = brief."
+  }
  },
  {
   "type": "mcq",
-  "q": "The debate was ___ by a series of personal attacks.",
+  "q": "The football final was ___ by a series of nasty fouls.",
   "options": [
    "marred",
    "marked down",
@@ -345,11 +485,16 @@
    "mired up"
   ],
   "answer": 0,
-  "explain": "mar = spoil."
+  "explain": "Marred by = spoiled by. Example: The day was marred by rain.",
+  "notes": {
+   "marked down": "Marked down = lower price or score.",
+   "married": "Married is a wedding!",
+   "mired up": "Mired up isn't the phrase."
+  }
  },
  {
   "type": "mcq",
-  "q": "Public confidence in the council is at an all-time ___.",
+  "q": "The team's confidence is at an all-time ___ after five losses.",
   "options": [
    "low",
    "bottom",
@@ -357,6 +502,11 @@
    "minimum level"
   ],
   "answer": 0,
-  "explain": "Collocation: an all-time low."
+  "explain": "An all-time low = the lowest ever. Example: Prices hit an all-time low.",
+  "notes": {
+   "bottom": "Bottom isn't the collocation.",
+   "floor": "Floor isn't the collocation.",
+   "minimum level": "Minimum level isn't the idiom."
+  }
  }
 ]

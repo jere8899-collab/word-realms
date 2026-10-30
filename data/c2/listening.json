@@ -10,7 +10,12 @@
    "affordable but badly presented"
   ],
   "answer": 0,
-  "explain": "'Ingenious as it is' (concession) + 'doesn't hold water'."
+  "explain": "'Ingenious as it is' (concession) + 'doesn't hold water'.",
+  "notes": {
+   "brilliant and completely sound": "You didn't hear “brilliant and completely sound”. Listen again for the key words.",
+   "dull but basically correct": "You didn't hear “dull but basically correct”. Listen again for the key words.",
+   "affordable but badly presented": "You didn't hear “affordable but badly presented”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -23,7 +28,12 @@
    "He works at a bookshop, not a library."
   ],
   "answer": 0,
-  "explain": "'Not once… have I seen' = never."
+  "explain": "'Not once… have I seen' = never.",
+  "notes": {
+   "He sees it happen about once a year.": "You didn't hear “He sees it happen about once a year.”. Listen again for the key words.",
+   "He saw it happen only once, long ago.": "You didn't hear “He saw it happen only once, long ago.”. Listen again for the key words.",
+   "He works at a bookshop, not a library.": "You didn't hear “He works at a bookshop, not a library.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -36,7 +46,12 @@
    "He spends all his free time growing plants."
   ],
   "answer": 0,
-  "explain": "Resting on your laurels = complacency."
+  "explain": "Resting on your laurels = complacency.",
+  "notes": {
+   "He is too tired to compete after winning.": "You didn't hear “He is too tired to compete after winning.”. Listen again for the key words.",
+   "He has won far too many prizes to count.": "You didn't hear “He has won far too many prizes to count.”. Listen again for the key words.",
+   "He spends all his free time growing plants.": "You didn't hear “He spends all his free time growing plants.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -49,7 +64,12 @@
    "Sign two copies, just in case."
   ],
   "answer": 0,
-  "explain": "Were I in your shoes = If I were you."
+  "explain": "Were I in your shoes = If I were you.",
+  "notes": {
+   "Sign the contract immediately.": "You didn't hear “Sign the contract immediately.”. Listen again for the key words.",
+   "Buy a new pair of shoes first.": "You didn't hear “Buy a new pair of shoes first.”. Listen again for the key words.",
+   "Sign two copies, just in case.": "You didn't hear “Sign two copies, just in case.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -62,7 +82,12 @@
    "The funding has been increased, not cut."
   ],
   "answer": 0,
-  "explain": "Here 'moot' = no longer of practical importance."
+  "explain": "Here 'moot' = no longer of practical importance.",
+  "notes": {
+   "The point is now more important than ever.": "You didn't hear “The point is now more important than ever.”. Listen again for the key words.",
+   "They should keep arguing about it at length.": "You didn't hear “They should keep arguing about it at length.”. Listen again for the key words.",
+   "The funding has been increased, not cut.": "You didn't hear “The funding has been increased, not cut.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -75,7 +100,12 @@
    "always cheerful, whatever happens"
   ],
   "answer": 0,
-  "explain": "She doesn't tolerate foolishness."
+  "explain": "She doesn't tolerate foolishness.",
+  "notes": {
+   "very patient with everyone": "You didn't hear “very patient with everyone”. Listen again for the key words.",
+   "rather foolish herself at times": "You didn't hear “rather foolish herself at times”. Listen again for the key words.",
+   "always cheerful, whatever happens": "You didn't hear “always cheerful, whatever happens”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -88,7 +118,12 @@
    "The phone call turned out to be free."
   ],
   "answer": 0,
-  "explain": "Adding insult to injury."
+  "explain": "Adding insult to injury.",
+  "notes": {
+   "Someone was physically hurt at the airport.": "You didn't hear “Someone was physically hurt at the airport.”. Listen again for the key words.",
+   "A friend insulted him about his luggage.": "You didn't hear “A friend insulted him about his luggage.”. Listen again for the key words.",
+   "The phone call turned out to be free.": "You didn't hear “The phone call turned out to be free.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -101,7 +136,12 @@
    "He would prefer to have a dozen of them."
   ],
   "answer": 0,
-  "explain": "Six = half a dozen."
+  "explain": "Six = half a dozen.",
+  "notes": {
+   "One option is exactly twice as good.": "You didn't hear “One option is exactly twice as good.”. Listen again for the key words.",
+   "There are six different options to choose from.": "You didn't hear “There are six different options to choose from.”. Listen again for the key words.",
+   "He would prefer to have a dozen of them.": "You didn't hear “He would prefer to have a dozen of them.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -114,7 +154,12 @@
    "to start the whole discussion again"
   ],
   "answer": 0,
-  "explain": "Splitting hairs = focusing on trivial details."
+  "explain": "Splitting hairs = focusing on trivial details.",
+  "notes": {
+   "to book a haircut before the meeting": "You didn't hear “to book a haircut before the meeting”. Listen again for the key words.",
+   "to divide the work into equal parts": "You didn't hear “to divide the work into equal parts”. Listen again for the key words.",
+   "to start the whole discussion again": "You didn't hear “to start the whole discussion again”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -127,7 +172,12 @@
    "She simply had nothing to say."
   ],
   "answer": 0,
-  "explain": "Speak volumes = communicate a lot without words."
+  "explain": "Speak volumes = communicate a lot without words.",
+  "notes": {
+   "She was busy reading a book.": "You didn't hear “She was busy reading a book.”. Listen again for the key words.",
+   "She was speaking very loudly.": "You didn't hear “She was speaking very loudly.”. Listen again for the key words.",
+   "She simply had nothing to say.": "You didn't hear “She simply had nothing to say.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -140,7 +190,12 @@
    "convinced"
   ],
   "answer": 0,
-  "explain": "Won't believe it without proof."
+  "explain": "Won't believe it without proof.",
+  "notes": {
+   "delighted": "You didn't hear “delighted”. Listen again for the key words.",
+   "frightened": "You didn't hear “frightened”. Listen again for the key words.",
+   "convinced": "You didn't hear “convinced”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -153,7 +208,12 @@
    "Everything is perfect now, thankfully."
   ],
   "answer": 0,
-  "explain": "Not out of the woods = still in difficulty."
+  "explain": "Not out of the woods = still in difficulty.",
+  "notes": {
+   "They are lost somewhere in a forest.": "You didn't hear “They are lost somewhere in a forest.”. Listen again for the key words.",
+   "The patient has already gone home.": "You didn't hear “The patient has already gone home.”. Listen again for the key words.",
+   "Everything is perfect now, thankfully.": "You didn't hear “Everything is perfect now, thankfully.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -166,7 +226,12 @@
    "arrived too early"
   ],
   "answer": 0,
-  "explain": "Let the cat out of the bag = reveal a secret."
+  "explain": "Let the cat out of the bag = reveal a secret.",
+  "notes": {
+   "freed an animal": "You didn't hear “freed an animal”. Listen again for the key words.",
+   "ruined the food": "You didn't hear “ruined the food”. Listen again for the key words.",
+   "arrived too early": "You didn't hear “arrived too early”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -179,7 +244,12 @@
    "The days at the palace pass quickly."
   ],
   "answer": 0,
-  "explain": "Hardly a day without = nearly every day."
+  "explain": "Hardly a day without = nearly every day.",
+  "notes": {
+   "Scandals at the palace are very rare.": "You didn't hear “Scandals at the palace are very rare.”. Listen again for the key words.",
+   "Life at the palace is quiet and calm.": "You didn't hear “Life at the palace is quiet and calm.”. Listen again for the key words.",
+   "The days at the palace pass quickly.": "You didn't hear “The days at the palace pass quickly.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -192,7 +262,12 @@
    "He is very patient and will stay a member."
   ],
   "answer": 0,
-  "explain": "The last straw = the final annoyance that causes action."
+  "explain": "The last straw = the final annoyance that causes action.",
+  "notes": {
+   "He has run out of straws at the café.": "You didn't hear “He has run out of straws at the café.”. Listen again for the key words.",
+   "He is about to join a new sports club.": "You didn't hear “He is about to join a new sports club.”. Listen again for the key words.",
+   "He is very patient and will stay a member.": "You didn't hear “He is very patient and will stay a member.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -205,7 +280,12 @@
    "She still deeply regrets losing that job."
   ],
   "answer": 0,
-  "explain": "A blessing in disguise."
+  "explain": "A blessing in disguise.",
+  "notes": {
+   "She was blessed by a priest at her new job.": "You didn't hear “She was blessed by a priest at her new job.”. Listen again for the key words.",
+   "She wore a clever disguise to the interview.": "You didn't hear “She wore a clever disguise to the interview.”. Listen again for the key words.",
+   "She still deeply regrets losing that job.": "You didn't hear “She still deeply regrets losing that job.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -218,7 +298,12 @@
    "undecided"
   ],
   "answer": 0,
-  "explain": "'Adequate' is faint praise, not an endorsement."
+  "explain": "'Adequate' is faint praise, not an endorsement.",
+  "notes": {
+   "enthusiastic": "You didn't hear “enthusiastic”. Listen again for the key words.",
+   "hostile": "You didn't hear “hostile”. Listen again for the key words.",
+   "undecided": "You didn't hear “undecided”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -231,7 +316,12 @@
    "cancel the project"
   ],
   "answer": 0,
-  "explain": "A grain of salt = scepticism."
+  "explain": "A grain of salt = scepticism.",
+  "notes": {
+   "trust the timeline fully": "You didn't hear “trust the timeline fully”. Listen again for the key words.",
+   "ask for more money": "You didn't hear “ask for more money”. Listen again for the key words.",
+   "cancel the project": "You didn't hear “cancel the project”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -244,7 +334,12 @@
    "The board agrees with the critics."
   ],
   "answer": 0,
-  "explain": "Hands are tied = unable to act."
+  "explain": "Hands are tied = unable to act.",
+  "notes": {
+   "The board refuses to act.": "You didn't hear “The board refuses to act.”. Listen again for the key words.",
+   "The regulations have changed.": "You didn't hear “The regulations have changed.”. Listen again for the key words.",
+   "The board agrees with the critics.": "You didn't hear “The board agrees with the critics.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -257,7 +352,12 @@
    "It was ignored."
   ],
   "answer": 0,
-  "explain": "Muddy the waters = make confusing."
+  "explain": "Muddy the waters = make confusing.",
+  "notes": {
+   "It explained everything.": "You didn't hear “It explained everything.”. Listen again for the key words.",
+   "It ended the dispute.": "You didn't hear “It ended the dispute.”. Listen again for the key words.",
+   "It was ignored.": "You didn't hear “It was ignored.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -270,7 +370,12 @@
    "She might come back."
   ],
   "answer": 0,
-  "explain": "'Either way, she's gone' = the debate is academic."
+  "explain": "'Either way, she's gone' = the debate is academic.",
+  "notes": {
+   "She was definitely pushed.": "You didn't hear “She was definitely pushed.”. Listen again for the key words.",
+   "She left voluntarily.": "You didn't hear “She left voluntarily.”. Listen again for the key words.",
+   "She might come back.": "You didn't hear “She might come back.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -283,7 +388,12 @@
    "He's dishonest."
   ],
   "answer": 0,
-  "explain": "Faint praise implies criticism."
+  "explain": "Faint praise implies criticism.",
+  "notes": {
+   "He's an outstanding worker.": "You didn't hear “He's an outstanding worker.”. Listen again for the key words.",
+   "He's often late.": "You didn't hear “He's often late.”. Listen again for the key words.",
+   "He's dishonest.": "You didn't hear “He's dishonest.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -296,7 +406,12 @@
    "There's extra funding."
   ],
   "answer": 0,
-  "explain": "Fallen through = failed to happen."
+  "explain": "Fallen through = failed to happen.",
+  "notes": {
+   "The project is approved.": "You didn't hear “The project is approved.”. Listen again for the key words.",
+   "The team has grown.": "You didn't hear “The team has grown.”. Listen again for the key words.",
+   "There's extra funding.": "You didn't hear “There's extra funding.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -309,7 +424,12 @@
    "to stay neutral"
   ],
   "answer": 0,
-  "explain": "Sitting on the fence = not deciding."
+  "explain": "Sitting on the fence = not deciding.",
+  "notes": {
+   "more discussion": "You didn't hear “more discussion”. Listen again for the key words.",
+   "a new fence": "You didn't hear “a new fence”. Listen again for the key words.",
+   "to stay neutral": "You didn't hear “to stay neutral”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -322,7 +442,12 @@
    "It's shorter."
   ],
   "answer": 0,
-  "explain": "Impenetrable = impossible to understand; 'even more' = worse."
+  "explain": "Impenetrable = impossible to understand; 'even more' = worse.",
+  "notes": {
+   "It's much clearer.": "You didn't hear “It's much clearer.”. Listen again for the key words.",
+   "It's identical.": "You didn't hear “It's identical.”. Listen again for the key words.",
+   "It's shorter.": "You didn't hear “It's shorter.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -335,7 +460,12 @@
    "modesty"
   ],
   "answer": 0,
-  "explain": "'Nothing if not persistent' = very persistent."
+  "explain": "'Nothing if not persistent' = very persistent.",
+  "notes": {
+   "impatience": "You didn't hear “impatience”. Listen again for the key words.",
+   "luck": "You didn't hear “luck”. Listen again for the key words.",
+   "modesty": "You didn't hear “modesty”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -348,7 +478,12 @@
    "It went unnoticed."
   ],
   "answer": 0,
-  "explain": "Take the wind out of someone's sails = weaken their position."
+  "explain": "Take the wind out of someone's sails = weaken their position.",
+  "notes": {
+   "It made critics angrier.": "You didn't hear “It made critics angrier.”. Listen again for the key words.",
+   "It cost him his job.": "You didn't hear “It cost him his job.”. Listen again for the key words.",
+   "It went unnoticed.": "You didn't hear “It went unnoticed.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -361,6 +496,11 @@
    "They were old friends."
   ],
   "answer": 0,
-  "explain": "'Nothing in common but a rival.'"
+  "explain": "'Nothing in common but a rival.'",
+  "notes": {
+   "They shared values.": "You didn't hear “They shared values.”. Listen again for the key words.",
+   "They were forced to.": "You didn't hear “They were forced to.”. Listen again for the key words.",
+   "They were old friends.": "You didn't hear “They were old friends.”. Listen again for the key words."
+  }
  }
 ]

@@ -9,7 +9,12 @@
    "be"
   ],
   "answer": 0,
-  "explain": "Use 'am' with 'I': I am, you are, he/she/it is."
+  "explain": "With I we always use am: I am, you are, he/she/it is. Example: I am happy.",
+  "notes": {
+   "is": "Is goes with he, she or it: She is a student.",
+   "are": "Are goes with you, we and they: You are a student.",
+   "be": "Be needs a helper word first: I can be a student."
+  }
  },
  {
   "type": "mcq",
@@ -21,7 +26,12 @@
    "having"
   ],
   "answer": 0,
-  "explain": "With he/she/it we say 'has', not 'have'."
+  "explain": "With he, she or it we use has, not have. Example: Tom has a cat.",
+  "notes": {
+   "have": "Have goes with I, you, we and they: I have two brothers.",
+   "haves": "There is no word 'haves'. The -s form of have is has.",
+   "having": "Having needs is/are first, and we don't use it for family."
+  }
  },
  {
   "type": "mcq",
@@ -33,7 +43,12 @@
    "be"
   ],
   "answer": 0,
-  "explain": "'They' takes 'are'."
+  "explain": "They takes are: we are, you are, they are. Example: They are my friends.",
+  "notes": {
+   "is": "Is is for one person or thing: He is from Spain.",
+   "am": "Am only goes with I: I am from Spain.",
+   "be": "Be needs a helper word: They will be in Spain."
+  }
  },
  {
   "type": "mcq",
@@ -45,7 +60,12 @@
    "many"
   ],
   "answer": 0,
-  "explain": "Use 'an' before a vowel sound: an apple, an egg."
+  "explain": "Use an before a vowel sound (a, e, i, o, u). Example: an egg, an orange.",
+  "notes": {
+   "a": "A goes before a consonant sound: a banana. Apple starts with a vowel.",
+   "two": "Two needs a plural word: two apples.",
+   "many": "Many needs a plural word too: many apples."
+  }
  },
  {
   "type": "mcq",
@@ -57,7 +77,12 @@
    "When"
   ],
   "answer": 0,
-  "explain": "We ask 'What is your name?'"
+  "explain": "We ask about a name with What. Example: What is your name? – I'm Lily.",
+  "notes": {
+   "Who": "Who asks about a person: Who is she? – My sister.",
+   "Where": "Where asks about a place: Where is your bag?",
+   "When": "When asks about a time: When is your birthday?"
+  }
  },
  {
   "type": "mcq",
@@ -69,7 +94,12 @@
    "no"
   ],
   "answer": 0,
-  "explain": "With 'I' the negative is 'don't' (do not)."
+  "explain": "With I, you, we, they the 'not' word is don't. Example: I don't like rain.",
+  "notes": {
+   "doesn't": "Doesn't is for he, she, it: She doesn't like coffee.",
+   "not": "We can't say 'I not like'. We need don't.",
+   "no": "No goes before a noun: I have no coffee."
+  }
  },
  {
   "type": "mcq",
@@ -81,7 +111,12 @@
    "is play"
   ],
   "answer": 0,
-  "explain": "Present simple with he/she/it adds -s: he plays."
+  "explain": "For things he/she/it does often, add -s to the verb. Example: She reads every day.",
+  "notes": {
+   "play": "Play is for I, you, we, they: We play football.",
+   "playing": "Playing needs is: He is playing now.",
+   "is play": "We don't say 'is play'. Every Sunday = present simple: plays."
+  }
  },
  {
   "type": "mcq",
@@ -93,7 +128,12 @@
    "be"
   ],
   "answer": 0,
-  "explain": "Plural nouns use 'there are'."
+  "explain": "There are for more than one thing; there is for one. Example: There are two dogs.",
+  "notes": {
+   "is": "There is is for one thing: There is one cat.",
+   "am": "Am only goes with I.",
+   "be": "Be needs a helper word: There will be three cats."
+  }
  },
  {
   "type": "mcq",
@@ -105,7 +145,12 @@
    "from"
   ],
   "answer": 0,
-  "explain": "Something touching the top surface is 'on' it."
+  "explain": "On means touching the top of something. Example: The cup is on the desk.",
+  "notes": {
+   "at": "At is for a point or place: at school, at the door.",
+   "to": "To shows movement: I go to the park.",
+   "from": "From shows where something starts: a letter from Gran."
+  }
  },
  {
   "type": "mcq",
@@ -117,7 +162,12 @@
    "to swim"
   ],
   "answer": 0,
-  "explain": "After 'can' we use the base verb: can swim."
+  "explain": "After can, use the plain verb with no -s, no -ing and no to. Example: I can sing.",
+  "notes": {
+   "swims": "No -s after can: we say 'Can he swim?', not 'swims'.",
+   "swimming": "No -ing after can: 'Can you swimming?' is wrong.",
+   "to swim": "No 'to' after can: 'Can you to swim?' is wrong."
+  }
  },
  {
   "type": "mcq",
@@ -129,7 +179,12 @@
    "a shoe"
   ],
   "answer": 0,
-  "explain": "'These' is plural, so we need 'shoes'."
+  "explain": "These means more than one, so the noun is plural. Example: These are my socks.",
+  "notes": {
+   "shoe": "Shoe is just one. These needs more than one: shoes.",
+   "shoeses": "Shoe takes just -s: shoes, not 'shoeses'.",
+   "a shoe": "A shoe is one shoe. These needs a plural."
+  }
  },
  {
   "type": "mcq",
@@ -141,7 +196,12 @@
    "Is"
   ],
   "answer": 0,
-  "explain": "Questions with 'you' + action verb use 'Do'."
+  "explain": "Questions with you/I/we/they and a normal verb start with Do. Example: Do you like cats?",
+  "notes": {
+   "Does": "Does is for he, she, it: Does she like ice cream?",
+   "Are": "Are goes with adjectives or -ing: Are you happy?",
+   "Is": "Is goes with he/she/it: Is it cold?"
+  }
  },
  {
   "type": "mcq",
@@ -153,7 +213,12 @@
    "to"
   ],
   "answer": 0,
-  "explain": "Use 'in' with months: in May."
+  "explain": "Use in with months, years and seasons. Example: in June, in winter.",
+  "notes": {
+   "on": "On is for days and dates: on Monday, on 5th May.",
+   "at": "At is for clock times: at six o'clock.",
+   "to": "To shows movement, not time."
+  }
  },
  {
   "type": "mcq",
@@ -165,7 +230,12 @@
    "are sleeping"
   ],
   "answer": 0,
-  "explain": "'Look!' shows it is happening now: present continuous."
+  "explain": "Look! means it is happening now, so use is + -ing. Example: Look! It is raining.",
+  "notes": {
+   "sleep": "Sleep is for I/you/we/they and for habits, not now.",
+   "sleeps": "Sleeps is for habits: The baby sleeps a lot.",
+   "are sleeping": "Are is for more than one. One baby takes is."
+  }
  },
  {
   "type": "mcq",
@@ -177,7 +247,12 @@
    "They"
   ],
   "answer": 0,
-  "explain": "Tom is a boy, so we use 'he'."
+  "explain": "Tom is a boy, so we use he. Example: This is Sam. He is nine.",
+  "notes": {
+   "She": "She is for a girl or woman.",
+   "It": "It is for a thing or an animal.",
+   "They": "They is for more than one person."
+  }
  },
  {
   "type": "mcq",
@@ -189,7 +264,12 @@
    "is"
   ],
   "answer": 0,
-  "explain": "Past of 'are' is 'were': we were."
+  "explain": "Yesterday is past. The past of are is were (we were, they were). Example: We were happy.",
+  "notes": {
+   "was": "Was is for I, he, she, it: I was at home.",
+   "are": "Are is now, not yesterday.",
+   "is": "Is is now and for one person."
+  }
  },
  {
   "type": "mcq",
@@ -201,7 +281,12 @@
    "How"
   ],
   "answer": 0,
-  "explain": "'Where' asks about a place."
+  "explain": "Where asks about a place. Example: Where is the cat? – Under the bed.",
+  "notes": {
+   "What": "What asks about a thing: What is this?",
+   "Who": "Who asks about a person: Who is that?",
+   "How": "How asks about the way or feelings: How are you?"
+  }
  },
  {
   "type": "mcq",
@@ -213,7 +298,12 @@
    "not"
   ],
   "answer": 0,
-  "explain": "With he/she/it the negative is 'doesn't' + verb."
+  "explain": "With he, she, it the 'not' word is doesn't. Example: He doesn't like rain.",
+  "notes": {
+   "don't": "Don't is for I, you, we, they.",
+   "isn't": "Isn't goes with adjectives: She isn't happy. Like is a verb.",
+   "not": "We can't say 'She not like'. We need doesn't."
+  }
  },
  {
   "type": "mcq",
@@ -225,7 +315,12 @@
    "two"
   ],
   "answer": 0,
-  "explain": "'Umbrella' starts with a vowel sound, so we say 'an'."
+  "explain": "Umbrella starts with a vowel sound, so we use an. Example: an ice cream.",
+  "notes": {
+   "a": "A is for consonant sounds: a bag, a hat.",
+   "some": "Some is for 'more than one' or 'a bit of': some milk.",
+   "two": "Two needs a plural: two umbrellas."
+  }
  },
  {
   "type": "mcq",
@@ -237,7 +332,12 @@
    "of"
   ],
   "answer": 0,
-  "explain": "Inside something = 'in'."
+  "explain": "In means inside something. Example: The pencil is in my bag.",
+  "notes": {
+   "on": "On is on the top. Then you could see the cat!",
+   "at": "At is for a place point: at the door.",
+   "of": "Of is not used for where things are."
+  }
  },
  {
   "type": "mcq",
@@ -249,7 +349,12 @@
    "What day"
   ],
   "answer": 0,
-  "explain": "Ask about the clock with 'What time is it?'"
+  "explain": "We ask about the clock with What time. Example: What time is lunch? – At one.",
+  "notes": {
+   "How many": "How many asks about a number of things.",
+   "How old": "How old asks about age.",
+   "What day": "What day asks about Monday, Tuesday..."
+  }
  },
  {
   "type": "mcq",
@@ -261,7 +366,12 @@
    "is watching"
   ],
   "answer": 0,
-  "explain": "'Now' = present continuous: they are watching."
+  "explain": "Now means use are/is + -ing. They takes are. Example: They are playing.",
+  "notes": {
+   "watch": "Watch is for habits: They watch TV every day.",
+   "watches": "Watches is for he/she/it habits.",
+   "is watching": "Is is for one person. They needs are."
+  }
  },
  {
   "type": "mcq",
@@ -273,7 +383,12 @@
    "to"
   ],
   "answer": 0,
-  "explain": "Use 'at' with clock times: at seven o'clock."
+  "explain": "Use at with clock times. Example: at nine o'clock, at noon.",
+  "notes": {
+   "in": "In is for months and years: in May.",
+   "on": "On is for days: on Friday.",
+   "to": "To shows movement, not a time."
+  }
  },
  {
   "type": "mcq",
@@ -285,7 +400,12 @@
    "Its"
   ],
   "answer": 0,
-  "explain": "A boy's possessive is 'his'."
+  "explain": "His shows something belongs to a boy. Example: Sam and his dog.",
+  "notes": {
+   "Her": "Her is for a girl: my sister and her name.",
+   "He": "He is the person, not 'belonging to him'. We need his.",
+   "Its": "Its is for a thing or an animal."
+  }
  },
  {
   "type": "mcq",
@@ -297,7 +417,12 @@
    "big"
   ],
   "answer": 0,
-  "explain": "Ask age with 'How old…?'"
+  "explain": "We ask about age with How old. Example: How old are you? – I'm eight.",
+  "notes": {
+   "many": "How many is for counting things.",
+   "much": "How much is for amounts and prices.",
+   "big": "How big asks about size, not age."
+  }
  },
  {
   "type": "mcq",
@@ -309,7 +434,12 @@
    "be"
   ],
   "answer": 0,
-  "explain": "One thing: 'there is'."
+  "explain": "One thing takes there is. Example: There is a cat on the bed.",
+  "notes": {
+   "are": "Are is for more than one: There are two dragons.",
+   "am": "Am only goes with I.",
+   "be": "Be needs a helper word first."
+  }
  },
  {
   "type": "mcq",
@@ -321,7 +451,12 @@
    "to write"
   ],
   "answer": 0,
-  "explain": "After 'can' use the base verb."
+  "explain": "After can, use the plain verb. Example: She can write.",
+  "notes": {
+   "writes": "No -s after can.",
+   "writing": "No -ing after can.",
+   "to write": "No 'to' after can."
+  }
  },
  {
   "type": "mcq",
@@ -333,7 +468,12 @@
    "Has"
   ],
   "answer": 0,
-  "explain": "Questions with he/she/it use 'Does'."
+  "explain": "Questions with he/she/it and a normal verb start with Does. Example: Does he like fish?",
+  "notes": {
+   "Do": "Do is for I, you, we, they.",
+   "Is": "Is goes with adjectives or -ing, not 'have'.",
+   "Has": "Has is not used to start this question. Say 'Does she have'."
+  }
  },
  {
   "type": "mcq",
@@ -345,7 +485,12 @@
    "be"
   ],
   "answer": 0,
-  "explain": "'Those' is plural: those are."
+  "explain": "Those means more than one, so use are. Example: Those are my shoes.",
+  "notes": {
+   "is": "Is is for one: That is my pencil.",
+   "am": "Am only goes with I.",
+   "be": "Be needs a helper word."
+  }
  },
  {
   "type": "mcq",
@@ -357,6 +502,11 @@
    "or"
   ],
   "answer": 0,
-  "explain": "'So' tells us the result."
+  "explain": "So shows a result: what happened because of it. Example: It was cold, so I wore a coat.",
+  "notes": {
+   "but": "But shows a surprise or difference: tired, but he played.",
+   "because": "Because gives the reason, not the result: He went to bed because he was tired.",
+   "or": "Or gives a choice: tea or milk?"
+  }
  }
 ]

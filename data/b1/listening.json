@@ -10,7 +10,12 @@
    "on foot"
   ],
   "answer": 0,
-  "explain": "'Getting a lift' = travelling in someone's car."
+  "explain": "'Getting a lift' = travelling in someone's car.",
+  "notes": {
+   "by train": "You didn't hear “by train”. Listen again for the key words.",
+   "by bus": "You didn't hear “by bus”. Listen again for the key words.",
+   "on foot": "You didn't hear “on foot”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -23,7 +28,12 @@
    "The venue is closed."
   ],
   "answer": 0,
-  "explain": "Unwell = ill."
+  "explain": "Unwell = ill.",
+  "notes": {
+   "The weather is bad.": "You didn't hear “The weather is bad.”. Listen again for the key words.",
+   "Tickets didn't sell.": "You didn't hear “Tickets didn't sell.”. Listen again for the key words.",
+   "The venue is closed.": "You didn't hear “The venue is closed.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -36,7 +46,12 @@
    "eating out"
   ],
   "answer": 0,
-  "explain": "'I don't mind' = it's OK; 'I really hate washing up'."
+  "explain": "'I don't mind' = it's OK; 'I really hate washing up'.",
+  "notes": {
+   "cooking": "You didn't hear “cooking”. Listen again for the key words.",
+   "shopping": "You didn't hear “shopping”. Listen again for the key words.",
+   "eating out": "You didn't hear “eating out”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -49,7 +64,12 @@
    "a form"
   ],
   "answer": 0,
-  "explain": "'You'll need to bring the receipt.'"
+  "explain": "'You'll need to bring the receipt.'",
+  "notes": {
+   "your ID card": "You didn't hear “your ID card”. Listen again for the key words.",
+   "the original box": "You didn't hear “the original box”. Listen again for the key words.",
+   "a form": "You didn't hear “a form”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -62,7 +82,12 @@
    "She hasn't read the book."
   ],
   "answer": 0,
-  "explain": "'The book was much better than the film.'"
+  "explain": "'The book was much better than the film.'",
+  "notes": {
+   "The film is better.": "You didn't hear “The film is better.”. Listen again for the key words.",
+   "They are equally good.": "You didn't hear “They are equally good.”. Listen again for the key words.",
+   "She hasn't read the book.": "You didn't hear “She hasn't read the book.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -75,7 +100,12 @@
    "9:30"
   ],
   "answer": 0,
-  "explain": "They changed the time to half past ten."
+  "explain": "They changed the time to half past ten.",
+  "notes": {
+   "10:00": "You didn't hear “10:00”. Listen again for the key words.",
+   "11:00": "You didn't hear “11:00”. Listen again for the key words.",
+   "9:30": "You didn't hear “9:30”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -88,7 +118,12 @@
    "to write it down"
   ],
   "answer": 0,
-  "explain": "'Didn't catch that' = didn't hear or understand."
+  "explain": "'Didn't catch that' = didn't hear or understand.",
+  "notes": {
+   "the other person to leave": "You didn't hear “the other person to leave”. Listen again for the key words.",
+   "the other person to speak louder": "You didn't hear “the other person to speak louder”. Listen again for the key words.",
+   "to write it down": "You didn't hear “to write it down”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -101,7 +136,12 @@
    "before the roundabout"
   ],
   "answer": 0,
-  "explain": "Left at the roundabout, past the petrol station, on your right."
+  "explain": "Left at the roundabout, past the petrol station, on your right.",
+  "notes": {
+   "on the left at the roundabout": "You didn't hear “on the left at the roundabout”. Listen again for the key words.",
+   "opposite the petrol station": "You didn't hear “opposite the petrol station”. Listen again for the key words.",
+   "before the roundabout": "You didn't hear “before the roundabout”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -114,7 +154,12 @@
    "She has just started."
   ],
   "answer": 0,
-  "explain": "'Used to' + 'gave it up' = not now."
+  "explain": "'Used to' + 'gave it up' = not now.",
+  "notes": {
+   "Yes, every day.": "You didn't hear “Yes, every day.”. Listen again for the key words.",
+   "Yes, she teaches it.": "You didn't hear “Yes, she teaches it.”. Listen again for the key words.",
+   "She has just started.": "You didn't hear “She has just started.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -127,7 +172,12 @@
    "£5"
   ],
   "answer": 0,
-  "explain": "Children pay half of £12 = £6."
+  "explain": "Children pay half of £12 = £6.",
+  "notes": {
+   "£12": "You didn't hear “£12”. Listen again for the key words.",
+   "free": "You didn't hear “free”. Listen again for the key words.",
+   "£5": "You didn't hear “£5”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -140,7 +190,12 @@
    "completely certain"
   ],
   "answer": 0,
-  "explain": "'Might still' shows hope."
+  "explain": "'Might still' shows hope.",
+  "notes": {
+   "disappointed": "You didn't hear “disappointed”. Listen again for the key words.",
+   "angry": "You didn't hear “angry”. Listen again for the key words.",
+   "completely certain": "You didn't hear “completely certain”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -153,7 +208,12 @@
    "in a classroom"
   ],
   "answer": 0,
-  "explain": "'Performance' suggests a theatre."
+  "explain": "'Performance' suggests a theatre.",
+  "notes": {
+   "in a hospital": "You didn't hear “in a hospital”. Listen again for the key words.",
+   "in a library": "You didn't hear “in a library”. Listen again for the key words.",
+   "in a classroom": "You didn't hear “in a classroom”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -166,7 +226,12 @@
    "It's vegetarian."
   ],
   "answer": 0,
-  "explain": "Caught every morning = fresh."
+  "explain": "Caught every morning = fresh.",
+  "notes": {
+   "It's the cheapest.": "You didn't hear “It's the cheapest.”. Listen again for the key words.",
+   "It's the chef's favourite.": "You didn't hear “It's the chef's favourite.”. Listen again for the key words.",
+   "It's vegetarian.": "You didn't hear “It's vegetarian.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -179,7 +244,12 @@
    "20,000"
   ],
   "answer": 0,
-  "explain": "'More than two thousand.'"
+  "explain": "'More than two thousand.'",
+  "notes": {
+   "under 2,000": "You didn't hear “under 2,000”. Listen again for the key words.",
+   "about 200": "You didn't hear “about 200”. Listen again for the key words.",
+   "20,000": "You didn't hear “20,000”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -192,7 +262,12 @@
    "The car broke down."
   ],
   "answer": 0,
-  "explain": "The manager asked her to work on Saturday."
+  "explain": "The manager asked her to work on Saturday.",
+  "notes": {
+   "The speaker is ill.": "You didn't hear “The speaker is ill.”. Listen again for the key words.",
+   "The weather is bad.": "You didn't hear “The weather is bad.”. Listen again for the key words.",
+   "The car broke down.": "You didn't hear “The car broke down.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -205,7 +280,12 @@
    "They don't trust each other."
   ],
   "answer": 0,
-  "explain": "Best friends who tell each other everything."
+  "explain": "Best friends who tell each other everything.",
+  "notes": {
+   "They often argue.": "You didn't hear “They often argue.”. Listen again for the key words.",
+   "They rarely meet.": "You didn't hear “They rarely meet.”. Listen again for the key words.",
+   "They don't trust each other.": "You didn't hear “They don't trust each other.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -218,7 +298,12 @@
    "She was too busy."
   ],
   "answer": 0,
-  "explain": "Run out of battery = the phone was dead."
+  "explain": "Run out of battery = the phone was dead.",
+  "notes": {
+   "She forgot.": "You didn't hear “She forgot.”. Listen again for the key words.",
+   "She didn't have the number.": "You didn't hear “She didn't have the number.”. Listen again for the key words.",
+   "She was too busy.": "You didn't hear “She was too busy.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -231,7 +316,12 @@
    "Avoid the museum."
   ],
   "answer": 0,
-  "explain": "'I'd go on a weekday if I were you.'"
+  "explain": "'I'd go on a weekday if I were you.'",
+  "notes": {
+   "Go on Sunday.": "You didn't hear “Go on Sunday.”. Listen again for the key words.",
+   "Book online.": "You didn't hear “Book online.”. Listen again for the key words.",
+   "Avoid the museum.": "You didn't hear “Avoid the museum.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -244,7 +334,12 @@
    "She stopped driving at night."
   ],
   "answer": 0,
-  "explain": "'…since I started cycling to work.'"
+  "explain": "'…since I started cycling to work.'",
+  "notes": {
+   "She changed jobs.": "You didn't hear “She changed jobs.”. Listen again for the key words.",
+   "She sleeps more.": "You didn't hear “She sleeps more.”. Listen again for the key words.",
+   "She stopped driving at night.": "You didn't hear “She stopped driving at night.”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -257,7 +352,12 @@
    "at seven"
   ],
   "answer": 0,
-  "explain": "Six + three hours = nine."
+  "explain": "Six + three hours = nine.",
+  "notes": {
+   "at six": "You didn't hear “at six”. Listen again for the key words.",
+   "at three": "You didn't hear “at three”. Listen again for the key words.",
+   "at seven": "You didn't hear “at seven”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -270,7 +370,12 @@
    "directions to the café"
   ],
   "answer": 0,
-  "explain": "Keep an eye on = watch."
+  "explain": "Keep an eye on = watch.",
+  "notes": {
+   "a cup of coffee for her friend": "You didn't hear “a cup of coffee for her friend”. Listen again for the key words.",
+   "help carrying her bag": "You didn't hear “help carrying her bag”. Listen again for the key words.",
+   "directions to the café": "You didn't hear “directions to the café”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -283,7 +388,12 @@
    "the size"
   ],
   "answer": 0,
-  "explain": "'The battery doesn't last very long.'"
+  "explain": "'The battery doesn't last very long.'",
+  "notes": {
+   "the price": "You didn't hear “the price”. Listen again for the key words.",
+   "the camera": "You didn't hear “the camera”. Listen again for the key words.",
+   "the size": "You didn't hear “the size”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -296,7 +406,12 @@
    "a teacher"
   ],
   "answer": 0,
-  "explain": "'I've decided to become a vet instead.'"
+  "explain": "'I've decided to become a vet instead.'",
+  "notes": {
+   "a doctor": "You didn't hear “a doctor”. Listen again for the key words.",
+   "a nurse": "You didn't hear “a nurse”. Listen again for the key words.",
+   "a teacher": "You didn't hear “a teacher”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -309,7 +424,12 @@
    "angry"
   ],
   "answer": 0,
-  "explain": "Speechless = so surprised he couldn't speak."
+  "explain": "Speechless = so surprised he couldn't speak.",
+  "notes": {
+   "disappointed": "You didn't hear “disappointed”. Listen again for the key words.",
+   "bored": "You didn't hear “bored”. Listen again for the key words.",
+   "angry": "You didn't hear “angry”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -322,7 +442,12 @@
    "in February"
   ],
   "answer": 0,
-  "explain": "Closed until the end of March, so it reopens in April."
+  "explain": "Closed until the end of March, so it reopens in April.",
+  "notes": {
+   "in March": "You didn't hear “in March”. Listen again for the key words.",
+   "next week": "You didn't hear “next week”. Listen again for the key words.",
+   "in February": "You didn't hear “in February”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -335,7 +460,12 @@
    "refusing an invitation"
   ],
   "answer": 0,
-  "explain": "'Do you fancy…?' is a suggestion."
+  "explain": "'Do you fancy…?' is a suggestion.",
+  "notes": {
+   "making a complaint": "You didn't hear “making a complaint”. Listen again for the key words.",
+   "asking for directions": "You didn't hear “asking for directions”. Listen again for the key words.",
+   "refusing an invitation": "You didn't hear “refusing an invitation”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -348,7 +478,12 @@
    "nothing"
   ],
   "answer": 0,
-  "explain": "Runner-up = second place."
+  "explain": "Runner-up = second place.",
+  "notes": {
+   "a weekend in Paris": "You didn't hear “a weekend in Paris”. Listen again for the key words.",
+   "a bike": "You didn't hear “a bike”. Listen again for the key words.",
+   "nothing": "You didn't hear “nothing”. Listen again for the key words."
+  }
  },
  {
   "type": "listen",
@@ -361,6 +496,11 @@
    "an action film"
   ],
   "answer": 0,
-  "explain": "'Could we watch a comedy instead?'"
+  "explain": "'Could we watch a comedy instead?'",
+  "notes": {
+   "a horror film": "You didn't hear “a horror film”. Listen again for the key words.",
+   "a documentary": "You didn't hear “a documentary”. Listen again for the key words.",
+   "an action film": "You didn't hear “an action film”. Listen again for the key words."
+  }
  }
 ]

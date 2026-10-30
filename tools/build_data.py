@@ -13,6 +13,38 @@ for lvl, extra in {**W1A, **W1B}.items():  # merge extra items into the base ban
     for sk, val in extra.items():
         if sk == "reading": D[lvl][sk]["passages"].extend(val["passages"])
         else: D[lvl][sk].extend(val)
+# ---- C3 (review 2026-10-30): rule + example explanations and a "why not" note for every wrong option; C5 kid-friendly C1/C2 stems ----
+from c3_a import C3A; from c3_b import C3B; from c3_c import C3C
+C3 = {**C3A, **C3B, **C3C}
+def _short(t, n=90):
+    t = re.sub(r"\s+", " ", t or "").strip(); return t if len(t) <= n else t[:n].rsplit(" ", 1)[0] + "…"
+_c3_used = set()
+for lvl, skills in D.items():
+    for sk, val in skills.items():
+        items = [q for p in val["passages"] for q in p["questions"]] if sk == "reading" else val
+        ov = C3.get(f"{lvl}/{sk}", {})
+        for q in items:
+            if q["type"] == "order": continue
+            right = q["options"][q["answer"]]; wrong = [o for i, o in enumerate(q["options"]) if i != q["answer"]]
+            k = q["q"] + (" [" + q["pic"] + "]" if q.get("pic") else "")
+            hit = ov.get(k) or ov.get(q["q"])
+            if hit:
+                _c3_used.add((f"{lvl}/{sk}", k if k in ov else q["q"]))
+                if len(hit) == 3: newq, ex, notes = hit
+                else: newq = None; ex, notes = hit
+                assert len(notes) == 3, (lvl, sk, q["q"])
+                if newq: q["q"] = newq
+                q["explain"] = ex; q["notes"] = dict(zip(wrong, notes))
+            elif sk == "reading":
+                q["notes"] = {o: f"The story doesn't say “{o}”. Look for the line that answers the question." for o in wrong}
+            elif sk == "listening":
+                q["notes"] = {o: f"You didn't hear “{o}”. Listen again for the key words." for o in wrong}
+            elif q.get("pic"):
+                q["notes"] = {o: f"“{o}” is something different. Look again: this is a {right}." for o in wrong}
+            else:
+                raise AssertionError(f"C3: no notes for {lvl}/{sk}: {q['q']}")
+_c3_missing = [(s, k) for s, d in C3.items() for k in d if (s, k) not in _c3_used]
+assert not _c3_missing, f"C3 overlay keys that match no item: {_c3_missing[:5]}"
 FAIR_MAX = 0.40  # "Fair Play" guard: the right answer may be the uniquely longest option in at most 40% of a skill's items
 def check_fair(name, items):
     mc = [q for q in items if q.get("options")]

@@ -14,7 +14,12 @@
       "green"
      ],
      "answer": 0,
-     "explain": "'My house has a red door.'"
+     "explain": "'My house has a red door.'",
+     "notes": {
+      "blue": "The story doesn't say “blue”. Look for the line that answers the question.",
+      "white": "The story doesn't say “white”. Look for the line that answers the question.",
+      "green": "The story doesn't say “green”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -26,7 +31,12 @@
       "a bird"
      ],
      "answer": 0,
-     "explain": "'I have a cat. Her name is Button.'"
+     "explain": "'I have a cat. Her name is Button.'",
+     "notes": {
+      "a dog": "The story doesn't say “a dog”. Look for the line that answers the question.",
+      "a rabbit": "The story doesn't say “a rabbit”. Look for the line that answers the question.",
+      "a bird": "The story doesn't say “a bird”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -38,7 +48,12 @@
       "at school"
      ],
      "answer": 0,
-     "explain": "'Every morning, Button sleeps in the sun.'"
+     "explain": "'Every morning, Button sleeps in the sun.'",
+     "notes": {
+      "under the door": "The story doesn't say “under the door”. Look for the line that answers the question.",
+      "in the river": "The story doesn't say “in the river”. Look for the line that answers the question.",
+      "at school": "The story doesn't say “at school”. Look for the line that answers the question."
+     }
     }
    ]
   },
@@ -56,7 +71,12 @@
       "at the shop"
      ],
      "answer": 0,
-     "explain": "'I am at Ben's house.'"
+     "explain": "'I am at Ben's house.'",
+     "notes": {
+      "at school": "The story doesn't say “at school”. Look for the line that answers the question.",
+      "at home": "The story doesn't say “at home”. Look for the line that answers the question.",
+      "at the shop": "The story doesn't say “at the shop”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -68,7 +88,12 @@
       "at eight o'clock"
      ],
      "answer": 0,
-     "explain": "'I will be home at six o'clock.'"
+     "explain": "'I will be home at six o'clock.'",
+     "notes": {
+      "at five o'clock": "The story doesn't say “at five o'clock”. Look for the line that answers the question.",
+      "at seven o'clock": "The story doesn't say “at seven o'clock”. Look for the line that answers the question.",
+      "at eight o'clock": "The story doesn't say “at eight o'clock”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -80,7 +105,12 @@
       "cake"
      ],
      "answer": 0,
-     "explain": "Ben's mum has pizza for them."
+     "explain": "Ben's mum has pizza for them.",
+     "notes": {
+      "pasta": "The story doesn't say “pasta”. Look for the line that answers the question.",
+      "soup": "The story doesn't say “soup”. Look for the line that answers the question.",
+      "cake": "The story doesn't say “cake”. Look for the line that answers the question."
+     }
     }
    ]
   },
@@ -98,7 +128,12 @@
       "Friday"
      ],
      "answer": 0,
-     "explain": "'Closed on Sunday.'"
+     "explain": "'Closed on Sunday.'",
+     "notes": {
+      "Monday": "The story doesn't say “Monday”. Look for the line that answers the question.",
+      "Saturday": "The story doesn't say “Saturday”. Look for the line that answers the question.",
+      "Friday": "The story doesn't say “Friday”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -110,7 +145,12 @@
       "dog beds"
      ],
      "answer": 0,
-     "explain": "'Rabbit food is half price.'"
+     "explain": "'Rabbit food is half price.'",
+     "notes": {
+      "fish": "The story doesn't say “fish”. Look for the line that answers the question.",
+      "cat toys": "The story doesn't say “cat toys”. Look for the line that answers the question.",
+      "dog beds": "The story doesn't say “dog beds”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -122,7 +162,12 @@
       "£1"
      ],
      "answer": 0,
-     "explain": "'Small fish: £3 each.'"
+     "explain": "'Small fish: £3 each.'",
+     "notes": {
+      "£5": "The story doesn't say “£5”. Look for the line that answers the question.",
+      "£9": "The story doesn't say “£9”. Look for the line that answers the question.",
+      "£1": "The story doesn't say “£1”. Look for the line that answers the question."
+     }
     }
    ]
   },
@@ -140,7 +185,12 @@
       "by car"
      ],
      "answer": 0,
-     "explain": "'He goes to school by bus.'"
+     "explain": "'He goes to school by bus.'",
+     "notes": {
+      "by bike": "The story doesn't say “by bike”. Look for the line that answers the question.",
+      "on foot": "The story doesn't say “on foot”. Look for the line that answers the question.",
+      "by car": "The story doesn't say “by car”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -152,7 +202,12 @@
       "water"
      ],
      "answer": 0,
-     "explain": "'He drinks orange juice.'"
+     "explain": "'He drinks orange juice.'",
+     "notes": {
+      "milk": "The story doesn't say “milk”. Look for the line that answers the question.",
+      "tea": "The story doesn't say “tea”. Look for the line that answers the question.",
+      "water": "The story doesn't say “water”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -164,7 +219,12 @@
       "at ten"
      ],
      "answer": 0,
-     "explain": "'…goes to bed at nine.'"
+     "explain": "'…goes to bed at nine.'",
+     "notes": {
+      "at seven": "The story doesn't say “at seven”. Look for the line that answers the question.",
+      "at eight": "The story doesn't say “at eight”. Look for the line that answers the question.",
+      "at ten": "The story doesn't say “at ten”. Look for the line that answers the question."
+     }
     }
    ]
   },
@@ -182,7 +242,12 @@
       "snowy"
      ],
      "answer": 0,
-     "explain": "'The weather is hot and sunny.'"
+     "explain": "'The weather is hot and sunny.'",
+     "notes": {
+      "cold and rainy": "The story doesn't say “cold and rainy”. Look for the line that answers the question.",
+      "windy": "The story doesn't say “windy”. Look for the line that answers the question.",
+      "snowy": "The story doesn't say “snowy”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -194,7 +259,12 @@
       "sleeping"
      ],
      "answer": 0,
-     "explain": "'My sister likes making sandcastles.'"
+     "explain": "'My sister likes making sandcastles.'",
+     "notes": {
+      "swimming": "The story doesn't say “swimming”. Look for the line that answers the question.",
+      "reading": "The story doesn't say “reading”. Look for the line that answers the question.",
+      "sleeping": "The story doesn't say “sleeping”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -206,7 +276,12 @@
       "the food"
      ],
      "answer": 0,
-     "explain": "'The hotel is very small.'"
+     "explain": "'The hotel is very small.'",
+     "notes": {
+      "the sea": "The story doesn't say “the sea”. Look for the line that answers the question.",
+      "the beach": "The story doesn't say “the beach”. Look for the line that answers the question.",
+      "the food": "The story doesn't say “the food”. Look for the line that answers the question."
+     }
     }
    ]
   },
@@ -224,7 +299,12 @@
       "to the beach"
      ],
      "answer": 0,
-     "explain": "'Puffbun and Mia go to the park.'"
+     "explain": "'Puffbun and Mia go to the park.'",
+     "notes": {
+      "to the shop": "The story doesn't say “to the shop”. Look for the line that answers the question.",
+      "to school": "The story doesn't say “to school”. Look for the line that answers the question.",
+      "to the beach": "The story doesn't say “to the beach”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -236,7 +316,12 @@
       "sandwiches"
      ],
      "answer": 0,
-     "explain": "There are sandwiches, apples and juice, but no cake."
+     "explain": "There are sandwiches, apples and juice, but no cake.",
+     "notes": {
+      "apples": "The story doesn't say “apples”. Look for the line that answers the question.",
+      "juice": "The story doesn't say “juice”. Look for the line that answers the question.",
+      "sandwiches": "The story doesn't say “sandwiches”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -248,7 +333,12 @@
       "runs"
      ],
      "answer": 0,
-     "explain": "'Puffbun… sleeps in the sun.'"
+     "explain": "'Puffbun… sleeps in the sun.'",
+     "notes": {
+      "sings": "The story doesn't say “sings”. Look for the line that answers the question.",
+      "eats bread": "The story doesn't say “eats bread”. Look for the line that answers the question.",
+      "runs": "The story doesn't say “runs”. Look for the line that answers the question."
+     }
     }
    ]
   },
@@ -266,7 +356,12 @@
       "five"
      ],
      "answer": 0,
-     "explain": "'You can take two books home.'"
+     "explain": "'You can take two books home.'",
+     "notes": {
+      "one": "The story doesn't say “one”. Look for the line that answers the question.",
+      "three": "The story doesn't say “three”. Look for the line that answers the question.",
+      "five": "The story doesn't say “five”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -278,7 +373,12 @@
       "Friday"
      ],
      "answer": 0,
-     "explain": "'It is closed on Sunday.'"
+     "explain": "'It is closed on Sunday.'",
+     "notes": {
+      "Monday": "The story doesn't say “Monday”. Look for the line that answers the question.",
+      "Saturday": "The story doesn't say “Saturday”. Look for the line that answers the question.",
+      "Friday": "The story doesn't say “Friday”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -290,7 +390,12 @@
       "take books"
      ],
      "answer": 0,
-     "explain": "'Don't eat or drink here.'"
+     "explain": "'Don't eat or drink here.'",
+     "notes": {
+      "read": "The story doesn't say “read”. Look for the line that answers the question.",
+      "sit": "The story doesn't say “sit”. Look for the line that answers the question.",
+      "take books": "The story doesn't say “take books”. Look for the line that answers the question."
+     }
     }
    ]
   }

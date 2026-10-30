@@ -14,7 +14,12 @@
       "to the judges' table"
      ],
      "answer": 0,
-     "explain": "'Please bring your cake to the bakery by 12 o'clock.'"
+     "explain": "'Please bring your cake to the bakery by 12 o'clock.'",
+     "notes": {
+      "to the school hall": "The story doesn't say “to the school hall”. Look for the line that answers the question.",
+      "to the village square": "The story doesn't say “to the village square”. Look for the line that answers the question.",
+      "to the judges' table": "The story doesn't say “to the judges' table”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -26,7 +31,12 @@
       "the music"
      ],
      "answer": 0,
-     "explain": "Face painting costs £2; entry is free."
+     "explain": "Face painting costs £2; entry is free.",
+     "notes": {
+      "entry to the fair": "The story doesn't say “entry to the fair”. Look for the line that answers the question.",
+      "the cake competition": "The story doesn't say “the cake competition”. Look for the line that answers the question.",
+      "the music": "The story doesn't say “the music”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -38,7 +48,12 @@
       "The fair starts later."
      ],
      "answer": 0,
-     "explain": "'If it rains, the fair will move to the school hall.'"
+     "explain": "'If it rains, the fair will move to the school hall.'",
+     "notes": {
+      "The fair is cancelled.": "The story doesn't say “The fair is cancelled.”. Look for the line that answers the question.",
+      "The fair moves to next Saturday.": "The story doesn't say “The fair moves to next Saturday.”. Look for the line that answers the question.",
+      "The fair starts later.": "The story doesn't say “The fair starts later.”. Look for the line that answers the question."
+     }
     }
    ]
   },
@@ -56,7 +71,12 @@
       "She doesn't know the address."
      ],
      "answer": 0,
-     "explain": "'I have a piano lesson until five.'"
+     "explain": "'I have a piano lesson until five.'",
+     "notes": {
+      "She has homework.": "The story doesn't say “She has homework.”. Look for the line that answers the question.",
+      "Her brother is ill.": "The story doesn't say “Her brother is ill.”. Look for the line that answers the question.",
+      "She doesn't know the address.": "The story doesn't say “She doesn't know the address.”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -68,7 +88,12 @@
       "where the party is"
      ],
      "answer": 0,
-     "explain": "'My brother wants to know if he can come too.'"
+     "explain": "'My brother wants to know if he can come too.'",
+     "notes": {
+      "if she can bring food": "The story doesn't say “if she can bring food”. Look for the line that answers the question.",
+      "what time the party ends": "The story doesn't say “what time the party ends”. Look for the line that answers the question.",
+      "where the party is": "The story doesn't say “where the party is”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -80,7 +105,12 @@
       "They live next to Leo."
      ],
      "answer": 0,
-     "explain": "'We only moved last month.'"
+     "explain": "'We only moved last month.'",
+     "notes": {
+      "Her brother is older than her.": "The story doesn't say “Her brother is older than her.”. Look for the line that answers the question.",
+      "They have a piano shop.": "The story doesn't say “They have a piano shop.”. Look for the line that answers the question.",
+      "They live next to Leo.": "The story doesn't say “They live next to Leo.”. Look for the line that answers the question."
+     }
     }
    ]
   },
@@ -98,7 +128,12 @@
       "birthday cakes"
      ],
      "answer": 0,
-     "explain": "'At first he only sold bread.'"
+     "explain": "'At first he only sold bread.'",
+     "notes": {
+      "gingerbread houses": "The story doesn't say “gingerbread houses”. Look for the line that answers the question.",
+      "sweets": "The story doesn't say “sweets”. Look for the line that answers the question.",
+      "birthday cakes": "The story doesn't say “birthday cakes”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -110,7 +145,12 @@
       "his daughter"
      ],
      "answer": 0,
-     "explain": "'She (Poppy) decorates the houses with sweets.'"
+     "explain": "'She (Poppy) decorates the houses with sweets.'",
+     "notes": {
+      "Mr Crumb": "The story doesn't say “Mr Crumb”. Look for the line that answers the question.",
+      "the village children": "The story doesn't say “the village children”. Look for the line that answers the question.",
+      "his daughter": "The story doesn't say “his daughter”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -122,7 +162,12 @@
       "The town needs bread."
      ],
      "answer": 0,
-     "explain": "'…because he loves seeing children smile.'"
+     "explain": "'…because he loves seeing children smile.'",
+     "notes": {
+      "He needs the money.": "The story doesn't say “He needs the money.”. Look for the line that answers the question.",
+      "Poppy is too young.": "The story doesn't say “Poppy is too young.”. Look for the line that answers the question.",
+      "The town needs bread.": "The story doesn't say “The town needs bread.”. Look for the line that answers the question."
+     }
     }
    ]
   },
@@ -140,7 +185,12 @@
       "lots"
      ],
      "answer": 0,
-     "explain": "'We didn't catch anything!'"
+     "explain": "'We didn't catch anything!'",
+     "notes": {
+      "two": "The story doesn't say “two”. Look for the line that answers the question.",
+      "one": "The story doesn't say “one”. Look for the line that answers the question.",
+      "lots": "The story doesn't say “lots”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -152,7 +202,12 @@
       "To see in the dark."
      ],
      "answer": 0,
-     "explain": "'It got very cold, so we made a fire.'"
+     "explain": "'It got very cold, so we made a fire.'",
+     "notes": {
+      "To cook the fish.": "The story doesn't say “To cook the fish.”. Look for the line that answers the question.",
+      "To dry the tent.": "The story doesn't say “To dry the tent.”. Look for the line that answers the question.",
+      "To see in the dark.": "The story doesn't say “To see in the dark.”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -164,7 +219,12 @@
       "They stayed another night."
      ],
      "answer": 0,
-     "explain": "'It rained heavily and our tent got wet.'"
+     "explain": "'It rained heavily and our tent got wet.'",
+     "notes": {
+      "They went fishing again.": "The story doesn't say “They went fishing again.”. Look for the line that answers the question.",
+      "They lost the car keys.": "The story doesn't say “They lost the car keys.”. Look for the line that answers the question.",
+      "They stayed another night.": "The story doesn't say “They stayed another night.”. Look for the line that answers the question."
+     }
     }
    ]
   },
@@ -182,7 +242,12 @@
       "green"
      ],
      "answer": 0,
-     "explain": "'…wearing a blue collar with a bell.'"
+     "explain": "'…wearing a blue collar with a bell.'",
+     "notes": {
+      "grey": "The story doesn't say “grey”. Look for the line that answers the question.",
+      "red": "The story doesn't say “red”. Look for the line that answers the question.",
+      "green": "The story doesn't say “green”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -194,7 +259,12 @@
       "in Jack's garden"
      ],
      "answer": 0,
-     "explain": "'Last seen near the library.'"
+     "explain": "'Last seen near the library.'",
+     "notes": {
+      "in the park": "The story doesn't say “in the park”. Look for the line that answers the question.",
+      "at school": "The story doesn't say “at school”. Look for the line that answers the question.",
+      "in Jack's garden": "The story doesn't say “in Jack's garden”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -206,7 +276,12 @@
       "brave"
      ],
      "answer": 0,
-     "explain": "'She is very shy.'"
+     "explain": "'She is very shy.'",
+     "notes": {
+      "friendly": "The story doesn't say “friendly”. Look for the line that answers the question.",
+      "noisy": "The story doesn't say “noisy”. Look for the line that answers the question.",
+      "brave": "The story doesn't say “brave”. Look for the line that answers the question."
+     }
     }
    ]
   },
@@ -224,7 +299,12 @@
       "all day and night"
      ],
      "answer": 0,
-     "explain": "From nine to three = six hours."
+     "explain": "From nine to three = six hours.",
+     "notes": {
+      "three hours": "The story doesn't say “three hours”. Look for the line that answers the question.",
+      "nine hours": "The story doesn't say “nine hours”. Look for the line that answers the question.",
+      "all day and night": "The story doesn't say “all day and night”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -236,7 +316,12 @@
       "the quiet afternoons"
      ],
      "answer": 0,
-     "explain": "'Mrs Plum lets me take home any broken lollipops!'"
+     "explain": "'Mrs Plum lets me take home any broken lollipops!'",
+     "notes": {
+      "the very good pay": "The story doesn't say “the very good pay”. Look for the line that answers the question.",
+      "finishing work early": "The story doesn't say “finishing work early”. Look for the line that answers the question.",
+      "the quiet afternoons": "The story doesn't say “the quiet afternoons”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -248,7 +333,12 @@
       "It was a holiday."
      ],
      "answer": 0,
-     "explain": "'…because of the village fair.'"
+     "explain": "'…because of the village fair.'",
+     "notes": {
+      "Kit gave away free sweets.": "The story doesn't say “Kit gave away free sweets.”. Look for the line that answers the question.",
+      "Mrs Plum was ill.": "The story doesn't say “Mrs Plum was ill.”. Look for the line that answers the question.",
+      "It was a holiday.": "The story doesn't say “It was a holiday.”. Look for the line that answers the question."
+     }
     }
    ]
   },
@@ -266,7 +356,12 @@
       "seven hours"
      ],
      "answer": 0,
-     "explain": "'The trip takes 40 minutes.'"
+     "explain": "'The trip takes 40 minutes.'",
+     "notes": {
+      "one hour": "The story doesn't say “one hour”. Look for the line that answers the question.",
+      "four hours": "The story doesn't say “four hours”. Look for the line that answers the question.",
+      "seven hours": "The story doesn't say “seven hours”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -278,7 +373,12 @@
       "at the sweet shop"
      ],
      "answer": 0,
-     "explain": "'…it's cheaper online.'"
+     "explain": "'…it's cheaper online.'",
+     "notes": {
+      "on the train": "The story doesn't say “on the train”. Look for the line that answers the question.",
+      "at the station": "The story doesn't say “at the station”. Look for the line that answers the question.",
+      "at the sweet shop": "The story doesn't say “at the sweet shop”. Look for the line that answers the question."
+     }
     },
     {
      "type": "mcq",
@@ -290,7 +390,12 @@
       "sit at the back of the train"
      ],
      "answer": 0,
-     "explain": "'…please keep them on a lead.'"
+     "explain": "'…please keep them on a lead.'",
+     "notes": {
+      "buy their dog a child's ticket": "The story doesn't say “buy their dog a child's ticket”. Look for the line that answers the question.",
+      "leave their dog at the station": "The story doesn't say “leave their dog at the station”. Look for the line that answers the question.",
+      "sit at the back of the train": "The story doesn't say “sit at the back of the train”. Look for the line that answers the question."
+     }
     }
    ]
   }

@@ -9,7 +9,12 @@
    "daggers"
   ],
   "answer": 0,
-  "explain": "bury the hatchet = make peace."
+  "explain": "Bury the hatchet = stop arguing and be friends. Example: The sisters finally buried the hatchet.",
+  "notes": {
+   "sword": "Sword isn't the idiom.",
+   "grudge": "You can hold a grudge, but you bury the hatchet.",
+   "daggers": "Daggers appear in 'look daggers at', not here."
+  }
  },
  {
   "type": "mcq",
@@ -21,7 +26,12 @@
    "dangling"
   ],
   "answer": 0,
-  "explain": "strings attached = hidden conditions."
+  "explain": "Strings attached = hidden conditions. Example: a free gift with no strings attached.",
+  "notes": {
+   "tied": "Tied isn't the idiom.",
+   "pulled": "Pull strings = use influence.",
+   "dangling": "Dangling isn't the idiom."
+  }
  },
  {
   "type": "mcq",
@@ -33,11 +43,16 @@
    "golden"
   ],
   "answer": 0,
-  "explain": "red herring = something misleading."
+  "explain": "A red herring = a false clue that distracts. Example: The muddy boots were a red herring.",
+  "notes": {
+   "blue": "Blue isn't the idiom.",
+   "white": "White lie is a different idiom.",
+   "golden": "Golden isn't the idiom."
+  }
  },
  {
   "type": "mcq",
-  "q": "She has an ___ to grind with the council; she's never forgiven them.",
+  "q": "She has an ___ to grind with the referee; she's never forgiven him.",
   "options": [
    "axe",
    "knife",
@@ -45,7 +60,12 @@
    "stone"
   ],
   "answer": 0,
-  "explain": "have an axe to grind = have a private grievance."
+  "explain": "Have an axe to grind = have a private grievance. Example: He has an axe to grind with the coach.",
+  "notes": {
+   "knife": "Knife isn't the idiom.",
+   "sword": "Sword isn't the idiom.",
+   "stone": "Stone isn't the idiom."
+  }
  },
  {
   "type": "mcq",
@@ -57,7 +77,12 @@
    "dim"
   ],
   "answer": 0,
-  "explain": "damn with faint praise."
+  "explain": "Damn with faint praise = praise so weakly it sounds like criticism. Example: 'It was... fine' damns it with faint praise.",
+  "notes": {
+   "doom": "Doom isn't the idiom.",
+   "drown": "Drown isn't the idiom.",
+   "dim": "Dim isn't the idiom."
+  }
  },
  {
   "type": "mcq",
@@ -69,7 +94,12 @@
    "tied"
   ],
   "answer": 0,
-  "explain": "hang by a thread = be in great danger of failing."
+  "explain": "Hanging by a thread = very close to failing. Example: His hopes were hanging by a thread.",
+  "notes": {
+   "held": "Held isn't the idiom.",
+   "stitched": "Stitched is literal sewing.",
+   "tied": "Tied isn't the idiom."
+  }
  },
  {
   "type": "mcq",
@@ -81,7 +111,12 @@
    "egregious"
   ],
   "answer": 0,
-  "explain": "equivocal = ambiguous, often deliberately."
+  "explain": "Equivocal = deliberately unclear. Example: an equivocal answer.",
+  "notes": {
+   "unequivocal": "Unequivocal is the opposite: totally clear.",
+   "eloquent": "Eloquent = speaking beautifully.",
+   "egregious": "Egregious = shockingly bad."
+  }
  },
  {
   "type": "mcq",
@@ -93,7 +128,12 @@
    "lucid"
   ],
   "answer": 0,
-  "explain": "arcane = understood by few; mysterious."
+  "explain": "Arcane = mysterious, known to few. Example: arcane spells.",
+  "notes": {
+   "mundane": "Mundane = ordinary.",
+   "candid": "Candid = honest and open.",
+   "lucid": "Lucid = very clear."
+  }
  },
  {
   "type": "mcq",
@@ -105,7 +145,12 @@
    "understatement"
   ],
   "answer": 0,
-  "explain": "grandiloquence = pompous, inflated language."
+  "explain": "Grandiloquence = pompous, showy language. Example: The wizard's grandiloquence bored everyone.",
+  "notes": {
+   "brevity": "Brevity = shortness.",
+   "candour": "Candour = honesty.",
+   "understatement": "Understatement = saying less than is true."
+  }
  },
  {
   "type": "mcq",
@@ -117,7 +162,12 @@
    "share everything fairly with others"
   ],
   "answer": 0,
-  "explain": "You can't keep the cake AND eat it."
+  "explain": "Have your cake and eat it = want two things that can't both happen. Example: You can't skip practice and win; you can't have your cake and eat it.",
+  "notes": {
+   "celebrate a birthday with friends": "It isn't about birthdays; it's an idiom.",
+   "be greedy whenever you go to parties": "It isn't about greed at parties.",
+   "share everything fairly with others": "Sharing fairly is nearly the opposite."
+  }
  },
  {
   "type": "mcq",
@@ -129,7 +179,12 @@
    "you should never eat too fast at dinner"
   ],
   "answer": 0,
-  "explain": "Real worth is shown in use."
+  "explain": "You only know if something works by trying it. Example: The new game sounds fun, but the proof of the pudding is in the eating.",
+  "notes": {
+   "desserts are the most important course": "It isn't really about dessert.",
+   "cooking well takes years of practice": "It isn't about practice.",
+   "you should never eat too fast at dinner": "It isn't about eating speed."
+  }
  },
  {
   "type": "mcq",
@@ -141,7 +196,12 @@
    "benign"
   ],
   "answer": 0,
-  "explain": "barbed = subtly hurtful."
+  "explain": "Barbed = sharp and hurtful, with hidden criticism. Example: a barbed joke.",
+  "notes": {
+   "blunt": "Blunt = direct, not hidden.",
+   "bland": "Bland = dull, no flavour.",
+   "benign": "Benign = kind and harmless."
+  }
  },
  {
   "type": "mcq",
@@ -153,7 +213,12 @@
    "borrow their ideas without asking"
   ],
   "answer": 0,
-  "explain": "Getting the credit or attention meant for someone else."
+  "explain": "Steal someone's thunder = take the attention they expected. Example: My brother stole my thunder by announcing his news first.",
+  "notes": {
+   "make a lot of noise in a storm": "It isn't about storms.",
+   "ruin the weather for their picnic": "It isn't about weather.",
+   "borrow their ideas without asking": "Borrowing ideas is close, but the idiom is about attention."
+  }
  },
  {
   "type": "mcq",
@@ -165,7 +230,12 @@
    "temperamental"
   ],
   "answer": 0,
-  "explain": "imperturbable = impossible to upset."
+  "explain": "Imperturbable = impossible to upset. Example: an imperturbable goalkeeper.",
+  "notes": {
+   "impetuous": "Impetuous = acting without thinking.",
+   "irascible": "Irascible = easily angered.",
+   "temperamental": "Temperamental = moods change quickly."
+  }
  },
  {
   "type": "mcq",
@@ -177,7 +247,12 @@
    "stark"
   ],
   "answer": 0,
-  "explain": "subtle = small and hard to notice."
+  "explain": "Subtle = small and hard to notice. Example: a subtle hint.",
+  "notes": {
+   "blatant": "Blatant = very obvious; 'yet' signals a contrast with small.",
+   "glaring": "Glaring = very obvious.",
+   "stark": "Stark = very clear and obvious."
+  }
  },
  {
   "type": "mcq",
@@ -189,7 +264,12 @@
    "ends a long war that both sides wanted over"
   ],
   "answer": 0,
-  "explain": "From King Pyrrhus, whose victories ruined his army."
+  "explain": "A Pyrrhic victory costs so much it's hardly worth it. Example: We won, but lost three players to injury: a Pyrrhic victory.",
+  "notes": {
+   "is won very easily against a weak enemy": "An easy win is the opposite.",
+   "is won by cheating or breaking the rules": "Cheating isn't the meaning.",
+   "ends a long war that both sides wanted over": "It isn't about ending a war."
+  }
  },
  {
   "type": "mcq",
@@ -201,7 +281,12 @@
    "edit a film scene"
   ],
   "answer": 0,
-  "explain": "Skip the unimportant parts."
+  "explain": "Cut to the chase = get to the main point. Example: Cut to the chase: did we win?",
+  "notes": {
+   "run faster": "It isn't about running.",
+   "stop a hunt": "It isn't about hunting.",
+   "edit a film scene": "It came from films, but means get to the point."
+  }
  },
  {
   "type": "mcq",
@@ -213,7 +298,12 @@
    "scrawling"
   ],
   "answer": 0,
-  "explain": "Scathing = harshly critical."
+  "explain": "Scathing = severely critical. Example: a scathing review.",
+  "notes": {
+   "scalding": "Scalding = burning hot liquid.",
+   "scouring": "Scouring = scrubbing hard.",
+   "scrawling": "Scrawling = messy writing."
+  }
  },
  {
   "type": "mcq",
@@ -225,7 +315,12 @@
    "emphatic"
   ],
   "answer": 0,
-  "explain": "Encyclopaedic = very wide and complete."
+  "explain": "Encyclopaedic = very complete and wide. Example: encyclopaedic knowledge of dinosaurs.",
+  "notes": {
+   "enigmatic": "Enigmatic = mysterious.",
+   "endemic": "Endemic = found only in one place.",
+   "emphatic": "Emphatic = said with force."
+  }
  },
  {
   "type": "mcq",
@@ -237,7 +332,12 @@
    "delay a difficult choice"
   ],
   "answer": 0,
-  "explain": "Bite the bullet = face something difficult with courage."
+  "explain": "Bite the bullet = face something unpleasant bravely. Example: I bit the bullet and went to the dentist.",
+  "notes": {
+   "refuse to talk about a problem": "Refusing to talk is avoiding, the opposite.",
+   "attack someone's argument": "It isn't about attacking.",
+   "delay a difficult choice": "Delaying is the opposite."
+  }
  },
  {
   "type": "mcq",
@@ -249,7 +349,12 @@
    "self-serving"
   ],
   "answer": 0,
-  "explain": "Self-effacing = modest, not drawing attention to oneself."
+  "explain": "Self-effacing = modest, not drawing attention. Example: a self-effacing champion.",
+  "notes": {
+   "self-righteous": "Self-righteous = sure you're morally better.",
+   "self-evident": "Self-evident = obvious.",
+   "self-serving": "Self-serving = only helping yourself, not hiding ambition."
+  }
  },
  {
   "type": "mcq",
@@ -261,11 +366,16 @@
    "explicit"
   ],
   "answer": 0,
-  "explain": "Mutually exclusive = cannot both be true."
+  "explain": "Mutually exclusive = can't both be true. Example: Fast and careful aren't mutually exclusive.",
+  "notes": {
+   "exhaustive": "Exhaustive = covering everything.",
+   "excessive": "Excessive = too much.",
+   "explicit": "Explicit = clearly stated."
+  }
  },
  {
   "type": "mcq",
-  "q": "The minister was accused of ___, saying one thing and doing another.",
+  "q": "The team captain was accused of ___, saying one thing and doing another.",
   "options": [
    "hypocrisy",
    "hyperbole",
@@ -273,7 +383,12 @@
    "hysteria"
   ],
   "answer": 0,
-  "explain": "Hypocrisy = claiming beliefs you don't act on."
+  "explain": "Hypocrisy = saying one thing and doing another. Example: It's hypocrisy to preach and not practise.",
+  "notes": {
+   "hyperbole": "Hyperbole = exaggeration.",
+   "hypothesis": "A hypothesis is an idea to test.",
+   "hysteria": "Hysteria = wild emotion."
+  }
  },
  {
   "type": "mcq",
@@ -285,7 +400,12 @@
    "brings great wealth"
   ],
   "answer": 0,
-  "explain": "From Hercules' twelve labours."
+  "explain": "Herculean = needing enormous effort (from Hercules). Example: Tidying my room was a Herculean task.",
+  "notes": {
+   "is done in secret": "Secret isn't the meaning.",
+   "is easily forgotten": "Forgettable isn't the meaning.",
+   "brings great wealth": "Wealth isn't the meaning."
+  }
  },
  {
   "type": "mcq",
@@ -297,7 +417,12 @@
    "malaise"
   ],
   "answer": 0,
-  "explain": "Melange = a mixture."
+  "explain": "Melange = a mixture. Example: a melange of flavours.",
+  "notes": {
+   "melee": "Melee = a confused fight.",
+   "malady": "Malady = an illness.",
+   "malaise": "Malaise = a general unease."
+  }
  },
  {
   "type": "mcq",
@@ -309,7 +434,12 @@
    "fixative"
   ],
   "answer": 0,
-  "explain": "fixate on = focus obsessively on."
+  "explain": "Fixate (verb) on = focus too much on. Example: Don't fixate on one mistake.",
+  "notes": {
+   "fixture": "Fixture is a noun.",
+   "fixed": "Fixed is an adjective/past form.",
+   "fixative": "Fixative is a noun (glue/spray)."
+  }
  },
  {
   "type": "mcq",
@@ -321,7 +451,12 @@
    "secretly pleased"
   ],
   "answer": 0,
-  "explain": "On tenterhooks = in suspense."
+  "explain": "On tenterhooks = nervously waiting. Example: We were on tenterhooks waiting for the results.",
+  "notes": {
+   "deeply embarrassed": "Embarrassed isn't the meaning.",
+   "completely exhausted": "Exhausted isn't the meaning.",
+   "secretly pleased": "Pleased isn't the meaning."
+  }
  },
  {
   "type": "mcq",
@@ -333,7 +468,12 @@
    "indefatigable"
   ],
   "answer": 0,
-  "explain": "Inscrutable = impossible to read or interpret."
+  "explain": "Inscrutable = impossible to read or understand. Example: an inscrutable smile.",
+  "notes": {
+   "incorrigible": "Incorrigible = can't be corrected.",
+   "inexorable": "Inexorable = impossible to stop.",
+   "indefatigable": "Indefatigable = never tired."
+  }
  },
  {
   "type": "mcq",
@@ -345,7 +485,12 @@
    "win an argument unfairly"
   ],
   "answer": 0,
-  "explain": "Pass the buck = avoid responsibility."
+  "explain": "Pass the buck = push responsibility onto someone else. Example: Don't pass the buck; own the mistake.",
+  "notes": {
+   "lend money to a friend": "It isn't about lending money.",
+   "move quickly past a problem": "It isn't about moving past problems.",
+   "win an argument unfairly": "It isn't about arguments."
+  }
  },
  {
   "type": "mcq",
@@ -357,7 +502,12 @@
    "outstretched"
   ],
   "answer": 0,
-  "explain": "Outstanding = exceptionally good."
+  "explain": "Outstanding = excellent. Example: outstanding work.",
+  "notes": {
+   "standing out": "Standing out is a verb phrase, not an adjective before a noun.",
+   "upstanding": "Upstanding = honest (for people).",
+   "outstretched": "Outstretched = stretched out (arms)."
+  }
  },
  {
   "type": "mcq",
@@ -369,6 +519,11 @@
    "pertinent"
   ],
   "answer": 0,
-  "explain": "Perfunctory = done without real interest or care."
+  "explain": "Perfunctory = done without real feeling. Example: a perfunctory 'sorry'.",
+  "notes": {
+   "peremptory": "Peremptory = bossy, expecting obedience.",
+   "perpetual": "Perpetual = never ending.",
+   "pertinent": "Pertinent = relevant."
+  }
  }
 ]

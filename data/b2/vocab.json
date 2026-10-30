@@ -9,7 +9,12 @@
    "consequence"
   ],
   "answer": 0,
-  "explain": "have an impact on. ('affect' is a verb.)"
+  "explain": "Have an impact on = have a strong effect on. Example: The film had an impact on me.",
+  "notes": {
+   "affect": "Affect is a verb; we need a noun.",
+   "result": "A result doesn't go with 'on everyone'.",
+   "consequence": "Consequence takes 'of', not 'have a ... on'."
+  }
  },
  {
   "type": "mcq",
@@ -21,7 +26,12 @@
    "up"
   ],
   "answer": 0,
-  "explain": "pay off = be successful."
+  "explain": "Pay off = bring success. Example: All that training paid off.",
+  "notes": {
+   "out": "Pay out = give money.",
+   "back": "Pay back = return money.",
+   "up": "Pay up = pay money you owe."
+  }
  },
  {
   "type": "mcq",
@@ -33,7 +43,12 @@
    "overcome"
   ],
   "answer": 0,
-  "explain": "Overwhelming evidence = very strong."
+  "explain": "Overwhelming = very strong, too much to resist. Example: an overwhelming victory.",
+  "notes": {
+   "overwhelmed": "Overwhelmed describes a person's feeling.",
+   "overdone": "Overdone = cooked too long or exaggerated.",
+   "overcome": "Overcome is a verb: overcome a problem."
+  }
  },
  {
   "type": "mcq",
@@ -45,7 +60,12 @@
    "turn up"
   ],
   "answer": 0,
-  "explain": "weigh up = consider carefully."
+  "explain": "Weigh up = think carefully about. Example: Weigh up your choices.",
+  "notes": {
+   "look up": "Look up = find in a book or online.",
+   "bring up": "Bring up = mention or raise a child.",
+   "turn up": "Turn up = arrive."
+  }
  },
  {
   "type": "mcq",
@@ -57,7 +77,12 @@
    "keen"
   ],
   "answer": 0,
-  "explain": "be bound to = be certain to."
+  "explain": "Bound to = certain to. Example: It's bound to rain.",
+  "notes": {
+   "liable": "Liable to = likely to do something bad.",
+   "prone": "Prone to = often affected by (illness, mistakes).",
+   "keen": "Keen to = wants to, not certain."
+  }
  },
  {
   "type": "mcq",
@@ -69,7 +94,12 @@
    "deeply"
   ],
   "answer": 0,
-  "explain": "Collocation: strictly prohibited."
+  "explain": "Strictly prohibited = completely forbidden (a fixed phrase). Example: Smoking is strictly prohibited.",
+  "notes": {
+   "strongly": "Strongly goes with recommend or believe.",
+   "hardly": "Hardly means almost not.",
+   "deeply": "Deeply goes with feelings."
+  }
  },
  {
   "type": "mcq",
@@ -81,7 +111,12 @@
    "play"
   ],
   "answer": 0,
-  "explain": "come into force = start to apply (laws/rules)."
+  "explain": "Come into force = start to apply (laws). Example: The law came into force in May.",
+  "notes": {
+   "power": "Come into power is for governments.",
+   "practice": "Put into practice is the phrase with practice.",
+   "play": "Come into play = start to matter."
+  }
  },
  {
   "type": "mcq",
@@ -93,7 +128,12 @@
    "gave"
   ],
   "answer": 0,
-  "explain": "pull out = withdraw."
+  "explain": "Pull out = withdraw. Example: He pulled out of the race.",
+  "notes": {
+   "broke": "Break out = escape or start suddenly.",
+   "fell": "Fall out = argue.",
+   "gave": "Give out = stop working or hand out."
+  }
  },
  {
   "type": "mcq",
@@ -105,7 +145,12 @@
    "know"
   ],
   "answer": 0,
-  "explain": "tell the difference."
+  "explain": "Tell the difference = see what's different. Example: I can't tell the twins apart.",
+  "notes": {
+   "say": "Say the difference isn't the phrase.",
+   "speak": "Speak the difference isn't English.",
+   "know": "Know the difference means understand it, not notice it."
+  }
  },
  {
   "type": "mcq",
@@ -117,7 +162,12 @@
    "put"
   ],
   "answer": 0,
-  "explain": "take the blame."
+  "explain": "Take the blame = accept responsibility. Example: She took the blame.",
+  "notes": {
+   "made": "Make the blame isn't English.",
+   "did": "Do the blame isn't English.",
+   "put": "Put the blame on = blame someone else."
+  }
  },
  {
   "type": "mcq",
@@ -129,7 +179,12 @@
    "rouse"
   ],
   "answer": 0,
-  "explain": "a rise (noun) in numbers; 'raise' is mainly a verb."
+  "explain": "A rise (noun) = an increase. Example: a rise in prices.",
+  "notes": {
+   "raise": "Raise is mostly a verb (raise your hand).",
+   "arise": "Arise is a verb = appear.",
+   "rouse": "Rouse is a verb = wake up."
+  }
  },
  {
   "type": "mcq",
@@ -141,7 +196,12 @@
    "with"
   ],
   "answer": 0,
-  "explain": "a reputation for something."
+  "explain": "A reputation for. Example: a reputation for kindness.",
+  "notes": {
+   "of": "Of isn't used with reputation like this.",
+   "about": "About isn't used.",
+   "with": "With isn't used."
+  }
  },
  {
   "type": "mcq",
@@ -153,7 +213,12 @@
    "brand new"
   ],
   "answer": 0,
-  "explain": "crystal clear = very easy to understand."
+  "explain": "Crystal clear = very easy to understand. Example: The rules were crystal clear.",
+  "notes": {
+   "sky high": "Sky high = very high (prices).",
+   "stone cold": "Stone cold = completely cold.",
+   "brand new": "Brand new = completely new."
+  }
  },
  {
   "type": "mcq",
@@ -165,7 +230,12 @@
    "overdo"
   ],
   "answer": 0,
-  "explain": "overcome a problem = deal with it successfully."
+  "explain": "Overcome = defeat a difficulty. Example: She overcame her fear.",
+  "notes": {
+   "overtake": "Overtake = pass a car.",
+   "overlook": "Overlook = not notice.",
+   "overdo": "Overdo = do too much."
+  }
  },
  {
   "type": "mcq",
@@ -177,7 +247,12 @@
    "determine"
   ],
   "answer": 0,
-  "explain": "Adjective needed: determined."
+  "explain": "Determined (adjective) = won't give up. Example: a determined climber.",
+  "notes": {
+   "determining": "Determining is a verb form.",
+   "determination": "Determination is a noun.",
+   "determine": "Determine is a verb."
+  }
  },
  {
   "type": "mcq",
@@ -189,7 +264,12 @@
    "doubtful"
   ],
   "answer": 0,
-  "explain": "Reluctant = not wanting to; willing = happy to."
+  "explain": "Reluctant = not wanting to; willing = happy to. Example: She was willing to help.",
+  "notes": {
+   "hesitant": "Hesitant is similar to reluctant.",
+   "unwilling": "Unwilling means the same as reluctant.",
+   "doubtful": "Doubtful means not sure."
+  }
  },
  {
   "type": "mcq",
@@ -201,7 +281,12 @@
    "do"
   ],
   "answer": 0,
-  "explain": "reach a compromise / an agreement."
+  "explain": "Reach a compromise / agreement. Example: They reached an agreement.",
+  "notes": {
+   "arrive": "Arrive needs 'at': arrive at a compromise.",
+   "get": "Get a compromise isn't the usual phrase.",
+   "do": "Do a compromise isn't English."
+  }
  },
  {
   "type": "mcq",
@@ -213,7 +298,12 @@
    "loosen"
   ],
   "answer": 0,
-  "explain": "ease traffic/pressure = reduce it."
+  "explain": "Ease traffic = make it less heavy. Example: Medicine eased the pain.",
+  "notes": {
+   "lighten": "Lighten is for loads or colours.",
+   "soften": "Soften is for materials or attitudes.",
+   "loosen": "Loosen is for knots or belts."
+  }
  },
  {
   "type": "mcq",
@@ -225,7 +315,12 @@
    "accomplished"
   ],
   "answer": 0,
-  "explain": "manage to + verb. (succeed IN + -ing)"
+  "explain": "Manage to + verb = succeed in something hard. Example: I managed to finish.",
+  "notes": {
+   "succeeded": "Succeed needs 'in + -ing'.",
+   "achieved": "Achieve takes a noun: achieve a goal.",
+   "accomplished": "Accomplish takes a noun too."
+  }
  },
  {
   "type": "mcq",
@@ -237,7 +332,12 @@
    "compulsory"
   ],
   "answer": 0,
-  "explain": "Compelling = very convincing."
+  "explain": "Compelling = very convincing. Example: compelling evidence.",
+  "notes": {
+   "compulsive": "Compulsive = can't stop doing it.",
+   "competing": "Competing = trying to win against others.",
+   "compulsory": "Compulsory = you must do it."
+  }
  },
  {
   "type": "mcq",
@@ -249,7 +349,12 @@
    "cut up with"
   ],
   "answer": 0,
-  "explain": "cut back on = reduce."
+  "explain": "Cut back on = reduce. Example: Cut back on sugar.",
+  "notes": {
+   "cut out of": "Cut out of isn't used with costs.",
+   "cut off from": "Cut off from = separated.",
+   "cut up with": "Cut up with isn't a phrase here."
+  }
  },
  {
   "type": "mcq",
@@ -261,7 +366,12 @@
    "heavy"
   ],
   "answer": 0,
-  "explain": "A keen reader enjoys reading a lot."
+  "explain": "A keen reader = loves reading. Example: a keen gardener.",
+  "notes": {
+   "sharp": "Sharp = clever or pointed.",
+   "strong": "Strong isn't used with reader this way.",
+   "heavy": "Heavy reader isn't the phrase (heavy eater is)."
+  }
  },
  {
   "type": "mcq",
@@ -273,7 +383,12 @@
    "under"
   ],
   "answer": 0,
-  "explain": "by appointment = only if you arrange a time first."
+  "explain": "By appointment = only if you book. Example: Open by appointment.",
+  "notes": {
+   "on": "On appointment isn't the phrase.",
+   "at": "At appointment isn't used.",
+   "under": "Under appointment isn't used."
+  }
  },
  {
   "type": "mcq",
@@ -285,7 +400,12 @@
    "at"
   ],
   "answer": 0,
-  "explain": "in consultation with = after discussing with."
+  "explain": "In consultation with = after discussing with. Example: in consultation with teachers.",
+  "notes": {
+   "on": "On consultation isn't the phrase.",
+   "by": "By consultation isn't usual.",
+   "at": "At consultation isn't used."
+  }
  },
  {
   "type": "mcq",
@@ -297,7 +417,12 @@
    "endorsed"
   ],
   "answer": 0,
-  "explain": "be entrusted with = be given responsibility for."
+  "explain": "Entrusted with = given an important job. Example: entrusted with the keys.",
+  "notes": {
+   "entitled": "Entitled to = have a right to.",
+   "enrolled": "Enrolled in = joined a course.",
+   "endorsed": "Endorsed = publicly supported."
+  }
  },
  {
   "type": "mcq",
@@ -309,7 +434,12 @@
    "expanded"
   ],
   "answer": 0,
-  "explain": "exceed expectations = be better than expected."
+  "explain": "Exceed expectations = be better than expected. Example: The trip exceeded our hopes.",
+  "notes": {
+   "excelled": "Excel = be very good at (no object like this).",
+   "exaggerated": "Exaggerate = make bigger than true.",
+   "expanded": "Expand = grow larger."
+  }
  },
  {
   "type": "mcq",
@@ -321,7 +451,12 @@
    "greatly likely"
   ],
   "answer": 0,
-  "explain": "Collocation: highly likely."
+  "explain": "Highly likely = very probable (collocation). Example: It's highly likely to snow.",
+  "notes": {
+   "strongly likely": "Strongly likely isn't a collocation.",
+   "deeply likely": "Deeply likely isn't a collocation.",
+   "greatly likely": "Greatly likely isn't a collocation."
+  }
  },
  {
   "type": "mcq",
@@ -333,7 +468,12 @@
    "admitted"
   ],
   "answer": 0,
-  "explain": "adopt a policy = start using it."
+  "explain": "Adopt a policy = start using it. Example: The school adopted new rules.",
+  "notes": {
+   "adapted": "Adapt = change to suit.",
+   "adjusted": "Adjust = change a little.",
+   "admitted": "Admit = say something is true."
+  }
  },
  {
   "type": "mcq",
@@ -345,7 +485,12 @@
    "allocate"
   ],
   "answer": 0,
-  "explain": "Alleviate = relieve."
+  "explain": "Alleviate = make less painful. Example: Rest alleviates tiredness.",
+  "notes": {
+   "aggravate": "Aggravate = make worse.",
+   "accumulate": "Accumulate = collect over time.",
+   "allocate": "Allocate = give out for a purpose."
+  }
  },
  {
   "type": "mcq",
@@ -357,7 +502,12 @@
    "fundament"
   ],
   "answer": 0,
-  "explain": "An adverb modifies the adjective 'different'."
+  "explain": "An adverb (fundamentally) describes the adjective 'different'. Example: completely different.",
+  "notes": {
+   "fundamental": "Fundamental is an adjective; we need an adverb.",
+   "fundamentalist": "Fundamentalist is a person or belief.",
+   "fundament": "Fundament isn't the word needed."
+  }
  },
  {
   "type": "mcq",
@@ -369,6 +519,11 @@
    "got by"
   ],
   "answer": 0,
-  "explain": "get into an argument = start one."
+  "explain": "Get into an argument = start one. Example: They got into trouble.",
+  "notes": {
+   "got over": "Get over = recover from.",
+   "got across": "Get across = make understood.",
+   "got by": "Get by = manage with little."
+  }
  }
 ]

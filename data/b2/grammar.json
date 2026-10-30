@@ -9,7 +9,12 @@
    "will have cancelled"
   ],
   "answer": 0,
-  "explain": "Inverted third conditional: Had I known… = If I had known…, would have + p.p."
+  "explain": "Inverted third conditional: Had I + past participle, would have + past participle. Example: Had I seen you, I'd have waved.",
+  "notes": {
+   "would cancel": "Would cancel is about now; the storm was in the past.",
+   "had cancelled": "Had cancelled can't be the result part.",
+   "will have cancelled": "Will have isn't used in conditionals about the past."
+  }
  },
  {
   "type": "mcq",
@@ -21,7 +26,12 @@
    "that it was built"
   ],
   "answer": 0,
-  "explain": "Passive reporting about the past: is thought + to have been + p.p."
+  "explain": "Passive reporting about the past: is thought to have been + past participle. Example: He is said to have been a king.",
+  "notes": {
+   "to be built": "To be built is about now or the future, not 500 years ago.",
+   "being built": "Being built doesn't follow 'is thought'.",
+   "that it was built": "'That it was built' needs 'It is thought that...'."
+  }
  },
  {
   "type": "mcq",
@@ -33,7 +43,12 @@
    "not"
   ],
   "answer": 0,
-  "explain": "would rather + someone + past simple for present/future preferences."
+  "explain": "Would rather + another person + past simple. Example: I'd rather you stayed.",
+  "notes": {
+   "don't": "Don't is present; this structure needs the past.",
+   "wouldn't": "Wouldn't isn't used here.",
+   "not": "Not alone needs 'didn't'."
+  }
  },
  {
   "type": "mcq",
@@ -45,7 +60,12 @@
    "that take"
   ],
   "answer": 0,
-  "explain": "deny + -ing."
+  "explain": "Deny + -ing. Example: He denied breaking the vase.",
+  "notes": {
+   "to take": "Deny isn't followed by 'to'.",
+   "take": "The plain verb can't follow deny.",
+   "that take": "'That take' is ungrammatical."
+  }
  },
  {
   "type": "mcq",
@@ -57,7 +77,12 @@
    "are finishing"
   ],
   "answer": 0,
-  "explain": "Future perfect: completed before a future time."
+  "explain": "Future perfect: will have + past participle = done before a future time. Example: By 6 pm I'll have finished.",
+  "notes": {
+   "will finish": "Will finish doesn't show 'done before'.",
+   "finish": "Finish needs a future form.",
+   "are finishing": "Are finishing doesn't fit 'by next summer'."
+  }
  },
  {
   "type": "mcq",
@@ -69,7 +94,12 @@
    "will go"
   ],
   "answer": 0,
-  "explain": "It's (high) time + past simple."
+  "explain": "It's high time + past simple. Example: It's high time you went to bed.",
+  "notes": {
+   "go": "Present go isn't used after 'high time'.",
+   "are going": "Are going isn't used here.",
+   "will go": "Will go isn't used here."
+  }
  },
  {
   "type": "mcq",
@@ -81,7 +111,12 @@
    "that"
   ],
   "answer": 0,
-  "explain": "'whose' shows possession."
+  "explain": "Whose shows possession. Example: the girl whose bike was stolen.",
+  "notes": {
+   "which": "Which can't show possession here.",
+   "who's": "Who's = who is.",
+   "that": "That can't follow a comma or show possession."
+  }
  },
  {
   "type": "mcq",
@@ -93,7 +128,12 @@
    "taking"
   ],
   "answer": 0,
-  "explain": "must have + p.p. = deduction about the past."
+  "explain": "Must have + past participle = a strong guess about the past. Example: She must have forgotten.",
+  "notes": {
+   "take": "Must take is about the present or future.",
+   "had taken": "Had taken can't follow must.",
+   "taking": "Taking can't follow must."
+  }
  },
  {
   "type": "mcq",
@@ -105,7 +145,12 @@
    "have received"
   ],
   "answer": 0,
-  "explain": "be used to + -ing."
+  "explain": "Be used to + -ing. Example: I'm used to living alone.",
+  "notes": {
+   "receive": "Plain verb can't follow 'used to' meaning familiar.",
+   "received": "Received can't follow 'to' here.",
+   "have received": "Have received doesn't fit."
+  }
  },
  {
   "type": "mcq",
@@ -117,7 +162,12 @@
    "hasn't"
   ],
   "answer": 0,
-  "explain": "Third conditional: if + past perfect."
+  "explain": "Third conditional: if + had (not) + past participle. Example: If he hadn't slept in, he'd have caught the bus.",
+  "notes": {
+   "didn't": "Didn't is second conditional.",
+   "wouldn't have": "Would never goes in the if-part.",
+   "hasn't": "Hasn't is present perfect."
+  }
  },
  {
   "type": "mcq",
@@ -129,7 +179,12 @@
    "Exhaust"
   ],
   "answer": 0,
-  "explain": "Past participle clause = 'Because he was exhausted…'"
+  "explain": "A past participle clause can give the reason: Exhausted = because he was exhausted. Example: Tired by the walk, we sat down.",
+  "notes": {
+   "Exhausting": "Exhausting describes what tires you, not the knight.",
+   "Having exhaust": "Having exhaust is not a correct form.",
+   "Exhaust": "Exhaust is a plain verb or a noun."
+  }
  },
  {
   "type": "mcq",
@@ -141,7 +196,12 @@
    "shouldn't"
   ],
   "answer": 0,
-  "explain": "needn't have + p.p. = you did it, but it wasn't necessary."
+  "explain": "Needn't have + past participle = you did it, but it wasn't necessary. Example: You needn't have waited.",
+  "notes": {
+   "mustn't": "Mustn't have isn't used for the past.",
+   "couldn't": "Couldn't have = impossible.",
+   "shouldn't": "Shouldn't have = it was wrong, which is unkind here."
+  }
  },
  {
   "type": "mcq",
@@ -153,7 +213,12 @@
    "whose"
   ],
   "answer": 0,
-  "explain": "'who' as subject for people."
+  "explain": "Who for people as the subject. Example: the man who lives next door.",
+  "notes": {
+   "which": "Which is for things.",
+   "whom": "Whom is an object; here it's the subject.",
+   "whose": "Whose shows possession."
+  }
  },
  {
   "type": "mcq",
@@ -165,7 +230,12 @@
    "told"
   ],
   "answer": 0,
-  "explain": "regret to tell/inform = formal bad news now; regret telling = sorry about the past."
+  "explain": "Regret to tell/inform = sorry to give bad news now. Example: We regret to inform you...",
+  "notes": {
+   "telling": "Regret telling = sorry you told someone in the past.",
+   "tell": "Plain verb can't follow regret.",
+   "told": "Told can't follow regret."
+  }
  },
  {
   "type": "mcq",
@@ -177,7 +247,12 @@
    "more better"
   ],
   "answer": 0,
-  "explain": "the + comparative…, the + comparative."
+  "explain": "The + comparative, the + comparative. Example: The sooner, the better.",
+  "notes": {
+   "better": "The second half needs 'the' too.",
+   "the best": "Best is a superlative, not a comparative.",
+   "more better": "More better is a double comparative."
+  }
  },
  {
   "type": "mcq",
@@ -189,7 +264,12 @@
    "had realised we"
   ],
   "answer": 0,
-  "explain": "After 'Not until…' at the start, invert: did we realise."
+  "explain": "After 'Not until...' at the start, invert: did + subject + verb. Example: Not until midnight did she arrive.",
+  "notes": {
+   "we realised": "Normal word order isn't allowed after 'Not until'.",
+   "we did realise": "We did realise has the wrong order.",
+   "had realised we": "Had realised we is jumbled."
+  }
  },
  {
   "type": "mcq",
@@ -201,7 +281,12 @@
    "had stuck"
   ],
   "answer": 0,
-  "explain": "Real future: will + verb."
+  "explain": "Whatever + present, will + verb for the future. Example: Whatever you say, I'll go.",
+  "notes": {
+   "would stick": "Would is for unreal situations.",
+   "stuck": "Stuck is past.",
+   "had stuck": "Had stuck is past perfect."
+  }
  },
  {
   "type": "mcq",
@@ -213,7 +298,12 @@
    "had been"
   ],
   "answer": 0,
-  "explain": "Mixed conditional: past condition (had missed) → present result (would be)."
+  "explain": "Mixed conditional: past cause, present result (would be). Example: If I'd eaten breakfast, I wouldn't be hungry now.",
+  "notes": {
+   "would have been": "Would have been is a past result, but 'by now' is present.",
+   "will be": "Will be is first conditional.",
+   "had been": "Had been isn't a result form."
+  }
  },
  {
   "type": "mcq",
@@ -225,7 +315,12 @@
    "haven't announced"
   ],
   "answer": 0,
-  "explain": "Future passive: will (not) be + past participle."
+  "explain": "Future passive: won't be + past participle. Example: The winner will be announced tomorrow.",
+  "notes": {
+   "aren't announcing": "Aren't announcing is active.",
+   "won't announce": "Won't announce is active: results can't announce.",
+   "haven't announced": "Haven't announced is active."
+  }
  },
  {
   "type": "mcq",
@@ -237,7 +332,12 @@
    "will stop"
   ],
   "answer": 0,
-  "explain": "wish + would for annoying behaviour you want to change."
+  "explain": "Wish + would = we want someone to change an annoying habit. Example: I wish he would stop shouting.",
+  "notes": {
+   "stopped": "Stopped is for situations, not annoying behaviour.",
+   "had stopped": "Had stopped is about the past.",
+   "will stop": "Will isn't used after wish."
+  }
  },
  {
   "type": "mcq",
@@ -249,7 +349,12 @@
    "to be moved"
   ],
   "answer": 0,
-  "explain": "Passive reporting about the past: is believed + to have + past participle."
+  "explain": "Is believed to have + past participle for the past. Example: She's thought to have left.",
+  "notes": {
+   "to move": "To move is present or future.",
+   "moving": "Moving doesn't follow 'is believed'.",
+   "to be moved": "To be moved is passive: someone moved him."
+  }
  },
  {
   "type": "mcq",
@@ -261,7 +366,12 @@
    "Should we read"
   ],
   "answer": 0,
-  "explain": "Inverted third conditional: Had + subject + past participle."
+  "explain": "Inverted third conditional: Had we + past participle. Example: Had I known, I'd have helped.",
+  "notes": {
+   "If we read": "If we read needs 'had': If we had read.",
+   "Were we reading": "Were we reading is second conditional style.",
+   "Should we read": "Should we read is for the future."
+  }
  },
  {
   "type": "mcq",
@@ -273,7 +383,12 @@
    "for paying"
   ],
   "answer": 0,
-  "explain": "insist on + -ing."
+  "explain": "Insist on + -ing. Example: He insisted on helping.",
+  "notes": {
+   "to pay": "Insist isn't followed by 'to'.",
+   "paying": "Insist needs 'on' first.",
+   "for paying": "Insist for isn't correct."
+  }
  },
  {
   "type": "mcq",
@@ -285,7 +400,12 @@
    "have crossed"
   ],
   "answer": 0,
-  "explain": "Future perfect: an action completed before a future time."
+  "explain": "Future perfect for an action finished before a future moment. Example: By Friday I'll have read it.",
+  "notes": {
+   "will cross": "Will cross doesn't show 'already done'.",
+   "am crossing": "Am crossing is now.",
+   "have crossed": "Have crossed is present perfect."
+  }
  },
  {
   "type": "mcq",
@@ -297,7 +417,12 @@
    "to restore"
   ],
   "answer": 0,
-  "explain": "Causative: have + object + past participle."
+  "explain": "Have something + past participle = someone else does it for you. Example: I had my hair cut.",
+  "notes": {
+   "restore": "Restore is the plain verb.",
+   "restoring": "Restoring is -ing.",
+   "to restore": "To restore doesn't follow 'had the tower'."
+  }
  },
  {
   "type": "mcq",
@@ -309,7 +434,12 @@
    "did he be"
   ],
   "answer": 0,
-  "explain": "Negative inversion after 'Not only'."
+  "explain": "After 'Not only' at the start, invert: was he. Example: Not only is she kind, but she's also funny.",
+  "notes": {
+   "he was": "He was is normal order; inversion is needed.",
+   "he is": "He is is present and normal order.",
+   "did he be": "Did he be isn't English."
+  }
  },
  {
   "type": "mcq",
@@ -321,7 +451,12 @@
    "gave"
   ],
   "answer": 0,
-  "explain": "needn't have + past participle = it was done but wasn't necessary."
+  "explain": "Needn't have + past participle = done, but not necessary. Example: You needn't have cooked.",
+  "notes": {
+   "give": "Give is present.",
+   "to give": "Needn't isn't followed by 'to'.",
+   "gave": "Gave can't follow needn't."
+  }
  },
  {
   "type": "mcq",
@@ -333,7 +468,12 @@
    "worried"
   ],
   "answer": 0,
-  "explain": "There's no point (in) + -ing."
+  "explain": "There's no point + -ing. Example: There's no point crying.",
+  "notes": {
+   "to worry": "No 'to' after 'no point'.",
+   "worry": "Plain verb doesn't fit.",
+   "worried": "Worried is an adjective or past."
+  }
  },
  {
   "type": "mcq",
@@ -345,7 +485,12 @@
    "what"
   ],
   "answer": 0,
-  "explain": "'whom' as the object in a non-defining relative clause."
+  "explain": "Whom = a person as the object (we met him). Example: the friend whom I visited.",
+  "notes": {
+   "which": "Which is for things.",
+   "whose": "Whose shows possession.",
+   "what": "What doesn't join clauses."
+  }
  },
  {
   "type": "mcq",
@@ -357,7 +502,12 @@
    "had won"
   ],
   "answer": 0,
-  "explain": "Supposing (= imagine if) + past simple for an imaginary present/future."
+  "explain": "Supposing works like 'if' in the second conditional: past simple. Example: Supposing it snowed, would we go?",
+  "notes": {
+   "win": "Win is first conditional, but 'would' needs the past.",
+   "will win": "Will isn't used after supposing.",
+   "had won": "Had won is for the past (third conditional)."
+  }
  },
  {
   "type": "mcq",
@@ -369,6 +519,11 @@
    "talked"
   ],
   "answer": 0,
-  "explain": "It's no use + -ing."
+  "explain": "It's no use + -ing. Example: It's no use crying.",
+  "notes": {
+   "to talk": "No 'to' after 'no use'.",
+   "talk": "Plain verb doesn't fit.",
+   "talked": "Talked is past."
+  }
  }
 ]

@@ -283,3 +283,5 @@ body.kbd-open .toast{display:none}
 }
 .lesson-top .btn{flex:none;white-space:nowrap}
 .lbar .lchip{white-space:normal;max-width:100%}
+/* C3: "why not" note for the option the child picked */
+.explain .why-not{margin-top:6px;padding:8px 10px;border-radius:12px;background:rgba(127,127,127,.12);font-weight:600;line-height:1.35}
