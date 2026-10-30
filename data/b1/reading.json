@@ -209,6 +209,90 @@
      "explain": "'…a branch that cats can't reach.'"
     }
    ]
+  },
+  {
+   "title": "The Lantern Makers",
+   "text": "Every autumn, the families of Willowmere make paper lanterns for the Festival of Light. The tradition began two hundred years ago, when a lost child was guided home by a line of lanterns hung along the river. Today, around three hundred lanterns are made each year. Children decorate them with drawings of animals, while adults fix the frames, which are made of thin bamboo. Although electric lights would be easier and safer, most villagers insist on real candles, saying that 'a lantern without a flame is just a paper bag'.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How did the tradition start?",
+     "options": [
+      "Lanterns helped a lost child get home.",
+      "A child made the very first lantern.",
+      "Villagers needed light during a flood.",
+      "Electric lights stopped working one year."
+     ],
+     "answer": 0,
+     "explain": "'…a lost child was guided home by a line of lanterns.'"
+    },
+    {
+     "type": "mcq",
+     "q": "What do adults do?",
+     "options": [
+      "make the frames",
+      "draw the animals on the lanterns",
+      "sell the lanterns at the river",
+      "hang the lanterns in their homes"
+     ],
+     "answer": 0,
+     "explain": "'Adults fix the frames, which are made of thin bamboo.'"
+    },
+    {
+     "type": "mcq",
+     "q": "Why do villagers prefer candles?",
+     "options": [
+      "They feel real flames matter.",
+      "Candles are much safer than bulbs.",
+      "Electric lights are too expensive.",
+      "Candles last longer on windy nights."
+     ],
+     "answer": 0,
+     "explain": "They say a lantern without a flame is 'just a paper bag'."
+    }
+   ]
+  },
+  {
+   "title": "Ask Aunt Bramble",
+   "text": "Dear Aunt Bramble, my best friend has started spending all her time with a new girl in our class. I feel left out, but I don't want to seem jealous. What should I do? — Lonely Leaf. Dear Lonely Leaf, it's natural to feel hurt. Rather than staying silent, tell your friend calmly how you feel, without blaming her. You could also suggest doing something together, all three of you. You might discover that you like the new girl too. And remember, it's healthy to have more than one close friend.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What is Lonely Leaf's problem?",
+     "options": [
+      "She feels left out by her friend.",
+      "She has argued with the new girl.",
+      "Her friend is moving to a new school.",
+      "She doesn't like anyone in her class."
+     ],
+     "answer": 0,
+     "explain": "'I feel left out.'"
+    },
+    {
+     "type": "mcq",
+     "q": "What does Aunt Bramble advise first?",
+     "options": [
+      "Talk calmly to the friend.",
+      "Ignore the friend for a while.",
+      "Find a completely new best friend.",
+      "Tell the teacher about the new girl."
+     ],
+     "answer": 0,
+     "explain": "'Tell your friend calmly how you feel.'"
+    },
+    {
+     "type": "mcq",
+     "q": "What does Aunt Bramble say in the end?",
+     "options": [
+      "Having several close friends is good.",
+      "Best friends should spend all their time together.",
+      "Jealousy is always a sign of a bad friendship.",
+      "It's better to keep your feelings to yourself."
+     ],
+     "answer": 0,
+     "explain": "'It's healthy to have more than one close friend.'"
+    }
+   ]
   }
  ]
 }

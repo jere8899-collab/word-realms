@@ -204,5 +204,180 @@
   "answer": 0,
   "explain": "A cook makes food.",
   "pic": "🧑‍🍳"
+ },
+ {
+  "type": "mcq",
+  "q": "What is this?",
+  "options": [
+   "strawberry",
+   "cherry",
+   "lemon",
+   "pear"
+  ],
+  "answer": 0,
+  "explain": "🍓 is a strawberry. It is red and sweet.",
+  "pic": "🍓"
+ },
+ {
+  "type": "mcq",
+  "q": "What is this?",
+  "options": [
+   "rabbit",
+   "mouse",
+   "hamster",
+   "squirrel"
+  ],
+  "answer": 0,
+  "explain": "🐰 is a rabbit. It has long ears.",
+  "pic": "🐰"
+ },
+ {
+  "type": "mcq",
+  "q": "What is this?",
+  "options": [
+   "flower",
+   "tree",
+   "leaf",
+   "grass"
+  ],
+  "answer": 0,
+  "explain": "🌸 is a flower.",
+  "pic": "🌸"
+ },
+ {
+  "type": "mcq",
+  "q": "What is this?",
+  "options": [
+   "ball",
+   "kite",
+   "doll",
+   "robot"
+  ],
+  "answer": 0,
+  "explain": "⚽ is a ball. You kick it.",
+  "pic": "⚽"
+ },
+ {
+  "type": "mcq",
+  "q": "What is this?",
+  "options": [
+   "clock",
+   "phone",
+   "lamp",
+   "radio"
+  ],
+  "answer": 0,
+  "explain": "⏰ is a clock. It tells the time.",
+  "pic": "⏰"
+ },
+ {
+  "type": "mcq",
+  "q": "What is this?",
+  "options": [
+   "umbrella",
+   "jacket",
+   "scarf",
+   "glove"
+  ],
+  "answer": 0,
+  "explain": "☂️ is an umbrella. Use it in the rain.",
+  "pic": "☂️"
+ },
+ {
+  "type": "mcq",
+  "q": "What is this?",
+  "options": [
+   "boat",
+   "plane",
+   "bus",
+   "lorry"
+  ],
+  "answer": 0,
+  "explain": "⛵ is a boat. It goes on water.",
+  "pic": "⛵"
+ },
+ {
+  "type": "mcq",
+  "q": "The opposite of 'hot' is ___.",
+  "options": [
+   "cold",
+   "warm",
+   "wet",
+   "new"
+  ],
+  "answer": 0,
+  "explain": "Hot ↔ cold."
+ },
+ {
+  "type": "mcq",
+  "q": "You wear a ___ on your head.",
+  "options": [
+   "hat",
+   "shoe",
+   "sock",
+   "belt"
+  ],
+  "answer": 0,
+  "explain": "A hat goes on your head."
+ },
+ {
+  "type": "mcq",
+  "q": "Red, blue and yellow are ___.",
+  "options": [
+   "colours",
+   "numbers",
+   "animals",
+   "days"
+  ],
+  "answer": 0,
+  "explain": "Red, blue and yellow are colours."
+ },
+ {
+  "type": "mcq",
+  "q": "Your mum's mum is your ___.",
+  "options": [
+   "grandma",
+   "aunt",
+   "sister",
+   "cousin"
+  ],
+  "answer": 0,
+  "explain": "Your mother's mother is your grandmother (grandma)."
+ },
+ {
+  "type": "mcq",
+  "q": "We eat ___ in the morning.",
+  "options": [
+   "breakfast",
+   "dinner",
+   "lunch",
+   "supper"
+  ],
+  "answer": 0,
+  "explain": "The morning meal is breakfast."
+ },
+ {
+  "type": "mcq",
+  "q": "January, February, ___",
+  "options": [
+   "March",
+   "May",
+   "Monday",
+   "Spring"
+  ],
+  "answer": 0,
+  "explain": "The months go January, February, March."
+ },
+ {
+  "type": "mcq",
+  "q": "A person who teaches at a school is a ___.",
+  "options": [
+   "teacher",
+   "doctor",
+   "farmer",
+   "driver"
+  ],
+  "answer": 0,
+  "explain": "A teacher works in a school."
  }
 ]

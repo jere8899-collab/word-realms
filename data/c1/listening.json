@@ -206,5 +206,161 @@
   ],
   "answer": 0,
   "explain": "'Surprisingly edible' is faint praise."
+ },
+ {
+  "type": "listen",
+  "say": "I wouldn't go so far as to call it a failure, but it certainly fell short of what was promised.",
+  "q": "What is the speaker's view?",
+  "options": [
+   "It was disappointing, not a disaster.",
+   "It was a total failure.",
+   "It exceeded expectations.",
+   "It's too early to judge."
+  ],
+  "answer": 0,
+  "explain": "'Fell short' but not 'a failure'."
+ },
+ {
+  "type": "listen",
+  "say": "With all due respect, minister, that doesn't actually answer the question.",
+  "q": "What is the speaker implying?",
+  "options": [
+   "The minister is avoiding the question.",
+   "The minister has been rude.",
+   "The question was unclear.",
+   "He agrees with the minister."
+  ],
+  "answer": 0,
+  "explain": "'With all due respect' introduces a polite criticism."
+ },
+ {
+  "type": "listen",
+  "say": "She's got a lot on her plate at the moment, so I'd rather not add to it.",
+  "q": "Why won't the speaker ask her?",
+  "options": [
+   "She's already very busy.",
+   "She's on a diet.",
+   "She's unreliable.",
+   "She's on holiday."
+  ],
+  "answer": 0,
+  "explain": "A lot on her plate = many responsibilities."
+ },
+ {
+  "type": "listen",
+  "say": "On paper it's the ideal candidate. In person, though, something didn't quite add up.",
+  "q": "How does the speaker feel about the candidate?",
+  "options": [
+   "somewhat suspicious",
+   "completely convinced",
+   "bored",
+   "jealous"
+  ],
+  "answer": 0,
+  "explain": "'Something didn't quite add up' = doubts."
+ },
+ {
+  "type": "listen",
+  "say": "The decision's been left hanging for months. Someone needs to grasp the nettle.",
+  "q": "What does the speaker want?",
+  "options": [
+   "someone to deal with a difficult issue",
+   "the decision to be postponed",
+   "a gardener to be hired",
+   "the matter to be forgotten"
+  ],
+  "answer": 0,
+  "explain": "Grasp the nettle = tackle a difficult problem boldly."
+ },
+ {
+  "type": "listen",
+  "say": "It's not so much the cost that worries me as the timescale.",
+  "q": "What concerns the speaker most?",
+  "options": [
+   "how long it will take",
+   "how much it will cost",
+   "who will do it",
+   "where it will happen"
+  ],
+  "answer": 0,
+  "explain": "'Not so much X as Y': Y (timescale) is the main worry."
+ },
+ {
+  "type": "listen",
+  "say": "Credit where it's due: the new director has turned the place around.",
+  "q": "What is the speaker doing?",
+  "options": [
+   "giving praise",
+   "making a complaint",
+   "asking for money",
+   "apologising"
+  ],
+  "answer": 0,
+  "explain": "'Credit where it's due' introduces praise."
+ },
+ {
+  "type": "listen",
+  "say": "I'm all for innovation, but not at the expense of safety.",
+  "q": "What is the speaker's condition?",
+  "options": [
+   "Safety must not be compromised.",
+   "Innovation should stop.",
+   "Safety rules are excessive.",
+   "Costs must be cut."
+  ],
+  "answer": 0,
+  "explain": "'Not at the expense of safety.'"
+ },
+ {
+  "type": "listen",
+  "say": "He's notoriously tight-lipped about his plans, so I wouldn't read too much into the silence.",
+  "q": "What does the speaker suggest?",
+  "options": [
+   "His silence doesn't mean much.",
+   "He's planning something bad.",
+   "He's upset with them.",
+   "He has no plans at all."
+  ],
+  "answer": 0,
+  "explain": "Tight-lipped by nature, so don't interpret the silence."
+ },
+ {
+  "type": "listen",
+  "say": "The project was supposed to be a quick fix, but it's turned into a real can of worms.",
+  "q": "What has happened to the project?",
+  "options": [
+   "It has revealed many new problems.",
+   "It was finished early.",
+   "It has been cancelled.",
+   "It went exactly to plan."
+  ],
+  "answer": 0,
+  "explain": "A can of worms = a situation full of complications."
+ },
+ {
+  "type": "listen",
+  "say": "That's a fair criticism, and one we've taken on board for next year.",
+  "q": "How does the speaker respond to criticism?",
+  "options": [
+   "accepts it and will act",
+   "rejects it firmly",
+   "ignores it",
+   "finds it unfair"
+  ],
+  "answer": 0,
+  "explain": "'Taken on board' = accepted and will use."
+ },
+ {
+  "type": "listen",
+  "say": "Contrary to popular belief, the castle was never actually besieged.",
+  "q": "What does the speaker say about the castle?",
+  "options": [
+   "A common belief about it is false.",
+   "It was besieged many times.",
+   "Nobody knows its history.",
+   "It was destroyed in a siege."
+  ],
+  "answer": 0,
+  "explain": "'Contrary to popular belief' = most people are wrong."
  }
 ]

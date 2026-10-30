@@ -206,5 +206,161 @@
   ],
   "answer": 0,
   "explain": "A polite way of saying 'yes, please'."
+ },
+ {
+  "type": "listen",
+  "say": "I'd assumed the ticket included dinner, but apparently that's extra.",
+  "q": "What does the speaker discover?",
+  "options": [
+   "Dinner costs more.",
+   "Dinner is included.",
+   "The ticket is cheaper.",
+   "Dinner was cancelled."
+  ],
+  "answer": 0,
+  "explain": "'That's extra' = it costs more."
+ },
+ {
+  "type": "listen",
+  "say": "Mark's always been a bit of a perfectionist, which is great for quality but terrible for deadlines.",
+  "q": "What is the drawback of Mark's attitude?",
+  "options": [
+   "He's often late finishing.",
+   "His work is poor.",
+   "He doesn't care about details.",
+   "He works too fast."
+  ],
+  "answer": 0,
+  "explain": "Perfectionism is 'terrible for deadlines'."
+ },
+ {
+  "type": "listen",
+  "say": "I'm not against the new car park as such. I just think it's in the wrong place.",
+  "q": "What is the speaker's objection?",
+  "options": [
+   "the location",
+   "the cost",
+   "the size",
+   "the idea of a car park"
+  ],
+  "answer": 0,
+  "explain": "'It's in the wrong place.'"
+ },
+ {
+  "type": "listen",
+  "say": "We were going to go hiking, but with this fog we'd hardly see a thing, so we'll postpone it.",
+  "q": "Why are they postponing the hike?",
+  "options": [
+   "poor visibility",
+   "heavy rain",
+   "an injury",
+   "the cold"
+  ],
+  "answer": 0,
+  "explain": "Fog = they'd hardly see anything."
+ },
+ {
+  "type": "listen",
+  "say": "Had I known how long the queue would be, I'd have booked online.",
+  "q": "What does the speaker regret?",
+  "options": [
+   "not booking online",
+   "booking online",
+   "arriving early",
+   "going at all"
+  ],
+  "answer": 0,
+  "explain": "Third conditional expressing regret."
+ },
+ {
+  "type": "listen",
+  "say": "The new manager's very approachable. You can raise any concern with her.",
+  "q": "What is the new manager like?",
+  "options": [
+   "easy to talk to",
+   "very strict",
+   "often absent",
+   "rather shy"
+  ],
+  "answer": 0,
+  "explain": "Approachable = easy to talk to."
+ },
+ {
+  "type": "listen",
+  "say": "Sorry, can I just stop you there? I think there's been a misunderstanding about the dates.",
+  "q": "What is the speaker doing?",
+  "options": [
+   "interrupting to clarify",
+   "ending the meeting",
+   "agreeing with the plan",
+   "changing the subject"
+  ],
+  "answer": 0,
+  "explain": "Polite interruption to correct a misunderstanding."
+ },
+ {
+  "type": "listen",
+  "say": "Attendance has roughly doubled since we dropped the entry fee.",
+  "q": "What happened after the fee was removed?",
+  "options": [
+   "About twice as many came.",
+   "Fewer people came.",
+   "Attendance stayed the same.",
+   "The event was closed."
+  ],
+  "answer": 0,
+  "explain": "Roughly doubled = about twice as many."
+ },
+ {
+  "type": "listen",
+  "say": "It's a fair point, but I'm not sure it outweighs the cost.",
+  "q": "How does the speaker feel about the idea?",
+  "options": [
+   "unconvinced",
+   "enthusiastic",
+   "angry",
+   "indifferent"
+  ],
+  "answer": 0,
+  "explain": "She accepts the point but isn't persuaded."
+ },
+ {
+  "type": "listen",
+  "say": "I've been meaning to get my bike fixed for ages, but I keep putting it off.",
+  "q": "What is the speaker's problem?",
+  "options": [
+   "He keeps delaying the repair.",
+   "He can't afford the repair.",
+   "The repair shop is closed.",
+   "He doesn't know how to ride."
+  ],
+  "answer": 0,
+  "explain": "Putting it off = delaying."
+ },
+ {
+  "type": "listen",
+  "say": "Weather permitting, the ceremony will be held in the castle gardens.",
+  "q": "What does the speaker mean?",
+  "options": [
+   "The gardens depend on good weather.",
+   "It will be in the gardens whatever happens.",
+   "The ceremony has been cancelled.",
+   "It will be held at the lake."
+  ],
+  "answer": 0,
+  "explain": "'Weather permitting' = only if the weather is good enough."
+ },
+ {
+  "type": "listen",
+  "say": "She takes after her mother: same sense of humour, same stubborn streak.",
+  "q": "What does the speaker mean?",
+  "options": [
+   "She's similar to her mother.",
+   "She looks after her mother.",
+   "She disagrees with her mother.",
+   "She lives with her mother."
+  ],
+  "answer": 0,
+  "explain": "Take after = resemble a parent."
  }
 ]

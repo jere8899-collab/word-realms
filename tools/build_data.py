@@ -4,9 +4,14 @@ sys.path.insert(0, os.path.dirname(__file__))
 from c_a1 import A1; from c_a2 import A2; from c_b1 import B1, QUEST; from c_b2 import B2; from c_c1 import C1, DEBATE; from c_c2 import C2
 from c_speaking import SPEAKING
 from c_writing import WRITING, LEVEL_BANK
+from w1_a import W1A; from w1_b import W1B  # Content Wave 1 (2026-10-30)
 ROOT = os.path.join(os.path.dirname(__file__), "..", "data")
 D = {"a1": A1, "a2": A2, "b1": B1, "b2": B2, "c1": C1, "c2": C2}
 tot = 0; counts = {}
+for lvl, extra in {**W1A, **W1B}.items():  # merge extra items into the base banks
+    for sk, val in extra.items():
+        if sk == "reading": D[lvl][sk]["passages"].extend(val["passages"])
+        else: D[lvl][sk].extend(val)
 FAIR_MAX = 0.40  # "Fair Play" guard: the right answer may be the uniquely longest option in at most 40% of a skill's items
 def check_fair(name, items):
     mc = [q for q in items if q.get("options")]
@@ -20,6 +25,8 @@ for lvl, skills in D.items():
         n = sum(len(p["questions"]) for p in val["passages"]) if sk == "reading" else len(val)
         assert n >= 15, (lvl, sk, n)
         items = [q for p in val["passages"] for q in p["questions"]] if sk == "reading" else val
+        keys = [(q.get("say", "") + "|" + q.get("q", "") + "|" + str(q.get("answer")) + "|" + q.get("pic", "") + "|" + "/".join(q.get("options", [])[:1])) for q in items]
+        dup = {k for k in keys if keys.count(k) > 1}; assert not dup, (lvl, sk, dup)
         for q in items:
             if q["type"] != "order": assert len(set(q["options"])) == len(q["options"]) == 4, q
         counts[f"{lvl}/{sk}"] = n; tot += n

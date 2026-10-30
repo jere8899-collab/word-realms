@@ -190,5 +190,173 @@
   ],
   "answer": 0,
   "explain": "bridge the gap = reduce the difference."
+ },
+ {
+  "type": "mcq",
+  "q": "The minister's comments ___ a storm of criticism.",
+  "options": [
+   "sparked",
+   "lit",
+   "fuelled up",
+   "flamed"
+  ],
+  "answer": 0,
+  "explain": "spark criticism/a debate = cause it suddenly."
+ },
+ {
+  "type": "mcq",
+  "q": "The report paints a rather ___ picture of the economy.",
+  "options": [
+   "bleak",
+   "blunt",
+   "bland",
+   "brisk"
+  ],
+  "answer": 0,
+  "explain": "A bleak picture = depressing, without hope."
+ },
+ {
+  "type": "mcq",
+  "q": "She has a ___ grasp of constitutional law.",
+  "options": [
+   "firm",
+   "hard",
+   "stiff",
+   "rigid"
+  ],
+  "answer": 0,
+  "explain": "Collocation: a firm grasp of."
+ },
+ {
+  "type": "mcq",
+  "q": "The two sides remain ___ apart on the key issues.",
+  "options": [
+   "poles",
+   "miles",
+   "streets",
+   "worlds away"
+  ],
+  "answer": 0,
+  "explain": "be poles apart = completely different."
+ },
+ {
+  "type": "mcq",
+  "q": "His argument ___ on the assumption that people act rationally.",
+  "options": [
+   "hinges",
+   "hangs up",
+   "pivots round",
+   "leans"
+  ],
+  "answer": 0,
+  "explain": "hinge on = depend entirely on."
+ },
+ {
+  "type": "mcq",
+  "q": "The scheme was ___ from the start by poor planning.",
+  "options": [
+   "dogged",
+   "doomed in",
+   "plagued at",
+   "dotted"
+  ],
+  "answer": 0,
+  "explain": "be dogged by problems = repeatedly affected."
+ },
+ {
+  "type": "mcq",
+  "q": "Which word means 'to make a situation worse'?",
+  "options": [
+   "exacerbate",
+   "exonerate",
+   "extrapolate",
+   "expedite"
+  ],
+  "answer": 0,
+  "explain": "Exacerbate = make worse."
+ },
+ {
+  "type": "mcq",
+  "q": "Her resignation came as a bolt from the ___.",
+  "options": [
+   "blue",
+   "sky",
+   "clouds",
+   "dark"
+  ],
+  "answer": 0,
+  "explain": "A bolt from the blue = a complete surprise."
+ },
+ {
+  "type": "mcq",
+  "q": "The proposal received ___ support from all parties.",
+  "options": [
+   "unanimous",
+   "unanimously",
+   "uniform",
+   "universal agreement"
+  ],
+  "answer": 0,
+  "explain": "An adjective is needed before 'support'; unanimous = everyone agreed."
+ },
+ {
+  "type": "mcq",
+  "q": "The council will ___ the matter at its next session.",
+  "options": [
+   "address",
+   "attend",
+   "adhere",
+   "adjourn"
+  ],
+  "answer": 0,
+  "explain": "address an issue = deal with it."
+ },
+ {
+  "type": "mcq",
+  "q": "Critics ___ the plan as unrealistic.",
+  "options": [
+   "dismissed",
+   "discarded",
+   "displaced",
+   "disposed"
+  ],
+  "answer": 0,
+  "explain": "dismiss something as… = reject it as not worth considering."
+ },
+ {
+  "type": "mcq",
+  "q": "He gave a ___ account of events, leaving nothing out.",
+  "options": [
+   "meticulous",
+   "meddlesome",
+   "melodious",
+   "momentary"
+  ],
+  "answer": 0,
+  "explain": "Meticulous = very careful and detailed."
+ },
+ {
+  "type": "mcq",
+  "q": "The debate was ___ by a series of personal attacks.",
+  "options": [
+   "marred",
+   "marked down",
+   "married",
+   "mired up"
+  ],
+  "answer": 0,
+  "explain": "mar = spoil."
+ },
+ {
+  "type": "mcq",
+  "q": "Public confidence in the council is at an all-time ___.",
+  "options": [
+   "low",
+   "bottom",
+   "floor",
+   "minimum level"
+  ],
+  "answer": 0,
+  "explain": "Collocation: an all-time low."
  }
 ]

@@ -209,6 +209,90 @@
      "explain": "Signed 'T.' to Grandfather; 'Until we meet again' suggests loss."
     }
    ]
+  },
+  {
+   "title": "The Cartographer's Dilemma",
+   "text": "When the Royal Society commissioned a new map of the kingdom, it expected precision. What it received was something more troubling. The cartographer, a meticulous woman named Orla Venn, had walked every road herself and discovered that several villages shown on the old maps no longer existed, while others had grown into towns that appeared nowhere. Worse, three 'rivers' turned out to be dry ditches, drawn decades earlier to strengthen land claims. Venn's map was accurate, but it was also politically explosive: it undermined the boundaries on which several noble estates depended. The Society shelved it for a generation. Her story is a reminder that maps are never merely descriptive; they are arguments about who owns the world.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What did Venn find out about the old maps?",
+     "options": [
+      "Some features had been invented for land claims.",
+      "They were more accurate than the Society thought.",
+      "They had been copied from foreign maps.",
+      "They left out the kingdom's largest towns entirely."
+     ],
+     "answer": 0,
+     "explain": "Three 'rivers' were dry ditches drawn 'to strengthen land claims'."
+    },
+    {
+     "type": "mcq",
+     "q": "Why was her map shelved?",
+     "options": [
+      "It threatened powerful landowners.",
+      "It contained serious measuring errors.",
+      "She refused to let the Society publish it.",
+      "It was too expensive to print in colour."
+     ],
+     "answer": 0,
+     "explain": "It 'undermined the boundaries on which several noble estates depended'."
+    },
+    {
+     "type": "mcq",
+     "q": "What is the writer's main point?",
+     "options": [
+      "Maps reflect power as well as geography.",
+      "Old maps should never be trusted at all.",
+      "Cartographers should avoid politics completely.",
+      "The Royal Society was right to be careful."
+     ],
+     "answer": 0,
+     "explain": "'Maps are never merely descriptive; they are arguments about who owns the world.'"
+    }
+   ]
+  },
+  {
+   "title": "In Praise of Boredom",
+   "text": "We have engineered boredom out of our lives. Every queue, commute and pause is now filled by a glowing screen. Yet psychologists increasingly argue that boredom is not a malfunction but a signal: a prompt to seek something more meaningful. In one study, participants who had first completed a dull task, copying numbers from a phone directory, went on to generate more creative uses for a plastic cup than those who had not. The researchers do not claim that tedium is pleasant, only that it may be productive. The difficulty is that the payoff comes later, while the discomfort is immediate, and a phone offers instant relief.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How do psychologists view boredom, according to the text?",
+     "options": [
+      "as a useful signal",
+      "as a harmless habit",
+      "as a sign of illness",
+      "as a modern invention"
+     ],
+     "answer": 0,
+     "explain": "'Boredom is not a malfunction but a signal.'"
+    },
+    {
+     "type": "mcq",
+     "q": "What did the study suggest?",
+     "options": [
+      "A dull task first can boost creativity.",
+      "Phone directories are useful for memory.",
+      "Creative people rarely feel bored at all.",
+      "Plastic cups make tasks less boring."
+     ],
+     "answer": 0,
+     "explain": "Those who did the dull task produced more creative ideas."
+    },
+    {
+     "type": "mcq",
+     "q": "Why do people avoid boredom, in the writer's view?",
+     "options": [
+      "The benefit is delayed but the discomfort isn't.",
+      "Psychologists have told them it is dangerous.",
+      "Boredom always makes people less productive.",
+      "Modern jobs leave no time to feel bored."
+     ],
+     "answer": 0,
+     "explain": "'The payoff comes later, while the discomfort is immediate.'"
+    }
+   ]
   }
  ]
 }

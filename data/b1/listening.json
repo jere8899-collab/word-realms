@@ -206,5 +206,161 @@
   ],
   "answer": 0,
   "explain": "Best friends who tell each other everything."
+ },
+ {
+  "type": "listen",
+  "say": "I'd have called you, but my phone had run out of battery.",
+  "q": "Why didn't the speaker call?",
+  "options": [
+   "Her phone was dead.",
+   "She forgot.",
+   "She didn't have the number.",
+   "She was too busy."
+  ],
+  "answer": 0,
+  "explain": "Run out of battery = the phone was dead."
+ },
+ {
+  "type": "listen",
+  "say": "The museum's free on Sundays, so it's usually packed. I'd go on a weekday if I were you.",
+  "q": "What does the speaker advise?",
+  "options": [
+   "Go on a weekday.",
+   "Go on Sunday.",
+   "Book online.",
+   "Avoid the museum."
+  ],
+  "answer": 0,
+  "explain": "'I'd go on a weekday if I were you.'"
+ },
+ {
+  "type": "listen",
+  "say": "I've been feeling much better since I started cycling to work.",
+  "q": "Why does the speaker feel better?",
+  "options": [
+   "She cycles to work.",
+   "She changed jobs.",
+   "She sleeps more.",
+   "She stopped driving at night."
+  ],
+  "answer": 0,
+  "explain": "'…since I started cycling to work.'"
+ },
+ {
+  "type": "listen",
+  "say": "We were supposed to arrive at six, but the plane was delayed by three hours.",
+  "q": "When did they arrive?",
+  "options": [
+   "at nine",
+   "at six",
+   "at three",
+   "at seven"
+  ],
+  "answer": 0,
+  "explain": "Six + three hours = nine."
+ },
+ {
+  "type": "listen",
+  "say": "Can you keep an eye on my bag while I go and get a coffee?",
+  "q": "What does the speaker want?",
+  "options": [
+   "someone to watch her bag",
+   "a cup of coffee for her friend",
+   "help carrying her bag",
+   "directions to the café"
+  ],
+  "answer": 0,
+  "explain": "Keep an eye on = watch."
+ },
+ {
+  "type": "listen",
+  "say": "It's a really good phone, although the battery doesn't last very long.",
+  "q": "What's the problem with the phone?",
+  "options": [
+   "the battery",
+   "the price",
+   "the camera",
+   "the size"
+  ],
+  "answer": 0,
+  "explain": "'The battery doesn't last very long.'"
+ },
+ {
+  "type": "listen",
+  "say": "I was planning to study medicine, but I've decided to become a vet instead.",
+  "q": "What does the speaker want to be now?",
+  "options": [
+   "a vet",
+   "a doctor",
+   "a nurse",
+   "a teacher"
+  ],
+  "answer": 0,
+  "explain": "'I've decided to become a vet instead.'"
+ },
+ {
+  "type": "listen",
+  "say": "You should have seen his face when he opened the present. He was speechless!",
+  "q": "How did he feel?",
+  "options": [
+   "very surprised",
+   "disappointed",
+   "bored",
+   "angry"
+  ],
+  "answer": 0,
+  "explain": "Speechless = so surprised he couldn't speak."
+ },
+ {
+  "type": "listen",
+  "say": "The library will be closed for repairs until the end of March.",
+  "q": "When will the library reopen?",
+  "options": [
+   "in April",
+   "in March",
+   "next week",
+   "in February"
+  ],
+  "answer": 0,
+  "explain": "Closed until the end of March, so it reopens in April."
+ },
+ {
+  "type": "listen",
+  "say": "Do you fancy going for a walk? It's too nice to stay indoors.",
+  "q": "What is the speaker doing?",
+  "options": [
+   "making a suggestion",
+   "making a complaint",
+   "asking for directions",
+   "refusing an invitation"
+  ],
+  "answer": 0,
+  "explain": "'Do you fancy…?' is a suggestion."
+ },
+ {
+  "type": "listen",
+  "say": "The first prize is a weekend in Paris, and the runner-up gets a camera.",
+  "q": "What does the second-place winner get?",
+  "options": [
+   "a camera",
+   "a weekend in Paris",
+   "a bike",
+   "nothing"
+  ],
+  "answer": 0,
+  "explain": "Runner-up = second place."
+ },
+ {
+  "type": "listen",
+  "say": "I'm not really into horror films. Could we watch a comedy instead?",
+  "q": "What kind of film does the speaker want?",
+  "options": [
+   "a comedy",
+   "a horror film",
+   "a documentary",
+   "an action film"
+  ],
+  "answer": 0,
+  "explain": "'Could we watch a comedy instead?'"
  }
 ]

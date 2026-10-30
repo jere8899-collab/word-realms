@@ -209,6 +209,90 @@
      "explain": "Free course, then reapply in summer."
     }
    ]
+  },
+  {
+   "title": "The Glass Swimmers",
+   "text": "Visitors to Crystal Lake often mistake the shimmering creatures beneath its surface for fish. They are, in fact, glass newts, a rare amphibian found in only three lakes in the world. Their transparent skin allows predators to see straight through them, which, paradoxically, helps them survive: a hungry heron sees only the stones on the lakebed. Yet this disguise has become a weakness. As tourism has grown, sunscreen and soap from swimmers have clouded the water, and in murky conditions the newts lose their advantage. Local volunteers now run 'clean swim' days, asking visitors to rinse off before entering the lake. Numbers have stabilised, though scientists warn it is too early to celebrate.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How does transparency protect the newts?",
+     "options": [
+      "Predators see the lakebed instead.",
+      "It makes them look like small fish.",
+      "It reflects sunlight into a heron's eyes.",
+      "It lets them hide among glass stones."
+     ],
+     "answer": 0,
+     "explain": "'A hungry heron sees only the stones on the lakebed.'"
+    },
+    {
+     "type": "mcq",
+     "q": "Why is the disguise now a weakness?",
+     "options": [
+      "Cloudy water reduces its effect.",
+      "Tourists keep catching the newts.",
+      "Herons have learned to find them.",
+      "The lakes are getting much warmer."
+     ],
+     "answer": 0,
+     "explain": "'In murky conditions the newts lose their advantage.'"
+    },
+    {
+     "type": "mcq",
+     "q": "What is the scientists' view?",
+     "options": [
+      "Cautious: it's too soon to be sure.",
+      "Delighted: the newts are now safe.",
+      "Pessimistic: the newts will die out.",
+      "Critical of the volunteers' work."
+     ],
+     "answer": 0,
+     "explain": "'Scientists warn it is too early to celebrate.'"
+    }
+   ]
+  },
+  {
+   "title": "Should Homework Be Banned?",
+   "text": "Last month our school trialled a homework-free term in Years 7 and 8. Supporters argued that students would sleep better, read more for pleasure and spend more time with their families. The results were mixed. Surveys showed that most students did feel less stressed, and library borrowing went up by a fifth. However, maths teachers reported that weaker students fell further behind without regular practice, while some parents complained that they no longer knew what their children were learning. The head teacher has decided on a compromise: short, optional tasks, with a weekly 'family project' replacing written exercises.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What evidence suggests students read more?",
+     "options": [
+      "Library borrowing rose by 20%.",
+      "Students wrote more book reviews.",
+      "Teachers set extra reading tasks.",
+      "Parents bought more books at home."
+     ],
+     "answer": 0,
+     "explain": "'Library borrowing went up by a fifth.'"
+    },
+    {
+     "type": "mcq",
+     "q": "What concern did maths teachers raise?",
+     "options": [
+      "Weaker students fell behind.",
+      "Students were too tired in class.",
+      "Parents did their children's work.",
+      "Lessons became too easy for everyone."
+     ],
+     "answer": 0,
+     "explain": "'Weaker students fell further behind without regular practice.'"
+    },
+    {
+     "type": "mcq",
+     "q": "What has the head teacher decided?",
+     "options": [
+      "a compromise with optional tasks",
+      "to ban homework permanently",
+      "to return to the old system",
+      "to let each teacher decide alone"
+     ],
+     "answer": 0,
+     "explain": "'…short, optional tasks, with a weekly family project.'"
+    }
+   ]
   }
  ]
 }

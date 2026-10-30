@@ -206,5 +206,161 @@
   ],
   "answer": 0,
   "explain": "A blessing in disguise."
+ },
+ {
+  "type": "listen",
+  "say": "I'd hardly call it a resounding endorsement. 'Adequate' was the word she used.",
+  "q": "How did she rate it?",
+  "options": [
+   "lukewarm",
+   "enthusiastic",
+   "hostile",
+   "undecided"
+  ],
+  "answer": 0,
+  "explain": "'Adequate' is faint praise, not an endorsement."
+ },
+ {
+  "type": "listen",
+  "say": "He has a habit of over-promising and under-delivering, so take the timeline with a grain of salt.",
+  "q": "What should the listener do?",
+  "options": [
+   "be sceptical of the schedule",
+   "trust the timeline fully",
+   "ask for more money",
+   "cancel the project"
+  ],
+  "answer": 0,
+  "explain": "A grain of salt = scepticism."
+ },
+ {
+  "type": "listen",
+  "say": "Be that as it may, the board's hands are tied by the regulations.",
+  "q": "What does the speaker mean?",
+  "options": [
+   "The board can't act freely.",
+   "The board refuses to act.",
+   "The regulations have changed.",
+   "The board agrees with the critics."
+  ],
+  "answer": 0,
+  "explain": "Hands are tied = unable to act."
+ },
+ {
+  "type": "listen",
+  "say": "Far from clarifying matters, the statement only muddied the waters.",
+  "q": "What effect did the statement have?",
+  "options": [
+   "It made things more confusing.",
+   "It explained everything.",
+   "It ended the dispute.",
+   "It was ignored."
+  ],
+  "answer": 0,
+  "explain": "Muddy the waters = make confusing."
+ },
+ {
+  "type": "listen",
+  "say": "It's a moot point whether she jumped or was pushed. Either way, she's gone.",
+  "q": "What does the speaker say about the resignation?",
+  "options": [
+   "The reason no longer matters much.",
+   "She was definitely pushed.",
+   "She left voluntarily.",
+   "She might come back."
+  ],
+  "answer": 0,
+  "explain": "'Either way, she's gone' = the debate is academic."
+ },
+ {
+  "type": "listen",
+  "say": "He was damned with faint praise: 'punctual and tidy' was all the reference said.",
+  "q": "What does the reference suggest?",
+  "options": [
+   "He's unremarkable at his job.",
+   "He's an outstanding worker.",
+   "He's often late.",
+   "He's dishonest."
+  ],
+  "answer": 0,
+  "explain": "Faint praise implies criticism."
+ },
+ {
+  "type": "listen",
+  "say": "I hate to be the bearer of bad tidings, but the funding has fallen through.",
+  "q": "What news is the speaker giving?",
+  "options": [
+   "The money won't come.",
+   "The project is approved.",
+   "The team has grown.",
+   "There's extra funding."
+  ],
+  "answer": 0,
+  "explain": "Fallen through = failed to happen."
+ },
+ {
+  "type": "listen",
+  "say": "They've been sitting on the fence for months. It's time they came down on one side or the other.",
+  "q": "What does the speaker want?",
+  "options": [
+   "a clear decision",
+   "more discussion",
+   "a new fence",
+   "to stay neutral"
+  ],
+  "answer": 0,
+  "explain": "Sitting on the fence = not deciding."
+ },
+ {
+  "type": "listen",
+  "say": "The new edition is, if anything, even more impenetrable than the first.",
+  "q": "What does the speaker think of the new edition?",
+  "options": [
+   "It's harder to understand.",
+   "It's much clearer.",
+   "It's identical.",
+   "It's shorter."
+  ],
+  "answer": 0,
+  "explain": "Impenetrable = impossible to understand; 'even more' = worse."
+ },
+ {
+  "type": "listen",
+  "say": "She's nothing if not persistent. She applied seven times before they finally accepted her.",
+  "q": "What quality does she have?",
+  "options": [
+   "determination",
+   "impatience",
+   "luck",
+   "modesty"
+  ],
+  "answer": 0,
+  "explain": "'Nothing if not persistent' = very persistent."
+ },
+ {
+  "type": "listen",
+  "say": "To his credit, he owned up straight away, which took the wind out of his critics' sails.",
+  "q": "What effect did his admission have?",
+  "options": [
+   "It weakened his critics' attack.",
+   "It made critics angrier.",
+   "It cost him his job.",
+   "It went unnoticed."
+  ],
+  "answer": 0,
+  "explain": "Take the wind out of someone's sails = weaken their position."
+ },
+ {
+  "type": "listen",
+  "say": "Theirs was a marriage of convenience rather than conviction: two parties with nothing in common but a rival.",
+  "q": "Why did the two parties unite?",
+  "options": [
+   "They shared an opponent.",
+   "They shared values.",
+   "They were forced to.",
+   "They were old friends."
+  ],
+  "answer": 0,
+  "explain": "'Nothing in common but a rival.'"
  }
 ]

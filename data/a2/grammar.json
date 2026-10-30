@@ -154,5 +154,149 @@
   ],
   "answer": 0,
   "explain": "First conditional: If + present, will + verb."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence in the candy shop!",
+  "answer": "I have never seen a real dragon.",
+  "explain": "Present perfect + never: I have never seen…"
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence in the candy shop!",
+  "answer": "Could you pass me the sugar, please?",
+  "explain": "Polite request: Could you + verb…, please?"
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence in the candy shop!",
+  "answer": "There isn't any milk in the fridge.",
+  "explain": "Negative with uncountable nouns: there isn't any…"
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence in the candy shop!",
+  "answer": "My brother is good at drawing.",
+  "explain": "good at + -ing."
+ },
+ {
+  "type": "mcq",
+  "q": "No more cake for me, thanks. I ___ already eaten three slices!",
+  "options": [
+   "have",
+   "did",
+   "am",
+   "was"
+  ],
+  "answer": 0,
+  "explain": "Present perfect with 'already': have + past participle."
+ },
+ {
+  "type": "mcq",
+  "q": "When I was young, I ___ climb trees every day.",
+  "options": [
+   "used to",
+   "use to",
+   "was used",
+   "am used to"
+  ],
+  "answer": 0,
+  "explain": "'used to' + verb for past habits."
+ },
+ {
+  "type": "mcq",
+  "q": "Is there ___ bread left?",
+  "options": [
+   "any",
+   "some",
+   "many",
+   "a"
+  ],
+  "answer": 0,
+  "explain": "Use 'any' in questions with uncountable nouns."
+ },
+ {
+  "type": "mcq",
+  "q": "He runs ___ than his brother.",
+  "options": [
+   "faster",
+   "more fast",
+   "fastest",
+   "most fast"
+  ],
+  "answer": 0,
+  "explain": "Short adjective/adverb + -er: faster."
+ },
+ {
+  "type": "mcq",
+  "q": "Look at those clouds! It ___ rain.",
+  "options": [
+   "is going to",
+   "will to",
+   "goes to",
+   "is raining to"
+  ],
+  "answer": 0,
+  "explain": "'going to' for a prediction based on what we can see."
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ a shower when the phone rang.",
+  "options": [
+   "was having",
+   "had",
+   "have had",
+   "am having"
+  ],
+  "answer": 0,
+  "explain": "Past continuous for the longer action, interrupted by the past simple."
+ },
+ {
+  "type": "mcq",
+  "q": "We ___ go to school on Saturdays. It's the weekend!",
+  "options": [
+   "don't have to",
+   "mustn't",
+   "haven't",
+   "can't to"
+  ],
+  "answer": 0,
+  "explain": "'don't have to' = it isn't necessary."
+ },
+ {
+  "type": "mcq",
+  "q": "This is the girl ___ won the baking contest.",
+  "options": [
+   "who",
+   "which",
+   "where",
+   "what"
+  ],
+  "answer": 0,
+  "explain": "'who' for people in relative clauses."
+ },
+ {
+  "type": "mcq",
+  "q": "She's ___ excited to sleep!",
+  "options": [
+   "too",
+   "enough",
+   "very much",
+   "so much"
+  ],
+  "answer": 0,
+  "explain": "too + adjective + to-infinitive."
+ },
+ {
+  "type": "mcq",
+  "q": "Have you finished your homework ___?",
+  "options": [
+   "yet",
+   "already",
+   "still",
+   "ever"
+  ],
+  "answer": 0,
+  "explain": "'yet' at the end of present perfect questions."
  }
 ]

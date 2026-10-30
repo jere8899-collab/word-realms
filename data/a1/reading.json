@@ -209,6 +209,90 @@
      "explain": "'The hotel is very small.'"
     }
    ]
+  },
+  {
+   "title": "Puffbun's Picnic",
+   "text": "Today is sunny. Puffbun and Mia go to the park. They have a big basket. In the basket there are sandwiches, two apples and some juice. They sit under a tree. A little bird sings. Mia gives the bird some bread. Puffbun is happy and sleeps in the sun.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Where do Puffbun and Mia go?",
+     "options": [
+      "to the park",
+      "to the shop",
+      "to school",
+      "to the beach"
+     ],
+     "answer": 0,
+     "explain": "'Puffbun and Mia go to the park.'"
+    },
+    {
+     "type": "mcq",
+     "q": "What is NOT in the basket?",
+     "options": [
+      "cake",
+      "apples",
+      "juice",
+      "sandwiches"
+     ],
+     "answer": 0,
+     "explain": "There are sandwiches, apples and juice, but no cake."
+    },
+    {
+     "type": "mcq",
+     "q": "What does Puffbun do at the end?",
+     "options": [
+      "sleeps",
+      "sings",
+      "eats bread",
+      "runs"
+     ],
+     "answer": 0,
+     "explain": "'Puffbun… sleeps in the sun.'"
+    }
+   ]
+  },
+  {
+   "title": "Library Rules",
+   "text": "Welcome to the Meadow Library! You can take two books home. Bring them back after one week. Please be quiet. Don't eat or drink here. The library is open from Monday to Saturday, nine o'clock to five o'clock. It is closed on Sunday.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How many books can you take home?",
+     "options": [
+      "two",
+      "one",
+      "three",
+      "five"
+     ],
+     "answer": 0,
+     "explain": "'You can take two books home.'"
+    },
+    {
+     "type": "mcq",
+     "q": "Which day is the library closed?",
+     "options": [
+      "Sunday",
+      "Monday",
+      "Saturday",
+      "Friday"
+     ],
+     "answer": 0,
+     "explain": "'It is closed on Sunday.'"
+    },
+    {
+     "type": "mcq",
+     "q": "What can't you do in the library?",
+     "options": [
+      "eat",
+      "read",
+      "sit",
+      "take books"
+     ],
+     "answer": 0,
+     "explain": "'Don't eat or drink here.'"
+    }
+   ]
   }
  ]
 }

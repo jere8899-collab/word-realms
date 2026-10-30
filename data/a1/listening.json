@@ -206,5 +206,161 @@
   ],
   "answer": 0,
   "explain": "'In the summer.'"
+ },
+ {
+  "type": "listen",
+  "say": "I've got a red bag and a blue pencil case.",
+  "q": "What colour is the bag?",
+  "options": [
+   "red",
+   "blue",
+   "green",
+   "yellow"
+  ],
+  "answer": 0,
+  "explain": "'A red bag.'"
+ },
+ {
+  "type": "listen",
+  "say": "My cat's name is Snowy. She's white and very small.",
+  "q": "What colour is Snowy?",
+  "options": [
+   "white",
+   "black",
+   "brown",
+   "grey"
+  ],
+  "answer": 0,
+  "explain": "'She's white.'"
+ },
+ {
+  "type": "listen",
+  "say": "I go to school by bus every day.",
+  "q": "How does the speaker go to school?",
+  "options": [
+   "by bus",
+   "by car",
+   "on foot",
+   "by bike"
+  ],
+  "answer": 0,
+  "explain": "'By bus.'"
+ },
+ {
+  "type": "listen",
+  "say": "There are four people in my family: my mum, my dad, my brother and me.",
+  "q": "How many people are in the family?",
+  "options": [
+   "four",
+   "three",
+   "five",
+   "two"
+  ],
+  "answer": 0,
+  "explain": "Mum + dad + brother + me = four."
+ },
+ {
+  "type": "listen",
+  "say": "Lunch is at twelve thirty.",
+  "q": "What time is lunch?",
+  "options": [
+   "12:30",
+   "12:13",
+   "2:30",
+   "11:30"
+  ],
+  "answer": 0,
+  "explain": "'Twelve thirty' = 12:30."
+ },
+ {
+  "type": "listen",
+  "say": "I don't like carrots, but I love potatoes.",
+  "q": "What does the speaker love?",
+  "options": [
+   "potatoes",
+   "carrots",
+   "tomatoes",
+   "peas"
+  ],
+  "answer": 0,
+  "explain": "'I love potatoes.'"
+ },
+ {
+  "type": "listen",
+  "say": "Today is Wednesday. Tomorrow we have music.",
+  "q": "When do they have music?",
+  "options": [
+   "on Thursday",
+   "on Wednesday",
+   "on Tuesday",
+   "on Friday"
+  ],
+  "answer": 0,
+  "explain": "Tomorrow after Wednesday is Thursday."
+ },
+ {
+  "type": "listen",
+  "say": "Please sit down and close the door.",
+  "q": "What must you close?",
+  "options": [
+   "the door",
+   "the window",
+   "your book",
+   "your eyes"
+  ],
+  "answer": 0,
+  "explain": "'Close the door.'"
+ },
+ {
+  "type": "listen",
+  "say": "My grandpa is in the garden. He's reading the newspaper.",
+  "q": "What is grandpa doing?",
+  "options": [
+   "reading",
+   "sleeping",
+   "cooking",
+   "walking"
+  ],
+  "answer": 0,
+  "explain": "'He's reading the newspaper.'"
+ },
+ {
+  "type": "listen",
+  "say": "These apples are one pound for three.",
+  "q": "How much are three apples?",
+  "options": [
+   "one pound",
+   "three pounds",
+   "thirty pence",
+   "two pounds"
+  ],
+  "answer": 0,
+  "explain": "'One pound for three.'"
+ },
+ {
+  "type": "listen",
+  "say": "Lily has long brown hair and green eyes.",
+  "q": "What colour are Lily's eyes?",
+  "options": [
+   "green",
+   "brown",
+   "blue",
+   "grey"
+  ],
+  "answer": 0,
+  "explain": "'Green eyes.' Her hair is brown."
+ },
+ {
+  "type": "listen",
+  "say": "The toilets are upstairs, next to the café.",
+  "q": "Where are the toilets?",
+  "options": [
+   "upstairs",
+   "downstairs",
+   "outside",
+   "in the café"
+  ],
+  "answer": 0,
+  "explain": "'The toilets are upstairs.'"
  }
 ]

@@ -206,5 +206,161 @@
   ],
   "answer": 0,
   "explain": "Three books, two weeks."
+ },
+ {
+  "type": "listen",
+  "say": "I'll have the chicken salad, please. Oh, and no onions.",
+  "q": "What doesn't the customer want?",
+  "options": [
+   "onions",
+   "chicken",
+   "salad",
+   "bread"
+  ],
+  "answer": 0,
+  "explain": "'No onions.'"
+ },
+ {
+  "type": "listen",
+  "say": "The film starts at seven forty-five, so let's meet at half past seven.",
+  "q": "When will they meet?",
+  "options": [
+   "7:30",
+   "7:45",
+   "7:15",
+   "8:00"
+  ],
+  "answer": 0,
+  "explain": "Half past seven = 7:30."
+ },
+ {
+  "type": "listen",
+  "say": "My cousin lives in Manchester, but she's moving to London next month.",
+  "q": "Where does the cousin live now?",
+  "options": [
+   "Manchester",
+   "London",
+   "Liverpool",
+   "Leeds"
+  ],
+  "answer": 0,
+  "explain": "She lives in Manchester now; she's moving next month."
+ },
+ {
+  "type": "listen",
+  "say": "I'd love to come, but I've got a piano lesson on Thursday.",
+  "q": "Why can't the speaker come?",
+  "options": [
+   "She has a piano lesson.",
+   "She's feeling ill.",
+   "She has to babysit.",
+   "She doesn't want to."
+  ],
+  "answer": 0,
+  "explain": "'I've got a piano lesson.'"
+ },
+ {
+  "type": "listen",
+  "say": "Go straight on and take the second turning on the left. The bank's opposite the library.",
+  "q": "Where is the bank?",
+  "options": [
+   "opposite the library",
+   "next to the library",
+   "behind the library",
+   "on the first left"
+  ],
+  "answer": 0,
+  "explain": "'Opposite the library.'"
+ },
+ {
+  "type": "listen",
+  "say": "It was so cold at the weekend that we stayed in and played board games.",
+  "q": "What did they do at the weekend?",
+  "options": [
+   "played games at home",
+   "went skating outside",
+   "visited friends",
+   "went shopping"
+  ],
+  "answer": 0,
+  "explain": "They stayed in and played board games."
+ },
+ {
+  "type": "listen",
+  "say": "Last year I went to Spain by plane, but this year we're driving to France.",
+  "q": "How will they travel this year?",
+  "options": [
+   "by car",
+   "by plane",
+   "by train",
+   "by boat"
+  ],
+  "answer": 0,
+  "explain": "'Driving' = by car."
+ },
+ {
+  "type": "listen",
+  "say": "The red jumper is twenty pounds, and the blue one is five pounds cheaper.",
+  "q": "How much is the blue jumper?",
+  "options": [
+   "£15",
+   "£20",
+   "£25",
+   "£5"
+  ],
+  "answer": 0,
+  "explain": "£20 − £5 = £15."
+ },
+ {
+  "type": "listen",
+  "say": "I've had this bike for two years. It was a birthday present from my uncle.",
+  "q": "Who gave the speaker the bike?",
+  "options": [
+   "his uncle",
+   "his dad",
+   "his grandad",
+   "his brother"
+  ],
+  "answer": 0,
+  "explain": "'…a present from my uncle.'"
+ },
+ {
+  "type": "listen",
+  "say": "Hurry up! The next bus isn't for another forty minutes.",
+  "q": "Why should they hurry?",
+  "options": [
+   "The next bus is much later.",
+   "The bus is already late.",
+   "It's going to rain soon.",
+   "The shop is closing."
+  ],
+  "answer": 0,
+  "explain": "If they miss this bus, they'll wait 40 minutes."
+ },
+ {
+  "type": "listen",
+  "say": "Sorry I'm late. There was an accident on the motorway.",
+  "q": "Why was the speaker late?",
+  "options": [
+   "There was an accident.",
+   "He overslept.",
+   "His car broke down.",
+   "He got lost."
+  ],
+  "answer": 0,
+  "explain": "'There was an accident on the motorway.'"
+ },
+ {
+  "type": "listen",
+  "say": "You can't swim in the lake today because the water's too cold, but the pool is open.",
+  "q": "Where can people swim today?",
+  "options": [
+   "in the pool",
+   "in the lake",
+   "in the sea",
+   "in the river"
+  ],
+  "answer": 0,
+  "explain": "The lake is too cold; the pool is open."
  }
 ]

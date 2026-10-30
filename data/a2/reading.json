@@ -209,6 +209,90 @@
      "explain": "'She is very shy.'"
     }
    ]
+  },
+  {
+   "title": "The Sweet Shop Job",
+   "text": "Hi Ollie, guess what? I've got a Saturday job at Mrs Plum's sweet shop! I start at nine and finish at three. I help customers, put sweets into jars and clean the counter. The pay isn't great, but Mrs Plum lets me take home any broken lollipops! Last Saturday it was really busy because of the village fair. Are you free next Sunday? We could go to the lake. Love, Kit",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How long does Kit work on Saturdays?",
+     "options": [
+      "six hours",
+      "three hours",
+      "nine hours",
+      "all day and night"
+     ],
+     "answer": 0,
+     "explain": "From nine to three = six hours."
+    },
+    {
+     "type": "mcq",
+     "q": "What does Kit like about the job?",
+     "options": [
+      "taking home broken lollipops",
+      "the very good pay",
+      "finishing work early",
+      "the quiet afternoons"
+     ],
+     "answer": 0,
+     "explain": "'Mrs Plum lets me take home any broken lollipops!'"
+    },
+    {
+     "type": "mcq",
+     "q": "Why was the shop busy last Saturday?",
+     "options": [
+      "There was a fair.",
+      "Kit gave away free sweets.",
+      "Mrs Plum was ill.",
+      "It was a holiday."
+     ],
+     "answer": 0,
+     "explain": "'…because of the village fair.'"
+    }
+   ]
+  },
+  {
+   "title": "Ride the Candy Train",
+   "text": "The Candy Train goes around Candy Village every hour from 10 a.m. to 5 p.m. The trip takes 40 minutes. Tickets cost £4 for adults and £2 for children. Children under three travel free. You can buy tickets at the station or on the train, but it's cheaper online. Dogs are welcome, but please keep them on a lead.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "How long is one trip?",
+     "options": [
+      "40 minutes",
+      "one hour",
+      "four hours",
+      "seven hours"
+     ],
+     "answer": 0,
+     "explain": "'The trip takes 40 minutes.'"
+    },
+    {
+     "type": "mcq",
+     "q": "Where are tickets cheapest?",
+     "options": [
+      "online",
+      "on the train",
+      "at the station",
+      "at the sweet shop"
+     ],
+     "answer": 0,
+     "explain": "'…it's cheaper online.'"
+    },
+    {
+     "type": "mcq",
+     "q": "What must dog owners do?",
+     "options": [
+      "keep their dog on a lead",
+      "buy their dog a child's ticket",
+      "leave their dog at the station",
+      "sit at the back of the train"
+     ],
+     "answer": 0,
+     "explain": "'…please keep them on a lead.'"
+    }
+   ]
   }
  ]
 }

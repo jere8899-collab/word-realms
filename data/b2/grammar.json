@@ -202,5 +202,173 @@
   ],
   "answer": 0,
   "explain": "Real future: will + verb."
+ },
+ {
+  "type": "mcq",
+  "q": "If she hadn't missed the ferry, she ___ here by now.",
+  "options": [
+   "would be",
+   "would have been",
+   "will be",
+   "had been"
+  ],
+  "answer": 0,
+  "explain": "Mixed conditional: past condition (had missed) → present result (would be)."
+ },
+ {
+  "type": "mcq",
+  "q": "The results ___ until next week.",
+  "options": [
+   "won't be announced",
+   "aren't announcing",
+   "won't announce",
+   "haven't announced"
+  ],
+  "answer": 0,
+  "explain": "Future passive: will (not) be + past participle."
+ },
+ {
+  "type": "mcq",
+  "q": "I wish you ___ interrupting me!",
+  "options": [
+   "would stop",
+   "stopped",
+   "had stopped",
+   "will stop"
+  ],
+  "answer": 0,
+  "explain": "wish + would for annoying behaviour you want to change."
+ },
+ {
+  "type": "mcq",
+  "q": "He's believed ___ abroad last year.",
+  "options": [
+   "to have moved",
+   "to move",
+   "moving",
+   "to be moved"
+  ],
+  "answer": 0,
+  "explain": "Passive reporting about the past: is believed + to have + past participle."
+ },
+ {
+  "type": "mcq",
+  "q": "___ the map more carefully, we wouldn't have got lost.",
+  "options": [
+   "Had we read",
+   "If we read",
+   "Were we reading",
+   "Should we read"
+  ],
+  "answer": 0,
+  "explain": "Inverted third conditional: Had + subject + past participle."
+ },
+ {
+  "type": "mcq",
+  "q": "She insisted ___ for the meal.",
+  "options": [
+   "on paying",
+   "to pay",
+   "paying",
+   "for paying"
+  ],
+  "answer": 0,
+  "explain": "insist on + -ing."
+ },
+ {
+  "type": "mcq",
+  "q": "By the time you get this letter, I ___ the mountains.",
+  "options": [
+   "will have crossed",
+   "will cross",
+   "am crossing",
+   "have crossed"
+  ],
+  "answer": 0,
+  "explain": "Future perfect: an action completed before a future time."
+ },
+ {
+  "type": "mcq",
+  "q": "They had the old tower ___ last spring.",
+  "options": [
+   "restored",
+   "restore",
+   "restoring",
+   "to restore"
+  ],
+  "answer": 0,
+  "explain": "Causative: have + object + past participle."
+ },
+ {
+  "type": "mcq",
+  "q": "Not only ___ late, but he also forgot the tickets.",
+  "options": [
+   "was he",
+   "he was",
+   "he is",
+   "did he be"
+  ],
+  "answer": 0,
+  "explain": "Negative inversion after 'Not only'."
+ },
+ {
+  "type": "mcq",
+  "q": "You needn't ___ me a lift; I could have walked.",
+  "options": [
+   "have given",
+   "give",
+   "to give",
+   "gave"
+  ],
+  "answer": 0,
+  "explain": "needn't have + past participle = it was done but wasn't necessary."
+ },
+ {
+  "type": "mcq",
+  "q": "There's no point ___ about it now.",
+  "options": [
+   "worrying",
+   "to worry",
+   "worry",
+   "worried"
+  ],
+  "answer": 0,
+  "explain": "There's no point (in) + -ing."
+ },
+ {
+  "type": "mcq",
+  "q": "The guide, ___ we'd met the day before, showed us a shortcut.",
+  "options": [
+   "whom",
+   "which",
+   "whose",
+   "what"
+  ],
+  "answer": 0,
+  "explain": "'whom' as the object in a non-defining relative clause."
+ },
+ {
+  "type": "mcq",
+  "q": "Supposing you ___ the lottery, what would you do?",
+  "options": [
+   "won",
+   "win",
+   "will win",
+   "had won"
+  ],
+  "answer": 0,
+  "explain": "Supposing (= imagine if) + past simple for an imaginary present/future."
+ },
+ {
+  "type": "mcq",
+  "q": "It's no use ___ to him; he never listens.",
+  "options": [
+   "talking",
+   "to talk",
+   "talk",
+   "talked"
+  ],
+  "answer": 0,
+  "explain": "It's no use + -ing."
  }
 ]

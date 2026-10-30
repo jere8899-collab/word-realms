@@ -190,5 +190,173 @@
   ],
   "answer": 0,
   "explain": "run out of = have none left."
+ },
+ {
+  "type": "mcq",
+  "q": "Could you ___ down the music? I'm trying to study.",
+  "options": [
+   "turn",
+   "put",
+   "get",
+   "take"
+  ],
+  "answer": 0,
+  "explain": "turn down = make quieter."
+ },
+ {
+  "type": "mcq",
+  "q": "The festival was a great ___; thousands of people came.",
+  "options": [
+   "success",
+   "winner",
+   "victory",
+   "profit"
+  ],
+  "answer": 0,
+  "explain": "be a success."
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ my dad; we both love painting.",
+  "options": [
+   "take after",
+   "look after",
+   "take up",
+   "look up to"
+  ],
+  "answer": 0,
+  "explain": "take after = be similar to an older relative."
+ },
+ {
+  "type": "mcq",
+  "q": "The hotel room was ___: clean, quiet and with a lake view.",
+  "options": [
+   "comfortable",
+   "comforting",
+   "comfort",
+   "comfortably"
+  ],
+  "answer": 0,
+  "explain": "After 'was' we need an adjective."
+ },
+ {
+  "type": "mcq",
+  "q": "Let's ___ a break — we've been walking for hours.",
+  "options": [
+   "take",
+   "do",
+   "get",
+   "put"
+  ],
+  "answer": 0,
+  "explain": "Collocation: take a break."
+ },
+ {
+  "type": "mcq",
+  "q": "She's very ___; she always tells the truth.",
+  "options": [
+   "honest",
+   "polite",
+   "patient",
+   "modest"
+  ],
+  "answer": 0,
+  "explain": "Honest = truthful."
+ },
+ {
+  "type": "mcq",
+  "q": "The price ___ breakfast and dinner.",
+  "options": [
+   "includes",
+   "contains",
+   "consists",
+   "involves"
+  ],
+  "answer": 0,
+  "explain": "include = have as part of the total."
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ to get the job, but I'm going to keep trying.",
+  "options": [
+   "failed",
+   "missed",
+   "lost",
+   "refused"
+  ],
+  "answer": 0,
+  "explain": "fail to + verb = not succeed."
+ },
+ {
+  "type": "mcq",
+  "q": "Please ___ in mind that the gates close at six.",
+  "options": [
+   "bear",
+   "take",
+   "hold",
+   "have"
+  ],
+  "answer": 0,
+  "explain": "bear in mind = remember."
+ },
+ {
+  "type": "mcq",
+  "q": "The road was ___ because of the flood.",
+  "options": [
+   "blocked",
+   "locked",
+   "shut up",
+   "stuck"
+  ],
+  "answer": 0,
+  "explain": "A blocked road can't be used."
+ },
+ {
+  "type": "mcq",
+  "q": "He ___ his ankle while playing football.",
+  "options": [
+   "twisted",
+   "broke down",
+   "damaged",
+   "hurt himself"
+  ],
+  "answer": 0,
+  "explain": "twist your ankle = injure it by turning it."
+ },
+ {
+  "type": "mcq",
+  "q": "Which word means 'very tired'?",
+  "options": [
+   "exhausted",
+   "annoyed",
+   "confused",
+   "amazed"
+  ],
+  "answer": 0,
+  "explain": "Exhausted = extremely tired."
+ },
+ {
+  "type": "mcq",
+  "q": "We set ___ early to avoid the traffic.",
+  "options": [
+   "off",
+   "up",
+   "down",
+   "in"
+  ],
+  "answer": 0,
+  "explain": "set off = start a journey."
+ },
+ {
+  "type": "mcq",
+  "q": "She ___ an effort to talk to everyone at the party.",
+  "options": [
+   "made",
+   "did",
+   "took",
+   "gave"
+  ],
+  "answer": 0,
+  "explain": "Collocation: make an effort."
  }
 ]

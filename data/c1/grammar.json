@@ -190,5 +190,173 @@
   ],
   "answer": 0,
   "explain": "So + adjective at the start → inversion with 'be'."
+ },
+ {
+  "type": "mcq",
+  "q": "Not until much later ___ the full extent of the damage.",
+  "options": [
+   "did we realise",
+   "we realised",
+   "had we realise",
+   "we did realise"
+  ],
+  "answer": 0,
+  "explain": "Inversion after 'Not until…'."
+ },
+ {
+  "type": "mcq",
+  "q": "___ as it may seem, the plan actually worked.",
+  "options": [
+   "Strange",
+   "Strangely",
+   "Stranger",
+   "How strange"
+  ],
+  "answer": 0,
+  "explain": "Adjective + as + subject + may seem = although it may seem strange."
+ },
+ {
+  "type": "mcq",
+  "q": "The council recommended that the bridge ___ closed immediately.",
+  "options": [
+   "be",
+   "is",
+   "was",
+   "will be"
+  ],
+  "answer": 0,
+  "explain": "Subjunctive after 'recommend that': base form."
+ },
+ {
+  "type": "mcq",
+  "q": "What the kingdom needs ___ fewer promises and more action.",
+  "options": [
+   "is",
+   "are",
+   "were",
+   "have"
+  ],
+  "answer": 0,
+  "explain": "A 'what' cleft takes a singular verb."
+ },
+ {
+  "type": "mcq",
+  "q": "___ the evidence, the jury had no choice but to acquit.",
+  "options": [
+   "Given",
+   "Giving",
+   "To give",
+   "Having given"
+  ],
+  "answer": 0,
+  "explain": "'Given' (= considering) introduces a reason."
+ },
+ {
+  "type": "mcq",
+  "q": "On no account ___ the gates be left open after dark.",
+  "options": [
+   "should",
+   "would",
+   "must not",
+   "need"
+  ],
+  "answer": 0,
+  "explain": "Negative inversion: On no account + should + subject."
+ },
+ {
+  "type": "mcq",
+  "q": "She is thought ___ in secret for years before the treaty was signed.",
+  "options": [
+   "to have been negotiating",
+   "to negotiate",
+   "negotiating",
+   "to be negotiated"
+  ],
+  "answer": 0,
+  "explain": "Passive reporting + perfect continuous infinitive for a long earlier action."
+ },
+ {
+  "type": "mcq",
+  "q": "___ the proposal been better presented, it might have passed.",
+  "options": [
+   "Had",
+   "If",
+   "Were",
+   "Should"
+  ],
+  "answer": 0,
+  "explain": "Inverted third conditional."
+ },
+ {
+  "type": "mcq",
+  "q": "Much as I respect his experience, I ___ with his conclusions.",
+  "options": [
+   "can't agree",
+   "can agree",
+   "couldn't have agreed",
+   "don't disagree"
+  ],
+  "answer": 0,
+  "explain": "'Much as' = although; the clause contrasts respect with disagreement."
+ },
+ {
+  "type": "mcq",
+  "q": "The more evidence emerged, ___ the minister's position became.",
+  "options": [
+   "the weaker",
+   "weaker",
+   "the weakest",
+   "more weak"
+  ],
+  "answer": 0,
+  "explain": "The + comparative…, the + comparative."
+ },
+ {
+  "type": "mcq",
+  "q": "It's high time the council ___ responsibility.",
+  "options": [
+   "took",
+   "take",
+   "takes",
+   "has taken"
+  ],
+  "answer": 0,
+  "explain": "It's high time + past simple."
+ },
+ {
+  "type": "mcq",
+  "q": "Only when the treaty was signed ___ relax.",
+  "options": [
+   "could the envoys",
+   "the envoys could",
+   "could envoys to",
+   "the envoys did"
+  ],
+  "answer": 0,
+  "explain": "Inversion after 'Only when…'."
+ },
+ {
+  "type": "mcq",
+  "q": "Were the plan ___, thousands would lose their homes.",
+  "options": [
+   "to go ahead",
+   "going ahead",
+   "go ahead",
+   "gone ahead"
+  ],
+  "answer": 0,
+  "explain": "Were + subject + to-infinitive (formal conditional)."
+ },
+ {
+  "type": "mcq",
+  "q": "Not a word of complaint ___ from her during the whole ordeal.",
+  "options": [
+   "did we hear",
+   "we heard",
+   "heard we",
+   "we did hear"
+  ],
+  "answer": 0,
+  "explain": "Inversion after a fronted negative object."
  }
 ]

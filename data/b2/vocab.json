@@ -202,5 +202,173 @@
   ],
   "answer": 0,
   "explain": "reach a compromise / an agreement."
+ },
+ {
+  "type": "mcq",
+  "q": "The new bridge will ___ traffic in the town centre.",
+  "options": [
+   "ease",
+   "lighten",
+   "soften",
+   "loosen"
+  ],
+  "answer": 0,
+  "explain": "ease traffic/pressure = reduce it."
+ },
+ {
+  "type": "mcq",
+  "q": "Despite the setbacks, the team ___ to finish on time.",
+  "options": [
+   "managed",
+   "succeeded",
+   "achieved",
+   "accomplished"
+  ],
+  "answer": 0,
+  "explain": "manage to + verb. (succeed IN + -ing)"
+ },
+ {
+  "type": "mcq",
+  "q": "Her argument was so ___ that everyone agreed.",
+  "options": [
+   "compelling",
+   "compulsive",
+   "competing",
+   "compulsory"
+  ],
+  "answer": 0,
+  "explain": "Compelling = very convincing."
+ },
+ {
+  "type": "mcq",
+  "q": "We'll need to ___ costs if we want to stay in business.",
+  "options": [
+   "cut back on",
+   "cut out of",
+   "cut off from",
+   "cut up with"
+  ],
+  "answer": 0,
+  "explain": "cut back on = reduce."
+ },
+ {
+  "type": "mcq",
+  "q": "He's a ___ reader; he finishes a book every two days.",
+  "options": [
+   "keen",
+   "sharp",
+   "strong",
+   "heavy"
+  ],
+  "answer": 0,
+  "explain": "A keen reader enjoys reading a lot."
+ },
+ {
+  "type": "mcq",
+  "q": "Visits to the tower are ___ appointment only.",
+  "options": [
+   "by",
+   "on",
+   "at",
+   "under"
+  ],
+  "answer": 0,
+  "explain": "by appointment = only if you arrange a time first."
+ },
+ {
+  "type": "mcq",
+  "q": "The decision was made ___ consultation with local residents.",
+  "options": [
+   "in",
+   "on",
+   "by",
+   "at"
+  ],
+  "answer": 0,
+  "explain": "in consultation with = after discussing with."
+ },
+ {
+  "type": "mcq",
+  "q": "She was ___ with the job of organising the festival.",
+  "options": [
+   "entrusted",
+   "entitled",
+   "enrolled",
+   "endorsed"
+  ],
+  "answer": 0,
+  "explain": "be entrusted with = be given responsibility for."
+ },
+ {
+  "type": "mcq",
+  "q": "His performance ___ all our expectations.",
+  "options": [
+   "exceeded",
+   "excelled",
+   "exaggerated",
+   "expanded"
+  ],
+  "answer": 0,
+  "explain": "exceed expectations = be better than expected."
+ },
+ {
+  "type": "mcq",
+  "q": "It's ___ that she'll accept; she seemed very keen.",
+  "options": [
+   "highly likely",
+   "strongly likely",
+   "deeply likely",
+   "greatly likely"
+  ],
+  "answer": 0,
+  "explain": "Collocation: highly likely."
+ },
+ {
+  "type": "mcq",
+  "q": "The company has ___ a new policy on remote working.",
+  "options": [
+   "adopted",
+   "adapted",
+   "adjusted",
+   "admitted"
+  ],
+  "answer": 0,
+  "explain": "adopt a policy = start using it."
+ },
+ {
+  "type": "mcq",
+  "q": "Which word means 'to make something less serious or painful'?",
+  "options": [
+   "alleviate",
+   "aggravate",
+   "accumulate",
+   "allocate"
+  ],
+  "answer": 0,
+  "explain": "Alleviate = relieve."
+ },
+ {
+  "type": "mcq",
+  "q": "The two reports are ___ different; you can't compare them.",
+  "options": [
+   "fundamentally",
+   "fundamental",
+   "fundamentalist",
+   "fundament"
+  ],
+  "answer": 0,
+  "explain": "An adverb modifies the adjective 'different'."
+ },
+ {
+  "type": "mcq",
+  "q": "They ___ a heated argument about money.",
+  "options": [
+   "got into",
+   "got over",
+   "got across",
+   "got by"
+  ],
+  "answer": 0,
+  "explain": "get into an argument = start one."
  }
 ]

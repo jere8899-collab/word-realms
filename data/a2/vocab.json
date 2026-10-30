@@ -202,5 +202,173 @@
   ],
   "answer": 0,
   "explain": "When it's dark, turn ON the light."
+ },
+ {
+  "type": "mcq",
+  "q": "I'm ___. Can I have a glass of water?",
+  "options": [
+   "thirsty",
+   "hungry",
+   "sleepy",
+   "angry"
+  ],
+  "answer": 0,
+  "explain": "Thirsty = you need a drink."
+ },
+ {
+  "type": "mcq",
+  "q": "We ___ our holiday in Scotland last year.",
+  "options": [
+   "spent",
+   "passed",
+   "made",
+   "stayed"
+  ],
+  "answer": 0,
+  "explain": "spend time/a holiday somewhere."
+ },
+ {
+  "type": "mcq",
+  "q": "Don't forget to ___ your teeth before bed.",
+  "options": [
+   "brush",
+   "wash",
+   "clean up",
+   "comb"
+  ],
+  "answer": 0,
+  "explain": "Collocation: brush your teeth."
+ },
+ {
+  "type": "mcq",
+  "q": "The shop ___ at six o'clock, so hurry!",
+  "options": [
+   "closes",
+   "finishes",
+   "stops",
+   "ends up"
+  ],
+  "answer": 0,
+  "explain": "Shops open and close."
+ },
+ {
+  "type": "mcq",
+  "q": "A ___ is a doctor for animals.",
+  "options": [
+   "vet",
+   "nurse",
+   "dentist",
+   "chemist"
+  ],
+  "answer": 0,
+  "explain": "A vet looks after sick animals."
+ },
+ {
+  "type": "mcq",
+  "q": "I can't find my glasses. Can you help me ___ for them?",
+  "options": [
+   "look",
+   "see",
+   "watch",
+   "find"
+  ],
+  "answer": 0,
+  "explain": "look for = try to find."
+ },
+ {
+  "type": "mcq",
+  "q": "The opposite of 'noisy' is ___.",
+  "options": [
+   "quiet",
+   "empty",
+   "slow",
+   "calm down"
+  ],
+  "answer": 0,
+  "explain": "Noisy ↔ quiet."
+ },
+ {
+  "type": "mcq",
+  "q": "He ___ a cold, so he stayed at home.",
+  "options": [
+   "had",
+   "made",
+   "took",
+   "did"
+  ],
+  "answer": 0,
+  "explain": "have a cold."
+ },
+ {
+  "type": "mcq",
+  "q": "Which one do you wear on your hands in winter?",
+  "options": [
+   "gloves",
+   "boots",
+   "scarves",
+   "belts"
+  ],
+  "answer": 0,
+  "explain": "Gloves keep your hands warm."
+ },
+ {
+  "type": "mcq",
+  "q": "Can I ___ on this dress? — Yes, the changing room is there.",
+  "options": [
+   "try",
+   "put",
+   "wear",
+   "dress"
+  ],
+  "answer": 0,
+  "explain": "try on = put clothes on to see if they fit."
+ },
+ {
+  "type": "mcq",
+  "q": "It's very ___ today. Hold on to your hat!",
+  "options": [
+   "windy",
+   "sunny",
+   "foggy",
+   "snowing"
+  ],
+  "answer": 0,
+  "explain": "Windy = lots of wind."
+ },
+ {
+  "type": "mcq",
+  "q": "My grandma is ___. She's 92!",
+  "options": [
+   "elderly",
+   "young",
+   "modern",
+   "early"
+  ],
+  "answer": 0,
+  "explain": "'Elderly' is a polite word for old."
+ },
+ {
+  "type": "mcq",
+  "q": "Please ___ the form and give it back to me.",
+  "options": [
+   "fill in",
+   "fill up",
+   "write on",
+   "put in"
+  ],
+  "answer": 0,
+  "explain": "fill in a form = write the information."
+ },
+ {
+  "type": "mcq",
+  "q": "I'd like to ___ a table for two at eight.",
+  "options": [
+   "book",
+   "order",
+   "keep",
+   "buy"
+  ],
+  "answer": 0,
+  "explain": "book a table = reserve it."
  }
 ]

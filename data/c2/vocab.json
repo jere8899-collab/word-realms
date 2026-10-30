@@ -202,5 +202,173 @@
   ],
   "answer": 0,
   "explain": "Skip the unimportant parts."
+ },
+ {
+  "type": "mcq",
+  "q": "The critic's review was ___: witty, sharp and utterly merciless.",
+  "options": [
+   "scathing",
+   "scalding",
+   "scouring",
+   "scrawling"
+  ],
+  "answer": 0,
+  "explain": "Scathing = harshly critical."
+ },
+ {
+  "type": "mcq",
+  "q": "The scholar's knowledge of medieval poetry is truly ___.",
+  "options": [
+   "encyclopaedic",
+   "enigmatic",
+   "endemic",
+   "emphatic"
+  ],
+  "answer": 0,
+  "explain": "Encyclopaedic = very wide and complete."
+ },
+ {
+  "type": "mcq",
+  "q": "To 'bite the bullet' means to ___.",
+  "options": [
+   "accept something unpleasant bravely",
+   "refuse to talk about a problem",
+   "attack someone's argument",
+   "delay a difficult choice"
+  ],
+  "answer": 0,
+  "explain": "Bite the bullet = face something difficult with courage."
+ },
+ {
+  "type": "mcq",
+  "q": "Her ___ manner concealed a fierce ambition.",
+  "options": [
+   "self-effacing",
+   "self-righteous",
+   "self-evident",
+   "self-serving"
+  ],
+  "answer": 0,
+  "explain": "Self-effacing = modest, not drawing attention to oneself."
+ },
+ {
+  "type": "mcq",
+  "q": "The two theories are not mutually ___; both may be true.",
+  "options": [
+   "exclusive",
+   "exhaustive",
+   "excessive",
+   "explicit"
+  ],
+  "answer": 0,
+  "explain": "Mutually exclusive = cannot both be true."
+ },
+ {
+  "type": "mcq",
+  "q": "The minister was accused of ___, saying one thing and doing another.",
+  "options": [
+   "hypocrisy",
+   "hyperbole",
+   "hypothesis",
+   "hysteria"
+  ],
+  "answer": 0,
+  "explain": "Hypocrisy = claiming beliefs you don't act on."
+ },
+ {
+  "type": "mcq",
+  "q": "A 'Herculean' task is one that ___.",
+  "options": [
+   "needs enormous effort",
+   "is done in secret",
+   "is easily forgotten",
+   "brings great wealth"
+  ],
+  "answer": 0,
+  "explain": "From Hercules' twelve labours."
+ },
+ {
+  "type": "mcq",
+  "q": "The tale was a ___ of truth and invention, impossible to untangle.",
+  "options": [
+   "melange",
+   "melee",
+   "malady",
+   "malaise"
+  ],
+  "answer": 0,
+  "explain": "Melange = a mixture."
+ },
+ {
+  "type": "mcq",
+  "q": "He tends to ___ on trivial details, missing the bigger picture.",
+  "options": [
+   "fixate",
+   "fixture",
+   "fixed",
+   "fixative"
+  ],
+  "answer": 0,
+  "explain": "fixate on = focus obsessively on."
+ },
+ {
+  "type": "mcq",
+  "q": "'To be on tenterhooks' means to be ___.",
+  "options": [
+   "anxiously waiting",
+   "deeply embarrassed",
+   "completely exhausted",
+   "secretly pleased"
+  ],
+  "answer": 0,
+  "explain": "On tenterhooks = in suspense."
+ },
+ {
+  "type": "mcq",
+  "q": "The dragon's reply was ___, revealing nothing.",
+  "options": [
+   "inscrutable",
+   "incorrigible",
+   "inexorable",
+   "indefatigable"
+  ],
+  "answer": 0,
+  "explain": "Inscrutable = impossible to read or interpret."
+ },
+ {
+  "type": "mcq",
+  "q": "To 'pass the buck' means to ___.",
+  "options": [
+   "shift responsibility to someone else",
+   "lend money to a friend",
+   "move quickly past a problem",
+   "win an argument unfairly"
+  ],
+  "answer": 0,
+  "explain": "Pass the buck = avoid responsibility."
+ },
+ {
+  "type": "mcq",
+  "q": "The prize is awarded for ___ achievement in literature.",
+  "options": [
+   "outstanding",
+   "standing out",
+   "upstanding",
+   "outstretched"
+  ],
+  "answer": 0,
+  "explain": "Outstanding = exceptionally good."
+ },
+ {
+  "type": "mcq",
+  "q": "Her apology was ___, as everyone knew she didn't mean it.",
+  "options": [
+   "perfunctory",
+   "peremptory",
+   "perpetual",
+   "pertinent"
+  ],
+  "answer": 0,
+  "explain": "Perfunctory = done without real interest or care."
  }
 ]

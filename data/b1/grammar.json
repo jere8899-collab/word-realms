@@ -190,5 +190,173 @@
   ],
   "answer": 0,
   "explain": "so + adjective + that (result)."
+ },
+ {
+  "type": "mcq",
+  "q": "If it ___ tomorrow, we'll have the picnic indoors.",
+  "options": [
+   "rains",
+   "will rain",
+   "rained",
+   "would rain"
+  ],
+  "answer": 0,
+  "explain": "First conditional: If + present simple, will + verb."
+ },
+ {
+  "type": "mcq",
+  "q": "The letter ___ before the queen arrived.",
+  "options": [
+   "had been delivered",
+   "has been delivered",
+   "was delivering",
+   "had delivered"
+  ],
+  "answer": 0,
+  "explain": "Past perfect passive: had been + past participle."
+ },
+ {
+  "type": "mcq",
+  "q": "He told me he ___ the dragon the day before.",
+  "options": [
+   "had seen",
+   "has seen",
+   "sees",
+   "was see"
+  ],
+  "answer": 0,
+  "explain": "Reported speech: past simple → past perfect."
+ },
+ {
+  "type": "mcq",
+  "q": "I'm thinking ___ joining the archery club.",
+  "options": [
+   "of",
+   "to",
+   "for",
+   "at"
+  ],
+  "answer": 0,
+  "explain": "think of/about + -ing."
+ },
+ {
+  "type": "mcq",
+  "q": "You ___ wear a uniform, but you can if you want.",
+  "options": [
+   "don't have to",
+   "mustn't",
+   "haven't to",
+   "shouldn't to"
+  ],
+  "answer": 0,
+  "explain": "'don't have to' = not necessary (but allowed)."
+ },
+ {
+  "type": "mcq",
+  "q": "This is the village ___ my grandmother was born.",
+  "options": [
+   "where",
+   "which",
+   "who",
+   "what"
+  ],
+  "answer": 0,
+  "explain": "'where' for places in relative clauses."
+ },
+ {
+  "type": "mcq",
+  "q": "She's been learning French ___ she was six.",
+  "options": [
+   "since",
+   "for",
+   "from",
+   "during"
+  ],
+  "answer": 0,
+  "explain": "'since' + a point in time."
+ },
+ {
+  "type": "mcq",
+  "q": "I'd rather ___ at home tonight.",
+  "options": [
+   "stay",
+   "to stay",
+   "staying",
+   "stayed"
+  ],
+  "answer": 0,
+  "explain": "would rather + base verb."
+ },
+ {
+  "type": "mcq",
+  "q": "The castle was ___ an amazing sight that we stopped to stare.",
+  "options": [
+   "such",
+   "so",
+   "too",
+   "very"
+  ],
+  "answer": 0,
+  "explain": "such + (a/an) + adjective + noun + that."
+ },
+ {
+  "type": "mcq",
+  "q": "He can't afford ___ a new horse.",
+  "options": [
+   "to buy",
+   "buying",
+   "buy",
+   "bought"
+  ],
+  "answer": 0,
+  "explain": "afford + to-infinitive."
+ },
+ {
+  "type": "mcq",
+  "q": "While I ___ through the forest, I heard a strange noise.",
+  "options": [
+   "was walking",
+   "walked",
+   "have walked",
+   "am walking"
+  ],
+  "answer": 0,
+  "explain": "Past continuous for the background action."
+ },
+ {
+  "type": "mcq",
+  "q": "Do you know what time ___?",
+  "options": [
+   "the shop closes",
+   "does the shop close",
+   "closes the shop",
+   "the shop does close"
+  ],
+  "answer": 0,
+  "explain": "Indirect questions use statement word order."
+ },
+ {
+  "type": "mcq",
+  "q": "It ___ be Tom at the door; he's on holiday in Spain.",
+  "options": [
+   "can't",
+   "mustn't",
+   "needn't",
+   "shouldn't"
+  ],
+  "answer": 0,
+  "explain": "'can't' for a logical impossibility."
+ },
+ {
+  "type": "mcq",
+  "q": "I'll lend you my map ___ you promise to bring it back.",
+  "options": [
+   "as long as",
+   "unless",
+   "even though",
+   "in case"
+  ],
+  "answer": 0,
+  "explain": "'as long as' = only if."
  }
 ]

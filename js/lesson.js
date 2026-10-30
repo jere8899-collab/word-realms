@@ -12,13 +12,33 @@ function normalize(item, passage) {
   return { type: item.type === "listen" ? "listen" : "mcq", q: item.q, say: item.say, pic: item.pic, passage,
     options: WR.shuffle(item.options), correct, explain: item.explain };
 }
+/* Fresh-first picking: remember which items a learner has recently seen (per realm + skill) and serve unseen
+   ones first, so the whole bank rotates before anything repeats. state.seen = { "<rid>/<skill>": [itemKey, ...] }. */
+WR.itemKey = it => { const t = (it.title || "") + "|" + (it.say || "") + "|" + (it.q || "") + "|" + (it.pic || "") + "|" + (it.options ? it.options[it.answer] : it.answer || "");
+  let h = 5381; for (let i = 0; i < t.length; i++) h = ((h << 5) + h + t.charCodeAt(i)) | 0; return (h >>> 0).toString(36); };
+WR.freshPick = (bucket, pool, n) => {
+  const s = WR.state; s.seen = s.seen || {};
+  const keys = new Set(pool.map(WR.itemKey));
+  let seen = (s.seen[bucket] || []).filter(k => keys.has(k));          // drop keys of items that no longer exist
+  const seenSet = new Set(seen);
+  const fresh = WR.shuffle(pool.filter(it => !seenSet.has(WR.itemKey(it))));
+  const order = new Map(seen.map((k, i) => [k, i]));
+  const old = pool.filter(it => seenSet.has(WR.itemKey(it))).sort((a, b) => order.get(WR.itemKey(a)) - order.get(WR.itemKey(b))); // oldest first
+  const pick = fresh.concat(old).slice(0, Math.min(n, pool.length));
+  const picked = pick.map(WR.itemKey);
+  seen = seen.filter(k => !picked.includes(k)).concat(picked);
+  if (pool.length - seen.length < n) seen = seen.slice(Math.max(0, seen.length - Math.max(0, pool.length - n))); // keep a full lesson of unseen items available
+  s.seen[bucket] = seen; WR.save();
+  return WR.shuffle(pick);
+};
 WR.buildItems = async (rid, skill, n = 8) => {
   const bank = await WR.bank(rid, skill);
   if (skill === "reading") {
-    const ps = WR.sample(bank.passages, 2);
+    const ps = WR.freshPick(`${rid}/reading`, bank.passages, 2);
+    if (n < 6) return ps.slice(0, 1).flatMap(p => p.questions.map(q => normalize(q, p))).slice(0, n);
     return ps.flatMap(p => p.questions.map(q => normalize(q, p)));
   }
-  return WR.sample(bank, n).map(q => normalize(q));
+  return WR.freshPick(`${rid}/${skill}`, bank, n).map(q => normalize(q));
 };
 WR.normalize = normalize;
 

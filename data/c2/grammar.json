@@ -190,5 +190,173 @@
   ],
   "answer": 0,
   "explain": "Scarcely had… when."
+ },
+ {
+  "type": "mcq",
+  "q": "Never before ___ such a breathtaking manuscript.",
+  "options": [
+   "had the scholars seen",
+   "the scholars had seen",
+   "have seen the scholars",
+   "the scholars saw"
+  ],
+  "answer": 0,
+  "explain": "Negative inversion with 'Never before'."
+ },
+ {
+  "type": "mcq",
+  "q": "Come what ___, the library will stay open.",
+  "options": [
+   "may",
+   "might",
+   "will",
+   "can"
+  ],
+  "answer": 0,
+  "explain": "Fixed subjunctive phrase: come what may."
+ },
+ {
+  "type": "mcq",
+  "q": "It's not as though he ___ warned.",
+  "options": [
+   "hadn't been",
+   "wasn't being",
+   "isn't",
+   "won't be"
+  ],
+  "answer": 0,
+  "explain": "'It's not as though' + past perfect for an unreal past situation."
+ },
+ {
+  "type": "mcq",
+  "q": "___ though it was, the riddle had a simple answer.",
+  "options": [
+   "Baffling",
+   "Baffled",
+   "Bafflingly",
+   "However baffling"
+  ],
+  "answer": 0,
+  "explain": "Adjective + though + subject + verb = although it was baffling."
+ },
+ {
+  "type": "mcq",
+  "q": "She would sooner ___ the post than compromise her principles.",
+  "options": [
+   "resign",
+   "resigned",
+   "to resign",
+   "have resigned to"
+  ],
+  "answer": 0,
+  "explain": "would sooner + base verb."
+ },
+ {
+  "type": "mcq",
+  "q": "Were it ___ to emerge that the scroll was forged, the scandal would be immense.",
+  "options": [
+   "ever",
+   "never",
+   "yet",
+   "still"
+  ],
+  "answer": 0,
+  "explain": "'Were it ever to…' (formal, hypothetical)."
+ },
+ {
+  "type": "mcq",
+  "q": "So engrossed ___ in the book that she missed the last bell.",
+  "options": [
+   "was she",
+   "she was",
+   "she had",
+   "did she"
+  ],
+  "answer": 0,
+  "explain": "Inversion after 'So + adjective'."
+ },
+ {
+  "type": "mcq",
+  "q": "It is vital that no one ___ informed until the vote.",
+  "options": [
+   "be",
+   "is",
+   "will be",
+   "was"
+  ],
+  "answer": 0,
+  "explain": "Formal subjunctive after 'vital that'."
+ },
+ {
+  "type": "mcq",
+  "q": "Not that I ___, but wasn't the deadline yesterday?",
+  "options": [
+   "mind",
+   "minded",
+   "am minding",
+   "would mind it"
+  ],
+  "answer": 0,
+  "explain": "'Not that I mind' = I don't mind, but…"
+ },
+ {
+  "type": "mcq",
+  "q": "___ the archivist not intervened, the letters would have been burnt.",
+  "options": [
+   "Had",
+   "If",
+   "Should",
+   "Did"
+  ],
+  "answer": 0,
+  "explain": "Inverted third conditional."
+ },
+ {
+  "type": "mcq",
+  "q": "The dragon, far ___ being hostile, offered us tea.",
+  "options": [
+   "from",
+   "off",
+   "away",
+   "beyond"
+  ],
+  "answer": 0,
+  "explain": "far from + -ing = not at all."
+ },
+ {
+  "type": "mcq",
+  "q": "Little ___ the apprentice know that the book was enchanted.",
+  "options": [
+   "did",
+   "had",
+   "was",
+   "would"
+  ],
+  "answer": 0,
+  "explain": "Inversion with 'Little did…'."
+ },
+ {
+  "type": "mcq",
+  "q": "Only in the final chapter ___ the narrator's true identity revealed.",
+  "options": [
+   "is",
+   "was being",
+   "has",
+   "does"
+  ],
+  "answer": 0,
+  "explain": "Inversion after a fronted 'Only' adverbial: Only in… + is + subject + past participle."
+ },
+ {
+  "type": "mcq",
+  "q": "Such ___ the force of her argument that the council fell silent.",
+  "options": [
+   "was",
+   "were",
+   "had",
+   "did"
+  ],
+  "answer": 0,
+  "explain": "Such + be + noun phrase + that (inversion); 'the force' is singular."
  }
 ]

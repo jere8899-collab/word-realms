@@ -190,5 +190,173 @@
   ],
   "answer": 0,
   "explain": "Past of 'are' is 'were': we were."
+ },
+ {
+  "type": "mcq",
+  "q": "___ is my bag? I can't find it.",
+  "options": [
+   "Where",
+   "What",
+   "Who",
+   "How"
+  ],
+  "answer": 0,
+  "explain": "'Where' asks about a place."
+ },
+ {
+  "type": "mcq",
+  "q": "My sister ___ like milk.",
+  "options": [
+   "doesn't",
+   "don't",
+   "isn't",
+   "not"
+  ],
+  "answer": 0,
+  "explain": "With he/she/it the negative is 'doesn't' + verb."
+ },
+ {
+  "type": "mcq",
+  "q": "I have ___ umbrella.",
+  "options": [
+   "an",
+   "a",
+   "some",
+   "two"
+  ],
+  "answer": 0,
+  "explain": "'Umbrella' starts with a vowel sound, so we say 'an'."
+ },
+ {
+  "type": "mcq",
+  "q": "The cat is ___ the box. You can't see it!",
+  "options": [
+   "in",
+   "on",
+   "at",
+   "of"
+  ],
+  "answer": 0,
+  "explain": "Inside something = 'in'."
+ },
+ {
+  "type": "mcq",
+  "q": "___ is it? It's five o'clock.",
+  "options": [
+   "What time",
+   "How many",
+   "How old",
+   "What day"
+  ],
+  "answer": 0,
+  "explain": "Ask about the clock with 'What time is it?'"
+ },
+ {
+  "type": "mcq",
+  "q": "They ___ TV now.",
+  "options": [
+   "are watching",
+   "watch",
+   "watches",
+   "is watching"
+  ],
+  "answer": 0,
+  "explain": "'Now' = present continuous: they are watching."
+ },
+ {
+  "type": "mcq",
+  "q": "I get up ___ seven o'clock.",
+  "options": [
+   "at",
+   "in",
+   "on",
+   "to"
+  ],
+  "answer": 0,
+  "explain": "Use 'at' with clock times: at seven o'clock."
+ },
+ {
+  "type": "mcq",
+  "q": "This is my brother. ___ name is Leo.",
+  "options": [
+   "His",
+   "Her",
+   "He",
+   "Its"
+  ],
+  "answer": 0,
+  "explain": "A boy's possessive is 'his'."
+ },
+ {
+  "type": "mcq",
+  "q": "How ___ is your grandma? She's seventy.",
+  "options": [
+   "old",
+   "many",
+   "much",
+   "big"
+  ],
+  "answer": 0,
+  "explain": "Ask age with 'How old…?'"
+ },
+ {
+  "type": "mcq",
+  "q": "There ___ a dragon in the story.",
+  "options": [
+   "is",
+   "are",
+   "am",
+   "be"
+  ],
+  "answer": 0,
+  "explain": "One thing: 'there is'."
+ },
+ {
+  "type": "mcq",
+  "q": "I can ___ my name in English.",
+  "options": [
+   "write",
+   "writes",
+   "writing",
+   "to write"
+  ],
+  "answer": 0,
+  "explain": "After 'can' use the base verb."
+ },
+ {
+  "type": "mcq",
+  "q": "___ she have a pet?",
+  "options": [
+   "Does",
+   "Do",
+   "Is",
+   "Has"
+  ],
+  "answer": 0,
+  "explain": "Questions with he/she/it use 'Does'."
+ },
+ {
+  "type": "mcq",
+  "q": "Those ___ my pencils.",
+  "options": [
+   "are",
+   "is",
+   "am",
+   "be"
+  ],
+  "answer": 0,
+  "explain": "'Those' is plural: those are."
+ },
+ {
+  "type": "mcq",
+  "q": "Sam was tired, ___ he went to bed.",
+  "options": [
+   "so",
+   "but",
+   "because",
+   "or"
+  ],
+  "answer": 0,
+  "explain": "'So' tells us the result."
  }
 ]

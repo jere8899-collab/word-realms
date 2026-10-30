@@ -209,6 +209,90 @@
      "explain": "It invokes the late grandfather — approval mixed with grief."
     }
    ]
+  },
+  {
+   "title": "The Unfinished Index",
+   "text": "When the old librarian died, she left behind an index of the Starlight Library that ran to forty volumes and was, by her own admission, incomplete. Her successor proposed to finish it. Within a year he had abandoned the project, not for lack of diligence but because he had grasped what she had always known: an index of a living library can never be finished, since every entry alters the meaning of those around it. A book catalogued under 'Astronomy' in one decade migrates, in the next, to 'Myth'. To index, he wrote, is not to record knowledge but to take a position on it, and positions, unlike shelves, do not stay put.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "Why did the successor abandon the project?",
+     "options": [
+      "He realised it could never be completed.",
+      "He lacked the patience to continue.",
+      "The council withdrew its funding.",
+      "He found the old index full of errors."
+     ],
+     "answer": 0,
+     "explain": "'…not for lack of diligence but because… it can never be finished.'"
+    },
+    {
+     "type": "mcq",
+     "q": "What does the example of 'Astronomy' and 'Myth' illustrate?",
+     "options": [
+      "How classifications shift over time",
+      "How careless earlier librarians were",
+      "How science replaced mythology",
+      "How books are physically moved around"
+     ],
+     "answer": 0,
+     "explain": "Categories change: a book 'migrates' from one heading to another."
+    },
+    {
+     "type": "mcq",
+     "q": "What is implied about indexing?",
+     "options": [
+      "It involves interpretation, not mere recording.",
+      "It should be left to machines in future.",
+      "It is the least important job in a library.",
+      "It is easy once the shelves are organised."
+     ],
+     "answer": 0,
+     "explain": "'To index is not to record knowledge but to take a position on it.'"
+    }
+   ]
+  },
+  {
+   "title": "On Translation",
+   "text": "It is often said that translation is a kind of betrayal, and the Italian pun 'traduttore, traditore' ('translator, traitor') is cited as proof. But the charge assumes that an original possesses a single, fixed meaning which the translator either preserves or corrupts. Few writers would recognise their work in that description. A poem's meaning lives partly in its sounds, its rhythms and the associations its words carry for a particular audience at a particular time; none of these can survive the journey into another language intact. The honest translator does not pretend otherwise. She makes choices, sacrifices one quality to save another, and in doing so produces not a copy but a reading: a version that may, on occasion, illuminate what the original concealed.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q": "What assumption does the writer challenge?",
+     "options": [
+      "that a text has one fixed meaning",
+      "that puns cannot be translated",
+      "that writers dislike translators",
+      "that Italian is hard to translate"
+     ],
+     "answer": 0,
+     "explain": "'The charge assumes that an original possesses a single, fixed meaning.'"
+    },
+    {
+     "type": "mcq",
+     "q": "According to the writer, what does an honest translator do?",
+     "options": [
+      "makes open trade-offs between qualities",
+      "keeps every sound and rhythm intact",
+      "rewrites the poem in her own style",
+      "refuses to translate poetry at all"
+     ],
+     "answer": 0,
+     "explain": "'She makes choices, sacrifices one quality to save another.'"
+    },
+    {
+     "type": "mcq",
+     "q": "What surprising claim does the writer make at the end?",
+     "options": [
+      "A translation can reveal hidden aspects of the original.",
+      "Translations are usually better than originals.",
+      "Original authors should translate their own work.",
+      "Readers prefer translations to original texts."
+     ],
+     "answer": 0,
+     "explain": "'…may, on occasion, illuminate what the original concealed.'"
+    }
+   ]
   }
  ]
 }
