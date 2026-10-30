@@ -81,3 +81,14 @@
 .grid-sumi{width:84px}
 @media (max-width:520px){.fc{min-width:22px;height:24px;font-size:.66rem;border-radius:6px}.factgrid{border-spacing:2px}.grid-sumi{width:56px}}
 .navbar button{min-width:0}
+/* 🧮 Model Magic picture models */
+.mviz{background:linear-gradient(150deg,#FFFDF5,#F5EEFF);border:2px dashed #E2D6FF;border-radius:18px;padding:8px 10px 10px;margin:0 0 12px;text-align:center}
+.mviz.reveal{border-style:solid;border-color:#BDEFD3;background:linear-gradient(150deg,#F3FFF8,#FFF8EE)}
+.mviz-tip{font-size:.88rem;font-weight:700;color:var(--ink2);margin-bottom:4px;text-align:left}
+.mviz-svg{display:block;margin:0 auto;height:auto;overflow:visible}
+.mviz-svg text{font-family:"Nunito","Baloo 2",system-ui,sans-serif}
+.mviz-svg .hop{stroke-dasharray:1;stroke-dashoffset:1;animation:mvhop .6s ease-out forwards}
+.mviz-svg .pop{transform-box:fill-box;transform-origin:center;animation:mvpop .35s ease-out both}
+@keyframes mvhop{to{stroke-dashoffset:0}}
+@keyframes mvpop{from{transform:scale(0)}to{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.mviz-svg .hop{animation:none;stroke-dashoffset:0}.mviz-svg .pop{animation:none}}

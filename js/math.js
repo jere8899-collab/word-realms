@@ -151,19 +151,33 @@ function hud() {
   return `<span class="pill">${L.challenge ? "🗼 Tower" : "Grade " + L.grade} · ${esc(L.title)}</span><span class="qnum">${Math.min(L.i + 1, n)}/${n}</span><div class="gems">${L.items.map((_, k) => `<span class="${k < L.i ? (L.res[k] === 1 ? "g1" : L.res[k] ? "g5" : "g0") : k === L.i ? "cur" : ""}">${k < L.i ? (L.res[k] === 1 ? "💎" : L.res[k] ? "🔹" : "🫧") : "·"}</span>`).join("")}</div>`;
 }
 function render() {
-  const q = L.items[L.i]; L.tries = 0; L.done = false; L.res = L.res || [];
+  const q = L.items[L.i]; L.tries = 0; L.done = false; L.res = L.res || []; L.viz = window.MathViz ? window.MathViz.spec(q) : null; L.vizOpen = false; L.vizUsed = false; L.dealt = 0;
   WR.view(`<div class="lesson-bg" style="background-image:${WR.bgCss("bg_math")}"></div>
     <div class="row" style="margin:6px 0 8px"><button class="btn ghost small" id="quitBtn">← Leave</button><b class="title">🔢 ${esc(L.title)}</b></div>
     <div class="card hud">${hud()}</div>
-    <div class="lesson fade-in"><div class="card qcard mq">${q.pic ? `<div class="qpic mpicbox">${q.pic}</div>` : ""}<div class="qtext mqtext">${MW.html(q.q)}</div>
+    <div class="lesson fade-in"><div class="card qcard mq">${q.pic ? `<div class="qpic mpicbox">${q.pic}</div>` : ""}<div class="qtext mqtext">${MW.html(q.q)}</div><div id="mviz"></div>
       ${q.kind === "mcq" ? `<div class="opts mopts">${q.options.map((o, k) => `<button class="opt" data-k="${k}"><span class="k">${"ABCD"[k]}</span>${MW.html(o)}</button>`).join("")}</div>` : padHTML(q, L.grade)}
       <div id="mexplain"></div></div>
       <div class="card side"><div class="petbox" id="lpet">${WR.petHTML()}</div><div class="bubble" id="lbubble">${esc(L.i === 0 ? "Let's solve it together! ✨" : WR.petMood())}</div>
-      <div class="muted" id="lstats" style="font-size:.85rem;font-weight:800">⭐ ${L.starsEarned} earned · 🔥 combo ${L.combo}</div><button class="btn ghost small" id="hintBtn" style="margin-top:6px">💡 Hint</button></div></div>`);
+      <div class="muted" id="lstats" style="font-size:.85rem;font-weight:800">⭐ ${L.starsEarned} earned · 🔥 combo ${L.combo}</div><button class="btn ghost small" id="hintBtn" style="margin-top:6px">💡 Hint</button>${L.viz ? `<button class="btn ghost small" id="vizBtn" style="margin-top:6px">🧮 Model</button>` : ""}</div></div>`);
+  const vb = WR.$("#vizBtn"); if (vb) vb.onclick = () => { if (L.vizOpen && !L.done) { L.vizOpen = false; WR.$("#mviz").innerHTML = ""; vb.textContent = "🧮 Model"; } else showViz(); };
   WR.$("#quitBtn").onclick = () => { const o = L; L = null; o.challenge ? WR.go("dojo") : WR.go("math"); };
   WR.$("#hintBtn").onclick = () => { if (L.done) return; showMsg("hint", `💡 ${MW.html(q.hint)}`); };
   if (q.kind === "mcq") document.querySelectorAll("#main .mopts .opt[data-k]").forEach(b => b.onclick = () => submit(q.options[+b.dataset.k], b));
   else bindPad(() => submit(WR.$("#mans").value));
+}
+/* 🧮 Model Magic: a Singapore-style picture model (bar model, number line, ten frames, arrays, sharing groups, blocks, fraction bars) */
+function showViz(reveal) {
+  const box = WR.$("#mviz"); if (!box || !L || !L.viz) return;
+  const v = L.viz, m = MW.st();
+  if (!L.vizUsed && !L.done) { L.vizUsed = true; m.models = (m.models || 0) + 1; WR.save(); }
+  L.vizOpen = true;
+  const deal = v.deal && !reveal && L.dealt < v.s;
+  box.innerHTML = `<div class="mviz fade-in${reveal ? " reveal" : ""}"><div class="mviz-tip">🧮 <b>Model Magic</b> · ${esc(v.tip || "Draw it to see it!")}</div>${window.MathViz.svg(v, { reveal, dealt: v.deal ? L.dealt : undefined })}${deal ? `<div class="row" style="justify-content:center;margin-top:6px"><button class="btn small" id="vizDeal">🃏 Deal one each</button><button class="btn ghost small" id="vizDealAll">Deal them all</button></div>` : ""}</div>`;
+  const vb = WR.$("#vizBtn"); if (vb) vb.textContent = reveal ? "🧮 Model" : "🙈 Hide";
+  const d1 = WR.$("#vizDeal"), da = WR.$("#vizDealAll");
+  if (d1) d1.onclick = () => { L.dealt++; WR.sfx("tap"); showViz(); };
+  if (da) da.onclick = () => { L.dealt = v.s; WR.sfx("tap"); showViz(); };
 }
 function showMsg(cls, html) { const e = WR.$("#mexplain"); if (e) e.innerHTML = `<div class="explain ${cls === "hint" ? "" : cls}" style="${cls === "hint" ? "background:#FFF7D6" : ""}">${html}</div>`; }
 function petReact(ok) {
@@ -183,18 +197,22 @@ function submit(val, btn) {
     L.done = true; const pts = L.tries === 1 ? 1 : 0.5; L.pts += pts; L.res[L.i] = pts; L.correct++; s.totalCorrect++; s.totalAnswered++; m.correct = (m.correct || 0) + 1; m.answered = (m.answered || 0) + 1;
     if (L.tries === 1) { L.combo++; L.maxCombo = Math.max(L.maxCombo, L.combo); let gain = 1; if (L.combo % 3 === 0) gain++; L.starsEarned += gain; s.stars += gain; if (L.combo === 5) WR.questEvent("combo5"); } else L.combo = 0;
     WR.questEvent("correct10"); WR.sfx("good"); if (btn) btn.classList.add("right");
+    if (L.vizUsed) { m.modelSolved = (m.modelSolved || 0) + 1; WR.questEvent("model1"); }
+    if (L.vizOpen) showViz(true);
     const inp = WR.$("#mans"); if (inp) { inp.disabled = true; inp.classList.add("ok"); }
     document.querySelectorAll("#main .mopts .opt[data-k]").forEach(b => b.disabled = true);
     showMsg("good", `✅ ${L.tries === 1 ? "Correct!" : "Got it on the second try!"} <b>${MW.html(q.kind === "mcq" ? q.a : q.a)}</b><details class="mwork" ${L.tries > 1 ? "open" : ""}><summary>📜 Worked solution</summary>${steps(q)}</details>${nextBtn(true)}`);
   } else if (L.tries === 1) {
     WR.sfx("bad"); L.combo = 0; if (btn) { btn.classList.add("wrong"); btn.disabled = true; }
     const inp = WR.$("#mans"); if (inp) { inp.classList.add("shake"); setTimeout(() => inp.classList.remove("shake"), 450); inp.select && inp.select(); }
-    showMsg("bad", `💭 Not quite — have another go!<div style="margin-top:4px">💡 ${MW.html(q.hint)}</div>`);
+    showMsg("bad", `💭 Not quite — have another go!<div style="margin-top:4px">💡 ${MW.html(q.hint)}</div>${L.viz ? `<div class="muted" style="margin-top:2px;font-weight:800">🧮 Sumi drew a model to help you!</div>` : ""}`);
+    if (L.viz && !L.vizOpen) showViz();
   } else {
     L.done = true; L.res[L.i] = 0; s.totalAnswered++; m.answered = (m.answered || 0) + 1; WR.sfx("bad");
     if (btn) btn.classList.add("wrong");
     document.querySelectorAll("#main .mopts .opt[data-k]").forEach(b => { b.disabled = true; if (q.options[+b.dataset.k] === q.a) b.classList.add("right"); });
     const inp = WR.$("#mans"); if (inp) inp.disabled = true;
+    if (L.viz) showViz(true);
     showMsg("bad", `💭 The answer is <b>${MW.html(q.a)}</b>.<div class="mwork open"><b>📜 Worked solution</b>${steps(q)}</div>${nextBtn(false)}`);
   }
   WR.save(); WR.renderTop(); petReact(res.ok);

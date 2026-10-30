@@ -45,9 +45,9 @@ topic(1, "time", "Clock Tower", "🕰️", "O'clock and half past", r => {
 });
 topic(1, "story", "Fairytale Problems", "📜", "Word problems within 20", r => {
   const [th, e] = r.pick(THINGS), nm = r.pick(NAMES), t = r.int(0, 2);
-  if (t === 0) { const a = r.int(2, 10), b = r.int(1, 10); return num(`${nm} picks ${a} ${th} ${e} in the morning and ${b} more after lunch. How many ${th} now?`, a + b, "Altogether means add.", [`${a} + ${b} = ${a + b}`]); }
-  if (t === 1) { const a = r.int(8, 20), b = r.int(1, a - 1); return num(`There were ${a} ${th} ${e} on the castle table. The hungry giant ate ${b}. How many are left?`, a - b, "Left means take away.", [`${a} − ${b} = ${a - b}`]); }
-  const a = r.int(3, 12), b = r.int(a + 1, 20); return num(`Goldilocks has ${a} ${th}. Baby Bear has ${b}. How many more does Baby Bear have?`, b - a, "How many more → find the difference.", [`${b} − ${a} = ${b - a}`]);
+  if (t === 0) { const a = r.int(2, 10), b = r.int(1, 10); return num(`${nm} picks ${a} ${th} ${e} in the morning and ${b} more after lunch. How many ${th} now?`, a + b, "Altogether means add.", [`${a} + ${b} = ${a + b}`], { viz: { type: "bar", tip: "Two parts make the whole.", rows: [{ name: th, alt: 1, parts: [{ v: a, t: a }, { v: b, t: b }], braces: [{ from: 0, to: a + b, t: "?", rt: a + b, q: 1 }] }] } }); }
+  if (t === 1) { const a = r.int(8, 20), b = r.int(1, a - 1); return num(`There were ${a} ${th} ${e} on the castle table. The hungry giant ate ${b}. How many are left?`, a - b, "Left means take away.", [`${a} − ${b} = ${a - b}`], { viz: { type: "bar", tip: "The whole is known. Take away the eaten part.", rows: [{ name: th, parts: [{ v: b, t: `${b} eaten`, fill: "#EEE6F6" }, { v: a - b, t: "?", rt: a - b, q: 1 }], braces: [{ from: 0, to: a, t: a }] }] } }); }
+  const a = r.int(3, 12), b = r.int(a + 1, 20); return num(`Goldilocks has ${a} ${th}. Baby Bear has ${b}. How many more does Baby Bear have?`, b - a, "How many more → find the difference.", [`${b} − ${a} = ${b - a}`], { viz: { type: "bar", tip: "Line the bars up. The extra bit is the difference.", rows: [{ name: "Goldilocks", parts: [{ v: a, t: a }] }, { name: "Baby Bear", parts: [{ v: a, t: a }, { v: b - a, t: "?", rt: b - a, q: 1 }], braces: [{ from: 0, to: b, t: b, below: 1 }] }] } });
 }, { story: true });
 
 /* ---------- Grade 2 (Primary 2) ---------- */
@@ -61,8 +61,8 @@ topic(2, "sub", "Bridge Subtraction", "🌉", "Subtract within 1000", r => {
 });
 topic(2, "place", "Place Value Castle", "🏰", "Hundreds, tens and ones", r => {
   const n = r.int(101, 999), d = String(n), t = r.int(0, 2);
-  if (t === 0) { const i = r.int(0, 2), names = ["hundreds", "tens", "ones"], v = +d[i] * Math.pow(10, 2 - i); return num(`What is the value of the underlined digit in ${d.slice(0, i)}<u>${d[i]}</u>${d.slice(i + 1)}?`, v, "Which place is it in: hundreds, tens or ones?", [`${d[i]} is in the ${names[i]} place.`, `${d[i]} ${names[i]} = ${v}`]); }
-  if (t === 1) return num(`${d[0]} hundreds, ${d[1]} tens and ${d[2]} ones make what number?`, n, "Write the hundreds digit, then tens, then ones.", [`${+d[0] * 100} + ${+d[1] * 10} + ${+d[2]} = ${n}`]);
+  if (t === 0) { const i = r.int(0, 2), names = ["hundreds", "tens", "ones"], v = +d[i] * Math.pow(10, 2 - i); return num(`What is the value of the underlined digit in ${d.slice(0, i)}<u>${d[i]}</u>${d.slice(i + 1)}?`, v, "Which place is it in: hundreds, tens or ones?", [`${d[i]} is in the ${names[i]} place.`, `${d[i]} ${names[i]} = ${v}`], { viz: { type: "blocks", n, tip: "Flats are hundreds, sticks are tens, little cubes are ones." } }); }
+  if (t === 1) return num(`${d[0]} hundreds, ${d[1]} tens and ${d[2]} ones make what number?`, n, "Write the hundreds digit, then tens, then ones.", [`${+d[0] * 100} + ${+d[1] * 10} + ${+d[2]} = ${n}`], { viz: { type: "blocks", n, tip: "Count the flats, then the sticks, then the cubes." } });
   const opts = [n, n + r.pick([10, 100, 1]), n - r.pick([10, 1]), +(d[0] + d[2] + d[1]), +(d[1] + d[0] + d[2])].filter((x, i, a) => a.indexOf(x) === i && x > 99 && x < 1000);
   const mx = Math.max(...opts); return mcq(r, "Which number is the greatest?", String(mx), opts.filter(x => x !== mx).map(String), "Compare the hundreds first, then the tens, then the ones.", [`Comparing place by place, ${mx} is the greatest.`]);
 });
@@ -87,13 +87,13 @@ topic(2, "time", "Five-Minute Clock", "⏰", "Tell the time to 5 minutes", r => 
 topic(2, "frac", "Pizza Fractions", "🍕", "Halves, thirds and quarters", r => {
   if (r.chance(.55)) { const d = r.pick([2, 3, 4, 6, 8]), k = r.int(1, d - 1);
     return Q({ q: "What fraction of the pie is shaded pink? (type it like 1/4)", val: k / d, a: `${k}/${d}`, keys: ["/"], pic: svgPie(k, d), hint: "Bottom number: how many equal parts. Top number: how many are shaded.", steps: [`The pie has ${d} equal parts and ${k} ${k === 1 ? "is" : "are"} shaded.`, `Fraction shaded = $\\frac{${k}}{${d}}$${gcd(k, d) > 1 ? ` (the same as $${fracTex(k, d)}$)` : ""}`], data: { k, d } }); }
-  const d = r.pick([2, 3, 4]), n = d * r.int(1, 6); return num(`What is ${T(`\\frac{1}{${d}}`)} of ${n} magic beans?`, n / d, `Share ${n} into ${d} equal groups.`, [`${n} ÷ ${d} = ${n / d}`]);
+  const d = r.pick([2, 3, 4]), n = d * r.int(1, 6); return num(`What is ${T(`\\frac{1}{${d}}`)} of ${n} magic beans?`, n / d, `Share ${n} into ${d} equal groups.`, [`${n} ÷ ${d} = ${n / d}`], { viz: { type: "bar", tip: `Cut the bar into ${d} equal units. One unit is the answer.`, rows: [{ parts: Array.from({ length: d }, (_, i) => i ? { v: 1, t: "", fill: "#fff" } : { v: 1, t: "?", rt: n / d, q: 1 }), braces: [{ from: 0, to: d, t: n, below: 1 }] }] } });
 });
 topic(2, "story", "Fairytale Problems", "📜", "Two-step word problems", r => {
   const t = r.int(0, 2), nm = r.pick(NAMES);
-  if (t === 0) { const a = r.int(3, 9), b = r.pick([2, 5, 10]); return num(`${nm} has ${a} baskets. Each basket holds ${b} golden apples 🍎. How many apples?`, a * b, "Equal groups → multiply.", [`${a} × ${b} = ${a * b}`]); }
-  if (t === 1) { const a = r.int(40, 90), b = r.int(10, 30), c = r.int(5, 20); return num(`The Gingerbread Baker baked ${a} cookies. He sold ${b} and then baked ${c} more. How many cookies does he have now?`, a - b + c, "Do it in two steps: take away, then add.", [`${a} − ${b} = ${a - b}`, `${a - b} + ${c} = ${a - b + c}`]); }
-  const per = r.pick([2, 5, 10]), p = r.int(2, 9); return num(`A glass slipper costs ${per} gold coins. Cinderella has ${per * p} coins. How many slippers can she buy?`, p, "How many groups of the price fit into her coins? → divide.", [`${per * p} ÷ ${per} = ${p}`]);
+  if (t === 0) { const a = r.int(3, 9), b = r.pick([2, 5, 10]); return num(`${nm} has ${a} baskets. Each basket holds ${b} golden apples 🍎. How many apples?`, a * b, "Equal groups → multiply.", [`${a} × ${b} = ${a * b}`], { viz: { type: "array", rows: a, cols: b, tip: `${a} baskets, ${b} apples in each.` } }); }
+  if (t === 1) { const a = r.int(40, 90), b = r.int(10, 30), c = r.int(5, 20); return num(`The Gingerbread Baker baked ${a} cookies. He sold ${b} and then baked ${c} more. How many cookies does he have now?`, a - b + c, "Do it in two steps: take away, then add.", [`${a} − ${b} = ${a - b}`, `${a - b} + ${c} = ${a - b + c}`], { viz: { type: "bar", tip: "Take away the sold part, then join the new batch.", rows: [{ name: "baked", parts: [{ v: b, t: `sold ${b}`, fill: "#EEE6F6" }, { v: a - b, t: a - b > 9 ? "left" : "" }], braces: [{ from: 0, to: a, t: a }] }, { name: "now", parts: [{ v: b, t: "", fill: "rgba(0,0,0,0)" }, { v: a - b, t: "left" }, { v: c, t: c, fill: "#CDE8FF" }], braces: [{ from: b, to: a + c, t: "?", rt: a - b + c, q: 1, below: 1 }] }] } }); }
+  const per = r.pick([2, 5, 10]), p = r.int(2, 9); return num(`A glass slipper costs ${per} gold coins. Cinderella has ${per * p} coins. How many slippers can she buy?`, p, "How many groups of the price fit into her coins? → divide.", [`${per * p} ÷ ${per} = ${p}`], { viz: { type: "bar", tip: `Cut the coins into chunks of ${per}. How many chunks?`, rows: [{ parts: Array.from({ length: p }, (_, i) => ({ v: per, t: i < 2 ? per : "", fill: i % 2 ? "#BDEFD3" : "#FFB8D1" })), braces: [{ from: 0, to: per * p, t: `${per * p} coins`, below: 1 }, { from: 0, to: per * p, t: "how many slippers?", q: 1, rt: `${p} slippers` }] }] } });
 }, { story: true });
 
 /* ---------- Grade 3 (Primary 3) ---------- */
@@ -117,7 +117,7 @@ topic(3, "mul", "Multiply by One Digit", "🔢", "2–3 digits × 1 digit", r =>
 });
 topic(3, "eqfrac", "Equivalent Fractions", "🥧", "Same amount, different fractions", r => {
   const d = r.int(2, 9), n = r.int(1, d - 1), k = r.int(2, 5), hideTop = r.chance(.6);
-  return num(hideTop ? T(`\\frac{${n}}{${d}} = \\frac{\\square}{${d * k}}`) : T(`\\frac{${n}}{${d}} = \\frac{${n * k}}{\\square}`), hideTop ? n * k : d * k, `What was the ${hideTop ? "bottom" : "top"} number multiplied by?`, [`${hideTop ? `${d} × ${k} = ${d * k}` : `${n} × ${k} = ${n * k}`}, so multiply top and bottom by ${k}.`, `$\\frac{${n}}{${d}} = \\frac{${n * k}}{${d * k}}$`]);
+  return num(hideTop ? T(`\\frac{${n}}{${d}} = \\frac{\\square}{${d * k}}`) : T(`\\frac{${n}}{${d}} = \\frac{${n * k}}{\\square}`), hideTop ? n * k : d * k, `What was the ${hideTop ? "bottom" : "top"} number multiplied by?`, [`${hideTop ? `${d} × ${k} = ${d * k}` : `${n} × ${k} = ${n * k}`}, so multiply top and bottom by ${k}.`, `$\\frac{${n}}{${d}} = \\frac{${n * k}}{${d * k}}$`], { viz: { type: "fracbars", tip: `Cut every piece into ${k}. The shaded amount stays the same.`, bars: [{ n, d, t: `${n}/${d}` }, { n: n * k, d: d * k, t: hideTop ? `?/${d * k}` : `${n * k}/?`, q: 1, rt: `${n * k}/${d * k}` }] } });
 });
 topic(3, "measure", "Measure Magic", "📏", "Length, mass and volume units", r => {
   const u = r.pick([["m", "cm", 100], ["kg", "g", 1000], ["ℓ", "mℓ", 1000], ["km", "m", 1000]]), big = r.int(1, 9), small = u[2] === 100 ? r.int(1, 99) : r.int(5, 995), tot = big * u[2] + small;
@@ -135,8 +135,8 @@ topic(3, "perim", "Fence the Garden", "🌷", "Perimeter of rectangles and squar
 });
 topic(3, "story", "Fairytale Problems", "📜", "Multiply and divide in stories", r => {
   const t = r.int(0, 2);
-  if (t === 0) { const a = r.int(6, 9), b = r.int(3, 12); return num(`Each dragon egg 🥚 needs ${a} warm stones. How many stones are needed for ${b} eggs?`, a * b, "Equal groups → multiply.", [`${b} × ${a} = ${a * b}`]); }
-  if (t === 1) { const d = r.int(3, 8), q = r.int(4, 12), rem = r.int(1, d - 1); return num(`${d * q + rem} pixies sit in boats. Each boat holds ${d}. How many boats are needed so every pixie gets a seat?`, q + 1, "Divide, then think about the pixies who are left over!", [`${d * q + rem} ÷ ${d} = ${q} r ${rem}`, `The ${rem} left-over pixie${rem > 1 ? "s" : ""} need${rem > 1 ? "" : "s"} one more boat → ${q + 1}`]); }
+  if (t === 0) { const a = r.int(6, 9), b = r.int(3, 12); return num(`Each dragon egg 🥚 needs ${a} warm stones. How many stones are needed for ${b} eggs?`, a * b, "Equal groups → multiply.", [`${b} × ${a} = ${a * b}`], { viz: { type: "array", rows: b, cols: a, tip: `${b} eggs, ${a} stones each.` } }); }
+  if (t === 1) { const d = r.int(3, 8), q = r.int(4, 12), rem = r.int(1, d - 1); return num(`${d * q + rem} pixies sit in boats. Each boat holds ${d}. How many boats are needed so every pixie gets a seat?`, q + 1, "Divide, then think about the pixies who are left over!", [`${d * q + rem} ÷ ${d} = ${q} r ${rem}`, `The ${rem} left-over pixie${rem > 1 ? "s" : ""} need${rem > 1 ? "" : "s"} one more boat → ${q + 1}`], { viz: { type: "groups", g: q, s: d, left: rem, tip: `Each ring is a boat of ${d}. Look at who is left on the shore!` } }); }
   const p = r.int(12, 45), n = r.int(3, 6); return num(`Puss in Boots buys ${n} pairs of boots at $${p} each. How much does he pay in $?`, p * n, "Price × number of pairs.", [`${n} × ${p} = ${p * n}`, `$${p * n}`]);
 }, { story: true });
 
@@ -165,7 +165,7 @@ topic(4, "fracadd", "Fraction Potions", "🧪", "Add/subtract related fractions"
 });
 topic(4, "fracset", "Fraction of a Set", "🍰", "e.g. 3/4 of 24", r => {
   const d = r.pick([3, 4, 5, 6, 8]), n = r.int(1, d - 1), tot = d * r.int(2, 12), [th, e] = r.pick(THINGS);
-  return num(`Snow White baked ${tot} ${th} ${e}. She gave ${T(`\\frac{${n}}{${d}}`)} of them to the dwarfs. How many did the dwarfs get?`, tot / d * n, `First find ${T(`\\frac{1}{${d}}`)}: divide by ${d}.`, [`$\\frac{1}{${d}}$ of ${tot} = ${tot} ÷ ${d} = ${tot / d}`, `$\\frac{${n}}{${d}}$ of ${tot} = ${tot / d} × ${n} = ${tot / d * n}`]);
+  return num(`Snow White baked ${tot} ${th} ${e}. She gave ${T(`\\frac{${n}}{${d}}`)} of them to the dwarfs. How many did the dwarfs get?`, tot / d * n, `First find ${T(`\\frac{1}{${d}}`)}: divide by ${d}.`, [`$\\frac{1}{${d}}$ of ${tot} = ${tot} ÷ ${d} = ${tot / d}`, `$\\frac{${n}}{${d}}$ of ${tot} = ${tot / d} × ${n} = ${tot / d * n}`], { viz: { type: "bar", tip: `${d} equal units make ${tot}. The dwarfs get ${n} of them.`, rows: [{ parts: Array.from({ length: d }, (_, i) => ({ v: 1, t: "", fill: i < n ? "#FFB8D1" : "#fff" })), braces: [{ from: 0, to: n, t: "?", rt: tot / d * n, q: 1 }, { from: 0, to: d, t: tot, below: 1 }] }] } });
 });
 topic(4, "decimal", "Decimal Docks", "⛵", "Tenths and hundredths", r => {
   const t = r.int(0, 2);
@@ -182,8 +182,8 @@ topic(4, "round", "Rounding Rhymes", "🎯", "Round to 10, 100, 1000 and 1 d.p."
 });
 topic(4, "area", "Area of the Kingdom", "🗺️", "Area and perimeter of rectangles", r => {
   const l = r.int(3, 20), w = r.int(2, 15), t = r.int(0, 2);
-  if (t === 0) return num(`A rectangular dragon pen is ${l} m by ${w} m. What is its area in m²?`, l * w, "Area = length × width.", [`${l} × ${w} = ${l * w} m²`]);
-  if (t === 1) return num(`A rectangle has an area of ${l * w} cm². Its length is ${l} cm. What is its width in cm?`, w, "Width = area ÷ length.", [`${l * w} ÷ ${l} = ${w} cm`]);
+  if (t === 0) return num(`A rectangular dragon pen is ${l} m by ${w} m. What is its area in m²?`, l * w, "Area = length × width.", [`${l} × ${w} = ${l * w} m²`], { viz: { type: "grid", l, w, u: "m", note: `${w} rows of ${l} squares = ? m²`, tip: "Count one row, then multiply by the number of rows." } });
+  if (t === 1) return num(`A rectangle has an area of ${l * w} cm². Its length is ${l} cm. What is its width in cm?`, w, "Width = area ÷ length.", [`${l * w} ÷ ${l} = ${w} cm`], { viz: { type: "grid", l, w, u: "cm", wq: 1, noGrid: 1, note: `area = ${l * w} cm²`, tip: `How many rows of ${l} make ${l * w}?` } });
   const s = r.int(3, 12); return num(`A square tile has a perimeter of ${4 * s} cm. What is its area in cm²?`, s * s, "First find one side: perimeter ÷ 4.", [`Side = ${4 * s} ÷ 4 = ${s} cm`, `Area = ${s} × ${s} = ${s * s} cm²`]);
 });
 topic(4, "angles", "Turns & Angles", "🧭", "Right angles, turns and compass directions", r => {
@@ -193,7 +193,7 @@ topic(4, "angles", "Turns & Angles", "🧭", "Right angles, turns and compass di
   return mcq(r, `The Snow Queen faces ${DIR[s]}. She turns ${k * 90}° ${cw ? "clockwise" : "anticlockwise"}. Which way does she face now?`, DIR[e], DIR.filter(d => d !== DIR[e]), "Each 90° is one quarter turn: N → E → S → W clockwise.", [`${k} quarter turn${k > 1 ? "s" : ""} ${cw ? "clockwise" : "anticlockwise"} from ${DIR[s]} → ${DIR[e]}`]);
 });
 topic(4, "story", "Fairytale Problems", "📜", "Multi-step word problems", r => {
-  if (r.chance(.5)) { const p = r.int(15, 60), n = r.int(12, 35), paid = Math.ceil(p * n / 100) * 100 + r.pick([0, 100]); return num(`Aladdin buys ${n} lamps at $${p} each. He pays with $${paid}. How much change does he get in $?`, paid - p * n, "Find the total cost first, then subtract from what he paid.", [`${n} × ${p} = $${p * n}`, `${paid} − ${p * n} = $${paid - p * n}`]); }
+  if (r.chance(.5)) { const p = r.int(15, 60), n = r.int(12, 35), paid = Math.ceil(p * n / 100) * 100 + r.pick([0, 100]); return num(`Aladdin buys ${n} lamps at $${p} each. He pays with $${paid}. How much change does he get in $?`, paid - p * n, "Find the total cost first, then subtract from what he paid.", [`${n} × ${p} = $${p * n}`, `${paid} − ${p * n} = $${paid - p * n}`], { viz: { type: "bar", tip: "What he paid = the cost of the lamps + his change.", rows: [{ name: "paid", parts: [{ v: p * n, t: `${n} × $${p}` }, { v: paid - p * n, t: "?", rt: `$${paid - p * n}`, q: 1 }], braces: [{ from: 0, to: paid, t: `$${paid}` }] }] } }); }
   const d = r.int(3, 9), per = r.int(25, 120); return num(`The giant's beanstalk grows ${per} cm each day. How many metres does it grow in ${d * 4} days? (1 m = 100 cm)`, per * d * 4 / 100, "Multiply, then change cm into m.", [`${per} × ${d * 4} = ${per * d * 4} cm`, `${per * d * 4} ÷ 100 = ${fmt(per * d * 4 / 100)} m`], { keys: ["."] });
 }, { story: true });
 })();
