@@ -396,8 +396,10 @@ function check() {
   w.crowns = Object.values(w.best).reduce((a, x) => a + x.crowns, 0);
   if (gain) s.stars += gain;
   const real = r.n >= p.words[0] * 0.5;
-  if (real) { WR.questEvent("write1"); if (!Q.recorded) { WR.questEvent("lesson2"); WR.recordLesson(Q.realm.id, "writing", r.total / 20); Q.recorded = true; } if (r.crowns === 3) WR.questEvent("perfect1"); }
-  const newStreak = real ? WR.bumpStreak() : false;
+  const firstCheck = real && !Q.recorded;
+  if (real) { WR.questEvent("write1"); if (firstCheck) { WR.recordLesson(Q.realm.id, "writing", r.total / 20); Q.recorded = true; } if (r.crowns === 3) WR.questEvent("perfect1"); }
+  if (real) WR.tally(Q.realm.id + "/writing", r.total / 20 >= 0.6);       // 📊 a checked draft counts as right at 12/20 or more
+  const newStreak = real ? WR.activityDone(firstCheck) : false;
   const lv = WR.petGainXP(first ? 10 + 4 * r.crowns : gain ? 4 * gain : 2);
   const planted = plantErrors(r, text);
   flush(); WR.save(); WR.renderTop();

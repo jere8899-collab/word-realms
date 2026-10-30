@@ -299,9 +299,9 @@ function whyNot(ok, it) {
 WR._whyNot = whyNot;
 function answer(ok, it, extra = "") {
   L.answered = true; clearTimer();
-  const s = WR.state; s.totalAnswered++;
+  const s = WR.state; WR.countAnswer(ok, L.review ? "garden" : L.realm.id + "/" + (L.skill || "mixed"));
   if (ok) {
-    L.correct++; L.combo++; L.maxCombo = Math.max(L.maxCombo, L.combo); s.totalCorrect++;
+    L.correct++; L.combo++; L.maxCombo = Math.max(L.maxCombo, L.combo);
     let gain = 1; if (L.combo % 3 === 0) gain++; L.starsEarned += gain; s.stars += gain;
     WR.questEvent("correct10"); if (L.combo === 5) WR.questEvent("combo5");
     L.lit++; L.jar.push(["🍬", "🍭", "🧁", "🍩", "🍫", "🍡"][L.jar.length % 6]);
@@ -310,7 +310,7 @@ function answer(ok, it, extra = "") {
   } else {
     L.combo = 0; L.hearts = Math.max(0, L.hearts - ((L.mode === "boss" || L.mode === "dragon") ? 1 : 0));
     L.meter = Math.max(0, L.meter - 8); WR.sfx("bad");
-    if (!L.review) WR.Garden ? WR.Garden.plant(it, L.realm.id, L.skill) : s.mistakes.unshift({ realm: L.realm.id, q: it.q, said: it.say || null, correct: it.correct || it.answer, explain: it.explain, at: Date.now() });
+    if (!L.review) WR.Garden.plant(it, L.realm.id, L.skill);
   }
   if (L.review && it._mid && WR.Garden) { const g = WR.Garden.grade(it._mid, ok); if (g) L.bloomed = (L.bloomed || 0) + (g.bloomed ? 1 : 0); }
   WR.save(); WR.renderTop();
@@ -334,13 +334,12 @@ function finish(lost) {
   const bonus = crowns * 2 + (beat ? 5 : 0);
   if (bonus) { WR.state.stars += bonus; L.starsEarned += bonus; }
   if (L.key) WR.recordLesson(L.realm.id, L.key, score);
-  WR.questEvent("lesson2");
   if (L.skill === "listening") WR.questEvent("listen1");
   if (L.skill === "reading") WR.questEvent("read1");
   if (L.special) WR.questEvent("special1");
   if (L.review) { WR.questEvent("review1"); if (L.bloomed) { WR.state.stars += L.bloomed * 2; L.starsEarned += L.bloomed * 2; } }
   if (crowns === 3) WR.questEvent("perfect1");
-  const newStreak = WR.bumpStreak();
+  const newStreak = WR.activityDone();
   const lv = WR.petGainXP(L.correct * 6 + 10);
   WR.save(); WR.renderTop();
   const won = beat && !lost;

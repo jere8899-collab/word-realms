@@ -5,7 +5,7 @@
    • 3 wrong tries → a 60-second lock-out
    • a pass stays open for 5 minutes, kept in memory only (never saved), then the gate asks again
    The optional PIN is stored as a SHA-256 hash (crypto.subtle) in the save (state.parent.pinHash), so it syncs with cloud saves.
-   Gated: cash buttons and the demo unlock in the Shop's 👪 Grown-ups area, Teacher mode, Cloud Castle "Log out & clear device".
+   Gated: cash buttons and the demo unlock in the Shop's 👪 Grown-ups area, Teacher mode, Cloud Castle "Log out & clear device", the 📊 Learning Report (js/report.js).
    Children never see prices or payment words in front of the gate. */
 (function () {
 const WR = window.WR;
@@ -88,6 +88,7 @@ WR.openGrownups = () => gate(() => {
   const s = WR.state;
   WR.modal(`<h2>👪 Grown-ups</h2>
     <p class="muted" style="font-weight:700;margin-top:0">These settings stay open for 5 minutes, then the grown-up check comes back.</p>
+    ${WR.screens.report ? `<button class="btn mint gu-report" id="guReport">📊 Learning Report<small>days played, skills, weak spots &amp; tips</small></button>` : ""}
     <label class="set-row"><span>🗝️ Teacher mode (open every realm)</span><input type="checkbox" id="guUl" ${s.settings.unlockAll ? "checked" : ""}></label>
     <div class="set-row" style="cursor:default"><span>🔢 Grown-up PIN <small class="muted" id="guPinState">${hasPin() ? "· on" : "· off (a sum question is used)"}</small></span></div>
     <div class="row" style="justify-content:center"><input class="input" id="guPin" inputmode="numeric" pattern="[0-9]*" maxlength="4" placeholder="4 digits" style="max-width:130px;text-align:center;letter-spacing:6px" autocomplete="off">
@@ -97,6 +98,7 @@ WR.openGrownups = () => gate(() => {
     <p class="set-note muted">🗣️ Listening voice: ${WR.esc(window.Speech ? Speech.voiceName() : "-")}</p>
     <div class="row" style="justify-content:center"><button class="btn small" id="guDone">Done</button></div>`, (bg, close) => {
     bg.querySelector("#guUl").onchange = e => { s.settings.unlockAll = e.target.checked; WR.save(); WR.toast(e.target.checked ? "🗝️ Every realm is open" : "🔒 Realms open in order again"); };
+    const rp = bg.querySelector("#guReport"); if (rp) rp.onclick = () => { close(); WR.go("report", "week"); };
     const err = bg.querySelector("#guErr");
     bg.querySelector("#guPinSet").onclick = async () => { try { await gate.setPin(bg.querySelector("#guPin").value.trim()); close(); WR.toast("🔢 Grown-up PIN saved"); WR.openGrownups(); } catch (x) { err.textContent = x.message; } };
     const off = bg.querySelector("#guPinOff"); if (off) off.onclick = () => { gate.clearPin(); close(); WR.toast("PIN removed"); WR.openGrownups(); };

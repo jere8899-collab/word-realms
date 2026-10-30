@@ -239,7 +239,7 @@ function submit(val, btn) {
   if (res.bad) return WR.toast(q.kind === "time" ? "Type the time like 3:30 🕰️" : q.kind === "rem" ? "Type it like 7 r 2 ➗" : q.kind === "ratio" ? "Type it like 2:3 ⚖️" : "Hmm, I couldn't read that. Try a number like 12, 3/4 or 2.5 🧮", 2400);
   const s = WR.state, m = MW.st(); L.tries++;
   if (res.ok) {
-    L.done = true; const pts = L.tries === 1 ? 1 : 0.5; L.pts += pts; L.res[L.i] = pts; L.correct++; s.totalCorrect++; s.totalAnswered++; m.correct = (m.correct || 0) + 1; m.answered = (m.answered || 0) + 1;
+    L.done = true; const pts = L.tries === 1 ? 1 : 0.5; L.pts += pts; L.res[L.i] = pts; L.correct++; WR.countAnswer(true, "m:" + (q.topic || L.key)); m.correct = (m.correct || 0) + 1; m.answered = (m.answered || 0) + 1;
     if (L.tries === 1) { L.combo++; L.maxCombo = Math.max(L.maxCombo, L.combo); let gain = 1; if (L.combo % 3 === 0) gain++; L.starsEarned += gain; s.stars += gain; if (L.combo === 5) WR.questEvent("combo5"); } else L.combo = 0;
     WR.questEvent("correct10"); WR.sfx("good"); if (btn) btn.classList.add("right");
     if (L.vizUsed) { m.modelSolved = (m.modelSolved || 0) + 1; WR.questEvent("model1"); }
@@ -253,7 +253,7 @@ function submit(val, btn) {
     showMsg("bad", `💭 Not quite — have another go!<div style="margin-top:4px">💡 ${MW.html(q.hint)}</div>${L.viz ? `<div class="muted" style="margin-top:2px;font-weight:800">${isBal() ? "⚖️ Sumi brought a balance scale to help you!" : "🧮 Sumi drew a model to help you!"}</div>` : ""}`);
     if (L.viz && !L.vizOpen) showViz();
   } else {
-    L.done = true; L.res[L.i] = 0; s.totalAnswered++; m.answered = (m.answered || 0) + 1; WR.sfx("bad");
+    L.done = true; L.res[L.i] = 0; WR.countAnswer(false, "m:" + (q.topic || L.key)); m.answered = (m.answered || 0) + 1; WR.sfx("bad");
     if (btn) btn.classList.add("wrong");
     document.querySelectorAll("#main .mopts .opt[data-k]").forEach(b => { b.disabled = true; if (q.options[+b.dataset.k] === q.a) b.classList.add("right"); });
     const inp = WR.$("#mans"); if (inp) inp.disabled = true;
@@ -273,8 +273,8 @@ function finish() {
   const before = MW.crownsFor(o.key), bonus = crowns * 2, gd = o.guardian, won = !!gd && o.pts >= gd.need; if (bonus) { WR.state.stars += bonus; o.starsEarned += bonus; }
   if (gd) { m.lessons = (m.lessons || 0) + 1; WR.state.lessonsDone++; } else MW.record(o.key, score);   // a guardian fight is not a topic, so it never changes topic crowns
   m.xp = (m.xp || 0) + o.correct * 5 + 10;
-  WR.questEvent("lesson2"); WR.questEvent("math1"); if (crowns === 3) WR.questEvent("perfect1");
-  const streak = WR.bumpStreak(), lv = WR.petGainXP(o.correct * 6 + 10); WR.save(); WR.renderTop();
+  WR.questEvent("math1"); if (crowns === 3) WR.questEvent("perfect1");
+  const streak = WR.activityDone(), lv = WR.petGainXP(o.correct * 6 + 10); WR.save(); WR.renderTop();
   L = null;
   const head = gd ? (won ? `${esc(gd.name)} is beaten! 🛡️✨` : `${esc(gd.name)} flew off to practise! 💨`) : crowns === 3 ? "Perfect! 👑" : crowns >= 1 ? "Well done! 🌟" : "Keep practising! 🌱";
   const art = gd && WR.asset(gd.art) ? WR.img(gd.art, "res-sumi gres") : mascot("res-sumi");

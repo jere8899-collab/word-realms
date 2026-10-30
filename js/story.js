@@ -100,14 +100,14 @@ function choose(btn, q, opts) {
   if (S.answers[S.page]) return;
   const right = fill(q.options[q.answer]), chosen = opts[+btn.dataset.k], ok = chosen === right;
   S.answers[S.page] = { chosen, ok };
-  if (ok) { S.correct++; WR.sfx("good"); WR.state.totalCorrect++; WR.questEvent("correct10"); }
+  if (ok) { S.correct++; WR.sfx("good"); WR.questEvent("correct10"); }
   else {
     WR.sfx("bad");
     const pg = S.ch.pages[Math.min(S.page, 3)];
     WR.Garden && WR.Garden.plant({ type: "mcq", q: "📜 " + fill(q.q), options: q.options.map(fill), correct: right, explain: fill(q.explain),
       passage: S.page < 4 ? { title: `Chapter ${S.num}: ${S.ch.title}`, text: plain(pg.text) } : null }, S.realm.id, "story");
   }
-  WR.state.totalAnswered++; WR.save();
+  WR.countAnswer(ok, S.realm.id + "/story"); WR.save();
   WR.petReact && WR.petReact(ok);
   Speech.stop(); render();
 }
@@ -125,7 +125,7 @@ function finish() {
   WR.state.lessonsDone++; WR.save();
   if (stars) WR.addStars(stars);
   const lv = WR.petGainXP ? WR.petGainXP(S.correct * 2 + 2) : null;
-  WR.questEvent("story1"); WR.questEvent("read1"); WR.questEvent("lesson2"); WR.bumpStreak();
+  WR.questEvent("story1"); WR.questEvent("read1"); WR.activityDone();
   if (crowns === 3) WR.questEvent("perfect1");
   const found = WR.storyPagesFound(), r = S.realm, num = S.num, ch = S.ch;
   WR.sfx("level"); if (crowns >= 2) WR.confetti();

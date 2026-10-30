@@ -92,8 +92,7 @@ function when(ts) {
 WR.screens.review = () => {
   const s = st(); const all = s.mistakes, act = all.filter(m => !m.bloomed), bl = all.filter(m => m.bloomed);
   const due = Garden.dueCount(), nd = Garden.nextDue();
-  const lvl = id => { const r = WR.realms.find(y => y.id === id); return r ? r.level : ""; };
-  const skillIco = k => (WR.SKILLS.concat(WR.SPEAKING || [], WR.WRITING || [], WR.STORY || []).find(x => x.id === k) || { icon: "✨" }).icon;
+  const lvl = WR.levelOf, skillIco = k => WR.skillInfo(k).icon;
   const sorted = act.slice().sort((a, b) => (isDue(b) - isDue(a)) || (a.legacy - b.legacy) || a.due - b.due);
   const counts = STAGES.map((_, i) => act.filter(m => (m.box || 0) === i).length);
   const plot = m => { const g = Garden.stageOf(m); return `<button class="plot ${isDue(m) ? "thirsty" : ""} ${m.legacy ? "legacy" : ""}" data-id="${m.id}">

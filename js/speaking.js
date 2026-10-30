@@ -216,9 +216,9 @@ function toggleMic(it) {
 function award(it, score) {
   it.attempts++; const first = !it.passed, ok = score >= 0.5;
   it.best = Math.max(it.best, score);
-  const s = WR.state; s.totalAnswered++; s.speaking.attempts++;
+  const s = WR.state; WR.countAnswer(ok && first, S.realm.id + "/speaking", ok); s.speaking.attempts++;
   let gain = 0;
-  if (ok && first) { it.passed = true; S.passes++; gain = 1; S.starsEarned += 1; s.stars += 1; s.totalCorrect++; s.speaking.passed++; WR.questEvent("correct10"); }
+  if (ok && first) { it.passed = true; S.passes++; gain = 1; S.starsEarned += 1; s.stars += 1; s.speaking.passed++; WR.questEvent("correct10"); }
   if (starsFor(score) === 3) s.speaking.perfect++;
   WR.save(); WR.renderTop();
   const h = document.querySelector(".hud"); if (h) h.innerHTML = hud();
@@ -276,8 +276,8 @@ function finish() {
   if (bonus) { WR.state.stars += bonus; S.starsEarned += bonus; }
   WR.recordLesson(S.realm.id, "speaking", score);
   WR.state.speaking.rounds++;
-  WR.questEvent("lesson2"); WR.questEvent("speak1"); if (crowns === 3) WR.questEvent("perfect1");
-  const newStreak = WR.bumpStreak(), lv = WR.petGainXP(S.passes * 6 + 10);
+  WR.questEvent("speak1"); if (crowns === 3) WR.questEvent("perfect1");
+  const newStreak = WR.activityDone(), lv = WR.petGainXP(S.passes * 6 + 10);
   WR.save(); WR.renderTop();
   const R = S, title = crowns === 3 ? "The well sings your words! 👑" : crowns >= 1 ? "Lovely speaking! 🌟" : "Keep practising! 🌱";
   WR.view(`<div class="card result fade-in"><h1>${title}</h1>

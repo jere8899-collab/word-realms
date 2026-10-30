@@ -31,7 +31,7 @@ function header(realm, title) {
 }
 function finishSpecial(realm, score, stars, msg) {
   WR.recordLesson(realm.id, "special", score);
-  WR.questEvent("special1"); WR.questEvent("lesson2"); WR.bumpStreak();
+  WR.questEvent("special1"); WR.activityDone();
   const lv = WR.petGainXP(Math.round(score * 50) + 10);
   WR.addStars(stars);
   WR.view(`<div class="card result fade-in"><h1>${msg}</h1><div class="big">${"👑".repeat(WR.crowns(score))}</div>

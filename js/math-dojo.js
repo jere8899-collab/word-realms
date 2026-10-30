@@ -69,8 +69,8 @@ function draw() {
 function answer(ok) {
   if (!D || D.locked) return; D.locked = true;
   const q = D.queue[D.i], m = MW.st(), ms = performance.now() - D.t0, before = (m.facts[q.fact] || {}).b || 0;
-  const f = MG.gradeFact(m.facts, q.fact, ok, ms); const s = WR.state; s.totalAnswered++;
-  if (ok) { D.right++; D.combo++; D.best = Math.max(D.best, D.combo); s.totalCorrect++; m.correct = (m.correct || 0) + 1; if (before < MG.MASTERED && f.b >= MG.MASTERED) D.newMastered++; WR.questEvent("correct10"); if (D.combo === 5) WR.questEvent("combo5"); WR.sfx("good"); }
+  const f = MG.gradeFact(m.facts, q.fact, ok, ms); const s = WR.state; WR.countAnswer(ok, "m:dojo.tower");
+  if (ok) { D.right++; D.combo++; D.best = Math.max(D.best, D.combo); m.correct = (m.correct || 0) + 1; if (before < MG.MASTERED && f.b >= MG.MASTERED) D.newMastered++; WR.questEvent("correct10"); if (D.combo === 5) WR.questEvent("combo5"); WR.sfx("good"); }
   else {
     D.wrong++; D.combo = 0; WR.sfx("bad"); D.misses.push(q.fact);
     // spaced repetition inside the round: a missed fact comes back 3 questions later (once)
@@ -91,8 +91,8 @@ function endDojo() {
   let stars = Math.floor(o.right / 3) + o.newMastered + (o.mode === "practice" ? 2 : 0) + (newBest ? 5 : 0);
   if (o.mode === "sprint") { d.sprints = (d.sprints || 0) + 1; if (newBest) d.best = o.right; d.history = (d.history || []).concat([{ at: Date.now(), score: o.right, wrong: o.wrong, tables: o.tables }]).slice(-12); }
   else d.practice = (d.practice || 0) + 1;
-  m.xp = (m.xp || 0) + o.right * 2 + 5; WR.state.stars += stars; WR.questEvent("dojo1"); WR.questEvent("lesson2");
-  const streak = WR.bumpStreak(), lv = WR.petGainXP(o.right * 3 + 5); WR.save(); WR.renderTop();
+  m.xp = (m.xp || 0) + o.right * 2 + 5; WR.state.stars += stars; WR.questEvent("dojo1");
+  const streak = WR.activityDone(), lv = WR.petGainXP(o.right * 3 + 5); WR.save(); WR.renderTop();
   const missed = [...new Set(o.misses)].map(k => { const [a, b] = k.split("x"); return `${a} × ${b} = ${a * b}`; });
   WR.view(`<div class="card result fade-in">${tower("res-tower")}<h1>${o.mode === "sprint" ? (newBest ? "New tower record! 🏆" : "Sprint finished! ⚡") : "Practice complete! 🧘"}</h1>
     <h2>${o.right} correct${o.wrong ? ` · ${o.wrong} to practise` : ""}</h2>

@@ -41,7 +41,8 @@ WR.$ = (s, r = document) => r.querySelector(s);
 WR.esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 WR.shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 WR.sample = (a, n) => WR.shuffle(a).slice(0, n);
-WR.today = () => { const d = new Date(); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); };
+WR.dayKey = (t = Date.now()) => { const d = new Date(t); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); };
+WR.today = () => WR.dayKey();
 WR.dayDiff = (a, b) => Math.round((new Date(b) - new Date(a)) / 864e5);
 const fetchJSON = p => fetch(p).then(r => { if (!r.ok) throw new Error(p + " " + r.status); return r.json(); });
 
@@ -81,9 +82,48 @@ function freshState() {
     progress: {}, owned: [], equipped: { outfit: null, petskin: null, theme: null },
     settings: { rate: 0.9, sound: true, unlockAll: false }, mistakes: [], lessonsDone: 0,
     speaking: freshSpeaking(), writing: freshWriting(), math: freshMath(),
-    stories: { done: {}, words: {}, reads: 0 }
+    stories: { done: {}, words: {}, reads: 0 }, report: freshReport()
   };
 }
+/* 📊 Activity log for the grown-ups' Learning Report (js/report.js), kept in the save so it cloud-syncs.
+   report = { days: { "YYYY-MM-DD": { s: active seconds, l: lessons, k: { key: [right, wrong] } } } (newest 60 days),
+              tally: { key: [right, wrong] } (all time), at: last activity time, seeded?: days rebuilt from an older save }
+   keys: "<level>/<skill>" for English (a2/grammar … a2/speaking, a2/writing, a2/story), "m:<topic>" for maths
+   (m:g3.times, m:dojo.tower), "garden" for Mistake Garden rounds. */
+const LOG_DAYS = 60, GAP_MS = 3 * 60e3, FIRST_S = 20;
+const freshReport = () => ({ days: {}, tally: {}, at: 0 });
+WR.LOG_DAYS = LOG_DAYS;
+// an older save gains a log rebuilt from the dates it already has (last play of each skill/topic, story chapters, sprints, streak)
+function seedReport(s) {
+  const r = freshReport(), n = {}, add = t => { if (t) { const d = WR.dayKey(t); n[d] = (n[d] || 0) + 1; } };
+  Object.values(s.progress || {}).forEach(p => Object.values(p || {}).forEach(x => x && add(x.last)));
+  Object.values(s.math.topics || {}).forEach(x => x && add(x.last));
+  Object.values(s.stories.done || {}).forEach(x => x && add(x.at));
+  (s.math.dojo.history || []).forEach(h => h && add(h.at));
+  if (s.streak && s.streak.last && !n[s.streak.last]) n[s.streak.last] = 1;
+  Object.keys(n).sort().slice(-LOG_DAYS).forEach(d => r.days[d] = { s: 0, l: n[d], k: {}, est: 1 });
+  if (Object.keys(n).length) r.seeded = Date.now();
+  return r;
+}
+function logDay() {
+  const r = WR.state.report, d = WR.today(), now = Date.now();
+  const day = r.days[d] = r.days[d] || { s: 0, l: 0, k: {} };
+  const gap = now - (r.at || 0); day.s += gap > 0 && gap < GAP_MS ? Math.round(gap / 1000) : FIRST_S; r.at = now;
+  const ks = Object.keys(r.days); if (ks.length > LOG_DAYS) ks.sort().slice(0, ks.length - LOG_DAYS).forEach(k => delete r.days[k]);
+  return day;
+}
+// one right/wrong answer for the report (today + all time); no star or total changes
+WR.tally = (key, ok) => {
+  const r = WR.state.report, day = logDay(); if (!key) return;
+  for (const t of [r.tally, day.k]) { const v = t[key] = t[key] || [0, 0]; v[ok ? 0 : 1]++; }
+};
+// every answered question: the save's totals + the report tally (tallyOk when "right" differs, e.g. an Echo Well retry)
+WR.countAnswer = (ok, key, tallyOk = ok) => { const s = WR.state; s.totalAnswered++; if (ok) s.totalCorrect++; WR.tally(key, tallyOk); };
+// the end of any lesson / round: the "Complete 2 lessons" quest, one lesson in today's log, the streak (returns true if it grew)
+WR.activityDone = (count = true) => {
+  const day = logDay(); if (count) { day.l++; WR.questEvent("lesson2"); }
+  const grew = WR.bumpStreak(); WR.save(); return grew;
+};
 // ✒️ Story Quill: best result per prompt ({ total, crowns, scales, at }) and saved drafts per prompt ({ plan, text, at })
 const freshWriting = () => ({ checks: 0, crowns: 0, best: {}, drafts: {} });
 // 🔢 Number Kingdom: chosen grade, best score per topic ("g3.times", "g7.mixed", "dojo.clongdiv"), Times-Table Tower facts
@@ -98,7 +138,7 @@ WR.fixMath = m => { const f = freshMath(); m = m || f;
   for (const box of ["dojo", "balance"]) for (const k in f[box]) if (m[box][k] === undefined) m[box][k] = f[box][k]; return m; };
 const freshSpeaking = () => ({ rounds: 0, attempts: 0, passed: 0, perfect: 0, preferShadow: false, shadowWhy: null });
 // older saves (before the Echo Well / Story Quill) simply gain the speaking and writing stats; nothing else changes
-function migrate(s) {
+function migrate(s, raw = s) {
   s.speaking = Object.assign(freshSpeaking(), s.speaking || {});
   s.writing = Object.assign(freshWriting(), s.writing || {});
   s.writing.best = s.writing.best || {}; s.writing.drafts = s.writing.drafts || {};
@@ -106,9 +146,11 @@ function migrate(s) {
   s.progress = s.progress || {}; s.mistakes = s.mistakes || [];
   s.stories = Object.assign({ done: {}, words: {}, reads: 0 }, s.stories || {}); s.stories.done = s.stories.done || {}; s.stories.words = s.stories.words || {};
   s.math = WR.fixMath(s.math);
+  if (!raw.report || typeof raw.report !== "object") s.report = seedReport(s);
+  s.report.days = s.report.days || {}; s.report.tally = s.report.tally || {}; s.report.at = s.report.at || 0;
   return s;
 }
-WR.load = () => { try { const s = JSON.parse(localStorage.getItem(SAVE_KEY)); if (s && s.v === 1) return migrate(Object.assign(freshState(), s)); } catch (e) { } return freshState(); };
+WR.load = () => { try { const s = JSON.parse(localStorage.getItem(SAVE_KEY)); if (s && s.v === 1) return migrate(Object.assign(freshState(), s), s); } catch (e) { } return freshState(); };
 WR.save = () => localStorage.setItem(SAVE_KEY, JSON.stringify(WR.state));
 WR.reset = () => { localStorage.removeItem(SAVE_KEY); WR.state = freshState(); };
 WR.state = WR.load();
@@ -286,5 +328,9 @@ WR.recordLesson = (rid, key, score) => {
   prev.best = Math.max(prev.best, score); prev.plays++; prev.last = Date.now();
   s.progress[rid][key] = prev; s.lessonsDone++; WR.save();
 };
+// every English skill a lesson, Mistake Garden plant or report row can name (core four + bonus skills, loaded later)
+WR.allSkills = () => SKILLS.concat(WR.SPEAKING || [], WR.WRITING || [], WR.STORY || []);
+WR.skillInfo = id => WR.allSkills().find(x => x.id === id) || { id, name: id, icon: "✨" };
+WR.levelOf = rid => { const r = WR.realms && WR.realms.find(y => y.id === rid); return r ? r.level : ""; };
 WR.crowns = score => score >= 0.9 ? 3 : score >= 0.7 ? 2 : score >= 0.5 ? 1 : 0;
 })();
