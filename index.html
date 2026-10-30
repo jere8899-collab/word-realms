@@ -7,6 +7,10 @@
 <title>Word Realms — A Fairytale English &amp; Maths Quest (CEFR A1–C2, Grades 1–12)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/ui/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/math.css">
@@ -16,27 +20,32 @@
 <div class="sparkles"></div>
 <div id="app"><div class="center" style="padding:80px 0"><div style="font-size:3rem">✨</div><h2>Opening the storybook…</h2></div></div>
 <nav class="navbar" id="navbar" style="display:none"></nav>
-<script src="js/payments.js"></script>
-<script src="js/speech.js"></script>
-<script src="js/core.js"></script>
-<script src="js/cloud.js"></script>
-<script src="js/lesson.js"></script>
-<script src="js/specials.js"></script>
-<script src="js/parent-gate.js"></script>
-<script src="js/pet-shop.js"></script>
-<script src="js/garden.js"></script>
-<script src="js/speaking.js"></script>
-<script src="js/writing.js"></script>
-<script src="js/story.js"></script>
-<script src="js/placement.js"></script>
-<script src="js/math-gen.js"></script>
-<script src="js/math-topics-p.js"></script>
-<script src="js/math-topics-m.js"></script>
-<script src="js/math-topics-h.js"></script>
-<script src="js/math-viz.js"></script>
-<script src="js/math.js"></script>
-<script src="js/math-dojo.js"></script>
-<script src="js/main.js"></script>
-<script src="js/ux.js"></script>
+<script defer src="js/payments.js"></script>
+<script defer src="js/speech.js"></script>
+<script defer src="js/core.js"></script>
+<script defer src="js/cloud.js"></script>
+<script defer src="js/lesson.js"></script>
+<script defer src="js/specials.js"></script>
+<script defer src="js/parent-gate.js"></script>
+<script defer src="js/pet-shop.js"></script>
+<script defer src="js/garden.js"></script>
+<script defer src="js/speaking.js"></script>
+<script defer src="js/writing.js"></script>
+<script defer src="js/story.js"></script>
+<script defer src="js/placement.js"></script>
+<script defer src="js/math-gen.js"></script>
+<script defer src="js/math-topics-p.js"></script>
+<script defer src="js/math-topics-m.js"></script>
+<script defer src="js/math-topics-h.js"></script>
+<script defer src="js/math-viz.js"></script>
+<script defer src="js/math.js"></script>
+<script defer src="js/math-dojo.js"></script>
+<script defer src="js/main.js"></script>
+<script defer src="js/ux.js"></script>
+<script>
+/* 📲 T17: installable + offline after one visit (sw.js is versioned by content hash, so updates reach players).
+   Headless test browsers skip it unless a test opts in with window.__WR_SW. */
+if ("serviceWorker" in navigator && !(navigator.webdriver && !window.__WR_SW)) addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+</script>
 </body>
 </html>

@@ -1,0 +1,92 @@
+# C1 bank growth: B1 grammar (+75). Kid/teen topics; rule + example and a "why not" note for every wrong option.
+from c1_grow import m
+B1G = [
+ # conditionals
+ m("If I ___ a dragon, I'd fly to school.", "had", ["have", "would have", "will have"], "Second conditional (imaginary): If + past simple, would + verb.", ["Have is for real possibilities (first conditional).", "Would goes in the other half, not after if.", "Will is for real future situations."]),
+ m("If you ___ your homework, you can play later.", "finish", ["will finish", "finished", "would finish"], "First conditional: If + present simple, will/can + verb.", ["We don't use will after if here.", "Finished makes it imaginary; this is a real plan.", "Would is for imaginary situations."]),
+ m("What would you do if you ___ a million stars?", "won", ["win", "will win", "had won"], "Imaginary present/future → If + past simple.", ["Win would make it a real possibility (first conditional).", "No will after if.", "Had won is for the past (third conditional)."]),
+ m("If I were you, I ___ apologise to her.", "would", ["will", "am", "did"], "Advice: If I were you, I would…", ["Will doesn't match 'If I were you'.", "Am doesn't go with apologise.", "Did is past."]),
+ m("I'll lend you my bike ___ you bring it back by six.", "provided that", ["unless", "even though", "in case of"], "Provided that = only if.", ["Unless means if not.", "Even though shows contrast.", "In case of needs a noun."]),
+ m("Take a jacket ___ it gets cold later.", "in case", ["unless", "so that it", "if not"], "In case = because it might happen.", ["Unless means if not.", "So that it needs a purpose verb: so that you stay warm.", "If not doesn't fit here."]),
+ m("You won't get better ___ you practise.", "unless", ["if", "when", "as soon as"], "Unless = if … not.", ["If would mean the opposite.", "When doesn't give the condition.", "As soon as is about time."]),
+ m("I'll call you as soon as I ___ home.", "get", ["will get", "got", "am getting"], "After time words (when, as soon as) use the present for the future.", ["No will after as soon as.", "Got is past.", "Am getting is now."]),
+ # passive
+ m("The school play ___ by Year 6 every year.", "is performed", ["performs", "is performing", "has perform"], "Present simple passive: is/are + past participle.", ["Performs is active; the play doesn't perform itself.", "Is performing is active, now.", "Has perform is wrong: has performed."]),
+ m("The new library ___ last month.", "was opened", ["opened", "is opened", "has been open"], "Past simple passive: was/were + past participle.", ["Opened (active) needs a person who opened it.", "Is opened is present.", "Has been open isn't for 'last month'."]),
+ m("These cookies ___ by my little sister.", "were made", ["made", "was made", "were make"], "Plural past passive: were + past participle.", ["Made alone makes the cookies the doers.", "Cookies are plural, so were.", "We need the participle made."]),
+ m("A new park ___ near our school next year.", "will be built", ["will build", "is built", "has built"], "Future passive: will be + past participle.", ["Will build needs a builder as the subject.", "Is built is present.", "Has built is active present perfect."]),
+ m("My bike ___. I can't find it anywhere!", "has been stolen", ["has stolen", "is stealing", "stole"], "Present perfect passive: has/have been + past participle.", ["Has stolen means the bike stole something.", "Is stealing is active.", "Stole is active."]),
+ m("English ___ in many countries.", "is spoken", ["speaks", "is speaking", "spoke"], "Passive for general facts: is spoken.", ["Speaks makes English the speaker.", "Is speaking is active.", "Spoke is past active."]),
+ # reported speech
+ m("Lily said she ___ tired.", "was", ["is being", "were", "be"], "Reported speech: present → past ('I am tired' → she was tired).", ["Is being isn't used with tired here.", "She → was, not were.", "Be needs a form."]),
+ m("He told me he ___ his phone at school.", "had left", ["has left", "leaves", "is leaving"], "Reported: past simple/present perfect → past perfect.", ["Has left doesn't change back in reported speech.", "Leaves is present.", "Is leaving is now."]),
+ m("She asked me ___ I liked pizza.", "if", ["that", "do", "what"], "Reported yes/no question: ask if/whether.", ["That is for statements.", "No do in reported questions.", "What is for wh- questions."]),
+ m("Mum told me ___ my room.", "to tidy", ["tidy", "tidying", "that tidy"], "Tell someone to do something.", ["We need to before tidy.", "Tell isn't followed by -ing.", "That tidy isn't right."]),
+ m("The coach asked us where we ___ from.", "came", ["did come", "do come", "come from"], "Reported wh- question: normal word order, past tense.", ["No did in reported questions.", "No do and no present.", "From is already at the end."]),
+ m("He said he ___ come to the party tomorrow.", "would", ["will", "can", "is"], "Reported: will → would.", ["Will usually changes to would.", "Can changes to could.", "Is doesn't go with come."]),
+ # present perfect continuous / past perfect
+ m("I'm so hot! I ___ for an hour.", "have been running", ["ran", "am running", "had run"], "Present perfect continuous: an activity up to now, often with a visible result.", ["Ran is a finished past action with no link to now.", "Am running is now, not 'for an hour' up to now.", "Had run is before another past time."]),
+ m("How long ___ for the bus?", "have you been waiting", ["are you waiting", "did you wait", "you wait"], "How long have you been + -ing? asks about time up to now.", ["Are you waiting doesn't go with how long here.", "Did you wait is finished.", "A question needs an auxiliary."]),
+ m("When we got to the cinema, the film ___.", "had already started", ["already started", "has already started", "was already start"], "Past perfect: an action before another past action.", ["Past simple doesn't show it happened first.", "Has started is present perfect, not past.", "Was start isn't a form."]),
+ m("She was upset because she ___ her lunch.", "had forgotten", ["has forgotten", "forgets", "was forgetting"], "Past perfect for the earlier cause.", ["Has forgotten is present perfect.", "Forgets is present.", "Was forgetting isn't natural here."]),
+ m("I ___ English for three years before I visited London.", "had been studying", ["have been studying", "am studying", "study"], "Past perfect continuous: an activity up to a past moment.", ["Have been is up to now, not up to a past moment.", "Am studying is now.", "Study is present simple."]),
+ # used to / be used to / would
+ m("I ___ be afraid of dogs, but now I love them.", "used to", ["use to", "am used to", "was used"], "Used to + verb = a past habit or state that isn't true now.", ["Use to is only after did: didn't use to.", "Am used to + -ing means 'familiar with'.", "Was used is passive."]),
+ m("She isn't used to ___ in a big city.", "living", ["live", "lived", "to live"], "Be used to + -ing = be familiar with.", ["After 'used to' (be) we need -ing.", "Lived is past.", "To live is for 'used to' habits, not be used to."]),
+ m("Did you ___ have long hair?", "use to", ["used to", "using to", "uses to"], "Questions/negatives: did … use to (no -d).", ["After did, use the base form: use to.", "Using to isn't a form.", "Uses to isn't a form."]),
+ m("I'm getting used to ___ my new braces.", "wearing", ["wear", "wore", "be wearing"], "Get used to + -ing.", ["We need -ing after to here.", "Wore is past.", "Be wearing isn't right after to here."]),
+ # gerunds / infinitives
+ m("I remember ___ my first pet. It was a goldfish.", "getting", ["to get", "get", "got"], "Remember + -ing = recall a past memory.", ["Remember to get = not forget to do it (future).", "We need -ing.", "Got is past."]),
+ m("Remember ___ the cat before you go!", "to feed", ["feeding", "feed", "fed"], "Remember + to = don't forget to do it.", ["Remember feeding = recall a past memory.", "We need to before feed.", "Fed is past."]),
+ m("He stopped ___ a drink because he was thirsty.", "to have", ["having", "have", "had"], "Stop + to = stop in order to do something.", ["Stop having = he finished drinking.", "We need to.", "Had is past."]),
+ m("We're looking forward to ___ you!", "seeing", ["see", "seen", "be see"], "Look forward to + -ing (to is a preposition).", ["After 'to' here, use -ing.", "Seen needs have.", "Be see isn't a form."]),
+ m("I can't help ___ when I watch that cartoon.", "laughing", ["to laugh", "laugh", "laughed"], "Can't help + -ing = can't stop yourself.", ["Can't help is followed by -ing.", "We need -ing.", "Laughed is past."]),
+ m("It's not worth ___ now. The shop is closed.", "going", ["to go", "go", "went"], "It's (not) worth + -ing.", ["Worth is followed by -ing.", "We need -ing.", "Went is past."]),
+ m("She managed ___ the puzzle in five minutes.", "to finish", ["finishing", "finish", "finished"], "Manage + to + verb.", ["Manage isn't followed by -ing.", "We need to.", "Finished is past."]),
+ m("Would you mind ___ the window?", "opening", ["to open", "open", "opened"], "Would you mind + -ing? is a polite request.", ["Mind is followed by -ing.", "We need -ing.", "Opened is past."]),
+ m("My parents let me ___ up late on Fridays.", "stay", ["to stay", "staying", "stayed"], "Let + person + base verb (no to).", ["Let doesn't take to.", "Let doesn't take -ing.", "Stayed is past."]),
+ m("The teacher made us ___ the poem again.", "read", ["to read", "reading", "reads"], "Make + person + base verb.", ["Active make doesn't take to.", "Make doesn't take -ing.", "No -s after us."]),
+ # relative clauses
+ m("The boy ___ bike was stolen is my cousin.", "whose", ["who", "which", "who's"], "Whose = belonging to the person.", ["Who would need 'his bike'.", "Which is for things.", "Who's = who is."]),
+ m("Saturday is the day ___ we go swimming.", "when", ["which", "where", "who"], "When for times in relative clauses.", ["Which would need 'on': on which.", "Where is for places.", "Who is for people."]),
+ m("My grandma, ___ is 80, still rides a bike.", "who", ["that", "which", "whose"], "Non-defining clause (with commas): who for people, never that.", ["That can't be used after a comma.", "Which is for things.", "Whose shows owning."]),
+ m("The robot ___ we built won a prize.", "that", ["what", "who", "where"], "That/which for things; it can be left out when it's the object.", ["What isn't a relative pronoun here.", "Who is for people.", "Where is for places."]),
+ # modals of deduction / obligation
+ m("He's been training all day. He ___ be exhausted.", "must", ["can't", "mustn't", "shouldn't"], "Must = I'm almost sure it's true.", ["Can't = I'm sure it isn't true.", "Mustn't = not allowed.", "Shouldn't is advice."]),
+ m("That ___ be Jack's bag. His is blue, and this is red.", "can't", ["must", "should", "has to"], "Can't = I'm sure it isn't.", ["Must means you're sure it is.", "Should is for advice or expectation.", "Has to is about rules."]),
+ m("Where's Ella? — She ___ be in the library. I'm not sure.", "might", ["must", "can't", "has to"], "Might/may/could = possibly.", ["Must means you're sure.", "Can't means you're sure she isn't.", "Has to is about rules."]),
+ m("Ben isn't here yet. He ___ have missed the bus.", "must", ["should", "can", "would"], "Must have + past participle = I'm almost sure it happened.", ["Should have = it was a good idea, but it didn't happen.", "We don't use can have for a past deduction; use could have.", "Would have is for conditionals."]),
+ m("We ___ wear school uniform. It's a rule.", "have to", ["don't have to", "might", "needn't"], "Have to = it's a rule or necessary.", ["Don't have to means not necessary.", "Might is possibility.", "Needn't means not necessary."]),
+ m("You ___ worry. Everything will be fine.", "needn't", ["mustn't", "must", "have"], "Needn't = it isn't necessary.", ["Mustn't means it's not allowed.", "Must would tell you to worry.", "Have needs to."]),
+ # wish
+ m("I wish I ___ taller. I can't reach the shelf.", "were", ["am", "will be", "be"], "Wish + past simple (were) for the present.", ["Wish isn't followed by the present.", "Wish isn't followed by will.", "Be needs a form."]),
+ m("I wish I ___ that sweet. Now my tooth hurts!", "hadn't eaten", ["didn't eat", "don't eat", "won't eat"], "Wish + past perfect = regret about the past.", ["Didn't eat is for a present wish.", "Don't eat is present.", "Won't is future."]),
+ m("I wish you ___ stop tapping your pencil!", "would", ["will", "did", "had"], "Wish + would = you want someone to change their behaviour.", ["Wish isn't followed by will.", "Did isn't used with 'stop' here.", "Had would need a past participle."]),
+ # linking
+ m("___ it was raining, we went for a walk.", "Although", ["Because", "Despite", "So"], "Although + clause = surprising contrast.", ["Because gives a reason.", "Despite needs a noun or -ing.", "So gives a result."]),
+ m("___ the rain, we enjoyed the trip.", "Despite", ["Although", "Even", "However"], "Despite + noun / -ing.", ["Although needs a clause: although it rained.", "Even needs though.", "However starts a new sentence."]),
+ m("I was ill. ___, I went to school.", "However", ["Although", "Despite", "Because"], "However links two sentences with contrast.", ["Although joins two clauses in one sentence.", "Despite needs a noun.", "Because gives a reason."]),
+ m("He practised every day ___ he could win the race.", "so that", ["because of", "in order", "such"], "So that + clause = purpose.", ["Because of needs a noun.", "In order needs to: in order to win.", "Such needs a noun."]),
+ m("I left early ___ miss the bus.", "so as not to", ["so that not", "in order not", "for not"], "So as not to / in order not to + verb = negative purpose.", ["So that needs a full clause: so that I didn't…", "In order not needs to.", "For not isn't English."]),
+ m("___ I got home, I had a snack.", "As soon as", ["Until", "Since", "Unless"], "As soon as = immediately after.", ["Until means up to that time.", "Since needs a past start point.", "Unless means if not."]),
+ m("She's good at maths, and ___ is her brother.", "so", ["too", "neither", "also"], "So + auxiliary + subject = 'too'.", ["Too goes at the end: her brother is too.", "Neither is for negatives.", "Also doesn't go there."]),
+ m("I don't like spiders. — ___ do I.", "Neither", ["So", "Too", "Either"], "Neither + auxiliary + subject agrees with a negative.", ["So is for positive sentences.", "Too goes at the end: Me too.", "Either goes at the end: I don't either."]),
+ # questions / word order
+ m("Can you tell me where ___?", "the toilets are", ["are the toilets", "the toilets is", "is the toilets"], "Indirect questions use normal word order.", ["Don't put the verb first in an indirect question.", "Toilets are plural.", "Wrong order and singular."]),
+ m("I don't know what time ___.", "the film starts", ["does the film start", "starts the film", "the film start"], "Indirect question: subject + verb.", ["No does in indirect questions.", "Verb before subject is wrong here.", "The film → starts with -s."]),
+ m("Who ___ the window? — Sam did.", "broke", ["did break", "did broke", "breaked"], "Subject question: no did. Who broke…?", ["Did isn't used when who is the subject.", "Did + broke is wrong.", "Break is irregular: broke."]),
+ # articles / quantifiers
+ m("___ of my friends likes pineapple on pizza. Not one!", "None", ["No", "Any", "Nobody"], "None of + plural noun = not one.", ["No needs a noun directly: no friends.", "Any is for questions.", "Nobody isn't followed by of."]),
+ m("There were ___ people at the concert that we couldn't move.", "so many", ["such many", "so much", "too much"], "So many + countable plural … that.", ["We don't say such many.", "Much is for uncountable things.", "Too much is for uncountable things."]),
+ m("It was ___ a good game that we played it twice.", "such", ["so", "too", "very"], "Such + a + adjective + noun … that.", ["So goes with an adjective alone: so good.", "Too means more than enough.", "Very doesn't go with 'a good game that'."]),
+ m("We haven't got ___ time. Hurry up!", "much", ["many", "few", "a lot"], "Much + uncountable in negatives.", ["Many is for countable things.", "Few is for countable things.", "A lot needs of."]),
+ m("Both of the puppies ___ black.", "are", ["is", "be", "was being"], "Both of + plural → plural verb.", ["Both means two, so are.", "Be needs a form.", "Was being is singular and odd here."]),
+ m("Each student ___ a name badge.", "has", ["have", "are having", "having"], "Each + singular noun + singular verb.", ["Each takes a singular verb.", "Are is plural.", "Having needs a verb before it."]),
+ # tense review
+ m("I ___ my grandparents next weekend. It's all arranged.", "am visiting", ["visit", "will visiting", "visited"], "Present continuous for arranged plans.", ["Present simple is for timetables, not personal plans.", "Will visiting isn't a form.", "Visited is past."]),
+ m("The train ___ at 9:15 tomorrow.", "leaves", ["is leave", "left", "leaving"], "Present simple for timetables.", ["Is leave isn't a form.", "Left is past.", "Leaving needs is."]),
+ m("This time tomorrow, we ___ on the beach!", "will be lying", ["will lie down", "lie", "are lain"], "Future continuous: an action in progress at a future time.", ["Will lie down is a single action, not in progress.", "Lie is present.", "Are lain isn't a form."]),
+ m("By next June, I ___ all the Harry Potter books.", "will have read", ["will read", "have read", "am reading"], "Future perfect: finished before a future time.", ["Will read doesn't show it's finished by June.", "Have read is up to now.", "Am reading is now."]),
+ m("I ___ to the dentist twice this month.", "have been", ["went", "was", "am going"], "Present perfect for a period that isn't finished (this month).", ["Went is for finished times like last month.", "Was doesn't go with 'to the dentist' here.", "Am going is future."]),
+ m("I ___ my keys yesterday, but I found them today.", "lost", ["have lost", "had been losing", "lose"], "Past simple with a finished time (yesterday).", ["Present perfect doesn't go with yesterday.", "That form doesn't fit a single action.", "Lose is present."]),
+]

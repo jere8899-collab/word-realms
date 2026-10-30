@@ -4,17 +4,17 @@
   "say": "Excuse me, how do I get to the station? — Go straight on and take the second street on the left.",
   "q": "How do you get to the station?",
   "options": [
-   "second street on the left",
+   "two streets along, on the left",
    "first street on the left",
    "second street on the right",
    "straight on only"
   ],
   "answer": 0,
-  "explain": "'Take the second street on the left.'",
+  "explain": "'The second street on the left' = two streets along, on the left.",
   "notes": {
-   "first street on the left": "You didn't hear “first street on the left”. Listen again for the key words.",
-   "second street on the right": "You didn't hear “second street on the right”. Listen again for the key words.",
-   "straight on only": "You didn't hear “straight on only”. Listen again for the key words."
+   "first street on the left": "“first street on the left” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "second street on the right": "“second street on the right” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "straight on only": "“straight on only” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
   }
  },
  {
@@ -30,9 +30,9 @@
   "answer": 0,
   "explain": "The café opens at eleven; the museum at 9:30.",
   "notes": {
-   "9:30": "You didn't hear “9:30”. Listen again for the key words.",
-   "10:00": "You didn't hear “10:00”. Listen again for the key words.",
-   "12:00": "You didn't hear “12:00”. Listen again for the key words."
+   "9:30": "“9:30” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "10:00": "“10:00” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "12:00": "“12:00” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
   }
  },
  {
@@ -40,17 +40,17 @@
   "say": "I usually walk to school, but today I'm going by bike because I'm late.",
   "q": "How is the speaker going to school today?",
   "options": [
-   "by bike",
+   "by bicycle",
    "on foot",
    "by bus",
    "by car"
   ],
   "answer": 0,
-  "explain": "Usually walks, but TODAY by bike.",
+  "explain": "Usually he walks, but today: 'by bike' = by bicycle.",
   "notes": {
-   "on foot": "You didn't hear “on foot”. Listen again for the key words.",
-   "by bus": "You didn't hear “by bus”. Listen again for the key words.",
-   "by car": "You didn't hear “by car”. Listen again for the key words."
+   "on foot": "“on foot” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "by bus": "“by bus” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "by car": "“by car” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
   }
  },
  {
@@ -66,9 +66,9 @@
   "answer": 0,
   "explain": "Now they cost twenty-five pounds.",
   "notes": {
-   "£40": "You didn't hear “£40”. Listen again for the key words.",
-   "£15": "You didn't hear “£15”. Listen again for the key words.",
-   "£45": "You didn't hear “£45”. Listen again for the key words."
+   "£40": "“£40” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "£15": "“£15” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "£45": "“£45” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
   }
  },
  {
@@ -84,9 +84,9 @@
   "answer": 0,
   "explain": "Quarter to seven = 6:45.",
   "notes": {
-   "7:15": "You didn't hear “7:15”. Listen again for the key words.",
-   "7:45": "You didn't hear “7:45”. Listen again for the key words.",
-   "6:15": "You didn't hear “6:15”. Listen again for the key words."
+   "7:15": "“7:15” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "7:45": "“7:45” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "6:15": "“6:15” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
   }
  },
  {
@@ -102,9 +102,9 @@
   "answer": 0,
   "explain": "'No sugar, thanks.'",
   "notes": {
-   "cheese": "You didn't hear “cheese”. Listen again for the key words.",
-   "tea": "You didn't hear “tea”. Listen again for the key words.",
-   "a sandwich": "You didn't hear “a sandwich”. Listen again for the key words."
+   "cheese": "“cheese” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "tea": "“tea” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "a sandwich": "“a sandwich” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
   }
  },
  {
@@ -120,9 +120,9 @@
   "answer": 0,
   "explain": "'My brother is the tallest.'",
   "notes": {
-   "the sister": "You didn't hear “the sister”. Listen again for the key words.",
-   "the speaker": "You didn't hear “the speaker”. Listen again for the key words.",
-   "the mother": "You didn't hear “the mother”. Listen again for the key words."
+   "the sister": "“the sister” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "the speaker": "“the speaker” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "the mother": "“the mother” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
   }
  },
  {
@@ -138,9 +138,9 @@
   "answer": 0,
   "explain": "'Sunshine in the afternoon.'",
   "notes": {
-   "cloudy": "You didn't hear “cloudy”. Listen again for the key words.",
-   "rainy": "You didn't hear “rainy”. Listen again for the key words.",
-   "snowy": "You didn't hear “snowy”. Listen again for the key words."
+   "cloudy": "“cloudy” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "rainy": "“rainy” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "snowy": "“snowy” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
   }
  },
  {
@@ -156,9 +156,9 @@
   "answer": 0,
   "explain": "'I've never been to Rome.'",
   "notes": {
-   "Paris": "You didn't hear “Paris”. Listen again for the key words.",
-   "London": "You didn't hear “London”. Listen again for the key words.",
-   "Madrid": "You didn't hear “Madrid”. Listen again for the key words."
+   "Paris": "“Paris” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "London": "“London” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "Madrid": "“Madrid” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
   }
  },
  {
@@ -174,9 +174,9 @@
   "answer": 0,
   "explain": "'Ten minutes late.' Platform four is a distractor.",
   "notes": {
-   "4 minutes": "You didn't hear “4 minutes”. Listen again for the key words.",
-   "14 minutes": "You didn't hear “14 minutes”. Listen again for the key words.",
-   "40 minutes": "You didn't hear “40 minutes”. Listen again for the key words."
+   "4 minutes": "“4 minutes” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "14 minutes": "“14 minutes” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "40 minutes": "“40 minutes” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
   }
  },
  {
@@ -192,9 +192,9 @@
   "answer": 0,
   "explain": "'We've got enough bread.'",
   "notes": {
-   "eggs": "You didn't hear “eggs”. Listen again for the key words.",
-   "milk": "You didn't hear “milk”. Listen again for the key words.",
-   "butter": "You didn't hear “butter”. Listen again for the key words."
+   "eggs": "“eggs” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "milk": "“milk” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "butter": "“butter” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
   }
  },
  {
@@ -210,9 +210,9 @@
   "answer": 0,
   "explain": "Saturday the twenty-first.",
   "notes": {
-   "Friday 21st": "You didn't hear “Friday 21st”. Listen again for the key words.",
-   "Saturday 1st": "You didn't hear “Saturday 1st”. Listen again for the key words.",
-   "Friday 20th": "You didn't hear “Friday 20th”. Listen again for the key words."
+   "Friday 21st": "“Friday 21st” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "Saturday 1st": "“Saturday 1st” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "Friday 20th": "“Friday 20th” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
   }
  },
  {
@@ -228,9 +228,9 @@
   "answer": 0,
   "explain": "'I've got a terrible headache.'",
   "notes": {
-   "homework": "You didn't hear “homework”. Listen again for the key words.",
-   "a sore leg": "You didn't hear “a sore leg”. Listen again for the key words.",
-   "the rain": "You didn't hear “the rain”. Listen again for the key words."
+   "homework": "“homework” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "a sore leg": "“a sore leg” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "the rain": "“the rain” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
   }
  },
  {
@@ -246,9 +246,9 @@
   "answer": 0,
   "explain": "'A lovely balcony.'",
   "notes": {
-   "the kitchen": "You didn't hear “the kitchen”. Listen again for the key words.",
-   "the bedrooms": "You didn't hear “the bedrooms”. Listen again for the key words.",
-   "the garden": "You didn't hear “the garden”. Listen again for the key words."
+   "the kitchen": "“the kitchen” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "the bedrooms": "“the bedrooms” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "the garden": "“the garden” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
   }
  },
  {
@@ -256,17 +256,17 @@
   "say": "The swimming pool is closed on Mondays for cleaning.",
   "q": "Why is the pool closed on Mondays?",
   "options": [
-   "for cleaning",
+   "so it can be cleaned",
    "for a holiday",
    "for repairs",
    "for a competition"
   ],
   "answer": 0,
-  "explain": "'Closed on Mondays for cleaning.'",
+  "explain": "'Closed for cleaning' = closed so it can be cleaned.",
   "notes": {
-   "for a holiday": "You didn't hear “for a holiday”. Listen again for the key words.",
-   "for repairs": "You didn't hear “for repairs”. Listen again for the key words.",
-   "for a competition": "You didn't hear “for a competition”. Listen again for the key words."
+   "for a holiday": "“for a holiday” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "for repairs": "“for repairs” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "for a competition": "“for a competition” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
   }
  },
  {
@@ -274,17 +274,17 @@
   "say": "You can borrow three books for two weeks.",
   "q": "How long can you keep the books?",
   "options": [
-   "two weeks",
+   "14 days",
    "three weeks",
    "two days",
    "three days"
   ],
   "answer": 0,
-  "explain": "Three books, two weeks.",
+  "explain": "Two weeks = 14 days. Three is the number of books.",
   "notes": {
-   "three weeks": "You didn't hear “three weeks”. Listen again for the key words.",
-   "two days": "You didn't hear “two days”. Listen again for the key words.",
-   "three days": "You didn't hear “three days”. Listen again for the key words."
+   "three weeks": "“three weeks” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "two days": "“two days” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "three days": "“three days” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
   }
  },
  {
@@ -300,9 +300,9 @@
   "answer": 0,
   "explain": "'No onions.'",
   "notes": {
-   "chicken": "You didn't hear “chicken”. Listen again for the key words.",
-   "salad": "You didn't hear “salad”. Listen again for the key words.",
-   "bread": "You didn't hear “bread”. Listen again for the key words."
+   "chicken": "“chicken” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "salad": "“salad” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "bread": "“bread” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
   }
  },
  {
@@ -318,9 +318,9 @@
   "answer": 0,
   "explain": "Half past seven = 7:30.",
   "notes": {
-   "7:45": "You didn't hear “7:45”. Listen again for the key words.",
-   "7:15": "You didn't hear “7:15”. Listen again for the key words.",
-   "8:00": "You didn't hear “8:00”. Listen again for the key words."
+   "7:45": "“7:45” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "7:15": "“7:15” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "8:00": "“8:00” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
   }
  },
  {
@@ -336,9 +336,9 @@
   "answer": 0,
   "explain": "She lives in Manchester now; she's moving next month.",
   "notes": {
-   "London": "You didn't hear “London”. Listen again for the key words.",
-   "Liverpool": "You didn't hear “Liverpool”. Listen again for the key words.",
-   "Leeds": "You didn't hear “Leeds”. Listen again for the key words."
+   "London": "“London” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "Liverpool": "“Liverpool” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "Leeds": "“Leeds” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
   }
  },
  {
@@ -354,9 +354,9 @@
   "answer": 0,
   "explain": "'I've got a piano lesson.'",
   "notes": {
-   "She's feeling ill.": "You didn't hear “She's feeling ill.”. Listen again for the key words.",
-   "She has to babysit.": "You didn't hear “She has to babysit.”. Listen again for the key words.",
-   "She doesn't want to.": "You didn't hear “She doesn't want to.”. Listen again for the key words."
+   "She's feeling ill.": "“She's feeling ill.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "She has to babysit.": "“She has to babysit.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "She doesn't want to.": "“She doesn't want to.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
   }
  },
  {
@@ -364,17 +364,17 @@
   "say": "Go straight on and take the second turning on the left. The bank's opposite the library.",
   "q": "Where is the bank?",
   "options": [
-   "opposite the library",
+   "across from the library",
    "next to the library",
    "behind the library",
    "on the first left"
   ],
   "answer": 0,
-  "explain": "'Opposite the library.'",
+  "explain": "Opposite = across from.",
   "notes": {
-   "next to the library": "You didn't hear “next to the library”. Listen again for the key words.",
-   "behind the library": "You didn't hear “behind the library”. Listen again for the key words.",
-   "on the first left": "You didn't hear “on the first left”. Listen again for the key words."
+   "next to the library": "“next to the library” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "behind the library": "“behind the library” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "on the first left": "“on the first left” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
   }
  },
  {
@@ -390,9 +390,9 @@
   "answer": 0,
   "explain": "They stayed in and played board games.",
   "notes": {
-   "went skating outside": "You didn't hear “went skating outside”. Listen again for the key words.",
-   "visited friends": "You didn't hear “visited friends”. Listen again for the key words.",
-   "went shopping": "You didn't hear “went shopping”. Listen again for the key words."
+   "went skating outside": "“went skating outside” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "visited friends": "“visited friends” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "went shopping": "“went shopping” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
   }
  },
  {
@@ -408,9 +408,9 @@
   "answer": 0,
   "explain": "'Driving' = by car.",
   "notes": {
-   "by plane": "You didn't hear “by plane”. Listen again for the key words.",
-   "by train": "You didn't hear “by train”. Listen again for the key words.",
-   "by boat": "You didn't hear “by boat”. Listen again for the key words."
+   "by plane": "“by plane” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "by train": "“by train” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "by boat": "“by boat” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
   }
  },
  {
@@ -426,9 +426,9 @@
   "answer": 0,
   "explain": "£20 − £5 = £15.",
   "notes": {
-   "£20": "You didn't hear “£20”. Listen again for the key words.",
-   "£25": "You didn't hear “£25”. Listen again for the key words.",
-   "£5": "You didn't hear “£5”. Listen again for the key words."
+   "£20": "“£20” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "£25": "“£25” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "£5": "“£5” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
   }
  },
  {
@@ -444,9 +444,9 @@
   "answer": 0,
   "explain": "'…a present from my uncle.'",
   "notes": {
-   "his dad": "You didn't hear “his dad”. Listen again for the key words.",
-   "his grandad": "You didn't hear “his grandad”. Listen again for the key words.",
-   "his brother": "You didn't hear “his brother”. Listen again for the key words."
+   "his dad": "“his dad” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "his grandad": "“his grandad” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "his brother": "“his brother” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
   }
  },
  {
@@ -462,9 +462,9 @@
   "answer": 0,
   "explain": "If they miss this bus, they'll wait 40 minutes.",
   "notes": {
-   "The bus is already late.": "You didn't hear “The bus is already late.”. Listen again for the key words.",
-   "It's going to rain soon.": "You didn't hear “It's going to rain soon.”. Listen again for the key words.",
-   "The shop is closing.": "You didn't hear “The shop is closing.”. Listen again for the key words."
+   "The bus is already late.": "“The bus is already late.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "It's going to rain soon.": "“It's going to rain soon.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "The shop is closing.": "“The shop is closing.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
   }
  },
  {
@@ -472,17 +472,17 @@
   "say": "Sorry I'm late. There was an accident on the motorway.",
   "q": "Why was the speaker late?",
   "options": [
-   "There was an accident.",
+   "There was a crash on the road.",
    "He overslept.",
    "His car broke down.",
    "He got lost."
   ],
   "answer": 0,
-  "explain": "'There was an accident on the motorway.'",
+  "explain": "An accident on the motorway = a crash on the road.",
   "notes": {
-   "He overslept.": "You didn't hear “He overslept.”. Listen again for the key words.",
-   "His car broke down.": "You didn't hear “His car broke down.”. Listen again for the key words.",
-   "He got lost.": "You didn't hear “He got lost.”. Listen again for the key words."
+   "He overslept.": "“He overslept.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "His car broke down.": "“His car broke down.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "He got lost.": "“He got lost.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
   }
  },
  {
@@ -498,9 +498,181 @@
   "answer": 0,
   "explain": "The lake is too cold; the pool is open.",
   "notes": {
-   "in the lake": "You didn't hear “in the lake”. Listen again for the key words.",
-   "in the sea": "You didn't hear “in the sea”. Listen again for the key words.",
-   "in the river": "You didn't hear “in the river”. Listen again for the key words."
+   "in the lake": "“in the lake” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "in the sea": "“in the sea” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "in the river": "“in the river” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+  }
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "We are going to the beach tomorrow.",
+  "answer": "We are going to the beach tomorrow.",
+  "explain": "be going to + verb + place + time."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "She didn't finish her homework.",
+  "answer": "She didn't finish her homework.",
+  "explain": "didn't + verb."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "How many brothers have you got?",
+  "answer": "How many brothers have you got?",
+  "explain": "How many + plural + have you got?"
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "I usually walk to school.",
+  "answer": "I usually walk to school.",
+  "explain": "usually goes before the verb."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "They went to the cinema last night.",
+  "answer": "They went to the cinema last night.",
+  "explain": "went = past of go."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "Can I have some water, please?",
+  "answer": "Can I have some water, please?",
+  "explain": "Can I have…, please?"
+ },
+ {
+  "type": "listen",
+  "say": "Anna: Shall we meet at four?|Jack: I can't, I've got football. How about half past five?|Anna: OK, half past five.",
+  "q": "When will they meet?",
+  "options": [
+   "at half past five",
+   "at four o'clock",
+   "at five o'clock",
+   "at half past four"
+  ],
+  "answer": 0,
+  "explain": "Four doesn't work; they agree on half past five.",
+  "dialogue": true,
+  "notes": {
+   "at four o'clock": "“at four o'clock” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "at five o'clock": "“at five o'clock” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "at half past four": "“at half past four” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Shop: That's six pounds for the cake.|Girl: And two pounds for the juice?|Shop: Yes, so eight pounds altogether.",
+  "q": "How much does she pay?",
+  "options": [
+   "£8",
+   "£6",
+   "£2",
+   "£10"
+  ],
+  "answer": 0,
+  "explain": "Six + two = eight pounds.",
+  "dialogue": true,
+  "notes": {
+   "£6": "“£6” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "£2": "“£2” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "£10": "“£10” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Tom: I want the red T-shirt.|Dad: The red one is too small. Try the green one.|Tom: OK, I'll take the green one.",
+  "q": "Which T-shirt does Tom take?",
+  "options": [
+   "the green one",
+   "the red one",
+   "a blue one",
+   "both of them"
+  ],
+  "answer": 0,
+  "explain": "He changes his mind: 'I'll take the green one.'",
+  "dialogue": true,
+  "notes": {
+   "the red one": "“the red one” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "a blue one": "“a blue one” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "both of them": "“both of them” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "Nina: Is your birthday in May?|Omar: No, it's in June. My sister's is in May.",
+  "q": "When is Omar's birthday?",
+  "options": [
+   "in June",
+   "in May",
+   "in July",
+   "in March"
+  ],
+  "answer": 0,
+  "explain": "'It's in June.' May is his sister's.",
+  "dialogue": true,
+  "notes": {
+   "in May": "“in May” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "in July": "“in July” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "in March": "“in March” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "The party starts at three. Oh, sorry, I'm wrong. It's at four.",
+  "q": "When does the party start?",
+  "options": [
+   "at four",
+   "at three",
+   "at half past three",
+   "at two"
+  ],
+  "answer": 0,
+  "explain": "She corrects herself: 'It's at four.'",
+  "notes": {
+   "at three": "“at three” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "at half past three": "“at half past three” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "at two": "“at two” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I bought four pencils and two rubbers for school.",
+  "q": "How many things did the speaker buy?",
+  "options": [
+   "six",
+   "four",
+   "two",
+   "eight"
+  ],
+  "answer": 0,
+  "explain": "Four pencils + two rubbers = six things.",
+  "notes": {
+   "four": "“four” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "two": "“two” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "eight": "“eight” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+  }
+ },
+ {
+  "type": "listen",
+  "say": "I wanted the blue cap, but they only had green, so I got the green one. It's nice!",
+  "q": "What colour is the new cap?",
+  "options": [
+   "green",
+   "blue",
+   "red",
+   "black"
+  ],
+  "answer": 0,
+  "explain": "They had no blue, so she got green.",
+  "notes": {
+   "blue": "“blue” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "red": "“red” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
+   "black": "“black” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
   }
  }
 ]

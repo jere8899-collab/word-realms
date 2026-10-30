@@ -13,6 +13,48 @@ for lvl, extra in {**W1A, **W1B}.items():  # merge extra items into the base ban
     for sk, val in extra.items():
         if sk == "reading": D[lvl][sk]["passages"].extend(val["passages"])
         else: D[lvl][sk].extend(val)
+# ---- C1 (review 2026-10-30): grow the banks (tools/c1_grow.py); items carry their own C3 notes ----
+from c1_grow import GROW
+for lvl, extra in GROW.items():
+    for sk, val in extra.items(): D[lvl][sk].extend(val)
+# ---- C2 (review 2026-10-30): new question types (spell, picq, mistake, gaps, dictate, listen-and-order, dialogues) ----
+from c2_types import C2T
+_WORD_ART = {a["id"] for a in json.load(open(os.path.join(os.path.dirname(__file__), "..", "assets", "manifest.json")))["assets"] if a.get("type") == "word"}
+for lvl, extra in C2T.items():
+    for sk, val in extra.items():
+        for q in val:
+            t = q["type"]
+            if t == "spell": assert re.fullmatch(r"[a-z]+", q["answer"]) and (q.get("art") in _WORD_ART or ":" in q["q"]), q
+            elif t == "picq": assert all("word_" + o in _WORD_ART for o in q["options"]), q
+            elif t == "mistake": assert 0 <= q["wrong"] < len(q["words"]) and q["fix"] and q["fix"] != q["words"][q["wrong"]], q
+            elif t == "gaps": assert q["text"].count("___") == len(q["answers"]) and len(set(q["bank"])) == len(q["bank"]) and len(q["bank"]) > len(q["answers"]), q
+            elif t == "dictate": assert q["say"] == q["answer"], q
+            elif t == "order": assert q["answer"] == q.get("say", q["answer"]) and len(q["answer"].split()) >= 3, q
+            elif t == "listen": assert q.get("dialogue") and all(re.match(r"^[A-Z][\w ]*: ", ln) for ln in q["say"].split("|")), q
+        D[lvl][sk].extend(val)
+# ---- C4 (review 2026-10-30): listening that tests understanding (paraphrased right options + numbers/times/changes of mind) ----
+from c4 import C4P, C4NEW
+_c4_hit = set()
+for lvl in ("a2", "b1", "b2", "c1", "c2"):
+    for q in D[lvl]["listening"]:
+        if q.get("say") in C4P and q["type"] == "listen":
+            new, ex = C4P[q["say"]]; assert new not in q["options"], new
+            q["options"][q["answer"]] = new; q["explain"] = ex; _c4_hit.add(q["say"])
+    D[lvl]["listening"].extend(C4NEW.get(lvl, []))
+assert _c4_hit == set(C4P), set(C4P) - _c4_hit
+# ---- C5 (review 2026-10-30): child/teen-friendly topics for the C1 reading and listening items that were about politics ----
+from c5 import C5_PASSAGES, C5_LISTEN
+_c5 = set()
+for lvl, reps in C5_PASSAGES.items():
+    ps = D[lvl]["reading"]["passages"]
+    for old, new in reps.items():
+        idx = [n for n, p in enumerate(ps) if p["title"] == old]; assert len(idx) == 1, old
+        assert len(new["questions"]) == len(ps[idx[0]]["questions"]), old
+        ps[idx[0]] = new; _c5.add(old)
+for lvl, reps in C5_LISTEN.items():
+    for q in D[lvl]["listening"]:
+        if q.get("say") in reps: q.update(reps[q["say"]]); _c5.add(q["say"])
+assert len(_c5) == sum(len(v) for v in C5_PASSAGES.values()) + sum(len(v) for v in C5_LISTEN.values()), "C5 overlay mismatch"
 # ---- C3 (review 2026-10-30): rule + example explanations and a "why not" note for every wrong option; C5 kid-friendly C1/C2 stems ----
 from c3_a import C3A; from c3_b import C3B; from c3_c import C3C
 C3 = {**C3A, **C3B, **C3C}
@@ -24,9 +66,11 @@ for lvl, skills in D.items():
         items = [q for p in val["passages"] for q in p["questions"]] if sk == "reading" else val
         ov = C3.get(f"{lvl}/{sk}", {})
         for q in items:
-            if q["type"] == "order": continue
+            if q["type"] not in ("mcq", "listen", "picq"): continue
             right = q["options"][q["answer"]]; wrong = [o for i, o in enumerate(q["options"]) if i != q["answer"]]
             k = q["q"] + (" [" + q["pic"] + "]" if q.get("pic") else "")
+            if "_notes" in q:
+                assert len(q["_notes"]) == 3, q["q"]; q["notes"] = dict(zip(wrong, q.pop("_notes"))); continue
             hit = ov.get(k) or ov.get(q["q"])
             if hit:
                 _c3_used.add((f"{lvl}/{sk}", k if k in ov else q["q"]))
@@ -36,9 +80,11 @@ for lvl, skills in D.items():
                 if newq: q["q"] = newq
                 q["explain"] = ex; q["notes"] = dict(zip(wrong, notes))
             elif sk == "reading":
-                q["notes"] = {o: f"The story doesn't say “{o}”. Look for the line that answers the question." for o in wrong}
+                q["notes"] = {o: f"“{o}” doesn't answer the question. Find the line in the story that does, and read it again." for o in wrong}
             elif sk == "listening":
-                q["notes"] = {o: f"You didn't hear “{o}”. Listen again for the key words." for o in wrong}
+                q["notes"] = {o: f"“{o}” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind." for o in wrong}
+            elif q["type"] == "picq":
+                q["notes"] = {o: f"That picture is a {o}. {q['explain']}" for o in wrong}
             elif q.get("pic"):
                 q["notes"] = {o: f"“{o}” is something different. Look again: this is a {right}." for o in wrong}
             else:
@@ -58,10 +104,10 @@ for lvl, skills in D.items():
         n = sum(len(p["questions"]) for p in val["passages"]) if sk == "reading" else len(val)
         assert n >= 15, (lvl, sk, n)
         items = [q for p in val["passages"] for q in p["questions"]] if sk == "reading" else val
-        keys = [(q.get("say", "") + "|" + q.get("q", "") + "|" + str(q.get("answer")) + "|" + q.get("pic", "") + "|" + "/".join(q.get("options", [])[:1])) for q in items]
+        keys = [(q.get("say", "") + "|" + q.get("q", "") + "|" + str(q.get("answer")) + "|" + q.get("pic", "") + "|" + "/".join(q.get("options", [])[:1]) + "|" + " ".join(q.get("words", [])) + "|" + q.get("text", "")) for q in items]
         dup = {k for k in keys if keys.count(k) > 1}; assert not dup, (lvl, sk, dup)
         for q in items:
-            if q["type"] != "order": assert len(set(q["options"])) == len(q["options"]) == 4, q
+            if q["type"] in ("mcq", "listen", "picq"): assert len(set(q["options"])) == len(q["options"]) == 4, q
         counts[f"{lvl}/{sk}"] = n; tot += n
         check_fair(f"{lvl}/{sk}", items)
 # ---- Echo Well speaking prompts (bonus skill; not part of the 3-of-4 unlock rule) ----

@@ -508,5 +508,189 @@
    "even though": "Even though shows contrast.",
    "in case": "In case = to be ready for something that might happen."
   }
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "I have been learning English for three years.",
+  "explain": "have been + -ing + for + time."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "If it rains, we will stay at home.",
+  "explain": "If + present, will + verb."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "The book was written by a famous author.",
+  "explain": "Passive: was + past participle + by."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "She asked me where I lived.",
+  "explain": "Reported question: no question order."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "We used to play in the garden.",
+  "explain": "used to + verb for past habits."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "I've",
+   "lived",
+   "here",
+   "since",
+   "three",
+   "years."
+  ],
+  "wrong": 3,
+  "fix": "for",
+  "explain": "for + a length of time (three years); since + a starting point (since 2020)."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "My",
+   "brother",
+   "is",
+   "good",
+   "in",
+   "maths."
+  ],
+  "wrong": 4,
+  "fix": "at",
+  "explain": "good at + a subject or activity."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "He's",
+   "interested",
+   "on",
+   "robots."
+  ],
+  "wrong": 2,
+  "fix": "in",
+  "explain": "interested in."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "She",
+   "told",
+   "that",
+   "she",
+   "was",
+   "tired."
+  ],
+  "wrong": 1,
+  "fix": "said",
+  "explain": "say that / tell someone that."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "I'm",
+   "looking",
+   "forward",
+   "to",
+   "see",
+   "you."
+  ],
+  "wrong": 4,
+  "fix": "seeing",
+  "explain": "look forward to + -ing."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "This",
+   "is",
+   "the",
+   "girl",
+   "which",
+   "won",
+   "the",
+   "race."
+  ],
+  "wrong": 4,
+  "fix": "who",
+  "explain": "who for people."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "I've lived here ___ 2020 and I've known Sam ___ ten years.",
+  "answers": [
+   "since",
+   "for"
+  ],
+  "bank": [
+   "since",
+   "for",
+   "from",
+   "during"
+  ],
+  "explain": "since + a point in time; for + a length of time."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "The test was ___ easy that everyone finished ___ early.",
+  "answers": [
+   "so",
+   "very"
+  ],
+  "bank": [
+   "so",
+   "very",
+   "such",
+   "too"
+  ],
+  "explain": "so + adjective + that; very early."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "You ___ wear a helmet; it's the rule. You ___ bring a snack; it's up to you.",
+  "answers": [
+   "must",
+   "can"
+  ],
+  "bank": [
+   "must",
+   "can",
+   "mustn't",
+   "should to"
+  ],
+  "explain": "must = rule; can = it's allowed."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "While I ___ walking home, I ___ a puppy.",
+  "answers": [
+   "was",
+   "found"
+  ],
+  "bank": [
+   "was",
+   "found",
+   "were",
+   "find"
+  ],
+  "explain": "Past continuous for the background, past simple for the event."
  }
 ]

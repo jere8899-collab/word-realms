@@ -1,0 +1,30 @@
+{
+ "name": "Word Realms — English & Maths Quest",
+ "short_name": "Word Realms",
+ "id": "./",
+ "start_url": "./",
+ "scope": "./",
+ "display": "standalone",
+ "orientation": "any",
+ "background_color": "#FFE9F1",
+ "theme_color": "#FFE9F1",
+ "description": "A fairytale English (CEFR A1–C2) and maths quest for children.",
+ "icons": [
+  {
+   "src": "assets/ui/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "assets/ui/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "assets/ui/icon-maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ]
+}

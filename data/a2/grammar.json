@@ -393,5 +393,160 @@
    "still": "Still is for something that hasn't stopped.",
    "ever": "Ever asks 'at any time in your life'."
   }
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "Yesterday",
+   "I",
+   "go",
+   "to",
+   "the",
+   "zoo."
+  ],
+  "wrong": 2,
+  "fix": "went",
+  "explain": "Yesterday = past: go → went."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "She",
+   "don't",
+   "like",
+   "spiders."
+  ],
+  "wrong": 1,
+  "fix": "doesn't",
+  "explain": "He/she/it: doesn't. She doesn't like spiders."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "My",
+   "sister",
+   "is",
+   "tall",
+   "than",
+   "me."
+  ],
+  "wrong": 3,
+  "fix": "taller",
+  "explain": "Comparing two people: short adjectives add -er + than: taller than."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "There",
+   "are",
+   "much",
+   "books",
+   "on",
+   "the",
+   "shelf."
+  ],
+  "wrong": 2,
+  "fix": "many",
+  "explain": "Many for things you can count: many books."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "We",
+   "was",
+   "at",
+   "the",
+   "beach",
+   "last",
+   "summer."
+  ],
+  "wrong": 1,
+  "fix": "were",
+  "explain": "We/you/they + were."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "I",
+   "am",
+   "going",
+   "to",
+   "visiting",
+   "my",
+   "grandma."
+  ],
+  "wrong": 4,
+  "fix": "visit",
+  "explain": "going to + verb (no -ing): going to visit."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "Last weekend we ___ a film and ___ popcorn.",
+  "answers": [
+   "watched",
+   "ate"
+  ],
+  "bank": [
+   "watched",
+   "ate",
+   "watch",
+   "eat"
+  ],
+  "explain": "Last weekend = past: watched, ate."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "Is ___ any milk? There isn't ___ juice.",
+  "answers": [
+   "there",
+   "any"
+  ],
+  "bank": [
+   "there",
+   "any",
+   "their",
+   "some"
+  ],
+  "explain": "Is there any…? / There isn't any…"
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "She's ___ than her brother but not as ___ as her dad.",
+  "answers": [
+   "taller",
+   "tall"
+  ],
+  "bank": [
+   "taller",
+   "tall",
+   "tallest",
+   "more tall"
+  ],
+  "explain": "taller than; as tall as."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "I ___ my homework ___ dinner.",
+  "answers": [
+   "do",
+   "after"
+  ],
+  "bank": [
+   "do",
+   "after",
+   "make",
+   "during"
+  ],
+  "explain": "We do homework; after dinner."
  }
 ]

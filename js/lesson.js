@@ -3,18 +3,30 @@
 const WR = window.WR;
 const CHEER = ["Yay! ✨", "You're amazing! 💖", "Sparkly smart! 🌟", "Woohoo! 🎉", "Brilliant! 🌸", "Magic! 🪄"];
 const COMFORT = ["It's okay, we learn together 🫶", "Oopsie! Next one! 🍀", "Don't worry, read the tip 💭", "Almost! You've got this 💪"];
-const MODE_TIME = { mcq: 25, order: 40, listen: 35, reading: 50 };
-const BOSS = { b2: { name: "Glimmerfin", face: "🐍", hp: 100 }, c2: { name: "Archivus the Library Dragon", face: "🐲", hp: 100 } };
+const MODE_TIME = { mcq: 25, order: 40, listen: 35, reading: 50, picq: 25, spell: 45, mistake: 35, gaps: 55, dictate: 60 };
+const BOSS = { b2: { name: "Glimmerfin", face: "🐍", art: "boss_glimmerfin", hp: 100 }, c2: { name: "Archivus the Library Dragon", face: "🐲", art: "boss_archivus", hp: 100 } };
 
+/* 🧩 C2 question types: spell (letter tiles), picq (picture choice), mistake (tap the wrong word), gaps (word bank),
+   dictate (listen + type), order with "say" (listen and build), listen with dialogue:true (two voices). */
+const NEWTYPES = new Set(["spell", "mistake", "gaps", "dictate"]);
+const fillGaps = (text, words) => { let i = 0; return text.replace(/___/g, () => words[i++] || "___"); };
 function normalize(item, passage) {
-  if (item.type === "order") return { type: "order", q: item.q, answer: item.answer, explain: item.explain };
+  if (item.type === "order") return { type: "order", q: item.q, answer: item.answer, explain: item.explain, say: item.say, _raw: item.say ? item : undefined };
+  if (NEWTYPES.has(item.type)) return { ...item, passage, _raw: item,
+    correct: item.type === "mistake" ? `${item.words[item.wrong]} → ${item.fix}` : item.type === "gaps" ? fillGaps(item.text, item.answers) : item.answer };
   const correct = item.options[item.answer];
-  return { type: item.type === "listen" ? "listen" : "mcq", q: item.q, say: item.say, pic: item.pic, passage,
+  return { type: item.type === "listen" ? "listen" : item.type === "picq" ? "picq" : "mcq", q: item.q, say: item.say, pic: item.pic, passage, dialogue: item.dialogue,
     options: WR.shuffle(item.options), correct, explain: item.explain, notes: item.notes };
 }
+// the headless tests drive the classic multiple-choice flow; the new types have their own test (tools/test/c2types.js)
+const classicOnly = () => navigator.webdriver && !window.__WR_ALL_TYPES;
+const playable = q => (q.type !== "dictate" || (window.Speech && Speech.supported)) &&
+  (!classicOnly() || q.type === "mcq" || (q.type === "listen" && !q.dialogue) || (q.type === "order" && !q.say));
+WR.sayHTML = say => String(say || "").split("|").map(l => { const m = l.match(/^([^:]{1,20}):\s*(.*)$/); return m ? `<span class="say-line"><b>${WR.esc(m[1])}:</b> ${WR.esc(m[2])}</span>` : WR.esc(l); }).join(" ");
 /* Fresh-first picking: remember which items a learner has recently seen (per realm + skill) and serve unseen
    ones first, so the whole bank rotates before anything repeats. state.seen = { "<rid>/<skill>": [itemKey, ...] }. */
-WR.itemKey = it => { const t = (it.title || "") + "|" + (it.say || "") + "|" + (it.q || "") + "|" + (it.pic || "") + "|" + (it.options ? it.options[it.answer] : it.answer || "");
+WR.itemKey = it => { const t = (it.title || "") + "|" + (it.say || "") + "|" + (it.q || "") + "|" + (it.pic || "") + "|" + (it.options ? it.options[it.answer] : it.answer || "") +
+    (it.words ? "|" + it.words.join(" ") : "") + (it.text ? "|" + it.text : "") + (it.art ? "|" + it.art : "");
   let h = 5381; for (let i = 0; i < t.length; i++) h = ((h << 5) + h + t.charCodeAt(i)) | 0; return (h >>> 0).toString(36); };
 WR.freshPick = (bucket, pool, n) => {
   const s = WR.state; s.seen = s.seen || {};
@@ -38,7 +50,7 @@ WR.buildItems = async (rid, skill, n = 8) => {
     if (n < 6) return ps.slice(0, 1).flatMap(p => p.questions.map(q => normalize(q, p))).slice(0, n);
     return ps.flatMap(p => p.questions.map(q => normalize(q, p)));
   }
-  return WR.freshPick(`${rid}/${skill}`, bank, n).map(q => normalize(q));
+  return WR.freshPick(`${rid}/${skill}`, bank.filter(playable), n).map(q => normalize(q));
 };
 WR.normalize = normalize;
 
@@ -68,7 +80,7 @@ function hud() {
     case "boss": case "dragon": {
       const b = BOSS[L.realm.id] || BOSS.b2;
       const lives = L.mode === "dragon" ? "🕯️".repeat(L.hearts) + "<span style='opacity:.3'>" + "🕯️".repeat(3 - L.hearts) + "</span>" : "💖".repeat(L.hearts) + "🤍".repeat(3 - L.hearts);
-      return `${base}<div class="meter boss"><span class="face" id="bossFace">${b.face}</span><div style="flex:1"><b>${b.name}</b><div class="hp"><i style="width:${L.bossHP}%"></i></div>${L.mode === "boss" ? '<div class="timer"><i id="timerBar"></i></div>' : ""}</div></div><span class="hearts">${lives}</span>`;
+      return `${base}<div class="meter boss"><span class="face${WR.asset(b.art) ? " painted" : ""}" id="bossFace">${WR.asset(b.art) ? WR.img(b.art, "bossimg") : b.face}</span><div style="flex:1"><b>${b.name}</b><div class="hp"><i style="width:${L.bossHP}%"></i></div>${L.mode === "boss" ? '<div class="timer"><i id="timerBar"></i></div>' : ""}</div></div><span class="hearts">${lives}</span>`;
     }
     case "council": return `${base}<div class="meter"><b>Council vote</b><div class="meterbar"><span class="knob" style="left:${L.meter}%">⚖️</span></div><div class="row muted" style="justify-content:space-between;font-size:.75rem"><span>Against</span><span>For you</span></div></div>`;
   }
@@ -89,16 +101,17 @@ function qBody(it) {
     h += again && phone() ? `<button class="story-chip" id="storyChip">📜 Story: ${WR.esc(it.passage.title)}</button>`
       : `<div class="passage"><h3>📜 ${WR.esc(it.passage.title)}</h3>${WR.esc(it.passage.text)}</div>`;
   }
-  if (it.type === "listen") {
+  if (it.say && (it.type === "listen" || it.type === "order" || it.type === "dictate")) {
     // 🔊 T11: the first listening question waits for a tap (iPhones block speech that doesn't start from a tap)
     const tap = !heardOnce && Speech.supported;
     h += `<div class="listenbox">${tap ? `<button class="tap-listen" id="playBtn" aria-label="Tap to listen"><span class="playbtn">🔊</span>Tap to listen</button>` : `<button class="playbtn" id="playBtn" aria-label="Play audio">🔊</button>`}
       <div><button class="btn ghost small" id="slowBtn">🐢 Slow</button>
       <div class="row muted" style="margin-top:2px;font-size:.85rem">Speed <input type="range" class="slider" id="rate" min="0.5" max="1.3" step="0.1" value="${WR.state.settings.rate}" aria-label="Listening speed"><span id="rateVal">${WR.state.settings.rate}×</span></div>
       ${Speech.supported ? "" : `<div class="muted" style="font-size:.75rem">Read the words below 👇</div>`}</div></div>`;
-    if (!Speech.supported) h += `<div class="transcript">“${WR.esc(it.say)}”</div>`;
+    if (!Speech.supported) h += `<div class="transcript">“${WR.sayHTML(it.say)}”</div>`;
   }
   if (it.pic) h += `<div class="qpic">${it.pic}</div>`;
+  if (it.art) h += `<div class="qpic qart">${WR.img(it.art).replace(/alt="[^"]*"/, 'alt="Picture: spell this word"')}</div>`;
   h += `<div class="qtext">${WR.esc(it.q)}</div>`;
   if (it.type === "order") {
     const words = it.answer.split(" ");
@@ -106,6 +119,24 @@ function qBody(it) {
     it._pool = sh.map((w, k) => ({ w, k })); it._built = [];
     h += `<div class="tiles answer" id="built"></div><div class="tiles" id="pool"></div>
       <div class="row" style="margin-top:8px"><button class="btn mint" id="checkBtn" disabled>🍭 Check sentence</button><button class="btn ghost small" id="clearBtn">↺ Clear</button></div>`;
+  } else if (it.type === "spell") {
+    const extra = WR.shuffle("abcdefghiklmnoprstuwy".split("").filter(c => !it.answer.includes(c))).slice(0, it.answer.length > 6 ? 3 : 2);
+    it._pool = WR.shuffle(it.answer.split("").concat(extra)).map((w, k) => ({ w, k })); it._built = [];
+    h += `<div class="spell-slots" id="built" aria-label="Your word"></div><div class="tiles letters" id="pool"></div>
+      <div class="row" style="margin-top:8px"><button class="btn mint" id="checkBtn" disabled>✨ Check word</button><button class="btn ghost small" id="clearBtn">↺ Clear</button></div>`;
+  } else if (it.type === "mistake") {
+    h += `<div class="mwords">${it.words.map((w, k) => `<button class="mword" data-k="${k}">${WR.esc(w)}</button>`).join("")}</div>`;
+  } else if (it.type === "gaps") {
+    it._fill = it.answers.map(() => null); it._sel = 0; it._bank = WR.shuffle(it.bank.map((w, k) => ({ w, k })));
+    const parts = it.text.split("___");
+    h += `<div class="gaptext">${parts.map((p, i) => WR.esc(p) + (i < parts.length - 1 ? `<button class="gap" data-g="${i}" aria-label="Gap ${i + 1}">…</button>` : "")).join("")}</div>
+      <div class="tiles" id="pool"></div>
+      <div class="row" style="margin-top:8px"><button class="btn mint" id="checkBtn" disabled>✅ Check</button><button class="btn ghost small" id="clearBtn">↺ Clear</button></div>`;
+  } else if (it.type === "dictate") {
+    h += `<input class="dict-in" id="dictIn" type="text" autocomplete="off" autocorrect="off" autocapitalize="sentences" spellcheck="false" placeholder="Type what you hear…" aria-label="Type what you hear">
+      <div class="row" style="margin-top:8px"><button class="btn mint" id="checkBtn" disabled>✅ Check</button></div>`;
+  } else if (it.type === "picq") {
+    h += `<div class="opts picgrid">${it.options.map((o, k) => `<button class="opt picopt" data-k="${k}" aria-label="${WR.esc(o)}">${WR.img("word_" + o)}</button>`).join("")}</div>`;
   } else {
     h += `<div class="opts">${it.options.map((o, k) => `<button class="opt" data-k="${k}"><span class="k">${"ABCD"[k]}</span>${WR.esc(o)}</button>`).join("")}</div>`;
   }
@@ -123,8 +154,12 @@ function render() {
       <div class="muted" id="lstats" style="font-size:.85rem;font-weight:800">⭐ ${L.starsEarned} earned · 🔥 combo ${L.combo}</div></div></div>`);
   WR.$("#quitBtn").onclick = () => { clearTimer(); Speech.stop(); L.onQuit ? L.onQuit() : L.review ? WR.go("review") : WR.go("realm", L.realm.id); };
   if (it.type === "order") bindOrder(it);
+  else if (it.type === "spell") bindSpell(it);
+  else if (it.type === "mistake") bindMistake(it);
+  else if (it.type === "gaps") bindGaps(it);
+  else if (it.type === "dictate") bindDictate(it);
   else document.querySelectorAll(".opt").forEach(b => b.onclick = () => pick(b, it));
-  if (it.type === "listen") bindListen(it);
+  if (WR.$("#playBtn")) bindListen(it);
   const sc = WR.$("#storyChip"); if (sc) sc.onclick = () => storySheet(it.passage);
   if (L.mode === "boss") armTimer(it);
 }
@@ -140,7 +175,7 @@ function armTimer(it) {
   let seen = false, heard = it.type !== "listen" || !Speech.supported;
   const go = () => { if (L !== me || L.answered || timerId || !seen || !heard) return; if (bar) bar.classList.remove("waiting"); startTimer(it); };
   it._heard = () => { heard = true; go(); };
-  const last = [...document.querySelectorAll(".opt")].pop() || WR.$("#checkBtn");
+  const last = [...document.querySelectorAll(".opt,.mword,.gap")].pop() || WR.$("#checkBtn");
   if (!last || !("IntersectionObserver" in window)) { seen = true; return go(); }
   const io = new IntersectionObserver(es => { if (es.some(e => e.intersectionRatio >= 0.85 || e.isIntersecting && e.intersectionRect.height >= e.boundingClientRect.height - 2)) { seen = true; io.disconnect(); go(); } }, { threshold: [0, .5, .85, 1] });
   io.observe(last); me._io = io;
@@ -175,13 +210,70 @@ function bindOrder(it) {
     WR.$("#checkBtn").disabled = true; answer(ok, it, ok ? "" : `Correct order: <b>${WR.esc(it.answer)}</b>`);
   };
 }
+function bindSpell(it) {
+  const n = it.answer.length;
+  const draw = () => {
+    WR.$("#built").innerHTML = Array.from({ length: n }, (_, i) => it._built[i] ? `<button class="tile slot filled" data-k="${it._built[i].k}">${WR.esc(it._built[i].w)}</button>` : `<span class="slot"></span>`).join("");
+    WR.$("#pool").innerHTML = it._pool.map(t => `<button class="tile" data-k="${t.k}">${WR.esc(t.w)}</button>`).join("");
+    WR.$("#checkBtn").disabled = it._built.length !== n || L.answered;
+    WR.$("#pool").querySelectorAll(".tile").forEach(b => b.onclick = () => { if (L.answered || it._built.length >= n) return; const i = it._pool.findIndex(t => t.k === +b.dataset.k); it._built.push(it._pool.splice(i, 1)[0]); WR.sfx("tap"); draw(); });
+    WR.$("#built").querySelectorAll(".tile").forEach(b => b.onclick = () => { if (L.answered) return; const i = it._built.findIndex(t => t.k === +b.dataset.k); it._pool.push(it._built.splice(i, 1)[0]); draw(); });
+  };
+  draw();
+  WR.$("#clearBtn").onclick = () => { if (L.answered) return; it._pool = it._pool.concat(it._built); it._built = []; draw(); };
+  WR.$("#checkBtn").onclick = () => { const w = it._built.map(t => t.w).join(""), ok = w === it.answer;
+    WR.$("#checkBtn").disabled = true; WR.$("#built").classList.add(ok ? "right" : "wrong");
+    answer(ok, it, ok ? "" : `You spelled <s>${WR.esc(w)}</s>. The word is <b>${WR.esc(it.answer)}</b>.`); };
+}
+function bindMistake(it) {
+  document.querySelectorAll(".mword").forEach(b => b.onclick = () => {
+    if (L.answered) return; const k = +b.dataset.k, ok = k === it.wrong;
+    document.querySelectorAll(".mword").forEach(x => { x.disabled = true; if (+x.dataset.k === it.wrong) x.classList.add("right"); });
+    if (!ok) b.classList.add("wrong");
+    answer(ok, it, `${ok ? "" : `<div class="why-not">🤔 <b>“${WR.esc(it.words[k])}”</b> is fine here. The mistake is “${WR.esc(it.words[it.wrong])}”.</div>`}Fix: <s>${WR.esc(it.words[it.wrong])}</s> → <b>${WR.esc(it.fix)}</b>`);
+  });
+}
+function bindGaps(it) {
+  const draw = () => {
+    document.querySelectorAll(".gap").forEach(g => { const i = +g.dataset.g, f = it._fill[i]; g.textContent = f ? f.w : "…"; g.classList.toggle("filled", !!f); g.classList.toggle("sel", !f && i === it._sel); });
+    const used = new Set(it._fill.filter(Boolean).map(f => f.k));
+    WR.$("#pool").innerHTML = it._bank.filter(t => !used.has(t.k)).map(t => `<button class="tile" data-k="${t.k}">${WR.esc(t.w)}</button>`).join("");
+    WR.$("#checkBtn").disabled = it._fill.some(f => !f) || L.answered;
+    WR.$("#pool").querySelectorAll(".tile").forEach(b => b.onclick = () => { if (L.answered) return;
+      let i = it._fill[it._sel] ? it._fill.findIndex(f => !f) : it._sel; if (i < 0) return;
+      it._fill[i] = it._bank.find(t => t.k === +b.dataset.k); const nx = it._fill.findIndex(f => !f); it._sel = nx < 0 ? 0 : nx; WR.sfx("tap"); draw(); });
+  };
+  document.querySelectorAll(".gap").forEach(g => g.onclick = () => { if (L.answered) return; const i = +g.dataset.g; if (it._fill[i]) it._fill[i] = null; it._sel = i; draw(); });
+  WR.$("#clearBtn").onclick = () => { if (L.answered) return; it._fill = it._fill.map(() => null); it._sel = 0; draw(); };
+  WR.$("#checkBtn").onclick = () => {
+    const got = it._fill.map(f => f.w), ok = got.every((w, i) => w === it.answers[i]);
+    document.querySelectorAll(".gap").forEach(g => { const i = +g.dataset.g; g.classList.add(got[i] === it.answers[i] ? "right" : "wrong"); g.disabled = true; });
+    WR.$("#checkBtn").disabled = true; WR.$("#pool").querySelectorAll(".tile").forEach(b => b.disabled = true);
+    answer(ok, it, ok ? "" : `Answer: <b>${WR.esc(fillGaps(it.text, it.answers))}</b>`);
+  };
+  draw();
+}
+const normText = t => String(t).toLowerCase().replace(/[’‘`]/g, "'").replace(/[^a-z0-9' ]+/g, " ").replace(/\s+/g, " ").trim();
+function bindDictate(it) {
+  const inp = WR.$("#dictIn"), btn = WR.$("#checkBtn");
+  inp.oninput = () => { btn.disabled = !inp.value.trim() || L.answered; };
+  inp.onkeydown = e => { if (e.key === "Enter" && !btn.disabled) { e.preventDefault(); btn.click(); } };
+  btn.onclick = () => {
+    const got = normText(inp.value).split(" "), want = it.answer.split(/\s+/), ok = normText(inp.value) === normText(it.answer);
+    inp.disabled = true; btn.disabled = true; inp.classList.add(ok ? "right" : "wrong");
+    const marked = want.map((w, i) => `<span class="dw ${normText(w) === got[i] ? "ok" : "no"}">${WR.esc(w)}</span>`).join(" ");
+    answer(ok, it, ok ? "" : `<div class="dict-check">${marked}</div><div class="muted" style="font-size:.85rem">Green words you got right; pink ones to practise.</div>`);
+  };
+}
 function startTimer(it) {
   clearTimer();
   const total = MODE_TIME[it.passage ? "reading" : it.type] || 25; let left = total;
   timerId = setInterval(() => {
     left -= 0.25; const bar = WR.$("#timerBar");
     if (bar) bar.style.width = Math.max(0, left / total * 100) + "%";
-    if (left <= 0) { clearTimer(); if (!L.answered) { document.querySelectorAll(".opt").forEach(b => { if (it.options[+b.dataset.k] === it.correct) b.classList.add("right"); b.disabled = true; }); answer(false, it, "⏰ Time's up!"); } }
+    if (left <= 0) { clearTimer(); if (!L.answered) { document.querySelectorAll(".opt").forEach(b => { if (it.options[+b.dataset.k] === it.correct) b.classList.add("right"); b.disabled = true; });
+      document.querySelectorAll(".mword,.gap,.tile,#checkBtn,#dictIn").forEach(b => b.disabled = true);
+      answer(false, it, "⏰ Time's up!" + (it.options ? "" : ` Answer: <b>${WR.esc(it.type === "order" ? it.answer : it.correct)}</b>`)); } }
   }, 250);
 }
 function pick(btn, it) {
@@ -224,7 +316,7 @@ function answer(ok, it, extra = "") {
   if (ok && WR.$("#bossFace")) WR.$("#bossFace").classList.add("hit");
   petReact(ok);
   const ls = WR.$("#lstats"); if (ls) ls.textContent = `⭐ ${L.starsEarned} earned · 🔥 combo ${L.combo}`;
-  const transcript = it.type === "listen" ? `<div class="transcript">🎧 “${WR.esc(it.say)}” <button class="btn ghost small" id="replay">🔁 Replay</button></div>` : "";
+  const transcript = it.say ? `<div class="transcript">🎧 “${WR.sayHTML(it.say)}” <button class="btn ghost small" id="replay">🔁 Replay</button></div>` : "";
   const lost = (L.mode === "boss" || L.mode === "dragon") && L.hearts === 0;
   const last = L.i >= L.items.length - 1 || lost || ((L.mode === "boss" || L.mode === "dragon") && L.bossHP <= 0);
   WR.$("#explain").innerHTML = `<div class="explain ${ok ? "good" : "bad"}">${ok ? "✅ Correct!" : "💭 Not quite."} ${extra}${whyNot(ok, it)} <div class="why-rule" style="font-weight:700;margin-top:4px">💡 ${WR.esc(it.explain)}</div>${transcript}</div>
@@ -279,4 +371,5 @@ WR.nextSkill = (rid, justPlayed) => {
 };
 WR.stopLesson = () => { clearTimer(); L = null; };
 WR._dbg = () => L && (L.items[L.i].correct || L.items[L.i].answer); // test hook (used by the headless test)
+WR._cur = () => L && L.items[L.i];                                    // test hook: the whole current item (c2types.js)
 })();

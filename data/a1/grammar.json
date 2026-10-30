@@ -508,5 +508,1441 @@
    "because": "Because gives the reason, not the result: He went to bed because he was tired.",
    "or": "Or gives a choice: tea or milk?"
   }
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ a big brother.",
+  "options": [
+   "have",
+   "has",
+   "am",
+   "is"
+  ],
+  "answer": 0,
+  "explain": "I/you/we/they have; he/she/it has. Example: I have a cat.",
+  "notes": {
+   "has": "Has is for he/she/it.",
+   "am": "Am is for 'I am…', not for owning things.",
+   "is": "Is is for he/she/it, and not for owning."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "She ___ my teacher.",
+  "options": [
+   "is",
+   "am",
+   "are",
+   "be"
+  ],
+  "answer": 0,
+  "explain": "He/she/it is. Example: She is kind.",
+  "notes": {
+   "am": "Am goes only with I.",
+   "are": "Are goes with you/we/they.",
+   "be": "Be needs a form: is."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We ___ in the garden.",
+  "options": [
+   "are",
+   "is",
+   "am",
+   "be"
+  ],
+  "answer": 0,
+  "explain": "We/you/they are. Example: We are happy.",
+  "notes": {
+   "is": "Is is for one person or thing.",
+   "am": "Am goes only with I.",
+   "be": "Be needs a form: are."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "___ you like bananas?",
+  "options": [
+   "Do",
+   "Does",
+   "Are",
+   "Is"
+  ],
+  "answer": 0,
+  "explain": "Questions with I/you/we/they start with Do. Example: Do you like milk?",
+  "notes": {
+   "Does": "Does is for he/she/it.",
+   "Are": "Are goes with an adjective or -ing, not 'like'.",
+   "Is": "Is is for he/she/it with an adjective."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "___ he play football?",
+  "options": [
+   "Does",
+   "Do",
+   "Is",
+   "Are"
+  ],
+  "answer": 0,
+  "explain": "Questions with he/she/it start with Does. Example: Does she swim?",
+  "notes": {
+   "Do": "Do is for I/you/we/they.",
+   "Is": "Is doesn't go with 'play' here.",
+   "Are": "Are is for you/we/they."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I can ___ a bike.",
+  "options": [
+   "ride",
+   "rides",
+   "riding",
+   "to ride"
+  ],
+  "answer": 0,
+  "explain": "can + verb (no -s, no to). Example: I can swim.",
+  "notes": {
+   "rides": "No -s after can.",
+   "riding": "No -ing after can.",
+   "to ride": "No 'to' after can."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "There are three ___ in the box.",
+  "options": [
+   "toys",
+   "toy",
+   "toyes",
+   "a toy"
+  ],
+  "answer": 0,
+  "explain": "More than one: add -s. Example: one toy, three toys.",
+  "notes": {
+   "toy": "Toy is just one.",
+   "toyes": "Toy takes just -s.",
+   "a toy": "A toy is one; we need three."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Look at ___ elephant!",
+  "options": [
+   "the",
+   "a",
+   "an the",
+   "these"
+  ],
+  "answer": 0,
+  "explain": "We use the for one we can both see. Example: Look at the moon!",
+  "notes": {
+   "a": "A + elephant needs 'an', and here we point at one we see.",
+   "an the": "Don't use two little words together.",
+   "these": "These is for more than one."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I have ___ orange.",
+  "options": [
+   "an",
+   "a",
+   "two",
+   "some"
+  ],
+  "answer": 0,
+  "explain": "An before a, e, i, o, u sounds. Example: an egg, an apple.",
+  "notes": {
+   "a": "Orange starts with o, so an.",
+   "two": "Two needs a plural: two oranges.",
+   "some": "Some isn't used with one orange."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "This is ___ bag. It's mine.",
+  "options": [
+   "my",
+   "me",
+   "I",
+   "mine"
+  ],
+  "answer": 0,
+  "explain": "My + noun: my bag. Mine stands alone: It's mine.",
+  "notes": {
+   "me": "Me is an object: Help me.",
+   "I": "I is a subject: I am.",
+   "mine": "Mine doesn't go before a noun."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Tom is a boy. ___ is nine.",
+  "options": [
+   "He",
+   "She",
+   "It",
+   "His"
+  ],
+  "answer": 0,
+  "explain": "A boy = he. Example: He is my friend.",
+  "notes": {
+   "She": "She is for a girl.",
+   "It": "It is for a thing or animal.",
+   "His": "His shows owning: his bag."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The cat is ___ the box.",
+  "options": [
+   "in",
+   "at",
+   "of",
+   "to"
+  ],
+  "answer": 0,
+  "explain": "In = inside. Example: The pen is in my bag.",
+  "notes": {
+   "at": "At is for a place or time: at school.",
+   "of": "Of shows a part: a cup of tea.",
+   "to": "To shows direction: go to school."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "It's cold ___ winter.",
+  "options": [
+   "in",
+   "on",
+   "at",
+   "of"
+  ],
+  "answer": 0,
+  "explain": "In + season or month. Example: in summer, in June.",
+  "notes": {
+   "on": "On is for days: on Monday.",
+   "at": "At is for clock times: at 3 o'clock.",
+   "of": "Of doesn't go with seasons here."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We play ___ Saturday.",
+  "options": [
+   "on",
+   "in",
+   "at",
+   "to"
+  ],
+  "answer": 0,
+  "explain": "On + day. Example: on Sunday.",
+  "notes": {
+   "in": "In is for months: in May.",
+   "at": "At is for times: at six.",
+   "to": "To shows direction."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "School starts ___ eight o'clock.",
+  "options": [
+   "at",
+   "in",
+   "on",
+   "to"
+  ],
+  "answer": 0,
+  "explain": "At + clock time. Example: at 7 o'clock.",
+  "notes": {
+   "in": "In is for months and seasons.",
+   "on": "On is for days.",
+   "to": "To isn't used with start times."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "He ___ milk every morning.",
+  "options": [
+   "drinks",
+   "drink",
+   "drinking",
+   "is drink"
+  ],
+  "answer": 0,
+  "explain": "He/she/it + verb + s for every day. Example: She eats toast.",
+  "notes": {
+   "drink": "Add -s for he.",
+   "drinking": "Drinking needs 'is'.",
+   "is drink": "Is drink mixes two forms."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ swim. I'm scared of water.",
+  "options": [
+   "can't",
+   "can",
+   "am not",
+   "don't can"
+  ],
+  "answer": 0,
+  "explain": "Can't = can not. Example: I can't sing.",
+  "notes": {
+   "can": "Can means you are able to.",
+   "am not": "Am not doesn't go with swim.",
+   "don't can": "Don't can is never right."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "___ is your teacher? — Mrs Lee.",
+  "options": [
+   "Who",
+   "What",
+   "Where",
+   "How"
+  ],
+  "answer": 0,
+  "explain": "Who asks about a person. Example: Who is he? — My dad.",
+  "notes": {
+   "What": "What asks about a thing.",
+   "Where": "Where asks about a place.",
+   "How": "How asks about the way or feeling."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "___ is the park? — Next to the school.",
+  "options": [
+   "Where",
+   "Who",
+   "What",
+   "When"
+  ],
+  "answer": 0,
+  "explain": "Where asks about a place. Example: Where is my hat?",
+  "notes": {
+   "Who": "Who asks about a person.",
+   "What": "What asks about a thing.",
+   "When": "When asks about time."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "___ old are you? — I'm eight.",
+  "options": [
+   "How",
+   "What",
+   "Who",
+   "Where"
+  ],
+  "answer": 0,
+  "explain": "How old…? asks about age. Example: How old is your cat?",
+  "notes": {
+   "What": "We don't say 'What old'.",
+   "Who": "Who asks about a person.",
+   "Where": "Where asks about a place."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "These ___ my shoes.",
+  "options": [
+   "are",
+   "is",
+   "am",
+   "be"
+  ],
+  "answer": 0,
+  "explain": "These (more than one) + are. Example: These are my books.",
+  "notes": {
+   "is": "Is is for one: This is my shoe.",
+   "am": "Am goes only with I.",
+   "be": "Be needs a form: are."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Please ___ the door.",
+  "options": [
+   "open",
+   "opens",
+   "opening",
+   "to open"
+  ],
+  "answer": 0,
+  "explain": "Instructions use the plain verb. Example: Please sit down.",
+  "notes": {
+   "opens": "No -s in instructions.",
+   "opening": "No -ing here.",
+   "to open": "No 'to' here."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I don't ___ carrots.",
+  "options": [
+   "like",
+   "likes",
+   "liking",
+   "to like"
+  ],
+  "answer": 0,
+  "explain": "Don't + plain verb. Example: I don't eat fish.",
+  "notes": {
+   "likes": "No -s after don't.",
+   "liking": "No -ing after don't.",
+   "to like": "No 'to' after don't."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "She doesn't ___ a dog.",
+  "options": [
+   "have",
+   "has",
+   "having",
+   "haves"
+  ],
+  "answer": 0,
+  "explain": "Doesn't + plain verb. Example: He doesn't play tennis.",
+  "notes": {
+   "has": "No -s after doesn't.",
+   "having": "No -ing after doesn't.",
+   "haves": "Haves is not a word."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Is this ___ pencil? — Yes, it's Mia's.",
+  "options": [
+   "her",
+   "she",
+   "hers",
+   "he"
+  ],
+  "answer": 0,
+  "explain": "Her + noun shows a girl owns it. Example: her bike.",
+  "notes": {
+   "she": "She is a subject: She is tall.",
+   "hers": "Hers stands alone: It's hers.",
+   "he": "He is a boy, and a subject."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I'm ___ now. Can I have a sandwich?",
+  "options": [
+   "hungry",
+   "hunger",
+   "thirsty",
+   "sleep"
+  ],
+  "answer": 0,
+  "explain": "Feelings after I'm: hungry, tired, happy. Example: I'm hungry.",
+  "notes": {
+   "hunger": "Hunger is a noun.",
+   "thirsty": "Thirsty means you want a drink.",
+   "sleep": "Sleep is a verb/noun; say sleepy."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Let's ___ to the park!",
+  "options": [
+   "go",
+   "goes",
+   "going",
+   "to go"
+  ],
+  "answer": 0,
+  "explain": "Let's + plain verb. Example: Let's play!",
+  "notes": {
+   "goes": "No -s after let's.",
+   "going": "No -ing after let's.",
+   "to go": "No 'to' after let's."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "There ___ a dog in the garden.",
+  "options": [
+   "is",
+   "are",
+   "am",
+   "be"
+  ],
+  "answer": 0,
+  "explain": "There is + one thing. Example: There is a cat.",
+  "notes": {
+   "are": "Are is for more than one.",
+   "am": "Am goes only with I.",
+   "be": "Be needs a form: is."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "There ___ two birds in the tree.",
+  "options": [
+   "are",
+   "is",
+   "am",
+   "has"
+  ],
+  "answer": 0,
+  "explain": "There are + more than one. Example: There are three apples.",
+  "notes": {
+   "is": "Is is for one.",
+   "am": "Am goes only with I.",
+   "has": "Has doesn't go with there."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I've got two ___.",
+  "options": [
+   "feet",
+   "foots",
+   "foot",
+   "feets"
+  ],
+  "answer": 0,
+  "explain": "Some plurals are special: foot → feet. Example: my feet are cold.",
+  "notes": {
+   "foots": "Foot is special: not foots.",
+   "foot": "Foot is just one.",
+   "feets": "Feet is already plural."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The children ___ playing.",
+  "options": [
+   "are",
+   "is",
+   "am",
+   "be"
+  ],
+  "answer": 0,
+  "explain": "Children is plural: are. Example: The children are happy.",
+  "notes": {
+   "is": "Is is for one child.",
+   "am": "Am goes only with I.",
+   "be": "Be needs a form: are."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "My mum ___ a doctor.",
+  "options": [
+   "is",
+   "are",
+   "am",
+   "have"
+  ],
+  "answer": 0,
+  "explain": "He/she + is + job. Example: My dad is a cook.",
+  "notes": {
+   "are": "Are is for you/we/they.",
+   "am": "Am goes only with I.",
+   "have": "Have is for owning things."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Can you ___ me, please?",
+  "options": [
+   "help",
+   "helps",
+   "helping",
+   "to help"
+  ],
+  "answer": 0,
+  "explain": "Can + plain verb. Example: Can you sing?",
+  "notes": {
+   "helps": "No -s after can.",
+   "helping": "No -ing after can.",
+   "to help": "No 'to' after can."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "It's ___ today. Let's go to the beach!",
+  "options": [
+   "sunny",
+   "sun",
+   "rain",
+   "snowy"
+  ],
+  "answer": 0,
+  "explain": "Weather words: sunny, rainy, windy. Example: It's sunny.",
+  "notes": {
+   "sun": "Sun is the thing in the sky; the weather word is sunny.",
+   "rain": "Rain is a noun; say rainy, and the beach isn't fun then.",
+   "snowy": "Snowy weather isn't for the beach."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ my teeth every night.",
+  "options": [
+   "brush",
+   "brushes",
+   "brushing",
+   "am brush"
+  ],
+  "answer": 0,
+  "explain": "I + plain verb for habits. Example: I wash my face.",
+  "notes": {
+   "brushes": "-es is for he/she/it.",
+   "brushing": "Brushing needs 'am'.",
+   "am brush": "Am brush mixes two forms."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "He's my friend. I like ___.",
+  "options": [
+   "him",
+   "he",
+   "his",
+   "her"
+  ],
+  "answer": 0,
+  "explain": "After a verb use him/her/me. Example: I like her.",
+  "notes": {
+   "he": "He is a subject, not after a verb.",
+   "his": "His shows owning: his ball.",
+   "her": "Her is for a girl."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We have ___ apples.",
+  "options": [
+   "some",
+   "a",
+   "an",
+   "one"
+  ],
+  "answer": 0,
+  "explain": "Some + plural. Example: some sweets.",
+  "notes": {
+   "a": "A is for one thing.",
+   "an": "An is for one thing.",
+   "one": "One needs a singular: one apple."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Ben and I ___ friends.",
+  "options": [
+   "are",
+   "is",
+   "am",
+   "be"
+  ],
+  "answer": 0,
+  "explain": "Ben and I = we → are. Example: Sam and I are twins.",
+  "notes": {
+   "is": "Is is for one person.",
+   "am": "Am is only for I alone.",
+   "be": "Be needs a form: are."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "What ___ you doing? — I'm reading.",
+  "options": [
+   "are",
+   "is",
+   "do",
+   "does"
+  ],
+  "answer": 0,
+  "explain": "What are you doing? asks about now. Example: What are you eating?",
+  "notes": {
+   "is": "Is is for he/she/it.",
+   "do": "Do doesn't go with -ing.",
+   "does": "Does doesn't go with -ing."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "She is ___ a picture now.",
+  "options": [
+   "drawing",
+   "draw",
+   "draws",
+   "drawed"
+  ],
+  "answer": 0,
+  "explain": "Is + -ing for now. Example: He is singing.",
+  "notes": {
+   "draw": "After is we need -ing.",
+   "draws": "Draws is for every day, not now.",
+   "drawed": "Drawed isn't a word."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "My sister ___ long hair.",
+  "options": [
+   "has",
+   "have",
+   "is",
+   "are"
+  ],
+  "answer": 0,
+  "explain": "He/she/it has. Example: My dog has big ears.",
+  "notes": {
+   "have": "Have is for I/you/we/they.",
+   "is": "Is doesn't show owning.",
+   "are": "Are is for you/we/they."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "They ___ got a new puppy.",
+  "options": [
+   "have",
+   "has",
+   "is",
+   "are"
+  ],
+  "answer": 0,
+  "explain": "They have got… Example: We have got a car.",
+  "notes": {
+   "has": "Has is for he/she/it.",
+   "is": "Is got isn't right.",
+   "are": "Are got isn't right."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "___ she got a pet?",
+  "options": [
+   "Has",
+   "Have",
+   "Is",
+   "Does"
+  ],
+  "answer": 0,
+  "explain": "Has she got…? Example: Has he got a bike?",
+  "notes": {
+   "Have": "Have is for I/you/we/they.",
+   "Is": "Is doesn't go with 'got' here.",
+   "Does": "Does needs 'have': Does she have…?"
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "How many ___ are in your class?",
+  "options": [
+   "children",
+   "child",
+   "childs",
+   "childrens"
+  ],
+  "answer": 0,
+  "explain": "Child → children (special plural). Example: three children.",
+  "notes": {
+   "child": "Child is just one.",
+   "childs": "Childs isn't a word.",
+   "childrens": "Children is already plural."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Two ___ are swimming in the pond.",
+  "options": [
+   "fish",
+   "fishs",
+   "fishes",
+   "a fish"
+  ],
+  "answer": 0,
+  "explain": "Fish usually stays the same for more than one. Example: one fish, five fish.",
+  "notes": {
+   "fishs": "Fish doesn't take -s here.",
+   "fishes": "Fishes is rare; kids' English says fish.",
+   "a fish": "A fish is only one."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I like ___ ice cream.",
+  "options": [
+   "chocolate",
+   "a chocolate",
+   "chocolates",
+   "an chocolate"
+  ],
+  "answer": 0,
+  "explain": "Flavours have no a/an. Example: I like strawberry jam.",
+  "notes": {
+   "a chocolate": "No 'a' before a flavour.",
+   "chocolates": "Chocolates are sweets, not a flavour.",
+   "an chocolate": "An is wrong before ch."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Where ___ my socks?",
+  "options": [
+   "are",
+   "is",
+   "am",
+   "be"
+  ],
+  "answer": 0,
+  "explain": "Socks (plural) + are. Example: Where are my shoes?",
+  "notes": {
+   "is": "Is is for one thing.",
+   "am": "Am goes only with I.",
+   "be": "Be needs a form: are."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ eight years old.",
+  "options": [
+   "am",
+   "is",
+   "are",
+   "have"
+  ],
+  "answer": 0,
+  "explain": "I am + age. Example: I am nine.",
+  "notes": {
+   "is": "Is is for he/she/it.",
+   "are": "Are is for you/we/they.",
+   "have": "In English we don't 'have' an age."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Is it a cat? — No, it ___.",
+  "options": [
+   "isn't",
+   "aren't",
+   "not",
+   "doesn't"
+  ],
+  "answer": 0,
+  "explain": "Short answer: No, it isn't. Example: Is it big? — No, it isn't.",
+  "notes": {
+   "aren't": "Aren't is for they/you/we.",
+   "not": "Not needs is: it isn't.",
+   "doesn't": "Doesn't goes with Does questions."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Do you like pizza? — Yes, I ___.",
+  "options": [
+   "do",
+   "am",
+   "like",
+   "does"
+  ],
+  "answer": 0,
+  "explain": "Short answer to Do…? : Yes, I do. Example: Do you swim? — Yes, I do.",
+  "notes": {
+   "am": "Am answers 'Are you…?'.",
+   "like": "We don't repeat the verb in short answers.",
+   "does": "Does is for he/she/it."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Can you swim? — Yes, I ___.",
+  "options": [
+   "can",
+   "do",
+   "am",
+   "swim"
+  ],
+  "answer": 0,
+  "explain": "Short answer to Can…? : Yes, I can.",
+  "notes": {
+   "do": "Do answers 'Do you…?'.",
+   "am": "Am answers 'Are you…?'.",
+   "swim": "We don't repeat the verb."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "___ are you? — I'm fine, thank you.",
+  "options": [
+   "How",
+   "Who",
+   "What",
+   "Where"
+  ],
+  "answer": 0,
+  "explain": "How are you? asks how someone feels.",
+  "notes": {
+   "Who": "Who asks about a person.",
+   "What": "What asks about a thing.",
+   "Where": "Where asks about a place."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "___ is it? — It's three o'clock.",
+  "options": [
+   "What time",
+   "When time",
+   "How time",
+   "Which"
+  ],
+  "answer": 0,
+  "explain": "What time is it? asks the clock time.",
+  "notes": {
+   "When time": "We don't say 'When time'.",
+   "How time": "We don't say 'How time'.",
+   "Which": "Which needs a choice."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "___ colour is your bike?",
+  "options": [
+   "What",
+   "Who",
+   "How",
+   "Where"
+  ],
+  "answer": 0,
+  "explain": "What colour…? Example: What colour are your eyes?",
+  "notes": {
+   "Who": "Who asks about a person.",
+   "How": "How doesn't go with colour.",
+   "Where": "Where asks about a place."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "My hat is ___ my head.",
+  "options": [
+   "on",
+   "in",
+   "at",
+   "of"
+  ],
+  "answer": 0,
+  "explain": "On = on top of. Example: The cup is on the desk.",
+  "notes": {
+   "in": "In = inside.",
+   "at": "At is for places like at school.",
+   "of": "Of shows a part."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "The ball is ___ the chair.",
+  "options": [
+   "under",
+   "on top",
+   "in front",
+   "between"
+  ],
+  "answer": 0,
+  "explain": "Under = below. Example: The cat is under the bed.",
+  "notes": {
+   "on top": "On top needs 'of'.",
+   "in front": "In front needs 'of'.",
+   "between": "Between needs two things."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I sit ___ Mia and Leo.",
+  "options": [
+   "between",
+   "next",
+   "under",
+   "behind of"
+  ],
+  "answer": 0,
+  "explain": "Between + two people/things. Example: The shop is between the bank and the park.",
+  "notes": {
+   "next": "Next needs 'to'.",
+   "under": "Under means below.",
+   "behind of": "We say behind, not behind of."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "He ___ TV now.",
+  "options": [
+   "is watching",
+   "watches",
+   "watch",
+   "watching"
+  ],
+  "answer": 0,
+  "explain": "Is + -ing for now. Example: She is reading now.",
+  "notes": {
+   "watches": "Watches is for every day, not now.",
+   "watch": "Watch needs is + -ing for now.",
+   "watching": "Watching needs is."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ to school every day.",
+  "options": [
+   "walk",
+   "walks",
+   "am walk",
+   "walking"
+  ],
+  "answer": 0,
+  "explain": "I + plain verb for every day. Example: I play football on Fridays.",
+  "notes": {
+   "walks": "-s is for he/she/it.",
+   "am walk": "Am walk mixes forms.",
+   "walking": "Walking needs am."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Look! It ___!",
+  "options": [
+   "is raining",
+   "rains",
+   "rain",
+   "raining"
+  ],
+  "answer": 0,
+  "explain": "Look! = now, so is + -ing. Example: Look! He's dancing!",
+  "notes": {
+   "rains": "Rains is for usually, not now.",
+   "rain": "Rain needs is + -ing.",
+   "raining": "Raining needs is."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "My cat ___ fish.",
+  "options": [
+   "likes",
+   "like",
+   "liking",
+   "is like"
+  ],
+  "answer": 0,
+  "explain": "He/she/it + -s. Example: My dog likes bones.",
+  "notes": {
+   "like": "Add -s for one cat.",
+   "liking": "Liking needs is, and we don't use it for likes.",
+   "is like": "Is like isn't right."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "We ___ English on Mondays.",
+  "options": [
+   "have",
+   "has",
+   "having",
+   "are"
+  ],
+  "answer": 0,
+  "explain": "We have + lesson. Example: We have maths today.",
+  "notes": {
+   "has": "Has is for he/she/it.",
+   "having": "Having needs are.",
+   "are": "Are doesn't go with a lesson."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "This apple is ___.",
+  "options": [
+   "red",
+   "a red",
+   "reds",
+   "redly"
+  ],
+  "answer": 0,
+  "explain": "Adjective after is: The apple is red.",
+  "notes": {
+   "a red": "No 'a' before an adjective alone.",
+   "reds": "Adjectives don't take -s.",
+   "redly": "Redly isn't a word."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I have a ___.",
+  "options": [
+   "black cat",
+   "cat black",
+   "blacks cat",
+   "cat blacks"
+  ],
+  "answer": 0,
+  "explain": "Adjective before the noun: a black cat.",
+  "notes": {
+   "cat black": "The adjective goes first in English.",
+   "blacks cat": "Adjectives don't take -s.",
+   "cat blacks": "Wrong order and -s."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "She can ___ very fast.",
+  "options": [
+   "run",
+   "runs",
+   "running",
+   "ran"
+  ],
+  "answer": 0,
+  "explain": "Can + plain verb. Example: He can jump.",
+  "notes": {
+   "runs": "No -s after can.",
+   "running": "No -ing after can.",
+   "ran": "Ran is past; after can use run."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "___ your hands, please.",
+  "options": [
+   "Wash",
+   "Washes",
+   "Washing",
+   "To wash"
+  ],
+  "answer": 0,
+  "explain": "Instructions start with the plain verb. Example: Close your books.",
+  "notes": {
+   "Washes": "No -es in instructions.",
+   "Washing": "No -ing in instructions.",
+   "To wash": "No 'to' at the start."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Don't ___! The baby is sleeping.",
+  "options": [
+   "shout",
+   "shouts",
+   "shouting",
+   "to shout"
+  ],
+  "answer": 0,
+  "explain": "Don't + plain verb. Example: Don't run!",
+  "notes": {
+   "shouts": "No -s after don't.",
+   "shouting": "No -ing after don't.",
+   "to shout": "No 'to' after don't."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I'm ___ than my brother.",
+  "options": [
+   "taller",
+   "tall",
+   "more tall",
+   "tallest"
+  ],
+  "answer": 0,
+  "explain": "Short adjective + -er + than. Example: A dog is bigger than a cat.",
+  "notes": {
+   "tall": "Tall needs -er before than.",
+   "more tall": "More is for long adjectives.",
+   "tallest": "Tallest is for three or more."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "That's ___ dog. It's Ben's.",
+  "options": [
+   "his",
+   "he",
+   "him",
+   "her"
+  ],
+  "answer": 0,
+  "explain": "His + noun for a boy's thing. Example: his hat.",
+  "notes": {
+   "he": "He is a subject.",
+   "him": "Him is after a verb.",
+   "her": "Her is for a girl."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Our house ___ a red door.",
+  "options": [
+   "has",
+   "have",
+   "is",
+   "are"
+  ],
+  "answer": 0,
+  "explain": "One thing + has. Example: The car has four wheels.",
+  "notes": {
+   "have": "Have is for I/you/we/they.",
+   "is": "Is doesn't show owning.",
+   "are": "Are is for more than one."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "Listen! The birds ___.",
+  "options": [
+   "are singing",
+   "sing",
+   "is singing",
+   "singing"
+  ],
+  "answer": 0,
+  "explain": "Listen! = now; birds (plural) + are + -ing.",
+  "notes": {
+   "sing": "Sing is for usually.",
+   "is singing": "Is is for one bird.",
+   "singing": "Singing needs are."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "I ___ like spiders. They're scary!",
+  "options": [
+   "don't",
+   "doesn't",
+   "not",
+   "am not"
+  ],
+  "answer": 0,
+  "explain": "I don't + verb. Example: I don't like rain.",
+  "notes": {
+   "doesn't": "Doesn't is for he/she/it.",
+   "not": "Not needs don't before like.",
+   "am not": "Am not doesn't go with like."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "___ you happy? — Yes, I am.",
+  "options": [
+   "Are",
+   "Do",
+   "Is",
+   "Am"
+  ],
+  "answer": 0,
+  "explain": "Are you + adjective? Example: Are you cold?",
+  "notes": {
+   "Do": "Do doesn't go with an adjective.",
+   "Is": "Is is for he/she/it.",
+   "Am": "Am is for I."
+  }
+ },
+ {
+  "type": "mcq",
+  "q": "My grandma ___ in a small village.",
+  "options": [
+   "lives",
+   "live",
+   "living",
+   "is live"
+  ],
+  "answer": 0,
+  "explain": "He/she + -s for every day. Example: He lives in Tokyo.",
+  "notes": {
+   "live": "Add -s for one person.",
+   "living": "Living needs is.",
+   "is live": "Is live mixes two forms."
+  }
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "I have a red bike.",
+  "explain": "Who + verb + what: I have a red bike."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "She is my best friend.",
+  "explain": "She + is + who she is."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "We play in the park.",
+  "explain": "We + play + where."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "The cat is under the table.",
+  "explain": "Thing + is + where it is."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "Do you like ice cream?",
+  "explain": "Questions start with Do: Do you like…?"
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "He can swim very well.",
+  "explain": "can + verb: He can swim."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "She",
+   "have",
+   "a",
+   "cat."
+  ],
+  "wrong": 1,
+  "fix": "has",
+  "explain": "With he/she/it we say has: She has a cat."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "I",
+   "is",
+   "seven",
+   "years",
+   "old."
+  ],
+  "wrong": 1,
+  "fix": "am",
+  "explain": "With I we say am: I am seven."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "They",
+   "is",
+   "my",
+   "friends."
+  ],
+  "wrong": 1,
+  "fix": "are",
+  "explain": "With they/we/you we say are: They are my friends."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "He",
+   "like",
+   "pizza."
+  ],
+  "wrong": 1,
+  "fix": "likes",
+  "explain": "With he/she/it add -s: He likes pizza."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "I",
+   "have",
+   "two",
+   "cat."
+  ],
+  "wrong": 3,
+  "fix": "cats.",
+  "explain": "More than one: add -s. One cat, two cats."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "This",
+   "is",
+   "an",
+   "dog."
+  ],
+  "wrong": 2,
+  "fix": "a",
+  "explain": "Use an before a, e, i, o, u sounds; dog starts with d, so a dog."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "I ___ a sister. She ___ six.",
+  "answers": [
+   "have",
+   "is"
+  ],
+  "bank": [
+   "have",
+   "is",
+   "has",
+   "am"
+  ],
+  "explain": "I have; she is."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "There ___ a dog. It ___ a long tail.",
+  "answers": [
+   "is",
+   "has"
+  ],
+  "bank": [
+   "is",
+   "has",
+   "are",
+   "have"
+  ],
+  "explain": "There is one dog; it has a tail."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "We ___ to school ___ bus.",
+  "answers": [
+   "go",
+   "by"
+  ],
+  "bank": [
+   "go",
+   "by",
+   "goes",
+   "in"
+  ],
+  "explain": "We go (no -s); travel by bus."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "My mum ___ tea ___ the morning.",
+  "answers": [
+   "drinks",
+   "in"
+  ],
+  "bank": [
+   "drinks",
+   "in",
+   "drink",
+   "on"
+  ],
+  "explain": "She drinks (+s); in the morning."
  }
 ]

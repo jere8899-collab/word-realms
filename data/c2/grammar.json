@@ -508,5 +508,204 @@
    "had": "Had doesn't fit.",
    "did": "Did doesn't fit."
   }
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "Under no circumstances should the dragon be woken.",
+  "explain": "Under no circumstances + should + subject."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "Try as he might, he could not open the door.",
+  "explain": "Try as he might = however hard he tried."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "So vast was the library that we got lost.",
+  "explain": "So + adjective + was + subject + that."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "Be that as it may, the quest must go on.",
+  "explain": "Be that as it may = even so."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "Not a single page had the apprentice skipped.",
+  "explain": "Negative object + inversion."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "Scarcely",
+   "had",
+   "the",
+   "candle",
+   "gone",
+   "out",
+   "than",
+   "the",
+   "whispers",
+   "began."
+  ],
+  "wrong": 6,
+  "fix": "when",
+  "explain": "Scarcely had… when (No sooner had… than)."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "Such",
+   "was",
+   "the",
+   "noise",
+   "that",
+   "we",
+   "couldn't",
+   "hear",
+   "nothing."
+  ],
+  "wrong": 8,
+  "fix": "anything",
+  "explain": "No double negatives: couldn't hear anything."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "The",
+   "more",
+   "you",
+   "read,",
+   "the",
+   "most",
+   "you",
+   "understand."
+  ],
+  "wrong": 5,
+  "fix": "more",
+  "explain": "The + comparative…, the + comparative: the more…, the more…"
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "Far",
+   "for",
+   "being",
+   "scared,",
+   "the",
+   "dragon",
+   "laughed."
+  ],
+  "wrong": 1,
+  "fix": "from",
+  "explain": "Far from + -ing = not at all."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "It",
+   "is",
+   "imperative",
+   "that",
+   "every",
+   "scroll",
+   "is",
+   "returned",
+   "by",
+   "dawn."
+  ],
+  "wrong": 6,
+  "fix": "be",
+  "explain": "imperative that + subjunctive be."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "Come",
+   "what",
+   "might,",
+   "the",
+   "library",
+   "stays",
+   "open."
+  ],
+  "wrong": 2,
+  "fix": "may",
+  "explain": "Fixed phrase: come what may."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "___ though it was, the riddle had a ___ simple answer.",
+  "answers": [
+   "Baffling",
+   "deceptively"
+  ],
+  "bank": [
+   "Baffling",
+   "deceptively",
+   "Baffled",
+   "deceptive"
+  ],
+  "explain": "Adjective + though + it was; adverb before an adjective."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "Only by reading ___ the lines ___ one grasp the poem.",
+  "answers": [
+   "between",
+   "can"
+  ],
+  "bank": [
+   "between",
+   "can",
+   "among",
+   "may"
+  ],
+  "explain": "read between the lines; Only by… can one…"
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "Not that I ___, but the ___ was yesterday.",
+  "answers": [
+   "mind",
+   "deadline"
+  ],
+  "bank": [
+   "mind",
+   "deadline",
+   "minded",
+   "headline"
+  ],
+  "explain": "Not that I mind (fixed); deadline = last day."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "The dragon, far ___ hostile, served tea ___ any sign of anger.",
+  "answers": [
+   "from",
+   "without"
+  ],
+  "bank": [
+   "from",
+   "without",
+   "off",
+   "beyond"
+  ],
+  "explain": "far from (not at all); without any sign."
  }
 ]

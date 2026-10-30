@@ -1,0 +1,96 @@
+# C1 bank growth: A2 grammar (+79). Kid topics; rule + example and a "why not" note for every wrong option.
+from c1_grow import m
+A2G = [
+ # past simple
+ m("We ___ a sandcastle at the beach yesterday.", "built", ["build", "builded", "are building"], "Past simple for finished actions; build → built (irregular). Example: I built a den last week.", ["Build is present; 'yesterday' needs the past.", "Build is irregular: built, not builded.", "Are building is happening now, not yesterday."]),
+ m("She ___ her lunch box at school on Monday.", "forgot", ["forget", "forgets", "forgetted"], "Forget → forgot (irregular past). Example: I forgot my hat.", ["Forget is present.", "Forgets is present, for every day.", "Forget is irregular: forgot."]),
+ m("___ you see the rainbow this morning?", "Did", ["Do", "Were", "Have"], "Past simple question: Did + subject + plain verb. Example: Did you eat breakfast?", ["Do is for the present.", "Were goes with -ing or an adjective: Were you happy?", "Have you seen…? doesn't fit 'this morning' with 'see'."]),
+ m("I didn't ___ the answer to question five.", "know", ["knew", "knows", "knowing"], "Didn't + plain verb. Example: He didn't come.", ["After didn't, use the plain verb, not the past.", "No -s after didn't.", "No -ing after didn't."]),
+ m("The puppy ___ under the bed all afternoon.", "slept", ["sleeped", "sleeps", "sleep"], "Sleep → slept. Example: I slept well.", ["Sleep is irregular: slept.", "Sleeps is present.", "Sleep is present."]),
+ m("We ___ at home last Sunday because it rained.", "stayed", ["stay", "staied", "were stay"], "Regular past: add -ed (stay → stayed).", ["Stay is present.", "Stay keeps the y: stayed.", "Were stay mixes two forms."]),
+ m("Mia ___ a beautiful picture of a unicorn.", "drew", ["drawed", "draws", "drawn"], "Draw → drew → drawn. Past simple: drew. Example: He drew a map.", ["Draw is irregular: drew.", "Draws is present.", "Drawn needs has/have: has drawn."]),
+ m("Where ___ you go on holiday last summer?", "did", ["do", "were", "are"], "Wh- question in the past: Where did you go?", ["Do is present.", "Were doesn't go with 'go'.", "Are is present."]),
+ # past continuous
+ m("At 8 p.m. yesterday I ___ my homework.", "was doing", ["did", "am doing", "were doing"], "Past continuous (was/were + -ing) for an action in progress at a past time.", ["Did shows a finished action, not one in progress at 8 p.m.", "Am doing is now.", "Were goes with you/we/they, not I."]),
+ m("While we ___ football, it started to snow.", "were playing", ["played", "was playing", "are playing"], "While + past continuous for the longer action. Example: While I was reading, the phone rang.", ["Played is a finished action; 'while' needs the longer one in progress.", "Was is for I/he/she/it; we → were.", "Are playing is now."]),
+ m("The children were sleeping when the owl ___.", "hooted", ["was hooting", "hoots", "hoot"], "Long action (past continuous) + short action (past simple). Example: I was walking when I saw a fox.", ["The short action that interrupts uses the past simple.", "Hoots is present.", "Hoot is present."]),
+ # present perfect
+ m("I've ___ been to the seaside. I'd love to go!", "never", ["ever", "already", "yet"], "Present perfect + never = not at any time. Example: I've never flown a kite.", ["Ever is for questions: Have you ever…?", "Already means it has happened.", "Yet goes at the end in questions or negatives."]),
+ m("Have you ___ seen a real penguin?", "ever", ["never", "yet", "since"], "Have you ever…? asks about experience in your life.", ["Never is for statements: I've never…", "Yet goes at the end of a sentence.", "Since needs a start time: since Monday."]),
+ m("We've ___ finished the puzzle! Look!", "just", ["yet", "ever", "for"], "Just = a very short time ago. Example: I've just eaten.", ["Yet goes at the end in questions and negatives.", "Ever is for questions about experience.", "For needs a time: for two hours."]),
+ m("She has lived in Penang ___ she was five.", "since", ["for", "from", "ago"], "Since + a start point; for + a length of time. Example: since Monday, for three days.", ["For needs a length of time: for five years.", "From needs 'to': from 2019 to 2022.", "Ago goes with the past simple: five years ago."]),
+ m("They've had their hamster ___ two years.", "for", ["since", "ago", "during"], "For + a length of time. Example: for ten minutes.", ["Since needs a start point: since 2024.", "Ago goes with the past simple.", "During needs a noun: during the holiday."]),
+ m("I haven't tidied my room ___.", "yet", ["already", "just", "ever"], "Not… yet = it hasn't happened, but it will. Example: I haven't eaten yet.", ["Already is for things that have happened.", "Just means a moment ago.", "Ever is for questions about experience."]),
+ m("Tom ___ his arm, so he can't play today.", "has broken", ["has broke", "have broken", "is breaking"], "Present perfect for a past action with a result now: has + past participle (broken).", ["The participle is broken, not broke.", "He/she/it → has, not have.", "Is breaking means it's happening now."]),
+ # future
+ m("Look at that wobbly tower! It's ___ fall!", "going to", ["will to", "go to", "goes to"], "Going to for something we can see is about to happen.", ["Will doesn't take 'to'.", "We need 'going to'.", "Goes to isn't a future form."]),
+ m("I'm cold. — I ___ close the window for you.", "'ll", ["'m going", "close", "am"], "Will ('ll) for a quick offer or decision made now.", ["Going to is for plans made before.", "We need 'll before close.", "Am doesn't make an offer here."]),
+ m("We ___ visit Grandma next Saturday. It's planned.", "are going to", ["will to", "go", "visited"], "Going to for plans. Example: I'm going to learn the piano.", ["Will doesn't take to.", "Go is present.", "Visited is past."]),
+ m("What ___ you do this weekend? — We're going camping!", "are", ["do", "did", "will to"], "Present continuous for fixed plans: What are you doing this weekend?", ["Do asks about habits.", "Did asks about the past.", "Will doesn't take to."]),
+ m("I think it ___ be sunny tomorrow.", "will", ["is", "going", "does"], "I think + will for a prediction. Example: I think you'll win.", ["Is be isn't right.", "Going needs is + to.", "Does doesn't go with be."]),
+ # comparatives / superlatives
+ m("A cheetah is ___ than a tortoise.", "faster", ["more fast", "fastest", "fast"], "Short adjective + -er + than. Example: tall → taller than.", ["Short adjectives take -er, not more.", "Fastest is for the top of a group.", "We need the -er form before than."]),
+ m("This is the ___ story in the whole book!", "funniest", ["funnier", "most funny", "funnyest"], "the + adjective + -est for the top one; y → iest.", ["Funnier compares two.", "Two-syllable -y adjectives take -iest.", "Change y to i: funniest."]),
+ m("My new bike is ___ than my old one.", "more comfortable", ["comfortabler", "most comfortable", "comfortable"], "Long adjectives: more + adjective + than.", ["Long adjectives don't take -er.", "Most is for the top of a group.", "We need more … than."]),
+ m("Today is ___ than yesterday. I need a coat!", "colder", ["more cold", "coldest", "the colder"], "cold → colder than.", ["Short adjectives use -er.", "Coldest compares more than two.", "No 'the' with a comparative + than."]),
+ m("This maze is ___ the one at school. Both are hard!", "as hard as", ["as hard than", "harder as", "so hard than"], "as + adjective + as = the same.", ["As goes with as, not than.", "Harder goes with than.", "We say as… as."]),
+ m("Ben's drawing is good, but Ana's is ___.", "better", ["gooder", "more good", "best"], "good → better → best (irregular).", ["Good is irregular: better.", "We don't say more good.", "Best is for the top of a group."]),
+ m("That was the ___ day of my life!", "worst", ["baddest", "worse", "most bad"], "bad → worse → worst.", ["Bad is irregular: worst.", "Worse compares two.", "We don't say most bad."]),
+ m("A whale is ___ animal in the sea.", "the biggest", ["the bigger", "biggest", "the most big"], "the + -est; double the last letter: big → biggest.", ["The bigger compares two.", "Superlatives need 'the'.", "Short adjectives take -est."]),
+ # quantifiers
+ m("There isn't ___ juice left. Can we buy some?", "much", ["many", "a few", "lots"], "Much for things we can't count (juice, milk) in questions and negatives.", ["Many is for countable things: many cups.", "A few is for countable things.", "Lots needs 'of': lots of juice."]),
+ m("How ___ sweets are in the jar?", "many", ["much", "lot", "any"], "How many + plural countable noun.", ["Much is for uncountable things.", "Lot needs a: a lot of.", "Any doesn't go after how."]),
+ m("I have ___ friends in my new class. Only three!", "a few", ["a little", "much", "a lot"], "A few + plural countable noun = a small number.", ["A little is for uncountable things.", "Much is for uncountable things.", "A lot needs 'of', and three isn't a lot."]),
+ m("Can I have ___ milk in my tea, please? Just a bit.", "a little", ["a few", "many", "several"], "A little + uncountable = a small amount.", ["A few is for countable things.", "Many is for countable things.", "Several is for countable things."]),
+ m("Is there ___ cheese in the fridge?", "any", ["some", "a", "many"], "Any in questions and negatives. Example: Have you got any pets?", ["Some is usually for positive sentences and offers.", "A isn't used with cheese (uncountable).", "Many is for countable things."]),
+ m("Would you like ___ grapes?", "some", ["any", "a", "much"], "Some in offers: Would you like some cake?", ["Any is for questions that aren't offers, and negatives.", "A is for one thing.", "Much is for uncountable things."]),
+ # modals
+ m("You ___ run near the pool. It's dangerous!", "mustn't", ["don't have to", "needn't", "can"], "Mustn't = it's not allowed.", ["Don't have to = it's not necessary, but OK.", "Needn't = not necessary.", "Can means it's allowed, the opposite."]),
+ m("You ___ bring a pen. We have lots.", "don't have to", ["mustn't", "can't", "shouldn't"], "Don't have to = it isn't necessary.", ["Mustn't means it isn't allowed.", "Can't means you aren't able or allowed.", "Shouldn't means it's a bad idea."]),
+ m("You look tired. You ___ go to bed early.", "should", ["must to", "would", "can't"], "Should + verb for advice.", ["Must doesn't take to.", "Would isn't advice here.", "Can't is the opposite of advice."]),
+ m("___ I borrow your rubber, please?", "Could", ["Must", "Should", "Will I"], "Could I…? is a polite request.", ["Must I…? asks if it's necessary.", "Should I…? asks for advice.", "Will I…? asks about the future."]),
+ m("When I was four, I ___ read. Now I can!", "couldn't", ["can't", "mustn't", "shouldn't"], "Couldn't = past of can't.", ["Can't is present.", "Mustn't is about rules.", "Shouldn't is about advice."]),
+ m("I ___ finish my project tonight. It's due tomorrow!", "have to", ["has to", "must to", "can to"], "I have to + verb = it's necessary.", ["Has to is for he/she/it.", "Must doesn't take to.", "Can doesn't take to."]),
+ # -ing / to
+ m("I enjoy ___ in the rain.", "dancing", ["to dance", "dance", "danced"], "Enjoy + -ing. Example: She enjoys reading.", ["Enjoy isn't followed by to.", "We need the -ing form.", "Danced is past."]),
+ m("We want ___ the dinosaur museum.", "to visit", ["visiting", "visit", "visited"], "Want + to + verb.", ["Want isn't followed by -ing.", "We need to before the verb.", "Visited is past."]),
+ m("My brother is good at ___ jokes.", "telling", ["tell", "to tell", "tells"], "Preposition (at) + -ing.", ["After 'at' use -ing.", "No 'to' after at.", "Tells is present."]),
+ m("Let's stop ___ and start the game!", "talking", ["talk", "to talk", "talked"], "Stop + -ing = finish doing something.", ["We need -ing after stop.", "Stop to talk means you stop in order to talk.", "Talked is past."]),
+ m("She decided ___ a cake for her mum.", "to bake", ["baking", "bake", "baked"], "Decide + to + verb.", ["Decide isn't followed by -ing.", "We need to before bake.", "Baked is past."]),
+ # relative clauses
+ m("This is the dragon ___ lives in the cave.", "which", ["who", "where", "what"], "Which/that for animals and things.", ["Who is usually for people.", "Where is for places.", "What isn't used like this."]),
+ m("That's the park ___ we had our picnic.", "where", ["which", "who", "when"], "Where for places.", ["Which needs 'in': which we had our picnic in.", "Who is for people.", "When is for times."]),
+ m("She's the teacher ___ helped me with maths.", "who", ["which", "where", "whose"], "Who for people.", ["Which is for things and animals.", "Where is for places.", "Whose shows owning."]),
+ # prepositions / articles
+ m("I'm really good ___ swimming.", "at", ["in", "on", "for"], "good at + -ing / noun.", ["We say good at, not good in.", "On isn't used with good.", "Good for means healthy."]),
+ m("Are you afraid ___ spiders?", "of", ["from", "at", "with"], "afraid of + noun.", ["We don't say afraid from.", "At isn't used with afraid.", "With isn't used with afraid."]),
+ m("We're going to the beach ___ bus.", "by", ["on", "with", "in"], "by + transport (no 'the'): by bus, by car.", ["On needs 'the': on the bus.", "With isn't used with transport.", "In needs 'the' or a car: in the car."]),
+ m("My birthday is ___ 5th May.", "on", ["in", "at", "by"], "On + a date. Example: on 1st June.", ["In is for months alone: in May.", "At is for times.", "By means 'not later than'."]),
+ m("I'll see you ___ the weekend.", "at", ["in", "on in", "by the"], "British English: at the weekend.", ["In the weekend isn't usual in British English.", "Don't use two prepositions.", "By the weekend means 'before it ends'."]),
+ m("She plays ___ piano every day.", "the", ["a", "(no word)", "an"], "Play + the + instrument: play the guitar.", ["We use the, not a, with instruments.", "We need 'the' here.", "Piano starts with p, so not an."]),
+ m("We go to ___ school by bike.", "(no word)", ["the", "a", "an"], "go to school (no article) when you go there to learn.", ["Go to the school is for visiting the building.", "A school means any school.", "An is before a vowel sound."]),
+ # adverbs
+ m("The tortoise walked very ___.", "slowly", ["slow", "slower", "slowest"], "Adverb (how?) = adjective + -ly.", ["Slow is an adjective; we need slowly after walked.", "Slower compares.", "Slowest compares more than two."]),
+ m("She sings ___!", "beautifully", ["beautiful", "beauty", "more beautiful"], "beautiful → beautifully (adverb).", ["Beautiful describes a noun.", "Beauty is a noun.", "More beautiful compares."]),
+ m("He did ___ in the spelling test. 20 out of 20!", "well", ["good", "nice", "fine"], "good (adjective) → well (adverb).", ["Good describes a noun: a good test.", "Nice is an adjective.", "Fine is an adjective here."]),
+ m("I ___ eat vegetables. I love broccoli!", "always", ["never", "rarely", "hardly"], "Frequency adverbs go before the main verb. Always = every time.", ["Never means not at any time, but you love broccoli.", "Rarely means not often.", "Hardly means almost not."]),
+ # questions / tags
+ m("You like chocolate, ___ you?", "don't", ["do", "aren't", "doesn't"], "Positive sentence → negative tag: You like…, don't you?", ["The tag must be negative here.", "Like uses do, not be.", "You → don't, not doesn't."]),
+ m("It isn't raining, ___ it?", "is", ["isn't", "does", "doesn't"], "Negative sentence → positive tag.", ["The tag must be positive here.", "Is raining uses be, not do.", "Be, not do, and positive."]),
+ m("___ did you get to the party? — By car.", "How", ["What", "Who", "Which"], "How asks about the way.", ["What asks about a thing.", "Who asks about a person.", "Which asks for a choice."]),
+ m("___ bag is this? — It's Lily's.", "Whose", ["Who", "Who's", "Which's"], "Whose asks who owns something.", ["Who asks about a person.", "Who's = who is.", "Which's isn't a word."]),
+ m("___ do you go to the dentist? — Twice a year.", "How often", ["How much", "When time", "How long"], "How often asks about frequency.", ["How much asks about amount or price.", "When time isn't English.", "How long asks about time length."]),
+ # possessives / pronouns
+ m("These aren't my crayons. They're ___.", "yours", ["your", "you", "your's"], "Possessive pronouns stand alone: mine, yours, his, hers, ours, theirs.", ["Your goes before a noun.", "You isn't possessive.", "No apostrophe: yours."]),
+ m("The twins love ___ new kitten.", "their", ["there", "they're", "theirs"], "Their + noun = belonging to them.", ["There is a place.", "They're = they are.", "Theirs stands alone."]),
+ m("Did you make this card ___?", "yourself", ["you", "yours", "your"], "Reflexive pronoun: you → yourself.", ["You doesn't give the meaning 'on your own'.", "Yours means belonging to you.", "Your needs a noun."]),
+ m("The dog wagged ___ tail.", "its", ["it's", "his's", "it"], "Its = belonging to it (no apostrophe).", ["It's = it is.", "His's isn't a word.", "It isn't possessive."]),
+ # conditionals / conjunctions
+ m("If you heat ice, it ___.", "melts", ["melt", "will melted", "melting"], "Zero conditional for facts: If + present, present.", ["It → melts with -s.", "Will melted mixes forms.", "Melting needs is."]),
+ m("If we finish early, we ___ play a game.", "will", ["would", "did", "are"], "First conditional: If + present, will + verb.", ["Would is for imaginary situations.", "Did is past.", "Are play isn't right."]),
+ m("I wanted to go out, ___ it was raining.", "but", ["because", "so", "or"], "But shows a contrast.", ["Because gives a reason, not a contrast.", "So gives a result.", "Or gives a choice."]),
+ m("We took umbrellas ___ it was raining.", "because", ["but", "so", "although"], "Because gives the reason.", ["But shows a contrast.", "So gives a result, not a reason.", "Although shows a surprise contrast."]),
+ m("It was late, ___ we went home.", "so", ["because", "but", "if"], "So gives the result.", ["Because gives a reason.", "But shows a contrast.", "If is for conditions."]),
+ m("I'll wait here ___ you come back.", "until", ["since", "during", "for"], "Until = up to the time when.", ["Since needs a past start point.", "During needs a noun.", "For needs a length of time."]),
+ m("Brush your teeth ___ you go to bed.", "before", ["after", "while", "since"], "Before = earlier than.", ["After would mean brushing in bed!", "While means at the same time.", "Since needs a past start point."]),
+]

@@ -285,3 +285,43 @@ body.kbd-open .toast{display:none}
 .lbar .lchip{white-space:normal;max-width:100%}
 /* C3: "why not" note for the option the child picked */
 .explain .why-not{margin-top:6px;padding:8px 10px;border-radius:12px;background:rgba(127,127,127,.12);font-weight:600;line-height:1.35}
+/* 🧩 C2 question types */
+.qpic.qart{display:flex;justify-content:center}
+.qpic.qart img{width:clamp(96px,30vw,150px);height:auto;filter:drop-shadow(0 4px 10px rgba(120,90,160,.18))}
+.spell-slots{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:10px 0;min-height:48px}
+.spell-slots .slot{display:inline-flex;align-items:center;justify-content:center;width:44px;height:48px;border-radius:12px;border:2px dashed rgba(150,120,200,.45);background:rgba(255,255,255,.55);font-weight:900;font-size:1.3rem}
+.spell-slots .slot.filled{border-style:solid;background:var(--butter,#fff3c4);padding:0}
+.spell-slots.right .slot{border-color:#5cc8a0}.spell-slots.wrong .slot{border-color:#f28aa0}
+.tiles.letters .tile{min-width:44px;min-height:48px;font-size:1.3rem;font-weight:900;text-transform:lowercase}
+.mwords{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0;justify-content:center}
+.mword{min-height:44px;min-width:44px;padding:6px 12px;border-radius:12px;border:2px solid rgba(150,120,200,.3);background:#fff;font:inherit;font-weight:800;font-size:1.08rem;color:inherit;cursor:pointer}
+.mword.right{background:#d6f5e8;border-color:#5cc8a0}.mword.wrong{background:#ffe0e7;border-color:#f28aa0}
+.gaptext{font-size:1.12rem;font-weight:700;line-height:2.4;margin:8px 0}
+.gap{display:inline-flex;align-items:center;justify-content:center;min-width:72px;min-height:44px;margin:0 4px;padding:2px 10px;border-radius:12px;border:2px dashed rgba(150,120,200,.55);background:rgba(255,255,255,.7);font:inherit;font-weight:900;color:inherit;vertical-align:middle;cursor:pointer}
+.gap.sel{border-color:#b48ce6;box-shadow:0 0 0 3px rgba(180,140,230,.25)}.gap.filled{border-style:solid;background:var(--butter,#fff3c4)}
+.gap.right{background:#d6f5e8;border-color:#5cc8a0}.gap.wrong{background:#ffe0e7;border-color:#f28aa0}
+.dict-in{width:100%;box-sizing:border-box;min-height:48px;font-size:1.1rem;padding:10px 14px;border-radius:14px;border:2px solid rgba(150,120,200,.4);margin-top:8px}
+.dict-in.right{border-color:#5cc8a0}.dict-in.wrong{border-color:#f28aa0}
+.dict-check{margin:6px 0;line-height:1.8}.dict-check .dw{padding:2px 6px;border-radius:8px;font-weight:800}
+.dict-check .dw.ok{background:#d6f5e8}.dict-check .dw.no{background:#ffe0e7}
+.opts.picgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt.picopt{justify-content:center;padding:8px;min-height:96px}
+.opt.picopt img{width:clamp(72px,24vw,120px);height:auto}
+.say-line{display:block}
+@media (orientation:landscape) and (max-height:500px){.opts.picgrid{grid-template-columns:repeat(4,1fr)}.opt.picopt{min-height:72px}.opt.picopt img{width:64px}.qpic.qart img{width:80px}}
+/* 🎨 T16: painted boss portraits and match-card pictures */
+.boss .face.painted{display:inline-flex;width:64px;height:64px;flex:0 0 auto}
+.boss .face.painted img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 3px 6px rgba(90,60,140,.25))}
+.lbar .boss .face.painted{width:44px;height:44px}
+.mcard.painted{padding:6px}.mcard.painted img.mart{width:86%;height:86%;object-fit:contain;pointer-events:none}
+/* T18: browsers without backdrop-filter get solid, readable panels instead of see-through ones */
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .topbar{background:rgba(255,248,252,.97)}.navbar{background:rgba(255,255,255,.97)}
+  .realm-hero .ov{background:rgba(255,255,255,.95)}.modal-bg{background:rgba(109,79,134,.55)}
+  .card{background:rgba(255,255,255,.96)}
+}
+/* T18: Safari before 18 only knows the -webkit- prefix */
+.topbar{-webkit-backdrop-filter:blur(10px)}
+.navbar{-webkit-backdrop-filter:blur(10px)}
+.realm-hero .ov{-webkit-backdrop-filter:blur(6px)}
+.modal-bg{-webkit-backdrop-filter:blur(4px)}

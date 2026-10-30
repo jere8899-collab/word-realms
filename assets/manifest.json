@@ -315,6 +315,366 @@
         "small": "assets/web/bg_math_720.webp",
         "thumb": "assets/web/bg_math_thumb.webp"
       }
+    },
+    {
+      "id": "word_apple",
+      "type": "word",
+      "name": "apple",
+      "path": "assets/words/word_apple.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        256,
+        256
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet of cute kawaii chibi objects, big sparkly eyes, soft pastel palette, clean soft lineart, gentle cel shading, white background (one cell per word)",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/word_apple.webp",
+        "small": "assets/web/word_apple.webp"
+      }
+    },
+    {
+      "id": "word_dog",
+      "type": "word",
+      "name": "dog",
+      "path": "assets/words/word_dog.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        256,
+        256
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet of cute kawaii chibi objects, big sparkly eyes, soft pastel palette, clean soft lineart, gentle cel shading, white background (one cell per word)",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/word_dog.webp",
+        "small": "assets/web/word_dog.webp"
+      }
+    },
+    {
+      "id": "word_house",
+      "type": "word",
+      "name": "house",
+      "path": "assets/words/word_house.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        256,
+        256
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet of cute kawaii chibi objects, big sparkly eyes, soft pastel palette, clean soft lineart, gentle cel shading, white background (one cell per word)",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/word_house.webp",
+        "small": "assets/web/word_house.webp"
+      }
+    },
+    {
+      "id": "word_sun",
+      "type": "word",
+      "name": "sun",
+      "path": "assets/words/word_sun.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        256,
+        256
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet of cute kawaii chibi objects, big sparkly eyes, soft pastel palette, clean soft lineart, gentle cel shading, white background (one cell per word)",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/word_sun.webp",
+        "small": "assets/web/word_sun.webp"
+      }
+    },
+    {
+      "id": "word_bike",
+      "type": "word",
+      "name": "bike",
+      "path": "assets/words/word_bike.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        256,
+        256
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet of cute kawaii chibi objects, big sparkly eyes, soft pastel palette, clean soft lineart, gentle cel shading, white background (one cell per word)",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/word_bike.webp",
+        "small": "assets/web/word_bike.webp"
+      }
+    },
+    {
+      "id": "word_bread",
+      "type": "word",
+      "name": "bread",
+      "path": "assets/words/word_bread.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        256,
+        256
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet of cute kawaii chibi objects, big sparkly eyes, soft pastel palette, clean soft lineart, gentle cel shading, white background (one cell per word)",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/word_bread.webp",
+        "small": "assets/web/word_bread.webp"
+      }
+    },
+    {
+      "id": "word_shoe",
+      "type": "word",
+      "name": "shoe",
+      "path": "assets/words/word_shoe.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        256,
+        256
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet of cute kawaii chibi objects, big sparkly eyes, soft pastel palette, clean soft lineart, gentle cel shading, white background (one cell per word)",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/word_shoe.webp",
+        "small": "assets/web/word_shoe.webp"
+      }
+    },
+    {
+      "id": "word_fish",
+      "type": "word",
+      "name": "fish",
+      "path": "assets/words/word_fish.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        256,
+        256
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet of cute kawaii chibi objects, big sparkly eyes, soft pastel palette, clean soft lineart, gentle cel shading, white background (one cell per word)",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/word_fish.webp",
+        "small": "assets/web/word_fish.webp"
+      }
+    },
+    {
+      "id": "word_cake",
+      "type": "word",
+      "name": "cake",
+      "path": "assets/words/word_cake.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        256,
+        256
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet of cute kawaii chibi objects, big sparkly eyes, soft pastel palette, clean soft lineart, gentle cel shading, white background (one cell per word)",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/word_cake.webp",
+        "small": "assets/web/word_cake.webp"
+      }
+    },
+    {
+      "id": "word_strawberry",
+      "type": "word",
+      "name": "strawberry",
+      "path": "assets/words/word_strawberry.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        256,
+        256
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet of cute kawaii chibi objects, big sparkly eyes, soft pastel palette, clean soft lineart, gentle cel shading, white background (one cell per word)",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/word_strawberry.webp",
+        "small": "assets/web/word_strawberry.webp"
+      }
+    },
+    {
+      "id": "word_rabbit",
+      "type": "word",
+      "name": "rabbit",
+      "path": "assets/words/word_rabbit.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        256,
+        256
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet of cute kawaii chibi objects, big sparkly eyes, soft pastel palette, clean soft lineart, gentle cel shading, white background (one cell per word)",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/word_rabbit.webp",
+        "small": "assets/web/word_rabbit.webp"
+      }
+    },
+    {
+      "id": "word_flower",
+      "type": "word",
+      "name": "flower",
+      "path": "assets/words/word_flower.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        256,
+        256
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet of cute kawaii chibi objects, big sparkly eyes, soft pastel palette, clean soft lineart, gentle cel shading, white background (one cell per word)",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/word_flower.webp",
+        "small": "assets/web/word_flower.webp"
+      }
+    },
+    {
+      "id": "word_ball",
+      "type": "word",
+      "name": "ball",
+      "path": "assets/words/word_ball.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        256,
+        256
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet of cute kawaii chibi objects, big sparkly eyes, soft pastel palette, clean soft lineart, gentle cel shading, white background (one cell per word)",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/word_ball.webp",
+        "small": "assets/web/word_ball.webp"
+      }
+    },
+    {
+      "id": "word_clock",
+      "type": "word",
+      "name": "clock",
+      "path": "assets/words/word_clock.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        256,
+        256
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet of cute kawaii chibi objects, big sparkly eyes, soft pastel palette, clean soft lineart, gentle cel shading, white background (one cell per word)",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/word_clock.webp",
+        "small": "assets/web/word_clock.webp"
+      }
+    },
+    {
+      "id": "word_umbrella",
+      "type": "word",
+      "name": "umbrella",
+      "path": "assets/words/word_umbrella.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        256,
+        256
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet of cute kawaii chibi objects, big sparkly eyes, soft pastel palette, clean soft lineart, gentle cel shading, white background (one cell per word)",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/word_umbrella.webp",
+        "small": "assets/web/word_umbrella.webp"
+      }
+    },
+    {
+      "id": "word_boat",
+      "type": "word",
+      "name": "boat",
+      "path": "assets/words/word_boat.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        256,
+        256
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet of cute kawaii chibi objects, big sparkly eyes, soft pastel palette, clean soft lineart, gentle cel shading, white background (one cell per word)",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/word_boat.webp",
+        "small": "assets/web/word_boat.webp"
+      }
+    },
+    {
+      "id": "word_cat",
+      "type": "word",
+      "name": "cat",
+      "path": "assets/words/word_cat.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        256,
+        256
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet of cute kawaii chibi objects, big sparkly eyes, soft pastel palette, clean soft lineart, gentle cel shading, white background (one cell per word)",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/word_cat.webp",
+        "small": "assets/web/word_cat.webp"
+      }
+    },
+    {
+      "id": "word_bed",
+      "type": "word",
+      "name": "bed",
+      "path": "assets/words/word_bed.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        256,
+        256
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet of cute kawaii chibi objects, big sparkly eyes, soft pastel palette, clean soft lineart, gentle cel shading, white background (one cell per word)",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/word_bed.webp",
+        "small": "assets/web/word_bed.webp"
+      }
+    },
+    {
+      "id": "boss_glimmerfin",
+      "type": "boss",
+      "name": "Glimmerfin",
+      "path": "assets/ui/boss_glimmerfin.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "cute kawaii chibi boss portrait, big sparkly eyes, soft pastel palette, clean soft lineart, gentle cel shading, storybook illustration, white background (cut out)",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/boss_glimmerfin.webp",
+        "small": "assets/web/boss_glimmerfin.webp"
+      }
+    },
+    {
+      "id": "boss_archivus",
+      "type": "boss",
+      "name": "Archivus the Library Dragon",
+      "path": "assets/ui/boss_archivus.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "cute kawaii chibi boss portrait, big sparkly eyes, soft pastel palette, clean soft lineart, gentle cel shading, storybook illustration, white background (cut out)",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/boss_archivus.webp",
+        "small": "assets/web/boss_archivus.webp"
+      }
     }
   ]
 }

@@ -9,6 +9,7 @@ const SAVE = { v: 1, name: 'Jeremy', avatar: 'avatar_mage', startLevel: 'a1', st
   const b = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox'] });
   const page = await (await b.newContext({ viewport: { width: 1200, height: 860 } })).newPage();
   const errors = []; page.on('pageerror', e => errors.push(e.message)); page.on('console', m => { if (m.type() === 'error' && !/font|ERR_/.test(m.text())) errors.push(m.text()); });
+  await page.addInitScript(() => { window.__WR_ALL_TYPES = true; });   // rotation covers the whole bank, new C2 types included
   await page.goto('http://127.0.0.1:18642/index.html');
   await page.evaluate(s => localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)), SAVE);
   await page.reload({ waitUntil: 'networkidle' }); await page.waitForTimeout(600);

@@ -508,5 +508,202 @@
    "heard we": "'Heard we' needs did.",
    "we did hear": "'We did hear' keeps subject first."
   }
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "Little did they know that the map was a fake.",
+  "explain": "Little + did + subject + verb."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "Were it not for the rain, we would be outside.",
+  "explain": "Were it not for = if it weren't for."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "What surprised me most was how calm she stayed.",
+  "explain": "What-clause + was + the focus."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "Only after the storm passed did we leave the cave.",
+  "explain": "Only after… + inversion."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "She is said to have trained with the champion.",
+  "explain": "is said to have + pp."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "Hardly",
+   "had",
+   "we",
+   "arrived",
+   "than",
+   "it",
+   "started",
+   "to",
+   "rain."
+  ],
+  "wrong": 4,
+  "fix": "when",
+  "explain": "Hardly had… when (No sooner had… than)."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "It's",
+   "high",
+   "time",
+   "we",
+   "leave",
+   "for",
+   "the",
+   "station."
+  ],
+  "wrong": 4,
+  "fix": "left",
+  "explain": "It's high time + past simple."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "Never",
+   "have",
+   "I",
+   "saw",
+   "such",
+   "a",
+   "bright",
+   "comet."
+  ],
+  "wrong": 3,
+  "fix": "seen",
+  "explain": "have + past participle: have I seen."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "The",
+   "team,",
+   "which",
+   "coach",
+   "is",
+   "ill,",
+   "will",
+   "play",
+   "tomorrow."
+  ],
+  "wrong": 2,
+  "fix": "whose",
+  "explain": "whose shows possession: the team whose coach…"
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "Despite",
+   "she",
+   "was",
+   "tired,",
+   "she",
+   "kept",
+   "running."
+  ],
+  "wrong": 0,
+  "fix": "Although",
+  "explain": "Despite + noun/-ing; Although + a clause (she was tired)."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "Should",
+   "you",
+   "will",
+   "need",
+   "help,",
+   "ask",
+   "a",
+   "librarian."
+  ],
+  "wrong": 2,
+  "fix": "(no 'will')",
+  "explain": "Should + subject + plain verb: Should you need help…"
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "___ as it may sound, the robot ___ learned to dance.",
+  "answers": [
+   "Strange",
+   "actually"
+  ],
+  "bank": [
+   "Strange",
+   "actually",
+   "Strangely",
+   "actual"
+  ],
+  "explain": "Adjective + as + it may sound; actually = in fact."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "Rarely ___ we seen such a bright comet, ___ the experts say.",
+  "answers": [
+   "have",
+   "or so"
+  ],
+  "bank": [
+   "have",
+   "or so",
+   "had",
+   "as so"
+  ],
+  "explain": "Rarely + inversion; 'or so the experts say'."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "Had I ___ the instructions, I ___ have broken it.",
+  "answers": [
+   "read",
+   "wouldn't"
+  ],
+  "bank": [
+   "read",
+   "wouldn't",
+   "reading",
+   "won't"
+  ],
+  "explain": "Had + pp, wouldn't have + pp."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "So ___ was the puzzle that nobody solved it ___ the end of term.",
+  "answers": [
+   "tricky",
+   "before"
+  ],
+  "bank": [
+   "tricky",
+   "before",
+   "trickily",
+   "until"
+  ],
+  "explain": "So + adjective + was…; before the end."
  }
 ]

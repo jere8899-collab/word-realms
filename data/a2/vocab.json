@@ -525,5 +525,53 @@
    "keep": "Keep means not give away.",
    "buy": "You can't buy a restaurant table!"
   }
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a place where you borrow books",
+  "answer": "library",
+  "explain": "li-brar-y: library."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: the day after Monday",
+  "answer": "tuesday",
+  "explain": "Tuesday (u-e-s)."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: you wear them on your eyes to see better",
+  "answer": "glasses",
+  "explain": "glasses: double s."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a doctor for animals",
+  "answer": "vet",
+  "explain": "vet."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: the opposite of 'cheap'",
+  "answer": "expensive",
+  "explain": "ex-pen-sive."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: the meal in the middle of the day",
+  "answer": "lunch",
+  "explain": "lunch."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a very big, grey animal with a long nose",
+  "answer": "elephant",
+  "explain": "el-e-phant: ph says f."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: the season after spring",
+  "answer": "summer",
+  "explain": "summer: double m."
  }
 ]

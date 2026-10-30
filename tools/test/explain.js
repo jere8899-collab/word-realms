@@ -8,13 +8,16 @@ const D = path.join(__dirname, '..', '..', 'data');
 for (const lvl of ['a1', 'a2', 'b1', 'b2', 'c1', 'c2']) for (const sk of ['grammar', 'vocab', 'listening', 'reading']) {
   const j = JSON.parse(fs.readFileSync(`${D}/${lvl}/${sk}.json`, 'utf8'));
   const items = sk === 'reading' ? j.passages.flatMap(p => p.questions) : j;
-  for (const q of items) { if (q.type === 'order') continue;
+  for (const q of items) { if (!['mcq', 'listen', 'picq'].includes(q.type)) continue;  // C2 types (spell, mistake, gaps, dictate, order) have no options
     ok(q.explain && q.explain.length >= 8, `${lvl}/${sk} explain: ${q.q}`);
     const wrong = q.options.filter((o, i) => i !== q.answer);
     ok(q.notes && wrong.every(o => q.notes[o] && q.notes[o].length > 8), `${lvl}/${sk} notes: ${q.q}`); }
 }
 const BAD = /\b(minister|council chamber|parliament|treaty|ambassador|economy|constitutional|jury)\b/i;   // C5: no adult-politics stems in C1/C2 grammar+vocab
 for (const lvl of ['c1', 'c2']) for (const sk of ['grammar', 'vocab']) for (const q of JSON.parse(fs.readFileSync(`${D}/${lvl}/${sk}.json`, 'utf8'))) ok(!BAD.test(q.q), `C5 kid-friendly stem ${lvl}/${sk}: ${q.q}`);
+const BAD2 = /\b(minister|parliament|treaty|ambassador|economy|councillors?|merchants' guild|jury)\b/i;
+for (const lvl of ['c1', 'c2']) { const r = JSON.parse(fs.readFileSync(`${D}/${lvl}/reading.json`, 'utf8')); r.passages.forEach(p => ok(!BAD2.test(p.text + ' ' + p.title), `C5 kid-friendly passage ${lvl}: ${p.title}`));
+  JSON.parse(fs.readFileSync(`${D}/${lvl}/listening.json`, 'utf8')).forEach(q => ok(!BAD2.test(q.say + ' ' + q.q), `C5 kid-friendly listening ${lvl}: ${q.say.slice(0, 50)}`)); }
 (async () => {
   const browser = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox'] });
   const ctx = await browser.newContext({ viewport: { width: 375, height: 667 }, isMobile: true, hasTouch: true });

@@ -529,5 +529,293 @@
    "farmer": "A farmer works on a farm.",
    "driver": "A driver drives a car or bus."
   }
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word.",
+  "art": "word_apple",
+  "answer": "apple",
+  "explain": "a-p-p-l-e: two p's."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word.",
+  "art": "word_dog",
+  "answer": "dog",
+  "explain": "d-o-g."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word.",
+  "art": "word_house",
+  "answer": "house",
+  "explain": "h-o-u-s-e: ends with a silent e."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word.",
+  "art": "word_sun",
+  "answer": "sun",
+  "explain": "s-u-n."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word.",
+  "art": "word_bike",
+  "answer": "bike",
+  "explain": "b-i-k-e: the e at the end makes the i say its name."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word.",
+  "art": "word_fish",
+  "answer": "fish",
+  "explain": "sh makes one sound: f-i-sh."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word.",
+  "art": "word_cake",
+  "answer": "cake",
+  "explain": "c-a-k-e: silent e at the end."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word.",
+  "art": "word_cat",
+  "answer": "cat",
+  "explain": "c-a-t."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word.",
+  "art": "word_bed",
+  "answer": "bed",
+  "explain": "b-e-d."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word.",
+  "art": "word_ball",
+  "answer": "ball",
+  "explain": "b-a-l-l: two l's."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word.",
+  "art": "word_clock",
+  "answer": "clock",
+  "explain": "ck together at the end: c-l-o-c-k."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word.",
+  "art": "word_boat",
+  "answer": "boat",
+  "explain": "oa says 'oh': b-oa-t."
+ },
+ {
+  "type": "picq",
+  "q": "Which one is a cat?",
+  "options": [
+   "cat",
+   "dog",
+   "rabbit",
+   "fish"
+  ],
+  "answer": 0,
+  "explain": "A cat says 'meow'.",
+  "notes": {
+   "dog": "That picture is a dog. A cat says 'meow'.",
+   "rabbit": "That picture is a rabbit. A cat says 'meow'.",
+   "fish": "That picture is a fish. A cat says 'meow'."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "You sleep in it. Which one?",
+  "options": [
+   "bed",
+   "house",
+   "boat",
+   "clock"
+  ],
+  "answer": 0,
+  "explain": "You sleep in a bed.",
+  "notes": {
+   "house": "That picture is a house. You sleep in a bed.",
+   "boat": "That picture is a boat. You sleep in a bed.",
+   "clock": "That picture is a clock. You sleep in a bed."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "It tells the time. Which one?",
+  "options": [
+   "clock",
+   "sun",
+   "ball",
+   "umbrella"
+  ],
+  "answer": 0,
+  "explain": "A clock tells the time.",
+  "notes": {
+   "sun": "That picture is a sun. A clock tells the time.",
+   "ball": "That picture is a ball. A clock tells the time.",
+   "umbrella": "That picture is a umbrella. A clock tells the time."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "You wear it on your foot. Which one?",
+  "options": [
+   "shoe",
+   "umbrella",
+   "bike",
+   "bread"
+  ],
+  "answer": 0,
+  "explain": "A shoe goes on your foot.",
+  "notes": {
+   "umbrella": "That picture is a umbrella. A shoe goes on your foot.",
+   "bike": "That picture is a bike. A shoe goes on your foot.",
+   "bread": "That picture is a bread. A shoe goes on your foot."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "It swims in water. Which one?",
+  "options": [
+   "fish",
+   "dog",
+   "cat",
+   "rabbit"
+  ],
+  "answer": 0,
+  "explain": "A fish swims.",
+  "notes": {
+   "dog": "That picture is a dog. A fish swims.",
+   "cat": "That picture is a cat. A fish swims.",
+   "rabbit": "That picture is a rabbit. A fish swims."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "You ride it to school. Which one?",
+  "options": [
+   "bike",
+   "bed",
+   "boat",
+   "house"
+  ],
+  "answer": 0,
+  "explain": "You ride a bike.",
+  "notes": {
+   "bed": "That picture is a bed. You ride a bike.",
+   "boat": "That picture is a boat. You ride a bike.",
+   "house": "That picture is a house. You ride a bike."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "You use it in the rain. Which one?",
+  "options": [
+   "umbrella",
+   "shoe",
+   "clock",
+   "apple"
+  ],
+  "answer": 0,
+  "explain": "An umbrella keeps you dry.",
+  "notes": {
+   "shoe": "That picture is a shoe. An umbrella keeps you dry.",
+   "clock": "That picture is a clock. An umbrella keeps you dry.",
+   "apple": "That picture is a apple. An umbrella keeps you dry."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "It says 'woof'. Which one?",
+  "options": [
+   "dog",
+   "cat",
+   "fish",
+   "rabbit"
+  ],
+  "answer": 0,
+  "explain": "A dog says 'woof'.",
+  "notes": {
+   "cat": "That picture is a cat. A dog says 'woof'.",
+   "fish": "That picture is a fish. A dog says 'woof'.",
+   "rabbit": "That picture is a rabbit. A dog says 'woof'."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "It has candles for a birthday. Which one?",
+  "options": [
+   "cake",
+   "bread",
+   "apple",
+   "flower"
+  ],
+  "answer": 0,
+  "explain": "A birthday cake has candles.",
+  "notes": {
+   "bread": "That picture is a bread. A birthday cake has candles.",
+   "apple": "That picture is a apple. A birthday cake has candles.",
+   "flower": "That picture is a flower. A birthday cake has candles."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "It floats on the sea. Which one?",
+  "options": [
+   "boat",
+   "bike",
+   "ball",
+   "bed"
+  ],
+  "answer": 0,
+  "explain": "A boat floats.",
+  "notes": {
+   "bike": "That picture is a bike. A boat floats.",
+   "ball": "That picture is a ball. A boat floats.",
+   "bed": "That picture is a bed. A boat floats."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "It is red and small, with seeds on it. Which one?",
+  "options": [
+   "strawberry",
+   "apple",
+   "flower",
+   "cake"
+  ],
+  "answer": 0,
+  "explain": "A strawberry has seeds on the outside.",
+  "notes": {
+   "apple": "That picture is a apple. A strawberry has seeds on the outside.",
+   "flower": "That picture is a flower. A strawberry has seeds on the outside.",
+   "cake": "That picture is a cake. A strawberry has seeds on the outside."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "It is in the sky in the day. Which one?",
+  "options": [
+   "sun",
+   "flower",
+   "ball",
+   "clock"
+  ],
+  "answer": 0,
+  "explain": "The sun is in the sky in the day.",
+  "notes": {
+   "flower": "That picture is a flower. The sun is in the sky in the day.",
+   "ball": "That picture is a ball. The sun is in the sky in the day.",
+   "clock": "That picture is a clock. The sun is in the sky in the day."
+  }
  }
 ]

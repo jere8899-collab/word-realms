@@ -122,6 +122,8 @@ const nested = () => { const out = []; document.querySelectorAll('#main *').forE
     /* ---- grammar + vocab lesson ---- */
     for (const [rid, skill] of [['a1', 'grammar'], ['a2', 'vocab'], ['b1', 'grammar']]) {
       await page.evaluate(([r, k]) => WR.startLesson({ realm: r, skill: k, key: k, title: k }), [rid, skill]);
+      // a sentence-builder (order) item has tiles instead of options: retry until the lesson opens on a multiple-choice one
+      for (let t = 0; t < 6 && (await page.waitForSelector('.opt, #pool .tile'), await page.$('#pool .tile')); t++) await page.evaluate(([r, k]) => WR.startLesson({ realm: r, skill: k, key: k, title: k }), [rid, skill]);
       await page.waitForSelector('.opt'); await screen(`lesson ${rid} ${skill}`);
       if (rid === 'a1') await shot('lesson_q');
       const navHidden = await page.evaluate(() => { const n = document.getElementById('navbar'); return getComputedStyle(n).display === 'none' || n.getBoundingClientRect().top >= innerHeight; });
@@ -131,12 +133,21 @@ const nested = () => { const out = []; document.querySelectorAll('#main *').forE
     }
     // boss (timed): question + options visible, and the timer does not run while they are off screen
     await page.evaluate(() => WR.startLesson({ realm: 'b2', skill: 'grammar', key: 'grammar', title: 'Boss' }));
+    for (let t = 0; t < 6 && (await page.waitForSelector('.opt, #pool .tile'), await page.$('#pool .tile')); t++) await page.evaluate(() => WR.startLesson({ realm: 'b2', skill: 'grammar', key: 'grammar', title: 'Boss' }));
     await page.waitForSelector('.opt'); await screen('boss'); await shot('boss');
     if (fit) { await vis('boss question', '.qtext'); await vis('boss options', '.opt'); }
     // a wrong answer, then the result screen
     await page.evaluate(() => WR.startLesson({ realm: 'a1', skill: 'grammar', key: 'grammar', title: 'Grammar · Picture Pop' }));
     for (let i = 0; i < 8; i++) {
-      await page.waitForSelector('.opt:not([disabled])');
+      await page.waitForSelector('.opt:not([disabled]), #pool .tile');
+      if (await page.$('#pool .tile')) {   // a sentence-builder item (a1 grammar has a few): build it (wrongly on i === 1), then check
+        const ans = String(await page.evaluate(() => WR._dbg())).split(' ');
+        const words = i === 1 ? [...ans].reverse() : ans;
+        for (const w of words) await page.evaluate(w => { const t = [...document.querySelectorAll('#pool .tile')].find(b => b.textContent.trim() === w); if (t) t.click(); }, w);
+        await page.click('#checkBtn'); await page.waitForSelector('#nextBtn');
+        if (i === 1) { await page.waitForTimeout(500); const nb = await page.evaluate(onScreen, '#nextBtn'); ok(nb.ok, `${name} lesson: Next button lands on screen after answering (${nb.why || ''})`); }
+        await page.click('#nextBtn'); continue;
+      }
       if (i === 1) { const ans = await page.evaluate(() => WR._dbg()); const bs = await page.$$('.opt'); for (const b of bs) { const t = (await b.innerText()).replace(/^[A-D]\s*/, '').trim(); if (t !== String(ans).trim()) { await b.click(); break; } } }
       else await answerRight();
       await page.waitForSelector('#nextBtn');

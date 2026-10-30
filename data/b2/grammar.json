@@ -525,5 +525,191 @@
    "talk": "Plain verb doesn't fit.",
    "talked": "Talked is past."
   }
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "If I had known, I would have helped you.",
+  "explain": "Third conditional: If + had + pp, would have + pp."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "By the time we arrived, the show had started.",
+  "explain": "Past perfect for the earlier action."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "She suggested that we take a different path.",
+  "explain": "suggest that + plain verb."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "Not only is he funny, but he is also kind.",
+  "explain": "Not only + inversion."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "The bridge is being repaired at the moment.",
+  "explain": "Present continuous passive: is being + pp."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "The",
+   "news",
+   "are",
+   "very",
+   "exciting."
+  ],
+  "wrong": 2,
+  "fix": "is",
+  "explain": "News is uncountable and takes a singular verb: The news is…"
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "Despite",
+   "of",
+   "the",
+   "rain,",
+   "we",
+   "went",
+   "hiking."
+  ],
+  "wrong": 1,
+  "fix": "(no 'of')",
+  "explain": "Despite has no 'of' (in spite of does)."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "Everyone",
+   "were",
+   "waiting",
+   "for",
+   "the",
+   "results."
+  ],
+  "wrong": 1,
+  "fix": "was",
+  "explain": "Everyone is singular: Everyone was…"
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "She's",
+   "used",
+   "to",
+   "get",
+   "up",
+   "early",
+   "for",
+   "swimming."
+  ],
+  "wrong": 3,
+  "fix": "getting",
+  "explain": "be used to + -ing."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "If",
+   "I",
+   "was",
+   "you,",
+   "I'd",
+   "apologise."
+  ],
+  "wrong": 2,
+  "fix": "were",
+  "explain": "Advice: If I were you."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "The",
+   "number",
+   "of",
+   "students",
+   "have",
+   "grown."
+  ],
+  "wrong": 4,
+  "fix": "has",
+  "explain": "The number (singular) has grown."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "I'd rather you ___ my diary. It's ___ for me to share.",
+  "answers": [
+   "didn't read",
+   "too personal"
+  ],
+  "bank": [
+   "didn't read",
+   "too personal",
+   "don't read",
+   "so personal"
+  ],
+  "explain": "would rather + past for another person; too + adjective + for."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "He must ___ forgotten; he's ___ late.",
+  "answers": [
+   "have",
+   "never"
+  ],
+  "bank": [
+   "have",
+   "never",
+   "has",
+   "ever"
+  ],
+  "explain": "must have + pp for a deduction about the past."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "No sooner ___ we sat down ___ the bell rang.",
+  "answers": [
+   "had",
+   "than"
+  ],
+  "bank": [
+   "had",
+   "than",
+   "have",
+   "when"
+  ],
+  "explain": "No sooner had… than."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "The experiment, ___ took weeks, was finally a success ___ all the problems.",
+  "answers": [
+   "which",
+   "despite"
+  ],
+  "bank": [
+   "which",
+   "despite",
+   "that",
+   "although"
+  ],
+  "explain": "Non-defining clause uses which; despite + noun."
  }
 ]

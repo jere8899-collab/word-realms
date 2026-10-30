@@ -44,12 +44,14 @@ function finishSpecial(realm, score, stars, msg) {
 }
 /* ---- A1 Petal Match: match picture cards to words ---- */
 async function petalMatch(realm) {
-  const vocab = (await WR.bank("a1", "vocab")).filter(q => q.pic);
-  const pairs = WR.sample(vocab, 6).map((q, i) => ({ id: i, pic: q.pic, word: q.options[q.answer] }));
-  const cards = WR.shuffle(pairs.flatMap(p => [{ id: p.id, t: "emo", v: p.pic }, { id: p.id, t: "word", v: p.word }]));
+  // 🎨 T16: painted word pictures (assets/words) instead of emoji; emoji only if fewer than 6 painted ones exist
+  const all = (await WR.bank("a1", "vocab")).filter(q => q.pic && q.options), painted = all.filter(q => WR.asset("word_" + q.options[q.answer]));
+  const vocab = painted.length >= 6 ? painted : all;
+  const pairs = WR.sample(vocab, 6).map((q, i) => ({ id: i, pic: q.pic, word: q.options[q.answer], art: WR.asset("word_" + q.options[q.answer]) ? "word_" + q.options[q.answer] : null }));
+  const cards = WR.shuffle(pairs.flatMap(p => [{ id: p.id, t: "emo", v: p.pic, art: p.art }, { id: p.id, t: "word", v: p.word }]));
   let sel = null, found = 0, tries = 0;
   WR.view(`${header(realm, "Petal Match")}<div class="card"><p class="muted" style="font-weight:800">Tap a picture, then its word. Say the word out loud! 🗣️</p>
-    <div class="match-grid">${cards.map((c, k) => `<button class="mcard ${c.t === "emo" ? "emo" : ""}" data-k="${k}">${WR.esc(c.v)}</button>`).join("")}</div>
+    <div class="match-grid">${cards.map((c, k) => `<button class="mcard ${c.t === "emo" ? "emo" : ""}${c.art ? " painted" : ""}" data-k="${k}" ${c.art ? 'aria-label="Picture card"' : ""}>${c.art ? WR.img(c.art, "mart").replace(/alt="[^"]*"/, 'alt="picture"') : WR.esc(c.v)}</button>`).join("")}</div>
     <p class="center" id="mstat" style="font-weight:800">Pairs: 0 / 6</p></div>`);
   WR.$("#quitBtn").onclick = () => WR.go("realm", realm.id);
   document.querySelectorAll(".mcard").forEach(b => b.onclick = () => {

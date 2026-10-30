@@ -27,7 +27,7 @@ function fair(items) {
 }
 async function stageItems(lv) {
   const [g, v, l] = await Promise.all(["grammar", "vocab", "listening"].map(k => WR.bank(lv, k)));
-  const mc = b => b.filter(q => q.options && typeof q.answer === "number");
+  const mc = b => b.filter(q => q.options && typeof q.answer === "number" && q.type !== "picq" && !q.dialogue);
   const picks = [...WR.sample(fair(mc(g)), 2), ...WR.sample(fair(mc(v)), 1), ...WR.sample(fair(mc(l)), 1)];
   return WR.shuffle(picks.map(q => Object.assign(WR.normalize(q), { lv })));
 }
