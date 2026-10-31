@@ -242,14 +242,43 @@ WR.avatarHTML = (size = 110) => {
 WR.petInfo = () => PETS.find(p => p.id === (WR.state.pet && WR.state.pet.species));
 WR.petLevel = xp => 1 + Math.floor(xp / 80);
 WR.petStage = lvl => lvl >= 10 ? 2 : lvl >= 5 ? 1 : 0;
+/* 🎩 Layered looks (one shared renderer for pets now, heroes and accessories next): the base art is an <img> (WebP/PNG
+   fallback, skin filter), and hats/crowns/wings are drawn in transparent SVG layers on the same 0–100 grid as the art
+   (viewBox 0 0 100 100, xMidYMid meet = object-fit:contain), so a layer sits on the same spot of the art at every
+   size — map card, pet screen, 40 px lesson companion, thumbnails. Anchors are per art id, in % of the art:
+     head: [x, y, w]  bottom-centre of a hat/crown and its width;  faceTop: where the brows start (a hat's bottom
+     edge must stay above it — tools/test/petlayers.js checks every pet and stage). */
+const ANCHORS = {
+  pet_bunny:  { head: [50, 11, 28], faceTop: 22 },
+  pet_fox:    { head: [46, 17, 26], faceTop: 28 },
+  pet_dragon: { head: [47, 16, 26], faceTop: 26 },
+  pet_owl:    { head: [53, 14, 26], faceTop: 20 }
+};
+WR.ANCHORS = ANCHORS;
+const DEF_ANCHOR = { head: [50, 12, 26], faceTop: 22 };
+WR.anchorFor = id => ANCHORS[id] || DEF_ANCHOR;
+// layers: [{ slot: "head", src, w?: scale, behind?: true, cls? }] → the two SVG overlays (behind and in front of the art)
+WR.layerSVG = (artId, layers, behind) => {
+  const a = WR.anchorFor(artId), parts = layers.filter(l => !!l.behind === !!behind).map(l => {
+    const [x, y, w0] = a[l.slot] || DEF_ANCHOR[l.slot] || [50, 50, 30], w = w0 * (l.w || 1), h = w;   // square art
+    const top = l.slot === "head" ? y - h : y - h / 2;                                                   // hats sit ON the anchor
+    return `<image class="layer ${l.slot} ${l.cls || ""}" data-slot="${l.slot}" href="${l.src}" x="${(x - w / 2).toFixed(1)}" y="${top.toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}"/>`;
+  }).join("");
+  return parts ? `<svg class="layers${behind ? " behind" : ""}" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" aria-hidden="true">${parts}</svg>` : "";
+};
+WR.petLayers = p => {
+  const stage = WR.petStage(WR.petLevel(p.xp)), out = [];
+  if (stage >= 2) out.push({ slot: "head", src: WR.iconSrc("👑"), cls: "petcrown" });   // the evolved pet's crown
+  return out;
+};
 WR.petHTML = (cls = "") => {
   const p = WR.state.pet; if (!p) return "";
   const skin = p.skin && WR.shop.petskins.find(x => x.id === p.skin);
   const stage = WR.petStage(WR.petLevel(p.xp));
   const extra = (skin && skin.sparkle ? " sparkle-skin" : "") + (skin && skin.rainbow ? " rainbow-skin" : "");
   const style = skin && skin.filter ? `filter:${skin.filter} drop-shadow(0 8px 10px rgba(122,92,143,.25))` : "";
-  const scale = [0.86, 0.96, 1.04][stage];
-  return `<div class="petwrap ${extra} ${cls}" style="position:relative;width:100%;height:100%;transform:scale(${scale})">${stage >= 1 ? '<div class="aura"></div>' : ""}${stage >= 2 ? '<span class="petcrown">👑</span>' : ""}${WR.img(p.species, "", style)}</div>`;
+  const scale = [0.86, 0.96, 1.04][stage], layers = WR.petLayers(p);
+  return `<div class="petwrap ${extra} ${cls}" data-art="${p.species}" style="position:relative;width:100%;height:100%;transform:scale(${scale})">${stage >= 1 ? '<div class="aura"></div>' : ""}${WR.layerSVG(p.species, layers, true)}${WR.img(p.species, "", style)}${WR.layerSVG(p.species, layers)}</div>`;
 };
 WR.petMood = () => {
   const p = WR.state.pet; if (!p) return "";
