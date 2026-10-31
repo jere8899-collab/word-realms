@@ -1,7 +1,7 @@
 /* 🔢 Number Kingdom topics, Grades 1–4 (Singapore Primary 1–4). Each gen(r) gets a seeded rng and returns a question. */
 (function () {
 const M = (typeof module !== "undefined" && module.exports) ? require("./math-gen.js") : window.MathGen;
-const { Q, num, mcq, T, NAMES, THINGS, COUNT_EMOJI, svgBox, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, svgBars, svgLine, table, coin, emojiRows, colAdd, colSub, topic, gcd, lcm, rd, fmt, money, simp, fracTex, fracStr, mixedTex } = M._internal;
+const { Q, num, mcq, T, NAMES, THINGS, COUNT_EMOJI, PASTEL, svgBox, figKey, cellKey, hasCell, nearCells, gridPaper, gridCell, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, svgBars, svgLine, table, coin, emojiRows, colAdd, colSub, topic, gcd, lcm, rd, fmt, money, simp, fracTex, fracStr, mixedTex } = M._internal;
 const ord = k => k + (k % 100 >= 11 && k % 100 <= 13 ? "th" : ["th", "st", "nd", "rd"][k % 10] || "th");
 
 /* ---------- 📊 data analysis (MOE: P1 picture graphs, P2 picture graphs with scales, P3 bar graphs, P4 tables + line graphs) ---------- */
@@ -299,24 +299,18 @@ topic(4, "angles", "Turns & Angles", "🧭", "Right angles, turns and compass di
    Figures live on an 8 × 6 grid of squares (6 × 8 when the mirror line is across). A cell is [a, b]: a counts across the
    mirror line (0–7, the line sits between 3 and 4), b along it. mirror([a, b]) = [7 − a, b]. */
 const SY = { N: 8, M: 6, S: 14 };
-const cellKey = ([a, b]) => a + "," + b, figKey = cells => cells.map(cellKey).sort().join(" ");
 const mirrorCell = ([a, b]) => [SY.N - 1 - a, b];
-const hasCell = (cells, c) => cells.some(d => d[0] === c[0] && d[1] === c[1]);
-const isSym = cells => cells.every(c => hasCell(cells, mirrorCell(c)));
-const nearCells = (cells, ok) => { const out = []; for (const [a, b] of cells) for (const [da, db] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) { const c = [a + da, b + db];
-  if (c[0] >= 0 && c[0] < SY.N && c[1] >= 0 && c[1] < SY.M && !hasCell(cells, c) && !hasCell(out, c) && ok(c)) out.push(c); } return out; };
+const symNear = (cells, ok) => nearCells(cells, SY.N, SY.M, ok);
 // a connected half-figure on the left of the line that touches it, with n squares
-const halfFig = (r, n) => { const cells = [[3, r.int(1, 4)]]; while (cells.length < n) cells.push(r.pick(nearCells(cells, c => c[0] < 4))); return cells; };
+const halfFig = (r, n) => { const cells = [[3, r.int(1, 4)]]; while (cells.length < n) cells.push(r.pick(symNear(cells, c => c[0] < 4))); return cells; };
 const fullFig = half => half.concat(half.map(mirrorCell));
 // the same figure with one right-hand square moved to a new spot (so it is no longer symmetric)
-const breakFig = (r, cells) => { const right = cells.filter(c => c[0] >= 4), gone = r.pick(right), rest = cells.filter(c => c !== gone), spots = nearCells(rest, c => c[0] >= 4 && cellKey(c) !== cellKey(gone));
+const breakFig = (r, cells) => { const right = cells.filter(c => c[0] >= 4), gone = r.pick(right), rest = cells.filter(c => c !== gone), spots = symNear(rest, c => c[0] >= 4 && cellKey(c) !== cellKey(gone));
   return spots.length ? rest.concat([r.pick(spots)]) : null; };
-const SY_FILL = ["#FFB8D1", "#BDE7FF", "#C8F2DC", "#E2D6FF", "#FFE7A8"];
+const SY_FILL = PASTEL.slice(0, 5);
 const svgSym = (cells, across, o = {}) => { const { N, M, S } = SY, W = across ? M : N, H = across ? N : M, xy = ([a, b]) => across ? [b, a] : [a, b], pad = 4;
-  let g = `<rect x="1" y="1" width="${W * S + 2 * pad - 2}" height="${H * S + 2 * pad - 2}" rx="7" fill="#F2FAFF" stroke="#CFE6F7" stroke-width="2"/>`;
-  for (let i = 0; i <= W; i++) g += `<line x1="${pad + i * S}" y1="${pad}" x2="${pad + i * S}" y2="${pad + H * S}" stroke="#DCEBF5" stroke-width="1"/>`;
-  for (let j = 0; j <= H; j++) g += `<line x1="${pad}" y1="${pad + j * S}" x2="${pad + W * S}" y2="${pad + j * S}" stroke="#DCEBF5" stroke-width="1"/>`;
-  for (const c of cells) { const [x, y] = xy(c); g += `<rect class="syc" x="${pad + x * S + 1}" y="${pad + y * S + 1}" width="${S - 2}" height="${S - 2}" rx="3" fill="${o.fill || "#FFB8D1"}" stroke="#9b84b0" stroke-width="1.2"/>`; }
+  let g = gridPaper(W, H, S, pad);
+  for (const c of cells) { const [x, y] = xy(c); g += gridCell(x, y, S, pad, o.fill || "#FFB8D1", "syc"); }
   const m = pad + 4 * S; g += across ? `<line class="mline" x1="${pad - 3}" y1="${m}" x2="${pad + W * S + 3}" y2="${m}" stroke="#ff6f91" stroke-width="2.5" stroke-dasharray="5 4" stroke-linecap="round"/>`
     : `<line class="mline" x1="${m}" y1="${pad - 3}" x2="${m}" y2="${pad + H * S + 3}" stroke="#ff6f91" stroke-width="2.5" stroke-dasharray="5 4" stroke-linecap="round"/>`;
   const w = W * S + 2 * pad, h = H * S + 2 * pad, k = o.small ? 1.15 : 1.7;
@@ -349,7 +343,7 @@ topic(4, "symmetry", "Mirror Pond", "🪞", "Lines of symmetry on a square grid"
   if (t === 1 || t === 2) { // pick the picture
     let others;
     if (t === 1) { others = []; for (let i = 0; i < 20 && others.length < 3; i++) { const b = breakFig(r, full); if (b && ![full, ...others].some(o => figKey(o) === figKey(b))) others.push(b); } }
-    else { const copy = half.concat(half.map(([a, b]) => [a + 4, b])), miss = full.filter(c => cellKey(c) !== cellKey(r.pick(full.filter(d => d[0] >= 4)))), extra = nearCells(full, c => c[0] >= 4);
+    else { const copy = half.concat(half.map(([a, b]) => [a + 4, b])), miss = full.filter(c => cellKey(c) !== cellKey(r.pick(full.filter(d => d[0] >= 4)))), extra = symNear(full, c => c[0] >= 4);
       others = [copy, miss].concat(extra.length ? [full.concat([r.pick(extra)])] : []).filter((o, i, all) => figKey(o) !== figKey(full) && all.findIndex(x => figKey(x) === figKey(o)) === i); }
     if (others.length < 2) return topic4sym(r);
     const ids = ["f1", "f2", "f3", "f4"], optPics = { f1: pic(full, true) }; others.forEach((o, i) => { optPics[ids[i + 1]] = pic(o, true); });

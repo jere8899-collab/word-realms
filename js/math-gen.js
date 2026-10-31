@@ -66,6 +66,18 @@ const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;");
 const svgBox = (body, label, w, h = w, vb = "0 0 120 120", cls = "mpic") => `<svg class="${cls}" viewBox="${vb}" width="${w}" height="${h}" role="img" aria-label="${label}">${body}</svg>`;
 // a w × h cream card with a centred title (baseline ty), drawn behind charts and geometry figures
 const cardSvg = (w, h, title, ty, body, label, cls = "mpic chart") => svgBox(`<rect x="1" y="1" width="${w - 2}" height="${h - 2}" rx="14" fill="#FFFDF8" stroke="#F1E3F7" stroke-width="2"/><text x="${w / 2}" y="${ty}" font-size="12" text-anchor="middle" font-weight="900" fill="${INK}">${esc(title)}</text>${body}`, label, w, h, `0 0 ${w} ${h}`, cls);
+/* square grids (Mirror Pond figures, cube nets): a cell is [column, row] */
+const cellKey = ([a, b]) => a + "," + b, figKey = cells => cells.map(cellKey).sort().join(" ");
+const hasCell = (cells, c) => cells.some(d => d[0] === c[0] && d[1] === c[1]);
+const STEP4 = [[1, 0], [-1, 0], [0, 1], [0, -1]];
+// empty cells next to the figure, inside a W × H grid, that pass ok(c) (in a fixed order, so seeded picks stay the same)
+const nearCells = (cells, W, H, ok = () => true) => { const out = []; for (const [a, b] of cells) for (const [da, db] of STEP4) { const c = [a + da, b + db];
+  if (c[0] >= 0 && c[0] < W && c[1] >= 0 && c[1] < H && !hasCell(cells, c) && !hasCell(out, c) && ok(c)) out.push(c); } return out; };
+// squared paper: a rounded W × H sheet of S-px squares inside a pad, and one shaded square on it
+const gridPaper = (W, H, S, pad) => { let g = `<rect x="1" y="1" width="${W * S + 2 * pad - 2}" height="${H * S + 2 * pad - 2}" rx="7" fill="#F2FAFF" stroke="#CFE6F7" stroke-width="2"/>`;
+  for (let i = 0; i <= W; i++) g += `<line x1="${pad + i * S}" y1="${pad}" x2="${pad + i * S}" y2="${pad + H * S}" stroke="#DCEBF5" stroke-width="1"/>`;
+  for (let j = 0; j <= H; j++) g += `<line x1="${pad}" y1="${pad + j * S}" x2="${pad + W * S}" y2="${pad + j * S}" stroke="#DCEBF5" stroke-width="1"/>`; return g; };
+const gridCell = (x, y, S, pad, fill, cls) => `<rect class="${cls}" x="${pad + x * S + 1}" y="${pad + y * S + 1}" width="${S - 2}" height="${S - 2}" rx="3" fill="${fill}" stroke="${LINE}" stroke-width="1.2"/>`;
 const polar = (cx, cy, r, a) => [(cx + r * Math.cos(a)).toFixed(1), (cy + r * Math.sin(a)).toFixed(1)];
 const wedge = (cx, cy, r, a0, a1) => { const [x0, y0] = polar(cx, cy, r, a0), [x1, y1] = polar(cx, cy, r, a1);
   return `<path d="M${cx},${cy} L${x0},${y0} A${r},${r} 0 ${a1 - a0 > Math.PI + 1e-9 ? 1 : 0},1 ${x1},${y1} Z"`; };
@@ -193,7 +205,7 @@ M.longMulSteps = (a, b) => { const bs = String(b).split("").reverse(); const out
 /* ====================== TOPICS ====================== */
 const TOPICS = [];
 const topic = (grade, id, name, icon, desc, gen, opt = {}) => TOPICS.push(Object.assign({ grade, id: `g${grade}.${id}`, name, icon, desc, gen }, opt));
-M._internal = { Q, num, mcq, T, NAMES, THINGS, COUNT_EMOJI, svgBox, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, svgBars, svgLine, svgPieChart, svgGeo, dirPt, coin, emojiRows, table, colAdd, colSub, topic, TOPICS, gcd, lcm, rd, fmt, fdp, money, simp, fracTex, fracStr, mixedTex, sgn, poly, lin, paren, pm, undo };
+M._internal = { Q, num, mcq, T, NAMES, THINGS, COUNT_EMOJI, PASTEL, INK, LINE, esc, svgBox, cellKey, figKey, hasCell, nearCells, gridPaper, gridCell, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, svgBars, svgLine, svgPieChart, svgGeo, dirPt, coin, emojiRows, table, colAdd, colSub, topic, TOPICS, gcd, lcm, rd, fmt, fdp, money, simp, fracTex, fracStr, mixedTex, sgn, poly, lin, paren, pm, undo };
 M.TOPICS = TOPICS;
 M.topic = id => TOPICS.find(t => t.id === id);
 M.gradeTopics = g => TOPICS.filter(t => t.grade === g);
@@ -210,10 +222,10 @@ M.make = (topicId, seed) => {
   q.topic = topicId; q.seed = seed; q.grade = t.grade;
   return q;
 };
-// a short run of distinct questions (re-rolls duplicates by question text + answer, or by q.uid for picture questions)
+// a short run of distinct questions (re-rolls duplicates by question text + answer, and also by q.uid for picture questions)
 M.batch = (topicId, n, seed = M.seed()) => {
   const out = [], seen = new Set(); let s = seed >>> 0, tries = 0;
-  while (out.length < n && tries < n * 30) { tries++; s = (Math.imul(s, 1103515245) + 12345) >>> 0; const q = M.make(topicId, s); const k = q.uid || q.q + "|" + q.a; if (seen.has(k)) continue; seen.add(k); out.push(q); }
+  while (out.length < n && tries < n * 30) { tries++; s = (Math.imul(s, 1103515245) + 12345) >>> 0; const q = M.make(topicId, s), ks = [q.q + "|" + q.a].concat(q.uid ? [q.uid] : []); if (ks.some(k => seen.has(k))) continue; ks.forEach(k => seen.add(k)); out.push(q); }
   return out;
 };
 

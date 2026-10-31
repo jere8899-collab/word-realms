@@ -1,7 +1,7 @@
 /* 🔢 Number Kingdom topics, Grades 5–8 (Singapore Primary 5–6, Secondary 1–2). */
 (function () {
 const M = (typeof module !== "undefined" && module.exports) ? require("./math-gen.js") : window.MathGen;
-const { Q, num, mcq, T, NAMES, topic, svgPieChart, svgGeo, dirPt, gcd, lcm, rd, fmt, simp, fracTex, fracStr, mixedTex, poly, lin, paren, pm, undo } = M._internal;
+const { Q, num, mcq, T, NAMES, topic, PASTEL, INK, LINE, svgBox, cellKey, figKey, hasCell, nearCells, gridPaper, svgPieChart, svgGeo, dirPt, gcd, lcm, rd, fmt, simp, fracTex, fracStr, mixedTex, poly, lin, paren, pm, undo } = M._internal;
 
 /* ---------- Grade 5 (Primary 5) ---------- */
 topic(5, "fracmul", "Fraction Spells", "✨", "Multiply fractions", r => {
@@ -149,6 +149,128 @@ topic(6, "speed", "Speedy Broomsticks", "🧹", "Speed, distance and time", r =>
   if (which === 0) return num(`A broomstick flies at ${s} km/h for ${t} hours. How far does it fly in km?`, s * t, "Distance = speed × time.", [`${s} × ${t} = ${s * t} km`]);
   if (which === 1) return num(`A witch flies ${s * t} km in ${t} hours. What is her average speed in km/h?`, s, "Speed = distance ÷ time.", [`${s * t} ÷ ${t} = ${s} km/h`]);
   return num(`A unicorn trots ${s * t} km at ${s} km/h. How many hours does it take?`, t, "Time = distance ÷ speed.", [`${s * t} ÷ ${s} = ${t} h`]);
+});
+/* ---------- ✂️ nets of solids (MOE P6 geometry: identify the nets of a cube, cuboid, prism and pyramid, and the solid a net makes) ----------
+   Cube nets are 6 squares on squared paper, a cell is [column, row]. Folding works like rolling a dice across the paper: each square
+   becomes the face that is face-down when the cube sits on it. Faces 0–5 are bottom, top, back, front, right, left (opposites 0/1, 2/3, 4/5). */
+const ROLL = { // the cube's faces [bottom, top, back, front, right, left] after rolling one square right, left, down or up the page
+  "1,0": f => [f[4], f[5], f[2], f[3], f[1], f[0]], "-1,0": f => [f[5], f[4], f[2], f[3], f[0], f[1]],
+  "0,1": f => [f[3], f[2], f[0], f[1], f[4], f[5]], "0,-1": f => [f[2], f[3], f[1], f[0], f[4], f[5]]
+};
+// which cube face each square lands on (cellKey → 0–5), or null if two squares land on the same face
+const foldCube = cells => { const face = { [cellKey(cells[0])]: [0, 1, 2, 3, 4, 5] }, todo = [cells[0]];
+  while (todo.length) { const c = todo.shift(), f = face[cellKey(c)];
+    for (const k in ROLL) { const [dx, dy] = k.split(",").map(Number), d = [c[0] + dx, c[1] + dy];
+      if (hasCell(cells, d) && !face[cellKey(d)]) { face[cellKey(d)] = ROLL[k](f); todo.push(d); } } }
+  const out = {}; for (const k in face) out[k] = face[k][0];
+  return new Set(Object.values(out)).size === 6 && Object.keys(out).length === cells.length ? out : null; };
+const OPP = f => f ^ 1;
+// the 8 turns and flips of a figure, moved back to the top-left corner
+const normCells = cells => { const x0 = Math.min(...cells.map(c => c[0])), y0 = Math.min(...cells.map(c => c[1])); return cells.map(([a, b]) => [a - x0, b - y0]); };
+const turnCells = (cells, k) => normCells(cells.map(([a, b]) => { let p = k >= 4 ? [-a, b] : [a, b]; for (let i = 0; i < k % 4; i++) p = [-p[1], p[0]]; return p; }));
+const shapeKey = cells => Array.from({ length: 8 }, (_, k) => figKey(turnCells(cells, k))).sort()[0];
+const size = cells => [Math.max(...cells.map(c => c[0])) + 1, Math.max(...cells.map(c => c[1])) + 1];
+// all 35 hexominoes (6 joined squares), each once; 11 of them fold into a cube
+const HEXOS = (() => { let level = [[[0, 0]]];
+  for (let n = 1; n < 6; n++) { const seen = new Map(); for (const f of level) for (const c of nearCells(f, 99, 99, () => true).concat(nearCells(f.map(([a, b]) => [a + 1, b + 1]), 99, 99).map(([a, b]) => [a - 1, b - 1])))
+    { const g = normCells(f.concat([c])), k = shapeKey(g); if (!seen.has(k)) seen.set(k, g); } level = [...seen.values()]; }
+  return level; })();
+const CUBE_NETS = HEXOS.filter(foldCube), NOT_NETS = HEXOS.filter(h => !foldCube(h));
+M.nets = { HEXOS, CUBE_NETS, NOT_NETS, foldCube };
+// a random turn or flip of a figure, lying wide (never taller than it is wide)
+const layWide = (r, cells) => { const g = turnCells(cells, r.int(0, 7)), [w, h] = size(g); return h > w ? turnCells(g, 1) : g; };
+const has2x2 = cells => cells.some(([a, b]) => hasCell(cells, [a + 1, b]) && hasCell(cells, [a, b + 1]) && hasCell(cells, [a + 1, b + 1]));
+const longRow = cells => Math.max(...cells.map(([a, b]) => { let n = 0, m = 0; while (hasCell(cells, [a + n, b])) n++; while (hasCell(cells, [a, b + m])) m++; return Math.max(n, m); }));
+// every square can be reached from every other through shared sides
+const joined = cells => { const seen = [cells[0]]; for (let i = 0; i < seen.length; i++) for (const c of nearCells([seen[i]], 99, 99)) if (hasCell(cells, c) && !hasCell(seen, c)) seen.push(c); return seen.length === cells.length; };
+const NET_S = 16, NET_PAD = 4;
+// a net on squared paper (W × H squares, figure moved by ox, oy); o.fill / o.extra (a highlighted square) / o.labels (cellKey → letter)
+const svgNet = (cells, o = {}) => { const [w, h] = size(cells), W = o.W || 6, H = o.H || 3, ox = o.ox != null ? o.ox : Math.floor((W - w) / 2), oy = o.oy != null ? o.oy : Math.floor((H - h) / 2), S = NET_S, pad = NET_PAD;
+  let g = gridPaper(W, H, S, pad);
+  for (const c of cells) { const x = o.extra && cellKey(o.extra) === cellKey(c); // squares touch (one joined piece of card), the outline is drawn on top
+    g += `<rect class="ntc${x ? " ntx" : ""}" x="${pad + (c[0] + ox) * S}" y="${pad + (c[1] + oy) * S}" width="${S}" height="${S}" fill="${x ? "#FFE7A8" : o.fill || "#FFB8D1"}"/>`; }
+  for (const [a, b] of cells) { const X = pad + (a + ox) * S, Y = pad + (b + oy) * S; // cut lines round the outside
+    for (const [dx, dy, x1, y1, x2, y2] of [[1, 0, S, 0, S, S], [-1, 0, 0, 0, 0, S], [0, 1, 0, S, S, S], [0, -1, 0, 0, S, 0]])
+      if (!hasCell(cells, [a + dx, b + dy])) g += `<line x1="${X + x1}" y1="${Y + y1}" x2="${X + x2}" y2="${Y + y2}" stroke="${LINE}" stroke-width="1.6" stroke-linecap="round"/>`; }
+  for (const [a, b] of cells) { const X = pad + (a + ox) * S, Y = pad + (b + oy) * S; // dashed fold lines where two squares meet
+    if (hasCell(cells, [a + 1, b])) g += `<line class="nfold" x1="${X + S}" y1="${Y}" x2="${X + S}" y2="${Y + S}" stroke="${LINE}" stroke-width="1.1" stroke-dasharray="2.5 2"/>`;
+    if (hasCell(cells, [a, b + 1])) g += `<line class="nfold" x1="${X}" y1="${Y + S}" x2="${X + S}" y2="${Y + S}" stroke="${LINE}" stroke-width="1.1" stroke-dasharray="2.5 2"/>`; }
+  if (o.labels) for (const c of cells) g += `<text class="ntl" x="${pad + (c[0] + ox) * S + S / 2}" y="${pad + (c[1] + oy) * S + S / 2 + 4}" font-size="11" text-anchor="middle" font-weight="900" fill="${INK}">${o.labels[cellKey(c)]}</text>`;
+  const vw = W * S + 2 * pad, vh = H * S + 2 * pad, k = o.small ? 1.3 : 2;
+  return svgBox(g, o.label || "a net of squares on squared paper", Math.round(vw * k), Math.round(vh * k), `0 0 ${vw} ${vh}`, "mpic netpic");
+};
+/* nets of other solids, drawn as flat faces (polygons in units), then turned and fitted onto a card */
+const R3 = Math.sqrt(3) / 2;
+const rectF = (x, y, w, h) => [[x, y], [x + w, y], [x + w, y + h], [x, y + h]];
+const SOLIDS = {
+  cube: { name: "cube", faces: 6, tri: 0, rect: 6, net: r => r.pick(CUBE_NETS).map(([a, b]) => rectF(a, b, 1, 1)) },
+  cuboid: { name: "cuboid", faces: 6, tri: 0, rect: 6, net: r => { const [l, w, h] = r.shuffle([3, 2, 1.25]); // the cross: lid, front, base, back in a column, the two sides beside the front
+    return [rectF(w, 0, l, w), rectF(w, w, l, h), rectF(w, w + h, l, w), rectF(w, 2 * w + h, l, h), rectF(0, w, w, h), rectF(w + l, w, w, h)]; } },
+  prism: { name: "triangular prism", faces: 5, tri: 2, rect: 3, net: r => { const s = 1.5, L = r.pick([2.5, 3]), i = r.int(0, 2), j = r.int(0, 2);
+    return [0, 1, 2].map(k => rectF(k * s, 0, s, L)).concat([[[i * s, 0], [i * s + s, 0], [i * s + s / 2, -s * R3]], [[j * s, L], [j * s + s, L], [j * s + s / 2, L + s * R3]]]); } },
+  sqpyr: { name: "square pyramid", faces: 5, tri: 4, rect: 1, net: r => { const s = 1.6, t = r.pick([1.4, 1.8]);
+    return [rectF(0, 0, s, s), [[0, 0], [s, 0], [s / 2, -t]], [[s, 0], [s, s], [s + t, s / 2]], [[s, s], [0, s], [s / 2, s + t]], [[0, s], [0, 0], [-t, s / 2]]]; } },
+  tripyr: { name: "triangular pyramid", faces: 4, tri: 4, rect: 0, net: () => { const s = 1.8, A = [0, 0], B = [2 * s, 0], C = [s, 2 * s * R3], mid = (p, q) => [(p[0] + q[0]) / 2, (p[1] + q[1]) / 2], ab = mid(A, B), bc = mid(B, C), ca = mid(C, A);
+    return [[A, ab, ca], [ab, B, bc], [ca, bc, C], [ab, bc, ca]]; } }
+};
+const svgSolidNet = (faces, turn, fill) => { const rot = ([x, y]) => [[x, y], [-y, x], [-x, -y], [y, -x]][turn];
+  const pts = faces.map(f => f.map(rot)), all = pts.flat(), x0 = Math.min(...all.map(p => p[0])), y0 = Math.min(...all.map(p => p[1])), w = Math.max(...all.map(p => p[0])) - x0, h = Math.max(...all.map(p => p[1])) - y0;
+  const u = Math.min(132 / w, 76 / h), W = 150, H = 92, dx = (W - w * u) / 2, dy = (H - h * u) / 2;
+  const g = pts.map((f, i) => `<polygon class="nface" points="${f.map(([x, y]) => `${(dx + (x - x0) * u).toFixed(1)},${(dy + (y - y0) * u).toFixed(1)}`).join(" ")}" fill="${f.length === 3 ? "#FFE7A8" : fill}" stroke="${LINE}" stroke-width="1.6" stroke-linejoin="round"/>`).join("");
+  return svgBox(`<rect x="1" y="1" width="${W - 2}" height="${H - 2}" rx="10" fill="#F2FAFF" stroke="#CFE6F7" stroke-width="2"/>${g}`, "a net of a solid", 260, Math.round(260 * H / W), `0 0 ${W} ${H}`, "mpic netpic");
+};
+const NET_WHO = [["Fairy Pip", "a gift box for the Royal Party"], ["the Gingerbread Baker", "a cake box"], ["Jack", "a dice for the goblins' board game"], ["Princess Mira", "a jewel box"], ["Sumi the star fairy", "a lantern box"], ["Puss in Boots", "a box for his boots"]];
+const NET_TIP = "Pick one square to be the bottom, then fold the others up around it. Every face of the cube must be covered exactly once.";
+const whyNot = cells => has2x2(cells) ? "It has 4 squares in a 2 × 2 block: those squares fold round one corner, so two of them land on the same face."
+  : longRow(cells) >= 5 ? `It has ${longRow(cells)} squares in a row: the 5th square in a row folds back onto the 1st.` : "When you fold it, two squares land on the same face, and one face of the cube is left open.";
+const LETTERS = "ABCDEF";
+const cap = s => s[0].toUpperCase() + s.slice(1);
+topic(6, "nets", "Snip & Fold Nets", "✂️", "Nets of cubes, cuboids, prisms and pyramids", r => {
+  const t = r.int(0, 5), [who0, what] = r.pick(NET_WHO), who = cap(who0), fill = r.pick(PASTEL.slice(0, 4)), opt = (c, x) => svgNet(c, Object.assign({ fill, small: true }, x));
+  if (t === 0) { // pick the net of a cube
+    const right = layWide(r, r.pick(CUBE_NETS)), others = r.shuffle(NOT_NETS).slice(0, 3).map(c => layWide(r, c)), ids = ["n1", "n2", "n3", "n4"], optPics = { n1: opt(right) };
+    others.forEach((c, i) => { optPics[ids[i + 1]] = opt(c); });
+    return mcq(r, `${who} is cutting out ${what} from card. Which of these can be folded into a cube?`, "n1", ids.slice(1), NET_TIP,
+      [NET_TIP, "In the right net, each square becomes a different face: bottom, top, front, back, left and right.", "In the others two squares would land on the same face (look for a 2 × 2 block or 5 squares in a row)."],
+      { optPics, uid: "n0" + figKey(right) + others.map(figKey).join("/"), data: { net: "pick", cells: right } });
+  }
+  if (t === 1) { // can this fold into a cube?
+    const yes = r.chance(.5), cells = layWide(r, r.pick(yes ? CUBE_NETS : NOT_NETS));
+    return mcq(r, `${who} drew this net for ${what}. Can it be folded into a cube?`, yes ? "Yes" : "No", [yes ? "No" : "Yes"], NET_TIP,
+      yes ? [NET_TIP, "Each of the 6 squares lands on a different face, so it closes up into a cube."] : [NET_TIP, whyNot(cells), "So it cannot make a cube."],
+      { pic: svgNet(cells, { fill }), uid: "n1" + figKey(cells), data: { net: "check", cells, yes } });
+  }
+  if (t === 2) { // which face is opposite?
+    const cells = layWide(r, r.pick(CUBE_NETS)), f = foldCube(cells), lets = r.shuffle(LETTERS.split("")), labels = {}; cells.forEach((c, i) => { labels[cellKey(c)] = lets[i]; });
+    const pick = r.pick(cells), mine = labels[cellKey(pick)], oppC = cells.find(c => f[cellKey(c)] === OPP(f[cellKey(pick)])), right = labels[cellKey(oppC)];
+    const line = (pick[0] === oppC[0] || pick[1] === oppC[1]) && Math.abs(pick[0] - oppC[0]) + Math.abs(pick[1] - oppC[1]) === 2;
+    return mcq(r, `${who} wrote a letter on each face of ${what} and opened it out flat. When it is folded up again, which face is opposite face <b>${mine}</b>?`, right,
+      cells.map(c => labels[cellKey(c)]).filter(x => x !== mine && x !== right), "Opposite faces never touch in the net. In a straight row of three squares, the two end squares are opposite.",
+      [line ? `${mine} and ${right} are in a straight line with one square between them, so they are opposite.` : `${mine} and ${right} are in a zig-zag: when you fold the net, they end up facing each other.`, `Every other face touches ${mine} once the cube is folded.`],
+      { pic: svgNet(cells, { fill, labels }), uid: "n2" + figKey(cells) + mine + lets.join(""), data: { net: "opposite", cells, labels, face: mine } });
+  }
+  if (t === 5) { // which extra square finishes the net?
+    const net = layWide(r, r.pick(CUBE_NETS)), gone = r.pick(net.filter(c => joined(net.filter(d => d !== c))));
+    const shift = cells => cells.map(([a, b]) => [a + 1, b + 1]), base = shift(net.filter(c => c !== gone)), spots = nearCells(base, 99, 99);
+    const good = spots.filter(c => foldCube(base.concat([c]))), bad = r.shuffle(spots.filter(c => !foldCube(base.concat([c]))));
+    const rightC = r.pick(good), chosen = [rightC].concat(bad.slice(0, 3));
+    if (chosen.length < 3) return M.topic("g6.nets").gen(r);
+    const all = base.concat(chosen), x0 = Math.min(...all.map(c => c[0])), y0 = Math.min(...all.map(c => c[1])), W = Math.max(...all.map(c => c[0])) - x0 + 1, H = Math.max(...all.map(c => c[1])) - y0 + 1;
+    const ids = ["n1", "n2", "n3", "n4"], optPics = {}, place = { W, H, ox: -x0, oy: -y0 };
+    chosen.forEach((c, i) => { optPics[ids[i]] = opt(base.concat([c]), Object.assign({ extra: c }, place)); });
+    return mcq(r, `${who} needs one more square to finish ${what}. Where should the yellow square go so the net folds into a cube?`, "n1", ids.slice(1, chosen.length), NET_TIP,
+      [NET_TIP, "With the right square every face is covered once.", "In the other pictures the yellow square lands on a face that is already covered, so one face is left open."],
+      { pic: svgNet(base, Object.assign({ fill }, place)), optPics, uid: "n5" + figKey(base) + chosen.map(cellKey).join("/"), data: { net: "extra", base, spots: chosen } });
+  }
+  // nets of other solids: name the solid, or count its faces
+  const k = r.pick(Object.keys(SOLIDS)), S = SOLIDS[k], turn = r.int(0, 3), pic = svgSolidNet(S.net(r), turn, fill), maker = r.pick(["Rapunzel", "Jack", "Princess Mira", "Fairy Pip", "The Frog King"]);
+  if (t === 3) return mcq(r, `${maker} cut out this net to make a paper model for the Fairy Fair. Which solid can it be folded into?`, S.name, r.shuffle(Object.values(SOLIDS).filter(x => x !== S).map(x => x.name)),
+    "Count the faces and look at their shapes: squares and rectangles make boxes, triangles meeting at a point make a pyramid, two triangles at the ends make a prism.",
+    [`The net has ${S.faces} faces: ${[S.tri && `${S.tri} triangle${S.tri > 1 ? "s" : ""}`, S.rect && (k === "cube" ? "6 squares" : `${S.rect} ${k === "sqpyr" ? "square" : "rectangle"}${S.rect > 1 ? "s" : ""}`)].filter(Boolean).join(" and ")}.`, `So it folds into a ${S.name}.`],
+    { pic, data: { net: "solid", solid: k } });
+  const ask = r.pick([["faces", S.faces], S.tri && S.rect ? r.pick([["triangles", S.tri], ["rects", S.rect]]) : ["faces", S.faces]]);
+  const q = ask[0] === "faces" ? "How many faces will the solid have?" : ask[0] === "triangles" ? "How many of the solid's faces are triangles?" : `How many of the solid's faces are ${k === "sqpyr" ? "squares" : "rectangles"}?`;
+  return num(`${maker} folds this net into a ${S.name}. ${q}`, ask[1], "Each flat shape in the net becomes one face of the solid.", [`Count the ${ask[0] === "faces" ? "shapes" : ask[0] === "triangles" ? "triangles" : k === "sqpyr" ? "squares" : "rectangles"} in the net: ${ask[1]}.`, `A ${S.name} has ${S.faces} faces.`], { pic, data: { net: "count", solid: k, ask: ask[0] } });
 });
 /* 🥧 pie charts (MOE P6): shares in simple fractions or percentages of a known total */
 const PIES = [

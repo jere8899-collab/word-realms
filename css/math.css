@@ -134,11 +134,11 @@
 .mpic.chart{max-width:100%;height:auto}
 @media (max-width:360px){.picto .pics{font-size:1.05rem}.picto .pname{flex-basis:5.8em;font-size:.76rem}}
 /* 🪞 Mirror Pond: square-grid figures and picture answer choices */
-.mpic.symgrid{max-width:100%;height:auto;display:block;margin:0 auto}
+.mpic.symgrid,.mpic.netpic{max-width:100%;height:auto;display:block;margin:0 auto}
 .opts.mpicopts{grid-template-columns:repeat(2,minmax(0,1fr))}
 .opt.mpicopt{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:8px;text-align:center;min-height:96px}
 .opt.mpicopt .k{margin:0;align-self:flex-start}
-.opt.mpicopt .mpic.symgrid{width:100%;max-width:150px}
+.opt.mpicopt .mpic.symgrid,.opt.mpicopt .mpic.netpic{width:100%;max-width:150px}
 .mansPic{display:inline-block;vertical-align:middle;width:110px;margin:0 4px}.mansPic .mpic{width:100%;height:auto}
 /* 🕰️ Clock Workshop (js/math-clock.js) */
 .mclock .mviz-svg.mv-clock{max-width:230px!important}
