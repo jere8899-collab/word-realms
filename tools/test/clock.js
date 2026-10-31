@@ -12,7 +12,7 @@ const M = require(ROOT + '/js/math-gen.js'); ['p', 'm', 'h'].forEach(x => requir
 const V = require(ROOT + '/js/math-viz.js'), C = M.clock;
 
 /* ---------- 1. topics, words, checker ---------- */
-ok(M.TOPICS.length === 109 && M.topic('g3.clock') && M.topic('g3.clock').grade === 3, `109 topics; 🌙 Midnight Clock is a Grade 3 topic (${M.TOPICS.length})`);
+ok(M.TOPICS.length >= 109 && M.topic('g3.clock') && M.topic('g3.clock').grade === 3, `${M.TOPICS.length} topics (109 when it was added); 🌙 Midnight Clock is a Grade 3 topic (${M.TOPICS.length})`);
 { const g3 = M.gradeTopics(3).map(t => t.id); ok(g3.indexOf('g3.clock') === g3.indexOf('g3.duration') + 1, 'it sits right after Ball Time (durations) in Grade 3'); }
 ok([[7, 0, "7 o'clock"], [7, 15, 'quarter past 7'], [7, 30, 'half past 7'], [7, 45, 'quarter to 8'], [7, 40, '20 minutes to 8'], [12, 50, '10 minutes to 1'], [3, 1, '1 minute past 3'], [3, 59, '1 minute to 4']].every(([h, m, w]) => C.words(h, m) === w), 'time in words: o\'clock, quarter past/to, half past, N minutes past/to (1 minute)');
 ok(C.h24(0) === '00:00' && C.h24(19 * 60 + 5) === '19:05' && C.ampm(20) === '12:20 a.m.' && C.ampm(12 * 60) === '12:00 p.m.' && C.ampm(23 * 60 + 33) === '11:33 p.m.' && C.dur(85) === '1 h 25 min' && C.dur(60) === '1 h', '24-hour, a.m./p.m. and duration helpers');

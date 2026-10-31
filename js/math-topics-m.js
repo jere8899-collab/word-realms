@@ -1,7 +1,7 @@
 /* 🔢 Number Kingdom topics, Grades 5–8 (Singapore Primary 5–6, Secondary 1–2). */
 (function () {
 const M = (typeof module !== "undefined" && module.exports) ? require("./math-gen.js") : window.MathGen;
-const { Q, num, mcq, T, NAMES, topic, svgPieChart, gcd, lcm, rd, fmt, simp, fracTex, fracStr, mixedTex, poly, lin, paren, pm, undo } = M._internal;
+const { Q, num, mcq, T, NAMES, topic, svgPieChart, svgGeo, dirPt, gcd, lcm, rd, fmt, simp, fracTex, fracStr, mixedTex, poly, lin, paren, pm, undo } = M._internal;
 
 /* ---------- Grade 5 (Primary 5) ---------- */
 topic(5, "fracmul", "Fraction Spells", "✨", "Multiply fractions", r => {
@@ -27,6 +27,70 @@ topic(5, "ratio", "Ratio Recipes", "⚖️", "Simplify and use ratios (type 2:3)
 topic(5, "triangle", "Triangle Tents", "⛺", "Area of triangles", r => {
   const b = r.int(2, 20), h = r.int(2, 18);
   return num(`A triangular tent flap has a base of ${b} cm and a height of ${h} cm. What is its area in cm²?`, b * h / 2, "Area of a triangle = ½ × base × height.", [`$\\frac{1}{2} \\times ${b} \\times ${h} = ${fmt(b * h / 2)}$ cm²`], { keys: ["."], data: { b, h } });
+});
+/* ---------- 🔎 Angle Detectives (MOE P5 geometry: angles on a straight line, at a point and vertically opposite;
+   angle sum and properties of triangles (isosceles, equilateral, right-angled); parallelogram, rhombus, trapezium).
+   Every figure is drawn to scale; the unknown angle is marked x and only the given angles carry numbers. ---------- */
+const dg = d => `${d}°`;
+// n whole-number angles between lo and hi that add up to total
+const splitAngles = (r, n, total, lo, hi) => { for (let k = 0; k < 500; k++) { const a = Array.from({ length: n - 1 }, () => r.int(lo, hi)), last = total - a.reduce((x, y) => x + y, 0); if (last >= lo && last <= hi) return r.shuffle(a.concat(last)); } return Array.from({ length: n }, (_, i) => i < n - 1 ? Math.floor(total / n) : total - Math.floor(total / n) * (n - 1)); };
+// a triangle with base angles A (left) and B (right), base 1 long
+const triPts = (A, B) => { const C = 180 - A - B, rad = Math.PI / 180; return [[0, 0], [1, 0], dirPt([0, 0], A, Math.sin(B * rad) / Math.sin(C * rad))]; };
+// the angle at corner i of a polygon (between its two neighbours)
+const corner = (P, i, t, right) => ({ v: P[i], a: P[(i + P.length - 1) % P.length], b: P[(i + 1) % P.length], t, right });
+const take = (arr, x) => arr.filter((_, i) => i !== x);
+const ANGLE_KINDS = {
+  line: r => { const k = r.chance(.55) ? 2 : 3, a2 = r.int(30, 138), angs = k === 2 ? r.shuffle([a2 + (a2 > 83 ? 12 : 0), 180 - a2 - (a2 > 83 ? 12 : 0)]) : r.chance(.3) ? r.shuffle([90, ...splitAngles(r, 2, 90, 30, 60)]) : splitAngles(r, 3, 180, 30, 100);
+    const xi = r.pick(angs.map((a, i) => a === 90 ? -1 : i).filter(i => i >= 0)), O = [0, 0], cum = angs.map((_, i) => angs.slice(0, i).reduce((x, y) => x + y, 0));
+    const angles = angs.map((a, i) => ({ v: O, a: dirPt(O, cum[i]), b: dirPt(O, cum[i] + a), t: i === xi ? "x" : a === 90 ? "" : dg(a), right: a === 90 && i !== xi }));
+    const giv = take(angs, xi);
+    return { fig: { title: "Straight-line spell", rot: r.pick([0, 0, 180, 20, -20]), segs: [[dirPt(O, 180, 1.1), dirPt(O, 0, 1.1)], ...cum.slice(1).map(c => [O, dirPt(O, c, 1.05)])], dots: [O], angles }, x: angs[xi], giv,
+      q: "The angles sit on a straight line. Find ∠x.", hint: "Angles on a straight line add up to 180°.", steps: [`${giv.map(dg).join(" + ")} = ${dg(180 - angs[xi])}`, `∠x = 180° − ${dg(180 - angs[xi])} = ${dg(angs[xi])}`] }; },
+  point: r => { const k = r.pick([3, 3, 4]), angs = k === 4 && r.chance(.4) ? r.shuffle([90, ...splitAngles(r, 3, 270, 50, 140)]) : splitAngles(r, k, 360, k === 3 ? 70 : 50, k === 3 ? 160 : 140);
+    const xi = r.pick(angs.map((a, i) => a === 90 ? -1 : i).filter(i => i >= 0)), O = [0, 0], s0 = r.int(0, 359), cum = angs.map((_, i) => s0 + angs.slice(0, i).reduce((x, y) => x + y, 0)), giv = take(angs, xi);
+    const angles = angs.map((a, i) => ({ v: O, a: dirPt(O, cum[i]), b: dirPt(O, cum[i] + a), t: i === xi ? "x" : a === 90 ? "" : dg(a), right: a === 90 && i !== xi }));
+    return { fig: { title: "Compass-star point", segs: cum.map(c => [O, dirPt(O, c)]), dots: [O], angles }, x: angs[xi], giv,
+      q: `${k} angles meet at a point. Find ∠x.`, hint: `Angles at a point add up to 360°.${giv.includes(90) ? " The little square is a right angle, 90°." : ""}`, steps: [`${giv.map(dg).join(" + ")} = ${dg(360 - angs[xi])}`, `∠x = 360° − ${dg(360 - angs[xi])} = ${dg(angs[xi])}`] }; },
+  vopp: r => { let a = r.int(35, 145); if (a > 83 && a < 97) a += 20; const opp = r.chance(.5), side = r.pick([1, 3]), O = [0, 0], dirs = [0, a, 180, 180 + a, 360];
+    const sec = i => ({ v: O, a: dirPt(O, dirs[i]), b: dirPt(O, dirs[i + 1]) }), xi = opp ? 2 : side, x = opp ? a : 180 - a;
+    return { fig: { title: "Crossed wands", rot: r.int(0, 179), segs: [[dirPt(O, 0), dirPt(O, 180)], [dirPt(O, a), dirPt(O, 180 + a)]], dots: [O], angles: [Object.assign(sec(0), { t: dg(a) }), Object.assign(sec(xi), { t: "x" })] }, x, giv: [a],
+      q: "Two straight wands cross. Find ∠x.", hint: opp ? "Vertically opposite angles are equal." : "∠x and the given angle sit on a straight line.", steps: opp ? ["∠x is vertically opposite the given angle.", `∠x = ${dg(a)}`] : ["∠x and the given angle are angles on a straight line.", `∠x = 180° − ${dg(a)} = ${dg(180 - a)}`] }; },
+  tri: r => { const A = r.int(30, 100), B = r.int(30, 150 - A), C = 180 - A - B, P = triPts(A, B), angs = [A, B, C], xi = r.int(0, 2), giv = take(angs, xi);
+    return { fig: { title: "Fairy tent", rot: r.pick([0, 0, 15, -15, 180]), polys: [P], angles: angs.map((a, i) => corner(P, i, i === xi ? "x" : dg(a))) }, x: angs[xi], giv,
+      q: "Find ∠x in the triangle.", hint: "The three angles of a triangle add up to 180°.", steps: [`∠x = 180° − ${giv.map(dg).join(" − ")} = ${dg(angs[xi])}`] }; },
+  right: r => { const B = r.int(25, 65), C = 90 - B, P = triPts(90, B), giveB = r.chance(.5), x = giveB ? C : B;
+    return { fig: { title: "Castle flag", rot: r.pick([0, 0, 90, -90, 180]), polys: [P], angles: [corner(P, 0, "", true), corner(P, 1, giveB ? dg(B) : "x"), corner(P, 2, giveB ? "x" : dg(C))] }, x, giv: [90, giveB ? B : C],
+      q: "The flag is a right-angled triangle (the little square is 90°). Find ∠x.", hint: "Angles in a triangle add up to 180°, and the right angle is 90°.", steps: [`∠x = 180° − 90° − ${dg(giveB ? B : C)} = ${dg(x)}`] }; },
+  iso: r => { if (r.chance(.12)) { const P = triPts(60, 60), xi = r.int(0, 2);
+      return { fig: { title: "Gingerbread roof", rot: r.pick([0, 180]), polys: [P], ticks: [[P[0], P[1], 1], [P[1], P[2], 1], [P[2], P[0], 1]], angles: [corner(P, xi, "x")] }, x: 60, giv: [], equi: 1,
+        q: "All three sides of this triangle are equal (see the ticks). Find ∠x.", hint: "An equilateral triangle has three equal angles.", steps: ["All three angles are equal.", "∠x = 180° ÷ 3 = 60°"] }; }
+    let ap = 2 * r.int(15, 65); if (ap === 60) ap = 50; const b = (180 - ap) / 2, P = triPts(b, b), t = r.int(0, 2), rot = r.pick([0, 0, 20, -20, 180]);
+    const fig = { title: "Gingerbread roof", rot, polys: [P], ticks: [[P[0], P[2], 1], [P[1], P[2], 1]] };
+    if (t === 0) return { fig: Object.assign(fig, { angles: [corner(P, 2, dg(ap)), corner(P, r.int(0, 1), "x")] }), x: b, giv: [ap],
+      q: "The triangle is isosceles: the sides with a tick are equal. Find ∠x.", hint: "The two base angles of an isosceles triangle are equal.", steps: [`The two equal angles share 180° − ${dg(ap)} = ${dg(180 - ap)}`, `∠x = ${dg(180 - ap)} ÷ 2 = ${dg(b)}`] };
+    const k = r.int(0, 1);
+    if (t === 1) return { fig: Object.assign(fig, { angles: [corner(P, k, dg(b)), corner(P, 2, "x")] }), x: ap, giv: [b],
+      q: "The triangle is isosceles: the sides with a tick are equal. Find ∠x.", hint: "The other base angle is the same size. Then use 180°.", steps: [`The other base angle is also ${dg(b)}.`, `∠x = 180° − ${dg(b)} − ${dg(b)} = ${dg(ap)}`] };
+    return { fig: Object.assign(fig, { angles: [corner(P, k, dg(b)), corner(P, 1 - k, "x")] }), x: b, giv: [b],
+      q: "The triangle is isosceles: the sides with a tick are equal. Find ∠x.", hint: "Look at which sides are equal: the angles facing them are equal too.", steps: ["∠x and the given angle face the two equal sides.", `∠x = ${dg(b)}`] }; },
+  ext: r => { const A = r.int(35, 80), B = r.int(35, 145 - A), C = 180 - A - B, P = triPts(A, B), E = [1.5, 0], ext = 180 - B, inner = r.chance(.35);
+    return { fig: { title: "Signpost puzzle", rot: r.pick([0, 0, 10, -10]), polys: [P], segs: [[P[1], E]], angles: [corner(P, 0, inner ? "" : dg(A)), { v: P[1], a: E, b: P[2], t: dg(ext) }, inner ? corner(P, 1, "x") : corner(P, 2, "x")].filter(g => g.t !== "") }, x: inner ? B : C, giv: inner ? [ext] : [A, ext],
+      q: "One side of the triangle is made longer to form a straight line. Find ∠x.", hint: inner ? "∠x and the outside angle sit on a straight line." : "First find the angle inside the triangle next to the outside angle (straight line: 180°).",
+      steps: inner ? [`∠x = 180° − ${dg(ext)} = ${dg(B)}`] : [`Inside angle = 180° − ${dg(ext)} = ${dg(B)}`, `∠x = 180° − ${dg(A)} − ${dg(B)} = ${dg(C)}`] }; },
+  para: r => { let p = r.int(50, 130); if (p > 78 && p < 102) p -= 25; const rh = r.chance(.4), s = rh ? 1 : r.pick([.55, .7, .8]), P = [[0, 0], [1, 0], dirPt([1, 0], p, s), dirPt([0, 0], p, s)], angs = [p, 180 - p, p, 180 - p];
+    const g = r.int(0, 3), xi = (g + r.int(1, 3)) % 4, opp = (g + 2) % 4 === xi;
+    return { fig: { title: rh ? "Diamond kite" : "Magic carpet", rot: r.pick([0, 0, 180, 15, -15]), polys: [P], angles: [corner(P, g, dg(angs[g])), corner(P, xi, "x")],
+      ticks: rh ? [[P[0], P[1], 1], [P[1], P[2], 1], [P[2], P[3], 1], [P[3], P[0], 1]] : [], arrows: rh ? [] : [[P[0], P[1], 1], [P[3], P[2], 1], [P[0], P[3], 2], [P[1], P[2], 2]] }, x: angs[xi], giv: [angs[g]],
+      q: rh ? "The kite is a rhombus (all four sides are equal). Find ∠x." : "The carpet is a parallelogram (sides with the same arrows are parallel). Find ∠x.",
+      hint: opp ? "Opposite angles of a parallelogram or rhombus are equal." : "Two angles next to each other along one side add up to 180°.", steps: opp ? ["∠x is opposite the given angle.", `∠x = ${dg(angs[g])}`] : ["∠x and the given angle are next to each other between parallel sides.", `∠x = 180° − ${dg(angs[g])} = ${dg(angs[xi])}`] }; },
+  trap: r => { let a, b, h = .55, top; do { a = r.int(45, 115); b = r.int(45, 115); top = 1 - h / Math.tan(a * Math.PI / 180) - h / Math.tan(b * Math.PI / 180); } while (top < .3 || top > 1.2 || Math.abs(a - 90) < 6 || Math.abs(b - 90) < 6);
+    const P = [[0, 0], [1, 0], dirPt([1, 0], 180 - b, h / Math.sin(b * Math.PI / 180)), dirPt([0, 0], a, h / Math.sin(a * Math.PI / 180))], angs = [a, b, 180 - b, 180 - a], g = r.int(0, 3), xi = 3 - g;
+    return { fig: { title: "Toy-bridge trapezium", rot: r.pick([0, 0, 180]), polys: [P], arrows: [[P[0], P[1], 1], [P[3], P[2], 1]], angles: [corner(P, g, dg(angs[g])), corner(P, xi, "x")] }, x: angs[xi], giv: [angs[g]],
+      q: "The bridge is a trapezium: the two sides with arrows are parallel. Find ∠x.", hint: "Between the parallel sides, the two angles along one slanted side add up to 180°.", steps: ["∠x and the given angle sit along the same slanted side, between the parallel sides.", `∠x = 180° − ${dg(angs[g])} = ${dg(angs[xi])}`] }; }
+};
+topic(5, "angles", "Angle Detectives", "🔎", "Unknown angles in lines, triangles and 4-sided figures", r => {
+  const kind = r.pick(Object.keys(ANGLE_KINDS)), z = ANGLE_KINDS[kind](r);
+  return num(z.q, z.x, z.hint, z.steps, { pic: svgGeo(z.fig, "angle figure"), uid: `angles|${kind}|${z.fig.title}|${z.giv.join(",")}|${z.x}|${z.fig.rot || 0}|${z.fig.angles.length}`, data: { geo: kind, x: z.x, giv: z.giv, equi: z.equi } });
 });
 topic(5, "volume", "Treasure Chests", "📦", "Volume of cuboids", r => {
   const l = r.int(2, 15), w = r.int(2, 12), h = r.int(2, 10);

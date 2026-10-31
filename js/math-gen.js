@@ -58,8 +58,14 @@ const THINGS = [["star cookies", "🍪"], ["magic beans", "🫘"], ["glass slipp
 const COUNT_EMOJI = ["🍓", "⭐", "🍄", "🦋", "🍎", "🌸", "🐟", "🧁", "💎", "🐣"];
 
 /* ---------- SVG pictures (clock, shapes, fraction pies, coins, charts) ---------- */
+// shared palette: pastel fills, ink for text, a soft purple line, and the cream card every chart or figure sits on
+const PASTEL = ["#FFB8D1", "#BDE7FF", "#C8F2DC", "#E2D6FF", "#FFE7A8", "#FFD3B5"];
+const INK = "#6d4f86", LINE = "#9b84b0";
+const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;");
 // shared SVG bits: one <svg> wrapper, a point on a circle (radians, 1 d.p.) and a pie wedge
 const svgBox = (body, label, w, h = w, vb = "0 0 120 120", cls = "mpic") => `<svg class="${cls}" viewBox="${vb}" width="${w}" height="${h}" role="img" aria-label="${label}">${body}</svg>`;
+// a w × h cream card with a centred title (baseline ty), drawn behind charts and geometry figures
+const cardSvg = (w, h, title, ty, body, label, cls = "mpic chart") => svgBox(`<rect x="1" y="1" width="${w - 2}" height="${h - 2}" rx="14" fill="#FFFDF8" stroke="#F1E3F7" stroke-width="2"/><text x="${w / 2}" y="${ty}" font-size="12" text-anchor="middle" font-weight="900" fill="${INK}">${esc(title)}</text>${body}`, label, w, h, `0 0 ${w} ${h}`, cls);
 const polar = (cx, cy, r, a) => [(cx + r * Math.cos(a)).toFixed(1), (cy + r * Math.sin(a)).toFixed(1)];
 const wedge = (cx, cy, r, a0, a1) => { const [x0, y0] = polar(cx, cy, r, a0), [x1, y1] = polar(cx, cy, r, a1);
   return `<path d="M${cx},${cy} L${x0},${y0} A${r},${r} 0 ${a1 - a0 > Math.PI + 1e-9 ? 1 : 0},1 ${x1},${y1} Z"`; };
@@ -70,13 +76,13 @@ const hm = (h, m) => `${h}:${pad2(m)}`;
 const clockRad = a => (a - 90) * Math.PI / 180;
 const clockHand = (a, len, w, c, cx = 60, cy = 60) => { const [x, y] = polar(cx, cy, len, clockRad(a)); return `<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="${c}" stroke-width="${w}" stroke-linecap="round"/>`; };
 const clockFace = () => {
-  let nums = ""; for (let i = 1; i <= 12; i++) { const [x, y] = polar(60, 64, 42, clockRad(i * 30)); nums += `<text x="${x}" y="${y}" font-size="11" text-anchor="middle" font-weight="800" fill="#6d4f86">${i}</text>`; }
+  let nums = ""; for (let i = 1; i <= 12; i++) { const [x, y] = polar(60, 64, 42, clockRad(i * 30)); nums += `<text x="${x}" y="${y}" font-size="11" text-anchor="middle" font-weight="800" fill="${INK}">${i}</text>`; }
   let ticks = ""; for (let i = 0; i < 60; i++) { const a = clockRad(i * 6), [x1, y1] = polar(60, 60, i % 5 ? 53 : 50, a), [x2, y2] = polar(60, 60, 55, a); ticks += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#c9b3ff" stroke-width="${i % 5 ? 1 : 2}"/>`; }
   return { rim: `<circle cx="60" cy="60" r="57" fill="#FFF4C2" stroke="#FFB8D1" stroke-width="5"/>`, ticks, nums };
 };
 // hour-hand and minute-hand angles for h:mm (the hour hand creeps on half a degree a minute)
 const clockAngles = (h, m) => [(h % 12) * 30 + m * 0.5, m * 6];
-const clockHands = (h, m) => { const [ha, ma] = clockAngles(h, m); return `${clockHand(ha, 27, 5, "#6d4f86")}${clockHand(ma, 40, 3, "#ff8fa3")}<circle cx="60" cy="60" r="4" fill="#6d4f86"/>`; };
+const clockHands = (h, m) => { const [ha, ma] = clockAngles(h, m); return `${clockHand(ha, 27, 5, INK)}${clockHand(ma, 40, 3, "#ff8fa3")}<circle cx="60" cy="60" r="4" fill="${INK}"/>`; };
 const svgClock = (h, m) => { const f = clockFace(); return svgBox(`${f.rim}${f.ticks}${f.nums}${clockHands(h, m)}`, "clock", 150, 150, undefined, "mpic clock"); };
 // time in words the MOE way: "7 o'clock", "quarter past 7", "half past 7", "20 minutes to 8", "1 minute past 12"
 const nextHour = h => h % 12 + 1;
@@ -93,17 +99,14 @@ const SHAPES = {
   rectangle: { sides: 4, corners: 4, pts: "6,30 114,30 114,92 6,92" }, pentagon: { sides: 5, corners: 5, pts: "60,8 112,46 92,108 28,108 8,46" },
   hexagon: { sides: 6, corners: 6, pts: "34,10 86,10 112,60 86,110 34,110 8,60" }, circle: { sides: 0, corners: 0 }
 };
-const svgShape = (k, fill = "#C8F2DC") => svgBox(k === "circle" ? `<circle cx="60" cy="60" r="50" fill="${fill}" stroke="#9b84b0" stroke-width="4"/>` : `<polygon points="${SHAPES[k].pts}" fill="${fill}" stroke="#9b84b0" stroke-width="4" stroke-linejoin="round"/>`, "shape", 130);
+const svgShape = (k, fill = "#C8F2DC") => svgBox(k === "circle" ? `<circle cx="60" cy="60" r="50" fill="${fill}" stroke="${LINE}" stroke-width="4"/>` : `<polygon points="${SHAPES[k].pts}" fill="${fill}" stroke="${LINE}" stroke-width="4" stroke-linejoin="round"/>`, "shape", 130);
 const svgPie = (k, d) => {
   let s = ""; for (let i = 0; i < d; i++) { const a0 = i / d * 2 * Math.PI - Math.PI / 2, a1 = (i + 1) / d * 2 * Math.PI - Math.PI / 2;
-    s += `${d === 1 ? `<circle cx="60" cy="60" r="52"` : wedge(60, 60, 52, a0, a1)} fill="${i < k ? "#FFB8D1" : "#FFF8EE"}" stroke="#9b84b0" stroke-width="3"/>`; }
+    s += `${d === 1 ? `<circle cx="60" cy="60" r="52"` : wedge(60, 60, 52, a0, a1)} fill="${i < k ? "#FFB8D1" : "#FFF8EE"}" stroke="${LINE}" stroke-width="3"/>`; }
   return svgBox(s, "fraction pie", 140);
 };
 /* charts for the data-analysis topics (MOE P1–P6: picture graphs, bar graphs, line graphs, pie charts).
    Values are drawn but never printed on the bars or points, so the child reads them off the scale. */
-const PASTEL = ["#FFB8D1", "#BDE7FF", "#C8F2DC", "#E2D6FF", "#FFE7A8", "#FFD3B5"];
-const INK = "#6d4f86";
-const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;");
 // picture graph: rows [{ name, n, e }] (n pictures each), key text under it
 const picto = (title, rows, key) => `<div class="mpic picto" role="img" aria-label="picture graph"><div class="ptitle">${esc(title)}</div>${rows.map(w => `<div class="prow"><span class="pname">${esc(w.name)}</span><span class="pics">${w.e.repeat(w.n) || "&nbsp;"}</span></div>`).join("")}<div class="pkey">${esc(key)}</div></div>`;
 // gridlines + y-axis labels from 0 to max in steps; returns [svg, y(value)]
@@ -112,12 +115,12 @@ const axes = (x0, x1, top, bot, max, step) => {
   for (let v = 0; v <= max; v += step) s += `<line x1="${x0}" y1="${y(v)}" x2="${x1}" y2="${y(v)}" stroke="${v ? "#EFE6FA" : "#b9a6cc"}" stroke-width="${v ? 1 : 2}"/><text x="${x0 - 5}" y="${y(v) + 3.5}" font-size="10" text-anchor="end" font-weight="800" fill="${INK}">${v}</text>`;
   return [s, y];
 };
-const chartBox = (title, unit, body, label) => svgBox(`<rect x="1" y="1" width="298" height="208" rx="14" fill="#FFFDF8" stroke="#F1E3F7" stroke-width="2"/><text x="150" y="17" font-size="12" text-anchor="middle" font-weight="900" fill="${INK}">${esc(title)}</text><text x="8" y="31" font-size="9" font-weight="800" fill="#9b84b0">${esc(unit)}</text>${body}`, label, 300, 210, "0 0 300 210", "mpic chart");
+const chartBox = (title, unit, body, label) => cardSvg(300, 210, title, 17, `<text x="8" y="31" font-size="9" font-weight="800" fill="${LINE}">${esc(unit)}</text>${body}`, label);
 // bar graph: cats [{ name, e }], vals, scale max + step
 const svgBars = (title, unit, cats, vals, max, step) => {
   const x0 = 36, x1 = 290, top = 38, bot = 170, [grid, y] = axes(x0, x1, top, bot, max, step), w = (x1 - x0) / cats.length;
   const bars = cats.map((c, i) => { const bx = +(x0 + w * i + w * 0.2).toFixed(1), bw = +(w * 0.6).toFixed(1), cx = +(x0 + w * (i + 0.5)).toFixed(1);
-    return `<rect x="${bx}" y="${y(vals[i])}" width="${bw}" height="${+(bot - y(vals[i])).toFixed(1)}" rx="5" fill="${PASTEL[i % 6]}" stroke="#9b84b0" stroke-width="1.5"/><text x="${cx}" y="${bot + 16}" font-size="13" text-anchor="middle">${c.e}</text><text x="${cx}" y="${bot + 30}" font-size="9.5" text-anchor="middle" font-weight="800" fill="${INK}">${esc(c.name)}</text>`; }).join("");
+    return `<rect x="${bx}" y="${y(vals[i])}" width="${bw}" height="${+(bot - y(vals[i])).toFixed(1)}" rx="5" fill="${PASTEL[i % 6]}" stroke="${LINE}" stroke-width="1.5"/><text x="${cx}" y="${bot + 16}" font-size="13" text-anchor="middle">${c.e}</text><text x="${cx}" y="${bot + 30}" font-size="9.5" text-anchor="middle" font-weight="800" fill="${INK}">${esc(c.name)}</text>`; }).join("");
   return chartBox(title, unit, grid + bars, "bar graph");
 };
 // line graph: x labels, values, scale max + step
@@ -130,10 +133,42 @@ const svgLine = (title, unit, xs, vals, max, step) => {
 // pie chart: slices [{ name, e, part, label }] out of `whole` parts; label "?" hides a slice's share
 const svgPieChart = (title, slices, whole) => {
   let a = -Math.PI / 2, s = "", leg = "";
-  slices.forEach((c, i) => { const b = a + 2 * Math.PI * c.part / whole; s += `${wedge(80, 112, 70, a, b)} fill="${PASTEL[i % 6]}" stroke="#9b84b0" stroke-width="2"/>`;
+  slices.forEach((c, i) => { const b = a + 2 * Math.PI * c.part / whole; s += `${wedge(80, 112, 70, a, b)} fill="${PASTEL[i % 6]}" stroke="${LINE}" stroke-width="2"/>`;
     const [tx, ty] = polar(80, 116, 44, (a + b) / 2); s += `<text x="${tx}" y="${ty}" font-size="15" text-anchor="middle">${c.e}</text>`; a = b;
-    const ly = 58 + i * 30; leg += `<rect x="166" y="${ly - 11}" width="14" height="14" rx="4" fill="${PASTEL[i % 6]}" stroke="#9b84b0"/><text x="186" y="${ly}" font-size="11" font-weight="800" fill="${INK}">${c.e} ${esc(c.name)}</text><text x="186" y="${ly + 13}" font-size="10.5" font-weight="900" fill="#ff6f91">${esc(c.label)}</text>`; });
-  return svgBox(`<rect x="1" y="1" width="298" height="198" rx="14" fill="#FFFDF8" stroke="#F1E3F7" stroke-width="2"/><text x="150" y="20" font-size="12" text-anchor="middle" font-weight="900" fill="${INK}">${esc(title)}</text>${s}${leg}`, "pie chart", 300, 200, "0 0 300 200", "mpic chart");
+    const ly = 58 + i * 30; leg += `<rect x="166" y="${ly - 11}" width="14" height="14" rx="4" fill="${PASTEL[i % 6]}" stroke="${LINE}"/><text x="186" y="${ly}" font-size="11" font-weight="800" fill="${INK}">${c.e} ${esc(c.name)}</text><text x="186" y="${ly + 13}" font-size="10.5" font-weight="900" fill="#ff6f91">${esc(c.label)}</text>`; });
+  return cardSvg(300, 200, title, 20, s + leg, "pie chart");
+};
+/* 📐 geometry figures (MOE P5: unknown angles on a straight line, at a point, vertically opposite, in triangles,
+   parallelograms, rhombuses and trapeziums). A figure is drawn to scale from points in maths coordinates (y up):
+   { title, rot, segs: [[P, Q]], polys: [[P…]], dots: [P], ticks: [[P, Q, n]], arrows: [[P, Q, n]],
+     angles: [{ v, a, b, t: "48°" | "x", right }] } — each angle is the smaller one at v between rays v→a and v→b. */
+const vsub = (a, b) => [a[0] - b[0], a[1] - b[1]], vunit = v => { const l = Math.hypot(v[0], v[1]) || 1; return [v[0] / l, v[1] / l]; };
+const vat = (p, v, k) => [p[0] + v[0] * k, p[1] + v[1] * k], f1 = n => +n.toFixed(1), xy = p => `${f1(p[0])},${f1(p[1])}`;
+const dirPt = (p, deg, k = 1) => vat(p, [Math.cos(deg * Math.PI / 180), Math.sin(deg * Math.PI / 180)], k);
+const svgGeo = (fig, label = "geometry figure") => {
+  const W = 300, H = 214, box = [22, 34, 256, 166], rot = (fig.rot || 0) * Math.PI / 180;
+  const turn = p => [p[0] * Math.cos(rot) - p[1] * Math.sin(rot), p[0] * Math.sin(rot) + p[1] * Math.cos(rot)];
+  const all = [].concat(...(fig.segs || []), ...(fig.polys || []), fig.dots || []).map(turn), xs = all.map(p => p[0]), ys = all.map(p => p[1]);
+  const [x0, x1, y0, y1] = [Math.min(...xs), Math.max(...xs), Math.min(...ys), Math.max(...ys)], sc = Math.min(box[2] / (x1 - x0 || 1), box[3] / (y1 - y0 || 1));
+  const S = p => { const q = turn(p); return [box[0] + (q[0] - x0) * sc + (box[2] - (x1 - x0) * sc) / 2, box[1] + (y1 - q[1]) * sc + (box[3] - (y1 - y0) * sc) / 2]; };
+  let back = "", lines = "", marks = "", text = "";
+  (fig.polys || []).forEach((P, i) => { back += `<polygon points="${P.map(p => xy(S(p))).join(" ")}" fill="${PASTEL[(i + 1) % 6]}" fill-opacity=".45" stroke="none"/>`; P.forEach((p, k) => (fig.segs = fig.segs || []).push([p, P[(k + 1) % P.length]])); });
+  (fig.angles || []).forEach(g => {
+    const V = S(g.v), u1 = vunit(vsub(S(g.a), V)), u2 = vunit(vsub(S(g.b), V)), t1 = Math.atan2(u1[1], u1[0]);
+    let d = Math.atan2(u2[1], u2[0]) - t1; while (d > Math.PI) d -= 2 * Math.PI; while (d <= -Math.PI) d += 2 * Math.PI;
+    const deg = Math.abs(d) * 180 / Math.PI, x = g.t === "x", fill = x ? "#FFC9DA" : "#E2D6FF";
+    if (g.right) { const k = 13; back += `<path class="gang" data-t="90" d="M${xy(V)} L${xy(vat(V, u1, k))} L${xy(vat(vat(V, u1, k), u2, k))} L${xy(vat(V, u2, k))} Z" fill="${fill}" stroke="${LINE}" stroke-width="1.6"/>`; }
+    else { const r = deg < 45 ? 34 : deg < 70 ? 27 : 22, p1 = vat(V, u1, r), p2 = vat(V, u2, r);
+      back += `<path class="gang" data-t="${esc(g.t)}" d="M${xy(V)} L${xy(p1)} A${r},${r} 0 0,${d > 0 ? 1 : 0} ${xy(p2)} Z" fill="${fill}" stroke="${x ? "#ff6f91" : LINE}" stroke-width="1.6"/>`;
+      const m = t1 + d / 2, L = r + (deg < 45 ? 15 : 14), [tx, ty] = [V[0] + L * Math.cos(m), V[1] + L * Math.sin(m) + 4.5];
+      if (g.t) text += `<text x="${f1(tx)}" y="${f1(ty)}" font-size="${x ? 15 : 12.5}" text-anchor="middle" font-weight="900"${x ? ` font-style="italic" font-family="Georgia, serif" fill="#ff4f81"` : ` fill="${INK}"`} paint-order="stroke" stroke="#FFFDF8" stroke-width="3">${esc(g.t)}</text>`; }
+  });
+  (fig.segs || []).forEach(([P, Q]) => { lines += `<line x1="${f1(S(P)[0])}" y1="${f1(S(P)[1])}" x2="${f1(S(Q)[0])}" y2="${f1(S(Q)[1])}" stroke="${INK}" stroke-width="3" stroke-linecap="round"/>`; });
+  const along = (P, Q, n, gap, draw) => { const A = S(P), B = S(Q), u = vunit(vsub(B, A)), nn = [-u[1], u[0]], M = [(A[0] + B[0]) / 2, (A[1] + B[1]) / 2]; for (let i = 0; i < n; i++) draw(vat(M, u, (i - (n - 1) / 2) * gap), u, nn); };
+  (fig.ticks || []).forEach(([P, Q, n]) => along(P, Q, n, 6, (c, u, nn) => { marks += `<line class="gtick" x1="${f1(c[0] + nn[0] * 6)}" y1="${f1(c[1] + nn[1] * 6)}" x2="${f1(c[0] - nn[0] * 6)}" y2="${f1(c[1] - nn[1] * 6)}" stroke="#ff6f91" stroke-width="2.4" stroke-linecap="round"/>`; }));
+  (fig.arrows || []).forEach(([P, Q, n]) => along(P, Q, n, 9, (c, u, nn) => { const tip = vat(c, u, 4), bk = vat(tip, u, -8); marks += `<polyline class="garrow" points="${xy(vat(bk, nn, 5))} ${xy(tip)} ${xy(vat(bk, nn, -5))}" fill="none" stroke="#ff6f91" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>`; }));
+  (fig.dots || []).forEach(p => { marks += `<circle cx="${f1(S(p)[0])}" cy="${f1(S(p)[1])}" r="3.6" fill="${INK}"/>`; });
+  return cardSvg(W, H, fig.title, 21, back + lines + marks + text, label, "mpic chart geo");
 };
 const coin = c => `<span class="mcoin c${c}">${c >= 100 ? "$" + c / 100 : c + "¢"}</span>`;
 const emojiRows = (n, e) => { let s = ""; for (let i = 0; i < n; i += 5) s += `<div class="erow">${e.repeat(Math.min(5, n - i))}</div>`; return `<div class="mpic emojis">${s}</div>`; };
@@ -158,7 +193,7 @@ M.longMulSteps = (a, b) => { const bs = String(b).split("").reverse(); const out
 /* ====================== TOPICS ====================== */
 const TOPICS = [];
 const topic = (grade, id, name, icon, desc, gen, opt = {}) => TOPICS.push(Object.assign({ grade, id: `g${grade}.${id}`, name, icon, desc, gen }, opt));
-M._internal = { Q, num, mcq, T, NAMES, THINGS, COUNT_EMOJI, svgBox, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, svgBars, svgLine, svgPieChart, coin, emojiRows, table, colAdd, colSub, topic, TOPICS, gcd, lcm, rd, fmt, fdp, money, simp, fracTex, fracStr, mixedTex, sgn, poly, lin, paren, pm, undo };
+M._internal = { Q, num, mcq, T, NAMES, THINGS, COUNT_EMOJI, svgBox, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, svgBars, svgLine, svgPieChart, svgGeo, dirPt, coin, emojiRows, table, colAdd, colSub, topic, TOPICS, gcd, lcm, rd, fmt, fdp, money, simp, fracTex, fracStr, mixedTex, sgn, poly, lin, paren, pm, undo };
 M.TOPICS = TOPICS;
 M.topic = id => TOPICS.find(t => t.id === id);
 M.gradeTopics = g => TOPICS.filter(t => t.grade === g);
