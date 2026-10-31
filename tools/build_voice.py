@@ -30,6 +30,8 @@ def lines():
         d = json.load(open(f)); walk(d)
         if f.endswith("speaking.json"):
             for it in d: [add("narrator", it[k]) for k in ("text", "model") if isinstance(it.get(k), str)]
+        if f.endswith("swap.json"):                                    # 🔀 Spell Swap: sentence 1 (sentence 2 is its `say`)
+            for bk in d["books"]: [add("narrator", it["a"]) for it in bk["items"]]
         if f.endswith("words.json"):                                   # 🔮 Word Charms: the word, its meaning, its example
             for it in d: [add("narrator", it[k]) for k in ("w", "def", "ex")]
         if f.endswith("story.json"):

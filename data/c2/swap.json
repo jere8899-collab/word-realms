@@ -1,0 +1,339 @@
+{
+ "level": "c2",
+ "mode": "type",
+ "min": 3,
+ "max": 8,
+ "key": true,
+ "books": [
+  {
+   "id": "c2.1",
+   "icon": "📚",
+   "name": "Archivus's Riddles",
+   "focus": "Hardly had… · But for… · no option but to · reputed to",
+   "items": [
+    {
+     "a": "The knights fled the moment the dragon appeared.",
+     "cue": "HARDLY",
+     "b": "___ when the knights fled.",
+     "ans": [
+      "Hardly had the dragon appeared",
+      "Hardly had the dragon arrived"
+     ],
+     "tip": "Hardly had + subject + past participle + when… = as soon as (formal inversion).",
+     "id": "c2.1.1",
+     "say": "Hardly had the dragon appeared when the knights fled."
+    },
+    {
+     "a": "The new rules had no effect on how long we could play.",
+     "cue": "DIFFERENCE",
+     "b": "The new rules ___ to how long we could play.",
+     "ans": [
+      "made no difference",
+      "made absolutely no difference",
+      "didn't make any difference",
+      "made no difference at all"
+     ],
+     "tip": "make no difference to = have no effect on.",
+     "id": "c2.1.2",
+     "say": "The new rules made no difference to how long we could play."
+    },
+    {
+     "a": "She was not at all surprised by the news.",
+     "cue": "LEAST",
+     "b": "She was ___ by the news.",
+     "ans": [
+      "not in the least surprised",
+      "not the least bit surprised"
+     ],
+     "tip": "not in the least = not at all.",
+     "id": "c2.1.3",
+     "say": "She was not in the least surprised by the news."
+    },
+    {
+     "a": "Ollie only finished the race because his friends cheered him on.",
+     "cue": "FOR",
+     "b": "But ___ cheering him on, Ollie would never have finished the race.",
+     "ans": [
+      "for his friends"
+     ],
+     "tip": "But for + noun = if it hadn't been for…",
+     "id": "c2.1.4",
+     "say": "But for his friends cheering him on, Ollie would never have finished the race."
+    },
+    {
+     "a": "It is said that the castle has a hidden room.",
+     "cue": "REPUTED",
+     "b": "The castle ___ a hidden room.",
+     "ans": [
+      "is reputed to have"
+     ],
+     "tip": "be reputed to + verb = people say that…",
+     "id": "c2.1.5",
+     "say": "The castle is reputed to have a hidden room."
+    },
+    {
+     "a": "Joe is extremely unlikely to win the quiz.",
+     "cue": "CHANCE",
+     "b": "There is ___ Joe will win the quiz.",
+     "ans": [
+      "little chance that",
+      "hardly any chance that",
+      "very little chance that",
+      "not much chance that",
+      "almost no chance that",
+      "little or no chance that"
+     ],
+     "tip": "extremely unlikely = there is little chance that…",
+     "id": "c2.1.6",
+     "say": "There is little chance that Joe will win the quiz."
+    },
+    {
+     "a": "The explorers had to turn back because of the storm.",
+     "cue": "OPTION",
+     "b": "The storm left the explorers ___ turn back.",
+     "ans": [
+      "with no option but to",
+      "no option but to",
+      "with little option but to"
+     ],
+     "tip": "leave someone (with) no option but to = force them to.",
+     "id": "c2.1.7",
+     "say": "The storm left the explorers with no option but to turn back."
+    },
+    {
+     "a": "I didn't mean to upset Ava.",
+     "cue": "INTENTION",
+     "b": "I ___ upsetting Ava.",
+     "ans": [
+      "had no intention of",
+      "had absolutely no intention of",
+      "never had any intention of"
+     ],
+     "tip": "have no intention of + -ing = not mean to.",
+     "id": "c2.1.8",
+     "say": "I had no intention of upsetting Ava."
+    }
+   ]
+  },
+  {
+   "id": "c2.2",
+   "icon": "🎨",
+   "name": "Shades of Meaning",
+   "focus": "like a duck to water · spill the beans · in the balance",
+   "items": [
+    {
+     "a": "Rosa learned to juggle very quickly and naturally.",
+     "cue": "DUCK",
+     "b": "Rosa took to juggling ___.",
+     "ans": [
+      "like a duck to water"
+     ],
+     "tip": "take to something like a duck to water = learn it easily and naturally.",
+     "id": "c2.2.1",
+     "say": "Rosa took to juggling like a duck to water."
+    },
+    {
+     "a": "Tom told everyone the secret by accident.",
+     "cue": "BEANS",
+     "b": "Tom accidentally ___.",
+     "ans": [
+      "spilled the beans",
+      "spilt the beans"
+     ],
+     "tip": "spill the beans = tell a secret.",
+     "id": "c2.2.2",
+     "say": "Tom accidentally spilled the beans."
+    },
+    {
+     "a": "The result of the match was very uncertain until the end.",
+     "cue": "BALANCE",
+     "b": "The result of the match ___ until the end.",
+     "ans": [
+      "hung in the balance",
+      "was hanging in the balance",
+      "remained in the balance"
+     ],
+     "tip": "hang in the balance = be very uncertain.",
+     "id": "c2.2.3",
+     "say": "The result of the match hung in the balance until the end."
+    },
+    {
+     "a": "Please don't tell anyone about the surprise party.",
+     "cue": "WORD",
+     "b": "Please don't ___ about the surprise party.",
+     "ans": [
+      "breathe a word to anyone",
+      "say a word to anyone",
+      "breathe a word to anybody",
+      "say a word to anybody",
+      "breathe a word"
+     ],
+     "tip": "not breathe a word = not tell anyone at all.",
+     "id": "c2.2.4",
+     "say": "Please don't breathe a word to anyone about the surprise party."
+    },
+    {
+     "a": "Mia is still learning how to play chess, so be patient.",
+     "cue": "HANG",
+     "b": "Mia hasn't ___ chess yet, so be patient.",
+     "ans": [
+      "got the hang of",
+      "quite got the hang of",
+      "really got the hang of"
+     ],
+     "tip": "get the hang of something = learn how to do it.",
+     "id": "c2.2.5",
+     "say": "Mia hasn't got the hang of chess yet, so be patient."
+    },
+    {
+     "a": "It was obvious that Kai was nervous.",
+     "cue": "NO",
+     "b": "There was ___ Kai was nervous.",
+     "ans": [
+      "no doubt that",
+      "no denying that",
+      "no question that",
+      "no mistaking that"
+     ],
+     "tip": "There's no doubt / no denying that… = it is clear that…",
+     "id": "c2.2.6",
+     "say": "There was no doubt that Kai was nervous."
+    },
+    {
+     "a": "The magician's trick completely amazed the audience.",
+     "cue": "BREATH",
+     "b": "The magician's trick ___.",
+     "ans": [
+      "took the audience's breath away",
+      "took everyone's breath away"
+     ],
+     "tip": "take someone's breath away = amaze them.",
+     "id": "c2.2.7",
+     "say": "The magician's trick took the audience's breath away."
+    },
+    {
+     "a": "Stop worrying so much about the quiz; it's not important.",
+     "cue": "MOLEHILL",
+     "b": "Stop ___ — it's only a quiz!",
+     "ans": [
+      "making a mountain out of a molehill"
+     ],
+     "tip": "make a mountain out of a molehill = treat a small problem as a big one.",
+     "id": "c2.2.8",
+     "say": "Stop making a mountain out of a molehill — it's only a quiz!"
+    }
+   ]
+  },
+  {
+   "id": "c2.3",
+   "icon": "🌠",
+   "name": "Grand Wordcraft",
+   "focus": "insisted that we arrive · Try as he might · Should you…",
+   "items": [
+    {
+     "a": "'You must all arrive on time,' the teacher told us.",
+     "cue": "INSISTED",
+     "b": "The teacher ___ on time.",
+     "ans": [
+      "insisted that we arrive",
+      "insisted that we should arrive",
+      "insisted on our arriving",
+      "insisted on us arriving",
+      "insisted we arrive"
+     ],
+     "tip": "insist that + subject + base verb (the subjunctive) or insist on + -ing.",
+     "id": "c2.3.1",
+     "say": "The teacher insisted that we arrive on time."
+    },
+    {
+     "a": "Zara had no idea at all how to solve the puzzle.",
+     "cue": "SLIGHTEST",
+     "b": "Zara hadn't ___ how to solve the puzzle.",
+     "ans": [
+      "the slightest idea",
+      "got the slightest idea"
+     ],
+     "tip": "not have the slightest idea = have no idea at all.",
+     "id": "c2.3.2",
+     "say": "Zara hadn't the slightest idea how to solve the puzzle."
+    },
+    {
+     "a": "However hard he tried, Ben couldn't open the jar.",
+     "cue": "MIGHT",
+     "b": "___, Ben couldn't open the jar.",
+     "ans": [
+      "Try as he might"
+     ],
+     "tip": "Try as he might = however hard he tried (literary).",
+     "id": "c2.3.3",
+     "say": "Try as he might, Ben couldn't open the jar."
+    },
+    {
+     "a": "People don't appreciate how much bees do for us.",
+     "cue": "CREDIT",
+     "b": "Bees ___ for how much they do for us.",
+     "ans": [
+      "are not given enough credit",
+      "don't get enough credit",
+      "aren't given the credit they deserve"
+     ],
+     "tip": "give someone credit for = recognise what they have done.",
+     "id": "c2.3.4",
+     "say": "Bees are not given enough credit for how much they do for us."
+    },
+    {
+     "a": "If you need help, press the star button.",
+     "cue": "SHOULD",
+     "b": "___ help, press the star button.",
+     "ans": [
+      "Should you need",
+      "Should you require"
+     ],
+     "tip": "Should + subject + verb = if (formal conditional inversion).",
+     "id": "c2.3.5",
+     "say": "Should you need help, press the star button."
+    },
+    {
+     "a": "The team's success depends completely on how well they work together.",
+     "cue": "HINGES",
+     "b": "The team's success ___ how well they work together.",
+     "ans": [
+      "hinges entirely on",
+      "hinges completely on",
+      "hinges solely on",
+      "hinges wholly on",
+      "hinges entirely upon"
+     ],
+     "tip": "hinge on = depend completely on.",
+     "id": "c2.3.6",
+     "say": "The team's success hinges entirely on how well they work together."
+    },
+    {
+     "a": "Only when the storm stopped did we leave the cave.",
+     "cue": "UNTIL",
+     "b": "We ___ the storm had stopped.",
+     "ans": [
+      "did not leave the cave until",
+      "stayed in the cave until",
+      "remained in the cave until"
+     ],
+     "tip": "Only when… did we… = We didn't … until…",
+     "id": "c2.3.7",
+     "say": "We did not leave the cave until the storm had stopped."
+    },
+    {
+     "a": "Ellie's idea was so clever that everyone was amazed.",
+     "cue": "SUCH",
+     "b": "___ that everyone was amazed.",
+     "ans": [
+      "Such was the cleverness of Ellie's idea",
+      "Such was the brilliance of Ellie's idea"
+     ],
+     "tip": "Such was + noun + that… is a formal way to stress how great something was.",
+     "id": "c2.3.8",
+     "say": "Such was the cleverness of Ellie's idea that everyone was amazed."
+    }
+   ]
+  }
+ ]
+}

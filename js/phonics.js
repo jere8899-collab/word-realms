@@ -143,9 +143,7 @@ const makeRound = u => WR.shuffle(Object.entries(u.mix).flatMap(([t, n]) => {
 })).slice(0, ROUND);
 
 /* ---------- save ---------- */
-const freshPhonics = () => ({ done: {}, rounds: 0, taps: 0 });
-WR.freshPhonics = freshPhonics;
-const st = () => { const s = WR.state; s.phonics = Object.assign(freshPhonics(), s.phonics || {}); s.phonics.done = s.phonics.done || {}; return s.phonics; };
+const st = () => WR.block("phonics");
 WR.phonicsState = st;
 const unlocked = i => i === 0 || WR.state.settings.unlockAll || !!st().done[UNITS[i - 1].id];
 const stepsDone = () => UNITS.filter(u => st().done[u.id]).length;
@@ -261,13 +259,8 @@ function next() {
   finish();
 }
 function finish() {
-  const rec = st(), u = S.u, prev = rec.done[u.id], score = S.right / S.qs.length, crowns = WR.crowns(score);
-  let stars = 0;
-  if (!prev) stars += S.right + 3;                                  // first walk: 1⭐ per right answer + 3⭐ for the step
-  stars += Math.max(0, crowns - (prev ? prev.crowns : 0)) * 2;      // new crowns pay 2⭐ each
-  rec.done[u.id] = { best: Math.max(score, prev ? prev.best : 0), crowns: Math.max(crowns, prev ? prev.crowns : 0), plays: (prev ? prev.plays : 0) + 1, at: Date.now() };
-  rec.rounds++; WR.state.lessonsDone++; WR.save();
-  if (stars) stars = WR.awardStars("phonics", u.id + "/" + Math.max(crowns, prev ? prev.crowns : 0) + (prev ? "" : "/first"), stars, { kind: "fresh" });
+  const u = S.u; st().rounds++;   // first walk: 1⭐ per right answer + 3⭐ for the step; new crowns 2⭐ each (WR.finishUnit)
+  const { crowns, stars } = WR.finishUnit(st().done, u.id, S.right, S.qs.length, "phonics");
   const lv = WR.petGainXP ? WR.petGainXP(S.right * 2 + 2) : null;
   WR.questEvent("phonics1"); WR.activityDone();
   if (crowns === 3) WR.questEvent("perfect1");

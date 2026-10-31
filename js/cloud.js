@@ -45,12 +45,12 @@ C.friendly = (e, mode) => {
 };
 
 /* ---------- progress score (to suggest which save to keep) ---------- */
-const doneCrowns = d => d ? Object.values(d).reduce((a, x) => a + (x.crowns || 0), 0) : 0;   // Storybook chapters, Phonics Path steps
+const doneCrowns = d => d ? Object.values(d).reduce((a, x) => a + (x.crowns || 0), 0) : 0;   // Storybook chapters, Phonics Path steps, Spell Swap books
 C.score = s => {
   if (!s || !s.pet) return 0;
   const crowns = Object.values(s.progress || {}).reduce((a, r) => a + Object.values(r).reduce((b, k) => b + WR.crowns(k.best || 0), 0), 0);
   return (s.totalCorrect || 0) * 2 + (s.lessonsDone || 0) * 5 + crowns * 10 + Math.floor((s.pet.xp || 0) / 4) + (s.writing && s.writing.crowns || 0) * 3
-    + doneCrowns(s.stories && s.stories.done) * 10 + doneCrowns(s.phonics && s.phonics.done) * 10
+    + doneCrowns(s.stories && s.stories.done) * 10 + doneCrowns(s.phonics && s.phonics.done) * 10 + doneCrowns(s.swap && s.swap.done) * 10
     + Object.values((s.charms && s.charms.cards) || {}).reduce((a, c) => a + (c && c.b >= 1 ? 2 + c.b : 0), 0)
     + (s.math ? (s.math.correct || 0) * 2 + (s.math.lessons || 0) * 5 + Object.values(s.math.topics || {}).reduce((a, t) => a + WR.crowns(t.best || 0), 0) * 10 + Object.values(s.math.facts || {}).filter(f => f.b >= 3).length * 2 : 0);
 };

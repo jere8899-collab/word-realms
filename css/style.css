@@ -584,3 +584,35 @@ img.acc-prev{width:72px;height:72px;object-fit:contain;display:block;margin:4px 
 .ch-sum-row{font-weight:800}.ch-sum-row span{margin-right:6px}
 @media (max-width:360px){.ch-grid{grid-template-columns:repeat(3,1fr)}.ch-word-big{font-size:1.7rem}.ch-pet{width:72px;height:72px}.ch-sent{font-size:1.1rem}}
 .ch-stages .stage-chip{min-width:56px;padding:6px 4px}.ch-stages .stage-chip span{font-size:1.3rem}.ch-stages .stage-chip small{font-size:.68rem;line-height:1.1}
+/* 🔀 Spell Swap (js/swap.js) */
+.skill-card.swap-tile{background:linear-gradient(150deg,#E8F8F1,#FFF4E3 55%,#F1E8FF)}
+.sw-intro{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#EAFBF3,#FFF3E6)}
+.sw-intro h2{font-size:1.15rem}
+.sw-how{font-weight:700;margin:.3em 0;font-size:.9rem}
+.sw-books{display:grid;gap:10px;margin:12px 0}
+.sw-book{display:flex;align-items:center;gap:12px;width:100%;text-align:left;font:inherit;color:inherit;cursor:pointer;border:3px solid #E6F2EC;min-height:64px}
+.sw-book.done{border-color:#BFEBD5;background:#F4FFF9}
+.sw-bico{font-size:2rem;flex:none}
+.sw-btxt{flex:1;min-width:0;display:flex;flex-direction:column}.sw-btxt small{font-weight:700;opacity:.75;font-size:.8rem}
+.sw-bcr{flex:none}
+.sw-s1,.sw-s2{display:flex;align-items:flex-start;gap:8px;border-radius:16px;padding:8px 10px;margin:6px 0}
+.sw-s1{background:#F7F2FF;align-items:center}.sw-s2{background:#FFF8EC}
+.sw-s1 p,.sw-s2 p{flex:1;min-width:0;margin:0;font-weight:800;font-size:1.1rem;line-height:1.7}
+.sw-num{flex:none;width:28px;height:28px;border-radius:50%;background:#fff;display:grid;place-items:center;font-weight:900;color:#8A4FD8;margin-top:3px}
+.sw-cue{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin:4px 0}
+.sw-key{font-family:"Baloo 2",Nunito,sans-serif;font-weight:900;font-size:1.2rem;letter-spacing:1px;background:linear-gradient(135deg,#FFE9A8,#FFD3E4);border-radius:999px;padding:4px 16px;color:#6B3FB8}
+.sw-cue small{font-weight:800;opacity:.7}
+.sw-ins{font-weight:900;background:#EAFBF3;border-radius:999px;padding:4px 14px}
+.sw-gap{display:inline-flex;flex-wrap:wrap;gap:4px;align-items:center;min-width:90px;min-height:1.6em;border-bottom:3px dashed #C9B2F2;color:#8A4FD8;padding:0 4px;margin:0 2px;vertical-align:bottom}
+.sw-gap.filled{border-bottom-style:solid}
+.sw-gap.txt{display:inline;min-width:0;-webkit-box-decoration-break:clone;box-decoration-break:clone}   /* typed words wrap like the sentence */
+.sw-chip{font:inherit;font-weight:800;border:0;border-radius:10px;background:#EFE6FF;color:#6B3FB8;min-height:40px;min-width:40px;padding:2px 10px;cursor:pointer}
+.sw-type{display:flex;align-items:center;gap:8px;margin:8px 0}.sw-type .input{flex:1;min-width:0;font-size:1.05rem}
+.sw-type small{flex:none;font-weight:800}
+.sw-pool{justify-content:center;margin:8px 0}
+.sw-pool.still .sw-tile{animation:none}   /* tiles pop in once per question, not on every tap */
+.sw-pool .sw-tile{min-width:44px;min-height:44px;padding:0 12px;font-size:1.05rem}
+.sw-fb.nudge{background:#FFF6D6}
+.sw-tip{margin-top:6px;font-weight:700}
+.sw-also{margin-top:4px;font-size:.85rem;font-weight:700}
+.sw-acts{justify-content:flex-end;gap:8px;margin-top:10px}

@@ -47,11 +47,18 @@
   "b1/words": 40,
   "b2/words": 40,
   "c1/words": 40,
-  "c2/words": 40
+  "c2/words": 40,
+  "a1/swap": 24,
+  "a2/swap": 24,
+  "b1/swap": 24,
+  "b2/swap": 24,
+  "c1/swap": 24,
+  "c2/swap": 24
  },
  "total": 3110,
  "questions": 2942,
  "speaking": 132,
  "writing": 36,
- "stories": 6
+ "stories": 6,
+ "swap": 144
 }

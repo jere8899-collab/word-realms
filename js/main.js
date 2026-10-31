@@ -25,7 +25,7 @@ function renderNav() {
   if (!n.dataset.wired) { n.dataset.wired = "1"; n.addEventListener("click", e => { const b = e.target.closest("button[data-k]"); if (b && n.contains(b)) WR.go(b.dataset.k); }); }
 }
 // every running activity is stopped when the screen changes (each module defines its own WR.stopX)
-const STOPS = ["stopLesson", "stopSpeaking", "stopWriting", "stopStory", "stopPlacement", "stopMath", "stopPhonics", "stopCharms"];
+const STOPS = ["stopLesson", "stopSpeaking", "stopWriting", "stopStory", "stopPlacement", "stopMath", "stopPhonics", "stopCharms", "stopSwap"];
 WR.go = (screen, arg) => {
   STOPS.forEach(n => WR[n] && WR[n]()); WR.Voice.stop();
   current = screen; WR.navActive(screen === "realm" ? "home" : /^(math|dojo|dojoGrid|clock)$/.test(screen) ? "math" : screen);
@@ -153,6 +153,11 @@ WR.screens.home = () => {
 // says which tiles a realm shows (in this order) and what a tap opens. ico = the tile's picture markup.
 WR.bonusTile = ({ cls, data, ico, title, desc, crowns, tag }) => `<div class="card skill-card ${cls}" data-${data}="1"><span class="bonus-tag">Bonus</span>${ico}<h3>${title}</h3>
     <div class="muted" style="font-size:.85rem;font-weight:700">${desc}</div><div class="crowns">${crowns}</div><div class="waiting-tag">${tag}</div></div>`;
+// 🗂️ level tabs (A1 … C2, only the open realms) for bonus hubs that cover every level (Word Charms, Spell Swap); badge(l) = a count or 0
+WR.unlockedLevels = () => (WR.realms || []).filter((r, i) => WR.isUnlocked(i)).map(r => r.id);
+WR.levelTabs = (cur, badge = () => 0) => { const lv = WR.unlockedLevels(); return lv.length > 1 ? `<div class="ch-levels" role="tablist">${lv.map(l => { const n = badge(l);
+  return `<button class="ch-lv${l === cur ? " on" : ""}" data-l="${l}" role="tab" aria-selected="${l === cur}">${l.toUpperCase()}${n ? `<i class="ch-badge">${n > 9 ? "9+" : n}</i>` : ""}</button>`; }).join("")}</div>` : ""; };
+WR.bindLevelTabs = screen => document.querySelectorAll(".ch-lv").forEach(b => b.onclick = () => WR.go(screen, b.dataset.l));
 const tileCrowns = (rid, k) => { const p = (WR.state.progress[rid] || {})[k]; return WR.crownCell(p && p.best != null ? WR.crowns(p.best) : null); };
 const BONUS = [
   { data: "speak", open: rid => WR.startSpeaking(rid), tile: rid => WR.SPEAKING && WR.bonusTile({ cls: "speak", data: "speak", ico: '<span class="ico">🎤</span>', title: "Speaking", desc: "Echo Well: say it aloud", crowns: tileCrowns(rid, "speaking"), tag: "🎶 Bonus fun!" }) },
@@ -160,7 +165,8 @@ const BONUS = [
       return WR.bonusTile({ cls: "quill-tile", data: "write", ico: `<img class="ico quill-ico" src="assets/web/quill.webp" onerror="this.onerror=null;this.src='assets/ui/quill.png'" alt="">`, title: "Writing", desc: "Story Quill: plan, write, get feedback", crowns: WR.crownCell(w.done ? w.crowns : null), tag: w.done ? `✒️ ${w.done}/${n} stories written` : "🎶 Bonus fun!" }); } },
   { data: "story", open: rid => WR.startStory(rid), tile: rid => WR.STORY && WR.storyTile(rid) },
   { data: "phonics", open: () => WR.go("phonics"), tile: rid => WR.phonicsTile && WR.phonicsTile(rid) },
-  { data: "charms", open: rid => WR.openCharms(rid), tile: rid => WR.charmsTile && WR.charmsTile(rid) }
+  { data: "charms", open: rid => WR.openCharms(rid), tile: rid => WR.charmsTile && WR.charmsTile(rid) },
+  { data: "swap", open: rid => WR.openSwap(rid), tile: rid => WR.swapTile && WR.swapTile(rid) }
 ];
 WR.screens.realm = rid => {
   const r = WR.realms.find(x => x.id === rid);

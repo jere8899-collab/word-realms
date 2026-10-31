@@ -40,7 +40,8 @@ const QUEST_POOL = [
   { id: "balance1", icon: "⚖️", label: "Balance an equation scale all the way to x (Grades 6–8 maths)", goal: 1, reward: 5 },
   { id: "clock1", icon: "🕰️", label: "Count, wind or set a clock in the Clock Workshop (Grades 1–3 maths)", goal: 1, reward: 5 },
   { id: "phonics1", icon: "🔤", label: "Walk a step of the A1 Phonics Path", goal: 1, reward: 5 },
-  { id: "charm1", icon: "🔮", label: "Catch or polish your Word Charms (finish a round)", goal: 1, reward: 5 }
+  { id: "charm1", icon: "🔮", label: "Catch or polish your Word Charms (finish a round)", goal: 1, reward: 5 },
+  { id: "swap1", icon: "🔀", label: "Finish a Spell Swap book (same meaning, new words)", goal: 1, reward: 5 }
 ];
 Object.assign(WR, { SKILLS, PETS, AVATARS, QUEST_POOL, data: {}, manifest: null, screens: {} });
 
@@ -90,7 +91,7 @@ function freshState() {
     progress: {}, owned: [], equipped: { outfit: null, petskin: null, theme: null },
     settings: { rate: 0.9, sound: true, unlockAll: false }, mistakes: [], lessonsDone: 0,
     speaking: freshSpeaking(), writing: freshWriting(), math: freshMath(),
-    stories: { done: {}, words: {}, reads: 0 }, report: freshReport(), phonics: freshPhonics(), charms: freshCharms(), earn: freshEarn(),
+    stories: BLOCKS.stories.fresh(), report: freshReport(), phonics: BLOCKS.phonics.fresh(), charms: BLOCKS.charms.fresh(), swap: BLOCKS.swap.fresh(), earn: freshEarn(),
     looks: {}, stable: [], rewards: { got: [], chest: { last: null, n: 0 }, caughtUp: true }
   };
 }
@@ -104,11 +105,23 @@ const freshReport = () => ({ days: {}, tally: {}, at: 0 });
 // ⭐ anti-farm record, see WR.awardStars (economy section)
 const freshEarn = () => ({ day: "", practice: 0, rounds: {}, got: {} });
 const earnHash = k => { let h = 2166136261; k = String(k); for (let i = 0; i < k.length; i++) h = Math.imul(h ^ k.charCodeAt(i), 16777619); return (h >>> 0).toString(36); };
-// 🔤 Phonics Path (js/phonics.js): best result per step ({ u1: { best, crowns, plays, at } }), rounds played, letter-tile taps
-const freshPhonics = () => ({ done: {}, rounds: 0, taps: 0 });
-// 🔮 Word Charms (js/charms.js): one card per caught word ({ "a1:apple": { b: box 0–5, d: due time, r, w, at } }), rounds, last level
-const freshCharms = () => ({ cards: {}, rounds: 0, lvl: null });
-WR.freshCharms = freshCharms;
+/* 🎒 Bonus-activity save blocks: ONE table for the shape of each bonus module's block in wordRealms.save.v1. It is used by
+   freshState(), migrate() (older saves gain the block; a partial one is completed) and WR.block(name), each module's accessor,
+   so no module keeps its own copy. maps = the fields that must be objects.
+   stories 📜 (js/story.js): best per chapter ({ a1: { best, crowns, plays, at } }), glossary words looked up, reads
+   phonics 🔤 (js/phonics.js): best result per step ({ u1: { best, crowns, plays, at } }), rounds played, letter-tile taps
+   charms 🔮 (js/charms.js): one card per caught word ({ "a1:apple": { b: box 0–5, d: due time, r, w, at } }), rounds, last level
+   swap 🔀 (js/swap.js): best result per Spell Swap book ({ "b2.1": { best, crowns, plays, at } }), rounds, last level */
+const BLOCKS = {
+  stories: { fresh: () => ({ done: {}, words: {}, reads: 0 }), maps: ["done", "words"] },
+  phonics: { fresh: () => ({ done: {}, rounds: 0, taps: 0 }), maps: ["done"] },
+  charms: { fresh: () => ({ cards: {}, rounds: 0, lvl: null }), maps: ["cards"] },
+  swap: { fresh: () => ({ done: {}, rounds: 0, lvl: null }), maps: ["done"] }
+};
+const fixBlock = (s, k) => { const b = BLOCKS[k], v = s[k]; s[k] = Object.assign(b.fresh(), v && typeof v === "object" ? v : {}); for (const m of b.maps) s[k][m] = s[k][m] || {}; return s[k]; };
+WR.BLOCKS = BLOCKS;
+WR.block = k => fixBlock(WR.state, k);
+WR.freshCharms = BLOCKS.charms.fresh; WR.freshPhonics = BLOCKS.phonics.fresh;
 WR.LOG_DAYS = LOG_DAYS;
 // an older save gains a log rebuilt from the dates it already has (last play of each skill/topic, story chapters, sprints, streak)
 function seedReport(s) {
@@ -163,10 +176,8 @@ function migrate(s, raw = s) {
   s.writing.best = s.writing.best || {}; s.writing.drafts = s.writing.drafts || {};
   s.settings = Object.assign({ rate: 0.9, sound: true, unlockAll: false }, s.settings || {});
   s.progress = s.progress || {}; s.mistakes = s.mistakes || [];
-  s.stories = Object.assign({ done: {}, words: {}, reads: 0 }, s.stories || {}); s.stories.done = s.stories.done || {}; s.stories.words = s.stories.words || {};
+  for (const k in BLOCKS) fixBlock(s, k);
   s.math = WR.fixMath(s.math);
-  s.phonics = Object.assign(freshPhonics(), s.phonics || {}); s.phonics.done = s.phonics.done || {};
-  s.charms = Object.assign(freshCharms(), s.charms && typeof s.charms === "object" ? s.charms : {}); s.charms.cards = s.charms.cards || {};
   if (!raw.report || typeof raw.report !== "object") s.report = seedReport(s);
   s.report.days = s.report.days || {}; s.report.tally = s.report.tally || {}; s.report.at = s.report.at || 0;
   // ⭐ anti-farm record (WR.awardStars); an older save counts the English items it has already been served as known
@@ -473,10 +484,20 @@ WR.recordLesson = (rid, key, score) => {
   s.progress[rid][key] = prev; s.lessonsDone++; WR.save();
 };
 // every English skill a lesson, Mistake Garden plant or report row can name (core four + bonus skills, loaded later)
-WR.allSkills = () => SKILLS.concat(WR.SPEAKING || [], WR.WRITING || [], WR.STORY || [], WR.PHONICS || [], WR.CHARMS || []);
+WR.allSkills = () => SKILLS.concat(WR.SPEAKING || [], WR.WRITING || [], WR.STORY || [], WR.PHONICS || [], WR.CHARMS || [], WR.SWAP || []);
 WR.skillInfo = id => WR.allSkills().find(x => x.id === id) || { id, name: id, icon: "✨" };
 WR.levelOf = rid => { const r = WR.realms && WR.realms.find(y => y.id === rid); return r ? r.level : ""; };
 WR.crowns = score => score >= 0.9 ? 3 : score >= 0.7 ? 2 : score >= 0.5 ? 1 : 0;
+// 🏁 the end of a crowned unit (a Storybook chapter, a Phonics Path step, a Spell Swap book): keeps the best in done[id] = { best, crowns, plays, at },
+// counts the lesson and pays the first finish (1⭐ per right answer + 3⭐) and each NEW crown (2⭐), once ever (kind "fresh").
+WR.finishUnit = (done, id, right, n, source) => {
+  const prev = done[id], score = right / n, crowns = WR.crowns(score), top = Math.max(crowns, prev ? prev.crowns : 0);
+  let stars = (prev ? 0 : right + 3) + Math.max(0, crowns - (prev ? prev.crowns : 0)) * 2;
+  done[id] = { best: Math.max(score, prev ? prev.best : 0), crowns: top, plays: (prev ? prev.plays : 0) + 1, at: Date.now() };
+  WR.state.lessonsDone++; WR.save();
+  if (stars) stars = WR.awardStars(source, id + "/" + top + (prev ? "" : "/first"), stars, { kind: "fresh" });
+  return { prev, crowns, stars };
+};
 // shared crown markup: n bright crowns + the rest faded; crownCell shows a muted note instead when nothing was played yet
 WR.crownRow = n => "👑".repeat(n) + `<span style="opacity:.2">${"👑".repeat(3 - n)}</span>`;
 WR.crownCell = (n, empty = "not played") => n == null ? `<span class="muted" style="font-size:.8rem">${empty}</span>` : WR.crownRow(n);

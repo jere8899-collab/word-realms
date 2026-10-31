@@ -1,0 +1,403 @@
+{
+ "level": "a2",
+ "mode": "tiles",
+ "min": 1,
+ "max": 6,
+ "key": false,
+ "books": [
+  {
+   "id": "a2.1",
+   "icon": "🕰️",
+   "name": "Yesterday",
+   "focus": "played · went · ate · was · didn't · Did…?",
+   "items": [
+    {
+     "a": "I play in the park every day.",
+     "cue": "Say it about the past.",
+     "b": "Yesterday I ___ in the park.",
+     "ans": [
+      "played"
+     ],
+     "tip": "Regular verbs add -ed in the past: play → played.",
+     "x": [
+      "play",
+      "plays"
+     ],
+     "id": "a2.1.1",
+     "say": "Yesterday I played in the park."
+    },
+    {
+     "a": "We go to the beach on Sundays.",
+     "cue": "Say it about the past.",
+     "b": "Last Sunday we ___ to the beach.",
+     "ans": [
+      "went"
+     ],
+     "tip": "go is irregular: go → went.",
+     "x": [
+      "goed",
+      "go"
+     ],
+     "id": "a2.1.2",
+     "say": "Last Sunday we went to the beach."
+    },
+    {
+     "a": "Mia eats a big cake.",
+     "cue": "Say it about the past.",
+     "b": "Yesterday Mia ___ a big cake.",
+     "ans": [
+      "ate"
+     ],
+     "tip": "eat is irregular: eat → ate.",
+     "x": [
+      "eated",
+      "eats"
+     ],
+     "id": "a2.1.3",
+     "say": "Yesterday Mia ate a big cake."
+    },
+    {
+     "a": "The dragon is very tired.",
+     "cue": "Say it about the past.",
+     "b": "Last night the dragon ___ very tired.",
+     "ans": [
+      "was"
+     ],
+     "tip": "is → was in the past (I/he/she/it was).",
+     "x": [
+      "were",
+      "is"
+     ],
+     "id": "a2.1.4",
+     "say": "Last night the dragon was very tired."
+    },
+    {
+     "a": "They are at the zoo.",
+     "cue": "Say it about the past.",
+     "b": "Yesterday they ___ at the zoo.",
+     "ans": [
+      "were"
+     ],
+     "tip": "are → were in the past (you/we/they were).",
+     "x": [
+      "was",
+      "are"
+     ],
+     "id": "a2.1.5",
+     "say": "Yesterday they were at the zoo."
+    },
+    {
+     "a": "I don't see the bus.",
+     "cue": "Say it about the past.",
+     "b": "Yesterday I ___ the bus.",
+     "ans": [
+      "didn't see"
+     ],
+     "tip": "In past negatives, didn't + the base verb: I didn't see (not didn't saw).",
+     "x": [
+      "saw",
+      "don't"
+     ],
+     "id": "a2.1.6",
+     "say": "Yesterday I didn't see the bus."
+    },
+    {
+     "a": "Do you like the film?",
+     "cue": "Say it about the past.",
+     "b": "___ like the film last night?",
+     "ans": [
+      "Did you"
+     ],
+     "tip": "Past questions start with Did + base verb: Did you like the film?",
+     "x": [
+      "Do",
+      "Were"
+     ],
+     "id": "a2.1.7",
+     "say": "Did you like the film last night?"
+    },
+    {
+     "a": "Ben buys a new kite.",
+     "cue": "Say it about the past.",
+     "b": "Last week Ben ___ a new kite.",
+     "ans": [
+      "bought"
+     ],
+     "tip": "buy is irregular: buy → bought.",
+     "x": [
+      "buyed",
+      "buys"
+     ],
+     "id": "a2.1.8",
+     "say": "Last week Ben bought a new kite."
+    }
+   ]
+  },
+  {
+   "id": "a2.2",
+   "icon": "🏆",
+   "name": "Bigger and Best",
+   "focus": "taller than · not as fast as · the highest",
+   "items": [
+    {
+     "a": "Tom is shorter than Ana.",
+     "cue": "Now say it about Ana.",
+     "b": "Ana is ___ Tom.",
+     "ans": [
+      "taller than"
+     ],
+     "tip": "Short words add -er + than: tall → taller than.",
+     "x": [
+      "tall",
+      "more"
+     ],
+     "id": "a2.2.1",
+     "say": "Ana is taller than Tom."
+    },
+    {
+     "a": "The red car is not as fast as the blue car.",
+     "cue": "Now say it about the blue car.",
+     "b": "The blue car is ___ the red car.",
+     "ans": [
+      "faster than"
+     ],
+     "tip": "not as fast as ↔ faster than (the other way round).",
+     "x": [
+      "fast",
+      "as"
+     ],
+     "id": "a2.2.2",
+     "say": "The blue car is faster than the red car."
+    },
+    {
+     "a": "No mountain is higher than Mount Everest.",
+     "cue": "Use 'the …est'.",
+     "b": "Mount Everest is ___ mountain in the world.",
+     "ans": [
+      "the highest"
+     ],
+     "tip": "The superlative: the + adjective + -est: the highest.",
+     "x": [
+      "higher",
+      "most"
+     ],
+     "id": "a2.2.3",
+     "say": "Mount Everest is the highest mountain in the world."
+    },
+    {
+     "a": "This puzzle is easier than that one.",
+     "cue": "Now say it about that puzzle.",
+     "b": "That puzzle is ___ this one.",
+     "ans": [
+      "more difficult than",
+      "harder than"
+     ],
+     "tip": "Long adjectives use more + adjective + than: more difficult than.",
+     "x": [
+      "most",
+      "difficulter"
+     ],
+     "id": "a2.2.4",
+     "say": "That puzzle is more difficult than this one."
+    },
+    {
+     "a": "Lily sings better than me.",
+     "cue": "Use 'as … as'.",
+     "b": "I don't sing as ___ Lily.",
+     "ans": [
+      "well as"
+     ],
+     "tip": "not as well as = worse than. sing well → as well as (well, not good, with a verb).",
+     "x": [
+      "good",
+      "better"
+     ],
+     "id": "a2.2.5",
+     "say": "I don't sing as well as Lily."
+    },
+    {
+     "a": "Pip's house is the smallest in the street.",
+     "cue": "Now say it about the other houses.",
+     "b": "All the other houses are ___ Pip's house.",
+     "ans": [
+      "bigger than",
+      "larger than"
+     ],
+     "tip": "If Pip's house is the smallest, the others are bigger than it. big → bigger (double g).",
+     "x": [
+      "big",
+      "biggest"
+     ],
+     "id": "a2.2.6",
+     "say": "All the other houses are bigger than Pip's house."
+    },
+    {
+     "a": "The film was more exciting than the book.",
+     "cue": "Now say it about the book.",
+     "b": "The book was ___ the film.",
+     "ans": [
+      "less exciting than",
+      "not as exciting as"
+     ],
+     "tip": "more exciting than ↔ less exciting than (or not as exciting as).",
+     "x": [
+      "more",
+      "most"
+     ],
+     "id": "a2.2.7",
+     "say": "The book was less exciting than the film."
+    },
+    {
+     "a": "Nobody in our class is funnier than Max.",
+     "cue": "Use 'the …est'.",
+     "b": "Max is ___ person in our class.",
+     "ans": [
+      "the funniest"
+     ],
+     "tip": "funny → the funniest (y changes to i).",
+     "x": [
+      "funnier",
+      "most"
+     ],
+     "id": "a2.2.8",
+     "say": "Max is the funniest person in our class."
+    }
+   ]
+  },
+  {
+   "id": "a2.3",
+   "icon": "📝",
+   "name": "Plans and Rules",
+   "focus": "going to · have to · can't · don't have to · 's",
+   "items": [
+    {
+     "a": "My plan is to visit Grandma on Saturday.",
+     "cue": "Use 'going to'.",
+     "b": "I'm ___ Grandma on Saturday.",
+     "ans": [
+      "going to visit"
+     ],
+     "tip": "For plans we use be going to + verb: I'm going to visit Grandma.",
+     "x": [
+      "go",
+      "visiting"
+     ],
+     "id": "a2.3.1",
+     "say": "I'm going to visit Grandma on Saturday."
+    },
+    {
+     "a": "It's important to wear a helmet.",
+     "cue": "Say it as a rule.",
+     "b": "You ___ wear a helmet.",
+     "ans": [
+      "have to",
+      "must"
+     ],
+     "tip": "For rules we say have to or must + verb: You have to wear a helmet.",
+     "x": [
+      "has",
+      "can"
+     ],
+     "id": "a2.3.2",
+     "say": "You have to wear a helmet."
+    },
+    {
+     "a": "This book belongs to my brother.",
+     "cue": "Use 's.",
+     "b": "This is my ___ book.",
+     "ans": [
+      "brother's"
+     ],
+     "tip": "To show who owns something, add 's: my brother's book.",
+     "x": [
+      "brothers",
+      "brother"
+     ],
+     "id": "a2.3.3",
+     "say": "This is my brother's book."
+    },
+    {
+     "a": "Swimming in this lake is not allowed.",
+     "cue": "Say it as a rule.",
+     "b": "You ___ swim in this lake.",
+     "ans": [
+      "can't",
+      "mustn't"
+     ],
+     "tip": "When something is not allowed we say can't or mustn't: You can't swim here.",
+     "x": [
+      "can",
+      "don't"
+     ],
+     "id": "a2.3.4",
+     "say": "You can't swim in this lake."
+    },
+    {
+     "a": "Let's have a picnic!",
+     "cue": "Make it a 'Why…?' question.",
+     "b": "Why ___ have a picnic?",
+     "ans": [
+      "don't we"
+     ],
+     "tip": "Why don't we…? is a friendly way to suggest something.",
+     "x": [
+      "not",
+      "doesn't"
+     ],
+     "id": "a2.3.5",
+     "say": "Why don't we have a picnic?"
+    },
+    {
+     "a": "Our flat has two bedrooms.",
+     "cue": "Use 'There…'.",
+     "b": "There ___ two bedrooms in our flat.",
+     "ans": [
+      "are"
+     ],
+     "tip": "For more than one thing: There are two bedrooms.",
+     "x": [
+      "is",
+      "has"
+     ],
+     "id": "a2.3.6",
+     "say": "There are two bedrooms in our flat."
+    },
+    {
+     "a": "It isn't necessary to bring lunch.",
+     "cue": "Say it as a rule.",
+     "b": "You ___ bring lunch.",
+     "ans": [
+      "don't have to",
+      "needn't",
+      "don't need to"
+     ],
+     "tip": "don't have to = it isn't necessary (you can if you want). mustn't means it is not allowed!",
+     "x": [
+      "mustn't",
+      "doesn't"
+     ],
+     "id": "a2.3.7",
+     "say": "You don't have to bring lunch."
+    },
+    {
+     "a": "I started learning the piano two years ago.",
+     "cue": "Use 'for'.",
+     "b": "I ___ the piano for two years.",
+     "ans": [
+      "have learned",
+      "have learnt",
+      "have been learning",
+      "have played"
+     ],
+     "tip": "Something that started in the past and is still true: have + past participle + for: I have learned the piano for two years.",
+     "x": [
+      "learn",
+      "since"
+     ],
+     "id": "a2.3.8",
+     "say": "I have learned the piano for two years."
+    }
+   ]
+  }
+ ]
+}

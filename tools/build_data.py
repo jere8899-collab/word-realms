@@ -202,8 +202,40 @@ for lvl, ws in WORDS.items():
         assert re.fullmatch(r"[a-z]+", w), (lvl, w); assert w not in seen_w, (lvl, w, "duplicate word"); seen_w.add(w)
     json.dump(ws, open(f"{ROOT}/{lvl}/words.json", "w"), ensure_ascii=False, indent=1)
     counts[f"{lvl}/words"] = len(ws)
+# 🔀 Spell Swap (tools/c_swap.py → data/<level>/swap.json): 3 books × 8 sentence transformations per level. Every answer
+# fits the level's word range (contractions count as two words, as in Cambridge Part 4), uses the key word (B2–C2) unchanged,
+# the gap appears once, tiles (A1/A2) never repeat a word of the answer, and sentence 1 is never repeated.
+from c_swap import SWAP, RULES
+def swap_canon(t):  # mirrors canon() in js/swap.js
+    t = re.sub(r"[‘’`´]", "'", str(t).lower()); t = re.sub(r"[^a-z0-9' ]+", " ", t)
+    t = re.sub(r"\bcan't\b|\bcannot\b", "can not", t); t = re.sub(r"\bwon't\b", "will not", t); t = re.sub(r"\bshan't\b", "shall not", t)
+    t = re.sub(r"n't\b", " not", t); t = re.sub(r"'m\b", " am", t); t = re.sub(r"'re\b", " are", t); t = re.sub(r"'ve\b", " have", t)
+    t = re.sub(r"'ll\b", " will", t); t = re.sub(r"'d\b", " 'd", t); t = re.sub(r"\b(it|he|she|that|there|what|who|here|where|let)'s\b", r"\1 's", t)
+    return " ".join(t.split())
+seen_sw, sw_tot = set(), 0
+for lvl, books in SWAP.items():
+    mode, lo, hi, keyed = RULES[lvl]; assert len(books) == 3, lvl
+    out = {"level": lvl, "mode": mode, "min": lo, "max": hi, "key": keyed, "books": []}
+    for bi, bk in enumerate(books):
+        assert len(bk["items"]) == 8 and bk["name"] and bk["focus"], (lvl, bi)
+        items = []
+        for k, it in enumerate(bk["items"]):
+            a, b, ans = it["a"], it["b"], it["ans"]
+            assert b.count("___") == 1 and it["tip"] and it["cue"] and ans and all(ans), (lvl, a)
+            assert a not in seen_sw, (lvl, a, "duplicate sentence"); seen_sw.add(a)
+            ans = [x for i, x in enumerate(ans) if swap_canon(x) not in map(swap_canon, ans[:i])]   # "don't like" = "do not like" already
+            for x in ans:
+                n = len(swap_canon(x).split()); assert lo <= n <= hi, (lvl, a, x, n, "word range")
+                if keyed: assert re.fullmatch(r"[A-Z']+", it["cue"]) and (" " + swap_canon(it["cue"]) + " ") in (" " + swap_canon(x) + " "), (lvl, a, x, "key word")
+            if mode == "tiles":
+                toks = ans[0].split(); assert it.get("x") and not set(it["x"]) & set(toks), (lvl, a, "tiles")
+            say = b.replace("___", ans[0]); say = say[0].upper() + say[1:]
+            items.append(dict(it, ans=ans, id=f"{lvl}.{bi + 1}.{k + 1}", say=say))
+        out["books"].append({"id": f"{lvl}.{bi + 1}", "icon": bk["icon"], "name": bk["name"], "focus": bk["focus"], "items": items})
+    json.dump(out, open(f"{ROOT}/{lvl}/swap.json", "w"), ensure_ascii=False, indent=1)
+    counts[f"{lvl}/swap"] = sum(len(b["items"]) for b in out["books"]); sw_tot += counts[f"{lvl}/swap"]
 json.dump(QUEST, open(f"{ROOT}/b1/quest.json", "w"), ensure_ascii=False, indent=1)
 json.dump(DEBATE, open(f"{ROOT}/c1/debate.json", "w"), ensure_ascii=False, indent=1)
 check_fair("c1/debate", DEBATE)
-json.dump({"counts": counts, "total": tot + sp_tot + wr_tot, "questions": tot, "speaking": sp_tot, "writing": wr_tot, "stories": st_tot}, open(f"{ROOT}/counts.json", "w"), indent=1)
+json.dump({"counts": counts, "total": tot + sp_tot + wr_tot, "questions": tot, "speaking": sp_tot, "writing": wr_tot, "stories": st_tot, "swap": sw_tot}, open(f"{ROOT}/counts.json", "w"), indent=1)
 print(counts); print("QUESTIONS", tot, "SPEAKING", sp_tot, "WRITING", wr_tot, "TOTAL", tot + sp_tot + wr_tot)

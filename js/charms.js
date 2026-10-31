@@ -26,7 +26,7 @@ const STAGES = [
 ];
 const TYPES = { pick: "🔎 Find the word", gap: "🧩 Fill the gap", spell: "🐝 Spell it", mean: "💭 What does it mean?" };
 const LEVELS = ["a1", "a2", "b1", "b2", "c1", "c2"];
-const st = () => { const s = WR.state; s.charms = Object.assign(WR.freshCharms(), s.charms || {}); s.charms.cards = s.charms.cards || {}; return s.charms; };
+const st = () => WR.block("charms");
 const keyOf = (lvl, w) => lvl + ":" + w;
 const card = (lvl, w) => st().cards[keyOf(lvl, w)];
 const learned = c => !!c && c.b >= 1;
@@ -35,7 +35,7 @@ const lvlName = lvl => lvl.toUpperCase();
 const words = lvl => WR.data[lvl + "/words"] || [];
 const load = lvl => WR.bank(lvl, "words");
 const loadAll = () => Promise.all(LEVELS.map(l => load(l).catch(() => [])));
-const unlockedLevels = () => (WR.realms || []).filter((r, i) => WR.isUnlocked(i)).map(r => r.id);
+const unlockedLevels = () => WR.unlockedLevels();
 // counts straight from the save (no word lists needed): every level, or one
 function counts(lvl) {
   const now = Date.now(), out = { due: 0, learned: 0, mastered: 0, stage: [0, 0, 0, 0, 0, 0] };
@@ -144,13 +144,12 @@ WR.screens.charms = rid => {
 function hub(rid) {
   const list = words(rid), c = counts(rid), realm = WR.realms.find(r => r.id === rid), nd = nextDue(rid);
   const newLeft = list.filter(w => !learned(card(rid, w.w))).length, canPlay = c.due > 0 || newLeft > 0;
-  const lv = unlockedLevels();
   const btn = c.due ? `✨ Polish ${Math.min(c.due, ROUND)} charm${c.due > 1 ? "s" : ""}${c.due < ROUND && newLeft ? " + catch new ones" : ""}` : newLeft ? `✨ Catch ${Math.min(NEW_MAX, newLeft)} new charm${Math.min(NEW_MAX, newLeft) > 1 ? "s" : ""}` : "";
   const charm = w => { const k = card(rid, w.w), b = k ? k.b : -1;
     return learned(k) ? `<button class="ch-charm b${b}${isDue(k) ? " due" : ""}" data-w="${esc(w.w)}" aria-label="${esc(w.w)}, ${STAGES[b].n}"><span class="ch-gem">${STAGES[b].e}</span><span class="ch-word">${esc(w.w)}</span></button>`
       : `<button class="ch-charm mystery" data-w="${esc(w.w)}" aria-label="A charm you haven't caught yet"><span class="ch-gem">🔮</span><span class="ch-word">?</span></button>`; };
   WR.view(`<div class="fade-in ch-hub"><div class="row lesson-top" style="margin:6px 0 8px"><button class="btn ghost small" id="chBack">← ${esc(realm.name)}</button><b class="title">🔮 Word Charms</b></div>
-    ${lv.length > 1 ? `<div class="ch-levels" role="tablist">${lv.map(l => { const n = counts(l).due; return `<button class="ch-lv${l === rid ? " on" : ""}" data-l="${l}" role="tab" aria-selected="${l === rid}">${lvlName(l)}${n ? `<i class="ch-badge">${n > 9 ? "9+" : n}</i>` : ""}</button>`; }).join("")}</div>` : ""}
+    ${WR.levelTabs(rid, l => counts(l).due)}
     <div class="card ch-intro"><div class="ch-pet">${WR.petHTML()}</div><div style="flex:1;min-width:0"><h2 style="margin:0">${c.due ? `${c.due} charm${c.due > 1 ? "s" : ""} ${c.due > 1 ? "want" : "wants"} polishing! ✨` : newLeft ? `${lvlName(rid)} words are waiting to be caught 🎁` : "Your charms are resting 🌙"}</h2>
       <p class="muted ch-how">Catch a word, then polish it on later days. Each time it glows brighter: 🔮→🌙→⭐→🌟→🌠→💎</p>
       <div class="row">${canPlay ? `<button class="btn mint" id="chGo">${btn}</button>` : `<button class="btn mint" id="chPractice">🎲 Practice anyway</button>`}
@@ -162,7 +161,7 @@ function hub(rid) {
   WR.$("#chBack").onclick = () => WR.go("realm", rid);
   const go = WR.$("#chGo"); if (go) go.onclick = () => WR.startCharms(rid);
   const pr = WR.$("#chPractice"); if (pr) pr.onclick = () => WR.startCharms(rid, true);
-  document.querySelectorAll(".ch-lv").forEach(b => b.onclick = () => WR.go("charms", b.dataset.l));
+  WR.bindLevelTabs("charms");
   document.querySelectorAll(".ch-charm").forEach(b => b.onclick = () => {
     const w = list.find(x => x.w === b.dataset.w), k = card(rid, w.w);
     if (!learned(k)) return WR.toast("🔮 Catch this charm in a round to see its word!", 2200);

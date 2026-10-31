@@ -1,0 +1,313 @@
+{
+ "level": "b2",
+ "mode": "type",
+ "min": 2,
+ "max": 5,
+ "key": true,
+ "books": [
+  {
+   "id": "b2.1",
+   "icon": "🗝️",
+   "name": "Key Word Castle",
+   "focus": "wish · might · can't have · if · needn't have",
+   "items": [
+    {
+     "a": "I regret not studying for the test.",
+     "cue": "WISH",
+     "b": "I ___ for the test.",
+     "ans": [
+      "wish I had studied",
+      "wish I'd studied"
+     ],
+     "tip": "Regrets about the past: wish + past perfect: I wish I had studied.",
+     "id": "b2.1.1",
+     "say": "I wish I had studied for the test."
+    },
+    {
+     "a": "It's possible that the dragon is sleeping.",
+     "cue": "MIGHT",
+     "b": "The dragon ___ sleeping.",
+     "ans": [
+      "might be"
+     ],
+     "tip": "It's possible that … = might + verb: The dragon might be sleeping.",
+     "id": "b2.1.2",
+     "say": "The dragon might be sleeping."
+    },
+    {
+     "a": "I'm sure Ella didn't break the vase.",
+     "cue": "CAN'T",
+     "b": "Ella ___ the vase.",
+     "ans": [
+      "can't have broken"
+     ],
+     "tip": "Sure something didn't happen = can't have + past participle.",
+     "id": "b2.1.3",
+     "say": "Ella can't have broken the vase."
+    },
+    {
+     "a": "We didn't win because we didn't train.",
+     "cue": "IF",
+     "b": "We would have won ___ trained.",
+     "ans": [
+      "if we had",
+      "if we'd"
+     ],
+     "tip": "Third conditional: would have won if we had trained (past perfect after if).",
+     "id": "b2.1.4",
+     "say": "We would have won if we had trained."
+    },
+    {
+     "a": "It wasn't necessary for us to bring food, but we did.",
+     "cue": "NEED",
+     "b": "We ___ food.",
+     "ans": [
+      "needn't have brought"
+     ],
+     "tip": "needn't have + past participle = we did it, but it wasn't necessary.",
+     "id": "b2.1.5",
+     "say": "We needn't have brought food."
+    },
+    {
+     "a": "Please don't make so much noise.",
+     "cue": "RATHER",
+     "b": "I'd ___ so much noise.",
+     "ans": [
+      "rather you didn't make"
+     ],
+     "tip": "I'd rather + someone + past simple = I want them to (not) do it.",
+     "id": "b2.1.6",
+     "say": "I'd rather you didn't make so much noise."
+    },
+    {
+     "a": "It's a long time since I went ice-skating.",
+     "cue": "AGES",
+     "b": "I haven't been ice-skating ___.",
+     "ans": [
+      "for ages",
+      "in ages"
+     ],
+     "tip": "It's a long time since… = I haven't … for ages.",
+     "id": "b2.1.7",
+     "say": "I haven't been ice-skating for ages."
+    },
+    {
+     "a": "My dad said I could stay up late.",
+     "cue": "LET",
+     "b": "My dad ___ up late.",
+     "ans": [
+      "let me stay"
+     ],
+     "tip": "let + person + base verb (no to): let me stay.",
+     "id": "b2.1.8",
+     "say": "My dad let me stay up late."
+    }
+   ]
+  },
+  {
+   "id": "b2.2",
+   "icon": "🦉",
+   "name": "Owl's Tricky Turns",
+   "focus": "is said to · had my hair cut · called off · reminded me to",
+   "items": [
+    {
+     "a": "People say that the forest is haunted.",
+     "cue": "SAID",
+     "b": "The forest ___ haunted.",
+     "ans": [
+      "is said to be"
+     ],
+     "tip": "People say that X is… = X is said to be…",
+     "id": "b2.2.1",
+     "say": "The forest is said to be haunted."
+    },
+    {
+     "a": "They are going to repair the bridge next week.",
+     "cue": "BE",
+     "b": "The bridge ___ next week.",
+     "ans": [
+      "is going to be repaired",
+      "will be repaired"
+     ],
+     "tip": "Future passive: is going to be / will be + past participle.",
+     "id": "b2.2.2",
+     "say": "The bridge is going to be repaired next week."
+    },
+    {
+     "a": "'I'll help you with your homework,' said Zoe.",
+     "cue": "OFFERED",
+     "b": "Zoe ___ with my homework.",
+     "ans": [
+      "offered to help me"
+     ],
+     "tip": "offer + to + verb: Zoe offered to help me.",
+     "id": "b2.2.3",
+     "say": "Zoe offered to help me with my homework."
+    },
+    {
+     "a": "I'm really looking forward to the school trip.",
+     "cue": "WAIT",
+     "b": "I ___ the school trip.",
+     "ans": [
+      "can't wait for"
+     ],
+     "tip": "can't wait for = be very excited about something in the future.",
+     "id": "b2.2.4",
+     "say": "I can't wait for the school trip."
+    },
+    {
+     "a": "A hairdresser cut my hair yesterday.",
+     "cue": "HAD",
+     "b": "I ___ yesterday.",
+     "ans": [
+      "had my hair cut"
+     ],
+     "tip": "have something done = someone else does it for you: I had my hair cut.",
+     "id": "b2.2.5",
+     "say": "I had my hair cut yesterday."
+    },
+    {
+     "a": "Mo cancelled the party because it rained.",
+     "cue": "CALLED",
+     "b": "Mo ___ because it rained.",
+     "ans": [
+      "called off the party",
+      "called the party off"
+     ],
+     "tip": "call off = cancel.",
+     "id": "b2.2.6",
+     "say": "Mo called off the party because it rained."
+    },
+    {
+     "a": "I started this puzzle two hours ago.",
+     "cue": "BEEN",
+     "b": "I ___ this puzzle for two hours.",
+     "ans": [
+      "have been doing",
+      "have been working on"
+     ],
+     "tip": "Started in the past and still going: have been + -ing + for.",
+     "id": "b2.2.7",
+     "say": "I have been doing this puzzle for two hours."
+    },
+    {
+     "a": "'Don't forget your swimsuit,' Mum said to me.",
+     "cue": "REMINDED",
+     "b": "Mum ___ my swimsuit.",
+     "ans": [
+      "reminded me to bring",
+      "reminded me to take",
+      "reminded me to pack"
+     ],
+     "tip": "remind + person + to + verb: Mum reminded me to bring my swimsuit.",
+     "id": "b2.2.8",
+     "say": "Mum reminded me to bring my swimsuit."
+    }
+   ]
+  },
+  {
+   "id": "b2.3",
+   "icon": "✨",
+   "name": "Spell Words",
+   "focus": "so … that · despite · no point · used to + -ing",
+   "items": [
+    {
+     "a": "Ravi was too tired to finish the race.",
+     "cue": "SO",
+     "b": "Ravi was ___ he couldn't finish the race.",
+     "ans": [
+      "so tired that"
+     ],
+     "tip": "too tired to… = so tired that … couldn't…",
+     "id": "b2.3.1",
+     "say": "Ravi was so tired that he couldn't finish the race."
+    },
+    {
+     "a": "Although it was raining, we played outside.",
+     "cue": "DESPITE",
+     "b": "___, we played outside.",
+     "ans": [
+      "despite the rain",
+      "despite it raining",
+      "despite its raining"
+     ],
+     "tip": "despite + noun or -ing (not despite + a full clause): despite the rain.",
+     "id": "b2.3.2",
+     "say": "Despite the rain, we played outside."
+    },
+    {
+     "a": "It's not worth watching that film.",
+     "cue": "POINT",
+     "b": "There's ___ that film.",
+     "ans": [
+      "no point in watching",
+      "no point watching"
+     ],
+     "tip": "It's not worth …ing = There's no point (in) …ing.",
+     "id": "b2.3.3",
+     "say": "There's no point in watching that film."
+    },
+    {
+     "a": "Jack doesn't usually get up early.",
+     "cue": "USED",
+     "b": "Jack isn't ___ early.",
+     "ans": [
+      "used to getting up"
+     ],
+     "tip": "be used to + -ing = be familiar with something: Jack isn't used to getting up early.",
+     "id": "b2.3.4",
+     "say": "Jack isn't used to getting up early."
+    },
+    {
+     "a": "The match was cancelled because of the storm.",
+     "cue": "DUE",
+     "b": "The match was cancelled ___ the storm.",
+     "ans": [
+      "due to"
+     ],
+     "tip": "because of = due to.",
+     "id": "b2.3.5",
+     "say": "The match was cancelled due to the storm."
+    },
+    {
+     "a": "Lucy probably won't come to the party.",
+     "cue": "UNLIKELY",
+     "b": "Lucy ___ to the party.",
+     "ans": [
+      "is unlikely to come"
+     ],
+     "tip": "probably won't = is unlikely to + verb.",
+     "id": "b2.3.6",
+     "say": "Lucy is unlikely to come to the party."
+    },
+    {
+     "a": "Can you look after my hamster this weekend?",
+     "cue": "CARE",
+     "b": "Can you ___ my hamster this weekend?",
+     "ans": [
+      "take care of"
+     ],
+     "tip": "look after = take care of.",
+     "id": "b2.3.7",
+     "say": "Can you take care of my hamster this weekend?"
+    },
+    {
+     "a": "I didn't expect the test to be so easy.",
+     "cue": "EASIER",
+     "b": "The test was ___ expected.",
+     "ans": [
+      "much easier than I",
+      "easier than I",
+      "a lot easier than I",
+      "far easier than I",
+      "easier than I had",
+      "much easier than I had"
+     ],
+     "tip": "didn't expect it to be so easy = it was easier than I expected.",
+     "id": "b2.3.8",
+     "say": "The test was much easier than I expected."
+    }
+   ]
+  }
+ ]
+}

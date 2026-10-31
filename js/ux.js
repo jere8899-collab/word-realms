@@ -8,7 +8,7 @@
 (function () {
 const WR = window.WR;
 const body = document.body;
-const FOCUS_SCREENS = /^(story|phonicsRound|charmsRound)$/;
+const FOCUS_SCREENS = /^(story|phonicsRound|charmsRound|swapRound)$/;
 WR.setFocus = on => body.classList.toggle("wr-focus", !!on);
 const wrap = (obj, name, before) => { const f = obj && obj[name]; if (typeof f !== "function" || f._ux) return; const g = function (...a) { before && before(...a); return f.apply(this, a); }; g._ux = true; obj[name] = g; };
 // starters of full-screen activities → focus mode on

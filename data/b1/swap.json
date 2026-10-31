@@ -1,0 +1,310 @@
+{
+ "level": "b1",
+ "mode": "type",
+ "min": 1,
+ "max": 3,
+ "key": false,
+ "books": [
+  {
+   "id": "b1.1",
+   "icon": "🌧️",
+   "name": "If and Since",
+   "focus": "if · unless · too / enough · for / since",
+   "items": [
+    {
+     "a": "Hurry, or you'll miss the bus.",
+     "cue": "No more than three words.",
+     "b": "If you ___ up, you'll miss the bus.",
+     "ans": [
+      "don't hurry"
+     ],
+     "tip": "… or you'll… = If you don't…, you'll…",
+     "id": "b1.1.1",
+     "say": "If you don't hurry up, you'll miss the bus."
+    },
+    {
+     "a": "The water was too cold for us to swim in.",
+     "cue": "No more than three words.",
+     "b": "The water wasn't ___ for us to swim in.",
+     "ans": [
+      "warm enough"
+     ],
+     "tip": "too cold = not warm enough (enough goes after the adjective).",
+     "id": "b1.1.2",
+     "say": "The water wasn't warm enough for us to swim in."
+    },
+    {
+     "a": "The box is so heavy that I can't lift it.",
+     "cue": "No more than three words.",
+     "b": "The box is ___ for me to lift.",
+     "ans": [
+      "too heavy"
+     ],
+     "tip": "so heavy that I can't = too heavy for me to…",
+     "id": "b1.1.3",
+     "say": "The box is too heavy for me to lift."
+    },
+    {
+     "a": "Unless you water the plant, it will die.",
+     "cue": "No more than three words.",
+     "b": "If you ___ the plant, it will die.",
+     "ans": [
+      "don't water"
+     ],
+     "tip": "unless = if … not: unless you water = if you don't water.",
+     "id": "b1.1.4",
+     "say": "If you don't water the plant, it will die."
+    },
+    {
+     "a": "I haven't got a map, so I can't find the castle.",
+     "cue": "No more than three words.",
+     "b": "If I ___ a map, I could find the castle.",
+     "ans": [
+      "had",
+      "had got"
+     ],
+     "tip": "Imagined situations now: If + past simple, … could/would: If I had a map…",
+     "id": "b1.1.5",
+     "say": "If I had a map, I could find the castle."
+    },
+    {
+     "a": "Mia started learning judo three years ago.",
+     "cue": "No more than three words.",
+     "b": "Mia has ___ judo for three years.",
+     "ans": [
+      "been learning",
+      "learned",
+      "learnt",
+      "been doing",
+      "done"
+     ],
+     "tip": "started … ago → has been learning … for (present perfect + for).",
+     "id": "b1.1.6",
+     "say": "Mia has been learning judo for three years."
+    },
+    {
+     "a": "It's ages since I last saw my cousin.",
+     "cue": "No more than three words.",
+     "b": "I ___ my cousin for ages.",
+     "ans": [
+      "haven't seen"
+     ],
+     "tip": "It's ages since I last saw = I haven't seen … for ages.",
+     "id": "b1.1.7",
+     "say": "I haven't seen my cousin for ages."
+    },
+    {
+     "a": "The last time I rode a horse was in May.",
+     "cue": "No more than three words.",
+     "b": "I ___ a horse since May.",
+     "ans": [
+      "haven't ridden"
+     ],
+     "tip": "The last time … was in May = I haven't … since May. ride → ridden.",
+     "id": "b1.1.8",
+     "say": "I haven't ridden a horse since May."
+    }
+   ]
+  },
+  {
+   "id": "b1.2",
+   "icon": "📣",
+   "name": "Said and Done",
+   "focus": "passive · reported speech · used to",
+   "items": [
+    {
+     "a": "Someone stole my bike yesterday.",
+     "cue": "No more than three words.",
+     "b": "My bike ___ yesterday.",
+     "ans": [
+      "was stolen"
+     ],
+     "tip": "Passive in the past: was/were + past participle: My bike was stolen.",
+     "id": "b1.2.1",
+     "say": "My bike was stolen yesterday."
+    },
+    {
+     "a": "They built the castle in 1300.",
+     "cue": "No more than three words.",
+     "b": "The castle ___ in 1300.",
+     "ans": [
+      "was built"
+     ],
+     "tip": "The castle is the thing the action happened to → passive: was built.",
+     "id": "b1.2.2",
+     "say": "The castle was built in 1300."
+    },
+    {
+     "a": "When I was little, I often played with toy dinosaurs.",
+     "cue": "No more than three words.",
+     "b": "I ___ with toy dinosaurs when I was little.",
+     "ans": [
+      "used to play"
+     ],
+     "tip": "Past habits that have stopped: used to + verb.",
+     "id": "b1.2.3",
+     "say": "I used to play with toy dinosaurs when I was little."
+    },
+    {
+     "a": "'I am hungry,' said Leo.",
+     "cue": "No more than three words.",
+     "b": "Leo said that he ___ hungry.",
+     "ans": [
+      "was"
+     ],
+     "tip": "In reported speech the tense moves back: am → was.",
+     "id": "b1.2.4",
+     "say": "Leo said that he was hungry."
+    },
+    {
+     "a": "'Can you help me?' Ana asked me.",
+     "cue": "No more than three words.",
+     "b": "Ana asked me if I ___ help her.",
+     "ans": [
+      "could"
+     ],
+     "tip": "Reported questions: can → could, and no question order: asked if I could help.",
+     "id": "b1.2.5",
+     "say": "Ana asked me if I could help her."
+    },
+    {
+     "a": "People speak English in many countries.",
+     "cue": "No more than three words.",
+     "b": "English ___ in many countries.",
+     "ans": [
+      "is spoken"
+     ],
+     "tip": "Passive in the present: is/are + past participle: English is spoken.",
+     "id": "b1.2.6",
+     "say": "English is spoken in many countries."
+    },
+    {
+     "a": "'Don't touch the dragon egg!' the wizard told us.",
+     "cue": "No more than three words.",
+     "b": "The wizard told us ___ the dragon egg.",
+     "ans": [
+      "not to touch"
+     ],
+     "tip": "Reported orders: told someone (not) to + verb: told us not to touch.",
+     "id": "b1.2.7",
+     "say": "The wizard told us not to touch the dragon egg."
+    },
+    {
+     "a": "There was nobody in the classroom.",
+     "cue": "No more than three words.",
+     "b": "There ___ in the classroom.",
+     "ans": [
+      "wasn't anybody",
+      "wasn't anyone"
+     ],
+     "tip": "nobody = not … anybody: There wasn't anybody.",
+     "id": "b1.2.8",
+     "say": "There wasn't anybody in the classroom."
+    }
+   ]
+  },
+  {
+   "id": "b1.3",
+   "icon": "🧩",
+   "name": "Same Idea, New Words",
+   "focus": "bored by · never been · far from · old enough",
+   "items": [
+    {
+     "a": "My favourite subject is art.",
+     "cue": "No more than three words.",
+     "b": "I like art ___ any other subject.",
+     "ans": [
+      "more than",
+      "better than"
+     ],
+     "tip": "favourite = the one you like more than any other.",
+     "id": "b1.3.1",
+     "say": "I like art more than any other subject."
+    },
+    {
+     "a": "The film was boring.",
+     "cue": "No more than three words.",
+     "b": "I was ___ the film.",
+     "ans": [
+      "bored by",
+      "bored with",
+      "bored during"
+     ],
+     "tip": "-ing describes the thing (boring film); -ed describes how you feel (I was bored).",
+     "id": "b1.3.2",
+     "say": "I was bored by the film."
+    },
+    {
+     "a": "How about going to the aquarium?",
+     "cue": "No more than three words.",
+     "b": "Why ___ go to the aquarium?",
+     "ans": [
+      "don't we",
+      "not"
+     ],
+     "tip": "How about …ing? = Why don't we…? / Why not…? (suggestions).",
+     "id": "b1.3.3",
+     "say": "Why don't we go to the aquarium?"
+    },
+    {
+     "a": "This is my first time on a plane.",
+     "cue": "No more than three words.",
+     "b": "I have ___ on a plane before.",
+     "ans": [
+      "never been",
+      "never flown"
+     ],
+     "tip": "my first time = I have never … before.",
+     "id": "b1.3.4",
+     "say": "I have never been on a plane before."
+    },
+    {
+     "a": "Is it OK if I use your pencil?",
+     "cue": "No more than three words.",
+     "b": "Do you mind ___ your pencil?",
+     "ans": [
+      "if I use",
+      "me using",
+      "my using"
+     ],
+     "tip": "Do you mind if I + verb? / Do you mind me using…? is a polite way to ask.",
+     "id": "b1.3.5",
+     "say": "Do you mind if I use your pencil?"
+    },
+    {
+     "a": "The museum is very near my house.",
+     "cue": "No more than three words.",
+     "b": "The museum isn't ___ my house.",
+     "ans": [
+      "far from"
+     ],
+     "tip": "very near = not far from.",
+     "id": "b1.3.6",
+     "say": "The museum isn't far from my house."
+    },
+    {
+     "a": "Tom is too young to drive.",
+     "cue": "No more than three words.",
+     "b": "Tom isn't ___ to drive.",
+     "ans": [
+      "old enough"
+     ],
+     "tip": "too young = not old enough.",
+     "id": "b1.3.7",
+     "say": "Tom isn't old enough to drive."
+    },
+    {
+     "a": "Nobody in my class is as fast as Kemi.",
+     "cue": "No more than three words.",
+     "b": "Kemi is ___ person in my class.",
+     "ans": [
+      "the fastest"
+     ],
+     "tip": "Nobody is as fast as Kemi = Kemi is the fastest.",
+     "id": "b1.3.8",
+     "say": "Kemi is the fastest person in my class."
+    }
+   ]
+  }
+ ]
+}
