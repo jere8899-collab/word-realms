@@ -1,0 +1,295 @@
+{
+ "level": "b2",
+ "mode": "type",
+ "books": [
+  {
+   "id": "b2.1",
+   "icon": "🔄",
+   "name": "Prefix Power",
+   "focus": "rebuild · misunderstood · overslept · irregular",
+   "items": [
+    {
+     "s": "The storm knocked down our treehouse, so we had to ___ it.",
+     "root": "BUILD",
+     "ans": [
+      "rebuild"
+     ],
+     "tip": "re- means 'again': rebuild = build again.",
+     "id": "b2.1.1",
+     "say": "The storm knocked down our treehouse, so we had to rebuild it.",
+     "ask": "The storm knocked down our treehouse, so we had to blank it."
+    },
+    {
+     "s": "Sorry, I ___ the question. Can you say it again?",
+     "root": "UNDERSTAND",
+     "ans": [
+      "misunderstood",
+      "misunderstand"
+     ],
+     "tip": "mis- means 'wrongly': misunderstand. In the past: misunderstood.",
+     "id": "b2.1.2",
+     "say": "Sorry, I misunderstood the question. Can you say it again?",
+     "ask": "Sorry, I blank the question. Can you say it again?"
+    },
+    {
+     "s": "I ___ and missed the school bus!",
+     "root": "SLEEP",
+     "ans": [
+      "overslept"
+     ],
+     "tip": "over- means 'too much': oversleep. The story is in the past: overslept.",
+     "id": "b2.1.3",
+     "say": "I overslept and missed the school bus!",
+     "ask": "I blank and missed the school bus!"
+    },
+    {
+     "s": "Leaving your bike unlocked is ___.",
+     "root": "RESPONSIBLE",
+     "ans": [
+      "irresponsible"
+     ],
+     "tip": "Words starting with r take ir- for 'not': irresponsible.",
+     "id": "b2.1.4",
+     "say": "Leaving your bike unlocked is irresponsible.",
+     "ask": "Leaving your bike unlocked is blank."
+    },
+    {
+     "s": "In many countries it is ___ to ride a bike at night without lights.",
+     "root": "LEGAL",
+     "ans": [
+      "illegal"
+     ],
+     "tip": "Words starting with l take il- for 'not': illegal.",
+     "id": "b2.1.5",
+     "say": "In many countries it is illegal to ride a bike at night without lights.",
+     "ask": "In many countries it is blank to ride a bike at night without lights."
+    },
+    {
+     "s": "Your answer is ___. Have another try!",
+     "root": "CORRECT",
+     "ans": [
+      "incorrect"
+     ],
+     "tip": "in- means 'not' with many words: incorrect.",
+     "id": "b2.1.6",
+     "say": "Your answer is incorrect. Have another try!",
+     "ask": "Your answer is blank. Have another try!"
+    },
+    {
+     "s": "'Go' is an ___ verb: go, went, gone.",
+     "root": "REGULAR",
+     "ans": [
+      "irregular"
+     ],
+     "tip": "regular starts with r, so 'not regular' is irregular.",
+     "id": "b2.1.7",
+     "say": "'Go' is an irregular verb: go, went, gone.",
+     "ask": "'Go' is an blank verb: go, went, gone."
+    },
+    {
+     "s": "I ___ the time, so we got to the cinema far too early.",
+     "root": "CALCULATE",
+     "ans": [
+      "miscalculated"
+     ],
+     "tip": "mis- = wrongly: miscalculate. Past tense: miscalculated.",
+     "id": "b2.1.8",
+     "say": "I miscalculated the time, so we got to the cinema far too early.",
+     "ask": "I blank the time, so we got to the cinema far too early."
+    }
+   ]
+  },
+  {
+   "id": "b2.2",
+   "icon": "🏅",
+   "name": "Noun Smith",
+   "focus": "performance · patience · friendship · ability",
+   "items": [
+    {
+     "s": "The class gave a wonderful ___ of the play.",
+     "root": "PERFORM",
+     "ans": [
+      "performance"
+     ],
+     "tip": "a + adjective + noun: perform + -ance = performance.",
+     "id": "b2.2.1",
+     "say": "The class gave a wonderful performance of the play.",
+     "ask": "The class gave a wonderful blank of the play."
+    },
+    {
+     "s": "Jigsaw puzzles need a lot of ___.",
+     "root": "PATIENT",
+     "ans": [
+      "patience"
+     ],
+     "tip": "a lot of + noun: patient → patience (-ent becomes -ence).",
+     "id": "b2.2.2",
+     "say": "Jigsaw puzzles need a lot of patience.",
+     "ask": "Jigsaw puzzles need a lot of blank."
+    },
+    {
+     "s": "Their ___ started on the first day of school.",
+     "root": "FRIEND",
+     "ans": [
+      "friendship"
+     ],
+     "tip": "-ship makes a noun for a relationship: friend → friendship.",
+     "id": "b2.2.3",
+     "say": "Their friendship started on the first day of school.",
+     "ask": "Their blank started on the first day of school."
+    },
+    {
+     "s": "Grandpa told us stories about his ___ on a farm.",
+     "root": "CHILD",
+     "ans": [
+      "childhood"
+     ],
+     "tip": "-hood = the time of being something: childhood = the time when you are a child.",
+     "id": "b2.2.4",
+     "say": "Grandpa told us stories about his childhood on a farm.",
+     "ask": "Grandpa told us stories about his blank on a farm."
+    },
+    {
+     "s": "Swimming is my favourite ___.",
+     "root": "ACTIVE",
+     "ans": [
+      "activity"
+     ],
+     "tip": "my favourite + noun: active → activity (drop the e, add -ity).",
+     "id": "b2.2.5",
+     "say": "Swimming is my favourite activity.",
+     "ask": "Swimming is my favourite blank."
+    },
+    {
+     "s": "Our cat's ___ got her stuck in a box again.",
+     "root": "CURIOUS",
+     "ans": [
+      "curiosity"
+     ],
+     "tip": "Adjectives in -ous often make nouns in -osity: curious → curiosity.",
+     "id": "b2.2.6",
+     "say": "Our cat's curiosity got her stuck in a box again.",
+     "ask": "Our cat's blank got her stuck in a box again."
+    },
+    {
+     "s": "Leo has an amazing ___ to remember numbers.",
+     "root": "ABLE",
+     "ans": [
+      "ability"
+     ],
+     "tip": "an + adjective + noun: able → ability.",
+     "id": "b2.2.7",
+     "say": "Leo has an amazing ability to remember numbers.",
+     "ask": "Leo has an amazing blank to remember numbers."
+    },
+    {
+     "s": "The ___ of the baby panda at the zoo made everyone happy.",
+     "root": "ARRIVE",
+     "ans": [
+      "arrival"
+     ],
+     "tip": "the … of = a noun: arrive → arrival (drop the e, add -al).",
+     "id": "b2.2.8",
+     "say": "The arrival of the baby panda at the zoo made everyone happy.",
+     "ask": "The blank of the baby panda at the zoo made everyone happy."
+    }
+   ]
+  },
+  {
+   "id": "b2.3",
+   "icon": "🖍",
+   "name": "Describe It",
+   "focus": "creative · natural · adventurous · scientific",
+   "items": [
+    {
+     "s": "Lucy is very ___. She is always drawing and making things.",
+     "root": "CREATE",
+     "ans": [
+      "creative"
+     ],
+     "tip": "very + adjective: create → creative (drop the e, add -ive).",
+     "id": "b2.3.1",
+     "say": "Lucy is very creative. She is always drawing and making things.",
+     "ask": "Lucy is very blank. She is always drawing and making things."
+    },
+    {
+     "s": "We only use ___ ingredients in our cookies.",
+     "root": "NATURE",
+     "ans": [
+      "natural"
+     ],
+     "tip": "An adjective before a noun: nature → natural.",
+     "id": "b2.3.2",
+     "say": "We only use natural ingredients in our cookies.",
+     "ask": "We only use blank ingredients in our cookies."
+    },
+    {
+     "s": "My uncle is very ___. He has climbed lots of mountains.",
+     "root": "ADVENTURE",
+     "ans": [
+      "adventurous"
+     ],
+     "tip": "adventure → adventurous (drop the e, add -ous).",
+     "id": "b2.3.3",
+     "say": "My uncle is very adventurous. He has climbed lots of mountains.",
+     "ask": "My uncle is very blank. He has climbed lots of mountains."
+    },
+    {
+     "s": "Our class did a ___ experiment with vinegar and baking soda.",
+     "root": "SCIENCE",
+     "ans": [
+      "scientific"
+     ],
+     "tip": "An adjective before experiment: science → scientific.",
+     "id": "b2.3.4",
+     "say": "Our class did a scientific experiment with vinegar and baking soda.",
+     "ask": "Our class did a blank experiment with vinegar and baking soda."
+    },
+    {
+     "s": "The puppy is so ___! He runs around all day.",
+     "root": "ENERGY",
+     "ans": [
+      "energetic"
+     ],
+     "tip": "so + adjective: energy → energetic.",
+     "id": "b2.3.5",
+     "say": "The puppy is so energetic! He runs around all day.",
+     "ask": "The puppy is so blank! He runs around all day."
+    },
+    {
+     "s": "We ate ___ food at the Chinese New Year festival.",
+     "root": "TRADITION",
+     "ans": [
+      "traditional"
+     ],
+     "tip": "An adjective before food: tradition + -al = traditional.",
+     "id": "b2.3.6",
+     "say": "We ate traditional food at the Chinese New Year festival.",
+     "ask": "We ate blank food at the Chinese New Year festival."
+    },
+    {
+     "s": "A ___ noise came from the attic.",
+     "root": "MYSTERY",
+     "ans": [
+      "mysterious"
+     ],
+     "tip": "mystery + -ous: y changes to i: mysterious.",
+     "id": "b2.3.7",
+     "say": "A mysterious noise came from the attic.",
+     "ask": "A blank noise came from the attic."
+    },
+    {
+     "s": "This video game is too ___. I can't buy it with my pocket money.",
+     "root": "EXPENSE",
+     "ans": [
+      "expensive"
+     ],
+     "tip": "too + adjective: expense → expensive.",
+     "id": "b2.3.8",
+     "say": "This video game is too expensive. I can't buy it with my pocket money.",
+     "ask": "This video game is too blank. I can't buy it with my pocket money."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,295 @@
+{
+ "level": "c1",
+ "mode": "type",
+ "books": [
+  {
+   "id": "c1.1",
+   "icon": "🧩",
+   "name": "Not & More",
+   "focus": "unbelievable · disappointment · uncomfortably",
+   "items": [
+    {
+     "s": "The magic show was ___! How did he do it?",
+     "root": "BELIEVE",
+     "ans": [
+      "unbelievable"
+     ],
+     "tip": "Two steps: believe → believable (drop the e, add -able), then un-: unbelievable.",
+     "id": "c1.1.1",
+     "say": "The magic show was unbelievable! How did he do it?",
+     "ask": "The magic show was blank! How did he do it?"
+    },
+    {
+     "s": "Our trip to the beach was ___. We'll remember it for ever.",
+     "root": "FORGET",
+     "ans": [
+      "unforgettable"
+     ],
+     "tip": "un- + forget + -able; double the t: unforgettable (impossible to forget).",
+     "id": "c1.1.2",
+     "say": "Our trip to the beach was unforgettable. We'll remember it for ever.",
+     "ask": "Our trip to the beach was blank. We'll remember it for ever."
+    },
+    {
+     "s": "Much to our ___, the concert was cancelled.",
+     "root": "APPOINT",
+     "ans": [
+      "disappointment"
+     ],
+     "tip": "Two affixes: dis- + appoint + -ment. 'Much to our …' needs a noun.",
+     "id": "c1.1.3",
+     "say": "Much to our disappointment, the concert was cancelled.",
+     "ask": "Much to our blank, the concert was cancelled."
+    },
+    {
+     "s": "The weather in the mountains is very ___, so pack a raincoat.",
+     "root": "PREDICT",
+     "ans": [
+      "unpredictable"
+     ],
+     "tip": "un- + predict + -able = unpredictable (you can't predict it).",
+     "id": "c1.1.4",
+     "say": "The weather in the mountains is very unpredictable, so pack a raincoat.",
+     "ask": "The weather in the mountains is very blank, so pack a raincoat."
+    },
+    {
+     "s": "The old camp bed was ___ hard, so I couldn't sleep.",
+     "root": "COMFORT",
+     "ans": [
+      "uncomfortably"
+     ],
+     "tip": "An adverb before hard: un- + comfortable, then -le → -ly: uncomfortably.",
+     "id": "c1.1.5",
+     "say": "The old camp bed was uncomfortably hard, so I couldn't sleep.",
+     "ask": "The old camp bed was blank hard, so I couldn't sleep."
+    },
+    {
+     "s": "The museum was ___ quiet on Monday morning.",
+     "root": "EXPECT",
+     "ans": [
+      "unexpectedly"
+     ],
+     "tip": "un- + expected + -ly: an adverb that describes quiet.",
+     "id": "c1.1.6",
+     "say": "The museum was unexpectedly quiet on Monday morning.",
+     "ask": "The museum was blank quiet on Monday morning."
+    },
+    {
+     "s": "Many countries celebrate their ___ Day with fireworks.",
+     "root": "DEPEND",
+     "ans": [
+      "independence"
+     ],
+     "tip": "in- (not) + depend + -ence: independence = not depending on others.",
+     "id": "c1.1.7",
+     "say": "Many countries celebrate their independence Day with fireworks.",
+     "ask": "Many countries celebrate their blank Day with fireworks."
+    },
+    {
+     "s": "The goats escaped because of his ___ with the gate.",
+     "root": "CARE",
+     "ans": [
+      "carelessness"
+     ],
+     "tip": "Stacked suffixes: care → careless (adjective) → carelessness (noun).",
+     "id": "c1.1.8",
+     "say": "The goats escaped because of his carelessness with the gate.",
+     "ask": "The goats escaped because of his blank with the gate."
+    }
+   ]
+  },
+  {
+   "id": "c1.2",
+   "icon": "⚒️",
+   "name": "Verb Makers",
+   "focus": "strengthen · simplify · modernise · encourage",
+   "items": [
+    {
+     "s": "Daily practice will ___ your muscles.",
+     "root": "STRONG",
+     "ans": [
+      "strengthen"
+     ],
+     "tip": "will + verb. strong → strength (noun) → strengthen (-en = make): the o changes to e.",
+     "id": "c1.2.1",
+     "say": "Daily practice will strengthen your muscles.",
+     "ask": "Daily practice will blank your muscles."
+    },
+    {
+     "s": "They are going to ___ the road near our school.",
+     "root": "WIDE",
+     "ans": [
+      "widen"
+     ],
+     "tip": "-en makes a verb meaning 'make more': wide → widen.",
+     "id": "c1.2.2",
+     "say": "They are going to widen the road near our school.",
+     "ask": "They are going to blank the road near our school."
+    },
+    {
+     "s": "Can you ___ the instructions? They're too hard for us.",
+     "root": "SIMPLE",
+     "ans": [
+      "simplify"
+     ],
+     "tip": "-ify = make: simple → simplify (the -le drops).",
+     "id": "c1.2.3",
+     "say": "Can you simplify the instructions? They're too hard for us.",
+     "ask": "Can you blank the instructions? They're too hard for us."
+    },
+    {
+     "s": "The museum wants to ___ its old dinosaur hall.",
+     "root": "MODERN",
+     "ans": [
+      "modernise",
+      "modernize"
+     ],
+     "tip": "-ise/-ize = make: modernise means make modern. Both spellings are right.",
+     "id": "c1.2.4",
+     "say": "The museum wants to modernise its old dinosaur hall.",
+     "ask": "The museum wants to blank its old dinosaur hall."
+    },
+    {
+     "s": "We used a special filter to ___ the pond water.",
+     "root": "PURE",
+     "ans": [
+      "purify"
+     ],
+     "tip": "pure → purify (drop the e, add -ify = make pure).",
+     "id": "c1.2.5",
+     "say": "We used a special filter to purify the pond water.",
+     "ask": "We used a special filter to blank the pond water."
+    },
+    {
+     "s": "Dark clouds ___ to spoil our picnic.",
+     "root": "THREAT",
+     "ans": [
+      "threatened"
+     ],
+     "tip": "threat (noun) → threaten (verb, -en). The sentence is in the past: threatened.",
+     "id": "c1.2.6",
+     "say": "Dark clouds threatened to spoil our picnic.",
+     "ask": "Dark clouds blank to spoil our picnic."
+    },
+    {
+     "s": "Scientists ___ animals into groups such as mammals and birds.",
+     "root": "CLASS",
+     "ans": [
+      "classify"
+     ],
+     "tip": "class → classify (-ify = put into classes). They classify: no -s.",
+     "id": "c1.2.7",
+     "say": "Scientists classify animals into groups such as mammals and birds.",
+     "ask": "Scientists blank animals into groups such as mammals and birds."
+    },
+    {
+     "s": "The coach's kind words ___ me to try again.",
+     "root": "COURAGE",
+     "ans": [
+      "encouraged"
+     ],
+     "tip": "en- = give: encourage. Past tense: encouraged.",
+     "id": "c1.2.8",
+     "say": "The coach's kind words encouraged me to try again.",
+     "ask": "The coach's kind words blank me to try again."
+    }
+   ]
+  },
+  {
+   "id": "c1.3",
+   "icon": "🪄",
+   "name": "Tricky Spellings",
+   "focus": "pronunciation · generosity · repetition",
+   "items": [
+    {
+     "s": "Your ___ of new words is getting better and better.",
+     "root": "PRONOUNCE",
+     "ans": [
+      "pronunciation"
+     ],
+     "tip": "Watch the spelling: pronounce loses an o in the noun: pronunciation.",
+     "id": "c1.3.1",
+     "say": "Your pronunciation of new words is getting better and better.",
+     "ask": "Your blank of new words is getting better and better."
+    },
+    {
+     "s": "Thank you for your clear ___ of the rules.",
+     "root": "EXPLAIN",
+     "ans": [
+      "explanation"
+     ],
+     "tip": "explain → explanation: the i disappears.",
+     "id": "c1.3.2",
+     "say": "Thank you for your clear explanation of the rules.",
+     "ask": "Thank you for your clear blank of the rules."
+    },
+    {
+     "s": "Everyone thanked the baker for his ___. He gave free cupcakes to the whole class.",
+     "root": "GENEROUS",
+     "ans": [
+      "generosity"
+     ],
+     "tip": "-ous → -osity: generous → generosity.",
+     "id": "c1.3.3",
+     "say": "Everyone thanked the baker for his generosity. He gave free cupcakes to the whole class.",
+     "ask": "Everyone thanked the baker for his blank. He gave free cupcakes to the whole class."
+    },
+    {
+     "s": "Learning a new song takes a lot of ___.",
+     "root": "REPEAT",
+     "ans": [
+      "repetition"
+     ],
+     "tip": "repeat → repetition: the ea becomes e and we add -ition.",
+     "id": "c1.3.4",
+     "say": "Learning a new song takes a lot of repetition.",
+     "ask": "Learning a new song takes a lot of blank."
+    },
+    {
+     "s": "Sara is very ___. She got everyone to join the chess club.",
+     "root": "PERSUADE",
+     "ans": [
+      "persuasive"
+     ],
+     "tip": "persuade → persuasive: the d changes to s.",
+     "id": "c1.3.5",
+     "say": "Sara is very persuasive. She got everyone to join the chess club.",
+     "ask": "Sara is very blank. She got everyone to join the chess club."
+    },
+    {
+     "s": "Write a short ___ of your favourite animal.",
+     "root": "DESCRIBE",
+     "ans": [
+      "description"
+     ],
+     "tip": "describe → description: the b changes to p.",
+     "id": "c1.3.6",
+     "say": "Write a short description of your favourite animal.",
+     "ask": "Write a short blank of your favourite animal."
+    },
+    {
+     "s": "The ___ of the swimming pool is two metres.",
+     "root": "DEEP",
+     "ans": [
+      "depth"
+     ],
+     "tip": "deep → depth: a noun that loses one e.",
+     "id": "c1.3.7",
+     "say": "The depth of the swimming pool is two metres.",
+     "ask": "The blank of the swimming pool is two metres."
+    },
+    {
+     "s": "Our old school bus needs regular ___.",
+     "root": "MAINTAIN",
+     "ans": [
+      "maintenance"
+     ],
+     "tip": "maintain → maintenance: the ai becomes e, then -ance.",
+     "id": "c1.3.8",
+     "say": "Our old school bus needs regular maintenance.",
+     "ask": "Our old school bus needs regular blank."
+    }
+   ]
+  }
+ ]
+}

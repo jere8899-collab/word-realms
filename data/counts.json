@@ -53,12 +53,19 @@
   "b1/swap": 24,
   "b2/swap": 24,
   "c1/swap": 24,
-  "c2/swap": 24
+  "c2/swap": 24,
+  "a1/forge": 24,
+  "a2/forge": 24,
+  "b1/forge": 24,
+  "b2/forge": 24,
+  "c1/forge": 24,
+  "c2/forge": 24
  },
  "total": 3110,
  "questions": 2942,
  "speaking": 132,
  "writing": 36,
  "stories": 6,
- "swap": 144
+ "swap": 144,
+ "forge": 144
 }

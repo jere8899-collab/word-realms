@@ -1,0 +1,295 @@
+{
+ "level": "c2",
+ "mode": "type",
+ "books": [
+  {
+   "id": "c2.1",
+   "icon": "💎",
+   "name": "Master Smith",
+   "focus": "indispensable · unprecedented · irreplaceable",
+   "items": [
+    {
+     "s": "A good torch is ___ on a camping trip.",
+     "root": "DISPENSE",
+     "ans": [
+      "indispensable"
+     ],
+     "tip": "in- + dispense + -able (drop the e): indispensable = absolutely necessary.",
+     "id": "c2.1.1",
+     "say": "A good torch is indispensable on a camping trip.",
+     "ask": "A good torch is blank on a camping trip."
+    },
+    {
+     "s": "Our school team had an ___ run of twenty wins in a row.",
+     "root": "PRECEDE",
+     "ans": [
+      "unprecedented"
+     ],
+     "tip": "un- + precedent + -ed: unprecedented = never happened before.",
+     "id": "c2.1.2",
+     "say": "Our school team had an unprecedented run of twenty wins in a row.",
+     "ask": "Our school team had an blank run of twenty wins in a row."
+    },
+    {
+     "s": "Grandma's old teddy bear is ___ to me.",
+     "root": "REPLACE",
+     "ans": [
+      "irreplaceable"
+     ],
+     "tip": "ir- + replace + -able. Keep the e after c so it still sounds like s: irreplaceable.",
+     "id": "c2.1.3",
+     "say": "Grandma's old teddy bear is irreplaceable to me.",
+     "ask": "Grandma's old teddy bear is blank to me."
+    },
+    {
+     "s": "It's ___ that anyone could eat fifty pancakes in one go!",
+     "root": "CONCEIVE",
+     "ans": [
+      "inconceivable"
+     ],
+     "tip": "in- + conceive + -able (drop the e): impossible to imagine.",
+     "id": "c2.1.4",
+     "say": "It's inconceivable that anyone could eat fifty pancakes in one go!",
+     "ask": "It's blank that anyone could eat fifty pancakes in one go!"
+    },
+    {
+     "s": "Shouting at a scared puppy is ___. It only makes things worse.",
+     "root": "PRODUCE",
+     "ans": [
+      "counterproductive"
+     ],
+     "tip": "counter- (against) + productive: it works against what you want.",
+     "id": "c2.1.5",
+     "say": "Shouting at a scared puppy is counterproductive. It only makes things worse.",
+     "ask": "Shouting at a scared puppy is blank. It only makes things worse."
+    },
+    {
+     "s": "The instructions were ___, so we didn't need any help.",
+     "root": "EXPLAIN",
+     "ans": [
+      "self-explanatory",
+      "self explanatory"
+     ],
+     "tip": "self- + explanatory (explain loses its i): it explains itself.",
+     "id": "c2.1.6",
+     "say": "The instructions were self-explanatory, so we didn't need any help.",
+     "ask": "The instructions were blank, so we didn't need any help."
+    },
+    {
+     "s": "The class voted ___ for a longer lunch break.",
+     "root": "WHELM",
+     "ans": [
+      "overwhelmingly"
+     ],
+     "tip": "over- + whelm + -ing + -ly: four parts make one adverb meaning 'by a huge number'.",
+     "id": "c2.1.7",
+     "say": "The class voted overwhelmingly for a longer lunch break.",
+     "ask": "The class voted blank for a longer lunch break."
+    },
+    {
+     "s": "Our cat ___ wakes me up at six, even at weekends.",
+     "root": "VARY",
+     "ans": [
+      "invariably"
+     ],
+     "tip": "in- + vary (y → i) + -able + -ly: invariably = always, without change.",
+     "id": "c2.1.8",
+     "say": "Our cat invariably wakes me up at six, even at weekends.",
+     "ask": "Our cat blank wakes me up at six, even at weekends."
+    }
+   ]
+  },
+  {
+   "id": "c2.2",
+   "icon": "🔮",
+   "name": "Hidden Changes",
+   "focus": "heroically · insensitive · indistinguishable",
+   "items": [
+    {
+     "s": "The firefighters acted ___ to save the kittens.",
+     "root": "HERO",
+     "ans": [
+      "heroically"
+     ],
+     "tip": "hero → heroic → heroically: -ic adjectives make adverbs with -ally.",
+     "id": "c2.2.1",
+     "say": "The firefighters acted heroically to save the kittens.",
+     "ask": "The firefighters acted blank to save the kittens."
+    },
+    {
+     "s": "Laughing at someone's mistake is ___.",
+     "root": "SENSE",
+     "ans": [
+      "insensitive"
+     ],
+     "tip": "sense → sensitive (drop the e, add -itive) → in- for 'not': insensitive.",
+     "id": "c2.2.2",
+     "say": "Laughing at someone's mistake is insensitive.",
+     "ask": "Laughing at someone's mistake is blank."
+    },
+    {
+     "s": "The top shelf is ___ to little children.",
+     "root": "ACCESS",
+     "ans": [
+      "inaccessible"
+     ],
+     "tip": "in- + access + -ible (not -able): inaccessible = can't be reached.",
+     "id": "c2.2.3",
+     "say": "The top shelf is inaccessible to little children.",
+     "ask": "The top shelf is blank to little children."
+    },
+    {
+     "s": "The twin puppies were almost ___. We couldn't tell them apart!",
+     "root": "DISTINGUISH",
+     "ans": [
+      "indistinguishable"
+     ],
+     "tip": "in- + distinguish + -able: impossible to tell apart.",
+     "id": "c2.2.4",
+     "say": "The twin puppies were almost indistinguishable. We couldn't tell them apart!",
+     "ask": "The twin puppies were almost blank. We couldn't tell them apart!"
+    },
+    {
+     "s": "The judges loved the ___ of Mia's drawings.",
+     "root": "ORIGINAL",
+     "ans": [
+      "originality"
+     ],
+     "tip": "original + -ity = originality (the quality of being new and different).",
+     "id": "c2.2.5",
+     "say": "The judges loved the originality of Mia's drawings.",
+     "ask": "The judges loved the blank of Mia's drawings."
+    },
+    {
+     "s": "The team's ___ to give up helped them win the final.",
+     "root": "REFUSE",
+     "ans": [
+      "refusal"
+     ],
+     "tip": "refuse → refusal (drop the e, add -al): the noun after The team's.",
+     "id": "c2.2.6",
+     "say": "The team's refusal to give up helped them win the final.",
+     "ask": "The team's blank to give up helped them win the final."
+    },
+    {
+     "s": "The ___ of the giant redwood trees amazed us.",
+     "root": "MAGNIFICENT",
+     "ans": [
+      "magnificence"
+     ],
+     "tip": "-ent adjectives make -ence nouns: magnificent → magnificence.",
+     "id": "c2.2.7",
+     "say": "The magnificence of the giant redwood trees amazed us.",
+     "ask": "The blank of the giant redwood trees amazed us."
+    },
+    {
+     "s": "The cat stared ___ at the fish tank.",
+     "root": "LONG",
+     "ans": [
+      "longingly"
+     ],
+     "tip": "long (to want) → longing → longingly: an adverb describing how it stared.",
+     "id": "c2.2.8",
+     "say": "The cat stared longingly at the fish tank.",
+     "ask": "The cat stared blank at the fish tank."
+    }
+   ]
+  },
+  {
+   "id": "c2.3",
+   "icon": "🌠",
+   "name": "Grand Wordcraft",
+   "focus": "enthusiastically · disproportionate · unquestionably",
+   "items": [
+    {
+     "s": "The class cheered ___ when the winner was announced.",
+     "root": "ENTHUSIASM",
+     "ans": [
+      "enthusiastically"
+     ],
+     "tip": "enthusiasm → enthusiastic → enthusiastically (-ic + -ally).",
+     "id": "c2.3.1",
+     "say": "The class cheered enthusiastically when the winner was announced.",
+     "ask": "The class cheered blank when the winner was announced."
+    },
+    {
+     "s": "The goalkeeper gets a ___ amount of blame when the team loses.",
+     "root": "PROPORTION",
+     "ans": [
+      "disproportionate"
+     ],
+     "tip": "dis- + proportion + -ate: disproportionate = too big compared with the rest.",
+     "id": "c2.3.2",
+     "say": "The goalkeeper gets a disproportionate amount of blame when the team loses.",
+     "ask": "The goalkeeper gets a blank amount of blame when the team loses."
+    },
+    {
+     "s": "The dinosaur fossil was ___ well preserved.",
+     "root": "REMARK",
+     "ans": [
+      "remarkably"
+     ],
+     "tip": "remark → remarkable → remarkably (-le → -ly): an adverb before well.",
+     "id": "c2.3.3",
+     "say": "The dinosaur fossil was remarkably well preserved.",
+     "ask": "The dinosaur fossil was blank well preserved."
+    },
+    {
+     "s": "Ollie's handwriting was so messy that it was ___.",
+     "root": "LEGIBLE",
+     "ans": [
+      "illegible"
+     ],
+     "tip": "legible starts with l, so its opposite takes il-: illegible = impossible to read.",
+     "id": "c2.3.4",
+     "say": "Ollie's handwriting was so messy that it was illegible.",
+     "ask": "Ollie's handwriting was so messy that it was blank."
+    },
+    {
+     "s": "The cat looked at the new vacuum cleaner with great ___.",
+     "root": "SUSPECT",
+     "ans": [
+      "suspicion"
+     ],
+     "tip": "suspect → suspicion: the noun after with great; the t changes to c and we add -ion.",
+     "id": "c2.3.5",
+     "say": "The cat looked at the new vacuum cleaner with great suspicion.",
+     "ask": "The cat looked at the new vacuum cleaner with great blank."
+    },
+    {
+     "s": "The old map was written in a code that was ___ to us.",
+     "root": "COMPREHEND",
+     "ans": [
+      "incomprehensible"
+     ],
+     "tip": "in- + comprehend (d → s) + -ible: impossible to understand.",
+     "id": "c2.3.6",
+     "say": "The old map was written in a code that was incomprehensible to us.",
+     "ask": "The old map was written in a code that was blank to us."
+    },
+    {
+     "s": "Ava's poster was ___ the best in the competition.",
+     "root": "QUESTION",
+     "ans": [
+      "unquestionably"
+     ],
+     "tip": "un- + question + -able + -ly: unquestionably = without any doubt.",
+     "id": "c2.3.7",
+     "say": "Ava's poster was unquestionably the best in the competition.",
+     "ask": "Ava's poster was blank the best in the competition."
+    },
+    {
+     "s": "We tested the robot many times to check its ___.",
+     "root": "RELY",
+     "ans": [
+      "reliability"
+     ],
+     "tip": "rely → reliable (y → i) → reliability (-able → -ability).",
+     "id": "c2.3.8",
+     "say": "We tested the robot many times to check its reliability.",
+     "ask": "We tested the robot many times to check its blank."
+    }
+   ]
+  }
+ ]
+}

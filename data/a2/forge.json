@@ -1,0 +1,484 @@
+{
+ "level": "a2",
+ "mode": "tiles",
+ "books": [
+  {
+   "id": "a2.1",
+   "icon": "🌈",
+   "name": "Full of It!",
+   "focus": "helpful · careful · sunny · noisy",
+   "items": [
+    {
+     "s": "Thank you! You are very ___.",
+     "root": "HELP",
+     "ans": [
+      "helpful"
+     ],
+     "tip": "-ful means 'full of' and makes a describing word: help → helpful.",
+     "p": [
+      "help",
+      "ful"
+     ],
+     "x": [
+      "less",
+      "er"
+     ],
+     "id": "a2.1.1",
+     "say": "Thank you! You are very helpful.",
+     "ask": "Thank you! You are very blank."
+    },
+    {
+     "s": "The garden is full of ___ flowers.",
+     "root": "COLOUR",
+     "ans": [
+      "colourful",
+      "colorful"
+     ],
+     "tip": "colour + -ful = colourful (full of colours). colorful is the American spelling.",
+     "p": [
+      "colour",
+      "ful"
+     ],
+     "x": [
+      "y",
+      "s"
+     ],
+     "id": "a2.1.2",
+     "say": "The garden is full of colourful flowers.",
+     "ask": "The garden is full of blank flowers."
+    },
+    {
+     "s": "Be ___ when you cross the road.",
+     "root": "CARE",
+     "ans": [
+      "careful"
+     ],
+     "tip": "care + -ful = careful (taking care).",
+     "p": [
+      "care",
+      "ful"
+     ],
+     "x": [
+      "less",
+      "y"
+     ],
+     "id": "a2.1.3",
+     "say": "Be careful when you cross the road.",
+     "ask": "Be blank when you cross the road."
+    },
+    {
+     "s": "It's ___ today, so take your sunglasses.",
+     "root": "SUN",
+     "ans": [
+      "sunny"
+     ],
+     "tip": "Weather words often add -y. sun has one vowel + one consonant, so double the n: sunny.",
+     "p": [
+      "sunn",
+      "y"
+     ],
+     "x": [
+      "ful",
+      "er"
+     ],
+     "id": "a2.1.4",
+     "say": "It's sunny today, so take your sunglasses.",
+     "ask": "It's blank today, so take your sunglasses."
+    },
+    {
+     "s": "It was a ___ day, so we played games inside.",
+     "root": "RAIN",
+     "ans": [
+      "rainy"
+     ],
+     "tip": "Weather words often add -y: rain → rainy.",
+     "p": [
+      "rain",
+      "y"
+     ],
+     "x": [
+      "ful",
+      "er"
+     ],
+     "id": "a2.1.5",
+     "say": "It was a rainy day, so we played games inside.",
+     "ask": "It was a blank day, so we played games inside."
+    },
+    {
+     "s": "The princess wore a ___ dress.",
+     "root": "BEAUTY",
+     "ans": [
+      "beautiful"
+     ],
+     "tip": "beauty + -ful: the y changes to i: beautiful.",
+     "p": [
+      "beauti",
+      "ful"
+     ],
+     "x": [
+      "ness",
+      "s"
+     ],
+     "id": "a2.1.6",
+     "say": "The princess wore a beautiful dress.",
+     "ask": "The princess wore a blank dress."
+    },
+    {
+     "s": "The puppy is very ___ and loves games.",
+     "root": "PLAY",
+     "ans": [
+      "playful"
+     ],
+     "tip": "play + -ful = playful (full of fun).",
+     "p": [
+      "play",
+      "ful"
+     ],
+     "x": [
+      "er",
+      "ly"
+     ],
+     "id": "a2.1.7",
+     "say": "The puppy is very playful and loves games.",
+     "ask": "The puppy is very blank and loves games."
+    },
+    {
+     "s": "The classroom was very ___ at lunchtime.",
+     "root": "NOISE",
+     "ans": [
+      "noisy"
+     ],
+     "tip": "noise + -y: drop the e first: noisy.",
+     "p": [
+      "nois",
+      "y"
+     ],
+     "x": [
+      "ful",
+      "e"
+     ],
+     "id": "a2.1.8",
+     "say": "The classroom was very noisy at lunchtime.",
+     "ask": "The classroom was very blank at lunchtime."
+    }
+   ]
+  },
+  {
+   "id": "a2.2",
+   "icon": "🐢",
+   "name": "How Do You Do It?",
+   "focus": "slowly · happily · well",
+   "items": [
+    {
+     "s": "The turtle walks very ___.",
+     "root": "SLOW",
+     "ans": [
+      "slowly"
+     ],
+     "tip": "To say HOW someone does something, add -ly: slow → slowly.",
+     "p": [
+      "slow",
+      "ly"
+     ],
+     "x": [
+      "er",
+      "est"
+     ],
+     "id": "a2.2.1",
+     "say": "The turtle walks very slowly.",
+     "ask": "The turtle walks very blank."
+    },
+    {
+     "s": "Please speak ___ in the library.",
+     "root": "QUIET",
+     "ans": [
+      "quietly"
+     ],
+     "tip": "How do you speak? quiet + -ly = quietly.",
+     "p": [
+      "quiet",
+      "ly"
+     ],
+     "x": [
+      "er",
+      "ness"
+     ],
+     "id": "a2.2.2",
+     "say": "Please speak quietly in the library.",
+     "ask": "Please speak blank in the library."
+    },
+    {
+     "s": "The children played ___ in the garden.",
+     "root": "HAPPY",
+     "ans": [
+      "happily"
+     ],
+     "tip": "Consonant + y: change y to i, then add -ly: happy → happily.",
+     "p": [
+      "happi",
+      "ly"
+     ],
+     "x": [
+      "er",
+      "ness"
+     ],
+     "id": "a2.2.3",
+     "say": "The children played happily in the garden.",
+     "ask": "The children played blank in the garden."
+    },
+    {
+     "s": "Run ___! The bus is coming!",
+     "root": "QUICK",
+     "ans": [
+      "quickly"
+     ],
+     "tip": "How should you run? quick + -ly = quickly.",
+     "p": [
+      "quick",
+      "ly"
+     ],
+     "x": [
+      "er",
+      "est"
+     ],
+     "id": "a2.2.4",
+     "say": "Run quickly! The bus is coming!",
+     "ask": "Run blank! The bus is coming!"
+    },
+    {
+     "s": "Hold the baby bird ___.",
+     "root": "CAREFUL",
+     "ans": [
+      "carefully"
+     ],
+     "tip": "careful + -ly = carefully (so it has two l's).",
+     "p": [
+      "careful",
+      "ly"
+     ],
+     "x": [
+      "ness",
+      "y"
+     ],
+     "id": "a2.2.5",
+     "say": "Hold the baby bird carefully.",
+     "ask": "Hold the baby bird blank."
+    },
+    {
+     "s": "She answered all the questions ___.",
+     "root": "EASY",
+     "ans": [
+      "easily"
+     ],
+     "tip": "Consonant + y: change y to i, then add -ly: easy → easily.",
+     "p": [
+      "easi",
+      "ly"
+     ],
+     "x": [
+      "er",
+      "est"
+     ],
+     "id": "a2.2.6",
+     "say": "She answered all the questions easily.",
+     "ask": "She answered all the questions blank."
+    },
+    {
+     "s": "The lion roared ___.",
+     "root": "LOUD",
+     "ans": [
+      "loudly"
+     ],
+     "tip": "How did it roar? loud + -ly = loudly.",
+     "p": [
+      "loud",
+      "ly"
+     ],
+     "x": [
+      "er",
+      "est"
+     ],
+     "id": "a2.2.7",
+     "say": "The lion roared loudly.",
+     "ask": "The lion roared blank."
+    },
+    {
+     "s": "Our team played ___ and won the cup.",
+     "root": "GOOD",
+     "ans": [
+      "well"
+     ],
+     "tip": "good is special: the -ly word for good is well.",
+     "p": [
+      "well"
+     ],
+     "x": [
+      "good",
+      "ly"
+     ],
+     "id": "a2.2.8",
+     "say": "Our team played well and won the cup.",
+     "ask": "Our team played blank and won the cup."
+    }
+   ]
+  },
+  {
+   "id": "a2.3",
+   "icon": "🏆",
+   "name": "Even More!",
+   "focus": "hotter · happiest · best · worse",
+   "items": [
+    {
+     "s": "Today is ___ than yesterday.",
+     "root": "HOT",
+     "ans": [
+      "hotter"
+     ],
+     "tip": "hot has one vowel + one consonant, so double the t before -er: hotter.",
+     "p": [
+      "hott",
+      "er"
+     ],
+     "x": [
+      "est",
+      "y"
+     ],
+     "id": "a2.3.1",
+     "say": "Today is hotter than yesterday.",
+     "ask": "Today is blank than yesterday."
+    },
+    {
+     "s": "My dog is the ___ dog in the world!",
+     "root": "HAPPY",
+     "ans": [
+      "happiest"
+     ],
+     "tip": "the + -est. Change y to i first: happy → the happiest.",
+     "p": [
+      "happi",
+      "est"
+     ],
+     "x": [
+      "er",
+      "ly"
+     ],
+     "id": "a2.3.2",
+     "say": "My dog is the happiest dog in the world!",
+     "ask": "My dog is the blank dog in the world!"
+    },
+    {
+     "s": "This is the ___ film I have ever seen. I laughed a lot!",
+     "root": "FUNNY",
+     "ans": [
+      "funniest"
+     ],
+     "tip": "the … I have ever seen = number one, so -est: funny → the funniest.",
+     "p": [
+      "funni",
+      "est"
+     ],
+     "x": [
+      "er",
+      "ly"
+     ],
+     "id": "a2.3.3",
+     "say": "This is the funniest film I have ever seen. I laughed a lot!",
+     "ask": "This is the blank film I have ever seen. I laughed a lot!"
+    },
+    {
+     "s": "My new school bag is ___ than my old one.",
+     "root": "BIG",
+     "ans": [
+      "bigger"
+     ],
+     "tip": "big: one vowel + one consonant, so double the g: bigger than.",
+     "p": [
+      "bigg",
+      "er"
+     ],
+     "x": [
+      "est",
+      "s"
+     ],
+     "id": "a2.3.4",
+     "say": "My new school bag is bigger than my old one.",
+     "ask": "My new school bag is blank than my old one."
+    },
+    {
+     "s": "Mia is my ___ friend.",
+     "root": "GOOD",
+     "ans": [
+      "best"
+     ],
+     "tip": "good is special: good → better → best.",
+     "p": [
+      "best"
+     ],
+     "x": [
+      "good",
+      "est"
+     ],
+     "id": "a2.3.5",
+     "say": "Mia is my best friend.",
+     "ask": "Mia is my blank friend."
+    },
+    {
+     "s": "My handwriting is ___ than my brother's.",
+     "root": "BAD",
+     "ans": [
+      "worse"
+     ],
+     "tip": "bad is special: bad → worse → worst. Comparing two people, so worse than.",
+     "p": [
+      "worse"
+     ],
+     "x": [
+      "bad",
+      "er"
+     ],
+     "id": "a2.3.6",
+     "say": "My handwriting is worse than my brother's.",
+     "ask": "My handwriting is blank than my brother's."
+    },
+    {
+     "s": "An elephant is ___ than a hippo.",
+     "root": "LARGE",
+     "ans": [
+      "larger"
+     ],
+     "tip": "large ends in e, so just add -r: larger than.",
+     "p": [
+      "large",
+      "r"
+     ],
+     "x": [
+      "er",
+      "st"
+     ],
+     "id": "a2.3.7",
+     "say": "An elephant is larger than a hippo.",
+     "ask": "An elephant is blank than a hippo."
+    },
+    {
+     "s": "That was the ___ test of the year.",
+     "root": "EASY",
+     "ans": [
+      "easiest"
+     ],
+     "tip": "the … of the year = number one, so -est; change y to i: easiest.",
+     "p": [
+      "easi",
+      "est"
+     ],
+     "x": [
+      "er",
+      "ly"
+     ],
+     "id": "a2.3.8",
+     "say": "That was the easiest test of the year.",
+     "ask": "That was the blank test of the year."
+    }
+   ]
+  }
+ ]
+}

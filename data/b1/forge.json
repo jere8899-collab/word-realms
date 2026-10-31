@@ -1,0 +1,294 @@
+{
+ "level": "b1",
+ "mode": "type",
+ "books": [
+  {
+   "id": "b1.1",
+   "icon": "🙈",
+   "name": "Not At All!",
+   "focus": "unkind · disagree · impossible",
+   "items": [
+    {
+     "s": "Don't be ___ to your little sister. Be nice!",
+     "root": "KIND",
+     "ans": [
+      "unkind"
+     ],
+     "tip": "un- means 'not': kind → unkind (not kind).",
+     "id": "b1.1.1",
+     "say": "Don't be unkind to your little sister. Be nice!",
+     "ask": "Don't be blank to your little sister. Be nice!"
+    },
+    {
+     "s": "I ___ with you. I think cats are better than dogs.",
+     "root": "AGREE",
+     "ans": [
+      "disagree"
+     ],
+     "tip": "dis- makes the opposite of some verbs: agree → disagree.",
+     "id": "b1.1.2",
+     "say": "I disagree with you. I think cats are better than dogs.",
+     "ask": "I blank with you. I think cats are better than dogs."
+    },
+    {
+     "s": "It's ___ to finish this puzzle in one minute!",
+     "root": "POSSIBLE",
+     "ans": [
+      "impossible"
+     ],
+     "tip": "Many words starting with p take im- for 'not': possible → impossible.",
+     "id": "b1.1.3",
+     "say": "It's impossible to finish this puzzle in one minute!",
+     "ask": "It's blank to finish this puzzle in one minute!"
+    },
+    {
+     "s": "Your room is very ___. Please tidy it!",
+     "root": "TIDY",
+     "ans": [
+      "untidy"
+     ],
+     "tip": "un- + tidy = untidy (not tidy).",
+     "id": "b1.1.4",
+     "say": "Your room is very untidy. Please tidy it!",
+     "ask": "Your room is very blank. Please tidy it!"
+    },
+    {
+     "s": "The magician made the rabbit ___.",
+     "root": "APPEAR",
+     "ans": [
+      "disappear"
+     ],
+     "tip": "dis- + appear = disappear (the opposite of appear).",
+     "id": "b1.1.5",
+     "say": "The magician made the rabbit disappear.",
+     "ask": "The magician made the rabbit blank."
+    },
+    {
+     "s": "It's ___ to talk with your mouth full.",
+     "root": "POLITE",
+     "ans": [
+      "impolite"
+     ],
+     "tip": "polite starts with p, so 'not polite' is impolite.",
+     "id": "b1.1.6",
+     "say": "It's impolite to talk with your mouth full.",
+     "ask": "It's blank to talk with your mouth full."
+    },
+    {
+     "s": "The cat looked very ___ when it got wet.",
+     "root": "HAPPY",
+     "ans": [
+      "unhappy"
+     ],
+     "tip": "un- + happy = unhappy (not happy). The sentence tells us the cat was sad.",
+     "id": "b1.1.7",
+     "say": "The cat looked very unhappy when it got wet.",
+     "ask": "The cat looked very blank when it got wet."
+    },
+    {
+     "s": "My brother ___ broccoli. He never eats it.",
+     "root": "LIKE",
+     "ans": [
+      "dislikes"
+     ],
+     "tip": "dis- + like = dislike, and with he/she we add -s: he dislikes.",
+     "id": "b1.1.8",
+     "say": "My brother dislikes broccoli. He never eats it.",
+     "ask": "My brother blank broccoli. He never eats it."
+    }
+   ]
+  },
+  {
+   "id": "b1.2",
+   "icon": "📦",
+   "name": "Thing Words",
+   "focus": "kindness · excitement · invitation",
+   "items": [
+    {
+     "s": "Thank you for your ___!",
+     "root": "KIND",
+     "ans": [
+      "kindness"
+     ],
+     "tip": "After your we need a noun (a thing word): kind + -ness = kindness.",
+     "id": "b1.2.1",
+     "say": "Thank you for your kindness!",
+     "ask": "Thank you for your blank!"
+    },
+    {
+     "s": "There was a lot of ___ before the school play.",
+     "root": "EXCITE",
+     "ans": [
+      "excitement"
+     ],
+     "tip": "a lot of + noun: excite + -ment = excitement.",
+     "id": "b1.2.2",
+     "say": "There was a lot of excitement before the school play.",
+     "ask": "There was a lot of blank before the school play."
+    },
+    {
+     "s": "We got an ___ to Emma's birthday party.",
+     "root": "INVITE",
+     "ans": [
+      "invitation"
+     ],
+     "tip": "an + noun: invite → invitation (drop the e, add -ation).",
+     "id": "b1.2.3",
+     "say": "We got an invitation to Emma's birthday party.",
+     "ask": "We got an blank to Emma's birthday party."
+    },
+    {
+     "s": "I'm scared of the ___, so I sleep with a night light.",
+     "root": "DARK",
+     "ans": [
+      "darkness"
+     ],
+     "tip": "the + noun: dark + -ness = darkness.",
+     "id": "b1.2.4",
+     "say": "I'm scared of the darkness, so I sleep with a night light.",
+     "ask": "I'm scared of the blank, so I sleep with a night light."
+    },
+    {
+     "s": "The dancers practised every ___ of the dance.",
+     "root": "MOVE",
+     "ans": [
+      "movement"
+     ],
+     "tip": "every + noun: move + -ment = movement.",
+     "id": "b1.2.5",
+     "say": "The dancers practised every movement of the dance.",
+     "ask": "The dancers practised every blank of the dance."
+    },
+    {
+     "s": "Can you give me some ___ about the school trip?",
+     "root": "INFORM",
+     "ans": [
+      "information"
+     ],
+     "tip": "some + noun: inform + -ation = information.",
+     "id": "b1.2.6",
+     "say": "Can you give me some information about the school trip?",
+     "ask": "Can you give me some blank about the school trip?"
+    },
+    {
+     "s": "Mum made a big ___: we can have a puppy!",
+     "root": "DECIDE",
+     "ans": [
+      "decision"
+     ],
+     "tip": "a + noun: decide → decision (the d changes to s).",
+     "id": "b1.2.7",
+     "say": "Mum made a big decision: we can have a puppy!",
+     "ask": "Mum made a big blank: we can have a puppy!"
+    },
+    {
+     "s": "The children shouted with ___ when they won.",
+     "root": "HAPPY",
+     "ans": [
+      "happiness"
+     ],
+     "tip": "with + noun: happy + -ness, and y changes to i: happiness.",
+     "id": "b1.2.8",
+     "say": "The children shouted with happiness when they won.",
+     "ask": "The children shouted with blank when they won."
+    }
+   ]
+  },
+  {
+   "id": "b1.3",
+   "icon": "🧸",
+   "name": "What's It Like?",
+   "focus": "comfortable · careless · dangerous · foggy",
+   "items": [
+    {
+     "s": "This new sofa is very ___.",
+     "root": "COMFORT",
+     "ans": [
+      "comfortable"
+     ],
+     "tip": "very + adjective: comfort + -able = comfortable.",
+     "id": "b1.3.1",
+     "say": "This new sofa is very comfortable.",
+     "ask": "This new sofa is very blank."
+    },
+    {
+     "s": "Don't be so ___! You dropped your lunch again.",
+     "root": "CARE",
+     "ans": [
+      "careless"
+     ],
+     "tip": "-less means 'without': careless = without care.",
+     "id": "b1.3.2",
+     "say": "Don't be so careless! You dropped your lunch again.",
+     "ask": "Don't be so blank! You dropped your lunch again."
+    },
+    {
+     "s": "Climbing on the roof is ___.",
+     "root": "DANGER",
+     "ans": [
+      "dangerous"
+     ],
+     "tip": "-ous makes an adjective: danger → dangerous.",
+     "id": "b1.3.3",
+     "say": "Climbing on the roof is dangerous.",
+     "ask": "Climbing on the roof is blank."
+    },
+    {
+     "s": "She wants to be a ___ singer one day.",
+     "root": "FAME",
+     "ans": [
+      "famous"
+     ],
+     "tip": "fame + -ous: drop the e: famous.",
+     "id": "b1.3.4",
+     "say": "She wants to be a famous singer one day.",
+     "ask": "She wants to be a blank singer one day."
+    },
+    {
+     "s": "We had a very ___ day at the water park.",
+     "root": "ENJOY",
+     "ans": [
+      "enjoyable"
+     ],
+     "tip": "-able = can be enjoyed: enjoy + -able = enjoyable.",
+     "id": "b1.3.5",
+     "say": "We had a very enjoyable day at the water park.",
+     "ask": "We had a very blank day at the water park."
+    },
+    {
+     "s": "It was so ___ that we couldn't see the hills.",
+     "root": "FOG",
+     "ans": [
+      "foggy"
+     ],
+     "tip": "Weather + -y. fog has one vowel + one consonant, so double the g: foggy.",
+     "id": "b1.3.6",
+     "say": "It was so foggy that we couldn't see the hills.",
+     "ask": "It was so blank that we couldn't see the hills."
+    },
+    {
+     "s": "This old torch is ___ now. It doesn't work.",
+     "root": "USE",
+     "ans": [
+      "useless"
+     ],
+     "tip": "-less = without: useless = no use at all.",
+     "id": "b1.3.7",
+     "say": "This old torch is useless now. It doesn't work.",
+     "ask": "This old torch is blank now. It doesn't work."
+    },
+    {
+     "s": "The paths were ___ this morning, so we walked slowly.",
+     "root": "ICE",
+     "ans": [
+      "icy"
+     ],
+     "tip": "ice + -y: drop the e: icy.",
+     "id": "b1.3.8",
+     "say": "The paths were icy this morning, so we walked slowly.",
+     "ask": "The paths were blank this morning, so we walked slowly."
+    }
+   ]
+  }
+ ]
+}

@@ -137,8 +137,8 @@ async function answer(page, right) {
     // Sticker Book pages
     await page.click('#back'); await page.waitForSelector('.sbook');
     const sb = await page.evaluate(() => ({ pages: document.querySelectorAll('.spage').length, math: document.querySelectorAll('#sp_math .stk.has').length, guard: document.querySelectorAll('#sp_guard .stk.has').length, gn: document.querySelectorAll('#sp_guard .stk').length, t: document.querySelector('.sbook .title').innerText, ov: document.documentElement.scrollWidth - innerWidth, cnt: WR.Collect.count(), tot: WR.Collect.total() }));
-    ok(sb.pages === 12 && sb.math === 5 && sb.guard === 1 && sb.gn === 6, `${tag} Sticker Book: Number Kingdom 5/8 and Grade Guardians 1/6 pages ${JSON.stringify(sb)}`);
-    ok(sb.tot === 6 * 8 + 10 + 6 + 6 + 7 + 6 + 5 && new RegExp(`${sb.cnt}/${sb.tot}`).test(sb.t), `${tag} Sticker Book total counts the maths pages (${sb.t})`);
+    ok(sb.pages === 13 && sb.math === 5 && sb.guard === 1 && sb.gn === 6, `${tag} Sticker Book: Number Kingdom 5/8 and Grade Guardians 1/6 pages ${JSON.stringify(sb)}`);
+    ok(sb.tot === 6 * 8 + 10 + 6 + 6 + 7 + 6 + 5 + 5 && new RegExp(`${sb.cnt}/${sb.tot}`).test(sb.t), `${tag} Sticker Book total counts the maths pages (${sb.t})`);
     ok(sb.ov <= 0, `${tag} sticker book: no sideways overflow`);
     const stk = await imgsLoaded(page, '#sp_guard .stk.has .sart');
     ok(stk.length === 1 && stk[0].ok && /mboss_bramble\.webp/.test(stk[0].src) && await page.$$eval('#sp_guard .stk.no .sart', e => e.length) === 0, `${tag} stickers: the earned guardian sticker shows Bramble's portrait, unearned ones stay "?" (${stk.map(i => i.w + 'px')})`);

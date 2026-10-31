@@ -234,8 +234,35 @@ for lvl, books in SWAP.items():
         out["books"].append({"id": f"{lvl}.{bi + 1}", "icon": bk["icon"], "name": bk["name"], "focus": bk["focus"], "items": items})
     json.dump(out, open(f"{ROOT}/{lvl}/swap.json", "w"), ensure_ascii=False, indent=1)
     counts[f"{lvl}/swap"] = sum(len(b["items"]) for b in out["books"]); sw_tot += counts[f"{lvl}/swap"]
+# ⚒️ Word Forge (tools/c_forge.py → data/<level>/forge.json): 3 anvils × 8 word-formation gaps per level. One gap, a ROOT in
+# capitals, every answer differs from the root and from the other answers (forge_canon), tile levels (A1/A2) build answer 1
+# from its parts and the wrong tiles never repeat a part; no sentence twice. say = the full sentence (narrator), ask = the gap read as "blank".
+from c_forge import FORGE, MODE as FORGE_MODE
+def forge_canon(t):  # mirrors canon() in js/forge.js
+    t = re.sub(r"[‘’`´]", "'", str(t).strip().lower()); t = re.sub(r"[^a-z' -]+", " ", t)
+    return " ".join(t.replace("-", " - ").split()).replace(" - ", "-")
+seen_fg, fg_tot = set(), 0
+for lvl, books in FORGE.items():
+    mode = FORGE_MODE[lvl]; assert len(books) == 3, lvl
+    out = {"level": lvl, "mode": mode, "books": []}
+    for bi, bk in enumerate(books):
+        assert len(bk["items"]) == 8 and bk["name"] and bk["focus"], (lvl, bi)
+        items = []
+        for k, it in enumerate(bk["items"]):
+            s, root, ans = it["s"], it["root"], it["ans"]
+            assert s.count("___") == 1 and it["tip"] and re.fullmatch(r"[A-Z]+", root) and ans and all(ans), (lvl, s)
+            assert s not in seen_fg, (lvl, s, "duplicate sentence"); seen_fg.add(s)
+            c = [forge_canon(x) for x in ans]; assert len(set(c)) == len(c) and forge_canon(root) not in c, (lvl, s, "answers")
+            if mode == "tiles":
+                assert "".join(it["p"]) == ans[0] and it.get("x") and not set(it["x"]) & set(it["p"]), (lvl, s, "tiles")
+            else: assert "p" not in it, (lvl, s)
+            say = s.replace("___", ans[0]); ask = s.replace("___", "blank")
+            items.append(dict(it, id=f"{lvl}.{bi + 1}.{k + 1}", say=say[0].upper() + say[1:], ask=ask[0].upper() + ask[1:]))
+        out["books"].append({"id": f"{lvl}.{bi + 1}", "icon": bk["icon"], "name": bk["name"], "focus": bk["focus"], "items": items})
+    json.dump(out, open(f"{ROOT}/{lvl}/forge.json", "w"), ensure_ascii=False, indent=1)
+    counts[f"{lvl}/forge"] = sum(len(b["items"]) for b in out["books"]); fg_tot += counts[f"{lvl}/forge"]
 json.dump(QUEST, open(f"{ROOT}/b1/quest.json", "w"), ensure_ascii=False, indent=1)
 json.dump(DEBATE, open(f"{ROOT}/c1/debate.json", "w"), ensure_ascii=False, indent=1)
 check_fair("c1/debate", DEBATE)
-json.dump({"counts": counts, "total": tot + sp_tot + wr_tot, "questions": tot, "speaking": sp_tot, "writing": wr_tot, "stories": st_tot, "swap": sw_tot}, open(f"{ROOT}/counts.json", "w"), indent=1)
+json.dump({"counts": counts, "total": tot + sp_tot + wr_tot, "questions": tot, "speaking": sp_tot, "writing": wr_tot, "stories": st_tot, "swap": sw_tot, "forge": fg_tot}, open(f"{ROOT}/counts.json", "w"), indent=1)
 print(counts); print("QUESTIONS", tot, "SPEAKING", sp_tot, "WRITING", wr_tot, "TOTAL", tot + sp_tot + wr_tot)

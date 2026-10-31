@@ -25,7 +25,7 @@ function renderNav() {
   if (!n.dataset.wired) { n.dataset.wired = "1"; n.addEventListener("click", e => { const b = e.target.closest("button[data-k]"); if (b && n.contains(b)) WR.go(b.dataset.k); }); }
 }
 // every running activity is stopped when the screen changes (each module defines its own WR.stopX)
-const STOPS = ["stopLesson", "stopSpeaking", "stopWriting", "stopStory", "stopPlacement", "stopMath", "stopPhonics", "stopCharms", "stopSwap"];
+const STOPS = ["stopLesson", "stopSpeaking", "stopWriting", "stopStory", "stopPlacement", "stopMath", "stopPhonics", "stopCharms", "stopSwap", "stopForge"];
 WR.go = (screen, arg) => {
   STOPS.forEach(n => WR[n] && WR[n]()); WR.Voice.stop();
   current = screen; WR.navActive(screen === "realm" ? "home" : /^(math|dojo|dojoGrid|clock)$/.test(screen) ? "math" : screen);
@@ -153,7 +153,7 @@ WR.screens.home = () => {
 // says which tiles a realm shows (in this order) and what a tap opens. ico = the tile's picture markup.
 WR.bonusTile = ({ cls, data, ico, title, desc, crowns, tag }) => `<div class="card skill-card ${cls}" data-${data}="1"><span class="bonus-tag">Bonus</span>${ico}<h3>${title}</h3>
     <div class="muted" style="font-size:.85rem;font-weight:700">${desc}</div><div class="crowns">${crowns}</div><div class="waiting-tag">${tag}</div></div>`;
-// 🗂️ level tabs (A1 … C2, only the open realms) for bonus hubs that cover every level (Word Charms, Spell Swap); badge(l) = a count or 0
+// 🗂️ level tabs (A1 … C2, only the open realms) for bonus hubs that cover every level (Word Charms, Spell Swap, Word Forge); badge(l) = a count or 0
 WR.unlockedLevels = () => (WR.realms || []).filter((r, i) => WR.isUnlocked(i)).map(r => r.id);
 WR.levelTabs = (cur, badge = () => 0) => { const lv = WR.unlockedLevels(); return lv.length > 1 ? `<div class="ch-levels" role="tablist">${lv.map(l => { const n = badge(l);
   return `<button class="ch-lv${l === cur ? " on" : ""}" data-l="${l}" role="tab" aria-selected="${l === cur}">${l.toUpperCase()}${n ? `<i class="ch-badge">${n > 9 ? "9+" : n}</i>` : ""}</button>`; }).join("")}</div>` : ""; };
@@ -166,7 +166,8 @@ const BONUS = [
   { data: "story", open: rid => WR.startStory(rid), tile: rid => WR.STORY && WR.storyTile(rid) },
   { data: "phonics", open: () => WR.go("phonics"), tile: rid => WR.phonicsTile && WR.phonicsTile(rid) },
   { data: "charms", open: rid => WR.openCharms(rid), tile: rid => WR.charmsTile && WR.charmsTile(rid) },
-  { data: "swap", open: rid => WR.openSwap(rid), tile: rid => WR.swapTile && WR.swapTile(rid) }
+  { data: "swap", open: rid => WR.openSwap(rid), tile: rid => WR.swapTile && WR.swapTile(rid) },
+  { data: "forge", open: rid => WR.openForge(rid), tile: rid => WR.forgeTile && WR.forgeTile(rid) }
 ];
 WR.screens.realm = rid => {
   const r = WR.realms.find(x => x.id === rid);

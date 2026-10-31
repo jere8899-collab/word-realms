@@ -6,8 +6,8 @@
    Mistake Garden, so older saves show their best scores and rebuilt play days even before any new answers are logged. */
 (function () {
 const WR = window.WR, esc = WR.esc, MG = window.MathGen;
-const ENG = ["grammar", "vocab", "reading", "listening", "speaking", "writing", "story", "phonics", "words", "swap"];
-const OPTIONAL = ["phonics", "words", "swap"];     // rows shown only once something was played (the A1 Phonics Path, Word Charms, Spell Swap)
+const ENG = ["grammar", "vocab", "reading", "listening", "speaking", "writing", "story", "phonics", "words", "swap", "forge"];
+const OPTIONAL = ["phonics", "words", "swap", "forge"];     // rows shown only once something was played (the A1 Phonics Path, Word Charms, Spell Swap, Word Forge)
 const MIN_N = 3;                                    // answers needed before a spot can be called "weak"
 const pct = v => Math.round(v * 100);
 const acc = t => t && t[0] + t[1] ? t[0] / (t[0] + t[1]) : null;
@@ -115,6 +115,7 @@ function actionFor(k) {
   if (sk === "phonics") return () => WR.go("phonics");
   if (sk === "words") return () => WR.openCharms(rid);
   if (sk === "swap") return () => WR.openSwap(rid);
+  if (sk === "forge") return () => WR.openForge(rid);
   const start = { speaking: WR.startSpeaking, writing: WR.startWriting, story: WR.startStory }[sk];
   return start ? () => { WR.go("realm", rid); start(rid); } : null;
 }

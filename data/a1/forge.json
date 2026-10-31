@@ -1,0 +1,484 @@
+{
+ "level": "a1",
+ "mode": "tiles",
+ "books": [
+  {
+   "id": "a1.1",
+   "icon": "🍎",
+   "name": "One, Two, Many!",
+   "focus": "cats · boxes · babies · children",
+   "items": [
+    {
+     "s": "I have two ___.",
+     "root": "CAT",
+     "ans": [
+      "cats"
+     ],
+     "tip": "Most words add -s for more than one: one cat → two cats.",
+     "p": [
+      "cat",
+      "s"
+     ],
+     "x": [
+      "es",
+      "er"
+     ],
+     "id": "a1.1.1",
+     "say": "I have two cats.",
+     "ask": "I have two blank."
+    },
+    {
+     "s": "There are three ___ on the table.",
+     "root": "BOX",
+     "ans": [
+      "boxes"
+     ],
+     "tip": "Words ending in -x, -s, -sh or -ch add -es: box → boxes.",
+     "p": [
+      "box",
+      "es"
+     ],
+     "x": [
+      "s",
+      "er"
+     ],
+     "id": "a1.1.2",
+     "say": "There are three boxes on the table.",
+     "ask": "There are three blank on the table."
+    },
+    {
+     "s": "The two ___ are sleeping.",
+     "root": "BABY",
+     "ans": [
+      "babies"
+     ],
+     "tip": "Consonant + y: change y to i and add -es: baby → babies.",
+     "p": [
+      "babi",
+      "es"
+     ],
+     "x": [
+      "s",
+      "y"
+     ],
+     "id": "a1.1.3",
+     "say": "The two babies are sleeping.",
+     "ask": "The two blank are sleeping."
+    },
+    {
+     "s": "Five ___ are playing in the park.",
+     "root": "CHILD",
+     "ans": [
+      "children"
+     ],
+     "tip": "child is special: one child → two children.",
+     "p": [
+      "child",
+      "ren"
+     ],
+     "x": [
+      "s",
+      "es"
+     ],
+     "id": "a1.1.4",
+     "say": "Five children are playing in the park.",
+     "ask": "Five blank are playing in the park."
+    },
+    {
+     "s": "I can see four ___ in the sky.",
+     "root": "STAR",
+     "ans": [
+      "stars"
+     ],
+     "tip": "Add -s for more than one: star → stars.",
+     "p": [
+      "star",
+      "s"
+     ],
+     "x": [
+      "es",
+      "er"
+     ],
+     "id": "a1.1.5",
+     "say": "I can see four stars in the sky.",
+     "ask": "I can see four blank in the sky."
+    },
+    {
+     "s": "I brush my ___ every morning.",
+     "root": "TOOTH",
+     "ans": [
+      "teeth"
+     ],
+     "tip": "tooth is special: one tooth → two teeth.",
+     "p": [
+      "teeth"
+     ],
+     "x": [
+      "tooth",
+      "s"
+     ],
+     "id": "a1.1.6",
+     "say": "I brush my teeth every morning.",
+     "ask": "I brush my blank every morning."
+    },
+    {
+     "s": "Look at those little ___!",
+     "root": "MOUSE",
+     "ans": [
+      "mice"
+     ],
+     "tip": "mouse is special: one mouse → two mice.",
+     "p": [
+      "mice"
+     ],
+     "x": [
+      "mouse",
+      "s"
+     ],
+     "id": "a1.1.7",
+     "say": "Look at those little mice!",
+     "ask": "Look at those little blank!"
+    },
+    {
+     "s": "We picked lots of ___ from the tree.",
+     "root": "CHERRY",
+     "ans": [
+      "cherries"
+     ],
+     "tip": "Consonant + y: change y to i and add -es: cherry → cherries.",
+     "p": [
+      "cherri",
+      "es"
+     ],
+     "x": [
+      "s",
+      "y"
+     ],
+     "id": "a1.1.8",
+     "say": "We picked lots of cherries from the tree.",
+     "ask": "We picked lots of blank from the tree."
+    }
+   ]
+  },
+  {
+   "id": "a1.2",
+   "icon": "🌟",
+   "name": "Big, Bigger, Biggest",
+   "focus": "taller · oldest · faster",
+   "items": [
+    {
+     "s": "My brother is ___ than me.",
+     "root": "TALL",
+     "ans": [
+      "taller"
+     ],
+     "tip": "To compare two things, add -er and use than: tall → taller than.",
+     "p": [
+      "tall",
+      "er"
+     ],
+     "x": [
+      "est",
+      "s"
+     ],
+     "id": "a1.2.1",
+     "say": "My brother is taller than me.",
+     "ask": "My brother is blank than me."
+    },
+    {
+     "s": "Grandpa is the ___ person in my family.",
+     "root": "OLD",
+     "ans": [
+      "oldest"
+     ],
+     "tip": "the + -est means number one of a group: old → the oldest.",
+     "p": [
+      "old",
+      "est"
+     ],
+     "x": [
+      "er",
+      "s"
+     ],
+     "id": "a1.2.2",
+     "say": "Grandpa is the oldest person in my family.",
+     "ask": "Grandpa is the blank person in my family."
+    },
+    {
+     "s": "A cheetah is ___ than a horse.",
+     "root": "FAST",
+     "ans": [
+      "faster"
+     ],
+     "tip": "Two animals compared, so -er + than: fast → faster than.",
+     "p": [
+      "fast",
+      "er"
+     ],
+     "x": [
+      "est",
+      "ly"
+     ],
+     "id": "a1.2.3",
+     "say": "A cheetah is faster than a horse.",
+     "ask": "A cheetah is blank than a horse."
+    },
+    {
+     "s": "My cat is ___ than my dog.",
+     "root": "SMALL",
+     "ans": [
+      "smaller"
+     ],
+     "tip": "Comparing two pets: small → smaller than.",
+     "p": [
+      "small",
+      "er"
+     ],
+     "x": [
+      "est",
+      "s"
+     ],
+     "id": "a1.2.4",
+     "say": "My cat is smaller than my dog.",
+     "ask": "My cat is blank than my dog."
+    },
+    {
+     "s": "Winter is ___ than summer.",
+     "root": "COLD",
+     "ans": [
+      "colder"
+     ],
+     "tip": "-er + than compares two things: cold → colder than.",
+     "p": [
+      "cold",
+      "er"
+     ],
+     "x": [
+      "est",
+      "y"
+     ],
+     "id": "a1.2.5",
+     "say": "Winter is colder than summer.",
+     "ask": "Winter is blank than summer."
+    },
+    {
+     "s": "The giraffe has the ___ neck of all the animals.",
+     "root": "LONG",
+     "ans": [
+      "longest"
+     ],
+     "tip": "the … of all = number one, so -est: long → the longest.",
+     "p": [
+      "long",
+      "est"
+     ],
+     "x": [
+      "er",
+      "s"
+     ],
+     "id": "a1.2.6",
+     "say": "The giraffe has the longest neck of all the animals.",
+     "ask": "The giraffe has the blank neck of all the animals."
+    },
+    {
+     "s": "This bag is ___ than that one.",
+     "root": "LIGHT",
+     "ans": [
+      "lighter"
+     ],
+     "tip": "Comparing two bags: light → lighter than.",
+     "p": [
+      "light",
+      "er"
+     ],
+     "x": [
+      "est",
+      "s"
+     ],
+     "id": "a1.2.7",
+     "say": "This bag is lighter than that one.",
+     "ask": "This bag is blank than that one."
+    },
+    {
+     "s": "My teacher is the ___ person I know.",
+     "root": "KIND",
+     "ans": [
+      "kindest"
+     ],
+     "tip": "the + -est = the most of all: kind → the kindest.",
+     "p": [
+      "kind",
+      "est"
+     ],
+     "x": [
+      "er",
+      "ness"
+     ],
+     "id": "a1.2.8",
+     "say": "My teacher is the kindest person I know.",
+     "ask": "My teacher is the blank person I know."
+    }
+   ]
+  },
+  {
+   "id": "a1.3",
+   "icon": "🎨",
+   "name": "Who Does It?",
+   "focus": "teacher · farmer · singer",
+   "items": [
+    {
+     "s": "My mum is a ___. She teaches children.",
+     "root": "TEACH",
+     "ans": [
+      "teacher"
+     ],
+     "tip": "Add -er to a doing word to name the person: teach → teacher.",
+     "p": [
+      "teach",
+      "er"
+     ],
+     "x": [
+      "est",
+      "ing"
+     ],
+     "id": "a1.3.1",
+     "say": "My mum is a teacher. She teaches children.",
+     "ask": "My mum is a blank. She teaches children."
+    },
+    {
+     "s": "The ___ has lots of cows and pigs.",
+     "root": "FARM",
+     "ans": [
+      "farmer"
+     ],
+     "tip": "A person who works on a farm is a farmer (farm + -er).",
+     "p": [
+      "farm",
+      "er"
+     ],
+     "x": [
+      "est",
+      "s"
+     ],
+     "id": "a1.3.2",
+     "say": "The farmer has lots of cows and pigs.",
+     "ask": "The blank has lots of cows and pigs."
+    },
+    {
+     "s": "Lily sings very well. She is a great ___.",
+     "root": "SING",
+     "ans": [
+      "singer"
+     ],
+     "tip": "A person who sings is a singer (sing + -er).",
+     "p": [
+      "sing",
+      "er"
+     ],
+     "x": [
+      "est",
+      "ing"
+     ],
+     "id": "a1.3.3",
+     "say": "Lily sings very well. She is a great singer.",
+     "ask": "Lily sings very well. She is a great blank."
+    },
+    {
+     "s": "Tom is a football ___.",
+     "root": "PLAY",
+     "ans": [
+      "player"
+     ],
+     "tip": "A person who plays a sport is a player (play + -er).",
+     "p": [
+      "play",
+      "er"
+     ],
+     "x": [
+      "est",
+      "ful"
+     ],
+     "id": "a1.3.4",
+     "say": "Tom is a football player.",
+     "ask": "Tom is a football blank."
+    },
+    {
+     "s": "The ___ painted a picture of the sea.",
+     "root": "PAINT",
+     "ans": [
+      "painter"
+     ],
+     "tip": "A person who paints is a painter (paint + -er).",
+     "p": [
+      "paint",
+      "er"
+     ],
+     "x": [
+      "est",
+      "s"
+     ],
+     "id": "a1.3.5",
+     "say": "The painter painted a picture of the sea.",
+     "ask": "The blank painted a picture of the sea."
+    },
+    {
+     "s": "I am a good ___. I love books!",
+     "root": "READ",
+     "ans": [
+      "reader"
+     ],
+     "tip": "A person who reads is a reader (read + -er).",
+     "p": [
+      "read",
+      "er"
+     ],
+     "x": [
+      "est",
+      "ing"
+     ],
+     "id": "a1.3.6",
+     "say": "I am a good reader. I love books!",
+     "ask": "I am a good blank. I love books!"
+    },
+    {
+     "s": "The ___ swims very fast.",
+     "root": "SWIM",
+     "ans": [
+      "swimmer"
+     ],
+     "tip": "swim ends in one vowel + one consonant, so double the m: swim → swimmer.",
+     "p": [
+      "swimm",
+      "er"
+     ],
+     "x": [
+      "est",
+      "ing"
+     ],
+     "id": "a1.3.7",
+     "say": "The swimmer swims very fast.",
+     "ask": "The blank swims very fast."
+    },
+    {
+     "s": "The ___ drives the bus to school.",
+     "root": "DRIVE",
+     "ans": [
+      "driver"
+     ],
+     "tip": "drive already ends in e, so just add -r: drive → driver.",
+     "p": [
+      "drive",
+      "r"
+     ],
+     "x": [
+      "er",
+      "s"
+     ],
+     "id": "a1.3.8",
+     "say": "The driver drives the bus to school.",
+     "ask": "The blank drives the bus to school."
+    }
+   ]
+  }
+ ]
+}

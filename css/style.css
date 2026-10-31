@@ -616,3 +616,9 @@ img.acc-prev{width:72px;height:72px;object-fit:contain;display:block;margin:4px 
 .sw-tip{margin-top:6px;font-weight:700}
 .sw-also{margin-top:4px;font-size:.85rem;font-weight:700}
 .sw-acts{justify-content:flex-end;gap:8px;margin-top:10px}
+/* ⚒️ Word Forge (js/forge.js): the shared sw-* gap-round look (js/gap-round.js) + a warm forge tile and the root-word chip */
+.skill-card.forge-tile{background:linear-gradient(150deg,#FFEFE3,#FFF8D9 55%,#FFE6EF)}
+.fg-cue{margin:6px 0 2px}.fg-root{font-size:1.35rem;padding:6px 18px}
+.fg-s p{font-size:1.15rem}
+.fg-s .sw-chip{padding:2px 6px}
+.fg-s .sw-gap{gap:2px}

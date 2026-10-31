@@ -41,7 +41,8 @@ const QUEST_POOL = [
   { id: "clock1", icon: "🕰️", label: "Count, wind or set a clock in the Clock Workshop (Grades 1–3 maths)", goal: 1, reward: 5 },
   { id: "phonics1", icon: "🔤", label: "Walk a step of the A1 Phonics Path", goal: 1, reward: 5 },
   { id: "charm1", icon: "🔮", label: "Catch or polish your Word Charms (finish a round)", goal: 1, reward: 5 },
-  { id: "swap1", icon: "🔀", label: "Finish a Spell Swap book (same meaning, new words)", goal: 1, reward: 5 }
+  { id: "swap1", icon: "🔀", label: "Finish a Spell Swap book (same meaning, new words)", goal: 1, reward: 5 },
+  { id: "forge1", icon: "⚒️", label: "Finish a Word Forge anvil (make the right form of a word)", goal: 1, reward: 5 }
 ];
 Object.assign(WR, { SKILLS, PETS, AVATARS, QUEST_POOL, data: {}, manifest: null, screens: {} });
 
@@ -91,7 +92,7 @@ function freshState() {
     progress: {}, owned: [], equipped: { outfit: null, petskin: null, theme: null },
     settings: { rate: 0.9, sound: true, unlockAll: false }, mistakes: [], lessonsDone: 0,
     speaking: freshSpeaking(), writing: freshWriting(), math: freshMath(),
-    stories: BLOCKS.stories.fresh(), report: freshReport(), phonics: BLOCKS.phonics.fresh(), charms: BLOCKS.charms.fresh(), swap: BLOCKS.swap.fresh(), earn: freshEarn(),
+    stories: BLOCKS.stories.fresh(), report: freshReport(), phonics: BLOCKS.phonics.fresh(), charms: BLOCKS.charms.fresh(), swap: BLOCKS.swap.fresh(), forge: BLOCKS.forge.fresh(), earn: freshEarn(),
     looks: {}, stable: [], rewards: { got: [], chest: { last: null, n: 0 }, caughtUp: true }
   };
 }
@@ -111,12 +112,14 @@ const earnHash = k => { let h = 2166136261; k = String(k); for (let i = 0; i < k
    stories 📜 (js/story.js): best per chapter ({ a1: { best, crowns, plays, at } }), glossary words looked up, reads
    phonics 🔤 (js/phonics.js): best result per step ({ u1: { best, crowns, plays, at } }), rounds played, letter-tile taps
    charms 🔮 (js/charms.js): one card per caught word ({ "a1:apple": { b: box 0–5, d: due time, r, w, at } }), rounds, last level
-   swap 🔀 (js/swap.js): best result per Spell Swap book ({ "b2.1": { best, crowns, plays, at } }), rounds, last level */
+   swap 🔀 (js/swap.js): best result per Spell Swap book ({ "b2.1": { best, crowns, plays, at } }), rounds, last level
+   forge ⚒️ (js/forge.js): best result per Word Forge anvil (same shape as swap), rounds, last level */
 const BLOCKS = {
   stories: { fresh: () => ({ done: {}, words: {}, reads: 0 }), maps: ["done", "words"] },
   phonics: { fresh: () => ({ done: {}, rounds: 0, taps: 0 }), maps: ["done"] },
   charms: { fresh: () => ({ cards: {}, rounds: 0, lvl: null }), maps: ["cards"] },
-  swap: { fresh: () => ({ done: {}, rounds: 0, lvl: null }), maps: ["done"] }
+  swap: { fresh: () => ({ done: {}, rounds: 0, lvl: null }), maps: ["done"] },
+  forge: { fresh: () => ({ done: {}, rounds: 0, lvl: null }), maps: ["done"] }
 };
 const fixBlock = (s, k) => { const b = BLOCKS[k], v = s[k]; s[k] = Object.assign(b.fresh(), v && typeof v === "object" ? v : {}); for (const m of b.maps) s[k][m] = s[k][m] || {}; return s[k]; };
 WR.BLOCKS = BLOCKS;
@@ -484,11 +487,11 @@ WR.recordLesson = (rid, key, score) => {
   s.progress[rid][key] = prev; s.lessonsDone++; WR.save();
 };
 // every English skill a lesson, Mistake Garden plant or report row can name (core four + bonus skills, loaded later)
-WR.allSkills = () => SKILLS.concat(WR.SPEAKING || [], WR.WRITING || [], WR.STORY || [], WR.PHONICS || [], WR.CHARMS || [], WR.SWAP || []);
+WR.allSkills = () => SKILLS.concat(WR.SPEAKING || [], WR.WRITING || [], WR.STORY || [], WR.PHONICS || [], WR.CHARMS || [], WR.SWAP || [], WR.FORGE || []);
 WR.skillInfo = id => WR.allSkills().find(x => x.id === id) || { id, name: id, icon: "✨" };
 WR.levelOf = rid => { const r = WR.realms && WR.realms.find(y => y.id === rid); return r ? r.level : ""; };
 WR.crowns = score => score >= 0.9 ? 3 : score >= 0.7 ? 2 : score >= 0.5 ? 1 : 0;
-// 🏁 the end of a crowned unit (a Storybook chapter, a Phonics Path step, a Spell Swap book): keeps the best in done[id] = { best, crowns, plays, at },
+// 🏁 the end of a crowned unit (a Storybook chapter, a Phonics Path step, a Spell Swap book, a Word Forge anvil): keeps the best in done[id] = { best, crowns, plays, at },
 // counts the lesson and pays the first finish (1⭐ per right answer + 3⭐) and each NEW crown (2⭐), once ever (kind "fresh").
 WR.finishUnit = (done, id, right, n, source) => {
   const prev = done[id], score = right / n, crowns = WR.crowns(score), top = Math.max(crowns, prev ? prev.crowns : 0);
