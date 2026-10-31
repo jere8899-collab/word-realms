@@ -89,7 +89,7 @@ const MOCK = () => {
   await page.screenshot({ path: OUT + 'speaking_01_a1_prompt.png' });
   const dbg = () => page.evaluate(() => WR._echoDbg());
   const say = async alts => { await page.evaluate(a => { window.__sr.alts = a; window.__sr.deny = false; }, alts); await page.click('#micBtn', { force: true }); await page.waitForSelector('#echoResult .echo-stars', { timeout: 5000 }); await page.waitForTimeout(150); };
-  const litStars = () => page.$eval('.echo-stars', e => (e.childNodes[0].nodeType === 3 ? [...e.childNodes[0].textContent].filter(c => c === '⭐').length : 0));
+  const litStars = () => page.$eval('.echo-stars', e => [...e.childNodes].filter(n => n.nodeName !== 'SPAN').map(n => n.nodeType === 3 ? n.textContent : (n.dataset && n.dataset.e) || '').join('').split('').filter(c => c === '⭐').length);   // lit stars sit before the faded <span>; they render as painted icons
   // 1) perfect transcript (as 2nd alternative, behind a bad one)
   let it = (await dbg()).item, stars0 = await page.evaluate(() => WR.state.stars);
   await say(['completely different words', it.text.replace(/[.,!?]/g, '')]);
@@ -133,7 +133,7 @@ const MOCK = () => {
   await page.click('#waterBtn'); await page.waitForSelector('#pool .tile');
   assert(true, 'garden review round opens the speaking card as a sentence builder');
   await page.evaluate(() => WR.go('realm', 'a1')); await page.waitForSelector('[data-speak] .crowns');
-  assert(/👑/.test(await page.$eval('[data-speak] .crowns', e => e.textContent)), 'Speaking tile shows crowns');
+  assert(/👑/.test(await page.$eval('[data-speak] .crowns', e => WR.iconText(e))), 'Speaking tile shows crowns');
 
   // ---- C2 read-aloud + C1 answer prompt ----
   await page.evaluate(async () => { const b = await WR.bank('c2', 'speaking'); WR.startSpeaking('c2', { items: [b.find(x => x.id === 'c2-sp17'), b.find(x => x.type === 'answer')] }); });

@@ -365,7 +365,7 @@ function finish(lost) {
   WR.$("#again").onclick = () => opts.replay ? opts.replay() : WR.startLesson({ realm: opts.realm.id, skill: opts.skill, key: opts.key, title: opts.title });
   const bk = WR.$("#back"); if (bk) bk.onclick = () => WR.go("realm", opts.realm.id);
   WR.$("#nextStep").onclick = () => opts.onNext ? opts.onNext() : opts.review ? WR.go("review") : nx ? WR.startLesson({ realm: opts.realm.id, skill: nx.id, key: nx.id, title: `${nx.name} · ${opts.realm.modeName}` }) : WR.go("realm", opts.realm.id);
-  if (lv && lv.evolved) setTimeout(() => WR.modal(`<h2>✨ Evolution! ✨</h2><div class="petbox cheer" style="width:180px;height:180px;margin:auto">${WR.petHTML()}</div><p><b>${WR.esc(WR.state.pet.name)}</b> became <b>${WR.petInfo().stages[WR.petStage(lv.level)]}</b>!</p><button class="btn" onclick="this.closest('.modal-bg').remove()">Hooray!</button>`), 600);
+  if (lv && lv.evolved) setTimeout(() => WR.modal(`<h2>✨ Evolution! ✨</h2><div class="petbox cheer" style="width:180px;height:180px;margin:auto">${WR.petHTML()}</div><p><b>${WR.userText(WR.state.pet.name)}</b> became <b>${WR.petInfo().stages[WR.petStage(lv.level)]}</b>!</p><button class="btn" onclick="this.closest('.modal-bg').remove()">Hooray!</button>`), 600);
 }
 // the next core skill to play in a realm: first one never played, else the weakest (lowest best score); never the one just played
 WR.nextSkill = (rid, justPlayed) => {

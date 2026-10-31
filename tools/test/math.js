@@ -169,7 +169,7 @@ async function answerCurrent(page, right, phone) {
   const qp = id => sv.daily.quests.find(q => q.id === id).progress;
   ok(qp('math1') === 1 && qp('lesson2') === 1 && qp('dojo1') === 0, 'phone: a maths lesson fills the 🔢 maths and 📚 lessons daily quests');
   await p.click('#back'); await p.waitForTimeout(300);
-  ok(/👑/.test(await p.textContent('[data-t="g2.add"]')), 'phone: the topic tile shows the new crowns');
+  ok(/👑/.test(await p.$eval('[data-t="g2.add"]', e => WR.iconText(e))), 'phone: the topic tile shows the new crowns');
   // G11 lesson with notation
   await p.click('.gchip[data-g="11"]'); await p.waitForTimeout(300);
   await p.evaluate(() => { const MG = window.MathGen; WR.Math.startLesson({ topic: 'g11.vec3', items: [MG.make('g11.vec3', 6), MG.make('g11.gp', 13), MG.make('g11.explog', 5), MG.make('g11.diff', 3), MG.make('g11.func', 2), MG.make('g11.ap', 7), MG.make('g11.stationary', 9), MG.make('g11.story', 4)] }); });

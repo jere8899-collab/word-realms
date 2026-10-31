@@ -134,7 +134,7 @@ function finish() {
     <h2 style="margin:.4em 0 .1em">📄 Page ${num} restored!</h2><p class="muted" style="font-weight:800;margin:0">Chapter ${num}: ${WR.esc(ch.title)}</p>
     <div class="fb-crowns">${WR.crownRow(crowns)}</div>
     <p><b>${S.correct}/5</b> questions right${stars ? ` · <b>+${stars} ⭐</b>` : " · stars already collected (new crowns still pay)"}${lv ? ` · ${WR.esc(petName())} reached Lv ${lv.level}!` : ""}</p>
-    <div class="book-pages">${WR.realms.map((x, i) => `<span class="bp ${st().done[x.id] ? "on" : ""}" title="${x.name}">${st().done[x.id] ? "📄" : "▫️"}<small>${i + 1}</small></span>`).join("")}</div>
+    <div class="book-pages">${WR.realms.map((x, i) => `<span class="bp ${st().done[x.id] ? "on" : ""}" title="${x.name}">${st().done[x.id] ? WR.icon("📄", "", "page found") : WR.icon("📄", "dim", "page not found yet")}<small>${i + 1}</small></span>`).join("")}</div>
     <p class="muted" style="font-weight:800">${found >= 6 ? "🌟 The Starlight Storybook is whole again! You finished the tale." : `The Starlight Storybook has ${found} of 6 pages. ${num < 6 ? "The next chapter waits in the next realm." : "Find the missing chapters in the other realms."}`}</p>
     <div class="row" style="justify-content:center"><button class="btn ghost" id="again">📖 Read again</button><button class="btn" id="toRealm">Back to ${WR.esc(r.name)}</button></div></div></div>`);
   WR.$("#again").onclick = () => WR.startStory(r.id);

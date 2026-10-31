@@ -114,7 +114,7 @@ const smallTaps = page => page.evaluate(() => [...document.querySelectorAll('#ma
   await p.evaluate(l => WR.Math.startLesson({ topic: 'g3.clock', items: l.map(([t, s]) => MathGen.make(t, s)) }), list); await p.waitForTimeout(300);
   // 1 read: count the minutes
   const q1 = await p.evaluate(() => WR.Math._dbg());
-  ok((await p.textContent('#vizBtn')).includes('🕰️ Clock') && await p.locator('#mviz svg').count() === 0, `read "${q1.a}": a 🕰️ Clock button; the workshop waits until asked`);
+  ok((await p.$eval('#vizBtn', e => WR.iconText(e))).replace(/\uFE0F/g, '').includes('🕰 Clock') && await p.locator('#mviz svg').count() === 0, `read "${q1.a}": a 🕰️ Clock button; the workshop waits until asked`);
   await p.click('#vizBtn'); await p.waitForTimeout(300);
   ok(await p.locator('#mviz .mv-clock-read').count() === 1 && !(await p.locator('.qcard > .qpic').isVisible()), 'the counting clock opens in place of the question picture');
   await p.click('#mviz [data-ck="5"]'); await p.click('#mviz [data-ck="5"]'); await p.waitForTimeout(150);

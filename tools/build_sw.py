@@ -12,6 +12,7 @@ for d in ("data",):
     for dp, _, fs in os.walk(d):
         files += [os.path.join(dp, f) for f in sorted(fs) if f.endswith(".json")]
 files += ["assets/web/" + f for f in sorted(os.listdir("assets/web")) if f.endswith(".webp") and not f.endswith("_1280.webp")]
+files += ["assets/icons/" + f for f in sorted(os.listdir("assets/icons")) if f.endswith(".webp")]   # painted UI icons (js/icons.js)
 files += ["assets/ui/icon-192.png", "assets/ui/icon-512.png"]
 files = list(dict.fromkeys(files))
 h = hashlib.sha256()

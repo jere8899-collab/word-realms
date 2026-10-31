@@ -88,7 +88,7 @@ const noOverflow = page => page.evaluate(() => document.documentElement.scrollWi
   await p.evaluate(list => { const items = list.map(([t, s]) => MathGen.make(t, s)); WR.Math.startLesson({ topic: list[0][0], items }); }, [['g7.lineq', s1], ['g8.fraceq', s2], ['g7.lineq', s3], ['g9.quad', 3]]);
   await p.waitForTimeout(300);
   const q1 = await p.evaluate(() => WR.Math._dbg()), sp1 = V.spec(q1);
-  ok((await p.textContent('#vizBtn')).includes('⚖️ Balance') && await p.locator('#mviz svg').count() === 0, `phone: Grade 7 "${q1.q}" has a ⚖️ Balance button; the scale waits until asked`);
+  ok((await p.$eval('#vizBtn', e => WR.iconText(e))).replace(/\uFE0F/g, '').includes('⚖ Balance') && await p.locator('#mviz svg').count() === 0, `phone: Grade 7 "${q1.q}" has a ⚖️ Balance button; the scale waits until asked`);
   await p.click('#vizBtn'); await p.waitForTimeout(500);
   ok(await p.locator('#mviz .mv-balance').count() === 1 && await p.locator('#mviz .bmove').count() === 3, 'phone: the balance scale opens with 3 move buttons');
   ok(await noOverflow(p), 'phone 375×667: no horizontal overflow with the scale open');

@@ -152,7 +152,7 @@ On balance, I believe that education is the more important method. Not only does
   assert(g.marks >= 4, 'flagged spans highlighted in the text');
   assert(g.m.length >= 1 && g.m.some(s => /My brother has a cold and he goes to the doctor\./.test(s)), 'corrected sentence planted in the garden as a sentence-builder card');
   await page.evaluate(() => WR.go('review')); await page.waitForSelector('.plot');
-  assert(await page.evaluate(() => [...document.querySelectorAll('.plot')].some(p => p.textContent.includes('✒️'))), 'garden shows the writing card with the ✒️ icon');
+  assert(await page.evaluate(() => [...document.querySelectorAll('.plot')].some(p => WR.iconText(p).includes('✒️'))), 'garden shows the writing card with the ✒️ icon');
 
   // ---- 5. C1 flow + desktop feedback screenshot ----
   await page.evaluate(() => WR.go('realm', 'c1')); await page.waitForSelector('[data-write]'); await page.click('[data-write]');

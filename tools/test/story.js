@@ -36,7 +36,7 @@ const SAVE = JSON.stringify({ v: 1, name: 'Jeremy', avatar: 'avatar_mage', start
   const page = await open({ width: 1200, height: 860 });
   const st0 = await page.evaluate(() => WR.state.stories);
   assert(st0 && typeof st0.done === 'object' && typeof st0.words === 'object', 'old save gains an empty stories block');
-  assert(await page.locator('#bookPill').innerText() === '📜 Storybook 0/6 pages', 'map shows the Storybook pill (0/6)');
+  assert((await page.$eval('#bookPill', e => WR.iconText(e))).trim() === '📜 Storybook 0/6 pages', 'map shows the Storybook pill (0/6)');
   await page.evaluate(() => WR.go('realm', 'a1')); await page.waitForTimeout(400);
   assert(await page.locator('.story-tile').count() === 1, 'realm screen has a Story tile');
   await clean(page); await page.screenshot({ path: OUT + 'story_01_tile.png' });
@@ -73,7 +73,7 @@ const SAVE = JSON.stringify({ v: 1, name: 'Jeremy', avatar: 'avatar_mage', start
   const c2 = await page.locator('#storyText').innerText();
   assert(c2.includes('Starlight Library') && /resurface/.test(c2), 'C2 chapter loads');
   await page.evaluate(() => WR.go('home')); await page.waitForTimeout(300);
-  assert(await page.locator('#bookPill').innerText() === '📜 Storybook 1/6 pages', 'pill updates to 1/6');
+  assert((await page.$eval('#bookPill', e => WR.iconText(e))).trim() === '📜 Storybook 1/6 pages', 'pill updates to 1/6');
   await page.locator('#bookPill').click(); await page.waitForSelector('.book-list');
   assert(await page.locator('.book-row').count() === 6, 'Storybook modal lists 6 chapters');
   await clean(page); await page.screenshot({ path: OUT + 'story_05_book.png' });

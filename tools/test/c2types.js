@@ -68,7 +68,7 @@ const vis = () => { const out = []; document.querySelectorAll('.qcard button, .q
         await page.click('#checkBtn');
       }
       await page.waitForTimeout(200);
-      const ex = await page.$eval('#explain', e => e.innerText);
+      const ex = await page.$eval('#explain', e => (window.WR && WR.iconText ? (() => { const c = e.cloneNode(true); c.querySelectorAll('img.wr-icon[data-e]').forEach(i => i.replaceWith(i.dataset.e)); return c.innerText || c.textContent; })() : e.innerText));
       ok(right ? /Correct/.test(ex) : /Not quite/.test(ex), `${tag} ${name} ${right ? 'right' : 'wrong'} → ${ex.slice(0, 60).replace(/\n/g, ' ')}`);
       if (!right && t !== 'listen' && t !== 'picq') { const shown = t === 'mistake' ? raw.fix : t === 'gaps' ? raw.answers[0] : raw.answer; ok(ex.includes(shown) || ex.includes(shown.split(' ')[0]), `${tag} ${name}: wrong answer shows the right one (${shown})`); }
       if (raw.say) ok(/🎧/.test(ex), `${tag} ${name}: transcript after answering`);

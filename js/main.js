@@ -9,9 +9,9 @@ WR.renderTop = () => {
   const t = WR.$("#top"); if (!t || !WR.state.pet) return;
   const s = WR.state;
   t.innerHTML = `<div class="topbar">${WR.asset(s.avatar) ? WR.img(s.avatar, "mini-av") : '<img class="mini-av" alt="">'}
-    <div class="brand">Word Realms <small>${WR.esc(s.name)}</small></div>
-    <div class="chips"><span class="chip star" id="starChip">⭐ ${s.stars}</span><span class="chip fire" title="Daily streak">🔥 ${WR.streakAlive()}</span>
-    ${WR.Cloud ? WR.Cloud.chipHTML() : ""}<button class="chip" id="setBtn" aria-label="Settings">⚙️</button></div></div>`;
+    <div class="brand">Word Realms <small>${WR.userText(s.name)}</small></div>
+    <div class="chips"><span class="chip star" id="starChip">${WR.icon("⭐", "", "stars")} ${s.stars}</span><span class="chip fire" title="Daily streak">${WR.icon("🔥", "", "streak")} ${WR.streakAlive()}</span>
+    ${WR.Cloud ? WR.Cloud.chipHTML() : ""}<button class="chip" id="setBtn" aria-label="Settings">${WR.icon("⚙️", "", "")}</button></div></div>`;
   WR.$("#setBtn").onclick = settings;
   if (WR.Cloud) { WR.$("#cloudChip").onclick = () => WR.Cloud.open(); WR.Cloud.paint(); }
   WR.Garden && WR.Garden.badge();
@@ -20,7 +20,7 @@ const NAV = [["home", "🗺️", "Map"], ["math", "🔢", "Maths"], ["pet", "�
 WR.navActive = k => document.querySelectorAll("#navbar button").forEach(b => b.classList.toggle("on", b.dataset.k === k));
 function renderNav() {
   const n = WR.$("#navbar"); n.style.display = "flex";
-  n.innerHTML = NAV.map(([k, i, l]) => `<button data-k="${k}"><span>${i}</span>${l}</button>`).join("");
+  n.innerHTML = NAV.map(([k, i, l]) => `<button data-k="${k}"><span>${WR.icon(i, "", "")}</span>${l}</button>`).join("");
   // one delegated listener on the bar itself, so no screen can overwrite a tab button's handler
   if (!n.dataset.wired) { n.dataset.wired = "1"; n.addEventListener("click", e => { const b = e.target.closest("button[data-k]"); if (b && n.contains(b)) WR.go(b.dataset.k); }); }
 }
@@ -110,7 +110,7 @@ WR.screens.home = () => {
   const qs = s.daily.quests.map(q => { const d = WR.questDef(q.id); return `<div class="q"><span class="qi">${d.icon}</span><div class="qb"><b>${d.label}</b><div class="prog"><i style="width:${q.progress / d.goal * 100}%"></i></div></div>
     ${q.claimed ? '<span class="pill" style="background:var(--mint)">Done ✓</span>' : q.progress >= d.goal ? `<button class="btn small mint claim" data-id="${q.id}">Claim ${d.reward}⭐</button>` : `<span class="pill">${q.progress}/${d.goal} · ${d.reward}⭐</span>`}</div>`; }).join("");
   WR.view(`<div class="fade-in"><div class="card homehead"><div class="av-big">${WR.avatarHTML(110)}</div>
-    <div><h1 style="margin:0">Hello, <span class="hero-nm">${WR.esc(s.name)}</span>! 🌸 <button class="chip hero-edit" id="heroEditHome" aria-label="Change my hero name" title="Change my hero name">✏️</button></h1><div class="muted" style="font-weight:800">${WR.esc(s.pet.name)} says: “${WR.esc(WR.petMood())}”</div>
+    <div><h1 style="margin:0">Hello, <span class="hero-nm">${WR.userText(s.name)}</span>! 🌸 <button class="chip hero-edit" id="heroEditHome" aria-label="Change my hero name" title="Change my hero name">✏️</button></h1><div class="muted" style="font-weight:800">${WR.userText(s.pet.name)} says: “${WR.esc(WR.petMood())}”</div>
     <div class="row" style="margin-top:6px"><span class="pill">✅ ${s.totalCorrect} correct answers</span>${WR.STORY ? `<span class="pill" id="bookPill" style="background:#FFF1D6;cursor:pointer">📜 Storybook ${WR.storyPagesFound()}/6 pages</span>` : ""}${s.placement ? `<span class="pill mirror-pill" id="mirrorPill" style="background:#F3ECFF;cursor:pointer">🪞 Mirror says ${s.placement.level.toUpperCase()}</span>` : `<span class="pill mirror-pill" id="mirrorPill" style="background:#F3ECFF;cursor:pointer">🪞 Find my level</span>`}</div></div></div>
     ${cont ? `<div class="card continue" id="continueCard"><div class="ct"><b>${cont.realm.emoji} ${cont.realm.level} ${WR.esc(cont.skill.name)} <span style="font-weight:700">(lesson ${cont.lesson})</span></b><small>${WR.esc(cont.goal)}</small></div><button class="btn mint" id="continueBtn">▶ Continue</button></div>` : ""}
     <div class="grid g2" style="margin-top:14px;align-items:start">
@@ -124,10 +124,10 @@ WR.screens.home = () => {
       ${WR.Math ? `<div class="card math-node" id="mathNode" style="margin-top:14px">${WR.img("bg_math", "thumb", "", true)}<div style="flex:1"><div><span class="lvl-badge">G1–12</span><b>🔢 Number Kingdom</b></div><div class="muted" style="font-size:.85rem;font-weight:700">Maths quests + 🗼 Times-Table Tower</div><div class="muted" style="font-size:.75rem;font-weight:800">👑 ${WR.Math.totalCrowns()} crowns · 🌟 ${WR.Math.mastered()}/132 facts${s.math && s.math.grade ? ` · Grade ${s.math.grade}` : ""}</div></div></div>` : ""}</div>
       <div><div id="homeGoals"></div><h2>🎯 Daily Quests</h2><div class="card quests">${qs}<p class="muted" style="font-size:.8rem;font-weight:700;margin-bottom:0">New quests every day. Keep your 🔥 streak by finishing one lesson a day!</p></div>
       ${due ? `<div class="card row garden-nudge" id="gardenNudge"><span style="font-size:2rem">💧</span><div style="flex:1"><b>${due} plant${due > 1 ? "s" : ""} in your Mistake Garden ${due > 1 ? "are" : "is"} thirsty</b><div class="muted" style="font-size:.85rem;font-weight:700">A quick review helps tricky words stick.</div></div><button class="btn small mint">Water →</button></div>` : ""}
-      <h2>🐾 ${WR.esc(s.pet.name)}</h2><div class="card row" style="cursor:pointer" id="petCard"><div style="width:110px;height:110px">${WR.petHTML()}</div><div style="flex:1">
+      <h2>🐾 ${WR.userText(s.pet.name)}</h2><div class="card row" style="cursor:pointer" id="petCard"><div style="width:110px;height:110px">${WR.petHTML()}</div><div style="flex:1">
         <div class="stat" style="grid-template-columns:24px 1fr 34px"><span>💖</span><div class="prog" style="margin:0"><i style="width:${s.pet.happiness}%"></i></div><span>${Math.round(s.pet.happiness)}</span></div>
         <div class="stat" style="grid-template-columns:24px 1fr 34px"><span>🍽️</span><div class="prog" style="margin:0"><i style="width:${100 - s.pet.hunger}%;background:linear-gradient(90deg,#FFE29A,#FFB48A)"></i></div><span>${Math.round(100 - s.pet.hunger)}</span></div>
-        <button class="btn small">Visit ${WR.esc(s.pet.name)} →</button></div></div></div></div></div>`);
+        <button class="btn small">Visit ${WR.userText(s.pet.name)} →</button></div></div></div></div></div>`);
   document.querySelectorAll(".realm-node").forEach(n => n.onclick = () => {
     if (n.classList.contains("locked")) { const prev = WR.realms[+n.dataset.i - 1]; return WR.toast(`🔒 Pass 3 of 4 skills in ${prev.name} to unlock!`, 2400); }
     WR.go("realm", n.dataset.r);
@@ -211,7 +211,7 @@ WR.openRename = () => {
 function settings() {
   const s = WR.state;
   WR.modal(`<h2>⚙️ Settings</h2>
-    <div class="row hero-row" style="justify-content:space-between;margin-bottom:8px"><b>🦸 Hero name</b><span class="hero-cur"><span id="heroCur">${WR.esc(s.name)}</span> <button class="btn ghost small" id="heroEdit">✏️ Change</button></span></div>
+    <div class="row hero-row" style="justify-content:space-between;margin-bottom:8px"><b>🦸 Hero name</b><span class="hero-cur"><span id="heroCur">${WR.userText(s.name)}</span> <button class="btn ghost small" id="heroEdit">✏️ Change</button></span></div>
     <label class="set-row"><span>🔊 Sound effects</span><input type="checkbox" id="snd" ${s.settings.sound ? "checked" : ""}></label>
     <div class="set-row" style="cursor:default"><span>🗣️ Listening speed</span><input type="range" class="slider" id="rt" min="0.5" max="1.3" step="0.1" value="${s.settings.rate}" aria-label="Listening speed"></div>
     <div class="row" style="justify-content:center;margin-top:16px"><button class="btn ghost small grownups-btn" id="guBtn">👪 Grown-ups</button><button class="btn ghost small" id="test">🔈 Test voice</button><button class="btn ghost small" id="plRe">🪞 Placement quiz</button>${WR.Cloud ? '<button class="btn ghost small" id="ccSet">🏰 Cloud save</button>' : ""}<button class="btn peach small" id="rst">Reset progress</button><button class="btn small" id="cls">Done</button></div>`, (bg, close) => {
