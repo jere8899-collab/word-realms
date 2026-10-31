@@ -1,9 +1,53 @@
 /* 🔢 Number Kingdom topics, Grades 1–4 (Singapore Primary 1–4). Each gen(r) gets a seeded rng and returns a question. */
 (function () {
 const M = (typeof module !== "undefined" && module.exports) ? require("./math-gen.js") : window.MathGen;
-const { Q, num, mcq, T, NAMES, THINGS, COUNT_EMOJI, svgClock, SHAPES, svgShape, svgPie, coin, emojiRows, colAdd, colSub, topic, gcd, lcm, rd, fmt, money, simp, fracTex, fracStr, mixedTex } = M._internal;
+const { Q, num, mcq, T, NAMES, THINGS, COUNT_EMOJI, svgClock, SHAPES, svgShape, svgPie, picto, svgBars, svgLine, table, coin, emojiRows, colAdd, colSub, topic, gcd, lcm, rd, fmt, money, simp, fracTex, fracStr, mixedTex } = M._internal;
 const pad = m => String(m).padStart(2, "0");
 const ord = k => k + (k % 100 >= 11 && k % 100 <= 13 ? "th" : ["th", "st", "nd", "rd"][k % 10] || "th");
+
+/* ---------- 📊 data analysis (MOE: P1 picture graphs, P2 picture graphs with scales, P3 bar graphs, P4 tables + line graphs) ---------- */
+// a theme is either a vote (categories are things children chose) or a collection (categories are friends who collected things)
+const VOTES = [
+  { title: "Favourite fruit at the Fairy Picnic", kind: "fruit", cats: [["Apple", "🍎"], ["Banana", "🍌"], ["Grapes", "🍇"], ["Berry", "🍓"], ["Cherry", "🍒"], ["Peach", "🍑"]] },
+  { title: "Favourite pets in Class 2B", kind: "pet", cats: [["Cat", "🐱"], ["Dog", "🐶"], ["Rabbit", "🐰"], ["Fish", "🐟"], ["Hamster", "🐹"], ["Bird", "🐦"]] },
+  { title: "Favourite rides at the Fairy Fair", kind: "ride", cats: [["Carousel", "🎠"], ["Big wheel", "🎡"], ["Coaster", "🎢"], ["Dodgems", "🚗"], ["Swan boat", "🦢"]] },
+  { title: "Favourite sports at Abacus School", kind: "sport", cats: [["Football", "⚽"], ["Swimming", "🏊"], ["Badminton", "🏸"], ["Basketball", "🏀"], ["Dance", "💃"]] },
+  { title: "Favourite treats at the Gingerbread Café", kind: "treat", cats: [["Cupcake", "🧁"], ["Cookie", "🍪"], ["Ice cream", "🍦"], ["Donut", "🍩"], ["Lollipop", "🍭"]] }
+];
+const FRIENDS = ["Mira", "Oli", "Pip", "Jack", "Goldie", "Rapunzel", "Aladdin"].map(n => [n, "🧚"]);
+const COLLECTS = [
+  { title: "Shells found on Mermaid Beach", unit: "shells", base: "find", past: "found", e: "🐚" },
+  { title: "Strawberries picked in Button Meadow", unit: "strawberries", base: "pick", past: "picked", e: "🍓" },
+  { title: "Cupcakes baked for the Royal Party", unit: "cupcakes", base: "bake", past: "baked", e: "🧁" },
+  { title: "Books read in the Fairy Library", unit: "books", base: "read", past: "read", e: "📚" },
+  { title: "Stickers earned in Number Kingdom", unit: "stickers", base: "earn", past: "earned", e: "⭐" }
+];
+// n different whole numbers between lo and hi (so "most" and "fewest" always have one answer)
+const distinct = (r, n, lo, hi) => r.shuffle(Array.from({ length: hi - lo + 1 }, (_, i) => lo + i)).slice(0, n);
+const graphTheme = (r, n) => {
+  if (r.chance(.5)) { const t = r.pick(VOTES), cats = r.shuffle(t.cats).slice(0, n).map(([name, e]) => ({ name, e, lab: `${e} ${name}` }));
+    return { title: t.title, unit: "children", cats, how: c => `How many children chose ${c.lab}?`, more: (a, b) => `How many more children chose ${a.lab} than ${b.lab}?`,
+      both: (a, b) => `How many children chose ${a.lab} or ${b.lab} altogether?`, all: "How many children voted altogether?", most: big => `Which ${t.kind} was chosen by the ${big ? "most" : "fewest"} children?`,
+      will: (c, v) => `${v} children chose ${c.lab}.` }; }
+  const t = r.pick(COLLECTS), cats = r.shuffle(FRIENDS).slice(0, n).map(([name]) => ({ name, e: t.e, lab: name }));
+  return { title: t.title, unit: t.unit, icon: t.e, cats, how: c => `How many ${t.unit} did ${c.name} ${t.base}?`, more: (a, b) => `How many more ${t.unit} did ${a.name} ${t.base} than ${b.name}?`,
+    both: (a, b) => `How many ${t.unit} did ${a.name} and ${b.name} ${t.base} altogether?`, all: `How many ${t.unit} were ${t.past} altogether?`, most: big => `Who ${t.past} the ${big ? "most" : "fewest"} ${t.unit}?`,
+    will: (c, v) => `${c.name} ${t.past} ${v} ${t.unit}.` };
+};
+// the shared question set for picture graphs and bar graphs; read(i) explains how to read one value off the graph
+const one = th => th.unit === "children" ? "child" : th.unit.replace(/ies$/, "y").replace(/s$/, "");
+const graphQ = (r, th, vals, pic, read, extra = {}) => {
+  const n = vals.length, i = r.int(0, n - 1), j = (i + r.int(1, n - 1)) % n, [a, b] = vals[i] >= vals[j] ? [i, j] : [j, i], c = th.cats, t = r.int(0, extra.inverse ? 5 : 4);
+  const o = { pic, data: { graph: extra.kind || "bars", vals, scale: extra.scale || 1, names: c.map(x => x.name) } };
+  if (t === 0) return num(th.how(c[i]), vals[i], extra.hint || "Find the row or bar, then read its value.", [read(i)], o);
+  if (t === 1) return num(th.more(c[a], c[b]), vals[a] - vals[b], "Read both values, then subtract the smaller from the bigger.", [read(a), read(b), `${vals[a]} − ${vals[b]} = ${vals[a] - vals[b]}`], o);
+  if (t === 2) return num(th.both(c[i], c[j]), vals[i] + vals[j], "Read both values, then add.", [read(i), read(j), `${vals[i]} + ${vals[j]} = ${vals[i] + vals[j]}`], o);
+  if (t === 3) { const tot = vals.reduce((x, y) => x + y, 0); return num(th.all, tot, "Read every value, then add them all.", [vals.join(" + ") + ` = ${tot}`], o); }
+  if (t === 4) { const big = r.chance(.5), k = vals.indexOf(big ? Math.max(...vals) : Math.min(...vals));
+    return mcq(r, th.most(big), c[k].lab, c.filter((_, x) => x !== k).map(x => x.lab), big ? "Look for the longest row or tallest bar." : "Look for the shortest row or bar.", [read(k), `${c[k].lab} has the ${big ? "most" : "fewest"}.`], o); }
+  const s = extra.scale, k = r.int(2, 9), v = k * s; // inverse: how many pictures to draw
+  return num(`Fairy Pip makes a new picture graph with the same key. ${th.will(c[i], v)} How many ${th.icon || c[i].e} should Pip draw for ${c[i].lab}?`, k, `Each picture stands for ${s}. How many ${s}s make ${v}?`, [`${v} ÷ ${s} = ${k}`, `Draw ${k} pictures.`], o);
+};
 
 /* ---------- Grade 1 (Primary 1) ---------- */
 topic(1, "count", "Counting Stars", "⭐", "Count objects up to 20", r => {
@@ -42,6 +86,11 @@ topic(1, "time", "Clock Tower", "🕰️", "O'clock and half past", r => {
   const h = r.int(1, 12), m = r.pick([0, 30]);
   return Q({ q: "What time does the Clock Tower show? (type it like 3:30)", kind: "time", val: h * 60 + m, a: `${h}:${pad(m)}`, keys: [":"], pic: svgClock(h, m),
     hint: "The short hand shows the hour. The long hand on 12 means o'clock; on 6 means half past.", steps: [m ? `The long hand points to 6 → half past. The short hand is just past ${h}.` : `The long hand points to 12 → o'clock. The short hand points to ${h}.`, `It is ${m ? "half past " + h : h + " o'clock"} (${h}:${pad(m)}).`], data: { h, m } });
+});
+topic(1, "picgraph", "Picture Graphs", "🖼️", "Read a picture graph (1 picture = 1)", r => {
+  const th = graphTheme(r, r.int(3, 4)), vals = distinct(r, th.cats.length, 1, 8);
+  return graphQ(r, th, vals, picto(th.title, th.cats.map((c, i) => ({ name: c.lab, n: vals[i], e: c.e })), `Each picture stands for 1 ${one(th)}.`),
+    i => `${th.cats[i].lab}: count the pictures → ${vals[i]}`, { kind: "picto", hint: "Count the pictures in that row." });
 });
 topic(1, "story", "Fairytale Problems", "📜", "Word problems within 20", r => {
   const [th, e] = r.pick(THINGS), nm = r.pick(NAMES), t = r.int(0, 2);
@@ -89,6 +138,11 @@ topic(2, "frac", "Pizza Fractions", "🍕", "Halves, thirds and quarters", r => 
     return Q({ q: "What fraction of the pie is shaded pink? (type it like 1/4)", val: k / d, a: `${k}/${d}`, keys: ["/"], pic: svgPie(k, d), hint: "Bottom number: how many equal parts. Top number: how many are shaded.", steps: [`The pie has ${d} equal parts and ${k} ${k === 1 ? "is" : "are"} shaded.`, `Fraction shaded = $\\frac{${k}}{${d}}$${gcd(k, d) > 1 ? ` (the same as $${fracTex(k, d)}$)` : ""}`], data: { k, d } }); }
   const d = r.pick([2, 3, 4]), n = d * r.int(1, 6); return num(`What is ${T(`\\frac{1}{${d}}`)} of ${n} magic beans?`, n / d, `Share ${n} into ${d} equal groups.`, [`${n} ÷ ${d} = ${n / d}`], { viz: { type: "bar", tip: `Cut the bar into ${d} equal units. One unit is the answer.`, rows: [{ parts: Array.from({ length: d }, (_, i) => i ? { v: 1, t: "", fill: "#fff" } : { v: 1, t: "?", rt: n / d, q: 1 }), braces: [{ from: 0, to: d, t: n, below: 1 }] }] } });
 });
+topic(2, "picgraph", "Picture Graph Parade", "🎏", "Picture graphs with a key (1 picture = 2, 5 or 10)", r => {
+  const th = graphTheme(r, 4), s = r.pick([2, 2, 5, 5, 10, 3, 4]), ns = distinct(r, 4, 1, 8), vals = ns.map(n => n * s), e = th.icon || "🙋";
+  return graphQ(r, th, vals, picto(th.title, th.cats.map((c, i) => ({ name: c.lab, n: ns[i], e })), `Each ${e} stands for ${s} ${th.unit}.`),
+    i => `${th.cats[i].lab}: ${ns[i]} pictures × ${s} = ${vals[i]}`, { kind: "picto", scale: s, inverse: true, hint: `Count the pictures, then multiply by ${s} (each picture stands for ${s}).` });
+});
 topic(2, "story", "Fairytale Problems", "📜", "Two-step word problems", r => {
   const t = r.int(0, 2), nm = r.pick(NAMES);
   if (t === 0) { const a = r.int(3, 9), b = r.pick([2, 5, 10]); return num(`${nm} has ${a} baskets. Each basket holds ${b} golden apples 🍎. How many apples?`, a * b, "Equal groups → multiply.", [`${a} × ${b} = ${a * b}`], { viz: { type: "array", rows: a, cols: b, tip: `${a} baskets, ${b} apples in each.` } }); }
@@ -132,6 +186,11 @@ topic(3, "duration", "Ball Time", "🕛", "Hours and minutes", r => {
 topic(3, "perim", "Fence the Garden", "🌷", "Perimeter of rectangles and squares", r => {
   const sq = r.chance(.3), l = r.int(3, 25), w = sq ? l : r.int(2, l - 1);
   return num(`The fairy garden is a ${sq ? `square with sides of ${l} m` : `rectangle ${l} m long and ${w} m wide`}. How many metres of fence go all around it?`, 2 * (l + w), "Perimeter = the total length of all the sides.", [sq ? `4 × ${l} = ${4 * l} m` : `${l} + ${w} + ${l} + ${w} = ${2 * (l + w)} m`], { data: { l, w } });
+});
+topic(3, "bargraph", "Bar Graph Bakery", "📊", "Read bar graphs with a scale", r => {
+  const th = graphTheme(r, r.int(4, 5)), step = r.pick([2, 5, 10]), top = r.int(8, 10), vals = distinct(r, th.cats.length, 1, top).map(n => n * step);
+  return graphQ(r, th, vals, svgBars(th.title, `number of ${th.unit}`, th.cats, vals, top * step, step),
+    i => `The ${th.cats[i].name} bar reaches the ${vals[i]} line.`, { scale: step, hint: `The scale goes up in ${step}s. Follow the top of the bar across to the numbers.` });
 });
 topic(3, "story", "Fairytale Problems", "📜", "Multiply and divide in stories", r => {
   const t = r.int(0, 2);
@@ -191,6 +250,37 @@ topic(4, "angles", "Turns & Angles", "🧭", "Right angles, turns and compass di
   if (r.chance(.5)) { const t = r.pick([["a quarter turn", 90], ["a half turn", 180], ["a three-quarter turn", 270], ["a full turn", 360], ["two right angles", 180], ["three right angles", 270]]); return num(`How many degrees are there in ${t[0]}?`, t[1], "A right angle (a quarter turn) is 90°.", [`${t[0]} = ${t[1]}°`]); }
   const s = r.int(0, 3), k = r.int(1, 3), cw = r.chance(.5), e = (s + (cw ? k : 4 - k)) % 4;
   return mcq(r, `The Snow Queen faces ${DIR[s]}. She turns ${k * 90}° ${cw ? "clockwise" : "anticlockwise"}. Which way does she face now?`, DIR[e], DIR.filter(d => d !== DIR[e]), "Each 90° is one quarter turn: N → E → S → W clockwise.", [`${k} quarter turn${k > 1 ? "s" : ""} ${cw ? "clockwise" : "anticlockwise"} from ${DIR[s]} → ${DIR[e]}`]);
+});
+const LINES = [
+  { title: "Height of Jack's beanstalk", unit: "height (cm)", u: "cm", xs: ["Wk 1", "Wk 2", "Wk 3", "Wk 4", "Wk 5", "Wk 6"], up: 1, what: "the beanstalk's height", when: "week", at: "in" },
+  { title: "Sunflower in the Fairy Garden", unit: "height (cm)", u: "cm", xs: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], up: 1, what: "the sunflower's height", when: "day", at: "on" },
+  { title: "Ice creams sold at the Fairy Fair", unit: "number of ice creams", u: "ice creams", xs: ["10 am", "11 am", "12 pm", "1 pm", "2 pm", "3 pm"], what: "the number of ice creams sold", when: "time", at: "at" },
+  { title: "Visitors at the Fairy Library", unit: "number of visitors", u: "visitors", xs: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], what: "the number of visitors", when: "day", at: "on" }
+];
+const lineVals = (r, L, step, top) => { // rising series for growth, a hill shape otherwise; one clear biggest rise
+  for (;;) { let v = L.up ? r.int(1, 2) : r.int(1, 4); const out = [v];
+    for (let i = 1; i < L.xs.length; i++) { v += L.up || i < 3 ? r.int(L.up ? 0 : 1, 3) : -r.int(0, 2); out.push(Math.max(0, v)); }
+    const rises = out.slice(1).map((x, i) => x - out[i]), best = Math.max(...rises);
+    if (Math.max(...out) <= top && rises.filter(x => x === best).length === 1 && new Set(out).size >= 4) return out.map(x => x * step); }
+};
+topic(4, "linegraph", "Line Graph Lighthouse", "📈", "Read tables and line graphs", r => {
+  const t = r.int(0, 4);
+  if (t === 4) { // a table with one missing number (MOE P4 tables)
+    const th = r.pick(COLLECTS), cats = r.shuffle(FRIENDS).slice(0, 3).map(([name]) => ({ lab: name })), a = cats.map(() => r.int(12, 60)), b = cats.map(() => r.int(12, 60)), k = r.int(0, 2), col = r.int(0, 2), tot = a.map((x, i) => x + b[i]);
+    const cell = (v, i, c) => i === k && c === col ? "?" : v, rows = cats.map((c, i) => [c.lab, cell(a[i], i, 0), cell(b[i], i, 1), cell(tot[i], i, 2)]);
+    const ans = [a, b, tot][col][k], step = col === 2 ? `${a[k]} + ${b[k]} = ${tot[k]}` : `${tot[k]} − ${col ? a[k] : b[k]} = ${ans}`;
+    return num(`${th.title}: the table shows how many ${th.unit} each friend ${th.past} in May and June. What number is hidden by "?"`, ans, col === 2 ? "Total = May + June." : "The part you need = total − the other month.", [step], { pic: table(["", "May", "June", "Total"], rows), data: { graph: "table", ans } });
+  }
+  const L = r.pick(LINES), step = r.pick(L.u === "cm" ? [5, 10] : [5, 10, 20]), top = 8, vals = lineVals(r, L, step, top), xs = L.xs, n = xs.length;
+  const pic = svgLine(L.title, L.unit, xs, vals, top * step, step), o = { pic, data: { graph: "line", vals, xs } }, read = i => `${L.at === "on" ? "On" : L.at === "in" ? "In" : "At"} ${xs[i]} the point is on the ${vals[i]} line.`;
+  if (t === 0) { const i = r.int(0, n - 1); return num(`${L.title}: what was ${L.what} ${L.at} ${xs[i]}?`, vals[i], `Find ${xs[i]} at the bottom, go up to the point, then across to the scale (it goes up in ${step}s).`, [read(i)], o); }
+  if (t === 1) { let i, j; do { i = r.int(0, n - 2); j = r.int(i + 1, n - 1); } while (vals[i] === vals[j]);
+    const up = vals[j] > vals[i]; return num(`${L.title}: by how much did ${L.what} ${up ? "go up" : "go down"} from ${xs[i]} to ${xs[j]}?${L.u === "cm" ? " (in cm)" : ""}`, Math.abs(vals[j] - vals[i]), "Read both points, then find the difference.", [read(i), read(j), `${Math.max(vals[i], vals[j])} − ${Math.min(vals[i], vals[j])} = ${Math.abs(vals[j] - vals[i])}`], o); }
+  if (t === 2) { const rises = vals.slice(1).map((x, i) => x - vals[i]), k = rises.indexOf(Math.max(...rises)), lab = i => `${xs[i]} to ${xs[i + 1]}`;
+    return mcq(r, `${L.title}: between which two ${L.when}s did ${L.what} go up the most?`, lab(k), r.shuffle(rises.map((_, i) => i).filter(i => i !== k)).map(lab), "The steepest uphill part of the line is the biggest rise.", [`${lab(k)}: ${vals[k]} → ${vals[k + 1]}, up ${rises[k]} ${L.u}`, "Every other part goes up less (or goes down)."], o); }
+  const hi = Math.max(...vals), k = vals.indexOf(hi), lo = vals.indexOf(Math.min(...vals)), big = L.up ? false : r.chance(.6);
+  if (big && vals.filter(x => x === hi).length === 1) return mcq(r, `${L.title}: at which ${L.when} was ${L.what} the highest?`, xs[k], xs.filter((_, i) => i !== k), "Look for the highest point on the line.", [`The highest point is at ${xs[k]} (${hi} ${L.u}).`], o);
+  return num(`${L.title}: what is the difference between the highest and the lowest value on the graph?${L.u === "cm" ? " (in cm)" : ""}`, hi - vals[lo], "Find the highest point and the lowest point, then subtract.", [`Highest ${hi}, lowest ${vals[lo]}`, `${hi} − ${vals[lo]} = ${hi - vals[lo]}`], o);
 });
 topic(4, "story", "Fairytale Problems", "📜", "Multi-step word problems", r => {
   if (r.chance(.5)) { const p = r.int(15, 60), n = r.int(12, 35), paid = Math.ceil(p * n / 100) * 100 + r.pick([0, 100]); return num(`Aladdin buys ${n} lamps at $${p} each. He pays with $${paid}. How much change does he get in $?`, paid - p * n, "Find the total cost first, then subtract from what he paid.", [`${n} × ${p} = $${p * n}`, `${paid} − ${p * n} = $${paid - p * n}`], { viz: { type: "bar", tip: "What he paid = the cost of the lamps + his change.", rows: [{ name: "paid", parts: [{ v: p * n, t: `${n} × $${p}` }, { v: paid - p * n, t: "?", rt: `$${paid - p * n}`, q: 1 }], braces: [{ from: 0, to: paid, t: `$${paid}` }] }] } }); }

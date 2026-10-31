@@ -1,7 +1,7 @@
 /* 🔢 Number Kingdom topics, Grades 5–8 (Singapore Primary 5–6, Secondary 1–2). */
 (function () {
 const M = (typeof module !== "undefined" && module.exports) ? require("./math-gen.js") : window.MathGen;
-const { Q, num, mcq, T, NAMES, topic, gcd, lcm, rd, fmt, simp, fracTex, fracStr, mixedTex, poly, lin, paren, pm, undo } = M._internal;
+const { Q, num, mcq, T, NAMES, topic, svgPieChart, gcd, lcm, rd, fmt, simp, fracTex, fracStr, mixedTex, poly, lin, paren, pm, undo } = M._internal;
 
 /* ---------- Grade 5 (Primary 5) ---------- */
 topic(5, "fracmul", "Fraction Spells", "✨", "Multiply fractions", r => {
@@ -85,6 +85,33 @@ topic(6, "speed", "Speedy Broomsticks", "🧹", "Speed, distance and time", r =>
   if (which === 0) return num(`A broomstick flies at ${s} km/h for ${t} hours. How far does it fly in km?`, s * t, "Distance = speed × time.", [`${s} × ${t} = ${s * t} km`]);
   if (which === 1) return num(`A witch flies ${s * t} km in ${t} hours. What is her average speed in km/h?`, s, "Speed = distance ÷ time.", [`${s * t} ÷ ${t} = ${s} km/h`]);
   return num(`A unicorn trots ${s * t} km at ${s} km/h. How many hours does it take?`, t, "Time = distance ÷ speed.", [`${s * t} ÷ ${s} = ${t} h`]);
+});
+/* 🥧 pie charts (MOE P6): shares in simple fractions or percentages of a known total */
+const PIES = [
+  { about: n => `how ${n} pupils travel to school`, title: "How we get to school", kind: "way", verb: "travel by", cats: [["Bus", "🚌"], ["Walking", "🚶"], ["Car", "🚗"], ["Bicycle", "🚲"], ["MRT", "🚇"]] },
+  { about: n => `the favourite snacks of ${n} pupils`, title: "Our favourite snacks", kind: "snack", verb: "chose", cats: [["Fruit", "🍉"], ["Popcorn", "🍿"], ["Cookies", "🍪"], ["Yoghurt", "🥛"], ["Crackers", "🥨"]] },
+  { about: n => n === "some" ? "the books in the class library" : `the ${n} books in the class library`, title: "Books in our class library", kind: "kind of book", verb: "are", unit: "books", cats: [["Stories", "📖"], ["Comics", "💬"], ["Science", "🔬"], ["Poems", "🎶"], ["Atlases", "🗺️"]] },
+  { about: n => `the CCAs chosen by ${n} pupils`, title: "Our CCA choices", kind: "CCA", verb: "chose", cats: [["Robotics", "🤖"], ["Choir", "🎤"], ["Art club", "🎨"], ["Swimming", "🏊"], ["Scouts", "⛺"]] }
+];
+const pieParts = (r, n, whole) => { for (;;) { const cut = r.shuffle(Array.from({ length: whole - 1 }, (_, i) => i + 1)).slice(0, n - 1).sort((a, b) => a - b), p = [0, ...cut, whole].slice(1).map((x, i, a) => x - (i ? a[i - 1] : 0));
+  if (new Set(p).size === n) return p; } };
+topic(6, "piechart", "Pie Chart Picnic", "🥧", "Pie charts with fractions and percentages", r => {
+  const th = r.pick(PIES), pct = r.chance(.5), whole = pct ? r.pick([10, 20]) : r.pick([6, 8, 12]), n = whole >= 10 ? r.int(3, 4) : 3, parts = pieParts(r, n, whole);
+  const cats = r.shuffle(th.cats).slice(0, n), N = whole * r.int(pct ? 2 : 3, pct ? 12 : 15), share = k => pct ? `${parts[k] * 100 / whole}%` : fracStr(parts[k], whole), cnt = k => N * parts[k] / whole;
+  const lab = k => `${cats[k][1]} ${cats[k][0]}`, who = th.unit || "pupils", t = r.int(0, 4), i = r.int(0, n - 1), j = (i + r.int(1, n - 1)) % n, [a, b] = parts[i] >= parts[j] ? [i, j] : [j, i];
+  const ofTot = k => pct ? `${share(k)} of ${N} = ${parts[k] * 100 / whole} ÷ 100 × ${N} = ${cnt(k)}` : `${share(k)} of ${N} = ${N} ÷ ${whole} × ${parts[k]} = ${cnt(k)}`;
+  const say = k => th.unit ? `How many of the books are ${lab(k)}?` : `How many pupils ${th.verb} ${lab(k)}?`;
+  const pic = hide => svgPieChart(th.title, cats.map(([name, e], k) => ({ name, e, part: parts[k], label: k === hide ? "?" : share(k) })), whole), o = { data: { graph: "pie", parts, whole, N, pct } };
+  const intro = `The pie chart shows ${th.about(N)}.`;
+  if (t === 0) return num(`${intro} ${say(i)}`, cnt(i), `Find ${share(i)} of ${N}.`, [ofTot(i)], Object.assign({ pic: pic() }, o));
+  if (t === 1) { const rest = parts.filter((_, k) => k !== i).reduce((x, y) => x + y, 0);
+    return num(`The pie chart shows ${th.about("some")}. What ${pct ? "percentage" : "fraction"} is ${lab(i)}?${pct ? "" : " (type a fraction like 3/8)"}`, pct ? parts[i] * 100 / whole : parts[i] / whole,
+      `The whole pie is ${pct ? "100%" : "1"}. Take away the other parts.`, [pct ? `100% − ${cats.map((_, k) => k).filter(k => k !== i).map(share).join(" − ")} = ${share(i)}` : `1 − (${cats.map((_, k) => k).filter(k => k !== i).map(share).join(" + ")}) = 1 − ${fracStr(rest, whole)} = ${share(i)}`],
+      Object.assign({ pic: pic(i), a: share(i), keys: pct ? ["%"] : ["/"] }, o)); }
+  if (t === 2) return num(`The pie chart shows ${th.about("some")}. ${cnt(i)} ${th.unit ? `books are ${lab(i)}` : `pupils ${th.verb} ${lab(i)}`}. How many ${who} are there altogether?`, N,
+    pct ? `${share(i)} stands for ${cnt(i)}. Find what ${100 / whole}% stands for first.` : `${share(i)} stands for ${cnt(i)}. Find what 1/${whole} stands for first.`, pct ? [`${share(i)} → ${cnt(i)}`, `${100 / whole}% → ${cnt(i)} ÷ ${parts[i]} = ${N / whole}`, `100% → ${N / whole} × ${whole} = ${N}`] : [parts[i] === 1 ? `1/${whole} → ${cnt(i)}` : `${share(i)} = ${parts[i]}/${whole} → ${cnt(i)}, so 1/${whole} → ${cnt(i)} ÷ ${parts[i]} = ${N / whole}`, `${whole}/${whole} → ${N / whole} × ${whole} = ${N}`], Object.assign({ pic: pic() }, o));
+  if (t === 3) return num(`${intro} How many more ${th.unit ? `books are ${lab(a)} than ${lab(b)}` : `pupils ${th.verb} ${lab(a)} than ${lab(b)}`}?`, cnt(a) - cnt(b), "Work out both numbers, then subtract. (Or subtract the shares first.)", [ofTot(a), ofTot(b), `${cnt(a)} − ${cnt(b)} = ${cnt(a) - cnt(b)}`], Object.assign({ pic: pic() }, o));
+  return mcq(r, `${intro} ${th.verb === "travel by" ? `How do ${cnt(i)} pupils travel to school?` : `Which ${th.kind} ${th.unit ? "has" : "was chosen by"} ${cnt(i)} ${who}?`}`, lab(i), cats.map((_, k) => k).filter(k => k !== i).map(lab), `Work out each share of ${N} until you find ${cnt(i)}.`, [ofTot(i)], Object.assign({ pic: pic() }, o));
 });
 topic(6, "story", "Fairytale Problems", "📜", "P6-style model problems", r => {
   if (r.chance(.5)) { const u = r.int(3, 12), k = r.int(2, 5); return num(`Jack has ${k} times as many magic beans as the giant. Together they have ${u * (k + 1)} beans. How many beans does Jack have?`, u * k, `Draw a model: the giant is 1 unit, Jack is ${k} units.`, [`Total units = ${k} + 1 = ${k + 1}`, `1 unit = ${u * (k + 1)} ÷ ${k + 1} = ${u}`, `Jack = ${k} × ${u} = ${u * k}`]); }
