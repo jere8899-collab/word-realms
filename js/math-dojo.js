@@ -146,14 +146,14 @@ function ask() {
   WR.view(`<div class="lesson-bg" style="background-image:${WR.bgCss("bg_math")}"></div>
     <div class="row" style="margin:6px 0 8px"><button class="btn ghost small" id="quitP">← Back</button><b class="title">🔮 Sumi's grade finder</b></div>
     <div class="card hud"><span class="pill">Round ${P.round} of about ${total}</span><span class="qnum">${P.k + 1}/3</span><span class="muted" style="font-weight:800">Testing Grade ${P.g} maths</span></div>
-    <div class="lesson fade-in"><div class="card qcard mq">${q.pic ? `<div class="qpic mpicbox">${q.pic}</div>` : ""}<div class="qtext mqtext">${MW.html(q.q)}</div>
-      ${q.kind === "mcq" ? `<div class="opts mopts">${q.options.map((o, k) => `<button class="opt" data-k="${k}"><span class="k">${"ABCD"[k]}</span>${MW.html(o)}</button>`).join("")}</div>` : ansPad(q)}
+    <div class="lesson fade-in"><div class="card qcard mq">${MW.qHead(q)}
+      ${q.kind === "mcq" ? MW.optsHTML(q) : ansPad(q)}
       <div class="row" style="justify-content:flex-end;margin-top:10px"><button class="btn ghost small" id="unsure">🤔 I'm not sure</button></div></div>
       <div class="card side">${mascot("side-sumi")}<div class="bubble">${P.round === 1 && P.k === 0 ? "Just do your best — skip anything you haven't learned yet! 💫" : "Take your time ✨"}</div></div></div>`);
   WR.$("#quitP").onclick = () => { P = null; WR.go("math"); };
   const go = ok => { if (!P) return; P.asked++; if (ok) P.ok++; P.log.push({ g: P.g, ok }); P.k++; if (P.k < 3) return ask(); if (P.ok >= 2) { P.passed = Math.max(P.passed, P.g); P.lo = P.g + 1; } else P.hi = P.g - 1; nextRound(); };
   WR.$("#unsure").onclick = () => go(false);
-  if (q.kind === "mcq") document.querySelectorAll("#main .mopts .opt[data-k]").forEach(b => b.onclick = () => go(q.options[+b.dataset.k] === q.a));
+  if (q.kind === "mcq") MW.onOpts(q, o => go(o === q.a));
   else { const sub = () => { const r = MG.check(q, WR.$("#mans").value); if (r.empty) return WR.toast("Type an answer, or tap “I'm not sure” 💭"); if (r.bad) return WR.toast("Hmm, I couldn't read that. Try a number like 12 or 3/4", 2200); go(r.ok); }; bindPad2(sub); }
 }
 function ansPad(q) { // same pad as the lessons

@@ -1,7 +1,7 @@
 /* 🔢 Number Kingdom topics, Grades 1–4 (Singapore Primary 1–4). Each gen(r) gets a seeded rng and returns a question. */
 (function () {
 const M = (typeof module !== "undefined" && module.exports) ? require("./math-gen.js") : window.MathGen;
-const { Q, num, mcq, T, NAMES, THINGS, COUNT_EMOJI, svgClock, SHAPES, svgShape, svgPie, picto, svgBars, svgLine, table, coin, emojiRows, colAdd, colSub, topic, gcd, lcm, rd, fmt, money, simp, fracTex, fracStr, mixedTex } = M._internal;
+const { Q, num, mcq, T, NAMES, THINGS, COUNT_EMOJI, svgBox, svgClock, SHAPES, svgShape, svgPie, picto, svgBars, svgLine, table, coin, emojiRows, colAdd, colSub, topic, gcd, lcm, rd, fmt, money, simp, fracTex, fracStr, mixedTex } = M._internal;
 const pad = m => String(m).padStart(2, "0");
 const ord = k => k + (k % 100 >= 11 && k % 100 <= 13 ? "th" : ["th", "st", "nd", "rd"][k % 10] || "th");
 
@@ -251,6 +251,76 @@ topic(4, "angles", "Turns & Angles", "🧭", "Right angles, turns and compass di
   const s = r.int(0, 3), k = r.int(1, 3), cw = r.chance(.5), e = (s + (cw ? k : 4 - k)) % 4;
   return mcq(r, `The Snow Queen faces ${DIR[s]}. She turns ${k * 90}° ${cw ? "clockwise" : "anticlockwise"}. Which way does she face now?`, DIR[e], DIR.filter(d => d !== DIR[e]), "Each 90° is one quarter turn: N → E → S → W clockwise.", [`${k} quarter turn${k > 1 ? "s" : ""} ${cw ? "clockwise" : "anticlockwise"} from ${DIR[s]} → ${DIR[e]}`]);
 });
+/* ---------- 🪞 line symmetry (MOE P4: identify symmetric figures, check a line of symmetry, complete a figure on a square grid) ----------
+   Figures live on an 8 × 6 grid of squares (6 × 8 when the mirror line is across). A cell is [a, b]: a counts across the
+   mirror line (0–7, the line sits between 3 and 4), b along it. mirror([a, b]) = [7 − a, b]. */
+const SY = { N: 8, M: 6, S: 14 };
+const cellKey = ([a, b]) => a + "," + b, figKey = cells => cells.map(cellKey).sort().join(" ");
+const mirrorCell = ([a, b]) => [SY.N - 1 - a, b];
+const hasCell = (cells, c) => cells.some(d => d[0] === c[0] && d[1] === c[1]);
+const isSym = cells => cells.every(c => hasCell(cells, mirrorCell(c)));
+const nearCells = (cells, ok) => { const out = []; for (const [a, b] of cells) for (const [da, db] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) { const c = [a + da, b + db];
+  if (c[0] >= 0 && c[0] < SY.N && c[1] >= 0 && c[1] < SY.M && !hasCell(cells, c) && !hasCell(out, c) && ok(c)) out.push(c); } return out; };
+// a connected half-figure on the left of the line that touches it, with n squares
+const halfFig = (r, n) => { const cells = [[3, r.int(1, 4)]]; while (cells.length < n) cells.push(r.pick(nearCells(cells, c => c[0] < 4))); return cells; };
+const fullFig = half => half.concat(half.map(mirrorCell));
+// the same figure with one right-hand square moved to a new spot (so it is no longer symmetric)
+const breakFig = (r, cells) => { const right = cells.filter(c => c[0] >= 4), gone = r.pick(right), rest = cells.filter(c => c !== gone), spots = nearCells(rest, c => c[0] >= 4 && cellKey(c) !== cellKey(gone));
+  return spots.length ? rest.concat([r.pick(spots)]) : null; };
+const SY_FILL = ["#FFB8D1", "#BDE7FF", "#C8F2DC", "#E2D6FF", "#FFE7A8"];
+const svgSym = (cells, across, o = {}) => { const { N, M, S } = SY, W = across ? M : N, H = across ? N : M, xy = ([a, b]) => across ? [b, a] : [a, b], pad = 4;
+  let g = `<rect x="1" y="1" width="${W * S + 2 * pad - 2}" height="${H * S + 2 * pad - 2}" rx="7" fill="#F2FAFF" stroke="#CFE6F7" stroke-width="2"/>`;
+  for (let i = 0; i <= W; i++) g += `<line x1="${pad + i * S}" y1="${pad}" x2="${pad + i * S}" y2="${pad + H * S}" stroke="#DCEBF5" stroke-width="1"/>`;
+  for (let j = 0; j <= H; j++) g += `<line x1="${pad}" y1="${pad + j * S}" x2="${pad + W * S}" y2="${pad + j * S}" stroke="#DCEBF5" stroke-width="1"/>`;
+  for (const c of cells) { const [x, y] = xy(c); g += `<rect class="syc" x="${pad + x * S + 1}" y="${pad + y * S + 1}" width="${S - 2}" height="${S - 2}" rx="3" fill="${o.fill || "#FFB8D1"}" stroke="#9b84b0" stroke-width="1.2"/>`; }
+  const m = pad + 4 * S; g += across ? `<line class="mline" x1="${pad - 3}" y1="${m}" x2="${pad + W * S + 3}" y2="${m}" stroke="#ff6f91" stroke-width="2.5" stroke-dasharray="5 4" stroke-linecap="round"/>`
+    : `<line class="mline" x1="${m}" y1="${pad - 3}" x2="${m}" y2="${pad + H * S + 3}" stroke="#ff6f91" stroke-width="2.5" stroke-dasharray="5 4" stroke-linecap="round"/>`;
+  const w = W * S + 2 * pad, h = H * S + 2 * pad, k = o.small ? 1.15 : 1.7;
+  return svgBox(g, o.label || "figure on a square grid with a dashed line", Math.round(w * k), Math.round(h * k), `0 0 ${w} ${h}`, "mpic symgrid");
+};
+const SYM_WHO = [["Fairy Pip", "tile pattern for the Mirror Pond path"], ["Rapunzel", "window for her tower"], ["the Gingerbread Baker", "cookie design"], ["Princess Mira", "garden bed"], ["Jack", "kite"], ["Sumi the star fairy", "star quilt"]];
+const SYM_LETTERS = { yes: ["A", "H", "M", "O", "T", "U", "V", "W", "X", "Y"], no: ["F", "G", "J", "L", "N", "P", "Q", "R", "S", "Z"] };
+const SYM_SHAPES = [["square", 4, "a square"], ["rectangle", 2, "a rectangle (not a square)"], ["triangle", 1, "this triangle with two equal sides"], ["pentagon", 5, "a regular pentagon (5 equal sides)"]];
+const FOLD = "Fold along the dashed line: every shaded square must land exactly on another shaded square.";
+topic(4, "symmetry", "Mirror Pond", "🪞", "Lines of symmetry on a square grid", r => {
+  const t = r.int(0, 5), across = r.chance(.35), [who, what] = r.pick(SYM_WHO), fill = r.pick(SY_FILL), line = across ? "across" : "up and down";
+  const pic = (cells, small) => svgSym(cells, across, { fill, small });
+  if (t === 4) { // letters: which one has a line of symmetry?
+    const yes = r.chance(.5), right = r.pick(SYM_LETTERS[yes ? "yes" : "no"]), wrong = r.shuffle(SYM_LETTERS[yes ? "no" : "yes"]).slice(0, 3);
+    return mcq(r, `${who} is painting a sign for the Mirror Pond. Which letter ${yes ? "has" : "does <b>not</b> have"} a line of symmetry?`, right, wrong, "Imagine a fold line down the middle (or across). Do the two halves match exactly?",
+      yes ? [`${right} can be folded so both halves match, so it has a line of symmetry.`, `${wrong.join(", ")} have no fold line where the halves match.`] : [`No fold line makes the two halves of ${right} match.`, `${wrong.join(", ")} each have a line of symmetry.`], { data: { sym: "letter", yes } });
+  }
+  if (t === 5) { // lines of symmetry of a shape
+    const [k, n, name] = r.pick(SYM_SHAPES);
+    return num(`How many lines of symmetry does ${name} have?`, n, "Count every fold line that makes the two halves match. Try lines through corners and through the middles of sides.",
+      [`${name[0].toUpperCase() + name.slice(1)} has ${n} line${n > 1 ? "s" : ""} of symmetry.`], { pic: svgShape(k, fill), data: { sym: "shape", n } });
+  }
+  const half = halfFig(r, r.int(4, 7)), full = fullFig(half);
+  if (t === 0) { // yes / no
+    const broken = r.chance(.5) && breakFig(r, full), cells = broken || full;
+    return mcq(r, `${who} made this ${what}. Is the dashed line a line of symmetry?`, broken ? "No" : "Yes", [broken ? "Yes" : "No"], FOLD,
+      broken ? [FOLD, "One shaded square has no partner the same distance away on the other side, so the halves do not match.", "So the dashed line is not a line of symmetry."] : [FOLD, "Every shaded square has a partner the same distance away on the other side.", "So the dashed line is a line of symmetry."],
+      { pic: pic(cells), uid: "s0" + figKey(cells) + across, data: { sym: "check", cells, across, yes: !broken } });
+  }
+  if (t === 1 || t === 2) { // pick the picture
+    let others;
+    if (t === 1) { others = []; for (let i = 0; i < 20 && others.length < 3; i++) { const b = breakFig(r, full); if (b && ![full, ...others].some(o => figKey(o) === figKey(b))) others.push(b); } }
+    else { const copy = half.concat(half.map(([a, b]) => [a + 4, b])), miss = full.filter(c => cellKey(c) !== cellKey(r.pick(full.filter(d => d[0] >= 4)))), extra = nearCells(full, c => c[0] >= 4);
+      others = [copy, miss].concat(extra.length ? [full.concat([r.pick(extra)])] : []).filter((o, i, all) => figKey(o) !== figKey(full) && all.findIndex(x => figKey(x) === figKey(o)) === i); }
+    if (others.length < 2) return topic4sym(r);
+    const ids = ["f1", "f2", "f3", "f4"], optPics = { f1: pic(full, true) }; others.forEach((o, i) => { optPics[ids[i + 1]] = pic(o, true); });
+    const q = t === 1 ? `${who} drew ${["", "", "", "three", "four"][others.length + 1]} ${what}s. In which one is the dashed line a line of symmetry?` : `${who} drew half of a ${what}. Which picture completes it so the dashed line (${line}) is a line of symmetry?`;
+    return mcq(r, q, "f1", ids.slice(1, others.length + 1), t === 1 ? FOLD : "Each square on one side needs a partner the same distance from the line on the other side, like a reflection in the pond.",
+      t === 1 ? [FOLD, "In the right answer every square has a partner; in the others one square has moved."] : ["Count how far each square is from the dashed line.", "Draw its partner the same distance away on the other side (a mirror image, not a copy slid across)."],
+      { pic: t === 2 ? pic(half) : "", optPics, uid: "s" + t + figKey(full) + across, data: { sym: t === 1 ? "pick" : "complete", across, cells: full, half } });
+  }
+  // t === 3: how many more squares to shade? (k squares lost their partners)
+  const k = r.int(1, 3), gone = r.shuffle(half).slice(0, k).map(c => r.chance(.5) ? c : mirrorCell(c)), goneK = new Set(gone.map(cellKey)), cells = full.filter(c => !goneK.has(cellKey(c)));
+  return num(`${who} is shading a ${what}. What is the smallest number of squares that must be shaded so the dashed line becomes a line of symmetry?`, k, "Find each shaded square whose mirror partner (same distance, other side) is not shaded yet.",
+    [`${k} shaded square${k > 1 ? "s have" : " has"} no partner on the other side of the line.`, `Shade ${k} more square${k > 1 ? "s" : ""}.`], { pic: pic(cells), uid: "s3" + figKey(cells) + across, data: { sym: "count", cells, across, k } });
+});
+// retry helper for the rare figure with too few different wrong pictures
+const topic4sym = r => M.topic("g4.symmetry").gen(r);
 const LINES = [
   { title: "Height of Jack's beanstalk", unit: "height (cm)", u: "cm", xs: ["Wk 1", "Wk 2", "Wk 3", "Wk 4", "Wk 5", "Wk 6"], up: 1, what: "the beanstalk's height", when: "week", at: "in" },
   { title: "Sunflower in the Fairy Garden", unit: "height (cm)", u: "cm", xs: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], up: 1, what: "the sunflower's height", when: "day", at: "on" },

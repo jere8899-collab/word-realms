@@ -139,7 +139,7 @@ M.longMulSteps = (a, b) => { const bs = String(b).split("").reverse(); const out
 /* ====================== TOPICS ====================== */
 const TOPICS = [];
 const topic = (grade, id, name, icon, desc, gen, opt = {}) => TOPICS.push(Object.assign({ grade, id: `g${grade}.${id}`, name, icon, desc, gen }, opt));
-M._internal = { Q, num, mcq, T, NAMES, THINGS, COUNT_EMOJI, svgClock, SHAPES, svgShape, svgPie, picto, svgBars, svgLine, svgPieChart, coin, emojiRows, table, colAdd, colSub, topic, TOPICS, gcd, lcm, rd, fmt, fdp, money, simp, fracTex, fracStr, mixedTex, sgn, poly, lin, paren, pm, undo };
+M._internal = { Q, num, mcq, T, NAMES, THINGS, COUNT_EMOJI, svgBox, svgClock, SHAPES, svgShape, svgPie, picto, svgBars, svgLine, svgPieChart, coin, emojiRows, table, colAdd, colSub, topic, TOPICS, gcd, lcm, rd, fmt, fdp, money, simp, fracTex, fracStr, mixedTex, sgn, poly, lin, paren, pm, undo };
 M.TOPICS = TOPICS;
 M.topic = id => TOPICS.find(t => t.id === id);
 M.gradeTopics = g => TOPICS.filter(t => t.grade === g);
@@ -156,10 +156,10 @@ M.make = (topicId, seed) => {
   q.topic = topicId; q.seed = seed; q.grade = t.grade;
   return q;
 };
-// a short run of distinct questions (re-rolls duplicates by question text + answer)
+// a short run of distinct questions (re-rolls duplicates by question text + answer, or by q.uid for picture questions)
 M.batch = (topicId, n, seed = M.seed()) => {
   const out = [], seen = new Set(); let s = seed >>> 0, tries = 0;
-  while (out.length < n && tries < n * 30) { tries++; s = (Math.imul(s, 1103515245) + 12345) >>> 0; const q = M.make(topicId, s); const k = q.q + "|" + q.a; if (seen.has(k)) continue; seen.add(k); out.push(q); }
+  while (out.length < n && tries < n * 30) { tries++; s = (Math.imul(s, 1103515245) + 12345) >>> 0; const q = M.make(topicId, s); const k = q.uid || q.q + "|" + q.a; if (seen.has(k)) continue; seen.add(k); out.push(q); }
   return out;
 };
 

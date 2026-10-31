@@ -108,6 +108,15 @@ WR.screens.math = arg => {
 /* ---------- answer input: numpad (works with the on-screen pad and a real keyboard) ---------- */
 const coarse = MW.coarse = () => window.matchMedia && matchMedia("(pointer: coarse)").matches;
 // phone-calculator layout: digits on the left, the extra keys this question needs (− . / : r ,) down the right and bottom
+/* ---------- shared question card bits (lessons, guardian fights and the grade finder) ----------
+   An mcq option is text, or a picture when q.optPics[option] holds one (the text is then only an id and never shown). */
+MW.qHead = q => `${q.pic ? `<div class="qpic mpicbox">${q.pic}</div>` : ""}<div class="qtext mqtext">${MW.html(q.q)}</div>`;
+MW.optsHTML = q => { const P = q.optPics; return `<div class="opts mopts${P ? " mpicopts" : ""}">${q.options.map((o, k) => `<button class="opt${P ? " mpicopt" : ""}" data-k="${k}"${P ? ` aria-label="choice ${"ABCD"[k]}"` : ""}><span class="k">${"ABCD"[k]}</span>${P ? P[o] : MW.html(o)}</button>`).join("")}</div>`; };
+MW.optBtns = () => document.querySelectorAll("#main .mopts .opt[data-k]");
+MW.onOpts = (q, fn) => MW.optBtns().forEach(b => b.onclick = () => fn(q.options[+b.dataset.k], b));
+MW.lockOpts = (q, showRight) => MW.optBtns().forEach(b => { b.disabled = true; if (showRight && q.options[+b.dataset.k] === q.a) b.classList.add("right"); });
+MW.ansHTML = q => q.optPics ? `<span class="mansPic">${q.optPics[q.a]}</span>` : `<b>${MW.html(q.a)}</b>`;
+
 MW.padGrid = extra => {
   const ex = extra.slice(); if (ex.includes("/")) ex.push(" ");
   const lab = k => k === "-" ? "−" : k === " " ? "␣" : k === "," ? "," : k;
@@ -160,15 +169,15 @@ function render() {
   WR.view(`<div class="lesson-bg" style="background-image:${WR.bgCss("bg_math")}"></div>
     <div class="row" style="margin:6px 0 8px"><button class="btn ghost small" id="quitBtn">← Leave</button><b class="title">🔢 ${esc(L.title)}</b></div>
     ${L.guardian ? `<div class="card gstrip" id="gstrip">${guardMeter()}</div>` : ""}<div class="card hud">${hud()}</div>
-    <div class="lesson fade-in"><div class="card qcard mq">${q.pic ? `<div class="qpic mpicbox">${q.pic}</div>` : ""}<div class="qtext mqtext">${MW.html(q.q)}</div><div id="mviz"></div>
-      ${q.kind === "mcq" ? `<div class="opts mopts">${q.options.map((o, k) => `<button class="opt" data-k="${k}"><span class="k">${"ABCD"[k]}</span>${MW.html(o)}</button>`).join("")}</div>` : padHTML(q, L.grade)}
+    <div class="lesson fade-in"><div class="card qcard mq">${MW.qHead(q)}<div id="mviz"></div>
+      ${q.kind === "mcq" ? MW.optsHTML(q) : padHTML(q, L.grade)}
       <div id="mexplain"></div></div>
       <div class="card side"><div class="petbox" id="lpet">${WR.petHTML()}</div><div class="bubble" id="lbubble">${esc(L.i === 0 ? "Let's solve it together! ✨" : WR.petMood())}</div>
       <div class="muted" id="lstats" style="font-size:.85rem;font-weight:800">⭐ ${L.starsEarned} earned · 🔥 combo ${L.combo}</div><button class="btn ghost small" id="hintBtn" style="margin-top:6px">💡 Hint</button>${L.viz ? `<button class="btn ghost small" id="vizBtn" style="margin-top:6px">${vizLabel()}</button>` : ""}</div></div>`);
   const vb = WR.$("#vizBtn"); if (vb) vb.onclick = () => { if (L.vizOpen && !L.done) { L.vizOpen = false; WR.$("#mviz").innerHTML = ""; vb.textContent = vizLabel(); } else showViz(); };
   WR.$("#quitBtn").onclick = () => { const o = L; L = null; o.challenge ? WR.go("dojo") : WR.go("math"); };
   WR.$("#hintBtn").onclick = () => { if (L.done) return; showMsg("hint", `💡 ${MW.html(q.hint)}`); };
-  if (q.kind === "mcq") document.querySelectorAll("#main .mopts .opt[data-k]").forEach(b => b.onclick = () => submit(q.options[+b.dataset.k], b));
+  if (q.kind === "mcq") MW.onOpts(q, (o, b) => submit(o, b));
   else bindPad(() => submit(WR.$("#mans").value));
 }
 /* 🧮 Model Magic: a Singapore-style picture model (bar model, number line, ten frames, arrays, sharing groups, blocks,
@@ -245,8 +254,8 @@ function submit(val, btn) {
     if (L.vizUsed) { m.modelSolved = (m.modelSolved || 0) + 1; WR.questEvent("model1"); }
     if (L.vizOpen) showViz(true);
     const inp = WR.$("#mans"); if (inp) { inp.disabled = true; inp.classList.add("ok"); }
-    document.querySelectorAll("#main .mopts .opt[data-k]").forEach(b => b.disabled = true);
-    showMsg("good", `✅ ${L.tries === 1 ? "Correct!" : "Got it on the second try!"} <b>${MW.html(q.kind === "mcq" ? q.a : q.a)}</b><details class="mwork" ${L.tries > 1 ? "open" : ""}><summary>📜 Worked solution</summary>${steps(q)}</details>${nextBtn(true)}`);
+    MW.lockOpts(q);
+    showMsg("good", `✅ ${L.tries === 1 ? "Correct!" : "Got it on the second try!"} ${MW.ansHTML(q)}<details class="mwork" ${L.tries > 1 ? "open" : ""}><summary>📜 Worked solution</summary>${steps(q)}</details>${nextBtn(true)}`);
   } else if (L.tries === 1) {
     WR.sfx("bad"); L.combo = 0; if (btn) { btn.classList.add("wrong"); btn.disabled = true; }
     const inp = WR.$("#mans"); if (inp) { inp.classList.add("shake"); setTimeout(() => inp.classList.remove("shake"), 450); inp.select && inp.select(); }
@@ -255,10 +264,10 @@ function submit(val, btn) {
   } else {
     L.done = true; L.res[L.i] = 0; WR.countAnswer(false, "m:" + (q.topic || L.key)); m.answered = (m.answered || 0) + 1; WR.sfx("bad");
     if (btn) btn.classList.add("wrong");
-    document.querySelectorAll("#main .mopts .opt[data-k]").forEach(b => { b.disabled = true; if (q.options[+b.dataset.k] === q.a) b.classList.add("right"); });
+    MW.lockOpts(q, true);
     const inp = WR.$("#mans"); if (inp) inp.disabled = true;
     if (L.viz) showViz(true);
-    showMsg("bad", `💭 The answer is <b>${MW.html(q.a)}</b>.<div class="mwork open"><b>📜 Worked solution</b>${steps(q)}</div>${nextBtn(false)}`);
+    showMsg("bad", `💭 The answer is ${MW.ansHTML(q)}.<div class="mwork open"><b>📜 Worked solution</b>${steps(q)}</div>${nextBtn(false)}`);
   }
   WR.save(); WR.renderTop(); petReact(res.ok);
   const h = document.querySelector(".hud"); if (h && L.done) { const i = L.i; L.i++; h.innerHTML = hud(); L.i = i; }
