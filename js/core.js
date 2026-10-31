@@ -39,7 +39,8 @@ const QUEST_POOL = [
   { id: "model1", icon: "🧮", label: "Solve 3 maths questions with a Model Magic picture", goal: 3, reward: 5 },
   { id: "balance1", icon: "⚖️", label: "Balance an equation scale all the way to x (Grades 6–8 maths)", goal: 1, reward: 5 },
   { id: "clock1", icon: "🕰️", label: "Count, wind or set a clock in the Clock Workshop (Grades 1–3 maths)", goal: 1, reward: 5 },
-  { id: "phonics1", icon: "🔤", label: "Walk a step of the A1 Phonics Path", goal: 1, reward: 5 }
+  { id: "phonics1", icon: "🔤", label: "Walk a step of the A1 Phonics Path", goal: 1, reward: 5 },
+  { id: "charm1", icon: "🔮", label: "Catch or polish your Word Charms (finish a round)", goal: 1, reward: 5 }
 ];
 Object.assign(WR, { SKILLS, PETS, AVATARS, QUEST_POOL, data: {}, manifest: null, screens: {} });
 
@@ -89,7 +90,7 @@ function freshState() {
     progress: {}, owned: [], equipped: { outfit: null, petskin: null, theme: null },
     settings: { rate: 0.9, sound: true, unlockAll: false }, mistakes: [], lessonsDone: 0,
     speaking: freshSpeaking(), writing: freshWriting(), math: freshMath(),
-    stories: { done: {}, words: {}, reads: 0 }, report: freshReport(), phonics: freshPhonics(), earn: freshEarn(),
+    stories: { done: {}, words: {}, reads: 0 }, report: freshReport(), phonics: freshPhonics(), charms: freshCharms(), earn: freshEarn(),
     looks: {}, stable: [], rewards: { got: [], chest: { last: null, n: 0 }, caughtUp: true }
   };
 }
@@ -105,6 +106,9 @@ const freshEarn = () => ({ day: "", practice: 0, rounds: {}, got: {} });
 const earnHash = k => { let h = 2166136261; k = String(k); for (let i = 0; i < k.length; i++) h = Math.imul(h ^ k.charCodeAt(i), 16777619); return (h >>> 0).toString(36); };
 // 🔤 Phonics Path (js/phonics.js): best result per step ({ u1: { best, crowns, plays, at } }), rounds played, letter-tile taps
 const freshPhonics = () => ({ done: {}, rounds: 0, taps: 0 });
+// 🔮 Word Charms (js/charms.js): one card per caught word ({ "a1:apple": { b: box 0–5, d: due time, r, w, at } }), rounds, last level
+const freshCharms = () => ({ cards: {}, rounds: 0, lvl: null });
+WR.freshCharms = freshCharms;
 WR.LOG_DAYS = LOG_DAYS;
 // an older save gains a log rebuilt from the dates it already has (last play of each skill/topic, story chapters, sprints, streak)
 function seedReport(s) {
@@ -162,6 +166,7 @@ function migrate(s, raw = s) {
   s.stories = Object.assign({ done: {}, words: {}, reads: 0 }, s.stories || {}); s.stories.done = s.stories.done || {}; s.stories.words = s.stories.words || {};
   s.math = WR.fixMath(s.math);
   s.phonics = Object.assign(freshPhonics(), s.phonics || {}); s.phonics.done = s.phonics.done || {};
+  s.charms = Object.assign(freshCharms(), s.charms && typeof s.charms === "object" ? s.charms : {}); s.charms.cards = s.charms.cards || {};
   if (!raw.report || typeof raw.report !== "object") s.report = seedReport(s);
   s.report.days = s.report.days || {}; s.report.tally = s.report.tally || {}; s.report.at = s.report.at || 0;
   // ⭐ anti-farm record (WR.awardStars); an older save counts the English items it has already been served as known
@@ -468,7 +473,7 @@ WR.recordLesson = (rid, key, score) => {
   s.progress[rid][key] = prev; s.lessonsDone++; WR.save();
 };
 // every English skill a lesson, Mistake Garden plant or report row can name (core four + bonus skills, loaded later)
-WR.allSkills = () => SKILLS.concat(WR.SPEAKING || [], WR.WRITING || [], WR.STORY || [], WR.PHONICS || []);
+WR.allSkills = () => SKILLS.concat(WR.SPEAKING || [], WR.WRITING || [], WR.STORY || [], WR.PHONICS || [], WR.CHARMS || []);
 WR.skillInfo = id => WR.allSkills().find(x => x.id === id) || { id, name: id, icon: "✨" };
 WR.levelOf = rid => { const r = WR.realms && WR.realms.find(y => y.id === rid); return r ? r.level : ""; };
 WR.crowns = score => score >= 0.9 ? 3 : score >= 0.7 ? 2 : score >= 0.5 ? 1 : 0;

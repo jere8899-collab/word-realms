@@ -1,6 +1,6 @@
 """🎙️ Pre-record the game's voice lines with Kokoro TTS (kokoro-onnx, Apache-2.0) → assets/voice/*.mp3 + assets/voice/manifest.json.
 Run with the Kokoro venv:   /workspace/kvenv/bin/python tools/build_voice.py      (models in /workspace/kmodels)
- • Lines: every listening/lesson `say`, Echo Well texts and models, every story sentence and glossary word (sentences that
+ • Lines: every listening/lesson `say`, Echo Well texts and models, Word Charms words/meanings/examples, every story sentence and glossary word (sentences that
    contain the player's or pet's name are left to the device voice), fixed UI lines and pet chatter.
  • Voices come from ONE table, data/voices.json (narrator = af_heart unmodified; pet = "bubbly Puffbun").
  • File name = <profile>_<hash of profile + text>.mp3, so only missing files are recorded; MP3 mono, data/voices.json bitrate.
@@ -30,6 +30,8 @@ def lines():
         d = json.load(open(f)); walk(d)
         if f.endswith("speaking.json"):
             for it in d: [add("narrator", it[k]) for k in ("text", "model") if isinstance(it.get(k), str)]
+        if f.endswith("words.json"):                                   # 🔮 Word Charms: the word, its meaning, its example
+            for it in d: [add("narrator", it[k]) for k in ("w", "def", "ex")]
         if f.endswith("story.json"):
             for pg in d.get("pages", []):
                 for p in re.findall(r'(?:[^.!?\[]|\[\[[^\]]*\]\])+[.!?]+[”’"]?\s*|(?:[^.!?\[]|\[\[[^\]]*\]\])+$', pg.get("text", "")):

@@ -156,8 +156,8 @@ WR.Phonics = { UNITS, MAKE, makeRound, graphemes, unlocked, stepsDone, sayOf, ke
 WR.phonicsTile = rid => {
   if (rid !== "a1") return "";
   const n = stepsDone();
-  return `<div class="card skill-card phonics-tile" data-phonics="1"><span class="bonus-tag">Bonus</span><span class="ico">🔤</span><h3>Phonics</h3>
-    <div class="muted" style="font-size:.85rem;font-weight:700">Phonics Path: sounds, blending, tricky words</div><div class="crowns">${n ? `🐾 ${n}/${UNITS.length} steps` : WR.crownCell(null, "not played")}</div><div class="waiting-tag">${n < UNITS.length ? "🔤 Next: " + UNITS[Math.min(n, UNITS.length - 1)].name : "🌟 Path complete!"}</div></div>`;
+  return WR.bonusTile({ cls: "phonics-tile", data: "phonics", ico: '<span class="ico">🔤</span>', title: "Phonics", desc: "Phonics Path: sounds, blending, tricky words",
+    crowns: n ? `🐾 ${n}/${UNITS.length} steps` : WR.crownCell(null, "not played"), tag: n < UNITS.length ? "🔤 Next: " + UNITS[Math.min(n, UNITS.length - 1)].name : "🌟 Path complete!" });
 };
 // map card under the realm map (like the Number Kingdom card), for A1 starters or once played, so Continue stays on screen
 WR.phonicsNode = () => (WR.state.startLevel === "a1" || stepsDone()) ? `<div class="card math-node phonics-node" id="phonicsNode" role="button" tabindex="0" style="margin-top:14px">${WR.img("bg_a1", "thumb", "", true)}

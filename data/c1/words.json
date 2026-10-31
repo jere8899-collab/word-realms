@@ -1,0 +1,242 @@
+[
+ {
+  "w": "inevitable",
+  "pos": "adjective",
+  "def": "Certain to happen; impossible to avoid.",
+  "ex": "With so many dark clouds, rain was inevitable."
+ },
+ {
+  "w": "persevere",
+  "pos": "verb",
+  "def": "To keep trying even when something is difficult.",
+  "ex": "If you persevere, you'll master the guitar."
+ },
+ {
+  "w": "dilemma",
+  "pos": "noun",
+  "def": "A difficult choice between two options.",
+  "ex": "Choosing between the two clubs was a real dilemma."
+ },
+ {
+  "w": "resilient",
+  "pos": "adjective",
+  "def": "Able to recover quickly from difficulties.",
+  "ex": "Children are often more resilient than adults think."
+ },
+ {
+  "w": "compromise",
+  "pos": "noun",
+  "def": "An agreement where each side gives up something.",
+  "ex": "We reached a compromise: one film each."
+ },
+ {
+  "w": "meticulous",
+  "pos": "adjective",
+  "def": "Paying great attention to every small detail.",
+  "ex": "He's meticulous about painting his model planes."
+ },
+ {
+  "w": "anticipate",
+  "pos": "verb",
+  "def": "To expect something and prepare for it.",
+  "ex": "We didn't anticipate so many visitors."
+ },
+ {
+  "w": "ambiguous",
+  "pos": "adjective",
+  "def": "Able to be understood in more than one way.",
+  "ex": "The ending of the film is ambiguous."
+ },
+ {
+  "w": "phenomenon",
+  "pos": "noun",
+  "def": "Something that happens and can be seen, often unusual.",
+  "ex": "The northern lights are an amazing natural phenomenon."
+ },
+ {
+  "w": "thrive",
+  "pos": "verb",
+  "def": "To grow or develop very well.",
+  "ex": "These plants thrive in sunny places."
+ },
+ {
+  "w": "controversial",
+  "pos": "adjective",
+  "def": "Causing a lot of disagreement.",
+  "ex": "Homework at weekends is a controversial topic."
+ },
+ {
+  "w": "initiative",
+  "pos": "noun",
+  "def": "The ability to act on your own without being told.",
+  "ex": "She showed initiative by organising the bake sale."
+ },
+ {
+  "w": "elaborate",
+  "pos": "verb",
+  "def": "To give more details about something.",
+  "ex": "Could you elaborate on your idea?"
+ },
+ {
+  "w": "subtle",
+  "pos": "adjective",
+  "def": "Not obvious; small but important.",
+  "ex": "There's a subtle difference between the two colours."
+ },
+ {
+  "w": "consensus",
+  "pos": "noun",
+  "def": "Agreement among everyone in a group.",
+  "ex": "The class reached a consensus about the trip."
+ },
+ {
+  "w": "vulnerable",
+  "pos": "adjective",
+  "def": "Easily hurt or harmed.",
+  "ex": "Baby turtles are vulnerable to hungry birds."
+ },
+ {
+  "w": "emphasise",
+  "pos": "verb",
+  "def": "To show that something is especially important.",
+  "ex": "The coach likes to emphasise teamwork."
+ },
+ {
+  "w": "plausible",
+  "pos": "adjective",
+  "def": "Seeming likely to be true.",
+  "ex": "His excuse sounded plausible, but nobody believed it."
+ },
+ {
+  "w": "obstacle",
+  "pos": "noun",
+  "def": "Something that blocks your way or makes progress difficult.",
+  "ex": "Fear of failure is the biggest obstacle."
+ },
+ {
+  "w": "nevertheless",
+  "pos": "adverb",
+  "def": "Despite what has just been said.",
+  "ex": "It was raining. Nevertheless, we enjoyed the walk."
+ },
+ {
+  "w": "versatile",
+  "pos": "adjective",
+  "def": "Able to do many different things.",
+  "ex": "A pencil is a surprisingly versatile tool."
+ },
+ {
+  "w": "acknowledge",
+  "pos": "verb",
+  "def": "To accept or admit that something is true.",
+  "ex": "She had to acknowledge that the other team played better."
+ },
+ {
+  "w": "coherent",
+  "pos": "adjective",
+  "def": "Clear and logical, with parts that fit together.",
+  "ex": "Make sure your essay is coherent."
+ },
+ {
+  "w": "bias",
+  "pos": "noun",
+  "def": "An unfair preference for or against someone or something.",
+  "ex": "A good referee shows no bias."
+ },
+ {
+  "w": "diminish",
+  "pos": "verb",
+  "def": "To become or make something smaller or less.",
+  "ex": "Nothing could diminish their excitement."
+ },
+ {
+  "w": "feasible",
+  "pos": "adjective",
+  "def": "Possible and practical to do.",
+  "ex": "Is it feasible to finish the model by Friday?"
+ },
+ {
+  "w": "implication",
+  "pos": "noun",
+  "def": "A possible effect or result of something.",
+  "ex": "Think about the implication of skipping breakfast."
+ },
+ {
+  "w": "profound",
+  "pos": "adjective",
+  "def": "Very great or deep.",
+  "ex": "The trip had a profound effect on her."
+ },
+ {
+  "w": "advocate",
+  "pos": "verb",
+  "def": "To publicly support an idea.",
+  "ex": "Many doctors advocate eating more vegetables."
+ },
+ {
+  "w": "cautious",
+  "pos": "adjective",
+  "def": "Careful to avoid danger or problems.",
+  "ex": "Be cautious when crossing busy roads."
+ },
+ {
+  "w": "notion",
+  "pos": "noun",
+  "def": "An idea or belief.",
+  "ex": "The notion that all cats hate water isn't true."
+ },
+ {
+  "w": "overwhelming",
+  "pos": "adjective",
+  "def": "Very great or strong, and hard to deal with.",
+  "ex": "The response to our charity sale was overwhelming."
+ },
+ {
+  "w": "scrutinise",
+  "pos": "verb",
+  "def": "To examine something very carefully.",
+  "ex": "The judges scrutinise every cake in the competition."
+ },
+ {
+  "w": "conscientious",
+  "pos": "adjective",
+  "def": "Careful to do your work well and thoroughly.",
+  "ex": "She's a conscientious student who checks every answer."
+ },
+ {
+  "w": "arguably",
+  "pos": "adverb",
+  "def": "Used to say something can be supported with good reasons.",
+  "ex": "She is arguably the best player on the team."
+ },
+ {
+  "w": "sceptical",
+  "pos": "adjective",
+  "def": "Doubting that something is true.",
+  "ex": "I'm sceptical about the story of a monster in the lake."
+ },
+ {
+  "w": "undermine",
+  "pos": "verb",
+  "def": "To make something weaker, often gradually.",
+  "ex": "Constant teasing can undermine your confidence."
+ },
+ {
+  "w": "widespread",
+  "pos": "adjective",
+  "def": "Happening in many places or among many people.",
+  "ex": "There was widespread excitement about the eclipse."
+ },
+ {
+  "w": "allocate",
+  "pos": "verb",
+  "def": "To give a share of something for a particular purpose.",
+  "ex": "The school will allocate more money to the library."
+ },
+ {
+  "w": "comprehensive",
+  "pos": "adjective",
+  "def": "Including everything that is needed.",
+  "ex": "The guidebook gives a comprehensive list of museums."
+ }
+]

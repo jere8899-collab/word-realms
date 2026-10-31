@@ -1,0 +1,242 @@
+[
+ {
+  "w": "ubiquitous",
+  "pos": "adjective",
+  "def": "Seeming to be everywhere.",
+  "ex": "Smartphones have become ubiquitous."
+ },
+ {
+  "w": "ephemeral",
+  "pos": "adjective",
+  "def": "Lasting for a very short time.",
+  "ex": "A soap bubble's beauty is ephemeral."
+ },
+ {
+  "w": "serendipity",
+  "pos": "noun",
+  "def": "Finding something good by lucky chance.",
+  "ex": "Discovering the hidden café was pure serendipity."
+ },
+ {
+  "w": "tenacious",
+  "pos": "adjective",
+  "def": "Refusing to give up easily.",
+  "ex": "The tenacious puppy wouldn't let go of the rope."
+ },
+ {
+  "w": "ponder",
+  "pos": "verb",
+  "def": "To think carefully about something for a long time.",
+  "ex": "Let's ponder the riddle before we answer."
+ },
+ {
+  "w": "eloquent",
+  "pos": "adjective",
+  "def": "Able to express ideas clearly and beautifully.",
+  "ex": "Her eloquent speech moved the whole school."
+ },
+ {
+  "w": "conundrum",
+  "pos": "noun",
+  "def": "A confusing and difficult problem or puzzle.",
+  "ex": "Sharing one pizza among nine friends was a real conundrum."
+ },
+ {
+  "w": "alleviate",
+  "pos": "verb",
+  "def": "To make pain or a problem less severe.",
+  "ex": "A cool drink can alleviate the heat."
+ },
+ {
+  "w": "pragmatic",
+  "pos": "adjective",
+  "def": "Dealing with problems in a sensible, practical way.",
+  "ex": "We took a pragmatic approach and split the jobs."
+ },
+ {
+  "w": "nuance",
+  "pos": "noun",
+  "def": "A very small difference in meaning, feeling or colour.",
+  "ex": "Good translators notice every nuance."
+ },
+ {
+  "w": "exacerbate",
+  "pos": "verb",
+  "def": "To make a bad situation worse.",
+  "ex": "Scratching will only exacerbate the itch."
+ },
+ {
+  "w": "whimsical",
+  "pos": "adjective",
+  "def": "Playful and unusual in a fanciful way.",
+  "ex": "The book has whimsical drawings of flying teapots."
+ },
+ {
+  "w": "paradox",
+  "pos": "noun",
+  "def": "A statement that seems impossible but may be true.",
+  "ex": "It's a paradox: the more you rush, the slower you go."
+ },
+ {
+  "w": "gregarious",
+  "pos": "adjective",
+  "def": "Enjoying being with other people; sociable.",
+  "ex": "Dolphins are gregarious animals."
+ },
+ {
+  "w": "mitigate",
+  "pos": "verb",
+  "def": "To make something less harmful or serious.",
+  "ex": "Planting trees can mitigate flooding."
+ },
+ {
+  "w": "impeccable",
+  "pos": "adjective",
+  "def": "Perfect, without any mistakes.",
+  "ex": "Her handwriting is impeccable."
+ },
+ {
+  "w": "epitome",
+  "pos": "noun",
+  "def": "A perfect example of a quality or type.",
+  "ex": "Our librarian is the epitome of patience."
+ },
+ {
+  "w": "obsolete",
+  "pos": "adjective",
+  "def": "No longer used because something newer exists.",
+  "ex": "Floppy disks are now obsolete."
+ },
+ {
+  "w": "debunk",
+  "pos": "verb",
+  "def": "To show that an idea or belief is false.",
+  "ex": "Let's debunk the myth that goldfish forget everything in three seconds."
+ },
+ {
+  "w": "candid",
+  "pos": "adjective",
+  "def": "Honest and direct, even when it is uncomfortable.",
+  "ex": "Thanks for your candid feedback on my story."
+ },
+ {
+  "w": "cacophony",
+  "pos": "noun",
+  "def": "A loud, unpleasant mix of sounds.",
+  "ex": "The cacophony of the band warming up made us laugh."
+ },
+ {
+  "w": "ambivalent",
+  "pos": "adjective",
+  "def": "Having mixed feelings about something.",
+  "ex": "I'm ambivalent about the new school uniform."
+ },
+ {
+  "w": "corroborate",
+  "pos": "verb",
+  "def": "To give evidence that supports a statement.",
+  "ex": "Two witnesses could corroborate her story."
+ },
+ {
+  "w": "fastidious",
+  "pos": "adjective",
+  "def": "Very concerned about details, cleanliness and order.",
+  "ex": "The fastidious cat cleaned every whisker."
+ },
+ {
+  "w": "surreptitiously",
+  "pos": "adverb",
+  "def": "In a secret way, so others don't notice.",
+  "ex": "He surreptitiously slipped a biscuit to the dog."
+ },
+ {
+  "w": "benevolent",
+  "pos": "adjective",
+  "def": "Kind and wishing to help others.",
+  "ex": "The benevolent king shared his bread with the village."
+ },
+ {
+  "w": "juxtaposition",
+  "pos": "noun",
+  "def": "Placing two different things side by side to compare them.",
+  "ex": "The juxtaposition of old and new buildings is striking."
+ },
+ {
+  "w": "lethargic",
+  "pos": "adjective",
+  "def": "Having no energy and feeling slow.",
+  "ex": "The heat made everyone lethargic."
+ },
+ {
+  "w": "meander",
+  "pos": "verb",
+  "def": "To move slowly along a winding path.",
+  "ex": "Rivers often meander across flat land."
+ },
+ {
+  "w": "quintessential",
+  "pos": "adjective",
+  "def": "Being the perfect example of something.",
+  "ex": "Tea and scones are the quintessential English snack."
+ },
+ {
+  "w": "reticent",
+  "pos": "adjective",
+  "def": "Not willing to say much about your thoughts or feelings.",
+  "ex": "She was reticent about her secret project."
+ },
+ {
+  "w": "idiosyncrasy",
+  "pos": "noun",
+  "def": "An unusual habit that is typical of one person.",
+  "ex": "One idiosyncrasy of my cat is sleeping in the sink."
+ },
+ {
+  "w": "superfluous",
+  "pos": "adjective",
+  "def": "More than is needed; unnecessary.",
+  "ex": "Cut any superfluous words from your essay."
+ },
+ {
+  "w": "ostensibly",
+  "pos": "adverb",
+  "def": "Seeming to be true, but perhaps not really.",
+  "ex": "He went to the kitchen, ostensibly for water."
+ },
+ {
+  "w": "innocuous",
+  "pos": "adjective",
+  "def": "Harmless and not likely to upset anyone.",
+  "ex": "It was an innocuous joke, but he took it seriously."
+ },
+ {
+  "w": "unprecedented",
+  "pos": "adjective",
+  "def": "Never having happened before.",
+  "ex": "The team's success was unprecedented."
+ },
+ {
+  "w": "incongruous",
+  "pos": "adjective",
+  "def": "Strange because it doesn't fit with what is around it.",
+  "ex": "A penguin in the desert would look incongruous."
+ },
+ {
+  "w": "venerable",
+  "pos": "adjective",
+  "def": "Respected because of age, wisdom or history.",
+  "ex": "The venerable oak has stood for 500 years."
+ },
+ {
+  "w": "scrupulous",
+  "pos": "adjective",
+  "def": "Very careful to be honest and correct.",
+  "ex": "He was scrupulous about returning the extra change."
+ },
+ {
+  "w": "zealous",
+  "pos": "adjective",
+  "def": "Showing great energy and enthusiasm for something.",
+  "ex": "The zealous fans painted their faces blue."
+ }
+]

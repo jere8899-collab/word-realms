@@ -1,0 +1,242 @@
+[
+ {
+  "w": "apple",
+  "pos": "noun",
+  "def": "A round fruit that is red or green.",
+  "ex": "I eat an apple every day."
+ },
+ {
+  "w": "bird",
+  "pos": "noun",
+  "def": "An animal with wings and feathers that can fly.",
+  "ex": "A little bird is singing in the tree."
+ },
+ {
+  "w": "book",
+  "pos": "noun",
+  "def": "Pages with words and pictures that you read.",
+  "ex": "My favourite book is about a dragon."
+ },
+ {
+  "w": "happy",
+  "pos": "adjective",
+  "def": "Feeling good and smiling.",
+  "ex": "The puppy is happy to see me."
+ },
+ {
+  "w": "eat",
+  "pos": "verb",
+  "def": "To put food in your mouth and swallow it.",
+  "ex": "Pandas eat bamboo."
+ },
+ {
+  "w": "friend",
+  "pos": "noun",
+  "def": "A person you like and play with.",
+  "ex": "Mia is my best friend."
+ },
+ {
+  "w": "family",
+  "pos": "noun",
+  "def": "Your mum, dad, brothers, sisters and the people you live with.",
+  "ex": "I love my family."
+ },
+ {
+  "w": "small",
+  "pos": "adjective",
+  "def": "Not big; little.",
+  "ex": "The mouse is very small."
+ },
+ {
+  "w": "run",
+  "pos": "verb",
+  "def": "To move very fast on your feet.",
+  "ex": "Dogs can run fast."
+ },
+ {
+  "w": "school",
+  "pos": "noun",
+  "def": "The place where children go to learn.",
+  "ex": "My school has a big library."
+ },
+ {
+  "w": "fish",
+  "pos": "noun",
+  "def": "An animal that lives and swims in water.",
+  "ex": "The fish is orange and white."
+ },
+ {
+  "w": "cold",
+  "pos": "adjective",
+  "def": "Not warm; like ice or snow.",
+  "ex": "The water in the pool is cold!"
+ },
+ {
+  "w": "jump",
+  "pos": "verb",
+  "def": "To push yourself up into the air with your legs.",
+  "ex": "Frogs can jump very high."
+ },
+ {
+  "w": "cake",
+  "pos": "noun",
+  "def": "A sweet food you often eat on your birthday.",
+  "ex": "We have a big chocolate cake."
+ },
+ {
+  "w": "teacher",
+  "pos": "noun",
+  "def": "A person who helps you learn at school.",
+  "ex": "Our teacher is very kind."
+ },
+ {
+  "w": "sing",
+  "pos": "verb",
+  "def": "To make music with your voice.",
+  "ex": "Let's sing a song together."
+ },
+ {
+  "w": "tree",
+  "pos": "noun",
+  "def": "A tall plant with a trunk, branches and leaves.",
+  "ex": "The cat is up the tree!"
+ },
+ {
+  "w": "milk",
+  "pos": "noun",
+  "def": "A white drink that comes from cows.",
+  "ex": "I drink milk at breakfast."
+ },
+ {
+  "w": "hungry",
+  "pos": "adjective",
+  "def": "Wanting to eat food.",
+  "ex": "I'm hungry. Can I have a sandwich?"
+ },
+ {
+  "w": "swim",
+  "pos": "verb",
+  "def": "To move through water using your arms and legs.",
+  "ex": "I can swim in the sea."
+ },
+ {
+  "w": "brother",
+  "pos": "noun",
+  "def": "A boy who has the same mum and dad as you.",
+  "ex": "My brother is seven years old."
+ },
+ {
+  "w": "sister",
+  "pos": "noun",
+  "def": "A girl who has the same mum and dad as you.",
+  "ex": "My sister has long hair."
+ },
+ {
+  "w": "park",
+  "pos": "noun",
+  "def": "A big green place in a town where you can play.",
+  "ex": "We play football in the park."
+ },
+ {
+  "w": "draw",
+  "pos": "verb",
+  "def": "To make a picture with a pencil or pen.",
+  "ex": "I like to draw cats."
+ },
+ {
+  "w": "tired",
+  "pos": "adjective",
+  "def": "Needing to rest or sleep.",
+  "ex": "I'm tired after the long walk."
+ },
+ {
+  "w": "horse",
+  "pos": "noun",
+  "def": "A big animal that people can ride.",
+  "ex": "She rides a white horse."
+ },
+ {
+  "w": "kitchen",
+  "pos": "noun",
+  "def": "The room where you cook food.",
+  "ex": "Dad is cooking in the kitchen."
+ },
+ {
+  "w": "sleep",
+  "pos": "verb",
+  "def": "To close your eyes and rest at night.",
+  "ex": "Cats sleep a lot."
+ },
+ {
+  "w": "garden",
+  "pos": "noun",
+  "def": "A place next to a house with grass and flowers.",
+  "ex": "There are flowers in the garden."
+ },
+ {
+  "w": "old",
+  "pos": "adjective",
+  "def": "Not young; having lived for many years.",
+  "ex": "My grandpa is very old."
+ },
+ {
+  "w": "dance",
+  "pos": "verb",
+  "def": "To move your body to music.",
+  "ex": "We dance at the party."
+ },
+ {
+  "w": "morning",
+  "pos": "noun",
+  "def": "The early part of the day, before lunch.",
+  "ex": "I go to school in the morning."
+ },
+ {
+  "w": "face",
+  "pos": "noun",
+  "def": "The front of your head, with your eyes, nose and mouth.",
+  "ex": "The clown has a funny face."
+ },
+ {
+  "w": "read",
+  "pos": "verb",
+  "def": "To look at words and understand them.",
+  "ex": "I read a story before bed."
+ },
+ {
+  "w": "chair",
+  "pos": "noun",
+  "def": "A thing you sit on, with legs and a back.",
+  "ex": "Please sit on the chair."
+ },
+ {
+  "w": "water",
+  "pos": "noun",
+  "def": "The clear drink that falls as rain and fills rivers.",
+  "ex": "Can I have some water, please?"
+ },
+ {
+  "w": "window",
+  "pos": "noun",
+  "def": "A glass opening in a wall that lets in light.",
+  "ex": "Look out of the window!"
+ },
+ {
+  "w": "table",
+  "pos": "noun",
+  "def": "A piece of furniture with a flat top and legs.",
+  "ex": "The plates are on the table."
+ },
+ {
+  "w": "rain",
+  "pos": "noun",
+  "def": "Water that falls from the clouds.",
+  "ex": "Take your umbrella. The rain is coming!"
+ },
+ {
+  "w": "big",
+  "pos": "adjective",
+  "def": "Large; not small.",
+  "ex": "An elephant is a big animal."
+ }
+]

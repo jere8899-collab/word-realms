@@ -189,6 +189,19 @@ for lvl, ch in STORIES.items():
     out = dict(ch, id=f"{lvl}-story", level=lvl)
     json.dump(out, open(f"{ROOT}/{lvl}/story.json", "w"), ensure_ascii=False, indent=1)
     counts[f"{lvl}/story"] = len(qs); st_tot += 1
+# 🔮 Word Charms (tools/c_words.py → data/<level>/words.json): 40 words per level, unique across levels, the example
+# contains the word exactly (the fill-the-gap card blanks it), and the definition never gives the word away
+from c_words import WORDS
+seen_w = set()
+for lvl, ws in WORDS.items():
+    assert len(ws) >= 40, lvl
+    for x in ws:
+        w = x["w"]; assert w and x["def"] and x["ex"] and x["pos"] in ("noun", "verb", "adjective", "adverb"), (lvl, x)
+        assert re.search(r"\b" + re.escape(w) + r"\b", x["ex"], re.I), (lvl, w, "example must contain the word")
+        assert not re.search(r"\b" + re.escape(w[:max(4, len(w) - 2)]), x["def"], re.I), (lvl, w, "definition gives the word away")
+        assert re.fullmatch(r"[a-z]+", w), (lvl, w); assert w not in seen_w, (lvl, w, "duplicate word"); seen_w.add(w)
+    json.dump(ws, open(f"{ROOT}/{lvl}/words.json", "w"), ensure_ascii=False, indent=1)
+    counts[f"{lvl}/words"] = len(ws)
 json.dump(QUEST, open(f"{ROOT}/b1/quest.json", "w"), ensure_ascii=False, indent=1)
 json.dump(DEBATE, open(f"{ROOT}/c1/debate.json", "w"), ensure_ascii=False, indent=1)
 check_fair("c1/debate", DEBATE)

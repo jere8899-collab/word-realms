@@ -1,0 +1,242 @@
+[
+ {
+  "w": "borrow",
+  "pos": "verb",
+  "def": "To take something for a short time and give it back later.",
+  "ex": "Can I borrow your pencil?"
+ },
+ {
+  "w": "delicious",
+  "pos": "adjective",
+  "def": "Tasting very good.",
+  "ex": "Grandma's soup is delicious."
+ },
+ {
+  "w": "forget",
+  "pos": "verb",
+  "def": "To not remember something.",
+  "ex": "Don't forget your lunch box!"
+ },
+ {
+  "w": "journey",
+  "pos": "noun",
+  "def": "A trip from one place to another.",
+  "ex": "The train journey took three hours."
+ },
+ {
+  "w": "careful",
+  "pos": "adjective",
+  "def": "Thinking about what you are doing so nothing goes wrong.",
+  "ex": "Be careful with the hot soup!"
+ },
+ {
+  "w": "remember",
+  "pos": "verb",
+  "def": "To keep something in your mind.",
+  "ex": "Do you remember my name?"
+ },
+ {
+  "w": "weather",
+  "pos": "noun",
+  "def": "How hot, cold, sunny or rainy it is outside.",
+  "ex": "The weather is sunny today."
+ },
+ {
+  "w": "heavy",
+  "pos": "adjective",
+  "def": "Weighing a lot; hard to lift.",
+  "ex": "This bag is too heavy for me."
+ },
+ {
+  "w": "decide",
+  "pos": "verb",
+  "def": "To choose what to do after thinking.",
+  "ex": "We can't decide which film to watch."
+ },
+ {
+  "w": "surprise",
+  "pos": "noun",
+  "def": "Something you didn't expect.",
+  "ex": "The party was a big surprise!"
+ },
+ {
+  "w": "quiet",
+  "pos": "adjective",
+  "def": "Making very little sound.",
+  "ex": "Please be quiet in the library."
+ },
+ {
+  "w": "explore",
+  "pos": "verb",
+  "def": "To travel around a place to learn about it.",
+  "ex": "Let's explore the forest."
+ },
+ {
+  "w": "museum",
+  "pos": "noun",
+  "def": "A building where you can see old or interesting things.",
+  "ex": "We saw dinosaur bones at the museum."
+ },
+ {
+  "w": "thirsty",
+  "pos": "adjective",
+  "def": "Wanting to drink something.",
+  "ex": "I'm thirsty after football."
+ },
+ {
+  "w": "invite",
+  "pos": "verb",
+  "def": "To ask someone to come to a party or event.",
+  "ex": "I want to invite my whole class."
+ },
+ {
+  "w": "dangerous",
+  "pos": "adjective",
+  "def": "Able to hurt you.",
+  "ex": "It's dangerous to swim in the river."
+ },
+ {
+  "w": "picnic",
+  "pos": "noun",
+  "def": "A meal you eat outside, often on a blanket.",
+  "ex": "Let's have a picnic in the park."
+ },
+ {
+  "w": "lose",
+  "pos": "verb",
+  "def": "To not be able to find something.",
+  "ex": "I always lose my socks!"
+ },
+ {
+  "w": "famous",
+  "pos": "adjective",
+  "def": "Known by lots of people.",
+  "ex": "She wants to be a famous singer."
+ },
+ {
+  "w": "hobby",
+  "pos": "noun",
+  "def": "Something you enjoy doing in your free time.",
+  "ex": "My hobby is collecting shells."
+ },
+ {
+  "w": "practise",
+  "pos": "verb",
+  "def": "To do something again and again to get better.",
+  "ex": "I practise the piano every day."
+ },
+ {
+  "w": "cheap",
+  "pos": "adjective",
+  "def": "Not costing much money.",
+  "ex": "These stickers are really cheap."
+ },
+ {
+  "w": "village",
+  "pos": "noun",
+  "def": "A very small town in the countryside.",
+  "ex": "My grandma lives in a little village."
+ },
+ {
+  "w": "travel",
+  "pos": "verb",
+  "def": "To go from one place to another, often far away.",
+  "ex": "We travel to the beach every summer."
+ },
+ {
+  "w": "empty",
+  "pos": "adjective",
+  "def": "With nothing inside.",
+  "ex": "The cookie jar is empty!"
+ },
+ {
+  "w": "dream",
+  "pos": "noun",
+  "def": "Pictures and stories in your head while you sleep.",
+  "ex": "I had a funny dream about a flying pig."
+ },
+ {
+  "w": "clever",
+  "pos": "adjective",
+  "def": "Quick at learning and understanding things.",
+  "ex": "My clever dog can open the door."
+ },
+ {
+  "w": "secret",
+  "pos": "noun",
+  "def": "Something you don't tell other people.",
+  "ex": "Can you keep a secret?"
+ },
+ {
+  "w": "scared",
+  "pos": "adjective",
+  "def": "Feeling afraid.",
+  "ex": "My little brother is scared of the dark."
+ },
+ {
+  "w": "competition",
+  "pos": "noun",
+  "def": "An event where people try to win something.",
+  "ex": "She won the drawing competition."
+ },
+ {
+  "w": "noisy",
+  "pos": "adjective",
+  "def": "Making a lot of loud sound.",
+  "ex": "The classroom was very noisy."
+ },
+ {
+  "w": "umbrella",
+  "pos": "noun",
+  "def": "A thing you hold over your head when it rains.",
+  "ex": "Don't forget your umbrella!"
+ },
+ {
+  "w": "tidy",
+  "pos": "adjective",
+  "def": "Neat, with everything in its place.",
+  "ex": "My room is tidy today."
+ },
+ {
+  "w": "camera",
+  "pos": "noun",
+  "def": "A thing you use to take photos.",
+  "ex": "I took a photo with my new camera."
+ },
+ {
+  "w": "worried",
+  "pos": "adjective",
+  "def": "Thinking that something bad might happen.",
+  "ex": "I was worried about my test."
+ },
+ {
+  "w": "bridge",
+  "pos": "noun",
+  "def": "Something built over a river or road so you can cross it.",
+  "ex": "We walked across the old bridge."
+ },
+ {
+  "w": "kind",
+  "pos": "adjective",
+  "def": "Friendly and helpful to others.",
+  "ex": "It was kind of you to help me."
+ },
+ {
+  "w": "wonderful",
+  "pos": "adjective",
+  "def": "Very, very good.",
+  "ex": "We had a wonderful holiday."
+ },
+ {
+  "w": "map",
+  "pos": "noun",
+  "def": "A drawing that shows where places are.",
+  "ex": "We used a map to find the castle."
+ },
+ {
+  "w": "suddenly",
+  "pos": "adverb",
+  "def": "Very quickly, when you don't expect it.",
+  "ex": "Suddenly, the lights went out!"
+ }
+]

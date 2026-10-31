@@ -1,0 +1,242 @@
+[
+ {
+  "w": "advice",
+  "pos": "noun",
+  "def": "An opinion someone gives you about what you should do.",
+  "ex": "My teacher gave me some good advice."
+ },
+ {
+  "w": "improve",
+  "pos": "verb",
+  "def": "To make something better.",
+  "ex": "Reading every day will improve your English."
+ },
+ {
+  "w": "nervous",
+  "pos": "adjective",
+  "def": "Worried and a little scared about something that is going to happen.",
+  "ex": "I always feel nervous before a test."
+ },
+ {
+  "w": "achieve",
+  "pos": "verb",
+  "def": "To succeed in doing something after trying hard.",
+  "ex": "If you work hard, you can achieve your dream."
+ },
+ {
+  "w": "curious",
+  "pos": "adjective",
+  "def": "Wanting to know or learn about something.",
+  "ex": "Cats are curious animals."
+ },
+ {
+  "w": "environment",
+  "pos": "noun",
+  "def": "The air, water and land around us, where people, animals and plants live.",
+  "ex": "We should protect the environment."
+ },
+ {
+  "w": "avoid",
+  "pos": "verb",
+  "def": "To stay away from something.",
+  "ex": "Try to avoid eating too much sugar."
+ },
+ {
+  "w": "confident",
+  "pos": "adjective",
+  "def": "Sure that you can do something well.",
+  "ex": "After practising, she felt confident about the show."
+ },
+ {
+  "w": "experience",
+  "pos": "noun",
+  "def": "Something that happens to you and teaches you something.",
+  "ex": "Camping was a great experience."
+ },
+ {
+  "w": "prefer",
+  "pos": "verb",
+  "def": "To like one thing more than another.",
+  "ex": "I prefer swimming to running."
+ },
+ {
+  "w": "disappointed",
+  "pos": "adjective",
+  "def": "Sad because something was not as good as you hoped.",
+  "ex": "I was disappointed when the trip was cancelled."
+ },
+ {
+  "w": "opinion",
+  "pos": "noun",
+  "def": "What you think or feel about something.",
+  "ex": "In my opinion, cats are better than dogs."
+ },
+ {
+  "w": "protect",
+  "pos": "verb",
+  "def": "To keep someone or something safe.",
+  "ex": "A helmet will protect your head."
+ },
+ {
+  "w": "patient",
+  "pos": "adjective",
+  "def": "Able to wait calmly without getting angry.",
+  "ex": "Be patient – the cake needs ten more minutes."
+ },
+ {
+  "w": "adventure",
+  "pos": "noun",
+  "def": "An exciting and unusual experience.",
+  "ex": "Our trip to the jungle was a real adventure."
+ },
+ {
+  "w": "guess",
+  "pos": "verb",
+  "def": "To give an answer when you are not sure.",
+  "ex": "Can you guess what's in the box?"
+ },
+ {
+  "w": "lonely",
+  "pos": "adjective",
+  "def": "Sad because you are alone.",
+  "ex": "The new puppy felt lonely at night."
+ },
+ {
+  "w": "recipe",
+  "pos": "noun",
+  "def": "Instructions that tell you how to cook something.",
+  "ex": "This recipe for pancakes is easy."
+ },
+ {
+  "w": "rescue",
+  "pos": "verb",
+  "def": "To save someone from danger.",
+  "ex": "Firefighters rescue people and animals."
+ },
+ {
+  "w": "fair",
+  "pos": "adjective",
+  "def": "Treating everyone in the same, right way.",
+  "ex": "It's not fair! He got two cookies!"
+ },
+ {
+  "w": "rubbish",
+  "pos": "noun",
+  "def": "Things you throw away because you don't want them.",
+  "ex": "Please put your rubbish in the bin."
+ },
+ {
+  "w": "solve",
+  "pos": "verb",
+  "def": "To find the answer to a problem.",
+  "ex": "Can you solve this puzzle?"
+ },
+ {
+  "w": "messy",
+  "pos": "adjective",
+  "def": "Untidy and dirty.",
+  "ex": "My little brother's room is so messy!"
+ },
+ {
+  "w": "temperature",
+  "pos": "noun",
+  "def": "How hot or cold something is.",
+  "ex": "The temperature dropped below zero last night."
+ },
+ {
+  "w": "introduce",
+  "pos": "verb",
+  "def": "To tell people each other's names when they meet for the first time.",
+  "ex": "Let me introduce my friend Sam."
+ },
+ {
+  "w": "similar",
+  "pos": "adjective",
+  "def": "Almost the same, but not exactly.",
+  "ex": "My bike is similar to yours."
+ },
+ {
+  "w": "volunteer",
+  "pos": "noun",
+  "def": "A person who helps without being paid.",
+  "ex": "She is a volunteer at the animal shelter."
+ },
+ {
+  "w": "support",
+  "pos": "verb",
+  "def": "To help or encourage someone.",
+  "ex": "My friends always support me."
+ },
+ {
+  "w": "polite",
+  "pos": "adjective",
+  "def": "Speaking and behaving in a kind, respectful way.",
+  "ex": "It's polite to say thank you."
+ },
+ {
+  "w": "wildlife",
+  "pos": "noun",
+  "def": "Animals and plants that live in nature.",
+  "ex": "The park is full of wildlife."
+ },
+ {
+  "w": "trust",
+  "pos": "verb",
+  "def": "To believe that someone is honest and good.",
+  "ex": "I trust my best friend completely."
+ },
+ {
+  "w": "unusual",
+  "pos": "adjective",
+  "def": "Different from what normally happens.",
+  "ex": "It's unusual to see snow in April."
+ },
+ {
+  "w": "equipment",
+  "pos": "noun",
+  "def": "The tools and things you need for an activity.",
+  "ex": "You need special equipment to go diving."
+ },
+ {
+  "w": "hide",
+  "pos": "verb",
+  "def": "To put something where no one can see it.",
+  "ex": "Let's hide the present under the bed."
+ },
+ {
+  "w": "complain",
+  "pos": "verb",
+  "def": "To say that you are not happy about something.",
+  "ex": "Please don't complain about the rain!"
+ },
+ {
+  "w": "invent",
+  "pos": "verb",
+  "def": "To make or think of something completely new.",
+  "ex": "I want to invent a robot that tidies my room."
+ },
+ {
+  "w": "probably",
+  "pos": "adverb",
+  "def": "Very likely to happen or be true.",
+  "ex": "It will probably rain tomorrow."
+ },
+ {
+  "w": "instead",
+  "pos": "adverb",
+  "def": "In place of something else.",
+  "ex": "Let's walk instead of taking the bus."
+ },
+ {
+  "w": "celebrate",
+  "pos": "verb",
+  "def": "To do something special and fun for an important day.",
+  "ex": "We celebrate my birthday with a picnic."
+ },
+ {
+  "w": "crowded",
+  "pos": "adjective",
+  "def": "Full of people.",
+  "ex": "The beach was crowded on Sunday."
+ }
+]

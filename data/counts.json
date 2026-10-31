@@ -41,7 +41,13 @@
   "b1/story": 5,
   "b2/story": 5,
   "c1/story": 5,
-  "c2/story": 5
+  "c2/story": 5,
+  "a1/words": 40,
+  "a2/words": 40,
+  "b1/words": 40,
+  "b2/words": 40,
+  "c1/words": 40,
+  "c2/words": 40
  },
  "total": 3110,
  "questions": 2942,

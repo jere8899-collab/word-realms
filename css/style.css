@@ -534,3 +534,53 @@ img.acc-prev{width:72px;height:72px;object-fit:contain;display:block;margin:4px 
 @keyframes giftWiggle{0%,80%,100%{transform:rotate(0)}85%{transform:rotate(-12deg)}90%{transform:rotate(10deg)}95%{transform:rotate(-6deg)}}
 @media (prefers-reduced-motion:reduce){.gift-ready{animation:none}}
 @media (max-width:520px){.chest-days{grid-template-columns:repeat(4,1fr)}.wr-pet{width:110px;height:110px}}
+/* 🔮 Word Charms (js/charms.js) */
+.skill-card.charms-tile{background:linear-gradient(150deg,#F1E8FF,#E6F6FF 55%,#FFF0F6)}
+.ch-levels{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 10px}
+.ch-lv{position:relative;min-width:52px;min-height:44px;border-radius:999px;border:3px solid transparent;background:#fff;box-shadow:0 3px 0 #EADFF5;font:inherit;font-weight:900;cursor:pointer;padding:0 12px}
+.ch-lv.on{background:linear-gradient(135deg,#E9DDFF,#FFE3F0);border-color:#C9B2F2}
+.ch-badge{position:absolute;top:-6px;right:-6px;background:#FF8FB1;color:#fff;font-style:normal;font-size:.7rem;border-radius:999px;padding:1px 6px}
+.ch-intro{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#F4EDFF,#EAF7FF)}
+.ch-intro h2{font-size:1.15rem}
+.ch-pet{width:96px;height:96px;flex:none}
+.ch-how{font-weight:700;margin:.3em 0;font-size:.88rem}
+.ch-stages{margin:10px 0}
+.ch-box-h{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.ch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(78px,1fr));gap:8px}
+.ch-charm{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:72px;padding:6px 4px;border-radius:18px;border:3px solid #EFE6FA;background:#fff;font:inherit;cursor:pointer;color:inherit;transition:transform .15s}
+.ch-charm:hover{transform:translateY(-2px)}
+.ch-charm .ch-gem{font-size:1.6rem;line-height:1}
+.ch-charm .ch-word{font-weight:800;font-size:.85rem;overflow-wrap:anywhere;text-align:center;line-height:1.1}
+.ch-charm.mystery{opacity:.5;filter:grayscale(.5);border-style:dashed}
+.ch-charm.b1{background:#FFFBEA}.ch-charm.b2{background:#FFF6D6}.ch-charm.b3{background:#FFF0F6}.ch-charm.b4{background:#EEF6FF}
+.ch-charm.b5{background:linear-gradient(135deg,#E6F6FF,#F3E9FF);border-color:#B9E2FF}
+.ch-charm.due{border-color:#FFB3CB;box-shadow:0 0 0 3px #FFE3EE}
+.ch-big{font-size:3rem;text-align:center;line-height:1.1}
+.ch-big.glow{animation:bob2 3s ease-in-out infinite}
+.ch-modal{text-align:center}
+.ch-def{font-weight:800;font-size:1.05rem;margin:.6em 0 .3em}
+.ch-ex{font-style:italic;font-weight:700;opacity:.9;margin:.3em 0}
+.ch-ex.small{font-size:.9rem;margin-top:4px}
+.ch-hl{color:#8A4FD8;font-style:normal}
+.ch-meet{text-align:center}
+.ch-meet-w{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin:4px 0}
+.ch-word-big{font-family:"Baloo 2",Nunito,sans-serif;font-size:2.1rem;font-weight:800;color:#6B3FB8;overflow-wrap:anywhere}
+.btn.ch-slow{min-width:44px;min-height:44px}
+.ch-ask{margin:4px 0 6px}
+.ch-q{font-weight:900;margin:.2em 0 .5em;font-size:1.05rem}
+.ch-clue{display:flex;align-items:center;gap:8px;font-weight:800;font-size:1.05rem;background:#F7F2FF;border-radius:16px;padding:8px 10px}
+.ch-clue span{flex:1;min-width:0}
+.ch-sent{font-size:1.25rem;font-weight:800;line-height:1.6;text-align:center;margin:.4em 0}
+.ch-blank{display:inline-block;color:#8A4FD8;letter-spacing:2px;border-bottom:3px dashed #C9B2F2;padding:0 4px}
+.ch-hint{font-weight:800;text-align:center;margin:4px 0}
+.opts.ch-opts{grid-template-columns:repeat(2,1fr);margin-top:10px}
+.opts.ch-opts.one{grid-template-columns:1fr}
+.opt.ch-opt{justify-content:center;text-align:center;font-weight:800;min-height:56px}
+.opt.ch-opt.ch-defopt{text-align:left;justify-content:flex-start;font-size:.95rem}
+.ch-slots .slot{cursor:pointer}
+.ch-pool{margin-top:6px}
+.ch-fb .ch-note{margin-top:4px;font-weight:900}
+.ch-sum{display:flex;flex-direction:column;gap:4px;align-items:center;margin:6px 0}
+.ch-sum-row{font-weight:800}.ch-sum-row span{margin-right:6px}
+@media (max-width:360px){.ch-grid{grid-template-columns:repeat(3,1fr)}.ch-word-big{font-size:1.7rem}.ch-pet{width:72px;height:72px}.ch-sent{font-size:1.1rem}}
+.ch-stages .stage-chip{min-width:56px;padding:6px 4px}.ch-stages .stage-chip span{font-size:1.3rem}.ch-stages .stage-chip small{font-size:.68rem;line-height:1.1}

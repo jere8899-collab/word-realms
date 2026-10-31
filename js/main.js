@@ -25,7 +25,7 @@ function renderNav() {
   if (!n.dataset.wired) { n.dataset.wired = "1"; n.addEventListener("click", e => { const b = e.target.closest("button[data-k]"); if (b && n.contains(b)) WR.go(b.dataset.k); }); }
 }
 // every running activity is stopped when the screen changes (each module defines its own WR.stopX)
-const STOPS = ["stopLesson", "stopSpeaking", "stopWriting", "stopStory", "stopPlacement", "stopMath", "stopPhonics"];
+const STOPS = ["stopLesson", "stopSpeaking", "stopWriting", "stopStory", "stopPlacement", "stopMath", "stopPhonics", "stopCharms"];
 WR.go = (screen, arg) => {
   STOPS.forEach(n => WR[n] && WR[n]()); WR.Voice.stop();
   current = screen; WR.navActive(screen === "realm" ? "home" : /^(math|dojo|dojoGrid|clock)$/.test(screen) ? "math" : screen);
@@ -104,6 +104,8 @@ WR.waitingText = (rid, k) => {
   if (!p) return "✨ New adventure!";
   return lessons >= 1 ? `🎁 ${lessons} new lesson${lessons > 1 ? "s" : ""} waiting!` : "🔁 Practise to polish your crowns";
 };
+// 🔔 a gentle "something is ready" card on the map (Mistake Garden plants, Word Charms): ONE markup for every nudge
+WR.nudgeCard = (id, icon, title, sub, btn) => `<div class="card row garden-nudge" id="${id}"><span style="font-size:2rem">${icon}</span><div style="flex:1"><b>${title}</b><div class="muted" style="font-size:.85rem;font-weight:700">${sub}</div></div><button class="btn small mint">${btn}</button></div>`;
 WR.screens.home = () => {
   WR.ensureDaily();
   const s = WR.state, cont = WR.continueTarget(), due = WR.Garden ? WR.Garden.dueCount() : 0;
@@ -123,7 +125,8 @@ WR.screens.home = () => {
       ${WR.phonicsNode ? WR.phonicsNode() : ""}
       ${WR.Math ? `<div class="card math-node" id="mathNode" style="margin-top:14px">${WR.img("bg_math", "thumb", "", true)}<div style="flex:1"><div><span class="lvl-badge">G1–12</span><b>🔢 Number Kingdom</b></div><div class="muted" style="font-size:.85rem;font-weight:700">Maths quests + 🗼 Times-Table Tower</div><div class="muted" style="font-size:.75rem;font-weight:800">👑 ${WR.Math.totalCrowns()} crowns · 🌟 ${WR.Math.mastered()}/132 facts${s.math && s.math.grade ? ` · Grade ${s.math.grade}` : ""}</div></div></div>` : ""}</div>
       <div><div id="homeGoals"></div><h2>🎯 Daily Quests</h2><div class="card quests">${qs}<p class="muted" style="font-size:.8rem;font-weight:700;margin-bottom:0">New quests every day. Keep your 🔥 streak by finishing one lesson a day!</p></div>
-      ${due ? `<div class="card row garden-nudge" id="gardenNudge"><span style="font-size:2rem">💧</span><div style="flex:1"><b>${due} plant${due > 1 ? "s" : ""} in your Mistake Garden ${due > 1 ? "are" : "is"} thirsty</b><div class="muted" style="font-size:.85rem;font-weight:700">A quick review helps tricky words stick.</div></div><button class="btn small mint">Water →</button></div>` : ""}
+      ${due ? WR.nudgeCard("gardenNudge", "💧", `${due} plant${due > 1 ? "s" : ""} in your Mistake Garden ${due > 1 ? "are" : "is"} thirsty`, "A quick review helps tricky words stick.", "Water →") : ""}
+      ${WR.charmsNudge ? WR.charmsNudge() : ""}
       <h2>🐾 ${WR.userText(s.pet.name)}</h2><div class="card row" style="cursor:pointer" id="petCard"><div style="width:110px;height:110px">${WR.petHTML()}</div><div style="flex:1">
         <div class="stat" style="grid-template-columns:24px 1fr 34px"><span>💖</span><div class="prog" style="margin:0"><i style="width:${s.pet.happiness}%"></i></div><span>${Math.round(s.pet.happiness)}</span></div>
         <div class="stat" style="grid-template-columns:24px 1fr 34px"><span>🍽️</span><div class="prog" style="margin:0"><i style="width:${100 - s.pet.hunger}%;background:linear-gradient(90deg,#FFE29A,#FFB48A)"></i></div><span>${Math.round(100 - s.pet.hunger)}</span></div>
@@ -137,6 +140,7 @@ WR.screens.home = () => {
   const he = WR.$("#heroEditHome"); if (he) he.onclick = e => { e.stopPropagation(); WR.openRename(); };
   const mn = WR.$("#mathNode"); if (mn) mn.onclick = () => WR.go("math");
   const gn = WR.$("#gardenNudge"); if (gn) gn.onclick = () => WR.go("review");
+  const cn = WR.$("#charmsNudge"); if (cn) cn.onclick = () => WR.openCharms();
   const cc = WR.$("#continueCard"); if (cc) cc.onclick = () => WR.startLesson({ realm: cont.realm.id, skill: cont.skill.id, key: cont.skill.id, title: `${cont.skill.name} · ${cont.realm.modeName}` });
   WR.$("#mirrorPill").onclick = () => WR.retakePlacement();
   const bp = WR.$("#bookPill"); if (bp) bp.onclick = () => WR.openStorybook();
@@ -145,27 +149,33 @@ WR.screens.home = () => {
 };
 
 /* ---------------- realm screen ---------------- */
+// 🎶 Bonus tiles (not part of the 3-of-4 unlock rule): ONE markup helper for every module's tile, and ONE table that
+// says which tiles a realm shows (in this order) and what a tap opens. ico = the tile's picture markup.
+WR.bonusTile = ({ cls, data, ico, title, desc, crowns, tag }) => `<div class="card skill-card ${cls}" data-${data}="1"><span class="bonus-tag">Bonus</span>${ico}<h3>${title}</h3>
+    <div class="muted" style="font-size:.85rem;font-weight:700">${desc}</div><div class="crowns">${crowns}</div><div class="waiting-tag">${tag}</div></div>`;
+const tileCrowns = (rid, k) => { const p = (WR.state.progress[rid] || {})[k]; return WR.crownCell(p && p.best != null ? WR.crowns(p.best) : null); };
+const BONUS = [
+  { data: "speak", open: rid => WR.startSpeaking(rid), tile: rid => WR.SPEAKING && WR.bonusTile({ cls: "speak", data: "speak", ico: '<span class="ico">🎤</span>', title: "Speaking", desc: "Echo Well: say it aloud", crowns: tileCrowns(rid, "speaking"), tag: "🎶 Bonus fun!" }) },
+  { data: "write", open: rid => WR.startWriting(rid), tile: rid => { if (!WR.WRITING) return ""; const w = WR.writingRealmCrowns(rid), n = (WR.counts ? WR.counts.counts : {})[rid + "/writing"] || "";
+      return WR.bonusTile({ cls: "quill-tile", data: "write", ico: `<img class="ico quill-ico" src="assets/web/quill.webp" onerror="this.onerror=null;this.src='assets/ui/quill.png'" alt="">`, title: "Writing", desc: "Story Quill: plan, write, get feedback", crowns: WR.crownCell(w.done ? w.crowns : null), tag: w.done ? `✒️ ${w.done}/${n} stories written` : "🎶 Bonus fun!" }); } },
+  { data: "story", open: rid => WR.startStory(rid), tile: rid => WR.STORY && WR.storyTile(rid) },
+  { data: "phonics", open: () => WR.go("phonics"), tile: rid => WR.phonicsTile && WR.phonicsTile(rid) },
+  { data: "charms", open: rid => WR.openCharms(rid), tile: rid => WR.charmsTile && WR.charmsTile(rid) }
+];
 WR.screens.realm = rid => {
-  const r = WR.realms.find(x => x.id === rid), pr = WR.realmProgress(rid).p;
-  const crowns = k => { const b = pr[k] && pr[k].best; return WR.crownCell(b == null ? null : WR.crowns(b)); };
-  const sizes = WR.counts ? WR.counts.counts : {};
+  const r = WR.realms.find(x => x.id === rid);
+  const crowns = k => tileCrowns(rid, k);
   WR.view(`<div class="fade-in"><div class="realm-hero">${WR.img(r.bg, "bg")}<div class="ov"><span class="lvl-badge">${r.level}</span><b class="title" style="font-size:1.5rem">${r.emoji} ${r.name}</b>
     <p style="margin:.3em 0;font-weight:700">${WR.esc(r.blurb)}</p><span class="pill">Game mode: ${r.modeName}</span></div></div>
     <div class="row" style="margin:12px 0"><button class="btn ghost small" id="backMap">← Map</button></div>
     <div class="grid g4">${WR.SKILLS.map(k => `<div class="card skill-card" data-k="${k.id}"><span class="ico">${k.icon}</span><h3>${k.name}</h3><div class="muted" style="font-size:.85rem;font-weight:700">${k.desc}</div><div class="crowns">${crowns(k.id)}</div><div class="waiting-tag">${WR.waitingText(rid, k.id)}</div></div>`).join("")}
-    ${WR.SPEAKING ? `<div class="card skill-card speak" data-speak="1"><span class="bonus-tag">Bonus</span><span class="ico">🎤</span><h3>Speaking</h3><div class="muted" style="font-size:.85rem;font-weight:700">Echo Well: say it aloud</div><div class="crowns">${crowns("speaking")}</div><div class="waiting-tag">🎶 Bonus fun!</div></div>` : ""}
-    ${WR.WRITING ? (() => { const w = WR.writingRealmCrowns(rid), n = sizes[rid + "/writing"] || ""; return `<div class="card skill-card quill-tile" data-write="1"><span class="bonus-tag">Bonus</span><img class="ico quill-ico" src="assets/web/quill.webp" onerror="this.onerror=null;this.src='assets/ui/quill.png'" alt=""><h3>Writing</h3><div class="muted" style="font-size:.85rem;font-weight:700">Story Quill: plan, write, get feedback</div><div class="crowns">${WR.crownCell(w.done ? w.crowns : null)}</div><div class="waiting-tag">${w.done ? `✒️ ${w.done}/${n} stories written` : "🎶 Bonus fun!"}</div></div>`; })() : ""}
-    ${WR.STORY ? WR.storyTile(rid) : ""}
-    ${WR.phonicsTile ? WR.phonicsTile(rid) : ""}
+    ${BONUS.map(b => b.tile(rid) || "").join("")}
     <div class="card skill-card special" data-sp="1"><span class="ico">${r.special.emoji}</span><h3>${r.special.name}</h3><div class="muted" style="font-size:.85rem;font-weight:700">${r.special.desc}</div><div class="crowns">${crowns("special")}</div><div class="muted" style="font-size:.72rem">Special game</div></div></div></div>`);
   WR.$("#backMap").onclick = () => WR.go("home");
   // only the skill cards: the bottom tab bar buttons also carry data-k and must keep their own handler
   WR.$("#main").querySelectorAll(".skill-card[data-k]").forEach(c => c.onclick = () => { const k = WR.SKILLS.find(x => x.id === c.dataset.k); if (!k) return; WR.startLesson({ realm: rid, skill: k.id, key: k.id, title: `${k.name} · ${r.modeName}` }); });
   WR.$("[data-sp]").onclick = () => WR.playSpecial(rid);
-  const spk = WR.$("[data-speak]"); if (spk) spk.onclick = () => WR.startSpeaking(rid);
-  const wrt = WR.$("[data-write]"); if (wrt) wrt.onclick = () => WR.startWriting(rid);
-  const sty = WR.$("[data-story]"); if (sty) sty.onclick = () => WR.startStory(rid);
-  const phx = WR.$("[data-phonics]"); if (phx) phx.onclick = () => WR.go("phonics");
+  BONUS.forEach(b => { const el = WR.$(`[data-${b.data}]`); if (el) el.onclick = () => b.open(rid); });
 };
 
 /* review screen (Mistake Garden) lives in js/garden.js */

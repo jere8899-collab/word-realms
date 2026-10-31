@@ -1,0 +1,242 @@
+[
+ {
+  "w": "appreciate",
+  "pos": "verb",
+  "def": "To be thankful for something.",
+  "ex": "I really appreciate your help."
+ },
+ {
+  "w": "essential",
+  "pos": "adjective",
+  "def": "Completely necessary.",
+  "ex": "Water is essential for all living things."
+ },
+ {
+  "w": "cope",
+  "pos": "verb",
+  "def": "To deal with a difficult situation successfully.",
+  "ex": "It's hard to cope with so much homework."
+ },
+ {
+  "w": "opportunity",
+  "pos": "noun",
+  "def": "A chance to do something.",
+  "ex": "The school trip is a great opportunity to practise French."
+ },
+ {
+  "w": "exhausted",
+  "pos": "adjective",
+  "def": "Extremely tired.",
+  "ex": "After the hike, we were exhausted."
+ },
+ {
+  "w": "encourage",
+  "pos": "verb",
+  "def": "To give someone confidence to do something.",
+  "ex": "Parents should encourage children to read."
+ },
+ {
+  "w": "impact",
+  "pos": "noun",
+  "def": "A strong effect on something.",
+  "ex": "Plastic has a big impact on ocean life."
+ },
+ {
+  "w": "reluctant",
+  "pos": "adjective",
+  "def": "Not wanting to do something.",
+  "ex": "He was reluctant to jump into the cold pool."
+ },
+ {
+  "w": "persuade",
+  "pos": "verb",
+  "def": "To make someone agree to do something by giving reasons.",
+  "ex": "I tried to persuade my parents to get a puppy."
+ },
+ {
+  "w": "unique",
+  "pos": "adjective",
+  "def": "The only one of its kind.",
+  "ex": "Every snowflake is unique."
+ },
+ {
+  "w": "achievement",
+  "pos": "noun",
+  "def": "Something good you did through hard work.",
+  "ex": "Learning to swim was a big achievement."
+ },
+ {
+  "w": "predict",
+  "pos": "verb",
+  "def": "To say what will happen in the future.",
+  "ex": "Can you predict the end of the story?"
+ },
+ {
+  "w": "ambitious",
+  "pos": "adjective",
+  "def": "Having a strong wish to be successful.",
+  "ex": "She's ambitious and wants to be an astronaut."
+ },
+ {
+  "w": "consequence",
+  "pos": "noun",
+  "def": "A result of something you did.",
+  "ex": "Being late had one consequence: we missed the bus."
+ },
+ {
+  "w": "anxious",
+  "pos": "adjective",
+  "def": "Worried and nervous about something.",
+  "ex": "He felt anxious before the big match."
+ },
+ {
+  "w": "recommend",
+  "pos": "verb",
+  "def": "To say that something is good and someone should try it.",
+  "ex": "I recommend this book to everyone."
+ },
+ {
+  "w": "reliable",
+  "pos": "adjective",
+  "def": "Able to be trusted to do what is expected.",
+  "ex": "My old bike is slow but reliable."
+ },
+ {
+  "w": "debate",
+  "pos": "noun",
+  "def": "A discussion where people give different opinions.",
+  "ex": "Our class had a debate about school uniforms."
+ },
+ {
+  "w": "struggle",
+  "pos": "verb",
+  "def": "To try very hard to do something difficult.",
+  "ex": "Many students struggle with fractions at first."
+ },
+ {
+  "w": "obvious",
+  "pos": "adjective",
+  "def": "Easy to see or understand.",
+  "ex": "The answer was obvious once I saw the picture."
+ },
+ {
+  "w": "eventually",
+  "pos": "adverb",
+  "def": "In the end, after a long time.",
+  "ex": "We eventually found the lost kitten."
+ },
+ {
+  "w": "inspire",
+  "pos": "verb",
+  "def": "To give someone the wish and ideas to do something.",
+  "ex": "Great books can inspire young writers."
+ },
+ {
+  "w": "frustrated",
+  "pos": "adjective",
+  "def": "Annoyed because you can't do what you want.",
+  "ex": "I get frustrated when my computer freezes."
+ },
+ {
+  "w": "rumour",
+  "pos": "noun",
+  "def": "A story that people pass on that may not be true.",
+  "ex": "There's a rumour that we're getting a new teacher."
+ },
+ {
+  "w": "hesitate",
+  "pos": "verb",
+  "def": "To pause before doing or saying something because you are unsure.",
+  "ex": "Don't hesitate to ask if you need help."
+ },
+ {
+  "w": "responsible",
+  "pos": "adjective",
+  "def": "Having the job of looking after someone or something.",
+  "ex": "I'm responsible for feeding the class hamster."
+ },
+ {
+  "w": "gradually",
+  "pos": "adverb",
+  "def": "Slowly, little by little.",
+  "ex": "The sky gradually turned pink."
+ },
+ {
+  "w": "genuine",
+  "pos": "adjective",
+  "def": "Real and true, not fake.",
+  "ex": "Is this a genuine dinosaur tooth?"
+ },
+ {
+  "w": "investigate",
+  "pos": "verb",
+  "def": "To try to find out the facts about something.",
+  "ex": "The detective wants to investigate the missing cake."
+ },
+ {
+  "w": "suitable",
+  "pos": "adjective",
+  "def": "Right for a particular person or situation.",
+  "ex": "This film is suitable for children."
+ },
+ {
+  "w": "witness",
+  "pos": "noun",
+  "def": "A person who sees something happen.",
+  "ex": "The only witness to the cookie theft was the cat."
+ },
+ {
+  "w": "independent",
+  "pos": "adjective",
+  "def": "Not needing help from other people.",
+  "ex": "Teenagers often want to be more independent."
+ },
+ {
+  "w": "sustainable",
+  "pos": "adjective",
+  "def": "Able to continue without harming the environment.",
+  "ex": "Bamboo is a sustainable material."
+ },
+ {
+  "w": "tolerate",
+  "pos": "verb",
+  "def": "To accept something you don't like.",
+  "ex": "I can't tolerate loud music when I'm studying."
+ },
+ {
+  "w": "significant",
+  "pos": "adjective",
+  "def": "Large or important enough to be noticed.",
+  "ex": "There was a significant change in the weather."
+ },
+ {
+  "w": "shortage",
+  "pos": "noun",
+  "def": "A situation when there is not enough of something.",
+  "ex": "There was a shortage of water during the hot summer."
+ },
+ {
+  "w": "enthusiastic",
+  "pos": "adjective",
+  "def": "Showing a lot of interest and excitement.",
+  "ex": "The children were enthusiastic about the science fair."
+ },
+ {
+  "w": "deliberately",
+  "pos": "adverb",
+  "def": "On purpose, not by accident.",
+  "ex": "Did you deliberately hide my shoes?"
+ },
+ {
+  "w": "vast",
+  "pos": "adjective",
+  "def": "Extremely large.",
+  "ex": "The Pacific is a vast ocean."
+ },
+ {
+  "w": "artificial",
+  "pos": "adjective",
+  "def": "Made by people, not by nature.",
+  "ex": "The football pitch has artificial grass."
+ }
+]
