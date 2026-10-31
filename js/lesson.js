@@ -63,7 +63,7 @@ let timerId = null;
 function clearTimer() { if (timerId) { clearInterval(timerId); timerId = null; } if (L && L._io) { L._io.disconnect(); L._io = null; } }
 
 WR.startLesson = async (opts) => {
-  clearTimer(); WR.Speech && Speech.stop();
+  clearTimer(); WR.Voice.stop();
   const realm = WR.realms.find(r => r.id === opts.realm);
   const items = opts.items || await WR.buildItems(opts.realm, opts.skill);
   L = { ...opts, realm, items, mode: opts.mode || realm.mode, i: 0, correct: 0, combo: 0, maxCombo: 0, starsEarned: 0,
@@ -154,7 +154,7 @@ function render() {
     <div class="lesson fade-in"><div class="card qcard">${qBody(it)}</div>
       <div class="card side"><div class="petbox" id="lpet">${WR.petHTML()}</div><div class="bubble" id="lbubble">${WR.esc(L.i === 0 ? "Let's do this together! ✨" : WR.petMood())}</div>
       <div class="muted" id="lstats" style="font-size:.85rem;font-weight:800">⭐ ${L.starsEarned} earned · 🔥 combo ${L.combo}</div></div></div>`);
-  WR.$("#quitBtn").onclick = () => { clearTimer(); Speech.stop(); L.onQuit ? L.onQuit() : L.review ? WR.go("review") : WR.go("realm", L.realm.id); };
+  WR.$("#quitBtn").onclick = () => { clearTimer(); WR.Voice.stop(); L.onQuit ? L.onQuit() : L.review ? WR.go("review") : WR.go("realm", L.realm.id); };
   if (it.type === "order") bindOrder(it);
   else if (it.type === "spell") bindSpell(it);
   else if (it.type === "mistake") bindMistake(it);
@@ -190,7 +190,7 @@ function bindListen(it) {
     let done = false; const fin = ok => { if (done) return; done = true; if (L === me) ended(ok); };
     // some browsers never fire "end" (no voices): treat the clip as played after its rough length + 4 s
     setTimeout(() => fin(false), Math.min(20000, 4000 + String(it.say || "").length * 90 / (rate || WR.state.settings.rate || 1)));
-    Speech.speak(it.say, rate || WR.state.settings.rate, () => fin(true));
+    WR.say(it.say, { rate: rate || WR.state.settings.rate, onend: () => fin(true) });
   };
   WR.$("#playBtn").onclick = () => play();
   WR.$("#slowBtn").onclick = () => play(0.6);
@@ -323,8 +323,8 @@ function answer(ok, it, extra = "") {
   const last = L.i >= L.items.length - 1 || lost || ((L.mode === "boss" || L.mode === "dragon") && L.bossHP <= 0);
   WR.$("#explain").innerHTML = `<div class="explain ${ok ? "good" : "bad"}">${ok ? "✅ Correct!" : "💭 Not quite."} ${extra}${whyNot(ok, it)} <div class="why-rule" style="font-weight:700;margin-top:4px">💡 ${WR.esc(it.explain)}</div>${transcript}</div>
     <div class="row" style="margin-top:12px;justify-content:flex-end"><button class="btn ${ok ? "mint" : ""}" id="nextBtn">${last ? "See results ✨" : "Next →"}</button></div>`;
-  const rp = WR.$("#replay"); if (rp) rp.onclick = () => Speech.speak(it.say, WR.state.settings.rate);
-  WR.$("#nextBtn").onclick = () => { Speech.stop(); if (last) finish(lost); else { L.i++; render(); } };
+  const rp = WR.$("#replay"); if (rp) rp.onclick = () => WR.say(it.say);
+  WR.$("#nextBtn").onclick = () => { WR.Voice.stop(); if (last) finish(lost); else { L.i++; render(); } };
   WR.$("#nextBtn").scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
 function finish(lost) {

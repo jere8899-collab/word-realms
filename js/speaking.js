@@ -138,7 +138,7 @@ const WHY = {
 let S = null;
 WR.stopSpeaking = () => { stopRec(true); S = null; };
 WR.startSpeaking = async (rid, opts = {}) => {
-  WR.stopSpeaking(); window.Speech && Speech.stop();
+  WR.stopSpeaking(); WR.Voice.stop();
   const realm = WR.realms.find(r => r.id === rid);
   const bank = await WR.bank(rid, "speaking");
   const items = (opts.items || WR.sample(bank, PER_ROUND)).map(x => ({ ...x, best: 0, attempts: 0, passed: false }));
@@ -184,11 +184,11 @@ function render() {
       <div id="echoResult"></div></div>
       <div class="card side"><div class="petbox" id="lpet">${WR.petHTML()}</div><div class="bubble" id="lbubble">${S.i === 0 ? "Whisper into the well and it echoes back! 🎶" : WR.esc(WR.petMood())}</div>
       <div class="muted" id="lstats" style="font-size:.85rem;font-weight:800">⭐ ${S.starsEarned} earned · 💧 ${S.passes} passed</div></div></div>`);
-  const play = r => { const b = WR.$("#hearBtn"); b && b.classList.add("playing"); Speech.speak(sayTarget(it), r || WR.state.settings.rate, () => { const bb = WR.$("#hearBtn"); bb && bb.classList.remove("playing"); }); };
+  const play = r => { const b = WR.$("#hearBtn"); b && b.classList.add("playing"); WR.say(sayTarget(it), { rate: r, onend: () => { const bb = WR.$("#hearBtn"); bb && bb.classList.remove("playing"); } }); };
   WR.$("#hearBtn").onclick = () => play();
   WR.$("#slowBtn").onclick = () => play(0.6);
   WR.$("#rate").oninput = e => { WR.state.settings.rate = +e.target.value; WR.$("#rateVal").textContent = e.target.value + "×"; WR.save(); };
-  WR.$("#quitBtn").onclick = () => { stopRec(true); Speech.stop(); const r = S.realm.id; S = null; WR.go("realm", r); };
+  WR.$("#quitBtn").onclick = () => { stopRec(true); WR.Voice.stop(); const r = S.realm.id; S = null; WR.go("realm", r); };
   const tm = WR.$("#tryMic"); if (tm) tm.onclick = () => { S.mode = "mic"; S.why = null; WR.state.speaking.preferShadow = false; WR.state.speaking.shadowWhy = null; WR.save(); render(); };
   if (mic) WR.$("#micBtn").onclick = () => toggleMic(it);
   else document.querySelectorAll("[data-self]").forEach(b => b.onclick = () => selfRate(it, b.dataset.self));
@@ -196,7 +196,7 @@ function render() {
 }
 function toggleMic(it) {
   if (S.listening) { stopRec(false); return; }
-  Speech.stop(); S.listening = true;
+  WR.Voice.stop(); S.listening = true;
   const btn = WR.$("#micBtn"), lbl = WR.$("#micLbl"), heard = WR.$("#heard");
   btn.classList.add("on"); lbl.textContent = "Listening… tap to stop"; heard.innerHTML = `<span class="muted">👂 Listening…</span>`;
   const reset = () => { S && (S.listening = false); const b = WR.$("#micBtn"); if (b) { b.classList.remove("on"); WR.$("#micLbl").textContent = "Say it"; } };
@@ -265,7 +265,7 @@ function plantIfMissed(it) {
     explain: `${it.focus}: ${it.tip}` }, S.realm.id, "speaking");
 }
 function next() {
-  stopRec(true); Speech.stop(); plantIfMissed(cur());
+  stopRec(true); WR.Voice.stop(); plantIfMissed(cur());
   if (S.i >= S.items.length - 1) return finish();
   S.i++; render();
 }

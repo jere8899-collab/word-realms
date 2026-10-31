@@ -3,7 +3,7 @@
    → 🐚 Two-Letter Twins (sh ch th ck ng) → ✨ Magic-e Meadow (a_e i_e o_e u_e) → 👀 Tricky Word Tower (sight words).
    Activity types: 🔊 sound → pick the letter, first sound of a picture, odd-sound-out, tap-and-blend, build the word with letter
    tiles, hear-and-pick the word, and find the tricky word in a sentence. Every round is 8 questions, read aloud with the game's
-   speechSynthesis voice (js/speech.js). Computer voices can't say every sound on its own, so a letter tile says its sound with a
+   device voice or recording (WR.say, js/voice.js). Computer voices can't say every sound on its own, so a letter tile says its sound with a
    keyword ("sss… sun"). Answers go through WR.countAnswer (report key "a1/phonics") and the end of a round through WR.activityDone.
    Saved in WR.state.phonics = { done: { u1: { best, crowns, plays, at } }, rounds, taps } inside wordRealms.save.v1 (cloud-synced). */
 (function () {
@@ -183,7 +183,7 @@ WR.screens.phonics = () => {
 
 /* ---------- a round ---------- */
 let S = null;
-const speak = (t, cb) => window.Speech && Speech.speak(t, WR.state.settings.rate, cb);
+const speak = (t, cb) => WR.say(t, { onend: cb });
 WR.startPhonics = i => { WR.go("phonicsRound", i); };
 WR.stopPhonics = () => { S = null; };
 WR.Phonics._q = () => S && S.qs[S.n];                    // the current question (tests)

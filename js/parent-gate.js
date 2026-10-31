@@ -95,7 +95,7 @@ WR.openGrownups = () => gate(() => {
       <button class="btn small mint" id="guPinSet">${hasPin() ? "Change PIN" : "Set PIN"}</button>${hasPin() ? '<button class="btn small ghost" id="guPinOff">Remove PIN</button>' : ""}</div>
     <div class="cc-err" id="guErr" role="alert"></div>
     <p class="set-note muted">The PIN is saved scrambled (SHA-256) with this adventure and syncs with the Cloud Castle. Cash items in the Shop, Teacher mode and "Log out &amp; clear device" all ask for it.</p>
-    <p class="set-note muted">🗣️ Listening voice: ${WR.esc(window.Speech ? Speech.voiceName() : "-")}</p>
+    <p class="set-note muted">🗣️ Listening voice: ${WR.Voice.recorded() ? "recorded storyteller (falls back to " : ""}${WR.esc(window.Speech ? Speech.voiceName() : "-")}${WR.Voice.recorded() ? ")" : ""}</p>
     <div class="row" style="justify-content:center"><button class="btn small" id="guDone">Done</button></div>`, (bg, close) => {
     bg.querySelector("#guUl").onchange = e => { s.settings.unlockAll = e.target.checked; WR.save(); WR.toast(e.target.checked ? "🗝️ Every realm is open" : "🔒 Realms open in order again"); };
     const rp = bg.querySelector("#guReport"); if (rp) rp.onclick = () => { close(); WR.go("report", "week"); };

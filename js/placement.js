@@ -46,7 +46,7 @@ WR.placementResult = r => {
 function nextLevel(r, last) { return r[last] >= PASS ? last + 1 : last - 1; }
 
 WR.startPlacement = async (opts = {}) => {
-  WR.stopLesson && WR.stopLesson(); window.Speech && Speech.stop();
+  WR.stopLesson && WR.stopLesson(); WR.Voice.stop();
   P = { opts, scores: {}, lvIdx: START, items: [], i: 0, stageRight: 0, asked: 0, log: [] };
   intro();
 };
@@ -83,16 +83,16 @@ function question() {
     <div class="card qcard">${body}<div class="qtext">${WR.esc(it.q)}</div>
       <div class="opts">${it.options.map((o, k) => `<button class="opt" data-k="${k}"><span class="k">${"ABCD"[k]}</span>${WR.esc(o)}</button>`).join("")}</div>
       <div class="row" style="justify-content:center;margin-top:10px"><button class="btn ghost small" id="unsure">🤔 I'm not sure</button></div><div id="plFb"></div></div></div>`);
-  WR.$("#plQuit").onclick = () => { Speech.stop(); const f = P.opts.onBack; P = null; f && f(); };
+  WR.$("#plQuit").onclick = () => { WR.Voice.stop(); const f = P.opts.onBack; P = null; f && f(); };
   if (it.type === "listen") {
-    const play = r => Speech.speak(it.say, r || WR.state.settings.rate);
+    const play = r => WR.say(it.say, { rate: r });
     WR.$("#playBtn").onclick = () => play(); WR.$("#slowBtn").onclick = () => play(0.6); setTimeout(() => P && play(), 300);
   }
   document.querySelectorAll(".opt").forEach(b => b.onclick = () => answer(it.options[+b.dataset.k] === it.correct, b, it));
   WR.$("#unsure").onclick = () => answer(false, null, it);
 }
 function answer(ok, btn, it) {
-  if (it._done) return; it._done = true; Speech.stop();
+  if (it._done) return; it._done = true; WR.Voice.stop();
   document.querySelectorAll(".opt").forEach(b => { b.disabled = true; if (it.options[+b.dataset.k] === it.correct) b.classList.add("right"); });
   if (btn && !ok) btn.classList.add("wrong");
   WR.$("#unsure").disabled = true; WR.sfx(ok ? "good" : "tap");

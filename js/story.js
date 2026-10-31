@@ -70,7 +70,7 @@ function render() {
   if (!last) {
     WR.$("#readAll").onclick = () => readAll(WR.state.settings.rate);
     WR.$("#readSlow").onclick = () => readAll(0.65);
-    document.querySelectorAll(".sent").forEach(s => s.onclick = e => { if (e.target.closest(".gloss")) return; hl(+s.dataset.i); Speech.speak(s.textContent, WR.state.settings.rate, () => hl(-1)); });
+    document.querySelectorAll(".sent").forEach(s => s.onclick = e => { if (e.target.closest(".gloss")) return; hl(+s.dataset.i); WR.say(s.textContent, { onend: () => hl(-1) }); });
     document.querySelectorAll(".gloss").forEach(b => b.onclick = e => { e.stopPropagation(); gloss(b); });
   }
   document.querySelectorAll(".opt").forEach(b => b.onclick = () => choose(b, q, opts));
@@ -82,7 +82,7 @@ function hl(i) { document.querySelectorAll(".sent").forEach(s => s.classList.tog
 function readAll(rate) {
   const ss = [...document.querySelectorAll(".sent")]; let i = 0; const tok = S.tok = (S.tok || 0) + 1;
   st().reads++; WR.save();
-  const step = () => { if (!S || S.tok !== tok) return; if (i >= ss.length) return hl(-1); hl(i); Speech.speak(ss[i].textContent, rate, () => { i++; step(); }); };
+  const step = () => { if (!S || S.tok !== tok) return; if (i >= ss.length) return hl(-1); hl(i); WR.say(ss[i].textContent, { rate, onend: () => { i++; step(); } }); };
   step();
 }
 function gloss(b) {
@@ -92,9 +92,9 @@ function gloss(b) {
   const pop = document.createElement("div"); pop.className = "gloss-pop";
   pop.innerHTML = `<b>${WR.esc(w)}</b> <button class="btn ghost small" data-say="1">🔊</button><div>${WR.esc(g)}</div>${isNew ? '<div class="muted" style="font-size:.72rem;font-weight:800">✨ Added to your word list</div>' : ""}`;
   (WR.$("#storyText") || b).insertAdjacentElement("afterend", pop);
-  pop.querySelector("[data-say]").onclick = e => { e.stopPropagation(); Speech.speak(w + ". " + g, WR.state.settings.rate); };
+  pop.querySelector("[data-say]").onclick = e => { e.stopPropagation(); WR.say(w + ". " + g); };
   pop.onclick = e => { e.stopPropagation(); pop.remove(); };
-  b.classList.add("seen"); Speech.speak(w, WR.state.settings.rate);
+  b.classList.add("seen"); WR.say(w);
 }
 function choose(btn, q, opts) {
   if (S.answers[S.page]) return;
@@ -109,10 +109,10 @@ function choose(btn, q, opts) {
   }
   WR.countAnswer(ok, S.realm.id + "/story"); WR.save();
   WR.petReact && WR.petReact(ok);
-  Speech.stop(); render();
+  WR.Voice.stop(); render();
 }
 function next() {
-  Speech.stop();
+  WR.Voice.stop();
   if (S.page < 4) { S.page++; return render(); }
   finish();
 }

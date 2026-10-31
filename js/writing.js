@@ -293,7 +293,7 @@ WR.stopWriting = () => { flush(); Q = null; };
 const crownRow = WR.crownRow;
 
 WR.startWriting = async rid => {
-  WR.stopWriting(); window.Speech && Speech.stop();
+  WR.stopWriting(); WR.Voice.stop();
   const realm = WR.realms.find(r => r.id === rid), list = await WR.bank(rid, "writing");
   const bgA = WR.asset(realm.bg), w = W(), done = list.filter(p => w.best[p.id]).length;
   WR.view(`<div class="lesson-bg" style="background-image:${bgA ? WR.bgCss(bgA.id) : "none"}"></div>

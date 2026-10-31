@@ -1,11 +1,15 @@
-/* Listening engine: Web Speech API speechSynthesis, preferring an en-GB voice. */
+/* Device voice (Web Speech API): the fallback behind WR.say (js/voice.js) — only voice.js calls Speech.speak.
+   Prefers a clear, natural female voice: Samantha, Google UK English Female, Microsoft Aria/Jenny/Libby/Sonia, then en-GB/en-US. */
 window.Speech = (function () {
   const synth = window.speechSynthesis;
   let voice = null;
   function pickVoice() {
     if (!synth) return null;
     const vs = synth.getVoices() || [];
-    voice = vs.find(v => /en[-_]GB/i.test(v.lang) && /female|libby|sonia|serena|kate|martha|google uk english female/i.test(v.name))
+    const pref = [/samantha/i, /google uk english female/i, /microsoft (aria|jenny)/i, /microsoft (libby|sonia)/i, /google us english/i];
+    for (const re of pref) { const v = vs.find(v => /^en/i.test(v.lang) && re.test(v.name)); if (v) return (voice = v); }
+    voice = vs.find(v => /en[-_]GB/i.test(v.lang) && /female|libby|sonia|serena|kate|martha/i.test(v.name))
+         || vs.find(v => /en[-_]US/i.test(v.lang) && /female|aria|jenny|zira|ava|allison|susan/i.test(v.name))
          || vs.find(v => /en[-_]GB/i.test(v.lang))
          || vs.find(v => /^en/i.test(v.lang)) || null;
     return voice;
@@ -14,7 +18,7 @@ window.Speech = (function () {
   return {
     supported: !!synth,
     voiceName() { return voice ? voice.name + " (" + voice.lang + ")" : (synth ? "default voice" : "not supported"); },
-    speak(text, rate, onend) {
+    speak(text, rate, onend, o = {}) {
       if (!synth) { onend && onend(); return false; }
       synth.cancel();
       // 🗣️ C2 dialogues: "Name: line|Name: line" is read line by line in two voices (names are not read out)
@@ -37,7 +41,7 @@ window.Speech = (function () {
       if (!voice) pickVoice();
       if (voice) u.voice = voice;
       u.lang = voice ? voice.lang : "en-GB";
-      u.rate = rate || 0.9; u.pitch = 1.05;
+      u.rate = rate || 0.9; u.pitch = Math.max(0.5, Math.min(2, o.pitch || 1.05));
       u.onend = () => onend && onend();
       u.onerror = () => onend && onend();
       synth.speak(u);

@@ -24,7 +24,7 @@ WR.screens.pet = () => {
      <h3>🎨 Skins</h3><div class="row"><button class="btn ghost small skin" data-id="">Original</button>${ownedSkins.map(s => `<button class="btn ghost small skin" data-id="${s.id}">${s.icon} ${s.name}${p.skin === s.id ? " ✓" : ""}</button>`).join("") || '<span class="muted">Buy skins in the shop 🛍️</span>'}</div>
    </div></div>`);
   const stage$ = WR.$("#petStage"), home = WR.$("#pethome"), bub = WR.$("#pbubble");
-  const say = t => { bub.textContent = t; };
+  const say = t => { bub.textContent = t; WR.petSay(t); };   // the bubble, read out in the pet's own voice
   const react = cls => { stage$.classList.remove("bounce", "cheer", "sad"); void stage$.offsetWidth; stage$.classList.add(cls); };
   const heart = (x, y, e = "💖") => { const h = document.createElement("div"); h.className = "heart-pop"; h.textContent = e; h.style.left = x + "px"; h.style.top = y + "px"; home.appendChild(h); setTimeout(() => h.remove(), 1100); };
   let lastRub = 0, rubs = 0;

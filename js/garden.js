@@ -117,7 +117,7 @@ WR.screens.review = () => {
       <div style="margin-top:6px">✅ <b>${WR.esc(m.correct)}</b></div><div class="muted" style="font-weight:700;text-align:left">💡 ${WR.esc(m.explain)}</div>
       <p class="muted" style="font-size:.8rem">Missed ${m.misses || 1}× · ${m.bloomed ? "fully grown!" : m.legacy ? "an old tip card (from before the garden could quiz you)" : "next watering " + when(m.due)}</p>
       <button class="btn small" id="okBtn">Got it</button>`, (bg, close) => {
-      const sb = bg.querySelector("#sayBtn"); if (sb) sb.onclick = () => Speech.speak(m.said, WR.state.settings.rate);
+      const sb = bg.querySelector("#sayBtn"); if (sb) sb.onclick = () => WR.say(m.said);
       bg.querySelector("#okBtn").onclick = close;
     });
   });

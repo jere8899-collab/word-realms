@@ -27,7 +27,7 @@ function renderNav() {
 // every running activity is stopped when the screen changes (each module defines its own WR.stopX)
 const STOPS = ["stopLesson", "stopSpeaking", "stopWriting", "stopStory", "stopPlacement", "stopMath", "stopPhonics"];
 WR.go = (screen, arg) => {
-  STOPS.forEach(n => WR[n] && WR[n]()); window.Speech && Speech.stop();
+  STOPS.forEach(n => WR[n] && WR[n]()); WR.Voice.stop();
   current = screen; WR.navActive(screen === "realm" ? "home" : /^(math|dojo|dojoGrid|clock)$/.test(screen) ? "math" : screen);
   WR.screens[screen](arg); WR.renderTop();
 };
@@ -214,12 +214,17 @@ function settings() {
   WR.modal(`<h2>⚙️ Settings</h2>
     <div class="row hero-row" style="justify-content:space-between;margin-bottom:8px"><b>🦸 Hero name</b><span class="hero-cur"><span id="heroCur">${WR.userText(s.name)}</span> <button class="btn ghost small" id="heroEdit">✏️ Change</button></span></div>
     <label class="set-row"><span>🔊 Sound effects</span><input type="checkbox" id="snd" ${s.settings.sound ? "checked" : ""}></label>
+    <label class="set-row"><span>🎙️ Recorded storyteller voice <small class="muted" style="display:block;font-size:.72rem">off = this device's own voice</small></span><input type="checkbox" id="recV" ${s.settings.voice !== "device" ? "checked" : ""}></label>
+    <label class="set-row"><span>🐾 Cute pet voice</span><input type="checkbox" id="petV" ${s.settings.petVoice !== false ? "checked" : ""}></label>
     <div class="set-row" style="cursor:default"><span>🗣️ Listening speed</span><input type="range" class="slider" id="rt" min="0.5" max="1.3" step="0.1" value="${s.settings.rate}" aria-label="Listening speed"></div>
-    <div class="row" style="justify-content:center;margin-top:16px"><button class="btn ghost small grownups-btn" id="guBtn">👪 Grown-ups</button><button class="btn ghost small" id="test">🔈 Test voice</button><button class="btn ghost small" id="plRe">🪞 Placement quiz</button>${WR.Cloud ? '<button class="btn ghost small" id="ccSet">🏰 Cloud save</button>' : ""}<button class="btn peach small" id="rst">Reset progress</button><button class="btn small" id="cls">Done</button></div>`, (bg, close) => {
+    <div class="row" style="justify-content:center;margin-top:16px"><button class="btn ghost small grownups-btn" id="guBtn">👪 Grown-ups</button><button class="btn ghost small" id="test">🔈 Test voice</button><button class="btn ghost small" id="testPet">🐾 Hear my pet</button><button class="btn ghost small" id="plRe">🪞 Placement quiz</button>${WR.Cloud ? '<button class="btn ghost small" id="ccSet">🏰 Cloud save</button>' : ""}<button class="btn peach small" id="rst">Reset progress</button><button class="btn small" id="cls">Done</button></div>`, (bg, close) => {
     bg.querySelector("#snd").onchange = e => { s.settings.sound = e.target.checked; WR.save(); };
     bg.querySelector("#rt").oninput = e => { s.settings.rate = +e.target.value; WR.save(); };
     bg.querySelector("#guBtn").onclick = () => { close(); WR.openGrownups(); };
-    bg.querySelector("#test").onclick = () => Speech.speak("Welcome to Word Realms! Let's learn English together.", s.settings.rate);
+    bg.querySelector("#test").onclick = () => WR.say("Welcome to Word Realms! Let's learn English together.");
+    bg.querySelector("#testPet").onclick = () => WR.say("Hi! I'm so happy to see you!", { character: "pet_" + ((s.pet && s.pet.species) || "") });   // preview, even when chatter is off
+    bg.querySelector("#recV").onchange = e => { s.settings.voice = e.target.checked ? "recorded" : "device"; WR.save(); };
+    bg.querySelector("#petV").onchange = e => { s.settings.petVoice = e.target.checked; WR.save(); };
     bg.querySelector("#rst").onclick = () => { if (confirm("Reset all progress, stars and your pet?")) { WR.reset(); close(); boot(); } };
     bg.querySelector("#cls").onclick = close;
     bg.querySelector("#heroEdit").onclick = () => { close(); WR.openRename(); };

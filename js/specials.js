@@ -56,7 +56,7 @@ async function petalMatch(realm) {
   WR.$("#quitBtn").onclick = () => WR.go("realm", realm.id);
   document.querySelectorAll(".mcard").forEach(b => b.onclick = () => {
     const c = cards[+b.dataset.k];
-    if (c.t === "word") Speech.speak(c.v, 0.85);
+    if (c.t === "word") WR.say(c.v, { rate: 0.85 });
     if (!sel) { sel = { b, c }; b.classList.add("sel"); return; }
     if (sel.b === b) { b.classList.remove("sel"); sel = null; return; }
     tries++;
