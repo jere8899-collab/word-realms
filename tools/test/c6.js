@@ -61,7 +61,7 @@ const SAVE = () => ({ v: 1, name: 'Sticker Sam', avatar: 'avatar_girl', startLev
     ok(await page.evaluate(() => JSON.parse(localStorage.getItem('wordRealms.save.v1')).bosses.a1.won === true), `${tag} boss win saved in wordRealms.save.v1`);
     await page.click('#nextStep'); await page.waitForSelector('.sbook');
     const sb = await page.evaluate(() => ({ t: document.querySelector('.sbook .title').innerText, a1: document.querySelectorAll('#sp_a1 .stk.has').length, pages: document.querySelectorAll('.spage').length }));
-    ok(sb.a1 === 7 && sb.pages === 9, `${tag} Sticker Book: A1 page 7/8, 6 realm pages + 2 Number Kingdom pages + events (${JSON.stringify(sb)})`);
+    ok(sb.a1 === 7 && sb.pages === 10, `${tag} Sticker Book: A1 page 7/8, 6 realm pages + 2 Number Kingdom pages + 1 Phonics Path page + events (${JSON.stringify(sb)})`);
     ok(await overflow() <= 0, `${tag} sticker book: no sideways overflow`);
     if (vp.width === 375) await page.waitForTimeout(900), await page.screenshot({ path: 'screenshots/c6_sticker_book.png' });
     // weekly event: finish it through the normal quest events, claim once

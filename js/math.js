@@ -73,7 +73,7 @@ MW.totalCrowns = () => MG.TOPICS.reduce((a, t) => a + MW.crownsFor(t.id), 0);
 MW.mastered = () => Object.values(MW.st().facts).filter(f => f.b >= MG.MASTERED).length;
 MW.dueFacts = tables => { const f = MW.st().facts, now = Date.now(); return Object.keys(f).filter(k => f[k].d <= now && (!tables || tables.includes(+k.split("x")[0]))).length; };
 MW.level = () => 1 + Math.floor((MW.st().xp || 0) / 100);
-const crownRow = n => "👑".repeat(n) + `<span style="opacity:.2">${"👑".repeat(3 - n)}</span>`;
+const crownRow = WR.crownRow;
 const gradeInfo = g => MG.GRADES.find(x => x.g === g);
 // shared with math-dojo.js and math-goals.js
 const mascot = MW.mascot = (cls = "") => `<img class="sumi ${cls}" src="assets/web/math_mascot.webp" onerror="this.onerror=null;this.src='assets/ui/math_mascot.png'" alt="Sumi the star fairy">`;

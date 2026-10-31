@@ -6,7 +6,8 @@
    Mistake Garden, so older saves show their best scores and rebuilt play days even before any new answers are logged. */
 (function () {
 const WR = window.WR, esc = WR.esc, MG = window.MathGen;
-const ENG = ["grammar", "vocab", "reading", "listening", "speaking", "writing", "story"];
+const ENG = ["grammar", "vocab", "reading", "listening", "speaking", "writing", "story", "phonics"];
+const OPTIONAL = ["phonics"];                      // rows shown only once something was played (the A1 Phonics Path)
 const MIN_N = 3;                                    // answers needed before a spot can be called "weak"
 const pct = v => Math.round(v * 100);
 const acc = t => t && t[0] + t[1] ? t[0] / (t[0] + t[1]) : null;
@@ -29,6 +30,7 @@ function bestOf(key) {
   if (key.startsWith("m:")) { const t = s.math.topics[key.slice(2)]; return t ? t.best : null; }
   const [rid, sk] = key.split("/");
   if (sk === "story") { const d = s.stories.done[rid]; return d ? d.best : null; }
+  if (sk === "phonics") return rid === "a1" && WR.Phonics ? WR.Phonics.best() : null;
   const p = s.progress[rid] && s.progress[rid][sk]; return p ? p.best : null;
 }
 const sumAll = T => Object.values(T).reduce(add, [0, 0]);
@@ -51,7 +53,7 @@ WR.Report.data = (range = "week") => {
   // English grid: rows = skills, columns = levels with anything to show
   const cell = (rid, sk) => { const t = T[rid + "/" + sk], a = acc(t); if (a != null) return { a, n: t[0] + t[1] }; const b = wk ? null : bestOf(rid + "/" + sk); return b != null ? { best: b } : null; };
   const levels = WR.realms.filter(re => ENG.some(sk => cell(re.id, sk)));
-  const english = { levels, rows: ENG.map(sk => ({ sk: WR.skillInfo(sk), cells: levels.map(re => cell(re.id, sk)) })) };
+  const english = { levels, rows: ENG.map(sk => ({ sk: WR.skillInfo(sk), cells: levels.map(re => cell(re.id, sk)) })).filter(r => !OPTIONAL.includes(r.sk.id) || r.cells.some(Boolean)) };
   // maths: per grade, per topic
   const mk = {};
   Object.keys(T).filter(k => k.startsWith("m:")).forEach(k => mk[k.slice(2)] = { t: T[k] });
@@ -110,6 +112,7 @@ function actionFor(k) {
   if (!realm || !ENG.includes(sk)) return null;
   const core = WR.SKILLS.find(x => x.id === sk);
   if (core) return () => { WR.go("realm", rid); WR.startLesson({ realm: rid, skill: sk, key: sk, title: `${core.name} · ${realm.modeName}` }); };
+  if (sk === "phonics") return () => WR.go("phonics");
   const start = { speaking: WR.startSpeaking, writing: WR.startWriting, story: WR.startStory }[sk];
   return start ? () => { WR.go("realm", rid); start(rid); } : null;
 }

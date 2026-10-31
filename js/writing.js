@@ -290,7 +290,7 @@ const PET_LOW = ["Every great writer starts somewhere 🌱", "Let's add more ide
 const pick = a => a[Math.floor(Math.random() * a.length)];
 function flush() { if (!Q) return; clearTimeout(saveT); const d = W().drafts; if ((Q.text || "").trim() || (Q.plan || "").trim()) d[Q.p.id] = { plan: Q.plan || "", text: Q.text || "", at: Date.now() }; WR.save(); }
 WR.stopWriting = () => { flush(); Q = null; };
-const crownRow = c => "👑".repeat(c) + `<span style="opacity:.2">${"👑".repeat(3 - c)}</span>`;
+const crownRow = WR.crownRow;
 
 WR.startWriting = async rid => {
   WR.stopWriting(); window.Speech && Speech.stop();

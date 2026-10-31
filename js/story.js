@@ -30,7 +30,7 @@ WR.loadStory = async lvl => {
 };
 WR.storyTile = rid => {
   const d = st().done[rid], n = WR.realms.findIndex(r => r.id === rid) + 1;
-  const cr = d ? "👑".repeat(d.crowns) + `<span style="opacity:.2">${"👑".repeat(3 - d.crowns)}</span>` : '<span class="muted" style="font-size:.8rem">not read yet</span>';
+  const cr = WR.crownCell(d ? d.crowns : null, "not read yet");
   return `<div class="card skill-card story-tile" data-story="1"><span class="bonus-tag">Bonus</span><img class="ico story-ico" src="assets/web/story_${rid}.webp" onerror="this.onerror=null;this.src='assets/stories/story_${rid}.jpg'" alt=""><h3>Story</h3>
     <div class="muted" style="font-size:.85rem;font-weight:700">Chapter ${n} of the Starlight Storybook</div><div class="crowns">${cr}</div><div class="waiting-tag">${d ? "📄 Page restored!" : "📜 A new chapter waits"}</div></div>`;
 };
@@ -132,7 +132,7 @@ function finish() {
   WR.view(`<div class="fade-in center story-done"><div class="card" style="max-width:640px;margin:0 auto">
     <div class="story-pic"><img src="assets/web/${ch.img}.webp" onerror="this.onerror=null;this.src='assets/stories/${ch.img}.jpg'" alt=""></div>
     <h2 style="margin:.4em 0 .1em">📄 Page ${num} restored!</h2><p class="muted" style="font-weight:800;margin:0">Chapter ${num}: ${WR.esc(ch.title)}</p>
-    <div class="fb-crowns">${"👑".repeat(crowns)}<span style="opacity:.2">${"👑".repeat(3 - crowns)}</span></div>
+    <div class="fb-crowns">${WR.crownRow(crowns)}</div>
     <p><b>${S.correct}/5</b> questions right${stars ? ` · <b>+${stars} ⭐</b>` : " · stars already collected (new crowns still pay)"}${lv ? ` · ${WR.esc(petName())} reached Lv ${lv.level}!` : ""}</p>
     <div class="book-pages">${WR.realms.map((x, i) => `<span class="bp ${st().done[x.id] ? "on" : ""}" title="${x.name}">${st().done[x.id] ? "📄" : "▫️"}<small>${i + 1}</small></span>`).join("")}</div>
     <p class="muted" style="font-weight:800">${found >= 6 ? "🌟 The Starlight Storybook is whole again! You finished the tale." : `The Starlight Storybook has ${found} of 6 pages. ${num < 6 ? "The next chapter waits in the next realm." : "Find the missing chapters in the other realms."}`}</p>

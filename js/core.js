@@ -32,7 +32,8 @@ const QUEST_POOL = [
   { id: "dojo1", icon: "🗼", label: "Climb the Times-Table Tower (practice or sprint)", goal: 1, reward: 5 },
   { id: "story1", icon: "📜", label: "Read a Storybook chapter", goal: 1, reward: 6 },
   { id: "model1", icon: "🧮", label: "Solve 3 maths questions with a Model Magic picture", goal: 3, reward: 5 },
-  { id: "balance1", icon: "⚖️", label: "Balance an equation scale all the way to x (Grades 6–8 maths)", goal: 1, reward: 5 }
+  { id: "balance1", icon: "⚖️", label: "Balance an equation scale all the way to x (Grades 6–8 maths)", goal: 1, reward: 5 },
+  { id: "phonics1", icon: "🔤", label: "Walk a step of the A1 Phonics Path", goal: 1, reward: 5 }
 ];
 Object.assign(WR, { SKILLS, PETS, AVATARS, QUEST_POOL, data: {}, manifest: null, screens: {} });
 
@@ -82,7 +83,7 @@ function freshState() {
     progress: {}, owned: [], equipped: { outfit: null, petskin: null, theme: null },
     settings: { rate: 0.9, sound: true, unlockAll: false }, mistakes: [], lessonsDone: 0,
     speaking: freshSpeaking(), writing: freshWriting(), math: freshMath(),
-    stories: { done: {}, words: {}, reads: 0 }, report: freshReport()
+    stories: { done: {}, words: {}, reads: 0 }, report: freshReport(), phonics: freshPhonics()
   };
 }
 /* 📊 Activity log for the grown-ups' Learning Report (js/report.js), kept in the save so it cloud-syncs.
@@ -92,6 +93,8 @@ function freshState() {
    (m:g3.times, m:dojo.tower), "garden" for Mistake Garden rounds. */
 const LOG_DAYS = 60, GAP_MS = 3 * 60e3, FIRST_S = 20;
 const freshReport = () => ({ days: {}, tally: {}, at: 0 });
+// 🔤 Phonics Path (js/phonics.js): best result per step ({ u1: { best, crowns, plays, at } }), rounds played, letter-tile taps
+const freshPhonics = () => ({ done: {}, rounds: 0, taps: 0 });
 WR.LOG_DAYS = LOG_DAYS;
 // an older save gains a log rebuilt from the dates it already has (last play of each skill/topic, story chapters, sprints, streak)
 function seedReport(s) {
@@ -146,6 +149,7 @@ function migrate(s, raw = s) {
   s.progress = s.progress || {}; s.mistakes = s.mistakes || [];
   s.stories = Object.assign({ done: {}, words: {}, reads: 0 }, s.stories || {}); s.stories.done = s.stories.done || {}; s.stories.words = s.stories.words || {};
   s.math = WR.fixMath(s.math);
+  s.phonics = Object.assign(freshPhonics(), s.phonics || {}); s.phonics.done = s.phonics.done || {};
   if (!raw.report || typeof raw.report !== "object") s.report = seedReport(s);
   s.report.days = s.report.days || {}; s.report.tally = s.report.tally || {}; s.report.at = s.report.at || 0;
   return s;
@@ -329,8 +333,11 @@ WR.recordLesson = (rid, key, score) => {
   s.progress[rid][key] = prev; s.lessonsDone++; WR.save();
 };
 // every English skill a lesson, Mistake Garden plant or report row can name (core four + bonus skills, loaded later)
-WR.allSkills = () => SKILLS.concat(WR.SPEAKING || [], WR.WRITING || [], WR.STORY || []);
+WR.allSkills = () => SKILLS.concat(WR.SPEAKING || [], WR.WRITING || [], WR.STORY || [], WR.PHONICS || []);
 WR.skillInfo = id => WR.allSkills().find(x => x.id === id) || { id, name: id, icon: "✨" };
 WR.levelOf = rid => { const r = WR.realms && WR.realms.find(y => y.id === rid); return r ? r.level : ""; };
 WR.crowns = score => score >= 0.9 ? 3 : score >= 0.7 ? 2 : score >= 0.5 ? 1 : 0;
+// shared crown markup: n bright crowns + the rest faded; crownCell shows a muted note instead when nothing was played yet
+WR.crownRow = n => "👑".repeat(n) + `<span style="opacity:.2">${"👑".repeat(3 - n)}</span>`;
+WR.crownCell = (n, empty = "not played") => n == null ? `<span class="muted" style="font-size:.8rem">${empty}</span>` : WR.crownRow(n);
 })();
