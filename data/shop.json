@@ -1,30 +1,919 @@
 {
+ "prices": {
+  "_doc": "THE price table for every star item (js/core.js WR.applyPrices copies it onto each item as .price). Tuned to a capped income of ~120⭐/day for an engaged player (≈105 practice, cap 150, + ≈15 from daily quests): starter = day one, common ≈ 2–3 days, rare ≈ 1–2 weeks, epic ≈ 3–4 weeks, legendary ≈ 7 weeks. 'earned' items are never sold (achievements / mastery); 'premium' items are grown-up only (parent gate, payment stub).",
+  "tiers": {
+   "starter": 30,
+   "common": 300,
+   "rare": 1200,
+   "epic": 3000,
+   "legendary": 6000
+  },
+  "snacks": {
+   "f_cookie": 4,
+   "f_mochi": 8,
+   "f_cake": 15
+  }
+ },
  "outfits": [
-  {"id":"o_flower","name":"Flower Crown","icon":"🌸","price":20,"desc":"A crown of meadow blossoms."},
-  {"id":"o_bow","name":"Candy Bow","icon":"🎀","price":25,"desc":"Sweet as Candy Village."},
-  {"id":"o_leaf","name":"Forest Cloak Pin","icon":"🍃","price":40,"desc":"Whispering-leaf brooch."},
-  {"id":"o_crystal","name":"Crystal Tiara","icon":"💎","price":60,"desc":"Shines like Crystal Lake."},
-  {"id":"o_crown","name":"Royal Cloud Crown","icon":"👑","price":90,"desc":"Worn by Cloud Council champions."},
-  {"id":"o_moon","name":"Moonlight Halo","icon":"🌙","price":0,"cash":"$1.99","premium":true,"desc":"Premium: a glowing starlit halo."},
-  {"id":"o_rainbow","name":"Rainbow Wings","icon":"🪽","price":0,"cash":"$2.99","premium":true,"desc":"Premium: shimmering rainbow wings."}
+  {
+   "id": "o_flower",
+   "name": "Flower Crown",
+   "icon": "🌸",
+   "desc": "A crown of meadow blossoms.",
+   "tier": "starter",
+   "slot": "head",
+   "art": "icon:blossom",
+   "w": 0.7
+  },
+  {
+   "id": "o_bow",
+   "name": "Candy Bow",
+   "icon": "🎀",
+   "desc": "Sweet as Candy Village.",
+   "tier": "common",
+   "slot": "head",
+   "art": "icon:ribbon",
+   "w": 0.75
+  },
+  {
+   "id": "o_leaf",
+   "name": "Forest Cloak Pin",
+   "icon": "🍃",
+   "desc": "Whispering-leaf brooch.",
+   "tier": "common",
+   "slot": "neck",
+   "art": "icon:herb",
+   "w": 0.8
+  },
+  {
+   "id": "o_crystal",
+   "name": "Crystal Tiara",
+   "icon": "💎",
+   "desc": "Shines like Crystal Lake.",
+   "tier": "rare",
+   "slot": "head",
+   "art": "icon:diamond-flower",
+   "w": 0.6
+  },
+  {
+   "id": "o_crown",
+   "name": "Royal Cloud Crown",
+   "icon": "👑",
+   "desc": "Worn by Cloud Council champions.",
+   "tier": "epic",
+   "slot": "head",
+   "art": "icon:crown",
+   "w": 0.8
+  },
+  {
+   "id": "o_moon",
+   "name": "Moonlight Halo",
+   "icon": "🌙",
+   "cash": "$1.99",
+   "premium": true,
+   "desc": "Premium: a glowing starlit halo.",
+   "tier": "premium",
+   "slot": "head",
+   "art": "icon:moon",
+   "w": 0.7
+  },
+  {
+   "id": "o_rainbow",
+   "name": "Rainbow Wings",
+   "icon": "🪽",
+   "cash": "$2.99",
+   "premium": true,
+   "desc": "Premium: shimmering rainbow wings.",
+   "tier": "premium",
+   "slot": "back",
+   "art": "acc:fairy_wings",
+   "w": 1,
+   "filter": "hue-rotate(70deg) saturate(1.7)"
+  },
+  {
+   "id": "a_witch",
+   "name": "Pumpkin Witch Hat",
+   "icon": "🎃",
+   "slot": "head",
+   "art": "acc:witch_hat",
+   "tier": "common",
+   "desc": "Spooky-cute and starry."
+  },
+  {
+   "id": "a_santa",
+   "name": "Snowy Santa Hat",
+   "icon": "🎅",
+   "slot": "head",
+   "art": "acc:santa_hat",
+   "tier": "common",
+   "desc": "Fluffy pompom for winter."
+  },
+  {
+   "id": "a_pirate",
+   "name": "Captain's Tricorn",
+   "icon": "🏴",
+   "slot": "head",
+   "art": "acc:pirate_hat",
+   "tier": "common",
+   "desc": "Ahoy, word sailor!"
+  },
+  {
+   "id": "a_wizard",
+   "name": "Starry Wizard Hat",
+   "icon": "🧙",
+   "slot": "head",
+   "art": "acc:wizard_hat",
+   "tier": "earned",
+   "desc": "For a true word wizard.",
+   "unlock": {
+    "type": "correct",
+    "n": 1000
+   }
+  },
+  {
+   "id": "a_party",
+   "name": "Party Cone",
+   "icon": "🥳",
+   "slot": "head",
+   "art": "acc:party_hat",
+   "tier": "earned",
+   "desc": "Every day is a gift!",
+   "unlock": {
+    "type": "chestWeeks",
+    "n": 1
+   }
+  },
+  {
+   "id": "a_catears",
+   "name": "Kitty Ears",
+   "icon": "🐱",
+   "slot": "head",
+   "art": "acc:cat_ears",
+   "tier": "earned",
+   "desc": "Purr-fect for loyal learners.",
+   "unlock": {
+    "type": "streak",
+    "n": 7
+   }
+  },
+  {
+   "id": "a_glasses",
+   "name": "Scholar Glasses",
+   "icon": "👓",
+   "slot": "face",
+   "art": "acc:round_glasses",
+   "tier": "common",
+   "desc": "Read like a sage."
+  },
+  {
+   "id": "a_shades",
+   "name": "Heart Shades",
+   "icon": "😎",
+   "slot": "face",
+   "art": "acc:heart_shades",
+   "tier": "rare",
+   "desc": "Too cool for school (but loves school)."
+  },
+  {
+   "id": "a_scarf",
+   "name": "Star Scarf",
+   "icon": "🧣",
+   "slot": "neck",
+   "art": "acc:star_scarf",
+   "tier": "common",
+   "desc": "Cosy and twinkly.",
+   "dy": 0.32
+  },
+  {
+   "id": "a_bell",
+   "name": "Bell Collar",
+   "icon": "🔔",
+   "slot": "neck",
+   "art": "acc:bell_collar",
+   "tier": "earned",
+   "desc": "Jingles with every right answer.",
+   "unlock": {
+    "type": "petLevel",
+    "n": 5
+   },
+   "dy": 0.22
+  },
+  {
+   "id": "a_bowtie",
+   "name": "Dapper Bow Tie",
+   "icon": "🎀",
+   "slot": "neck",
+   "art": "acc:bow_tie",
+   "tier": "earned",
+   "desc": "Smart for smart learners.",
+   "unlock": {
+    "type": "correct",
+    "n": 250
+   }
+  },
+  {
+   "id": "a_fairy",
+   "name": "Fairy Wings",
+   "icon": "🧚",
+   "slot": "back",
+   "art": "acc:fairy_wings",
+   "tier": "rare",
+   "desc": "Shimmery pastel wings."
+  },
+  {
+   "id": "a_butterfly",
+   "name": "Butterfly Wings",
+   "icon": "🦋",
+   "slot": "back",
+   "art": "acc:butterfly_wings",
+   "tier": "epic",
+   "desc": "Flutter through the realms."
+  },
+  {
+   "id": "a_bat",
+   "name": "Moon-Bat Wings",
+   "icon": "🦇",
+   "slot": "back",
+   "art": "acc:bat_wings",
+   "tier": "rare",
+   "desc": "Cute, not spooky."
+  },
+  {
+   "id": "a_angel",
+   "name": "Angel Wings",
+   "icon": "🪽",
+   "slot": "back",
+   "art": "acc:angel_wings",
+   "tier": "earned",
+   "desc": "For a whole month of learning.",
+   "unlock": {
+    "type": "streak",
+    "n": 30
+   }
+  },
+  {
+   "id": "a_balloon",
+   "name": "Heart Balloon",
+   "icon": "🎈",
+   "slot": "held",
+   "art": "acc:heart_balloon",
+   "tier": "earned",
+   "desc": "Your pet loves you this much!",
+   "unlock": {
+    "type": "love",
+    "n": 25
+   }
+  }
  ],
  "petskins": [
-  {"id":"s_strawberry","name":"Strawberry Milk","icon":"🍓","price":30,"filter":"hue-rotate(-25deg) saturate(1.35)","desc":"Pink and creamy."},
-  {"id":"s_mint","name":"Mint Sorbet","icon":"🍃","price":30,"filter":"hue-rotate(70deg) saturate(1.2)","desc":"Fresh and minty."},
-  {"id":"s_sky","name":"Sky Blue","icon":"☁️","price":45,"filter":"hue-rotate(160deg) saturate(1.1)","desc":"Soft as a cloud."},
-  {"id":"s_golden","name":"Golden Honey","icon":"🍯","price":70,"filter":"sepia(.55) saturate(1.8) hue-rotate(-10deg)","desc":"Shiny gold."},
-  {"id":"s_galaxy","name":"Galaxy Dream","icon":"🌌","price":0,"cash":"$1.99","premium":true,"filter":"hue-rotate(220deg) saturate(1.6) contrast(1.05)","sparkle":true,"desc":"Premium: sparkling starry fur."},
-  {"id":"s_rainbow","name":"Rainbow Shimmer","icon":"🌈","price":0,"cash":"$2.99","premium":true,"filter":"","rainbow":true,"desc":"Premium: colour-changing shimmer."}
+  {
+   "id": "s_strawberry",
+   "name": "Strawberry Milk",
+   "icon": "🍓",
+   "filter": "hue-rotate(-25deg) saturate(1.35)",
+   "desc": "Pink and creamy.",
+   "tier": "starter"
+  },
+  {
+   "id": "s_mint",
+   "name": "Mint Sorbet",
+   "icon": "🍃",
+   "filter": "hue-rotate(70deg) saturate(1.2)",
+   "desc": "Fresh and minty.",
+   "tier": "common"
+  },
+  {
+   "id": "s_sky",
+   "name": "Sky Blue",
+   "icon": "☁️",
+   "filter": "hue-rotate(160deg) saturate(1.1)",
+   "desc": "Soft as a cloud.",
+   "tier": "common"
+  },
+  {
+   "id": "s_golden",
+   "name": "Golden Honey",
+   "icon": "🍯",
+   "filter": "sepia(.55) saturate(1.8) hue-rotate(-10deg)",
+   "desc": "Shiny gold.",
+   "tier": "rare"
+  },
+  {
+   "id": "s_lavender",
+   "name": "Lavender Dream",
+   "icon": "💜",
+   "tier": "common",
+   "filter": "hue-rotate(235deg) saturate(.9)",
+   "desc": "Soft lilac fur."
+  },
+  {
+   "id": "s_peach",
+   "name": "Peach Fuzz",
+   "icon": "🍑",
+   "tier": "common",
+   "filter": "hue-rotate(-12deg) saturate(1.15) brightness(1.04)",
+   "desc": "Warm and peachy."
+  },
+  {
+   "id": "s_cocoa",
+   "name": "Cocoa Bean",
+   "icon": "🍫",
+   "tier": "rare",
+   "filter": "sepia(.6) saturate(1.1) brightness(.88)",
+   "desc": "Chocolatey and cosy."
+  },
+  {
+   "id": "s_aurora",
+   "name": "Aurora Glow",
+   "icon": "🌌",
+   "tier": "earned",
+   "filter": "hue-rotate(140deg) saturate(1.5) brightness(1.05)",
+   "desc": "Earned with a 14-day streak.",
+   "unlock": {
+    "type": "streak",
+    "n": 14
+   }
+  },
+  {
+   "id": "s_frost",
+   "name": "Frosted Sugar",
+   "icon": "❄️",
+   "tier": "legendary",
+   "filter": "saturate(.35) brightness(1.12) contrast(1.05)",
+   "desc": "Sparkly icing-sugar fur.",
+   "sparkle": true
+  },
+  {
+   "id": "s_galaxy",
+   "name": "Galaxy Dream",
+   "icon": "🌌",
+   "cash": "$1.99",
+   "premium": true,
+   "filter": "hue-rotate(220deg) saturate(1.6) contrast(1.05)",
+   "sparkle": true,
+   "desc": "Premium: sparkling starry fur.",
+   "tier": "premium"
+  },
+  {
+   "id": "s_rainbow",
+   "name": "Rainbow Shimmer",
+   "icon": "🌈",
+   "cash": "$2.99",
+   "premium": true,
+   "filter": "",
+   "rainbow": true,
+   "desc": "Premium: colour-changing shimmer.",
+   "tier": "premium"
+  }
  ],
  "themes": [
-  {"id":"t_sakura","name":"Sakura Dream","icon":"🌸","price":35,"vars":{"--bg1":"#FFE3EC","--bg2":"#FFF0F5","--accent":"#FF8FB1"},"desc":"Cherry-blossom pink."},
-  {"id":"t_mint","name":"Mint Breeze","icon":"🌿","price":35,"vars":{"--bg1":"#D8F7E8","--bg2":"#F0FFF8","--accent":"#4CC9A0"},"desc":"Cool mint."},
-  {"id":"t_ocean","name":"Baby Ocean","icon":"🐚","price":50,"vars":{"--bg1":"#D6EEFF","--bg2":"#F2FAFF","--accent":"#6AB7FF"},"desc":"Soft sea blues."},
-  {"id":"t_night","name":"Midnight Stars","icon":"✨","price":0,"cash":"$1.49","premium":true,"vars":{"--bg1":"#C9C1F0","--bg2":"#E9E4FF","--accent":"#8A6FE0"},"desc":"Premium: dreamy lavender night."}
+  {
+   "id": "t_sakura",
+   "name": "Sakura Dream",
+   "icon": "🌸",
+   "vars": {
+    "--bg1": "#FFE3EC",
+    "--bg2": "#FFF0F5",
+    "--accent": "#FF8FB1"
+   },
+   "desc": "Cherry-blossom pink.",
+   "tier": "common"
+  },
+  {
+   "id": "t_mint",
+   "name": "Mint Breeze",
+   "icon": "🌿",
+   "vars": {
+    "--bg1": "#D8F7E8",
+    "--bg2": "#F0FFF8",
+    "--accent": "#4CC9A0"
+   },
+   "desc": "Cool mint.",
+   "tier": "common"
+  },
+  {
+   "id": "t_ocean",
+   "name": "Baby Ocean",
+   "icon": "🐚",
+   "vars": {
+    "--bg1": "#D6EEFF",
+    "--bg2": "#F2FAFF",
+    "--accent": "#6AB7FF"
+   },
+   "desc": "Soft sea blues.",
+   "tier": "rare"
+  },
+  {
+   "id": "t_night",
+   "name": "Midnight Stars",
+   "icon": "✨",
+   "cash": "$1.49",
+   "premium": true,
+   "vars": {
+    "--bg1": "#C9C1F0",
+    "--bg2": "#E9E4FF",
+    "--accent": "#8A6FE0"
+   },
+   "desc": "Premium: dreamy lavender night.",
+   "tier": "premium"
+  }
  ],
  "snacks": [
-  {"id":"f_cookie","name":"Carrot Cookie","icon":"🍪","price":2,"hunger":20,"happy":5},
-  {"id":"f_mochi","name":"Berry Mochi","icon":"🍡","price":4,"hunger":35,"happy":12},
-  {"id":"f_cake","name":"Star Cake","icon":"🍰","price":8,"hunger":60,"happy":25}
+  {
+   "id": "f_cookie",
+   "name": "Carrot Cookie",
+   "icon": "🍪",
+   "hunger": 20,
+   "happy": 5
+  },
+  {
+   "id": "f_mochi",
+   "name": "Berry Mochi",
+   "icon": "🍡",
+   "hunger": 35,
+   "happy": 12
+  },
+  {
+   "id": "f_cake",
+   "name": "Star Cake",
+   "icon": "🍰",
+   "hunger": 60,
+   "happy": 25
+  }
+ ],
+ "heroes": [
+  {
+   "id": "hero_pumpkin",
+   "name": "Pumpkin Witch",
+   "kind": "seasonal",
+   "tier": "common",
+   "desc": "Halloween magic, all year round."
+  },
+  {
+   "id": "hero_summer",
+   "name": "Seaside Summer",
+   "kind": "seasonal",
+   "tier": "common",
+   "desc": "Sandcastles and sunshine."
+  },
+  {
+   "id": "hero_sakura",
+   "name": "Sakura Kimono",
+   "kind": "seasonal",
+   "tier": "rare",
+   "desc": "Cherry-blossom spring."
+  },
+  {
+   "id": "hero_snow",
+   "name": "Snowflake Prince",
+   "kind": "seasonal",
+   "tier": "rare",
+   "desc": "Fluffy winter coat."
+  },
+  {
+   "id": "hero_lunar",
+   "name": "Lantern Festival",
+   "kind": "seasonal",
+   "tier": "rare",
+   "desc": "Lunar New Year lantern glow."
+  },
+  {
+   "id": "hero_pirate",
+   "name": "Pirate Captain",
+   "kind": "job",
+   "tier": "rare",
+   "desc": "Captain of the word seas."
+  },
+  {
+   "id": "hero_knight",
+   "name": "Little Knight",
+   "kind": "fairytale",
+   "tier": "epic",
+   "desc": "Shiny armour for brave readers."
+  },
+  {
+   "id": "hero_space",
+   "name": "Space Explorer",
+   "kind": "job",
+   "tier": "epic",
+   "desc": "To the stars and beyond!"
+  },
+  {
+   "id": "hero_redhood",
+   "name": "Red Riding Hood",
+   "kind": "fairytale",
+   "tier": "legendary",
+   "desc": "The storybook classic."
+  },
+  {
+   "id": "hero_meadow",
+   "name": "Meadow Sprite",
+   "kind": "realm",
+   "tier": "earned",
+   "desc": "Master the Meadow of First Words (A1).",
+   "unlock": {
+    "type": "realm",
+    "rid": "a1"
+   }
+  },
+  {
+   "id": "hero_candy",
+   "name": "Candy Baker",
+   "kind": "realm",
+   "tier": "earned",
+   "desc": "Master Candy Village (A2).",
+   "unlock": {
+    "type": "realm",
+    "rid": "a2"
+   }
+  },
+  {
+   "id": "hero_ranger",
+   "name": "Forest Ranger",
+   "kind": "realm",
+   "tier": "earned",
+   "desc": "Master the B1 realm.",
+   "unlock": {
+    "type": "realm",
+    "rid": "b1"
+   }
+  },
+  {
+   "id": "hero_mermaid",
+   "name": "Crystal Lake Mermaid",
+   "kind": "realm",
+   "tier": "earned",
+   "desc": "Master Crystal Lake (B2).",
+   "unlock": {
+    "type": "realm",
+    "rid": "b2"
+   }
+  },
+  {
+   "id": "hero_scholar",
+   "name": "Starlight Scholar",
+   "kind": "realm",
+   "tier": "earned",
+   "desc": "Master the C1 realm.",
+   "unlock": {
+    "type": "realm",
+    "rid": "c1"
+   }
+  },
+  {
+   "id": "hero_cloud",
+   "name": "Cloud Knight",
+   "kind": "realm",
+   "tier": "earned",
+   "desc": "Master the Cloud Council (C2).",
+   "unlock": {
+    "type": "realm",
+    "rid": "c2"
+   }
+  },
+  {
+   "id": "hero_mathmage",
+   "name": "Mathemagician",
+   "kind": "maths",
+   "tier": "earned",
+   "desc": "Earn 3 crowns on 10 maths topics.",
+   "unlock": {
+    "type": "mathCrowns",
+    "n": 10
+   }
+  }
+ ],
+ "pets": [
+  {
+   "id": "pet_kitty",
+   "name": "Lulu",
+   "tier": "common",
+   "desc": "A lilac kitten who loves cuddles."
+  },
+  {
+   "id": "pet_panda",
+   "name": "Bao",
+   "tier": "rare",
+   "desc": "A sleepy panda cub who loves bamboo snacks."
+  },
+  {
+   "id": "pet_unicorn",
+   "name": "Sprinkle",
+   "tier": "legendary",
+   "desc": "A rainbow unicorn foal."
+  },
+  {
+   "id": "pet_penguin",
+   "name": "Pip",
+   "tier": "earned",
+   "desc": "Collect 12 looks to hatch Pip!",
+   "unlock": {
+    "type": "collection",
+    "n": 12
+   }
+  }
+ ],
+ "rewards": [
+  {
+   "id": "r_streak3",
+   "group": "streak",
+   "icon": "🔥",
+   "name": "3-day streak",
+   "type": "streak",
+   "n": 3,
+   "stars": 20
+  },
+  {
+   "id": "r_streak7",
+   "group": "streak",
+   "icon": "🔥",
+   "name": "7-day streak",
+   "type": "streak",
+   "n": 7,
+   "stars": 50,
+   "item": "a_catears"
+  },
+  {
+   "id": "r_streak14",
+   "group": "streak",
+   "icon": "🔥",
+   "name": "14-day streak",
+   "type": "streak",
+   "n": 14,
+   "stars": 100,
+   "item": "s_aurora"
+  },
+  {
+   "id": "r_streak30",
+   "group": "streak",
+   "icon": "🔥",
+   "name": "30-day streak",
+   "type": "streak",
+   "n": 30,
+   "stars": 200,
+   "item": "a_angel"
+  },
+  {
+   "id": "r_c50",
+   "group": "milestone",
+   "icon": "✅",
+   "name": "50 correct answers",
+   "type": "correct",
+   "n": 50,
+   "stars": 15
+  },
+  {
+   "id": "r_c250",
+   "group": "milestone",
+   "icon": "✅",
+   "name": "250 correct answers",
+   "type": "correct",
+   "n": 250,
+   "stars": 40,
+   "item": "a_bowtie"
+  },
+  {
+   "id": "r_c500",
+   "group": "milestone",
+   "icon": "✅",
+   "name": "500 correct answers",
+   "type": "correct",
+   "n": 500,
+   "stars": 60
+  },
+  {
+   "id": "r_c1000",
+   "group": "milestone",
+   "icon": "🏅",
+   "name": "1,000 correct answers",
+   "type": "correct",
+   "n": 1000,
+   "stars": 100,
+   "item": "a_wizard"
+  },
+  {
+   "id": "r_c2500",
+   "group": "milestone",
+   "icon": "🏆",
+   "name": "2,500 correct answers",
+   "type": "correct",
+   "n": 2500,
+   "stars": 200
+  },
+  {
+   "id": "r_l10",
+   "group": "milestone",
+   "icon": "📚",
+   "name": "10 lessons",
+   "type": "lessons",
+   "n": 10,
+   "stars": 20
+  },
+  {
+   "id": "r_l50",
+   "group": "milestone",
+   "icon": "📚",
+   "name": "50 lessons",
+   "type": "lessons",
+   "n": 50,
+   "stars": 60
+  },
+  {
+   "id": "r_l150",
+   "group": "milestone",
+   "icon": "📚",
+   "name": "150 lessons",
+   "type": "lessons",
+   "n": 150,
+   "stars": 150
+  },
+  {
+   "id": "r_pl3",
+   "group": "pet",
+   "icon": "🐾",
+   "name": "Pet level 3",
+   "type": "petLevel",
+   "n": 3,
+   "stars": 10
+  },
+  {
+   "id": "r_pl5",
+   "group": "pet",
+   "icon": "🐾",
+   "name": "Pet level 5",
+   "type": "petLevel",
+   "n": 5,
+   "stars": 25,
+   "item": "a_bell"
+  },
+  {
+   "id": "r_pl10",
+   "group": "pet",
+   "icon": "👑",
+   "name": "Pet level 10",
+   "type": "petLevel",
+   "n": 10,
+   "stars": 60
+  },
+  {
+   "id": "r_love25",
+   "group": "pet",
+   "icon": "💖",
+   "name": "25 hearts of love",
+   "type": "love",
+   "n": 25,
+   "stars": 15,
+   "item": "a_balloon"
+  },
+  {
+   "id": "r_love100",
+   "group": "pet",
+   "icon": "💞",
+   "name": "100 hearts of love",
+   "type": "love",
+   "n": 100,
+   "stars": 50
+  },
+  {
+   "id": "b_a1",
+   "group": "badge",
+   "icon": "🌼",
+   "name": "Meadow Master",
+   "type": "realm",
+   "rid": "a1",
+   "stars": 40,
+   "item": "hero_meadow"
+  },
+  {
+   "id": "b_a2",
+   "group": "badge",
+   "icon": "🍬",
+   "name": "Candy Master",
+   "type": "realm",
+   "rid": "a2",
+   "stars": 50,
+   "item": "hero_candy"
+  },
+  {
+   "id": "b_b1",
+   "group": "badge",
+   "icon": "🌲",
+   "name": "Forest Master",
+   "type": "realm",
+   "rid": "b1",
+   "stars": 60,
+   "item": "hero_ranger"
+  },
+  {
+   "id": "b_b2",
+   "group": "badge",
+   "icon": "💎",
+   "name": "Crystal Master",
+   "type": "realm",
+   "rid": "b2",
+   "stars": 70,
+   "item": "hero_mermaid"
+  },
+  {
+   "id": "b_c1",
+   "group": "badge",
+   "icon": "⭐",
+   "name": "Starlight Master",
+   "type": "realm",
+   "rid": "c1",
+   "stars": 80,
+   "item": "hero_scholar"
+  },
+  {
+   "id": "b_c2",
+   "group": "badge",
+   "icon": "☁️",
+   "name": "Cloud Master",
+   "type": "realm",
+   "rid": "c2",
+   "stars": 100,
+   "item": "hero_cloud"
+  },
+  {
+   "id": "b_m3",
+   "group": "badge",
+   "icon": "🧮",
+   "name": "Maths Explorer",
+   "type": "mathCrowns",
+   "n": 3,
+   "stars": 20
+  },
+  {
+   "id": "b_m10",
+   "group": "badge",
+   "icon": "🧙",
+   "name": "Mathemagician",
+   "type": "mathCrowns",
+   "n": 10,
+   "stars": 60,
+   "item": "hero_mathmage"
+  },
+  {
+   "id": "b_coll6",
+   "group": "badge",
+   "icon": "👗",
+   "name": "Fashionista",
+   "type": "collection",
+   "n": 6,
+   "stars": 30
+  },
+  {
+   "id": "b_coll12",
+   "group": "badge",
+   "icon": "🐧",
+   "name": "Grand Collector",
+   "type": "collection",
+   "n": 12,
+   "stars": 60,
+   "item": "pet_penguin"
+  },
+  {
+   "id": "b_chest1",
+   "group": "badge",
+   "icon": "🎁",
+   "name": "Gift Week",
+   "type": "chestWeeks",
+   "n": 1,
+   "stars": 0,
+   "item": "a_party"
+  }
+ ],
+ "chest": [
+  {
+   "day": 1,
+   "stars": 10
+  },
+  {
+   "day": 2,
+   "petXP": 30,
+   "happy": 20
+  },
+  {
+   "day": 3,
+   "stars": 15
+  },
+  {
+   "day": 4,
+   "petXP": 40,
+   "happy": 25
+  },
+  {
+   "day": 5,
+   "stars": 20
+  },
+  {
+   "day": 6,
+   "petXP": 50,
+   "happy": 30
+  },
+  {
+   "day": 7,
+   "stars": 40
+  }
  ]
 }

@@ -105,9 +105,14 @@ const sameTime = (a, b) => a && b && new Date(a).getTime() === new Date(b).getTi
 const newer = (a, b) => a && (!b || new Date(a).getTime() > new Date(b).getTime());
 
 /* apply a cloud save to this device and redraw */
+// ⭐ the same player's star-earning record (daily caps, replays, items already rewarded) is never rolled back by a sync:
+// whichever save wins, it keeps the stricter of the two records (WR.mergeEarn). A different account on this device keeps its own.
+const samePlayer = () => !!(C.user && meta().user === C.user.id);
+const keepEarn = other => { if (other && samePlayer()) { WR.state.earn = WR.mergeEarn(WR.state.earn, other.earn); rawSave(); } };
 C.apply = (data, at) => {
+  const prev = WR.state;
   localStorage.setItem(SAVE_KEY, JSON.stringify(data));
-  WR.state = WR.load(); rawSave();
+  WR.state = WR.load(); keepEarn(prev); rawSave();
   setMeta({ synced: at, dirty: false, user: C.user && C.user.id, username: C.username });
   WR.restart && WR.restart();
 };
@@ -156,11 +161,11 @@ async function resolveConflict(row, why) {
   if (why === "background" || !local.pet) {
     // quietly keep whichever has more progress
     if (cs >= ls) { C.apply(cloud, row.updated_at); if (why === "background") WR.toast("☁️ Loaded newer progress from your other device", 2600); }
-    else await writeRow(local);
+    else { keepEarn(cloud); await writeRow(WR.state); }
     return;
   }
   return new Promise(resolve => chooseSave(local, row, async pick => {
-    try { if (pick === "cloud") C.apply(cloud, row.updated_at); else await writeRow(local); C.setStatus("saved"); }
+    try { if (pick === "cloud") C.apply(cloud, row.updated_at); else { keepEarn(cloud); await writeRow(WR.state); } C.setStatus("saved"); }
     catch (e) { C.setStatus("offline"); }
     resolve();
   }));
@@ -256,7 +261,7 @@ C.resume = async () => {
     C.user = data.session.user; C.username = (C.user.user_metadata && C.user.user_metadata.username) || m.username;
     const row = await fetchRow();
     if (row && newer(row.updated_at, m.synced)) {
-      if (!m.dirty || C.score(row.data) >= C.score(WR.state)) C.apply(row.data, row.updated_at); else await writeRow(WR.state);
+      if (!m.dirty || C.score(row.data) >= C.score(WR.state)) C.apply(row.data, row.updated_at); else { keepEarn(row.data); await writeRow(WR.state); }
     } else if (m.dirty || !row) await writeRow(WR.state);
     C.setStatus("saved");
   } catch (e) { console.warn("cloud resume", e && e.message); C.setStatus("offline"); }

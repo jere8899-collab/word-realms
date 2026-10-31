@@ -218,7 +218,7 @@ function award(it, score) {
   it.best = Math.max(it.best, score);
   const s = WR.state; WR.countAnswer(ok && first, S.realm.id + "/speaking", ok); s.speaking.attempts++;
   let gain = 0;
-  if (ok && first) { it.passed = true; S.passes++; gain = 1; S.starsEarned += 1; s.stars += 1; s.speaking.passed++; WR.questEvent("correct10"); }
+  if (ok && first) { it.passed = true; S.passes++; gain = WR.awardStars("speak", S.realm.id + "/" + sayTarget(it), 1, { tally: S, quiet: true }); S.starsEarned += gain; s.speaking.passed++; WR.questEvent("correct10"); }
   if (starsFor(score) === 3) s.speaking.perfect++;
   WR.save(); WR.renderTop();
   const h = document.querySelector(".hud"); if (h) h.innerHTML = hud();
@@ -273,14 +273,14 @@ function finish() {
   const n = S.items.length, raw = S.items.reduce((a, x) => a + x.best, 0) / n;
   const score = S.mode === "mic" ? raw : Math.min(raw, 0.7); // self-rating can earn up to 2 crowns; 3 crowns need the microphone
   const crowns = WR.crowns(score), bonus = S.mode === "mic" ? crowns * 2 : 0;
-  if (bonus) { WR.state.stars += bonus; S.starsEarned += bonus; }
+  S.starsEarned += WR.awardStars("speak", S.realm.id + "/" + S.mode, bonus, { kind: "round", tally: S });
   WR.recordLesson(S.realm.id, "speaking", score);
   WR.state.speaking.rounds++;
   WR.questEvent("speak1"); if (crowns === 3) WR.questEvent("perfect1");
   const newStreak = WR.activityDone(), lv = WR.petGainXP(S.passes * 6 + 10);
   WR.save(); WR.renderTop();
   const R = S, title = crowns === 3 ? "The well sings your words! 👑" : crowns >= 1 ? "Lovely speaking! 🌟" : "Keep practising! 🌱";
-  WR.view(`<div class="card result fade-in"><h1>${title}</h1>
+  WR.view(`<div class="card result fade-in"><h1>${title}</h1>${WR.starNote()}
     <div class="big">${"👑".repeat(crowns)}${"<span style='opacity:.2'>👑</span>".repeat(3 - crowns)}</div>
     <h2>${R.passes} / ${n} sentences passed</h2>
     <p class="muted" style="font-weight:800">⭐ ${R.starsEarned} stars earned${R.mode === "shadow" ? " · 🗣️ shadowing mode" : ""} ${newStreak ? `· 🔥 streak ${WR.state.streak.count} day${WR.state.streak.count > 1 ? "s" : ""}!` : ""}</p>

@@ -267,7 +267,7 @@ function finish() {
   stars += Math.max(0, crowns - (prev ? prev.crowns : 0)) * 2;      // new crowns pay 2⭐ each
   rec.done[u.id] = { best: Math.max(score, prev ? prev.best : 0), crowns: Math.max(crowns, prev ? prev.crowns : 0), plays: (prev ? prev.plays : 0) + 1, at: Date.now() };
   rec.rounds++; WR.state.lessonsDone++; WR.save();
-  if (stars) WR.addStars(stars);
+  if (stars) stars = WR.awardStars("phonics", u.id + "/" + Math.max(crowns, prev ? prev.crowns : 0) + (prev ? "" : "/first"), stars, { kind: "fresh" });
   const lv = WR.petGainXP ? WR.petGainXP(S.right * 2 + 2) : null;
   WR.questEvent("phonics1"); WR.activityDone();
   if (crowns === 3) WR.questEvent("perfect1");

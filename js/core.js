@@ -12,7 +12,12 @@ const PETS = [
   { id: "pet_bunny", species: "bunny", name: "Puffbun", emoji: "🐰", likes: "carrot cookies", stages: ["Baby Puffbun", "Bloom Puffbun", "Royal Puffbun"] },
   { id: "pet_fox", species: "fox", name: "Mochi Fox", emoji: "🦊", likes: "berry mochi", stages: ["Kit Mochi", "Twinkle Mochi", "Celestial Mochi"] },
   { id: "pet_dragon", species: "dragon", name: "Minty", emoji: "🐉", likes: "star cake", stages: ["Hatchling Minty", "Sky Minty", "Elder Minty"] },
-  { id: "pet_owl", species: "owl", name: "Hoot", emoji: "🦉", likes: "reading together", stages: ["Owlet Hoot", "Scholar Hoot", "Sage Hoot"] }
+  { id: "pet_owl", species: "owl", name: "Hoot", emoji: "🦉", likes: "reading together", stages: ["Owlet Hoot", "Scholar Hoot", "Sage Hoot"] },
+  // more friends from the Wardrobe (data/shop.json → pets: star tiers or earned); the four above are the starters
+  { id: "pet_kitty", species: "kitty", name: "Lulu", emoji: "🐱", likes: "cuddles and yarn", stages: ["Kitten Lulu", "Lilac Lulu", "Moon Kitty Lulu"], extra: true },
+  { id: "pet_panda", species: "panda", name: "Bao", emoji: "🐼", likes: "bamboo cookies", stages: ["Cub Bao", "Bamboo Bao", "Sage Panda Bao"], extra: true },
+  { id: "pet_unicorn", species: "unicorn", name: "Sprinkle", emoji: "🦄", likes: "rainbow sprinkles", stages: ["Foal Sprinkle", "Dream Sprinkle", "Starlight Sprinkle"], extra: true },
+  { id: "pet_penguin", species: "penguin", name: "Pip", emoji: "🐧", likes: "snow cones", stages: ["Chick Pip", "Frosty Pip", "Aurora Pip"], extra: true }
 ];
 const AVATARS = [{ id: "avatar_girl", name: "Lily" }, { id: "avatar_boy", name: "Kai" }, { id: "avatar_mage", name: "Nova" }];
 const QUEST_POOL = [
@@ -84,7 +89,8 @@ function freshState() {
     progress: {}, owned: [], equipped: { outfit: null, petskin: null, theme: null },
     settings: { rate: 0.9, sound: true, unlockAll: false }, mistakes: [], lessonsDone: 0,
     speaking: freshSpeaking(), writing: freshWriting(), math: freshMath(),
-    stories: { done: {}, words: {}, reads: 0 }, report: freshReport(), phonics: freshPhonics()
+    stories: { done: {}, words: {}, reads: 0 }, report: freshReport(), phonics: freshPhonics(), earn: freshEarn(),
+    looks: {}, stable: [], rewards: { got: [], chest: { last: null, n: 0 }, caughtUp: true }
   };
 }
 /* 📊 Activity log for the grown-ups' Learning Report (js/report.js), kept in the save so it cloud-syncs.
@@ -94,6 +100,9 @@ function freshState() {
    (m:g3.times, m:dojo.tower), "garden" for Mistake Garden rounds. */
 const LOG_DAYS = 60, GAP_MS = 3 * 60e3, FIRST_S = 20;
 const freshReport = () => ({ days: {}, tally: {}, at: 0 });
+// ⭐ anti-farm record, see WR.awardStars (economy section)
+const freshEarn = () => ({ day: "", practice: 0, rounds: {}, got: {} });
+const earnHash = k => { let h = 2166136261; k = String(k); for (let i = 0; i < k.length; i++) h = Math.imul(h ^ k.charCodeAt(i), 16777619); return (h >>> 0).toString(36); };
 // 🔤 Phonics Path (js/phonics.js): best result per step ({ u1: { best, crowns, plays, at } }), rounds played, letter-tile taps
 const freshPhonics = () => ({ done: {}, rounds: 0, taps: 0 });
 WR.LOG_DAYS = LOG_DAYS;
@@ -143,6 +152,7 @@ WR.fixMath = m => { const f = freshMath(); m = m || f;
   for (const box of ["dojo", "balance", "clock"]) for (const k in f[box]) if (m[box][k] === undefined) m[box][k] = f[box][k]; return m; };
 const freshSpeaking = () => ({ rounds: 0, attempts: 0, passed: 0, perfect: 0, preferShadow: false, shadowWhy: null });
 // older saves (before the Echo Well / Story Quill) simply gain the speaking and writing stats; nothing else changes
+const OLD_SLOT = { o_leaf: "neck", o_rainbow: "back" };   // (migrate runs before data/shop.json loads)
 function migrate(s, raw = s) {
   s.speaking = Object.assign(freshSpeaking(), s.speaking || {});
   s.writing = Object.assign(freshWriting(), s.writing || {});
@@ -154,6 +164,14 @@ function migrate(s, raw = s) {
   s.phonics = Object.assign(freshPhonics(), s.phonics || {}); s.phonics.done = s.phonics.done || {};
   if (!raw.report || typeof raw.report !== "object") s.report = seedReport(s);
   s.report.days = s.report.days || {}; s.report.tally = s.report.tally || {}; s.report.at = s.report.at || 0;
+  // ⭐ anti-farm record (WR.awardStars); an older save counts the English items it has already been served as known
+  // 👗 layered looks: the old single outfit becomes the hero's item in its slot; pets gain looks, love and a stable
+  if (!raw.looks || typeof raw.looks !== "object") { s.looks = {}; const o = s.equipped && s.equipped.outfit, it = o && WR.shop && WR.shop.outfits.find(x => x.id === o); if (o) s.looks[it ? it.slot : (OLD_SLOT[o] || "head")] = o; }
+  if (s.pet) { s.pet.looks = s.pet.looks || {}; s.pet.love = s.pet.love || 0; }
+  s.stable = Array.isArray(s.stable) ? s.stable : [];
+  s.rewards = Object.assign({ got: [], chest: { last: null, n: 0 } }, s.rewards || {}); s.rewards.got = s.rewards.got || []; s.rewards.chest = s.rewards.chest || { last: null, n: 0 }; if (!raw.rewards) s.rewards.caughtUp = false;   // an older save: catch up once, quietly (js/wardrobe.js)
+  if (!raw.earn || typeof raw.earn !== "object") { s.earn = freshEarn(); for (const b in s.seen || {}) for (const k of s.seen[b] || []) s.earn.got[earnHash("en:" + k)] = 1; }
+  else s.earn = Object.assign(freshEarn(), s.earn, { got: s.earn.got || {}, rounds: s.earn.rounds || {} });
   return s;
 }
 WR.load = () => { try { const s = JSON.parse(localStorage.getItem(SAVE_KEY)); if (s && s.v === 1) return migrate(Object.assign(freshState(), s), s); } catch (e) { } return freshState(); };
@@ -165,6 +183,8 @@ WR.init = async () => {
   WR.manifest = await fetchJSON("assets/manifest.json").catch(() => ({ assets: [] }));
   WR.realms = await fetchJSON("data/realms.json");
   WR.shop = await fetchJSON("data/shop.json");
+  WR.anchorData = await fetchJSON("data/anchors.json").catch(() => ({}));
+  WR.applyPrices(WR.shop);
   WR.counts = await fetchJSON("data/counts.json").catch(() => null);
   WR.tickPet(); WR.ensureDaily(); WR.applyTheme();
 };
@@ -235,19 +255,20 @@ WR.applyTheme = () => {
 };
 
 /* ---------- avatar / pet rendering ---------- */
-WR.avatarHTML = (size = 110) => {
-  const s = WR.state, o = s.equipped.outfit && WR.shop.outfits.find(x => x.id === s.equipped.outfit);
-  return `<div class="av-wrap" style="width:${size}px;height:${size}px;font-size:${size / 110}rem">${WR.img(s.avatar || "avatar_girl", "av")}${o ? `<span class="outfit ${o.id}">${o.icon}</span>` : ""}</div>`;
-};
 WR.petInfo = () => PETS.find(p => p.id === (WR.state.pet && WR.state.pet.species));
 WR.petLevel = xp => 1 + Math.floor(xp / 80);
 WR.petStage = lvl => lvl >= 10 ? 2 : lvl >= 5 ? 1 : 0;
-/* 🎩 Layered looks (one shared renderer for pets now, heroes and accessories next): the base art is an <img> (WebP/PNG
-   fallback, skin filter), and hats/crowns/wings are drawn in transparent SVG layers on the same 0–100 grid as the art
-   (viewBox 0 0 100 100, xMidYMid meet = object-fit:contain), so a layer sits on the same spot of the art at every
-   size — map card, pet screen, 40 px lesson companion, thumbnails. Anchors are per art id, in % of the art:
-     head: [x, y, w]  bottom-centre of a hat/crown and its width;  faceTop: where the brows start (a hat's bottom
-     edge must stay above it — tools/test/petlayers.js checks every pet and stage). */
+/* 🎩 Layered looks — ONE shared renderer for heroes and pets, everywhere (map, pet screen, wardrobe, shop, lesson
+   companion, thumbnails). The base art is an <img> (WebP/PNG fallback, pet-skin filter); hats, glasses, collars, wings
+   and held items are separate transparent layers in two SVG overlays (behind / in front of the art) on the same 0–100
+   grid as the art (viewBox 0 0 100 100, xMidYMid meet = object-fit:contain), so a layer sits on the same spot of the
+   art at every size. One item per slot: head, face, neck, back (behind), held. The save drives it:
+   state.looks = { head, face, neck, back, held } for the hero, state.pet.looks the same for the active pet.
+   Anchors per art id, in % of the art (data/anchors.json from tools/art/anchors.py, + the hand-tuned ones below):
+     head: [x, y, w] bottom-centre + width of a hat;  faceTop: brow line (a hat's bottom edge stays above it —
+     tools/test/petlayers.js checks every pet × stage × screen);  face / neck / back / held: [x, y, w] centre + width. */
+const SLOTS = ["head", "face", "neck", "back", "held"];
+WR.SLOTS = SLOTS;
 const ANCHORS = {
   pet_bunny:  { head: [50, 11, 28], faceTop: 22 },
   pet_fox:    { head: [46, 17, 26], faceTop: 28 },
@@ -255,30 +276,43 @@ const ANCHORS = {
   pet_owl:    { head: [53, 14, 26], faceTop: 20 }
 };
 WR.ANCHORS = ANCHORS;
-const DEF_ANCHOR = { head: [50, 12, 26], faceTop: 22 };
-WR.anchorFor = id => ANCHORS[id] || DEF_ANCHOR;
-// layers: [{ slot: "head", src, w?: scale, behind?: true, cls? }] → the two SVG overlays (behind and in front of the art)
+const DEF_ANCHOR = { head: [50, 12, 26], faceTop: 22, face: [50, 30, 30], neck: [50, 46, 20], back: [50, 52, 70], held: [74, 60, 26] };
+WR.anchorFor = id => Object.assign({}, DEF_ANCHOR, (WR.anchorData || {})[id] || {}, ANCHORS[id] || {});
+// layers: [{ slot, src, w?: scale, cls? }]; "back" is always drawn behind the art
 WR.layerSVG = (artId, layers, behind) => {
-  const a = WR.anchorFor(artId), parts = layers.filter(l => !!l.behind === !!behind).map(l => {
-    const [x, y, w0] = a[l.slot] || DEF_ANCHOR[l.slot] || [50, 50, 30], w = w0 * (l.w || 1), h = w;   // square art
-    const top = l.slot === "head" ? y - h : y - h / 2;                                                   // hats sit ON the anchor
-    return `<image class="layer ${l.slot} ${l.cls || ""}" data-slot="${l.slot}" href="${l.src}" x="${(x - w / 2).toFixed(1)}" y="${top.toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}"/>`;
+  const a = WR.anchorFor(artId), parts = layers.filter(l => (l.slot === "back") === !!behind).map(l => {
+    const [x, y, w0] = a[l.slot] || DEF_ANCHOR[l.slot], w = w0 * (l.w || 1), h = w;   // square layer art
+    const top = (l.slot === "head" ? y - h : y - h / 2) + (l.dy || 0) * h;                // hats sit ON the anchor; dy nudges tall items (a scarf hangs below the neck)
+    return `<image class="layer ${l.slot} ${l.cls || ""}" data-slot="${l.slot}"${l.id ? ` data-id="${l.id}"` : ""}${l.filter ? ` style="filter:${l.filter}"` : ""} href="${l.src}" x="${(x - w / 2).toFixed(1)}" y="${top.toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}"/>`;
   }).join("");
   return parts ? `<svg class="layers${behind ? " behind" : ""}" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" aria-hidden="true">${parts}</svg>` : "";
 };
+// art reference of an accessory: "acc:<name>" (assets/acc) or "icon:<slug>" (painted icon set)
+WR.layerSrc = art => { const [k, v] = String(art || "").split(":"); return k === "acc" ? `assets/acc/${v}.webp` : k === "icon" ? `assets/icons/${v}.webp` : WR.iconSrc(art); };
+WR.accessory = id => (WR.shop && WR.shop.outfits || []).find(x => x.id === id);
+const looksLayers = looks => SLOTS.map(sl => looks && looks[sl] && WR.accessory(looks[sl])).filter(Boolean)
+  .map(it => ({ slot: it.slot, src: WR.layerSrc(it.art), w: it.w, dy: it.dy, filter: it.filter, id: it.id, cls: "acc" }));
+WR.heroLayers = (looks = WR.state.looks) => looksLayers(looks);
+// the evolved look: <pet>_royal art when there is one
+WR.petArt = p => { const stage = WR.petStage(WR.petLevel(p.xp)), royal = p.species + "_royal"; return stage >= 2 && WR.asset && WR.asset(royal) ? royal : p.species; };
 WR.petLayers = p => {
-  const stage = WR.petStage(WR.petLevel(p.xp)), out = [];
-  if (stage >= 2) out.push({ slot: "head", src: WR.iconSrc("👑"), cls: "petcrown" });   // the evolved pet's crown
+  const stage = WR.petStage(WR.petLevel(p.xp)), out = looksLayers(p.looks);
+  if (stage >= 2 && !(p.looks && p.looks.head)) out.push({ slot: "head", src: WR.iconSrc("👑"), cls: "petcrown", w: 0.8 });   // the evolved pet's crown, unless it wears a hat
   return out;
 };
-WR.petHTML = (cls = "") => {
-  const p = WR.state.pet; if (!p) return "";
+// preview: { avatar, looks } for the hero / { pet } (a pet object) — the wardrobe's instant try-on uses these
+WR.avatarHTML = (size = 110, pv = {}) => {
+  const s = WR.state, id = pv.avatar || s.avatar || "avatar_girl", layers = WR.heroLayers(pv.looks || s.looks);
+  return `<div class="av-wrap" data-art="${id}" style="width:${size}px;height:${size}px;font-size:${size / 110}rem">${WR.layerSVG(id, layers, true)}${WR.img(id, "av")}${WR.layerSVG(id, layers)}</div>`;
+};
+WR.petHTML = (cls = "", pv = {}) => {
+  const p = pv.pet || WR.state.pet; if (!p) return "";
   const skin = p.skin && WR.shop.petskins.find(x => x.id === p.skin);
-  const stage = WR.petStage(WR.petLevel(p.xp));
+  const stage = WR.petStage(WR.petLevel(p.xp)), art = WR.petArt(p);
   const extra = (skin && skin.sparkle ? " sparkle-skin" : "") + (skin && skin.rainbow ? " rainbow-skin" : "");
   const style = skin && skin.filter ? `filter:${skin.filter} drop-shadow(0 8px 10px rgba(122,92,143,.25))` : "";
   const scale = [0.86, 0.96, 1.04][stage], layers = WR.petLayers(p);
-  return `<div class="petwrap ${extra} ${cls}" data-art="${p.species}" style="position:relative;width:100%;height:100%;transform:scale(${scale})">${stage >= 1 ? '<div class="aura"></div>' : ""}${WR.layerSVG(p.species, layers, true)}${WR.img(p.species, "", style)}${WR.layerSVG(p.species, layers)}</div>`;
+  return `<div class="petwrap ${extra} ${cls}" data-art="${art}" style="position:relative;width:100%;height:100%;transform:scale(${scale})">${stage >= 1 ? '<div class="aura"></div>' : ""}${WR.layerSVG(art, layers, true)}${WR.img(art, "", style)}${WR.layerSVG(art, layers)}</div>`;
 };
 WR.petMood = () => {
   const p = WR.state.pet; if (!p) return "";
@@ -305,12 +339,82 @@ WR.petGainXP = n => {
   return null;
 };
 
-/* ---------- economy ---------- */
-WR.addStars = (n, why) => {
-  WR.state.stars += n; WR.save(); WR.renderTop && WR.renderTop();
-  if (why) WR.toast(`+${n} ⭐ ${why}`);
-  WR.sfx("coin");
+/* ---------- economy: EVERY star goes through WR.awardStars(source, key, n, { kind }) ----------
+   Anti-farm rules (only ⭐ stars, the currency, are limited — XP, crowns, pet happiness and progress always flow):
+   kind "item"  — one question/item: pays only the first time it is answered correctly, ever (state.earn.got); repeats 0.
+   kind "round" — a lesson/topic/round's end bonus: replays of the same round on the same day pay 100% → 50% → 25%
+                  (at least 1⭐) → 0. A round made mostly of new items (fresh content) always pays in full.
+   item + round stars share a daily practice cap (EARN.cap) that resets at local midnight.
+   kind "fresh" — finite one-offs (a new crown, a new best, a first story page, newly mastered facts): always full, no cap.
+   kind "bonus" — quests, weekly prizes, stickers, boss first wins, streak gifts, milestones: always full, no cap.
+   state.earn = { day, practice, rounds: { "<source>:<key>": plays today }, got: { hash: 1 } } cloud-syncs with the save;
+   js/cloud.js merges it on every cloud load (WR.mergeEarn) so switching saves can't reset it. */
+const EARN = { cap: 150, replay: [1, 0.5, 0.25, 0] };
+WR.EARN = EARN;
+WR.earnHash = earnHash;
+WR.earn = () => {
+  const s = WR.state, d = WR.today(); s.earn = Object.assign(freshEarn(), s.earn || {});
+  const e = s.earn; e.got = e.got || {}; e.rounds = e.rounds || {};
+  if (e.day !== d) { e.day = d; e.practice = 0; e.rounds = {}; }
+  return e;
 };
+// keep the stricter of two earn records (same day: highest counters; got: union) — used when a cloud save replaces this one
+WR.mergeEarn = (a, b) => {
+  a = a || {}; b = b || {}; const out = freshEarn(); out.got = Object.assign({}, a.got || {}, b.got || {});
+  const day = [a.day || "", b.day || ""].sort().pop(); out.day = day;
+  for (const x of [a, b]) if (x.day === day) { out.practice = Math.max(out.practice, x.practice || 0); for (const k in x.rounds || {}) out.rounds[k] = Math.max(out.rounds[k] || 0, x.rounds[k]); }
+  return out;
+};
+let cut = null;   // stars held back since the last WR.starNote(): { n, why: "known" | "replay" | "cap" }
+const holdBack = (n, why) => { if (n <= 0) return; cut = cut || { n: 0, why }; cut.n += n; if (why === "cap" || cut.why === "known") cut.why = why === "cap" ? "cap" : why === "replay" ? cut.why : why; };
+// o: { kind: "item"|"round"|"fresh"|"bonus", why: toast text, tally: round object (counts new/old items), quiet }
+WR.awardStars = (source, key, n, o = {}) => {
+  const kind = o.kind || "item", e = WR.earn(), want = Math.max(0, Math.round(n || 0)), t = o.tally;
+  let give = want;
+  if (kind === "item") {
+    const h = earnHash(source + ":" + key), known = !!e.got[h]; e.got[h] = 1;
+    if (t) { if (known) t._oldItems = (t._oldItems || 0) + 1; else t._newItems = (t._newItems || 0) + 1; }
+    if (known) { holdBack(give, "known"); give = 0; }
+  } else if (kind === "round") {
+    const k = source + ":" + key, fresh = t && (t._newItems || 0) > 0 && (t._newItems || 0) >= (t._oldItems || 0);
+    const plays = e.rounds[k] || 0; e.rounds[k] = plays + 1;
+    if (!fresh) { const f = EARN.replay[Math.min(plays, EARN.replay.length - 1)];
+      const g = f >= 1 ? give : f > 0 ? Math.min(give, Math.max(1, Math.floor(give * f))) : 0; holdBack(give - g, "replay"); give = g; }
+  } else if (kind === "fresh" && key != null) {
+    const h = earnHash("fresh:" + source + ":" + key); if (e.got[h]) give = 0; e.got[h] = 1;
+  }
+  if (kind === "item" || kind === "round") { const room = Math.max(0, EARN.cap - e.practice); if (give > room) { holdBack(give - room, "cap"); give = room; } e.practice += give; }
+  if (give) WR.state.stars += give;
+  WR.save(); WR.renderTop && WR.renderTop();
+  if (give && o.why) WR.toast(`+${give} ⭐ ${o.why}`);
+  if (give && !o.quiet) WR.sfx("coin");
+  return give;
+};
+// stars always outside the cap (quests, prizes, stickers, milestones)
+WR.addStars = (n, why) => WR.awardStars("bonus", null, n, { kind: "bonus", why });
+WR.practiceLeft = () => Math.max(0, EARN.cap - WR.earn().practice);
+// the gentle "why fewer stars" line for a results screen (and it clears the pending note)
+WR.starNote = () => {
+  const c = cut; cut = null; if (!c || c.n <= 0) return "";
+  const msg = c.why === "cap" ? "You've collected all of today's practice stars — amazing! 🌙 Practice still grows your XP, crowns and pet. Quests still give stars, and more practice stars come tomorrow ⭐"
+    : c.why === "replay" ? "You've played this one a lot today! Try a different lesson for more stars ⭐"
+    : "You've mastered these! Try new questions for more stars ⭐";
+  return `<div class="star-note" role="note">${msg}<div><button class="btn small mint" data-starnote-go>✨ Find something new</button></div></div>`;
+};
+WR.starNotePending = () => !!(cut && cut.n > 0);
+document.addEventListener("click", ev => { const b = ev.target.closest && ev.target.closest("[data-starnote-go]"); if (b) { ev.preventDefault(); WR.go("home"); } });
+// 🏷️ one central price table (data/shop.json → prices): every item names a tier, snacks have their own row.
+// Prices only decide what NEW purchases cost; owned items stay owned and balances are never touched.
+WR.TIER_NAMES = { starter: "Starter", common: "Common", rare: "Rare", epic: "Epic", legendary: "Legendary", earned: "Earned only", premium: "Grown-up" };
+WR.applyPrices = shop => {
+  const P = shop.prices || { tiers: {}, snacks: {} };
+  for (const cat of ["outfits", "petskins", "themes", "heroes", "pets", "snacks"]) for (const it of shop[cat] || []) {
+    if (cat === "snacks") it.price = P.snacks[it.id] != null ? P.snacks[it.id] : (it.price || 0);
+    else { it.tier = it.tier || (it.premium ? "premium" : "common"); it.price = P.tiers[it.tier] != null ? P.tiers[it.tier] : 0; if (it.tier === "earned") it.earnedOnly = true; }
+  }
+  return shop;
+};
+WR.priceOf = id => { for (const cat of Object.keys(WR.shop || {})) if (Array.isArray(WR.shop[cat])) { const it = WR.shop[cat].find(x => x.id === id); if (it) return it.price; } return null; };
 WR.spend = n => { if (WR.state.stars < n) return false; WR.state.stars -= n; WR.save(); WR.renderTop && WR.renderTop(); return true; };
 WR.grantItem = id => { if (!WR.state.owned.includes(id)) WR.state.owned.push(id); WR.save(); };
 

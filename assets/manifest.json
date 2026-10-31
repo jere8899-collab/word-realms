@@ -855,6 +855,566 @@
         "large": "assets/web/mboss_lumina.webp",
         "small": "assets/web/mboss_lumina.webp"
       }
+    },
+    {
+      "id": "hero_pumpkin",
+      "type": "avatar",
+      "name": "Pumpkin Witch",
+      "priority": 2,
+      "path": "assets/avatars/hero_pumpkin.png",
+      "placeholder": "assets/avatars/avatar_girl.svg",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "a chibi girl in a purple star cape and pumpkin skirt (Halloween), cute anime chibi, pastel",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/hero_pumpkin.webp",
+        "small": "assets/web/hero_pumpkin.webp"
+      }
+    },
+    {
+      "id": "hero_snow",
+      "type": "avatar",
+      "name": "Snowflake Prince",
+      "priority": 2,
+      "path": "assets/avatars/hero_snow.png",
+      "placeholder": "assets/avatars/avatar_girl.svg",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "a chibi boy with silver hair in a fluffy snowflake coat (winter), cute anime chibi, pastel",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/hero_snow.webp",
+        "small": "assets/web/hero_snow.webp"
+      }
+    },
+    {
+      "id": "hero_sakura",
+      "type": "avatar",
+      "name": "Sakura Kimono",
+      "priority": 2,
+      "path": "assets/avatars/hero_sakura.png",
+      "placeholder": "assets/avatars/avatar_girl.svg",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "a chibi girl in a pink cherry-blossom kimono (spring), cute anime chibi, pastel",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/hero_sakura.webp",
+        "small": "assets/web/hero_sakura.webp"
+      }
+    },
+    {
+      "id": "hero_summer",
+      "type": "avatar",
+      "name": "Seaside Summer",
+      "priority": 2,
+      "path": "assets/avatars/hero_summer.png",
+      "placeholder": "assets/avatars/avatar_girl.svg",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "a chibi boy in a flower shirt with a sandcastle bucket (summer), cute anime chibi, pastel",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/hero_summer.webp",
+        "small": "assets/web/hero_summer.webp"
+      }
+    },
+    {
+      "id": "hero_lunar",
+      "type": "avatar",
+      "name": "Lantern Festival",
+      "priority": 2,
+      "path": "assets/avatars/hero_lunar.png",
+      "placeholder": "assets/avatars/avatar_girl.svg",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "a chibi girl in a red qipao holding a lantern (Lunar New Year), cute anime chibi, pastel",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/hero_lunar.webp",
+        "small": "assets/web/hero_lunar.webp"
+      }
+    },
+    {
+      "id": "hero_meadow",
+      "type": "avatar",
+      "name": "Meadow Sprite",
+      "priority": 2,
+      "path": "assets/avatars/hero_meadow.png",
+      "placeholder": "assets/avatars/avatar_girl.svg",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "a chibi boy in a leafy meadow outfit (A1 realm costume), cute anime chibi, pastel",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/hero_meadow.webp",
+        "small": "assets/web/hero_meadow.webp"
+      }
+    },
+    {
+      "id": "hero_candy",
+      "type": "avatar",
+      "name": "Candy Baker",
+      "priority": 2,
+      "path": "assets/avatars/hero_candy.png",
+      "placeholder": "assets/avatars/avatar_girl.svg",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "a chibi girl baker with a whisk (A2 Candy Village costume), cute anime chibi, pastel",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/hero_candy.webp",
+        "small": "assets/web/hero_candy.webp"
+      }
+    },
+    {
+      "id": "hero_ranger",
+      "type": "avatar",
+      "name": "Forest Ranger",
+      "priority": 2,
+      "path": "assets/avatars/hero_ranger.png",
+      "placeholder": "assets/avatars/avatar_girl.svg",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "a chibi boy forest ranger with a satchel (B1 costume), cute anime chibi, pastel",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/hero_ranger.webp",
+        "small": "assets/web/hero_ranger.webp"
+      }
+    },
+    {
+      "id": "hero_mermaid",
+      "type": "avatar",
+      "name": "Crystal Lake Mermaid",
+      "priority": 2,
+      "path": "assets/avatars/hero_mermaid.png",
+      "placeholder": "assets/avatars/avatar_girl.svg",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "a chibi mermaid with seafoam hair (B2 costume), cute anime chibi, pastel",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/hero_mermaid.webp",
+        "small": "assets/web/hero_mermaid.webp"
+      }
+    },
+    {
+      "id": "hero_scholar",
+      "type": "avatar",
+      "name": "Starlight Scholar",
+      "priority": 2,
+      "path": "assets/avatars/hero_scholar.png",
+      "placeholder": "assets/avatars/avatar_girl.svg",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "a chibi boy scholar in a starry robe with a book (C1 costume), cute anime chibi, pastel",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/hero_scholar.webp",
+        "small": "assets/web/hero_scholar.webp"
+      }
+    },
+    {
+      "id": "hero_cloud",
+      "type": "avatar",
+      "name": "Cloud Knight",
+      "priority": 2,
+      "path": "assets/avatars/hero_cloud.png",
+      "placeholder": "assets/avatars/avatar_girl.svg",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "a chibi girl knight with a cloud shield (C2 costume), cute anime chibi, pastel",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/hero_cloud.webp",
+        "small": "assets/web/hero_cloud.webp"
+      }
+    },
+    {
+      "id": "hero_mathmage",
+      "type": "avatar",
+      "name": "Mathemagician",
+      "priority": 2,
+      "path": "assets/avatars/hero_mathmage.png",
+      "placeholder": "assets/avatars/avatar_girl.svg",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "a chibi boy wizard with a star wand (maths mastery costume), cute anime chibi, pastel",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/hero_mathmage.webp",
+        "small": "assets/web/hero_mathmage.webp"
+      }
+    },
+    {
+      "id": "hero_knight",
+      "type": "avatar",
+      "name": "Little Knight",
+      "priority": 2,
+      "path": "assets/avatars/hero_knight.png",
+      "placeholder": "assets/avatars/avatar_girl.svg",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "a chibi boy in shiny armour with a sword, cute anime chibi, pastel",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/hero_knight.webp",
+        "small": "assets/web/hero_knight.webp"
+      }
+    },
+    {
+      "id": "hero_pirate",
+      "type": "avatar",
+      "name": "Pirate Captain",
+      "priority": 2,
+      "path": "assets/avatars/hero_pirate.png",
+      "placeholder": "assets/avatars/avatar_girl.svg",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "a chibi girl pirate captain with a map, cute anime chibi, pastel",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/hero_pirate.webp",
+        "small": "assets/web/hero_pirate.webp"
+      }
+    },
+    {
+      "id": "hero_space",
+      "type": "avatar",
+      "name": "Space Explorer",
+      "priority": 2,
+      "path": "assets/avatars/hero_space.png",
+      "placeholder": "assets/avatars/avatar_girl.svg",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "a chibi boy astronaut, cute anime chibi, pastel",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/hero_space.webp",
+        "small": "assets/web/hero_space.webp"
+      }
+    },
+    {
+      "id": "hero_redhood",
+      "type": "avatar",
+      "name": "Red Riding Hood",
+      "priority": 2,
+      "path": "assets/avatars/hero_redhood.png",
+      "placeholder": "assets/avatars/avatar_girl.svg",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "a chibi girl in a red hood with a basket, cute anime chibi, pastel",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/hero_redhood.webp",
+        "small": "assets/web/hero_redhood.webp"
+      }
+    },
+    {
+      "id": "pet_unicorn",
+      "type": "pet",
+      "name": "Sprinkle the unicorn foal",
+      "priority": 2,
+      "path": "assets/pets/pet_unicorn.png",
+      "placeholder": "assets/pets/pet_bunny.svg",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "Sprinkle the unicorn foal, cute anime chibi pastel pet",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/pet_unicorn.webp",
+        "small": "assets/web/pet_unicorn.webp"
+      }
+    },
+    {
+      "id": "pet_panda",
+      "type": "pet",
+      "name": "Bao the panda cub",
+      "priority": 2,
+      "path": "assets/pets/pet_panda.png",
+      "placeholder": "assets/pets/pet_bunny.svg",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "Bao the panda cub, cute anime chibi pastel pet",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/pet_panda.webp",
+        "small": "assets/web/pet_panda.webp"
+      }
+    },
+    {
+      "id": "pet_kitty",
+      "type": "pet",
+      "name": "Lulu the lilac kitten",
+      "priority": 2,
+      "path": "assets/pets/pet_kitty.png",
+      "placeholder": "assets/pets/pet_bunny.svg",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "Lulu the lilac kitten, cute anime chibi pastel pet",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/pet_kitty.webp",
+        "small": "assets/web/pet_kitty.webp"
+      }
+    },
+    {
+      "id": "pet_penguin",
+      "type": "pet",
+      "name": "Pip the penguin chick",
+      "priority": 2,
+      "path": "assets/pets/pet_penguin.png",
+      "placeholder": "assets/pets/pet_bunny.svg",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "Pip the penguin chick, cute anime chibi pastel pet",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/pet_penguin.webp",
+        "small": "assets/web/pet_penguin.webp"
+      }
+    },
+    {
+      "id": "pet_bunny_royal",
+      "type": "pet",
+      "name": "evolved look of pet_bunny",
+      "priority": 2,
+      "path": "assets/pets/pet_bunny_royal.png",
+      "placeholder": "assets/pets/pet_bunny.svg",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "evolved look of pet_bunny, cute anime chibi pastel pet",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/pet_bunny_royal.webp",
+        "small": "assets/web/pet_bunny_royal.webp"
+      }
+    },
+    {
+      "id": "pet_fox_royal",
+      "type": "pet",
+      "name": "evolved look of pet_fox",
+      "priority": 2,
+      "path": "assets/pets/pet_fox_royal.png",
+      "placeholder": "assets/pets/pet_fox.svg",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "evolved look of pet_fox, cute anime chibi pastel pet",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/pet_fox_royal.webp",
+        "small": "assets/web/pet_fox_royal.webp"
+      }
+    },
+    {
+      "id": "pet_dragon_royal",
+      "type": "pet",
+      "name": "evolved look of pet_dragon",
+      "priority": 2,
+      "path": "assets/pets/pet_dragon_royal.png",
+      "placeholder": "assets/pets/pet_dragon.svg",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "evolved look of pet_dragon, cute anime chibi pastel pet",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/pet_dragon_royal.webp",
+        "small": "assets/web/pet_dragon_royal.webp"
+      }
+    },
+    {
+      "id": "pet_owl_royal",
+      "type": "pet",
+      "name": "evolved look of pet_owl",
+      "priority": 2,
+      "path": "assets/pets/pet_owl_royal.png",
+      "placeholder": "assets/pets/pet_owl.svg",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "evolved look of pet_owl, cute anime chibi pastel pet",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/pet_owl_royal.webp",
+        "small": "assets/web/pet_owl_royal.webp"
+      }
+    },
+    {
+      "id": "pet_unicorn_royal",
+      "type": "pet",
+      "name": "evolved look of pet_unicorn",
+      "priority": 2,
+      "path": "assets/pets/pet_unicorn_royal.png",
+      "placeholder": "assets/pets/pet_bunny.svg",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "evolved look of pet_unicorn, cute anime chibi pastel pet",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/pet_unicorn_royal.webp",
+        "small": "assets/web/pet_unicorn_royal.webp"
+      }
+    },
+    {
+      "id": "pet_panda_royal",
+      "type": "pet",
+      "name": "evolved look of pet_panda",
+      "priority": 2,
+      "path": "assets/pets/pet_panda_royal.png",
+      "placeholder": "assets/pets/pet_bunny.svg",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "evolved look of pet_panda, cute anime chibi pastel pet",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/pet_panda_royal.webp",
+        "small": "assets/web/pet_panda_royal.webp"
+      }
+    },
+    {
+      "id": "pet_kitty_royal",
+      "type": "pet",
+      "name": "evolved look of pet_kitty",
+      "priority": 2,
+      "path": "assets/pets/pet_kitty_royal.png",
+      "placeholder": "assets/pets/pet_bunny.svg",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "evolved look of pet_kitty, cute anime chibi pastel pet",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/pet_kitty_royal.webp",
+        "small": "assets/web/pet_kitty_royal.webp"
+      }
+    },
+    {
+      "id": "pet_penguin_royal",
+      "type": "pet",
+      "name": "evolved look of pet_penguin",
+      "priority": 2,
+      "path": "assets/pets/pet_penguin_royal.png",
+      "placeholder": "assets/pets/pet_bunny.svg",
+      "aspect_ratio": "1:1",
+      "size": [
+        512,
+        512
+      ],
+      "transparent": true,
+      "prompt": "evolved look of pet_penguin, cute anime chibi pastel pet",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Oct 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/pet_penguin_royal.webp",
+        "small": "assets/web/pet_penguin_royal.webp"
+      }
     }
   ]
 }

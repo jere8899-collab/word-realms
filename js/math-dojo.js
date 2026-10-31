@@ -88,13 +88,15 @@ function answer(ok) {
 function endDojo() {
   if (!D) return; stopTimer();
   const o = D; D = null; const m = MW.st(), d = m.dojo, newBest = o.mode === "sprint" && o.right > (d.best || 0);
-  let stars = Math.floor(o.right / 3) + o.newMastered + (o.mode === "practice" ? 2 : 0) + (newBest ? 5 : 0);
+  // ⭐ newly mastered facts and a new record are one-offs (full pay); the rest is a replayable round (diminishing, capped)
+  let stars = WR.awardStars("dojo", o.mode + "/" + (o.tables || []).join(","), Math.floor(o.right / 3) + (o.mode === "practice" ? 2 : 0), { kind: "round" })
+    + WR.awardStars("dojo", null, o.newMastered + (newBest ? 5 : 0), { kind: "fresh" });
   if (o.mode === "sprint") { d.sprints = (d.sprints || 0) + 1; if (newBest) d.best = o.right; d.history = (d.history || []).concat([{ at: Date.now(), score: o.right, wrong: o.wrong, tables: o.tables }]).slice(-12); }
   else d.practice = (d.practice || 0) + 1;
-  m.xp = (m.xp || 0) + o.right * 2 + 5; WR.state.stars += stars; WR.questEvent("dojo1");
+  m.xp = (m.xp || 0) + o.right * 2 + 5; WR.questEvent("dojo1");
   const streak = WR.activityDone(), lv = WR.petGainXP(o.right * 3 + 5); WR.save(); WR.renderTop();
   const missed = [...new Set(o.misses)].map(k => { const [a, b] = k.split("x"); return `${a} × ${b} = ${a * b}`; });
-  WR.view(`<div class="card result fade-in">${tower("res-tower")}<h1>${o.mode === "sprint" ? (newBest ? "New tower record! 🏆" : "Sprint finished! ⚡") : "Practice complete! 🧘"}</h1>
+  WR.view(`<div class="card result fade-in">${tower("res-tower")}<h1>${o.mode === "sprint" ? (newBest ? "New tower record! 🏆" : "Sprint finished! ⚡") : "Practice complete! 🧘"}</h1>${WR.starNote()}
     <h2>${o.right} correct${o.wrong ? ` · ${o.wrong} to practise` : ""}</h2>
     <p class="muted" style="font-weight:800">⭐ ${stars} stars · best combo ${o.best}${o.newMastered ? ` · 🌟 ${o.newMastered} new fact${o.newMastered > 1 ? "s" : ""} mastered` : ""}${o.mode === "sprint" ? ` · best sprint ${d.best}` : ""}${streak ? ` · 🔥 streak ${WR.state.streak.count}` : ""}</p>
     ${missed.length ? `<div class="card misses"><b>🔁 These facts will come back soon:</b><div class="row" style="justify-content:center;margin-top:6px">${missed.map(x => `<span class="pill">${x}</span>`).join("")}</div></div>` : ""}
@@ -159,7 +161,7 @@ function ask() {
 function placeDone() {
   const m = MW.st(), g = Math.min(12, Math.max(1, P.passed + (P.passed === 12 ? 0 : 1))), first = !m.placed, gi = MG.GRADES.find(x => x.g === g);
   m.placed = { grade: g, passed: P.passed, at: Date.now(), asked: P.asked }; m.grade = g;
-  if (first) WR.state.stars += 5; WR.save(); WR.renderTop(); P = null;
+  if (first) WR.awardStars("bonus", "mathplace", 5, { kind: "bonus" }); WR.save(); WR.renderTop(); P = null;
   WR.view(`<div class="card result fade-in">${mascot("res-sumi")}<h1>Sumi says: start at Grade ${g}! 🔮</h1><h2>${gi.emoji} ${gi.name} <small class="muted">(${gi.sg})</small></h2>
     <p class="muted" style="font-weight:800">${m.placed.passed ? `You already know your Grade ${m.placed.passed} maths — brilliant!` : "We'll start from the very first steps together."} Every grade stays open, so you can practise anything.${first ? " · +5 ⭐ for finding your grade" : ""}</p>
     <div class="row" style="justify-content:center;margin-top:16px"><button class="btn mint" id="pGo">Go to ${gi.label} →</button></div></div>`);

@@ -119,7 +119,7 @@ function result(idx) {
   const r = WR.realms[idx], lv = LV[idx], s = WR.state, first = !s.placement;
   const right = P.log.filter(x => x.ok).length;
   s.placement = { level: lv, at: Date.now(), scores: P.scores, asked: P.asked, right };
-  if (first && s.pet) WR.addStars(5, "Magic Mirror reading!"); else if (first) s.stars += 5;
+  if (first) WR.awardStars("bonus", "placement", 5, { kind: "bonus", why: s.pet ? "Magic Mirror reading!" : "", quiet: !s.pet });
   WR.save(); WR.sfx("level"); WR.confetti();
   WR.view(`<div class="card mirror-card fade-in center">${mirrorImg()}
     <div class="muted" style="font-weight:800">The Magic Mirror says…</div>

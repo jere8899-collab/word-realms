@@ -268,7 +268,7 @@ function submit(val, btn) {
   const s = WR.state, m = MW.st(); L.tries++;
   if (res.ok) {
     L.done = true; const pts = L.tries === 1 ? 1 : 0.5; L.pts += pts; L.res[L.i] = pts; L.correct++; WR.countAnswer(true, "m:" + (q.topic || L.key)); m.correct = (m.correct || 0) + 1; m.answered = (m.answered || 0) + 1;
-    if (L.tries === 1) { L.combo++; L.maxCombo = Math.max(L.maxCombo, L.combo); let gain = 1; if (L.combo % 3 === 0) gain++; L.starsEarned += gain; s.stars += gain; if (L.combo === 5) WR.questEvent("combo5"); } else L.combo = 0;
+    if (L.tries === 1) { L.combo++; L.maxCombo = Math.max(L.maxCombo, L.combo); let gain = 1; if (L.combo % 3 === 0) gain++; L.starsEarned += WR.awardStars("m", q.uid || (q.topic || L.key) + "|" + q.q + "|" + q.a, gain, { tally: L, quiet: true }); if (L.combo === 5) WR.questEvent("combo5"); } else L.combo = 0;
     WR.questEvent("correct10"); WR.sfx("good"); if (btn) btn.classList.add("right");
     if (L.vizUsed) { m.modelSolved = (m.modelSolved || 0) + 1; WR.questEvent("model1"); }
     if (L.vizOpen) showViz(true);
@@ -299,7 +299,7 @@ const nextBtn = ok => `<div class="row" style="margin-top:10px;justify-content:f
 MW.record = (key, score) => { const m = MW.st(), p = m.topics[key] || { best: 0, plays: 0 }; p.best = Math.max(p.best, score); p.plays++; p.last = Date.now(); m.topics[key] = p; m.lessons = (m.lessons || 0) + 1; WR.state.lessonsDone++; WR.save(); };
 function finish() {
   const o = L, n = o.items.length, score = o.pts / n, crowns = WR.crowns(score), m = MW.st();
-  const before = MW.crownsFor(o.key), bonus = crowns * 2, gd = o.guardian, won = !!gd && o.pts >= gd.need; if (bonus) { WR.state.stars += bonus; o.starsEarned += bonus; }
+  const before = MW.crownsFor(o.key), bonus = crowns * 2, gd = o.guardian, won = !!gd && o.pts >= gd.need; o.starsEarned += WR.awardStars("math", gd ? "guardian/" + (gd.id || gd.name) : o.key, bonus, { kind: "round", tally: o });
   if (gd) { m.lessons = (m.lessons || 0) + 1; WR.state.lessonsDone++; } else MW.record(o.key, score);   // a guardian fight is not a topic, so it never changes topic crowns
   m.xp = (m.xp || 0) + o.correct * 5 + 10;
   WR.questEvent("math1"); if (crowns === 3) WR.questEvent("perfect1");
@@ -307,7 +307,7 @@ function finish() {
   L = null;
   const head = gd ? (won ? `${esc(gd.name)} is beaten! 🛡️✨` : `${esc(gd.name)} flew off to practise! 💨`) : crowns === 3 ? "Perfect! 👑" : crowns >= 1 ? "Well done! 🌟" : "Keep practising! 🌱";
   const art = gd && WR.asset(gd.art) ? WR.img(gd.art, "res-sumi gres") : mascot("res-sumi");
-  WR.view(`<div class="card result fade-in">${art}<h1>${head}</h1><div class="big">${crownRow(crowns)}</div>
+  WR.view(`<div class="card result fade-in">${art}<h1>${head}</h1>${WR.starNote()}<div class="big">${crownRow(crowns)}</div>
     <h2>${o.correct} / ${n} solved${o.pts < o.correct ? ` <small class="muted">(${o.items.filter((_, k) => o.res[k] === 0.5).length} on the second try)</small>` : ""}</h2>
     <p class="muted" style="font-weight:800">⭐ ${o.starsEarned} stars earned · best combo ${o.maxCombo} · ✨ +${o.correct * 5 + 10} maths XP${streak ? ` · 🔥 streak ${WR.state.streak.count}` : ""}${crowns > before && !gd ? " · 🎉 new best!" : ""}</p>${gd && !won ? `<p class="muted" style="font-weight:800">You needed ${gd.need} sparkle hits and got ${o.pts}. Practise a few Grade ${esc(gd.band)} topics and try again! 🫶</p>` : ""}
     <div class="petbox bounce" style="margin:10px auto">${WR.petHTML()}</div><div class="bubble">${lv ? `I reached level ${lv.level}! 🎉` : crowns >= 2 ? "Maths is magic with you! 💖" : "Let's try again together! 🫶"}</div>

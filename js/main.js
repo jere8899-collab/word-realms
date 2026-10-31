@@ -52,7 +52,7 @@ function onboarding() {
   };
   const step2 = () => {
     WR.view(`<div class="onb">${dots(2)}<div class="card fade-in"><h2>Adopt your magical pet 🐾</h2><p class="muted" style="font-weight:700;margin:.2em 0 .6em">Your pet learns with you, cheers you on, and grows as you do!</p>
-    <div class="onb-pets">${WR.PETS.map(p => `<div class="card pick ${draft.pet === p.id ? "sel" : ""}" data-pet="${p.id}" role="button" tabindex="0">${WR.img(p.id)}<div class="nm">${p.name}</div><div class="muted" style="font-size:.8rem">Loves ${p.likes}</div></div>`).join("")}</div>
+    <div class="onb-pets">${WR.PETS.filter(p => !p.extra).map(p => `<div class="card pick ${draft.pet === p.id ? "sel" : ""}" data-pet="${p.id}" role="button" tabindex="0">${WR.img(p.id)}<div class="nm">${p.name}</div><div class="muted" style="font-size:.8rem">Loves ${p.likes}</div></div>`).join("")}</div>
     <div class="onb-next"><button class="btn ghost" id="b1">← Back</button><button class="btn" id="n2">Next →</button></div></div></div>`);
     document.querySelectorAll("[data-pet]").forEach(c => c.onclick = () => { draft.pet = c.dataset.pet; document.querySelectorAll("[data-pet]").forEach(x => x.classList.toggle("sel", x === c)); WR.sfx("tap"); });
     WR.$("#b1").onclick = step1; WR.$("#n2").onclick = step3;
@@ -109,7 +109,7 @@ WR.screens.home = () => {
   const s = WR.state, cont = WR.continueTarget(), due = WR.Garden ? WR.Garden.dueCount() : 0;
   const qs = s.daily.quests.map(q => { const d = WR.questDef(q.id); return `<div class="q"><span class="qi">${d.icon}</span><div class="qb"><b>${d.label}</b><div class="prog"><i style="width:${q.progress / d.goal * 100}%"></i></div></div>
     ${q.claimed ? '<span class="pill" style="background:var(--mint)">Done ✓</span>' : q.progress >= d.goal ? `<button class="btn small mint claim" data-id="${q.id}">Claim ${d.reward}⭐</button>` : `<span class="pill">${q.progress}/${d.goal} · ${d.reward}⭐</span>`}</div>`; }).join("");
-  WR.view(`<div class="fade-in"><div class="card homehead"><div class="av-big">${WR.avatarHTML(110)}</div>
+  WR.view(`<div class="fade-in"><div class="card homehead"><div class="av-big">${WR.avatarHTML(110)}${WR.Rewards && WR.Rewards.chest().ready ? `<button class="chip av-badge gift-ready" id="giftPill" aria-label="Open today's free gift" title="Today's free gift">🎁</button>` : `<button class="chip av-badge" id="wardPill" aria-label="Wardrobe" title="Wardrobe">👗</button>`}</div>
     <div><h1 style="margin:0">Hello, <span class="hero-nm">${WR.userText(s.name)}</span>! 🌸 <button class="chip hero-edit" id="heroEditHome" aria-label="Change my hero name" title="Change my hero name">✏️</button></h1><div class="muted" style="font-weight:800">${WR.userText(s.pet.name)} says: “${WR.esc(WR.petMood())}”</div>
     <div class="row" style="margin-top:6px"><span class="pill">✅ ${s.totalCorrect} correct answers</span>${WR.STORY ? `<span class="pill" id="bookPill" style="background:#FFF1D6;cursor:pointer">📜 Storybook ${WR.storyPagesFound()}/6 pages</span>` : ""}${s.placement ? `<span class="pill mirror-pill" id="mirrorPill" style="background:#F3ECFF;cursor:pointer">🪞 Mirror says ${s.placement.level.toUpperCase()}</span>` : `<span class="pill mirror-pill" id="mirrorPill" style="background:#F3ECFF;cursor:pointer">🪞 Find my level</span>`}</div></div></div>
     ${cont ? `<div class="card continue" id="continueCard"><div class="ct"><b>${cont.realm.emoji} ${cont.realm.level} ${WR.esc(cont.skill.name)} <span style="font-weight:700">(lesson ${cont.lesson})</span></b><small>${WR.esc(cont.goal)}</small></div><button class="btn mint" id="continueBtn">▶ Continue</button></div>` : ""}
@@ -140,6 +140,7 @@ WR.screens.home = () => {
   const cc = WR.$("#continueCard"); if (cc) cc.onclick = () => WR.startLesson({ realm: cont.realm.id, skill: cont.skill.id, key: cont.skill.id, title: `${cont.skill.name} · ${cont.realm.modeName}` });
   WR.$("#mirrorPill").onclick = () => WR.retakePlacement();
   const bp = WR.$("#bookPill"); if (bp) bp.onclick = () => WR.openStorybook();
+  const wp = WR.$("#wardPill"); if (wp) wp.onclick = e => { e.stopPropagation(); WR.go("wardrobe"); }; const gp = WR.$("#giftPill"); if (gp) gp.onclick = e => { e.stopPropagation(); WR.go("wardrobe", "rewards"); };
   const pn = WR.$("#phonicsNode"); if (pn) pn.onclick = () => WR.go("phonics");
 };
 

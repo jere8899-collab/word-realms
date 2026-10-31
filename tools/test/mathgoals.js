@@ -68,7 +68,8 @@ async function answer(page, right) {
     await ctx.clearCookies();
     page = await ctx.newPage(); page.on('pageerror', e => errs.push(String(e)));
     await page.evaluate(() => sessionStorage.clear()).catch(() => {});
-    await page.goto(BASE + '?fresh=' + Date.now()); await page.evaluate(s => { localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)); }, SAVE());
+    // (networkidle: let the fresh page finish its first saves before the test seeds its own save)
+    await page.goto(BASE + '?fresh=' + Date.now(), { waitUntil: 'networkidle' }); await page.evaluate(s => { localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)); }, SAVE());
     await page.reload(); await page.waitForSelector('#goalsCard');
     const st0 = await page.evaluate(() => ({ stars: WR.state.stars, got: WR.state.stickers.got.math, guard: WR.state.stickers.got.guard }));
     ok(['first', 'crown3', 'tower12', 'model5'].every(k => st0.got.includes(k)) && st0.got.length === 4 && st0.guard.length === 0, `${tag} maths stickers worked out from the save (${st0.got})`);

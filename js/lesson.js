@@ -302,7 +302,7 @@ function answer(ok, it, extra = "") {
   const s = WR.state; WR.countAnswer(ok, L.review ? "garden" : L.realm.id + "/" + (L.skill || "mixed"));
   if (ok) {
     L.correct++; L.combo++; L.maxCombo = Math.max(L.maxCombo, L.combo);
-    let gain = 1; if (L.combo % 3 === 0) gain++; L.starsEarned += gain; s.stars += gain;
+    let gain = 1; if (L.combo % 3 === 0) gain++; L.starsEarned += WR.awardStars("en", WR.itemKey(it), gain, { tally: L, quiet: true });
     WR.questEvent("correct10"); if (L.combo === 5) WR.questEvent("combo5");
     L.lit++; L.jar.push(["🍬", "🍭", "🧁", "🍩", "🍫", "🍡"][L.jar.length % 6]);
     L.bossHP = Math.max(0, L.bossHP - Math.ceil(100 / L.items.length) - (L.combo >= 3 ? 4 : 0));
@@ -332,12 +332,12 @@ function finish(lost) {
   const beat = bossBeaten();
   const n = beat ? L.i + 1 : L.items.length, score = L.correct / n, crowns = WR.crowns(score);   // a boss beaten early is scored on the questions asked
   const bonus = crowns * 2 + (beat ? 5 : 0);
-  if (bonus) { WR.state.stars += bonus; L.starsEarned += bonus; }
+  L.starsEarned += WR.awardStars("lesson", L.review ? "garden" : L.realm.id + "/" + (L.key || L.skill || L.mode), bonus, { kind: "round", tally: L });
   if (L.key) WR.recordLesson(L.realm.id, L.key, score);
   if (L.skill === "listening") WR.questEvent("listen1");
   if (L.skill === "reading") WR.questEvent("read1");
   if (L.special) WR.questEvent("special1");
-  if (L.review) { WR.questEvent("review1"); if (L.bloomed) { WR.state.stars += L.bloomed * 2; L.starsEarned += L.bloomed * 2; } }
+  if (L.review) { WR.questEvent("review1"); if (L.bloomed) L.starsEarned += WR.awardStars("bloom", WR.today() + "/" + (WR.state.lessonsDone || 0), L.bloomed * 2, { kind: "fresh" }); }
   if (crowns === 3) WR.questEvent("perfect1");
   const newStreak = WR.activityDone();
   const lv = WR.petGainXP(L.correct * 6 + 10);
@@ -349,7 +349,7 @@ function finish(lost) {
   const nx = L.review ? null : WR.nextSkill(L.realm.id, L.skill);
   const mainBtn = L.review ? `<button class="btn mint" id="nextStep">Back to the garden 🌷</button>`
     : nx ? `<button class="btn mint" id="nextStep">Next: ${nx.icon} ${WR.esc(nx.name)} →</button>` : `<button class="btn mint" id="nextStep">Back to ${WR.esc(L.realm.name)} →</button>`;
-  WR.view(`<div class="card result fade-in"><h1>${title}</h1>
+  WR.view(`<div class="card result fade-in"><h1>${title}</h1>${WR.starNote()}
     <div class="big">${"👑".repeat(crowns)}${"<span style='opacity:.2'>👑</span>".repeat(3 - crowns)}</div>
     <h2>${L.correct} / ${n} correct</h2>
     <p class="muted" style="font-weight:800">⭐ ${L.starsEarned} stars earned · best combo ${L.maxCombo} ${newStreak ? `· 🔥 streak ${WR.state.streak.count} day${WR.state.streak.count > 1 ? "s" : ""}!` : ""}</p>

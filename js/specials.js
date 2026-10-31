@@ -33,8 +33,8 @@ function finishSpecial(realm, score, stars, msg) {
   WR.recordLesson(realm.id, "special", score);
   WR.questEvent("special1"); WR.activityDone();
   const lv = WR.petGainXP(Math.round(score * 50) + 10);
-  WR.addStars(stars);
-  WR.view(`<div class="card result fade-in"><h1>${msg}</h1><div class="big">${"👑".repeat(WR.crowns(score))}</div>
+  stars = WR.awardStars("special", realm.id, stars, { kind: "round" });
+  WR.view(`<div class="card result fade-in"><h1>${msg}</h1>${WR.starNote()}<div class="big">${"👑".repeat(WR.crowns(score))}</div>
     <h2>⭐ +${stars} stars</h2><div class="petbox bounce" style="margin:10px auto">${WR.petHTML()}</div>
     <div class="bubble">${lv ? `Level ${lv.level}! 🎉` : "That was magical! ✨"}</div>
     <div class="row" style="justify-content:center;margin-top:14px"><button class="btn" id="again">↻ Play again</button><button class="btn mint" id="back">Back to ${WR.esc(realm.name)}</button></div></div>`);
@@ -83,7 +83,7 @@ async function lanternQuest(realm) {
     WR.$("#quitBtn").onclick = () => WR.go("realm", realm.id);
     document.querySelectorAll(".opt").forEach(b => b.onclick = () => {
       const c = n.choices[+b.dataset.k]; steps++; if (c.good) good++; WR.sfx(c.good ? "good" : "bad");
-      if (c.good) { WR.state.stars += 1; WR.save(); WR.renderTop(); }
+      if (c.good) WR.awardStars("special", realm.id + "/" + n.text, 1, { quiet: true });
       show(c.next, c);
     });
     const d = WR.$("#done"); if (d) d.onclick = () => { const score = steps ? good / steps : 1; finishSpecial(realm, score, 5 + WR.crowns(score) * 2, "Quest complete! 🏮"); };

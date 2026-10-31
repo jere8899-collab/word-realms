@@ -110,7 +110,7 @@ const OUT = '/workspace/cefr-quest/screenshots/';
   await page.screenshot({ path: OUT + '04_pet.png', fullPage: true });
   await page.waitForTimeout(1500);
   // shop
-  await page.evaluate(() => { WR.state.stars += 200; WR.save(); WR.go('shop'); });
+  await page.evaluate(() => { WR.state.stars += 700; WR.save(); WR.go('shop'); });   // enough for two starter items + a common theme (data/shop.json prices)
   await page.waitForSelector('.item');
   await page.click('.buy'); await page.waitForTimeout(300);
   await page.click('.tabs button[data-t="petskins"]'); await page.waitForSelector('.item');

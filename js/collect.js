@@ -76,10 +76,10 @@ C.check = (quiet) => {
   for (const p of C.pages()) {
     const got = s.stickers.got[p.id] = s.stickers.got[p.id] || [];
     for (const st of p.defs) if (!got.includes(st.id) && st.test()) { got.push(st.id); fresh.push({ p, st }); }
-    if (p.defs.every(st => got.includes(st.id)) && !s.stickers.full.includes(p.id)) { s.stickers.full.push(p.id); s.stars += 10; fresh.push({ p, st: { icon: "🌟", name: `${p.name} page complete (+10⭐)` }, full: true }); }
+    if (p.defs.every(st => got.includes(st.id)) && !s.stickers.full.includes(p.id)) { s.stickers.full.push(p.id); WR.awardStars("bonus", "page/" + p.id, 10, { kind: "bonus", quiet: true }); fresh.push({ p, st: { icon: "🌟", name: `${p.name} page complete (+10⭐)` }, full: true }); }
   }
   if (fresh.length) {
-    const n = fresh.filter(f => !f.full).length; s.stars += n * 2; WR.save(); WR.renderTop && WR.renderTop();
+    const n = fresh.filter(f => !f.full).length; if (n) WR.awardStars("bonus", "stickers", n * 2, { kind: "bonus", quiet: true }); WR.save(); WR.renderTop && WR.renderTop();
     if (!quiet) WR.toast(fresh.length === 1 ? `🏷️ New sticker: ${fresh[0].st.icon} ${fresh[0].st.name}! +2⭐` : `🏷️ ${n} new sticker${n > 1 ? "s" : ""} for your Sticker Book! +${n * 2}⭐`, 2400);
   }
   return fresh;
@@ -106,7 +106,7 @@ WR.screens.stickers = rid => C.openBook(rid);
 // first win only: +15⭐, a toast and the badge sticker (worked out by C.check from rec.won)
 C.winBoss = (rec, name, prize) => {
   if (rec.won) return false;
-  rec.won = true; rec.at = Date.now(); WR.state.stars += 15; WR.save(); WR.renderTop();
+  rec.won = true; rec.at = Date.now(); WR.awardStars("bonus", "boss/" + name, 15, { kind: "bonus", quiet: true });
   setTimeout(() => WR.toast(`🏆 You beat ${name}! +15⭐ and ${prize}`, 2600), 300); return true;
 };
 // o: { art | artHTML, name, line, ready, won, lock (text), pct, badge, cls, id, goId, data }

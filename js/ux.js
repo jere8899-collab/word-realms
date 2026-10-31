@@ -16,7 +16,7 @@ const wrap = (obj, name, before) => { const f = obj && obj[name]; if (typeof f !
 if (WR.Math) ["startLesson", "startDojo"].forEach(n => wrap(WR.Math, n, () => WR.setFocus(true)));
 // screen changes → focus off (unless the screen itself is a focus screen), old confetti/toasts cleared
 const go0 = WR.go;
-WR.go = (screen, arg) => { WR.setFocus(FOCUS_SCREENS.test(screen)); WR.clearFx && WR.clearFx(true); return go0(screen, arg); };
+WR.go = (screen, arg) => { WR.setFocus(FOCUS_SCREENS.test(screen)); WR.clearFx && WR.clearFx(true); WR.starNote && WR.starNote(); const r = go0(screen, arg); WR.Rewards && WR.Rewards.check(); return r; };   // a new screen drops any pending "fewer stars" note
 
 /* ---------- views ---------- */
 const view0 = WR.view;

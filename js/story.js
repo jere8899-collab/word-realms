@@ -123,7 +123,7 @@ function finish() {
   const gain = Math.max(0, crowns - (prev ? prev.crowns : 0)); stars += gain * 2;  // new crowns pay 2⭐ each
   rec.done[rid] = { best: Math.max(score, prev ? prev.best : 0), crowns: Math.max(crowns, prev ? prev.crowns : 0), plays: (prev ? prev.plays : 0) + 1, at: Date.now() };
   WR.state.lessonsDone++; WR.save();
-  if (stars) WR.addStars(stars);
+  if (stars) stars = WR.awardStars("story", rid + "/" + Math.max(crowns, prev ? prev.crowns : 0) + (prev ? "" : "/first"), stars, { kind: "fresh" });
   const lv = WR.petGainXP ? WR.petGainXP(S.correct * 2 + 2) : null;
   WR.questEvent("story1"); WR.questEvent("read1"); WR.activityDone();
   if (crowns === 3) WR.questEvent("perfect1");

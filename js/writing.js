@@ -394,7 +394,7 @@ function check() {
   w.checks++;
   if (!prev || r.total > prev.total || r.crowns > prev.crowns) w.best[p.id] = { total: Math.max(r.total, prev ? prev.total : 0), crowns: Math.max(r.crowns, prev ? prev.crowns : 0), scales: r.scales, at: Date.now() };
   w.crowns = Object.values(w.best).reduce((a, x) => a + x.crowns, 0);
-  if (gain) s.stars += gain;
+  if (gain) WR.awardStars("write", p.id + "/" + r.crowns, gain, { kind: "fresh" });
   const real = r.n >= p.words[0] * 0.5;
   const firstCheck = real && !Q.recorded;
   if (real) { WR.questEvent("write1"); if (firstCheck) { WR.recordLesson(Q.realm.id, "writing", r.total / 20); Q.recorded = true; } if (r.crowns === 3) WR.questEvent("perfect1"); }
