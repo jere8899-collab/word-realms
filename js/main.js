@@ -28,7 +28,7 @@ function renderNav() {
 const STOPS = ["stopLesson", "stopSpeaking", "stopWriting", "stopStory", "stopPlacement", "stopMath", "stopPhonics"];
 WR.go = (screen, arg) => {
   STOPS.forEach(n => WR[n] && WR[n]()); window.Speech && Speech.stop();
-  current = screen; WR.navActive(screen === "realm" ? "home" : /^(math|dojo|dojoGrid)$/.test(screen) ? "math" : screen);
+  current = screen; WR.navActive(screen === "realm" ? "home" : /^(math|dojo|dojoGrid|clock)$/.test(screen) ? "math" : screen);
   WR.screens[screen](arg); WR.renderTop();
 };
 

@@ -13,7 +13,7 @@ const ID = 'g4.symmetry';
 /* ---------- 1. generators (Node) ---------- */
 const t = M.topic(ID);
 ok(t && t.grade === 4 && t.name === 'Mirror Pond', `🪞 Mirror Pond is a Grade 4 topic (${t && t.icon} ${t && t.desc})`);
-ok(M.TOPICS.length === 108, `108 maths topics (${M.TOPICS.length})`);
+ok(M.TOPICS.length >= 108 && M.topic("g4.symmetry"), `Mirror Pond is one of ${M.TOPICS.length} maths topics (108 when it was added)`);
 { const g = M.gradeTopics(4).map(x => x.id); ok(g.indexOf(ID) === g.indexOf('g4.angles') + 1 && g[g.length - 2] === 'g4.linegraph', 'it sits after Turns & Angles, and the graph topic still sits just before the word problems'); }
 // cells read back from the SVG: [column, row] of each shaded square and where the dashed line is
 const read = svg => { const S = 14, pad = 4, cells = [...svg.matchAll(/class="syc" x="([\d.]+)" y="([\d.]+)"/g)].map(m => [(+m[1] - pad - 1) / S, (+m[2] - pad - 1) / S]);

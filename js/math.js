@@ -95,10 +95,11 @@ WR.screens.math = arg => {
     <div class="card row tower-card" id="toDojo">${tower()}<div style="flex:1"><b class="title" style="font-size:1.25rem">🗼 Times-Table Tower</b><div class="muted" style="font-weight:700;font-size:.9rem">Multiplication & division dojo: tables 2–12, 60-second sprints, a mastery grid and long multiplication & division floors.</div>
       <div class="row" style="margin-top:6px;gap:6px"><span class="pill">⚡ best sprint ${m.dojo.best || 0}</span>${MW.dueFacts() ? `<span class="pill" style="background:#FFE3EF">🔁 ${MW.dueFacts()} facts to review</span>` : ""}</div></div><span class="btn small">Climb →</span></div>
     ${g ? `<div class="row grade-head"><div><span class="lvl-badge">${gi.label}</span> <b class="title" style="font-size:1.3rem">${gi.emoji} ${gi.name}</b><div class="muted" style="font-weight:800;font-size:.85rem">${gi.sg} · ${gc.n} topics · ${gc.have}/${gc.max} crowns</div></div><button class="btn small mint" id="mMixed">🎲 Mixed practice</button></div>
-    <div class="grid g4">${topics}</div>` : ""}</div>`);
+    ${g && g <= 3 && MW.Clock ? MW.Clock.card() : ""}<div class="grid g4">${topics}</div>` : ""}</div>`);
   document.querySelectorAll(".gchip").forEach(b => b.onclick = () => { m.grade = +b.dataset.g; WR.save(); WR.sfx("tap"); WR.screens.math(); });
   document.querySelectorAll("[data-t]").forEach(c => c.onclick = () => MW.startLesson({ topic: c.dataset.t }));
   WR.$("#toDojo").onclick = () => WR.go("dojo");
+  const ck = WR.$("#toClock"); if (ck) ck.onclick = () => WR.go("clock");
   const mx = WR.$("#mMixed"); if (mx) mx.onclick = () => MW.startLesson({ grade: g });
   WR.$("#mPlace").onclick = () => MW.placement();
   const p2 = WR.$("#mPlace2"); if (p2) p2.onclick = () => MW.placement();
@@ -115,7 +116,12 @@ MW.optsHTML = q => { const P = q.optPics; return `<div class="opts mopts${P ? " 
 MW.optBtns = () => document.querySelectorAll("#main .mopts .opt[data-k]");
 MW.onOpts = (q, fn) => MW.optBtns().forEach(b => b.onclick = () => fn(q.options[+b.dataset.k], b));
 MW.lockOpts = (q, showRight) => MW.optBtns().forEach(b => { b.disabled = true; if (showRight && q.options[+b.dataset.k] === q.a) b.classList.add("right"); });
-MW.ansHTML = q => q.optPics ? `<span class="mansPic">${q.optPics[q.a]}</span>` : `<b>${MW.html(q.a)}</b>`;
+MW.ansHTML = q => q.optPics ? `<span class="mansPic">${q.optPics[q.a]}</span>` : `<b>${MW.html(q.a)}</b>${q.ansPic ? `<span class="mansPic">${q.ansPic}</span>` : ""}`;
+// the answer box for a typed question: the numpad, or for q.set the 🕰️ hand-setting clock (js/math-clock.js).
+// bindInput(q, fn) calls fn(answer text) when the child checks it; lockInput() stops both once the question is over.
+MW.inputHTML = (q, grade) => q.set && MW.Clock ? MW.Clock.setHTML(q) : padHTML(q, grade);
+MW.bindInput = (q, fn) => q.set && MW.Clock ? MW.Clock.bindSet(q, fn) : bindPad(() => fn(WR.$("#mans").value));
+MW.lockInput = () => { const inp = WR.$("#mans"); if (inp) inp.disabled = true; if (MW.Clock) MW.Clock.lock(); };
 
 MW.padGrid = extra => {
   const ex = extra.slice(); if (ex.includes("/")) ex.push(" ");
@@ -125,10 +131,11 @@ MW.padGrid = extra => {
 };
 const k2name = k => ({ "-": "minus", ".": "decimal point", "/": "fraction bar", ":": "colon", r: "remainder", ",": "comma", " ": "space" }[k] || k);
 MW.extraKeys = (q, grade) => { const keys = new Set(q.keys || []); if (grade >= 7 || (q.grade || 0) >= 7) { keys.add("-"); keys.add("."); } return ["-", ".", "/", ":", "r", ","].filter(k => keys.has(k)); };
-function padHTML(q, grade) {
+const padHTML = MW.padHTML = (q, grade) => {
   return `<div class="ansrow"><input id="mans" class="input mans" autocomplete="off" autocapitalize="off" spellcheck="false" ${coarse() ? 'inputmode="none"' : 'inputmode="decimal"'} placeholder="Your answer" aria-label="Your answer"><button class="btn mint" id="mcheck">✓ Check</button></div>${MW.padGrid(MW.extraKeys(q, grade))}`;
-}
-function bindPad(onSubmit, onType) {
+};
+// shared with Sumi's grade finder (math-dojo.js)
+const bindPad = MW.bindPad = (onSubmit, onType) => {
   const inp = WR.$("#mans"); if (!inp) return;
   const put = k => { if (inp.disabled) return; if (k === "back") inp.value = inp.value.slice(0, -1); else inp.value += k === "r" ? " r " : k === "," ? ", " : k; onType && onType(inp.value); };
   document.querySelectorAll(".numpad [data-key]").forEach(b => b.onclick = e => { e.preventDefault(); put(b.dataset.key); WR.sfx("tap"); if (!coarse()) inp.focus(); });
@@ -136,7 +143,7 @@ function bindPad(onSubmit, onType) {
   inp.oninput = () => onType && onType(inp.value);
   WR.$("#mcheck").onclick = () => onSubmit();
   if (!coarse()) setTimeout(() => inp.focus({ preventScroll: true }), 30);
-}
+};
 
 /* ---------- topic lessons ---------- */
 let L = null;
@@ -165,12 +172,12 @@ function hud() {
   return `<span class="pill">${L.guardian ? "🛡️ Guardian" : L.challenge ? "🗼 Tower" : "Grade " + L.grade} · ${esc(L.title)}</span><span class="qnum">${Math.min(L.i + 1, n)}/${n}</span><div class="gems">${L.items.map((_, k) => `<span class="${k < L.i ? (L.res[k] === 1 ? "g1" : L.res[k] ? "g5" : "g0") : k === L.i ? "cur" : ""}">${k < L.i ? (L.res[k] === 1 ? "💎" : L.res[k] ? "🔹" : "🫧") : "·"}</span>`).join("")}</div>`;
 }
 function render() {
-  const q = L.items[L.i]; L.tries = 0; L.done = false; L.res = L.res || []; L.viz = window.MathViz ? window.MathViz.spec(q) : null; Object.assign(L, { vizOpen: false, vizUsed: false, dealt: 0, bstep: 0, bmsg: "", bwob: null, bmiss: false });
+  const q = L.items[L.i]; L.tries = 0; L.done = false; L.res = L.res || []; L.viz = window.MathViz ? window.MathViz.spec(q) : null; Object.assign(L, { vizOpen: false, vizUsed: false, dealt: 0, bstep: 0, bmsg: "", bwob: null, bmiss: false, ck: null });
   WR.view(`<div class="lesson-bg" style="background-image:${WR.bgCss("bg_math")}"></div>
     <div class="row" style="margin:6px 0 8px"><button class="btn ghost small" id="quitBtn">← Leave</button><b class="title">🔢 ${esc(L.title)}</b></div>
     ${L.guardian ? `<div class="card gstrip" id="gstrip">${guardMeter()}</div>` : ""}<div class="card hud">${hud()}</div>
     <div class="lesson fade-in"><div class="card qcard mq">${MW.qHead(q)}<div id="mviz"></div>
-      ${q.kind === "mcq" ? MW.optsHTML(q) : padHTML(q, L.grade)}
+      ${q.kind === "mcq" ? MW.optsHTML(q) : MW.inputHTML(q, L.grade)}
       <div id="mexplain"></div></div>
       <div class="card side"><div class="petbox" id="lpet">${WR.petHTML()}</div><div class="bubble" id="lbubble">${esc(L.i === 0 ? "Let's solve it together! ✨" : WR.petMood())}</div>
       <div class="muted" id="lstats" style="font-size:.85rem;font-weight:800">⭐ ${L.starsEarned} earned · 🔥 combo ${L.combo}</div><button class="btn ghost small" id="hintBtn" style="margin-top:6px">💡 Hint</button>${L.viz ? `<button class="btn ghost small" id="vizBtn" style="margin-top:6px">${vizLabel()}</button>` : ""}</div></div>`);
@@ -178,13 +185,14 @@ function render() {
   WR.$("#quitBtn").onclick = () => { const o = L; L = null; o.challenge ? WR.go("dojo") : WR.go("math"); };
   WR.$("#hintBtn").onclick = () => { if (L.done) return; showMsg("hint", `💡 ${MW.html(q.hint)}`); };
   if (q.kind === "mcq") MW.onOpts(q, (o, b) => submit(o, b));
-  else bindPad(() => submit(WR.$("#mans").value));
+  else MW.bindInput(q, v => submit(v));
 }
 /* 🧮 Model Magic: a Singapore-style picture model (bar model, number line, ten frames, arrays, sharing groups, blocks,
    fraction bars) or, for Grade 6–8 equations, a ⚖️ balance scale. Interactive kinds have a tool: its opt() feeds the
    drawing, html() adds the buttons under it and bind() wires them (none of it shows once the model is revealed). */
-const isBal = () => L && L.viz && L.viz.type === "balance";
-const vizLabel = () => isBal() ? "⚖️ Balance" : "🧮 Model";
+// each kind's look: the side button, the title over the drawing, the line after a first wrong answer, an extra CSS class
+// and opened() for its own save counter. A spec gets its kind from its type (balance) or a flag on it (deal).
+const MODEL = { btn: "🧮 Model", title: "🧮 <b>Model Magic</b>", help: "🧮 Sumi drew a model to help you!" };
 const TOOLS = {
   deal: {
     opt: () => ({ dealt: L.dealt }),
@@ -195,6 +203,8 @@ const TOOLS = {
   },
   // ⚖️ tap the move that keeps the scale balanced and gets x alone; a one-sided move tips the scale for a moment
   balance: {
+    btn: "⚖️ Balance", title: "⚖️ <b>Balance Scale</b>", help: "⚖️ Sumi brought a balance scale to help you!", cls: "mbal",
+    opened: m => m.balance.opened++,
     opt: () => L.bwob ? { state: L.bwob.state, tilt: L.bwob.tilt } : { step: L.bstep },
     html: v => {
       const B = window.MathViz.bal, n = v.moves.length, dots = v.moves.map((_, k) => `<i class="${k < L.bstep ? "on" : ""}"></i>`).join("");
@@ -223,16 +233,23 @@ const TOOLS = {
     }
   }
 };
+MW.TOOLS = TOOLS;   // js/math-clock.js adds the 🕰️ clock tool
+const toolFor = v => v ? TOOLS[TOOLS[v.type] ? v.type : v.deal ? "deal" : ""] : null;
+// the look of the current model: its tool's own button/title/help, or the plain Model Magic ones
+const look = () => Object.assign({}, MODEL, toolFor(L && L.viz) || {});
+const vizLabel = () => look().btn;
 function showViz(reveal) {
   const box = WR.$("#mviz"); if (!box || !L || !L.viz) return;
-  const v = L.viz, m = MW.st(), tool = TOOLS[v.type === "balance" ? "balance" : v.deal ? "deal" : ""], live = tool && !reveal;
-  if (!L.vizUsed && !L.done) { L.vizUsed = true; m.models = (m.models || 0) + 1; if (isBal()) m.balance.opened++; WR.save(); }
+  const v = L.viz, m = MW.st(), tool = toolFor(v), lk = look(), live = tool && !reveal;
+  if (!L.vizUsed && !L.done) { L.vizUsed = true; m.models = (m.models || 0) + 1; if (lk.opened) lk.opened(m); WR.save(); }
   if (reveal) L.bwob = null;
+  const fresh = !L.vizOpen;   // fade in when it opens, not on every tap of a tool
   L.vizOpen = true;
-  box.innerHTML = `<div class="mviz fade-in${reveal ? " reveal" : ""}${isBal() ? " mbal" : ""}"><div class="mviz-tip">${isBal() ? "⚖️ <b>Balance Scale</b>" : "🧮 <b>Model Magic</b>"} · ${esc(v.tip || "Draw it to see it!")}</div>${window.MathViz.svg(v, Object.assign({ reveal }, live ? tool.opt() : {}))}${live ? tool.html(v) : ""}</div>`;
+  box.innerHTML = `<div class="mviz${fresh ? " fade-in" : ""}${reveal ? " reveal" : ""}${lk.cls ? " " + lk.cls : ""}"><div class="mviz-tip">${lk.title} · ${esc(v.tip || "Draw it to see it!")}</div>${window.MathViz.svg(v, Object.assign({ reveal }, live ? tool.opt(L) : {}))}${live ? tool.html(v, L) : ""}</div>`;
   const vb = WR.$("#vizBtn"); if (vb) vb.textContent = reveal ? vizLabel() : "🙈 Hide";
-  if (live) tool.bind(v);
+  if (live) tool.bind(v, L);
 }
+MW.redrawViz = () => showViz();
 function showMsg(cls, html) { const e = WR.$("#mexplain"); if (e) e.innerHTML = `<div class="explain ${cls === "hint" ? "" : cls}" style="${cls === "hint" ? "background:#FFF7D6" : ""}">${html}</div>`; }
 function petReact(ok) {
   const box = WR.$("#lpet"), bub = WR.$("#lbubble"); if (!box) return;
@@ -241,11 +258,13 @@ function petReact(ok) {
   bub.textContent = ok ? (L.combo >= 3 ? `${L.combo} in a row! Number wizard! 🔥` : CHEER[Math.floor(Math.random() * CHEER.length)]) : COMFORT[Math.floor(Math.random() * COMFORT.length)];
 }
 const steps = q => `<ol class="msteps">${q.steps.map(s => `<li>${MW.html(s)}</li>`).join("")}</ol>`;
+// what to say when an answer can't be read, by answer kind
+const BAD_INPUT = { time: "Type the time like 3:30 🕰️", time24: "Type 24-hour time like 19:30 🌙", rem: "Type it like 7 r 2 ➗", ratio: "Type it like 2:3 ⚖️", num: "Hmm, I couldn't read that. Try a number like 12, 3/4 or 2.5 🧮" };
 function submit(val, btn) {
   if (!L || L.done) return;
   const q = L.items[L.i], res = MG.check(q, val);
   if (res.empty) return WR.toast("Type your answer first ✏️");
-  if (res.bad) return WR.toast(q.kind === "time" ? "Type the time like 3:30 🕰️" : q.kind === "rem" ? "Type it like 7 r 2 ➗" : q.kind === "ratio" ? "Type it like 2:3 ⚖️" : "Hmm, I couldn't read that. Try a number like 12, 3/4 or 2.5 🧮", 2400);
+  if (res.bad) return WR.toast(BAD_INPUT[q.kind] || BAD_INPUT.num, 2400);
   const s = WR.state, m = MW.st(); L.tries++;
   if (res.ok) {
     L.done = true; const pts = L.tries === 1 ? 1 : 0.5; L.pts += pts; L.res[L.i] = pts; L.correct++; WR.countAnswer(true, "m:" + (q.topic || L.key)); m.correct = (m.correct || 0) + 1; m.answered = (m.answered || 0) + 1;
@@ -253,19 +272,20 @@ function submit(val, btn) {
     WR.questEvent("correct10"); WR.sfx("good"); if (btn) btn.classList.add("right");
     if (L.vizUsed) { m.modelSolved = (m.modelSolved || 0) + 1; WR.questEvent("model1"); }
     if (L.vizOpen) showViz(true);
-    const inp = WR.$("#mans"); if (inp) { inp.disabled = true; inp.classList.add("ok"); }
+    const inp = WR.$("#mans"); if (inp) inp.classList.add("ok"); MW.lockInput();
+    if (q.set) MW.Clock.solved(q, L.tries);
     MW.lockOpts(q);
     showMsg("good", `✅ ${L.tries === 1 ? "Correct!" : "Got it on the second try!"} ${MW.ansHTML(q)}<details class="mwork" ${L.tries > 1 ? "open" : ""}><summary>📜 Worked solution</summary>${steps(q)}</details>${nextBtn(true)}`);
   } else if (L.tries === 1) {
     WR.sfx("bad"); L.combo = 0; if (btn) { btn.classList.add("wrong"); btn.disabled = true; }
-    const inp = WR.$("#mans"); if (inp) { inp.classList.add("shake"); setTimeout(() => inp.classList.remove("shake"), 450); inp.select && inp.select(); }
-    showMsg("bad", `💭 Not quite — have another go!<div style="margin-top:4px">💡 ${MW.html(q.hint)}</div>${L.viz ? `<div class="muted" style="margin-top:2px;font-weight:800">${isBal() ? "⚖️ Sumi brought a balance scale to help you!" : "🧮 Sumi drew a model to help you!"}</div>` : ""}`);
+    const inp = WR.$("#mans") || WR.$("#main .csetter .cface"); if (inp) { inp.classList.add("shake"); setTimeout(() => inp.classList.remove("shake"), 450); inp.select && inp.select(); }
+    showMsg("bad", `💭 Not quite — have another go!<div style="margin-top:4px">💡 ${MW.html(q.hint)}</div>${L.viz ? `<div class="muted" style="margin-top:2px;font-weight:800">${look().help}</div>` : ""}`);
     if (L.viz && !L.vizOpen) showViz();
   } else {
     L.done = true; L.res[L.i] = 0; WR.countAnswer(false, "m:" + (q.topic || L.key)); m.answered = (m.answered || 0) + 1; WR.sfx("bad");
     if (btn) btn.classList.add("wrong");
     MW.lockOpts(q, true);
-    const inp = WR.$("#mans"); if (inp) inp.disabled = true;
+    MW.lockInput();
     if (L.viz) showViz(true);
     showMsg("bad", `💭 The answer is ${MW.ansHTML(q)}.<div class="mwork open"><b>📜 Worked solution</b>${steps(q)}</div>${nextBtn(false)}`);
   }
@@ -298,6 +318,7 @@ function finish() {
   WR.$("#back").onclick = () => won ? WR.go("stickers", "guard") : o.challenge ? WR.go("dojo") : WR.go("math");
 }
 MW._dbg = () => L && L.items[L.i];
-MW.stop = () => { L = null; MW.stopDojo && MW.stopDojo(); MW.stopPlacement && MW.stopPlacement(); };
+MW.lesson = () => L;
+MW.stop = () => { L = null; MW.stopDojo && MW.stopDojo(); MW.stopPlacement && MW.stopPlacement(); MW.Clock && MW.Clock.stop(); };
 WR.stopMath = MW.stop;
 })();

@@ -1,8 +1,7 @@
 /* 🔢 Number Kingdom topics, Grades 1–4 (Singapore Primary 1–4). Each gen(r) gets a seeded rng and returns a question. */
 (function () {
 const M = (typeof module !== "undefined" && module.exports) ? require("./math-gen.js") : window.MathGen;
-const { Q, num, mcq, T, NAMES, THINGS, COUNT_EMOJI, svgBox, svgClock, SHAPES, svgShape, svgPie, picto, svgBars, svgLine, table, coin, emojiRows, colAdd, colSub, topic, gcd, lcm, rd, fmt, money, simp, fracTex, fracStr, mixedTex } = M._internal;
-const pad = m => String(m).padStart(2, "0");
+const { Q, num, mcq, T, NAMES, THINGS, COUNT_EMOJI, svgBox, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, svgBars, svgLine, table, coin, emojiRows, colAdd, colSub, topic, gcd, lcm, rd, fmt, money, simp, fracTex, fracStr, mixedTex } = M._internal;
 const ord = k => k + (k % 100 >= 11 && k % 100 <= 13 ? "th" : ["th", "st", "nd", "rd"][k % 10] || "th");
 
 /* ---------- 📊 data analysis (MOE: P1 picture graphs, P2 picture graphs with scales, P3 bar graphs, P4 tables + line graphs) ---------- */
@@ -82,10 +81,12 @@ topic(1, "money", "Coin Purse", "🪙", "Count coins in cents", r => {
   coins.sort((a, b) => b - a);
   return num(`The Frog King's purse holds these coins. How many cents altogether?`, tot, "Start with the biggest coin and count on.", [coins.map(c => c + "¢").join(" + ") + ` = ${tot}¢`], { pic: `<div class="mpic coins">${coins.map(coin).join("")}</div>`, data: { coins } });
 });
+// 🕰️ "what time is it?" on a clock picture; the answer is typed as h:mm (shared by the clock topics)
+const readClock = (h, m, q, hint, steps) => Q({ q, kind: "time", val: h * 60 + m, a: hm(h, m), keys: [":"], pic: svgClock(h, m), hint, steps, data: { h, m } });
 topic(1, "time", "Clock Tower", "🕰️", "O'clock and half past", r => {
   const h = r.int(1, 12), m = r.pick([0, 30]);
-  return Q({ q: "What time does the Clock Tower show? (type it like 3:30)", kind: "time", val: h * 60 + m, a: `${h}:${pad(m)}`, keys: [":"], pic: svgClock(h, m),
-    hint: "The short hand shows the hour. The long hand on 12 means o'clock; on 6 means half past.", steps: [m ? `The long hand points to 6 → half past. The short hand is just past ${h}.` : `The long hand points to 12 → o'clock. The short hand points to ${h}.`, `It is ${m ? "half past " + h : h + " o'clock"} (${h}:${pad(m)}).`], data: { h, m } });
+  return readClock(h, m, "What time does the Clock Tower show? (type it like 3:30)", "The short hand shows the hour. The long hand on 12 means o'clock; on 6 means half past.",
+    [m ? `The long hand points to 6 → half past. The short hand is just past ${h}.` : `The long hand points to 12 → o'clock. The short hand points to ${h}.`, `It is ${m ? "half past " + h : h + " o'clock"} (${hm(h, m)}).`]);
 });
 topic(1, "picgraph", "Picture Graphs", "🖼️", "Read a picture graph (1 picture = 1)", r => {
   const th = graphTheme(r, r.int(3, 4)), vals = distinct(r, th.cats.length, 1, 8);
@@ -130,8 +131,8 @@ topic(2, "money", "Dollars & Cents", "💰", "Add and subtract money", r => {
 });
 topic(2, "time", "Five-Minute Clock", "⏰", "Tell the time to 5 minutes", r => {
   const h = r.int(1, 12), m = r.int(0, 11) * 5;
-  return Q({ q: "What time is it? (type it like 4:25)", kind: "time", val: h * 60 + m, a: `${h}:${pad(m)}`, keys: [":"], pic: svgClock(h, m),
-    hint: "Count the long hand in fives from the 12: 5, 10, 15…", steps: [`The long hand points to ${m ? m / 5 : 12} → ${m} minutes.`, `The short hand is ${m ? "just past " : "on "}${h} → ${h}:${pad(m)}`], data: { h, m } });
+  return readClock(h, m, "What time is it? (type it like 4:25)", "Count the long hand in fives from the 12: 5, 10, 15…",
+    [`The long hand points to ${m ? m / 5 : 12} → ${m} minutes.`, `The short hand is ${m ? "just past " : "on "}${h} → ${hm(h, m)}`]);
 });
 topic(2, "frac", "Pizza Fractions", "🍕", "Halves, thirds and quarters", r => {
   if (r.chance(.55)) { const d = r.pick([2, 3, 4, 6, 8]), k = r.int(1, d - 1);
@@ -180,8 +181,51 @@ topic(3, "measure", "Measure Magic", "📏", "Length, mass and volume units", r 
 });
 topic(3, "duration", "Ball Time", "🕛", "Hours and minutes", r => {
   if (r.chance(.4)) { const h = r.int(1, 5), m = r.int(1, 59); return num(`${h} h ${m} min = ? minutes`, h * 60 + m, "1 hour = 60 minutes.", [`${h} × 60 = ${h * 60}`, `${h * 60} + ${m} = ${h * 60 + m} minutes`]); }
-  const sh = r.int(1, 8), sm = r.int(0, 11) * 5, dur = r.int(4, 30) * 5, e = sh * 60 + sm + dur, eh = Math.floor(e / 60), em = e % 60, f = (h, m) => `${h}:${pad(m)}`;
-  return num(`The royal ball starts at ${f(sh, sm)} p.m. and ends at ${f(eh, em)} p.m. How many minutes long is it?`, dur, "Count on to the next hour, then on to the end time.", [`From ${f(sh, sm)} to ${f(eh, em)} is ${Math.floor(dur / 60)} h ${dur % 60} min`, `= ${dur} minutes`]);
+  const sh = r.int(1, 8), sm = r.int(0, 11) * 5, len = r.int(4, 30) * 5, e = sh * 60 + sm + len, eh = Math.floor(e / 60), em = e % 60;
+  return num(`The royal ball starts at ${hm(sh, sm)} p.m. and ends at ${hm(eh, em)} p.m. How many minutes long is it?`, len, "Count on to the next hour, then on to the end time.", [`From ${hm(sh, sm)} to ${hm(eh, em)} is ${Math.floor(len / 60)} h ${len % 60} min`, `= ${len} minutes`], { data: { wind: { h: sh, m: sm, goal: len, end: 1 } } });
+});
+// 🌙 MOE P3 time: telling time to the minute, "past" and "to", the 24-hour clock, finishing and starting times.
+// Clock pictures can be counted on the 🕰️ Clock Workshop (Model Magic); "set the clock" questions are answered by moving the hands.
+const EVENTS = ["Cinderella's coach ride", "the Moon Fairy's lantern parade", "the dragon's dance class", "the Mermaid Choir concert", "Puss in Boots' puppet show", "the Gingerbread baking lesson", "the unicorn pony ride", "Rapunzel's painting club"];
+const someMins = r => r.chance(.75) ? r.pick([1, 2, 3, 4, 6, 7, 8, 9]) + 10 * r.int(0, 5) : r.int(1, 11) * 5;
+const mins = n => `${n} minute${n === 1 ? "" : "s"}`;
+topic(3, "clock", "Midnight Clock", "🌙", "Time to the minute and the 24-hour clock", r => {
+  const t = r.int(0, 6), ev = r.pick(EVENTS), Ev = ev[0].toUpperCase() + ev.slice(1);
+  if (t === 0) { // read a clock to the minute
+    const h = r.int(1, 12), m = someMins(r), f = Math.floor(m / 5) * 5;
+    return Object.assign(readClock(h, m, "What time does Cinderella's clock show? (type it like 7:43)", "Count the long hand in fives from the 12, then count on the little marks in ones.",
+      [`Count in fives: ${f ? Array.from({ length: f / 5 }, (_, i) => 5 * (i + 1)).join(", ") : "the long hand is just past the 12"}${m % 5 ? `, then ${Array.from({ length: m % 5 }, (_, i) => f + i + 1).join(", ")} in ones` : ""} → ${m} minutes.`, `The short hand is just past ${h} → ${hm(h, m)} (${clockWords(h, m)}).`]), { data: { h, m, read: 1, step: 1 } });
+  }
+  if (t === 1) { // set the clock from words
+    const h = r.int(1, 12), m = r.chance(.3) ? r.pick([15, 30, 45]) : someMins(r), w = clockWords(h, m), to = m > 30;
+    return Q({ q: `The clock stopped! 🕰️ Set it to <b>${w}</b>.`, kind: "time", set: true, step: 1, val: h * 60 + m, a: hm(h, m), ansPic: svgClock(h, m),
+      hint: to ? `“To” means minutes before ${clockWords(h % 12 + 1, 0)}: the long hand stops ${mins(60 - m)} before the 12.` : "The long hand counts the minutes past the 12; the short hand sits just past the hour.",
+      steps: [`${w} = ${hm(h, m)}`, `Long hand: ${m} minutes past the 12 (${m % 5 ? `${Math.floor(m / 5)} big marks and ${m % 5} little mark${m % 5 > 1 ? "s" : ""}` : `on the ${m / 5}`}).`, `Short hand: ${m >= 30 ? `past ${h}, nearer to ${h % 12 + 1}` : `just past ${h}`}.`], data: { h, m } });
+  }
+  if (t === 2) { // "past" or "to"
+    const h = r.int(1, 12), m = r.chance(.5) ? r.int(31, 59) : r.int(1, 29), nh = h % 12 + 1, w = clockWords(h, m), n = m < 30 ? m : 60 - m;
+    const wrong = m < 30 ? [`${mins(n)} to ${h}`, `${mins(n)} past ${nh}`, `${mins(60 - m)} past ${h}`] : [`${mins(n)} past ${h}`, `${mins(60 - m)} past ${nh}`, `${mins(m)} to ${nh}`];
+    return mcq(r, "Which words tell the time on the Clock Tower?", w, wrong.filter(x => x !== w), "Has the long hand gone past the 12 (past), or is it on its way back to the 12 (to)?",
+      [`The clock shows ${hm(h, m)}.`, m < 30 ? `The long hand has gone ${mins(m)} past the 12 → ${w}.` : `The long hand needs ${mins(60 - m)} more to reach the 12 → ${w}.`], { pic: svgClock(h, m), data: { h, m, read: 1, step: 1 } });
+  }
+  if (t === 3) { // a.m./p.m. → 24-hour clock
+    const pm = r.chance(.65), h = r.chance(.12) ? 12 : pm ? r.int(1, 9) : r.int(6, 11), m = someMins(r), tt = ((h % 12) + (pm ? 12 : 0)) * 60 + m;
+    return Q({ q: `${Ev} starts at ${hm(h, m)} ${pm ? "p.m." : "a.m."} Write this time on the 24-hour clock. (type it like 19:30)`, kind: "time24", val: tt, a: h24(tt), keys: [":"],
+      hint: pm ? "For p.m. times, add 12 to the hour (but 12 noon stays 12)." : "For a.m. times the hour stays the same (but 12 midnight becomes 00).",
+      steps: [pm ? (h === 12 ? "12 p.m. is noon, so the hour stays 12." : `p.m. → add 12 to the hour: ${h} + 12 = ${h + 12}.`) : (h === 12 ? "12 a.m. is midnight, so the hour is 00." : `a.m. → keep the hour: ${pad2(h)}.`), `${hm(h, m)} ${pm ? "p.m." : "a.m."} = ${h24(tt)}`] });
+  }
+  if (t === 4) { // 24-hour clock → a.m./p.m.
+    const H = r.chance(.75) ? r.int(13, 23) : r.chance(.15) ? 0 : r.int(6, 11), m = someMins(r), tt = H * 60 + m, A = ampm(tt), h = H % 12 || 12, mm = pad2(m), half = H >= 12 ? "p.m." : "a.m.", other = H >= 12 ? "a.m." : "p.m.";
+    const wrong = [`${h}:${mm} ${other}`, `${H % 10 || 10}:${mm} ${half}`, `${h % 12 + 1}:${mm} ${half}`, `${(h + 9) % 12 + 1}:${mm} ${half}`];
+    return mcq(r, `The dragon train to Starlight Castle leaves at <b>${h24(tt)}</b>. What time is that?`, A, wrong.filter(x => x !== A), "On the 24-hour clock, hours after 12 are p.m.: take away 12.",
+      [H >= 13 ? `${H} is more than 12, so it is p.m.: ${H} − 12 = ${h}.` : H === 0 ? "00 is midnight → 12 a.m." : `${pad2(H)} is before 12, so it is a.m.`, `${h24(tt)} = ${A}`]);
+  }
+  // finishing time (t 5) or starting time (t 6), all inside one morning or afternoon; Model Magic winds the clock
+  const hrs = r.chance(.5) ? r.int(1, 2) : 0, len = hrs * 60 + r.int(1, 11) * 5, half = r.chance(.6) ? "p.m." : "a.m.", s0 = r.int(half === "a.m." ? 7 * 60 : 60, (half === "a.m." ? 12 : 10) * 60 - 1 - len), sh = Math.floor(s0 / 60), sm = s0 % 60, e0 = s0 + len, eh = Math.floor(e0 / 60), em = e0 % 60;
+  if (t === 5) return Q({ q: `${Ev} starts at ${hm(sh, sm)} ${half} and lasts ${dur(len)}. What time does it end? (type it like 3:45)`, kind: "time", val: e0, a: hm(eh, em), keys: [":"],
+    hint: "Count on the hours first, then the minutes.", steps: [`Start: ${hm(sh, sm)}`, hrs ? `${hrs} h later → ${hm(sh + hrs, sm)}` : "", `${len % 60} min later → ${hm(eh, em)}`, `It ends at ${hm(eh, em)} ${half}`].filter(Boolean), data: { wind: { h: sh, m: sm, goal: len } } });
+  return Q({ q: `${Ev} ended at ${hm(eh, em)} ${half} and lasted ${dur(len)}. What time did it start? (type it like 3:45)`, kind: "time", val: s0, a: hm(sh, sm), keys: [":"],
+    hint: "Count back from the end time: the hours first, then the minutes.", steps: [`End: ${hm(eh, em)}`, hrs ? `${hrs} h earlier → ${hm(eh - hrs, em)}` : "", `${len % 60} min earlier → ${hm(sh, sm)}`, `It started at ${hm(sh, sm)} ${half}`].filter(Boolean), data: { wind: { h: eh, m: em, goal: -len } } });
 });
 topic(3, "perim", "Fence the Garden", "🌷", "Perimeter of rectangles and squares", r => {
   const sq = r.chance(.3), l = r.int(3, 25), w = sq ? l : r.int(2, l - 1);

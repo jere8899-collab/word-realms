@@ -140,3 +140,26 @@
 .opt.mpicopt .k{margin:0;align-self:flex-start}
 .opt.mpicopt .mpic.symgrid{width:100%;max-width:150px}
 .mansPic{display:inline-block;vertical-align:middle;width:110px;margin:0 4px}.mansPic .mpic{width:100%;height:auto}
+/* 🕰️ Clock Workshop (js/math-clock.js) */
+.mclock .mviz-svg.mv-clock{max-width:230px!important}
+.mq:has(.mv-clock-read) > .qpic{display:none}
+.ck-q{font-size:.88rem;font-weight:800;color:var(--ink2);margin:6px 2px 4px;text-align:left}
+.ck-hops{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;margin:4px 0}.ck-hops .pill{background:#FFE3EC;font-size:.8rem}
+.bmoves.ck2{grid-template-columns:1fr 1fr}.bmoves.ck4{grid-template-columns:repeat(2,1fr)}
+@media (min-width:640px){.bmoves.ck2{grid-template-columns:1fr 1fr}.bmoves.ck4{grid-template-columns:repeat(4,1fr)}}
+.csetter{text-align:center}
+.cface{width:min(230px,60vw);margin:0 auto;touch-action:none;cursor:grab;border-radius:50%;outline-offset:4px}
+.cface svg{width:100%!important;max-width:none!important;height:auto}.cface.locked{cursor:default}
+.cface.shake{animation:shake .4s}
+.cbtns{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:6px 0}.cbtns.six{grid-template-columns:repeat(3,1fr)}
+.cbtns .cbtn{min-height:44px;justify-content:center;padding:6px 4px;font-size:.9rem}
+@media (max-height:720px) and (max-width:520px){.cface{width:min(190px,52vw)}.cbtns{gap:5px;margin:4px 0}.cbtns .cbtn{min-height:42px;padding:4px}.mclock .mviz-svg.mv-clock{max-width:190px!important}}
+.cset-tip{font-size:.82rem;font-weight:800;color:var(--ink2);text-align:center;margin:-2px 0 4px}
+.cbtns .cset-check{grid-column:span 2;min-height:44px;justify-content:center}.cbtns .cset-check.wide{grid-column:1/-1}
+.clock-card .ck-art{width:64px;flex:0 0 64px}.clock-card .ck-art .mpic{width:64px;height:64px}
+.ws-grid{display:grid;grid-template-columns:1fr;gap:10px;align-items:center}
+@media (min-width:700px){.ws-grid{grid-template-columns:1.1fr 1fr}}
+.ws-read{text-align:center;display:flex;flex-direction:column;gap:6px;align-items:center}
+.ws-big{font-family:"Baloo 2",system-ui,sans-serif;font-size:2rem;font-weight:900;color:#6d4f86;background:#FFF4C2;border:3px solid #FFB8D1;border-radius:18px;padding:2px 18px}
+.ws-words{font-size:1.15rem;font-weight:900;color:#e0607a}.ws-24{font-weight:800;color:var(--ink2)}.ws-24 b{font-size:1.2rem;color:#6d4f86}
+.ws-ap .btn{min-height:44px}.ws-tips ul{margin:.3em 0 0 1.1em;padding:0;font-weight:700;font-size:.9rem}.ws-tips li{margin:2px 0}

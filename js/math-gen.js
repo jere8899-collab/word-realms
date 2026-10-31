@@ -3,7 +3,8 @@
    Pure JS with no DOM, so it runs in the browser (window.MathGen) and in Node (require) for tests.
    A question: { topic, q, kind, val, a, tol, options, hint, steps[], pic, keys[], data }
    - q / options / hint / steps use $…$ for TeX (rendered with KaTeX, or a plain HTML fallback)
-   - kind: num | mcq | set (any order) | pair (ordered) | rem (quotient r remainder) | time (h:mm) | ratio (a:b) */
+   - kind: num | mcq | set (any order) | pair (ordered) | rem (quotient r remainder) | time (h:mm, 12-hour) | time24 (hh:mm) | ratio (a:b)
+   - q.set: answer a "time" question by setting the hands of a clock (js/math-clock.js) instead of typing */
 (function (root) {
 const M = {};
 /* ---------- seeded RNG (mulberry32) ---------- */
@@ -62,13 +63,31 @@ const svgBox = (body, label, w, h = w, vb = "0 0 120 120", cls = "mpic") => `<sv
 const polar = (cx, cy, r, a) => [(cx + r * Math.cos(a)).toFixed(1), (cy + r * Math.sin(a)).toFixed(1)];
 const wedge = (cx, cy, r, a0, a1) => { const [x0, y0] = polar(cx, cy, r, a0), [x1, y1] = polar(cx, cy, r, a1);
   return `<path d="M${cx},${cy} L${x0},${y0} A${r},${r} 0 ${a1 - a0 > Math.PI + 1e-9 ? 1 : 0},1 ${x1},${y1} Z"`; };
-const svgClock = (h, m) => {
-  const ma = m * 6, ha = (h % 12) * 30 + m * 0.5, rad = a => (a - 90) * Math.PI / 180;
-  const hand = (a, len, w, c) => { const [x, y] = polar(60, 60, len, rad(a)); return `<line x1="60" y1="60" x2="${x}" y2="${y}" stroke="${c}" stroke-width="${w}" stroke-linecap="round"/>`; };
-  let nums = ""; for (let i = 1; i <= 12; i++) { const [x, y] = polar(60, 64, 42, rad(i * 30)); nums += `<text x="${x}" y="${y}" font-size="11" text-anchor="middle" font-weight="800" fill="#6d4f86">${i}</text>`; }
-  let ticks = ""; for (let i = 0; i < 60; i++) { const a = rad(i * 6), [x1, y1] = polar(60, 60, i % 5 ? 53 : 50, a), [x2, y2] = polar(60, 60, 55, a); ticks += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#c9b3ff" stroke-width="${i % 5 ? 1 : 2}"/>`; }
-  return svgBox(`<circle cx="60" cy="60" r="57" fill="#FFF4C2" stroke="#FFB8D1" stroke-width="5"/>${ticks}${nums}${hand(ha, 27, 5, "#6d4f86")}${hand(ma, 40, 3, "#ff8fa3")}<circle cx="60" cy="60" r="4" fill="#6d4f86"/>`, "clock", 150, 150, undefined, "mpic clock");
+// 🕰️ clock parts, shared by the question pictures and the interactive Clock Workshop (js/math-viz.js):
+// the face (rim, minute ticks, numbers), one hand at an angle in degrees, and "h:mm"
+const pad2 = m => String(m).padStart(2, "0");
+const hm = (h, m) => `${h}:${pad2(m)}`;
+const clockRad = a => (a - 90) * Math.PI / 180;
+const clockHand = (a, len, w, c, cx = 60, cy = 60) => { const [x, y] = polar(cx, cy, len, clockRad(a)); return `<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="${c}" stroke-width="${w}" stroke-linecap="round"/>`; };
+const clockFace = () => {
+  let nums = ""; for (let i = 1; i <= 12; i++) { const [x, y] = polar(60, 64, 42, clockRad(i * 30)); nums += `<text x="${x}" y="${y}" font-size="11" text-anchor="middle" font-weight="800" fill="#6d4f86">${i}</text>`; }
+  let ticks = ""; for (let i = 0; i < 60; i++) { const a = clockRad(i * 6), [x1, y1] = polar(60, 60, i % 5 ? 53 : 50, a), [x2, y2] = polar(60, 60, 55, a); ticks += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#c9b3ff" stroke-width="${i % 5 ? 1 : 2}"/>`; }
+  return { rim: `<circle cx="60" cy="60" r="57" fill="#FFF4C2" stroke="#FFB8D1" stroke-width="5"/>`, ticks, nums };
 };
+// hour-hand and minute-hand angles for h:mm (the hour hand creeps on half a degree a minute)
+const clockAngles = (h, m) => [(h % 12) * 30 + m * 0.5, m * 6];
+const clockHands = (h, m) => { const [ha, ma] = clockAngles(h, m); return `${clockHand(ha, 27, 5, "#6d4f86")}${clockHand(ma, 40, 3, "#ff8fa3")}<circle cx="60" cy="60" r="4" fill="#6d4f86"/>`; };
+const svgClock = (h, m) => { const f = clockFace(); return svgBox(`${f.rim}${f.ticks}${f.nums}${clockHands(h, m)}`, "clock", 150, 150, undefined, "mpic clock"); };
+// time in words the MOE way: "7 o'clock", "quarter past 7", "half past 7", "20 minutes to 8", "1 minute past 12"
+const nextHour = h => h % 12 + 1;
+const clockWords = (h, m) => m === 0 ? `${h} o'clock` : m === 15 ? `quarter past ${h}` : m === 30 ? `half past ${h}` : m === 45 ? `quarter to ${nextHour(h)}`
+  : m < 30 ? `${m} minute${m === 1 ? "" : "s"} past ${h}` : `${60 - m} minute${60 - m === 1 ? "" : "s"} to ${nextHour(h)}`;
+// 24-hour clock: minutes after midnight → "19:05"; and back to "7:05 p.m." (12 a.m. is midnight, 12 p.m. is noon)
+const h24 = t => `${pad2(Math.floor(t / 60) % 24)}:${pad2(t % 60)}`;
+const ampm = t => { const H = Math.floor(t / 60) % 24; return `${H % 12 || 12}:${pad2(t % 60)} ${H < 12 ? "a.m." : "p.m."}`; };
+// a length of time: 85 → "1 h 25 min", 60 → "1 h", 40 → "40 min"
+const dur = n => [Math.floor(n / 60) ? Math.floor(n / 60) + " h" : "", n % 60 ? n % 60 + " min" : ""].filter(Boolean).join(" ") || "0 min";
+M.clock = { face: clockFace, hand: clockHand, hands: clockHands, angles: clockAngles, rad: clockRad, hm, pad2, words: clockWords, nextHour, h24, ampm, dur };
 const SHAPES = {
   triangle: { sides: 3, corners: 3, pts: "60,12 108,100 12,100" }, square: { sides: 4, corners: 4, pts: "18,18 102,18 102,102 18,102" },
   rectangle: { sides: 4, corners: 4, pts: "6,30 114,30 114,92 6,92" }, pentagon: { sides: 5, corners: 5, pts: "60,8 112,46 92,108 28,108 8,46" },
@@ -139,7 +158,7 @@ M.longMulSteps = (a, b) => { const bs = String(b).split("").reverse(); const out
 /* ====================== TOPICS ====================== */
 const TOPICS = [];
 const topic = (grade, id, name, icon, desc, gen, opt = {}) => TOPICS.push(Object.assign({ grade, id: `g${grade}.${id}`, name, icon, desc, gen }, opt));
-M._internal = { Q, num, mcq, T, NAMES, THINGS, COUNT_EMOJI, svgBox, svgClock, SHAPES, svgShape, svgPie, picto, svgBars, svgLine, svgPieChart, coin, emojiRows, table, colAdd, colSub, topic, TOPICS, gcd, lcm, rd, fmt, fdp, money, simp, fracTex, fracStr, mixedTex, sgn, poly, lin, paren, pm, undo };
+M._internal = { Q, num, mcq, T, NAMES, THINGS, COUNT_EMOJI, svgBox, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, svgBars, svgLine, svgPieChart, coin, emojiRows, table, colAdd, colSub, topic, TOPICS, gcd, lcm, rd, fmt, fdp, money, simp, fracTex, fracStr, mixedTex, sgn, poly, lin, paren, pm, undo };
 M.TOPICS = TOPICS;
 M.topic = id => TOPICS.find(t => t.id === id);
 M.gradeTopics = g => TOPICS.filter(t => t.grade === g);
@@ -189,6 +208,11 @@ M.check = (q, input) => {
       const m = raw.replace(/\s/g, "").match(/^(\d{1,2})[:.h](\d{2})$/) || raw.match(/^(\d{1,2})\s*(?:o'?clock)?$/i);
       if (!m) return { ok: false, bad: true };
       const mins = (+m[1] % 12) * 60 + (m[2] ? +m[2] : 0); return { ok: mins % 720 === q.val % 720 };
+    }
+    case "time24": { // 24-hour clock: 19:05, 19.05, 1905 or 19 05 (hours 0–23); 9:05 is 09:05
+      const m = raw.replace(/\s+/g, " ").match(/^(\d{1,2})\s?[:.h ]?\s?(\d{2})$/);
+      if (!m || +m[1] > 23 || +m[2] > 59) return { ok: false, bad: true };
+      return { ok: +m[1] * 60 + +m[2] === q.val };
     }
     case "rem": {
       const m = raw.toLowerCase().match(/^(\d+)\s*(?:r|rem|remainder)\.?\s*(\d+)$/);

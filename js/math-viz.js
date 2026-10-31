@@ -3,7 +3,8 @@
    MathViz.svg(spec, opt) draws it as a pastel SVG. Models never print the answer unless opt.reveal is set:
    the unknown is always shown as "?". Pure JS with no DOM, so tests can run it in Node.
    Spec types: numberline · tenframe · bar (part-whole / comparison bar models) · array · groups (sharing, with
-   "deal one each") · blocks (base-ten) · fracbars · grid (area / perimeter) · balance (Grades 6–8 equations, tap-to-solve). */
+   "deal one each") · blocks (base-ten) · fracbars · grid (area / perimeter) · balance (Grades 6–8 equations, tap-to-solve)
+   · clock (Grades 1–3 time: count the minutes, wind the hands on or back). */
 (function (root) {
 const V = {};
 const INK = "#6d4f86", LINE = "#9b84b0", PINK = "#FFB8D1", MINT = "#BDEFD3", LILAC = "#E2D6FF", SKY = "#CDE8FF", SUN = "#FFE79A", CREAM = "#FFF8EE";
@@ -221,6 +222,42 @@ V.balance = (s, o = {}) => {
 };
 const balSpec = (L, R, v, g, tip) => Object.assign({ type: "balance", v, tip }, B.solve(L, R, g));
 
+/* ---------- 🕰️ Clock Workshop (Grades 1–3 time) ----------
+   mode "read": count the long hand from the 12 (opt.k = minutes counted so far), then the short hand's hour lights up.
+   mode "wind": wind the hands on (goal > 0) or back (goal < 0) from h:m (opt.t = minutes wound so far); the wound time
+   is painted on the rim, and "end" questions show the end time as dashed hands. mode "set": just the hands at opt.t
+   minutes after 12:00 (the hand-setting answer clock). The face is the same one the question pictures use. */
+const CK = () => (root.MathGen || require("./math-gen.js")).clock;
+const arc = (a0, a1, r, fill, op) => { if (a1 - a0 >= 360) return `<circle cx="60" cy="60" r="${r}" fill="${fill}" opacity="${op}"/>`; if (a1 <= a0) return "";
+  const P = a => { const t = (a - 90) * Math.PI / 180; return `${f1(60 + r * Math.cos(t))},${f1(60 + r * Math.sin(t))}`; };
+  return `<path d="M60,60 L${P(a0)} A${r},${r} 0 ${a1 - a0 > 180 ? 1 : 0},1 ${P(a1)} Z" fill="${fill}" opacity="${op}"/>`; };
+V.clockTime = (s, o = {}) => { const base = s.h % 12 * 60 + s.m, t = s.mode === "set" ? (o.t || 0) : s.mode === "wind" ? base + (o.reveal ? s.goal : o.t || 0) : base;
+  const n = ((t % 720) + 720) % 720; return { h: Math.floor(n / 60) || 12, m: n % 60 }; };
+V.clock = (s, o = {}) => {
+  const C = CK(), f = C.face(); let b = f.rim, extra = "";
+  const now = V.clockTime(s, o);
+  if (s.mode === "read") {
+    const k = o.reveal ? s.m : Math.min(s.m, o.k || 0), done = k >= s.m;
+    b += arc(0, k * 6, 55, PINK, .55);
+    for (let v = 5; v <= k; v += 5) { const t = (v * 6 - 90) * Math.PI / 180; extra += `<circle cx="${f1(60 + 55 * Math.cos(t))}" cy="${f1(60 + 55 * Math.sin(t))}" r="3.2" fill="#ff8fa3" stroke="#fff" stroke-width="1"/>` + txt(60 + 66 * Math.cos(t), 60 + 66 * Math.sin(t) + 3, v, { size: 8.5, fill: "#e0607a" }); }
+    for (let v = Math.floor(k / 5) * 5 + 1; v <= k; v++) { const t = (v * 6 - 90) * Math.PI / 180; extra += `<circle cx="${f1(60 + 55 * Math.cos(t))}" cy="${f1(60 + 55 * Math.sin(t))}" r="2.2" fill="#9b7fd0"/>`; }
+    if (done) b += arc(s.h % 12 * 30, s.h % 12 * 30 + 30, 47, LILAC, .9);
+  } else if (s.mode === "wind") {
+    const t = o.reveal ? s.goal : o.t || 0, a0 = s.m * 6, laps = Math.floor(Math.abs(t) / 60), rest = Math.abs(t) % 60;
+    if (laps) b += arc(0, 360, 55, t > 0 ? PINK : MINT, .22 + .14 * Math.min(laps, 2));
+    b += t > 0 ? arc(a0, a0 + rest * 6, 55, PINK, .6) : arc(a0 - rest * 6, a0, 55, MINT, .75);
+    const st = (a0 - 90) * Math.PI / 180; extra += `<circle cx="${f1(60 + 56 * Math.cos(st))}" cy="${f1(60 + 56 * Math.sin(st))}" r="4" fill="${SUN}" stroke="#e8b84a" stroke-width="1.5"/>`;
+    if (laps) extra += `<rect x="78" y="76" width="30" height="15" rx="7" fill="#fff" stroke="${t > 0 ? "#ff8fa3" : "#3f9a73"}"/>` + txt(93, 87, `${laps} h`, { size: 9, fill: t > 0 ? "#e0607a" : "#3f9a73" });
+    if (s.end && !o.reveal) { const e = V.clockTime(s, { reveal: true }), [ha, ma] = C.angles(e.h, e.m);
+      extra += `<g opacity=".55" stroke-dasharray="3 3">${C.hand(ha, 27, 4, "#9b7fd0")}${C.hand(ma, 40, 3, "#9b7fd0")}</g>`; }
+  }
+  b += f.ticks + f.nums + extra + C.hands(now.h, now.m);
+  return wrap(152, 152, `<g transform="translate(16,16)">${b}</g>`, s.label || "clock", "clock mv-clock-" + s.mode);
+};
+const readSpec = (d, step, tip) => ({ type: "clock", mode: "read", h: d.h, m: d.m, step, tip });
+const windSpec = w => ({ type: "clock", mode: "wind", h: w.h, m: w.m, goal: w.goal, end: !!w.end,
+  tip: w.goal < 0 ? `Wind the clock back ${CK().dur(-w.goal)}: the hours first, then the minutes.` : w.end ? "Wind the clock from the start time to the end time. Stop on the dashed hands!" : `Wind the clock on ${CK().dur(w.goal)}: the hours first, then the minutes.` });
+
 /* ---------- question → spec ---------- */
 const nl = (a, hops) => { let pts = [a], c = a; hops.forEach(h => { c += h; pts.push(c); }); const mn = Math.min(...pts), mx = Math.max(...pts);
   const span = mx - mn, st = span <= 16 ? 1 : span <= 100 ? 10 : 100; let lo = Math.floor(mn / st) * st, hi = Math.ceil(mx / st) * st; if (st === 1) { lo = Math.max(0, Math.min(lo, mx - 20 < 0 ? 0 : lo)); hi = Math.max(hi, lo + 10); if (mx <= 20 && mn >= 0) { lo = 0; hi = 20; } } if (hi === lo) hi = lo + st; return { type: "numberline", lo, hi, start: a, hops }; };
@@ -240,6 +277,10 @@ const BY = {
   "g4.round": d => d.t >= 10 ? { type: "numberline", lo: Math.floor(d.n / d.t) * d.t, hi: Math.floor(d.n / d.t) * d.t + d.t, start: Math.floor(d.n / d.t) * d.t, hops: [], marks: [{ v: d.n, t: d.n }, { v: Math.floor(d.n / d.t) * d.t + d.t / 2, t: "halfway", c: "#b59bd6" }], ask: `${d.n} rounds to ?`, ans: Math.round(d.n / d.t) * d.t, tip: "Is the pink flag before or after halfway?" } : null,
   "g4.fracadd": d => { const k = d.d2 / d.d1, n = d.sub ? d.a * k - d.b : d.a * k + d.b; return { type: "fracbars", tip: `Cut each ${d.d1}th into ${k} to make ${d.d2}ths.`, bars: [{ n: d.a, d: d.d1, t: `${d.a}/${d.d1}` }, { n: d.a * k, d: d.d2, t: `= ${d.a * k}/${d.d2}`, note: "same amount" }, { n: d.b, d: d.d2, t: `${d.sub ? "−" : "+"} ${d.b}/${d.d2}` }, { n: Math.min(n, d.d2), d: d.d2, t: `= ${n}/${d.d2}${gcd(n, d.d2) > 1 ? ` = ${n / gcd(n, d.d2)}/${d.d2 / gcd(n, d.d2)}` : ""}`, reveal: 1, q: 1 }, n > d.d2 ? { n: n - d.d2, d: d.d2, t: "", reveal: 1 } : null].filter(Boolean) }; },
   "g5.percent": d => d.p != null ? { type: "bar", tip: "The whole bar is 100%. Each block is 10%.", max: 100, rows: [{ parts: Array.from({ length: 10 }, (_, i) => ({ v: 10, t: i === 0 ? "10%" : "", fill: (i + 1) * 10 <= d.p ? PINK : i * 10 < d.p ? SUN : "#fff" })), braces: [{ from: 0, to: d.p, t: `${d.p}% = ?`, q: 1, rt: `${d.p}% = ${+(d.p * d.n / 100).toFixed(2)}` }, { from: 0, to: 100, t: `100% = ${d.n}`, below: 1 }] }] } : null,
+  "g1.time": d => readSpec(d, 5, d.m ? "Count the long hand in fives from the 12 to see how far it has gone." : "The long hand is on the 12, so it's o'clock. Where does the short hand point?"),
+  "g2.time": d => readSpec(d, 5, d.m ? "Count the long hand in fives from the 12: 5, 10, 15…" : "The long hand is on the 12, so it's o'clock. Where does the short hand point?"),
+  "g3.duration": d => d.wind ? windSpec(d.wind) : null,
+  "g3.clock": d => d.wind ? windSpec(d.wind) : d.read ? readSpec(d, 1, "Count the long hand in fives, then in ones on the little marks.") : null,
   "g6.algebra": d => d.L ? balSpec(B.side(d.L[0], 1, d.L[1]), B.side(d.R[0], 1, d.R[1]), d.v || "x", 0, `The bag holds ${d.v || "x"} pearls. Tap a move that keeps the scale balanced!`) : null,
   "g7.lineq": d => balSpec(B.side(d.L[0], 1, d.L[1]), B.side(d.R[0], 1, d.R[1]), "x", d.g, d.g ? `${d.g} equal groups on the left, so share both sides into ${d.g} first.` : "Each bag holds x. Do the same to both sides to keep it balanced!"),
   "g7.story": d => balSpec(B.side(d.L[0], 1, d.L[1]), B.side(0, 1, d.R[1]), "x", 0, `Collect first: x + ${d.k}x = ${d.k + 1}x and ${d.d} + ${d.d} = ${2 * d.d}. Now balance it!`),
@@ -256,7 +297,7 @@ V.spec = q => {
 V.has = q => !!V.spec(q);
 V.svg = (spec, opt = {}) => { if (!spec || !V[spec.type] || typeof V[spec.type] !== "function") return ""; return V[spec.type](spec, opt); };
 V.render = (q, opt = {}) => V.svg(V.spec(q), opt);
-V.TYPES = ["numberline", "tenframe", "bar", "array", "groups", "blocks", "fracbars", "grid", "balance"];
+V.TYPES = ["numberline", "tenframe", "bar", "array", "groups", "blocks", "fracbars", "grid", "balance", "clock"];
 
 if (typeof module !== "undefined" && module.exports) module.exports = V; else root.MathViz = V;
 })(typeof window !== "undefined" ? window : globalThis);

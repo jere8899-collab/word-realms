@@ -147,23 +147,14 @@ function ask() {
     <div class="row" style="margin:6px 0 8px"><button class="btn ghost small" id="quitP">← Back</button><b class="title">🔮 Sumi's grade finder</b></div>
     <div class="card hud"><span class="pill">Round ${P.round} of about ${total}</span><span class="qnum">${P.k + 1}/3</span><span class="muted" style="font-weight:800">Testing Grade ${P.g} maths</span></div>
     <div class="lesson fade-in"><div class="card qcard mq">${MW.qHead(q)}
-      ${q.kind === "mcq" ? MW.optsHTML(q) : ansPad(q)}
+      ${q.kind === "mcq" ? MW.optsHTML(q) : MW.inputHTML(q, q.grade)}
       <div class="row" style="justify-content:flex-end;margin-top:10px"><button class="btn ghost small" id="unsure">🤔 I'm not sure</button></div></div>
       <div class="card side">${mascot("side-sumi")}<div class="bubble">${P.round === 1 && P.k === 0 ? "Just do your best — skip anything you haven't learned yet! 💫" : "Take your time ✨"}</div></div></div>`);
   WR.$("#quitP").onclick = () => { P = null; WR.go("math"); };
   const go = ok => { if (!P) return; P.asked++; if (ok) P.ok++; P.log.push({ g: P.g, ok }); P.k++; if (P.k < 3) return ask(); if (P.ok >= 2) { P.passed = Math.max(P.passed, P.g); P.lo = P.g + 1; } else P.hi = P.g - 1; nextRound(); };
   WR.$("#unsure").onclick = () => go(false);
   if (q.kind === "mcq") MW.onOpts(q, o => go(o === q.a));
-  else { const sub = () => { const r = MG.check(q, WR.$("#mans").value); if (r.empty) return WR.toast("Type an answer, or tap “I'm not sure” 💭"); if (r.bad) return WR.toast("Hmm, I couldn't read that. Try a number like 12 or 3/4", 2200); go(r.ok); }; bindPad2(sub); }
-}
-function ansPad(q) { // same pad as the lessons
-  return `<div class="ansrow"><input id="mans" class="input mans" autocomplete="off" ${coarse() ? 'inputmode="none"' : 'inputmode="decimal"'} placeholder="Your answer"><button class="btn mint" id="mcheck">✓ Check</button></div>${MW.padGrid(MW.extraKeys(q, q.grade))}`;
-}
-function bindPad2(sub) {
-  const inp = WR.$("#mans");
-  document.querySelectorAll(".numpad [data-key]").forEach(b => b.onclick = e => { e.preventDefault(); const k = b.dataset.key; if (k === "back") inp.value = inp.value.slice(0, -1); else inp.value += k === "r" ? " r " : k === "," ? ", " : k; if (!coarse()) inp.focus(); });
-  inp.onkeydown = e => { if (e.key === "Enter") { e.preventDefault(); sub(); } };
-  WR.$("#mcheck").onclick = sub; if (!coarse()) setTimeout(() => inp.focus({ preventScroll: true }), 30);
+  else { const sub = v => { const r = MG.check(q, v); if (r.empty) return WR.toast("Type an answer, or tap “I'm not sure” 💭"); if (r.bad) return WR.toast("Hmm, I couldn't read that. Try a number like 12 or 3/4", 2200); go(r.ok); }; MW.bindInput(q, sub); }
 }
 function placeDone() {
   const m = MW.st(), g = Math.min(12, Math.max(1, P.passed + (P.passed === 12 ? 0 : 1))), first = !m.placed, gi = MG.GRADES.find(x => x.g === g);

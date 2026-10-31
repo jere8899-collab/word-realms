@@ -13,7 +13,7 @@ const V = require(ROOT + '/js/math-viz.js');
 const cov = {}, types = new Set(), bad = [], leak = [], noReveal = [], noTip = [];
 const labels = svg => [...svg.matchAll(/<text[^>]*>([^<]*)<\/text>/g)].map(m => m[1].replace(/&amp;/g, '&'));
 for (const t of M.TOPICS.filter(t => t.grade <= 6)) for (let s = 1; s <= 300; s++) {
-  const q = M.make(t.id, s * 7919 >>> 0), sp = V.spec(q); if (!sp || sp.type === 'balance') continue;
+  const q = M.make(t.id, s * 7919 >>> 0), sp = V.spec(q); if (!sp || sp.type === 'balance' || sp.type === 'clock') continue;   // ⚖️ and 🕰️ tools have their own suites (balance.js, clock.js)
   cov[t.id] = (cov[t.id] || 0) + 1; types.add(sp.type);
   const a = V.svg(sp), r = V.svg(sp, { reveal: true });
   if (!a.startsWith('<svg') || !r.startsWith('<svg') || /NaN|undefined|Infinity|\[object/.test(a + r)) bad.push(t.id + ' ' + JSON.stringify(sp).slice(0, 90));
@@ -29,7 +29,7 @@ for (const t of M.TOPICS.filter(t => t.grade <= 6)) for (let s = 1; s <= 300; s+
 }
 ok(!bad.length, `${Object.values(cov).reduce((a, b) => a + b, 0)} models from ${Object.keys(cov).length} Grade 1–6 topics draw cleanly ${bad.slice(0, 3)}`);
 ok(Object.keys(cov).length >= 24 && [1, 2, 3, 4, 5, 6].every(g => Object.keys(cov).some(k => k.startsWith(`g${g}.`))), `every primary grade has models (${Object.keys(cov).join(' ')})`);
-ok(V.TYPES.filter(t => t !== 'balance').every(t => types.has(t)), `all 8 picture-model types are used (${[...types].join(', ')})`);
+ok(V.TYPES.filter(t => t !== 'balance' && t !== 'clock').every(t => types.has(t)), `all 8 picture-model types are used (${[...types].join(', ')})`);
 ok(!noTip.length, `every model has a "how to read it" tip ${[...new Set(noTip)]}`);
 ok(!leak.length, `unrevealed models show "?" and never give the answer away ${[...new Set(leak)].slice(0, 6)}`);
 ok(!noReveal.length, `the revealed model shows the answer ${[...new Set(noReveal)].slice(0, 6)}`);

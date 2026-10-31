@@ -44,6 +44,7 @@ G.start = id => {
 /* ---------- sticker pages ---------- */
 const crownsIn = g => MW.gradeCrowns(g);
 const maxGradeCrowns = () => Math.max(0, ...MG.GRADES.map(x => crownsIn(x.g).have));
+const clocks = () => MW.st().clock.done + MW.st().clock.set;
 const fullGrade = () => MG.GRADES.some(x => { const c = crownsIn(x.g); return c.have === c.max; });
 G.STICKERS = [
   { id: "first", icon: "🔢", name: "First Sum", how: "Finish any maths lesson", test: () => (MW.st().lessons || 0) > 0 || Object.keys(MW.st().topics).length > 0, prog: () => [Math.min(1, MW.st().lessons || 0), 1] },
@@ -53,6 +54,7 @@ G.STICKERS = [
   { id: "tower66", icon: "🌈", name: "Halfway Up", how: "Master 66 facts (half the Tower)", test: () => MW.mastered() >= 66, prog: () => [Math.min(66, MW.mastered()), 66] },
   { id: "model5", icon: "🧮", name: "Model Maker", how: "Solve 5 questions with Model Magic", test: () => (MW.st().modelSolved || 0) >= 5, prog: () => [Math.min(5, MW.st().modelSolved || 0), 5] },
   { id: "balance3", icon: "⚖️", name: "Balance Keeper", how: "Balance 3 equation scales all the way to x", test: () => MW.st().balance.done >= 3, prog: () => [Math.min(3, MW.st().balance.done), 3] },
+  { id: "clock5", icon: "🕰️", name: "Clock Keeper", how: "Count, wind or set 5 clocks in the Clock Workshop", test: () => clocks() >= 5, prog: () => [Math.min(5, clocks()), 5] },
   { id: "gradefull", icon: "💯", name: "Grade Champion", how: "Get 3 crowns in every topic of one grade", test: fullGrade },
   { id: "guardian", icon: "🛡️", name: "Guardian Badge", how: "Beat any Grade Guardian", test: () => G.GUARDIANS.some(g => won(g.id)) }
 ];
