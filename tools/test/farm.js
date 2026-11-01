@@ -24,7 +24,7 @@ const save = extra => Object.assign({ v: 1, name: 'Jeremy', avatar: 'avatar_girl
   await page.evaluate(async () => {
     window.__log = []; const f = WR.awardStars;
     WR.awardStars = (src, key, n, o = {}) => { const g = f(src, key, n, o); window.__log.push({ kind: o.kind || 'item', src, want: n, g }); return g; };
-    const all = await WR.buildItems('a1', 'vocab', 8); window.__items = all.filter(it => it.options && it.options.length).slice(0, 8);
+    const all = await WR.buildItems('a1', 'vocab', 24); window.__items = all.filter(it => it.options && it.options.length).slice(0, 8);
   });
   const play = async () => {
     await page.evaluate(() => { window.__log = []; WR.startLesson({ realm: 'a1', skill: 'vocab', key: 'vocab', items: window.__items }); });

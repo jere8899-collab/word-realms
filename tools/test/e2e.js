@@ -138,7 +138,7 @@ const OUT = '/workspace/cefr-quest/screenshots/';
   await mp.reload({ waitUntil: 'networkidle' }); await mp.waitForTimeout(800);
   await mp.screenshot({ path: OUT + '09_mobile_home.png' });
   await mp.evaluate(() => WR.startLesson({ realm: 'b2', skill: 'grammar', key: 'grammar', title: 'Grammar · Lake Boss Battle' }));
-  await mp.waitForSelector('.opt'); await mp.waitForTimeout(1500);
+  await mp.waitForSelector('.qcard .qtext'); await mp.waitForTimeout(1500);   // R19: the first question may be a sentence builder
   await mp.screenshot({ path: OUT + '10_mobile_boss.png' });
   const state = await page.evaluate(() => ({ stars: WR.state.stars, correct: WR.state.totalCorrect, pet: WR.state.pet, prog: Object.keys(WR.state.progress), owned: WR.state.owned, daily: WR.state.daily, streak: WR.state.streak }));
   console.log(JSON.stringify(state));

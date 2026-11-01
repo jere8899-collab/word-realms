@@ -2264,6 +2264,660 @@
      }
     }
    ]
+  },
+  {
+   "title": "The Robot Competition",
+   "text": "In March, Aisha's school entered a national robot competition. Her team of four had to build a robot that could sort recycling into paper, plastic and metal. They spent six weeks working on it after school. The first version kept dropping the plastic bottles, so Aisha redesigned the robot's arm using a softer grip. On the day of the competition, the robot sorted twenty items in two minutes without a single mistake. The team came second out of thirty schools, and the judges especially praised the clever arm. Aisha says the best part wasn't the prize, but learning that failing is part of building something.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "The team started building the robot.",
+      "The robot kept dropping bottles.",
+      "Aisha changed the robot's arm.",
+      "The team came second."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "There were four people in Aisha's team.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 0,
+     "explain": "“Her team of four had to build a robot that could sort recycling into paper, plastic and metal.”",
+     "notes": {
+      "False": "The text says: “Her team of four had to build a robot that could sort recycling into paper, plastic and metal.” So it is true.",
+      "Not given": "The text says: “Her team of four had to build a robot that could sort recycling into paper, plastic and metal.” So it is true."
+     },
+     "line": "Her team of four had to build a robot that could sort recycling into paper, plastic and metal."
+    },
+    {
+     "type": "tf",
+     "q": "Aisha's team won the competition.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“The team came second out of thirty schools,” Second place is not first.",
+     "notes": {
+      "True": "Look again: “The team came second out of thirty schools,” Second place is not first.",
+      "Not given": "The text does talk about this: “The team came second out of thirty schools,” Second place is not first."
+     },
+     "line": "The team came second out of thirty schools,"
+    },
+    {
+     "type": "tf",
+     "q": "Aisha wants to be an engineer when she grows up.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 2,
+     "explain": "The text says what she learned, but nothing about the job she wants.",
+     "notes": {
+      "True": "The text never says this. The text says what she learned, but nothing about the job she wants.",
+      "False": "The text never says this. The text says what she learned, but nothing about the job she wants."
+     }
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “made a new plan or shape for something”.",
+     "line": "so Aisha redesigned the robot's arm using a softer grip.",
+     "answer": "redesigned",
+     "explain": "“redesigned” means made a new plan or shape for something: “so Aisha redesigned the robot's arm using a softer grip.”"
+    }
+   ]
+  },
+  {
+   "title": "Camping in the Rain",
+   "text": "Last summer, Finn's scout group went camping in Wales for three nights. The forecast said sunshine, but on the first night a storm arrived. Water got into two of the tents, so everyone squeezed into the biggest tent and told ghost stories until midnight. The next morning, the leaders hung the wet sleeping bags on a rope between two trees. By lunchtime the sun was out and everything was dry. On the last day the group climbed a hill and saw the sea. Finn says the storm was actually the most fun part of the trip.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "A storm arrived on the first night.",
+      "Everyone squeezed into the biggest tent.",
+      "The leaders hung up the wet sleeping bags.",
+      "The group climbed a hill."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "The weather forecast was wrong.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 0,
+     "explain": "“The forecast said sunshine, but on the first night a storm arrived.” Sunshine was forecast, but a storm came.",
+     "notes": {
+      "False": "The text says: “The forecast said sunshine, but on the first night a storm arrived.” So it is true. Sunshine was forecast, but a storm came.",
+      "Not given": "The text says: “The forecast said sunshine, but on the first night a storm arrived.” So it is true. Sunshine was forecast, but a storm came."
+     },
+     "line": "The forecast said sunshine, but on the first night a storm arrived."
+    },
+    {
+     "type": "tf",
+     "q": "All of the tents got wet.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“Water got into two of the tents,” Only two tents got wet.",
+     "notes": {
+      "True": "Look again: “Water got into two of the tents,” Only two tents got wet.",
+      "Not given": "The text does talk about this: “Water got into two of the tents,” Only two tents got wet."
+     },
+     "line": "Water got into two of the tents,"
+    },
+    {
+     "type": "tf",
+     "q": "It was Finn's first camping trip.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 2,
+     "explain": "The text doesn't say whether Finn had been camping before.",
+     "notes": {
+      "True": "The text never says this. The text doesn't say whether Finn had been camping before.",
+      "False": "The text never says this. The text doesn't say whether Finn had been camping before."
+     }
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “pushed together into a small space”.",
+     "line": "so everyone squeezed into the biggest tent",
+     "answer": "squeezed",
+     "explain": "“squeezed” means pushed together into a small space: “so everyone squeezed into the biggest tent”"
+    }
+   ]
+  },
+  {
+   "title": "The Kindness Jar",
+   "text": "Mr Okafor's class started a kindness jar in September. Every time someone noticed a classmate doing something kind, they wrote it on a slip of paper and put it in the jar. At first, the notes were about small things, like lending a pencil. Later, they became more thoughtful: someone helped a new student who didn't speak much English, and two boys organised a litter pick in the playground. When the jar was full in December, the class read all the notes aloud. Many children said they hadn't realised others had noticed their kindness. The class used the jar again the next term.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "The class started the jar.",
+      "The notes were about small things.",
+      "Two boys organised a litter pick.",
+      "The class read the notes aloud."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "The jar was full by December.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 0,
+     "explain": "“When the jar was full in December, the class read all the notes aloud.”",
+     "notes": {
+      "False": "The text says: “When the jar was full in December, the class read all the notes aloud.” So it is true.",
+      "Not given": "The text says: “When the jar was full in December, the class read all the notes aloud.” So it is true."
+     },
+     "line": "When the jar was full in December, the class read all the notes aloud."
+    },
+    {
+     "type": "tf",
+     "q": "Mr Okafor wrote all the notes.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“Every time someone noticed a classmate doing something kind, they wrote it on a slip of paper and put it in the jar.” The children wrote the notes about each other.",
+     "notes": {
+      "True": "Look again: “Every time someone noticed a classmate doing something kind, they wrote it on a slip of paper and put it in the jar.” The children wrote the notes about each other.",
+      "Not given": "The text does talk about this: “Every time someone noticed a classmate doing something kind, they wrote it on a slip of paper and put it in the jar.” The children wrote the notes about each other."
+     },
+     "line": "Every time someone noticed a classmate doing something kind, they wrote it on a slip of paper and put it in the jar."
+    },
+    {
+     "type": "tf",
+     "q": "The new student came from Spain.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 2,
+     "explain": "We know the student didn't speak much English, but not where they came from.",
+     "notes": {
+      "True": "The text never says this. We know the student didn't speak much English, but not where they came from.",
+      "False": "The text never says this. We know the student didn't speak much English, but not where they came from."
+     }
+    },
+    {
+     "type": "tf",
+     "q": "The class stopped using the jar after December.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“The class used the jar again the next term.” They used it again.",
+     "notes": {
+      "True": "Look again: “The class used the jar again the next term.” They used it again.",
+      "Not given": "The text does talk about this: “The class used the jar again the next term.” They used it again."
+     },
+     "line": "The class used the jar again the next term."
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “showing careful thought for others”.",
+     "line": "Later, they became more thoughtful:",
+     "answer": "thoughtful",
+     "explain": "“thoughtful” means showing careful thought for others: “Later, they became more thoughtful:”"
+    }
+   ]
+  },
+  {
+   "title": "The Hedgehog Highway",
+   "text": "Hedgehogs are becoming rarer in Britain, partly because garden fences are too high and solid for them to get through. Twelve-year-old Ruby read about this problem and decided to act. With her neighbours' permission, she cut small holes, about the size of a CD, at the bottom of six garden fences on her street. This created a \"hedgehog highway\". She also put out shallow dishes of water, because hedgehogs often get thirsty in hot weather. A few weeks later, a camera in her garden filmed two hedgehogs passing through at night. Ruby now gives talks at local schools about how to help wildlife.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "Ruby read about the problem.",
+      "Ruby cut holes in the fences.",
+      "A camera filmed two hedgehogs.",
+      "Ruby gives talks at schools."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "Ruby asked her neighbours before cutting the holes.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 0,
+     "explain": "“With her neighbours' permission, she cut small holes,” Permission = they said yes first.",
+     "notes": {
+      "False": "The text says: “With her neighbours' permission, she cut small holes,” So it is true. Permission = they said yes first.",
+      "Not given": "The text says: “With her neighbours' permission, she cut small holes,” So it is true. Permission = they said yes first."
+     },
+     "line": "With her neighbours' permission, she cut small holes,"
+    },
+    {
+     "type": "tf",
+     "q": "The holes were as big as a football.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“about the size of a CD,” They were only CD-sized.",
+     "notes": {
+      "True": "Look again: “about the size of a CD,” They were only CD-sized.",
+      "Not given": "The text does talk about this: “about the size of a CD,” They were only CD-sized."
+     },
+     "line": "about the size of a CD,"
+    },
+    {
+     "type": "tf",
+     "q": "Ruby feeds the hedgehogs cat food.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 2,
+     "explain": "The text mentions dishes of water, but nothing about food.",
+     "notes": {
+      "True": "The text never says this. The text mentions dishes of water, but nothing about food.",
+      "False": "The text never says this. The text mentions dishes of water, but nothing about food."
+     }
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “becoming less common”.",
+     "line": "Hedgehogs are becoming rarer in Britain,",
+     "answer": "rarer",
+     "explain": "“rarer” means becoming less common: “Hedgehogs are becoming rarer in Britain,”"
+    }
+   ]
+  },
+  {
+   "title": "My First Concert",
+   "text": "Last month, Jas played the violin in a concert for the first time. She had practised a difficult piece for weeks, but on the night her hands were shaking. Just before she went on stage, her teacher told her to breathe slowly and look at a friendly face. Jas found her grandmother in the second row and started to play. In the middle she missed a note, but she kept going and nobody seemed to notice. At the end the audience clapped loudly. Afterwards, Jas realised that being nervous hadn't stopped her playing well.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "Jas practised for weeks.",
+      "Her teacher gave her advice.",
+      "Jas missed a note.",
+      "The audience clapped."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "Jas felt nervous on the night of the concert.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 0,
+     "explain": "“but on the night her hands were shaking.” Shaking hands show she was nervous.",
+     "notes": {
+      "False": "The text says: “but on the night her hands were shaking.” So it is true. Shaking hands show she was nervous.",
+      "Not given": "The text says: “but on the night her hands were shaking.” So it is true. Shaking hands show she was nervous."
+     },
+     "line": "but on the night her hands were shaking."
+    },
+    {
+     "type": "tf",
+     "q": "Jas stopped playing after her mistake.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“In the middle she missed a note, but she kept going” She kept going.",
+     "notes": {
+      "True": "Look again: “In the middle she missed a note, but she kept going” She kept going.",
+      "Not given": "The text does talk about this: “In the middle she missed a note, but she kept going” She kept going."
+     },
+     "line": "In the middle she missed a note, but she kept going"
+    },
+    {
+     "type": "tf",
+     "q": "Jas's grandmother plays the violin too.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 2,
+     "explain": "We only know where her grandmother sat, not what she plays.",
+     "notes": {
+      "True": "The text never says this. We only know where her grandmother sat, not what she plays.",
+      "False": "The text never says this. We only know where her grandmother sat, not what she plays."
+     }
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “moving quickly because of fear or cold”.",
+     "line": "but on the night her hands were shaking.",
+     "answer": "shaking",
+     "explain": "“shaking” means moving quickly because of fear or cold: “but on the night her hands were shaking.”"
+    }
+   ]
+  },
+  {
+   "title": "The Lost Phone",
+   "text": "On the way home from school, Daniel found a phone lying on a bench in the park. It was locked, so he couldn't call anyone. Instead of keeping it, he waited, hoping the owner would come back. After twenty minutes, the phone rang. A worried woman said it was hers and that it had fallen out of her bag while she was jogging. Soon she arrived, out of breath, and thanked Daniel. The next week, a card arrived at his school. Inside was a thank-you note and a voucher for the cinema.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "Daniel found a phone.",
+      "The phone rang.",
+      "The woman arrived.",
+      "A card arrived at his school."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "Daniel couldn't unlock the phone.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 0,
+     "explain": "“It was locked, so he couldn't call anyone.”",
+     "notes": {
+      "False": "The text says: “It was locked, so he couldn't call anyone.” So it is true.",
+      "Not given": "The text says: “It was locked, so he couldn't call anyone.” So it is true."
+     },
+     "line": "It was locked, so he couldn't call anyone."
+    },
+    {
+     "type": "tf",
+     "q": "The woman lost her phone while she was shopping.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“A worried woman said it was hers and that it had fallen out of her bag while she was jogging.” She was jogging, not shopping.",
+     "notes": {
+      "True": "Look again: “A worried woman said it was hers and that it had fallen out of her bag while she was jogging.” She was jogging, not shopping.",
+      "Not given": "The text does talk about this: “A worried woman said it was hers and that it had fallen out of her bag while she was jogging.” She was jogging, not shopping."
+     },
+     "line": "A worried woman said it was hers and that it had fallen out of her bag while she was jogging."
+    },
+    {
+     "type": "tf",
+     "q": "Daniel went to the cinema with his brother.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 2,
+     "explain": "He got a cinema voucher, but the text doesn't say who he went with.",
+     "notes": {
+      "True": "The text never says this. He got a cinema voucher, but the text doesn't say who he went with.",
+      "False": "The text never says this. He got a cinema voucher, but the text doesn't say who he went with."
+     }
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “anxious and upset”.",
+     "line": "A worried woman said it was hers",
+     "answer": "worried",
+     "explain": "“worried” means anxious and upset: “A worried woman said it was hers”"
+    }
+   ]
+  },
+  {
+   "title": "Volcano Island",
+   "text": "Iceland is an island in the North Atlantic with more than thirty active volcanoes. In 2010, one of them erupted and sent a huge cloud of ash into the sky. For almost a week, thousands of flights across Europe were cancelled, because ash can damage plane engines. Surprisingly, very few people in Iceland were hurt, because scientists had warned nearby farmers in time. Today, tourists visit the volcano and can even buy small jars of its ash as souvenirs.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "The volcano erupted.",
+      "Flights across Europe were cancelled.",
+      "Tourists started to visit the volcano."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "Iceland has more than thirty active volcanoes.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 0,
+     "explain": "“Iceland is an island in the North Atlantic with more than thirty active volcanoes.”",
+     "notes": {
+      "False": "The text says: “Iceland is an island in the North Atlantic with more than thirty active volcanoes.” So it is true.",
+      "Not given": "The text says: “Iceland is an island in the North Atlantic with more than thirty active volcanoes.” So it is true."
+     },
+     "line": "Iceland is an island in the North Atlantic with more than thirty active volcanoes."
+    },
+    {
+     "type": "tf",
+     "q": "Many people in Iceland were hurt.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“Surprisingly, very few people in Iceland were hurt,” Very few were hurt, thanks to the warning.",
+     "notes": {
+      "True": "Look again: “Surprisingly, very few people in Iceland were hurt,” Very few were hurt, thanks to the warning.",
+      "Not given": "The text does talk about this: “Surprisingly, very few people in Iceland were hurt,” Very few were hurt, thanks to the warning."
+     },
+     "line": "Surprisingly, very few people in Iceland were hurt,"
+    },
+    {
+     "type": "tf",
+     "q": "The ash cloud reached America.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 2,
+     "explain": "The text talks about flights across Europe, but says nothing about America.",
+     "notes": {
+      "True": "The text never says this. The text talks about flights across Europe, but says nothing about America.",
+      "False": "The text never says this. The text talks about flights across Europe, but says nothing about America."
+     }
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “things you buy to remember a place”.",
+     "line": "can even buy small jars of its ash as souvenirs.",
+     "answer": "souvenirs",
+     "explain": "“souvenirs” means things you buy to remember a place: “can even buy small jars of its ash as souvenirs.”"
+    }
+   ]
+  },
+  {
+   "title": "The Weekly Owl",
+   "text": "In Year 7, Leah started a newspaper for her class called The Weekly Owl. Every Friday, four pupils wrote articles about school news, sport results and funny stories. Leah was the editor, which meant she checked every article before it was printed. The hardest part was meeting the deadline: once, the printer broke on Thursday night and they had to copy every page by hand. By the end of the year, other classes were asking to read it too, so the head teacher put copies in the school library.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "Leah started The Weekly Owl.",
+      "The printer broke one Thursday.",
+      "They copied the pages by hand.",
+      "Copies went into the library."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "Leah wrote all the articles herself.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“Every Friday, four pupils wrote articles about school news, sport results and funny stories.” Four pupils wrote; Leah checked.",
+     "notes": {
+      "True": "Look again: “Every Friday, four pupils wrote articles about school news, sport results and funny stories.” Four pupils wrote; Leah checked.",
+      "Not given": "The text does talk about this: “Every Friday, four pupils wrote articles about school news, sport results and funny stories.” Four pupils wrote; Leah checked."
+     },
+     "line": "Every Friday, four pupils wrote articles about school news, sport results and funny stories."
+    },
+    {
+     "type": "tf",
+     "q": "Other classes wanted to read the newspaper.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 0,
+     "explain": "“By the end of the year, other classes were asking to read it too,”",
+     "notes": {
+      "False": "The text says: “By the end of the year, other classes were asking to read it too,” So it is true.",
+      "Not given": "The text says: “By the end of the year, other classes were asking to read it too,” So it is true."
+     },
+     "line": "By the end of the year, other classes were asking to read it too,"
+    },
+    {
+     "type": "tf",
+     "q": "The newspaper cost 50p.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 2,
+     "explain": "The text never mentions a price.",
+     "notes": {
+      "True": "The text never says this. The text never mentions a price.",
+      "False": "The text never says this. The text never mentions a price."
+     }
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “the latest time by which something must be finished”.",
+     "line": "The hardest part was meeting the deadline:",
+     "answer": "deadline",
+     "explain": "“deadline” means the latest time by which something must be finished: “The hardest part was meeting the deadline:”"
+    }
+   ]
+  },
+  {
+   "title": "A Week Without Plastic",
+   "text": "For one week, Theo's family tried to buy nothing wrapped in plastic. It was harder than they expected. At the supermarket, almost all the fruit came in plastic bags, so they went to the market instead and used their own cloth bags. Theo's dad bought shampoo in a solid bar, like soap. The biggest problem was snacks: Theo's favourite crisps only came in plastic packets, so he baked oat biscuits with his mum. At the end of the week their bin was half empty. They decided to keep some of the changes for good.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "The family started the challenge.",
+      "They shopped at the market.",
+      "Their bin was half empty.",
+      "They decided to keep some changes."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "The challenge was easy for the family.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“It was harder than they expected.” It was harder than they thought.",
+     "notes": {
+      "True": "Look again: “It was harder than they expected.” It was harder than they thought.",
+      "Not given": "The text does talk about this: “It was harder than they expected.” It was harder than they thought."
+     },
+     "line": "It was harder than they expected."
+    },
+    {
+     "type": "tf",
+     "q": "Theo made biscuits with his mum.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 0,
+     "explain": "“so he baked oat biscuits with his mum.”",
+     "notes": {
+      "False": "The text says: “so he baked oat biscuits with his mum.” So it is true.",
+      "Not given": "The text says: “so he baked oat biscuits with his mum.” So it is true."
+     },
+     "line": "so he baked oat biscuits with his mum."
+    },
+    {
+     "type": "tf",
+     "q": "The market was closer than the supermarket.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 2,
+     "explain": "The text doesn't say how far away either shop was.",
+     "notes": {
+      "True": "The text never says this. The text doesn't say how far away either shop was.",
+      "False": "The text never says this. The text doesn't say how far away either shop was."
+     }
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “small bags that food is sold in”.",
+     "line": "Theo's favourite crisps only came in plastic packets,",
+     "answer": "packets",
+     "explain": "“packets” means small bags that food is sold in: “Theo's favourite crisps only came in plastic packets,”"
+    }
+   ]
   }
  ]
 }

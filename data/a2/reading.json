@@ -2264,6 +2264,593 @@
      }
     }
    ]
+  },
+  {
+   "title": "The Aquarium Trip",
+   "text": "Last Friday, Class 4 went to the aquarium. They travelled by bus and the journey took an hour. First, they saw a huge tank full of sharks. Jack was a bit scared, but the sharks just swam slowly. Then they visited the touch pool, where they held a starfish. It felt rough, like sandpaper. At lunchtime it was sunny, so they ate outside. Before they left, everyone bought a postcard in the gift shop.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "They saw the sharks.",
+      "They held a starfish.",
+      "They ate lunch outside.",
+      "They bought postcards."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "The bus journey took an hour.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "explain": "“They travelled by bus and the journey took an hour.”",
+     "notes": {
+      "False": "The story says: “They travelled by bus and the journey took an hour.” So it is true."
+     },
+     "line": "They travelled by bus and the journey took an hour."
+    },
+    {
+     "type": "tf",
+     "q": "The starfish felt smooth.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "explain": "“It felt rough, like sandpaper.” Rough is the opposite of smooth.",
+     "notes": {
+      "True": "Look again: “It felt rough, like sandpaper.” Rough is the opposite of smooth."
+     },
+     "line": "It felt rough, like sandpaper."
+    },
+    {
+     "type": "tf",
+     "q": "Jack was a little afraid of the sharks.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "explain": "“Jack was a bit scared, but the sharks just swam slowly.” A bit scared = a little afraid.",
+     "notes": {
+      "False": "The story says: “Jack was a bit scared, but the sharks just swam slowly.” So it is true. A bit scared = a little afraid."
+     },
+     "line": "Jack was a bit scared, but the sharks just swam slowly."
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “very, very big”.",
+     "line": "First, they saw a huge tank full of sharks.",
+     "answer": "huge",
+     "explain": "“huge” means very, very big: “First, they saw a huge tank full of sharks.”"
+    }
+   ]
+  },
+  {
+   "title": "Grandpa's Garden",
+   "text": "Every summer, Nina stays with her grandpa in the countryside. This year, he gave her a small part of his garden. \"This is yours,\" he said. Nina planted carrots, beans and sunflowers. She watered them every evening. At first nothing happened, and she was disappointed. But after two weeks, little green shoots appeared. By August, her sunflowers were taller than Grandpa! She took a photo and sent it to her mum.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "Grandpa gave Nina part of his garden.",
+      "Nina planted vegetables and flowers.",
+      "Little green shoots appeared.",
+      "Nina sent a photo to her mum."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "Nina watered her plants every morning.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "explain": "“She watered them every evening.” She watered them in the evening.",
+     "notes": {
+      "True": "Look again: “She watered them every evening.” She watered them in the evening."
+     },
+     "line": "She watered them every evening."
+    },
+    {
+     "type": "tf",
+     "q": "The sunflowers grew taller than Grandpa.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "explain": "“By August, her sunflowers were taller than Grandpa!”",
+     "notes": {
+      "False": "The story says: “By August, her sunflowers were taller than Grandpa!” So it is true."
+     },
+     "line": "By August, her sunflowers were taller than Grandpa!"
+    },
+    {
+     "type": "tf",
+     "q": "Nina spends her summers in the city.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "explain": "“Every summer, Nina stays with her grandpa in the countryside.” She stays in the countryside.",
+     "notes": {
+      "True": "Look again: “Every summer, Nina stays with her grandpa in the countryside.” She stays in the countryside."
+     },
+     "line": "Every summer, Nina stays with her grandpa in the countryside."
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “sad because something wasn't as good as you hoped”.",
+     "line": "At first nothing happened, and she was disappointed.",
+     "answer": "disappointed",
+     "explain": "“disappointed” means sad because something wasn't as good as you hoped: “At first nothing happened, and she was disappointed.”"
+    }
+   ]
+  },
+  {
+   "title": "The Bake Sale",
+   "text": "Our school wanted to buy new books for the library, so we had a bake sale. On Thursday evening, Dad and I made thirty cupcakes. We put pink icing and sprinkles on top. On Friday, I carried them to school in a big box. The sale started at break time. People loved the cupcakes and we sold all of them in ten minutes! Altogether, the school made two hundred pounds.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "Dad and I made cupcakes.",
+      "We decorated them.",
+      "I carried them to school.",
+      "We sold all the cupcakes."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "The money was for new library books.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "explain": "“Our school wanted to buy new books for the library, so we had a bake sale.”",
+     "notes": {
+      "False": "The story says: “Our school wanted to buy new books for the library, so we had a bake sale.” So it is true."
+     },
+     "line": "Our school wanted to buy new books for the library, so we had a bake sale."
+    },
+    {
+     "type": "tf",
+     "q": "We made the cupcakes on Friday.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "explain": "“On Thursday evening, Dad and I made thirty cupcakes.” We made them the evening before, on Thursday.",
+     "notes": {
+      "True": "Look again: “On Thursday evening, Dad and I made thirty cupcakes.” We made them the evening before, on Thursday."
+     },
+     "line": "On Thursday evening, Dad and I made thirty cupcakes."
+    },
+    {
+     "type": "tf",
+     "q": "It took an hour to sell the cupcakes.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "explain": "“People loved the cupcakes and we sold all of them in ten minutes!” They were gone in ten minutes.",
+     "notes": {
+      "True": "Look again: “People loved the cupcakes and we sold all of them in ten minutes!” They were gone in ten minutes."
+     },
+     "line": "People loved the cupcakes and we sold all of them in ten minutes!"
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “the sweet sugary layer on top of a cake”.",
+     "line": "We put pink icing and sprinkles on top.",
+     "answer": "icing",
+     "explain": "“icing” means the sweet sugary layer on top of a cake: “We put pink icing and sprinkles on top.”"
+    }
+   ]
+  },
+  {
+   "title": "The Treehouse",
+   "text": "Last spring, Omar and his dad built a treehouse in the old oak tree. They used wood from an old fence. Dad cut the wood and Omar painted it green. It took three weekends. On the last day, Omar's dad hung a rope ladder from the door. That night, Omar asked if he could sleep in the treehouse. Dad said yes, so they took sleeping bags and a torch. Omar didn't sleep much because an owl hooted all night!",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "Dad cut the wood.",
+      "Omar painted the wood.",
+      "Dad hung a rope ladder.",
+      "They slept in the treehouse."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "Omar painted the treehouse blue.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "explain": "“Dad cut the wood and Omar painted it green.” He painted it green.",
+     "notes": {
+      "True": "Look again: “Dad cut the wood and Omar painted it green.” He painted it green."
+     },
+     "line": "Dad cut the wood and Omar painted it green."
+    },
+    {
+     "type": "tf",
+     "q": "Building the treehouse took three weekends.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "explain": "“It took three weekends.”",
+     "notes": {
+      "False": "The story says: “It took three weekends.” So it is true."
+     },
+     "line": "It took three weekends."
+    },
+    {
+     "type": "tf",
+     "q": "Omar slept very well in the treehouse.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "explain": "“Omar didn't sleep much because an owl hooted all night!” The owl kept him awake.",
+     "notes": {
+      "True": "Look again: “Omar didn't sleep much because an owl hooted all night!” The owl kept him awake."
+     },
+     "line": "Omar didn't sleep much because an owl hooted all night!"
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “a small electric light you carry”.",
+     "line": "Dad said yes, so they took sleeping bags and a torch.",
+     "answer": "torch",
+     "explain": "“torch” means a small electric light you carry: “Dad said yes, so they took sleeping bags and a torch.”"
+    }
+   ]
+  },
+  {
+   "title": "A Day Without Screens",
+   "text": "Last Sunday, my family tried a day without screens. No TV, no phones and no games! At breakfast my sister complained, \"This is going to be so boring.\" But then Mum found an old board game in the cupboard. We played it for two hours and laughed a lot. In the afternoon we cycled to the lake and fed the ducks. In the evening Dad read us a story. My sister said it was the best Sunday ever.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "My sister complained at breakfast.",
+      "We played a board game.",
+      "We cycled to the lake.",
+      "Dad read us a story."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "The family watched TV in the evening.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "explain": "“In the evening Dad read us a story.” There was no TV that day.",
+     "notes": {
+      "True": "Look again: “In the evening Dad read us a story.” There was no TV that day."
+     },
+     "line": "In the evening Dad read us a story."
+    },
+    {
+     "type": "tf",
+     "q": "Mum found the board game in the cupboard.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "explain": "“But then Mum found an old board game in the cupboard.”",
+     "notes": {
+      "False": "The story says: “But then Mum found an old board game in the cupboard.” So it is true."
+     },
+     "line": "But then Mum found an old board game in the cupboard."
+    },
+    {
+     "type": "tf",
+     "q": "In the end, the sister enjoyed the day.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "explain": "“My sister said it was the best Sunday ever.” The best Sunday ever = she really enjoyed it.",
+     "notes": {
+      "False": "The story says: “My sister said it was the best Sunday ever.” So it is true. The best Sunday ever = she really enjoyed it."
+     },
+     "line": "My sister said it was the best Sunday ever."
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “said she was unhappy about something”.",
+     "line": "At breakfast my sister complained,",
+     "answer": "complained",
+     "explain": "“complained” means said she was unhappy about something: “At breakfast my sister complained,”"
+    }
+   ]
+  },
+  {
+   "title": "The Football Final",
+   "text": "On Saturday, the Greenfield Tigers played in the under-11 final. At half-time they were losing 1–0. The coach told them, \"Don't give up. Pass the ball more!\" In the second half, Maya scored with her left foot. Then, two minutes before the end, Leo headed the ball into the net. The Tigers won 2–1! After the match, the players got gold medals and ate pizza together.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "The Tigers were losing at half-time.",
+      "Maya scored a goal.",
+      "Leo scored a goal.",
+      "The players got medals."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "Maya scored with her right foot.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "explain": "“In the second half, Maya scored with her left foot.” She used her left foot.",
+     "notes": {
+      "True": "Look again: “In the second half, Maya scored with her left foot.” She used her left foot."
+     },
+     "line": "In the second half, Maya scored with her left foot."
+    },
+    {
+     "type": "tf",
+     "q": "The Tigers won the final.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "explain": "“The Tigers won 2–1!”",
+     "notes": {
+      "False": "The story says: “The Tigers won 2–1!” So it is true."
+     },
+     "line": "The Tigers won 2–1!"
+    },
+    {
+     "type": "tf",
+     "q": "Leo scored near the end of the match.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "explain": "“Then, two minutes before the end, Leo headed the ball into the net.” Two minutes before the end = near the end.",
+     "notes": {
+      "False": "The story says: “Then, two minutes before the end, Leo headed the ball into the net.” So it is true. Two minutes before the end = near the end."
+     },
+     "line": "Then, two minutes before the end, Leo headed the ball into the net."
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “the person who trains a sports team”.",
+     "line": "The coach told them,",
+     "answer": "coach",
+     "explain": "“coach” means the person who trains a sports team: “The coach told them,”"
+    }
+   ]
+  },
+  {
+   "title": "The Library Mystery",
+   "text": "When Ella went to the school library on Monday, she noticed something strange. All the animal books were on the floor! The librarian, Mrs Hall, looked worried. The next morning, the same thing happened. So Ella and her friend hid behind a shelf after school. At five o'clock they heard a noise. It was the school cat, Biscuit! He jumped onto the shelf to sleep in the warm sunshine and pushed the books off.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "Ella found books on the floor.",
+      "It happened again the next morning.",
+      "Ella and her friend hid.",
+      "They found Biscuit the cat."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "The books on the floor were about animals.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "explain": "“All the animal books were on the floor!”",
+     "notes": {
+      "False": "The story says: “All the animal books were on the floor!” So it is true."
+     },
+     "line": "All the animal books were on the floor!"
+    },
+    {
+     "type": "tf",
+     "q": "Ella hid on her own.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "explain": "“So Ella and her friend hid behind a shelf after school.” She hid with her friend.",
+     "notes": {
+      "True": "Look again: “So Ella and her friend hid behind a shelf after school.” She hid with her friend."
+     },
+     "line": "So Ella and her friend hid behind a shelf after school."
+    },
+    {
+     "type": "tf",
+     "q": "Biscuit wanted to read the books.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "explain": "“He jumped onto the shelf to sleep in the warm sunshine and pushed the books off.” He wanted to sleep in the sun.",
+     "notes": {
+      "True": "Look again: “He jumped onto the shelf to sleep in the warm sunshine and pushed the books off.” He wanted to sleep in the sun."
+     },
+     "line": "He jumped onto the shelf to sleep in the warm sunshine and pushed the books off."
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “unusual or surprising”.",
+     "line": "she noticed something strange.",
+     "answer": "strange",
+     "explain": "“strange” means unusual or surprising: “she noticed something strange.”"
+    }
+   ]
+  },
+  {
+   "title": "Learning to Skate",
+   "text": "Last winter, Kai went ice skating for the first time. He was nervous because he couldn't stand up at first. He fell over five times in ten minutes! His cousin Lily held his hand and showed him how to bend his knees. Slowly, Kai began to glide. By the end of the hour, he could skate all the way round the rink without help. Now he goes every Saturday.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "Kai fell over many times.",
+      "Lily held his hand.",
+      "Kai began to glide.",
+      "Kai skated round the rink alone."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "Kai skated well the first time.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "explain": "“He was nervous because he couldn't stand up at first.” At first he couldn't even stand up.",
+     "notes": {
+      "True": "Look again: “He was nervous because he couldn't stand up at first.” At first he couldn't even stand up."
+     },
+     "line": "He was nervous because he couldn't stand up at first."
+    },
+    {
+     "type": "tf",
+     "q": "Lily is Kai's cousin.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "explain": "“His cousin Lily held his hand and showed him how to bend his knees.”",
+     "notes": {
+      "False": "The story says: “His cousin Lily held his hand and showed him how to bend his knees.” So it is true."
+     },
+     "line": "His cousin Lily held his hand and showed him how to bend his knees."
+    },
+    {
+     "type": "tf",
+     "q": "Kai goes skating on Sundays now.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "explain": "“Now he goes every Saturday.” He goes on Saturdays.",
+     "notes": {
+      "True": "Look again: “Now he goes every Saturday.” He goes on Saturdays."
+     },
+     "line": "Now he goes every Saturday."
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “the ice area where people skate”.",
+     "line": "he could skate all the way round the rink without help.",
+     "answer": "rink",
+     "explain": "“rink” means the ice area where people skate: “he could skate all the way round the rink without help.”"
+    }
+   ]
+  },
+  {
+   "title": "The Rescue Dog",
+   "text": "Last month the Patel family adopted a dog from an animal shelter. Her name is Daisy and she is three years old. At first Daisy was very shy. She hid under the table and didn't eat much. The children were patient. They talked to her softly and gave her treats. After a week, Daisy started wagging her tail. Now she follows the children everywhere and sleeps at the end of Priya's bed.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "The family adopted Daisy.",
+      "Daisy hid under the table.",
+      "The children gave her treats.",
+      "Daisy started wagging her tail."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "Daisy is three years old.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "explain": "“Her name is Daisy and she is three years old.”",
+     "notes": {
+      "False": "The story says: “Her name is Daisy and she is three years old.” So it is true."
+     },
+     "line": "Her name is Daisy and she is three years old."
+    },
+    {
+     "type": "tf",
+     "q": "Daisy was very friendly at first.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "explain": "“At first Daisy was very shy.” She was shy at first.",
+     "notes": {
+      "True": "Look again: “At first Daisy was very shy.” She was shy at first."
+     },
+     "line": "At first Daisy was very shy."
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “took an animal home to be part of the family”.",
+     "line": "Last month the Patel family adopted a dog from an animal shelter.",
+     "answer": "adopted",
+     "explain": "“adopted” means took an animal home to be part of the family: “Last month the Patel family adopted a dog from an animal shelter.”"
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “able to wait calmly”.",
+     "line": "The children were patient.",
+     "answer": "patient",
+     "explain": "“patient” means able to wait calmly: “The children were patient.”"
+    }
+   ]
   }
  ]
 }

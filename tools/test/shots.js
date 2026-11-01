@@ -60,7 +60,7 @@ const URL = 'http://127.0.0.1:18642/index.html';
   await mp.reload({ waitUntil: 'networkidle' }); await mp.waitForTimeout(900);
   await mp.screenshot({ path: OUT + 'mobile_home.png' });
   await mp.evaluate(() => WR.startLesson({ realm: 'a1', skill: 'vocab', key: 'vocab', title: 'Vocabulary · Picture Pop' }));
-  await mp.waitForSelector('.opt'); await mp.waitForTimeout(700);
+  await mp.waitForSelector('.qcard .qtext');   /* R19: may be any type */ await mp.waitForTimeout(700);
   await mp.screenshot({ path: OUT + 'mobile_lesson.png' });
   console.log('shot errors', JSON.stringify(errors));
   await browser.close();

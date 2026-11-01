@@ -43,6 +43,21 @@ for _src in (R19A, R19B):
         for _val in _extra.values():
             for q in _val: _check_c2(q)
     _merge(_src)
+from r19_read import READ, TF2, TF3  # 📖 R19 wave 2: reading types (events, True/False/Not given, find the word), A1–B1
+def _bare(w): return re.sub(r"[^a-z0-9'-]", "", w.lower())
+for _lvl, _sk in READ.items():
+    for p in _sk["reading"]["passages"]:
+        for q in p["questions"]:
+            t = q["type"]
+            if t == "events": assert 3 <= len(q["events"]) <= 5 and len(set(q["events"])) == len(q["events"]) and all(len(e.split()) >= 2 for e in q["events"]), q
+            elif t == "tf":
+                assert q["options"] == (TF2 if _lvl in ("a1", "a2") else TF3), q             # Not given from B1 up
+                wrong = [o for i, o in enumerate(q["options"]) if i != q["answer"]]
+                assert all(len(q["notes"].get(o, "")) > 15 for o in wrong) and q["explain"], q   # a note for every wrong pick
+                assert q["options"][q["answer"]] == "Not given" or q.get("line") in p["text"], q  # True/False quote a real line
+            elif t == "findword": assert q["line"] in p["text"] and [_bare(w) for w in q["line"].split()].count(q["answer"]) == 1, q
+            else: raise AssertionError(q)
+_merge(READ)
 # ---- C4 (review 2026-10-30): listening that tests understanding (paraphrased right options + numbers/times/changes of mind) ----
 from c4 import C4P, C4NEW
 _c4_hit = set()
@@ -103,7 +118,7 @@ for lvl, skills in D.items():
 _c3_missing = [(s, k) for s, d in C3.items() for k in d if (s, k) not in _c3_used]
 assert not _c3_missing, f"C3 overlay keys that match no item: {_c3_missing[:5]}"
 def _key(q):  # duplicate-check key: two items with the same key would look identical to a child
-    return "|".join([q.get("say", ""), q.get("q", ""), str(q.get("answer")), q.get("pic", ""), "/".join(q.get("options", [])[:1]), " ".join(q.get("words", [])), q.get("text", "")])
+    return "|".join([q.get("say", ""), q.get("q", ""), str(q.get("answer")), q.get("pic", ""), "/".join(q.get("options", [])[:1]), " ".join(q.get("words", [])), q.get("text", ""), "/".join(q.get("events", [])), q.get("line", "")])
 FAIR_MAX = 0.40  # "Fair Play" guard: the right answer may be the uniquely longest option in at most 40% of a skill's items
 def check_fair(name, items):
     mc = [q for q in items if q.get("options")]

@@ -383,3 +383,12 @@ body.kbd-open .toast{display:none}
   .homehead .row .pill{flex:none}
   .math-node .muted{font-size:.78rem!important}
 }
+/* 📖 R19 reading types: events stack as full-width cards, True/False/Not given are full-width answers, find-the-word is a tappable line */
+.tiles.events{flex-direction:column;align-items:stretch}
+.tiles.events .tile{width:100%;text-align:left;white-space:normal;line-height:1.3;font-size:1rem}
+.tile .evn{display:inline-grid;place-items:center;width:1.6em;height:1.6em;border-radius:50%;background:#fff;color:#a06aa0;margin-right:6px;font-size:.9em}
+.opts.tfopts{grid-template-columns:1fr}
+.opts.tfopts .opt{text-align:left}
+.mwords.fwords{justify-content:flex-start;gap:6px;background:#FFF9FC;border-radius:16px;padding:10px}
+.mwords.fwords .mword{font-size:1rem;padding:6px 10px}
+.evlist{margin:.3em 0 .2em 1.2em;padding:0;text-align:left}

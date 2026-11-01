@@ -2281,6 +2281,579 @@
      }
     }
    ]
+  },
+  {
+   "title": "Pip's Picnic",
+   "text": "Pip is a little bear. On Saturday he goes to the park with his mum. First they find a big tree. Then Mum opens the basket. They eat sandwiches and red apples. After lunch, Pip plays with a ball. It starts to rain, so they run home. Pip is wet but happy.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "They find a big tree.",
+      "They eat sandwiches and apples.",
+      "Pip plays with a ball.",
+      "They run home in the rain."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "Pip goes to the park with his dad.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "explain": "“On Saturday he goes to the park with his mum.” He goes with his mum, not his dad.",
+     "notes": {
+      "True": "Look again: “On Saturday he goes to the park with his mum.” He goes with his mum, not his dad."
+     },
+     "line": "On Saturday he goes to the park with his mum."
+    },
+    {
+     "type": "tf",
+     "q": "Pip eats red apples.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "explain": "“They eat sandwiches and red apples.”",
+     "notes": {
+      "False": "The story says: “They eat sandwiches and red apples.” So it is true."
+     },
+     "line": "They eat sandwiches and red apples."
+    },
+    {
+     "type": "tf",
+     "q": "Pip is sad at the end.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "explain": "“Pip is wet but happy.” He is happy, not sad.",
+     "notes": {
+      "True": "Look again: “Pip is wet but happy.” He is happy, not sad."
+     },
+     "line": "Pip is wet but happy."
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “a bag or box for carrying food”.",
+     "line": "Then Mum opens the basket.",
+     "answer": "basket",
+     "explain": "“basket” means a bag or box for carrying food: “Then Mum opens the basket.”"
+    }
+   ]
+  },
+  {
+   "title": "Lola's New Fish",
+   "text": "Lola has a new pet. It is a small orange fish. Its name is Bubbles. Every morning, Lola gives Bubbles some food. Bubbles swims round and round. On Sunday, Lola cleans the tank with her brother. Now the water is clean and Bubbles is happy.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "Lola gets a new fish.",
+      "Lola gives Bubbles food.",
+      "Lola cleans the tank.",
+      "The water is clean."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "The fish is orange.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "explain": "“It is a small orange fish.”",
+     "notes": {
+      "False": "The story says: “It is a small orange fish.” So it is true."
+     },
+     "line": "It is a small orange fish."
+    },
+    {
+     "type": "tf",
+     "q": "Lola cleans the tank with her sister.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "explain": "“On Sunday, Lola cleans the tank with her brother.” She cleans it with her brother.",
+     "notes": {
+      "True": "Look again: “On Sunday, Lola cleans the tank with her brother.” She cleans it with her brother."
+     },
+     "line": "On Sunday, Lola cleans the tank with her brother."
+    },
+    {
+     "type": "tf",
+     "q": "Bubbles is a big fish.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "explain": "“It is a small orange fish.” Bubbles is small.",
+     "notes": {
+      "True": "Look again: “It is a small orange fish.” Bubbles is small."
+     },
+     "line": "It is a small orange fish."
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “the glass box where a fish lives”.",
+     "line": "On Sunday, Lola cleans the tank with her brother.",
+     "answer": "tank",
+     "explain": "“tank” means the glass box where a fish lives: “On Sunday, Lola cleans the tank with her brother.”"
+    }
+   ]
+  },
+  {
+   "title": "Snow Day",
+   "text": "It is winter. Ben looks out of the window. Everything is white! There is no school today. Ben puts on his hat, his scarf and his boots. He goes outside with his sister Amy. They make a big snowman. It has a carrot nose. Then they go inside and drink hot chocolate.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "Ben looks out of the window.",
+      "Ben puts on his hat and boots.",
+      "They make a snowman.",
+      "They drink hot chocolate."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "There is school today.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "explain": "“There is no school today.” It's a snow day, so there is no school.",
+     "notes": {
+      "True": "Look again: “There is no school today.” It's a snow day, so there is no school."
+     },
+     "line": "There is no school today."
+    },
+    {
+     "type": "tf",
+     "q": "The snowman has a carrot nose.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "explain": "“It has a carrot nose.”",
+     "notes": {
+      "False": "The story says: “It has a carrot nose.” So it is true."
+     },
+     "line": "It has a carrot nose."
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “something warm you wear round your neck”.",
+     "line": "Ben puts on his hat, his scarf and his boots.",
+     "answer": "scarf",
+     "explain": "“scarf” means something warm you wear round your neck: “Ben puts on his hat, his scarf and his boots.”"
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “out of the house”.",
+     "line": "He goes outside with his sister Amy.",
+     "answer": "outside",
+     "explain": "“outside” means out of the house: “He goes outside with his sister Amy.”"
+    }
+   ]
+  },
+  {
+   "title": "Mia's Birthday",
+   "text": "Today is Mia's birthday. She is eight. In the morning, her dad makes pancakes. At school, her friends sing \"Happy Birthday\". After school, Mia opens her presents. She gets a book and a purple bike. In the evening, the family eats a big chocolate cake. Mia is very happy.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "Dad makes pancakes.",
+      "Her friends sing at school.",
+      "Mia opens her presents.",
+      "The family eats cake."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "Mia is nine today.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "explain": "“She is eight.” Mia is eight, not nine.",
+     "notes": {
+      "True": "Look again: “She is eight.” Mia is eight, not nine."
+     },
+     "line": "She is eight."
+    },
+    {
+     "type": "tf",
+     "q": "Mia gets a purple bike.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "explain": "“She gets a book and a purple bike.”",
+     "notes": {
+      "False": "The story says: “She gets a book and a purple bike.” So it is true."
+     },
+     "line": "She gets a book and a purple bike."
+    },
+    {
+     "type": "tf",
+     "q": "The cake is a lemon cake.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "explain": "“In the evening, the family eats a big chocolate cake.” It's a chocolate cake.",
+     "notes": {
+      "True": "Look again: “In the evening, the family eats a big chocolate cake.” It's a chocolate cake."
+     },
+     "line": "In the evening, the family eats a big chocolate cake."
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “things people give you on your birthday”.",
+     "line": "After school, Mia opens her presents.",
+     "answer": "presents",
+     "explain": "“presents” means things people give you on your birthday: “After school, Mia opens her presents.”"
+    }
+   ]
+  },
+  {
+   "title": "The Lost Kitten",
+   "text": "Sam hears a small sound in the garden. \"Meow!\" It is a little grey kitten under a bush. The kitten is cold and hungry. Sam gives it some milk. Then he puts a poster on the wall: \"Is this your kitten?\" The next day, a girl comes to the door. \"That's my kitten, Smoky!\" she says. She says thank you to Sam.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "Sam hears a sound in the garden.",
+      "Sam gives the kitten milk.",
+      "Sam puts up a poster.",
+      "A girl comes for her kitten."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "The kitten is under a bush.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "explain": "“It is a little grey kitten under a bush.”",
+     "notes": {
+      "False": "The story says: “It is a little grey kitten under a bush.” So it is true."
+     },
+     "line": "It is a little grey kitten under a bush."
+    },
+    {
+     "type": "tf",
+     "q": "The kitten is black.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "explain": "“It is a little grey kitten under a bush.” The kitten is grey.",
+     "notes": {
+      "True": "Look again: “It is a little grey kitten under a bush.” The kitten is grey."
+     },
+     "line": "It is a little grey kitten under a bush."
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “wanting food”.",
+     "line": "The kitten is cold and hungry.",
+     "answer": "hungry",
+     "explain": "“hungry” means wanting food: “The kitten is cold and hungry.”"
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “a big paper sign for a wall”.",
+     "line": "Then he puts a poster on the wall:",
+     "answer": "poster",
+     "explain": "“poster” means a big paper sign for a wall: “Then he puts a poster on the wall:”"
+    }
+   ]
+  },
+  {
+   "title": "At the Farm",
+   "text": "Our class visits a farm. The farmer's name is Mr Green. He has cows, pigs and lots of hens. First, we feed the hens. Then we see a baby cow. It is only two days old! At twelve o'clock we eat lunch on the grass. Before we go home, Mr Green gives us eggs to take home.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "We feed the hens.",
+      "We see a baby cow.",
+      "We eat lunch on the grass.",
+      "Mr Green gives us eggs."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "The farmer is called Mr Brown.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "explain": "“The farmer's name is Mr Green.” His name is Mr Green.",
+     "notes": {
+      "True": "Look again: “The farmer's name is Mr Green.” His name is Mr Green."
+     },
+     "line": "The farmer's name is Mr Green."
+    },
+    {
+     "type": "tf",
+     "q": "The baby cow is two days old.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "explain": "“It is only two days old!”",
+     "notes": {
+      "False": "The story says: “It is only two days old!” So it is true."
+     },
+     "line": "It is only two days old!"
+    },
+    {
+     "type": "tf",
+     "q": "We eat lunch in the farmhouse.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "explain": "“At twelve o'clock we eat lunch on the grass.” We eat outside, on the grass.",
+     "notes": {
+      "True": "Look again: “At twelve o'clock we eat lunch on the grass.” We eat outside, on the grass."
+     },
+     "line": "At twelve o'clock we eat lunch on the grass."
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “birds that give us eggs”.",
+     "line": "He has cows, pigs and lots of hens.",
+     "answer": "hens",
+     "explain": "“hens” means birds that give us eggs: “He has cows, pigs and lots of hens.”"
+    }
+   ]
+  },
+  {
+   "title": "Rainy Saturday",
+   "text": "It rains all day on Saturday. Leo can't play football in the park. He is bored. Then Grandma comes. She has a box of paints. Leo and Grandma paint a big rainbow. They put it on the fridge. \"Now we have sun inside!\" says Grandma. Leo laughs.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "Leo is bored.",
+      "Grandma comes with paints.",
+      "They paint a rainbow.",
+      "They put it on the fridge."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "Leo plays football on Saturday.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "explain": "“Leo can't play football in the park.” It rains, so he can't play.",
+     "notes": {
+      "True": "Look again: “Leo can't play football in the park.” It rains, so he can't play."
+     },
+     "line": "Leo can't play football in the park."
+    },
+    {
+     "type": "tf",
+     "q": "Grandma has a box of paints.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "explain": "“She has a box of paints.”",
+     "notes": {
+      "False": "The story says: “She has a box of paints.” So it is true."
+     },
+     "line": "She has a box of paints."
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “with nothing fun to do”.",
+     "line": "He is bored.",
+     "answer": "bored",
+     "explain": "“bored” means with nothing fun to do: “He is bored.”"
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “the cold cupboard in the kitchen”.",
+     "line": "They put it on the fridge.",
+     "answer": "fridge",
+     "explain": "“fridge” means the cold cupboard in the kitchen: “They put it on the fridge.”"
+    }
+   ]
+  },
+  {
+   "title": "The Toy Robot",
+   "text": "Zoe has a toy robot. It is silver and blue. It can walk, talk and dance. Its name is Zip. One day, Zip stops. Zoe is sad. Her mum looks at the robot. \"It needs new batteries,\" she says. Zoe puts in new batteries, and Zip dances again!",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "Zip stops.",
+      "Mum looks at the robot.",
+      "Zoe puts in new batteries.",
+      "Zip dances again."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "The robot can dance.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "explain": "“It can walk, talk and dance.”",
+     "notes": {
+      "False": "The story says: “It can walk, talk and dance.” So it is true."
+     },
+     "line": "It can walk, talk and dance."
+    },
+    {
+     "type": "tf",
+     "q": "The robot is red.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "explain": "“It is silver and blue.” Zip is silver and blue.",
+     "notes": {
+      "True": "Look again: “It is silver and blue.” Zip is silver and blue."
+     },
+     "line": "It is silver and blue."
+    },
+    {
+     "type": "tf",
+     "q": "Dad fixes the robot.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "explain": "“Her mum looks at the robot.” Mum helps, and Zoe puts in the batteries.",
+     "notes": {
+      "True": "Look again: “Her mum looks at the robot.” Mum helps, and Zoe puts in the batteries."
+     },
+     "line": "Her mum looks at the robot."
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “small things that give a toy power”.",
+     "line": "It needs new batteries,",
+     "answer": "batteries",
+     "explain": "“batteries” means small things that give a toy power: “It needs new batteries,”"
+    }
+   ]
+  },
+  {
+   "title": "Swimming Day",
+   "text": "Every Wednesday, Ana goes to the pool. She can swim very well. Her little brother Tom can't swim yet. Today Ana helps Tom. He holds a float and kicks his legs. \"Look, I'm swimming!\" says Tom. After swimming, they have a hot shower and eat a banana.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "Ana helps Tom.",
+      "Tom holds a float and kicks.",
+      "Tom says he is swimming.",
+      "They have a hot shower."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "Ana goes to the pool on Wednesdays.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "explain": "“Every Wednesday, Ana goes to the pool.”",
+     "notes": {
+      "False": "The story says: “Every Wednesday, Ana goes to the pool.” So it is true."
+     },
+     "line": "Every Wednesday, Ana goes to the pool."
+    },
+    {
+     "type": "tf",
+     "q": "Tom can swim very well.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "explain": "“Her little brother Tom can't swim yet.” Ana swims well; Tom is still learning.",
+     "notes": {
+      "True": "Look again: “Her little brother Tom can't swim yet.” Ana swims well; Tom is still learning."
+     },
+     "line": "Her little brother Tom can't swim yet."
+    },
+    {
+     "type": "tf",
+     "q": "They eat an apple after swimming.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "explain": "“After swimming, they have a hot shower and eat a banana.” They eat a banana.",
+     "notes": {
+      "True": "Look again: “After swimming, they have a hot shower and eat a banana.” They eat a banana."
+     },
+     "line": "After swimming, they have a hot shower and eat a banana."
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “a thing that helps you stay on top of the water”.",
+     "line": "He holds a float and kicks his legs.",
+     "answer": "float",
+     "explain": "“float” means a thing that helps you stay on top of the water: “He holds a float and kicks his legs.”"
+    }
+   ]
   }
  ]
 }

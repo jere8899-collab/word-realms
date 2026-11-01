@@ -59,7 +59,7 @@ const audit = () => {
   await screen('maths', () => WR.go('math'));
   await screen('garden', () => WR.go('review'));
   await page.evaluate(() => WR.go('realm', 'a1')); await page.waitForSelector('[data-k="vocab"]');
-  await page.click('[data-k="vocab"]'); await page.waitForSelector('.opt', { timeout: 8000 });
+  await page.click('[data-k="vocab"]'); await page.waitForSelector('.qcard .qtext', { timeout: 8000 });   // R19: the first question may be any type
   await screen('lesson', () => 0);
   // a maths lesson with a picture graph (pictures ARE the content) when the topic exists
   const hasPicto = await page.evaluate(() => !!(window.M && M._internal && M._internal.picto));

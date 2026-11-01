@@ -69,7 +69,7 @@ const Garden = WR.Garden = {
     const now = Date.now();
     const due = active().filter(m => isDue(m, now)).map(m => ({ m, w: (m.misses || 1) * 2 + (now - m.due) / DAY + Math.random() * 2 }))
       .sort((a, b) => b.w - a.w).slice(0, n).map(x => x.m);
-    return WR.shuffle(due).map(m => m.raw ? { ...WR.normalize(m.raw), _mid: m.id } : m.type === "order"
+    return WR.shuffle(due).map(m => m.raw ? { ...WR.normalize(m.raw, m.passage || undefined), _mid: m.id } : m.type === "order"
       ? { type: "order", q: m.q, answer: m.correct, explain: m.explain, _mid: m.id }
       : { type: m.type, q: m.q, say: m.say, pic: m.pic, passage: m.passage, options: WR.shuffle(m.options), correct: m.correct, explain: m.explain, notes: m.notes || null, _mid: m.id });
   },
