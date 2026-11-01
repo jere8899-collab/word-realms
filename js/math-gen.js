@@ -174,6 +174,7 @@ const svgPieChart = (title, slices, whole) => {
      angles: [{ v, a, b, t: "48°" | "x", right }] } — each angle is the smaller one at v between rays v→a and v→b. */
 const vsub = (a, b) => [a[0] - b[0], a[1] - b[1]], vunit = v => { const l = Math.hypot(v[0], v[1]) || 1; return [v[0] / l, v[1] / l]; };
 const vat = (p, v, k) => [p[0] + v[0] * k, p[1] + v[1] * k], f1 = n => +n.toFixed(1), xy = p => `${f1(p[0])},${f1(p[1])}`;
+const mid = (a, b) => [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
 const dirPt = (p, deg, k = 1) => vat(p, [Math.cos(deg * Math.PI / 180), Math.sin(deg * Math.PI / 180)], k);
 // fit points in maths coordinates (y up, turned rot degrees) into a box [left, top, width, height] at one scale, centred:
 // returns S(p) → [px, py] on the card, with S.k = the scale (px per unit), so figures stay true to shape
@@ -199,7 +200,7 @@ const svgGeo = (fig, label = "geometry figure") => {
       if (g.t) text += `<text x="${f1(tx)}" y="${f1(ty)}" font-size="${x ? 15 : 12.5}" text-anchor="middle" font-weight="900"${x ? ` font-style="italic" font-family="Georgia, serif" fill="#ff4f81"` : ` fill="${INK}"`} paint-order="stroke" stroke="#FFFDF8" stroke-width="3">${esc(g.t)}</text>`; }
   });
   (fig.segs || []).forEach(([P, Q]) => { lines += `<line x1="${f1(S(P)[0])}" y1="${f1(S(P)[1])}" x2="${f1(S(Q)[0])}" y2="${f1(S(Q)[1])}" stroke="${INK}" stroke-width="3" stroke-linecap="round"/>`; });
-  const along = (P, Q, n, gap, draw) => { const A = S(P), B = S(Q), u = vunit(vsub(B, A)), nn = [-u[1], u[0]], M = [(A[0] + B[0]) / 2, (A[1] + B[1]) / 2]; for (let i = 0; i < n; i++) draw(vat(M, u, (i - (n - 1) / 2) * gap), u, nn); };
+  const along = (P, Q, n, gap, draw) => { const A = S(P), B = S(Q), u = vunit(vsub(B, A)), nn = [-u[1], u[0]], M = mid(A, B); for (let i = 0; i < n; i++) draw(vat(M, u, (i - (n - 1) / 2) * gap), u, nn); };
   (fig.ticks || []).forEach(([P, Q, n]) => along(P, Q, n, 6, (c, u, nn) => { marks += `<line class="gtick" x1="${f1(c[0] + nn[0] * 6)}" y1="${f1(c[1] + nn[1] * 6)}" x2="${f1(c[0] - nn[0] * 6)}" y2="${f1(c[1] - nn[1] * 6)}" stroke="#ff6f91" stroke-width="2.4" stroke-linecap="round"/>`; }));
   (fig.arrows || []).forEach(([P, Q, n]) => along(P, Q, n, 9, (c, u, nn) => { const tip = vat(c, u, 4), bk = vat(tip, u, -8); marks += `<polyline class="garrow" points="${xy(vat(bk, nn, 5))} ${xy(tip)} ${xy(vat(bk, nn, -5))}" fill="none" stroke="#ff6f91" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>`; }));
   (fig.dots || []).forEach(p => { marks += `<circle cx="${f1(S(p)[0])}" cy="${f1(S(p)[1])}" r="3.6" fill="${INK}"/>`; });
@@ -228,7 +229,7 @@ M.longMulSteps = (a, b) => { const bs = String(b).split("").reverse(); const out
 /* ====================== TOPICS ====================== */
 const TOPICS = [];
 const topic = (grade, id, name, icon, desc, gen, opt = {}) => TOPICS.push(Object.assign({ grade, id: `g${grade}.${id}`, name, icon, desc, gen }, opt));
-M._internal = { Q, num, mcq, mcqWhy, numWhy, T, NAMES, THINGS, COUNT_EMOJI, PASTEL, INK, LINE, esc, svgBox, cardSvg, cellKey, figKey, hasCell, nearCells, gridPaper, gridSheet, gridCell, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, svgBars, svgLine, svgPieChart, svgGeo, fitBox, dirPt, coin, emojiRows, table, colAdd, colSub, topic, TOPICS, gcd, lcm, rd, fmt, fdp, money, simp, fracTex, fracStr, mixedTex, sgn, poly, lin, paren, pm, undo, coef, ord };
+M._internal = { Q, num, mcq, mcqWhy, numWhy, T, NAMES, THINGS, COUNT_EMOJI, PASTEL, INK, LINE, esc, svgBox, cardSvg, cellKey, figKey, hasCell, nearCells, gridPaper, gridSheet, gridCell, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, svgBars, svgLine, svgPieChart, svgGeo, fitBox, dirPt, f1, xy, mid, coin, emojiRows, table, colAdd, colSub, topic, TOPICS, gcd, lcm, rd, fmt, fdp, money, simp, fracTex, fracStr, mixedTex, sgn, poly, lin, paren, pm, undo, coef, ord };
 M.TOPICS = TOPICS;
 M.topic = id => TOPICS.find(t => t.id === id);
 M.gradeTopics = g => TOPICS.filter(t => t.grade === g);

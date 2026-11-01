@@ -1,7 +1,7 @@
 /* 🔢 Number Kingdom topics, Grades 5–8 (Singapore Primary 5–6, Secondary 1–2). */
 (function () {
 const M = (typeof module !== "undefined" && module.exports) ? require("./math-gen.js") : window.MathGen;
-const { Q, num, mcq, mcqWhy, numWhy, T, NAMES, topic, PASTEL, INK, LINE, esc, svgBox, fitBox, cellKey, figKey, hasCell, nearCells, gridSheet, svgPieChart, svgGeo, cardSvg, dirPt, gcd, lcm, rd, fmt, fdp, simp, fracTex, fracStr, mixedTex, poly, lin, paren, pm, undo, coef, ord } = M._internal;
+const { Q, num, mcq, mcqWhy, numWhy, T, NAMES, topic, PASTEL, INK, LINE, esc, svgBox, fitBox, cellKey, figKey, hasCell, nearCells, gridSheet, svgPieChart, svgGeo, cardSvg, dirPt, f1, xy, mid, gcd, lcm, rd, fmt, fdp, simp, fracTex, fracStr, mixedTex, poly, lin, paren, pm, undo, coef, ord } = M._internal;
 
 /* ---------- Grade 5 (Primary 5) ---------- */
 topic(5, "fracmul", "Fraction Spells", "✨", "Multiply fractions", r => {
@@ -303,6 +303,17 @@ topic(6, "story", "Fairytale Problems", "📜", "P6-style model problems", r => 
   const a = r.int(20, 60), dif = r.int(4, 20); return num(`Cinderella and her stepsister have ${2 * a + dif} buttons altogether. Cinderella has ${dif} more than her stepsister. How many does Cinderella have?`, a + dif, "Take away the difference first, then split in half.", [`${2 * a + dif} − ${dif} = ${2 * a}`, `${2 * a} ÷ 2 = ${a} (stepsister)`, `Cinderella = ${a} + ${dif} = ${a + dif}`]);
 }, { story: true });
 
+/* ---------- 📏 to-scale figure kit (Bakery Blueprints, Scale-Model Studio): a cream card with the figure fitted in at one
+   scale, filled shapes, solid / dashed edges, length labels tests can read back (class mlab) and right-angle marks ---------- */
+// a 300-wide card with the figure fitted in; draw(S) gets the maths → card mapper (S.k = px per unit) and returns the SVG body
+const figCard = (title, pts, draw, label, h = 206, cls = "mpic chart mens") => { const S = fitBox(pts, [40, 46, 220, h - 82]); return cardSvg(300, h, title, 20, draw(S), label, cls); };
+const figShape = (P, fill) => `<polygon points="${P.map(xy).join(" ")}" fill="${fill}" stroke="${INK}" stroke-width="2.6" stroke-linejoin="round"/>`;
+const figEdge = (a, b, dash) => `<line class="${dash ? "mhid" : "medge"}" x1="${f1(a[0])}" y1="${f1(a[1])}" x2="${f1(b[0])}" y2="${f1(b[1])}" stroke="${dash ? LINE : INK}" stroke-width="${dash ? 2 : 2.6}"${dash ? ` stroke-dasharray="5 4"` : ""} stroke-linecap="round"/>`;
+// a length label (class mlab, data-t = its text, so tests can read the figure back) beside point p, nudged dx, dy pixels
+const figLab = (p, t, dx = 0, dy = 0, anchor = "middle") => `<text class="mlab" data-t="${esc(t)}" x="${f1(p[0] + dx)}" y="${f1(p[1] + dy + 4)}" font-size="12.5" text-anchor="${anchor}" font-weight="900" fill="#c2457a" paint-order="stroke" stroke="#FFFDF8" stroke-width="3.5">${esc(t)}</text>`;
+// a small right-angle square at a foot point (card pixels), towards side sx (±1) and upwards
+const figRight = (f, sx = -1) => `<path d="M${xy([f[0] + 9 * sx, f[1]])} L${xy([f[0] + 9 * sx, f[1] - 9])} L${xy([f[0], f[1] - 9])}" fill="none" stroke="${LINE}" stroke-width="1.6"/>`;
+
 /* ---------- Grade 7 (Secondary 1) ---------- */
 topic(7, "integers", "Integer Isles", "🏝️", "Add, subtract, multiply, divide negatives", r => {
   const a = r.nz(-20, 20), b = r.nz(-15, 15), op = r.pick(["+", "-", "×", "÷"]);
@@ -357,49 +368,39 @@ const MENS_TRI = [[3, 4, 5], [4, 3, 5], [6, 8, 10], [8, 6, 10], [5, 12, 13], [9,
 const PI3 = 3.142;
 // "1885.2" when it is exact to 1 d.p., else "138.248 \approx 138.2" (TeX)
 const approx1 = x => { const e = fmt(rd(x, 3)), v = fdp(x, 1); return +e === +v ? fmt(+v) : `${e} \\approx ${v}`; };
-const mpx = v => +v.toFixed(1), mxy = p => `${mpx(p[0])},${mpx(p[1])}`;
-// a 300-wide card with the figure fitted in; draw(S) gets the maths → card mapper (S.k = px per unit) and returns the SVG body
-const mensCard = (title, pts, draw, label, h = 206) => { const S = fitBox(pts, [40, 46, 220, h - 82]); return cardSvg(300, h, title, 20, draw(S), label, "mpic chart mens"); };
-const mShape = (P, fill) => `<polygon points="${P.map(mxy).join(" ")}" fill="${fill}" stroke="${INK}" stroke-width="2.6" stroke-linejoin="round"/>`;
-const mEdge = (a, b, dash) => `<line class="${dash ? "mhid" : "medge"}" x1="${mpx(a[0])}" y1="${mpx(a[1])}" x2="${mpx(b[0])}" y2="${mpx(b[1])}" stroke="${dash ? LINE : INK}" stroke-width="${dash ? 2 : 2.6}"${dash ? ` stroke-dasharray="5 4"` : ""} stroke-linecap="round"/>`;
-// a length label (class mlab, data-t = its text, so tests can read the figure back) beside point p, nudged dx, dy pixels
-const mLab = (p, t, dx = 0, dy = 0, anchor = "middle") => `<text class="mlab" data-t="${esc(t)}" x="${mpx(p[0] + dx)}" y="${mpx(p[1] + dy + 4)}" font-size="12.5" text-anchor="${anchor}" font-weight="900" fill="#c2457a" paint-order="stroke" stroke="#FFFDF8" stroke-width="3.5">${esc(t)}</text>`;
-// a small right-angle square at a foot point (card pixels), towards side sx (±1) and upwards
-const mRight = (f, sx = -1) => `<path d="M${mxy([f[0] + 9 * sx, f[1]])} L${mxy([f[0] + 9 * sx, f[1] - 9])} L${mxy([f[0], f[1] - 9])}" fill="none" stroke="${LINE}" stroke-width="1.6"/>`;
-const mid = (a, b) => [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
 // a parallelogram (top = bottom) or trapezium: bottom b, top a, left side leaning over s with height h (slant l); labels as given
-const svgQuad = (title, b, a, s, h, lab) => mensCard(title, [[0, 0], [b, 0], [s + a, h], [s, h]], S => {
+const svgQuad = (title, b, a, s, h, lab) => figCard(title, [[0, 0], [b, 0], [s + a, h], [s, h]], S => {
   const A = S([0, 0]), B = S([b, 0]), C = S([s + a, h]), D = S([s, h]), F = S([s, 0]);
-  return mShape([A, B, C, D], PASTEL[4]) + mEdge(D, F, true) + mRight(F, 1) + mLab(mid(A, B), lab.b, 0, 16) + (lab.a ? mLab(mid(D, C), lab.a, 0, -12) : "")
-    + mLab(mid(D, F), lab.h, 6, 0, "start") + (lab.l ? mLab(mid(A, D), lab.l, -8, 0, "end") : "");
+  return figShape([A, B, C, D], PASTEL[4]) + figEdge(D, F, true) + figRight(F, 1) + figLab(mid(A, B), lab.b, 0, 16) + (lab.a ? figLab(mid(D, C), lab.a, 0, -12) : "")
+    + figLab(mid(D, F), lab.h, 6, 0, "start") + (lab.l ? figLab(mid(A, D), lab.l, -8, 0, "end") : "");
 }, a === b ? "parallelogram" : "trapezium");
 // a house front (rectangle + triangle roof) or an arch (rectangle + semicircle) w wide, walls hr high, roof ht high
-const svgHouse = (title, w, hr, ht, lab) => mensCard(title, [[0, 0], [w, 0], [w, hr + ht], [0, hr]], S => {
+const svgHouse = (title, w, hr, ht, lab) => figCard(title, [[0, 0], [w, 0], [w, hr + ht], [0, hr]], S => {
   const A = S([0, 0]), B = S([w, 0]), C = S([w, hr]), D = S([0, hr]), E = S([w / 2, hr + ht]), F = S([w / 2, hr]);
-  return mShape([A, B, C, D], PASTEL[2]) + mShape([D, C, E], PASTEL[0]) + mEdge(E, F, true) + mRight(F, 1) + mLab(mid(A, B), lab.w, 0, 16) + mLab(mid(B, C), lab.hr, 8, 0, "start") + mLab(mid(E, F), lab.ht, -7, 0, "end");
+  return figShape([A, B, C, D], PASTEL[2]) + figShape([D, C, E], PASTEL[0]) + figEdge(E, F, true) + figRight(F, 1) + figLab(mid(A, B), lab.w, 0, 16) + figLab(mid(B, C), lab.hr, 8, 0, "start") + figLab(mid(E, F), lab.ht, -7, 0, "end");
 }, "composite figure");
-const svgArch = (title, w, hr, lab) => mensCard(title, [[0, 0], [w, 0], [w, hr + w / 2], [0, hr + w / 2]], S => {
+const svgArch = (title, w, hr, lab) => figCard(title, [[0, 0], [w, 0], [w, hr + w / 2], [0, hr + w / 2]], S => {
   const A = S([0, 0]), B = S([w, 0]), C = S([w, hr]), D = S([0, hr]), R = w / 2 * S.k;
-  return mShape([A, B, C, D], PASTEL[3]) + `<path d="M${mxy(D)} A${mpx(R)},${mpx(R)} 0 0,1 ${mxy(C)} Z" fill="${PASTEL[1]}" stroke="${INK}" stroke-width="2.6"/>` + mEdge(D, C, true)
-    + mLab(mid(A, B), lab.w, 0, 16) + mLab(mid(B, C), lab.hr, 8, 0, "start");
+  return figShape([A, B, C, D], PASTEL[3]) + `<path d="M${xy(D)} A${f1(R)},${f1(R)} 0 0,1 ${xy(C)} Z" fill="${PASTEL[1]}" stroke="${INK}" stroke-width="2.6"/>` + figEdge(D, C, true)
+    + figLab(mid(A, B), lab.w, 0, 16) + figLab(mid(B, C), lab.hr, 8, 0, "start");
 }, "composite figure");
 // a triangular prism drawn in cabinet view: "ramp" (right angle at the back-left foot) or "tent" (isosceles); front base b, height h, length L
 const svgPrism = (title, shape, b, h, L, lab) => {
   const F = shape === "ramp" ? [[0, 0], [b, 0], [0, h]] : [[0, 0], [b, 0], [b / 2, h]], dv = [L * .42 * Math.cos(Math.PI / 6), L * .42 * Math.sin(Math.PI / 6)], Bk = F.map(p => [p[0] + dv[0], p[1] + dv[1]]);
-  return mensCard(title, F.concat(Bk), S => { const f = F.map(S), k = Bk.map(S), foot = S([shape === "ramp" ? 0 : b / 2, 0]);
+  return figCard(title, F.concat(Bk), S => { const f = F.map(S), k = Bk.map(S), foot = S([shape === "ramp" ? 0 : b / 2, 0]);
     // the back-left-bottom corner is hidden, so its three edges are dashed; the sloping face on the right is shaded
-    return mShape([f[1], f[2], k[2], k[1]], PASTEL[1]) + mShape(f, PASTEL[0]) + mEdge(f[0], k[0], true) + mEdge(k[0], k[1], true) + mEdge(k[0], k[2], true) + mEdge(f[1], k[1]) + mEdge(f[2], k[2]) + mEdge(k[1], k[2])
-      + (shape === "tent" ? mEdge(f[2], foot, true) + mRight(foot, 1) + mLab(mid(f[2], foot), lab.h, 5, 6, "start") : mRight(foot, 1) + mLab(mid(f[0], f[2]), lab.h, -7, 0, "end"))
-      + mLab(mid(f[0], f[1]), lab.b, 0, 16) + mLab(mid(f[1], k[1]), lab.L, 9, 8, "start") + (lab.l ? mLab(mid(shape === "ramp" ? f[1] : f[0], f[2]), lab.l, shape === "ramp" ? 6 : -8, shape === "ramp" ? -6 : 0, shape === "ramp" ? "start" : "end") : "");
+    return figShape([f[1], f[2], k[2], k[1]], PASTEL[1]) + figShape(f, PASTEL[0]) + figEdge(f[0], k[0], true) + figEdge(k[0], k[1], true) + figEdge(k[0], k[2], true) + figEdge(f[1], k[1]) + figEdge(f[2], k[2]) + figEdge(k[1], k[2])
+      + (shape === "tent" ? figEdge(f[2], foot, true) + figRight(foot, 1) + figLab(mid(f[2], foot), lab.h, 5, 6, "start") : figRight(foot, 1) + figLab(mid(f[0], f[2]), lab.h, -7, 0, "end"))
+      + figLab(mid(f[0], f[1]), lab.b, 0, 16) + figLab(mid(f[1], k[1]), lab.L, 9, 8, "start") + (lab.l ? figLab(mid(shape === "ramp" ? f[1] : f[0], f[2]), lab.l, shape === "ramp" ? 6 : -8, shape === "ramp" ? -6 : 0, shape === "ramp" ? "start" : "end") : "");
   }, "triangular prism", 214);
 };
 // an upright cylinder radius r, height h; the radius (or diameter) is drawn on the lid
 const svgCyl = (title, r, h, lab) => { const e = .32;
-  return mensCard(title, [[-r, -e * r], [r, h + e * r]], S => { const T = S([0, h]), Bc = S([0, 0]), rx = r * S.k, ry = e * r * S.k, arc = (c, sw) => `M${mxy([c[0] - rx, c[1]])} A${mpx(rx)},${mpx(ry)} 0 0,${sw} ${mxy([c[0] + rx, c[1]])}`;
-    return `<path d="M${mxy([T[0] - rx, T[1]])} L${mxy([Bc[0] - rx, Bc[1]])} A${mpx(rx)},${mpx(ry)} 0 0,0 ${mxy([Bc[0] + rx, Bc[1]])} L${mxy([T[0] + rx, T[1]])} Z" fill="${PASTEL[1]}" stroke="${INK}" stroke-width="2.6" stroke-linejoin="round"/>`
-      + `<path class="mhid" d="${arc(Bc, 1)}" fill="none" stroke="${LINE}" stroke-width="2" stroke-dasharray="5 4"/><ellipse cx="${mpx(T[0])}" cy="${mpx(T[1])}" rx="${mpx(rx)}" ry="${mpx(ry)}" fill="${PASTEL[0]}" stroke="${INK}" stroke-width="2.6"/>`
-      + (lab.d ? mEdge([T[0] - rx, T[1]], [T[0] + rx, T[1]], true) + mLab(T, lab.d, 0, -ry - 6) : mEdge(T, [T[0] + rx, T[1]], true) + `<circle cx="${mpx(T[0])}" cy="${mpx(T[1])}" r="2.6" fill="${INK}"/>` + mLab([T[0] + rx / 2, T[1]], lab.r, 0, -ry - 6))
-      + mLab(mid([T[0] + rx, T[1]], [Bc[0] + rx, Bc[1]]), lab.h, 8, 0, "start");
+  return figCard(title, [[-r, -e * r], [r, h + e * r]], S => { const T = S([0, h]), Bc = S([0, 0]), rx = r * S.k, ry = e * r * S.k, arc = (c, sw) => `M${xy([c[0] - rx, c[1]])} A${f1(rx)},${f1(ry)} 0 0,${sw} ${xy([c[0] + rx, c[1]])}`;
+    return `<path d="M${xy([T[0] - rx, T[1]])} L${xy([Bc[0] - rx, Bc[1]])} A${f1(rx)},${f1(ry)} 0 0,0 ${xy([Bc[0] + rx, Bc[1]])} L${xy([T[0] + rx, T[1]])} Z" fill="${PASTEL[1]}" stroke="${INK}" stroke-width="2.6" stroke-linejoin="round"/>`
+      + `<path class="mhid" d="${arc(Bc, 1)}" fill="none" stroke="${LINE}" stroke-width="2" stroke-dasharray="5 4"/><ellipse cx="${f1(T[0])}" cy="${f1(T[1])}" rx="${f1(rx)}" ry="${f1(ry)}" fill="${PASTEL[0]}" stroke="${INK}" stroke-width="2.6"/>`
+      + (lab.d ? figEdge([T[0] - rx, T[1]], [T[0] + rx, T[1]], true) + figLab(T, lab.d, 0, -ry - 6) : figEdge(T, [T[0] + rx, T[1]], true) + `<circle cx="${f1(T[0])}" cy="${f1(T[1])}" r="2.6" fill="${INK}"/>` + figLab([T[0] + rx / 2, T[1]], lab.r, 0, -ry - 6))
+      + figLab(mid([T[0] + rx, T[1]], [Bc[0] + rx, Bc[1]]), lab.h, 8, 0, "start");
   }, "cylinder", 214); };
 // 36000 → "36 000" (the MOE way of grouping digits), decimals kept
 const grp = n => { const [i, d] = fmt(n).split("."); return i.replace(/\B(?=(\d{3})+(?!\d))/g, " ") + (d ? "." + d : ""); };
@@ -517,13 +518,12 @@ const svgPattern = (fam, title) => {
   // all three at the same scale; each figure gets its own width plus an equal share of the spare room, and sits in the middle of it
   const sum = ws.reduce((a, b) => a + b, 0), top = 34, H = 76, sc = Math.min(26, 240 / sum, H / Math.max(...hs)), spare = (276 - sum * sc) / 3;
   let x = 12, body = "";
-  figs.forEach((g, i) => { const [x0, , y0] = bs[i], cx = x + (ws[i] * sc + spare) / 2, ox = cx - ws[i] * sc / 2, oy = top + (H - hs[i] * sc) / 2, P = p => [f2(ox + (p[0] - x0 + pad) * sc), f2(oy + (p[1] - y0 + pad) * sc)];
+  figs.forEach((g, i) => { const [x0, , y0] = bs[i], cx = x + (ws[i] * sc + spare) / 2, ox = cx - ws[i] * sc / 2, oy = top + (H - hs[i] * sc) / 2, P = p => [f1(ox + (p[0] - x0 + pad) * sc), f1(oy + (p[1] - y0 + pad) * sc)];
     body += `<g class="sfig" data-n="${i + 1}">` + (F.polys ? g.map(([p, q]) => { const [a, b] = P(p), [c, d] = P(q); return `<line class="stk" x1="${a}" y1="${b}" x2="${c}" y2="${d}" stroke="${["#E9A23B", "#F08BB0", "#7FB7E6"][i]}" stroke-width="3.2" stroke-linecap="round"/>`; }).join("")
-      : g.map(p => { const [a, b] = P(p); return `<circle class="sdot" cx="${a}" cy="${b}" r="${f2(Math.min(5.5, sc * .3))}" fill="${PASTEL[(i * 2) % 6]}" stroke="${LINE}" stroke-width="1.4"/>`; }).join(""));
-    body += `</g><text x="${f2(cx)}" y="${top + H + 20}" font-size="11" text-anchor="middle" font-weight="900" fill="${INK}">Figure ${i + 1}</text>`; x += ws[i] * sc + spare; });
+      : g.map(p => { const [a, b] = P(p); return `<circle class="sdot" cx="${a}" cy="${b}" r="${f1(Math.min(5.5, sc * .3))}" fill="${PASTEL[(i * 2) % 6]}" stroke="${LINE}" stroke-width="1.4"/>`; }).join(""));
+    body += `</g><text x="${f1(cx)}" y="${top + H + 20}" font-size="11" text-anchor="middle" font-weight="900" fill="${INK}">Figure ${i + 1}</text>`; x += ws[i] * sc + spare; });
   return cardSvg(300, 140, title, 20, body, "picture pattern");
 };
-const f2 = v => +v.toFixed(1);
 topic(7, "pattern", "Sparkle Sequences", "✨", "Number patterns and the nth term", r => {
   const t = r.pick(["next", "next", "rule", "rule", "term", "term", "which", "which", "isin", "isin", "pic", "pic", "pic", "pic"]);
   if (t === "next") {
@@ -585,6 +585,138 @@ topic(8, "pyth", "Pythagoras' Bridge", "📐", "Right-angled triangles", r => {
   if (t === 2) { const x = r.int(2, 12), y = r.int(2, 12), h = Math.sqrt(x * x + y * y); return num(`A ladder reaches a tower window. Its foot is ${x} m from the tower and the window is ${y} m high. How long is the ladder? (1 d.p.)`, rd(h, 1), "c² = a² + b²", [`$c^2 = ${x}^2 + ${y}^2 = ${x * x + y * y}$`, `$c = \\sqrt{${x * x + y * y}} \\approx ${rd(h, 1).toFixed(1)}$ m`], { a: rd(h, 1).toFixed(1), keys: ["."], tol: 0.051, data: { x, y } }); }
   if (t === 0) return num(`A right-angled triangle has shorter sides ${A} cm and ${B} cm. How long is the hypotenuse?`, C, "Hypotenuse² = a² + b²", [`$c^2 = ${A}^2 + ${B}^2 = ${A * A} + ${B * B} = ${C * C}$`, `$c = \\sqrt{${C * C}} = ${C}$ cm`], { data: { x: A, y: B } });
   return num(`A right-angled triangle has hypotenuse ${C} cm and one side ${A} cm. How long is the other side?`, B, "Other side² = hypotenuse² − known side²", [`$b^2 = ${C}^2 - ${A}^2 = ${C * C} - ${A * A} = ${B * B}$`, `$b = ${B}$ cm`], { data: { h: C, x: A } });
+});
+/* ---------- 🗺️ Scale-Model Studio (MOE Sec 2 congruence and similarity): congruent triangles (matching sides and angles by
+   the order of the letters), similar triangles (scale factor, a missing side either way, a missing angle), similar
+   rectangles (enlargement keeps the shape) and scale drawings (map scales 1 : n both ways, scale models). Triangles are
+   drawn to scale side by side with matching angles in matching colours; every option and usual slip has a why-not note. */
+// small triangles with three different whole-number sides [AB, BC, CA], none too thin
+const SIM_TRI = [[6, 5, 4], [7, 6, 5], [7, 4, 6], [8, 7, 6], [8, 5, 7], [6, 3, 5], [8, 4, 7], [9, 6, 8], [5, 4, 3], [9, 7, 5], [8, 6, 5], [7, 5, 8]];
+// scale factors as fractions [top, bottom]
+const SIM_K = [[2, 1], [2, 1], [3, 1], [3, 1], [4, 1], [3, 2], [5, 2]];
+const SIDE = ["AB", "BC", "CA"], BIG = ["PQ", "QR", "RP"], CORNER = ["A", "B", "C"], BIGC = ["P", "Q", "R"];
+const ANG_FILL = ["#FFC9DA", "#C9E6FF", "#CFF3DF"];
+// corners from the sides (AB on the ground, C above it) or from two angles at A and B with AB = c
+const triFromSides = ([c, a, b]) => { const x = (b * b + c * c - a * a) / (2 * c); return [[0, 0], [c, 0], [x, Math.sqrt(b * b - x * x)]]; };
+const triFromAngles = (al, be, c = 6) => { const R = d => d * Math.PI / 180, t = c * Math.sin(R(be)) / Math.sin(R(al + be)); return [[0, 0], [c, 0], [t * Math.cos(R(al)), t * Math.sin(R(al))]]; };
+const turnPts = (P, deg, flip) => P.map(([x, y]) => { const u = flip ? -x : x, a = deg * Math.PI / 180; return [u * Math.cos(a) - y * Math.sin(a), u * Math.sin(a) + y * Math.cos(a)]; });
+const shift = (P, dx) => { const x0 = Math.min(...P.map(p => p[0])), y0 = Math.min(...P.map(p => p[1])); return P.map(([x, y]) => [x - x0 + dx, y - y0]); };
+// two triangles on one card at one scale: tris = [{ P: 3 corners (maths coords), names, sides: [AB, BC, CA labels], angs: [corner labels] }]
+const svgTwins = (title, tris, label = "two triangles", note = "") => {
+  const all = [].concat(...tris.map(t => t.P)), S = fitBox(all, [30, 50, 240, 122]);
+  let body = "";
+  tris.forEach((t, n) => { const P = t.P.map(S), G = [(P[0][0] + P[1][0] + P[2][0]) / 3, (P[0][1] + P[1][1] + P[2][1]) / 3];
+    body += `<g class="stri" data-n="${n}">` + figShape(P, n ? PASTEL[1] : PASTEL[0]);
+    P.forEach((V, i) => { // matching corners get matching colours; a corner label (angle) sits inside the corner
+      const A = P[(i + 1) % 3], B = P[(i + 2) % 3], u1 = vdir(V, A), u2 = vdir(V, B), r = 15, a1 = Math.atan2(u1[1], u1[0]); let d = Math.atan2(u2[1], u2[0]) - a1;
+      while (d > Math.PI) d -= 2 * Math.PI; while (d <= -Math.PI) d += 2 * Math.PI;
+      body += `<path class="sang" d="M${xy(V)} L${xy([V[0] + u1[0] * r, V[1] + u1[1] * r])} A${r},${r} 0 0,${d > 0 ? 1 : 0} ${xy([V[0] + u2[0] * r, V[1] + u2[1] * r])} Z" fill="${ANG_FILL[i]}" stroke="${LINE}" stroke-width="1.2"/>`;
+      const o = vdir(G, V); body += `<text class="mvtx" x="${f1(V[0] + o[0] * 12)}" y="${f1(V[1] + o[1] * 12 + 4.5)}" font-size="13" text-anchor="middle" font-weight="900" fill="${INK}">${t.names[i]}</text>`;
+      if (t.angs && t.angs[i]) { const m = a1 + d / 2, x = t.angs[i] === "x", deg = Math.abs(d) * 180 / Math.PI, L = deg < 45 ? 31 : deg < 70 ? 26 : 21; body += `<text class="mang" data-t="${esc(t.angs[i])}" x="${f1(V[0] + Math.cos(m) * L)}" y="${f1(V[1] + Math.sin(m) * L + 4)}" font-size="${x ? 14 : 11.5}" text-anchor="middle" font-weight="900"${x ? ` font-style="italic" font-family="Georgia, serif" fill="#ff4f81"` : ` fill="${INK}"`} paint-order="stroke" stroke="#FFFDF8" stroke-width="3">${esc(t.angs[i])}</text>`; }
+    });
+    (t.sides || []).forEach((s, i) => { if (!s) return; const a = P[i], b = P[(i + 1) % 3], m = mid(a, b), o = vdir(G, m); body += figLab(m, s, o[0] * 15, o[1] * 13, "middle"); });
+    body += "</g>"; });
+  if (note) body += `<text class="snote" x="150" y="198" font-size="9.5" text-anchor="middle" font-weight="800" fill="${LINE}">${esc(note)}</text>`;
+  return cardSvg(300, 206, title, 20, body, label, "mpic chart mens sim");
+};
+// the bigger copy of corners P, drawn g = min(k, 1.75) times as big (so the small triangle stays readable) to the right of P
+const SIM_DRAW = 1.75;
+const bigCopy = (P, k) => { const g = Math.min(k, SIM_DRAW), w = Math.max(...P.map(p => p[0])) - Math.min(...P.map(p => p[0])); return shift(P.map(p => [p[0] * g, p[1] * g]), Math.max(...P.map(p => p[0])) + .45 * w + 1); };
+const vdir = (a, b) => { const x = b[0] - a[0], y = b[1] - a[1], l = Math.hypot(x, y) || 1; return [x / l, y / l]; };
+// a cream map (or plan) with two pastel pins d cm apart, drawn at 18 px per cm, and the scale printed underneath
+const svgMap = (title, d, from, to, scaleText) => { const L = d * 18, x0 = 150 - L / 2, y = 96;
+  const pin = (x, c, name) => `<circle class="mpin" cx="${f1(x)}" cy="${y}" r="9" fill="${c}" stroke="${INK}" stroke-width="2"/><circle cx="${f1(x)}" cy="${y}" r="3" fill="#FFFDF8"/><text x="${f1(x)}" y="${y + 26}" font-size="11" text-anchor="middle" font-weight="900" fill="${INK}">${esc(name)}</text>`;
+  return cardSvg(300, 168, title, 20, `<rect x="12" y="32" width="276" height="100" rx="12" fill="#F2FAFF" stroke="#CFE6F7" stroke-width="2"/><path d="M24,120 q30,-14 60,-2 t60,0" fill="none" stroke="#C8F2DC" stroke-width="7" stroke-linecap="round"/><path d="M210,52 q20,10 44,0" fill="none" stroke="#BDE7FF" stroke-width="6" stroke-linecap="round"/>`
+    + `<line class="mroute" x1="${f1(x0)}" y1="${y}" x2="${f1(x0 + L)}" y2="${y}" stroke="#ff8fa3" stroke-width="3" stroke-dasharray="7 5" stroke-linecap="round"/>` + pin(x0, PASTEL[0], from) + pin(x0 + L, PASTEL[3], to)
+    + figLab([150, y - 14], `${d} cm`) + `<text x="150" y="154" font-size="12" text-anchor="middle" font-weight="900" fill="${INK}">${esc(scaleText)}</text>`, "map with a scale"); };
+// a w × h rectangle (a photo or card) drawn to scale with its two lengths
+const svgRect = (title, w, h, lab) => figCard(title, [[0, 0], [w, 0], [w, h], [0, h]], S => { const A = S([0, 0]), B = S([w, 0]), C = S([w, h]), D = S([0, h]);
+  return figShape([A, B, C, D], PASTEL[4]) + `<circle cx="${f1(mid(A, C)[0])}" cy="${f1(mid(A, C)[1])}" r="${f1(Math.min(B[0] - A[0], A[1] - D[1]) * .22)}" fill="${PASTEL[0]}" stroke="${LINE}" stroke-width="1.5"/>` + figLab(mid(A, B), lab.w, 0, 16) + figLab(mid(B, C), lab.h, 8, 0, "start"); }, "rectangle");
+const kTex = ([n, d]) => fracTex(n, d), kVal = ([n, d]) => n / d;
+const cm = v => `${fmt(v)} cm`;
+const SIM_WHO = ["Fairy Pip's growing spell", "The castle's magic copier", "Sumi the star fairy's shrink-and-grow wand", "The royal sticker printer"];
+const SIM = {
+  // a missing side of similar triangles, on the bigger one or the smaller one
+  side: r => { const s = r.pick(SIM_TRI), K = r.pick(SIM_K), k = kVal(K), sm = K[1] === 2 ? s.map(v => 2 * v) : s, bg = sm.map(v => v * k);
+    const i = r.int(0, 2), j = (i + r.int(1, 2)) % 3, onBig = r.chance(.6), who = r.pick(SIM_WHO);
+    const lab = (arr, xIdx) => [0, 1, 2].map(n => n === i ? cm(arr[i]) : n === j ? (xIdx ? "x" : cm(arr[j])) : "");
+    const sP = triFromSides(sm), bP = bigCopy(sP, k), val = onBig ? bg[j] : sm[j];
+    const q = `${who} turns triangle ABC into a bigger copy, triangle PQR (A → P, B → Q, C → R), so the two triangles are similar. Find ${onBig ? BIG[j] : SIDE[j]}, marked x, in cm.`;
+    const steps = [`Matching sides: ${SIDE[i]} and ${BIG[i]}. Scale factor $= \\frac{${BIG[i]}}{${SIDE[i]}} = \\frac{${fmt(bg[i])}}{${fmt(sm[i])}} = ${kTex(K)}$`,
+      onBig ? `${BIG[j]} matches ${SIDE[j]}, so $x = ${fmt(sm[j])} \\times ${kTex(K)} = ${fmt(val)}$ cm` : `${SIDE[j]} matches ${BIG[j]}, so $x = ${fmt(bg[j])} \\div ${kTex(K)} = ${fmt(val)}$ cm`];
+    const slips = onBig ? [[sm[j] + bg[i] - sm[i], `That adds ${fmt(bg[i] - sm[i])} cm, like ${SIDE[i]} → ${BIG[i]}. Similar shapes grow by multiplying every side by the same scale factor, not by adding the same amount.`],
+      [sm[j] / k, "That made the side smaller. PQR is the bigger copy, so multiply by the scale factor."], [sm[j] * k * k, "That multiplies by the scale factor twice. Once is enough for a length."]]
+      : [[bg[j] - (bg[i] - sm[i]), `That takes away ${fmt(bg[i] - sm[i])} cm. Similar shapes shrink by dividing every side by the same scale factor, not by taking away the same amount.`],
+      [bg[j] * k, "That made the side bigger. ABC is the smaller triangle, so divide by the scale factor."], [bg[j] / k / k, "That divides by the scale factor twice. Once is enough for a length."]];
+    return numWhy(q, val, `Find the scale factor from a pair of matching sides, then use it on ${onBig ? SIDE[j] : BIG[j]}.`, steps, slips,
+      { keys: ["."], pic: svgTwins("Similar triangles", [{ P: sP, names: CORNER, sides: lab(sm, !onBig) }, { P: bP, names: BIGC, sides: lab(bg, onBig) }], "similar triangles", k > SIM_DRAW ? "Not drawn to scale" : ""), uid: `sim|side|${sm}|${K}|${i}${j}|${onBig}`, data: { sim: "side", sm, bg, K, i, j, onBig } }); },
+  // the scale factor of an enlargement (or of the reduction back)
+  k: r => { const s = r.pick(SIM_TRI), K = r.pick(SIM_K), k = kVal(K), sm = K[1] === 2 ? s.map(v => 2 * v) : s, bg = sm.map(v => v * k);
+    const i = r.int(0, 2), j = (i + 1) % 3, down = r.chance(.35), right = T(down ? fracTex(K[1], K[0]) : kTex(K));
+    const sides = arr => [0, 1, 2].map(n => n === i || n === j ? cm(arr[n]) : "");
+    const q = down ? `Triangle PQR is shrunk down to make the similar triangle ABC (P → A, Q → B, R → C). What is the scale factor of this reduction?` : `Triangle ABC is enlarged to make the similar triangle PQR (A → P, B → Q, C → R). What is the scale factor of the enlargement?`;
+    const [from, to, fi, ti] = down ? ["PQR", "ABC", bg, sm] : ["ABC", "PQR", sm, bg];
+    const wrong = [[T(down ? kTex(K) : fracTex(K[1], K[0])), down ? `That is the scale factor the other way, from ABC up to PQR. Going down to the smaller triangle, the scale factor is less than 1.` : `That is the scale factor the other way, from PQR down to ABC. An enlargement has a scale factor bigger than 1.`],
+      [T(fmt(Math.abs(bg[i] - sm[i]))), `${fmt(Math.abs(bg[i] - sm[i]))} cm is how much longer ${BIG[i]} is than ${SIDE[i]}. A scale factor divides: new length ÷ old length.`],
+      [T(fracTex(ti[j], fi[i])), `${(down ? SIDE : BIG)[j]} and ${(down ? BIG : SIDE)[i]} are not a matching pair. Compare sides whose letters match, like ${(down ? BIG : SIDE)[i]} and ${(down ? SIDE : BIG)[i]}.`],
+      [T(fracTex(K[0] + K[1], K[1])), `Check with a pair of matching sides: ${fmt(fi[i])} × that doesn't give ${fmt(ti[i])}.`]];
+    return mcqWhy(r, q, right, `New length ÷ old length for any matching pair: ${(down ? SIDE : BIG)[i]} ÷ ${(down ? BIG : SIDE)[i]} = ${fmt(ti[i])} ÷ ${fmt(fi[i])} = ${down ? fracStr(K[1], K[0]) : fracStr(K[0], K[1])}, the same for every pair.`, wrong,
+      "Scale factor = a length on the new shape ÷ the matching length on the old shape.", [`${from} → ${to}: matching sides ${(down ? BIG : SIDE)[i]} = ${fmt(fi[i])} cm and ${(down ? SIDE : BIG)[i]} = ${fmt(ti[i])} cm`, `Scale factor $= \\frac{${fmt(ti[i])}}{${fmt(fi[i])}} = ${down ? fracTex(K[1], K[0]) : kTex(K)}$`, `Check: $\\frac{${fmt(ti[j])}}{${fmt(fi[j])}}$ is the same.`],
+      { pic: svgTwins("Similar triangles", [{ P: triFromSides(sm), names: CORNER, sides: sides(sm) }, { P: bigCopy(triFromSides(sm), k), names: BIGC, sides: sides(bg) }], "similar triangles", k > SIM_DRAW ? "Not drawn to scale" : ""), uid: `sim|k|${sm}|${K}|${i}|${down}`, data: { sim: "k", sm, bg, K, i, j, down } }); },
+  // a missing angle: similar triangles keep their angles
+  angle: r => { let al, be, ga; do { al = 5 * r.int(7, 16); be = 5 * r.int(7, 20); ga = 180 - al - be; } while (ga < 30 || al === be || be === ga || al === ga || ga === 90);
+    const K = r.pick(SIM_K), k = kVal(K), pick = r.int(0, 2), A = [al, be, ga], giv = [0, 1, 2].filter(n => n !== pick), small = triFromAngles(al, be, 6), big = bigCopy(small, k);
+    // one known angle on each triangle (sometimes both on ABC), x on PQR
+    const onBoth = r.chance(.5), sa = [0, 1, 2].map(n => n === giv[0] || (n === giv[1] && !onBoth) ? A[n] + "°" : ""), ba = [0, 1, 2].map(n => n === pick ? "x" : n === giv[1] && onBoth ? A[n] + "°" : "");
+    const q = `Triangle PQR is an enlargement of triangle ABC with scale factor ${fmt(k)} (A → P, B → Q, C → R). Find the angle marked x at ${BIGC[pick]}.`;
+    return numWhy(q, A[pick], "Enlarging a shape changes its size but not its angles. Matching angles are equal.",
+      [`∠${CORNER[giv[0]]} = ∠${BIGC[giv[0]]} = ${A[giv[0]]}° and ∠${CORNER[giv[1]]} = ∠${BIGC[giv[1]]} = ${A[giv[1]]}° (matching angles are equal)`, `Angles in a triangle add up to 180°: x = 180° − ${A[giv[0]]}° − ${A[giv[1]]}° = ${A[pick]}°`],
+      [[A[pick] * k, `Angles don't grow in an enlargement. Only the lengths are multiplied by ${fmt(k)}; the shape (and every angle) stays the same.`], [A[giv[0]], `${A[giv[0]]}° belongs at ${CORNER[giv[0]]} and ${BIGC[giv[0]]}. x is at ${BIGC[pick]}, which matches ${CORNER[pick]}.`],
+       [A[giv[1]], `${A[giv[1]]}° is the angle at ${BIGC[giv[1]]}. Use the angle sum of a triangle to find the third angle.`], [A[giv[0]] + A[giv[1]], "That adds the two known angles. Take them away from 180° instead."]],
+      { pic: svgTwins("Similar triangles", [{ P: small, names: CORNER, angs: sa }, { P: big, names: BIGC, angs: ba }], "similar triangles", k > SIM_DRAW ? "Not drawn to scale" : ""), uid: `sim|angle|${al},${be}|${K}|${pick}|${onBoth}`, data: { sim: "angle", A, K, pick, giv, onBoth } }); },
+  // congruent triangles: the same size and shape, matched by the order of the letters (the copy may be turned or flipped)
+  cong: r => { const rot = r.pick([0, 90, 180, 270, 60, 300]), flip = r.chance(.4);
+    if (r.chance(.6)) { const s = r.pick(SIM_TRI), j = r.int(0, 2), P = triFromSides(s), Q = shift(turnPts(P, rot, flip), 0); const Qs = shift(Q, Math.max(...P.map(p => p[0])) + 2.2);
+      const lab = s.map(cm), other = [0, 1, 2].filter(n => n !== j);
+      return mcqWhy(r, `Triangle ABC is congruent to triangle PQR (A → P, B → Q, C → R). The copy has been ${flip ? "flipped over and " : ""}turned. How long is ${BIG[j]}?`, cm(s[j]), `${BIG[j]} matches ${SIDE[j]} (the same letter positions), and congruent shapes are exactly the same size, so ${BIG[j]} = ${SIDE[j]} = ${cm(s[j])}.`,
+        other.map(n => [cm(s[n]), `${cm(s[n])} is ${SIDE[n]}, which matches ${BIG[n]}, not ${BIG[j]}. Match the letters in order: A → P, B → Q, C → R.`]).concat([[cm(2 * s[j]), "Congruent triangles are exactly the same size, so no side is doubled."], [cm(s[j] + 1), `Congruent sides are exactly equal, so ${BIG[j]} is the same as ${SIDE[j]}, not 1 cm more.`]]),
+        "Turning or flipping a shape doesn't change its sides. Match the letters in the same order.", [`Triangle ABC ≅ triangle PQR, so ${SIDE[j]} matches ${BIG[j]}.`, `${BIG[j]} = ${SIDE[j]} = ${cm(s[j])}`],
+        { pic: svgTwins("Congruent triangles", [{ P, names: CORNER, sides: lab }, { P: Qs, names: BIGC, sides: [0, 1, 2].map(n => n === j ? "x" : "") }]), uid: `sim|cong|${s}|${j}|${rot}|${flip}`, data: { sim: "cong", k: "side", s, j, rot, flip } }); }
+    let al, be, ga; do { al = 5 * r.int(7, 16); be = 5 * r.int(7, 20); ga = 180 - al - be; } while (ga < 30 || al === be || be === ga || al === ga || ga === 90);
+    const A = [al, be, ga], pick = r.int(0, 2), giv = [0, 1, 2].filter(n => n !== pick), P = triFromAngles(al, be, 6), Qs = shift(turnPts(P, rot, flip), Math.max(...P.map(p => p[0])) + 2.2);
+    return mcqWhy(r, `Triangle ABC is congruent to triangle PQR (A → P, B → Q, C → R). ∠${CORNER[giv[0]]} = ${A[giv[0]]}° and ∠${CORNER[giv[1]]} = ${A[giv[1]]}°. What is ∠${BIGC[pick]}?`, A[pick] + "°", `∠${BIGC[pick]} matches ∠${CORNER[pick]}, the third angle of ABC: 180° − ${A[giv[0]]}° − ${A[giv[1]]}° = ${A[pick]}°.`,
+      [[A[giv[0]] + "°", `${A[giv[0]]}° is ∠${CORNER[giv[0]]}, which matches ∠${BIGC[giv[0]]}, not ∠${BIGC[pick]}.`], [A[giv[1]] + "°", `${A[giv[1]]}° is ∠${CORNER[giv[1]]}, which matches ∠${BIGC[giv[1]]}, not ∠${BIGC[pick]}.`],
+       [(A[giv[0]] + A[giv[1]]) + "°", "That adds the two angles you know. The third angle is what is left from 180°."], [(180 - A[giv[0]]) + "°", "That only takes one angle from 180°. Take both known angles away."]],
+      "Matching angles of congruent triangles are equal. Angles in a triangle add up to 180°.", [`∠${BIGC[pick]} matches ∠${CORNER[pick]}.`, `∠${CORNER[pick]} = 180° − ${A[giv[0]]}° − ${A[giv[1]]}° = ${A[pick]}°`],
+      { pic: svgTwins("Congruent triangles", [{ P, names: CORNER }, { P: Qs, names: BIGC, angs: [0, 1, 2].map(n => n === pick ? "x" : "") }]), uid: `sim|congA|${al},${be}|${pick}|${rot}|${flip}`, data: { sim: "cong", k: "angle", A, pick, rot, flip } }); },
+  // similar rectangles: an enlargement multiplies both sides by the same number
+  rect: r => { const K = r.pick([[2, 1], [3, 1], [4, 1], [3, 2], [5, 2]]), k = kVal(K); let a, b; do { a = r.int(2, 7) * K[1]; b = r.int(3, 10) * K[1]; } while (b <= a || b % a === 0 && b / a > 2);
+    const what = r.pick([["Princess Mira's photo", "Photo"], ["A postcard of the castle", "Postcard"], ["A trading card of a baby dragon", "Card"], ["A sticker for the school fun fair", "Sticker"]]), A = a * k, B = b * k, d = A - a, sz = (x, y) => `${fmt(x)} cm by ${fmt(y)} cm`;
+    const ok = (x, y) => x * b !== y * a, wrong = [[sz(a + d, b + d), `Adding ${fmt(d)} cm to both sides changes the shape: the short side grows by a bigger share than the long side.`],
+      [sz(A, b), "Only one side was enlarged, so the copy is squashed. Both sides must be multiplied by the same number."], [sz(A, B + K[0]), `${fmt(A)} ÷ ${a} = ${fmt(k)} but ${fmt(B + K[0])} ÷ ${b} isn't, so the sides weren't multiplied by the same number.`],
+      [sz(a * (k + 1), B), `The two sides were multiplied by different numbers (${fmt(k + 1)} and ${fmt(k)}), so the shape changes.`], [sz(A + 1, B - 1), "Check: new ÷ old must be the same for both sides. Here it isn't."]].filter(([o]) => { const m = o.match(/[\d.]+/g).map(Number); return ok(m[0], m[1]); });
+    return mcqWhy(r, `${what[0]} is ${sz(a, b)}. Which enlargement is similar to it (the same shape)?`, sz(A, B), `${fmt(A)} ÷ ${a} = ${fmt(k)} and ${fmt(B)} ÷ ${b} = ${fmt(k)}: both sides are multiplied by the same scale factor, ${fmt(k)}.`, wrong,
+      "Similar rectangles: both sides are multiplied by the same scale factor.", [`Check each choice: new short side ÷ ${a} and new long side ÷ ${b} must give the same number.`, `${fmt(A)} ÷ ${a} = ${fmt(k)} and ${fmt(B)} ÷ ${b} = ${fmt(k)} ✓`],
+      { pic: svgRect(what[1], b, a, { w: cm(b), h: cm(a) }), uid: `sim|rect|${a},${b}|${K}`, data: { sim: "rect", a, b, K } }); },
+  // scale drawings: a map scale 1 : n (map cm → real km, or back) and a scale model 1 : n (model cm → real m)
+  map: r => { const t = r.pick(["toKm", "toKm", "toCm", "model"]);
+    if (t === "model") { const n = r.pick([20, 25, 50, 100, 200]), h = r.int(4, 30) * (n === 25 ? 4 : n === 20 ? 5 : 1), v = h * n / 100, what = r.pick(["castle tower", "Ferris wheel", "pirate ship", "lighthouse", "dragon statue"]);
+      return numWhy(`A model of the ${what} is built to a scale of 1 : ${n}. The model is ${h} cm tall. How tall is the real ${what}, in metres?`, v, `Every 1 cm on the model is ${n} cm in real life. Then change cm into m.`, [`Real height $= ${h} \\times ${n} = ${grp(h * n)}$ cm`, `$${grp(h * n)} \\text{ cm} \\div 100 = ${fmt(v)}$ m`],
+        [[h * n, `${grp(h * n)} is the real height in cm. The question wants metres: divide by 100.`], [h / n, "The real one is bigger than the model, so multiply by the scale, don't divide."], [h * n / 1000, "There are 100 cm in 1 m, not 1 000."]], { keys: ["."], data: { sim: "map", k: t, n, h } }); }
+    const n = r.pick([10000, 20000, 25000, 50000, 100000, 200000]), place = r.pick([["Castle", "Lake"], ["Village", "Tower"], ["Bakery", "Forest"], ["Harbour", "Lighthouse"], ["School", "Zoo"]]);
+    const say = `1 : ${grp(n)}`, d = t === "toKm" ? r.int(2, 12) + (r.chance(.25) ? .5 : 0) : 0;
+    if (t === "toKm") { const v = d * n / 100000;
+      return numWhy(`On a map of the kingdom with a scale of ${say}, the ${place[0]} and the ${place[1]} are ${fmt(d)} cm apart. What is the real distance in km?`, v, `1 cm on the map is ${grp(n)} cm in real life. 1 km = 100 000 cm.`, [`Real distance $= ${fmt(d)} \\times ${grp(n)} = ${grp(d * n)}$ cm`, `$${grp(d * n)} \\div 100\\,000 = ${fmt(v)}$ km`],
+        [[d * n, `${grp(d * n)} is the distance in cm. Change it to km: divide by 100 000.`], [d * n / 100, `${grp(d * n / 100)} is the distance in metres. There are 1 000 m in 1 km, so divide again.`], [d * n / 1000, "1 km is 100 000 cm (100 cm × 1 000 m), not 1 000 cm."], [d / n, "The real distance is much longer than the map, so multiply by the scale."]],
+        { keys: ["."], pic: svgMap("Map of the kingdom", d, place[0], place[1], `Scale ${say}`), uid: `sim|map|${n}|${d}|${place[0]}`, data: { sim: "map", k: t, n, d } }); }
+    const v = r.int(1, 12) * r.pick([1, 2]), km = +fmt(v * n / 100000);
+    return numWhy(`On a map with a scale of ${say}, how far apart will two places that are really ${fmt(km)} km apart be drawn, in cm?`, v, `Change the km into cm first (× 100 000), then divide by ${grp(n)}.`, [`$${fmt(km)}$ km $= ${grp(km * 100000)}$ cm`, `Map distance $= ${grp(km * 100000)} \\div ${grp(n)} = ${fmt(v)}$ cm`],
+      [[km * 1000 / n, "That changes km into metres only. To get cm, 1 km = 100 000 cm."], [km * n, "The map is much smaller than real life, so divide by the scale, don't multiply."], [km * 10000 / n, "1 km is 100 000 cm, not 10 000 cm."], [km * 100000, `That is the real distance in cm. Divide by ${grp(n)} to shrink it onto the map.`]],
+      { keys: ["."], data: { sim: "map", k: t, n, km } }); }
+};
+topic(8, "similar", "Scale-Model Studio", "🗺️", "Congruent and similar shapes, scale drawings and maps", r => {
+  const k = r.pick(["side", "side", "side", "k", "k", "angle", "angle", "cong", "cong", "cong", "rect", "rect", "map", "map", "map"]);
+  return SIM[k](r);
 });
 topic(8, "gradient", "Gradient Hills", "⛰️", "Gradient and straight lines", r => {
   const t = r.int(0, 2);
