@@ -1,7 +1,7 @@
 /* 🔢 Number Kingdom topics, Grades 1–4 (Singapore Primary 1–4). Each gen(r) gets a seeded rng and returns a question. */
 (function () {
 const M = (typeof module !== "undefined" && module.exports) ? require("./math-gen.js") : window.MathGen;
-const { Q, num, mcq, T, NAMES, THINGS, COUNT_EMOJI, PASTEL, svgBox, figKey, cellKey, hasCell, nearCells, gridPaper, gridCell, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, svgBars, svgLine, table, coin, emojiRows, colAdd, colSub, topic, gcd, lcm, rd, fmt, money, simp, fracTex, fracStr, mixedTex } = M._internal;
+const { Q, num, mcq, T, NAMES, THINGS, COUNT_EMOJI, PASTEL, svgBox, figKey, cellKey, hasCell, nearCells, gridSheet, gridCell, LINE, INK, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, svgBars, svgLine, table, coin, emojiRows, colAdd, colSub, topic, gcd, lcm, rd, fmt, money, simp, fracTex, fracStr, mixedTex } = M._internal;
 const ord = k => k + (k % 100 >= 11 && k % 100 <= 13 ? "th" : ["th", "st", "nd", "rd"][k % 10] || "th");
 
 /* ---------- 📊 data analysis (MOE: P1 picture graphs, P2 picture graphs with scales, P3 bar graphs, P4 tables + line graphs) ---------- */
@@ -231,6 +231,123 @@ topic(3, "perim", "Fence the Garden", "🌷", "Perimeter of rectangles and squar
   const sq = r.chance(.3), l = r.int(3, 25), w = sq ? l : r.int(2, l - 1);
   return num(`The fairy garden is a ${sq ? `square with sides of ${l} m` : `rectangle ${l} m long and ${w} m wide`}. How many metres of fence go all around it?`, 2 * (l + w), "Perimeter = the total length of all the sides.", [sq ? `4 × ${l} = ${4 * l} m` : `${l} + ${w} + ${l} + ${w} = ${2 * (l + w)} m`], { data: { l, w } });
 });
+/* ---------- 🚇 parallel and perpendicular lines (MOE P3 geometry: right angles, angles bigger or smaller than a right angle,
+   perpendicular and parallel lines on a square grid) ----------
+   Lines join dots on squared paper (a point is [x, y], 0–8 across, 0–6 down). Two directions are parallel when their cross
+   product is 0 and perpendicular when their dot product is 0, so every answer is worked out from the drawn points. */
+const RL = { W: 8, H: 6, S: 16, pad: 12 }; // the wide pad leaves room for corner letters
+const RL_DIRS = [[1, 0], [0, 1], [1, 1], [1, -1], [2, 1], [1, 2], [2, -1], [1, -2]];
+const vsub = (p, q) => [p[0] - q[0], p[1] - q[1]], vadd = (p, d, k = 1) => [p[0] + d[0] * k, p[1] + d[1] * k];
+const vdot = (a, b) => a[0] * b[0] + a[1] * b[1], vcross = (a, b) => a[0] * b[1] - a[1] * b[0], rot90 = ([x, y]) => [-y, x];
+const onPaper = ([x, y]) => x >= 0 && x <= RL.W && y >= 0 && y <= RL.H;
+// a slanted pair is clearly slanted: between 25° and 65° apart (cos² between about 0.18 and 0.82), never nearly parallel or nearly square
+const clearSlant = (d, e) => { const c2 = vdot(d, e) ** 2 / (vdot(d, d) * vdot(e, e)); return c2 > 0.18 && c2 < 0.82; };
+const relate = (d, e) => vcross(d, e) === 0 ? "parallel" : vdot(d, e) === 0 ? "perpendicular" : "neither";
+// do two segments touch or cross? (lattice points, exact integer test)
+const orient = (a, b, c) => Math.sign(vcross(vsub(b, a), vsub(c, a)));
+const onSeg = (a, b, c) => Math.min(a[0], b[0]) <= c[0] && c[0] <= Math.max(a[0], b[0]) && Math.min(a[1], b[1]) <= c[1] && c[1] <= Math.max(a[1], b[1]);
+const touch = ([a, b], [c, d]) => { const o1 = orient(a, b, c), o2 = orient(a, b, d), o3 = orient(c, d, a), o4 = orient(c, d, b);
+  if (o1 !== o2 && o3 !== o4) return true; return (!o1 && onSeg(a, b, c)) || (!o2 && onSeg(a, b, d)) || (!o3 && onSeg(c, d, a)) || (!o4 && onSeg(c, d, b)); };
+const PX = v => RL.pad + v * RL.S;
+const RIBBONS = ["#ff8fb3", "#7cc4f0", "#8fdcb0", "#b79cf2", "#f7c45c"];
+const svgLines = (segs, o = {}) => { let g = "";
+  segs.forEach(([p, q], i) => { const c = o.colors ? o.colors[i] : RIBBONS[i % RIBBONS.length];
+    g += `<line class="rl" x1="${PX(p[0])}" y1="${PX(p[1])}" x2="${PX(q[0])}" y2="${PX(q[1])}" stroke="${c}" stroke-width="4.5" stroke-linecap="round"/>`
+      + [p, q].map(([x, y]) => `<circle cx="${PX(x)}" cy="${PX(y)}" r="2.6" fill="#fff" stroke="${c}" stroke-width="1.6"/>`).join(""); });
+  return gridSheet(RL.W, RL.H, RL.S, RL.pad, g, o.label || "lines on squared paper", o.small ? 1.1 : 1.7, "mpic symgrid rlpic"); };
+// a lettered shape on squared paper; o.side = [i, j] draws that side as a thick ribbon
+const svgShapeGrid = (pts, o = {}) => { const n = pts.length;
+  let g = `<polygon class="rpoly" points="${pts.map(([x, y]) => PX(x) + "," + PX(y)).join(" ")}" fill="${o.fill || "#FFE3EE"}" stroke="${LINE}" stroke-width="2.2" stroke-linejoin="round"/>`;
+  if (o.side) { const [p, q] = o.side.map(i => pts[i]); g += `<line class="rside" x1="${PX(p[0])}" y1="${PX(p[1])}" x2="${PX(q[0])}" y2="${PX(q[1])}" stroke="#ff6f91" stroke-width="4" stroke-linecap="round"/>`; }
+  // each letter sits just outside its corner, along the corner's bisector (pointing out of the shape, also at a dent)
+  const area = pts.reduce((a, p, i) => a + vcross(p, pts[(i + 1) % n]), 0), unit = ([x, y]) => { const L = Math.hypot(x, y) || 1; return [x / L, y / L]; };
+  pts.forEach((v, i) => { const a = unit(vsub(pts[(i + n - 1) % n], v)), b = unit(vsub(pts[(i + 1) % n], v)), dent = Math.sign(vcross(vsub(v, pts[(i + n - 1) % n]), vsub(pts[(i + 1) % n], v))) !== Math.sign(area);
+    let [dx, dy] = unit([a[0] + b[0], a[1] + b[1]]); if (!dent) { dx = -dx; dy = -dy; }
+    g += `<text class="rlab" x="${(PX(v[0]) + 8 * dx).toFixed(1)}" y="${(PX(v[1]) + 8 * dy + 3.5).toFixed(1)}" font-size="10" text-anchor="middle" font-weight="900" fill="${INK}">${"ABCDEF"[i]}</text>`; });
+  return gridSheet(RL.W, RL.H, RL.S, RL.pad, g, o.label || "a lettered shape on squared paper", 1.7, "mpic symgrid rlpic"); };
+// a segment from p in direction d, k steps long, that stays on the paper
+const seg = (r, d, k = r.int(1, 3)) => { for (let i = 0; i < 40; i++) { const p = [r.int(0, RL.W), r.int(0, RL.H)], q = vadd(p, d, k); if (onPaper(q)) return [p, q]; } return null; };
+const pickDir = (r, ok = () => true) => r.pick(RL_DIRS.filter(ok));
+// a pair of lines of one kind: parallel, perpendicular (they meet), or neither (meeting at a slant, or apart)
+const linePair = (r, kind) => { for (let tries = 0; tries < 200; tries++) {
+  const d = pickDir(r), s1 = seg(r, d, r.int(2, 4)); if (!s1) continue;
+  if (kind === "parallel") { const s2 = seg(r, r.chance(.5) ? d : [-d[0], -d[1]], r.int(2, 4)); if (!s2 || touch(s1, s2) || vcross(d, vsub(s2[0], s1[0])) ** 2 < vdot(d, d)) continue; return [s1, s2]; } // never on one line, and at least a square apart
+  const steps = Math.round(Math.max(Math.abs(s1[1][0] - s1[0][0]), Math.abs(s1[1][1] - s1[0][1])) / Math.max(Math.abs(d[0]), Math.abs(d[1]))), m = vadd(s1[0], d, r.int(0, steps));
+  let e = kind === "perpendicular" ? rot90(d) : pickDir(r, x => clearSlant(d, x)); if (r.chance(.5)) e = [-e[0], -e[1]];
+  const back = kind === "apart" ? 0 : r.int(0, 2), fwd = r.int(2, 3), a = vadd(m, e, -back), b = vadd(m, e, fwd);
+  if (kind === "apart") { const a2 = vadd(a, e, 1), b2 = vadd(b, e, 1); if (!onPaper(a2) || !onPaper(b2) || touch(s1, [a2, b2])) continue; return [s1, [a2, b2]]; }
+  if (!onPaper(a) || !onPaper(b)) continue; return [s1, [a, b]];
+} return null; };
+const dirOf = ([p, q]) => vsub(q, p);
+const RL_WHO = [["Conductor Bun", "train track"], ["Fairy Pip", "ribbon"], ["Rapunzel", "rope"], ["the Gingerbread Baker", "icing line"], ["Jack", "kite string"], ["Sumi the star fairy", "star trail"]];
+const RL_SHAPES = [ // [name, vertices] — every one is drawn on the grid, then moved and maybe flipped
+  ["rectangle", [[0, 0], [5, 0], [5, 3], [0, 3]]], ["square", [[0, 0], [3, 0], [3, 3], [0, 3]]], ["tilted square", [[2, 0], [4, 2], [2, 4], [0, 2]]],
+  ["tilted rectangle", [[2, 0], [5, 3], [3, 5], [0, 2]]], ["trapezium", [[0, 0], [6, 0], [4, 3], [1, 3]]], ["right-angled trapezium", [[0, 0], [5, 0], [3, 3], [0, 3]]],
+  ["parallelogram", [[0, 0], [4, 0], [6, 3], [2, 3]]], ["kite shape", [[2, 0], [4, 1], [2, 5], [0, 1]]], ["house shape", [[0, 2], [2, 0], [4, 2], [4, 5], [0, 5]]],
+  ["L-shape", [[0, 0], [2, 0], [2, 3], [5, 3], [5, 5], [0, 5]]], ["step shape", [[0, 0], [3, 0], [3, 2], [5, 2], [5, 4], [0, 4]]]
+];
+const RL_THINGS = ["flower bed in the fairy garden", "gingerbread cookie", "window in Rapunzel's tower", "picture frame in the castle", "sandpit at the dragon playground"];
+const placeShape = (r, pts) => { const flip = r.chance(.5), P = pts.map(([x, y]) => flip ? [-x, y] : [x, y]), mx = Math.min(...P.map(p => p[0])), my = Math.min(...P.map(p => p[1]));
+  const w = Math.max(...P.map(p => p[0])) - mx, h = Math.max(...P.map(p => p[1])) - my, ox = r.int(0, RL.W - w) - mx, oy = r.int(0, RL.H - h) - my; return P.map(([x, y]) => [x + ox, y + oy]); };
+const sidesOf = pts => pts.map((p, i) => [i, (i + 1) % pts.length]);
+const sideName = ([i, j]) => "ABCDEF"[i] + "ABCDEF"[j];
+const sideDir = (pts, [i, j]) => vsub(pts[j], pts[i]);
+// interior right angles: the corner turns the same way as the shape (not a dent) and its two sides are perpendicular
+const rightCorners = pts => { const n = pts.length, area = pts.reduce((a, p, i) => a + vcross(p, pts[(i + 1) % n]), 0);
+  return pts.map((v, i) => { const u = pts[(i + n - 1) % n], w = pts[(i + 1) % n]; return vdot(vsub(u, v), vsub(w, v)) === 0 && Math.sign(vcross(vsub(v, u), vsub(w, v))) === Math.sign(area); }); };
+const CHECK = "Use the corner of a page (a right angle) as a checker. Perpendicular lines meet at a right angle; parallel lines go the same way and never meet, however long you make them.";
+topic(3, "lines", "Train-Track Lines", "🚇", "Right angles, perpendicular and parallel lines", r => {
+  const t = r.int(0, 6), [whoL, thing] = r.pick(RL_WHO), who = whoL[0].toUpperCase() + whoL.slice(1);
+  if (t === 0) { // parallel, perpendicular or neither?
+    const kind = r.pick(["parallel", "perpendicular", "parallel", "perpendicular", "neither", "apart"]), pair = linePair(r, kind); if (!pair) return topic3lines(r);
+    const rel = relate(dirOf(pair[0]), dirOf(pair[1])), ans = rel === "parallel" ? "Parallel" : rel === "perpendicular" ? "Perpendicular" : "Neither";
+    return mcq(r, `${who} drew these two ${thing}s on squared paper. Are they parallel, perpendicular or neither?`, ans, ["Parallel", "Perpendicular", "Neither"].filter(x => x !== ans), CHECK,
+      rel === "parallel" ? ["Both lines go the same number of squares across for each square up or down.", "They go the same way and never meet, so they are parallel."]
+        : rel === "perpendicular" ? ["Where the lines meet, put the corner of a page there: it fits exactly.", "They meet at a right angle, so they are perpendicular."]
+          : ["The lines do not go the same way, so they are not parallel.", kind === "apart" ? "If you made them longer they would meet, but not at a right angle, so they are not perpendicular either." : "They meet, but the corner of a page does not fit the angle, so they are not perpendicular."],
+      { pic: svgLines(pair), uid: "l0" + JSON.stringify(pair), data: { lines: "which", rel, segs: pair } });
+  }
+  if (t === 1 || t === 2) { // pick the picture with parallel / perpendicular lines
+    const want = t === 1 ? "parallel" : "perpendicular", kinds = r.shuffle(["parallel", "perpendicular", "neither", "apart"].filter(k => k !== want)).slice(0, 2);
+    const pairs = [linePair(r, want), ...kinds.map(k => linePair(r, k))]; if (pairs.some(p => !p)) return topic3lines(r);
+    const ids = ["f1", "f2", "f3"], optPics = {}; pairs.forEach((p, i) => { optPics[ids[i]] = svgLines(p, { small: true }); });
+    return mcq(r, `${who} drew three pairs of ${thing}s. In which picture are the two lines <b>${want}</b>?`, "f1", ["f2", "f3"], want === "parallel" ? "Parallel lines go the same way and never meet." : "Perpendicular lines meet at a right angle, like the corner of a page.",
+      want === "parallel" ? ["In the right picture both lines slope the same way, so they would never meet.", "In the others the lines meet, or would meet if you made them longer."] : ["In the right picture the corner of a page fits exactly where the lines meet.", "In the others the lines never meet, or meet at a slant."],
+      { optPics, uid: "l" + t + JSON.stringify(pairs), data: { lines: "pick", want, pairs } });
+  }
+  const [shape, base] = r.pick(RL_SHAPES), pts = placeShape(r, base), sides = sidesOf(pts), fill = r.pick(["#FFE3EE", "#E1F1FF", "#E3F7EA", "#EFE7FF", "#FFF3D1"]);
+  if (t === 3 || t === 4) { // which side is parallel / perpendicular to the ribbon side?
+    const want = t === 3 ? "parallel" : "perpendicular", cands = r.shuffle(sides.slice());
+    for (const s of cands) {
+      const others = sides.filter(x => x !== s), yes = others.filter(x => relate(sideDir(pts, s), sideDir(pts, x)) === want), no = others.filter(x => !yes.includes(x));
+      if (!yes.length || no.length < 2) continue;
+      const right = r.pick(yes);
+      return mcq(r, `Look at this ${r.pick(RL_THINGS)} on squared paper. Which side is <b>${want}</b> to side ${sideName(s)} (the pink side)?`, sideName(right), r.shuffle(no).slice(0, 3).map(sideName),
+        want === "parallel" ? "Find the side that goes the same way as the pink side, so they would never meet." : "Find the side that meets the pink side (or would meet it) at a right angle.",
+        want === "parallel" ? [`Side ${sideName(right)} goes the same way as side ${sideName(s)}: they never meet.`, "So they are parallel."] : [`Side ${sideName(right)} and side ${sideName(s)} make a right angle: the corner of a page fits.`, "So they are perpendicular."],
+        { pic: svgShapeGrid(pts, { side: s, fill }), uid: "l" + t + JSON.stringify(pts) + s, data: { lines: "side", want, pts, side: s } });
+    }
+    return topic3lines(r);
+  }
+  if (t === 5) { // how many right angles inside the shape?
+    const n = rightCorners(pts).filter(Boolean).length;
+    return num(`How many right angles are there inside this shape?`, n, "Check every corner with the corner of a page. Only corners where it fits exactly are right angles.",
+      [n ? `${n} corner${n > 1 ? "s are" : " is"} exactly like the corner of a page.` : "No corner fits the corner of a page exactly.", `So the shape has ${n} right angle${n === 1 ? "" : "s"}.`],
+      { pic: svgShapeGrid(pts, { fill }), uid: "l5" + JSON.stringify(pts), data: { lines: "right", pts, n } });
+  }
+  // t === 6: is the angle a right angle, smaller or bigger?
+  for (let i = 0; i < 60; i++) {
+    const d1 = pickDir(r), d2 = r.chance(.3) ? rot90(d1) : pickDir(r, x => clearSlant(x, d1)), e2 = r.chance(.5) ? d2 : [-d2[0], -d2[1]], v = [r.int(2, 6), r.int(2, 4)], k1 = r.int(1, 2), k2 = r.int(1, 2);
+    const a = vadd(v, d1, k1), b = vadd(v, e2, k2); if (!onPaper(a) || !onPaper(b)) continue;
+    const dt = vdot(d1, e2), ans = dt === 0 ? "A right angle" : dt > 0 ? "Smaller than a right angle" : "Bigger than a right angle";
+    return mcq(r, `${who}'s fan opens to the angle between these two lines. What kind of angle is it?`, ans, ["A right angle", "Smaller than a right angle", "Bigger than a right angle"].filter(x => x !== ans),
+      "Put the corner of a page into the angle. Does it fit exactly, leave a gap, or not fit inside?",
+      [dt === 0 ? "The corner of a page fits exactly." : dt > 0 ? "The angle is narrower than the corner of a page, so the page does not fit inside." : "The angle is wider than the corner of a page: there is a gap left over.", `It is ${ans.toLowerCase()}.`],
+      { pic: svgLines([[v, a], [v, b]], { colors: ["#ff8fb3", "#ff8fb3"] }), uid: "l6" + JSON.stringify([v, a, b]), data: { lines: "angle", v, a, b, dt } });
+  }
+  return topic3lines(r);
+});
+const topic3lines = r => M.topic("g3.lines").gen(r);
 topic(3, "bargraph", "Bar Graph Bakery", "📊", "Read bar graphs with a scale", r => {
   const th = graphTheme(r, r.int(4, 5)), step = r.pick([2, 5, 10]), top = r.int(8, 10), vals = distinct(r, th.cats.length, 1, top).map(n => n * step);
   return graphQ(r, th, vals, svgBars(th.title, `number of ${th.unit}`, th.cats, vals, top * step, step),
@@ -309,12 +426,11 @@ const breakFig = (r, cells) => { const right = cells.filter(c => c[0] >= 4), gon
   return spots.length ? rest.concat([r.pick(spots)]) : null; };
 const SY_FILL = PASTEL.slice(0, 5);
 const svgSym = (cells, across, o = {}) => { const { N, M, S } = SY, W = across ? M : N, H = across ? N : M, xy = ([a, b]) => across ? [b, a] : [a, b], pad = 4;
-  let g = gridPaper(W, H, S, pad);
+  let g = "";
   for (const c of cells) { const [x, y] = xy(c); g += gridCell(x, y, S, pad, o.fill || "#FFB8D1", "syc"); }
   const m = pad + 4 * S; g += across ? `<line class="mline" x1="${pad - 3}" y1="${m}" x2="${pad + W * S + 3}" y2="${m}" stroke="#ff6f91" stroke-width="2.5" stroke-dasharray="5 4" stroke-linecap="round"/>`
     : `<line class="mline" x1="${m}" y1="${pad - 3}" x2="${m}" y2="${pad + H * S + 3}" stroke="#ff6f91" stroke-width="2.5" stroke-dasharray="5 4" stroke-linecap="round"/>`;
-  const w = W * S + 2 * pad, h = H * S + 2 * pad, k = o.small ? 1.15 : 1.7;
-  return svgBox(g, o.label || "figure on a square grid with a dashed line", Math.round(w * k), Math.round(h * k), `0 0 ${w} ${h}`, "mpic symgrid");
+  return gridSheet(W, H, S, pad, g, o.label || "figure on a square grid with a dashed line", o.small ? 1.15 : 1.7, "mpic symgrid");
 };
 const SYM_WHO = [["Fairy Pip", "tile pattern for the Mirror Pond path"], ["Rapunzel", "window for her tower"], ["the Gingerbread Baker", "cookie design"], ["Princess Mira", "garden bed"], ["Jack", "kite"], ["Sumi the star fairy", "star quilt"]];
 const SYM_LETTERS = { yes: ["A", "H", "M", "O", "T", "U", "V", "W", "X", "Y"], no: ["F", "G", "J", "L", "N", "P", "Q", "R", "S", "Z"] };

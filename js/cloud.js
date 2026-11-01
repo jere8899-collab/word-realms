@@ -54,6 +54,10 @@ C.score = s => {
     + Object.values((s.charms && s.charms.cards) || {}).reduce((a, c) => a + (c && c.b >= 1 ? 2 + c.b : 0), 0)
     + (s.math ? (s.math.correct || 0) * 2 + (s.math.lessons || 0) * 5 + Object.values(s.math.topics || {}).reduce((a, t) => a + WR.crowns(t.best || 0), 0) * 10 + Object.values(s.math.facts || {}).filter(f => f.b >= 3).length * 2 : 0);
 };
+// which save has more progress? score first; on a tie the save with more stars wins (bonus stars from quests,
+// stickers and prizes add no score), and a full tie keeps the cloud copy
+C.cloudWins = (cloud, local) => { const cs = C.score(cloud), ls = C.score(local);
+  return cs !== ls ? cs > ls : ((cloud && cloud.stars) || 0) >= ((local && local.stars) || 0); };
 C.summary = s => s && s.pet ? { name: s.name, stars: s.stars, xp: s.pet.xp || 0, lessons: s.lessonsDone || 0, correct: s.totalCorrect || 0, score: C.score(s) } : null;
 
 /* ---------- status indicator ---------- */
@@ -158,10 +162,9 @@ WR.reset = () => { rawReset(); if (C.user) setMeta({ dirty: true }); };
 /* ---------- conflicts ---------- */
 async function resolveConflict(row, why) {
   const local = WR.state, cloud = row.data;
-  const ls = C.score(local), cs = C.score(cloud);
   if (why === "background" || !local.pet) {
     // quietly keep whichever has more progress
-    if (cs >= ls) { C.apply(cloud, row.updated_at); if (why === "background") WR.toast("☁️ Loaded newer progress from your other device", 2600); }
+    if (C.cloudWins(cloud, local)) { C.apply(cloud, row.updated_at); if (why === "background") WR.toast("☁️ Loaded newer progress from your other device", 2600); }
     else { keepEarn(cloud); await writeRow(WR.state); }
     return;
   }
@@ -172,7 +175,7 @@ async function resolveConflict(row, why) {
   }));
 }
 function chooseSave(local, row, done) {
-  const a = C.summary(local), b = C.summary(row.data), best = (b && b.score) >= (a && a.score) ? "cloud" : "local";
+  const a = C.summary(local), b = C.summary(row.data), best = C.cloudWins(row.data, local) ? "cloud" : "local";
   const card = (k, s, title, ic) => `<button class="card cc-pick ${best === k ? "best" : ""}" data-pick="${k}">${best === k ? '<span class="cc-best">More progress ✨</span>' : ""}<div class="cc-pick-ic">${ic}</div><b>${title}</b>
     ${s ? `<div class="cc-pick-nm">${WR.esc(s.name || "")}</div><div class="cc-stats"><span>⭐ ${s.stars}</span><span>✅ ${s.correct}</span><span>📚 ${s.lessons}</span><span>🐾 ${s.xp} XP</span></div>` : '<div class="muted">empty</div>'}</button>`;
   const when = row.updated_at ? new Date(row.updated_at).toLocaleString([], { dateStyle: "medium", timeStyle: "short" }) : "";
@@ -262,7 +265,7 @@ C.resume = async () => {
     C.user = data.session.user; C.username = (C.user.user_metadata && C.user.user_metadata.username) || m.username;
     const row = await fetchRow();
     if (row && newer(row.updated_at, m.synced)) {
-      if (!m.dirty || C.score(row.data) >= C.score(WR.state)) C.apply(row.data, row.updated_at); else { keepEarn(row.data); await writeRow(WR.state); }
+      if (!m.dirty || C.cloudWins(row.data, WR.state)) C.apply(row.data, row.updated_at); else { keepEarn(row.data); await writeRow(WR.state); }
     } else if (m.dirty || !row) await writeRow(WR.state);
     C.setStatus("saved");
   } catch (e) { console.warn("cloud resume", e && e.message); C.setStatus("offline"); }

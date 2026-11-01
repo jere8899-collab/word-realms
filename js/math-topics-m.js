@@ -1,7 +1,7 @@
 /* 🔢 Number Kingdom topics, Grades 5–8 (Singapore Primary 5–6, Secondary 1–2). */
 (function () {
 const M = (typeof module !== "undefined" && module.exports) ? require("./math-gen.js") : window.MathGen;
-const { Q, num, mcq, T, NAMES, topic, PASTEL, INK, LINE, svgBox, cellKey, figKey, hasCell, nearCells, gridPaper, svgPieChart, svgGeo, dirPt, gcd, lcm, rd, fmt, simp, fracTex, fracStr, mixedTex, poly, lin, paren, pm, undo } = M._internal;
+const { Q, num, mcq, T, NAMES, topic, PASTEL, INK, LINE, svgBox, cellKey, figKey, hasCell, nearCells, gridSheet, svgPieChart, svgGeo, dirPt, gcd, lcm, rd, fmt, simp, fracTex, fracStr, mixedTex, poly, lin, paren, pm, undo } = M._internal;
 
 /* ---------- Grade 5 (Primary 5) ---------- */
 topic(5, "fracmul", "Fraction Spells", "✨", "Multiply fractions", r => {
@@ -186,7 +186,7 @@ const joined = cells => { const seen = [cells[0]]; for (let i = 0; i < seen.leng
 const NET_S = 16, NET_PAD = 4;
 // a net on squared paper (W × H squares, figure moved by ox, oy); o.fill / o.extra (a highlighted square) / o.labels (cellKey → letter)
 const svgNet = (cells, o = {}) => { const [w, h] = size(cells), W = o.W || 6, H = o.H || 3, ox = o.ox != null ? o.ox : Math.floor((W - w) / 2), oy = o.oy != null ? o.oy : Math.floor((H - h) / 2), S = NET_S, pad = NET_PAD;
-  let g = gridPaper(W, H, S, pad);
+  let g = "";
   for (const c of cells) { const x = o.extra && cellKey(o.extra) === cellKey(c); // squares touch (one joined piece of card), the outline is drawn on top
     g += `<rect class="ntc${x ? " ntx" : ""}" x="${pad + (c[0] + ox) * S}" y="${pad + (c[1] + oy) * S}" width="${S}" height="${S}" fill="${x ? "#FFE7A8" : o.fill || "#FFB8D1"}"/>`; }
   for (const [a, b] of cells) { const X = pad + (a + ox) * S, Y = pad + (b + oy) * S; // cut lines round the outside
@@ -196,8 +196,7 @@ const svgNet = (cells, o = {}) => { const [w, h] = size(cells), W = o.W || 6, H 
     if (hasCell(cells, [a + 1, b])) g += `<line class="nfold" x1="${X + S}" y1="${Y}" x2="${X + S}" y2="${Y + S}" stroke="${LINE}" stroke-width="1.1" stroke-dasharray="2.5 2"/>`;
     if (hasCell(cells, [a, b + 1])) g += `<line class="nfold" x1="${X}" y1="${Y + S}" x2="${X + S}" y2="${Y + S}" stroke="${LINE}" stroke-width="1.1" stroke-dasharray="2.5 2"/>`; }
   if (o.labels) for (const c of cells) g += `<text class="ntl" x="${pad + (c[0] + ox) * S + S / 2}" y="${pad + (c[1] + oy) * S + S / 2 + 4}" font-size="11" text-anchor="middle" font-weight="900" fill="${INK}">${o.labels[cellKey(c)]}</text>`;
-  const vw = W * S + 2 * pad, vh = H * S + 2 * pad, k = o.small ? 1.3 : 2;
-  return svgBox(g, o.label || "a net of squares on squared paper", Math.round(vw * k), Math.round(vh * k), `0 0 ${vw} ${vh}`, "mpic netpic");
+  return gridSheet(W, H, S, pad, g, o.label || "a net of squares on squared paper", o.small ? 1.3 : 2, "mpic netpic");
 };
 /* nets of other solids, drawn as flat faces (polygons in units), then turned and fitted onto a card */
 const R3 = Math.sqrt(3) / 2;
