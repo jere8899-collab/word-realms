@@ -119,7 +119,7 @@ WR.GapRound = cfg => {
   function bind(it) {
     $("Quit").onclick = () => WR.go(cfg.hub, S.lvl);
     $("Say").onclick = () => WR.say(cfg.sayFirst(it));
-    const nx = $("Next"); if (nx) { nx.onclick = next; return; }
+    const nx = $("Next"); if (nx) { WR.tapOnce(nx, next); return; }
     $("Check").onclick = submit;
     const inp = $("In");
     if (inp) {
@@ -148,10 +148,12 @@ WR.GapRound = cfg => {
     WR.say(cfg.sayDone(it));
   }
   function next() {
+    if (!S || S.fin) return;
     if (S.n + 1 < S.items.length) { S.n++; S.built = []; S.typed = ""; S.tries = 0; S.done = null; S.fb = null; return render(true); }
     finish();
   }
   function finish() {
+    if (!S || S.fin) return; S.fin = true;
     const r = S, rec = st(); rec.rounds++;
     const got = r.right + r.second * 0.5, { crowns, stars } = WR.finishUnit(rec.done, r.bk.id, got, r.items.length, cfg.id);
     const lv = WR.petGainXP ? WR.petGainXP(r.right * 2 + r.second + 2) : null;
@@ -170,7 +172,7 @@ WR.GapRound = cfg => {
     $("Shelf").onclick = () => WR.go(cfg.hub, r.lvl);
   }
   const stop = () => { S = null; };
-  WR.gapGames.push({ id: cfg.id, info: cfg.info, hub: cfg.hub, round: cfg.round, open, stop, tile });
+  WR.gapGames.push({ id: cfg.id, info: cfg.info, hub: cfg.hub, round: cfg.round, open, stop, tile, s: () => S });   // s: the running round (tests)
   WR.addBonus({ data: cfg.id, open: rid => open(rid), tile: rid => tile(rid) });
   return { open, start, stop, s: () => S, tile, unitsDone, crownsAt, all: () => Object.entries(st().done) };
 };

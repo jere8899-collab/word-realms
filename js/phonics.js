@@ -251,14 +251,16 @@ function choose(val, btn) {
   const shown = q.t === "sound" ? `<b>${esc(q.answer)}</b> says “${esc(keyOf(q.answer))}”` : `<b>${esc(q.answer)}</b>` + (q.t === "first" ? ` · ${esc(q.word)} starts with “${esc(sayOf(q.answer))}”` : "");
   WR.$("#phFb").innerHTML = `<div class="story-fb ph-fb ${ok ? "good" : "bad"}"><b>${ok ? "✅ Yes!" : "💭 Not quite."}</b> ${ok ? "Lovely listening!" : "It's " + shown + "."}</div>
     <div class="row" style="justify-content:flex-end;margin-top:10px"><button class="btn" id="phNext">${S.n + 1 < S.qs.length ? "Next →" : "🌟 Finish"}</button></div>`;
-  WR.$("#phNext").onclick = next;
+  WR.tapOnce(WR.$("#phNext"), next);
   speak(ok ? q.answer : "It's " + q.answer);
 }
 function next() {
+  if (!S || S.fin) return;
   if (S.n + 1 < S.qs.length) { S.n++; S.built = []; S.answered = null; return render(true); }
   finish();
 }
 function finish() {
+  if (!S || S.fin) return; S.fin = true;
   const u = S.u; st().rounds++;   // first walk: 1⭐ per right answer + 3⭐ for the step; new crowns 2⭐ each (WR.finishUnit)
   const { crowns, stars } = WR.finishUnit(st().done, u.id, S.right, S.qs.length, "phonics");
   const lv = WR.petGainXP ? WR.petGainXP(S.right * 2 + 2) : null;

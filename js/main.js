@@ -2,7 +2,7 @@
 (function () {
 const WR = window.WR;
 const app = document.getElementById("app");
-let current = "home";
+let current = "home", currentArg;
 WR.view = html => { WR.$("#main").innerHTML = html; window.scrollTo({ top: 0 }); };
 WR.current = () => current;
 WR.renderTop = () => {
@@ -29,8 +29,18 @@ function renderNav() {
 const STOPS = ["stopLesson", "stopSpeaking", "stopWriting", "stopStory", "stopPlacement", "stopMath", "stopPhonics", "stopCharms"];
 WR.go = (screen, arg) => {
   STOPS.forEach(n => WR[n] && WR[n]()); WR.gapGames.forEach(g => g.stop()); WR.Voice.stop();
-  current = screen; WR.navActive(screen === "realm" ? "home" : /^(math|dojo|dojoGrid|clock)$/.test(screen) ? "math" : screen);
+  current = screen; currentArg = arg; WR.navActive(screen === "realm" ? "home" : /^(math|dojo|dojoGrid|clock)$/.test(screen) ? "math" : screen);
   WR.screens[screen](arg); WR.renderTop();
+};
+
+// R5: another tab saved (js/core.js adopted its save): say so softly, and redraw unless a round is being played
+// (a running lesson keeps going and saves on top of the adopted save)
+WR.onOtherTab = () => {
+  if (!WR.realms || !WR.shop || !WR.$("#main")) return;
+  if (!WR.state.pet || !WR.state.name) return WR.restart();
+  WR.toast("🪟 Your adventure was updated in another window — refreshed!", 2400);
+  WR.renderTop();
+  if (!document.body.classList.contains("wr-focus") && !document.querySelector(".modal-bg") && WR.screens[current]) WR.screens[current](currentArg);
 };
 
 /* ---------------- onboarding ---------------- */
@@ -235,7 +245,7 @@ function settings() {
     <label class="set-row"><span>🎙️ Recorded storyteller voice <small class="muted" style="display:block;font-size:.72rem">off = this device's own voice</small></span><input type="checkbox" id="recV" ${s.settings.voice !== "device" ? "checked" : ""}></label>
     <label class="set-row"><span>🐾 Cute pet voice</span><input type="checkbox" id="petV" ${s.settings.petVoice !== false ? "checked" : ""}></label>
     <div class="set-row" style="cursor:default"><span>🗣️ Listening speed</span><input type="range" class="slider" id="rt" min="0.5" max="1.3" step="0.1" value="${s.settings.rate}" aria-label="Listening speed"></div>
-    <div class="row" style="justify-content:center;margin-top:16px"><button class="btn ghost small grownups-btn" id="guBtn">👪 Grown-ups</button><button class="btn ghost small" id="test">🔈 Test voice</button><button class="btn ghost small" id="testPet">🐾 Hear my pet</button><button class="btn ghost small" id="plRe">🪞 Placement quiz</button>${WR.Cloud ? '<button class="btn ghost small" id="ccSet">🏰 Cloud save</button>' : ""}<button class="btn peach small" id="rst">Reset progress</button><button class="btn small" id="cls">Done</button></div>`, (bg, close) => {
+    <div class="row" style="justify-content:center;margin-top:16px"><button class="btn ghost small grownups-btn" id="guBtn">👪 Grown-ups</button><button class="btn ghost small" id="test">🔈 Test voice</button><button class="btn ghost small" id="testPet">🐾 Hear my pet</button><button class="btn ghost small" id="plRe">🪞 Placement quiz</button>${WR.Cloud ? '<button class="btn ghost small" id="ccSet">🏰 Cloud save</button>' : ""}<button class="btn small" id="cls">Done</button></div>`, (bg, close) => {
     bg.querySelector("#snd").onchange = e => { s.settings.sound = e.target.checked; WR.save(); };
     bg.querySelector("#rt").oninput = e => { s.settings.rate = +e.target.value; WR.save(); };
     bg.querySelector("#guBtn").onclick = () => { close(); WR.openGrownups(); };
@@ -243,7 +253,6 @@ function settings() {
     bg.querySelector("#testPet").onclick = () => WR.say("Hi! I'm so happy to see you!", { character: "pet_" + ((s.pet && s.pet.species) || "") });   // preview, even when chatter is off
     bg.querySelector("#recV").onchange = e => { s.settings.voice = e.target.checked ? "recorded" : "device"; WR.save(); };
     bg.querySelector("#petV").onchange = e => { s.settings.petVoice = e.target.checked; WR.save(); };
-    bg.querySelector("#rst").onclick = () => { if (confirm("Reset all progress, stars and your pet?")) { WR.reset(); close(); boot(); } };
     bg.querySelector("#cls").onclick = close;
     bg.querySelector("#heroEdit").onclick = () => { close(); WR.openRename(); };
     bg.querySelector("#plRe").onclick = () => { close(); WR.retakePlacement(); };

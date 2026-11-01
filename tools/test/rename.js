@@ -112,7 +112,8 @@ const shot = (p, n) => p.screenshot({ path: OUT + 'rename_' + n + '.png' });
     ok((await tokenFor(LOGIN, PASS2)).s === 200 && (await tokenFor(LOGIN, PASS)).s === 400, 'new password works, old password no longer does');
     // log out & clear, then log back in on the same device
     p.on('dialog', d => d.accept());
-    await p.click('#ccOutClear'); await p.waitForSelector('.pgate'); await p.evaluate(() => { if (!document.querySelector('.pgate')) return; [...WR.parentGate._answer()].forEach(d => document.querySelector(`.pgate [data-d="${d}"]`).click()); document.getElementById('pgOk').click(); });  // 👪 grown-up gate (T19) await p.waitForTimeout(1500);
+    await p.click('#ccOutClear'); await p.waitForSelector('.pgate'); await p.evaluate(() => { if (!document.querySelector('.pgate')) return; [...WR.parentGate._answer()].forEach(d => document.querySelector(`.pgate [data-d="${d}"]`).click()); document.getElementById('pgOk').click(); });  // 👪 grown-up gate (T19)
+    await p.waitForFunction(() => !WR.state.pet, null, { timeout: 15000 }).catch(() => {}); await p.waitForTimeout(300);
     await p.reload({ waitUntil: 'networkidle' });
     ok(await p.evaluate(() => !WR.state.pet), 'device cleared after logging out');
     await p.click('#ccOnb'); await p.waitForSelector('#ccForm');

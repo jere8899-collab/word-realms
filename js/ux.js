@@ -50,6 +50,53 @@ if (window.visualViewport) {
     if (shrunk) body.classList.add("kbd-open"); else if (!typing(document.activeElement)) body.classList.remove("kbd-open");
   });
 }
+/* ---------- R6 (REVIEW-2026-11-01): the phone's Back button moves around the game instead of leaving it ----------
+   One "trap" history entry sits on top while the child is anywhere but the map, plus a small in-memory trail of screens.
+   Back: closes an open pop-up → else in a round asks "Leave this lesson? Your stars so far are kept" → else goes to the
+   previous screen (realm → map, Times-Table Tower → Maths …) → on the map it leaves the app as usual. */
+const trail = [];                                   // non-round screens since the map: [{ screen, arg }]
+const ROUND_DONE = ".result, .ch-done, .ph-done, .story-done, .sw-done";
+let popping = false;
+const trapOn = () => !!(history.state && history.state.wrTrap);
+const setTrap = () => { if (!trapOn()) try { history.pushState({ wrTrap: 1 }, ""); } catch (e) { } };
+const go1 = WR.go;
+WR.go = (screen, arg) => {
+  if (screen === "home") trail.length = 0;
+  else if (!isFocus(screen)) { const top = trail[trail.length - 1]; if (top && top.screen === screen) top.arg = arg; else trail.push({ screen, arg }); }
+  const r = go1(screen, arg);
+  if (screen !== "home" && !popping) setTrap();
+  return r;
+};
+// rounds started without WR.go (lessons, specials, maths…) also get the trap
+const trapWrap = (o, n) => { const f = o && o[n]; if (typeof f !== "function" || f._trap) return; const g = function (...a) { setTrap(); return f.apply(this, a); }; g._trap = g._ux = true; o[n] = g; };
+["startLesson", "playSpecial", "startSpeaking", "startWriting", "startPlacement", "startStory"].forEach(n => trapWrap(WR, n));
+if (WR.Math) ["startLesson", "startDojo"].forEach(n => trapWrap(WR.Math, n));
+const inRound = () => body.classList.contains("wr-focus") && !document.querySelector(ROUND_DONE);
+const backTo = () => { const top = trail.length && WR.current && WR.current() === trail[trail.length - 1].screen && !body.classList.contains("wr-focus") ? trail.pop() : null; return trail[trail.length - 1] || null; };
+WR.leaveAsk = onLeave => WR.modal(`<div class="leave-ask" id="leaveAsk"><div class="petbox bounce" style="width:96px;height:96px;margin:0 auto">${WR.petHTML ? WR.petHTML() : ""}</div>
+    <h2>Leave this lesson?</h2><p style="font-weight:700">Your stars so far are kept ⭐</p>
+    <div class="row" style="justify-content:center"><button class="btn mint" id="laStay">Keep playing</button><button class="btn ghost" id="laGo">Leave</button></div></div>`, (bg, close) => {
+  bg.querySelector("#laStay").onclick = close;
+  bg.querySelector("#laGo").onclick = () => { close(); onLeave(); };
+});
+WR.navBack = () => {
+  const modals = [...document.querySelectorAll(".modal-bg")];
+  if (modals.length) { modals[modals.length - 1].remove(); return true; }
+  if (inRound()) { const t = trail[trail.length - 1]; WR.leaveAsk(() => t ? WR.go(t.screen, t.arg) : WR.go("home")); return true; }
+  const cur = WR.current && WR.current();
+  if (body.classList.contains("wr-focus")) { const t = trail[trail.length - 1]; t ? WR.go(t.screen, t.arg) : WR.go("home"); return true; }   // a finished round
+  if (cur && cur !== "home") { const t = backTo(); popping = true; try { t ? WR.go(t.screen, t.arg) : WR.go("home"); } finally { popping = false; } return WR.current() !== "home" ? true : "map"; }
+  return false;                                     // on the map: let Back leave the app
+};
+addEventListener("popstate", () => {
+  if (!WR.$("#navbar") || !WR.realms) return;
+  if (document.querySelector(".onb")) return;      // onboarding: nothing to go back to inside the game
+  const r = WR.navBack();
+  if (r === true) setTrap();                       // still inside a screen: put the trap back
+  else if (!r) history.back();                     // already on the map: leave the app, as Back always does there
+  // r === "map": we just arrived on the map at the bottom entry, so the next Back leaves
+});
+
 /* reduced motion as a body class too (the CSS media query does the real work) */
 if (WR.reducedMotion && WR.reducedMotion()) body.classList.add("reduce-motion");
 })();

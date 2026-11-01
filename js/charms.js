@@ -272,10 +272,11 @@ function choose(val, btn) {
   WR.$("#chFb").innerHTML = `<div class="story-fb ch-fb ${ok ? "good" : "bad"}"><b>${ok ? "✅ Yes!" : "💭 Not quite."}</b> <b class="ch-hl">${esc(w.w)}</b> = ${esc(w.def)}
       <div class="ch-ex small">“${hl(w.ex, w.w)}”</div>${note ? `<div class="ch-note">${note}</div>` : ""}</div>
     <div class="row" style="justify-content:flex-end;margin-top:10px"><button class="btn" id="chNext">${S.n + 1 < S.plan.length ? "Next →" : "🌟 Finish"}</button></div>`;
-  WR.$("#chNext").onclick = next;
+  WR.tapOnce(WR.$("#chNext"), next);
   WR.say(w.ex);
 }
 function next() {
+  if (!S) return;
   if (S.n + 1 < S.plan.length) { S.n++; S.built = []; S.answered = null; return render(true); }
   finish();
 }

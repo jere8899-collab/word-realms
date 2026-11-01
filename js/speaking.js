@@ -255,7 +255,7 @@ function showResult(it, ok, st, body) {
   WR.$("#echoResult").innerHTML = `<div class="explain ${ok ? "good" : "bad"}"><div class="echo-stars">${"⭐".repeat(st)}<span style="opacity:.25">${"⭐".repeat(3 - st)}</span></div>${body}</div>
     <div class="row" style="margin-top:12px;justify-content:flex-end"><button class="btn ghost" id="retryBtn">🔁 ${S.mode === "mic" ? "Try again" : "Shadow again"}</button><button class="btn ${ok ? "mint" : ""}" id="nextBtn">${last ? "See results ✨" : "Next →"}</button></div>`;
   WR.$("#retryBtn").onclick = () => { WR.$("#echoResult").innerHTML = ""; if (S.mode === "mic") toggleMic(it); else WR.$("#heard").innerHTML = `<span class="muted">Listen 🔊, say it again, then rate yourself.</span>`; };
-  WR.$("#nextBtn").onclick = () => next();
+  WR.tapOnce(WR.$("#nextBtn"), () => next());
   WR.$("#nextBtn").scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
 function plantIfMissed(it) {
@@ -265,11 +265,13 @@ function plantIfMissed(it) {
     explain: `${it.focus}: ${it.tip}` }, S.realm.id, "speaking");
 }
 function next() {
+  if (!S || S.done) return;
   stopRec(true); WR.Voice.stop(); plantIfMissed(cur());
   if (S.i >= S.items.length - 1) return finish();
   S.i++; render();
 }
 function finish() {
+  if (!S || S.done) return; S.done = true;
   const n = S.items.length, raw = S.items.reduce((a, x) => a + x.best, 0) / n;
   const score = S.mode === "mic" ? raw : Math.min(raw, 0.7); // self-rating can earn up to 2 crowns; 3 crowns need the microphone
   const crowns = WR.crowns(score), bonus = S.mode === "mic" ? crowns * 2 : 0;

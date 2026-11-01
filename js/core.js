@@ -53,6 +53,10 @@ WR.$ = (s, r = document) => r.querySelector(s);
 WR.esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 WR.shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 WR.sample = (a, n) => WR.shuffle(a).slice(0, n);
+/* 👆 One tap only (REVIEW-2026-11-01 R1): every "Next" / "Finish" button of a lesson-like mode goes through WR.tapOnce, so a
+   double tap (or two clicks in the same tick) advances exactly once. The button is disabled on the first tap, so a stale
+   button that is still on screen can never fire again. Each finish() also guards itself with a "done" flag. */
+WR.tapOnce = (el, fn) => { if (!el) return el; el.onclick = e => { if (el.disabled || el.dataset.tapped) return; el.dataset.tapped = "1"; el.disabled = true; fn(e); }; return el; };
 WR.dayKey = (t = Date.now()) => { const d = new Date(t); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); };
 WR.today = () => WR.dayKey();
 WR.dayDiff = (a, b) => Math.round((new Date(b) - new Date(a)) / 864e5);
@@ -206,7 +210,30 @@ function migrate(s, raw = s) {
 WR.load = () => { try { const s = JSON.parse(localStorage.getItem(SAVE_KEY)); if (s && s.v === 1) return migrate(Object.assign(freshState(), s), s); } catch (e) { } return freshState(); };
 WR.save = () => localStorage.setItem(SAVE_KEY, JSON.stringify(WR.state));
 WR.reset = () => { localStorage.removeItem(SAVE_KEY); WR.state = freshState(); };
+/* 🧹 Reset safety net (REVIEW-2026-11-01 R2): before a reset the whole save is copied to wordRealms.save.backup.<day>.<time>
+   (kept 7 days on this device only, never synced), and ⚙️ → 👪 Grown-ups offers "Undo reset" while a backup exists. */
+const BACKUP = "wordRealms.save.backup.", KEEP_DAYS = 7;
+WR.backups = () => Object.keys(localStorage).filter(k => k.startsWith(BACKUP)).sort().reverse();   // newest first
+WR.backupDay = k => k.slice(BACKUP.length, BACKUP.length + 10);
+WR.backupSave = () => {
+  const cut = WR.dayKey(Date.now() - KEEP_DAYS * 864e5);
+  WR.backups().forEach(k => { if (WR.backupDay(k) < cut) localStorage.removeItem(k); });
+  if (!WR.state.pet) return null;                         // nothing worth keeping (a fresh save)
+  const k = BACKUP + WR.today() + "." + Date.now(); localStorage.setItem(k, JSON.stringify(WR.state)); return k;
+};
+WR.restoreBackup = (k = WR.backups()[0]) => {
+  let s = null; try { s = JSON.parse(localStorage.getItem(k)); } catch (e) { }
+  if (!s || s.v !== 1) return false;
+  localStorage.setItem(SAVE_KEY, JSON.stringify(s)); localStorage.removeItem(k); WR.state = WR.load(); return true;
+};
 WR.state = WR.load();
+/* 🪟 Two tabs (REVIEW-2026-11-01 R5): every change is saved at once, so the newest write in localStorage already holds all of
+   this tab's progress. When another tab or the installed app saves, this tab adopts that save before it saves again, so an
+   older tab can never write its stale copy over newer stars. WR.onOtherTab (js/main.js) redraws and shows a soft banner. */
+window.addEventListener("storage", e => {
+  if (e.key !== SAVE_KEY || (e.storageArea && e.storageArea !== localStorage)) return;
+  WR.state = WR.load(); WR.onOtherTab && WR.onOtherTab();
+});
 
 WR.init = async () => {
   WR.manifest = await fetchJSON("assets/manifest.json").catch(() => ({ assets: [] }));

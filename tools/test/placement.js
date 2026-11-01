@@ -26,6 +26,7 @@ const LV = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2'];
     let n = 0, sawListen = false;
     for (; n < 30; n++) {
       await page.waitForSelector('.opt, #plAccept', { timeout: 8000 });
+      await page.waitForFunction(() => WR._plDbg() || document.querySelector('#plAccept'), null, { timeout: 8000 });   // a new stage loads its riddles asynchronously
       if (await page.$('#plAccept')) break;
       const d = await page.evaluate(() => WR._plDbg());
       if (await page.$('#playBtn')) sawListen = true;

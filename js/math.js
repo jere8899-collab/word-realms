@@ -293,11 +293,12 @@ function submit(val, btn) {
   const h = document.querySelector(".hud"); if (h && L.done) { const i = L.i; L.i++; h.innerHTML = hud(); L.i = i; }
   const gs = WR.$("#gstrip"); if (gs && L.done) { gs.innerHTML = guardMeter(); if (res.ok) WR.$("#bossFace").classList.add("hit"); }
   const ls = WR.$("#lstats"); if (ls) ls.textContent = `⭐ ${L.starsEarned} earned · 🔥 combo ${L.combo}`;
-  const nb = WR.$("#mnext"); if (nb) { nb.onclick = () => { if (L.i >= L.items.length - 1) finish(); else { L.i++; render(); } }; nb.scrollIntoView({ behavior: "smooth", block: "nearest" }); if (!coarse()) nb.focus({ preventScroll: true }); }
+  const nb = WR.$("#mnext"); if (nb) { WR.tapOnce(nb, () => { if (!L) return; if (L.i >= L.items.length - 1) finish(); else { L.i++; render(); } }); nb.scrollIntoView({ behavior: "smooth", block: "nearest" }); if (!coarse()) nb.focus({ preventScroll: true }); }
 }
 const nextBtn = ok => `<div class="row" style="margin-top:10px;justify-content:flex-end"><button class="btn ${ok ? "mint" : ""}" id="mnext">${L.i >= L.items.length - 1 ? "See results ✨" : "Next →"}</button></div>`;
 MW.record = (key, score) => { const m = MW.st(), p = m.topics[key] || { best: 0, plays: 0 }; p.best = Math.max(p.best, score); p.plays++; p.last = Date.now(); m.topics[key] = p; m.lessons = (m.lessons || 0) + 1; WR.state.lessonsDone++; WR.save(); };
 function finish() {
+  if (!L) return;
   const o = L, n = o.items.length, score = o.pts / n, crowns = WR.crowns(score), m = MW.st();
   const before = MW.crownsFor(o.key), bonus = crowns * 2, gd = o.guardian, won = !!gd && o.pts >= gd.need; o.starsEarned += WR.awardStars("math", gd ? "guardian/" + (gd.id || gd.name) : o.key, bonus, { kind: "round", tally: o });
   if (gd) { m.lessons = (m.lessons || 0) + 1; WR.state.lessonsDone++; } else MW.record(o.key, score);   // a guardian fight is not a topic, so it never changes topic crowns

@@ -69,7 +69,7 @@ function render() {
     document.querySelectorAll(".gloss").forEach(b => b.onclick = e => { e.stopPropagation(); gloss(b); });
   }
   document.querySelectorAll(".opt").forEach(b => b.onclick = () => choose(b, q, opts));
-  const nx = WR.$("#storyNext"); if (nx) nx.onclick = next;
+  WR.tapOnce(WR.$("#storyNext"), next);
 }
 const fbHTML = (q, ok) => `<div class="story-fb ${ok ? "good" : "bad"}"><b>${ok ? "✅ Yes!" : "💭 Not quite."}</b> ${WR.esc(fill(q.explain))}</div>
   <div class="row" style="justify-content:flex-end;margin-top:10px"><button class="btn" id="storyNext">${S.page >= 4 ? "📄 Restore the page" : "Turn the page →"}</button></div>`;
@@ -107,11 +107,13 @@ function choose(btn, q, opts) {
   WR.Voice.stop(); render();
 }
 function next() {
+  if (!S || S.fin) return;
   WR.Voice.stop();
   if (S.page < 4) { S.page++; return render(); }
   finish();
 }
 function finish() {
+  if (!S || S.fin) return; S.fin = true;
   const rid = S.realm.id;   // first read: 1⭐ per right answer + 3⭐ for restoring the page; new crowns 2⭐ each (WR.finishUnit)
   const { crowns, stars } = WR.finishUnit(st().done, rid, S.correct, 5, "story");
   const lv = WR.petGainXP ? WR.petGainXP(S.correct * 2 + 2) : null;

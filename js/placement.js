@@ -101,7 +101,7 @@ function answer(ok, btn, it) {
   const fb = WR.$("#plFb");
   fb.innerHTML = `<div class="explain ${ok ? "good" : "bad"}"><b>${ok ? "✨ The mirror glows!" : "🌙 The mirror shimmers…"}</b> ${it.explain ? `<span class="muted">${WR.esc(it.explain)}</span>` : ""}
     <div class="row" style="justify-content:flex-end;margin-top:8px"><button class="btn small" id="plNext">Next →</button></div></div>`;
-  WR.$("#plNext").onclick = advance;
+  WR.tapOnce(WR.$("#plNext"), advance);
 }
 function advance() {
   P.i++;

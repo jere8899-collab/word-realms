@@ -55,6 +55,7 @@ async function petalMatch(realm) {
     <p class="center" id="mstat" style="font-weight:800">Pairs: 0 / 6</p></div>`);
   WR.$("#quitBtn").onclick = () => WR.go("realm", realm.id);
   document.querySelectorAll(".mcard").forEach(b => b.onclick = () => {
+    if (b.classList.contains("done")) return;   // a matched card can never be matched again (R1: no double pay)
     const c = cards[+b.dataset.k];
     if (c.t === "word") WR.say(c.v, { rate: 0.85 });
     if (!sel) { sel = { b, c }; b.classList.add("sel"); return; }
@@ -86,7 +87,7 @@ async function lanternQuest(realm) {
       if (c.good) WR.awardStars("special", realm.id + "/" + n.text, 1, { quiet: true });
       show(c.next, c);
     });
-    const d = WR.$("#done"); if (d) d.onclick = () => { const score = steps ? good / steps : 1; finishSpecial(realm, score, 5 + WR.crowns(score) * 2, "Quest complete! 🏮"); };
+    WR.tapOnce(WR.$("#done"), () => { const score = steps ? good / steps : 1; finishSpecial(realm, score, 5 + WR.crowns(score) * 2, "Quest complete! 🏮"); });
   };
   show(Q.start);
 }
@@ -109,7 +110,7 @@ async function greatDebate(realm) {
       WR.$(".knob").style.left = meter + "%";
       WR.$("#lpet").classList.add(o.ok ? "cheer" : "sad"); WR.$("#lbubble").textContent = o.ok ? "The council nods! 👏" : "Hmm, the council frowns… 😟";
       WR.$("#explain").innerHTML = `<div class="explain ${o.ok ? "good" : "bad"}">💡 ${WR.esc(d.explain)}</div><div class="row" style="justify-content:flex-end;margin-top:10px"><button class="btn" id="nextBtn">${i < D.length - 1 ? "Next motion →" : "Count the votes ✨"}</button></div>`;
-      WR.$("#nextBtn").onclick = () => { if (++i < D.length) show(); else { const score = good / D.length; finishSpecial(realm, score, 4 + WR.crowns(score) * 3, meter > 50 ? "The Council votes with you! 🏰" : "The vote was lost… 🌧️"); } };
+      WR.tapOnce(WR.$("#nextBtn"), () => { if (++i < D.length) show(); else { const score = good / D.length; finishSpecial(realm, score, 4 + WR.crowns(score) * 3, meter > 50 ? "The Council votes with you! 🏰" : "The vote was lost… 🌧️"); } });
     });
   };
   show();

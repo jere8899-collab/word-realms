@@ -2,15 +2,19 @@
    WR.parentGate(onPass, { why }) opens "Grown-ups only 🔒" and calls onPass() only after a grown-up answers:
    • a question a young child can't easily answer: a number written in words ("Type forty-seven") or a 2-digit × 1-digit sum in
      words ("What is fourteen times six?"), answered on a number pad; or, if a parent PIN is set, the 4-digit PIN instead
-   • 3 wrong tries → a 60-second lock-out
+   • 3 wrong tries → a lock-out of 1 min, then 5 min, then 15 min, saved in the save so a reload keeps it (R3)
    • a pass stays open for 5 minutes, kept in memory only (never saved), then the gate asks again
    The optional PIN is stored as a SHA-256 hash (crypto.subtle) in the save (state.parent.pinHash), so it syncs with cloud saves.
    Gated: cash buttons and the demo unlock in the Shop's 👪 Grown-ups area, Teacher mode, Cloud Castle "Log out & clear device", the 📊 Learning Report (js/report.js).
    Children never see prices or payment words in front of the gate. */
 (function () {
 const WR = window.WR;
-const PASS_MS = 5 * 60 * 1000, LOCK_MS = 60 * 1000, TRIES = 3;
-let passUntil = 0, lockUntil = 0, wrong = 0, expected = null;
+const PASS_MS = 5 * 60 * 1000, TRIES = 3;
+const LOCKS = [60e3, 5 * 60e3, 15 * 60e3];                   // R3: each lock-out is longer: 1 min → 5 min → 15 min (then stays 15)
+let passUntil = 0, expected = null;
+/* R3: the lock and the wrong-try count live in the save (state.parent.lock = { until, wrong, n }), so a reload, a reopened app
+   or another cloud device still shows the lock; n (lock-outs so far) resets after a grown-up passes. */
+const lock = () => { const p = WR.state.parent = WR.state.parent || {}; return p.lock = Object.assign({ until: 0, wrong: 0, n: 0 }, p.lock); };
 const now = () => Date.now() + (gate._skew || 0);           // tests move the clock with WR.parentGate._skew
 const ONES = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
 const TENS = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
@@ -42,8 +46,8 @@ function gate(onPass, opts = {}) {
     const paint = () => { ans.textContent = pinMode ? "●".repeat(val.length) + "○".repeat(Math.max(0, 4 - val.length)) : val; };
     let tick = null;
     const lockPaint = () => {
-      const left = Math.ceil((lockUntil - now()) / 1000);
-      if (left > 0) { box.classList.add("locked"); err.textContent = `Too many tries. Please wait ${left} s ⏳`; return true; }
+      const left = Math.ceil((lock().until - now()) / 1000);
+      if (left > 0) { box.classList.add("locked"); err.textContent = `Too many tries. Please wait ${left >= 60 ? Math.floor(left / 60) + " min " + String(left % 60).padStart(2, "0") + " s" : left + " s"} ⏳`; return true; }
       box.classList.remove("locked"); if (tick) { clearInterval(tick); tick = null; err.textContent = ""; } return false;
     };
     const startLock = () => { if (lockPaint() && !tick) tick = setInterval(() => { if (!document.body.contains(box)) { clearInterval(tick); return; } lockPaint(); }, 500); };
@@ -52,10 +56,10 @@ function gate(onPass, opts = {}) {
       if (lockPaint() || !val) return;
       let good = false;
       if (pinMode) good = (await hash(val).catch(() => "")) === WR.state.parent.pinHash; else good = val === expected;
-      if (good) { wrong = 0; passUntil = now() + PASS_MS; expected = null; close(); WR.sfx && WR.sfx("tap"); onPass && onPass(); return; }
-      wrong++; val = ""; paint();
-      if (wrong >= TRIES) { wrong = 0; lockUntil = now() + LOCK_MS; startLock(); }
-      else err.textContent = `Not quite. ${TRIES - wrong} ${TRIES - wrong === 1 ? "try" : "tries"} left.`;
+      if (good) { const lk = lock(); if (lk.wrong || lk.n || lk.until) { Object.assign(lk, { wrong: 0, n: 0, until: 0 }); WR.save(); } passUntil = now() + PASS_MS; expected = null; close(); WR.sfx && WR.sfx("tap"); onPass && onPass(); return; }
+      const lk = lock(); lk.wrong++; val = ""; paint();
+      if (lk.wrong >= TRIES) { lk.wrong = 0; lk.until = now() + LOCKS[Math.min(lk.n, LOCKS.length - 1)]; lk.n++; WR.save(); startLock(); }
+      else { WR.save(); err.textContent = `Not quite. ${TRIES - lk.wrong} ${TRIES - lk.wrong === 1 ? "try" : "tries"} left.`; }
       if (!pinMode && !lockPaint()) { q = question(); expected = q.ans; bg.querySelector("#pgQ").innerHTML = q.html; }
     };
     bg.querySelectorAll("[data-d]").forEach(b => b.onclick = () => {
@@ -96,13 +100,39 @@ WR.openGrownups = () => gate(() => {
     <div class="cc-err" id="guErr" role="alert"></div>
     <p class="set-note muted">The PIN is saved scrambled (SHA-256) with this adventure and syncs with the Cloud Castle. Cash items in the Shop, Teacher mode and "Log out &amp; clear device" all ask for it.</p>
     <p class="set-note muted">🗣️ Listening voice: ${WR.Voice.recorded() ? "recorded storyteller (falls back to " : ""}${WR.esc(window.Speech ? Speech.voiceName() : "-")}${WR.Voice.recorded() ? ")" : ""}</p>
+    <div class="row gu-reset" style="justify-content:center"><button class="btn small peach" id="guReset">🧹 Reset progress on this device</button>${WR.backups().length ? `<button class="btn small ghost" id="guUndo">↩️ Undo reset <small>(${WR.esc(WR.backupDay(WR.backups()[0]))})</small></button>` : ""}</div>
     <div class="row" style="justify-content:center"><button class="btn small" id="guDone">Done</button></div>`, (bg, close) => {
     bg.querySelector("#guUl").onchange = e => { s.settings.unlockAll = e.target.checked; WR.save(); WR.toast(e.target.checked ? "🗝️ Every realm is open" : "🔒 Realms open in order again"); };
     const rp = bg.querySelector("#guReport"); if (rp) rp.onclick = () => { close(); WR.go("report", "week"); };
     const err = bg.querySelector("#guErr");
     bg.querySelector("#guPinSet").onclick = async () => { try { await gate.setPin(bg.querySelector("#guPin").value.trim()); close(); WR.toast("🔢 Grown-up PIN saved"); WR.openGrownups(); } catch (x) { err.textContent = x.message; } };
     const off = bg.querySelector("#guPinOff"); if (off) off.onclick = () => { gate.clearPin(); close(); WR.toast("PIN removed"); WR.openGrownups(); };
+    bg.querySelector("#guReset").onclick = () => { close(); WR.resetDialog(); };
+    const un = bg.querySelector("#guUndo"); if (un) un.onclick = () => { if (WR.restoreBackup()) { close(); WR.toast("↩️ The adventure is back, just as it was!", 2500); WR.restart && WR.restart(); } };
     bg.querySelector("#guDone").onclick = () => { close(); if (WR.current && WR.current() === "home") WR.screens.home(); };
   });
 }, { why: "Grown-up settings: PIN and Teacher mode." });
+
+/* ---------- 🧹 Reset progress (R2): only behind the gate, typed RESET, this device only, with a 7-day backup + Undo ---------- */
+WR.resetDialog = () => {
+  const cloud = WR.Cloud && WR.Cloud.user, who = cloud && WR.Cloud.username;
+  WR.modal(`<div class="reset-dlg" id="resetDlg"><h2>🧹 Reset progress on this device</h2>
+    <p style="font-weight:700">This clears the stars, pet, stickers and lessons of <b>${WR.userText(WR.state.name || "this adventure")}</b> on this device.</p>
+    ${cloud ? `<p class="reset-cloud">☁️ This device is logged in to the Cloud Castle${who ? ` as <b>${WR.esc(who)}</b>` : ""}. Resetting <b>logs this device out first</b>, so the Cloud Castle copy is <b>not</b> changed. Log in again any time to get it back.</p>` : ""}
+    <p class="muted" style="font-weight:700">A backup is kept on this device for 7 days: ⚙️ → 👪 Grown-ups → ↩️ Undo reset.</p>
+    <label class="muted" for="rsIn" style="font-weight:800">Type <b>RESET</b> to confirm</label>
+    <input class="input" id="rsIn" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="RESET" style="text-align:center;letter-spacing:3px;max-width:200px;margin:6px auto;display:block">
+    <div class="row" style="justify-content:center"><button class="btn ghost small" id="rsNo">Keep my adventure</button><button class="btn peach small" id="rsGo" disabled>Reset</button></div></div>`, (bg, close) => {
+    const inp = bg.querySelector("#rsIn"), go = bg.querySelector("#rsGo");
+    inp.oninput = () => { go.disabled = inp.value.trim().toUpperCase() !== "RESET"; };
+    bg.querySelector("#rsNo").onclick = close;
+    WR.tapOnce(go, async () => {
+      if (inp.value.trim().toUpperCase() !== "RESET") return;
+      WR.backupSave();
+      if (WR.Cloud && WR.Cloud.user) await WR.Cloud.signOut(true);   // pushes any real unsaved progress, logs out, then clears this device
+      else WR.reset();
+      close(); WR.toast("🧹 Fresh start! (Undo is in 👪 Grown-ups for 7 days)", 2500); WR.restart && WR.restart();
+    });
+  });
+};
 })();

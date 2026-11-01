@@ -125,7 +125,7 @@ const MOB = { deviceScaleFactor: 2, isMobile: true, hasTouch: true };
   await page.click('.sw-book[data-b="a1.1"]'); await page.waitForSelector('#pmCheck');
   await page.waitForTimeout(400);
   { const first = await cur(page), v1 = await page.evaluate(() => ({ last: WR.Voice.last, said: window.__said.slice() }));
-    ok(v1.last && v1.last.text === first.it.ask && first.it.ask !== first.it.say && v1.said.some(x => x.startsWith('mp3:narrator_')), `the sentence is first read WITHOUT its mark by the recorded narrator (“${first.it.ask}”)`);
+    ok(v1.last && v1.last.text === first.it.ask && (first.it.ask !== first.it.say || /[A-Za-z]/.test(first.it.ans[0])) &&   /* a capital-letter gap is read as it is (nothing to give away) */ v1.said.some(x => x.startsWith('mp3:narrator_')), `the sentence is first read WITHOUT its mark by the recorded narrator (“${first.it.ask}”)`);
     await page.click('#pmCheck'); ok((await cur(page)).tries === 0 && await page.locator('.sw-fb.nudge').count() === 1, 'checking an empty gap is a friendly nudge, not a try'); }
   await play(page, 1, 'marks_02_a1');
   ok(await page.evaluate(() => (WR.state.stickers.got.marks || []).includes('first')), 'sticker Pixie Helper');

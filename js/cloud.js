@@ -157,8 +157,8 @@ C.flush = () => {
 /* wrap WR.save so every local save also queues a cloud save */
 const rawSave = WR.save;
 WR.save = () => { rawSave(); if (C.user) { setMeta({ dirty: true }); C.schedule(); } };
+// (a reset never marks the save dirty: R2 resets this device only, logging it out first, so the cloud copy is never overwritten)
 const rawReset = WR.reset;
-WR.reset = () => { rawReset(); if (C.user) setMeta({ dirty: true }); };
 
 /* ---------- conflicts ---------- */
 async function resolveConflict(row, why) {

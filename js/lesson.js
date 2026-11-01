@@ -324,10 +324,11 @@ function answer(ok, it, extra = "") {
   WR.$("#explain").innerHTML = `<div class="explain ${ok ? "good" : "bad"}">${ok ? "✅ Correct!" : "💭 Not quite."} ${extra}${whyNot(ok, it)} <div class="why-rule" style="font-weight:700;margin-top:4px">💡 ${WR.esc(it.explain)}</div>${transcript}</div>
     <div class="row" style="margin-top:12px;justify-content:flex-end"><button class="btn ${ok ? "mint" : ""}" id="nextBtn">${last ? "See results ✨" : "Next →"}</button></div>`;
   const rp = WR.$("#replay"); if (rp) rp.onclick = () => WR.say(it.say);
-  WR.$("#nextBtn").onclick = () => { WR.Voice.stop(); if (last) finish(lost); else { L.i++; render(); } };
+  WR.tapOnce(WR.$("#nextBtn"), () => { WR.Voice.stop(); if (last) finish(lost); else { L.i++; render(); } });
   WR.$("#nextBtn").scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
 function finish(lost) {
+  if (!L || L.done) return; L.done = true;
   clearTimer();
   const beat = bossBeaten();
   const n = beat ? L.i + 1 : L.items.length, score = L.correct / n, crowns = WR.crowns(score);   // a boss beaten early is scored on the questions asked
