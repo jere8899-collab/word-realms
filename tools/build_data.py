@@ -123,7 +123,7 @@ assert not _c3_missing, f"C3 overlay keys that match no item: {_c3_missing[:5]}"
 # ---- R21 (review 2026-11-01) wave 1: A1–B1 reading/listening "why not" notes quote the exact line that answers the question ----
 from r21 import quote_notes
 R21_DONE = {}
-for lvl in ():  # TEMP
+for lvl in ("a1", "a2", "b1"):
     n = 0
     for p in D[lvl]["reading"]["passages"]:
         for q in p["questions"]:

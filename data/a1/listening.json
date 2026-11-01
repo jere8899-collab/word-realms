@@ -12,9 +12,9 @@
   "answer": 0,
   "explain": "You heard: 'under the table'.",
   "notes": {
-   "on the table": "“on the table” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "next to the bed": "“next to the bed” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "in the box": "“in the box” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "on the table": "You heard: “The cat is under the table.” So it's “under the table”, not “on the table”.",
+   "next to the bed": "You heard: “The cat is under the table.” So it's “under the table”, not “next to the bed”.",
+   "in the box": "You heard: “The cat is under the table.” So it's “under the table”, not “in the box”."
   }
  },
  {
@@ -48,9 +48,9 @@
   "answer": 0,
   "explain": "A-N-N-A: Anna.",
   "notes": {
-   "ANA": "“ANA” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "HANNA": "“HANNA” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "ANNE": "“ANNE” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "ANA": "You heard: “My name is Anna.” So it's “ANNA”, not “ANA”.",
+   "HANNA": "You heard: “My name is Anna.” So it's “ANNA”, not “HANNA”.",
+   "ANNE": "You heard: “My name is Anna.” So it's “ANNA”, not “ANNE”."
   }
  },
  {
@@ -84,9 +84,9 @@
   "answer": 0,
   "explain": "'I'd like a banana.'",
   "notes": {
-   "an apple": "“an apple” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "an orange": "“an orange” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "a cake": "“a cake” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "an apple": "You heard: “I'd like a banana, please.” So it's “a banana”, not “an apple”.",
+   "an orange": "You heard: “I'd like a banana, please.” So it's “a banana”, not “an orange”.",
+   "a cake": "You heard: “I'd like a banana, please.” So it's “a banana”, not “a cake”."
   }
  },
  {
@@ -120,9 +120,9 @@
   "answer": 0,
   "explain": "'My favourite colour is green.'",
   "notes": {
-   "blue": "“blue” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "red": "“red” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "yellow": "“yellow” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "blue": "You heard: “My favourite colour is green.” So it's “green”, not “blue”.",
+   "red": "You heard: “My favourite colour is green.” So it's “green”, not “red”.",
+   "yellow": "You heard: “My favourite colour is green.” So it's “green”, not “yellow”."
   }
  },
  {
@@ -156,9 +156,9 @@
   "answer": 0,
   "explain": "'Cold and snowy.'",
   "notes": {
-   "sunny": "“sunny” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "hot": "“hot” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "rainy": "“rainy” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "sunny": "You heard: “It is cold and snowy today.” So it's “snowy”, not “sunny”.",
+   "hot": "You heard: “It is cold and snowy today.” So it's “snowy”, not “hot”.",
+   "rainy": "You heard: “It is cold and snowy today.” So it's “snowy”, not “rainy”."
   }
  },
  {
@@ -192,9 +192,9 @@
   "answer": 0,
   "explain": "He is a doctor in a hospital.",
   "notes": {
-   "teacher": "“teacher” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "cook": "“cook” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "farmer": "“farmer” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "teacher": "You heard: “My dad is a doctor.” So it's “doctor”, not “teacher”.",
+   "cook": "You heard: “My dad is a doctor.” So it's “doctor”, not “cook”.",
+   "farmer": "You heard: “My dad is a doctor.” So it's “doctor”, not “farmer”."
   }
  },
  {
@@ -210,9 +210,9 @@
   "answer": 0,
   "explain": "'Next to the park.'",
   "notes": {
-   "behind the school": "“behind the school” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "in the park": "“in the park” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "opposite the bank": "“opposite the bank” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "behind the school": "You heard: “The shop is next to the park.” So it's “next to the park”, not “behind the school”.",
+   "in the park": "You heard: “The shop is next to the park.” So it's “next to the park”, not “in the park”.",
+   "opposite the bank": "You heard: “The shop is next to the park.” So it's “next to the park”, not “opposite the bank”."
   }
  },
  {
@@ -228,9 +228,9 @@
   "answer": 0,
   "explain": "'On Saturdays.'",
   "notes": {
-   "on Sundays": "“on Sundays” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "on Mondays": "“on Mondays” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "every day": "“every day” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "on Sundays": "You heard: “I play tennis on Saturdays.” So it's “on Saturdays”, not “on Sundays”.",
+   "on Mondays": "You heard: “I play tennis on Saturdays.” So it's “on Saturdays”, not “on Mondays”.",
+   "every day": "You heard: “I play tennis on Saturdays.” So it's “on Saturdays”, not “every day”."
   }
  },
  {
@@ -246,9 +246,9 @@
   "answer": 0,
   "explain": "'A glass of milk.'",
   "notes": {
-   "water": "“water” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "juice": "“juice” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "tea": "“tea” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "water": "You heard: “Can I have a glass of milk, please?” So it's “milk”, not “water”.",
+   "juice": "You heard: “Can I have a glass of milk, please?” So it's “milk”, not “juice”.",
+   "tea": "You heard: “Can I have a glass of milk, please?” So it's “milk”, not “tea”."
   }
  },
  {
@@ -282,9 +282,9 @@
   "answer": 0,
   "explain": "'In the summer.'",
   "notes": {
-   "in the winter": "“in the winter” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "in the spring": "“in the spring” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "in the autumn": "“in the autumn” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "in the winter": "You heard: “We go swimming in the summer.” So it's “in the summer”, not “in the winter”.",
+   "in the spring": "You heard: “We go swimming in the summer.” So it's “in the summer”, not “in the spring”.",
+   "in the autumn": "You heard: “We go swimming in the summer.” So it's “in the summer”, not “in the autumn”."
   }
  },
  {
@@ -300,9 +300,9 @@
   "answer": 0,
   "explain": "'A red bag.'",
   "notes": {
-   "blue": "“blue” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "green": "“green” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "yellow": "“yellow” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "blue": "You heard: “I've got a red bag and a blue pencil case.” So it's “red”, not “blue”.",
+   "green": "You heard: “I've got a red bag and a blue pencil case.” So it's “red”, not “green”.",
+   "yellow": "You heard: “I've got a red bag and a blue pencil case.” So it's “red”, not “yellow”."
   }
  },
  {
@@ -318,9 +318,9 @@
   "answer": 0,
   "explain": "'She's white.'",
   "notes": {
-   "black": "“black” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "brown": "“brown” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "grey": "“grey” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "black": "You heard: “She's white and very small.” So it's “white”, not “black”.",
+   "brown": "You heard: “She's white and very small.” So it's “white”, not “brown”.",
+   "grey": "You heard: “She's white and very small.” So it's “white”, not “grey”."
   }
  },
  {
@@ -336,9 +336,9 @@
   "answer": 0,
   "explain": "'By bus.'",
   "notes": {
-   "by car": "“by car” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "on foot": "“on foot” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "by bike": "“by bike” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "by car": "You heard: “I go to school by bus every day.” So it's “by bus”, not “by car”.",
+   "on foot": "You heard: “I go to school by bus every day.” So it's “by bus”, not “on foot”.",
+   "by bike": "You heard: “I go to school by bus every day.” So it's “by bus”, not “by bike”."
   }
  },
  {
@@ -354,9 +354,9 @@
   "answer": 0,
   "explain": "Mum + dad + brother + me = four.",
   "notes": {
-   "three": "“three” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "five": "“five” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "two": "“two” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "three": "You heard: “There are four people in my family: my mum, my dad, my brother and me.” So it's “four”, not “three”.",
+   "five": "You heard: “There are four people in my family: my mum, my dad, my brother and me.” So it's “four”, not “five”.",
+   "two": "You heard: “There are four people in my family: my mum, my dad, my brother and me.” So it's “four”, not “two”."
   }
  },
  {
@@ -390,9 +390,9 @@
   "answer": 0,
   "explain": "'I love potatoes.'",
   "notes": {
-   "carrots": "“carrots” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "tomatoes": "“tomatoes” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "peas": "“peas” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "carrots": "You heard: “I don't like carrots, but I love potatoes.” So it's “potatoes”, not “carrots”.",
+   "tomatoes": "You heard: “I don't like carrots, but I love potatoes.” So it's “potatoes”, not “tomatoes”.",
+   "peas": "You heard: “I don't like carrots, but I love potatoes.” So it's “potatoes”, not “peas”."
   }
  },
  {
@@ -426,9 +426,9 @@
   "answer": 0,
   "explain": "'Close the door.'",
   "notes": {
-   "the window": "“the window” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "your book": "“your book” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "your eyes": "“your eyes” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "the window": "You heard: “Please sit down and close the door.” So it's “the door”, not “the window”.",
+   "your book": "You heard: “Please sit down and close the door.” So it's “the door”, not “your book”.",
+   "your eyes": "You heard: “Please sit down and close the door.” So it's “the door”, not “your eyes”."
   }
  },
  {
@@ -444,9 +444,9 @@
   "answer": 0,
   "explain": "'He's reading the newspaper.'",
   "notes": {
-   "sleeping": "“sleeping” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "cooking": "“cooking” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "walking": "“walking” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "sleeping": "You heard: “He's reading the newspaper.” So it's “reading”, not “sleeping”.",
+   "cooking": "You heard: “He's reading the newspaper.” So it's “reading”, not “cooking”.",
+   "walking": "You heard: “He's reading the newspaper.” So it's “reading”, not “walking”."
   }
  },
  {
@@ -462,9 +462,9 @@
   "answer": 0,
   "explain": "'One pound for three.'",
   "notes": {
-   "three pounds": "“three pounds” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "thirty pence": "“thirty pence” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "two pounds": "“two pounds” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "three pounds": "You heard: “These apples are one pound for three.” So it's “one pound”, not “three pounds”.",
+   "thirty pence": "You heard: “These apples are one pound for three.” So it's “one pound”, not “thirty pence”.",
+   "two pounds": "You heard: “These apples are one pound for three.” So it's “one pound”, not “two pounds”."
   }
  },
  {
@@ -480,9 +480,9 @@
   "answer": 0,
   "explain": "'Green eyes.' Her hair is brown.",
   "notes": {
-   "brown": "“brown” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "blue": "“blue” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "grey": "“grey” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "brown": "You heard: “Lily has long brown hair and green eyes.” So it's “green”, not “brown”.",
+   "blue": "You heard: “Lily has long brown hair and green eyes.” So it's “green”, not “blue”.",
+   "grey": "You heard: “Lily has long brown hair and green eyes.” So it's “green”, not “grey”."
   }
  },
  {
@@ -498,9 +498,9 @@
   "answer": 0,
   "explain": "'The toilets are upstairs.'",
   "notes": {
-   "downstairs": "“downstairs” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "outside": "“outside” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "in the café": "“in the café” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "downstairs": "You heard: “The toilets are upstairs, next to the café.” So it's “upstairs”, not “downstairs”.",
+   "outside": "You heard: “The toilets are upstairs, next to the café.” So it's “upstairs”, not “outside”.",
+   "in the café": "You heard: “The toilets are upstairs, next to the café.” So it's “upstairs”, not “in the café”."
   }
  },
  {
@@ -518,7 +518,7 @@
   "notes": {
    "black and white": "The rabbit isn't black.",
    "all brown": "It's brown AND white.",
-   "grey": "Grey wasn't said."
+   "grey": "Grey wasn't said. You heard: “My rabbit is brown and white.”"
   }
  },
  {
@@ -534,9 +534,9 @@
   "answer": 0,
   "explain": "'Three pencils.'",
   "notes": {
-   "two": "Two wasn't said.",
-   "four": "Four wasn't said.",
-   "five": "Five wasn't said."
+   "two": "Two wasn't said. You heard: “I've got three pencils in my bag.”",
+   "four": "Four wasn't said. You heard: “I've got three pencils in my bag.”",
+   "five": "Five wasn't said. You heard: “I've got three pencils in my bag.”"
   }
  },
  {
@@ -552,8 +552,8 @@
   "answer": 0,
   "explain": "'Sam is in the kitchen.'",
   "notes": {
-   "in the garden": "The garden wasn't said.",
-   "in the bedroom": "The bedroom wasn't said.",
+   "in the garden": "The garden wasn't said. You heard: “Sam is in the kitchen.”",
+   "in the bedroom": "The bedroom wasn't said. You heard: “Sam is in the kitchen.”",
    "at school": "He's at home, in the kitchen."
   }
  },
@@ -570,9 +570,9 @@
   "answer": 0,
   "explain": "'It's sunny today.'",
   "notes": {
-   "rainy": "Rain wasn't said.",
-   "snowy": "Snow wasn't said.",
-   "windy": "Wind wasn't said."
+   "rainy": "Rain wasn't said. You heard: “It's sunny today.”",
+   "snowy": "Snow wasn't said. You heard: “It's sunny today.”",
+   "windy": "Wind wasn't said. You heard: “It's sunny today.”"
   }
  },
  {
@@ -588,9 +588,9 @@
   "answer": 0,
   "explain": "'In May.'",
   "notes": {
-   "in March": "March wasn't said.",
-   "in June": "June wasn't said.",
-   "in July": "July wasn't said."
+   "in March": "March wasn't said. You heard: “My birthday is in May.”",
+   "in June": "June wasn't said. You heard: “My birthday is in May.”",
+   "in July": "July wasn't said. You heard: “My birthday is in May.”"
   }
  },
  {
@@ -608,7 +608,7 @@
   "notes": {
    "on the chair": "On is different from under.",
    "under the table": "It's the chair, not the table.",
-   "in the box": "The box wasn't said."
+   "in the box": "The box wasn't said. You heard: “The red ball is under the chair.”"
   }
  },
  {
@@ -625,8 +625,8 @@
   "explain": "'I like swimming, but I don't like running.'",
   "notes": {
    "running": "The speaker doesn't like running.",
-   "dancing": "Dancing wasn't said.",
-   "football": "Football wasn't said."
+   "dancing": "Dancing wasn't said. You heard: “I like swimming, but I don't like running.”",
+   "football": "Football wasn't said. You heard: “I like swimming, but I don't like running.”"
   }
  },
  {
@@ -642,9 +642,9 @@
   "answer": 0,
   "explain": "'Five ducks.'",
   "notes": {
-   "four": "Four wasn't said.",
-   "six": "Six wasn't said.",
-   "nine": "Nine wasn't said."
+   "four": "Four wasn't said. You heard: “There are five ducks on the pond.”",
+   "six": "Six wasn't said. You heard: “There are five ducks on the pond.”",
+   "nine": "Nine wasn't said. You heard: “There are five ducks on the pond.”"
   }
  },
  {
@@ -661,8 +661,8 @@
   "explain": "'My brother is nine.' Six is the sister.",
   "notes": {
    "six": "Six is the sister's age.",
-   "seven": "Seven wasn't said.",
-   "ten": "Ten wasn't said."
+   "seven": "Seven wasn't said. You heard: “My brother is nine.”",
+   "ten": "Ten wasn't said. You heard: “My brother is nine.”"
   }
  },
  {
@@ -678,9 +678,9 @@
   "answer": 0,
   "explain": "'Put your coat on.'",
   "notes": {
-   "a hat": "A hat wasn't said.",
-   "shoes": "Shoes weren't said.",
-   "gloves": "Gloves weren't said."
+   "a hat": "A hat wasn't said. You heard: “Please put your coat on.”",
+   "shoes": "Shoes weren't said. You heard: “Please put your coat on.”",
+   "gloves": "Gloves weren't said. You heard: “Please put your coat on.”"
   }
  },
  {
@@ -697,8 +697,8 @@
   "explain": "'Music on Friday.' English is on Monday.",
   "notes": {
    "on Monday": "Monday is English.",
-   "on Tuesday": "Tuesday wasn't said.",
-   "on Sunday": "Sunday wasn't said."
+   "on Tuesday": "Tuesday wasn't said. You heard: “We have English on Monday and music on Friday.”",
+   "on Sunday": "Sunday wasn't said. You heard: “We have English on Monday and music on Friday.”"
   }
  },
  {
@@ -714,9 +714,9 @@
   "answer": 0,
   "explain": "'The baby is sleeping.'",
   "notes": {
-   "eating": "Eating wasn't said.",
-   "crying": "Crying wasn't said.",
-   "playing": "Playing wasn't said."
+   "eating": "Eating wasn't said. You heard: “The baby is sleeping.”",
+   "crying": "Crying wasn't said. You heard: “The baby is sleeping.”",
+   "playing": "Playing wasn't said. You heard: “The baby is sleeping.”"
   }
  },
  {
@@ -732,9 +732,9 @@
   "answer": 0,
   "explain": "'Strawberry!'",
   "notes": {
-   "chocolate": "Chocolate wasn't said.",
-   "banana": "Banana wasn't said.",
-   "lemon": "Lemon wasn't said."
+   "chocolate": "Chocolate wasn't said. You heard: “Strawberry!”",
+   "banana": "Banana wasn't said. You heard: “Strawberry!”",
+   "lemon": "Lemon wasn't said. You heard: “Strawberry!”"
   }
  },
  {
@@ -751,8 +751,8 @@
   "explain": "'Purple with yellow stars': the bag is purple, the stars are yellow.",
   "notes": {
    "purple stars": "The bag is purple; the stars are yellow.",
-   "yellow moons": "Moons weren't said.",
-   "red hearts": "Hearts weren't said."
+   "yellow moons": "Moons weren't said. You heard: “My school bag is purple with yellow stars.”",
+   "red hearts": "Hearts weren't said. You heard: “My school bag is purple with yellow stars.”"
   }
  },
  {
@@ -787,7 +787,7 @@
   "explain": "'A dog and two cats.'",
   "notes": {
    "one": "One is the dog.",
-   "three": "Three wasn't said.",
+   "three": "Three wasn't said. You heard: “Tom has got a dog and two cats.”",
    "none": "He has two cats."
   }
  },
@@ -804,9 +804,9 @@
   "answer": 0,
   "explain": "'It's in the tree.'",
   "notes": {
-   "on the house": "The house wasn't said.",
-   "in the sky": "The sky wasn't said.",
-   "on the car": "The car wasn't said."
+   "on the house": "The house wasn't said. You heard: “It's in the tree.”",
+   "in the sky": "The sky wasn't said. You heard: “It's in the tree.”",
+   "on the car": "The car wasn't said. You heard: “It's in the tree.”"
   }
  },
  {
@@ -822,9 +822,9 @@
   "answer": 0,
   "explain": "'Pizza.'",
   "notes": {
-   "pasta": "Pasta wasn't said.",
-   "chicken": "Chicken wasn't said.",
-   "rice": "Rice wasn't said."
+   "pasta": "Pasta wasn't said. You heard: “My favourite food is pizza.”",
+   "chicken": "Chicken wasn't said. You heard: “My favourite food is pizza.”",
+   "rice": "Rice wasn't said. You heard: “My favourite food is pizza.”"
   }
  },
  {
@@ -841,8 +841,8 @@
   "explain": "'Dad is a cook.' Mum is the teacher.",
   "notes": {
    "a teacher": "Mum is the teacher.",
-   "a doctor": "Doctor wasn't said.",
-   "a farmer": "Farmer wasn't said."
+   "a doctor": "Doctor wasn't said. You heard: “Dad is a cook.”",
+   "a farmer": "Farmer wasn't said. You heard: “Dad is a cook.”"
   }
  },
  {
@@ -858,9 +858,9 @@
   "answer": 0,
   "explain": "'Close the window.'",
   "notes": {
-   "the door": "The door wasn't said.",
-   "the book": "The book wasn't said.",
-   "your eyes": "Eyes weren't said."
+   "the door": "The door wasn't said. You heard: “Close the window, please.”",
+   "the book": "The book wasn't said. You heard: “Close the window, please.”",
+   "your eyes": "Eyes weren't said. You heard: “Close the window, please.”"
   }
  },
  {
@@ -877,8 +877,8 @@
   "explain": "'Can I have an apple?'",
   "notes": {
    "a drink": "A drink is for thirsty.",
-   "a sandwich": "A sandwich wasn't said.",
-   "a banana": "A banana wasn't said."
+   "a sandwich": "A sandwich wasn't said. You heard: “Can I have an apple?”",
+   "a banana": "A banana wasn't said. You heard: “Can I have an apple?”"
   }
  },
  {
@@ -912,9 +912,9 @@
   "answer": 0,
   "explain": "'By the sea.'",
   "notes": {
-   "in the city": "The city wasn't said.",
-   "on a farm": "A farm wasn't said.",
-   "in a flat": "A flat wasn't said."
+   "in the city": "The city wasn't said. You heard: “Grandma lives in a little house by the sea.”",
+   "on a farm": "A farm wasn't said. You heard: “Grandma lives in a little house by the sea.”",
+   "in a flat": "A flat wasn't said. You heard: “Grandma lives in a little house by the sea.”"
   }
  },
  {
@@ -931,8 +931,8 @@
   "explain": "'She can't swim.'",
   "notes": {
    "ride a bike": "She CAN ride a bike.",
-   "sing": "Singing wasn't said.",
-   "read": "Reading wasn't said."
+   "sing": "Singing wasn't said. You heard: “Lily can ride a bike, but she can't swim.”",
+   "read": "Reading wasn't said. You heard: “Lily can ride a bike, but she can't swim.”"
   }
  },
  {
@@ -949,8 +949,8 @@
   "explain": "'After school.'",
   "notes": {
    "before school": "Before is the opposite.",
-   "at lunchtime": "Lunchtime wasn't said.",
-   "on Sunday": "Sunday wasn't said."
+   "at lunchtime": "Lunchtime wasn't said. You heard: “Let's play football after school.”",
+   "on Sunday": "Sunday wasn't said. You heard: “Let's play football after school.”"
   }
  },
  {
@@ -968,8 +968,8 @@
   "dialogue": true,
   "notes": {
    "under the bed": "On, not under.",
-   "on the chair": "The chair wasn't said.",
-   "in the bag": "The bag wasn't said."
+   "on the chair": "The chair wasn't said. You heard: “Mum: It's on your bed.”",
+   "in the bag": "The bag wasn't said. You heard: “Mum: It's on your bed.”"
   }
  },
  {
@@ -986,9 +986,9 @@
   "explain": "'He's a hamster.'",
   "dialogue": true,
   "notes": {
-   "a rabbit": "A rabbit wasn't said.",
-   "a dog": "A dog wasn't said.",
-   "a fish": "A fish wasn't said."
+   "a rabbit": "A rabbit wasn't said. You heard: “He's a hamster.”",
+   "a dog": "A dog wasn't said. You heard: “He's a hamster.”",
+   "a fish": "A fish wasn't said. You heard: “He's a hamster.”"
   }
  },
  {
@@ -1006,8 +1006,8 @@
   "dialogue": true,
   "notes": {
    "oranges": "He likes oranges; he loves grapes.",
-   "apples": "Apples weren't said.",
-   "pears": "Pears weren't said."
+   "apples": "Apples weren't said. You heard: “And I love grapes!”",
+   "pears": "Pears weren't said. You heard: “And I love grapes!”"
   }
  },
  {
@@ -1025,8 +1025,8 @@
   "dialogue": true,
   "notes": {
    "eight": "Sam said eight first, then changed it.",
-   "ten": "Ten wasn't said.",
-   "seven": "Seven wasn't said."
+   "ten": "Ten wasn't said. You heard: “No, nine!”",
+   "seven": "Seven wasn't said. You heard: “No, nine!”"
   }
  },
  {
@@ -1043,8 +1043,8 @@
   "explain": "'Pink and orange.'",
   "dialogue": true,
   "notes": {
-   "pink and purple": "Purple wasn't said.",
-   "red and orange": "Red wasn't said.",
+   "pink and purple": "Purple wasn't said. You heard: “Lily: It's pink and orange.”",
+   "red and orange": "Red wasn't said. You heard: “Lily: It's pink and orange.”",
    "all pink": "It's two colours."
   }
  },
@@ -1062,8 +1062,8 @@
   "explain": "'I've got a green bike.' The red one is the brother's.",
   "notes": {
    "red": "Red is the brother's bike.",
-   "blue": "Blue wasn't said.",
-   "yellow": "Yellow wasn't said."
+   "blue": "Blue wasn't said. You heard: “I've got a green bike.”",
+   "yellow": "Yellow wasn't said. You heard: “I've got a green bike.”"
   }
  },
  {
@@ -1080,8 +1080,8 @@
   "explain": "'On the sofa.'",
   "notes": {
    "under the sofa": "On, not under.",
-   "on the bed": "The bed wasn't said.",
-   "in the garden": "The garden wasn't said."
+   "on the bed": "The bed wasn't said. You heard: “The cat is sleeping on the sofa.”",
+   "in the garden": "The garden wasn't said. You heard: “The cat is sleeping on the sofa.”"
   }
  },
  {
@@ -1098,8 +1098,8 @@
   "explain": "'Art at ten.' Maths is at nine.",
   "notes": {
    "at nine": "Nine is maths.",
-   "at eleven": "Eleven wasn't said.",
-   "at two": "Two wasn't said."
+   "at eleven": "Eleven wasn't said. You heard: “We've got maths at nine and art at ten.”",
+   "at two": "Two wasn't said. You heard: “We've got maths at nine and art at ten.”"
   }
  },
  {
@@ -1116,8 +1116,8 @@
   "explain": "The speaker changes: 'No, sorry, it's purple!'",
   "notes": {
    "blue": "Blue was a mistake; the speaker changed it.",
-   "pink": "Pink wasn't said.",
-   "green": "Green wasn't said."
+   "pink": "Pink wasn't said. You heard: “No, sorry, it's purple!”",
+   "green": "Green wasn't said. You heard: “No, sorry, it's purple!”"
   }
  },
  {
@@ -1188,8 +1188,8 @@
   "explain": "'My cat is very small.' The dog is big.",
   "notes": {
    "the dog": "The dog is big.",
-   "the house": "A house wasn't said.",
-   "the bird": "A bird wasn't said."
+   "the house": "A house wasn't said. You heard: “My dog is big, but my cat is very small.”",
+   "the bird": "A bird wasn't said. You heard: “My dog is big, but my cat is very small.”"
   }
  },
  {
@@ -1205,9 +1205,9 @@
   "answer": 0,
   "explain": "'On the table.'",
   "notes": {
-   "in the bag": "The bag wasn't said.",
+   "in the bag": "The bag wasn't said. You heard: “Put the books on the table, please.”",
    "under the table": "On, not under.",
-   "on the chair": "The chair wasn't said."
+   "on the chair": "The chair wasn't said. You heard: “Put the books on the table, please.”"
   }
  },
  {
@@ -1224,8 +1224,8 @@
   "explain": "'Blue shorts.' The T-shirt is yellow.",
   "notes": {
    "yellow": "Yellow is the T-shirt.",
-   "red": "Red wasn't said.",
-   "white": "White wasn't said."
+   "red": "Red wasn't said. You heard: “I'm wearing a yellow T-shirt and blue shorts.”",
+   "white": "White wasn't said. You heard: “I'm wearing a yellow T-shirt and blue shorts.”"
   }
  },
  {
@@ -1241,9 +1241,9 @@
   "answer": 0,
   "explain": "'Ten children.'",
   "notes": {
-   "two": "Two wasn't said.",
+   "two": "Two wasn't said. You heard: “There are ten children in the pool.”",
    "twelve": "Twelve is 12.",
-   "six": "Six wasn't said."
+   "six": "Six wasn't said. You heard: “There are ten children in the pool.”"
   }
  },
  {
@@ -1259,9 +1259,9 @@
   "answer": 0,
   "explain": "'On Wednesday.'",
   "notes": {
-   "on Monday": "Monday wasn't said.",
-   "on Thursday": "Thursday wasn't said.",
-   "on Saturday": "Saturday wasn't said."
+   "on Monday": "Monday wasn't said. You heard: “I go swimming on Wednesday.”",
+   "on Thursday": "Thursday wasn't said. You heard: “I go swimming on Wednesday.”",
+   "on Saturday": "Saturday wasn't said. You heard: “I go swimming on Wednesday.”"
   }
  },
  {
@@ -1278,8 +1278,8 @@
   "explain": "'White hair and glasses.'",
   "notes": {
    "black hair and glasses": "His hair is white, not black.",
-   "white hair and a hat": "A hat wasn't said.",
-   "a beard and glasses": "A beard wasn't said."
+   "white hair and a hat": "A hat wasn't said. You heard: “He has got white hair and glasses.”",
+   "a beard and glasses": "A beard wasn't said. You heard: “He has got white hair and glasses.”"
   }
  },
  {
@@ -1295,9 +1295,9 @@
   "answer": 0,
   "explain": "'In the forest.'",
   "notes": {
-   "in the sea": "The sea wasn't said.",
-   "in a house": "A house wasn't said.",
-   "on a farm": "A farm wasn't said."
+   "in the sea": "The sea wasn't said. You heard: “The fox lives in the forest.”",
+   "in a house": "A house wasn't said. You heard: “The fox lives in the forest.”",
+   "on a farm": "A farm wasn't said. You heard: “The fox lives in the forest.”"
   }
  },
  {
@@ -1314,8 +1314,8 @@
   "explain": "'I don't want milk… water, please.'",
   "notes": {
    "milk": "The speaker doesn't want milk.",
-   "juice": "Juice wasn't said.",
-   "tea": "Tea wasn't said."
+   "juice": "Juice wasn't said. You heard: “Can I have water, please?”",
+   "tea": "Tea wasn't said. You heard: “Can I have water, please?”"
   }
  },
  {
@@ -1333,8 +1333,8 @@
   "dialogue": true,
   "notes": {
    "blue": "Jo asked about blue, but Ken said no.",
-   "brown": "Brown wasn't said.",
-   "grey": "Grey wasn't said."
+   "brown": "Brown wasn't said. You heard: “Ken: No, it's black.”",
+   "grey": "Grey wasn't said. You heard: “Ken: No, it's black.”"
   }
  },
  {
@@ -1351,9 +1351,9 @@
   "explain": "'Two, please.'",
   "dialogue": true,
   "notes": {
-   "one": "One wasn't said.",
-   "three": "Three wasn't said.",
-   "ten": "Ten wasn't said."
+   "one": "One wasn't said. You heard: “Ali: Two, please.”",
+   "three": "Three wasn't said. You heard: “Ali: Two, please.”",
+   "ten": "Ten wasn't said. You heard: “Ali: Two, please.”"
   }
  },
  {
@@ -1371,8 +1371,8 @@
   "dialogue": true,
   "notes": {
    "in front of the door": "Behind, not in front of.",
-   "under the bed": "The bed wasn't said.",
-   "on the table": "The table wasn't said."
+   "under the bed": "The bed wasn't said. You heard: “Dad: She's behind the door.”",
+   "on the table": "The table wasn't said. You heard: “Dad: She's behind the door.”"
   }
  },
  {
@@ -1390,8 +1390,8 @@
   "dialogue": true,
   "notes": {
    "page six": "Six was the teacher's mistake.",
-   "page eight": "Eight wasn't said.",
-   "page eleven": "Eleven wasn't said."
+   "page eight": "Eight wasn't said. You heard: “Teacher: Sorry, page seven!”",
+   "page eleven": "Eleven wasn't said. You heard: “Teacher: Sorry, page seven!”"
   }
  },
  {
@@ -1409,8 +1409,8 @@
   "dialogue": true,
   "notes": {
    "cats": "Ivy doesn't like cats.",
-   "birds": "Birds weren't said.",
-   "fish": "Fish weren't said."
+   "birds": "Birds weren't said. You heard: “I like dogs.”",
+   "fish": "Fish weren't said. You heard: “I like dogs.”"
   }
  },
  {
@@ -1427,9 +1427,9 @@
   "explain": "'Orange! Like a pumpkin.'",
   "dialogue": true,
   "notes": {
-   "yellow": "Yellow wasn't said.",
-   "green": "Green wasn't said.",
-   "red": "Red wasn't said."
+   "yellow": "Yellow wasn't said. You heard: “Leo: Orange!”",
+   "green": "Green wasn't said. You heard: “Leo: Orange!”",
+   "red": "Red wasn't said. You heard: “Leo: Orange!”"
   }
  },
  {
@@ -1447,8 +1447,8 @@
   "dialogue": true,
   "notes": {
    "ten": "Ten is the brother.",
-   "fourteen": "Fourteen wasn't said.",
-   "nine": "Nine wasn't said."
+   "fourteen": "Fourteen wasn't said. You heard: “Ben: She's four.”",
+   "nine": "Nine wasn't said. You heard: “Ben: She's four.”"
   }
  },
  {
@@ -1467,7 +1467,7 @@
   "notes": {
    "only swim": "She can dance too.",
    "only dance": "She can swim too.",
-   "sing and dance": "Singing wasn't said."
+   "sing and dance": "Singing wasn't said. You heard: “Pip: Can you swim?”"
   }
  },
  {
@@ -1484,9 +1484,9 @@
   "explain": "'They're in your coat.'",
   "dialogue": true,
   "notes": {
-   "in the car": "The car wasn't said.",
-   "on the table": "The table wasn't said.",
-   "in the bag": "The bag wasn't said."
+   "in the car": "The car wasn't said. You heard: “Mia: They're in your coat.”",
+   "on the table": "The table wasn't said. You heard: “Mia: They're in your coat.”",
+   "in the bag": "The bag wasn't said. You heard: “Mia: They're in your coat.”"
   }
  },
  {
@@ -1504,8 +1504,8 @@
   "dialogue": true,
   "notes": {
    "cold": "Raj says no, it isn't cold.",
-   "rainy": "Rain wasn't said.",
-   "snowy": "Snow wasn't said."
+   "rainy": "Rain wasn't said. You heard: “Raj: No, it's hot!”",
+   "snowy": "Snow wasn't said. You heard: “Raj: No, it's hot!”"
   }
  },
  {
@@ -1624,8 +1624,8 @@
   "explain": "'My birthday is in May.' June is the sister's.",
   "notes": {
    "in June": "June is the sister's birthday.",
-   "in March": "March wasn't said.",
-   "in July": "July wasn't said."
+   "in March": "March wasn't said. You heard: “My birthday is in May.”",
+   "in July": "July wasn't said. You heard: “My birthday is in May.”"
   }
  },
  {
@@ -1642,8 +1642,8 @@
   "explain": "'A small red tail.' The wings are green.",
   "notes": {
    "green": "Green is the wings.",
-   "blue": "Blue wasn't said.",
-   "yellow": "Yellow wasn't said."
+   "blue": "Blue wasn't said. You heard: “The dragon has got big green wings and a small red tail.”",
+   "yellow": "Yellow wasn't said. You heard: “The dragon has got big green wings and a small red tail.”"
   }
  },
  {
@@ -1660,8 +1660,8 @@
   "explain": "The speaker changes: 'No, wait, an egg sandwich.'",
   "notes": {
    "cheese": "Cheese was first, then the speaker changed.",
-   "fish": "Fish wasn't said.",
-   "chicken": "Chicken wasn't said."
+   "fish": "Fish wasn't said. You heard: “No, wait, an egg sandwich, please!”",
+   "chicken": "Chicken wasn't said. You heard: “No, wait, an egg sandwich, please!”"
   }
  },
  {
@@ -1696,8 +1696,8 @@
   "explain": "'Football on Friday.' Tuesday is tennis.",
   "notes": {
    "on Tuesday": "Tuesday is tennis.",
-   "on Thursday": "Thursday wasn't said.",
-   "on Sunday": "Sunday wasn't said."
+   "on Thursday": "Thursday wasn't said. You heard: “I play tennis on Tuesday and football on Friday.”",
+   "on Sunday": "Sunday wasn't said. You heard: “I play tennis on Tuesday and football on Friday.”"
   }
  },
  {
@@ -1732,8 +1732,8 @@
   "explain": "'The fairy is pink.' The unicorn is white.",
   "notes": {
    "white": "White is the unicorn.",
-   "purple": "Purple wasn't said.",
-   "blue": "Blue wasn't said."
+   "purple": "Purple wasn't said. You heard: “The unicorn is white, and the fairy is pink.”",
+   "blue": "Blue wasn't said. You heard: “The unicorn is white, and the fairy is pink.”"
   }
  },
  {
@@ -1750,8 +1750,8 @@
   "explain": "'My lunch and a book.' Lunch is food.",
   "dialogue": true,
   "notes": {
-   "a book and a ball": "A ball wasn't said.",
-   "his lunch and a pen": "A pen wasn't said.",
+   "a book and a ball": "A ball wasn't said. You heard: “Leo: My lunch and a book.”",
+   "his lunch and a pen": "A pen wasn't said. You heard: “Leo: My lunch and a book.”",
    "only a book": "His lunch is there too."
   }
  },
@@ -1770,8 +1770,8 @@
   "dialogue": true,
   "notes": {
    "under the tree": "In the tree, not under it.",
-   "in the house": "The house wasn't said.",
-   "in the car": "The car wasn't said."
+   "in the house": "The house wasn't said. You heard: “Ruby: She's in the tree!”",
+   "in the car": "The car wasn't said. You heard: “Ruby: She's in the tree!”"
   }
  },
  {
@@ -1788,9 +1788,9 @@
   "explain": "'Eight!'",
   "dialogue": true,
   "notes": {
-   "six": "Six wasn't said.",
-   "four": "Four wasn't said.",
-   "ten": "Ten wasn't said."
+   "six": "Six wasn't said. You heard: “Omar: Eight!”",
+   "four": "Four wasn't said. You heard: “Omar: Eight!”",
+   "ten": "Ten wasn't said. You heard: “Omar: Eight!”"
   }
  },
  {
@@ -1808,8 +1808,8 @@
   "dialogue": true,
   "notes": {
    "an apple": "Sam says no to the apple.",
-   "an orange": "An orange wasn't said.",
-   "a pear": "A pear wasn't said."
+   "an orange": "An orange wasn't said. You heard: “I want a banana.”",
+   "a pear": "A pear wasn't said. You heard: “I want a banana.”"
   }
  },
  {
@@ -1910,9 +1910,9 @@
   "explain": "Tom: 'My bag is blue.' The red one isn't his.",
   "dialogue": true,
   "notes": {
-   "red": "“red” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "green": "“green” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "pink": "“pink” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "red": "“red” is in the recording too, but not as the answer. You heard: “Tom: No, my bag is blue.” So it's “blue”.",
+   "green": "You heard: “Tom: No, my bag is blue.” So it's “blue”, not “green”.",
+   "pink": "You heard: “Tom: No, my bag is blue.” So it's “blue”, not “pink”."
   }
  },
  {
@@ -1929,9 +1929,9 @@
   "explain": "'He's eight.' Lily is ten.",
   "dialogue": true,
   "notes": {
-   "ten": "“ten” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "six": "“six” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "nine": "“nine” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "ten": "“ten” is in the recording too, but not as the answer. You heard: “Lily: He's eight.” So it's “eight”.",
+   "six": "You heard: “Lily: He's eight.” So it's “eight”, not “six”.",
+   "nine": "You heard: “Lily: He's eight.” So it's “eight”, not “nine”."
   }
  },
  {
@@ -1948,9 +1948,9 @@
   "explain": "She says no to the apple and asks for a banana.",
   "dialogue": true,
   "notes": {
-   "an apple": "“an apple” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "a cake": "“a cake” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "some milk": "“some milk” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "an apple": "“an apple” is in the recording too, but not as the answer. You heard: “Can I have a banana?” So it's “a banana”.",
+   "a cake": "You heard: “Can I have a banana?” So it's “a banana”, not “a cake”.",
+   "some milk": "You heard: “Can I have a banana?” So it's “a banana”, not “some milk”."
   }
  },
  {
@@ -1967,9 +1967,9 @@
   "explain": "'She's under the bed.'",
   "dialogue": true,
   "notes": {
-   "on the bed": "“on the bed” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "in the garden": "“in the garden” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "on the table": "“on the table” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "on the bed": "You heard: “Leo: She's under the bed!” So it's “under the bed”, not “on the bed”.",
+   "in the garden": "You heard: “Leo: She's under the bed!” So it's “under the bed”, not “in the garden”.",
+   "on the table": "You heard: “Leo: She's under the bed!” So it's “under the bed”, not “on the table”."
   }
  },
  {

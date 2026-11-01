@@ -16,9 +16,9 @@
      "answer": 0,
      "explain": "'My house has a red door.'",
      "notes": {
-      "blue": "“blue” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "white": "“white” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "green": "“green” doesn't answer the question. Find the line in the story that does, and read it again."
+      "blue": "The story says: “My house has a red door and two windows.” So it's “red”, not “blue”.",
+      "white": "“white” is in the story too, but not as the answer. The story says: “My house has a red door and two windows.” So it's “red”.",
+      "green": "The story says: “My house has a red door and two windows.” So it's “red”, not “green”."
      }
     },
     {
@@ -33,9 +33,9 @@
      "answer": 0,
      "explain": "'I have a cat. Her name is Button.'",
      "notes": {
-      "a dog": "“a dog” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "a rabbit": "“a rabbit” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "a bird": "“a bird” doesn't answer the question. Find the line in the story that does, and read it again."
+      "a dog": "The story says: “I have a cat.” So it's “a cat”, not “a dog”.",
+      "a rabbit": "The story says: “I have a cat.” So it's “a cat”, not “a rabbit”.",
+      "a bird": "The story says: “I have a cat.” So it's “a cat”, not “a bird”."
      }
     },
     {
@@ -50,9 +50,9 @@
      "answer": 0,
      "explain": "'Every morning, Button sleeps in the sun.'",
      "notes": {
-      "under the door": "“under the door” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "in the river": "“in the river” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "at school": "“at school” doesn't answer the question. Find the line in the story that does, and read it again."
+      "under the door": "The story says: “Every morning, Button sleeps in the sun.” So it's “in the sun”, not “under the door”.",
+      "in the river": "The story says: “Every morning, Button sleeps in the sun.” So it's “in the sun”, not “in the river”.",
+      "at school": "The story says: “Every morning, Button sleeps in the sun.” So it's “in the sun”, not “at school”."
      }
     }
    ]
@@ -73,9 +73,9 @@
      "answer": 0,
      "explain": "'I am at Ben's house.'",
      "notes": {
-      "at school": "“at school” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "at home": "“at home” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "at the shop": "“at the shop” doesn't answer the question. Find the line in the story that does, and read it again."
+      "at school": "The story says: “Dear Mum, I am at Ben's house.” So it's “at Ben's house”, not “at school”.",
+      "at home": "“at home” is in the story too, but not as the answer. The story says: “Dear Mum, I am at Ben's house.” So it's “at Ben's house”.",
+      "at the shop": "The story says: “Dear Mum, I am at Ben's house.” So it's “at Ben's house”, not “at the shop”."
      }
     },
     {
@@ -90,9 +90,9 @@
      "answer": 0,
      "explain": "'I will be home at six o'clock.'",
      "notes": {
-      "at five o'clock": "“at five o'clock” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "at seven o'clock": "“at seven o'clock” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "at eight o'clock": "“at eight o'clock” doesn't answer the question. Find the line in the story that does, and read it again."
+      "at five o'clock": "The story says: “I will be home at six o'clock.” So it's “at six o'clock”, not “at five o'clock”.",
+      "at seven o'clock": "The story says: “I will be home at six o'clock.” So it's “at six o'clock”, not “at seven o'clock”.",
+      "at eight o'clock": "The story says: “I will be home at six o'clock.” So it's “at six o'clock”, not “at eight o'clock”."
      }
     },
     {
@@ -107,9 +107,9 @@
      "answer": 0,
      "explain": "Ben's mum has pizza for them.",
      "notes": {
-      "pasta": "“pasta” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "soup": "“soup” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "cake": "“cake” doesn't answer the question. Find the line in the story that does, and read it again."
+      "pasta": "The story says: “Please don't make pasta for me — Ben's mum has pizza for us!” So it's “pizza”, not “pasta”.",
+      "soup": "The story says: “Please don't make pasta for me — Ben's mum has pizza for us!” So it's “pizza”, not “soup”.",
+      "cake": "The story says: “Please don't make pasta for me — Ben's mum has pizza for us!” So it's “pizza”, not “cake”."
      }
     }
    ]
@@ -130,9 +130,9 @@
      "answer": 0,
      "explain": "'Closed on Sunday.'",
      "notes": {
-      "Monday": "“Monday” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "Saturday": "“Saturday” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "Friday": "“Friday” doesn't answer the question. Find the line in the story that does, and read it again."
+      "Monday": "“Monday” is in the story too, but not as the answer. The story says: “Closed on Sunday.” So it's “Sunday”.",
+      "Saturday": "“Saturday” is in the story too, but not as the answer. The story says: “Closed on Sunday.” So it's “Sunday”.",
+      "Friday": "The story says: “Closed on Sunday.” So it's “Sunday”, not “Friday”."
      }
     },
     {
@@ -147,9 +147,9 @@
      "answer": 0,
      "explain": "'Rabbit food is half price.'",
      "notes": {
-      "fish": "“fish” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "cat toys": "“cat toys” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "dog beds": "“dog beds” doesn't answer the question. Find the line in the story that does, and read it again."
+      "fish": "“fish” is in the story too, but not as the answer. The story says: “Today: rabbit food is half price!” So it's “rabbit food”.",
+      "cat toys": "The story says: “Today: rabbit food is half price!” So it's “rabbit food”, not “cat toys”.",
+      "dog beds": "The story says: “Today: rabbit food is half price!” So it's “rabbit food”, not “dog beds”."
      }
     },
     {
@@ -164,9 +164,9 @@
      "answer": 0,
      "explain": "'Small fish: £3 each.'",
      "notes": {
-      "£5": "“£5” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "£9": "“£9” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "£1": "“£1” doesn't answer the question. Find the line in the story that does, and read it again."
+      "£5": "“£5” is in the story too, but not as the answer. The story says: “Small fish: £3 each.” So it's “£3”.",
+      "£9": "“£9” is in the story too, but not as the answer. The story says: “Small fish: £3 each.” So it's “£3”.",
+      "£1": "The story says: “Small fish: £3 each.” So it's “£3”, not “£1”."
      }
     }
    ]
@@ -187,9 +187,9 @@
      "answer": 0,
      "explain": "'He goes to school by bus.'",
      "notes": {
-      "by bike": "“by bike” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "on foot": "“on foot” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "by car": "“by car” doesn't answer the question. Find the line in the story that does, and read it again."
+      "by bike": "The story says: “He goes to school by bus.” So it's “by bus”, not “by bike”.",
+      "on foot": "The story says: “He goes to school by bus.” So it's “by bus”, not “on foot”.",
+      "by car": "The story says: “He goes to school by bus.” So it's “by bus”, not “by car”."
      }
     },
     {
@@ -204,9 +204,9 @@
      "answer": 0,
      "explain": "'He drinks orange juice.'",
      "notes": {
-      "milk": "“milk” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "tea": "“tea” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "water": "“water” doesn't answer the question. Find the line in the story that does, and read it again."
+      "milk": "The story says: “He eats eggs and drinks orange juice.” So it's “orange juice”, not “milk”.",
+      "tea": "The story says: “He eats eggs and drinks orange juice.” So it's “orange juice”, not “tea”.",
+      "water": "The story says: “He eats eggs and drinks orange juice.” So it's “orange juice”, not “water”."
      }
     },
     {
@@ -221,9 +221,9 @@
      "answer": 0,
      "explain": "'…goes to bed at nine.'",
      "notes": {
-      "at seven": "“at seven” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "at eight": "“at eight” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "at ten": "“at ten” doesn't answer the question. Find the line in the story that does, and read it again."
+      "at seven": "“at seven” is in the story too, but not as the answer. The story says: “In the evening, he reads a book and goes to bed at nine.” So it's “at nine”.",
+      "at eight": "The story says: “In the evening, he reads a book and goes to bed at nine.” So it's “at nine”, not “at eight”.",
+      "at ten": "The story says: “In the evening, he reads a book and goes to bed at nine.” So it's “at nine”, not “at ten”."
      }
     }
    ]
@@ -244,9 +244,9 @@
      "answer": 0,
      "explain": "'The weather is hot and sunny.'",
      "notes": {
-      "cold and rainy": "“cold and rainy” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "windy": "“windy” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "snowy": "“snowy” doesn't answer the question. Find the line in the story that does, and read it again."
+      "cold and rainy": "The story says: “The weather is hot and sunny.” So it's “hot and sunny”, not “cold and rainy”.",
+      "windy": "The story says: “The weather is hot and sunny.” So it's “hot and sunny”, not “windy”.",
+      "snowy": "The story says: “The weather is hot and sunny.” So it's “hot and sunny”, not “snowy”."
      }
     },
     {
@@ -261,9 +261,9 @@
      "answer": 0,
      "explain": "'My sister likes making sandcastles.'",
      "notes": {
-      "swimming": "“swimming” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "reading": "“reading” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "sleeping": "“sleeping” doesn't answer the question. Find the line in the story that does, and read it again."
+      "swimming": "The story says: “My sister likes making sandcastles.” So it's “making sandcastles”, not “swimming”.",
+      "reading": "The story says: “My sister likes making sandcastles.” So it's “making sandcastles”, not “reading”.",
+      "sleeping": "The story says: “My sister likes making sandcastles.” So it's “making sandcastles”, not “sleeping”."
      }
     },
     {
@@ -278,9 +278,9 @@
      "answer": 0,
      "explain": "'The hotel is very small.'",
      "notes": {
-      "the sea": "“the sea” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "the beach": "“the beach” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "the food": "“the food” doesn't answer the question. Find the line in the story that does, and read it again."
+      "the sea": "“the sea” is in the story too, but not as the answer. The story says: “The food is good, but the hotel is very small.” So it's “the hotel”.",
+      "the beach": "“the beach” is in the story too, but not as the answer. The story says: “The food is good, but the hotel is very small.” So it's “the hotel”.",
+      "the food": "The story says: “The food is good, but the hotel is very small.” So it's “the hotel”, not “the food”."
      }
     }
    ]
@@ -301,9 +301,9 @@
      "answer": 0,
      "explain": "'Puffbun and Mia go to the park.'",
      "notes": {
-      "to the shop": "“to the shop” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "to school": "“to school” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "to the beach": "“to the beach” doesn't answer the question. Find the line in the story that does, and read it again."
+      "to the shop": "The story says: “Puffbun and Mia go to the park.” So it's “to the park”, not “to the shop”.",
+      "to school": "The story says: “Puffbun and Mia go to the park.” So it's “to the park”, not “to school”.",
+      "to the beach": "The story says: “Puffbun and Mia go to the park.” So it's “to the park”, not “to the beach”."
      }
     },
     {
@@ -335,9 +335,9 @@
      "answer": 0,
      "explain": "'Puffbun… sleeps in the sun.'",
      "notes": {
-      "sings": "“sings” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "eats bread": "“eats bread” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "runs": "“runs” doesn't answer the question. Find the line in the story that does, and read it again."
+      "sings": "“sings” is in the story too, but not as the answer. The story says: “Puffbun is happy and sleeps in the sun.” So it's “sleeps”.",
+      "eats bread": "The story says: “Puffbun is happy and sleeps in the sun.” So it's “sleeps”, not “eats bread”.",
+      "runs": "The story says: “Puffbun is happy and sleeps in the sun.” So it's “sleeps”, not “runs”."
      }
     }
    ]
@@ -358,9 +358,9 @@
      "answer": 0,
      "explain": "'You can take two books home.'",
      "notes": {
-      "one": "“one” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "three": "“three” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "five": "“five” doesn't answer the question. Find the line in the story that does, and read it again."
+      "one": "The story says: “You can take two books home.” So it's “two”, not “one”.",
+      "three": "The story says: “You can take two books home.” So it's “two”, not “three”.",
+      "five": "“five” is in the story too, but not as the answer. The story says: “You can take two books home.” So it's “two”."
      }
     },
     {
@@ -375,9 +375,9 @@
      "answer": 0,
      "explain": "'It is closed on Sunday.'",
      "notes": {
-      "Monday": "“Monday” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "Saturday": "“Saturday” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "Friday": "“Friday” doesn't answer the question. Find the line in the story that does, and read it again."
+      "Monday": "“Monday” is in the story too, but not as the answer. The story says: “It is closed on Sunday.” So it's “Sunday”.",
+      "Saturday": "“Saturday” is in the story too, but not as the answer. The story says: “It is closed on Sunday.” So it's “Sunday”.",
+      "Friday": "The story says: “It is closed on Sunday.” So it's “Sunday”, not “Friday”."
      }
     },
     {
@@ -392,9 +392,9 @@
      "answer": 0,
      "explain": "'Don't eat or drink here.'",
      "notes": {
-      "read": "“read” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "sit": "“sit” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "take books": "“take books” doesn't answer the question. Find the line in the story that does, and read it again."
+      "read": "The story says: “Don't eat or drink here.” So it's “eat”, not “read”.",
+      "sit": "The story says: “Don't eat or drink here.” So it's “eat”, not “sit”.",
+      "take books": "“take books” is in the story too, but not as the answer. The story says: “Don't eat or drink here.” So it's “eat”."
      }
     }
    ]
@@ -417,7 +417,7 @@
      "notes": {
       "white": "Only one ear is white.",
       "red": "Red is his basket.",
-      "black": "Black isn't in the story."
+      "black": "Black isn't in the story. The story says: “He is brown with one white ear.”"
      }
     },
     {
@@ -433,8 +433,8 @@
      "explain": "'He sleeps in a red basket in the kitchen.'",
      "notes": {
       "in the garden with Mia": "He runs in the garden; he doesn't sleep there.",
-      "on Mia's bed": "Mia's bed isn't in the story.",
-      "in a box by the door": "A box isn't in the story."
+      "on Mia's bed": "Mia's bed isn't in the story. The story says: “He sleeps in a red basket in the kitchen.”",
+      "in a box by the door": "A box isn't in the story. The story says: “He sleeps in a red basket in the kitchen.”"
      }
     },
     {
@@ -449,9 +449,9 @@
      "answer": 0,
      "explain": "'Pip likes balls and bones.'",
      "notes": {
-      "cats and birds": "Cats and birds aren't in the story.",
-      "milk and cake": "Milk and cake aren't in the story.",
-      "shoes and socks": "Shoes and socks aren't in the story."
+      "cats and birds": "Cats and birds aren't in the story. The story says: “Pip likes balls and bones.”",
+      "milk and cake": "Milk and cake aren't in the story. The story says: “Pip likes balls and bones.”",
+      "shoes and socks": "Shoes and socks aren't in the story. The story says: “Pip likes balls and bones.”"
      }
     },
     {
@@ -468,7 +468,7 @@
      "notes": {
       "every night": "Morning, not night.",
       "on Sundays": "Every morning, not only Sundays.",
-      "after lunch": "Lunch isn't in the story."
+      "after lunch": "Lunch isn't in the story. The story says: “Every morning, Pip runs in the garden with Mia.”"
      }
     }
    ]
@@ -507,8 +507,8 @@
      "explain": "'He is tall and funny.'",
      "notes": {
       "short and quiet": "He is tall, not short.",
-      "old and sad": "Old and sad aren't in the story.",
-      "young and angry": "Angry isn't in the story."
+      "old and sad": "Old and sad aren't in the story. The story says: “He is tall and funny.”",
+      "young and angry": "Angry isn't in the story. The story says: “He is tall and funny.”"
      }
     },
     {
@@ -523,7 +523,7 @@
      "answer": 0,
      "explain": "'There is a fish tank by the window.'",
      "notes": {
-      "by the door": "The door isn't in the story.",
+      "by the door": "The door isn't in the story. The story says: “There is a fish tank by the window.”",
       "on the teacher's desk": "The desk isn't where it is.",
       "under the board": "The board is a different thing."
      }
@@ -580,9 +580,9 @@
      "answer": 0,
      "explain": "'She has a bottle of water.'",
      "notes": {
-      "juice": "Juice isn't in the story.",
-      "milk": "Milk isn't in the story.",
-      "tea": "Tea isn't in the story."
+      "juice": "Juice isn't in the story. The story says: “She has a bottle of water too.”",
+      "milk": "Milk isn't in the story. The story says: “She has a bottle of water too.”",
+      "tea": "Tea isn't in the story. The story says: “She has a bottle of water too.”"
      }
     },
     {
@@ -615,7 +615,7 @@
      "explain": "'Lily eats lunch with her friend Zara.'",
      "notes": {
       "Mia": "Mia isn't in this story.",
-      "her mum": "Her mum isn't in the story.",
+      "her mum": "Her mum isn't in the story. The story says: “Lily eats lunch with her friend Zara at twelve o'clock.”",
       "Mr Ong": "Mr Ong isn't in this story."
      }
     }
@@ -638,8 +638,8 @@
      "explain": "'It is hot and sunny.'",
      "notes": {
       "cold and rainy": "It's hot, not cold.",
-      "very windy": "Wind isn't in the story.",
-      "snowy": "Snow isn't in the story."
+      "very windy": "Wind isn't in the story. The story says: “It is hot and sunny.”",
+      "snowy": "Snow isn't in the story. The story says: “It is hot and sunny.”"
      }
     },
     {
@@ -654,9 +654,9 @@
      "answer": 0,
      "explain": "'Ben makes a big sandcastle.'",
      "notes": {
-      "a kite": "A kite isn't in the story.",
-      "a cake": "A cake isn't in the story.",
-      "a boat": "A boat isn't in the story."
+      "a kite": "A kite isn't in the story. The story says: “Ben makes a big sandcastle.”",
+      "a cake": "A cake isn't in the story. The story says: “Ben makes a big sandcastle.”",
+      "a boat": "A boat isn't in the story. The story says: “Ben makes a big sandcastle.”"
      }
     },
     {
@@ -671,7 +671,7 @@
      "answer": 0,
      "explain": "'Dad reads a book under an umbrella.'",
      "notes": {
-      "sleeps": "Sleeping isn't in the story.",
+      "sleeps": "Sleeping isn't in the story. The story says: “Dad reads a book under an umbrella.”",
       "eats ice cream": "They eat ice cream later.",
       "swims": "They swim in the sea, not under the umbrella."
      }
@@ -728,9 +728,9 @@
      "answer": 0,
      "explain": "'A little green dragon.'",
      "notes": {
-      "red": "Red isn't in the story.",
-      "blue": "Blue isn't in the story.",
-      "pink": "Pink isn't in the story."
+      "red": "Red isn't in the story. The story says: “Minty is a little green dragon.”",
+      "blue": "Blue isn't in the story. The story says: “Minty is a little green dragon.”",
+      "pink": "Pink isn't in the story. The story says: “Minty is a little green dragon.”"
      }
     },
     {
@@ -762,9 +762,9 @@
      "answer": 0,
      "explain": "'She blows them out with a tiny puff of smoke!'",
      "notes": {
-      "with a cup of water": "Water isn't in the story.",
-      "with her big wings": "Her wings aren't in the story.",
-      "with a little fan": "A fan isn't in the story."
+      "with a cup of water": "Water isn't in the story. The story says: “She blows them out with a tiny puff of smoke!”",
+      "with her big wings": "Her wings aren't in the story. The story says: “She blows them out with a tiny puff of smoke!”",
+      "with a little fan": "A fan isn't in the story. The story says: “She blows them out with a tiny puff of smoke!”"
      }
     }
    ]
@@ -785,9 +785,9 @@
      "answer": 0,
      "explain": "'Bun is a white bunny.'",
      "notes": {
-      "brown": "Brown isn't in the story.",
+      "brown": "Brown isn't in the story. The story says: “Bun is a white bunny.”",
       "orange": "Orange is the carrot.",
-      "grey": "Grey isn't in the story."
+      "grey": "Grey isn't in the story. The story says: “Bun is a white bunny.”"
      }
     },
     {
@@ -803,8 +803,8 @@
      "explain": "'She lives in a small house in the garden.'",
      "notes": {
       "in a big house": "Her house is small.",
-      "in the forest": "The forest isn't in the story.",
-      "in a box": "A box isn't in the story."
+      "in the forest": "The forest isn't in the story. The story says: “She lives in a small house in the garden.”",
+      "in a box": "A box isn't in the story. The story says: “She lives in a small house in the garden.”"
      }
     },
     {
@@ -853,8 +853,8 @@
      "answer": 0,
      "explain": "'They eat it for dinner.'",
      "notes": {
-      "for breakfast": "Breakfast isn't in the story.",
-      "for lunch": "Lunch isn't in the story.",
+      "for breakfast": "Breakfast isn't in the story. The story says: “Then they eat it for dinner.”",
+      "for lunch": "Lunch isn't in the story. The story says: “Then they eat it for dinner.”",
       "the next day": "They eat it that day."
      }
     }
@@ -893,8 +893,8 @@
      "answer": 0,
      "explain": "'He is silver and blue.'",
      "notes": {
-      "silver and red": "Red isn't in the story.",
-      "black and blue": "Black isn't in the story.",
+      "silver and red": "Red isn't in the story. The story says: “He is silver and blue.”",
+      "black and blue": "Black isn't in the story. The story says: “He is silver and blue.”",
       "all blue": "He is two colours."
      }
     },
@@ -911,8 +911,8 @@
      "explain": "'Four small wheels.'",
      "notes": {
       "two": "Two is his eyes.",
-      "three": "Three isn't in the story.",
-      "six": "Six isn't in the story."
+      "three": "Three isn't in the story. The story says: “He has two big eyes and four small wheels.”",
+      "six": "Six isn't in the story. The story says: “He has two big eyes and four small wheels.”"
      }
     },
     {
@@ -945,7 +945,7 @@
      "explain": "'I play with Beep after school.'",
      "notes": {
       "before school": "After, not before.",
-      "at night": "Night isn't in the story.",
+      "at night": "Night isn't in the story. The story says: “I play with Beep after school.”",
       "on Monday only": "Every day after school, not one day."
      }
     }
@@ -967,9 +967,9 @@
      "answer": 0,
      "explain": "'It is Saturday.'",
      "notes": {
-      "Sunday": "Sunday isn't in the story.",
-      "Friday": "Friday isn't in the story.",
-      "Monday": "Monday isn't in the story."
+      "Sunday": "Sunday isn't in the story. The story says: “It is Saturday.”",
+      "Friday": "Friday isn't in the story. The story says: “It is Saturday.”",
+      "Monday": "Monday isn't in the story. The story says: “It is Saturday.”"
      }
     },
     {
@@ -1003,7 +1003,7 @@
      "notes": {
       "in the garden": "It's raining outside.",
       "in the park": "They can't go to the park.",
-      "in the kitchen": "The kitchen isn't in the story."
+      "in the kitchen": "The kitchen isn't in the story. The story says: “They make a tent in the living room with blankets and chairs.”"
      }
     },
     {
@@ -1018,9 +1018,9 @@
      "answer": 0,
      "explain": "'They read books in the tent and eat popcorn.'",
      "notes": {
-      "pizza": "Pizza isn't in the story.",
-      "cake": "Cake isn't in the story.",
-      "apples": "Apples aren't in the story."
+      "pizza": "Pizza isn't in the story. The story says: “They read books in the tent and eat popcorn.”",
+      "cake": "Cake isn't in the story. The story says: “They read books in the tent and eat popcorn.”",
+      "apples": "Apples aren't in the story. The story says: “They read books in the tent and eat popcorn.”"
      }
     },
     {
@@ -1037,7 +1037,7 @@
      "notes": {
       "sad": "She is sad at the start.",
       "cold": "Cold is the weather.",
-      "tired": "Tired isn't in the story."
+      "tired": "Tired isn't in the story. The story says: “Now Ella is happy!”"
      }
     }
    ]
@@ -1058,9 +1058,9 @@
      "answer": 0,
      "explain": "'Night School in the big tree.'",
      "notes": {
-      "in a house": "A house isn't in the story.",
+      "in a house": "A house isn't in the story. The story says: “He goes to Night School in the big tree.”",
       "in the sky": "They fly in the sky, but school is in the tree.",
-      "by the river": "A river isn't in the story."
+      "by the river": "A river isn't in the story. The story says: “He goes to Night School in the big tree.”"
      }
     },
     {
@@ -1092,7 +1092,7 @@
      "answer": 0,
      "explain": "'Hoo's teacher is Mrs Feather.'",
      "notes": {
-      "Hoo's mum": "His mum isn't in the story.",
+      "Hoo's mum": "His mum isn't in the story. The story says: “Hoo's teacher is Mrs Feather.”",
       "Hoo's friend": "His friend is Twit.",
       "a star": "They count stars."
      }
@@ -1109,9 +1109,9 @@
      "answer": 0,
      "explain": "'The owls learn to fly and count stars.'",
      "notes": {
-      "to swim and sing": "Swimming isn't in the story.",
-      "to read and write": "Reading isn't in the story.",
-      "to run and jump": "Running isn't in the story."
+      "to swim and sing": "Swimming isn't in the story. The story says: “In class, the owls learn to fly and count stars.”",
+      "to read and write": "Reading isn't in the story. The story says: “In class, the owls learn to fly and count stars.”",
+      "to run and jump": "Running isn't in the story. The story says: “In class, the owls learn to fly and count stars.”"
      }
     },
     {
@@ -1127,7 +1127,7 @@
      "explain": "'Hoo's best friend is Twit. They sit together.'",
      "notes": {
       "Mrs Feather": "She's the teacher.",
-      "his brother": "A brother isn't in the story.",
+      "his brother": "A brother isn't in the story. The story says: “Hoo's best friend is Twit.”",
       "nobody": "He sits with Twit."
      }
     }
@@ -1150,8 +1150,8 @@
      "explain": "'Leo is at his uncle's farm.'",
      "notes": {
       "Leo's": "Leo is visiting.",
-      "Leo's dad's": "His dad isn't in the story.",
-      "a teacher's": "A teacher isn't in the story."
+      "Leo's dad's": "His dad isn't in the story. The story says: “Today Leo is at his uncle's farm.”",
+      "a teacher's": "A teacher isn't in the story. The story says: “Today Leo is at his uncle's farm.”"
      }
     },
     {
@@ -1166,7 +1166,7 @@
      "answer": 0,
      "explain": "'The cows are black and white.'",
      "notes": {
-      "brown": "Brown isn't in the story.",
+      "brown": "Brown isn't in the story. The story says: “The cows are black and white.”",
       "red and white": "Red is the tractor.",
       "all black": "They are two colours."
      }
@@ -1184,8 +1184,8 @@
      "explain": "'Leo feeds the chickens in the morning.'",
      "notes": {
       "rides the tractor": "The tractor is in the afternoon.",
-      "milks the cows": "Milking isn't in the story.",
-      "sleeps": "Sleeping isn't in the story."
+      "milks the cows": "Milking isn't in the story. The story says: “Leo feeds the chickens in the morning.”",
+      "sleeps": "Sleeping isn't in the story. The story says: “Leo feeds the chickens in the morning.”"
      }
     },
     {
@@ -1217,8 +1217,8 @@
      "answer": 0,
      "explain": "'He rides on a big red tractor.'",
      "notes": {
-      "a horse": "A horse isn't in the story.",
-      "a bike": "A bike isn't in the story.",
+      "a horse": "A horse isn't in the story. The story says: “In the afternoon, he rides on a big red tractor with his uncle.”",
+      "a bike": "A bike isn't in the story. The story says: “In the afternoon, he rides on a big red tractor with his uncle.”",
       "a cow": "He feeds animals but rides the tractor."
      }
     }
@@ -1241,8 +1241,8 @@
      "explain": "'Pink with yellow flowers.'",
      "notes": {
       "pink flowers": "The shoes are pink; the flowers are yellow.",
-      "yellow stars": "Stars aren't in the story.",
-      "red hearts": "Hearts aren't in the story."
+      "yellow stars": "Stars aren't in the story. The story says: “They are pink with yellow flowers.”",
+      "red hearts": "Hearts aren't in the story. The story says: “They are pink with yellow flowers.”"
      }
     },
     {
@@ -1275,8 +1275,8 @@
      "explain": "'Zara's old shoes are too small.'",
      "notes": {
       "they are too big": "Small, not big.",
-      "they are broken": "Broken isn't in the story.",
-      "they are wet": "Wet isn't in the story."
+      "they are broken": "Broken isn't in the story. The story says: “Zara's old shoes are too small.”",
+      "they are wet": "Wet isn't in the story. The story says: “Zara's old shoes are too small.”"
      }
     },
     {
@@ -1291,9 +1291,9 @@
      "answer": 0,
      "explain": "'She wears her new shoes to school.'",
      "notes": {
-      "to the park": "The park isn't in the story.",
-      "to a party": "A party isn't in the story.",
-      "to bed": "Bed isn't in the story."
+      "to the park": "The park isn't in the story. The story says: “She wears her new shoes to school.”",
+      "to a party": "A party isn't in the story. The story says: “She wears her new shoes to school.”",
+      "to bed": "Bed isn't in the story. The story says: “She wears her new shoes to school.”"
      }
     },
     {
@@ -1332,8 +1332,8 @@
      "explain": "'She doesn't like fire. She likes flowers!'",
      "notes": {
       "fire": "She doesn't like fire.",
-      "rain": "Rain isn't in the story.",
-      "fish": "Fish aren't in the story."
+      "rain": "Rain isn't in the story. The story says: “She likes flowers!”",
+      "fish": "Fish aren't in the story. The story says: “She likes flowers!”"
      }
     },
     {
@@ -1348,9 +1348,9 @@
      "answer": 0,
      "explain": "'A big garden on a hill.'",
      "notes": {
-      "by the sea": "The sea isn't in the story.",
-      "in a cave": "A cave isn't in the story.",
-      "in the town": "A town isn't in the story."
+      "by the sea": "The sea isn't in the story. The story says: “Ember has a big garden on a hill.”",
+      "in a cave": "A cave isn't in the story. The story says: “Ember has a big garden on a hill.”",
+      "in the town": "A town isn't in the story. The story says: “Ember has a big garden on a hill.”"
      }
     },
     {
@@ -1367,7 +1367,7 @@
      "notes": {
       "blue": "The other flowers are blue.",
       "yellow": "Yellow isn't said for roses.",
-      "pink": "Pink isn't in the story."
+      "pink": "Pink isn't in the story. The story says: “There are red roses, blue flowers and tall sunflowers.”"
      }
     },
     {
@@ -1382,8 +1382,8 @@
      "answer": 0,
      "explain": "'Every day she gives the flowers water.'",
      "notes": {
-      "picks the flowers": "Picking isn't in the story.",
-      "sleeps on the hill": "Sleeping isn't in the story.",
+      "picks the flowers": "Picking isn't in the story. The story says: “Every day she gives the flowers water.”",
+      "sleeps on the hill": "Sleeping isn't in the story. The story says: “Every day she gives the flowers water.”",
       "makes a fire": "She doesn't like fire."
      }
     },
@@ -1440,7 +1440,7 @@
      "explain": "'Ben is second.'",
      "notes": {
       "first": "Amy is first.",
-      "third": "Third isn't in the story.",
+      "third": "Third isn't in the story. The story says: “Amy is first and Ben is second.”",
       "last": "He is second."
      }
     },
@@ -1456,9 +1456,9 @@
      "answer": 0,
      "explain": "'He wins a gold star!'",
      "notes": {
-      "a cup": "A cup isn't in the story.",
+      "a cup": "A cup isn't in the story. The story says: “He wins a gold star!”",
       "a silver star": "The star is gold.",
-      "a book": "A book isn't in the story."
+      "a book": "A book isn't in the story. The story says: “He wins a gold star!”"
      }
     },
     {
@@ -1474,8 +1474,8 @@
      "explain": "'Then Ben jumps very far. He wins a gold star!'",
      "notes": {
       "the race": "He's second in the race.",
-      "a song": "Singing isn't in the story.",
-      "a picture": "A picture isn't in the story."
+      "a song": "Singing isn't in the story. The story says: “Then Ben jumps very far.”",
+      "a picture": "A picture isn't in the story. The story says: “Then Ben jumps very far.”"
      }
     },
     {
@@ -1490,8 +1490,8 @@
      "answer": 0,
      "explain": "'All the children have orange juice.'",
      "notes": {
-      "water": "Water isn't in the story.",
-      "milk": "Milk isn't in the story.",
+      "water": "Water isn't in the story. The story says: “After the races, all the children have orange juice in the sun.”",
+      "milk": "Milk isn't in the story. The story says: “After the races, all the children have orange juice in the sun.”",
       "apple juice": "The juice is orange."
      }
     }
@@ -1514,8 +1514,8 @@
      "explain": "'She is orange and very small.'",
      "notes": {
       "green": "Green is the plant in her bowl.",
-      "white and gold": "White isn't in the story.",
-      "red": "Red isn't in the story."
+      "white and gold": "White isn't in the story. The story says: “She is orange and very small.”",
+      "red": "Red isn't in the story. The story says: “She is orange and very small.”"
      }
     },
     {
@@ -1530,9 +1530,9 @@
      "answer": 0,
      "explain": "'Goldie lives in a round bowl on Tom's desk.'",
      "notes": {
-      "on the kitchen floor": "The kitchen isn't in the story.",
-      "in the garden": "The garden isn't in the story.",
-      "under Tom's bed": "The bed isn't in the story."
+      "on the kitchen floor": "The kitchen isn't in the story. The story says: “Goldie lives in a round bowl on Tom's desk.”",
+      "in the garden": "The garden isn't in the story. The story says: “Goldie lives in a round bowl on Tom's desk.”",
+      "under Tom's bed": "The bed isn't in the story. The story says: “Goldie lives in a round bowl on Tom's desk.”"
      }
     },
     {
@@ -1565,8 +1565,8 @@
      "explain": "'On Sundays, Tom's dad cleans the bowl.'",
      "notes": {
       "Tom": "Tom gives her food; Dad cleans.",
-      "Tom's mum": "Mum isn't in the story.",
-      "Tom's sister": "A sister isn't in the story."
+      "Tom's mum": "Mum isn't in the story. The story says: “On Sundays, Tom's dad cleans the bowl.”",
+      "Tom's sister": "A sister isn't in the story. The story says: “On Sundays, Tom's dad cleans the bowl.”"
      }
     },
     {
@@ -1581,9 +1581,9 @@
      "answer": 0,
      "explain": "'Goldie likes the little green plant in her bowl.'",
      "notes": {
-      "a toy castle": "A castle isn't in the story.",
-      "big stones": "Stones aren't in the story.",
-      "the cat": "A cat isn't in the story."
+      "a toy castle": "A castle isn't in the story. The story says: “Goldie likes the little green plant in her bowl.”",
+      "big stones": "Stones aren't in the story. The story says: “Goldie likes the little green plant in her bowl.”",
+      "the cat": "A cat isn't in the story. The story says: “Goldie likes the little green plant in her bowl.”"
      }
     }
    ]
@@ -1604,8 +1604,8 @@
      "answer": 0,
      "explain": "'She is on the Moon with her robot, Zip.'",
      "notes": {
-      "her mum": "Her mum isn't in the story.",
-      "a space dog": "A dog isn't in the story.",
+      "her mum": "Her mum isn't in the story. The story says: “Today she is on the Moon with her robot, Zip.”",
+      "a space dog": "A dog isn't in the story. The story says: “Today she is on the Moon with her robot, Zip.”",
       "two astronauts": "Rosa is the only astronaut."
      }
     },
@@ -1621,9 +1621,9 @@
      "answer": 0,
      "explain": "'Rosa has a sandwich and a banana.'",
      "notes": {
-      "an apple": "An apple isn't in the story.",
+      "an apple": "An apple isn't in the story. The story says: “Rosa has a sandwich and a banana.”",
       "a sandwich": "She has a sandwich, but it isn't fruit.",
-      "some grapes": "Grapes aren't in the story."
+      "some grapes": "Grapes aren't in the story. The story says: “Rosa has a sandwich and a banana.”"
      }
     },
     {
@@ -1638,9 +1638,9 @@
      "answer": 0,
      "explain": "'Zip doesn't eat food. He drinks oil!'",
      "notes": {
-      "water": "Water isn't in the story.",
-      "milk": "Milk isn't in the story.",
-      "orange juice": "Juice isn't in the story."
+      "water": "Water isn't in the story. The story says: “He drinks oil!”",
+      "milk": "Milk isn't in the story. The story says: “He drinks oil!”",
+      "orange juice": "Juice isn't in the story. The story says: “He drinks oil!”"
      }
     },
     {
@@ -1656,8 +1656,8 @@
      "explain": "'The Moon is grey and very quiet.'",
      "notes": {
       "blue and white": "Blue and white is the Earth.",
-      "yellow": "Yellow isn't in the story.",
-      "black": "Black isn't in the story."
+      "yellow": "Yellow isn't in the story. The story says: “The Moon is grey and very quiet.”",
+      "black": "Black isn't in the story. The story says: “The Moon is grey and very quiet.”"
      }
     },
     {
@@ -1673,8 +1673,8 @@
      "explain": "'She is very happy.'",
      "notes": {
       "sad": "She is happy, not sad.",
-      "tired": "Tired isn't in the story.",
-      "scared": "Scared isn't in the story."
+      "tired": "Tired isn't in the story. The story says: “She is very happy.”",
+      "scared": "Scared isn't in the story. The story says: “She is very happy.”"
      }
     }
    ]
@@ -1695,7 +1695,7 @@
      "answer": 0,
      "explain": "'It is a big yellow fish with a long tail.'",
      "notes": {
-      "a red bird": "A bird isn't in the story.",
+      "a red bird": "A bird isn't in the story. The story says: “It is a big yellow fish with a long tail.”",
       "a long green snake": "It has a long tail, but it isn't a snake.",
       "a blue fish": "The fish is yellow, not blue."
      }
@@ -1712,9 +1712,9 @@
      "answer": 0,
      "explain": "'On Saturday, Milo and his sister Ana go to the hill.'",
      "notes": {
-      "on Sunday": "Sunday isn't in the story.",
-      "after school on Friday": "Friday isn't in the story.",
-      "on Monday": "Monday isn't in the story."
+      "on Sunday": "Sunday isn't in the story. The story says: “On Saturday, Milo and his sister Ana go to the hill.”",
+      "after school on Friday": "Friday isn't in the story. The story says: “On Saturday, Milo and his sister Ana go to the hill.”",
+      "on Monday": "Monday isn't in the story. The story says: “On Saturday, Milo and his sister Ana go to the hill.”"
      }
     },
     {
@@ -1729,9 +1729,9 @@
      "answer": 0,
      "explain": "'It is windy.'",
      "notes": {
-      "rainy": "Rain isn't in the story.",
-      "hot and sunny": "Sun isn't in the story.",
-      "snowy": "Snow isn't in the story."
+      "rainy": "Rain isn't in the story. The story says: “It is windy.”",
+      "hot and sunny": "Sun isn't in the story. The story says: “It is windy.”",
+      "snowy": "Snow isn't in the story. The story says: “It is windy.”"
      }
     },
     {
@@ -1746,8 +1746,8 @@
      "answer": 0,
      "explain": "'Then it goes into a tree.'",
      "notes": {
-      "into the sea": "The sea isn't in the story.",
-      "onto a roof": "A roof isn't in the story.",
+      "into the sea": "The sea isn't in the story. The story says: “Then it goes into a tree.”",
+      "onto a roof": "A roof isn't in the story. The story says: “Then it goes into a tree.”",
       "under the hill": "It goes up high, not under the hill."
      }
     },
@@ -1764,7 +1764,7 @@
      "explain": "'Ana is tall. She gets the kite down.'",
      "notes": {
       "Milo": "Milo says thank you; he doesn't get it.",
-      "Milo's dad": "Dad isn't in the story.",
+      "Milo's dad": "Dad isn't in the story. The story says: “On Saturday, Milo and his sister Ana go to the hill.”",
       "a tall man": "Ana is tall, but she isn't a man."
      }
     }
@@ -1786,9 +1786,9 @@
      "answer": 0,
      "explain": "'It is Monday morning.'",
      "notes": {
-      "Sunday": "Sunday isn't in the story.",
-      "Friday": "Friday isn't in the story.",
-      "Saturday": "Saturday isn't in the story."
+      "Sunday": "Sunday isn't in the story. The story says: “It is Monday morning.”",
+      "Friday": "Friday isn't in the story. The story says: “It is Monday morning.”",
+      "Saturday": "Saturday isn't in the story. The story says: “It is Monday morning.”"
      }
     },
     {
@@ -1821,8 +1821,8 @@
      "explain": "'He has a carrot nose.'",
      "notes": {
       "a button": "Buttons are his eyes.",
-      "a banana": "A banana isn't in the story.",
-      "a stone": "A stone isn't in the story."
+      "a banana": "A banana isn't in the story. The story says: “He has a carrot nose and two black buttons for eyes.”",
+      "a stone": "A stone isn't in the story. The story says: “He has a carrot nose and two black buttons for eyes.”"
      }
     },
     {
@@ -1839,7 +1839,7 @@
      "notes": {
       "in the garden": "The garden is where they make the snowman.",
       "at school": "There is no school today.",
-      "in the bedroom": "The bedroom isn't in the story."
+      "in the bedroom": "The bedroom isn't in the story. The story says: “Then they drink hot chocolate in the kitchen.”"
      }
     },
     {
@@ -1854,7 +1854,7 @@
      "answer": 0,
      "explain": "'Kim and her brother Sam.'",
      "notes": {
-      "Kim's dad": "Dad isn't in the story.",
+      "Kim's dad": "Dad isn't in the story. The story says: “Kim and her brother Sam put on their hats, coats and boots.”",
       "the snowman": "The snowman has no name.",
       "Kim's friend from school": "Sam is her brother, not a school friend."
      }
@@ -1877,8 +1877,8 @@
      "answer": 0,
      "explain": "'She is eight, like me.'",
      "notes": {
-      "seven": "Seven isn't in the story.",
-      "nine": "Nine isn't in the story.",
+      "seven": "Seven isn't in the story. The story says: “She is eight, like me.”",
+      "nine": "Nine isn't in the story. The story says: “She is eight, like me.”",
       "eighteen": "Eighteen isn't eight."
      }
     },
@@ -1895,8 +1895,8 @@
      "explain": "'Nina can't swim, but she can dance very well.'",
      "notes": {
       "swim": "Nina can't swim.",
-      "sing": "Singing isn't in the story.",
-      "draw": "Drawing isn't in the story."
+      "sing": "Singing isn't in the story. The story says: “Nina can't swim, but she can dance very well.”",
+      "draw": "Drawing isn't in the story. The story says: “Nina can't swim, but she can dance very well.”"
      }
     },
     {
@@ -1913,7 +1913,7 @@
      "notes": {
       "brown": "Brown is her eyes.",
       "white": "White is Snowball.",
-      "yellow": "Yellow isn't in the story."
+      "yellow": "Yellow isn't in the story. The story says: “She has short black hair and big brown eyes.”"
      }
     },
     {
@@ -1928,9 +1928,9 @@
      "answer": 0,
      "explain": "'He loves lettuce.'",
      "notes": {
-      "carrots": "Carrots aren't in the story.",
-      "apples": "Apples aren't in the story.",
-      "cake": "Cake isn't in the story."
+      "carrots": "Carrots aren't in the story. The story says: “Snowball is white and fluffy, and he loves lettuce.”",
+      "apples": "Apples aren't in the story. The story says: “Snowball is white and fluffy, and he loves lettuce.”",
+      "cake": "Cake isn't in the story. The story says: “Snowball is white and fluffy, and he loves lettuce.”"
      }
     }
    ]
@@ -1951,9 +1951,9 @@
      "answer": 0,
      "explain": "'Spark is a tiny purple dragon.'",
      "notes": {
-      "pink": "Pink isn't in the story.",
-      "green": "Green isn't in the story.",
-      "red": "Red isn't in the story."
+      "pink": "Pink isn't in the story. The story says: “Spark is a tiny purple dragon.”",
+      "green": "Green isn't in the story. The story says: “Spark is a tiny purple dragon.”",
+      "red": "Red isn't in the story. The story says: “Spark is a tiny purple dragon.”"
      }
     },
     {
@@ -1970,7 +1970,7 @@
      "notes": {
       "a purple dragon": "Spark is the purple dragon.",
       "a unicorn": "Pearl is the unicorn.",
-      "Spark's mum": "His mum isn't in the story."
+      "Spark's mum": "His mum isn't in the story. The story says: “His teacher is Miss Fern.”"
      }
     },
     {
@@ -1987,7 +1987,7 @@
      "notes": {
       "four": "Four is the dragons.",
       "ten": "Ten is all the pupils.",
-      "two": "Two isn't in the story."
+      "two": "Two isn't in the story. The story says: “There are ten pupils in his class: four dragons, three unicorns and three elves.”"
      }
     },
     {
@@ -2003,8 +2003,8 @@
      "explain": "'After lunch they learn to fly!'",
      "notes": {
       "they count to ten": "Counting is in the morning.",
-      "they play football": "Football isn't in the story.",
-      "they go home": "Going home isn't in the story."
+      "they play football": "Football isn't in the story. The story says: “After lunch they learn to fly!”",
+      "they go home": "Going home isn't in the story. The story says: “After lunch they learn to fly!”"
      }
     },
     {
@@ -2043,8 +2043,8 @@
      "explain": "'She has blue wings.'",
      "notes": {
       "pink": "Pink is her dress.",
-      "green": "Green isn't in the story.",
-      "white": "White isn't in the story."
+      "green": "Green isn't in the story. The story says: “She has blue wings and a long pink dress.”",
+      "white": "White isn't in the story. The story says: “She has blue wings and a long pink dress.”"
      }
     },
     {
@@ -2077,8 +2077,8 @@
      "explain": "'She looks under her bed… She looks in the kitchen.'",
      "notes": {
       "in the kitchen": "The kitchen is the second place.",
-      "in the garden": "The garden isn't in the story.",
-      "under the table": "The table isn't in the story."
+      "in the garden": "The garden isn't in the story. The story says: “She looks under her bed.”",
+      "under the table": "The table isn't in the story. The story says: “She looks under her bed.”"
      }
     },
     {
@@ -2116,8 +2116,8 @@
      "answer": 0,
      "explain": "'He lives at the zoo.'",
      "notes": {
-      "in a forest": "A forest isn't in the story.",
-      "on a farm": "A farm isn't in the story.",
+      "in a forest": "A forest isn't in the story. The story says: “He lives at the zoo.”",
+      "on a farm": "A farm isn't in the story. The story says: “He lives at the zoo.”",
       "in Mr Tan's house": "Mr Tan works at the zoo; Bo doesn't live in his house."
      }
     },
@@ -2152,7 +2152,7 @@
      "notes": {
       "a boy at the zoo": "He's a zoo keeper, not a boy.",
       "Bo's panda friend": "He isn't a panda.",
-      "a teacher": "A teacher isn't in the story."
+      "a teacher": "A teacher isn't in the story. The story says: “In summer, the zoo keeper, Mr Tan, fills a small pool with cold water.”"
      }
     },
     {
@@ -2167,9 +2167,9 @@
      "answer": 0,
      "explain": "'Bo sits in the pool and eats bamboo.'",
      "notes": {
-      "fish": "Fish aren't in the story.",
-      "ice cream": "Ice cream isn't in the story.",
-      "apples": "Apples aren't in the story."
+      "fish": "Fish aren't in the story. The story says: “Bo sits in the pool and eats bamboo.”",
+      "ice cream": "Ice cream isn't in the story. The story says: “Bo sits in the pool and eats bamboo.”",
+      "apples": "Apples aren't in the story. The story says: “Bo sits in the pool and eats bamboo.”"
      }
     },
     {

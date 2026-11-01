@@ -16,9 +16,9 @@
      "answer": 0,
      "explain": "'Please bring your cake to the bakery by 12 o'clock.'",
      "notes": {
-      "to the school hall": "“to the school hall” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "to the village square": "“to the village square” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "to the judges' table": "“to the judges' table” doesn't answer the question. Find the line in the story that does, and read it again."
+      "to the school hall": "“to the school hall” is in the story too, but not as the answer. The story says: “: please bring your cake to the bakery by 12 o'clock.” So it's “to the bakery”.",
+      "to the village square": "“to the village square” is in the story too, but not as the answer. The story says: “: please bring your cake to the bakery by 12 o'clock.” So it's “to the bakery”.",
+      "to the judges' table": "The story says: “: please bring your cake to the bakery by 12 o'clock.” So it's “to the bakery”, not “to the judges' table”."
      }
     },
     {
@@ -33,9 +33,9 @@
      "answer": 0,
      "explain": "Face painting costs £2; entry is free.",
      "notes": {
-      "entry to the fair": "“entry to the fair” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "the cake competition": "“the cake competition” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "the music": "“the music” doesn't answer the question. Find the line in the story that does, and read it again."
+      "entry to the fair": "“entry to the fair” is in the story too, but not as the answer. The story says: “Face painting for children: £2.” So it's “face painting”.",
+      "the cake competition": "“the cake competition” is in the story too, but not as the answer. The story says: “Face painting for children: £2.” So it's “face painting”.",
+      "the music": "The story says: “Face painting for children: £2.” So it's “face painting”, not “the music”."
      }
     },
     {
@@ -50,9 +50,9 @@
      "answer": 0,
      "explain": "'If it rains, the fair will move to the school hall.'",
      "notes": {
-      "The fair is cancelled.": "“The fair is cancelled.” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "The fair moves to next Saturday.": "“The fair moves to next Saturday.” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "The fair starts later.": "“The fair starts later.” doesn't answer the question. Find the line in the story that does, and read it again."
+      "The fair is cancelled.": "The story says: “If it rains, the fair will move to the school hall.” So it's “The fair moves to the school hall.”, not “The fair is cancelled.”",
+      "The fair moves to next Saturday.": "The story says: “If it rains, the fair will move to the school hall.” So it's “The fair moves to the school hall.”, not “The fair moves to next Saturday.”",
+      "The fair starts later.": "The story says: “If it rains, the fair will move to the school hall.” So it's “The fair moves to the school hall.”, not “The fair starts later.”"
      }
     }
    ]
@@ -73,9 +73,9 @@
      "answer": 0,
      "explain": "'I have a piano lesson until five.'",
      "notes": {
-      "She has homework.": "“She has homework.” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "Her brother is ill.": "“Her brother is ill.” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "She doesn't know the address.": "“She doesn't know the address.” doesn't answer the question. Find the line in the story that does, and read it again."
+      "She has homework.": "The story says: “I'd love to come, but I have a piano lesson until five.” So it's “She has a piano lesson.”, not “She has homework.”",
+      "Her brother is ill.": "The story says: “I'd love to come, but I have a piano lesson until five.” So it's “She has a piano lesson.”, not “Her brother is ill.”",
+      "She doesn't know the address.": "The story says: “I'd love to come, but I have a piano lesson until five.” So it's “She has a piano lesson.”, not “She doesn't know the address.”"
      }
     },
     {
@@ -90,9 +90,9 @@
      "answer": 0,
      "explain": "'My brother wants to know if he can come too.'",
      "notes": {
-      "if she can bring food": "“if she can bring food” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "what time the party ends": "“what time the party ends” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "where the party is": "“where the party is” doesn't answer the question. Find the line in the story that does, and read it again."
+      "if she can bring food": "The story says: “Also, my brother wants to know if he can come too.” So it's “if her brother can come”, not “if she can bring food”.",
+      "what time the party ends": "The story says: “Also, my brother wants to know if he can come too.” So it's “if her brother can come”, not “what time the party ends”.",
+      "where the party is": "“where the party is” is in the story too, but not as the answer. The story says: “Also, my brother wants to know if he can come too.” So it's “if her brother can come”."
      }
     },
     {
@@ -107,9 +107,9 @@
      "answer": 0,
      "explain": "'We only moved last month.'",
      "notes": {
-      "Her brother is older than her.": "“Her brother is older than her.” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "They have a piano shop.": "“They have a piano shop.” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "They live next to Leo.": "“They live next to Leo.” doesn't answer the question. Find the line in the story that does, and read it again."
+      "Her brother is older than her.": "The story says: “He doesn't know many people here because we only moved last month.” So it's “They moved recently.”, not “Her brother is older than her.”",
+      "They have a piano shop.": "The story says: “He doesn't know many people here because we only moved last month.” So it's “They moved recently.”, not “They have a piano shop.”",
+      "They live next to Leo.": "The story says: “He doesn't know many people here because we only moved last month.” So it's “They moved recently.”, not “They live next to Leo.”"
      }
     }
    ]
@@ -130,9 +130,9 @@
      "answer": 0,
      "explain": "'At first he only sold bread.'",
      "notes": {
-      "gingerbread houses": "“gingerbread houses” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "sweets": "“sweets” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "birthday cakes": "“birthday cakes” doesn't answer the question. Find the line in the story that does, and read it again."
+      "gingerbread houses": "The story says: “At first he only sold bread, but one winter he made gingerbread houses for the village children.” So it's “only bread”, not “gingerbread houses”.",
+      "sweets": "“sweets” is in the story too, but not as the answer. The story says: “At first he only sold bread, but one winter he made gingerbread houses for the village children.” So it's “only bread”.",
+      "birthday cakes": "The story says: “At first he only sold bread, but one winter he made gingerbread houses for the village children.” So it's “only bread”, not “birthday cakes”."
      }
     },
     {
@@ -147,9 +147,9 @@
      "answer": 0,
      "explain": "'She (Poppy) decorates the houses with sweets.'",
      "notes": {
-      "Mr Crumb": "“Mr Crumb” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "the village children": "“the village children” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "his daughter": "“his daughter” doesn't answer the question. Find the line in the story that does, and read it again."
+      "Mr Crumb": "“Mr Crumb” is in the story too, but not as the answer. The story says: “Now his granddaughter Poppy helps him.” So it's “Poppy”.",
+      "the village children": "“the village children” is in the story too, but not as the answer. The story says: “Now his granddaughter Poppy helps him.” So it's “Poppy”.",
+      "his daughter": "The story says: “Now his granddaughter Poppy helps him.” So it's “Poppy”, not “his daughter”."
      }
     },
     {
@@ -164,9 +164,9 @@
      "answer": 0,
      "explain": "'…because he loves seeing children smile.'",
      "notes": {
-      "He needs the money.": "“He needs the money.” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "Poppy is too young.": "“Poppy is too young.” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "The town needs bread.": "“The town needs bread.” doesn't answer the question. Find the line in the story that does, and read it again."
+      "He needs the money.": "The story says: “He says he will never stop working because he loves seeing children smile.” So it's “He loves seeing children smile.”, not “He needs the money.”",
+      "Poppy is too young.": "The story says: “He says he will never stop working because he loves seeing children smile.” So it's “He loves seeing children smile.”, not “Poppy is too young.”",
+      "The town needs bread.": "The story says: “He says he will never stop working because he loves seeing children smile.” So it's “He loves seeing children smile.”, not “The town needs bread.”"
      }
     }
    ]
@@ -204,9 +204,9 @@
      "answer": 0,
      "explain": "'It got very cold, so we made a fire.'",
      "notes": {
-      "To cook the fish.": "“To cook the fish.” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "To dry the tent.": "“To dry the tent.” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "To see in the dark.": "“To see in the dark.” doesn't answer the question. Find the line in the story that does, and read it again."
+      "To cook the fish.": "“To cook the fish.” is in the story too, but not as the answer. The story says: “In the evening it got very cold, so we made a fire and cooked sausages.” So it's “It was very cold.”",
+      "To dry the tent.": "The story says: “In the evening it got very cold, so we made a fire and cooked sausages.” So it's “It was very cold.”, not “To dry the tent.”",
+      "To see in the dark.": "The story says: “In the evening it got very cold, so we made a fire and cooked sausages.” So it's “It was very cold.”, not “To see in the dark.”"
      }
     },
     {
@@ -221,9 +221,9 @@
      "answer": 0,
      "explain": "'It rained heavily and our tent got wet.'",
      "notes": {
-      "They went fishing again.": "“They went fishing again.” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "They lost the car keys.": "“They lost the car keys.” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "They stayed another night.": "“They stayed another night.” doesn't answer the question. Find the line in the story that does, and read it again."
+      "They went fishing again.": "The story says: “On Sunday morning it rained heavily and our tent got wet.” So it's “It rained and the tent got wet.”, not “They went fishing again.”",
+      "They lost the car keys.": "The story says: “On Sunday morning it rained heavily and our tent got wet.” So it's “It rained and the tent got wet.”, not “They lost the car keys.”",
+      "They stayed another night.": "The story says: “On Sunday morning it rained heavily and our tent got wet.” So it's “It rained and the tent got wet.”, not “They stayed another night.”"
      }
     }
    ]
@@ -244,9 +244,9 @@
      "answer": 0,
      "explain": "'…wearing a blue collar with a bell.'",
      "notes": {
-      "grey": "“grey” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "red": "“red” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "green": "“green” doesn't answer the question. Find the line in the story that does, and read it again."
+      "grey": "The story says: “LOST: small grey kitten wearing a blue collar with a bell.” So it's “blue”, not “grey”.",
+      "red": "The story says: “LOST: small grey kitten wearing a blue collar with a bell.” So it's “blue”, not “red”.",
+      "green": "The story says: “LOST: small grey kitten wearing a blue collar with a bell.” So it's “blue”, not “green”."
      }
     },
     {
@@ -261,9 +261,9 @@
      "answer": 0,
      "explain": "'Last seen near the library.'",
      "notes": {
-      "in the park": "“in the park” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "at school": "“at school” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "in Jack's garden": "“in Jack's garden” doesn't answer the question. Find the line in the story that does, and read it again."
+      "in the park": "The story says: “Last seen near the library on Tuesday evening.” So it's “near the library”, not “in the park”.",
+      "at school": "The story says: “Last seen near the library on Tuesday evening.” So it's “near the library”, not “at school”.",
+      "in Jack's garden": "The story says: “Last seen near the library on Tuesday evening.” So it's “near the library”, not “in Jack's garden”."
      }
     },
     {
@@ -278,9 +278,9 @@
      "answer": 0,
      "explain": "'She is very shy.'",
      "notes": {
-      "friendly": "“friendly” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "noisy": "“noisy” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "brave": "“brave” doesn't answer the question. Find the line in the story that does, and read it again."
+      "friendly": "The story says: “She is very shy and may hide under cars.” So it's “shy”, not “friendly”.",
+      "noisy": "The story says: “She is very shy and may hide under cars.” So it's “shy”, not “noisy”.",
+      "brave": "The story says: “She is very shy and may hide under cars.” So it's “shy”, not “brave”."
      }
     }
    ]
@@ -318,9 +318,9 @@
      "answer": 0,
      "explain": "'Mrs Plum lets me take home any broken lollipops!'",
      "notes": {
-      "the very good pay": "“the very good pay” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "finishing work early": "“finishing work early” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "the quiet afternoons": "“the quiet afternoons” doesn't answer the question. Find the line in the story that does, and read it again."
+      "the very good pay": "The story says: “The pay isn't great, but Mrs Plum lets me take home any broken lollipops!” So it's “taking home broken lollipops”, not “the very good pay”.",
+      "finishing work early": "The story says: “The pay isn't great, but Mrs Plum lets me take home any broken lollipops!” So it's “taking home broken lollipops”, not “finishing work early”.",
+      "the quiet afternoons": "The story says: “The pay isn't great, but Mrs Plum lets me take home any broken lollipops!” So it's “taking home broken lollipops”, not “the quiet afternoons”."
      }
     },
     {
@@ -335,9 +335,9 @@
      "answer": 0,
      "explain": "'…because of the village fair.'",
      "notes": {
-      "Kit gave away free sweets.": "“Kit gave away free sweets.” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "Mrs Plum was ill.": "“Mrs Plum was ill.” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "It was a holiday.": "“It was a holiday.” doesn't answer the question. Find the line in the story that does, and read it again."
+      "Kit gave away free sweets.": "The story says: “Last Saturday it was really busy because of the village fair.” So it's “There was a fair.”, not “Kit gave away free sweets.”",
+      "Mrs Plum was ill.": "The story says: “Last Saturday it was really busy because of the village fair.” So it's “There was a fair.”, not “Mrs Plum was ill.”",
+      "It was a holiday.": "The story says: “Last Saturday it was really busy because of the village fair.” So it's “There was a fair.”, not “It was a holiday.”"
      }
     }
    ]
@@ -358,9 +358,9 @@
      "answer": 0,
      "explain": "'The trip takes 40 minutes.'",
      "notes": {
-      "one hour": "“one hour” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "four hours": "“four hours” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "seven hours": "“seven hours” doesn't answer the question. Find the line in the story that does, and read it again."
+      "one hour": "“one hour” is in the story too, but not as the answer. The story says: “The trip takes 40 minutes.” So it's “40 minutes”.",
+      "four hours": "The story says: “The trip takes 40 minutes.” So it's “40 minutes”, not “four hours”.",
+      "seven hours": "The story says: “The trip takes 40 minutes.” So it's “40 minutes”, not “seven hours”."
      }
     },
     {
@@ -375,9 +375,9 @@
      "answer": 0,
      "explain": "'…it's cheaper online.'",
      "notes": {
-      "on the train": "“on the train” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "at the station": "“at the station” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "at the sweet shop": "“at the sweet shop” doesn't answer the question. Find the line in the story that does, and read it again."
+      "on the train": "The story says: “You can buy tickets at the station or on the train, but it's cheaper online.” So it's “online”, not “on the train”.",
+      "at the station": "The story says: “You can buy tickets at the station or on the train, but it's cheaper online.” So it's “online”, not “at the station”.",
+      "at the sweet shop": "The story says: “You can buy tickets at the station or on the train, but it's cheaper online.” So it's “online”, not “at the sweet shop”."
      }
     },
     {
@@ -392,9 +392,9 @@
      "answer": 0,
      "explain": "'…please keep them on a lead.'",
      "notes": {
-      "buy their dog a child's ticket": "“buy their dog a child's ticket” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "leave their dog at the station": "“leave their dog at the station” doesn't answer the question. Find the line in the story that does, and read it again.",
-      "sit at the back of the train": "“sit at the back of the train” doesn't answer the question. Find the line in the story that does, and read it again."
+      "buy their dog a child's ticket": "The story says: “Dogs are welcome, but please keep them on a lead.” So it's “keep their dog on a lead”, not “buy their dog a child's ticket”.",
+      "leave their dog at the station": "The story says: “Dogs are welcome, but please keep them on a lead.” So it's “keep their dog on a lead”, not “leave their dog at the station”.",
+      "sit at the back of the train": "The story says: “Dogs are welcome, but please keep them on a lead.” So it's “keep their dog on a lead”, not “sit at the back of the train”."
      }
     }
    ]
@@ -564,8 +564,8 @@
      "explain": "'Behind the school.'",
      "notes": {
       "next to the library": "The library got books, but the garden isn't next to it.",
-      "in the park": "The park isn't in the text.",
-      "on the roof": "The roof isn't in the text."
+      "in the park": "The park isn't in the text. The story says: “Last spring, Class 4B started a garden behind the school.”",
+      "on the roof": "The roof isn't in the text. The story says: “Last spring, Class 4B started a garden behind the school.”"
      }
     },
     {
@@ -614,9 +614,9 @@
      "answer": 0,
      "explain": "'Used the money to buy books for the library.'",
      "notes": {
-      "more seeds": "Seeds aren't in the text.",
+      "more seeds": "Seeds aren't in the text. The story says: “The class sold their tomatoes at the summer fair and used the money to buy books for the library.”",
       "a new garden": "They already had a garden.",
-      "ice cream": "Ice cream isn't in the text."
+      "ice cream": "Ice cream isn't in the text. The story says: “The class sold their tomatoes at the summer fair and used the money to buy books for the library.”"
      }
     }
    ]
@@ -729,8 +729,8 @@
      "explain": "'It took her five hours!'",
      "notes": {
       "seven hours": "Seven is the number of layers.",
-      "one hour": "One hour isn't in the text.",
-      "two days": "Two days isn't in the text."
+      "one hour": "One hour isn't in the text. The story says: “It took her five hours!”",
+      "two days": "Two days isn't in the text. The story says: “It took her five hours!”"
      }
     },
     {
@@ -803,8 +803,8 @@
      "explain": "'In the library's Blue Room.'",
      "notes": {
       "at the front desk": "You join at the front desk, but meet in the Blue Room.",
-      "in a classroom": "A classroom isn't mentioned.",
-      "in the park": "The park isn't mentioned."
+      "in a classroom": "A classroom isn't mentioned. The story says: “Join the Starlight Library Club!”",
+      "in the park": "The park isn't mentioned. The story says: “Join the Starlight Library Club!”"
      }
     },
     {
@@ -853,7 +853,7 @@
      "answer": 0,
      "explain": "'Speak to Miss Rose at the front desk before Friday.'",
      "notes": {
-      "send an email": "Email isn't mentioned.",
+      "send an email": "Email isn't mentioned. The story says: “To join, speak to Miss Rose at the front desk before Friday.”",
       "pay at the desk": "It's free.",
       "write a story": "Writing isn't needed."
      }
@@ -894,8 +894,8 @@
      "explain": "'He was sure his neighbour's dog, Buster, had taken it.'",
      "notes": {
       "his sister": "He found out about his sister later.",
-      "his best friend": "A friend isn't mentioned.",
-      "a bird": "A bird isn't mentioned."
+      "his best friend": "A friend isn't mentioned. The story says: “He was sure his neighbour's dog, Buster, had taken it.”",
+      "a bird": "A bird isn't mentioned. The story says: “He was sure his neighbour's dog, Buster, had taken it.”"
      }
     },
     {
@@ -1036,8 +1036,8 @@
      "explain": "'Last night Dad and I took it into the garden.'",
      "notes": {
       "her grandma": "Grandma gave it.",
-      "her brother": "A brother isn't mentioned.",
-      "her teacher": "A teacher isn't mentioned."
+      "her brother": "A brother isn't mentioned. The story says: “Last night Dad and I took it into the garden.”",
+      "her teacher": "A teacher isn't mentioned. The story says: “Last night Dad and I took it into the garden.”"
      }
     }
    ]
@@ -1126,8 +1126,8 @@
      "answer": 0,
      "explain": "'They made a new batch together.'",
      "notes": {
-      "they went to a café": "A café isn't mentioned.",
-      "Marco went to bed": "Bed isn't mentioned.",
+      "they went to a café": "A café isn't mentioned. The story says: “Then they made a new batch together.”",
+      "Marco went to bed": "Bed isn't mentioned. The story says: “Then they made a new batch together.”",
       "Mum cooked alone": "Together, not alone."
      }
     }
@@ -1217,8 +1217,8 @@
      "answer": 0,
      "explain": "'Mr Diaz is strict but kind.'",
      "notes": {
-      "funny and loud": "Funny isn't mentioned.",
-      "young and shy": "Young and shy aren't mentioned.",
+      "funny and loud": "Funny isn't mentioned. The story says: “My new teacher, Mr Diaz, is strict but kind.”",
+      "young and shy": "Young and shy aren't mentioned. The story says: “My new teacher, Mr Diaz, is strict but kind.”",
       "unkind": "He's kind."
      }
     }
@@ -1257,9 +1257,9 @@
      "answer": 0,
      "explain": "Feeding time 'is the most popular time to watch'.",
      "notes": {
-      "at night": "Night isn't mentioned.",
+      "at night": "Night isn't mentioned. The story says: “Every day, thousands of children around the world watch the penguins at Frostbay Zoo on a webcam.”",
       "early in the morning": "11 a.m. isn't early morning.",
-      "when they sleep": "Sleeping isn't mentioned."
+      "when they sleep": "Sleeping isn't mentioned. The story says: “Every day, thousands of children around the world watch the penguins at Frostbay Zoo on a webcam.”"
      }
     },
     {
@@ -1291,7 +1291,7 @@
      "answer": 0,
      "explain": "'A baby penguin was born.'",
      "notes": {
-      "a penguin escaped": "Escaping isn't mentioned.",
+      "a penguin escaped": "Escaping isn't mentioned. The story says: “Last month, a baby penguin was born.”",
       "the camera broke": "The camera still works.",
       "the zoo closed": "The zoo is open."
      }
@@ -1310,7 +1310,7 @@
      "notes": {
       "the zookeeper": "The keeper asked viewers.",
       "the baby's mother": "Penguins can't vote!",
-      "a teacher at a school": "A teacher isn't mentioned."
+      "a teacher at a school": "A teacher isn't mentioned. The story says: “Every day, thousands of children around the world watch the penguins at Frostbay Zoo on a webcam.”"
      }
     }
    ]
@@ -1383,7 +1383,7 @@
      "explain": "'I'll bring the popcorn.'",
      "notes": {
       "the tickets": "Jay buys the tickets.",
-      "drinks": "Drinks aren't mentioned.",
+      "drinks": "Drinks aren't mentioned. The story says: “I'll bring the popcorn.”",
       "his homework": "Homework isn't for the cinema."
      }
     },
@@ -1439,7 +1439,7 @@
      "answer": 0,
      "explain": "'The village ovens stopped working.'",
      "notes": {
-      "there was no flour": "Flour isn't mentioned.",
+      "there was no flour": "Flour isn't mentioned. The story says: “One winter, the village ovens stopped working and nobody could bake bread.”",
       "it was too hot": "It was winter.",
       "Toffee left": "She came to help."
      }
@@ -1457,8 +1457,8 @@
      "explain": "'Gently breathed fire into every oven.'",
      "notes": {
       "she baked the bread": "She lit the ovens; the villagers baked.",
-      "she bought new ovens": "Buying isn't mentioned.",
-      "she brought wood": "Wood isn't mentioned."
+      "she bought new ovens": "Buying isn't mentioned. The story says: “Toffee flew down and gently breathed fire into every oven.”",
+      "she brought wood": "Wood isn't mentioned. The story says: “Toffee flew down and gently breathed fire into every oven.”"
      }
     },
     {
@@ -1474,8 +1474,8 @@
      "explain": "'Made her a giant honey cake every year.'",
      "notes": {
       "with a party just once": "Every year, not once.",
-      "with gold": "Gold isn't mentioned.",
-      "with a new cave": "A cave isn't mentioned."
+      "with gold": "Gold isn't mentioned. The story says: “After that, the villagers made her a giant honey cake every year.”",
+      "with a new cave": "A cave isn't mentioned. The story says: “After that, the villagers made her a giant honey cake every year.”"
      }
     },
     {
@@ -1822,7 +1822,7 @@
      "notes": {
       "a Blue Bears player": "She plays for 'our' team, the Foxes.",
       "the coach": "She's a player, not the coach.",
-      "the referee": "A referee isn't in the story."
+      "the referee": "A referee isn't in the story. The story says: “Then our goalkeeper, Lucy, had an idea: 'Let's pass the ball more and run less!”"
      }
     },
     {
@@ -1839,7 +1839,7 @@
      "notes": {
       "to run faster": "She said 'run less'.",
       "to stop the game": "She didn't want to stop.",
-      "to change the goalkeeper": "Changing players isn't in the story."
+      "to change the goalkeeper": "Changing players isn't in the story. The story says: “Then our goalkeeper, Lucy, had an idea: 'Let's pass the ball more and run less!”"
      }
     },
     {
@@ -2025,9 +2025,9 @@
      "answer": 0,
      "explain": "'A cave on Cloud Mountain.'",
      "notes": {
-      "in a forest": "A forest isn't in the story.",
+      "in a forest": "A forest isn't in the story. The story says: “Blaze was a young dragon who lived in a cave on Cloud Mountain.”",
       "in a castle on a cloud": "Cloud is the mountain's name; there's no castle.",
-      "near the sea": "The sea isn't in the story."
+      "near the sea": "The sea isn't in the story. The story says: “Blaze was a young dragon who lived in a cave on Cloud Mountain.”"
      }
     },
     {
@@ -2044,7 +2044,7 @@
      "notes": {
       "he couldn't make fire": "He made a fire every night.",
       "he had no friends": "Friends aren't the problem.",
-      "he was too big for the cave": "Size isn't in the story."
+      "he was too big for the cave": "Size isn't in the story. The story says: “All the other dragons slept in the dark cave, but Blaze was too scared.”"
      }
     },
     {
@@ -2059,8 +2059,8 @@
      "answer": 0,
      "explain": "'The smoke woke everyone up.'",
      "notes": {
-      "the fire was too hot": "Heat isn't in the story.",
-      "Blaze snored": "Snoring isn't in the story.",
+      "the fire was too hot": "Heat isn't in the story. The story says: “Every night he made a small fire to light the cave, and the smoke woke everyone up.”",
+      "Blaze snored": "Snoring isn't in the story. The story says: “Every night he made a small fire to light the cave, and the smoke woke everyone up.”",
       "Glim was too bright": "Glim helped; she came later."
      }
     },
@@ -2076,9 +2076,9 @@
      "answer": 0,
      "explain": "'I don't make any smoke!'",
      "notes": {
-      "it's very hot": "Heat isn't in the story.",
-      "it's bigger than a fire": "Size isn't in the story.",
-      "it's red": "Colour isn't in the story."
+      "it's very hot": "Heat isn't in the story. The story says: “Every night he made a small fire to light the cave, and the smoke woke everyone up.”",
+      "it's bigger than a fire": "Size isn't in the story. The story says: “Every night he made a small fire to light the cave, and the smoke woke everyone up.”",
+      "it's red": "Colour isn't in the story. The story says: “Every night he made a small fire to light the cave, and the smoke woke everyone up.”"
      }
     },
     {
@@ -2225,7 +2225,7 @@
      "explain": "'A woman from the café came over. \"Is this yours?\"'",
      "notes": {
       "Jack's mum": "Mum didn't find it.",
-      "the train driver": "A driver isn't in the story.",
+      "the train driver": "A driver isn't in the story. The story says: “Then a woman from the café came over.”",
       "Jack": "Jack couldn't find it."
      }
     },

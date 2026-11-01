@@ -30,9 +30,9 @@
   "answer": 0,
   "explain": "Unwell = ill.",
   "notes": {
-   "The weather is bad.": "“The weather is bad.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "Tickets didn't sell.": "“Tickets didn't sell.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "The venue is closed.": "“The venue is closed.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "The weather is bad.": "You heard: “The concert has been moved from Friday to Sunday because the singer is unwell.” So it's “The singer is ill.”, not “The weather is bad.”",
+   "Tickets didn't sell.": "You heard: “The concert has been moved from Friday to Sunday because the singer is unwell.” So it's “The singer is ill.”, not “Tickets didn't sell.”",
+   "The venue is closed.": "You heard: “The concert has been moved from Friday to Sunday because the singer is unwell.” So it's “The singer is ill.”, not “The venue is closed.”"
   }
  },
  {
@@ -84,9 +84,9 @@
   "answer": 0,
   "explain": "'The book was much better than the film.'",
   "notes": {
-   "The film is better.": "“The film is better.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "They are equally good.": "“They are equally good.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "She hasn't read the book.": "“She hasn't read the book.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "The film is better.": "You heard: “Honestly, the book was much better than the film.” So it's “The book is better.”, not “The film is better.”",
+   "They are equally good.": "You heard: “Honestly, the book was much better than the film.” So it's “The book is better.”, not “They are equally good.”",
+   "She hasn't read the book.": "You heard: “Honestly, the book was much better than the film.” So it's “The book is better.”, not “She hasn't read the book.”"
   }
  },
  {
@@ -120,9 +120,9 @@
   "answer": 0,
   "explain": "'Didn't catch that' = didn't hear or understand.",
   "notes": {
-   "the other person to leave": "“the other person to leave” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "the other person to speak louder": "“the other person to speak louder” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "to write it down": "“to write it down” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "the other person to leave": "You heard: “Could you say it again more slowly?” So it's “to hear it again, slower”, not “the other person to leave”.",
+   "the other person to speak louder": "You heard: “Could you say it again more slowly?” So it's “to hear it again, slower”, not “the other person to speak louder”.",
+   "to write it down": "You heard: “Could you say it again more slowly?” So it's “to hear it again, slower”, not “to write it down”."
   }
  },
  {
@@ -138,9 +138,9 @@
   "answer": 0,
   "explain": "Left at the roundabout, past the petrol station, on your right.",
   "notes": {
-   "on the left at the roundabout": "“on the left at the roundabout” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "opposite the petrol station": "“opposite the petrol station” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "before the roundabout": "“before the roundabout” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "on the left at the roundabout": "You heard: “Turn left at the roundabout, go past the petrol station, and the hotel's on your right.” So it's “on the right after the petrol station”, not “on the left at the roundabout”.",
+   "opposite the petrol station": "You heard: “Turn left at the roundabout, go past the petrol station, and the hotel's on your right.” So it's “on the right after the petrol station”, not “opposite the petrol station”.",
+   "before the roundabout": "You heard: “Turn left at the roundabout, go past the petrol station, and the hotel's on your right.” So it's “on the right after the petrol station”, not “before the roundabout”."
   }
  },
  {
@@ -228,9 +228,9 @@
   "answer": 0,
   "explain": "Caught every morning = fresh.",
   "notes": {
-   "It's the cheapest.": "“It's the cheapest.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "It's the chef's favourite.": "“It's the chef's favourite.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "It's vegetarian.": "“It's vegetarian.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "It's the cheapest.": "You heard: “It's caught locally every morning.” So it's “It's very fresh.”, not “It's the cheapest.”",
+   "It's the chef's favourite.": "You heard: “It's caught locally every morning.” So it's “It's very fresh.”, not “It's the chef's favourite.”",
+   "It's vegetarian.": "You heard: “It's caught locally every morning.” So it's “It's very fresh.”, not “It's vegetarian.”"
   }
  },
  {
@@ -264,9 +264,9 @@
   "answer": 0,
   "explain": "The manager asked her to work on Saturday.",
   "notes": {
-   "The speaker is ill.": "“The speaker is ill.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "The weather is bad.": "“The weather is bad.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "The car broke down.": "“The car broke down.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "The speaker is ill.": "You heard: “My manager asked me to work on Saturday, so I'll have to cancel our trip to the coast.” So it's “The speaker has to work.”, not “The speaker is ill.”",
+   "The weather is bad.": "You heard: “My manager asked me to work on Saturday, so I'll have to cancel our trip to the coast.” So it's “The speaker has to work.”, not “The weather is bad.”",
+   "The car broke down.": "You heard: “My manager asked me to work on Saturday, so I'll have to cancel our trip to the coast.” So it's “The speaker has to work.”, not “The car broke down.”"
   }
  },
  {
@@ -300,9 +300,9 @@
   "answer": 0,
   "explain": "Run out of battery = the phone was dead.",
   "notes": {
-   "She forgot.": "“She forgot.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "She didn't have the number.": "“She didn't have the number.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "She was too busy.": "“She was too busy.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "She forgot.": "You heard: “I'd have called you, but my phone had run out of battery.” So it's “Her phone was dead.”, not “She forgot.”",
+   "She didn't have the number.": "You heard: “I'd have called you, but my phone had run out of battery.” So it's “Her phone was dead.”, not “She didn't have the number.”",
+   "She was too busy.": "You heard: “I'd have called you, but my phone had run out of battery.” So it's “Her phone was dead.”, not “She was too busy.”"
   }
  },
  {
@@ -318,9 +318,9 @@
   "answer": 0,
   "explain": "A weekday = Monday to Friday. Sunday is free but packed (very busy).",
   "notes": {
-   "Go on Sunday.": "“Go on Sunday.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "Book online.": "“Book online.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "Avoid the museum.": "“Avoid the museum.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "Go on Sunday.": "“Go on Sunday.” is in the recording too, but not as the answer. You heard: “I'd go on a weekday if I were you.” So it's “Go from Monday to Friday.”",
+   "Book online.": "You heard: “I'd go on a weekday if I were you.” So it's “Go from Monday to Friday.”, not “Book online.”",
+   "Avoid the museum.": "You heard: “I'd go on a weekday if I were you.” So it's “Go from Monday to Friday.”, not “Avoid the museum.”"
   }
  },
  {
@@ -336,9 +336,9 @@
   "answer": 0,
   "explain": "'…since I started cycling to work.'",
   "notes": {
-   "She changed jobs.": "“She changed jobs.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "She sleeps more.": "“She sleeps more.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "She stopped driving at night.": "“She stopped driving at night.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "She changed jobs.": "You heard: “I've been feeling much better since I started cycling to work.” So it's “She cycles to work.”, not “She changed jobs.”",
+   "She sleeps more.": "You heard: “I've been feeling much better since I started cycling to work.” So it's “She cycles to work.”, not “She sleeps more.”",
+   "She stopped driving at night.": "You heard: “I've been feeling much better since I started cycling to work.” So it's “She cycles to work.”, not “She stopped driving at night.”"
   }
  },
  {
@@ -372,9 +372,9 @@
   "answer": 0,
   "explain": "Keep an eye on = watch.",
   "notes": {
-   "a cup of coffee for her friend": "“a cup of coffee for her friend” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "help carrying her bag": "“help carrying her bag” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "directions to the café": "“directions to the café” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "a cup of coffee for her friend": "You heard: “Can you keep an eye on my bag while I go and get a coffee?” So it's “someone to watch her bag”, not “a cup of coffee for her friend”.",
+   "help carrying her bag": "You heard: “Can you keep an eye on my bag while I go and get a coffee?” So it's “someone to watch her bag”, not “help carrying her bag”.",
+   "directions to the café": "You heard: “Can you keep an eye on my bag while I go and get a coffee?” So it's “someone to watch her bag”, not “directions to the café”."
   }
  },
  {
@@ -390,9 +390,9 @@
   "answer": 0,
   "explain": "The battery doesn't last = it doesn't stay charged for long.",
   "notes": {
-   "the price": "“the price” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "the camera": "“the camera” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "the size": "“the size” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "the price": "You heard: “It's a really good phone, although the battery doesn't last very long.” So it's “how long it stays charged”, not “the price”.",
+   "the camera": "You heard: “It's a really good phone, although the battery doesn't last very long.” So it's “how long it stays charged”, not “the camera”.",
+   "the size": "You heard: “It's a really good phone, although the battery doesn't last very long.” So it's “how long it stays charged”, not “the size”."
   }
  },
  {
@@ -553,8 +553,8 @@
   "explain": "'Return books to the office instead.'",
   "notes": {
    "to the library": "The library is closed.",
-   "to the teacher": "The teacher wasn't mentioned.",
-   "to the classroom": "The classroom wasn't mentioned."
+   "to the teacher": "The teacher wasn't mentioned. You heard: “The library will be closed for repairs until the twentieth, so please return books to the office instead.”",
+   "to the classroom": "The classroom wasn't mentioned. You heard: “The library will be closed for repairs until the twentieth, so please return books to the office instead.”"
   }
  },
  {
@@ -571,7 +571,7 @@
   "explain": "'Cancel… and play next week instead' = postponed.",
   "notes": {
    "they play in the rain": "They won't play in the rain.",
-   "they play indoors": "Indoors wasn't mentioned.",
+   "they play indoors": "Indoors wasn't mentioned. You heard: “If it's still raining at two, we'll cancel the match and play next week instead.”",
    "the match starts later today": "It moves to next week, not later today."
   }
  },
@@ -625,8 +625,8 @@
   "explain": "Walk (ten minutes) or take the bus.",
   "notes": {
    "only by bus, it's too far": "Walking is also possible.",
-   "only by taxi": "A taxi wasn't mentioned.",
-   "by train": "A train wasn't mentioned."
+   "only by taxi": "A taxi wasn't mentioned. You heard: “The museum is about a ten-minute walk from here, or you can take the number six bus, which stops right outside.”",
+   "by train": "A train wasn't mentioned. You heard: “The museum is about a ten-minute walk from here, or you can take the number six bus, which stops right outside.”"
   }
  },
  {
@@ -678,9 +678,9 @@
   "answer": 0,
   "explain": "Chess is on the same day as football.",
   "notes": {
-   "it's too boring for them": "Boring wasn't said.",
-   "it's expensive": "Price wasn't mentioned.",
-   "it's already full": "Full wasn't mentioned."
+   "it's too boring for them": "Boring wasn't said. You heard: “Drama sounds fun, but chess is on the same day as football.”",
+   "it's expensive": "Price wasn't mentioned. You heard: “Drama sounds fun, but chess is on the same day as football.”",
+   "it's already full": "Full wasn't mentioned. You heard: “Drama sounds fun, but chess is on the same day as football.”"
   }
  },
  {
@@ -752,9 +752,9 @@
   "explain": "'Pass the ball more' = share it with teammates.",
   "dialogue": true,
   "notes": {
-   "running faster in the game": "Speed wasn't mentioned.",
-   "scoring more goals": "Goals weren't mentioned.",
-   "arriving on time": "Time wasn't mentioned."
+   "running faster in the game": "Speed wasn't mentioned. You heard: “Coach: You played well, but you need to pass the ball more.”",
+   "scoring more goals": "Goals weren't mentioned. You heard: “Coach: You played well, but you need to pass the ball more.”",
+   "arriving on time": "Time wasn't mentioned. You heard: “Coach: You played well, but you need to pass the ball more.”"
   }
  },
  {
@@ -771,9 +771,9 @@
   "explain": "'I stayed up late' = went to bed late.",
   "dialogue": true,
   "notes": {
-   "she got up very early": "Getting up early wasn't said.",
-   "she was ill": "Illness wasn't mentioned.",
-   "she ran a long race": "A race wasn't mentioned."
+   "she got up very early": "Getting up early wasn't said. You heard: “Ella: I stayed up late finishing my project, and then I couldn't sleep.”",
+   "she was ill": "Illness wasn't mentioned. You heard: “Ella: I stayed up late finishing my project, and then I couldn't sleep.”",
+   "she ran a long race": "A race wasn't mentioned. You heard: “Ella: I stayed up late finishing my project, and then I couldn't sleep.”"
   }
  },
  {
@@ -792,7 +792,7 @@
   "notes": {
    "nothing at all": "She changed her mind and asked for drinks.",
    "food for the grill": "Food wasn't asked for.",
-   "chairs": "Chairs weren't mentioned."
+   "chairs": "Chairs weren't mentioned. You heard: “Well, maybe some drinks, if you can.”"
   }
  },
  {
@@ -864,8 +864,8 @@
   "explain": "'Although the pool is smaller' is the downside.",
   "notes": {
    "the new climbing wall": "The climbing wall is great.",
-   "the location": "Location wasn't mentioned.",
-   "the price": "Price wasn't mentioned."
+   "the location": "Location wasn't mentioned. You heard: “The new sports centre has a climbing wall, which is great, although the pool is smaller than the old one.”",
+   "the price": "Price wasn't mentioned. You heard: “The new sports centre has a climbing wall, which is great, although the pool is smaller than the old one.”"
   }
  },
  {
@@ -881,7 +881,7 @@
   "answer": 0,
   "explain": "'He'd left the map in the car' = forgotten.",
   "notes": {
-   "they got lost on the hill": "Getting lost wasn't said.",
+   "they got lost on the hill": "Getting lost wasn't said. You heard: “We were halfway up the hill when Max realised he'd left the map in the car.”",
    "the car broke down": "The car was fine.",
    "Max hurt his leg": "No one got hurt."
   }
@@ -1027,8 +1027,8 @@
   "answer": 0,
   "explain": "'Won't get a place on the trip.'",
   "notes": {
-   "you pay more": "Price wasn't mentioned.",
-   "you go on a later trip": "A later trip wasn't mentioned.",
+   "you pay more": "Price wasn't mentioned. You heard: “Anyone who's late won't get a place on the trip.”",
+   "you go on a later trip": "A later trip wasn't mentioned. You heard: “Anyone who's late won't get a place on the trip.”",
    "nothing happens": "There is a result."
   }
  },
@@ -1047,7 +1047,7 @@
   "notes": {
    "the quiz has been cancelled": "It's still happening.",
    "they missed the quiz": "It hasn't happened yet.",
-   "the quiz is very long": "Length wasn't mentioned."
+   "the quiz is very long": "Length wasn't mentioned. You heard: “I thought the quiz was on Thursday, but Mr Lee just told us it's tomorrow.”"
   }
  },
  {
@@ -1155,7 +1155,7 @@
   "notes": {
    "they forgot about it": "They meant to; they didn't forget.",
    "they lost the phone": "The phone wasn't lost.",
-   "they were angry": "Anger wasn't mentioned."
+   "they were angry": "Anger wasn't mentioned. You heard: “I meant to text you last night, but my phone battery died.”"
   }
  },
  {
@@ -1263,8 +1263,8 @@
   "dialogue": true,
   "notes": {
    "Sara forgot to try": "She tried.",
-   "the tickets were too expensive": "Price wasn't mentioned.",
-   "the concert was cancelled": "Cancelled wasn't said."
+   "the tickets were too expensive": "Price wasn't mentioned. You heard: “Jay: Did you get the tickets?”",
+   "the concert was cancelled": "Cancelled wasn't said. You heard: “Jay: Did you get the tickets?”"
   }
  },
  {
@@ -1320,7 +1320,7 @@
   "dialogue": true,
   "notes": {
    "the space film": "He's already seen it.",
-   "a funny comedy": "A comedy wasn't mentioned.",
+   "a funny comedy": "A comedy wasn't mentioned. You heard: “The dragon one looks good.”",
    "he doesn't mind which": "He has an opinion."
   }
  },
@@ -1339,7 +1339,7 @@
   "dialogue": true,
   "notes": {
    "it's raining outside": "The coach said no, it isn't the rain.",
-   "it's too cold": "Cold wasn't mentioned.",
+   "it's too cold": "Cold wasn't mentioned. You heard: “Coach: No, the field's being cut.”",
    "the coach is ill": "The coach is there."
   }
  },
@@ -1454,7 +1454,7 @@
   "notes": {
    "only fractions": "Decimals are also in it.",
    "decimals and times tables": "Times tables weren't mentioned; it's fractions, not times tables.",
-   "times tables": "Times tables weren't mentioned."
+   "times tables": "Times tables weren't mentioned. You heard: “Teacher: Fractions and decimals.”"
   }
  },
  {
@@ -1593,8 +1593,8 @@
   "explain": "'Last month I switched to the drums.'",
   "notes": {
    "piano": "The piano was before the change.",
-   "guitar": "Guitar wasn't mentioned.",
-   "violin": "Violin wasn't mentioned."
+   "guitar": "Guitar wasn't mentioned. You heard: “I've been learning the piano for two years, but last month I switched to the drums because they're more fun.”",
+   "violin": "Violin wasn't mentioned. You heard: “I've been learning the piano for two years, but last month I switched to the drums because they're more fun.”"
   }
  },
  {
@@ -1701,8 +1701,8 @@
   "explain": "'Used to sleep all day… now much more active.'",
   "notes": {
    "she sleeps all day": "That's how she used to be.",
-   "she's frightened of the puppy": "Fear wasn't mentioned.",
-   "she's stopped eating": "Eating wasn't mentioned."
+   "she's frightened of the puppy": "Fear wasn't mentioned. You heard: “Our cat used to sleep all day, but since we got a puppy, she's been much more active.”",
+   "she's stopped eating": "Eating wasn't mentioned. You heard: “Our cat used to sleep all day, but since we got a puppy, she's been much more active.”"
   }
  },
  {
@@ -1738,7 +1738,7 @@
   "dialogue": true,
   "notes": {
    "tonight": "One chapter tonight leaves one more.",
-   "in a week": "A week wasn't said.",
+   "in a week": "A week wasn't said. You heard: “I've got two chapters left, and I'm reading one a night.”",
    "he already has": "'Not quite' = not yet."
   }
  },
@@ -1776,8 +1776,8 @@
   "dialogue": true,
   "notes": {
    "score more goals alone": "That's the opposite of the advice.",
-   "run faster": "Speed wasn't mentioned.",
-   "practise every day": "Practice wasn't mentioned."
+   "run faster": "Speed wasn't mentioned. You heard: “Coach: You played well, but you need to pass the ball more.”",
+   "practise every day": "Practice wasn't mentioned. You heard: “Coach: You played well, but you need to pass the ball more.”"
   }
  },
  {
@@ -1883,9 +1883,9 @@
   "explain": "Kai changes his mind: 'the train then'.",
   "dialogue": true,
   "notes": {
-   "by bus": "“by bus” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "on foot": "“on foot” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "by car": "“by car” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "by bus": "“by bus” is in the recording too, but not as the answer. You heard: “Kai: Fine, the train then.” So it's “by train”.",
+   "on foot": "You heard: “Kai: Fine, the train then.” So it's “by train”, not “on foot”.",
+   "by car": "You heard: “Kai: Fine, the train then.” So it's “by train”, not “by car”."
   }
  },
  {
@@ -1902,9 +1902,9 @@
   "explain": "Moved to Thursday, and half an hour later: five.",
   "dialogue": true,
   "notes": {
-   "Tuesday at five": "“Tuesday at five” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "Thursday at half past four": "“Thursday at half past four” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "Tuesday at half past four": "“Tuesday at half past four” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "Tuesday at five": "“Tuesday at five” is in the recording too, but not as the answer. You heard: “Coach: Practice is usually on Tuesday, but this week it's on Thursday.” So it's “Thursday at five”.",
+   "Thursday at half past four": "You heard: “Coach: Practice is usually on Tuesday, but this week it's on Thursday.” So it's “Thursday at five”, not “Thursday at half past four”.",
+   "Tuesday at half past four": "You heard: “Coach: Practice is usually on Tuesday, but this week it's on Thursday.” So it's “Thursday at five”, not “Tuesday at half past four”."
   }
  },
  {
@@ -1959,9 +1959,9 @@
   "explain": "'I'd love to, but…' = a polite no for tonight; he offers tomorrow.",
   "dialogue": true,
   "notes": {
-   "He doesn't want to help at all.": "“He doesn't want to help at all.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "He will help tonight at his gran's.": "“He will help tonight at his gran's.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "He has already finished the project.": "“He has already finished the project.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "He doesn't want to help at all.": "You heard: “Jo: Can you help me with my science project tonight?” So it's “He can help tomorrow, not tonight.”, not “He doesn't want to help at all.”",
+   "He will help tonight at his gran's.": "You heard: “Jo: Can you help me with my science project tonight?” So it's “He can help tomorrow, not tonight.”, not “He will help tonight at his gran's.”",
+   "He has already finished the project.": "You heard: “Jo: Can you help me with my science project tonight?” So it's “He can help tomorrow, not tonight.”, not “He has already finished the project.”"
   }
  },
  {
@@ -2061,9 +2061,9 @@
   "answer": 0,
   "explain": "'Actually, no' = a change of mind: the side door.",
   "notes": {
-   "at the main entrance": "“at the main entrance” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "in the car park": "“in the car park” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "at the back gate": "“at the back gate” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "at the main entrance": "“at the main entrance” is in the recording too, but not as the answer. You heard: “Actually, no, the side door is closer to the car park.” So it's “by the side door”.",
+   "in the car park": "You heard: “Actually, no, the side door is closer to the car park.” So it's “by the side door”, not “in the car park”.",
+   "at the back gate": "You heard: “Actually, no, the side door is closer to the car park.” So it's “by the side door”, not “at the back gate”."
   }
  },
  {
@@ -2079,9 +2079,9 @@
   "answer": 0,
   "explain": "7:15 minus 15 minutes = 7:00.",
   "notes": {
-   "at quarter past seven": "“at quarter past seven” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "at half past seven": "“at half past seven” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
-   "at quarter to seven": "“at quarter to seven” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
+   "at quarter past seven": "You heard: “The film's at quarter past seven, so let's meet fifteen minutes before.” So it's “at seven”, not “at quarter past seven”.",
+   "at half past seven": "You heard: “The film's at quarter past seven, so let's meet fifteen minutes before.” So it's “at seven”, not “at half past seven”.",
+   "at quarter to seven": "You heard: “The film's at quarter past seven, so let's meet fifteen minutes before.” So it's “at seven”, not “at quarter to seven”."
   }
  },
  {
