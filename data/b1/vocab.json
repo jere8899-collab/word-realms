@@ -2072,5 +2072,251 @@
    "hand down": "Hand down = pass to the next generation.",
    "hand on": "Hand on isn't used for homework."
   }
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a person who writes books",
+  "answer": "author",
+  "explain": "An author writes books."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to say no to an invitation politely",
+  "answer": "decline",
+  "explain": "If you decline an invitation, you say no politely."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a word that means the same as another word",
+  "answer": "synonym",
+  "explain": "Big and large are synonyms."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: very surprised",
+  "answer": "amazed",
+  "explain": "We were amazed by the magician's trick."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to make something bigger",
+  "answer": "expand",
+  "explain": "The school will expand and add five new classrooms."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: the opposite of ancient",
+  "answer": "modern",
+  "explain": "Ancient = very old; modern = new and up to date."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a list of things you must do or buy",
+  "answer": "checklist",
+  "explain": "Tick each item on your checklist."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a person who saw something happen",
+  "answer": "witness",
+  "explain": "A witness saw what happened."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to find something for the first time",
+  "answer": "discover",
+  "explain": "Scientists discover new animals every year."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a small mistake in spelling or typing",
+  "answer": "typo",
+  "explain": "A typo is a small typing mistake."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: feeling worried before something important",
+  "answer": "nervous",
+  "explain": "I was nervous before my piano exam."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to go back to a place again",
+  "answer": "return",
+  "explain": "We will return to the beach next summer."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: the people who watch a show",
+  "answer": "audience",
+  "explain": "The audience clapped at the end of the play."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: an animal that hunts other animals",
+  "answer": "predator",
+  "explain": "A fox is a predator; it hunts rabbits."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: water falling from the sky in small pieces of ice",
+  "answer": "hail",
+  "explain": "Hail is little balls of ice falling from the sky."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a journey on a ship for fun",
+  "answer": "cruise",
+  "explain": "They went on a cruise around the islands."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to keep something safe from harm",
+  "answer": "protect",
+  "explain": "Helmets protect your head."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: not easy to break",
+  "answer": "strong",
+  "explain": "This rope is strong; it won't break."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: the place where you show your passport when you travel",
+  "answer": "border",
+  "explain": "We showed our passports at the border."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a short film that advertises something",
+  "answer": "advert",
+  "explain": "That advert for trainers is really funny."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to say sorry",
+  "answer": "apologise",
+  "explain": "He apologised for breaking the vase."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a person who goes to a shop to buy things",
+  "answer": "customer",
+  "explain": "The shop was full of customers."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: feeling sure you can do something well",
+  "answer": "confident",
+  "explain": "She feels confident about her speech."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to pick fruit or crops when they are ready",
+  "answer": "harvest",
+  "explain": "Farmers harvest apples in autumn."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: the noise a crowd makes when it is happy",
+  "answer": "cheer",
+  "explain": "The fans gave a big cheer."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: the money you get for doing a job",
+  "answer": "salary",
+  "explain": "A salary is the money you earn at work."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a place where scientists do experiments",
+  "answer": "laboratory",
+  "explain": "Scientists test ideas in a laboratory."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: not the same; different from all others",
+  "answer": "unique",
+  "explain": "Every snowflake is unique."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to make a guess about the future",
+  "answer": "predict",
+  "explain": "Can you predict who will win?"
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a very old object from the past",
+  "answer": "antique",
+  "explain": "This clock is an antique; it is 200 years old."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to put money away to use later",
+  "answer": "save",
+  "explain": "I save my pocket money for a new bike."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a person who is learning a job",
+  "answer": "trainee",
+  "explain": "The trainee chef is learning from the head chef."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to get better after being ill",
+  "answer": "recover",
+  "explain": "It took a week to recover from the flu."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: tired of doing the same thing",
+  "answer": "bored",
+  "explain": "I was bored in the long car journey."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a group of musicians who play together",
+  "answer": "band",
+  "explain": "My cousin plays drums in a band."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to stop something from happening",
+  "answer": "prevent",
+  "explain": "Brushing your teeth helps prevent holes."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: an area of very dry land with little rain",
+  "answer": "desert",
+  "explain": "Camels live in the desert."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a sudden very strong feeling of fear",
+  "answer": "panic",
+  "explain": "Don't panic; stay calm and walk out."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to share out cards or jobs between people",
+  "answer": "divide",
+  "explain": "Let's divide the jobs between us."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a person who visits a place on holiday",
+  "answer": "tourist",
+  "explain": "Lots of tourists visit the castle in summer."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a person you compete against",
+  "answer": "opponent",
+  "explain": "My opponent in the chess final was very good."
  }
 ]

@@ -1962,6 +1962,90 @@
   }
  },
  {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "We visited the museum on Saturday.",
+  "answer": "We visited the museum on Saturday.",
+  "explain": "We visited + the museum + on Saturday (past)."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "It was colder than yesterday.",
+  "answer": "It was colder than yesterday.",
+  "explain": "It was + colder than + yesterday."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "Are you going to the party?",
+  "answer": "Are you going to the party?",
+  "explain": "Are you going + to the party? A question."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "My brother forgot his lunch.",
+  "answer": "My brother forgot his lunch.",
+  "explain": "My brother + forgot (forget) + his lunch."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "The film starts at half past six.",
+  "answer": "The film starts at half past six.",
+  "explain": "The film starts + at half past six (6:30)."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "She has never been to London.",
+  "answer": "She has never been to London.",
+  "explain": "She has never been + to London."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "I'm going to learn the guitar.",
+  "answer": "I'm going to learn the guitar.",
+  "explain": "I'm going to + learn + the guitar."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "We should take an umbrella.",
+  "answer": "We should take an umbrella.",
+  "explain": "We should + take + an umbrella."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "The lake was frozen last winter.",
+  "answer": "The lake was frozen last winter.",
+  "explain": "The lake + was frozen + last winter."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "Which bus goes to the station?",
+  "answer": "Which bus goes to the station?",
+  "explain": "Which bus + goes + to the station?"
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "He was the fastest runner in the race.",
+  "answer": "He was the fastest runner in the race.",
+  "explain": "He was + the fastest runner + in the race."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "Could you open the window, please?",
+  "answer": "Could you open the window, please?",
+  "explain": "Could you + open the window + please?"
+ },
+ {
   "type": "listen",
   "say": "The party starts at three. Oh, sorry, I'm wrong. It's at four.",
   "q": "When does the party start?",

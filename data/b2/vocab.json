@@ -2106,5 +2106,257 @@
    "loss out": "Loss out isn't English.",
    "spend": "Spend is a verb."
   }
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to make a problem less serious",
+  "answer": "ease",
+  "explain": "A cold drink can ease a sore throat."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a person who owns or runs a business",
+  "answer": "entrepreneur",
+  "explain": "The young entrepreneur sells her own phone cases."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: able to bend easily without breaking",
+  "answer": "flexible",
+  "explain": "Gymnasts are very flexible."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to make something impossible or difficult",
+  "answer": "hinder",
+  "explain": "The fog hindered the rescue team."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: happening every year",
+  "answer": "annual",
+  "explain": "The annual school fair is in June."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: the ability to keep going even when things are hard",
+  "answer": "perseverance",
+  "explain": "Learning the violin takes perseverance."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: easy to see or understand",
+  "answer": "obvious",
+  "explain": "The answer was obvious once she explained it."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to look at something carefully to find out more",
+  "answer": "examine",
+  "explain": "The vet examined the dog's paw."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: the surroundings where people, animals and plants live",
+  "answer": "environment",
+  "explain": "We must protect the environment."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a feeling of not being sure",
+  "answer": "doubt",
+  "explain": "I have no doubt she'll win."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: extremely tired",
+  "answer": "drained",
+  "explain": "After the exams I felt completely drained."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to give help, money or time for free",
+  "answer": "volunteer",
+  "explain": "We volunteer at the animal shelter."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a strong wish to know or learn something",
+  "answer": "curiosity",
+  "explain": "Her curiosity led her to open the old box."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: polite and kind to people",
+  "answer": "considerate",
+  "explain": "It was considerate of you to wait for me."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to think that something is true without proof",
+  "answer": "assume",
+  "explain": "Don't assume the test will be easy."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a small amount of something",
+  "answer": "fraction",
+  "explain": "Only a fraction of the cake was left."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: not willing to change your mind",
+  "answer": "stubborn",
+  "explain": "My little brother is so stubborn!"
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to say you will definitely do something",
+  "answer": "promise",
+  "explain": "I promise I'll be back by six."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: the feeling of being proud of yourself",
+  "answer": "pride",
+  "explain": "She felt a lot of pride after the race."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: an amount that is more than enough",
+  "answer": "plenty",
+  "explain": "There is plenty of food for everyone."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to change something slightly to improve it",
+  "answer": "adjust",
+  "explain": "Adjust your seat before you start."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a person who is very good at something",
+  "answer": "expert",
+  "explain": "She's an expert on dinosaurs."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to give a reason for something you did",
+  "answer": "justify",
+  "explain": "Can you justify your answer?"
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: the last part of a story",
+  "answer": "ending",
+  "explain": "The ending of the book was a big surprise."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: having a lot of power or strength",
+  "answer": "mighty",
+  "explain": "The mighty river flooded the valley."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to keep away from something",
+  "answer": "avoid",
+  "explain": "Avoid the busy roads on your bike."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: not real; existing only in the imagination",
+  "answer": "fictional",
+  "explain": "Hogwarts is a fictional school."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a feeling of fear about what might happen",
+  "answer": "anxiety",
+  "explain": "Deep breaths can help with anxiety."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to make a sound to show you like something, with your hands",
+  "answer": "applaud",
+  "explain": "The audience applauded loudly."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a person you live next to",
+  "answer": "neighbour",
+  "explain": "Our neighbour feeds our cat when we're away."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to be different from",
+  "answer": "differ",
+  "explain": "The twins differ in many ways."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: very dirty",
+  "answer": "filthy",
+  "explain": "My boots were filthy after the hike."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a short holiday",
+  "answer": "break",
+  "explain": "We had a short break by the sea."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: the scientific study of living things",
+  "answer": "biology",
+  "explain": "In biology we learned about cells."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: the money you pay to travel on a bus or train",
+  "answer": "fare",
+  "explain": "The bus fare is two pounds."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a feeling of being alone and sad",
+  "answer": "loneliness",
+  "explain": "Pets can help with loneliness."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to put things in order",
+  "answer": "organise",
+  "explain": "Let's organise the books by colour."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: easily hurt or upset",
+  "answer": "sensitive",
+  "explain": "He's sensitive about his new haircut."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to grow or develop well",
+  "answer": "thrive",
+  "explain": "Tomatoes thrive in sunny gardens."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to recognise someone or something you've seen before",
+  "answer": "identify",
+  "explain": "Can you identify this bird?"
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a place where people can see old objects and art",
+  "answer": "gallery",
+  "explain": "The gallery has paintings by Monet."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: the people who make decisions in a team, or the act of guiding them",
+  "answer": "leadership",
+  "explain": "Our captain shows great leadership."
  }
 ]

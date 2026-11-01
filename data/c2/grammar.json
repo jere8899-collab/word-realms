@@ -1982,5 +1982,269 @@
    "beyond"
   ],
   "explain": "far from (not at all); without any sign."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "Never before had the village seen such snow.",
+  "explain": "Never before + inversion: had the village seen."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "So tired was she that she fell asleep instantly.",
+  "explain": "So + adjective + inversion … that."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "Were the river to flood, the bridge would close.",
+  "explain": "Were … to + verb: a formal, unlikely condition."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "Little did they realise how famous she'd become.",
+  "explain": "Little did … + plain verb: they didn't realise at all."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "Such was the noise that nobody heard the bell.",
+  "explain": "Such was the + noun + that…"
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "All I want is five more minutes.",
+  "explain": "All-cleft: All I want is…"
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "So",
+   "loud",
+   "is",
+   "the",
+   "music",
+   "last",
+   "night",
+   "that",
+   "we",
+   "left."
+  ],
+  "wrong": 2,
+  "fix": "was",
+  "explain": "Last night is the past: So loud was the music that we left."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "Were",
+   "he",
+   "to",
+   "asked,",
+   "I'd",
+   "help."
+  ],
+  "wrong": 3,
+  "fix": "ask,",
+  "explain": "Were … to + plain verb: Were he to ask."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "Not",
+   "once",
+   "did",
+   "she",
+   "complained",
+   "about",
+   "it."
+  ],
+  "wrong": 4,
+  "fix": "complain",
+  "explain": "After did use the plain verb: Not once did she complain."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "Such",
+   "were",
+   "the",
+   "queue",
+   "that",
+   "we",
+   "gave",
+   "up."
+  ],
+  "wrong": 1,
+  "fix": "was",
+  "explain": "The queue is one thing: Such was the queue that we gave up."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "On",
+   "no",
+   "account",
+   "should",
+   "you",
+   "touching",
+   "it."
+  ],
+  "wrong": 5,
+  "fix": "touch",
+  "explain": "After should use the plain verb: On no account should you touch it."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "Only",
+   "by",
+   "work",
+   "together",
+   "can",
+   "we",
+   "win."
+  ],
+  "wrong": 2,
+  "fix": "working",
+  "explain": "by + -ing: Only by working together can we win."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "Try",
+   "as",
+   "he",
+   "may,",
+   "he",
+   "couldn't",
+   "open",
+   "it."
+  ],
+  "wrong": 3,
+  "fix": "might,",
+  "explain": "Try as he might (past): he couldn't open it."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "___ was her talent ___ she won every prize.",
+  "answers": [
+   "Such",
+   "that"
+  ],
+  "bank": [
+   "Such",
+   "that",
+   "So",
+   "as"
+  ],
+  "explain": "Such was + noun … that."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "___ the weather improve, the match ___ go ahead.",
+  "answers": [
+   "Should",
+   "will"
+  ],
+  "bank": [
+   "Should",
+   "will",
+   "Were",
+   "would"
+  ],
+  "explain": "Should the weather improve = If it improves; will go ahead."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "At no point ___ the coach ___ giving up.",
+  "answers": [
+   "did",
+   "consider"
+  ],
+  "bank": [
+   "did",
+   "consider",
+   "had",
+   "considered"
+  ],
+  "explain": "At no point did + subject + plain verb: did the coach consider."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "Strange ___ it may seem, the shy boy ___ the lead role.",
+  "answers": [
+   "as",
+   "landed"
+  ],
+  "bank": [
+   "as",
+   "landed",
+   "though it",
+   "was landed"
+  ],
+  "explain": "Adjective + as + clause = although; he landed (got) the lead."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "Only when the lights went out ___ we notice ___ late it was.",
+  "answers": [
+   "did",
+   "how"
+  ],
+  "bank": [
+   "did",
+   "how",
+   "had",
+   "what"
+  ],
+  "explain": "Only when … + inversion (did we notice); how late it was."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "Hardly ___ the curtain risen ___ the audience gasped.",
+  "answers": [
+   "had",
+   "when"
+  ],
+  "bank": [
+   "had",
+   "when",
+   "has",
+   "than"
+  ],
+  "explain": "Hardly had … when: the second thing happened at once."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "Be it rain ___ shine, the festival ___ on.",
+  "answers": [
+   "or",
+   "goes"
+  ],
+  "bank": [
+   "or",
+   "goes",
+   "nor",
+   "go"
+  ],
+  "explain": "Be it A or B = whether it's A or B; the festival goes on."
  }
 ]

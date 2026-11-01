@@ -1950,5 +1950,185 @@
   "q": "Spell the word: the season after spring",
   "answer": "summer",
   "explain": "summer: double m."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a person who looks after your teeth",
+  "answer": "dentist",
+  "explain": "A dentist checks and cleans your teeth."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: the room where you cook",
+  "answer": "kitchen",
+  "explain": "We cook food in the kitchen."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a big group of trees",
+  "answer": "forest",
+  "explain": "A forest has lots and lots of trees."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: the opposite of cheap",
+  "answer": "expensive",
+  "explain": "Cheap costs a little; expensive costs a lot."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: you use it to take photos",
+  "answer": "camera",
+  "explain": "A camera takes photos."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: the day before today",
+  "answer": "yesterday",
+  "explain": "Today, yesterday, tomorrow: yesterday was the day before today."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a place where you see animals from all over the world",
+  "answer": "zoo",
+  "explain": "At the zoo you can see lions, monkeys and penguins."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a person who flies a plane",
+  "answer": "pilot",
+  "explain": "A pilot flies a plane."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: the season after winter",
+  "answer": "spring",
+  "explain": "Winter, spring, summer, autumn: spring comes after winter."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: you put it on your head when it is cold",
+  "answer": "hat",
+  "explain": "A hat keeps your head warm."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: very, very good",
+  "answer": "excellent",
+  "explain": "Excellent means very, very good."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a short sleep in the day",
+  "answer": "nap",
+  "explain": "Babies often have a nap after lunch."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a ticket to fly somewhere, and the trip itself",
+  "answer": "flight",
+  "explain": "Our flight to Spain took two hours."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: the opposite of borrow: you give something for a short time",
+  "answer": "lend",
+  "explain": "I lend you my pen; you borrow my pen."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: an animal with a long neck",
+  "answer": "giraffe",
+  "explain": "Giraffes have very long necks."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a person who cuts your hair",
+  "answer": "hairdresser",
+  "explain": "The hairdresser gave me a short summer haircut."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: not dangerous",
+  "answer": "safe",
+  "explain": "Safe means nothing bad will happen."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: the number after nineteen",
+  "answer": "twenty",
+  "explain": "Nineteen, twenty, twenty-one."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: you wear it on your wrist to know the time",
+  "answer": "watch",
+  "explain": "A watch shows the time on your wrist."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: the feeling when you want to drink",
+  "answer": "thirsty",
+  "explain": "When you are thirsty, you want a drink."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a meal outside on a blanket",
+  "answer": "picnic",
+  "explain": "We had a picnic in the park with sandwiches."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a place to swim indoors",
+  "answer": "pool",
+  "explain": "A swimming pool is a place to swim."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: very tired",
+  "answer": "exhausted",
+  "explain": "After the long race we were exhausted."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: not loud",
+  "answer": "quiet",
+  "explain": "Please be quiet in the library."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: the person who brings letters",
+  "answer": "postman",
+  "explain": "The postman brings letters to our house."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: the opposite of win",
+  "answer": "lose",
+  "explain": "Win and lose are opposites."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a sweet food made on your birthday",
+  "answer": "cake",
+  "explain": "We eat birthday cake with candles."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: something you find funny makes you do this",
+  "answer": "laugh",
+  "explain": "A funny joke makes you laugh."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: the place where planes take off",
+  "answer": "airport",
+  "explain": "Planes take off and land at the airport."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: twelve o'clock in the daytime",
+  "answer": "midday",
+  "explain": "Midday is twelve o'clock in the daytime, around lunchtime."
  }
 ]

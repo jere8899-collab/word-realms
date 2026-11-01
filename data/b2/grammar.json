@@ -2037,5 +2037,284 @@
    "although"
   ],
   "explain": "Non-defining clause uses which; despite + noun."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "By the time we arrived, the film had started.",
+  "explain": "Past perfect (had started) for the earlier of two past actions."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "If I had known, I would have helped.",
+  "explain": "Third conditional: If + had + pp, would have + pp."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "The new skate park is being built now.",
+  "explain": "Present continuous passive: is being built."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "I wish I could play the guitar.",
+  "explain": "wish + could for an ability you don't have now."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "She must have forgotten about the meeting.",
+  "explain": "must have + pp = a confident guess about the past."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "Not only did he win, he broke the record.",
+  "explain": "Not only + inverted auxiliary (did he win)."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "The museum, which opened in May, is free.",
+  "explain": "A non-defining relative clause between commas: which opened in May."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "If",
+   "I",
+   "had",
+   "knew,",
+   "I'd",
+   "have",
+   "come."
+  ],
+  "wrong": 3,
+  "fix": "known,",
+  "explain": "Third conditional: If I had known (past participle), I'd have come."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "I'm",
+   "used",
+   "to",
+   "get",
+   "up",
+   "early",
+   "now."
+  ],
+  "wrong": 3,
+  "fix": "getting",
+  "explain": "be used to + -ing: I'm used to getting up early."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "She",
+   "suggested",
+   "go",
+   "to",
+   "the",
+   "cinema."
+  ],
+  "wrong": 2,
+  "fix": "going",
+  "explain": "suggest + -ing: She suggested going to the cinema."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "The",
+   "phone",
+   "who",
+   "I",
+   "bought",
+   "is",
+   "broken."
+  ],
+  "wrong": 2,
+  "fix": "which",
+  "explain": "For things use which or that, not who: The phone which I bought."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "Although",
+   "the",
+   "rain,",
+   "we",
+   "played."
+  ],
+  "wrong": 0,
+  "fix": "Despite",
+  "explain": "Despite + noun (the rain); although needs a full clause."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "He",
+   "denied",
+   "take",
+   "the",
+   "last",
+   "biscuit."
+  ],
+  "wrong": 2,
+  "fix": "taking",
+  "explain": "deny + -ing: He denied taking the last biscuit."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "I",
+   "wish",
+   "I",
+   "hadn't",
+   "ate",
+   "so",
+   "much",
+   "cake."
+  ],
+  "wrong": 4,
+  "fix": "eaten",
+  "explain": "Regret about the past: wish + had (not) + past participle: hadn't eaten."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "By the time I ___ home, everyone ___ to bed.",
+  "answers": [
+   "got",
+   "had gone"
+  ],
+  "bank": [
+   "got",
+   "had gone",
+   "had got",
+   "went"
+  ],
+  "explain": "Later action: got; the earlier one: had gone."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "If we ___ the bus, we ___ have been late.",
+  "answers": [
+   "hadn't caught",
+   "would"
+  ],
+  "bank": [
+   "hadn't caught",
+   "would",
+   "didn't catch",
+   "will"
+  ],
+  "explain": "Third conditional: If + had (not) + pp, would have + pp."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "The results ___ next week, so they ___ being checked now.",
+  "answers": [
+   "will be announced",
+   "are"
+  ],
+  "bank": [
+   "will be announced",
+   "are",
+   "will announce",
+   "is"
+  ],
+  "explain": "Future passive: will be announced; present continuous passive: are being checked."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "She ___ have left already; her coat ___ gone.",
+  "answers": [
+   "must",
+   "is"
+  ],
+  "bank": [
+   "must",
+   "is",
+   "can't",
+   "are"
+  ],
+  "explain": "must have = sure it happened; her coat is gone (one coat)."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "___ having a cold, he ___ the race.",
+  "answers": [
+   "Despite",
+   "finished"
+  ],
+  "bank": [
+   "Despite",
+   "finished",
+   "Although",
+   "was finished"
+  ],
+  "explain": "Despite + -ing; he finished (active)."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "I'm looking forward ___ you and ___ about your trip.",
+  "answers": [
+   "to seeing",
+   "hearing"
+  ],
+  "bank": [
+   "to seeing",
+   "hearing",
+   "to see",
+   "hear"
+  ],
+  "explain": "look forward to + -ing: to seeing … and hearing."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "It's time we ___ home. I'd rather you ___ me a lift.",
+  "answers": [
+   "went",
+   "gave"
+  ],
+  "bank": [
+   "went",
+   "gave",
+   "go",
+   "give"
+  ],
+  "explain": "It's time + past; I'd rather you + past for the present."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "Hardly ___ we sat down ___ the phone rang.",
+  "answers": [
+   "had",
+   "when"
+  ],
+  "bank": [
+   "had",
+   "when",
+   "have",
+   "than"
+  ],
+  "explain": "Hardly had + subject … when: Hardly had we sat down when…"
  }
 ]

@@ -1971,5 +1971,68 @@
    "in the garden": "“in the garden” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "on the table": "“on the table” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
   }
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "I like red apples.",
+  "answer": "I like red apples.",
+  "explain": "I like + red apples."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "My cat is very small.",
+  "answer": "My cat is very small.",
+  "explain": "My cat + is + very small."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "We play in the park.",
+  "answer": "We play in the park.",
+  "explain": "We play + in the park."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "The bus is yellow.",
+  "answer": "The bus is yellow.",
+  "explain": "The bus + is + yellow."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "My kite is in the tree.",
+  "answer": "My kite is in the tree.",
+  "explain": "My kite + is + in the tree (where it is)."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "Can you see the bird?",
+  "answer": "Can you see the bird?",
+  "explain": "Can you see + the bird? It is a question."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "My dad cooks dinner.",
+  "answer": "My dad cooks dinner.",
+  "explain": "My dad + cooks + dinner."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "The dog is in the garden.",
+  "answer": "The dog is in the garden.",
+  "explain": "The dog + is + in the garden."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "I have two brothers.",
+  "answer": "I have two brothers.",
+  "explain": "I + have + two brothers."
  }
 ]

@@ -1965,6 +1965,90 @@
   }
  },
  {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "I was walking home when it started to rain.",
+  "answer": "I was walking home when it started to rain.",
+  "explain": "Past continuous (was walking) + past simple (started)."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "Have you finished your project yet?",
+  "answer": "Have you finished your project yet?",
+  "explain": "Have you finished + yet? A present perfect question."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "If we hurry, we'll catch the train.",
+  "answer": "If we hurry, we'll catch the train.",
+  "explain": "First conditional: If we hurry, we'll catch…"
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "The castle was built eight hundred years ago.",
+  "answer": "The castle was built eight hundred years ago.",
+  "explain": "Passive: was built + eight hundred years ago."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "You don't have to bring anything.",
+  "answer": "You don't have to bring anything.",
+  "explain": "don't have to = it isn't necessary."
+ },
+ {
+  "type": "dictate",
+  "q": "Listen and type what you hear.",
+  "say": "She's been practising the piano since lunch.",
+  "answer": "She's been practising the piano since lunch.",
+  "explain": "She's been practising + since lunch."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "I'd rather go swimming than play tennis.",
+  "answer": "I'd rather go swimming than play tennis.",
+  "explain": "I'd rather + go swimming + than play tennis."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "We've already booked the tickets.",
+  "answer": "We've already booked the tickets.",
+  "explain": "We've already + booked + the tickets."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "He asked me what time it was.",
+  "answer": "He asked me what time it was.",
+  "explain": "Reported question: what time it was (normal word order)."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "The match was cancelled because of the storm.",
+  "answer": "The match was cancelled because of the storm.",
+  "explain": "The match + was cancelled + because of the storm."
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "Unless you leave now, you'll miss the bus.",
+  "answer": "Unless you leave now, you'll miss the bus.",
+  "explain": "Unless = if not: Unless you leave now…"
+ },
+ {
+  "type": "order",
+  "q": "Listen, then build the sentence you heard.",
+  "say": "My grandma used to live on a farm.",
+  "answer": "My grandma used to live on a farm.",
+  "explain": "used to + verb = a past habit or state."
+ },
+ {
   "type": "listen",
   "say": "Let's meet at the main entrance. Actually, no, the side door is closer to the car park.",
   "q": "Where will they meet?",

@@ -1967,5 +1967,257 @@
    "find"
   ],
   "explain": "Past continuous for the background, past simple for the event."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "I was reading when the lights went out.",
+  "explain": "Past continuous (was reading) + past simple interruption (went out)."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "Have you ever tried climbing?",
+  "explain": "Present perfect for experience: Have you ever tried…?"
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "If it rains, we will stay inside.",
+  "explain": "First conditional: If + present, will + verb."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "You should have told me earlier.",
+  "explain": "should have + past participle = a past mistake."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "The cake was made by my grandad.",
+  "explain": "Passive: was made by."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "She has lived here since 2019.",
+  "explain": "Present perfect + since + a point in time."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "I",
+   "have",
+   "saw",
+   "that",
+   "film",
+   "twice."
+  ],
+  "wrong": 2,
+  "fix": "seen",
+  "explain": "have + past participle: I have seen (not saw) that film twice."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "If",
+   "you",
+   "heat",
+   "ice,",
+   "it",
+   "melted."
+  ],
+  "wrong": 5,
+  "fix": "melts.",
+  "explain": "A fact that is always true: If + present, present: If you heat ice, it melts."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "We",
+   "were",
+   "play",
+   "chess",
+   "when",
+   "he",
+   "arrived."
+  ],
+  "wrong": 2,
+  "fix": "playing",
+  "explain": "Past continuous: were + -ing: We were playing."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "He's",
+   "lived",
+   "here",
+   "for",
+   "2018."
+  ],
+  "wrong": 3,
+  "fix": "since",
+  "explain": "since + a point in time (2018); for + a length of time (five years)."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "The",
+   "bridge",
+   "was",
+   "build",
+   "in",
+   "1900."
+  ],
+  "wrong": 3,
+  "fix": "built",
+  "explain": "Passive: was + past participle: was built."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "You",
+   "don't",
+   "have",
+   "to",
+   "shouting."
+  ],
+  "wrong": 4,
+  "fix": "shout.",
+  "explain": "After have to / don't have to, use the plain verb: shout."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "Yesterday",
+   "he",
+   "said",
+   "he",
+   "is",
+   "tired."
+  ],
+  "wrong": 4,
+  "fix": "was",
+  "explain": "Reported speech moves back in time: he said he was tired."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "I ___ my homework when my friend ___.",
+  "answers": [
+   "was doing",
+   "called"
+  ],
+  "bank": [
+   "was doing",
+   "called",
+   "did",
+   "was calling"
+  ],
+  "explain": "Long action (was doing) interrupted by a short one (called)."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "We ___ the museum three times. We first ___ it in 2021.",
+  "answers": [
+   "have visited",
+   "visited"
+  ],
+  "bank": [
+   "have visited",
+   "visited",
+   "visit",
+   "had visited"
+  ],
+  "explain": "Experience up to now: have visited; a finished time: visited in 2021."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "If you ___ hard, you ___ pass the test.",
+  "answers": [
+   "study",
+   "will"
+  ],
+  "bank": [
+   "study",
+   "will",
+   "will study",
+   "would"
+  ],
+  "explain": "First conditional: If + present, will + verb."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "The letters ___ every morning. They ___ by a robot!",
+  "answers": [
+   "are sorted",
+   "are carried"
+  ],
+  "bank": [
+   "are sorted",
+   "are carried",
+   "sort",
+   "carry"
+  ],
+  "explain": "Passive present: are + past participle."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "You ___ to bring food; lunch is free. But you ___ bring a water bottle.",
+  "answers": [
+   "don't have",
+   "should"
+  ],
+  "bank": [
+   "don't have",
+   "should",
+   "mustn't",
+   "shouldn't"
+  ],
+  "explain": "don't have to = not necessary; should = a good idea."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "He told me that he ___ tired and ___ go home.",
+  "answers": [
+   "was",
+   "wanted to"
+  ],
+  "bank": [
+   "was",
+   "wanted to",
+   "is",
+   "wants"
+  ],
+  "explain": "Reported speech moves back: am → was, want → wanted."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "I've been waiting ___ twenty minutes, ___ half past four.",
+  "answers": [
+   "for",
+   "since"
+  ],
+  "bank": [
+   "for",
+   "since",
+   "during",
+   "from"
+  ],
+  "explain": "for + a length of time; since + a starting point."
  }
 ]

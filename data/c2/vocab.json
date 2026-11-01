@@ -2106,5 +2106,257 @@
    "fortress": "Fortress = a castle.",
    "fortnight": "Fortnight = two weeks."
   }
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to make someone feel calm and less angry",
+  "answer": "placate",
+  "explain": "He placated his sister with chocolate."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: extremely careful and exact",
+  "answer": "punctilious",
+  "explain": "The judge was punctilious about the rules."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: lasting for a very short time; also a sweet-smelling mayfly",
+  "answer": "ephemeral",
+  "explain": "Fame on social media is often ephemeral."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: showing great attention to detail; perfect in every way",
+  "answer": "impeccable",
+  "explain": "Her manners were impeccable."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to make something worse, especially a problem",
+  "answer": "exacerbate",
+  "explain": "Shouting only exacerbated the argument."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: talking a lot",
+  "answer": "loquacious",
+  "explain": "Our loquacious guide never stopped talking."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: cleverly making something seem true when it isn't",
+  "answer": "specious",
+  "explain": "His specious excuse fooled nobody."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to praise someone very highly",
+  "answer": "extol",
+  "explain": "Critics extolled the young director's film."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: unwilling to spend money",
+  "answer": "frugal",
+  "explain": "My grandad is frugal; he reuses wrapping paper."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a situation that seems impossible because it contains two opposite facts",
+  "answer": "paradox",
+  "explain": "It's a paradox: the more you rush, the slower you get."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: using few words",
+  "answer": "terse",
+  "explain": "Her terse reply showed she was annoyed."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to cancel a law or rule",
+  "answer": "revoke",
+  "explain": "The club revoked his membership."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a strong, sometimes unreasonable dislike",
+  "answer": "antipathy",
+  "explain": "She has an antipathy to early mornings."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: able to use both hands equally well",
+  "answer": "ambidextrous",
+  "explain": "The ambidextrous goalkeeper caught with either hand."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to move back and forth between two choices",
+  "answer": "vacillate",
+  "explain": "He vacillated between pizza and pasta."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: noisy and lively, often in an annoying way",
+  "answer": "boisterous",
+  "explain": "The boisterous puppies knocked over the bowl."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to make something less severe",
+  "answer": "mitigate",
+  "explain": "Planting trees can mitigate flooding."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: the quality of being very generous and forgiving",
+  "answer": "magnanimity",
+  "explain": "She accepted defeat with magnanimity."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: easily angered",
+  "answer": "irascible",
+  "explain": "The irascible old wizard shouted at the crows."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a person who is new and inexperienced",
+  "answer": "novice",
+  "explain": "As a novice, she fell off the board a lot."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to remove a difficulty or problem",
+  "answer": "obviate",
+  "explain": "A map would obviate the need to ask for directions."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: extremely happy",
+  "answer": "euphoric",
+  "explain": "The fans were euphoric after the final."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: secret and often dishonest",
+  "answer": "clandestine",
+  "explain": "The clandestine midnight feast was a huge success."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: showing deep respect",
+  "answer": "reverent",
+  "explain": "The crowd fell into a reverent silence."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to spread quickly in many directions",
+  "answer": "proliferate",
+  "explain": "Weeds proliferated in the empty garden."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: calm and peaceful",
+  "answer": "serene",
+  "explain": "The lake looked serene at dawn."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to examine something very closely",
+  "answer": "scrutinise",
+  "explain": "The teacher scrutinised my answer."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: done without thinking, as a reflex",
+  "answer": "instinctive",
+  "explain": "Ducking was an instinctive reaction."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: having or showing great knowledge from reading",
+  "answer": "erudite",
+  "explain": "The erudite professor quoted three poets."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: not paying attention; careless",
+  "answer": "heedless",
+  "explain": "Heedless of the warning, he climbed the wall."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to steal something, usually small",
+  "answer": "pilfer",
+  "explain": "The seagull pilfered my chips!"
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: filled with hope; positive about the future",
+  "answer": "sanguine",
+  "explain": "The coach was sanguine about our chances."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a feeling of extreme tiredness and lack of energy",
+  "answer": "lethargy",
+  "explain": "Too much screen time can cause lethargy."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to state the opposite of what someone said",
+  "answer": "contradict",
+  "explain": "Don't contradict your sister in front of guests."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: too confident, in a rude way",
+  "answer": "brash",
+  "explain": "The brash newcomer claimed he'd beat everyone."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: clear and easy to understand",
+  "answer": "lucid",
+  "explain": "Her explanation was lucid and short."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: an unexpected piece of good luck",
+  "answer": "windfall",
+  "explain": "Finding £20 was a real windfall."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to hesitate because of doubts",
+  "answer": "balk",
+  "explain": "The horse balked at the high fence."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: lacking flavour or interest",
+  "answer": "insipid",
+  "explain": "The soup was insipid without salt."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a person who stays out of sight and watches",
+  "answer": "lurker",
+  "explain": "The lurker read every post but never wrote one."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to cause a feeling or memory",
+  "answer": "evoke",
+  "explain": "The smell evoked memories of summer."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: perfectly suitable for a particular situation",
+  "answer": "apt",
+  "explain": "Her joke was apt and kind."
  }
 ]

@@ -2140,5 +2140,257 @@
    "sedentary": "Sedentary = sitting a lot, or staying in one place.",
    "monastic": "Monastic = like monks."
   }
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to make something seem less important than it is",
+  "answer": "downplay",
+  "explain": "He downplayed his injury so he could keep playing."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: very careful about small details",
+  "answer": "meticulous",
+  "explain": "Her meticulous notes helped the whole class."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: lasting for a very short time",
+  "answer": "fleeting",
+  "explain": "We caught a fleeting glimpse of the dolphin."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to make someone feel less worried",
+  "answer": "reassure",
+  "explain": "The pilot reassured the passengers."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: impossible to avoid",
+  "answer": "inevitable",
+  "explain": "Some mistakes are inevitable when you learn."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: full of energy and enthusiasm",
+  "answer": "vibrant",
+  "explain": "The market was vibrant and colourful."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to say something is true firmly",
+  "answer": "assert",
+  "explain": "She asserted that she had seen a fox."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a sudden understanding of something",
+  "answer": "insight",
+  "explain": "The documentary gave us real insight into bees."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to make a situation worse",
+  "answer": "aggravate",
+  "explain": "Scratching will aggravate the bite."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: able to recover quickly from difficulties",
+  "answer": "resilient",
+  "explain": "Resilient players bounce back after losing."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: unclear because it has more than one meaning",
+  "answer": "ambiguous",
+  "explain": "The ending of the film was ambiguous."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to encourage something to develop",
+  "answer": "foster",
+  "explain": "Clubs foster friendships between pupils."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: very large in amount or degree",
+  "answer": "immense",
+  "explain": "The whale was immense."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a feeling of great happiness",
+  "answer": "elation",
+  "explain": "There was elation when our team scored."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to persuade someone not to do something",
+  "answer": "dissuade",
+  "explain": "Mum dissuaded me from cutting my own fringe."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: saying very little",
+  "answer": "reticent",
+  "explain": "He was reticent about his new song."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: easy to see or notice",
+  "answer": "conspicuous",
+  "explain": "Her bright yellow coat was conspicuous."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to make something weaker little by little",
+  "answer": "undermine",
+  "explain": "Rumours can undermine a team's trust."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a result you didn't plan or expect",
+  "answer": "outcome",
+  "explain": "Nobody predicted the outcome of the match."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: thinking carefully before acting",
+  "answer": "prudent",
+  "explain": "It's prudent to save some money."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to accept something unpleasant without complaining",
+  "answer": "endure",
+  "explain": "The climbers endured freezing winds."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: having many different parts or kinds",
+  "answer": "diverse",
+  "explain": "Our class is wonderfully diverse."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to make a copy of something exactly",
+  "answer": "replicate",
+  "explain": "Scientists replicate experiments to check results."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a firm belief",
+  "answer": "conviction",
+  "explain": "She spoke with real conviction."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: showing no interest or energy",
+  "answer": "apathetic",
+  "explain": "Nobody was apathetic about the school trip!"
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to look at something quickly",
+  "answer": "glance",
+  "explain": "She glanced at the clock."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to speak or behave in a way that is too proud",
+  "answer": "boast",
+  "explain": "He boasted about his new trainers."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: extremely beautiful or delicate",
+  "answer": "exquisite",
+  "explain": "The cake decorations were exquisite."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a tiny amount of something",
+  "answer": "trace",
+  "explain": "There wasn't a trace of the cookies left."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a feeling of strong dislike",
+  "answer": "aversion",
+  "explain": "My cat has an aversion to water."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to move quickly and lightly",
+  "answer": "scurry",
+  "explain": "The mice scurried into the hole."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to make a mistake or do something badly",
+  "answer": "blunder",
+  "explain": "The goalkeeper's blunder cost them the game."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: having a strong, pleasant smell",
+  "answer": "fragrant",
+  "explain": "The garden was full of fragrant roses."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to become less strong",
+  "answer": "wane",
+  "explain": "Our interest waned as the film went on."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: very old-fashioned",
+  "answer": "archaic",
+  "explain": "Some words in the poem are archaic."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a short, clever saying",
+  "answer": "quip",
+  "explain": "His quip made everyone laugh."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to search through something untidily",
+  "answer": "rummage",
+  "explain": "She rummaged in her bag for her keys."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a confusing situation with no easy answer",
+  "answer": "dilemma",
+  "explain": "Choosing between the two clubs was a real dilemma."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: very hungry",
+  "answer": "ravenous",
+  "explain": "After football we were ravenous."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: to keep something going",
+  "answer": "sustain",
+  "explain": "The runners couldn't sustain the pace."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a group of people with the same interests",
+  "answer": "community",
+  "explain": "Our gaming community is really friendly."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: slightly wet in an unpleasant way",
+  "answer": "damp",
+  "explain": "My socks were damp after the walk."
  }
 ]

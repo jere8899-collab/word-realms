@@ -2031,5 +2031,269 @@
    "until"
   ],
   "explain": "So + adjective + was…; before the end."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "Rarely have I seen such a beautiful sunset.",
+  "explain": "Inversion after a negative adverb: Rarely have I seen."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "What I need is a long holiday.",
+  "explain": "Cleft sentence: What I need is…"
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "Had I known, I would have called you.",
+  "explain": "Inverted third conditional: Had I known = If I had known."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "It was my sister who found the puppy.",
+  "explain": "It-cleft: It was my sister who…"
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "She is said to be the best player.",
+  "explain": "Reporting passive: is said to be."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "Were it not for you, I'd be lost.",
+  "explain": "Inverted conditional: Were it not for = If it weren't for."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "No sooner had we left than it poured.",
+  "explain": "No sooner had … than: the second thing happened right after."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "Seldom",
+   "have",
+   "we",
+   "had",
+   "so",
+   "fun."
+  ],
+  "wrong": 4,
+  "fix": "such",
+  "explain": "such + noun (fun): Seldom have we had such fun."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "It",
+   "was",
+   "Sam",
+   "which",
+   "told",
+   "me."
+  ],
+  "wrong": 3,
+  "fix": "who",
+  "explain": "For people use who: It was Sam who told me."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "Should",
+   "you",
+   "needs",
+   "help,",
+   "call",
+   "me."
+  ],
+  "wrong": 2,
+  "fix": "need",
+  "explain": "After Should you … use the plain verb: Should you need help."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "The",
+   "plan",
+   "is",
+   "believed",
+   "to",
+   "being",
+   "risky."
+  ],
+  "wrong": 5,
+  "fix": "be",
+  "explain": "Reporting passive + to-infinitive: is believed to be risky."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "Little",
+   "did",
+   "he",
+   "knew",
+   "what",
+   "was",
+   "coming."
+  ],
+  "wrong": 3,
+  "fix": "know",
+  "explain": "After did use the plain verb: Little did he know."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "Not",
+   "until",
+   "later",
+   "did",
+   "I",
+   "realised",
+   "the",
+   "truth."
+  ],
+  "wrong": 5,
+  "fix": "realise",
+  "explain": "After did use the plain verb: Not until later did I realise."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "Only",
+   "after",
+   "the",
+   "match",
+   "did",
+   "he",
+   "relaxed."
+  ],
+  "wrong": 6,
+  "fix": "relax.",
+  "explain": "After did use the plain verb: Only after the match did he relax."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "___ had she arrived ___ the party began.",
+  "answers": [
+   "Scarcely",
+   "when"
+  ],
+  "bank": [
+   "Scarcely",
+   "when",
+   "Rarely",
+   "than"
+  ],
+  "explain": "Scarcely had … when: one thing right after another."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "What she loves ___ painting; ___ she hates is tidying up.",
+  "answers": [
+   "is",
+   "what"
+  ],
+  "bank": [
+   "is",
+   "what",
+   "are",
+   "which"
+  ],
+  "explain": "What-clefts: What she loves is…; what she hates is…"
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "The castle is thought ___ been built in 1200 and ___ to be haunted.",
+  "answers": [
+   "to have",
+   "is rumoured"
+  ],
+  "bank": [
+   "to have",
+   "is rumoured",
+   "to be",
+   "rumours"
+  ],
+  "explain": "Past reporting passive: is thought to have been built; is rumoured to be."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "___ you see Max, tell him; ___ not, I'll text him.",
+  "answers": [
+   "Should",
+   "if"
+  ],
+  "bank": [
+   "Should",
+   "if",
+   "Would",
+   "unless"
+  ],
+  "explain": "Should you see = If you see; if not = otherwise."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "Under no circumstances ___ you open the door ___ I get back.",
+  "answers": [
+   "should",
+   "until"
+  ],
+  "bank": [
+   "should",
+   "until",
+   "you should",
+   "since"
+  ],
+  "explain": "Under no circumstances + inversion: should you; until = up to the time."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "Much ___ I like her, I can't agree, ___ she's my friend.",
+  "answers": [
+   "as",
+   "even though"
+  ],
+  "bank": [
+   "as",
+   "even though",
+   "though",
+   "despite"
+  ],
+  "explain": "Much as = although (very much); even though + clause."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "It's high time the council ___ the park, ___ it's been closed for months.",
+  "answers": [
+   "reopened",
+   "given that"
+  ],
+  "bank": [
+   "reopened",
+   "given that",
+   "reopens",
+   "despite"
+  ],
+  "explain": "It's high time + past; given that = because."
  }
 ]

@@ -36,6 +36,13 @@ for _lvl, _extra in C2T.items():
     for _val in _extra.values():
         for q in _val: _check_c2(q)
 _merge(C2T)
+# ---- R19 (review 2026-11-01): more non-multiple-choice items so every level/skill reaches about a quarter of the bank ----
+from r19_a import R19A; from r19_b import R19B
+for _src in (R19A, R19B):
+    for _extra in _src.values():
+        for _val in _extra.values():
+            for q in _val: _check_c2(q)
+    _merge(_src)
 # ---- C4 (review 2026-10-30): listening that tests understanding (paraphrased right options + numbers/times/changes of mind) ----
 from c4 import C4P, C4NEW
 _c4_hit = set()

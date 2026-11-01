@@ -1939,5 +1939,53 @@
    "ball": "That picture is a ball. The sun is in the sky in the day.",
    "clock": "That picture is a clock. The sun is in the sky in the day."
   }
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: the opposite of hot",
+  "answer": "cold",
+  "explain": "Hot and cold are opposites: ice is cold."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: you brush them every morning and night",
+  "answer": "teeth",
+  "explain": "We brush our teeth: one tooth, two teeth."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: a baby cat",
+  "answer": "kitten",
+  "explain": "A kitten is a baby cat."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: the colour of grass",
+  "answer": "green",
+  "explain": "Grass and leaves are green."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: you sleep in it",
+  "answer": "bed",
+  "explain": "At night we sleep in a bed."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: the meal you eat in the morning",
+  "answer": "breakfast",
+  "explain": "Breakfast is the first meal of the day."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: it shines in the sky at night",
+  "answer": "moon",
+  "explain": "The moon shines at night; the sun shines in the day."
+ },
+ {
+  "type": "spell",
+  "q": "Spell the word: you wear them on your feet",
+  "answer": "shoes",
+  "explain": "Shoes go on your feet."
  }
 ]

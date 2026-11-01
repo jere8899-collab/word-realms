@@ -1944,5 +1944,222 @@
    "on"
   ],
   "explain": "She drinks (+s); in the morning."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "My dog likes long walks.",
+  "explain": "Who + likes + what: My dog likes long walks."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "We are in the garden.",
+  "explain": "We + are + where: We are in the garden."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "Is your sister at school?",
+  "explain": "Questions with be start with Is/Are: Is your sister at school?"
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "I can see a big rainbow.",
+  "explain": "I + can + see + what: I can see a big rainbow."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "They have a yellow kite.",
+  "explain": "They + have + what: They have a yellow kite."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "Where is my blue pencil?",
+  "explain": "Where + is + the thing: Where is my blue pencil?"
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "The birds sing in the morning.",
+  "explain": "Who + do what + when: The birds sing in the morning."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "We",
+   "is",
+   "in",
+   "the",
+   "same",
+   "class."
+  ],
+  "wrong": 1,
+  "fix": "are",
+  "explain": "With we we say are: We are in the same class."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "My",
+   "brother",
+   "play",
+   "football."
+  ],
+  "wrong": 2,
+  "fix": "plays",
+  "explain": "With he/she/it (my brother) add -s: My brother plays football."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "I",
+   "have",
+   "three",
+   "apple."
+  ],
+  "wrong": 3,
+  "fix": "apples.",
+  "explain": "More than one apple: add -s. Three apples."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "Can",
+   "you",
+   "swims?"
+  ],
+  "wrong": 2,
+  "fix": "swim?",
+  "explain": "After can, use the plain verb: Can you swim?"
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "She",
+   "don't",
+   "like",
+   "milk."
+  ],
+  "wrong": 1,
+  "fix": "doesn't",
+  "explain": "With he/she/it say doesn't: She doesn't like milk."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "It",
+   "is",
+   "a",
+   "orange."
+  ],
+  "wrong": 2,
+  "fix": "an",
+  "explain": "Orange starts with an o sound, so we say an orange."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "This ___ my cat. ___ name is Tom.",
+  "answers": [
+   "is",
+   "Her"
+  ],
+  "bank": [
+   "is",
+   "Her",
+   "are",
+   "She"
+  ],
+  "explain": "This is (one thing); her name (the cat's name)."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "I ___ got a ball. It ___ red.",
+  "answers": [
+   "have",
+   "is"
+  ],
+  "bank": [
+   "have",
+   "is",
+   "has",
+   "are"
+  ],
+  "explain": "I have got; it is."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "We ___ to school by bus. My mum ___ me at the bus stop.",
+  "answers": [
+   "go",
+   "meets"
+  ],
+  "bank": [
+   "go",
+   "meets",
+   "goes",
+   "meet"
+  ],
+  "explain": "We go (no -s); my mum meets (he/she adds -s)."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "There ___ a duck on the pond. There ___ two frogs too.",
+  "answers": [
+   "is",
+   "are"
+  ],
+  "bank": [
+   "is",
+   "are",
+   "am",
+   "be"
+  ],
+  "explain": "There is + one thing; there are + more than one."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "___ you like bananas? Yes, I ___.",
+  "answers": [
+   "Do",
+   "do"
+  ],
+  "bank": [
+   "Do",
+   "do",
+   "Does",
+   "am"
+  ],
+  "explain": "Do you…? Yes, I do."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "Look ___ the sky! The moon is ___ the clouds.",
+  "answers": [
+   "at",
+   "behind"
+  ],
+  "bank": [
+   "at",
+   "behind",
+   "on",
+   "in"
+  ],
+  "explain": "Look at something; behind the clouds = the clouds are in front of it."
  }
 ]

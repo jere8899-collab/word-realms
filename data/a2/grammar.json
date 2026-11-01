@@ -1891,5 +1891,150 @@
    "during"
   ],
   "explain": "We do homework; after dinner."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "We went to the beach last summer.",
+  "explain": "Past simple: went (go) + when: last summer."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "My sister is taller than me.",
+  "explain": "Comparative: taller than."
+ },
+ {
+  "type": "order",
+  "q": "Build the sentence.",
+  "answer": "Are you going to visit your grandma?",
+  "explain": "going to for plans: Are you going to visit…?"
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "Last",
+   "summer",
+   "we",
+   "swim",
+   "in",
+   "the",
+   "sea",
+   "every",
+   "day."
+  ],
+  "wrong": 3,
+  "fix": "swam",
+  "explain": "Last summer = past, so swim becomes swam."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "This",
+   "is",
+   "the",
+   "more",
+   "exciting",
+   "game."
+  ],
+  "wrong": 3,
+  "fix": "most",
+  "explain": "With three or more things, use the most: the most exciting game."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "She",
+   "didn't",
+   "went",
+   "to",
+   "school."
+  ],
+  "wrong": 2,
+  "fix": "go",
+  "explain": "After didn't, use the plain verb: She didn't go."
+ },
+ {
+  "type": "mistake",
+  "q": "Tap the word that is wrong.",
+  "words": [
+   "I",
+   "am",
+   "going",
+   "to",
+   "played",
+   "tennis",
+   "later."
+  ],
+  "wrong": 4,
+  "fix": "play",
+  "explain": "be going to + the plain verb: I am going to play tennis."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "Last weekend we ___ a cake. It ___ delicious!",
+  "answers": [
+   "made",
+   "was"
+  ],
+  "bank": [
+   "made",
+   "was",
+   "make",
+   "is"
+  ],
+  "explain": "Last weekend = past: made, was."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "A cheetah is ___ than a lion. It is the ___ animal on land.",
+  "answers": [
+   "faster",
+   "fastest"
+  ],
+  "bank": [
+   "faster",
+   "fastest",
+   "fast",
+   "more fast"
+  ],
+  "explain": "Two things: faster than; the top of all: the fastest."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "You ___ wear a helmet on your bike. You ___ forget it!",
+  "answers": [
+   "should",
+   "mustn't"
+  ],
+  "bank": [
+   "should",
+   "mustn't",
+   "shouldn't",
+   "must"
+  ],
+  "explain": "should = good idea; mustn't = don't do it."
+ },
+ {
+  "type": "gaps",
+  "q": "Fill the gaps with the words.",
+  "text": "There isn't ___ milk left, but there are ___ eggs.",
+  "answers": [
+   "much",
+   "some"
+  ],
+  "bank": [
+   "much",
+   "some",
+   "many",
+   "any"
+  ],
+  "explain": "much with milk (can't count); some eggs in a yes sentence."
  }
 ]
