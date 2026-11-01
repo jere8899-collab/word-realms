@@ -1,0 +1,535 @@
+{
+ "level": "c2",
+ "mode": "tiles",
+ "none": "no mark",
+ "books": [
+  {
+   "id": "c2.1",
+   "icon": "🍰",
+   "name": "Commas that Change Meaning",
+   "focus": "Let's eat, Grandma! · eats shoots and leaves · However hard",
+   "items": [
+    {
+     "s": "Let's eat___ Grandma!",
+     "ans": [
+      ","
+     ],
+     "kind": "meaning",
+     "tip": "A comma before the name of the person you're talking to: Let's eat, Grandma!",
+     "x": [
+      "no mark",
+      ";",
+      ":"
+     ],
+     "no": {
+      "no mark": "Without the comma, you're inviting everyone to eat Grandma! The comma shows you're talking TO her.",
+      ";": "A semicolon joins two full sentences, and Grandma isn't one.",
+      ":": "A colon would introduce what we're eating, which would be Grandma again!"
+     },
+     "id": "c2.1.1",
+     "say": "Let's eat, Grandma!",
+     "ask": "Let's eat Grandma!"
+    },
+    {
+     "s": "Only some of us were done, so the students___ who had finished early were allowed to leave.",
+     "ans": [
+      "no mark"
+     ],
+     "kind": "meaning",
+     "tip": "No commas: who had finished early picks out WHICH students could leave.",
+     "x": [
+      ",",
+      ";",
+      ":"
+     ],
+     "no": {
+      ",": "With commas, it would mean ALL the students had finished early, but only some had.",
+      ";": "A semicolon joins two full sentences, and the students isn't one.",
+      ":": "A colon would introduce an explanation, but here we're saying which students."
+     },
+     "id": "c2.1.2",
+     "say": "Only some of us were done, so the students who had finished early were allowed to leave.",
+     "ask": "Only some of us were done, so the students who had finished early were allowed to leave."
+    },
+    {
+     "s": "Everyone was done, so the students___ who had worked hard all morning, were allowed to leave.",
+     "ans": [
+      ","
+     ],
+     "kind": "meaning",
+     "tip": "With commas, who had worked hard all morning is extra information about ALL the students.",
+     "x": [
+      "no mark",
+      ";",
+      ":"
+     ],
+     "no": {
+      "no mark": "There's already a closing comma, and since everyone was done, this is extra information. Open it with a comma.",
+      ";": "A semicolon would cut off the students, which isn't a full sentence.",
+      ":": "A colon would introduce an explanation, but here we're adding a fact about all of them."
+     },
+     "id": "c2.1.3",
+     "say": "Everyone was done, so the students, who had worked hard all morning, were allowed to leave.",
+     "ask": "Everyone was done, so the students who had worked hard all morning, were allowed to leave."
+    },
+    {
+     "s": "My only brother___ Arjun, loves chess.",
+     "ans": [
+      ","
+     ],
+     "kind": "meaning",
+     "tip": "You have only one brother, so his name is extra information: put it between commas.",
+     "x": [
+      "no mark",
+      ";",
+      ":"
+     ],
+     "no": {
+      "no mark": "You have only one brother, so his name doesn't pick him out. It's extra, so it goes between commas.",
+      ";": "A semicolon would cut off My only brother, which isn't a full sentence.",
+      ":": "A colon introduces a list or an explanation. Here we just add his name."
+     },
+     "id": "c2.1.4",
+     "say": "My only brother, Arjun, loves chess.",
+     "ask": "My only brother Arjun, loves chess."
+    },
+    {
+     "s": "I have three friends here today; my friend___ Arjun is the one in the red cap.",
+     "ans": [
+      "no mark"
+     ],
+     "kind": "meaning",
+     "tip": "No commas: Arjun picks out WHICH of your friends you mean.",
+     "x": [
+      ",",
+      ";",
+      ":"
+     ],
+     "no": {
+      ",": "With commas, Arjun would sound like your only friend. Here the name picks out which friend, so no commas.",
+      ";": "A semicolon joins two full sentences, and my friend isn't one.",
+      ":": "A colon would introduce an explanation, but here the name says which friend."
+     },
+     "id": "c2.1.5",
+     "say": "I have three friends here today; my friend Arjun is the one in the red cap.",
+     "ask": "I have three friends here today; my friend Arjun is the one in the red cap."
+    },
+    {
+     "s": "The panda eats___ shoots and leaves.",
+     "ans": [
+      "no mark"
+     ],
+     "kind": "meaning",
+     "tip": "No comma: the panda simply eats shoots and leaves (bamboo!).",
+     "x": [
+      ",",
+      ";",
+      ":"
+     ],
+     "no": {
+      ",": "With a comma, the panda eats, then shoots and leaves the café, like a cowboy! Without it, it simply eats shoots and leaves.",
+      ";": "A semicolon would make shoots and leaves a separate sentence, but it has no subject.",
+      ":": "A colon would introduce a list, but shoots and leaves are already what it eats."
+     },
+     "id": "c2.1.6",
+     "say": "The panda eats shoots and leaves.",
+     "ask": "The panda eats shoots and leaves."
+    },
+    {
+     "s": "However___ hard we tried, the kite wouldn't fly.",
+     "ans": [
+      "no mark"
+     ],
+     "kind": "meaning",
+     "tip": "However hard = no matter how hard. There's no comma after However here.",
+     "x": [
+      ",",
+      ";",
+      ":"
+     ],
+     "no": {
+      ",": "With a comma, However would mean 'but', and hard we tried makes no sense. However hard = no matter how hard.",
+      ";": "A semicolon joins two full sentences, and However isn't one.",
+      ":": "A colon would introduce an explanation, but However hard belongs together."
+     },
+     "id": "c2.1.7",
+     "say": "However hard we tried, the kite wouldn't fly.",
+     "ask": "However hard we tried, the kite wouldn't fly."
+    },
+    {
+     "s": "However___ we tried again the next day, and it flew!",
+     "ans": [
+      ","
+     ],
+     "kind": "meaning",
+     "tip": "Here However means 'but', so it needs a comma after it.",
+     "x": [
+      "no mark",
+      ";",
+      ":"
+     ],
+     "no": {
+      "no mark": "Here However means 'but'. With no comma, it reads like 'However we tried' = in whatever way we tried.",
+      ";": "A semicolon joins two full sentences, and However isn't one.",
+      ":": "A colon introduces an explanation, but However is just a linking word here."
+     },
+     "id": "c2.1.8",
+     "say": "However, we tried again the next day, and it flew!",
+     "ask": "However we tried again the next day, and it flew!"
+    }
+   ]
+  },
+  {
+   "id": "c2.2",
+   "icon": "🔍",
+   "name": "Hyphen Detectives",
+   "focus": "hyphens that change meaning: man-eating, re-signed, twenty-odd, co-op",
+   "items": [
+    {
+     "s": "The aquarium has a ___ shark!",
+     "ans": [
+      "man-eating"
+     ],
+     "kind": "hyphen",
+     "tip": "man-eating = it eats people. Without the hyphen, a man eating shark is a man who is eating shark!",
+     "x": [
+      "man eating",
+      "man's-eating",
+      "maneating"
+     ],
+     "no": {
+      "man eating": "A man eating shark is a man who is eating shark meat! Join the describing words: man-eating.",
+      "man's-eating": "There's no apostrophe in this describing word: man-eating.",
+      "maneating": "These words are joined by a hyphen, not squashed into one."
+     },
+     "id": "c2.2.1",
+     "say": "The aquarium has a man-eating shark!",
+     "ask": "The aquarium has a man-eating shark!"
+    },
+    {
+     "s": "We had to ___ the old sofa with new fabric.",
+     "ans": [
+      "re-cover"
+     ],
+     "kind": "hyphen",
+     "tip": "re-cover = cover again. recover = get better, or get something back.",
+     "x": [
+      "recover",
+      "re cover",
+      "re-covers"
+     ],
+     "no": {
+      "recover": "recover means get better or get something back. To cover it again, write re-cover.",
+      "re cover": "re isn't a word on its own. Join it with a hyphen: re-cover.",
+      "re-covers": "After had to we need the base form: re-cover."
+     },
+     "id": "c2.2.2",
+     "say": "We had to re-cover the old sofa with new fabric.",
+     "ask": "We had to re-cover the old sofa with new fabric."
+    },
+    {
+     "s": "___ students turned up to the chess club, so we needed more boards.",
+     "ans": [
+      "Twenty-odd"
+     ],
+     "kind": "hyphen",
+     "tip": "twenty-odd = about twenty. twenty odd students = twenty strange students!",
+     "x": [
+      "Twenty odd",
+      "Twentyodd",
+      "Twenty-odds"
+     ],
+     "no": {
+      "Twenty odd": "Twenty odd students means twenty strange students! For 'about twenty', write Twenty-odd.",
+      "Twentyodd": "These words are joined by a hyphen, not squashed into one.",
+      "Twenty-odds": "odd doesn't take -s here: Twenty-odd."
+     },
+     "id": "c2.2.3",
+     "say": "Twenty-odd students turned up to the chess club, so we needed more boards.",
+     "ask": "Twenty-odd students turned up to the chess club, so we needed more boards."
+    },
+    {
+     "s": "We followed a ___ path that hardly anyone walks on.",
+     "ans": [
+      "little-used"
+     ],
+     "kind": "hyphen",
+     "tip": "little-used = not used much. A little used path could mean a small, used path.",
+     "x": [
+      "little used",
+      "littleused",
+      "little-use"
+     ],
+     "no": {
+      "little used": "Without the hyphen it can mean a small path that has been used. For 'hardly used', write little-used.",
+      "littleused": "These words are joined by a hyphen, not squashed into one.",
+      "little-use": "It describes the path, so we need the -ed form: little-used."
+     },
+     "id": "c2.2.4",
+     "say": "We followed a little-used path that hardly anyone walks on.",
+     "ask": "We followed a little-used path that hardly anyone walks on."
+    },
+    {
+     "s": "The goalkeeper ___ for another season, and the fans cheered.",
+     "ans": [
+      "re-signed"
+     ],
+     "kind": "hyphen",
+     "tip": "re-signed = signed again (a new contract). resigned = quit!",
+     "x": [
+      "resigned",
+      "re signed",
+      "re-sign"
+     ],
+     "no": {
+      "resigned": "resigned means quit, and the fans wouldn't cheer for that! Signed again → re-signed.",
+      "re signed": "re isn't a word on its own. Join it with a hyphen: re-signed.",
+      "re-sign": "The sentence is in the past: re-signed."
+     },
+     "id": "c2.2.5",
+     "say": "The goalkeeper re-signed for another season, and the fans cheered.",
+     "ask": "The goalkeeper re-signed for another season, and the fans cheered."
+    },
+    {
+     "s": "Our coach is a ___ chess player.",
+     "ans": [
+      "world-class"
+     ],
+     "kind": "hyphen",
+     "tip": "world-class describes the player as one idea, so it takes a hyphen.",
+     "x": [
+      "world class",
+      "worldclass",
+      "world's-class"
+     ],
+     "no": {
+      "world class": "Before a noun, world and class work as one describing word, so join them: world-class.",
+      "worldclass": "These words are joined by a hyphen, not squashed into one.",
+      "world's-class": "There's no apostrophe in this describing word: world-class."
+     },
+     "id": "c2.2.6",
+     "say": "Our coach is a world-class chess player.",
+     "ask": "Our coach is a world-class chess player."
+    },
+    {
+     "s": "The chickens sleep safely in their ___ at night.",
+     "ans": [
+      "coop"
+     ],
+     "kind": "hyphen",
+     "tip": "A coop is a chickens' house. A co-op is a shop or group owned by its members.",
+     "x": [
+      "co-op",
+      "co op",
+      "coops"
+     ],
+     "no": {
+      "co-op": "A co-op is a shop or club owned by its members. A chickens' house is a coop.",
+      "co op": "co isn't a word on its own. A chickens' house is a coop.",
+      "coops": "their coop is one house for the chickens, so no -s here."
+     },
+     "id": "c2.2.7",
+     "say": "The chickens sleep safely in their coop at night.",
+     "ask": "The chickens sleep safely in their coop at night."
+    },
+    {
+     "s": "The librarian asked us to ___ the books by author.",
+     "ans": [
+      "re-sort"
+     ],
+     "kind": "hyphen",
+     "tip": "re-sort = sort again. resort = a holiday place (or to resort to something).",
+     "x": [
+      "resort",
+      "re sort",
+      "re-sorts"
+     ],
+     "no": {
+      "resort": "A resort is a holiday place! To sort again, write re-sort.",
+      "re sort": "re isn't a word on its own. Join it with a hyphen: re-sort.",
+      "re-sorts": "After asked us to we need the base form: re-sort."
+     },
+     "id": "c2.2.8",
+     "say": "The librarian asked us to re-sort the books by author.",
+     "ask": "The librarian asked us to re-sort the books by author."
+    }
+   ]
+  },
+  {
+   "id": "c2.3",
+   "icon": "🧚",
+   "name": "Pixie Polish",
+   "focus": "joint and separate owners · geese's · twins' · Whose · a question to the end",
+   "items": [
+    {
+     "s": "Tom___ and Mia's treehouse is the one they built together.",
+     "ans": [
+      "no mark"
+     ],
+     "kind": "apos",
+     "tip": "One thing owned together: only the last name takes 's. Tom and Mia's treehouse.",
+     "x": [
+      "'s",
+      "s'",
+      ","
+     ],
+     "no": {
+      "'s": "Tom's and Mia's would mean two different treehouses. They built ONE together, so only Mia's takes 's.",
+      "s'": "Tom is one person, so s' doesn't fit, and only the last name takes 's anyway.",
+      ",": "A comma would split Tom from Mia's treehouse."
+     },
+     "id": "c2.3.1",
+     "say": "Tom and Mia's treehouse is the one they built together.",
+     "ask": "Tom and Mia's treehouse is the one they built together."
+    },
+    {
+     "s": "Tom's and Mia___ bikes are different colours.",
+     "ans": [
+      "'s"
+     ],
+     "kind": "apos",
+     "tip": "Two separate things (a bike each): both names take 's. Tom's and Mia's bikes.",
+     "x": [
+      "no mark",
+      "s'",
+      "s"
+     ],
+     "no": {
+      "no mark": "With separate things (two bikes, one each), both names need 's: Tom's and Mia's.",
+      "s'": "Mia is one person, so it's Mia's, not Mias'.",
+      "s": "Mias isn't a name. To show the bike is hers, write Mia's."
+     },
+     "id": "c2.3.2",
+     "say": "Tom's and Mia's bikes are different colours.",
+     "ask": "Tom's and Mia's bikes are different colours."
+    },
+    {
+     "s": "All three ___ honking woke the whole campsite.",
+     "ans": [
+      "geese's"
+     ],
+     "kind": "apos",
+     "tip": "geese is a plural without s, so add 's: the geese's honking.",
+     "x": [
+      "geeses'",
+      "goose's",
+      "geeses"
+     ],
+     "no": {
+      "geeses'": "geese is already plural, so we don't add s. Just 's: geese's.",
+      "goose's": "goose's is one goose, but All three means three geese.",
+      "geeses": "geeses isn't a word. The plural of goose is geese."
+     },
+     "id": "c2.3.3",
+     "say": "All three geese's honking woke the whole campsite.",
+     "ask": "All three geese's honking woke the whole campsite."
+    },
+    {
+     "s": "Isn't it amazing that octopuses can change colour___",
+     "ans": [
+      "?"
+     ],
+     "kind": "end",
+     "tip": "It starts with Isn't it…, so however long it gets, it's a question.",
+     "x": [
+      ".",
+      ",",
+      ";"
+     ],
+     "no": {
+      ".": "The sentence starts with Isn't it…, so it's a question, even though it's long.",
+      ",": "A comma can't end a sentence.",
+      ";": "A semicolon needs another full sentence after it."
+     },
+     "id": "c2.3.4",
+     "say": "Isn't it amazing that octopuses can change colour?",
+     "ask": "Isn't it amazing that octopuses can change colour"
+    },
+    {
+     "s": "The shop sells two- and ___ bikes.",
+     "ans": [
+      "three-wheeled"
+     ],
+     "kind": "hyphen",
+     "tip": "two- and three-wheeled: the first hyphen 'hangs', waiting for the same ending.",
+     "x": [
+      "three wheeled",
+      "three-wheel-ed",
+      "threewheeled"
+     ],
+     "no": {
+      "three wheeled": "The hanging hyphen in two- needs a partner: three-wheeled.",
+      "three-wheel-ed": "-ed is part of the word wheeled. It doesn't get its own hyphen.",
+      "threewheeled": "These words are joined by a hyphen, not squashed into one."
+     },
+     "id": "c2.3.5",
+     "say": "The shop sells two- and three-wheeled bikes.",
+     "ask": "The shop sells two- and three-wheeled bikes."
+    },
+    {
+     "s": "Seeing the northern lights was a ___ experience.",
+     "ans": [
+      "once-in-a-lifetime"
+     ],
+     "kind": "hyphen",
+     "tip": "A long describing phrase before a noun is joined with hyphens: a once-in-a-lifetime experience.",
+     "x": [
+      "once in a lifetime",
+      "once-in-a lifetime",
+      "once-in-a-life-time"
+     ],
+     "no": {
+      "once in a lifetime": "Before the noun (experience), the whole phrase works as one describing word, so it takes hyphens.",
+      "once-in-a lifetime": "Every word in the phrase is joined: once-in-a-lifetime.",
+      "once-in-a-life-time": "lifetime is one word, so no hyphen inside it."
+     },
+     "id": "c2.3.6",
+     "say": "Seeing the northern lights was a once-in-a-lifetime experience.",
+     "ask": "Seeing the northern lights was a once-in-a-lifetime experience."
+    },
+    {
+     "s": "The ___ birthday party is on Saturday; both of them are turning twelve.",
+     "ans": [
+      "twins'"
+     ],
+     "kind": "apos",
+     "tip": "both of them = two twins, a plural ending in s, so the apostrophe goes after the s: twins'.",
+     "x": [
+      "twin's",
+      "twins",
+      "twins's"
+     ],
+     "no": {
+      "twin's": "twin's means one twin, but both of them are turning twelve: twins'.",
+      "twins": "twins (no apostrophe) doesn't show that the party is theirs.",
+      "twins's": "After a plural ending in s, add only the apostrophe: twins'."
+     },
+     "id": "c2.3.7",
+     "say": "The twins' birthday party is on Saturday; both of them are turning twelve.",
+     "ask": "The twins' birthday party is on Saturday; both of them are turning twelve."
+    },
+    {
+     "s": "___ turn is it to feed the fish?",
+     "ans": [
+      "Whose"
+     ],
+     "kind": "apos",
+     "tip": "Whose = belonging to which person. Who's always means who is or who has.",
+     "x": [
+      "Who's",
+      "Whos",
+      "Whose'"
+     ],
+     "no": {
+      "Who's": "Who's means who is: Who is turn is it? No! For 'belonging to which person', write Whose.",
+      "Whos": "Whos isn't a word. Belonging to which person → Whose.",
+      "Whose'": "There's no apostrophe in Whose."
+     },
+     "id": "c2.3.8",
+     "say": "Whose turn is it to feed the fish?",
+     "ask": "Whose turn is it to feed the fish?"
+    }
+   ]
+  }
+ ]
+}

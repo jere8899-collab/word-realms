@@ -43,7 +43,8 @@ const QUEST_POOL = [
   { id: "charm1", icon: "🔮", label: "Catch or polish your Word Charms (finish a round)", goal: 1, reward: 5 },
   { id: "swap1", icon: "🔀", label: "Finish a Spell Swap book (same meaning, new words)", goal: 1, reward: 5 },
   { id: "forge1", icon: "⚒️", label: "Finish a Word Forge anvil (make the right form of a word)", goal: 1, reward: 5 },
-  { id: "cloze1", icon: "🌉", label: "Finish a Word Bridges text (one little word in each gap)", goal: 1, reward: 5 }
+  { id: "cloze1", icon: "🌉", label: "Finish a Word Bridges text (one little word in each gap)", goal: 1, reward: 5 },
+  { id: "marks1", icon: "🧚", label: "Finish a Punctuation Pixies book (the right mark in each gap)", goal: 1, reward: 5 }
 ];
 Object.assign(WR, { SKILLS, PETS, AVATARS, QUEST_POOL, data: {}, manifest: null, screens: {} });
 
@@ -116,8 +117,9 @@ const earnHash = k => { let h = 2166136261; k = String(k); for (let i = 0; i < k
    swap 🔀 (js/swap.js): best result per Spell Swap book ({ "b2.1": { best, crowns, plays, at } }), rounds, last level
    forge ⚒️ (js/forge.js): best result per Word Forge anvil (same shape as swap), rounds, last level
    cloze 🌉 (js/cloze.js): best result per Word Bridges text (same shape as swap), rounds, last level
+   marks 🧚 (js/marks.js): best result per Punctuation Pixies book (same shape as swap), rounds, last level
    crowned = the block keeps crowned units in done{} (WR.finishUnit); the cloud progress score counts their crowns (js/cloud.js).
-   Gap games (js/gap-round.js: Spell Swap, Word Forge, Word Bridges) all share the same shape: gapBlock(). */
+   Gap games (js/gap-round.js: Spell Swap, Word Forge, Word Bridges, Punctuation Pixies) all share the same shape: gapBlock(). */
 const gapBlock = () => ({ fresh: () => ({ done: {}, rounds: 0, lvl: null }), maps: ["done"], crowned: true });
 const BLOCKS = {
   stories: { fresh: () => ({ done: {}, words: {}, reads: 0 }), maps: ["done", "words"], crowned: true },
@@ -125,7 +127,8 @@ const BLOCKS = {
   charms: { fresh: () => ({ cards: {}, rounds: 0, lvl: null }), maps: ["cards"] },
   swap: gapBlock(),
   forge: gapBlock(),
-  cloze: gapBlock()
+  cloze: gapBlock(),
+  marks: gapBlock()
 };
 const freshBlocks = () => Object.fromEntries(Object.entries(BLOCKS).map(([k, b]) => [k, b.fresh()]));
 const fixBlock = (s, k) => { const b = BLOCKS[k], v = s[k]; s[k] = Object.assign(b.fresh(), v && typeof v === "object" ? v : {}); for (const m of b.maps) s[k][m] = s[k][m] || {}; return s[k]; };

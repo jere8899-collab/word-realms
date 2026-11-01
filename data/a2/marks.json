@@ -1,0 +1,536 @@
+{
+ "level": "a2",
+ "mode": "tiles",
+ "none": "no mark",
+ "books": [
+  {
+   "id": "a2.1",
+   "icon": "🛍",
+   "name": "Market Lists",
+   "focus": "commas in lists · Yes, please · ?",
+   "items": [
+    {
+     "s": "At the market we bought apples___ pears and grapes.",
+     "ans": [
+      ","
+     ],
+     "kind": "comma",
+     "tip": "Use commas between things in a list. Before the last one, and is enough.",
+     "x": [
+      ".",
+      "?",
+      "!"
+     ],
+     "no": {
+      ".": "A full stop would end the sentence after apples, but the list goes on.",
+      "?": "Nobody is asking anything here.",
+      "!": "! ends a sentence with a big feeling, but the list isn't finished yet."
+     },
+     "id": "a2.1.1",
+     "say": "At the market we bought apples, pears and grapes.",
+     "ask": "At the market we bought apples pears and grapes."
+    },
+    {
+     "s": "Do you want rice___ noodles or soup?",
+     "ans": [
+      ","
+     ],
+     "kind": "comma",
+     "tip": "A list of choices has commas too: rice, noodles or soup.",
+     "x": [
+      ".",
+      "?",
+      "'"
+     ],
+     "no": {
+      ".": "A full stop would end the question too early. The choices go on.",
+      "?": "The question mark goes at the very end, after soup.",
+      "'": "An apostrophe is for short forms (don't) or owning (Sam's), not for a list."
+     },
+     "id": "a2.1.2",
+     "say": "Do you want rice, noodles or soup?",
+     "ask": "Do you want rice noodles or soup?"
+    },
+    {
+     "s": "Yes___ please!",
+     "ans": [
+      ","
+     ],
+     "kind": "comma",
+     "tip": "Put a comma after Yes or No when you answer: Yes, please!",
+     "x": [
+      ".",
+      "?",
+      "'"
+     ],
+     "no": {
+      ".": "Yes. Please! makes two tiny sentences. We write Yes, please! with a little pause.",
+      "?": "Yes isn't a question here. It's an answer.",
+      "'": "An apostrophe isn't a pause mark. After Yes we need a comma."
+     },
+     "id": "a2.1.3",
+     "say": "Yes, please!",
+     "ask": "Yes please!"
+    },
+    {
+     "s": "We saw red___ yellow and green peppers.",
+     "ans": [
+      ","
+     ],
+     "kind": "comma",
+     "tip": "Colours in a list are split by commas: red, yellow and green.",
+     "x": [
+      ".",
+      "?",
+      "!"
+     ],
+     "no": {
+      ".": "A full stop would end the sentence after red.",
+      "?": "This sentence tells us something. It doesn't ask.",
+      "!": "! ends a sentence, but the list of colours goes on."
+     },
+     "id": "a2.1.4",
+     "say": "We saw red, yellow and green peppers.",
+     "ask": "We saw red yellow and green peppers."
+    },
+    {
+     "s": "Can I have two bananas___ please?",
+     "ans": [
+      ","
+     ],
+     "kind": "comma",
+     "tip": "Put a comma before please at the end of a question: …, please?",
+     "x": [
+      ".",
+      "?",
+      "'"
+     ],
+     "no": {
+      ".": "A full stop would end the question before please.",
+      "?": "The question mark comes at the very end, after please.",
+      "'": "An apostrophe isn't a pause mark. Before please we need a comma."
+     },
+     "id": "a2.1.5",
+     "say": "Can I have two bananas, please?",
+     "ask": "Can I have two bananas please?"
+    },
+    {
+     "s": "No___ thank you.",
+     "ans": [
+      ","
+     ],
+     "kind": "comma",
+     "tip": "Put a comma after No when you answer: No, thank you.",
+     "x": [
+      ".",
+      "?",
+      "!"
+     ],
+     "no": {
+      ".": "No. Thank you. is two short sentences. We write No, thank you. with a little pause.",
+      "?": "No isn't asking anything here. It's an answer.",
+      "!": "No! would sound very cross. A polite No, thank you. has a comma."
+     },
+     "id": "a2.1.6",
+     "say": "No, thank you.",
+     "ask": "No thank you."
+    },
+    {
+     "s": "Do you sell watermelons___",
+     "ans": [
+      "?"
+     ],
+     "kind": "end",
+     "tip": "Do you…? is a question, so it ends with a question mark.",
+     "x": [
+      ".",
+      ",",
+      "!"
+     ],
+     "no": {
+      ".": "Do you sell…? asks something, so it needs a question mark.",
+      ",": "A comma can't end a sentence.",
+      "!": "! is for a big feeling. This sentence asks a question."
+     },
+     "id": "a2.1.7",
+     "say": "Do you sell watermelons?",
+     "ask": "Do you sell watermelons"
+    },
+    {
+     "s": "The stall sells cups, plates and bowls___",
+     "ans": [
+      "."
+     ],
+     "kind": "end",
+     "tip": "The list is finished and the sentence tells us something, so end with a full stop.",
+     "x": [
+      ",",
+      "?",
+      "'"
+     ],
+     "no": {
+      ",": "bowls is the last thing in the list, so the sentence ends here with a full stop.",
+      "?": "The sentence tells us what the stall sells. It doesn't ask.",
+      "'": "An apostrophe goes inside words like don't. It can't end a sentence."
+     },
+     "id": "a2.1.8",
+     "say": "The stall sells cups, plates and bowls.",
+     "ask": "The stall sells cups, plates and bowls"
+    }
+   ]
+  },
+  {
+   "id": "a2.2",
+   "icon": "🐶",
+   "name": "Short Forms",
+   "focus": "don't · it's · I'm · can't · I'll",
+   "items": [
+    {
+     "s": "I ___ like spiders.",
+     "ans": [
+      "don't"
+     ],
+     "kind": "apos",
+     "tip": "don't = do not. The apostrophe goes where the o is missing.",
+     "x": [
+      "dont",
+      "do'nt",
+      "dont'"
+     ],
+     "no": {
+      "dont": "don't is short for do not. It needs an apostrophe where the o is missing.",
+      "do'nt": "The apostrophe goes where the letter is missing: do not → don't.",
+      "dont'": "The apostrophe goes in place of the missing o, between n and t."
+     },
+     "id": "a2.2.1",
+     "say": "I don't like spiders.",
+     "ask": "I don't like spiders."
+    },
+    {
+     "s": "___ my brother's birthday today.",
+     "ans": [
+      "It's"
+     ],
+     "kind": "apos",
+     "tip": "It's = it is. The apostrophe takes the place of the i.",
+     "x": [
+      "Its",
+      "Its'",
+      "It'is"
+     ],
+     "no": {
+      "Its": "Its (no apostrophe) means 'belonging to it'. For it is, write It's.",
+      "Its'": "There's no word Its'. It is → It's.",
+      "It'is": "The apostrophe replaces the missing letter i: it is → it's."
+     },
+     "id": "a2.2.2",
+     "say": "It's my brother's birthday today.",
+     "ask": "It's my brother's birthday today."
+    },
+    {
+     "s": "___ ten years old.",
+     "ans": [
+      "I'm"
+     ],
+     "kind": "apos",
+     "tip": "I'm = I am. The apostrophe takes the place of the a.",
+     "x": [
+      "Im",
+      "I'am",
+      "im"
+     ],
+     "no": {
+      "Im": "Im needs an apostrophe where the a is missing: I'm.",
+      "I'am": "The apostrophe replaces the a, so it's I'm, not I'am.",
+      "im": "This is the first word, and I is always a capital: I'm."
+     },
+     "id": "a2.2.3",
+     "say": "I'm ten years old.",
+     "ask": "I'm ten years old."
+    },
+    {
+     "s": "We ___ find the kitten anywhere!",
+     "ans": [
+      "can't"
+     ],
+     "kind": "apos",
+     "tip": "can't = cannot. The apostrophe goes where the letters are missing.",
+     "x": [
+      "cant",
+      "can'ot",
+      "ca'nt"
+     ],
+     "no": {
+      "cant": "can't needs an apostrophe: cannot → can't.",
+      "can'ot": "We leave out n and o and write can't.",
+      "ca'nt": "The apostrophe goes between n and t: can't."
+     },
+     "id": "a2.2.4",
+     "say": "We can't find the kitten anywhere!",
+     "ask": "We can't find the kitten anywhere!"
+    },
+    {
+     "s": "___ going to the beach on Saturday.",
+     "ans": [
+      "We're"
+     ],
+     "kind": "apos",
+     "tip": "We're = we are. The apostrophe takes the place of the a.",
+     "x": [
+      "Were",
+      "Wer'e",
+      "We'are"
+     ],
+     "no": {
+      "Were": "Were (no apostrophe) is the past of are: we were. For we are, write We're.",
+      "Wer'e": "The apostrophe goes where the a is missing: We're.",
+      "We'are": "The apostrophe replaces the a, so it's We're."
+     },
+     "id": "a2.2.5",
+     "say": "We're going to the beach on Saturday.",
+     "ask": "We're going to the beach on Saturday."
+    },
+    {
+     "s": "My sister ___ like broccoli.",
+     "ans": [
+      "doesn't"
+     ],
+     "kind": "apos",
+     "tip": "doesn't = does not. The apostrophe goes where the o is missing.",
+     "x": [
+      "doesnt",
+      "does'nt",
+      "doe'snt"
+     ],
+     "no": {
+      "doesnt": "doesn't needs an apostrophe where the o is missing.",
+      "does'nt": "The apostrophe goes in place of the o in not: doesn't.",
+      "doe'snt": "The apostrophe goes between n and t: doesn't."
+     },
+     "id": "a2.2.6",
+     "say": "My sister doesn't like broccoli.",
+     "ask": "My sister doesn't like broccoli."
+    },
+    {
+     "s": "Look! ___ a rainbow!",
+     "ans": [
+      "There's"
+     ],
+     "kind": "apos",
+     "tip": "There's = there is. The apostrophe takes the place of the i.",
+     "x": [
+      "Theres",
+      "There'is",
+      "Ther'es"
+     ],
+     "no": {
+      "Theres": "There's needs an apostrophe where the i is missing.",
+      "There'is": "The apostrophe replaces the i, so it's There's.",
+      "Ther'es": "The apostrophe goes after There: There's."
+     },
+     "id": "a2.2.7",
+     "say": "Look! There's a rainbow!",
+     "ask": "Look! There's a rainbow!"
+    },
+    {
+     "s": "Don't worry, ___ help you.",
+     "ans": [
+      "I'll"
+     ],
+     "kind": "apos",
+     "tip": "I'll = I will. The apostrophe takes the place of wi.",
+     "x": [
+      "Ill",
+      "I'l",
+      "il'l"
+     ],
+     "no": {
+      "Ill": "Ill means sick! For I will, write I'll.",
+      "I'l": "I will keeps both l's: I'll.",
+      "il'l": "I is always a capital, and the apostrophe goes after it: I'll."
+     },
+     "id": "a2.2.8",
+     "say": "Don't worry, I'll help you.",
+     "ask": "Don't worry, I'll help you."
+    }
+   ]
+  },
+  {
+   "id": "a2.3",
+   "icon": "🏝",
+   "name": "Postcard from Penang",
+   "focus": "capitals for places, months, languages · ! · ?",
+   "items": [
+    {
+     "s": "We went to ___ in June.",
+     "ans": [
+      "Penang"
+     ],
+     "kind": "cap",
+     "tip": "Names of places start with a capital letter: Penang.",
+     "x": [
+      "penang",
+      "Penang's",
+      "Penangs"
+     ],
+     "no": {
+      "penang": "Names of places always start with a capital letter: Penang.",
+      "Penang's": "Penang's means 'of Penang'. Here we just need the place.",
+      "Penangs": "There is only one Penang, so no -s."
+     },
+     "id": "a2.3.1",
+     "say": "We went to Penang in June.",
+     "ask": "We went to Penang in June."
+    },
+    {
+     "s": "Our holiday was in ___.",
+     "ans": [
+      "December"
+     ],
+     "kind": "cap",
+     "tip": "Months start with a capital letter: December.",
+     "x": [
+      "december",
+      "Decembers",
+      "December's"
+     ],
+     "no": {
+      "december": "Months always start with a capital letter: December.",
+      "Decembers": "It was one December, so no -s.",
+      "December's": "December's means 'of December'. Here we just need the month."
+     },
+     "id": "a2.3.2",
+     "say": "Our holiday was in December.",
+     "ask": "Our holiday was in December."
+    },
+    {
+     "s": "What did you eat there___",
+     "ans": [
+      "?"
+     ],
+     "kind": "end",
+     "tip": "What did you…? asks a question, so it ends with a question mark.",
+     "x": [
+      ".",
+      ",",
+      "!"
+     ],
+     "no": {
+      ".": "What did you eat? asks something, so it needs a question mark.",
+      ",": "A comma can't end a sentence.",
+      "!": "! is for a big feeling. This sentence asks a question."
+     },
+     "id": "a2.3.3",
+     "say": "What did you eat there?",
+     "ask": "What did you eat there"
+    },
+    {
+     "s": "We ate noodles and ice kacang___",
+     "ans": [
+      ".",
+      "!"
+     ],
+     "kind": "end",
+     "tip": "A telling sentence ends with a full stop (or ! if you're very excited).",
+     "x": [
+      "?",
+      ",",
+      "'"
+     ],
+     "no": {
+      "?": "This sentence tells us what they ate. It doesn't ask.",
+      ",": "The sentence is finished, so a comma can't end it.",
+      "'": "An apostrophe goes inside short words. It can't end a sentence."
+     },
+     "id": "a2.3.4",
+     "say": "We ate noodles and ice kacang.",
+     "ask": "We ate noodles and ice kacang"
+    },
+    {
+     "s": "What a hot day it was___",
+     "ans": [
+      "!"
+     ],
+     "kind": "end",
+     "tip": "What a…! shows a strong feeling, so it ends with an exclamation mark.",
+     "x": [
+      "?",
+      ",",
+      "'"
+     ],
+     "no": {
+      "?": "It starts with What, but it isn't a question. What a hot day! is a strong feeling.",
+      ",": "A comma can't end a sentence.",
+      "'": "An apostrophe can't end a sentence. What a…! needs !."
+     },
+     "id": "a2.3.5",
+     "say": "What a hot day it was!",
+     "ask": "What a hot day it was"
+    },
+    {
+     "s": "My aunt ___ lives near the sea.",
+     "ans": [
+      "Rosa"
+     ],
+     "kind": "cap",
+     "tip": "People's names start with a capital letter: Rosa.",
+     "x": [
+      "rosa",
+      "Rosas",
+      "ROSA"
+     ],
+     "no": {
+      "rosa": "People's names always start with a capital letter: Rosa.",
+      "Rosas": "Your aunt is one person called Rosa, so no -s.",
+      "ROSA": "Only the first letter of a name is a capital: Rosa."
+     },
+     "id": "a2.3.6",
+     "say": "My aunt Rosa lives near the sea.",
+     "ask": "My aunt Rosa lives near the sea."
+    },
+    {
+     "s": "She speaks English and ___.",
+     "ans": [
+      "Malay"
+     ],
+     "kind": "cap",
+     "tip": "Languages start with a capital letter: English, Malay.",
+     "x": [
+      "malay",
+      "Malays",
+      "Malay's"
+     ],
+     "no": {
+      "malay": "Languages always start with a capital letter, like English and Malay.",
+      "Malays": "Malays means Malay people. Here we need the language: Malay.",
+      "Malay's": "Malay's means 'of Malay'. Here we just need the language."
+     },
+     "id": "a2.3.7",
+     "say": "She speaks English and Malay.",
+     "ask": "She speaks English and Malay."
+    },
+    {
+     "s": "Will you come with us next time___",
+     "ans": [
+      "?"
+     ],
+     "kind": "end",
+     "tip": "Will you…? is a question, so it ends with a question mark.",
+     "x": [
+      ".",
+      ",",
+      "!"
+     ],
+     "no": {
+      ".": "Will you come…? asks something, so it needs a question mark.",
+      ",": "A comma can't end a sentence.",
+      "!": "! is for a big feeling. This is a friendly question."
+     },
+     "id": "a2.3.8",
+     "say": "Will you come with us next time?",
+     "ask": "Will you come with us next time"
+    }
+   ]
+  }
+ ]
+}

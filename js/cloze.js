@@ -58,9 +58,6 @@ const nudge = (why, item, d) => why === "empty" ? (d.mode === "tiles" ? "Tap a w
   : d.mode === "tiles" ? "Just ONE tile goes in the gap. Tap it again to take it back ✏️" : "Just ONE word goes in each gap ✏️";
 const hint = (it, tiles) => { const a = it.ans[0], k = KINDS[it.kind] || "one little word";
   return tiles ? `We need ${esc(k)}.` : `We need ${esc(k)}. It starts with “<b>${esc(a[0].toUpperCase())}…</b>” (${a.length} letters).`; };
-// a wrong tile's own note (A1/A2): after a miss, and the full list under the answer
-const whyNot = (it, user) => { const n = it.no && it.no[user]; return n ? `<div class="cz-no">🤔 <b>Why not “${esc(user)}”?</b> ${esc(n)}</div>` : ""; };
-const more = it => it.no ? `<div class="cz-nos">${Object.entries(it.no).map(([w, n]) => `<div class="cz-no">💭 <b>Not “${esc(w)}”:</b> ${esc(n)}</div>`).join("")}</div>` : "";
 WR.Cloze = { canon, check, LEVELS, KINDS };
 
 /* ---------- the card: the text so far (two sentences before), then the gapped sentence ---------- */
@@ -81,7 +78,7 @@ const G = WR.GapRound({
   sayFirst: it => it.ask, sayDone: it => it.say,
   tiles: it => [it.ans[0]],
   placeholder: "Type one word…",
-  check, nudge, hint, whyNot, more,
+  check, nudge, hint, notes: true,                     // A1/A2: every wrong tile's own "why not" (it.no), shown by the engine
   shown: (it, typed, ok) => ok ? it.ans.find(a => canon(a) === canon(typed)) : it.ans[0]
 });
 const textsDone = G.unitsDone;

@@ -223,6 +223,14 @@ def gap_books(kind, table, head, item, n=8):
 def once(seen, s, *where):
     assert s not in seen, (*where, s, "duplicate sentence"); seen.add(s)
 def cap(t): return t[0].upper() + t[1:]
+def word_canon(t):  # one-word gap answers: mirrors canon() in js/forge.js and js/cloze.js
+    t = re.sub(r"[‘’`´]", "'", str(t).strip().lower()); t = re.sub(r"[^a-z' -]+", " ", t)
+    return " ".join(t.replace("-", " - ").split()).replace(" - ", "-")
+def why_tiles_ok(where, it, right, canon=lambda t: t):
+    """tile levels: 3 different wrong tiles, none of them also right, and a 'why not' note (> 15 letters) for each one"""
+    x = it.get("x", [])
+    assert len(x) == 3 and len(set(x)) == 3 and not {canon(w) for w in x} & set(right), (*where, "tiles")
+    assert set(it.get("no", {})) == set(x) and all(len(w) > 15 for w in it["no"].values()), (*where, "a 'why not' note for every wrong tile")
 def swap_canon(t):  # mirrors canon() in js/swap.js
     t = re.sub(r"[‘’`´]", "'", str(t).lower()); t = re.sub(r"[^a-z0-9' ]+", " ", t)
     t = re.sub(r"\bcan't\b|\bcannot\b", "can not", t); t = re.sub(r"\bwon't\b", "will not", t); t = re.sub(r"\bshan't\b", "shall not", t)
@@ -243,43 +251,56 @@ def swap_item(lvl, it, out, seen, iid):
     return dict(it, ans=ans, id=iid, say=cap(b.replace("___", ans[0])))
 sw_tot = gap_books("swap", SWAP, lambda lvl: dict(zip(("mode", "min", "max", "key"), RULES[lvl])), swap_item)
 # ⚒️ Word Forge (tools/c_forge.py → data/<level>/forge.json): 3 anvils × 8 word-formation gaps per level. One gap, a ROOT in
-# capitals, every answer differs from the root and from the other answers (forge_canon), tile levels (A1/A2) build answer 1
+# capitals, every answer differs from the root and from the other answers (word_canon), tile levels (A1/A2) build answer 1
 # from its parts and the wrong tiles never repeat a part; no sentence twice. say = the full sentence (narrator), ask = the gap read as "blank".
 from c_forge import FORGE, MODE as FORGE_MODE
-def forge_canon(t):  # mirrors canon() in js/forge.js
-    t = re.sub(r"[‘’`´]", "'", str(t).strip().lower()); t = re.sub(r"[^a-z' -]+", " ", t)
-    return " ".join(t.replace("-", " - ").split()).replace(" - ", "-")
 def forge_item(lvl, it, out, seen, iid):
     s, root, ans = it["s"], it["root"], it["ans"]
     assert s.count("___") == 1 and it["tip"] and re.fullmatch(r"[A-Z]+", root) and ans and all(ans), (lvl, s)
     once(seen, s, lvl)
-    c = [forge_canon(x) for x in ans]; assert len(set(c)) == len(c) and forge_canon(root) not in c, (lvl, s, "answers")
+    c = [word_canon(x) for x in ans]; assert len(set(c)) == len(c) and word_canon(root) not in c, (lvl, s, "answers")
     if out["mode"] == "tiles":
         assert "".join(it["p"]) == ans[0] and it.get("x") and not set(it["x"]) & set(it["p"]), (lvl, s, "tiles")
     else: assert "p" not in it, (lvl, s)
     return dict(it, id=iid, say=cap(s.replace("___", ans[0])), ask=cap(s.replace("___", "blank")))
 fg_tot = gap_books("forge", FORGE, lambda lvl: {"mode": FORGE_MODE[lvl]}, forge_item)
 # 🌉 Word Bridges (tools/c_cloze.py → data/<level>/cloze.json): 3 texts × 8 open-cloze gaps per level, one gap per sentence, read
-# in order. Every right answer is ONE word (cloze_canon), all different; tile levels (A1/A2) have 3 wrong tiles, none of them right;
+# in order. Every right answer is ONE word (word_canon), all different; tile levels (A1/A2) have 3 wrong tiles, none of them right;
 # every wrong tile has its own 'why not' note (no); a known hint kind; no sentence twice. say = the full sentence (narrator), ask = the sentence read with "blank".
 from c_cloze import CLOZE, MODE as CLOZE_MODE
 CLOZE_KINDS = {"art", "aux", "verb", "prep", "link", "mod", "pron", "det", "quant", "comp", "rel", "part", "intens", "wh", "neg", "fixed", "adv"}
-def cloze_canon(t):  # mirrors canon() in js/cloze.js
-    t = re.sub(r"[‘’`´]", "'", str(t).strip().lower()); t = re.sub(r"[^a-z' -]+", " ", t)
-    return " ".join(t.replace("-", " - ").split()).replace(" - ", "-")
 def cloze_item(lvl, it, out, seen, iid):
     s, ans = it["s"], it["ans"]
     assert s.count("___") == 1 and it["tip"] and it["kind"] in CLOZE_KINDS and ans and all(ans), (lvl, s)
     once(seen, s, lvl)
-    c = [cloze_canon(x) for x in ans]; assert len(set(c)) == len(c) and all(re.fullmatch(r"[a-z'-]+", x) for x in c), (lvl, s, "one word each")
+    c = [word_canon(x) for x in ans]; assert len(set(c)) == len(c) and all(re.fullmatch(r"[a-z'-]+", x) for x in c), (lvl, s, "one word each")
     if out["mode"] == "tiles":
-        assert len(it.get("x", [])) == 3 and not {cloze_canon(x) for x in it["x"]} & set(c) and len(set(it["x"])) == 3, (lvl, s, "tiles")
-        assert set(it.get("no", {})) == set(it["x"]) and all(len(w) > 15 for w in it["no"].values()), (lvl, s, "a 'why not' note for every wrong tile")
+        why_tiles_ok((lvl, s), it, c, word_canon)
     else: assert "x" not in it and "no" not in it, (lvl, s)
     return dict(it, id=iid, say=cap(s.replace("___", ans[0])), ask=cap(s.replace("___", "blank")))
 cz_tot = gap_books("cloze", {l: [dict(t, items=t["text"]) for t in texts] for l, texts in CLOZE.items()}, lambda lvl: {"mode": CLOZE_MODE[lvl]}, cloze_item)
+# 🧚 Punctuation Pixies (tools/c_marks.py → data/<level>/marks.json): 3 books × 8 punctuation gaps per level, all tiles. ONE gap per
+# sentence for a mark, "no mark", or a word with the right capitals / apostrophe / hyphens; 3 different wrong tiles, none of them
+# right, each with its own 'why not' note (why_tiles_ok); known hint kinds; no sentence twice. say = the full sentence (narrator);
+# ask = what is read before answering: the sentence without the missing mark (it doesn't give the mark away by its tune), or the
+# full sentence when the answer is a word (it sounds the same either way).
+from c_marks import MARKS, NONE as MARK_NONE
+MARK_KINDS = {"end", "cap", "comma", "apos", "speech", "join", "dash", "bracket", "hyphen", "none", "meaning"}
+def mark_fill(s, a):
+    if a == MARK_NONE: return s.replace("___", "")
+    if a == "—": return s.replace("___ ", "—").replace("___", "—")
+    return s.replace("___", a)
+def marks_item(lvl, it, out, seen, iid):
+    s, ans = it["s"], it["ans"]
+    assert s.count("___") == 1 and it["tip"] and it["kind"] in MARK_KINDS and ans and all(ans) and len(set(ans)) == len(ans), (lvl, s)
+    once(seen, s, lvl)
+    why_tiles_ok((lvl, s), it, ans)
+    say = cap(" ".join(mark_fill(s, ans[0]).split()))
+    ask = say if re.search(r"[A-Za-z]", ans[0]) and ans[0] != MARK_NONE else cap(" ".join(mark_fill(s, MARK_NONE).split()))
+    return dict(it, id=iid, say=say, ask=ask)
+pm_tot = gap_books("marks", MARKS, lambda lvl: {"mode": "tiles", "none": MARK_NONE}, marks_item)
 json.dump(QUEST, open(f"{ROOT}/b1/quest.json", "w"), ensure_ascii=False, indent=1)
 json.dump(DEBATE, open(f"{ROOT}/c1/debate.json", "w"), ensure_ascii=False, indent=1)
 check_fair("c1/debate", DEBATE)
-json.dump({"counts": counts, "total": tot + sp_tot + wr_tot, "questions": tot, "speaking": sp_tot, "writing": wr_tot, "stories": st_tot, "swap": sw_tot, "forge": fg_tot, "cloze": cz_tot}, open(f"{ROOT}/counts.json", "w"), indent=1)
+json.dump({"counts": counts, "total": tot + sp_tot + wr_tot, "questions": tot, "speaking": sp_tot, "writing": wr_tot, "stories": st_tot, "swap": sw_tot, "forge": fg_tot, "cloze": cz_tot, "marks": pm_tot}, open(f"{ROOT}/counts.json", "w"), indent=1)
 print(counts); print("QUESTIONS", tot, "SPEAKING", sp_tot, "WRITING", wr_tot, "TOTAL", tot + sp_tot + wr_tot)

@@ -1,0 +1,536 @@
+{
+ "level": "b1",
+ "mode": "tiles",
+ "none": "no mark",
+ "books": [
+  {
+   "id": "b1.1",
+   "icon": "🐾",
+   "name": "Whose Is It?",
+   "focus": "'s for one owner · s' for more · children's · James's",
+   "items": [
+    {
+     "s": "This is ___ skateboard.",
+     "ans": [
+      "Ali's"
+     ],
+     "kind": "apos",
+     "tip": "One owner: add 's to the name. Ali's skateboard = the skateboard that belongs to Ali.",
+     "x": [
+      "Alis",
+      "Alis'",
+      "Ali'"
+     ],
+     "no": {
+      "Alis": "Without an apostrophe, Alis just looks like a different name. To show it belongs to Ali, write Ali's.",
+      "Alis'": "s' is for more than one owner (the girls'). Ali is one person: Ali's.",
+      "Ali'": "The s is missing. One owner → Ali's."
+     },
+     "id": "b1.1.1",
+     "say": "This is Ali's skateboard.",
+     "ask": "This is Ali's skateboard."
+    },
+    {
+     "s": "Both ___ bowls are empty.",
+     "ans": [
+      "cats'"
+     ],
+     "kind": "apos",
+     "tip": "More than one owner ending in s: put the apostrophe after the s. Both cats' bowls.",
+     "x": [
+      "cat's",
+      "cats",
+      "cat'"
+     ],
+     "no": {
+      "cat's": "cat's means one cat. Both means two cats, so the apostrophe goes after the s: cats'.",
+      "cats": "cats (no apostrophe) is just more than one cat. To show the bowls are theirs, write cats'.",
+      "cat'": "cat' isn't a word. Two cats own the bowls: cats'."
+     },
+     "id": "b1.1.2",
+     "say": "Both cats' bowls are empty.",
+     "ask": "Both cats' bowls are empty."
+    },
+    {
+     "s": "The ___ playground has a new slide.",
+     "ans": [
+      "children's"
+     ],
+     "kind": "apos",
+     "tip": "children is already plural without s, so add 's: children's.",
+     "x": [
+      "childrens'",
+      "childrens",
+      "children'"
+     ],
+     "no": {
+      "childrens'": "children already means more than one, so we don't add s. Just 's: children's.",
+      "childrens": "childrens isn't a word. The playground belongs to the children: children's.",
+      "children'": "children' isn't right. Plurals without s take 's: children's."
+     },
+     "id": "b1.1.3",
+     "say": "The children's playground has a new slide.",
+     "ask": "The children's playground has a new slide."
+    },
+    {
+     "s": "Mrs ___ garden is full of roses.",
+     "ans": [
+      "Lim's"
+     ],
+     "kind": "apos",
+     "tip": "One owner: add 's to the name. Mrs Lim's garden.",
+     "x": [
+      "Lims",
+      "Lims'",
+      "Lim'"
+     ],
+     "no": {
+      "Lims": "Lims (no apostrophe) means more than one Lim. To show the garden is hers, write Lim's.",
+      "Lims'": "s' is for more than one owner. Mrs Lim is one person: Lim's.",
+      "Lim'": "The s is missing. One owner → Lim's."
+     },
+     "id": "b1.1.4",
+     "say": "Mrs Lim's garden is full of roses.",
+     "ask": "Mrs Lim's garden is full of roses."
+    },
+    {
+     "s": "The puppy chased ___ own tail.",
+     "ans": [
+      "its"
+     ],
+     "kind": "apos",
+     "tip": "its (no apostrophe) = belonging to it: its tail. it's always means it is or it has.",
+     "x": [
+      "it's",
+      "its'",
+      "it'"
+     ],
+     "no": {
+      "it's": "it's means it is: The puppy chased it is own tail? No! For belonging to it, write its.",
+      "its'": "There's no word its'. Belonging to it is just its.",
+      "it'": "it' isn't a word. Belonging to it → its."
+     },
+     "id": "b1.1.5",
+     "say": "The puppy chased its own tail.",
+     "ask": "The puppy chased its own tail."
+    },
+    {
+     "s": "My two ___ houses are near the sea.",
+     "ans": [
+      "uncles'"
+     ],
+     "kind": "apos",
+     "tip": "Two owners ending in s: the apostrophe goes after the s. My two uncles' houses.",
+     "x": [
+      "uncle's",
+      "uncles",
+      "uncles's"
+     ],
+     "no": {
+      "uncle's": "uncle's means one uncle. My two means two uncles, so write uncles'.",
+      "uncles": "uncles (no apostrophe) just means more than one uncle. To show the houses are theirs, write uncles'.",
+      "uncles's": "After a plural ending in s, add only the apostrophe: uncles'."
+     },
+     "id": "b1.1.6",
+     "say": "My two uncles' houses are near the sea.",
+     "ask": "My two uncles' houses are near the sea."
+    },
+    {
+     "s": "All the ___ lockers are blue.",
+     "ans": [
+      "girls'"
+     ],
+     "kind": "apos",
+     "tip": "All the girls = many owners ending in s, so the apostrophe goes after the s: girls'.",
+     "x": [
+      "girl's",
+      "girls",
+      "girls's"
+     ],
+     "no": {
+      "girl's": "girl's means one girl, but All the girls means many: girls'.",
+      "girls": "girls (no apostrophe) is just more than one girl. To show the lockers are theirs, write girls'.",
+      "girls's": "After a plural ending in s, add only the apostrophe: girls'."
+     },
+     "id": "b1.1.7",
+     "say": "All the girls' lockers are blue.",
+     "ask": "All the girls' lockers are blue."
+    },
+    {
+     "s": "Is that ___ new bike?",
+     "ans": [
+      "James's",
+      "James'"
+     ],
+     "kind": "apos",
+     "tip": "A name that ends in s can take 's or just ': James's bike or James' bike. Both are right.",
+     "x": [
+      "Jame's",
+      "James",
+      "Jameses"
+     ],
+     "no": {
+      "Jame's": "The name is James, so the apostrophe goes after the whole name: James's (or James').",
+      "James": "Without an apostrophe it doesn't show the bike belongs to James.",
+      "Jameses": "Jameses means more than one James! For his bike, write James's."
+     },
+     "id": "b1.1.8",
+     "say": "Is that James's new bike?",
+     "ask": "Is that James's new bike?"
+    }
+   ]
+  },
+  {
+   "id": "b1.2",
+   "icon": "💬",
+   "name": "Speech Marks",
+   "focus": "the mark before the closing speech marks · said / asked",
+   "items": [
+    {
+     "s": "“Let's build a sandcastle___” said Mia.",
+     "ans": [
+      ","
+     ],
+     "kind": "speech",
+     "tip": "When said Mia comes after the words, a comma goes inside the speech marks.",
+     "x": [
+      ".",
+      "?",
+      "'"
+     ],
+     "no": {
+      ".": "A full stop would end the whole sentence, but said Mia still comes after, so use a comma.",
+      "?": "Mia isn't asking. Let's build… is an idea, so a comma goes before said Mia.",
+      "'": "The closing speech marks are already there. Before them we need a comma."
+     },
+     "id": "b1.2.1",
+     "say": "“Let's build a sandcastle,” said Mia.",
+     "ask": "“Let's build a sandcastle” said Mia."
+    },
+    {
+     "s": "“Can I help___” asked Leo.",
+     "ans": [
+      "?"
+     ],
+     "kind": "speech",
+     "tip": "Leo is asking, so a question mark goes inside the speech marks: “Can I help?” asked Leo.",
+     "x": [
+      ",",
+      ".",
+      "!"
+     ],
+     "no": {
+      ",": "Can I help? is a question, so it keeps its question mark, even before asked Leo.",
+      ".": "A full stop would end the sentence, and Leo is asking, so use ?.",
+      "!": "! is for a shout. Leo is asking a question."
+     },
+     "id": "b1.2.2",
+     "say": "“Can I help?” asked Leo.",
+     "ask": "“Can I help” asked Leo."
+    },
+    {
+     "s": "Dad called out___ “Dinner is ready!”",
+     "ans": [
+      ","
+     ],
+     "kind": "speech",
+     "tip": "When the speaker comes first, put a comma before the opening speech marks.",
+     "x": [
+      ".",
+      "?",
+      "'"
+     ],
+     "no": {
+      ".": "A full stop would end the sentence before Dad's words. Use a comma to lead into them.",
+      "?": "Dad called out is not a question.",
+      "'": "An apostrophe isn't a pause mark. Before speech starts, we need a comma."
+     },
+     "id": "b1.2.3",
+     "say": "Dad called out, “Dinner is ready!”",
+     "ask": "Dad called out “Dinner is ready!”"
+    },
+    {
+     "s": "“Watch out___” shouted the lifeguard.",
+     "ans": [
+      "!"
+     ],
+     "kind": "speech",
+     "tip": "A shout keeps its exclamation mark inside the speech marks: “Watch out!” shouted…",
+     "x": [
+      "?",
+      ".",
+      "'"
+     ],
+     "no": {
+      "?": "Watch out! isn't a question. It's a warning shout.",
+      ".": "A full stop would end the sentence, but shouted the lifeguard comes next, and a shout needs !.",
+      "'": "The speech marks are already there. A shout needs ! inside them."
+     },
+     "id": "b1.2.4",
+     "say": "“Watch out!” shouted the lifeguard.",
+     "ask": "“Watch out” shouted the lifeguard."
+    },
+    {
+     "s": "“I'm really hungry___” said Tom.",
+     "ans": [
+      ","
+     ],
+     "kind": "speech",
+     "tip": "A telling sentence in speech ends with a comma when said Tom comes after it.",
+     "x": [
+      ".",
+      "?",
+      "'"
+     ],
+     "no": {
+      ".": "A full stop inside the speech marks would end the whole sentence, but said Tom still comes after.",
+      "?": "Tom isn't asking anything. He's telling us he's hungry.",
+      "'": "The speech marks are already there. Before them we need a comma."
+     },
+     "id": "b1.2.5",
+     "say": "“I'm really hungry,” said Tom.",
+     "ask": "“I'm really hungry” said Tom."
+    },
+    {
+     "s": "Mia smiled and said___ “Good idea!”",
+     "ans": [
+      ","
+     ],
+     "kind": "speech",
+     "tip": "Put a comma after said when the spoken words come next.",
+     "x": [
+      ".",
+      "?",
+      "!"
+     ],
+     "no": {
+      ".": "A full stop would end the sentence before Mia's words.",
+      "?": "Mia smiled and said is not a question.",
+      "!": "! would end the sentence. Use a comma to lead into her words."
+     },
+     "id": "b1.2.6",
+     "say": "Mia smiled and said, “Good idea!”",
+     "ask": "Mia smiled and said “Good idea!”"
+    },
+    {
+     "s": "“What a mess___” laughed Grandma.",
+     "ans": [
+      "!"
+     ],
+     "kind": "speech",
+     "tip": "What a…! keeps its exclamation mark inside the speech marks.",
+     "x": [
+      "?",
+      ".",
+      "'"
+     ],
+     "no": {
+      "?": "What a mess! isn't a question. It's a big feeling.",
+      ".": "A full stop never goes before laughed Grandma, and What a…! needs !.",
+      "'": "The speech marks are already there. What a mess needs ! inside them."
+     },
+     "id": "b1.2.7",
+     "say": "“What a mess!” laughed Grandma.",
+     "ask": "“What a mess” laughed Grandma."
+    },
+    {
+     "s": "“Where are my glasses___” Grandpa wondered.",
+     "ans": [
+      "?"
+     ],
+     "kind": "speech",
+     "tip": "Where…? is a question, so a question mark goes inside the speech marks.",
+     "x": [
+      ",",
+      ".",
+      "!"
+     ],
+     "no": {
+      ",": "Where are my glasses? is a question, so it keeps its question mark.",
+      ".": "A full stop would end the sentence, and Grandpa is asking, so use ?.",
+      "!": "! is for a shout. Grandpa is asking a question."
+     },
+     "id": "b1.2.8",
+     "say": "“Where are my glasses?” Grandpa wondered.",
+     "ask": "“Where are my glasses” Grandpa wondered."
+    }
+   ]
+  },
+  {
+   "id": "b1.3",
+   "icon": "🌧",
+   "name": "Rainy-Day Pauses",
+   "focus": "commas after openers · its / it's",
+   "items": [
+    {
+     "s": "After school___ we went to the library.",
+     "ans": [
+      ","
+     ],
+     "kind": "comma",
+     "tip": "Put a comma after an opening time phrase: After school, we went…",
+     "x": [
+      ".",
+      "?",
+      "'"
+     ],
+     "no": {
+      ".": "A full stop would leave After school on its own, and that isn't a sentence.",
+      "?": "This sentence tells us something. It doesn't ask.",
+      "'": "An apostrophe isn't a pause mark. After an opener we use a comma."
+     },
+     "id": "b1.3.1",
+     "say": "After school, we went to the library.",
+     "ask": "After school we went to the library."
+    },
+    {
+     "s": "However___ the library was closed.",
+     "ans": [
+      ","
+     ],
+     "kind": "comma",
+     "tip": "However at the start of a sentence is followed by a comma.",
+     "x": [
+      ".",
+      "?",
+      "!"
+     ],
+     "no": {
+      ".": "However. on its own isn't a sentence. Use a comma after it.",
+      "?": "However isn't asking anything.",
+      "!": "! would end the sentence after one word. Use a comma after However."
+     },
+     "id": "b1.3.2",
+     "say": "However, the library was closed.",
+     "ask": "However the library was closed."
+    },
+    {
+     "s": "When it started to rain___ we ran under a tree.",
+     "ans": [
+      ","
+     ],
+     "kind": "comma",
+     "tip": "When the When… part comes first, put a comma after it.",
+     "x": [
+      ".",
+      "?",
+      "!"
+     ],
+     "no": {
+      ".": "When it started to rain isn't a full sentence on its own, so don't end it with a full stop.",
+      "?": "When here isn't a question word. It tells us the time.",
+      "!": "! would end the sentence too early. Use a comma."
+     },
+     "id": "b1.3.3",
+     "say": "When it started to rain, we ran under a tree.",
+     "ask": "When it started to rain we ran under a tree."
+    },
+    {
+     "s": "Luckily___ Mum had an umbrella.",
+     "ans": [
+      ","
+     ],
+     "kind": "comma",
+     "tip": "Put a comma after an opening word like Luckily or Sadly.",
+     "x": [
+      ".",
+      "?",
+      "'"
+     ],
+     "no": {
+      ".": "Luckily. on its own isn't a sentence.",
+      "?": "Luckily isn't a question.",
+      "'": "An apostrophe isn't a pause mark. After Luckily we use a comma."
+     },
+     "id": "b1.3.4",
+     "say": "Luckily, Mum had an umbrella.",
+     "ask": "Luckily Mum had an umbrella."
+    },
+    {
+     "s": "___ been raining all afternoon.",
+     "ans": [
+      "It's"
+     ],
+     "kind": "apos",
+     "tip": "It's = it has (or it is). It's been raining = it has been raining.",
+     "x": [
+      "Its",
+      "Its'",
+      "It'"
+     ],
+     "no": {
+      "Its": "Its (no apostrophe) means 'belonging to it'. For it has, write It's.",
+      "Its'": "There's no word Its'. It has → It's.",
+      "It'": "It' isn't a word. It has → It's."
+     },
+     "id": "b1.3.5",
+     "say": "It's been raining all afternoon.",
+     "ask": "It's been raining all afternoon."
+    },
+    {
+     "s": "If you're cold___ you can wear my jacket.",
+     "ans": [
+      ","
+     ],
+     "kind": "comma",
+     "tip": "When the If… part comes first, put a comma after it.",
+     "x": [
+      ".",
+      "?",
+      "!"
+     ],
+     "no": {
+      ".": "If you're cold isn't a full sentence on its own.",
+      "?": "This isn't a question. It's a kind offer.",
+      "!": "! would end the sentence before the important part."
+     },
+     "id": "b1.3.6",
+     "say": "If you're cold, you can wear my jacket.",
+     "ask": "If you're cold you can wear my jacket."
+    },
+    {
+     "s": "Oh no___ my shoes are soaking wet!",
+     "ans": [
+      ","
+     ],
+     "kind": "comma",
+     "tip": "Put a comma after Oh no when the sentence goes on.",
+     "x": [
+      ".",
+      "?",
+      "'"
+     ],
+     "no": {
+      ".": "A full stop would cut the sentence in two, and the second part has a small m.",
+      "?": "Oh no isn't a question.",
+      "'": "An apostrophe isn't a pause mark. After Oh no we use a comma."
+     },
+     "id": "b1.3.7",
+     "say": "Oh no, my shoes are soaking wet!",
+     "ask": "Oh no my shoes are soaking wet!"
+    },
+    {
+     "s": "By the time we got home___ the sun was shining again.",
+     "ans": [
+      ","
+     ],
+     "kind": "comma",
+     "tip": "Put a comma after a long opening time phrase: By the time…, the sun…",
+     "x": [
+      ".",
+      "?",
+      "!"
+     ],
+     "no": {
+      ".": "By the time we got home isn't a full sentence on its own.",
+      "?": "This sentence tells us something. It doesn't ask.",
+      "!": "! would end the sentence too early."
+     },
+     "id": "b1.3.8",
+     "say": "By the time we got home, the sun was shining again.",
+     "ask": "By the time we got home the sun was shining again."
+    }
+   ]
+  }
+ ]
+}

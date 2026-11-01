@@ -210,7 +210,7 @@ const MOB = { deviceScaleFactor: 2, isMobile: true, hasTouch: true };
       r = await fit(p); ok(r.sw <= 320 && !r.bad.length, `320: a ${l.toUpperCase()} ${mode} card with the story so far and the gap filled fits, taps ≥ 40 px (${r.bad})`);
       if (l === 'c1') { await clean(p); await p.screenshot({ path: OUT + 'cloze_05_c1_320.png' }); }
       await p.click('#czCheck'); await p.waitForSelector('#czNext');
-      if (l === 'a2') { ok(await p.locator('.cz-nos .cz-no').count() === 3, 'A2: after the answer, every wrong tile shows its “why not”'); await clean(p); await p.screenshot({ path: OUT + 'cloze_06_a2_whynot_320.png' }); }
+      if (l === 'a2') { ok(await p.locator('.gr-nos .gr-no').count() === 3, 'A2: after the answer, every wrong tile shows its “why not”'); await clean(p); await p.screenshot({ path: OUT + 'cloze_06_a2_whynot_320.png' }); }
       r = await fit(p); ok(r.sw <= 320 && !r.bad.length, `320: the ${l.toUpperCase()} feedback fits (${r.bad})`);
     }
     ok(p.errs.length === 0, '320: no page errors ' + p.errs.join(' | '));

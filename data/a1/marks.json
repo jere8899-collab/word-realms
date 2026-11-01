@@ -1,0 +1,536 @@
+{
+ "level": "a1",
+ "mode": "tiles",
+ "none": "no mark",
+ "books": [
+  {
+   "id": "a1.1",
+   "icon": "🐰",
+   "name": "Bunny's Picnic",
+   "focus": ". and ? · a capital to start",
+   "items": [
+    {
+     "s": "Bunny has a red basket___",
+     "ans": [
+      "."
+     ],
+     "kind": "end",
+     "tip": "A telling sentence ends with a full stop.",
+     "x": [
+      "?",
+      ",",
+      "'"
+     ],
+     "no": {
+      "?": "This sentence tells us something. It doesn't ask, so it doesn't need a question mark.",
+      ",": "A comma is a little pause in the middle. This sentence is finished, so it needs a full stop.",
+      "'": "An apostrophe goes inside short words like don't. It can't end a sentence."
+     },
+     "id": "a1.1.1",
+     "say": "Bunny has a red basket.",
+     "ask": "Bunny has a red basket"
+    },
+    {
+     "s": "Do you like carrots___",
+     "ans": [
+      "?"
+     ],
+     "kind": "end",
+     "tip": "Do you…? asks something, so it ends with a question mark.",
+     "x": [
+      ".",
+      ",",
+      "'"
+     ],
+     "no": {
+      ".": "This sentence asks a question (Do you…?), so a full stop isn't enough.",
+      ",": "A comma can't end a sentence. A question needs a question mark.",
+      "'": "An apostrophe goes inside short words like don't. It can't end a question."
+     },
+     "id": "a1.1.2",
+     "say": "Do you like carrots?",
+     "ask": "Do you like carrots"
+    },
+    {
+     "s": "___ is a sunny day.",
+     "ans": [
+      "It"
+     ],
+     "kind": "cap",
+     "tip": "Every sentence starts with a capital letter: It is…",
+     "x": [
+      "it",
+      "IT",
+      "It's"
+     ],
+     "no": {
+      "it": "Every sentence starts with a capital letter, so we write It, not it.",
+      "IT": "Only the first letter is a capital. IT in big letters looks like shouting!",
+      "It's": "It's means it is. It's is a sunny day would say 'it is is'."
+     },
+     "id": "a1.1.3",
+     "say": "It is a sunny day.",
+     "ask": "It is a sunny day."
+    },
+    {
+     "s": "Where is the jam___",
+     "ans": [
+      "?"
+     ],
+     "kind": "end",
+     "tip": "Where…? asks a question, so put a question mark at the end.",
+     "x": [
+      ".",
+      ",",
+      "!"
+     ],
+     "no": {
+      ".": "Where is the jam? asks something, so it needs a question mark, not a full stop.",
+      ",": "A comma is a pause in the middle. The question ends here, so use ?.",
+      "!": "! is for a big feeling or a shout. Where is the jam? is a question."
+     },
+     "id": "a1.1.4",
+     "say": "Where is the jam?",
+     "ask": "Where is the jam"
+    },
+    {
+     "s": "Bunny and ___ sit on the grass.",
+     "ans": [
+      "I"
+     ],
+     "kind": "cap",
+     "tip": "When you talk about yourself, I is always a capital letter.",
+     "x": [
+      "i",
+      "I'm",
+      "i'm"
+     ],
+     "no": {
+      "i": "When I means me, it is always a big capital letter: I.",
+      "I'm": "I'm means I am. Bunny and I am sit doesn't make sense.",
+      "i'm": "i'm means I am, and it needs a capital I too. We just need I."
+     },
+     "id": "a1.1.5",
+     "say": "Bunny and I sit on the grass.",
+     "ask": "Bunny and I sit on the grass."
+    },
+    {
+     "s": "We eat cake and grapes___",
+     "ans": [
+      "."
+     ],
+     "kind": "end",
+     "tip": "This sentence tells us what they eat, so it ends with a full stop.",
+     "x": [
+      "?",
+      ",",
+      "'"
+     ],
+     "no": {
+      "?": "Nobody is asking anything here, so no question mark.",
+      ",": "The sentence is finished. A comma can't be the last mark.",
+      "'": "An apostrophe is for short words like can't, not for the end of a sentence."
+     },
+     "id": "a1.1.6",
+     "say": "We eat cake and grapes.",
+     "ask": "We eat cake and grapes"
+    },
+    {
+     "s": "Can Bunny hop___",
+     "ans": [
+      "?"
+     ],
+     "kind": "end",
+     "tip": "Can…? asks a question, so it ends with a question mark.",
+     "x": [
+      ".",
+      ",",
+      "'"
+     ],
+     "no": {
+      ".": "Can Bunny hop? asks something, so a full stop isn't right.",
+      ",": "A comma can't end a sentence. This is a question.",
+      "'": "An apostrophe can't end a sentence. A question needs ?."
+     },
+     "id": "a1.1.7",
+     "say": "Can Bunny hop?",
+     "ask": "Can Bunny hop"
+    },
+    {
+     "s": "The picnic is fun___",
+     "ans": [
+      ".",
+      "!"
+     ],
+     "kind": "end",
+     "tip": "A telling sentence ends with a full stop. If you feel very excited, ! is right too.",
+     "x": [
+      "?",
+      ",",
+      "'"
+     ],
+     "no": {
+      "?": "The picnic is fun tells us something. It doesn't ask.",
+      ",": "A comma is a pause in the middle. The sentence ends here.",
+      "'": "An apostrophe goes inside short words. It can't end a sentence."
+     },
+     "id": "a1.1.8",
+     "say": "The picnic is fun.",
+     "ask": "The picnic is fun"
+    }
+   ]
+  },
+  {
+   "id": "a1.2",
+   "icon": "🦄",
+   "name": "Wow, a Unicorn!",
+   "focus": "! for big feelings · . · ?",
+   "items": [
+    {
+     "s": "What a beautiful unicorn___",
+     "ans": [
+      "!"
+     ],
+     "kind": "end",
+     "tip": "What a…! shows a big feeling, so it ends with an exclamation mark.",
+     "x": [
+      ".",
+      "?",
+      ","
+     ],
+     "no": {
+      ".": "What a beautiful unicorn! is a big 'wow' feeling, so it needs !, not a calm full stop.",
+      "?": "It starts with What, but it isn't asking anything. What a…! shows a big feeling.",
+      ",": "A comma can't end a sentence."
+     },
+     "id": "a1.2.1",
+     "say": "What a beautiful unicorn!",
+     "ask": "What a beautiful unicorn"
+    },
+    {
+     "s": "Is it your unicorn___",
+     "ans": [
+      "?"
+     ],
+     "kind": "end",
+     "tip": "Is it…? asks a question, so it ends with a question mark.",
+     "x": [
+      ".",
+      "!",
+      ","
+     ],
+     "no": {
+      ".": "Is it your unicorn? asks something, so it needs a question mark.",
+      "!": "! is for a big feeling. This sentence asks a question.",
+      ",": "A comma can't end a sentence. A question ends with ?."
+     },
+     "id": "a1.2.2",
+     "say": "Is it your unicorn?",
+     "ask": "Is it your unicorn"
+    },
+    {
+     "s": "Her name is Sparkle___",
+     "ans": [
+      "."
+     ],
+     "kind": "end",
+     "tip": "This sentence tells us a fact, so it ends with a full stop.",
+     "x": [
+      "?",
+      ",",
+      "'"
+     ],
+     "no": {
+      "?": "Her name is Sparkle tells us something. It doesn't ask.",
+      ",": "The sentence is finished, so it needs a full stop, not a comma.",
+      "'": "An apostrophe goes inside short words like it's. It can't end a sentence."
+     },
+     "id": "a1.2.3",
+     "say": "Her name is Sparkle.",
+     "ask": "Her name is Sparkle"
+    },
+    {
+     "s": "Help___ The unicorn is stuck in the mud!",
+     "ans": [
+      "!"
+     ],
+     "kind": "end",
+     "tip": "Help! is a loud call, so it gets an exclamation mark.",
+     "x": [
+      "?",
+      ",",
+      "'"
+     ],
+     "no": {
+      "?": "Help! isn't a question. It's a loud call for help.",
+      ",": "A comma can't join two sentences. Help! is a short shout of its own.",
+      "'": "An apostrophe goes inside short words. It can't end Help!"
+     },
+     "id": "a1.2.4",
+     "say": "Help! The unicorn is stuck in the mud!",
+     "ask": "Help The unicorn is stuck in the mud!"
+    },
+    {
+     "s": "How old is she___",
+     "ans": [
+      "?"
+     ],
+     "kind": "end",
+     "tip": "How…? asks a question: How old is she?",
+     "x": [
+      ".",
+      "!",
+      ","
+     ],
+     "no": {
+      ".": "How old is she? asks something, so a full stop isn't enough.",
+      "!": "! is for a big feeling. This sentence asks a question.",
+      ",": "A comma can't end a sentence. Use ?."
+     },
+     "id": "a1.2.5",
+     "say": "How old is she?",
+     "ask": "How old is she"
+    },
+    {
+     "s": "Ouch___ That hurts!",
+     "ans": [
+      "!"
+     ],
+     "kind": "end",
+     "tip": "Ouch! shows a sudden feeling, so it gets an exclamation mark.",
+     "x": [
+      "?",
+      ",",
+      "'"
+     ],
+     "no": {
+      "?": "Ouch! isn't asking anything. It's a sudden 'that hurts' feeling.",
+      ",": "A comma can't join two sentences. Ouch! is a little shout on its own.",
+      "'": "An apostrophe goes inside short words like don't. It can't end Ouch!"
+     },
+     "id": "a1.2.6",
+     "say": "Ouch! That hurts!",
+     "ask": "Ouch That hurts!"
+    },
+    {
+     "s": "___ lives in a magic forest.",
+     "ans": [
+      "She"
+     ],
+     "kind": "cap",
+     "tip": "A sentence starts with a capital letter: She lives…",
+     "x": [
+      "she",
+      "SHE",
+      "She's"
+     ],
+     "no": {
+      "she": "Every sentence starts with a capital letter, so we write She.",
+      "SHE": "Only the first letter is a capital. SHE in big letters looks like shouting!",
+      "She's": "She's means she is. She is lives doesn't make sense."
+     },
+     "id": "a1.2.7",
+     "say": "She lives in a magic forest.",
+     "ask": "She lives in a magic forest."
+    },
+    {
+     "s": "How happy we are___",
+     "ans": [
+      "!"
+     ],
+     "kind": "end",
+     "tip": "How happy we are! shows a big feeling, so it ends with !.",
+     "x": [
+      "?",
+      ".",
+      ","
+     ],
+     "no": {
+      "?": "It starts with How, but the words are in telling order (we are), so it isn't a question.",
+      ".": "How happy we are! is a big happy feeling, so it needs !.",
+      ",": "A comma can't end a sentence."
+     },
+     "id": "a1.2.8",
+     "say": "How happy we are!",
+     "ask": "How happy we are"
+    }
+   ]
+  },
+  {
+   "id": "a1.3",
+   "icon": "📅",
+   "name": "Capital Letters Day",
+   "focus": "names · I · days · places",
+   "items": [
+    {
+     "s": "My best friend is called ___.",
+     "ans": [
+      "Mia"
+     ],
+     "kind": "cap",
+     "tip": "Names of people start with a capital letter: Mia.",
+     "x": [
+      "mia",
+      "MIA",
+      "Mia's"
+     ],
+     "no": {
+      "mia": "Names of people always start with a capital letter: Mia.",
+      "MIA": "Only the first letter of a name is a capital: Mia.",
+      "Mia's": "Mia's means 'of Mia' (Mia's bag). Here we just need her name."
+     },
+     "id": "a1.3.1",
+     "say": "My best friend is called Mia.",
+     "ask": "My best friend is called Mia."
+    },
+    {
+     "s": "We go swimming on ___.",
+     "ans": [
+      "Monday"
+     ],
+     "kind": "cap",
+     "tip": "Days of the week start with a capital letter: Monday.",
+     "x": [
+      "monday",
+      "MONDAY",
+      "Monday's"
+     ],
+     "no": {
+      "monday": "Days of the week always start with a capital letter: Monday.",
+      "MONDAY": "Only the first letter is a capital: Monday.",
+      "Monday's": "Monday's means 'of Monday' (Monday's lesson). Here we just need the day."
+     },
+     "id": "a1.3.2",
+     "say": "We go swimming on Monday.",
+     "ask": "We go swimming on Monday."
+    },
+    {
+     "s": "I live in ___.",
+     "ans": [
+      "Singapore"
+     ],
+     "kind": "cap",
+     "tip": "Names of places start with a capital letter: Singapore.",
+     "x": [
+      "singapore",
+      "Singapores",
+      "Singapore's"
+     ],
+     "no": {
+      "singapore": "Names of places always start with a capital letter: Singapore.",
+      "Singapores": "There is only one Singapore, so we don't add -s.",
+      "Singapore's": "Singapore's means 'of Singapore'. Here we just need the place."
+     },
+     "id": "a1.3.3",
+     "say": "I live in Singapore.",
+     "ask": "I live in Singapore."
+    },
+    {
+     "s": "My dog ___ likes bones.",
+     "ans": [
+      "Max"
+     ],
+     "kind": "cap",
+     "tip": "A pet's name is a name, so it starts with a capital letter: Max.",
+     "x": [
+      "max",
+      "Max's",
+      "Maxs"
+     ],
+     "no": {
+      "max": "Your dog's name is a name, so it starts with a capital letter: Max.",
+      "Max's": "Max's means 'of Max' (Max's bone). Here we just need his name.",
+      "Maxs": "There is one dog called Max, so we don't add -s."
+     },
+     "id": "a1.3.4",
+     "say": "My dog Max likes bones.",
+     "ask": "My dog Max likes bones."
+    },
+    {
+     "s": "On Friday, Mia and ___ play football.",
+     "ans": [
+      "I"
+     ],
+     "kind": "cap",
+     "tip": "I (me) is always a capital letter, even in the middle of a sentence.",
+     "x": [
+      "i",
+      "I'm",
+      "Im"
+     ],
+     "no": {
+      "i": "When I means me, it is always a capital letter, even in the middle.",
+      "I'm": "I'm means I am. Mia and I am play doesn't make sense.",
+      "Im": "Im isn't a word. We just need I."
+     },
+     "id": "a1.3.5",
+     "say": "On Friday, Mia and I play football.",
+     "ask": "On Friday, Mia and I play football."
+    },
+    {
+     "s": "___ teacher is Mr Tan.",
+     "ans": [
+      "Our"
+     ],
+     "kind": "cap",
+     "tip": "The first word of a sentence starts with a capital letter: Our…",
+     "x": [
+      "our",
+      "OUR",
+      "Ours"
+     ],
+     "no": {
+      "our": "The first word of a sentence needs a capital letter: Our.",
+      "OUR": "Only the first letter is a capital: Our.",
+      "Ours": "We say Our teacher, not Ours teacher. Ours goes at the end: The teacher is ours."
+     },
+     "id": "a1.3.6",
+     "say": "Our teacher is Mr Tan.",
+     "ask": "Our teacher is Mr Tan."
+    },
+    {
+     "s": "Mr Tan has a cat called ___.",
+     "ans": [
+      "Tiger"
+     ],
+     "kind": "cap",
+     "tip": "The cat's name needs a capital letter: Tiger.",
+     "x": [
+      "tiger",
+      "TIGER",
+      "Tigers"
+     ],
+     "no": {
+      "tiger": "tiger with a small t is a big wild animal. The cat's name needs a capital: Tiger.",
+      "TIGER": "Only the first letter of a name is a capital: Tiger.",
+      "Tigers": "The cat is called Tiger. Tigers means lots of tigers!"
+     },
+     "id": "a1.3.7",
+     "say": "Mr Tan has a cat called Tiger.",
+     "ask": "Mr Tan has a cat called Tiger."
+    },
+    {
+     "s": "Next ___, we are going to the zoo.",
+     "ans": [
+      "Sunday"
+     ],
+     "kind": "cap",
+     "tip": "Days of the week start with a capital letter: Sunday.",
+     "x": [
+      "sunday",
+      "Sundays",
+      "Sunday's"
+     ],
+     "no": {
+      "sunday": "Days of the week always start with a capital letter: Sunday.",
+      "Sundays": "Next Sunday is one day, so no -s.",
+      "Sunday's": "Sunday's means 'of Sunday'. Here we just need the day."
+     },
+     "id": "a1.3.8",
+     "say": "Next Sunday, we are going to the zoo.",
+     "ask": "Next Sunday, we are going to the zoo."
+    }
+   ]
+  }
+ ]
+}

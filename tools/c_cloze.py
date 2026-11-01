@@ -14,11 +14,10 @@ Each text = a list of sentences; a gapped sentence holds ONE gap (___) and is wr
 kind → the 💡 hint after a first miss (js/cloze.js KINDS). All right answers are listed; the build checks one word each and
 that no wrong tile is also right."""
 
+from qb import why_tiles
 def Gp(s, ans, kind, tip, x=None):
     d = {"s": s, "ans": ans.split("|"), "kind": kind, "tip": tip}
-    if x:   # "wrong=why not|wrong=why not|wrong=why not": every wrong tile has its own 'why not' note
-        pairs = [w.split("=", 1) for w in x.split("|")]
-        d["x"] = [w for w, _ in pairs]; d["no"] = {w: why for w, why in pairs}
+    if x: d.update(why_tiles(x))   # every wrong tile has its own 'why not' note
     return d
 
 def T(icon, name, focus, text): return {"icon": icon, "name": name, "focus": focus, "text": text}

@@ -26,6 +26,8 @@
      hint(it, tiles)       the 💡 line after a first miss;  shown(it, typed, ok) → what the gap shows after a typed answer
      whyNot(it, user)?     optional: extra HTML after the 💡 hint, about the answer just tried (a wrong tile's "why not")
      more(it)?             optional: extra HTML under the tip once the card is answered (every wrong tile's "why not")
+     notes?                true = the shared "why not" notes for tile items with it.no = { wrongTile: note } (Word Bridges,
+                           Punctuation Pixies): WR.GapRound.whyNot after a miss and WR.GapRound.more under the answer
      inOrder?              optional: play the book's items in order (a text read from start to end) instead of shuffled
      quest                 the daily quest bumped on a finish }
    Rules shared by every gap game: a nudge is not a try; the first try is counted for the Learning Report (WR.countAnswer);
@@ -33,7 +35,11 @@
    1⭐ per right answer, ½ for a second try, + 3⭐, new crowns 2⭐ each; replays pay only new crowns). */
 (function () {
 const WR = window.WR, esc = WR.esc, EMPTY = "\u00a0".repeat(14);
+// a wrong tile's own note: after a miss (the tile just tried), and the full list under the answer
+const whyNot = (it, user) => { const n = it.no && it.no[user]; return n ? `<div class="gr-no">🤔 <b>Why not “${esc(user)}”?</b> ${esc(n)}</div>` : ""; };
+const more = it => it.no ? `<div class="gr-nos">${Object.entries(it.no).map(([w, n]) => `<div class="gr-no">💭 <b>Not “${esc(w)}”:</b> ${esc(n)}</div>`).join("")}</div>` : "";
 WR.GapRound = cfg => {
+  if (cfg.notes) { cfg.whyNot = cfg.whyNot || whyNot; cfg.more = cfg.more || more; }
   cfg.load = cfg.load || (lvl => WR.bank(lvl, cfg.id)); cfg.set = cfg.set || (lvl => WR.data[lvl + "/" + cfg.id]);
   const p = cfg.p, $ = id => WR.$("#" + p + id), st = () => WR.block(cfg.id), join = cfg.join == null ? " " : cfg.join;
   const unitsDone = lvl => [1, 2, 3].filter(k => st().done[lvl + "." + k]).length;
@@ -168,4 +174,5 @@ WR.GapRound = cfg => {
   WR.addBonus({ data: cfg.id, open: rid => open(rid), tile: rid => tile(rid) });
   return { open, start, stop, s: () => S, tile, unitsDone, crownsAt, all: () => Object.entries(st().done) };
 };
+WR.GapRound.whyNot = whyNot; WR.GapRound.more = more;
 })();

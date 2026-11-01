@@ -65,7 +65,13 @@
   "b1/cloze": 24,
   "b2/cloze": 24,
   "c1/cloze": 24,
-  "c2/cloze": 24
+  "c2/cloze": 24,
+  "a1/marks": 24,
+  "a2/marks": 24,
+  "b1/marks": 24,
+  "b2/marks": 24,
+  "c1/marks": 24,
+  "c2/marks": 24
  },
  "total": 3110,
  "questions": 2942,
@@ -74,5 +80,6 @@
  "stories": 6,
  "swap": 144,
  "forge": 144,
- "cloze": 144
+ "cloze": 144,
+ "marks": 144
 }

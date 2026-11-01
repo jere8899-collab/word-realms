@@ -15,3 +15,8 @@ def say(text, focus, tip):
 def ask(q, keywords, model, focus, tip):
     """keywords: list of phrases the answer must contain; 'a|b' means either a or b."""
     return {"type": "answer", "q": q, "keywords": keywords, "model": model, "focus": focus, "tip": tip}
+# 🧩 Gap games with word/mark TILES (Word Bridges, Punctuation Pixies): "wrong=why not|wrong=why not|wrong=why not" →
+# the wrong tiles (x) and a note for each (no), so every wrong tile says why it doesn't fit (checked in build_data.py).
+def why_tiles(x):
+    pairs = [w.split("=", 1) for w in x.split("|")]
+    return {"x": [w for w, _ in pairs], "no": {w: why for w, why in pairs}}

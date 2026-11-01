@@ -627,6 +627,12 @@ img.acc-prev{width:72px;height:72px;object-fit:contain;display:block;margin:4px 
 .cz-text{margin:6px 0}
 .cz-before{margin:0 0 4px;padding:6px 10px;border-radius:14px;background:#F3F7FF;color:#6A6A8A;font-weight:700;font-size:.92rem;line-height:1.5}
 .cz-s{align-items:center}.cz-s p{font-size:1.12rem}
-.cz-no{margin-top:5px;font-weight:700;font-size:.9rem;line-height:1.4}
-.cz-nos{margin-top:6px;padding:6px 10px;border-radius:12px;background:rgba(255,255,255,.6)}
-.cz-nos .cz-no:first-child{margin-top:0}
+/* 🧚 Punctuation Pixies (js/marks.js): the shared sw-* gap-round look + a pixie-pink tile and big, easy-to-tell-apart mark tiles */
+.skill-card.marks-tile{background:linear-gradient(150deg,#FFE8F6,#F1E8FF 55%,#E6FAF3)}
+.pm-s{align-items:center}.pm-s p{font-size:1.15rem}
+#pmPool .sw-tile{min-width:52px;font-size:1.25rem;font-weight:900}
+#pmGap .sw-chip{font-size:1.2rem;font-weight:900}
+/* the shared "why not" notes of tile gap games (js/gap-round.js WR.GapRound.whyNot / .more: Word Bridges, Punctuation Pixies) */
+.gr-no{margin-top:5px;font-weight:700;font-size:.9rem;line-height:1.4}
+.gr-nos{margin-top:6px;padding:6px 10px;border-radius:12px;background:rgba(255,255,255,.6)}
+.gr-nos .gr-no:first-child{margin-top:0}

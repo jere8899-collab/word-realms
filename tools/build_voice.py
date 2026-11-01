@@ -16,8 +16,8 @@ def fname(profile, text):  # FNV-1a 32 (same as js/voice.js) + a short sha1 so c
     s = profile + "|" + text; h = 2166136261
     for c in s: h = ((h ^ ord(c)) * 16777619) & 0xFFFFFFFF
     return f"{profile}_{h:08x}{hashlib.sha1(s.encode()).hexdigest()[:4]}.mp3"
-# 🔀 Spell Swap: sentence 1 · ⚒️ Word Forge and 🌉 Word Bridges: the gapped sentence read with "blank"
-GAP_EXTRA = {"swap": "a", "forge": "ask", "cloze": "ask"}
+# 🔀 Spell Swap: sentence 1 · ⚒️ Word Forge and 🌉 Word Bridges: the gapped sentence read with "blank" · 🧚 Punctuation Pixies: the sentence without its missing mark
+GAP_EXTRA = {"swap": "a", "forge": "ask", "cloze": "ask", "marks": "ask"}
 GL = re.compile(r"\[\[([^|\]]+)\|([^\]]+)\]\]")
 def lines():
     out = {}   # (profile, text)

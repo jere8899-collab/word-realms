@@ -1,0 +1,539 @@
+{
+ "level": "c1",
+ "mode": "tiles",
+ "none": "no mark",
+ "books": [
+  {
+   "id": "c1.1",
+   "icon": "🐙",
+   "name": "The Great Escape",
+   "focus": "dashes and brackets: an aside opens and closes with the same mark",
+   "items": [
+    {
+     "s": "The octopus—a master of disguise___ slipped out of its tank overnight.",
+     "ans": [
+      "—"
+     ],
+     "kind": "dash",
+     "tip": "An aside that opens with a dash closes with a dash.",
+     "x": [
+      ",",
+      ")",
+      ";"
+     ],
+     "no": {
+      ",": "The aside opened with a dash, so it must close with a dash. A dash and a comma don't make a pair.",
+      ")": "A closing bracket needs an opening bracket, but this aside opened with a dash.",
+      ";": "A semicolon would cut the sentence in two, and 'The octopus, a master of disguise' isn't a full sentence."
+     },
+     "id": "c1.1.1",
+     "say": "The octopus—a master of disguise—slipped out of its tank overnight.",
+     "ask": "The octopus—a master of disguise slipped out of its tank overnight."
+    },
+    {
+     "s": "There was only one suspect___ Inky the octopus.",
+     "ans": [
+      "—",
+      ":"
+     ],
+     "kind": "dash",
+     "tip": "A dash (or a colon) leads to a surprise or an answer at the end of a sentence.",
+     "x": [
+      ",",
+      ";",
+      "no mark"
+     ],
+     "no": {
+      ",": "A comma is too weak to build up to the big reveal. Use a dash or a colon.",
+      ";": "A semicolon needs a full sentence after it, but Inky the octopus isn't one.",
+      "no mark": "Without a mark, the reveal runs straight on from the sentence."
+     },
+     "id": "c1.1.2",
+     "say": "There was only one suspect—Inky the octopus.",
+     "ask": "There was only one suspect Inky the octopus."
+    },
+    {
+     "s": "The keepers (who had searched every corner___ finally found Inky in a drainpipe.",
+     "ans": [
+      ")"
+     ],
+     "kind": "bracket",
+     "tip": "An aside that opens with a bracket closes with a bracket.",
+     "x": [
+      "—",
+      ",",
+      "no mark"
+     ],
+     "no": {
+      "—": "The aside opened with a bracket, so it must close with a bracket, not a dash.",
+      ",": "A bracket can't be closed by a comma.",
+      "no mark": "The bracket was opened, so it must be closed before the sentence goes on."
+     },
+     "id": "c1.1.3",
+     "say": "The keepers (who had searched every corner) finally found Inky in a drainpipe.",
+     "ask": "The keepers (who had searched every corner finally found Inky in a drainpipe."
+    },
+    {
+     "s": "Octopuses have three hearts, blue blood and nine brains___ or so the guide claimed.",
+     "ans": [
+      "—"
+     ],
+     "kind": "dash",
+     "tip": "A dash adds an afterthought at the end of a sentence.",
+     "x": [
+      ";",
+      ":",
+      "!"
+     ],
+     "no": {
+      ";": "A semicolon needs a full sentence after it. or so the guide claimed isn't one.",
+      ":": "A colon introduces an explanation or list, not an afterthought.",
+      "!": "! would end the sentence, and or starts with a small o."
+     },
+     "id": "c1.1.4",
+     "say": "Octopuses have three hearts, blue blood and nine brains—or so the guide claimed.",
+     "ask": "Octopuses have three hearts, blue blood and nine brains or so the guide claimed."
+    },
+    {
+     "s": "Inky's favourite toy (a plastic crab___ was found next to him.",
+     "ans": [
+      ")"
+     ],
+     "kind": "bracket",
+     "tip": "Brackets come in pairs: (a plastic crab).",
+     "x": [
+      "—",
+      ",",
+      "no mark"
+     ],
+     "no": {
+      "—": "The aside opened with a bracket, so it closes with a bracket.",
+      ",": "A comma can't close a bracket.",
+      "no mark": "The bracket is still open. Close it before was found."
+     },
+     "id": "c1.1.5",
+     "say": "Inky's favourite toy (a plastic crab) was found next to him.",
+     "ask": "Inky's favourite toy (a plastic crab was found next to him."
+    },
+    {
+     "s": "The aquarium has one strict rule___ never tap on the glass.",
+     "ans": [
+      ":",
+      "—"
+     ],
+     "kind": "join",
+     "tip": "A colon (or a dash) introduces what the rule is.",
+     "x": [
+      ",",
+      ";",
+      "no mark"
+     ],
+     "no": {
+      ",": "A comma is too weak to introduce the rule.",
+      ";": "A semicolon needs two full sentences. Here the second part explains the rule, which is a colon's job.",
+      "no mark": "Without a mark, the rule crashes into the sentence."
+     },
+     "id": "c1.1.6",
+     "say": "The aquarium has one strict rule: never tap on the glass.",
+     "ask": "The aquarium has one strict rule never tap on the glass."
+    },
+    {
+     "s": "Some visitors___ especially the younger ones—pressed their noses to the tank.",
+     "ans": [
+      "—"
+     ],
+     "kind": "dash",
+     "tip": "The aside closes with a dash, so it must open with a dash.",
+     "x": [
+      ",",
+      "(",
+      ";"
+     ],
+     "no": {
+      ",": "The aside closes with a dash (ones—pressed), so it must open with a dash, not a comma.",
+      "(": "A bracket would need a closing bracket, but the aside closes with a dash.",
+      ";": "A semicolon would cut off Some visitors, which isn't a full sentence."
+     },
+     "id": "c1.1.7",
+     "say": "Some visitors—especially the younger ones—pressed their noses to the tank.",
+     "ask": "Some visitors especially the younger ones—pressed their noses to the tank."
+    },
+    {
+     "s": "The story went viral___ by Monday, millions had watched the video.",
+     "ans": [
+      ";",
+      "—"
+     ],
+     "kind": "join",
+     "tip": "Two full sentences can be joined with a semicolon (or, less formally, a dash).",
+     "x": [
+      ",",
+      ")",
+      "no mark"
+     ],
+     "no": {
+      ",": "A comma alone can't join two full sentences (a comma splice).",
+      ")": "There's no opening bracket, so there's nothing to close.",
+      "no mark": "Two full sentences can't just run together."
+     },
+     "id": "c1.1.8",
+     "say": "The story went viral; by Monday, millions had watched the video.",
+     "ask": "The story went viral by Monday, millions had watched the video."
+    }
+   ]
+  },
+  {
+   "id": "c1.2",
+   "icon": "🔗",
+   "name": "Hyphens that Help",
+   "focus": "describing words joined before a noun (a ten-year-old) · no hyphens after the verb",
+   "items": [
+    {
+     "s": "My ___ cousin can already write code.",
+     "ans": [
+      "ten-year-old"
+     ],
+     "kind": "hyphen",
+     "tip": "Words that describe a noun together are joined by hyphens: a ten-year-old cousin.",
+     "x": [
+      "ten year old",
+      "ten-year old",
+      "ten-years-old"
+     ],
+     "no": {
+      "ten year old": "When three words describe the cousin together, join them with hyphens: ten-year-old.",
+      "ten-year old": "All three words work as one describing word, so both hyphens are needed.",
+      "ten-years-old": "Before a noun the number word stays singular: a ten-year-old, not ten-years-old."
+     },
+     "id": "c1.2.1",
+     "say": "My ten-year-old cousin can already write code.",
+     "ask": "My ten-year-old cousin can already write code."
+    },
+    {
+     "s": "My cousin is ten ___.",
+     "ans": [
+      "years old"
+     ],
+     "kind": "hyphen",
+     "tip": "After the verb (is ten years old), there are no hyphens and years is plural.",
+     "x": [
+      "years-old",
+      "year-old",
+      "year's old"
+     ],
+     "no": {
+      "years-old": "After the verb, years old isn't joined by a hyphen. Hyphens are for describing words before a noun.",
+      "year-old": "year-old needs a noun after it (a ten-year-old girl). Here we say ten years old.",
+      "year's old": "There's no apostrophe here: ten years old."
+     },
+     "id": "c1.2.2",
+     "say": "My cousin is ten years old.",
+     "ask": "My cousin is ten years old."
+    },
+    {
+     "s": "The final was a ___ match.",
+     "ans": [
+      "nail-biting"
+     ],
+     "kind": "hyphen",
+     "tip": "Two words that describe a noun together are joined by a hyphen: a nail-biting match.",
+     "x": [
+      "nail biting",
+      "nailbiting",
+      "nail-bitting"
+     ],
+     "no": {
+      "nail biting": "nail biting before match reads like two separate things. Join them: nail-biting.",
+      "nailbiting": "This word is written with a hyphen: nail-biting.",
+      "nail-bitting": "The spelling is biting (one t): nail-biting."
+     },
+     "id": "c1.2.3",
+     "say": "The final was a nail-biting match.",
+     "ask": "The final was a nail-biting match."
+    },
+    {
+     "s": "We need a ___ plan for the science fair.",
+     "ans": [
+      "well-thought-out"
+     ],
+     "kind": "hyphen",
+     "tip": "A long describing phrase before a noun is joined with hyphens: a well-thought-out plan.",
+     "x": [
+      "well thought out",
+      "well-thought out",
+      "wellthoughtout"
+     ],
+     "no": {
+      "well thought out": "Before the noun, the three words work as one describing word, so they're joined: well-thought-out.",
+      "well-thought out": "All three words belong together, so both hyphens are needed.",
+      "wellthoughtout": "These words are joined by hyphens, not squashed into one."
+     },
+     "id": "c1.2.4",
+     "say": "We need a well-thought-out plan for the science fair.",
+     "ask": "We need a well-thought-out plan for the science fair."
+    },
+    {
+     "s": "The new tablet has a ___ battery.",
+     "ans": [
+      "long-lasting"
+     ],
+     "kind": "hyphen",
+     "tip": "long-lasting describes the battery as one idea, so it takes a hyphen.",
+     "x": [
+      "long lasting",
+      "longlasting",
+      "long-lastting"
+     ],
+     "no": {
+      "long lasting": "Before a noun, long and lasting work as one describing word, so join them: long-lasting.",
+      "longlasting": "This is written with a hyphen: long-lasting.",
+      "long-lastting": "The spelling is lasting (one t): long-lasting."
+     },
+     "id": "c1.2.5",
+     "say": "The new tablet has a long-lasting battery.",
+     "ask": "The new tablet has a long-lasting battery."
+    },
+    {
+     "s": "Beware of the ___ plants in the greenhouse!",
+     "ans": [
+      "insect-eating"
+     ],
+     "kind": "hyphen",
+     "tip": "insect-eating = plants that eat insects. The hyphen joins the two describing words.",
+     "x": [
+      "insect eating",
+      "insects-eating",
+      "insecteating"
+     ],
+     "no": {
+      "insect eating": "Without the hyphen it reads like an insect that is eating plants! Join them: insect-eating.",
+      "insects-eating": "In a describing word the noun stays singular: insect-eating.",
+      "insecteating": "These words are joined by a hyphen, not squashed into one."
+     },
+     "id": "c1.2.6",
+     "say": "Beware of the insect-eating plants in the greenhouse!",
+     "ask": "Beware of the insect-eating plants in the greenhouse!"
+    },
+    {
+     "s": "We watched a ___ film about penguins.",
+     "ans": [
+      "two-hour"
+     ],
+     "kind": "hyphen",
+     "tip": "A number + a measure before a noun is hyphenated and singular: a two-hour film.",
+     "x": [
+      "two hour",
+      "two-hours",
+      "twohour"
+     ],
+     "no": {
+      "two hour": "Before a noun, the number and the measure are joined: a two-hour film.",
+      "two-hours": "Before a noun the measure stays singular: two-hour, not two-hours.",
+      "twohour": "These words are joined by a hyphen, not squashed into one."
+     },
+     "id": "c1.2.7",
+     "say": "We watched a two-hour film about penguins.",
+     "ask": "We watched a two-hour film about penguins."
+    },
+    {
+     "s": "Grandma has surprisingly ___ ideas about video games.",
+     "ans": [
+      "up-to-date"
+     ],
+     "kind": "hyphen",
+     "tip": "Before a noun, up-to-date is joined with hyphens: up-to-date ideas.",
+     "x": [
+      "up to date",
+      "uptodate",
+      "up-to date"
+     ],
+     "no": {
+      "up to date": "Before the noun (ideas), the phrase works as one describing word, so it takes hyphens.",
+      "uptodate": "These words are joined by hyphens, not squashed into one.",
+      "up-to date": "All three words belong together, so both hyphens are needed."
+     },
+     "id": "c1.2.8",
+     "say": "Grandma has surprisingly up-to-date ideas about video games.",
+     "ask": "Grandma has surprisingly up-to-date ideas about video games."
+    }
+   ]
+  },
+  {
+   "id": "c1.3",
+   "icon": "📰",
+   "name": "The School Paper",
+   "focus": "semicolons instead of comma splices · semicolons in a list of lists · colons",
+   "items": [
+    {
+     "s": "Our paper needed a new editor___ however, nobody volunteered.",
+     "ans": [
+      ";"
+     ],
+     "kind": "join",
+     "tip": "Before however joining two sentences, use a semicolon (or a full stop and a capital H).",
+     "x": [
+      ",",
+      ":",
+      "."
+     ],
+     "no": {
+      ",": "A comma before however can't join two full sentences (a comma splice).",
+      ":": "A colon introduces an explanation, but nobody volunteering doesn't explain the first part.",
+      ".": "A full stop works only with a capital: However. Here however has a small h."
+     },
+     "id": "c1.3.1",
+     "say": "Our paper needed a new editor; however, nobody volunteered.",
+     "ask": "Our paper needed a new editor however, nobody volunteered."
+    },
+    {
+     "s": "We interviewed Ms Ong, the coach___ Mr Raj, the librarian; and Lily, the captain.",
+     "ans": [
+      ";"
+     ],
+     "kind": "join",
+     "tip": "When the things in a list already have commas, split the list items with semicolons.",
+     "x": [
+      ",",
+      ":",
+      "—"
+     ],
+     "no": {
+      ",": "Each item already has a comma inside it (Ms Ong, the coach), so commas between items would be confusing.",
+      ":": "A colon introduces a list. It doesn't split the items.",
+      "—": "A dash would add an aside, but here we need to split the list items, as the later semicolon does."
+     },
+     "id": "c1.3.2",
+     "say": "We interviewed Ms Ong, the coach; Mr Raj, the librarian; and Lily, the captain.",
+     "ask": "We interviewed Ms Ong, the coach Mr Raj, the librarian; and Lily, the captain."
+    },
+    {
+     "s": "The deadline was Friday___ we finished on Thursday night.",
+     "ans": [
+      ";"
+     ],
+     "kind": "join",
+     "tip": "Two full, linked sentences can be joined with a semicolon.",
+     "x": [
+      ",",
+      "no mark",
+      "."
+     ],
+     "no": {
+      ",": "A comma alone can't join two full sentences.",
+      "no mark": "Two full sentences can't just run together.",
+      ".": "A full stop works only with a capital: We finished… Here we has a small w."
+     },
+     "id": "c1.3.3",
+     "say": "The deadline was Friday; we finished on Thursday night.",
+     "ask": "The deadline was Friday we finished on Thursday night."
+    },
+    {
+     "s": "One headline caused a stir___ Canteen Bans Chips!",
+     "ans": [
+      ":"
+     ],
+     "kind": "join",
+     "tip": "A colon introduces the thing you've been talking about: the headline itself.",
+     "x": [
+      ";",
+      ",",
+      "no mark"
+     ],
+     "no": {
+      ";": "A semicolon needs a full sentence on both sides, and it can't introduce the headline.",
+      ",": "A comma is too weak to introduce the headline.",
+      "no mark": "Without a mark, the headline crashes into the sentence."
+     },
+     "id": "c1.3.4",
+     "say": "One headline caused a stir: Canteen Bans Chips!",
+     "ask": "One headline caused a stir Canteen Bans Chips!"
+    },
+    {
+     "s": "The article was funny___ moreover, it was true.",
+     "ans": [
+      ";"
+     ],
+     "kind": "join",
+     "tip": "Linking words like moreover and therefore join two sentences after a semicolon.",
+     "x": [
+      ",",
+      ":",
+      "."
+     ],
+     "no": {
+      ",": "A comma before moreover can't join two full sentences.",
+      ":": "A colon introduces an explanation, but it was true doesn't explain why it was funny.",
+      ".": "A full stop works only with a capital: Moreover. Here moreover has a small m."
+     },
+     "id": "c1.3.5",
+     "say": "The article was funny; moreover, it was true.",
+     "ask": "The article was funny moreover, it was true."
+    },
+    {
+     "s": "We had a problem___ the printer was out of ink.",
+     "ans": [
+      ":",
+      "—"
+     ],
+     "kind": "join",
+     "tip": "A colon (or a dash) introduces the explanation: what was the problem?",
+     "x": [
+      ",",
+      "no mark",
+      "?"
+     ],
+     "no": {
+      ",": "A comma alone can't join two full sentences.",
+      "no mark": "Two full sentences can't just run together.",
+      "?": "This isn't a question. It tells us there was a problem."
+     },
+     "id": "c1.3.6",
+     "say": "We had a problem: the printer was out of ink.",
+     "ask": "We had a problem the printer was out of ink."
+    },
+    {
+     "s": "Readers loved the puzzle page___ in fact, it was the most popular part.",
+     "ans": [
+      ";"
+     ],
+     "kind": "join",
+     "tip": "Before in fact joining two sentences, use a semicolon.",
+     "x": [
+      ",",
+      "no mark",
+      "?"
+     ],
+     "no": {
+      ",": "A comma before in fact can't join two full sentences.",
+      "no mark": "Two full sentences can't just run together.",
+      "?": "This isn't a question."
+     },
+     "id": "c1.3.7",
+     "say": "Readers loved the puzzle page; in fact, it was the most popular part.",
+     "ask": "Readers loved the puzzle page in fact, it was the most popular part."
+    },
+    {
+     "s": "The editor's decision was clear___ from next term, the paper would come out every week.",
+     "ans": [
+      ":"
+     ],
+     "kind": "join",
+     "tip": "A colon introduces what the decision was.",
+     "x": [
+      ",",
+      "no mark",
+      "?"
+     ],
+     "no": {
+      ",": "A comma alone can't join two full sentences, and it can't introduce the decision.",
+      "no mark": "Two full sentences can't just run together.",
+      "?": "This isn't a question. It tells us the decision."
+     },
+     "id": "c1.3.8",
+     "say": "The editor's decision was clear: from next term, the paper would come out every week.",
+     "ask": "The editor's decision was clear from next term, the paper would come out every week."
+    }
+   ]
+  }
+ ]
+}
