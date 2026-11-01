@@ -183,7 +183,7 @@ function render() {
       <div class="heard" id="heard">${mic ? `<span class="muted">Tap 🎤 and read the ${it.type === "answer" ? "answer" : "sentence"} aloud. I'll listen in British English.</span>` : `<span class="muted">1. Listen 🔊 &nbsp;2. Say it aloud 🗣️ &nbsp;3. Rate yourself</span>`}</div>
       <div id="echoResult"></div></div>
       <div class="card side"><div class="petbox" id="lpet">${WR.petHTML()}</div><div class="bubble" id="lbubble">${S.i === 0 ? "Whisper into the well and it echoes back! 🎶" : WR.esc(WR.petMood())}</div>
-      <div class="muted" id="lstats" style="font-size:.85rem;font-weight:800">⭐ ${S.starsEarned} earned · 💧 ${S.passes} passed</div></div></div>`);
+      <div class="lstats" id="lstats">${WR.statsHTML([["⭐", S.starsEarned, "earned"], ["💧", S.passes, "passed"]])}</div></div></div>`);
   const play = r => { const b = WR.$("#hearBtn"); b && b.classList.add("playing"); WR.say(sayTarget(it), { rate: r, onend: () => { const bb = WR.$("#hearBtn"); bb && bb.classList.remove("playing"); } }); };
   WR.$("#hearBtn").onclick = () => play();
   WR.$("#slowBtn").onclick = () => play(0.6);
@@ -208,7 +208,7 @@ function toggleMic(it) {
       if (MIC_BLOCKED.includes(err)) {
         S.mode = "shadow"; S.why = err; const sp = WR.state.speaking; sp.micErrors = (sp.micErrors || 0) + 1;
         if (err !== "start") { sp.preferShadow = true; sp.shadowWhy = err; } WR.save();
-        WR.toast("🌙 No microphone, no problem! Let's practise by shadowing.", 2600); render();
+        WR.toast("🌙 No microphone, no problem! Let's practise by shadowing.", 2600, { now: true }); render();
       } else { const h = WR.$("#heard"); if (h) h.innerHTML = `<span class="muted">🤫 I couldn't hear anything. Tap 🎤 and speak a little louder, close to the microphone.</span>`; }
     }
   });
@@ -222,7 +222,7 @@ function award(it, score) {
   if (starsFor(score) === 3) s.speaking.perfect++;
   WR.save(); WR.renderTop();
   const h = document.querySelector(".hud"); if (h) h.innerHTML = hud();
-  const ls = WR.$("#lstats"); if (ls) ls.textContent = `⭐ ${S.starsEarned} earned · 💧 ${S.passes} passed`;
+  WR.setStats([["⭐", S.starsEarned, "earned"], ["💧", S.passes, "passed"]]);
   return gain;
 }
 function petReact(ok, great) {

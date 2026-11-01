@@ -38,6 +38,9 @@ MW.startDojo = mode => {
   if (mode === "sprint") { D.endAt = Date.now() + 60000; timer = setInterval(tick, 200); }
   draw();
 };
+// R8: the sprint's clock stops while the app is hidden and restarts after "Ready? 3-2-1"
+WR.pauseable(() => { if (D && D.mode === "sprint" && timer) { stopTimer(); D.frozen = Math.max(0, D.endAt - Date.now()); D.endAt = Infinity; } },
+  () => { if (!D || D.frozen == null) return; const me = D; WR.readyGo(() => { if (D !== me || D.frozen == null) return; D.endAt = Date.now() + D.frozen; D.frozen = null; timer = setInterval(tick, 200); }); });
 function tick() {
   if (!D) return stopTimer();
   const left = Math.max(0, (D.endAt - Date.now()) / 1000), bar = WR.$("#sprintBar"), tx = WR.$("#sprintLeft");
@@ -156,7 +159,7 @@ function ask() {
   const go = ok => { if (!P) return; P.asked++; if (ok) P.ok++; P.log.push({ g: P.g, ok }); P.k++; if (P.k < 3) return ask(); if (P.ok >= 2) { P.passed = Math.max(P.passed, P.g); P.lo = P.g + 1; } else P.hi = P.g - 1; nextRound(); };
   WR.$("#unsure").onclick = () => go(false);
   if (q.kind === "mcq") MW.onOpts(q, o => go(o === q.a));
-  else { const sub = v => { const r = MG.check(q, v); if (r.empty) return WR.toast("Type an answer, or tap “I'm not sure” 💭"); if (r.bad) return WR.toast("Hmm, I couldn't read that. Try a number like 12 or 3/4", 2200); go(r.ok); }; MW.bindInput(q, sub); }
+  else { const sub = v => { const r = MG.check(q, v); if (r.empty) return WR.toast("Type an answer, or tap “I'm not sure” 💭", 1800, { now: true }); if (r.bad) return WR.toast("Hmm, I couldn't read that. Try a number like 12 or 3/4", 2200, { now: true }); go(r.ok); }; MW.bindInput(q, sub); }
 }
 function placeDone() {
   const m = MW.st(), g = Math.min(12, Math.max(1, P.passed + (P.passed === 12 ? 0 : 1))), first = !m.placed, gi = MG.GRADES.find(x => x.g === g);

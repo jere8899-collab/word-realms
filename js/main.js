@@ -86,7 +86,7 @@ function onboarding() {
       const s = WR.state, info = WR.PETS.find(p => p.id === draft.pet);
       s.name = draft.name.trim(); s.avatar = draft.avatar; s.startLevel = draft.level;
       s.pet = { species: draft.pet, name: info.name, xp: 0, happiness: 80, hunger: 30, skin: null, lastTick: Date.now(), adopted: Date.now() };
-      WR.save(); start(); WR.sfx("level"); WR.toast(`${info.emoji} ${info.name} is so happy to meet you!`, 2500);
+      WR.save(); WR._welcome = `I'm so happy to meet you, ${draft.name.trim()}! 💖`; start(); WR.sfx("level");   // R7: said by the pet on the map, not a pop-up over the name
     }
   };
   step1();
@@ -123,14 +123,14 @@ WR.screens.home = () => {
   const qs = s.daily.quests.map(q => { const d = WR.questDef(q.id); return `<div class="q"><span class="qi">${d.icon}</span><div class="qb"><b>${d.label}</b><div class="prog"><i style="width:${q.progress / d.goal * 100}%"></i></div></div>
     ${q.claimed ? '<span class="pill" style="background:var(--mint)">Done ✓</span>' : q.progress >= d.goal ? `<button class="btn small mint claim" data-id="${q.id}">Claim ${d.reward}⭐</button>` : `<span class="pill">${q.progress}/${d.goal} · ${d.reward}⭐</span>`}</div>`; }).join("");
   WR.view(`<div class="fade-in"><div class="card homehead"><div class="av-big">${WR.avatarHTML(110)}${WR.Rewards && WR.Rewards.chest().ready ? `<button class="chip av-badge gift-ready" id="giftPill" aria-label="Open today's free gift" title="Today's free gift">🎁</button>` : `<button class="chip av-badge" id="wardPill" aria-label="Wardrobe" title="Wardrobe">👗</button>`}</div>
-    <div><h1 style="margin:0">Hello, <span class="hero-nm">${WR.userText(s.name)}</span>! 🌸 <button class="chip hero-edit" id="heroEditHome" aria-label="Change my hero name" title="Change my hero name">✏️</button></h1><div class="muted" style="font-weight:800">${WR.userText(s.pet.name)} says: “${WR.esc(WR.petMood())}”</div>
+    <div><h1 style="margin:0">Hello, <span class="hero-nm">${WR.userText(s.name)}</span>! 🌸 <button class="chip hero-edit" id="heroEditHome" aria-label="Change my hero name" title="Change my hero name">✏️</button></h1><div class="muted" style="font-weight:800">${WR.userText(s.pet.name)} says: “${WR.esc(WR._welcome || WR.petMood())}”</div>
     <div class="row" style="margin-top:6px"><span class="pill">✅ ${s.totalCorrect} correct answers</span>${WR.STORY ? `<span class="pill" id="bookPill" style="background:#FFF1D6;cursor:pointer">📜 Storybook ${WR.storyPagesFound()}/6 pages</span>` : ""}${s.placement ? `<span class="pill mirror-pill" id="mirrorPill" style="background:#F3ECFF;cursor:pointer">🪞 Mirror says ${s.placement.level.toUpperCase()}</span>` : `<span class="pill mirror-pill" id="mirrorPill" style="background:#F3ECFF;cursor:pointer">🪞 Find my level</span>`}</div></div></div>
     ${cont ? `<div class="card continue" id="continueCard"><div class="ct"><b>${cont.realm.emoji} ${cont.realm.level} ${WR.esc(cont.skill.name)} <span style="font-weight:700">(lesson ${cont.lesson})</span></b><small>${WR.esc(cont.goal)}</small></div><button class="btn mint" id="continueBtn">▶ Continue</button></div>` : ""}
     <div class="grid g2" style="margin-top:14px;align-items:start">
       <div><h2 class="map-h">🗺️ The Realm Map</h2><div class="map"><div class="map-path"></div>${WR.realms.map((r, i) => {
         const un = WR.isUnlocked(i), pr = WR.realmProgress(r.id);
         return `<div class="card realm-node ${un ? "" : "locked"}" data-r="${r.id}" data-i="${i}">${WR.img(r.bg, "thumb", "", true)}
-          <div><div><span class="lvl-badge">${r.level}</span><b>${r.emoji} ${r.name}</b>${un ? "" : " 🔒"}</div><div class="muted" style="font-size:.85rem;font-weight:700">${r.modeName}</div>
+          <div><div><span class="lvl-badge">${r.level}</span><b>${r.emoji} ${r.name}${un ? "" : " 🔒"}</b></div><div class="muted" style="font-size:.85rem;font-weight:700">${r.modeName}</div>
           <div class="prog"><i style="width:${pr.passed / 4 * 100}%"></i></div><div class="muted" style="font-size:.75rem;font-weight:800">${pr.passed}/4 skills passed</div></div>
           </div>`; }).join("")}</div>
       ${WR.phonicsNode ? WR.phonicsNode() : ""}

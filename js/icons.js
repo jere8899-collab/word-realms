@@ -77,9 +77,30 @@ function textNode(n) {
   const v = n.nodeValue; RE.lastIndex = 0; if (!RE.test(v)) return;
   const p = n.parentNode; if (!p || skipped(p)) return;
   if (p.namespaceURI === SVGNS) { if (p.nodeName.toLowerCase() === "text") svgText(p); return; }
-  const frag = document.createDocumentFragment(); let last = 0; RE.lastIndex = 0; let m;
-  while ((m = RE.exec(v))) { if (m.index > last) frag.appendChild(document.createTextNode(v.slice(last, m.index))); frag.appendChild(imgEl(m[0])); last = m.index + m[0].length; }
-  if (last < v.length) frag.appendChild(document.createTextNode(v.slice(last).replace(/^\uFE0F/, "")));
+  // R11: an icon never wraps onto a line by itself. A word holding icons ("🔮→🌙→💎") stays in one piece, and an icon
+  // standing alone is glued to its neighbour word: the one before it at the end ("Magic Mirror 🪞"), else the one after
+  // it ("🔒 Pass 3 …"). Glued pieces go in <span class="nowrap">; the text itself (and WR.iconText) is unchanged.
+  const toks = v.split(/(\s+)/), W = [];   // toks: even = words (may be ""), odd = runs of spaces
+  for (let i = 0; i < toks.length; i += 2) if (toks[i]) W.push(i);
+  const has = s => (RE.lastIndex = 0, RE.test(s)), only = s => (RE.lastIndex = 0, !s.replace(RE, "").replace(/[\u200D\uFE0F]/g, ""));
+  const glue = new Map();   // first token index -> last token index of a nowrap group
+  W.forEach((i, k) => {
+    if (!has(toks[i])) return;
+    let a = i, b = i;
+    if (only(toks[i])) { if (W.length < 2) return; if (k === W.length - 1) a = W[k - 1]; else b = W[k + 1]; }   // a lone icon word needs no span
+    for (const [s, e] of glue) if (e >= a) { a = Math.min(a, s); glue.delete(s); b = Math.max(b, e); }   // merge overlaps
+    glue.set(a, b);
+  });
+  // inside a flex/grid box each loose piece would become its own layout item, so the pieces share one plain <span>
+  const flexy = /flex|grid/.test(getComputedStyle(p).display) && toks.some(s => s && !only(s));
+  const frag = flexy ? document.createElement("span") : document.createDocumentFragment();
+  const put = (to, s) => { let last = 0, m; RE.lastIndex = 0;
+    while ((m = RE.exec(s))) { if (m.index > last) to.appendChild(document.createTextNode(s.slice(last, m.index))); to.appendChild(imgEl(m[0])); last = m.index + m[0].length; }
+    if (last < s.length) to.appendChild(document.createTextNode(s.slice(last).replace(/^\uFE0F/, ""))); };
+  for (let i = 0; i < toks.length; i++) {
+    if (glue.has(i)) { const e = glue.get(i), sp = document.createElement("span"); sp.className = "nowrap"; put(sp, toks.slice(i, e + 1).join("")); frag.appendChild(sp); i = e; }
+    else if (toks[i]) put(frag, toks[i]);
+  }
   p.replaceChild(frag, n);
 }
 WR.iconify = root => {

@@ -17,11 +17,11 @@ const wrap = (obj, name, before) => { const f = obj && obj[name]; if (typeof f !
 if (WR.Math) ["startLesson", "startDojo"].forEach(n => wrap(WR.Math, n, () => WR.setFocus(true)));
 // screen changes → focus off (unless the screen itself is a focus screen), old confetti/toasts cleared
 const go0 = WR.go;
-WR.go = (screen, arg) => { WR.setFocus(isFocus(screen)); WR.clearFx && WR.clearFx(true); WR.starNote && WR.starNote(); const r = go0(screen, arg); WR.Rewards && WR.Rewards.check(); return r; };   // a new screen drops any pending "fewer stars" note
+WR.go = (screen, arg) => { if (screen !== "home") WR._welcome = null; WR.setFocus(isFocus(screen)); WR.clearFx && WR.clearFx(true); WR.starNote && WR.starNote(); const r = go0(screen, arg); WR.Rewards && WR.Rewards.check(); WR.flushToasts && WR.flushToasts(); return r; };   // a new screen drops any pending "fewer stars" note
 
 /* ---------- views ---------- */
 const view0 = WR.view;
-WR.view = html => { WR.clearFx && WR.clearFx(false); view0(html); WR.layoutLesson(); afterView(); };
+WR.view = html => { WR.clearFx && WR.clearFx(false); view0(html); WR.layoutLesson(); afterView(); WR.flushToasts && setTimeout(WR.flushToasts, 0); };   // R7: held pop-ups show on the next screen without a question
 // merge the old "card hud" + "card side" into one slim row inside .lesson (works for lessons, speaking and maths)
 WR.layoutLesson = () => {
   const main = WR.$("#main"); if (!main) return;
@@ -30,7 +30,7 @@ WR.layoutLesson = () => {
   if (!hud || !lesson || !lesson.classList.contains("lesson")) return;
   const bar = document.createElement("div"); bar.className = "card lbar";
   hud.classList.remove("card"); bar.appendChild(hud);
-  const st = lesson.querySelector("#lstats"); if (st) { st.classList.remove("muted"); st.classList.add("lchip"); st.removeAttribute("style"); bar.appendChild(st); }
+  const st = lesson.querySelector("#lstats"); if (st) bar.appendChild(st);
   lesson.insertBefore(bar, lesson.firstChild); lesson.classList.add("lhud");
 };
 function afterView() {

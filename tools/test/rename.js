@@ -21,7 +21,8 @@ const api = async (path, opt = {}) => { const r = await fetch(SB + path, opt); l
 const tokenFor = async (name, pass) => (await api('/auth/v1/token?grant_type=password', { method: 'POST', headers: H(), body: JSON.stringify({ email: name + DOM, password: pass }) }));
 const saved = p => p.evaluate(() => JSON.parse(localStorage.getItem('wordRealms.save.v1')));
 async function device(browser, s) {
-  const ctx = await browser.newContext(PHONE), page = await ctx.newPage(); page.errors = [];
+  const ctx = await browser.newContext(PHONE); await ctx.addInitScript(() => { window.__WR_TEST = { holdMs: 0, pinOffer: false }; });   // R4: gate test hooks (never on the live site)
+  const page = await ctx.newPage(); page.errors = [];
   page.on('pageerror', e => page.errors.push(e.message));
   page.on('console', m => { if (m.type() === 'error' && !/Failed to load resource|net::ERR|status of 4\d\d/.test(m.text())) page.errors.push(m.text()); });
   await page.goto(URL);

@@ -18,6 +18,7 @@ const MOB = { deviceScaleFactor: 2, isMobile: true, hasTouch: true };
   for (const vp of [{ width: 375, height: 667 }, { width: 320, height: 658 }]) {
     const tag = vp.width + 'x' + vp.height;
     const ctx = await browser.newContext({ ...MOB, viewport: vp });
+    await ctx.addInitScript(() => { window.__WR_TEST = { holdMs: 0, pinOffer: false }; });   // R4: gate test hooks (never on the live site)
     await ctx.route(/supabase\.co|cdn\.jsdelivr\.net/, r => r.abort());
     const page = await ctx.newPage(); const errs = [];
     page.on('pageerror', e => errs.push(e.message));
@@ -54,10 +55,24 @@ const MOB = { deviceScaleFactor: 2, isMobile: true, hasTouch: true };
     await page.waitForSelector('.gu-item .cash');
     ok(await page.evaluate(() => /\$|S\$|\d/.test(document.querySelector('.gu-item .cash').textContent)), `${tag}: prices appear only behind the gate`);
     if (process.env.SHOT && vp.width === 375) await page.screenshot({ path: OUT + 'parentgate_03_grownups.png' });
-    await page.click('.gu-item .cash'); await page.waitForSelector('#demo');
-    ok((await page.evaluate(() => window.__buys)).length === 1, `${tag}: the cash button reaches the PaymentHook stub after the gate`);
+    /* R4: no PIN yet → a cash button asks the grown-up to set one first; then cash takes ONLY the PIN, every time */
+    await page.click('.gu-item .cash'); await page.waitForSelector('#pinSetup');
+    ok((await page.evaluate(() => window.__buys)).length === 0, `${tag}: with no PIN, a cash button asks for a PIN to be set first (nothing reaches the stub)`);
+    if (process.env.SHOT && vp.width === 375) { await page.waitForTimeout(400); await page.screenshot({ path: OUT + 'parentgate_05_pin_setup.png' }); }
+    await page.fill('#psPin', '1357'); await page.fill('#psPin2', '1375'); await page.click('#psSet');
+    ok(/match/.test(await page.textContent('#psErr')), `${tag}: two different PINs are refused`);
+    await page.fill('#psPin2', '1357'); await page.click('#psSet'); await page.waitForSelector('#demo');
+    ok((await page.evaluate(() => window.__buys)).length === 1, `${tag}: after the PIN is set the cash button reaches the PaymentHook stub`);
     await page.click('#demo'); await page.waitForTimeout(250);
-    ok(await page.evaluate(() => WR.state.owned.length === 1), `${tag}: demo unlock works inside the 5-minute pass (no second question)`);
+    ok(await page.evaluate(() => WR.state.owned.length === 1), `${tag}: demo unlock works from the PIN-checked checkout`);
+    await page.click('#grownups'); await page.waitForSelector('.gu-item .cash');
+    await page.click('.gu-item .cash'); await page.waitForSelector('.pgate');
+    ok(await page.evaluate(() => /PIN/.test(document.getElementById('pgQ').textContent)), `${tag}: a cash button asks for the PIN even inside the 5-minute pass`);
+    await type('9999'); await page.waitForTimeout(300);
+    ok((await page.evaluate(() => window.__buys)).length === 1 && !!(await page.$('.pgate')), `${tag}: a wrong PIN buys nothing`);
+    await type('1357'); await page.waitForSelector('#demo');
+    ok((await page.evaluate(() => window.__buys)).length === 2, `${tag}: the right PIN reaches the stub`);
+    await page.click('#cl'); await page.waitForTimeout(150);
     /* 5 minutes later the gate asks again */
     await page.evaluate(() => { WR.parentGate._skew += 5 * 60 * 1000 + 1000; });
     await page.click('#grownups'); await page.waitForTimeout(200);
@@ -67,12 +82,12 @@ const MOB = { deviceScaleFactor: 2, isMobile: true, hasTouch: true };
     /* teacher mode is behind the gate (Settings → 👪 Grown-ups) */
     ok(!(await page.evaluate(() => { WR.go('home'); document.getElementById('setBtn').click(); return !!document.getElementById('ul'); })), `${tag}: Teacher mode is no longer a plain switch in Settings`);
     await page.click('#guBtn'); await page.waitForSelector('.pgate');
-    await type(await page.evaluate(() => WR.parentGate._answer())); await page.click('#pgOk'); await page.waitForSelector('#guUl');
+    { const a = await page.evaluate(() => WR.parentGate._answer()); await type(a || '1357'); if (a) await page.click('#pgOk'); } await page.waitForSelector('#guUl');   // the PIN set above now answers every gate
     await page.click('#guUl'); ok(await page.evaluate(() => WR.state.settings.unlockAll === true), `${tag}: Teacher mode switches on after the gate`);
     /* PIN: set, then the gate asks for the PIN; wrong PIN refused; right PIN passes; saved hashed */
     await page.fill('#guPin', '2468'); await page.click('#guPinSet'); await page.waitForSelector('#guPinOff');
     const ph = await page.evaluate(() => JSON.parse(localStorage.getItem('wordRealms.save.v1')).parent);
-    ok(ph && /^[0-9a-f]{64}$/.test(ph.pinHash) && !JSON.stringify(ph).includes('2468'), `${tag}: PIN saved as a SHA-256 hash in the save (synced with cloud saves)`);
+    ok(ph && /^[0-9a-f]{64}$/.test(ph.pinHash) && /^[0-9a-f]{24}$/.test(ph.salt) && !JSON.stringify(ph).includes('2468'), `${tag}: PIN saved as a salted SHA-256 hash in the save (synced with cloud saves)`);
     await page.click('#guDone'); await page.evaluate(() => { WR.parentGate.forget(); WR.go('shop'); });
     await page.click('#grownups'); await page.waitForSelector('.pgate');
     ok(await page.evaluate(() => /PIN/.test(document.getElementById('pgQ').textContent) && WR.parentGate._answer() === null), `${tag}: with a PIN set, the gate asks for the PIN`);

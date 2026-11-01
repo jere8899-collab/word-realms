@@ -131,9 +131,9 @@ WR.screens.shop = () => {
         <p class="muted" style="font-weight:700">Real payments aren't connected yet. This button calls the <code>PaymentHook</code> stub in <code>js/payments.js</code>, ready to wire to Stripe Checkout later. No money is charged.</p>
         <div class="row" style="justify-content:center">${res.status === "demo" ? `<button class="btn peach" id="demo">✨ Demo unlock (no charge)</button>` : ""}<button class="btn ghost" id="cl">Close</button></div>`, (bg, close) => {
         bg.querySelector("#cl").onclick = close;
-        const d = bg.querySelector("#demo"); if (d) d.onclick = () => WR.parentGate(() => { WR.grantItem(it.id); close(); WR.toast(`${it.icon} Demo unlocked`); WR.screens.shop(); }, { why: "Unlocking a special item." });
+        const d = bg.querySelector("#demo"); if (d) d.onclick = () => { WR.grantItem(it.id); close(); WR.toast(`${it.icon} Demo unlocked`); WR.screens.shop(); };   // this checkout only opens after the PIN (R4)
       });
-    }, { why: "Special items are bought by a grown-up." });
+    }, { why: "Special items are bought by a grown-up.", money: true });
   }
   function equip(id, slot, toggle) {
     if (slot === "petskin") s.pet.skin = toggle && s.pet.skin === id ? null : id;

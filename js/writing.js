@@ -388,7 +388,7 @@ function insertPhrase(ta, ph) {
 }
 function check() {
   const p = Q.p, text = Q.text || "";
-  if (!words(text).length) { WR.toast("✍️ Write something first!"); return; }
+  if (!words(text).length) { WR.toast("✍️ Write something first!", 1800, { now: true }); return; }
   const r = score(p, text), w = W(), prev = w.best[p.id], first = !prev, s = WR.state;
   const gain = Math.max(0, r.crowns - (prev ? prev.crowns : 0));
   w.checks++;

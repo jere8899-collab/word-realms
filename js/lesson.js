@@ -153,7 +153,7 @@ function render() {
     <div class="card hud">${hud()}</div>
     <div class="lesson fade-in"><div class="card qcard">${qBody(it)}</div>
       <div class="card side"><div class="petbox" id="lpet">${WR.petHTML()}</div><div class="bubble" id="lbubble">${WR.esc(L.i === 0 ? "Let's do this together! ✨" : WR.petMood())}</div>
-      <div class="muted" id="lstats" style="font-size:.85rem;font-weight:800">⭐ ${L.starsEarned} earned · 🔥 combo ${L.combo}</div></div></div>`);
+      <div class="lstats" id="lstats">${WR.statsHTML([["⭐", L.starsEarned, "earned"], ["🔥", L.combo, "combo"]])}</div></div></div>`);
   WR.$("#quitBtn").onclick = () => { clearTimer(); WR.Voice.stop(); L.onQuit ? L.onQuit() : L.review ? WR.go("review") : WR.go("realm", L.realm.id); };
   if (it.type === "order") bindOrder(it);
   else if (it.type === "spell") bindSpell(it);
@@ -172,6 +172,9 @@ function storySheet(p) {
 }
 // ⏱️ T2/T11: the boss timer only starts once the question's options are on screen and, for listening, after the audio has
 // played to the end once. Until then the bar is shown dimmed ("waiting").
+// R8: hidden app → the running timer stops where it is; back again → "Ready? 3-2-1", then it carries on
+WR.pauseable(() => { if (L && timerId && !L.answered) { clearInterval(timerId); timerId = null; L._paused = L._timeIt; } },
+  () => { const it = L && L._paused; if (!it) return; WR.readyGo(() => { if (!L || L._paused !== it) return; L._paused = null; if (!L.answered && L.items[L.i] === it) startTimer(it); }); });
 function armTimer(it) {
   clearTimer(); const me = L, bar = document.querySelector(".timer"); if (bar) bar.classList.add("waiting");
   let seen = false, heard = it.type !== "listen" || !Speech.supported;
@@ -269,9 +272,11 @@ function bindDictate(it) {
 }
 function startTimer(it) {
   clearTimer();
-  const total = MODE_TIME[it.passage ? "reading" : it.type] || 25; let left = total;
+  const total = MODE_TIME[it.passage ? "reading" : it.type] || 25;
+  if (L._timeIt !== it) { L._timeIt = it; L._left = total; }      // R8: the time left lives in L, so a pause can resume it
   timerId = setInterval(() => {
-    left -= 0.25; const bar = WR.$("#timerBar");
+    if (L._paused) return;
+    L._left -= 0.25; const left = L._left, bar = WR.$("#timerBar");
     if (bar) bar.style.width = Math.max(0, left / total * 100) + "%";
     if (left <= 0) { clearTimer(); if (!L.answered) { document.querySelectorAll(".opt").forEach(b => { if (it.options[+b.dataset.k] === it.correct) b.classList.add("right"); b.disabled = true; });
       document.querySelectorAll(".mword,.gap,.tile,#checkBtn,#dictIn").forEach(b => b.disabled = true);
@@ -317,8 +322,8 @@ function answer(ok, it, extra = "") {
   const hudEl = document.querySelector(".hud"); if (hudEl) hudEl.innerHTML = hud();
   if (ok && WR.$("#bossFace")) WR.$("#bossFace").classList.add("hit");
   petReact(ok);
-  const ls = WR.$("#lstats"); if (ls) ls.textContent = `⭐ ${L.starsEarned} earned · 🔥 combo ${L.combo}`;
-  const transcript = it.say ? `<div class="transcript">🎧 “${WR.sayHTML(it.say)}” <button class="btn ghost small" id="replay">🔁 Replay</button></div>` : "";
+  WR.setStats([["⭐", L.starsEarned, "earned"], ["🔥", L.combo, "combo"]]);
+  const transcript = it.say ? `<div class="transcript"><div>🎧 “${WR.sayHTML(it.say)}”</div><button class="btn ghost small" id="replay">🔁 Replay</button></div>` : "";
   const lost = (L.mode === "boss" || L.mode === "dragon") && L.hearts === 0;
   const last = L.i >= L.items.length - 1 || lost || ((L.mode === "boss" || L.mode === "dragon") && L.bossHP <= 0);
   WR.$("#explain").innerHTML = `<div class="explain ${ok ? "good" : "bad"}">${ok ? "✅ Correct!" : "💭 Not quite."} ${extra}${whyNot(ok, it)} <div class="why-rule" style="font-weight:700;margin-top:4px">💡 ${WR.esc(it.explain)}</div>${transcript}</div>

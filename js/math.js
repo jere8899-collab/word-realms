@@ -180,7 +180,7 @@ function render() {
       ${q.kind === "mcq" ? MW.optsHTML(q) : MW.inputHTML(q, L.grade)}
       <div id="mexplain"></div></div>
       <div class="card side"><div class="petbox" id="lpet">${WR.petHTML()}</div><div class="bubble" id="lbubble">${esc(L.i === 0 ? "Let's solve it together! ✨" : WR.petMood())}</div>
-      <div class="muted" id="lstats" style="font-size:.85rem;font-weight:800">⭐ ${L.starsEarned} earned · 🔥 combo ${L.combo}</div><button class="btn ghost small" id="hintBtn" style="margin-top:6px">💡 Hint</button>${L.viz ? `<button class="btn ghost small" id="vizBtn" style="margin-top:6px">${vizLabel()}</button>` : ""}</div></div>`);
+      <div class="lstats" id="lstats">${WR.statsHTML([["⭐", L.starsEarned, "earned"], ["🔥", L.combo, "combo"]])}</div><button class="btn ghost small" id="hintBtn" style="margin-top:6px">💡 Hint</button>${L.viz ? `<button class="btn ghost small" id="vizBtn" style="margin-top:6px">${vizLabel()}</button>` : ""}</div></div>`);
   const vb = WR.$("#vizBtn"); if (vb) vb.onclick = () => { if (L.vizOpen && !L.done) { L.vizOpen = false; WR.$("#mviz").innerHTML = ""; vb.textContent = vizLabel(); } else showViz(); };
   WR.$("#quitBtn").onclick = () => { const o = L; L = null; o.challenge ? WR.go("dojo") : WR.go("math"); };
   WR.$("#hintBtn").onclick = () => { if (L.done) return; showMsg("hint", `💡 ${MW.html(q.hint)}`); };
@@ -263,8 +263,8 @@ const BAD_INPUT = { time: "Type the time like 3:30 🕰️", time24: "Type 24-ho
 function submit(val, btn) {
   if (!L || L.done) return;
   const q = L.items[L.i], res = MG.check(q, val);
-  if (res.empty) return WR.toast("Type your answer first ✏️");
-  if (res.bad) return WR.toast(BAD_INPUT[q.kind] || BAD_INPUT.num, 2400);
+  if (res.empty) return WR.toast("Type your answer first ✏️", 1800, { now: true });
+  if (res.bad) return WR.toast(BAD_INPUT[q.kind] || BAD_INPUT.num, 2400, { now: true });
   const s = WR.state, m = MW.st(); L.tries++;
   if (res.ok) {
     L.done = true; const pts = L.tries === 1 ? 1 : 0.5; L.pts += pts; L.res[L.i] = pts; L.correct++; WR.countAnswer(true, "m:" + (q.topic || L.key)); m.correct = (m.correct || 0) + 1; m.answered = (m.answered || 0) + 1;
@@ -292,7 +292,7 @@ function submit(val, btn) {
   WR.save(); WR.renderTop(); petReact(res.ok);
   const h = document.querySelector(".hud"); if (h && L.done) { const i = L.i; L.i++; h.innerHTML = hud(); L.i = i; }
   const gs = WR.$("#gstrip"); if (gs && L.done) { gs.innerHTML = guardMeter(); if (res.ok) WR.$("#bossFace").classList.add("hit"); }
-  const ls = WR.$("#lstats"); if (ls) ls.textContent = `⭐ ${L.starsEarned} earned · 🔥 combo ${L.combo}`;
+  WR.setStats([["⭐", L.starsEarned, "earned"], ["🔥", L.combo, "combo"]]);
   const nb = WR.$("#mnext"); if (nb) { WR.tapOnce(nb, () => { if (!L) return; if (L.i >= L.items.length - 1) finish(); else { L.i++; render(); } }); nb.scrollIntoView({ behavior: "smooth", block: "nearest" }); if (!coarse()) nb.focus({ preventScroll: true }); }
 }
 const nextBtn = ok => `<div class="row" style="margin-top:10px;justify-content:flex-end"><button class="btn ${ok ? "mint" : ""}" id="mnext">${L.i >= L.items.length - 1 ? "See results ✨" : "Next →"}</button></div>`;

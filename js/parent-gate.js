@@ -15,24 +15,41 @@ let passUntil = 0, expected = null;
 /* R3: the lock and the wrong-try count live in the save (state.parent.lock = { until, wrong, n }), so a reload, a reopened app
    or another cloud device still shows the lock; n (lock-outs so far) resets after a grown-up passes. */
 const lock = () => { const p = WR.state.parent = WR.state.parent || {}; return p.lock = Object.assign({ until: 0, wrong: 0, n: 0 }, p.lock); };
-const now = () => Date.now() + (gate._skew || 0);           // tests move the clock with WR.parentGate._skew
+const now = () => Date.now() + (gate._skew || 0);           // tests move the clock with WR.parentGate._skew (test builds only)
 const ONES = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
 const TENS = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
 const words = n => n < 20 ? ONES[n] : n < 100 ? TENS[Math.floor(n / 10)] + (n % 10 ? "-" + ONES[n % 10] : "") : words(Math.floor(n / 100)) + " hundred" + (n % 100 ? " and " + words(n % 100) : "");
 const rnd = (a, b) => a + Math.floor(Math.random() * (b - a + 1));
+/* R4: questions the game's own players aren't drilled on (it teaches 2-digit number words and times tables): a 3-digit
+   number in words, or "type the 3rd, 1st and 4th digits of 7 5 2 9"; then ✓ must be pressed and held for 2 seconds. */
+const ORD = ["1st", "2nd", "3rd", "4th"];
 function question() {
-  if (Math.random() < 0.5) { const n = rnd(21, 99); return { html: `Type the number <em>${words(n)}</em> using digits.`, ans: String(n) }; }
-  const a = rnd(12, 19), b = rnd(3, 9); return { html: `What is <em>${words(a)} times ${words(b)}</em>?`, ans: String(a * b) };
+  if (Math.random() < 0.5) { const n = rnd(101, 999); return { html: `Type the number <em>${words(n)}</em> using digits.`, ans: String(n) }; }
+  const d = [rnd(1, 9), rnd(1, 9), rnd(1, 9), rnd(1, 9)], pick = WR.shuffle([0, 1, 2, 3]).slice(0, 3);
+  return { html: `Type the <em>${ORD[pick[0]]}, ${ORD[pick[1]]} and ${ORD[pick[2]]}</em> digits of <b class="pg-digits">${d.join(" ")}</b>`, ans: pick.map(i => d[i]).join("") };
 }
-const hash = async pin => {
+const TEST = window.__WR_TEST || null;                      // test-only knobs, never set on the live site
+const HOLD_MS = TEST && TEST.holdMs != null ? TEST.holdMs : 2000;
+/* the PIN is hashed with a random per-save salt (state.parent.salt); an older unsalted hash still works once and is upgraded */
+const hash = async (pin, salt) => {
   if (!(window.crypto && crypto.subtle && window.TextEncoder)) throw new Error("This browser can't keep a PIN safely here.");
-  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode("wordRealms.parentPin:" + pin));
+  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode("wordRealms.parentPin:" + (salt ? salt + ":" : "") + pin));
   return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, "0")).join("");
+};
+const checkPin = async pin => {
+  const P = WR.state.parent || {};
+  if ((await hash(pin, P.salt).catch(() => "")) !== P.pinHash) return false;
+  if (!P.salt) await gate.setPin(pin);                       // upgrade an old unsalted PIN
+  return true;
 };
 const hasPin = () => !!(WR.state.parent && WR.state.parent.pinHash);
 
+/* R4: opts.money (cash buttons, demo unlock) accepts ONLY the PIN, every time; with no PIN yet, the grown-up passes the
+   question gate and sets one first ("Skip" keeps cash locked). The first question pass also offers to set a PIN, once. */
+const pinOffer = () => !hasPin() && !(WR.state.parent && WR.state.parent.pinAsked) && !(TEST && TEST.pinOffer === false);
 function gate(onPass, opts = {}) {
-  if (now() < passUntil) { onPass && onPass(); return null; }
+  if (opts.money && !hasPin()) return gate(() => pinSetup({ money: true, done: onPass, skip: opts.onCancel }), { why: opts.why });
+  if (!opts.money && now() < passUntil) { onPass && onPass(); return null; }
   const pinMode = hasPin(); let q = pinMode ? null : question(); expected = q && q.ans;
   let val = "";
   const bg = WR.modal(`<div class="pgate" id="pgate"><div class="lock">🔒</div><h2>Grown-ups only</h2>
@@ -40,7 +57,8 @@ function gate(onPass, opts = {}) {
     <div class="pq" id="pgQ">${pinMode ? "Enter the grown-up PIN" : q.html}</div>
     <div class="${pinMode ? "pin-dots" : "pans"}" id="pgAns" aria-live="polite"></div>
     <div class="perr" id="pgErr" role="alert"></div>
-    <div class="pad">${[1, 2, 3, 4, 5, 6, 7, 8, 9].map(d => `<button type="button" data-d="${d}">${d}</button>`).join("")}<button type="button" data-d="del" aria-label="Delete">⌫</button><button type="button" data-d="0">0</button><button type="button" id="pgOk" aria-label="OK">✓</button></div>
+    <div class="pad">${[1, 2, 3, 4, 5, 6, 7, 8, 9].map(d => `<button type="button" data-d="${d}">${d}</button>`).join("")}<button type="button" data-d="del" aria-label="Delete">⌫</button><button type="button" data-d="0">0</button><button type="button" id="pgOk" aria-label="OK" class="${pinMode ? "" : "hold"}" style="--hold:${HOLD_MS}ms">✓</button></div>
+    ${pinMode ? "" : `<p class="pg-holdtip muted" id="pgHold">Then press and hold ✓ for 2 seconds</p>`}
     <div class="row"><button class="btn ghost small" id="pgClose">Not now</button></div></div>`, (bg, close) => {
     const box = bg.querySelector(".pgate"), ans = bg.querySelector("#pgAns"), err = bg.querySelector("#pgErr");
     const paint = () => { ans.textContent = pinMode ? "●".repeat(val.length) + "○".repeat(Math.max(0, 4 - val.length)) : val; };
@@ -55,8 +73,9 @@ function gate(onPass, opts = {}) {
     const submit = async () => {
       if (lockPaint() || !val) return;
       let good = false;
-      if (pinMode) good = (await hash(val).catch(() => "")) === WR.state.parent.pinHash; else good = val === expected;
-      if (good) { const lk = lock(); if (lk.wrong || lk.n || lk.until) { Object.assign(lk, { wrong: 0, n: 0, until: 0 }); WR.save(); } passUntil = now() + PASS_MS; expected = null; close(); WR.sfx && WR.sfx("tap"); onPass && onPass(); return; }
+      if (pinMode) good = await checkPin(val); else good = val === expected;
+      if (good) { const lk = lock(); if (lk.wrong || lk.n || lk.until) { Object.assign(lk, { wrong: 0, n: 0, until: 0 }); WR.save(); } passUntil = now() + PASS_MS; expected = null; close(); WR.sfx && WR.sfx("tap");
+        if (!pinMode && !opts.money && pinOffer()) pinSetup({ done: onPass, skip: onPass }); else onPass && onPass(); return; }
       const lk = lock(); lk.wrong++; val = ""; paint();
       if (lk.wrong >= TRIES) { lk.wrong = 0; lk.until = now() + LOCKS[Math.min(lk.n, LOCKS.length - 1)]; lk.n++; WR.save(); startLock(); }
       else { WR.save(); err.textContent = `Not quite. ${TRIES - lk.wrong} ${TRIES - lk.wrong === 1 ? "try" : "tries"} left.`; }
@@ -67,24 +86,55 @@ function gate(onPass, opts = {}) {
       if (d === "del") val = val.slice(0, -1); else if (val.length < (pinMode ? 4 : 4)) val += d;
       paint(); if (pinMode && val.length === 4) submit();
     });
-    bg.querySelector("#pgOk").onclick = submit;
+    const ok = bg.querySelector("#pgOk");
+    if (pinMode || !HOLD_MS) ok.onclick = submit;
+    else {                                                    // press and hold ✓ (pointer or Enter) for HOLD_MS
+      let ht = null;
+      const start = e => { if (e) e.preventDefault(); if (ht || lockPaint() || !val) return; ok.classList.add("holding"); ht = setTimeout(() => { ht = null; ok.classList.remove("holding"); submit(); }, HOLD_MS); };
+      const stop = () => { if (!ht) return; clearTimeout(ht); ht = null; ok.classList.remove("holding"); err.textContent = "Keep holding ✓ for 2 seconds ⏳"; };
+      ok.addEventListener("pointerdown", start); ["pointerup", "pointerleave", "pointercancel"].forEach(n => ok.addEventListener(n, stop));
+      ok.addEventListener("contextmenu", e => e.preventDefault());
+      bg._holdStart = start; bg._holdStop = stop;
+    }
     bg.querySelector("#pgClose").onclick = () => { close(); opts.onCancel && opts.onCancel(); };
-    bg._keys = e => { if (!document.body.contains(box)) return document.removeEventListener("keydown", bg._keys); if (/^[0-9]$/.test(e.key)) bg.querySelector(`[data-d="${e.key}"]`).click(); else if (e.key === "Backspace") bg.querySelector('[data-d="del"]').click(); else if (e.key === "Enter") submit(); };
+    bg._keys = e => { if (!document.body.contains(box)) return document.removeEventListener("keydown", bg._keys); if (/^[0-9]$/.test(e.key)) bg.querySelector(`[data-d="${e.key}"]`).click(); else if (e.key === "Backspace") bg.querySelector('[data-d="del"]').click(); else if (e.key === "Enter") { if (bg._holdStart) { if (!e.repeat) bg._holdStart(); } else submit(); } };
+    bg._keyup = e => { if (e.key === "Enter" && bg._holdStop) bg._holdStop(); if (!document.body.contains(box)) document.removeEventListener("keyup", bg._keyup); };
+    document.addEventListener("keyup", bg._keyup);
     document.addEventListener("keydown", bg._keys);
     paint();
   });
   return bg;
+}
+function pinSetup({ money, done, skip }) {
+  WR.state.parent = Object.assign({}, WR.state.parent, { pinAsked: true }); WR.save();
+  WR.modal(`<div class="pin-setup" id="pinSetup"><div class="lock">🔢</div><h2>Set a grown-up PIN</h2>
+    <p style="font-weight:700;margin-top:0">${money ? "Cash items need a grown-up PIN." : "A 4-digit PIN keeps cash items safe."} Children can work out sums, but not your PIN.</p>
+    <input class="input" id="psPin" inputmode="numeric" pattern="[0-9]*" maxlength="4" type="password" placeholder="4 digits" autocomplete="off" style="max-width:150px;text-align:center;letter-spacing:8px;margin:0 auto;display:block">
+    <input class="input" id="psPin2" inputmode="numeric" pattern="[0-9]*" maxlength="4" type="password" placeholder="again" autocomplete="off" style="max-width:150px;text-align:center;letter-spacing:8px;margin:8px auto 0;display:block">
+    <div class="cc-err" id="psErr" role="alert"></div>
+    <p class="muted" style="font-size:.85rem;font-weight:700">${money ? "" : "You can skip this, but cash items stay locked until a PIN is set. "}Change it any time in ⚙️ → 👪 Grown-ups.</p>
+    <div class="row" style="justify-content:center"><button class="btn ghost small" id="psSkip">${money ? "Not now" : "Skip"}</button><button class="btn mint small" id="psSet">Save PIN</button></div></div>`, (bg, close) => {
+    const err = bg.querySelector("#psErr");
+    bg.querySelector("#psSkip").onclick = () => { close(); if (money) WR.toast("🔒 Cash items stay locked until a grown-up PIN is set", 2400); skip && skip(); };
+    bg.querySelector("#psSet").onclick = async () => {
+      const a = bg.querySelector("#psPin").value.trim(), b = bg.querySelector("#psPin2").value.trim();
+      if (!/^\d{4}$/.test(a)) return err.textContent = "The PIN needs exactly 4 digits.";
+      if (a !== b) return err.textContent = "The two PINs don't match.";
+      try { await gate.setPin(a); } catch (x) { return err.textContent = x.message; }
+      close(); WR.toast("🔢 Grown-up PIN saved"); done && done();
+    };
+  });
 }
 gate.isOpen = () => now() < passUntil;
 gate.forget = () => { passUntil = 0; };
 gate.hasPin = hasPin;
 gate.setPin = async pin => {
   if (!/^\d{4}$/.test(pin)) throw new Error("The PIN needs exactly 4 digits.");
-  WR.state.parent = Object.assign({}, WR.state.parent, { pinHash: await hash(pin), set: Date.now() }); WR.save();
+  const salt = [...crypto.getRandomValues(new Uint8Array(12))].map(b => b.toString(16).padStart(2, "0")).join("");
+  WR.state.parent = Object.assign({}, WR.state.parent, { pinHash: await hash(pin, salt), salt, set: Date.now() }); WR.save();
 };
-gate.clearPin = () => { if (WR.state.parent) delete WR.state.parent.pinHash; WR.save(); };
-gate._answer = () => expected;                              // test hook (like WR._dbg)
-gate._skew = 0;
+gate.clearPin = () => { if (WR.state.parent) { delete WR.state.parent.pinHash; delete WR.state.parent.salt; } WR.save(); };
+if (TEST) { gate._answer = () => expected; gate._skew = 0; }   // R4: test hooks exist only when a test sets window.__WR_TEST
 WR.parentGate = gate;
 
 /* ---------- ⚙️ Settings → 👪 Grown-ups: PIN, Teacher mode ---------- */
@@ -94,11 +144,11 @@ WR.openGrownups = () => gate(() => {
     <p class="muted" style="font-weight:700;margin-top:0">These settings stay open for 5 minutes, then the grown-up check comes back.</p>
     ${WR.screens.report ? `<button class="btn mint gu-report" id="guReport">📊 Learning Report<small>days played, skills, weak spots &amp; tips</small></button>` : ""}
     <label class="set-row"><span>🗝️ Teacher mode (open every realm)</span><input type="checkbox" id="guUl" ${s.settings.unlockAll ? "checked" : ""}></label>
-    <div class="set-row" style="cursor:default"><span>🔢 Grown-up PIN <small class="muted" id="guPinState">${hasPin() ? "· on" : "· off (a sum question is used)"}</small></span></div>
+    <div class="set-row" style="cursor:default"><span>🔢 Grown-up PIN <small class="muted" id="guPinState">${hasPin() ? "· on" : "· off (cash items stay locked)"}</small></span></div>
     <div class="row" style="justify-content:center"><input class="input" id="guPin" inputmode="numeric" pattern="[0-9]*" maxlength="4" placeholder="4 digits" style="max-width:130px;text-align:center;letter-spacing:6px" autocomplete="off">
       <button class="btn small mint" id="guPinSet">${hasPin() ? "Change PIN" : "Set PIN"}</button>${hasPin() ? '<button class="btn small ghost" id="guPinOff">Remove PIN</button>' : ""}</div>
     <div class="cc-err" id="guErr" role="alert"></div>
-    <p class="set-note muted">The PIN is saved scrambled (SHA-256) with this adventure and syncs with the Cloud Castle. Cash items in the Shop, Teacher mode and "Log out &amp; clear device" all ask for it.</p>
+    <p class="set-note muted">The PIN is saved scrambled (salted SHA-256) with this adventure and syncs with the Cloud Castle. Cash items in the Shop accept only the PIN; Teacher mode, the Report and "Log out &amp; clear device" ask for it too.</p>
     <p class="set-note muted">🗣️ Listening voice: ${WR.Voice.recorded() ? "recorded storyteller (falls back to " : ""}${WR.esc(window.Speech ? Speech.voiceName() : "-")}${WR.Voice.recorded() ? ")" : ""}</p>
     <div class="row gu-reset" style="justify-content:center"><button class="btn small peach" id="guReset">🧹 Reset progress on this device</button>${WR.backups().length ? `<button class="btn small ghost" id="guUndo">↩️ Undo reset <small>(${WR.esc(WR.backupDay(WR.backups()[0]))})</small></button>` : ""}</div>
     <div class="row" style="justify-content:center"><button class="btn small" id="guDone">Done</button></div>`, (bg, close) => {

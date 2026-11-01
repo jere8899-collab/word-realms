@@ -16,6 +16,7 @@ const save = (stars = 60, name = 'Jeremy', extra = {}) => Object.assign({ v: 1, 
 const PHONE = { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true };
 async function device(browser, opts = {}) {
   const ctx = await browser.newContext(opts.phone ? PHONE : { viewport: { width: 1100, height: 820 } });
+  await ctx.addInitScript(() => { window.__WR_TEST = { holdMs: 0, pinOffer: false }; });   // R4: gate test hooks (never on the live site)
   const page = await ctx.newPage(); page.errors = [];
   page.on('pageerror', e => page.errors.push(e.message));
   page.on('console', m => { if (m.type() === 'error' && !/Failed to load resource|net::ERR/.test(m.text())) page.errors.push(m.text()); });

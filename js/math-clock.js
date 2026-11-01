@@ -45,7 +45,7 @@ MC.lock = () => { if (!S) return; S.locked = true; document.querySelectorAll("#m
 MC.time = () => S && C.hm(timeOf(S.t).h, timeOf(S.t).m);
 // lessons: a q.set question gets the setter and a ✓ Check button; the typed-answer checker reads "h:mm"
 MC.setHTML = q => `<div class="cset-tip">👆 Drag the long hand, or tap the buttons.</div>` + MC.setterHTML(q.step || 5, `<button class="btn mint cset-check${(q.step || 5) === 1 ? "" : " wide"}" id="mcheck">✓ Check</button>`);
-MC.bindSet = (q, fn) => { MC.bindSetter(q.step || 5); const b = WR.$("#mcheck"); if (b) b.onclick = () => { if (!S || S.locked) return; if (!S.t) return WR.toast("Move the hands first 🕰️"); fn(MC.time()); }; };
+MC.bindSet = (q, fn) => { MC.bindSetter(q.step || 5); const b = WR.$("#mcheck"); if (b) b.onclick = () => { if (!S || S.locked) return; if (!S.t) return WR.toast("Move the hands first 🕰️", 1800, { now: true }); fn(MC.time()); }; };
 MC.solved = () => { cs().set++; win(); };
 
 /* ---------- 🧮 Model Magic tool: count the minutes, or wind the hands ---------- */

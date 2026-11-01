@@ -112,7 +112,7 @@ function advance() {
   if (res != null) return result(res);
   const up = P.scores[P.lvIdx] >= PASS;
   P.lvIdx = nextLevel(P.scores, P.lvIdx);
-  WR.toast(up ? "🌟 Up to a harder realm!" : "🌙 Let's try a gentler realm", 1400);
+  WR.toast(up ? "🌟 Up to a harder realm!" : "🌙 Let's try a gentler realm", 1400, { now: true });
   loadStage();
 }
 function result(idx) {

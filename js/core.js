@@ -50,6 +50,9 @@ Object.assign(WR, { SKILLS, PETS, AVATARS, QUEST_POOL, data: {}, manifest: null,
 
 /* ---------- helpers ---------- */
 WR.$ = (s, r = document) => r.querySelector(s);
+/* R10: lesson stat chips ("⭐ 3" and "🔥 2", words shown only on wider screens), one place for lessons, maths and speaking */
+WR.statsHTML = list => list.map(([e, n, w]) => `<span class="lchip"><span aria-hidden="true">${e}</span> <b>${n}</b><span class="stw"> ${WR.esc(w)}</span></span>`).join("");
+WR.setStats = list => { const ls = WR.$("#lstats"); if (ls) ls.innerHTML = WR.statsHTML(list); };
 WR.esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 WR.shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 WR.sample = (a, n) => WR.shuffle(a).slice(0, n);
@@ -267,10 +270,33 @@ WR.sfx = type => {
   } catch (e) { }
 };
 
+/* ⏸️ R8 (REVIEW-2026-11-01): timed rounds (boss / dragon timer, Times-Table sprint) pause while the app is hidden (another app,
+   a locked phone, a closed tab) and come back with "Ready? 3-2-1". A round registers { pause, resume } with WR.pauseable(). */
+const pausers = new Set(); let appHidden = false;
+WR.pauseable = (pause, resume) => { const o = { pause, resume }; pausers.add(o); return () => pausers.delete(o); };
+const appHide = () => { if (appHidden) return; appHidden = true; pausers.forEach(p => p.pause()); };
+const appShow = () => { if (!appHidden || document.hidden) return; appHidden = false; pausers.forEach(p => p.resume()); };
+document.addEventListener("visibilitychange", () => document.hidden ? appHide() : appShow());
+addEventListener("pagehide", appHide); addEventListener("pageshow", appShow);
+WR.readyGo = done => {
+  document.querySelectorAll(".ready-go").forEach(x => x.remove());
+  const el = document.createElement("div"); el.className = "ready-go"; el.setAttribute("role", "status"); document.body.appendChild(el);
+  const steps = ["Ready?", "3", "2", "1"]; let i = 0;
+  const next = () => { if (!document.body.contains(el)) return; if (i >= steps.length) { el.remove(); return done(); } el.textContent = steps[i++]; WR.sfx && WR.sfx("tap"); setTimeout(next, i === 1 ? 800 : 600); };
+  next(); return el;
+};
+
 /* ---------- UI helpers ---------- */
 // 🍞 Toasts (review T4): at most 2 on screen, auto-hide within 2.5 s, never take taps (pointer-events:none in css/phone.css),
 // sit at the bottom on phones, and are cleared by WR.go() (see WR.clearFx) so none follows the child to the next screen.
-WR.toast = (msg, ms = 1800) => {
+/* R7 (REVIEW-2026-11-01): while a question is on screen, celebrations (stickers, quests, gifts, bonus stars) wait and are
+   shown on the next screen without a question (the result screen, the map…), so a pop-up never covers an answer, the
+   question or a name. Hints the child needs right now pass { now: true }. js/ux.js calls WR.flushToasts after each screen. */
+const heldToasts = [];
+WR.questionOnScreen = () => document.body.classList.contains("wr-focus") && !document.querySelector(".result, .ch-done, .ph-done, .story-done, .sw-done");
+WR.flushToasts = () => { if (WR.questionOnScreen()) return; heldToasts.splice(0, 2).forEach((t, i) => setTimeout(() => WR.toast(t[0], t[1], { now: true }), i * 700)); heldToasts.length = 0; };
+WR.toast = (msg, ms = 1800, opts = {}) => {
+  if (!opts.now && WR.questionOnScreen()) { if (!heldToasts.some(t => t[0] === msg)) heldToasts.push([msg, ms]); return; }
   ms = Math.min(ms, 2500);
   const old = [...document.querySelectorAll(".toast")]; old.slice(0, Math.max(0, old.length - 1)).forEach(x => x.remove());
   const t = document.createElement("div"); t.className = "toast"; t.setAttribute("role", "status"); t.innerHTML = msg; t.dataset.born = Date.now();

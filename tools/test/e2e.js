@@ -3,6 +3,7 @@ const OUT = '/workspace/cefr-quest/screenshots/';
 (async () => {
   const browser = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox','--autoplay-policy=no-user-gesture-required'] });
   const ctx = await browser.newContext({ viewport: { width: 1180, height: 860 }, deviceScaleFactor: 1 });
+  await ctx.addInitScript(() => { window.__WR_TEST = { holdMs: 0, pinOffer: false }; });   // R4: gate test hooks (never on the live site)
   const page = await ctx.newPage();
   const errors = [];
   page.on('pageerror', e => errors.push('pageerror: ' + e.message));
@@ -119,7 +120,9 @@ const OUT = '/workspace/cefr-quest/screenshots/';
   // premium items sit behind the parent gate (T19): Ask a grown-up → gate → Grown-ups list → cash stub → demo unlock
   await page.click('.askgu'); await page.waitForSelector('.pgate');
   await page.evaluate(() => { const a = WR.parentGate._answer(); [...a].forEach(d => document.querySelector(`.pgate [data-d="${d}"]`).click()); document.getElementById('pgOk').click(); });
-  await page.waitForSelector('.gu-item .cash'); await page.click('.gu-item .cash'); await page.waitForSelector('#demo');
+  await page.waitForSelector('.gu-item .cash'); await page.click('.gu-item .cash');
+  await page.waitForSelector('#pinSetup'); await page.fill('#psPin', '2580'); await page.fill('#psPin2', '2580'); await page.click('#psSet');   // R4: cash needs a grown-up PIN
+  await page.waitForSelector('#demo');
   await page.screenshot({ path: OUT + '06_shop_cash_stub.png' });
   await page.click('#demo'); await page.waitForTimeout(300);
   await page.click('.tabs button[data-t="themes"]'); await page.click('.buy'); await page.waitForTimeout(300);
