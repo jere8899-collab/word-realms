@@ -1,7 +1,7 @@
 /* 🔢 Number Kingdom topics, Grades 5–8 (Singapore Primary 5–6, Secondary 1–2). */
 (function () {
 const M = (typeof module !== "undefined" && module.exports) ? require("./math-gen.js") : window.MathGen;
-const { Q, num, mcq, T, NAMES, topic, PASTEL, INK, LINE, svgBox, cellKey, figKey, hasCell, nearCells, gridSheet, svgPieChart, svgGeo, cardSvg, dirPt, gcd, lcm, rd, fmt, simp, fracTex, fracStr, mixedTex, poly, lin, paren, pm, undo, coef, ord } = M._internal;
+const { Q, num, mcq, mcqWhy, numWhy, T, NAMES, topic, PASTEL, INK, LINE, esc, svgBox, fitBox, cellKey, figKey, hasCell, nearCells, gridSheet, svgPieChart, svgGeo, cardSvg, dirPt, gcd, lcm, rd, fmt, fdp, simp, fracTex, fracStr, mixedTex, poly, lin, paren, pm, undo, coef, ord } = M._internal;
 
 /* ---------- Grade 5 (Primary 5) ---------- */
 topic(5, "fracmul", "Fraction Spells", "✨", "Multiply fractions", r => {
@@ -347,6 +347,138 @@ topic(7, "angles", "Angle Archery", "🏹", "Angles on lines, at points, in tria
   if (t === 1) { const a = r.int(30, 80), b = r.int(30, 180 - a - 10); return num(`A triangle has angles of ${a}° and ${b}°. What is the third angle?`, 180 - a - b, "Angles in a triangle add up to 180°.", [`180° − ${a}° − ${b}° = ${180 - a - b}°`]); }
   if (t === 2) { const a = r.int(40, 150), b = r.int(40, 300 - a - 20); return num(`Three angles meet at a point: ${a}°, ${b}° and x°. Find x.`, 360 - a - b, "Angles at a point add up to 360°.", [`360° − ${a}° − ${b}° = ${360 - a - b}°`]); }
   const a = r.int(25, 155); return num(`Two straight lines cross. One angle is ${a}°. What is the angle vertically opposite it?`, a, "Vertically opposite angles are equal.", [`Vertically opposite → also ${a}°`]);
+});
+/* ---------- 🎂 Bakery Blueprints (MOE Sec 1 mensuration): area of parallelograms and trapeziums (and finding a height back
+   from the area), composite figures (rectangle + triangle or semicircle), volume and total surface area of triangular prisms,
+   volume and surface area of cylinders, and converting cm² ↔ m², m³ → cm³. Every figure is drawn to scale on a cream card;
+   slanted sides come from whole-number right triangles (3-4-5, 5-12-13…) so the drawing and the numbers always agree.
+   Multiple-choice options each carry a why / why-not note, and typed answers get a note when they match a usual slip. */
+const MENS_TRI = [[3, 4, 5], [4, 3, 5], [6, 8, 10], [8, 6, 10], [5, 12, 13], [9, 12, 15], [12, 9, 15]];
+const PI3 = 3.142;
+// "1885.2" when it is exact to 1 d.p., else "138.248 \approx 138.2" (TeX)
+const approx1 = x => { const e = fmt(rd(x, 3)), v = fdp(x, 1); return +e === +v ? fmt(+v) : `${e} \\approx ${v}`; };
+const mpx = v => +v.toFixed(1), mxy = p => `${mpx(p[0])},${mpx(p[1])}`;
+// a 300-wide card with the figure fitted in; draw(S) gets the maths → card mapper (S.k = px per unit) and returns the SVG body
+const mensCard = (title, pts, draw, label, h = 206) => { const S = fitBox(pts, [40, 46, 220, h - 82]); return cardSvg(300, h, title, 20, draw(S), label, "mpic chart mens"); };
+const mShape = (P, fill) => `<polygon points="${P.map(mxy).join(" ")}" fill="${fill}" stroke="${INK}" stroke-width="2.6" stroke-linejoin="round"/>`;
+const mEdge = (a, b, dash) => `<line class="${dash ? "mhid" : "medge"}" x1="${mpx(a[0])}" y1="${mpx(a[1])}" x2="${mpx(b[0])}" y2="${mpx(b[1])}" stroke="${dash ? LINE : INK}" stroke-width="${dash ? 2 : 2.6}"${dash ? ` stroke-dasharray="5 4"` : ""} stroke-linecap="round"/>`;
+// a length label (class mlab, data-t = its text, so tests can read the figure back) beside point p, nudged dx, dy pixels
+const mLab = (p, t, dx = 0, dy = 0, anchor = "middle") => `<text class="mlab" data-t="${esc(t)}" x="${mpx(p[0] + dx)}" y="${mpx(p[1] + dy + 4)}" font-size="12.5" text-anchor="${anchor}" font-weight="900" fill="#c2457a" paint-order="stroke" stroke="#FFFDF8" stroke-width="3.5">${esc(t)}</text>`;
+// a small right-angle square at a foot point (card pixels), towards side sx (±1) and upwards
+const mRight = (f, sx = -1) => `<path d="M${mxy([f[0] + 9 * sx, f[1]])} L${mxy([f[0] + 9 * sx, f[1] - 9])} L${mxy([f[0], f[1] - 9])}" fill="none" stroke="${LINE}" stroke-width="1.6"/>`;
+const mid = (a, b) => [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
+// a parallelogram (top = bottom) or trapezium: bottom b, top a, left side leaning over s with height h (slant l); labels as given
+const svgQuad = (title, b, a, s, h, lab) => mensCard(title, [[0, 0], [b, 0], [s + a, h], [s, h]], S => {
+  const A = S([0, 0]), B = S([b, 0]), C = S([s + a, h]), D = S([s, h]), F = S([s, 0]);
+  return mShape([A, B, C, D], PASTEL[4]) + mEdge(D, F, true) + mRight(F, 1) + mLab(mid(A, B), lab.b, 0, 16) + (lab.a ? mLab(mid(D, C), lab.a, 0, -12) : "")
+    + mLab(mid(D, F), lab.h, 6, 0, "start") + (lab.l ? mLab(mid(A, D), lab.l, -8, 0, "end") : "");
+}, a === b ? "parallelogram" : "trapezium");
+// a house front (rectangle + triangle roof) or an arch (rectangle + semicircle) w wide, walls hr high, roof ht high
+const svgHouse = (title, w, hr, ht, lab) => mensCard(title, [[0, 0], [w, 0], [w, hr + ht], [0, hr]], S => {
+  const A = S([0, 0]), B = S([w, 0]), C = S([w, hr]), D = S([0, hr]), E = S([w / 2, hr + ht]), F = S([w / 2, hr]);
+  return mShape([A, B, C, D], PASTEL[2]) + mShape([D, C, E], PASTEL[0]) + mEdge(E, F, true) + mRight(F, 1) + mLab(mid(A, B), lab.w, 0, 16) + mLab(mid(B, C), lab.hr, 8, 0, "start") + mLab(mid(E, F), lab.ht, -7, 0, "end");
+}, "composite figure");
+const svgArch = (title, w, hr, lab) => mensCard(title, [[0, 0], [w, 0], [w, hr + w / 2], [0, hr + w / 2]], S => {
+  const A = S([0, 0]), B = S([w, 0]), C = S([w, hr]), D = S([0, hr]), R = w / 2 * S.k;
+  return mShape([A, B, C, D], PASTEL[3]) + `<path d="M${mxy(D)} A${mpx(R)},${mpx(R)} 0 0,1 ${mxy(C)} Z" fill="${PASTEL[1]}" stroke="${INK}" stroke-width="2.6"/>` + mEdge(D, C, true)
+    + mLab(mid(A, B), lab.w, 0, 16) + mLab(mid(B, C), lab.hr, 8, 0, "start");
+}, "composite figure");
+// a triangular prism drawn in cabinet view: "ramp" (right angle at the back-left foot) or "tent" (isosceles); front base b, height h, length L
+const svgPrism = (title, shape, b, h, L, lab) => {
+  const F = shape === "ramp" ? [[0, 0], [b, 0], [0, h]] : [[0, 0], [b, 0], [b / 2, h]], dv = [L * .42 * Math.cos(Math.PI / 6), L * .42 * Math.sin(Math.PI / 6)], Bk = F.map(p => [p[0] + dv[0], p[1] + dv[1]]);
+  return mensCard(title, F.concat(Bk), S => { const f = F.map(S), k = Bk.map(S), foot = S([shape === "ramp" ? 0 : b / 2, 0]);
+    // the back-left-bottom corner is hidden, so its three edges are dashed; the sloping face on the right is shaded
+    return mShape([f[1], f[2], k[2], k[1]], PASTEL[1]) + mShape(f, PASTEL[0]) + mEdge(f[0], k[0], true) + mEdge(k[0], k[1], true) + mEdge(k[0], k[2], true) + mEdge(f[1], k[1]) + mEdge(f[2], k[2]) + mEdge(k[1], k[2])
+      + (shape === "tent" ? mEdge(f[2], foot, true) + mRight(foot, 1) + mLab(mid(f[2], foot), lab.h, 5, 6, "start") : mRight(foot, 1) + mLab(mid(f[0], f[2]), lab.h, -7, 0, "end"))
+      + mLab(mid(f[0], f[1]), lab.b, 0, 16) + mLab(mid(f[1], k[1]), lab.L, 9, 8, "start") + (lab.l ? mLab(mid(shape === "ramp" ? f[1] : f[0], f[2]), lab.l, shape === "ramp" ? 6 : -8, shape === "ramp" ? -6 : 0, shape === "ramp" ? "start" : "end") : "");
+  }, "triangular prism", 214);
+};
+// an upright cylinder radius r, height h; the radius (or diameter) is drawn on the lid
+const svgCyl = (title, r, h, lab) => { const e = .32;
+  return mensCard(title, [[-r, -e * r], [r, h + e * r]], S => { const T = S([0, h]), Bc = S([0, 0]), rx = r * S.k, ry = e * r * S.k, arc = (c, sw) => `M${mxy([c[0] - rx, c[1]])} A${mpx(rx)},${mpx(ry)} 0 0,${sw} ${mxy([c[0] + rx, c[1]])}`;
+    return `<path d="M${mxy([T[0] - rx, T[1]])} L${mxy([Bc[0] - rx, Bc[1]])} A${mpx(rx)},${mpx(ry)} 0 0,0 ${mxy([Bc[0] + rx, Bc[1]])} L${mxy([T[0] + rx, T[1]])} Z" fill="${PASTEL[1]}" stroke="${INK}" stroke-width="2.6" stroke-linejoin="round"/>`
+      + `<path class="mhid" d="${arc(Bc, 1)}" fill="none" stroke="${LINE}" stroke-width="2" stroke-dasharray="5 4"/><ellipse cx="${mpx(T[0])}" cy="${mpx(T[1])}" rx="${mpx(rx)}" ry="${mpx(ry)}" fill="${PASTEL[0]}" stroke="${INK}" stroke-width="2.6"/>`
+      + (lab.d ? mEdge([T[0] - rx, T[1]], [T[0] + rx, T[1]], true) + mLab(T, lab.d, 0, -ry - 6) : mEdge(T, [T[0] + rx, T[1]], true) + `<circle cx="${mpx(T[0])}" cy="${mpx(T[1])}" r="2.6" fill="${INK}"/>` + mLab([T[0] + rx / 2, T[1]], lab.r, 0, -ry - 6))
+      + mLab(mid([T[0] + rx, T[1]], [Bc[0] + rx, Bc[1]]), lab.h, 8, 0, "start");
+  }, "cylinder", 214); };
+// 36000 → "36 000" (the MOE way of grouping digits), decimals kept
+const grp = n => { const [i, d] = fmt(n).split("."); return i.replace(/\B(?=(\d{3})+(?!\d))/g, " ") + (d ? "." + d : ""); };
+const sq = (v, u) => `${grp(v)} ${u}²`, cu = (v, u) => `${grp(v)} ${u}³`;
+const piT = (k, u, p) => `${T(`${fmt(k)}\\pi`)} ${u}${p}`;
+const MENS = {
+  para: r => { const [s, h, l] = r.pick(MENS_TRI), b = r.int(s + 3, s + 14), cm = r.chance(.5), u = cm ? "cm" : "m", what = cm ? r.pick(["a gingerbread cookie", "a marzipan tile", "a jelly slab"]) : r.pick(["a flower bed in the castle garden", "a picnic rug", "a patch of the strawberry field"]);
+    return mcqWhy(r, `${cap(what)} is a parallelogram. What is its area?`, sq(b * h, u), `The height has to meet the base at a right angle, and that is the dashed ${h} ${u} line: base × height = ${b} × ${h} = ${b * h} ${u}².`,
+      [[sq(b * l, u), `${l} ${u} is the slanted side, not the height. Leaning sides are longer than the height, so the area comes out too big.`], [sq(b * h / 2, u), `Halving is for triangles. A parallelogram is a rectangle with a corner slid across, so there is no ½.`],
+       [sq(2 * (b + l), u), `${2 * (b + l)} ${u} is the perimeter (the distance all the way round), not the space inside.`], [sq(b + h, u), `Adding the base and height doesn't give an area. Multiply them.`], [sq(l * h, u), `The slanted side × the height doesn't make a rectangle of the same size. Use the base.`]],
+      "Area of a parallelogram = base × perpendicular height.", [`Cut the triangle off one end and move it to the other: the parallelogram becomes a rectangle ${b} ${u} by ${h} ${u}.`, `Area = base × height = ${b} × ${h} = ${b * h} ${u}²`, `(The ${l} ${u} slanted side is not used.)`],
+      { pic: svgQuad("Parallelogram", b, b, s, h, { b: `${b} ${u}`, h: `${h} ${u}`, l: `${l} ${u}` }), uid: `mens|para|${b}|${s},${h}|${u}`, data: { mens: "para", b, s, h, l, u } }); },
+  trap: r => { const [s, h, l] = r.pick(MENS_TRI); let a = r.int(2, 12); const b = a + s + r.int(0, 6); if ((a + b) * h % 2) a += a > 2 ? -1 : 1; const B = Math.max(b, a + s), area = (a + B) * h / 2, cm = r.chance(.5), u = cm ? "cm" : "m";
+    const what = cm ? r.pick(["A stained-glass window in the fairy tower", "A slice of the royal layer cake, seen from the side,", "A wooden sign for the bakery"]) : r.pick(["A pumpkin patch", "The castle's lily pond", "A meadow for the unicorns"]);
+    return mcqWhy(r, `${what} is a trapezium. What is its area?`, sq(area, u), `Add the two parallel sides, ${a} + ${B} = ${a + B}, multiply by the ${h} ${u} height and halve it: ${area} ${u}².`,
+      [[sq((a + B) * h, u), `So close! You forgot to halve. (Sum of parallel sides) × height is two trapeziums put together.`], [sq((a + B) * l / 2, u), `${l} ${u} is the slanted side. The height must be the dashed line at right angles to the parallel sides.`],
+       [sq(B * h, u), `That is a rectangle using the longer side. The top is shorter, so the trapezium is smaller than that.`], [sq(a * h, u), `That only uses the shorter parallel side, so it is too small.`], [sq(a * B * h / 2, u), `Don't multiply the two parallel sides together: add them first.`]],
+      "Area of a trapezium = ½ × (sum of the parallel sides) × height.", [`Parallel sides: ${a} ${u} and ${B} ${u}; height (at right angles): ${h} ${u}.`, `Area = ½ × (${a} + ${B}) × ${h} = ½ × ${a + B} × ${h} = ${area} ${u}²`],
+      { pic: svgQuad("Trapezium", B, a, s, h, { b: `${B} ${u}`, a: `${a} ${u}`, h: `${h} ${u}`, l: `${l} ${u}` }), uid: `mens|trap|${a},${B}|${s},${h}|${u}`, data: { mens: "trap", a, b: B, s, h, l, u } }); },
+  rev: r => { const [s, h] = r.pick(MENS_TRI), para = r.chance(.4), u = r.pick(["cm", "m"]);
+    if (para) { const b = r.int(s + 3, s + 14), A = b * h;
+      return numWhy(`A parallelogram-shaped garden plot for the fairies has an area of ${A} ${u}² and a base of ${b} ${u}. What is its height, h, in ${u}?`, h, "Area = base × height, so height = area ÷ base.", [`$${b} \\times h = ${A}$`, `$h = ${A} \\div ${b} = ${h}$ ${u}`],
+        [[A / b / 2, "That halves it, but a parallelogram's area has no ½ in it."], [A * b, "Multiplying makes it bigger. To undo × base, divide by the base."], [A - b, "Area and length can't be subtracted. Divide the area by the base."]],
+        { pic: svgQuad("Parallelogram", b, b, s, h, { b: `${b} ${u}`, h: "h" }), uid: `mens|rev|p|${b}|${s},${h}`, data: { mens: "rev", para, b, s, h, A } }); }
+    let a = r.int(2, 10); const b = a + s + r.int(0, 6); if ((a + b) * h % 2) a += a > 2 ? -1 : 1; const B = Math.max(b, a + s), A = (a + B) * h / 2;
+    return numWhy(`A trapezium-shaped patch of the candy garden has an area of ${A} ${u}². Its parallel sides are ${a} ${u} and ${B} ${u}. What is its height, h, in ${u}?`, h, "Write the area formula with h in it, then solve.", [`$\\frac{1}{2} \\times (${a} + ${B}) \\times h = ${A}$`, `$${fmt((a + B) / 2)}h = ${A}$`, `$h = ${A} \\div ${fmt((a + B) / 2)} = ${h}$ ${u}`],
+      [[A / (a + B), "You forgot the ½: dividing by the whole sum of the sides gives half the height."], [2 * A / B, "Both parallel sides count. Add them before you divide."], [A / B, "Use the sum of both parallel sides, and remember the ½."]],
+      { pic: svgQuad("Trapezium", B, a, s, h, { b: `${B} ${u}`, a: `${a} ${u}`, h: "h" }), uid: `mens|rev|t|${a},${B}|${s},${h}`, data: { mens: "rev", para, a, b: B, s, h, A } }); },
+  compo: r => { if (r.chance(.55)) { let w = r.int(6, 20); const hr = r.int(4, 14), ht = r.int(3, 10); if (w * ht % 2) w++; const v = w * hr + w * ht / 2;
+      return numWhy(`The front of a gingerbread house is a rectangle with a triangle roof on top. What is its area in cm²?`, v, "Split it into a rectangle and a triangle, find each area, then add.", [`Rectangle: $${w} \\times ${hr} = ${w * hr}$ cm²`, `Triangle roof: $\\frac{1}{2} \\times ${w} \\times ${ht} = ${w * ht / 2}$ cm²`, `Total: $${w * hr} + ${w * ht / 2} = ${v}$ cm²`],
+        [[w * hr + w * ht, "The roof is a triangle, so it is half of a rectangle: remember the ½."], [w * hr, "That is only the rectangle. Add the triangle roof too."], [w * ht / 2, "That is only the roof. Add the rectangle under it."], [w * hr + w * ht / 4, "The triangle only needs one ½, not two."]],
+        { pic: svgHouse("Gingerbread house", w, hr, ht, { w: `${w} cm`, hr: `${hr} cm`, ht: `${ht} cm` }), uid: `mens|house|${w},${hr},${ht}`, data: { mens: "compo", k: "house", w, hr, ht } }); }
+    const w = 2 * r.int(2, 8), hr = r.int(5, 16), R = w / 2, v = rd(w * hr + PI3 * R * R / 2, 1);
+    return numWhy(`A castle door is a rectangle with a semicircle on top. Find its area in dm². Use π = 3.142 and give your answer to 1 decimal place.`, v, "Rectangle + half a circle. The semicircle's radius is half the width.", [`Rectangle: $${w} \\times ${hr} = ${w * hr}$ dm²`, `Radius = ${w} ÷ 2 = ${R} dm`, `Semicircle: $\\frac{1}{2} \\times 3.142 \\times ${R}^2 = ${fmt(rd(PI3 * R * R / 2, 3))}$ dm²`, `Total: $${w * hr} + ${fmt(rd(PI3 * R * R / 2, 3))} = ${approx1(w * hr + PI3 * R * R / 2)}$ dm²`],
+      [[rd(w * hr + PI3 * R * R, 1), "That adds a whole circle. The top is only a semicircle, so halve the circle's area."], [rd(w * hr + PI3 * w * w / 2, 1), `The width ${w} dm is the diameter. The radius is half of it: ${R} dm.`], [w * hr, "That is only the rectangle. Add the semicircle on top."], [rd(w * hr + PI3 * R, 1), "Area of a circle needs the radius squared: π × r × r."]],
+      { tol: 0.051, keys: ["."], pic: svgArch("Castle door", w, hr, { w: `${w} dm`, hr: `${hr} dm` }), uid: `mens|arch|${w},${hr}`, data: { mens: "compo", k: "arch", w, hr } }); },
+  prismV: r => { const tent = r.chance(.5); let b, h, l, L = r.int(4, 16);
+    if (tent) { const [s, hh, ll] = r.pick(MENS_TRI.filter(t => t[1] > .58 * t[0])); b = 2 * s; h = hh; l = ll; } else { [b, h, l] = r.pick(MENS_TRI); }
+    const u = tent ? "m" : "cm", cs = b * h / 2, v = cs * L, who = tent ? "A fairy camping tent" : "A wedge of cheese for the Mouse King";
+    return numWhy(`${who} is a triangular prism. What is its volume in ${u}³?`, v, "Volume of a prism = area of the cross-section × length.", [`Cross-section (the triangle): $\\frac{1}{2} \\times ${b} \\times ${h} = ${cs}$ ${u}²`, `Volume = $${cs} \\times ${L} = ${v}$ ${u}³`],
+      [[b * h * L, "The cross-section is a triangle, so its area is half of base × height."], [cs, "That is just the triangle at the front. Multiply by the length to fill the whole prism."], [b * l * L / 2, `${l} ${u} is a sloping edge. The triangle's height must be at right angles to its base.`], [(b + h) * L, "Find the triangle's area first (½ × base × height), then multiply by the length."]],
+      { pic: svgPrism(tent ? "Fairy tent" : "Cheese wedge", tent ? "tent" : "ramp", b, h, L, { b: `${b} ${u}`, h: `${h} ${u}`, L: `${L} ${u}`, l: tent ? `${l} ${u}` : "" }), uid: `mens|prismV|${tent}|${b},${h}|${L}`, data: { mens: "prismV", tent, b, h, l, L } }); },
+  prismSA: r => { const tent = r.chance(.5); let b, h, l, L = r.int(3, 14);
+    if (tent) { const [s, hh, ll] = r.pick(MENS_TRI.filter(t => t[1] > .58 * t[0])); b = 2 * s; h = hh; l = ll; } else { [b, h, l] = r.pick(MENS_TRI); }
+    const u = tent ? "m" : "cm", per = tent ? b + 2 * l : b + h + l, tri = b * h / 2, tot = 2 * tri + per * L, sides = tent ? `${b} + ${l} + ${l}` : `${b} + ${h} + ${l}`;
+    return mcqWhy(r, `${tent ? "A fairy camping tent, floor included," : "A wedge of cheese for the Mouse King"} is a triangular prism. What is its total surface area?`, sq(tot, u), `Two triangle ends (${tri} ${u}² each) plus three rectangles that wrap round, ${per} ${u} × ${L} ${u}: ${2 * tri} + ${per * L} = ${tot} ${u}².`,
+      [[sq(per * L, u), "That is only the three rectangles. Don't forget the two triangles at the ends."], [sq(tri + per * L, u), "A prism has TWO triangle ends, front and back."], [sq(2 * b * h + per * L, u), "Each triangle is half of base × height, so the two ends are b × h altogether, not 2 × b × h."],
+       [sq(tri * L, u), `${tri * L} is the volume (the space inside), measured in cubes, not the area of the outside.`], [sq(2 * tri + 3 * b * L, u), "The three rectangles aren't all the same: each is as wide as its own side of the triangle."]],
+      "Unfold it in your head: 2 triangles + 3 rectangles.", [`2 triangles: $2 \\times \\frac{1}{2} \\times ${b} \\times ${h} = ${2 * tri}$ ${u}²`, `3 rectangles: $(${sides}) \\times ${L} = ${per} \\times ${L} = ${per * L}$ ${u}²`, `Total: $${2 * tri} + ${per * L} = ${tot}$ ${u}²`],
+      { pic: svgPrism(tent ? "Fairy tent" : "Cheese wedge", tent ? "tent" : "ramp", b, h, L, { b: `${b} ${u}`, h: `${h} ${u}`, L: `${L} ${u}`, l: `${l} ${u}` }), uid: `mens|prismSA|${tent}|${b},${h}|${L}`, data: { mens: "prismSA", tent, b, h, l, L } }); },
+  cylV: r => { const rad = r.int(3, 12), h = r.int(3, 20), useD = r.chance(.4), v = rd(PI3 * rad * rad * h, 1), what = r.pick([["A round cake tin", "Cake tin"], ["A tin of rainbow sprinkles", "Sprinkle tin"], ["The wishing well's bucket", "Well bucket"], ["A potion jar", "Potion jar"]]);
+    return numWhy(`${what[0]} is a cylinder. Find its volume in cm³. Use π = 3.142 and give your answer to 1 decimal place.`, v, "Volume of a cylinder = π r² h (the circle's area × height).", (useD ? [`Radius = ${2 * rad} ÷ 2 = ${rad} cm`] : []).concat([`Circle on top: $3.142 \\times ${rad}^2 = ${fmt(rd(PI3 * rad * rad, 3))}$ cm²`, `Volume: $${fmt(rd(PI3 * rad * rad, 3))} \\times ${h} = ${approx1(PI3 * rad * rad * h)}$ cm³`]),
+      (useD ? [[rd(PI3 * 4 * rad * rad * h, 1), `${2 * rad} cm is the diameter. Halve it to get the radius before you square it.`]] : []).concat([[rd(2 * PI3 * rad * h, 1), "2πrh is the curved surface (the label), not the volume."], [rd(PI3 * rad * h, 1), "The radius must be squared: π × r × r × h."], [rd(PI3 * rad * rad, 1), "That is just the circle on top. Multiply by the height."]]),
+      { tol: 0.051, keys: ["."], pic: svgCyl(what[1], rad, h, useD ? { d: `${2 * rad} cm`, h: `${h} cm` } : { r: `${rad} cm`, h: `${h} cm` }), uid: `mens|cylV|${rad}|${h}|${useD}`, data: { mens: "cylV", r: rad, h, useD } }); },
+  cylSA: r => { const rad = r.int(3, 10), h = r.int(3, 15), label = r.chance(.45), curved = 2 * rad * h, ends = 2 * rad * rad, u = "cm", P = k => piT(k, u, "²");
+    const pic = svgCyl(label ? "Label for a jam jar" : "Hat box", rad, h, { r: `${rad} cm`, h: `${h} cm` }), extra = { pic, uid: `mens|cylSA|${label}|${rad}|${h}`, data: { mens: "cylSA", label, r: rad, h } };
+    if (label) return mcqWhy(r, `A paper label wraps exactly once round the curved side of a cylinder-shaped jam jar (not the lid or the bottom). What is the area of the label? Leave your answer in terms of π.`, P(curved), `Unroll the label into a rectangle: one side is the circle's circumference 2π × ${rad}, the other the ${h} cm height, so 2π × ${rad} × ${h} = ${curved}π cm².`,
+      [[P(curved + ends), "The label only covers the curved side. The top and bottom circles aren't part of it."], [P(rad * h), "The rectangle's long side is the whole way round, 2πr, not πr."], [P(rad * rad * h), `${rad * rad * h}π is the volume of the jar, not the label.`], [P(2 * curved), "That uses the diameter where the formula needs the radius."], [P(curved + rad * rad), "The label doesn't cover the lid, so no circle is added."], [P(rad * rad), `${rad * rad}π is the area of the circle on top, not the label round the side.`]],
+      "Curved surface area = 2πrh (unroll it into a rectangle).", [`Length of the rectangle = circumference = $2\\pi \\times ${rad} = ${2 * rad}\\pi$ cm`, `Area = $${2 * rad}\\pi \\times ${h} = ${curved}\\pi$ cm²`], extra);
+    return mcqWhy(r, `A closed cylinder-shaped hat box (with a lid and a base) has radius ${rad} cm and height ${h} cm. What is its total surface area? Leave your answer in terms of π.`, P(ends + curved), `Two circles (π × ${rad}² = ${rad * rad}π each) plus the curved side (2π × ${rad} × ${h} = ${curved}π): ${ends + curved}π cm² altogether.`,
+      [[P(curved), "That is only the curved side. A closed box also has a lid and a base."], [P(rad * rad + curved), "Only one circle counted. A closed cylinder has two: the lid and the base."], [P(rad * rad * h), `${rad * rad * h}π is the volume, the space inside, not the outside.`], [P(ends + rad * h), "The curved side unrolls to 2πr by h, not πr by h."], [P(2 * rad + curved), "A circle's area is π r², with r squared, not 2πr."], [P(ends + 2 * curved), "That uses the diameter in the curved side. 2πrh needs the radius."], [P(2 * ends + curved), "Each circle is πr². Two of them make 2πr², not 4πr²."]],
+      "Total surface area = 2 circles + curved side = 2πr² + 2πrh.", [`2 circles: $2 \\times \\pi \\times ${rad}^2 = ${ends}\\pi$ cm²`, `Curved side: $2\\pi \\times ${rad} \\times ${h} = ${curved}\\pi$ cm²`, `Total: $${ends}\\pi + ${curved}\\pi = ${ends + curved}\\pi$ cm²`], extra); },
+  units: r => { const k = r.pick(["m2", "m2", "cm2", "m3"]);
+    if (k === "m2") { const x = r.int(11, 99) / 10, v = Math.round(x * 1e4);
+      return mcqWhy(r, `The ballroom's dance floor has an area of ${fmt(x)} m². What is that in cm²?`, sq(v, "cm"), `1 m² is a square 100 cm by 100 cm, which is 10 000 cm², so ${fmt(x)} m² = ${fmt(x)} × 10 000 = ${grp(v)} cm².`,
+        [[sq(Math.round(x * 100), "cm"), "1 m = 100 cm, but a square metre is 100 cm × 100 cm = 10 000 cm², so × 100 is not enough."], [sq(Math.round(x * 1000), "cm"), "1 000 is for metres to millimetres or kilograms to grams. Square metres to square centimetres is × 10 000."], [sq(rd(x / 1e4, 6), "cm"), "Centimetres are smaller, so there must be MORE of them: multiply, don't divide."], [sq(Math.round(x * 1e6), "cm"), "× 1 000 000 turns m³ into cm³. For square units it's 100 × 100 = 10 000."]],
+        "Picture 1 m² as a square 100 cm long and 100 cm wide.", [`1 m² = 100 cm × 100 cm = 10 000 cm²`, `${fmt(x)} × 10 000 = ${grp(v)} cm²`], { data: { mens: "units", k, x } }); }
+    if (k === "cm2") { const x = r.int(5, 95) / 10, v = Math.round(x * 1e4);
+      return mcqWhy(r, `A banner for the royal parade uses ${grp(v)} cm² of silk. What is that in m²?`, sq(x, "m"), `Every 10 000 cm² makes 1 m² (100 cm × 100 cm), so ${grp(v)} ÷ 10 000 = ${fmt(x)} m².`,
+        [[sq(rd(v / 100, 4), "m"), "Dividing by 100 changes cm to m for lengths. For areas it's 100 × 100 = 10 000."], [sq(rd(v / 1000, 4), "m"), "There are 10 000 cm² in 1 m², not 1 000."], [sq(v * 1e4, "m"), "Metres are bigger, so you need FEWER of them: divide, don't multiply."], [sq(rd(v / 1e6, 6), "m"), "÷ 1 000 000 is for cubic units (cm³ to m³)."]],
+        "1 m² = 10 000 cm². Big units → fewer of them.", [`1 m² = 100 cm × 100 cm = 10 000 cm²`, `${grp(v)} ÷ 10 000 = ${fmt(x)} m²`], { data: { mens: "units", k, x } }); }
+    const x = r.int(1, 9) / 10 + r.pick([0, 0, 1, 2]), v = Math.round(x * 1e6);
+    return mcqWhy(r, `The mermaid's pool holds ${fmt(x)} m³ of water. What is that in cm³?`, cu(v, "cm"), `1 m³ is a cube 100 cm on every edge: 100 × 100 × 100 = 1 000 000 cm³, so ${fmt(x)} m³ = ${grp(v)} cm³.`,
+      [[cu(Math.round(x * 1e4), "cm"), "× 10 000 is for square units. A cube has three edges of 100 cm: 100 × 100 × 100."], [cu(Math.round(x * 100), "cm"), "× 100 only changes a length. Volume has three dimensions to change."], [cu(Math.round(x * 1000), "cm"), "1 m³ = 1 000 litres, but in cm³ it's 1 000 000 (each litre is 1 000 cm³)."], [cu(rd(x / 1e6, 8), "cm"), "Centimetres are smaller, so there are more of them: multiply."]],
+      "Picture 1 m³ as a cube 100 cm × 100 cm × 100 cm.", [`1 m³ = 100 × 100 × 100 = 1 000 000 cm³`, `${fmt(x)} × 1 000 000 = ${grp(v)} cm³`], { data: { mens: "units", k, x } }); }
+};
+topic(7, "mensur", "Bakery Blueprints", "🎂", "Parallelograms, trapeziums, prisms and cylinders", r => {
+  const k = r.pick(["para", "para", "trap", "trap", "rev", "compo", "compo", "prismV", "prismV", "prismSA", "cylV", "cylV", "cylSA", "cylSA", "units"]);
+  return MENS[k](r);
 });
 topic(7, "pct", "Percentage Puzzles", "🔮", "Reverse and percentage change", r => {
   if (r.chance(.5)) { const orig = r.int(4, 50) * 20, p = r.pick([10, 20, 25, 40, 50]), sale = orig * (100 - p) / 100; return num(`After a ${p}% discount, a cloak costs $${sale}. What was the original price in $?`, orig, `$${sale} is ${100 - p}% of the original.`, [`${100 - p}% → ${sale}`, `1% → ${sale} ÷ ${100 - p} = ${fmt(sale / (100 - p))}`, `100% → $${orig}`], { data: { sale, p } }); }

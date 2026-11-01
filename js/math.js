@@ -257,7 +257,12 @@ function petReact(ok) {
   box.classList.add(ok ? (L.combo >= 3 ? "cheer" : "bounce") : "sad");
   bub.textContent = ok ? (L.combo >= 3 ? `${L.combo} in a row! Number wizard! 🔥` : CHEER[Math.floor(Math.random() * CHEER.length)]) : COMFORT[Math.floor(Math.random() * COMFORT.length)];
 }
-const steps = q => `<ol class="msteps">${q.steps.map(s => `<li>${MW.html(s)}</li>`).join("")}</ol>`;
+// the worked solution: folded away after a right answer ("fold", opened when it took two tries) or shown outright ("shown")
+const work = (q, how, open) => { const ol = `<ol class="msteps">${q.steps.map(s => `<li>${MW.html(s)}</li>`).join("")}</ol>`;
+  return how === "fold" ? `<details class="mwork" ${open ? "open" : ""}><summary>📜 Worked solution</summary>${ol}</details>` : `<div class="mwork open"><b>📜 Worked solution</b>${ol}</div>`; };
+// a why / why-not note for the answer given (mcq options carry one each; typed numbers when they match a usual slip)
+const whyLine = (note, icon) => note ? `<div class="why-not">${icon} ${MW.html(note)}</div>` : "";
+const rightWhy = q => q.kind === "mcq" && q.why ? q.why[q.a] || "" : "";
 // what to say when an answer can't be read, by answer kind
 const BAD_INPUT = { time: "Type the time like 3:30 🕰️", time24: "Type 24-hour time like 19:30 🌙", rem: "Type it like 7 r 2 ➗", ratio: "Type it like 2:3 ⚖️", num: "Hmm, I couldn't read that. Try a number like 12, 3/4 or 2.5 🧮" };
 function submit(val, btn) {
@@ -275,11 +280,11 @@ function submit(val, btn) {
     const inp = WR.$("#mans"); if (inp) inp.classList.add("ok"); MW.lockInput();
     if (q.set) MW.Clock.solved(q, L.tries);
     MW.lockOpts(q);
-    showMsg("good", `✅ ${L.tries === 1 ? "Correct!" : "Got it on the second try!"} ${MW.ansHTML(q)}<details class="mwork" ${L.tries > 1 ? "open" : ""}><summary>📜 Worked solution</summary>${steps(q)}</details>${nextBtn(true)}`);
+    showMsg("good", `✅ ${L.tries === 1 ? "Correct!" : "Got it on the second try!"} ${MW.ansHTML(q)}${whyLine(rightWhy(q), "💡")}${work(q, "fold", L.tries > 1)}${nextBtn(true)}`);
   } else if (L.tries === 1) {
     WR.sfx("bad"); L.combo = 0; if (btn) { btn.classList.add("wrong"); btn.disabled = true; }
     const inp = WR.$("#mans") || WR.$("#main .csetter .cface"); if (inp) { inp.classList.add("shake"); setTimeout(() => inp.classList.remove("shake"), 450); inp.select && inp.select(); }
-    showMsg("bad", `💭 Not quite — have another go!<div style="margin-top:4px">💡 ${MW.html(q.hint)}</div>${L.viz ? `<div class="muted" style="margin-top:2px;font-weight:800">${look().help}</div>` : ""}`);
+    showMsg("bad", `💭 Not quite — have another go!${whyLine(MG.whyNote(q, val), "🤔")}<div style="margin-top:4px">💡 ${MW.html(q.hint)}</div>${L.viz ? `<div class="muted" style="margin-top:2px;font-weight:800">${look().help}</div>` : ""}`);
     if (L.viz && !L.vizOpen) showViz();
   } else {
     L.done = true; L.res[L.i] = 0; WR.countAnswer(false, "m:" + (q.topic || L.key)); m.answered = (m.answered || 0) + 1; WR.sfx("bad");
@@ -287,7 +292,7 @@ function submit(val, btn) {
     MW.lockOpts(q, true);
     MW.lockInput();
     if (L.viz) showViz(true);
-    showMsg("bad", `💭 The answer is ${MW.ansHTML(q)}.<div class="mwork open"><b>📜 Worked solution</b>${steps(q)}</div>${nextBtn(false)}`);
+    showMsg("bad", `💭 The answer is ${MW.ansHTML(q)}.${whyLine(MG.whyNote(q, val), "🤔")}${whyLine(rightWhy(q), "💡")}${work(q, "shown")}${nextBtn(false)}`);
   }
   WR.save(); WR.renderTop(); petReact(res.ok);
   const h = document.querySelector(".hud"); if (h && L.done) { const i = L.i; L.i++; h.innerHTML = hud(); L.i = i; }

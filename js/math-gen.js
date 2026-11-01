@@ -54,6 +54,17 @@ const mcq = (r, q, correct, wrong, hint, steps, extra = {}) => {
   const opts = [correct]; for (const w of wrong) if (opts.length < 4 && !opts.includes(w)) opts.push(w);
   return Q(Object.assign({ q, kind: "mcq", options: r.shuffle(opts), a: correct, hint, steps }, extra));
 };
+// multiple choice where every option carries a note: rightWhy says in other words why the answer works, and each wrong
+// option comes as [option, why-not note]; options that clash with the answer or each other are dropped (first 3 kept)
+const mcqWhy = (r, q, correct, rightWhy, wrong, hint, steps, extra = {}) => {
+  const seen = new Set([correct]), keep = wrong.filter(([o]) => !seen.has(o) && seen.add(o)).slice(0, 3);
+  return mcq(r, q, correct, keep.map(w => w[0]), hint, steps, Object.assign({ why: Object.fromEntries([[correct, rightWhy]].concat(keep)) }, extra));
+};
+// a typed-number question whose usual slips each get a why-not note: slips = [[wrong value, note]] (any that equal the answer,
+// or an earlier slip, are dropped)
+const numWhy = (q, val, hint, steps, slips, extra = {}) => { const tol = extra.tol || 1e-9;
+  const keep = []; for (const sl of slips) if (Math.abs(sl[0] - val) > 2 * tol + 1e-9 && !keep.some(k => Math.abs(k[0] - sl[0]) <= 2 * tol + 1e-9)) keep.push(sl);
+  return num(q, val, hint, steps, Object.assign({ slips: keep }, extra)); };
 const T = s => `$${s}$`; // inline TeX
 
 /* ---------- fairytale flavour ---------- */
@@ -164,12 +175,17 @@ const svgPieChart = (title, slices, whole) => {
 const vsub = (a, b) => [a[0] - b[0], a[1] - b[1]], vunit = v => { const l = Math.hypot(v[0], v[1]) || 1; return [v[0] / l, v[1] / l]; };
 const vat = (p, v, k) => [p[0] + v[0] * k, p[1] + v[1] * k], f1 = n => +n.toFixed(1), xy = p => `${f1(p[0])},${f1(p[1])}`;
 const dirPt = (p, deg, k = 1) => vat(p, [Math.cos(deg * Math.PI / 180), Math.sin(deg * Math.PI / 180)], k);
-const svgGeo = (fig, label = "geometry figure") => {
-  const W = 300, H = 214, box = [22, 34, 256, 166], rot = (fig.rot || 0) * Math.PI / 180;
-  const turn = p => [p[0] * Math.cos(rot) - p[1] * Math.sin(rot), p[0] * Math.sin(rot) + p[1] * Math.cos(rot)];
-  const all = [].concat(...(fig.segs || []), ...(fig.polys || []), fig.dots || []).map(turn), xs = all.map(p => p[0]), ys = all.map(p => p[1]);
+// fit points in maths coordinates (y up, turned rot degrees) into a box [left, top, width, height] at one scale, centred:
+// returns S(p) → [px, py] on the card, with S.k = the scale (px per unit), so figures stay true to shape
+const fitBox = (pts, box, rotDeg = 0) => {
+  const rot = rotDeg * Math.PI / 180, turn = p => [p[0] * Math.cos(rot) - p[1] * Math.sin(rot), p[0] * Math.sin(rot) + p[1] * Math.cos(rot)];
+  const all = pts.map(turn), xs = all.map(p => p[0]), ys = all.map(p => p[1]);
   const [x0, x1, y0, y1] = [Math.min(...xs), Math.max(...xs), Math.min(...ys), Math.max(...ys)], sc = Math.min(box[2] / (x1 - x0 || 1), box[3] / (y1 - y0 || 1));
   const S = p => { const q = turn(p); return [box[0] + (q[0] - x0) * sc + (box[2] - (x1 - x0) * sc) / 2, box[1] + (y1 - q[1]) * sc + (box[3] - (y1 - y0) * sc) / 2]; };
+  S.k = sc; return S;
+};
+const svgGeo = (fig, label = "geometry figure") => {
+  const W = 300, H = 214, S = fitBox([].concat(...(fig.segs || []), ...(fig.polys || []), fig.dots || []), [22, 34, 256, 166], fig.rot || 0);
   let back = "", lines = "", marks = "", text = "";
   (fig.polys || []).forEach((P, i) => { back += `<polygon points="${P.map(p => xy(S(p))).join(" ")}" fill="${PASTEL[(i + 1) % 6]}" fill-opacity=".45" stroke="none"/>`; P.forEach((p, k) => (fig.segs = fig.segs || []).push([p, P[(k + 1) % P.length]])); });
   (fig.angles || []).forEach(g => {
@@ -212,7 +228,7 @@ M.longMulSteps = (a, b) => { const bs = String(b).split("").reverse(); const out
 /* ====================== TOPICS ====================== */
 const TOPICS = [];
 const topic = (grade, id, name, icon, desc, gen, opt = {}) => TOPICS.push(Object.assign({ grade, id: `g${grade}.${id}`, name, icon, desc, gen }, opt));
-M._internal = { Q, num, mcq, T, NAMES, THINGS, COUNT_EMOJI, PASTEL, INK, LINE, esc, svgBox, cardSvg, cellKey, figKey, hasCell, nearCells, gridPaper, gridSheet, gridCell, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, svgBars, svgLine, svgPieChart, svgGeo, dirPt, coin, emojiRows, table, colAdd, colSub, topic, TOPICS, gcd, lcm, rd, fmt, fdp, money, simp, fracTex, fracStr, mixedTex, sgn, poly, lin, paren, pm, undo, coef, ord };
+M._internal = { Q, num, mcq, mcqWhy, numWhy, T, NAMES, THINGS, COUNT_EMOJI, PASTEL, INK, LINE, esc, svgBox, cardSvg, cellKey, figKey, hasCell, nearCells, gridPaper, gridSheet, gridCell, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, svgBars, svgLine, svgPieChart, svgGeo, fitBox, dirPt, coin, emojiRows, table, colAdd, colSub, topic, TOPICS, gcd, lcm, rd, fmt, fdp, money, simp, fracTex, fracStr, mixedTex, sgn, poly, lin, paren, pm, undo, coef, ord };
 M.TOPICS = TOPICS;
 M.topic = id => TOPICS.find(t => t.id === id);
 M.gradeTopics = g => TOPICS.filter(t => t.grade === g);
@@ -252,6 +268,13 @@ M.parseNum = str => {
   return NaN;
 };
 const close = (a, b, tol) => Math.abs(a - b) <= Math.max(tol, Math.abs(b) * 1e-9);
+// the note for an answer: an mcq option's why / why-not, or a typed number that matches one of the question's known slips
+M.whyNote = (q, input) => {
+  if (q.kind === "mcq") return (q.why && q.why[input]) || "";
+  if (!q.slips || !q.slips.length) return "";
+  const v = M.parseNum(input); if (isNaN(v)) return "";
+  const s = q.slips.find(([x]) => close(v, x, q.tol)); return s ? s[1] : "";
+};
 M.check = (q, input) => {
   const raw = String(input == null ? "" : input).trim();
   if (!raw) return { ok: false, empty: true };
