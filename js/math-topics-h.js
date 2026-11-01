@@ -1,7 +1,7 @@
 /* 🔢 Number Kingdom topics, Grades 9–12 (Singapore Secondary 3–4, JC 1–2 / Years 10–13). */
 (function () {
 const M = (typeof module !== "undefined" && module.exports) ? require("./math-gen.js") : window.MathGen;
-const { Q, num, mcq, T, topic, table, gcd, rd, fmt, fdp, fracTex, fracStr, poly, lin, paren, sgn, pm } = M._internal;
+const { Q, num, mcq, mcqWhy, numWhy, T, topic, PASTEL, INK, LINE, esc, f1, mid, vat, vdir, angSweep, angWedge, angText, rightPath, figCard, figEdge, figLab, table, rd, fmt, fdp, fracTex, fracStr, poly, lin, paren, sgn, pm } = M._internal;
 const sf3 = v => +(+v.toFixed(12)).toPrecision(3);
 const tol3 = v => Math.max(1e-9, Math.pow(10, Math.floor(Math.log10(Math.abs(v) || 1)) - 2) * 0.51);
 const V2 = v => `\\begin{pmatrix} ${v[0]} \\\\ ${v[1]} \\end{pmatrix}`, V3 = v => `\\begin{pmatrix} ${v[0]} \\\\ ${v[1]} \\\\ ${v[2]} \\end{pmatrix}`;
@@ -49,6 +49,153 @@ topic(9, "coord", "Treasure-Map Coordinates", "🗺️", "Distance and midpoint"
   const x2 = x1 + 2 * r.int(-5, 5), y2 = y1 + 2 * r.int(-5, 5), mx = (x1 + x2) / 2, my = (y1 + y2) / 2;
   return Q({ q: `Find the midpoint of ${T(`(${x1}, ${y1})`)} and ${T(`(${x2}, ${y2})`)}. (type x, y)`, kind: "pair", val: [mx, my], a: `${mx}, ${my}`, keys: ["-", ","], hint: "Average the x's, average the y's.", steps: [`$x = \\frac{${x1} + ${paren(x2)}}{2} = ${mx}$`, `$y = \\frac{${y1} + ${paren(y2)}}{2} = ${my}$`], data: { x1, y1, x2, y2 } });
 });
+/* ---------- 🎠 Circle Secrets (MOE Sec 3 angle properties of circles): angle in a semicircle, tangent ⊥ radius (angles and
+   Pythagoras), equal tangents from an outside point, angle at the centre = 2 × angle at the circumference, angles in the same
+   segment, opposite angles of a cyclic quadrilateral, and the perpendicular from the centre bisecting a chord; plus "which
+   property?" choices. Every figure is drawn to scale on the circle (centre O); given angles carry numbers and the unknown is x. */
+const dg = d => `${fmt(d)}°`;
+const onC = (R, deg) => [R * Math.cos(deg * Math.PI / 180), R * Math.sin(deg * Math.PI / 180)];
+const turnPt = (p, deg) => { const a = deg * Math.PI / 180; return [p[0] * Math.cos(a) - p[1] * Math.sin(a), p[0] * Math.sin(a) + p[1] * Math.cos(a)]; };
+/* a circle figure: f = { R, rot, pts: { A: [x, y] } (maths coords, centre O at 0,0), showO, segs / dash: [[A, B]], tan: [[T, P]]
+   (a tangent line through T and P, drawn a little past both), angles: [{ v, a, b, t }], rights: [[V, A, B]], ticks: [[A, B]],
+   lens: [[A, B, text, the point to keep the label away from]], labAt: { M: [points the letter leans towards] } }. Points carry class cpt + data-n and angle wedges class cang + data-v/a/b, so tests read the figure back. */
+const svgCircle = (title, f) => {
+  const R = f.R, pts = Object.fromEntries(Object.entries(Object.assign({ O: [0, 0] }, f.pts)).map(([k, p]) => [k, turnPt(p, f.rot || 0)]));
+  return figCard(title, [[R, 0], [-R, 0], [0, R], [0, -R]].concat(Object.values(pts)), S => {
+    const P = Object.fromEntries(Object.entries(pts).map(([k, p]) => [k, S(p)])), O = P.O, names = Object.keys(P).filter(k => k !== "O" || f.showO);
+    let back = `<circle class="mcirc" cx="${f1(O[0])}" cy="${f1(O[1])}" r="${f1(R * S.k)}" fill="${f.fill || PASTEL[1]}" fill-opacity=".55" stroke="${INK}" stroke-width="2.6"/>`, lines = "", marks = "", text = "";
+    (f.tan || []).forEach(([t, p]) => { const u = vdir(P[t], P[p]); lines += figEdge(vat(P[t], u, -30), vat(P[p], u, 16)); });
+    (f.segs || []).forEach(([a, b]) => { lines += figEdge(P[a], P[b]); });
+    (f.dash || []).forEach(([a, b]) => { lines += figEdge(P[a], P[b], true); });
+    (f.rights || []).forEach(([v, a, b]) => { back += `<path class="cright" data-v="${v}" d="${rightPath(P[v], vdir(P[v], P[a]), vdir(P[v], P[b]), 10)}" fill="#E2D6FF" stroke="${LINE}" stroke-width="1.6"/>`; });
+    (f.angles || []).forEach(g => { const V = P[g.v], u1 = vdir(V, P[g.a]), u2 = vdir(V, P[g.b]), { t1, d, deg } = angSweep(u1, u2), x = g.t === "x", rr = deg < 40 ? 30 : deg < 70 ? 24 : 19, m = t1 + d / 2, L = rr + 13;
+      back += `<path class="cang" data-t="${esc(g.t)}" data-v="${g.v}" data-a="${g.a}" data-b="${g.b}" d="${angWedge(V, u1, u2, rr, d)}" fill="${x ? "#FFC9DA" : "#FFF0B8"}" stroke="${x ? "#ff6f91" : LINE}" stroke-width="1.5"/>`;
+      text += angText(g.t, V[0] + L * Math.cos(m), V[1] + L * Math.sin(m) + 4.5, 15, 12, ` class="mang" data-t="${esc(g.t)}"`); });
+    (f.ticks || []).forEach(([a, b]) => { const c = mid(P[a], P[b]), u = vdir(P[a], P[b]); marks += `<line class="ctick" x1="${f1(c[0] - u[1] * 6)}" y1="${f1(c[1] + u[0] * 6)}" x2="${f1(c[0] + u[1] * 6)}" y2="${f1(c[1] - u[0] * 6)}" stroke="#ff6f91" stroke-width="2.4" stroke-linecap="round"/>`; });
+    (f.lens || []).forEach(([a, b, t, away]) => { const c = mid(P[a], P[b]), u = vdir(P[a], P[b]), F = P[away]; let n = [-u[1], u[0]]; if (n[0] * (c[0] - F[0]) + n[1] * (c[1] - F[1]) < 0) n = [-n[0], -n[1]]; text += figLab(c, t, n[0] * 17, n[1] * 13); });
+    names.forEach(k => { const p = P[k]; let o;
+      if (k === "O") { const s = names.filter(n => n !== "O").reduce((g, n) => { const u = vdir(O, P[n]); return [g[0] + u[0], g[1] + u[1]]; }, [0, 0]); o = Math.hypot(s[0], s[1]) > .3 ? vdir(s, [0, 0]) : [-.6, .8]; }
+      else if (f.labAt && f.labAt[k]) { const s = f.labAt[k].reduce((g, n) => { const u = vdir(p, P[n]); return [g[0] + u[0], g[1] + u[1]]; }, [0, 0]); o = vdir([0, 0], s); }
+      else o = vdir(O, p);
+      marks += `<circle class="cpt" data-n="${k}" cx="${f1(p[0])}" cy="${f1(p[1])}" r="3.4" fill="${INK}"/>`;
+      text += `<text class="mvtx" x="${f1(p[0] + o[0] * 13)}" y="${f1(p[1] + o[1] * 13 + 4.5)}" font-size="13" text-anchor="middle" font-weight="900" fill="${INK}" paint-order="stroke" stroke="#FFFDF8" stroke-width="3">${k}</text>`; });
+    return back + lines + marks + text; }, "circle figure", 236, "mpic chart mens circ");
+};
+// the seven properties: their names (the "which property?" options), what each one needs to see in a figure
+const CPROP = {
+  semi: ["Angle in a semicircle = 90°", "a triangle drawn on a diameter (a chord through the centre O), with its third corner on the circle"],
+  tangent: ["Tangent ⊥ radius", "a tangent line and the radius drawn to the point where it touches the circle"],
+  twotan: ["Tangents from an outside point are equal", "two tangents drawn to the circle from the same outside point"],
+  centre: ["Angle at centre = 2 × angle at circumference", "one angle at the centre O and one on the circle, standing on the same arc"],
+  segment: ["Angles in the same segment are equal", "two angles on the circle standing on the same chord, on the same side of it"],
+  cyclic: ["Opposite angles of a cyclic quadrilateral add up to 180°", "a four-sided shape with all four corners on the circle"],
+  chord: ["Perpendicular from centre bisects a chord", "a line from the centre O that meets a chord at right angles"]
+};
+// fairytale settings for each kind of figure: [card title, the sentence that sets the scene]
+const CTX = {
+  semi: [["Moon-garden pond", "In the moon garden, a frog hops across the round lily pond along the straight path AB through its centre O, then to the lily pad C on the edge."], ["Mushroom fairy ring", "A fairy flies across the mushroom fairy ring along the straight line AB through its centre O, then to the mushroom C on the edge."], ["Royal birthday cake", "The round royal birthday cake is cut straight across along AB, through its centre O. A cherry sits at C on the edge."]],
+  tangent: [["Carousel platform", "A ribbon is pulled tight from the flag pole P so that it just touches the round carousel platform (centre O) at T."], ["Wizard's ring", "A beam of starlight from the lantern P just touches the wizard's glowing ring (centre O) at T."], ["Moon-garden pond", "A straight garden path from the gate P just touches the round moon-garden pond (centre O) at T."]],
+  twotan: [["Carousel platform", "Two ribbons are pulled tight from the flag pole P and just touch the round carousel platform (centre O) at A and B."], ["Wizard's ring", "Two beams of starlight from the lantern P just touch the wizard's glowing ring (centre O) at A and B."], ["Dragon's pond", "Two straight paths from the dragon's cave P just touch the round pond (centre O) at A and B."]],
+  centre: [["Clock-tower face", "A, B and C are golden studs on the rim of the clock-tower face, centre O."], ["Star-map dome", "A, B and C are stars on the edge of the round star map, centre O."], ["Ferris wheel", "A, B and C are cabins on the Ferris wheel, centre O."]],
+  segment: [["Lantern ring", "Four glowing lanterns A, B, C and D hang on the round lantern ring."], ["Clock-tower face", "A, B, C and D are golden studs on the rim of the clock-tower face."], ["Star-map dome", "A, B, C and D are stars on the edge of the round star map."]],
+  cyclic: [["Moon-garden flower bed", "A four-sided flower bed ABCD is planted in the round moon garden with all four corners on the edge."], ["Carousel ponies", "Four ponies A, B, C and D stand on the edge of the round carousel, and ribbons join them to make ABCD."], ["Fairy-ring picnic", "Four mushrooms A, B, C and D on the fairy ring are joined by daisy chains to make ABCD."]],
+  chord: [["Clock-tower face", "A golden bar AB is fixed straight across the round clock-tower face (centre O)."], ["Wizard's ring", "A silver wand AB rests straight across the wizard's magic ring (centre O)."], ["Moon-garden pond", "A wooden bridge AB crosses the round lily pond (centre O)."]]
+};
+const TRIPLES = [[3, 4, 5], [4, 3, 5], [5, 12, 13], [12, 5, 13], [6, 8, 10], [8, 6, 10], [8, 15, 17], [15, 8, 17], [9, 12, 15], [12, 9, 15], [20, 21, 29], [21, 20, 29]];
+// two points A, B on the circle with the short arc AB = 2a at the top, and a point on the long arc (bottom) at offset c from straight down
+const arcAB = a => ({ A: onC(1, 90 - a), B: onC(1, 90 + a) }), lowPt = c => onC(1, 270 + c);
+const CIRC = {
+  // angle in a semicircle: AB is a diameter, C on the circle; one angle at A or B given
+  semi: r => { let a; do a = r.int(18, 72); while (a === 45); const place = r.pick(CTX.semi), giveA = r.chance(.5), g = giveA ? a : 90 - a, x = 90 - g;
+    const fig = { R: 1, rot: r.int(0, 359), showO: true, pts: { A: onC(1, 180), B: onC(1, 0), C: onC(1, 2 * a) }, segs: [["A", "B"], ["A", "C"], ["B", "C"]],
+      angles: giveA ? [{ v: "A", a: "C", b: "B", t: dg(g) }, { v: "B", a: "A", b: "C", t: "x" }] : [{ v: "B", a: "A", b: "C", t: dg(g) }, { v: "A", a: "C", b: "B", t: "x" }] };
+    return { fig, place, x, giv: [g], prop: "semi", see: "AB goes through the centre O, so it is a diameter and the angle at C is in a semicircle.",
+      q: `${place[1]} Find ∠x.`, hint: "AB passes through the centre. What do you know about the angle at C?",
+      steps: ["AB passes through the centre O, so AB is a diameter.", "Angle in a semicircle: ∠ACB = 90°.", `Angles in triangle ABC add up to 180°: x = 180° − 90° − ${dg(g)} = ${dg(x)}`],
+      slips: [[180 - g, "That forgets the 90° at C. The angle in a semicircle is a right angle, so take away 90° as well."], [g, "x isn't a copy of the given angle. The two angles at A and B share the 90° left after the right angle at C."], [90, "90° is the angle at C (the angle in the semicircle), not the angle at the other end of the diameter."]] }; },
+  // tangent ⊥ radius: PT touches the circle at T; one angle of triangle OTP given
+  tangent: r => { const a = r.int(25, 65), s = r.pick([1, -1]), place = r.pick(CTX.tangent), giveO = r.chance(.5), g = giveO ? a : 90 - a, x = 90 - g;
+    const fig = { R: 1, rot: r.int(0, 359), showO: true, pts: { T: [0, 1], P: [s * Math.tan(a * Math.PI / 180), 1] }, segs: [["O", "T"], ["O", "P"]], tan: [["T", "P"]],
+      angles: giveO ? [{ v: "O", a: "T", b: "P", t: dg(g) }, { v: "P", a: "T", b: "O", t: "x" }] : [{ v: "P", a: "T", b: "O", t: dg(g) }, { v: "O", a: "T", b: "P", t: "x" }] };
+    return { fig, place, x, giv: [g], prop: "tangent", see: "PT just touches the circle at T and OT is a radius, so they meet at 90°.",
+      q: `${place[1]} PT is a tangent. Find ∠x.`, hint: "A tangent and the radius to the touching point meet at right angles.",
+      steps: ["PT is a tangent and OT is a radius, so ∠OTP = 90° (tangent ⊥ radius).", `Angles in triangle OTP add up to 180°: x = 180° − 90° − ${dg(g)} = ${dg(x)}`],
+      slips: [[180 - g, "That forgets the right angle at T. A tangent meets the radius at 90°, so take that away too."], [g, "x isn't equal to the given angle. Together they make 90°, because the angle at T is 90°."], [90, "90° is the angle at T, where the tangent meets the radius, not the angle marked x."]] }; },
+  // tangent ⊥ radius with Pythagoras: OT, TP, OP from a whole-number triple
+  tanlen: r => { const [rad, t, h] = r.pick(TRIPLES), s = r.pick([1, -1]), k = r.pick(["TP", "TP", "OP", "OT"]), place = r.pick(CTX.tangent), x = { TP: t, OP: h, OT: rad }[k];
+    const lab = n => n === k ? "x" : `${{ TP: t, OP: h, OT: rad }[n]} cm`;
+    const fig = { R: rad, rot: r.int(0, 359), showO: true, pts: { T: [0, rad], P: [s * t, rad] }, segs: [["O", "T"], ["O", "P"]], tan: [["T", "P"]], rights: [["T", "O", "P"]], lens: [["O", "T", lab("OT"), "P"], ["T", "P", lab("TP"), "O"], ["O", "P", lab("OP"), "T"]] };
+    const steps = ["PT is a tangent and OT is a radius, so ∠OTP = 90° (tangent ⊥ radius).", "Use Pythagoras in right-angled triangle OTP: OP² = OT² + TP²."].concat(
+      k === "OP" ? [`$x^2 = ${rad}^2 + ${t}^2 = ${rad * rad + t * t}$`, `$x = \\sqrt{${h * h}} = ${h}$ cm`] : [`$x^2 = ${h}^2 - ${k === "TP" ? rad : t}^2 = ${h * h - (k === "TP" ? rad * rad : t * t)}$`, `$x = \\sqrt{${x * x}} = ${x}$ cm`]);
+    const other = k === "TP" ? rad : t, slips = k === "OP" ? [[rad + t, "Lengths don't simply add. OP is the longest side of a right-angled triangle: use OP² = OT² + TP²."], [rad * rad + t * t, `${rad * rad + t * t} is OP². Take the square root to get OP.`], [Math.abs(t - rad), "Subtracting is for the shorter sides. OP is the longest side, so add the squares."]]
+      : [[h - other, "Lengths don't simply subtract. Use Pythagoras: square them, subtract, then take the square root."], [h * h - other * other, `${h * h - other * other} is x². Take the square root to get x.`], [h + other, "OP is the longest side (opposite the right angle at T), so x is shorter than OP, not longer."]];
+    return { fig, place, x, giv: [], len: true, prop: "tangent", k, data: { rad, t, h },
+      q: `${place[1]} PT is a tangent. Find x, in cm.`, hint: "A tangent meets the radius at 90°, so triangle OTP is right-angled. Use Pythagoras.", steps, slips }; },
+  // two tangents from P: find ∠AOB (tangent ⊥ radius, angles in OAPB) or ∠PAB (PA = PB, isosceles)
+  twotan: r => { let p; do p = 2 * r.int(20, 55); while (p === 60 || p === 90); const b = 90 - p / 2, D = 1 / Math.cos(b * Math.PI / 180), k = r.pick(["AOB", "PAB"]), place = r.pick(CTX.twotan);
+    const fig = { R: 1, rot: r.int(0, 359), showO: k === "AOB", pts: { A: onC(1, b), B: onC(1, -b), P: [D, 0] }, segs: [["P", "A"], ["P", "B"]].concat(k === "AOB" ? [["O", "A"], ["O", "B"]] : [["A", "B"]]), ticks: [["P", "A"], ["P", "B"]],
+      angles: [{ v: "P", a: "A", b: "B", t: dg(p) }, k === "AOB" ? { v: "O", a: "A", b: "B", t: "x" } : { v: "A", a: "P", b: "B", t: "x" }] };
+    const base = { fig, place, giv: [p], k, q: `${place[1]} PA and PB are tangents. Find ∠x.` };
+    if (k === "AOB") return Object.assign(base, { x: 180 - p, prop: "tangent", see: "OA and OB are radii meeting the tangents PA and PB, so the angles at A and B are both 90°.", hint: "Each tangent meets its radius at 90°. The four angles of OAPB add up to 360°.",
+      steps: ["∠OAP = ∠OBP = 90° (tangent ⊥ radius).", "The angles of the four-sided shape OAPB add up to 360°.", `x = 360° − 90° − 90° − ${dg(p)} = ${dg(180 - p)}`],
+      slips: [[p, "x isn't equal to the angle at P. In OAPB the two right angles take 180°, and x and ∠APB share the other 180°."], [360 - p, "That forgets the two right angles at A and B, where the tangents meet the radii."], [270 - p, "Only one right angle was taken away. There are two: at A and at B."]] });
+    return Object.assign(base, { x: b, prop: "twotan", see: "PA and PB are tangents from the same outside point P, so PA = PB (see the ticks).", hint: "Tangents from the same point are equal, so triangle PAB is isosceles.",
+      steps: ["Tangents from an outside point are equal: PA = PB.", "So triangle PAB is isosceles and ∠PAB = ∠PBA.", `x = (180° − ${dg(p)}) ÷ 2 = ${dg(b)}`],
+      slips: [[180 - p, `${dg(180 - p)} is what the two equal angles at A and B make together. Halve it for one of them.`], [p, "x isn't equal to the angle at P. Only the angles at A and B are equal, because PA = PB."], [90, "90° is the angle between a tangent and the radius (∠OAP), not ∠PAB."]] }); },
+  // angle at the centre = 2 × angle at the circumference (either way round)
+  centre: r => { const a = r.int(25, 80), c = r.int(-(150 - a), 150 - a), fwd = r.chance(.55), place = r.pick(CTX.centre), x = fwd ? 2 * a : a, g = fwd ? a : 2 * a;
+    const fig = Object.assign({ R: 1, rot: r.int(0, 359), showO: true, pts: Object.assign(arcAB(a), { C: lowPt(c) }), segs: [["C", "A"], ["C", "B"], ["O", "A"], ["O", "B"]] },
+      { angles: [{ v: "C", a: "A", b: "B", t: fwd ? dg(a) : "x" }, { v: "O", a: "A", b: "B", t: fwd ? "x" : dg(2 * a) }] });
+    return { fig, place, x, giv: [g], k: fwd ? "atO" : "atC", prop: "centre", see: "∠AOB at the centre and ∠ACB on the circle both stand on the arc AB.",
+      q: `${place[1]} Find ∠x.`, hint: "Both angles stand on arc AB. The angle at the centre is twice the angle at the circumference.",
+      steps: ["∠AOB (at the centre) and ∠ACB (on the circle) stand on the same arc AB.", "Angle at centre = 2 × angle at circumference.", fwd ? `x = 2 × ${dg(a)} = ${dg(2 * a)}` : `x = ${dg(2 * a)} ÷ 2 = ${dg(a)}`],
+      slips: fwd ? [[a, "x is at the centre, so it is twice the angle on the circle, not the same."], [a / 2, "That halves. The angle at the centre is the bigger one: double the angle at C."], [180 - a, "Angles here don't add to 180°. The angle at the centre is 2 × the angle at the circumference."], [360 - 2 * a, "That is the reflex angle round the other side of O. The angle marked x faces arc AB: 2 × the angle at C."]]
+        : [[2 * a, "x is on the circle, so it is half the angle at the centre, not the same."], [4 * a, "That doubles. The angle on the circle is the smaller one: halve the angle at O."], [180 - 2 * a, "Angles here don't add to 180°. The angle on the circle is half the angle at the centre."]] }; },
+  // angles in the same segment: C and D on the same side of chord AB
+  segment: r => { const a = r.int(22, 75), lim = 155 - a; let c, d; do { c = r.int(-lim, lim); d = r.int(-lim, lim); } while (Math.abs(c - d) < 45); const place = r.pick(CTX.segment);
+    const fig = { R: 1, rot: r.int(0, 359), pts: Object.assign(arcAB(a), { C: lowPt(c), D: lowPt(d) }), segs: [["C", "A"], ["C", "B"], ["D", "A"], ["D", "B"]], dash: [["A", "B"]],
+      angles: [{ v: "C", a: "A", b: "B", t: dg(a) }, { v: "D", a: "A", b: "B", t: "x" }] };
+    return { fig, place, x: a, giv: [a], prop: "segment", see: "∠ACB and ∠ADB both stand on the chord AB, on the same side of it.",
+      q: `${place[1]} Find ∠x.`, hint: "Both angles stand on chord AB and are on the same side of it.",
+      steps: ["∠ACB and ∠ADB stand on the same chord AB, on the same side of it (the same segment).", "Angles in the same segment are equal.", `x = ${dg(a)}`],
+      slips: [[2 * a, "Doubling is only for an angle at the centre O. Both angles here are on the circle, so they are equal."], [180 - a, "Adding to 180° is for opposite corners of a cyclic quadrilateral. C and D are on the same side of AB, so the angles are equal."], [90 - a, "There is no right angle here: AB isn't a diameter. Angles in the same segment are equal."]] }; },
+  // opposite angles of a cyclic quadrilateral (typed, or pick the answer)
+  cyclic: r => { let s, g0; for (;;) { s = [0, 0, 0].map(() => 2 * r.int(25, 65)); s.push(360 - s[0] - s[1] - s[2]); if (s[3] < 50 || s[3] > 130) continue; const pair = r.int(0, 1); g0 = pair ? (s[2] + s[3]) / 2 : (s[1] + s[2]) / 2; if (g0 !== 90) { s.pair = pair; break; } }
+    const th = r.int(0, 359), pos = [0, s[0], s[0] + s[1], s[0] + s[1] + s[2]].map(v => onC(1, th + v)), [V, X] = s.pair ? ["B", "D"] : ["A", "C"], flip = r.chance(.5), gv = flip ? X : V, xv = flip ? V : X, g = flip ? 180 - g0 : g0, x = 180 - g;
+    const nb = { A: ["D", "B"], B: ["A", "C"], C: ["B", "D"], D: ["C", "A"] }, place = r.pick(CTX.cyclic), mc = r.chance(.5);
+    const fig = { R: 1, rot: 0, pts: { A: pos[0], B: pos[1], C: pos[2], D: pos[3] }, segs: [["A", "B"], ["B", "C"], ["C", "D"], ["D", "A"]], fill: PASTEL[2],
+      angles: [{ v: gv, a: nb[gv][0], b: nb[gv][1], t: dg(g) }, { v: xv, a: nb[xv][0], b: nb[xv][1], t: "x" }] };
+    return { fig, place, x, giv: [g], mc, prop: "cyclic", see: "ABCD has all four corners on the circle, and the angle x is opposite the given angle.",
+      q: `${place[1]} Find ∠x.`, hint: "ABCD is a cyclic quadrilateral. Opposite angles add up to 180°.",
+      steps: ["ABCD is a cyclic quadrilateral: all four corners are on the circle.", `∠${xv} is opposite ∠${gv}. Opposite angles of a cyclic quadrilateral add up to 180°.`, `x = 180° − ${dg(g)} = ${dg(x)}`],
+      slips: [[g, "Opposite angles of a cyclic quadrilateral aren't equal (that is a parallelogram rule). They add up to 180°."], [360 - g, "360° is the sum of all four angles. Just the two opposite angles add up to 180°."], [2 * g, "Doubling is for an angle at the centre O. Here the angles are opposite corners of a cyclic quadrilateral: they add up to 180°."], [x / 2, "No need to halve: x and the given angle are opposite, so x = 180° − the given angle."], [g / 2, "Halving is for an angle on the circle compared with one at the centre. Here x and the given angle are opposite corners: they add up to 180°."]] }; },
+  // the perpendicular from the centre bisects a chord, with Pythagoras in triangle OMA
+  chord: r => { const [d, h, rad] = r.pick(TRIPLES), k = r.pick(["AB", "AB", "OM", "OA"]), place = r.pick(CTX.chord), x = { AB: 2 * h, OM: d, OA: rad }[k];
+    const lab = n => n === k ? "x" : `${{ AB: 2 * h, OM: d, OA: rad }[n]} cm`;
+    const fig = { R: rad, rot: r.int(0, 359), showO: true, pts: { A: [-h, -d], B: [h, -d], M: [0, -d] }, segs: [["A", "B"], ["O", "M"], ["O", "A"]], rights: [["M", "O", "B"]],
+      lens: [["O", "A", lab("OA"), "M"], ["O", "M", lab("OM"), "A"], ["A", "B", lab("AB"), "O"]], labAt: { M: ["O", "A"] } };
+    const steps = ["OM meets the chord AB at 90°, and the perpendicular from the centre bisects a chord, so AM = MB.", "Use Pythagoras in right-angled triangle OMA: OA² = OM² + AM²."].concat(
+      k === "AB" ? [`AM = $\\sqrt{${rad}^2 - ${d}^2} = \\sqrt{${h * h}} = ${h}$ cm`, `x = AB = 2 × ${h} = ${2 * h} cm`] : k === "OM" ? [`AM = ${2 * h} ÷ 2 = ${h} cm`, `x = $\\sqrt{${rad}^2 - ${h}^2} = \\sqrt{${d * d}} = ${d}$ cm`] : [`AM = ${2 * h} ÷ 2 = ${h} cm`, `x = $\\sqrt{${d}^2 + ${h}^2} = \\sqrt{${rad * rad}} = ${rad}$ cm`]);
+    const slips = k === "AB" ? [[h, `${h} cm is only AM. The perpendicular from the centre cuts AB in half, so AB = 2 × AM.`], [2 * (rad - d), "Lengths don't simply subtract. Use Pythagoras in triangle OMA, then double AM."], [h * h, `${h * h} is AM². Take the square root, then double it.`]]
+      : k === "OM" ? [[rad - h, "Lengths don't simply subtract. Use Pythagoras: OM² = OA² − AM²."], [d * d, `${d * d} is OM². Take the square root to get OM.`], [rad - 2 * h, "Use half the chord: OM meets AB at its midpoint M, so AM is half of AB."]]
+      : [[d + h, "Lengths don't simply add. OA is the longest side of right-angled triangle OMA: OA² = OM² + AM²."], [d * d + h * h, `${d * d + h * h} is OA². Take the square root to get OA.`], [2 * h, `${2 * h} cm is the whole chord AB. The radius is OA.`]];
+    return { fig, place, x, giv: [], len: true, prop: "chord", k, data: { d, h, rad }, see: "OM comes from the centre O and meets the chord AB at right angles, so M is the middle of AB.",
+      q: `${place[1]} OM meets AB at right angles. Find x, in cm.`, hint: "The perpendicular from the centre cuts the chord in half. Then use Pythagoras in triangle OMA.", steps, slips: slips.filter(sl => sl[0] > 0) }; }
+};
+const CIRC_WHICH = ["semi", "tangent", "twotan", "centre", "segment", "cyclic", "chord"];
+// the question: typed with slips, or (cyclic, sometimes) pick the angle; "which" shows a figure and asks which property finds x
+const circQ = (r, kind) => {
+  const which = kind === "which";
+  let z, src; do { src = which ? r.pick(CIRC_WHICH) : kind; z = CIRC[src](r); } while (which && z.len && z.prop === "tangent");
+  const T0 = z.place[0], pic = svgCircle(T0, z.fig), base = which ? "which" : kind, uid = `circ|${base}|${z.k || ""}|${z.prop}|${z.giv.join(",")}|${z.x}|${JSON.stringify(z.data || {})}|${z.fig.rot}|${T0}`;
+  const data = Object.assign({ circ: base, src, k: z.k, prop: z.prop, x: z.x, giv: z.giv, len: !!z.len, R: z.fig.R }, z.data || {});
+  if (which) { const right = CPROP[z.prop][0], wrong = r.shuffle(Object.keys(CPROP).filter(p => p !== z.prop)).map(p => [CPROP[p][0], `That rule needs ${CPROP[p][1]}. Here: ${z.see}`]);
+    return mcqWhy(r, `${z.q.replace(/ Find (∠x|x, in cm)\.$/, "")} Which circle property do you use to find ${z.len ? "x" : "∠x"}?`, right, `${right}: ${z.see}`, wrong, "Look at what is drawn: a diameter? a tangent? two tangents? an angle at the centre? four corners on the circle?",
+      z.steps.concat([`The property used: ${right}.`]), { pic, uid, data: Object.assign(data, { circ: "which" }) }); }
+  if (z.mc) return mcqWhy(r, z.q, dg(z.x), `Opposite angles of a cyclic quadrilateral add up to 180°, so x = 180° − ${dg(z.giv[0])} = ${dg(z.x)}.`, z.slips.filter(([v]) => v > 0 && v < 360).map(([v, t]) => [dg(v), t]), z.hint, z.steps, { pic, uid, data: Object.assign(data, { mc: true }) });
+  return numWhy(z.q, z.x, z.hint, z.steps, z.slips.filter(([v]) => v > 0), { pic, uid, data });
+};
+topic(9, "circles", "Circle Secrets", "🎠", "Angle properties of circles, tangents and chords", r => circQ(r, r.pick(["semi", "semi", "tangent", "tanlen", "twotan", "twotan", "centre", "centre", "segment", "segment", "cyclic", "cyclic", "chord", "chord", "which", "which"])));
 topic(9, "ineq", "Inequality Gates", "🚪", "Solve linear inequalities", r => {
   const a = r.nz(-5, 6), b = r.int(-10, 10), x = r.nz(-6, 8), c = a * x + b, op = r.pick(["<", ">", "\\le", "\\ge"]), flip = { "<": ">", ">": "<", "\\le": "\\ge", "\\ge": "\\le" }, fin = a < 0 ? flip[op] : op;
   const right = `x ${fin} ${x}`;

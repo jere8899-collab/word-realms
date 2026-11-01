@@ -176,6 +176,17 @@ const vsub = (a, b) => [a[0] - b[0], a[1] - b[1]], vunit = v => { const l = Math
 const vat = (p, v, k) => [p[0] + v[0] * k, p[1] + v[1] * k], f1 = n => +n.toFixed(1), xy = p => `${f1(p[0])},${f1(p[1])}`;
 const mid = (a, b) => [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
 const dirPt = (p, deg, k = 1) => vat(p, [Math.cos(deg * Math.PI / 180), Math.sin(deg * Math.PI / 180)], k);
+const vdir = (a, b) => vunit(vsub(b, a)); // the unit vector from a towards b
+/* angle marks, shared by the geometry figures (svgGeo, Scale-Model Studio triangles, Circle Secrets): */
+// the turn from ray u1 to ray u2 (card pixels): t1 = u1's direction, d = signed turn in (-π, π], deg = its size in degrees
+const angSweep = (u1, u2) => { const t1 = Math.atan2(u1[1], u1[0]); let d = Math.atan2(u2[1], u2[0]) - t1;
+  while (d > Math.PI) d -= 2 * Math.PI; while (d <= -Math.PI) d += 2 * Math.PI; return { t1, d, deg: Math.abs(d) * 180 / Math.PI }; };
+// the path of a filled angle wedge of radius r at V between unit rays u1 and u2 (d from angSweep)
+const angWedge = (V, u1, u2, r, d) => `M${xy(V)} L${xy(vat(V, u1, r))} A${r},${r} 0 0,${d > 0 ? 1 : 0} ${xy(vat(V, u2, r))} Z`;
+// a right-angle square of side k at V between unit rays u1 and u2
+const rightPath = (V, u1, u2, k) => `M${xy(V)} L${xy(vat(V, u1, k))} L${xy(vat(vat(V, u1, k), u2, k))} L${xy(vat(V, u2, k))} Z`;
+// an angle's label at (x, y): "x" (the unknown) big, pink and italic, a given angle in ink; attrs go first (class, data-t)
+const angText = (t, x, y, big, small, attrs = "") => `<text${attrs} x="${f1(x)}" y="${f1(y)}" font-size="${t === "x" ? big : small}" text-anchor="middle" font-weight="900"${t === "x" ? ` font-style="italic" font-family="Georgia, serif" fill="#ff4f81"` : ` fill="${INK}"`} paint-order="stroke" stroke="#FFFDF8" stroke-width="3">${esc(t)}</text>`;
 // fit points in maths coordinates (y up, turned rot degrees) into a box [left, top, width, height] at one scale, centred:
 // returns S(p) → [px, py] on the card, with S.k = the scale (px per unit), so figures stay true to shape
 const fitBox = (pts, box, rotDeg = 0) => {
@@ -190,14 +201,12 @@ const svgGeo = (fig, label = "geometry figure") => {
   let back = "", lines = "", marks = "", text = "";
   (fig.polys || []).forEach((P, i) => { back += `<polygon points="${P.map(p => xy(S(p))).join(" ")}" fill="${PASTEL[(i + 1) % 6]}" fill-opacity=".45" stroke="none"/>`; P.forEach((p, k) => (fig.segs = fig.segs || []).push([p, P[(k + 1) % P.length]])); });
   (fig.angles || []).forEach(g => {
-    const V = S(g.v), u1 = vunit(vsub(S(g.a), V)), u2 = vunit(vsub(S(g.b), V)), t1 = Math.atan2(u1[1], u1[0]);
-    let d = Math.atan2(u2[1], u2[0]) - t1; while (d > Math.PI) d -= 2 * Math.PI; while (d <= -Math.PI) d += 2 * Math.PI;
-    const deg = Math.abs(d) * 180 / Math.PI, x = g.t === "x", fill = x ? "#FFC9DA" : "#E2D6FF";
-    if (g.right) { const k = 13; back += `<path class="gang" data-t="90" d="M${xy(V)} L${xy(vat(V, u1, k))} L${xy(vat(vat(V, u1, k), u2, k))} L${xy(vat(V, u2, k))} Z" fill="${fill}" stroke="${LINE}" stroke-width="1.6"/>`; }
-    else { const r = deg < 45 ? 34 : deg < 70 ? 27 : 22, p1 = vat(V, u1, r), p2 = vat(V, u2, r);
-      back += `<path class="gang" data-t="${esc(g.t)}" d="M${xy(V)} L${xy(p1)} A${r},${r} 0 0,${d > 0 ? 1 : 0} ${xy(p2)} Z" fill="${fill}" stroke="${x ? "#ff6f91" : LINE}" stroke-width="1.6"/>`;
+    const V = S(g.v), u1 = vdir(V, S(g.a)), u2 = vdir(V, S(g.b)), { t1, d, deg } = angSweep(u1, u2), x = g.t === "x", fill = x ? "#FFC9DA" : "#E2D6FF";
+    if (g.right) back += `<path class="gang" data-t="90" d="${rightPath(V, u1, u2, 13)}" fill="${fill}" stroke="${LINE}" stroke-width="1.6"/>`;
+    else { const r = deg < 45 ? 34 : deg < 70 ? 27 : 22;
+      back += `<path class="gang" data-t="${esc(g.t)}" d="${angWedge(V, u1, u2, r, d)}" fill="${fill}" stroke="${x ? "#ff6f91" : LINE}" stroke-width="1.6"/>`;
       const m = t1 + d / 2, L = r + (deg < 45 ? 15 : 14), [tx, ty] = [V[0] + L * Math.cos(m), V[1] + L * Math.sin(m) + 4.5];
-      if (g.t) text += `<text x="${f1(tx)}" y="${f1(ty)}" font-size="${x ? 15 : 12.5}" text-anchor="middle" font-weight="900"${x ? ` font-style="italic" font-family="Georgia, serif" fill="#ff4f81"` : ` fill="${INK}"`} paint-order="stroke" stroke="#FFFDF8" stroke-width="3">${esc(g.t)}</text>`; }
+      if (g.t) text += angText(g.t, tx, ty, 15, 12.5); }
   });
   (fig.segs || []).forEach(([P, Q]) => { lines += `<line x1="${f1(S(P)[0])}" y1="${f1(S(P)[1])}" x2="${f1(S(Q)[0])}" y2="${f1(S(Q)[1])}" stroke="${INK}" stroke-width="3" stroke-linecap="round"/>`; });
   const along = (P, Q, n, gap, draw) => { const A = S(P), B = S(Q), u = vunit(vsub(B, A)), nn = [-u[1], u[0]], M = mid(A, B); for (let i = 0; i < n; i++) draw(vat(M, u, (i - (n - 1) / 2) * gap), u, nn); };
@@ -206,6 +215,16 @@ const svgGeo = (fig, label = "geometry figure") => {
   (fig.dots || []).forEach(p => { marks += `<circle cx="${f1(S(p)[0])}" cy="${f1(S(p)[1])}" r="3.6" fill="${INK}"/>`; });
   return cardSvg(W, H, fig.title, 21, back + lines + marks + text, label, "mpic chart geo");
 };
+/* 📏 to-scale figure kit (Bakery Blueprints, Scale-Model Studio, Circle Secrets): a cream card with the figure fitted in at one
+   scale, solid or dashed (hidden) edges, length labels the tests can read back, and right-angle marks */
+// a 300-wide card with the figure fitted in; draw(S) gets the maths → card mapper (S.k = px per unit) and returns the SVG body
+const figCard = (title, pts, draw, label, h = 206, cls = "mpic chart mens") => { const S = fitBox(pts, [40, 46, 220, h - 82]); return cardSvg(300, h, title, 20, draw(S), label, cls); };
+const figShape = (P, fill) => `<polygon points="${P.map(xy).join(" ")}" fill="${fill}" stroke="${INK}" stroke-width="2.6" stroke-linejoin="round"/>`;
+const figEdge = (a, b, dash) => `<line class="${dash ? "mhid" : "medge"}" x1="${f1(a[0])}" y1="${f1(a[1])}" x2="${f1(b[0])}" y2="${f1(b[1])}" stroke="${dash ? LINE : INK}" stroke-width="${dash ? 2 : 2.6}"${dash ? ` stroke-dasharray="5 4"` : ""} stroke-linecap="round"/>`;
+// a length label (class mlab, data-t = its text, so tests can read the figure back) beside point p, nudged dx, dy pixels
+const figLab = (p, t, dx = 0, dy = 0, anchor = "middle") => `<text class="mlab" data-t="${esc(t)}" x="${f1(p[0] + dx)}" y="${f1(p[1] + dy + 4)}" font-size="12.5" text-anchor="${anchor}" font-weight="900" fill="#c2457a" paint-order="stroke" stroke="#FFFDF8" stroke-width="3.5">${esc(t)}</text>`;
+// a small right-angle square at a foot point (card pixels), towards side sx (±1) and upwards
+const figRight = (f, sx = -1) => `<path d="M${xy([f[0] + 9 * sx, f[1]])} L${xy([f[0] + 9 * sx, f[1] - 9])} L${xy([f[0], f[1] - 9])}" fill="none" stroke="${LINE}" stroke-width="1.6"/>`;
 const coin = c => `<span class="mcoin c${c}">${c >= 100 ? "$" + c / 100 : c + "¢"}</span>`;
 const emojiRows = (n, e) => { let s = ""; for (let i = 0; i < n; i += 5) s += `<div class="erow">${e.repeat(Math.min(5, n - i))}</div>`; return `<div class="mpic emojis">${s}</div>`; };
 const table = (head, rows) => `<table class="mtable"><tr>${head.map(h => `<th>${h}</th>`).join("")}</tr>${rows.map(r => `<tr>${r.map(c => `<td>${c}</td>`).join("")}</tr>`).join("")}</table>`;
@@ -229,7 +248,7 @@ M.longMulSteps = (a, b) => { const bs = String(b).split("").reverse(); const out
 /* ====================== TOPICS ====================== */
 const TOPICS = [];
 const topic = (grade, id, name, icon, desc, gen, opt = {}) => TOPICS.push(Object.assign({ grade, id: `g${grade}.${id}`, name, icon, desc, gen }, opt));
-M._internal = { Q, num, mcq, mcqWhy, numWhy, T, NAMES, THINGS, COUNT_EMOJI, PASTEL, INK, LINE, esc, svgBox, cardSvg, cellKey, figKey, hasCell, nearCells, gridPaper, gridSheet, gridCell, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, svgBars, svgLine, svgPieChart, svgGeo, fitBox, dirPt, f1, xy, mid, coin, emojiRows, table, colAdd, colSub, topic, TOPICS, gcd, lcm, rd, fmt, fdp, money, simp, fracTex, fracStr, mixedTex, sgn, poly, lin, paren, pm, undo, coef, ord };
+M._internal = { Q, num, mcq, mcqWhy, numWhy, T, NAMES, THINGS, COUNT_EMOJI, PASTEL, INK, LINE, esc, svgBox, cardSvg, cellKey, figKey, hasCell, nearCells, gridPaper, gridSheet, gridCell, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, svgBars, svgLine, svgPieChart, svgGeo, fitBox, dirPt, f1, xy, mid, vat, vdir, angSweep, angWedge, angText, rightPath, figCard, figShape, figEdge, figLab, figRight, coin, emojiRows, table, colAdd, colSub, topic, TOPICS, gcd, lcm, rd, fmt, fdp, money, simp, fracTex, fracStr, mixedTex, sgn, poly, lin, paren, pm, undo, coef, ord };
 M.TOPICS = TOPICS;
 M.topic = id => TOPICS.find(t => t.id === id);
 M.gradeTopics = g => TOPICS.filter(t => t.grade === g);

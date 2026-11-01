@@ -1,7 +1,7 @@
 /* 🔢 Number Kingdom topics, Grades 5–8 (Singapore Primary 5–6, Secondary 1–2). */
 (function () {
 const M = (typeof module !== "undefined" && module.exports) ? require("./math-gen.js") : window.MathGen;
-const { Q, num, mcq, mcqWhy, numWhy, T, NAMES, topic, PASTEL, INK, LINE, esc, svgBox, fitBox, cellKey, figKey, hasCell, nearCells, gridSheet, svgPieChart, svgGeo, cardSvg, dirPt, f1, xy, mid, gcd, lcm, rd, fmt, fdp, simp, fracTex, fracStr, mixedTex, poly, lin, paren, pm, undo, coef, ord } = M._internal;
+const { Q, num, mcq, mcqWhy, numWhy, T, topic, PASTEL, INK, LINE, esc, svgBox, fitBox, cellKey, figKey, hasCell, nearCells, gridSheet, svgPieChart, svgGeo, cardSvg, dirPt, f1, xy, mid, vdir, angSweep, angWedge, angText, figCard, figShape, figEdge, figLab, figRight, gcd, lcm, rd, fmt, fdp, simp, fracTex, fracStr, mixedTex, poly, lin, paren, pm, undo, coef, ord } = M._internal;
 
 /* ---------- Grade 5 (Primary 5) ---------- */
 topic(5, "fracmul", "Fraction Spells", "✨", "Multiply fractions", r => {
@@ -303,17 +303,6 @@ topic(6, "story", "Fairytale Problems", "📜", "P6-style model problems", r => 
   const a = r.int(20, 60), dif = r.int(4, 20); return num(`Cinderella and her stepsister have ${2 * a + dif} buttons altogether. Cinderella has ${dif} more than her stepsister. How many does Cinderella have?`, a + dif, "Take away the difference first, then split in half.", [`${2 * a + dif} − ${dif} = ${2 * a}`, `${2 * a} ÷ 2 = ${a} (stepsister)`, `Cinderella = ${a} + ${dif} = ${a + dif}`]);
 }, { story: true });
 
-/* ---------- 📏 to-scale figure kit (Bakery Blueprints, Scale-Model Studio): a cream card with the figure fitted in at one
-   scale, filled shapes, solid / dashed edges, length labels tests can read back (class mlab) and right-angle marks ---------- */
-// a 300-wide card with the figure fitted in; draw(S) gets the maths → card mapper (S.k = px per unit) and returns the SVG body
-const figCard = (title, pts, draw, label, h = 206, cls = "mpic chart mens") => { const S = fitBox(pts, [40, 46, 220, h - 82]); return cardSvg(300, h, title, 20, draw(S), label, cls); };
-const figShape = (P, fill) => `<polygon points="${P.map(xy).join(" ")}" fill="${fill}" stroke="${INK}" stroke-width="2.6" stroke-linejoin="round"/>`;
-const figEdge = (a, b, dash) => `<line class="${dash ? "mhid" : "medge"}" x1="${f1(a[0])}" y1="${f1(a[1])}" x2="${f1(b[0])}" y2="${f1(b[1])}" stroke="${dash ? LINE : INK}" stroke-width="${dash ? 2 : 2.6}"${dash ? ` stroke-dasharray="5 4"` : ""} stroke-linecap="round"/>`;
-// a length label (class mlab, data-t = its text, so tests can read the figure back) beside point p, nudged dx, dy pixels
-const figLab = (p, t, dx = 0, dy = 0, anchor = "middle") => `<text class="mlab" data-t="${esc(t)}" x="${f1(p[0] + dx)}" y="${f1(p[1] + dy + 4)}" font-size="12.5" text-anchor="${anchor}" font-weight="900" fill="#c2457a" paint-order="stroke" stroke="#FFFDF8" stroke-width="3.5">${esc(t)}</text>`;
-// a small right-angle square at a foot point (card pixels), towards side sx (±1) and upwards
-const figRight = (f, sx = -1) => `<path d="M${xy([f[0] + 9 * sx, f[1]])} L${xy([f[0] + 9 * sx, f[1] - 9])} L${xy([f[0], f[1] - 9])}" fill="none" stroke="${LINE}" stroke-width="1.6"/>`;
-
 /* ---------- Grade 7 (Secondary 1) ---------- */
 topic(7, "integers", "Integer Isles", "🏝️", "Add, subtract, multiply, divide negatives", r => {
   const a = r.nz(-20, 20), b = r.nz(-15, 15), op = r.pick(["+", "-", "×", "÷"]);
@@ -608,11 +597,10 @@ const svgTwins = (title, tris, label = "two triangles", note = "") => {
   tris.forEach((t, n) => { const P = t.P.map(S), G = [(P[0][0] + P[1][0] + P[2][0]) / 3, (P[0][1] + P[1][1] + P[2][1]) / 3];
     body += `<g class="stri" data-n="${n}">` + figShape(P, n ? PASTEL[1] : PASTEL[0]);
     P.forEach((V, i) => { // matching corners get matching colours; a corner label (angle) sits inside the corner
-      const A = P[(i + 1) % 3], B = P[(i + 2) % 3], u1 = vdir(V, A), u2 = vdir(V, B), r = 15, a1 = Math.atan2(u1[1], u1[0]); let d = Math.atan2(u2[1], u2[0]) - a1;
-      while (d > Math.PI) d -= 2 * Math.PI; while (d <= -Math.PI) d += 2 * Math.PI;
-      body += `<path class="sang" d="M${xy(V)} L${xy([V[0] + u1[0] * r, V[1] + u1[1] * r])} A${r},${r} 0 0,${d > 0 ? 1 : 0} ${xy([V[0] + u2[0] * r, V[1] + u2[1] * r])} Z" fill="${ANG_FILL[i]}" stroke="${LINE}" stroke-width="1.2"/>`;
+      const A = P[(i + 1) % 3], B = P[(i + 2) % 3], u1 = vdir(V, A), u2 = vdir(V, B), r = 15, { t1: a1, d, deg } = angSweep(u1, u2);
+      body += `<path class="sang" d="${angWedge(V, u1, u2, r, d)}" fill="${ANG_FILL[i]}" stroke="${LINE}" stroke-width="1.2"/>`;
       const o = vdir(G, V); body += `<text class="mvtx" x="${f1(V[0] + o[0] * 12)}" y="${f1(V[1] + o[1] * 12 + 4.5)}" font-size="13" text-anchor="middle" font-weight="900" fill="${INK}">${t.names[i]}</text>`;
-      if (t.angs && t.angs[i]) { const m = a1 + d / 2, x = t.angs[i] === "x", deg = Math.abs(d) * 180 / Math.PI, L = deg < 45 ? 31 : deg < 70 ? 26 : 21; body += `<text class="mang" data-t="${esc(t.angs[i])}" x="${f1(V[0] + Math.cos(m) * L)}" y="${f1(V[1] + Math.sin(m) * L + 4)}" font-size="${x ? 14 : 11.5}" text-anchor="middle" font-weight="900"${x ? ` font-style="italic" font-family="Georgia, serif" fill="#ff4f81"` : ` fill="${INK}"`} paint-order="stroke" stroke="#FFFDF8" stroke-width="3">${esc(t.angs[i])}</text>`; }
+      if (t.angs && t.angs[i]) { const m = a1 + d / 2, L = deg < 45 ? 31 : deg < 70 ? 26 : 21; body += angText(t.angs[i], V[0] + Math.cos(m) * L, V[1] + Math.sin(m) * L + 4, 14, 11.5, ` class="mang" data-t="${esc(t.angs[i])}"`); }
     });
     (t.sides || []).forEach((s, i) => { if (!s) return; const a = P[i], b = P[(i + 1) % 3], m = mid(a, b), o = vdir(G, m); body += figLab(m, s, o[0] * 15, o[1] * 13, "middle"); });
     body += "</g>"; });
@@ -622,7 +610,6 @@ const svgTwins = (title, tris, label = "two triangles", note = "") => {
 // the bigger copy of corners P, drawn g = min(k, 1.75) times as big (so the small triangle stays readable) to the right of P
 const SIM_DRAW = 1.75;
 const bigCopy = (P, k) => { const g = Math.min(k, SIM_DRAW), w = Math.max(...P.map(p => p[0])) - Math.min(...P.map(p => p[0])); return shift(P.map(p => [p[0] * g, p[1] * g]), Math.max(...P.map(p => p[0])) + .45 * w + 1); };
-const vdir = (a, b) => { const x = b[0] - a[0], y = b[1] - a[1], l = Math.hypot(x, y) || 1; return [x / l, y / l]; };
 // a cream map (or plan) with two pastel pins d cm apart, drawn at 18 px per cm, and the scale printed underneath
 const svgMap = (title, d, from, to, scaleText) => { const L = d * 18, x0 = 150 - L / 2, y = 96;
   const pin = (x, c, name) => `<circle class="mpin" cx="${f1(x)}" cy="${y}" r="9" fill="${c}" stroke="${INK}" stroke-width="2"/><circle cx="${f1(x)}" cy="${y}" r="3" fill="#FFFDF8"/><text x="${f1(x)}" y="${y + 26}" font-size="11" text-anchor="middle" font-weight="900" fill="${INK}">${esc(name)}</text>`;
