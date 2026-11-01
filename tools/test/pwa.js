@@ -11,14 +11,14 @@ let fails = 0, passes = 0; const ok = (c, m) => { if (!c) { fails++; console.err
   const browser = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox'] });
   const ctx = await browser.newContext({ viewport: { width: 375, height: 667 } });
   await ctx.route(/supabase|jsdelivr|unpkg/, r => r.abort());
-  await ctx.addInitScript(() => { window.__WR_SW = true; if (!localStorage.getItem('wordRealms.save.v1')) localStorage.setItem('wordRealms.save.v1', JSON.stringify({ v: 1, name: 'Offline Olly', avatar: 'avatar_girl', startLevel: 'a1', stars: 10, pet: { species: 'pet_bunny', name: 'Bun', xp: 0, happiness: 80, hunger: 30, lastTick: Date.now() }, progress: {}, owned: [], equipped: {}, settings: { rate: 1, sound: false, unlockAll: true }, mistakes: [], lessonsDone: 3 })); });
+  await ctx.addInitScript(() => { if (!localStorage.getItem('wordRealms.save.v1')) localStorage.setItem('wordRealms.save.v1', JSON.stringify({ v: 1, name: 'Offline Olly', avatar: 'avatar_girl', startLevel: 'a1', stars: 10, pet: { species: 'pet_bunny', name: 'Bun', xp: 0, happiness: 80, hunger: 30, lastTick: Date.now() }, progress: {}, owned: [], equipped: {}, settings: { rate: 1, sound: false, unlockAll: true }, mistakes: [], lessonsDone: 3 })); });
   const page = await ctx.newPage(); const errs = []; page.on('pageerror', e => errs.push(String(e)));
   await page.goto(BASE); await page.waitForSelector('.realm-node');
   ok(await page.evaluate(() => !!document.querySelector('link[rel=manifest]')), 'index.html links the manifest');
   const ready = await page.evaluate(async () => { const r = await navigator.serviceWorker.ready; return !!r.active; });
   ok(ready, 'service worker installed and active');
-  await page.waitForFunction(async () => { const ks = await caches.keys(); if (!ks.length) return false; const c = await caches.open(ks[0]); return (await c.keys()).length > 100; }, null, { timeout: 30000 });
-  const cached = await page.evaluate(async () => { const ks = await caches.keys(); const c = await caches.open(ks[0]); return { keys: ks, n: (await c.keys()).length }; });
+  await page.waitForFunction(async () => { const k = (await caches.keys()).find(k => k.startsWith('wr-')); if (!k) return false; const c = await caches.open(k); return (await c.keys()).length > 100; }, null, { timeout: 30000 });
+  const cached = await page.evaluate(async () => { const ks = (await caches.keys()).filter(k => k.startsWith('wr-')); const c = await caches.open(ks[0]); return { keys: ks, n: (await c.keys()).length }; });   // R17: + a separate wrart- cache for pictures
   ok(cached.keys.length === 1 && cached.keys[0].startsWith('wr-') && cached.n > 100, `precache filled (${cached.keys} · ${cached.n} files)`);
   await page.reload(); await page.waitForSelector('.realm-node');
   ok(await page.evaluate(() => !!navigator.serviceWorker.controller), 'page is controlled by the service worker after reload');

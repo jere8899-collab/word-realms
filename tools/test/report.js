@@ -33,7 +33,7 @@ const MOB = { deviceScaleFactor: 2, isMobile: true, hasTouch: true };
 (async () => {
   const browser = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox'] });
   async function open(vp, seed, mob = true) {
-    const ctx = await browser.newContext(Object.assign(mob ? { ...MOB, viewport: vp } : { viewport: vp }, { timezoneId: 'Asia/Singapore' }));
+    const ctx = await browser.newContext(Object.assign(mob ? { ...MOB, viewport: vp } : { viewport: vp }, { timezoneId: 'Asia/Singapore' })); await ctx.addInitScript(() => { window.__WR_CLASSIC_ONLY = true; });   // R18: this test drives the classic multiple-choice flow
     await ctx.addInitScript(() => { window.__WR_TEST = { holdMs: 0, pinOffer: false }; });   // R4: gate test hooks (never on the live site)
     await ctx.addInitScript(s => { if (!sessionStorage.getItem('seeded')) { localStorage.setItem('wordRealms.save.v1', s); sessionStorage.setItem('seeded', '1'); } }, JSON.stringify(seed));
     await ctx.route(/supabase\.co|cdn\.jsdelivr\.net|fonts\.(googleapis|gstatic)/, r => r.abort());

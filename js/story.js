@@ -18,6 +18,10 @@ const plain = t => fill(t).replace(GL, "$1");
 const sentences = t => plain(t).match(/[^.!?]+[.!?]+[”’"]?\s*|[^.!?]+$/g).map(x => x.trim()).filter(Boolean);
 WR.Story = { fill, plain, sentences };
 
+// R16: the chapter's grammar focus in child words (the teacher terms are in 👪 Grown-ups → 📚 What the games teach)
+const KID_FOCUS = { a1: "<i>there is</i>, <i>there are</i> and <i>can</i>", a2: "telling what happened, and <i>bigger</i>, <i>better</i>", b1: "what was happening, and <i>if … will</i>",
+  b2: "what had happened, and <i>should have</i>", c1: "surprising word orders and gentle opinions", c2: "reading between the lines" };
+WR.addGrownNote && WR.addGrownNote("story", "📜 Story", rid => WR.loadStory(rid).then(d => `Storybook chapter for ${rid.toUpperCase()}. Language focus: ${d.focus || "-"}. Five pages of reading questions with a reason for every answer.`));
 WR.loadStory = async lvl => {
   const k = lvl + "/story";
   if (!WR.data[k]) WR.data[k] = await fetch("data/" + k + ".json").then(r => { if (!r.ok) throw new Error(k); return r.json(); });
@@ -52,7 +56,7 @@ function render() {
   WR.view(`<div class="fade-in story-screen"><div class="row" style="justify-content:space-between;margin:6px 0 10px">
       <button class="btn ghost small" id="storyQuit">← ${WR.esc(r.name)}</button><div class="sdots">${dots}</div></div>
     <div class="card story-card">
-      <div class="story-head"><span class="lvl-badge">${r.level}</span><b class="title">📜 Chapter ${S.num}: ${WR.esc(ch.title)}</b><div class="muted story-focus">Language focus: ${WR.esc(ch.focus)}</div></div>
+      <div class="story-head"><span class="lvl-badge">${r.level}</span><b class="title">📜 Chapter ${S.num}: ${WR.esc(ch.title)}</b><div class="muted story-focus">✨ Today's magic: ${KID_FOCUS[r.id] || "new words and sentences"}</div></div>
       <div class="story-pic ${S.page ? "small" : ""}"><img src="assets/web/${ch.img}.webp" onerror="this.onerror=null;this.src='assets/stories/${ch.img}.jpg'" alt="Chapter ${S.num} illustration"></div>
       ${last ? `<p class="story-text" style="text-align:center"><b>✨ All four pages read! One last word check to restore the page.</b></p>` : `
       <div class="row story-tools"><button class="btn small mint" id="readAll">🔊 Read to me</button><button class="btn ghost small" id="readSlow">🐢 Slow</button><span class="muted" style="font-size:.78rem;font-weight:800">Tap a sentence to hear it · tap a <u class="gl-hint">dotted word</u> for its meaning</span></div>

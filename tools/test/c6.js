@@ -11,7 +11,7 @@ const SAVE = () => ({ v: 1, name: 'Sticker Sam', avatar: 'avatar_girl', startLev
   const browser = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox'] });
   for (const vp of [{ width: 375, height: 667 }, { width: 320, height: 658 }, { width: 1280, height: 800 }]) {
     const tag = vp.width + 'px';
-    const ctx = await browser.newContext({ viewport: vp, deviceScaleFactor: 2 }); await ctx.route(/supabase|jsdelivr|unpkg/, r => r.abort());
+    const ctx = await browser.newContext({ viewport: vp, deviceScaleFactor: 2 }); await ctx.addInitScript(() => { window.__WR_CLASSIC_ONLY = true; });   // R18: this test drives the classic multiple-choice flow await ctx.route(/supabase|jsdelivr|unpkg/, r => r.abort());
     const page = await ctx.newPage(); const errs = []; page.on('pageerror', e => errs.push(String(e)));
     await page.addInitScript(s => { if (!sessionStorage.getItem('seeded')) { localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)); sessionStorage.setItem('seeded', 1); } }, SAVE());
     await page.goto(BASE); await page.waitForSelector('#goalsCard');

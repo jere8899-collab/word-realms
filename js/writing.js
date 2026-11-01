@@ -60,9 +60,9 @@ const LEVELS = {
 };
 const SCALES = [
   { k: "content", n: "Content", e: "🎯", d: "Did you include every point the task asked for?" },
-  { k: "ca", n: "Communicative Achievement", e: "💌", d: "Does it look and sound like the right kind of text for the reader?" },
-  { k: "org", n: "Organisation", e: "🧱", d: "Is it well put together: paragraphs, linking words, clear sentences?" },
-  { k: "lang", n: "Language", e: "💎", d: "How varied and accurate are your words and grammar?" }
+  { k: "ca", n: "Right for the reader", e: "💌", d: "Does it look and sound like the right kind of text for the reader?" },
+  { k: "org", n: "Well put together", e: "🧱", d: "Is it well put together: paragraphs, linking words, clear sentences?" },
+  { k: "lang", n: "Words & grammar", e: "💎", d: "How varied and accurate are your words and grammar?" }
 ];
 
 /* ------------------------------------------------------------------ text helpers */
@@ -292,6 +292,10 @@ function flush() { if (!Q) return; clearTimeout(saveT); const d = W().drafts; if
 WR.stopWriting = () => { flush(); Q = null; };
 const crownRow = WR.crownRow;
 
+// R16: the exam wording, for grown-ups only
+WR.addGrownNote && WR.addGrownNote("write", "✒️ Writing (Story Quill)", rid => `Writing tasks modelled on Cambridge English writing task types for ${rid.toUpperCase()}. Feedback follows the four Cambridge assessment scales: Content, Communicative Achievement (shown to children as "Right for the reader"), Organisation ("Well put together") and Language ("Words & grammar"). Scores are a practice estimate, not an official Cambridge English mark.`);
+// R16: children see the kind of text ("Email", "Write about you"); the exam part ("B2 First · Writing Part 2") is for grown-ups
+const kidPart = p => { const s = String(p.part || ""), m = s.match(/\(([^)]+)\)\s*$/), k = m ? m[1] : s.split(" · ").pop(); return k.charAt(0).toUpperCase() + k.slice(1); };
 WR.startWriting = async rid => {
   WR.stopWriting(); WR.Voice.stop();
   const realm = WR.realms.find(r => r.id === rid), list = await WR.bank(rid, "writing");
@@ -300,14 +304,14 @@ WR.startWriting = async rid => {
     <div class="row" style="margin:6px 0 8px"><button class="btn ghost small" id="qBackRealm">← ${WR.esc(realm.name)}</button><b class="title">✒️ The Story Quill · ${realm.level}</b></div>
     <div class="card quill-head fade-in"><img class="quill-art" src="assets/web/quill.webp" onerror="this.onerror=null;this.src='assets/ui/quill.png'" alt="The Story Quill">
       <div style="flex:1"><h2 style="margin:0">Write your own fairytale magic ✨</h2>
-      <p class="muted" style="font-weight:700;margin:.3em 0">Pick a task, make a quick plan, write, then tap <b>Check my writing</b>. The Quill gives feedback on the four Cambridge writing scales: Content, Communicative Achievement, Organisation and Language.</p>
+      <p class="muted" style="font-weight:700;margin:.3em 0">Pick a task, make a quick plan, write, then tap <b>Check my writing</b>. The Quill checks 4 things: 🎯 did you answer everything, 💌 is it right for the reader, 🧱 is it well put together, and 💎 your words and grammar.</p>
       <div class="row"><span class="pill">${realm.level} · ${list[0].words[0]}–${Math.max(...list.map(p => p.words[1]))} words</span><span class="pill" style="background:var(--mint)">✒️ ${done}/${list.length} written</span><span class="pill" style="background:var(--butter)">+1⭐ per new crown</span></div></div></div>
     <div class="grid g3 quill-list">${list.map(p => { const b = w.best[p.id], d = w.drafts[p.id];
-      return `<button class="card quill-task" data-id="${p.id}"><span class="pill focus-pill">${WR.esc(p.part)}</span><h3>${WR.esc(p.title)}</h3>
+      return `<button class="card quill-task" data-id="${p.id}"><span class="pill focus-pill">${WR.esc(kidPart(p))}</span><h3>${WR.esc(p.title)}</h3>
         <div class="muted" style="font-size:.82rem;font-weight:800">${GENRE[p.genre] || p.genre} · ${p.words[0]}–${p.words[1]} words</div>
         <div class="crowns">${b ? crownRow(b.crowns) + ` <small class="muted">${b.total}/20</small>` : '<span class="muted" style="font-size:.8rem">not written yet</span>'}</div>
         ${d && d.text && d.text.trim() ? '<span class="pill draft-pill">📝 draft saved</span>' : ""}</button>`; }).join("")}</div>
-    <p class="muted center" style="font-size:.8rem;font-weight:700">🔮 Scores are a friendly practice estimate, not an official Cambridge English mark. Writing is a bonus skill and isn't needed to unlock the next realm.</p>`);
+    <p class="muted center" style="font-size:.8rem;font-weight:700">🔮 Scores are a friendly practice guess, not a real exam mark. Writing is a bonus skill and isn't needed to unlock the next realm.</p>`);
   WR.$("#qBackRealm").onclick = () => WR.go("realm", rid);
   document.querySelectorAll(".quill-task").forEach(b => b.onclick = () => openTask(realm, list.find(p => p.id === b.dataset.id)));
 };
@@ -326,7 +330,7 @@ WR.openQuill = async (rid, id, step) => { const realm = WR.realms.find(r => r.id
 function taskCard(p) {
   const em = p.email ? `<div class="q-mail"><b>📩 From: ${WR.esc(p.email.from)}</b><p>${WR.esc(p.email.text)}</p><div class="row" style="gap:5px"><span class="muted" style="font-size:.8rem;font-weight:800">Your notes:</span>${p.email.notes.map(n => `<span class="kw">${WR.esc(n)}</span>`).join("")}</div></div>` : "";
   const tx = p.texts ? `<div class="q-texts">${p.texts.map(t => `<div class="q-src"><b>${WR.esc(t.title)}</b><p>${WR.esc(t.text)}</p></div>`).join("")}</div>` : "";
-  return `<div class="q-task"><div class="row" style="gap:6px"><span class="pill focus-pill">📜 ${WR.esc(p.part)}</span><span class="pill" style="background:var(--blue)">🎯 ${p.words[0]}–${p.words[1]} words</span><span class="pill" style="background:var(--butter)">${GENRE[p.genre] || p.genre}</span></div>
+  return `<div class="q-task"><div class="row" style="gap:6px"><span class="pill focus-pill">📜 ${WR.esc(kidPart(p))}</span><span class="pill" style="background:var(--blue)">🎯 ${p.words[0]}–${p.words[1]} words</span><span class="pill" style="background:var(--butter)">${GENRE[p.genre] || p.genre}</span></div>
     <h2 style="margin:.35em 0 .2em">${WR.esc(p.title)}</h2><p class="q-brief">${WR.esc(p.task)}</p>${em}${tx}
     <div class="q-points-h">✅ Content points to include</div><ul class="q-points" id="qPoints">${p.points.map((x, i) => `<li data-i="${i}"><span class="tick">○</span>${WR.esc(x.label)}</li>`).join("")}</ul></div>`;
 }
@@ -446,7 +450,7 @@ function feedbackStep() {
   const kinds = [...new Set(r.flags.map(f => f.kind))];
   const KL = { caps: "capital letter", punct: "punctuation", repeat: "repeated word", grammar: "grammar", spelling: "spelling", style: "slang", gap: "gap to fill" };
   WR.$("#qStep").innerHTML = `<div class="q-fb fade-in">
-    <div class="quill-note">🔮 <b>Practice estimate.</b> The Story Quill uses simple word-magic rules based on Cambridge's four writing scales. It's a guide to help you improve, <b>not an official Cambridge English mark</b>.</div>
+    <div class="quill-note">🔮 <b>Practice estimate.</b> The Story Quill uses simple word-magic rules. It's a guide to help you improve, <b>not a real exam mark</b>.</div>
     <div class="fb-top"><div class="fb-total"><b id="qTotal">${r.total}</b><span>/20</span></div><div><div class="fb-crowns">${crownRow(r.crowns)}</div>
       <div class="muted" style="font-weight:800">${gain ? `+${gain} ⭐ for ${gain === 1 ? "a new crown" : gain + " new crowns"}!` : r.crowns && prevCrowns >= r.crowns ? `No new stars this time: beat your best of ${prevCrowns} crown${prevCrowns > 1 ? "s" : ""} to earn more.` : r.crowns ? "" : "Get 9/20 for your first crown 👑"}${newStreak ? ` · 🔥 streak ${WR.state.streak.count}` : ""}</div></div></div>
     <div class="scales">${SCALES.map(sc => { const v = r.scales[sc.k]; return `<div class="scale" data-scale="${sc.k}"><div class="sc-h"><span>${sc.e}</span><b>${sc.n}</b><span class="sc-v">${v}/5</span></div>

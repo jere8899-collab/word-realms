@@ -18,7 +18,7 @@ const OLD = { v: 1, name: 'Mei', avatar: 'avatar_girl', startLevel: 'a1', stars:
   streak: { count: 2, last: today() }, owned: [], equipped: { outfit: null, petskin: null, theme: null },
   progress: { a1: { grammar: good, vocab: good, reading: good } },
   daily: { day: today(), quests: [{ id: 'charm1', progress: 0, claimed: false }, { id: 'correct10', progress: 0, claimed: false }, { id: 'feed1', progress: 0, claimed: false }] },
-  settings: { rate: .9, sound: false, unlockAll: false }, mistakes: [], lessonsDone: 3 };
+  settings: { rate: .9, sound: false, unlockAll: false }, mistakes: [], lessonsDone: 12 };   // R14: 12 lessons, so every bonus game is open
 const MOB = { deviceScaleFactor: 2, isMobile: true, hasTouch: true };
 (async () => {
   const browser = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox'] });

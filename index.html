@@ -56,11 +56,12 @@
 <script defer src="js/forge.js"></script>
 <script defer src="js/cloze.js"></script>
 <script defer src="js/marks.js"></script>
+<script defer src="js/offline.js"></script>
 <script defer src="js/ux.js"></script>
 <script>
 /* 📲 T17: installable + offline after one visit (sw.js is versioned by content hash, so updates reach players).
    Headless test browsers skip it unless a test opts in with window.__WR_SW. */
-if ("serviceWorker" in navigator && !(navigator.webdriver && !window.__WR_SW)) addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+if ("serviceWorker" in navigator && !window.__WR_NO_SW) addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
 </script>
 </body>
 </html>

@@ -26,10 +26,10 @@ const bytes = files.reduce((a, f) => a + (fs.existsSync(ROOT + '/assets/voice/' 
 ok(gone.length === 0, `all ${files.length} manifest files exist (${(bytes / 1e6).toFixed(1)} MB)`);
 ok(Object.keys(man.profiles.pet || {}).length >= 8, `pet chatter lines are recorded in the pet voice (${Object.keys(man.profiles.pet || {}).length})`);
 const sw = fs.readFileSync(ROOT + '/sw.js', 'utf8');
-ok(!/assets\/voice\/[^"']+\.mp3/.test(sw.match(/PRECACHE = (\[.*?\]);/s)[1]) && /wrvoice-/.test(sw), 'recordings are not precached; the service worker keeps each one in its own runtime cache');
+ok(!/assets\/voice\/[^"']+\.mp3/.test([...sw.matchAll(/const (?:SHELL|DATA|ARTFILES) = (\[.*?\]);/gs)].map(m => m[1]).join()) && /wrvoice-/.test(sw), 'recordings are not precached; the service worker keeps each one in its own runtime cache');
 (async () => {
   const browser = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox', '--autoplay-policy=no-user-gesture-required'] });
-  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
+  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true }); await ctx.addInitScript(() => { window.__WR_CLASSIC_ONLY = true; });   // R18: this test drives the classic multiple-choice flow
   await ctx.route(/supabase|jsdelivr|unpkg/, r => r.abort());
   await ctx.addInitScript(() => {   // record what the device voice and the <audio> player are asked to do
     window.__tts = []; window.__played = [];

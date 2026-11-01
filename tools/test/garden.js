@@ -5,7 +5,7 @@ const URL = 'http://127.0.0.1:18642/index.html';
 const assert = (c, m) => { if (!c) throw new Error('ASSERT ' + m); console.log('ok -', m); };
 (async () => {
   const browser = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox'] });
-  const ctx = await browser.newContext({ viewport: { width: 1200, height: 860 } });
+  const ctx = await browser.newContext({ viewport: { width: 1200, height: 860 } }); await ctx.addInitScript(() => { window.__WR_CLASSIC_ONLY = true; });   // R18: this test drives the classic multiple-choice flow
   const page = await ctx.newPage();
   const errors = []; page.on('pageerror', e => errors.push(e.message)); page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });
   await page.goto(URL);
@@ -85,7 +85,7 @@ const assert = (c, m) => { if (!c) throw new Error('ASSERT ' + m); console.log('
   await page.screenshot({ path: OUT + 'garden_03_mixed.png', fullPage: true });
   await page.evaluate(() => document.querySelectorAll('.modal-bg').forEach(m => m.remove()));
   await page.click('.plot'); await page.waitForSelector('.modal'); await page.screenshot({ path: OUT + 'garden_04_tip.png' });
-  const m = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
+  const m = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true }); await m.addInitScript(() => { window.__WR_CLASSIC_ONLY = true; });   // R18: this test drives the classic multiple-choice flow
   const mp = await m.newPage(); await mp.goto(URL);
   await mp.evaluate(s => localStorage.setItem('wordRealms.save.v1', s), await page.evaluate(() => localStorage.getItem('wordRealms.save.v1')));
   await mp.reload({ waitUntil: 'networkidle' }); await mp.evaluate(() => WR.go('review')); await mp.waitForTimeout(700);

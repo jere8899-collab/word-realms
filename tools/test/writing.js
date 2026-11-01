@@ -124,7 +124,7 @@ On balance, I believe that education is the more important method. Not only does
   await clean(page); await page.screenshot({ path: OUT + 'writing_03_a1_write.png' });
   await page.click('#qCheck'); await page.waitForSelector('.scales');
   const a1 = await page.evaluate(() => ({ r: WR._quillDbg().result, stars: WR.state.stars, xp: WR.state.pet.xp, best: WR.state.writing.best['a1-w01'], q: WR.state.daily.quests.find(q => q.id === 'write1'),
-    scales: document.querySelectorAll('.scale').length, model: !!document.querySelector('.q-model .model-text'), note: /not an official Cambridge/.test(document.querySelector('.quill-note').textContent),
+    scales: document.querySelectorAll('.scale').length, model: !!document.querySelector('.q-model .model-text'), note: /not a real exam mark/.test(document.querySelector('.quill-note').textContent),
     pet: document.querySelector('#lpet').className }));
   console.log('A1 result', a1.r.r.total, a1.r.r.crowns, 'gain', a1.r.gain);
   assert(a1.scales === 4 && a1.model && a1.note, 'feedback: 4 scales, model answer and the honest "practice estimate" note');
@@ -136,7 +136,7 @@ On balance, I believe that education is the more important method. Not only does
   await page.click('#qCheck'); await page.waitForSelector('.scales');
   const again = await page.evaluate(() => ({ stars: WR.state.stars, gain: WR._quillDbg().result.gain, checks: WR.state.writing.checks }));
   assert(again.stars === a1.stars && again.gain === 0 && again.checks === 2, 'a retry with the same crowns pays no stars again');
-  await page.evaluate(() => WR.go('home')); await page.waitForSelector('.claim[data-id="write1"]');
+  await page.evaluate(() => WR.go('quests')); await page.waitForSelector('.claim[data-id="write1"]');   // R15: quests have their own screen
   await page.click('.claim[data-id="write1"]');
   assert(await page.evaluate(() => WR.state.daily.quests.find(q => q.id === 'write1').claimed), 'writing daily quest can be claimed');
   const after = await page.evaluate(() => ({ passed: WR.realmProgress('a1').passed, tile: WR.writingRealmCrowns('a1') }));

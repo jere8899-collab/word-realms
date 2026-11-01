@@ -465,7 +465,7 @@ mark.qf-style{background:#E2D6FF;box-shadow:inset 0 -2px 0 #B98BFF}
 .rp-locked{max-width:420px;margin:30px auto}
 @media (max-width:400px){.rp-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.rp-topic{grid-template-columns:minmax(0,1fr) 44px 36px 24px;gap:4px}.rp-card{padding:10px}}
 /* 🔤 Phonics Path (js/phonics.js) */
-.math-node.phonics-node{background:linear-gradient(135deg,#E6F6FF,#FFF0F6 60%,#FFF7DA)}
+
 .skill-card.phonics-tile{background:linear-gradient(150deg,#E6F6FF,#FFF0F6 60%,#FFF7DA)}
 .ph-intro{display:flex;align-items:center;gap:12px}
 .ph-pet{width:84px;height:84px;flex:none}.ph-pet.big{width:120px;height:120px;margin:0 auto}
@@ -653,3 +653,37 @@ img.acc-prev{width:72px;height:72px;object-fit:contain;display:block;margin:4px 
 .pin-setup .lock{font-size:2rem}
 /* R8: "Ready? 3-2-1" after a timed round was paused */
 .ready-go{position:fixed;inset:0;z-index:95;display:grid;place-items:center;background:rgba(255,240,250,.72);backdrop-filter:blur(3px);font-weight:900;font-size:clamp(2.4rem,12vw,4.5rem);line-height:1;color:#9a6bc4;text-shadow:0 4px 0 #fff;pointer-events:none;animation:fadeIn .2s}
+
+/* 🧭 R14 realm screen: Today's path, then a sideways row of bonus games */
+.realm-sec{font-size:1.15rem;margin:14px 2px 8px}
+.realm-top{margin:10px 0 0!important}
+.bonus-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.bonus-row .skill-card{min-width:0}
+.new-tag{background:#FF8FB1;color:#fff;animation:pop .5s}
+.bonus-more{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-align:center;opacity:.7;border:3px dashed #E3D6F5;box-shadow:none;cursor:pointer}
+.bonus-more .ico{font-size:1.8rem}.bonus-more small{font-weight:700;color:var(--muted,#9a86ad)}
+@media (max-width:760px){
+  .bonus-row{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 10px;margin:0 -2px;-webkit-overflow-scrolling:touch}
+  .bonus-row>.card{flex:0 0 44%;scroll-snap-align:start}
+  .realm-screen .realm-hero{min-height:0}.realm-screen .realm-hero .ov{padding:10px 14px;margin:8px}
+  .realm-screen .realm-hero .ov p{font-size:.85rem;margin:.15em 0!important}.realm-screen .realm-hero .ov .pill{display:none}
+  .path-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .path-grid .skill-card{padding:10px 8px}.path-grid .skill-card .ico{font-size:2rem}.path-grid .skill-card h3{margin:.15em 0;font-size:1rem}
+  .path-grid .skill-card .muted{font-size:.76rem!important;line-height:1.25}
+}
+/* 🏠 R15: Daily Quests + the pet fold into one compact row on the home page */
+.home-mini{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0 4px}
+.mini-chip{display:flex;align-items:center;gap:8px;padding:10px 12px;text-align:left;font:inherit;color:inherit;cursor:pointer;border:0;min-width:0}
+.mini-chip>span:last-child{display:flex;flex-direction:column;min-width:0}
+.mini-chip b{font-size:.95rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mini-chip small{font-weight:800;color:#9a7fb3;font-size:.78rem}
+.mini-chip .mi{font-size:1.6rem;flex:none}.mini-chip .mini-pet{width:44px;height:44px;display:block}
+.mini-chip.ready{background:linear-gradient(135deg,#FFF6D6,#FFE3EF)}.mini-chip.ready small{color:#C0558A}
+
+/* 📚 R16 grown-up notes */
+.gu-notes{max-height:55vh;overflow:auto;margin:8px 0}.gu-note{padding:8px 10px;border-radius:12px;background:#F7F2FF;margin-bottom:8px}.gu-note p{margin:.25em 0 0;font-size:.86rem;font-weight:600;line-height:1.35}
+/* ☁️ R12: the white cloud on a pale chip was nearly invisible: a lilac outline around the chip and around the cloud (≥ 3:1) */
+.cloud-chip{border:2px solid #8A72BD}
+.cloud-chip .wr-icon{filter:drop-shadow(1px 0 0 #6E58A8) drop-shadow(-1px 0 0 #6E58A8) drop-shadow(0 1px 0 #6E58A8) drop-shadow(0 -1px 0 #6E58A8)}
+/* 👆 R13: glossary words get a 44 px tall invisible tap area without touching the line height */
+.gloss,.gl-hint{position:relative}
+.gloss::after,.gl-hint::after{content:"";position:absolute;left:-6px;right:-6px;top:50%;height:44px;transform:translateY(-50%)}

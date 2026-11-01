@@ -29,7 +29,7 @@ const audit = () => [...document.querySelectorAll('.petwrap')].filter(w => w.get
   const sizes = [{ name: 'phone', viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true }, { name: 'desktop', viewport: { width: 1180, height: 820 } }];
   const pets = process.env.PETS ? process.env.PETS.split(',') : null;
   for (const S of sizes) {
-    const ctx = await browser.newContext(S); await ctx.route(/supabase\.co|cdn\.jsdelivr\.net/, r => r.abort());
+    const ctx = await browser.newContext(S); await ctx.addInitScript(() => { window.__WR_CLASSIC_ONLY = true; });   // R18: this test drives the classic multiple-choice flow await ctx.route(/supabase\.co|cdn\.jsdelivr\.net/, r => r.abort());
     const page = await ctx.newPage(); const errs = []; page.on('pageerror', e => errs.push(e.message));
     await page.goto(BASE + 'index.html');
     const species = pets || await page.evaluate(() => WR.PETS.map(p => p.id));

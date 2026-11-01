@@ -2,7 +2,7 @@ const { chromium } = require('playwright-core');
 const OUT = '/workspace/cefr-quest/screenshots/';
 (async () => {
   const browser = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox','--autoplay-policy=no-user-gesture-required'] });
-  const ctx = await browser.newContext({ viewport: { width: 1180, height: 860 }, deviceScaleFactor: 1 });
+  const ctx = await browser.newContext({ viewport: { width: 1180, height: 860 }, deviceScaleFactor: 1 }); await ctx.addInitScript(() => { window.__WR_CLASSIC_ONLY = true; });   // R18: this test drives the classic multiple-choice flow
   await ctx.addInitScript(() => { window.__WR_TEST = { holdMs: 0, pinOffer: false }; });   // R4: gate test hooks (never on the live site)
   const page = await ctx.newPage();
   const errors = [];
@@ -131,7 +131,7 @@ const OUT = '/workspace/cefr-quest/screenshots/';
   await page.evaluate(() => WR.go('review')); await page.waitForTimeout(300);
   await page.screenshot({ path: OUT + '08_review.png', fullPage: true });
   // mobile
-  const m = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
+  const m = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true }); await m.addInitScript(() => { window.__WR_CLASSIC_ONLY = true; });   // R18: this test drives the classic multiple-choice flow
   const mp = await m.newPage();
   await mp.goto('http://127.0.0.1:18642/index.html');
   await mp.evaluate(s => localStorage.setItem('wordRealms.save.v1', s), await page.evaluate(() => localStorage.getItem('wordRealms.save.v1')));

@@ -117,11 +117,22 @@ WR.waitingText = (rid, k) => {
 };
 // 🔔 a gentle "something is ready" card on the map (Mistake Garden plants, Word Charms): ONE markup for every nudge
 WR.nudgeCard = (id, icon, title, sub, btn) => `<div class="card row garden-nudge" id="${id}"><span style="font-size:2rem">${icon}</span><div style="flex:1"><b>${title}</b><div class="muted" style="font-size:.85rem;font-weight:700">${sub}</div></div><button class="btn small mint">${btn}</button></div>`;
+// 🎯 the Daily Quests list: ONE markup for its own screen (R15 moved it off the home page)
+const questRows = s => s.daily.quests.map(q => { const d = WR.questDef(q.id); return `<div class="q"><span class="qi">${d.icon}</span><div class="qb"><b>${d.label}</b><div class="prog"><i style="width:${q.progress / d.goal * 100}%"></i></div></div>
+    ${q.claimed ? '<span class="pill" style="background:var(--mint)">Done ✓</span>' : q.progress >= d.goal ? `<button class="btn small mint claim" data-id="${q.id}">Claim ${d.reward}⭐</button>` : `<span class="pill">${q.progress}/${d.goal} · ${d.reward}⭐</span>`}</div>`; }).join("");
+const questsCard = s => `<div class="card quests">${questRows(s)}<p class="muted" style="font-size:.8rem;font-weight:700;margin-bottom:0">New quests every day. Keep your 🔥 streak by finishing one lesson a day!</p></div>`;
+// 🐾 how the pet feels, in a few words, for the home chip
+WR.petFeel = p => p.hunger >= 60 ? "is hungry" : p.happiness < 40 ? "wants a cuddle" : p.happiness >= 80 ? "is very happy" : "is happy";
+WR.screens.quests = () => {
+  WR.ensureDaily(); const s = WR.state;
+  WR.view(`<div class="fade-in"><div class="row lesson-top" style="margin:6px 0 8px"><button class="btn ghost small" id="qBack">← Map</button><b class="title">🎯 Daily Quests</b></div>${questsCard(s)}</div>`);
+  WR.$("#qBack").onclick = () => WR.go("home");
+  document.querySelectorAll(".claim").forEach(b => b.onclick = () => { WR.claimQuest(b.dataset.id); WR.screens.quests(); });
+};
 WR.screens.home = () => {
   WR.ensureDaily();
   const s = WR.state, cont = WR.continueTarget(), due = WR.Garden ? WR.Garden.dueCount() : 0;
-  const qs = s.daily.quests.map(q => { const d = WR.questDef(q.id); return `<div class="q"><span class="qi">${d.icon}</span><div class="qb"><b>${d.label}</b><div class="prog"><i style="width:${q.progress / d.goal * 100}%"></i></div></div>
-    ${q.claimed ? '<span class="pill" style="background:var(--mint)">Done ✓</span>' : q.progress >= d.goal ? `<button class="btn small mint claim" data-id="${q.id}">Claim ${d.reward}⭐</button>` : `<span class="pill">${q.progress}/${d.goal} · ${d.reward}⭐</span>`}</div>`; }).join("");
+  const qDone = s.daily.quests.filter(q => q.claimed).length, qReady = s.daily.quests.some(q => !q.claimed && q.progress >= WR.questDef(q.id).goal);
   WR.view(`<div class="fade-in"><div class="card homehead"><div class="av-big">${WR.avatarHTML(110)}${WR.Rewards && WR.Rewards.chest().ready ? `<button class="chip av-badge gift-ready" id="giftPill" aria-label="Open today's free gift" title="Today's free gift">🎁</button>` : `<button class="chip av-badge" id="wardPill" aria-label="Wardrobe" title="Wardrobe">👗</button>`}</div>
     <div><h1 style="margin:0">Hello, <span class="hero-nm">${WR.userText(s.name)}</span>! 🌸 <button class="chip hero-edit" id="heroEditHome" aria-label="Change my hero name" title="Change my hero name">✏️</button></h1><div class="muted" style="font-weight:800">${WR.userText(s.pet.name)} says: “${WR.esc(WR._welcome || WR.petMood())}”</div>
     <div class="row" style="margin-top:6px"><span class="pill">✅ ${s.totalCorrect} correct answers</span>${WR.STORY ? `<span class="pill" id="bookPill" style="background:#FFF1D6;cursor:pointer">📜 Storybook ${WR.storyPagesFound()}/6 pages</span>` : ""}${s.placement ? `<span class="pill mirror-pill" id="mirrorPill" style="background:#F3ECFF;cursor:pointer">🪞 Mirror says ${s.placement.level.toUpperCase()}</span>` : `<span class="pill mirror-pill" id="mirrorPill" style="background:#F3ECFF;cursor:pointer">🪞 Find my level</span>`}</div></div></div>
@@ -133,21 +144,18 @@ WR.screens.home = () => {
           <div><div><span class="lvl-badge">${r.level}</span><b>${r.emoji} ${r.name}${un ? "" : " 🔒"}</b></div><div class="muted" style="font-size:.85rem;font-weight:700">${r.modeName}</div>
           <div class="prog"><i style="width:${pr.passed / 4 * 100}%"></i></div><div class="muted" style="font-size:.75rem;font-weight:800">${pr.passed}/4 skills passed</div></div>
           </div>`; }).join("")}</div>
-      ${WR.phonicsNode ? WR.phonicsNode() : ""}
       ${WR.Math ? `<div class="card math-node" id="mathNode" style="margin-top:14px">${WR.img("bg_math", "thumb", "", true)}<div style="flex:1"><div><span class="lvl-badge">G1–12</span><b>🔢 Number Kingdom</b></div><div class="muted" style="font-size:.85rem;font-weight:700">Maths quests + 🗼 Times-Table Tower</div><div class="muted" style="font-size:.75rem;font-weight:800">👑 ${WR.Math.totalCrowns()} crowns · 🌟 ${WR.Math.mastered()}/132 facts${s.math && s.math.grade ? ` · Grade ${s.math.grade}` : ""}</div></div></div>` : ""}</div>
-      <div><div id="homeGoals"></div><h2>🎯 Daily Quests</h2><div class="card quests">${qs}<p class="muted" style="font-size:.8rem;font-weight:700;margin-bottom:0">New quests every day. Keep your 🔥 streak by finishing one lesson a day!</p></div>
+      <div><div class="home-mini"><button class="card mini-chip${qReady ? " ready" : ""}" id="questsMini"><span class="mi">🎯</span><span><b>${qDone}/${s.daily.quests.length} quests</b><small>${qReady ? "🎁 Prize to claim!" : "Today's quests"}</small></span></button>
+        <button class="card mini-chip" id="petMini"><span class="mi mini-pet">${WR.petHTML()}</span><span><b>${WR.userText(s.pet.name)}</b><small>${WR.petFeel(s.pet)}</small></span></button></div><div id="homeGoals"></div>
       ${due ? WR.nudgeCard("gardenNudge", "💧", `${due} plant${due > 1 ? "s" : ""} in your Mistake Garden ${due > 1 ? "are" : "is"} thirsty`, "A quick review helps tricky words stick.", "Water →") : ""}
       ${WR.charmsNudge ? WR.charmsNudge() : ""}
-      <h2>🐾 ${WR.userText(s.pet.name)}</h2><div class="card row" style="cursor:pointer" id="petCard"><div style="width:110px;height:110px">${WR.petHTML()}</div><div style="flex:1">
-        <div class="stat" style="grid-template-columns:24px 1fr 34px"><span>💖</span><div class="prog" style="margin:0"><i style="width:${s.pet.happiness}%"></i></div><span>${Math.round(s.pet.happiness)}</span></div>
-        <div class="stat" style="grid-template-columns:24px 1fr 34px"><span>🍽️</span><div class="prog" style="margin:0"><i style="width:${100 - s.pet.hunger}%;background:linear-gradient(90deg,#FFE29A,#FFB48A)"></i></div><span>${Math.round(100 - s.pet.hunger)}</span></div>
-        <button class="btn small">Visit ${WR.userText(s.pet.name)} →</button></div></div></div></div></div>`);
+      </div></div></div>`);
   document.querySelectorAll(".realm-node").forEach(n => n.onclick = () => {
     if (n.classList.contains("locked")) { const prev = WR.realms[+n.dataset.i - 1]; return WR.toast(`🔒 Pass 3 of 4 skills in ${prev.name} to unlock!`, 2400); }
     WR.go("realm", n.dataset.r);
   });
-  document.querySelectorAll(".claim").forEach(b => b.onclick = () => { WR.claimQuest(b.dataset.id); WR.screens.home(); });
-  WR.$("#petCard").onclick = () => WR.go("pet");
+  WR.$("#questsMini").onclick = () => WR.go("quests");
+  WR.$("#petMini").onclick = () => WR.go("pet");
   const he = WR.$("#heroEditHome"); if (he) he.onclick = e => { e.stopPropagation(); WR.openRename(); };
   const mn = WR.$("#mathNode"); if (mn) mn.onclick = () => WR.go("math");
   const gn = WR.$("#gardenNudge"); if (gn) gn.onclick = () => WR.go("review");
@@ -156,14 +164,14 @@ WR.screens.home = () => {
   WR.$("#mirrorPill").onclick = () => WR.retakePlacement();
   const bp = WR.$("#bookPill"); if (bp) bp.onclick = () => WR.openStorybook();
   const wp = WR.$("#wardPill"); if (wp) wp.onclick = e => { e.stopPropagation(); WR.go("wardrobe"); }; const gp = WR.$("#giftPill"); if (gp) gp.onclick = e => { e.stopPropagation(); WR.go("wardrobe", "rewards"); };
-  const pn = WR.$("#phonicsNode"); if (pn) pn.onclick = () => WR.go("phonics");
 };
 
 /* ---------------- realm screen ---------------- */
 // 🎶 Bonus tiles (not part of the 3-of-4 unlock rule): ONE markup helper for every module's tile, and ONE table that
 // says which tiles a realm shows (in this order) and what a tap opens. ico = the tile's picture markup.
-WR.bonusTile = ({ cls, data, ico, title, desc, crowns, tag }) => `<div class="card skill-card ${cls}" data-${data}="1"><span class="bonus-tag">Bonus</span>${ico}<h3>${title}</h3>
-    <div class="muted" style="font-size:.85rem;font-weight:700">${desc}</div><div class="crowns">${crowns}</div><div class="waiting-tag">${tag}</div></div>`;
+// R14: ONE status line per tile: the crowns (or count) once played, else the "new" tag
+WR.bonusTile = ({ cls, data, ico, title, desc, crowns, tag }) => `<div class="card skill-card ${cls}" data-${data}="1">${ico}<h3>${title}</h3>
+    <div class="muted" style="font-size:.85rem;font-weight:700">${desc}</div>${/notplayed/.test(crowns) ? `<div class="waiting-tag">${tag}</div>` : `<div class="crowns">${crowns}</div>`}</div>`;
 // 🗂️ level tabs (A1 … C2, only the open realms) for bonus hubs that cover every level (Word Charms, Spell Swap, Word Forge); badge(l) = a count or 0
 WR.unlockedLevels = () => (WR.realms || []).filter((r, i) => WR.isUnlocked(i)).map(r => r.id);
 WR.levelTabs = (cur, badge = () => 0) => { const lv = WR.unlockedLevels(); return lv.length > 1 ? `<div class="ch-levels" role="tablist">${lv.map(l => { const n = badge(l);
@@ -178,22 +186,38 @@ const BONUS = [
   { data: "phonics", open: () => WR.go("phonics"), tile: rid => WR.phonicsTile && WR.phonicsTile(rid) },
   { data: "charms", open: rid => WR.openCharms(rid), tile: rid => WR.charmsTile && WR.charmsTile(rid) }
 ];
+/* 🧭 R14: Today's path (the 4 skills + the boss) comes first; bonus games sit in their own row and open one at a time as
+   the child finishes lessons (any realm), each with a "New!" badge until it is first tapped. The realm game is open from
+   the start, so a brand-new player sees at most 6 choices. Grown-ups' "open every realm" opens them all. */
+const BONUS_AT = { sp: 0, story: 1, speak: 2, charms: 3, phonics: 4, write: 5 };   // lessons finished; gap games follow: 6, 7, …
+WR.bonusAt = data => data in BONUS_AT ? BONUS_AT[data] : 6 + Math.max(0, BONUS.findIndex(b => b.data === data) - 5);
+WR.bonusOpen = data => { const s = WR.state; return !!(s.settings.unlockAll || (s.lessonsDone || 0) >= WR.bonusAt(data) || (s.bonusSeen || []).includes(data)); };
+WR.bonusSeenInit = () => { const s = WR.state; if (!Array.isArray(s.bonusSeen)) s.bonusSeen = ["sp", ...BONUS.map(b => b.data)].filter(d => (s.lessonsDone || 0) >= WR.bonusAt(d)); return s.bonusSeen; };
 // the gap games (js/gap-round.js) add their own row when they load: Spell Swap, Word Forge, …
 WR.addBonus = row => BONUS.push(row);
 WR.screens.realm = rid => {
-  const r = WR.realms.find(x => x.id === rid);
+  const r = WR.realms.find(x => x.id === rid), seen = WR.bonusSeenInit();
   const crowns = k => tileCrowns(rid, k);
-  WR.view(`<div class="fade-in"><div class="realm-hero">${WR.img(r.bg, "bg")}<div class="ov"><span class="lvl-badge">${r.level}</span><b class="title" style="font-size:1.5rem">${r.emoji} ${r.name}</b>
+  const status = k => { const p = (WR.state.progress[rid] || {})[k], w = WR.waitingText(rid, k);
+    return p ? `<div class="crowns">${crowns(k)}${/^🎁/.test(w) ? ` <span class="waiting-tag">${w.replace(/ lessons? waiting!/, " new")}</span>` : ""}</div>` : `<div class="waiting-tag">${w}</div>`; };
+  const special = WR.bonusTile({ cls: "special", data: "sp", ico: `<span class="ico">${r.special.emoji}</span>`, title: r.special.name, desc: r.special.desc, crowns: crowns("special"), tag: "🎲 Realm game" });
+  const all = [{ data: "sp", html: special }, ...BONUS.map(b => ({ data: b.data, html: b.tile(rid) || "" }))].filter(b => b.html);
+  const open = all.filter(b => WR.bonusOpen(b.data)), locked = all.length - open.length;
+  const badge = (b) => seen.includes(b.data) ? b.html : b.html.replace(/^(<div class="card skill-card [^"]*"[^>]*>)/, '$1<span class="bonus-tag new-tag">New!</span>');
+  WR.view(`<div class="fade-in realm-screen"><div class="realm-hero">${WR.img(r.bg, "bg")}<div class="ov"><span class="lvl-badge">${r.level}</span><b class="title" style="font-size:1.5rem">${r.emoji} ${r.name}</b>
     <p style="margin:.3em 0;font-weight:700">${WR.esc(r.blurb)}</p><span class="pill">Game mode: ${r.modeName}</span></div></div>
-    <div class="row" style="margin:12px 0"><button class="btn ghost small" id="backMap">← Map</button></div>
-    <div class="grid g4">${WR.SKILLS.map(k => `<div class="card skill-card" data-k="${k.id}"><span class="ico">${k.icon}</span><h3>${k.name}</h3><div class="muted" style="font-size:.85rem;font-weight:700">${k.desc}</div><div class="crowns">${crowns(k.id)}</div><div class="waiting-tag">${WR.waitingText(rid, k.id)}</div></div>`).join("")}
-    ${BONUS.map(b => b.tile(rid) || "").join("")}
-    <div class="card skill-card special" data-sp="1"><span class="ico">${r.special.emoji}</span><h3>${r.special.name}</h3><div class="muted" style="font-size:.85rem;font-weight:700">${r.special.desc}</div><div class="crowns">${crowns("special")}</div><div class="muted" style="font-size:.72rem">Special game</div></div></div></div>`);
+    <div class="row realm-top" style="margin:12px 0"><button class="btn ghost small" id="backMap">← Map</button></div>
+    <h2 class="realm-sec">🧭 Today's path</h2>
+    <div class="grid g4 path-grid">${WR.SKILLS.map(k => `<div class="card skill-card" data-k="${k.id}"><span class="ico">${k.icon}</span><h3>${k.name}</h3><div class="muted" style="font-size:.85rem;font-weight:700">${k.desc}</div>${status(k.id)}</div>`).join("")}</div>
+    <h2 class="realm-sec" id="bonusHead">🎁 Bonus games</h2>
+    <div class="bonus-row" id="bonusRow">${open.map(badge).join("")}${locked ? `<div class="card bonus-more" aria-label="More games open as you play"><span class="ico">🔒</span><b>${locked} more</b><small>open as you play</small></div>` : ""}</div></div>`);
   WR.$("#backMap").onclick = () => WR.go("home");
   // only the skill cards: the bottom tab bar buttons also carry data-k and must keep their own handler
   WR.$("#main").querySelectorAll(".skill-card[data-k]").forEach(c => c.onclick = () => { const k = WR.SKILLS.find(x => x.id === c.dataset.k); if (!k) return; WR.startLesson({ realm: rid, skill: k.id, key: k.id, title: `${k.name} · ${r.modeName}` }); });
-  WR.$("[data-sp]").onclick = () => WR.playSpecial(rid);
-  BONUS.forEach(b => { const el = WR.$(`[data-${b.data}]`); if (el) el.onclick = () => b.open(rid); });
+  const tapped = d => { if (!seen.includes(d)) { seen.push(d); WR.save(); } };
+  const sp = WR.$("[data-sp]"); if (sp) sp.onclick = () => { tapped("sp"); WR.playSpecial(rid); };
+  BONUS.forEach(b => { const el = WR.$(`#bonusRow [data-${b.data}]`); if (el) el.onclick = () => { tapped(b.data); b.open(rid); }; });
+  const more = WR.$(".bonus-more"); if (more) more.onclick = () => WR.toast("🎁 Finish lessons on Today's path to open more bonus games!", 2400);
 };
 
 /* review screen (Mistake Garden) lives in js/garden.js */
@@ -245,6 +269,7 @@ function settings() {
     <label class="set-row"><span>🎙️ Recorded storyteller voice <small class="muted" style="display:block;font-size:.72rem">off = this device's own voice</small></span><input type="checkbox" id="recV" ${s.settings.voice !== "device" ? "checked" : ""}></label>
     <label class="set-row"><span>🐾 Cute pet voice</span><input type="checkbox" id="petV" ${s.settings.petVoice !== false ? "checked" : ""}></label>
     <div class="set-row" style="cursor:default"><span>🗣️ Listening speed</span><input type="range" class="slider" id="rt" min="0.5" max="1.3" step="0.1" value="${s.settings.rate}" aria-label="Listening speed"></div>
+    ${WR.offline && navigator.serviceWorker ? `<div class="set-row" style="cursor:default"><span>📲 Offline play <small class="muted" id="offState" style="display:block;font-size:.72rem">pictures load as you play</small></span><button class="btn small ghost" id="offBtn">Download</button></div>` : ""}
     <div class="row" style="justify-content:center;margin-top:16px"><button class="btn ghost small grownups-btn" id="guBtn">👪 Grown-ups</button><button class="btn ghost small" id="test">🔈 Test voice</button><button class="btn ghost small" id="testPet">🐾 Hear my pet</button><button class="btn ghost small" id="plRe">🪞 Placement quiz</button>${WR.Cloud ? '<button class="btn ghost small" id="ccSet">🏰 Cloud save</button>' : ""}<button class="btn small" id="cls">Done</button></div>`, (bg, close) => {
     bg.querySelector("#snd").onchange = e => { s.settings.sound = e.target.checked; WR.save(); };
     bg.querySelector("#rt").oninput = e => { s.settings.rate = +e.target.value; WR.save(); };
@@ -254,6 +279,13 @@ function settings() {
     bg.querySelector("#recV").onchange = e => { s.settings.voice = e.target.checked ? "recorded" : "device"; WR.save(); };
     bg.querySelector("#petV").onchange = e => { s.settings.petVoice = e.target.checked; WR.save(); };
     bg.querySelector("#cls").onclick = close;
+    // 📲 R17: everything for offline play, only when a grown-up/child asks (the first visit stays light)
+    const ob = bg.querySelector("#offBtn"), os = bg.querySelector("#offState");
+    if (ob) {
+      const ready = () => { os.textContent = "✅ Ready for offline play"; ob.textContent = "Done"; ob.disabled = true; };
+      WR.offline.status().then(d => { if (d && d.ready) ready(); else if (d && WR.offline.lite()) os.textContent = "on mobile data: pictures load as you play"; });
+      ob.onclick = () => { ob.disabled = true; ob.textContent = "…"; WR.offline.download(d => { if (!d.ready && d.total) os.textContent = `Downloading pictures… ${d.done}/${d.total}`; }).then(d => d ? ready() : (ob.disabled = false, ob.textContent = "Download")); };
+    }
     bg.querySelector("#heroEdit").onclick = () => { close(); WR.openRename(); };
     bg.querySelector("#plRe").onclick = () => { close(); WR.retakePlacement(); };
     const cs = bg.querySelector("#ccSet"); if (cs) cs.onclick = () => { close(); WR.Cloud.open(); };

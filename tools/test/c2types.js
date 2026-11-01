@@ -31,7 +31,7 @@ const vis = () => { const out = []; document.querySelectorAll('.qcard button, .q
     const ctx = await browser.newContext({ viewport: vp, isMobile: true, hasTouch: true, deviceScaleFactor: 2 });
     await ctx.route(/supabase|jsdelivr|unpkg/, r => r.abort());
     const page = await ctx.newPage(); const errs = []; page.on('pageerror', e => errs.push(String(e)));
-    await page.addInitScript(() => { window.__WR_ALL_TYPES = true;
+    await page.addInitScript(() => { 
       if (!localStorage.getItem('wordRealms.save.v1')) localStorage.setItem('wordRealms.save.v1', JSON.stringify({ v: 1, name: 'Tester', avatar: 'avatar_girl', startLevel: 'a1', stars: 10, pet: { species: 'pet_bunny', name: 'Bun', xp: 0, happiness: 80, hunger: 30, lastTick: Date.now() }, progress: {}, owned: [], equipped: {}, settings: { rate: 1.3, sound: false, unlockAll: true }, mistakes: [], lessonsDone: 3 })); });
     await page.goto(BASE); await page.waitForTimeout(800);
     const tag = `${vp.width}px`;

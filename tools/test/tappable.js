@@ -57,7 +57,7 @@ const audit = () => {
 (async () => {
   const browser = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox'] });
   for (const S of SIZES) {
-    const ctx = await browser.newContext(S);
+    const ctx = await browser.newContext(S); await ctx.addInitScript(() => { window.__WR_CLASSIC_ONLY = true; });   // R18: this test drives the classic multiple-choice flow
     await ctx.route(/supabase\.co|cdn\.jsdelivr\.net/, r => r.abort());   // offline-safe: cloud stays in guest mode
     const page = await ctx.newPage(); const errs = [];
     page.on('pageerror', e => errs.push(e.message));

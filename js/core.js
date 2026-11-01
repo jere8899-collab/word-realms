@@ -99,7 +99,7 @@ function freshState() {
     pet: null, stars: 10, totalCorrect: 0, totalAnswered: 0,
     streak: { count: 0, last: null }, daily: null,
     progress: {}, owned: [], equipped: { outfit: null, petskin: null, theme: null },
-    settings: { rate: 0.9, sound: true, unlockAll: false }, mistakes: [], lessonsDone: 0,
+    settings: { rate: 0.9, sound: true, unlockAll: false }, mistakes: [], lessonsDone: 0, bonusSeen: ["sp"],
     speaking: freshSpeaking(), writing: freshWriting(), math: freshMath(),
     report: freshReport(), earn: freshEarn(), ...freshBlocks(),
     looks: {}, stable: [], rewards: { got: [], chest: { last: null, n: 0 }, caughtUp: true }
@@ -191,6 +191,7 @@ const freshSpeaking = () => ({ rounds: 0, attempts: 0, passed: 0, perfect: 0, pr
 // older saves (before the Echo Well / Story Quill) simply gain the speaking and writing stats; nothing else changes
 const OLD_SLOT = { o_leaf: "neck", o_rainbow: "back" };   // (migrate runs before data/shop.json loads)
 function migrate(s, raw = s) {
+  if (!Array.isArray(raw.bonusSeen)) delete s.bonusSeen;   // R14: saves from before bonus unlocks: WR.bonusSeenInit marks what is already open, so no "New!" flood
   s.speaking = Object.assign(freshSpeaking(), s.speaking || {});
   s.writing = Object.assign(freshWriting(), s.writing || {});
   s.writing.best = s.writing.best || {}; s.writing.drafts = s.writing.drafts || {};
@@ -567,5 +568,5 @@ WR.finishUnit = (done, id, right, n, source) => {
 };
 // shared crown markup: n bright crowns + the rest faded; crownCell shows a muted note instead when nothing was played yet
 WR.crownRow = n => "👑".repeat(n) + `<span style="opacity:.2">${"👑".repeat(3 - n)}</span>`;
-WR.crownCell = (n, empty = "not played") => n == null ? `<span class="muted" style="font-size:.8rem">${empty}</span>` : WR.crownRow(n);
+WR.crownCell = (n, empty = "not played") => n == null ? `<span class="muted notplayed" style="font-size:.8rem">${empty}</span>` : WR.crownRow(n);
 })();

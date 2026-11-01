@@ -138,11 +138,26 @@ if (TEST) { gate._answer = () => expected; gate._skew = 0; }   // R4: test hooks
 WR.parentGate = gate;
 
 /* ---------- ⚙️ Settings → 👪 Grown-ups: PIN, Teacher mode ---------- */
+/* 📚 R16: the teacher wording (Cambridge exam parts, grammar terms) lives here, for grown-ups, instead of on the
+   children's screens. A game registers WR.addGrownNote(id, name, rid => text or Promise<text>). */
+const NOTES = [];
+WR.addGrownNote = (id, name, fn) => { if (!NOTES.some(n => n.id === id)) NOTES.push({ id, name, fn }); };
+WR.grownNotes = () => NOTES.slice();
+WR.openAbout = async (rid = "a1") => {
+  const lv = (WR.realms || []).map(r => r.id);
+  const rows = await Promise.all(NOTES.map(async n => { try { return `<div class="gu-note"><b>${n.name}</b><p>${WR.esc(String(await n.fn(rid)).replace(/^👪 Grown-ups:\s*/, ""))}</p></div>`; } catch (e) { return ""; } }));
+  WR.modal(`<h2>📚 What the games teach</h2><div class="ch-levels gu-lv">${lv.map(l => `<button class="ch-lv${l === rid ? " on" : ""}" data-l="${l}">${l.toUpperCase()}</button>`).join("")}</div>
+    <div class="gu-notes" id="guNotes">${rows.join("")}</div><div class="row" style="justify-content:center"><button class="btn small" id="abDone">Done</button></div>`, (bg, close) => {
+    bg.querySelectorAll(".gu-lv [data-l]").forEach(b => b.onclick = () => { close(); WR.openAbout(b.dataset.l); });
+    bg.querySelector("#abDone").onclick = close;
+  });
+};
 WR.openGrownups = () => gate(() => {
   const s = WR.state;
   WR.modal(`<h2>👪 Grown-ups</h2>
     <p class="muted" style="font-weight:700;margin-top:0">These settings stay open for 5 minutes, then the grown-up check comes back.</p>
     ${WR.screens.report ? `<button class="btn mint gu-report" id="guReport">📊 Learning Report<small>days played, skills, weak spots &amp; tips</small></button>` : ""}
+    <div class="row" style="justify-content:center;margin:6px 0"><button class="btn small ghost" id="guAbout">📚 What the games teach</button></div>
     <label class="set-row"><span>🗝️ Teacher mode (open every realm)</span><input type="checkbox" id="guUl" ${s.settings.unlockAll ? "checked" : ""}></label>
     <div class="set-row" style="cursor:default"><span>🔢 Grown-up PIN <small class="muted" id="guPinState">${hasPin() ? "· on" : "· off (cash items stay locked)"}</small></span></div>
     <div class="row" style="justify-content:center"><input class="input" id="guPin" inputmode="numeric" pattern="[0-9]*" maxlength="4" placeholder="4 digits" style="max-width:130px;text-align:center;letter-spacing:6px" autocomplete="off">
@@ -154,6 +169,7 @@ WR.openGrownups = () => gate(() => {
     <div class="row" style="justify-content:center"><button class="btn small" id="guDone">Done</button></div>`, (bg, close) => {
     bg.querySelector("#guUl").onchange = e => { s.settings.unlockAll = e.target.checked; WR.save(); WR.toast(e.target.checked ? "🗝️ Every realm is open" : "🔒 Realms open in order again"); };
     const rp = bg.querySelector("#guReport"); if (rp) rp.onclick = () => { close(); WR.go("report", "week"); };
+    bg.querySelector("#guAbout").onclick = () => { close(); const c = WR.continueTarget && WR.continueTarget(); WR.openAbout((c && c.realm && c.realm.id) || WR.state.startLevel || "a1"); };
     const err = bg.querySelector("#guErr");
     bg.querySelector("#guPinSet").onclick = async () => { try { await gate.setPin(bg.querySelector("#guPin").value.trim()); close(); WR.toast("🔢 Grown-up PIN saved"); WR.openGrownups(); } catch (x) { err.textContent = x.message; } };
     const off = bg.querySelector("#guPinOff"); if (off) off.onclick = () => { gate.clearPin(); close(); WR.toast("PIN removed"); WR.openGrownups(); };

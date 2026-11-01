@@ -368,3 +368,18 @@ body.kbd-open .toast{display:none}
 @media (max-width:339px){.lesson.lhud>.side .bubble{display:none}.lesson.lhud>.side{max-width:none}}
 /* R11: buttons never wrap now, so the onboarding pair shrinks a little on the narrowest phones */
 @media (max-width:359px){.onb-next{gap:6px}.onb-next .btn{padding:10px 12px;font-size:.92rem}}
+/* 🏠 R15: a shorter home page on phones: slimmer realm rows (the game mode shows inside each realm) */
+@media (max-width:600px){
+  .map{gap:8px}
+  .realm-node,.realm-node:nth-child(even){grid-template-columns:76px 1fr;gap:10px;padding:8px 10px}
+  .realm-node:nth-child(even) .thumb{order:0}
+  .realm-node .thumb{width:76px;height:56px;border-radius:14px}
+  .realm-node .muted:not(:last-child){display:none}
+  .realm-node .prog{margin:4px 0 2px}
+  #mathNode.math-node{grid-template-columns:76px 1fr;gap:10px;padding:8px 10px;margin-top:8px!important}#mathNode.math-node .thumb{width:76px;height:56px;border-radius:14px}#mathNode .muted:not(:last-child){display:none}
+}
+@media (max-width:600px){
+  .homehead .row{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;gap:6px;margin-right:-12px;padding-right:12px}.homehead .row::-webkit-scrollbar{display:none}
+  .homehead .row .pill{flex:none}
+  .math-node .muted{font-size:.78rem!important}
+}

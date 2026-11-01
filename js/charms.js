@@ -157,7 +157,7 @@ function hub(rid) {
     <div class="stage-row ch-stages">${STAGES.slice(1).map((g, i) => `<div class="stage-chip"><span>${g.e}</span><b>${c.stage[i + 1]}</b><small>${g.n.replace(" charm", "")}</small></div>`).join("")}</div>
     <div class="card ch-box"><div class="ch-box-h"><b>${realm.emoji} ${lvlName(rid)} charm box</b><span class="pill">${c.learned}/${list.length} caught · 💎 ${c.mastered}</span></div>
       <div class="ch-grid">${list.map(charm).join("")}</div></div>
-    <p class="muted ph-note">👪 Grown-ups: ${list.length} words from the Cambridge ${lvlName(rid)} vocabulary band. New words come 4 at a time; each one returns after 1, 3, 7 and 14 days. A slip brings it back sooner.</p></div>`);
+    <p class="muted ph-note">💡 New words come 4 at a time. Each one comes back after 1, 3, 7 and 14 days, so it stays bright!</p></div>`);
   WR.$("#chBack").onclick = () => WR.go("realm", rid);
   const go = WR.$("#chGo"); if (go) go.onclick = () => WR.startCharms(rid);
   const pr = WR.$("#chPractice"); if (pr) pr.onclick = () => WR.startCharms(rid, true);
@@ -316,4 +316,6 @@ const STK = [
 ];
 if (WR.Collect) WR.Collect.addPages(() => [{ id: "charms", icon: "🔮", title: "Word Charms", name: "Word Charms", bg: "bg_b1", defs: STK }]);
 WR.Charms.loadAll = loadAll;
+// R16: the vocabulary-band wording, for grown-ups (⚙️ → 👪 Grown-ups → 📚 What the games teach)
+WR.addGrownNote && WR.addGrownNote("charms", "🔮 Word Charms", async rid => { await loadAll(); const n = ((WR.counts && WR.counts.counts) || {})[rid + "/words"] || 40; return `${n} words from the Cambridge ${lvlName(rid)} vocabulary band. New words come 4 at a time; each one returns after 1, 3, 7 and 14 days (spaced repetition). A slip brings it back sooner.`; });
 })();

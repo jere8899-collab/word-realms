@@ -15,7 +15,7 @@ const OLD = { v: 1, name: 'Mei', avatar: 'avatar_girl', startLevel: 'a1', stars:
   pet: { species: 'pet_bunny', name: 'Puffbun', xp: 60, happiness: 80, hunger: 30, skin: null, lastTick: Date.now() },
   streak: { count: 2, last: today() }, owned: [], equipped: { outfit: null, petskin: null, theme: null }, progress: { a1: { grammar: { best: 0.7, plays: 1, last: Date.now() } } },
   daily: { day: today(), quests: [{ id: 'phonics1', progress: 0, claimed: false }, { id: 'correct10', progress: 0, claimed: false }, { id: 'feed1', progress: 0, claimed: false }] },
-  settings: { rate: .9, sound: false, unlockAll: false }, mistakes: [], lessonsDone: 3 };
+  settings: { rate: .9, sound: false, unlockAll: false }, mistakes: [], lessonsDone: 12 };   // R14: 12 lessons, so every bonus game is open
 const MOB = { deviceScaleFactor: 2, isMobile: true, hasTouch: true };
 (async () => {
   const browser = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox'] });
@@ -86,12 +86,13 @@ const MOB = { deviceScaleFactor: 2, isMobile: true, hasTouch: true };
   const ph0 = await page.evaluate(() => WR.state.phonics);
   ok(ph0 && typeof ph0.done === 'object' && Object.keys(ph0.done).length === 0 && ph0.rounds === 0, 'old save gains an empty phonics block');
   ok(await page.evaluate(() => WR.state.report && WR.state.mistakes && WR.state.progress.a1.grammar.best === 0.7), 'the rest of the old save is untouched');
-  ok((await page.innerText('#phonicsSteps')).includes('0/6'), 'the map shows the 🔤 Phonics Path card (0/6 steps) under the realm map');
-  const lay = await page.evaluate(() => ({ c: document.getElementById('continueCard') ? document.getElementById('continueCard').getBoundingClientRect().bottom : 0, r: document.querySelector('.realm-node').getBoundingClientRect().bottom, n: document.getElementById('phonicsNode').getBoundingClientRect().top, last: [...document.querySelectorAll('.realm-node')].pop().getBoundingClientRect().bottom }));
-  ok(lay.r <= 667 && lay.c <= 667 && lay.n >= lay.last, `the card sits under the map, so Continue + the first realm still fit 375×667 (${Math.round(lay.r)})`);
-  await page.locator('#phonicsNode').scrollIntoViewIfNeeded(); await clean(page); await page.screenshot({ path: OUT + 'phonics_00_map.png' });
-  await page.click('#phonicsNode'); await page.waitForSelector('.ph-step');
-  ok(await page.locator('.ph-step').count() === 6, 'the map card opens the Phonics Path');
+  // R15: Phonics lives only in the A1 realm's bonus row now (no second card on the map)
+  ok(!(await page.$('#phonicsNode')), 'no separate Phonics card on the map (R15)');
+  await page.evaluate(() => WR.go('realm', 'a1')); await page.waitForSelector('#bonusRow [data-phonics]');
+  ok((await page.innerText('#bonusRow [data-phonics]')).includes('Phonics'), 'the A1 realm has the 🔤 Phonics tile');
+  await page.locator('#bonusRow [data-phonics]').scrollIntoViewIfNeeded(); await clean(page); await page.screenshot({ path: OUT + 'phonics_00_map.png' });
+  await page.click('#bonusRow [data-phonics]'); await page.waitForSelector('.ph-step');
+  ok(await page.locator('.ph-step').count() === 6, 'the A1 tile opens the Phonics Path');
   await page.evaluate(() => WR.go('realm', 'a2'));
   ok(await page.locator('.phonics-tile').count() === 0, 'no Phonics tile in the A2 realm');
   await page.evaluate(() => WR.go('realm', 'a1'));
@@ -149,8 +150,8 @@ const MOB = { deviceScaleFactor: 2, isMobile: true, hasTouch: true };
     await page.evaluate(() => document.querySelector('#phTiles .ph-tile').classList.add('lit')); await clean(page);
     await page.screenshot({ path: OUT + 'phonics_q_blend.png' });
   } else ok(false, 'found a blend question to check the voice');
-  const st = await page.evaluate(() => ({ done: Object.keys(WR.state.phonics.done).length, got: WR.state.stickers.got.phonics, pill: (WR.go('home'), document.getElementById('phonicsSteps').textContent) }));
-  ok(st.done === 6 && st.got.length >= 6 && st.pill.includes('6/6'), `all 6 steps saved, ${st.got.length} stickers, map card ${st.pill}`);
+  const st = await page.evaluate(() => ({ done: Object.keys(WR.state.phonics.done).length, got: WR.state.stickers.got.phonics, pill: (WR.go('realm', 'a1'), document.querySelector('#bonusRow [data-phonics]').textContent) }));   // R15: the A1 tile, not a map card
+  ok(st.done === 6 && st.got.length >= 6 && st.pill.includes('6/6'), `all 6 steps saved, ${st.got.length} stickers, A1 tile ${st.pill}`);
   // Learning Report: a Phonics row (A1) and a working Practise action
   const rep = await page.evaluate(() => { const d = WR.Report.data('week'); const row = d.english.rows.find(r => r.sk.id === 'phonics'); const a1 = d.english.levels.findIndex(l => l.id === 'a1'); return { name: row && row.sk.name, cell: row && row.cells[a1] }; });
   ok(rep.name === 'Phonics' && rep.cell && rep.cell.n >= 48, `Learning Report has a Phonics row for A1 (${JSON.stringify(rep)})`);

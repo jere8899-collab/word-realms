@@ -157,10 +157,6 @@ WR.phonicsTile = rid => {
   return WR.bonusTile({ cls: "phonics-tile", data: "phonics", ico: '<span class="ico">🔤</span>', title: "Phonics", desc: "Phonics Path: sounds, blending, tricky words",
     crowns: n ? `🐾 ${n}/${UNITS.length} steps` : WR.crownCell(null, "not played"), tag: n < UNITS.length ? "🔤 Next: " + UNITS[Math.min(n, UNITS.length - 1)].name : "🌟 Path complete!" });
 };
-// map card under the realm map (like the Number Kingdom card), for A1 starters or once played, so Continue stays on screen
-WR.phonicsNode = () => (WR.state.startLevel === "a1" || stepsDone()) ? `<div class="card math-node phonics-node" id="phonicsNode" role="button" tabindex="0" style="margin-top:14px">${WR.img("bg_a1", "thumb", "", true)}
-  <div style="flex:1"><div><span class="lvl-badge">A1</span><b>🔤 Phonics Path</b></div><div class="muted" style="font-size:.85rem;font-weight:700">Letter sounds, blending and tricky words</div>
-  <div class="prog"><i style="width:${stepsDone() / UNITS.length * 100}%"></i></div><div class="muted" id="phonicsSteps" style="font-size:.75rem;font-weight:800">🐾 ${stepsDone()}/${UNITS.length} steps</div></div></div>` : "";
 
 /* ---------- the path (hub) ---------- */
 WR.screens.phonics = () => {

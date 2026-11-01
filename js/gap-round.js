@@ -68,7 +68,7 @@ WR.GapRound = cfg => {
     <div class="sw-books">${d.books.map(b => { const x = done[b.id];
       return `<button class="card sw-book ${x ? "done" : ""}" data-b="${b.id}"><span class="sw-bico">${b.icon}</span><span class="sw-btxt"><b>${esc(b.name)}</b><small>${esc(b.focus)}</small></span>
         <span class="sw-bcr">${x ? WR.crownRow(x.crowns) : '<span class="pill">▶ Play</span>'}</span></button>`; }).join("")}</div>
-    <p class="muted ph-note">${cfg.note(rid, d)}</p></div>`);
+    <p class="muted ph-note">💡 ${cfg.kidNote || "Every answer comes with a little reason, so you learn while you play!"}</p></div>`);
     $("Back").onclick = () => WR.go("realm", rid);
     WR.bindLevelTabs(cfg.hub);
     document.querySelectorAll(".sw-book").forEach(b => b.onclick = () => start(rid, b.dataset.b));
@@ -174,6 +174,7 @@ WR.GapRound = cfg => {
   const stop = () => { S = null; };
   WR.gapGames.push({ id: cfg.id, info: cfg.info, hub: cfg.hub, round: cfg.round, open, stop, tile, s: () => S });   // s: the running round (tests)
   WR.addBonus({ data: cfg.id, open: rid => open(rid), tile: rid => tile(rid) });
+  WR.addGrownNote && WR.addGrownNote(cfg.id, `${cfg.icon} ${cfg.tile.title}`, rid => cfg.load(rid).then(() => cfg.note(rid, cfg.set(rid))));   // R16: exam wording for grown-ups
   return { open, start, stop, s: () => S, tile, unitsDone, crownsAt, all: () => Object.entries(st().done) };
 };
 WR.GapRound.whyNot = whyNot; WR.GapRound.more = more;

@@ -167,10 +167,12 @@ WR.screens.realm = rid => {
   C.check(); _realm(rid);
   const grid = WR.$("#main .grid.g4"); if (!grid || !RB[rid]) return;
   const got = gotIn(rid);
-  grid.insertAdjacentHTML("afterend", `${bossCard(rid)}<div class="card row sticker-row" id="realmStickers" role="button" tabindex="0"><span style="font-size:1.6rem">🏷️</span><div style="flex:1"><b>Sticker page: ${got.length}/${STICKERS.length}</b><div class="muted" style="font-size:.82rem;font-weight:700">${STICKERS.map(st => WR.icon(st.icon, got.includes(st.id) ? "" : "dim", got.includes(st.id) ? undefined : "not earned yet")).join(" ")}</div></div><span class="btn small ghost">Open →</span></div>`);
+  grid.insertAdjacentHTML("afterend", bossCard(rid));
+  // R14: the sticker page sits under the bonus games, once this realm has its first sticker
+  if (got.length) WR.$("#main .realm-screen").insertAdjacentHTML("beforeend", `<div class="card row sticker-row" id="realmStickers" role="button" tabindex="0"><span style="font-size:1.6rem">🏷️</span><div style="flex:1"><b>Sticker page: ${got.length}/${STICKERS.length}</b><div class="muted" style="font-size:.82rem;font-weight:700">${STICKERS.map(st => WR.icon(st.icon, got.includes(st.id) ? "" : "dim", got.includes(st.id) ? undefined : "not earned yet")).join(" ")}</div></div><span class="btn small ghost">Open →</span></div>`);
   const go = WR.$("#rbossGo"), card = WR.$("#rbossCard");
   if (go) go.onclick = e => { e.stopPropagation(); C.startBoss(rid); };
   if (card) card.onclick = () => C.bossReady(rid) ? C.startBoss(rid) : WR.toast(`🔒 Pass 3 of 4 skills in ${WR.realms.find(x => x.id === rid).name} to wake the boss!`, 2400);
-  WR.$("#realmStickers").onclick = () => WR.go("stickers", rid);
+  const rs = WR.$("#realmStickers"); if (rs) rs.onclick = () => WR.go("stickers", rid);
 };
 })();

@@ -60,7 +60,7 @@ const nested = () => { const out = []; document.querySelectorAll('#main *').forE
   for (const P of PROFILES) {
     if (ONLY && !ONLY.includes(P.name)) continue;
     const { name, fit, portrait, ...opts } = P;
-    const ctx = await browser.newContext({ ...opts, reducedMotion: 'no-preference' });
+    const ctx = await browser.newContext({ ...opts, reducedMotion: 'no-preference' }); await ctx.addInitScript(() => { window.__WR_CLASSIC_ONLY = true; });   // R18: this test drives the classic multiple-choice flow
     await ctx.route(/supabase\.co|cdn\.jsdelivr\.net/, r => r.abort());
     const page = await ctx.newPage(); const errs = [];
     page.on('pageerror', e => errs.push('pageerror: ' + e.message));
@@ -207,7 +207,7 @@ const nested = () => { const out = []; document.querySelectorAll('#main *').forE
   }
   /* reduced motion: no confetti at all */
   if (!ONLY) {
-    const ctx = await browser.newContext({ viewport: { width: 375, height: 667 }, reducedMotion: 'reduce', isMobile: true, hasTouch: true });
+    const ctx = await browser.newContext({ viewport: { width: 375, height: 667 }, reducedMotion: 'reduce', isMobile: true, hasTouch: true }); await ctx.addInitScript(() => { window.__WR_CLASSIC_ONLY = true; });   // R18: this test drives the classic multiple-choice flow
     await ctx.route(/supabase\.co|cdn\.jsdelivr\.net/, r => r.abort());
     const page = await ctx.newPage(); await page.goto(BASE + 'index.html');
     await page.evaluate(s => localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)), save()); await page.reload({ waitUntil: 'networkidle' }); await page.waitForSelector('.realm-node');

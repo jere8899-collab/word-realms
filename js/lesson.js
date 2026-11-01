@@ -20,8 +20,9 @@ function normalize(item, passage) {
   return { type: item.type === "listen" ? "listen" : item.type === "picq" ? "picq" : "mcq", q: item.q, say: item.say, pic: item.pic, passage, dialogue: item.dialogue,
     options: WR.shuffle(item.options), correct, explain: item.explain, notes: item.notes };
 }
-// the headless tests drive the classic multiple-choice flow; the new types have their own test (tools/test/c2types.js)
-const classicOnly = () => navigator.webdriver && !window.__WR_ALL_TYPES;
+// R18: every browser (automated ones too) gets every question type; a test that only drives the classic multiple-choice
+// flow sets window.__WR_CLASSIC_ONLY = true itself
+const classicOnly = () => !!window.__WR_CLASSIC_ONLY;   // R18: tests opt in themselves; automated browsers see the real game
 const playable = q => (q.type !== "dictate" || (window.Speech && Speech.supported)) &&
   (!classicOnly() || q.type === "mcq" || (q.type === "listen" && !q.dialogue) || (q.type === "order" && !q.say));
 WR.sayHTML = say => String(say || "").split("|").map(l => { const m = l.match(/^([^:]{1,20}):\s*(.*)$/); return m ? `<span class="say-line"><b>${WR.esc(m[1])}:</b> ${WR.esc(m[2])}</span>` : WR.esc(l); }).join(" ");
