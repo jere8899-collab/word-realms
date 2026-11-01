@@ -45,12 +45,13 @@ C.friendly = (e, mode) => {
 };
 
 /* ---------- progress score (to suggest which save to keep) ---------- */
-const doneCrowns = d => d ? Object.values(d).reduce((a, x) => a + (x.crowns || 0), 0) : 0;   // Storybook chapters, Phonics Path steps, Spell Swap books, Word Forge anvils
+const doneCrowns = d => d ? Object.values(d).reduce((a, x) => a + (x.crowns || 0), 0) : 0;   // Storybook chapters, Phonics Path steps, gap-game books…
+const crownedBlocks = s => Object.keys(WR.BLOCKS).filter(k => WR.BLOCKS[k].crowned).reduce((a, k) => a + doneCrowns(s[k] && s[k].done), 0);   // every crowned save block (js/core.js)
 C.score = s => {
   if (!s || !s.pet) return 0;
   const crowns = Object.values(s.progress || {}).reduce((a, r) => a + Object.values(r).reduce((b, k) => b + WR.crowns(k.best || 0), 0), 0);
   return (s.totalCorrect || 0) * 2 + (s.lessonsDone || 0) * 5 + crowns * 10 + Math.floor((s.pet.xp || 0) / 4) + (s.writing && s.writing.crowns || 0) * 3
-    + doneCrowns(s.stories && s.stories.done) * 10 + doneCrowns(s.phonics && s.phonics.done) * 10 + doneCrowns(s.swap && s.swap.done) * 10 + doneCrowns(s.forge && s.forge.done) * 10
+    + crownedBlocks(s) * 10
     + Object.values((s.charms && s.charms.cards) || {}).reduce((a, c) => a + (c && c.b >= 1 ? 2 + c.b : 0), 0)
     + (s.math ? (s.math.correct || 0) * 2 + (s.math.lessons || 0) * 5 + Object.values(s.math.topics || {}).reduce((a, t) => a + WR.crowns(t.best || 0), 0) * 10 + Object.values(s.math.facts || {}).filter(f => f.b >= 3).length * 2 : 0);
 };

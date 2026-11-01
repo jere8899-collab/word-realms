@@ -8,7 +8,8 @@
 (function () {
 const WR = window.WR;
 const body = document.body;
-const FOCUS_SCREENS = /^(story|phonicsRound|charmsRound|swapRound|forgeRound)$/;
+const FOCUS_SCREENS = /^(story|phonicsRound|charmsRound)$/;
+const isFocus = s => FOCUS_SCREENS.test(s) || WR.gapGames.some(g => g.round === s);   // + every gap game's round (js/gap-round.js)
 WR.setFocus = on => body.classList.toggle("wr-focus", !!on);
 const wrap = (obj, name, before) => { const f = obj && obj[name]; if (typeof f !== "function" || f._ux) return; const g = function (...a) { before && before(...a); return f.apply(this, a); }; g._ux = true; obj[name] = g; };
 // starters of full-screen activities → focus mode on
@@ -16,7 +17,7 @@ const wrap = (obj, name, before) => { const f = obj && obj[name]; if (typeof f !
 if (WR.Math) ["startLesson", "startDojo"].forEach(n => wrap(WR.Math, n, () => WR.setFocus(true)));
 // screen changes → focus off (unless the screen itself is a focus screen), old confetti/toasts cleared
 const go0 = WR.go;
-WR.go = (screen, arg) => { WR.setFocus(FOCUS_SCREENS.test(screen)); WR.clearFx && WR.clearFx(true); WR.starNote && WR.starNote(); const r = go0(screen, arg); WR.Rewards && WR.Rewards.check(); return r; };   // a new screen drops any pending "fewer stars" note
+WR.go = (screen, arg) => { WR.setFocus(isFocus(screen)); WR.clearFx && WR.clearFx(true); WR.starNote && WR.starNote(); const r = go0(screen, arg); WR.Rewards && WR.Rewards.check(); return r; };   // a new screen drops any pending "fewer stars" note
 
 /* ---------- views ---------- */
 const view0 = WR.view;

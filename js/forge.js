@@ -27,9 +27,6 @@ const HOW = {
   c2: "Change the word in CAPITALS so it fits the gap. Some words need three or four parts!"
 };
 const EXAM = { a1: "Cambridge Starters–Flyers grammar", a2: "A2 Key grammar", b1: "B1 Preliminary style", b2: "B2 First, Use of English Part 3", c1: "C1 Advanced, Use of English Part 3", c2: "C2 Proficiency, Use of English Part 3" };
-const st = () => WR.block("forge");
-const load = lvl => WR.bank(lvl, "forge");
-const set = lvl => WR.data[lvl + "/forge"];
 
 /* ---------- marking ---------- */
 // lower case, curly quotes straightened, anything but letters, apostrophes and hyphens taken out; mirrors forge_canon() in build_data.py
@@ -57,7 +54,7 @@ const G = WR.GapRound({
   id: "forge", p: "fg", hub: "forge", round: "forgeRound", title: "⚒️ Word Forge", icon: "⚒️", quest: "forge1",
   tile: { cls: "forge-tile", title: "Word Forge", desc: "Make the right form of the word", unit: "anvils" },
   opening: "Heating up the forge… 🔥", openingRound: "🔥 Lighting the anvil…", offline: "📴 Couldn't open the Word Forge. Check the internet and try again.",
-  intro: "Forge the right word! 🔥", shelfBtn: "⚒️ Anvils", how: rid => HOW[rid], load, set,
+  intro: "Forge the right word! 🔥", shelfBtn: "⚒️ Anvils", how: rid => HOW[rid], info: WR.FORGE,
   note: (rid, d) => `👪 Grown-ups: word formation, ${EXAM[rid]} (${d.books.length * 8} at ${rid.toUpperCase()}). Capitals and spaces don't matter; spelling does. Every answer comes with a short reason.`,
   gap: it => it.s,
   body: (it, gap) => `<div class="sw-cue fg-cue"><span class="sw-key fg-root" aria-label="Root word">⚒️ ${esc(it.root)}</span><button class="btn ph-say" id="fgSay" aria-label="Hear the sentence">🔊</button></div>
@@ -78,7 +75,7 @@ WR.stopForge = G.stop;
 WR.Forge._s = G.s;                                       // the running round (tests)
 
 /* ---------- 🏷️ sticker page ---------- */
-const all = () => Object.entries(st().done);
+const all = G.all;
 const STK = [
   { id: "first", icon: "⚒️", name: "First Forge", how: "Finish a Word Forge anvil", test: () => all().length >= 1 },
   { id: "star", icon: "👑", name: "Forge Star", how: "Get 3 crowns on a Word Forge anvil", test: () => all().some(([, x]) => x.crowns === 3) },

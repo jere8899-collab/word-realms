@@ -1,0 +1,305 @@
+{
+ "level": "b1",
+ "mode": "type",
+ "books": [
+  {
+   "id": "b1.1",
+   "icon": "🤖",
+   "name": "The Robot Club",
+   "focus": "have been · who · since · pick up · although",
+   "items": [
+    {
+     "s": "I ___ been a member of the school robot club for two years.",
+     "ans": [
+      "have"
+     ],
+     "kind": "aux",
+     "tip": "Present perfect = have + been: something that started in the past and is still true.",
+     "id": "b1.1.1",
+     "say": "I have been a member of the school robot club for two years.",
+     "ask": "I blank been a member of the school robot club for two years."
+    },
+    {
+     "s": "The club is run by Mr Patel, ___ used to be an engineer.",
+     "ans": [
+      "who"
+     ],
+     "kind": "rel",
+     "tip": "who is for people. After a comma we can't use that.",
+     "id": "b1.1.2",
+     "say": "The club is run by Mr Patel, who used to be an engineer.",
+     "ask": "The club is run by Mr Patel, blank used to be an engineer."
+    },
+    {
+     "s": "We've built five robots ___ September.",
+     "ans": [
+      "since"
+     ],
+     "kind": "prep",
+     "tip": "since + a starting point (since September); for + a length of time (for two years).",
+     "id": "b1.1.3",
+     "say": "We've built five robots since September.",
+     "ask": "We've built five robots blank September."
+    },
+    {
+     "s": "Our newest robot can pick ___ rubbish in the playground.",
+     "ans": [
+      "up"
+     ],
+     "kind": "part",
+     "tip": "pick up = lift something from the ground.",
+     "id": "b1.1.4",
+     "say": "Our newest robot can pick up rubbish in the playground.",
+     "ask": "Our newest robot can pick blank rubbish in the playground."
+    },
+    {
+     "s": "___ it is quite slow, it never misses a crisp packet.",
+     "ans": [
+      "Although",
+      "Though",
+      "While",
+      "Whilst"
+     ],
+     "kind": "link",
+     "tip": "Although joins two ideas that surprise us together: slow, but never misses.",
+     "id": "b1.1.5",
+     "say": "Although it is quite slow, it never misses a crisp packet.",
+     "ask": "Blank it is quite slow, it never misses a crisp packet."
+    },
+    {
+     "s": "Last month, we took it to a competition ___ London.",
+     "ans": [
+      "in"
+     ],
+     "kind": "prep",
+     "tip": "in + a city or country: in London, in Japan.",
+     "id": "b1.1.6",
+     "say": "Last month, we took it to a competition in London.",
+     "ask": "Last month, we took it to a competition blank London."
+    },
+    {
+     "s": "We didn't win, but the judges were very impressed ___ our design.",
+     "ans": [
+      "by",
+      "with"
+     ],
+     "kind": "prep",
+     "tip": "impressed by (or with) something.",
+     "id": "b1.1.7",
+     "say": "We didn't win, but the judges were very impressed by our design.",
+     "ask": "We didn't win, but the judges were very impressed blank our design."
+    },
+    {
+     "s": "Next year, we want to build a robot that can water the plants ___ its own.",
+     "ans": [
+      "on"
+     ],
+     "kind": "prep",
+     "tip": "on its own = without help. (by itself means the same.)",
+     "id": "b1.1.8",
+     "say": "Next year, we want to build a robot that can water the plants on its own.",
+     "ask": "Next year, we want to build a robot that can water the plants blank its own."
+    }
+   ]
+  },
+  {
+   "id": "b1.2",
+   "icon": "🧪",
+   "name": "Volcano Day",
+   "focus": "was given · out of · which · until · so … that",
+   "items": [
+    {
+     "s": "Last Friday was Science Day, and every class ___ given a project.",
+     "ans": [
+      "was"
+     ],
+     "kind": "aux",
+     "tip": "Passive in the past: was + given (someone gave each class a project).",
+     "id": "b1.2.1",
+     "say": "Last Friday was Science Day, and every class was given a project.",
+     "ask": "Last Friday was Science Day, and every class blank given a project."
+    },
+    {
+     "s": "Ours was to make a volcano ___ of paper and glue.",
+     "ans": [
+      "out"
+     ],
+     "kind": "part",
+     "tip": "make something out of = use it as the material.",
+     "id": "b1.2.2",
+     "say": "Ours was to make a volcano out of paper and glue.",
+     "ask": "Ours was to make a volcano blank of paper and glue."
+    },
+    {
+     "s": "First, we built the shape around an empty bottle, ___ became the crater.",
+     "ans": [
+      "which"
+     ],
+     "kind": "rel",
+     "tip": "which is for things. After a comma we can't use that.",
+     "id": "b1.2.3",
+     "say": "First, we built the shape around an empty bottle, which became the crater.",
+     "ask": "First, we built the shape around an empty bottle, blank became the crater."
+    },
+    {
+     "s": "The paint took ages to dry ___ it was so thick.",
+     "ans": [
+      "because",
+      "as",
+      "since"
+     ],
+     "kind": "link",
+     "tip": "because gives the reason: it took ages because it was thick.",
+     "id": "b1.2.4",
+     "say": "The paint took ages to dry because it was so thick.",
+     "ask": "The paint took ages to dry blank it was so thick."
+    },
+    {
+     "s": "When it was ready, we were ___ excited to wait for the teacher.",
+     "ans": [
+      "too"
+     ],
+     "kind": "intens",
+     "tip": "too + adjective + to = so much that we couldn't: too excited to wait.",
+     "id": "b1.2.5",
+     "say": "When it was ready, we were too excited to wait for the teacher.",
+     "ask": "When it was ready, we were blank excited to wait for the teacher."
+    },
+    {
+     "s": "We poured in vinegar, but nothing happened ___ we added more baking soda.",
+     "ans": [
+      "until",
+      "till"
+     ],
+     "kind": "link",
+     "tip": "until = up to that moment, then it changed.",
+     "id": "b1.2.6",
+     "say": "We poured in vinegar, but nothing happened until we added more baking soda.",
+     "ask": "We poured in vinegar, but nothing happened blank we added more baking soda."
+    },
+    {
+     "s": "Then it foamed so much ___ it spilled onto the floor!",
+     "ans": [
+      "that"
+     ],
+     "kind": "link",
+     "tip": "so + adjective/much + that shows the result: so much that it spilled.",
+     "id": "b1.2.7",
+     "say": "Then it foamed so much that it spilled onto the floor!",
+     "ask": "Then it foamed so much blank it spilled onto the floor!"
+    },
+    {
+     "s": "___ we do it again next year, we'll use a bigger tray.",
+     "ans": [
+      "If",
+      "When"
+     ],
+     "kind": "link",
+     "tip": "If + present, will + verb: a real plan for the future.",
+     "id": "b1.2.8",
+     "say": "If we do it again next year, we'll use a bigger tray.",
+     "ask": "Blank we do it again next year, we'll use a bigger tray."
+    }
+   ]
+  },
+  {
+   "id": "b1.3",
+   "icon": "💌",
+   "name": "A Letter to a Pen Pal",
+   "focus": "used to · each · when · where · what",
+   "items": [
+    {
+     "s": "Dear Sam, thanks ___ your letter.",
+     "ans": [
+      "for"
+     ],
+     "kind": "prep",
+     "tip": "thanks for + the thing: thanks for your letter.",
+     "id": "b1.3.1",
+     "say": "Dear Sam, thanks for your letter.",
+     "ask": "Dear Sam, thanks blank your letter."
+    },
+    {
+     "s": "I ___ to have a dog too, but now we have two guinea pigs.",
+     "ans": [
+      "used"
+     ],
+     "kind": "verb",
+     "tip": "used to + verb = something true in the past but not now.",
+     "id": "b1.3.2",
+     "say": "I used to have a dog too, but now we have two guinea pigs.",
+     "ask": "I blank to have a dog too, but now we have two guinea pigs."
+    },
+    {
+     "s": "They're called Pip and Squeak, and they live in a hutch ___ our garden.",
+     "ans": [
+      "in"
+     ],
+     "kind": "prep",
+     "tip": "in our garden = inside the garden area.",
+     "id": "b1.3.3",
+     "say": "They're called Pip and Squeak, and they live in a hutch in our garden.",
+     "ask": "They're called Pip and Squeak, and they live in a hutch blank our garden."
+    },
+    {
+     "s": "___ morning, I give them fresh hay and carrots.",
+     "ans": [
+      "Each",
+      "Every"
+     ],
+     "kind": "quant",
+     "tip": "Each / Every morning = all the mornings, one by one.",
+     "id": "b1.3.4",
+     "say": "Each morning, I give them fresh hay and carrots.",
+     "ask": "Blank morning, I give them fresh hay and carrots."
+    },
+    {
+     "s": "They squeak loudly ___ they hear the fridge door.",
+     "ans": [
+      "when",
+      "whenever",
+      "if"
+     ],
+     "kind": "link",
+     "tip": "when = at the time that: they squeak when they hear it.",
+     "id": "b1.3.5",
+     "say": "They squeak loudly when they hear the fridge door.",
+     "ask": "They squeak loudly blank they hear the fridge door."
+    },
+    {
+     "s": "I think they've learned that the fridge is ___ the food is!",
+     "ans": [
+      "where"
+     ],
+     "kind": "wh",
+     "tip": "where = the place: the fridge is where the food is.",
+     "id": "b1.3.6",
+     "say": "I think they've learned that the fridge is where the food is!",
+     "ask": "I think they've learned that the fridge is blank the food is!"
+    },
+    {
+     "s": "My cousin is coming to stay ___ a few days next week.",
+     "ans": [
+      "for"
+     ],
+     "kind": "prep",
+     "tip": "for + a length of time: for a few days, for a week.",
+     "id": "b1.3.7",
+     "say": "My cousin is coming to stay for a few days next week.",
+     "ask": "My cousin is coming to stay blank a few days next week."
+    },
+    {
+     "s": "Write back soon and tell me ___ your puppy is called!",
+     "ans": [
+      "what"
+     ],
+     "kind": "wh",
+     "tip": "what + is called: tell me what it is called (no question order inside).",
+     "id": "b1.3.8",
+     "say": "Write back soon and tell me what your puppy is called!",
+     "ask": "Write back soon and tell me blank your puppy is called!"
+    }
+   ]
+  }
+ ]
+}

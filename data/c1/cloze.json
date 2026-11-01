@@ -1,0 +1,310 @@
+{
+ "level": "c1",
+ "mode": "type",
+ "books": [
+  {
+   "id": "c1.1",
+   "icon": "🌊",
+   "name": "Whale Watching",
+   "focus": "Not only · However · whereby · Hardly · Were it not",
+   "items": [
+    {
+     "s": "___ only did we see three humpback whales on our school trip, but one of them leapt out of the water.",
+     "ans": [
+      "Not"
+     ],
+     "kind": "neg",
+     "tip": "Not only + question order (did we see) … but (also): a strong way to add a surprise.",
+     "id": "c1.1.1",
+     "say": "Not only did we see three humpback whales on our school trip, but one of them leapt out of the water.",
+     "ask": "Blank only did we see three humpback whales on our school trip, but one of them leapt out of the water."
+    },
+    {
+     "s": "Our guide explained that whales sing songs ___ can travel for hundreds of kilometres.",
+     "ans": [
+      "that",
+      "which"
+     ],
+     "kind": "rel",
+     "tip": "that / which for things in a defining clause (no commas).",
+     "id": "c1.1.2",
+     "say": "Our guide explained that whales sing songs that can travel for hundreds of kilometres.",
+     "ask": "Our guide explained that whales sing songs blank can travel for hundreds of kilometres."
+    },
+    {
+     "s": "___ loud the engine was, the whales didn't seem to mind.",
+     "ans": [
+      "However"
+     ],
+     "kind": "link",
+     "tip": "However + adjective = it doesn't matter how: however loud it was.",
+     "id": "c1.1.3",
+     "say": "However loud the engine was, the whales didn't seem to mind.",
+     "ask": "Blank loud the engine was, the whales didn't seem to mind."
+    },
+    {
+     "s": "We learned about a rule ___ boats must stay at least a hundred metres away.",
+     "ans": [
+      "whereby",
+      "where"
+     ],
+     "kind": "rel",
+     "tip": "whereby = by which, according to which (a formal word for rules and systems).",
+     "id": "c1.1.4",
+     "say": "We learned about a rule whereby boats must stay at least a hundred metres away.",
+     "ask": "We learned about a rule blank boats must stay at least a hundred metres away."
+    },
+    {
+     "s": "Hardly ___ we put our cameras away when a baby whale appeared beside the boat.",
+     "ans": [
+      "had"
+     ],
+     "kind": "aux",
+     "tip": "Hardly + had + subject + past participle … when: one thing happened just after another.",
+     "id": "c1.1.5",
+     "say": "Hardly had we put our cameras away when a baby whale appeared beside the boat.",
+     "ask": "Hardly blank we put our cameras away when a baby whale appeared beside the boat."
+    },
+    {
+     "s": "___ it not for these rules, the whales might be frightened away from the bay.",
+     "ans": [
+      "Were"
+     ],
+     "kind": "aux",
+     "tip": "Were it not for = If it weren't for (a formal 'if' with inversion).",
+     "id": "c1.1.6",
+     "say": "Were it not for these rules, the whales might be frightened away from the bay.",
+     "ask": "Blank it not for these rules, the whales might be frightened away from the bay."
+    },
+    {
+     "s": "Several of us felt seasick, ___ nobody regretted going.",
+     "ans": [
+      "but",
+      "yet",
+      "though",
+      "although"
+     ],
+     "kind": "link",
+     "tip": "yet / but = and in spite of this.",
+     "id": "c1.1.7",
+     "say": "Several of us felt seasick, but nobody regretted going.",
+     "ask": "Several of us felt seasick, blank nobody regretted going."
+    },
+    {
+     "s": "It was, ___ far, the best trip we've ever had.",
+     "ans": [
+      "by"
+     ],
+     "kind": "prep",
+     "tip": "by far + superlative = much more than any other: by far the best.",
+     "id": "c1.1.8",
+     "say": "It was, by far, the best trip we've ever had.",
+     "ask": "It was, blank far, the best trip we've ever had."
+    }
+   ]
+  },
+  {
+   "id": "c1.2",
+   "icon": "🎨",
+   "name": "The Mural Project",
+   "focus": "came up with · Rather than · regardless · many of whom · Little did",
+   "items": [
+    {
+     "s": "When the old wall behind the sports hall began to crumble, the pupils came ___ with a plan.",
+     "ans": [
+      "up"
+     ],
+     "kind": "part",
+     "tip": "come up with = think of (an idea or a plan).",
+     "id": "c1.2.1",
+     "say": "When the old wall behind the sports hall began to crumble, the pupils came up with a plan.",
+     "ask": "When the old wall behind the sports hall began to crumble, the pupils came blank with a plan."
+    },
+    {
+     "s": "Rather ___ simply repaint it, they would turn it into a giant mural.",
+     "ans": [
+      "than"
+     ],
+     "kind": "comp",
+     "tip": "Rather than + verb = instead of doing it.",
+     "id": "c1.2.2",
+     "say": "Rather than simply repaint it, they would turn it into a giant mural.",
+     "ask": "Rather blank simply repaint it, they would turn it into a giant mural."
+    },
+    {
+     "s": "Every class, ___ of age, was invited to design one section.",
+     "ans": [
+      "regardless",
+      "irrespective"
+     ],
+     "kind": "link",
+     "tip": "regardless of = it doesn't matter (what age).",
+     "id": "c1.2.3",
+     "say": "Every class, regardless of age, was invited to design one section.",
+     "ask": "Every class, blank of age, was invited to design one section."
+    },
+    {
+     "s": "The younger children, ___ of whom had never painted on a wall before, were thrilled.",
+     "ans": [
+      "many",
+      "most",
+      "some",
+      "several",
+      "all",
+      "few"
+     ],
+     "kind": "quant",
+     "tip": "many of whom = many of these children (whom after of for people).",
+     "id": "c1.2.4",
+     "say": "The younger children, many of whom had never painted on a wall before, were thrilled.",
+     "ask": "The younger children, blank of whom had never painted on a wall before, were thrilled."
+    },
+    {
+     "s": "___ colour they chose, it had to match the theme of 'Our Town'.",
+     "ans": [
+      "Whatever",
+      "Whichever"
+     ],
+     "kind": "wh",
+     "tip": "Whatever + noun = it doesn't matter which colour.",
+     "id": "c1.2.5",
+     "say": "Whatever colour they chose, it had to match the theme of 'Our Town'.",
+     "ask": "Blank colour they chose, it had to match the theme of 'Our Town'."
+    },
+    {
+     "s": "The paint was sealed with a special varnish so ___ to protect it from the rain.",
+     "ans": [
+      "as"
+     ],
+     "kind": "fixed",
+     "tip": "so as to + verb = in order to.",
+     "id": "c1.2.6",
+     "say": "The paint was sealed with a special varnish so as to protect it from the rain.",
+     "ask": "The paint was sealed with a special varnish so blank to protect it from the rain."
+    },
+    {
+     "s": "___ did they know that a local newspaper would write about it.",
+     "ans": [
+      "Little"
+     ],
+     "kind": "neg",
+     "tip": "Little did they know = they had no idea (inversion: did they know).",
+     "id": "c1.2.7",
+     "say": "Little did they know that a local newspaper would write about it.",
+     "ask": "Blank did they know that a local newspaper would write about it."
+    },
+    {
+     "s": "The wall now attracts visitors from all ___ the region.",
+     "ans": [
+      "over",
+      "across",
+      "around"
+     ],
+     "kind": "prep",
+     "tip": "from all over = from every part of.",
+     "id": "c1.2.8",
+     "say": "The wall now attracts visitors from all over the region.",
+     "ask": "The wall now attracts visitors from all blank the region."
+    }
+   ]
+  },
+  {
+   "id": "c1.3",
+   "icon": "⛰",
+   "name": "The Climbing Wall",
+   "focus": "whom · in case · let alone · Given · no fewer than",
+   "items": [
+    {
+     "s": "I'd always been scared of heights, so I was nervous ___ trying the new climbing wall.",
+     "ans": [
+      "about"
+     ],
+     "kind": "prep",
+     "tip": "nervous about + -ing: nervous about trying.",
+     "id": "c1.3.1",
+     "say": "I'd always been scared of heights, so I was nervous about trying the new climbing wall.",
+     "ask": "I'd always been scared of heights, so I was nervous blank trying the new climbing wall."
+    },
+    {
+     "s": "My instructor, ___ I'd met only that morning, was incredibly patient.",
+     "ans": [
+      "whom",
+      "who"
+     ],
+     "kind": "rel",
+     "tip": "whom = the object form of who (I had met her). Who is fine in everyday English.",
+     "id": "c1.3.2",
+     "say": "My instructor, whom I'd met only that morning, was incredibly patient.",
+     "ask": "My instructor, blank I'd met only that morning, was incredibly patient."
+    },
+    {
+     "s": "She checked my harness twice, just in ___ it was loose.",
+     "ans": [
+      "case"
+     ],
+     "kind": "fixed",
+     "tip": "in case = to be safe if something happens.",
+     "id": "c1.3.3",
+     "say": "She checked my harness twice, just in case it was loose.",
+     "ask": "She checked my harness twice, just in blank it was loose."
+    },
+    {
+     "s": "At first I couldn't reach the second hold, ___ alone the top.",
+     "ans": [
+      "let"
+     ],
+     "kind": "fixed",
+     "tip": "let alone = and certainly not (the top is even harder).",
+     "id": "c1.3.4",
+     "say": "At first I couldn't reach the second hold, let alone the top.",
+     "ask": "At first I couldn't reach the second hold, blank alone the top."
+    },
+    {
+     "s": "___ how frightened I'd been, reaching halfway felt like a huge victory.",
+     "ans": [
+      "Given",
+      "Considering"
+     ],
+     "kind": "link",
+     "tip": "Given (that) = when you think about the fact that…",
+     "id": "c1.3.5",
+     "say": "Given how frightened I'd been, reaching halfway felt like a huge victory.",
+     "ask": "Blank how frightened I'd been, reaching halfway felt like a huge victory."
+    },
+    {
+     "s": "By the end of the month, I had reached the top ___ fewer than six times.",
+     "ans": [
+      "no"
+     ],
+     "kind": "fixed",
+     "tip": "no fewer than + number = as many as (it's surprising, a lot!).",
+     "id": "c1.3.6",
+     "say": "By the end of the month, I had reached the top no fewer than six times.",
+     "ask": "By the end of the month, I had reached the top blank fewer than six times."
+    },
+    {
+     "s": "It goes to show that fear needn't hold you ___.",
+     "ans": [
+      "back"
+     ],
+     "kind": "part",
+     "tip": "hold someone back = stop them from doing something.",
+     "id": "c1.3.7",
+     "say": "It goes to show that fear needn't hold you back.",
+     "ask": "It goes to show that fear needn't hold you blank."
+    },
+    {
+     "s": "I'm now saving ___ for a pair of proper climbing shoes.",
+     "ans": [
+      "up"
+     ],
+     "kind": "part",
+     "tip": "save up for = keep money until you can buy something.",
+     "id": "c1.3.8",
+     "say": "I'm now saving up for a pair of proper climbing shoes.",
+     "ask": "I'm now saving blank for a pair of proper climbing shoes."
+    }
+   ]
+  }
+ ]
+}

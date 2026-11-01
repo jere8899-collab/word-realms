@@ -1,0 +1,543 @@
+{
+ "level": "a2",
+ "mode": "tiles",
+ "books": [
+  {
+   "id": "a2.1",
+   "icon": "⛺",
+   "name": "Camping by the Lake",
+   "focus": "went · was · next to · any · than",
+   "items": [
+    {
+     "s": "Last summer, my family ___ camping by a lake.",
+     "ans": [
+      "went"
+     ],
+     "kind": "verb",
+     "tip": "Last summer = the past: go → went (an irregular past).",
+     "x": [
+      "go",
+      "goes",
+      "going"
+     ],
+     "no": {
+      "go": "Last summer is the past, so go becomes went.",
+      "goes": "goes is now, for he, she or it; we need the past.",
+      "going": "going needs was or were before it: was going."
+     },
+     "id": "a2.1.1",
+     "say": "Last summer, my family went camping by a lake.",
+     "ask": "Last summer, my family blank camping by a lake."
+    },
+    {
+     "s": "The weather ___ sunny and warm.",
+     "ans": [
+      "was"
+     ],
+     "kind": "aux",
+     "tip": "Past of is = was (one thing); were for more than one.",
+     "x": [
+      "were",
+      "be",
+      "are"
+     ],
+     "no": {
+      "were": "were is for more than one (we were); the weather is one thing.",
+      "be": "be needs a helper (will be); in the past it's was.",
+      "are": "are is now; last summer is the past."
+     },
+     "id": "a2.1.2",
+     "say": "The weather was sunny and warm.",
+     "ask": "The weather blank sunny and warm."
+    },
+    {
+     "s": "We put up our tent next ___ the water.",
+     "ans": [
+      "to"
+     ],
+     "kind": "prep",
+     "tip": "next to = beside. It always goes together: next to the lake.",
+     "x": [
+      "of",
+      "at",
+      "in"
+     ],
+     "no": {
+      "of": "We say next to, never next of.",
+      "at": "We say next to, never next at.",
+      "in": "We say next to, never next in."
+     },
+     "id": "a2.1.3",
+     "say": "We put up our tent next to the water.",
+     "ask": "We put up our tent next blank the water."
+    },
+    {
+     "s": "We didn't have ___ chairs, so we sat on logs.",
+     "ans": [
+      "any"
+     ],
+     "kind": "quant",
+     "tip": "any after not: We didn't have any chairs. (some is for yes-sentences.)",
+     "x": [
+      "some",
+      "a",
+      "much"
+     ],
+     "no": {
+      "some": "some is for yes-sentences; after didn't we use any.",
+      "a": "a is for one thing; chairs means more than one.",
+      "much": "much is for things we can't count (much water); we can count chairs."
+     },
+     "id": "a2.1.4",
+     "say": "We didn't have any chairs, so we sat on logs.",
+     "ask": "We didn't have blank chairs, so we sat on logs."
+    },
+    {
+     "s": "We were tired ___ we swam all afternoon.",
+     "ans": [
+      "because",
+      "as",
+      "since"
+     ],
+     "kind": "link",
+     "tip": "because gives the reason: tired because we swam.",
+     "x": [
+      "what",
+      "or",
+      "than"
+     ],
+     "no": {
+      "what": "what asks about or names a thing; it can't give a reason.",
+      "or": "or gives a choice (tea or milk), not a reason.",
+      "than": "than compares two things (bigger than)."
+     },
+     "id": "a2.1.5",
+     "say": "We were tired because we swam all afternoon.",
+     "ask": "We were tired blank we swam all afternoon."
+    },
+    {
+     "s": "My sister asked, “___ you see the stars last night?”",
+     "ans": [
+      "Did"
+     ],
+     "kind": "aux",
+     "tip": "Past questions start with Did + verb: Did you see…?",
+     "x": [
+      "Was",
+      "Are",
+      "Has"
+     ],
+     "no": {
+      "Was": "Was you see isn't English; past questions with a doing word use Did.",
+      "Are": "Are is for now, and are doesn't go with see.",
+      "Has": "Has is for he, she or it, and last night needs Did."
+     },
+     "id": "a2.1.6",
+     "say": "My sister asked, “Did you see the stars last night?”",
+     "ask": "My sister asked, “blank you see the stars last night?”"
+    },
+    {
+     "s": "The lake was colder ___ the swimming pool at home.",
+     "ans": [
+      "than"
+     ],
+     "kind": "comp",
+     "tip": "colder than: -er words compare two things with than (not then).",
+     "x": [
+      "then",
+      "that",
+      "as"
+     ],
+     "no": {
+      "then": "then means 'next' or 'after that'; to compare we use than.",
+      "that": "that points to something; after colder we need than.",
+      "as": "as goes with as … as (as cold as); after colder use than."
+     },
+     "id": "a2.1.7",
+     "say": "The lake was colder than the swimming pool at home.",
+     "ask": "The lake was colder blank the swimming pool at home."
+    },
+    {
+     "s": "We are ___ to go back next year!",
+     "ans": [
+      "going"
+     ],
+     "kind": "verb",
+     "tip": "be going to + verb = a plan for the future.",
+     "x": [
+      "go",
+      "went",
+      "gone"
+     ],
+     "no": {
+      "go": "are go isn't English; we say are going to.",
+      "went": "went is the past; next year is the future.",
+      "gone": "are gone to go isn't English; we say are going to."
+     },
+     "id": "a2.1.8",
+     "say": "We are going to go back next year!",
+     "ask": "We are blank to go back next year!"
+    }
+   ]
+  },
+  {
+   "id": "a2.2",
+   "icon": "🎂",
+   "name": "Grandma's Birthday",
+   "focus": "on · for · must · at · all",
+   "items": [
+    {
+     "s": "My grandma's birthday is ___ Sunday.",
+     "ans": [
+      "on"
+     ],
+     "kind": "prep",
+     "tip": "on + days: on Sunday, on my birthday.",
+     "x": [
+      "in",
+      "at",
+      "to"
+     ],
+     "no": {
+      "in": "in is for months and years (in May); days take on.",
+      "at": "at is for clock times (at three o'clock); days take on.",
+      "to": "to shows moving to a place, not a day."
+     },
+     "id": "a2.2.1",
+     "say": "My grandma's birthday is on Sunday.",
+     "ask": "My grandma's birthday is blank Sunday."
+    },
+    {
+     "s": "We are making a big cake ___ her.",
+     "ans": [
+      "for"
+     ],
+     "kind": "prep",
+     "tip": "for = to give to someone: a cake for her, a present for you.",
+     "x": [
+      "to",
+      "at",
+      "of"
+     ],
+     "no": {
+      "to": "We make a cake for someone; to is for giving: give it to her.",
+      "at": "at is for places and times, not for the person who gets it.",
+      "of": "of shows belonging (a slice of cake)."
+     },
+     "id": "a2.2.2",
+     "say": "We are making a big cake for her.",
+     "ask": "We are making a big cake blank her."
+    },
+    {
+     "s": "Oh no! There isn't ___ sugar in the cupboard!",
+     "ans": [
+      "any",
+      "much"
+     ],
+     "kind": "quant",
+     "tip": "isn't any = none at all. any goes with not.",
+     "x": [
+      "some",
+      "many",
+      "a"
+     ],
+     "no": {
+      "some": "some is for yes-sentences; after isn't we use any.",
+      "many": "many is for things we can count; we can't count sugar.",
+      "a": "a is for one thing we can count; we don't say a sugar."
+     },
+     "id": "a2.2.3",
+     "say": "Oh no! There isn't any sugar in the cupboard!",
+     "ask": "Oh no! There isn't blank sugar in the cupboard!"
+    },
+    {
+     "s": "Mum goes to the shop ___ buys a big bag.",
+     "ans": [
+      "and"
+     ],
+     "kind": "link",
+     "tip": "and joins two things Mum does: goes and buys.",
+     "x": [
+      "but",
+      "of",
+      "the"
+     ],
+     "no": {
+      "but": "but shows something different; going and buying go together, so and.",
+      "of": "of shows belonging; it can't join two actions.",
+      "the": "the goes before a thing, not before buys."
+     },
+     "id": "a2.2.4",
+     "say": "Mum goes to the shop and buys a big bag.",
+     "ask": "Mum goes to the shop blank buys a big bag."
+    },
+    {
+     "s": "“We ___ be very quiet. It's a surprise!”",
+     "ans": [
+      "must",
+      "should"
+     ],
+     "kind": "mod",
+     "tip": "must + verb = it's very important: We must be quiet.",
+     "x": [
+      "musts",
+      "has",
+      "are"
+     ],
+     "no": {
+      "musts": "must never takes -s.",
+      "has": "has be isn't English, and has is for he, she or it.",
+      "are": "are be isn't English; one 'be' word is enough."
+     },
+     "id": "a2.2.5",
+     "say": "“We must be very quiet. It's a surprise!”",
+     "ask": "“We blank be very quiet. It's a surprise!”"
+    },
+    {
+     "s": "Grandma arrives ___ four o'clock.",
+     "ans": [
+      "at"
+     ],
+     "kind": "prep",
+     "tip": "at + a clock time: at four o'clock.",
+     "x": [
+      "in",
+      "on",
+      "to"
+     ],
+     "no": {
+      "in": "in is for months and parts of the day (in the morning).",
+      "on": "on is for days and dates (on Sunday).",
+      "to": "to shows going to a place, not a time."
+     },
+     "id": "a2.2.6",
+     "say": "Grandma arrives at four o'clock.",
+     "ask": "Grandma arrives blank four o'clock."
+    },
+    {
+     "s": "She opens the door and sees ___ her family.",
+     "ans": [
+      "all"
+     ],
+     "kind": "quant",
+     "tip": "all her family = every person in her family.",
+     "x": [
+      "every",
+      "any",
+      "many"
+     ],
+     "no": {
+      "every": "every goes straight before a thing (every day), not before her.",
+      "any": "any is for questions and not-sentences.",
+      "many": "many her family isn't English; we'd say many of."
+     },
+     "id": "a2.2.7",
+     "say": "She opens the door and sees all her family.",
+     "ask": "She opens the door and sees blank her family."
+    },
+    {
+     "s": "“This is ___ best birthday ever!” she says.",
+     "ans": [
+      "the",
+      "my"
+     ],
+     "kind": "art",
+     "tip": "the + best: the best birthday, the biggest cake.",
+     "x": [
+      "a",
+      "an",
+      "most"
+     ],
+     "no": {
+      "a": "best means the top one, so it takes the, not a.",
+      "an": "an goes before a vowel sound, and best needs the.",
+      "most": "best already means 'most good'; most best isn't English."
+     },
+     "id": "a2.2.8",
+     "say": "“This is the best birthday ever!” she says.",
+     "ask": "“This is blank best birthday ever!” she says."
+    }
+   ]
+  },
+  {
+   "id": "a2.3",
+   "icon": "🐢",
+   "name": "The School Pet",
+   "focus": "called · than · every · for · going to",
+   "items": [
+    {
+     "s": "Our class has a pet tortoise ___ Shelly.",
+     "ans": [
+      "called",
+      "named"
+     ],
+     "kind": "verb",
+     "tip": "called = with the name: a tortoise called Shelly.",
+     "x": [
+      "call",
+      "calls",
+      "calling"
+     ],
+     "no": {
+      "call": "a tortoise call Shelly? We need called (it has the name).",
+      "calls": "calls is something she does now; we need called.",
+      "calling": "calling means shouting or phoning, not her name."
+     },
+     "id": "a2.3.1",
+     "say": "Our class has a pet tortoise called Shelly.",
+     "ask": "Our class has a pet tortoise blank Shelly."
+    },
+    {
+     "s": "She is ten years old, so she is older ___ us!",
+     "ans": [
+      "than"
+     ],
+     "kind": "comp",
+     "tip": "older than: compare two things with than.",
+     "x": [
+      "then",
+      "as",
+      "that"
+     ],
+     "no": {
+      "then": "then means 'after that'; to compare we use than.",
+      "as": "as goes with as … as (as old as us).",
+      "that": "that points to something; after older we need than."
+     },
+     "id": "a2.3.2",
+     "say": "She is ten years old, so she is older than us!",
+     "ask": "She is ten years old, so she is older blank us!"
+    },
+    {
+     "s": "Shelly eats lettuce ___ day.",
+     "ans": [
+      "every",
+      "each"
+     ],
+     "kind": "quant",
+     "tip": "every day = Monday, Tuesday, Wednesday… all the days.",
+     "x": [
+      "much",
+      "many",
+      "lots"
+     ],
+     "no": {
+      "much": "much is for amounts (much lettuce), not for days.",
+      "many": "many goes with more than one: many days, not many day.",
+      "lots": "lots of goes before things (lots of lettuce), not before day."
+     },
+     "id": "a2.3.3",
+     "say": "Shelly eats lettuce every day.",
+     "ask": "Shelly eats lettuce blank day."
+    },
+    {
+     "s": "Last week, nobody could find ___!",
+     "ans": [
+      "her"
+     ],
+     "kind": "pron",
+     "tip": "After find we say her, not she: find her.",
+     "x": [
+      "she",
+      "hers",
+      "they"
+     ],
+     "no": {
+      "she": "she goes before a doing word; after find we say her.",
+      "hers": "hers means 'belonging to her' (it's hers).",
+      "they": "they is more than one, and after find we'd say them."
+     },
+     "id": "a2.3.4",
+     "say": "Last week, nobody could find her!",
+     "ask": "Last week, nobody could find blank!"
+    },
+    {
+     "s": "We looked ___ her everywhere.",
+     "ans": [
+      "for"
+     ],
+     "kind": "prep",
+     "tip": "look for = try to find: We looked for her.",
+     "x": [
+      "at",
+      "to",
+      "on"
+     ],
+     "no": {
+      "at": "look at means just look with your eyes; to find her we look for her.",
+      "to": "look to her doesn't mean trying to find her.",
+      "on": "look on her isn't what we mean; look for = try to find."
+     },
+     "id": "a2.3.5",
+     "say": "We looked for her everywhere.",
+     "ask": "We looked blank her everywhere."
+    },
+    {
+     "s": "In the end, Tom found her asleep ___ his school bag!",
+     "ans": [
+      "in",
+      "inside"
+     ],
+     "kind": "prep",
+     "tip": "in = inside something: in his bag.",
+     "x": [
+      "at",
+      "of",
+      "to"
+     ],
+     "no": {
+      "at": "at is for a place we visit (at school), not inside a bag.",
+      "of": "of shows belonging, not a place.",
+      "to": "to shows moving towards a place."
+     },
+     "id": "a2.3.6",
+     "say": "In the end, Tom found her asleep in his school bag!",
+     "ask": "In the end, Tom found her asleep blank his school bag!"
+    },
+    {
+     "s": "Tom was very surprised, ___ everyone laughed.",
+     "ans": [
+      "and",
+      "so"
+     ],
+     "kind": "link",
+     "tip": "and joins two things that happened.",
+     "x": [
+      "or",
+      "than",
+      "of"
+     ],
+     "no": {
+      "or": "or gives a choice; both things really happened, so and.",
+      "than": "than is for comparing (bigger than).",
+      "of": "of shows belonging; it can't join two ideas."
+     },
+     "id": "a2.3.7",
+     "say": "Tom was very surprised, and everyone laughed.",
+     "ask": "Tom was very surprised, blank everyone laughed."
+    },
+    {
+     "s": "Next week, we are ___ to build her a new house.",
+     "ans": [
+      "going"
+     ],
+     "kind": "verb",
+     "tip": "be going to + verb = a plan: We are going to build…",
+     "x": [
+      "go",
+      "went",
+      "goes"
+     ],
+     "no": {
+      "go": "are go isn't English; we say are going to.",
+      "went": "went is the past; next week is the future.",
+      "goes": "goes is for he, she or it now; after are we need going."
+     },
+     "id": "a2.3.8",
+     "say": "Next week, we are going to build her a new house.",
+     "ask": "Next week, we are blank to build her a new house."
+    }
+   ]
+  }
+ ]
+}

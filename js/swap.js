@@ -28,9 +28,6 @@ const HOW = {
   c2: "Use the 🔑 key word and don't change it. Write three to eight words."
 };
 const EXAM = { a1: "Cambridge Starters–Flyers style", a2: "A2 Key style", b1: "B1 Preliminary style", b2: "B2 First, Use of English Part 4", c1: "C1 Advanced, Use of English Part 4", c2: "C2 Proficiency, Use of English Part 4" };
-const st = () => WR.block("swap");
-const load = lvl => WR.bank(lvl, "swap");
-const set = lvl => WR.data[lvl + "/swap"];
 
 /* ---------- marking ---------- */
 // lower case, no punctuation, contractions spread out (they count as two words in Cambridge Part 4); mirrors swap_canon() in build_data.py
@@ -70,7 +67,7 @@ const G = WR.GapRound({
   id: "swap", p: "sw", hub: "swap", round: "swapRound", title: "🔀 Spell Swap", icon: "🔀", quest: "swap1",
   tile: { cls: "swap-tile", title: "Spell Swap", desc: "Same meaning, new words", unit: "books" },
   opening: "Opening the spell books… ✨", openingRound: "✨ Opening the spell book…", offline: "📴 Couldn't open the spell books. Check the internet and try again.",
-  intro: "Same meaning, new words! ✨", shelfBtn: "🔀 Books", how: rid => HOW[rid], load, set,
+  intro: "Same meaning, new words! ✨", shelfBtn: "🔀 Books", how: rid => HOW[rid], info: WR.SWAP,
   note: (rid, d) => `👪 Grown-ups: ${EXAM[rid]} sentence transformations (${d.books.length * 8} at ${rid.toUpperCase()}). Contractions count as two words, as in the exams. Every answer comes with the rule and an example.`,
   gap: it => it.b,
   body: (it, gap, S) => `<div class="sw-s1"><span class="sw-num">1</span><p>${esc(it.a)}</p><button class="btn ph-say" id="swSay" aria-label="Hear sentence 1">🔊</button></div>
@@ -92,7 +89,7 @@ WR.stopSwap = G.stop;
 WR.Swap._s = G.s;                                        // the running round (tests)
 
 /* ---------- 🏷️ sticker page ---------- */
-const all = () => Object.entries(st().done);
+const all = G.all;
 const STK = [
   { id: "first", icon: "🔀", name: "First Swap", how: "Finish a Spell Swap book", test: () => all().length >= 1 },
   { id: "star", icon: "👑", name: "Swap Star", how: "Get 3 crowns on a Spell Swap book", test: () => all().some(([, x]) => x.crowns === 3) },

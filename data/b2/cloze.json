@@ -1,0 +1,312 @@
+{
+ "level": "b2",
+ "mode": "type",
+ "books": [
+  {
+   "id": "b2.1",
+   "icon": "🐝",
+   "name": "The Rooftop Garden",
+   "focus": "into · whose · despite · such · unless",
+   "items": [
+    {
+     "s": "Our school has turned its flat roof ___ a garden.",
+     "ans": [
+      "into"
+     ],
+     "kind": "prep",
+     "tip": "turn A into B = change A so it becomes B.",
+     "id": "b2.1.1",
+     "say": "Our school has turned its flat roof into a garden.",
+     "ask": "Our school has turned its flat roof blank a garden."
+    },
+    {
+     "s": "The idea came from Ms Ortiz, ___ class wanted somewhere to grow vegetables.",
+     "ans": [
+      "whose"
+     ],
+     "kind": "rel",
+     "tip": "whose = belonging to the person before it: Ms Ortiz's class → whose class.",
+     "id": "b2.1.2",
+     "say": "The idea came from Ms Ortiz, whose class wanted somewhere to grow vegetables.",
+     "ask": "The idea came from Ms Ortiz, blank class wanted somewhere to grow vegetables."
+    },
+    {
+     "s": "___ the strong winds up there, almost everything has grown well.",
+     "ans": [
+      "Despite",
+      "Notwithstanding"
+     ],
+     "kind": "link",
+     "tip": "Despite + a noun (the winds) = even though there are strong winds. (No 'of' after despite!)",
+     "id": "b2.1.3",
+     "say": "Despite the strong winds up there, almost everything has grown well.",
+     "ask": "Blank the strong winds up there, almost everything has grown well."
+    },
+    {
+     "s": "There are now ___ many tomatoes that the canteen uses them in lunches.",
+     "ans": [
+      "so"
+     ],
+     "kind": "intens",
+     "tip": "so + many/much + that: so many tomatoes that… (such goes with a noun: such a success).",
+     "id": "b2.1.4",
+     "say": "There are now so many tomatoes that the canteen uses them in lunches.",
+     "ask": "There are now blank many tomatoes that the canteen uses them in lunches."
+    },
+    {
+     "s": "The bees, ___ live in two hives by the door, love the lavender.",
+     "ans": [
+      "which"
+     ],
+     "kind": "rel",
+     "tip": "which for things and animals after a comma (not that).",
+     "id": "b2.1.5",
+     "say": "The bees, which live in two hives by the door, love the lavender.",
+     "ask": "The bees, blank live in two hives by the door, love the lavender."
+    },
+    {
+     "s": "Pupils aren't allowed on the roof ___ a teacher is with them.",
+     "ans": [
+      "unless"
+     ],
+     "kind": "link",
+     "tip": "unless = except if: not allowed unless a teacher is there.",
+     "id": "b2.1.6",
+     "say": "Pupils aren't allowed on the roof unless a teacher is with them.",
+     "ask": "Pupils aren't allowed on the roof blank a teacher is with them."
+    },
+    {
+     "s": "It has been ___ a success that other schools have come to visit.",
+     "ans": [
+      "such"
+     ],
+     "kind": "intens",
+     "tip": "such + a + noun + that: such a success that… (so + adjective: so successful that…).",
+     "id": "b2.1.7",
+     "say": "It has been such a success that other schools have come to visit.",
+     "ask": "It has been blank a success that other schools have come to visit."
+    },
+    {
+     "s": "Next spring, we hope to set ___ a stall selling honey to parents.",
+     "ans": [
+      "up"
+     ],
+     "kind": "part",
+     "tip": "set up = start or build something (a stall, a club).",
+     "id": "b2.1.8",
+     "say": "Next spring, we hope to set up a stall selling honey to parents.",
+     "ask": "Next spring, we hope to set blank a stall selling honey to parents."
+    }
+   ]
+  },
+  {
+   "id": "b2.2",
+   "icon": "📣",
+   "name": "Making Our Own Film",
+   "focus": "none of · had known · than · as · all",
+   "items": [
+    {
+     "s": "When our drama teacher suggested making a film, none ___ us knew how hard it would be.",
+     "ans": [
+      "of"
+     ],
+     "kind": "prep",
+     "tip": "none of + us/them/the… = not one person in the group.",
+     "id": "b2.2.1",
+     "say": "When our drama teacher suggested making a film, none of us knew how hard it would be.",
+     "ask": "When our drama teacher suggested making a film, none blank us knew how hard it would be."
+    },
+    {
+     "s": "We spent weeks writing the script, ___ turned out to be the easy part.",
+     "ans": [
+      "which"
+     ],
+     "kind": "rel",
+     "tip": "which after a comma can point back to a whole idea (writing the script).",
+     "id": "b2.2.2",
+     "say": "We spent weeks writing the script, which turned out to be the easy part.",
+     "ask": "We spent weeks writing the script, blank turned out to be the easy part."
+    },
+    {
+     "s": "Filming outdoors was tricky, ___ it rained almost every day.",
+     "ans": [
+      "as",
+      "because",
+      "since",
+      "for"
+     ],
+     "kind": "link",
+     "tip": "as = because, giving the reason.",
+     "id": "b2.2.3",
+     "say": "Filming outdoors was tricky, as it rained almost every day.",
+     "ask": "Filming outdoors was tricky, blank it rained almost every day."
+    },
+    {
+     "s": "Jake, ___ played the hero, kept forgetting his lines.",
+     "ans": [
+      "who"
+     ],
+     "kind": "rel",
+     "tip": "who for people, between commas for extra information.",
+     "id": "b2.2.4",
+     "say": "Jake, who played the hero, kept forgetting his lines.",
+     "ask": "Jake, blank played the hero, kept forgetting his lines."
+    },
+    {
+     "s": "If we ___ known how long editing takes, we would have started earlier.",
+     "ans": [
+      "had"
+     ],
+     "kind": "aux",
+     "tip": "Third conditional: If + had + past participle, would have + past participle (about the past).",
+     "id": "b2.2.5",
+     "say": "If we had known how long editing takes, we would have started earlier.",
+     "ask": "If we blank known how long editing takes, we would have started earlier."
+    },
+    {
+     "s": "In the end, it took ___ three months to finish.",
+     "ans": [
+      "us",
+      "almost",
+      "nearly",
+      "about",
+      "around",
+      "over",
+      "roughly",
+      "only",
+      "just"
+     ],
+     "kind": "pron",
+     "tip": "it takes/took + person + time: it took us three months. (almost, nearly or about fit too.)",
+     "id": "b2.2.6",
+     "say": "In the end, it took us three months to finish.",
+     "ask": "In the end, it took blank three months to finish."
+    },
+    {
+     "s": "On premiere night, there were more people ___ seats in the hall.",
+     "ans": [
+      "than"
+     ],
+     "kind": "comp",
+     "tip": "more … than compares two amounts.",
+     "id": "b2.2.7",
+     "say": "On premiere night, there were more people than seats in the hall.",
+     "ask": "On premiere night, there were more people blank seats in the hall."
+    },
+    {
+     "s": "Everyone agreed it had been worth ___ the hard work.",
+     "ans": [
+      "all"
+     ],
+     "kind": "quant",
+     "tip": "worth all the work = every bit of it was worth it.",
+     "id": "b2.2.8",
+     "say": "Everyone agreed it had been worth all the hard work.",
+     "ask": "Everyone agreed it had been worth blank the hard work."
+    }
+   ]
+  },
+  {
+   "id": "b2.3",
+   "icon": "🦉",
+   "name": "The Night Walk",
+   "focus": "set off · anything · neither … nor · until · could",
+   "items": [
+    {
+     "s": "Last autumn, our scout group went ___ a night walk through the woods.",
+     "ans": [
+      "on",
+      "for"
+     ],
+     "kind": "prep",
+     "tip": "go on a walk / go for a walk: both are right.",
+     "id": "b2.3.1",
+     "say": "Last autumn, our scout group went on a night walk through the woods.",
+     "ask": "Last autumn, our scout group went blank a night walk through the woods."
+    },
+    {
+     "s": "We set ___ long after dark, which felt very strange.",
+     "ans": [
+      "off",
+      "out"
+     ],
+     "kind": "part",
+     "tip": "set off / set out = start a journey.",
+     "id": "b2.3.2",
+     "say": "We set off long after dark, which felt very strange.",
+     "ask": "We set blank long after dark, which felt very strange."
+    },
+    {
+     "s": "At first, I could hardly see ___ at all.",
+     "ans": [
+      "anything",
+      "much"
+     ],
+     "kind": "pron",
+     "tip": "hardly is almost a 'not', so we use anything (not something, not nothing).",
+     "id": "b2.3.3",
+     "say": "At first, I could hardly see anything at all.",
+     "ask": "At first, I could hardly see blank at all."
+    },
+    {
+     "s": "___ my best friend nor I had ever heard a real owl before.",
+     "ans": [
+      "Neither"
+     ],
+     "kind": "neg",
+     "tip": "Neither A nor B = not A and not B.",
+     "id": "b2.3.4",
+     "say": "Neither my best friend nor I had ever heard a real owl before.",
+     "ask": "Blank my best friend nor I had ever heard a real owl before."
+    },
+    {
+     "s": "Then, all of a sudden, one hooted right ___ our heads.",
+     "ans": [
+      "above",
+      "over"
+     ],
+     "kind": "prep",
+     "tip": "above / over = higher than: right above our heads.",
+     "id": "b2.3.5",
+     "say": "Then, all of a sudden, one hooted right above our heads.",
+     "ask": "Then, all of a sudden, one hooted right blank our heads."
+    },
+    {
+     "s": "We stood completely still ___ it flew away.",
+     "ans": [
+      "until",
+      "till"
+     ],
+     "kind": "link",
+     "tip": "until = up to the moment that something happens.",
+     "id": "b2.3.6",
+     "say": "We stood completely still until it flew away.",
+     "ask": "We stood completely still blank it flew away."
+    },
+    {
+     "s": "I'd never have guessed that the woods ___ be so full of life at night.",
+     "ans": [
+      "could",
+      "would"
+     ],
+     "kind": "mod",
+     "tip": "could = was possible (the past of can).",
+     "id": "b2.3.7",
+     "say": "I'd never have guessed that the woods could be so full of life at night.",
+     "ask": "I'd never have guessed that the woods blank be so full of life at night."
+    },
+    {
+     "s": "It's a night I'll remember for the rest ___ my life.",
+     "ans": [
+      "of"
+     ],
+     "kind": "prep",
+     "tip": "the rest of = all the remaining part: the rest of my life.",
+     "id": "b2.3.8",
+     "say": "It's a night I'll remember for the rest of my life.",
+     "ask": "It's a night I'll remember for the rest blank my life."
+    }
+   ]
+  }
+ ]
+}

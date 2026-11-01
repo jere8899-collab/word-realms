@@ -16,6 +16,8 @@ def fname(profile, text):  # FNV-1a 32 (same as js/voice.js) + a short sha1 so c
     s = profile + "|" + text; h = 2166136261
     for c in s: h = ((h ^ ord(c)) * 16777619) & 0xFFFFFFFF
     return f"{profile}_{h:08x}{hashlib.sha1(s.encode()).hexdigest()[:4]}.mp3"
+# 🔀 Spell Swap: sentence 1 · ⚒️ Word Forge and 🌉 Word Bridges: the gapped sentence read with "blank"
+GAP_EXTRA = {"swap": "a", "forge": "ask", "cloze": "ask"}
 GL = re.compile(r"\[\[([^|\]]+)\|([^\]]+)\]\]")
 def lines():
     out = {}   # (profile, text)
@@ -30,10 +32,9 @@ def lines():
         d = json.load(open(f)); walk(d)
         if f.endswith("speaking.json"):
             for it in d: [add("narrator", it[k]) for k in ("text", "model") if isinstance(it.get(k), str)]
-        if f.endswith("swap.json"):                                    # 🔀 Spell Swap: sentence 1 (sentence 2 is its `say`)
-            for bk in d["books"]: [add("narrator", it["a"]) for it in bk["items"]]
-        if f.endswith("forge.json"):                                   # ⚒️ Word Forge: the gapped sentence ("blank"; the full one is its `say`)
-            for bk in d["books"]: [add("narrator", it["ask"]) for it in bk["items"]]
+        kind = os.path.basename(f)[:-5]
+        if kind in GAP_EXTRA:                                          # the gap games: their extra read-aloud field (the full sentence is `say`)
+            for bk in d["books"]: [add("narrator", it[GAP_EXTRA[kind]]) for it in bk["items"]]
         if f.endswith("words.json"):                                   # 🔮 Word Charms: the word, its meaning, its example
             for it in d: [add("narrator", it[k]) for k in ("w", "def", "ex")]
         if f.endswith("story.json"):

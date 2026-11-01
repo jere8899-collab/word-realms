@@ -1,0 +1,537 @@
+{
+ "level": "a1",
+ "mode": "tiles",
+ "books": [
+  {
+   "id": "a1.1",
+   "icon": "🐱",
+   "name": "My Cat Coco",
+   "focus": "a · an · is · has · on · her",
+   "items": [
+    {
+     "s": "I have ___ little cat.",
+     "ans": [
+      "a"
+     ],
+     "kind": "art",
+     "tip": "Use a before one thing that starts with a consonant sound: a cat, a little cat.",
+     "x": [
+      "an",
+      "is",
+      "on"
+     ],
+     "no": {
+      "an": "an goes before a vowel sound (an apple), but little starts with l.",
+      "is": "is is a 'be' word; before little cat we need a.",
+      "on": "on tells where something is; it can't go before little cat here."
+     },
+     "id": "a1.1.1",
+     "say": "I have a little cat.",
+     "ask": "I have blank little cat."
+    },
+    {
+     "s": "Her name ___ Coco.",
+     "ans": [
+      "is"
+     ],
+     "kind": "aux",
+     "tip": "One thing (her name) → is. I am, you are, he/she/it is.",
+     "x": [
+      "are",
+      "am",
+      "has"
+     ],
+     "no": {
+      "are": "are is for you, we, they or more than one; her name is one thing.",
+      "am": "am only goes with I: I am.",
+      "has": "has means owning something; a name can't own Coco!"
+     },
+     "id": "a1.1.2",
+     "say": "Her name is Coco.",
+     "ask": "Her name blank Coco."
+    },
+    {
+     "s": "She ___ white paws and a pink nose.",
+     "ans": [
+      "has"
+     ],
+     "kind": "verb",
+     "tip": "he/she/it has; I/you/we/they have. Coco is one cat, so she has.",
+     "x": [
+      "have",
+      "is",
+      "are"
+     ],
+     "no": {
+      "have": "have is for I, you, we and they; she needs has.",
+      "is": "She is white paws? No! Paws are something she has.",
+      "are": "are is for more than one; Coco is one cat."
+     },
+     "id": "a1.1.3",
+     "say": "She has white paws and a pink nose.",
+     "ask": "She blank white paws and a pink nose."
+    },
+    {
+     "s": "Coco likes to sleep ___ my bed.",
+     "ans": [
+      "on",
+      "in"
+     ],
+     "kind": "prep",
+     "tip": "on my bed = on top of it (in my bed = under the covers: also right!).",
+     "x": [
+      "at",
+      "of",
+      "to"
+     ],
+     "no": {
+      "at": "at is for a place or a time (at school, at seven); we sleep on or in a bed.",
+      "of": "of shows belonging (a cup of milk); it doesn't tell where.",
+      "to": "to shows moving towards a place (go to school)."
+     },
+     "id": "a1.1.4",
+     "say": "Coco likes to sleep on my bed.",
+     "ask": "Coco likes to sleep blank my bed."
+    },
+    {
+     "s": "She eats fish ___ drinks milk.",
+     "ans": [
+      "and"
+     ],
+     "kind": "link",
+     "tip": "and joins two things she does: eats fish and drinks milk.",
+     "x": [
+      "is",
+      "a",
+      "at"
+     ],
+     "no": {
+      "is": "eats fish is drinks milk? We need a joining word: and.",
+      "a": "a goes before one thing (a cat), not before drinks.",
+      "at": "at tells a place or time; to join two actions we need and."
+     },
+     "id": "a1.1.5",
+     "say": "She eats fish and drinks milk.",
+     "ask": "She eats fish blank drinks milk."
+    },
+    {
+     "s": "Every morning, she plays with ___ orange ball.",
+     "ans": [
+      "an"
+     ],
+     "kind": "art",
+     "tip": "Use an before a vowel sound: an orange, an apple, an egg.",
+     "x": [
+      "a",
+      "on",
+      "is"
+     ],
+     "no": {
+      "a": "orange starts with a vowel sound, so it's an, not a.",
+      "on": "on tells where; before orange ball we need an.",
+      "is": "is is a 'be' word; it can't go before orange ball here."
+     },
+     "id": "a1.1.6",
+     "say": "Every morning, she plays with an orange ball.",
+     "ask": "Every morning, she plays with blank orange ball."
+    },
+    {
+     "s": "Coco ___ jump very high!",
+     "ans": [
+      "can"
+     ],
+     "kind": "mod",
+     "tip": "can + verb = she is able to do it. No -s after can: she can jump.",
+     "x": [
+      "cans",
+      "is",
+      "has"
+     ],
+     "no": {
+      "cans": "can never takes -s: she can jump.",
+      "is": "is jump isn't English; is goes with -ing: is jumping.",
+      "has": "has jump isn't English; has goes with a thing: has a ball."
+     },
+     "id": "a1.1.7",
+     "say": "Coco can jump very high!",
+     "ask": "Coco blank jump very high!"
+    },
+    {
+     "s": "I love ___ very much.",
+     "ans": [
+      "her"
+     ],
+     "kind": "pron",
+     "tip": "After a doing word we say her, not she: I love her. (him for a boy cat!)",
+     "x": [
+      "she",
+      "he",
+      "is"
+     ],
+     "no": {
+      "she": "she comes before a doing word (She runs); after love we say her.",
+      "he": "he comes before a doing word, and Coco is a girl cat: her.",
+      "is": "I love is? We need who we love: her."
+     },
+     "id": "a1.1.8",
+     "say": "I love her very much.",
+     "ask": "I love blank very much."
+    }
+   ]
+  },
+  {
+   "id": "a1.2",
+   "icon": "🏞",
+   "name": "At the Park",
+   "focus": "there are · with · they · got",
+   "items": [
+    {
+     "s": "There ___ lots of flowers in the park.",
+     "ans": [
+      "are"
+     ],
+     "kind": "aux",
+     "tip": "There are + more than one thing (lots of flowers). There is + one thing.",
+     "x": [
+      "is",
+      "am",
+      "be"
+     ],
+     "no": {
+      "is": "is is for one thing; lots of flowers are many, so are.",
+      "am": "am only goes with I.",
+      "be": "be needs a helper (will be, can be); here we need are."
+     },
+     "id": "a1.2.1",
+     "say": "There are lots of flowers in the park.",
+     "ask": "There blank lots of flowers in the park."
+    },
+    {
+     "s": "Two girls are playing ___ a red ball.",
+     "ans": [
+      "with"
+     ],
+     "kind": "prep",
+     "tip": "We play with a ball, a toy or a friend.",
+     "x": [
+      "on",
+      "at",
+      "of"
+     ],
+     "no": {
+      "on": "playing on a ball means standing on it!",
+      "at": "at is for a place or a time, not a toy.",
+      "of": "of shows belonging; we play with a ball."
+     },
+     "id": "a1.2.2",
+     "say": "Two girls are playing with a red ball.",
+     "ask": "Two girls are playing blank a red ball."
+    },
+    {
+     "s": "___ are my sisters, Amy and Jo.",
+     "ans": [
+      "They"
+     ],
+     "kind": "pron",
+     "tip": "They = more than one person, before the verb: They are my sisters.",
+     "x": [
+      "Them",
+      "She",
+      "It"
+     ],
+     "no": {
+      "Them": "Them comes after a doing word (I see them), not at the start.",
+      "She": "She is one girl, but Amy and Jo are two: They.",
+      "It": "It is for one thing, not two people."
+     },
+     "id": "a1.2.3",
+     "say": "They are my sisters, Amy and Jo.",
+     "ask": "Blank are my sisters, Amy and Jo."
+    },
+    {
+     "s": "My dad is sitting ___ a bench.",
+     "ans": [
+      "on"
+     ],
+     "kind": "prep",
+     "tip": "We sit on a bench, a chair or the grass.",
+     "x": [
+      "of",
+      "to",
+      "an"
+     ],
+     "no": {
+      "of": "of shows belonging, not a place.",
+      "to": "to shows moving towards a place, not sitting.",
+      "an": "an goes before a vowel sound, and bench already has a."
+     },
+     "id": "a1.2.4",
+     "say": "My dad is sitting on a bench.",
+     "ask": "My dad is sitting blank a bench."
+    },
+    {
+     "s": "He ___ reading a book.",
+     "ans": [
+      "is"
+     ],
+     "kind": "aux",
+     "tip": "he/she/it is + -ing for now: He is reading.",
+     "x": [
+      "are",
+      "am",
+      "have"
+     ],
+     "no": {
+      "are": "are is for you, we and they; he needs is.",
+      "am": "am only goes with I.",
+      "have": "have is for I, you, we and they, and it doesn't go before -ing here."
+     },
+     "id": "a1.2.5",
+     "say": "He is reading a book.",
+     "ask": "He blank reading a book."
+    },
+    {
+     "s": "We have ___ a picnic basket.",
+     "ans": [
+      "got"
+     ],
+     "kind": "verb",
+     "tip": "have got = have: We have got a basket. I've got a cat.",
+     "x": [
+      "get",
+      "gets",
+      "a"
+     ],
+     "no": {
+      "get": "have get isn't English; have got means have.",
+      "gets": "gets is for he, she or it, and have gets isn't English.",
+      "a": "There's already a before picnic basket; two a's don't work."
+     },
+     "id": "a1.2.6",
+     "say": "We have got a picnic basket.",
+     "ask": "We have blank a picnic basket."
+    },
+    {
+     "s": "Mum gives me ___ apple.",
+     "ans": [
+      "an"
+     ],
+     "kind": "art",
+     "tip": "an before a vowel sound: an apple, an orange.",
+     "x": [
+      "a",
+      "on",
+      "is"
+     ],
+     "no": {
+      "a": "apple starts with a vowel sound, so we say an apple.",
+      "on": "on tells where; before apple we need an.",
+      "is": "is is a 'be' word; it can't go before apple here."
+     },
+     "id": "a1.2.7",
+     "say": "Mum gives me an apple.",
+     "ask": "Mum gives me blank apple."
+    },
+    {
+     "s": "I ___ the park very much!",
+     "ans": [
+      "like",
+      "love"
+     ],
+     "kind": "verb",
+     "tip": "I like / I love + a thing. No -s after I.",
+     "x": [
+      "likes",
+      "am",
+      "is"
+     ],
+     "no": {
+      "likes": "likes is for he, she or it; with I we say like.",
+      "am": "I am the park? You aren't a park!",
+      "is": "is is for he, she or it; it doesn't go with I."
+     },
+     "id": "a1.2.8",
+     "say": "I like the park very much!",
+     "ask": "I blank the park very much!"
+    }
+   ]
+  },
+  {
+   "id": "a1.3",
+   "icon": "🐶",
+   "name": "Ben's Busy Day",
+   "focus": "at · his · can · but · him",
+   "items": [
+    {
+     "s": "Ben is ___ small brown dog.",
+     "ans": [
+      "a"
+     ],
+     "kind": "art",
+     "tip": "a before one thing with a consonant sound: a small dog.",
+     "x": [
+      "an",
+      "are",
+      "on"
+     ],
+     "no": {
+      "an": "small starts with a consonant sound, so a, not an.",
+      "are": "Ben is are isn't English; one 'be' word is enough.",
+      "on": "on tells where; before small brown dog we need a."
+     },
+     "id": "a1.3.1",
+     "say": "Ben is a small brown dog.",
+     "ask": "Ben is blank small brown dog."
+    },
+    {
+     "s": "___ lives with the Lee family.",
+     "ans": [
+      "He"
+     ],
+     "kind": "pron",
+     "tip": "He = one boy or boy animal, before the verb: He lives…",
+     "x": [
+      "His",
+      "Him",
+      "We"
+     ],
+     "no": {
+      "His": "His shows belonging (his ball); before lives we need He.",
+      "Him": "Him comes after a doing word (I like him).",
+      "We": "We is more than one, and we say We live, not We lives."
+     },
+     "id": "a1.3.2",
+     "say": "He lives with the Lee family.",
+     "ask": "Blank lives with the Lee family."
+    },
+    {
+     "s": "Ben gets up ___ seven o'clock.",
+     "ans": [
+      "at"
+     ],
+     "kind": "prep",
+     "tip": "at + a clock time: at seven o'clock, at half past two.",
+     "x": [
+      "in",
+      "on",
+      "of"
+     ],
+     "no": {
+      "in": "in is for months and years (in May), not clock times.",
+      "on": "on is for days (on Monday), not clock times.",
+      "of": "of shows belonging, not a time."
+     },
+     "id": "a1.3.3",
+     "say": "Ben gets up at seven o'clock.",
+     "ask": "Ben gets up blank seven o'clock."
+    },
+    {
+     "s": "He eats ___ breakfast in the kitchen.",
+     "ans": [
+      "his",
+      "the"
+     ],
+     "kind": "det",
+     "tip": "his = belonging to him (Ben): his breakfast, his bed.",
+     "x": [
+      "he",
+      "him",
+      "is"
+     ],
+     "no": {
+      "he": "he goes before a doing word (He eats), not before breakfast.",
+      "him": "him comes after a doing word, but it doesn't say whose breakfast.",
+      "is": "is is a 'be' word; it can't go before breakfast."
+     },
+     "id": "a1.3.4",
+     "say": "He eats his breakfast in the kitchen.",
+     "ask": "He eats blank breakfast in the kitchen."
+    },
+    {
+     "s": "Ben ___ catch a ball in his mouth!",
+     "ans": [
+      "can"
+     ],
+     "kind": "mod",
+     "tip": "can + verb = able to do it: Ben can catch a ball.",
+     "x": [
+      "cans",
+      "is",
+      "does"
+     ],
+     "no": {
+      "cans": "can never takes -s.",
+      "is": "is catch isn't English; is goes with -ing.",
+      "does": "does catch is for questions; to say he is able, we use can."
+     },
+     "id": "a1.3.5",
+     "say": "Ben can catch a ball in his mouth!",
+     "ask": "Ben blank catch a ball in his mouth!"
+    },
+    {
+     "s": "He doesn't like cats, ___ he likes rabbits.",
+     "ans": [
+      "but"
+     ],
+     "kind": "link",
+     "tip": "but shows something different: doesn't like cats, BUT likes rabbits.",
+     "x": [
+      "is",
+      "of",
+      "a"
+     ],
+     "no": {
+      "is": "We need a joining word between the two ideas, not is.",
+      "of": "of shows belonging; it can't join two ideas.",
+      "a": "a goes before one thing, not before he."
+     },
+     "id": "a1.3.6",
+     "say": "He doesn't like cats, but he likes rabbits.",
+     "ask": "He doesn't like cats, blank he likes rabbits."
+    },
+    {
+     "s": "At night, Ben sleeps ___ a basket.",
+     "ans": [
+      "in"
+     ],
+     "kind": "prep",
+     "tip": "in = inside something: in a basket, in a box.",
+     "x": [
+      "at",
+      "of",
+      "an"
+     ],
+     "no": {
+      "at": "at is for a place we visit (at school), not inside a basket.",
+      "of": "of shows belonging, not a place.",
+      "an": "an goes before a vowel sound, and there's already a."
+     },
+     "id": "a1.3.7",
+     "say": "At night, Ben sleeps in a basket.",
+     "ask": "At night, Ben sleeps blank a basket."
+    },
+    {
+     "s": "We all love ___!",
+     "ans": [
+      "him"
+     ],
+     "kind": "pron",
+     "tip": "After a doing word we say him, not he: We love him.",
+     "x": [
+      "he",
+      "his",
+      "they"
+     ],
+     "no": {
+      "he": "he goes before a doing word (He runs); after love we say him.",
+      "his": "his shows belonging (his bed); it needs a thing after it.",
+      "they": "they is more than one, and after love we'd say them."
+     },
+     "id": "a1.3.8",
+     "say": "We all love him!",
+     "ask": "We all love blank!"
+    }
+   ]
+  }
+ ]
+}

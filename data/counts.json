@@ -59,7 +59,13 @@
   "b1/forge": 24,
   "b2/forge": 24,
   "c1/forge": 24,
-  "c2/forge": 24
+  "c2/forge": 24,
+  "a1/cloze": 24,
+  "a2/cloze": 24,
+  "b1/cloze": 24,
+  "b2/cloze": 24,
+  "c1/cloze": 24,
+  "c2/cloze": 24
  },
  "total": 3110,
  "questions": 2942,
@@ -67,5 +73,6 @@
  "writing": 36,
  "stories": 6,
  "swap": 144,
- "forge": 144
+ "forge": 144,
+ "cloze": 144
 }

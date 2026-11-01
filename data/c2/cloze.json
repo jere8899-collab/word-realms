@@ -1,0 +1,306 @@
+{
+ "level": "c2",
+ "mode": "type",
+ "books": [
+  {
+   "id": "c2.1",
+   "icon": "🌌",
+   "name": "The Stargazing Society",
+   "focus": "No sooner · albeit · let alone · whatsoever · Much as",
+   "items": [
+    {
+     "s": "___ sooner had the club's new telescope arrived than everyone wanted a turn.",
+     "ans": [
+      "No"
+     ],
+     "kind": "neg",
+     "tip": "No sooner had … than = the second thing happened immediately after the first.",
+     "id": "c2.1.1",
+     "say": "No sooner had the club's new telescope arrived than everyone wanted a turn.",
+     "ask": "Blank sooner had the club's new telescope arrived than everyone wanted a turn."
+    },
+    {
+     "s": "Setting it up, ___ time-consuming, proved well worth the effort.",
+     "ans": [
+      "albeit",
+      "although",
+      "though",
+      "while",
+      "whilst"
+     ],
+     "kind": "link",
+     "tip": "albeit = although (followed by an adjective or phrase, not a full clause).",
+     "id": "c2.1.2",
+     "say": "Setting it up, albeit time-consuming, proved well worth the effort.",
+     "ask": "Setting it up, blank time-consuming, proved well worth the effort."
+    },
+    {
+     "s": "Few of us had ever seen Saturn's rings, ___ alone its moons.",
+     "ans": [
+      "let"
+     ],
+     "kind": "fixed",
+     "tip": "let alone = and even less (its moons are even harder to see).",
+     "id": "c2.1.3",
+     "say": "Few of us had ever seen Saturn's rings, let alone its moons.",
+     "ask": "Few of us had ever seen Saturn's rings, blank alone its moons."
+    },
+    {
+     "s": "On the first clear night, there was no cloud ___.",
+     "ans": [
+      "whatsoever"
+     ],
+     "kind": "adv",
+     "tip": "no + noun + whatsoever = none at all (very strong).",
+     "id": "c2.1.4",
+     "say": "On the first clear night, there was no cloud whatsoever.",
+     "ask": "On the first clear night, there was no cloud blank."
+    },
+    {
+     "s": "___ as we wanted to stay out until dawn, we had school at eight.",
+     "ans": [
+      "Much"
+     ],
+     "kind": "fixed",
+     "tip": "Much as = although (we really wanted to).",
+     "id": "c2.1.5",
+     "say": "Much as we wanted to stay out until dawn, we had school at eight.",
+     "ask": "Blank as we wanted to stay out until dawn, we had school at eight."
+    },
+    {
+     "s": "Not ___ did anyone complain about the cold.",
+     "ans": [
+      "once"
+     ],
+     "kind": "neg",
+     "tip": "Not once + question order = never, not a single time.",
+     "id": "c2.1.6",
+     "say": "Not once did anyone complain about the cold.",
+     "ask": "Not blank did anyone complain about the cold."
+    },
+    {
+     "s": "Our teacher insisted that the telescope ___ packed away by eleven.",
+     "ans": [
+      "be",
+      "was"
+     ],
+     "kind": "aux",
+     "tip": "insist that + subject + be (the formal subjunctive). 'was' is also heard in British English.",
+     "id": "c2.1.7",
+     "say": "Our teacher insisted that the telescope be packed away by eleven.",
+     "ask": "Our teacher insisted that the telescope blank packed away by eleven."
+    },
+    {
+     "s": "The society has since grown ___ over forty members.",
+     "ans": [
+      "to"
+     ],
+     "kind": "prep",
+     "tip": "grow to + a number = reach that number.",
+     "id": "c2.1.8",
+     "say": "The society has since grown to over forty members.",
+     "ask": "The society has since grown blank over forty members."
+    }
+   ]
+  },
+  {
+   "id": "c2.2",
+   "icon": "🏰",
+   "name": "The Castle Ruins",
+   "focus": "all that · legend has it · lest · Should · insofar as",
+   "items": [
+    {
+     "s": "Perched on a cliff, the ruined tower is all ___ remains of a once-mighty fortress.",
+     "ans": [
+      "that"
+     ],
+     "kind": "rel",
+     "tip": "all that remains = the only thing left (after all, use that, not which).",
+     "id": "c2.2.1",
+     "say": "Perched on a cliff, the ruined tower is all that remains of a once-mighty fortress.",
+     "ask": "Perched on a cliff, the ruined tower is all blank remains of a once-mighty fortress."
+    },
+    {
+     "s": "Little is known about ___ built it, though stories abound.",
+     "ans": [
+      "who",
+      "whoever"
+     ],
+     "kind": "wh",
+     "tip": "about who built it: who is the subject of 'built'.",
+     "id": "c2.2.2",
+     "say": "Little is known about who built it, though stories abound.",
+     "ask": "Little is known about blank built it, though stories abound."
+    },
+    {
+     "s": "Local legend has ___ that a dragon once guarded the gates.",
+     "ans": [
+      "it"
+     ],
+     "kind": "fixed",
+     "tip": "Legend has it that… = people say (in old stories) that…",
+     "id": "c2.2.3",
+     "say": "Local legend has it that a dragon once guarded the gates.",
+     "ask": "Local legend has blank that a dragon once guarded the gates."
+    },
+    {
+     "s": "We were told to keep to the path ___ we slip on the crumbling stones.",
+     "ans": [
+      "lest"
+     ],
+     "kind": "link",
+     "tip": "lest = so that … not (very formal): lest we slip = so that we don't slip.",
+     "id": "c2.2.4",
+     "say": "We were told to keep to the path lest we slip on the crumbling stones.",
+     "ask": "We were told to keep to the path blank we slip on the crumbling stones."
+    },
+    {
+     "s": "___ the walls collapse, centuries of history would be lost.",
+     "ans": [
+      "Should"
+     ],
+     "kind": "aux",
+     "tip": "Should + subject + verb = If (by any chance) the walls collapse… a formal inverted conditional (like Were the walls to collapse).",
+     "id": "c2.2.5",
+     "say": "Should the walls collapse, centuries of history would be lost.",
+     "ask": "Blank the walls collapse, centuries of history would be lost."
+    },
+    {
+     "s": "Volunteers, ___ of whom are paid, spend their weekends repairing it.",
+     "ans": [
+      "none",
+      "few"
+     ],
+     "kind": "quant",
+     "tip": "none of whom = not one of them (they work for free).",
+     "id": "c2.2.6",
+     "say": "Volunteers, none of whom are paid, spend their weekends repairing it.",
+     "ask": "Volunteers, blank of whom are paid, spend their weekends repairing it."
+    },
+    {
+     "s": "Their efforts have paid ___, as the castle now welcomes thousands of visitors a year.",
+     "ans": [
+      "off"
+     ],
+     "kind": "part",
+     "tip": "pay off = bring good results after hard work.",
+     "id": "c2.2.7",
+     "say": "Their efforts have paid off, as the castle now welcomes thousands of visitors a year.",
+     "ask": "Their efforts have paid blank, as the castle now welcomes thousands of visitors a year."
+    },
+    {
+     "s": "___ as it is possible, the repairs are done using traditional methods.",
+     "ans": [
+      "Insofar"
+     ],
+     "kind": "fixed",
+     "tip": "Insofar as = to the extent that (as much as it can be).",
+     "id": "c2.2.8",
+     "say": "Insofar as it is possible, the repairs are done using traditional methods.",
+     "ask": "Blank as it is possible, the repairs are done using traditional methods."
+    }
+   ]
+  },
+  {
+   "id": "c2.3",
+   "icon": "🎶",
+   "name": "The Youth Orchestra",
+   "focus": "to say the least · be it · Hardly · on the verge of · as though",
+   "items": [
+    {
+     "s": "Joining the city youth orchestra was, ___ say the least, a challenge.",
+     "ans": [
+      "to"
+     ],
+     "kind": "fixed",
+     "tip": "to say the least = and that's putting it mildly (it was harder than that!).",
+     "id": "c2.3.1",
+     "say": "Joining the city youth orchestra was, to say the least, a challenge.",
+     "ask": "Joining the city youth orchestra was, blank say the least, a challenge."
+    },
+    {
+     "s": "The conductor demanded perfection, ___ it at rehearsals or on stage.",
+     "ans": [
+      "be"
+     ],
+     "kind": "fixed",
+     "tip": "be it A or B = whether it is A or B.",
+     "id": "c2.3.2",
+     "say": "The conductor demanded perfection, be it at rehearsals or on stage.",
+     "ask": "The conductor demanded perfection, blank it at rehearsals or on stage."
+    },
+    {
+     "s": "___ a week went by without extra practice.",
+     "ans": [
+      "Hardly",
+      "Scarcely",
+      "Barely"
+     ],
+     "kind": "neg",
+     "tip": "Hardly a week = almost no week (nearly every week had extra practice).",
+     "id": "c2.3.3",
+     "say": "Hardly a week went by without extra practice.",
+     "ask": "Blank a week went by without extra practice."
+    },
+    {
+     "s": "There were moments when I was on the ___ of giving up.",
+     "ans": [
+      "verge",
+      "brink",
+      "point"
+     ],
+     "kind": "fixed",
+     "tip": "on the verge of + -ing = very close to doing it.",
+     "id": "c2.3.4",
+     "say": "There were moments when I was on the verge of giving up.",
+     "ask": "There were moments when I was on the blank of giving up."
+    },
+    {
+     "s": "___ kept me going was the thought of the summer concert.",
+     "ans": [
+      "What"
+     ],
+     "kind": "wh",
+     "tip": "What = the thing that: What kept me going was…",
+     "id": "c2.3.5",
+     "say": "What kept me going was the thought of the summer concert.",
+     "ask": "Blank kept me going was the thought of the summer concert."
+    },
+    {
+     "s": "When the night finally came, we played ___ though our lives depended on it.",
+     "ans": [
+      "as"
+     ],
+     "kind": "fixed",
+     "tip": "as though = as if (in a way that suggests).",
+     "id": "c2.3.6",
+     "say": "When the night finally came, we played as though our lives depended on it.",
+     "ask": "When the night finally came, we played blank though our lives depended on it."
+    },
+    {
+     "s": "The applause went ___ for what felt like an eternity.",
+     "ans": [
+      "on"
+     ],
+     "kind": "part",
+     "tip": "go on = continue.",
+     "id": "c2.3.7",
+     "say": "The applause went on for what felt like an eternity.",
+     "ask": "The applause went blank for what felt like an eternity."
+    },
+    {
+     "s": "I wouldn't change a single moment of it, ___ would anyone else in the orchestra.",
+     "ans": [
+      "nor",
+      "neither"
+     ],
+     "kind": "neg",
+     "tip": "…, nor would anyone else = and also no one else would (question order after nor).",
+     "id": "c2.3.8",
+     "say": "I wouldn't change a single moment of it, nor would anyone else in the orchestra.",
+     "ask": "I wouldn't change a single moment of it, blank would anyone else in the orchestra."
+    }
+   ]
+  }
+ ]
+}

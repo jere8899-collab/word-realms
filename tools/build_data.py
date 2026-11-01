@@ -206,34 +206,42 @@ for lvl, ws in WORDS.items():
 # fits the level's word range (contractions count as two words, as in Cambridge Part 4), uses the key word (B2–C2) unchanged,
 # the gap appears once, tiles (A1/A2) never repeat a word of the answer, and sentence 1 is never repeated.
 from c_swap import SWAP, RULES
+# 📚 shared by every gap game (js/gap-round.js): 3 books × 8 items per level → data/<level>/<kind>.json, ids "<lvl>.<book>.<item>",
+# no sentence twice across levels; item(lvl, it, out, seen, id) checks one item and returns it with its id and extra fields. → items in all.
+def gap_books(kind, table, head, item, n=8):
+    seen, total = set(), 0
+    for lvl, books in table.items():
+        assert len(books) == 3, (kind, lvl)
+        out = {"level": lvl, **head(lvl), "books": []}
+        for bi, bk in enumerate(books):
+            assert len(bk["items"]) == n and bk["name"] and bk["focus"], (kind, lvl, bi)
+            items = [item(lvl, it, out, seen, f"{lvl}.{bi + 1}.{k + 1}") for k, it in enumerate(bk["items"])]
+            out["books"].append({"id": f"{lvl}.{bi + 1}", "icon": bk["icon"], "name": bk["name"], "focus": bk["focus"], "items": items, **{k: bk[k] for k in bk.get("keep", [])}})
+        json.dump(out, open(f"{ROOT}/{lvl}/{kind}.json", "w"), ensure_ascii=False, indent=1)
+        counts[f"{lvl}/{kind}"] = sum(len(b["items"]) for b in out["books"]); total += counts[f"{lvl}/{kind}"]
+    return total
+def once(seen, s, *where):
+    assert s not in seen, (*where, s, "duplicate sentence"); seen.add(s)
+def cap(t): return t[0].upper() + t[1:]
 def swap_canon(t):  # mirrors canon() in js/swap.js
     t = re.sub(r"[‘’`´]", "'", str(t).lower()); t = re.sub(r"[^a-z0-9' ]+", " ", t)
     t = re.sub(r"\bcan't\b|\bcannot\b", "can not", t); t = re.sub(r"\bwon't\b", "will not", t); t = re.sub(r"\bshan't\b", "shall not", t)
     t = re.sub(r"n't\b", " not", t); t = re.sub(r"'m\b", " am", t); t = re.sub(r"'re\b", " are", t); t = re.sub(r"'ve\b", " have", t)
     t = re.sub(r"'ll\b", " will", t); t = re.sub(r"'d\b", " 'd", t); t = re.sub(r"\b(it|he|she|that|there|what|who|here|where|let)'s\b", r"\1 's", t)
     return " ".join(t.split())
-seen_sw, sw_tot = set(), 0
-for lvl, books in SWAP.items():
-    mode, lo, hi, keyed = RULES[lvl]; assert len(books) == 3, lvl
-    out = {"level": lvl, "mode": mode, "min": lo, "max": hi, "key": keyed, "books": []}
-    for bi, bk in enumerate(books):
-        assert len(bk["items"]) == 8 and bk["name"] and bk["focus"], (lvl, bi)
-        items = []
-        for k, it in enumerate(bk["items"]):
-            a, b, ans = it["a"], it["b"], it["ans"]
-            assert b.count("___") == 1 and it["tip"] and it["cue"] and ans and all(ans), (lvl, a)
-            assert a not in seen_sw, (lvl, a, "duplicate sentence"); seen_sw.add(a)
-            ans = [x for i, x in enumerate(ans) if swap_canon(x) not in map(swap_canon, ans[:i])]   # "don't like" = "do not like" already
-            for x in ans:
-                n = len(swap_canon(x).split()); assert lo <= n <= hi, (lvl, a, x, n, "word range")
-                if keyed: assert re.fullmatch(r"[A-Z']+", it["cue"]) and (" " + swap_canon(it["cue"]) + " ") in (" " + swap_canon(x) + " "), (lvl, a, x, "key word")
-            if mode == "tiles":
-                toks = ans[0].split(); assert it.get("x") and not set(it["x"]) & set(toks), (lvl, a, "tiles")
-            say = b.replace("___", ans[0]); say = say[0].upper() + say[1:]
-            items.append(dict(it, ans=ans, id=f"{lvl}.{bi + 1}.{k + 1}", say=say))
-        out["books"].append({"id": f"{lvl}.{bi + 1}", "icon": bk["icon"], "name": bk["name"], "focus": bk["focus"], "items": items})
-    json.dump(out, open(f"{ROOT}/{lvl}/swap.json", "w"), ensure_ascii=False, indent=1)
-    counts[f"{lvl}/swap"] = sum(len(b["items"]) for b in out["books"]); sw_tot += counts[f"{lvl}/swap"]
+def swap_item(lvl, it, out, seen, iid):
+    mode, lo, hi, keyed = out["mode"], out["min"], out["max"], out["key"]
+    a, b, ans = it["a"], it["b"], it["ans"]
+    assert b.count("___") == 1 and it["tip"] and it["cue"] and ans and all(ans), (lvl, a)
+    once(seen, a, lvl)
+    ans = [x for i, x in enumerate(ans) if swap_canon(x) not in map(swap_canon, ans[:i])]   # "don't like" = "do not like" already
+    for x in ans:
+        n = len(swap_canon(x).split()); assert lo <= n <= hi, (lvl, a, x, n, "word range")
+        if keyed: assert re.fullmatch(r"[A-Z']+", it["cue"]) and (" " + swap_canon(it["cue"]) + " ") in (" " + swap_canon(x) + " "), (lvl, a, x, "key word")
+    if mode == "tiles":
+        toks = ans[0].split(); assert it.get("x") and not set(it["x"]) & set(toks), (lvl, a, "tiles")
+    return dict(it, ans=ans, id=iid, say=cap(b.replace("___", ans[0])))
+sw_tot = gap_books("swap", SWAP, lambda lvl: dict(zip(("mode", "min", "max", "key"), RULES[lvl])), swap_item)
 # ⚒️ Word Forge (tools/c_forge.py → data/<level>/forge.json): 3 anvils × 8 word-formation gaps per level. One gap, a ROOT in
 # capitals, every answer differs from the root and from the other answers (forge_canon), tile levels (A1/A2) build answer 1
 # from its parts and the wrong tiles never repeat a part; no sentence twice. say = the full sentence (narrator), ask = the gap read as "blank".
@@ -241,28 +249,37 @@ from c_forge import FORGE, MODE as FORGE_MODE
 def forge_canon(t):  # mirrors canon() in js/forge.js
     t = re.sub(r"[‘’`´]", "'", str(t).strip().lower()); t = re.sub(r"[^a-z' -]+", " ", t)
     return " ".join(t.replace("-", " - ").split()).replace(" - ", "-")
-seen_fg, fg_tot = set(), 0
-for lvl, books in FORGE.items():
-    mode = FORGE_MODE[lvl]; assert len(books) == 3, lvl
-    out = {"level": lvl, "mode": mode, "books": []}
-    for bi, bk in enumerate(books):
-        assert len(bk["items"]) == 8 and bk["name"] and bk["focus"], (lvl, bi)
-        items = []
-        for k, it in enumerate(bk["items"]):
-            s, root, ans = it["s"], it["root"], it["ans"]
-            assert s.count("___") == 1 and it["tip"] and re.fullmatch(r"[A-Z]+", root) and ans and all(ans), (lvl, s)
-            assert s not in seen_fg, (lvl, s, "duplicate sentence"); seen_fg.add(s)
-            c = [forge_canon(x) for x in ans]; assert len(set(c)) == len(c) and forge_canon(root) not in c, (lvl, s, "answers")
-            if mode == "tiles":
-                assert "".join(it["p"]) == ans[0] and it.get("x") and not set(it["x"]) & set(it["p"]), (lvl, s, "tiles")
-            else: assert "p" not in it, (lvl, s)
-            say = s.replace("___", ans[0]); ask = s.replace("___", "blank")
-            items.append(dict(it, id=f"{lvl}.{bi + 1}.{k + 1}", say=say[0].upper() + say[1:], ask=ask[0].upper() + ask[1:]))
-        out["books"].append({"id": f"{lvl}.{bi + 1}", "icon": bk["icon"], "name": bk["name"], "focus": bk["focus"], "items": items})
-    json.dump(out, open(f"{ROOT}/{lvl}/forge.json", "w"), ensure_ascii=False, indent=1)
-    counts[f"{lvl}/forge"] = sum(len(b["items"]) for b in out["books"]); fg_tot += counts[f"{lvl}/forge"]
+def forge_item(lvl, it, out, seen, iid):
+    s, root, ans = it["s"], it["root"], it["ans"]
+    assert s.count("___") == 1 and it["tip"] and re.fullmatch(r"[A-Z]+", root) and ans and all(ans), (lvl, s)
+    once(seen, s, lvl)
+    c = [forge_canon(x) for x in ans]; assert len(set(c)) == len(c) and forge_canon(root) not in c, (lvl, s, "answers")
+    if out["mode"] == "tiles":
+        assert "".join(it["p"]) == ans[0] and it.get("x") and not set(it["x"]) & set(it["p"]), (lvl, s, "tiles")
+    else: assert "p" not in it, (lvl, s)
+    return dict(it, id=iid, say=cap(s.replace("___", ans[0])), ask=cap(s.replace("___", "blank")))
+fg_tot = gap_books("forge", FORGE, lambda lvl: {"mode": FORGE_MODE[lvl]}, forge_item)
+# 🌉 Word Bridges (tools/c_cloze.py → data/<level>/cloze.json): 3 texts × 8 open-cloze gaps per level, one gap per sentence, read
+# in order. Every right answer is ONE word (cloze_canon), all different; tile levels (A1/A2) have 3 wrong tiles, none of them right;
+# every wrong tile has its own 'why not' note (no); a known hint kind; no sentence twice. say = the full sentence (narrator), ask = the sentence read with "blank".
+from c_cloze import CLOZE, MODE as CLOZE_MODE
+CLOZE_KINDS = {"art", "aux", "verb", "prep", "link", "mod", "pron", "det", "quant", "comp", "rel", "part", "intens", "wh", "neg", "fixed", "adv"}
+def cloze_canon(t):  # mirrors canon() in js/cloze.js
+    t = re.sub(r"[‘’`´]", "'", str(t).strip().lower()); t = re.sub(r"[^a-z' -]+", " ", t)
+    return " ".join(t.replace("-", " - ").split()).replace(" - ", "-")
+def cloze_item(lvl, it, out, seen, iid):
+    s, ans = it["s"], it["ans"]
+    assert s.count("___") == 1 and it["tip"] and it["kind"] in CLOZE_KINDS and ans and all(ans), (lvl, s)
+    once(seen, s, lvl)
+    c = [cloze_canon(x) for x in ans]; assert len(set(c)) == len(c) and all(re.fullmatch(r"[a-z'-]+", x) for x in c), (lvl, s, "one word each")
+    if out["mode"] == "tiles":
+        assert len(it.get("x", [])) == 3 and not {cloze_canon(x) for x in it["x"]} & set(c) and len(set(it["x"])) == 3, (lvl, s, "tiles")
+        assert set(it.get("no", {})) == set(it["x"]) and all(len(w) > 15 for w in it["no"].values()), (lvl, s, "a 'why not' note for every wrong tile")
+    else: assert "x" not in it and "no" not in it, (lvl, s)
+    return dict(it, id=iid, say=cap(s.replace("___", ans[0])), ask=cap(s.replace("___", "blank")))
+cz_tot = gap_books("cloze", {l: [dict(t, items=t["text"]) for t in texts] for l, texts in CLOZE.items()}, lambda lvl: {"mode": CLOZE_MODE[lvl]}, cloze_item)
 json.dump(QUEST, open(f"{ROOT}/b1/quest.json", "w"), ensure_ascii=False, indent=1)
 json.dump(DEBATE, open(f"{ROOT}/c1/debate.json", "w"), ensure_ascii=False, indent=1)
 check_fair("c1/debate", DEBATE)
-json.dump({"counts": counts, "total": tot + sp_tot + wr_tot, "questions": tot, "speaking": sp_tot, "writing": wr_tot, "stories": st_tot, "swap": sw_tot, "forge": fg_tot}, open(f"{ROOT}/counts.json", "w"), indent=1)
+json.dump({"counts": counts, "total": tot + sp_tot + wr_tot, "questions": tot, "speaking": sp_tot, "writing": wr_tot, "stories": st_tot, "swap": sw_tot, "forge": fg_tot, "cloze": cz_tot}, open(f"{ROOT}/counts.json", "w"), indent=1)
 print(counts); print("QUESTIONS", tot, "SPEAKING", sp_tot, "WRITING", wr_tot, "TOTAL", tot + sp_tot + wr_tot)

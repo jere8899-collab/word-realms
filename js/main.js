@@ -25,9 +25,10 @@ function renderNav() {
   if (!n.dataset.wired) { n.dataset.wired = "1"; n.addEventListener("click", e => { const b = e.target.closest("button[data-k]"); if (b && n.contains(b)) WR.go(b.dataset.k); }); }
 }
 // every running activity is stopped when the screen changes (each module defines its own WR.stopX)
-const STOPS = ["stopLesson", "stopSpeaking", "stopWriting", "stopStory", "stopPlacement", "stopMath", "stopPhonics", "stopCharms", "stopSwap", "stopForge"];
+// (the gap games of js/gap-round.js are stopped through WR.gapGames)
+const STOPS = ["stopLesson", "stopSpeaking", "stopWriting", "stopStory", "stopPlacement", "stopMath", "stopPhonics", "stopCharms"];
 WR.go = (screen, arg) => {
-  STOPS.forEach(n => WR[n] && WR[n]()); WR.Voice.stop();
+  STOPS.forEach(n => WR[n] && WR[n]()); WR.gapGames.forEach(g => g.stop()); WR.Voice.stop();
   current = screen; WR.navActive(screen === "realm" ? "home" : /^(math|dojo|dojoGrid|clock)$/.test(screen) ? "math" : screen);
   WR.screens[screen](arg); WR.renderTop();
 };
@@ -165,10 +166,10 @@ const BONUS = [
       return WR.bonusTile({ cls: "quill-tile", data: "write", ico: `<img class="ico quill-ico" src="assets/web/quill.webp" onerror="this.onerror=null;this.src='assets/ui/quill.png'" alt="">`, title: "Writing", desc: "Story Quill: plan, write, get feedback", crowns: WR.crownCell(w.done ? w.crowns : null), tag: w.done ? `✒️ ${w.done}/${n} stories written` : "🎶 Bonus fun!" }); } },
   { data: "story", open: rid => WR.startStory(rid), tile: rid => WR.STORY && WR.storyTile(rid) },
   { data: "phonics", open: () => WR.go("phonics"), tile: rid => WR.phonicsTile && WR.phonicsTile(rid) },
-  { data: "charms", open: rid => WR.openCharms(rid), tile: rid => WR.charmsTile && WR.charmsTile(rid) },
-  { data: "swap", open: rid => WR.openSwap(rid), tile: rid => WR.swapTile && WR.swapTile(rid) },
-  { data: "forge", open: rid => WR.openForge(rid), tile: rid => WR.forgeTile && WR.forgeTile(rid) }
+  { data: "charms", open: rid => WR.openCharms(rid), tile: rid => WR.charmsTile && WR.charmsTile(rid) }
 ];
+// the gap games (js/gap-round.js) add their own row when they load: Spell Swap, Word Forge, …
+WR.addBonus = row => BONUS.push(row);
 WR.screens.realm = rid => {
   const r = WR.realms.find(x => x.id === rid);
   const crowns = k => tileCrowns(rid, k);

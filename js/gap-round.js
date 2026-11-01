@@ -1,9 +1,16 @@
 /* 🧩 Gap rounds (clean-up, 1 Nov): ONE engine for the bonus games that are a shelf of books, each book a round of
    "fill the gap" cards answered with tiles (low levels) or typing (higher levels). Used by 🔀 Spell Swap (js/swap.js) and
-   ⚒️ Word Forge (js/forge.js); each module keeps only its data, marking rules, card body, hints and stickers.
-   WR.GapRound(cfg) registers the hub + round screens and returns { open, start, stop, s, tile, unitsDone, crownsAt }.
+   ⚒️ Word Forge (js/forge.js) and 🌉 Word Bridges (js/cloze.js); each module keeps only its data, marking rules, card body,
+   hints and stickers.
+   WR.GapRound(cfg) registers the hub + round screens and returns { open, start, stop, s, tile, unitsDone, crownsAt, all }.
+   It also registers the game ONCE for the rest of the app (clean-up, 1 Nov 10:00), so no other file lists the gap games by hand:
+     WR.gapGames (js/core.js) → the screen-change stop (js/main.js WR.go), focus mode for the round (js/ux.js), the Learning
+     Report row + ▶ Practise (js/report.js), the skill name/icon (WR.allSkills); WR.addBonus → the realm's bonus tile (js/main.js).
+     The save block is WR.BLOCKS[id] (js/core.js, crowned, so the cloud score counts its crowns).
    cfg = {
      id        save block name, report skill and finishUnit source ("swap" → WR.block("swap"), "<level>/swap")
+     info      { id, name, icon, desc } for the report and WR.skillInfo (WR.SWAP, WR.FORGE…)
+     load, set optional: default WR.bank(lvl, id) / WR.data["<lvl>/<id>"] (data/<level>/<id>.json)
      p         prefix of the element ids (#swBack, #swCheck, #swIn, #swGap…); the look is the shared sw-* classes in css/style.css
      hub, round           screen names ("swap", "swapRound")
      title, icon          hub heading ("🔀 Spell Swap") and the icon used on tiles/buttons
@@ -17,13 +24,17 @@
      placeholder, count(typed, it)?   typed mode: input hint and an optional live counter
      check(it, user) → { ok, why }    why other than null/"wrong" = a friendly nudge (not a try): nudge(why, it)
      hint(it, tiles)       the 💡 line after a first miss;  shown(it, typed, ok) → what the gap shows after a typed answer
+     whyNot(it, user)?     optional: extra HTML after the 💡 hint, about the answer just tried (a wrong tile's "why not")
+     more(it)?             optional: extra HTML under the tip once the card is answered (every wrong tile's "why not")
+     inOrder?              optional: play the book's items in order (a text read from start to end) instead of shuffled
      quest                 the daily quest bumped on a finish }
-   Rules shared by both games: a nudge is not a try; the first try is counted for the Learning Report (WR.countAnswer);
+   Rules shared by every gap game: a nudge is not a try; the first try is counted for the Learning Report (WR.countAnswer);
    a first miss gives a hint and a second try, a second miss shows the answer; stars through WR.finishUnit (once ever:
    1⭐ per right answer, ½ for a second try, + 3⭐, new crowns 2⭐ each; replays pay only new crowns). */
 (function () {
 const WR = window.WR, esc = WR.esc, EMPTY = "\u00a0".repeat(14);
 WR.GapRound = cfg => {
+  cfg.load = cfg.load || (lvl => WR.bank(lvl, cfg.id)); cfg.set = cfg.set || (lvl => WR.data[lvl + "/" + cfg.id]);
   const p = cfg.p, $ = id => WR.$("#" + p + id), st = () => WR.block(cfg.id), join = cfg.join == null ? " " : cfg.join;
   const unitsDone = lvl => [1, 2, 3].filter(k => st().done[lvl + "." + k]).length;
   const crownsAt = lvl => [1, 2, 3].reduce((a, k) => a + ((st().done[lvl + "." + k] || {}).crowns || 0), 0);
@@ -64,7 +75,7 @@ WR.GapRound = cfg => {
     cfg.load(lvl).then(d => {
       if (WR.current() !== cfg.round) return;
       const bk = d.books.find(b => b.id === book) || d.books[0];
-      S = { lvl, d, bk, items: WR.shuffle(bk.items), n: 0, right: 0, second: 0, tries: 0, built: [], typed: "", done: null, log: [] };
+      S = { lvl, d, bk, items: cfg.inOrder ? bk.items.slice() : WR.shuffle(bk.items), n: 0, right: 0, second: 0, tries: 0, built: [], typed: "", done: null, log: [] };
       WR.setFocus && WR.setFocus(true);
       render(true);
     }).catch(() => WR.go(cfg.hub, lvl));
@@ -95,8 +106,8 @@ WR.GapRound = cfg => {
     const f = S.fb; if (!f) return "";
     if (f.kind === "nudge") return `<div class="story-fb sw-fb nudge">${f.html}</div>`;
     const it = item();
-    if (f.kind === "hint") return `<div class="story-fb sw-fb bad"><b>💭 Not quite. Try again!</b> 💡 ${cfg.hint(it, tiled())}</div>`;
-    return `<div class="story-fb sw-fb ${f.ok ? "good" : "bad"}"><b>${f.ok ? "✅ Yes!" : "💭 Here's the answer:"}</b> ${esc(it.say)}<div class="sw-tip">💡 ${esc(it.tip)}</div>
+    if (f.kind === "hint") return `<div class="story-fb sw-fb bad"><b>💭 Not quite. Try again!</b> 💡 ${cfg.hint(it, tiled())}${cfg.whyNot ? cfg.whyNot(it, f.user) : ""}</div>`;
+    return `<div class="story-fb sw-fb ${f.ok ? "good" : "bad"}"><b>${f.ok ? "✅ Yes!" : "💭 Here's the answer:"}</b> ${esc(it.say)}<div class="sw-tip">💡 ${esc(it.tip)}</div>${cfg.more ? cfg.more(it) : ""}
     ${it.ans.length > 1 ? `<div class="sw-also muted">Also right: ${it.ans.slice(1).map(a => "“" + esc(a) + "”").join(", ")}</div>` : ""}</div>`;
   }
   function bind(it) {
@@ -120,7 +131,7 @@ WR.GapRound = cfg => {
     S.tries++;
     if (S.tries === 1) WR.countAnswer(res.ok, S.lvl + "/" + cfg.id);  // the report counts the first try
     if (res.ok) { if (S.tries === 1) S.right++; else S.second++; S.done = { ok: true }; WR.sfx("good"); WR.questEvent("correct10"); }
-    else if (S.tries === 1) { S.fb = { kind: "hint" }; WR.sfx("bad"); WR.petReact && WR.petReact(false); S.built = []; return render(); }
+    else if (S.tries === 1) { S.fb = { kind: "hint", user }; WR.sfx("bad"); WR.petReact && WR.petReact(false); S.built = []; return render(); }
     else { S.done = { ok: false }; WR.sfx("bad"); }
     S.log.push({ id: it.id, ok: res.ok, tries: S.tries });
     S.fb = { kind: "result", ok: res.ok };
@@ -152,6 +163,9 @@ WR.GapRound = cfg => {
     const n = $("NextB"); if (n) n.onclick = () => start(r.lvl, nb.id);
     $("Shelf").onclick = () => WR.go(cfg.hub, r.lvl);
   }
-  return { open, start, stop: () => { S = null; }, s: () => S, tile, unitsDone, crownsAt };
+  const stop = () => { S = null; };
+  WR.gapGames.push({ id: cfg.id, info: cfg.info, hub: cfg.hub, round: cfg.round, open, stop, tile });
+  WR.addBonus({ data: cfg.id, open: rid => open(rid), tile: rid => tile(rid) });
+  return { open, start, stop, s: () => S, tile, unitsDone, crownsAt, all: () => Object.entries(st().done) };
 };
 })();
