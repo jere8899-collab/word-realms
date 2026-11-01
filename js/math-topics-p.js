@@ -1,8 +1,7 @@
 /* 🔢 Number Kingdom topics, Grades 1–4 (Singapore Primary 1–4). Each gen(r) gets a seeded rng and returns a question. */
 (function () {
 const M = (typeof module !== "undefined" && module.exports) ? require("./math-gen.js") : window.MathGen;
-const { Q, num, mcq, T, NAMES, THINGS, COUNT_EMOJI, PASTEL, svgBox, figKey, cellKey, hasCell, nearCells, gridSheet, gridCell, LINE, INK, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, svgBars, svgLine, table, coin, emojiRows, colAdd, colSub, topic, gcd, lcm, rd, fmt, money, simp, fracTex, fracStr, mixedTex } = M._internal;
-const ord = k => k + (k % 100 >= 11 && k % 100 <= 13 ? "th" : ["th", "st", "nd", "rd"][k % 10] || "th");
+const { Q, num, mcq, T, NAMES, THINGS, COUNT_EMOJI, PASTEL, svgBox, figKey, cellKey, hasCell, nearCells, gridSheet, gridCell, LINE, INK, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, svgBars, svgLine, table, coin, emojiRows, colAdd, colSub, topic, gcd, lcm, rd, fmt, money, simp, fracTex, fracStr, mixedTex, ord } = M._internal;
 
 /* ---------- 📊 data analysis (MOE: P1 picture graphs, P2 picture graphs with scales, P3 bar graphs, P4 tables + line graphs) ---------- */
 // a theme is either a vote (categories are things children chose) or a collection (categories are friends who collected things)

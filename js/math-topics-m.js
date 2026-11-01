@@ -1,7 +1,7 @@
 /* 🔢 Number Kingdom topics, Grades 5–8 (Singapore Primary 5–6, Secondary 1–2). */
 (function () {
 const M = (typeof module !== "undefined" && module.exports) ? require("./math-gen.js") : window.MathGen;
-const { Q, num, mcq, T, NAMES, topic, PASTEL, INK, LINE, svgBox, cellKey, figKey, hasCell, nearCells, gridSheet, svgPieChart, svgGeo, dirPt, gcd, lcm, rd, fmt, simp, fracTex, fracStr, mixedTex, poly, lin, paren, pm, undo } = M._internal;
+const { Q, num, mcq, T, NAMES, topic, PASTEL, INK, LINE, svgBox, cellKey, figKey, hasCell, nearCells, gridSheet, svgPieChart, svgGeo, cardSvg, dirPt, gcd, lcm, rd, fmt, simp, fracTex, fracStr, mixedTex, poly, lin, paren, pm, undo, coef, ord } = M._internal;
 
 /* ---------- Grade 5 (Primary 5) ---------- */
 topic(5, "fracmul", "Fraction Spells", "✨", "Multiply fractions", r => {
@@ -322,23 +322,24 @@ topic(7, "hcf", "Prime Factor Forge", "⚒️", "HCF, LCM and prime factors", r 
   const wrong = [idx(f.slice(1)), idx(f.concat([2])), idx(f.map(p => p === 3 ? 5 : p === 5 ? 3 : p === 2 ? 3 : p)), idx(f.concat([3])), idx(f.concat([5]))].filter(x => x && x !== right);
   return mcq(r, `Which is ${n} written as a product of prime factors?`, T(right), wrong.map(T), "Keep dividing by the smallest prime: 2, 3, 5, 7…", [`${n} → ${f.join(" × ")} = $${right}$`], { data: { n } });
 });
-const xy = (p, q) => { const s = poly([[p, 1]], "x"); if (!q) return s; const t = poly([[Math.abs(q), 1]], "y"); return p ? s + (q < 0 ? " - " : " + ") + t : (q < 0 ? "-" : "") + t; };
+// px + qy in TeX (either part may be 0), and one signed term " - 3y" / " + x" to follow it
+const xyTerms = (p, q) => { const s = poly([[p, 1]], "x"); if (!q) return s; const t = poly([[Math.abs(q), 1]], "y"); return p ? s + (q < 0 ? " - " : " + ") + t : (q < 0 ? "-" : "") + t; };
+const signedTerm = (k, v) => `${k < 0 ? " - " : " + "}${coef(Math.abs(k))}${v}`;
 topic(7, "simplify", "Like-Term Lanterns", "🏮", "Simplify algebraic expressions", r => {
   const a = r.nz(-6, 9), b = r.nz(-6, 9), c = r.nz(-6, 9), d = r.nz(-6, 9), X = a + c, Y = b + d;
-  const term = (k, v) => `${k < 0 ? " - " : " + "}${Math.abs(k) === 1 ? "" : Math.abs(k)}${v}`;
-  const e = `${a === 1 ? "" : a === -1 ? "-" : a}x${term(b, "y")}${term(c, "x")}${term(d, "y")}`, right = xy(X, Y);
-  return mcq(r, `Simplify ${T(e)}`, T(right), [xy(a - c, Y), xy(X, b - d), xy(X + 1, Y), xy(Y, X), xy(-X, Y), xy(X, -Y), xy(X - 1, Y + 1)].filter(w => w !== right).map(T), "Collect the x-terms together and the y-terms together.", [`x-terms: $${a} + ${paren(c)} = ${X}$`, `y-terms: $${b} + ${paren(d)} = ${Y}$`, `Answer: $${right}$`], { data: { a, b, c, d } });
+  const e = `${coef(a)}x${signedTerm(b, "y")}${signedTerm(c, "x")}${signedTerm(d, "y")}`, right = xyTerms(X, Y);
+  return mcq(r, `Simplify ${T(e)}`, T(right), [xyTerms(a - c, Y), xyTerms(X, b - d), xyTerms(X + 1, Y), xyTerms(Y, X), xyTerms(-X, Y), xyTerms(X, -Y), xyTerms(X - 1, Y + 1)].filter(w => w !== right).map(T), "Collect the x-terms together and the y-terms together.", [`x-terms: $${a} + ${paren(c)} = ${X}$`, `y-terms: $${b} + ${paren(d)} = ${Y}$`, `Answer: $${right}$`], { data: { a, b, c, d } });
 });
 topic(7, "expand", "Bracket Breakers", "🔓", "Expand a(bx + c)", r => {
   const a = r.nz(-7, 9), b = r.nz(-5, 6), c = r.nz(-9, 9), right = lin(a * b, a * c);
-  return mcq(r, `Expand ${T(`${a === 1 ? "" : a === -1 ? "-" : a}(${lin(b, c)})`)}`, T(right), [lin(a * b, c), lin(a * b, -a * c), lin(a + b, a * c), lin(b, a * c), lin(-a * b, a * c), lin(a * b, a + c)].filter(w => w !== right).map(T), "Multiply the number outside by EACH term inside.", [`$${paren(a)} \\times ${poly([[b, 1]])} = ${poly([[a * b, 1]])}$`, `$${paren(a)} \\times ${paren(c)} = ${a * c}$`, `Answer: $${right}$`], { data: { a, b, c } });
+  return mcq(r, `Expand ${T(`${coef(a)}(${lin(b, c)})`)}`, T(right), [lin(a * b, c), lin(a * b, -a * c), lin(a + b, a * c), lin(b, a * c), lin(-a * b, a * c), lin(a * b, a + c)].filter(w => w !== right).map(T), "Multiply the number outside by EACH term inside.", [`$${paren(a)} \\times ${poly([[b, 1]])} = ${poly([[a * b, 1]])}$`, `$${paren(a)} \\times ${paren(c)} = ${a * c}$`, `Answer: $${right}$`], { data: { a, b, c } });
 });
 topic(7, "lineq", "Equation Elixirs", "⚗️", "Solve linear equations", r => {
   const x = r.int(-10, 12), t = r.int(0, 2);
   if (t === 0) { const a = r.nz(-9, 9), b = r.nz(-20, 20), c = a * x + b; return num(`Solve ${T(`${lin(a, b)} = ${c}`)}`, x, "Undo the + or −, then divide by the number in front of x.", [`$${poly([[a, 1]])} = ${c} ${undo(b)} = ${c - b}$`, `$x = ${c - b} \\div ${paren(a)} = ${x}$`], { keys: ["-"], data: { L: [a, b], R: [0, c] } }); }
   if (t === 1) { const a = r.int(2, 6), b = r.nz(-9, 9), c = a * (x + b); return num(`Solve ${T(`${a}(${lin(1, b)}) = ${c}`)}`, x, `Divide both sides by ${a} first (or expand).`, [`$${lin(1, b)} = ${c} \\div ${a} = ${c / a}$`, `$x = ${c / a} ${undo(b)} = ${x}$`], { keys: ["-"], data: { L: [a, a * b], R: [0, c], g: a } }); }
   let a = r.int(2, 9), c = r.int(1, 8); if (a === c) a++; const b = r.int(-12, 12), d = (a - c) * x + b;
-  return num(`Solve ${T(`${lin(a, b)} = ${lin(c, d)}`)}`, x, "Get the x-terms on one side and the numbers on the other.", [`$${a}x - ${c === 1 ? "" : c}x = ${d} ${undo(b)}$`, `$${a - c === 1 ? "" : a - c}x = ${d - b}$`, `$x = ${x}$`], { keys: ["-"], data: { L: [a, b], R: [c, d] } });
+  return num(`Solve ${T(`${lin(a, b)} = ${lin(c, d)}`)}`, x, "Get the x-terms on one side and the numbers on the other.", [`$${a}x - ${coef(c)}x = ${d} ${undo(b)}$`, `$${a - c === 1 ? "" : a - c}x = ${d - b}$`, `$x = ${x}$`], { keys: ["-"], data: { L: [a, b], R: [c, d] } });
 });
 topic(7, "angles", "Angle Archery", "🏹", "Angles on lines, at points, in triangles", r => {
   const t = r.int(0, 3);
@@ -350,6 +351,86 @@ topic(7, "angles", "Angle Archery", "🏹", "Angles on lines, at points, in tria
 topic(7, "pct", "Percentage Puzzles", "🔮", "Reverse and percentage change", r => {
   if (r.chance(.5)) { const orig = r.int(4, 50) * 20, p = r.pick([10, 20, 25, 40, 50]), sale = orig * (100 - p) / 100; return num(`After a ${p}% discount, a cloak costs $${sale}. What was the original price in $?`, orig, `$${sale} is ${100 - p}% of the original.`, [`${100 - p}% → ${sale}`, `1% → ${sale} ÷ ${100 - p} = ${fmt(sale / (100 - p))}`, `100% → $${orig}`], { data: { sale, p } }); }
   const a = r.int(2, 40) * 20, p = r.pick([10, 20, 25, 50, 75, 5]), b = a * (100 + p) / 100; return num(`The kingdom's population grew from ${a} to ${b}. What is the percentage increase?`, p, "Percentage increase = increase ÷ original × 100%.", [`Increase = ${b} − ${a} = ${b - a}`, `${b - a} ÷ ${a} × 100% = ${p}%`], { data: { a, b } });
+});
+/* ✨ Sparkle Sequences (MOE Sec 1 number patterns): continue a sequence, find the nth term of a linear sequence and use it
+   (a far-off term, which term is a value, is a value in the sequence at all), and matchstick / dot picture patterns.
+   A linear sequence is T(n) = d·n + c; every answer below is worked out from d and c (or from the drawn figures). */
+const seqRule = (d, c) => lin(d, c, "n");
+const seqList = (f, from, k) => Array.from({ length: k }, (_, i) => f(from + i));
+const seqShow = xs => T(`${xs.join(", ")}, \\ldots`);
+const SEQ_SAY = [["Sumi the star fairy writes a sparkly sequence:", 1], ["The stepping stones on the crystal path are numbered", 0], ["The dragon's shiny scales are numbered", 0], ["The fairy lanterns on the castle bridge are numbered", 0], ["Every hour the ice castle's magic thermometer reads", 1], ["The wizard's counting spell makes the numbers", 1]];
+const seqSay = (r, xs) => r.pick(SEQ_SAY.filter(s => s[1] || xs.every(x => x > 0)))[0];
+// the steps for finding the nth term from the first terms
+const ruleSteps = (d, c, t1) => [`The terms ${d > 0 ? "go up" : "go down"} by ${Math.abs(d)} each time, so the rule starts with $${coef(d)}n$.`, `When $n = 1$: $${d} \\times 1 = ${d}$, but the 1st term is $${t1}$, so ${c === 0 ? "nothing more is needed" : `${c > 0 ? "add" : "take away"} $${Math.abs(c)}$`}.`, `nth term $= ${seqRule(d, c)}$`];
+// a random linear sequence: difference d (never 0), first term t1
+const pickSeq = (r, big) => { const d = r.chance(.25) ? -r.int(2, 9) : r.int(2, big ? 12 : 9), t1 = d < 0 ? r.int(10, 60) : r.int(-6, 25), c = t1 - d; return { d, c, f: n => d * n + c, t1 }; };
+/* picture patterns: figure n is drawn from polygons (sticks = their edges, shared edges once) or dots */
+const SQ3 = Math.sqrt(3);
+const PAT_FAM = {
+  sq: { title: "Crystal path", what: "matchsticks", unit: "squares", who: "The crystal path is built from glowing sticks", polys: n => seqList(i => [[i, 0], [i + 1, 0], [i + 1, 1], [i, 1]], 0, n) },
+  tri: { title: "Dragon scales", what: "matchsticks", unit: "triangles", who: "The dragon's scales are made from golden sticks", polys: n => seqList(i => { const k = i >> 1, h = SQ3 / 2; return i % 2 ? [[k + .5, 0], [k + 1.5, 0], [k + 1, h]] : [[k, h], [k + 1, h], [k + .5, 0]]; }, 0, n) },
+  hex: { title: "Honeycomb tiles", what: "matchsticks", unit: "hexagon tiles", who: "The fairies make honeycomb tiles from magic sticks", polys: n => seqList(i => seqList(k => [i * SQ3 + Math.cos((30 + 60 * k) * Math.PI / 180), Math.sin((30 + 60 * k) * Math.PI / 180) + 1], 0, 6), 0, n) },
+  plus: { title: "Twinkly star lights", what: "fairy lights", who: "Fairy lights are hung in a twinkly star shape", dots: n => [[0, 0]].concat(...seqList(k => [[k, 0], [-k, 0], [0, k], [0, -k]], 1, n)) },
+  ladder: { title: "Lantern bridge", what: "lanterns", who: "Lanterns are hung in two rows along the castle bridge", dots: n => seqList(i => [i, 0], 0, n + 1).concat(seqList(i => [i, 1], 0, n + 1)) },
+  tower: { title: "Gem towers", what: "magic gems", who: "The dragon stacks magic gems into twin towers", dots: n => [[1, 0]].concat(seqList(i => [0, i], 0, n), seqList(i => [2, i], 0, n)) }
+};
+const edgeKey = (p, q) => [p, q].map(v => v.map(x => x.toFixed(3)).join(",")).sort().join("|");
+const famSticks = (fam, n) => { const out = new Map(); for (const P of PAT_FAM[fam].polys(n)) P.forEach((p, i) => { const q = P[(i + 1) % P.length], k = edgeKey(p, q); if (!out.has(k)) out.set(k, [p, q]); }); return [...out.values()]; };
+const famCount = (fam, n) => PAT_FAM[fam].polys ? famSticks(fam, n).length : PAT_FAM[fam].dots(n).length;
+// figures 1, 2, 3 side by side on a cream card; each <g class="sfig" data-n> holds its sticks (.stk) or dots (.sdot)
+const svgPattern = (fam, title) => {
+  const F = PAT_FAM[fam], figs = [1, 2, 3].map(n => F.polys ? famSticks(fam, n) : F.dots(n));
+  const box = g => { const ps = F.polys ? [].concat(...g) : g, xs = ps.map(p => p[0]), ys = ps.map(p => p[1]); return [Math.min(...xs), Math.max(...xs), Math.min(...ys), Math.max(...ys)]; };
+  const bs = figs.map(box), pad = F.polys ? 0 : .5, ws = bs.map(b => b[1] - b[0] + 2 * pad), hs = bs.map(b => b[3] - b[2] + 2 * pad);
+  // all three at the same scale; each figure gets its own width plus an equal share of the spare room, and sits in the middle of it
+  const sum = ws.reduce((a, b) => a + b, 0), top = 34, H = 76, sc = Math.min(26, 240 / sum, H / Math.max(...hs)), spare = (276 - sum * sc) / 3;
+  let x = 12, body = "";
+  figs.forEach((g, i) => { const [x0, , y0] = bs[i], cx = x + (ws[i] * sc + spare) / 2, ox = cx - ws[i] * sc / 2, oy = top + (H - hs[i] * sc) / 2, P = p => [f2(ox + (p[0] - x0 + pad) * sc), f2(oy + (p[1] - y0 + pad) * sc)];
+    body += `<g class="sfig" data-n="${i + 1}">` + (F.polys ? g.map(([p, q]) => { const [a, b] = P(p), [c, d] = P(q); return `<line class="stk" x1="${a}" y1="${b}" x2="${c}" y2="${d}" stroke="${["#E9A23B", "#F08BB0", "#7FB7E6"][i]}" stroke-width="3.2" stroke-linecap="round"/>`; }).join("")
+      : g.map(p => { const [a, b] = P(p); return `<circle class="sdot" cx="${a}" cy="${b}" r="${f2(Math.min(5.5, sc * .3))}" fill="${PASTEL[(i * 2) % 6]}" stroke="${LINE}" stroke-width="1.4"/>`; }).join(""));
+    body += `</g><text x="${f2(cx)}" y="${top + H + 20}" font-size="11" text-anchor="middle" font-weight="900" fill="${INK}">Figure ${i + 1}</text>`; x += ws[i] * sc + spare; });
+  return cardSvg(300, 140, title, 20, body, "picture pattern");
+};
+const f2 = v => +v.toFixed(1);
+topic(7, "pattern", "Sparkle Sequences", "✨", "Number patterns and the nth term", r => {
+  const t = r.pick(["next", "next", "rule", "rule", "term", "term", "which", "which", "isin", "isin", "pic", "pic", "pic", "pic"]);
+  if (t === "next") {
+    if (r.chance(.2)) { // the odd non-linear sequence: square, triangle or doubling numbers
+      const k = r.pick(["square", "triangle", "double"]), m = r.int(2, 5), f = k === "square" ? n => n * n : k === "triangle" ? n => n * (n + 1) / 2 : n => m * Math.pow(2, n - 1), xs = seqList(f, 1, 5), v = f(6);
+      const why = { square: [`These are the square numbers: $1^2, 2^2, 3^2, \\ldots$`, `The next one is $6^2 = ${v}$`], triangle: [`The gaps grow by 1 each time: ${seqList(n => f(n + 1) - f(n), 1, 4).join(", ")}`, `The next gap is 6: $${xs[4]} + 6 = ${v}$`], double: ["Each term is double the one before.", `$${xs[4]} \\times 2 = ${v}$`] }[k];
+      return num(`${seqSay(r, xs)} ${seqShow(xs)} What is the next number?`, v, "Look at the gaps between the terms. Are they the same, or growing?", why, { data: { seq: "next", k, xs } });
+    }
+    const s = pickSeq(r), xs = seqList(s.f, 1, r.int(4, 5)), n = xs.length, two = r.chance(.4), a = s.f(n + 1), b = s.f(n + 2);
+    const steps = [`The difference is $${xs[1]} - ${paren(xs[0])} = ${s.d}$ each time.`, `$${xs[n - 1]} ${pm(s.d)} = ${a}$`].concat(two ? [`$${a} ${pm(s.d)} = ${b}$`] : []);
+    if (two) return Q({ q: `${seqSay(r, xs)} ${seqShow(xs)} What are the next two numbers? (type like 7, 9)`, kind: "pair", val: [a, b], a: `${a}, ${b}`, keys: ["-", ","], hint: "Find the difference between neighbouring terms.", steps, data: { seq: "next", k: "lin", xs, d: s.d, c: s.c } });
+    return num(`${seqSay(r, xs)} ${seqShow(xs)} What is the next number?`, a, "Find the difference between neighbouring terms.", steps, { keys: ["-"], data: { seq: "next", k: "lin", xs, d: s.d, c: s.c } });
+  }
+  if (t === "pic") {
+    const fam = r.pick(Object.keys(PAT_FAM)), F = PAT_FAM[fam], cnt = [1, 2, 3].map(n => famCount(fam, n)), d = cnt[1] - cnt[0], c = cnt[0] - d, f = n => d * n + c;
+    const ask = r.pick(["four", "far", "far", "rule", "which", "which"]), pic = svgPattern(fam, F.title), what = F.what;
+    const lead = `${F.who}. Figures 1, 2 and 3 are shown.`, see = [`Count: Figure 1 has ${cnt[0]}, Figure 2 has ${cnt[1]}, Figure 3 has ${cnt[2]} ${what}.`, `Each new figure adds ${d} ${what}, so Figure n has $${seqRule(d, c)}$.`];
+    const extra = k => ({ pic, uid: `pattern|${fam}|${ask}|${k}`, data: { seq: "pic", fam, ask, cnt, d, c, k } });
+    if (ask === "four") { const k = r.pick([4, 4, 5]); return num(`${lead} How many ${what} are in Figure ${k}?`, f(k), `How many ${what} does each new figure add?`, [see[0], `Each new figure adds ${d}: ` + seqList(n => f(n), 1, k).join(" → ")], extra(k)); }
+    if (ask === "far") { const k = r.pick([10, 12, 15, 20, 25, 30, 50]); return num(`${lead} How many ${what} are needed for Figure ${k}?`, f(k), "Find the rule for Figure n first. Counting all the way would take ages!", see.concat([`Figure ${k}: $${d} \\times ${k} ${pm(c)} = ${f(k)}$`]), extra(k)); }
+    if (ask === "rule") { const right = seqRule(d, c);
+      return mcq(r, `${lead} Which rule gives the number of ${what} in Figure n?`, T(right), [seqRule(1, d), seqRule(d, cnt[0]), seqRule(c, d), seqRule(d + 1, c - 1), seqRule(d, c + 1)].filter(w => w !== right).map(T), `Each figure adds the same number of ${what}. That number goes in front of n.`, see.concat([`Check Figure 3: $${d} \\times 3 ${pm(c)} = ${cnt[2]}$ ✓`]), extra("rule")); }
+    const N = r.int(6, 40), v = f(N);
+    return num(`${lead} Which figure uses exactly ${v} ${what}?`, N, "Write the rule for Figure n, make it equal to the number, and solve.", see.concat([`$${seqRule(d, c)} = ${v}$`, `$${coef(d)}n = ${v - c}$`, `$n = ${v - c} \\div ${d} = ${N}$, so it is Figure ${N}.`]), extra(v));
+  }
+  const s = pickSeq(r, true), xs = seqList(s.f, 1, 4), { d, c } = s;
+  if (t === "rule") {
+    const right = seqRule(d, c), wrong = [seqRule(1, d), seqRule(d, xs[0]), seqRule(c, d), seqRule(d, -c), seqRule(-d, c), seqRule(d, c + 1), seqRule(d + 1, c - 1)].filter(w => w !== right);
+    return mcq(r, `Which is the nth term of the sequence ${seqShow(xs)}?`, T(right), wrong.map(T), `The difference tells you the number in front of n. Then check with the 1st term.`, ruleSteps(d, c, xs[0]).concat([`Check: $n = 2$ gives $${d} \\times 2 ${pm(c)} = ${xs[1]}$ ✓`]), { data: { seq: "rule", xs, d, c } });
+  }
+  if (t === "term") { const k = r.pick([10, 12, 15, 20, 25, 30, 40, 50, 100]), v = s.f(k);
+    return num(`${seqSay(r, xs.concat(v))} ${seqShow(xs)} What is the ${ord(k)} term?`, v, "Find the nth term first, then put in the term number.", ruleSteps(d, c, xs[0]).concat([`${ord(k)} term: $${d} \\times ${k} ${pm(c)} = ${v}$`]), { keys: ["-"], data: { seq: "term", xs, d, c, k } }); }
+  const N = r.int(8, 60), v = s.f(N);
+  if (t === "which") return num(`${seqSay(r, xs.concat(v))} ${seqShow(xs)} Which term is equal to ${T(v)}? (type the term number)`, N, "Write the nth term, then make it equal to the number and solve.", ruleSteps(d, c, xs[0]).concat([`$${seqRule(d, c)} = ${v}$`, `$${coef(d)}n = ${v} ${undo(c)} = ${v - c}$`, `$n = ${v - c} \\div ${paren(d)} = ${N}$, so it is the ${ord(N)} term.`]), { data: { seq: "which", xs, d, c, v } });
+  // isin: is the number a term? (yes about half the time; "no" numbers fall between two terms)
+  const yes = Math.abs(d) < 2 || r.chance(.5), w = yes ? v : v + (d > 0 ? 1 : -1) * r.int(1, Math.abs(d) - 1), q = (w - c) / d, lo = Math.floor(q), hi = Math.ceil(q);
+  const right = yes ? `Yes, it is the ${ord(N)} term` : `No, n would be ${q.toFixed(2)}…, not a whole number`;
+  const wrongs = yes ? [`No, it is not in the sequence`, `Yes, it is the ${ord(N + 1)} term`, `Yes, it is the ${ord(N - 1)} term`] : [`Yes, it is the ${ord(lo)} term`, `Yes, it is the ${ord(hi)} term`, `Yes, it is the ${ord(hi + 1)} term`];
+  return mcq(r, `${seqSay(r, xs.concat(w))} ${seqShow(xs)} Is ${T(w)} in this sequence?`, right, wrongs, "Make the nth term equal to the number. A term number must be a whole number.", ruleSteps(d, c, xs[0]).concat([`$${coef(d)}n = ${w} ${undo(c)} = ${w - c}$`, `$n = ${w - c} \\div ${paren(d)} = ${fmt(+q.toFixed(3))}${Number.isInteger(q) ? "" : "\\ldots"}$`, yes ? `n is a whole number, so ${w} is the ${ord(N)} term.` : `n is not a whole number (it is between ${lo} and ${hi}), so ${w} is not in the sequence.`]), { data: { seq: "isin", xs, d, c, w, yes } });
 });
 topic(7, "story", "Royal Challenges", "📜", "Sec 1 word problems", r => {
   const x = r.int(5, 30), k = r.int(2, 4), d = r.int(3, 15);
@@ -368,7 +449,7 @@ topic(8, "factorise", "Factor Fairies", "🧚‍♀️", "Factorise x² + bx + c
   return mcq(r, `Factorise ${T(e)}`, T(right), [F(-p, -q), F(p, -q), F(-p, q), F(p + 1, q - 1), F(p * q, 1), F(p - 1, q + 1)].filter(w => w !== right && w !== F(q, p)).map(T), `Find two numbers that multiply to ${p * q} and add to ${p + q}.`, [`$${paren(p)} \\times ${paren(q)} = ${p * q}$ and $${paren(p)} + ${paren(q)} = ${p + q}$`, `So $${e} = ${right}$`], { data: { p, q } });
 });
 topic(8, "pyth", "Pythagoras' Bridge", "📐", "Right-angled triangles", r => {
-  const [a, b, c] = r.pick([[3, 4, 5], [5, 12, 13], [8, 15, 17], [7, 24, 25], [6, 8, 10], [9, 12, 15], [20, 21, 29]]).map((x, _, arr) => x), k = r.int(1, 3), A = a * k, B = b * k, C = c * k, t = r.int(0, 2);
+  const [a, b, c] = r.pick([[3, 4, 5], [5, 12, 13], [8, 15, 17], [7, 24, 25], [6, 8, 10], [9, 12, 15], [20, 21, 29]]), k = r.int(1, 3), A = a * k, B = b * k, C = c * k, t = r.int(0, 2);
   if (t === 2) { const x = r.int(2, 12), y = r.int(2, 12), h = Math.sqrt(x * x + y * y); return num(`A ladder reaches a tower window. Its foot is ${x} m from the tower and the window is ${y} m high. How long is the ladder? (1 d.p.)`, rd(h, 1), "c² = a² + b²", [`$c^2 = ${x}^2 + ${y}^2 = ${x * x + y * y}$`, `$c = \\sqrt{${x * x + y * y}} \\approx ${rd(h, 1).toFixed(1)}$ m`], { a: rd(h, 1).toFixed(1), keys: ["."], tol: 0.051, data: { x, y } }); }
   if (t === 0) return num(`A right-angled triangle has shorter sides ${A} cm and ${B} cm. How long is the hypotenuse?`, C, "Hypotenuse² = a² + b²", [`$c^2 = ${A}^2 + ${B}^2 = ${A * A} + ${B * B} = ${C * C}$`, `$c = \\sqrt{${C * C}} = ${C}$ cm`], { data: { x: A, y: B } });
   return num(`A right-angled triangle has hypotenuse ${C} cm and one side ${A} cm. How long is the other side?`, B, "Other side² = hypotenuse² − known side²", [`$b^2 = ${C}^2 - ${A}^2 = ${C * C} - ${A * A} = ${B * B}$`, `$b = ${B}$ cm`], { data: { h: C, x: A } });
