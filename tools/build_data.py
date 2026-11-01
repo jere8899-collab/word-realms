@@ -48,19 +48,26 @@ for _src in (R19A, R19B):
     _merge(_src)
 from r19_read import READ, TF2, TF3  # 📖 R19 wave 2: reading types (events, True/False/Not given, find the word), A1–B1
 def _bare(w): return re.sub(r"[^a-z0-9'-]", "", w.lower())
-for _lvl, _sk in READ.items():
-    for p in _sk["reading"]["passages"]:
-        for q in p["questions"]:
-            t = q["type"]
-            if t == "events": assert 3 <= len(q["events"]) <= 5 and len(set(q["events"])) == len(q["events"]) and all(len(e.split()) >= 2 for e in q["events"]), q
-            elif t == "tf":
-                assert q["options"] == (TF2 if _lvl in ("a1", "a2") else TF3), q             # Not given from B1 up
-                wrong = [o for i, o in enumerate(q["options"]) if i != q["answer"]]
-                assert all(len(q["notes"].get(o, "")) > 15 for o in wrong) and q["explain"], q   # a note for every wrong pick
-                assert q["options"][q["answer"]] == "Not given" or q.get("line") in p["text"], q  # True/False quote a real line
-            elif t == "findword": assert q["line"] in p["text"] and [_bare(w) for w in q["line"].split()].count(q["answer"]) == 1, q
-            else: raise AssertionError(q)
-_merge(READ)
+def _check_read(_lvl, p, q):  # every R19 reading item (events / tf / findword) is checked the same way at every level
+    t = q["type"]
+    if t == "events": assert 3 <= len(q["events"]) <= 5 and len(set(q["events"])) == len(q["events"]) and all(len(e.split()) >= 2 for e in q["events"]), q
+    elif t == "tf":
+        assert q["options"] == (TF2 if _lvl in ("a1", "a2") else TF3), q             # Not given from B1 up
+        wrong = [o for i, o in enumerate(q["options"]) if i != q["answer"]]
+        assert all(len(q["notes"].get(o, "")) > 15 for o in wrong) and q["explain"], q   # a note for every wrong pick
+        assert q["options"][q["answer"]] == "Not given" or q.get("line") in p["text"], q  # True/False quote a real line
+    elif t == "findword": assert q["line"] in p["text"] and [_bare(w) for w in q["line"].split()].count(q["answer"]) == 1, q
+    elif t == "headings":                                                       # B2+: one heading per paragraph + one extra
+        paras, hs = p["text"].split("\n\n"), q["headings"] + q["extra"]
+        assert _lvl in ("b2", "c1", "c2") and 3 <= len(paras) == len(q["headings"]) <= 5 and len(q["extra"]) == 1, q
+        assert len(set(hs)) == len(hs) and all(len(q["notes"].get(h, "")) > 20 for h in hs), q  # a note for every heading
+    else: raise AssertionError(q)
+from r19_read2 import READ2  # 📖 R19 wave 3: the same types for B2–C2, plus match-the-headings
+for _src in (READ, READ2):
+    for _lvl, _sk in _src.items():
+        for p in _sk["reading"]["passages"]:
+            for q in p["questions"]: _check_read(_lvl, p, q)
+    _merge(_src)
 # ---- C4 (review 2026-10-30): listening that tests understanding (paraphrased right options + numbers/times/changes of mind) ----
 from c4 import C4P, C4NEW
 _c4_hit = set()
@@ -133,11 +140,11 @@ for lvl in ("a1", "a2", "b1"):
     R21_DONE[lvl] = n
 print("R21 notes quoting the line:", R21_DONE)
 def _key(q):  # duplicate-check key: two items with the same key would look identical to a child
-    return "|".join([q.get("say", ""), q.get("q", ""), str(q.get("answer")), q.get("pic", ""), "/".join(q.get("options", [])[:1]), " ".join(q.get("words", [])), q.get("text", ""), "/".join(q.get("events", [])), q.get("line", "")])
+    return "|".join([q.get("say", ""), q.get("q", ""), str(q.get("answer")), q.get("pic", ""), "/".join(q.get("options", [])[:1]), " ".join(q.get("words", [])), q.get("text", ""), "/".join(q.get("events", []) + q.get("headings", [])), q.get("line", "")])
 def _gkey(q):  # mirrors Garden.plant(): question + right answer (+ recording)
     t = q.get("type", "mcq")
     c = (q["words"][q["wrong"]] + " → " + q["fix"] if t == "mistake" else " ".join(q["answers"]) + "|" + q["text"] if t == "gaps"
-         else " → ".join(q["events"]) if t == "events" else q["answer"] if t in ("order", "spell", "dictate", "findword") else q["options"][q["answer"]])
+         else " → ".join(q["events"]) if t == "events" else " / ".join(q["headings"]) if t == "headings" else q["answer"] if t in ("order", "spell", "dictate", "findword") else q["options"][q["answer"]])
     return "|".join([q.get("q", ""), c, q.get("say", ""), q.get("pic", "")])
 FAIR_MAX = 0.40  # "Fair Play" guard: the right answer may be the uniquely longest option in at most 40% of a skill's items
 def check_fair(name, items):

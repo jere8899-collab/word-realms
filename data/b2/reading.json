@@ -2241,6 +2241,593 @@
      }
     }
    ]
+  },
+  {
+   "title": "The Girl Who Talks to Octopuses",
+   "text": "When fifteen-year-old Maya started volunteering at her local aquarium, she was given what seemed like the most boring job: cleaning the octopus tank. But the octopus, a female called Ink, had other ideas. Every morning she would unscrew the lid of a jar to steal Maya's cleaning sponge, then hide it behind a rock. Curious, Maya began designing puzzles for Ink, such as boxes with sliding doors and tubes with food inside. Within a month, Ink could open a puzzle box in under a minute. The aquarium staff were so impressed that they asked Maya to present her puzzles at a regional conference for marine educators.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "Maya started volunteering at the aquarium.",
+      "Ink began stealing Maya's sponge.",
+      "Maya designed puzzles for Ink.",
+      "Maya presented her puzzles at a conference."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "Maya was excited about her first job at the aquarium.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“she was given what seemed like the most boring job: cleaning the octopus tank.” The job seemed boring to her at first.",
+     "notes": {
+      "True": "Look again: “she was given what seemed like the most boring job: cleaning the octopus tank.” The job seemed boring to her at first.",
+      "Not given": "The text does talk about this: “she was given what seemed like the most boring job: cleaning the octopus tank.” The job seemed boring to her at first."
+     },
+     "line": "she was given what seemed like the most boring job: cleaning the octopus tank."
+    },
+    {
+     "type": "tf",
+     "q": "Ink learned to open a puzzle box in less than a minute.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 0,
+     "explain": "“Within a month, Ink could open a puzzle box in under a minute.”",
+     "notes": {
+      "False": "The text says: “Within a month, Ink could open a puzzle box in under a minute.” So it is true.",
+      "Not given": "The text says: “Within a month, Ink could open a puzzle box in under a minute.” So it is true."
+     },
+     "line": "Within a month, Ink could open a puzzle box in under a minute."
+    },
+    {
+     "type": "tf",
+     "q": "Maya wants to study marine biology at university.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 2,
+     "explain": "The text tells us about her puzzles and the conference, but nothing about her plans for university.",
+     "notes": {
+      "True": "The text never says this. The text tells us about her puzzles and the conference, but nothing about her plans for university.",
+      "False": "The text never says this. The text tells us about her puzzles and the conference, but nothing about her plans for university."
+     }
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “wanting to know or learn about something”.",
+     "line": "Curious, Maya began designing puzzles for Ink,",
+     "answer": "curious",
+     "explain": "“curious” means wanting to know or learn about something: “Curious, Maya began designing puzzles for Ink,”"
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “people whose job is teaching”.",
+     "line": "at a regional conference for marine educators.",
+     "answer": "educators",
+     "explain": "“educators” means people whose job is teaching: “at a regional conference for marine educators.”"
+    }
+   ]
+  },
+  {
+   "title": "Gaming for Good",
+   "text": "Every November, a group of students at Hillside School hold a twenty-four-hour gaming marathon to raise money for the children's hospital. Players take turns in two-hour shifts, and viewers watching the live stream can donate to make the challenges harder, for example by forcing a player to use only one hand. Last year the event raised over four thousand pounds, double the amount from the year before. The organisers admit that staying awake is the hardest part. To stay alert, they have strict rules: no energy drinks, plenty of water and a fifteen-minute walk outside every four hours.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "The marathon starts in November.",
+      "Viewers donate to make challenges harder.",
+      "The event raises the money.",
+      "The money goes to the children's hospital."
+     ],
+     "explain": "Think about what has to happen first for the money to reach the hospital."
+    },
+    {
+     "type": "tf",
+     "q": "Each player plays for twenty-four hours without a break.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“Players take turns in two-hour shifts,” They play in two-hour shifts, not the whole time.",
+     "notes": {
+      "True": "Look again: “Players take turns in two-hour shifts,” They play in two-hour shifts, not the whole time.",
+      "Not given": "The text does talk about this: “Players take turns in two-hour shifts,” They play in two-hour shifts, not the whole time."
+     },
+     "line": "Players take turns in two-hour shifts,"
+    },
+    {
+     "type": "tf",
+     "q": "The event raised more money last year than the year before.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 0,
+     "explain": "“Last year the event raised over four thousand pounds, double the amount from the year before.” Double means twice as much.",
+     "notes": {
+      "False": "The text says: “Last year the event raised over four thousand pounds, double the amount from the year before.” So it is true. Double means twice as much.",
+      "Not given": "The text says: “Last year the event raised over four thousand pounds, double the amount from the year before.” So it is true. Double means twice as much."
+     },
+     "line": "Last year the event raised over four thousand pounds, double the amount from the year before."
+    },
+    {
+     "type": "tf",
+     "q": "The school's head teacher plays in the marathon.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 2,
+     "explain": "We learn about players, viewers and organisers, but the head teacher is never mentioned.",
+     "notes": {
+      "True": "The text never says this. We learn about players, viewers and organisers, but the head teacher is never mentioned.",
+      "False": "The text never says this. We learn about players, viewers and organisers, but the head teacher is never mentioned."
+     }
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “awake and paying attention”.",
+     "line": "To stay alert, they have strict rules:",
+     "answer": "alert",
+     "explain": "“alert” means awake and paying attention: “To stay alert, they have strict rules:”"
+    }
+   ]
+  },
+  {
+   "title": "A Night Under the Stars",
+   "text": "Most people have never seen the Milky Way, because light from towns and cities hides the faint stars. Last summer, Kai's astronomy club travelled to a dark-sky park in the hills, a place where outdoor lighting is carefully controlled. They arrived in the afternoon and set up their telescopes before sunset. At first, clouds covered the sky and everyone was disappointed. Around midnight, however, the clouds cleared, and the Milky Way appeared as a pale band stretching from one side of the sky to the other. Kai managed to photograph Saturn's rings, a picture that later won a prize in a national youth photography competition.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "They set up their telescopes.",
+      "Clouds covered the sky.",
+      "The Milky Way appeared.",
+      "Kai's photo won a prize."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "Light from cities makes faint stars hard to see.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 0,
+     "explain": "“because light from towns and cities hides the faint stars.” ‘Hides’ means it makes them hard to see.",
+     "notes": {
+      "False": "The text says: “because light from towns and cities hides the faint stars.” So it is true. ‘Hides’ means it makes them hard to see.",
+      "Not given": "The text says: “because light from towns and cities hides the faint stars.” So it is true. ‘Hides’ means it makes them hard to see."
+     },
+     "line": "because light from towns and cities hides the faint stars."
+    },
+    {
+     "type": "tf",
+     "q": "The sky was clear all night.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“At first, clouds covered the sky and everyone was disappointed.” It was cloudy until around midnight.",
+     "notes": {
+      "True": "Look again: “At first, clouds covered the sky and everyone was disappointed.” It was cloudy until around midnight.",
+      "Not given": "The text does talk about this: “At first, clouds covered the sky and everyone was disappointed.” It was cloudy until around midnight."
+     },
+     "line": "At first, clouds covered the sky and everyone was disappointed."
+    },
+    {
+     "type": "tf",
+     "q": "Kai used his own telescope.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 2,
+     "explain": "The club set up telescopes, but the text doesn't say whose they were.",
+     "notes": {
+      "True": "The text never says this. The club set up telescopes, but the text doesn't say whose they were.",
+      "False": "The text never says this. The club set up telescopes, but the text doesn't say whose they were."
+     }
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “not bright or easy to see”.",
+     "line": "because light from towns and cities hides the faint stars.",
+     "answer": "faint",
+     "explain": "“faint” means not bright or easy to see: “because light from towns and cities hides the faint stars.”"
+    }
+   ]
+  },
+  {
+   "title": "The Bee Hotel Project",
+   "text": "Ella noticed that there were fewer bees in her garden each year, so she decided to do some research. She discovered that most bee species in Britain do not live in hives but nest alone, often in holes in wood or hollow plant stems. Using bamboo canes, an old wooden box and some pine cones, she built a 'bee hotel' and fixed it to a sunny wall. For weeks nothing happened. Then, in late spring, she noticed that some of the bamboo tubes had been sealed with mud. Ella has since helped twenty classmates build their own bee hotels, and the school now has a wildflower patch next to the playground.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "Ella noticed fewer bees.",
+      "Ella did some research.",
+      "She built a bee hotel.",
+      "She saw tubes sealed with mud."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "Most bees in Britain live together in hives.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“most bee species in Britain do not live in hives but nest alone,” Most species nest alone.",
+     "notes": {
+      "True": "Look again: “most bee species in Britain do not live in hives but nest alone,” Most species nest alone.",
+      "Not given": "The text does talk about this: “most bee species in Britain do not live in hives but nest alone,” Most species nest alone."
+     },
+     "line": "most bee species in Britain do not live in hives but nest alone,"
+    },
+    {
+     "type": "tf",
+     "q": "Ella placed the bee hotel somewhere sunny.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 0,
+     "explain": "“she built a 'bee hotel' and fixed it to a sunny wall.”",
+     "notes": {
+      "False": "The text says: “she built a 'bee hotel' and fixed it to a sunny wall.” So it is true.",
+      "Not given": "The text says: “she built a 'bee hotel' and fixed it to a sunny wall.” So it is true."
+     },
+     "line": "she built a 'bee hotel' and fixed it to a sunny wall."
+    },
+    {
+     "type": "tf",
+     "q": "Ella's bee hotel cost a lot of money to build.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 2,
+     "explain": "She used canes, an old box and pine cones, but the text never says what they cost.",
+     "notes": {
+      "True": "The text never says this. She used canes, an old box and pine cones, but the text never says what they cost.",
+      "False": "The text never says this. She used canes, an old box and pine cones, but the text never says what they cost."
+     }
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “empty inside”.",
+     "line": "often in holes in wood or hollow plant stems.",
+     "answer": "hollow",
+     "explain": "“hollow” means empty inside: “often in holes in wood or hollow plant stems.”"
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “closed completely so nothing can get in”.",
+     "line": "some of the bamboo tubes had been sealed with mud.",
+     "answer": "sealed",
+     "explain": "“sealed” means closed completely so nothing can get in: “some of the bamboo tubes had been sealed with mud.”"
+    }
+   ]
+  },
+  {
+   "title": "Learning to Animate",
+   "text": "When Ravi was twelve, he wanted to make his own cartoons, but animation software seemed expensive and complicated. Instead, he started with a pad of paper, drawing a slightly different picture on each page and flicking through them to make a bouncing ball move. Once he understood how movement worked, he moved on to a free animation app on his family's tablet. His first proper film, about a cat who is afraid of mice, was only forty seconds long but took him three months to finish. He uploaded it to the school's art blog, where it received more views than any other post that year.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "Ravi drew a bouncing ball on paper.",
+      "He started using an animation app.",
+      "He finished his film about a cat.",
+      "He uploaded the film to the art blog."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "Ravi began animating with a computer program.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“Instead, he started with a pad of paper,” He began with paper, not software.",
+     "notes": {
+      "True": "Look again: “Instead, he started with a pad of paper,” He began with paper, not software.",
+      "Not given": "The text does talk about this: “Instead, he started with a pad of paper,” He began with paper, not software."
+     },
+     "line": "Instead, he started with a pad of paper,"
+    },
+    {
+     "type": "tf",
+     "q": "Ravi's first film took longer to make than to watch.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 0,
+     "explain": "“was only forty seconds long but took him three months to finish.” Forty seconds to watch, three months to make.",
+     "notes": {
+      "False": "The text says: “was only forty seconds long but took him three months to finish.” So it is true. Forty seconds to watch, three months to make.",
+      "Not given": "The text says: “was only forty seconds long but took him three months to finish.” So it is true. Forty seconds to watch, three months to make."
+     },
+     "line": "was only forty seconds long but took him three months to finish."
+    },
+    {
+     "type": "tf",
+     "q": "Ravi's film won a school award.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 2,
+     "explain": "It got the most views on the blog, but an award is never mentioned.",
+     "notes": {
+      "True": "The text never says this. It got the most views on the blog, but an award is never mentioned.",
+      "False": "The text never says this. It got the most views on the blog, but an award is never mentioned."
+     }
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “difficult to understand or use”.",
+     "line": "but animation software seemed expensive and complicated.",
+     "answer": "complicated",
+     "explain": "“complicated” means difficult to understand or use: “but animation software seemed expensive and complicated.”"
+    }
+   ]
+  },
+  {
+   "title": "The Robot That Plants Trees",
+   "text": "A team of teenagers in Kenya has designed a small robot that helps replant forests. The robot rolls across open land and fires seed balls, which are seeds wrapped in soil and fertiliser, into the ground. Planting by hand is slow and tiring, but the robot can plant up to a thousand seeds an hour. The team built their first prototype from recycled bicycle parts and a solar panel. After testing it on a school field, they improved its wheels so it could cross rocky ground. The project has attracted support from a local environmental charity, which plans to use several robots next rainy season.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "The team built a prototype.",
+      "They tested it on a school field.",
+      "They improved the robot's wheels.",
+      "A charity plans to use the robots."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "The robot can plant seeds faster than a person.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 0,
+     "explain": "“Planting by hand is slow and tiring, but the robot can plant up to a thousand seeds an hour.”",
+     "notes": {
+      "False": "The text says: “Planting by hand is slow and tiring, but the robot can plant up to a thousand seeds an hour.” So it is true.",
+      "Not given": "The text says: “Planting by hand is slow and tiring, but the robot can plant up to a thousand seeds an hour.” So it is true."
+     },
+     "line": "Planting by hand is slow and tiring, but the robot can plant up to a thousand seeds an hour."
+    },
+    {
+     "type": "tf",
+     "q": "The first robot ran on petrol.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“The team built their first prototype from recycled bicycle parts and a solar panel.” It used a solar panel, so it ran on sunlight.",
+     "notes": {
+      "True": "Look again: “The team built their first prototype from recycled bicycle parts and a solar panel.” It used a solar panel, so it ran on sunlight.",
+      "Not given": "The text does talk about this: “The team built their first prototype from recycled bicycle parts and a solar panel.” It used a solar panel, so it ran on sunlight."
+     },
+     "line": "The team built their first prototype from recycled bicycle parts and a solar panel."
+    },
+    {
+     "type": "tf",
+     "q": "The robot has already been used in other countries.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 2,
+     "explain": "We only know about Kenya and the charity's plans; other countries aren't mentioned.",
+     "notes": {
+      "True": "The text never says this. We only know about Kenya and the charity's plans; other countries aren't mentioned.",
+      "False": "The text never says this. We only know about Kenya and the charity's plans; other countries aren't mentioned."
+     }
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “a first model built to test an idea”.",
+     "line": "The team built their first prototype from recycled bicycle parts",
+     "answer": "prototype",
+     "explain": "“prototype” means a first model built to test an idea: “The team built their first prototype from recycled bicycle parts”"
+    }
+   ]
+  },
+  {
+   "title": "Why Do We Dream?",
+   "text": "Everyone dreams, even people who say they never do. Scientists believe we have several dreams every night, mostly during a stage of sleep called REM, when our eyes move quickly under our eyelids. Most dreams are simply forgotten within minutes of waking up.\n\nNobody knows for certain why we dream. One popular theory is that dreaming helps the brain sort through the day's memories, keeping the useful ones and throwing away the rest. Another suggests that dreams let us practise dealing with frightening situations in a safe place.\n\nSome people can become aware that they are dreaming and even control what happens. These are called lucid dreams. Around half of all people have had at least one, and some teenagers train themselves to have them by keeping a dream diary.\n\nIf you want to remember your dreams, experts recommend keeping a notebook by your bed and writing in it the moment you wake up, before you even get out of bed. Telling yourself before you sleep that you will remember can also help.",
+   "questions": [
+    {
+     "type": "headings",
+     "q": "Match a heading to each paragraph. Tap the heading for paragraph 1 first. One heading is extra.",
+     "headings": [
+      "We all do it every night",
+      "Ideas about the reason",
+      "Taking charge of a dream",
+      "Tips for remembering"
+     ],
+     "extra": [
+      "Animals that dream too"
+     ],
+     "notes": {
+      "We all do it every night": "Paragraph 1: it says everyone dreams, several times a night, even if we forget.",
+      "Ideas about the reason": "Paragraph 2: it gives two theories about why we dream.",
+      "Taking charge of a dream": "Paragraph 3: it is about lucid dreams, where people control what happens.",
+      "Tips for remembering": "Paragraph 4: it gives advice: a notebook by the bed and a reminder before sleep.",
+      "Animals that dream too": "This heading is the extra one. None of the paragraphs talks about animals; they are all about people."
+     },
+     "explain": "Read the first and last sentence of each paragraph: they usually say what the whole paragraph is about."
+    },
+    {
+     "type": "tf",
+     "q": "We have most of our dreams during REM sleep.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 0,
+     "explain": "“mostly during a stage of sleep called REM,”",
+     "notes": {
+      "False": "The text says: “mostly during a stage of sleep called REM,” So it is true.",
+      "Not given": "The text says: “mostly during a stage of sleep called REM,” So it is true."
+     },
+     "line": "mostly during a stage of sleep called REM,"
+    },
+    {
+     "type": "tf",
+     "q": "Scientists agree on why people dream.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“Nobody knows for certain why we dream.” There are different theories, so they don't agree.",
+     "notes": {
+      "True": "Look again: “Nobody knows for certain why we dream.” There are different theories, so they don't agree.",
+      "Not given": "The text does talk about this: “Nobody knows for certain why we dream.” There are different theories, so they don't agree."
+     },
+     "line": "Nobody knows for certain why we dream."
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “knowing or noticing something”.",
+     "line": "Some people can become aware that they are dreaming",
+     "answer": "aware",
+     "explain": "“aware” means knowing or noticing something: “Some people can become aware that they are dreaming”"
+    }
+   ]
+  },
+  {
+   "title": "The Surprising History of Pizza",
+   "text": "Flat bread with toppings has been eaten for thousands of years around the Mediterranean. The ancient Greeks, for example, baked flat bread covered with oil, herbs and cheese. However, these early versions had no tomato, because tomatoes only arrived in Europe from South America in the 1500s.\n\nModern pizza was born in Naples, Italy, in the 1700s and 1800s. It was cheap street food for working families, sold from stalls and eaten while walking. Wealthier people at first looked down on it as food for the poor.\n\nPizza became famous around the world after Italian families moved to the United States in the early 1900s and opened pizzerias in cities like New York. After the Second World War, American soldiers who had tasted pizza in Italy helped make it even more popular.\n\nToday, pizza toppings vary hugely from country to country. In Japan you might find squid or corn, while in Brazil some people add green peas. The most controversial topping is probably pineapple, which divides families and friends everywhere.",
+   "questions": [
+    {
+     "type": "headings",
+     "q": "Match a heading to each paragraph. Tap the heading for paragraph 1 first. One heading is extra.",
+     "headings": [
+      "Long before tomatoes",
+      "A cheap street snack",
+      "Crossing the ocean",
+      "Toppings around the world"
+     ],
+     "extra": [
+      "How to make the perfect dough"
+     ],
+     "notes": {
+      "Long before tomatoes": "Paragraph 1: it describes old flat breads that had no tomato yet.",
+      "A cheap street snack": "Paragraph 2: it says pizza started as cheap street food in Naples.",
+      "Crossing the ocean": "Paragraph 3: it explains how pizza spread to the United States.",
+      "Toppings around the world": "Paragraph 4: it lists toppings from Japan, Brazil and pineapple.",
+      "How to make the perfect dough": "This heading is the extra one. The text never explains how to make dough; it tells the history of pizza."
+     },
+     "explain": "Read the first and last sentence of each paragraph: they usually say what the whole paragraph is about."
+    },
+    {
+     "type": "tf",
+     "q": "The ancient Greeks put tomatoes on their flat bread.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“However, these early versions had no tomato,” Tomatoes hadn't reached Europe yet.",
+     "notes": {
+      "True": "Look again: “However, these early versions had no tomato,” Tomatoes hadn't reached Europe yet.",
+      "Not given": "The text does talk about this: “However, these early versions had no tomato,” Tomatoes hadn't reached Europe yet."
+     },
+     "line": "However, these early versions had no tomato,"
+    },
+    {
+     "type": "tf",
+     "q": "Pizza in Naples was first eaten mainly by rich people.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“Wealthier people at first looked down on it as food for the poor.” It was food for working families, not the rich.",
+     "notes": {
+      "True": "Look again: “Wealthier people at first looked down on it as food for the poor.” It was food for working families, not the rich.",
+      "Not given": "The text does talk about this: “Wealthier people at first looked down on it as food for the poor.” It was food for working families, not the rich."
+     },
+     "line": "Wealthier people at first looked down on it as food for the poor."
+    },
+    {
+     "type": "tf",
+     "q": "The first pizzeria in New York opened in 1905.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 2,
+     "explain": "The text says pizzerias opened in the early 1900s but gives no exact date.",
+     "notes": {
+      "True": "The text never says this. The text says pizzerias opened in the early 1900s but gives no exact date.",
+      "False": "The text never says this. The text says pizzerias opened in the early 1900s but gives no exact date."
+     }
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “causing a lot of disagreement”.",
+     "line": "The most controversial topping is probably pineapple,",
+     "answer": "controversial",
+     "explain": "“controversial” means causing a lot of disagreement: “The most controversial topping is probably pineapple,”"
+    }
+   ]
   }
  ]
 }

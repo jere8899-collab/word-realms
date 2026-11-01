@@ -2224,6 +2224,598 @@
      }
     }
    ]
+  },
+  {
+   "title": "The Science of Slime Mould",
+   "text": "Slime mould is neither a plant, an animal nor a fungus, yet this brainless, single-celled organism can solve problems that challenge computers. In a famous experiment, Japanese researchers placed oat flakes, which slime mould loves to eat, on a map in the positions of cities around Tokyo. Within a day, the mould had spread out and then pulled back, leaving a network of tubes linking the food sources. Remarkably, its network closely resembled the real railway system that engineers had spent years designing. Scientists are now studying how slime mould makes such efficient decisions without any nervous system, hoping to use the same principles in robotics and city planning.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "Researchers placed oat flakes on a map.",
+      "The mould spread out across the map.",
+      "The mould pulled back into a network of tubes.",
+      "Scientists began studying its decision-making."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "Slime mould is a type of fungus.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“Slime mould is neither a plant, an animal nor a fungus,” ‘Neither … nor’ rules out a fungus.",
+     "notes": {
+      "True": "Look again: “Slime mould is neither a plant, an animal nor a fungus,” ‘Neither … nor’ rules out a fungus.",
+      "Not given": "The text does talk about this: “Slime mould is neither a plant, an animal nor a fungus,” ‘Neither … nor’ rules out a fungus."
+     },
+     "line": "Slime mould is neither a plant, an animal nor a fungus,"
+    },
+    {
+     "type": "tf",
+     "q": "The mould's network looked similar to a real railway system.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 0,
+     "explain": "“its network closely resembled the real railway system that engineers had spent years designing.” ‘Resembled’ means looked like.",
+     "notes": {
+      "False": "The text says: “its network closely resembled the real railway system that engineers had spent years designing.” So it is true. ‘Resembled’ means looked like.",
+      "Not given": "The text says: “its network closely resembled the real railway system that engineers had spent years designing.” So it is true. ‘Resembled’ means looked like."
+     },
+     "line": "its network closely resembled the real railway system that engineers had spent years designing."
+    },
+    {
+     "type": "tf",
+     "q": "The experiment has been repeated with maps of other countries.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 2,
+     "explain": "Only the Tokyo map is described; other countries aren't mentioned.",
+     "notes": {
+      "True": "The text never says this. Only the Tokyo map is described; other countries aren't mentioned.",
+      "False": "The text never says this. Only the Tokyo map is described; other countries aren't mentioned."
+     }
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “looked or was like”.",
+     "line": "Remarkably, its network closely resembled the real railway system",
+     "answer": "resembled",
+     "explain": "“resembled” means looked or was like: “Remarkably, its network closely resembled the real railway system”"
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “working well without wasting time or energy”.",
+     "line": "how slime mould makes such efficient decisions",
+     "answer": "efficient",
+     "explain": "“efficient” means working well without wasting time or energy: “how slime mould makes such efficient decisions”"
+    }
+   ]
+  },
+  {
+   "title": "Fourteen and Fluent in Five",
+   "text": "At fourteen, Lucía speaks Spanish, English, French, Mandarin and Korean, yet she insists she has no special talent for languages. Her secret, she says, is consistency rather than intensity. Instead of studying for hours at weekends, she spends twenty minutes every day on each language, often while doing something she already enjoys, such as watching cooking videos or reading comics. She began learning Korean after becoming a fan of a pop group, and within a year she could follow interviews without subtitles. Her teachers point out that she is unusually unafraid of making mistakes, which means she practises speaking far more than most learners.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "Lucía became a fan of a pop group.",
+      "She began learning Korean.",
+      "She could follow interviews without subtitles."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "Lucía believes she was born with a gift for languages.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“yet she insists she has no special talent for languages.” She says the opposite: she has no special talent.",
+     "notes": {
+      "True": "Look again: “yet she insists she has no special talent for languages.” She says the opposite: she has no special talent.",
+      "Not given": "The text does talk about this: “yet she insists she has no special talent for languages.” She says the opposite: she has no special talent."
+     },
+     "line": "yet she insists she has no special talent for languages."
+    },
+    {
+     "type": "tf",
+     "q": "Lucía prefers short daily practice to long weekend sessions.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 0,
+     "explain": "“Instead of studying for hours at weekends, she spends twenty minutes every day on each language,”",
+     "notes": {
+      "False": "The text says: “Instead of studying for hours at weekends, she spends twenty minutes every day on each language,” So it is true.",
+      "Not given": "The text says: “Instead of studying for hours at weekends, she spends twenty minutes every day on each language,” So it is true."
+     },
+     "line": "Instead of studying for hours at weekends, she spends twenty minutes every day on each language,"
+    },
+    {
+     "type": "tf",
+     "q": "Lucía's parents speak several languages at home.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 2,
+     "explain": "The text never mentions her parents or what they speak.",
+     "notes": {
+      "True": "The text never says this. The text never mentions her parents or what they speak.",
+      "False": "The text never says this. The text never mentions her parents or what they speak."
+     }
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “doing something regularly in the same way”.",
+     "line": "Her secret, she says, is consistency rather than intensity.",
+     "answer": "consistency",
+     "explain": "“consistency” means doing something regularly in the same way: “Her secret, she says, is consistency rather than intensity.”"
+    }
+   ]
+  },
+  {
+   "title": "Glow in the Deep",
+   "text": "More than three-quarters of the animals living in the deep ocean can produce their own light, a skill known as bioluminescence. Far below the reach of sunlight, this light serves many purposes. The anglerfish dangles a glowing lure above its mouth to attract curious prey, while some shrimp release clouds of glowing liquid to confuse predators and escape. Other creatures use light to find partners or to hide: by glowing softly on their undersides, certain fish match the faint light from above, making their silhouettes invisible to hunters below. Scientists have even borrowed the chemistry of bioluminescence to track diseases inside living cells.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "The anglerfish dangles its glowing lure.",
+      "Curious prey swims towards the light.",
+      "The anglerfish catches its prey."
+     ],
+     "explain": "Think about what the lure is for: first the light, then the curious prey, then the catch."
+    },
+    {
+     "type": "tf",
+     "q": "Most deep-sea animals can make their own light.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 0,
+     "explain": "“More than three-quarters of the animals living in the deep ocean can produce their own light,” Three-quarters is most of them.",
+     "notes": {
+      "False": "The text says: “More than three-quarters of the animals living in the deep ocean can produce their own light,” So it is true. Three-quarters is most of them.",
+      "Not given": "The text says: “More than three-quarters of the animals living in the deep ocean can produce their own light,” So it is true. Three-quarters is most of them."
+     },
+     "line": "More than three-quarters of the animals living in the deep ocean can produce their own light,"
+    },
+    {
+     "type": "tf",
+     "q": "Some fish glow on their undersides so that predators can find them more easily.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“certain fish match the faint light from above, making their silhouettes invisible to hunters below.” It's the opposite: the glow hides them.",
+     "notes": {
+      "True": "Look again: “certain fish match the faint light from above, making their silhouettes invisible to hunters below.” It's the opposite: the glow hides them.",
+      "Not given": "The text does talk about this: “certain fish match the faint light from above, making their silhouettes invisible to hunters below.” It's the opposite: the glow hides them."
+     },
+     "line": "certain fish match the faint light from above, making their silhouettes invisible to hunters below."
+    },
+    {
+     "type": "tf",
+     "q": "Bioluminescent animals live longer than other sea creatures.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 2,
+     "explain": "The text explains what the light is used for, but says nothing about how long the animals live.",
+     "notes": {
+      "True": "The text never says this. The text explains what the light is used for, but says nothing about how long the animals live.",
+      "False": "The text never says this. The text explains what the light is used for, but says nothing about how long the animals live."
+     }
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “something used to tempt an animal closer”.",
+     "line": "The anglerfish dangles a glowing lure above its mouth",
+     "answer": "lure",
+     "explain": "“lure” means something used to tempt an animal closer: “The anglerfish dangles a glowing lure above its mouth”"
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “dark shapes seen against a lighter background”.",
+     "line": "making their silhouettes invisible to hunters below.",
+     "answer": "silhouettes",
+     "explain": "“silhouettes” means dark shapes seen against a lighter background: “making their silhouettes invisible to hunters below.”"
+    }
+   ]
+  },
+  {
+   "title": "The Mars Helicopter",
+   "text": "When NASA's tiny helicopter Ingenuity lifted off from the surface of Mars in 2021, it became the first aircraft ever to make a powered flight on another planet. The challenge was enormous, because the Martian atmosphere is less than one per cent as thick as Earth's, giving the rotor blades very little air to push against. To compensate, engineers designed blades that spin about five times faster than those of a normal helicopter. Ingenuity was originally intended to make just five test flights over thirty days. Instead, it kept flying for almost three years and completed seventy-two flights before a damaged blade finally grounded it.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "Ingenuity made its first flight on Mars.",
+      "It completed its five planned test flights.",
+      "It carried on flying for almost three years.",
+      "A damaged blade grounded it."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "Mars has a thinner atmosphere than Earth.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 0,
+     "explain": "“the Martian atmosphere is less than one per cent as thick as Earth's,”",
+     "notes": {
+      "False": "The text says: “the Martian atmosphere is less than one per cent as thick as Earth's,” So it is true.",
+      "Not given": "The text says: “the Martian atmosphere is less than one per cent as thick as Earth's,” So it is true."
+     },
+     "line": "the Martian atmosphere is less than one per cent as thick as Earth's,"
+    },
+    {
+     "type": "tf",
+     "q": "Ingenuity made exactly the number of flights that was planned.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“Instead, it kept flying for almost three years and completed seventy-two flights” Five were planned; it made seventy-two.",
+     "notes": {
+      "True": "Look again: “Instead, it kept flying for almost three years and completed seventy-two flights” Five were planned; it made seventy-two.",
+      "Not given": "The text does talk about this: “Instead, it kept flying for almost three years and completed seventy-two flights” Five were planned; it made seventy-two."
+     },
+     "line": "Instead, it kept flying for almost three years and completed seventy-two flights"
+    },
+    {
+     "type": "tf",
+     "q": "Ingenuity took photographs of the Mars rover.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 2,
+     "explain": "The text is about its flights; photographs aren't mentioned.",
+     "notes": {
+      "True": "The text never says this. The text is about its flights; photographs aren't mentioned.",
+      "False": "The text never says this. The text is about its flights; photographs aren't mentioned."
+     }
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “make up for a problem or weakness”.",
+     "line": "To compensate, engineers designed blades that spin about five times faster",
+     "answer": "compensate",
+     "explain": "“compensate” means make up for a problem or weakness: “To compensate, engineers designed blades that spin about five times faster”"
+    }
+   ]
+  },
+  {
+   "title": "The Chess Club Comeback",
+   "text": "Three years ago, the chess club at Northfield Academy had only four members and was about to close. Then a new maths teacher, Mr Adeyemi, took over and made a series of changes. He introduced short 'blitz' games lasting five minutes, so that students could play several opponents in one lunchtime, and he set up a ladder ranking that anyone could climb. Crucially, he encouraged older players to coach younger ones, which gave beginners confidence and made the experienced players feel valued. Membership grew to over sixty, and last spring the club's under-fourteen team reached the national finals for the first time in the school's history.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "The club had only four members.",
+      "Mr Adeyemi took over the club.",
+      "Membership grew to over sixty.",
+      "The team reached the national finals."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "Blitz games give students the chance to play several people in a lunch break.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 0,
+     "explain": "“so that students could play several opponents in one lunchtime,”",
+     "notes": {
+      "False": "The text says: “so that students could play several opponents in one lunchtime,” So it is true.",
+      "Not given": "The text says: “so that students could play several opponents in one lunchtime,” So it is true."
+     },
+     "line": "so that students could play several opponents in one lunchtime,"
+    },
+    {
+     "type": "tf",
+     "q": "Only the best players were allowed to join the ranking ladder.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“he set up a ladder ranking that anyone could climb.” Anyone could climb it.",
+     "notes": {
+      "True": "Look again: “he set up a ladder ranking that anyone could climb.” Anyone could climb it.",
+      "Not given": "The text does talk about this: “he set up a ladder ranking that anyone could climb.” Anyone could climb it."
+     },
+     "line": "he set up a ladder ranking that anyone could climb."
+    },
+    {
+     "type": "tf",
+     "q": "The under-fourteen team won the national finals.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 2,
+     "explain": "They reached the finals, but the text doesn't say whether they won.",
+     "notes": {
+      "True": "The text never says this. They reached the finals, but the text doesn't say whether they won.",
+      "False": "The text never says this. They reached the finals, but the text doesn't say whether they won."
+     }
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “appreciated and seen as important”.",
+     "line": "and made the experienced players feel valued.",
+     "answer": "valued",
+     "explain": "“valued” means appreciated and seen as important: “and made the experienced players feel valued.”"
+    }
+   ]
+  },
+  {
+   "title": "Rebuilding a Coral Reef",
+   "text": "Coral reefs cover less than one per cent of the ocean floor, yet they support about a quarter of all marine species. Rising sea temperatures, however, have caused widespread 'bleaching', in which stressed corals lose the colourful algae that feed them and turn white. In the Maldives, a group of young divers is fighting back by growing coral fragments on underwater metal frames, a little like a garden nursery. Once the fragments have grown large enough, the divers transplant them onto damaged reefs. Encouragingly, some of the replanted corals have survived recent heatwaves better than wild ones, suggesting that nurseries might help reefs adapt to warmer water.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "Corals lose their algae and turn white.",
+      "Divers grow coral fragments on metal frames.",
+      "The fragments are transplanted onto reefs.",
+      "Some replanted corals survive heatwaves."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "Coral reefs take up a large part of the ocean floor.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“Coral reefs cover less than one per cent of the ocean floor,” Less than one per cent is a tiny part.",
+     "notes": {
+      "True": "Look again: “Coral reefs cover less than one per cent of the ocean floor,” Less than one per cent is a tiny part.",
+      "Not given": "The text does talk about this: “Coral reefs cover less than one per cent of the ocean floor,” Less than one per cent is a tiny part."
+     },
+     "line": "Coral reefs cover less than one per cent of the ocean floor,"
+    },
+    {
+     "type": "tf",
+     "q": "Bleached corals have lost the algae that feed them.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 0,
+     "explain": "“stressed corals lose the colourful algae that feed them and turn white.”",
+     "notes": {
+      "False": "The text says: “stressed corals lose the colourful algae that feed them and turn white.” So it is true.",
+      "Not given": "The text says: “stressed corals lose the colourful algae that feed them and turn white.” So it is true."
+     },
+     "line": "stressed corals lose the colourful algae that feed them and turn white."
+    },
+    {
+     "type": "tf",
+     "q": "The divers are paid by the government of the Maldives.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 2,
+     "explain": "The text tells us what the divers do, but not who pays them, if anyone.",
+     "notes": {
+      "True": "The text never says this. The text tells us what the divers do, but not who pays them, if anyone.",
+      "False": "The text never says this. The text tells us what the divers do, but not who pays them, if anyone."
+     }
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “move a living thing to grow in a new place”.",
+     "line": "the divers transplant them onto damaged reefs.",
+     "answer": "transplant",
+     "explain": "“transplant” means move a living thing to grow in a new place: “the divers transplant them onto damaged reefs.”"
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “change to suit new conditions”.",
+     "line": "suggesting that nurseries might help reefs adapt to warmer water.",
+     "answer": "adapt",
+     "explain": "“adapt” means change to suit new conditions: “suggesting that nurseries might help reefs adapt to warmer water.”"
+    }
+   ]
+  },
+  {
+   "title": "Why Teenagers Stay Up Late",
+   "text": "Parents often complain that teenagers refuse to go to bed and then cannot get up in the morning. It is tempting to blame phones or laziness, but the real explanation is largely biological. During puberty, the body starts releasing melatonin, the hormone that makes us sleepy, up to two hours later than it does in younger children.\n\nThis shift clashes badly with school timetables. A teenager whose body is not ready to sleep until eleven o'clock but who must wake at half past six is losing hours of sleep every week. Researchers have linked this lack of sleep to poorer concentration, lower mood and even more sports injuries.\n\nSome schools have experimented with later start times. In one American study, moving the school day an hour later led to students sleeping more, attending more regularly and achieving slightly better grades. Car accidents involving teenage drivers in the area also fell.\n\nWhile starting school later may not be possible everywhere, teenagers can still improve their sleep. Getting bright daylight in the morning, keeping screens out of the bedroom and going to bed at a similar time even at weekends all help to keep the body clock on track.",
+   "questions": [
+    {
+     "type": "headings",
+     "q": "Match a heading to each paragraph. Tap the heading for paragraph 1 first. One heading is extra.",
+     "headings": [
+      "It's not just bad habits",
+      "A timetable that doesn't fit",
+      "Testing a later start",
+      "What young people can do themselves"
+     ],
+     "extra": [
+      "Dreams and nightmares in the teenage years"
+     ],
+     "notes": {
+      "It's not just bad habits": "Paragraph 1: it says the main reason is biology, not phones or laziness.",
+      "A timetable that doesn't fit": "Paragraph 2: it explains how early school starts clash with teenage body clocks.",
+      "Testing a later start": "Paragraph 3: it describes schools trying a later start and the results.",
+      "What young people can do themselves": "Paragraph 4: it gives tips teenagers can follow on their own.",
+      "Dreams and nightmares in the teenage years": "This heading is the extra one. The text is about when teenagers sleep, not about what they dream."
+     },
+     "explain": "Read the first and last sentence of each paragraph: they usually say what the whole paragraph is about."
+    },
+    {
+     "type": "tf",
+     "q": "Teenagers' bodies release melatonin later than younger children's do.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 0,
+     "explain": "“up to two hours later than it does in younger children.”",
+     "notes": {
+      "False": "The text says: “up to two hours later than it does in younger children.” So it is true.",
+      "Not given": "The text says: “up to two hours later than it does in younger children.” So it is true."
+     },
+     "line": "up to two hours later than it does in younger children."
+    },
+    {
+     "type": "tf",
+     "q": "Later school start times led to lower grades in the American study.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“attending more regularly and achieving slightly better grades.” Grades went slightly up, not down.",
+     "notes": {
+      "True": "Look again: “attending more regularly and achieving slightly better grades.” Grades went slightly up, not down.",
+      "Not given": "The text does talk about this: “attending more regularly and achieving slightly better grades.” Grades went slightly up, not down."
+     },
+     "line": "attending more regularly and achieving slightly better grades."
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “is in strong conflict with”.",
+     "line": "This shift clashes badly with school timetables.",
+     "answer": "clashes",
+     "explain": "“clashes” means is in strong conflict with: “This shift clashes badly with school timetables.”"
+    }
+   ]
+  },
+  {
+   "title": "The Secret Life of Crows",
+   "text": "Crows have a reputation for being noisy pests, but scientists now rank them among the most intelligent animals on the planet. Relative to their body size, their brains are as large as those of chimpanzees, and they perform as well as seven-year-old children on some reasoning tests.\n\nNew Caledonian crows are famous for making tools. They strip leaves from twigs to create hooks for pulling insects out of holes, and in experiments they have combined two short sticks into one long one to reach food. Remarkably, young crows learn these skills by watching their parents.\n\nCrows also remember human faces for years. In a well-known study in Seattle, researchers wearing a particular mask trapped some crows and then released them. Years later, crows that had never been caught still scolded anyone wearing that mask, suggesting that the birds had passed the warning on to others.\n\nThere are even stories of crows bringing gifts to people who feed them. One girl in Seattle received buttons, beads and a tiny silver heart from the crows in her garden. Scientists are cautious about calling these objects 'presents', but they agree that crows can form lasting relationships with humans.",
+   "questions": [
+    {
+     "type": "headings",
+     "q": "Match a heading to each paragraph. Tap the heading for paragraph 1 first. One heading is extra.",
+     "headings": [
+      "Smarter than they look",
+      "Builders of tools",
+      "Never forgetting a face",
+      "Friendships with people"
+     ],
+     "extra": [
+      "How crows build their nests"
+     ],
+     "notes": {
+      "Smarter than they look": "Paragraph 1: it says crows are among the cleverest animals, despite their reputation.",
+      "Builders of tools": "Paragraph 2: it describes crows making hooks and joining sticks.",
+      "Never forgetting a face": "Paragraph 3: it is about crows remembering a masked face for years.",
+      "Friendships with people": "Paragraph 4: it tells how crows can form bonds with the people who feed them.",
+      "How crows build their nests": "This heading is the extra one. Nests are never mentioned; the tools in paragraph 2 are for finding food."
+     },
+     "explain": "Read the first and last sentence of each paragraph: they usually say what the whole paragraph is about."
+    },
+    {
+     "type": "tf",
+     "q": "Young crows learn to make tools by observing adult crows.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 0,
+     "explain": "“young crows learn these skills by watching their parents.” Watching = observing.",
+     "notes": {
+      "False": "The text says: “young crows learn these skills by watching their parents.” So it is true. Watching = observing.",
+      "Not given": "The text says: “young crows learn these skills by watching their parents.” So it is true. Watching = observing."
+     },
+     "line": "young crows learn these skills by watching their parents."
+    },
+    {
+     "type": "tf",
+     "q": "Only the crows that were trapped reacted to the mask.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“crows that had never been caught still scolded anyone wearing that mask,” Crows that were never caught reacted too.",
+     "notes": {
+      "True": "Look again: “crows that had never been caught still scolded anyone wearing that mask,” Crows that were never caught reacted too.",
+      "Not given": "The text does talk about this: “crows that had never been caught still scolded anyone wearing that mask,” Crows that were never caught reacted too."
+     },
+     "line": "crows that had never been caught still scolded anyone wearing that mask,"
+    },
+    {
+     "type": "tf",
+     "q": "The girl in Seattle fed the crows every day.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 2,
+     "explain": "We know crows brought her gifts, but not how often she fed them.",
+     "notes": {
+      "True": "The text never says this. We know crows brought her gifts, but not how often she fed them.",
+      "False": "The text never says this. We know crows brought her gifts, but not how often she fed them."
+     }
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “careful to avoid risks or mistakes”.",
+     "line": "Scientists are cautious about calling these objects 'presents',",
+     "answer": "cautious",
+     "explain": "“cautious” means careful to avoid risks or mistakes: “Scientists are cautious about calling these objects 'presents',”"
+    }
+   ]
   }
  ]
 }

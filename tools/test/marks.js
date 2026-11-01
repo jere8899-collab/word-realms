@@ -39,6 +39,7 @@ const MOB = { deviceScaleFactor: 2, isMobile: true, hasTouch: true };
   }
   const clean = async p => { await p.evaluate(() => document.querySelectorAll('.confetti-layer,.toast').forEach(e => e.remove())); await p.waitForTimeout(400); };
   const fit = page => page.evaluate(() => {
+    document.getAnimations().forEach(a => { try { a.finish(); } catch (e) {} });   // measure tiles at full size, not mid pop-in
     const bad = [], vis = el => { const r = el.getBoundingClientRect(), cs = getComputedStyle(el); return r.width > 2 && r.height > 2 && cs.visibility !== 'hidden' && cs.display !== 'none'; };
     for (const el of [...document.getElementById('main').querySelectorAll('button,.btn,input')].filter(vis)) {
       el.scrollIntoView({ block: 'center', behavior: 'instant' }); const r = el.getBoundingClientRect();

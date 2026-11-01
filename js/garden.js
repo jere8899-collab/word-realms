@@ -112,7 +112,7 @@ WR.screens.review = () => {
   document.querySelectorAll("[data-id]").forEach(b => b.onclick = () => {
     const m = s.mistakes.find(x => x.id === b.dataset.id); if (!m) return; const g = Garden.stageOf(m);
     WR.modal(`<h2>${g.e} ${g.n}</h2><span class="pill">${lvl(m.realm)} · ${skillIco(m.skill)} ${WR.esc(m.skill)}</span>
-      ${m.passage ? `<div class="passage" style="text-align:left;max-height:180px;overflow:auto"><h3>📜 ${WR.esc(m.passage.title)}</h3>${WR.esc(m.passage.text)}</div>` : ""}
+      ${m.passage ? WR.passageHTML(m.passage, { style: "text-align:left;max-height:180px;overflow:auto" }) : ""}
       <p style="font-weight:800">${WR.esc(m.q)}</p>${m.said ? `<div class="transcript">🎧 “${WR.esc(m.said)}” <button class="btn ghost small" id="sayBtn">🔊</button></div>` : ""}
       <div style="margin-top:6px">✅ <b>${WR.esc(m.correct)}</b></div><div class="muted" style="font-weight:700;text-align:left">💡 ${WR.esc(m.explain)}</div>
       <p class="muted" style="font-size:.8rem">Missed ${m.misses || 1}× · ${m.bloomed ? "fully grown!" : m.legacy ? "an old tip card (from before the garden could quiz you)" : "next watering " + when(m.due)}</p>

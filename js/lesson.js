@@ -3,7 +3,7 @@
 const WR = window.WR;
 const CHEER = ["Yay! ✨", "You're amazing! 💖", "Sparkly smart! 🌟", "Woohoo! 🎉", "Brilliant! 🌸", "Magic! 🪄"];
 const COMFORT = ["It's okay, we learn together 🫶", "Oopsie! Next one! 🍀", "Don't worry, read the tip 💭", "Almost! You've got this 💪"];
-const MODE_TIME = { mcq: 25, order: 40, listen: 35, reading: 50, picq: 25, spell: 45, mistake: 35, gaps: 55, dictate: 60, events: 60, tf: 30, findword: 35 };
+const MODE_TIME = { mcq: 25, order: 40, listen: 35, reading: 50, picq: 25, spell: 45, mistake: 35, gaps: 55, dictate: 60, events: 60, tf: 30, findword: 35, headings: 90 };
 const BOSS = { b2: { name: "Glimmerfin", face: "🐍", art: "boss_glimmerfin", hp: 100 }, c2: { name: "Archivus the Library Dragon", face: "🐲", art: "boss_archivus", hp: 100 } };
 const curBoss = () => L.boss || BOSS[L.realm.id] || BOSS.b2;                 // 🏆 C6: realm bosses pass their own { name, face, art }
 const bossBeaten = () => L.mode === "boss" && L.bossHP <= 0;
@@ -14,9 +14,20 @@ const NEWTYPES = new Set(["spell", "mistake", "gaps", "dictate"]);
 const fillGaps = (text, words) => { let i = 0; return text.replace(/___/g, () => words[i++] || "___"); };
 /* 📖 R19 reading types: events (put what happened in order), tf (True / False / Not given, fixed order, a note per
    wrong pick), findword (tap the word in a line of the text that means …). They keep _raw, so the garden re-asks them with their text. */
+/* 🍭 Tile-ordering modes (one table instead of `ev ? … : …` in four places): sep joins the tiles into the answer,
+   list → tall numbered cards, hint shows in the empty answer row, check labels the button. */
+const TILES = {
+  order: { sep: " ", list: false, check: "🍭 Check sentence", hint: "Tap the candy words in order…" },
+  events: { sep: "\n", list: true, check: "📖 Check order", hint: "Tap what happened first…" },
+  headings: { sep: "\n", list: true, check: "🏷️ Check headings", hint: "Tap the heading for paragraph 1…" },
+};
+// 🏷️ match-the-headings (B2+): the pool also holds one extra heading, so the answer row is full at one heading per paragraph
+const tilesOf = it => it.type === "events" ? it.events : it.type === "headings" ? it.headings.concat(it.extra) : it.answer.split(" ");
+const tilesNeeded = it => it.type === "headings" ? it.headings.length : tilesOf(it).length;
 const bare = w => String(w).toLowerCase().replace(/[^a-z0-9'-]/g, "");
 function normalize(item, passage) {
   if (item.type === "events") return { ...item, passage, _raw: item, answer: item.events.join("\n"), correct: item.events.join(" → ") };
+  if (item.type === "headings") return { ...item, passage, _raw: item, answer: item.headings.join("\n"), correct: item.headings.join(" / ") };
   if (item.type === "tf") return { ...item, passage, _raw: item, options: item.options.slice(), correct: item.options[item.answer] };
   if (item.type === "findword") { const words = item.line.trim().split(/\s+/); return { ...item, passage, _raw: item, words, hit: words.findIndex(w => bare(w) === item.answer), correct: item.answer }; }
   if (item.type === "order") return { type: "order", q: item.q, answer: item.answer, explain: item.explain, say: item.say, _raw: item.say ? item : undefined };
@@ -62,6 +73,11 @@ WR.buildItems = async (rid, skill, n = 8) => {
   return WR.freshPick(`${rid}/${skill}`, bank.filter(playable), n).map(q => normalize(q));
 };
 WR.normalize = normalize;
+// 📜 one passage box for lessons, the phone story sheet and the garden (title optional, extra classes/styles allowed)
+// 🏷️ texts with paragraphs (blank line between them, used by match-the-headings) get numbered paragraphs
+const paraHTML = t => t.includes("\n\n") ? t.split("\n\n").map((x, i) => `<p class="para"><b class="pn">${i + 1}</b>${WR.esc(x)}</p>`).join("") : WR.esc(t);
+WR.passageHTML = (p, { title = true, style = "" } = {}) =>
+  `<div class="passage"${style ? ` style="${style}"` : ""}>${title ? `<h3>📜 ${WR.esc(p.title)}</h3>` : ""}${paraHTML(p.text)}</div>`;
 
 let L = null; // current lesson state
 let heardOnce = false; // has speech played to the end once this session? (then later listening questions auto-play)
@@ -108,7 +124,7 @@ function qBody(it) {
   if (it.passage) {
     const prev = L.items[L.i - 1], again = prev && prev.passage === it.passage;
     h += again && phone() ? `<button class="story-chip" id="storyChip">📜 Story: ${WR.esc(it.passage.title)}</button>`
-      : `<div class="passage"><h3>📜 ${WR.esc(it.passage.title)}</h3>${WR.esc(it.passage.text)}</div>`;
+      : WR.passageHTML(it.passage);
   }
   if (it.say && (it.type === "listen" || it.type === "order" || it.type === "dictate")) {
     // 🔊 T11: the first listening question waits for a tap (iPhones block speech that doesn't start from a tap)
@@ -122,12 +138,12 @@ function qBody(it) {
   if (it.pic) h += `<div class="qpic">${it.pic}</div>`;
   if (it.art) h += `<div class="qpic qart">${WR.img(it.art).replace(/alt="[^"]*"/, 'alt="Picture: spell this word"')}</div>`;
   h += `<div class="qtext">${WR.esc(it.q)}</div>`;
-  if (it.type === "order" || it.type === "events") {
-    const ev = it.type === "events", words = ev ? it.events : it.answer.split(" "), sep = ev ? "\n" : " ";
-    let sh = WR.shuffle(words); let guard = 0; while (sh.join(sep) === it.answer && guard++ < 10) sh = WR.shuffle(words);
+  if (TILES[it.type]) {
+    const T = TILES[it.type], words = tilesOf(it), ls = T.list ? " events" : "";
+    let sh = WR.shuffle(words); let guard = 0; while (sh.join(T.sep) === it.answer && guard++ < 10) sh = WR.shuffle(words);
     it._pool = sh.map((w, k) => ({ w, k })); it._built = [];
-    h += `<div class="tiles answer${ev ? " events" : ""}" id="built"></div><div class="tiles${ev ? " events" : ""}" id="pool"></div>
-      <div class="row" style="margin-top:8px"><button class="btn mint" id="checkBtn" disabled>${ev ? "📖 Check order" : "🍭 Check sentence"}</button><button class="btn ghost small" id="clearBtn">↺ Clear</button></div>`;
+    h += `<div class="tiles answer${ls}" id="built"></div><div class="tiles${ls}" id="pool"></div>
+      <div class="row" style="margin-top:8px"><button class="btn mint" id="checkBtn" disabled>${T.check}</button><button class="btn ghost small" id="clearBtn">↺ Clear</button></div>`;
   } else if (it.type === "spell") {
     const extra = WR.shuffle("abcdefghiklmnoprstuwy".split("").filter(c => !it.answer.includes(c))).slice(0, it.answer.length > 6 ? 3 : 2);
     it._pool = WR.shuffle(it.answer.split("").concat(extra)).map((w, k) => ({ w, k })); it._built = [];
@@ -166,7 +182,7 @@ function render() {
       <div class="card side"><div class="petbox" id="lpet">${WR.petHTML()}</div><div class="bubble" id="lbubble">${WR.esc(L.i === 0 ? "Let's do this together! ✨" : WR.petMood())}</div>
       <div class="lstats" id="lstats">${WR.statsHTML([["⭐", L.starsEarned, "earned"], ["🔥", L.combo, "combo"]])}</div></div></div>`);
   WR.$("#quitBtn").onclick = () => { clearTimer(); WR.Voice.stop(); L.onQuit ? L.onQuit() : L.review ? WR.go("review") : WR.go("realm", L.realm.id); };
-  if (it.type === "order" || it.type === "events") bindOrder(it);
+  if (TILES[it.type]) bindOrder(it);
   else if (it.type === "findword") bindFind(it);
   else if (it.type === "spell") bindSpell(it);
   else if (it.type === "mistake") bindMistake(it);
@@ -179,7 +195,7 @@ function render() {
 }
 // 📜 the story in a bottom sheet (phones, questions 2+ of a reading story)
 function storySheet(p) {
-  const bg = WR.modal(`<div class="grab"></div><div class="row" style="justify-content:space-between;flex-wrap:nowrap"><b class="title">📜 ${WR.esc(p.title)}</b><button class="btn ghost small" id="sheetClose">Close ✕</button></div><div class="passage">${WR.esc(p.text)}</div>`, (bg, close) => { bg.querySelector("#sheetClose").onclick = close; });
+  const bg = WR.modal(`<div class="grab"></div><div class="row" style="justify-content:space-between;flex-wrap:nowrap"><b class="title">📜 ${WR.esc(p.title)}</b><button class="btn ghost small" id="sheetClose">Close ✕</button></div>${WR.passageHTML(p, { title: false })}`, (bg, close) => { bg.querySelector("#sheetClose").onclick = close; });
   bg.classList.add("sheet-bg"); const m = bg.querySelector(".modal"); m.classList.add("story-sheet");
 }
 // ⏱️ T2/T11: the boss timer only starts once the question's options are on screen and, for listening, after the audio has
@@ -213,21 +229,27 @@ function bindListen(it) {
   if (heardOnce) setTimeout(() => L === me && !L.answered && play(), 350);
 }
 function bindOrder(it) {
+  const T = TILES[it.type];
   const draw = () => {
     WR.$("#pool").innerHTML = it._pool.map(t => `<button class="tile" data-k="${t.k}">${WR.esc(t.w)}</button>`).join("");
-    const ev = it.type === "events";
-    WR.$("#built").innerHTML = it._built.map((t, n) => `<button class="tile" data-k="${t.k}">${ev ? `<b class="evn">${n + 1}</b> ` : ""}${WR.esc(t.w)}</button>`).join("") || `<span class="muted">${ev ? "Tap what happened first…" : "Tap the candy words in order…"}</span>`;
-    WR.$("#checkBtn").disabled = it._pool.length > 0 || L.answered;
-    WR.$("#pool").querySelectorAll(".tile").forEach(b => b.onclick = () => { if (L.answered) return; const k = +b.dataset.k; const i = it._pool.findIndex(t => t.k === k); it._built.push(it._pool.splice(i, 1)[0]); WR.sfx("tap"); draw(); });
+    WR.$("#built").innerHTML = it._built.map((t, n) => `<button class="tile" data-k="${t.k}">${T.list ? `<b class="evn">${n + 1}</b> ` : ""}${WR.esc(t.w)}</button>`).join("") || `<span class="muted">${T.hint}</span>`;
+    WR.$("#checkBtn").disabled = it._built.length < tilesNeeded(it) || L.answered;
+    WR.$("#pool").querySelectorAll(".tile").forEach(b => b.onclick = () => { if (L.answered || it._built.length >= tilesNeeded(it)) return; const k = +b.dataset.k; const i = it._pool.findIndex(t => t.k === k); it._built.push(it._pool.splice(i, 1)[0]); WR.sfx("tap"); draw(); });
     WR.$("#built").querySelectorAll(".tile").forEach(b => b.onclick = () => { if (L.answered) return; const k = +b.dataset.k; const i = it._built.findIndex(t => t.k === k); it._pool.push(it._built.splice(i, 1)[0]); draw(); });
   };
   draw();
   WR.$("#clearBtn").onclick = () => { if (L.answered) return; it._pool = it._pool.concat(it._built); it._built = []; draw(); };
   WR.$("#checkBtn").onclick = () => {
-    const ev = it.type === "events", ok = it._built.map(t => t.w).join(ev ? "\n" : " ") === it.answer;
+    const ok = it._built.map(t => t.w).join(T.sep) === it.answer;
     WR.$("#checkBtn").disabled = true;
-    answer(ok, it, ok ? "" : ev ? `Correct order:<ol class="evlist">${it.events.map(e => `<li>${WR.esc(e)}</li>`).join("")}</ol>` : `Correct order: <b>${WR.esc(it.answer)}</b>`);
+    answer(ok, it, ok ? "" : it.type === "headings" ? headingsWhy(it) : T.list ? `Correct order:<ol class="evlist">${tilesOf(it).map(e => `<li>${WR.esc(e)}</li>`).join("")}</ol>` : `Correct order: <b>${WR.esc(it.answer)}</b>`);
   };
+}
+// 🏷️ wrong headings: the right heading for each paragraph, then a why-not note for every heading put in the wrong place
+function headingsWhy(it) {
+  const got = it._built.map(t => t.w);
+  return `Right headings:<ol class="evlist">${it.headings.map(h => `<li>${WR.esc(h)}</li>`).join("")}</ol>` +
+    got.map((h, i) => h === it.headings[i] ? "" : `<div class="why-not">🤔 <b>Why not “${WR.esc(h)}” for paragraph ${i + 1}?</b> ${WR.esc(it.notes[h] || "")}</div>`).join("");
 }
 function bindSpell(it) {
   const n = it.answer.length;
@@ -294,7 +316,7 @@ function bindDictate(it) {
 }
 function startTimer(it) {
   clearTimer();
-  const total = MODE_TIME[it.passage ? "reading" : it.type] || 25;
+  const total = MODE_TIME[it.type === "headings" ? "headings" : it.passage ? "reading" : it.type] || 25;   // a whole multi-paragraph text gets longer
   if (L._timeIt !== it) { L._timeIt = it; L._left = total; }      // R8: the time left lives in L, so a pause can resume it
   timerId = setInterval(() => {
     if (L._paused) return;

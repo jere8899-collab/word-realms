@@ -392,3 +392,7 @@ body.kbd-open .toast{display:none}
 .mwords.fwords{justify-content:flex-start;gap:6px;background:#FFF9FC;border-radius:16px;padding:10px}
 .mwords.fwords .mword{font-size:1rem;padding:6px 10px}
 .evlist{margin:.3em 0 .2em 1.2em;padding:0;text-align:left}
+
+/* 🏷️ match-the-headings: numbered paragraphs in the passage box */
+.passage .para{margin:.15em 0 .6em;display:flex;gap:8px;align-items:flex-start}
+.passage .pn{flex:0 0 auto;display:inline-grid;place-items:center;width:1.6em;height:1.6em;border-radius:50%;background:#FBE3F0;color:#a06aa0;font-size:.85em;margin-top:.15em}

@@ -2292,6 +2292,604 @@
      }
     }
    ]
+  },
+  {
+   "title": "The Library of Lost Sounds",
+   "text": "Somewhere in a climate-controlled archive in Cornwall sit more than ten thousand recordings of sounds that no longer exist: the call of a frog species declared extinct in 2004, the rattle of steam trains, the chatter of a market that was demolished decades ago. The archive was founded by a retired sound engineer who became preoccupied with what he called 'acoustic extinction'. Volunteers, many of them teenagers armed with nothing more sophisticated than a smartphone, now contribute recordings from around the world. Far from being a melancholy museum, the collection is used by composers, filmmakers and conservationists, who have occasionally rediscovered animals thought to be lost by comparing new field recordings with the archive's catalogue.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "A frog species was declared extinct.",
+      "The sound engineer founded the archive.",
+      "Teenage volunteers began sending recordings."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "Every recording in the archive was made by professional sound engineers.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“Volunteers, many of them teenagers armed with nothing more sophisticated than a smartphone, now contribute recordings” Many recordings come from volunteers with phones.",
+     "notes": {
+      "True": "Look again: “Volunteers, many of them teenagers armed with nothing more sophisticated than a smartphone, now contribute recordings” Many recordings come from volunteers with phones.",
+      "Not given": "The text does talk about this: “Volunteers, many of them teenagers armed with nothing more sophisticated than a smartphone, now contribute recordings” Many recordings come from volunteers with phones."
+     },
+     "line": "Volunteers, many of them teenagers armed with nothing more sophisticated than a smartphone, now contribute recordings"
+    },
+    {
+     "type": "tf",
+     "q": "The archive has helped people find animals that were thought to have disappeared.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 0,
+     "explain": "“who have occasionally rediscovered animals thought to be lost by comparing new field recordings with the archive's catalogue.”",
+     "notes": {
+      "False": "The text says: “who have occasionally rediscovered animals thought to be lost by comparing new field recordings with the archive's catalogue.” So it is true.",
+      "Not given": "The text says: “who have occasionally rediscovered animals thought to be lost by comparing new field recordings with the archive's catalogue.” So it is true."
+     },
+     "line": "who have occasionally rediscovered animals thought to be lost by comparing new field recordings with the archive's catalogue."
+    },
+    {
+     "type": "tf",
+     "q": "The archive charges composers a fee to use its recordings.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 2,
+     "explain": "Composers use the collection, but nothing is said about payment.",
+     "notes": {
+      "True": "The text never says this. Composers use the collection, but nothing is said about payment.",
+      "False": "The text never says this. Composers use the collection, but nothing is said about payment."
+     }
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “constantly thinking about one thing”.",
+     "line": "a retired sound engineer who became preoccupied with what he called 'acoustic extinction'.",
+     "answer": "preoccupied",
+     "explain": "“preoccupied” means constantly thinking about one thing: “a retired sound engineer who became preoccupied with what he called 'acoustic extinction'.”"
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “sad in a quiet, thoughtful way”.",
+     "line": "Far from being a melancholy museum,",
+     "answer": "melancholy",
+     "explain": "“melancholy” means sad in a quiet, thoughtful way: “Far from being a melancholy museum,”"
+    }
+   ]
+  },
+  {
+   "title": "The Teenage Code-Breaker",
+   "text": "During the Second World War, the code-breakers of Bletchley Park included not only famous mathematicians but also hundreds of young people, some barely out of school. One of them, a seventeen-year-old named Mavis, worked on messages sent by the Italian navy. Painstakingly testing possible letter combinations by hand, she cracked a message that revealed the Italian fleet's plans, allowing the British navy to prepare an ambush. Like everyone at Bletchley, she was sworn to secrecy, and for decades even her own family had no idea of her contribution. Only when official records were declassified in the 1970s could former code-breakers finally speak openly about their wartime work.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "Mavis started working at Bletchley Park.",
+      "She cracked a message from the Italian navy.",
+      "The British navy prepared an ambush.",
+      "Official records were declassified."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "Only experienced mathematicians worked at Bletchley Park.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“the code-breakers of Bletchley Park included not only famous mathematicians but also hundreds of young people,” Hundreds of young people worked there too.",
+     "notes": {
+      "True": "Look again: “the code-breakers of Bletchley Park included not only famous mathematicians but also hundreds of young people,” Hundreds of young people worked there too.",
+      "Not given": "The text does talk about this: “the code-breakers of Bletchley Park included not only famous mathematicians but also hundreds of young people,” Hundreds of young people worked there too."
+     },
+     "line": "the code-breakers of Bletchley Park included not only famous mathematicians but also hundreds of young people,"
+    },
+    {
+     "type": "tf",
+     "q": "Mavis's family did not know about her wartime work for many years.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 0,
+     "explain": "“for decades even her own family had no idea of her contribution.”",
+     "notes": {
+      "False": "The text says: “for decades even her own family had no idea of her contribution.” So it is true.",
+      "Not given": "The text says: “for decades even her own family had no idea of her contribution.” So it is true."
+     },
+     "line": "for decades even her own family had no idea of her contribution."
+    },
+    {
+     "type": "tf",
+     "q": "Mavis became a professor of mathematics after the war.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 2,
+     "explain": "The text doesn't tell us what she did after the war.",
+     "notes": {
+      "True": "The text never says this. The text doesn't tell us what she did after the war.",
+      "False": "The text never says this. The text doesn't tell us what she did after the war."
+     }
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “with great care and effort over every detail”.",
+     "line": "Painstakingly testing possible letter combinations by hand,",
+     "answer": "painstakingly",
+     "explain": "“painstakingly” means with great care and effort over every detail: “Painstakingly testing possible letter combinations by hand,”"
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “made public after being kept secret”.",
+     "line": "Only when official records were declassified in the 1970s",
+     "answer": "declassified",
+     "explain": "“declassified” means made public after being kept secret: “Only when official records were declassified in the 1970s”"
+    }
+   ]
+  },
+  {
+   "title": "Tardigrades: The Toughest Animals Alive",
+   "text": "Barely half a millimetre long, tardigrades, affectionately nicknamed 'water bears', are arguably the most resilient animals on Earth. When their surroundings dry out, they curl into a shrivelled ball called a tun, reducing their metabolism to almost nothing. In this state they can endure temperatures close to absolute zero, crushing pressures six times greater than those at the bottom of the deepest ocean, and doses of radiation that would be fatal to humans. In 2007, tardigrades were even sent into space and exposed to the vacuum outside a satellite; many revived once they were rehydrated back on Earth. Biologists hope that understanding their protective proteins could one day help preserve vaccines without refrigeration.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "The tardigrades' surroundings dry out.",
+      "They curl into a tun.",
+      "They are rehydrated.",
+      "They revive."
+     ],
+     "explain": "A tun forms when things dry out, and water brings the animal back."
+    },
+    {
+     "type": "tf",
+     "q": "Tardigrades are large enough to see easily without a microscope.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“Barely half a millimetre long,” Half a millimetre is tiny.",
+     "notes": {
+      "True": "Look again: “Barely half a millimetre long,” Half a millimetre is tiny.",
+      "Not given": "The text does talk about this: “Barely half a millimetre long,” Half a millimetre is tiny."
+     },
+     "line": "Barely half a millimetre long,"
+    },
+    {
+     "type": "tf",
+     "q": "Some tardigrades survived being exposed to space.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 0,
+     "explain": "“many revived once they were rehydrated back on Earth.”",
+     "notes": {
+      "False": "The text says: “many revived once they were rehydrated back on Earth.” So it is true.",
+      "Not given": "The text says: “many revived once they were rehydrated back on Earth.” So it is true."
+     },
+     "line": "many revived once they were rehydrated back on Earth."
+    },
+    {
+     "type": "tf",
+     "q": "Tardigrades can live for over a hundred years.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 2,
+     "explain": "The text describes what they survive, not how long they live.",
+     "notes": {
+      "True": "The text never says this. The text describes what they survive, not how long they live.",
+      "False": "The text never says this. The text describes what they survive, not how long they live."
+     }
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “able to recover quickly from difficult conditions”.",
+     "line": "are arguably the most resilient animals on Earth.",
+     "answer": "resilient",
+     "explain": "“resilient” means able to recover quickly from difficult conditions: “are arguably the most resilient animals on Earth.”"
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “survive something difficult or painful”.",
+     "line": "In this state they can endure temperatures close to absolute zero,",
+     "answer": "endure",
+     "explain": "“endure” means survive something difficult or painful: “In this state they can endure temperatures close to absolute zero,”"
+    }
+   ]
+  },
+  {
+   "title": "The Accidental Inventor",
+   "text": "Many celebrated inventions began as mistakes. In 1968, a scientist trying to develop a super-strong glue produced one so weak that it could be peeled off and restuck repeatedly. Dismissed by colleagues as a failure, the formula languished in a drawer for years until another researcher, frustrated that his bookmarks kept slipping out of his choir hymn book, realised it was exactly what he needed. The result was the sticky note, now sold in billions. Historians of science argue that such stories reveal something important: discovery depends not only on luck but on the ability to recognise the value of an unexpected result rather than discarding it.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "A scientist made a very weak glue.",
+      "The formula was left in a drawer.",
+      "A researcher had trouble with his bookmarks.",
+      "Sticky notes went on sale."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "The scientist in 1968 was trying to create a very strong glue.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 0,
+     "explain": "“a scientist trying to develop a super-strong glue produced one so weak”",
+     "notes": {
+      "False": "The text says: “a scientist trying to develop a super-strong glue produced one so weak” So it is true.",
+      "Not given": "The text says: “a scientist trying to develop a super-strong glue produced one so weak” So it is true."
+     },
+     "line": "a scientist trying to develop a super-strong glue produced one so weak"
+    },
+    {
+     "type": "tf",
+     "q": "The scientist's colleagues immediately saw the value of the weak glue.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“Dismissed by colleagues as a failure,” They called it a failure.",
+     "notes": {
+      "True": "Look again: “Dismissed by colleagues as a failure,” They called it a failure.",
+      "Not given": "The text does talk about this: “Dismissed by colleagues as a failure,” They called it a failure."
+     },
+     "line": "Dismissed by colleagues as a failure,"
+    },
+    {
+     "type": "tf",
+     "q": "The two researchers worked in the same building.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 2,
+     "explain": "The text never says where either researcher worked.",
+     "notes": {
+      "True": "The text never says this. The text never says where either researcher worked.",
+      "False": "The text never says this. The text never says where either researcher worked."
+     }
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “stayed unused and neglected”.",
+     "line": "the formula languished in a drawer for years",
+     "answer": "languished",
+     "explain": "“languished” means stayed unused and neglected: “the formula languished in a drawer for years”"
+    }
+   ]
+  },
+  {
+   "title": "Speaking Whale",
+   "text": "For decades, humpback whale song was thought to be a simple mating call. Recent research, however, suggests something far more intricate. Songs are composed of repeated phrases arranged in themes, and all the males in a population sing roughly the same song, which gradually evolves over a season. Astonishingly, entirely new songs can spread eastwards across the Pacific Ocean, from Australia to French Polynesia, within two years, as though whales were passing on the latest hit. Some scientists are now using artificial intelligence to analyse thousands of hours of recordings, cautiously hoping to identify patterns that resemble the building blocks of language, though they stress that whale song may serve purposes we have not yet imagined.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "Scientists thought whale song was a simple mating call.",
+      "Research showed the songs were more complex.",
+      "Scientists started using AI to analyse recordings."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "Each male humpback in a population sings a completely different song.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“all the males in a population sing roughly the same song,” They sing roughly the same song.",
+     "notes": {
+      "True": "Look again: “all the males in a population sing roughly the same song,” They sing roughly the same song.",
+      "Not given": "The text does talk about this: “all the males in a population sing roughly the same song,” They sing roughly the same song."
+     },
+     "line": "all the males in a population sing roughly the same song,"
+    },
+    {
+     "type": "tf",
+     "q": "New whale songs can travel across the Pacific in about two years.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 0,
+     "explain": "“from Australia to French Polynesia, within two years,”",
+     "notes": {
+      "False": "The text says: “from Australia to French Polynesia, within two years,” So it is true.",
+      "Not given": "The text says: “from Australia to French Polynesia, within two years,” So it is true."
+     },
+     "line": "from Australia to French Polynesia, within two years,"
+    },
+    {
+     "type": "tf",
+     "q": "Female humpback whales also sing.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 2,
+     "explain": "The text only talks about the males' songs.",
+     "notes": {
+      "True": "The text never says this. The text only talks about the males' songs.",
+      "False": "The text never says this. The text only talks about the males' songs."
+     }
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “having many complicated parts or details”.",
+     "line": "suggests something far more intricate.",
+     "answer": "intricate",
+     "explain": "“intricate” means having many complicated parts or details: “suggests something far more intricate.”"
+    }
+   ]
+  },
+  {
+   "title": "The Last Speakers",
+   "text": "Of the roughly seven thousand languages spoken today, linguists estimate that around half could vanish by the end of this century. When a language dies, it takes with it unique ways of understanding the world: words for particular kinds of snow, medicinal plants known to no outsider, songs and jokes that cannot be translated. Yet the picture is not entirely bleak. In New Zealand, the Māori language was once in sharp decline, but 'language nests', preschools where children are immersed in Māori all day, helped revive it. Young people are increasingly turning to social media and video games to keep endangered languages alive, proving that technology can preserve heritage as well as threaten it.",
+   "questions": [
+    {
+     "type": "events",
+     "q": "Put what happened in order. Tap the first thing first.",
+     "events": [
+      "The Māori language was in sharp decline.",
+      "Language nests were set up.",
+      "The language began to revive."
+     ],
+     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+    },
+    {
+     "type": "tf",
+     "q": "Around half of the world's languages could disappear by 2100.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 0,
+     "explain": "“linguists estimate that around half could vanish by the end of this century.” The end of this century is 2100.",
+     "notes": {
+      "False": "The text says: “linguists estimate that around half could vanish by the end of this century.” So it is true. The end of this century is 2100.",
+      "Not given": "The text says: “linguists estimate that around half could vanish by the end of this century.” So it is true. The end of this century is 2100."
+     },
+     "line": "linguists estimate that around half could vanish by the end of this century."
+    },
+    {
+     "type": "tf",
+     "q": "The text argues that technology only harms endangered languages.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“proving that technology can preserve heritage as well as threaten it.” It says technology can help as well as harm.",
+     "notes": {
+      "True": "Look again: “proving that technology can preserve heritage as well as threaten it.” It says technology can help as well as harm.",
+      "Not given": "The text does talk about this: “proving that technology can preserve heritage as well as threaten it.” It says technology can help as well as harm."
+     },
+     "line": "proving that technology can preserve heritage as well as threaten it."
+    },
+    {
+     "type": "tf",
+     "q": "Most children in New Zealand now speak Māori fluently.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 2,
+     "explain": "The language was revived, but the text gives no figures about how many children speak it.",
+     "notes": {
+      "True": "The text never says this. The language was revived, but the text gives no figures about how many children speak it.",
+      "False": "The text never says this. The language was revived, but the text gives no figures about how many children speak it."
+     }
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “hopeless and depressing”.",
+     "line": "Yet the picture is not entirely bleak.",
+     "answer": "bleak",
+     "explain": "“bleak” means hopeless and depressing: “Yet the picture is not entirely bleak.”"
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “completely surrounded by something, so you learn it naturally”.",
+     "line": "where children are immersed in Māori all day,",
+     "answer": "immersed",
+     "explain": "“immersed” means completely surrounded by something, so you learn it naturally: “where children are immersed in Māori all day,”"
+    }
+   ]
+  },
+  {
+   "title": "Should Schools Ban Homework?",
+   "text": "Few school traditions provoke as much debate as homework. Supporters regard it as indispensable for consolidating what has been taught in class, while critics claim it eats into family time, sleep and play without delivering meaningful benefits, particularly for younger pupils.\n\nThe evidence is more nuanced than either side admits. Large-scale reviews suggest that for teenagers, moderate amounts of homework are linked to higher achievement, but the benefits level off after about two hours a night. For primary-age children, the measurable academic gains are small.\n\nSeveral schools have experimented with replacing traditional worksheets with optional 'choice boards', on which pupils pick from activities such as cooking a family recipe, building a model or reading for pleasure. Teachers report that motivation rose noticeably, although some parents worried about a lack of structure.\n\nPerhaps the real question is not whether homework should exist, but what it is for. Tasks that are purposeful, achievable without adult help and clearly connected to classroom learning seem to be valued by pupils, whereas repetitive busywork breeds resentment.",
+   "questions": [
+    {
+     "type": "headings",
+     "q": "Match a heading to each paragraph. Tap the heading for paragraph 1 first. One heading is extra.",
+     "headings": [
+      "A fiercely argued question",
+      "What the research actually shows",
+      "Alternatives to worksheets",
+      "Rethinking the purpose"
+     ],
+     "extra": [
+      "Homework around the world"
+     ],
+     "notes": {
+      "A fiercely argued question": "Paragraph 1: it introduces the debate and the two sides.",
+      "What the research actually shows": "Paragraph 2: it summarises research findings on age and amount.",
+      "Alternatives to worksheets": "Paragraph 3: it describes choice boards replacing worksheets.",
+      "Rethinking the purpose": "Paragraph 4: it argues the key question is what homework is for.",
+      "Homework around the world": "This heading is the extra one. No countries are compared; the text looks at the debate, research and school experiments."
+     },
+     "explain": "Read the first and last sentence of each paragraph: they usually say what the whole paragraph is about."
+    },
+    {
+     "type": "tf",
+     "q": "Research shows that the benefits of homework keep rising the more hours teenagers do.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“but the benefits level off after about two hours a night.” The benefits stop rising after about two hours.",
+     "notes": {
+      "True": "Look again: “but the benefits level off after about two hours a night.” The benefits stop rising after about two hours.",
+      "Not given": "The text does talk about this: “but the benefits level off after about two hours a night.” The benefits stop rising after about two hours."
+     },
+     "line": "but the benefits level off after about two hours a night."
+    },
+    {
+     "type": "tf",
+     "q": "Some parents had concerns about choice boards.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 0,
+     "explain": "“although some parents worried about a lack of structure.”",
+     "notes": {
+      "False": "The text says: “although some parents worried about a lack of structure.” So it is true.",
+      "Not given": "The text says: “although some parents worried about a lack of structure.” So it is true."
+     },
+     "line": "although some parents worried about a lack of structure."
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “absolutely necessary”.",
+     "line": "Supporters regard it as indispensable for consolidating what has been taught in class,",
+     "answer": "indispensable",
+     "explain": "“indispensable” means absolutely necessary: “Supporters regard it as indispensable for consolidating what has been taught in class,”"
+    }
+   ]
+  },
+  {
+   "title": "The Great Emperor Penguin March",
+   "text": "Every autumn in Antarctica, as temperatures plunge towards minus forty degrees, thousands of emperor penguins leave the relative comfort of the sea and trek up to a hundred kilometres inland across the ice. Their destination is a breeding ground, chosen because the thick sea ice there is unlikely to break up before their chicks are ready.\n\nAfter laying a single egg, the female transfers it to the male's feet and returns to the ocean to feed. For the next two months, through the darkest and coldest part of winter, the males balance the eggs on their feet beneath a fold of skin, eating nothing at all.\n\nTo survive blizzards with winds of up to two hundred kilometres an hour, the males huddle together in tightly packed groups of thousands. The birds constantly shuffle, so that those on the freezing edge gradually move towards the warm centre, ensuring that no individual bears the cold for long.\n\nClimate change poses a serious threat to this remarkable cycle. In 2022, unusually early melting of sea ice is thought to have caused thousands of chicks to drown before they had grown waterproof feathers, prompting scientists to warn that most colonies could decline sharply by the end of the century.",
+   "questions": [
+    {
+     "type": "headings",
+     "q": "Match a heading to each paragraph. Tap the heading for paragraph 1 first. One heading is extra.",
+     "headings": [
+      "A long walk inland",
+      "Fathers on duty",
+      "Sharing the warmth",
+      "Danger from a warming world"
+     ],
+     "extra": [
+      "What penguins eat in the ocean"
+     ],
+     "notes": {
+      "A long walk inland": "Paragraph 1: it describes the trek across the ice to the breeding ground.",
+      "Fathers on duty": "Paragraph 2: it is about the males guarding the eggs for two months.",
+      "Sharing the warmth": "Paragraph 3: it explains how huddling shares the heat fairly.",
+      "Danger from a warming world": "Paragraph 4: it is about the threat that melting sea ice poses.",
+      "What penguins eat in the ocean": "This heading is the extra one. Food in the sea is barely mentioned; no paragraph is about the penguins' diet."
+     },
+     "explain": "Read the first and last sentence of each paragraph: they usually say what the whole paragraph is about."
+    },
+    {
+     "type": "tf",
+     "q": "The female penguin looks after the egg through the winter.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 1,
+     "explain": "“the female transfers it to the male's feet and returns to the ocean to feed.” The male looks after the egg.",
+     "notes": {
+      "True": "Look again: “the female transfers it to the male's feet and returns to the ocean to feed.” The male looks after the egg.",
+      "Not given": "The text does talk about this: “the female transfers it to the male's feet and returns to the ocean to feed.” The male looks after the egg."
+     },
+     "line": "the female transfers it to the male's feet and returns to the ocean to feed."
+    },
+    {
+     "type": "tf",
+     "q": "Huddling penguins take turns standing on the colder outside edge.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 0,
+     "explain": "“so that those on the freezing edge gradually move towards the warm centre,” Shuffling means each bird takes a turn on the edge.",
+     "notes": {
+      "False": "The text says: “so that those on the freezing edge gradually move towards the warm centre,” So it is true. Shuffling means each bird takes a turn on the edge.",
+      "Not given": "The text says: “so that those on the freezing edge gradually move towards the warm centre,” So it is true. Shuffling means each bird takes a turn on the edge."
+     },
+     "line": "so that those on the freezing edge gradually move towards the warm centre,"
+    },
+    {
+     "type": "tf",
+     "q": "The penguins' breeding ground is the same place every year.",
+     "options": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "answer": 2,
+     "explain": "We learn why the ground is chosen, but not whether it stays the same each year.",
+     "notes": {
+      "True": "The text never says this. We learn why the ground is chosen, but not whether it stays the same each year.",
+      "False": "The text never says this. We learn why the ground is chosen, but not whether it stays the same each year."
+     }
+    },
+    {
+     "type": "findword",
+     "q": "Tap the word that means “crowd closely together”.",
+     "line": "the males huddle together in tightly packed groups of thousands.",
+     "answer": "huddle",
+     "explain": "“huddle” means crowd closely together: “the males huddle together in tightly packed groups of thousands.”"
+    }
+   ]
   }
  ]
 }
