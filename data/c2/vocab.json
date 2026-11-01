@@ -2358,5 +2358,281 @@
   "q": "Spell the word: perfectly suitable for a particular situation",
   "answer": "apt",
   "explain": "Her joke was apt and kind."
+ },
+ {
+  "type": "picq",
+  "q": "Which face looks sheepish, a little embarrassed after a silly mistake?",
+  "options": [
+   "a smiling face with a drop of sweat",
+   "a face with little hearts around it",
+   "a face laughing with its eyes shut",
+   "a boy with a frown and wobbly mouth"
+  ],
+  "art": {
+   "a smiling face with a drop of sweat": "icon:phew",
+   "a face with little hearts around it": "icon:love-face",
+   "a face laughing with its eyes shut": "icon:laugh",
+   "a boy with a frown and wobbly mouth": "icon:worried"
+  },
+  "answer": 0,
+  "explain": "Sheepish means slightly embarrassed. An awkward smile with a bead of sweat says “Oops, my bad!”",
+  "notes": {
+   "a face with little hearts around it": "The hearts show someone smitten, not embarrassed.",
+   "a face laughing with its eyes shut": "A full, open laugh is carefree, not sheepish.",
+   "a boy with a frown and wobbly mouth": "This frown is anxious about what might happen, not embarrassed about what did."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which face looks utterly smitten?",
+  "options": [
+   "a face with little hearts around it",
+   "a face with a small, gentle smile",
+   "a face with a hand on its chin",
+   "a face with a finger on its lips"
+  ],
+  "art": {
+   "a face with little hearts around it": "icon:love-face",
+   "a face with a small, gentle smile": "icon:slight-smile",
+   "a face with a hand on its chin": "icon:thinking",
+   "a face with a finger on its lips": "icon:shush"
+  },
+  "answer": 0,
+  "explain": "Smitten means suddenly full of love or adoration, so hearts float all around.",
+  "notes": {
+   "a face with a small, gentle smile": "A gentle smile is content, but far from smitten.",
+   "a face with a hand on its chin": "A hand on the chin is pensive, weighing something up.",
+   "a face with a finger on its lips": "A finger on the lips is about keeping quiet, not adoration."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which of these is the most ephemeral, lasting only a moment?",
+  "options": [
+   "a few soap bubbles",
+   "a grey rock",
+   "a snowy mountain",
+   "a tall pine tree"
+  ],
+  "art": {
+   "a few soap bubbles": "icon:bubbles",
+   "a grey rock": "icon:rock",
+   "a snowy mountain": "icon:snow-mountain",
+   "a tall pine tree": "icon:pine"
+  },
+  "answer": 0,
+  "explain": "Ephemeral means short-lived, and bubbles pop within seconds.",
+  "notes": {
+   "a grey rock": "A rock is about as long-lasting as anything gets.",
+   "a snowy mountain": "Mountains stand for millions of years.",
+   "a tall pine tree": "A pine tree can live for centuries."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which creature is famously industrious?",
+  "options": [
+   "a brown ant",
+   "a grey koala",
+   "a grey seal",
+   "a green turtle"
+  ],
+  "art": {
+   "a brown ant": "icon:ant",
+   "a grey koala": "icon:koala",
+   "a grey seal": "icon:seal",
+   "a green turtle": "icon:turtle"
+  },
+  "answer": 0,
+  "explain": "Industrious means hard-working, and ants never seem to stop carrying food back to the nest.",
+  "notes": {
+   "a grey koala": "Koalas sleep up to twenty hours a day: hardly industrious!",
+   "a grey seal": "Seals spend lots of time lazing on rocks.",
+   "a green turtle": "Turtles are known for being slow and steady, not busy."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which would most likely be a family heirloom?",
+  "options": [
+   "a gold ring with a gem",
+   "a drink cup with a straw",
+   "a folded newspaper",
+   "a purple crayon"
+  ],
+  "art": {
+   "a gold ring with a gem": "icon:ring",
+   "a drink cup with a straw": "icon:cup",
+   "a folded newspaper": "icon:newspaper",
+   "a purple crayon": "icon:crayon"
+  },
+  "answer": 0,
+  "explain": "An heirloom is a precious object passed down from grandparents to grandchildren, like a jewelled ring.",
+  "notes": {
+   "a drink cup with a straw": "A cup with a straw is used once and thrown away.",
+   "a folded newspaper": "A newspaper is old news by tomorrow.",
+   "a purple crayon": "A crayon gets used up. Nobody passes one down for generations."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which one is dormant, resting until the right moment to grow?",
+  "options": [
+   "a brown acorn",
+   "a smiling sunflower",
+   "a bunch of flowers",
+   "a little orange flame"
+  ],
+  "art": {
+   "a brown acorn": "icon:chestnut",
+   "a smiling sunflower": "icon:sunflower",
+   "a bunch of flowers": "icon:bouquet",
+   "a little orange flame": "icon:fire"
+  },
+  "answer": 0,
+  "explain": "A seed lies dormant through winter and only sprouts when conditions are right.",
+  "notes": {
+   "a smiling sunflower": "A sunflower in full bloom has already finished growing.",
+   "a bunch of flowers": "Cut flowers won't grow again. They're past growing, not resting.",
+   "a little orange flame": "A flame is active and burning, the opposite of dormant."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which face looks contemplative, lost in thought?",
+  "options": [
+   "a face with a hand on its chin",
+   "a face laughing with its eyes shut",
+   "big Z Z Z letters",
+   "a face with little hearts around it"
+  ],
+  "art": {
+   "a face with a hand on its chin": "icon:thinking",
+   "a face laughing with its eyes shut": "icon:laugh",
+   "big Z Z Z letters": "icon:sleep",
+   "a face with little hearts around it": "icon:love-face"
+  },
+  "answer": 0,
+  "explain": "Contemplative means thinking deeply and quietly, chin resting on one hand.",
+  "notes": {
+   "a face laughing with its eyes shut": "Laughing is spontaneous, not deep in thought.",
+   "big Z Z Z letters": "Asleep isn't thinking at all.",
+   "a face with little hearts around it": "Hearts show adoration, not quiet reflection."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which of these is incandescent, giving out light because it is hot?",
+  "options": [
+   "a glowing light bulb",
+   "a blue ice cube",
+   "a water droplet",
+   "a crescent moon"
+  ],
+  "art": {
+   "a glowing light bulb": "icon:bulb",
+   "a blue ice cube": "icon:ice",
+   "a water droplet": "icon:droplet",
+   "a crescent moon": "icon:moon"
+  },
+  "answer": 0,
+  "explain": "Incandescent means glowing with heat, like the hot wire inside an old-fashioned bulb.",
+  "notes": {
+   "a blue ice cube": "Ice is cold and gives out no light of its own.",
+   "a water droplet": "A droplet may sparkle, but it only reflects light.",
+   "a crescent moon": "The Moon only reflects sunlight. It isn't hot or glowing itself."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which hero would be most at home in an aquatic world?",
+  "options": [
+   "a mermaid with a shiny tail",
+   "a child in a white space suit",
+   "a hero in a fluffy blue coat",
+   "a boy in a green coat"
+  ],
+  "art": {
+   "a mermaid with a shiny tail": "hero_mermaid",
+   "a child in a white space suit": "hero_space",
+   "a hero in a fluffy blue coat": "hero_snow",
+   "a boy in a green coat": "hero_meadow"
+  },
+  "answer": 0,
+  "explain": "Aquatic means living in water, and a mermaid's tail is made for swimming.",
+  "notes": {
+   "a child in a white space suit": "An astronaut explores space, not the ocean.",
+   "a hero in a fluffy blue coat": "A snow coat is for icy land, and it would be soaked in seconds.",
+   "a boy in a green coat": "This boy is dressed for meadows and fields."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which creature undergoes a complete metamorphosis?",
+  "options": [
+   "a green caterpillar",
+   "a green lizard",
+   "a friendly snake",
+   "a green turtle"
+  ],
+  "art": {
+   "a green caterpillar": "icon:caterpillar",
+   "a green lizard": "icon:lizard",
+   "a friendly snake": "icon:snake",
+   "a green turtle": "icon:turtle"
+  },
+  "answer": 0,
+  "explain": "Metamorphosis is a total change of body shape, as when a caterpillar becomes a butterfly.",
+  "notes": {
+   "a green lizard": "A lizard grows bigger but keeps the same shape.",
+   "a friendly snake": "A snake sheds its skin, but it stays a snake.",
+   "a green turtle": "A turtle hatches as a tiny turtle and simply grows."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which object is the classic emblem of time slipping away?",
+  "options": [
+   "an hourglass with sand",
+   "a calendar page",
+   "a round gold compass",
+   "a gold balance scale"
+  ],
+  "art": {
+   "an hourglass with sand": "icon:hourglass",
+   "a calendar page": "icon:calendar",
+   "a round gold compass": "icon:compass",
+   "a gold balance scale": "icon:scales"
+  },
+  "answer": 0,
+  "explain": "As the sand trickles through, an hourglass shows time running out.",
+  "notes": {
+   "a calendar page": "A calendar records dates, but it doesn't show time draining away.",
+   "a round gold compass": "A compass is an emblem of direction, not time.",
+   "a gold balance scale": "Scales are the emblem of fairness and justice."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which of these is the most aerodynamic, shaped to slice through the air?",
+  "options": [
+   "a pointy purple rocket",
+   "a red brick",
+   "a cardboard box",
+   "a little purple teapot"
+  ],
+  "art": {
+   "a pointy purple rocket": "icon:rocket",
+   "a red brick": "icon:brick",
+   "a cardboard box": "icon:box",
+   "a little purple teapot": "icon:teapot"
+  },
+  "answer": 0,
+  "explain": "Aerodynamic shapes are smooth and pointed, so air flows round them easily, just like a rocket.",
+  "notes": {
+   "a red brick": "A brick is blocky, so air would push hard against it.",
+   "a cardboard box": "Flat sides make a box drag through the air.",
+   "a little purple teapot": "A teapot is round and lumpy, far from streamlined."
+  }
  }
 ]

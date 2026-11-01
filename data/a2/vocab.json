@@ -2130,5 +2130,304 @@
   "q": "Spell the word: twelve o'clock in the daytime",
   "answer": "midday",
   "explain": "Midday is twelve o'clock in the daytime, around lunchtime."
+ },
+ {
+  "type": "picq",
+  "q": "Which picture shows that someone is very sleepy?",
+  "options": [
+   "big Z Z Z letters",
+   "a boy running fast",
+   "a face laughing with its eyes shut",
+   "a boy in a chef's hat"
+  ],
+  "art": {
+   "big Z Z Z letters": "icon:sleep",
+   "a boy running fast": "icon:run",
+   "a face laughing with its eyes shut": "icon:laugh",
+   "a boy in a chef's hat": "icon:chef"
+  },
+  "answer": 0,
+  "explain": "Zzz is the sound of someone asleep, so it shows a very tired, sleepy person.",
+  "notes": {
+   "a boy running fast": "This boy is running fast. He has lots of energy, so he isn't sleepy.",
+   "a face laughing with its eyes shut": "This face is laughing at something funny. It is wide awake.",
+   "a boy in a chef's hat": "This boy is ready to cook dinner, not ready for bed."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which picture shows someone who is worried?",
+  "options": [
+   "a boy with a frown and wobbly mouth",
+   "a round face with rosy cheeks",
+   "a child sitting cross-legged, eyes closed",
+   "a face with little hearts around it"
+  ],
+  "art": {
+   "a boy with a frown and wobbly mouth": "icon:worried",
+   "a round face with rosy cheeks": "icon:smile",
+   "a child sitting cross-legged, eyes closed": "icon:calm",
+   "a face with little hearts around it": "icon:love-face"
+  },
+  "answer": 0,
+  "explain": "When you are worried, you think something bad might happen, so your face frowns a little.",
+  "notes": {
+   "a round face with rosy cheeks": "This face is smiling happily, so it isn't worried.",
+   "a child sitting cross-legged, eyes closed": "This child is sitting quietly and feels calm and peaceful.",
+   "a face with little hearts around it": "The hearts show this face loves something. It feels happy, not worried."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "It's very cold and snowy today. Who is dressed for the weather?",
+  "options": [
+   "a hero in a fluffy blue coat",
+   "a boy in a T-shirt and shorts",
+   "a mermaid with a shiny tail",
+   "a girl in a red silk dress"
+  ],
+  "art": {
+   "a hero in a fluffy blue coat": "hero_snow",
+   "a boy in a T-shirt and shorts": "hero_summer",
+   "a mermaid with a shiny tail": "hero_mermaid",
+   "a girl in a red silk dress": "hero_lunar"
+  },
+  "answer": 0,
+  "explain": "A thick, fluffy coat keeps you warm in the snow.",
+  "notes": {
+   "a boy in a T-shirt and shorts": "A T-shirt and shorts are for hot, sunny days. He would be very cold!",
+   "a mermaid with a shiny tail": "A mermaid lives in the sea. She isn't wearing warm clothes for snow.",
+   "a girl in a red silk dress": "A thin silk dress is pretty, but it won't keep you warm in the snow."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "You are lost in a big forest. Which one helps you find the way?",
+  "options": [
+   "a folded paper map",
+   "an hourglass with sand",
+   "a little purple teapot",
+   "a calendar page"
+  ],
+  "art": {
+   "a folded paper map": "icon:map",
+   "an hourglass with sand": "icon:hourglass",
+   "a little purple teapot": "icon:teapot",
+   "a calendar page": "icon:calendar"
+  },
+  "answer": 0,
+  "explain": "A map shows the paths and places, so you can find your way.",
+  "notes": {
+   "an hourglass with sand": "An hourglass shows how much time has passed. It can't show you the way.",
+   "a little purple teapot": "A teapot makes tea. It doesn't help you find the path.",
+   "a calendar page": "A calendar shows the days and months, not the paths in a forest."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Where can you sleep when you go camping?",
+  "options": [
+   "a small tent",
+   "a building with tall columns",
+   "a little shop with a heart",
+   "a yellow school bus"
+  ],
+  "art": {
+   "a small tent": "icon:tent",
+   "a building with tall columns": "icon:museum",
+   "a little shop with a heart": "icon:shop",
+   "a yellow school bus": "icon:bus"
+  },
+  "answer": 0,
+  "explain": "When you camp, you sleep outside in a tent.",
+  "notes": {
+   "a building with tall columns": "That's a museum. You visit it in the day to see old things.",
+   "a little shop with a heart": "That's a shop. You buy things there, but you don't sleep there.",
+   "a yellow school bus": "That's a school bus. It takes you to school, not camping."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Who cooks food in a restaurant kitchen?",
+  "options": [
+   "a boy in a tall white hat",
+   "a boy in shiny armour with a sword",
+   "a child in a white space suit",
+   "a girl dancing in a dress"
+  ],
+  "art": {
+   "a boy in a tall white hat": "icon:chef",
+   "a boy in shiny armour with a sword": "hero_knight",
+   "a child in a white space suit": "hero_space",
+   "a girl dancing in a dress": "icon:dancer"
+  },
+  "answer": 0,
+  "explain": "A chef wears a tall white hat and cooks food in a kitchen.",
+  "notes": {
+   "a boy in shiny armour with a sword": "A knight fights dragons in stories. He doesn't cook in a restaurant.",
+   "a child in a white space suit": "An astronaut flies into space, not into a kitchen.",
+   "a girl dancing in a dress": "A dancer dances on a stage. She doesn't cook the food."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which pet is wearing glasses?",
+  "options": [
+   "a purple owl holding a book",
+   "an orange fox",
+   "a black and white panda",
+   "a grey penguin"
+  ],
+  "art": {
+   "a purple owl holding a book": "pet_owl",
+   "an orange fox": "pet_fox",
+   "a black and white panda": "pet_panda",
+   "a grey penguin": "pet_penguin"
+  },
+  "answer": 0,
+  "explain": "Look at the eyes: the owl has round glasses on, like someone who loves reading.",
+  "notes": {
+   "an orange fox": "Look at the fox's eyes. There are no glasses on its face.",
+   "a black and white panda": "The panda has black patches round its eyes, but no glasses.",
+   "a grey penguin": "The penguin has big eyes, but it isn't wearing glasses."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which picture shows rainy weather?",
+  "options": [
+   "a grey cloud with drops falling",
+   "a sun peeping out from a cloud",
+   "a rainbow between two clouds",
+   "a smiling yellow sun"
+  ],
+  "art": {
+   "a grey cloud with drops falling": "icon:rain",
+   "a sun peeping out from a cloud": "icon:sun-cloud",
+   "a rainbow between two clouds": "icon:rainbow",
+   "a smiling yellow sun": "word_sun"
+  },
+  "answer": 0,
+  "explain": "Rain falls from grey clouds in drops of water.",
+  "notes": {
+   "a sun peeping out from a cloud": "The sun is coming out, so the weather is getting brighter, not rainy.",
+   "a rainbow between two clouds": "A rainbow comes after the rain, when the sun shines again.",
+   "a smiling yellow sun": "A bright sun means a sunny day. You won't need an umbrella."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which one keeps your feet warm in winter?",
+  "options": [
+   "a pair of pink socks",
+   "a pink cap",
+   "heart-shaped sunglasses",
+   "a blue bow tie"
+  ],
+  "art": {
+   "a pair of pink socks": "icon:socks",
+   "a pink cap": "icon:cap",
+   "heart-shaped sunglasses": "acc:heart_shades",
+   "a blue bow tie": "acc:bow_tie"
+  },
+  "answer": 0,
+  "explain": "You wear socks on your feet, and they keep your toes warm.",
+  "notes": {
+   "a pink cap": "You wear a cap on your head, not on your feet.",
+   "heart-shaped sunglasses": "Sunglasses go on your eyes when it's sunny.",
+   "a blue bow tie": "A bow tie goes round your neck to look smart."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which one is a vegetable?",
+  "options": [
+   "an orange carrot",
+   "a yellow banana",
+   "a bunch of grapes",
+   "two red cherries"
+  ],
+  "art": {
+   "an orange carrot": "icon:carrot",
+   "a yellow banana": "icon:banana",
+   "a bunch of grapes": "icon:grapes",
+   "two red cherries": "icon:cherries"
+  },
+  "answer": 0,
+  "explain": "A carrot is a vegetable. It grows under the ground.",
+  "notes": {
+   "a yellow banana": "A banana is a fruit. It grows on a tree.",
+   "a bunch of grapes": "Grapes are fruit. They grow in bunches.",
+   "two red cherries": "Cherries are small, sweet fruit."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "In this sport, you hit a shuttlecock over a high net. Which one?",
+  "options": [
+   "a long racket and a white shuttle",
+   "an orange ball with black lines",
+   "a black and white ball",
+   "a fuzzy green ball"
+  ],
+  "art": {
+   "a long racket and a white shuttle": "icon:badminton",
+   "an orange ball with black lines": "icon:basketball",
+   "a black and white ball": "icon:football",
+   "a fuzzy green ball": "icon:tennis"
+  },
+  "answer": 0,
+  "explain": "Badminton is played with a light racket and a feathery shuttlecock.",
+  "notes": {
+   "an orange ball with black lines": "That's a basketball. You throw it into a hoop.",
+   "a black and white ball": "That's a football. You kick it into a goal.",
+   "a fuzzy green ball": "That's a tennis ball. Tennis has a net too, but you hit a ball, not a shuttlecock."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which one tells you exactly how long a race took?",
+  "options": [
+   "a purple stopwatch",
+   "a calendar page",
+   "a gold medal",
+   "a pink megaphone"
+  ],
+  "art": {
+   "a purple stopwatch": "icon:stopwatch",
+   "a calendar page": "icon:calendar",
+   "a gold medal": "icon:medal",
+   "a pink megaphone": "icon:megaphone"
+  },
+  "answer": 0,
+  "explain": "You press a stopwatch at the start and the end of a race to see how many seconds it took.",
+  "notes": {
+   "a calendar page": "A calendar shows days, not the seconds of a race.",
+   "a gold medal": "You win a medal at the end of a race, but it doesn't tell the time.",
+   "a pink megaphone": "A megaphone makes your voice loud, but it doesn't time the race."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which hero is ready to sail the sea to look for treasure?",
+  "options": [
+   "a girl in a striped top and long blue coat",
+   "a boy in shiny armour with a sword",
+   "a boy in a green vest with a bag",
+   "a girl in a pink apron with a whisk"
+  ],
+  "art": {
+   "a girl in a striped top and long blue coat": "hero_pirate",
+   "a boy in shiny armour with a sword": "hero_knight",
+   "a boy in a green vest with a bag": "hero_ranger",
+   "a girl in a pink apron with a whisk": "hero_candy"
+  },
+  "answer": 0,
+  "explain": "A pirate sails a ship and follows a treasure map. Look at her map and sailor's coat.",
+  "notes": {
+   "a boy in shiny armour with a sword": "A knight rides a horse and fights with a sword. He doesn't sail ships.",
+   "a boy in a green vest with a bag": "This explorer walks in the forest, not across the sea.",
+   "a girl in a pink apron with a whisk": "This girl is ready to bake cakes, not to sail a ship."
+  }
  }
 ]

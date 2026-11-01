@@ -2318,5 +2318,304 @@
   "q": "Spell the word: a person you compete against",
   "answer": "opponent",
   "explain": "My opponent in the chess final was very good."
+ },
+ {
+  "type": "picq",
+  "q": "Which picture shows someone who feels relieved?",
+  "options": [
+   "a smiling face with a drop of sweat",
+   "a boy with a frown and wobbly mouth",
+   "a face with a hand on its chin",
+   "a face laughing with its eyes shut"
+  ],
+  "art": {
+   "a smiling face with a drop of sweat": "icon:phew",
+   "a boy with a frown and wobbly mouth": "icon:worried",
+   "a face with a hand on its chin": "icon:thinking",
+   "a face laughing with its eyes shut": "icon:laugh"
+  },
+  "answer": 0,
+  "explain": "Relieved means you feel better because something bad didn't happen. The sweat drop and smile say “Phew!”",
+  "notes": {
+   "a boy with a frown and wobbly mouth": "This boy still looks worried. You feel relieved after the worry has gone.",
+   "a face with a hand on its chin": "This face is thinking hard about a problem. It hasn't got that “phew” feeling yet.",
+   "a face laughing with its eyes shut": "This face is laughing at something funny. Relief is a calmer “phew, that's over” feeling."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which picture shows someone who is keeping a secret?",
+  "options": [
+   "a face with a finger on its lips",
+   "a head with sound lines coming out",
+   "a pink megaphone",
+   "a monkey covering its eyes"
+  ],
+  "art": {
+   "a face with a finger on its lips": "icon:shush",
+   "a head with sound lines coming out": "icon:speaking",
+   "a pink megaphone": "icon:megaphone",
+   "a monkey covering its eyes": "icon:monkey"
+  },
+  "answer": 0,
+  "explain": "A finger on your lips means “Shh! Don't tell anyone”, so the secret stays secret.",
+  "notes": {
+   "a head with sound lines coming out": "This head is talking out loud, so the secret might not stay secret!",
+   "a pink megaphone": "A megaphone makes your voice louder, so everyone would hear.",
+   "a monkey covering its eyes": "Covering your eyes means you don't want to see something, not that you're hiding a secret."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which one would a scientist use to look at tiny things like plant cells?",
+  "options": [
+   "a purple microscope",
+   "a test tube with bubbly liquid",
+   "a round gold compass",
+   "a purple crystal ball"
+  ],
+  "art": {
+   "a purple microscope": "icon:microscope",
+   "a test tube with bubbly liquid": "icon:test-tube",
+   "a round gold compass": "icon:compass",
+   "a purple crystal ball": "icon:crystal-ball"
+  },
+  "answer": 0,
+  "explain": "A microscope makes very small things look big, so you can see cells.",
+  "notes": {
+   "a test tube with bubbly liquid": "A test tube holds liquids for experiments. It doesn't make things look bigger.",
+   "a round gold compass": "A compass shows north, south, east and west. It can't make cells bigger.",
+   "a purple crystal ball": "In stories, a crystal ball shows the future. Scientists don't use it."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which picture shows someone who is curious about something?",
+  "options": [
+   "a boy peering through a round lens",
+   "big Z Z Z letters",
+   "a cat crying big tears",
+   "a child sitting cross-legged, eyes closed"
+  ],
+  "art": {
+   "a boy peering through a round lens": "icon:monocle",
+   "big Z Z Z letters": "icon:sleep",
+   "a cat crying big tears": "icon:sad-cat",
+   "a child sitting cross-legged, eyes closed": "icon:calm"
+  },
+  "answer": 0,
+  "explain": "Curious means you want to find out more, so he is looking closely to learn about it.",
+  "notes": {
+   "big Z Z Z letters": "Zzz means someone is asleep. They aren't trying to find anything out.",
+   "a cat crying big tears": "This cat is sad and crying. It isn't interested in finding things out.",
+   "a child sitting cross-legged, eyes closed": "This child is resting with closed eyes, not looking at something new."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Who looks ready for a long walk in the forest?",
+  "options": [
+   "a boy in a green vest with a bag",
+   "a girl in a red silk dress",
+   "a mermaid with a shiny tail",
+   "a child in a white space suit"
+  ],
+  "art": {
+   "a boy in a green vest with a bag": "hero_ranger",
+   "a girl in a red silk dress": "hero_lunar",
+   "a mermaid with a shiny tail": "hero_mermaid",
+   "a child in a white space suit": "hero_space"
+  },
+  "answer": 0,
+  "explain": "Strong boots, a useful vest and a bag are just right for exploring a forest.",
+  "notes": {
+   "a girl in a red silk dress": "A silk dress and a lantern are for a festival evening, not a muddy forest path.",
+   "a mermaid with a shiny tail": "A mermaid swims in the sea. She can't walk through a forest.",
+   "a child in a white space suit": "A space suit is for walking on the Moon, not under the trees."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which one is fragile, so you must carry it carefully?",
+  "options": [
+   "an empty glass jar",
+   "a grey rock",
+   "a wooden log",
+   "a red brick"
+  ],
+  "art": {
+   "an empty glass jar": "icon:jar",
+   "a grey rock": "icon:rock",
+   "a wooden log": "icon:log",
+   "a red brick": "icon:brick"
+  },
+  "answer": 0,
+  "explain": "Fragile means it breaks easily. Glass can smash if you drop it.",
+  "notes": {
+   "a grey rock": "A rock is hard and strong. It won't break if you drop it.",
+   "a wooden log": "A log is heavy, solid wood. It won't smash.",
+   "a red brick": "A brick is made to be strong for building houses."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which one would you find at a fairground?",
+  "options": [
+   "a twisty ride with a little train",
+   "a building with tall columns",
+   "a small camping tent",
+   "a purple microscope"
+  ],
+  "art": {
+   "a twisty ride with a little train": "icon:roller-coaster",
+   "a building with tall columns": "icon:museum",
+   "a small camping tent": "icon:tent",
+   "a purple microscope": "icon:microscope"
+  },
+  "answer": 0,
+  "explain": "A roller coaster is a fast, twisty ride, and fairgrounds are full of rides.",
+  "notes": {
+   "a building with tall columns": "That's a museum, a quiet place for looking at old things.",
+   "a small camping tent": "A camping tent is for sleeping outdoors, not a fairground ride.",
+   "a purple microscope": "A microscope belongs in a science lab, not at a fairground."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which hero would be most useful in a baking competition?",
+  "options": [
+   "a girl in a pink apron with a whisk",
+   "a boy in shiny armour with a sword",
+   "a girl in a striped top and long blue coat",
+   "a boy in a starry robe with a book"
+  ],
+  "art": {
+   "a girl in a pink apron with a whisk": "hero_candy",
+   "a boy in shiny armour with a sword": "hero_knight",
+   "a girl in a striped top and long blue coat": "hero_pirate",
+   "a boy in a starry robe with a book": "hero_scholar"
+  },
+  "answer": 0,
+  "explain": "She has an apron and a whisk, so she's ready to mix cake batter.",
+  "notes": {
+   "a boy in shiny armour with a sword": "A knight's sword is no use for mixing a cake!",
+   "a girl in a striped top and long blue coat": "A pirate knows about ships and maps, not baking.",
+   "a boy in a starry robe with a book": "This boy loves books and studying, but he isn't dressed for baking."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which one do you use to measure how long a pencil is?",
+  "options": [
+   "a yellow ruler",
+   "a gold balance scale",
+   "a purple stopwatch",
+   "a calendar page"
+  ],
+  "art": {
+   "a yellow ruler": "icon:ruler",
+   "a gold balance scale": "icon:scales",
+   "a purple stopwatch": "icon:stopwatch",
+   "a calendar page": "icon:calendar"
+  },
+  "answer": 0,
+  "explain": "A ruler has centimetres on it, so it measures length.",
+  "notes": {
+   "a gold balance scale": "A balance scale measures how heavy something is, not how long.",
+   "a purple stopwatch": "A stopwatch measures time, like seconds in a race.",
+   "a calendar page": "A calendar counts days, not centimetres."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which picture shows a hobby where you grow plants?",
+  "options": [
+   "a little green shoot in soil",
+   "a paint palette",
+   "a drum with sticks",
+   "a game controller"
+  ],
+  "art": {
+   "a little green shoot in soil": "icon:sprout",
+   "a paint palette": "icon:palette",
+   "a drum with sticks": "icon:drum",
+   "a game controller": "icon:game"
+  },
+  "answer": 0,
+  "explain": "Gardening means growing plants, and every plant starts as a little shoot.",
+  "notes": {
+   "a paint palette": "A palette is for painting pictures, a different hobby.",
+   "a drum with sticks": "A drum is for playing music.",
+   "a game controller": "A controller is for playing video games, not growing plants."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "This endangered animal eats bamboo. Which one?",
+  "options": [
+   "a black and white face",
+   "a grey koala",
+   "a brown monkey",
+   "a stripy orange face"
+  ],
+  "art": {
+   "a black and white face": "icon:panda",
+   "a grey koala": "icon:koala",
+   "a brown monkey": "icon:monkey-face",
+   "a stripy orange face": "icon:tiger"
+  },
+  "answer": 0,
+  "explain": "Giant pandas eat bamboo almost all day long.",
+  "notes": {
+   "a grey koala": "Koalas eat eucalyptus leaves, not bamboo.",
+   "a brown monkey": "Monkeys eat fruit and leaves. Bamboo isn't their main food.",
+   "a stripy orange face": "Tigers are endangered too, but they eat meat, not bamboo."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Where can you see old and valuable things from the past?",
+  "options": [
+   "a building with tall columns",
+   "a striped circus tent",
+   "a big turning wheel ride",
+   "a little shop with a heart"
+  ],
+  "art": {
+   "a building with tall columns": "icon:museum",
+   "a striped circus tent": "icon:circus",
+   "a big turning wheel ride": "icon:ferris-wheel",
+   "a little shop with a heart": "icon:shop"
+  },
+  "answer": 0,
+  "explain": "A museum keeps old, precious things so people can learn about history.",
+  "notes": {
+   "a striped circus tent": "A circus has clowns and acrobats, not old treasures.",
+   "a big turning wheel ride": "A Ferris wheel is a fun ride. It doesn't show history.",
+   "a little shop with a heart": "A shop sells new things for people to buy."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which sign warns you about danger?",
+  "options": [
+   "a yellow triangle with a !",
+   "a green box with a tick",
+   "a thumbs-up hand",
+   "a gold medal"
+  ],
+  "art": {
+   "a yellow triangle with a !": "icon:warning",
+   "a green box with a tick": "icon:check",
+   "a thumbs-up hand": "icon:thumbs-up",
+   "a gold medal": "icon:medal"
+  },
+  "answer": 0,
+  "explain": "A yellow triangle with ! means “Be careful!”",
+  "notes": {
+   "a green box with a tick": "A tick means something is right or done. It isn't a warning.",
+   "a thumbs-up hand": "A thumbs-up means “Good job!” or “OK”, not danger.",
+   "a gold medal": "A medal is a prize for winning, not a warning."
+  }
  }
 ]

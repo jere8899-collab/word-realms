@@ -36,7 +36,7 @@ const PIC = {
   lake: "🏞️", bike: "🚲", five: "5️⃣", smile: "😊", bone: "🦴", home: "🏡", cube: "🧊", tube: "🧪", flute: "🪈", note: "🎵"
 };
 // painted word pictures (assets/words, made for the C2 picture questions) are used where they exist, emoji otherwise
-const pic = w => WR.asset && WR.asset("word_" + w) ? WR.img("word_" + w, "ph-art") : `<span class="ph-emo" aria-hidden="true">${PIC[w] || "✨"}</span>`;
+const pic = w => WR.wordArt(w) ? WR.img(WR.wordArt(w), "ph-art") : `<span class="ph-emo" aria-hidden="true">${PIC[w] || "✨"}</span>`;
 const START = {                                          // words that start with each letter sound (unit 1–2 pictures)
   s: ["sun", "sock", "snake", "seal"], a: ["apple", "ant"], t: ["tiger", "tent", "tooth", "tomato"], p: ["pig", "panda", "pizza", "pen"],
   i: ["insect", "iguana"], n: ["nest", "nose", "net", "nut"], m: ["moon", "mouse", "monkey", "milk"], d: ["dog", "duck", "drum"],

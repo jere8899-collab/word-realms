@@ -33,9 +33,12 @@ function normalize(item, passage) {
   if (item.type === "order") return { type: "order", q: item.q, answer: item.answer, explain: item.explain, say: item.say, _raw: item.say ? item : undefined };
   if (NEWTYPES.has(item.type)) return { ...item, passage, _raw: item,
     correct: item.type === "mistake" ? `${item.words[item.wrong]} → ${item.fix}` : item.type === "gaps" ? fillGaps(item.text, item.answers) : item.answer };
-  const correct = item.options[item.answer];
-  return { type: item.type === "listen" ? "listen" : item.type === "picq" ? "picq" : "mcq", q: item.q, say: item.say, pic: item.pic, passage, dialogue: item.dialogue,
-    options: WR.shuffle(item.options), correct, explain: item.explain, notes: item.notes };
+  const base = { q: item.q, say: item.say, pic: item.pic, passage, dialogue: item.dialogue,
+    options: WR.shuffle(item.options), correct: item.options[item.answer], explain: item.explain, notes: item.notes };
+  // 🖼️ picture choice: options are labels; `art` maps a label to its picture (A1: the label is the painted word itself).
+  // It keeps _raw like the other new types, so the Mistake Garden re-asks it with its pictures.
+  if (item.type === "picq") return { type: "picq", ...base, art: item.art, _raw: item };
+  return { type: item.type === "listen" ? "listen" : "mcq", ...base };
 }
 // R18: every browser (automated ones too) gets every question type; a test that only drives the classic multiple-choice
 // flow sets window.__WR_CLASSIC_ONLY = true itself
@@ -165,7 +168,7 @@ function qBody(it) {
     h += `<input class="dict-in" id="dictIn" type="text" autocomplete="off" autocorrect="off" autocapitalize="sentences" spellcheck="false" placeholder="Type what you hear…" aria-label="Type what you hear">
       <div class="row" style="margin-top:8px"><button class="btn mint" id="checkBtn" disabled>✅ Check</button></div>`;
   } else if (it.type === "picq") {
-    h += `<div class="opts picgrid">${it.options.map((o, k) => `<button class="opt picopt" data-k="${k}" aria-label="${WR.esc(o)}">${WR.img("word_" + o)}</button>`).join("")}</div>`;
+    h += `<div class="opts picgrid">${it.options.map((o, k) => `<button class="opt picopt" data-k="${k}" aria-label="${WR.esc(o)}">${WR.picImg(it.art ? it.art[o] : o)}</button>`).join("")}</div>`;
   } else {
     h += `<div class="opts">${it.options.map((o, k) => `<button class="opt" data-k="${k}"><span class="k">${"ABCD"[k]}</span>${WR.esc(o)}</button>`).join("")}</div>`;
   }

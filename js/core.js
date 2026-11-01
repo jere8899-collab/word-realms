@@ -103,6 +103,14 @@ WR.img = (id, cls = "", style = "", thumb = false) => {
   const fbs = [thumb && a.thumb, a.path, a.placeholder].filter(x => x && x !== src).join("|");
   return `<img class="${cls}" style="${style}" src="${src}" data-fbs="${fbs}" alt="${WR.esc(a.name)}" decoding="async"${thumb ? ' loading="lazy"' : ""} onerror="WR.fallbackChain(this)">`;
 };
+/* 🖼️ One picture lookup for picture questions and picture cards (lesson picq, phonics, Petal Match):
+   a word → its painted word picture ("cat" → word_cat, or null), and any picture ref → an <img>:
+   a manifest id ("hero_pirate", "pet_owl"), a painted word ("cat"), or "icon:<slug>" / "acc:<name>" (WR.layerSrc). */
+WR.wordArt = w => WR.asset("word_" + w) ? "word_" + w : null;
+WR.picImg = (ref, cls = "") => {
+  const id = WR.asset(ref) ? ref : WR.wordArt(ref); if (id) return WR.img(id, cls);
+  return /^(icon|acc):/.test(ref) ? `<img class="${cls}" src="${WR.layerSrc(ref)}" alt="" decoding="async">` : "";
+};
 
 /* ---------- state ---------- */
 function freshState() {

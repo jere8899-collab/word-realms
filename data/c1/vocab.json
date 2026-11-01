@@ -2392,5 +2392,281 @@
   "q": "Spell the word: slightly wet in an unpleasant way",
   "answer": "damp",
   "explain": "My socks were damp after the walk."
+ },
+ {
+  "type": "picq",
+  "q": "Which face could you describe as apprehensive?",
+  "options": [
+   "a boy with a frown and wobbly mouth",
+   "a smiling face with a drop of sweat",
+   "a face with a hand on its chin",
+   "a face laughing with its eyes shut"
+  ],
+  "art": {
+   "a boy with a frown and wobbly mouth": "icon:worried",
+   "a smiling face with a drop of sweat": "icon:phew",
+   "a face with a hand on its chin": "icon:thinking",
+   "a face laughing with its eyes shut": "icon:laugh"
+  },
+  "answer": 0,
+  "explain": "Apprehensive means nervous about something that might happen soon, which shows in a tense frown.",
+  "notes": {
+   "a smiling face with a drop of sweat": "This face is relieved: the worrying moment is already over.",
+   "a face with a hand on its chin": "This face is thoughtful and puzzling something out, rather than nervous.",
+   "a face laughing with its eyes shut": "Laughing shows amusement, the opposite of apprehension."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which picture best captures a sense of tranquillity?",
+  "options": [
+   "a pink flower floating on a lily pad",
+   "a twisty ride with a little train",
+   "a huge crashing wave",
+   "a yellow lightning bolt"
+  ],
+  "art": {
+   "a pink flower floating on a lily pad": "icon:lotus",
+   "a twisty ride with a little train": "icon:roller-coaster",
+   "a huge crashing wave": "icon:wave",
+   "a yellow lightning bolt": "icon:zap"
+  },
+  "answer": 0,
+  "explain": "Tranquillity is deep calm. A flower resting on still water feels peaceful.",
+  "notes": {
+   "a twisty ride with a little train": "A roller coaster is thrilling and loud, not tranquil.",
+   "a huge crashing wave": "A crashing wave is wild and powerful, the opposite of still water.",
+   "a yellow lightning bolt": "Lightning is sudden and dramatic, not peaceful."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which picture would an astronomer find the most fascinating?",
+  "options": [
+   "a swirl of stars in the night sky",
+   "a purple microscope",
+   "a test tube with bubbly liquid",
+   "a folded paper map"
+  ],
+  "art": {
+   "a swirl of stars in the night sky": "icon:galaxy",
+   "a purple microscope": "icon:microscope",
+   "a test tube with bubbly liquid": "icon:test-tube",
+   "a folded paper map": "icon:map"
+  },
+  "answer": 0,
+  "explain": "Astronomers study stars, planets and galaxies.",
+  "notes": {
+   "a purple microscope": "Biologists use microscopes to study living things up close.",
+   "a test tube with bubbly liquid": "Chemists mix substances in test tubes.",
+   "a folded paper map": "Geographers study maps of the Earth, not the stars."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which character looks as if they belong in medieval times?",
+  "options": [
+   "a boy in shiny armour with a sword",
+   "a child in a white space suit",
+   "a boy in a T-shirt and shorts",
+   "a friendly robot"
+  ],
+  "art": {
+   "a boy in shiny armour with a sword": "hero_knight",
+   "a child in a white space suit": "hero_space",
+   "a boy in a T-shirt and shorts": "hero_summer",
+   "a friendly robot": "icon:robot"
+  },
+  "answer": 0,
+  "explain": "Medieval times were about a thousand years ago, when knights wore armour and carried swords.",
+  "notes": {
+   "a child in a white space suit": "A space suit is modern, even futuristic, not medieval.",
+   "a boy in a T-shirt and shorts": "A T-shirt and shorts are today's clothes.",
+   "a friendly robot": "Robots belong to the modern world and the future."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which gesture shows that you wholeheartedly approve of an idea?",
+  "options": [
+   "a thumbs-up hand",
+   "an open hand waving",
+   "a finger pointing up",
+   "a boy raising one hand"
+  ],
+  "art": {
+   "a thumbs-up hand": "icon:thumbs-up",
+   "an open hand waving": "icon:wave-hand",
+   "a finger pointing up": "icon:point-up",
+   "a boy raising one hand": "icon:raise-hand"
+  },
+  "answer": 0,
+  "explain": "A thumbs-up means “Great idea, I'm all for it!”",
+  "notes": {
+   "an open hand waving": "A wave is a greeting or goodbye, not approval.",
+   "a finger pointing up": "Pointing up draws attention to something, but doesn't show you agree.",
+   "a boy raising one hand": "Raising your hand means you'd like to speak, not that you approve."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which of these is a mythical creature?",
+  "options": [
+   "a pastel unicorn",
+   "a grey koala",
+   "a grey seal",
+   "a purple octopus"
+  ],
+  "art": {
+   "a pastel unicorn": "pet_unicorn",
+   "a grey koala": "icon:koala",
+   "a grey seal": "icon:seal",
+   "a purple octopus": "icon:octopus"
+  },
+  "answer": 0,
+  "explain": "Mythical creatures come from legends and don't really exist, like the unicorn.",
+  "notes": {
+   "a grey koala": "Koalas are real animals that live in Australia.",
+   "a grey seal": "Seals are real animals that swim in cold seas.",
+   "a purple octopus": "Octopuses are real too, even if they look a bit magical."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which of these is perishable, so it goes off quickly if you leave it out?",
+  "options": [
+   "a glass of milk",
+   "a grey rock",
+   "a gold coin with a star",
+   "a golden key"
+  ],
+  "art": {
+   "a glass of milk": "icon:milk",
+   "a grey rock": "icon:rock",
+   "a gold coin with a star": "icon:coin",
+   "a golden key": "icon:key"
+  },
+  "answer": 0,
+  "explain": "Perishable food spoils quickly, and milk turns sour if it isn't kept cold.",
+  "notes": {
+   "a grey rock": "A rock lasts for millions of years. It can't go bad.",
+   "a gold coin with a star": "A coin is metal. It won't spoil.",
+   "a golden key": "A key is metal too, so it lasts for years."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which instrument would help you navigate across open sea?",
+  "options": [
+   "a round gold compass",
+   "an hourglass with sand",
+   "a purple crystal ball",
+   "a gold balance scale"
+  ],
+  "art": {
+   "a round gold compass": "icon:compass",
+   "an hourglass with sand": "icon:hourglass",
+   "a purple crystal ball": "icon:crystal-ball",
+   "a gold balance scale": "icon:scales"
+  },
+  "answer": 0,
+  "explain": "To navigate is to find your direction, and a compass always points north.",
+  "notes": {
+   "an hourglass with sand": "An hourglass tracks time, but it can't tell you which way to sail.",
+   "a purple crystal ball": "A crystal ball is for fortune-telling in stories, not real navigation.",
+   "a gold balance scale": "A balance scale weighs things. It gives no direction."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which hero looks the most scholarly?",
+  "options": [
+   "a boy in a starry robe with a book",
+   "a girl in a striped top and long blue coat",
+   "a boy in a T-shirt and shorts",
+   "a girl in a pink apron with a whisk"
+  ],
+  "art": {
+   "a boy in a starry robe with a book": "hero_scholar",
+   "a girl in a striped top and long blue coat": "hero_pirate",
+   "a boy in a T-shirt and shorts": "hero_summer",
+   "a girl in a pink apron with a whisk": "hero_candy"
+  },
+  "answer": 0,
+  "explain": "Scholarly means devoted to studying and learning, and he carries a book in a scholar's robe.",
+  "notes": {
+   "a girl in a striped top and long blue coat": "She looks adventurous, not studious. Her scroll is a treasure map.",
+   "a boy in a T-shirt and shorts": "He's dressed for the beach, not the library.",
+   "a girl in a pink apron with a whisk": "She's ready for the kitchen rather than for study."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which picture stands for a sudden flash of inspiration?",
+  "options": [
+   "a glowing light bulb",
+   "big Z Z Z letters",
+   "an hourglass with sand",
+   "a heavy purple chain"
+  ],
+  "art": {
+   "a glowing light bulb": "icon:bulb",
+   "big Z Z Z letters": "icon:sleep",
+   "an hourglass with sand": "icon:hourglass",
+   "a heavy purple chain": "icon:chain"
+  },
+  "answer": 0,
+  "explain": "A light bulb switching on is the classic picture of a bright idea arriving.",
+  "notes": {
+   "big Z Z Z letters": "Zzz is sleep, the opposite of a burst of inspiration.",
+   "an hourglass with sand": "An hourglass is about time passing, not about having an idea.",
+   "a heavy purple chain": "A chain suggests being stuck, rather than a sudden idea."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which object is traditionally presented to the overall champion of a tournament?",
+  "options": [
+   "a golden cup with two handles",
+   "a wrapped present",
+   "a party popper",
+   "a gold coin with a star"
+  ],
+  "art": {
+   "a golden cup with two handles": "icon:trophy",
+   "a wrapped present": "icon:gift",
+   "a party popper": "icon:party",
+   "a gold coin with a star": "icon:coin"
+  },
+  "answer": 0,
+  "explain": "The overall winner of a tournament lifts the trophy, a large golden cup.",
+  "notes": {
+   "a wrapped present": "A present is for birthdays, not for winning a tournament.",
+   "a party popper": "A party popper is for celebrating, but it isn't the champion's prize.",
+   "a gold coin with a star": "A coin is money, not the prize for winning a tournament."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which animal is renowned for its remarkable memory?",
+  "options": [
+   "a grey elephant",
+   "a blue fish",
+   "a brown ant",
+   "a brown owl"
+  ],
+  "art": {
+   "a grey elephant": "icon:elephant",
+   "a blue fish": "word_fish",
+   "a brown ant": "icon:ant",
+   "a brown owl": "icon:owl"
+  },
+  "answer": 0,
+  "explain": "Elephants can remember friends and water holes for many years. “An elephant never forgets.”",
+  "notes": {
+   "a blue fish": "Fish are jokingly said to have very short memories.",
+   "a brown ant": "Ants are famous for being hard-working, not for their memory.",
+   "a brown owl": "Owls are linked with wisdom in stories, not with a great memory."
+  }
  }
 ]

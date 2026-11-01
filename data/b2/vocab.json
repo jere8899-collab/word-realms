@@ -2358,5 +2358,281 @@
   "q": "Spell the word: the people who make decisions in a team, or the act of guiding them",
   "answer": "leadership",
   "explain": "Our captain shows great leadership."
+ },
+ {
+  "type": "picq",
+  "q": "Which picture suggests someone is so exhausted that they've fallen fast asleep?",
+  "options": [
+   "big Z Z Z letters",
+   "a strong arm showing its muscle",
+   "two friends dancing together",
+   "a boy running fast"
+  ],
+  "art": {
+   "big Z Z Z letters": "icon:sleep",
+   "a strong arm showing its muscle": "icon:strong",
+   "two friends dancing together": "icon:dancers",
+   "a boy running fast": "icon:run"
+  },
+  "answer": 0,
+  "explain": "Exhausted means extremely tired. Zzz shows someone who has run out of energy and dozed off.",
+  "notes": {
+   "a strong arm showing its muscle": "A flexed muscle shows strength and energy, the opposite of exhausted.",
+   "two friends dancing together": "These friends are dancing happily. They still have plenty of energy.",
+   "a boy running fast": "He's sprinting, so he isn't worn out yet."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which picture best shows someone who feels serene?",
+  "options": [
+   "a child sitting cross-legged, eyes closed",
+   "a boy with a frown and wobbly mouth",
+   "a boy running fast",
+   "a face laughing with its eyes shut"
+  ],
+  "art": {
+   "a child sitting cross-legged, eyes closed": "icon:calm",
+   "a boy with a frown and wobbly mouth": "icon:worried",
+   "a boy running fast": "icon:run",
+   "a face laughing with its eyes shut": "icon:laugh"
+  },
+  "answer": 0,
+  "explain": "Serene means calm and peaceful. Sitting still with closed eyes shows a quiet, untroubled mind.",
+  "notes": {
+   "a boy with a frown and wobbly mouth": "This boy looks anxious. Serene means free from worry.",
+   "a boy running fast": "Rushing along isn't serene. Serene is still and unhurried.",
+   "a face laughing with its eyes shut": "Laughing is cheerful and lively. Serene is a quieter, peaceful feeling."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which one would a detective use to examine tiny clues closely?",
+  "options": [
+   "a purple magnifying glass",
+   "a purple crystal ball",
+   "a pink megaphone",
+   "a round gold compass"
+  ],
+  "art": {
+   "a purple magnifying glass": "icon:magnifier",
+   "a purple crystal ball": "icon:crystal-ball",
+   "a pink megaphone": "icon:megaphone",
+   "a round gold compass": "icon:compass"
+  },
+  "answer": 0,
+  "explain": "A magnifying glass makes fingerprints and footprints look bigger, so a detective can study them.",
+  "notes": {
+   "a purple crystal ball": "A crystal ball belongs to fortune-tellers in stories. Detectives look at real evidence.",
+   "a pink megaphone": "A megaphone makes a voice louder. It doesn't help you examine clues.",
+   "a round gold compass": "A compass shows direction. It won't make a tiny clue easier to see."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which picture shows someone who is overjoyed, so happy they could cry?",
+  "options": [
+   "a girl crying happy tears",
+   "a cat crying big tears",
+   "a boy with a frown and wobbly mouth",
+   "a face with a small, gentle smile"
+  ],
+  "art": {
+   "a girl crying happy tears": "icon:teary",
+   "a cat crying big tears": "icon:sad-cat",
+   "a boy with a frown and wobbly mouth": "icon:worried",
+   "a face with a small, gentle smile": "icon:slight-smile"
+  },
+  "answer": 0,
+  "explain": "Overjoyed means extremely happy. Her big smile shows these are tears of joy.",
+  "notes": {
+   "a cat crying big tears": "This cat is crying because it's sad. Overjoyed tears come with a huge smile.",
+   "a boy with a frown and wobbly mouth": "This boy is anxious, not delighted.",
+   "a face with a small, gentle smile": "This face is only a little pleased. Overjoyed is much, much happier."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which hero is dressed to explore a place with no air to breathe?",
+  "options": [
+   "a child in a white space suit",
+   "a mermaid with a shiny tail",
+   "a hero in a fluffy blue coat",
+   "a boy in shiny armour with a sword"
+  ],
+  "art": {
+   "a child in a white space suit": "hero_space",
+   "a mermaid with a shiny tail": "hero_mermaid",
+   "a hero in a fluffy blue coat": "hero_snow",
+   "a boy in shiny armour with a sword": "hero_knight"
+  },
+  "answer": 0,
+  "explain": "Space has no air, so an astronaut needs a sealed suit with its own oxygen.",
+  "notes": {
+   "a mermaid with a shiny tail": "A mermaid breathes underwater, but water isn't the same as having no air at all.",
+   "a hero in a fluffy blue coat": "A winter coat keeps you warm, but you'd still need air to breathe.",
+   "a boy in shiny armour with a sword": "Armour protects you from swords, not from having no air."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which of these is an ancient tool for counting?",
+  "options": [
+   "a wooden frame with coloured beads",
+   "three blocks showing 1 2 3",
+   "an hourglass with sand",
+   "a gold balance scale"
+  ],
+  "art": {
+   "a wooden frame with coloured beads": "icon:abacus",
+   "three blocks showing 1 2 3": "icon:numbers",
+   "an hourglass with sand": "icon:hourglass",
+   "a gold balance scale": "icon:scales"
+  },
+  "answer": 0,
+  "explain": "People slid the beads of an abacus to count and do sums thousands of years ago.",
+  "notes": {
+   "three blocks showing 1 2 3": "These are toy number blocks for learning, not an ancient counting tool.",
+   "an hourglass with sand": "An hourglass is old too, but it measures time instead of counting.",
+   "a gold balance scale": "A balance scale is ancient as well, but it compares weights rather than counting."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "The coach needs the whole team to hear her across a noisy field. What should she use?",
+  "options": [
+   "a pink megaphone",
+   "a pair of pink headphones",
+   "a purple flute",
+   "a phone with a crossed-out sign"
+  ],
+  "art": {
+   "a pink megaphone": "icon:megaphone",
+   "a pair of pink headphones": "icon:headphones",
+   "a purple flute": "icon:flute",
+   "a phone with a crossed-out sign": "icon:phone-off"
+  },
+  "answer": 0,
+  "explain": "A megaphone makes a voice much louder, so it carries across a big, noisy space.",
+  "notes": {
+   "a pair of pink headphones": "Headphones help one person listen. They don't make her voice louder.",
+   "a purple flute": "A flute plays music, but it won't carry her instructions.",
+   "a phone with a crossed-out sign": "That sign means “phones off”, so it won't help anyone hear her."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which animal is nocturnal, so it is busiest at night?",
+  "options": [
+   "a purple bat with wings",
+   "a stripy bee",
+   "a yellow chick",
+   "a purple butterfly"
+  ],
+  "art": {
+   "a purple bat with wings": "icon:bat",
+   "a stripy bee": "icon:bee",
+   "a yellow chick": "icon:baby-chick",
+   "a purple butterfly": "icon:butterfly"
+  },
+  "answer": 0,
+  "explain": "Nocturnal animals sleep in the day and come out at night, like bats.",
+  "notes": {
+   "a stripy bee": "Bees collect nectar in the daytime and rest at night.",
+   "a yellow chick": "Chicks are awake in the day and sleep at night.",
+   "a purple butterfly": "Butterflies fly in the warm sunshine, not in the dark."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which hero would fit in best at a Lunar New Year celebration?",
+  "options": [
+   "a girl in a red silk dress",
+   "a girl in a pumpkin dress",
+   "a hero in a fluffy blue coat",
+   "a boy in a T-shirt and shorts"
+  ],
+  "art": {
+   "a girl in a red silk dress": "hero_lunar",
+   "a girl in a pumpkin dress": "hero_pumpkin",
+   "a hero in a fluffy blue coat": "hero_snow",
+   "a boy in a T-shirt and shorts": "hero_summer"
+  },
+  "answer": 0,
+  "explain": "Red clothes and paper lanterns are traditional for Lunar New Year.",
+  "notes": {
+   "a girl in a pumpkin dress": "Pumpkins are for Halloween in October, not Lunar New Year.",
+   "a hero in a fluffy blue coat": "A fluffy snow coat suits a winter holiday, but it isn't a Lunar New Year outfit.",
+   "a boy in a T-shirt and shorts": "Beach clothes are for summer holidays, not a New Year festival."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "In many stories, which one is a symbol of good luck?",
+  "options": [
+   "a four-leaf clover",
+   "a yellow triangle with a !",
+   "a purple spider web",
+   "a heavy purple chain"
+  ],
+  "art": {
+   "a four-leaf clover": "icon:clover",
+   "a yellow triangle with a !": "icon:warning",
+   "a purple spider web": "icon:web",
+   "a heavy purple chain": "icon:chain"
+  },
+  "answer": 0,
+  "explain": "Four-leaf clovers are rare, so finding one is said to bring good luck.",
+  "notes": {
+   "a yellow triangle with a !": "A warning sign means danger, not luck.",
+   "a purple spider web": "A web is where a spider catches flies. It isn't a lucky symbol.",
+   "a heavy purple chain": "A chain usually stands for being stuck or trapped, not luck."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which one is transparent, so you can see straight through it?",
+  "options": [
+   "an empty glass jar",
+   "a red brick",
+   "a wooden log",
+   "a cardboard box"
+  ],
+  "art": {
+   "an empty glass jar": "icon:jar",
+   "a red brick": "icon:brick",
+   "a wooden log": "icon:log",
+   "a cardboard box": "icon:box"
+  },
+  "answer": 0,
+  "explain": "Transparent means light passes through it, like clear glass.",
+  "notes": {
+   "a red brick": "A brick is solid, so you can't see through it.",
+   "a wooden log": "Wood blocks the light. A log isn't transparent.",
+   "a cardboard box": "Cardboard hides what's inside, so it's not transparent."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "In which sport do you score by throwing a ball through a high hoop?",
+  "options": [
+   "an orange ball with black lines",
+   "a fuzzy green ball",
+   "a black and white ball",
+   "a long racket and a white shuttle"
+  ],
+  "art": {
+   "an orange ball with black lines": "icon:basketball",
+   "a fuzzy green ball": "icon:tennis",
+   "a black and white ball": "icon:football",
+   "a long racket and a white shuttle": "icon:badminton"
+  },
+  "answer": 0,
+  "explain": "In basketball you score by shooting the ball through a hoop.",
+  "notes": {
+   "a fuzzy green ball": "In tennis you hit the ball over a net with a racket.",
+   "a black and white ball": "In football you kick the ball into a goal.",
+   "a long racket and a white shuttle": "Badminton uses a net and rackets, not a hoop."
+  }
  }
 ]

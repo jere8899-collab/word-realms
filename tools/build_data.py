@@ -25,11 +25,21 @@ from c1_grow import GROW
 _merge(GROW)
 # ---- C2 (review 2026-10-30): new question types (spell, picq, mistake, gaps, dictate, listen-and-order, dialogues) ----
 from c2_types import C2T
-_WORD_ART = {a["id"] for a in json.load(open(os.path.join(os.path.dirname(__file__), "..", "assets", "manifest.json")))["assets"] if a.get("type") == "word"}
+_ASSETS = {a["id"]: a for a in json.load(open(os.path.join(os.path.dirname(__file__), "..", "assets", "manifest.json")))["assets"]}
+_WORD_ART = {i for i, a in _ASSETS.items() if a.get("type") == "word"}
+_ART_DIR = {"icon": "icons", "acc": "acc"}
+def _pic_ok(ref):  # mirrors WR.picImg (js/core.js): a manifest id, a painted word, or "icon:<slug>" / "acc:<name>" with its WebP on disk
+    k, _, v = ref.partition(":")
+    if v: return k in _ART_DIR and os.path.exists(os.path.join(os.path.dirname(__file__), "..", "assets", _ART_DIR[k], v + ".webp"))
+    return ref in _ASSETS or "word_" + ref in _WORD_ART
+def _check_picq(q):  # A1: the options are painted words; A2+: the options are labels and `art` maps each label to its picture
+    art = q.get("art") or {o: o for o in q["options"]}
+    assert set(art) == set(q["options"]) and all(_pic_ok(a) for a in art.values()) and len(set(art.values())) == 4, q
+    if q.get("art"): assert len(q.get("_notes", [])) == 3 and all(len(n) > 20 for n in q["_notes"]) and q["explain"], q  # a why-not note per wrong picture
 def _check_c2(q):  # shape checks for the C2 question types (and two-voice dialogues)
     t = q["type"]
     if t == "spell": assert re.fullmatch(r"[a-z]+", q["answer"]) and (q.get("art") in _WORD_ART or ":" in q["q"]), q
-    elif t == "picq": assert all("word_" + o in _WORD_ART for o in q["options"]), q
+    elif t == "picq": _check_picq(q)
     elif t == "mistake": assert 0 <= q["wrong"] < len(q["words"]) and q["fix"] and q["fix"] != q["words"][q["wrong"]], q
     elif t == "gaps": assert q["text"].count("___") == len(q["answers"]) and len(set(q["bank"])) == len(q["bank"]) and len(q["bank"]) > len(q["answers"]), q
     elif t == "dictate": assert q["say"] == q["answer"], q
@@ -46,6 +56,11 @@ for _src in (R19A, R19B):
         for _val in _extra.values():
             for q in _val: _check_c2(q)
     _merge(_src)
+from r19_pics import PICQ  # 🖼️ R19 wave 4: picture choice above A1 (the game's own painted art; labels + art map)
+for _lvl, _items_ in PICQ.items():
+    assert _lvl != "a1" and len(_items_) >= 12, _lvl
+    for q in _items_: _check_c2(q)
+_merge({l: {"vocab": v} for l, v in PICQ.items()})
 from r19_read import READ, TF2, TF3  # 📖 R19 wave 2: reading types (events, True/False/Not given, find the word), A1–B1
 def _bare(w): return re.sub(r"[^a-z0-9'-]", "", w.lower())
 def _check_read(_lvl, p, q):  # every R19 reading item (events / tf / findword) is checked the same way at every level
