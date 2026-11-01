@@ -40,7 +40,7 @@ const EVENTS = [
   { id: "garden", icon: "💧", name: "Garden Week", desc: "Water your Mistake Garden 4 times", goal: 4, on: ["review1"] }
 ];
 C.EVENTS = EVENTS;
-C.weekKey = (d = new Date()) => { const t = new Date(d.getFullYear(), d.getMonth(), d.getDate()); const day = (t.getDay() + 6) % 7; t.setDate(t.getDate() - day); return `${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, "0")}-${String(t.getDate()).padStart(2, "0")}`; };  // Monday of this week
+C.weekKey = (d = WR.gameDate()) => { const t = new Date(d.getFullYear(), d.getMonth(), d.getDate()); const day = (t.getDay() + 6) % 7; t.setDate(t.getDate() - day); return `${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, "0")}-${String(t.getDate()).padStart(2, "0")}`; };  // Monday of this week
 C.weekly = () => {
   const s = WR.state, wk = C.weekKey();
   if (!s.weekly || s.weekly.wk !== wk) {
@@ -49,7 +49,7 @@ C.weekly = () => {
   }
   return { ...s.weekly, def: EVENTS.find(e => e.id === s.weekly.id) };
 };
-C.daysLeft = () => { const d = new Date(), day = (d.getDay() + 6) % 7; return 7 - day; };
+C.daysLeft = () => { const d = WR.gameDate(), day = (d.getDay() + 6) % 7; return 7 - day; };
 const _qe = WR.questEvent;
 WR.questEvent = (id, n = 1) => {
   _qe(id, n);

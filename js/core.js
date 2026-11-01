@@ -61,7 +61,19 @@ WR.sample = (a, n) => WR.shuffle(a).slice(0, n);
    button that is still on screen can never fire again. Each finish() also guards itself with a "done" flag. */
 WR.tapOnce = (el, fn) => { if (!el) return el; el.onclick = e => { if (el.disabled || el.dataset.tapped) return; el.dataset.tapped = "1"; el.disabled = true; fn(e); }; return el; };
 WR.dayKey = (t = Date.now()) => { const d = new Date(t); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); };
-WR.today = () => WR.dayKey();
+/* 🕰️ R22 game day: rewards (practice-star cap, quests, free gift, streak, weekly sticker) follow WR.today(), a day that never
+   goes backwards. It moves on when the device's calendar day is later than the saved one; if the clock is put back, the
+   saved day stays, so setting the date forward and back again gives nothing extra (the "borrowed" day is simply not new
+   again until the real date catches up). state.clock = { day, seen } syncs with the save; logs (report, backups) use the real date. */
+WR.today = () => {
+  const s = WR.state, cal = WR.dayKey(), now = Date.now(); if (!s) return cal;
+  const c = s.clock = s.clock || { day: cal, seen: now };
+  if (cal > c.day) c.day = cal;                                        // a new day (forwards only)
+  if (now > (c.seen || 0)) c.seen = now;                               // last-seen time; a clock put back doesn't lower it
+  return c.day;
+};
+WR.clockBack = () => !!(WR.state && WR.state.clock && WR.dayKey() < WR.state.clock.day);   // the device date is behind the game day
+WR.gameDate = () => new Date(WR.today() + "T12:00:00");
 WR.dayDiff = (a, b) => Math.round((new Date(b) - new Date(a)) / 864e5);
 const fetchJSON = p => fetch(p).then(r => { if (!r.ok) throw new Error(p + " " + r.status); return r.json(); });
 
@@ -101,7 +113,7 @@ function freshState() {
     progress: {}, owned: [], equipped: { outfit: null, petskin: null, theme: null },
     settings: { rate: 0.9, sound: true, unlockAll: false }, mistakes: [], lessonsDone: 0, bonusSeen: ["sp"],
     speaking: freshSpeaking(), writing: freshWriting(), math: freshMath(),
-    report: freshReport(), earn: freshEarn(), ...freshBlocks(),
+    report: freshReport(), earn: freshEarn(), ...freshBlocks(), clock: { day: WR.dayKey(), seen: Date.now() },
     looks: {}, stable: [], rewards: { got: [], chest: { last: null, n: 0 }, caughtUp: true }
   };
 }
@@ -156,7 +168,7 @@ function seedReport(s) {
   return r;
 }
 function logDay() {
-  const r = WR.state.report, d = WR.today(), now = Date.now();
+  const r = WR.state.report, d = WR.dayKey(), now = Date.now();   // the grown-ups' log uses the real date
   const day = r.days[d] = r.days[d] || { s: 0, l: 0, k: {} };
   const gap = now - (r.at || 0); day.s += gap > 0 && gap < GAP_MS ? Math.round(gap / 1000) : FIRST_S; r.at = now;
   const ks = Object.keys(r.days); if (ks.length > LOG_DAYS) ks.sort().slice(0, ks.length - LOG_DAYS).forEach(k => delete r.days[k]);
@@ -206,6 +218,10 @@ function migrate(s, raw = s) {
   if (!raw.looks || typeof raw.looks !== "object") { s.looks = {}; const o = s.equipped && s.equipped.outfit, it = o && WR.shop && WR.shop.outfits.find(x => x.id === o); if (o) s.looks[it ? it.slot : (OLD_SLOT[o] || "head")] = o; }
   if (s.pet) { s.pet.looks = s.pet.looks || {}; s.pet.love = s.pet.love || 0; }
   s.stable = Array.isArray(s.stable) ? s.stable : [];
+  if (!raw.clock || typeof raw.clock !== "object") {   // R22: an older save starts its game day at the latest day it has already used
+    const used = [WR.dayKey(), s.daily && s.daily.day, s.streak && s.streak.last, s.earn && s.earn.day, s.rewards && s.rewards.chest && s.rewards.chest.last].filter(d => typeof d === "string" && /^\d{4}-\d\d-\d\d$/.test(d)).sort();
+    s.clock = { day: used[used.length - 1], seen: Date.now() };
+  }
   s.rewards = Object.assign({ got: [], chest: { last: null, n: 0 } }, s.rewards || {}); s.rewards.got = s.rewards.got || []; s.rewards.chest = s.rewards.chest || { last: null, n: 0 }; if (!raw.rewards) s.rewards.caughtUp = false;   // an older save: catch up once, quietly (js/wardrobe.js)
   if (!raw.earn || typeof raw.earn !== "object") { s.earn = freshEarn(); for (const b in s.seen || {}) for (const k of s.seen[b] || []) s.earn.got[earnHash("en:" + k)] = 1; }
   else s.earn = Object.assign(freshEarn(), s.earn, { got: s.earn.got || {}, rounds: s.earn.rounds || {} });
@@ -223,7 +239,7 @@ WR.backupSave = () => {
   const cut = WR.dayKey(Date.now() - KEEP_DAYS * 864e5);
   WR.backups().forEach(k => { if (WR.backupDay(k) < cut) localStorage.removeItem(k); });
   if (!WR.state.pet) return null;                         // nothing worth keeping (a fresh save)
-  const k = BACKUP + WR.today() + "." + Date.now(); localStorage.setItem(k, JSON.stringify(WR.state)); return k;
+  const k = BACKUP + WR.dayKey() + "." + Date.now(); localStorage.setItem(k, JSON.stringify(WR.state)); return k;
 };
 WR.restoreBackup = (k = WR.backups()[0]) => {
   let s = null; try { s = JSON.parse(localStorage.getItem(k)); } catch (e) { }

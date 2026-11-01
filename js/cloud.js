@@ -114,7 +114,9 @@ const newer = (a, b) => a && (!b || new Date(a).getTime() > new Date(b).getTime(
 // ⭐ the same player's star-earning record (daily caps, replays, items already rewarded) is never rolled back by a sync:
 // whichever save wins, it keeps the stricter of the two records (WR.mergeEarn). A different account on this device keeps its own.
 const samePlayer = () => !!(C.user && meta().user === C.user.id);
-const keepEarn = other => { if (other && samePlayer()) { WR.state.earn = WR.mergeEarn(WR.state.earn, other.earn); rawSave(); } };
+const keepEarn = other => { if (other && samePlayer()) { WR.state.earn = WR.mergeEarn(WR.state.earn, other.earn);
+  const oc = other.clock, mc = WR.state.clock; if (oc && oc.day && (!mc || oc.day > mc.day)) WR.state.clock = { day: oc.day, seen: Math.max(oc.seen || 0, (mc && mc.seen) || 0) };   // R22: the later game day wins
+  rawSave(); } };
 C.apply = (data, at) => {
   const prev = WR.state;
   localStorage.setItem(SAVE_KEY, JSON.stringify(data));
