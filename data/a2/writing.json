@@ -551,5 +551,353 @@
    }
   ],
   "level": "a2"
+ },
+ {
+  "genre": "email",
+  "part": "A2 Key · Writing Part 6 (email)",
+  "title": "Thank You for the Present",
+  "task": "Your aunt sent you a birthday present. Write an email to her. In your email: • say thank you • say what you like about it • say how you will use it.",
+  "points": [
+   {
+    "label": "Say thank you",
+    "keys": [
+     "thank"
+    ]
+   },
+   {
+    "label": "What you like about it",
+    "keys": [
+     "love",
+     "like",
+     "favourite",
+     "great",
+     "beautiful",
+     "cool",
+     "amazing",
+     "bright"
+    ]
+   },
+   {
+    "label": "How you will use it",
+    "keys": [
+     "will",
+     "going to",
+     "i'll"
+    ]
+   }
+  ],
+  "words": [
+   25,
+   40
+  ],
+  "model": "Dear Aunt Rosa,\nThank you so much for the paint set! I love the bright colours. I'm going to paint a picture of my cat this weekend and send it to you.\nLove,\nSofia",
+  "id": "a2-w07",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "Thank you so much for …",
+     "I really love …",
+     "I'm going to …"
+    ]
+   },
+   {
+    "g": "🔗 Linking words",
+    "p": [
+     "and",
+     "but",
+     "because",
+     "so",
+     "then",
+     "after that",
+     "when"
+    ]
+   },
+   {
+    "g": "💌 Notes & emails",
+    "p": [
+     "Hi …,",
+     "Dear …,",
+     "Thanks for …",
+     "See you soon,",
+     "Love,"
+    ]
+   },
+   {
+    "g": "📖 Stories",
+    "p": [
+     "One day, …",
+     "Suddenly, …",
+     "In the end, …"
+    ]
+   }
+  ],
+  "level": "a2"
+ },
+ {
+  "genre": "postcard",
+  "part": "A2 Key · Writing Part 6 (postcard)",
+  "title": "A Postcard from Camp",
+  "task": "You are at a summer camp. Write a postcard to your friend Ben. Tell him: • where you are • what you did yesterday • what you are going to do tomorrow.",
+  "points": [
+   {
+    "label": "Where you are",
+    "keys": [
+     "i'm at",
+     "i am at",
+     "camp",
+     "near",
+     "next to"
+    ]
+   },
+   {
+    "label": "What you did yesterday",
+    "keys": [
+     "yesterday"
+    ]
+   },
+   {
+    "label": "Your plans for tomorrow",
+    "keys": [
+     "tomorrow"
+    ]
+   }
+  ],
+  "words": [
+   25,
+   40
+  ],
+  "model": "Hi Ben,\nI'm at a summer camp near a big lake. Yesterday we went canoeing and I saw a beaver! Tomorrow we are going to climb a hill and have a barbecue.\nSee you soon,\nJoe",
+  "id": "a2-w08",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "I'm at … near …",
+     "Yesterday we …",
+     "Tomorrow we're going to …"
+    ]
+   },
+   {
+    "g": "🔗 Linking words",
+    "p": [
+     "and",
+     "but",
+     "because",
+     "so",
+     "then",
+     "after that",
+     "when"
+    ]
+   },
+   {
+    "g": "💌 Notes & emails",
+    "p": [
+     "Hi …,",
+     "Dear …,",
+     "Thanks for …",
+     "See you soon,",
+     "Love,"
+    ]
+   },
+   {
+    "g": "📖 Stories",
+    "p": [
+     "One day, …",
+     "Suddenly, …",
+     "In the end, …"
+    ]
+   }
+  ],
+  "level": "a2"
+ },
+ {
+  "genre": "note",
+  "part": "A2 Key · Writing Part 6 (note)",
+  "title": "Can You Feed My Fish?",
+  "task": "You are going on holiday. Write a note to your neighbour Mr Lee and ask him to feed your fish. Tell him: • when you are going • how much food to give • where the food is.",
+  "points": [
+   {
+    "label": "When you are going",
+    "keys": [
+     "monday",
+     "tuesday",
+     "wednesday",
+     "thursday",
+     "friday",
+     "saturday",
+     "sunday",
+     "weekend",
+     "tomorrow",
+     "tonight",
+     "next week",
+     "next",
+     "on holiday on"
+    ]
+   },
+   {
+    "label": "How much food to give",
+    "keys": [
+     "pinch",
+     "a little",
+     "spoon",
+     "once",
+     "twice",
+     "every"
+    ]
+   },
+   {
+    "label": "Where the food is",
+    "keys": [
+     "in the",
+     "on the",
+     "next to",
+     "kitchen",
+     "shelf",
+     "cupboard"
+    ]
+   }
+  ],
+  "words": [
+   25,
+   40
+  ],
+  "model": "Dear Mr Lee,\nWe are going on holiday on Friday. Could you feed my goldfish, please? Give him a small pinch of food every morning. The food is on the shelf next to the tank.\nThank you!\nAmy",
+  "id": "a2-w09",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "We are going on holiday on …",
+     "Could you … , please?",
+     "The food is …"
+    ]
+   },
+   {
+    "g": "🔗 Linking words",
+    "p": [
+     "and",
+     "but",
+     "because",
+     "so",
+     "then",
+     "after that",
+     "when"
+    ]
+   },
+   {
+    "g": "💌 Notes & emails",
+    "p": [
+     "Hi …,",
+     "Dear …,",
+     "Thanks for …",
+     "See you soon,",
+     "Love,"
+    ]
+   },
+   {
+    "g": "📖 Stories",
+    "p": [
+     "One day, …",
+     "Suddenly, …",
+     "In the end, …"
+    ]
+   }
+  ],
+  "level": "a2"
+ },
+ {
+  "genre": "email",
+  "part": "A2 Key · Writing Part 6 (email)",
+  "title": "Join My Netball Club",
+  "task": "Your friend Lucy wants to join a sports club. Write an email to Lucy. In your email: • tell her about your club • say when it meets • say what she needs to bring.",
+  "points": [
+   {
+    "label": "About your club",
+    "keys": [
+     "club",
+     "team",
+     "coach"
+    ]
+   },
+   {
+    "label": "When it meets",
+    "keys": [
+     "monday",
+     "tuesday",
+     "wednesday",
+     "thursday",
+     "friday",
+     "saturday",
+     "sunday",
+     "weekend",
+     "tomorrow",
+     "tonight",
+     "next week",
+     "after school",
+     "every",
+     "o'clock"
+    ]
+   },
+   {
+    "label": "What to bring",
+    "keys": [
+     "bring",
+     "need",
+     "trainers",
+     "water",
+     "racket",
+     "ball",
+     "shorts"
+    ]
+   }
+  ],
+  "words": [
+   25,
+   40
+  ],
+  "model": "Hi Lucy,\nYou should join my netball club! I started last year and I loved it because the coach is so kind. We meet every Tuesday after school. Please bring trainers and a bottle of water.\nBest wishes,\nNoor",
+  "id": "a2-w10",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "You should join …",
+     "We meet every …",
+     "Please bring …"
+    ]
+   },
+   {
+    "g": "🔗 Linking words",
+    "p": [
+     "and",
+     "but",
+     "because",
+     "so",
+     "then",
+     "after that",
+     "when"
+    ]
+   },
+   {
+    "g": "💌 Notes & emails",
+    "p": [
+     "Hi …,",
+     "Dear …,",
+     "Thanks for …",
+     "See you soon,",
+     "Love,"
+    ]
+   },
+   {
+    "g": "📖 Stories",
+    "p": [
+     "One day, …",
+     "Suddenly, …",
+     "In the end, …"
+    ]
+   }
+  ],
+  "level": "a2"
  }
 ]

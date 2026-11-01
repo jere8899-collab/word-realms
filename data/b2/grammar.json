@@ -2100,17 +2100,17 @@
   "type": "mistake",
   "q": "Tap the word that is wrong.",
   "words": [
-   "I'm",
+   "She's",
    "used",
    "to",
-   "get",
-   "up",
-   "early",
+   "walk",
+   "to",
+   "school",
    "now."
   ],
   "wrong": 3,
-  "fix": "getting",
-  "explain": "be used to + -ing: I'm used to getting up early."
+  "fix": "walking",
+  "explain": "be used to + -ing: She's used to walking to school."
  },
  {
   "type": "mistake",

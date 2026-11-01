@@ -11,7 +11,7 @@ R19B = {
   order("Not only did he win, he broke the record.", "Not only + inverted auxiliary (did he win)."),
   order("The museum, which opened in May, is free.", "A non-defining relative clause between commas: which opened in May."),
   mist("If I had knew, I'd have come.", 3, "known,", "Third conditional: If I had known (past participle), I'd have come."),
-  mist("I'm used to get up early now.", 3, "getting", "be used to + -ing: I'm used to getting up early."),
+  mist("She's used to walk to school now.", 3, "walking", "be used to + -ing: She's used to walking to school."),
   mist("She suggested go to the cinema.", 2, "going", "suggest + -ing: She suggested going to the cinema."),
   mist("The phone who I bought is broken.", 2, "which", "For things use which or that, not who: The phone which I bought."),
   mist("Although the rain, we played.", 0, "Despite", "Despite + noun (the rain); although needs a full clause."),

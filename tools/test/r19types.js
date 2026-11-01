@@ -29,6 +29,8 @@ for (const l of ['a1', 'a2', 'b1']) {
   ok(rq(l).filter(x => x.q.type === 'findword').every(({ q, p }) => p.text.includes(q.line)), `${l}: find-the-word lines come from the text`);
 }
 ok(rq('b1').some(x => x.q.type === 'tf' && x.q.options[x.q.answer] === 'Not given'), 'B1 has Not given answers');
+for (const l of LV) for (const s of ['grammar', 'vocab']) { const ks = bank(l, s).filter(q => q.type === 'mistake').map(q => q.words[q.wrong] + ' → ' + q.fix);
+  const d = ks.filter((k, i) => ks.indexOf(k) !== i); ok(!d.length, `${l} ${s}: no two find-the-mistake items share a Mistake Garden id (${d.join(', ') || 'none'})`); }
 ok(true, 'mistake fixes read as one clean sentence, gaps banks are unique, spell answers are plain letters');
 (async () => {
   const browser = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox'] });

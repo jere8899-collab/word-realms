@@ -4,6 +4,9 @@ sys.path.insert(0, os.path.dirname(__file__))
 from c_a1 import A1; from c_a2 import A2; from c_b1 import B1, QUEST; from c_b2 import B2; from c_c1 import C1, DEBATE; from c_c2 import C2
 from c_speaking import SPEAKING
 from c_writing import WRITING, LEVEL_BANK
+from r20 import SPEAK, WRITE  # R20 wave 1 (review 2026-11-01): more speaking prompts and writing tasks, A1–B1 first (appended, so old ids stay)
+for _l, _v in SPEAK.items(): SPEAKING[_l] = SPEAKING[_l] + _v
+for _l, _v in WRITE.items(): WRITING[_l] = WRITING[_l] + _v
 from c_stories import STORIES  # 📜 Storybook Chapters
 from w1_a import W1A; from w1_b import W1B  # Content Wave 1 (2026-10-30)
 ROOT = os.path.join(os.path.dirname(__file__), "..", "data")
@@ -117,8 +120,25 @@ for lvl, skills in D.items():
                 raise AssertionError(f"C3: no notes for {lvl}/{sk}: {q['q']}")
 _c3_missing = [(s, k) for s, d in C3.items() for k in d if (s, k) not in _c3_used]
 assert not _c3_missing, f"C3 overlay keys that match no item: {_c3_missing[:5]}"
+# ---- R21 (review 2026-11-01) wave 1: A1–B1 reading/listening "why not" notes quote the exact line that answers the question ----
+from r21 import quote_notes
+R21_DONE = {}
+for lvl in ():  # TEMP
+    n = 0
+    for p in D[lvl]["reading"]["passages"]:
+        for q in p["questions"]:
+            if q["type"] == "mcq": n += quote_notes(q, p["text"], "story" if lvl != "b1" else "text")
+    for q in D[lvl]["listening"]:
+        if q["type"] == "listen": n += quote_notes(q, q["say"], "recording")
+    R21_DONE[lvl] = n
+print("R21 notes quoting the line:", R21_DONE)
 def _key(q):  # duplicate-check key: two items with the same key would look identical to a child
     return "|".join([q.get("say", ""), q.get("q", ""), str(q.get("answer")), q.get("pic", ""), "/".join(q.get("options", [])[:1]), " ".join(q.get("words", [])), q.get("text", ""), "/".join(q.get("events", [])), q.get("line", "")])
+def _gkey(q):  # mirrors Garden.plant(): question + right answer (+ recording)
+    t = q.get("type", "mcq")
+    c = (q["words"][q["wrong"]] + " → " + q["fix"] if t == "mistake" else " ".join(q["answers"]) + "|" + q["text"] if t == "gaps"
+         else " → ".join(q["events"]) if t == "events" else q["answer"] if t in ("order", "spell", "dictate", "findword") else q["options"][q["answer"]])
+    return "|".join([q.get("q", ""), c, q.get("say", ""), q.get("pic", "")])
 FAIR_MAX = 0.40  # "Fair Play" guard: the right answer may be the uniquely longest option in at most 40% of a skill's items
 def check_fair(name, items):
     mc = [q for q in items if q.get("options")]
@@ -133,6 +153,8 @@ for lvl, skills in D.items():
         assert n >= 15, (lvl, sk, n)
         keys = [_key(q) for q in items]
         dup = {k for k in keys if keys.count(k) > 1}; assert not dup, (lvl, sk, dup)
+        gk = [_gkey(q) for q in items]                      # R19: the Mistake Garden's id (question + right answer) must not collide
+        gdup = {k for k in gk if gk.count(k) > 1}; assert not gdup, (lvl, sk, "garden id clash", gdup)
         for q in items:
             if q["type"] in ("mcq", "listen", "picq"): assert len(set(q["options"])) == len(q["options"]) == 4, q
             if q["type"] == "listen" and "|" in q["say"]: _check_c2(q)  # every two-voice recording is a well-formed dialogue

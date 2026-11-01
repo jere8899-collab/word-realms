@@ -554,5 +554,336 @@
    }
   ],
   "level": "a1"
+ },
+ {
+  "genre": "about",
+  "part": "A1 Movers-style · Describe a thing",
+  "title": "My Favourite Toy",
+  "task": "Write 3–4 sentences about your favourite toy.",
+  "points": [
+   {
+    "label": "What it is",
+    "keys": [
+     "my favourite",
+     "is a",
+     "toy"
+    ]
+   },
+   {
+    "label": "What it looks like",
+    "keys": [
+     "red",
+     "blue",
+     "green",
+     "yellow",
+     "pink",
+     "white",
+     "black",
+     "brown",
+     "orange",
+     "purple",
+     "grey",
+     "gray",
+     "gold",
+     "silver",
+     "big",
+     "small",
+     "little",
+     "soft",
+     "old",
+     "new"
+    ]
+   },
+   {
+    "label": "Where you play with it",
+    "keys": [
+     "play",
+     "bedroom",
+     "garden",
+     "park",
+     "in my",
+     "every day"
+    ]
+   }
+  ],
+  "words": [
+   20,
+   30
+  ],
+  "model": "My favourite toy is a small brown teddy bear. His name is Mr Button. He is soft and very old. I play with him in my bedroom every day.",
+  "id": "a1-w07",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "My favourite toy is …",
+     "It is …",
+     "I play with it …"
+    ]
+   },
+   {
+    "g": "🔗 Joining words",
+    "p": [
+     "and",
+     "but",
+     "because",
+     "also",
+     "too"
+    ]
+   },
+   {
+    "g": "🌼 Sentence starters",
+    "p": [
+     "I have got …",
+     "There is …",
+     "There are …",
+     "It is …",
+     "I can …"
+    ]
+   }
+  ],
+  "level": "a1"
+ },
+ {
+  "genre": "note",
+  "part": "A1 Flyers-style · Write a short note",
+  "title": "A Note for Grandma",
+  "task": "Grandma is looking after you after school. Write a note to her. Say: • what you want to eat • what game you want to play • thank you.",
+  "points": [
+   {
+    "label": "Something to eat",
+    "keys": [
+     "eat",
+     "pizza",
+     "pasta",
+     "soup",
+     "sandwich",
+     "cake",
+     "apple",
+     "snack",
+     "cookie"
+    ]
+   },
+   {
+    "label": "A game to play",
+    "keys": [
+     "play",
+     "game",
+     "cards",
+     "hide",
+     "puzzle",
+     "football"
+    ]
+   },
+   {
+    "label": "Say thank you",
+    "keys": [
+     "thank"
+    ]
+   }
+  ],
+  "words": [
+   20,
+   30
+  ],
+  "model": "Hi Grandma,\nI am hungry, so can we eat pasta for dinner? After that, let's play cards because I like that game. Thank you for coming!\nLove,\nMia",
+  "id": "a1-w08",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "Hi Grandma,",
+     "Can we eat … ?",
+     "Let's play …",
+     "Thank you for …",
+     "Love, …"
+    ]
+   },
+   {
+    "g": "🔗 Joining words",
+    "p": [
+     "and",
+     "but",
+     "because",
+     "also",
+     "too"
+    ]
+   },
+   {
+    "g": "🌼 Sentence starters",
+    "p": [
+     "I have got …",
+     "There is …",
+     "There are …",
+     "It is …",
+     "I can …"
+    ]
+   }
+  ],
+  "level": "a1"
+ },
+ {
+  "genre": "about",
+  "part": "A1 Movers-style · Describe a place",
+  "title": "My Bedroom",
+  "task": "Write 3–4 sentences about your bedroom.",
+  "points": [
+   {
+    "label": "Its colour or size",
+    "keys": [
+     "red",
+     "blue",
+     "green",
+     "yellow",
+     "pink",
+     "white",
+     "black",
+     "brown",
+     "orange",
+     "purple",
+     "grey",
+     "gray",
+     "gold",
+     "silver",
+     "big",
+     "small",
+     "little"
+    ]
+   },
+   {
+    "label": "Things in it",
+    "keys": [
+     "bed",
+     "desk",
+     "toys",
+     "books",
+     "lamp",
+     "window",
+     "chair",
+     "poster"
+    ]
+   },
+   {
+    "label": "What you do there",
+    "keys": [
+     "sleep",
+     "read",
+     "play",
+     "draw",
+     "homework",
+     "listen"
+    ]
+   }
+  ],
+  "words": [
+   20,
+   30
+  ],
+  "model": "My bedroom is small and pink. I have a bed, a desk and lots of books. I read and draw there. At night I sleep with my bunny.",
+  "id": "a1-w09",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "My bedroom is …",
+     "I have a …",
+     "I … there."
+    ]
+   },
+   {
+    "g": "🔗 Joining words",
+    "p": [
+     "and",
+     "but",
+     "because",
+     "also",
+     "too"
+    ]
+   },
+   {
+    "g": "🌼 Sentence starters",
+    "p": [
+     "I have got …",
+     "There is …",
+     "There are …",
+     "It is …",
+     "I can …"
+    ]
+   }
+  ],
+  "level": "a1"
+ },
+ {
+  "genre": "form",
+  "part": "A1 Starters-style · Complete a club card",
+  "title": "Join the Space Club",
+  "task": "You want to join the Space Club. Write about you: your name, your age, and why you like space.",
+  "points": [
+   {
+    "label": "Your name",
+    "keys": [
+     "my name",
+     "name is",
+     "i'm ",
+     "called"
+    ]
+   },
+   {
+    "label": "Your age",
+    "keys": [
+     "years old",
+     "re:\\bi am (\\d+|five|six|seven|eight|nine|ten|eleven|twelve)\\b"
+    ]
+   },
+   {
+    "label": "Why you like space",
+    "keys": [
+     "like",
+     "love",
+     "stars",
+     "planets",
+     "moon",
+     "rocket",
+     "astronaut"
+    ]
+   }
+  ],
+  "words": [
+   20,
+   30
+  ],
+  "model": "My name is Leo. I am eight years old. I love space because the stars are beautiful. I want to fly a rocket to the moon one day!",
+  "id": "a1-w10",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "My name is …",
+     "I am … years old.",
+     "I love space because …"
+    ]
+   },
+   {
+    "g": "🔗 Joining words",
+    "p": [
+     "and",
+     "but",
+     "because",
+     "also",
+     "too"
+    ]
+   },
+   {
+    "g": "🌼 Sentence starters",
+    "p": [
+     "I have got …",
+     "There is …",
+     "There are …",
+     "It is …",
+     "I can …"
+    ]
+   }
+  ],
+  "level": "a1"
  }
 ]

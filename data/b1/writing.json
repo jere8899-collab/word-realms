@@ -649,5 +649,368 @@
    }
   ],
   "level": "b1"
+ },
+ {
+  "genre": "article",
+  "part": "B1 Preliminary · Writing Part 2 (article)",
+  "title": "My Favourite Hobby",
+  "task": "You see this notice in an English magazine for teenagers: “Articles wanted! What is your favourite hobby? How did you start it? Why should other people try it?” Write your article in about 100 words.",
+  "points": [
+   {
+    "label": "Your hobby",
+    "keys": [
+     "my favourite hobby",
+     "hobby",
+     "i love",
+     "i enjoy"
+    ]
+   },
+   {
+    "label": "How you started",
+    "keys": [
+     "started",
+     "began",
+     "first",
+     "when i was"
+    ]
+   },
+   {
+    "label": "Why others should try it",
+    "keys": [
+     "you should",
+     "why not",
+     "try",
+     "you will",
+     "you'll",
+     "recommend"
+    ]
+   }
+  ],
+  "words": [
+   80,
+   100
+  ],
+  "model": "Why Not Try Baking?\n\nMy favourite hobby is baking, and I spend most Saturday afternoons in the kitchen. I started when I was nine, because my grandma taught me how to make her famous lemon cake. At first my cakes were flat and burnt, but I kept practising.\n\nNow I can bake bread, cookies and even birthday cakes for my friends. Baking is relaxing, and you can eat the results!\n\nIf you have never tried it, why not start with something simple, like banana muffins? You will be surprised how easy it is.",
+  "id": "b1-w07",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "Have you ever tried …?",
+     "I started when …",
+     "At first …, but …",
+     "Why not …?"
+    ]
+   },
+   {
+    "g": "🔗 Linking words",
+    "p": [
+     "However, …",
+     "although",
+     "In addition, …",
+     "for example",
+     "On the other hand, …",
+     "as soon as",
+     "Finally, …"
+    ]
+   },
+   {
+    "g": "💌 Emails",
+    "p": [
+     "It was great to hear from you.",
+     "Let me know if …",
+     "I'm sure …",
+     "Best wishes,"
+    ]
+   },
+   {
+    "g": "📖 Stories & articles",
+    "p": [
+     "At first, …",
+     "Just then, …",
+     "From that day on, …",
+     "Have you ever …?"
+    ]
+   }
+  ],
+  "level": "b1"
+ },
+ {
+  "genre": "email",
+  "part": "B1 Preliminary · Writing Part 1 (email)",
+  "title": "Plans for the Class Trip",
+  "task": "Read the email from your English teacher Ms Rivera and the notes you have made. Write your email to Ms Rivera using all the notes. Write about 100 words.",
+  "email": {
+   "from": "Ms Rivera",
+   "text": "Our class is going on a trip at the end of term! Would you prefer to visit the science museum or the zoo? What would you like to do there? Also, could you help me with something on the day?",
+   "notes": [
+    "Say which",
+    "Explain",
+    "Yes! Say how"
+   ]
+  },
+  "points": [
+   {
+    "label": "Say which place",
+    "keys": [
+     "museum",
+     "zoo",
+     "prefer",
+     "would rather",
+     "i'd rather"
+    ]
+   },
+   {
+    "label": "Explain what you'd like to do",
+    "keys": [
+     "i'd like",
+     "i would like",
+     "want to",
+     "see",
+     "try"
+    ]
+   },
+   {
+    "label": "Offer to help and say how",
+    "keys": [
+     "i can help",
+     "i could",
+     "happy to",
+     "i'll",
+     "i will"
+    ]
+   }
+  ],
+  "words": [
+   80,
+   100
+  ],
+  "model": "Dear Ms Rivera,\n\nThank you for your email. I think the science museum would be better than the zoo, because we went to the zoo last year.\n\nI'd like to see the space gallery, because there is a real moon rock there. It would also be fun to try the experiments in the hands-on room.\n\nOf course I can help on the day! I could carry the first-aid bag or count everyone on the coach. I'm happy to do anything you need.\n\nBest wishes,\nSam",
+  "id": "b1-w08",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "I think … would be better than …",
+     "I'd really like to …",
+     "Of course I can help! I could …"
+    ]
+   },
+   {
+    "g": "🔗 Linking words",
+    "p": [
+     "However, …",
+     "although",
+     "In addition, …",
+     "for example",
+     "On the other hand, …",
+     "as soon as",
+     "Finally, …"
+    ]
+   },
+   {
+    "g": "💌 Emails",
+    "p": [
+     "It was great to hear from you.",
+     "Let me know if …",
+     "I'm sure …",
+     "Best wishes,"
+    ]
+   },
+   {
+    "g": "📖 Stories & articles",
+    "p": [
+     "At first, …",
+     "Just then, …",
+     "From that day on, …",
+     "Have you ever …?"
+    ]
+   }
+  ],
+  "level": "b1"
+ },
+ {
+  "genre": "story",
+  "part": "B1 Preliminary · Writing Part 2 (story)",
+  "title": "The Map in the Library Book",
+  "task": "Your English teacher has asked you to write a story. Your story must begin with this sentence: “When Maya opened the library book, a small map fell out.” Write about 100 words.",
+  "firstLine": "When Maya opened the library book, a small map fell out.",
+  "points": [
+   {
+    "label": "Begin with the given sentence",
+    "keys": [
+     "when maya opened"
+    ]
+   },
+   {
+    "label": "Something exciting happens",
+    "keys": [
+     "suddenly",
+     "found",
+     "hit",
+     "discovered",
+     "noticed"
+    ]
+   },
+   {
+    "label": "How the story ended",
+    "keys": [
+     "in the end",
+     "at last",
+     "finally",
+     "the next day",
+     "now everyone",
+     "from that day"
+    ]
+   }
+  ],
+  "words": [
+   80,
+   100
+  ],
+  "model": "When Maya opened the library book, a small map fell out. It showed the school garden, with a red cross under the old apple tree.\n\nAfter lessons, while it was getting dark, Maya and her friend Tom took a spade and started to dig. Although they were tired, they kept going. Suddenly, the spade hit something hard. It was a rusty tin box!\n\nInside they found old photos and a letter from a girl who studied at the school fifty years ago. The next day they showed the head teacher, so now everyone can see the treasure.",
+  "id": "b1-w09",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "It showed …",
+     "Suddenly, …",
+     "Inside they found …",
+     "The next day, …"
+    ]
+   },
+   {
+    "g": "🔗 Linking words",
+    "p": [
+     "However, …",
+     "although",
+     "In addition, …",
+     "for example",
+     "On the other hand, …",
+     "as soon as",
+     "Finally, …"
+    ]
+   },
+   {
+    "g": "💌 Emails",
+    "p": [
+     "It was great to hear from you.",
+     "Let me know if …",
+     "I'm sure …",
+     "Best wishes,"
+    ]
+   },
+   {
+    "g": "📖 Stories & articles",
+    "p": [
+     "At first, …",
+     "Just then, …",
+     "From that day on, …",
+     "Have you ever …?"
+    ]
+   }
+  ],
+  "level": "b1"
+ },
+ {
+  "genre": "email",
+  "part": "B1 Preliminary · Writing Part 1 (email)",
+  "title": "Which Pet Should We Get?",
+  "task": "Read the email from your friend Priya and the notes you have made. Write your email to Priya using all the notes. Write about 100 words.",
+  "email": {
+   "from": "Priya",
+   "text": "Guess what? My parents say we can get a pet! Which pet do you think we should get? How should we look after it? And would you like to come and meet it?",
+   "notes": [
+    "Recommend",
+    "Explain",
+    "Yes!"
+   ]
+  },
+  "points": [
+   {
+    "label": "Recommend a pet",
+    "keys": [
+     "you should get",
+     "i recommend",
+     "why not",
+     "how about",
+     "rabbit",
+     "guinea pig",
+     "hamster",
+     "cat",
+     "dog",
+     "fish"
+    ]
+   },
+   {
+    "label": "Explain how to look after it",
+    "keys": [
+     "feed",
+     "clean",
+     "walk",
+     "brush",
+     "play with",
+     "look after"
+    ]
+   },
+   {
+    "label": "Say yes to meeting it",
+    "keys": [
+     "i'd love",
+     "i would love",
+     "can't wait",
+     "sounds great"
+    ]
+   }
+  ],
+  "words": [
+   80,
+   100
+  ],
+  "model": "Hi Priya,\n\nThat's brilliant news! I think you should get a guinea pig, because they are friendly and very quiet. I've had one for two years, and she has never bitten anyone.\n\nYou will need to feed it fresh vegetables and hay every day, and also clean its cage once a week. If you play with it every evening, it will soon learn your voice.\n\nI'd love to come and meet your new pet! Could I visit next Saturday?\n\nLove,\nEmma",
+  "id": "b1-w10",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "That's brilliant news!",
+     "I think you should get …",
+     "You will need to …",
+     "I'd love to …"
+    ]
+   },
+   {
+    "g": "🔗 Linking words",
+    "p": [
+     "However, …",
+     "although",
+     "In addition, …",
+     "for example",
+     "On the other hand, …",
+     "as soon as",
+     "Finally, …"
+    ]
+   },
+   {
+    "g": "💌 Emails",
+    "p": [
+     "It was great to hear from you.",
+     "Let me know if …",
+     "I'm sure …",
+     "Best wishes,"
+    ]
+   },
+   {
+    "g": "📖 Stories & articles",
+    "p": [
+     "At first, …",
+     "Just then, …",
+     "From that day on, …",
+     "Have you ever …?"
+    ]
+   }
+  ],
+  "level": "b1"
  }
 ]

@@ -152,5 +152,131 @@
   "focus": "Sound: /θ/ and -ed /t/",
   "tip": "Lots of /θ/! thir-TEEN is stressed at the end. 'jumped' ends in /t/: /dʒʌmpt/.",
   "id": "a2-sp22"
+ },
+ {
+  "type": "read",
+  "text": "We're going to the beach on Saturday.",
+  "focus": "Future: going to",
+  "tip": "'going to' often sounds like /ˈɡəʊɪŋ tə/. Stress BEACH and SAT-ur-day.",
+  "id": "a2-sp23"
+ },
+ {
+  "type": "read",
+  "text": "My best friend lives next door.",
+  "focus": "Linking: best friend",
+  "tip": "Join 'best friend': the /t/ almost disappears, /bes frend/. Stress NEXT DOOR.",
+  "id": "a2-sp24"
+ },
+ {
+  "type": "read",
+  "text": "Could you pass me the salt, please?",
+  "focus": "Polite requests",
+  "tip": "'Could you' links into /kʊdʒu/. Let your voice go up a little on 'please'.",
+  "id": "a2-sp25"
+ },
+ {
+  "type": "read",
+  "text": "Yesterday it snowed for the first time.",
+  "focus": "Past -ed /d/",
+  "tip": "'snowed' ends with a soft /d/: /snəʊd/. Don't add an extra syllable!",
+  "id": "a2-sp26"
+ },
+ {
+  "type": "read",
+  "text": "I usually have cereal for breakfast.",
+  "focus": "Word stress",
+  "tip": "Stress U-su-al-ly and BREAK-fast. 'cereal' sounds like /ˈsɪəriəl/.",
+  "id": "a2-sp27"
+ },
+ {
+  "type": "read",
+  "text": "The museum opens at half past nine.",
+  "focus": "Telling the time",
+  "tip": "Stress mu-SE-um. 'half past' has a long /ɑː/ twice: /hɑːf pɑːst/.",
+  "id": "a2-sp28"
+ },
+ {
+  "type": "read",
+  "text": "My brother is taller than me.",
+  "focus": "Comparatives",
+  "tip": "'than' is weak /ðən/. Stress TALL-er and ME.",
+  "id": "a2-sp29"
+ },
+ {
+  "type": "read",
+  "text": "We watched a funny film last night.",
+  "focus": "Past -ed /t/",
+  "tip": "'watched' is one syllable ending in /tʃt/: /wɒtʃt/.",
+  "id": "a2-sp30"
+ },
+ {
+  "type": "read",
+  "text": "How much does this T-shirt cost?",
+  "focus": "Intonation: shopping questions",
+  "tip": "Wh- questions go down at the end. Stress MUCH and COST.",
+  "id": "a2-sp31"
+ },
+ {
+  "type": "read",
+  "text": "I've got a headache and a sore throat.",
+  "focus": "Sounds: /θr/ and /eɪ/",
+  "tip": "'throat' starts with /θr/: tongue between your teeth, then /r/. 'ache' sounds like /eɪk/.",
+  "id": "a2-sp32"
+ },
+ {
+  "type": "read",
+  "text": "Turn left at the end of the street.",
+  "focus": "Giving directions",
+  "tip": "Link 'end of the': /end əv ðə/. Stress LEFT and STREET.",
+  "id": "a2-sp33"
+ },
+ {
+  "type": "read",
+  "text": "There are lots of shells on the beach.",
+  "focus": "Sounds: /ʃ/ and /iː/",
+  "tip": "'shells' /ʃelz/ and 'beach' /biːtʃ/: keep the vowel in 'beach' long.",
+  "id": "a2-sp34"
+ },
+ {
+  "type": "read",
+  "text": "She's practising the piano for her concert.",
+  "focus": "Word stress",
+  "tip": "Stress PRAC-tis-ing, pi-AN-o and CON-cert.",
+  "id": "a2-sp35"
+ },
+ {
+  "type": "read",
+  "text": "Don't forget your umbrella today.",
+  "focus": "Contractions and stress",
+  "tip": "'Don't' is one beat /dəʊnt/. Stress um-BREL-la.",
+  "id": "a2-sp36"
+ },
+ {
+  "type": "read",
+  "text": "Our cat climbed up the apple tree.",
+  "focus": "Silent letters",
+  "tip": "The 'b' in 'climbed' is silent: /klaɪmd/.",
+  "id": "a2-sp37"
+ },
+ {
+  "type": "read",
+  "text": "Would you like to come to my party?",
+  "focus": "Invitations",
+  "tip": "'Would you' links into /wʊdʒu/. Your voice goes up on PAR-ty?",
+  "id": "a2-sp38"
+ },
+ {
+  "type": "read",
+  "text": "The train was late, so we waited.",
+  "focus": "Past -ed /ɪd/",
+  "tip": "'waited' adds a syllable: WAIT-id /ˈweɪtɪd/, because 'wait' ends in /t/.",
+  "id": "a2-sp39"
+ },
+ {
+  "type": "read",
+  "text": "I'm saving my pocket money for a skateboard.",
+  "focus": "Word stress",
+  "tip": "Stress POCK-et MON-ey and SKATE-board. 'saving' has /eɪ/.",
+  "id": "a2-sp40"
  }
 ]

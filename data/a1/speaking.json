@@ -152,5 +152,131 @@
   "focus": "Silent letters",
   "tip": "The 't' in 'castle' is silent: /ˈkɑːsl/.",
   "id": "a1-sp22"
+ },
+ {
+  "type": "read",
+  "text": "My kite is red and yellow.",
+  "focus": "Sound: /aɪ/",
+  "tip": "'kite' and 'my' share the same /aɪ/ sound. Open wide, then smile: /kaɪt/.",
+  "id": "a1-sp23"
+ },
+ {
+  "type": "read",
+  "text": "The bunny has soft ears.",
+  "focus": "Sound: /ʌ/",
+  "tip": "'bunny' has a short /ʌ/ like 'up'. Say BUN-ny and stress the first part.",
+  "id": "a1-sp24"
+ },
+ {
+  "type": "read",
+  "text": "I brush my teeth every night.",
+  "focus": "Sound: /θ/",
+  "tip": "Put your tongue between your teeth for 'teeth' /tiːθ/ and blow softly.",
+  "id": "a1-sp25"
+ },
+ {
+  "type": "read",
+  "text": "Look at the big rainbow!",
+  "focus": "Intonation: excitement",
+  "tip": "Let your voice jump up on RAIN-bow! Stress the first part.",
+  "id": "a1-sp26"
+ },
+ {
+  "type": "read",
+  "text": "We have pizza on Fridays.",
+  "focus": "Word stress: days",
+  "tip": "Stress the first part: FRI-days, PIZ-za. The 'zz' in pizza sounds like /ts/.",
+  "id": "a1-sp27"
+ },
+ {
+  "type": "read",
+  "text": "My sister is five.",
+  "focus": "Sounds: /aɪ/ and /v/",
+  "tip": "'five' has /aɪ/ and ends with top teeth on your lip: /faɪv/.",
+  "id": "a1-sp28"
+ },
+ {
+  "type": "read",
+  "text": "Can I play with you?",
+  "focus": "Intonation: yes/no questions",
+  "tip": "Yes/no questions go UP at the end: 'with YOU?'",
+  "id": "a1-sp29"
+ },
+ {
+  "type": "read",
+  "text": "The duck says quack quack.",
+  "focus": "Sound: /kw/",
+  "tip": "Round your lips for /kw/ in 'quack'. Say it like a happy duck!",
+  "id": "a1-sp30"
+ },
+ {
+  "type": "read",
+  "text": "I love my blue bike.",
+  "focus": "Consonant cluster /bl/",
+  "tip": "Say 'blue' /bluː/ in one go, with no extra vowel: not 'be-lue'.",
+  "id": "a1-sp31"
+ },
+ {
+  "type": "read",
+  "text": "Good morning, Miss Rose!",
+  "focus": "Greetings",
+  "tip": "Stress MOR-ning. 'Miss' has a short /ɪ/ and a hissing /s/.",
+  "id": "a1-sp32"
+ },
+ {
+  "type": "read",
+  "text": "The cake is in the oven.",
+  "focus": "Sound: /ʌ/ in 'oven'",
+  "tip": "'oven' starts with /ʌ/ like 'up': /ˈʌvn/. Not 'oh-ven'!",
+  "id": "a1-sp33"
+ },
+ {
+  "type": "read",
+  "text": "Six snakes sleep in the sun.",
+  "focus": "Sound: /s/ tongue twister",
+  "tip": "Make a long hissing /s/ like a snake. Go slowly first, then faster.",
+  "id": "a1-sp34"
+ },
+ {
+  "type": "read",
+  "text": "My shoes are under the bed.",
+  "focus": "Sounds: /ʃ/ and /uː/",
+  "tip": "'shoes' starts with /ʃ/ (shh!) and ends with a buzzy /z/: /ʃuːz/.",
+  "id": "a1-sp35"
+ },
+ {
+  "type": "read",
+  "text": "It's time for lunch.",
+  "focus": "Contractions",
+  "tip": "'It's' is 'it is' squeezed into one beat: /ɪts/. 'lunch' ends with /tʃ/.",
+  "id": "a1-sp36"
+ },
+ {
+  "type": "read",
+  "text": "How old are you?",
+  "focus": "Intonation: wh- questions",
+  "tip": "Wh- questions usually go DOWN at the end. Stress OLD.",
+  "id": "a1-sp37"
+ },
+ {
+  "type": "read",
+  "text": "The panda eats green leaves.",
+  "focus": "Long vowel /iː/",
+  "tip": "'eats', 'green' and 'leaves' all have a long /iː/. Smile wide!",
+  "id": "a1-sp38"
+ },
+ {
+  "type": "read",
+  "text": "I can count to ten.",
+  "focus": "Sound: /aʊ/",
+  "tip": "'count' has /aʊ/ like 'ouch!'. Open your mouth, then round your lips.",
+  "id": "a1-sp39"
+ },
+ {
+  "type": "read",
+  "text": "Please close the door.",
+  "focus": "Sounds: /əʊ/ and /z/",
+  "tip": "'close' (shut) ends with a buzzy /z/: /kləʊz/. 'please' ends with /z/ too.",
+  "id": "a1-sp40"
  }
 ]

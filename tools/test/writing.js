@@ -99,7 +99,8 @@ On balance, I believe that education is the more important method. Not only does
   assert(/Bonus/.test(await page.textContent('[data-write]')), 'bonus writing tile in the realm');
   await page.screenshot({ path: OUT + 'writing_01_realm_tile.png' });
   await page.click('[data-write]'); await page.waitForSelector('.quill-task');
-  assert((await page.$$('.quill-task')).length === 6, 'A1 task picker lists 6 tasks');
+  const nA1 = JSON.parse(require('fs').readFileSync(require('path').join(__dirname, '..', '..', 'data', 'a1', 'writing.json'), 'utf8')).length;   // R20: the bank grows
+  assert((await page.$$('.quill-task')).length === nA1 && nA1 >= 10, 'A1 task picker lists every A1 task (' + nA1 + ')');
   await page.waitForFunction(() => { const i = document.querySelector('.quill-art'); return i && i.complete && i.naturalWidth > 0; });
   await clean(page); await page.screenshot({ path: OUT + 'writing_02_picker.png' });
   await page.click('.quill-task[data-id="a1-w01"]'); await page.waitForSelector('#qPlan');

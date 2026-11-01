@@ -1991,16 +1991,18 @@
   "type": "mistake",
   "q": "Tap the word that is wrong.",
   "words": [
-   "We",
-   "is",
+   "I",
+   "are",
    "in",
    "the",
    "same",
-   "class."
+   "class",
+   "as",
+   "Tom."
   ],
   "wrong": 1,
-  "fix": "are",
-  "explain": "With we we say are: We are in the same class."
+  "fix": "am",
+  "explain": "With I we say am: I am in the same class."
  },
  {
   "type": "mistake",

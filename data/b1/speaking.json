@@ -174,5 +174,176 @@
   "tip": "'I'll' counts as 'I will'. Pause after the 'if' part and stress the main verb.",
   "id": "b1-sp22",
   "minWords": 5
+ },
+ {
+  "type": "read",
+  "text": "If I had a robot, it would tidy my room.",
+  "focus": "Second conditional",
+  "tip": "'would' is weak /wəd/. Stress RO-bot and TI-dy.",
+  "id": "b1-sp23"
+ },
+ {
+  "type": "read",
+  "text": "I've been learning the guitar for two years.",
+  "focus": "Present perfect continuous",
+  "tip": "'I've been' sounds like /aɪv bɪn/. Stress gui-TAR and YEARS.",
+  "id": "b1-sp24"
+ },
+ {
+  "type": "read",
+  "text": "The festival was cancelled because of the storm.",
+  "focus": "Past passive",
+  "tip": "'cancelled' ends with /ld/: /ˈkænsld/. Stress FES-ti-val and STORM.",
+  "id": "b1-sp25"
+ },
+ {
+  "type": "read",
+  "text": "Although it was raining, we enjoyed the picnic.",
+  "focus": "Linking a contrast",
+  "tip": "Pause a little after 'raining,'. Stress al-THOUGH /ɔːlˈðəʊ/ and en-JOYED.",
+  "id": "b1-sp26"
+ },
+ {
+  "type": "read",
+  "text": "You'd better wear a helmet when you ride your bike.",
+  "focus": "Advice: had better",
+  "tip": "'You'd better' links into /juːd ˈbetə/. Stress HEL-met.",
+  "id": "b1-sp27"
+ },
+ {
+  "type": "read",
+  "text": "My cousin, who lives in Canada, is visiting us.",
+  "focus": "Pausing at commas",
+  "tip": "Pause at each comma, and let your voice drop a little on 'who lives in Canada'.",
+  "id": "b1-sp28"
+ },
+ {
+  "type": "read",
+  "text": "We should recycle more plastic at school.",
+  "focus": "Word stress",
+  "tip": "Stress re-CY-cle and PLAS-tic. 'should' is weak /ʃəd/.",
+  "id": "b1-sp29"
+ },
+ {
+  "type": "read",
+  "text": "The volcano hasn't erupted for hundreds of years.",
+  "focus": "Contractions",
+  "tip": "'hasn't' is one beat with a /z/: /ˈhæznt/. Stress vol-CA-no and e-RUP-ted.",
+  "id": "b1-sp30"
+ },
+ {
+  "type": "read",
+  "text": "I'm not sure, but I think the shop closes at six.",
+  "focus": "Sounding unsure",
+  "tip": "Slow down on 'I'm not sure' and stress SURE. 'closes' has two buzzy /z/ sounds: /ˈkləʊzɪz/.",
+  "id": "b1-sp31"
+ },
+ {
+  "type": "answer",
+  "q": "What is your favourite season and why? Use 'because'.",
+  "keywords": [
+   "because"
+  ],
+  "model": "My favourite season is autumn because I love jumping in the leaves.",
+  "focus": "Giving reasons",
+  "tip": "'because' is weak /bɪkəz/, so stress the reason itself: AU-tumn, LEAVES.",
+  "id": "b1-sp32",
+  "minWords": 5
+ },
+ {
+  "type": "answer",
+  "q": "Describe your best friend. Use 'kind' or 'funny'.",
+  "keywords": [
+   "kind|funny"
+  ],
+  "model": "My best friend is really funny and she always helps me with maths.",
+  "focus": "Describing people",
+  "tip": "Stress the describing word: really FUN-ny. Link 'helps me' smoothly.",
+  "id": "b1-sp33",
+  "minWords": 5
+ },
+ {
+  "type": "answer",
+  "q": "What did you do last weekend? Use 'and then'.",
+  "keywords": [
+   "and then"
+  ],
+  "model": "On Saturday I played football, and then I went to the cinema with my dad.",
+  "focus": "Telling events in order",
+  "tip": "Make the -ed in 'played' a soft /d/. Pause a little before 'and then'.",
+  "id": "b1-sp34",
+  "minWords": 5
+ },
+ {
+  "type": "answer",
+  "q": "What would you like to be when you grow up? Start with 'I'd like to be'.",
+  "keywords": [
+   "would like to be"
+  ],
+  "model": "I'd like to be a vet because I love animals.",
+  "focus": "Talking about the future",
+  "tip": "'I'd like' links into /aɪd laɪk/. Stress VET and AN-i-mals.",
+  "id": "b1-sp35",
+  "minWords": 5
+ },
+ {
+  "type": "answer",
+  "q": "Compare cats and dogs. Use 'than'.",
+  "keywords": [
+   "than"
+  ],
+  "model": "Dogs are more playful than cats, but cats are easier to look after.",
+  "focus": "Comparisons",
+  "tip": "'than' is weak /ðən/. Stress the describing words: PLAY-ful, EAS-i-er.",
+  "id": "b1-sp36",
+  "minWords": 5
+ },
+ {
+  "type": "answer",
+  "q": "Invite a friend to do something this weekend. Use 'Would you like to'.",
+  "keywords": [
+   "would you like to"
+  ],
+  "model": "Would you like to come swimming with me on Saturday afternoon?",
+  "focus": "Invitations",
+  "tip": "'Would you' links into /wʊdʒu/. Let your voice go up at the end of the question.",
+  "id": "b1-sp37",
+  "minWords": 5
+ },
+ {
+  "type": "answer",
+  "q": "Tell me about a time you were surprised. Use 'when'.",
+  "keywords": [
+   "when"
+  ],
+  "model": "I was really surprised when my grandma came to my birthday party from Spain.",
+  "focus": "Telling a short story",
+  "tip": "Stress sur-PRISED and GRAND-ma. Slow down for the exciting part.",
+  "id": "b1-sp38",
+  "minWords": 5
+ },
+ {
+  "type": "answer",
+  "q": "What do you do to stay healthy? Use 'usually' or 'often'.",
+  "keywords": [
+   "usually|often"
+  ],
+  "model": "I usually walk to school and I often eat fruit after lunch.",
+  "focus": "Habits: how often",
+  "tip": "Put 'usually' before the verb. Stress U-su-al-ly and FRUIT.",
+  "id": "b1-sp39",
+  "minWords": 5
+ },
+ {
+  "type": "answer",
+  "q": "Should children have homework? Start with 'I think'.",
+  "keywords": [
+   "i think"
+  ],
+  "model": "I think children should have a little homework, but not every day.",
+  "focus": "Giving opinions",
+  "tip": "Say 'I think' lightly, then stress the important words: LIT-tle, NOT, EV-ery DAY.",
+  "id": "b1-sp40",
+  "minWords": 5
  }
 ]

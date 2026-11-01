@@ -11,7 +11,7 @@ R19A = {
   order("They have a yellow kite.", "They + have + what: They have a yellow kite."),
   order("Where is my blue pencil?", "Where + is + the thing: Where is my blue pencil?"),
   order("The birds sing in the morning.", "Who + do what + when: The birds sing in the morning."),
-  mist("We is in the same class.", 1, "are", "With we we say are: We are in the same class."),
+  mist("I are in the same class as Tom.", 1, "am", "With I we say am: I am in the same class."),
   mist("My brother play football.", 2, "plays", "With he/she/it (my brother) add -s: My brother plays football."),
   mist("I have three apple.", 3, "apples.", "More than one apple: add -s. Three apples."),
   mist("Can you swims?", 2, "swim?", "After can, use the plain verb: Can you swim?"),
