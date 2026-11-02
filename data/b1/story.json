@@ -1,81 +1,189 @@
 {
- "title": "The Owl's Riddle",
- "focus": "past continuous · present perfect · first conditional · should",
- "img": "story_b1",
- "pages": [
+ "id": "b1-story",
+ "level": "b1",
+ "chapters": [
   {
-   "text": "It was getting dark when {hero} and {pet} reached the Whispering Forest. The trees were so tall that they hid the moon, and the leaves seemed to whisper their names. {pet} stayed close to {hero}, which was [[unusual|not normal or not common]], because {pet} is normally very brave.",
-   "q": {
-    "q": "How was {pet} behaving differently from usual?",
+   "title": "The Owl's Riddle",
+   "focus": "past continuous · present perfect · first conditional · should",
+   "img": "story_b1",
+   "pages": [
+    {
+     "text": "It was getting dark when {hero} and {pet} reached the Whispering Forest. The trees were so tall that they hid the moon, and the leaves seemed to whisper their names. {pet} stayed close to {hero}, which was [[unusual|not normal or not common]], because {pet} is normally very brave.",
+     "q": {
+      "q": "How was {pet} behaving differently from usual?",
+      "options": [
+       "staying close, as if nervous",
+       "running ahead to explore the path",
+       "whispering to the trees",
+       "looking up at the moon"
+      ],
+      "answer": 0,
+      "explain": "{pet} “stayed close… which was unusual, because {pet} is normally very brave” — so {pet} was a little scared.",
+      "kind": "infer"
+     }
+    },
+    {
+     "text": "After a while they came to a fork in the path. An old sign said “Left: the River. Right: the Hollow Oak.” While they were deciding, a firefly landed on {hero}'s hand. “I've lived here all my life,” it buzzed. “If you go left, you'll get lost in the [[mist|a thin cloud near the ground that is hard to see through]].”",
+     "q": {
+      "q": "Why did the firefly warn them about the left path?",
+      "options": [
+       "They would lose their way in the mist.",
+       "The river there was much too deep to cross.",
+       "The Hollow Oak was on that side.",
+       "Its family lived on that path."
+      ],
+      "answer": 0,
+      "explain": "“If you go left, you'll get lost in the mist.” (first conditional: if + present, will + verb)",
+      "kind": "fact"
+     }
+    },
+    {
+     "text": "They took the right path and soon found the Hollow Oak. Inside, a white owl was [[guarding|watching something to keep it safe]] a glowing page. “I have kept this safe for a hundred nights,” she said, “but I can only give it to someone who answers my riddle: what gets bigger the more you take away?”",
+     "q": {
+      "q": "Why hasn't the owl given the page to anyone yet?",
+      "options": [
+       "Nobody has answered her riddle.",
+       "She wants to keep the page forever.",
+       "Nobody has visited the oak.",
+       "The page is too heavy."
+      ],
+      "answer": 0,
+      "explain": "She can only give it to “someone who answers my riddle” — so nobody has answered it yet.",
+      "kind": "infer"
+     }
+    },
+    {
+     "text": "{hero} thought for a moment and then smiled. “A hole!” The owl's eyes sparkled. “Correct. You should keep going — I think the next page is somewhere near the lake.” As they walked out of the forest, {hero} noticed that the trees had stopped whispering. Perhaps they were [[relieved|happy because something worrying has ended]] too.",
+     "q": {
+      "q": "Where does the owl think the next page is?",
+      "options": [
+       "near the lake",
+       "inside the oak",
+       "by the river",
+       "in Candy Village"
+      ],
+      "answer": 0,
+      "explain": "“I think the next page is somewhere near the lake.”",
+      "kind": "fact"
+     }
+    }
+   ],
+   "final": {
+    "q": "Which word from the story means “watching something to keep it safe”?",
     "options": [
-     "staying close, as if nervous",
-     "running ahead to explore the path",
-     "whispering to the trees",
-     "looking up at the moon"
+     "guarding",
+     "whispering",
+     "deciding",
+     "sparkling"
     ],
     "answer": 0,
-    "explain": "{pet} “stayed close… which was unusual, because {pet} is normally very brave” — so {pet} was a little scared.",
-    "kind": "infer"
+    "explain": "The owl was guarding the page: keeping it safe.",
+    "kind": "vocab"
    }
   },
   {
-   "text": "After a while they came to a fork in the path. An old sign said “Left: the River. Right: the Hollow Oak.” While they were deciding, a firefly landed on {hero}'s hand. “I've lived here all my life,” it buzzed. “If you go left, you'll get lost in the [[mist|a thin cloud near the ground that is hard to see through]].”",
-   "q": {
-    "q": "Why did the firefly warn them about the left path?",
+   "title": "The Lantern Festival",
+   "focus": "past continuous · past perfect · present perfect · first conditional · should",
+   "img": "story_b1_2",
+   "pages": [
+    {
+     "text": "Every summer, the creatures of the Whispering Forest hold a Lantern Festival, and this year the owl had invited {hero} and {pet} as special guests. When they arrived, the fireflies were hanging paper lanterns on every branch. But one firefly, Pip, was sitting alone on a mushroom, looking [[miserable|very unhappy]].",
+     "q": {
+      "q": "Why were {hero} and {pet} at the festival?",
+      "options": [
+       "The owl had invited them.",
+       "They were lost in the forest.",
+       "Pip had asked them to come.",
+       "They wanted to sell lanterns."
+      ],
+      "answer": 0,
+      "explain": "“This year the owl had invited {hero} and {pet} as special guests.”",
+      "kind": "fact",
+      "notes": {
+       "They were lost in the forest.": "They weren't lost this time. They came because “the owl had invited” them.",
+       "Pip had asked them to come.": "Pip was sitting alone and unhappy. The invitation came from the owl.",
+       "They wanted to sell lanterns.": "Nobody sells anything here. They were “special guests”."
+      }
+     }
+    },
+    {
+     "text": "“I've ruined everything,” Pip sighed. “I was carrying the biggest lantern when I flew into a branch. Now it has a [[tear|a hole where something has been pulled apart]] in it, and the festival starts at sunset.” {hero} looked at the sky. The sun was already low behind the trees.",
+     "q": {
+      "q": "What was Pip doing when the accident happened?",
+      "options": [
+       "carrying the biggest lantern",
+       "hanging lanterns on a branch",
+       "sitting alone on a mushroom",
+       "watching the sun go down"
+      ],
+      "answer": 0,
+      "explain": "“I was carrying the biggest lantern when I flew into a branch.” Was + -ing = the longer action that was going on.",
+      "kind": "grammar",
+      "notes": {
+       "hanging lanterns on a branch": "The other fireflies were hanging lanterns. Pip says “I was carrying the biggest lantern.”",
+       "sitting alone on a mushroom": "Pip sat on the mushroom later, after the accident.",
+       "watching the sun go down": "It was {hero} who looked at the low sun, after Pip's story."
+      }
+     }
+    },
+    {
+     "text": "“Don't worry,” said {hero}. “If we work quickly, we'll fix it before sunset.” {pet} found a long pink ribbon in {hero}'s bag, and together they tied it [[carefully|slowly, taking care not to make a mistake]] around the tear. It wasn't perfect, but the paper held. “You should hang it on the oak,” said the owl. “Everyone will see it there.”",
+     "q": {
+      "q": "How did they mend the lantern?",
+      "options": [
+       "They tied a ribbon around the tear.",
+       "They glued new paper over the hole.",
+       "They swapped it for a smaller lantern.",
+       "They asked the owl to fly it home."
+      ],
+      "answer": 0,
+      "explain": "“Together they tied it carefully around the tear.”",
+      "kind": "fact",
+      "notes": {
+       "They glued new paper over the hole.": "There's no glue in the story. {pet} found a ribbon, and “they tied it carefully around the tear.”",
+       "They swapped it for a smaller lantern.": "They kept the same big lantern and mended it.",
+       "They asked the owl to fly it home.": "The owl only said where to hang it: “You should hang it on the oak.”"
+      }
+     }
+    },
+    {
+     "text": "At sunset, the fireflies flew inside the lanterns and the whole forest began to glow. Pip's lantern, with its pink bow, shone brighter than any of the others. “I've never been so proud,” Pip whispered. Since that night, every lantern in the forest has worn a pink ribbon, in honour of the [[mended|repaired, made whole again]] one.",
+     "q": {
+      "q": "Why does every lantern now have a pink ribbon?",
+      "options": [
+       "to remember the night Pip's lantern was saved",
+       "because pink ribbons make lanterns brighter",
+       "because the owl ordered the fireflies to use them",
+       "to stop lanterns from tearing on branches"
+      ],
+      "answer": 0,
+      "explain": "They wear ribbons “in honour of the mended one”: to remember Pip's lantern.",
+      "kind": "infer",
+      "notes": {
+       "because pink ribbons make lanterns brighter": "Pip's lantern shone brightly, but the ribbons are there “in honour of the mended one”, not to add light.",
+       "because the owl ordered the fireflies to use them": "The story doesn't say the owl ordered anything. The ribbons are “in honour of the mended one”.",
+       "to stop lanterns from tearing on branches": "A ribbon can mend a tear, but the story says they wear them “in honour of the mended one”."
+      }
+     }
+    }
+   ],
+   "final": {
+    "q": "“Miserable” is closest in meaning to…",
     "options": [
-     "They would lose their way in the mist.",
-     "The river there was much too deep to cross.",
-     "The Hollow Oak was on that side.",
-     "Its family lived on that path."
+     "very unhappy",
+     "very sleepy",
+     "very cross",
+     "extremely nervous"
     ],
     "answer": 0,
-    "explain": "“If you go left, you'll get lost in the mist.” (first conditional: if + present, will + verb)",
-    "kind": "fact"
-   }
-  },
-  {
-   "text": "They took the right path and soon found the Hollow Oak. Inside, a white owl was [[guarding|watching something to keep it safe]] a glowing page. “I have kept this safe for a hundred nights,” she said, “but I can only give it to someone who answers my riddle: what gets bigger the more you take away?”",
-   "q": {
-    "q": "Why hasn't the owl given the page to anyone yet?",
-    "options": [
-     "Nobody has answered her riddle.",
-     "She wants to keep the page forever.",
-     "Nobody has visited the oak.",
-     "The page is too heavy."
-    ],
-    "answer": 0,
-    "explain": "She can only give it to “someone who answers my riddle” — so nobody has answered it yet.",
-    "kind": "infer"
-   }
-  },
-  {
-   "text": "{hero} thought for a moment and then smiled. “A hole!” The owl's eyes sparkled. “Correct. You should keep going — I think the next page is somewhere near the lake.” As they walked out of the forest, {hero} noticed that the trees had stopped whispering. Perhaps they were [[relieved|happy because something worrying has ended]] too.",
-   "q": {
-    "q": "Where does the owl think the next page is?",
-    "options": [
-     "near the lake",
-     "inside the oak",
-     "by the river",
-     "in Candy Village"
-    ],
-    "answer": 0,
-    "explain": "“I think the next page is somewhere near the lake.”",
-    "kind": "fact"
+    "explain": "Pip was miserable: very unhappy about the torn lantern.",
+    "kind": "vocab",
+    "notes": {
+     "very sleepy": "Pip wasn't tired. Pip was upset about the torn lantern.",
+     "very cross": "Pip wasn't angry with anyone, just very sad.",
+     "extremely nervous": "Nervous = worried about what might happen. Miserable = very unhappy about what has happened."
+    }
    }
   }
- ],
- "final": {
-  "q": "Which word from the story means “watching something to keep it safe”?",
-  "options": [
-   "guarding",
-   "whispering",
-   "deciding",
-   "sparkling"
-  ],
-  "answer": 0,
-  "explain": "The owl was guarding the page: keeping it safe.",
-  "kind": "vocab"
- },
- "id": "b1-story",
- "level": "b1"
+ ]
 }

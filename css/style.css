@@ -687,3 +687,13 @@ img.acc-prev{width:72px;height:72px;object-fit:contain;display:block;margin:4px 
 /* 👆 R13: glossary words get a 44 px tall invisible tap area without touching the line height */
 .gloss,.gl-hint{position:relative}
 .gloss::after,.gl-hint::after{content:"";position:absolute;left:-6px;right:-6px;top:50%;height:44px;transform:translateY(-50%)}
+/* 📚 Storybook chapter shelf (js/story.js) */
+.shelf-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;margin-top:14px}
+.shelf-ch{display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;cursor:pointer;border:none;font:inherit;background:linear-gradient(150deg,#FFF7E0,#FFE9F1 60%,#EDE6FF);padding:12px}
+.shelf-ch .shelf-pic{width:100%;aspect-ratio:4/3;border-radius:16px;overflow:hidden;box-shadow:0 4px 12px rgba(122,92,143,.2)}
+.shelf-ch .shelf-pic img{width:100%;height:100%;object-fit:cover;display:block}
+.shelf-ch .shelf-title{font-weight:800;font-size:.95rem}
+.shelf-ch small{font-weight:800;color:var(--muted,#8a7d99)}
+.shelf-ch.locked{cursor:default;opacity:.62}.shelf-ch.locked .shelf-pic img{filter:grayscale(.85) blur(2px)}
+.story-fb .why-not{margin-top:8px;padding:8px 10px;border-radius:12px;background:rgba(255,255,255,.7);font-weight:600;line-height:1.4}
+@media (max-width:600px){.shelf-grid{grid-template-columns:1fr 1fr;gap:10px}.shelf-ch{padding:8px}.shelf-ch .shelf-title{font-size:.82rem}}

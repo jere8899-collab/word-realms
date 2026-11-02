@@ -1,81 +1,189 @@
 {
- "title": "The Cake Thief",
- "focus": "past simple · comparatives · going to",
- "img": "story_a2",
- "pages": [
+ "id": "a2-story",
+ "level": "a2",
+ "chapters": [
   {
-   "text": "The next day, {hero} and {pet} walked to Candy Village. The houses were made of cake, and the roofs were [[covered|with something all over the top]] in pink icing. The whole village smelled sweeter than a birthday party.",
-   "q": {
-    "q": "What were the roofs covered in?",
+   "title": "The Cake Thief",
+   "focus": "past simple · comparatives · going to",
+   "img": "story_a2",
+   "pages": [
+    {
+     "text": "The next day, {hero} and {pet} walked to Candy Village. The houses were made of cake, and the roofs were [[covered|with something all over the top]] in pink icing. The whole village smelled sweeter than a birthday party.",
+     "q": {
+      "q": "What were the roofs covered in?",
+      "options": [
+       "pink icing",
+       "chocolate",
+       "white snow",
+       "green leaves"
+      ],
+      "answer": 0,
+      "explain": "“The roofs were covered in pink icing.”",
+      "kind": "fact"
+     }
+    },
+    {
+     "text": "In the market they met Mrs Toffee, the baker. She looked [[worried|unhappy because you think something bad may happen]]. “Someone took my best cake last night,” she said. “And I found this strange paper next to my oven.” It was the second page!",
+     "q": {
+      "q": "Why was Mrs Toffee worried?",
+      "options": [
+       "Her best cake was gone.",
+       "Her oven was broken.",
+       "She lost her shop keys.",
+       "Nobody came to buy cakes."
+      ],
+      "answer": 0,
+      "explain": "“Someone took my best cake last night.”",
+      "kind": "fact"
+     }
+    },
+    {
+     "text": "The page had a [[clue|something that helps you find an answer]] on it: “Follow the crumbs.” {hero} looked down. There was a line of tiny cake crumbs on the road. It went past the school and into the park.",
+     "q": {
+      "q": "What did the clue tell them to do?",
+      "options": [
+       "follow the crumbs",
+       "bake a new cake",
+       "ask at the school",
+       "wait by the oven"
+      ],
+      "answer": 0,
+      "explain": "The page said: “Follow the crumbs.”",
+      "kind": "fact"
+     }
+    },
+    {
+     "text": "In the park they found a very small dragon. It was eating the cake. “Sorry!” it said. “I was so hungry.” Mrs Toffee [[laughed|made a happy sound because something was funny]]. “Next time, just ask! I'm going to bake you your own cake.” {hero} put the page in the book.",
+     "q": {
+      "q": "What is Mrs Toffee going to do?",
+      "options": [
+       "bake the dragon a cake",
+       "send the dragon away",
+       "close her cake shop",
+       "call the village guard"
+      ],
+      "answer": 0,
+      "explain": "“I'm going to bake you your own cake.” — going to = a plan.",
+      "kind": "grammar"
+     }
+    }
+   ],
+   "final": {
+    "q": "In the story, a “clue” is something that…",
     "options": [
-     "pink icing",
-     "chocolate",
-     "white snow",
-     "green leaves"
+     "helps you find an answer",
+     "you eat at a party",
+     "keeps rain off a roof",
+     "makes a cake sweeter"
     ],
     "answer": 0,
-    "explain": "“The roofs were covered in pink icing.”",
-    "kind": "fact"
+    "explain": "A clue helps you find the answer to a mystery.",
+    "kind": "vocab"
    }
   },
   {
-   "text": "In the market they met Mrs Toffee, the baker. She looked [[worried|unhappy because you think something bad may happen]]. “Someone took my best cake last night,” she said. “And I found this strange paper next to my oven.” It was the second page!",
-   "q": {
-    "q": "Why was Mrs Toffee worried?",
+   "title": "The Balloon Festival",
+   "focus": "past simple · comparatives and superlatives · going to",
+   "img": "story_a2_2",
+   "pages": [
+    {
+     "text": "A week later, Candy Village had its Balloon Festival. Every child got a balloon, and the sky was full of colours. Mrs Toffee gave {hero} the biggest balloon of all. It was pink and as round as a [[melon|a big round fruit, green outside and sweet inside]].",
+     "q": {
+      "q": "Who gave {hero} a balloon?",
+      "options": [
+       "Mrs Toffee",
+       "the little dragon",
+       "a child from the school",
+       "{pet}"
+      ],
+      "answer": 0,
+      "explain": "“Mrs Toffee gave {hero} the biggest balloon of all.”",
+      "kind": "fact",
+      "notes": {
+       "the little dragon": "The dragon comes later in the story. “Mrs Toffee gave {hero} the biggest balloon of all.”",
+       "a child from the school": "Every child got a balloon, but {hero}'s came from Mrs Toffee.",
+       "{pet}": "{pet} didn't give it. “Mrs Toffee gave {hero} the biggest balloon of all.”"
+      }
+     }
+    },
+    {
+     "text": "Suddenly a strong wind came. The balloon [[slipped|moved out of your hand by accident]] out of {hero}'s hand and flew up into the tallest tree in the village, the old candy-cane tree. {hero} tried to climb it, but the trunk was too [[sticky|covered in something sweet that holds on to you]].",
+     "q": {
+      "q": "Why couldn't {hero} climb the tree?",
+      "options": [
+       "The trunk was too sticky.",
+       "The tree was too short.",
+       "The wind was too cold.",
+       "{pet} was too scared."
+      ],
+      "answer": 0,
+      "explain": "“{hero} tried to climb it, but the trunk was too sticky.”",
+      "kind": "fact",
+      "notes": {
+       "The tree was too short.": "It was “the tallest tree in the village”, not a short one.",
+       "The wind was too cold.": "The wind was strong, but the story doesn't say it was cold. The problem was the sticky trunk.",
+       "{pet} was too scared.": "The story doesn't say {pet} was scared. The trunk “was too sticky.”"
+      }
+     }
+    },
+    {
+     "text": "Then they heard a small voice. “I can help!” It was Crumb, the little dragon who ate the cake last week. Crumb was smaller than a cat, but his wings were stronger than they looked. He flew up, took the string in his [[claws|the sharp nails on an animal's foot]] and brought the balloon down.",
+     "q": {
+      "q": "What do we learn about Crumb's wings?",
+      "options": [
+       "They were stronger than they looked.",
+       "They were bigger than a cat.",
+       "They were sticky like the tree.",
+       "They were too weak to fly up very high."
+      ],
+      "answer": 0,
+      "explain": "“His wings were stronger than they looked.” (stronger than = comparing two things)",
+      "kind": "grammar",
+      "notes": {
+       "They were bigger than a cat.": "It was Crumb who was “smaller than a cat”. The story doesn't say how big his wings were.",
+       "They were sticky like the tree.": "The tree trunk was sticky, not Crumb's wings.",
+       "They were too weak to fly up very high.": "He flew up into the tallest tree, so his wings were strong, not weak."
+      }
+     }
+    },
+    {
+     "text": "Everyone [[clapped|hit their hands together to show they liked something]]. “Thank you, Crumb!” said {hero}. “You're the bravest dragon in Candy Village.” Crumb's cheeks went pink. “Next year I'm going to fly in the festival too,” he said. “Can I have a balloon of my own?”",
+     "q": {
+      "q": "What is Crumb going to do next year?",
+      "options": [
+       "fly in the festival",
+       "bake a balloon cake",
+       "climb the candy tree",
+       "eat Mrs Toffee's cake"
+      ],
+      "answer": 0,
+      "explain": "“Next year I'm going to fly in the festival too.” Going to = a plan.",
+      "kind": "grammar",
+      "notes": {
+       "bake a balloon cake": "Mrs Toffee is the baker. Crumb's plan is to “fly in the festival”.",
+       "climb the candy tree": "Crumb can fly, so he doesn't need to climb. His plan is to “fly in the festival”.",
+       "eat Mrs Toffee's cake": "That happened last week, in the cake story. Next year he's going to “fly in the festival”."
+      }
+     }
+    }
+   ],
+   "final": {
+    "q": "In the story, the balloon “slipped”. That means it…",
     "options": [
-     "Her best cake was gone.",
-     "Her oven was broken.",
-     "She lost her shop keys.",
-     "Nobody came to buy cakes."
+     "moved out of a hand by accident",
+     "was given to a friend",
+     "popped with a loud bang",
+     "was tied to a tall tree on purpose"
     ],
     "answer": 0,
-    "explain": "“Someone took my best cake last night.”",
-    "kind": "fact"
-   }
-  },
-  {
-   "text": "The page had a [[clue|something that helps you find an answer]] on it: “Follow the crumbs.” {hero} looked down. There was a line of tiny cake crumbs on the road. It went past the school and into the park.",
-   "q": {
-    "q": "What did the clue tell them to do?",
-    "options": [
-     "follow the crumbs",
-     "bake a new cake",
-     "ask at the school",
-     "wait by the oven"
-    ],
-    "answer": 0,
-    "explain": "The page said: “Follow the crumbs.”",
-    "kind": "fact"
-   }
-  },
-  {
-   "text": "In the park they found a very small dragon. It was eating the cake. “Sorry!” it said. “I was so hungry.” Mrs Toffee [[laughed|made a happy sound because something was funny]]. “Next time, just ask! I'm going to bake you your own cake.” {hero} put the page in the book.",
-   "q": {
-    "q": "What is Mrs Toffee going to do?",
-    "options": [
-     "bake the dragon a cake",
-     "send the dragon away",
-     "close her cake shop",
-     "call the village guard"
-    ],
-    "answer": 0,
-    "explain": "“I'm going to bake you your own cake.” — going to = a plan.",
-    "kind": "grammar"
+    "explain": "Slipped = moved out of {hero}'s hand by accident, because of the wind.",
+    "kind": "vocab",
+    "notes": {
+     "was given to a friend": "Nobody gave it away. The wind made it slip out of {hero}'s hand.",
+     "popped with a loud bang": "It didn't pop. It flew into the tree, and Crumb brought it down.",
+     "was tied to a tall tree on purpose": "Slipping is an accident, not something you do on purpose."
+    }
    }
   }
- ],
- "final": {
-  "q": "In the story, a “clue” is something that…",
-  "options": [
-   "helps you find an answer",
-   "you eat at a party",
-   "keeps rain off a roof",
-   "makes a cake sweeter"
-  ],
-  "answer": 0,
-  "explain": "A clue helps you find the answer to a mystery.",
-  "kind": "vocab"
- },
- "id": "a2-story",
- "level": "a2"
+ ]
 }

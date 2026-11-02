@@ -1,81 +1,189 @@
 {
- "title": "The Council of Clouds",
- "focus": "inversion · cleft sentences · hedging · tone and attitude",
- "img": "story_c1",
- "pages": [
+ "id": "c1-story",
+ "level": "c1",
+ "chapters": [
   {
-   "text": "Cloud Castle was not so much built as persuaded into existence: its towers, the legend went, had been argued up out of the mist by generations of eloquent councillors. On arrival, {hero} learnt that the fifth page had been [[confiscated|officially taken away from someone]] by the council, who were now debating whether a mere visitor could be trusted with it.",
-   "q": {
-    "q": "What does the opening sentence suggest about Cloud Castle?",
+   "title": "The Council of Clouds",
+   "focus": "inversion · cleft sentences · hedging · tone and attitude",
+   "img": "story_c1",
+   "pages": [
+    {
+     "text": "Cloud Castle was not so much built as persuaded into existence: its towers, the legend went, had been argued up out of the mist by generations of eloquent councillors. On arrival, {hero} learnt that the fifth page had been [[confiscated|officially taken away from someone]] by the council, who were now debating whether a mere visitor could be trusted with it.",
+     "q": {
+      "q": "What does the opening sentence suggest about Cloud Castle?",
+      "options": [
+       "Its people prize persuasive argument.",
+       "It was built quickly by skilled workers.",
+       "Nobody knows who designed it.",
+       "It is slowly vanishing into the mist."
+      ],
+      "answer": 0,
+      "explain": "Towers “argued up out of the mist” is a playful way of saying the castle runs on argument and persuasion.",
+      "kind": "infer"
+     }
+    },
+    {
+     "text": "The chief councillor, a silver-haired heron named Lady Quillon, opened proceedings with a speech that was, on the face of it, entirely courteous. Yet beneath the compliments ran an unmistakable thread of doubt. “We are, of course, delighted to welcome our young guest,” she said, “although one might wonder why a stranger should succeed where our own scholars have so [[conspicuously|in a way that is very easy to notice]] failed.”",
+     "q": {
+      "q": "What is Lady Quillon's real attitude towards {hero}?",
+      "options": [
+       "politely sceptical",
+       "openly hostile",
+       "genuinely delighted",
+       "quietly impressed"
+      ],
+      "answer": 0,
+      "explain": "Courteous on the surface (“delighted”), but “an unmistakable thread of doubt” underneath: polite scepticism.",
+      "kind": "infer"
+     }
+    },
+    {
+     "text": "{hero} chose not to answer the [[jibe|a short unkind remark meant to hurt]] directly. “What matters,” {hero} replied, “is not who reads the Storybook, but whether its stories are shared. Locked in your vault, the page helps no one. Returned to the book, it helps every child who opens it.” A murmur rippled through the hall; rarely had the council heard its own logic turned so neatly against it.",
+     "q": {
+      "q": "Why was the council's reaction significant?",
+      "options": [
+       "{hero} had beaten them at their own game.",
+       "{hero} had insulted them in public.",
+       "Visitors were seldom allowed to speak.",
+       "Nobody had read the Storybook before."
+      ],
+      "answer": 0,
+      "explain": "“Rarely had the council heard its own logic turned… against it” — {hero} out-argued the arguers.",
+      "kind": "infer"
+     }
+    },
+    {
+     "text": "The vote was close, but the page was returned. As {hero} left, Lady Quillon fell into step beside them. “I may have been a little [[hasty|too quick, without thinking carefully]],” she conceded, with what was almost a smile. “Should you ever wish to join the council, the door will be open.”",
+     "q": {
+      "q": "“Should you ever wish to join” means…",
+      "options": [
+       "If you ever want to join",
+       "You ought to join soon",
+       "You should not wish to join",
+       "Whenever you were asked to join"
+      ],
+      "answer": 0,
+      "explain": "Inverted conditional: Should you ever wish… = If you ever wish…",
+      "kind": "grammar"
+     }
+    }
+   ],
+   "final": {
+    "q": "The scholars “conspicuously failed”, meaning they failed…",
     "options": [
-     "Its people prize persuasive argument.",
-     "It was built quickly by skilled workers.",
-     "Nobody knows who designed it.",
-     "It is slowly vanishing into the mist."
+     "in a way everyone could see",
+     "without anyone noticing",
+     "by only a tiny margin",
+     "because they gave up early"
     ],
     "answer": 0,
-    "explain": "Towers “argued up out of the mist” is a playful way of saying the castle runs on argument and persuasion.",
-    "kind": "infer"
+    "explain": "Conspicuously = very noticeably.",
+    "kind": "vocab"
    }
   },
   {
-   "text": "The chief councillor, a silver-haired heron named Lady Quillon, opened proceedings with a speech that was, on the face of it, entirely courteous. Yet beneath the compliments ran an unmistakable thread of doubt. “We are, of course, delighted to welcome our young guest,” she said, “although one might wonder why a stranger should succeed where our own scholars have so [[conspicuously|in a way that is very easy to notice]] failed.”",
-   "q": {
-    "q": "What is Lady Quillon's real attitude towards {hero}?",
+   "title": "The Great Weather Quarrel",
+   "focus": "inversion · cleft sentences · hedging · tone and attitude",
+   "img": "story_c1_2",
+   "pages": [
+    {
+     "text": "Not since the Great Drizzle of the previous century had Cloud Castle been so divided. The Festival of Kites was three days away, and the castle's two weather sprites, Nimbus and Sola, could not agree on the forecast. Nimbus wanted a gentle rain to make the gardens sparkle; Sola insisted on [[unbroken|continuous, with no stops or gaps]] sunshine. Lady Quillon, now {hero}'s firm friend, asked {hero} to help settle the matter.",
+     "q": {
+      "q": "What does “Not since the Great Drizzle… had Cloud Castle been so divided” suggest?",
+      "options": [
+       "The castle had not argued this much in a very long time.",
+       "The Great Drizzle had caused the present quarrel.",
+       "The castle argues fiercely about the weather every single year.",
+       "The Great Drizzle happened just before the festival."
+      ],
+      "answer": 0,
+      "explain": "Inversion after “Not since” stresses how rare this is: nothing like it for about a hundred years.",
+      "kind": "infer",
+      "notes": {
+       "The Great Drizzle had caused the present quarrel.": "The Drizzle is only a point of comparison. The quarrel is about the festival forecast.",
+       "The castle argues fiercely about the weather every single year.": "The opposite: the castle hadn't been this divided since “the previous century”.",
+       "The Great Drizzle happened just before the festival.": "It was in “the previous century”, long before this festival."
+      }
+     }
+    },
+    {
+     "text": "Both sprites presented their case at length. Sola argued that rain would spoil the kites; Nimbus argued that without rain, the famous cloud-roses would [[wilt|droop and go soft because they have no water]]. “With respect,” Sola said, in a tone that suggested very little respect indeed, “nobody flies a kite to look at roses.”",
+     "q": {
+      "q": "How should we read Sola's “With respect”?",
+      "options": [
+       "It sounds polite but is really dismissive.",
+       "It shows Sola truly admires Nimbus.",
+       "It means Sola is about to agree.",
+       "It is an apology for interrupting Nimbus mid-sentence."
+      ],
+      "answer": 0,
+      "explain": "The narrator says the tone “suggested very little respect indeed”: polite words hiding scorn.",
+      "kind": "infer",
+      "notes": {
+       "It shows Sola truly admires Nimbus.": "The narrator tells us the tone showed “very little respect indeed”.",
+       "It means Sola is about to agree.": "Sola goes on to mock the roses, so no agreement follows.",
+       "It is an apology for interrupting Nimbus mid-sentence.": "Nobody was interrupted. It's a polite-sounding way to disagree."
+      }
+     }
+    },
+    {
+     "text": "{hero} listened carefully and then asked a question nobody had [[thought of|had the idea of]]: “When exactly are the kites flown?” It was, as it turned out, only in the afternoon that the kites went up. The roses, meanwhile, were at their best in the early morning. “So perhaps,” {hero} suggested, “it might be possible to have a little rain at dawn, and sunshine after lunch?”",
+     "q": {
+      "q": "Why does {hero} say “perhaps… it might be possible”?",
+      "options": [
+       "to make the idea sound gentle, not bossy",
+       "because {hero} is not sure rain exists",
+       "to show that the plan is already agreed",
+       "because {hero} wants the sprites to refuse"
+      ],
+      "answer": 0,
+      "explain": "Hedging (perhaps, might) softens a suggestion so both sides can say yes.",
+      "kind": "grammar",
+      "notes": {
+       "because {hero} is not sure rain exists": "{hero} isn't doubting rain. The words soften the suggestion.",
+       "to show that the plan is already agreed": "Nobody has agreed yet. Hedging comes before agreement, to invite it.",
+       "because {hero} wants the sprites to refuse": "{hero} wants both sprites to accept, and the gentle wording helps."
+      }
+     }
+    },
+    {
+     "text": "There was a long pause. Then Nimbus, rather [[grudgingly|without wanting to, unwillingly]], admitted that a dawn shower would suit the roses perfectly. Sola conceded that an afternoon of sunshine was all the kites had ever needed. What surprised everyone most was not the solution itself, but how simple it had been all along. On the day, the gardens sparkled at breakfast and the sky was full of kites by three o'clock.",
+     "q": {
+      "q": "What surprised everyone most?",
+      "options": [
+       "how simple the answer had been",
+       "that the sprites stopped speaking",
+       "that it rained all afternoon",
+       "that the roses wilted after all"
+      ],
+      "answer": 0,
+      "explain": "“What surprised everyone most was… how simple it had been all along.” (a cleft sentence puts the surprise in focus)",
+      "kind": "fact",
+      "notes": {
+       "that the sprites stopped speaking": "They paused, but then both sprites agreed out loud.",
+       "that it rained all afternoon": "The plan was rain at dawn and sun after lunch, and the sky was full of kites by three.",
+       "that the roses wilted after all": "The gardens “sparkled at breakfast”, so the roses were fine."
+      }
+     }
+    }
+   ],
+   "final": {
+    "q": "“Grudgingly” means doing something…",
     "options": [
-     "politely sceptical",
-     "openly hostile",
-     "genuinely delighted",
-     "quietly impressed"
+     "unwillingly, though you do it",
+     "joyfully and with great energy",
+     "quickly, without any thought",
+     "secretly, so no one notices"
     ],
     "answer": 0,
-    "explain": "Courteous on the surface (“delighted”), but “an unmistakable thread of doubt” underneath: polite scepticism.",
-    "kind": "infer"
-   }
-  },
-  {
-   "text": "{hero} chose not to answer the [[jibe|a short unkind remark meant to hurt]] directly. “What matters,” {hero} replied, “is not who reads the Storybook, but whether its stories are shared. Locked in your vault, the page helps no one. Returned to the book, it helps every child who opens it.” A murmur rippled through the hall; rarely had the council heard its own logic turned so neatly against it.",
-   "q": {
-    "q": "Why was the council's reaction significant?",
-    "options": [
-     "{hero} had beaten them at their own game.",
-     "{hero} had insulted them in public.",
-     "Visitors were seldom allowed to speak.",
-     "Nobody had read the Storybook before."
-    ],
-    "answer": 0,
-    "explain": "“Rarely had the council heard its own logic turned… against it” — {hero} out-argued the arguers.",
-    "kind": "infer"
-   }
-  },
-  {
-   "text": "The vote was close, but the page was returned. As {hero} left, Lady Quillon fell into step beside them. “I may have been a little [[hasty|too quick, without thinking carefully]],” she conceded, with what was almost a smile. “Should you ever wish to join the council, the door will be open.”",
-   "q": {
-    "q": "“Should you ever wish to join” means…",
-    "options": [
-     "If you ever want to join",
-     "You ought to join soon",
-     "You should not wish to join",
-     "Whenever you were asked to join"
-    ],
-    "answer": 0,
-    "explain": "Inverted conditional: Should you ever wish… = If you ever wish…",
-    "kind": "grammar"
+    "explain": "Nimbus agreed grudgingly: he did it, but he didn't really want to.",
+    "kind": "vocab",
+    "notes": {
+     "joyfully and with great energy": "Nimbus only “admitted” it after a long pause, so not joyfully.",
+     "quickly, without any thought": "There was “a long pause” first, so it wasn't quick.",
+     "secretly, so no one notices": "Nimbus said it out loud, in front of everyone."
+    }
    }
   }
- ],
- "final": {
-  "q": "The scholars “conspicuously failed”, meaning they failed…",
-  "options": [
-   "in a way everyone could see",
-   "without anyone noticing",
-   "by only a tiny margin",
-   "because they gave up early"
-  ],
-  "answer": 0,
-  "explain": "Conspicuously = very noticeably.",
-  "kind": "vocab"
- },
- "id": "c1-story",
- "level": "c1"
+ ]
 }

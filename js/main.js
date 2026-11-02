@@ -200,7 +200,7 @@ const BONUS = [
   { data: "speak", open: rid => WR.startSpeaking(rid), tile: rid => WR.SPEAKING && WR.bonusTile({ cls: "speak", data: "speak", ico: '<span class="ico">🎤</span>', title: "Speaking", desc: "Echo Well: say it aloud", crowns: tileCrowns(rid, "speaking"), tag: "🎶 Bonus fun!" }) },
   { data: "write", open: rid => WR.startWriting(rid), tile: rid => { if (!WR.WRITING) return ""; const w = WR.writingRealmCrowns(rid), n = (WR.counts ? WR.counts.counts : {})[rid + "/writing"] || "";
       return WR.bonusTile({ cls: "quill-tile", data: "write", ico: `<img class="ico quill-ico" src="assets/web/quill.webp" onerror="this.onerror=null;this.src='assets/ui/quill.png'" alt="">`, title: "Writing", desc: "Story Quill: plan, write, get feedback", crowns: WR.crownCell(w.done ? w.crowns : null), tag: w.done ? `✒️ ${w.done}/${n} stories written` : "🎶 Bonus fun!" }); } },
-  { data: "story", open: rid => WR.startStory(rid), tile: rid => WR.STORY && WR.storyTile(rid) },
+  { data: "story", open: rid => WR.openStoryShelf(rid), tile: rid => WR.STORY && WR.storyTile(rid) },
   { data: "phonics", open: () => WR.go("phonics"), tile: rid => WR.phonicsTile && WR.phonicsTile(rid) },
   { data: "charms", open: rid => WR.openCharms(rid), tile: rid => WR.charmsTile && WR.charmsTile(rid) }
 ];

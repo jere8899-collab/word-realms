@@ -251,20 +251,27 @@ for lvl, items in WRITING.items():
     json.dump(items, open(f"{ROOT}/{lvl}/writing.json", "w"), ensure_ascii=False, indent=1)
     counts[f"{lvl}/writing"] = len(items); wr_tot += len(items)
 # ---- 📜 Storybook Chapters (bonus; not part of the 3-of-4 unlock rule) ----
+# data/<level>/story.json = { id, level, chapters: [chapter 1 (tools/c_stories.py), chapter 2… (tools/c_stories2.py)] }
+from c_stories2 import MORE as STORIES_MORE
 GLOSS_RE = re.compile(r"\[\[([^|\]]+)\|([^\]]+)\]\]")
-st_tot = 0
-for lvl, ch in STORIES.items():
-    assert len(ch["pages"]) == 4, lvl
-    assert os.path.exists(f"{ROOT}/../assets/stories/{ch['img']}.jpg"), ch["img"]
+def _check_chapter(name, ch):
+    assert len(ch["pages"]) == 4, name
+    assert os.path.exists(f"{ROOT}/../assets/stories/{ch['img']}.jpg") and os.path.exists(f"{ROOT}/../assets/web/{ch['img']}.webp"), ch["img"]
     qs = [p["q"] for p in ch["pages"]] + [ch["final"]]
     for q in qs:
-        o = q["options"]; assert len(o) == 4 and len(set(o)) == 4 and q["answer"] == 0 and q["explain"], (lvl, q["q"])
+        o = q["options"]; assert len(o) == 4 and len(set(o)) == 4 and q["answer"] == 0 and q["explain"], (name, q["q"])
+        if "notes" in q: assert sorted(q["notes"]) == sorted(o[1:]) and all(q["notes"].values()), (name, q["q"])
     for p in ch["pages"]:
-        assert GLOSS_RE.search(p["text"]) and "[[" not in GLOSS_RE.sub("", p["text"]), (lvl, p["text"][:30])
-    check_fair(f"{lvl}/story", qs)
-    out = dict(ch, id=f"{lvl}-story", level=lvl)
-    json.dump(out, open(f"{ROOT}/{lvl}/story.json", "w"), ensure_ascii=False, indent=1)
-    counts[f"{lvl}/story"] = len(qs); st_tot += 1
+        assert GLOSS_RE.search(p["text"]) and "[[" not in GLOSS_RE.sub("", p["text"]), (name, p["text"][:30])
+    check_fair(name, qs)
+    return len(qs)
+st_tot = 0
+for lvl, ch in STORIES.items():
+    chapters = [ch] + STORIES_MORE.get(lvl, [])
+    assert len({c["title"] for c in chapters}) == len(chapters) and len({c["img"] for c in chapters}) == len(chapters), lvl
+    n = sum(_check_chapter(f"{lvl}/story ch{i + 1}", c) for i, c in enumerate(chapters))
+    json.dump({"id": f"{lvl}-story", "level": lvl, "chapters": chapters}, open(f"{ROOT}/{lvl}/story.json", "w"), ensure_ascii=False, indent=1)
+    counts[f"{lvl}/story"] = n; st_tot += len(chapters)
 # 🔮 Word Charms (tools/c_words.py → data/<level>/words.json): 40 words per level, unique across levels, the example
 # contains the word exactly (the fill-the-gap card blanks it), and the definition never gives the word away
 from c_words import WORDS

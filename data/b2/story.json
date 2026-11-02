@@ -1,81 +1,189 @@
 {
- "title": "The Silent Lake",
- "focus": "past perfect · passive · mixed / third conditional · should have",
- "img": "story_b2",
- "pages": [
+ "id": "b2-story",
+ "level": "b2",
+ "chapters": [
   {
-   "text": "Crystal Lake was said to have the clearest water in all the realms, yet when {hero} and {pet} arrived, it was grey and still. A fisherman explained that it had looked like that ever since Glimmerfin, the lake serpent, had stopped coming to the [[surface|the top of the water]]. “Without her song,” he sighed, “the water simply loses its colour.”",
-   "q": {
-    "q": "According to the fisherman, why had the lake turned grey?",
+   "title": "The Silent Lake",
+   "focus": "past perfect · passive · mixed / third conditional · should have",
+   "img": "story_b2",
+   "pages": [
+    {
+     "text": "Crystal Lake was said to have the clearest water in all the realms, yet when {hero} and {pet} arrived, it was grey and still. A fisherman explained that it had looked like that ever since Glimmerfin, the lake serpent, had stopped coming to the [[surface|the top of the water]]. “Without her song,” he sighed, “the water simply loses its colour.”",
+     "q": {
+      "q": "According to the fisherman, why had the lake turned grey?",
+      "options": [
+       "Glimmerfin no longer sang at the surface.",
+       "Fishermen had polluted the water.",
+       "A storm had stirred up mud.",
+       "A page had fallen into the water."
+      ],
+      "answer": 0,
+      "explain": "“Without her song… the water simply loses its colour.”",
+      "kind": "fact"
+     }
+    },
+    {
+     "text": "{hero} borrowed a small boat and rowed out to the middle. Looking down, they could just make out a faint light far below. “If I could swim like a fish,” {hero} muttered, “I'd have that page by now.” {pet}, however, was staring at something else: a tangle of old fishing nets [[wrapped around|circling something tightly so it can't move]] a huge silver tail.",
+     "q": {
+      "q": "What did {pet} notice that {hero} had missed?",
+      "options": [
+       "a tail caught in old nets",
+       "a light far below the boat",
+       "a fish that could swim to the page",
+       "the fisherman rowing after them"
+      ],
+      "answer": 0,
+      "explain": "{hero} was looking at the light; {pet} was “staring at something else”: the nets around a silver tail.",
+      "kind": "infer"
+     }
+    },
+    {
+     "text": "It took them nearly an hour to cut the nets away. When the last knot was finally undone, Glimmerfin rose from the water, her scales flashing in the sun. “I had been [[trapped|caught and not able to escape]] for weeks,” she said. “Had you not come, I might never have sung again.” She opened her mouth, and there, resting on her tongue, was the fourth page.",
+     "q": {
+      "q": "“Had you not come” means…",
+      "options": [
+       "If you hadn't come",
+       "Because you came late",
+       "Although you came",
+       "When you come again"
+      ],
+      "answer": 0,
+      "explain": "Inversion of the third conditional: Had you not come = If you hadn't come.",
+      "kind": "grammar"
+     }
+    },
+    {
+     "text": "That evening, Glimmerfin's song drifted across the lake, and the water slowly turned a brilliant blue again. The fisherman admitted that the nets might have been his. “I should have cleared them up years ago,” he said, looking [[ashamed|feeling bad about something wrong you did]]. He promised that the lake would be checked every week from then on.",
+     "q": {
+      "q": "How did the fisherman feel about the nets?",
+      "options": [
+       "guilty that he hadn't removed them",
+       "angry that someone had left them",
+       "proud that he had freed Glimmerfin",
+       "worried the song would stop"
+      ],
+      "answer": 0,
+      "explain": "“I should have cleared them up years ago” — should have + past participle = regret about the past.",
+      "kind": "infer"
+     }
+    }
+   ],
+   "final": {
+    "q": "“Ashamed” is closest in meaning to…",
     "options": [
-     "Glimmerfin no longer sang at the surface.",
-     "Fishermen had polluted the water.",
-     "A storm had stirred up mud.",
-     "A page had fallen into the water."
+     "embarrassed and guilty",
+     "tired and bored",
+     "surprised and pleased",
+     "nervous and excited"
     ],
     "answer": 0,
-    "explain": "“Without her song… the water simply loses its colour.”",
-    "kind": "fact"
+    "explain": "Ashamed = feeling bad (guilty, embarrassed) about something you did.",
+    "kind": "vocab"
    }
   },
   {
-   "text": "{hero} borrowed a small boat and rowed out to the middle. Looking down, they could just make out a faint light far below. “If I could swim like a fish,” {hero} muttered, “I'd have that page by now.” {pet}, however, was staring at something else: a tangle of old fishing nets [[wrapped around|circling something tightly so it can't move]] a huge silver tail.",
-   "q": {
-    "q": "What did {pet} notice that {hero} had missed?",
+   "title": "The Lighthouse That Forgot",
+   "focus": "past perfect · passive · third conditional · should have",
+   "img": "story_b2_2",
+   "pages": [
+    {
+     "text": "A few days after the lake had turned blue again, Glimmerfin surfaced beside {hero}'s boat with an unusual request. On a tiny island at the far end of the lake stood a lighthouse whose lamp had been [[tended|looked after carefully]] by the same old keeper for forty years. Three nights earlier, however, the light had gone out, and no one had seen the keeper since.",
+     "q": {
+      "q": "What was worrying Glimmerfin?",
+      "options": [
+       "The lighthouse lamp had gone dark.",
+       "The lake was turning grey again.",
+       "Her song had stopped working.",
+       "A boat had sunk on the rocks near the island."
+      ],
+      "answer": 0,
+      "explain": "“Three nights earlier, however, the light had gone out.”",
+      "kind": "fact",
+      "notes": {
+       "The lake was turning grey again.": "The lake “had turned blue again”. The problem was that “the light had gone out”.",
+       "Her song had stopped working.": "Nothing suggests her song had stopped. The trouble was the dark lighthouse.",
+       "A boat had sunk on the rocks near the island.": "No boat had sunk. The worry was that “the light had gone out”."
+      }
+     }
+    },
+    {
+     "text": "When they reached the island, the lighthouse door was found to be unlocked. Inside, everything was spotless, but the oil lamp at the top was cold, and a note had been pinned to the wall: “Gone to visit my sister. Mog will look after the light.” {hero} frowned. Mog, it turned out, was a small grey cat, [[curled up|lying with the body in a round shape]] fast asleep on the steps.",
+     "q": {
+      "q": "Why had the light gone out?",
+      "options": [
+       "The keeper had left the job to a sleepy cat.",
+       "Someone had broken in through the window at night.",
+       "The keeper had run out of lamp oil.",
+       "A storm had blown the lamp out."
+      ],
+      "answer": 0,
+      "explain": "The note put Mog in charge, and Mog was “fast asleep on the steps”. A cat can't light a lamp!",
+      "kind": "infer",
+      "notes": {
+       "Someone had broken in through the window at night.": "The door was unlocked and everything was spotless, so there's no sign of a break-in.",
+       "The keeper had run out of lamp oil.": "The lamp was cold, but the story never says the oil had run out. The clue is who was left in charge.",
+       "A storm had blown the lamp out.": "There's no storm in this chapter. The keeper had “gone to visit my sister” and left Mog in charge."
+      }
+     }
+    },
+    {
+     "text": "{hero} climbed the spiral stairs, polished the glass and relit the lamp. Within minutes a warm beam was sweeping across the water again. Not long afterwards, a rowing boat appeared out of the dusk, and an old man stepped onto the jetty, looking [[sheepish|embarrassed because you have done something silly]]. “I should have asked a person, not a cat,” he admitted. “If you hadn't come, the fishing boats would have been lost in the dark.”",
+     "q": {
+      "q": "“If you hadn't come, the fishing boats would have been lost” tells us that…",
+      "options": [
+       "{hero} came, so the boats were safe.",
+       "{hero} came too late to save the boats.",
+       "the boats were lost before {hero} came.",
+       "{hero} will come again to save the boats."
+      ],
+      "answer": 0,
+      "explain": "Third conditional: an imagined past. In real life {hero} DID come, so the boats were NOT lost.",
+      "kind": "grammar",
+      "notes": {
+       "{hero} came too late to save the boats.": "The beam was shining again before the boats came out, so {hero} was in time.",
+       "the boats were lost before {hero} came.": "“Would have been lost” is imagined, not real. The boats were never lost.",
+       "{hero} will come again to save the boats.": "This sentence is about the past, not the future."
+      }
+     }
+    },
+    {
+     "text": "The keeper explained that he had been so excited about his sister's birthday that he had simply forgotten Mog couldn't climb stairs, let alone light a lamp. He promised that from then on the lamp would be checked by two people every evening. Mog, meanwhile, was given a new [[title|a special name that shows someone's job]]: Official Lighthouse Cat, in charge of naps.",
+     "q": {
+      "q": "What is funny about Mog's new title?",
+      "options": [
+       "It makes sleeping Mog's official job.",
+       "Mog will now be lighting the lamp every night.",
+       "Mog asked for the title himself.",
+       "The keeper gave it to Glimmerfin."
+      ],
+      "answer": 0,
+      "explain": "“In charge of naps”: Mog's only job is the thing he already does best.",
+      "kind": "infer",
+      "notes": {
+       "Mog will now be lighting the lamp every night.": "Two people will check the lamp now. Mog's job is “naps”.",
+       "Mog asked for the title himself.": "Nothing says Mog asked. The keeper gave the title as a joke.",
+       "The keeper gave it to Glimmerfin.": "The title is for the cat: “Official Lighthouse Cat”."
+      }
+     }
+    }
+   ],
+   "final": {
+    "q": "“Sheepish” is closest in meaning to…",
     "options": [
-     "a tail caught in old nets",
-     "a light far below the boat",
-     "a fish that could swim to the page",
-     "the fisherman rowing after them"
+     "a little embarrassed",
+     "very frightened",
+     "proud and pleased with himself",
+     "rather sleepy"
     ],
     "answer": 0,
-    "explain": "{hero} was looking at the light; {pet} was “staring at something else”: the nets around a silver tail.",
-    "kind": "infer"
-   }
-  },
-  {
-   "text": "It took them nearly an hour to cut the nets away. When the last knot was finally undone, Glimmerfin rose from the water, her scales flashing in the sun. “I had been [[trapped|caught and not able to escape]] for weeks,” she said. “Had you not come, I might never have sung again.” She opened her mouth, and there, resting on her tongue, was the fourth page.",
-   "q": {
-    "q": "“Had you not come” means…",
-    "options": [
-     "If you hadn't come",
-     "Because you came late",
-     "Although you came",
-     "When you come again"
-    ],
-    "answer": 0,
-    "explain": "Inversion of the third conditional: Had you not come = If you hadn't come.",
-    "kind": "grammar"
-   }
-  },
-  {
-   "text": "That evening, Glimmerfin's song drifted across the lake, and the water slowly turned a brilliant blue again. The fisherman admitted that the nets might have been his. “I should have cleared them up years ago,” he said, looking [[ashamed|feeling bad about something wrong you did]]. He promised that the lake would be checked every week from then on.",
-   "q": {
-    "q": "How did the fisherman feel about the nets?",
-    "options": [
-     "guilty that he hadn't removed them",
-     "angry that someone had left them",
-     "proud that he had freed Glimmerfin",
-     "worried the song would stop"
-    ],
-    "answer": 0,
-    "explain": "“I should have cleared them up years ago” — should have + past participle = regret about the past.",
-    "kind": "infer"
+    "explain": "Sheepish = embarrassed because you've done something silly, like leaving a cat in charge of a lamp.",
+    "kind": "vocab",
+    "notes": {
+     "very frightened": "He wasn't scared. He knew he had made a silly mistake.",
+     "proud and pleased with himself": "The opposite: “I should have asked a person, not a cat.”",
+     "rather sleepy": "That's Mog! The keeper felt embarrassed, not sleepy."
+    }
    }
   }
- ],
- "final": {
-  "q": "“Ashamed” is closest in meaning to…",
-  "options": [
-   "embarrassed and guilty",
-   "tired and bored",
-   "surprised and pleased",
-   "nervous and excited"
-  ],
-  "answer": 0,
-  "explain": "Ashamed = feeling bad (guilty, embarrassed) about something you did.",
-  "kind": "vocab"
- },
- "id": "b2-story",
- "level": "b2"
+ ]
 }

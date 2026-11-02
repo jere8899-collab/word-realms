@@ -1,81 +1,189 @@
 {
- "title": "The Lost Pages",
- "focus": "present simple · there is / there are · can",
- "img": "story_a1",
- "pages": [
+ "id": "a1-story",
+ "level": "a1",
+ "chapters": [
   {
-   "text": "This is {hero}. {hero} has a little pet called {pet}. They live in a small house near the [[meadow|a big field with grass and flowers]]. Today the sun is warm. The flowers are yellow and white.",
-   "q": {
-    "q": "Where is {hero}'s house?",
+   "title": "The Lost Pages",
+   "focus": "present simple · there is / there are · can",
+   "img": "story_a1",
+   "pages": [
+    {
+     "text": "This is {hero}. {hero} has a little pet called {pet}. They live in a small house near the [[meadow|a big field with grass and flowers]]. Today the sun is warm. The flowers are yellow and white.",
+     "q": {
+      "q": "Where is {hero}'s house?",
+      "options": [
+       "near the meadow",
+       "in a castle",
+       "next to the sea",
+       "in the forest"
+      ],
+      "answer": 0,
+      "explain": "“They live in a small house near the meadow.”",
+      "kind": "fact"
+     }
+    },
+    {
+     "text": "In the morning, {hero} sees an old book on the grass. It is big and blue. There are gold stars on it. But the book is sad. Its pages are [[gone|not there any more]]!",
+     "q": {
+      "q": "What colour is the book?",
+      "options": [
+       "blue",
+       "gold",
+       "green",
+       "white"
+      ],
+      "answer": 0,
+      "explain": "“It is big and blue.” The stars on it are gold, but the book is blue.",
+      "kind": "fact"
+     }
+    },
+    {
+     "text": "“Hello,” says the book. “I am the Starlight Storybook. The wind takes my pages. There are six pages, in six [[realms|lands or kingdoms in a story]]. Can you help me?”",
+     "q": {
+      "q": "How many pages does the book need?",
+      "options": [
+       "six",
+       "two",
+       "ten",
+       "one"
+      ],
+      "answer": 0,
+      "explain": "“There are six pages, in six realms.”",
+      "kind": "fact"
+     }
+    },
+    {
+     "text": "{hero} looks at {pet}. {pet} jumps up and down. “Yes, we can help!” says {hero}. Under a big pink flower, {pet} finds the first page. It is [[shiny|bright, like a star]]. The book smiles.",
+     "q": {
+      "q": "Who finds the first page?",
+      "options": [
+       "{pet}",
+       "{hero}",
+       "the book",
+       "the wind"
+      ],
+      "answer": 0,
+      "explain": "“Under a big pink flower, {pet} finds the first page.”",
+      "kind": "fact"
+     }
+    }
+   ],
+   "final": {
+    "q": "In the story, a “meadow” is…",
     "options": [
-     "near the meadow",
-     "in a castle",
-     "next to the sea",
-     "in the forest"
+     "a field of grass and flowers",
+     "a little house of wood",
+     "a very old blue book",
+     "a river near a town"
     ],
     "answer": 0,
-    "explain": "“They live in a small house near the meadow.”",
-    "kind": "fact"
+    "explain": "A meadow is a big field with grass and flowers.",
+    "kind": "vocab"
    }
   },
   {
-   "text": "In the morning, {hero} sees an old book on the grass. It is big and blue. There are gold stars on it. But the book is sad. Its pages are [[gone|not there any more]]!",
-   "q": {
-    "q": "What colour is the book?",
+   "title": "Picnic in the Meadow",
+   "focus": "present simple · there is / there are · can · like",
+   "img": "story_a1_2",
+   "pages": [
+    {
+     "text": "Today {hero} and {pet} have a picnic in the meadow. There is a red and white [[blanket|a big soft cloth you sit on or sleep under]] on the grass. In the basket there are sandwiches and ten red strawberries. {pet} likes strawberries very much.",
+     "q": {
+      "q": "What does {pet} like?",
+      "options": [
+       "strawberries",
+       "sandwiches",
+       "the red blanket",
+       "the grass"
+      ],
+      "answer": 0,
+      "explain": "“{pet} likes strawberries very much.”",
+      "kind": "fact",
+      "notes": {
+       "sandwiches": "The sandwiches are in the basket, but the story says “{pet} likes strawberries very much.”",
+       "the red blanket": "The blanket is for sitting on. The story says “{pet} likes strawberries very much.”",
+       "the grass": "The blanket is on the grass. The story says “{pet} likes strawberries very much.”"
+      }
+     }
+    },
+    {
+     "text": "Then {hero} sees a little white rabbit in the tall grass. The rabbit is [[shy|a bit scared to talk to new friends]]. It can see the strawberries, but it cannot come close. “Hello, little rabbit,” says {hero}. “You can have a strawberry too.”",
+     "q": {
+      "q": "Why does the rabbit stay in the grass?",
+      "options": [
+       "It is shy.",
+       "It is very angry.",
+       "It cannot see the food.",
+       "It is asleep."
+      ],
+      "answer": 0,
+      "explain": "“The rabbit is shy.” Shy animals stay away from new friends.",
+      "kind": "infer",
+      "notes": {
+       "It is very angry.": "The story never says it is angry. It says “The rabbit is shy.”",
+       "It cannot see the food.": "It CAN see the food: “It can see the strawberries, but it cannot come close.”",
+       "It is asleep.": "A sleeping rabbit can't see anything, but this one can: “It can see the strawberries.”"
+      }
+     }
+    },
+    {
+     "text": "The rabbit hops to the blanket. It eats one strawberry, then two, then three! Now the rabbit is happy. But then the sky is grey, and there are big [[raindrops|small drops of water that fall from the sky]]. Oh no, rain!",
+     "q": {
+      "q": "How many strawberries does the rabbit eat?",
+      "options": [
+       "three",
+       "one",
+       "two",
+       "ten"
+      ],
+      "answer": 0,
+      "explain": "“It eats one strawberry, then two, then three!”",
+      "kind": "fact",
+      "notes": {
+       "one": "One is only the start: “one strawberry, then two, then three!”",
+       "two": "Two is not the end: “…then two, then three!”",
+       "ten": "There are ten strawberries in the basket, but the rabbit eats three."
+      }
+     }
+    },
+    {
+     "text": "{hero}, {pet} and the rabbit run under a big tree. They can hear the rain on the leaves. Soon the rain stops and the sun comes out. Look! There is a [[rainbow|a curve of colours in the sky after rain]] over the meadow. “This is the best picnic!” says {hero}.",
+     "q": {
+      "q": "Where do they go when it rains?",
+      "options": [
+       "under a big tree",
+       "into the house",
+       "into the tall grass",
+       "under the blanket"
+      ],
+      "answer": 0,
+      "explain": "“{hero}, {pet} and the rabbit run under a big tree.”",
+      "kind": "fact",
+      "notes": {
+       "into the house": "The house is near the meadow, but they don't go there. They “run under a big tree.”",
+       "into the tall grass": "The rabbit came from the tall grass, but now they all “run under a big tree.”",
+       "under the blanket": "The blanket stays on the grass. They “run under a big tree.”"
+      }
+     }
+    }
+   ],
+   "final": {
+    "q": "A “rainbow” is…",
     "options": [
-     "blue",
-     "gold",
-     "green",
-     "white"
+     "colours in the sky after rain",
+     "a big soft cloth you sit on at a picnic",
+     "a little white rabbit",
+     "drops of water from the sky"
     ],
     "answer": 0,
-    "explain": "“It is big and blue.” The stars on it are gold, but the book is blue.",
-    "kind": "fact"
-   }
-  },
-  {
-   "text": "“Hello,” says the book. “I am the Starlight Storybook. The wind takes my pages. There are six pages, in six [[realms|lands or kingdoms in a story]]. Can you help me?”",
-   "q": {
-    "q": "How many pages does the book need?",
-    "options": [
-     "six",
-     "two",
-     "ten",
-     "one"
-    ],
-    "answer": 0,
-    "explain": "“There are six pages, in six realms.”",
-    "kind": "fact"
-   }
-  },
-  {
-   "text": "{hero} looks at {pet}. {pet} jumps up and down. “Yes, we can help!” says {hero}. Under a big pink flower, {pet} finds the first page. It is [[shiny|bright, like a star]]. The book smiles.",
-   "q": {
-    "q": "Who finds the first page?",
-    "options": [
-     "{pet}",
-     "{hero}",
-     "the book",
-     "the wind"
-    ],
-    "answer": 0,
-    "explain": "“Under a big pink flower, {pet} finds the first page.”",
-    "kind": "fact"
+    "explain": "A rainbow is a curve of colours in the sky after the rain.",
+    "kind": "vocab",
+    "notes": {
+     "a big soft cloth you sit on at a picnic": "That's a blanket, the soft cloth they sit on.",
+     "a little white rabbit": "That's the shy new friend in the grass.",
+     "drops of water from the sky": "Those are raindrops. The rainbow comes after the raindrops stop."
+    }
    }
   }
- ],
- "final": {
-  "q": "In the story, a “meadow” is…",
-  "options": [
-   "a field of grass and flowers",
-   "a little house of wood",
-   "a very old blue book",
-   "a river near a town"
-  ],
-  "answer": 0,
-  "explain": "A meadow is a big field with grass and flowers.",
-  "kind": "vocab"
- },
- "id": "a1-story",
- "level": "a1"
+ ]
 }

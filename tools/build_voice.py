@@ -40,7 +40,7 @@ def lines():
         if f.endswith("words.json"):                                   # 🔮 Word Charms: the word, its meaning, its example
             for it in d: [add("narrator", it[k]) for k in ("w", "def", "ex")]
         if f.endswith("story.json"):
-            for pg in d.get("pages", []):
+            for pg in (pg for c in d.get("chapters", [d]) for pg in c.get("pages", [])):   # every chapter's pages
                 for p in re.findall(r'(?:[^.!?\[]|\[\[[^\]]*\]\])+[.!?]+[”’"]?\s*|(?:[^.!?\[]|\[\[[^\]]*\]\])+$', pg.get("text", "")):
                     if "{" in p: continue                                  # has {hero}/{pet}: device voice
                     add("narrator", GL.sub(r"\1", p.strip()))

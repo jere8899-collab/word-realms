@@ -26,7 +26,8 @@ const SAVE = JSON.stringify({ v: 1, name: 'Jeremy', avatar: 'avatar_mage', start
   const clean = async p => { await p.evaluate(() => document.querySelectorAll('.confetti,.toast').forEach(e => e.remove())); await p.waitForTimeout(250); };
   const answer = async (p, right) => {
     const target = await p.evaluate(async right => {
-      const lv = document.querySelector('.story-head .lvl-badge').textContent.toLowerCase(), ch = await WR.loadStory(lv);
+      const lv = document.querySelector('.story-head .lvl-badge').textContent.toLowerCase(), head = document.querySelector('.story-head .title').textContent;
+      const ch = (await WR.loadStory(lv)).chapters.find(c => head.includes(c.title));
       const pg = [...document.querySelectorAll('.sdot')].findIndex(d => d.classList.contains('on'));
       const q = pg < 4 ? ch.pages[pg].q : ch.final, ok = WR.Story.fill(q.options[q.answer]);
       const btns = [...document.querySelectorAll('.opt')]; return btns.findIndex(b => (b.textContent.slice(1) === ok) === right);
@@ -40,7 +41,11 @@ const SAVE = JSON.stringify({ v: 1, name: 'Jeremy', avatar: 'avatar_mage', start
   await page.evaluate(() => WR.go('realm', 'a1')); await page.waitForTimeout(400);
   assert(await page.locator('.story-tile').count() === 1, 'realm screen has a Story tile');
   await clean(page); await page.screenshot({ path: OUT + 'story_01_tile.png' });
-  await page.locator('.story-tile').click(); await page.waitForSelector('.story-text');
+  await page.locator('.story-tile').click(); await page.waitForSelector('.shelf-ch');
+  assert(await page.locator('.shelf-ch').count() >= 2, 'the Story tile opens the A1 chapter shelf');
+  assert(await page.locator('.shelf-ch.locked').count() === await page.locator('.shelf-ch').count() - 1, 'only chapter 1 is open on a fresh save');
+  await clean(page); await page.screenshot({ path: OUT + 'story_01b_shelf.png' });
+  await page.locator('.shelf-ch').first().click(); await page.waitForSelector('.story-text');
   const txt = await page.locator('#storyText').innerText();
   assert(txt.includes('Jeremy') && txt.includes('Puffbun') && !/\[\[|\{hero\}|\{pet\}/.test(txt), 'page text uses the hero and pet names, no raw markup');
   assert(await page.locator('.gloss').count() >= 1 && await page.locator('.sent').count() >= 3, 'sentences and glossary words are tappable');
@@ -78,7 +83,30 @@ const SAVE = JSON.stringify({ v: 1, name: 'Jeremy', avatar: 'avatar_mage', start
   assert(await page.locator('.book-row').count() === 6, 'Storybook modal lists 6 chapters');
   await clean(page); await page.screenshot({ path: OUT + 'story_05_book.png' });
   await page.locator('.book-row').nth(3).click(); await page.waitForSelector('.story-text');
-  assert((await page.locator('.story-head').innerText()).includes('Chapter 4'), 'modal opens the chosen chapter');
+  assert((await page.locator('.story-head').innerText()).includes('The Silent Lake'), 'modal page 4 opens the B2 chapter 1');
+  // 📖 chapter 2: opens once chapter 1 is read, why-not notes on a wrong pick, its own save key and stars
+  await page.evaluate(() => WR.openStoryShelf('a1')); await page.waitForSelector('.shelf-ch');
+  assert(await page.locator('.shelf-ch:not(.locked)').count() === 2, 'after chapter 1, chapter 2 opens on the shelf');
+  await clean(page); await page.screenshot({ path: OUT + 'story_07_shelf_open.png' });
+  await page.locator('.shelf-ch').nth(1).click(); await page.waitForSelector('.story-text');
+  const t2 = await page.locator('#storyText').innerText();
+  assert((await page.locator('.story-head').innerText()).includes('Picnic in the Meadow') && t2.includes('Puffbun') && !/\[\[|\{/.test(t2), 'chapter 2 reads with the pet name filled in');
+  assert(await page.evaluate(() => /story_a1_2/.test(document.querySelector('.story-pic img').src)), 'chapter 2 has its own picture');
+  const st2 = await page.evaluate(() => WR.state.stars);
+  await answer(page, false);
+  const wn = await page.locator('.story-fb .why-not').innerText();
+  assert(/Why not/.test(wn) && wn.includes('Puffbun') && !/\{/.test(wn), 'a wrong pick shows its hand-written why-not note');
+  await clean(page); await page.screenshot({ path: OUT + 'story_08_whynot.png', fullPage: true });
+  await page.locator('#storyNext').click();
+  for (let i = 0; i < 4; i++) { await answer(page, true); await page.locator('#storyNext').click(); await page.waitForTimeout(120); }
+  await page.waitForSelector('.story-done');
+  const s3 = await page.evaluate(() => ({ stars: WR.state.stars, d: WR.state.stories.done['a1.2'], pages: WR.storyPagesFound() }));
+  assert(s3.d && s3.d.crowns === 2 && s3.stars - st2 === 4 + 3 + 4 && s3.pages === 1, 'chapter 2 saves as a1.2, pays full first-read stars, and is not a Starlight page');
+  assert(/Chapter 2 finished/.test(await page.locator('.story-done h2').innerText()), 'chapter 2 has its own finish screen');
+  await clean(page); await page.screenshot({ path: OUT + 'story_09_ch2_done.png', fullPage: true });
+  // every level has a shelf of chapters, each with notes on every wrong option
+  const lv = await page.evaluate(async () => { const out = {}; for (const r of WR.realms) { const b = await WR.loadStory(r.id); out[r.id] = [b.chapters.length, b.chapters.slice(1).every(c => [...c.pages.map(p => p.q), c.final].every(q => Object.keys(q.notes || {}).length === 3))]; } return out; });
+  assert(Object.values(lv).every(([n, ok]) => n >= 2 && ok), 'every level has 2+ chapters and chapters 2+ have why-not notes ' + JSON.stringify(lv));
   // reload keeps progress
   await page.reload(); await page.waitForFunction(() => window.WR && WR.realms && document.querySelector('.topbar'));
   assert(await page.evaluate(() => WR.state.stories.done.a1.crowns) === 3, 'progress survives reload (inside wordRealms.save.v1)');

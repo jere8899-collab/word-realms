@@ -1,81 +1,189 @@
 {
- "title": "The Page That Hid",
- "focus": "irony and tone · idiom · implied meaning · sophisticated cohesion",
- "img": "story_c2",
- "pages": [
+ "id": "c2-story",
+ "level": "c2",
+ "chapters": [
   {
-   "text": "The Starlight Library had a reputation for swallowing visitors whole — not literally, the guidebooks hastened to add, but scholars who wandered in for an afternoon had been known to [[resurface|appear again after being gone a long time]] decades later, blinking and bearded. It was here, among a million muttering volumes, that the final page was said to lie.",
-   "q": {
-    "q": "What is the tone of the opening paragraph?",
+   "title": "The Page That Hid",
+   "focus": "irony and tone · idiom · implied meaning · sophisticated cohesion",
+   "img": "story_c2",
+   "pages": [
+    {
+     "text": "The Starlight Library had a reputation for swallowing visitors whole — not literally, the guidebooks hastened to add, but scholars who wandered in for an afternoon had been known to [[resurface|appear again after being gone a long time]] decades later, blinking and bearded. It was here, among a million muttering volumes, that the final page was said to lie.",
+     "q": {
+      "q": "What is the tone of the opening paragraph?",
+      "options": [
+       "humorous exaggeration",
+       "genuine fear",
+       "dry scientific description",
+       "bitter criticism"
+      ],
+      "answer": 0,
+      "explain": "Scholars resurfacing “decades later, blinking and bearded” is comic exaggeration, and “not literally” winks at the reader.",
+      "kind": "infer"
+     }
+    },
+    {
+     "text": "Its guardian, an ancient dragon called Vellum, was courteous to the point of [[absurdity|being silly or ridiculous]]. “By all means search,” he purred, “though I should warn you that the page has hidden itself. Pages do that, when they have been through a great deal. It will come out only for someone who has understood what the other five were trying to say.”",
+     "q": {
+      "q": "According to Vellum, what will make the page come out?",
+      "options": [
+       "someone seeing what links the other pages",
+       "a careful search of every single shelf",
+       "the dragon's formal permission to take it",
+       "reading the five pages aloud in order"
+      ],
+      "answer": 0,
+      "explain": "“Only for someone who has understood what the other five were trying to say.”",
+      "kind": "fact"
+     }
+    },
+    {
+     "text": "{hero} sat down and laid the five pages side by side. A sleepy meadow; a greedy little dragon forgiven; a riddle in a hollow tree; a serpent freed from somebody else's carelessness; a council talked round. It dawned on {hero} that not one page had been won by force. Each had been [[earned|got because you deserved it through your actions]] through kindness, patience or wit.",
+     "q": {
+      "q": "What realisation does {hero} come to?",
+      "options": [
+       "No page was won by force.",
+       "The pages follow a fixed order.",
+       "Each realm tried to keep its page.",
+       "Dragons appear in most chapters."
+      ],
+      "answer": 0,
+      "explain": "“Not one page had been won by force. Each had been earned through kindness, patience or wit.”",
+      "kind": "infer"
+     }
+    },
+    {
+     "text": "“Kindness, patience and wit,” {hero} said aloud. There was a rustle high above, and a page fluttered down like a falling leaf, settling in {hero}'s hands. Vellum inclined his great head. “Few manage it,” he said. “Most come looking for the page; you came looking for the point.” The Storybook closed with a contented sigh, whole at last — and {pet}, who had slept through the entire [[ordeal|a very difficult, unpleasant experience]], chose that moment to wake up.",
+     "q": {
+      "q": "What does Vellum mean by “you came looking for the point”?",
+      "options": [
+       "{hero} sought the meaning, not the object.",
+       "{hero} wanted the sharpest page.",
+       "{hero} came to argue with him.",
+       "{hero} brought a map of the library."
+      ],
+      "answer": 0,
+      "explain": "A play on words: others hunt the page itself; {hero} looked for its meaning (“the point”).",
+      "kind": "infer"
+     }
+    }
+   ],
+   "final": {
+    "q": "Why is {pet}'s waking up at the very end funny?",
     "options": [
-     "humorous exaggeration",
-     "genuine fear",
-     "dry scientific description",
-     "bitter criticism"
+     "It sleeps through it all, then wakes when it's over.",
+     "It wakes just in time to find the page.",
+     "It finally frightens the dragon away.",
+     "It wakes up and reads the book aloud."
     ],
     "answer": 0,
-    "explain": "Scholars resurfacing “decades later, blinking and bearded” is comic exaggeration, and “not literally” winks at the reader.",
+    "explain": "Comic timing: {pet} misses the whole adventure and wakes the moment everything is solved.",
     "kind": "infer"
    }
   },
   {
-   "text": "Its guardian, an ancient dragon called Vellum, was courteous to the point of [[absurdity|being silly or ridiculous]]. “By all means search,” he purred, “though I should warn you that the page has hidden itself. Pages do that, when they have been through a great deal. It will come out only for someone who has understood what the other five were trying to say.”",
-   "q": {
-    "q": "According to Vellum, what will make the page come out?",
+   "title": "The Book That Wouldn't End",
+   "focus": "irony and understatement · idiom · implied meaning",
+   "img": "story_c2_2",
+   "pages": [
+    {
+     "text": "Vellum, it emerged, had a confession to make. Somewhere in the Starlight Library was a novel that refused to finish. Every time a reader reached its last page, a fresh chapter would [[sprout|appear and start growing suddenly]] from the spine, and the story would trundle on. “Delightful for the first three hundred years,” the dragon sighed, “somewhat less so since.”",
+     "q": {
+      "q": "What is Vellum's attitude to the endless book?",
+      "options": [
+       "weary, expressed with dry humour",
+       "thrilled by its endless chapters",
+       "frightened of what it might do",
+       "indifferent, as if it hardly matters"
+      ],
+      "answer": 0,
+      "explain": "“Delightful for the first three hundred years… somewhat less so since” is understatement: he's tired of it, and says so wryly.",
+      "kind": "infer",
+      "notes": {
+       "thrilled by its endless chapters": "“Somewhat less so since” tells us the delight wore off long ago.",
+       "frightened of what it might do": "He sighs; he isn't afraid. It's tiredness, not fear.",
+       "indifferent, as if it hardly matters": "He raised the problem himself, so it clearly matters to him."
+      }
+     }
+    },
+    {
+     "text": "{hero} opened the book at random. It was, by any standard, a muddle: a princess who had been rescued eleven times, a villain who had retired, returned and retired again, and a talking teapot who appeared to have [[lost the thread|stopped following what was happening]] entirely. The characters seemed exhausted. One of them had written in the margin, in tiny letters: “Please let us stop.”",
+     "q": {
+      "q": "The note in the margin suggests that…",
+      "options": [
+       "the characters themselves want the story to end",
+       "a previous reader scribbled a complaint",
+       "the teapot had written the whole book",
+       "the villain was hoping to come back for a third time"
+      ],
+      "answer": 0,
+      "explain": "It was written by “one of them”: the tired characters are asking for an ending.",
+      "kind": "infer",
+      "notes": {
+       "a previous reader scribbled a complaint": "The text says “one of them”, meaning one of the exhausted characters.",
+       "the teapot had written the whole book": "The teapot had “lost the thread”. It isn't the author.",
+       "the villain was hoping to come back for a third time": "The villain had already come back once. The note asks to stop, not to carry on."
+      }
+     }
+    },
+    {
+     "text": "It struck {hero} that no one had ever asked the characters what ending they would like. Every reader had simply turned the page and hoped. So, with Vellum's [[blessing|permission and good wishes]], {hero} read the last page aloud and then asked, quite politely, what they wanted. The answer came at once, in a chorus of small voices: “A picnic. With everyone. And then nothing else at all.”",
+     "q": {
+      "q": "What did {hero} do that no reader had done before?",
+      "options": [
+       "asked the characters how it should end",
+       "read the entire book cover to cover in one evening",
+       "wrote a brand-new final chapter",
+       "hid the book from the dragon"
+      ],
+      "answer": 0,
+      "explain": "“No one had ever asked the characters what ending they would like.”",
+      "kind": "fact",
+      "notes": {
+       "read the entire book cover to cover in one evening": "{hero} only opened it “at random” and read the last page aloud.",
+       "wrote a brand-new final chapter": "{hero} didn't invent the ending. The characters chose it.",
+       "hid the book from the dragon": "{hero} acted “with Vellum's blessing”, not behind his back."
+      }
+     }
+    },
+    {
+     "text": "{hero} wrote the picnic onto the last page in careful handwriting: the princess, the twice-retired villain and the teapot, sharing sandwiches on a hill. For a moment the book hesitated. Then it closed with a soft, [[contented|happy and satisfied]] thump, and no new chapter grew. “Three hundred years of plot,” Vellum murmured, “and all it wanted was lunch.” {pet}, curled on a cushion, slept through this chapter too.",
+     "q": {
+      "q": "Why is Vellum's final remark ironic?",
+      "options": [
+       "A grand, endless story wanted something very ordinary.",
+       "Vellum had planned the picnic ending all along.",
+       "The characters were hungry because nobody had ever fed them.",
+       "The book had always been a cookbook in disguise."
+      ],
+      "answer": 0,
+      "explain": "Three hundred years of plot, and the wish was just “lunch”: a huge story with a tiny, ordinary wish.",
+      "kind": "infer",
+      "notes": {
+       "Vellum had planned the picnic ending all along.": "Vellum had no answer himself. It was {hero} who asked the characters.",
+       "The characters were hungry because nobody had ever fed them.": "The joke isn't hunger. It's the gap between a huge story and a tiny wish.",
+       "The book had always been a cookbook in disguise.": "It's a novel with a princess and a villain, not a cookbook."
+      }
+     }
+    }
+   ],
+   "final": {
+    "q": "If you have “lost the thread”, you have…",
     "options": [
-     "someone seeing what links the other pages",
-     "a careful search of every single shelf",
-     "the dragon's formal permission to take it",
-     "reading the five pages aloud in order"
+     "stopped following what is going on",
+     "dropped your sewing needle",
+     "run out of things to say",
+     "fallen out with a good friend"
     ],
     "answer": 0,
-    "explain": "“Only for someone who has understood what the other five were trying to say.”",
-    "kind": "fact"
-   }
-  },
-  {
-   "text": "{hero} sat down and laid the five pages side by side. A sleepy meadow; a greedy little dragon forgiven; a riddle in a hollow tree; a serpent freed from somebody else's carelessness; a council talked round. It dawned on {hero} that not one page had been won by force. Each had been [[earned|got because you deserved it through your actions]] through kindness, patience or wit.",
-   "q": {
-    "q": "What realisation does {hero} come to?",
-    "options": [
-     "No page was won by force.",
-     "The pages follow a fixed order.",
-     "Each realm tried to keep its page.",
-     "Dragons appear in most chapters."
-    ],
-    "answer": 0,
-    "explain": "“Not one page had been won by force. Each had been earned through kindness, patience or wit.”",
-    "kind": "infer"
-   }
-  },
-  {
-   "text": "“Kindness, patience and wit,” {hero} said aloud. There was a rustle high above, and a page fluttered down like a falling leaf, settling in {hero}'s hands. Vellum inclined his great head. “Few manage it,” he said. “Most come looking for the page; you came looking for the point.” The Storybook closed with a contented sigh, whole at last — and {pet}, who had slept through the entire [[ordeal|a very difficult, unpleasant experience]], chose that moment to wake up.",
-   "q": {
-    "q": "What does Vellum mean by “you came looking for the point”?",
-    "options": [
-     "{hero} sought the meaning, not the object.",
-     "{hero} wanted the sharpest page.",
-     "{hero} came to argue with him.",
-     "{hero} brought a map of the library."
-    ],
-    "answer": 0,
-    "explain": "A play on words: others hunt the page itself; {hero} looked for its meaning (“the point”).",
-    "kind": "infer"
+    "explain": "Lost the thread = lost track of what is happening, like the muddled teapot.",
+    "kind": "vocab",
+    "notes": {
+     "dropped your sewing needle": "It's an idiom: there's no real thread or needle.",
+     "run out of things to say": "Close, but this idiom is about losing track of the story, not having nothing to say.",
+     "fallen out with a good friend": "That's a different idiom, about an argument."
+    }
    }
   }
- ],
- "final": {
-  "q": "Why is {pet}'s waking up at the very end funny?",
-  "options": [
-   "It sleeps through it all, then wakes when it's over.",
-   "It wakes just in time to find the page.",
-   "It finally frightens the dragon away.",
-   "It wakes up and reads the book aloud."
-  ],
-  "answer": 0,
-  "explain": "Comic timing: {pet} misses the whole adventure and wakes the moment everything is solved.",
-  "kind": "infer"
- },
- "id": "c2-story",
- "level": "c2"
+ ]
 }
