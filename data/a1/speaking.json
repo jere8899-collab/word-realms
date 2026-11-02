@@ -278,5 +278,145 @@
   "focus": "Sounds: /əʊ/ and /z/",
   "tip": "'close' (shut) ends with a buzzy /z/: /kləʊz/. 'please' ends with /z/ too.",
   "id": "a1-sp40"
+ },
+ {
+  "type": "read",
+  "text": "The frog jumps into the pond.",
+  "focus": "Sound: /dʒ/",
+  "tip": "'jumps' starts with /dʒ/ like 'jam'. 'frog' and 'pond' have a short /ɒ/.",
+  "id": "a1-sp41"
+ },
+ {
+  "type": "read",
+  "text": "I like my yellow hat.",
+  "focus": "Sound: /j/",
+  "tip": "'yellow' starts with /j/ like 'yes'. Smile and slide into it: YEL-low.",
+  "id": "a1-sp42"
+ },
+ {
+  "type": "read",
+  "text": "Grandpa reads me a story.",
+  "focus": "Word stress",
+  "tip": "Stress the first part: GRAND-pa, STO-ry. 'reads' ends with a buzzy /z/.",
+  "id": "a1-sp43"
+ },
+ {
+  "type": "read",
+  "text": "The baby is sleeping now.",
+  "focus": "Long vowel /iː/",
+  "tip": "'sleeping' has a long /iː/. Stretch it: sleeeeping. 'baby' has /eɪ/.",
+  "id": "a1-sp44"
+ },
+ {
+  "type": "read",
+  "text": "Where are my red socks?",
+  "focus": "Intonation: wh- questions",
+  "tip": "Wh- questions usually go DOWN at the end. Stress RED SOCKS.",
+  "id": "a1-sp45"
+ },
+ {
+  "type": "read",
+  "text": "Five fish swim in the bowl.",
+  "focus": "Sound: /f/",
+  "tip": "Top teeth on your bottom lip for /f/ in 'five' and 'fish'. Blow softly!",
+  "id": "a1-sp46"
+ },
+ {
+  "type": "read",
+  "text": "This is my best friend, Sam.",
+  "focus": "Introducing someone",
+  "tip": "Stress BEST FRIEND and SAM. Pause a tiny bit at the comma.",
+  "id": "a1-sp47"
+ },
+ {
+  "type": "read",
+  "text": "We sing a happy song.",
+  "focus": "Sound: /ŋ/",
+  "tip": "'sing' and 'song' end with /ŋ/: the back of your tongue goes up. Don't add a /g/!",
+  "id": "a1-sp48"
+ },
+ {
+  "type": "read",
+  "text": "The moon is big and white.",
+  "focus": "Sounds: /uː/ and /w/",
+  "tip": "'moon' has a long /uː/. Round your lips for 'white' /waɪt/.",
+  "id": "a1-sp49"
+ },
+ {
+  "type": "read",
+  "text": "Is it your birthday today?",
+  "focus": "Intonation: yes/no questions",
+  "tip": "Yes/no questions go UP at the end: to-DAY?",
+  "id": "a1-sp50"
+ },
+ {
+  "type": "read",
+  "text": "My pet mouse is very small.",
+  "focus": "Sound: /aʊ/",
+  "tip": "'mouse' has /aʊ/ like 'ouch!' and ends with a hissing /s/.",
+  "id": "a1-sp51"
+ },
+ {
+  "type": "read",
+  "text": "Look! The puppy wants to play.",
+  "focus": "Intonation: excitement",
+  "tip": "Say 'Look!' with a big happy jump. 'puppy' is PUP-py.",
+  "id": "a1-sp52"
+ },
+ {
+  "type": "read",
+  "text": "I drink milk with my cookies.",
+  "focus": "Short vowel /ɪ/",
+  "tip": "'drink', 'milk' and 'with' all have a quick, short /ɪ/.",
+  "id": "a1-sp53"
+ },
+ {
+  "type": "read",
+  "text": "The bus is yellow and long.",
+  "focus": "Sound: /ʌ/",
+  "tip": "'bus' has /ʌ/ like 'up'. 'long' ends with /ŋ/ (no /g/).",
+  "id": "a1-sp54"
+ },
+ {
+  "type": "read",
+  "text": "Wash your hands, please.",
+  "focus": "Sounds: /ʃ/ and /z/",
+  "tip": "'wash' ends with /ʃ/ (shh!). 'hands' and 'please' end with a buzzy /z/.",
+  "id": "a1-sp55"
+ },
+ {
+  "type": "read",
+  "text": "There is a star on my door.",
+  "focus": "Long vowels /ɑː/ and /ɔː/",
+  "tip": "'star' has an open /ɑː/. 'door' has a round /ɔː/ like 'four'.",
+  "id": "a1-sp56"
+ },
+ {
+  "type": "read",
+  "text": "We go to the zoo on Monday.",
+  "focus": "Sound: /z/",
+  "tip": "Buzz like a bee for /z/ in 'zoo'. Stress MON-day.",
+  "id": "a1-sp57"
+ },
+ {
+  "type": "read",
+  "text": "Ten red hens sit on a box.",
+  "focus": "Short vowel /e/",
+  "tip": "'ten', 'red' and 'hens' share a short /e/. Go slowly, then faster!",
+  "id": "a1-sp58"
+ },
+ {
+  "type": "read",
+  "text": "Happy birthday to you!",
+  "focus": "Sounds: /h/ and /θ/",
+  "tip": "Breathe out for /h/ in 'happy'. Tongue between your teeth for 'birth'.",
+  "id": "a1-sp59"
+ },
+ {
+  "type": "read",
+  "text": "My teddy bear is brown.",
+  "focus": "Sounds: /eə/ and /aʊ/",
+  "tip": "'bear' has /eə/ like 'hair'. 'brown' has /aʊ/ like 'cow'.",
+  "id": "a1-sp60"
  }
 ]

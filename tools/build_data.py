@@ -4,9 +4,11 @@ sys.path.insert(0, os.path.dirname(__file__))
 from c_a1 import A1; from c_a2 import A2; from c_b1 import B1, QUEST; from c_b2 import B2; from c_c1 import C1, DEBATE; from c_c2 import C2
 from c_speaking import SPEAKING
 from c_writing import WRITING, LEVEL_BANK
-from r20 import SPEAK, WRITE  # R20 wave 1 (review 2026-11-01): more speaking prompts and writing tasks, A1–B1 first (appended, so old ids stay)
-for _l, _v in SPEAK.items(): SPEAKING[_l] = SPEAKING[_l] + _v
-for _l, _v in WRITE.items(): WRITING[_l] = WRITING[_l] + _v
+import r20, r20b  # R20 waves 1–2 (review 2026-11-01): more Echo Well prompts and Story Quill tasks, A1–B1 first
+def _append_waves(bank, waves):  # append each wave's per-level lists onto a bonus-skill bank, in order (so old ids stay stable)
+    for w in waves:
+        for l, v in w.items(): bank[l] = bank[l] + v
+_append_waves(SPEAKING, [r20.SPEAK, r20b.SPEAK]); _append_waves(WRITING, [r20.WRITE, r20b.WRITE])
 from c_stories import STORIES  # 📜 Storybook Chapters
 from w1_a import W1A; from w1_b import W1B  # Content Wave 1 (2026-10-30)
 ROOT = os.path.join(os.path.dirname(__file__), "..", "data")

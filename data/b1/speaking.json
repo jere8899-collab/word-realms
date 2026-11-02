@@ -345,5 +345,196 @@
   "tip": "Say 'I think' lightly, then stress the important words: LIT-tle, NOT, EV-ery DAY.",
   "id": "b1-sp40",
   "minWords": 5
+ },
+ {
+  "type": "read",
+  "text": "If it doesn't rain tomorrow, we'll go camping by the lake.",
+  "focus": "First conditional",
+  "tip": "Pause at the comma. 'we'll' is one beat /wiːl/. Stress CAMP-ing and LAKE.",
+  "id": "b1-sp41"
+ },
+ {
+  "type": "read",
+  "text": "The new playground was opened by a famous footballer.",
+  "focus": "Present/past passive",
+  "tip": "'was' is weak /wəz/. 'opened' is two syllables: /ˈəʊpənd/.",
+  "id": "b1-sp42"
+ },
+ {
+  "type": "read",
+  "text": "I've already finished my project, but Tom hasn't started yet.",
+  "focus": "Contrast stress",
+  "tip": "Stress the contrast: al-READ-y and YET. 'finished' ends in /ʃt/.",
+  "id": "b1-sp43"
+ },
+ {
+  "type": "read",
+  "text": "She's the girl whose dog won the prize at the show.",
+  "focus": "Relative clause: whose",
+  "tip": "'whose' sounds like 'who's' /huːz/. Stress DOG and PRIZE.",
+  "id": "b1-sp44"
+ },
+ {
+  "type": "read",
+  "text": "We were walking home when we saw a shooting star.",
+  "focus": "Past continuous",
+  "tip": "'were' is weak /wə/. Stress WALK-ing, SHOOT-ing STAR.",
+  "id": "b1-sp45"
+ },
+ {
+  "type": "read",
+  "text": "Could you remind me what our science homework is?",
+  "focus": "Indirect questions",
+  "tip": "In indirect questions the verb comes last: 'what our homework IS'. Voice goes up a little at the end.",
+  "id": "b1-sp46"
+ },
+ {
+  "type": "read",
+  "text": "I'm looking forward to seeing my cousins in the summer.",
+  "focus": "looking forward to + -ing",
+  "tip": "'forward to' links into /ˈfɔːwəd tə/. Stress SEE-ing and COUS-ins.",
+  "id": "b1-sp47"
+ },
+ {
+  "type": "read",
+  "text": "The robot competition is going to be held in our school hall.",
+  "focus": "Word stress",
+  "tip": "Stress com-pe-TI-tion and RO-bot. 'going to be' is quick and light.",
+  "id": "b1-sp48"
+ },
+ {
+  "type": "read",
+  "text": "It must be cold outside, because everyone is wearing scarves.",
+  "focus": "Deduction: must",
+  "tip": "'must be' links into /məsbi/. 'scarves' ends with /vz/.",
+  "id": "b1-sp49"
+ },
+ {
+  "type": "read",
+  "text": "As soon as the bell rang, the children rushed outside.",
+  "focus": "Time clauses",
+  "tip": "Pause after 'rang,'. 'rushed' is one syllable ending in /ʃt/.",
+  "id": "b1-sp50"
+ },
+ {
+  "type": "answer",
+  "q": "Tell me about a book you enjoyed. Start with 'The book is about'.",
+  "keywords": [
+   "the book is about"
+  ],
+  "model": "The book is about a girl who finds a dragon egg, and I loved the ending.",
+  "focus": "Talking about books",
+  "tip": "Stress the key words: GIRL, DRAG-on EGG. 'who finds' links smoothly.",
+  "id": "b1-sp51",
+  "minWords": 5
+ },
+ {
+  "type": "answer",
+  "q": "Describe your school. Use 'there is' or 'there are'.",
+  "keywords": [
+   "there is|there are"
+  ],
+  "model": "There are about five hundred students in my school, and there is a big vegetable garden.",
+  "focus": "Describing places",
+  "tip": "'there are' is quick /ðər ɑː/. Stress HUN-dred and VEG-e-ta-ble.",
+  "id": "b1-sp52",
+  "minWords": 5
+ },
+ {
+  "type": "answer",
+  "q": "What would you do if you found a lost puppy? Start with 'If I found'.",
+  "keywords": [
+   "if i found"
+  ],
+  "model": "If I found a lost puppy, I would check its collar and call the number on it.",
+  "focus": "Second conditional",
+  "tip": "Pause after 'puppy,'. 'I would' can be 'I'd' /aɪd/. Stress COL-lar and NUM-ber.",
+  "id": "b1-sp53",
+  "minWords": 5
+ },
+ {
+  "type": "answer",
+  "q": "Give a friend advice about learning to swim. Use 'You should'.",
+  "keywords": [
+   "you should"
+  ],
+  "model": "You should start in the shallow end and practise kicking with a float.",
+  "focus": "Giving advice",
+  "tip": "'should' is weak /ʃəd/. Stress SHAL-low and FLOAT.",
+  "id": "b1-sp54",
+  "minWords": 5
+ },
+ {
+  "type": "answer",
+  "q": "What have you learned this year? Use 'I've learned' or 'I've learnt'.",
+  "keywords": [
+   "have learned|have learnt"
+  ],
+  "model": "This year I've learned how to make pancakes, and I've learnt three French songs.",
+  "focus": "Present perfect: achievements",
+  "tip": "'I've' is one beat /aɪv/. Stress PAN-cakes and FRENCH SONGS.",
+  "id": "b1-sp55",
+  "minWords": 5
+ },
+ {
+  "type": "answer",
+  "q": "Describe a place you would like to visit. Use 'would like to'.",
+  "keywords": [
+   "would like to"
+  ],
+  "model": "I would like to visit Japan because I want to see the cherry blossom.",
+  "focus": "Talking about wishes",
+  "tip": "'I'd like to' is fine too: /aɪd laɪk tə/. Stress ja-PAN and BLOS-som.",
+  "id": "b1-sp56",
+  "minWords": 5
+ },
+ {
+  "type": "answer",
+  "q": "What did you do on your last birthday? Use 'first' and 'after that'.",
+  "keywords": [
+   "first",
+   "after that"
+  ],
+  "model": "First I opened my presents with my family, and after that we went bowling with my friends.",
+  "focus": "Telling events in order",
+  "tip": "Pause a little after 'First' and before 'after that'. 'opened' is two syllables.",
+  "id": "b1-sp57",
+  "minWords": 5
+ },
+ {
+  "type": "answer",
+  "q": "How do you help at home? Use 'sometimes' or 'every day'.",
+  "keywords": [
+   "sometimes|every day"
+  ],
+  "model": "I sometimes wash the dishes, and every day I feed our cat before school.",
+  "focus": "Habits: how often",
+  "tip": "Put 'sometimes' before the verb. Stress DISH-es and FEED.",
+  "id": "b1-sp58",
+  "minWords": 5
+ },
+ {
+  "type": "answer",
+  "q": "Tell me about a small problem you solved. Use 'so'.",
+  "keywords": [
+   "so"
+  ],
+  "model": "I forgot my lunch box last week, so my friend shared her sandwiches with me.",
+  "focus": "Problems and results",
+  "tip": "Pause a little before 'so', then stress the result: SHARED, SAND-wich-es.",
+  "id": "b1-sp59",
+  "minWords": 5
+ },
+ {
+  "type": "answer",
+  "q": "Which is better, the beach or the mountains? Use 'I prefer'.",
+  "keywords": [
+   "i prefer"
+  ],
+  "model": "I prefer the mountains because I love hiking and the air feels fresher there.",
+  "focus": "Giving preferences",
+  "tip": "Stress pre-FER on the second part. Stress MOUN-tains and FRESH-er.",
+  "id": "b1-sp60",
+  "minWords": 5
  }
 ]

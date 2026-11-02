@@ -278,5 +278,145 @@
   "focus": "Word stress",
   "tip": "Stress POCK-et MON-ey and SKATE-board. 'saving' has /eɪ/.",
   "id": "a2-sp40"
+ },
+ {
+  "type": "read",
+  "text": "I went to the farm and fed the goats.",
+  "focus": "Irregular past",
+  "tip": "'went' and 'fed' are short and quick. 'goats' has /əʊ/ and ends /ts/.",
+  "id": "a2-sp41"
+ },
+ {
+  "type": "read",
+  "text": "We baked cookies for the school fair.",
+  "focus": "Past -ed /t/",
+  "tip": "'baked' is one syllable ending in /kt/: /beɪkt/. Not 'bake-ed'!",
+  "id": "a2-sp42"
+ },
+ {
+  "type": "read",
+  "text": "My little sister is afraid of spiders.",
+  "focus": "Word stress",
+  "tip": "Stress a-FRAID and SPI-ders. 'of' is weak: /əv/.",
+  "id": "a2-sp43"
+ },
+ {
+  "type": "read",
+  "text": "Are you coming to the swimming pool later?",
+  "focus": "Intonation: yes/no questions",
+  "tip": "Let your voice go UP at the end: LA-ter? 'Are you' is quick: /ə ju/.",
+  "id": "a2-sp44"
+ },
+ {
+  "type": "read",
+  "text": "It's colder today than it was yesterday.",
+  "focus": "Comparatives",
+  "tip": "Stress COLD-er. 'than' and 'was' are weak: /ðən/, /wəz/.",
+  "id": "a2-sp45"
+ },
+ {
+  "type": "read",
+  "text": "I need to finish my homework before dinner.",
+  "focus": "Weak form: to",
+  "tip": "'to' is weak /tə/. Stress FIN-ish, HOME-work and DIN-ner.",
+  "id": "a2-sp46"
+ },
+ {
+  "type": "read",
+  "text": "Mum bought me a new pair of trainers.",
+  "focus": "Sounds: /ɔː/ and /eə/",
+  "tip": "'bought' sounds like 'sort' /bɔːt/: the 'gh' is silent. 'pair' sounds like 'pear'.",
+  "id": "a2-sp47"
+ },
+ {
+  "type": "read",
+  "text": "The library is closed on Sundays.",
+  "focus": "Past -ed /d/",
+  "tip": "'closed' is one syllable: /kləʊzd/. Stress LI-bra-ry and SUN-days.",
+  "id": "a2-sp48"
+ },
+ {
+  "type": "read",
+  "text": "We had a picnic under the big oak tree.",
+  "focus": "Linking",
+  "tip": "Link 'had a' into /hædə/ and 'big oak' into /bɪɡəʊk/.",
+  "id": "a2-sp49"
+ },
+ {
+  "type": "read",
+  "text": "What time does the film start?",
+  "focus": "Intonation: wh- questions",
+  "tip": "Wh- questions go down at the end. 'does the' is quick and weak.",
+  "id": "a2-sp50"
+ },
+ {
+  "type": "read",
+  "text": "My favourite subject at school is science.",
+  "focus": "Silent letters",
+  "tip": "The 'c' after 's' in 'science' is silent: /ˈsaɪəns/. Stress FA-vour-ite.",
+  "id": "a2-sp51"
+ },
+ {
+  "type": "read",
+  "text": "I'm sorry I'm late for the lesson.",
+  "focus": "Saying sorry",
+  "tip": "Say 'sorry' warmly with a fall: SOR-ry. 'I'm' is one beat: /aɪm/.",
+  "id": "a2-sp52"
+ },
+ {
+  "type": "read",
+  "text": "He fell off his bike and hurt his knee.",
+  "focus": "Silent k",
+  "tip": "The 'k' in 'knee' is silent: /niː/. 'hurt' has /ɜː/.",
+  "id": "a2-sp53"
+ },
+ {
+  "type": "read",
+  "text": "There isn't any juice left in the fridge.",
+  "focus": "Sound: /dʒ/",
+  "tip": "'juice' starts with /dʒ/ and 'fridge' ends with it. 'isn't' is /ˈɪznt/.",
+  "id": "a2-sp54"
+ },
+ {
+  "type": "read",
+  "text": "First, mix the flour and the eggs.",
+  "focus": "Giving instructions",
+  "tip": "Pause after 'First,'. 'flour' sounds just like 'flower' /ˈflaʊə/.",
+  "id": "a2-sp55"
+ },
+ {
+  "type": "read",
+  "text": "Let's make a snowman in the garden!",
+  "focus": "Suggestions: let's",
+  "tip": "'Let's' is one beat /lets/. Stress SNOW-man and GAR-den.",
+  "id": "a2-sp56"
+ },
+ {
+  "type": "read",
+  "text": "Have you ever been to the seaside?",
+  "focus": "Present perfect questions",
+  "tip": "'been' is weak and quick /bɪn/. Your voice goes UP on SEA-side?",
+  "id": "a2-sp57"
+ },
+ {
+  "type": "read",
+  "text": "My grandpa grows tomatoes and carrots.",
+  "focus": "Sound: /əʊ/",
+  "tip": "'grows' and 'tomatoes' both have /əʊ/. Stress to-MA-toes.",
+  "id": "a2-sp58"
+ },
+ {
+  "type": "read",
+  "text": "The baby penguins were sliding on the ice.",
+  "focus": "Weak form: were",
+  "tip": "'were' is weak /wə/. Stress PEN-guins and SLI-ding.",
+  "id": "a2-sp59"
+ },
+ {
+  "type": "read",
+  "text": "We clapped and cheered at the end of the show.",
+  "focus": "Past -ed /t/ and /d/",
+  "tip": "'clapped' ends in /t/, 'cheered' ends in /d/. Both are one syllable!",
+  "id": "a2-sp60"
  }
 ]

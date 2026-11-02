@@ -1012,5 +1012,457 @@
    }
   ],
   "level": "b1"
+ },
+ {
+  "genre": "article",
+  "part": "B1 Preliminary · Writing Part 2 (article)",
+  "title": "The Best Day Out in My Town",
+  "task": "You see this notice in an English magazine for teenagers: “Articles wanted! What is the best day out in your town? What can you do there? Why should visitors go?” Write your article in about 100 words.",
+  "points": [
+   {
+    "label": "Where the day out is",
+    "keys": [
+     "the best day out",
+     "in my town",
+     "near",
+     "park",
+     "museum",
+     "beach",
+     "castle",
+     "river",
+     "zoo"
+    ]
+   },
+   {
+    "label": "What you can do there",
+    "keys": [
+     "you can",
+     "visitors can",
+     "there is",
+     "there are",
+     "try",
+     "ride",
+     "explore"
+    ]
+   },
+   {
+    "label": "Why visitors should go",
+    "keys": [
+     "you should",
+     "why not",
+     "you will",
+     "you'll",
+     "recommend",
+     "worth",
+     "because"
+    ]
+   }
+  ],
+  "words": [
+   80,
+   100
+  ],
+  "model": "A Day at Riverside Park\n\nIf you only have one day in my town, the best day out is Riverside Park. It is right next to the river, just ten minutes from the station.\n\nYou can hire a little boat, feed the ducks or climb the giant rope pyramid. My favourite part is the wildflower maze, where you can easily get lost!\n\nVisitors should go because almost everything is free, and the café sells the best strawberry pancakes I have ever tasted. Why not take a picnic and stay until sunset? You will not be disappointed.",
+  "id": "b1-w11",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "If you only have one day in …",
+     "You can …",
+     "My favourite part is …",
+     "It's worth …"
+    ]
+   },
+   {
+    "g": "🔗 Linking words",
+    "p": [
+     "However, …",
+     "although",
+     "In addition, …",
+     "for example",
+     "On the other hand, …",
+     "as soon as",
+     "Finally, …"
+    ]
+   },
+   {
+    "g": "💌 Emails",
+    "p": [
+     "It was great to hear from you.",
+     "Let me know if …",
+     "I'm sure …",
+     "Best wishes,"
+    ]
+   },
+   {
+    "g": "📖 Stories & articles",
+    "p": [
+     "At first, …",
+     "Just then, …",
+     "From that day on, …",
+     "Have you ever …?"
+    ]
+   }
+  ],
+  "level": "b1"
+ },
+ {
+  "genre": "email",
+  "part": "B1 Preliminary · Writing Part 1 (email)",
+  "title": "Welcome to Our School",
+  "task": "Read the email from your new pen friend Leo and the notes you have made. Write your email to Leo using all the notes. Write about 100 words.",
+  "email": {
+   "from": "Leo",
+   "text": "Great news: I'm starting at your school next month! What are the teachers like? Which clubs do you think I should join? And what should I bring on my first day?",
+   "notes": [
+    "Tell him",
+    "Suggest",
+    "Explain"
+   ]
+  },
+  "points": [
+   {
+    "label": "Say what the teachers are like",
+    "keys": [
+     "teachers are",
+     "teacher",
+     "friendly",
+     "kind",
+     "strict",
+     "helpful"
+    ]
+   },
+   {
+    "label": "Suggest a club",
+    "keys": [
+     "you should join",
+     "why not",
+     "how about",
+     "i suggest",
+     "club"
+    ]
+   },
+   {
+    "label": "Explain what to bring",
+    "keys": [
+     "bring",
+     "you will need",
+     "you'll need",
+     "don't forget",
+     "pencil case",
+     "water bottle"
+    ]
+   }
+  ],
+  "words": [
+   80,
+   100
+  ],
+  "model": "Hi Leo,\n\nThat's brilliant news! I'm sure you will love our school. Most of the teachers are really friendly, although the maths teacher is a bit strict about homework.\n\nI think you should join the robotics club, because you told me you love building things. We meet on Wednesdays and we're making a robot that can dance!\n\nOn your first day, don't forget to bring a pencil case, a water bottle and a packed lunch, because the canteen is closed on Mondays. I'll wait for you at the main gate.\n\nSee you soon,\nAlex",
+  "id": "b1-w12",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "That's brilliant news!",
+     "Most of the teachers are …",
+     "I think you should join …",
+     "Don't forget to bring …"
+    ]
+   },
+   {
+    "g": "🔗 Linking words",
+    "p": [
+     "However, …",
+     "although",
+     "In addition, …",
+     "for example",
+     "On the other hand, …",
+     "as soon as",
+     "Finally, …"
+    ]
+   },
+   {
+    "g": "💌 Emails",
+    "p": [
+     "It was great to hear from you.",
+     "Let me know if …",
+     "I'm sure …",
+     "Best wishes,"
+    ]
+   },
+   {
+    "g": "📖 Stories & articles",
+    "p": [
+     "At first, …",
+     "Just then, …",
+     "From that day on, …",
+     "Have you ever …?"
+    ]
+   }
+  ],
+  "level": "b1"
+ },
+ {
+  "genre": "story",
+  "part": "B1 Preliminary · Writing Part 2 (story)",
+  "title": "The Robot in the Attic",
+  "task": "Your English teacher has asked you to write a story. Your story must begin with this sentence: “As soon as Ben switched on the old robot, its eyes began to glow.” Write about 100 words.",
+  "firstLine": "As soon as Ben switched on the old robot, its eyes began to glow.",
+  "points": [
+   {
+    "label": "Begin with the given sentence",
+    "keys": [
+     "as soon as ben switched"
+    ]
+   },
+   {
+    "label": "Something surprising happens",
+    "keys": [
+     "suddenly",
+     "surprised",
+     "couldn't believe",
+     "could not believe",
+     "amazed"
+    ]
+   },
+   {
+    "label": "How the story ended",
+    "keys": [
+     "in the end",
+     "at last",
+     "finally",
+     "from that day",
+     "ever since"
+    ]
+   }
+  ],
+  "words": [
+   80,
+   100
+  ],
+  "model": "As soon as Ben switched on the old robot, its eyes began to glow. It had been in Grandpa's attic for years.\n\nSuddenly, it spoke in a squeaky voice: \"Hello, Ben! Shall I tidy your room?\" Ben couldn't believe his ears. Before he could answer, the robot rolled downstairs and started folding all the laundry.\n\nGrandpa laughed. He explained that he had built the robot when he was a boy, but it had stopped working.\n\nFrom that day on, Ben and the robot did their chores together, and they always finished in time to play.",
+  "id": "b1-w13",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "At first, …",
+     "Suddenly, …",
+     "Ben couldn't believe …",
+     "From that day on, …"
+    ]
+   },
+   {
+    "g": "🔗 Linking words",
+    "p": [
+     "However, …",
+     "although",
+     "In addition, …",
+     "for example",
+     "On the other hand, …",
+     "as soon as",
+     "Finally, …"
+    ]
+   },
+   {
+    "g": "💌 Emails",
+    "p": [
+     "It was great to hear from you.",
+     "Let me know if …",
+     "I'm sure …",
+     "Best wishes,"
+    ]
+   },
+   {
+    "g": "📖 Stories & articles",
+    "p": [
+     "At first, …",
+     "Just then, …",
+     "From that day on, …",
+     "Have you ever …?"
+    ]
+   }
+  ],
+  "level": "b1"
+ },
+ {
+  "genre": "email",
+  "part": "B1 Preliminary · Writing Part 1 (email)",
+  "title": "Ideas for a Greener School",
+  "task": "Read the email from your teacher Mr Patel and the notes you have made. Write your email to Mr Patel using all the notes. Write about 100 words.",
+  "email": {
+   "from": "Mr Patel",
+   "text": "We want to make our school greener this year. What is one change we could make? How could students help? Would you like to join the new eco team?",
+   "notes": [
+    "Suggest",
+    "Explain",
+    "Yes!"
+   ]
+  },
+  "points": [
+   {
+    "label": "Suggest a change",
+    "keys": [
+     "we could",
+     "i suggest",
+     "how about",
+     "why don't",
+     "it would be"
+    ]
+   },
+   {
+    "label": "Explain how students could help",
+    "keys": [
+     "students could",
+     "students can",
+     "everyone could",
+     "we can",
+     "help by"
+    ]
+   },
+   {
+    "label": "Say yes to the eco team",
+    "keys": [
+     "i would love",
+     "i'd love",
+     "i would like to join",
+     "i'd like to join",
+     "happy to"
+    ]
+   }
+  ],
+  "words": [
+   80,
+   100
+  ],
+  "model": "Dear Mr Patel,\n\nThank you for asking for our ideas. I think we could plant a vegetable garden next to the playground. It would be good for bees and butterflies, and the canteen could use the vegetables.\n\nStudents could help by watering the plants at break time, and each class could look after its own bed. We could also collect rainwater in big barrels, so we do not waste water from the taps.\n\nI would love to join the new eco team! I am free on Tuesday and Thursday afternoons.\n\nBest wishes,\nHana",
+  "id": "b1-w14",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "Thank you for asking.",
+     "I think we could …",
+     "Students could help by …",
+     "I would love to …"
+    ]
+   },
+   {
+    "g": "🔗 Linking words",
+    "p": [
+     "However, …",
+     "although",
+     "In addition, …",
+     "for example",
+     "On the other hand, …",
+     "as soon as",
+     "Finally, …"
+    ]
+   },
+   {
+    "g": "💌 Emails",
+    "p": [
+     "It was great to hear from you.",
+     "Let me know if …",
+     "I'm sure …",
+     "Best wishes,"
+    ]
+   },
+   {
+    "g": "📖 Stories & articles",
+    "p": [
+     "At first, …",
+     "Just then, …",
+     "From that day on, …",
+     "Have you ever …?"
+    ]
+   }
+  ],
+  "level": "b1"
+ },
+ {
+  "genre": "story",
+  "part": "B1 Preliminary · Writing Part 2 (story)",
+  "title": "The Noise in the Shed",
+  "task": "Your English teacher has asked you to write a story. Your story must begin with this sentence: “Lucy heard a strange noise coming from the garden shed.” Write about 100 words.",
+  "firstLine": "Lucy heard a strange noise coming from the garden shed.",
+  "points": [
+   {
+    "label": "Begin with the given sentence",
+    "keys": [
+     "lucy heard a strange noise"
+    ]
+   },
+   {
+    "label": "What she found",
+    "keys": [
+     "found",
+     "discovered",
+     "saw",
+     "noticed"
+    ]
+   },
+   {
+    "label": "How the story ended",
+    "keys": [
+     "in the end",
+     "at last",
+     "finally",
+     "from that day",
+     "now",
+     "ever since"
+    ]
+   }
+  ],
+  "words": [
+   80,
+   100
+  ],
+  "model": "Lucy heard a strange noise coming from the garden shed. It sounded like someone was snoring! At first, she thought it was her little brother, but he was inside.\n\nSlowly, she opened the door and switched on her torch. To her surprise, she found a hedgehog curled up in an old flowerpot, with three tiny babies next to her.\n\nLucy did not want to scare them, so she quietly left a dish of water and some cat food by the door.\n\nIn the end, the hedgehog family stayed all winter, and Lucy visited them every evening.",
+  "id": "b1-w15",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "At first, she thought …",
+     "Slowly, she …",
+     "To her surprise, …",
+     "In the end, …"
+    ]
+   },
+   {
+    "g": "🔗 Linking words",
+    "p": [
+     "However, …",
+     "although",
+     "In addition, …",
+     "for example",
+     "On the other hand, …",
+     "as soon as",
+     "Finally, …"
+    ]
+   },
+   {
+    "g": "💌 Emails",
+    "p": [
+     "It was great to hear from you.",
+     "Let me know if …",
+     "I'm sure …",
+     "Best wishes,"
+    ]
+   },
+   {
+    "g": "📖 Stories & articles",
+    "p": [
+     "At first, …",
+     "Just then, …",
+     "From that day on, …",
+     "Have you ever …?"
+    ]
+   }
+  ],
+  "level": "b1"
  }
 ]

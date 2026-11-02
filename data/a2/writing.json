@@ -899,5 +899,445 @@
    }
   ],
   "level": "a2"
+ },
+ {
+  "genre": "email",
+  "part": "A2 Key · Writing Part 6 (email)",
+  "title": "Let's Go to the Aquarium",
+  "task": "Write an email to your friend Max. Invite him to the aquarium. In your email: • say when • say how you will get there • say what you want to see.",
+  "points": [
+   {
+    "label": "When",
+    "keys": [
+     "monday",
+     "tuesday",
+     "wednesday",
+     "thursday",
+     "friday",
+     "saturday",
+     "sunday",
+     "weekend",
+     "tomorrow",
+     "tonight",
+     "next week",
+     "next",
+     "o'clock",
+     "morning",
+     "afternoon"
+    ]
+   },
+   {
+    "label": "How you will get there",
+    "keys": [
+     "bus",
+     "train",
+     "car",
+     "walk",
+     "bike",
+     "take"
+    ]
+   },
+   {
+    "label": "What you want to see",
+    "keys": [
+     "see",
+     "shark",
+     "penguin",
+     "turtle",
+     "fish",
+     "octopus",
+     "jellyfish"
+    ]
+   }
+  ],
+  "words": [
+   25,
+   40
+  ],
+  "model": "Hi Max,\nWould you like to come to the aquarium with me on Saturday morning? My dad will take us by car. I really want to see the sharks and the funny penguins!\nSee you,\nLeo",
+  "id": "a2-w11",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "Would you like to … ?",
+     "My dad will take us …",
+     "I really want to see …"
+    ]
+   },
+   {
+    "g": "🔗 Linking words",
+    "p": [
+     "and",
+     "but",
+     "because",
+     "so",
+     "then",
+     "after that",
+     "when"
+    ]
+   },
+   {
+    "g": "💌 Notes & emails",
+    "p": [
+     "Hi …,",
+     "Dear …,",
+     "Thanks for …",
+     "See you soon,",
+     "Love,"
+    ]
+   },
+   {
+    "g": "📖 Stories",
+    "p": [
+     "One day, …",
+     "Suddenly, …",
+     "In the end, …"
+    ]
+   }
+  ],
+  "level": "a2"
+ },
+ {
+  "genre": "postcard",
+  "part": "A2 Key · Writing Part 6 (postcard)",
+  "title": "A Postcard from the Farm",
+  "task": "You are staying on your grandma's farm. Write a postcard to your friend Ella. Tell her: • where you are • what animals there are • what you did yesterday.",
+  "points": [
+   {
+    "label": "Where you are",
+    "keys": [
+     "i'm at",
+     "i am at",
+     "i'm staying",
+     "i am staying",
+     "farm"
+    ]
+   },
+   {
+    "label": "The animals",
+    "keys": [
+     "cow",
+     "sheep",
+     "goose",
+     "pig",
+     "horse",
+     "pony",
+     "hen",
+     "chicken",
+     "goat",
+     "duck"
+    ]
+   },
+   {
+    "label": "What you did yesterday",
+    "keys": [
+     "yesterday"
+    ]
+   }
+  ],
+  "words": [
+   25,
+   40
+  ],
+  "model": "Dear Ella,\nI'm staying at my grandma's farm for a week. There are cows, sheep and a very noisy goose! Yesterday I helped Grandma collect the eggs and I rode a pony.\nLove,\nRuby",
+  "id": "a2-w12",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "I'm staying at …",
+     "There are …",
+     "Yesterday I …"
+    ]
+   },
+   {
+    "g": "🔗 Linking words",
+    "p": [
+     "and",
+     "but",
+     "because",
+     "so",
+     "then",
+     "after that",
+     "when"
+    ]
+   },
+   {
+    "g": "💌 Notes & emails",
+    "p": [
+     "Hi …,",
+     "Dear …,",
+     "Thanks for …",
+     "See you soon,",
+     "Love,"
+    ]
+   },
+   {
+    "g": "📖 Stories",
+    "p": [
+     "One day, …",
+     "Suddenly, …",
+     "In the end, …"
+    ]
+   }
+  ],
+  "level": "a2"
+ },
+ {
+  "genre": "story",
+  "part": "A2 Key · Writing Part 7 (picture story)",
+  "title": "The Kite That Flew Away",
+  "task": "Look at the three pictures and write the story (35 words or more). 🖼️ 1: Sam flies his new kite in the park. 🖼️ 2: The wind pulls it into a tall tree. 🖼️ 3: A kind girl helps him get it down with a long stick.",
+  "points": [
+   {
+    "label": "Picture 1: Sam flies his kite",
+    "keys": [
+     "kite",
+     "flew",
+     "flying",
+     "park"
+    ]
+   },
+   {
+    "label": "Picture 2: it gets stuck in a tree",
+    "keys": [
+     "wind",
+     "tree",
+     "stuck",
+     "pulled"
+    ]
+   },
+   {
+    "label": "Picture 3: a girl helps him",
+    "keys": [
+     "helped",
+     "girl",
+     "stick",
+     "got it",
+     "down"
+    ]
+   }
+  ],
+  "words": [
+   35,
+   45
+  ],
+  "model": "One windy day, Sam was flying his new kite in the park. Suddenly, the wind pulled it into a tall tree and it was stuck. Then a kind girl helped him. She got it down with a long stick!",
+  "id": "a2-w13",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "One windy day, …",
+     "Suddenly, …",
+     "In the end, …"
+    ]
+   },
+   {
+    "g": "🔗 Linking words",
+    "p": [
+     "and",
+     "but",
+     "because",
+     "so",
+     "then",
+     "after that",
+     "when"
+    ]
+   },
+   {
+    "g": "💌 Notes & emails",
+    "p": [
+     "Hi …,",
+     "Dear …,",
+     "Thanks for …",
+     "See you soon,",
+     "Love,"
+    ]
+   },
+   {
+    "g": "📖 Stories",
+    "p": [
+     "One day, …",
+     "Suddenly, …",
+     "In the end, …"
+    ]
+   }
+  ],
+  "level": "a2"
+ },
+ {
+  "genre": "note",
+  "part": "A2 Key · Writing Part 6 (note)",
+  "title": "I'm at Lily's House",
+  "task": "You are at your friend's house after school. Write a note to your mum. Tell her: • where you are • what you are doing • when you will be home.",
+  "points": [
+   {
+    "label": "Where you are",
+    "keys": [
+     "i'm at",
+     "i am at",
+     "house",
+     "next door",
+     "lily's"
+    ]
+   },
+   {
+    "label": "What you are doing",
+    "keys": [
+     "re:\\b(we are|we're|i am|i'm) \\w+ing\\b"
+    ]
+   },
+   {
+    "label": "When you will be home",
+    "keys": [
+     "home",
+     "o'clock",
+     "back",
+     "before",
+     "at six",
+     "at five"
+    ]
+   }
+  ],
+  "words": [
+   25,
+   40
+  ],
+  "model": "Hi Mum,\nI'm at Lily's house next door. We're making a cardboard castle for our school project. Her dad says I can stay for dinner. I'll be home at seven o'clock.\nLove,\nJess",
+  "id": "a2-w14",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "I'm at …",
+     "We're …",
+     "I'll be home at …"
+    ]
+   },
+   {
+    "g": "🔗 Linking words",
+    "p": [
+     "and",
+     "but",
+     "because",
+     "so",
+     "then",
+     "after that",
+     "when"
+    ]
+   },
+   {
+    "g": "💌 Notes & emails",
+    "p": [
+     "Hi …,",
+     "Dear …,",
+     "Thanks for …",
+     "See you soon,",
+     "Love,"
+    ]
+   },
+   {
+    "g": "📖 Stories",
+    "p": [
+     "One day, …",
+     "Suddenly, …",
+     "In the end, …"
+    ]
+   }
+  ],
+  "level": "a2"
+ },
+ {
+  "genre": "email",
+  "part": "A2 Key · Writing Part 6 (email)",
+  "title": "When You Visit Next Week",
+  "task": "Your cousin Josh is coming to stay next week. Write an email to Josh. In your email: • say what you can do together • tell him about the weather • say what clothes to bring.",
+  "points": [
+   {
+    "label": "What you can do together",
+    "keys": [
+     "we can",
+     "we could",
+     "together",
+     "let's"
+    ]
+   },
+   {
+    "label": "The weather",
+    "keys": [
+     "weather",
+     "sunny",
+     "rain",
+     "cold",
+     "warm",
+     "hot",
+     "windy",
+     "snow"
+    ]
+   },
+   {
+    "label": "What clothes to bring",
+    "keys": [
+     "bring",
+     "coat",
+     "jacket",
+     "boots",
+     "jumper",
+     "shorts",
+     "hat",
+     "raincoat"
+    ]
+   }
+  ],
+  "words": [
+   25,
+   40
+  ],
+  "model": "Hi Josh,\nI can't wait to see you! We can go to the skate park and play video games together. The weather is cold and rainy here, so bring a warm coat and your boots.\nSee you soon,\nOscar",
+  "id": "a2-w15",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "I can't wait to see you!",
+     "We can …",
+     "The weather is …",
+     "Bring …"
+    ]
+   },
+   {
+    "g": "🔗 Linking words",
+    "p": [
+     "and",
+     "but",
+     "because",
+     "so",
+     "then",
+     "after that",
+     "when"
+    ]
+   },
+   {
+    "g": "💌 Notes & emails",
+    "p": [
+     "Hi …,",
+     "Dear …,",
+     "Thanks for …",
+     "See you soon,",
+     "Love,"
+    ]
+   },
+   {
+    "g": "📖 Stories",
+    "p": [
+     "One day, …",
+     "Suddenly, …",
+     "In the end, …"
+    ]
+   }
+  ],
+  "level": "a2"
  }
 ]

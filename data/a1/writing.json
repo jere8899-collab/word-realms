@@ -885,5 +885,417 @@
    }
   ],
   "level": "a1"
+ },
+ {
+  "genre": "about",
+  "part": "A1 Movers-style · Describe a person",
+  "title": "My Best Friend",
+  "task": "Write 3–4 sentences about your best friend.",
+  "points": [
+   {
+    "label": "Your friend's name",
+    "keys": [
+     "name",
+     "called"
+    ]
+   },
+   {
+    "label": "What your friend looks like",
+    "keys": [
+     "red",
+     "blue",
+     "green",
+     "yellow",
+     "pink",
+     "white",
+     "black",
+     "brown",
+     "orange",
+     "purple",
+     "grey",
+     "gray",
+     "gold",
+     "silver",
+     "hair",
+     "eyes",
+     "tall",
+     "small",
+     "short",
+     "smile",
+     "big"
+    ]
+   },
+   {
+    "label": "What you do together",
+    "keys": [
+     "together",
+     "we play",
+     "we ride",
+     "we go",
+     "we read",
+     "we draw",
+     "we sing",
+     "we eat"
+    ]
+   }
+  ],
+  "words": [
+   20,
+   30
+  ],
+  "model": "My best friend is called Ana. She is eight. She has short black hair and a big smile. We play hide and seek and ride our bikes.",
+  "id": "a1-w11",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "My best friend is called …",
+     "She has got …",
+     "We … together."
+    ]
+   },
+   {
+    "g": "🔗 Joining words",
+    "p": [
+     "and",
+     "but",
+     "because",
+     "also",
+     "too"
+    ]
+   },
+   {
+    "g": "🌼 Sentence starters",
+    "p": [
+     "I have got …",
+     "There is …",
+     "There are …",
+     "It is …",
+     "I can …"
+    ]
+   }
+  ],
+  "level": "a1"
+ },
+ {
+  "genre": "about",
+  "part": "A1 Movers-style · Describe a place",
+  "title": "A Day at the Beach",
+  "task": "Write 3–4 sentences about the beach. Say what you can see, what you do there and what you eat.",
+  "points": [
+   {
+    "label": "What you can see",
+    "keys": [
+     "see",
+     "sea",
+     "sand",
+     "boat",
+     "shell",
+     "water",
+     "sun"
+    ]
+   },
+   {
+    "label": "What you do",
+    "keys": [
+     "swim",
+     "play",
+     "make",
+     "build",
+     "run",
+     "dig"
+    ]
+   },
+   {
+    "label": "What you eat",
+    "keys": [
+     "eat",
+     "ice cream",
+     "sandwich",
+     "fruit",
+     "snack"
+    ]
+   }
+  ],
+  "words": [
+   20,
+   30
+  ],
+  "model": "I love the beach. I can see blue water, yellow sand and white boats. I swim and make sandcastles with my dad. We eat ice cream.",
+  "id": "a1-w12",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "I can see …",
+     "I swim and …",
+     "We eat …"
+    ]
+   },
+   {
+    "g": "🔗 Joining words",
+    "p": [
+     "and",
+     "but",
+     "because",
+     "also",
+     "too"
+    ]
+   },
+   {
+    "g": "🌼 Sentence starters",
+    "p": [
+     "I have got …",
+     "There is …",
+     "There are …",
+     "It is …",
+     "I can …"
+    ]
+   }
+  ],
+  "level": "a1"
+ },
+ {
+  "genre": "note",
+  "part": "A1 Flyers-style · Write a short note",
+  "title": "Come to My House!",
+  "task": "Write a note to your friend Tom. Ask him to come to your house. Say: • which day • what you can play • what he can bring.",
+  "points": [
+   {
+    "label": "Which day",
+    "keys": [
+     "monday",
+     "tuesday",
+     "wednesday",
+     "thursday",
+     "friday",
+     "saturday",
+     "sunday",
+     "weekend",
+     "tomorrow",
+     "tonight",
+     "next week"
+    ]
+   },
+   {
+    "label": "What you can play",
+    "keys": [
+     "play",
+     "game"
+    ]
+   },
+   {
+    "label": "What to bring",
+    "keys": [
+     "bring"
+    ]
+   }
+  ],
+  "words": [
+   20,
+   30
+  ],
+  "model": "Hi Tom,\nCan you come to my house on Saturday? We can play with my new train set. Please bring your red car. My mum makes pizza!\nFrom,\nBen",
+  "id": "a1-w13",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "Hi …,",
+     "Can you come to my house on … ?",
+     "We can play …",
+     "Please bring …",
+     "From, …"
+    ]
+   },
+   {
+    "g": "🔗 Joining words",
+    "p": [
+     "and",
+     "but",
+     "because",
+     "also",
+     "too"
+    ]
+   },
+   {
+    "g": "🌼 Sentence starters",
+    "p": [
+     "I have got …",
+     "There is …",
+     "There are …",
+     "It is …",
+     "I can …"
+    ]
+   }
+  ],
+  "level": "a1"
+ },
+ {
+  "genre": "about",
+  "part": "A1 Movers-style · Write about food",
+  "title": "What's in My Lunch Box?",
+  "task": "Write 3–4 sentences about your lunch box. Say what food is in it, what you drink and what you like best.",
+  "points": [
+   {
+    "label": "Food in it",
+    "keys": [
+     "sandwich",
+     "apple",
+     "banana",
+     "cheese",
+     "rice",
+     "egg",
+     "carrot",
+     "grapes",
+     "cookie"
+    ]
+   },
+   {
+    "label": "A drink",
+    "keys": [
+     "drink",
+     "water",
+     "juice",
+     "milk"
+    ]
+   },
+   {
+    "label": "What you like best",
+    "keys": [
+     "like",
+     "love",
+     "favourite",
+     "yummy"
+    ]
+   }
+  ],
+  "words": [
+   20,
+   30
+  ],
+  "model": "My lunch box is green. There is a cheese sandwich, an apple and some grapes. I drink water. I love the grapes because they are sweet.",
+  "id": "a1-w14",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "My lunch box is …",
+     "There is …",
+     "I drink …",
+     "I love …"
+    ]
+   },
+   {
+    "g": "🔗 Joining words",
+    "p": [
+     "and",
+     "but",
+     "because",
+     "also",
+     "too"
+    ]
+   },
+   {
+    "g": "🌼 Sentence starters",
+    "p": [
+     "I have got …",
+     "There is …",
+     "There are …",
+     "It is …",
+     "I can …"
+    ]
+   }
+  ],
+  "level": "a1"
+ },
+ {
+  "genre": "form",
+  "part": "A1 Starters-style · Complete a club card",
+  "title": "Join the Dance Club",
+  "task": "You want to join the Dance Club. Write about you: your name, your age, the music you like, and when you can come.",
+  "points": [
+   {
+    "label": "Your name",
+    "keys": [
+     "my name",
+     "name is",
+     "i'm ",
+     "called"
+    ]
+   },
+   {
+    "label": "Your age",
+    "keys": [
+     "years old",
+     "re:\\bi am (\\d+|five|six|seven|eight|nine|ten|eleven|twelve)\\b"
+    ]
+   },
+   {
+    "label": "Music you like",
+    "keys": [
+     "music",
+     "song",
+     "pop",
+     "sing",
+     "dance"
+    ]
+   },
+   {
+    "label": "When you can come",
+    "keys": [
+     "monday",
+     "tuesday",
+     "wednesday",
+     "thursday",
+     "friday",
+     "saturday",
+     "sunday",
+     "weekend",
+     "tomorrow",
+     "tonight",
+     "next week",
+     "after school"
+    ]
+   }
+  ],
+  "words": [
+   20,
+   30
+  ],
+  "model": "My name is Zara. I am seven years old. I like pop music and I love to dance. I can come on Mondays after school.",
+  "id": "a1-w15",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "My name is …",
+     "I am … years old.",
+     "I like … music.",
+     "I can come on …"
+    ]
+   },
+   {
+    "g": "🔗 Joining words",
+    "p": [
+     "and",
+     "but",
+     "because",
+     "also",
+     "too"
+    ]
+   },
+   {
+    "g": "🌼 Sentence starters",
+    "p": [
+     "I have got …",
+     "There is …",
+     "There are …",
+     "It is …",
+     "I can …"
+    ]
+   }
+  ],
+  "level": "a1"
  }
 ]
