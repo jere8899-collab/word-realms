@@ -1,7 +1,7 @@
 /* 🔢 Number Kingdom topics, Grades 9–12 (Singapore Secondary 3–4, JC 1–2 / Years 10–13). */
 (function () {
 const M = (typeof module !== "undefined" && module.exports) ? require("./math-gen.js") : window.MathGen;
-const { Q, num, mcq, mcqWhy, numWhy, T, topic, PASTEL, INK, LINE, esc, cardSvg, axes, f1, xy, mid, vat, vdir, toDeg, sinD, cosD, tanD, rotPt, angSweep, angWedge, angText, rightPath, figCard, figEdge, figLab, figLens, table, rd, fmt, fdp, fracTex, fracStr, poly, lin, paren, sgn, pm, sum, asc, median, freqTotals } = M._internal;
+const { Q, num, mcq, mcqWhy, numWhy, T, topic, PASTEL, INK, LINE, esc, cardSvg, axes, f1, xy, mid, vat, vdir, toDeg, sinD, cosD, tanD, rotPt, angSweep, angWedge, angText, rightPath, figCard, figEdge, figLab, figLens, figDot, figVtx, table, rd, fmt, fdp, fracTex, fracStr, poly, lin, paren, sgn, pm, sum, asc, median, freqTotals } = M._internal;
 const sf3 = v => +(+v.toFixed(12)).toPrecision(3);
 const tol3 = v => Math.max(1e-9, Math.pow(10, Math.floor(Math.log10(Math.abs(v) || 1)) - 2) * 0.51);
 const V2 = v => `\\begin{pmatrix} ${v[0]} \\\\ ${v[1]} \\end{pmatrix}`, V3 = v => `\\begin{pmatrix} ${v[0]} \\\\ ${v[1]} \\\\ ${v[2]} \\end{pmatrix}`;
@@ -72,8 +72,7 @@ const svgMap = (title, f, h = 228) => { const nl = f.nl || 1, pts = f.pts, ends 
     (f.lens || []).forEach(([a, b, t, away]) => { text += figLens(P[a], P[b], t, P[away]); });
     const shown = Object.keys(P).filter(k => !(f.hide || []).includes(k)), box = i => [Math.min(...shown.map(k => P[k][i])), Math.max(...shown.map(k => P[k][i]))], G = mid(...[0, 1].map(i => box(i)).map((_, j, b) => [b[0][j], b[1][j]]));
     shown.forEach(k => { const p = P[k], o = (f.lab && f.lab[k]) || (Math.hypot(p[0] - G[0], p[1] - G[1]) < 4 ? [-.7, .7] : vdir(G, p));
-      marks += `<circle class="bpt" data-n="${k}" cx="${f1(p[0])}" cy="${f1(p[1])}" r="3.6" fill="${INK}"/>`;
-      text += `<text class="mvtx" x="${f1(p[0] + o[0] * 14)}" y="${f1(p[1] + o[1] * 14 + 4.5)}" font-size="13" text-anchor="middle" font-weight="900" fill="${INK}" paint-order="stroke" stroke="#FFFDF8" stroke-width="3">${k}</text>`; });
+      marks += figDot("bpt", k, p, 3.6); text += figVtx(p, o, k); });
     return back + lines + marks + text; }, "map with bearings", h, "mpic chart mens bear"); };
 /* a to-scale lookout picture: a striped tower of height h (foot F, top T) and, d away on the ground, a person whose eyes are e
    above the ground (E, standing on O) or a little boat at O. f = { h, d, e, side, boat, labs: { h, d, e }, elev, depr } where
@@ -99,8 +98,7 @@ const svgLook = (title, f) => { const s = f.side || 1, e = f.e || 0, F = [0, 0],
     if (lab.h) text += figLab(mid(pF, pT), lab.h, -s * (w + 6), 0, s > 0 ? "end" : "start");
     if (lab.d) text += figLab(mid(pF, pO), lab.d, 0, 20);
     if (lab.e) text += figLab(mid(pO, pE), lab.e, s * 9, 0, s > 0 ? "start" : "end");
-    [["T", pT, [-s, -.6]], ["F", pF, [-s, .9]], [e ? "E" : "O", eye, e ? [s * .6, -1.1] : [s, f.boat ? .9 : -.4]]].forEach(([n, p, o]) => { marks += `<circle class="lpt" data-n="${n}" cx="${f1(p[0])}" cy="${f1(p[1])}" r="3.2" fill="${INK}"/>`;
-      text += `<text class="mvtx" x="${f1(p[0] + o[0] * 14)}" y="${f1(p[1] + o[1] * 14 + 4.5)}" font-size="13" text-anchor="middle" font-weight="900" fill="${INK}" paint-order="stroke" stroke="#FFFDF8" stroke-width="3">${n}</text>`; });
+    [["T", pT, [-s, -.6]], ["F", pF, [-s, .9]], [e ? "E" : "O", eye, e ? [s * .6, -1.1] : [s, f.boat ? .9 : -.4]]].forEach(([n, p, o]) => { marks += figDot("lpt", n, p, 3.2); text += figVtx(p, o, n); });
     if (e) marks += `<circle class="lpt" data-n="O" cx="${f1(pO[0])}" cy="${f1(pO[1])}" r="0" fill="none"/>`;
     return back + lines + marks + text; }, "lookout picture", 226, "mpic chart mens look"); };
 // kid-friendly places: map settings for the bearing questions and lookouts for elevation / depression
@@ -232,8 +230,7 @@ const svgCircle = (title, f) => {
       if (k === "O") { const s = names.filter(n => n !== "O").reduce((g, n) => { const u = vdir(O, P[n]); return [g[0] + u[0], g[1] + u[1]]; }, [0, 0]); o = Math.hypot(s[0], s[1]) > .3 ? vdir(s, [0, 0]) : [-.6, .8]; }
       else if (f.labAt && f.labAt[k]) { const s = f.labAt[k].reduce((g, n) => { const u = vdir(p, P[n]); return [g[0] + u[0], g[1] + u[1]]; }, [0, 0]); o = vdir([0, 0], s); }
       else o = vdir(O, p);
-      marks += `<circle class="cpt" data-n="${k}" cx="${f1(p[0])}" cy="${f1(p[1])}" r="3.4" fill="${INK}"/>`;
-      text += `<text class="mvtx" x="${f1(p[0] + o[0] * 13)}" y="${f1(p[1] + o[1] * 13 + 4.5)}" font-size="13" text-anchor="middle" font-weight="900" fill="${INK}" paint-order="stroke" stroke="#FFFDF8" stroke-width="3">${k}</text>`; });
+      marks += figDot("cpt", k, p, 3.4); text += figVtx(p, o, k, 13); });
     return back + lines + marks + text; }, "circle figure", 236, "mpic chart mens circ");
 };
 // the seven properties: their names (the "which property?" options), what each one needs to see in a figure
@@ -356,6 +353,169 @@ topic(9, "ineq", "Inequality Gates", "🚪", "Solve linear inequalities", r => {
   const right = `x ${fin} ${x}`;
   return mcq(r, `Solve ${T(`${lin(a, b)} ${op} ${c}`)}`, T(right), [`x ${flip[fin]} ${x}`, `x ${fin} ${-x}`, `x ${fin} ${x + 1}`, `x ${flip[fin]} ${-x}`].filter(w => w !== right).map(T), "Solve like an equation — but if you divide by a negative, flip the sign!", [`$${poly([[a, 1]])} ${op} ${c - b}$`, a < 0 ? `Divide by ${a} (negative) → flip: $${right}$` : `Divide by ${a}: $${right}$`], { data: { a, b, c, op } });
 });
+/* ---------- 🫧 Venn Bubble Club (MOE Sec 3/4 N8 set language and notation: ξ, n(A), ∈ / ∉, A′, ∅, ⊂ / ⊄, union and
+   intersection of two sets, Venn diagrams). Six kinds: read a count off a Venn diagram (n(A), n(A ∩ B), n(A ∪ B), n(A′),
+   n(A ∩ B′), n((A ∪ B)′), n(ξ)); club and snack surveys that need n(A ∪ B) = n(A) + n(B) − n(A ∩ B); Venn regions given in x
+   (form and solve an equation); name the shaded region; list a set from ξ = {1, 2, …, N} and two rules; and pick the true
+   statement about a diagram with its elements drawn in (overlapping, nested B ⊂ A, or apart A ∩ B = ∅). The four regions are
+   a = A only, b = A ∩ B, c = B only, d = outside both. Every diagram is drawn from its circles: circles carry class vcirc +
+   data-n, region paths class vreg + data-r (+ data-shade), counts class vnum + data-r, elements class vel + data-r + data-t,
+   so tests read each figure back and check every element sits in its own region. */
+const VW = 300, VH = 222, VBOX = [14, 34, 272, 174]; // the ξ rectangle: x, y, width, height
+const VLAY = { // circle A, circle B ([cx, cy, r]) and where each region's count goes
+  two: { A: [112, 121, 64], B: [188, 121, 64], at: { a: [80, 125], b: [150, 125], c: [220, 125], d: [262, 196] } },
+  sub: { A: [138, 121, 78], B: [160, 128, 38], at: { a: [92, 108], b: [160, 132], d: [262, 196] } },
+  apart: { A: [86, 121, 56], B: [214, 121, 56], at: { a: [86, 125], c: [214, 125], d: [150, 196] } } };
+// where each circle's letter goes: just outside its upper-left (A) or upper-right (B) edge (inside A for a nested B)
+const vLetter = (kind, n, C) => { const o = kind === "sub" && n === "B" ? [.71, -.71] : n === "A" ? [-.71, -.71] : [.71, -.71]; return { o, p: [C[0] + o[0] * C[2], C[1] + o[1] * C[2]] }; };
+const inC = (p, C, m = 0) => Math.hypot(p[0] - C[0], p[1] - C[1]) < C[2] - m, outC = (p, C, m = 0) => Math.hypot(p[0] - C[0], p[1] - C[1]) > C[2] + m;
+// the region a point is in (a | b | c | d)
+const vRegion = (L, p) => { const a = inC(p, L.A), b = inC(p, L.B); return a && b ? "b" : a ? "a" : b ? "c" : "d"; };
+// region outlines: two overlapping circles meet at the top and bottom of the lens; "sub" and "apart" are plain circles
+const vPaths = (kind, L) => { const [A, B] = [L.A, L.B], R = A[2], circ = C => `M${C[0] - C[2]},${C[1]} a${C[2]},${C[2]} 0 1,0 ${2 * C[2]},0 a${C[2]},${C[2]} 0 1,0 ${-2 * C[2]},0 Z`;
+  const rect = `M${VBOX[0]},${VBOX[1]} h${VBOX[2]} v${VBOX[3]} h${-VBOX[2]} Z`;
+  if (kind === "two") { const x = (A[0] + B[0]) / 2, h = f1(Math.sqrt(R * R - (x - A[0]) ** 2)), T0 = `${x},${f1(A[1] - h)}`, B0 = `${x},${f1(A[1] + h)}`, arc = (big, sw, p) => `A${R},${R} 0 ${big},${sw} ${p}`;
+    return { a: `M${T0} ${arc(1, 0, B0)} ${arc(0, 1, T0)} Z`, b: `M${T0} ${arc(0, 1, B0)} ${arc(0, 1, T0)} Z`, c: `M${T0} ${arc(1, 1, B0)} ${arc(0, 0, T0)} Z`, d: `${rect} M${T0} ${arc(1, 0, B0)} ${arc(1, 0, T0)} Z` }; }
+  if (kind === "sub") return { a: `${circ(A)} ${circ(B)}`, b: circ(B), d: `${rect} ${circ(A)}` };
+  return { a: circ(A), c: circ(B), d: `${rect} ${circ(A)} ${circ(B)}` }; };
+// spots for written elements inside region k: a 19 px grid, kept clear of every circle edge, the rectangle edge and the letters
+const vSpots = (kind, L, k) => { const out = [], lets = [["A", L.A], ["B", L.B]].map(([n, C]) => { const { o, p } = vLetter(kind, n, C); return [p[0] + o[0] * 10, p[1] + o[1] * 10]; }); for (let y = VBOX[1] + 16; y <= VBOX[1] + VBOX[3] - 12; y += 19) for (let x = VBOX[0] + 16; x <= VBOX[0] + VBOX[2] - 14; x += 19) { const p = [x, y];
+  if (vRegion(L, p) !== k || [L.A, L.B].some(C => Math.abs(Math.hypot(p[0] - C[0], p[1] - C[1]) - C[2]) < 11) || (x < 44 && y < 62) || lets.some(q => Math.hypot(x - q[0], y - q[1]) < 16)) continue; out.push(p); } return out; };
+const vSpread = (spots, n, c) => { if (!n) return []; const s = spots.slice().sort((p, q) => Math.hypot(p[0] - c[0], p[1] - c[1]) - Math.hypot(q[0] - c[0], q[1] - c[1])).slice(0, Math.max(n, Math.min(spots.length, n * 2)));
+  return s.sort((p, q) => p[1] - q[1] || p[0] - q[0]).filter((_, i) => i % Math.floor(s.length / n || 1) === 0).slice(0, n); };
+/* a Venn diagram: f = { kind: two | sub | apart, nums: { a: "7" | "2x + 1" | "x" }, els: { a: [3, 9] }, shade: [a, b…], tot: [A label,
+   B label] (e.g. "n(A) = 18", written above each circle) } */
+const svgVenn = (title, f) => { const kind = f.kind || "two", L = VLAY[kind], P = vPaths(kind, L), sh = f.shade || [];
+  let back = `<rect x="${VBOX[0]}" y="${VBOX[1]}" width="${VBOX[2]}" height="${VBOX[3]}" rx="10" fill="#F7F2FF" stroke="${INK}" stroke-width="2.2"/>`, marks = "", text = "";
+  Object.keys(P).forEach(k => { const on = sh.includes(k); back += `<path class="vreg" data-r="${k}"${on ? ` data-shade="1"` : ""} d="${P[k]}" fill-rule="evenodd" fill="${on ? "#FF9EC0" : k === "d" || f.shade ? "none" : k === "b" ? "#E2D6FF" : k === "a" ? PASTEL[1] : PASTEL[2]}" fill-opacity="${on ? .8 : .7}" stroke="none"/>`; });
+  [["A", L.A], ["B", L.B]].forEach(([n, C]) => { back += `<circle class="vcirc" data-n="${n}" cx="${C[0]}" cy="${C[1]}" r="${C[2]}" fill="none" stroke="${INK}" stroke-width="2.6"/>`;
+    const { o, p } = vLetter(kind, n, C); text += figVtx(p, o, n, 10); });
+  text += `<text class="vxi" x="${VBOX[0] + 10}" y="${VBOX[1] + 18}" font-size="15" font-style="italic" font-family="Georgia, serif" font-weight="900" fill="${INK}">ξ</text>`;
+  (f.tot || []).forEach((t, i) => { if (t) text += `<text class="vtot" data-n="${"AB"[i]}" x="${i ? 280 : 38}" y="${VBOX[1] + 17}" font-size="11" text-anchor="${i ? "end" : "start"}" font-weight="900" fill="#c2457a">${esc(t)}</text>`; });
+  Object.entries(f.nums || {}).forEach(([k, t]) => { const p = L.at[k]; text += angText(t, p[0], p[1] + 2, 17, 16, ` class="vnum" data-r="${k}" data-t="${esc(t)}"`); });
+  Object.entries(f.els || {}).forEach(([k, xs]) => { vSpread(vSpots(kind, L, k), xs.length, L.at[k]).forEach((p, i) => { marks += `<text class="vel" data-r="${k}" data-t="${xs[i]}" x="${p[0]}" y="${p[1] + 4.5}" font-size="13" text-anchor="middle" font-weight="900" fill="${INK}">${xs[i]}</text>`; }); });
+  return cardSvg(VW, VH, title, 20, back + marks + text, "Venn diagram", "mpic chart venn"); };
+// kid-friendly surveys: [card title, who ξ is, what A is, what B is, the people word]
+const VCTX = [
+  ["Class 3 Rainbow snack survey", "the students in Class 3 Rainbow", "students who like bubble tea", "students who like ice kachang", "students"],
+  ["School camp activities", "the campers at the school camp", "campers who tried kayaking", "campers who tried rock climbing", "campers"],
+  ["Pet survey", "the students in the Science Club", "students who have a cat", "students who have a dog", "students"],
+  ["Sports Day", "the runners on Sports Day", "runners who ran the relay", "runners who did the long jump", "runners"],
+  ["Book fair", "the visitors at the book fair", "visitors who bought a comic", "visitors who bought a puzzle book", "visitors"],
+  ["Cat café kittens", "the kittens at the cat café", "fluffy kittens", "kittens with stripes", "kittens"],
+  ["CCA fair", "the Secondary 3 students", "students in the Art Club", "students in the Robotics Club", "students"]];
+const RW = { a: "A only", b: "the overlap A ∩ B", c: "B only", d: "outside both circles" };
+const rWords = ks => ks.length === 4 ? "every region" : ks.map(k => RW[k]).join(" and ");
+// set notation: [TeX, plain text, regions, in words]
+const VNOTE = [["A \\cap B", "A ∩ B", "b", "in both A and B"], ["A \\cup B", "A ∪ B", "abc", "in A or B or both"], ["A'", "A′", "cd", "not in A"], ["B'", "B′", "ad", "not in B"],
+  ["A \\cap B'", "A ∩ B′", "a", "in A but not in B"], ["A' \\cap B", "A′ ∩ B", "c", "in B but not in A"], ["(A \\cup B)'", "(A ∪ B)′", "d", "in neither A nor B"],
+  ["(A \\cap B)'", "(A ∩ B)′", "acd", "not in both at once (everything except the overlap)"], ["A' \\cup B", "A′ ∪ B", "bcd", "not in A, or in B"], ["A \\cup B'", "A ∪ B′", "abd", "in A, or not in B"],
+  ["A", "A", "ab", "in A (the overlap too)"], ["B", "B", "bc", "in B (the overlap too)"], ["A' \\cap B'", "A′ ∩ B′", "d", "in neither A nor B"]];
+const VN = Object.fromEntries(VNOTE.map(v => [v[1], v]));
+const nOf = (ks, R) => sum([...ks].map(k => R[k]));
+const VENN = {
+  // read a count straight off the diagram
+  read: r => { const R = { a: r.int(2, 15), b: r.int(1, 12), c: r.int(2, 15), d: r.int(1, 12) }, ctx = r.pick(VCTX), N = nOf("abcd", R), { a, b, c, d } = R;
+    const ASK = {
+      "A": [[a, "That is A only. n(A) counts everyone inside circle A, the overlap too."], [a + b + c, "That is n(A ∪ B): it adds B only as well. n(A) is just inside circle A."], [b, "That is only the overlap. n(A) also takes in A only."]],
+      "B": [[c, "That is B only. n(B) counts everyone inside circle B, the overlap too."], [a + b + c, "That is n(A ∪ B): it adds A only as well. n(B) is just inside circle B."], [b, "That is only the overlap. n(B) also takes in B only."]],
+      "A ∩ B": [[a + b + c, "That is the union A ∪ B (in A or B). The intersection is just the overlap, in both."], [a + c, "Those are the ones in exactly one set. A ∩ B is the overlap, in both."], [b + d, "Only the overlap counts: the outside region is in neither set."]],
+      "A ∪ B": [[a + 2 * b + c, `The overlap ${b} was counted twice. Add each region once: A only + overlap + B only.`], [a + c, "The overlap is in A ∪ B too: in A or B or both."], [N, `${N} is everyone in ξ. The ${d} outside both circles are not in A ∪ B.`]],
+      "A′": [[c, "A′ is everything not in A: B only and the region outside both circles."], [a + b, "That is n(A). A′ is the complement: everything outside circle A."], [d, "The B-only region is outside circle A too, so it is part of A′."], [b + c + d, "The overlap is inside circle A, so it is not part of A′."]],
+      "B′": [[a, "B′ is everything not in B: A only and the region outside both circles."], [b + c, "That is n(B). B′ is the complement: everything outside circle B."], [d, "The A-only region is outside circle B too, so it is part of B′."], [a + b + d, "The overlap is inside circle B, so it is not part of B′."]],
+      "A ∩ B′": [[a + b, "That is n(A). A ∩ B′ must also be not in B, so the overlap is left out."], [a + d, "That is n(B′). A ∩ B′ must be in A as well, so the outside region is left out."], [c, "That is B only (A′ ∩ B). A ∩ B′ is in A but not in B."], [a + c, "That is the ones in exactly one set. A ∩ B′ is only the A-only region."], [b, "That is the overlap: it is inside B, so it is not in B′."], [N, `${N} is all of ξ. A ∩ B′ is only the A-only region.`]],
+      "(A ∪ B)′": [[a + c + d, "That is (A ∩ B)′. (A ∪ B)′ is outside both circles: in neither A nor B."], [a + b + c, "That is A ∪ B itself. The dash means the complement: outside both circles."], [b, "The overlap is in both sets. (A ∪ B)′ is the region in neither."], [N, `${N} is all of ξ. (A ∪ B)′ is only the region outside both circles.`]],
+      "ξ": [[a + b + c, `The ${d} outside both circles belong to ξ too: ξ is everyone.`], [a + 2 * b + c + d, `The overlap ${b} was counted twice. Add each of the four regions once.`], [a + c + d, "The overlap belongs to ξ too: add all four regions."]] };
+    const k = r.pick(Object.keys(ASK)), want = k === "ξ" ? N : nOf(VN[k][2], R), ks = k === "ξ" ? "abcd" : VN[k][2], tex = k === "ξ" ? "\\xi" : VN[k][0];
+    const steps = [`${k === "ξ" ? "ξ is every region" : `${k} is ${VN[k][3]}: ${rWords([...ks])}`}.`, `n(${k}) = ${[...ks].map(x => R[x]).join(" + ")} = ${want}`];
+    return { fig: { nums: { a: String(a), b: String(b), c: String(c), d: String(d) } }, ctx, R, k, want,
+      q: `In the Venn diagram, ξ = ${ctx[1]}, A = ${ctx[2]} and B = ${ctx[3]}. Find ${T(`n(${tex})`)}.`, hint: k === "ξ" ? "Add all four regions once each." : `Shade ${k} in your head first: ${VN[k][3]}. Then add those regions.`, steps, slips: ASK[k] }; },
+  // surveys: n(A ∪ B) = n(A) + n(B) − n(A ∩ B)
+  story: r => { let R; do R = { a: r.int(2, 16), b: r.int(2, 12), c: r.int(2, 16), d: r.int(1, 9) }; while (R.a === R.c);
+    const ctx = r.pick(VCTX), { a, b, c, d } = R, N = a + b + c + d, nA = a + b, nB = b + c, w = r.pick(["both", "both", "neither", "aonly", "one"]), who = ctx[4];
+    const A2 = ctx[2], B2 = ctx[3];
+    const lines = `There are ${N} ${who} in ξ (${ctx[1]}). ${nA} are in A (${A2}) and ${nB} are in B (${B2}).`;
+    if (w === "both") return { fig: { nums: { b: "x", d: String(d) }, tot: [`n(A) = ${nA}`, `n(B) = ${nB}`] }, ctx, R, k: "both", want: b,
+      q: `${lines} ${d} ${d === 1 ? "is" : "are"} in neither. How many are in both A and B?`, hint: "Everyone in A or B is ξ minus the ones in neither. Then n(A) + n(B) counts the overlap twice.",
+      steps: [`n(A ∪ B) = ${N} − ${d} = ${N - d}`, `n(A ∩ B) = n(A) + n(B) − n(A ∪ B) = ${nA} + ${nB} − ${N - d} = ${b}`],
+      slips: [[nA + nB - N, `The ${d} in neither were left out. First n(A ∪ B) = ${N} − ${d} = ${N - d}, then ${nA} + ${nB} − ${N - d}.`], [N - d, `${N - d} is n(A ∪ B), everyone in A or B. The overlap is n(A) + n(B) − n(A ∪ B).`], [nA + nB - d, "Take n(A ∪ B) away from n(A) + n(B), not the ones in neither."], [nA + nB, "n(A) + n(B) counts the overlap twice. Take away n(A ∪ B) to find it."]] };
+    if (w === "neither") return { fig: { nums: { b: String(b), d: "x" }, tot: [`n(A) = ${nA}`, `n(B) = ${nB}`] }, ctx, R, k: "neither", want: d,
+      q: `${lines} ${b} are in both. How many are in neither A nor B?`, hint: "n(A ∪ B) = n(A) + n(B) − n(A ∩ B). The rest of ξ is in neither.",
+      steps: [`n(A ∪ B) = ${nA} + ${nB} − ${b} = ${a + b + c}`, `n((A ∪ B)′) = ${N} − ${a + b + c} = ${d}`],
+      slips: [[N - nA - nB, `The ${b} in both were taken away twice. n(A ∪ B) = ${nA} + ${nB} − ${b} = ${a + b + c} first.`], [a + b + c, `${a + b + c} is n(A ∪ B), the ones in A or B. Neither is what is left of ξ: ${N} − ${a + b + c}.`], [N - b, "Taking away only the overlap leaves A only and B only in. Take away all of A ∪ B."], [N - nA, `${N - nA} is n(A′): it still has the B-only ${who} in it. Take away all of A ∪ B.`], [N - nB, `${N - nB} is n(B′): it still has the A-only ${who} in it. Take away all of A ∪ B.`]] };
+    if (w === "aonly") return { fig: { nums: { a: "x", b: String(b), d: String(d) }, tot: ["", `n(B) = ${nB}`] }, ctx, R, k: "aonly", want: a,
+      q: `There are ${N} ${who} in ξ (${ctx[1]}). ${nB} are in B (${B2}), ${b} of them also in A (${A2}), and ${d} ${d === 1 ? "is" : "are"} in neither. How many are in A only?`, hint: "Take B and the ones in neither away from ξ: what is left is A only.",
+      steps: [`A only = n(ξ) − n(B) − neither`, `= ${N} − ${nB} − ${d} = ${a}`],
+      slips: [[a + b, `${a + b} would be n(A). The ${b} in both are already inside n(B), so A only is ${N} − ${nB} − ${d}.`], [N - nB, `The ${d} in neither are not in A. Take them away too.`], [N - nB - d - b, `The ${b} in both were taken away twice: they are already inside n(B) = ${nB}.`], [N - d, `${N - d} is everyone in A or B. Take the ${nB} in B away too, to leave A only.`]] };
+    return { fig: { nums: { a: "?", b: String(b), c: "?", d: String(d) }, tot: [`n(A) = ${nA}`, `n(B) = ${nB}`] }, ctx, R, k: "one", want: a + c,
+      q: `${lines} ${b} are in both and ${d} ${d === 1 ? "is" : "are"} in neither. How many are in exactly one of A and B?`, hint: "Exactly one means A only or B only: take the overlap out of each set.",
+      steps: [`A only = ${nA} − ${b} = ${a}, B only = ${nB} − ${b} = ${c}`, `Exactly one = ${a} + ${c} = ${a + c}`],
+      slips: [[a + b + c, `${a + b + c} is n(A ∪ B): it still has the ${b} in both. Exactly one leaves the overlap out.`], [nA + nB, "n(A) + n(B) has the overlap in it twice. Take the overlap out of each set first."], [N - d, `${N - d} is everyone in A or B, the ${b} in both too.`]] }; },
+  // regions given in x: form an equation from n(ξ) and solve it
+  alg: r => { let p, q, m, s, d, x, N; do { x = r.int(2, 9); p = r.int(1, 3); q = r.int(0, 6); m = r.int(1, 3); s = r.int(0, 8); d = r.int(1, 9); N = p * x + q + x + m * x + s + d; } while (p === m && q === s);
+    const ctx = r.pick(VCTX), ex = (k, c) => `${k === 1 ? "" : k}x${c ? ` + ${c}` : ""}`, K = p + 1 + m, C = q + s + d, askA = r.chance(.35), want = askA ? p * x + q + x : x;
+    const steps = [`Add the four regions: ${ex(p, q)} + x + ${ex(m, s)} + ${d} = ${N}`, `${K}x + ${C} = ${N}`, `${K}x = ${N - C}, so x = ${x}`].concat(askA ? [`n(A) = A only + overlap = ${ex(p, q)} + x = ${p * x + q} + ${x} = ${want}`] : []);
+    const slips = askA ? [[x, `x = ${x} is only the overlap. n(A) is A only + the overlap: ${p * x + q} + ${x}.`], [p * x + q, `${p * x + q} is A only. n(A) takes in the overlap too: add x = ${x}.`], [p * x + q + x + m * x + s, "That is n(A ∪ B): it adds B only too. n(A) is A only + the overlap."]]
+      : [[(N - C + d) / K, `The ${d} outside both circles are in ξ too: add them to the regions.`], [(N - C) / (K - 1), "The overlap is x too: count it once with the other x's."], [N - C, `${N - C} is ${K}x. Divide by ${K} to get x.`]];
+    return { fig: { nums: { a: ex(p, q), b: "x", c: ex(m, s), d: String(d) } }, ctx, R: { a: p * x + q, b: x, c: m * x + s, d }, k: askA ? "nA" : "x", want, xv: x,
+      q: `The Venn diagram shows the numbers of ${ctx[4]} in each region (ξ = ${ctx[1]}, A = ${ctx[2]}, B = ${ctx[3]}). n(ξ) = ${N}. ${askA ? `Find ${T("n(A)")}.` : "Find x."}`,
+      hint: `The four regions add up to n(ξ) = ${N}. Write that as an equation in x.`, steps, slips }; }
+};
+// name the shaded region (the three wrong names shade a different set of regions, the nearest ones first)
+const vShade = r => { const target = r.pick(VNOTE.filter(v => !["A", "B", "A′ ∩ B′"].includes(v[1]))), ks = [...target[2]], ctx = r.pick(VCTX);
+  const diff = v => [..."abcd"].filter(k => v[2].includes(k) !== target[2].includes(k)).length;
+  const pool = r.shuffle(VNOTE.filter(v => v[2] !== target[2] && v[1] !== "A′ ∩ B′")).sort((u, v) => diff(u) - diff(v)).slice(0, 5);
+  const wrong = r.shuffle(pool).map(v => [T(v[0]), `${v[1]} means ${v[3]}: it would shade ${rWords([...v[2]])}. The shaded part here is ${rWords(ks)}.`]);
+  return { fig: { shade: ks }, ctx, k: target[1], ks, right: T(target[0]), rightWhy: `The shaded part is ${rWords(ks)}: the members ${target[3]}. That is ${target[1]}.`, wrong,
+    q: `In the Venn diagram, A = ${ctx[2]} and B = ${ctx[3]}. Which set is shaded?`, hint: "Look at each of the four regions: is it shaded or not? Then match the words: ∩ is \"and\", ∪ is \"or\", a dash ′ is \"not\".",
+    steps: [`Shaded: ${rWords(ks)}.`, `In words: ${target[3]}.`, `So the shaded set is ${target[1]}.`] }; };
+// list a set: ξ = {1, …, N} and two rules
+const VRULE = [["a multiple of 2", x => x % 2 === 0], ["a multiple of 3", x => x % 3 === 0], ["a multiple of 4", x => x % 4 === 0], ["a multiple of 5", x => x % 5 === 0],
+  ["an odd number", x => x % 2 === 1], ["a prime number", x => [2, 3, 5, 7, 11, 13, 17].includes(x)], ["a square number", x => [1, 4, 9, 16].includes(x)], ["a factor of 12", x => 12 % x === 0],
+  ["a factor of 18", x => 18 % x === 0], ["a factor of 20", x => 20 % x === 0], ["greater than 10", x => x > 10], ["less than 7", x => x < 7]];
+const setTex = xs => xs.length ? `\\{${xs.join(", ")}\\}` : "\\varnothing", setTxt = xs => xs.length ? `{${xs.join(", ")}}` : "∅ (the empty set)";
+const vList = r => { let N, A, B, ra, rb, U, ops, pick; for (;;) { N = r.int(10, 18); [ra, rb] = r.shuffle(VRULE).slice(0, 2); U = Array.from({ length: N }, (_, i) => i + 1); A = U.filter(ra[1]); B = U.filter(rb[1]);
+    if (A.length < 2 || B.length < 2 || A.length > 9 || B.length > 9) continue;
+    const sets = { "A ∩ B": U.filter(x => A.includes(x) && B.includes(x)), "A ∪ B": U.filter(x => A.includes(x) || B.includes(x)), "A ∩ B′": A.filter(x => !B.includes(x)), "A′ ∩ B": B.filter(x => !A.includes(x)), "(A ∪ B)′": U.filter(x => !A.includes(x) && !B.includes(x)) };
+    ops = Object.keys(sets).filter(k => sets[k].length <= 8); pick = r.pick(ops); const right = setTex(sets[pick]); if (Object.keys(sets).filter(k => setTex(sets[k]) === right).length > 1) continue; ops = sets; break; }
+  const S = ops[pick], right = T(setTex(S)), lab = { "A ∩ B": "in both lists", "A ∪ B": "in either list (or both)", "A ∩ B′": "in A's list but not in B's", "A′ ∩ B": "in B's list but not in A's", "(A ∪ B)′": "in neither list" };
+  const wrong = Object.keys(ops).filter(k => k !== pick).map(k => [T(setTex(ops[k])), `${setTxt(ops[k])} is ${k}: the numbers ${lab[k]}. ${pick} needs the numbers ${lab[pick]}.`]);
+  wrong.push([T(setTex(A)), `${setTxt(A)} is all of A. ${pick} needs the numbers ${lab[pick]}.`], [T(setTex(B)), `${setTxt(B)} is all of B. ${pick} needs the numbers ${lab[pick]}.`]);
+  const tex = VN[pick][0];
+  return { ctx: null, k: pick, N, A, B, S, right, wrong: r.shuffle(wrong).sort((u, v) => (u[0].split(",").length > 9) - (v[0].split(",").length > 9)), rightWhy: `A = ${setTxt(A)} and B = ${setTxt(B)}. The numbers ${lab[pick]}: ${setTxt(S)}.`,
+    q: `Sumi the star fairy numbers her lanterns: ${T(`\\xi = \\{1, 2, 3, \\ldots, ${N}\\}`)}. A = {x : x is ${ra[0]}} and B = {x : x is ${rb[0]}}. Which is ${T(tex)}?`, hint: "List A and B first, then pick out the numbers that fit the rule.",
+    steps: [`A = ${setTxt(A)}`, `B = ${setTxt(B)}`, `${pick} = the numbers ${lab[pick]} = ${setTxt(S)}`], data: { ra: ra[0], rb: rb[0] } }; };
+// the true statement about a diagram with its elements drawn in
+const vSym = r => { const kind = r.pick(["two", "two", "sub", "apart"]), pool = r.shuffle(Array.from({ length: 20 }, (_, i) => i + 1)), take = n => pool.splice(0, n);
+  const E = kind === "two" ? { a: take(r.int(2, 3)), b: take(r.int(1, 2)), c: take(r.int(2, 3)), d: take(r.int(1, 2)) } : kind === "sub" ? { a: take(r.int(2, 4)), b: take(r.int(2, 3)), d: take(r.int(1, 3)) } : { a: take(r.int(2, 4)), c: take(r.int(2, 4)), d: take(r.int(1, 3)) };
+  Object.keys(E).forEach(k => E[k].sort((x, y) => x - y)); const g = k => E[k] || [], A = asc(g("a").concat(g("b"))), B = asc(g("b").concat(g("c"))), U = asc([].concat(...Object.values(E))), inA = x => A.includes(x), inB = x => B.includes(x);
+  const where = x => inA(x) && inB(x) ? "in both circles" : inA(x) ? "only in circle A" : inB(x) ? "only in circle B" : "outside both circles", st = [];
+  const add = (tex, txt, ok, yes, no) => st.push([T(tex), txt, ok, ok ? yes : no]);
+  const e1 = r.pick(U), e2 = r.pick(U.filter(x => x !== e1));
+  [e1, e2].forEach(x => { add(`${x} \\in A`, `${x} ∈ A`, inA(x), `${x} is inside circle A, so ${x} ∈ A.`, `${x} is ${where(x)}, so ${x} ∉ A.`); add(`${x} \\notin B`, `${x} ∉ B`, !inB(x), `${x} is not inside circle B, so ${x} ∉ B.`, `${x} is ${where(x)}, so ${x} ∈ B.`); });
+  add("B \\subset A", "B ⊂ A", kind === "sub", "Every member of B is also inside circle A (and A has more), so B ⊂ A.", B.some(x => !inA(x)) ? `${B.find(x => !inA(x))} is in B but not in A, so B ⊄ A.` : "B is a subset only if every member of B is in A.");
+  add("A \\subset B", "A ⊂ B", false, "", `${A.find(x => !inB(x))} is in A but not in B, so A ⊄ B.`);
+  add("A \\cap B = \\varnothing", "A ∩ B = ∅", kind === "apart", "The circles don't overlap: no member is in both, so A ∩ B = ∅.", `${g("b")[0]} is in both A and B, so A ∩ B is not empty.`);
+  const nAc = U.length - A.length, nU = asc(A.concat(B.filter(x => !inA(x)))).length, dn = r.pick([-1, 1]);
+  add(`n(A') = ${nAc}`, `n(A′) = ${nAc}`, true, `A′ is everything outside circle A: ${setTxt(U.filter(x => !inA(x)))}, which is ${nAc} members.`, "");
+  add(`n(A') = ${nAc + dn}`, `n(A′) = ${nAc + dn}`, false, "", `A′ is everything outside circle A: ${setTxt(U.filter(x => !inA(x)))}. Count them: ${nAc}, not ${nAc + dn}.`);
+  add(`n(A \\cup B) = ${nU}`, `n(A ∪ B) = ${nU}`, true, `A ∪ B is everything inside a circle: ${setTxt(asc(A.concat(B.filter(x => !inA(x)))))}, which is ${nU} members.`, "");
+  const twice = A.length + B.length, wU = twice === nU ? nU + 1 : twice;
+  add(`n(A \\cup B) = ${wU}`, `n(A ∪ B) = ${wU}`, false, "", twice === nU ? `Count every member inside a circle: there are ${nU}, not ${wU}.` : `${A.length} + ${B.length} counts the overlap twice. Inside the circles there are ${nU} members.`);
+  const T1 = r.pick(st.filter(s => s[2])), F = r.shuffle(st.filter(s => !s[2] && s[0] !== T1[0])), wrong = F.map(s => [s[0], `Not true: ${s[3]}`]);
+  return { fig: { kind, els: E }, kind, E, k: T1[1], right: T1[0], rightWhy: `True: ${T1[3]}`, wrong,
+    q: "The Venn diagram shows the members of ξ, A and B. Which statement is true?", hint: "Read each statement in words: ∈ \"is a member of\", ∉ \"is not a member of\", ⊂ \"is a subset of\", ∅ \"the empty set\", A′ \"not in A\".",
+    steps: [`A = ${setTxt(A)}, B = ${setTxt(B)}, ξ = ${setTxt(U)}`, `${T1[1]}: ${T1[3]}`] }; };
+const VENN_TITLE = { read: c => c[0], story: c => c[0], alg: c => c[0], shade: () => "Shade the bubbles", sym: () => "Bubble members" };
+const vennQ = (r, kind) => {
+  if (kind === "list") { const z = vList(r), uid = `venn|list|${z.N}|${z.data.ra}|${z.data.rb}|${z.k}`;
+    return mcqWhy(r, z.q, z.right, z.rightWhy, z.wrong, z.hint, z.steps, { uid, data: { venn: "list", k: z.k, N: z.N, A: z.A, B: z.B, S: z.S, ra: z.data.ra, rb: z.data.rb } }); }
+  if (kind === "shade" || kind === "sym") { const z = kind === "shade" ? vShade(r) : vSym(r), pic = svgVenn(VENN_TITLE[kind](z.ctx), z.fig), uid = `venn|${kind}|${z.k}|${JSON.stringify(z.fig)}`;
+    return mcqWhy(r, z.q, z.right, z.rightWhy, z.wrong, z.hint, z.steps, { pic, uid, data: { venn: kind, k: z.k, ks: z.ks, layout: z.kind || "two", E: z.E } }); }
+  const z = VENN[kind](r), pic = svgVenn(VENN_TITLE[kind](z.ctx), z.fig), uid = `venn|${kind}|${z.k}|${JSON.stringify(z.R)}|${z.ctx[0]}`;
+  return numWhy(z.q, z.want, z.hint, z.steps, z.slips.filter(([v]) => v > 0), { pic, uid, data: { venn: kind, k: z.k, R: z.R, x: z.xv } });
+};
+topic(9, "sets", "Venn Bubble Club", "🫧", "Sets, Venn diagrams, union, intersection and complement", r => vennQ(r, r.pick(["read", "read", "story", "story", "alg", "alg", "shade", "shade", "list", "list", "sym", "sym"])));
 topic(9, "story", "Royal Challenges", "📜", "Quadratic word problems", r => {
   const w = r.int(3, 15), d = r.int(1, 8), l = w + d;
   return num(`A rectangular royal rug is ${d} m longer than it is wide. Its area is ${w * l} m². How wide is it in m?`, w, `Let the width be x: x(x + ${d}) = ${w * l}.`, [`$x^2 + ${d}x - ${w * l} = 0$`, `$(x - ${w})(x + ${l}) = 0$`, `Width can't be negative, so $x = ${w}$ m`], { data: { w, d } });

@@ -27,7 +27,8 @@ MW.katexState = () => kx;
 const esc = WR.esc;
 const SYM = { times: "×", div: "÷", cdot: "·", pm: "±", le: "≤", ge: "≥", ne: "≠", pi: "π", theta: "θ", infty: "∞", circ: "°", to: "→", Rightarrow: "⇒", square: "▢", sum: "Σ", int: "∫",
   ln: "ln ", log: "log", sin: "sin ", cos: "cos ", tan: "tan ", lim: "lim", quad: "  ", ",": " ", ";": " ", ":": " ", "!": "", " ": " ", "%": "%", "$": "$", "{": "{", "}": "}", "\\": " ; ",
-  left: "", right: "", displaystyle: "", alpha: "α", beta: "β", Sigma: "Σ", approx: "≈", in: "∈", infin: "∞" };
+  left: "", right: "", displaystyle: "", alpha: "α", beta: "β", Sigma: "Σ", approx: "≈", in: "∈", infin: "∞",
+  cap: "∩", cup: "∪", xi: "ξ", varnothing: "∅", notin: "∉", subset: "⊂", ldots: "…" };
 // small TeX → HTML converter used until (or if) KaTeX can't load: fractions stack, powers lift, vectors stand up
 MW.fallback = function conv(s) {
   let out = "", i = 0;
