@@ -22,7 +22,7 @@
  },
  {
   "type": "read",
-  "text": "By this time next year, I'll have finished my degree.",
+  "text": "By this time next week, I'll have finished my science project.",
   "focus": "Future perfect",
   "tip": "'I'll have' squeezes into /aɪl əv/. 'finished' ends in /t/: /ˈfɪnɪʃt/.",
   "id": "b2-sp04"
@@ -92,9 +92,9 @@
  },
  {
   "type": "read",
-  "text": "I'm considering whether to accept the job or carry on studying.",
+  "text": "I'm considering whether to join the drama club or carry on with chess.",
   "focus": "Linking /j/ and stress",
-  "tip": "'carry on' links with a little y sound: 'carry-yon'. Stress con-SID-er-ing and ac-CEPT.",
+  "tip": "'carry on' links with a little y sound: 'carry-yon'. Stress con-SID-er-ing and DRA-ma.",
   "id": "b2-sp14"
  },
  {
@@ -132,13 +132,13 @@
  },
  {
   "type": "answer",
-  "q": "Should people work from home? Give both sides with 'On the one hand' and 'on the other hand'.",
+  "q": "Should homework be done on paper or on a tablet? Give both sides with 'On the one hand' and 'on the other hand'.",
   "keywords": [
    "on the one hand",
    "on the other hand"
   ],
-  "model": "On the one hand, working from home saves time, but on the other hand, people can feel lonely.",
-  "focus": "Speaking Part 4: Balanced opinion",
+  "model": "On the one hand, tablets make homework more fun, but on the other hand, paper is much easier on our eyes.",
+  "focus": "Balanced opinion",
   "tip": "Pause after each signpost phrase and stress ONE and OTH-er.",
   "id": "b2-sp19",
   "minWords": 6
@@ -150,7 +150,7 @@
    "always wanted to"
   ],
   "model": "I've always wanted to visit Iceland because I'd love to see the northern lights.",
-  "focus": "Speaking Part 2: Long turn",
+  "focus": "Long turn",
   "tip": "'wanted to' is /ˈwɒntɪd tə/ with a weak 'to'. Stress AL-ways and the place name.",
   "id": "b2-sp20",
   "minWords": 6
@@ -162,7 +162,7 @@
    "needs to be|need to be|should be|must be|ought to be|has to be|have to be"
   ],
   "model": "The old bridge needs to be repaired because it's getting dangerous.",
-  "focus": "Speaking Part 3: Passive for problems",
+  "focus": "Passive for problems",
   "tip": "Keep 'to be' weak /tə bi/ and stress the participle: re-PAIRED.",
   "id": "b2-sp21",
   "minWords": 6
@@ -174,7 +174,7 @@
    "whereas|while"
   ],
   "model": "City life is exciting and fast, whereas village life is quieter and more relaxed.",
-  "focus": "Speaking Part 3: Comparing",
+  "focus": "Comparing",
   "tip": "'whereas' is /weərˈæz/ with stress on the second syllable. Pause just before it.",
   "id": "b2-sp22",
   "minWords": 6
@@ -345,6 +345,198 @@
   "focus": "Second conditional",
   "tip": "Pause after 'all week,'. 'would' is weak /wəd/. Stress PROB-ab-ly and GI-ant SNOW-man.",
   "id": "b2-sp40",
+  "minWords": 6
+ },
+ {
+  "type": "read",
+  "text": "The museum guide, who'd worked there for years, knew every dinosaur by name.",
+  "focus": "Relative clauses: who'd",
+  "tip": "Here 'who'd' means 'who had' /huːd/. Pause at both commas. DI-no-saur is stressed on the first syllable.",
+  "id": "b2-sp41"
+ },
+ {
+  "type": "read",
+  "text": "We could see half the island from the top of the lighthouse.",
+  "focus": "Silent letters: l and s",
+  "tip": "'could' and 'half' have a silent l, and 'island' has a silent s: /ˈaɪlənd/. Stress HALF and LIGHT-house.",
+  "id": "b2-sp42"
+ },
+ {
+  "type": "read",
+  "text": "Our coach made us run three laps before letting us play.",
+  "focus": "make and let + verb",
+  "tip": "No 'to' after 'made us' and 'letting us': made us RUN, letting us PLAY. Link 'made us' into 'may-dus'.",
+  "id": "b2-sp43"
+ },
+ {
+  "type": "read",
+  "text": "The photos were taken by a drone flying high above the waterfall.",
+  "focus": "Passive with by",
+  "tip": "'photos' is /ˈfəʊtəʊz/. WA-ter-fall is stressed on the first part, and 'flying high' flows together.",
+  "id": "b2-sp44"
+ },
+ {
+  "type": "read",
+  "text": "Neither my brother nor I could finish the giant pizza.",
+  "focus": "neither … nor",
+  "tip": "'neither' can be /ˈnaɪðə/ or /ˈniːðə/: both are fine. Stress NEI-ther, NOR and GI-ant PIZ-za.",
+  "id": "b2-sp45"
+ },
+ {
+  "type": "read",
+  "text": "I'm looking forward to seeing the pandas at the wildlife park.",
+  "focus": "look forward to + -ing",
+  "tip": "After 'look forward to', use -ing: 'forward to SEE-ing'. 'to' is weak /tə/. PAN-das is stressed first.",
+  "id": "b2-sp46"
+ },
+ {
+  "type": "read",
+  "text": "We're hoping to raise enough money for a new climbing frame.",
+  "focus": "Weak forms: to, for, a",
+  "tip": "'to', 'for' and 'a' are tiny: /tə/, /fə/, /ə/. Stress HOP-ing, RAISE and CLIMB-ing (the b is silent!).",
+  "id": "b2-sp47"
+ },
+ {
+  "type": "read",
+  "text": "Although it was freezing, we stayed until the fireworks had finished.",
+  "focus": "Contrast: although",
+  "tip": "Pause after 'freezing'. FIRE-works is stressed on FIRE, and 'finished' ends in /t/: /ˈfɪnɪʃt/.",
+  "id": "b2-sp48"
+ },
+ {
+  "type": "read",
+  "text": "Do you happen to know what time the aquarium opens on Sundays?",
+  "focus": "Polite indirect questions",
+  "tip": "Indirect questions keep normal word order: 'what time the aquarium OPENS'. a-QUAR-i-um is stressed on 'QUAR'.",
+  "id": "b2-sp49"
+ },
+ {
+  "type": "read",
+  "text": "She suggested going to the planetarium instead of the cinema.",
+  "focus": "suggest + -ing",
+  "tip": "After 'suggest', use -ing. plan-e-TAR-i-um is stressed on 'TAR', and CIN-e-ma on the first syllable.",
+  "id": "b2-sp50"
+ },
+ {
+  "type": "answer",
+  "q": "What do you usually do to relax after school? Use 'tend to'.",
+  "keywords": [
+   "tend to"
+  ],
+  "model": "I tend to read comics or kick a ball around in the garden.",
+  "focus": "Talking about habits",
+  "tip": "'tend to' is quick: /ˈtend tə/. Stress COM-ics and GAR-den.",
+  "id": "b2-sp51",
+  "minWords": 6
+ },
+ {
+  "type": "answer",
+  "q": "Describe a festival or celebration you enjoy. Use 'the best part is'.",
+  "keywords": [
+   "best part"
+  ],
+  "model": "We celebrate Lunar New Year with my grandparents, and the best part is the lion dance.",
+  "focus": "Describing a celebration",
+  "tip": "Pause a little before 'the best part is', then stress LI-on DANCE.",
+  "id": "b2-sp52",
+  "minWords": 6
+ },
+ {
+  "type": "answer",
+  "q": "Imagine you could have any animal as a pet. Use 'If I could' and 'would'.",
+  "keywords": [
+   "if i could",
+   "would"
+  ],
+  "model": "If I could have any pet, I would choose a red panda because they look so cuddly.",
+  "focus": "Second conditional: dreams",
+  "tip": "Pause after the 'If' part. 'I'd' counts as 'I would'. Stress RED PAN-da.",
+  "id": "b2-sp53",
+  "minWords": 6
+ },
+ {
+  "type": "answer",
+  "q": "Tell me about something you have been learning recently. Use 'I've been' + -ing.",
+  "keywords": [
+   "have been"
+  ],
+  "model": "I've been learning to juggle, and now I can keep three balls in the air.",
+  "focus": "Present perfect continuous",
+  "tip": "'I've been' is /aɪv bɪn/ with a weak 'been'. Stress JUG-gle and THREE.",
+  "id": "b2-sp54",
+  "minWords": 6
+ },
+ {
+  "type": "answer",
+  "q": "Talk about a person who taught you something useful. Use 'taught me how to'.",
+  "keywords": [
+   "taught me how to"
+  ],
+  "model": "My grandma taught me how to sew on buttons, so now I can fix my own clothes.",
+  "focus": "Talking about skills",
+  "tip": "'taught' is /tɔːt/: the 'gh' is silent. Link 'sew on' smoothly.",
+  "id": "b2-sp55",
+  "minWords": 6
+ },
+ {
+  "type": "answer",
+  "q": "Should children choose their own bedtime? Give your view with 'I doubt' or 'I'm not sure', and a reason.",
+  "keywords": [
+   "i doubt|i am not sure"
+  ],
+  "model": "I doubt it's a good idea, because most of us would stay up far too late.",
+  "focus": "Expressing doubt",
+  "tip": "'doubt' has a silent b: /daʊt/. Stress FAR TOO LATE.",
+  "id": "b2-sp56",
+  "minWords": 6
+ },
+ {
+  "type": "answer",
+  "q": "Describe your dream holiday. Use 'I'd love to' and 'so that'.",
+  "keywords": [
+   "would love to",
+   "so that"
+  ],
+  "model": "I'd love to go to Japan so that I could see the cherry blossom and visit a robot café.",
+  "focus": "Purpose: so that",
+  "tip": "'I'd love to' is /aɪd ˈlʌv tə/. Pause a little before 'so that'.",
+  "id": "b2-sp57",
+  "minWords": 6
+ },
+ {
+  "type": "answer",
+  "q": "What should a new student know about your school? Use 'You should' or 'It's a good idea to'.",
+  "keywords": [
+   "you should|it is a good idea to"
+  ],
+  "model": "It's a good idea to join a club early, so you make friends quickly.",
+  "focus": "Giving tips",
+  "tip": "'It's a good idea' links together: /ɪts ə ɡʊd aɪˈdɪə/. Stress CLUB and FRIENDS.",
+  "id": "b2-sp58",
+  "minWords": 6
+ },
+ {
+  "type": "answer",
+  "q": "Ask politely for your classroom to be quieter. Use 'I was wondering if'.",
+  "keywords": [
+   "wondering if"
+  ],
+  "model": "I was wondering if we could have a quiet corner, because it's hard to concentrate when it's so noisy.",
+  "focus": "Polite requests",
+  "tip": "Keep your voice soft and rising on 'wondering if'. CON-cen-trate is stressed on the first syllable.",
+  "id": "b2-sp59",
+  "minWords": 6
+ },
+ {
+  "type": "answer",
+  "q": "What will life be like in fifty years? Use 'will probably' or 'might'.",
+  "keywords": [
+   "will probably|might"
+  ],
+  "model": "In fifty years, people will probably travel in flying taxis, and we might even go on holiday on the Moon.",
+  "focus": "Predictions",
+  "tip": "'will' is often a short /l/: 'people'll'. Stress PROB-ab-ly and MOON.",
+  "id": "b2-sp60",
   "minWords": 6
  }
 ]

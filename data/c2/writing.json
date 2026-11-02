@@ -1234,5 +1234,585 @@
    }
   ],
   "level": "c2"
+ },
+ {
+  "genre": "summary",
+  "part": "C2 Proficiency · Writing Part 1 (essay on two texts)",
+  "title": "Should Homework Be Scrapped?",
+  "task": "Read the two texts below. Write an essay summarising and evaluating the key points from both texts. Use your own words throughout as far as possible, and include your own ideas in your answer. Write 240–280 words.",
+  "texts": [
+   {
+    "title": "Text 1: Practice Makes Progress",
+    "text": "Homework gives pupils the chance to practise what they have learnt while it is still fresh, and it teaches them to organise their own time. Children who read or revise at home each evening tend to do better in later years, and parents gain a valuable window into what their children are studying."
+   },
+   {
+    "title": "Text 2: Time to Be a Child",
+    "text": "After six hours in the classroom, children need time to play, rest and pursue their own interests. Piles of homework often cause stress and family arguments, and pupils without a quiet place to work or help at home fall further behind. Schools should make better use of lesson time instead."
+   }
+  ],
+  "points": [
+   {
+    "label": "Summarise Text 1 (practice, time management, parents' insight)",
+    "sets": [
+     [
+      "first text",
+      "first writer",
+      "text 1",
+      "the former",
+      "first author",
+      "first extract"
+     ],
+     [
+      "consolidat",
+      "practis",
+      "manage their own time",
+      "revise",
+      "insight",
+      "parents"
+     ]
+    ],
+    "need": 2
+   },
+   {
+    "label": "Summarise Text 2 (time to play; stress; some pupils fall behind)",
+    "sets": [
+     [
+      "second text",
+      "second writer",
+      "text 2",
+      "the latter",
+      "second author",
+      "second extract"
+     ],
+     [
+      "play",
+      "rest",
+      "anxiety",
+      "stress",
+      "arguments",
+      "further behind",
+      "quiet desk"
+     ]
+    ],
+    "need": 2
+   },
+   {
+    "label": "Evaluate both writers' arguments",
+    "keys": [
+     "convincing",
+     "persuasive",
+     "valid",
+     "overlook",
+     "fail to",
+     "underestimate",
+     "compelling",
+     "flawed",
+     "oversimplif"
+    ]
+   },
+   {
+    "label": "Give your own view",
+    "keys": [
+     "on balance",
+     "ultimately",
+     "in conclusion",
+     "to conclude",
+     "all things considered",
+     "overall",
+     "to sum up",
+     "taking everything into account",
+     "my own view",
+     "i would contend",
+     "i am inclined"
+    ]
+   }
+  ],
+  "words": [
+   240,
+   280
+  ],
+  "model": "Few school traditions provoke quite as much debate around the kitchen table as homework, and the two texts present sharply opposing views on whether it should remain.\n\nThe first writer argues that homework allows pupils to consolidate new knowledge before it fades, while also teaching them to manage their own time. Pupils who read or revise regularly at home, it is claimed, tend to achieve more as they progress through school, and parents are given a useful insight into their children's learning. Persuasive as this is, the argument somewhat overlooks the question of quality: an hour of copying out answers is unlikely to teach anyone very much.\n\nThe second text, however, insists that children need time to play, rest and follow their own passions after a long day of lessons. Its author points out that excessive homework causes anxiety and arguments at home, and that pupils who lack a quiet desk or a helpful adult are left even further behind. This is a compelling point, since homework can quietly widen the very gaps that schools exist to close. Yet the suggestion that lesson time alone is sufficient seems rather optimistic.\n\nOn balance, I would contend that homework should be reformed rather than abolished. What pupils need is not more tasks but better ones, such as reading for pleasure or short creative projects. It is vital that schools also provide homework clubs, so that every child has somewhere calm to work. Were this approach adopted widely, homework might at last be seen as an opportunity rather than a punishment.",
+  "id": "c2-w11",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "The first writer argues that …",
+     "The second text, however, …",
+     "Persuasive as this is, …",
+     "It is vital that …",
+     "On balance, I would contend that …"
+    ]
+   },
+   {
+    "g": "🔗 Cohesion",
+    "p": [
+     "albeit",
+     "insofar as",
+     "Notwithstanding …,",
+     "By the same token, …",
+     "That said, …",
+     "Be that as it may, …",
+     "whereby"
+    ]
+   },
+   {
+    "g": "📚 Summarising & evaluating",
+    "p": [
+     "The first text contends that …",
+     "The second writer, by contrast, …",
+     "Both writers acknowledge that …",
+     "This argument rests on the assumption that …",
+     "This view overlooks …"
+    ]
+   },
+   {
+    "g": "✨ Advanced structures",
+    "p": [
+     "Rarely has …",
+     "Little do we realise …",
+     "It is precisely … that …",
+     "Were it not for …",
+     "Had … , … would have …"
+    ]
+   }
+  ],
+  "level": "c2"
+ },
+ {
+  "genre": "summary",
+  "part": "C2 Proficiency · Writing Part 1 (essay on two texts)",
+  "title": "Do We Still Need Handwriting?",
+  "task": "Read the two texts below. Write an essay summarising and evaluating the key points from both texts. Use your own words throughout as far as possible, and include your own ideas in your answer. Write 240–280 words.",
+  "texts": [
+   {
+    "title": "Text 1: The Power of the Pen",
+    "text": "Writing by hand is far more than an old-fashioned skill. Studies suggest that children remember information better when they form letters themselves, and a handwritten card or diary carries a personal touch that no typed message can match. Abandoning handwriting would mean losing part of who we are."
+   },
+   {
+    "title": "Text 2: Keys to the Future",
+    "text": "Most of the writing young people will do in their lives will happen on a keyboard or a screen. Hours spent perfecting joined-up letters could instead be used to teach typing, coding and digital research skills. Schools must prepare pupils for the world as it is, not as it used to be."
+   }
+  ],
+  "points": [
+   {
+    "label": "Summarise Text 1 (helps memory; a personal touch)",
+    "sets": [
+     [
+      "first text",
+      "first writer",
+      "text 1",
+      "the former",
+      "first author",
+      "first extract"
+     ],
+     [
+      "retain",
+      "memory",
+      "remember",
+      "personal",
+      "warmth",
+      "card",
+      "journal",
+      "identity"
+     ]
+    ],
+    "need": 2
+   },
+   {
+    "label": "Summarise Text 2 (most writing is digital; teach typing)",
+    "sets": [
+     [
+      "second text",
+      "second writer",
+      "text 2",
+      "the latter",
+      "second author",
+      "second extract"
+     ],
+     [
+      "keyboard",
+      "screen",
+      "typing",
+      "programming",
+      "coding",
+      "online research"
+     ]
+    ],
+    "need": 2
+   },
+   {
+    "label": "Evaluate both writers' arguments",
+    "keys": [
+     "convincing",
+     "persuasive",
+     "valid",
+     "overlook",
+     "fail to",
+     "underestimate",
+     "compelling",
+     "flawed",
+     "oversimplif"
+    ]
+   },
+   {
+    "label": "Give your own view",
+    "keys": [
+     "on balance",
+     "ultimately",
+     "in conclusion",
+     "to conclude",
+     "all things considered",
+     "overall",
+     "to sum up",
+     "taking everything into account",
+     "my own view",
+     "i would contend",
+     "i am inclined"
+    ]
+   }
+  ],
+  "words": [
+   240,
+   280
+  ],
+  "model": "Whether handwriting still deserves a place in the modern classroom is a question that divides teachers and parents alike, and the two texts offer strikingly different answers.\n\nThe first writer maintains that writing by hand is much more than a quaint tradition. Forming letters oneself, the text suggests, helps children to retain what they learn, and a handwritten card or journal conveys a warmth that a typed message rarely achieves. Giving up handwriting, the writer concludes, would mean sacrificing part of our identity. The point about memory is convincing, although the claim about identity is arguably rather overstated.\n\nThe second text, by contrast, takes a more practical view, observing that most of the writing pupils do as adults will take place on keyboards and screens. The time devoted to perfecting joined-up script, its author argues, would be better spent on typing, programming and online research. Valid as this concern is, the writer seems to assume that the two skills compete; in reality, however, a few minutes of handwriting practice each day need not crowd out anything.\n\nAll things considered, I would contend that schools should teach both. Moreover, it is precisely because so much of life now happens on screens that the ability to write a note, sketch an idea or keep a diary by hand has become so valuable. What is ultimately needed is balance: confident handwriting in the early years, followed by fast, accurate typing as pupils grow older. Only by combining the two can we prepare children for the future rather than discard the best of the past.",
+  "id": "c2-w12",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "The first writer maintains that …",
+     "The second text, by contrast, …",
+     "Valid as this concern is, …",
+     "It is precisely because … that …",
+     "All things considered, …"
+    ]
+   },
+   {
+    "g": "🔗 Cohesion",
+    "p": [
+     "albeit",
+     "insofar as",
+     "Notwithstanding …,",
+     "By the same token, …",
+     "That said, …",
+     "Be that as it may, …",
+     "whereby"
+    ]
+   },
+   {
+    "g": "📚 Summarising & evaluating",
+    "p": [
+     "The first text contends that …",
+     "The second writer, by contrast, …",
+     "Both writers acknowledge that …",
+     "This argument rests on the assumption that …",
+     "This view overlooks …"
+    ]
+   },
+   {
+    "g": "✨ Advanced structures",
+    "p": [
+     "Rarely has …",
+     "Little do we realise …",
+     "It is precisely … that …",
+     "Were it not for …",
+     "Had … , … would have …"
+    ]
+   }
+  ],
+  "level": "c2"
+ },
+ {
+  "genre": "article",
+  "part": "C2 Proficiency · Writing Part 2 (article)",
+  "title": "In Praise of Rainy Days",
+  "task": "A magazine for young readers is running a series called “Small Joys”. Write an article entitled “In Praise of Rainy Days”, explaining why many people dislike rainy weather, what we gain from it and how readers could make the most of the next wet afternoon. Write 240–280 words.",
+  "points": [
+   {
+    "label": "Why many people dislike rain",
+    "keys": [
+     "grumble",
+     "groan",
+     "cancel",
+     "soak",
+     "trapped indoors",
+     "miserable"
+    ]
+   },
+   {
+    "label": "What we gain from it",
+    "keys": [
+     "soothing",
+     "calm",
+     "slow",
+     "recharge",
+     "imagination",
+     "time for"
+    ]
+   },
+   {
+    "label": "How readers could make the most of it",
+    "keys": [
+     "next time",
+     "why not",
+     "puddle",
+     "blanket fort",
+     "write a story"
+    ]
+   }
+  ],
+  "words": [
+   240,
+   280
+  ],
+  "model": "In Praise of Rainy Days\n\nHow often do we groan when we draw back the curtains and see grey clouds? Rain, it seems, has few friends. It cancels sports matches, soaks our shoes and keeps us trapped indoors, so it is hardly surprising that many of us greet a wet morning with a grumble. However, I would like to make the case for the defence.\n\nFar from being a nuisance, a rainy day can be one of life's quiet gifts. There is something deeply soothing about the steady patter of drops on a roof, a sound that is frequently compared to a lullaby. Freed from the pressure to be out and about, we finally have time for the things we keep postponing, such as a half-read novel or a long conversation with a grandparent. Nature, which we tend to ignore on sunny days, is celebrating too: gardens drink their fill, snails emerge and the air afterwards smells astonishingly fresh.\n\nWhat rain offers is permission to do less. In a world that rewards constant activity, an afternoon curled up with a blanket and a mug of hot chocolate is not laziness but a chance to recharge. Moreover, our imaginations perhaps flourish most when there is nothing in particular to do. Rarely do we invent our best games and stories on a busy, sunny day.\n\nSo the next time the sky turns grey, why not embrace it rather than sulk? Pull on your wellies and splash in the deepest puddle you can find, build a blanket fort or write a story to the rhythm of the rain. Ultimately, you may discover that the dullest weather produces the brightest days.",
+  "id": "c2-w13",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "How often do we …?",
+     "Far from being …, …",
+     "There is something deeply … about …",
+     "So the next time …, …"
+    ]
+   },
+   {
+    "g": "🔗 Cohesion",
+    "p": [
+     "albeit",
+     "insofar as",
+     "Notwithstanding …,",
+     "By the same token, …",
+     "That said, …",
+     "Be that as it may, …",
+     "whereby"
+    ]
+   },
+   {
+    "g": "📚 Summarising & evaluating",
+    "p": [
+     "The first text contends that …",
+     "The second writer, by contrast, …",
+     "Both writers acknowledge that …",
+     "This argument rests on the assumption that …",
+     "This view overlooks …"
+    ]
+   },
+   {
+    "g": "✨ Advanced structures",
+    "p": [
+     "Rarely has …",
+     "Little do we realise …",
+     "It is precisely … that …",
+     "Were it not for …",
+     "Had … , … would have …"
+    ]
+   }
+  ],
+  "level": "c2"
+ },
+ {
+  "genre": "review",
+  "part": "C2 Proficiency · Writing Part 2 (review)",
+  "title": "Review: The Museum of Impossible Machines",
+  "task": "A website for young people is publishing reviews of exhibitions and attractions. Write a review of an exhibition you have visited (real or imaginary), describing what it contains, evaluating how successfully it engages visitors and considering whether it lives up to its reputation. Write 240–280 words.",
+  "points": [
+   {
+    "label": "What the exhibition contains",
+    "keys": [
+     "features",
+     "contains",
+     "inventions",
+     "display",
+     "exhibits"
+    ]
+   },
+   {
+    "label": "How well it engages visitors",
+    "keys": [
+     "hands-on",
+     "interactive",
+     "take part",
+     "workshop",
+     "absorbed"
+    ]
+   },
+   {
+    "label": "Whether it lives up to its reputation",
+    "keys": [
+     "reputation",
+     "praise",
+     "lives up",
+     "expectations",
+     "deserved"
+    ]
+   },
+   {
+    "label": "Your overall verdict",
+    "keys": [
+     "recommend",
+     "worth",
+     "ideal for",
+     "not to be missed"
+    ]
+   }
+  ],
+  "words": [
+   240,
+   280
+  ],
+  "model": "The Museum of Impossible Machines\n\nFew exhibitions have generated as much excitement among young visitors as The Museum of Impossible Machines, which opened at the Riverside Gallery this spring. Having finally seen it for myself, I can report that most of the praise is thoroughly deserved.\n\nThe exhibition features around forty inventions dreamt up by artists, engineers and, in several cases, schoolchildren. Among the highlights are a bicycle that knits a scarf as you pedal, a clock that tells the time with scents, and a towering marble run that snakes through three floors. Each machine is accompanied by its inventor's original sketches, which reveal the false starts and happy accidents behind every design.\n\nWhat sets it apart is how thoroughly it invites visitors to take part. Almost every exhibit is hands-on, and the final room is a workshop in which you can build your own contraption from cardboard, string and old toys. Rarely have I seen teenagers and grandparents so equally absorbed.\n\nGranted, the exhibition is not flawless. At weekends the crowds become overwhelming, the queue for the marble run can stretch to forty minutes, and some explanations are printed in rather small type. Nevertheless, these are minor complaints about an experience that is otherwise ingenious from start to finish.\n\nWhether it lives up to its reputation is, ultimately, a question of expectations. Anyone hoping for a traditional museum may be surprised; anyone who has ever taken apart a toy to see how it works will be enchanted. I would recommend it unreservedly, and it is certainly worth arriving early.",
+  "id": "c2-w14",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "Few exhibitions have generated as much … as …",
+     "What sets it apart is …",
+     "Granted, …",
+     "Whether it lives up to …"
+    ]
+   },
+   {
+    "g": "🔗 Cohesion",
+    "p": [
+     "albeit",
+     "insofar as",
+     "Notwithstanding …,",
+     "By the same token, …",
+     "That said, …",
+     "Be that as it may, …",
+     "whereby"
+    ]
+   },
+   {
+    "g": "📚 Summarising & evaluating",
+    "p": [
+     "The first text contends that …",
+     "The second writer, by contrast, …",
+     "Both writers acknowledge that …",
+     "This argument rests on the assumption that …",
+     "This view overlooks …"
+    ]
+   },
+   {
+    "g": "✨ Advanced structures",
+    "p": [
+     "Rarely has …",
+     "Little do we realise …",
+     "It is precisely … that …",
+     "Were it not for …",
+     "Had … , … would have …"
+    ]
+   }
+  ],
+  "level": "c2"
+ },
+ {
+  "genre": "report",
+  "part": "C2 Proficiency · Writing Part 2 (report)",
+  "title": "Report: A Week Without Screens",
+  "task": "Your class took part in a screen-free week, and your teacher has asked for a report. Describe how students spent their time, evaluate the benefits and difficulties they experienced and recommend whether the school should hold the event again. Write 240–280 words.",
+  "points": [
+   {
+    "label": "The purpose of the report",
+    "keys": [
+     "purpose",
+     "aim",
+     "this report"
+    ]
+   },
+   {
+    "label": "How students spent their time",
+    "keys": [
+     "board games",
+     "cycling",
+     "baking",
+     "reading",
+     "hobbies"
+    ]
+   },
+   {
+    "label": "Evaluate the benefits",
+    "keys": [
+     "benefit",
+     "sleep",
+     "calmer",
+     "refreshed",
+     "livelier"
+    ]
+   },
+   {
+    "label": "Evaluate the difficulties",
+    "keys": [
+     "difficult",
+     "challenge",
+     "anxious",
+     "unclear",
+     "not everyone"
+    ]
+   },
+   {
+    "label": "Recommend whether to hold it again",
+    "keys": [
+     "recommend",
+     "propose",
+     "advisable"
+    ]
+   }
+  ],
+  "words": [
+   240,
+   280
+  ],
+  "model": "Purpose\nThis report sets out to evaluate the screen-free week held by Class 9B in October, drawing on a questionnaire completed by all twenty-eight participants, and to recommend whether the event should be repeated.\n\nHow students spent their time\nThe overwhelming majority of students reported rediscovering activities they had long neglected. Board games, cycling and baking proved especially popular, while a surprising number turned to reading, with the class borrowing more library books in five days than in the whole previous month. Several pupils also took up new hobbies, ranging from origami to birdwatching.\n\nBenefits\nBy far the most frequently mentioned benefit was improved sleep: over two thirds of respondents claimed to have fallen asleep more quickly and woken feeling refreshed. Many also noted that conversations at home had become longer and livelier. What was perhaps most striking was the number of students who said that they felt calmer and less distracted in lessons.\n\nDifficulties\nNot everyone, however, found the week easy. Homework that normally required online research posed a genuine challenge, and a few students admitted to feeling anxious about missing messages from friends. Arguably, the rules were also somewhat unclear, since nobody had decided in advance whether watching television with family counted as screen time.\n\nRecommendations\nIn light of these findings, it is strongly recommended that the event be held every year. Were the rules clarified beforehand and homework adapted accordingly, most of the difficulties would disappear. Families could also be invited to take part, so that the benefits extend beyond the classroom.",
+  "id": "c2-w15",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "This report sets out to …",
+     "The overwhelming majority of …",
+     "Not everyone, however, …",
+     "It is strongly recommended that …"
+    ]
+   },
+   {
+    "g": "🔗 Cohesion",
+    "p": [
+     "albeit",
+     "insofar as",
+     "Notwithstanding …,",
+     "By the same token, …",
+     "That said, …",
+     "Be that as it may, …",
+     "whereby"
+    ]
+   },
+   {
+    "g": "📚 Summarising & evaluating",
+    "p": [
+     "The first text contends that …",
+     "The second writer, by contrast, …",
+     "Both writers acknowledge that …",
+     "This argument rests on the assumption that …",
+     "This view overlooks …"
+    ]
+   },
+   {
+    "g": "✨ Advanced structures",
+    "p": [
+     "Rarely has …",
+     "Little do we realise …",
+     "It is precisely … that …",
+     "Were it not for …",
+     "Had … , … would have …"
+    ]
+   }
+  ],
+  "level": "c2"
  }
 ]

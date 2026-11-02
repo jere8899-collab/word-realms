@@ -4,8 +4,10 @@ sys.path.insert(0, os.path.dirname(__file__))
 from c_a1 import A1; from c_a2 import A2; from c_b1 import B1, QUEST; from c_b2 import B2; from c_c1 import C1, DEBATE; from c_c2 import C2
 from c_speaking import SPEAKING
 from c_writing import WRITING, LEVEL_BANK
-import r20, r20b, r20c  # R20 waves 1–3 (review 2026-11-01): more Echo Well prompts and Story Quill tasks (A1–B1, then B2–C2)
-R20_WAVES = (r20, r20b, r20c)  # each wave module has SPEAK and WRITE: {level: [new items]}; appended in this order so every old id stays stable
+import importlib
+# R20 waves (review 2026-11-01): more Echo Well prompts and Story Quill tasks. Each wave module (tools/<name>.py) has SPEAK and WRITE:
+# {level: [new items]}. They are appended in this order so every old id stays stable: add a new wave by adding its name here.
+R20_WAVES = tuple(importlib.import_module(m) for m in ("r20", "r20b", "r20c", "r20d"))  # A1–B1 to 40/10, A1–B1 to 60/15, B2–C2 to 40/10, B2–C2 to 60/15
 def _append_waves(bank, key):  # append each wave's per-level list (wave.SPEAK or wave.WRITE) onto a bonus-skill bank
     for w in R20_WAVES:
         for l, v in getattr(w, key).items(): bank[l] = bank[l] + v

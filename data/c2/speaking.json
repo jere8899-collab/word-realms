@@ -50,7 +50,7 @@
  },
  {
   "type": "read",
-  "text": "To all intents and purposes, the treaty had become a dead letter.",
+  "text": "To all intents and purposes, the library's old silence rule had become a dead letter.",
   "focus": "Idiom: to all intents and purposes",
   "tip": "Not 'intensive purposes'! A 'dead letter' is a rule that nobody follows any more.",
   "id": "c2-sp08"
@@ -85,7 +85,7 @@
  },
  {
   "type": "read",
-  "text": "No sooner had the ink dried on the contract than the dispute flared up again.",
+  "text": "No sooner had the paint dried on the school mural than the argument about its colours flared up again.",
   "focus": "Inversion: no sooner … than",
   "tip": "Stress NO SOON-er and pause before 'than'. Link 'flared up again' into 'flair-dup-a-gain'.",
   "id": "c2-sp13"
@@ -120,12 +120,12 @@
  },
  {
   "type": "answer",
-  "q": "To what extent should governments regulate artificial intelligence? Hedge your view with 'arguably'.",
+  "q": "To what extent should robots help teachers in the classroom? Hedge your view with 'arguably'.",
   "keywords": [
    "arguably"
   ],
-  "model": "Arguably, some regulation is essential, although too much of it could stifle innovation.",
-  "focus": "Speaking Part 4: Hedging",
+  "model": "Arguably, robots could help with marking, although no machine could replace a kind teacher who knows every pupil.",
+  "focus": "Hedging",
   "tip": "AR-gu-a-bly is stressed on the first syllable. Pause after it.",
   "id": "c2-sp18",
   "minWords": 8
@@ -150,7 +150,7 @@
    "but|however|yet|although|though"
   ],
   "model": "Admittedly, exams are consistent, but they reward memorisation rather than genuine understanding.",
-  "focus": "Speaking Part 4: Concession",
+  "focus": "Concession",
   "tip": "Pause after the concession word and stress the contrast that follows.",
   "id": "c2-sp20",
   "minWords": 8
@@ -343,6 +343,197 @@
   "focus": "Wishes: if only",
   "tip": "Stress ON-ly and let your voice rise with the dream. 'floated' has two syllables.",
   "id": "c2-sp40",
+  "minWords": 8
+ },
+ {
+  "type": "read",
+  "text": "Hardly had the curtain risen when the lead actor forgot his opening line.",
+  "focus": "Inversion: hardly … when",
+  "tip": "Stress HARD-ly and keep 'had the' quick. Pause before 'when'. CUR-tain is /ˈkɜːtn/.",
+  "id": "c2-sp41"
+ },
+ {
+  "type": "read",
+  "text": "So intricate were the sandcastle's turrets that passers-by stopped to photograph them.",
+  "focus": "Inversion: so … were",
+  "tip": "Stress SO IN-tri-cate. pass-ers-BY has its stress at the end; PHO-to-graph at the start.",
+  "id": "c2-sp42"
+ },
+ {
+  "type": "read",
+  "text": "The expedition, ill-prepared as it was for the blizzard, nevertheless reached the research station.",
+  "focus": "Concession: ill-prepared as it was",
+  "tip": "Drop your pitch for 'ill-prepared as it was for the blizzard'. nev-er-the-LESS is stressed at the end.",
+  "id": "c2-sp43"
+ },
+ {
+  "type": "read",
+  "text": "Whatever the weather, the lighthouse keeper's cat insisted on its evening stroll along the harbour wall.",
+  "focus": "Rhythm in a long sentence",
+  "tip": "Chunks: Whatever the weather | the lighthouse keeper's cat | insisted on its evening stroll | along the harbour wall. HAR-bour is /ˈhɑːbə/.",
+  "id": "c2-sp44"
+ },
+ {
+  "type": "read",
+  "text": "The archaeologists' painstaking work finally revealed an ancient board game buried beneath the sand.",
+  "focus": "Word stress: ar-chae-OL-o-gists",
+  "tip": "ar-chae-OL-o-gists is /ˌɑːkiˈɒlədʒɪsts/ and the 'ch' is /k/. PAINS-tak-ing is stressed first, and 'buried' sounds like 'berried'.",
+  "id": "c2-sp45"
+ },
+ {
+  "type": "read",
+  "text": "Rarely, if ever, does a solar eclipse coincide with the school holidays.",
+  "focus": "Rarely, if ever",
+  "tip": "Pause around 'if ever'. e-CLIPSE is stressed second; co-in-CIDE on the last syllable.",
+  "id": "c2-sp46"
+ },
+ {
+  "type": "read",
+  "text": "The chess champion, all of twelve years old, outwitted opponents three times her age.",
+  "focus": "Emphasis: all of twelve",
+  "tip": "'all of twelve years old' stresses how young she is: stress ALL and TWELVE. out-WIT-ted is stressed in the middle.",
+  "id": "c2-sp47"
+ },
+ {
+  "type": "read",
+  "text": "Phenomenal though the view was, it was the silence of the glacier that stayed with me.",
+  "focus": "Concession and cleft",
+  "tip": "phe-NOM-e-nal is stressed on 'NOM'. Drop your pitch for 'though the view was', then put the weight on SI-lence.",
+  "id": "c2-sp48"
+ },
+ {
+  "type": "read",
+  "text": "The explorers, lost in the desert, dreamed of nothing but an ice-cream dessert.",
+  "focus": "Easily confused: desert and dessert",
+  "tip": "DES-ert (a sandy place) /ˈdezət/ is stressed first; des-SERT (a pudding) /dɪˈzɜːt/ is stressed second.",
+  "id": "c2-sp49"
+ },
+ {
+  "type": "read",
+  "text": "On no account should the baby owls be disturbed until they have left the nest.",
+  "focus": "Inversion: on no account",
+  "tip": "Stress NO ac-COUNT, keep 'should the' light, and stress dis-TURBED and NEST.",
+  "id": "c2-sp50"
+ },
+ {
+  "type": "answer",
+  "q": "Is it better to be a big fish in a small pond? Use the idiom and give your view.",
+  "keywords": [
+   "big fish in a small pond"
+  ],
+  "model": "Being a big fish in a small pond builds confidence, but sometimes you grow more among people who are better than you.",
+  "focus": "Idioms in an argument",
+  "tip": "Say the idiom as one smooth chunk, then pause before 'but'.",
+  "id": "c2-sp51",
+  "minWords": 8
+ },
+ {
+  "type": "answer",
+  "q": "Describe a sound that instantly takes you back to a memory. Use 'Whenever I hear …, I'm reminded of …'.",
+  "keywords": [
+   "whenever i hear",
+   "reminded of"
+  ],
+  "model": "Whenever I hear seagulls, I'm reminded of building sandcastles with my cousins every summer.",
+  "focus": "Evoking memories",
+  "tip": "Pause after the sound. re-MIND-ed is stressed in the middle.",
+  "id": "c2-sp52",
+  "minWords": 8
+ },
+ {
+  "type": "answer",
+  "q": "Argue against a popular opinion, such as 'Summer is the best season'. Use 'Contrary to what many people think'.",
+  "keywords": [
+   "contrary to what"
+  ],
+  "model": "Contrary to what many people think, autumn is the best season, with its crunchy leaves and cosy evenings.",
+  "focus": "Challenging a view",
+  "tip": "CON-tra-ry is stressed first. Pause after 'think', then stress AU-tumn.",
+  "id": "c2-sp53",
+  "minWords": 8
+ },
+ {
+  "type": "answer",
+  "q": "Should museums let visitors touch the exhibits? Use 'While I take the point that'.",
+  "keywords": [
+   "take the point"
+  ],
+  "model": "While I take the point that objects get damaged, touching replicas would make history feel far more real.",
+  "focus": "Acknowledging, then countering",
+  "tip": "Pause after the 'While' part, then stress REP-li-cas and REAL.",
+  "id": "c2-sp54",
+  "minWords": 8
+ },
+ {
+  "type": "answer",
+  "q": "Speculate about why the dinosaurs died out. Use 'The most plausible explanation is that'.",
+  "keywords": [
+   "most plausible explanation"
+  ],
+  "model": "The most plausible explanation is that a giant asteroid struck the Earth and changed the climate dramatically.",
+  "focus": "Weighing explanations",
+  "tip": "PLAU-si-ble is /ˈplɔːzəbl/. AS-ter-oid is stressed first.",
+  "id": "c2-sp55",
+  "minWords": 8
+ },
+ {
+  "type": "answer",
+  "q": "Describe someone you admire without naming them. Use 'What sets them apart is'.",
+  "keywords": [
+   "sets them apart"
+  ],
+  "model": "What sets them apart is that they always notice when someone is left out and quietly invite them in.",
+  "focus": "Describing character",
+  "tip": "Rise a little on 'apart', pause, then slow down for the description.",
+  "id": "c2-sp56",
+  "minWords": 8
+ },
+ {
+  "type": "answer",
+  "q": "If you could change one thing about how we learn, what would it be? Use 'Were I to' or 'If I were to'.",
+  "keywords": [
+   "were i to|if i were to"
+  ],
+  "model": "Were I to change one thing, I would let pupils spend Friday afternoons on projects of their own choosing.",
+  "focus": "Formal hypotheticals",
+  "tip": "Start firmly on WERE. Stress FRI-day AF-ter-noons and CHOOS-ing.",
+  "id": "c2-sp57",
+  "minWords": 8
+ },
+ {
+  "type": "answer",
+  "q": "Explain why sleep matters, as if to a younger brother or sister. Use 'Think of it like'.",
+  "keywords": [
+   "think of it like"
+  ],
+  "model": "Think of it like charging a tablet: if your brain does not recharge overnight, it runs out of power by lunchtime.",
+  "focus": "Explaining with an analogy",
+  "tip": "Pause at the colon. Stress CHARG-ing and POW-er.",
+  "id": "c2-sp58",
+  "minWords": 8
+ },
+ {
+  "type": "answer",
+  "q": "Is it ever right to break a rule? Use 'There may be times when'.",
+  "keywords": [
+   "there may be times when"
+  ],
+  "model": "There may be times when breaking a rule is right, for instance running in the corridor to fetch help.",
+  "focus": "Careful generalising",
+  "tip": "Keep 'There may be' light, then stress TIMES. Pause before 'for instance'.",
+  "id": "c2-sp59",
+  "minWords": 8
+ },
+ {
+  "type": "answer",
+  "q": "Describe the perfect school library. Use 'It would be the kind of place where'.",
+  "keywords": [
+   "kind of place where"
+  ],
+  "model": "It would be the kind of place where you could curl up on a beanbag and lose yourself in a story for hours.",
+  "focus": "Describing an ideal",
+  "tip": "Link 'kind of' into 'kind-uv'. Let your voice soften on 'lose yourself'.",
+  "id": "c2-sp60",
   "minWords": 8
  }
 ]

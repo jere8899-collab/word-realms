@@ -125,7 +125,7 @@
    "to some extent"
   ],
   "model": "To some extent it is, although it also helps us keep in touch with friends who live far away.",
-  "focus": "Speaking Part 4: Hedging",
+  "focus": "Hedging",
   "tip": "Pause after the hedge 'To some extent' and stress ex-TENT.",
   "id": "c1-sp18",
   "minWords": 7
@@ -347,6 +347,199 @@
   "focus": "Persuading",
   "tip": "Say 'Imagine' with energy: i-MAG-ine. Let your voice rise with excitement on TWEN-ty BAGS.",
   "id": "c1-sp40",
+  "minWords": 7
+ },
+ {
+  "type": "read",
+  "text": "Only after the third attempt did the paper rocket finally leave the ground.",
+  "focus": "Inversion: only after",
+  "tip": "Stress ON-ly AF-ter and THIRD. Keep 'did the' light, and let 'leave the ground' flow.",
+  "id": "c1-sp41"
+ },
+ {
+  "type": "read",
+  "text": "The museum's dinosaur skeleton, believed to be the largest in Europe, attracts thousands of visitors.",
+  "focus": "Chunking a reduced passive",
+  "tip": "Three chunks: The museum's dinosaur skeleton | believed to be the largest in Europe | attracts thousands of visitors.",
+  "id": "c1-sp42"
+ },
+ {
+  "type": "read",
+  "text": "Should you spot a hedgehog in your garden, leave out a shallow dish of water.",
+  "focus": "Inversion: should you",
+  "tip": "'Should you' means 'If you'. Stress SPOT and HEDGE-hog. SHAL-low has a short /æ/.",
+  "id": "c1-sp43"
+ },
+ {
+  "type": "read",
+  "text": "The school band's first performance was, to put it mildly, a little out of tune.",
+  "focus": "Comment phrases: to put it mildly",
+  "tip": "Drop your pitch for 'to put it mildly', as if sharing a joke, then stress OUT of TUNE.",
+  "id": "c1-sp44"
+ },
+ {
+  "type": "read",
+  "text": "What fascinates me about owls is that they can turn their heads almost all the way round.",
+  "focus": "Cleft: what … is that",
+  "tip": "Rise a little on 'owls', pause after 'is that', then stress TURN and ALL the WAY ROUND.",
+  "id": "c1-sp45"
+ },
+ {
+  "type": "read",
+  "text": "We'd barely put up the tent when the first drops of rain began to fall.",
+  "focus": "barely … when",
+  "tip": "Here 'We'd' means 'We had' /wiːd/. Link 'put up' into 'pu-tup'. Stress BARE-ly and RAIN.",
+  "id": "c1-sp46"
+ },
+ {
+  "type": "read",
+  "text": "Contrary to popular belief, goldfish can remember things for months, not seconds.",
+  "focus": "Contrary to popular belief",
+  "tip": "CON-tra-ry is stressed first. Pause after 'belief', then contrast MONTHS and SEC-onds with strong stress.",
+  "id": "c1-sp47"
+ },
+ {
+  "type": "read",
+  "text": "The present she presented to the head teacher was a hand-painted mug.",
+  "focus": "Homographs: PRES-ent and pre-SENT",
+  "tip": "The noun PRES-ent /ˈpreznt/ is stressed first; the verb pre-SENT-ed /prɪˈzentɪd/ is stressed second. Same letters, different beats!",
+  "id": "c1-sp48"
+ },
+ {
+  "type": "read",
+  "text": "Exhausted but elated, the climbers reached the summit just before sunset.",
+  "focus": "Fronted adjectives",
+  "tip": "Pause after 'elated'. e-LA-ted is /ɪˈleɪtɪd/; SUM-mit and SUN-set are stressed on the first syllable.",
+  "id": "c1-sp49"
+ },
+ {
+  "type": "read",
+  "text": "The moment the bell rang, the corridor filled with chattering pupils.",
+  "focus": "Time clauses: the moment",
+  "tip": "Pause after 'rang'. COR-ri-dor is stressed first, and the 'tt' in 'chattering' is a quick, light /t/.",
+  "id": "c1-sp50"
+ },
+ {
+  "type": "answer",
+  "q": "Should all pupils learn a musical instrument? Use 'There's a strong case for'.",
+  "keywords": [
+   "strong case for"
+  ],
+  "model": "There's a strong case for it, because learning an instrument builds patience and confidence.",
+  "focus": "Arguing a case",
+  "tip": "Stress STRONG CASE, then pause before 'because'. PA-tience is /ˈpeɪʃns/.",
+  "id": "c1-sp51",
+  "minWords": 7
+ },
+ {
+  "type": "answer",
+  "q": "Describe a book character you'd like to meet. Use 'What I admire about … is'.",
+  "keywords": [
+   "what i admire about"
+  ],
+  "model": "What I admire about Matilda is that she stays brave and kind, even when the adults around her are unfair.",
+  "focus": "Cleft sentences for emphasis",
+  "tip": "Rise a little on the name, pause, then stress BRAVE and KIND.",
+  "id": "c1-sp52",
+  "minWords": 7
+ },
+ {
+  "type": "answer",
+  "q": "How would you spend a day with no technology? Use 'I'd probably' and 'rather than'.",
+  "keywords": [
+   "would probably",
+   "rather than"
+  ],
+  "model": "I'd probably go cycling with my friends rather than sitting at home feeling bored.",
+  "focus": "Speculating about yourself",
+  "tip": "'I'd probably' is /aɪd ˈprɒbəbli/. Stress CY-cling and BORED.",
+  "id": "c1-sp53",
+  "minWords": 7
+ },
+ {
+  "type": "answer",
+  "q": "What's one thing adults often misunderstand about young people? Use 'The thing is'.",
+  "keywords": [
+   "the thing is"
+  ],
+  "model": "Adults think we're always on our phones. The thing is, we often use them to learn new things.",
+  "focus": "Making a point",
+  "tip": "Pause after 'The thing is,'. Stress AL-ways and LEARN.",
+  "id": "c1-sp54",
+  "minWords": 7
+ },
+ {
+  "type": "answer",
+  "q": "Talk about a time things didn't go to plan. Use 'Looking back'.",
+  "keywords": [
+   "looking back"
+  ],
+  "model": "Our camping trip was rained off, but looking back, playing board games in the tent was the best part.",
+  "focus": "Reflecting on the past",
+  "tip": "Pause before and after 'looking back'. Link 'rained off' into 'rain-doff'.",
+  "id": "c1-sp55",
+  "minWords": 7
+ },
+ {
+  "type": "answer",
+  "q": "Should school start later in the morning? Support your view with 'Research suggests that' or 'It's often said that'.",
+  "keywords": [
+   "research suggests|often said"
+  ],
+  "model": "Research suggests that teenagers concentrate better later in the day, so a later start makes sense.",
+  "focus": "Supporting your view",
+  "tip": "re-SEARCH (or RE-search) and sug-GESTS. Stress LAT-er and SENSE.",
+  "id": "c1-sp56",
+  "minWords": 7
+ },
+ {
+  "type": "answer",
+  "q": "Compare two hobbies you've tried. Use 'whereas' and 'far more'.",
+  "keywords": [
+   "whereas",
+   "far more"
+  ],
+  "model": "Swimming is relaxing, whereas rock climbing is far more exciting because every wall is a puzzle.",
+  "focus": "Comparing in detail",
+  "tip": "Pause just before 'whereas' /weərˈæz/. Stress FAR MORE ex-CIT-ing.",
+  "id": "c1-sp57",
+  "minWords": 7
+ },
+ {
+  "type": "answer",
+  "q": "Imagine you've won a trip anywhere in the world. Use 'I'd jump at the chance to'.",
+  "keywords": [
+   "jump at the chance"
+  ],
+  "model": "I'd jump at the chance to see the Great Barrier Reef before more of the coral disappears.",
+  "focus": "Idiom: jump at the chance",
+  "tip": "To 'jump at the chance' is to accept eagerly. Link 'jump at' into 'jum-pat'.",
+  "id": "c1-sp58",
+  "minWords": 7
+ },
+ {
+  "type": "answer",
+  "q": "Suggest a way to make lunchtime less noisy. Use 'One option would be to'.",
+  "keywords": [
+   "one option would be"
+  ],
+  "model": "One option would be to open the library at lunchtime for anyone who wants some peace and quiet.",
+  "focus": "Suggesting solutions",
+  "tip": "OP-tion is stressed first. Slow down for 'peace and quiet'.",
+  "id": "c1-sp59",
+  "minWords": 7
+ },
+ {
+  "type": "answer",
+  "q": "Your friend wants to give up the piano. Give advice with 'If I were you' and 'at least'.",
+  "keywords": [
+   "if i were you",
+   "at least"
+  ],
+  "model": "If I were you, I'd at least finish this term, because you might start enjoying it again.",
+  "focus": "Tactful advice",
+  "tip": "Keep your voice warm and gentle. Stress AT LEAST and a-GAIN.",
+  "id": "c1-sp60",
   "minWords": 7
  }
 ]

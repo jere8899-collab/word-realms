@@ -1108,5 +1108,516 @@
    }
   ],
   "level": "c1"
+ },
+ {
+  "genre": "essay",
+  "part": "C1 Advanced · Writing Part 1 (essay)",
+  "title": "Making Our School Greener",
+  "task": "Your class has been discussing how schools could become more environmentally friendly. Notes: recycling · transport · energy. Write an essay discussing TWO of the ideas in your notes. Explain which idea you think would make the bigger difference, giving reasons. Write 220–260 words.",
+  "points": [
+   {
+    "label": "Discuss one idea (recycling, transport or energy)",
+    "sets": [
+     [
+      "recycl",
+      "waste",
+      "bins"
+     ],
+     [
+      "transport",
+      "walking",
+      "cycling",
+      "school bus"
+     ],
+     [
+      "energy",
+      "solar",
+      "electricity"
+     ]
+    ],
+    "need": 1
+   },
+   {
+    "label": "Discuss a second idea",
+    "sets": [
+     [
+      "recycl",
+      "waste",
+      "bins"
+     ],
+     [
+      "transport",
+      "walking",
+      "cycling",
+      "school bus"
+     ],
+     [
+      "energy",
+      "solar",
+      "electricity"
+     ]
+    ],
+    "need": 2
+   },
+   {
+    "label": "Say which would make the bigger difference and why",
+    "keys": [
+     "bigger difference",
+     "more effective",
+     "greater impact",
+     "outweigh",
+     "on balance",
+     "ultimately"
+    ]
+   }
+  ],
+  "words": [
+   220,
+   260
+  ],
+  "model": "There is growing concern that schools, which use enormous amounts of paper, plastic and power, are not doing enough to protect the environment. Of the many changes that could be made, recycling and saving energy are perhaps the most widely discussed.\n\nImproving recycling has the advantage of involving every pupil directly. Were the school to place clearly labelled bins in every classroom, students would soon develop habits that they might carry into adulthood. Admittedly, recycling alone does little to reduce the amount of waste produced in the first place, and many schools already have some form of scheme. Its impact, therefore, may well be limited.\n\nSaving energy, by contrast, tackles one of the largest sources of a school's carbon emissions. Installing solar panels on the roof, replacing old light bulbs and switching off computers at the end of the day can cut electricity use dramatically. Furthermore, the money saved could be spent on books, trips or sports equipment, which would benefit everyone. The main drawback is the initial cost of the panels, although grants are often available to help with this.\n\nOn balance, I would argue that saving energy would make the bigger difference. What matters most is not how many bottles we sort, but how much energy we waste every single day. This is not to say that recycling is unimportant; rather, it should be part of a wider plan. Ultimately, a school that runs on sunshine sends a powerful message to every pupil who walks through its doors.",
+  "id": "c1-w11",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "There is growing concern that …",
+     "Admittedly, …",
+     "By contrast, …",
+     "This is not to say that …",
+     "On balance, …"
+    ]
+   },
+   {
+    "g": "🔗 Cohesion",
+    "p": [
+     "Nonetheless, …",
+     "Admittedly, …",
+     "Conversely, …",
+     "Consequently, …",
+     "Given that …",
+     "By contrast, …",
+     "On balance, …",
+     "Ultimately, …"
+    ]
+   },
+   {
+    "g": "🧭 Arguing & hedging",
+    "p": [
+     "It could be argued that …",
+     "There is a strong case for …",
+     "This is not to say that …",
+     "to a certain extent",
+     "It is worth bearing in mind that …"
+    ]
+   },
+   {
+    "g": "✨ Advanced structures",
+    "p": [
+     "Not only does …, but it also …",
+     "What is particularly striking is …",
+     "Only by … can we …",
+     "Were it not for …"
+    ]
+   }
+  ],
+  "level": "c1"
+ },
+ {
+  "genre": "letter",
+  "part": "C1 Advanced · Writing Part 2 (letter)",
+  "title": "Letter to the Council: Space for Young People",
+  "task": "Your local council has announced that an empty piece of land near your school will become a car park. Write a letter to the council explaining why young people need somewhere to meet and play, responding to the council's reasons for the car park and suggesting a different use for the land. Write 220–260 words.",
+  "formal": true,
+  "points": [
+   {
+    "label": "Your reason for writing",
+    "keys": [
+     "i am writing",
+     "regarding",
+     "with reference",
+     "in response"
+    ]
+   },
+   {
+    "label": "Why young people need somewhere to meet",
+    "keys": [
+     "young people",
+     "teenagers",
+     "somewhere to",
+     "safe place",
+     "few places"
+    ]
+   },
+   {
+    "label": "Respond to the council's reasons",
+    "keys": [
+     "parking",
+     "traffic",
+     "i appreciate",
+     "i understand",
+     "i recognise",
+     "not convinced"
+    ]
+   },
+   {
+    "label": "Suggest a different use for the land",
+    "keys": [
+     "instead",
+     "alternative",
+     "propose",
+     "suggest",
+     "skate park"
+    ]
+   }
+  ],
+  "words": [
+   220,
+   260
+  ],
+  "model": "Dear Sir or Madam,\n\nI am writing in response to the council's recent announcement that the empty land on Mill Road is to be turned into a car park. As a student at the nearby secondary school, I would like to explain why I believe this decision should be reconsidered.\n\nAt present, young people in our town have remarkably few places to meet. The nearest park is a thirty-minute walk away, and the youth club closed last year. Consequently, many teenagers end up hanging around outside shops, which neither they nor the shopkeepers particularly enjoy. What we lack is not energy or enthusiasm, but a safe place in which to use them.\n\nWhile I appreciate that parking near the high street is limited, I am not convinced that another car park is the answer. Arguably, it would simply encourage more traffic on roads that are already congested at school times.\n\nInstead, I would like to propose that the land be used for a skate park with a small garden and seating area. Not only would this give young people somewhere active to spend their free time, but it would also provide a pleasant space for families and older residents. Several students have already offered to help design and look after it.\n\nI would therefore urge the council to consult local young people before making a final decision. I look forward to hearing from you.\n\nYours faithfully,\nLily Chen",
+  "id": "c1-w12",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "I am writing in response to …",
+     "While I appreciate that …, …",
+     "Not only would …, but …",
+     "I would therefore urge the council to …"
+    ]
+   },
+   {
+    "g": "🔗 Cohesion",
+    "p": [
+     "Nonetheless, …",
+     "Admittedly, …",
+     "Conversely, …",
+     "Consequently, …",
+     "Given that …",
+     "By contrast, …",
+     "On balance, …",
+     "Ultimately, …"
+    ]
+   },
+   {
+    "g": "🧭 Arguing & hedging",
+    "p": [
+     "It could be argued that …",
+     "There is a strong case for …",
+     "This is not to say that …",
+     "to a certain extent",
+     "It is worth bearing in mind that …"
+    ]
+   },
+   {
+    "g": "✨ Advanced structures",
+    "p": [
+     "Not only does …, but it also …",
+     "What is particularly striking is …",
+     "Only by … can we …",
+     "Were it not for …"
+    ]
+   }
+  ],
+  "level": "c1"
+ },
+ {
+  "genre": "report",
+  "part": "C1 Advanced · Writing Part 2 (report)",
+  "title": "Report: Our Trip to the Science Museum",
+  "task": "Your teacher has asked you to write a report on your class's recent trip to a science museum. Describe which parts of the visit were most valuable, explain what could have been better and recommend whether the trip should be repeated next year. Write 220–260 words.",
+  "points": [
+   {
+    "label": "The purpose of the report",
+    "keys": [
+     "purpose",
+     "aim",
+     "this report"
+    ]
+   },
+   {
+    "label": "The most valuable parts",
+    "keys": [
+     "valuable",
+     "memorable",
+     "highlight",
+     "popular",
+     "success"
+    ]
+   },
+   {
+    "label": "What could have been better",
+    "keys": [
+     "could have been",
+     "problem",
+     "however",
+     "drawback",
+     "less successful",
+     "improvement"
+    ]
+   },
+   {
+    "label": "Your recommendation",
+    "keys": [
+     "recommend",
+     "repeated",
+     "advisable"
+    ]
+   }
+  ],
+  "words": [
+   220,
+   260
+  ],
+  "model": "Introduction\nThe purpose of this report is to evaluate the Year 8 trip to the City Science Museum, based on a class survey, and to recommend whether it should be repeated.\n\nMost valuable activities\nBy far the most memorable part of the day was the interactive space gallery, where students were able to steer a model rover across a Martian landscape. Almost every pupil rated it as excellent, and several said that it had made them consider becoming engineers. The live chemistry show, during which a presenter created a cloud of coloured smoke, was also extremely popular.\n\nAreas for improvement\nHowever, the visit was not without its problems. The museum was crowded with other school groups, so queues for the most popular exhibits sometimes lasted twenty minutes. It could be argued that the lunch break, which took place in a cold and noisy basement, was also rather too long. Furthermore, a number of students felt that their worksheets were so detailed that they spent more time writing than exploring.\n\nRecommendations\nIn light of the above, it is recommended that the trip be repeated next year, as its educational value is clear. Were the school to book a weekday morning outside the busiest season, the queues would be far shorter. Replacing the worksheets with a short photo challenge would also allow students to engage more fully with the exhibits. With these changes, the trip could become a highlight of the school year.",
+  "id": "c1-w13",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "The purpose of this report is to …",
+     "By far the most …",
+     "It could be argued that …",
+     "In light of the above, …",
+     "It is recommended that …"
+    ]
+   },
+   {
+    "g": "🔗 Cohesion",
+    "p": [
+     "Nonetheless, …",
+     "Admittedly, …",
+     "Conversely, …",
+     "Consequently, …",
+     "Given that …",
+     "By contrast, …",
+     "On balance, …",
+     "Ultimately, …"
+    ]
+   },
+   {
+    "g": "🧭 Arguing & hedging",
+    "p": [
+     "It could be argued that …",
+     "There is a strong case for …",
+     "This is not to say that …",
+     "to a certain extent",
+     "It is worth bearing in mind that …"
+    ]
+   },
+   {
+    "g": "✨ Advanced structures",
+    "p": [
+     "Not only does …, but it also …",
+     "What is particularly striking is …",
+     "Only by … can we …",
+     "Were it not for …"
+    ]
+   }
+  ],
+  "level": "c1"
+ },
+ {
+  "genre": "review",
+  "part": "C1 Advanced · Writing Part 2 (review)",
+  "title": "Review: The Floating City",
+  "task": "An international website for young film fans is asking for reviews of family films. Write a review of a film you have seen recently (real or imaginary), describing the story without giving away the ending, evaluating the acting and visual effects and saying who would enjoy it most. Write 220–260 words.",
+  "points": [
+   {
+    "label": "What the story is about",
+    "keys": [
+     "follows",
+     "story",
+     "tells",
+     "set in"
+    ]
+   },
+   {
+    "label": "The acting and visual effects",
+    "keys": [
+     "acting",
+     "performance",
+     "cast",
+     "effects",
+     "animation"
+    ]
+   },
+   {
+    "label": "A balanced view (any weaknesses)",
+    "keys": [
+     "admittedly",
+     "however",
+     "flaw",
+     "drawback",
+     "at times",
+     "nevertheless"
+    ]
+   },
+   {
+    "label": "Who would enjoy it most",
+    "keys": [
+     "recommend",
+     "would appeal",
+     "ideal for",
+     "anyone who",
+     "worth watching"
+    ]
+   }
+  ],
+  "words": [
+   220,
+   260
+  ],
+  "model": "The Floating City\n\nSet in a world where entire towns drift above the clouds, The Floating City follows Kai, a shy boy who discovers that his home is slowly sinking towards the sea below. Together with his inventive best friend, Noor, he sets off on a daring journey to find the ancient engine that once kept the city in the air.\n\nWhere the film truly shines is in its visual effects. The sky islands, with their waterfalls tumbling into empty space, are nothing short of breathtaking, and the flying scenes are so convincing that the audience in my cinema actually gasped. Moreover, the young cast deliver impressive performances. Noor, in particular, is a brilliant character: clever, stubborn and genuinely funny, she steals almost every scene she appears in.\n\nAdmittedly, the film is not without its flaws. The villain, a greedy sky pirate, is rather predictable, and a subplot involving a lost royal crown seems to have been added simply to make the story longer. At times, the dialogue is also a little clumsy. Nevertheless, these weaknesses are easy to forgive, since the final half hour is as gripping as anything I have seen this year.\n\nI would wholeheartedly recommend it to anyone who enjoys adventure and fantasy, especially children aged eight and above. Younger viewers will be enchanted by the colourful creatures, while older ones will appreciate its thoughtful message about courage and friendship. Rarely have I left a cinema feeling quite so uplifted.",
+  "id": "c1-w14",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "Set in …, …",
+     "Where the film truly shines is …",
+     "Admittedly, …",
+     "I would wholeheartedly recommend it to …"
+    ]
+   },
+   {
+    "g": "🔗 Cohesion",
+    "p": [
+     "Nonetheless, …",
+     "Admittedly, …",
+     "Conversely, …",
+     "Consequently, …",
+     "Given that …",
+     "By contrast, …",
+     "On balance, …",
+     "Ultimately, …"
+    ]
+   },
+   {
+    "g": "🧭 Arguing & hedging",
+    "p": [
+     "It could be argued that …",
+     "There is a strong case for …",
+     "This is not to say that …",
+     "to a certain extent",
+     "It is worth bearing in mind that …"
+    ]
+   },
+   {
+    "g": "✨ Advanced structures",
+    "p": [
+     "Not only does …, but it also …",
+     "What is particularly striking is …",
+     "Only by … can we …",
+     "Were it not for …"
+    ]
+   }
+  ],
+  "level": "c1"
+ },
+ {
+  "genre": "proposal",
+  "part": "C1 Advanced · Writing Part 2 (proposal)",
+  "title": "Proposal: A Student Podcast",
+  "task": "Your school wants to improve communication between students and teachers and has invited proposals. Write a proposal suggesting a student-run podcast, explaining what it would include, how it would benefit the school and what would be needed to set it up. Write 220–260 words.",
+  "points": [
+   {
+    "label": "The purpose of the proposal",
+    "keys": [
+     "purpose",
+     "aim",
+     "this proposal"
+    ]
+   },
+   {
+    "label": "What it would include",
+    "keys": [
+     "episode",
+     "interview",
+     "news",
+     "feature"
+    ]
+   },
+   {
+    "label": "How the school would benefit",
+    "keys": [
+     "benefit",
+     "develop",
+     "skill",
+     "confiden",
+     "a voice"
+    ]
+   },
+   {
+    "label": "What would be needed",
+    "keys": [
+     "equipment",
+     "microphone",
+     "software",
+     "supervis",
+     "headphones"
+    ]
+   },
+   {
+    "label": "A clear recommendation",
+    "keys": [
+     "recommend",
+     "propose",
+     "i would suggest",
+     "advisable"
+    ]
+   }
+  ],
+  "words": [
+   220,
+   260
+  ],
+  "model": "Introduction\nThe aim of this proposal is to suggest a fortnightly podcast, written and presented by students, which would help to keep the whole school community informed and connected.\n\nContent\nEach episode would last around fifteen minutes and include three regular features: a round-up of school news, an interview with a member of staff and a student spotlight celebrating achievements outside the classroom, from chess tournaments to charity bake sales. Listeners could also send in questions to be answered by the head teacher in a monthly special.\n\nBenefits\nNot only would the podcast give students a voice in school life, but it would also allow teachers to share information in a far more engaging way than a printed newsletter. Moreover, the team would develop valuable skills, such as interviewing, script writing and audio editing, which are rarely taught in ordinary lessons. Perhaps most importantly, quieter students who might never speak in assembly often find the confidence to express themselves through audio.\n\nRequirements\nFortunately, the equipment needed is relatively inexpensive. Two good microphones, a pair of headphones and free editing software would be sufficient to begin with, and the music room could be used for recording at lunchtimes. The English department has kindly offered to supervise, and each episode would be shared on the school website.\n\nRecommendation\nI would therefore recommend that the podcast be launched as a trial next term. If it proves popular, it could become a permanent and much-loved part of school life.",
+  "id": "c1-w15",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "The aim of this proposal is to …",
+     "Each episode would …",
+     "Not only would …, but …",
+     "I would therefore recommend that …"
+    ]
+   },
+   {
+    "g": "🔗 Cohesion",
+    "p": [
+     "Nonetheless, …",
+     "Admittedly, …",
+     "Conversely, …",
+     "Consequently, …",
+     "Given that …",
+     "By contrast, …",
+     "On balance, …",
+     "Ultimately, …"
+    ]
+   },
+   {
+    "g": "🧭 Arguing & hedging",
+    "p": [
+     "It could be argued that …",
+     "There is a strong case for …",
+     "This is not to say that …",
+     "to a certain extent",
+     "It is worth bearing in mind that …"
+    ]
+   },
+   {
+    "g": "✨ Advanced structures",
+    "p": [
+     "Not only does …, but it also …",
+     "What is particularly striking is …",
+     "Only by … can we …",
+     "Were it not for …"
+    ]
+   }
+  ],
+  "level": "c1"
  }
 ]

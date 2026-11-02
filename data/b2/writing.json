@@ -1006,5 +1006,484 @@
    }
   ],
   "level": "b2"
+ },
+ {
+  "genre": "report",
+  "part": "B2 First · Writing Part 2 (report)",
+  "title": "Report: Our School Science Fair",
+  "task": "Your head teacher wants to know how this year's science fair went. Write a report describing the most popular projects, explaining any problems and suggesting improvements for next year. Write 140–190 words.",
+  "points": [
+   {
+    "label": "The purpose of the report",
+    "keys": [
+     "purpose",
+     "aim",
+     "this report"
+    ]
+   },
+   {
+    "label": "The most popular projects",
+    "keys": [
+     "popular",
+     "impressed",
+     "impressive",
+     "highlight",
+     "crowds"
+    ]
+   },
+   {
+    "label": "Any problems",
+    "keys": [
+     "problem",
+     "unfortunately",
+     "complain",
+     "issue",
+     "difficult"
+    ]
+   },
+   {
+    "label": "Suggestions for next year",
+    "keys": [
+     "suggest",
+     "recommend",
+     "good idea",
+     "next year"
+    ]
+   }
+  ],
+  "words": [
+   140,
+   190
+  ],
+  "model": "Introduction\nThe aim of this report is to describe this year's science fair, which was held in the school hall last Friday, and to suggest some improvements.\n\nPopular projects\nThe most popular project was a volcano made by Year 7, which erupted every ten minutes and was surrounded by excited crowds all afternoon. Many visitors were also impressed by a solar-powered fan built from recycled bottles. Having tested it on a sunny morning, the inventors proudly showed that it could keep a hamster cool.\n\nProblems\nUnfortunately, the hall became extremely hot and crowded, so some younger pupils could not see the tables properly. In addition, several projects needed electricity, but there were only four sockets.\n\nRecommendations\nI would suggest that the fair is spread across two rooms next year. It would also be a good idea to provide extension leads and a timetable of demonstrations. If these changes were made, even more families would enjoy the event.",
+  "id": "b2-w11",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "The aim of this report is to …",
+     "The most popular … was …",
+     "Unfortunately, …",
+     "I would suggest that …"
+    ]
+   },
+   {
+    "g": "🔗 Linking devices",
+    "p": [
+     "Moreover, …",
+     "Furthermore, …",
+     "Nevertheless, …",
+     "whereas",
+     "As a result, …",
+     "Therefore, …",
+     "In spite of …",
+     "To sum up, …",
+     "In conclusion, …"
+    ]
+   },
+   {
+    "g": "🧭 Opinions & arguments",
+    "p": [
+     "In my view, …",
+     "There are several reasons why …",
+     "It is worth noting that …",
+     "All things considered, …"
+    ]
+   },
+   {
+    "g": "✉️ Formal phrases",
+    "p": [
+     "Dear Sir or Madam,",
+     "I am writing to …",
+     "I look forward to hearing from you.",
+     "Yours faithfully,"
+    ]
+   }
+  ],
+  "level": "b2"
+ },
+ {
+  "genre": "essay",
+  "part": "B2 First · Writing Part 1 (essay)",
+  "title": "Should Schools Organise More Trips?",
+  "task": "In your English class you have been talking about learning outside the classroom. Write an essay using all the notes and give reasons for your point of view. Essay question: “Schools should organise more trips. Do you agree?” Notes: 1. learning 2. friendship 3. ……… (your own idea). Write 140–190 words.",
+  "points": [
+   {
+    "label": "Note 1: learning",
+    "keys": [
+     "learn",
+     "knowledge",
+     "museum",
+     "understand",
+     "remember"
+    ]
+   },
+   {
+    "label": "Note 2: friendship",
+    "keys": [
+     "friend",
+     "classmates",
+     "get to know",
+     "teamwork"
+    ]
+   },
+   {
+    "label": "Note 3: your own idea",
+    "keys": [
+     "re:\\b(another|a further|a third|finally|lastly|last but not least|moreover|furthermore|what is more|in addition|additionally)\\b"
+    ]
+   },
+   {
+    "label": "Give your opinion",
+    "keys": [
+     "in my opinion",
+     "in my view",
+     "i believe",
+     "i think",
+     "personally",
+     "to my mind",
+     "i feel",
+     "i agree",
+     "i disagree",
+     "i am convinced",
+     "i would argue",
+     "from my point of view"
+    ]
+   }
+  ],
+  "words": [
+   140,
+   190
+  ],
+  "model": "Most students would happily swap a morning in the classroom for a day out. But should schools organise more trips?\n\nFirstly, trips make learning come alive. A class that has walked through a rainforest greenhouse will remember far more about plants than one that has only read a textbook. Not only do pupils see real objects in museums, but they also ask questions they would never think of at school.\n\nSecondly, trips help friendships grow. Sitting next to someone new on a coach or working together on a nature trail, students get to know classmates they rarely speak to.\n\nA further advantage is that trips give quieter pupils a chance to shine. Someone who struggles with tests might turn out to be brilliant at spotting birds or reading a map.\n\nIt is often argued that trips are expensive and take time away from lessons. However, visits to local parks or libraries cost very little.\n\nTo sum up, I believe schools should organise more trips, because they teach lessons that no classroom can.",
+  "id": "b2-w12",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "It is often argued that …",
+     "Not only … but also …",
+     "A further advantage is that …",
+     "To sum up, …"
+    ]
+   },
+   {
+    "g": "🔗 Linking devices",
+    "p": [
+     "Moreover, …",
+     "Furthermore, …",
+     "Nevertheless, …",
+     "whereas",
+     "As a result, …",
+     "Therefore, …",
+     "In spite of …",
+     "To sum up, …",
+     "In conclusion, …"
+    ]
+   },
+   {
+    "g": "🧭 Opinions & arguments",
+    "p": [
+     "In my view, …",
+     "There are several reasons why …",
+     "It is worth noting that …",
+     "All things considered, …"
+    ]
+   },
+   {
+    "g": "✉️ Formal phrases",
+    "p": [
+     "Dear Sir or Madam,",
+     "I am writing to …",
+     "I look forward to hearing from you.",
+     "Yours faithfully,"
+    ]
+   }
+  ],
+  "level": "b2"
+ },
+ {
+  "genre": "review",
+  "part": "B2 First · Writing Part 2 (review)",
+  "title": "Review: The Clockwork Fox",
+  "task": "You see this announcement in an English-language magazine for teenagers: “Book reviews wanted! Tell us about a book you have enjoyed recently. What is it about, what makes it special, and is there anything you didn't like? Would you recommend it?” Write your review in 140–190 words.",
+  "points": [
+   {
+    "label": "What the book is about",
+    "keys": [
+     "story follows",
+     "about",
+     "set in",
+     "tells the story"
+    ]
+   },
+   {
+    "label": "What makes it special",
+    "keys": [
+     "special",
+     "loved",
+     "best",
+     "stunning",
+     "moving",
+     "brilliant"
+    ]
+   },
+   {
+    "label": "Anything you didn't like",
+    "keys": [
+     "criticism",
+     "however",
+     "slow",
+     "i wish",
+     "disappoint",
+     "drawback"
+    ]
+   },
+   {
+    "label": "Whether you recommend it",
+    "keys": [
+     "recommend",
+     "worth",
+     "ideal for",
+     "anyone who"
+    ]
+   }
+  ],
+  "words": [
+   140,
+   190
+  ],
+  "model": "The Clockwork Fox: a gripping adventure\n\nThe story follows Ada, a twelve-year-old girl who lives above her grandfather's repair shop. One stormy night she finds a broken metal fox in the rubbish and, after fixing it, discovers that it can talk. Together they set off across the city to find the inventor who built it.\n\nWhat makes it special is the friendship between Ada and the fox, which is funny, warm and sometimes surprisingly moving. The descriptions of the city, with its glowing airships and secret tunnels, are stunning. The book, which was published last spring, has already won two prizes.\n\nMy only criticism is that the middle of the book is a little slow. I wish the author had spent less time on the long train journey, because I was desperate to know what happened next. The ending, however, more than makes up for it.\n\nOverall, I would recommend it to anyone who loves mysteries, inventions or talking animals. It is ideal for readers aged ten and over, and I am sure you will not be able to put it down!",
+  "id": "b2-w13",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "The story follows …",
+     "What makes it special is …",
+     "My only criticism is that …",
+     "I would recommend it to anyone who …"
+    ]
+   },
+   {
+    "g": "🔗 Linking devices",
+    "p": [
+     "Moreover, …",
+     "Furthermore, …",
+     "Nevertheless, …",
+     "whereas",
+     "As a result, …",
+     "Therefore, …",
+     "In spite of …",
+     "To sum up, …",
+     "In conclusion, …"
+    ]
+   },
+   {
+    "g": "🧭 Opinions & arguments",
+    "p": [
+     "In my view, …",
+     "There are several reasons why …",
+     "It is worth noting that …",
+     "All things considered, …"
+    ]
+   },
+   {
+    "g": "✉️ Formal phrases",
+    "p": [
+     "Dear Sir or Madam,",
+     "I am writing to …",
+     "I look forward to hearing from you.",
+     "Yours faithfully,"
+    ]
+   }
+  ],
+  "level": "b2"
+ },
+ {
+  "genre": "article",
+  "part": "B2 First · Writing Part 2 (article)",
+  "title": "A Hobby Everyone Should Try",
+  "task": "You see this announcement in your school's English-language magazine: “Articles wanted! A hobby everyone should try. How did you start your hobby, what do you love about it, and why should other students try it?” Write your article in 140–190 words.",
+  "points": [
+   {
+    "label": "How you started",
+    "keys": [
+     "first got into",
+     "started",
+     "began",
+     "first tried"
+    ]
+   },
+   {
+    "label": "What you love about it",
+    "keys": [
+     "love",
+     "enjoy",
+     "favourite",
+     "best thing",
+     "relaxing"
+    ]
+   },
+   {
+    "label": "Why others should try it",
+    "keys": [
+     "why not",
+     "you should",
+     "give it a try",
+     "you will",
+     "you might"
+    ]
+   }
+  ],
+  "words": [
+   140,
+   190
+  ],
+  "model": "Why Everyone Should Try Birdwatching\n\nHave you ever noticed how many different birds visit your school playground? Until two years ago, I hadn't either.\n\nI first got into birdwatching when my aunt lent me her old binoculars during a camping trip. On the very first morning, a woodpecker landed on a tree just metres from our tent, and I was hooked. Since then, I have spotted more than sixty species, which I record in a small notebook.\n\nThe best thing about birdwatching is that you can do it anywhere. You do not need expensive equipment, and even a city park is full of surprises if you look carefully. It is also wonderfully relaxing, because you have to stay quiet and patient. If I hadn't tried it, I would never have learnt to slow down and notice the world around me.\n\nSo why not give it a try? Grab a pair of binoculars, find a bench and see what flies past. You might be surprised by how many feathered neighbours you have!",
+  "id": "b2-w14",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "Have you ever …?",
+     "I first got into … when …",
+     "The best thing about … is …",
+     "Why not give it a try?"
+    ]
+   },
+   {
+    "g": "🔗 Linking devices",
+    "p": [
+     "Moreover, …",
+     "Furthermore, …",
+     "Nevertheless, …",
+     "whereas",
+     "As a result, …",
+     "Therefore, …",
+     "In spite of …",
+     "To sum up, …",
+     "In conclusion, …"
+    ]
+   },
+   {
+    "g": "🧭 Opinions & arguments",
+    "p": [
+     "In my view, …",
+     "There are several reasons why …",
+     "It is worth noting that …",
+     "All things considered, …"
+    ]
+   },
+   {
+    "g": "✉️ Formal phrases",
+    "p": [
+     "Dear Sir or Madam,",
+     "I am writing to …",
+     "I look forward to hearing from you.",
+     "Yours faithfully,"
+    ]
+   }
+  ],
+  "level": "b2"
+ },
+ {
+  "genre": "email",
+  "part": "B2 First · Writing Part 2 (email)",
+  "title": "Help Me Plan a Surprise Party",
+  "task": "Read the email from your English-speaking friend Leo and the notes you have made. Write your reply to Leo using all the notes. Write 140–190 words.",
+  "email": {
+   "from": "Leo",
+   "text": "It's my sister Rosa's birthday in two weeks, and I want to throw her a surprise party, but I've never organised one before! Where should we have it, what should we do, and how can I keep it a secret?",
+   "notes": [
+    "Suggest a place",
+    "Give some ideas",
+    "Explain how!"
+   ]
+  },
+  "points": [
+   {
+    "label": "Where to have the party",
+    "keys": [
+     "garden",
+     "park",
+     "hall",
+     "having the party",
+     "at your house"
+    ]
+   },
+   {
+    "label": "What to do",
+    "keys": [
+     "games",
+     "treasure hunt",
+     "music",
+     "cake",
+     "pizza",
+     "dance"
+    ]
+   },
+   {
+    "label": "How to keep it a secret",
+    "keys": [
+     "secret",
+     "surprise",
+     "don't tell",
+     "pretend",
+     "find out",
+     "take rosa"
+    ]
+   }
+  ],
+  "words": [
+   140,
+   190
+  ],
+  "model": "Hi Leo,\n\nThanks for your email. What a brilliant idea! Rosa is going to love it.\n\nHow about having the party in your back garden? It is big enough for about twenty people, and if it rains, everyone can squeeze into the kitchen. Alternatively, the community hall near the park can be booked quite cheaply.\n\nAs for activities, I think a treasure hunt would be perfect, because Rosa is crazy about puzzles. You could hide clues around the garden that lead to her present. After that, we could have pizza, music and, of course, a huge chocolate cake, which I would be happy to help you bake.\n\nKeeping it a secret is the hardest part. If I were you, I would ask your mum to take Rosa shopping on the afternoon of the party, so that we have time to decorate. Make sure everyone arrives fifteen minutes early and hides behind the sofa!\n\nLet me know what you think, and I will start making the invitations.\n\nBest wishes,\nSam",
+  "id": "b2-w15",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "Thanks for your email.",
+     "How about …?",
+     "As for …, …",
+     "If I were you, I would …"
+    ]
+   },
+   {
+    "g": "🔗 Linking devices",
+    "p": [
+     "Moreover, …",
+     "Furthermore, …",
+     "Nevertheless, …",
+     "whereas",
+     "As a result, …",
+     "Therefore, …",
+     "In spite of …",
+     "To sum up, …",
+     "In conclusion, …"
+    ]
+   },
+   {
+    "g": "🧭 Opinions & arguments",
+    "p": [
+     "In my view, …",
+     "There are several reasons why …",
+     "It is worth noting that …",
+     "All things considered, …"
+    ]
+   },
+   {
+    "g": "✉️ Formal phrases",
+    "p": [
+     "Dear Sir or Madam,",
+     "I am writing to …",
+     "I look forward to hearing from you.",
+     "Yours faithfully,"
+    ]
+   }
+  ],
+  "level": "b2"
  }
 ]
