@@ -349,15 +349,39 @@ topic(7, "angles", "Angle Archery", "🏹", "Angles on lines, at points, in tria
   if (t === 2) { const a = r.int(40, 150), b = r.int(40, 300 - a - 20); return num(`Three angles meet at a point: ${a}°, ${b}° and x°. Find x.`, 360 - a - b, "Angles at a point add up to 360°.", [`360° − ${a}° − ${b}° = ${360 - a - b}°`]); }
   const a = r.int(25, 155); return num(`Two straight lines cross. One angle is ${a}°. What is the angle vertically opposite it?`, a, "Vertically opposite angles are equal.", [`Vertically opposite → also ${a}°`]);
 });
+/* ---------- 📦 solids kit (Bakery Blueprints prisms and cylinders, Ice-Cream Cone Café pyramids, cones and spheres) ----------
+   Whole-number right triangles (so slanted sides, slant heights and radii agree with the drawing), π = 3.142 answers to 1 d.p.,
+   areas / volumes with MOE digit grouping, answers in terms of π, and round faces: a circle tipped back is drawn as an oval
+   OVAL times as tall as it is wide, its back half hidden (dashed) and its front half solid. */
+const MENS_TRI = [[3, 4, 5], [4, 3, 5], [6, 8, 10], [8, 6, 10], [5, 12, 13], [9, 12, 15], [12, 9, 15]];
+const PI3 = 3.142;
+// "1885.2" when it is exact to 1 d.p., else "138.248 \approx 138.2" (TeX)
+const approx1 = x => { const e = fmt(rd(x, 3)), v = fdp(x, 1); return +e === +v ? fmt(+v) : `${e} \\approx ${v}`; };
+// 36000 → "36 000" (the MOE way of grouping digits), decimals kept
+const grp = n => { const [i, d] = fmt(n).split("."); return i.replace(/\B(?=(\d{3})+(?!\d))/g, " ") + (d ? "." + d : ""); };
+const sq = (v, u) => `${grp(v)} ${u}²`, cu = (v, u) => `${grp(v)} ${u}³`;
+const piT = (k, u, p) => `${T(`${fmt(k)}\\pi`)} ${u}${p}`;
+// cabinet view: an edge L long going back into the page is drawn at 30° and shortened (prisms, pyramids)
+const depthV = L => [L * .42 * Math.cos(Math.PI / 6), L * .42 * Math.sin(Math.PI / 6)];
+const OVAL = .32;
+// half of the oval round centre c (card pixels), from its left end to its right end: sw 0 = the front half, 1 = the back half
+const ovalTo = (c, rx, ry, sw) => `A${f1(rx)},${f1(ry)} 0 0,${sw} ${xy([c[0] + rx, c[1]])}`;
+const ovalBack = (c, rx, ry) => `<path class="mhid" d="M${xy([c[0] - rx, c[1]])} ${ovalTo(c, rx, ry, 1)}" fill="none" stroke="${LINE}" stroke-width="2" stroke-dasharray="5 4"/>`;
+const ovalLid = (c, rx, ry, fill) => `<ellipse cx="${f1(c[0])}" cy="${f1(c[1])}" rx="${f1(rx)}" ry="${f1(ry)}" fill="${fill}" stroke="${INK}" stroke-width="2.6"/>`;
+// a solid's outline filled in pastel (class cls lets the tests find it), the side of an upright cylinder (top centre T, bottom Bc)
+// and a cone from apex A down to the oval round c
+const solidPath = (d, fill, cls) => `<path${cls ? ` class="${cls}"` : ""} d="${d}" fill="${fill}" stroke="${INK}" stroke-width="2.6" stroke-linejoin="round"/>`;
+const cylSide = (T, Bc, rx, ry) => `M${xy([T[0] - rx, T[1]])} L${xy([Bc[0] - rx, Bc[1]])} ${ovalTo(Bc, rx, ry, 0)} L${xy([T[0] + rx, T[1]])} Z`;
+const coneSide = (A, c, rx, ry) => `M${xy(A)} L${xy([c[0] - rx, c[1]])} ${ovalTo(c, rx, ry, 0)} Z`;
+const figDot = c => `<circle cx="${f1(c[0])}" cy="${f1(c[1])}" r="2.6" fill="${INK}"/>`;
+// the radius (dashed from the centre to the right end, with a dot) or the diameter (end to end) of an oval, labelled dy px off it
+const ovalSize = (c, rx, ry, lab, dy = -ry - 6) => lab.d ? figEdge([c[0] - rx, c[1]], [c[0] + rx, c[1]], true) + figLab(c, lab.d, 0, dy)
+  : figEdge(c, [c[0] + rx, c[1]], true) + figDot(c) + figLab([c[0] + rx / 2, c[1]], lab.r, 0, dy);
 /* ---------- 🎂 Bakery Blueprints (MOE Sec 1 mensuration): area of parallelograms and trapeziums (and finding a height back
    from the area), composite figures (rectangle + triangle or semicircle), volume and total surface area of triangular prisms,
    volume and surface area of cylinders, and converting cm² ↔ m², m³ → cm³. Every figure is drawn to scale on a cream card;
    slanted sides come from whole-number right triangles (3-4-5, 5-12-13…) so the drawing and the numbers always agree.
    Multiple-choice options each carry a why / why-not note, and typed answers get a note when they match a usual slip. */
-const MENS_TRI = [[3, 4, 5], [4, 3, 5], [6, 8, 10], [8, 6, 10], [5, 12, 13], [9, 12, 15], [12, 9, 15]];
-const PI3 = 3.142;
-// "1885.2" when it is exact to 1 d.p., else "138.248 \approx 138.2" (TeX)
-const approx1 = x => { const e = fmt(rd(x, 3)), v = fdp(x, 1); return +e === +v ? fmt(+v) : `${e} \\approx ${v}`; };
 // a parallelogram (top = bottom) or trapezium: bottom b, top a, left side leaning over s with height h (slant l); labels as given
 const svgQuad = (title, b, a, s, h, lab) => figCard(title, [[0, 0], [b, 0], [s + a, h], [s, h]], S => {
   const A = S([0, 0]), B = S([b, 0]), C = S([s + a, h]), D = S([s, h]), F = S([s, 0]);
@@ -376,7 +400,7 @@ const svgArch = (title, w, hr, lab) => figCard(title, [[0, 0], [w, 0], [w, hr + 
 }, "composite figure");
 // a triangular prism drawn in cabinet view: "ramp" (right angle at the back-left foot) or "tent" (isosceles); front base b, height h, length L
 const svgPrism = (title, shape, b, h, L, lab) => {
-  const F = shape === "ramp" ? [[0, 0], [b, 0], [0, h]] : [[0, 0], [b, 0], [b / 2, h]], dv = [L * .42 * Math.cos(Math.PI / 6), L * .42 * Math.sin(Math.PI / 6)], Bk = F.map(p => [p[0] + dv[0], p[1] + dv[1]]);
+  const F = shape === "ramp" ? [[0, 0], [b, 0], [0, h]] : [[0, 0], [b, 0], [b / 2, h]], dv = depthV(L), Bk = F.map(p => [p[0] + dv[0], p[1] + dv[1]]);
   return figCard(title, F.concat(Bk), S => { const f = F.map(S), k = Bk.map(S), foot = S([shape === "ramp" ? 0 : b / 2, 0]);
     // the back-left-bottom corner is hidden, so its three edges are dashed; the sloping face on the right is shaded
     return figShape([f[1], f[2], k[2], k[1]], PASTEL[1]) + figShape(f, PASTEL[0]) + figEdge(f[0], k[0], true) + figEdge(k[0], k[1], true) + figEdge(k[0], k[2], true) + figEdge(f[1], k[1]) + figEdge(f[2], k[2]) + figEdge(k[1], k[2])
@@ -385,17 +409,10 @@ const svgPrism = (title, shape, b, h, L, lab) => {
   }, "triangular prism", 214);
 };
 // an upright cylinder radius r, height h; the radius (or diameter) is drawn on the lid
-const svgCyl = (title, r, h, lab) => { const e = .32;
-  return figCard(title, [[-r, -e * r], [r, h + e * r]], S => { const T = S([0, h]), Bc = S([0, 0]), rx = r * S.k, ry = e * r * S.k, arc = (c, sw) => `M${xy([c[0] - rx, c[1]])} A${f1(rx)},${f1(ry)} 0 0,${sw} ${xy([c[0] + rx, c[1]])}`;
-    return `<path d="M${xy([T[0] - rx, T[1]])} L${xy([Bc[0] - rx, Bc[1]])} A${f1(rx)},${f1(ry)} 0 0,0 ${xy([Bc[0] + rx, Bc[1]])} L${xy([T[0] + rx, T[1]])} Z" fill="${PASTEL[1]}" stroke="${INK}" stroke-width="2.6" stroke-linejoin="round"/>`
-      + `<path class="mhid" d="${arc(Bc, 1)}" fill="none" stroke="${LINE}" stroke-width="2" stroke-dasharray="5 4"/><ellipse cx="${f1(T[0])}" cy="${f1(T[1])}" rx="${f1(rx)}" ry="${f1(ry)}" fill="${PASTEL[0]}" stroke="${INK}" stroke-width="2.6"/>`
-      + (lab.d ? figEdge([T[0] - rx, T[1]], [T[0] + rx, T[1]], true) + figLab(T, lab.d, 0, -ry - 6) : figEdge(T, [T[0] + rx, T[1]], true) + `<circle cx="${f1(T[0])}" cy="${f1(T[1])}" r="2.6" fill="${INK}"/>` + figLab([T[0] + rx / 2, T[1]], lab.r, 0, -ry - 6))
-      + figLab(mid([T[0] + rx, T[1]], [Bc[0] + rx, Bc[1]]), lab.h, 8, 0, "start");
-  }, "cylinder", 214); };
-// 36000 → "36 000" (the MOE way of grouping digits), decimals kept
-const grp = n => { const [i, d] = fmt(n).split("."); return i.replace(/\B(?=(\d{3})+(?!\d))/g, " ") + (d ? "." + d : ""); };
-const sq = (v, u) => `${grp(v)} ${u}²`, cu = (v, u) => `${grp(v)} ${u}³`;
-const piT = (k, u, p) => `${T(`${fmt(k)}\\pi`)} ${u}${p}`;
+const svgCyl = (title, r, h, lab) => figCard(title, [[-r, -OVAL * r], [r, h + OVAL * r]], S => { const T = S([0, h]), Bc = S([0, 0]), rx = r * S.k, ry = OVAL * r * S.k;
+  return solidPath(cylSide(T, Bc, rx, ry), PASTEL[1])
+    + ovalBack(Bc, rx, ry) + ovalLid(T, rx, ry, PASTEL[0]) + ovalSize(T, rx, ry, lab) + figLab(mid([T[0] + rx, T[1]], [Bc[0] + rx, Bc[1]]), lab.h, 8, 0, "start");
+}, "cylinder", 214);
 const MENS = {
   para: r => { const [s, h, l] = r.pick(MENS_TRI), b = r.int(s + 3, s + 14), cm = r.chance(.5), u = cm ? "cm" : "m", what = cm ? r.pick(["a gingerbread cookie", "a marzipan tile", "a jelly slab"]) : r.pick(["a flower bed in the castle garden", "a picnic rug", "a patch of the strawberry field"]);
     return mcqWhy(r, `${cap(what)} is a parallelogram. What is its area?`, sq(b * h, u), `The height has to meet the base at a right angle, and that is the dashed ${h} ${u} line: base × height = ${b} × ${h} = ${b * h} ${u}².`,
@@ -705,6 +722,149 @@ const SIM = {
 topic(8, "similar", "Scale-Model Studio", "🗺️", "Congruent and similar shapes, scale drawings and maps", r => {
   const k = r.pick(["side", "side", "side", "k", "k", "angle", "angle", "cong", "cong", "cong", "rect", "rect", "map", "map", "map"]);
   return SIM[k](r);
+});
+/* ---------- 🍦 Ice-Cream Cone Café (MOE Sec 2 mensuration: volume and surface area of pyramids, cones and spheres) ----------
+   Pyramids (V = ⅓ × base area × height, the total surface area of a square-based pyramid from the slant height of its faces),
+   cones (V = ⅓πr²h, the curved surface πrl, finding the slant height l with Pythagoras first), spheres and hemispheres
+   (V = ⁴⁄₃πr³, ⅔πr³, the surface 4πr², an open bowl's 2πr², a solid dome's 3πr²), composite solids (a waffle cone with a
+   hemisphere scoop on top, a castle turret: a cylinder with a cone roof) and working back (a cone's or pyramid's height from
+   its volume, a ball's radius from its surface area). Heights, slant heights and radii come from whole-number right triangles
+   and every solid is drawn to scale on a cream card (outlines carry class sbody / sscoop / sroof so tests can measure them).
+   Every option has a why / why-not note and typed answers name their usual slips. */
+// a pyramid on an a × d rectangle (d going back into the page), apex h above the middle; lab.l draws a face's slant height
+const svgPyr = (title, a, d, h, lab) => { const dv = depthV(d), C = [a / 2 + dv[0] / 2, dv[1] / 2], P = [C[0], C[1] + h], base = [[0, 0], [a, 0], [a + dv[0], dv[1]], dv];
+  return figCard(title, base.concat([P]), S => { const [A, B, Bk, Ak] = base.map(S), p = S(P), c = S(C), m = S([a / 2, 0]);
+    return figShape([B, Bk, p], PASTEL[1]) + figShape([A, B, p], PASTEL[4]) + figEdge(A, Ak, true) + figEdge(Ak, Bk, true) + figEdge(Ak, p, true)
+      + figEdge(p, c, true) + figDot(c) + figLab(mid(p, c), lab.h, 6, 4, "start") + (lab.l ? figEdge(p, m, true) + figLab(mid(p, m), lab.l, -6, 0, "end") : "")
+      + figLab(mid(A, B), lab.a, 0, 16) + (lab.d ? figLab(mid(B, Bk), lab.d, 9, 8, "start") : "");
+  }, "pyramid", 214); };
+// an upright cone, base radius r, height h (lab.h draws the dashed height, lab.l labels the slant side)
+const svgCone = (title, r, h, lab) => figCard(title, [[-r, -OVAL * r], [r, h]], S => { const c = S([0, 0]), A = S([0, h]), rx = r * S.k, ry = OVAL * rx;
+  return solidPath(coneSide(A, c, rx, ry), PASTEL[4], "sbody") + ovalBack(c, rx, ry) + (lab.h ? figEdge(A, c, true) + figRight(c, -1) + figLab(mid(A, c), lab.h, -7, 0, "end") : "")
+    + ovalSize(c, rx, ry, lab, ry + 14) + (lab.l ? figLab(mid(A, [c[0] + rx, c[1]]), lab.l, 8, 0, "start") : "");
+}, "cone", 214);
+// a sphere, or half of one: "bowl" (flat side up, open) or "dome" (flat side down)
+const svgBall = (title, r, lab, half) => figCard(title, [[-r, half === "dome" ? -OVAL * r : -r], [r, half === "bowl" ? OVAL * r : r]], S => {
+  const c = S([0, 0]), R = r * S.k, ry = OVAL * R, L = [c[0] - R, c[1]], Rt = [c[0] + R, c[1]], round = sw => `A${f1(R)},${f1(R)} 0 0,${sw} ${xy(Rt)}`;
+  if (half === "bowl") return solidPath(`M${xy(L)} ${round(0)} Z`, PASTEL[1], "sbody") + ovalLid(c, R, ry, PASTEL[0]) + ovalSize(c, R, ry, lab);
+  if (half === "dome") return solidPath(`M${xy(L)} ${round(1)} A${f1(R)},${f1(ry)} 0 0,1 ${xy(L)} Z`, PASTEL[3], "sbody") + ovalBack(c, R, ry) + ovalSize(c, R, ry, lab, ry + 14);
+  return `<circle class="sbody" cx="${f1(c[0])}" cy="${f1(c[1])}" r="${f1(R)}" fill="${PASTEL[1]}" stroke="${INK}" stroke-width="2.6"/>` + ovalBack(c, R, ry)
+    + `<path d="M${xy(L)} ${ovalTo(c, R, ry, 0)}" fill="none" stroke="${INK}" stroke-width="2"/>` + ovalSize(c, R, ry, lab);
+}, half ? "hemisphere" : "sphere", 214);
+// a waffle cone (radius r, height h, point down) with a hemisphere scoop on top
+const svgCream = (title, r, h, lab) => figCard(title, [[-r, -h], [r, r]], S => { const c = S([0, 0]), A = S([0, -h]), R = r * S.k, ry = OVAL * R, L = [c[0] - R, c[1]], Rt = [c[0] + R, c[1]];
+  return solidPath(`M${xy(L)} L${xy(A)} L${xy(Rt)} A${f1(R)},${f1(ry)} 0 0,1 ${xy(L)} Z`, PASTEL[4], "sbody") + solidPath(`M${xy(L)} A${f1(R)},${f1(R)} 0 0,1 ${xy(Rt)} A${f1(R)},${f1(ry)} 0 0,1 ${xy(L)} Z`, PASTEL[0], "sscoop")
+    + figEdge(c, A, true) + figLab(mid(c, A), lab.h, -7, 0, "end") + ovalSize(c, R, ry, lab);
+}, "cone with a hemisphere on top", 214);
+// a castle turret: a cylinder (radius r, height H) with a cone roof h tall
+const svgTurret = (title, r, H, h, lab) => figCard(title, [[-r, -OVAL * r], [r, H + h]], S => { const Bc = S([0, 0]), Tc = S([0, H]), A = S([0, H + h]), rx = r * S.k, ry = OVAL * rx;
+  return solidPath(cylSide(Tc, Bc, rx, ry), PASTEL[2], "sbody") + ovalBack(Bc, rx, ry) + solidPath(coneSide(A, Tc, rx, ry), PASTEL[0], "sroof")
+    + figEdge(A, Tc, true) + figLab(mid(A, Tc), lab.h, -7, 0, "end") + figLab(mid([Tc[0] + rx, Tc[1]], [Bc[0] + rx, Bc[1]]), lab.H, 8, 0, "start") + ovalSize(Bc, rx, ry, lab, ry + 14);
+}, "cylinder with a cone on top", 214);
+const piF = (n, d, u, p) => `${T(`${fracTex(n, d)}\\pi`)} ${u}${p}`; // "$\frac{80}{3}\pi$ cm³", "$36\pi$ cm²"
+const PV = (n, d = 1) => piF(n, d, "cm", "³"), PA = (n, d = 1) => piF(n, d, "cm", "²");
+const piS = (n, d = 1) => { const f = fracStr(n, d); return f.includes("/") ? `(${f})π` : `${f}π`; }; // in a note: "(80/3)π", "36π"
+// a square pyramid's half-base s, height h and face slant height l: small whole-number right triangles, sometimes doubled
+const pyrTri = r => { const [s, h, l] = r.pick(MENS_TRI.filter(t => t[0] <= 6)), k = s <= 4 ? r.pick([1, 2]) : 1; return [s * k, h * k, l * k]; };
+const SOL = {
+  pyrV: r => { if (r.chance(.55)) { const [s, h, l] = pyrTri(r), a = 2 * s, V = a * a * h / 3, what = r.pick([["A chocolate pyramid in the Sweet Shop window", "Chocolate pyramid"], ["A crystal paperweight on the wizard's desk", "Crystal paperweight"], ["A glass lantern for the fairy garden", "Fairy lantern"]]);
+      return numWhy(`${what[0]} is a pyramid with a square base. Find its volume in cm³.`, V, "Volume of a pyramid = ⅓ × base area × height (the height that goes straight up from the middle of the base).",
+        [`Base area: $${a} \\times ${a} = ${a * a}$ cm²`, `Volume: $\\frac{1}{3} \\times ${a * a} \\times ${h} = ${V}$ cm³`, `(The ${l} cm slant height runs up a sloping face, so it is not used.)`],
+        [[a * a * l / 3, `${l} cm is the slant height up the middle of a face. The pyramid's height is the dashed ${h} cm line straight up from the middle of the base.`], [a * a * h, "That is a cuboid with the same base and height. A pyramid fills only one third of it, so divide by 3."],
+         [a * a * h / 2, "A pyramid is one THIRD of the box around it, not one half."], [a * h / 3, `The base is a square, so its area is ${a} × ${a}, not just ${a}.`]],
+        { pic: svgPyr(what[1], a, a, h, { a: `${a} cm`, h: `${h} cm`, l: `${l} cm` }), uid: `sol|pyrV|${a}|${h}`, data: { sol: "pyrV", sq: true, a, d: a, h, l } }); }
+    const a = r.int(4, 12), d = r.int(3, 9); let h = r.int(3, 12); while (a * d * h % 3) h++;
+    const V = a * d * h / 3, what = r.pick([["A tent for the teddy bears' picnic", "Picnic tent"], ["A cake topper", "Cake topper"], ["The roof of the bunnies' playhouse", "Playhouse roof"]]), u = what[1] === "Cake topper" ? "cm" : "dm";
+    return numWhy(`${what[0]} is a pyramid on a rectangle ${a} ${u} by ${d} ${u}. It is ${h} ${u} tall. Find its volume in ${u}³.`, V, "Volume of a pyramid = ⅓ × base area × height.",
+      [`Base area: $${a} \\times ${d} = ${a * d}$ ${u}²`, `Volume: $\\frac{1}{3} \\times ${a * d} \\times ${h} = ${V}$ ${u}³`],
+      [[a * d * h, "That is the whole box around the pyramid. A pyramid holds one third of it."], [a * d * h / 2, "Halving is for triangles. For a pyramid, take one third."], [(a + d) * h / 3, "Multiply the length and the width to get the base area; don't add them."], [a * d / 3, `Multiply the base area by the ${h} ${u} height too.`]],
+      { pic: svgPyr(what[1], a, d, h, { a: `${a} ${u}`, d: `${d} ${u}`, h: `${h} ${u}` }), uid: `sol|pyrV|${a}x${d}|${h}`, data: { sol: "pyrV", sq: false, a, d, h, u } }); },
+  pyrSA: r => { const [s, h, l] = pyrTri(r), a = 2 * s, tri = a * l / 2, tent = r.chance(.4), base = tent ? 0 : a * a, tot = base + 4 * tri, u = tent ? "m" : "cm";
+    const ask = tent ? "A pyramid-shaped tent for the teddy bears' picnic has a square base but no floor. How much canvas covers its four sloping sides?" : "A chocolate pyramid with a square base is wrapped all over in gold foil, base included. What is its total surface area?";
+    return mcqWhy(r, ask, sq(tot, u), tent ? `Four triangles, each ½ × ${a} × ${l} = ${tri} ${u}²: 4 × ${tri} = ${tot} ${u}². There is no floor, so no square.` : `The square base, ${a} × ${a} = ${a * a} ${u}², plus four triangles of ½ × ${a} × ${l} = ${tri} ${u}² each: ${a * a} + ${4 * tri} = ${tot} ${u}².`,
+      [[sq(base + 2 * a * h, u), `${h} ${u} is the height inside the pyramid. Each triangle's height is the slant height, ${l} ${u}, measured up the face.`], [sq(base + 4 * a * l, u), "Each face is a triangle, so it is ½ × base × slant height. That forgot the ½."],
+       tent ? [sq(a * a + 4 * tri, u), "The tent has no floor, so the square base isn't covered with canvas."] : [sq(4 * tri, u), "That is only the four triangles. The foil covers the square base too."],
+       [sq(base + 2 * tri, u), "A square-based pyramid has FOUR triangular faces, not two."], [sq(a * a * h / 3, u), `${a * a * h / 3} is the volume (the space inside), not the area of the outside.`]],
+      "Unfold it in your head: one square base and four matching triangles.", (tent ? [] : [`Square base: $${a} \\times ${a} = ${a * a}$ ${u}²`]).concat([`Each triangle: $\\frac{1}{2} \\times ${a} \\times ${l} = ${tri}$ ${u}² (use the slant height ${l}, not the height ${h})`, `4 triangles: $4 \\times ${tri} = ${4 * tri}$ ${u}²`],
+        tent ? [] : [`Total: $${a * a} + ${4 * tri} = ${tot}$ ${u}²`]),
+      { pic: svgPyr(tent ? "Picnic tent" : "Chocolate pyramid", a, a, h, { a: `${a} ${u}`, h: `${h} ${u}`, l: `${l} ${u}` }), uid: `sol|pyrSA|${tent}|${a}|${h}`, data: { sol: "pyrSA", tent, a, h, l, u } }); },
+  coneV: r => { const [rad, h, l] = r.pick(MENS_TRI), useD = r.chance(.3), what = r.pick([["A waffle cone at the Ice-Cream Café", "Waffle cone"], ["A witch's party hat", "Party hat"], ["A cone of rainbow sprinkles", "Sprinkle cone"], ["A unicorn's sparkly horn", "Unicorn horn"]]);
+    const lab = Object.assign(useD ? { d: `${2 * rad} cm` } : { r: `${rad} cm` }, { h: `${h} cm`, l: `${l} cm` }), k = rad * rad * h / 3, extra = { pic: svgCone(what[1], rad, h, lab), uid: `sol|coneV|${rad}|${h}|${useD}`, data: { sol: "coneV", r: rad, h, l, useD } };
+    const st = (useD ? [`Radius = ${2 * rad} ÷ 2 = ${rad} cm`] : []).concat([`Use the height ${h} cm (at right angles to the base), not the slant side ${l} cm.`]);
+    if (r.chance(.35)) { const v = rd(PI3 * rad * rad * h / 3, 1); extra.data.pi = 3.142;
+      return numWhy(`${what[0]} is a cone. Find its volume in cm³. Use π = 3.142 and give your answer to 1 decimal place.`, v, "Volume of a cone = ⅓ π r² h, a third of the cylinder around it.", st.concat([`$\\frac{1}{3} \\times 3.142 \\times ${rad}^2 \\times ${h} = ${approx1(PI3 * rad * rad * h / 3)}$ cm³`]),
+        [[rd(PI3 * rad * rad * h, 1), "That is the cylinder around the cone. A cone holds one third of it."], [rd(PI3 * rad * rad * l / 3, 1), `${l} cm is the slant side. The formula needs the height, the dashed ${h} cm line.`]].concat(useD ? [[rd(PI3 * 4 * rad * rad * h / 3, 1), `${2 * rad} cm is the diameter. Halve it to get the radius first.`]] : []).concat([[rd(PI3 * rad * l, 1), "πrl is the curved surface (the wrapper), not the space inside."]]),
+        Object.assign(extra, { tol: 0.051, keys: ["."] })); }
+    return mcqWhy(r, `${what[0]} is a cone. What is its volume? Leave your answer in terms of π.`, PV(k), `A third of the cylinder around it: ⅓ × π × ${rad}² × ${h} = ${k}π cm³.`,
+      [[PV(rad * rad * h), "That is the cylinder around the cone. A cone fills only a third of it, so divide by 3."], [PV(rad * rad * l, 3), `${l} cm is the slant side. Use the height, the dashed ${h} cm line that meets the base at a right angle.`],
+       useD ? [PV(4 * rad * rad * h, 3), `${2 * rad} cm is the diameter. Halve it to get the radius before squaring.`] : [PV(rad * h, 3), "The radius must be squared: ⅓ × π × r × r × h."], [PA(rad * l), `${rad * l}π is the curved surface (the wrapper) in cm², not the volume.`], [PV(rad * rad * h, 2), "A cone is one THIRD of its cylinder, not one half."]],
+      "Volume of a cone = ⅓ π r² h.", st.concat([`$V = \\frac{1}{3} \\times \\pi \\times ${rad}^2 \\times ${h} = ${k}\\pi$ cm³`]), extra); },
+  coneSA: r => { const [rad, h, l] = r.pick(MENS_TRI), hat = r.chance(.55), curved = rad * l;
+    if (hat) return mcqWhy(r, `A party hat is a cone with no base, radius ${rad} cm and height ${h} cm. How much card makes its curved surface? Leave your answer in terms of π.`, PA(curved), `First the slant height: √(${rad}² + ${h}²) = ${l} cm. Then π × ${rad} × ${l} = ${curved}π cm².`,
+      [[PA(rad * h), `πrl needs the slant height l, along the sloping side. ${h} cm is the height inside, so find l = ${l} first.`], [PA(rad * rad + curved), "A party hat has no base, so the circle isn't added."], [PA(2 * curved), "The curved surface is πrl, not 2πrl (that 2 belongs to cylinders)."],
+       [PV(rad * rad * h, 3), "⅓πr²h is the volume, the space inside, not the card on the outside."], [PA(rad * rad), `${rad * rad}π is the circle the hat stands on, which the hat doesn't have.`]],
+      "Curved surface of a cone = π r l, where l is the slant height.", [`Slant height: $l = \\sqrt{${rad}^2 + ${h}^2} = \\sqrt{${rad * rad + h * h}} = ${l}$ cm`, `Curved surface: $\\pi \\times ${rad} \\times ${l} = ${curved}\\pi$ cm²`],
+      { pic: svgCone("Party hat", rad, h, { r: `${rad} cm`, h: `${h} cm` }), uid: `sol|coneSA|hat|${rad}|${h}`, data: { sol: "coneSA", hat, r: rad, h, l } });
+    const tot = rad * rad + curved;
+    return mcqWhy(r, `A solid wooden cone in the toy box has radius ${rad} cm and slant height ${l} cm. What is its total surface area? Leave your answer in terms of π.`, PA(tot), `The round base, π × ${rad}² = ${rad * rad}π, plus the curved side, π × ${rad} × ${l} = ${curved}π: ${tot}π cm².`,
+      [[PA(curved), "That is just the curved side. A solid cone also has a round base."], [PA(rad * rad + rad * h), `πrl uses the slant height ${l} cm, not the ${h} cm height.`], [PA(2 * rad * rad + curved), "A cone has only ONE circle, at the bottom."],
+       [PA(rad * rad + 2 * curved), "The curved side is πrl, not 2πrl."], [PV(rad * rad * h, 3), "⅓πr²h is the volume (the space inside), not the surface."]],
+      "Total surface area of a solid cone = π r² + π r l.", [`Base: $\\pi \\times ${rad}^2 = ${rad * rad}\\pi$ cm²`, `Curved side: $\\pi \\times ${rad} \\times ${l} = ${curved}\\pi$ cm²`, `Total: $${rad * rad}\\pi + ${curved}\\pi = ${tot}\\pi$ cm²`],
+      { pic: svgCone("Toy cone", rad, h, { r: `${rad} cm`, h: `${h} cm`, l: `${l} cm` }), uid: `sol|coneSA|solid|${rad}|${l}`, data: { sol: "coneSA", hat, r: rad, h, l } }); },
+  sphV: r => { const half = r.chance(.4), rad = r.pick(half ? [3, 6, 9] : [3, 6, 9, 12]), useD = !half && r.chance(.3), c3 = rad * rad * rad;
+    if (half) { const what = r.pick([["An igloo for the snow bunnies", "Igloo"], ["A strawberry jelly dome", "Jelly dome"], ["The dome on the star-gazing tower", "Tower dome"]]), k = 2 * c3 / 3;
+      return mcqWhy(r, `${what[0]} is a hemisphere (half a sphere) with radius ${rad} cm. What is its volume? Leave your answer in terms of π.`, PV(k), `Half of a whole ball: ½ × ⁴⁄₃ × π × ${rad}³ = ⅔ × ${c3}π = ${k}π cm³.`,
+        [[PV(4 * c3, 3), "That is the whole sphere. A hemisphere is only half of it."], [PA(2 * rad * rad), `${2 * rad * rad}π is the curved surface in cm², not the space inside.`], [PV(2 * c3), "Volume of a hemisphere is ⅔πr³; that forgot to divide by 3."], [PV(2 * rad * rad, 3), "The radius must be cubed (r × r × r) for a volume."], [PV(c3, 3), "Half of ⁴⁄₃ is ⅔, not ⅓."]],
+        "Hemisphere = half a sphere: ½ × ⁴⁄₃ π r³ = ⅔ π r³.", [`$${rad}^3 = ${c3}$`, `$V = \\frac{2}{3} \\times \\pi \\times ${c3} = ${k}\\pi$ cm³`],
+        { pic: svgBall(what[1], rad, { r: `${rad} cm` }, "dome"), uid: `sol|sphV|half|${rad}`, data: { sol: "sphV", half, r: rad } }); }
+    const what = r.pick([["A giant gumball", "Gumball"], ["A snow globe", "Snow globe"], ["The fortune-teller's crystal ball", "Crystal ball"], ["A pearl from the mermaid's treasure chest", "Mermaid pearl"]]), k = 4 * c3 / 3;
+    return mcqWhy(r, `${what[0]} is a sphere${useD ? ` with diameter ${2 * rad} cm` : ` with radius ${rad} cm`}. What is its volume? Leave your answer in terms of π.`, PV(k), `${useD ? `The radius is ${2 * rad} ÷ 2 = ${rad} cm. ` : ""}⁴⁄₃ × π × ${rad}³ = ⁴⁄₃ × ${c3}π = ${k}π cm³.`,
+      [[PA(4 * rad * rad), `${4 * rad * rad}π is the surface area (4πr²), not the space inside.`], [PV(4 * c3), "Volume of a sphere is ⁴⁄₃πr³; that forgot to divide by 3."], useD ? [PV(32 * c3, 3), `${2 * rad} cm is the diameter. Halve it to get the radius before cubing.`] : [PV(4 * rad * rad, 3), "For a volume, the radius is cubed (r × r × r), not squared."],
+       [PV(c3), "πr³ is missing the ⁴⁄₃ at the front."], [PV(2 * c3, 3), "That is a hemisphere, half a ball. This is the whole sphere."]],
+      "Volume of a sphere = ⁴⁄₃ π r³.", (useD ? [`Radius = ${2 * rad} ÷ 2 = ${rad} cm`] : []).concat([`$${rad}^3 = ${c3}$`, `$V = \\frac{4}{3} \\times \\pi \\times ${c3} = ${k}\\pi$ cm³`]),
+      { pic: svgBall(what[1], rad, useD ? { d: `${2 * rad} cm` } : { r: `${rad} cm` }), uid: `sol|sphV|${rad}|${useD}`, data: { sol: "sphV", half, r: rad, useD } }); },
+  sphSA: r => { const k = r.pick(["ball", "ball", "bowl", "dome"]), rad = r.int(2, 12), r2 = rad * rad, extra = { uid: `sol|sphSA|${k}|${rad}`, data: { sol: "sphSA", k, r: rad } };
+    if (k === "ball") { const useD = r.chance(.3); extra.uid += "|" + useD; extra.data.useD = useD; extra.pic = svgBall("Bouncy ball", rad, useD ? { d: `${2 * rad} cm` } : { r: `${rad} cm` });
+      return mcqWhy(r, `Fairy Pip paints stripes over the whole outside of a bouncy ball ${useD ? `${2 * rad} cm across (its diameter)` : `with radius ${rad} cm`}. What area does she paint? Leave your answer in terms of π.`, PA(4 * r2), `A ball's skin is exactly 4 of its big circles: 4 × π × ${rad}² = ${4 * r2}π cm².`,
+        [[PA(2 * r2), "2πr² is only half the ball (a hemisphere's curved part)."], [PA(r2), `${r2}π is one flat circle through the middle. The ball's skin is 4 of those.`], [PA(4 * rad), "The radius must be squared: 4 × π × r × r."], useD ? [PA(16 * r2), `${2 * rad} cm is the diameter. Halve it before squaring.`] : [PV(4 * r2 * rad, 3), "⁴⁄₃πr³ is the volume, the space inside, not the paint on the outside."], [PA(8 * r2), "The surface of a sphere is 4πr², not 8πr²."]],
+        "Surface area of a sphere = 4 π r².", (useD ? [`Radius = ${2 * rad} ÷ 2 = ${rad} cm`] : []).concat([`$4 \\times \\pi \\times ${rad}^2 = 4 \\times ${r2}\\pi = ${4 * r2}\\pi$ cm²`]), extra); }
+    if (k === "bowl") { extra.pic = svgBall("Fruit bowl", rad, { r: `${rad} cm` }, "bowl");
+      return mcqWhy(r, `A fruit bowl is a hemisphere with radius ${rad} cm, open at the top. What is the area of its curved outside? Leave your answer in terms of π.`, PA(2 * r2), `Half of a ball's 4πr²: 2 × π × ${rad}² = ${2 * r2}π cm².`,
+        [[PA(3 * r2), "The bowl is open, so there is no flat circle on top to add."], [PA(4 * r2), "That is a whole ball. A bowl is only half of it."], [PA(r2), `${r2}π is just the flat circle at the top (the opening).`], [PA(2 * rad), "The radius must be squared: 2 × π × r × r."], [PV(2 * r2 * rad, 3), "⅔πr³ is how much the bowl holds, not its outside."]],
+        "Curved surface of a hemisphere = half of 4πr² = 2πr².", [`$\\frac{1}{2} \\times 4\\pi r^2 = 2\\pi r^2$`, `$2 \\times \\pi \\times ${rad}^2 = ${2 * r2}\\pi$ cm²`], extra); }
+    extra.pic = svgBall("Glitter paperweight", rad, { r: `${rad} cm` }, "dome");
+    return mcqWhy(r, `A solid glass paperweight is a hemisphere with radius ${rad} cm. Glitter covers it all over, flat bottom included. What is its total surface area? Leave your answer in terms of π.`, PA(3 * r2), `The curved dome (2π × ${rad}² = ${2 * r2}π) plus the flat circle underneath (π × ${rad}² = ${r2}π): ${3 * r2}π cm².`,
+      [[PA(2 * r2), "That is just the curved dome. Don't forget the flat circle underneath."], [PA(4 * r2), "That is a whole ball's surface. Half of it is curved, plus one flat circle."], [PA(5 * r2), "The dome is half of 4πr², which is 2πr², not 4πr²."], [PA(3 * rad), "The radius must be squared: πr × r."], [PV(2 * r2 * rad, 3), "⅔πr³ is the volume, not the area of the outside."]],
+      "Solid hemisphere = curved part (2πr²) + flat circle (πr²) = 3πr².", [`Curved dome: $2 \\times \\pi \\times ${rad}^2 = ${2 * r2}\\pi$ cm²`, `Flat circle: $\\pi \\times ${rad}^2 = ${r2}\\pi$ cm²`, `Total: $${3 * r2}\\pi$ cm²`], extra); },
+  compo: r => { if (r.chance(.5)) { const rad = r.int(2, 6); let h = r.int(rad + 3, 14); while ((rad * rad * h + 2 * rad ** 3) % 3) h++;
+      const cn = rad * rad * h, hm = 2 * rad ** 3, k = (cn + hm) / 3;
+      return mcqWhy(r, `At the Ice-Cream Café, a waffle cone of radius ${rad} cm and height ${h} cm is filled with ice cream and topped with a hemisphere scoop of the same radius. How much ice cream is there? Leave your answer in terms of π.`, PV(k), `The cone, ⅓π × ${rad}² × ${h} = ${piS(cn, 3)}, plus the half-ball scoop, ⅔π × ${rad}³ = ${piS(hm, 3)}: ${k}π cm³ altogether.`,
+        [[PV(cn, 3), "That is only the cone. Add the scoop on top too."], [PV(cn + 2 * hm, 3), "The scoop is HALF a ball, ⅔πr³, not a whole ball."], [PV(3 * cn + hm, 3), "The cone is ⅓πr²h; that used the whole cylinder around it."], [PV(cn + 3 * rad * rad * 2, 3), "2πr² is the scoop's curved surface, not its volume (⅔πr³)."], [PV(rad * rad * h + rad ** 3), "Both parts need their fractions: ⅓ for the cone and ⅔ for the hemisphere."]],
+        "Split it: a cone (⅓πr²h) and a hemisphere (⅔πr³), then add.", [`Cone: $\\frac{1}{3} \\times \\pi \\times ${rad}^2 \\times ${h} = ${fracTex(cn, 3)}\\pi$`, `Scoop: $\\frac{2}{3} \\times \\pi \\times ${rad}^3 = ${fracTex(hm, 3)}\\pi$`, `Total: $${fracTex(cn, 3)}\\pi + ${fracTex(hm, 3)}\\pi = ${k}\\pi$ cm³`],
+        { pic: svgCream("Ice-cream cone", rad, h, { r: `${rad} cm`, h: `${h} cm` }), uid: `sol|compo|cream|${rad}|${h}`, data: { sol: "compo", k: "cream", r: rad, h } }); }
+    const rad = r.int(2, 5), H = r.int(4, 12); let h = r.int(2, 8); while (rad * rad * h % 3) h++;
+    const cy = rad * rad * H, cn = rad * rad * h / 3, k = cy + cn, P = (n, d = 1) => piF(n, d, "m", "³");
+    return mcqWhy(r, `A castle turret is a cylinder ${H} m tall with radius ${rad} m, and a cone-shaped roof ${h} m tall on top. What is the volume of the whole turret? Leave your answer in terms of π.`, P(k), `The cylinder, π × ${rad}² × ${H} = ${cy}π, plus the cone roof, ⅓π × ${rad}² × ${h} = ${cn}π: ${k}π m³.`,
+      [[P(rad * rad * (H + h)), "The roof is a cone, a third of a cylinder. That counted it as a full cylinder."], [P(cy), "That is only the cylinder. Add the cone roof on top."], [P(rad * rad * (H + h), 3), "Only the roof is a cone. The tower below is a full cylinder, with no ⅓."], [P(2 * rad * H + cn), "2πrH is the curved wall's area, not the cylinder's volume (πr²H)."], [P(rad * H + cn), "The radius must be squared: π × r × r × H."]],
+      "Split it: cylinder (πr²H) + cone (⅓πr²h).", [`Cylinder: $\\pi \\times ${rad}^2 \\times ${H} = ${cy}\\pi$ m³`, `Cone roof: $\\frac{1}{3} \\times \\pi \\times ${rad}^2 \\times ${h} = ${cn}\\pi$ m³`, `Total: $${cy}\\pi + ${cn}\\pi = ${k}\\pi$ m³`],
+      { pic: svgTurret("Castle turret", rad, H, h, { r: `${rad} m`, H: `${H} m`, h: `${h} m` }), uid: `sol|compo|turret|${rad}|${H}|${h}`, data: { sol: "compo", k: "turret", r: rad, H, h } }); },
+  rev: r => { const k = r.pick(["cone", "ball", "pyr"]);
+    if (k === "cone") { const rad = r.int(2, 9); let h = r.int(3, 15); while (rad * rad * h % 3) h++; const V = rad * rad * h / 3;
+      return numWhy(`A cone-shaped party hat holds ${V}π cm³ and its base has radius ${rad} cm. How tall is it, in cm?`, h, "V = ⅓ π r² h, so h = 3V ÷ (π r²).", [`$\\frac{1}{3} \\times \\pi \\times ${rad}^2 \\times h = ${V}\\pi$`, `$${rad * rad}h = 3 \\times ${V} = ${3 * V}$`, `$h = ${3 * V} \\div ${rad * rad} = ${h}$ cm`],
+        [[V / (rad * rad), "Don't forget the ⅓ in the cone formula: multiply the volume by 3 before dividing."], [3 * V / rad, "The radius is squared in the formula, so divide by r² = " + rad * rad + "."], [3 * V / (4 * rad * rad), "Use the radius, not the diameter, when you square it."]],
+        { keys: ["."], pic: svgCone("Party hat", rad, h, { r: `${rad} cm`, h: "h" }), uid: `sol|rev|cone|${rad}|${h}`, data: { sol: "rev", k, r: rad, h, V } }); }
+    if (k === "ball") { const rad = r.int(2, 12), A = 4 * rad * rad;
+      return numWhy(`A beach ball has a surface area of ${A}π cm². What is its radius, in cm?`, rad, "Surface area = 4πr², so r² = area ÷ 4π.", [`$4\\pi r^2 = ${A}\\pi$`, `$r^2 = ${A} \\div 4 = ${rad * rad}$`, `$r = \\sqrt{${rad * rad}} = ${rad}$ cm`],
+        [[A / 4, `${A / 4} is r². Take the square root to get r.`], [2 * rad, "That is the diameter. Divide by 4 before the square root: √(" + A + " ÷ 4)."], [A / 2, "Divide by 4 (from 4πr²), then take the square root."]],
+        { keys: ["."], pic: svgBall("Beach ball", rad, { r: "r" }), uid: `sol|rev|ball|${rad}`, data: { sol: "rev", k, r: rad, A } }); }
+    const [s, h, l] = pyrTri(r), a = 2 * s, V = a * a * h / 3;
+    return numWhy(`A square-based chocolate pyramid has a volume of ${V} cm³ and a base ${a} cm wide. How tall is it, in cm?`, h, "V = ⅓ × base area × height, so height = 3V ÷ base area.", [`Base area: $${a} \\times ${a} = ${a * a}$ cm²`, `$\\frac{1}{3} \\times ${a * a} \\times h = ${V}$`, `$h = 3 \\times ${V} \\div ${a * a} = ${h}$ cm`],
+      [[V / (a * a), "Remember the ⅓: multiply the volume by 3 before dividing by the base area."], [3 * V / a, `The base area is ${a} × ${a} = ${a * a}, not ${a}.`], [l, `${l} cm is the slant height up a face, not the height straight up.`]],
+      { keys: ["."], pic: svgPyr("Chocolate pyramid", a, a, h, { a: `${a} cm`, h: "h" }), uid: `sol|rev|pyr|${a}|${h}`, data: { sol: "rev", k, a, h, l, V } }); }
+};
+topic(8, "solids", "Ice-Cream Cone Café", "🍦", "Volume and surface area of pyramids, cones and spheres", r => {
+  const k = r.pick(["pyrV", "pyrV", "pyrSA", "pyrSA", "coneV", "coneV", "coneSA", "coneSA", "sphV", "sphV", "sphSA", "sphSA", "compo", "compo", "rev", "rev"]);
+  return SOL[k](r);
 });
 topic(8, "gradient", "Gradient Hills", "⛰️", "Gradient and straight lines", r => {
   const t = r.int(0, 2);

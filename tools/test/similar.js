@@ -16,7 +16,7 @@ const ID = 'g8.similar';
 const t = M.topic(ID);
 ok(t && t.grade === 8 && t.name === 'Scale-Model Studio' && t.icon.startsWith('🗺'), `🗺️ Scale-Model Studio is a Grade 8 (Sec 2) topic (${t && t.desc})`);
 ok(M.TOPICS.length >= 115, `it is one of ${M.TOPICS.length} maths topics (115 when it was added)`);
-{ const g = M.gradeTopics(8).map(x => x.id), i = g.indexOf(ID); ok(g[i - 1] === 'g8.pyth' && g[i + 1] === 'g8.gradient' && g[g.length - 1] === 'g8.story', "it sits after Pythagoras' Bridge (geometry), before Gradient Hills: " + g.join(' ')); }
+{ const g = M.gradeTopics(8).map(x => x.id), i = g.indexOf(ID); ok(g[i - 1] === 'g8.pyth' && ['g8.gradient', 'g8.solids'].includes(g[i + 1]) && g[g.length - 1] === 'g8.story', "it sits after Pythagoras' Bridge (geometry), before Gradient Hills (or Ice-Cream Cone Café, added after it): " + g.join(' ')); }
 const labs = svg => [...(svg || '').matchAll(/class="mlab" data-t="([^"]+)"/g)].map(m => m[1]);
 const angLabs = svg => [...(svg || '').matchAll(/class="mang" data-t="([^"]+)"/g)].map(m => m[1]);
 const polys = svg => [...(svg || '').matchAll(/<polygon points="([^"]+)"/g)].map(m => m[1].split(' ').map(p => p.split(',').map(Number)));
