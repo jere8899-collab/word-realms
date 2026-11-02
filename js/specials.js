@@ -9,7 +9,7 @@ const mixFrom = async (rid, n) => {
   return WR.shuffle(picked).slice(0, n);
 };
 WR.playSpecial = async rid => {
-  const realm = WR.realms.find(r => r.id === rid), sp = realm.special;
+  const realm = WR.realmById(rid), sp = realm.special;
   const replay = () => WR.playSpecial(rid);
   const base = { realm: rid, title: sp.name, key: "special", special: true, replay };
   switch (sp.type) {
@@ -40,7 +40,7 @@ function finishSpecial(realm, score, stars, msg) {
     <div class="row" style="justify-content:center;margin-top:14px"><button class="btn" id="again">↻ Play again</button><button class="btn mint" id="back">Back to ${WR.esc(realm.name)}</button></div></div>`);
   WR.confetti(); WR.sfx("level");
   WR.$("#again").onclick = () => WR.playSpecial(realm.id);
-  WR.$("#back").onclick = () => WR.go("realm", realm.id);
+  WR.$("#back").onclick = () => WR.toRealm(realm.id);
 }
 /* ---- A1 Petal Match: match picture cards to words ---- */
 async function petalMatch(realm) {
@@ -53,7 +53,7 @@ async function petalMatch(realm) {
   WR.view(`${header(realm, "Petal Match")}<div class="card"><p class="muted" style="font-weight:800">Tap a picture, then its word. Say the word out loud! 🗣️</p>
     <div class="match-grid">${cards.map((c, k) => `<button class="mcard ${c.t === "emo" ? "emo" : ""}${c.art ? " painted" : ""}${!c.art && c.t !== "emo" && String(c.v).length > 7 ? " long" : ""}" data-k="${k}" ${c.art ? 'aria-label="Picture card"' : ""}>${c.art ? WR.img(c.art, "mart").replace(/alt="[^"]*"/, 'alt="picture"') : WR.esc(c.v)}</button>`).join("")}</div>
     <p class="center" id="mstat" style="font-weight:800">Pairs: 0 / 6</p></div>`);
-  WR.$("#quitBtn").onclick = () => WR.go("realm", realm.id);
+  WR.$("#quitBtn").onclick = () => WR.toRealm(realm.id);
   document.querySelectorAll(".mcard").forEach(b => b.onclick = () => {
     if (b.classList.contains("done")) return;   // a matched card can never be matched again (R1: no double pay)
     const c = cards[+b.dataset.k];
@@ -81,7 +81,7 @@ async function lanternQuest(realm) {
       <div class="opts" style="grid-template-columns:1fr">${n.choices.map((c, k) => `<button class="opt" data-k="${k}"><span class="k">${"AB"[k]}</span>${WR.esc(c.text)}</button>`).join("")}</div>
       ${n.choices.length ? "" : `<button class="btn mint" id="done">Collect your Forest Star ⭐</button>`}
       </div><div class="card side"><div class="petbox ${note ? (note.good ? "bounce" : "sad") : ""}">${WR.petHTML()}</div><div class="bubble">${note ? (note.good ? "Great choice! 💖" : "Hmm, let's fix that! 🍀") : "What should we say? 🤔"}</div></div></div>`);
-    WR.$("#quitBtn").onclick = () => WR.go("realm", realm.id);
+    WR.$("#quitBtn").onclick = () => WR.toRealm(realm.id);
     document.querySelectorAll(".opt").forEach(b => b.onclick = () => {
       const c = n.choices[+b.dataset.k]; steps++; if (c.good) good++; WR.sfx(c.good ? "good" : "bad");
       if (c.good) WR.awardStars("special", realm.id + "/" + n.text, 1, { quiet: true });
@@ -101,7 +101,7 @@ async function greatDebate(realm) {
       <div class="lesson"><div class="card qcard"><div class="passage"><b>📜 Motion:</b> ${WR.esc(d.motion)}</div><div class="qtext">${WR.esc(d.prompt)}</div>
       <div class="opts" style="grid-template-columns:1fr">${opts.map((o, k) => `<button class="opt" data-k="${k}"><span class="k">${"ABCD"[k]}</span>${WR.esc(o.t)}</button>`).join("")}</div><div id="explain"></div></div>
       <div class="card side"><div class="petbox" id="lpet">${WR.petHTML()}</div><div class="bubble" id="lbubble">Think like a judge! 🧐</div></div></div>`);
-    WR.$("#quitBtn").onclick = () => WR.go("realm", realm.id);
+    WR.$("#quitBtn").onclick = () => WR.toRealm(realm.id);
     document.querySelectorAll(".opt").forEach(b => b.onclick = () => {
       const o = opts[+b.dataset.k];
       document.querySelectorAll(".opt").forEach(x => { x.disabled = true; if (opts[+x.dataset.k].ok) x.classList.add("right"); });

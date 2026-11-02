@@ -116,7 +116,7 @@ C.bossCard = o => `<div class="card rboss ${o.cls || ""} ${o.ready ? "" : "locke
 /* ---------- realm bosses ---------- */
 C.bossReady = rid => WR.realmProgress(rid).passed >= 3;
 C.startBoss = async rid => {
-  const r = WR.realms.find(x => x.id === rid), b = RB[rid]; if (!r || !b) return;
+  const r = WR.realmById(rid), b = RB[rid]; if (!r || !b) return;
   const parts = await Promise.all([["grammar", 3], ["vocab", 3], ["listening", 2], ["reading", 2]].map(([k, n]) => WR.buildItems(rid, k, n).then(xs => xs.slice(0, n)).catch(() => [])));
   const items = parts.flat(); if (!items.length) return WR.toast("The boss is still asleep… try again soon! 💤");
   const s = ensure(); s.bosses[rid] = s.bosses[rid] || { won: false, best: 0, tries: 0 }; s.bosses[rid].tries++; WR.save();
@@ -172,7 +172,7 @@ WR.screens.realm = rid => {
   if (got.length) WR.$("#main .realm-screen").insertAdjacentHTML("beforeend", `<div class="card row sticker-row" id="realmStickers" role="button" tabindex="0"><span style="font-size:1.6rem">🏷️</span><div style="flex:1"><b>Sticker page: ${got.length}/${STICKERS.length}</b><div class="muted" style="font-size:.82rem;font-weight:700">${STICKERS.map(st => WR.icon(st.icon, got.includes(st.id) ? "" : "dim", got.includes(st.id) ? undefined : "not earned yet")).join(" ")}</div></div><span class="btn small ghost">Open →</span></div>`);
   const go = WR.$("#rbossGo"), card = WR.$("#rbossCard");
   if (go) go.onclick = e => { e.stopPropagation(); C.startBoss(rid); };
-  if (card) card.onclick = () => C.bossReady(rid) ? C.startBoss(rid) : WR.toast(`🔒 Pass 3 of 4 skills in ${WR.realms.find(x => x.id === rid).name} to wake the boss!`, 2400);
+  if (card) card.onclick = () => C.bossReady(rid) ? C.startBoss(rid) : WR.toast(`🔒 Pass 3 of 4 skills in ${WR.realmById(rid).name} to wake the boss!`, 2400);
   const rs = WR.$("#realmStickers"); if (rs) rs.onclick = () => WR.go("stickers", rid);
 };
 })();

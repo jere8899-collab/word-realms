@@ -1,0 +1,181 @@
+{
+ "level": "p1",
+ "synth": [],
+ "edit": {
+  "passages": [
+   {
+    "id": "p1.e1",
+    "title": "My Pet Fish",
+    "text": "I have a pet fish. It is ⟦1|orenge⟧ and white. Every morning, I ⟦2|gives⟧ it some food.",
+    "say": "I have a pet fish. It is orange and white. Every morning, I give it some food.",
+    "questions": [
+     {
+      "type": "fix",
+      "n": 1,
+      "wrong": "orenge",
+      "kind": "spelling",
+      "answers": [
+       "orange"
+      ],
+      "answer": "orange",
+      "explain": "The word is 'orange': o-r-a-n-g-e.",
+      "title": "My Pet Fish",
+      "q": "Fix word 1: “orenge”"
+     },
+     {
+      "type": "fix",
+      "n": 2,
+      "wrong": "gives",
+      "kind": "grammar",
+      "answers": [
+       "give"
+      ],
+      "answer": "give",
+      "explain": "With 'I', the action word has no -s: I give.",
+      "title": "My Pet Fish",
+      "q": "Fix word 2: “gives”"
+     }
+    ]
+   },
+   {
+    "id": "p1.e2",
+    "title": "At the Playground",
+    "text": "Mei and I went to the ⟦1|playgrond⟧. We ⟦2|play⟧ on the swings until it was time to go home.",
+    "say": "Mei and I went to the playground. We played on the swings until it was time to go home.",
+    "questions": [
+     {
+      "type": "fix",
+      "n": 1,
+      "wrong": "playgrond",
+      "kind": "spelling",
+      "answers": [
+       "playground"
+      ],
+      "answer": "playground",
+      "explain": "Playground has 'ground' in it: play + ground.",
+      "title": "At the Playground",
+      "q": "Fix word 1: “playgrond”"
+     },
+     {
+      "type": "fix",
+      "n": 2,
+      "wrong": "play",
+      "kind": "grammar",
+      "answers": [
+       "played"
+      ],
+      "answer": "played",
+      "explain": "It already happened, so use the past: played.",
+      "title": "At the Playground",
+      "q": "Fix word 2: “play”"
+     }
+    ]
+   },
+   {
+    "id": "p1.e3",
+    "title": "Lunch with Grandpa",
+    "text": "Yesterday, Grandpa took me to the hawker centre. He ⟦1|buy⟧ me a plate of chicken rice. It was very ⟦2|yumy⟧.",
+    "say": "Yesterday, Grandpa took me to the hawker centre. He bought me a plate of chicken rice. It was very yummy.",
+    "questions": [
+     {
+      "type": "fix",
+      "n": 1,
+      "wrong": "buy",
+      "kind": "grammar",
+      "answers": [
+       "bought"
+      ],
+      "answer": "bought",
+      "explain": "It happened yesterday, so 'buy' becomes 'bought'.",
+      "title": "Lunch with Grandpa",
+      "q": "Fix word 1: “buy”"
+     },
+     {
+      "type": "fix",
+      "n": 2,
+      "wrong": "yumy",
+      "kind": "spelling",
+      "answers": [
+       "yummy"
+      ],
+      "answer": "yummy",
+      "explain": "'Yummy' has a double m: y-u-m-m-y.",
+      "title": "Lunch with Grandpa",
+      "q": "Fix word 2: “yumy”"
+     }
+    ]
+   },
+   {
+    "id": "p1.e4",
+    "title": "The Rainy Day",
+    "text": "It rained all day. My sister and I ⟦1|was⟧ stuck at home, so we drew ⟦2|picturs⟧ of rainbows.",
+    "say": "It rained all day. My sister and I were stuck at home, so we drew pictures of rainbows.",
+    "questions": [
+     {
+      "type": "fix",
+      "n": 1,
+      "wrong": "was",
+      "kind": "grammar",
+      "answers": [
+       "were"
+      ],
+      "answer": "were",
+      "explain": "Two people (my sister and I) take 'were', not 'was'.",
+      "title": "The Rainy Day",
+      "q": "Fix word 1: “was”"
+     },
+     {
+      "type": "fix",
+      "n": 2,
+      "wrong": "picturs",
+      "kind": "spelling",
+      "answers": [
+       "pictures"
+      ],
+      "answer": "pictures",
+      "explain": "Picture + s = pictures. Don't drop the e.",
+      "title": "The Rainy Day",
+      "q": "Fix word 2: “picturs”"
+     }
+    ]
+   },
+   {
+    "id": "p1.e5",
+    "title": "My Best Friend",
+    "text": "My best friend is Arif. He ⟦1|have⟧ a big smile. We sit ⟦2|togeter⟧ in class.",
+    "say": "My best friend is Arif. He has a big smile. We sit together in class.",
+    "questions": [
+     {
+      "type": "fix",
+      "n": 1,
+      "wrong": "have",
+      "kind": "grammar",
+      "answers": [
+       "has"
+      ],
+      "answer": "has",
+      "explain": "With 'he', use 'has', not 'have'.",
+      "title": "My Best Friend",
+      "q": "Fix word 1: “have”"
+     },
+     {
+      "type": "fix",
+      "n": 2,
+      "wrong": "togeter",
+      "kind": "spelling",
+      "answers": [
+       "together"
+      ],
+      "answer": "together",
+      "explain": "Together: to-ge-ther, with 'th' in the middle.",
+      "title": "My Best Friend",
+      "q": "Fix word 2: “togeter”"
+     }
+    ]
+   }
+  ]
+ },
+ "ccloze": {
+  "passages": []
+ }
+}

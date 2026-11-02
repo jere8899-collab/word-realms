@@ -1,0 +1,536 @@
+{
+ "level": "s1",
+ "synth": [
+  {
+   "type": "typed",
+   "id": "s1.s1",
+   "title": "Join It Up",
+   "q": "Join the two sentences into one.",
+   "s1": "The team trained hard.",
+   "s2": "They won the inter-school championship.",
+   "lead": "Owing to",
+   "tail": "",
+   "answers": [
+    "their hard training the team won the inter-school championship",
+    "the team's hard training they won the inter-school championship",
+    "hard training the team won the inter-school championship"
+   ],
+   "answer": "their hard training the team won the inter-school championship",
+   "need": [],
+   "explain": "'Owing to' + a noun phrase gives the cause.",
+   "say": "The team trained hard. They won the inter-school championship.",
+   "full": "Owing to their hard training, the team won the inter-school championship."
+  },
+  {
+   "type": "typed",
+   "id": "s1.s2",
+   "title": "Join It Up",
+   "q": "Join the two sentences into one.",
+   "s1": "You must submit your project by Friday.",
+   "s2": "Otherwise you will lose marks.",
+   "lead": "Failing",
+   "tail": "",
+   "answers": [
+    "to submit your project by friday you will lose marks"
+   ],
+   "answer": "to submit your project by friday you will lose marks",
+   "need": [],
+   "explain": "'Failing to …' = if you do not … .",
+   "say": "You must submit your project by Friday. Otherwise you will lose marks.",
+   "full": "Failing to submit your project by Friday, you will lose marks."
+  },
+  {
+   "type": "typed",
+   "id": "s1.s3",
+   "title": "Join It Up",
+   "q": "Join the two sentences into one.",
+   "s1": "The exhibition was so popular.",
+   "s2": "It was extended by a week.",
+   "lead": "Such was",
+   "tail": "",
+   "answers": [
+    "the popularity of the exhibition that it was extended by a week",
+    "the exhibition's popularity that it was extended by a week"
+   ],
+   "answer": "the popularity of the exhibition that it was extended by a week",
+   "need": [],
+   "explain": "'Such was the popularity of … that …': noun form 'popularity'.",
+   "say": "The exhibition was so popular. It was extended by a week.",
+   "full": "Such was the popularity of the exhibition that it was extended by a week."
+  },
+  {
+   "type": "typed",
+   "id": "s1.s4",
+   "title": "Join It Up",
+   "q": "Rewrite the sentence.",
+   "s1": "I only realised my mistake when I checked my answers.",
+   "s2": "",
+   "lead": "Only when I checked my answers",
+   "tail": "",
+   "answers": [
+    "did i realise my mistake"
+   ],
+   "answer": "did i realise my mistake",
+   "need": [],
+   "explain": "After 'Only when …', swap the helper verb: did I realise.",
+   "say": "I only realised my mistake when I checked my answers.",
+   "full": "Only when I checked my answers did I realise my mistake."
+  },
+  {
+   "type": "typed",
+   "id": "s1.s5",
+   "title": "Join It Up",
+   "q": "Join the two sentences into one.",
+   "s1": "She is young.",
+   "s2": "She is an excellent debater.",
+   "lead": "Young",
+   "tail": "",
+   "answers": [
+    "as she is she is an excellent debater",
+    "though she is she is an excellent debater"
+   ],
+   "answer": "as she is she is an excellent debater",
+   "need": [],
+   "explain": "'Young as she is' = although she is young.",
+   "say": "She is young. She is an excellent debater.",
+   "full": "Young as she is, she is an excellent debater."
+  },
+  {
+   "type": "typed",
+   "id": "s1.s6",
+   "title": "Join It Up",
+   "q": "Rewrite the sentence.",
+   "s1": "They did not know the trail was closed.",
+   "s2": "",
+   "lead": "Little",
+   "tail": "",
+   "answers": [
+    "did they know the trail was closed",
+    "did they know that the trail was closed"
+   ],
+   "answer": "did they know the trail was closed",
+   "need": [],
+   "explain": "After 'Little', swap the helper verb: did they know.",
+   "say": "They did not know the trail was closed.",
+   "full": "Little did they know the trail was closed."
+  },
+  {
+   "type": "typed",
+   "id": "s1.s7",
+   "title": "Join It Up",
+   "q": "Rewrite the sentence.",
+   "s1": "We could not have finished the mural without the volunteers.",
+   "s2": "",
+   "lead": "Had it not been for",
+   "tail": "",
+   "answers": [
+    "the volunteers we could not have finished the mural",
+    "the volunteers we would not have finished the mural"
+   ],
+   "answer": "the volunteers we could not have finished the mural",
+   "need": [],
+   "explain": "'Had it not been for' = if there had not been … . Use it for the past.",
+   "say": "We could not have finished the mural without the volunteers.",
+   "full": "Had it not been for the volunteers, we could not have finished the mural."
+  },
+  {
+   "type": "typed",
+   "id": "s1.s8",
+   "title": "Join It Up",
+   "q": "Rewrite the sentence.",
+   "s1": "People say that the old banyan tree is two hundred years old.",
+   "s2": "",
+   "lead": "The old banyan tree is said",
+   "tail": "",
+   "answers": [
+    "to be two hundred years old"
+   ],
+   "answer": "to be two hundred years old",
+   "need": [],
+   "explain": "is said + to be: a polite way to report what people say.",
+   "say": "People say that the old banyan tree is two hundred years old.",
+   "full": "The old banyan tree is said to be two hundred years old."
+  }
+ ],
+ "edit": {
+  "passages": [
+   {
+    "id": "s1.e1",
+    "title": "My First CCA Training",
+    "text": "On my first day of the robotics club, I ⟦1|feel⟧ rather nervous. Most of the seniors already knew how to programme the robots. One of them, Kenji, ⟦2|offer⟧ to guide me. He explained each step patiently and never ⟦3|make⟧ me feel silly. By the end of the session, I ⟦4|have built⟧ my first moving robot.",
+    "say": "On my first day of the robotics club, I felt rather nervous. Most of the seniors already knew how to programme the robots. One of them, Kenji, offered to guide me. He explained each step patiently and never made me feel silly. By the end of the session, I had built my first moving robot.",
+    "questions": [
+     {
+      "type": "fix",
+      "n": 1,
+      "wrong": "feel",
+      "kind": "grammar",
+      "answers": [
+       "felt"
+      ],
+      "answer": "felt",
+      "explain": "The whole text is in the past: felt.",
+      "title": "My First CCA Training",
+      "q": "Fix word 1: “feel”"
+     },
+     {
+      "type": "fix",
+      "n": 2,
+      "wrong": "offer",
+      "kind": "grammar",
+      "answers": [
+       "offered"
+      ],
+      "answer": "offered",
+      "explain": "Keep to the past: offered.",
+      "title": "My First CCA Training",
+      "q": "Fix word 2: “offer”"
+     },
+     {
+      "type": "fix",
+      "n": 3,
+      "wrong": "make",
+      "kind": "grammar",
+      "answers": [
+       "made"
+      ],
+      "answer": "made",
+      "explain": "After 'never' in a past story, use the past: made.",
+      "title": "My First CCA Training",
+      "q": "Fix word 3: “make”"
+     },
+     {
+      "type": "fix",
+      "n": 4,
+      "wrong": "have built",
+      "kind": "grammar",
+      "answers": [
+       "had built"
+      ],
+      "answer": "had built",
+      "explain": "By the end of the session (past), use the past perfect: had built.",
+      "title": "My First CCA Training",
+      "q": "Fix word 4: “have built”"
+     }
+    ]
+   },
+   {
+    "id": "s1.e2",
+    "title": "A Rainy Commute",
+    "text": "Yesterday, the rain was so heavy that the buses ⟦1|was⟧ delayed. Hundreds of students crowded into the MRT station. Despite ⟦2|wait⟧ for almost an hour, nobody complained. A kind auntie shared her umbrella with two Secondary One students ⟦3|which⟧ had forgotten theirs. It reminded me that small acts of kindness ⟦4|matters⟧.",
+    "say": "Yesterday, the rain was so heavy that the buses were delayed. Hundreds of students crowded into the MRT station. Despite waiting for almost an hour, nobody complained. A kind auntie shared her umbrella with two Secondary One students who had forgotten theirs. It reminded me that small acts of kindness matter.",
+    "questions": [
+     {
+      "type": "fix",
+      "n": 1,
+      "wrong": "was",
+      "kind": "grammar",
+      "answers": [
+       "were"
+      ],
+      "answer": "were",
+      "explain": "'The buses' is plural: were.",
+      "title": "A Rainy Commute",
+      "q": "Fix word 1: “was”"
+     },
+     {
+      "type": "fix",
+      "n": 2,
+      "wrong": "wait",
+      "kind": "grammar",
+      "answers": [
+       "waiting"
+      ],
+      "answer": "waiting",
+      "explain": "After 'despite', use the -ing form: waiting.",
+      "title": "A Rainy Commute",
+      "q": "Fix word 2: “wait”"
+     },
+     {
+      "type": "fix",
+      "n": 3,
+      "wrong": "which",
+      "kind": "grammar",
+      "answers": [
+       "who"
+      ],
+      "answer": "who",
+      "explain": "Use 'who' for people, 'which' for things.",
+      "title": "A Rainy Commute",
+      "q": "Fix word 3: “which”"
+     },
+     {
+      "type": "fix",
+      "n": 4,
+      "wrong": "matters",
+      "kind": "grammar",
+      "answers": [
+       "matter"
+      ],
+      "answer": "matter",
+      "explain": "'Small acts' is plural, so the verb has no -s: matter.",
+      "title": "A Rainy Commute",
+      "q": "Fix word 4: “matters”"
+     }
+    ]
+   },
+   {
+    "id": "s1.e3",
+    "title": "The Class Chalet",
+    "text": "At the end of the year, our class ⟦1|organise⟧ a chalet at Pasir Ris. We played board games, swam in the pool and ⟦2|cook⟧ a barbecue dinner. Although the sausages were slightly burnt, everyone ⟦3|say⟧ they were delicious. It was the first time that our whole class ⟦4|has spent⟧ a night together.",
+    "say": "At the end of the year, our class organised a chalet at Pasir Ris. We played board games, swam in the pool and cooked a barbecue dinner. Although the sausages were slightly burnt, everyone said they were delicious. It was the first time that our whole class had spent a night together.",
+    "questions": [
+     {
+      "type": "fix",
+      "n": 1,
+      "wrong": "organise",
+      "kind": "grammar",
+      "answers": [
+       "organised"
+      ],
+      "answer": "organised",
+      "explain": "The chalet already took place: organised.",
+      "title": "The Class Chalet",
+      "q": "Fix word 1: “organise”"
+     },
+     {
+      "type": "fix",
+      "n": 2,
+      "wrong": "cook",
+      "kind": "grammar",
+      "answers": [
+       "cooked"
+      ],
+      "answer": "cooked",
+      "explain": "Keep the list of actions in the past: cooked.",
+      "title": "The Class Chalet",
+      "q": "Fix word 2: “cook”"
+     },
+     {
+      "type": "fix",
+      "n": 3,
+      "wrong": "say",
+      "kind": "grammar",
+      "answers": [
+       "said"
+      ],
+      "answer": "said",
+      "explain": "In the past: said.",
+      "title": "The Class Chalet",
+      "q": "Fix word 3: “say”"
+     },
+     {
+      "type": "fix",
+      "n": 4,
+      "wrong": "has spent",
+      "kind": "grammar",
+      "answers": [
+       "had spent"
+      ],
+      "answer": "had spent",
+      "explain": "It was the first time … had spent: use the past perfect after 'it was the first time'.",
+      "title": "The Class Chalet",
+      "q": "Fix word 4: “has spent”"
+     }
+    ]
+   }
+  ]
+ },
+ "ccloze": {
+  "passages": [
+   {
+    "id": "s1.c1",
+    "title": "The Secret of the Supertrees",
+    "text": "The Supertrees at Gardens by the Bay are not just ⟦1⟧ show. These giant vertical gardens, some as tall ⟦2⟧ a sixteen-storey building, are covered in more than 160,000 plants. Several of them collect rainwater, ⟦3⟧ others have solar panels that generate electricity for the nightly light show. The Supertrees also act as air vents for the nearby conservatories, ⟦4⟧ are kept cool all year round. In this way, they combine beauty ⟦5⟧ purpose.",
+    "say": "The Supertrees at Gardens by the Bay are not just for show. These giant vertical gardens, some as tall as a sixteen-storey building, are covered in more than 160,000 plants. Several of them collect rainwater, while others have solar panels that generate electricity for the nightly light show. The Supertrees also act as air vents for the nearby conservatories, which are kept cool all year round. In this way, they combine beauty with purpose.",
+    "questions": [
+     {
+      "type": "fill",
+      "n": 1,
+      "answers": [
+       "for"
+      ],
+      "answer": "for",
+      "explain": "They are not only FOR show.",
+      "title": "The Secret of the Supertrees",
+      "q": "Gap 1: write one word."
+     },
+     {
+      "type": "fill",
+      "n": 2,
+      "answers": [
+       "as"
+      ],
+      "answer": "as",
+      "explain": "as tall AS a sixteen-storey building.",
+      "title": "The Secret of the Supertrees",
+      "q": "Gap 2: write one word."
+     },
+     {
+      "type": "fill",
+      "n": 3,
+      "answers": [
+       "while",
+       "whereas"
+      ],
+      "answer": "while",
+      "explain": "Two facts side by side: some collect rain WHILE others …",
+      "title": "The Secret of the Supertrees",
+      "q": "Gap 3: write one word."
+     },
+     {
+      "type": "fill",
+      "n": 4,
+      "answers": [
+       "which"
+      ],
+      "answer": "which",
+      "explain": "A relative word for things: the conservatories, WHICH are kept cool.",
+      "title": "The Secret of the Supertrees",
+      "q": "Gap 4: write one word."
+     },
+     {
+      "type": "fill",
+      "n": 5,
+      "answers": [
+       "with"
+      ],
+      "answer": "with",
+      "explain": "They combine beauty WITH purpose.",
+      "title": "The Secret of the Supertrees",
+      "q": "Gap 5: write one word."
+     }
+    ]
+   },
+   {
+    "id": "s1.c2",
+    "title": "Why We Procrastinate",
+    "text": "Almost everyone has put ⟦1⟧ a task they did not want to do. Psychologists say that procrastination is not a problem of laziness ⟦2⟧ of emotions. When a task makes us feel anxious or bored, we avoid it to feel better in the short term. ⟦3⟧, the task does not go away, and the stress only grows. One useful strategy is to break a large task into smaller steps, ⟦4⟧ that each step feels manageable. Another is to reward ⟦5⟧ after completing each step.",
+    "say": "Almost everyone has put off a task they did not want to do. Psychologists say that procrastination is not a problem of laziness but of emotions. When a task makes us feel anxious or bored, we avoid it to feel better in the short term. Unfortunately, the task does not go away, and the stress only grows. One useful strategy is to break a large task into smaller steps, so that each step feels manageable. Another is to reward yourself after completing each step.",
+    "questions": [
+     {
+      "type": "fill",
+      "n": 1,
+      "answers": [
+       "off"
+      ],
+      "answer": "off",
+      "explain": "A phrasal verb meaning delay: put OFF a task.",
+      "title": "Why We Procrastinate",
+      "q": "Gap 1: write one word."
+     },
+     {
+      "type": "fill",
+      "n": 2,
+      "answers": [
+       "but"
+      ],
+      "answer": "but",
+      "explain": "A pair of ideas: not laziness BUT emotions.",
+      "title": "Why We Procrastinate",
+      "q": "Gap 2: write one word."
+     },
+     {
+      "type": "fill",
+      "n": 3,
+      "answers": [
+       "Unfortunately"
+      ],
+      "answer": "Unfortunately",
+      "explain": "The text turns to a bad result: unfortunately …",
+      "title": "Why We Procrastinate",
+      "q": "Gap 3: write one word."
+     },
+     {
+      "type": "fill",
+      "n": 4,
+      "answers": [
+       "so"
+      ],
+      "answer": "so",
+      "explain": "The result: SO that each step feels manageable.",
+      "title": "Why We Procrastinate",
+      "q": "Gap 4: write one word."
+     },
+     {
+      "type": "fill",
+      "n": 5,
+      "answers": [
+       "yourself",
+       "oneself"
+      ],
+      "answer": "yourself",
+      "explain": "Who gets the reward? The reader: yourself.",
+      "title": "Why We Procrastinate",
+      "q": "Gap 5: write one word."
+     }
+    ]
+   },
+   {
+    "id": "s1.c3",
+    "title": "A Taste of Home",
+    "text": "When Farah moved to London for her studies, the thing she missed most was not her family ⟦1⟧ her friends, but the food. She longed for her mother's nasi lemak, the fragrant rice cooked ⟦2⟧ coconut milk. One weekend, she decided to cook it herself. She called her mother, ⟦3⟧ patiently guided her through every step over a video call. The result was not perfect, ⟦4⟧ it tasted like home. Soon, her flatmates were asking her to cook ⟦5⟧ every weekend.",
+    "say": "When Farah moved to London for her studies, the thing she missed most was not her family or her friends, but the food. She longed for her mother's nasi lemak, the fragrant rice cooked in coconut milk. One weekend, she decided to cook it herself. She called her mother, who patiently guided her through every step over a video call. The result was not perfect, yet it tasted like home. Soon, her flatmates were asking her to cook it every weekend.",
+    "questions": [
+     {
+      "type": "fill",
+      "n": 1,
+      "answers": [
+       "or"
+      ],
+      "answer": "or",
+      "explain": "Not her family OR her friends.",
+      "title": "A Taste of Home",
+      "q": "Gap 1: write one word."
+     },
+     {
+      "type": "fill",
+      "n": 2,
+      "answers": [
+       "in"
+      ],
+      "answer": "in",
+      "explain": "Cooked IN coconut milk.",
+      "title": "A Taste of Home",
+      "q": "Gap 2: write one word."
+     },
+     {
+      "type": "fill",
+      "n": 3,
+      "answers": [
+       "who"
+      ],
+      "answer": "who",
+      "explain": "A relative word for a person: her mother, WHO …",
+      "title": "A Taste of Home",
+      "q": "Gap 3: write one word."
+     },
+     {
+      "type": "fill",
+      "n": 4,
+      "answers": [
+       "yet",
+       "but"
+      ],
+      "answer": "yet",
+      "explain": "A contrast: it was not perfect, YET (or BUT) it tasted like home.",
+      "title": "A Taste of Home",
+      "q": "Gap 4: write one word."
+     },
+     {
+      "type": "fill",
+      "n": 5,
+      "answers": [
+       "it",
+       "nasi"
+      ],
+      "answer": "it",
+      "explain": "What did they ask her to cook? It (the nasi lemak).",
+      "title": "A Taste of Home",
+      "q": "Gap 5: write one word."
+     }
+    ]
+   }
+  ]
+ }
+}

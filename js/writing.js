@@ -298,10 +298,10 @@ WR.addGrownNote && WR.addGrownNote("write", "✒️ Writing (Story Quill)", rid 
 const kidPart = p => { const s = String(p.part || ""), m = s.match(/\(([^)]+)\)\s*$/), k = m ? m[1] : s.split(" · ").pop(); return k.charAt(0).toUpperCase() + k.slice(1); };
 WR.startWriting = async rid => {
   WR.stopWriting(); WR.Voice.stop();
-  const realm = WR.realms.find(r => r.id === rid), list = await WR.bank(rid, "writing");
+  const realm = WR.realmById(rid), list = await WR.bank(rid, "writing");
   const bgA = WR.asset(realm.bg), w = W(), done = list.filter(p => w.best[p.id]).length;
   WR.view(`<div class="lesson-bg" style="background-image:${bgA ? WR.bgCss(bgA.id) : "none"}"></div>
-    <div class="row" style="margin:6px 0 8px"><button class="btn ghost small" id="qBackRealm">← ${WR.esc(realm.name)}</button><b class="title">✒️ The Story Quill · ${realm.level}</b></div>
+    <div class="row" style="margin:6px 0 8px"><button class="btn ghost small" id="qBackRealm">← ${WR.esc(WR.backLabel(realm))}</button><b class="title">✒️ The Story Quill · ${realm.level}</b></div>
     <div class="card quill-head fade-in"><img class="quill-art" src="assets/web/quill.webp" onerror="this.onerror=null;this.src='assets/ui/quill.png'" alt="The Story Quill">
       <div style="flex:1"><h2 style="margin:0">Write your own fairytale magic ✨</h2>
       <p class="muted" style="font-weight:700;margin:.3em 0">Pick a task, make a quick plan, write, then tap <b>Check my writing</b>. The Quill checks 4 things: 🎯 did you answer everything, 💌 is it right for the reader, 🧱 is it well put together, and 💎 your words and grammar.</p>
@@ -312,7 +312,7 @@ WR.startWriting = async rid => {
         <div class="crowns">${b ? crownRow(b.crowns) + ` <small class="muted">${b.total}/20</small>` : '<span class="muted" style="font-size:.8rem">not written yet</span>'}</div>
         ${d && d.text && d.text.trim() ? '<span class="pill draft-pill">📝 draft saved</span>' : ""}</button>`; }).join("")}</div>
     <p class="muted center" style="font-size:.8rem;font-weight:700">🔮 Scores are a friendly practice guess, not a real exam mark. Writing is a bonus skill and isn't needed to unlock the next realm.</p>`);
-  WR.$("#qBackRealm").onclick = () => WR.go("realm", rid);
+  WR.$("#qBackRealm").onclick = () => WR.toRealm(rid);
   document.querySelectorAll(".quill-task").forEach(b => b.onclick = () => openTask(realm, list.find(p => p.id === b.dataset.id)));
 };
 const GENRE = { about: "✏️ Sentences", form: "🪪 Club card", note: "📝 Note", email: "💌 Email", postcard: "🏞️ Postcard", story: "📖 Story", article: "📰 Article",
@@ -325,7 +325,7 @@ function openTask(realm, p, step) {
   render();
 }
 WR._quillDbg = () => Q && { id: Q.p.id, step: Q.step, result: Q.result }; // test hook
-WR.openQuill = async (rid, id, step) => { const realm = WR.realms.find(r => r.id === rid), list = await WR.bank(rid, "writing"); openTask(realm, list.find(p => p.id === id), step); };
+WR.openQuill = async (rid, id, step) => { const realm = WR.realmById(rid), list = await WR.bank(rid, "writing"); openTask(realm, list.find(p => p.id === id), step); };
 
 function taskCard(p) {
   const em = p.email ? `<div class="q-mail"><b>📩 From: ${WR.esc(p.email.from)}</b><p>${WR.esc(p.email.text)}</p><div class="row" style="gap:5px"><span class="muted" style="font-size:.8rem;font-weight:800">Your notes:</span>${p.email.notes.map(n => `<span class="kw">${WR.esc(n)}</span>`).join("")}</div></div>` : "";
@@ -460,10 +460,10 @@ function feedbackStep() {
     ${r.flags.length ? `<div class="q-legend">${kinds.map(k => `<span><mark class="qf qf-${k}">${KL[k]}</mark></span>`).join("")}<span class="muted">Tap or hover a highlight to see why.</span></div><ul class="q-flaglist">${r.flags.slice(0, 8).map(f => `<li><mark class="qf qf-${f.kind}">${WR.esc(f.text)}</mark> ${WR.esc(f.msg)}</li>`).join("")}${r.flags.length > 8 ? `<li class="muted">…and ${r.flags.length - 8} more highlighted above.</li>` : ""}</ul>` : `<div class="muted" style="font-weight:800">✨ No mechanical slips spotted.</div>`}
     ${planted ? `<p class="muted" style="font-weight:800">🌰 ${planted} corrected sentence${planted > 1 ? "s were" : " was"} planted in your Mistake Garden to practise.</p>` : ""}
     <details class="q-model" open><summary>📖 Model answer (${p.level.toUpperCase()})</summary><div class="model-text">${WR.esc(p.model)}</div></details>
-    <div class="row q-actions"><button class="btn ghost" id="qImprove">✏️ Improve my writing</button><span style="flex:1"></span><button class="btn" id="qOthers">📜 Other tasks</button><button class="btn mint" id="qRealm">Back to ${WR.esc(Q.realm.name)}</button></div></div>`;
+    <div class="row q-actions"><button class="btn ghost" id="qImprove">✏️ Improve my writing</button><span style="flex:1"></span><button class="btn" id="qOthers">📜 Other tasks</button><button class="btn mint" id="qRealm">Back to ${WR.esc(WR.backLabel(Q.realm))}</button></div></div>`;
   WR.$("#qImprove").onclick = () => { Q.step = "write"; render(); };
   WR.$("#qOthers").onclick = () => { flush(); WR.startWriting(Q.realm.id); };
-  WR.$("#qRealm").onclick = () => { const id = Q.realm.id; WR.go("realm", id); };
+  WR.$("#qRealm").onclick = () => { const id = Q.realm.id; WR.toRealm(id); };
   document.querySelectorAll("#qHl mark").forEach(m => m.onclick = () => WR.toast("🖍️ " + WR.esc(m.title), 2600));
 }
 })();

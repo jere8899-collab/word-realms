@@ -35,6 +35,8 @@ def lines():
         kind = os.path.basename(f)[:-5]
         if kind in GAP_EXTRA:                                          # the gap games: their extra read-aloud field (the full sentence is `say`)
             for bk in d["books"]: [add("narrator", it[GAP_EXTRA[kind]]) for it in bk["items"]]
+        if f.startswith("data/sg/"):                                   # 🦁 Join It Up: the model sentence (the given sentences and the corrected / filled texts are `say`)
+            for it in d.get("synth", []): add("narrator", it["full"])
         if f.endswith("words.json"):                                   # 🔮 Word Charms: the word, its meaning, its example
             for it in d: [add("narrator", it[k]) for k in ("w", "def", "ex")]
         if f.endswith("story.json"):

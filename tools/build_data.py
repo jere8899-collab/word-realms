@@ -378,5 +378,8 @@ pm_tot = gap_books("marks", MARKS, lambda lvl: {"mode": "tiles", "none": MARK_NO
 json.dump(QUEST, open(f"{ROOT}/b1/quest.json", "w"), ensure_ascii=False, indent=1)
 json.dump(DEBATE, open(f"{ROOT}/c1/debate.json", "w"), ensure_ascii=False, indent=1)
 check_fair("c1/debate", DEBATE)
-json.dump({"counts": counts, "total": tot + sp_tot + wr_tot, "questions": tot, "speaking": sp_tot, "writing": wr_tot, "stories": st_tot, "swap": sw_tot, "forge": fg_tot, "cloze": cz_tot, "marks": pm_tot}, open(f"{ROOT}/counts.json", "w"), indent=1)
+# 🦁 Singapore School English (tools/sg_build.py → data/sg/<level>.json): Join It Up, Spot & Fix, Story Gaps, checked there
+import sg_build
+_sg = sg_build.build(); counts.update(_sg); sg_tot = sum(_sg.values())
+json.dump({"counts": counts, "total": tot + sp_tot + wr_tot, "questions": tot, "speaking": sp_tot, "writing": wr_tot, "stories": st_tot, "swap": sw_tot, "forge": fg_tot, "cloze": cz_tot, "marks": pm_tot, "sg": sg_tot}, open(f"{ROOT}/counts.json", "w"), indent=1)
 print(counts); print("QUESTIONS", tot, "SPEAKING", sp_tot, "WRITING", wr_tot, "TOTAL", tot + sp_tot + wr_tot)

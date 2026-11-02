@@ -110,7 +110,7 @@ function actionFor(k) {
     if (id.startsWith("dojo.") && MG && MG.challenge(id.slice(5))) return () => { WR.go("dojo"); MW.startLesson({ challenge: id.slice(5) }); };
     return null;
   }
-  const [rid, sk] = k.split("/"), realm = WR.realms && WR.realms.find(r => r.id === rid);
+  const [rid, sk] = k.split("/"), realm = WR.realmById(rid);
   if (!realm || !ENG().includes(sk)) return null;
   const core = WR.SKILLS.find(x => x.id === sk);
   if (core) return () => { WR.go("realm", rid); WR.startLesson({ realm: rid, skill: sk, key: sk, title: `${core.name} · ${realm.modeName}` }); };

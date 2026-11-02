@@ -1,0 +1,43 @@
+/* 🦁 Singapore School English (js/sg-english.js): track tabs on the map, level chips, the hub, and the typed answer cards
+   (🔗 Join It Up, 🔍 Spot & Fix, 🧩 Story Gaps) inside lessons. Pastel, like the rest of the game. */
+.track-tabs{display:flex;gap:6px;background:#fff;border-radius:999px;padding:4px;box-shadow:var(--shadow);margin:0 0 8px}
+.track-tabs button{flex:1;min-height:44px;border:0;border-radius:999px;background:transparent;font:800 .92rem Nunito,sans-serif;color:var(--ink2);cursor:pointer;white-space:nowrap}
+.track-tabs button small{font-weight:800;opacity:.75;font-size:.72rem}
+.track-tabs button.on{background:linear-gradient(135deg,#FFE9F1,#F3ECFF);color:var(--ink);box-shadow:inset 0 0 0 2px var(--accent)}
+.sg-chips .gchip small{font-size:.66rem}
+.sg-node{display:grid;grid-template-columns:120px 1fr auto;gap:12px;align-items:center;cursor:pointer;background:linear-gradient(150deg,#FFF1F4,#EAF7FF 60%,#FFF8DC)}
+.sg-node .thumb{width:120px;height:80px;border-radius:16px;object-fit:cover;border:3px solid #fff;box-shadow:var(--shadow)}
+.sg-hero .ov{max-width:640px}
+.sg-games .skill-card{cursor:pointer}
+.sg-note ul{margin:.3em 0;padding-left:1.2em}.sg-note li{margin:.2em 0}.sg-note p{margin:.4em 0}
+.sg-onb{margin-top:10px;background:#FFF6FA;border-radius:16px;padding:6px 10px}
+.sg-onb summary{cursor:pointer;font-weight:900;min-height:40px;display:flex;align-items:center}
+.sg-onb .lvlpick{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin:6px 0 4px}
+.sg-onb .lvlpick button{min-height:44px;padding:4px 2px;font-size:.85rem}
+/* lesson cards */
+.sg-pair{background:#FFFDF3;border:2px dashed #F3D9A4;border-radius:16px;padding:8px 12px;margin:6px 0 10px}
+.sg-pair p{margin:.25em 0;font-weight:800;font-size:1.02rem}
+.sg-line{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;font-weight:800;font-size:1.02rem}
+.sg-line .sg-in{flex:1 1 180px;min-width:0;margin:0}
+.sg-lead{color:var(--ink)}
+.sg-wrong{color:#C2557A;text-decoration-thickness:2px}
+.sg-kind{font-size:.78rem;background:#F3ECFF}
+.sg-n{display:inline-grid;place-items:center;min-width:30px;height:30px;border-radius:50%;background:#FFE3EF}
+.sg-model{margin:6px 0 2px;font-size:1.02rem}
+#hearFull{margin-top:6px}
+/* marks inside a passage: ⟦n|wrong⟧ underlined words and ⟦n⟧ gaps, the current one glows */
+.sgm{white-space:nowrap;border-radius:8px;padding:0 2px}
+.sgm sup{font-size:.68em;font-weight:900;color:#8A6BB0;margin-right:1px}
+.sgm.fix u{text-decoration-thickness:2px;text-underline-offset:3px}
+.sgm.gap i{display:inline-block;min-width:3.2em;border-bottom:2px solid #B9A3D6;font-style:normal}
+.sgm.cur{background:#FFF1A8;box-shadow:0 0 0 2px #FFD95A}
+.sgm.done{background:#D6F5E3}.sgm.missed{background:#FFE3EF}
+@media (max-width:520px){
+  .track-tabs button{font-size:.84rem}.track-tabs button small{display:none}
+  .sg-node{grid-template-columns:76px 1fr auto;gap:10px;padding:8px 10px}.sg-node .thumb{width:76px;height:56px;border-radius:14px}
+  .sg-onb .lvlpick{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .sg-games{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+  .gchips.sg-chips{grid-template-columns:repeat(5,minmax(0,1fr))}
+  .sg-chips .gchip{padding:8px 2px 9px}.sg-chips .gchip small{display:none}.sg-chips .gchip b{font-size:.82rem}
+  .sg-hero p{display:none}.sg-hero{min-height:0}.sg-hero .ov{padding:10px 14px;margin:8px}
+}

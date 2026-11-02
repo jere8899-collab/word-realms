@@ -1,0 +1,191 @@
+{
+ "level": "s4",
+ "synth": [],
+ "edit": {
+  "passages": [
+   {
+    "id": "s4.e1",
+    "title": "Should Phones Be Allowed in Class?",
+    "text": "The question of whether students should ⟦1|allowed⟧ to use phones in class has divided opinion. Supporters argue that phones, if used wisely, ⟦2|provides⟧ instant access to information. Critics, on the other hand, point out that notifications ⟦3|distracts⟧ students from learning. Perhaps the answer lies in teaching students to use technology ⟦4|responsible⟧.",
+    "say": "The question of whether students should be allowed to use phones in class has divided opinion. Supporters argue that phones, if used wisely, provide instant access to information. Critics, on the other hand, point out that notifications distract students from learning. Perhaps the answer lies in teaching students to use technology responsibly.",
+    "questions": [
+     {
+      "type": "fix",
+      "n": 1,
+      "wrong": "allowed",
+      "kind": "grammar",
+      "answers": [
+       "be allowed"
+      ],
+      "answer": "be allowed",
+      "explain": "A passive after 'should' needs 'be': should be allowed.",
+      "title": "Should Phones Be Allowed in Class?",
+      "q": "Fix word 1: “allowed”"
+     },
+     {
+      "type": "fix",
+      "n": 2,
+      "wrong": "provides",
+      "kind": "grammar",
+      "answers": [
+       "provide"
+      ],
+      "answer": "provide",
+      "explain": "'Phones' is plural: provide.",
+      "title": "Should Phones Be Allowed in Class?",
+      "q": "Fix word 2: “provides”"
+     },
+     {
+      "type": "fix",
+      "n": 3,
+      "wrong": "distracts",
+      "kind": "grammar",
+      "answers": [
+       "distract"
+      ],
+      "answer": "distract",
+      "explain": "'Notifications' is plural: distract.",
+      "title": "Should Phones Be Allowed in Class?",
+      "q": "Fix word 3: “distracts”"
+     },
+     {
+      "type": "fix",
+      "n": 4,
+      "wrong": "responsible",
+      "kind": "grammar",
+      "answers": [
+       "responsibly"
+      ],
+      "answer": "responsibly",
+      "explain": "To describe how they use it, use the adverb: responsibly.",
+      "title": "Should Phones Be Allowed in Class?",
+      "q": "Fix word 4: “responsible”"
+     }
+    ]
+   },
+   {
+    "id": "s4.e2",
+    "title": "The Hawker Heritage",
+    "text": "In 2020, Singapore's hawker culture ⟦1|was inscribe⟧ on UNESCO's list of intangible cultural heritage. For many Singaporeans, hawker centres are more than places to eat; they are spaces where people of all backgrounds ⟦2|gathers⟧. Yet the trade faces a challenge, as fewer young people are willing to take over stalls from ⟦3|its⟧ ageing owners. Unless new hawkers ⟦4|will be found⟧, some beloved dishes may disappear.",
+    "say": "In 2020, Singapore's hawker culture was inscribed on UNESCO's list of intangible cultural heritage. For many Singaporeans, hawker centres are more than places to eat; they are spaces where people of all backgrounds gather. Yet the trade faces a challenge, as fewer young people are willing to take over stalls from their ageing owners. Unless new hawkers are found, some beloved dishes may disappear.",
+    "questions": [
+     {
+      "type": "fix",
+      "n": 1,
+      "wrong": "was inscribe",
+      "kind": "grammar",
+      "answers": [
+       "was inscribed"
+      ],
+      "answer": "was inscribed",
+      "explain": "A passive needs the past participle: was inscribed.",
+      "title": "The Hawker Heritage",
+      "q": "Fix word 1: “was inscribe”"
+     },
+     {
+      "type": "fix",
+      "n": 2,
+      "wrong": "gathers",
+      "kind": "grammar",
+      "answers": [
+       "gather"
+      ],
+      "answer": "gather",
+      "explain": "'People' is plural: gather.",
+      "title": "The Hawker Heritage",
+      "q": "Fix word 2: “gathers”"
+     },
+     {
+      "type": "fix",
+      "n": 3,
+      "wrong": "its",
+      "kind": "grammar",
+      "answers": [
+       "their"
+      ],
+      "answer": "their",
+      "explain": "The stalls belong to the older hawkers (plural): their.",
+      "title": "The Hawker Heritage",
+      "q": "Fix word 3: “its”"
+     },
+     {
+      "type": "fix",
+      "n": 4,
+      "wrong": "will be found",
+      "kind": "grammar",
+      "answers": [
+       "are found"
+      ],
+      "answer": "are found",
+      "explain": "After 'unless' (a condition about the future), use the present: are found.",
+      "title": "The Hawker Heritage",
+      "q": "Fix word 4: “will be found”"
+     }
+    ]
+   },
+   {
+    "id": "s4.e3",
+    "title": "Reflections on a Service Trip",
+    "text": "Last December, our school ⟦1|send⟧ a group of students to help build a library in a rural village. Before the trip, I ⟦2|have assumed⟧ that we would be the ones teaching the villagers. In reality, they taught us far more about resourcefulness and community. Living without air-conditioning and fast internet ⟦3|were⟧ difficult at first, but I soon stopped missing them. The experience changed the way I ⟦4|looking⟧ at the world.",
+    "say": "Last December, our school sent a group of students to help build a library in a rural village. Before the trip, I had assumed that we would be the ones teaching the villagers. In reality, they taught us far more about resourcefulness and community. Living without air-conditioning and fast internet was difficult at first, but I soon stopped missing them. The experience changed the way I look at the world.",
+    "questions": [
+     {
+      "type": "fix",
+      "n": 1,
+      "wrong": "send",
+      "kind": "grammar",
+      "answers": [
+       "sent"
+      ],
+      "answer": "sent",
+      "explain": "It happened last December: sent.",
+      "title": "Reflections on a Service Trip",
+      "q": "Fix word 1: “send”"
+     },
+     {
+      "type": "fix",
+      "n": 2,
+      "wrong": "have assumed",
+      "kind": "grammar",
+      "answers": [
+       "had assumed"
+      ],
+      "answer": "had assumed",
+      "explain": "Earlier than another past action: had assumed.",
+      "title": "Reflections on a Service Trip",
+      "q": "Fix word 2: “have assumed”"
+     },
+     {
+      "type": "fix",
+      "n": 3,
+      "wrong": "were",
+      "kind": "grammar",
+      "answers": [
+       "was"
+      ],
+      "answer": "was",
+      "explain": "The subject 'Living without …' is one activity: was.",
+      "title": "Reflections on a Service Trip",
+      "q": "Fix word 3: “were”"
+     },
+     {
+      "type": "fix",
+      "n": 4,
+      "wrong": "looking",
+      "kind": "grammar",
+      "answers": [
+       "look"
+      ],
+      "answer": "look",
+      "explain": "After 'the way I', use the simple verb: look.",
+      "title": "Reflections on a Service Trip",
+      "q": "Fix word 4: “looking”"
+     }
+    ]
+   }
+  ]
+ },
+ "ccloze": {
+  "passages": []
+ }
+}

@@ -168,7 +168,7 @@ WR.screens.phonics = () => {
       return `<button class="card ph-step ${un ? "" : "locked"} ${x ? "done" : ""}" data-u="${i}" ${un ? "" : 'aria-disabled="true"'}><span class="ph-num">${i + 1}</span><span class="ph-ico">${u.icon}</span>
         <span class="ph-txt"><b>${esc(u.name)}</b><small>${esc(u.focus)}</small></span><span class="ph-cr">${x ? WR.crownRow(x.crowns) : un ? '<span class="pill">▶ Play</span>' : "🔒"}</span></button>`; }).join("")}</div>
     <p class="muted ph-note">👪 Grown-ups: computer voices can't say every sound on its own, so each sound comes with a keyword (“sss… sun”). Say the sounds together for extra fun!</p></div>`);
-  WR.$("#phBack").onclick = () => WR.go("realm", "a1");
+  WR.$("#phBack").onclick = () => WR.toRealm("a1");
   document.querySelectorAll(".ph-step").forEach(b => b.onclick = () => {
     const i = +b.dataset.u; if (!unlocked(i)) return WR.toast(`🔒 Finish “${UNITS[i - 1].name}” first!`, 2200);
     WR.startPhonics(i);

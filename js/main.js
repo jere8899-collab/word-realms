@@ -27,9 +27,16 @@ function renderNav() {
 // every running activity is stopped when the screen changes (each module defines its own WR.stopX)
 // (the gap games of js/gap-round.js are stopped through WR.gapGames)
 const STOPS = ["stopLesson", "stopSpeaking", "stopWriting", "stopStory", "stopPlacement", "stopMath", "stopPhonics", "stopCharms"];
+/* ↩️ The "back" of a realm activity (Echo Well, Story Quill, Storybook, gap games, lessons…) goes to WR.toRealm(rid): the
+   realm, or the hub that opened it. WR.from = { screen, arg, label } is set by a hub that borrows a realm's activity (the
+   🦁 Singapore levels hub opens Echo Well / Story Quill of the matching realm) and is cleared by any other screen change. */
+WR.from = null;
+WR.toRealm = rid => { const f = WR.from; WR.from = null; f ? WR.go(f.screen, f.arg) : WR.go("realm", rid); };
+WR.backLabel = realm => WR.from ? WR.from.label : realm.name;
 WR.go = (screen, arg) => {
+  WR.from = null;
   STOPS.forEach(n => WR[n] && WR[n]()); WR.gapGames.forEach(g => g.stop()); WR.Voice.stop();
-  current = screen; currentArg = arg; WR.navActive(screen === "realm" ? "home" : /^(math|dojo|dojoGrid|clock)$/.test(screen) ? "math" : screen);
+  current = screen; currentArg = arg; WR.navActive(screen === "realm" || screen === "sg" ? "home" : /^(math|dojo|dojoGrid|clock)$/.test(screen) ? "math" : screen);
   WR.screens[screen](arg); WR.renderTop();
 };
 
@@ -46,7 +53,7 @@ WR.onOtherTab = () => {
 /* ---------------- onboarding ---------------- */
 function onboarding() {
   WR.$("#navbar").style.display = "none";
-  const draft = { name: "", avatar: "avatar_girl", pet: "pet_bunny", level: "a1" };
+  const draft = { name: "", avatar: "avatar_girl", pet: "pet_bunny", level: "a1", sg: null };   // sg: a Singapore school level picked instead (js/sg-english.js)
   // 📱 T6: three short steps (name + hero → pet → starting realm), each fitting one phone screen with its button visible
   const dots = n => `<div class="onb-dots" aria-label="Step ${n} of 3">${[1, 2, 3].map(k => `<i class="${k === n ? "on" : ""}"></i>`).join("")}</div>`;
   const step1 = () => {
@@ -70,13 +77,17 @@ function onboarding() {
   };
   const step3 = () => {
     WR.view(`<div class="onb">${dots(3)}<div class="card fade-in"><h2>Where should your journey begin?</h2><p class="muted" style="font-weight:700;margin:.2em 0 .6em">New to English? Start at A1. Already confident? Jump ahead. Earlier realms stay open for practice.</p>
-    <div class="lvlpick">${WR.realms.map(r => `<button data-lv="${r.id}" class="${draft.level === r.id ? "sel" : ""}">${r.emoji} ${r.level}<br><small>${r.name}</small></button>`).join("")}</div>
+    <div class="lvlpick">${WR.realms.map(r => `<button data-lv="${r.id}" class="${!draft.sg && draft.level === r.id ? "sel" : ""}">${r.emoji} ${r.level}<br><small>${r.name}</small></button>`).join("")}</div>
+    ${WR.SG ? WR.SG.onbHTML(draft.sg) : ""}
     <div class="mirror-pick" id="mirrorBtn" role="button" tabindex="0"><img src="assets/web/mirror.webp" onerror="this.onerror=null;this.src='assets/ui/mirror.png'" alt=""><div style="flex:1"><b>Not sure? Ask the Magic Mirror 🪞</b><div class="muted" style="font-size:.85rem;font-weight:700">A 3-minute quiz finds your level for you.</div></div><span class="btn small">Try it →</span></div>
     <div class="onb-next"><button class="btn ghost" id="b2">← Back</button><button class="btn mint" id="go">Begin the adventure ✨</button></div></div></div>`);
-    document.querySelectorAll("[data-lv]").forEach(c => c.onclick = () => { draft.level = c.dataset.lv; document.querySelectorAll("[data-lv]").forEach(x => x.classList.toggle("sel", x === c)); });
+    const pickOne = c => document.querySelectorAll("[data-lv],[data-sglv]").forEach(x => x.classList.toggle("sel", x === c));
+    document.querySelectorAll("[data-lv]").forEach(c => c.onclick = () => { draft.level = c.dataset.lv; draft.sg = null; pickOne(c); });
+    // 🦁 a Singapore school level: the map opens on the Singapore track, and the fairy realms open up to the matching CEFR level
+    document.querySelectorAll("[data-sglv]").forEach(c => c.onclick = () => { draft.sg = c.dataset.sglv; draft.level = WR.SG.level(draft.sg).main; pickOne(c); WR.sfx("tap"); WR.$("#go").scrollIntoView({ block: "nearest" }); });
     WR.$("#b2").onclick = step2;
     WR.$("#mirrorBtn").onclick = () => WR.startPlacement({
-      onAccept: lv => { draft.level = lv; finish(); },
+      onAccept: lv => { draft.level = lv; draft.sg = null; finish(); },
       onBack: lv => { if (lv) draft.level = lv; step3(); }
     });
     WR.$("#go").onclick = () => finish();
@@ -85,6 +96,7 @@ function onboarding() {
     {
       const s = WR.state, info = WR.PETS.find(p => p.id === draft.pet);
       s.name = draft.name.trim(); s.avatar = draft.avatar; s.startLevel = draft.level;
+      if (draft.sg) { const g = WR.block("sg"); g.track = "sg"; g.level = draft.sg; }
       s.pet = { species: draft.pet, name: info.name, xp: 0, happiness: 80, hunger: 30, skin: null, lastTick: Date.now(), adopted: Date.now() };
       WR.save(); WR._welcome = `I'm so happy to meet you, ${draft.name.trim()}! 💖`; start(); WR.sfx("level");   // R7: said by the pet on the map, not a pop-up over the name
     }
@@ -131,19 +143,23 @@ WR.screens.quests = () => {
 };
 WR.screens.home = () => {
   WR.ensureDaily();
-  const s = WR.state, cont = WR.continueTarget(), due = WR.Garden ? WR.Garden.dueCount() : 0;
+  const s = WR.state, sgTrack = !!WR.SG && WR.SG.track() === "sg", due = WR.Garden ? WR.Garden.dueCount() : 0;
+  // ▶ Continue: { head, sub, go } from the fairy realms or, on the Singapore track, from js/sg-english.js
+  const ct = !sgTrack && WR.continueTarget(), cont = sgTrack ? WR.SG.continueTarget() : ct && { head: `${ct.realm.emoji} ${ct.realm.level} ${WR.esc(ct.skill.name)} <span style="font-weight:700">(lesson ${ct.lesson})</span>`, sub: WR.esc(ct.goal),
+    go: () => WR.startLesson({ realm: ct.realm.id, skill: ct.skill.id, key: ct.skill.id, title: `${ct.skill.name} · ${ct.realm.modeName}` }) };
   const qDone = s.daily.quests.filter(q => q.claimed).length, qReady = s.daily.quests.some(q => !q.claimed && q.progress >= WR.questDef(q.id).goal);
   WR.view(`<div class="fade-in"><div class="card homehead"><div class="av-big">${WR.avatarHTML(110)}${WR.Rewards && WR.Rewards.chest().ready ? `<button class="chip av-badge gift-ready" id="giftPill" aria-label="Open today's free gift" title="Today's free gift">🎁</button>` : `<button class="chip av-badge" id="wardPill" aria-label="Wardrobe" title="Wardrobe">👗</button>`}</div>
     <div><h1 style="margin:0">Hello, <span class="hero-nm">${WR.userText(s.name)}</span>! 🌸 <button class="chip hero-edit" id="heroEditHome" aria-label="Change my hero name" title="Change my hero name">✏️</button></h1><div class="muted" style="font-weight:800">${WR.userText(s.pet.name)} says: “${WR.esc(WR._welcome || WR.petMood())}”</div>
     <div class="row" style="margin-top:6px"><span class="pill">✅ ${s.totalCorrect} correct answers</span>${WR.STORY ? `<span class="pill" id="bookPill" style="background:#FFF1D6;cursor:pointer">📜 Storybook ${WR.storyPagesFound()}/6 pages</span>` : ""}${s.placement ? `<span class="pill mirror-pill" id="mirrorPill" style="background:#F3ECFF;cursor:pointer">🪞 Mirror says ${s.placement.level.toUpperCase()}</span>` : `<span class="pill mirror-pill" id="mirrorPill" style="background:#F3ECFF;cursor:pointer">🪞 Find my level</span>`}</div></div></div>
-    ${cont ? `<div class="card continue" id="continueCard"><div class="ct"><b>${cont.realm.emoji} ${cont.realm.level} ${WR.esc(cont.skill.name)} <span style="font-weight:700">(lesson ${cont.lesson})</span></b><small>${WR.esc(cont.goal)}</small></div><button class="btn mint" id="continueBtn">▶ Continue</button></div>` : ""}
+    ${cont ? `<div class="card continue" id="continueCard"><div class="ct"><b>${cont.head}</b><small>${cont.sub}</small></div><button class="btn mint" id="continueBtn">▶ Continue</button></div>` : ""}
     <div class="grid g2" style="margin-top:14px;align-items:start">
-      <div><h2 class="map-h">🗺️ The Realm Map</h2><div class="map"><div class="map-path"></div>${WR.realms.map((r, i) => {
+      <div>${WR.SG ? `<div class="track-tabs" role="tablist" aria-label="English levels"><button role="tab" data-track="cefr" class="${sgTrack ? "" : "on"}" aria-selected="${!sgTrack}">🏰 Fairy realms <small>A1–C2</small></button><button role="tab" data-track="sg" class="${sgTrack ? "on" : ""}" aria-selected="${sgTrack}">🦁 Singapore <small>P1–JC</small></button></div>` : ""}
+      ${sgTrack ? WR.SG.mapHTML() : `<h2 class="map-h">🗺️ The Realm Map</h2><div class="map"><div class="map-path"></div>${WR.realms.map((r, i) => {
         const un = WR.isUnlocked(i), pr = WR.realmProgress(r.id);
         return `<div class="card realm-node ${un ? "" : "locked"}" data-r="${r.id}" data-i="${i}">${WR.img(r.bg, "thumb", "", true)}
           <div><div><span class="lvl-badge">${r.level}</span><b>${r.emoji} ${r.name}${un ? "" : " 🔒"}</b></div><div class="muted" style="font-size:.85rem;font-weight:700">${r.modeName}</div>
           <div class="prog"><i style="width:${pr.passed / 4 * 100}%"></i></div><div class="muted" style="font-size:.75rem;font-weight:800">${pr.passed}/4 skills passed</div></div>
-          </div>`; }).join("")}</div>
+          </div>`; }).join("")}</div>`}
       ${WR.Math ? `<div class="card math-node" id="mathNode" style="margin-top:14px">${WR.img("bg_math", "thumb", "", true)}<div style="flex:1"><div><span class="lvl-badge">G1–12</span><b>🔢 Number Kingdom</b></div><div class="muted" style="font-size:.85rem;font-weight:700">Maths quests + 🗼 Times-Table Tower</div><div class="muted" style="font-size:.75rem;font-weight:800">👑 ${WR.Math.totalCrowns()} crowns · 🌟 ${WR.Math.mastered()}/132 facts${s.math && s.math.grade ? ` · Grade ${s.math.grade}` : ""}</div></div></div>` : ""}</div>
       <div><div class="home-mini"><button class="card mini-chip${qReady ? " ready" : ""}" id="questsMini"><span class="mi">🎯</span><span><b>${qDone}/${s.daily.quests.length} quests</b><small>${qReady ? "🎁 Prize to claim!" : "Today's quests"}</small></span></button>
         <button class="card mini-chip" id="petMini"><span class="mi mini-pet">${WR.petHTML()}</span><span><b>${WR.userText(s.pet.name)}</b><small>${WR.petFeel(s.pet)}</small></span></button></div><div id="homeGoals"></div>
@@ -160,7 +176,9 @@ WR.screens.home = () => {
   const mn = WR.$("#mathNode"); if (mn) mn.onclick = () => WR.go("math");
   const gn = WR.$("#gardenNudge"); if (gn) gn.onclick = () => WR.go("review");
   const cn = WR.$("#charmsNudge"); if (cn) cn.onclick = () => WR.openCharms();
-  const cc = WR.$("#continueCard"); if (cc) cc.onclick = () => WR.startLesson({ realm: cont.realm.id, skill: cont.skill.id, key: cont.skill.id, title: `${cont.skill.name} · ${cont.realm.modeName}` });
+  const cc = WR.$("#continueCard"); if (cc) cc.onclick = () => cont.go();
+  document.querySelectorAll("[data-track]").forEach(b => b.onclick = () => { if (b.classList.contains("on")) return; WR.SG.setTrack(b.dataset.track); WR.sfx("tap"); WR.screens.home(); });
+  if (sgTrack) WR.SG.bindMap();
   WR.$("#mirrorPill").onclick = () => WR.retakePlacement();
   const bp = WR.$("#bookPill"); if (bp) bp.onclick = () => WR.openStorybook();
   const wp = WR.$("#wardPill"); if (wp) wp.onclick = e => { e.stopPropagation(); WR.go("wardrobe"); }; const gp = WR.$("#giftPill"); if (gp) gp.onclick = e => { e.stopPropagation(); WR.go("wardrobe", "rewards"); };
@@ -196,7 +214,7 @@ WR.bonusSeenInit = () => { const s = WR.state; if (!Array.isArray(s.bonusSeen)) 
 // the gap games (js/gap-round.js) add their own row when they load: Spell Swap, Word Forge, …
 WR.addBonus = row => BONUS.push(row);
 WR.screens.realm = rid => {
-  const r = WR.realms.find(x => x.id === rid), seen = WR.bonusSeenInit();
+  const r = WR.realmById(rid), seen = WR.bonusSeenInit();
   const crowns = k => tileCrowns(rid, k);
   const status = k => { const p = (WR.state.progress[rid] || {})[k], w = WR.waitingText(rid, k);
     return p ? `<div class="crowns">${crowns(k)}${/^🎁/.test(w) ? ` <span class="waiting-tag">${w.replace(/ lessons? waiting!/, " new")}</span>` : ""}</div>` : `<div class="waiting-tag">${w}</div>`; };

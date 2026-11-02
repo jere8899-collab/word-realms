@@ -136,13 +136,13 @@ WR.startCharms = (rid, practice) => WR.go("charmsRound", { lvl: rid, practice: !
 const hl = (ex, w) => esc(ex).replace(new RegExp("\\b(" + w + ")\\b", "i"), "<b class=\"ch-hl\">$1</b>");
 WR.screens.charms = rid => {
   const rec = st(); rec.lvl = rid; WR.save();
-  const realm = WR.realms.find(r => r.id === rid) || WR.realms[0];
+  const realm = WR.realmById(rid) || WR.realms[0];
   WR.view(`<div class="fade-in ch-hub"><div class="row lesson-top" style="margin:6px 0 8px"><button class="btn ghost small" id="chBack">← ${esc(realm.name)}</button><b class="title">🔮 Word Charms</b></div><div class="card center muted">Opening the charm box… ✨</div></div>`);
   load(rid).then(() => { if (WR.current() === "charms" && st().lvl === rid) hub(rid); }).catch(() => WR.toast("📴 Couldn't open the charm box. Check the internet and try again."));
-  WR.$("#chBack").onclick = () => WR.go("realm", rid);
+  WR.$("#chBack").onclick = () => WR.toRealm(rid);
 };
 function hub(rid) {
-  const list = words(rid), c = counts(rid), realm = WR.realms.find(r => r.id === rid), nd = nextDue(rid);
+  const list = words(rid), c = counts(rid), realm = WR.realmById(rid), nd = nextDue(rid);
   const newLeft = list.filter(w => !learned(card(rid, w.w))).length, canPlay = c.due > 0 || newLeft > 0;
   const btn = c.due ? `✨ Polish ${Math.min(c.due, ROUND)} charm${c.due > 1 ? "s" : ""}${c.due < ROUND && newLeft ? " + catch new ones" : ""}` : newLeft ? `✨ Catch ${Math.min(NEW_MAX, newLeft)} new charm${Math.min(NEW_MAX, newLeft) > 1 ? "s" : ""}` : "";
   const charm = w => { const k = card(rid, w.w), b = k ? k.b : -1;
@@ -158,7 +158,7 @@ function hub(rid) {
     <div class="card ch-box"><div class="ch-box-h"><b>${realm.emoji} ${lvlName(rid)} charm box</b><span class="pill">${c.learned}/${list.length} caught · 💎 ${c.mastered}</span></div>
       <div class="ch-grid">${list.map(charm).join("")}</div></div>
     <p class="muted ph-note">💡 New words come 4 at a time. Each one comes back after 1, 3, 7 and 14 days, so it stays bright!</p></div>`);
-  WR.$("#chBack").onclick = () => WR.go("realm", rid);
+  WR.$("#chBack").onclick = () => WR.toRealm(rid);
   const go = WR.$("#chGo"); if (go) go.onclick = () => WR.startCharms(rid);
   const pr = WR.$("#chPractice"); if (pr) pr.onclick = () => WR.startCharms(rid, true);
   WR.bindLevelTabs("charms");

@@ -32,7 +32,7 @@ const Garden = WR.Garden = {
     const prev = old >= 0 ? s.mistakes.splice(old, 1)[0] : null;
     s.mistakes.unshift({
       id, realm, skill: skill || "special", type: it.type, q: it.q, say: it.say || null, said: it.say || null, pic: it.pic || null,
-      passage: it.passage ? { title: it.passage.title, text: it.passage.text } : null,
+      passage: it.passage ? { title: it.passage.title, text: it.passage.text, ...(it.passage.say ? { say: it.passage.say } : {}) } : null,   // say: the narrated text (🦁 Spot & Fix / Story Gaps)
       options: it.options ? it.options.slice() : null, correct, explain: it.explain, notes: it.notes || null, raw: it._raw || null,
       at: Date.now(), due: Date.now(), box: 0, misses: (prev ? prev.misses || 1 : 0) + 1, bloomed: false
     });

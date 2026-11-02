@@ -54,13 +54,13 @@ WR.GapRound = cfg => {
   /* ---------- the book shelf (hub) ---------- */
   WR.screens[cfg.hub] = rid => {
     const rec = st(); rec.lvl = rid; WR.save();
-    const realm = WR.realms.find(r => r.id === rid) || WR.realms[0];
+    const realm = WR.realmById(rid) || WR.realms[0];
     WR.view(`<div class="fade-in sw-hub">${top(realm)}<div class="card center muted">${cfg.opening}</div></div>`);
-    $("Back").onclick = () => WR.go("realm", rid);
+    $("Back").onclick = () => WR.toRealm(rid);
     cfg.load(rid).then(() => { if (WR.current() === cfg.hub && st().lvl === rid) hub(rid); }).catch(() => WR.toast(cfg.offline));
   };
   function hub(rid) {
-    const d = cfg.set(rid), realm = WR.realms.find(r => r.id === rid), done = st().done;
+    const d = cfg.set(rid), realm = WR.realmById(rid), done = st().done;
     WR.view(`<div class="fade-in sw-hub">${top(realm)}
     ${WR.levelTabs(rid)}
     <div class="card sw-intro"><div class="ch-pet">${WR.petHTML()}</div><div style="flex:1;min-width:0"><h2 style="margin:0">${cfg.intro}</h2>
@@ -69,7 +69,7 @@ WR.GapRound = cfg => {
       return `<button class="card sw-book ${x ? "done" : ""}" data-b="${b.id}"><span class="sw-bico">${b.icon}</span><span class="sw-btxt"><b>${esc(b.name)}</b><small>${esc(b.focus)}</small></span>
         <span class="sw-bcr">${x ? WR.crownRow(x.crowns) : '<span class="pill">▶ Play</span>'}</span></button>`; }).join("")}</div>
     <p class="muted ph-note">💡 ${cfg.kidNote || "Every answer comes with a little reason, so you learn while you play!"}</p></div>`);
-    $("Back").onclick = () => WR.go("realm", rid);
+    $("Back").onclick = () => WR.toRealm(rid);
     WR.bindLevelTabs(cfg.hub);
     document.querySelectorAll(".sw-book").forEach(b => b.onclick = () => start(rid, b.dataset.b));
   }

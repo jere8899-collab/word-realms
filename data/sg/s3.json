@@ -1,0 +1,191 @@
+{
+ "level": "s3",
+ "synth": [],
+ "edit": {
+  "passages": [
+   {
+    "id": "s3.e1",
+    "title": "Plastic in Our Oceans",
+    "text": "Scientists estimate that millions of tonnes of plastic ⟦1|enters⟧ the ocean every year. Much of it breaks down into tiny pieces known as microplastics, which ⟦2|is⟧ swallowed by fish and seabirds. Some countries have banned single-use plastic bags, and the results ⟦3|has been⟧ encouraging. However, real change will only happen if each of us ⟦4|make⟧ an effort to reduce waste.",
+    "say": "Scientists estimate that millions of tonnes of plastic enter the ocean every year. Much of it breaks down into tiny pieces known as microplastics, which are swallowed by fish and seabirds. Some countries have banned single-use plastic bags, and the results have been encouraging. However, real change will only happen if each of us makes an effort to reduce waste.",
+    "questions": [
+     {
+      "type": "fix",
+      "n": 1,
+      "wrong": "enters",
+      "kind": "grammar",
+      "answers": [
+       "enter"
+      ],
+      "answer": "enter",
+      "explain": "'Millions of tonnes' is plural: enter.",
+      "title": "Plastic in Our Oceans",
+      "q": "Fix word 1: “enters”"
+     },
+     {
+      "type": "fix",
+      "n": 2,
+      "wrong": "is",
+      "kind": "grammar",
+      "answers": [
+       "are"
+      ],
+      "answer": "are",
+      "explain": "'Which' refers to 'microplastics' (plural): are.",
+      "title": "Plastic in Our Oceans",
+      "q": "Fix word 2: “is”"
+     },
+     {
+      "type": "fix",
+      "n": 3,
+      "wrong": "has been",
+      "kind": "grammar",
+      "answers": [
+       "have been"
+      ],
+      "answer": "have been",
+      "explain": "'The results' is plural: have been.",
+      "title": "Plastic in Our Oceans",
+      "q": "Fix word 3: “has been”"
+     },
+     {
+      "type": "fix",
+      "n": 4,
+      "wrong": "make",
+      "kind": "grammar",
+      "answers": [
+       "makes"
+      ],
+      "answer": "makes",
+      "explain": "'Each of us' is singular: makes.",
+      "title": "Plastic in Our Oceans",
+      "q": "Fix word 4: “make”"
+     }
+    ]
+   },
+   {
+    "id": "s3.e2",
+    "title": "A Career Talk",
+    "text": "During last week's career talk, a marine biologist ⟦1|describe⟧ her work studying coral reefs. She explained that warming seas ⟦2|causes⟧ corals to lose their colour, a process called bleaching. Many of us had never ⟦3|consider⟧ a career in science before. By the end of the talk, several students ⟦4|are⟧ asking how to apply for internships.",
+    "say": "During last week's career talk, a marine biologist described her work studying coral reefs. She explained that warming seas cause corals to lose their colour, a process called bleaching. Many of us had never considered a career in science before. By the end of the talk, several students were asking how to apply for internships.",
+    "questions": [
+     {
+      "type": "fix",
+      "n": 1,
+      "wrong": "describe",
+      "kind": "grammar",
+      "answers": [
+       "described"
+      ],
+      "answer": "described",
+      "explain": "The talk was last week: described.",
+      "title": "A Career Talk",
+      "q": "Fix word 1: “describe”"
+     },
+     {
+      "type": "fix",
+      "n": 2,
+      "wrong": "causes",
+      "kind": "grammar",
+      "answers": [
+       "cause"
+      ],
+      "answer": "cause",
+      "explain": "'Warming seas' is plural: cause.",
+      "title": "A Career Talk",
+      "q": "Fix word 2: “causes”"
+     },
+     {
+      "type": "fix",
+      "n": 3,
+      "wrong": "consider",
+      "kind": "grammar",
+      "answers": [
+       "considered"
+      ],
+      "answer": "considered",
+      "explain": "After 'had never', use the past participle: considered.",
+      "title": "A Career Talk",
+      "q": "Fix word 3: “consider”"
+     },
+     {
+      "type": "fix",
+      "n": 4,
+      "wrong": "are",
+      "kind": "grammar",
+      "answers": [
+       "were"
+      ],
+      "answer": "were",
+      "explain": "The talk is in the past: were.",
+      "title": "A Career Talk",
+      "q": "Fix word 4: “are”"
+     }
+    ]
+   },
+   {
+    "id": "s3.e3",
+    "title": "The School Musical",
+    "text": "This year's school musical, a retelling of a Peranakan family saga, ⟦1|were⟧ a huge success. The cast rehearsed three times a week for six months. The lead actress, who ⟦2|have⟧ never acted before, impressed everyone with her powerful voice. The costumes, ⟦3|sew⟧ by parent volunteers, were stunning. All four shows ⟦4|sell⟧ out within days.",
+    "say": "This year's school musical, a retelling of a Peranakan family saga, was a huge success. The cast rehearsed three times a week for six months. The lead actress, who has never acted before, impressed everyone with her powerful voice. The costumes, sewn by parent volunteers, were stunning. All four shows sold out within days.",
+    "questions": [
+     {
+      "type": "fix",
+      "n": 1,
+      "wrong": "were",
+      "kind": "grammar",
+      "answers": [
+       "was"
+      ],
+      "answer": "was",
+      "explain": "The subject is 'musical' (one show), so use 'was'.",
+      "title": "The School Musical",
+      "q": "Fix word 1: “were”"
+     },
+     {
+      "type": "fix",
+      "n": 2,
+      "wrong": "have",
+      "kind": "grammar",
+      "answers": [
+       "has"
+      ],
+      "answer": "has",
+      "explain": "'Who' refers to one actress: has.",
+      "title": "The School Musical",
+      "q": "Fix word 2: “have”"
+     },
+     {
+      "type": "fix",
+      "n": 3,
+      "wrong": "sew",
+      "kind": "grammar",
+      "answers": [
+       "sewn"
+      ],
+      "answer": "sewn",
+      "explain": "A passive participle is needed: sewn (by parent volunteers).",
+      "title": "The School Musical",
+      "q": "Fix word 3: “sew”"
+     },
+     {
+      "type": "fix",
+      "n": 4,
+      "wrong": "sell",
+      "kind": "grammar",
+      "answers": [
+       "sold"
+      ],
+      "answer": "sold",
+      "explain": "In the past: sold.",
+      "title": "The School Musical",
+      "q": "Fix word 4: “sell”"
+     }
+    ]
+   }
+  ]
+ },
+ "ccloze": {
+  "passages": []
+ }
+}

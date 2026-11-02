@@ -65,7 +65,7 @@ function render() {
         <div class="opts">${opts.map((o, k) => `<button class="opt ${ans ? (o === fill(q.options[q.answer]) ? "right" : o === ans.chosen ? "wrong" : "") : ""}" data-k="${k}" ${ans ? "disabled" : ""}><span class="k">${"ABCD"[k]}</span>${WR.esc(o)}</button>`).join("")}</div>
         <div id="storyFb">${ans ? fbHTML(q, ans.ok) : ""}</div></div>
     </div></div>`);
-  WR.$("#storyQuit").onclick = () => WR.go("realm", r.id);
+  WR.$("#storyQuit").onclick = () => WR.toRealm(r.id);
   if (!last) {
     WR.$("#readAll").onclick = () => readAll(WR.state.settings.rate);
     WR.$("#readSlow").onclick = () => readAll(0.65);
@@ -134,12 +134,12 @@ function finish() {
     <p class="muted" style="font-weight:800">${found >= 6 ? "🌟 The Starlight Storybook is whole again! You finished the tale." : `The Starlight Storybook has ${found} of 6 pages. ${num < 6 ? "The next chapter waits in the next realm." : "Find the missing chapters in the other realms."}`}</p>
     <div class="row" style="justify-content:center"><button class="btn ghost" id="again">📖 Read again</button><button class="btn" id="toRealm">Back to ${WR.esc(r.name)}</button></div></div></div>`);
   WR.$("#again").onclick = () => WR.startStory(r.id);
-  WR.$("#toRealm").onclick = () => WR.go("realm", r.id);
+  WR.$("#toRealm").onclick = () => WR.toRealm(r.id);
   S = null;
 }
 WR.screens.story = async rid => {
   const ch = await WR.loadStory(rid);
-  S = { realm: WR.realms.find(x => x.id === rid), ch, num: WR.realms.findIndex(x => x.id === rid) + 1, page: 0, correct: 0, answers: {}, opts: {} };
+  S = { realm: WR.realmById(rid), ch, num: WR.realms.findIndex(x => x.id === rid) + 1, page: 0, correct: 0, answers: {}, opts: {} };
   render();
 };
 WR.startStory = rid => WR.go("story", rid);

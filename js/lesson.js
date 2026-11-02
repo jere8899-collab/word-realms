@@ -3,7 +3,7 @@
 const WR = window.WR;
 const CHEER = ["Yay! ✨", "You're amazing! 💖", "Sparkly smart! 🌟", "Woohoo! 🎉", "Brilliant! 🌸", "Magic! 🪄"];
 const COMFORT = ["It's okay, we learn together 🫶", "Oopsie! Next one! 🍀", "Don't worry, read the tip 💭", "Almost! You've got this 💪"];
-const MODE_TIME = { mcq: 25, order: 40, listen: 35, reading: 50, picq: 25, spell: 45, mistake: 35, gaps: 55, dictate: 60, events: 60, tf: 30, findword: 35, headings: 90 };
+const MODE_TIME = { mcq: 25, order: 40, listen: 35, reading: 50, picq: 25, spell: 45, mistake: 35, gaps: 55, dictate: 60, events: 60, tf: 30, findword: 35, headings: 90, typed: 90, fix: 45, fill: 45 };
 const BOSS = { b2: { name: "Glimmerfin", face: "🐍", art: "boss_glimmerfin", hp: 100 }, c2: { name: "Archivus the Library Dragon", face: "🐲", art: "boss_archivus", hp: 100 } };
 const curBoss = () => L.boss || BOSS[L.realm.id] || BOSS.b2;                 // 🏆 C6: realm bosses pass their own { name, face, art }
 const bossBeaten = () => L.mode === "boss" && L.bossHP <= 0;
@@ -12,6 +12,10 @@ const bossBeaten = () => L.mode === "boss" && L.bossHP <= 0;
    dictate (listen + type), order with "say" (listen and build), listen with dialogue:true (two voices). */
 const NEWTYPES = new Set(["spell", "mistake", "gaps", "dictate"]);
 const fillGaps = (text, words) => { let i = 0; return text.replace(/___/g, () => words[i++] || "___"); };
+/* 🦁 Singapore-level typed types (js/sg-english.js marks them): typed (🔗 Join It Up, synthesis & transformation: finish the
+   answer line after its printed lead), fix (🔍 Spot & Fix: type the correct word for an underlined mistake in the text) and
+   fill (🧩 Story Gaps: one word for a numbered gap in the text). They keep _raw, so the Mistake Garden re-asks them. */
+const SG_TYPES = new Set(["typed", "fix", "fill"]);
 /* 📖 R19 reading types: events (put what happened in order), tf (True / False / Not given, fixed order, a note per
    wrong pick), findword (tap the word in a line of the text that means …). They keep _raw, so the garden re-asks them with their text. */
 /* 🍭 Tile-ordering modes (one table instead of `ev ? … : …` in four places): sep joins the tiles into the answer,
@@ -30,6 +34,7 @@ function normalize(item, passage) {
   if (item.type === "headings") return { ...item, passage, _raw: item, answer: item.headings.join("\n"), correct: item.headings.join(" / ") };
   if (item.type === "tf") return { ...item, passage, _raw: item, options: item.options.slice(), correct: item.options[item.answer] };
   if (item.type === "findword") { const words = item.line.trim().split(/\s+/); return { ...item, passage, _raw: item, words, hit: words.findIndex(w => bare(w) === item.answer), correct: item.answer }; }
+  if (SG_TYPES.has(item.type)) return { ...item, passage, _raw: item, correct: item.type === "typed" ? item.full : item.answer };
   if (item.type === "order") return { type: "order", q: item.q, answer: item.answer, explain: item.explain, say: item.say, _raw: item.say ? item : undefined };
   if (NEWTYPES.has(item.type)) return { ...item, passage, _raw: item,
     correct: item.type === "mistake" ? `${item.words[item.wrong]} → ${item.fix}` : item.type === "gaps" ? fillGaps(item.text, item.answers) : item.answer };
@@ -76,13 +81,18 @@ WR.buildItems = async (rid, skill, n = 8) => {
   return WR.freshPick(`${rid}/${skill}`, bank.filter(playable), n).map(q => normalize(q));
 };
 WR.normalize = normalize;
+WR.playable = playable;   // 🦁 js/sg-english.js builds its rounds from the same banks
 // 📜 one passage box for lessons, the phone story sheet and the garden (title optional, extra classes/styles allowed)
 // 🏷️ texts with paragraphs (blank line between them, used by match-the-headings) get numbered paragraphs
-const paraHTML = t => t.includes("\n\n") ? t.split("\n\n").map((x, i) => `<p class="para"><b class="pn">${i + 1}</b>${WR.esc(x)}</p>`).join("") : WR.esc(t);
+// 🦁 Spot & Fix / Story Gaps texts carry numbered marks: ⟦3|wrong⟧ = an underlined word to fix, ⟦3⟧ = a gap for one word
+const marksHTML = h => h.replace(/⟦(\d+)\|([^⟧]*)⟧/g, '<span class="sgm fix" data-n="$1"><sup>$1</sup><u>$2</u></span>').replace(/⟦(\d+)⟧/g, '<span class="sgm gap" data-n="$1"><sup>$1</sup><i>&nbsp;</i></span>');
+const paraHTML = t => marksHTML(t.includes("\n\n") ? t.split("\n\n").map((x, i) => `<p class="para"><b class="pn">${i + 1}</b>${WR.esc(x)}</p>`).join("") : WR.esc(t));
 WR.passageHTML = (p, { title = true, style = "" } = {}) =>
   `<div class="passage"${style ? ` style="${style}"` : ""}>${title ? `<h3>📜 ${WR.esc(p.title)}</h3>` : ""}${paraHTML(p.text)}</div>`;
 
 let L = null; // current lesson state
+// ↩️ where a lesson goes back to: its own onQuit (the Singapore levels hub, bosses…), the garden, or its realm (WR.toRealm)
+const leave = o => o.onQuit ? o.onQuit() : o.review ? WR.go("review") : WR.toRealm(o.realm.id);
 let heardOnce = false; // has speech played to the end once this session? (then later listening questions auto-play)
 const phone = () => (window.innerWidth || 1024) <= 520;
 let timerId = null;
@@ -90,7 +100,7 @@ function clearTimer() { if (timerId) { clearInterval(timerId); timerId = null; }
 
 WR.startLesson = async (opts) => {
   clearTimer(); WR.Voice.stop();
-  const realm = WR.realms.find(r => r.id === opts.realm);
+  const realm = WR.realmById(opts.realm);
   const items = opts.items || await WR.buildItems(opts.realm, opts.skill);
   L = { ...opts, realm, items, mode: opts.mode || realm.mode, i: 0, correct: 0, combo: 0, maxCombo: 0, starsEarned: 0,
         hearts: 3, bossHP: 100, meter: 50, lit: 0, jar: [], answered: false };
@@ -126,7 +136,7 @@ function qBody(it) {
   // "📜 Story" chip opens it in a bottom sheet, so the question and answers stay together on screen
   if (it.passage) {
     const prev = L.items[L.i - 1], again = prev && prev.passage === it.passage;
-    h += again && phone() ? `<button class="story-chip" id="storyChip">📜 Story: ${WR.esc(it.passage.title)}</button>`
+    h += again && phone() && !SG_TYPES.has(it.type) ? `<button class="story-chip" id="storyChip">📜 Story: ${WR.esc(it.passage.title)}</button>`
       : WR.passageHTML(it.passage);
   }
   if (it.say && (it.type === "listen" || it.type === "order" || it.type === "dictate")) {
@@ -167,6 +177,8 @@ function qBody(it) {
   } else if (it.type === "dictate") {
     h += `<input class="dict-in" id="dictIn" type="text" placeholder="Type what you hear…" aria-label="Type what you hear">
       <div class="row" style="margin-top:8px"><button class="btn mint" id="checkBtn" disabled>✅ Check</button></div>`;
+  } else if (SG_TYPES.has(it.type)) {
+    h += WR.SG ? WR.SG.cardHTML(it) : "";
   } else if (it.type === "picq") {
     h += `<div class="opts picgrid">${it.options.map((o, k) => `<button class="opt picopt" data-k="${k}" aria-label="${WR.esc(o)}">${WR.picImg(it.art ? it.art[o] : o)}</button>`).join("")}</div>`;
   } else {
@@ -184,13 +196,14 @@ function render() {
     <div class="lesson fade-in"><div class="card qcard">${qBody(it)}</div>
       <div class="card side"><div class="petbox" id="lpet">${WR.petHTML()}</div><div class="bubble" id="lbubble">${WR.esc(L.i === 0 ? "Let's do this together! ✨" : WR.petMood())}</div>
       <div class="lstats" id="lstats">${WR.statsHTML([["⭐", L.starsEarned, "earned"], ["🔥", L.combo, "combo"]])}</div></div></div>`);
-  WR.$("#quitBtn").onclick = () => { clearTimer(); WR.Voice.stop(); L.onQuit ? L.onQuit() : L.review ? WR.go("review") : WR.go("realm", L.realm.id); };
+  WR.$("#quitBtn").onclick = () => { clearTimer(); WR.Voice.stop(); leave(L); };
   if (TILES[it.type]) bindOrder(it);
   else if (it.type === "findword") bindFind(it);
   else if (it.type === "spell") bindSpell(it);
   else if (it.type === "mistake") bindMistake(it);
   else if (it.type === "gaps") bindGaps(it);
   else if (it.type === "dictate") bindDictate(it);
+  else if (SG_TYPES.has(it.type)) bindTyped(it);
   else document.querySelectorAll(".opt").forEach(b => b.onclick = () => pick(b, it));
   if (WR.$("#playBtn")) bindListen(it);
   const sc = WR.$("#storyChip"); if (sc) sc.onclick = () => storySheet(it.passage);
@@ -317,6 +330,21 @@ function bindDictate(it) {
     answer(ok, it, ok ? "" : `<div class="dict-check">${marked}</div><div class="muted" style="font-size:.85rem">Green words you got right; pink ones to practise.</div>`);
   };
 }
+// 🦁 typed answers: WR.SG.mark() says right / wrong (with a why-not note) or gives a friendly nudge that is not a try
+function bindTyped(it) {
+  const inp = WR.$("#sgIn"), btn = WR.$("#checkBtn"), hq = WR.$("#hearQ");
+  document.querySelectorAll(`.sgm[data-n="${it.n}"]`).forEach(m => m.classList.add("cur"));
+  if (hq) hq.onclick = () => WR.say(it.say);
+  inp.oninput = () => { btn.disabled = !inp.value.trim() || L.answered; };
+  inp.onkeydown = e => { if (e.key === "Enter" && !btn.disabled) { e.preventDefault(); btn.click(); } };
+  btn.onclick = () => {
+    const r = WR.SG.mark(it, inp.value);
+    if (r.nudge) { WR.toast(r.nudge, 2600, { now: true }); inp.focus(); return; }
+    inp.disabled = true; btn.disabled = true; inp.classList.add(r.ok ? "right" : "wrong");
+    document.querySelectorAll(`.sgm[data-n="${it.n}"]`).forEach(m => { m.classList.add(r.ok ? "done" : "missed"); const w = m.querySelector("u,i"); if (w) w.textContent = it.answer; });
+    answer(r.ok, it, WR.SG.resultHTML(it, inp.value, r));
+  };
+}
 function startTimer(it) {
   clearTimer();
   const total = MODE_TIME[it.type === "headings" ? "headings" : it.passage ? "reading" : it.type] || 25;   // a whole multi-paragraph text gets longer
@@ -326,7 +354,7 @@ function startTimer(it) {
     L._left -= 0.25; const left = L._left, bar = WR.$("#timerBar");
     if (bar) bar.style.width = Math.max(0, left / total * 100) + "%";
     if (left <= 0) { clearTimer(); if (!L.answered) { document.querySelectorAll(".opt").forEach(b => { if (it.options[+b.dataset.k] === it.correct) b.classList.add("right"); b.disabled = true; });
-      document.querySelectorAll(".mword,.gap,.tile,#checkBtn,#dictIn").forEach(b => b.disabled = true);
+      document.querySelectorAll(".mword,.gap,.tile,#checkBtn,#dictIn,#sgIn").forEach(b => b.disabled = true);
       answer(false, it, "⏰ Time's up!" + (it.options ? "" : ` Answer: <b>${WR.esc(it.type === "order" ? it.answer : it.correct)}</b>`)); } }
   }, 250);
 }
@@ -370,13 +398,14 @@ function answer(ok, it, extra = "") {
   if (ok && WR.$("#bossFace")) WR.$("#bossFace").classList.add("hit");
   petReact(ok);
   WR.setStats([["⭐", L.starsEarned, "earned"], ["🔥", L.combo, "combo"]]);
-  const transcript = it.say ? `<div class="transcript"><div>🎧 “${WR.sayHTML(it.say)}”</div><button class="btn ghost small" id="replay">🔁 Replay</button></div>` : "";
+  const transcript = it.say && !SG_TYPES.has(it.type) ? `<div class="transcript"><div>🎧 “${WR.sayHTML(it.say)}”</div><button class="btn ghost small" id="replay">🔁 Replay</button></div>` : "";
   const lost = (L.mode === "boss" || L.mode === "dragon") && L.hearts === 0;
   const wn = whyNot(ok, it);   // R19: a True/False note already quotes the line, so the rule line isn't repeated under it
   const last = L.i >= L.items.length - 1 || lost || ((L.mode === "boss" || L.mode === "dragon") && L.bossHP <= 0);
   WR.$("#explain").innerHTML = `<div class="explain ${ok ? "good" : "bad"}">${ok ? "✅ Correct!" : "💭 Not quite."} ${extra}${wn}${wn && it.type === "tf" ? "" : `<div class="why-rule" style="font-weight:700;margin-top:4px">💡 ${WR.esc(it.explain)}</div>`}${transcript}</div>
     <div class="row" style="margin-top:12px;justify-content:flex-end"><button class="btn ${ok ? "mint" : ""}" id="nextBtn">${last ? "See results ✨" : "Next →"}</button></div>`;
   const rp = WR.$("#replay"); if (rp) rp.onclick = () => WR.say(it.say);
+  const hf = WR.$("#hearFull"); if (hf) hf.onclick = () => WR.say(it.type === "typed" ? it.full : it.passage ? it.passage.say : it.say);
   WR.tapOnce(WR.$("#nextBtn"), () => { WR.Voice.stop(); if (last) finish(lost); else { L.i++; render(); } });
   WR.$("#nextBtn").scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
@@ -417,8 +446,8 @@ function finish(lost) {
   if (opts.onFinish) opts.onFinish({ won, lost: !!lost, score, crowns });   // 🏆 C6 hook (realm bosses, stickers)
   if (opts.nextLabel) WR.$("#nextStep").textContent = opts.nextLabel;
   WR.$("#again").onclick = () => opts.replay ? opts.replay() : WR.startLesson({ realm: opts.realm.id, skill: opts.skill, key: opts.key, title: opts.title });
-  const bk = WR.$("#back"); if (bk) bk.onclick = () => WR.go("realm", opts.realm.id);
-  WR.$("#nextStep").onclick = () => opts.onNext ? opts.onNext() : opts.review ? WR.go("review") : nx ? WR.startLesson({ realm: opts.realm.id, skill: nx.id, key: nx.id, title: `${nx.name} · ${opts.realm.modeName}` }) : WR.go("realm", opts.realm.id);
+  const bk = WR.$("#back"); if (bk) bk.onclick = () => leave(opts);
+  WR.$("#nextStep").onclick = () => opts.onNext ? opts.onNext() : nx && !opts.review ? WR.startLesson({ realm: opts.realm.id, skill: nx.id, key: nx.id, title: `${nx.name} · ${opts.realm.modeName}` }) : leave(opts);
   if (lv && lv.evolved) setTimeout(() => WR.modal(`<h2>✨ Evolution! ✨</h2><div class="petbox cheer" style="width:180px;height:180px;margin:auto">${WR.petHTML()}</div><p><b>${WR.userText(WR.state.pet.name)}</b> became <b>${WR.petInfo().stages[WR.petStage(lv.level)]}</b>!</p><button class="btn" onclick="this.closest('.modal-bg').remove()">Hooray!</button>`), 600);
 }
 // the next core skill to play in a realm: first one never played, else the weakest (lowest best score); never the one just played

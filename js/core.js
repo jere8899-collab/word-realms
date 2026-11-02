@@ -174,6 +174,7 @@ const earnHash = k => { let h = 2166136261; k = String(k); for (let i = 0; i < k
    forge ⚒️ (js/forge.js): best result per Word Forge anvil (same shape as swap), rounds, last level
    cloze 🌉 (js/cloze.js): best result per Word Bridges text (same shape as swap), rounds, last level
    marks 🧚 (js/marks.js): best result per Punctuation Pixies book (same shape as swap), rounds, last level
+   sg 🦁 (js/sg-english.js): track ("cefr" fairy realms | "sg" Singapore levels), level ("p1" … "adult"), best per game ({ "p5.synth": { best, crowns, plays, at } }), rounds
    crowned = the block keeps crowned units in done{} (WR.finishUnit); the cloud progress score counts their crowns (js/cloud.js).
    Gap games (js/gap-round.js: Spell Swap, Word Forge, Word Bridges, Punctuation Pixies) all share the same shape: gapBlock(). */
 const gapBlock = () => ({ fresh: () => ({ done: {}, rounds: 0, lvl: null }), maps: ["done"], crowned: true });
@@ -184,7 +185,9 @@ const BLOCKS = {
   swap: gapBlock(),
   forge: gapBlock(),
   cloze: gapBlock(),
-  marks: gapBlock()
+  marks: gapBlock(),
+  // 🦁 Singapore School English (js/sg-english.js): which English track the map shows, the chosen school level, best result per game
+  sg: { fresh: () => ({ track: "cefr", level: null, done: {}, rounds: 0 }), maps: ["done"], crowned: true }
 };
 const freshBlocks = () => Object.fromEntries(Object.entries(BLOCKS).map(([k, b]) => [k, b.fresh()]));
 const fixBlock = (s, k) => { const b = BLOCKS[k], v = s[k]; s[k] = Object.assign(b.fresh(), v && typeof v === "object" ? v : {}); for (const m of b.maps) s[k][m] = s[k][m] || {}; return s[k]; };
@@ -607,7 +610,11 @@ WR.recordLesson = (rid, key, score) => {
 WR.allSkills = () => SKILLS.concat(WR.SPEAKING || [], WR.WRITING || [], WR.STORY || [], WR.PHONICS || [], WR.CHARMS || [], WR.gapGames.map(g => g.info));
 WR.gapGames = [];   // filled by WR.GapRound (js/gap-round.js): { id, info, hub, round, open, stop, tile }, in load order
 WR.skillInfo = id => WR.allSkills().find(x => x.id === id) || { id, name: id, icon: "✨" };
-WR.levelOf = rid => { const r = WR.realms && WR.realms.find(y => y.id === rid); return r ? r.level : ""; };
+/* 🗺️ ONE realm lookup for every screen: a fairy realm (data/realms.json, A1–C2) or a Singapore school level (js/sg-english.js
+   registers "sg-p1" … "sg-adult" through WR.extraRealms), so lessons, the Mistake Garden and the report work for both tracks. */
+WR.extraRealms = [];
+WR.realmById = id => (WR.realms || []).find(r => r.id === id) || WR.extraRealms.find(r => r.id === id) || null;
+WR.levelOf = rid => { const r = WR.realmById(rid); return r ? r.level : ""; };
 WR.crowns = score => score >= 0.9 ? 3 : score >= 0.7 ? 2 : score >= 0.5 ? 1 : 0;
 // 🏁 the end of a crowned unit (a Storybook chapter, a Phonics Path step, a Spell Swap book, a Word Forge anvil): keeps the best in done[id] = { best, crowns, plays, at },
 // counts the lesson and pays the first finish (1⭐ per right answer + 3⭐) and each NEW crown (2⭐), once ever (kind "fresh").

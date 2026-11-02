@@ -213,6 +213,22 @@ Open it from the **🔢 Maths** tab or the Number Kingdom card above the realm m
 
   Screenshots: `screenshots/math_*.png`.
 
+## 🦁 Singapore School English (P1 → JC → Grown-up)
+The home map has two English tracks: **🏰 Fairy realms** (A1–C2) and **🦁 Singapore**. The Singapore track has 13 levels: P1–P6, Sec 1–4/5, JC 1, JC 2 and Grown-up. Each level has its own hub (chips with crown bars, game cards, 🎲 Mixed practice and a 👪 grown-up note naming the PSLE, O-Level or GP part each game practises).
+
+- **Where the rounds come from:** each level draws on the CEFR banks by weight (e.g. P5 = A2 + B1) plus new Singapore-style games:
+  - 🔗 **Join It Up** (synthesis & transformation, typed);
+  - 🔍 **Spot & Fix** (editing for spelling and grammar in a short text);
+  - 🧩 **Story Gaps** (comprehension cloze, one word per gap).
+- **Marking:** each game has why-not notes, friendly nudges and narrator audio.
+- **Code and data:**
+  - code in `js/sg-english.js` and `css/sg.css`;
+  - lesson types `typed` / `fix` / `fill` in `js/lesson.js`;
+  - content in `tools/sg_synth.py`, `tools/sg_edit.py` and `tools/sg_cloze.py`, built and checked by `tools/sg_build.py` (run from `build_data.py`) into `data/sg/<level>.json`;
+  - save block `sg` (crowned).
+- **Plan and later stages:** `SG-ENGLISH-PLAN.md`.
+- **Test:** `tools/test/sgenglish.js`.
+
 ## Art
 All 13 manifest images (4 pets, 3 avatars, 6 realm backgrounds) were made with Grok Bot's built-in image generator, **not Higgsfield**. They are saved at the manifest `path`s, character backgrounds were made transparent, and backgrounds have `thumb` JPGs for the map. If a PNG is missing, the game falls back to the SVG placeholders.
 

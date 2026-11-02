@@ -139,7 +139,7 @@ let S = null;
 WR.stopSpeaking = () => { stopRec(true); S = null; };
 WR.startSpeaking = async (rid, opts = {}) => {
   WR.stopSpeaking(); WR.Voice.stop();
-  const realm = WR.realms.find(r => r.id === rid);
+  const realm = WR.realmById(rid);
   const bank = await WR.bank(rid, "speaking");
   const items = (opts.items || WR.sample(bank, PER_ROUND)).map(x => ({ ...x, best: 0, attempts: 0, passed: false }));
   const forced = opts.mode || (WR.state.speaking && WR.state.speaking.preferShadow ? "shadow" : null);
@@ -188,7 +188,7 @@ function render() {
   WR.$("#hearBtn").onclick = () => play();
   WR.$("#slowBtn").onclick = () => play(0.6);
   WR.$("#rate").oninput = e => { WR.state.settings.rate = +e.target.value; WR.$("#rateVal").textContent = e.target.value + "×"; WR.save(); };
-  WR.$("#quitBtn").onclick = () => { stopRec(true); WR.Voice.stop(); const r = S.realm.id; S = null; WR.go("realm", r); };
+  WR.$("#quitBtn").onclick = () => { stopRec(true); WR.Voice.stop(); const r = S.realm.id; S = null; WR.toRealm(r); };
   const tm = WR.$("#tryMic"); if (tm) tm.onclick = () => { S.mode = "mic"; S.why = null; WR.state.speaking.preferShadow = false; WR.state.speaking.shadowWhy = null; WR.save(); render(); };
   if (mic) WR.$("#micBtn").onclick = () => toggleMic(it);
   else document.querySelectorAll("[data-self]").forEach(b => b.onclick = () => selfRate(it, b.dataset.self));
@@ -291,10 +291,10 @@ function finish() {
     <div class="bubble">${lv ? (lv.evolved ? `I evolved into ${WR.petInfo().stages[WR.petStage(lv.level)]}! 🌟` : `I reached level ${lv.level}! 🎉`) : crowns >= 2 ? "Your voice made the well sparkle! 💖" : "Let's whisper to the well again! 🫶"}</div>
     ${R.items.some(x => x.attempts && !x.passed && x.type === "read") ? `<p class="muted" style="font-weight:700">🌰 Missed sentences were planted in your Mistake Garden.</p>` : ""}
     <p class="muted" style="font-size:.8rem">Speaking is a bonus skill: it earns crowns and stars but isn't needed to unlock the next realm.</p>
-    <div class="row" style="justify-content:center;margin-top:16px"><button class="btn" id="again">↻ Play again</button><button class="btn mint" id="back">Back to ${WR.esc(R.realm.name)}</button></div></div>`);
+    <div class="row" style="justify-content:center;margin-top:16px"><button class="btn" id="again">↻ Play again</button><button class="btn mint" id="back">Back to ${WR.esc(WR.backLabel(R.realm))}</button></div></div>`);
   if (crowns >= 2 || lv) WR.confetti(); WR.sfx(lv ? "level" : "good");
   S = null;
   WR.$("#again").onclick = () => WR.startSpeaking(R.realm.id);
-  WR.$("#back").onclick = () => WR.go("realm", R.realm.id);
+  WR.$("#back").onclick = () => WR.toRealm(R.realm.id);
 }
 })();
