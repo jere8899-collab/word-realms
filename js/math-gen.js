@@ -181,12 +181,17 @@ const svgPieChart = (title, slices, whole) => {
 const vsub = (a, b) => [a[0] - b[0], a[1] - b[1]], vunit = v => { const l = Math.hypot(v[0], v[1]) || 1; return [v[0] / l, v[1] / l]; };
 const vat = (p, v, k) => [p[0] + v[0] * k, p[1] + v[1] * k], f1 = n => +n.toFixed(1), xy = p => `${f1(p[0])},${f1(p[1])}`;
 const mid = (a, b) => [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
-const dirPt = (p, deg, k = 1) => vat(p, [Math.cos(deg * Math.PI / 180), Math.sin(deg * Math.PI / 180)], k);
+/* degree trig kit (SOH-CAH-TOA Tower, Sine & Cosine Castle, Circle Secrets, Lighthouse Lookout, the to-scale figures): degrees ↔
+   radians, sin / cos / tan of an angle in degrees, and a point turned about the origin by d degrees (anticlockwise, y up) */
+const toRad = d => d * Math.PI / 180, toDeg = x => x * 180 / Math.PI;
+const sinD = d => Math.sin(toRad(d)), cosD = d => Math.cos(toRad(d)), tanD = d => Math.tan(toRad(d));
+const rotPt = (p, d) => { const a = toRad(d); return [p[0] * Math.cos(a) - p[1] * Math.sin(a), p[0] * Math.sin(a) + p[1] * Math.cos(a)]; };
+const dirPt = (p, deg, k = 1) => vat(p, [cosD(deg), sinD(deg)], k);
 const vdir = (a, b) => vunit(vsub(b, a)); // the unit vector from a towards b
 /* angle marks, shared by the geometry figures (svgGeo, Scale-Model Studio triangles, Circle Secrets): */
 // the turn from ray u1 to ray u2 (card pixels): t1 = u1's direction, d = signed turn in (-π, π], deg = its size in degrees
 const angSweep = (u1, u2) => { const t1 = Math.atan2(u1[1], u1[0]); let d = Math.atan2(u2[1], u2[0]) - t1;
-  while (d > Math.PI) d -= 2 * Math.PI; while (d <= -Math.PI) d += 2 * Math.PI; return { t1, d, deg: Math.abs(d) * 180 / Math.PI }; };
+  while (d > Math.PI) d -= 2 * Math.PI; while (d <= -Math.PI) d += 2 * Math.PI; return { t1, d, deg: toDeg(Math.abs(d)) }; };
 // the path of a filled angle wedge of radius r at V between unit rays u1 and u2 (d from angSweep)
 const angWedge = (V, u1, u2, r, d) => `M${xy(V)} L${xy(vat(V, u1, r))} A${r},${r} 0 0,${d > 0 ? 1 : 0} ${xy(vat(V, u2, r))} Z`;
 // a right-angle square of side k at V between unit rays u1 and u2
@@ -196,7 +201,7 @@ const angText = (t, x, y, big, small, attrs = "") => `<text${attrs} x="${f1(x)}"
 // fit points in maths coordinates (y up, turned rot degrees) into a box [left, top, width, height] at one scale, centred:
 // returns S(p) → [px, py] on the card, with S.k = the scale (px per unit), so figures stay true to shape
 const fitBox = (pts, box, rotDeg = 0) => {
-  const rot = rotDeg * Math.PI / 180, turn = p => [p[0] * Math.cos(rot) - p[1] * Math.sin(rot), p[0] * Math.sin(rot) + p[1] * Math.cos(rot)];
+  const turn = p => rotPt(p, rotDeg);
   const all = pts.map(turn), xs = all.map(p => p[0]), ys = all.map(p => p[1]);
   const [x0, x1, y0, y1] = [Math.min(...xs), Math.max(...xs), Math.min(...ys), Math.max(...ys)], sc = Math.min(box[2] / (x1 - x0 || 1), box[3] / (y1 - y0 || 1));
   const S = p => { const q = turn(p); return [box[0] + (q[0] - x0) * sc + (box[2] - (x1 - x0) * sc) / 2, box[1] + (y1 - q[1]) * sc + (box[3] - (y1 - y0) * sc) / 2]; };
@@ -229,6 +234,8 @@ const figShape = (P, fill) => `<polygon points="${P.map(xy).join(" ")}" fill="${
 const figEdge = (a, b, dash) => `<line class="${dash ? "mhid" : "medge"}" x1="${f1(a[0])}" y1="${f1(a[1])}" x2="${f1(b[0])}" y2="${f1(b[1])}" stroke="${dash ? LINE : INK}" stroke-width="${dash ? 2 : 2.6}"${dash ? ` stroke-dasharray="5 4"` : ""} stroke-linecap="round"/>`;
 // a length label (class mlab, data-t = its text, so tests can read the figure back) beside point p, nudged dx, dy pixels
 const figLab = (p, t, dx = 0, dy = 0, anchor = "middle") => `<text class="mlab" data-t="${esc(t)}" x="${f1(p[0] + dx)}" y="${f1(p[1] + dy + 4)}" font-size="12.5" text-anchor="${anchor}" font-weight="900" fill="#c2457a" paint-order="stroke" stroke="#FFFDF8" stroke-width="3.5">${esc(t)}</text>`;
+// a length label beside side AB (card pixels), pushed out to the side away from point F (Circle Secrets, Lighthouse Lookout)
+const figLens = (A, B, t, F) => { const c = mid(A, B), u = vdir(A, B); let n = [-u[1], u[0]]; if (n[0] * (c[0] - F[0]) + n[1] * (c[1] - F[1]) < 0) n = [-n[0], -n[1]]; return figLab(c, t, n[0] * 17, n[1] * 13); };
 // a small right-angle square at a foot point (card pixels), towards side sx (±1) and upwards
 const figRight = (f, sx = -1) => `<path d="M${xy([f[0] + 9 * sx, f[1]])} L${xy([f[0] + 9 * sx, f[1] - 9])} L${xy([f[0], f[1] - 9])}" fill="none" stroke="${LINE}" stroke-width="1.6"/>`;
 const coin = c => `<span class="mcoin c${c}">${c >= 100 ? "$" + c / 100 : c + "¢"}</span>`;
@@ -254,7 +261,7 @@ M.longMulSteps = (a, b) => { const bs = String(b).split("").reverse(); const out
 /* ====================== TOPICS ====================== */
 const TOPICS = [];
 const topic = (grade, id, name, icon, desc, gen, opt = {}) => TOPICS.push(Object.assign({ grade, id: `g${grade}.${id}`, name, icon, desc, gen }, opt));
-M._internal = { Q, num, mcq, mcqWhy, numWhy, T, NAMES, THINGS, COUNT_EMOJI, PASTEL, INK, LINE, esc, svgBox, cardSvg, cellKey, figKey, hasCell, nearCells, gridPaper, gridSheet, gridCell, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, axes, svgBars, svgLine, svgPieChart, svgGeo, fitBox, dirPt, f1, xy, mid, vat, vdir, angSweep, angWedge, angText, rightPath, figCard, figShape, figEdge, figLab, figRight, coin, emojiRows, table, colAdd, colSub, topic, TOPICS, gcd, lcm, rd, fmt, fdp, money, simp, fracTex, fracStr, mixedTex, sgn, poly, lin, paren, pm, undo, coef, ord, sum, asc, median, freqTotals };
+M._internal = { Q, num, mcq, mcqWhy, numWhy, T, NAMES, THINGS, COUNT_EMOJI, PASTEL, INK, LINE, esc, svgBox, cardSvg, cellKey, figKey, hasCell, nearCells, gridPaper, gridSheet, gridCell, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, axes, svgBars, svgLine, svgPieChart, svgGeo, fitBox, toRad, toDeg, sinD, cosD, tanD, rotPt, dirPt, f1, xy, mid, vat, vdir, angSweep, angWedge, angText, rightPath, figCard, figShape, figEdge, figLab, figLens, figRight, coin, emojiRows, table, colAdd, colSub, topic, TOPICS, gcd, lcm, rd, fmt, fdp, money, simp, fracTex, fracStr, mixedTex, sgn, poly, lin, paren, pm, undo, coef, ord, sum, asc, median, freqTotals };
 M.TOPICS = TOPICS;
 M.topic = id => TOPICS.find(t => t.id === id);
 M.gradeTopics = g => TOPICS.filter(t => t.grade === g);

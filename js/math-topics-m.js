@@ -1,7 +1,7 @@
 /* 🔢 Number Kingdom topics, Grades 5–8 (Singapore Primary 5–6, Secondary 1–2). */
 (function () {
 const M = (typeof module !== "undefined" && module.exports) ? require("./math-gen.js") : window.MathGen;
-const { Q, num, mcq, mcqWhy, numWhy, T, topic, PASTEL, INK, LINE, esc, svgBox, fitBox, cellKey, figKey, hasCell, nearCells, gridSheet, svgPieChart, svgGeo, cardSvg, dirPt, f1, xy, mid, vdir, angSweep, angWedge, angText, figCard, figShape, figEdge, figLab, figRight, gcd, lcm, rd, fmt, fdp, simp, fracTex, fracStr, mixedTex, poly, lin, paren, pm, undo, coef, ord, sum, asc, median } = M._internal;
+const { Q, num, mcq, mcqWhy, numWhy, T, topic, PASTEL, INK, LINE, esc, svgBox, fitBox, cellKey, figKey, hasCell, nearCells, gridSheet, svgPieChart, svgGeo, cardSvg, sinD, cosD, tanD, rotPt, dirPt, f1, xy, mid, vdir, angSweep, angWedge, angText, figCard, figShape, figEdge, figLab, figRight, gcd, lcm, rd, fmt, fdp, simp, fracTex, fracStr, mixedTex, poly, lin, paren, pm, undo, coef, ord, sum, asc, median } = M._internal;
 
 /* ---------- Grade 5 (Primary 5) ---------- */
 topic(5, "fracmul", "Fraction Spells", "✨", "Multiply fractions", r => {
@@ -35,6 +35,7 @@ const dg = d => `${d}°`;
 // n whole-number angles between lo and hi that add up to total
 const splitAngles = (r, n, total, lo, hi) => { for (let k = 0; k < 500; k++) { const a = Array.from({ length: n - 1 }, () => r.int(lo, hi)), last = total - a.reduce((x, y) => x + y, 0); if (last >= lo && last <= hi) return r.shuffle(a.concat(last)); } return Array.from({ length: n }, (_, i) => i < n - 1 ? Math.floor(total / n) : total - Math.floor(total / n) * (n - 1)); };
 // a triangle with base angles A (left) and B (right), base 1 long
+// (kept as B × (π/180), not sinD: the last-bit rounding differs, and an exact 45° mark would change size)
 const triPts = (A, B) => { const C = 180 - A - B, rad = Math.PI / 180; return [[0, 0], [1, 0], dirPt([0, 0], A, Math.sin(B * rad) / Math.sin(C * rad))]; };
 // the angle at corner i of a polygon (between its two neighbours)
 const corner = (P, i, t, right) => ({ v: P[i], a: P[(i + P.length - 1) % P.length], b: P[(i + 1) % P.length], t, right });
@@ -83,8 +84,8 @@ const ANGLE_KINDS = {
       ticks: rh ? [[P[0], P[1], 1], [P[1], P[2], 1], [P[2], P[3], 1], [P[3], P[0], 1]] : [], arrows: rh ? [] : [[P[0], P[1], 1], [P[3], P[2], 1], [P[0], P[3], 2], [P[1], P[2], 2]] }, x: angs[xi], giv: [angs[g]],
       q: rh ? "The kite is a rhombus (all four sides are equal). Find ∠x." : "The carpet is a parallelogram (sides with the same arrows are parallel). Find ∠x.",
       hint: opp ? "Opposite angles of a parallelogram or rhombus are equal." : "Two angles next to each other along one side add up to 180°.", steps: opp ? ["∠x is opposite the given angle.", `∠x = ${dg(angs[g])}`] : ["∠x and the given angle are next to each other between parallel sides.", `∠x = 180° − ${dg(angs[g])} = ${dg(angs[xi])}`] }; },
-  trap: r => { let a, b, h = .55, top; do { a = r.int(45, 115); b = r.int(45, 115); top = 1 - h / Math.tan(a * Math.PI / 180) - h / Math.tan(b * Math.PI / 180); } while (top < .3 || top > 1.2 || Math.abs(a - 90) < 6 || Math.abs(b - 90) < 6);
-    const P = [[0, 0], [1, 0], dirPt([1, 0], 180 - b, h / Math.sin(b * Math.PI / 180)), dirPt([0, 0], a, h / Math.sin(a * Math.PI / 180))], angs = [a, b, 180 - b, 180 - a], g = r.int(0, 3), xi = 3 - g;
+  trap: r => { let a, b, h = .55, top; do { a = r.int(45, 115); b = r.int(45, 115); top = 1 - h / tanD(a) - h / tanD(b); } while (top < .3 || top > 1.2 || Math.abs(a - 90) < 6 || Math.abs(b - 90) < 6);
+    const P = [[0, 0], [1, 0], dirPt([1, 0], 180 - b, h / sinD(b)), dirPt([0, 0], a, h / sinD(a))], angs = [a, b, 180 - b, 180 - a], g = r.int(0, 3), xi = 3 - g;
     return { fig: { title: "Toy-bridge trapezium", rot: r.pick([0, 0, 180]), polys: [P], arrows: [[P[0], P[1], 1], [P[3], P[2], 1]], angles: [corner(P, g, dg(angs[g])), corner(P, xi, "x")] }, x: angs[xi], giv: [angs[g]],
       q: "The bridge is a trapezium: the two sides with arrows are parallel. Find ∠x.", hint: "Between the parallel sides, the two angles along one slanted side add up to 180°.", steps: ["∠x and the given angle sit along the same slanted side, between the parallel sides.", `∠x = 180° − ${dg(angs[g])} = ${dg(angs[xi])}`] }; }
 };
@@ -587,8 +588,8 @@ const SIDE = ["AB", "BC", "CA"], BIG = ["PQ", "QR", "RP"], CORNER = ["A", "B", "
 const ANG_FILL = ["#FFC9DA", "#C9E6FF", "#CFF3DF"];
 // corners from the sides (AB on the ground, C above it) or from two angles at A and B with AB = c
 const triFromSides = ([c, a, b]) => { const x = (b * b + c * c - a * a) / (2 * c); return [[0, 0], [c, 0], [x, Math.sqrt(b * b - x * x)]]; };
-const triFromAngles = (al, be, c = 6) => { const R = d => d * Math.PI / 180, t = c * Math.sin(R(be)) / Math.sin(R(al + be)); return [[0, 0], [c, 0], [t * Math.cos(R(al)), t * Math.sin(R(al))]]; };
-const turnPts = (P, deg, flip) => P.map(([x, y]) => { const u = flip ? -x : x, a = deg * Math.PI / 180; return [u * Math.cos(a) - y * Math.sin(a), u * Math.sin(a) + y * Math.cos(a)]; });
+const triFromAngles = (al, be, c = 6) => { const t = c * sinD(be) / sinD(al + be); return [[0, 0], [c, 0], [t * cosD(al), t * sinD(al)]]; };
+const turnPts = (P, deg, flip) => P.map(([x, y]) => rotPt([flip ? -x : x, y], deg));
 const shift = (P, dx) => { const x0 = Math.min(...P.map(p => p[0])), y0 = Math.min(...P.map(p => p[1])); return P.map(([x, y]) => [x - x0 + dx, y - y0]); };
 // two triangles on one card at one scale: tris = [{ P: 3 corners (maths coords), names, sides: [AB, BC, CA labels], angs: [corner labels] }]
 const svgTwins = (title, tris, label = "two triangles", note = "") => {

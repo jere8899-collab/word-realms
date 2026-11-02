@@ -1,7 +1,7 @@
 /* 🔢 Number Kingdom topics, Grades 9–12 (Singapore Secondary 3–4, JC 1–2 / Years 10–13). */
 (function () {
 const M = (typeof module !== "undefined" && module.exports) ? require("./math-gen.js") : window.MathGen;
-const { Q, num, mcq, mcqWhy, numWhy, T, topic, PASTEL, INK, LINE, esc, cardSvg, axes, f1, mid, vat, vdir, angSweep, angWedge, angText, rightPath, figCard, figEdge, figLab, table, rd, fmt, fdp, fracTex, fracStr, poly, lin, paren, sgn, pm, sum, asc, median, freqTotals } = M._internal;
+const { Q, num, mcq, mcqWhy, numWhy, T, topic, PASTEL, INK, LINE, esc, cardSvg, axes, f1, xy, mid, vat, vdir, toDeg, sinD, cosD, tanD, rotPt, angSweep, angWedge, angText, rightPath, figCard, figEdge, figLab, figLens, table, rd, fmt, fdp, fracTex, fracStr, poly, lin, paren, sgn, pm, sum, asc, median, freqTotals } = M._internal;
 const sf3 = v => +(+v.toFixed(12)).toPrecision(3);
 const tol3 = v => Math.max(1e-9, Math.pow(10, Math.floor(Math.log10(Math.abs(v) || 1)) - 2) * 0.51);
 const V2 = v => `\\begin{pmatrix} ${v[0]} \\\\ ${v[1]} \\end{pmatrix}`, V3 = v => `\\begin{pmatrix} ${v[0]} \\\\ ${v[1]} \\\\ ${v[2]} \\end{pmatrix}`;
@@ -37,11 +37,167 @@ topic(9, "stdform", "Standard Form Stars", "🌌", "Numbers in standard form", r
   return mcq(r, `Calculate ${T(`(${a} \\times 10^{${p}}) \\times (${b} \\times 10^{${q}})`)}`, T(right), [`${a * b} \\times 10^{${p * q}}`, `${a + b} \\times 10^{${p + q}}`, `${a * b} \\times 10^{${p + q + 1}}`, `${a * b} \\times 10^{${p + q - 1}}`].filter(w => w !== right).map(T), "Multiply the numbers, add the powers of 10.", [`$${a} \\times ${b} = ${a * b}$`, `$10^{${p}} \\times 10^{${q}} = 10^{${p + q}}$`]);
 });
 topic(9, "trig", "SOH-CAH-TOA Tower", "🗼", "Trigonometry in right triangles", r => {
-  const ang = r.int(15, 75), side = r.int(3, 20), t = r.int(0, 3), R = ang * Math.PI / 180;
-  if (t === 3) { const o = r.int(2, 15), a2 = r.int(2, 15), th = Math.atan(o / a2) * 180 / Math.PI; return num(`In a right-angled triangle the side opposite θ is ${o} cm and the side adjacent to θ is ${a2} cm. Find θ in degrees (1 d.p.).`, rd(th, 1), "tan θ = opposite ÷ adjacent", [`$\\tan\\theta = \\frac{${o}}{${a2}}$`, `$\\theta = \\tan^{-1}\\left(\\frac{${o}}{${a2}}\\right) \\approx ${rd(th, 1).toFixed(1)}^\\circ$`], { a: rd(th, 1).toFixed(1), keys: ["."], tol: 0.051, data: { o, a2, t } }); }
-  const [fn, given, want, v, form] = [["\\sin", "hypotenuse", "opposite", side * Math.sin(R), `\\text{opp} = ${side}\\sin ${ang}^\\circ`], ["\\cos", "hypotenuse", "adjacent to", side * Math.cos(R), `\\text{adj} = ${side}\\cos ${ang}^\\circ`], ["\\tan", "adjacent side", "opposite", side * Math.tan(R), `\\text{opp} = ${side}\\tan ${ang}^\\circ`]][t];
+  const ang = r.int(15, 75), side = r.int(3, 20), t = r.int(0, 3);
+  if (t === 3) { const o = r.int(2, 15), a2 = r.int(2, 15), th = toDeg(Math.atan(o / a2)); return num(`In a right-angled triangle the side opposite θ is ${o} cm and the side adjacent to θ is ${a2} cm. Find θ in degrees (1 d.p.).`, rd(th, 1), "tan θ = opposite ÷ adjacent", [`$\\tan\\theta = \\frac{${o}}{${a2}}$`, `$\\theta = \\tan^{-1}\\left(\\frac{${o}}{${a2}}\\right) \\approx ${rd(th, 1).toFixed(1)}^\\circ$`], { a: rd(th, 1).toFixed(1), keys: ["."], tol: 0.051, data: { o, a2, t } }); }
+  const [fn, given, want, v, form] = [["\\sin", "hypotenuse", "opposite", side * sinD(ang), `\\text{opp} = ${side}\\sin ${ang}^\\circ`], ["\\cos", "hypotenuse", "adjacent to", side * cosD(ang), `\\text{adj} = ${side}\\cos ${ang}^\\circ`], ["\\tan", "adjacent side", "opposite", side * tanD(ang), `\\text{opp} = ${side}\\tan ${ang}^\\circ`]][t];
   return num(`A right-angled triangle has an angle of ${ang}° and the ${given} is ${side} cm. Find the side ${want} the ${ang}° angle (1 d.p.).`, rd(v, 1), `Use ${fn === "\\sin" ? "SOH" : fn === "\\cos" ? "CAH" : "TOA"}.`, [`$${form}$`, `$\\approx ${rd(v, 1).toFixed(1)}$ cm`], { a: rd(v, 1).toFixed(1), keys: ["."], tol: 0.051, data: { ang, side, t } });
 });
+/* ---------- 🚢 Lighthouse Lookout (MOE Sec 3 trigonometry applications: three-figure bearings from North, the compass points
+   as bearings, reading a bearing off a map, the bearing back (θ ± 180°), the angle between two bearings, sailing a distance on a
+   bearing (how far east / north / south: d sin θ, d cos θ), the bearing after sailing two legs (tan⁻¹), angles of elevation
+   (angle and height, with or without eye level) and depression (how far away), and why elevation = depression (alternate
+   angles)). Every map and lookout picture is drawn to scale: map points carry class bpt + data-n, bearing arcs class bang
+   + data-from / data-to (compass degrees, clockwise), lookout points class lpt + data-n, so tests read each figure back. */
+const brgS = v => Number.isInteger(v) ? String(v).padStart(3, "0") : fdp(v, 1).padStart(5, "0"); // 65 → "065", 36.87 → "036.9"
+const brg = v => brgS(v) + "°", mod360 = v => ((v % 360) + 360) % 360;
+const bAt = (p, b, k) => [p[0] + k * sinD(b), p[1] + k * cosD(b)]; // the point k units from p on bearing b (maths coords, y = north)
+const COMPASS = { 0: "north", 45: "north-east", 90: "east", 135: "south-east", 180: "south", 225: "south-west", 270: "west", 315: "north-west" };
+const LINE_NAME = { 0: "North", 90: "East", 180: "South", 270: "West", 360: "North" };
+/* a to-scale map: f = { pts: { A: [east, north] }, norths: [A] (a North arrow at A), refs: [[A, bearing]] (a dashed East /
+   South / West line at A), segs / dash: [[A, B]], arcs: [{ v, from, to, t }] (from bearing `from` turning clockwise to `to`),
+   rights: [[V, A, B]], lens: [[A, B, text, away]], hide: [names drawn without a dot or letter] } */
+const svgMap = (title, f, h = 228) => { const nl = f.nl || 1, pts = f.pts, ends = (f.norths || []).map(n => bAt(pts[n], 0, nl)).concat((f.refs || []).map(([n, b]) => bAt(pts[n], b, nl * .8)));
+  return figCard(title, Object.values(pts).concat(ends), S => {
+    const P = Object.fromEntries(Object.entries(pts).map(([k, p]) => [k, S(p)])), L = nl * S.k, at = (p, b, k) => [p[0] + k * sinD(b), p[1] - k * cosD(b)];
+    let back = "", lines = "", marks = "", text = "";
+    (f.norths || []).forEach(n => { const p = P[n], t = at(p, 0, L); lines += `<line class="bnorth" data-n="${n}" x1="${f1(p[0])}" y1="${f1(p[1])}" x2="${f1(t[0])}" y2="${f1(t[1])}" stroke="${LINE}" stroke-width="2.2" stroke-linecap="round"/><path d="M${xy([t[0] - 5, t[1] + 8])} L${xy(t)} L${xy([t[0] + 5, t[1] + 8])}" fill="none" stroke="${LINE}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>`;
+      text += `<text x="${f1(t[0])}" y="${f1(t[1] - 5)}" font-size="12" text-anchor="middle" font-weight="900" fill="${LINE}">N</text>`; });
+    (f.refs || []).forEach(([n, b]) => { const t = at(P[n], b, L * .8), o = at(t, b, 9); lines += figEdge(P[n], t, true); text += `<text x="${f1(o[0])}" y="${f1(o[1] + 4)}" font-size="11" text-anchor="middle" font-weight="900" fill="${LINE}">${LINE_NAME[b][0]}</text>`; });
+    (f.dash || []).forEach(([a, b]) => { lines += figEdge(P[a], P[b], true); });
+    (f.segs || []).forEach(([a, b]) => { lines += figEdge(P[a], P[b]); });
+    (f.rights || []).forEach(([v, a, b]) => { back += `<path d="${rightPath(P[v], vdir(P[v], P[a]), vdir(P[v], P[b]), 9)}" fill="#E2D6FF" stroke="${LINE}" stroke-width="1.5"/>`; });
+    (f.arcs || []).forEach(g => { const V = P[g.v], sw = mod360(g.to - g.from), rr = g.r || (sw < 40 ? 32 : sw < 70 ? 26 : sw < 200 ? 21 : 17), x = g.t === "x", e1 = at(V, g.from, rr), e2 = at(V, g.to, rr), m = at(V, g.from + sw / 2, rr + 14);
+      back += `<path class="bang" data-t="${esc(g.t)}" data-v="${g.v}" data-from="${fmt(g.from)}" data-to="${fmt(g.to)}" d="M${xy(V)} L${xy(e1)} A${rr},${rr} 0 ${sw > 180 ? 1 : 0},1 ${xy(e2)} Z" fill="${x ? "#FFC9DA" : "#FFF0B8"}" stroke="${x ? "#ff6f91" : LINE}" stroke-width="1.5"/>`;
+      text += angText(g.t, m[0], m[1] + 4.5, 15, 12, ` class="mang" data-t="${esc(g.t)}"`); });
+    (f.lens || []).forEach(([a, b, t, away]) => { text += figLens(P[a], P[b], t, P[away]); });
+    const shown = Object.keys(P).filter(k => !(f.hide || []).includes(k)), box = i => [Math.min(...shown.map(k => P[k][i])), Math.max(...shown.map(k => P[k][i]))], G = mid(...[0, 1].map(i => box(i)).map((_, j, b) => [b[0][j], b[1][j]]));
+    shown.forEach(k => { const p = P[k], o = (f.lab && f.lab[k]) || (Math.hypot(p[0] - G[0], p[1] - G[1]) < 4 ? [-.7, .7] : vdir(G, p));
+      marks += `<circle class="bpt" data-n="${k}" cx="${f1(p[0])}" cy="${f1(p[1])}" r="3.6" fill="${INK}"/>`;
+      text += `<text class="mvtx" x="${f1(p[0] + o[0] * 14)}" y="${f1(p[1] + o[1] * 14 + 4.5)}" font-size="13" text-anchor="middle" font-weight="900" fill="${INK}" paint-order="stroke" stroke="#FFFDF8" stroke-width="3">${k}</text>`; });
+    return back + lines + marks + text; }, "map with bearings", h, "mpic chart mens bear"); };
+/* a to-scale lookout picture: a striped tower of height h (foot F, top T) and, d away on the ground, a person whose eyes are e
+   above the ground (E, standing on O) or a little boat at O. f = { h, d, e, side, boat, labs: { h, d, e }, elev, depr } where
+   elev / depr label the angle of elevation at E (or O) and of depression at T; a dashed horizontal line goes with each */
+const svgLook = (title, f) => { const s = f.side || 1, e = f.e || 0, F = [0, 0], Tp = [0, f.h], O = [s * f.d, 0], E = [s * f.d, e], H1 = [0, e], H2 = [s * f.d, f.h];
+  return figCard(title, [F, Tp, O, [-s * f.d * .12, 0], [s * f.d * 1.08, 0]], S => {
+    const [pF, pT, pO, pE, pH1, pH2] = [F, Tp, O, E, H1, H2].map(S), gx0 = S([-s * f.d * .12, 0])[0], gx1 = S([s * f.d * 1.08, 0])[0], w = 8;
+    let back = `<rect x="${f1(Math.min(gx0, gx1))}" y="${f1(pF[1])}" width="${f1(Math.abs(gx1 - gx0))}" height="9" rx="3" fill="${f.boat ? PASTEL[1] : PASTEL[2]}"/>`, lines = "", marks = "", text = "";
+    const ht = pF[1] - pT[1], band = k => `<rect x="${f1(pF[0] - w + 1)}" y="${f1(pT[1] + ht * k)}" width="${2 * w - 2}" height="${f1(ht * .12)}" fill="${PASTEL[0]}"/>`;
+    back += `<polygon class="ltower" points="${xy([pF[0] - w, pF[1]])} ${xy([pF[0] + w, pF[1]])} ${xy([pT[0] + w * .7, pT[1]])} ${xy([pT[0] - w * .7, pT[1]])}" fill="#FFFDF8" stroke="${INK}" stroke-width="2.2" stroke-linejoin="round"/>${band(.25)}${band(.6)}<path d="M${xy([pT[0] - 7, pT[1]])} L${xy([pT[0], pT[1] - 9])} L${xy([pT[0] + 7, pT[1]])} Z" fill="${PASTEL[4]}" stroke="${INK}" stroke-width="1.6"/>`;
+    if (f.boat) back += `<path d="M${xy([pO[0] - 12, pO[1] - 1])} L${xy([pO[0] + 12, pO[1] - 1])} L${xy([pO[0] + 8, pO[1] + 6])} L${xy([pO[0] - 8, pO[1] + 6])} Z" fill="${PASTEL[5]}" stroke="${INK}" stroke-width="1.6"/><path d="M${xy([pO[0], pO[1] - 3])} L${xy([pO[0], pO[1] - 20])} L${xy([pO[0] + s * -10, pO[1] - 6])} Z" fill="${PASTEL[3]}" stroke="${INK}" stroke-width="1.4"/>`;
+    else back += `<line x1="${f1(pO[0])}" y1="${f1(pO[1])}" x2="${f1(pE[0])}" y2="${f1(pE[1] + (e ? 0 : -14))}" stroke="${PASTEL[3]}" stroke-width="5" stroke-linecap="round"/><circle cx="${f1(pE[0])}" cy="${f1(pE[1] - (e ? 0 : 18))}" r="5.5" fill="${PASTEL[4]}" stroke="${INK}" stroke-width="1.6"/>`;
+    const eye = e ? pE : pO, foot = e ? pH1 : pF;
+    back += `<path d="${rightPath(foot, vdir(foot, pT), vdir(foot, eye), 9)}" fill="#E2D6FF" stroke="${LINE}" stroke-width="1.5"/>`;
+    lines += `<line class="lsight" x1="${f1(eye[0])}" y1="${f1(eye[1])}" x2="${f1(pT[0])}" y2="${f1(pT[1])}" stroke="#ff8fa3" stroke-width="2.4" stroke-linecap="round"/>`;
+    if (e) lines += figEdge(pE, pH1, true);
+    const mark = (V, A, B, t) => { const u1 = vdir(V, A), u2 = vdir(V, B), { t1, d, deg } = angSweep(u1, u2), rr = deg < 30 ? 34 : 26, m = t1 + d / 2, x = t === "x";
+      back += `<path class="lang" data-t="${esc(t)}" d="${angWedge(V, u1, u2, rr, d)}" fill="${x ? "#FFC9DA" : "#FFF0B8"}" stroke="${x ? "#ff6f91" : LINE}" stroke-width="1.5"/>`;
+      text += angText(t, V[0] + (rr + 14) * Math.cos(m), V[1] + (rr + 14) * Math.sin(m) + 4.5, 15, 12, ` class="mang" data-t="${esc(t)}"`); };
+    if (f.elev) mark(eye, foot, pT, f.elev);
+    if (f.depr) { lines += figEdge(pT, pH2, true); mark(pT, pH2, eye, f.depr); }
+    const lab = f.labs || {};
+    if (lab.h) text += figLab(mid(pF, pT), lab.h, -s * (w + 6), 0, s > 0 ? "end" : "start");
+    if (lab.d) text += figLab(mid(pF, pO), lab.d, 0, 20);
+    if (lab.e) text += figLab(mid(pO, pE), lab.e, s * 9, 0, s > 0 ? "start" : "end");
+    [["T", pT, [-s, -.6]], ["F", pF, [-s, .9]], [e ? "E" : "O", eye, e ? [s * .6, -1.1] : [s, f.boat ? .9 : -.4]]].forEach(([n, p, o]) => { marks += `<circle class="lpt" data-n="${n}" cx="${f1(p[0])}" cy="${f1(p[1])}" r="3.2" fill="${INK}"/>`;
+      text += `<text class="mvtx" x="${f1(p[0] + o[0] * 14)}" y="${f1(p[1] + o[1] * 14 + 4.5)}" font-size="13" text-anchor="middle" font-weight="900" fill="${INK}" paint-order="stroke" stroke="#FFFDF8" stroke-width="3">${n}</text>`; });
+    if (e) marks += `<circle class="lpt" data-n="O" cx="${f1(pO[0])}" cy="${f1(pO[1])}" r="0" fill="none"/>`;
+    return back + lines + marks + text; }, "lookout picture", 226, "mpic chart mens look"); };
+// kid-friendly places: map settings for the bearing questions and lookouts for elevation / depression
+const MAP_CTX = [
+  { id: "bay", title: "Lighthouse Bay", unit: "km", A: ["L", "the lighthouse"], B: ["S", "the sailboat"], P: ["P", "the pink kayak"], Q: ["Q", "the blue kayak"], go: "sails" },
+  { id: "camp", title: "School camp trail", unit: "m", A: ["C", "the campsite"], B: ["F", "the flag checkpoint"], P: ["P", "the red checkpoint"], Q: ["Q", "the yellow checkpoint"], go: "walks" },
+  { id: "isle", title: "Turtle Island map", unit: "km", A: ["H", "the harbour"], B: ["T", "Turtle Island"], P: ["P", "Pearl Rock"], Q: ["Q", "Coral Cove"], go: "sails" },
+  { id: "forest", title: "Fairy Forest trail", unit: "m", A: ["G", "the forest gate"], B: ["W", "the wishing well"], P: ["P", "the mushroom hut"], Q: ["Q", "the owl tree"], go: "walks" }
+];
+const UP_CTX = [
+  { id: "flag", title: "School flagpole", obj: "the school flagpole", short: "the flagpole", who: "Mei" },
+  { id: "clock", title: "Clock tower", obj: "the clock tower in the park", short: "the clock tower", who: "Arjun" },
+  { id: "light", title: "Lighthouse", obj: "the lighthouse", short: "the lighthouse", who: "Sam" },
+  { id: "wall", title: "Climbing wall", obj: "the climbing wall at the sports centre", short: "the climbing wall", who: "Aisha" }
+];
+const DOWN_CTX = [
+  { id: "light", title: "Lighthouse lookout", from: "the top of the lighthouse", foot: "the lighthouse", who: "the lighthouse keeper", what: "a sailboat", boat: true },
+  { id: "cliff", title: "Cliff-top lookout", from: "a cliff-top lookout", foot: "the cliff", who: "Ben", what: "a sea turtle on the beach", boat: false },
+  { id: "bird", title: "Bird-park tower", from: "the top of the bird-park tower", foot: "the tower", who: "Lina", what: "a flamingo in the pond", boat: false },
+  { id: "kayak", title: "Harbour lookout", from: "the top of the harbour lookout tower", foot: "the tower", who: "Coach Tan", what: "a kayak", boat: true }
+];
+const cap = s => s[0].toUpperCase() + s.slice(1), dp1 = v => rd(v, 1), RAD_NOTE = "Your calculator is in radian mode! Switch it to degrees (DEG) for angles in degrees.";
+const LOOK = {
+  // which three-figure bearing is a compass direction? (multiple choice)
+  compass: r => { const c = r.pick(MAP_CTX), b = r.pick([45, 90, 135, 180, 225, 270, 315]), k = b / 45, nm = v => COMPASS[mod360(v)];
+    const wrong = [[mod360(360 - b), `${brg(mod360(360 - b))} is the turn from North to ${COMPASS[b]} going anticlockwise. Bearings always turn clockwise, so ${brg(mod360(360 - b))} points ${nm(360 - b)}.`], [mod360(b + 180), `${brg(mod360(b + 180))} points the opposite way, ${nm(b + 180)}. Turn clockwise from North until you face ${COMPASS[b]}.`],
+      [mod360(b + 90), `${brg(mod360(b + 90))} points ${nm(b + 90)}: that turns a quarter turn too far.`], [mod360(b - 90), `${brg(mod360(b - 90))} points ${nm(b - 90)}: that stops a quarter turn too soon.`]].map(([v, t]) => [brg(v), t]);
+    return { k: COMPASS[b], mc: true, data: { b }, q: `${cap(c.B[1])} is due ${COMPASS[b]} of ${c.A[1]}. What is the three-figure bearing of ${c.B[1]} from ${c.A[1]}?`, hint: "Face North, then turn clockwise. Each of the 8 compass points is another 45°.",
+      steps: [`Start facing North (000°) and turn clockwise.`, `${cap(COMPASS[b])} is ${k} eighth${k > 1 ? "s" : ""} of a full turn: ${k} × 45° = ${b}°`, `Write it with three figures: ${brg(b)}`], right: brg(b), rightWhy: `Right: turning clockwise from North, ${COMPASS[b]} is ${k} × 45° = ${b}°, written ${brg(b)}.`, wrong }; },
+  // read a bearing off a map where the angle is given from the N / E / S / W line
+  read: r => { const c = r.pick(MAP_CTX), [A, B] = [c.A[0], c.B[0]], q0 = 90 * r.int(0, 3), a = r.pick([r.int(12, 40), r.int(50, 78)]), opts = [q0, q0 + 90].filter(v => v !== 0), ref = r.pick(opts), up = ref === q0;
+    const th = mod360(up ? q0 + a : q0 + 90 - a), mirror = mod360(up ? q0 - a : q0 + 90 + a), R = ref, k = r.int(5, 9);
+    const [from, to] = up ? [R, th] : [th, R === 360 ? 0 : R], fig = { pts: { [A]: [0, 0], [B]: bAt([0, 0], th, k) }, nl: k * .6, norths: [A], refs: R % 360 ? [[A, R]] : [], segs: [[A, B]], arcs: [{ v: A, from: mod360(from), to: mod360(to), t: `${a}°` }] };
+    return { k: LINE_NAME[R], x: th, data: { th, a, ref: R % 360 }, pic: svgMap(c.title, fig), q: `The map shows ${c.A[1]} ${A} and ${c.B[1]} ${B}. The marked angle is ${a}°. Find the bearing of ${B} from ${A}.`, hint: "A bearing is measured from North, turning clockwise, all the way round to the line to the point.",
+      steps: [`The ${LINE_NAME[R]} line from ${A} is ${R}° clockwise from North.`, `${B} is ${a}° ${up ? "further clockwise" : "back anticlockwise"} from it: ${R} ${up ? "+" : "−"} ${a} = ${th}°`, `Bearing of ${B} from ${A} = ${brg(th)}`],
+      slips: [[a, `${a}° is only the marked angle from the ${LINE_NAME[R]} line. Measure from North, turning clockwise.`], [mirror, `That puts ${B} on the other side of the ${LINE_NAME[R]} line. Look at which side of it ${B} is.`], [mod360(360 - th), `That turns anticlockwise from North. Bearings always turn clockwise.`], [mod360(th + 180), `That is the bearing of ${A} from ${B}, the way back. Stand at ${A} and look towards ${B}.`]] }; },
+  // the bearing back: bearing of A from B, given the bearing of B from A
+  back: r => { const c = r.pick(MAP_CTX), [A, B] = [c.A[0], c.B[0]]; let th; do th = r.int(15, 345); while (th % 90 < 8 || th % 90 > 82); const x = mod360(th + 180), k = 7;
+    const fig = { pts: { [A]: [0, 0], [B]: bAt([0, 0], th, k) }, nl: k * .45, norths: [A, B], segs: [[A, B]], arcs: [{ v: A, from: 0, to: th, t: `${th}°` }, { v: B, from: 0, to: x, t: "x" }] };
+    const slips = [[th, `${brg(th)} is the bearing of ${B} from ${A}. Stand at ${B} and face back towards ${A}: that is half a turn round.`], [mod360(360 - th), "That turns anticlockwise. The way back is the same line turned half a turn (180°)."]].concat(th > 180 ? [[th + 180, `${th + 180}° is more than a full turn. Bearings stay below 360°, so take away 180° instead: ${th} − 180 = ${x}.`]] : [[180 - th, `That is 180 − ${th}. The way back adds 180° to the bearing: ${th} + 180 = ${x}.`]]);
+    return { k: th > 180 ? "minus" : "plus", x, data: { th }, pic: svgMap(c.title, fig), q: `The bearing of ${c.B[1]} ${B} from ${c.A[1]} ${A} is ${brg(th)}. Find the bearing of ${A} from ${B}.`, hint: "The two North lines are parallel. The way back is half a turn (180°) round from the way there.",
+      steps: [`The North lines at ${A} and ${B} are parallel, so the way back points exactly the opposite way: 180° round.`, th < 180 ? `${th} + 180 = ${x}` : `${th} − 180 = ${x} (adding 180 would go past 360°)`, `Bearing of ${A} from ${B} = ${brg(x)}`], slips }; },
+  // the angle between two bearings from one point
+  between: r => { const c = r.pick(MAP_CTX), A = c.A[0], p = r.int(10, 160), g = r.int(35, 140), q = p + g;
+    const fig = { pts: { [A]: [0, 0], P: bAt([0, 0], p, 6 + r.int(0, 2)), Q: bAt([0, 0], q, 6 + r.int(0, 2)) }, nl: 3.8, norths: [A], segs: [[A, "P"], [A, "Q"]], arcs: [{ v: A, from: p, to: q, t: "x" }] };
+    return { k: q > 180 ? "past" : "east", x: g, data: { p, q }, pic: svgMap(c.title, fig), q: `From ${c.A[1]} ${A}, ${c.P[1]} P is on a bearing of ${brg(p)} and ${c.Q[1]} Q is on a bearing of ${brg(q)}. Find angle ${"P" + A + "Q"}.`, hint: "Both bearings are measured from the same North line, so take the smaller one away from the bigger one.",
+      steps: [`Both bearings turn clockwise from the same North line at ${A}.`, `Angle P${A}Q = ${q}° − ${p}° = ${g}°`],
+      slips: [[p + q, "Don't add the bearings: both start at the same North line, so take one away from the other."], [360 - g, `That is the reflex angle, the long way round. Angle P${A}Q is the smaller angle between the two lines.`], [180 - g, "There is no straight line here to take 180° from. Just find the difference of the two bearings."], [q, `${q}° is just the bearing of Q. Take away the bearing of P.`]] }; },
+  // sail d on a bearing: how far east / north / south of the start?
+  travel: r => { const c = r.pick(MAP_CTX), [A, B] = [c.A[0], c.B[0]], se = r.chance(.5), a = r.pick([r.int(20, 38), r.int(52, 70)]), th = se ? 180 - a : a, d = r.int(4, 20), ask = r.pick(["east", "ns"]), ns = se ? "south" : "north";
+    const east = d * sinD(th), nsv = d * cosD(a), x = dp1(ask === "east" ? east : nsv), E = bAt([0, 0], th, d), C = [E[0], 0], u = c.unit;
+    const fig = { pts: { [A]: [0, 0], [B]: E, K: C }, hide: ["K"], nl: d * .32, norths: [A], segs: [[A, B]], dash: [[A, "K"], ["K", B]], rights: [["K", A, B]], arcs: [{ v: A, from: 0, to: th, t: `${th}°` }],
+      lens: [[A, B, `${d} ${u}`, "K"], ask === "east" ? [A, "K", "x", B] : ["K", B, "x", A]] };
+    const want = ask === "east" ? "east" : ns, steps = se ? [`The angle between the path and the South line is 180° − ${th}° = ${a}°.`] : [];
+    steps.push(ask === "east" ? (se ? `East is opposite that ${a}° angle: east = ${d} sin ${a}° ≈ ${fdp(east, 1)} ${u}` : `East is opposite the ${th}° angle: east = ${d} sin ${th}° ≈ ${fdp(east, 1)} ${u}`) : `${cap(ns)} is next to the ${a}° angle: ${ns} = ${d} cos ${a}° ≈ ${fdp(nsv, 1)} ${u}`);
+    return { k: (se ? "se-" : "ne-") + ask, x, tol: .051, data: { th, d, se, ask }, pic: svgMap(c.title, fig), q: `${cap(c.B[1])} ${B} is ${d} ${u} from ${c.A[1]} ${A} on a bearing of ${brg(th)}. How far ${want} of ${A} is ${B}? (1 d.p.)`, hint: `Make a right-angled triangle with the North–South line. The side opposite the angle at ${A} uses sin, the side next to it uses cos.`, steps,
+      slips: [[dp1(ask === "east" ? nsv : east), ask === "east" ? `That is how far ${ns} ${B} is (cos). East is opposite the angle at ${A}, so use sin.` : `That is how far east ${B} is (sin). ${cap(ns)} is next to the angle at ${A}, so use cos.`], [d, `${d} ${u} is the whole slanted path. The ${want} part is a shorter side of the right-angled triangle.`], [dp1(d * tanD(a)), "tan doesn't use the slanted side. With the hypotenuse given, use sin or cos."], [dp1(ask === "east" ? d * Math.sin(th) : d * Math.cos(a)), RAD_NOTE]] }; },
+  // sail two legs (north / south, then east): the bearing of the end from the start
+  legs: r => { const c = r.pick(MAP_CTX), [A, B] = [c.A[0], c.B[0]], se = r.chance(.5), n = r.int(3, 15), e = r.int(3, 15), ns = se ? "south" : "north", u = c.unit, al = toDeg(Math.atan(e / n)), th = se ? 180 - al : al, x = dp1(th);
+    const fig = { pts: { [A]: [0, 0], K: [0, se ? -n : n], [B]: [e, se ? -n : n] }, hide: ["K"], nl: n * (se ? .45 : 1.25), norths: [A], segs: [[A, "K"], ["K", B]], dash: [[A, B]], rights: [["K", A, B]], arcs: [{ v: A, from: 0, to: th, t: "x" }], lens: [[A, "K", `${n} ${u}`, B], ["K", B, `${e} ${u}`, A]] };
+    const steps = [`At ${A}: $\\tan\\alpha = \\frac{${e}}{${n}}$ (east ÷ ${ns}), so $\\alpha \\approx ${fdp(al, 1)}^\\circ$ from the ${cap(ns)} line`].concat(se ? [`Bearing = 180° − ${fdp(al, 1)}° ≈ ${fdp(th, 1)}°`] : [`That angle is already measured clockwise from North, so the bearing is ${fdp(th, 1)}°`]);
+    return { k: se ? "se" : "ne", x, tol: .051, data: { n, e, se }, pic: svgMap(c.title, fig), q: `To get from ${c.A[1]} ${A} to ${c.B[1]} ${B}, you go ${n} ${u} due ${ns} and then ${e} ${u} due east. Find the bearing of ${B} from ${A}. (1 d.p.)`, hint: `Find the angle at ${A} with tan (east ÷ ${ns}), then turn it into a bearing from North, clockwise.`, steps,
+      slips: [[dp1(toDeg(Math.atan(n / e))), `That angle is measured from the East line (tan = ${ns} ÷ east). A bearing starts at North: use tan = east ÷ ${ns}.`], [dp1(se ? al : 180 - al), se ? `${fdp(al, 1)}° is the angle from the South line. Turning clockwise from North to that line is 180°, so take it from 180°.` : "That would point south-east. Here the point is north-east of the start."], [dp1(360 - th), "That turns anticlockwise from North. Bearings always turn clockwise."], [dp1(mod360(th + 180)), `That is the bearing of ${A} from ${B}, the way back.`]] }; },
+  // angle of elevation from a distance and a height (maybe above eye level)
+  elevang: r => { const c = r.pick(UP_CTX), d = r.int(8, 40), e = r.chance(.4) ? r.pick([1.2, 1.4, 1.5, 1.6]) : 0, hh = r.int(Math.ceil(d * .35), Math.floor(d * 1.6)), h = rd(hh + e, 1), up = hh, th = toDeg(Math.atan(up / d)), x = dp1(th), s = r.pick([1, -1]);
+    const pic = svgLook(c.title, { h, d, e, side: s, labs: { h: `${fmt(h)} m`, d: `${d} m`, e: e ? `${fmt(e)} m` : "" }, elev: "x" });
+    return { k: e ? "eye" : "ground", x, tol: .051, data: { h, d, e }, pic, q: `${c.who} stands ${d} m from the foot of ${c.obj}, which is ${fmt(h)} m tall.${e ? ` ${c.who}'s eyes are ${fmt(e)} m above the ground.` : ""} Find the angle of elevation of the top of ${c.short} from ${c.who}${e ? "'s eyes" : " on the ground"}. (1 d.p.)`,
+      hint: `The angle of elevation is between the flat line and the line of sight, looking up. tan = opposite ÷ adjacent.`,
+      steps: (e ? [`Height above ${c.who}'s eyes: ${fmt(h)} − ${fmt(e)} = ${up} m`] : []).concat([`$\\tan\\theta = \\frac{${up}}{${d}}$`, `$\\theta = \\tan^{-1}\\left(\\frac{${up}}{${d}}\\right) \\approx ${fdp(th, 1)}^\\circ$`]),
+      slips: [[dp1(toDeg(Math.atan(h / d))), `That uses the full ${fmt(h)} m. Measure from ${c.who}'s eyes: take away the ${fmt(e)} m first.`], [dp1(toDeg(Math.atan(d / up))), "That is the angle at the top, between the line of sight and the tower. The angle of elevation is at the bottom, from the flat line."], [up < d ? dp1(toDeg(Math.asin(up / d))) : NaN, `sin needs the line of sight (the hypotenuse), not the ground distance. Opposite and adjacent → tan.`], [dp1(up / d), `${fmt(rd(up / d, 4))} is tan θ itself. Use tan⁻¹ (shift, tan) to turn it into the angle.`], [dp1(Math.atan(up / d)), RAD_NOTE]] }; },
+  // height from an angle of elevation and a distance (plus eye level)
+  elevh: r => { const c = r.pick(UP_CTX), d = r.int(8, 45), a = r.int(20, 62), e = r.chance(.4) ? r.pick([1.2, 1.4, 1.5, 1.6]) : 0, up = d * tanD(a), hv = up + e, x = dp1(hv), s = r.pick([1, -1]);
+    const pic = svgLook(c.title, { h: hv, d, e, side: s, labs: { h: "x", d: `${d} m`, e: e ? `${fmt(e)} m` : "" }, elev: `${a}°` });
+    return { k: e ? "eye" : "ground", x, tol: .051, data: { a, d, e }, pic, q: `${c.who} stands ${d} m from the foot of ${c.obj}. The angle of elevation of the top from ${c.who}${e ? `'s eyes, ${fmt(e)} m above the ground,` : " (on the ground)"} is ${a}°. Find the height of ${c.short}. (1 d.p.)`,
+      hint: "tan = opposite ÷ adjacent, so opposite = adjacent × tan of the angle.", steps: [`opposite = ${d} × tan ${a}° ≈ ${fdp(up, 2)} m`].concat(e ? [`Add the eye height: ${fdp(up, 2)} + ${fmt(e)} ≈ ${fdp(hv, 1)} m`] : [`Height ≈ ${fdp(hv, 1)} m`]),
+      slips: [[e ? dp1(up) : NaN, `That is the height above ${c.who}'s eyes. Add the ${fmt(e)} m up to the eyes.`], [dp1(d * sinD(a) + e), `sin needs the line of sight. You know the ground distance (adjacent), so use tan.`], [dp1(d * cosD(a) + e), "cos gives the side next to the angle. The height is opposite it: use tan."], [dp1(d / tanD(a) + e), `That divides by tan ${a}°. opposite = adjacent × tan, so multiply.`], [dp1(d * Math.tan(a) + e), RAD_NOTE]] }; },
+  // distance from an angle of depression and a height
+  depr: r => { const c = r.pick(DOWN_CTX), h = r.int(15, 70), a = r.int(18, 60), dv = h / tanD(a), x = dp1(dv), s = r.pick([1, -1]);
+    const pic = svgLook(c.title, { h, d: dv, side: s, boat: c.boat, labs: { h: `${h} m`, d: "x" }, depr: `${a}°` });
+    return { k: c.boat ? "boat" : "beach", x, tol: .051, data: { h, a }, pic, q: `From ${c.from}, ${h} m above the ground, ${c.who} sees ${c.what}. The angle of depression is ${a}°. How far is ${c.what.replace(/^an? /, "the ")} from the foot of ${c.foot}? (1 d.p.)`,
+      hint: "The angle of depression is measured down from the flat line at the top. It equals the angle of elevation at the bottom (alternate angles).",
+      steps: [`The angle of elevation from the bottom is also ${a}° (alternate angles).`, `$\\tan ${a}^\\circ = \\frac{${h}}{d}$, so $d = \\frac{${h}}{\\tan ${a}^\\circ} \\approx ${fdp(dv, 1)}$ m`],
+      slips: [[dp1(h * tanD(a)), `That multiplies by tan ${a}°. Here the height is opposite the angle at the bottom, so divide: d = ${h} ÷ tan ${a}°.`], [dp1(h / sinD(a)), "That is the line of sight (the slanted side). The question asks for the flat distance along the ground."], [dp1(h / Math.tan(a)), RAD_NOTE]] }; },
+  // the angle of elevation equals the angle of depression (multiple choice)
+  equal: r => { const c = r.pick(DOWN_CTX); let a; do a = r.int(18, 70); while (a === 45 || a === 60); const h = r.int(20, 60), s = r.pick([1, -1]);
+    const pic = svgLook(c.title, { h, d: h / tanD(a), side: s, boat: c.boat, labs: { h: `${h} m` }, depr: `${a}°`, elev: "x" });
+    const wrong = [[`${90 - a}°`, `${90 - a}° is the angle at the top between the line of sight and the tower. The angle of elevation is measured from the flat ground.`], [`${180 - a}°`, `The two flat lines are parallel, and these are alternate angles (a Z shape), so they are equal, not adding up to 180°.`], [`${2 * a}°`, "The angle doesn't double. Alternate angles between parallel lines are equal."], [`${90 + a}°`, "An angle of elevation is always less than 90°: it is measured up from the flat ground."]];
+    return { k: "alt", mc: true, data: { a, h }, pic, q: `From ${c.from}, ${c.who} sees ${c.what} at an angle of depression of ${a}°. What is the angle of elevation of the top from ${c.what.replace(/^an? /, "the ")}?`, hint: "The flat line at the top and the ground are parallel. Look for a Z shape.",
+      steps: ["The flat line at the top is parallel to the ground.", `The line of sight crosses both, making alternate angles (a Z shape), which are equal.`, `Angle of elevation = angle of depression = ${a}°`], right: `${a}°`, rightWhy: `Right: the flat lines are parallel, so the angle of elevation and the angle of depression are alternate angles, both ${a}°.`, wrong }; }
+};
+const LOOK_KINDS = ["compass", "read", "read", "back", "back", "between", "travel", "travel", "legs", "legs", "elevang", "elevang", "elevh", "elevh", "depr", "depr", "equal"];
+const lookQ = (r, kind) => { const z = LOOK[kind](r), data = Object.assign({ look: kind, k: z.k, x: z.mc ? null : z.x }, z.data), extra = { pic: z.pic || "", uid: `look|${kind}|${z.k}|${JSON.stringify(z.data)}`, data };
+  if (z.mc) return mcqWhy(r, z.q, z.right, z.rightWhy, z.wrong, z.hint, z.steps, extra);
+  const bearing = /^(read|back|legs)$/.test(kind);
+  if (z.tol) Object.assign(extra, { tol: z.tol, a: bearing ? fdp(z.x, 1).padStart(5, "0") : fdp(z.x, 1), keys: ["."] }); else if (bearing) extra.a = brgS(z.x);
+  return numWhy(z.q, z.x, z.hint, z.steps, z.slips.filter(([v]) => v > 0 && isFinite(v)), extra); };
+topic(9, "bearings", "Lighthouse Lookout", "🚢", "Bearings, angles of elevation and depression", r => lookQ(r, r.pick(LOOK_KINDS)));
 topic(9, "coord", "Treasure-Map Coordinates", "🗺️", "Distance and midpoint", r => {
   const x1 = r.int(-8, 8), y1 = r.int(-8, 8);
   if (r.chance(.5)) { const tr = r.pick([[3, 4, 5], [5, 12, 13], [6, 8, 10], [8, 6, 10], [4, 3, 5], [12, 5, 13]]), x2 = x1 + r.pick([1, -1]) * tr[0], y2 = y1 + r.pick([1, -1]) * tr[1];
@@ -54,13 +210,12 @@ topic(9, "coord", "Treasure-Map Coordinates", "🗺️", "Distance and midpoint"
    segment, opposite angles of a cyclic quadrilateral, and the perpendicular from the centre bisecting a chord; plus "which
    property?" choices. Every figure is drawn to scale on the circle (centre O); given angles carry numbers and the unknown is x. */
 const dg = d => `${fmt(d)}°`;
-const onC = (R, deg) => [R * Math.cos(deg * Math.PI / 180), R * Math.sin(deg * Math.PI / 180)];
-const turnPt = (p, deg) => { const a = deg * Math.PI / 180; return [p[0] * Math.cos(a) - p[1] * Math.sin(a), p[0] * Math.sin(a) + p[1] * Math.cos(a)]; };
+const onC = (R, deg) => [R * cosD(deg), R * sinD(deg)];
 /* a circle figure: f = { R, rot, pts: { A: [x, y] } (maths coords, centre O at 0,0), showO, segs / dash: [[A, B]], tan: [[T, P]]
    (a tangent line through T and P, drawn a little past both), angles: [{ v, a, b, t }], rights: [[V, A, B]], ticks: [[A, B]],
    lens: [[A, B, text, the point to keep the label away from]], labAt: { M: [points the letter leans towards] } }. Points carry class cpt + data-n and angle wedges class cang + data-v/a/b, so tests read the figure back. */
 const svgCircle = (title, f) => {
-  const R = f.R, pts = Object.fromEntries(Object.entries(Object.assign({ O: [0, 0] }, f.pts)).map(([k, p]) => [k, turnPt(p, f.rot || 0)]));
+  const R = f.R, pts = Object.fromEntries(Object.entries(Object.assign({ O: [0, 0] }, f.pts)).map(([k, p]) => [k, rotPt(p, f.rot || 0)]));
   return figCard(title, [[R, 0], [-R, 0], [0, R], [0, -R]].concat(Object.values(pts)), S => {
     const P = Object.fromEntries(Object.entries(pts).map(([k, p]) => [k, S(p)])), O = P.O, names = Object.keys(P).filter(k => k !== "O" || f.showO);
     let back = `<circle class="mcirc" cx="${f1(O[0])}" cy="${f1(O[1])}" r="${f1(R * S.k)}" fill="${f.fill || PASTEL[1]}" fill-opacity=".55" stroke="${INK}" stroke-width="2.6"/>`, lines = "", marks = "", text = "";
@@ -72,7 +227,7 @@ const svgCircle = (title, f) => {
       back += `<path class="cang" data-t="${esc(g.t)}" data-v="${g.v}" data-a="${g.a}" data-b="${g.b}" d="${angWedge(V, u1, u2, rr, d)}" fill="${x ? "#FFC9DA" : "#FFF0B8"}" stroke="${x ? "#ff6f91" : LINE}" stroke-width="1.5"/>`;
       text += angText(g.t, V[0] + L * Math.cos(m), V[1] + L * Math.sin(m) + 4.5, 15, 12, ` class="mang" data-t="${esc(g.t)}"`); });
     (f.ticks || []).forEach(([a, b]) => { const c = mid(P[a], P[b]), u = vdir(P[a], P[b]); marks += `<line class="ctick" x1="${f1(c[0] - u[1] * 6)}" y1="${f1(c[1] + u[0] * 6)}" x2="${f1(c[0] + u[1] * 6)}" y2="${f1(c[1] - u[0] * 6)}" stroke="#ff6f91" stroke-width="2.4" stroke-linecap="round"/>`; });
-    (f.lens || []).forEach(([a, b, t, away]) => { const c = mid(P[a], P[b]), u = vdir(P[a], P[b]), F = P[away]; let n = [-u[1], u[0]]; if (n[0] * (c[0] - F[0]) + n[1] * (c[1] - F[1]) < 0) n = [-n[0], -n[1]]; text += figLab(c, t, n[0] * 17, n[1] * 13); });
+    (f.lens || []).forEach(([a, b, t, away]) => { text += figLens(P[a], P[b], t, P[away]); });
     names.forEach(k => { const p = P[k]; let o;
       if (k === "O") { const s = names.filter(n => n !== "O").reduce((g, n) => { const u = vdir(O, P[n]); return [g[0] + u[0], g[1] + u[1]]; }, [0, 0]); o = Math.hypot(s[0], s[1]) > .3 ? vdir(s, [0, 0]) : [-.6, .8]; }
       else if (f.labAt && f.labAt[k]) { const s = f.labAt[k].reduce((g, n) => { const u = vdir(p, P[n]); return [g[0] + u[0], g[1] + u[1]]; }, [0, 0]); o = vdir([0, 0], s); }
@@ -115,7 +270,7 @@ const CIRC = {
       slips: [[180 - g, "That forgets the 90° at C. The angle in a semicircle is a right angle, so take away 90° as well."], [g, "x isn't a copy of the given angle. The two angles at A and B share the 90° left after the right angle at C."], [90, "90° is the angle at C (the angle in the semicircle), not the angle at the other end of the diameter."]] }; },
   // tangent ⊥ radius: PT touches the circle at T; one angle of triangle OTP given
   tangent: r => { const a = r.int(25, 65), s = r.pick([1, -1]), place = r.pick(CTX.tangent), giveO = r.chance(.5), g = giveO ? a : 90 - a, x = 90 - g;
-    const fig = { R: 1, rot: r.int(0, 359), showO: true, pts: { T: [0, 1], P: [s * Math.tan(a * Math.PI / 180), 1] }, segs: [["O", "T"], ["O", "P"]], tan: [["T", "P"]],
+    const fig = { R: 1, rot: r.int(0, 359), showO: true, pts: { T: [0, 1], P: [s * tanD(a), 1] }, segs: [["O", "T"], ["O", "P"]], tan: [["T", "P"]],
       angles: giveO ? [{ v: "O", a: "T", b: "P", t: dg(g) }, { v: "P", a: "T", b: "O", t: "x" }] : [{ v: "P", a: "T", b: "O", t: dg(g) }, { v: "O", a: "T", b: "P", t: "x" }] };
     return { fig, place, x, giv: [g], prop: "tangent", see: "PT just touches the circle at T and OT is a radius, so they meet at 90°.",
       q: `${place[1]} PT is a tangent. Find ∠x.`, hint: "A tangent and the radius to the touching point meet at right angles.",
@@ -132,7 +287,7 @@ const CIRC = {
     return { fig, place, x, giv: [], len: true, prop: "tangent", k, data: { rad, t, h },
       q: `${place[1]} PT is a tangent. Find x, in cm.`, hint: "A tangent meets the radius at 90°, so triangle OTP is right-angled. Use Pythagoras.", steps, slips }; },
   // two tangents from P: find ∠AOB (tangent ⊥ radius, angles in OAPB) or ∠PAB (PA = PB, isosceles)
-  twotan: r => { let p; do p = 2 * r.int(20, 55); while (p === 60 || p === 90); const b = 90 - p / 2, D = 1 / Math.cos(b * Math.PI / 180), k = r.pick(["AOB", "PAB"]), place = r.pick(CTX.twotan);
+  twotan: r => { let p; do p = 2 * r.int(20, 55); while (p === 60 || p === 90); const b = 90 - p / 2, D = 1 / cosD(b), k = r.pick(["AOB", "PAB"]), place = r.pick(CTX.twotan);
     const fig = { R: 1, rot: r.int(0, 359), showO: k === "AOB", pts: { A: onC(1, b), B: onC(1, -b), P: [D, 0] }, segs: [["P", "A"], ["P", "B"]].concat(k === "AOB" ? [["O", "A"], ["O", "B"]] : [["A", "B"]]), ticks: [["P", "A"], ["P", "B"]],
       angles: [{ v: "P", a: "A", b: "B", t: dg(p) }, k === "AOB" ? { v: "O", a: "A", b: "B", t: "x" } : { v: "A", a: "P", b: "B", t: "x" }] };
     const base = { fig, place, giv: [p], k, q: `${place[1]} PA and PB are tangents. Find ∠x.` };
@@ -214,9 +369,9 @@ topic(10, "quadf", "Quadratic Formula", "🧿", "Roots to 2 d.p. (type both: 1.2
     hint: "x = (−b ± √(b² − 4ac)) ÷ 2a", steps: [`$a = ${a},\\ b = ${b},\\ c = ${c}$`, `$b^2 - 4ac = ${D}$`, `$x = \\frac{${-b} \\pm \\sqrt{${D}}}{${2 * a}}$`, `$x \\approx ${roots[0].toFixed(2)}$ or $x \\approx ${roots[1].toFixed(2)}$`], data: { a, b, c } });
 });
 topic(10, "sinecos", "Sine & Cosine Castle", "🏯", "Non-right triangles (1 d.p.)", r => {
-  if (r.chance(.5)) { const b = r.int(4, 15), c = r.int(4, 15), A = r.int(30, 120), a = Math.sqrt(b * b + c * c - 2 * b * c * Math.cos(A * Math.PI / 180));
+  if (r.chance(.5)) { const b = r.int(4, 15), c = r.int(4, 15), A = r.int(30, 120), a = Math.sqrt(b * b + c * c - 2 * b * c * cosD(A));
     return num(`In triangle ABC, b = ${b} cm, c = ${c} cm and angle A = ${A}°. Find a (1 d.p.).`, rd(a, 1), "Cosine rule: a² = b² + c² − 2bc cos A", [`$a^2 = ${b}^2 + ${c}^2 - 2(${b})(${c})\\cos ${A}^\\circ$`, `$a^2 \\approx ${fdp(a * a, 2)}$`, `$a \\approx ${rd(a, 1).toFixed(1)}$ cm`], { a: rd(a, 1).toFixed(1), keys: ["."], tol: 0.051, data: { b, c, A, rule: "cos" } }); }
-  const A = r.int(30, 80), B = r.int(30, 150 - A), a = r.int(5, 15), b = a * Math.sin(B * Math.PI / 180) / Math.sin(A * Math.PI / 180);
+  const A = r.int(30, 80), B = r.int(30, 150 - A), a = r.int(5, 15), b = a * sinD(B) / sinD(A);
   return num(`In triangle ABC, angle A = ${A}°, angle B = ${B}° and a = ${a} cm. Find b (1 d.p.).`, rd(b, 1), "Sine rule: a / sin A = b / sin B", [`$b = \\frac{${a}\\sin ${B}^\\circ}{\\sin ${A}^\\circ}$`, `$b \\approx ${rd(b, 1).toFixed(1)}$ cm`], { a: rd(b, 1).toFixed(1), keys: ["."], tol: 0.051, data: { A, B, a, rule: "sin" } });
 });
 topic(10, "prob2", "Two-Draw Treasure", "💰", "Combined probability", r => {
@@ -409,7 +564,7 @@ topic(11, "vec3", "Star Vectors", "🌠", "3D vectors: dot product, magnitude, a
   const dot = a[0] * b[0] + a[1] * b[1] + a[2] * b[2], ma = Math.hypot(...a), mb = Math.hypot(...b), t = r.int(0, 2), sq = v => v[0] ** 2 + v[1] ** 2 + v[2] ** 2;
   if (t === 0) return num(`Find ${T(`\\mathbf{a} \\cdot \\mathbf{b}`)} for ${T(`\\mathbf{a} = ${V3(a)},\\ \\mathbf{b} = ${V3(b)}`)}.`, dot, "Multiply matching components and add.", [`$${a.map((x, i) => `${paren(x)}(${b[i]})`).join(" + ")} = ${dot}$`], { keys: ["-"], data: { a, b, t } });
   if (t === 1) return num(`Find ${T("|\\mathbf{a}|")} for ${T(`\\mathbf{a} = ${V3(a)}`)} (3 s.f.).`, sf3(ma), "|a| = √(x² + y² + z²)", [`$\\sqrt{${a.map(x => paren(x) + "^2").join(" + ")}} = \\sqrt{${sq(a)}} \\approx ${sf3(ma)}$`], { a: String(sf3(ma)), keys: ["."], tol: tol3(ma), data: { a, b, t } });
-  const ang = Math.acos(Math.max(-1, Math.min(1, dot / (ma * mb)))) * 180 / Math.PI;
+  const ang = toDeg(Math.acos(Math.max(-1, Math.min(1, dot / (ma * mb)))));
   return num(`Find the angle between ${T(`\\mathbf{a} = ${V3(a)}`)} and ${T(`\\mathbf{b} = ${V3(b)}`)} in degrees (1 d.p.).`, rd(ang, 1), "cos θ = a·b ÷ (|a||b|)", [`$\\mathbf{a}\\cdot\\mathbf{b} = ${dot}$, $|\\mathbf{a}| = \\sqrt{${sq(a)}}$, $|\\mathbf{b}| = \\sqrt{${sq(b)}}$`, `$\\theta = \\cos^{-1}\\left(\\frac{${dot}}{\\sqrt{${sq(a)}}\\sqrt{${sq(b)}}}\\right) \\approx ${rd(ang, 1).toFixed(1)}^\\circ$`], { a: rd(ang, 1).toFixed(1), keys: ["."], tol: 0.051, data: { a, b, t } });
 });
 topic(11, "story", "Royal Challenges", "📜", "Modelling with exponentials", r => {
