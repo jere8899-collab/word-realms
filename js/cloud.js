@@ -330,7 +330,7 @@ C.open = (startMode) => {
         <p class="muted" style="font-weight:700;margin-top:0">${up ? "Make an account to save your stars, pet and skins in the clouds, and play on any device." : "Log in to load your adventure from the clouds."}</p>
         <div class="cc-tabs"><button data-m="login" class="${up ? "" : "on"}">Log in</button><button data-m="signup" class="${up ? "on" : ""}">New account</button></div>
         <form id="ccForm" autocomplete="on" novalidate>
-          <label class="cc-lbl">Castle name <small>(3–20 letters, numbers or _)</small><input class="input" id="ccName" name="username" autocomplete="username" autocapitalize="none" spellcheck="false" maxlength="20" placeholder="e.g. lily_star"></label>
+          <label class="cc-lbl">Castle name <small>(3–20 letters, numbers or _)</small><input class="input" id="ccName" name="username" autocomplete="username" maxlength="20" placeholder="e.g. lily_star"></label>
           <label class="cc-lbl">Secret password <small>(6+ characters)</small><input class="input" id="ccPass" name="password" type="password" autocomplete="${up ? "new-password" : "current-password"}" placeholder="••••••"></label>
           <div class="cc-err" id="ccErr" role="alert"></div>
           <button class="btn ${up ? "mint" : ""}" id="ccGo" type="submit" style="width:100%;margin-top:6px">${up ? "✨ Create my account" : "🔑 Log in"}</button>

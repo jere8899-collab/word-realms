@@ -40,7 +40,7 @@ function afterView() {
 }
 
 /* ---------- T14: on-screen keyboard ---------- */
-const typing = el => el && (el.tagName === "TEXTAREA" || (el.tagName === "INPUT" && !/^(checkbox|radio|range|button|submit|reset|file|color)$/i.test(el.type)) || el.isContentEditable);
+const typing = WR.isTypingField;   // shared with WR.noAssist (js/core.js)
 document.addEventListener("focusin", e => { if (typing(e.target) && (window.matchMedia ? matchMedia("(pointer:coarse)").matches : true)) body.classList.add("kbd-open"); });
 document.addEventListener("focusout", () => setTimeout(() => { if (!typing(document.activeElement)) body.classList.remove("kbd-open"); }, 60));
 if (window.visualViewport) {

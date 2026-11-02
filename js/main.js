@@ -51,7 +51,7 @@ function onboarding() {
   const dots = n => `<div class="onb-dots" aria-label="Step ${n} of 3">${[1, 2, 3].map(k => `<i class="${k === n ? "on" : ""}"></i>`).join("")}</div>`;
   const step1 = () => {
     WR.view(`<div class="onb"><div class="hero fade-in"><h1>Word Realms</h1><p style="font-size:1.15rem;font-weight:800">A fairytale English adventure from A1 to C2 ✨</p></div>${dots(1)}
-    <div class="card fade-in"><h2>What's your name, adventurer?</h2><input class="input" id="nm" maxlength="20" placeholder="Type your name…" autocomplete="nickname">
+    <div class="card fade-in"><h2>What's your name, adventurer?</h2><input class="input" id="nm" maxlength="20" placeholder="Type your name…">
     <h2 style="margin-top:14px">Choose your hero</h2><div class="onb-heroes">${WR.AVATARS.map(a => `<div class="card pick ${draft.avatar === a.id ? "sel" : ""}" data-av="${a.id}" role="button" tabindex="0">${WR.img(a.id)}<div class="nm">${a.name}</div></div>`).join("")}</div>
     <div class="onb-next" style="justify-content:flex-end"><button class="btn" id="n1">Next →</button></div></div>
     ${WR.Cloud ? `<div class="card fade-in cc-onb" id="ccOnb"><img src="assets/web/cloud_castle.webp" onerror="this.onerror=null;this.src='assets/ui/cloud_castle.png'" alt=""><div style="flex:1"><b>Already have a Cloud Castle account? ☁️</b><div class="muted" style="font-size:.85rem;font-weight:700">Log in to bring back your stars, pet and skins.</div></div><span class="btn small mint">Log in →</span></div>` : ""}</div>`);
@@ -245,7 +245,7 @@ WR.openRename = () => {
   const s = WR.state;
   WR.modal(`<div class="rename-panel"><div style="width:96px;height:96px;margin:0 auto">${WR.avatarHTML(96)}</div><h2 style="margin:.3em 0">🦸 Change your hero name</h2>
     <p class="muted" style="font-weight:700;margin-top:0">This is the name the realms call you. Your stars, pet and progress stay the same.</p>
-    <form id="heroForm" novalidate><label class="cc-lbl">Hero name <small>(1–${WR.HERO_MAX} characters)</small><input class="input" id="heroName" maxlength="${WR.HERO_MAX + 10}" autocomplete="nickname" value="${WR.esc(s.name || "")}"></label>
+    <form id="heroForm" novalidate><label class="cc-lbl">Hero name <small>(1–${WR.HERO_MAX} characters)</small><input class="input" id="heroName" maxlength="${WR.HERO_MAX + 10}" value="${WR.esc(s.name || "")}"></label>
     <div class="row" style="justify-content:space-between"><div class="cc-err" id="heroErr" role="alert"></div><small class="muted" id="heroCount" style="font-weight:800"></small></div>
     <div class="row" style="justify-content:center;margin-top:10px"><button class="btn ghost small" type="button" id="heroCancel">Cancel</button><button class="btn mint" type="submit" id="heroSave">✨ Save name</button></div></form></div>`, (bg, close) => {
     const i = bg.querySelector("#heroName"), err = bg.querySelector("#heroErr"), cnt = bg.querySelector("#heroCount"), go = bg.querySelector("#heroSave");

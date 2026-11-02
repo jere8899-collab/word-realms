@@ -109,8 +109,8 @@ function pinSetup({ money, done, skip }) {
   WR.state.parent = Object.assign({}, WR.state.parent, { pinAsked: true }); WR.save();
   WR.modal(`<div class="pin-setup" id="pinSetup"><div class="lock">🔢</div><h2>Set a grown-up PIN</h2>
     <p style="font-weight:700;margin-top:0">${money ? "Cash items need a grown-up PIN." : "A 4-digit PIN keeps cash items safe."} Children can work out sums, but not your PIN.</p>
-    <input class="input" id="psPin" inputmode="numeric" pattern="[0-9]*" maxlength="4" type="password" placeholder="4 digits" autocomplete="off" style="max-width:150px;text-align:center;letter-spacing:8px;margin:0 auto;display:block">
-    <input class="input" id="psPin2" inputmode="numeric" pattern="[0-9]*" maxlength="4" type="password" placeholder="again" autocomplete="off" style="max-width:150px;text-align:center;letter-spacing:8px;margin:8px auto 0;display:block">
+    <input class="input" id="psPin" inputmode="numeric" pattern="[0-9]*" maxlength="4" type="password" placeholder="4 digits" style="max-width:150px;text-align:center;letter-spacing:8px;margin:0 auto;display:block">
+    <input class="input" id="psPin2" inputmode="numeric" pattern="[0-9]*" maxlength="4" type="password" placeholder="again" style="max-width:150px;text-align:center;letter-spacing:8px;margin:8px auto 0;display:block">
     <div class="cc-err" id="psErr" role="alert"></div>
     <p class="muted" style="font-size:.85rem;font-weight:700">${money ? "" : "You can skip this, but cash items stay locked until a PIN is set. "}Change it any time in ⚙️ → 👪 Grown-ups.</p>
     <div class="row" style="justify-content:center"><button class="btn ghost small" id="psSkip">${money ? "Not now" : "Skip"}</button><button class="btn mint small" id="psSet">Save PIN</button></div></div>`, (bg, close) => {
@@ -187,7 +187,7 @@ WR.resetDialog = () => {
     ${cloud ? `<p class="reset-cloud">☁️ This device is logged in to the Cloud Castle${who ? ` as <b>${WR.esc(who)}</b>` : ""}. Resetting <b>logs this device out first</b>, so the Cloud Castle copy is <b>not</b> changed. Log in again any time to get it back.</p>` : ""}
     <p class="muted" style="font-weight:700">A backup is kept on this device for 7 days: ⚙️ → 👪 Grown-ups → ↩️ Undo reset.</p>
     <label class="muted" for="rsIn" style="font-weight:800">Type <b>RESET</b> to confirm</label>
-    <input class="input" id="rsIn" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="RESET" style="text-align:center;letter-spacing:3px;max-width:200px;margin:6px auto;display:block">
+    <input class="input" id="rsIn" placeholder="RESET" style="text-align:center;letter-spacing:3px;max-width:200px;margin:6px auto;display:block">
     <div class="row" style="justify-content:center"><button class="btn ghost small" id="rsNo">Keep my adventure</button><button class="btn peach small" id="rsGo" disabled>Reset</button></div></div>`, (bg, close) => {
     const inp = bg.querySelector("#rsIn"), go = bg.querySelector("#rsGo");
     inp.oninput = () => { go.disabled = inp.value.trim().toUpperCase() !== "RESET"; };

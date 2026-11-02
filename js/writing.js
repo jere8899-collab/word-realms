@@ -371,7 +371,7 @@ function writeStep() {
   const p = Q.p;
   WR.$("#qStep").innerHTML = `<div class="q-box"><div class="quill-bar"><span class="wc" id="qWc"></span><span class="muted" id="qSaved" style="font-size:.78rem;font-weight:800">📝 Drafts save automatically</span></div>
     ${Q.plan.trim() ? `<details class="plan-peek"><summary>🗒️ My plan</summary><pre>${WR.esc(Q.plan)}</pre></details>` : ""}
-    <textarea id="qText" class="quill-ta" rows="12" spellcheck="false" placeholder="${p.firstLine ? WR.esc(p.firstLine) + " …" : "Start writing here… Leave an empty line between paragraphs."}">${WR.esc(Q.text)}</textarea>
+    <textarea id="qText" class="quill-ta" rows="12" placeholder="${p.firstLine ? WR.esc(p.firstLine) + " …" : "Start writing here… Leave an empty line between paragraphs."}">${WR.esc(Q.text)}</textarea>
     <div class="q-bank"><div class="row" style="gap:6px"><b>🪄 Language bank</b><span class="muted" style="font-size:.8rem;font-weight:700">Tap a phrase to add it. Then type over the … gap.</span></div>
       ${p.bank.map(g => `<div class="bank-g"><small>${WR.esc(g.g)}</small><div class="bank-chips">${g.p.map(ph => `<button class="bank-chip" data-ph="${WR.esc(ph)}">${WR.esc(ph)}</button>`).join("")}</div></div>`).join("")}</div>
     <div class="row q-actions"><button class="btn ghost" id="qToPlan">← Plan</button><span style="flex:1"></span><button class="btn" id="qCheck">✨ Check my writing</button></div></div>`;

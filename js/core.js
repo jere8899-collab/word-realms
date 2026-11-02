@@ -60,6 +60,35 @@ WR.sample = (a, n) => WR.shuffle(a).slice(0, n);
    double tap (or two clicks in the same tick) advances exactly once. The button is disabled on the first tap, so a stale
    button that is still on screen can never fire again. Each finish() also guards itself with a "done" flag. */
 WR.tapOnce = (el, fn) => { if (!el) return el; el.onclick = e => { if (el.disabled || el.dataset.tapped) return; el.dataset.tapped = "1"; el.disabled = true; fn(e); }; return el; };
+/* ⌨️ No keyboard help while playing (2026-11-02, Jeremy): the game checks spelling, grammar and maths, so the phone keyboard
+   must not fix or finish words for the child. WR.noAssist(el) turns off autocorrect, autocomplete / word suggestions,
+   auto-capitals, the spell checker, Chrome writing suggestions and Grammarly / LanguageTool on one typing field.
+   A MutationObserver (below) runs it on every typing field the game ever puts on screen, so screens need no attributes
+   of their own. Kept on purpose: an inputmode a screen sets (numeric PIN, maths pad) and the login form's credential
+   tokens (username / current-password / new-password) so a saved Cloud Castle password can still be filled in. */
+WR.isTypingField = el => !!el && el.nodeType === 1 && (el.tagName === "TEXTAREA" ||
+  (el.tagName === "INPUT" && !/^(checkbox|radio|range|button|submit|reset|file|color|hidden|image)$/i.test(el.type)) || el.isContentEditable);
+const CRED = /^(username|current-password|new-password|one-time-code)$/;
+const NO_ASSIST = { autocorrect: "off", autocapitalize: "off", spellcheck: "false", writingsuggestions: "false",
+  "data-gramm": "false", "data-gramm_editor": "false", "data-enable-grammarly": "false", "data-lt-active": "false" };
+WR.noAssist = el => {
+  if (!WR.isTypingField(el)) return el;
+  for (const k in NO_ASSIST) if (el.getAttribute(k) !== NO_ASSIST[k]) el.setAttribute(k, NO_ASSIST[k]);
+  if (!CRED.test(el.getAttribute("autocomplete") || "") && el.getAttribute("autocomplete") !== "off") el.setAttribute("autocomplete", "off");
+  el.spellcheck = false;
+  return el;
+};
+WR.noAssistAll = (root = document) => {
+  if (root.nodeType === 1) WR.noAssist(root);
+  if (root.querySelectorAll) root.querySelectorAll("input, textarea, [contenteditable]").forEach(WR.noAssist);
+};
+if (window.MutationObserver) new MutationObserver(list => {
+  for (const m of list) {
+    if (m.type === "attributes") WR.noAssist(m.target);
+    else m.addedNodes.forEach(n => n.nodeType === 1 && WR.noAssistAll(n));
+  }
+}).observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ["contenteditable", "type"] });
+WR.noAssistAll();
 WR.dayKey = (t = Date.now()) => { const d = new Date(t); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); };
 /* 🕰️ R22 game day: rewards (practice-star cap, quests, free gift, streak, weekly sticker) follow WR.today(), a day that never
    goes backwards. It moves on when the device's calendar day is later than the saved one; if the clock is put back, the

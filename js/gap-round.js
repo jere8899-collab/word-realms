@@ -100,7 +100,7 @@ WR.GapRound = cfg => {
     WR.view(`<div class="fade-in sw-round"><div class="row lesson-top" style="justify-content:space-between;margin:6px 0 8px"><button class="btn ghost small" id="${p}Quit">← Leave</button><div class="ph-progress"><div class="prog"><i style="width:${S.n / S.items.length * 100}%"></i></div><b>${S.n + 1}/${S.items.length}</b></div></div>
     <div class="card sw-card"><div class="ph-head"><span class="lvl-badge">${S.lvl.toUpperCase()}</span><b>${S.bk.icon} ${esc(S.bk.name)}</b></div>
       ${cfg.body(it, gapHTML(it), S)}
-      ${typed ? `<div class="sw-type"><input class="input" id="${p}In" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="${cfg.placeholder}" value="${esc(S.typed)}" ${S.done ? "disabled" : ""}>${cfg.count ? `<small class="muted" id="${p}Count">${cfg.count(S.typed, it)}</small>` : ""}</div>`
+      ${typed ? `<div class="sw-type"><input class="input" id="${p}In" placeholder="${cfg.placeholder}" value="${esc(S.typed)}" ${S.done ? "disabled" : ""}>${cfg.count ? `<small class="muted" id="${p}Count">${cfg.count(S.typed, it)}</small>` : ""}</div>`
         : `<div class="tiles sw-pool${auto ? "" : " still"}" id="${p}Pool">${pool(it).map((w, k) => `<button class="tile sw-tile" data-p="${k}" ${S.built.includes(k) || S.done ? "disabled" : ""}>${esc(w)}</button>`).join("")}</div>`}
       <div id="${p}Fb">${fbHTML()}</div>
       <div class="row sw-acts">${S.done ? `<button class="btn" id="${p}Next">${S.n + 1 < S.items.length ? "Next →" : "🌟 Finish"}</button>`

@@ -132,7 +132,7 @@ MW.padGrid = extra => {
 const k2name = k => ({ "-": "minus", ".": "decimal point", "/": "fraction bar", ":": "colon", r: "remainder", ",": "comma", " ": "space" }[k] || k);
 MW.extraKeys = (q, grade) => { const keys = new Set(q.keys || []); if (grade >= 7 || (q.grade || 0) >= 7) { keys.add("-"); keys.add("."); } return ["-", ".", "/", ":", "r", ","].filter(k => keys.has(k)); };
 const padHTML = MW.padHTML = (q, grade) => {
-  return `<div class="ansrow"><input id="mans" class="input mans" autocomplete="off" autocapitalize="off" spellcheck="false" ${coarse() ? 'inputmode="none"' : 'inputmode="decimal"'} placeholder="Your answer" aria-label="Your answer"><button class="btn mint" id="mcheck">✓ Check</button></div>${MW.padGrid(MW.extraKeys(q, grade))}`;
+  return `<div class="ansrow"><input id="mans" class="input mans" ${coarse() ? 'inputmode="none"' : 'inputmode="decimal"'} placeholder="Your answer" aria-label="Your answer"><button class="btn mint" id="mcheck">✓ Check</button></div>${MW.padGrid(MW.extraKeys(q, grade))}`;
 };
 // shared with Sumi's grade finder (math-dojo.js)
 const bindPad = MW.bindPad = (onSubmit, onType) => {

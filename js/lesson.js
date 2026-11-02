@@ -165,7 +165,7 @@ function qBody(it) {
       <div class="tiles" id="pool"></div>
       <div class="row" style="margin-top:8px"><button class="btn mint" id="checkBtn" disabled>✅ Check</button><button class="btn ghost small" id="clearBtn">↺ Clear</button></div>`;
   } else if (it.type === "dictate") {
-    h += `<input class="dict-in" id="dictIn" type="text" autocomplete="off" autocorrect="off" autocapitalize="sentences" spellcheck="false" placeholder="Type what you hear…" aria-label="Type what you hear">
+    h += `<input class="dict-in" id="dictIn" type="text" placeholder="Type what you hear…" aria-label="Type what you hear">
       <div class="row" style="margin-top:8px"><button class="btn mint" id="checkBtn" disabled>✅ Check</button></div>`;
   } else if (it.type === "picq") {
     h += `<div class="opts picgrid">${it.options.map((o, k) => `<button class="opt picopt" data-k="${k}" aria-label="${WR.esc(o)}">${WR.picImg(it.art ? it.art[o] : o)}</button>`).join("")}</div>`;
