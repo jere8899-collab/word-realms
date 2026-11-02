@@ -178,5 +178,171 @@
   "tip": "Pause before and after 'In other words' and stress OTH-er.",
   "id": "c2-sp22",
   "minWords": 8
+ },
+ {
+  "type": "read",
+  "text": "Only when the last fossil had been catalogued did the young scientists allow themselves a celebration.",
+  "focus": "Inversion: only when … did",
+  "tip": "Stress ON-ly WHEN and keep 'did' light. CAT-a-logued ends in /ɡd/: /ˈkætəlɒɡd/.",
+  "id": "c2-sp23"
+ },
+ {
+  "type": "read",
+  "text": "The rainforest, teeming with creatures as yet unknown to science, is disappearing at an alarming rate.",
+  "focus": "Long sentence: chunking",
+  "tip": "Chunks: The rainforest | teeming with creatures as yet unknown to science | is disappearing at an alarming rate.",
+  "id": "c2-sp24"
+ },
+ {
+  "type": "read",
+  "text": "Never before had the observatory's telescope captured such a vivid image of Saturn's rings.",
+  "focus": "Inversion: never before",
+  "tip": "Stress NEV-er be-FORE. ob-SER-va-to-ry is stressed on the second syllable, and 'Saturn's' is /ˈsætənz/.",
+  "id": "c2-sp25"
+ },
+ {
+  "type": "read",
+  "text": "Try as she might, the goalkeeper couldn't quite reach the ball as it curled into the net.",
+  "focus": "Concession: try as she might",
+  "tip": "'Try as she might' means 'however hard she tried'. Pause after it, and link 'curled into' smoothly.",
+  "id": "c2-sp26"
+ },
+ {
+  "type": "read",
+  "text": "The robotics club's latest prototype still struggles to climb the stairs, ingenious though it is.",
+  "focus": "Word stress: PRO-to-type",
+  "tip": "PRO-to-type and ro-BOT-ics. in-GEN-ious /ɪnˈdʒiːniəs/. Drop your pitch for the last chunk.",
+  "id": "c2-sp27"
+ },
+ {
+  "type": "read",
+  "text": "Be that as it may, the expedition's findings have reshaped our understanding of glaciers.",
+  "focus": "Discourse markers",
+  "tip": "Pause after 'Be that as it may'. GLA-ci-ers is /ˈɡlæsiəz/ in British English, and ex-pe-DI-tion is stressed on 'DI'.",
+  "id": "c2-sp28"
+ },
+ {
+  "type": "read",
+  "text": "Whereas some insects rely on camouflage, others flaunt their vivid colours as a warning to predators.",
+  "focus": "Easily confused: flaunt and flout",
+  "tip": "To 'flaunt' (show off) is /flɔːnt/; to 'flout' (break a rule) is different. CAM-ou-flage ends in a soft /ʒ/.",
+  "id": "c2-sp29"
+ },
+ {
+  "type": "read",
+  "text": "Such was the excitement in the stadium that the commentator could barely make himself heard.",
+  "focus": "Inversion: such was … that",
+  "tip": "Stress SUCH and ex-CITE-ment. COM-men-ta-tor is stressed at the start.",
+  "id": "c2-sp30"
+ },
+ {
+  "type": "read",
+  "text": "Not once did the tortoise lose sight of the finishing line, however slowly it plodded along.",
+  "focus": "Inversion: not once",
+  "tip": "Stress NOT ONCE and keep 'did the' quick. 'tortoise' is /ˈtɔːtəs/: the last part sounds like 'tus'.",
+  "id": "c2-sp31"
+ },
+ {
+  "type": "read",
+  "text": "The principal principle of our eco club is refreshingly simple: waste nothing at all.",
+  "focus": "Homophones: principal and principle",
+  "tip": "'principal' (main) and 'principle' (rule) sound exactly the same: /ˈprɪnsəpl/. Pause at the colon.",
+  "id": "c2-sp32"
+ },
+ {
+  "type": "answer",
+  "q": "Should children help design their own school timetable? Give one benefit, then qualify it with 'That said'.",
+  "keywords": [
+   "that said"
+  ],
+  "model": "Children would feel more responsible for their learning. That said, they might quietly drop every maths lesson!",
+  "focus": "Qualifying a point",
+  "tip": "Pause before and after 'That said', then lighten your voice for the joke at the end.",
+  "id": "c2-sp33",
+  "minWords": 8
+ },
+ {
+  "type": "answer",
+  "q": "Describe a place in nature that left a lasting impression. Use 'What struck me most was…' or 'What I'll never forget is…'.",
+  "keywords": [
+   "what struck me|what i will never forget"
+  ],
+  "model": "What struck me most was the silence of the frozen lake, broken only by the cracking of the ice.",
+  "focus": "Cleft sentences",
+  "tip": "Rise on 'most', pause, then slow down for the picture: SI-lence, FRO-zen LAKE.",
+  "id": "c2-sp34",
+  "minWords": 8
+ },
+ {
+  "type": "answer",
+  "q": "Explain to a younger child why some animals hibernate. Use 'Put simply'.",
+  "keywords": [
+   "put simply"
+  ],
+  "model": "Put simply, some animals sleep through the winter because there's hardly any food, so they save their energy until spring.",
+  "focus": "Explaining simply",
+  "tip": "Pause after 'Put simply,'. hi-ber-NATE is stressed at the start: HI-ber-nate.",
+  "id": "c2-sp35",
+  "minWords": 8
+ },
+ {
+  "type": "answer",
+  "q": "Speculate about life on other planets. Use 'It's conceivable that' or 'There's every chance that'.",
+  "keywords": [
+   "conceivable|every chance"
+  ],
+  "model": "It's conceivable that tiny microbes live in the ocean beneath the ice on one of Jupiter's moons.",
+  "focus": "Speculating with care",
+  "tip": "con-CEIV-a-ble is /kənˈsiːvəbl/. Stress TI-ny MI-crobes and JU-pi-ter.",
+  "id": "c2-sp36",
+  "minWords": 8
+ },
+ {
+  "type": "answer",
+  "q": "Argue that video games can teach useful skills. Use 'Far from being…'.",
+  "keywords": [
+   "far from being"
+  ],
+  "model": "Far from being a waste of time, many games teach teamwork, planning and quick decision-making.",
+  "focus": "Fronted contrast",
+  "tip": "Stress FAR at the start. Give the list an even rhythm: TEAM-work, PLAN-ning, de-CI-sion-mak-ing.",
+  "id": "c2-sp37",
+  "minWords": 8
+ },
+ {
+  "type": "answer",
+  "q": "Reflect on a mistake that taught you something. Use 'In hindsight'.",
+  "keywords": [
+   "in hindsight"
+  ],
+  "model": "In hindsight, rushing my science project was a mistake, because the volcano refused to erupt on the day.",
+  "focus": "Reflecting on the past",
+  "tip": "HIND-sight is stressed on the first part /ˈhaɪndsaɪt/. Pause after it.",
+  "id": "c2-sp38",
+  "minWords": 8
+ },
+ {
+  "type": "answer",
+  "q": "Should zoos still exist? Weigh up both sides and finish with 'On balance'.",
+  "keywords": [
+   "on balance"
+  ],
+  "model": "Zoos protect endangered species, though some animals clearly struggle in small enclosures. On balance, good zoos do more good than harm.",
+  "focus": "Weighing up both sides",
+  "tip": "Pause before 'On balance', then slow down for your final view. en-DAN-gered, en-CLO-sures.",
+  "id": "c2-sp39",
+  "minWords": 8
+ },
+ {
+  "type": "answer",
+  "q": "Describe an invention you wish existed. Start with 'If only someone would invent…'.",
+  "keywords": [
+   "if only"
+  ],
+  "model": "If only someone would invent a backpack that floated behind you, carrying all your heavy books!",
+  "focus": "Wishes: if only",
+  "tip": "Stress ON-ly and let your voice rise with the dream. 'floated' has two syllables.",
+  "id": "c2-sp40",
+  "minWords": 8
  }
 ]

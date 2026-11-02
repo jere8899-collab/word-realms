@@ -687,5 +687,426 @@
    }
   ],
   "level": "c1"
+ },
+ {
+  "genre": "essay",
+  "part": "C1 Advanced · Writing Part 1 (essay)",
+  "title": "Getting Young People Outdoors",
+  "task": "Your class has watched a documentary about why many children now spend less time outdoors. Notes: school trips · technology · local parks. Write an essay discussing TWO of the ideas in your notes for getting young people outside more. Explain which idea you think is more effective, giving reasons. Write 220–260 words.",
+  "points": [
+   {
+    "label": "Discuss one idea (school trips, technology or local parks)",
+    "sets": [
+     [
+      "school trip",
+      "trips",
+      "excursion"
+     ],
+     [
+      "technolog",
+      "app",
+      "device",
+      "gps"
+     ],
+     [
+      "park",
+      "playground",
+      "green space"
+     ]
+    ],
+    "need": 1
+   },
+   {
+    "label": "Discuss a second idea",
+    "sets": [
+     [
+      "school trip",
+      "trips",
+      "excursion"
+     ],
+     [
+      "technolog",
+      "app",
+      "device",
+      "gps"
+     ],
+     [
+      "park",
+      "playground",
+      "green space"
+     ]
+    ],
+    "need": 2
+   },
+   {
+    "label": "Say which is more effective and why",
+    "keys": [
+     "more effective",
+     "most effective",
+     "more important",
+     "outweigh",
+     "crucial",
+     "on balance",
+     "ultimately"
+    ]
+   }
+  ],
+  "words": [
+   220,
+   260
+  ],
+  "model": "It is widely accepted that children today spend far less time outdoors than their grandparents did. Of the many ideas proposed to reverse this trend, two seem particularly promising: school trips and better local parks.\n\nSchool trips have the obvious advantage of reaching every pupil, regardless of their family's circumstances. A week spent camping, canoeing or tracking animals in a forest can transform a child's attitude to nature, and many adults still remember such experiences decades later. Admittedly, trips are expensive and happen only once or twice a year, so their effect may well fade once pupils return to their usual routines.\n\nImproving local parks, by contrast, addresses the problem every single day. What many young people lack is not interest in the outdoors but somewhere safe and exciting to go after school. Were the council to invest in adventure playgrounds, cycle paths and wildlife ponds, children would be far more likely to spend their free time outside. Furthermore, parks bring families and neighbours together, which strengthens the whole community.\n\nOn balance, I would argue that local parks are the more effective solution. This is not to say that school trips are unimportant; they can spark a lifelong passion. However, a passion needs to be practised. Only by having green spaces close to home can children turn one exciting week into a lasting habit. Consequently, councils and schools should work together to ensure that every neighbourhood has a park worth visiting.",
+  "id": "c1-w07",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "It is widely accepted that …",
+     "Admittedly, …",
+     "By contrast, …",
+     "This is not to say that …",
+     "On balance, …"
+    ]
+   },
+   {
+    "g": "🔗 Cohesion",
+    "p": [
+     "Nonetheless, …",
+     "Admittedly, …",
+     "Conversely, …",
+     "Consequently, …",
+     "Given that …",
+     "By contrast, …",
+     "On balance, …",
+     "Ultimately, …"
+    ]
+   },
+   {
+    "g": "🧭 Arguing & hedging",
+    "p": [
+     "It could be argued that …",
+     "There is a strong case for …",
+     "This is not to say that …",
+     "to a certain extent",
+     "It is worth bearing in mind that …"
+    ]
+   },
+   {
+    "g": "✨ Advanced structures",
+    "p": [
+     "Not only does …, but it also …",
+     "What is particularly striking is …",
+     "Only by … can we …",
+     "Were it not for …"
+    ]
+   }
+  ],
+  "level": "c1"
+ },
+ {
+  "genre": "proposal",
+  "part": "C1 Advanced · Writing Part 2 (proposal)",
+  "title": "Proposal: An Inventors' Club",
+  "task": "Your head teacher has a small budget for one new after-school club and has invited students to send in proposals. Write a proposal describing the club you would like to start, explaining how students would benefit and suggesting how it could be organised and equipped. Write 220–260 words.",
+  "points": [
+   {
+    "label": "The purpose of the proposal",
+    "keys": [
+     "purpose",
+     "aim",
+     "this proposal"
+    ]
+   },
+   {
+    "label": "What the club would do",
+    "keys": [
+     "project",
+     "build",
+     "experiment",
+     "workshop",
+     "competition",
+     "invention"
+    ]
+   },
+   {
+    "label": "How students would benefit",
+    "keys": [
+     "benefit",
+     "develop",
+     "skill",
+     "confiden",
+     "teamwork"
+    ]
+   },
+   {
+    "label": "Organisation and equipment",
+    "keys": [
+     "equip",
+     "budget",
+     "material",
+     "toolkit",
+     "supervis",
+     "organis",
+     "volunteer"
+    ]
+   },
+   {
+    "label": "A clear recommendation",
+    "keys": [
+     "recommend",
+     "propose",
+     "i would suggest",
+     "advisable"
+    ]
+   }
+  ],
+  "words": [
+   220,
+   260
+  ],
+  "model": "Introduction\nThe aim of this proposal is to suggest a new after-school Inventors' Club and to explain how it could be run within the school's limited budget.\n\nWhat the club would offer\nThe club would meet every Thursday for an hour. Each term, members would work in small teams on a single project, such as a solar-powered car, a bird feeder that counts its visitors or a robot that waters the school plants. At the end of each term, the inventions would be displayed at a mini science fair to which parents are invited.\n\nBenefits for students\nNot only would the club make science more enjoyable, but it would also develop skills that are rarely practised in ordinary lessons. Designing, testing and improving a machine requires patience, teamwork and creative problem-solving. Perhaps most importantly, students who struggle with written work often shine when they can build something with their hands, so the club could boost the confidence of a wide range of pupils.\n\nOrganisation and equipment\nGiven that the budget is small, I would suggest using recycled materials wherever possible, alongside a few basic toolkits and two second-hand laptops for programming. In addition, the science teachers have already offered to take turns supervising, and older students could act as mentors to younger members.\n\nRecommendation\nI would therefore recommend that the club is launched as a trial next term. If it proves popular, it could become a permanent part of school life.",
+  "id": "c1-w08",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "The aim of this proposal is to …",
+     "Not only would …, but …",
+     "Given that …, …",
+     "I would therefore recommend that …"
+    ]
+   },
+   {
+    "g": "🔗 Cohesion",
+    "p": [
+     "Nonetheless, …",
+     "Admittedly, …",
+     "Conversely, …",
+     "Consequently, …",
+     "Given that …",
+     "By contrast, …",
+     "On balance, …",
+     "Ultimately, …"
+    ]
+   },
+   {
+    "g": "🧭 Arguing & hedging",
+    "p": [
+     "It could be argued that …",
+     "There is a strong case for …",
+     "This is not to say that …",
+     "to a certain extent",
+     "It is worth bearing in mind that …"
+    ]
+   },
+   {
+    "g": "✨ Advanced structures",
+    "p": [
+     "Not only does …, but it also …",
+     "What is particularly striking is …",
+     "Only by … can we …",
+     "Were it not for …"
+    ]
+   }
+  ],
+  "level": "c1"
+ },
+ {
+  "genre": "report",
+  "part": "C1 Advanced · Writing Part 2 (report)",
+  "title": "Report: Making Sports Day Better",
+  "task": "Your PE teacher wants to make next year's Sports Day more enjoyable for everyone and has asked you for a report. Describe what went well this year, explain which parts were less successful and recommend changes. Write 220–260 words.",
+  "points": [
+   {
+    "label": "The purpose of the report",
+    "keys": [
+     "purpose",
+     "aim",
+     "this report"
+    ]
+   },
+   {
+    "label": "What went well",
+    "keys": [
+     "success",
+     "popular",
+     "went well",
+     "highlight",
+     "praised",
+     "enjoy"
+    ]
+   },
+   {
+    "label": "What was less successful",
+    "keys": [
+     "problem",
+     "complain",
+     "less successful",
+     "drawback",
+     "issue",
+     "disappoint"
+    ]
+   },
+   {
+    "label": "Your recommendations",
+    "keys": [
+     "recommend",
+     "propose",
+     "advisable",
+     "should be"
+    ]
+   }
+  ],
+  "words": [
+   220,
+   260
+  ],
+  "model": "Purpose\nThis report sets out to evaluate this year's Sports Day, based on a survey of 120 students, and to recommend changes for next year.\n\nWhat went well\nOverall, the event was a great success. The relay races were by far the most popular activity, with many students describing the atmosphere as electric. The decision to mix year groups in the teams was also widely praised, since it gave younger pupils the chance to make friends with older ones.\n\nLess successful aspects\nHowever, several problems were mentioned repeatedly. A recurring complaint was that students who are not particularly sporty spent most of the afternoon sitting on the grass with nothing to do. In addition, the timetable ran almost an hour late, which meant that the final races took place in the hottest part of the day. Arguably, the lack of shade and drinking water was the most serious issue, as a number of spectators felt unwell.\n\nRecommendations\nIn light of the above, it is recommended that the programme includes a wider range of activities, such as an obstacle course, a three-legged race and a team quiz, so that every student can take part. Shorter heats would help to keep the timetable on track, and the event should start earlier in the morning to avoid the midday heat. Finally, a shaded rest area with free water should be provided throughout the day.\n\nWere the school to adopt these changes, Sports Day would undoubtedly become an event that everyone looks forward to.",
+  "id": "c1-w09",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "This report sets out to …",
+     "By far the most popular …",
+     "A recurring complaint was that …",
+     "In light of the above, …",
+     "It is recommended that …"
+    ]
+   },
+   {
+    "g": "🔗 Cohesion",
+    "p": [
+     "Nonetheless, …",
+     "Admittedly, …",
+     "Conversely, …",
+     "Consequently, …",
+     "Given that …",
+     "By contrast, …",
+     "On balance, …",
+     "Ultimately, …"
+    ]
+   },
+   {
+    "g": "🧭 Arguing & hedging",
+    "p": [
+     "It could be argued that …",
+     "There is a strong case for …",
+     "This is not to say that …",
+     "to a certain extent",
+     "It is worth bearing in mind that …"
+    ]
+   },
+   {
+    "g": "✨ Advanced structures",
+    "p": [
+     "Not only does …, but it also …",
+     "What is particularly striking is …",
+     "Only by … can we …",
+     "Were it not for …"
+    ]
+   }
+  ],
+  "level": "c1"
+ },
+ {
+  "genre": "review",
+  "part": "C1 Advanced · Writing Part 2 (review)",
+  "title": "Review: Secrets of the Coral Kingdom",
+  "task": "Your school magazine is starting a new “What to watch” page. Write a review of a nature documentary or series (real or imaginary), describing what it shows, evaluating how well it is made and saying who would enjoy it most. Write 220–260 words.",
+  "points": [
+   {
+    "label": "What it shows",
+    "keys": [
+     "follows",
+     "shows",
+     "explores",
+     "features",
+     "episode"
+    ]
+   },
+   {
+    "label": "How well it is made",
+    "keys": [
+     "camera",
+     "footage",
+     "filmed",
+     "soundtrack",
+     "music",
+     "narrat"
+    ]
+   },
+   {
+    "label": "A balanced view (any weaknesses)",
+    "keys": [
+     "admittedly",
+     "however",
+     "flaw",
+     "drawback",
+     "at times",
+     "nevertheless"
+    ]
+   },
+   {
+    "label": "Who would enjoy it most",
+    "keys": [
+     "recommend",
+     "would appeal",
+     "ideal for",
+     "anyone who",
+     "worth watching"
+    ]
+   }
+  ],
+  "words": [
+   220,
+   260
+  ],
+  "model": "Secrets of the Coral Kingdom\n\nRarely does a nature series manage to be both breathtaking and genuinely educational, but Secrets of the Coral Kingdom achieves exactly that. Over six episodes, it follows the creatures of a single reef in the Pacific Ocean, from tiny cleaner shrimps to a family of green turtles returning to the beach where they hatched.\n\nWhat makes the series stand out is its extraordinary camera work. Using underwater drones, the film crew captured behaviour that had never been filmed before, including an octopus that collects shells to build itself a portable shelter. The footage is accompanied by a gentle, perfectly judged soundtrack, while the narrator explains complex ideas, such as how coral feeds, without ever talking down to the audience.\n\nAdmittedly, the series is not flawless. The fourth episode, which focuses on coral bleaching, is rather slow at times, and some viewers may find the scenes of damaged reefs upsetting. Nevertheless, these moments are important, because they show why the reef needs protecting, and the final episode ends on a hopeful note with a group of young divers replanting coral.\n\nI would wholeheartedly recommend the series to anyone who is curious about the natural world. Younger viewers will be enchanted by the colourful fish and surprising animal tricks, whereas older students will appreciate the thoughtful message about caring for our oceans. It is, without doubt, the most memorable documentary I have watched this year.",
+  "id": "c1-w10",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "Rarely does a … manage to …",
+     "What makes the series stand out is …",
+     "Admittedly, …",
+     "I would wholeheartedly recommend it to …"
+    ]
+   },
+   {
+    "g": "🔗 Cohesion",
+    "p": [
+     "Nonetheless, …",
+     "Admittedly, …",
+     "Conversely, …",
+     "Consequently, …",
+     "Given that …",
+     "By contrast, …",
+     "On balance, …",
+     "Ultimately, …"
+    ]
+   },
+   {
+    "g": "🧭 Arguing & hedging",
+    "p": [
+     "It could be argued that …",
+     "There is a strong case for …",
+     "This is not to say that …",
+     "to a certain extent",
+     "It is worth bearing in mind that …"
+    ]
+   },
+   {
+    "g": "✨ Advanced structures",
+    "p": [
+     "Not only does …, but it also …",
+     "What is particularly striking is …",
+     "Only by … can we …",
+     "Were it not for …"
+    ]
+   }
+  ],
+  "level": "c1"
  }
 ]

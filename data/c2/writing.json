@@ -757,5 +757,482 @@
    }
   ],
   "level": "c2"
+ },
+ {
+  "genre": "summary",
+  "part": "C2 Proficiency · Writing Part 1 (essay on two texts)",
+  "title": "Should Zoos Still Exist?",
+  "task": "Read the two texts below. Write an essay summarising and evaluating the key points from both texts. Use your own words throughout as far as possible, and include your own ideas in your answer. Write 240–280 words.",
+  "texts": [
+   {
+    "title": "Text 1: A Safe Harbour",
+    "text": "Well-run zoos have become vital lifeboats for endangered species. Breeding programmes have rescued animals such as the Arabian oryx from extinction, and the millions of children who visit each year develop a fondness for wildlife that no textbook could inspire. Closing zoos would abandon these animals at precisely the moment they need us most."
+   },
+   {
+    "title": "Text 2: A Cage Is Still a Cage",
+    "text": "However spacious an enclosure may be, it can never replace the wild. Elephants, big cats and dolphins often show signs of stress in captivity, and only a small fraction of zoo animals belong to endangered species. The money spent on visitor attractions would achieve far more if it protected the habitats where animals actually live."
+   }
+  ],
+  "points": [
+   {
+    "label": "Summarise Text 1 (zoos save species and inspire children)",
+    "sets": [
+     [
+      "first text",
+      "first writer",
+      "text 1",
+      "the former",
+      "first author",
+      "first extract"
+     ],
+     [
+      "breed",
+      "extinct",
+      "endanger",
+      "conserv",
+      "lifeboat",
+      "fondness",
+      "inspire"
+     ]
+    ],
+    "need": 2
+   },
+   {
+    "label": "Summarise Text 2 (captivity harms animals; protect habitats)",
+    "sets": [
+     [
+      "second text",
+      "second writer",
+      "text 2",
+      "the latter",
+      "second author",
+      "second extract"
+     ],
+     [
+      "stress",
+      "captiv",
+      "wild",
+      "habitat",
+      "enclosure",
+      "fraction"
+     ]
+    ],
+    "need": 2
+   },
+   {
+    "label": "Evaluate both writers' arguments",
+    "keys": [
+     "convincing",
+     "persuasive",
+     "valid",
+     "overlook",
+     "fail to",
+     "underestimate",
+     "compelling",
+     "flawed",
+     "oversimplif"
+    ]
+   },
+   {
+    "label": "Give your own view",
+    "keys": [
+     "on balance",
+     "ultimately",
+     "in conclusion",
+     "to conclude",
+     "all things considered",
+     "overall",
+     "to sum up",
+     "taking everything into account",
+     "my own view",
+     "i would contend",
+     "i am inclined"
+    ]
+   }
+  ],
+  "words": [
+   240,
+   280
+  ],
+  "model": "The two texts offer sharply contrasting answers to the question of whether zoos still deserve a place in the modern world.\n\nThe first text contends that well-managed zoos act as a last refuge for species on the brink of extinction. Breeding schemes, the writer points out, have already brought animals such as the Arabian oryx back from the edge, while the sight of a living tiger can awaken a lifelong love of nature in a child far more effectively than any book. This is a compelling argument, not least because conservation depends on public support. However, it rather overlooks the welfare of the individual animals involved.\n\nIt is precisely this issue that the second writer raises. Even the most generous enclosure, the text maintains, is a poor substitute for the wild, and many large mammals display clear signs of distress in captivity. Moreover, since most zoo animals are not endangered at all, the conservation argument applies to only a small fraction of them. The suggestion that funds would be better spent protecting natural habitats is persuasive, yet it underestimates how many habitats have already been destroyed beyond repair.\n\nUltimately, I would contend that both writers are partly right. Were zoos to disappear overnight, several species would vanish with them; on the other hand, keeping animals simply to entertain visitors is increasingly difficult to justify. It is therefore essential that every zoo be judged by a single standard: whether it genuinely contributes to protecting animals in the wild. Those that do deserve our support, whereas those that do not should, arguably, close their gates for good.",
+  "id": "c2-w07",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "The first text contends that …",
+     "The second writer, by contrast, …",
+     "This argument rests on the assumption that …",
+     "It is essential that …",
+     "Ultimately, I would contend that …"
+    ]
+   },
+   {
+    "g": "🔗 Cohesion",
+    "p": [
+     "albeit",
+     "insofar as",
+     "Notwithstanding …,",
+     "By the same token, …",
+     "That said, …",
+     "Be that as it may, …",
+     "whereby"
+    ]
+   },
+   {
+    "g": "📚 Summarising & evaluating",
+    "p": [
+     "The first text contends that …",
+     "The second writer, by contrast, …",
+     "Both writers acknowledge that …",
+     "This argument rests on the assumption that …",
+     "This view overlooks …"
+    ]
+   },
+   {
+    "g": "✨ Advanced structures",
+    "p": [
+     "Rarely has …",
+     "Little do we realise …",
+     "It is precisely … that …",
+     "Were it not for …",
+     "Had … , … would have …"
+    ]
+   }
+  ],
+  "level": "c2"
+ },
+ {
+  "genre": "summary",
+  "part": "C2 Proficiency · Writing Part 1 (essay on two texts)",
+  "title": "Winning, Losing and School Sport",
+  "task": "Read the two texts below. Write an essay summarising and evaluating the key points from both texts. Use your own words throughout as far as possible, and include your own ideas in your answer. Write 240–280 words.",
+  "texts": [
+   {
+    "title": "Text 1: The Thrill of the Race",
+    "text": "Competition is what makes sport exciting. Striving to beat a rival teaches young people to set goals, train hard and cope with disappointment, lessons that will serve them well long after they leave school. A sports day without winners would not protect children; it would simply deny the talented a chance to shine."
+   },
+   {
+    "title": "Text 2: Everyone on the Pitch",
+    "text": "School sport too often rewards the few at the expense of the many. Pupils who are always picked last soon decide that exercise is not for them, and some give it up entirely. Schools should value effort, enjoyment and improvement, so that every child, however skilled, leaves with a love of being active."
+   }
+  ],
+  "points": [
+   {
+    "label": "Summarise Text 1 (competition motivates and teaches)",
+    "sets": [
+     [
+      "first text",
+      "first writer",
+      "text 1",
+      "the former",
+      "first author",
+      "first extract"
+     ],
+     [
+      "competiti",
+      "rival",
+      "goal",
+      "disappoint",
+      "talent",
+      "winner",
+      "motivat"
+     ]
+    ],
+    "need": 2
+   },
+   {
+    "label": "Summarise Text 2 (it puts many pupils off; value effort)",
+    "sets": [
+     [
+      "second text",
+      "second writer",
+      "text 2",
+      "the latter",
+      "second author",
+      "second extract"
+     ],
+     [
+      "picked last",
+      "excluded",
+      "give up",
+      "effort",
+      "enjoy",
+      "improvement",
+      "put off"
+     ]
+    ],
+    "need": 2
+   },
+   {
+    "label": "Evaluate both writers' arguments",
+    "keys": [
+     "convincing",
+     "persuasive",
+     "valid",
+     "overlook",
+     "fail to",
+     "underestimate",
+     "compelling",
+     "flawed",
+     "oversimplif"
+    ]
+   },
+   {
+    "label": "Give your own view",
+    "keys": [
+     "on balance",
+     "ultimately",
+     "in conclusion",
+     "to conclude",
+     "all things considered",
+     "overall",
+     "to sum up",
+     "taking everything into account",
+     "my own view",
+     "i would contend",
+     "i am inclined"
+    ]
+   }
+  ],
+  "words": [
+   240,
+   280
+  ],
+  "model": "Few questions divide teachers and parents quite as reliably as the role of competition in school sport, and the two texts take markedly different positions on it.\n\nThe first writer maintains that the desire to beat a rival is the very essence of sport. Competing, it is argued, teaches young people to set goals, to train with determination and to recover from defeat, all of which are valuable well beyond the playing field. Removing winners, the writer adds, would merely hold back the most talented pupils. There is a good deal of truth in this, since many athletes trace their motivation back to a single race at school.\n\nThe second text, however, takes issue with a system that celebrates a gifted minority. Its author observes that children who are repeatedly picked last tend to conclude that exercise is not for them, and that some abandon it altogether. Rather than prizes for the fastest, schools should reward effort, enjoyment and personal improvement. This is a persuasive point, particularly at a time when so many young people lead inactive lives.\n\nBe that as it may, the second writer arguably oversimplifies the first, which never suggests that only winners matter. Both writers would no doubt agree that the purpose of school sport is to produce adults who stay active.\n\nOn balance, it seems to me that the two approaches can coexist. Schools could offer competitive leagues for those who relish them alongside non-competitive activities such as climbing or dance. It is vital that no pupil leave school believing that sport belongs only to the fortunate few.",
+  "id": "c2-w08",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "The first writer maintains that …",
+     "The second text takes issue with …",
+     "Be that as it may, …",
+     "Both writers would no doubt agree that …",
+     "On balance, it seems to me that …"
+    ]
+   },
+   {
+    "g": "🔗 Cohesion",
+    "p": [
+     "albeit",
+     "insofar as",
+     "Notwithstanding …,",
+     "By the same token, …",
+     "That said, …",
+     "Be that as it may, …",
+     "whereby"
+    ]
+   },
+   {
+    "g": "📚 Summarising & evaluating",
+    "p": [
+     "The first text contends that …",
+     "The second writer, by contrast, …",
+     "Both writers acknowledge that …",
+     "This argument rests on the assumption that …",
+     "This view overlooks …"
+    ]
+   },
+   {
+    "g": "✨ Advanced structures",
+    "p": [
+     "Rarely has …",
+     "Little do we realise …",
+     "It is precisely … that …",
+     "Were it not for …",
+     "Had … , … would have …"
+    ]
+   }
+  ],
+  "level": "c2"
+ },
+ {
+  "genre": "article",
+  "part": "C2 Proficiency · Writing Part 2 (article)",
+  "title": "Why We Should All Look Up",
+  "task": "A science magazine for young people is publishing a series called “Wonders on Your Doorstep”. Write an article entitled “Why We Should All Look Up”, explaining why so few people notice the night sky today, what we miss as a result and how readers could start stargazing. Write 240–280 words.",
+  "points": [
+   {
+    "label": "Why few people notice the night sky",
+    "keys": [
+     "light pollution",
+     "street light",
+     "screen",
+     "indoors",
+     "glow"
+    ]
+   },
+   {
+    "label": "What we miss as a result",
+    "keys": [
+     "wonder",
+     "awe",
+     "curiosity",
+     "perspective",
+     "imagination",
+     "constellation"
+    ]
+   },
+   {
+    "label": "How readers could start stargazing",
+    "keys": [
+     "start by",
+     "why not",
+     "next time",
+     "try",
+     "binoculars",
+     "app"
+    ]
+   }
+  ],
+  "words": [
+   240,
+   280
+  ],
+  "model": "Why We Should All Look Up\n\nWhen did you last stop on a clear night and simply gaze at the stars? For most of us, the answer is probably “not for ages”, and the reason is not hard to find.\n\nIt is not that the stars have disappeared, but rather that we have hidden them. In towns and cities, the orange glow of street lights, known as light pollution, washes out all but the brightest points in the sky. Even when we are somewhere truly dark, our eyes are usually fixed on a screen, and the sky above passes unnoticed.\n\nLittle do we realise how much we lose as a result. For thousands of years, the night sky was a storybook, a calendar and a map: sailors steered by it, farmers planted by it and every culture filled it with heroes and animals. Paradoxically, although we now know more about space than ever before, far fewer people have actually seen the Milky Way with their own eyes. That sense of awe, the feeling of being a tiny part of something unimaginably vast, is a powerful spark for curiosity, and it is a great pity to miss it.\n\nFortunately, rediscovering the stars is remarkably easy. Start by finding the darkest spot you can, perhaps a park or a back garden, and give your eyes twenty minutes to adjust. A free star-map app will help you spot the constellations, and a simple pair of binoculars will reveal the craters of the Moon.\n\nSo the next time the sky is clear, why not switch off your screen and look up? You may be astonished by what has been there all along.",
+  "id": "c2-w09",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "When did you last …?",
+     "It is not that … but rather that …",
+     "Little do we realise …",
+     "Paradoxically, …",
+     "So the next time …, …"
+    ]
+   },
+   {
+    "g": "🔗 Cohesion",
+    "p": [
+     "albeit",
+     "insofar as",
+     "Notwithstanding …,",
+     "By the same token, …",
+     "That said, …",
+     "Be that as it may, …",
+     "whereby"
+    ]
+   },
+   {
+    "g": "📚 Summarising & evaluating",
+    "p": [
+     "The first text contends that …",
+     "The second writer, by contrast, …",
+     "Both writers acknowledge that …",
+     "This argument rests on the assumption that …",
+     "This view overlooks …"
+    ]
+   },
+   {
+    "g": "✨ Advanced structures",
+    "p": [
+     "Rarely has …",
+     "Little do we realise …",
+     "It is precisely … that …",
+     "Were it not for …",
+     "Had … , … would have …"
+    ]
+   }
+  ],
+  "level": "c2"
+ },
+ {
+  "genre": "report",
+  "part": "C2 Proficiency · Writing Part 2 (report)",
+  "title": "Report: The Inter-School Robot Challenge",
+  "task": "Your school sent a team to an inter-school robot challenge, and the organisers have asked participants for feedback. Write a report evaluating the event, explaining what could be improved and recommending whether your school should take part again next year. Write 240–280 words.",
+  "points": [
+   {
+    "label": "The purpose of the report",
+    "keys": [
+     "purpose",
+     "aim",
+     "this report"
+    ]
+   },
+   {
+    "label": "Evaluate the event's strengths",
+    "keys": [
+     "success",
+     "impressive",
+     "well organised",
+     "highlight",
+     "valuable",
+     "remarkable"
+    ]
+   },
+   {
+    "label": "What could be improved",
+    "keys": [
+     "improve",
+     "drawback",
+     "shortcoming",
+     "could have been",
+     "however",
+     "frustrat"
+    ]
+   },
+   {
+    "label": "Recommend whether to take part again",
+    "keys": [
+     "recommend",
+     "propose",
+     "advisable"
+    ]
+   }
+  ],
+  "words": [
+   240,
+   280
+  ],
+  "model": "Purpose\nThis report sets out to evaluate the Inter-School Robot Challenge held at Riverside Academy last month, drawing on the views of our six team members and their teacher, and to recommend whether the school should enter again.\n\nStrengths of the event\nBy any measure, the challenge was a remarkable success. Twenty-four teams took part, each required to build a robot capable of sorting coloured blocks and navigating a miniature obstacle course. What participants valued most was the workshop on the opening morning, in which engineers from a local company offered practical advice on sensors and coding. The atmosphere, moreover, was supportive rather than fiercely competitive: rival teams regularly lent each other spare parts and tools.\n\nAreas for improvement\nNevertheless, a number of shortcomings were noted. The timetable was extremely tight, so several teams had barely an hour to repair robots damaged in the early rounds. In addition, the judging criteria were published only on the day itself, which left some groups feeling that their designs had been built for the wrong task. Arguably, the event would also have benefited from a quiet area, since the main hall was so noisy that team members could scarcely hear one another.\n\nRecommendations\nWere the organisers to publish the rules a month in advance and allow longer repair breaks, most of these problems would disappear. As for our own participation, the experience developed our team's problem-solving skills and confidence to a degree that ordinary lessons rarely achieve. It is therefore strongly recommended that the school take part again next year, ideally with a second team so that more students can benefit.",
+  "id": "c2-w10",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "This report sets out to …",
+     "What participants valued most was …",
+     "A notable shortcoming was …",
+     "Were the organisers to …, …",
+     "It is strongly recommended that …"
+    ]
+   },
+   {
+    "g": "🔗 Cohesion",
+    "p": [
+     "albeit",
+     "insofar as",
+     "Notwithstanding …,",
+     "By the same token, …",
+     "That said, …",
+     "Be that as it may, …",
+     "whereby"
+    ]
+   },
+   {
+    "g": "📚 Summarising & evaluating",
+    "p": [
+     "The first text contends that …",
+     "The second writer, by contrast, …",
+     "Both writers acknowledge that …",
+     "This argument rests on the assumption that …",
+     "This view overlooks …"
+    ]
+   },
+   {
+    "g": "✨ Advanced structures",
+    "p": [
+     "Rarely has …",
+     "Little do we realise …",
+     "It is precisely … that …",
+     "Were it not for …",
+     "Had … , … would have …"
+    ]
+   }
+  ],
+  "level": "c2"
  }
 ]

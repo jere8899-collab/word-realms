@@ -614,5 +614,397 @@
    }
   ],
   "level": "b2"
+ },
+ {
+  "genre": "essay",
+  "part": "B2 First · Writing Part 1 (essay)",
+  "title": "Should Every Student Learn to Cook?",
+  "task": "In your English class you have been talking about the skills young people need. Write an essay using all the notes and give reasons for your point of view. Essay question: “Every student should learn to cook at school. Do you agree?” Notes: 1. health 2. independence 3. ……… (your own idea). Write 140–190 words.",
+  "points": [
+   {
+    "label": "Note 1: health",
+    "keys": [
+     "health",
+     "diet",
+     "nutri",
+     "vegetable",
+     "fruit",
+     "energy"
+    ]
+   },
+   {
+    "label": "Note 2: independence",
+    "keys": [
+     "independen",
+     "look after",
+     "on their own",
+     "by themselves",
+     "self-reliant"
+    ]
+   },
+   {
+    "label": "Note 3: your own idea",
+    "keys": [
+     "re:\\b(another|a further|a third|finally|lastly|last but not least|moreover|furthermore|what is more|in addition|additionally)\\b"
+    ]
+   },
+   {
+    "label": "Give your opinion",
+    "keys": [
+     "in my opinion",
+     "in my view",
+     "i believe",
+     "i think",
+     "personally",
+     "to my mind",
+     "i feel",
+     "i agree",
+     "i disagree",
+     "i am convinced",
+     "i would argue",
+     "from my point of view"
+    ]
+   }
+  ],
+  "words": [
+   140,
+   190
+  ],
+  "model": "Cooking lessons have disappeared from many school timetables. Should every student learn to cook before leaving school?\n\nFirstly, cooking is closely linked to health. Students who can prepare simple meals are less likely to live on crisps and fizzy drinks, and they discover which foods give them energy for sport and study. If everyone knew how to make a quick vegetable soup, far fewer teenagers would skip lunch.\n\nSecondly, cooking builds independence. Having learnt to follow a recipe, young people can look after themselves when their parents are busy, and they feel more confident about helping at home.\n\nAnother point to consider is that cooking is great fun. A class that has baked bread together has not only practised weighing and measuring, but also learnt to work as a team.\n\nOn the other hand, it is often argued that timetables are already too full. However, a single lesson every two weeks would be enough to make a real difference.\n\nIn my opinion, cooking should be taught in every school, because it is a skill that lasts a lifetime.",
+  "id": "b2-w07",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "It is often argued that …",
+     "Firstly, …",
+     "Another point to consider is …",
+     "On the other hand, …"
+    ]
+   },
+   {
+    "g": "🔗 Linking devices",
+    "p": [
+     "Moreover, …",
+     "Furthermore, …",
+     "Nevertheless, …",
+     "whereas",
+     "As a result, …",
+     "Therefore, …",
+     "In spite of …",
+     "To sum up, …",
+     "In conclusion, …"
+    ]
+   },
+   {
+    "g": "🧭 Opinions & arguments",
+    "p": [
+     "In my view, …",
+     "There are several reasons why …",
+     "It is worth noting that …",
+     "All things considered, …"
+    ]
+   },
+   {
+    "g": "✉️ Formal phrases",
+    "p": [
+     "Dear Sir or Madam,",
+     "I am writing to …",
+     "I look forward to hearing from you.",
+     "Yours faithfully,"
+    ]
+   }
+  ],
+  "level": "b2"
+ },
+ {
+  "genre": "review",
+  "part": "B2 First · Writing Part 2 (review)",
+  "title": "Review: Starfall Builders",
+  "task": "You see this announcement on a website for young gamers: “Reviews wanted! Tell us about a game you have played recently. What is it about, what did you like and dislike, and who would you recommend it to?” Write your review in 140–190 words.",
+  "points": [
+   {
+    "label": "What the game is about",
+    "keys": [
+     "about",
+     "players",
+     "story",
+     "set in",
+     "you have to",
+     "must"
+    ]
+   },
+   {
+    "label": "What you liked",
+    "keys": [
+     "enjoy",
+     "liked",
+     "loved",
+     "best",
+     "impressive",
+     "impressed",
+     "amazing",
+     "highlight",
+     "stunning"
+    ]
+   },
+   {
+    "label": "What you didn't like",
+    "keys": [
+     "however",
+     "although",
+     "disappoint",
+     "drawback",
+     "downside",
+     "i wish",
+     "could have",
+     "repetitive"
+    ]
+   },
+   {
+    "label": "Who you would recommend it to",
+    "keys": [
+     "recommend",
+     "worth",
+     "ideal for",
+     "suitable",
+     "anyone who"
+    ]
+   }
+  ],
+  "words": [
+   140,
+   190
+  ],
+  "model": "Starfall Builders: a game that is out of this world\n\nIf you've ever dreamed of building your own space station, Starfall Builders is the game for you. Players crash-land on a tiny planet and must gather crystals, grow food and build a base before the next meteor shower arrives.\n\nWhat impressed me most was the teamwork mode. Up to four friends can play together, and each person has a special job, such as engineer or plant scientist, which means that nobody is left out. The music is relaxing, and the planets are stunning, with glowing purple forests and floating islands.\n\nHowever, the game is not perfect. The instructions at the start are confusing, and I wish there had been a proper tutorial. I also found that the later levels became repetitive, because you build the same kind of tower again and again.\n\nOverall, I would highly recommend it to anyone aged nine and over who enjoys creative games. It is ideal for rainy weekends with friends, although you should remember to take a break every hour!",
+  "id": "b2-w08",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "If you've ever dreamed of …, …",
+     "What impressed me most was …",
+     "The only drawback is …",
+     "I would highly recommend it to …"
+    ]
+   },
+   {
+    "g": "🔗 Linking devices",
+    "p": [
+     "Moreover, …",
+     "Furthermore, …",
+     "Nevertheless, …",
+     "whereas",
+     "As a result, …",
+     "Therefore, …",
+     "In spite of …",
+     "To sum up, …",
+     "In conclusion, …"
+    ]
+   },
+   {
+    "g": "🧭 Opinions & arguments",
+    "p": [
+     "In my view, …",
+     "There are several reasons why …",
+     "It is worth noting that …",
+     "All things considered, …"
+    ]
+   },
+   {
+    "g": "✉️ Formal phrases",
+    "p": [
+     "Dear Sir or Madam,",
+     "I am writing to …",
+     "I look forward to hearing from you.",
+     "Yours faithfully,"
+    ]
+   }
+  ],
+  "level": "b2"
+ },
+ {
+  "genre": "article",
+  "part": "B2 First · Writing Part 2 (article)",
+  "title": "The Best Club at My School",
+  "task": "You see this notice in your school's English magazine: “Which club at your school would you recommend to a new student? What do members do there, and why is it worth joining?” Write an article answering these questions in 140–190 words.",
+  "points": [
+   {
+    "label": "Which club you recommend",
+    "keys": [
+     "club"
+    ]
+   },
+   {
+    "label": "What members do there",
+    "keys": [
+     "every week",
+     "every wednesday",
+     "each week",
+     "we plant",
+     "we look after",
+     "members",
+     "we meet"
+    ]
+   },
+   {
+    "label": "Why it is worth joining",
+    "keys": [
+     "worth",
+     "reason",
+     "why not",
+     "you will",
+     "you'll"
+    ]
+   }
+  ],
+  "words": [
+   140,
+   190
+  ],
+  "model": "Why Not Join the Garden Club?\n\nHave you ever eaten a strawberry you grew yourself? If not, the Garden Club at Hillside School could be just the place for you.\n\nEvery Wednesday after lunch, about twenty members meet in the corner of the playground, where we look after six vegetable beds and a small pond. In spring we plant seeds, and by the summer holidays we are picking tomatoes, beans and sunflowers taller than our teacher! Last year some of our pumpkins were sold at the school fair, and the money was used to buy three bird boxes.\n\nSo why is it worth joining? Firstly, you do not need any experience, because the older members are happy to show you what to do. Being outside in the fresh air is also a brilliant way to relax after a busy morning of lessons.\n\nMost importantly, you will make friends with people from every year group. If you are looking for a club that is fun, calm and useful, why not come along next week?",
+  "id": "b2-w09",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "Have you ever …?",
+     "Every …, we …",
+     "So why is it worth joining?",
+     "If you are looking for …, why not …?"
+    ]
+   },
+   {
+    "g": "🔗 Linking devices",
+    "p": [
+     "Moreover, …",
+     "Furthermore, …",
+     "Nevertheless, …",
+     "whereas",
+     "As a result, …",
+     "Therefore, …",
+     "In spite of …",
+     "To sum up, …",
+     "In conclusion, …"
+    ]
+   },
+   {
+    "g": "🧭 Opinions & arguments",
+    "p": [
+     "In my view, …",
+     "There are several reasons why …",
+     "It is worth noting that …",
+     "All things considered, …"
+    ]
+   },
+   {
+    "g": "✉️ Formal phrases",
+    "p": [
+     "Dear Sir or Madam,",
+     "I am writing to …",
+     "I look forward to hearing from you.",
+     "Yours faithfully,"
+    ]
+   }
+  ],
+  "level": "b2"
+ },
+ {
+  "genre": "email",
+  "part": "B2 First · Writing Part 2 (email)",
+  "title": "Tips for Space Camp",
+  "task": "Read the email from your friend Jake and the notes you have made. Write your reply to Jake using all the notes. Write 140–190 words.",
+  "email": {
+   "from": "Jake",
+   "text": "Our class is going on a three-day trip to a science and space camp next month, and I'm a bit nervous because I've never been away from home. You went last year! What was it like, what should I pack, and have you got any tips?",
+   "notes": [
+    "Tell him!",
+    "Give a list",
+    "Share your best tip"
+   ]
+  },
+  "points": [
+   {
+    "label": "What the camp was like",
+    "keys": [
+     "it was",
+     "amazing",
+     "brilliant",
+     "loved",
+     "the best",
+     "fantastic"
+    ]
+   },
+   {
+    "label": "What to pack",
+    "keys": [
+     "pack",
+     "bring",
+     "take a",
+     "take some"
+    ]
+   },
+   {
+    "label": "Your tips",
+    "keys": [
+     "tip",
+     "make sure",
+     "advice",
+     "don't worry",
+     "try to",
+     "if i were you"
+    ]
+   }
+  ],
+  "words": [
+   140,
+   190
+  ],
+  "model": "Hi Jake,\n\nThanks for your email. I'm so excited for you, because the space camp was honestly the best trip I've ever been on!\n\nOn the first day we built rockets out of plastic bottles and launched them on the field. Mine flew higher than the teacher's, which I'm still very proud of. In the evening we looked at the stars through a huge telescope, and I saw the rings of Saturn for the first time.\n\nAs for packing, make sure you bring warm clothes, because the nights get really cold. You should also take a torch, a water bottle and a good book for the coach.\n\nMy biggest tip is not to worry about being homesick. I was nervous too, but once the activities started I was having too much fun to think about it. If I were you, I would also keep a short diary, so you can remember everything afterwards.\n\nWrite soon and tell me how it goes!\n\nBest wishes,\nMaya",
+  "id": "b2-w10",
+  "bank": [
+   {
+    "g": "✨ For this task",
+    "p": [
+     "Thanks for your email.",
+     "As for …, …",
+     "Make sure you …",
+     "If I were you, I would …"
+    ]
+   },
+   {
+    "g": "🔗 Linking devices",
+    "p": [
+     "Moreover, …",
+     "Furthermore, …",
+     "Nevertheless, …",
+     "whereas",
+     "As a result, …",
+     "Therefore, …",
+     "In spite of …",
+     "To sum up, …",
+     "In conclusion, …"
+    ]
+   },
+   {
+    "g": "🧭 Opinions & arguments",
+    "p": [
+     "In my view, …",
+     "There are several reasons why …",
+     "It is worth noting that …",
+     "All things considered, …"
+    ]
+   },
+   {
+    "g": "✉️ Formal phrases",
+    "p": [
+     "Dear Sir or Madam,",
+     "I am writing to …",
+     "I look forward to hearing from you.",
+     "Yours faithfully,"
+    ]
+   }
+  ],
+  "level": "b2"
  }
 ]

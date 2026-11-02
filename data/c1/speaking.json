@@ -179,5 +179,174 @@
   "tip": "After 'Not only' the verb comes first: 'Not only WOULD a park…'. Stress ON-ly and AL-so.",
   "id": "c1-sp22",
   "minWords": 7
+ },
+ {
+  "type": "read",
+  "text": "Seldom have I seen a goalkeeper make so many saves in a single match.",
+  "focus": "Negative inversion: seldom",
+  "tip": "Stress SEL-dom at the start, then let 'have I' be quick and light. Stress SAVES and SIN-gle.",
+  "id": "c1-sp23"
+ },
+ {
+  "type": "read",
+  "text": "The comet, visible only once every seventy-six years, lit up the night sky.",
+  "focus": "Chunking extra information",
+  "tip": "Three chunks: The comet | visible only once every seventy-six years | lit up the night sky. Link 'lit up' into 'li-tup'.",
+  "id": "c1-sp24"
+ },
+ {
+  "type": "read",
+  "text": "Had it not been for the volunteers, the nature reserve would have closed years ago.",
+  "focus": "Inversion: had it not been for",
+  "tip": "Start firmly on HAD, pause at the comma, and stress vol-un-TEERS and CLOSED.",
+  "id": "c1-sp25"
+ },
+ {
+  "type": "read",
+  "text": "It was the robot's tiny solar panel that kept it running through the storm.",
+  "focus": "Cleft sentences: it was … that",
+  "tip": "Put the weight on the key idea: TI-ny SO-lar PAN-el. 'robot's' ends in /ts/.",
+  "id": "c1-sp26"
+ },
+ {
+  "type": "read",
+  "text": "The wind was so strong that we couldn't wind the kite string back in.",
+  "focus": "Homographs: wind and wind",
+  "tip": "The weather 'wind' is /wɪnd/, but to 'wind' a string is /waɪnd/. Same spelling, different sounds!",
+  "id": "c1-sp27"
+ },
+ {
+  "type": "read",
+  "text": "Considering how little training she'd had, her performance was remarkably assured.",
+  "focus": "Word stress in long words",
+  "tip": "con-SID-er-ing, per-FOR-mance, re-MARK-ab-ly and as-SURED /əˈʃʊəd/. 'she'd had' is /ʃiːd hæd/.",
+  "id": "c1-sp28"
+ },
+ {
+  "type": "read",
+  "text": "The standing ovation for the school orchestra lasted several minutes.",
+  "focus": "Word stress: o-VA-tion",
+  "tip": "o-VA-tion is /əʊˈveɪʃn/. OR-ches-tra is stressed on the first syllable, and 'ch' sounds like /k/.",
+  "id": "c1-sp29"
+ },
+ {
+  "type": "read",
+  "text": "Bees, far from being a nuisance, are essential to the food we eat.",
+  "focus": "Fronted phrases: far from being",
+  "tip": "Drop your pitch for 'far from being a nuisance'. NUI-sance is /ˈnjuːsns/ and es-SEN-tial is stressed in the middle.",
+  "id": "c1-sp30"
+ },
+ {
+  "type": "read",
+  "text": "The documentary shed light on how octopuses use tools to solve problems.",
+  "focus": "Idiom: shed light on",
+  "tip": "To 'shed light on' something is to help us understand it. OC-to-pus-es is /ˈɒktəpʊsɪz/.",
+  "id": "c1-sp31"
+ },
+ {
+  "type": "read",
+  "text": "Whichever route you choose, allow plenty of time to reach the campsite before dark.",
+  "focus": "Sounds: /aʊ/ and /uː/",
+  "tip": "'allow' rhymes with 'cow' /əˈlaʊ/, but 'route' sounds like 'root' /ruːt/. Pause after 'choose'.",
+  "id": "c1-sp32"
+ },
+ {
+  "type": "answer",
+  "q": "Should schools have longer breaks? Give a balanced view with 'While' and 'I'd argue that'.",
+  "keywords": [
+   "while",
+   "argue that"
+  ],
+  "model": "While longer breaks mean less lesson time, I'd argue that they help us concentrate better afterwards.",
+  "focus": "Balanced opinion",
+  "tip": "Pause after the 'While' part, then stress AR-gue and CON-cen-trate.",
+  "id": "c1-sp33",
+  "minWords": 7
+ },
+ {
+  "type": "answer",
+  "q": "Describe an invention you couldn't live without. Use a cleft sentence: 'What I value most is…'.",
+  "keywords": [
+   "what i value most"
+  ],
+  "model": "What I value most is my bike, because it gives me the freedom to explore on my own.",
+  "focus": "Cleft sentences for emphasis",
+  "tip": "Rise a little on 'most', pause, then stress BIKE and FREE-dom.",
+  "id": "c1-sp34",
+  "minWords": 7
+ },
+ {
+  "type": "answer",
+  "q": "Imagine your school had no rules for one day. Speculate with 'would probably' or 'might well'.",
+  "keywords": [
+   "would probably|might well|may well"
+  ],
+  "model": "Some students would probably eat pudding first, but most of us might well miss the routine by lunchtime.",
+  "focus": "Speculating",
+  "tip": "'might well' links smoothly /maɪt wel/. Stress PROB-ab-ly, WELL and rou-TINE.",
+  "id": "c1-sp35",
+  "minWords": 7
+ },
+ {
+  "type": "answer",
+  "q": "How could your town protect wildlife? Use a passive with 'could be' or 'should be'.",
+  "keywords": [
+   "could be|should be|might be|ought to be"
+  ],
+  "model": "More hedges could be planted along the roads, and street lights should be dimmed at night for bats.",
+  "focus": "Passive for suggestions",
+  "tip": "Keep 'be' weak /bi/ and stress the participles: PLANT-ed, DIMMED.",
+  "id": "c1-sp36",
+  "minWords": 7
+ },
+ {
+  "type": "answer",
+  "q": "Tell me about a misunderstanding with a friend. Use 'It turned out that'.",
+  "keywords": [
+   "turned out"
+  ],
+  "model": "I thought my friend was ignoring me, but it turned out that she simply hadn't heard me.",
+  "focus": "Telling a surprise ending",
+  "tip": "Link 'turned out' into 'tur-ndout'. Pause just before it, then stress SIM-ply and HEARD.",
+  "id": "c1-sp37",
+  "minWords": 7
+ },
+ {
+  "type": "answer",
+  "q": "Is it better to be brilliant at one sport or to try lots of them? Hedge with 'It depends on' or 'to a large extent'.",
+  "keywords": [
+   "it depends|to a large extent|to some extent"
+  ],
+  "model": "It depends on the person, but trying lots of sports usually helps you find the one you love.",
+  "focus": "Hedging",
+  "tip": "Pause after 'It depends on the person,'. Stress de-PENDS and U-su-al-ly.",
+  "id": "c1-sp38",
+  "minWords": 7
+ },
+ {
+  "type": "answer",
+  "q": "Recommend a book or series to a friend. Use 'If you're into…, you'll love…'.",
+  "keywords": [
+   "if you are into",
+   "love"
+  ],
+  "model": "If you're into mysteries, you'll love the Lighthouse Detectives, because every chapter ends with a twist.",
+  "focus": "Recommending",
+  "tip": "'you're into' is /jɔːr ˈɪntə/ with a linking r. Stress LOVE and TWIST.",
+  "id": "c1-sp39",
+  "minWords": 7
+ },
+ {
+  "type": "answer",
+  "q": "Persuade your class to join a beach clean-up. Use 'Imagine how' and 'we could'.",
+  "keywords": [
+   "imagine how",
+   "we could"
+  ],
+  "model": "Imagine how proud we'd feel if we could fill twenty bags of rubbish in one morning!",
+  "focus": "Persuading",
+  "tip": "Say 'Imagine' with energy: i-MAG-ine. Let your voice rise with excitement on TWEN-ty BAGS.",
+  "id": "c1-sp40",
+  "minWords": 7
  }
 ]

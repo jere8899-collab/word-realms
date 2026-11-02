@@ -178,5 +178,173 @@
   "tip": "'whereas' is /weərˈæz/ with stress on the second syllable. Pause just before it.",
   "id": "b2-sp22",
   "minWords": 6
+ },
+ {
+  "type": "read",
+  "text": "If we'd left earlier, we wouldn't have missed the start of the match.",
+  "focus": "Third conditional: weak forms",
+  "tip": "'we'd' is one beat /wiːd/ and 'wouldn't have' is /ˈwʊdntəv/. Stress LEFT, EAR-li-er and MATCH.",
+  "id": "b2-sp23"
+ },
+ {
+  "type": "read",
+  "text": "The new science lab is being built next to the sports hall.",
+  "focus": "Passive: is being built",
+  "tip": "'being' has two syllables /ˈbiːɪŋ/ and 'built' rhymes with 'kilt'. Stress SCI-ence LAB and BUILT.",
+  "id": "b2-sp24"
+ },
+ {
+  "type": "read",
+  "text": "Our team, which hadn't won all season, finally lifted the trophy.",
+  "focus": "Pauses around extra information",
+  "tip": "Pause at both commas and drop your voice a little for 'which hadn't won all season'. TRO-phy is /ˈtrəʊfi/.",
+  "id": "b2-sp25"
+ },
+ {
+  "type": "read",
+  "text": "I wish I'd brought my camera to the dolphin show.",
+  "focus": "wish + past perfect",
+  "tip": "'I'd brought' is /aɪd brɔːt/: the 'gh' is silent. Stress WISH and DOL-phin.",
+  "id": "b2-sp26"
+ },
+ {
+  "type": "read",
+  "text": "By the time we reached the summit, the clouds had completely cleared.",
+  "focus": "Past perfect and /kl/",
+  "tip": "Pause after 'summit'. 'clouds' and 'cleared' start with the same /kl/. Stress com-PLETE-ly.",
+  "id": "b2-sp27"
+ },
+ {
+  "type": "read",
+  "text": "She's used to getting up early for swimming training.",
+  "focus": "be used to + -ing",
+  "tip": "'used to' here is /juːst tə/, with an /s/ not a /z/. Stress EAR-ly and SWIM-ming.",
+  "id": "b2-sp28"
+ },
+ {
+  "type": "read",
+  "text": "The rescued turtles will be released back into the ocean next week.",
+  "focus": "Future passive and -ed",
+  "tip": "'rescued' is two syllables /ˈreskjuːd/. 'ocean' is /ˈəʊʃn/ with a /ʃ/ in the middle.",
+  "id": "b2-sp29"
+ },
+ {
+  "type": "read",
+  "text": "You'd better wear a helmet if you're going skateboarding.",
+  "focus": "had better: advice",
+  "tip": "'You'd better' is /juːd ˈbetə/: the 'd' is tiny but there. Stress HEL-met and SKATE-board-ing.",
+  "id": "b2-sp30"
+ },
+ {
+  "type": "read",
+  "text": "Unless we recycle more, the school bins will keep overflowing.",
+  "focus": "Word stress: re-CY-cle",
+  "tip": "re-CY-cle is stressed in the middle /riːˈsaɪkl/. Stress o-ver-FLOW-ing near the end.",
+  "id": "b2-sp31"
+ },
+ {
+  "type": "read",
+  "text": "Volunteers are needed to help clean up the beach on Saturday.",
+  "focus": "Word stress: vol-un-TEERS",
+  "tip": "vol-un-TEERS is stressed on the last part. Link 'clean up' into 'clea-nup'.",
+  "id": "b2-sp32"
+ },
+ {
+  "type": "answer",
+  "q": "What's the best way to stay healthy? Use 'It's important to'.",
+  "keywords": [
+   "it is important to"
+  ],
+  "model": "It's important to get enough sleep and to play sport a few times a week.",
+  "focus": "Giving advice",
+  "tip": "'It's important to' is quick: /ɪts ɪmˈpɔːtnt tə/. Stress SLEEP and SPORT.",
+  "id": "b2-sp33",
+  "minWords": 6
+ },
+ {
+  "type": "answer",
+  "q": "Describe a time you felt proud of yourself. Use 'I managed to'.",
+  "keywords": [
+   "managed to"
+  ],
+  "model": "Last term I managed to finish a five-kilometre fun run without stopping once.",
+  "focus": "Talking about achievements",
+  "tip": "'managed' is /ˈmænɪdʒd/, two syllables. Stress FIN-ish and STOP-ping.",
+  "id": "b2-sp34",
+  "minWords": 6
+ },
+ {
+  "type": "answer",
+  "q": "Would you rather explore space or the deep ocean? Use 'I'd rather' and 'because'.",
+  "keywords": [
+   "would rather",
+   "because"
+  ],
+  "model": "I'd rather explore the deep ocean because there are still creatures nobody has ever seen.",
+  "focus": "Preferences: would rather",
+  "tip": "'I'd rather' is /aɪd ˈrɑːðə/. Pause a little before 'because', then stress the reason.",
+  "id": "b2-sp35",
+  "minWords": 6
+ },
+ {
+  "type": "answer",
+  "q": "Tell me about a club you'd like to join. Use 'I'm interested in'.",
+  "keywords": [
+   "interested in"
+  ],
+  "model": "I'm interested in joining the robotics club because I love building things that move.",
+  "focus": "Talking about interests",
+  "tip": "IN-ter-est-ed has three or four beats, stressed at the start. After 'in', use -ing: 'interested in JOIN-ing'.",
+  "id": "b2-sp36",
+  "minWords": 6
+ },
+ {
+  "type": "answer",
+  "q": "How has your town or school changed? Use the present perfect, like 'has been built' or 'have opened'.",
+  "keywords": [
+   "has been|have been|has opened|have opened|has changed|have changed|has become|have become"
+  ],
+  "model": "A new skate park has been built, and two bakeries have opened on the high street.",
+  "focus": "Present perfect for changes",
+  "tip": "'has been' is weak /həz bɪn/. Stress the new things: SKATE PARK and BA-ke-ries.",
+  "id": "b2-sp37",
+  "minWords": 6
+ },
+ {
+  "type": "answer",
+  "q": "Should mobile phones be allowed at school? Give your view with 'Personally' and a reason.",
+  "keywords": [
+   "personally"
+  ],
+  "model": "Personally, I think phones should stay in our bags, because they distract us in lessons.",
+  "focus": "Giving an opinion",
+  "tip": "Pause after 'Personally,'. PER-son-al-ly is stressed on the first syllable.",
+  "id": "b2-sp38",
+  "minWords": 6
+ },
+ {
+  "type": "answer",
+  "q": "Explain how to look after a pet fish. Use 'make sure'.",
+  "keywords": [
+   "make sure"
+  ],
+  "model": "Make sure you feed it only a little every day and clean the tank every two weeks.",
+  "focus": "Giving instructions",
+  "tip": "'sure' is /ʃɔː/ in British English. Stress LIT-tle, CLEAN and TANK.",
+  "id": "b2-sp39",
+  "minWords": 6
+ },
+ {
+  "type": "answer",
+  "q": "What would happen if it snowed all week? Start with 'If it snowed'.",
+  "keywords": [
+   "if it snowed",
+   "would|might|could"
+  ],
+  "model": "If it snowed all week, the school would probably close and we could build a giant snowman.",
+  "focus": "Second conditional",
+  "tip": "Pause after 'all week,'. 'would' is weak /wəd/. Stress PROB-ab-ly and GI-ant SNOW-man.",
+  "id": "b2-sp40",
+  "minWords": 6
  }
 ]
