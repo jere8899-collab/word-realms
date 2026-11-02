@@ -56,11 +56,16 @@ for _src in (R19A, R19B):
         for _val in _extra.values():
             for q in _val: _check_c2(q)
     _merge(_src)
-from r19_pics import PICQ  # 🖼️ R19 wave 4: picture choice above A1 (the game's own painted art; labels + art map)
-for _lvl, _items_ in PICQ.items():
-    assert _lvl != "a1" and len(_items_) >= 12, _lvl
-    for q in _items_: _check_c2(q)
-_merge({l: {"vocab": v} for l, v in PICQ.items()})
+from r19_pics import PICQ      # 🖼️ R19 wave 4: picture choice above A1 (the game's own painted art; labels + art map)
+from r19_scenes import SCENES  # 🎭 R19 wave 5: the same, with the feeling-scene pictures (assets/scenes, type "scene")
+for _src, _min in ((PICQ, 12), (SCENES, 4)):
+    for _lvl, _items_ in _src.items():
+        assert _lvl != "a1" and len(_items_) >= _min, _lvl
+        for q in _items_:
+            _check_c2(q)
+            _w = q.pop("_word", None)
+            if _w: assert not any(re.search(rf"\b{_w}", o, re.I) for o in q["options"]), q   # the answer is a paraphrase, never the word
+    _merge({l: {"vocab": v} for l, v in _src.items()})
 from r19_read import READ, TF2, TF3  # 📖 R19 wave 2: reading types (events, True/False/Not given, find the word), A1–B1
 def _bare(w): return re.sub(r"[^a-z0-9'-]", "", w.lower())
 def _check_read(_lvl, p, q):  # every R19 reading item (events / tf / findword) is checked the same way at every level

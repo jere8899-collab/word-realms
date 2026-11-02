@@ -2634,5 +2634,120 @@
    "a black and white ball": "In football you kick the ball into a goal.",
    "a long racket and a white shuttle": "Badminton uses a net and rackets, not a hoop."
   }
+ },
+ {
+  "type": "picq",
+  "q": "After a long hike up the mountain, which picture shows someone who is utterly exhausted?",
+  "options": [
+   "a girl yawning, leaning on a heavy backpack",
+   "a boy climbing a hill to reach a flag",
+   "a boy jumping high, a present flying",
+   "a face laughing with its eyes shut"
+  ],
+  "art": {
+   "a girl yawning, leaning on a heavy backpack": "scene_exhausted",
+   "a boy climbing a hill to reach a flag": "scene_determined",
+   "a boy jumping high, a present flying": "scene_excited",
+   "a face laughing with its eyes shut": "icon:laugh"
+  },
+  "answer": 0,
+  "explain": "She is yawning and leaning on her backpack as if she can't stand up. She has used up all her energy: she is exhausted.",
+  "notes": {
+   "a boy climbing a hill to reach a flag": "This boy is still climbing hard, fists clenched. He has plenty of energy left.",
+   "a boy jumping high, a present flying": "This boy is jumping high. Nobody exhausted could jump like that.",
+   "a face laughing with its eyes shut": "This face is laughing, full of fun, not worn out."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which picture shows someone who is frustrated because something keeps going wrong?",
+  "options": [
+   "a boy tangled up in kite string",
+   "a child sitting cross-legged, eyes closed",
+   "a girl holding up a gold trophy",
+   "a boy laughing as he hugs a puppy"
+  ],
+  "art": {
+   "a boy tangled up in kite string": "scene_frustrated",
+   "a child sitting cross-legged, eyes closed": "icon:calm",
+   "a girl holding up a gold trophy": "scene_proud",
+   "a boy laughing as he hugs a puppy": "scene_delighted"
+  },
+  "answer": 0,
+  "explain": "He is all tangled in the kite string and shouting with his eyes shut. The more he tries, the worse the knot gets: he is frustrated.",
+  "notes": {
+   "a child sitting cross-legged, eyes closed": "This child is relaxed and peaceful. Nothing is annoying her.",
+   "a girl holding up a gold trophy": "This girl's plan worked. She won the trophy!",
+   "a boy laughing as he hugs a puppy": "This boy is laughing with his puppy. Nothing is going wrong."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which picture shows someone who is determined to reach their goal?",
+  "options": [
+   "a boy climbing a hill to reach a flag",
+   "a girl yawning, leaning on a heavy backpack",
+   "a girl resting her chin on her hand at a desk",
+   "a boy peeking out from behind a door"
+  ],
+  "art": {
+   "a boy climbing a hill to reach a flag": "scene_determined",
+   "a girl yawning, leaning on a heavy backpack": "scene_exhausted",
+   "a girl resting her chin on her hand at a desk": "scene_bored",
+   "a boy peeking out from behind a door": "scene_shy"
+  },
+  "answer": 0,
+  "explain": "His fists are clenched and he keeps climbing towards the flag. He won't give up: he is determined.",
+  "notes": {
+   "a girl yawning, leaning on a heavy backpack": "This girl is too tired to go on. She is resting, not pushing on.",
+   "a girl resting her chin on her hand at a desk": "This girl is bored at her desk. She isn't trying to reach anything.",
+   "a boy peeking out from behind a door": "This boy is hiding shyly behind a door, not working towards a goal."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which picture shows someone who is absolutely delighted?",
+  "options": [
+   "a boy laughing as he hugs a puppy",
+   "a boy sitting all alone on a bench",
+   "a girl scratching her head over a map",
+   "a girl stomping by a knocked-over block tower"
+  ],
+  "art": {
+   "a boy laughing as he hugs a puppy": "scene_delighted",
+   "a boy sitting all alone on a bench": "scene_lonely",
+   "a girl scratching her head over a map": "scene_puzzled",
+   "a girl stomping by a knocked-over block tower": "scene_furious"
+  },
+  "answer": 0,
+  "explain": "He is laughing out loud as he hugs his fluffy puppy. He is extremely pleased and happy: he is delighted.",
+  "notes": {
+   "a boy sitting all alone on a bench": "This boy is sitting alone and looks sad.",
+   "a girl scratching her head over a map": "This girl is scratching her head over a map. She is confused, not delighted.",
+   "a girl stomping by a knocked-over block tower": "This girl is stomping by her broken tower. She is angry."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which picture shows someone who is amazed by what they can see?",
+  "options": [
+   "a boy gazing up at a shooting star",
+   "a girl resting her chin on her hand at a desk",
+   "a boy on a little stage, hand at his mouth",
+   "a face with a hand on its chin"
+  ],
+  "art": {
+   "a boy gazing up at a shooting star": "scene_amazed",
+   "a girl resting her chin on her hand at a desk": "scene_bored",
+   "a boy on a little stage, hand at his mouth": "scene_nervous",
+   "a face with a hand on its chin": "icon:thinking"
+  },
+  "answer": 0,
+  "explain": "His mouth and eyes are wide open as he watches a shooting star. He can hardly believe how wonderful it is: he is amazed.",
+  "notes": {
+   "a girl resting her chin on her hand at a desk": "This girl is bored. Nothing surprising is happening.",
+   "a boy on a little stage, hand at his mouth": "This boy is nervous on the stage. He is worried, not filled with wonder.",
+   "a face with a hand on its chin": "This face is thinking quietly, not looking at something wonderful."
+  }
  }
 ]

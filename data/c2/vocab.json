@@ -2634,5 +2634,120 @@
    "a cardboard box": "Flat sides make a box drag through the air.",
    "a little purple teapot": "A teapot is round and lumpy, far from streamlined."
   }
+ },
+ {
+  "type": "picq",
+  "q": "Which picture best conveys a forlorn figure?",
+  "options": [
+   "a boy sitting all alone on a bench",
+   "a boy jumping high, a present flying",
+   "a girl holding up a gold trophy",
+   "a girl hugging a kitten"
+  ],
+  "art": {
+   "a boy sitting all alone on a bench": "scene_lonely",
+   "a boy jumping high, a present flying": "scene_excited",
+   "a girl holding up a gold trophy": "scene_proud",
+   "a girl hugging a kitten": "scene_kitten_hug"
+  },
+  "answer": 0,
+  "explain": "He sits alone on the bench as a leaf falls, looking sad. He seems lonely and unhappy: forlorn.",
+  "notes": {
+   "a boy jumping high, a present flying": "This boy is leaping for joy. He is anything but sad.",
+   "a girl holding up a gold trophy": "This girl is proudly holding her trophy.",
+   "a girl hugging a kitten": "This girl is cuddling a kitten with a big smile, so she isn't alone or sad."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which picture shows someone who is awestruck?",
+  "options": [
+   "a boy gazing up at a shooting star",
+   "a girl resting her chin on her hand at a desk",
+   "a girl yawning, leaning on a heavy backpack",
+   "a girl stomping by a knocked-over block tower"
+  ],
+  "art": {
+   "a boy gazing up at a shooting star": "scene_amazed",
+   "a girl resting her chin on her hand at a desk": "scene_bored",
+   "a girl yawning, leaning on a heavy backpack": "scene_exhausted",
+   "a girl stomping by a knocked-over block tower": "scene_furious"
+  },
+  "answer": 0,
+  "explain": "He stares up at the shooting star, mouth open. He is filled with wonder and respect for something amazing: he is awestruck.",
+  "notes": {
+   "a girl resting her chin on her hand at a desk": "This girl is bored. Nothing has impressed her.",
+   "a girl yawning, leaning on a heavy backpack": "This girl is far too tired to wonder at anything.",
+   "a girl stomping by a knocked-over block tower": "This girl is stomping with anger, not filled with wonder."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which picture shows someone who is resolute?",
+  "options": [
+   "a boy climbing a hill to reach a flag",
+   "a boy peeking out from behind a door",
+   "a girl yawning, leaning on a heavy backpack",
+   "a girl scratching her head over a map"
+  ],
+  "art": {
+   "a boy climbing a hill to reach a flag": "scene_determined",
+   "a boy peeking out from behind a door": "scene_shy",
+   "a girl yawning, leaning on a heavy backpack": "scene_exhausted",
+   "a girl scratching her head over a map": "scene_puzzled"
+  },
+  "answer": 0,
+  "explain": "With fists clenched, he keeps climbing towards the flag. He has decided and nothing will stop him: he is resolute.",
+  "notes": {
+   "a boy peeking out from behind a door": "This boy is hiding shyly. He isn't sure he wants to come out.",
+   "a girl yawning, leaning on a heavy backpack": "This girl has stopped to rest. She has given up for now.",
+   "a girl scratching her head over a map": "This girl is confused about which way to go, so she isn't firm about anything yet."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which picture shows someone who feels mortified?",
+  "options": [
+   "a girl hiding her red face by spilt juice",
+   "a boy on a little stage, hand at his mouth",
+   "a boy gazing up at a shooting star",
+   "a boy laughing as he hugs a puppy"
+  ],
+  "art": {
+   "a girl hiding her red face by spilt juice": "scene_embarrassed",
+   "a boy on a little stage, hand at his mouth": "scene_nervous",
+   "a boy gazing up at a shooting star": "scene_amazed",
+   "a boy laughing as he hugs a puppy": "scene_delighted"
+  },
+  "answer": 0,
+  "explain": "She has spilt her juice in front of everyone and is hiding her bright red face. She is mortified: extremely embarrassed.",
+  "notes": {
+   "a boy on a little stage, hand at his mouth": "This boy is nervous before his show. Nothing embarrassing has happened yet.",
+   "a boy gazing up at a shooting star": "This boy is amazed by a shooting star.",
+   "a boy laughing as he hugs a puppy": "This boy is laughing with his puppy, not ashamed."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Someone has knocked over the tower that took Ava all morning. Which picture shows that she is irate?",
+  "options": [
+   "a girl stomping by a knocked-over block tower",
+   "a girl looking down at a dropped ice cream",
+   "a girl scratching her head over a map",
+   "a boy sitting all alone on a bench"
+  ],
+  "art": {
+   "a girl stomping by a knocked-over block tower": "scene_furious",
+   "a girl looking down at a dropped ice cream": "scene_disappointed",
+   "a girl scratching her head over a map": "scene_puzzled",
+   "a boy sitting all alone on a bench": "scene_lonely"
+  },
+  "answer": 0,
+  "explain": "She is stomping and shouting by the broken tower, red in the face. She is irate: very, very angry.",
+  "notes": {
+   "a girl looking down at a dropped ice cream": "This girl is sad about her ice cream, not angry.",
+   "a girl scratching her head over a map": "This girl is confused by her map.",
+   "a boy sitting all alone on a bench": "This boy is sad and alone, not angry."
+  }
  }
 ]

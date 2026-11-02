@@ -2668,5 +2668,120 @@
    "a brown ant": "Ants are famous for being hard-working, not for their memory.",
    "a brown owl": "Owls are linked with wisdom in stories, not with a great memory."
   }
+ },
+ {
+  "type": "picq",
+  "q": "Which picture shows someone who is completely bewildered?",
+  "options": [
+   "a girl scratching her head over a map",
+   "a girl holding up a gold trophy",
+   "a boy sitting all alone on a bench",
+   "big Z Z Z letters"
+  ],
+  "art": {
+   "a girl scratching her head over a map": "scene_puzzled",
+   "a girl holding up a gold trophy": "scene_proud",
+   "a boy sitting all alone on a bench": "scene_lonely",
+   "big Z Z Z letters": "icon:sleep"
+  },
+  "answer": 0,
+  "explain": "She is scratching her head and staring at the map. She has no idea which way to go: she is bewildered, totally confused.",
+  "notes": {
+   "a girl holding up a gold trophy": "This girl knows exactly what she has done: she won! She isn't confused.",
+   "a boy sitting all alone on a bench": "This boy is sad and alone, but he isn't confused about anything.",
+   "big Z Z Z letters": "Zzz means someone is fast asleep, not confused."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which picture best shows someone who is crestfallen?",
+  "options": [
+   "a girl looking down at a dropped ice cream",
+   "a boy gazing up at a shooting star",
+   "a boy climbing a hill to reach a flag",
+   "a face with little hearts around it"
+  ],
+  "art": {
+   "a girl looking down at a dropped ice cream": "scene_disappointed",
+   "a boy gazing up at a shooting star": "scene_amazed",
+   "a boy climbing a hill to reach a flag": "scene_determined",
+   "a face with little hearts around it": "icon:love-face"
+  },
+  "answer": 0,
+  "explain": "Her treat has just fallen on the ground, and she is looking down sadly. All her hope has gone: she is crestfallen.",
+  "notes": {
+   "a boy gazing up at a shooting star": "This boy is full of wonder at the shooting star.",
+   "a boy climbing a hill to reach a flag": "This boy is climbing hard towards the flag. He still has lots of hope.",
+   "a face with little hearts around it": "The hearts show this face loves something. It is happy, not let down."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which picture shows someone who is elated?",
+  "options": [
+   "a boy jumping high, a present flying",
+   "a boy holding a present",
+   "a girl scratching her head over a map",
+   "a girl resting her chin on her hand at a desk"
+  ],
+  "art": {
+   "a boy jumping high, a present flying": "scene_excited",
+   "a boy holding a present": "scene_gift_hold",
+   "a girl scratching her head over a map": "scene_puzzled",
+   "a girl resting her chin on her hand at a desk": "scene_bored"
+  },
+  "answer": 0,
+  "explain": "He is leaping into the air with his arms up and a big smile. He is extremely happy and excited: he is elated.",
+  "notes": {
+   "a boy holding a present": "This boy is holding a present calmly. He looks content, not bursting with joy.",
+   "a girl scratching her head over a map": "This girl is confused by her map.",
+   "a girl resting her chin on her hand at a desk": "This girl is bored at her desk."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which picture shows someone who is exasperated?",
+  "options": [
+   "a boy tangled up in kite string",
+   "a round face with rosy cheeks",
+   "a boy peeking out from behind a door",
+   "a child sitting cross-legged, eyes closed"
+  ],
+  "art": {
+   "a boy tangled up in kite string": "scene_frustrated",
+   "a round face with rosy cheeks": "icon:smile",
+   "a boy peeking out from behind a door": "scene_shy",
+   "a child sitting cross-legged, eyes closed": "icon:calm"
+  },
+  "answer": 0,
+  "explain": "He has had enough of the tangled kite string. He is shouting with his eyes shut: he is exasperated, very annoyed after trying again and again.",
+  "notes": {
+   "a round face with rosy cheeks": "This round face is smiling. It isn't annoyed at all.",
+   "a boy peeking out from behind a door": "This boy is shy, hiding behind a door, not annoyed.",
+   "a child sitting cross-legged, eyes closed": "This child is relaxed and calm. She is the opposite of exasperated."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "After the long sports day, which picture shows someone who looks weary?",
+  "options": [
+   "a girl yawning, leaning on a heavy backpack",
+   "a boy gazing up at a shooting star",
+   "a boy laughing as he hugs a puppy",
+   "a boy climbing a hill to reach a flag"
+  ],
+  "art": {
+   "a girl yawning, leaning on a heavy backpack": "scene_exhausted",
+   "a boy gazing up at a shooting star": "scene_amazed",
+   "a boy laughing as he hugs a puppy": "scene_delighted",
+   "a boy climbing a hill to reach a flag": "scene_determined"
+  },
+  "answer": 0,
+  "explain": "She is yawning and leaning heavily on her backpack. She is weary: very tired after a lot of effort.",
+  "notes": {
+   "a boy gazing up at a shooting star": "This boy is wide awake and full of wonder.",
+   "a boy laughing as he hugs a puppy": "This boy is laughing and playing. He still has plenty of energy.",
+   "a boy climbing a hill to reach a flag": "This boy is pushing up the hill with energy. He isn't weary yet."
+  }
  }
 ]

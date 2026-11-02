@@ -2429,5 +2429,143 @@
    "a boy in a green vest with a bag": "This explorer walks in the forest, not across the sea.",
    "a girl in a pink apron with a whisk": "This girl is ready to bake cakes, not to sail a ship."
   }
+ },
+ {
+  "type": "picq",
+  "q": "Mia walked all day on the school trip. Now she feels very tired. Which picture shows her?",
+  "options": [
+   "a girl yawning, leaning on a heavy backpack",
+   "a boy jumping high, a present flying",
+   "a boy laughing as he hugs a puppy",
+   "a boy gazing up at a shooting star"
+  ],
+  "art": {
+   "a girl yawning, leaning on a heavy backpack": "scene_exhausted",
+   "a boy jumping high, a present flying": "scene_excited",
+   "a boy laughing as he hugs a puppy": "scene_delighted",
+   "a boy gazing up at a shooting star": "scene_amazed"
+  },
+  "answer": 0,
+  "explain": "She is yawning and leaning on her heavy bag. She has no energy left, so she is very tired.",
+  "notes": {
+   "a boy jumping high, a present flying": "This boy is jumping high with lots of energy. He isn't tired at all.",
+   "a boy laughing as he hugs a puppy": "This boy is laughing and playing with a puppy. He looks wide awake and happy.",
+   "a boy gazing up at a shooting star": "This boy is looking up at a shooting star with big, wide eyes. He isn't sleepy."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "There's nothing to do in this lesson, and the girl feels bored. Which picture shows her?",
+  "options": [
+   "a girl resting her chin on her hand at a desk",
+   "a girl holding up a gold trophy",
+   "a boy tangled up in kite string",
+   "a boy jumping high, a present flying"
+  ],
+  "art": {
+   "a girl resting her chin on her hand at a desk": "scene_bored",
+   "a girl holding up a gold trophy": "scene_proud",
+   "a boy tangled up in kite string": "scene_frustrated",
+   "a boy jumping high, a present flying": "scene_excited"
+  },
+  "answer": 0,
+  "explain": "Her chin is on her hand and her eyes are half shut. Nothing interesting is happening, so she is bored.",
+  "notes": {
+   "a girl holding up a gold trophy": "This girl has won a trophy. She is happy and proud, not bored.",
+   "a boy tangled up in kite string": "This boy is cross because the kite string is in a knot. Something is happening!",
+   "a boy jumping high, a present flying": "This boy is jumping for joy. He is excited, not bored."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which picture shows someone who is scared?",
+  "options": [
+   "a girl hiding behind a tree in a dark forest",
+   "a girl holding up a gold trophy",
+   "a boy laughing as he hugs a puppy",
+   "a child sitting cross-legged, eyes closed"
+  ],
+  "art": {
+   "a girl hiding behind a tree in a dark forest": "scene_scared",
+   "a girl holding up a gold trophy": "scene_proud",
+   "a boy laughing as he hugs a puppy": "scene_delighted",
+   "a child sitting cross-legged, eyes closed": "icon:calm"
+  },
+  "answer": 0,
+  "explain": "The forest is dark, and she is hiding behind a tree with her mouth open. She is afraid of something.",
+  "notes": {
+   "a girl holding up a gold trophy": "This girl is smiling with her prize. She feels happy, not afraid.",
+   "a boy laughing as he hugs a puppy": "This boy is laughing with his puppy. He feels safe and happy.",
+   "a child sitting cross-legged, eyes closed": "This child is sitting quietly with closed eyes. She feels calm, not afraid."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Lily won the race. She feels proud. Which picture shows her?",
+  "options": [
+   "a girl holding up a gold trophy",
+   "a girl looking down at a dropped ice cream",
+   "a girl resting her chin on her hand at a desk",
+   "a boy sitting all alone on a bench"
+  ],
+  "art": {
+   "a girl holding up a gold trophy": "scene_proud",
+   "a girl looking down at a dropped ice cream": "scene_disappointed",
+   "a girl resting her chin on her hand at a desk": "scene_bored",
+   "a boy sitting all alone on a bench": "scene_lonely"
+  },
+  "answer": 0,
+  "explain": "She is holding up her gold trophy with a big smile. She is pleased with what she did, so she is proud.",
+  "notes": {
+   "a girl looking down at a dropped ice cream": "This girl looks sad. Her ice cream fell on the ground.",
+   "a girl resting her chin on her hand at a desk": "This girl looks bored at her desk. She hasn't won anything.",
+   "a boy sitting all alone on a bench": "This boy is sitting alone and looks sad, not pleased with himself."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Somebody knocked down Ella's tower. She is very angry! Which picture shows her?",
+  "options": [
+   "a girl stomping by a knocked-over block tower",
+   "a girl hugging a kitten",
+   "a round face with rosy cheeks",
+   "big Z Z Z letters"
+  ],
+  "art": {
+   "a girl stomping by a knocked-over block tower": "scene_furious",
+   "a girl hugging a kitten": "scene_kitten_hug",
+   "a round face with rosy cheeks": "icon:smile",
+   "big Z Z Z letters": "icon:sleep"
+  },
+  "answer": 0,
+  "explain": "She is stomping her foot and shouting next to the broken tower. She is very angry.",
+  "notes": {
+   "a girl hugging a kitten": "This girl is smiling and hugging a kitten. She isn't angry.",
+   "a round face with rosy cheeks": "This round face is smiling. It looks happy, not angry.",
+   "big Z Z Z letters": "Zzz means someone is fast asleep, not angry."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Ben doesn't want to say hello to the new teacher. He feels shy. Which picture shows him?",
+  "options": [
+   "a boy peeking out from behind a door",
+   "a boy jumping high, a present flying",
+   "a girl holding up a gold trophy",
+   "a face laughing with its eyes shut"
+  ],
+  "art": {
+   "a boy peeking out from behind a door": "scene_shy",
+   "a boy jumping high, a present flying": "scene_excited",
+   "a girl holding up a gold trophy": "scene_proud",
+   "a face laughing with its eyes shut": "icon:laugh"
+  },
+  "answer": 0,
+  "explain": "He is peeking out from behind the door with pink cheeks. He wants to look, but he is too shy to come out.",
+  "notes": {
+   "a boy jumping high, a present flying": "This boy is jumping and waving. He isn't hiding at all.",
+   "a girl holding up a gold trophy": "This girl is holding up her prize for everyone to see. She isn't shy.",
+   "a face laughing with its eyes shut": "This face is laughing out loud. It isn't hiding or quiet."
+  }
  }
 ]

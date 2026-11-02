@@ -4,11 +4,11 @@ The pictures are the game's own painted art (GenerateImage, never Higgsfield): t
 accessory art ("acc:<name>"), heroes and pets (manifest ids) and the A1 word pictures (bare words). Every option is a short
 label of what the picture SHOWS (never the target word, so the right answer is a paraphrase of the question), mapped to its art.
 The right option comes first (answer 0; the lesson shuffles), followed by one "why not" note per wrong picture.
-   pq(question, [(label, art) × 4], explain, [note for wrong 1, 2, 3])  ->  {type, q, options, art, answer, explain, _notes}"""
-
-def pq(q, opts, ex, notes):
-    assert len(opts) == 4 and len(notes) == 3, q
-    return {"type": "picq", "q": q, "options": [l for l, _ in opts], "art": dict(opts), "answer": 0, "explain": ex, "_notes": notes}
+   pq(question, [(label, art) × 4], explain, [note for wrong 1, 2, 3])  ->  {type, q, options, art, answer, explain, _notes}   (tools/qb.py)
+The shared labels below are imported by tools/r19_scenes.py (wave 5) too, so one picture keeps one wording everywhere."""
+import os, sys
+sys.path.insert(0, os.path.dirname(__file__))
+from qb import pq
 
 # --- shared labels for art used at several levels (one wording everywhere) ---
 SLEEP = ("big Z Z Z letters", "icon:sleep"); RUN = ("a boy running fast", "icon:run"); LAUGH = ("a face laughing with its eyes shut", "icon:laugh")

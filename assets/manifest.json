@@ -1415,6 +1415,330 @@
         "large": "assets/web/pet_penguin_royal.webp",
         "small": "assets/web/pet_penguin_royal.webp"
       }
+    },
+    {
+      "id": "scene_exhausted",
+      "type": "scene",
+      "name": "exhausted",
+      "path": "assets/scenes/scene_exhausted.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        384,
+        384
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet, cute anime chibi chibi kid with pink fluffy hair, mint flower clip and lavender hoodie, one feeling per cell, soft pastel palette, clean soft lineart, white background; this cell: slumped and yawning, leaning on a heavy backpack",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Nov 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/scene_exhausted.webp",
+        "small": "assets/web/scene_exhausted.webp"
+      }
+    },
+    {
+      "id": "scene_puzzled",
+      "type": "scene",
+      "name": "puzzled",
+      "path": "assets/scenes/scene_puzzled.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        384,
+        384
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet, cute anime chibi chibi kid with pink fluffy hair, mint flower clip and lavender hoodie, one feeling per cell, soft pastel palette, clean soft lineart, white background; this cell: scratching their head, looking at a map",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Nov 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/scene_puzzled.webp",
+        "small": "assets/web/scene_puzzled.webp"
+      }
+    },
+    {
+      "id": "scene_embarrassed",
+      "type": "scene",
+      "name": "embarrassed",
+      "path": "assets/scenes/scene_embarrassed.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        384,
+        384
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet, cute anime chibi chibi kid with pink fluffy hair, mint flower clip and lavender hoodie, one feeling per cell, soft pastel palette, clean soft lineart, white background; this cell: face hidden in hands, red cheeks, juice spilt on the floor",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Nov 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/scene_embarrassed.webp",
+        "small": "assets/web/scene_embarrassed.webp"
+      }
+    },
+    {
+      "id": "scene_proud",
+      "type": "scene",
+      "name": "proud",
+      "path": "assets/scenes/scene_proud.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        384,
+        384
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet, cute anime chibi chibi kid with pink fluffy hair, mint flower clip and lavender hoodie, one feeling per cell, soft pastel palette, clean soft lineart, white background; this cell: holding a gold trophy, hand on hip",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Nov 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/scene_proud.webp",
+        "small": "assets/web/scene_proud.webp"
+      }
+    },
+    {
+      "id": "scene_furious",
+      "type": "scene",
+      "name": "furious",
+      "path": "assets/scenes/scene_furious.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        384,
+        384
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet, cute anime chibi chibi kid with pink fluffy hair, mint flower clip and lavender hoodie, one feeling per cell, soft pastel palette, clean soft lineart, white background; this cell: angry steam puffs, stomping near a knocked-over block tower",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Nov 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/scene_furious.webp",
+        "small": "assets/web/scene_furious.webp"
+      }
+    },
+    {
+      "id": "scene_scared",
+      "type": "scene",
+      "name": "scared",
+      "path": "assets/scenes/scene_scared.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        384,
+        384
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet, cute anime chibi chibi kid with pink fluffy hair, mint flower clip and lavender hoodie, one feeling per cell, soft pastel palette, clean soft lineart, white background; this cell: hiding behind a big tree in a dark forest, mouth open",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Nov 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/scene_scared.webp",
+        "small": "assets/web/scene_scared.webp"
+      }
+    },
+    {
+      "id": "scene_disappointed",
+      "type": "scene",
+      "name": "disappointed",
+      "path": "assets/scenes/scene_disappointed.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        384,
+        384
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet, cute anime chibi chibi kid with pink fluffy hair, mint flower clip and lavender hoodie, one feeling per cell, soft pastel palette, clean soft lineart, white background; this cell: looking down at an ice cream dropped on the ground",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Nov 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/scene_disappointed.webp",
+        "small": "assets/web/scene_disappointed.webp"
+      }
+    },
+    {
+      "id": "scene_kitten_hug",
+      "type": "scene",
+      "name": "kitten hug",
+      "path": "assets/scenes/scene_kitten_hug.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        384,
+        384
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet, cute anime chibi chibi kid with pink fluffy hair, mint flower clip and lavender hoodie, one feeling per cell, soft pastel palette, clean soft lineart, white background; this cell: eyes shut, big smile, hugging a kitten",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Nov 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/scene_kitten_hug.webp",
+        "small": "assets/web/scene_kitten_hug.webp"
+      }
+    },
+    {
+      "id": "scene_bored",
+      "type": "scene",
+      "name": "bored",
+      "path": "assets/scenes/scene_bored.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        384,
+        384
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet, cute anime chibi chibi kid with pink fluffy hair, mint flower clip and lavender hoodie, one feeling per cell, soft pastel palette, clean soft lineart, white background; this cell: chin on hand at a desk with a book and a mug",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Nov 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/scene_bored.webp",
+        "small": "assets/web/scene_bored.webp"
+      }
+    },
+    {
+      "id": "scene_excited",
+      "type": "scene",
+      "name": "excited",
+      "path": "assets/scenes/scene_excited.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        384,
+        384
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet, cute anime chibi chibi boy with sky-blue hair, yellow T-shirt and mint shorts, one feeling per cell, soft pastel palette, clean soft lineart, white background; this cell: jumping with arms up, a gift box flying",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Nov 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/scene_excited.webp",
+        "small": "assets/web/scene_excited.webp"
+      }
+    },
+    {
+      "id": "scene_nervous",
+      "type": "scene",
+      "name": "nervous",
+      "path": "assets/scenes/scene_nervous.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        384,
+        384
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet, cute anime chibi chibi boy with sky-blue hair, yellow T-shirt and mint shorts, one feeling per cell, soft pastel palette, clean soft lineart, white background; this cell: hand at mouth, sweat drop, standing on a little wooden stage",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Nov 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/scene_nervous.webp",
+        "small": "assets/web/scene_nervous.webp"
+      }
+    },
+    {
+      "id": "scene_delighted",
+      "type": "scene",
+      "name": "delighted",
+      "path": "assets/scenes/scene_delighted.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        384,
+        384
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet, cute anime chibi chibi boy with sky-blue hair, yellow T-shirt and mint shorts, one feeling per cell, soft pastel palette, clean soft lineart, white background; this cell: laughing, hugging a fluffy puppy",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Nov 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/scene_delighted.webp",
+        "small": "assets/web/scene_delighted.webp"
+      }
+    },
+    {
+      "id": "scene_shy",
+      "type": "scene",
+      "name": "shy",
+      "path": "assets/scenes/scene_shy.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        384,
+        384
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet, cute anime chibi chibi boy with sky-blue hair, yellow T-shirt and mint shorts, one feeling per cell, soft pastel palette, clean soft lineart, white background; this cell: peeking from behind a door with a small blush",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Nov 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/scene_shy.webp",
+        "small": "assets/web/scene_shy.webp"
+      }
+    },
+    {
+      "id": "scene_frustrated",
+      "type": "scene",
+      "name": "frustrated",
+      "path": "assets/scenes/scene_frustrated.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        384,
+        384
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet, cute anime chibi chibi boy with sky-blue hair, yellow T-shirt and mint shorts, one feeling per cell, soft pastel palette, clean soft lineart, white background; this cell: tangled in kite string, eyes squeezed shut, shouting",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Nov 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/scene_frustrated.webp",
+        "small": "assets/web/scene_frustrated.webp"
+      }
+    },
+    {
+      "id": "scene_amazed",
+      "type": "scene",
+      "name": "amazed",
+      "path": "assets/scenes/scene_amazed.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        384,
+        384
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet, cute anime chibi chibi boy with sky-blue hair, yellow T-shirt and mint shorts, one feeling per cell, soft pastel palette, clean soft lineart, white background; this cell: mouth open, looking up at a shooting star",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Nov 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/scene_amazed.webp",
+        "small": "assets/web/scene_amazed.webp"
+      }
+    },
+    {
+      "id": "scene_gift_hold",
+      "type": "scene",
+      "name": "gift hold",
+      "path": "assets/scenes/scene_gift_hold.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        384,
+        384
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet, cute anime chibi chibi boy with sky-blue hair, yellow T-shirt and mint shorts, one feeling per cell, soft pastel palette, clean soft lineart, white background; this cell: calmly holding a gift box",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Nov 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/scene_gift_hold.webp",
+        "small": "assets/web/scene_gift_hold.webp"
+      }
+    },
+    {
+      "id": "scene_determined",
+      "type": "scene",
+      "name": "determined",
+      "path": "assets/scenes/scene_determined.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        384,
+        384
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet, cute anime chibi chibi boy with sky-blue hair, yellow T-shirt and mint shorts, one feeling per cell, soft pastel palette, clean soft lineart, white background; this cell: fists clenched, climbing a hill to a flag",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Nov 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/scene_determined.webp",
+        "small": "assets/web/scene_determined.webp"
+      }
+    },
+    {
+      "id": "scene_lonely",
+      "type": "scene",
+      "name": "lonely",
+      "path": "assets/scenes/scene_lonely.png",
+      "aspect_ratio": "1:1",
+      "size": [
+        384,
+        384
+      ],
+      "transparent": true,
+      "prompt": "3x3 sticker sheet, cute anime chibi chibi boy with sky-blue hair, yellow T-shirt and mint shorts, one feeling per cell, soft pastel palette, clean soft lineart, white background; this cell: sitting alone on a bench, a leaf falling, sad face",
+      "generated": "GenerateImage (Grok Bot built-in image generator), Nov 2026 — not Higgsfield",
+      "web": {
+        "large": "assets/web/scene_lonely.webp",
+        "small": "assets/web/scene_lonely.webp"
+      }
     }
   ]
 }

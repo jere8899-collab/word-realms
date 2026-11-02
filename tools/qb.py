@@ -20,3 +20,11 @@ def ask(q, keywords, model, focus, tip):
 def why_tiles(x):
     pairs = [w.split("=", 1) for w in x.split("|")]
     return {"x": [w for w, _ in pairs], "no": {w: why for w, why in pairs}}
+# 🖼️ Picture choice above A1 (R19 waves 4–5, tools/r19_pics.py + tools/r19_scenes.py): 4 (label, picture ref) pairs, right one first.
+# The label says what the picture SHOWS (never the target word); one "why not" note per wrong picture (kept as notes in build_data.py).
+# word: the target word, checked in build_data.py to appear in no option label, then dropped from the data.
+def pq(q, opts, ex, notes, word=None):
+    assert len(opts) == 4 and len(notes) == 3, q
+    d = {"type": "picq", "q": q, "options": [l for l, _ in opts], "art": dict(opts), "answer": 0, "explain": ex, "_notes": notes}
+    if word: d["_word"] = word
+    return d

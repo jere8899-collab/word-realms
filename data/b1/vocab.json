@@ -2617,5 +2617,120 @@
    "a thumbs-up hand": "A thumbs-up means “Good job!” or “OK”, not danger.",
    "a gold medal": "A medal is a prize for winning, not a warning."
   }
+ },
+ {
+  "type": "picq",
+  "q": "Zoe dropped her juice in front of the whole class. Which picture shows how embarrassed she feels?",
+  "options": [
+   "a girl hiding her red face by spilt juice",
+   "a girl holding up a gold trophy",
+   "a boy gazing up at a shooting star",
+   "a child sitting cross-legged, eyes closed"
+  ],
+  "art": {
+   "a girl hiding her red face by spilt juice": "scene_embarrassed",
+   "a girl holding up a gold trophy": "scene_proud",
+   "a boy gazing up at a shooting star": "scene_amazed",
+   "a child sitting cross-legged, eyes closed": "icon:calm"
+  },
+  "answer": 0,
+  "explain": "She is hiding her face, and her cheeks are red. Everyone saw the spill, so she feels embarrassed.",
+  "notes": {
+   "a girl holding up a gold trophy": "This girl is proudly showing her trophy. She wants people to look at her.",
+   "a boy gazing up at a shooting star": "This boy is amazed by a shooting star. He isn't thinking about himself at all.",
+   "a child sitting cross-legged, eyes closed": "This child feels calm and peaceful, not uncomfortable about a mistake."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which picture shows someone who feels disappointed?",
+  "options": [
+   "a girl looking down at a dropped ice cream",
+   "a boy laughing as he hugs a puppy",
+   "a girl holding up a gold trophy",
+   "a boy peeking out from behind a door"
+  ],
+  "art": {
+   "a girl looking down at a dropped ice cream": "scene_disappointed",
+   "a boy laughing as he hugs a puppy": "scene_delighted",
+   "a girl holding up a gold trophy": "scene_proud",
+   "a boy peeking out from behind a door": "scene_shy"
+  },
+  "answer": 0,
+  "explain": "She was looking forward to her ice cream, but it fell on the ground. Something she wanted didn't happen, so she is disappointed.",
+  "notes": {
+   "a boy laughing as he hugs a puppy": "This boy is laughing with his puppy. Everything is going well for him.",
+   "a girl holding up a gold trophy": "This girl won a trophy. Things went better than she hoped!",
+   "a boy peeking out from behind a door": "This boy is peeking out shyly. Nothing has gone wrong for him."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Sam has to sing in the school show in one minute. Which picture shows that he's nervous?",
+  "options": [
+   "a boy on a little stage, hand at his mouth",
+   "a girl resting her chin on her hand at a desk",
+   "a boy laughing as he hugs a puppy",
+   "big Z Z Z letters"
+  ],
+  "art": {
+   "a boy on a little stage, hand at his mouth": "scene_nervous",
+   "a girl resting her chin on her hand at a desk": "scene_bored",
+   "a boy laughing as he hugs a puppy": "scene_delighted",
+   "big Z Z Z letters": "icon:sleep"
+  },
+  "answer": 0,
+  "explain": "He is on the stage with his hand at his mouth and a drop of sweat. He's worried about the show, so he's nervous.",
+  "notes": {
+   "a girl resting her chin on her hand at a desk": "This girl is bored at her desk. Nothing is worrying her.",
+   "a boy laughing as he hugs a puppy": "This boy is laughing with a puppy. He is relaxed and happy.",
+   "big Z Z Z letters": "Zzz means someone is fast asleep, not worried about a show."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "Which picture shows a boy who feels lonely?",
+  "options": [
+   "a boy sitting all alone on a bench",
+   "a boy laughing as he hugs a puppy",
+   "a boy jumping high, a present flying",
+   "a girl holding up a gold trophy"
+  ],
+  "art": {
+   "a boy sitting all alone on a bench": "scene_lonely",
+   "a boy laughing as he hugs a puppy": "scene_delighted",
+   "a boy jumping high, a present flying": "scene_excited",
+   "a girl holding up a gold trophy": "scene_proud"
+  },
+  "answer": 0,
+  "explain": "He is sitting all by himself, and he looks sad. He would like a friend to play with, so he is lonely.",
+  "notes": {
+   "a boy laughing as he hugs a puppy": "This boy has a puppy to hug, so he has company.",
+   "a boy jumping high, a present flying": "This boy is jumping for joy with a present.",
+   "a girl holding up a gold trophy": "This girl has won a trophy and looks pleased."
+  }
+ },
+ {
+  "type": "picq",
+  "q": "It's Leo's birthday, and he can't wait to open his presents! Which picture shows how he feels?",
+  "options": [
+   "a boy jumping high, a present flying",
+   "a boy holding a present",
+   "a boy sitting all alone on a bench",
+   "a girl resting her chin on her hand at a desk"
+  ],
+  "art": {
+   "a boy jumping high, a present flying": "scene_excited",
+   "a boy holding a present": "scene_gift_hold",
+   "a boy sitting all alone on a bench": "scene_lonely",
+   "a girl resting her chin on her hand at a desk": "scene_bored"
+  },
+  "answer": 0,
+  "explain": "He is jumping high with his arms up. He is so happy about what is coming that he can't keep still. He is excited.",
+  "notes": {
+   "a boy holding a present": "This boy is holding a present quietly. He doesn't look full of energy.",
+   "a boy sitting all alone on a bench": "This boy is sitting alone and looks sad.",
+   "a girl resting her chin on her hand at a desk": "This girl looks bored at her desk."
+  }
  }
 ]
