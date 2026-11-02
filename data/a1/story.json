@@ -184,6 +184,110 @@
      "drops of water from the sky": "Those are raindrops. The rainbow comes after the raindrops stop."
     }
    }
+  },
+  {
+   "title": "The Bunny's Tea Party",
+   "focus": "present simple · there is / there are · can · like",
+   "img": "story_a1_3",
+   "pages": [
+    {
+     "text": "The next day the white rabbit comes back. “Please come to my [[burrow|a small hole under the ground where a rabbit lives]],” it says. {hero} and {pet} follow. There is a tiny table with four cups.",
+     "q": {
+      "q": "Where does the rabbit live?",
+      "options": [
+       "in a burrow",
+       "in a tall tree",
+       "in the picnic basket",
+       "in a big house"
+      ],
+      "answer": 0,
+      "explain": "“Please come to my burrow.” A burrow is a rabbit's home under the ground.",
+      "kind": "fact",
+      "notes": {
+       "in a tall tree": "Rabbits do not live in tall trees. The rabbit says “come to my burrow.”",
+       "in the picnic basket": "The picnic basket is for food. The rabbit's home is a burrow.",
+       "in a big house": "There is no big house here. The rabbit lives in a burrow."
+      }
+     }
+    },
+    {
+     "text": "The rabbit can pour tea. The tea smells like honey. {pet} likes the sweet tea. {hero} likes the daisy flowers. There is a small [[cake|a sweet food you bake]] on a pink plate.",
+     "q": {
+      "q": "What does {pet} like?",
+      "options": [
+       "the sweet tea",
+       "the daisy flowers",
+       "the pink plate",
+       "the bush"
+      ],
+      "answer": 0,
+      "explain": "“{pet} likes the sweet tea.”",
+      "kind": "fact",
+      "notes": {
+       "the daisy flowers": "{hero} likes the daisy flowers. The story says “{pet} likes the sweet tea.”",
+       "the pink plate": "The cake is on the pink plate. {pet} likes the sweet tea.",
+       "the bush": "They came to the burrow, but {pet} likes the sweet tea."
+      }
+     }
+    },
+    {
+     "text": "The rabbit opens a little box. Inside there are three shiny [[acorns|the hard seeds of an oak tree]]. “These are gifts,” it says. “You can keep one each.” {pet} hops with joy.",
+     "q": {
+      "q": "How many acorns are in the box?",
+      "options": [
+       "three",
+       "one",
+       "four",
+       "ten"
+      ],
+      "answer": 0,
+      "explain": "“Inside there are three shiny acorns.”",
+      "kind": "fact",
+      "notes": {
+       "one": "They each keep one, but the box has three in total.",
+       "four": "There are four cups on the table, not four acorns.",
+       "ten": "There were ten strawberries at the picnic, not ten acorns."
+      }
+     }
+    },
+    {
+     "text": "After tea the sun is warm. “Thank you,” says {hero}. “This is a lovely party.” The rabbit is not [[shy|a bit scared to talk to new friends]] now. It waves goodbye. {pet} waves too.",
+     "q": {
+      "q": "How does the rabbit feel at the end?",
+      "options": [
+       "It is not shy now.",
+       "It is very angry.",
+       "It is asleep in the box.",
+       "It is lost in the meadow."
+      ],
+      "answer": 0,
+      "explain": "“The rabbit is not shy now.” It waves goodbye happily.",
+      "kind": "infer",
+      "notes": {
+       "It is very angry.": "The story never says it is angry. It waves goodbye.",
+       "It is asleep in the box.": "The acorns were in the box. The rabbit waves goodbye.",
+       "It is lost in the meadow.": "They are at the burrow, not lost. The rabbit waves goodbye."
+      }
+     }
+    }
+   ],
+   "final": {
+    "q": "A “burrow” is…",
+    "options": [
+     "a small hole under the ground where a rabbit lives",
+     "a sweet food you bake for a party",
+     "a hard seed of an oak tree",
+     "a cup for drinking tea"
+    ],
+    "answer": 0,
+    "explain": "A burrow is a rabbit's underground home.",
+    "kind": "vocab",
+    "notes": {
+     "a sweet food you bake for a party": "That's a cake, the sweet food on the pink plate.",
+     "a hard seed of an oak tree": "Those are acorns, the shiny gifts.",
+     "a cup for drinking tea": "That's a cup. The burrow is the rabbit's home."
+    }
+   }
   }
  ]
 }

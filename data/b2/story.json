@@ -184,6 +184,110 @@
      "rather sleepy": "That's Mog! The keeper felt embarrassed, not sleepy."
     }
    }
+  },
+  {
+   "title": "The Night Mog Woke",
+   "focus": "past perfect · passive · third conditional · should have",
+   "img": "story_b2_3",
+   "pages": [
+    {
+     "text": "A storm had been promised for Friday night, and Glimmerfin was [[uneasy|a bit worried and not calm]]. The lighthouse lamp had been checked by two keepers every evening since Mog's nap adventure, yet something still felt wrong. When {hero}'s boat reached the island, the beam was steady — but Mog was nowhere to be seen.",
+     "q": {
+      "q": "What had changed since the last visit?",
+      "options": [
+       "Two people checked the lamp every evening.",
+       "The lake had turned grey again.",
+       "The keeper had given the lamp to Glimmerfin.",
+       "Mog had been made the only lamp-lighter."
+      ],
+      "answer": 0,
+      "explain": "“The lighthouse lamp had been checked by two keepers every evening since Mog's nap adventure.”",
+      "kind": "fact",
+      "notes": {
+       "The lake had turned grey again.": "The lake isn't the problem this time. The new rule is two keepers checking the lamp.",
+       "The keeper had given the lamp to Glimmerfin.": "Glimmerfin asked for help; she wasn't given the lamp.",
+       "Mog had been made the only lamp-lighter.": "The opposite: two people check it now. Mog is Official Lighthouse Cat of naps."
+      }
+     }
+    },
+    {
+     "text": "They found Mog at last behind a coil of rope, staring at a loose [[shutter|a wooden cover for a window]] that was banging in the rising wind. The shutter had been left unlatched that afternoon. “If someone had closed it properly,” the old keeper muttered, “we wouldn't be listening to that racket now.”",
+     "q": {
+      "q": "What does the keeper's “If someone had closed it…” tell us?",
+      "options": [
+       "Nobody closed it, so it bangs now.",
+       "Someone closed it carefully, so the shutter is quiet.",
+       "The shutter will be closed tomorrow for the first time.",
+       "Mog closed the shutter before the wind started."
+      ],
+      "answer": 0,
+      "explain": "Third conditional about the past: the closing did NOT happen, so the banging IS happening.",
+      "kind": "grammar",
+      "notes": {
+       "Someone closed it carefully, so the shutter is quiet.": "The shutter is banging, so it was not closed properly.",
+       "The shutter will be closed tomorrow for the first time.": "This sentence is about a missed past action, not a future plan.",
+       "Mog closed the shutter before the wind started.": "Mog was staring at it, not closing it. It “had been left unlatched”."
+      }
+     }
+    },
+    {
+     "text": "{hero} climbed up, [[latched|fastened shut with a small metal bar]] the shutter, and climbed down again. Not a moment too soon: the first hard rain arrived, and the lake turned wild. The lamp, safe behind its glass, kept sweeping the water. Fishing boats, guided by the beam, made it home.",
+     "q": {
+      "q": "Why were the fishing boats able to get home?",
+      "options": [
+       "The lamp kept sweeping the water.",
+       "Mog swam out to guide them.",
+       "Glimmerfin sang the storm away.",
+       "The keeper rowed out to each boat."
+      ],
+      "answer": 0,
+      "explain": "“The lamp, safe behind its glass, kept sweeping the water. Fishing boats, guided by the beam, made it home.”",
+      "kind": "fact",
+      "notes": {
+       "Mog swam out to guide them.": "Mog stayed on the island. The beam guided the boats.",
+       "Glimmerfin sang the storm away.": "Glimmerfin was uneasy, but the lamp — not a song — guided the boats.",
+       "The keeper rowed out to each boat.": "The keeper stayed at the lighthouse. The beam guided the boats."
+      }
+     }
+    },
+    {
+     "text": "Afterwards the keeper admitted he should have checked the shutters as carefully as the lamp. Mog, who had stayed awake for once, was given a second title: Storm Watcher (naps still allowed on sunny days). “If Mog hadn't stared at that shutter,” {hero} laughed, “we might never have noticed it.” Mog [[blinked|closed and opened the eyes quickly]] once, as if to say the praise was accepted.",
+     "q": {
+      "q": "What is funny about Mog's new second title?",
+      "options": [
+       "Mog is praised, but naps stay allowed.",
+       "Mog must now light the lamp alone every single night.",
+       "Mog asked to be called captain of all the boats.",
+       "The title means Mog can never sleep again at all."
+      ],
+      "answer": 0,
+      "explain": "“Storm Watcher (naps still allowed on sunny days)”: a serious job with a sleepy escape clause.",
+      "kind": "infer",
+      "notes": {
+       "Mog must now light the lamp alone every single night.": "Two keepers still check the lamp. Mog's titles are joke-jobs with nap rights.",
+       "Mog asked to be called captain of all the boats.": "Mog didn't ask for captain. The keeper gave the title.",
+       "The title means Mog can never sleep again at all.": "The opposite: “naps still allowed on sunny days”."
+      }
+     }
+    }
+   ],
+   "final": {
+    "q": "“Latched” means…",
+    "options": [
+     "fastened shut with a catch",
+     "painted a bright brand-new colour",
+     "opened wide to let the strong wind in",
+     "tied loosely with a long piece of rope"
+    ],
+    "answer": 0,
+    "explain": "Latched = fastened shut, which is what {hero} did to the banging shutter.",
+    "kind": "vocab",
+    "notes": {
+     "painted a bright brand-new colour": "Latching is about fastening, not painting.",
+     "opened wide to let the strong wind in": "The opposite of opening wide.",
+     "tied loosely with a long piece of rope": "A latch is a bar or catch, not a loose rope."
+    }
+   }
   }
  ]
 }

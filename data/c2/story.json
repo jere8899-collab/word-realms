@@ -184,6 +184,110 @@
      "fallen out with a good friend": "That's a different idiom, about an argument."
     }
    }
+  },
+  {
+   "title": "The Shelf That Whispered",
+   "focus": "irony/understatement · idiom · implied meaning",
+   "img": "story_c2_3",
+   "pages": [
+    {
+     "text": "With the endless novel finally closed, the Starlight Library should, by any reasonable measure, have been peaceful. It was not. A narrow shelf near the back had begun to [[murmur|speak in a very soft voice]], just loudly enough to distract anyone trying to read nearby and just softly enough to deny doing so. “A minor inconvenience,” Vellum sighed, which, from a dragon who had endured three hundred years of plot, was saying rather a lot.",
+     "q": {
+      "q": "What is Vellum's attitude to the murmuring shelf?",
+      "options": [
+       "dry understatement hiding irritation",
+       "delighted by a brand-new talking friend",
+       "terrified that the whole library will fall",
+       "completely uninterested in all the noise"
+      ],
+      "answer": 0,
+      "explain": "“A minor inconvenience,” after three hundred years of chaos, is understatement for real annoyance.",
+      "kind": "infer",
+      "notes": {
+       "delighted by a brand-new talking friend": "He sighs; this is not delight.",
+       "terrified that the whole library will fall": "He calls it minor and sighs — tired irritation, not terror.",
+       "completely uninterested in all the noise": "He raised it himself, so it clearly bothers him."
+      }
+     }
+    },
+    {
+     "text": "{hero} pressed an ear to the wood. The murmur resolved into hundreds of unfinished sentences, all talking over one another: characters from books that readers had abandoned halfway through a crisis. One knight kept asking where his horse had gone; a detective had [[lost the plot|stopped understanding the story — and, here, literally had no ending]] entirely. In the margin of a dusty atlas someone had scribbled, in a tiny hand: “We are still mid-chapter.”",
+     "q": {
+      "q": "The scribble “We are still mid-chapter” implies that…",
+      "options": [
+       "the characters feel stuck mid-story",
+       "a careful librarian was taking notes for a catalogue",
+       "Vellum had written a long complaint about the noise",
+       "the atlas was made the loudest book on purpose"
+      ],
+      "answer": 0,
+      "explain": "The abandoned characters are speaking; “mid-chapter” means their stories were never finished.",
+      "kind": "infer",
+      "notes": {
+       "a careful librarian was taking notes for a catalogue": "The voices are the characters', not a librarian's catalogue notes.",
+       "Vellum had written a long complaint about the noise": "Vellum sighed about the noise; he didn't write in the atlas.",
+       "the atlas was made the loudest book on purpose": "The atlas holds the scribble; it isn't boasting about being loud."
+      }
+     }
+    },
+    {
+     "text": "It occurred to {hero}, not for the first time in this library, that unfinished characters — like the endless novel's exhausted cast — might simply need to be asked. With Vellum's slightly [[wary|careful because you expect trouble]] blessing, {hero} tapped the shelf and enquired, quite politely, what would help. The answer arrived at once as a soft chorus: “A contents page. And permission to rest.”",
+     "q": {
+      "q": "What did {hero} do that changed the situation?",
+      "options": [
+       "asked what the characters needed",
+       "rewrote every abandoned book in a single night",
+       "moved the noisy shelf out into the garden",
+       "told Vellum to burn all the noisy books"
+      ],
+      "answer": 0,
+      "explain": "As with the endless novel, asking was the step nobody had tried.",
+      "kind": "fact",
+      "notes": {
+       "rewrote every abandoned book in a single night": "{hero} asked; the characters named a contents page and rest — no full rewrite.",
+       "moved the noisy shelf out into the garden": "The shelf stayed in the library. The change was the question.",
+       "told Vellum to burn all the noisy books": "Nothing was burned. {hero} acted with Vellum's blessing to ask."
+      }
+     }
+    },
+    {
+     "text": "{hero} wrote a single contents page listing every half-told tale under the heading “To Be Continued — Quietly”, slid it into the atlas, and closed the cover. For a moment the shelf hummed, as if checking the list twice. Then it fell silent, as contentedly as a cat in a sunbeam. “Three hundred years of noise,” Vellum murmured, “and all it wanted was a list.” {pet}, true to form, slept through the [[entire|whole, complete]] negotiation on a cushion labelled Returns.",
+     "q": {
+      "q": "Why is Vellum's final remark ironic?",
+      "options": [
+       "A big mystery wanted only a simple list.",
+       "Vellum had prepared the contents page many weeks earlier.",
+       "The characters were noisy because they disliked all lists.",
+       "The atlas had always been a secret cookery book."
+      ],
+      "answer": 0,
+      "explain": "A dramatic murmuring shelf, solved by a contents page: huge fuss, tiny ordinary wish.",
+      "kind": "infer",
+      "notes": {
+       "Vellum had prepared the contents page many weeks earlier.": "Vellum had no answer ready; {hero} asked and wrote the page.",
+       "The characters were noisy because they disliked all lists.": "They asked for a contents page — they wanted the list.",
+       "The atlas had always been a secret cookery book.": "It's an atlas of unfinished tales, not a cookbook."
+      }
+     }
+    }
+   ],
+   "final": {
+    "q": "If someone has “lost the plot”, they have…",
+    "options": [
+     "stopped understanding the story",
+     "dropped a detailed map behind a bookshelf",
+     "won a shiny prize for the very best story",
+     "finished every single chapter ahead of time"
+    ],
+    "answer": 0,
+    "explain": "Lost the plot = lost track of the story; here the detective also literally has no ending.",
+    "kind": "vocab",
+    "notes": {
+     "dropped a detailed map behind a bookshelf": "It's an idiom about understanding, not a real map.",
+     "won a shiny prize for the very best story": "The opposite of being confused or unfinished.",
+     "finished every single chapter ahead of time": "Lost the plot means confusion or no ending, not finishing early."
+    }
+   }
   }
  ]
 }

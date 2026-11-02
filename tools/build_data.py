@@ -251,8 +251,10 @@ for lvl, items in WRITING.items():
     json.dump(items, open(f"{ROOT}/{lvl}/writing.json", "w"), ensure_ascii=False, indent=1)
     counts[f"{lvl}/writing"] = len(items); wr_tot += len(items)
 # ---- 📜 Storybook Chapters (bonus; not part of the 3-of-4 unlock rule) ----
-# data/<level>/story.json = { id, level, chapters: [chapter 1 (tools/c_stories.py), chapter 2… (tools/c_stories2.py)] }
-from c_stories2 import MORE as STORIES_MORE
+# data/<level>/story.json = { id, level, chapters: [chapter 1 (tools/c_stories.py), then extras from STORY_MORE_MODS] }.
+# Extra-chapter modules (tools/<name>.py) each expose MORE = {level: [chapter, …]}. Listed once here, like R20_WAVES;
+# add a new wave by appending its module name. Chapters are concatenated in this order per level.
+STORY_MORE_MODS = tuple(importlib.import_module(m) for m in ("c_stories2", "c_stories3"))  # chapter 2, chapter 3…
 GLOSS_RE = re.compile(r"\[\[([^|\]]+)\|([^\]]+)\]\]")
 def _check_chapter(name, ch):
     assert len(ch["pages"]) == 4, name
@@ -265,9 +267,13 @@ def _check_chapter(name, ch):
         assert GLOSS_RE.search(p["text"]) and "[[" not in GLOSS_RE.sub("", p["text"]), (name, p["text"][:30])
     check_fair(name, qs)
     return len(qs)
+def _story_extras(lvl):  # flatten MORE lists from every STORY_MORE_MODS module for one level
+    out = []
+    for m in STORY_MORE_MODS: out.extend(getattr(m, "MORE", {}).get(lvl, []))
+    return out
 st_tot = 0
 for lvl, ch in STORIES.items():
-    chapters = [ch] + STORIES_MORE.get(lvl, [])
+    chapters = [ch] + _story_extras(lvl)
     assert len({c["title"] for c in chapters}) == len(chapters) and len({c["img"] for c in chapters}) == len(chapters), lvl
     n = sum(_check_chapter(f"{lvl}/story ch{i + 1}", c) for i, c in enumerate(chapters))
     json.dump({"id": f"{lvl}-story", "level": lvl, "chapters": chapters}, open(f"{ROOT}/{lvl}/story.json", "w"), ensure_ascii=False, indent=1)

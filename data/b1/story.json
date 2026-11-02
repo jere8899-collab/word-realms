@@ -184,6 +184,110 @@
      "extremely nervous": "Nervous = worried about what might happen. Miserable = very unhappy about what has happened."
     }
    }
+  },
+  {
+   "title": "Firefly Rehearsal",
+   "focus": "past continuous · past perfect · present perfect · first conditional · should",
+   "img": "story_b1_3",
+   "pages": [
+    {
+     "text": "A week after the Lantern Festival, Pip asked {hero} and {pet} to come back to the Whispering Forest. The fireflies had never practised a sky dance before, and Pip had been chosen to lead it. When {hero} arrived, Pip was [[hovering|staying in the air without flying forward]] above the oak, looking nervous.",
+     "q": {
+      "q": "Why had Pip asked them back?",
+      "options": [
+       "to help practise the sky dance",
+       "to mend another torn lantern again",
+       "to sell pink ribbons to the owl",
+       "to find a lost picnic basket"
+      ],
+      "answer": 0,
+      "explain": "Pip invited them because the fireflies needed to practise a sky dance, and Pip was leading it.",
+      "kind": "fact",
+      "notes": {
+       "to mend another torn lantern again": "The lantern was already mended last chapter. This time it's a sky dance.",
+       "to sell pink ribbons to the owl": "Nobody is selling ribbons. Pip needs help practising the dance.",
+       "to find a lost picnic basket": "The picnic was in the meadow story. Here Pip needs dance practice."
+      }
+     }
+    },
+    {
+     "text": "“I've never led a dance before,” Pip admitted. “If we get the [[pattern|a repeated set of steps or shapes]] wrong, the little ones will bump into each other.” While Pip was explaining the steps, two young fireflies were already spinning in the wrong direction. “You should start with a slow circle,” {hero} suggested.",
+     "q": {
+      "q": "What was Pip doing when the young fireflies spun the wrong way?",
+      "options": [
+       "explaining the dance steps",
+       "hanging lanterns on the oak",
+       "sitting alone on a mushroom",
+       "mending a pink ribbon"
+      ],
+      "answer": 0,
+      "explain": "“While Pip was explaining the steps, two young fireflies were already spinning…” Was + -ing = the longer action.",
+      "kind": "grammar",
+      "notes": {
+       "hanging lanterns on the oak": "Lanterns were last chapter. Now Pip was explaining dance steps.",
+       "sitting alone on a mushroom": "Pip sat on a mushroom when the lantern tore. Now Pip is leading practice.",
+       "mending a pink ribbon": "The ribbon already mended the lantern. Pip was explaining the steps."
+      }
+     }
+    },
+    {
+     "text": "They practised until sunset. {pet} clapped a steady beat with two [[pebbles|small smooth stones]], and the fireflies followed it. If the beat stayed steady, the circles stayed neat. By the time the moon rose, even the youngest firefly had learnt the pattern.",
+     "q": {
+      "q": "How did {pet} help the rehearsal?",
+      "options": [
+       "by clapping a beat with pebbles",
+       "by flying at the front of the whole dance",
+       "by holding the biggest lantern",
+       "by telling the owl to leave"
+      ],
+      "answer": 0,
+      "explain": "“{pet} clapped a steady beat with two pebbles, and the fireflies followed it.”",
+      "kind": "fact",
+      "notes": {
+       "by flying at the front of the whole dance": "{pet} stayed on the ground with the beat. Pip led the flying.",
+       "by holding the biggest lantern": "Lanterns aren't part of this rehearsal. The help was the pebble beat.",
+       "by telling the owl to leave": "The owl isn't in the way. {pet}'s steady beat helped the circles."
+      }
+     }
+    },
+    {
+     "text": "“I've never felt so ready,” Pip whispered. Since that night, the fireflies have danced every full moon, and they always start with {pet}'s slow circle. “You should come whenever you can,” Pip told {hero}. “If you visit, we'll save you the best [[spot|a place to sit or stand]] under the oak.”",
+     "q": {
+      "q": "Why do the fireflies start with a slow circle now?",
+      "options": [
+       "because {pet}'s beat taught them that",
+       "because the owl ordered a brand-new rule",
+       "because fast circles break the lanterns",
+       "because Pip forgot all the other steps"
+      ],
+      "answer": 0,
+      "explain": "They “always start with {pet}'s slow circle” — the pattern from rehearsal.",
+      "kind": "infer",
+      "notes": {
+       "because the owl ordered a brand-new rule": "The owl only advised about the lantern before. The slow circle comes from practice.",
+       "because fast circles break the lanterns": "No lanterns are breaking here. The slow circle is from {pet}'s beat.",
+       "because Pip forgot all the other steps": "Pip knows the steps. They choose the slow circle because rehearsal taught them."
+      }
+     }
+    }
+   ],
+   "final": {
+    "q": "“Hovering” is closest in meaning to…",
+    "options": [
+     "staying in the air in one place",
+     "falling straight down to the soft ground",
+     "running quickly along a high branch",
+     "hiding under a mushroom in the dark"
+    ],
+    "answer": 0,
+    "explain": "Hovering = staying up in the air in one place, like Pip above the oak.",
+    "kind": "vocab",
+    "notes": {
+     "falling straight down to the soft ground": "Hovering is staying up, not falling down.",
+     "running quickly along a high branch": "Fireflies fly; hovering isn't running on a branch.",
+     "hiding under a mushroom in the dark": "Pip was above the oak, not under a mushroom."
+    }
+   }
   }
  ]
 }

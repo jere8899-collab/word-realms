@@ -184,6 +184,110 @@
      "secretly, so no one notices": "Nimbus said it out loud, in front of everyone."
     }
    }
+  },
+  {
+   "title": "Kites at Three",
+   "focus": "inversion · cleft · hedging · tone",
+   "img": "story_c1_3",
+   "pages": [
+    {
+     "text": "Rarely had Cloud Castle looked so cheerful. Dawn rain had left the cloud-roses sparkling, just as Nimbus had hoped, and by midday Sola's unbroken sunshine stretched across the sky. Lady Quillon asked {hero} to walk the kite field before the guests arrived. “It is not the weather that worries me,” she said carefully, “so much as the guests' [[tempers|how calm or cross someone feels]].”",
+     "q": {
+      "q": "What does “Rarely had Cloud Castle looked so cheerful” emphasise?",
+      "options": [
+       "How unusually happy it looked that day.",
+       "That the castle looks cheerful at every single festival.",
+       "That Nimbus had caused a brand-new quarrel.",
+       "That the roses had wilted after all that rain."
+      ],
+      "answer": 0,
+      "explain": "Inversion after “Rarely” stresses how uncommon this cheerfulness is.",
+      "kind": "infer",
+      "notes": {
+       "That the castle looks cheerful at every single festival.": "“Rarely” means this is unusual, not every festival.",
+       "That Nimbus had caused a brand-new quarrel.": "Nimbus and Sola had already agreed. The line is about the castle's mood.",
+       "That the roses had wilted after all that rain.": "The roses were “sparkling”, so they hadn't wilted."
+      }
+     }
+    },
+    {
+     "text": "It was the guests' nerves, not the forecast, that needed settling. Two visiting sprites arrived early and began to argue about whose kite was higher. “With the greatest respect,” one began, in a tone that suggested the opposite, “mine is clearly the finer craft.” {hero} [[cleared their throat|made a small sound to get attention politely]] and pointed at the picnic rugs. “Perhaps we might all sit down before the flying starts?”",
+     "q": {
+      "q": "How should we read “With the greatest respect” here?",
+      "options": [
+       "Polite words hiding a cold boast.",
+       "It shows the sprite truly admires the other kite a lot.",
+       "It means the sprite is about to give the kite away.",
+       "It is an apology for arriving far too early."
+      ],
+      "answer": 0,
+      "explain": "The narrator says the tone “suggested the opposite”: polite words covering a boast.",
+      "kind": "infer",
+      "notes": {
+       "It shows the sprite truly admires the other kite a lot.": "The tone “suggested the opposite” of respect.",
+       "It means the sprite is about to give the kite away.": "The sprite is boasting, not giving anything away.",
+       "It is an apology for arriving far too early.": "Arriving early isn't what the phrase addresses; it's a dismissive boast."
+      }
+     }
+    },
+    {
+     "text": "What calmed everyone, in the end, was not a speech but a shared sandwich. Once the visiting sprites were eating, their voices softened. {hero} suggested — gently, with a string of hedges — that the kites might be flown in turns after three o'clock, so nobody's string would tangle. “It might be worth trying,” Sola murmured. Nimbus nodded, almost [[eagerly|with keen willingness]] this time.",
+     "q": {
+      "q": "Why does {hero} use soft hedges like “might” and “worth trying”?",
+      "options": [
+       "to keep the plan sounding friendly",
+       "because {hero} doubts that any kites can fly at all",
+       "to prove the plan has already been firmly ordered",
+       "to make the sprites refuse on purpose"
+      ],
+      "answer": 0,
+      "explain": "Hedging keeps a suggestion gentle so proud guests can agree without losing face.",
+      "kind": "grammar",
+      "notes": {
+       "because {hero} doubts that any kites can fly at all": "{hero} isn't doubting flight. The soft wording invites agreement.",
+       "to prove the plan has already been firmly ordered": "Nothing has been ordered yet. Hedging comes before agreement.",
+       "to make the sprites refuse on purpose": "{hero} wants them to accept; gentle wording helps."
+      }
+     }
+    },
+    {
+     "text": "At three o'clock exactly the field filled with colour. Never before had so many kites shared one patch of sky without a single tangle. What surprised Lady Quillon most was how quiet the proudest guests had become — quieter, even, than the cloud-roses in the breeze. “It would seem,” she told {hero} with a small smile, “that lunch is a more powerful [[diplomacy|the skill of keeping peace between people]] than any speech I had prepared.”",
+     "q": {
+      "q": "What surprised Lady Quillon most?",
+      "options": [
+       "how quiet the proud guests became",
+       "that the heavy rain returned at three o'clock",
+       "that no kites at all were brought to the field",
+       "that Nimbus suddenly restarted the quarrel"
+      ],
+      "answer": 0,
+      "explain": "“What surprised Lady Quillon most was how quiet the proudest guests had become.” (cleft focus)",
+      "kind": "fact",
+      "notes": {
+       "that the heavy rain returned at three o'clock": "The plan was sunshine after lunch, and the sky filled with kites.",
+       "that no kites at all were brought to the field": "The field “filled with colour”, so the kites were there.",
+       "that Nimbus suddenly restarted the quarrel": "Nimbus nodded eagerly; there was no new quarrel."
+      }
+     }
+    }
+   ],
+   "final": {
+    "q": "“Diplomacy” is closest in meaning to…",
+    "options": [
+     "keeping peace between people",
+     "a special kind of sandwich filling",
+     "a brightly coloured type of kite string",
+     "a loud argument about the festival weather"
+    ],
+    "answer": 0,
+    "explain": "Lady Quillon means keeping peace — and jokes that lunch did it better than a speech.",
+    "kind": "vocab",
+    "notes": {
+     "a special kind of sandwich filling": "Lunch helped, but diplomacy itself is the peace-keeping skill, not the sandwich.",
+     "a brightly coloured type of kite string": "Kite string isn't diplomacy.",
+     "a loud argument about the festival weather": "Diplomacy is the opposite of a loud argument."
+    }
+   }
   }
  ]
 }

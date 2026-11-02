@@ -184,6 +184,110 @@
      "was tied to a tall tree on purpose": "Slipping is an accident, not something you do on purpose."
     }
    }
+  },
+  {
+   "title": "Crumb's Tiny Bakery",
+   "focus": "past simple · comparatives and superlatives · going to",
+   "img": "story_a2_3",
+   "pages": [
+    {
+     "text": "After the Balloon Festival, Crumb wanted to say thank you. He opened the smallest bakery in Candy Village, right next to Mrs Toffee's shop. The door was shorter than a child, and the oven was the [[cosiest|warm and comfortable]] little oven anyone had ever seen.",
+     "q": {
+      "q": "Why did Crumb open a bakery?",
+      "options": [
+       "to say thank you",
+       "to win a balloon race",
+       "to hide from Mrs Toffee",
+       "to climb the candy tree again"
+      ],
+      "answer": 0,
+      "explain": "“Crumb wanted to say thank you. He opened the smallest bakery…”",
+      "kind": "fact",
+      "notes": {
+       "to win a balloon race": "The balloon race was last week. This week he opened a bakery to say thank you.",
+       "to hide from Mrs Toffee": "His shop was “right next to Mrs Toffee's shop”, not a hiding place.",
+       "to climb the candy tree again": "Climbing the sticky tree was in the festival story. Now he is baking."
+      }
+     }
+    },
+    {
+     "text": "On the first morning Crumb baked jam tarts. They were sweeter than honey and smaller than a coin. Children [[queued|stood in a line waiting for your turn]] outside the tiny door. “I'm going to bake something new every day,” Crumb said proudly.",
+     "q": {
+      "q": "What is Crumb going to do every day?",
+      "options": [
+       "bake something new",
+       "fly higher than the candy tree",
+       "close the bakery at noon",
+       "give away all the balloons"
+      ],
+      "answer": 0,
+      "explain": "“I'm going to bake something new every day.” Going to = a plan.",
+      "kind": "grammar",
+      "notes": {
+       "fly higher than the candy tree": "Flying was his festival plan. His new plan is to “bake something new every day”.",
+       "close the bakery at noon": "The story doesn't say he will close at noon. He plans to bake something new.",
+       "give away all the balloons": "Balloons were last week. Now he plans to bake something new every day."
+      }
+     }
+    },
+    {
+     "text": "Then a problem came. Crumb's claws were stronger than a spoon, and he [[squashed|pressed something so it became flat]] the first tray of tarts by accident. The tarts looked flatter than pancakes. Crumb's cheeks went pink. “Oh no. These are the messiest tarts in the village!”",
+     "q": {
+      "q": "What happened to the first tray of tarts?",
+      "options": [
+       "Crumb squashed them by accident.",
+       "Mrs Toffee ate them all.",
+       "The wind blew them into a tree.",
+       "A child hid them under the door."
+      ],
+      "answer": 0,
+      "explain": "“He squashed the first tray of tarts by accident.”",
+      "kind": "fact",
+      "notes": {
+       "Mrs Toffee ate them all.": "Mrs Toffee has her own shop next door. Crumb squashed the tarts.",
+       "The wind blew them into a tree.": "The wind was in the balloon story. Here, Crumb's claws squashed the tarts.",
+       "A child hid them under the door.": "Children queued outside. Nobody hid the tarts; Crumb squashed them."
+      }
+     }
+    },
+    {
+     "text": "{hero} and {pet} knocked on the little door. “We can help!” said {hero}. Together they cut the flat tarts into star shapes. The children [[clapped|hit their hands together to show they liked something]]. “These are the prettiest tarts of all,” said Mrs Toffee. Crumb smiled. “Tomorrow I'm going to use a softer spoon,” he laughed.",
+     "q": {
+      "q": "How did they fix the squashed tarts?",
+      "options": [
+       "They cut them into star shapes.",
+       "They baked a bigger cake instead.",
+       "They threw them into the oven again.",
+       "They gave each child a balloon."
+      ],
+      "answer": 0,
+      "explain": "“Together they cut the flat tarts into star shapes.”",
+      "kind": "fact",
+      "notes": {
+       "They baked a bigger cake instead.": "They kept the tarts and reshaped them. Nobody baked a bigger cake.",
+       "They threw them into the oven again.": "Putting them back in the oven wouldn't make stars. They cut star shapes.",
+       "They gave each child a balloon.": "Balloons were last chapter. This time they cut the tarts into stars."
+      }
+     }
+    }
+   ],
+   "final": {
+    "q": "If people “queued”, they…",
+    "options": [
+     "stood in a line waiting for their turn",
+     "ran as fast as they could",
+     "hid under a tiny table",
+     "baked tarts with strong claws"
+    ],
+    "answer": 0,
+    "explain": "Queued = stood in a line, waiting, like the children outside Crumb's door.",
+    "kind": "vocab",
+    "notes": {
+     "ran as fast as they could": "Queuing is waiting in a line, not running.",
+     "hid under a tiny table": "Nobody hid. The children stood outside the door.",
+     "baked tarts with strong claws": "Crumb baked; the children queued."
+    }
+   }
   }
  ]
 }
