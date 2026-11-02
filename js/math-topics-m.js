@@ -1,7 +1,7 @@
 /* 🔢 Number Kingdom topics, Grades 5–8 (Singapore Primary 5–6, Secondary 1–2). */
 (function () {
 const M = (typeof module !== "undefined" && module.exports) ? require("./math-gen.js") : window.MathGen;
-const { Q, num, mcq, mcqWhy, numWhy, T, topic, PASTEL, INK, LINE, esc, svgBox, fitBox, cellKey, figKey, hasCell, nearCells, gridSheet, svgPieChart, svgGeo, cardSvg, dirPt, f1, xy, mid, vdir, angSweep, angWedge, angText, figCard, figShape, figEdge, figLab, figRight, gcd, lcm, rd, fmt, fdp, simp, fracTex, fracStr, mixedTex, poly, lin, paren, pm, undo, coef, ord } = M._internal;
+const { Q, num, mcq, mcqWhy, numWhy, T, topic, PASTEL, INK, LINE, esc, svgBox, fitBox, cellKey, figKey, hasCell, nearCells, gridSheet, svgPieChart, svgGeo, cardSvg, dirPt, f1, xy, mid, vdir, angSweep, angWedge, angText, figCard, figShape, figEdge, figLab, figRight, gcd, lcm, rd, fmt, fdp, simp, fracTex, fracStr, mixedTex, poly, lin, paren, pm, undo, coef, ord, sum, asc, median } = M._internal;
 
 /* ---------- Grade 5 (Primary 5) ---------- */
 topic(5, "fracmul", "Fraction Spells", "✨", "Multiply fractions", r => {
@@ -99,7 +99,7 @@ topic(5, "volume", "Treasure Chests", "📦", "Volume of cuboids", r => {
 });
 topic(5, "average", "Average Adventures", "📊", "Mean of a set", r => {
   const n = r.int(3, 6), mean = r.int(4, 60);
-  if (r.chance(.65)) { const xs = Array.from({ length: n }, () => r.int(Math.max(1, mean - 15), mean + 15)), tot = xs.reduce((a, b) => a + b, 0);
+  if (r.chance(.65)) { const xs = Array.from({ length: n }, () => r.int(Math.max(1, mean - 15), mean + 15)), tot = sum(xs);
     return num(`The dwarfs' cousins found ${xs.join(", ")} gems. What is the average (mean) number of gems? (2 d.p. if needed)`, rd(tot / n, 2), "Add them all up, then divide by how many there are.", [`Total = ${xs.join(" + ")} = ${tot}`, `${tot} ÷ ${n} = ${fmt(rd(tot / n, 2))}`], { keys: ["."], tol: 0.0051, data: { xs } }); }
   return num(`The average mass of ${n} pumpkins is ${mean} kg. What is their total mass in kg?`, mean * n, "Total = average × number of items.", [`${mean} × ${n} = ${mean * n} kg`]);
 });
@@ -505,7 +505,7 @@ const svgPattern = (fam, title) => {
   const box = g => { const ps = F.polys ? [].concat(...g) : g, xs = ps.map(p => p[0]), ys = ps.map(p => p[1]); return [Math.min(...xs), Math.max(...xs), Math.min(...ys), Math.max(...ys)]; };
   const bs = figs.map(box), pad = F.polys ? 0 : .5, ws = bs.map(b => b[1] - b[0] + 2 * pad), hs = bs.map(b => b[3] - b[2] + 2 * pad);
   // all three at the same scale; each figure gets its own width plus an equal share of the spare room, and sits in the middle of it
-  const sum = ws.reduce((a, b) => a + b, 0), top = 34, H = 76, sc = Math.min(26, 240 / sum, H / Math.max(...hs)), spare = (276 - sum * sc) / 3;
+  const tw = sum(ws), top = 34, H = 76, sc = Math.min(26, 240 / tw, H / Math.max(...hs)), spare = (276 - tw * sc) / 3;
   let x = 12, body = "";
   figs.forEach((g, i) => { const [x0, , y0] = bs[i], cx = x + (ws[i] * sc + spare) / 2, ox = cx - ws[i] * sc / 2, oy = top + (H - hs[i] * sc) / 2, P = p => [f1(ox + (p[0] - x0 + pad) * sc), f1(oy + (p[1] - y0 + pad) * sc)];
     body += `<g class="sfig" data-n="${i + 1}">` + (F.polys ? g.map(([p, q]) => { const [a, b] = P(p), [c, d] = P(q); return `<line class="stk" x1="${a}" y1="${b}" x2="${c}" y2="${d}" stroke="${["#E9A23B", "#F08BB0", "#7FB7E6"][i]}" stroke-width="3.2" stroke-linecap="round"/>`; }).join("")
@@ -719,10 +719,10 @@ topic(8, "proportion", "Proportion Potions", "🫖", "Direct and inverse proport
 });
 topic(8, "stats", "Mean, Median & Mode", "📈", "Averages of data", r => {
   const n = r.pick([5, 6, 7, 8]), xs = Array.from({ length: n }, () => r.int(1, 20)); if (r.chance(.6)) xs[1] = xs[0];
-  const sorted = xs.slice().sort((a, b) => a - b), tot = xs.reduce((a, b) => a + b, 0), median = n % 2 ? sorted[(n - 1) / 2] : (sorted[n / 2 - 1] + sorted[n / 2]) / 2;
+  const sorted = asc(xs), tot = sum(xs), med = median(xs);
   const cnt = {}; xs.forEach(x => cnt[x] = (cnt[x] || 0) + 1); const mx = Math.max(...Object.values(cnt)), modes = Object.keys(cnt).filter(k => cnt[k] === mx).map(Number);
   const t = modes.length === 1 && mx > 1 ? r.int(0, 2) : r.int(0, 1);
-  if (t === 0) return num(`Find the median of: ${xs.join(", ")}`, median, "Sort the data, then find the middle value.", [`Sorted: ${sorted.join(", ")}`, n % 2 ? `Middle value: ${median}` : `Middle two: ${sorted[n / 2 - 1]} and ${sorted[n / 2]} → ${fmt(median)}`], { keys: ["."], data: { xs, f: "median" } });
+  if (t === 0) return num(`Find the median of: ${xs.join(", ")}`, med, "Sort the data, then find the middle value.", [`Sorted: ${sorted.join(", ")}`, n % 2 ? `Middle value: ${med}` : `Middle two: ${sorted[n / 2 - 1]} and ${sorted[n / 2]} → ${fmt(med)}`], { keys: ["."], data: { xs, f: "median" } });
   if (t === 1) return num(`Find the mean of: ${xs.join(", ")} (1 d.p. if needed)`, rd(tot / n, 1), "Mean = total ÷ number of values.", [`Total = ${tot}`, `${tot} ÷ ${n} = ${fmt(rd(tot / n, 1))}`], { keys: ["."], tol: 0.051, data: { xs, f: "mean" } });
   return num(`Find the mode of: ${xs.join(", ")}`, modes[0], "The mode is the value that appears most often.", [`${modes[0]} appears ${mx} times — more than any other value.`], { data: { xs, f: "mode" } });
 });

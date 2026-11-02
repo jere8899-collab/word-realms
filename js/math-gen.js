@@ -44,7 +44,13 @@ const undo = n => `${n < 0 ? "+" : "-"} ${Math.abs(n)}`;
 const coef = k => k === 1 ? "" : k === -1 ? "-" : String(k);
 // ordinal words for "the 20th term", "the 3rd multiple" (11th–13th included)
 const ord = k => k + (k % 100 >= 11 && k % 100 <= 13 ? "th" : ["th", "st", "nd", "rd"][k % 10] || "th");
-M.util = { gcd, lcm, rd, fmt, fdp, simp, fracTex, fracStr, poly };
+/* stats kit (Average Adventures, Mean Median & Mode, Frequency Fair, Kite-Festival Spread): a total, a sorted copy, the median of
+   a list, and the mean of a frequency table (values xs with frequencies fs) */
+const sum = xs => xs.reduce((a, b) => a + b, 0);
+const asc = xs => xs.slice().sort((a, b) => a - b);
+const median = xs => { const s = asc(xs), n = s.length; return n % 2 ? s[(n - 1) / 2] : (s[n / 2 - 1] + s[n / 2]) / 2; };
+const freqTotals = (xs, fs) => ({ N: sum(fs), S: sum(xs.map((x, i) => x * fs[i])), S2: sum(xs.map((x, i) => x * x * fs[i])) });
+M.util = { gcd, lcm, rd, fmt, fdp, simp, fracTex, fracStr, poly, sum, asc, median, freqTotals };
 
 /* ---------- question builders ---------- */
 const Q = o => Object.assign({ kind: "num", tol: 1e-9, keys: [], steps: [], hint: "", pic: "" }, o);
@@ -248,7 +254,7 @@ M.longMulSteps = (a, b) => { const bs = String(b).split("").reverse(); const out
 /* ====================== TOPICS ====================== */
 const TOPICS = [];
 const topic = (grade, id, name, icon, desc, gen, opt = {}) => TOPICS.push(Object.assign({ grade, id: `g${grade}.${id}`, name, icon, desc, gen }, opt));
-M._internal = { Q, num, mcq, mcqWhy, numWhy, T, NAMES, THINGS, COUNT_EMOJI, PASTEL, INK, LINE, esc, svgBox, cardSvg, cellKey, figKey, hasCell, nearCells, gridPaper, gridSheet, gridCell, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, svgBars, svgLine, svgPieChart, svgGeo, fitBox, dirPt, f1, xy, mid, vat, vdir, angSweep, angWedge, angText, rightPath, figCard, figShape, figEdge, figLab, figRight, coin, emojiRows, table, colAdd, colSub, topic, TOPICS, gcd, lcm, rd, fmt, fdp, money, simp, fracTex, fracStr, mixedTex, sgn, poly, lin, paren, pm, undo, coef, ord };
+M._internal = { Q, num, mcq, mcqWhy, numWhy, T, NAMES, THINGS, COUNT_EMOJI, PASTEL, INK, LINE, esc, svgBox, cardSvg, cellKey, figKey, hasCell, nearCells, gridPaper, gridSheet, gridCell, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, axes, svgBars, svgLine, svgPieChart, svgGeo, fitBox, dirPt, f1, xy, mid, vat, vdir, angSweep, angWedge, angText, rightPath, figCard, figShape, figEdge, figLab, figRight, coin, emojiRows, table, colAdd, colSub, topic, TOPICS, gcd, lcm, rd, fmt, fdp, money, simp, fracTex, fracStr, mixedTex, sgn, poly, lin, paren, pm, undo, coef, ord, sum, asc, median, freqTotals };
 M.TOPICS = TOPICS;
 M.topic = id => TOPICS.find(t => t.id === id);
 M.gradeTopics = g => TOPICS.filter(t => t.grade === g);
