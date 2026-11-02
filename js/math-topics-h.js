@@ -1,7 +1,7 @@
 /* 🔢 Number Kingdom topics, Grades 9–12 (Singapore Secondary 3–4, JC 1–2 / Years 10–13). */
 (function () {
 const M = (typeof module !== "undefined" && module.exports) ? require("./math-gen.js") : window.MathGen;
-const { Q, num, mcq, mcqWhy, numWhy, T, topic, PASTEL, INK, LINE, esc, cardSvg, axes, f1, xy, mid, vat, vdir, toDeg, sinD, cosD, tanD, rotPt, angSweep, angWedge, angText, rightPath, figCard, figEdge, figLab, figLens, figDot, figVtx, table, rd, fmt, fdp, fracTex, fracStr, poly, lin, paren, sgn, pm, sum, asc, median, freqTotals } = M._internal;
+const { Q, num, mcq, mcqWhy, numWhy, T, topic, PASTEL, INK, LINE, esc, cardSvg, axes, xTicks, yUnit, xUnit, f1, xy, mid, vat, vdir, toDeg, sinD, cosD, tanD, rotPt, angSweep, angWedge, angText, rightPath, figCard, figEdge, figLab, figLens, figDot, figVtx, table, rd, fmt, fdp, fracTex, fracStr, poly, lin, paren, sgn, pm, sum, asc, median, freqTotals } = M._internal;
 const sf3 = v => +(+v.toFixed(12)).toPrecision(3);
 const tol3 = v => Math.max(1e-9, Math.pow(10, Math.floor(Math.log10(Math.abs(v) || 1)) - 2) * 0.51);
 const V2 = v => `\\begin{pmatrix} ${v[0]} \\\\ ${v[1]} \\end{pmatrix}`, V3 = v => `\\begin{pmatrix} ${v[0]} \\\\ ${v[1]} \\\\ ${v[2]} \\end{pmatrix}`;
@@ -565,7 +565,7 @@ const numLine = (x0, x1, y, lo, hi, major, minor, unit) => { const X = v => f1(x
   for (let v = lo; v <= hi + 1e-9; v += minor) { const big = Math.abs((v - lo) / major - Math.round((v - lo) / major)) < 1e-9;
     s += `<line x1="${X(v)}" y1="${y}" x2="${X(v)}" y2="${y + (big ? 6 : 3.5)}" stroke="#b9a6cc" stroke-width="${big ? 1.6 : 1}"/>`;
     if (big) s += `<text class="xt" data-v="${fmt(v)}" x="${X(v)}" y="${y + 17}" font-size="9.5" text-anchor="middle" font-weight="800" fill="${INK}">${fmt(v)}</text>`; }
-  return [s + `<text x="${f1((x0 + x1) / 2)}" y="${y + 31}" font-size="9.5" text-anchor="middle" font-weight="800" fill="${LINE}">${esc(unit)}</text>`, X]; };
+  return [s + xUnit(f1((x0 + x1) / 2), y + 31, unit), X]; };
 // one box-and-whisker plot (five = [min, Q1, median, Q3, max]) centred on height y, with an optional name above it
 const boxPlot = (X, y, five, fill, name) => { const [a, b, m, c, d] = five.map(X), h = 26;
   return `<g class="bplot" data-n="${esc(name || "")}">${name ? `<text x="${f1(Math.max(30, a))}" y="${y - h / 2 - 6}" font-size="10.5" font-weight="900" fill="${INK}">${esc(name)}</text>` : ""}` +
@@ -580,8 +580,8 @@ const svgCF = (c, bs, cf) => { const n = cf[cf.length - 1], x0 = 44, x1 = 282, t
   const X = v => f1(x0 + (v - bs[0]) / (bs[bs.length - 1] - bs[0]) * (x1 - x0)), P = bs.map((b, i) => [X(b), Y(cf[i])]);
   const d = P.slice(1).map((p, i) => (p[1] - P[i][1]) / (p[0] - P[i][0])), m = P.map((_, i) => i === 0 ? d[0] : i === P.length - 1 ? d[d.length - 1] : d[i - 1] * d[i] <= 0 ? 0 : 2 / (1 / d[i - 1] + 1 / d[i]));
   let path = `M${P[0][0]},${P[0][1]}`; for (let i = 0; i < P.length - 1; i++) { const h = (P[i + 1][0] - P[i][0]) / 3; path += ` C${f1(P[i][0] + h)},${f1(P[i][1] + h * m[i])} ${f1(P[i + 1][0] - h)},${f1(P[i + 1][1] - h * m[i + 1])} ${P[i + 1][0]},${P[i + 1][1]}`; }
-  const xs = bs.map(b => `<line x1="${X(b)}" y1="${top}" x2="${X(b)}" y2="${bot}" stroke="#F3ECFA" stroke-width="1"/><text class="xt" data-v="${b}" x="${X(b)}" y="${bot + 15}" font-size="9.5" text-anchor="middle" font-weight="800" fill="${INK}">${b}</text>`).join("");
-  return cardSvg(300, 228, c.title, 18, `<text x="8" y="31" font-size="9" font-weight="800" fill="${LINE}">Cumulative frequency</text>${grid}${xs}<text x="${f1((x0 + x1) / 2)}" y="${bot + 30}" font-size="9.5" text-anchor="middle" font-weight="800" fill="${LINE}">${esc(c.axis)}</text>` +
+  const xs = xTicks(bs.map(b => [X(b), b, b]), top, bot, "#F3ECFA", 15, "xt");
+  return cardSvg(300, 228, c.title, 18, `${yUnit("Cumulative frequency")}${grid}${xs}${xUnit(f1((x0 + x1) / 2), bot + 30, c.axis)}` +
     `<path class="cfcurve" d="${path}" fill="none" stroke="#ff8fa3" stroke-width="3" stroke-linecap="round"/>` + P.map((p, i) => `<circle class="cfpt" data-x="${bs[i]}" data-y="${cf[i]}" cx="${p[0]}" cy="${p[1]}" r="3.6" fill="#fff" stroke="#ff6f91" stroke-width="2.2"/>`).join(""), "cumulative frequency curve", "mpic chart spread"); };
 // a five-number summary on the context's minor-tick grid: min < Q1 < median < Q3 < max, each gap at least 2 small ticks
 const fiveNums = (r, c) => { const S = Math.round((c.hi - c.lo) / c.minor); for (;;) { const g = [r.int(0, 6), r.int(2, 8), r.int(2, 7), r.int(2, 7), r.int(2, 8)], idx = g.map((_, i) => sum(g.slice(0, i + 1)));
@@ -661,6 +661,142 @@ const spreadQ = (r, kind) => { const c = r.pick(SPREAD_CTX), z = kind.startsWith
   if (z.tol) Object.assign(extra, { tol: z.tol, a: fdp(z.x, 2), keys: ["."] }); else if (!Number.isInteger(z.x)) extra.keys = ["."];
   return numWhy(z.q, z.x, z.hint, z.steps, z.slips.filter(([v]) => v > 0 && isFinite(v)), extra); };
 topic(10, "spread", "Kite-Festival Spread", "🪁", "Quartiles, box plots, cumulative frequency and standard deviation", r => spreadQ(r, r.pick(SPREAD_KINDS)));
+/* ---------- 🚌 Field-Trip Travel Graphs (MOE Sec 4 real-world contexts, N4 rate and speed: distance–time graphs (speed
+   = gradient, a flat line = stopped, the stop time, average speed for the whole trip there and back, which statement is
+   true) and speed–time graphs (acceleration and deceleration = gradient, distance = the area under the graph, linear
+   sections only, finding the top speed V from the distance, which statement is true)). Every corner of a graph sits on
+   the grid, so the child reads it off the labelled axes; tick labels carry class xt / yt + data-v and the line's corners
+   are circles of class tgpt, so tests read every graph back. Stages are lettered A, B, C, D in yellow bubbles. */
+const DT_CTX = [
+  { id: "bus", title: "Zoo field trip", it: "the school bus", trip: "the school bus's trip from school to the zoo and back", home: "school", away: "the zoo", y: "Distance from school (km)", sp: [20, 60], xs: [10, 15, 20], ys: [5, 10] },
+  { id: "bike", title: "Library bike ride", it: "Mei", trip: "Mei's bike ride from home to the library and back", home: "home", away: "the library", y: "Distance from home (km)", sp: [6, 20], xs: [10, 15], ys: [1, 2] },
+  { id: "coach", title: "Pumpkin-coach ride", it: "the pumpkin coach", trip: "Cinderella's ride in her pumpkin coach from the cottage to the palace and back", home: "the cottage", away: "the palace", y: "Distance from the cottage (km)", sp: [8, 30], xs: [10, 15, 20], ys: [2, 5] },
+  { id: "hike", title: "Waterfall hike", it: "the scout troop", trip: "the scout troop's hike from the campsite to the waterfall and back", home: "the campsite", away: "the waterfall", y: "Distance from the campsite (km)", sp: [2, 6], xs: [15, 20, 30], ys: [1] }
+];
+const ST_CTX = [
+  { id: "mrt", title: "MRT train between stations", it: "the MRT train", run: "an MRT train's journey from one station to the next", sp: [12, 24], ys: 4, xs: 10, t1: [10, 20, 30], t2: [2, 6], t3: [10, 20, 30] },
+  { id: "sprint", title: "Sports-day sprint", it: "Aisha", run: "Aisha's run in the sports-day sprint", sp: [6, 10], ys: 2, xs: 2, t1: [2, 4, 6], t2: [2, 5], t3: [2, 4] },
+  { id: "rc", title: "Remote-control car race", it: "the remote-control car", run: "a remote-control car's run along the race track", sp: [3, 8], ys: 1, xs: 2, t1: [2, 4, 6], t2: [2, 5], t3: [2, 4, 6] },
+  { id: "coach", title: "Pumpkin coach on the palace road", it: "the pumpkin coach", run: "Cinderella's pumpkin coach riding along the palace road", sp: [4, 12], ys: 2, xs: 5, t1: [5, 10, 15], t2: [2, 6], t3: [5, 10] }
+];
+const LET = "ABCD";
+const isNice = v => Math.abs(rd(v, 2) - v) < 1e-9;
+// a travel graph (stage bubbles sit above flat stages and under sloping ones, clear of the axes): corners pts = [[t, y]] on a grid of xstep × ystep; vName = "V" draws an unlabelled speed axis with only the
+// top speed marked V (Royal "find V" questions)
+const svgTravel = (g) => { const x0 = 48, x1 = 282, top = 42, bot = 178, X = t => f1(x0 + t / g.xmax * (x1 - x0));
+  let grid, Y;
+  if (g.vName) { Y = v => f1(bot - (bot - top) * v / g.ymax); grid = `<line x1="${x0}" y1="${bot}" x2="${x1}" y2="${bot}" stroke="#b9a6cc" stroke-width="2"/><text class="yt" data-v="0" x="${x0 - 5}" y="${bot + 3.5}" font-size="10" text-anchor="end" font-weight="800" fill="${INK}">0</text>` +
+      `<line class="tgv" x1="${x0}" y1="${Y(g.vAt)}" x2="${x1}" y2="${Y(g.vAt)}" stroke="#c9b3ff" stroke-width="1.4" stroke-dasharray="4 3"/><text x="${x0 - 6}" y="${Y(g.vAt) + 4.5}" font-size="13" text-anchor="end" font-weight="900" font-style="italic" font-family="Georgia, serif" fill="#ff4f81">${g.vName}</text>`; }
+  else [grid, Y] = axes(x0, x1, top, bot, g.ymax, g.ystep, "yt");
+  const ticks = []; for (let t = 0; t <= g.xmax + 1e-9; t += g.xstep) ticks.push([X(t), fmt(t), fmt(t)]);
+  const P = g.pts.map(([t, y]) => [X(t), Y(y)]);
+  const stages = P.slice(1).map((p, i) => { const a = P[i], dx = p[0] - a[0], dy = p[1] - a[1], L = Math.hypot(dx, dy) || 1; let nx = dy / L, ny = -dx / L; if ((ny > 0) !== (Math.abs(dy) > 0.5)) { nx = -nx; ny = -ny; }   // flat: above the line; sloping: under it
+    const at = k => [(a[0] + p[0]) / 2 + nx * k, (a[1] + p[1]) / 2 + ny * k], inPlot = q => q[0] >= x0 + 11 && q[0] <= x1 - 10 && q[1] >= top + 2 && q[1] <= bot - 10;
+    const c = (inPlot(at(13)) ? at(13) : at(-13)).map(f1);   // the other side of the line when that side runs off the plot
+    return `<g class="tgstage" data-s="${LET[i]}"><circle cx="${c[0]}" cy="${c[1]}" r="8" fill="#FFF0B8" stroke="${LINE}" stroke-width="1.4"/><text x="${c[0]}" y="${f1(c[1] + 3.8)}" font-size="10.5" text-anchor="middle" font-weight="900" fill="${INK}">${LET[i]}</text></g>`; }).join("");
+  return cardSvg(300, 226, g.title, 18, `${yUnit(g.yName)}${grid}${xTicks(ticks, top, bot, "#F3ECFA", 15, "xt")}${xUnit(f1((x0 + x1) / 2), bot + 30, g.xName)}` +
+    `<polyline class="tgline" points="${P.map(xy).join(" ")}" fill="none" stroke="#ff8fa3" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>` +
+    P.map(p => `<circle class="tgpt" cx="${p[0]}" cy="${p[1]}" r="3.4" fill="#fff" stroke="#ff6f91" stroke-width="2"/>`).join("") + stages, g.label, "mpic chart travel"); };
+// a distance–time journey out and back: stages [{ k: out | rest | back, t0, t1, y0, y1, sp }], times in min, distances in km
+const DT_PATTERNS = [["out", "rest", "back"], ["out", "rest", "out", "back"], ["out", "out", "rest", "back"], ["out", "rest", "back"]];
+const dtJourney = (r, c) => { for (;;) { const xs = r.pick(c.xs), ys = r.pick(c.ys), pat = r.pick(DT_PATTERNS); let t = 0, y = 0, okv = true; const st = [];
+  for (const k of pat) { const n = r.int(1, k === "rest" ? 2 : 3), dt = n * xs; let dy = k === "rest" ? 0 : k === "back" ? -y : r.int(1, 4) * ys;
+    const sp = 60 * Math.abs(dy) / dt; if (k !== "rest" && (!Number.isInteger(sp) || sp < c.sp[0] || sp > c.sp[1])) { okv = false; break; }
+    st.push({ k, t0: t, t1: t + dt, y0: y, y1: y + dy, sp }); t += dt; y += dy; }
+  if (!okv || t / xs > 8 || t / xs < 4) continue;
+  const D = Math.max(...st.map(s => s.y1)), steps = D / ys < 4 ? Math.max(D / ys + 1, 3) : D / ys, mv = st.filter(s => s.k !== "rest");
+  if (D / ys > 8 || new Set(mv.map(s => s.sp)).size !== mv.length) continue;
+  return { st, xs, ys, T: t, D, ymax: steps * ys, pic: svgTravel({ title: c.title, yName: c.y, xName: "Time (min)", xmax: t, xstep: xs, ymax: steps * ys, ystep: ys, pts: [[0, 0]].concat(st.map(s => [s.t1, s.y1])), label: "distance–time graph" }) }; } };
+// a speed–time journey: shape "rest" (0 → V, steady V, V → 0), "u" (starts at u m/s) or "tri" (0 → V → 0); times in s, speeds in m/s
+const stJourney = (r, c, shapes, vName) => { for (;;) { const shape = r.pick(shapes), V = r.int(Math.ceil(c.sp[0] / c.ys), Math.floor(c.sp[1] / c.ys)) * c.ys, u = shape === "u" ? r.int(1, V / c.ys - 1) * c.ys : 0;
+  const t1 = r.pick(c.t1), t2 = shape === "tri" ? 0 : r.int(c.t2[0], c.t2[1]) * c.xs, t3 = r.pick(c.t3), T = t1 + t2 + t3, a1 = (V - u) / t1, a3 = V / t3;
+  if (T / c.xs > 10 || !isNice(a1) || !isNice(a3) || Math.abs(a1 - a3) < 1e-9 || V <= u) continue;
+  const pts = [[0, u], [t1, V]].concat(t2 ? [[t1 + t2, V]] : [], [[T, 0]]), ymax = V + c.ys * (V / c.ys < 4 ? 2 : 1);
+  const S = (u + V) / 2 * t1 + V * t2 + V * t3 / 2;
+  return { shape, V, u, t1, t2, t3, T, a1, a3, S, pts, pic: svgTravel({ title: c.title, yName: "Speed (m/s)", xName: "Time (s)", xmax: T, xstep: c.xs, ymax, ystep: c.ys, pts, vName, vAt: V, label: "speed–time graph" }) }; } };
+const km = v => `${fmt(v)} km`, mins = v => `${fmt(v)} min`;
+const TRAVEL = {
+  // speed of one stage of a distance–time graph (km/h): the change in distance ÷ the time in hours
+  dtspeed: (r, c) => { const J = dtJourney(r, c), i = r.pick(J.st.map((s, k) => k).filter(k => J.st[k].k !== "rest")), s = J.st[i], L = LET[i], dd = Math.abs(s.y1 - s.y0), dt = s.t1 - s.t0;
+    return { k: s.k, x: s.sp, pic: J.pic, data: { stage: L, pts: J.st.map(z => [z.t1, z.y1]) }, q: `The graph shows ${c.trip}. Find the speed during stage ${L}, in km/h.`, hint: "Speed = change in distance ÷ time taken. Turn the minutes into hours first.",
+      steps: [`Stage ${L}: from ${mins(s.t0)} to ${mins(s.t1)}, the distance goes from ${km(s.y0)} to ${km(s.y1)}`, `Change in distance = ${km(dd)}, time = ${dt} min = $\\frac{${dt}}{60}$ h`, `Speed = ${dd} ÷ $\\frac{${dt}}{60}$ = ${dd} × 60 ÷ ${dt} = ${s.sp} km/h`],
+      slips: [[rd(dd / dt, 4), `That is ${km(dd)} ÷ ${dt}, the speed in km per minute. There are 60 minutes in an hour, so multiply by 60.`], [rd(60 * dt / dd, 4), "That divides the time by the distance, upside down. Speed is distance ÷ time."],
+        [rd(60 * s.y1 / s.t1, 4), `That reads ${km(s.y1)} and ${mins(s.t1)} straight off the axes, from the very start of the trip. Use only the change during stage ${L}: ${km(dd)} in ${dt} min.`], [dd, `${km(dd)} is how far it went in stage ${L}. Divide by the time, ${dt} min = $\\frac{${dt}}{60}$ h, to get the speed.`]] }; },
+  // how long the flat (stopped) part lasts
+  dtrest: (r, c) => { const J = dtJourney(r, c), i = J.st.findIndex(s => s.k === "rest"), s = J.st[i], L = LET[i], dur = s.t1 - s.t0;
+    return { k: "rest", x: dur, pic: J.pic, data: { stage: L, pts: J.st.map(z => [z.t1, z.y1]) }, q: `The graph shows ${c.trip}. For how many minutes did ${c.it} stop?`, hint: "On a distance–time graph, a flat line means the distance is not changing: stopped. Find how long the flat part lasts.",
+      steps: [`The flat part is stage ${L}, at ${km(s.y0)} from ${c.home}`, `It starts at ${mins(s.t0)} and ends at ${mins(s.t1)}`, `Stopped for ${s.t1} − ${s.t0} = ${dur} min`],
+      slips: [[s.t0, `${mins(s.t0)} is the time the stop began. Subtract it from the time it set off again, ${mins(s.t1)}.`], [s.t1, `${mins(s.t1)} is the time on the axis when it set off again. The stop lasted from ${mins(s.t0)} to ${mins(s.t1)}.`], [s.y0, `${km(s.y0)} is how far from ${c.home} it stopped (read on the up axis). The question asks for the time, along the bottom axis.`], [rd(dur / 60, 4), "That is the stop in hours. The question asks for minutes."]] }; },
+  // average speed for the whole trip: total distance ÷ total time, the stops included
+  dtavg: (r, c) => { const J = dtJourney(r, c), S = 2 * J.D, mv = J.st.filter(s => s.k !== "rest"), Tm = sum(mv.map(s => s.t1 - s.t0)), v = 60 * S / J.T, x = rd(v, 1);
+    return { k: Number.isInteger(v) ? "exact" : "dp", x, tol: .051, pic: J.pic, data: { pts: J.st.map(z => [z.t1, z.y1]) }, q: `The graph shows ${c.trip}. Find the average speed for the whole trip, in km/h. (1 d.p. if needed)`, hint: "Average speed = total distance ÷ total time. Count the way there and the way back, and include the stops in the time.",
+      steps: [`Total distance = ${km(J.D)} there + ${km(J.D)} back = ${km(S)}`, `Total time = ${J.T} min = $\\frac{${J.T}}{60}$ h (stops included)`, `Average speed = ${S} × 60 ÷ ${J.T} ${Number.isInteger(v) ? "=" : "≈"} ${fmt(x)} km/h`],
+      slips: [[rd(60 * S / Tm, 1), `That leaves out the stop. Average speed for the whole trip uses the total time, ${J.T} min, stops included.`], [rd(60 * J.D / J.T, 1), `${km(J.D)} is only the way there. The whole trip is there and back: ${km(S)}.`], [rd(sum(mv.map(s => s.sp)) / mv.length, 1), "That is the mean of the stage speeds. The stages take different times, so use total distance ÷ total time."], [rd(S / J.T, 2), "That is km per minute. Multiply by 60 for km per hour."]] }; },
+  // which statement about the distance–time graph is true
+  dtmc: (r, c) => { const J = dtJourney(r, c), L = i => LET[i], ri = J.st.findIndex(s => s.k === "rest"), R = J.st[ri], mv = J.st.map((s, i) => i).filter(i => J.st[i].k !== "rest");
+    const fi = mv.reduce((a, b) => J.st[b].sp > J.st[a].sp ? b : a), mi = r.pick(mv.filter(i => i !== fi)), bi = J.st.length - 1, F = J.st[fi], Mv = J.st[mi], It = cap(c.it);
+    const dM = Math.abs(Mv.y1 - Mv.y0), others = mv.filter(i => i !== fi).map(i => `stage ${L(i)} is ${J.st[i].sp} km/h`).join(", ");
+    const T = [[`During stage ${L(ri)}, ${c.it} was not moving.`, `Right: stage ${L(ri)} is a flat line, so the distance from ${c.home} stayed at ${km(R.y0)} for ${R.t1 - R.t0} minutes. ${It} had stopped.`],
+      [`${It} travelled fastest during stage ${L(fi)}.`, `Right: stage ${L(fi)} is the steepest line, ${F.sp} km/h, while ${others}.`],
+      [`During stage ${L(bi)}, ${c.it} was heading back to ${c.home}.`, `Right: in stage ${L(bi)} the line drops to 0, so the distance from ${c.home} was getting smaller until it got back.`],
+      [`The furthest ${c.it} got from ${c.home} was ${km(J.D)}.`, `Right: the highest point of the graph is at ${km(J.D)}, so that is as far from ${c.home} as it went.`]];
+    const W = [[`During stage ${L(mi)}, ${c.it} was not moving.`, `Stage ${L(mi)} slopes: the distance changes by ${km(dM)} in ${Mv.t1 - Mv.t0} minutes, so it was moving at ${Mv.sp} km/h.`],
+      [`${It} travelled fastest during stage ${L(mi)}.`, `Stage ${L(mi)} is ${Mv.sp} km/h, but stage ${L(fi)} is steeper at ${F.sp} km/h.`],
+      [`During stage ${L(ri)}, ${c.it} moved at a steady speed.`, `A flat line on a distance–time graph means the distance did not change: ${c.it} was stopped, not moving steadily.`],
+      [`During stage ${L(bi)}, ${c.it} was moving further away from ${c.home}.`, `In stage ${L(bi)} the line goes down, so the distance from ${c.home} was getting smaller: it was coming back.`],
+      [`The furthest ${c.it} got from ${c.home} was ${km(2 * J.D)}.`, `${km(2 * J.D)} is the whole trip, there and back. The highest point of the graph is ${km(J.D)}.`]];
+    const ti = r.int(0, 3);
+    return { k: ["stop", "fast", "back", "far"][ti], mc: true, pic: J.pic, data: { pts: J.st.map(z => [z.t1, z.y1]) }, q: `The graph shows ${c.trip}. Which statement is correct?`, hint: "Flat line = stopped. Steeper line = faster. Line going down = coming back.",
+      steps: [`Stage ${L(ri)} is flat: stopped at ${km(R.y0)}`, `Speeds: ${mv.map(i => `stage ${L(i)} ${J.st[i].sp} km/h`).join(", ")}`, `Furthest from ${c.home}: ${km(J.D)}`],
+      right: T[ti][0], rightWhy: T[ti][1], wrong: r.shuffle(W) }; },
+  // acceleration (stage A) or deceleration (last stage) = the gradient of the speed–time graph
+  staccel: (r, c) => { const J = stJourney(r, c, ["rest", "rest", "u", "tri"]), dec = r.chance(.5), It = cap(c.it);
+    if (!dec) { const dv = J.V - J.u, x = J.a1;
+      return { k: J.u ? "accel-u" : "accel", x, pic: J.pic, data: { pts: J.pts }, q: `The speed–time graph shows ${c.run}. Find the acceleration during stage A, in m/s².`, hint: "Acceleration = change in speed ÷ time taken (the gradient of the line).",
+        steps: [`Stage A: speed goes from ${J.u} m/s to ${J.V} m/s in ${J.t1} s`, `Acceleration = (${J.V} − ${J.u}) ÷ ${J.t1} = ${fmt(x)} m/s²`],
+        slips: [[rd(J.V / J.t1, 4), `${It} starts at ${J.u} m/s, not 0. Use the change in speed, ${J.V} − ${J.u} = ${dv} m/s.`], [rd(J.t1 / dv, 4), "That divides the time by the speed, upside down. Acceleration is change in speed ÷ time."], [dv * J.t1 / 2 + J.u * J.t1, `That is the area under stage A, which gives the distance (${fmt(dv * J.t1 / 2 + J.u * J.t1)} m). Acceleration is the gradient.`], [dv, `${dv} m/s is the change in speed. Divide by the ${J.t1} s it took.`]] }; }
+    const t0 = J.T - J.t3, x = J.a3, L = LET[J.pts.length - 2];
+    return { k: "decel", x, pic: J.pic, data: { pts: J.pts }, q: `The speed–time graph shows ${c.run}. Find the deceleration during stage ${L}, in m/s².`, hint: "Deceleration = drop in speed ÷ time taken. The line slopes down, and a deceleration is given as a positive number.",
+      steps: [`Stage ${L}: speed drops from ${J.V} m/s to 0 m/s, from ${t0} s to ${J.T} s (${J.t3} s)`, `Deceleration = ${J.V} ÷ ${J.t3} = ${fmt(x)} m/s²`],
+      slips: [[-x, `The word deceleration already means slowing down, so give it as a positive number: ${fmt(x)} m/s². (As an acceleration it would be ${fmt(-x)} m/s².)`], [rd(J.V / J.T, 4), `That divides by ${J.T} s, the time read off the axis. The slowing down only took ${J.T} − ${t0} = ${J.t3} s.`], [rd(J.t3 / J.V, 4), "That divides the time by the speed, upside down. Deceleration is drop in speed ÷ time."], [J.V * J.t3 / 2, `That is the area under stage ${L}, the distance it took to stop. Deceleration is the gradient.`]] }; },
+  // distance travelled = the area under the speed–time graph (whole journey, or stage A)
+  stdist: (r, c) => { const J = stJourney(r, c, ["rest", "rest", "u", "tri"]), whole = r.chance(.6);
+    if (whole) { const parts = [[`A: ½ × (${J.u} + ${J.V}) × ${J.t1}`, (J.u + J.V) / 2 * J.t1]].concat(J.t2 ? [[`B: ${J.V} × ${J.t2}`, J.V * J.t2]] : [], [[`${LET[J.pts.length - 2]}: ½ × ${J.t3} × ${J.V}`, J.V * J.t3 / 2]]);
+      if (!J.u) parts[0][0] = `A: ½ × ${J.t1} × ${J.V}`;
+      return { k: "whole-" + J.shape, x: J.S, pic: J.pic, data: { pts: J.pts }, q: `The speed–time graph shows ${c.run}. Find the total distance travelled, in m.`, hint: "Distance = the area under a speed–time graph. Split it into triangles, rectangles and trapeziums.",
+        steps: parts.map(p => `${p[0]} = ${fmt(p[1])} m`).concat([`Total = ${parts.map(p => fmt(p[1])).join(" + ")} = ${fmt(J.S)} m`]),
+        slips: [[J.V * J.T, `That is the whole rectangle ${J.V} × ${J.T}. ${cap(c.it)} was slower than ${J.V} m/s while speeding up and slowing down, so the sloping parts are triangles${J.u ? " and trapeziums" : ""}: take half.`], [(J.u + J.V) * J.t1 + J.V * J.t2 + J.V * J.t3, "That forgets the ½ in the triangle (and trapezium) areas."], [J.V * J.t2, `That is only stage B, the steady part. Add the areas of the sloping parts too.`], [J.V + J.u, "That adds speeds together. Distance is the area under the graph: speed × time."]] }; }
+    const S = (J.u + J.V) / 2 * J.t1;
+    return { k: J.u ? "first-u" : "first", x: S, pic: J.pic, data: { pts: J.pts }, q: `The speed–time graph shows ${c.run}. How far did ${c.it} travel during stage A, in m?`, hint: J.u ? "The area under stage A is a trapezium: ½ × (sum of the parallel sides) × width." : "The area under stage A is a triangle: ½ × base × height.",
+      steps: [J.u ? `Stage A is a trapezium: ½ × (${J.u} + ${J.V}) × ${J.t1}` : `Stage A is a triangle: ½ × ${J.t1} × ${J.V}`, `Distance = ${fmt(S)} m`],
+      slips: [[J.V * J.t1, `That is ${J.V} × ${J.t1}, a rectangle. ${cap(c.it)} was still speeding up, so the area is ${J.u ? "a trapezium" : "a triangle"}: take half${J.u ? " of the sum of the sides" : ""}.`], [(J.u + J.V) * J.t1, `That forgets the ½: the area of ${J.u ? "a trapezium is ½ × (sum of the parallel sides)" : "a triangle is ½ × base"} × width.`], [(J.V - J.u) * J.t1 / 2, `That is only the triangle on top. ${cap(c.it)} started at ${J.u} m/s, so add the rectangle under it: ${J.u} × ${J.t1}.`], [J.a1, `${fmt(J.a1)} m/s² is the acceleration (the gradient). Distance is the area under the line.`]] }; },
+  // the top speed V from the total distance (the speed axis is not numbered)
+  stfind: (r, c) => { const J = stJourney(r, c, ["rest"], "V"), w = J.t2 + (J.t1 + J.t3) / 2;
+    return { k: "findV", x: J.V, pic: J.pic, data: { pts: J.pts, S: J.S }, q: `The speed–time graph shows ${c.run}. The top speed is V m/s and the total distance travelled is ${fmt(J.S)} m. Find V.`, hint: "The area under the graph is the distance. Write the area using V, then solve.",
+      steps: [`Area = ½ × ${J.t1} × V + ${J.t2} × V + ½ × ${J.t3} × V`, `= ${fmt(w)}V`, `${fmt(w)}V = ${fmt(J.S)}, so V = ${fmt(J.S)} ÷ ${fmt(w)} = ${J.V}`],
+      slips: [[rd(J.S / J.T, 4), `That treats the graph as a rectangle, ${fmt(J.S)} ÷ ${J.T}. The sloping parts are triangles, so they count half: the area is ${fmt(w)}V.`], [rd(J.S / J.t2, 4), `That uses only the steady part, stage B. The triangles at each end add distance too: the area is ${fmt(w)}V.`], [rd(J.S / (J.T / 2), 4), `That treats the whole graph as one triangle. The middle part is a rectangle: the area is ${fmt(w)}V.`], [rd(J.S / (J.t2 + J.t1 + J.t3 / 2), 4), "That forgets the ½ on one of the triangles."]] }; },
+  // which statement about the speed–time graph is true
+  stmc: (r, c) => { const J = stJourney(r, c, ["rest", "u"]), It = cap(c.it), up = J.a1 > J.a3;
+    const T = [[`During stage A, ${c.it} was speeding up.`, `Right: in stage A the line rises from ${J.u} m/s to ${J.V} m/s, so the speed was increasing: accelerating.`],
+      [`During stage B, ${c.it} kept moving at ${J.V} m/s.`, `Right: stage B is flat at ${J.V} m/s, so ${c.it} moved at a constant speed for ${J.t2} s.`],
+      [up ? `${It} sped up more sharply than it slowed down.` : `${It} slowed down more sharply than it sped up.`, `Right: the acceleration is ${fmt(J.a1)} m/s² and the deceleration is ${fmt(J.a3)} m/s², so the ${up ? "rising" : "falling"} line is steeper.`],
+      [`${It} travelled ${fmt(J.V * J.t2)} m during stage B.`, `Right: the area under stage B is a rectangle, ${J.V} × ${J.t2} = ${fmt(J.V * J.t2)} m.`]];
+    const W = [[`During stage B, ${c.it} was not moving.`, `A flat line on a speed–time graph means the speed stayed at ${J.V} m/s, not 0. ${It} was moving steadily; stopped would be a line along 0.`],
+      [`During stage C, ${c.it} was speeding up.`, `In stage C the line falls from ${J.V} m/s to 0, so ${c.it} was slowing down (decelerating) to a stop.`],
+      [up ? `${It} slowed down more sharply than it sped up.` : `${It} sped up more sharply than it slowed down.`, `Compare the gradients: the acceleration is ${fmt(J.a1)} m/s² and the deceleration is ${fmt(J.a3)} m/s², so the ${up ? "rising" : "falling"} line is the steeper one.`],
+      [`${It} travelled ${fmt(J.V)} m during stage B.`, `${J.V} m/s is the speed in stage B. The distance is the area under it: ${J.V} × ${J.t2} = ${fmt(J.V * J.t2)} m.`]];
+    const ti = r.int(0, 3);
+    return { k: ["up", "steady", "steeper", "area"][ti], mc: true, pic: J.pic, data: { pts: J.pts }, q: `The speed–time graph shows ${c.run}. Which statement is correct?`, hint: "On a speed–time graph: rising = speeding up, flat = steady speed (not stopped), falling = slowing down, area = distance.",
+      steps: [`Stage A: ${J.u} → ${J.V} m/s in ${J.t1} s (acceleration ${fmt(J.a1)} m/s²)`, `Stage B: steady ${J.V} m/s for ${J.t2} s (${fmt(J.V * J.t2)} m)`, `Stage C: ${J.V} → 0 m/s in ${J.t3} s (deceleration ${fmt(J.a3)} m/s²)`],
+      right: T[ti][0], rightWhy: T[ti][1], wrong: [W[0]].concat(r.shuffle(W.slice(1))) }; }
+};
+const TRAVEL_KINDS = ["dtspeed", "dtspeed", "dtrest", "dtavg", "dtavg", "dtmc", "dtmc", "staccel", "staccel", "stdist", "stdist", "stfind", "stmc", "stmc"];
+const travelQ = (r, kind) => { const c = r.pick(kind.startsWith("dt") ? DT_CTX : ST_CTX), z = TRAVEL[kind](r, c);
+  const data = Object.assign({ travel: kind, k: z.k, ctx: c.id, x: z.x }, z.data), uid = `travel|${kind}|${z.k}|${c.id}|${JSON.stringify(z.data)}|${z.q}`, extra = { pic: z.pic, uid, data };
+  if (z.mc) return mcqWhy(r, z.q, z.right, z.rightWhy, z.wrong, z.hint, z.steps, extra);
+  if (z.tol) Object.assign(extra, { tol: z.tol, a: fmt(z.x), keys: ["."] }); else if (!Number.isInteger(z.x)) extra.keys = ["."];
+  return numWhy(z.q, z.x, z.hint, z.steps, z.slips.filter(([v]) => isFinite(v) && v !== 0), extra); };
+topic(10, "travel", "Field-Trip Travel Graphs", "🚌", "Distance–time and speed–time graphs: speed, acceleration and distance", r => travelQ(r, r.pick(TRAVEL_KINDS)));
 topic(10, "sector", "Slice of the Moon", "🌙", "Arc length and sector area", r => {
   const R = r.int(3, 15), th = r.pick([30, 40, 45, 60, 72, 90, 120, 135, 150]), area = r.chance(.5), v = area ? th / 360 * Math.PI * R * R : th / 360 * 2 * Math.PI * R;
   return num(`A slice of moon-cake is a sector with radius ${R} cm and angle ${th}°. Find its ${area ? "area in cm²" : "arc length in cm"} (2 d.p.).`, rd(v, 2), area ? "Sector area = (θ/360) × πr²" : "Arc length = (θ/360) × 2πr", [area ? `$\\frac{${th}}{360} \\times \\pi \\times ${R}^2 \\approx ${fdp(v, 2)}$` : `$\\frac{${th}}{360} \\times 2\\pi \\times ${R} \\approx ${fdp(v, 2)}$`], { a: fdp(v, 2), keys: ["."], tol: 0.0051, data: { R, th, area } });

@@ -145,13 +145,21 @@ const svgPie = (k, d) => {
    Values are drawn but never printed on the bars or points, so the child reads them off the scale. */
 // picture graph: rows [{ name, n, e }] (n pictures each), key text under it
 const picto = (title, rows, key) => `<div class="mpic picto" role="img" aria-label="picture graph"><div class="ptitle">${esc(title)}</div>${rows.map(w => `<div class="prow"><span class="pname">${esc(w.name)}</span><span class="pics">${w.e.repeat(w.n) || "&nbsp;"}</span></div>`).join("")}<div class="pkey">${esc(key)}</div></div>`;
-// gridlines + y-axis labels from 0 to max in steps; returns [svg, y(value)]
-const axes = (x0, x1, top, bot, max, step) => {
+/* chart axis kit (bar, line and travel graphs, cumulative frequency curves, box-plot number lines): */
+// a tick label's class + value for tests to read the scale back (cls "" → none)
+const tickAttr = (cls, v) => cls ? ` class="${cls}" data-v="${v}"` : "";
+// gridlines + y-axis labels from 0 to max in steps (labels get class cls + data-v when cls is given); returns [svg, y(value)]
+const axes = (x0, x1, top, bot, max, step, cls = "") => {
   const y = v => +(bot - (bot - top) * v / max).toFixed(1); let s = "";
-  for (let v = 0; v <= max; v += step) s += `<line x1="${x0}" y1="${y(v)}" x2="${x1}" y2="${y(v)}" stroke="${v ? "#EFE6FA" : "#b9a6cc"}" stroke-width="${v ? 1 : 2}"/><text x="${x0 - 5}" y="${y(v) + 3.5}" font-size="10" text-anchor="end" font-weight="800" fill="${INK}">${v}</text>`;
+  for (let v = 0; v <= max; v += step) s += `<line x1="${x0}" y1="${y(v)}" x2="${x1}" y2="${y(v)}" stroke="${v ? "#EFE6FA" : "#b9a6cc"}" stroke-width="${v ? 1 : 2}"/><text${tickAttr(cls, v)} x="${x0 - 5}" y="${y(v) + 3.5}" font-size="10" text-anchor="end" font-weight="800" fill="${INK}">${v}</text>`;
   return [s, y];
 };
-const chartBox = (title, unit, body, label) => cardSvg(300, 210, title, 17, `<text x="8" y="31" font-size="9" font-weight="800" fill="${LINE}">${esc(unit)}</text>${body}`, label);
+// vertical gridlines from top to bot with a label under each: ticks = [[px, label, value]], grid = line colour, dy = label drop
+const xTicks = (ticks, top, bot, grid, dy, cls = "") => ticks.map(([x, label, v]) => `<line x1="${x}" y1="${top}" x2="${x}" y2="${bot}" stroke="${grid}" stroke-width="1"/><text${tickAttr(cls, v)} x="${x}" y="${bot + dy}" font-size="9.5" text-anchor="middle" font-weight="800" fill="${INK}">${label}</text>`).join("");
+// the y-axis name in the top-left corner, and the x-axis name centred under the tick labels
+const yUnit = unit => `<text x="8" y="31" font-size="9" font-weight="800" fill="${LINE}">${esc(unit)}</text>`;
+const xUnit = (x, y, unit) => `<text x="${x}" y="${y}" font-size="9.5" text-anchor="middle" font-weight="800" fill="${LINE}">${esc(unit)}</text>`;
+const chartBox = (title, unit, body, label) => cardSvg(300, 210, title, 17, `${yUnit(unit)}${body}`, label);
 // bar graph: cats [{ name, e }], vals, scale max + step
 const svgBars = (title, unit, cats, vals, max, step) => {
   const x0 = 36, x1 = 290, top = 38, bot = 170, [grid, y] = axes(x0, x1, top, bot, max, step), w = (x1 - x0) / cats.length;
@@ -163,7 +171,7 @@ const svgBars = (title, unit, cats, vals, max, step) => {
 const svgLine = (title, unit, xs, vals, max, step) => {
   const x0 = 36, x1 = 286, top = 38, bot = 176, [grid, y] = axes(x0, x1, top, bot, max, step), dx = (x1 - x0 - 20) / (xs.length - 1), X = i => +(x0 + 10 + dx * i).toFixed(1);
   const pts = vals.map((v, i) => `${X(i)},${y(v)}`).join(" ");
-  return chartBox(title, unit, grid + xs.map((t, i) => `<line x1="${X(i)}" y1="${top}" x2="${X(i)}" y2="${bot}" stroke="#F5EFFB" stroke-width="1"/><text x="${X(i)}" y="${bot + 16}" font-size="9.5" text-anchor="middle" font-weight="800" fill="${INK}">${esc(t)}</text>`).join("") +
+  return chartBox(title, unit, grid + xTicks(xs.map((t, i) => [X(i), esc(t)]), top, bot, "#F5EFFB", 16) +
     `<polyline points="${pts}" fill="none" stroke="#ff8fa3" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>` + vals.map((v, i) => `<circle cx="${X(i)}" cy="${y(v)}" r="4.5" fill="#fff" stroke="#ff8fa3" stroke-width="2.5"/>`).join(""), "line graph");
 };
 // pie chart: slices [{ name, e, part, label }] out of `whole` parts; label "?" hides a slice's share
@@ -265,7 +273,7 @@ M.longMulSteps = (a, b) => { const bs = String(b).split("").reverse(); const out
 /* ====================== TOPICS ====================== */
 const TOPICS = [];
 const topic = (grade, id, name, icon, desc, gen, opt = {}) => TOPICS.push(Object.assign({ grade, id: `g${grade}.${id}`, name, icon, desc, gen }, opt));
-M._internal = { Q, num, mcq, mcqWhy, numWhy, T, NAMES, THINGS, COUNT_EMOJI, PASTEL, INK, LINE, esc, svgBox, cardSvg, cellKey, figKey, hasCell, nearCells, gridPaper, gridSheet, gridCell, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, axes, svgBars, svgLine, svgPieChart, svgGeo, fitBox, toRad, toDeg, sinD, cosD, tanD, rotPt, dirPt, f1, xy, mid, vat, vdir, angSweep, angWedge, angText, rightPath, figCard, figShape, figEdge, figLab, figLens, figDot, figVtx, figRight, coin, emojiRows, table, colAdd, colSub, topic, TOPICS, gcd, lcm, rd, fmt, fdp, money, simp, fracTex, fracStr, mixedTex, sgn, poly, lin, paren, pm, undo, coef, ord, sum, asc, median, freqTotals };
+M._internal = { Q, num, mcq, mcqWhy, numWhy, T, NAMES, THINGS, COUNT_EMOJI, PASTEL, INK, LINE, esc, svgBox, cardSvg, tickAttr, xTicks, yUnit, xUnit, cellKey, figKey, hasCell, nearCells, gridPaper, gridSheet, gridCell, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, axes, svgBars, svgLine, svgPieChart, svgGeo, fitBox, toRad, toDeg, sinD, cosD, tanD, rotPt, dirPt, f1, xy, mid, vat, vdir, angSweep, angWedge, angText, rightPath, figCard, figShape, figEdge, figLab, figLens, figDot, figVtx, figRight, coin, emojiRows, table, colAdd, colSub, topic, TOPICS, gcd, lcm, rd, fmt, fdp, money, simp, fracTex, fracStr, mixedTex, sgn, poly, lin, paren, pm, undo, coef, ord, sum, asc, median, freqTotals };
 M.TOPICS = TOPICS;
 M.topic = id => TOPICS.find(t => t.id === id);
 M.gradeTopics = g => TOPICS.filter(t => t.grade === g);
