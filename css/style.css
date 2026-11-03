@@ -479,6 +479,8 @@ mark.qf-style{background:#E2D6FF;box-shadow:inset 0 -2px 0 #B98BFF}
 .ph-note{font-size:.8rem;font-weight:700;margin-top:14px}
 .ph-progress{display:flex;align-items:center;gap:8px;flex:1;max-width:220px;min-width:0}.ph-progress .prog{flex:1;margin:0}
 .ph-head{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.ph-head>b{min-width:0}
+.btn.ph-say.head-say{width:44px;height:44px;font-size:1.25rem;margin-left:auto}   /* N5: the gap games' 🔊 sits in the card header */
 .ph-ask{flex-wrap:nowrap;gap:10px;align-items:center}.ph-ask .q{margin:0;font-size:1.15rem}
 .btn.ph-say{flex:none;width:56px;height:56px;border-radius:50%;font-size:1.6rem;padding:0;display:grid;place-items:center}
 .opts.ph-letters{grid-template-columns:repeat(3,1fr);margin-top:12px}

@@ -32,6 +32,7 @@ WR.layoutLesson = () => {
   hud.classList.remove("card"); bar.appendChild(hud);
   const st = lesson.querySelector("#lstats"); if (st) bar.appendChild(st);
   lesson.insertBefore(bar, lesson.firstChild); lesson.classList.add("lhud");
+  lesson.classList.toggle("lboss", !!bar.querySelector(".boss"));   // N3: boss rounds drop the pet card on small phones (css/phone.css)
 };
 function afterView() {
   // T12: keep the chosen maths grade in view when the grade row scrolls sideways (wide screens)

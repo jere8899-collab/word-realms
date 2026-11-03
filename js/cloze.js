@@ -64,7 +64,7 @@ WR.Cloze = { canon, check, LEVELS, KINDS };
 function body(it, gap, S) {
   const before = S.items.slice(Math.max(0, S.n - 2), S.n).map(x => esc(x.say)).join(" ");
   return `<div class="cz-text">${before ? `<p class="cz-before">${S.n > 2 ? "… " : ""}${before}</p>` : ""}
-    <div class="sw-s2 cz-s"><p id="czS">${gap}</p><button class="btn ph-say" id="czSay" aria-label="Hear the sentence">🔊</button></div></div>`;
+    <div class="sw-s2 cz-s"><p id="czS">${gap}</p></div></div>`;
 }
 
 /* ---------- the shelf, the round and the finish: the shared gap-round engine (js/gap-round.js) ---------- */

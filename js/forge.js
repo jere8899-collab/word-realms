@@ -57,7 +57,7 @@ const G = WR.GapRound({
   intro: "Forge the right word! 🔥", shelfBtn: "⚒️ Anvils", how: rid => HOW[rid], info: WR.FORGE,
   note: (rid, d) => `👪 Grown-ups: word formation, ${EXAM[rid]} (${d.books.length * 8} at ${rid.toUpperCase()}). Capitals and spaces don't matter; spelling does. Every answer comes with a short reason.`,
   gap: it => it.s,
-  body: (it, gap) => `<div class="sw-cue fg-cue"><span class="sw-key fg-root" aria-label="Root word">⚒️ ${esc(it.root)}</span><button class="btn ph-say" id="fgSay" aria-label="Hear the sentence">🔊</button></div>
+  body: (it, gap) => `<div class="sw-cue fg-cue"><span class="sw-key fg-root" aria-label="Root word">⚒️ ${esc(it.root)}</span></div>
       <div class="sw-s2 fg-s"><p id="fgS">${gap}</p></div>`,
   sayFirst: it => it.ask, sayDone: it => it.say,
   tiles: it => it.p, join: "",

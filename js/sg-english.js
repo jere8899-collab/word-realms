@@ -89,6 +89,7 @@ SG.record = (lv, c, score) => {
   const st = SG.st(), k = lv + "." + c, p = st.done[k];
   st.done[k] = { best: Math.max(score, p ? p.best : 0), crowns: Math.max(WR.crowns(score), p ? p.crowns : 0), plays: (p ? p.plays : 0) + 1, at: Date.now() };
   st.rounds++; WR.state.lessonsDone++; WR.save();
+  if (COMP[c] && COMP[c].sg) WR.questEvent("sgame1");   // N2: the Singapore track's own daily quest
 };
 
 /* ---------- marking ---------- */

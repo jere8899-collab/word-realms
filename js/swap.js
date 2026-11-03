@@ -70,10 +70,10 @@ const G = WR.GapRound({
   intro: "Same meaning, new words! ✨", shelfBtn: "🔀 Books", how: rid => HOW[rid], info: WR.SWAP,
   note: (rid, d) => `👪 Grown-ups: ${EXAM[rid]} sentence transformations (${d.books.length * 8} at ${rid.toUpperCase()}). Contractions count as two words, as in the exams. Every answer comes with the rule and an example.`,
   gap: it => it.b,
-  body: (it, gap, S) => `<div class="sw-s1"><span class="sw-num">1</span><p>${esc(it.a)}</p><button class="btn ph-say" id="swSay" aria-label="Hear sentence 1">🔊</button></div>
+  body: (it, gap, S) => `<div class="sw-s1"><span class="sw-num">1</span><p>${esc(it.a)}</p></div>
       <div class="sw-cue">${S.d.key ? `<span class="sw-key" aria-label="Key word">🔑 ${esc(it.cue)}</span><small>${N_WORDS[S.d.min]}–${N_WORDS[S.d.max]} words</small>` : `<span class="sw-ins">🪄 ${esc(it.cue)}</span>`}</div>
       <div class="sw-s2"><span class="sw-num">2</span><p id="swS2">${gap}</p></div>`,
-  sayFirst: it => it.a, sayDone: it => it.say,
+  sayFirst: it => it.a, sayDone: it => it.say, sayLabel: "Hear sentence 1",
   tiles: it => it.ans[0].split(" "), join: " ",
   placeholder: "Type the missing words…", count: (typed, it) => count(gapPart(typed, it.b)) + " words",
   check, nudge,

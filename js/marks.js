@@ -55,7 +55,7 @@ const hint = it => `We need ${esc(KINDS[it.kind] || "one little mark")}`;
 WR.Marks = { check, LEVELS, KINDS };
 
 // the sentence card: bigger type, so a comma and a full stop are easy to tell apart
-const body = (it, gap) => `<div class="sw-s2 pm-s"><p id="pmS">${gap}</p><button class="btn ph-say" id="pmSay" aria-label="Hear the sentence">🔊</button></div>`;
+const body = (it, gap) => `<div class="sw-s2 pm-s"><p id="pmS">${gap}</p></div>`;
 
 const G = WR.GapRound({
   id: "marks", p: "pm", hub: "marks", round: "marksRound", title: "🧚 Punctuation Pixies", icon: "🧚", quest: "marks1",

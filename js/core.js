@@ -37,15 +37,55 @@ const QUEST_POOL = [
   { id: "dojo1", icon: "🗼", label: "Climb the Times-Table Tower (practice or sprint)", goal: 1, reward: 5 },
   { id: "story1", icon: "📜", label: "Read a Storybook chapter", goal: 1, reward: 6 },
   { id: "model1", icon: "🧮", label: "Solve 3 maths questions with a Model Magic picture", goal: 3, reward: 5 },
-  { id: "balance1", icon: "⚖️", label: "Balance an equation scale all the way to x (Grades 6–8 maths)", goal: 1, reward: 5 },
-  { id: "clock1", icon: "🕰️", label: "Count, wind or set a clock in the Clock Workshop (Grades 1–3 maths)", goal: 1, reward: 5 },
+  { id: "balance1", icon: "⚖️", label: "Balance an equation scale all the way to x", goal: 1, reward: 5 },
+  { id: "clock1", icon: "🕰️", label: "Count, wind or set a clock in the Clock Workshop", goal: 1, reward: 5 },
   { id: "phonics1", icon: "🔤", label: "Walk a step of the A1 Phonics Path", goal: 1, reward: 5 },
   { id: "charm1", icon: "🔮", label: "Catch or polish your Word Charms (finish a round)", goal: 1, reward: 5 },
   { id: "swap1", icon: "🔀", label: "Finish a Spell Swap book (same meaning, new words)", goal: 1, reward: 5 },
   { id: "forge1", icon: "⚒️", label: "Finish a Word Forge anvil (make the right form of a word)", goal: 1, reward: 5 },
   { id: "cloze1", icon: "🌉", label: "Finish a Word Bridges text (one little word in each gap)", goal: 1, reward: 5 },
-  { id: "marks1", icon: "🧚", label: "Finish a Punctuation Pixies book (the right mark in each gap)", goal: 1, reward: 5 }
+  { id: "marks1", icon: "🧚", label: "Finish a Punctuation Pixies book (the right mark in each gap)", goal: 1, reward: 5 },
+  { id: "sgame1", icon: "🔍", label: "Finish a Spot & Fix, Join It Up or Story Gaps round", goal: 1, reward: 6 }
 ];
+/* 🎯 N2 (REVIEW-2026-11-02): a quest is only rolled when the child can do it NOW. QUEST_CAN[id](ctx) says so; quests not listed
+   (answer 10, 2 lessons, listening, reading, 3 crowns, combo, feed or play with the pet) are always doable.
+   ctx = { sg: on the 🦁 Singapore track, open(game): that bonus game is open (WR.bonusOpen), grade: the chosen maths grade
+   (null = no maths quests at all), viz: the maths picture kinds in that grade }. Maths quests come from the chosen grade only,
+   and a child who has played only English gets at most ONE maths quest a day (QUEST_MATH_CAP). */
+const fairy = f => c => !c.sg && f(c);
+const QUEST_CAN = {
+  special1: fairy(() => true), story1: fairy(c => c.open("story")), phonics1: fairy(c => c.a1 && c.open("phonics")), charm1: fairy(c => c.open("charms")),
+  swap1: fairy(c => c.open("swap")), forge1: fairy(c => c.open("forge")), cloze1: fairy(c => c.open("cloze")), marks1: fairy(c => c.open("marks")),
+  speak1: c => c.sg || c.open("speak"), write1: c => c.sg || c.open("write"),      // the Singapore levels always show Speaking and Writing
+  sgame1: c => c.sg, review1: c => c.plants > 0,
+  math1: c => !!c.grade, dojo1: c => c.grade && c.grade <= 6, clock1: c => c.grade && c.grade <= 3,
+  model1: c => c.grade && c.viz.length > 0, balance1: c => c.grade && c.viz.includes("balance")
+};
+const MATH_QUESTS = ["math1", "dojo1", "clock1", "model1", "balance1"];
+const QUEST_MATH_CAP = 1;
+// the maths picture kinds a grade's questions use (sampled once per grade from the generators, js/math-gen.js + js/math-viz.js)
+const vizMemo = {};
+const gradeViz = g => {
+  if (!g || !window.MathGen || !window.MathViz) return [];
+  if (vizMemo[g]) return vizMemo[g];
+  const kinds = new Set();
+  for (const t of window.MathGen.gradeTopics(g)) for (let i = 0; i < 12; i++) { try { const v = window.MathViz.spec(window.MathGen.make(t.id, 7919 * i + 13)); if (v) kinds.add(v.type); } catch (e) { } }
+  return (vizMemo[g] = [...kinds]);
+};
+WR.questCtx = () => {
+  const s = WR.state, m = s.math || {}, grade = m.grade || (m.placed && m.placed.grade) || null;
+  return { sg: !!(WR.SG && WR.SG.track() === "sg"), open: g => !WR.bonusOpen || WR.bonusOpen(g), a1: !WR.realms || WR.isUnlocked(0), grade, viz: gradeViz(grade),
+    plants: (s.mistakes || []).filter(x => !x.bloomed && !x.legacy).length, mathPlayed: (m.lessons || 0) + ((m.dojo && m.dojo.history) || []).length > 0 };
+};
+WR.questCan = (id, ctx = WR.questCtx()) => { const f = QUEST_CAN[id]; return !f || !!f(ctx); };
+// the day's 3 quests: a seeded shuffle of the doable pool (the same day gives the same quests), maths capped for English-only players
+const rollQuests = (day, ctx, keep = []) => {
+  let h = 0; for (const c of day) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+  const pool = QUEST_POOL.filter(q => WR.questCan(q.id, ctx) && !keep.includes(q.id)), pick = keep.slice();
+  const mathCap = ctx.mathPlayed ? 3 : QUEST_MATH_CAP, maths = () => pick.filter(id => MATH_QUESTS.includes(id)).length;
+  while (pick.length < 3 && pool.length) { h = (h * 1103515245 + 12345) >>> 0; const q = pool.splice(h % pool.length, 1)[0]; if (MATH_QUESTS.includes(q.id) && maths() >= mathCap) continue; pick.push(q.id); }
+  return pick;
+};
 Object.assign(WR, { SKILLS, PETS, AVATARS, QUEST_POOL, data: {}, manifest: null, screens: {} });
 
 /* ---------- helpers ---------- */
@@ -353,7 +393,7 @@ WR.init = async () => {
   WR.applyPrices(WR.shop);
   WR.counts = await fetchJSON("data/counts.json").catch(() => null);
   await clock;
-  WR.tickPet(); WR.ensureDaily(); WR.applyTheme();
+  WR.tickPet(); WR.ensureDaily(true); WR.applyTheme();
 };
 WR.bank = async (lvl, skill) => {
   const k = lvl + "/" + skill;
@@ -609,13 +649,20 @@ WR.spend = n => { if (WR.state.stars < n) return false; WR.state.stars -= n; WR.
 WR.grantItem = id => { if (!WR.state.owned.includes(id)) WR.state.owned.push(id); WR.save(); };
 
 /* ---------- daily quests & streak ---------- */
-WR.ensureDaily = () => {
+// tidy (at start-up and after a cloud load): also swap today's unstarted quests that can't be done;
+// a quest event never swaps, so a quest being played right now keeps its progress
+WR.ensureDaily = (tidy = false) => {
   const d = WR.today(), s = WR.state;
-  if (s.daily && s.daily.day === d) return;
-  let h = 0; for (const c of d) h = (h * 31 + c.charCodeAt(0)) >>> 0;
-  const pool = QUEST_POOL.slice(), pick = [];
-  while (pick.length < 3) { h = (h * 1103515245 + 12345) >>> 0; const i = h % pool.length; pick.push(pool.splice(i, 1)[0]); }
-  s.daily = { day: d, quests: pick.map(q => ({ id: q.id, progress: 0, claimed: false })) };
+  if (s.daily && s.daily.day === d) { if (tidy) swapUndoable(s.daily); return; }
+  s.daily = { day: d, quests: rollQuests(d, WR.questCtx()).map(id => ({ id, progress: 0, claimed: false })) };
+  WR.save();
+};
+// a quest that can't be done any more (e.g. the maths grade was cleared, or a save from before N2) and hasn't been started is swapped
+const swapUndoable = daily => {
+  const ctx = WR.questCtx(), bad = daily.quests.filter(q => !q.claimed && !q.progress && (!WR.questDef(q.id) || !WR.questCan(q.id, ctx)));
+  if (!bad.length) return;
+  const keep = daily.quests.filter(q => !bad.includes(q)).map(q => q.id), ids = rollQuests(daily.day, ctx, keep);
+  daily.quests = ids.map(id => daily.quests.find(q => q.id === id) || { id, progress: 0, claimed: false });
   WR.save();
 };
 WR.questDef = id => QUEST_POOL.find(q => q.id === id);

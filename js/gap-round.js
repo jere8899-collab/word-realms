@@ -19,7 +19,8 @@
      how(rid), note(rid, d)                                    hub instructions + the grown-ups' note
      gap(it)               the sentence that holds the ___ gap
      body(it, gapHTML, S)  the card between the header and the answer area (must hold the gap and a #<p>Say button)
-     sayFirst(it)          read aloud when the card opens and by the 🔊 button; sayDone(it) after checking
+     sayFirst(it)          read aloud when the card opens and by the 🔊 button (in the card header, N5, so the sentence
+                           gets the card's full width; sayLabel = its aria-label); sayDone(it) after checking
      tiles(it)             the answer as tiles (tile mode); join = how tiles join (" " for words, "" for word parts)
      placeholder, count(typed, it)?   typed mode: input hint and an optional live counter
      check(it, user) → { ok, why }    why other than null/"wrong" = a friendly nudge (not a try): nudge(why, it)
@@ -98,7 +99,7 @@ WR.GapRound = cfg => {
   function render(auto) {
     const it = item(), typed = !tiled();
     WR.view(`<div class="fade-in sw-round"><div class="row lesson-top" style="justify-content:space-between;margin:6px 0 8px"><button class="btn ghost small" id="${p}Quit">← Leave</button><div class="ph-progress"><div class="prog"><i style="width:${S.n / S.items.length * 100}%"></i></div><b>${S.n + 1}/${S.items.length}</b></div></div>
-    <div class="card sw-card"><div class="ph-head"><span class="lvl-badge">${S.lvl.toUpperCase()}</span><b>${S.bk.icon} ${esc(S.bk.name)}</b></div>
+    <div class="card sw-card"><div class="ph-head"><span class="lvl-badge">${S.lvl.toUpperCase()}</span><b>${S.bk.icon} ${esc(S.bk.name)}</b><button class="btn ph-say head-say" id="${p}Say" aria-label="${cfg.sayLabel || "Hear the sentence"}">🔊</button></div>
       ${cfg.body(it, gapHTML(it), S)}
       ${typed ? `<div class="sw-type"><input class="input" id="${p}In" placeholder="${cfg.placeholder}" value="${esc(S.typed)}" ${S.done ? "disabled" : ""}>${cfg.count ? `<small class="muted" id="${p}Count">${cfg.count(S.typed, it)}</small>` : ""}</div>`
         : `<div class="tiles sw-pool${auto ? "" : " still"}" id="${p}Pool">${pool(it).map((w, k) => `<button class="tile sw-tile" data-p="${k}" ${S.built.includes(k) || S.done ? "disabled" : ""}>${esc(w)}</button>`).join("")}</div>`}

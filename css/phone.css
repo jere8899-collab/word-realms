@@ -88,6 +88,10 @@ body.reduce-motion .confetti-layer,body.reduce-motion .sparkles{display:none !im
 .btn{min-height:44px}
 .topbar .chip[id],.topbar button.chip{min-width:44px;min-height:44px;justify-content:center}
 .hero-edit{min-width:44px;min-height:44px;justify-content:center;padding:4px}
+/* N4: the "Hello" info pills wrap onto a new line on narrow screens, so every pill is whole */
+.homehead .hello-pills{margin-top:6px;flex-wrap:wrap}
+.homehead .hello-pills .pill{flex:none;max-width:100%}
+.homehead .book-pill{background:#FFF1D6}.homehead .mirror-pill{background:#F3ECFF}
 .homehead .pill[id]{min-height:40px;display:inline-flex;align-items:center;padding:4px 12px;font-size:.8rem;cursor:pointer}
 input[type=range].slider{height:44px;background:transparent;margin:0;-webkit-appearance:none;appearance:none;width:150px;max-width:100%}
 input[type=range].slider::-webkit-slider-runnable-track{height:8px;border-radius:99px;background:linear-gradient(90deg,#E2D6FF,#FFD6E0)}
@@ -379,8 +383,7 @@ body.kbd-open .toast{display:none}
   #mathNode.math-node{grid-template-columns:76px 1fr;gap:10px;padding:8px 10px;margin-top:8px!important}#mathNode.math-node .thumb{width:76px;height:56px;border-radius:14px}#mathNode .muted:not(:last-child){display:none}
 }
 @media (max-width:600px){
-  .homehead .row{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;gap:6px;margin-right:-12px;padding-right:12px}.homehead .row::-webkit-scrollbar{display:none}
-  .homehead .row .pill{flex:none}
+  .homehead .hello-pills{gap:6px}
   .math-node .muted{font-size:.78rem!important}
 }
 /* 📖 R19 reading types: events stack as full-width cards, True/False/Not given are full-width answers, find-the-word is a tappable line */
@@ -396,3 +399,6 @@ body.kbd-open .toast{display:none}
 /* 🏷️ match-the-headings: numbered paragraphs in the passage box */
 .passage .para{margin:.15em 0 .6em;display:flex;gap:8px;align-items:flex-start}
 .passage .pn{flex:0 0 auto;display:inline-grid;place-items:center;width:1.6em;height:1.6em;border-radius:50%;background:#FBE3F0;color:#a06aa0;font-size:.85em;margin-top:.15em}
+
+/* N3: the boss fight on small phones (under 360 px): the boss card (boss, hearts, ⭐/🔥 chips) gets the whole row, the pet card hides */
+@media (max-width:359px){.lesson.lhud.lboss{grid-template-columns:minmax(0,1fr);grid-template-areas:"bar" "q"}.lesson.lhud.lboss>.side{display:none}}

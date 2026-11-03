@@ -141,6 +141,13 @@ WR.screens.quests = () => {
   WR.$("#qBack").onclick = () => WR.go("home");
   document.querySelectorAll(".claim").forEach(b => b.onclick = () => { WR.claimQuest(b.dataset.id); WR.screens.quests(); });
 };
+// the info pills under "Hello, …!" (N4): they wrap instead of running off the card, and phones show the 2 short tappable
+// pills only (Storybook, Magic Mirror; the full words stay in the aria-label); the answer count shows on wider screens
+const helloPills = s => { const phone = innerWidth < 600, pg = WR.STORY ? WR.storyPagesFound() : 0, lv = s.placement && s.placement.level.toUpperCase();
+  const pill = (cls, id, full, short) => `<span class="pill ${cls}"${id ? ` id="${id}" aria-label="${full}"` : ""}>${phone && short ? short : full}</span>`;
+  return [phone ? "" : pill("", "", `✅ ${s.totalCorrect} correct answers`),
+    WR.STORY ? pill("book-pill", "bookPill", `📜 Storybook ${pg}/6 pages`, `📜 Story ${pg}/6`) : "",
+    pill("mirror-pill", "mirrorPill", lv ? `🪞 Mirror says ${lv}` : "🪞 Find my level", lv ? `🪞 Level ${lv}` : "🪞 Find level")].join(""); };
 WR.screens.home = () => {
   WR.ensureDaily();
   const s = WR.state, sgTrack = !!WR.SG && WR.SG.track() === "sg", due = WR.Garden ? WR.Garden.dueCount() : 0;
@@ -150,7 +157,7 @@ WR.screens.home = () => {
   const qDone = s.daily.quests.filter(q => q.claimed).length, qReady = s.daily.quests.some(q => !q.claimed && q.progress >= WR.questDef(q.id).goal);
   WR.view(`<div class="fade-in"><div class="card homehead"><div class="av-big">${WR.avatarHTML(110)}${WR.Rewards && WR.Rewards.chest().ready ? `<button class="chip av-badge gift-ready" id="giftPill" aria-label="Open today's free gift" title="Today's free gift">🎁</button>` : `<button class="chip av-badge" id="wardPill" aria-label="Wardrobe" title="Wardrobe">👗</button>`}</div>
     <div><h1 style="margin:0">Hello, <span class="hero-nm">${WR.userText(s.name)}</span>! 🌸 <button class="chip hero-edit" id="heroEditHome" aria-label="Change my hero name" title="Change my hero name">✏️</button></h1><div class="muted" style="font-weight:800">${WR.userText(s.pet.name)} says: “${WR.esc(WR._welcome || WR.petMood())}”</div>
-    <div class="row" style="margin-top:6px"><span class="pill">✅ ${s.totalCorrect} correct answers</span>${WR.STORY ? `<span class="pill" id="bookPill" style="background:#FFF1D6;cursor:pointer">📜 Storybook ${WR.storyPagesFound()}/6 pages</span>` : ""}${s.placement ? `<span class="pill mirror-pill" id="mirrorPill" style="background:#F3ECFF;cursor:pointer">🪞 Mirror says ${s.placement.level.toUpperCase()}</span>` : `<span class="pill mirror-pill" id="mirrorPill" style="background:#F3ECFF;cursor:pointer">🪞 Find my level</span>`}</div></div></div>
+    <div class="row hello-pills">${helloPills(s)}</div></div></div>
     ${cont ? `<div class="card continue" id="continueCard"><div class="ct"><b>${cont.head}</b><small>${cont.sub}</small></div><button class="btn mint" id="continueBtn">▶ Continue</button></div>` : ""}
     <div class="grid g2" style="margin-top:14px;align-items:start">
       <div>${WR.SG ? `<div class="track-tabs" role="tablist" aria-label="English levels"><button role="tab" data-track="cefr" class="${sgTrack ? "" : "on"}" aria-selected="${!sgTrack}">🏰 Fairy realms <small>A1–C2</small></button><button role="tab" data-track="sg" class="${sgTrack ? "on" : ""}" aria-selected="${sgTrack}">🦁 Singapore <small>P1–JC</small></button></div>` : ""}
@@ -328,7 +335,7 @@ function start() {
 WR.restart = () => {
   if (!WR.realms || !WR.shop) return;
   document.querySelectorAll(".modal-bg").forEach(m => { if (!m.querySelector("#cloudPanel")) m.remove(); });
-  WR.tickPet(); WR.ensureDaily(); WR.applyTheme();
+  WR.tickPet(); WR.ensureDaily(true); WR.applyTheme();
   if (!WR.state.pet || !WR.state.name) { app.innerHTML = `<div id="top"></div><div id="main"></div>`; onboarding(); }
   else start();
 };
