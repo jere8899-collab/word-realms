@@ -90,16 +90,65 @@ if (window.MutationObserver) new MutationObserver(list => {
 }).observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ["contenteditable", "type"] });
 WR.noAssistAll();
 WR.dayKey = (t = Date.now()) => { const d = new Date(t); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); };
-/* 🕰️ R22 game day: rewards (practice-star cap, quests, free gift, streak, weekly sticker) follow WR.today(), a day that never
-   goes backwards. It moves on when the device's calendar day is later than the saved one; if the clock is put back, the
-   saved day stays, so setting the date forward and back again gives nothing extra (the "borrowed" day is simply not new
-   again until the real date catches up). state.clock = { day, seen } syncs with the save; logs (report, backups) use the real date. */
+/* 🕰️ Game day (R22 → N1, REVIEW-2026-11-02): rewards (practice-star cap, quests, free gift, streak, weekly sticker) follow
+   WR.today(), never the raw device date, so changing the phone's clock can't farm them.
+   • Online: the game day IS the server's date. WR.syncClock() reads the Date header of a HEAD request for index.html
+     (cache: no-store; the service worker only handles GET, so it is bypassed) and keeps it on performance.now(), which a
+     clock change can't move. The device's time zone is applied to the server's UTC time. A game day ahead of the server
+     date (a save stuck in the future) comes back down to it; stars and progress stay, and the day-stamped records
+     (quests, gift, practice cap, streak, weekly event) that were used "in the future" count as today's (fixFuture).
+   • Offline (no server time yet this session): the device date is allowed, but the game day moves on at most ONE day per
+     app session, and never backwards. The next time the app is online it lines up with the server date again.
+   state.clock = { day, seen } syncs with the save; logs (report, backups) use the real device date. */
+const isDay = d => typeof d === "string" && /^\d{4}-\d\d-\d\d$/.test(d);
+const addDays = (day, n) => { const d = new Date(day + "T12:00:00"); d.setDate(d.getDate() + n); return WR.dayKey(d.getTime()); };
+const mondayOf = day => { const d = new Date(day + "T12:00:00"); return addDays(day, -((d.getDay() + 6) % 7)); };
+// every day-stamped reward record in a save: [read, write] (write moves a record used "in the future" back to `day`)
+const DAY_FIELDS = [
+  [s => s.daily && s.daily.day, (s, d) => { s.daily.day = d; }],
+  [s => s.streak && s.streak.last, (s, d) => { s.streak.last = d; }],
+  [s => s.earn && s.earn.day, (s, d) => { s.earn.day = d; }],
+  [s => s.rewards && s.rewards.chest && s.rewards.chest.last, (s, d) => { s.rewards.chest.last = d; }],
+  [s => s.weekly && s.weekly.wk, (s, d) => { s.weekly.wk = mondayOf(d); }]
+];
+const usedDays = s => DAY_FIELDS.map(([get]) => get(s)).filter(isDay);
+const fixFuture = (s, day) => { for (const [get, put] of DAY_FIELDS) { const v = get(s); if (isDay(v) && v > day) put(s, day); } };
+const TRUST = { ms: 0, perf: 0, at: 0 };   // server time (ms) at performance.now() = perf; at = when it was read
+let sessionDay = null;                     // the game day this session started on (offline: may move one day past it)
+WR.trustedNow = () => TRUST.perf ? TRUST.ms + (performance.now() - TRUST.perf) : null;
+WR.serverDay = () => { const t = WR.trustedNow(); return t == null ? null : WR.dayKey(t); };
+WR.syncClock = (wait = 2500) => {
+  if (navigator.onLine === false) return Promise.resolve(false);
+  const t0 = performance.now();
+  const read = fetch("index.html", { method: "HEAD", cache: "no-store" }).then(r => r.text().then(() => r)).then(r => {   // (read the empty body so the request ends cleanly)
+    const d = Date.parse(r.headers.get("Date") || ""); if (!d) return false;
+    const t1 = performance.now(); TRUST.ms = d + 500 + (t1 - t0) / 2; TRUST.perf = t1; TRUST.at = Date.now();   // the header is whole seconds
+    if (WR.state) { WR.today(); WR.save(); }
+    return true;
+  }).catch(() => false);
+  // a slow network doesn't hold up the game: after `wait` ms it starts with the offline rule, and a late answer still lines the day up
+  return Promise.race([read, new Promise(res => setTimeout(() => res(false), wait))]);
+};
+// re-read the server time when the app comes back (a sleeping phone can pause performance.now()) or the network returns
+const resync = () => { if (performance.now() - TRUST.perf > 5 * 6e4 || !TRUST.perf) WR.syncClock(); };
+addEventListener("online", () => WR.syncClock());
+document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") resync(); });
 WR.today = () => {
   const s = WR.state, cal = WR.dayKey(), now = Date.now(); if (!s) return cal;
-  const c = s.clock = s.clock || { day: cal, seen: now };
-  if (cal > c.day) c.day = cal;                                        // a new day (forwards only)
+  const c = s.clock = s.clock || { day: cal, seen: now }, srv = WR.serverDay();
+  if (srv) { c.day = srv; fixFuture(s, srv); }                             // online: the server's date, both ways
+  else {                                                                   // offline: forwards, one day per session at most
+    if (sessionDay == null) sessionDay = c.day;
+    const cap = addDays(sessionDay, 1), want = cal < cap ? cal : cap;
+    if (want > c.day) c.day = want;
+  }
   if (now > (c.seen || 0)) c.seen = now;                               // last-seen time; a clock put back doesn't lower it
   return c.day;
+};
+// two saves' clocks (cloud load): the later day wins, but never a day later than the server date (or, offline, the device date)
+WR.mergeClock = (a, b) => {
+  const day = [a && a.day, b && b.day].filter(isDay).sort().pop(), cap = WR.serverDay() || [WR.dayKey(), a && a.day].filter(isDay).sort().pop();
+  return { day: day && cap && day > cap ? cap : (day || WR.dayKey()), seen: Math.max((a && a.seen) || 0, (b && b.seen) || 0) };
 };
 WR.clockBack = () => !!(WR.state && WR.state.clock && WR.dayKey() < WR.state.clock.day);   // the device date is behind the game day
 WR.gameDate = () => new Date(WR.today() + "T12:00:00");
@@ -259,7 +308,7 @@ function migrate(s, raw = s) {
   if (s.pet) { s.pet.looks = s.pet.looks || {}; s.pet.love = s.pet.love || 0; }
   s.stable = Array.isArray(s.stable) ? s.stable : [];
   if (!raw.clock || typeof raw.clock !== "object") {   // R22: an older save starts its game day at the latest day it has already used
-    const used = [WR.dayKey(), s.daily && s.daily.day, s.streak && s.streak.last, s.earn && s.earn.day, s.rewards && s.rewards.chest && s.rewards.chest.last].filter(d => typeof d === "string" && /^\d{4}-\d\d-\d\d$/.test(d)).sort();
+    const used = [WR.dayKey(), ...usedDays(s)].sort();
     s.clock = { day: used[used.length - 1], seen: Date.now() };
   }
   s.rewards = Object.assign({ got: [], chest: { last: null, n: 0 } }, s.rewards || {}); s.rewards.got = s.rewards.got || []; s.rewards.chest = s.rewards.chest || { last: null, n: 0 }; if (!raw.rewards) s.rewards.caughtUp = false;   // an older save: catch up once, quietly (js/wardrobe.js)
@@ -296,12 +345,14 @@ window.addEventListener("storage", e => {
 });
 
 WR.init = async () => {
+  const clock = WR.syncClock();                                // N1: the server's date before any reward reads the day
   WR.manifest = await fetchJSON("assets/manifest.json").catch(() => ({ assets: [] }));
   WR.realms = await fetchJSON("data/realms.json");
   WR.shop = await fetchJSON("data/shop.json");
   WR.anchorData = await fetchJSON("data/anchors.json").catch(() => ({}));
   WR.applyPrices(WR.shop);
   WR.counts = await fetchJSON("data/counts.json").catch(() => null);
+  await clock;
   WR.tickPet(); WR.ensureDaily(); WR.applyTheme();
 };
 WR.bank = async (lvl, skill) => {

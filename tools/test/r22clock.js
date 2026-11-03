@@ -1,7 +1,7 @@
 // 🕰️ R22 (REVIEW-2026-11-01): the game day never goes backwards. Setting the device date forward gives one new day (gift,
 // quests, practice stars); putting it back keeps that day, so the gift, quests and star cap do NOT reset again, the streak isn't
 // broken, a reload keeps it, an older save starts at the latest day it already used, and the grown-ups' log uses the real date.
-// node tools/test/r22clock.js
+// Since N1 these are the OFFLINE rules (no server date this session: one new day per session at most). node tools/test/r22clock.js
 const { chromium } = require('playwright-core');
 const BASE = (process.env.BASE || 'http://127.0.0.1:18642/').replace(/\/?$/, '/');
 let fails = 0, passes = 0; const ok = (c, m) => { if (!c) { fails++; console.error('FAIL', m); process.exitCode = 1; } else { passes++; console.log('ok', m); } };
@@ -13,6 +13,7 @@ const SAVE = { v: 1, name: 'Mia', avatar: 'avatar_girl', startLevel: 'a1', stars
   const browser = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox'] });
   const ctx = await browser.newContext({ viewport: { width: 375, height: 667 }, isMobile: true });
   await ctx.route(/supabase|jsdelivr|unpkg/, r => r.abort());
+  await ctx.route('**/index.html', r => r.request().method() === 'HEAD' ? r.abort() : r.continue());   // N1: offline rules (no server date); online rules: n1clock.js
   await ctx.addInitScript(s => { window.__WR_TEST = { holdMs: 0, pinOffer: false }; window.__WR_NO_SW = true;
     const real = Date.now.bind(Date); window.__shift = +(sessionStorage.getItem('shift') || 0); Date.now = () => real() + window.__shift;
     window.setShift = ms => { window.__shift = ms; sessionStorage.setItem('shift', ms); };
