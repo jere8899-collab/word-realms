@@ -392,6 +392,110 @@
      "loud enough to wake the whole shelf": "The stamp was soft; impeccable isn't about volume."
     }
    }
+  },
+  {
+   "title": "Rain on Quiet Roofs",
+   "focus": "irony/understatement · idiom · implied meaning",
+   "img": "story_c2_5",
+   "pages": [
+    {
+     "text": "With Guest of the Quiet Hour stamped and drying, the Starlight Library should, by any reasonable measure, have asked for fireworks. It did not. Instead the softest rain began to tap the skylight, as if the building itself had requested an encore of [[stillness|calm with almost no movement or noise]]. “A modest soundtrack,” Vellum noted, which, after three centuries of plot, was putting it mildly.",
+     "q": {
+      "q": "What is Vellum's tone about the rain?",
+      "options": [
+       "dry understatement after too much noise",
+       "wild excitement about a huge fireworks show",
+       "terror that the whole roof will collapse",
+       "boredom so deep he leaves the whole library"
+      ],
+      "answer": 0,
+      "explain": "Calling rain “a modest soundtrack” after centuries of chaos is classic dry understatement.",
+      "kind": "infer",
+      "notes": {
+       "wild excitement about a huge fireworks show": "He notes it quietly; this is not fireworks excitement.",
+       "terror that the whole roof will collapse": "He calls it modest — tired irony, not terror.",
+       "boredom so deep he leaves the whole library": "He stays to listen; he isn't walking out."
+      }
+     }
+    },
+    {
+     "text": "{hero} returned to the sunny-now-speckled window seat. Characters who had rested between covers stayed put, and the only new sound was rain practising scales on quiet roofs. In the margin of the same poetry chapbook someone had added, in the same tiny hand: “We are [[under the weather|feeling a bit unwell OR, here, literally under soft rain]] — kindly.” It was hard not to smile twice.",
+     "q": {
+      "q": "The scribble about being “under the weather — kindly” implies that…",
+      "options": [
+       "the characters enjoy the gentle rain as a peaceful joke",
+       "a librarian was carefully counting every chair for stock",
+       "Vellum had banned all poetry from the library forever",
+       "the poetry book wanted to start a very loud parade"
+      ],
+      "answer": 0,
+      "explain": "After asking for rest, the characters turn the idiom into a gentle rain joke they accept.",
+      "kind": "infer",
+      "notes": {
+       "a librarian was carefully counting every chair for stock": "The voices asked for quiet; this is their playful peaceful note, not stock-taking.",
+       "Vellum had banned all poetry from the library forever": "Vellum read the rain poem; he didn't ban poetry.",
+       "the poetry book wanted to start a very loud parade": "A quiet rain hour is the opposite of a loud parade."
+      }
+     }
+    },
+    {
+     "text": "It occurred to {hero} that the library's gentlest victories sounded the same: not with a flourish, but with someone finally letting the room be quiet. Vellum, slightly less [[wary|careful because you expect trouble]] than before, even finished the short poem about rain on quiet roofs that he had begun at the Quiet Hour. Nobody interrupted. The shelf did not murmur. The atlas stayed shut.",
+     "q": {
+      "q": "What pattern does {hero} notice about the library's gentlest victories?",
+      "options": [
+       "they came when someone let the room stay quiet",
+       "they came only when every single book was burned",
+       "they came when the fog bell rang across a silent lake",
+       "they came when colourful kites tangled over a picnic"
+      ],
+      "answer": 0,
+      "explain": "Letting the room be quiet finished the dramas; {hero} notices that pattern again with the rain.",
+      "kind": "infer",
+      "notes": {
+       "they came only when every single book was burned": "Nothing was burned. Quiet was the turning point.",
+       "they came when the fog bell rang across a silent lake": "The fog bell is another realm's story.",
+       "they came when colourful kites tangled over a picnic": "Kite tangles were at Cloud Castle, not this pattern."
+      }
+     }
+    },
+    {
+     "text": "When the rain eased, Vellum added a second soft stamp beside the first: Listener to Rain on Quiet Roofs. “Three hundred years of plot,” he murmured, “and the encore was simply… weather.” {pet}, having slept through half the soft taps on the Returns cushion, woke only for the stamp's soft thud — timing that was, Vellum noted dryly, still [[impeccable|perfectly well timed]].",
+     "q": {
+      "q": "Why is Vellum's remark about “the encore was simply weather” ironic?",
+      "options": [
+       "A huge saga's follow-up was only ordinary rain.",
+       "He had planned a bright fireworks finale all along.",
+       "The characters demanded much louder plots forever.",
+       "The stamp card was secretly a long cookery recipe."
+      ],
+      "answer": 0,
+      "explain": "Centuries of dramatic noise, followed by ordinary rain: enormous fuss, tiny ordinary wish — again.",
+      "kind": "infer",
+      "notes": {
+       "He had planned a bright fireworks finale all along.": "He welcomed quiet rain, not fireworks.",
+       "The characters demanded much louder plots forever.": "They asked for rest and a contents page, not louder plots.",
+       "The stamp card was secretly a long cookery recipe.": "It's a listener stamp, not a recipe."
+      }
+     }
+    }
+   ],
+   "final": {
+    "q": "If timing is “impeccable”, it is…",
+    "options": [
+     "perfectly well timed",
+     "hopelessly late and messy",
+     "written in a secret code",
+     "loud enough to wake the whole shelf"
+    ],
+    "answer": 0,
+    "explain": "Impeccable = perfectly well timed — like {pet} waking exactly for the second stamp.",
+    "kind": "vocab",
+    "notes": {
+     "hopelessly late and messy": "The opposite of late and messy.",
+     "written in a secret code": "Impeccable is about quality of timing, not a code.",
+     "loud enough to wake the whole shelf": "The stamp was soft; impeccable isn't about volume."
+    }
+   }
   }
  ]
 }

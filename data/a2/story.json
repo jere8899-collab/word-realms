@@ -392,6 +392,110 @@
      "the loudest bells by the door": "Bells can be loud; fluffiest describes soft tarts."
     }
    }
+  },
+  {
+   "title": "The Thank-You Sign",
+   "focus": "past simple · comparatives and superlatives · going to",
+   "img": "story_a2_5",
+   "pages": [
+    {
+     "text": "The morning after the softest tarts, Crumb kept his newest promise. He found a board smoother than a pebble and brighter than a lemon. “I'm going to paint the [[clearest|easiest to read]] thank-you sign in Candy Village,” he said, and Mrs Toffee handed him a brush.",
+     "q": {
+      "q": "What is Crumb going to paint?",
+      "options": [
+       "the clearest thank-you sign",
+       "a harder cake of stone",
+       "a bigger balloon than last week",
+       "a tiny door for the oven"
+      ],
+      "answer": 0,
+      "explain": "“I'm going to paint the clearest thank-you sign in Candy Village.” Going to = his plan.",
+      "kind": "grammar",
+      "notes": {
+       "a harder cake of stone": "He wants a clear sign, not a hard stone cake.",
+       "a bigger balloon than last week": "Balloons were festival week. Today he plans a thank-you sign.",
+       "a tiny door for the oven": "The oven door is already there. He plans to paint a thank-you sign."
+      }
+     }
+    },
+    {
+     "text": "He mixed paint that was pinker than candy floss and letters that were taller than yesterday's jam jars. This time his claws stayed away from the wet board. The sign looked [[neater|tidier and better arranged]] than any shop window on the street.",
+     "q": {
+      "q": "How did the sign compare to the shop windows?",
+      "options": [
+       "It looked neater.",
+       "It looked flatter and sadder.",
+       "It was harder than stone.",
+       "It flew away on a balloon."
+      ],
+      "answer": 0,
+      "explain": "“The sign looked neater than any shop window on the street.”",
+      "kind": "fact",
+      "notes": {
+       "It looked flatter and sadder.": "Neater means tidier, not flatter. The sign looked neat.",
+       "It was harder than stone.": "The board was smooth wood, not stone-hard.",
+       "It flew away on a balloon.": "No balloon carried the sign. It looked neater than the windows."
+      }
+     }
+    },
+    {
+     "text": "{hero} and {pet} arrived early again. Children gathered, but the crowd was quieter than the tart queue because everyone was [[reading|looking at words carefully]] the bright letters. Crumb's cheeks went pink with pride, not with flour.",
+     "q": {
+      "q": "Why was the crowd quieter than the tart queue?",
+      "options": [
+       "Everyone was reading the bright letters.",
+       "Crumb had closed the bakery forever.",
+       "Mrs Toffee sent them all home.",
+       "A storm had washed the paint away."
+      ],
+      "answer": 0,
+      "explain": "“The crowd was quieter… because everyone was reading the bright letters.”",
+      "kind": "fact",
+      "notes": {
+       "Crumb had closed the bakery forever.": "The bakery stayed open. Children stood and read the sign.",
+       "Mrs Toffee sent them all home.": "Mrs Toffee helped with the brush; she didn't send them home.",
+       "A storm had washed the paint away.": "There is no storm. The quiet came from reading the letters."
+      }
+     }
+    },
+    {
+     "text": "Crumb hung the sign above the tiny door. “Thank you, Candy Village,” it said in the softest pink. “Tomorrow I'm going to bake a [[sharing|giving some to each friend]] tray for every helper.” The children cheered louder than the bakery bell, and {pet} sniffed the last jam crumb happily.",
+     "q": {
+      "q": "What is Crumb going to do tomorrow?",
+      "options": [
+       "bake a sharing tray for every helper",
+       "squash the thank-you sign on purpose",
+       "fly higher than the candy tree",
+       "hide the soft spoon forever"
+      ],
+      "answer": 0,
+      "explain": "“Tomorrow I'm going to bake a sharing tray for every helper.”",
+      "kind": "grammar",
+      "notes": {
+       "squash the thank-you sign on purpose": "Squashing was an old accident. Tomorrow he plans a sharing tray.",
+       "fly higher than the candy tree": "Flying was festival week. Tomorrow he plans a sharing tray.",
+       "hide the soft spoon forever": "He likes the soft spoon. His plan is a sharing tray for helpers."
+      }
+     }
+    }
+   ],
+   "final": {
+    "q": "If a sign is the “clearest”, it is…",
+    "options": [
+     "the easiest to read of all",
+     "the hardest cake in the village",
+     "the flattest pancake on the tray",
+     "the loudest bell by the door"
+    ],
+    "answer": 0,
+    "explain": "Clearest = easiest to read — Crumb's thank-you sign.",
+    "kind": "vocab",
+    "notes": {
+     "the hardest cake in the village": "Clear is about reading, not hard cakes.",
+     "the flattest pancake on the tray": "Flat was the squashed tray. Clear means easy to read.",
+     "the loudest bell by the door": "Bells can be loud; clearest describes easy-to-read letters."
+    }
+   }
   }
  ]
 }

@@ -254,11 +254,13 @@ for lvl, items in WRITING.items():
 # data/<level>/story.json = { id, level, chapters: [chapter 1 (tools/c_stories.py), then extras from STORY_MORE_MODS] }.
 # Extra-chapter modules (tools/<name>.py) each expose MORE = {level: [chapter, …]}. Same pattern as R20_WAVES:
 # list module names once, import once; append the next wave's module name to grow the shelf.
-STORY_MORE_NAMES = ("c_stories2", "c_stories3", "c_stories4")  # chapters 2, 3, 4…
+STORY_MORE_NAMES = ("c_stories2", "c_stories3", "c_stories4", "c_stories5")  # chapters 2…N (one module each)
 STORY_MORE_MODS = tuple(importlib.import_module(m) for m in STORY_MORE_NAMES)
+STORY_PAGES = 4  # illustrated pages per chapter; the final word-check sits after the last page
+STORY_CHAPTERS = 1 + len(STORY_MORE_NAMES)  # chapter 1 from c_stories.py + one chapter per MORE module
 GLOSS_RE = re.compile(r"\[\[([^|\]]+)\|([^\]]+)\]\]")
 def _check_chapter(name, ch):
-    assert len(ch["pages"]) == 4, name
+    assert len(ch["pages"]) == STORY_PAGES, name
     assert os.path.exists(f"{ROOT}/../assets/stories/{ch['img']}.jpg") and os.path.exists(f"{ROOT}/../assets/web/{ch['img']}.webp"), ch["img"]
     qs = [p["q"] for p in ch["pages"]] + [ch["final"]]
     for q in qs:
@@ -275,6 +277,7 @@ def _story_extras(lvl):  # flatten MORE lists from every STORY_MORE_MODS module 
 st_tot = 0
 for lvl, ch in STORIES.items():
     chapters = [ch] + _story_extras(lvl)
+    assert len(chapters) == STORY_CHAPTERS, (lvl, len(chapters), STORY_CHAPTERS)
     assert len({c["title"] for c in chapters}) == len(chapters) and len({c["img"] for c in chapters}) == len(chapters), lvl
     n = sum(_check_chapter(f"{lvl}/story ch{i + 1}", c) for i, c in enumerate(chapters))
     json.dump({"id": f"{lvl}-story", "level": lvl, "chapters": chapters}, open(f"{ROOT}/{lvl}/story.json", "w"), ensure_ascii=False, indent=1)

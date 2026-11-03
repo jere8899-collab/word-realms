@@ -392,6 +392,110 @@
      "a storm scheduled for Friday night": "No storm here; alliance means people joining kindly."
     }
    }
+  },
+  {
+   "title": "Cloudberry Promises",
+   "focus": "inversion · cleft · hedging · tone",
+   "img": "story_c1_5",
+   "pages": [
+    {
+     "text": "Seldom had a picnic ended with so little ranking and so much jam. After the slow cloud parade, Lady Quillon suggested — lightly, almost [[mischievously|playfully cheeky in a kind way]] — that each guest might carry one small cloudberry promise home. “It is not the size of the promise that matters,” she said, “so much as keeping it kindly.”",
+     "q": {
+      "q": "What does “Seldom had a picnic ended…” emphasise?",
+      "options": [
+       "How unusually peaceful and jam-filled the ending was.",
+       "That she ends every picnic with a loud kite contest.",
+       "That Nimbus had started another weather quarrel.",
+       "That every cloud-rose had wilted overnight."
+      ],
+      "answer": 0,
+      "explain": "Inversion after “Seldom” stresses how uncommon this quiet, jammy ending is.",
+      "kind": "infer",
+      "notes": {
+       "That she ends every picnic with a loud kite contest.": "“Seldom” marks an unusual peaceful ending, not weekly contests.",
+       "That Nimbus had started another weather quarrel.": "Nimbus agreed shyly last time; this line is about the picnic's close.",
+       "That every cloud-rose had wilted overnight.": "The roses listened earlier; nothing here says they wilted."
+      }
+     }
+    },
+    {
+     "text": "What steadied the proudest sprite was not another speech but a tiny jar labelled “for sharing only.” One guest began, “With all due enthusiasm for yesterday's heights—” in a tone that still edged toward scorekeeping. {hero} [[steered|gently guided]] the talk toward whose promise might help a neighbour. “Perhaps we might simply write them down for a minute?”",
+     "q": {
+      "q": "How should we read “With all due enthusiasm…” here?",
+      "options": [
+       "Polite words that still lean toward keeping score.",
+       "A full apology for bringing no kite at all.",
+       "Proof the guest wants to give the jar away.",
+       "A weather report about tomorrow's rain."
+      ],
+      "answer": 0,
+      "explain": "Like earlier “with all due admiration”, the tone still edges toward ranking — polite cover for pride.",
+      "kind": "infer",
+      "notes": {
+       "A full apology for bringing no kite at all.": "The tone “edged toward scorekeeping”, not a full apology.",
+       "Proof the guest wants to give the jar away.": "The guest is talking about heights, not giving jars away.",
+       "A weather report about tomorrow's rain.": "It isn't a forecast; it's boast-tinged politeness."
+      }
+     }
+    },
+    {
+     "text": "Never before had cloudberry ink [[dried|become dry after being wet]] so patiently on so many scrap cards. What {hero} suggested — softly, with a string of hedges — was that each promise name a kindness for someone else, rather than a taller flight. “It might be rather nice,” Sola murmured. Nimbus nodded, almost shyly again.",
+     "q": {
+      "q": "Why does {hero} hedge with “might” and “rather nice”?",
+      "options": [
+       "to keep the idea sounding gentle and easy to accept",
+       "because {hero} thinks kindness promises are impossible",
+       "to order the parade to reverse at once",
+       "to restart the weather quarrel on purpose"
+      ],
+      "answer": 0,
+      "explain": "Hedging keeps a suggestion friendly so proud guests can join without losing face.",
+      "kind": "grammar",
+      "notes": {
+       "because {hero} thinks kindness promises are impossible": "{hero} believes it can work; soft wording invites yes.",
+       "to order the parade to reverse at once": "Nothing is ordered. Hedging comes before agreement.",
+       "to restart the weather quarrel on purpose": "{hero} wants peace; the hedges invite kindness, not a quarrel."
+      }
+     }
+    },
+    {
+     "text": "By the time the last card was tucked into a pocket, even the proudest guest was smiling. What surprised Lady Quillon most was how little anyone mentioned winning. “It would appear,” she told {hero} with that same small smile, “that jam, turn-taking, and written [[promises|kind things you say you will do]] are a sturdier alliance than any speech I keep rewriting.”",
+     "q": {
+      "q": "What surprised Lady Quillon most?",
+      "options": [
+       "how little anyone mentioned winning",
+       "that heavy rain cancelled every promise",
+       "that no guests wrote a single card",
+       "that Nimbus restarted the old quarrel mid-jar"
+      ],
+      "answer": 0,
+      "explain": "“What surprised Lady Quillon most was how little anyone mentioned winning.” (cleft)",
+      "kind": "fact",
+      "notes": {
+       "that heavy rain cancelled every promise": "Promises were tucked away; rain didn't cancel them.",
+       "that no guests wrote a single card": "Guests wrote cards and smiled. The surprise was the lack of winning talk.",
+       "that Nimbus restarted the old quarrel mid-jar": "Nimbus nodded shyly; there was no new quarrel."
+      }
+     }
+    }
+   ],
+   "final": {
+    "q": "A “promise” is closest in meaning to…",
+    "options": [
+     "a kind thing you say you will do",
+     "a loudly ranked list of kite heights",
+     "a single cloud-rose left on a rug",
+     "a storm scheduled for Friday night"
+    ],
+    "answer": 0,
+    "explain": "Lady Quillon means a kind thing you say you will do — written on the scrap cards.",
+    "kind": "vocab",
+    "notes": {
+     "a loudly ranked list of kite heights": "Ranking kites is the opposite of a kindness promise.",
+     "a single cloud-rose left on a rug": "A rose isn't a promise.",
+     "a storm scheduled for Friday night": "No storm here; promise means what you say you'll kindly do."
+    }
+   }
   }
  ]
 }

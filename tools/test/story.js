@@ -23,7 +23,9 @@ const SAVE = JSON.stringify({ v: 1, name: 'Jeremy', avatar: 'avatar_mage', start
     await page.waitForFunction(() => window.WR && WR.realms && document.querySelector('.topbar'), null, { timeout: 20000 }); await page.waitForTimeout(300);
     return page;
   }
+  const MIN_CHAPTERS = 5;   // shelf grows with each Storybook wave (chapter 1 + extras)
   const clean = async p => { await p.evaluate(() => document.querySelectorAll('.confetti,.toast').forEach(e => e.remove())); await p.waitForTimeout(250); };
+  const finishChapter = async p => { for (let i = 0; i < 5; i++) { await answer(p, true); await p.locator('#storyNext').click(); await p.waitForTimeout(120); } await p.waitForSelector('.story-done'); };
   const answer = async (p, right) => {
     const target = await p.evaluate(async right => {
       const lv = document.querySelector('.story-head .lvl-badge').textContent.toLowerCase(), head = document.querySelector('.story-head .title').textContent;
@@ -42,7 +44,7 @@ const SAVE = JSON.stringify({ v: 1, name: 'Jeremy', avatar: 'avatar_mage', start
   assert(await page.locator('.story-tile').count() === 1, 'the 🎲 Play door has a Story tile (N7)');
   await clean(page); await page.screenshot({ path: OUT + 'story_01_tile.png' });
   await page.locator('.story-tile').click(); await page.waitForSelector('.shelf-ch');
-  assert(await page.locator('.shelf-ch').count() >= 4, 'the Story tile opens the A1 chapter shelf (4+ chapters)');
+  assert(await page.locator('.shelf-ch').count() >= MIN_CHAPTERS, 'the Story tile opens the A1 chapter shelf (' + MIN_CHAPTERS + '+ chapters)');
   assert(await page.locator('.shelf-ch.locked').count() === await page.locator('.shelf-ch').count() - 1, 'only chapter 1 is open on a fresh save');
   await clean(page); await page.screenshot({ path: OUT + 'story_01b_shelf.png' });
   await page.locator('.shelf-ch').first().click(); await page.waitForSelector('.story-text');
@@ -106,7 +108,7 @@ const SAVE = JSON.stringify({ v: 1, name: 'Jeremy', avatar: 'avatar_mage', start
   await clean(page); await page.screenshot({ path: OUT + 'story_09_ch2_done.png', fullPage: true });
   // 📖 chapter 3: locked until chapter 2 is done; opens next; own picture
   await page.evaluate(() => WR.openStoryShelf('a1')); await page.waitForSelector('.shelf-ch');
-  assert(await page.locator('.shelf-ch').count() >= 4, 'shelf lists chapter 3+');
+  assert(await page.locator('.shelf-ch').count() >= MIN_CHAPTERS, 'shelf lists chapter 3+');
   assert(await page.locator('.shelf-ch:not(.locked)').count() === 3, 'after chapter 2, chapter 3 opens on the shelf');
   await clean(page); await page.screenshot({ path: OUT + 'story_10_shelf_ch3.png' });
   await page.locator('.shelf-ch').nth(2).click(); await page.waitForSelector('.story-text');
@@ -114,20 +116,30 @@ const SAVE = JSON.stringify({ v: 1, name: 'Jeremy', avatar: 'avatar_mage', start
   assert(await page.evaluate(() => /story_a1_3/.test(document.querySelector('.story-pic img').src)), 'chapter 3 has its own picture');
   await clean(page); await page.screenshot({ path: OUT + 'story_11_ch3_page.png', fullPage: true });
   // finish chapter 3 so chapter 4 unlocks
-  for (let i = 0; i < 5; i++) { await answer(page, true); await page.locator('#storyNext').click(); await page.waitForTimeout(120); }
-  await page.waitForSelector('.story-done');
+  await finishChapter(page);
   // 📖 chapter 4: locked until chapter 3 is done; opens next; own picture
   await page.evaluate(() => WR.openStoryShelf('a1')); await page.waitForSelector('.shelf-ch');
-  assert(await page.locator('.shelf-ch').count() >= 4, 'shelf lists chapter 4');
+  assert(await page.locator('.shelf-ch').count() >= MIN_CHAPTERS, 'shelf lists chapter 4+');
   assert(await page.locator('.shelf-ch:not(.locked)').count() === 4, 'after chapter 3, chapter 4 opens on the shelf');
   await clean(page); await page.screenshot({ path: OUT + 'story_12_shelf_ch4.png' });
   await page.locator('.shelf-ch').nth(3).click(); await page.waitForSelector('.story-text');
   assert((await page.locator('.story-head').innerText()).includes('The Star Path Home'), 'chapter 4 title loads');
   assert(await page.evaluate(() => /story_a1_4/.test(document.querySelector('.story-pic img').src)), 'chapter 4 has its own picture');
   await clean(page); await page.screenshot({ path: OUT + 'story_13_ch4_page.png', fullPage: true });
+  // finish chapter 4 so chapter 5 unlocks
+  await finishChapter(page);
+  // 📖 chapter 5: locked until chapter 4 is done; opens next; own picture
+  await page.evaluate(() => WR.openStoryShelf('a1')); await page.waitForSelector('.shelf-ch');
+  assert(await page.locator('.shelf-ch').count() >= MIN_CHAPTERS, 'shelf lists chapter 5');
+  assert(await page.locator('.shelf-ch:not(.locked)').count() === 5, 'after chapter 4, chapter 5 opens on the shelf');
+  await clean(page); await page.screenshot({ path: OUT + 'story_14_shelf_ch5.png' });
+  await page.locator('.shelf-ch').nth(4).click(); await page.waitForSelector('.story-text');
+  assert((await page.locator('.story-head').innerText()).includes('The Thank-You Acorn'), 'chapter 5 title loads');
+  assert(await page.evaluate(() => /story_a1_5/.test(document.querySelector('.story-pic img').src)), 'chapter 5 has its own picture');
+  await clean(page); await page.screenshot({ path: OUT + 'story_15_ch5_page.png', fullPage: true });
   // every level has a shelf of chapters, each with notes on every wrong option
   const lv = await page.evaluate(async () => { const out = {}; for (const r of WR.realms) { const b = await WR.loadStory(r.id); out[r.id] = [b.chapters.length, b.chapters.slice(1).every(c => [...c.pages.map(p => p.q), c.final].every(q => Object.keys(q.notes || {}).length === 3))]; } return out; });
-  assert(Object.values(lv).every(([n, ok]) => n >= 4 && ok), 'every level has 4+ chapters and chapters 2+ have why-not notes ' + JSON.stringify(lv));
+  assert(Object.values(lv).every(([n, ok]) => n >= MIN_CHAPTERS && ok), 'every level has ' + MIN_CHAPTERS + '+ chapters and chapters 2+ have why-not notes ' + JSON.stringify(lv));
   // reload keeps progress
   await page.reload(); await page.waitForFunction(() => window.WR && WR.realms && document.querySelector('.topbar'));
   assert(await page.evaluate(() => WR.state.stories.done.a1.crowns) === 3, 'progress survives reload (inside wordRealms.save.v1)');

@@ -392,6 +392,110 @@
      "a torn lantern that needs mending": "Lanterns aren't cues here."
     }
    }
+  },
+  {
+   "title": "Blankets Under the Oak",
+   "focus": "past continuous · past perfect · present perfect · first conditional · should",
+   "img": "story_b1_5",
+   "pages": [
+    {
+     "text": "On the next full moon, Pip had already cleared a soft ring of grass under the oak. When {hero} and {pet} arrived with the promised blankets, the little fireflies were [[unrolling|opening something rolled up so it lies flat]] glow-scarves for the seats. Pip was glowing warmly, half host and half dancer.",
+     "q": {
+      "q": "What were the young fireflies doing when {hero} arrived?",
+      "options": [
+       "unrolling glow-scarves for the seats",
+       "mending a torn pink lantern from last week",
+       "queuing for jam tarts in Candy Village",
+       "ringing a fog bell over a silent lake"
+      ],
+      "answer": 0,
+      "explain": "“When {hero} and {pet} arrived… the little fireflies were unrolling glow-scarves for the seats.”",
+      "kind": "grammar",
+      "notes": {
+       "mending a torn pink lantern from last week": "Lantern mending was an earlier chapter. Tonight they were unrolling scarves.",
+       "queuing for jam tarts in Candy Village": "Jam tarts belong to Candy Village. Here they were setting seats.",
+       "ringing a fog bell over a silent lake": "The fog bell is another realm's tale. Here they prepared blankets and scarves."
+      }
+     }
+    },
+    {
+     "text": "“I've never hosted a blanket night,” Pip whispered. “If everyone keeps their voice soft, we should hear the owl's cue.” {pet} had folded the biggest blanket into a front-row nest. While Pip was welcoming latecomers, dew began to [[glimmer|shine with a soft light]] on the grass — a gentle clock, not a problem.",
+     "q": {
+      "q": "What should help them hear the owl's cue?",
+      "options": [
+       "keeping voices soft",
+       "baking louder tarts",
+       "opening a brand-new bakery",
+       "racing kites above the oak"
+      ],
+      "answer": 0,
+      "explain": "“If everyone keeps their voice soft, we should hear the owl's cue.” First conditional.",
+      "kind": "grammar",
+      "notes": {
+       "baking louder tarts": "Soft voices, not louder tarts, help them hear the cue.",
+       "opening a brand-new bakery": "No bakery opens under the oak. Pip wants soft voices.",
+       "racing kites above the oak": "They are watching a dance, not racing kites. Soft voices help."
+      }
+     }
+    },
+    {
+     "text": "The sky dance began again. Circles of light rose above the blankets, and even travellers who had only stopped for a minute now settled in. {pet}'s pebbles kept time, and the youngest firefly — who had found every step last time — now [[guided|showed the way to]] two shy newcomers into the circle.",
+     "q": {
+      "q": "How did the youngest firefly help tonight?",
+      "options": [
+       "guided two shy newcomers into the circle",
+       "hid every soft blanket under a mushroom",
+       "sent all the travellers home at once",
+       "argued about whose kite flew highest"
+      ],
+      "answer": 0,
+      "explain": "“The youngest firefly… now guided two shy newcomers into the circle.”",
+      "kind": "fact",
+      "notes": {
+       "hid every soft blanket under a mushroom": "Blankets stayed open for guests. The youngest guided newcomers.",
+       "sent all the travellers home at once": "Travellers settled in to watch. The youngest guided newcomers.",
+       "argued about whose kite flew highest": "Kite arguments were at Cloud Castle. Here the youngest guided dancers."
+      }
+     }
+    },
+    {
+     "text": "Afterwards Pip hovered beside the blanket nest. “You've brought warmth twice now. If you visit the moon after next, we should save you these seats again.” Since that night, the oak has become a favourite stop. “You should leave the blankets until the [[dawn|the first light of morning]] chorus,” Pip added. “The grass holds the glow a little longer that way.”",
+     "q": {
+      "q": "Why might travellers favour the oak now?",
+      "options": [
+       "it has become a favourite stop for the sky dance",
+       "Crumb sells jam tarts from the oak branches",
+       "a lighthouse shutter needs careful latching there",
+       "Lady Quillon ranks every kite under it nightly"
+      ],
+      "answer": 0,
+      "explain": "“Since that night, the oak has become a favourite stop.”",
+      "kind": "infer",
+      "notes": {
+       "Crumb sells jam tarts from the oak branches": "Tarts are in Candy Village. Here travellers stop for the dance.",
+       "a lighthouse shutter needs careful latching there": "The shutter was at the lighthouse. Here they stop under the oak.",
+       "Lady Quillon ranks every kite under it nightly": "Kite ranking was at Cloud Castle. Here the oak hosts the dance."
+      }
+     }
+    }
+   ],
+   "final": {
+    "q": "To “unroll” something is to…",
+    "options": [
+     "open something rolled up so it lies flat",
+     "hide a soft blanket under a mushroom forever",
+     "ring a deep bell across a foggy lake",
+     "paint a bright thank-you sign above a door"
+    ],
+    "answer": 0,
+    "explain": "Unroll = open something rolled up flat — like the glow-scarves for seats.",
+    "kind": "vocab",
+    "notes": {
+     "hide a soft blanket under a mushroom forever": "Hiding isn't unrolling.",
+     "ring a deep bell across a foggy lake": "That's the fog-bell story.",
+     "paint a bright thank-you sign above a door": "That's Crumb's sign, not unrolling."
+    }
+   }
   }
  ]
 }

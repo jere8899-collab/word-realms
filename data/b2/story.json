@@ -392,6 +392,110 @@
      "soaked completely in cold lake water": "Wet isn't the same as frayed."
     }
    }
+  },
+  {
+   "title": "Mog the Fog Listener",
+   "focus": "past perfect · passive · third conditional · should have",
+   "img": "story_b2_5",
+   "pages": [
+    {
+     "text": "By Sunday afternoon the fog had thinned, but soft grey ribbons still drifted over the rocks. The fog bell had been tested at dawn, yet Glimmerfin wanted a second pair of ears on the rail. Mog — newly titled Fog Listener — was [[stationed|placed on duty in one spot]] on the warmest post, naps delayed until the sun returned for good.",
+     "q": {
+      "q": "Where was Mog stationed?",
+      "options": [
+       "on the warmest post on the rail",
+       "inside Crumb's tiny bakery oven",
+       "under Pip's oak with a blanket",
+       "at Lady Quillon's kite picnic"
+      ],
+      "answer": 0,
+      "explain": "“Mog… was stationed on the warmest post.”",
+      "kind": "fact",
+      "notes": {
+       "inside Crumb's tiny bakery oven": "The bakery is Candy Village. Mog is on the lighthouse rail.",
+       "under Pip's oak with a blanket": "Blankets under the oak are Pip's tale. Mog is on the rail.",
+       "at Lady Quillon's kite picnic": "The picnic is Cloud Castle. Mog listens for fog on the rail."
+      }
+     }
+    },
+    {
+     "text": "A fishing skiff had been guided wide of the rocks the day before, but its captain admitted the night lantern had been left dim. “If Mog hadn't twitched an ear at that first grey curl,” the keeper muttered, “we might have waited for the bell alone.” {hero} smiled; the twitch had been [[prompt|quick and on time]], almost professional.",
+     "q": {
+      "q": "What does “If Mog hadn't twitched an ear…” tell us?",
+      "options": [
+       "Mog did twitch, so they didn't wait for the bell alone.",
+       "Mog slept through every grey curl and never twitched.",
+       "The fog bell will be invented tomorrow for the first time.",
+       "Crumb twitched an ear instead of Mog."
+      ],
+      "answer": 0,
+      "explain": "Third conditional: the twitch DID happen, so waiting-alone did NOT.",
+      "kind": "grammar",
+      "notes": {
+       "Mog slept through every grey curl and never twitched.": "The keeper is glad Mog twitched — the opposite of sleeping through.",
+       "The fog bell will be invented tomorrow for the first time.": "This is about a past ear-twitch, not inventing the bell tomorrow.",
+       "Crumb twitched an ear instead of Mog.": "Mog is the Fog Listener. Crumb is in the bakery."
+      }
+     }
+    },
+    {
+     "text": "Together they walked the shore. Driftwood had been stacked into a low seat for Mog, and a soft towel had been [[draped|hung loosely over something]] across it for sun naps between watches. Fishing boats, already warned once by the deep tone, tipped their hats toward the rail. Glimmerfin exhaled; the grey lake was brightening again.",
+     "q": {
+      "q": "What was the soft towel for?",
+      "options": [
+       "sun naps between Mog's watches",
+       "painting Crumb's thank-you sign",
+       "wrapping a picnic cloudberry tart",
+       "mending a torn pink lantern"
+      ],
+      "answer": 0,
+      "explain": "“A soft towel had been draped across it for sun naps between watches.”",
+      "kind": "fact",
+      "notes": {
+       "painting Crumb's thank-you sign": "The sign is Crumb's story. The towel is for Mog's naps.",
+       "wrapping a picnic cloudberry tart": "Cloudberry tarts are at Cloud Castle. The towel is for naps.",
+       "mending a torn pink lantern": "Lanterns were Pip's tale. The towel is for Mog's sun naps."
+      }
+     }
+    },
+    {
+     "text": "Afterwards the keeper said they should have given Mog a proper title years ago, joke or not. Fog Listener stayed — with naps still allowed whenever the sun returned — and a second title was whispered for calm evenings: Rail Philosopher. “If the towel hadn't been soft,” {hero} laughed, “even a Fog Listener might have [[complained|said something was wrong or unfair]].” Mog blinked once, as if filing the joke for later.",
+     "q": {
+      "q": "What is gentle about Mog's titles?",
+      "options": [
+       "Naps stay allowed when the sun returns.",
+       "Mog must swim to every boat in every fog.",
+       "Mog asked to captain the fishing fleet.",
+       "The titles forbid Mog from ever blinking."
+      ],
+      "answer": 0,
+      "explain": "“Fog Listener stayed — with naps still allowed whenever the sun returned.”",
+      "kind": "infer",
+      "notes": {
+       "Mog must swim to every boat in every fog.": "Mog stays on the island with joke-titles and nap rights.",
+       "Mog asked to captain the fishing fleet.": "Mog didn't ask for captain. The keeper keeps the titles light.",
+       "The titles forbid Mog from ever blinking.": "Blinking is fine; naps are still allowed in the sun."
+      }
+     }
+    }
+   ],
+   "final": {
+    "q": "“Prompt” means…",
+    "options": [
+     "quick and on time",
+     "painted a bright new gold colour",
+     "soaked completely in cold lake water",
+     "tied into a perfect brand-new knot"
+    ],
+    "answer": 0,
+    "explain": "Prompt = quick and on time — like Mog's professional ear-twitch.",
+    "kind": "vocab",
+    "notes": {
+     "painted a bright new gold colour": "Prompt is about timing, not paint.",
+     "soaked completely in cold lake water": "Wet isn't the same as prompt.",
+     "tied into a perfect brand-new knot": "A knot isn't what prompt means here."
+    }
+   }
   }
  ]
 }

@@ -392,6 +392,110 @@
      "a cup of honey tea": "Tea was earlier; a parcel is a wrapped gift."
     }
    }
+  },
+  {
+   "title": "The Thank-You Acorn",
+   "focus": "present simple · there is / there are · can · like",
+   "img": "story_a1_5",
+   "pages": [
+    {
+     "text": "The next morning {hero} opens the little [[parcel|a small wrapped gift]]. There is the shiny acorn and the daisy. {pet} can smell the daisy. “We like this gift,” says {hero}. “We can say thank you.”",
+     "q": {
+      "q": "What is inside the parcel?",
+      "options": [
+       "a shiny acorn and a daisy",
+       "a cold cup of honey tea from the party",
+       "a big blue boat for the river",
+       "a hard school book about oaks"
+      ],
+      "answer": 0,
+      "explain": "“There is the shiny acorn and the daisy.”",
+      "kind": "fact",
+      "notes": {
+       "a cold cup of honey tea from the party": "Tea was at the party. Inside the parcel are the acorn and the daisy.",
+       "a big blue boat for the river": "There is no boat in the parcel. There is a shiny acorn and a daisy.",
+       "a hard school book about oaks": "There is no school book. The gift is a shiny acorn and a daisy."
+      }
+     }
+    },
+    {
+     "text": "There is soft moss under an oak tree. {hero} can dig a tiny hole. {pet} can drop the shiny [[acorn|the hard seed of an oak tree]] in. They cover it with earth. “Grow well,” whispers {hero}.",
+     "q": {
+      "q": "Where do they put the acorn?",
+      "options": [
+       "in a tiny hole under an oak",
+       "in a cup of honey tea from the party",
+       "in a picnic basket full of jam tarts",
+       "in a dark cave by the cold river"
+      ],
+      "answer": 0,
+      "explain": "They dig a tiny hole under an oak and drop the acorn in.",
+      "kind": "fact",
+      "notes": {
+       "in a cup of honey tea from the party": "Tea is for drinking. The acorn goes in a tiny hole under the oak.",
+       "in a picnic basket full of jam tarts": "The picnic basket is not here. They plant the acorn under the oak.",
+       "in a dark cave by the cold river": "There is no cave. The acorn goes in a tiny hole under the oak."
+      }
+     }
+    },
+    {
+     "text": "The white rabbit comes hop, hop. It likes the planted acorn. There are three little [[ribbons|thin soft strips of cloth for tying gifts]] in its bag. “These are thank-you ribbons,” it says. {pet} can wear one. {hero} can wear one too.",
+     "q": {
+      "q": "What does the rabbit bring?",
+      "options": [
+       "three little ribbons",
+       "a loud drum",
+       "a lost sock",
+       "a cold river"
+      ],
+      "answer": 0,
+      "explain": "“There are three little ribbons in its bag.”",
+      "kind": "fact",
+      "notes": {
+       "a loud drum": "There is no drum. The rabbit brings three little ribbons.",
+       "a lost sock": "Nobody lost a sock. The rabbit brings thank-you ribbons.",
+       "a cold river": "There is no river gift. The rabbit brings three little ribbons."
+      }
+     }
+    },
+    {
+     "text": "They tie a ribbon on the oak. There is a smile on every face. “Thank you for the star path and the parcel,” says {hero}. The rabbit is happy. It is not [[shy|a bit scared to talk to new friends]]. {pet} likes the warm sun.",
+     "q": {
+      "q": "How does the rabbit feel?",
+      "options": [
+       "happy and not shy",
+       "angry and loud",
+       "lost in the parcel",
+       "asleep in the moss"
+      ],
+      "answer": 0,
+      "explain": "The rabbit is happy and “It is not shy.”",
+      "kind": "infer",
+      "notes": {
+       "angry and loud": "It smiles with them. The story does not say it is angry.",
+       "lost in the parcel": "They are under the oak together. The rabbit is not lost.",
+       "asleep in the moss": "The rabbit stands and smiles; it is not asleep in the moss."
+      }
+     }
+    }
+   ],
+   "final": {
+    "q": "An “acorn” is…",
+    "options": [
+     "the hard seed of an oak tree",
+     "a thin thank-you ribbon for tying gifts",
+     "a soft glowing path of tiny stars",
+     "a warm cup of honey tea"
+    ],
+    "answer": 0,
+    "explain": "An acorn is the hard seed of an oak — the shiny gift they planted.",
+    "kind": "vocab",
+    "notes": {
+     "a thin thank-you ribbon for tying gifts": "That's a ribbon.",
+     "a soft glowing path of tiny stars": "That's the star path from earlier.",
+     "a warm cup of honey tea": "Tea isn't an acorn."
+    }
+   }
   }
  ]
 }
