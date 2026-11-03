@@ -81,8 +81,9 @@ const MOCK = () => {
   assert(u.stars === '3,2,1,0', 'star thresholds 90/70/50');
 
   // ---- realm tile ----
-  await page.evaluate(() => WR.go('realm', 'a1')); await page.waitForSelector('[data-speak]');
-  assert((await page.$$('.skill-card[data-k]')).length === 4 && await page.$('[data-sp]'), '4 core skills + special still there, Speaking added as 5th');
+  await page.evaluate(() => WR.go('realm', 'a1')); await page.waitForSelector('[data-door="say"]');
+  assert((await page.$$('.skill-card[data-k]')).length === 4 && await page.$('[data-door="play"]'), '4 core skills + the bonus doors (N7)');
+  await page.click('[data-door="say"]'); await page.waitForSelector('[data-speak]');
   const unlockBefore = await page.evaluate(() => WR.realmProgress('a1').passed);
   await page.click('[data-speak]'); await page.waitForSelector('#micBtn');
   await page.waitForTimeout(500);
@@ -132,7 +133,7 @@ const MOCK = () => {
   await page.evaluate(() => WR.go('review')); await page.waitForTimeout(300);
   await page.click('#waterBtn'); await page.waitForSelector('#pool .tile');
   assert(true, 'garden review round opens the speaking card as a sentence builder');
-  await page.evaluate(() => WR.go('realm', 'a1')); await page.waitForSelector('[data-speak] .crowns');
+  await page.evaluate(() => WR.go('door', { rid: 'a1', door: 'say' })); await page.waitForSelector('[data-speak] .crowns');
   assert(/👑/.test(await page.$eval('[data-speak] .crowns', e => WR.iconText(e))), 'Speaking tile shows crowns');
 
   // ---- C2 read-aloud + C1 answer prompt ----
@@ -159,7 +160,7 @@ const MOCK = () => {
   // ---- no SpeechRecognition at all (Firefox / Safari / headless) ----
   const np = await open({ width: 1200, height: 860 }, false);
   assert(!(await np.evaluate(() => WR.Echo.supported())), 'recognition unavailable in this context');
-  await np.evaluate(() => WR.go('realm', 'a2')); await np.click('[data-speak]');
+  await np.evaluate(() => WR.go('door', { rid: 'a2', door: 'say' })); await np.click('[data-speak]');
   await np.waitForSelector('.echo-banner'); await np.waitForTimeout(400);
   assert(/can't listen/.test(await np.$eval('.echo-banner', e => e.textContent)) && !(await np.$('#micBtn')) && !(await np.$('#tryMic')), 'fallback: message, no mic button');
   const s1 = await np.evaluate(() => WR.state.stars);
@@ -178,7 +179,7 @@ const MOCK = () => {
 
   // ---- mobile 390x844 ----
   const mp = await open({ width: 390, height: 844 }, true, { deviceScaleFactor: 2, isMobile: true, hasTouch: true });
-  await mp.evaluate(() => WR.go('realm', 'b2')); await mp.waitForSelector('[data-speak]'); await mp.click('[data-speak]'); await mp.waitForSelector('#micBtn');
+  await mp.evaluate(() => WR.go('door', { rid: 'b2', door: 'say' })); await mp.waitForSelector('[data-speak]'); await mp.click('[data-speak]'); await mp.waitForSelector('#micBtn');
   let mit = await mp.evaluate(() => WR._echoDbg().item);
   if (mit.type === 'answer') { await mp.evaluate(async () => { const b = await WR.bank('b2', 'speaking'); WR.startSpeaking('b2', { items: [b[5]] }); }); await mp.waitForSelector('#micBtn'); mit = await mp.evaluate(() => WR._echoDbg().item); }
   const mw = mit.text.split(' ');

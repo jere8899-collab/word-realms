@@ -19,7 +19,7 @@ const URL = 'http://127.0.0.1:18642/index.html';
   await page.evaluate(() => WR.go('realm', 'a2')); await page.waitForTimeout(900);
   await page.screenshot({ path: OUT + 'realm_a2.png' });
   // candy rush (sentence builder tiles)
-  await page.click('[data-sp]'); await page.waitForSelector('#pool .tile');
+  await page.click('[data-door="play"]'); await page.click('[data-sp]'); await page.waitForSelector('#pool .tile');
   const target = await page.evaluate(() => WR._dbg());
   const words = target.split(' ');
   for (const w of words.slice(0, 3)) { for (const t of await page.$$('#pool .tile')) { if ((await t.textContent()) === w) { await t.click(); break; } } }

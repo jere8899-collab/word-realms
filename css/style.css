@@ -673,6 +673,15 @@ img.acc-prev{width:72px;height:72px;object-fit:contain;display:block;margin:4px 
   .path-grid .skill-card{padding:10px 8px}.path-grid .skill-card .ico{font-size:2rem}.path-grid .skill-card h3{margin:.15em 0;font-size:1rem}
   .path-grid .skill-card .muted{font-size:.76rem!important;line-height:1.25}
 }
+/* 🚪 N7: 3 bonus doors on the realm screen (Say it, Write it, Play); a door screen lists its games */
+.door-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.door-tile{position:relative;min-width:0;text-align:center;padding:12px 8px}.door-tile .ico{font-size:2.2rem}.door-tile h3{margin:.2em 0;font-size:1.05rem;white-space:nowrap}
+.door-tile .door-desc{font-size:.76rem;font-weight:700;line-height:1.25}
+.door-tile.locked{opacity:.6;filter:grayscale(.4)}
+.door-say{background:linear-gradient(160deg,#FFF0F7,#FFE3EF)}.door-write{background:linear-gradient(160deg,#F3ECFF,#E9E0FF)}.door-play{background:linear-gradient(160deg,#EAFBF3,#DDF5EA)}
+.door-screen .door-games{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;overflow:visible}
+@media (max-width:760px){.door-screen .door-games{display:grid;grid-template-columns:1fr 1fr;gap:10px}.door-screen .door-games>.card{flex:none}}
+@media (max-width:359px){.door-row{gap:6px}.door-tile{padding:10px 4px}.door-tile .door-desc{display:none}.door-tile h3{font-size:.95rem}}
 /* 🏠 R15: Daily Quests + the pet fold into one compact row on the home page */
 .home-mini{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0 4px}
 .mini-chip{display:flex;align-items:center;gap:8px;padding:10px 12px;text-align:left;font:inherit;color:inherit;cursor:pointer;border:0;min-width:0}

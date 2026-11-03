@@ -31,12 +31,12 @@ const STOPS = ["stopLesson", "stopSpeaking", "stopWriting", "stopStory", "stopPl
    realm, or the hub that opened it. WR.from = { screen, arg, label } is set by a hub that borrows a realm's activity (the
    🦁 Singapore levels hub opens Echo Well / Story Quill of the matching realm) and is cleared by any other screen change. */
 WR.from = null;
-WR.toRealm = rid => { const f = WR.from; WR.from = null; f ? WR.go(f.screen, f.arg) : WR.go("realm", rid); };
+WR.toRealm = rid => { const f = WR.from, d = WR.doorBack && WR.doorBack(rid); WR.from = null; f ? WR.go(f.screen, f.arg) : d ? WR.go("door", d) : WR.go("realm", rid); };   // N7: back to the bonus door it came from
 WR.backLabel = realm => WR.from ? WR.from.label : realm.name;
 WR.go = (screen, arg) => {
   WR.from = null;
   STOPS.forEach(n => WR[n] && WR[n]()); WR.gapGames.forEach(g => g.stop()); WR.Voice.stop();
-  current = screen; currentArg = arg; WR.navActive(screen === "realm" || screen === "sg" ? "home" : /^(math|dojo|dojoGrid|clock)$/.test(screen) ? "math" : screen);
+  current = screen; currentArg = arg; WR.navActive(screen === "realm" || screen === "door" || screen === "sg" ? "home" : /^(math|dojo|dojoGrid|clock)$/.test(screen) ? "math" : screen);
   WR.screens[screen](arg); WR.renderTop();
 };
 
@@ -211,39 +211,69 @@ const BONUS = [
   { data: "phonics", open: () => WR.go("phonics"), tile: rid => WR.phonicsTile && WR.phonicsTile(rid) },
   { data: "charms", open: rid => WR.openCharms(rid), tile: rid => WR.charmsTile && WR.charmsTile(rid) }
 ];
-/* 🧭 R14: Today's path (the 4 skills + the boss) comes first; bonus games sit in their own row and open one at a time as
-   the child finishes lessons (any realm), each with a "New!" badge until it is first tapped. The realm game is open from
-   the start, so a brand-new player sees at most 6 choices. Grown-ups' "open every realm" opens them all. */
+/* 🧭 R14: Today's path (the 4 skills + the boss) comes first; bonus games open one at a time as the child finishes lessons
+   (any realm), each with a "New!" badge until it is first tapped. Grown-ups' "open every realm" opens them all.
+   🚪 N7 (REVIEW-2026-11-02): the bonus games no longer sit in one ever-growing row. A realm shows 3 bonus DOORS —
+   🎤 Say it (Speaking, Phonics), ✍️ Write it (Writing, Spell Swap, Word Forge, Word Bridges, Punctuation Pixies) and
+   🎲 Play (the realm game, Word Charms, Story) — so it shows at most 4 skills + 3 doors + the boss. A door opens with its
+   first game; inside, games still open one by one. A NEW game must join a door (WR.addBonus({ door, … })) or a lesson. */
 const BONUS_AT = { sp: 0, story: 1, speak: 2, charms: 3, phonics: 4, write: 5 };   // lessons finished; gap games follow: 6, 7, …
 WR.bonusAt = data => data in BONUS_AT ? BONUS_AT[data] : 6 + Math.max(0, BONUS.findIndex(b => b.data === data) - 5);
 WR.bonusOpen = data => { const s = WR.state; return !!(s.settings.unlockAll || (s.lessonsDone || 0) >= WR.bonusAt(data) || (s.bonusSeen || []).includes(data)); };
 WR.bonusSeenInit = () => { const s = WR.state; if (!Array.isArray(s.bonusSeen)) s.bonusSeen = ["sp", ...BONUS.map(b => b.data)].filter(d => (s.lessonsDone || 0) >= WR.bonusAt(d)); return s.bonusSeen; };
-// the gap games (js/gap-round.js) add their own row when they load: Spell Swap, Word Forge, …
-WR.addBonus = row => BONUS.push(row);
+// the gap games (js/gap-round.js) add their own row when they load: Spell Swap, Word Forge, … (row.door, default "write")
+WR.addBonus = row => BONUS.push(Object.assign({ door: "write" }, row));
+const DOORS = WR.DOORS = [
+  { id: "say", icon: "🎤", name: "Say it", desc: "Speak and sound out" },
+  { id: "write", icon: "✍️", name: "Write it", desc: "Write, swap and fix words" },
+  { id: "play", icon: "🎲", name: "Play", desc: "Games, charms and stories" }
+];
+const DOOR_OF = { sp: "play", story: "play", charms: "play", speak: "say", phonics: "say", write: "write" };
+WR.doorOf = data => DOOR_OF[data] || ((BONUS.find(b => b.data === data) || {}).door) || "write";
+// every bonus game this realm has: { data, html, open() }, in unlock order inside each door
+const realmGames = rid => { const r = WR.realmById(rid);
+  const special = { data: "sp", open: () => WR.playSpecial(rid), html: WR.bonusTile({ cls: "special", data: "sp", ico: `<span class="ico">${r.special.emoji}</span>`, title: r.special.name, desc: r.special.desc, crowns: tileCrowns(rid, "special"), tag: "🎲 Realm game" }) };
+  return [special, ...BONUS.map(b => ({ data: b.data, open: () => b.open(rid), html: b.tile(rid) || "" }))].filter(g => g.html).sort((x, y) => WR.bonusAt(x.data) - WR.bonusAt(y.data)); };
+const doorGames = (rid, door) => realmGames(rid).filter(g => WR.doorOf(g.data) === door);
+const newBadge = html => html.replace(/^(<div class="card skill-card [^"]*"[^>]*>)/, '$1<span class="bonus-tag new-tag">New!</span>');
+let lastDoor = null;   // { rid, door }: a game opened from a door comes back to it (WR.toRealm)
+WR.doorBack = rid => lastDoor && lastDoor.rid === rid ? lastDoor : null;
+const doorTile = (rid, d, seen) => { const all = doorGames(rid, d.id), open = all.filter(g => WR.bonusOpen(g.data)), fresh = open.some(g => !seen.includes(g.data));
+  const next = all.find(g => !WR.bonusOpen(g.data)), left = next ? Math.max(1, WR.bonusAt(next.data) - (WR.state.lessonsDone || 0)) : 0;
+  const status = open.length ? `<div class="waiting-tag">${open.length}/${all.length} game${all.length > 1 ? "s" : ""} open</div>` : `<div class="waiting-tag">🔒 ${left} more lesson${left > 1 ? "s" : ""}</div>`;
+  return all.length ? `<div class="card skill-card door-tile door-${d.id}${open.length ? "" : " locked"}" data-door="${d.id}" role="button" tabindex="0">${fresh ? '<span class="bonus-tag new-tag">New!</span>' : ""}<span class="ico">${d.icon}</span><h3>${d.name}</h3>
+    <div class="muted door-desc">${d.desc}</div>${status}</div>` : ""; };
 WR.screens.realm = rid => {
-  const r = WR.realmById(rid), seen = WR.bonusSeenInit();
-  const crowns = k => tileCrowns(rid, k);
+  const r = WR.realmById(rid), seen = WR.bonusSeenInit(); lastDoor = null;
   const status = k => { const p = (WR.state.progress[rid] || {})[k], w = WR.waitingText(rid, k);
-    return p ? `<div class="crowns">${crowns(k)}${/^🎁/.test(w) ? ` <span class="waiting-tag">${w.replace(/ lessons? waiting!/, " new")}</span>` : ""}</div>` : `<div class="waiting-tag">${w}</div>`; };
-  const special = WR.bonusTile({ cls: "special", data: "sp", ico: `<span class="ico">${r.special.emoji}</span>`, title: r.special.name, desc: r.special.desc, crowns: crowns("special"), tag: "🎲 Realm game" });
-  const all = [{ data: "sp", html: special }, ...BONUS.map(b => ({ data: b.data, html: b.tile(rid) || "" }))].filter(b => b.html);
-  const open = all.filter(b => WR.bonusOpen(b.data)), locked = all.length - open.length;
-  const badge = (b) => seen.includes(b.data) ? b.html : b.html.replace(/^(<div class="card skill-card [^"]*"[^>]*>)/, '$1<span class="bonus-tag new-tag">New!</span>');
+    return p ? `<div class="crowns">${tileCrowns(rid, k)}${/^🎁/.test(w) ? ` <span class="waiting-tag">${w.replace(/ lessons? waiting!/, " new")}</span>` : ""}</div>` : `<div class="waiting-tag">${w}</div>`; };
   WR.view(`<div class="fade-in realm-screen"><div class="realm-hero">${WR.img(r.bg, "bg")}<div class="ov"><span class="lvl-badge">${r.level}</span><b class="title" style="font-size:1.5rem">${r.emoji} ${r.name}</b>
     <p style="margin:.3em 0;font-weight:700">${WR.esc(r.blurb)}</p><span class="pill">Game mode: ${r.modeName}</span></div></div>
     <div class="row realm-top" style="margin:12px 0"><button class="btn ghost small" id="backMap">← Map</button></div>
     <h2 class="realm-sec">🧭 Today's path</h2>
     <div class="grid g4 path-grid">${WR.SKILLS.map(k => `<div class="card skill-card" data-k="${k.id}"><span class="ico">${k.icon}</span><h3>${k.name}</h3><div class="muted" style="font-size:.85rem;font-weight:700">${k.desc}</div>${status(k.id)}</div>`).join("")}</div>
     <h2 class="realm-sec" id="bonusHead">🎁 Bonus games</h2>
-    <div class="bonus-row" id="bonusRow">${open.map(badge).join("")}${locked ? `<div class="card bonus-more" aria-label="More games open as you play"><span class="ico">🔒</span><b>${locked} more</b><small>open as you play</small></div>` : ""}</div></div>`);
+    <div class="door-row" id="doorRow">${DOORS.map(d => doorTile(rid, d, seen)).join("")}</div></div>`);
   WR.$("#backMap").onclick = () => WR.go("home");
   // only the skill cards: the bottom tab bar buttons also carry data-k and must keep their own handler
   WR.$("#main").querySelectorAll(".skill-card[data-k]").forEach(c => c.onclick = () => { const k = WR.SKILLS.find(x => x.id === c.dataset.k); if (!k) return; WR.startLesson({ realm: rid, skill: k.id, key: k.id, title: `${k.name} · ${r.modeName}` }); });
-  const tapped = d => { if (!seen.includes(d)) { seen.push(d); WR.save(); } };
-  const sp = WR.$("[data-sp]"); if (sp) sp.onclick = () => { tapped("sp"); WR.playSpecial(rid); };
-  BONUS.forEach(b => { const el = WR.$(`#bonusRow [data-${b.data}]`); if (el) el.onclick = () => { tapped(b.data); b.open(rid); }; });
-  const more = WR.$(".bonus-more"); if (more) more.onclick = () => WR.toast("🎁 Finish lessons on Today's path to open more bonus games!", 2400);
+  document.querySelectorAll("#doorRow [data-door]").forEach(el => el.onclick = () => { const d = el.dataset.door;
+    if (el.classList.contains("locked")) return WR.toast("🎁 Finish lessons on Today's path to open this door!", 2400);
+    WR.sfx("tap"); WR.go("door", { rid, door: d }); });
 };
+// 🚪 one door: its open games (with "New!" until first tapped) and a "🔒 N more" teaser
+WR.screens.door = ({ rid, door }) => {
+  const r = WR.realmById(rid), d = DOORS.find(x => x.id === door) || DOORS[0], seen = WR.bonusSeenInit(); lastDoor = { rid, door: d.id };
+  const all = doorGames(rid, d.id), open = all.filter(g => WR.bonusOpen(g.data)), locked = all.length - open.length;
+  WR.view(`<div class="fade-in realm-screen door-screen"><div class="row lesson-top" style="margin:6px 0 8px"><button class="btn ghost small" id="doorBack">← ${WR.esc(r.name)}</button><b class="title">${d.icon} ${d.name}</b></div>
+    <div class="bonus-row door-games" id="bonusRow">${open.map(g => seen.includes(g.data) ? g.html : newBadge(g.html)).join("")}${locked ? `<div class="card bonus-more" aria-label="More games open as you play"><span class="ico">🔒</span><b>${locked} more</b><small>open as you play</small></div>` : ""}</div></div>`);
+  WR.$("#doorBack").onclick = () => WR.go("realm", rid);
+  const tapped = x => { if (!seen.includes(x)) { seen.push(x); WR.save(); } };
+  open.forEach(g => { const el = WR.$(`#bonusRow [data-${g.data}]`); if (el) el.onclick = () => { tapped(g.data); g.open(); }; });
+  const more = WR.$(".bonus-more"); if (more) more.onclick = () => WR.toast("🎁 Finish lessons on Today's path to open more games here!", 2400);
+};
+// tests / quests / the report can open a bonus game the way a child does: realm → door → game
+WR.openBonus = (rid, data) => { const g = realmGames(rid).find(x => x.data === data); if (!g) return false; WR.go("door", { rid, door: WR.doorOf(data) }); g.open(); return true; };
 
 /* review screen (Mistake Garden) lives in js/garden.js */
 

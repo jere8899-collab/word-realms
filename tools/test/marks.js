@@ -114,9 +114,9 @@ const MOB = { deviceScaleFactor: 2, isMobile: true, hasTouch: true };
   const pm0 = await page.evaluate(() => WR.state.marks);
   ok(pm0 && typeof pm0.done === 'object' && !Object.keys(pm0.done).length && pm0.rounds === 0, 'old save gains an empty marks block');
   ok(await page.evaluate(() => WR.state.progress.a1.grammar.best === 0.7 && WR.state.swap.done['a1.1'].crowns === 3 && WR.state.cloze && WR.state.forge), 'the rest of the old save is untouched');
-  for (const r of ['a1', 'c2']) { await page.evaluate(r => WR.go('realm', r), r); ok(await page.locator('.marks-tile').count() === 1 && await page.locator('.cloze-tile').count() === 1, `${r.toUpperCase()} realm has a Punctuation Pixies bonus tile (next to Word Bridges)`); }
+  for (const r of ['a1', 'c2']) { await page.evaluate(r => WR.go('door', { rid: r, door: 'write' }), r); ok(await page.locator('.marks-tile').count() === 1 && await page.locator('.cloze-tile').count() === 1, `${r.toUpperCase()} realm has a Punctuation Pixies bonus tile (next to Word Bridges)`); }
   ok(await page.evaluate(() => { const t = document.querySelector('.marks-tile'); return !!t.querySelector('img') && !/🧚/.test(t.textContent); }), 'the bonus tile shows the painted pixie icon, not an emoji');
-  await page.evaluate(() => WR.go('realm', 'a1')); await page.click('.marks-tile'); await page.waitForSelector('.sw-book');
+  await page.evaluate(() => WR.go('door', { rid: 'a1', door: 'write' })); await page.click('.marks-tile'); await page.waitForSelector('.sw-book');
   ok(await page.locator('.sw-book').count() === 3 && await page.locator('.ch-lv').count() === 6 && /Punctuation Pixies/.test(await page.innerText('.title')), 'the A1 shelf has 3 books and level tabs for the 6 open realms');
   await clean(page); await page.screenshot({ path: OUT + 'marks_01_shelf.png' });
   let f = await fit(page); ok(f.sw <= 375 && !f.bad.length, `375: shelf fits (${f.bad})`);

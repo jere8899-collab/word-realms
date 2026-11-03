@@ -12,7 +12,7 @@ const MATH = ['math1', 'dojo1', 'clock1', 'model1', 'balance1'];
   await ctx.route(/supabase|jsdelivr|unpkg/, r => r.abort());
   await ctx.addInitScript(() => { window.__WR_TEST = { holdMs: 0, pinOffer: false }; window.__WR_NO_SW = true; });
   const page = await ctx.newPage(); const errs = []; page.on('pageerror', e => errs.push(String(e)));
-  const load = async (patch) => { await page.goto(BASE); await page.evaluate(s => { localStorage.clear(); localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)); }, { ...SAVE, ...patch }); await page.reload(); await page.waitForSelector('#navbar'); await page.waitForFunction(() => WR.realms && WR.state.daily); };
+  const load = async (patch) => { await page.goto(BASE + 'manifest.webmanifest'); await page.evaluate(s => { localStorage.clear(); localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)); }, { ...SAVE, ...patch }); await page.goto(BASE); await page.waitForSelector('#navbar'); await page.waitForFunction(() => WR.realms && WR.state.daily); };
   // roll `n` game days in a row (the game day is moved by the test; quests roll exactly as on a real new day)
   const roll = (n, setup) => page.evaluate(([n, setup]) => { if (setup) (new Function(setup))(); const real = WR.today, out = []; let d = new Date(real() + 'T12:00:00');
     for (let i = 0; i < n; i++) { d.setDate(d.getDate() + 1); const k = d.toISOString().slice(0, 10); WR.today = () => k; WR.ensureDaily(); out.push(WR.state.daily.quests.map(q => q.id)); }

@@ -109,9 +109,9 @@ const MOB = { deviceScaleFactor: 2, isMobile: true, hasTouch: true };
   const sw0 = await page.evaluate(() => WR.state.swap);
   ok(sw0 && typeof sw0.done === 'object' && !Object.keys(sw0.done).length && sw0.rounds === 0, 'old save gains an empty swap block');
   ok(await page.evaluate(() => WR.state.progress.a1.grammar.best === 0.7 && WR.state.phonics && WR.state.charms && WR.state.stories), 'the rest of the old save is untouched (other bonus blocks too)');
-  for (const r of ['a1', 'b2']) { await page.evaluate(r => WR.go('realm', r), r); ok(await page.locator('.swap-tile').count() === 1, `${r.toUpperCase()} realm has a Spell Swap bonus tile`); }
+  for (const r of ['a1', 'b2']) { await page.evaluate(r => WR.go('door', { rid: r, door: 'write' }), r); ok(await page.locator('.swap-tile').count() === 1, `${r.toUpperCase()} realm has a Spell Swap bonus tile`); }
   await page.locator('.swap-tile').scrollIntoViewIfNeeded(); await clean(page); await page.screenshot({ path: OUT + 'swap_01_tile.png' });
-  await page.evaluate(() => WR.go('realm', 'a1')); await page.click('.swap-tile'); await page.waitForSelector('.sw-book');
+  await page.evaluate(() => WR.go('door', { rid: 'a1', door: 'write' })); await page.click('.swap-tile'); await page.waitForSelector('.sw-book');
   ok(await page.locator('.sw-book').count() === 3 && await page.locator('.ch-lv').count() === 4, 'the A1 shelf has 3 books and level tabs for the 4 open realms');
   ok(/Tap the word tiles/.test(await page.innerText('.sw-how')), 'A1 explains the tile task');
   await clean(page); await page.screenshot({ path: OUT + 'swap_02_shelf.png', fullPage: true });

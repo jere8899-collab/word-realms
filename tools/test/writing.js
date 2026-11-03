@@ -94,7 +94,7 @@ On balance, I believe that education is the more important method. Not only does
 
   // ---- 3. A1 UI flow ----
   const before = await page.evaluate(() => ({ stars: WR.state.stars, xp: WR.state.pet.xp, passed: WR.realmProgress('a1').passed }));
-  await page.evaluate(() => WR.go('realm', 'a1'));
+  await page.evaluate(() => WR.go('door', { rid: 'a1', door: 'write' }));   // N7: behind the ✍️ Write it door
   await page.waitForSelector('[data-write]'); await clean(page);
   assert(/Bonus/.test(await page.textContent('[data-write]')), 'bonus writing tile in the realm');
   await page.screenshot({ path: OUT + 'writing_01_realm_tile.png' });
@@ -156,7 +156,7 @@ On balance, I believe that education is the more important method. Not only does
   assert(await page.evaluate(() => [...document.querySelectorAll('.plot')].some(p => WR.iconText(p).includes('✒️'))), 'garden shows the writing card with the ✒️ icon');
 
   // ---- 5. C1 flow + desktop feedback screenshot ----
-  await page.evaluate(() => WR.go('realm', 'c1')); await page.waitForSelector('[data-write]'); await page.click('[data-write]');
+  await page.evaluate(() => WR.go('door', { rid: 'c1', door: 'write' })); await page.waitForSelector('[data-write]'); await page.click('[data-write]');
   await page.waitForSelector('.quill-task'); await page.click('.quill-task[data-id="c1-w01"]'); await page.waitForSelector('#qPlan');
   await page.click('#qSkip'); await page.waitForSelector('#qText');
   await page.fill('#qText', C1_TEXT);
@@ -179,7 +179,7 @@ On balance, I believe that education is the more important method. Not only does
   // ---- 6. mobile 390×844 ----
   const m = await open({ width: 390, height: 844 });
   const ov = async tag => { const o = await m.evaluate(() => ({ sw: document.documentElement.scrollWidth, bw: document.body.scrollWidth })); assert(o.sw <= 390 && o.bw <= 390, `mobile ${tag}: no horizontal overflow (${o.sw}px)`); };
-  await m.evaluate(() => WR.go('realm', 'b1')); await m.waitForSelector('[data-write]'); await ov('realm');
+  await m.evaluate(() => WR.go('door', { rid: 'b1', door: 'write' })); await m.waitForSelector('[data-write]'); await ov('realm');
   await m.click('[data-write]'); await m.waitForSelector('.quill-task'); await ov('picker');
   await m.click('.quill-task[data-id="b1-w01"]'); await m.waitForSelector('#qPlan'); await ov('plan');
   await m.click('#qSkip'); await m.waitForSelector('#qText'); await m.fill('#qText', STRONG_B1); await ov('write');

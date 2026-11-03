@@ -114,8 +114,8 @@ const MOB = { deviceScaleFactor: 2, isMobile: true, hasTouch: true };
   const cz0 = await page.evaluate(() => WR.state.cloze);
   ok(cz0 && typeof cz0.done === 'object' && !Object.keys(cz0.done).length && cz0.rounds === 0, 'old save gains an empty cloze block');
   ok(await page.evaluate(() => WR.state.progress.a1.grammar.best === 0.7 && WR.state.swap.done['a1.1'].crowns === 3 && WR.state.forge && WR.state.phonics && WR.state.charms), 'the rest of the old save is untouched (Spell Swap progress too)');
-  for (const r of ['a1', 'b2']) { await page.evaluate(r => WR.go('realm', r), r); ok(await page.locator('.cloze-tile').count() === 1 && await page.locator('.forge-tile').count() === 1 && await page.locator('.swap-tile').count() === 1, `${r.toUpperCase()} realm has a Word Bridges bonus tile (next to Spell Swap and Word Forge)`); }
-  await page.evaluate(() => WR.go('realm', 'a1')); await page.click('.cloze-tile'); await page.waitForSelector('.sw-book');
+  for (const r of ['a1', 'b2']) { await page.evaluate(r => WR.go('door', { rid: r, door: 'write' }), r); ok(await page.locator('.cloze-tile').count() === 1 && await page.locator('.forge-tile').count() === 1 && await page.locator('.swap-tile').count() === 1, `${r.toUpperCase()} realm has a Word Bridges bonus tile (next to Spell Swap and Word Forge)`); }
+  await page.evaluate(() => WR.go('door', { rid: 'a1', door: 'write' })); await page.click('.cloze-tile'); await page.waitForSelector('.sw-book');
   ok(await page.locator('.sw-book').count() === 3 && await page.locator('.ch-lv').count() === 4 && /Word Bridges/.test(await page.innerText('.title')), 'the A1 shelf has 3 texts and level tabs for the 4 open realms');
   ok(/Tap the ONE word/.test(await page.innerText('.sw-how')), 'A1 explains the tile task');
   await clean(page); await page.screenshot({ path: OUT + 'cloze_01_shelf.png', fullPage: true });

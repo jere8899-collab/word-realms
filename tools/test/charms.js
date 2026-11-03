@@ -83,9 +83,9 @@ const MOB = { deviceScaleFactor: 2, isMobile: true, hasTouch: true };
   ok(c0 && typeof c0.cards === 'object' && Object.keys(c0.cards).length === 0 && c0.rounds === 0, 'old save gains an empty charms block');
   ok(await page.evaluate(() => WR.state.progress.a1.grammar.best === 0.8 && WR.state.totalCorrect === 20), 'the rest of the old save is untouched');
   ok(!(await page.$('#charmsNudge')), 'no map nudge while nothing is due');
-  await page.evaluate(() => WR.go('realm', 'a1'));
+  await page.evaluate(() => WR.go('door', { rid: 'a1', door: 'play' }));   // N7: Word Charms sits behind the 🎲 Play door
   ok(await page.locator('.charms-tile').count() === 1, 'the A1 realm has a 🔮 Word Charms bonus tile');
-  ok(await page.locator('[data-speak]').count() === 1 && await page.locator('[data-write]').count() === 1 && await page.locator('[data-story]').count() === 1 && await page.locator('.phonics-tile').count() === 1, 'the other bonus tiles are still there (shared tile helper)');
+  ok(await page.locator('[data-story]').count() === 1 && await page.evaluate(() => { WR.go('door', { rid: 'a1', door: 'say' }); const a = !!document.querySelector('[data-speak]') && !!document.querySelector('.phonics-tile'); WR.go('door', { rid: 'a1', door: 'write' }); const b = !!document.querySelector('[data-write]'); WR.go('door', { rid: 'a1', door: 'play' }); return a && b; }), 'the other bonus tiles are still there, each behind its door (shared tile helper)');
   await page.locator('.charms-tile').scrollIntoViewIfNeeded(); await clean(page); await page.screenshot({ path: OUT + 'charms_00_tile.png' });
   await page.click('.charms-tile'); await page.waitForSelector('.ch-grid .ch-charm');
   ok(await page.locator('.ch-charm').count() === 40 && await page.locator('.ch-charm.mystery').count() === 40, 'the hub shows 40 A1 charms, all still mysteries');

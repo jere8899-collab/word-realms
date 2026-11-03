@@ -21,7 +21,7 @@ const SIZES = [
 // in the page: every visible tappable thing must be topmost at its centre after scrolling it into view,
 // and must not be under the fixed tab bar.
 const audit = () => {
-  const SEL = 'button,.btn,a[href],input,select,textarea,[data-k],[data-r],[data-av],[data-pet],[data-lv],[data-sp],[data-speak],[data-write],#petCard,#mirrorBtn,#ccOnb,#gardenNudge,.opt,.mcard,.tile,.cc-pick,.quill-task,.mirror-pick';
+  const SEL = 'button,.btn,a[href],input,select,textarea,[data-k],[data-r],[data-av],[data-pet],[data-lv],[data-sp],[data-speak],[data-write],[data-door],#petCard,#mirrorBtn,#ccOnb,#gardenNudge,.opt,.mcard,.tile,.cc-pick,.quill-task,.mirror-pick';
   const nav = document.getElementById('navbar');
   const navOn = nav && getComputedStyle(nav).display !== 'none';
   const modal = [...document.querySelectorAll('.modal-bg')].pop();
@@ -115,8 +115,9 @@ const audit = () => {
     const leave = async () => { const q = await page.$('#quitBtn') || await page.$('#qBackRealm'); if (q) { await q.scrollIntoViewIfNeeded(); await q.click(); } else await page.evaluate(() => WR.go('home')); await page.waitForTimeout(250); };
     await hiddenIn('lesson'); await leave(); await tapNav('pet', 'after leaving a lesson'); await tapNav('home', 'after leaving a lesson');
     // speaking, writing, special, placement
-    for (const [lab, sel, wait] of [['speaking', '[data-speak]', '#quitBtn'], ['writing', '[data-write]', '#quitBtn,.quill-task'], ['special', '[data-sp]', '#quitBtn']]) {
+    for (const [lab, sel, wait, door] of [['speaking', '[data-speak]', '#quitBtn', 'say'], ['writing', '[data-write]', '#quitBtn,.quill-task', 'write'], ['special', '[data-sp]', '#quitBtn', 'play']]) {
       await page.evaluate(() => WR.go('realm', 'a1')); await page.waitForSelector('[data-k="vocab"]');
+      const dr = await page.$(`[data-door="${door}"]:not(.locked)`); if (dr) { await dr.click(); await page.waitForSelector('#bonusRow'); }   // N7: games sit behind the doors
       if (!await page.$(sel)) continue;
       await page.click(sel); await page.waitForSelector(wait, { timeout: 8000 }); await check(lab, lab !== 'special');
       await hiddenIn(lab); await leave(); await tapNav('home', 'after ' + lab);

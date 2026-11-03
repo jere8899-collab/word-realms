@@ -174,7 +174,7 @@ WR.GapRound = cfg => {
   }
   const stop = () => { S = null; };
   WR.gapGames.push({ id: cfg.id, info: cfg.info, hub: cfg.hub, round: cfg.round, open, stop, tile, s: () => S });   // s: the running round (tests)
-  WR.addBonus({ data: cfg.id, open: rid => open(rid), tile: rid => tile(rid) });
+  WR.addBonus({ data: cfg.id, door: cfg.door || "write", open: rid => open(rid), tile: rid => tile(rid) });   // N7: inside a bonus door
   WR.addGrownNote && WR.addGrownNote(cfg.id, `${cfg.icon} ${cfg.tile.title}`, rid => cfg.load(rid).then(() => cfg.note(rid, cfg.set(rid))));   // R16: exam wording for grown-ups
   return { open, start, stop, s: () => S, tile, unitsDone, crownsAt, all: () => Object.entries(st().done) };
 };

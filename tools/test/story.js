@@ -38,8 +38,8 @@ const SAVE = JSON.stringify({ v: 1, name: 'Jeremy', avatar: 'avatar_mage', start
   const st0 = await page.evaluate(() => WR.state.stories);
   assert(st0 && typeof st0.done === 'object' && typeof st0.words === 'object', 'old save gains an empty stories block');
   assert((await page.$eval('#bookPill', e => WR.iconText(e))).trim() === '📜 Storybook 0/6 pages', 'map shows the Storybook pill (0/6)');
-  await page.evaluate(() => WR.go('realm', 'a1')); await page.waitForTimeout(400);
-  assert(await page.locator('.story-tile').count() === 1, 'realm screen has a Story tile');
+  await page.evaluate(() => WR.go('door', { rid: 'a1', door: 'play' })); await page.waitForTimeout(400);
+  assert(await page.locator('.story-tile').count() === 1, 'the 🎲 Play door has a Story tile (N7)');
   await clean(page); await page.screenshot({ path: OUT + 'story_01_tile.png' });
   await page.locator('.story-tile').click(); await page.waitForSelector('.shelf-ch');
   assert(await page.locator('.shelf-ch').count() >= 4, 'the Story tile opens the A1 chapter shelf (4+ chapters)');

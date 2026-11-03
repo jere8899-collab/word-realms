@@ -76,7 +76,7 @@ const OUT = '/workspace/cefr-quest/screenshots/';
     await page.waitForSelector('.skill-card');
   }
   // A1 special (match)
-  await page.click('[data-sp]');
+  await page.click('[data-door="play"]'); await page.click('[data-sp]');   // N7: the realm game is behind the 🎲 Play door
   await page.waitForSelector('.mcard');
   await page.screenshot({ path: OUT + 'special_a1_match.png', fullPage: true });
   // teacher mode for remaining realms
@@ -92,10 +92,10 @@ const OUT = '/workspace/cefr-quest/screenshots/';
     await page.waitForSelector('.skill-card');
   }
   // specials B1 quest, C1 debate
-  await page.evaluate(() => WR.go('realm', 'b1')); await page.waitForSelector('[data-sp]'); await page.click('[data-sp]');
+  await page.evaluate(() => WR.go('door', { rid: 'b1', door: 'play' })); await page.waitForSelector('[data-sp]'); await page.click('[data-sp]');
   await page.waitForSelector('.story'); await page.screenshot({ path: OUT + 'special_b1_quest.png', fullPage: true });
   await page.click('.opt'); await page.waitForTimeout(200); await page.screenshot({ path: OUT + 'special_b1_quest_step2.png', fullPage: true });
-  await page.evaluate(() => WR.go('realm', 'c1')); await page.waitForSelector('[data-sp]'); await page.click('[data-sp]');
+  await page.evaluate(() => WR.go('door', { rid: 'c1', door: 'play' })); await page.waitForSelector('[data-sp]'); await page.click('[data-sp]');
   await page.waitForSelector('.knob'); await page.click('.opt'); await page.waitForSelector('#nextBtn'); await page.screenshot({ path: OUT + 'special_c1_debate.png', fullPage: true });
   // pet screen
   await page.evaluate(() => WR.go('pet'));
