@@ -172,16 +172,19 @@ function hud() {
   const n = L.items.length;
   return `<span class="pill">${L.guardian ? "🛡️ Guardian" : L.challenge ? "🗼 Tower" : "Grade " + L.grade} · ${esc(L.title)}</span><span class="qnum">${Math.min(L.i + 1, n)}/${n}</span><div class="gems">${L.items.map((_, k) => `<span class="${k < L.i ? (L.res[k] === 1 ? "g1" : L.res[k] ? "g5" : "g0") : k === L.i ? "cur" : ""}">${k < L.i ? (L.res[k] === 1 ? "💎" : L.res[k] ? "🔹" : "🫧") : "·"}</span>`).join("")}</div>`;
 }
+// 💡 Hint + 🧮 Model sit in the question card's top corner (css/math.css .mtools), never in the pet card: squeezed in
+// beside the pet on phones they crushed its speech bubble to one letter a line and pushed Model off the screen
+const toolsHTML = () => `<div class="mtools"><button class="btn ghost small" id="hintBtn">💡 Hint</button>${L.viz ? `<button class="btn ghost small" id="vizBtn">${vizLabel()}</button>` : ""}</div>`;
 function render() {
   const q = L.items[L.i]; L.tries = 0; L.done = false; L.res = L.res || []; L.viz = window.MathViz ? window.MathViz.spec(q) : null; Object.assign(L, { vizOpen: false, vizUsed: false, dealt: 0, bstep: 0, bmsg: "", bwob: null, bmiss: false, ck: null });
   WR.view(`<div class="lesson-bg" style="background-image:${WR.bgCss("bg_math")}"></div>
     <div class="row" style="margin:6px 0 8px"><button class="btn ghost small" id="quitBtn">← Leave</button><b class="title">🔢 ${esc(L.title)}</b></div>
     ${L.guardian ? `<div class="card gstrip" id="gstrip">${guardMeter()}</div>` : ""}<div class="card hud">${hud()}</div>
-    <div class="lesson fade-in"><div class="card qcard mq">${MW.qHead(q)}<div id="mviz"></div>
+    <div class="lesson mlesson fade-in"><div class="card qcard mq">${toolsHTML()}${MW.qHead(q)}<div id="mviz"></div>
       ${q.kind === "mcq" ? MW.optsHTML(q) : MW.inputHTML(q, L.grade)}
       <div id="mexplain"></div></div>
       <div class="card side"><div class="petbox" id="lpet">${WR.petHTML()}</div><div class="bubble" id="lbubble">${esc(L.i === 0 ? "Let's solve it together! ✨" : WR.petMood())}</div>
-      <div class="lstats" id="lstats">${WR.statsHTML([["⭐", L.starsEarned, "earned"], ["🔥", L.combo, "combo"]])}</div><button class="btn ghost small" id="hintBtn" style="margin-top:6px">💡 Hint</button>${L.viz ? `<button class="btn ghost small" id="vizBtn" style="margin-top:6px">${vizLabel()}</button>` : ""}</div></div>`);
+      <div class="lstats" id="lstats">${WR.statsHTML([["⭐", L.starsEarned, "earned"], ["🔥", L.combo, "combo"]])}</div></div></div>`);
   const vb = WR.$("#vizBtn"); if (vb) vb.onclick = () => { if (L.vizOpen && !L.done) { L.vizOpen = false; WR.$("#mviz").innerHTML = ""; vb.textContent = vizLabel(); } else showViz(); };
   WR.$("#quitBtn").onclick = () => { const o = L; L = null; o.challenge ? WR.go("dojo") : WR.go("math"); };
   WR.$("#hintBtn").onclick = () => { if (L.done) return; showMsg("hint", `💡 ${MW.html(q.hint)}`); };

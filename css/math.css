@@ -19,6 +19,11 @@
 /* questions */
 .mq .mqtext{font-size:1.25rem;font-weight:800;line-height:1.5;margin:6px 0 12px}
 .mq .mqtext .katex{font-size:1.12em}
+/* 💡 Hint + 🧮 Model: a small pill pair in the question card's top-right corner (js/math.js toolsHTML). A short question
+   shares their line; pictures, drawings and answers always start below them. Each pill is a ≥44 px tap target. */
+.mq .mtools{float:right;display:flex;gap:6px;margin:0 -4px 6px 10px;position:relative;z-index:1}
+.mq .mtools .btn{min-height:44px;min-width:44px;padding:6px 12px;font-size:.85rem;margin:0;white-space:nowrap}
+.mq>.mtools~:not(.mqtext){clear:both}
 .mpicbox{display:flex;justify-content:center;margin-bottom:6px}
 .mpic.emojis{font-size:1.9rem;line-height:1.25;text-align:center}.mpic.emojis .erow{letter-spacing:4px}
 .mpic.coins{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}

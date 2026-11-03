@@ -345,7 +345,7 @@ function render() {
     <div class="card hud quill-hud">${stepsBar()}</div>
     <div class="lesson fade-in quill"><div class="card qcard">${Q.step === "feedback" ? "" : taskCard(p)}<div id="qStep"></div></div>
       <div class="card side"><div class="petbox" id="lpet">${WR.petHTML()}</div><div class="bubble" id="lbubble">${Q.step === "plan" ? "Plan first, then write! I'll cheer you on 🪶" : Q.step === "write" ? "I'm watching the words grow… ✨" : "Let's read the Quill's feedback! 🔮"}</div>
-      <div class="muted" style="font-size:.85rem;font-weight:800">${b ? `Best: ${crownRow(b.crowns)} ${b.total}/20` : "First try: earn up to 3⭐"}</div></div></div>`);
+      <div class="muted side-note">${b ? `Best: ${crownRow(b.crowns)} ${b.total}/20` : "First try: earn up to 3⭐"}</div></div></div>`);
   WR.$("#qList").onclick = () => { flush(); WR.startWriting(Q.realm.id); };
   document.querySelectorAll("[data-step]").forEach(x => x.onclick = () => { if (x.disabled) return; flush(); Q.step = x.dataset.step; render(); });
   ({ plan: planStep, write: writeStep, feedback: feedbackStep })[Q.step]();

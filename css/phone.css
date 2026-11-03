@@ -37,9 +37,16 @@ html:has(body.wr-focus){scroll-padding-bottom:16px}
   .lesson.lhud{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"bar side" "q q";gap:8px}
   .lesson.lhud>.side{order:0;display:flex;align-items:center;gap:6px;padding:4px 8px 4px 4px;max-width:46vw;min-height:0;align-self:stretch}
   .lesson.lhud>.side .petbox{width:46px;height:46px;flex:none;margin:0}
-  .lesson.lhud>.side .bubble{font-size:13px;line-height:1.2;margin:0;padding:5px 8px;min-height:0;max-width:none;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  /* the pet card gets the wider share of the row so its bubble keeps ≥ 120 px from 360 px up (boss rounds keep auto: the boss bar needs the room) */
+  .lesson.lhud:not(.lboss){grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}
+  .lesson.lhud:not(.lboss)>.side{max-width:none}
+  /* a note under the pet (Quill's "Best: …" line) gets its own line in the card instead of squeezing the bubble */
+  .lesson.lhud>.side:has(>.side-note){flex-wrap:wrap;justify-content:center;align-content:center}
+  .lesson.lhud>.side:has(>.side-note)>.bubble{flex:1 1 0}
+  .lesson.lhud>.side>.side-note{flex:1 1 100%;text-align:center;font-size:.78rem}
+  /* 3 lines at most; the bottom "padding" is a white border so a 4th line can't peek out under the clip */
+  .lesson.lhud>.side .bubble{font-size:13px;line-height:1.2;margin:0;padding:5px 8px 0;border-bottom:5px solid #fff;min-height:0;max-width:none;min-width:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
   .lesson.lhud>.side .bubble:after{top:50%;left:-7px;margin:-7px 0 0;border:7px solid transparent;border-left:0;border-right-color:#fff}
-  .lesson.lhud>.side .btn{padding:4px 8px;font-size:.75rem;margin:0 !important}
   .lesson.lhud>.side .side-sumi{width:46px}
   .lbar{padding:6px 10px;gap:4px 6px;min-height:58px}
   .lbar .hud{gap:4px 6px}
@@ -370,6 +377,11 @@ body.kbd-open .toast{display:none}
 /* R10: small phones — chips drop their words under 400 px; the pet bubble hides under 340 px (the pet still bounces) */
 @media (max-width:399px){.lstats .stw{display:none}}
 @media (max-width:339px){.lesson.lhud>.side .bubble{display:none}.lesson.lhud>.side{max-width:none}}
+/* maths rounds under 360 px: the pet card takes its own full-width row under the progress card, so Sumi's tip stays readable */
+@media (max-width:359px){.lesson.lhud.mlesson:not(.lboss){grid-template-columns:minmax(0,1fr);grid-template-areas:"bar" "side" "q";gap:6px}
+  .lesson.lhud.mlesson>.side .bubble{display:-webkit-box;-webkit-line-clamp:2;flex:1 1 auto}
+  .lesson.lhud.mlesson>.side .petbox{width:40px;height:40px}
+  .lesson.lhud.mlesson:not(.lboss)>.lbar{min-height:0;padding:4px 10px}}
 /* R11: buttons never wrap now, so the onboarding pair shrinks a little on the narrowest phones */
 @media (max-width:359px){.onb-next{gap:6px}.onb-next .btn{padding:10px 12px;font-size:.92rem}}
 /* 🏠 R15: a shorter home page on phones: slimmer realm rows (the game mode shows inside each realm) */
