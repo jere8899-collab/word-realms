@@ -1,6 +1,7 @@
 # 📜 Storybook chapter 4 per level (R20 Storybook wave 3, 2026-11-03): each realm's tale carries on after chapter 3.
 # Same shape as tools/c_stories3.py, plus hand-written "why not" notes: N = the three wrong options' notes, in order.
 # The FIRST option is always correct (shuffled at runtime). {hero} and {pet} are filled in at runtime.
+# Pictures: GenerateImage chibi paintings installed with tools/install_story_img.py (jpg + webp); never Pillow composites or Higgsfield.
 def P(text, q, opts, explain, notes, kind):
     return {"text": text, "q": Q(q, opts, explain, notes, kind)}
 def Q(q, opts, explain, notes, kind="vocab"):
