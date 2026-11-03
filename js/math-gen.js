@@ -37,6 +37,42 @@ const mixedTex = (n, d) => { [n, d] = simp(n, d); if (d === 1 || Math.abs(n) < d
 const sqrtTex = n => `\\sqrt{${n}}`;
 const surdTex = (k, n) => { if (n === 1) return String(k); if (!k) return "0"; if (k === 1) return sqrtTex(n); if (k === -1) return "-" + sqrtTex(n); return `${k}${sqrtTex(n)}`; };
 const simpRad = n => { n = Math.abs(n | 0); if (!n) return [0, 0]; let a = 1; for (let p = 2; p * p <= n; p++) while (n % (p * p) === 0) { n /= p * p; a *= p; } return [a, n]; };
+/* matrix kit (Matrix Meadow, and shared pmatrix TeX for column vectors): matTex(rows) → LaTeX pmatrix;
+   matSvg(title, rows, opts?) → pastel chibi card with class=mgrid / mcell (data-r, data-c, data-v) so tests can
+   re-read the matrix; opts.B + opts.op draw a second grid with an operator badge (add / scalar / multiply). */
+const matTex = rows => `\\begin{pmatrix} ${rows.map(r => r.join(" & ")).join(" \\\\ ")} \\end{pmatrix}`;
+const matSvg = (title, rows, opts = {}) => {
+  const cell = (r, c, v, hi) => {
+    const fill = hi ? "#FFE7A8" : PASTEL[(r * 3 + c) % PASTEL.length];
+    return `<rect class="mcell" data-r="${r}" data-c="${c}" data-v="${esc(v)}" x="0" y="0" width="36" height="28" rx="6" fill="${fill}" stroke="${LINE}" stroke-width="1.4" transform="translate(${c * 40},${r * 32})"/><text x="${c * 40 + 18}" y="${r * 32 + 19}" font-size="13" text-anchor="middle" font-weight="800" fill="${INK}">${esc(v)}</text>`;
+  };
+  const grid = (R, which, hiSet) => {
+    const nr = R.length, nc = R[0].length;
+    let cells = ""; for (let r = 0; r < nr; r++) for (let c = 0; c < nc; c++) cells += cell(r, c, R[r][c], hiSet && hiSet.has(r + "," + c));
+    const gw = nc * 40 - 4, gh = nr * 32 - 4;
+    return `<g class="mgrid" data-which="${which}" data-rows="${nr}" data-cols="${nc}"><rect x="-6" y="-6" width="${gw + 12}" height="${gh + 12}" rx="10" fill="#FFFDF8" stroke="${INK}" stroke-width="1.6" fill-opacity=".35"/>${cells}</g>`;
+  };
+  const hi = new Set((opts.hi || []).map(([r, c]) => r + "," + c));
+  const A = rows, B = opts.B, op = opts.op || "";
+  const nr = A.length, nc = A[0].length;
+  const aw = nc * 40 - 4, ah = nr * 32 - 4;
+  let body = "", cx = 24, cy = 36;
+  const badge = (x, y, txt) => `<g transform="translate(${x},${y})"><circle r="14" fill="#E2D6FF" stroke="${LINE}" stroke-width="1.4"/><text y="5" font-size="13" text-anchor="middle" font-weight="900" fill="${INK}">${esc(txt)}</text></g>`;
+  if (B) {
+    const br = B.length, bc = B[0].length, bw = bc * 40 - 4, bh = br * 32 - 4;
+    const midY = Math.max(ah, bh) / 2;
+    body += `<g transform="translate(${cx},${cy})">${grid(A, "A", hi)}</g>`;
+    const opX = cx + aw + 28;
+    body += badge(opX, cy + midY, op || "+");
+    body += `<g transform="translate(${opX + 28},${cy + (ah - bh) / 2})">${grid(B, "B", null)}</g>`;
+    const W = opX + 28 + bw + 28, H = Math.max(ah, bh) + cy + 24;
+    return cardSvg(Math.max(W, 200), H, title, 18, body, "matrix diagram", "mpic chart matrix");
+  }
+  if (op) { body += badge(cx + 6, cy + ah / 2, op); cx += 36; }
+  body += `<g transform="translate(${cx},${cy})">${grid(A, "A", hi)}</g>`;
+  const W = cx + aw + 24, H = ah + cy + 24;
+  return cardSvg(Math.max(W, 160), H, title, 18, body, "matrix diagram", "mpic chart matrix");
+};
 const sgn = (c, first) => c < 0 ? (first ? "-" : " - ") : (first ? "" : " + ");
 // polynomial in x from [[coef, power], ...] (highest first)
 const poly = (terms, v = "x") => { let s = "", first = true; for (const [c, p] of terms) { if (!c) continue; const a = Math.abs(c);
@@ -279,7 +315,7 @@ M.longMulSteps = (a, b) => { const bs = String(b).split("").reverse(); const out
 /* ====================== TOPICS ====================== */
 const TOPICS = [];
 const topic = (grade, id, name, icon, desc, gen, opt = {}) => TOPICS.push(Object.assign({ grade, id: `g${grade}.${id}`, name, icon, desc, gen }, opt));
-M._internal = { Q, num, mcq, mcqWhy, numWhy, T, NAMES, THINGS, COUNT_EMOJI, PASTEL, INK, LINE, esc, svgBox, cardSvg, tickAttr, xTicks, yUnit, xUnit, cellKey, figKey, hasCell, nearCells, gridPaper, gridSheet, gridCell, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, axes, svgBars, svgLine, svgPieChart, svgGeo, fitBox, toRad, toDeg, sinD, cosD, tanD, rotPt, dirPt, f1, xy, mid, vat, vdir, angSweep, angWedge, angText, rightPath, figCard, figShape, figEdge, figLab, figLens, figDot, figVtx, figRight, coin, emojiRows, table, colAdd, colSub, topic, TOPICS, gcd, lcm, rd, fmt, fdp, money, simp, fracTex, fracStr, mixedTex, sgn, poly, lin, paren, pm, undo, coef, ord, sum, asc, median, freqTotals, sqrtTex, surdTex, simpRad };
+M._internal = { Q, num, mcq, mcqWhy, numWhy, T, NAMES, THINGS, COUNT_EMOJI, PASTEL, INK, LINE, esc, svgBox, cardSvg, tickAttr, xTicks, yUnit, xUnit, cellKey, figKey, hasCell, nearCells, gridPaper, gridSheet, gridCell, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, axes, svgBars, svgLine, svgPieChart, svgGeo, fitBox, toRad, toDeg, sinD, cosD, tanD, rotPt, dirPt, f1, xy, mid, vat, vdir, angSweep, angWedge, angText, rightPath, figCard, figShape, figEdge, figLab, figLens, figDot, figVtx, figRight, coin, emojiRows, table, colAdd, colSub, topic, TOPICS, gcd, lcm, rd, fmt, fdp, money, simp, fracTex, fracStr, mixedTex, sgn, poly, lin, paren, pm, undo, coef, ord, sum, asc, median, freqTotals, sqrtTex, surdTex, simpRad, matTex, matSvg };
 M.TOPICS = TOPICS;
 M.topic = id => TOPICS.find(t => t.id === id);
 M.gradeTopics = g => TOPICS.filter(t => t.grade === g);
@@ -323,6 +359,17 @@ const close = (a, b, tol) => Math.abs(a - b) <= Math.max(tol, Math.abs(b) * 1e-9
 M.whyNote = (q, input) => {
   if (q.kind === "mcq") return (q.why && q.why[input]) || "";
   if (!q.slips || !q.slips.length) return "";
+  // pair / set slips are stored as "x, y" (or a list); match the typed parts, not a single parseNum
+  if (q.kind === "pair" || q.kind === "set") {
+    const split = s => String(s).replace(/[()]/g, "").replace(/[−–—]/g, "-").split(/\s*[,;]\s*|\s+and\s+|\s+or\s+/).filter(Boolean).map(M.parseNum);
+    const parts = split(input); if (!parts.length || parts.some(isNaN)) return "";
+    const s = q.slips.find(([x]) => {
+      const want = split(x); if (want.length !== parts.length || want.some(isNaN)) return false;
+      if (q.kind === "pair") return parts.length === 2 && close(parts[0], want[0], q.tol) && close(parts[1], want[1], q.tol);
+      const left = want.slice(); for (const g of parts) { const i = left.findIndex(w => close(g, w, q.tol)); if (i < 0) return false; left.splice(i, 1); } return true;
+    });
+    return s ? s[1] : "";
+  }
   const v = M.parseNum(input); if (isNaN(v)) return "";
   const s = q.slips.find(([x]) => close(v, x, q.tol)); return s ? s[1] : "";
 };

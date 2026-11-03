@@ -1,10 +1,10 @@
 /* 🔢 Number Kingdom topics, Grades 9–12 (Singapore Secondary 3–4, JC 1–2 / Years 10–13). */
 (function () {
 const M = (typeof module !== "undefined" && module.exports) ? require("./math-gen.js") : window.MathGen;
-const { Q, num, mcq, mcqWhy, numWhy, T, topic, PASTEL, INK, LINE, esc, svgBox, cardSvg, axes, xTicks, yUnit, xUnit, f1, xy, mid, vat, vdir, toDeg, sinD, cosD, tanD, rotPt, angSweep, angWedge, angText, rightPath, figCard, figEdge, figLab, figLens, figDot, figVtx, table, rd, fmt, fdp, fracTex, fracStr, poly, lin, paren, sgn, pm, sum, asc, median, freqTotals, gcd, simp, coef, NAMES, sqrtTex, surdTex, simpRad } = M._internal;
+const { Q, num, mcq, mcqWhy, numWhy, T, topic, PASTEL, INK, LINE, esc, svgBox, cardSvg, axes, xTicks, yUnit, xUnit, f1, xy, mid, vat, vdir, toDeg, sinD, cosD, tanD, rotPt, angSweep, angWedge, angText, rightPath, figCard, figEdge, figLab, figLens, figDot, figVtx, table, rd, fmt, fdp, fracTex, fracStr, poly, lin, paren, sgn, pm, sum, asc, median, freqTotals, gcd, simp, coef, NAMES, sqrtTex, surdTex, simpRad, matTex, matSvg } = M._internal;
 const sf3 = v => +(+v.toFixed(12)).toPrecision(3);
 const tol3 = v => Math.max(1e-9, Math.pow(10, Math.floor(Math.log10(Math.abs(v) || 1)) - 2) * 0.51);
-const V2 = v => `\\begin{pmatrix} ${v[0]} \\\\ ${v[1]} \\end{pmatrix}`, V3 = v => `\\begin{pmatrix} ${v[0]} \\\\ ${v[1]} \\\\ ${v[2]} \\end{pmatrix}`;
+const V2 = v => matTex([[v[0]], [v[1]]]), V3 = v => matTex([[v[0]], [v[1]], [v[2]]]);
 
 /* ---------- Grade 9 (Secondary 3) ---------- */
 topic(9, "quad", "Quadratic Quarry", "💠", "Solve by factorising (type both: 2, -3)", r => {
@@ -989,6 +989,162 @@ topic(10, "vectors", "Arrow Vectors", "➡️", "Column vectors and magnitude", 
   const a = [r.int(-6, 6), r.int(-6, 6)], b = [r.int(-6, 6), r.int(-6, 6)], k = r.int(2, 3), res = [k * a[0] + b[0], k * a[1] + b[1]];
   return Q({ q: `${T(`\\mathbf{a} = ${V2(a)},\\ \\mathbf{b} = ${V2(b)}`)}. Find ${T(`${k}\\mathbf{a} + \\mathbf{b}`)} (type top, bottom).`, kind: "pair", val: res, a: res.join(", "), keys: ["-", ","], hint: `Multiply each part of a by ${k}, then add b part by part.`, steps: [`$${k}\\mathbf{a} = ${V2([k * a[0], k * a[1]])}$`, `$${k}\\mathbf{a} + \\mathbf{b} = ${V2(res)}$`], data: { a, b, k } });
 });
+
+/* ---------- 🧩 Matrix Meadow (MOE Sec 3/4 E-Math matrices): order of a spell grid, add/subtract compatible 2×2
+   grids, scalar multiply, matrix multiply (2×2×2×2 and light 2×3×3×2), determinant ad−bc, inverse of an
+   invertible 2×2 (det ±1 or ±2), and solve a twin-potion system as AX=B with X = A⁻¹B. Pictures use the shared
+   matSvg kit (class=mgrid / mcell). Every MCQ option has its own why / why-not; typed questions carry ≥2 slips. */
+const MAT_CTX = [
+  { id: "meadow", title: "Matrix Meadow", who: "Fairy Pip", spot: "Matrix Meadow" },
+  { id: "potion", title: "Potion grid hut", who: "Gingerbread Baker", spot: "the potion-grid hut" },
+  { id: "crystal", title: "Crystal spell table", who: "Sumi the star fairy", spot: "the crystal-spell table" },
+  { id: "elf", title: "Meadow elf workshop", who: "Princess Mira", spot: "the meadow-elf workshop" },
+  { id: "lantern", title: "Lantern spell pads", who: "Jack", spot: "the lantern-spell pads" }
+];
+const mEntry = r => r.int(-5, 5);
+const m2 = r => [[mEntry(r), mEntry(r)], [mEntry(r), mEntry(r)]];
+const mAdd = (A, B) => A.map((row, i) => row.map((v, j) => v + B[i][j]));
+const mSub = (A, B) => A.map((row, i) => row.map((v, j) => v - B[i][j]));
+const mScale = (k, A) => A.map(row => row.map(v => k * v));
+const mMul = (A, B) => { const nr = A.length, nc = B[0].length, mid = B.length;
+  const C = []; for (let i = 0; i < nr; i++) { C[i] = []; for (let j = 0; j < nc; j++) { let s = 0; for (let k = 0; k < mid; k++) s += A[i][k] * B[k][j]; C[i][j] = s; } } return C; };
+const mDet = A => A[0][0] * A[1][1] - A[0][1] * A[1][0];
+const mHad = (A, B) => A.map((row, i) => row.map((v, j) => v * B[i][j]));
+const mEq = (A, B) => JSON.stringify(A) === JSON.stringify(B);
+const mT = A => A[0].map((_, c) => A.map(row => row[c])); // transpose
+const mInvNice = A => {
+  const d = mDet(A); if (!d || Math.abs(d) > 2) return null;
+  const adj = [[A[1][1], -A[0][1]], [-A[1][0], A[0][0]]];
+  return adj.map(row => row.map(v => v / d));
+};
+const mFmt = v => { if (Number.isInteger(v)) return String(v); const [n, d] = simp(Math.round(v * 2), 2); return d === 1 ? String(n) : fracTex(n, d); };
+const mTex = A => matTex(A.map(row => row.map(mFmt)));
+const mShow = A => T(mTex(A));
+const MAT = {
+  order: r => { const rows = r.pick([2, 2, 2, 3]), cols = r.pick(rows === 2 ? [2, 2, 3] : [2]);
+    const A = Array.from({ length: rows }, () => Array.from({ length: cols }, () => mEntry(r)));
+    const ctx = r.pick(MAT_CTX), ans = `${rows} x ${cols}`, pic = matSvg(ctx.title, A);
+    const wrong = [
+      [`${cols} x ${rows}`, `Order is rows × columns. This grid has ${rows} rows and ${cols} columns.`],
+      [`${rows + 1} x ${cols}`, `There are ${rows} rows, not ${rows + 1}.`],
+      [`${rows} x ${cols + 1}`, `There are ${cols} columns, not ${cols + 1}.`],
+      [`${rows * cols} x 1`, `Order is not the total number of entries. Write rows × columns.`],
+      [`1 x ${rows * cols}`, `A single long row would be 1 × ${rows * cols}. This grid has ${rows} rows.`],
+      [`${cols} x ${cols}`, `Count the rows first: there are ${rows} of them.`]
+    ].filter(([o]) => o !== ans);
+    return { k: "order", mc: true, ctx, A, rows, cols, right: ans, rightWhy: `Right: count the rows first, then the columns — this spell grid is ${rows} by ${cols}.`, wrong,
+      q: `${ctx.who} finds a spell grid in ${ctx.spot}. What is the order of ${mShow(A)}?`, hint: "Order means rows × columns.",
+      steps: [`The matrix has ${rows} row${rows > 1 ? "s" : ""} and ${cols} column${cols > 1 ? "s" : ""}.`, `Order = ${rows} × ${cols}.`], pic, data: { A, rows, cols, ans } }; },
+  add: r => { let A, B, C, sub; do { A = m2(r); B = m2(r); sub = r.chance(.4); C = sub ? mSub(A, B) : mAdd(A, B); } while (mEq(C, A) || mEq(C, B) || mEq(C, mHad(A, B)));
+    const ctx = r.pick(MAT_CTX), op = sub ? "-" : "+", right = mShow(C), pic = matSvg(ctx.title, A, { B, op });
+    const swapped = sub ? mSub(B, A) : mScale(2, A);
+    const wrong = [
+      [mShow(sub ? mAdd(A, B) : mSub(A, B)), sub ? "This adds the matching entries. The question asks for subtraction." : "This subtracts. The question asks you to add matching entries."],
+      [mShow(mHad(A, B)), "That multiplies matching entries. Add or subtract them instead."],
+      [mShow(swapped), sub ? "Keep the order: A − B, not B − A." : "That doubles A instead of adding B. Combine matching entries of A and B."],
+      [mShow([C[1], C[0]]), "The rows were swapped after combining. Keep the top row on top."],
+      [mShow(mScale(-1, C)), "The sign of every entry flipped. Keep each sum or difference as it is."]
+    ].filter(([o]) => o !== right);
+    return { k: "add", mc: true, ctx, A, B, C, sub, right, rightWhy: `Right: combine matching entries ${sub ? "by subtracting" : "by adding"} — each new entry is a${sub ? " difference" : " sum"} of the two grids.`, wrong,
+      q: `${ctx.who} combines two spell grids in ${ctx.spot}: find ${T(`${mTex(A)} ${op} ${mTex(B)}`)}.`, hint: `${sub ? "Subtract" : "Add"} the numbers that sit in the same place.`,
+      steps: [`$${mTex(A)} ${op} ${mTex(B)} = ${mTex(C)}$`], pic, data: { A, B, C, sub } }; },
+  scalar: r => { const A = m2(r), k = r.pick([-3, -2, 2, 3, 4, 5, -4]), C = mScale(k, A), ctx = r.pick(MAT_CTX);
+    const right = mShow(C), pic = matSvg(ctx.title, A, { op: `${k}×` });
+    const wrong = [
+      [mShow(mScale(-k, A)), `The scalar is ${k}, not ${-k}. Multiply every entry by ${k}.`],
+      [mShow(mScale(k > 0 ? k + 1 : k - 1, A)), `Use ${k} as the multiplier for every entry.`],
+      [mShow(mAdd(A, [[k, k], [k, k]])), `Multiply each entry by ${k}; do not add ${k} to each entry.`],
+      [mShow(A), `Do not leave the grid unchanged — stretch every number by ${k}.`],
+      [mShow(mT(C)), "That looks like a transpose of the answer. Keep each entry in its own seat."]
+    ].filter(([o]) => o !== right);
+    return { k: "scalar", mc: true, ctx, A, kk: k, C, right, rightWhy: `Right: every entry of the grid is multiplied by ${k}, so the new spell grid is scaled by that factor.`, wrong,
+      q: `${ctx.who} powers up a crystal grid in ${ctx.spot}: find ${T(`${k}${mTex(A)}`)}.`, hint: `Multiply every entry by ${k}.`,
+      steps: [`$${k}${mTex(A)} = ${mTex(C)}$`], pic, data: { A, k, C } }; },
+  mul: r => { const wide = r.chance(.28); let A, B, C;
+    if (wide) {
+      A = [[mEntry(r), mEntry(r), mEntry(r)], [mEntry(r), mEntry(r), mEntry(r)]];
+      B = [[mEntry(r), mEntry(r)], [mEntry(r), mEntry(r)], [mEntry(r), mEntry(r)]];
+      C = mMul(A, B);
+    } else {
+      let guard = 0; do { A = m2(r); B = m2(r); C = mMul(A, B); guard++; } while (guard < 20 && (mEq(C, mHad(A, B)) || mEq(C, mMul(B, A)) || mEq(C, mAdd(A, B))));
+    }
+    const ctx = r.pick(MAT_CTX), right = mShow(C), pic = matSvg(ctx.title, A, { B, op: "×" });
+    const BA = (!wide) ? mMul(B, A) : null;
+    const hadTrap = (!wide) ? mHad(A, B) : mScale(2, C);
+    const addTrap = (!wide) ? mAdd(A, B) : C.map(row => row.map(v => v + 1));
+    const wrong = [
+      [mShow(hadTrap), "That looks like multiplying matching entries. For matrix product, take a row of A times a column of B."],
+      [mShow(addTrap), "Add the grids only when the question says +. Here you multiply."],
+      BA && !mEq(BA, C) ? [mShow(BA), "That is BA. Keep the order AB — row of A against column of B."] : [mShow(C.map(row => [...row].reverse())), "A column was flipped. Check each row×column dot product again."],
+      [mShow([C[1], C[0]]), "The product rows were swapped. The top row of AB comes from the top row of A."]
+    ].filter(([o]) => o && o !== right);
+    return { k: "mul", mc: true, ctx, A, B, C, wide, right, rightWhy: "Right: each entry of the product is a row of the first grid dotted with a column of the second.", wrong,
+      q: `${ctx.who} weaves two spell grids in ${ctx.spot}: find the product ${T(`${mTex(A)} ${mTex(B)}`)}.`, hint: "Row of the first × column of the second.",
+      steps: [`The product has order ${C.length} × ${C[0].length}.`, `$${mTex(A)}${mTex(B)} = ${mTex(C)}$`], pic, data: { A, B, C, wide: !!wide } }; },
+  det: r => { let A, d; do { A = m2(r); d = mDet(A); } while (d === 0 && r.chance(.7));
+    const ctx = r.pick(MAT_CTX), pic = matSvg(ctx.title, A, { hi: [[0, 0], [1, 1]] });
+    const a = A[0][0], b = A[0][1], c = A[1][0], dd = A[1][1], ad = a * dd, bc = b * c;
+    const slips = [
+      [ad + bc, "That adds ad and bc. Determinant subtracts: ad − bc."],
+      [a + dd - b - c, "Do not add and subtract the four entries one by one — use ad − bc."],
+      [ad, `That is only ad. Subtract bc = ${bc} as well.`],
+      [-d === d ? d + 1 : -d, "The sign flipped. Compute ad − bc, not bc − ad."],
+      [bc - ad, "That is bc − ad. Flip it: the determinant is ad − bc."],
+      [a * b - c * dd, "Pair the diagonal a with d, and b with c: ad − bc."],
+      [d + 1, "Off by one. Recalculate ad − bc carefully."],
+      [d - 1, "Off by one the other way. Recalculate ad − bc carefully."],
+      [bc, `That is only bc. The determinant is ad − bc = ${ad} − ${paren(bc)}.`]
+    ].filter((s, i, arr) => s[0] !== d && Number.isFinite(s[0]) && arr.findIndex(t => t[0] === s[0]) === i);
+    return { k: "det", mc: false, ctx, A, d, q: `${ctx.who} checks a crystal key in ${ctx.spot}. Find det ${mShow(A)}.`,
+      hint: "For a 2×2 matrix [[a, b], [c, d]], det = ad − bc.",
+      steps: [`$\\det = (${a})(${dd}) - (${b})(${c})$`, `$= ${ad} - ${paren(bc)} = ${d}$`],
+      slips, pic, data: { A, d } }; },
+  inv: r => { let A, inv, d, guard = 0; do { A = m2(r); d = mDet(A); inv = mInvNice(A); guard++; } while ((!inv || ![-2, -1, 1, 2].includes(d)) && guard < 80);
+    if (!inv) { A = [[1, 0], [0, 1]]; d = 1; inv = [[1, 0], [0, 1]]; }
+    const ctx = r.pick(MAT_CTX), right = mShow(inv), pic = matSvg(ctx.title, A);
+    const adj = [[A[1][1], -A[0][1]], [-A[1][0], A[0][0]]];
+    const wrong = [
+      [mShow(adj), Math.abs(d) === 1 ? "For det ±1 you still apply 1/det to the adjugate — check the sign of the determinant." : `Divide every entry of the adjugate by det = ${d}.`],
+      [mShow(mT(inv)), "That is the transpose of the inverse. Keep each entry in its place after scaling the adjugate."],
+      [mShow(A), "The inverse is not the same as A (unless A² = I). Build (1/det)[[d, −b], [−c, a]]."],
+      [mShow([[0, 0], [0, 0]]), "A singular grid (det 0) has no inverse. This one is invertible, so keep going."],
+      [mShow(mScale(2, inv)), "Every entry was doubled. Use exactly 1/det times the adjugate."],
+      [mShow([[inv[1][1], inv[0][1]], [inv[1][0], inv[0][0]]]), "The diagonal entries were swapped. Keep the adjugate pattern [[d, −b], [−c, a]]."],
+      [mShow(mScale(-1, A)), "Negating A is not the inverse. Build (1/det) times the adjugate."]
+    ].filter(([o]) => o !== right);
+    // when det=±1, adj may equal ±inv — already filtered if equal to right; ensure unique notes
+    return { k: "inv", mc: true, ctx, A, inv, d, right, rightWhy: `Right: divide the adjugate [[d, −b], [−c, a]] by the determinant ${d}.`, wrong,
+      q: `${ctx.who} needs the undo-spell for ${mShow(A)} in ${ctx.spot}. Which matrix is the inverse?`, hint: `Find det = ad − bc (= ${d}), then (1/det) times [[d, −b], [−c, a]].`,
+      steps: [`$\\det = ${d}$`, `$A^{-1} = \\frac{1}{${d}}${mTex(adj)} = ${mTex(inv)}$`], pic, data: { A, inv, d } }; },
+  solve: r => { let A, inv, d, x, y, B, guard = 0;
+    do { A = m2(r); d = mDet(A); inv = mInvNice(A); x = r.int(-5, 5); y = r.int(-5, 5); guard++; }
+    while ((!inv || Math.abs(d) > 2 || (x === 0 && y === 0)) && guard < 80);
+    if (!inv) { A = [[1, 0], [0, 1]]; d = 1; inv = [[1, 0], [0, 1]]; x = r.int(1, 5); y = r.int(-4, 4) || 2; }
+    B = mMul(A, [[x], [y]]);
+    const ctx = r.pick(MAT_CTX), Bx = B[0][0], By = B[1][0];
+    const pic = matSvg(ctx.title, A, { B: [[Bx], [By]], op: "X" });
+    const slips = [
+      [`${y}, ${x}`, `That swaps x and y. The top of X is x = ${x}, the bottom is y = ${y}.`],
+      [`${-x}, ${-y}`, "Both signs flipped. Compute X = A⁻¹B carefully."],
+      [`${Bx}, ${By}`, "That is the column B, not X. Multiply A⁻¹ by B to find X."],
+      [`${x + y}, ${x - y}`, "Do not add or subtract the unknowns. Solve the matrix equation for X."]
+    ].filter((s, i, arr) => s[0] !== `${x}, ${y}` && arr.findIndex(t => t[0] === s[0]) === i);
+    return { k: "solve", mc: false, pair: true, ctx, A, inv, d, x, y, Bx, By,
+      q: `Meadow elves mix two spell ingredients. Solve ${T(`${mTex(A)}${matTex([["x"], ["y"]])} = ${matTex([[Bx], [By]])}`)} (type x, y like 3, -2).`,
+      hint: "Find A⁻¹, then X = A⁻¹B.",
+      steps: [`$\\det A = ${d}$, so $A^{-1} = ${mTex(inv)}$`, `$X = A^{-1}B = ${mTex(inv)}${matTex([[Bx], [By]])} = ${matTex([[x], [y]])}$`, `So $x = ${x}$, $y = ${y}$.`],
+      slips, pic, data: { A, inv, d, x, y, B: [Bx, By] } }; }
+};
+const MAT_KINDS = ["order", "order", "add", "add", "add", "scalar", "scalar", "mul", "mul", "mul", "det", "det", "inv", "inv", "solve", "solve"];
+const matQ = (r, kind) => {
+  const z = MAT[kind](r), ctx = z.ctx, uid = `mat|${z.k}|${JSON.stringify(z.data)}`;
+  const extra = { uid, pic: z.pic || "", data: Object.assign({ mat: z.k, ctx: ctx.id }, z.data) };
+  if (z.mc) return mcqWhy(r, z.q, z.right, z.rightWhy, z.wrong, z.hint, z.steps, extra);
+  if (z.pair) return Q(Object.assign({ q: z.q, kind: "pair", val: [z.x, z.y], a: `${z.x}, ${z.y}`, keys: ["-", ","], hint: z.hint, steps: z.steps, slips: z.slips }, extra));
+  return numWhy(z.q, z.d, z.hint, z.steps, z.slips, Object.assign({ keys: ["-"] }, extra));
+};
+topic(10, "matrices", "Matrix Meadow", "🧩", "Add, multiply and invert 2x2 spell grids", r => matQ(r, r.pick(MAT_KINDS)));
+
 topic(10, "interest", "Dragon Gold Interest", "🐉", "Compound interest", r => {
   const P = r.int(5, 50) * 100, rate = r.pick([2, 2.5, 3, 4, 5, 6]), n = r.int(2, 6), v = P * Math.pow(1 + rate / 100, n);
   return num(`A dragon deposits $${P} in the Goblin Bank at ${rate}% compound interest per year. How much is there after ${n} years? (nearest cent)`, rd(v, 2), "Amount = P(1 + r/100)ⁿ", [`$${P}\\left(1 + \\frac{${rate}}{100}\\right)^{${n}} \\approx ${fdp(v, 2)}$`], { a: fdp(v, 2), keys: ["."], tol: 0.0051, data: { P, rate, n } });
