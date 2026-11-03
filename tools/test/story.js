@@ -42,7 +42,7 @@ const SAVE = JSON.stringify({ v: 1, name: 'Jeremy', avatar: 'avatar_mage', start
   assert(await page.locator('.story-tile').count() === 1, 'realm screen has a Story tile');
   await clean(page); await page.screenshot({ path: OUT + 'story_01_tile.png' });
   await page.locator('.story-tile').click(); await page.waitForSelector('.shelf-ch');
-  assert(await page.locator('.shelf-ch').count() >= 3, 'the Story tile opens the A1 chapter shelf (3+ chapters)');
+  assert(await page.locator('.shelf-ch').count() >= 4, 'the Story tile opens the A1 chapter shelf (4+ chapters)');
   assert(await page.locator('.shelf-ch.locked').count() === await page.locator('.shelf-ch').count() - 1, 'only chapter 1 is open on a fresh save');
   await clean(page); await page.screenshot({ path: OUT + 'story_01b_shelf.png' });
   await page.locator('.shelf-ch').first().click(); await page.waitForSelector('.story-text');
@@ -106,16 +106,28 @@ const SAVE = JSON.stringify({ v: 1, name: 'Jeremy', avatar: 'avatar_mage', start
   await clean(page); await page.screenshot({ path: OUT + 'story_09_ch2_done.png', fullPage: true });
   // 📖 chapter 3: locked until chapter 2 is done; opens next; own picture
   await page.evaluate(() => WR.openStoryShelf('a1')); await page.waitForSelector('.shelf-ch');
-  assert(await page.locator('.shelf-ch').count() >= 3, 'shelf lists chapter 3');
+  assert(await page.locator('.shelf-ch').count() >= 4, 'shelf lists chapter 3+');
   assert(await page.locator('.shelf-ch:not(.locked)').count() === 3, 'after chapter 2, chapter 3 opens on the shelf');
   await clean(page); await page.screenshot({ path: OUT + 'story_10_shelf_ch3.png' });
   await page.locator('.shelf-ch').nth(2).click(); await page.waitForSelector('.story-text');
   assert((await page.locator('.story-head').innerText()).includes("The Bunny's Tea Party"), 'chapter 3 title loads');
   assert(await page.evaluate(() => /story_a1_3/.test(document.querySelector('.story-pic img').src)), 'chapter 3 has its own picture');
   await clean(page); await page.screenshot({ path: OUT + 'story_11_ch3_page.png', fullPage: true });
+  // finish chapter 3 so chapter 4 unlocks
+  for (let i = 0; i < 5; i++) { await answer(page, true); await page.locator('#storyNext').click(); await page.waitForTimeout(120); }
+  await page.waitForSelector('.story-done');
+  // 📖 chapter 4: locked until chapter 3 is done; opens next; own picture
+  await page.evaluate(() => WR.openStoryShelf('a1')); await page.waitForSelector('.shelf-ch');
+  assert(await page.locator('.shelf-ch').count() >= 4, 'shelf lists chapter 4');
+  assert(await page.locator('.shelf-ch:not(.locked)').count() === 4, 'after chapter 3, chapter 4 opens on the shelf');
+  await clean(page); await page.screenshot({ path: OUT + 'story_12_shelf_ch4.png' });
+  await page.locator('.shelf-ch').nth(3).click(); await page.waitForSelector('.story-text');
+  assert((await page.locator('.story-head').innerText()).includes('The Star Path Home'), 'chapter 4 title loads');
+  assert(await page.evaluate(() => /story_a1_4/.test(document.querySelector('.story-pic img').src)), 'chapter 4 has its own picture');
+  await clean(page); await page.screenshot({ path: OUT + 'story_13_ch4_page.png', fullPage: true });
   // every level has a shelf of chapters, each with notes on every wrong option
   const lv = await page.evaluate(async () => { const out = {}; for (const r of WR.realms) { const b = await WR.loadStory(r.id); out[r.id] = [b.chapters.length, b.chapters.slice(1).every(c => [...c.pages.map(p => p.q), c.final].every(q => Object.keys(q.notes || {}).length === 3))]; } return out; });
-  assert(Object.values(lv).every(([n, ok]) => n >= 3 && ok), 'every level has 3+ chapters and chapters 2+ have why-not notes ' + JSON.stringify(lv));
+  assert(Object.values(lv).every(([n, ok]) => n >= 4 && ok), 'every level has 4+ chapters and chapters 2+ have why-not notes ' + JSON.stringify(lv));
   // reload keeps progress
   await page.reload(); await page.waitForFunction(() => window.WR && WR.realms && document.querySelector('.topbar'));
   assert(await page.evaluate(() => WR.state.stories.done.a1.crowns) === 3, 'progress survives reload (inside wordRealms.save.v1)');

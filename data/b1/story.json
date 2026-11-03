@@ -288,6 +288,110 @@
      "hiding under a mushroom in the dark": "Pip was above the oak, not under a mushroom."
     }
    }
+  },
+  {
+   "title": "The Full-Moon Sky Dance",
+   "focus": "past continuous · past perfect · present perfect · first conditional · should",
+   "img": "story_b1_4",
+   "pages": [
+    {
+     "text": "On the night of the full moon, Pip had already gathered every firefly in the Whispering Forest. When {hero} and {pet} arrived, the little ones were practising the slow circle under the oak. Pip was [[glowing|giving off a soft light]] brighter than usual, half proud and half nervous.",
+     "q": {
+      "q": "What were the young fireflies doing when {hero} arrived?",
+      "options": [
+       "practising the slow circle",
+       "mending a torn pink lantern",
+       "queuing for jam tarts",
+       "sleeping inside the burrow"
+      ],
+      "answer": 0,
+      "explain": "“When {hero} and {pet} arrived, the little ones were practising the slow circle under the oak.”",
+      "kind": "grammar",
+      "notes": {
+       "mending a torn pink lantern": "Lantern mending was an earlier chapter. Tonight they were practising.",
+       "queuing for jam tarts": "Jam tarts belong to Candy Village. Here they were practising the circle.",
+       "sleeping inside the burrow": "Nobody is in a burrow. They were practising under the oak."
+      }
+     }
+    },
+    {
+     "text": "“I've never danced for so many friends,” Pip whispered. “If the beat stays steady, we should be fine.” {pet} had brought the same two pebbles and was ready to clap. While Pip was counting them in, an owl hooted once from a high branch — a friendly [[cue|a signal that tells you when to start]], not a warning.",
+     "q": {
+      "q": "What should keep the dance fine, according to Pip?",
+      "options": [
+       "a steady beat",
+       "a louder owl hoot",
+       "a brand-new lantern",
+       "a race to the meadow"
+      ],
+      "answer": 0,
+      "explain": "“If the beat stays steady, we should be fine.” First conditional: if + present, will/should.",
+      "kind": "grammar",
+      "notes": {
+       "a louder owl hoot": "The owl's hoot is only a cue. Pip trusts the steady beat.",
+       "a brand-new lantern": "No new lantern is needed for the sky dance.",
+       "a race to the meadow": "They are dancing, not racing. Pip wants a steady beat."
+      }
+     }
+    },
+    {
+     "text": "The dance began. Circles of light rose, dipped, and [[braided|twisted together like hair plaits]] through the oak leaves. {pet}'s pebbles kept time, and even the youngest firefly who had struggled at rehearsal now found every step. By midnight the forest had never looked so full of soft gold.",
+     "q": {
+      "q": "How did the youngest firefly do tonight?",
+      "options": [
+       "found every step",
+       "stayed home in the burrow",
+       "bumped into every circle",
+       "hid the pebbles under a mushroom"
+      ],
+      "answer": 0,
+      "explain": "“Even the youngest firefly who had struggled at rehearsal now found every step.”",
+      "kind": "fact",
+      "notes": {
+       "stayed home in the burrow": "The youngest danced. Nobody stayed in a burrow.",
+       "bumped into every circle": "Rehearsal bumps were earlier. Tonight the youngest found every step.",
+       "hid the pebbles under a mushroom": "{pet} kept the pebbles. The youngest found every step."
+      }
+     }
+    },
+    {
+     "text": "Afterwards Pip hovered beside {hero}. “You've helped us twice now. If you visit next full moon, we'll save you the best spot again.” Since that night, travellers have stopped under the oak just to watch. “You should bring a blanket,” Pip added with a grin. “The show lasts until the [[dew|tiny drops of water on grass in the morning]] arrives.”",
+     "q": {
+      "q": "Why might travellers stop under the oak now?",
+      "options": [
+       "to watch the firefly sky dance",
+       "to buy Crumb's jam tarts",
+       "to latch a lighthouse shutter",
+       "to argue about whose kite is higher"
+      ],
+      "answer": 0,
+      "explain": "Travellers “have stopped under the oak just to watch” the dance.",
+      "kind": "infer",
+      "notes": {
+       "to buy Crumb's jam tarts": "Tarts are in Candy Village. Here travellers watch the dance.",
+       "to latch a lighthouse shutter": "The shutter was at the lighthouse. Here they watch the sky dance.",
+       "to argue about whose kite is higher": "Kite arguments were at Cloud Castle. Here they watch the dance."
+      }
+     }
+    }
+   ],
+   "final": {
+    "q": "A “cue” is closest in meaning to…",
+    "options": [
+     "a signal that tells you when to start",
+     "a soft blanket for a long dance",
+     "a hard pebble used as a drum",
+     "a torn lantern that needs mending"
+    ],
+    "answer": 0,
+    "explain": "A cue is a signal to start — like the owl's friendly hoot.",
+    "kind": "vocab",
+    "notes": {
+     "a soft blanket for a long dance": "A blanket isn't a cue.",
+     "a hard pebble used as a drum": "Pebbles kept the beat; the cue was the hoot.",
+     "a torn lantern that needs mending": "Lanterns aren't cues here."
+    }
+   }
   }
  ]
 }

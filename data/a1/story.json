@@ -288,6 +288,110 @@
      "a cup for drinking tea": "That's a cup. The burrow is the rabbit's home."
     }
    }
+  },
+  {
+   "title": "The Star Path Home",
+   "focus": "present simple · there is / there are · can · like",
+   "img": "story_a1_4",
+   "pages": [
+    {
+     "text": "After the tea party the white rabbit walks with {hero} and {pet}. There is a soft path of tiny [[stars|little bright lights in the sky]] on the grass. The stars glow. {pet} can hop from star to star.",
+     "q": {
+      "q": "What is on the grass?",
+      "options": [
+       "a soft path of tiny stars",
+       "a big boat",
+       "a cold river",
+       "a tall school"
+      ],
+      "answer": 0,
+      "explain": "“There is a soft path of tiny stars on the grass.”",
+      "kind": "fact",
+      "notes": {
+       "a big boat": "There is no boat here. The story says a soft path of tiny stars.",
+       "a cold river": "There is no cold river on the grass. There is a star path.",
+       "a tall school": "They are in the meadow, not at a school. There is a star path."
+      }
+     }
+    },
+    {
+     "text": "The rabbit gives {hero} a little [[parcel|a small wrapped gift]]. “This is for your home,” it says. Inside there is a shiny acorn and a daisy. {hero} likes the gift. {pet} likes the daisy smell.",
+     "q": {
+      "q": "What does the rabbit give {hero}?",
+      "options": [
+       "a little parcel",
+       "a cup of cold tea",
+       "a picnic basket of jam",
+       "a new burrow key"
+      ],
+      "answer": 0,
+      "explain": "“The rabbit gives {hero} a little parcel.”",
+      "kind": "fact",
+      "notes": {
+       "a cup of cold tea": "Tea was at the party. Now the rabbit gives a little parcel.",
+       "a picnic basket of jam": "The picnic was another day. Today the gift is a little parcel.",
+       "a new burrow key": "There is no burrow key. The rabbit gives a little parcel."
+      }
+     }
+    },
+    {
+     "text": "They can follow the star path home. There are [[fireflies|tiny bugs that glow with yellow light at night]] too. The fireflies like to dance. {pet} can see the yellow lights. “Thank you,” says {hero}. “We like your path.”",
+     "q": {
+      "q": "What can {pet} see?",
+      "options": [
+       "the yellow lights",
+       "a dark cave",
+       "a lost sock",
+       "a blue bus"
+      ],
+      "answer": 0,
+      "explain": "“{pet} can see the yellow lights.”",
+      "kind": "fact",
+      "notes": {
+       "a dark cave": "There is no dark cave. {pet} can see the yellow lights.",
+       "a lost sock": "Nobody lost a sock. {pet} can see the yellow lights.",
+       "a blue bus": "There is no bus in the meadow. {pet} can see the yellow lights."
+      }
+     }
+    },
+    {
+     "text": "At the end of the path the stars go soft. The rabbit is happy. It is not [[shy|a bit scared to talk to new friends]] now. It waves. {hero} and {pet} wave too. Home feels warm. There is a smile on every face.",
+     "q": {
+      "q": "How does the rabbit feel now?",
+      "options": [
+       "happy and not shy",
+       "angry and loud",
+       "lost and cold",
+       "asleep in the parcel"
+      ],
+      "answer": 0,
+      "explain": "The rabbit is happy and “It is not shy.” It waves goodbye.",
+      "kind": "infer",
+      "notes": {
+       "angry and loud": "It waves happily. The story does not say it is angry.",
+       "lost and cold": "They know the path home. The rabbit is not lost.",
+       "asleep in the parcel": "The parcel is a gift. The rabbit waves; it is not asleep in it."
+      }
+     }
+    }
+   ],
+   "final": {
+    "q": "A “parcel” is…",
+    "options": [
+     "a small wrapped gift",
+     "a path of tiny stars on the grass",
+     "a yellow firefly light",
+     "a cup of honey tea"
+    ],
+    "answer": 0,
+    "explain": "A parcel is a small wrapped gift — the one with the acorn and daisy.",
+    "kind": "vocab",
+    "notes": {
+     "a path of tiny stars on the grass": "That's the star path, not a parcel.",
+     "a yellow firefly light": "Those are firefly lights.",
+     "a cup of honey tea": "Tea was earlier; a parcel is a wrapped gift."
+    }
+   }
   }
  ]
 }

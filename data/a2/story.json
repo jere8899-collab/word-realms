@@ -288,6 +288,110 @@
      "baked tarts with strong claws": "Crumb baked; the children queued."
     }
    }
+  },
+  {
+   "title": "The Soft-Spoon Triumph",
+   "focus": "past simple · comparatives and superlatives · going to",
+   "img": "story_a2_4",
+   "pages": [
+    {
+     "text": "The morning after the star tarts, Crumb kept his promise. He found a spoon softer than his claws and lighter than a feather. “I'm going to bake the [[fluffiest|very soft and light]] thank-you tarts in Candy Village,” he said, and Mrs Toffee clapped.",
+     "q": {
+      "q": "What is Crumb going to bake?",
+      "options": [
+       "the fluffiest thank-you tarts",
+       "a bigger balloon than last week",
+       "a hard cake of stone",
+       "a tiny door for Mrs Toffee"
+      ],
+      "answer": 0,
+      "explain": "“I'm going to bake the fluffiest thank-you tarts in Candy Village.” Going to = his plan.",
+      "kind": "grammar",
+      "notes": {
+       "a bigger balloon than last week": "Balloons were last festival. His new plan is fluffiest thank-you tarts.",
+       "a hard cake of stone": "He wants soft tarts, not a hard stone cake.",
+       "a tiny door for Mrs Toffee": "The tiny door is already there. He plans to bake thank-you tarts."
+      }
+     }
+    },
+    {
+     "text": "He mixed jam that was sweeter than honey and dough that was softer than a cloud. This time his claws stayed away from the tray. The tarts rose higher than yesterday's pancakes and looked [[prettier|more beautiful]] than any star in the sky.",
+     "q": {
+      "q": "How did these tarts compare to yesterday's pancakes?",
+      "options": [
+       "They rose higher.",
+       "They were flatter and sadder.",
+       "They were harder than stone.",
+       "They flew away on balloons."
+      ],
+      "answer": 0,
+      "explain": "“The tarts rose higher than yesterday's pancakes.”",
+      "kind": "fact",
+      "notes": {
+       "They were flatter and sadder.": "Higher means they were not flatter. They rose higher.",
+       "They were harder than stone.": "The dough was soft. They were not hard as stone.",
+       "They flew away on balloons.": "No balloons this morning. The tarts rose higher than the pancakes."
+      }
+     }
+    },
+    {
+     "text": "{hero} and {pet} arrived early. Children queued again, but the line was quieter than before because everyone was [[sniffing|smelling something carefully with your nose]] the warm jam. Crumb's cheeks went pink with pride, not with worry.",
+     "q": {
+      "q": "Why was the queue quieter than before?",
+      "options": [
+       "Everyone was sniffing the warm jam.",
+       "Crumb had closed the bakery.",
+       "Mrs Toffee sent them all home.",
+       "A storm had blown the door shut."
+      ],
+      "answer": 0,
+      "explain": "“The line was quieter than before because everyone was sniffing the warm jam.”",
+      "kind": "fact",
+      "notes": {
+       "Crumb had closed the bakery.": "The bakery stayed open. Children queued and sniffed the jam.",
+       "Mrs Toffee sent them all home.": "Mrs Toffee clapped; she didn't send them home.",
+       "A storm had blown the door shut.": "There is no storm here. The quiet came from sniffing the jam."
+      }
+     }
+    },
+    {
+     "text": "Crumb gave the first tart to {hero} and a jam crumb to {pet}. “These are my softest tarts yet,” he laughed. “Tomorrow I'm going to paint a thank-you [[sign|a board with words for people to read]] for the whole village.” The children cheered louder than the bakery bell.",
+     "q": {
+      "q": "What is Crumb going to do tomorrow?",
+      "options": [
+       "paint a thank-you sign",
+       "squash another tray on purpose",
+       "fly higher than the candy tree",
+       "hide the soft spoon forever"
+      ],
+      "answer": 0,
+      "explain": "“Tomorrow I'm going to paint a thank-you sign for the whole village.”",
+      "kind": "grammar",
+      "notes": {
+       "squash another tray on purpose": "Squashing was yesterday's accident. Tomorrow he plans a thank-you sign.",
+       "fly higher than the candy tree": "Flying was festival week. Tomorrow he plans a thank-you sign.",
+       "hide the soft spoon forever": "He likes the soft spoon. His plan is to paint a thank-you sign."
+      }
+     }
+    }
+   ],
+   "final": {
+    "q": "If tarts are the “fluffiest”, they are…",
+    "options": [
+     "the softest and lightest of all",
+     "the hardest cakes in the village",
+     "the flattest pancakes on the tray",
+     "the loudest bells by the door"
+    ],
+    "answer": 0,
+    "explain": "Fluffiest = softest and lightest — Crumb's thank-you tarts.",
+    "kind": "vocab",
+    "notes": {
+     "the hardest cakes in the village": "Fluffy is soft, not hard.",
+     "the flattest pancakes on the tray": "Flat was the squashed tray. Fluffy means soft and light.",
+     "the loudest bells by the door": "Bells can be loud; fluffiest describes soft tarts."
+    }
+   }
   }
  ]
 }

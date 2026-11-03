@@ -288,6 +288,110 @@
      "tied loosely with a long piece of rope": "A latch is a bar or catch, not a loose rope."
     }
    }
+  },
+  {
+   "title": "Glimmerfin's Fog Bell",
+   "focus": "past perfect · passive · third conditional · should have",
+   "img": "story_b2_4",
+   "pages": [
+    {
+     "text": "By Saturday morning the storm had passed, but a thick fog had been pulled across the lake like a grey blanket. The lamp had been cleaned overnight, yet boats still drifted too close to the rocks. Glimmerfin was [[anxious|worried and wanting help soon]], and Mog — Storm Watcher on duty — sat upright on the rail for once.",
+     "q": {
+      "q": "What new problem appeared after the storm?",
+      "options": [
+       "a thick fog over the lake",
+       "a missing soft spoon in the bakery",
+       "a torn lantern in the forest",
+       "a quarrel about kite height"
+      ],
+      "answer": 0,
+      "explain": "“A thick fog had been pulled across the lake like a grey blanket.”",
+      "kind": "fact",
+      "notes": {
+       "a missing soft spoon in the bakery": "The spoon is Crumb's story. Here the problem is fog.",
+       "a torn lantern in the forest": "The lantern was Pip's tale. Here the lake is foggy.",
+       "a quarrel about kite height": "Kite quarrels were at Cloud Castle. Here the fog hides the rocks."
+      }
+     }
+    },
+    {
+     "text": "The old keeper admitted the fog bell had been left untested since spring. “If someone had rung it at dawn,” he muttered, “the first boats wouldn't have drifted so near.” {hero} climbed the tower. The bell rope had been [[frayed|worn thin and almost broken]] by weather, but it still held.",
+     "q": {
+      "q": "What does “If someone had rung it at dawn…” tell us?",
+      "options": [
+       "Nobody rang it, so boats drifted near.",
+       "Someone rang it carefully, so all boats stayed far away.",
+       "The bell will be invented tomorrow for the first time.",
+       "Mog rang the bell before the fog arrived."
+      ],
+      "answer": 0,
+      "explain": "Third conditional: the ringing did NOT happen, so the drifting DID happen.",
+      "kind": "grammar",
+      "notes": {
+       "Someone rang it carefully, so all boats stayed far away.": "Boats drifted near, so the dawn ringing did not happen.",
+       "The bell will be invented tomorrow for the first time.": "This is about a missed past action, not a future invention.",
+       "Mog rang the bell before the fog arrived.": "Mog was on the rail. The bell “had been left untested”."
+      }
+     }
+    },
+    {
+     "text": "{hero} [[spliced|joined two ends of rope by weaving them together]] the rope, and together with Glimmerfin they rang the fog bell until the sound rolled across the water. Fishing boats, warned by the deep tone, turned wide of the rocks. The lamp's beam was soft in the fog, but the bell did the guiding. Mog blinked twice, as if keeping score.",
+     "q": {
+      "q": "How were the fishing boats warned?",
+      "options": [
+       "by the deep tone of the fog bell",
+       "by Mog swimming out alone",
+       "by a picnic shout from the meadow",
+       "by Crumb's bakery bell in the village"
+      ],
+      "answer": 0,
+      "explain": "“Fishing boats, warned by the deep tone, turned wide of the rocks.”",
+      "kind": "fact",
+      "notes": {
+       "by Mog swimming out alone": "Mog stayed on the rail. The bell warned the boats.",
+       "by a picnic shout from the meadow": "The meadow picnic isn't here. The fog bell warned them.",
+       "by Crumb's bakery bell in the village": "Crumb's bell is in Candy Village. The fog bell warned the boats."
+      }
+     }
+    },
+    {
+     "text": "Afterwards the keeper said he should have checked the fog gear as carefully as the lamp and the shutters. Mog was offered a third title — Fog Listener — with naps still allowed whenever the sun returned. “If Mog hadn't sat up on that rail,” {hero} smiled, “we might have waited too long.” Glimmerfin [[exhaled|breathed out slowly]] at last, the grey lake already brightening at the edges.",
+     "q": {
+      "q": "What is gentle about Mog's new third title?",
+      "options": [
+       "Naps stay allowed when the sun returns.",
+       "Mog must swim to every boat in every fog.",
+       "Mog asked to be captain of the keepers.",
+       "The title forbids Mog from ever blinking again."
+      ],
+      "answer": 0,
+      "explain": "“Fog Listener — with naps still allowed whenever the sun returned.”",
+      "kind": "infer",
+      "notes": {
+       "Mog must swim to every boat in every fog.": "Mog stays on the island with joke-titles and nap rights.",
+       "Mog asked to be captain of the keepers.": "Mog didn't ask for captain. The keeper offered the title.",
+       "The title forbids Mog from ever blinking again.": "Blinking is fine; naps are still allowed in the sun."
+      }
+     }
+    }
+   ],
+   "final": {
+    "q": "“Frayed” means…",
+    "options": [
+     "worn thin and almost broken",
+     "painted a bright new gold colour",
+     "tied into a perfect brand-new knot",
+     "soaked completely in cold lake water"
+    ],
+    "answer": 0,
+    "explain": "Frayed = worn thin — which is how the bell rope looked before {hero} spliced it.",
+    "kind": "vocab",
+    "notes": {
+     "painted a bright new gold colour": "Fraying is about wearing thin, not painting.",
+     "tied into a perfect brand-new knot": "The opposite of a perfect new knot.",
+     "soaked completely in cold lake water": "Wet isn't the same as frayed."
+    }
+   }
   }
  ]
 }

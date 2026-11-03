@@ -252,9 +252,10 @@ for lvl, items in WRITING.items():
     counts[f"{lvl}/writing"] = len(items); wr_tot += len(items)
 # ---- 📜 Storybook Chapters (bonus; not part of the 3-of-4 unlock rule) ----
 # data/<level>/story.json = { id, level, chapters: [chapter 1 (tools/c_stories.py), then extras from STORY_MORE_MODS] }.
-# Extra-chapter modules (tools/<name>.py) each expose MORE = {level: [chapter, …]}. Listed once here, like R20_WAVES;
-# add a new wave by appending its module name. Chapters are concatenated in this order per level.
-STORY_MORE_MODS = tuple(importlib.import_module(m) for m in ("c_stories2", "c_stories3"))  # chapter 2, chapter 3…
+# Extra-chapter modules (tools/<name>.py) each expose MORE = {level: [chapter, …]}. Same pattern as R20_WAVES:
+# list module names once, import once; append the next wave's module name to grow the shelf.
+STORY_MORE_NAMES = ("c_stories2", "c_stories3", "c_stories4")  # chapters 2, 3, 4…
+STORY_MORE_MODS = tuple(importlib.import_module(m) for m in STORY_MORE_NAMES)
 GLOSS_RE = re.compile(r"\[\[([^|\]]+)\|([^\]]+)\]\]")
 def _check_chapter(name, ch):
     assert len(ch["pages"]) == 4, name

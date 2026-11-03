@@ -288,6 +288,110 @@
      "a loud argument about the festival weather": "Diplomacy is the opposite of a loud argument."
     }
    }
+  },
+  {
+   "title": "The Cloud Parade Picnic",
+   "focus": "inversion · cleft · hedging · tone",
+   "img": "story_c1_4",
+   "pages": [
+    {
+     "text": "Seldom had Lady Quillon planned a quieter thank-you. After the kite afternoon she invited Nimbus, Sola, the visiting sprites, and {hero} to a cloud-side picnic where even the cloud-roses seemed to lean in and listen. “It is not the sandwiches that matter,” she said lightly, “so much as sitting still together.” Her tone was warm, almost [[mischievous|playfully cheeky in a kind way]].",
+     "q": {
+      "q": "What does “Seldom had Lady Quillon planned a quieter thank-you” emphasise?",
+      "options": [
+       "How unusually peaceful this thank-you was.",
+       "That she plans loud thank-yous every single week.",
+       "That Nimbus had started another weather quarrel.",
+       "That the cloud-roses had all wilted overnight."
+      ],
+      "answer": 0,
+      "explain": "Inversion after “Seldom” stresses how uncommon this quiet thank-you is.",
+      "kind": "infer",
+      "notes": {
+       "That she plans loud thank-yous every single week.": "“Seldom” means this quiet plan is unusual, not weekly noise.",
+       "That Nimbus had started another weather quarrel.": "Nimbus nodded at the kites; this line is about the picnic's peace.",
+       "That the cloud-roses had all wilted overnight.": "The roses “lean in and listen”, so they haven't wilted."
+      }
+     }
+    },
+    {
+     "text": "What settled the last of the guests' nerves was not another speech but a shared cloudberry tart. One sprite began, “With all due admiration for yesterday's flying—” in a tone that still edged toward ranking kites. {hero} [[steered|gently guided]] the talk toward the tart's jam instead. “Perhaps we might simply enjoy the view for a minute?”",
+     "q": {
+      "q": "How should we read “With all due admiration…” here?",
+      "options": [
+       "Polite words that still lean toward a boast.",
+       "A full apology for bringing no kite at all.",
+       "Proof the sprite wants to give the tart away.",
+       "A weather report about tomorrow's rain."
+      ],
+      "answer": 0,
+      "explain": "Like “with the greatest respect” before, the tone still edges toward ranking — polite cover for pride.",
+      "kind": "infer",
+      "notes": {
+       "A full apology for bringing no kite at all.": "The tone “edged toward ranking kites”, not a full apology.",
+       "Proof the sprite wants to give the tart away.": "The sprite is talking about flying, not giving tarts away.",
+       "A weather report about tomorrow's rain.": "It isn't a forecast; it's boast-tinged politeness."
+      }
+     }
+    },
+    {
+     "text": "Never before had the cloud parade [[drifted|moved slowly with the wind]] so slowly past one picnic rug. What {hero} suggested — softly, with a string of hedges — was that each guest might name one kind thing another guest had done, rather than whose kite had flown highest. “It might be rather nice,” Sola murmured. Nimbus agreed, almost shyly this time.",
+     "q": {
+      "q": "Why does {hero} hedge with “might” and “rather nice”?",
+      "options": [
+       "to keep the idea sounding gentle and easy to accept",
+       "because {hero} thinks kindness games are impossible",
+       "to order the parade to stop at once",
+       "to restart the weather quarrel on purpose"
+      ],
+      "answer": 0,
+      "explain": "Hedging keeps a suggestion friendly so proud guests can join without losing face.",
+      "kind": "grammar",
+      "notes": {
+       "because {hero} thinks kindness games are impossible": "{hero} believes it can work; soft wording invites yes.",
+       "to order the parade to stop at once": "Nothing is ordered. Hedging comes before agreement.",
+       "to restart the weather quarrel on purpose": "{hero} wants peace; the hedges invite kindness, not a quarrel."
+      }
+     }
+    },
+    {
+     "text": "By the time the last cloud-float had passed, even the proudest sprite was laughing. What surprised Lady Quillon most was how little anyone mentioned winning. “It would appear,” she told {hero} with that same small smile, “that jam and turn-taking are a sturdier [[alliance|a friendly team-up between people]] than any speech I keep rewriting.”",
+     "q": {
+      "q": "What surprised Lady Quillon most?",
+      "options": [
+       "how little anyone mentioned winning",
+       "that heavy rain cancelled the whole parade",
+       "that no guests came to the picnic at all",
+       "that Nimbus restarted the old quarrel mid-tart"
+      ],
+      "answer": 0,
+      "explain": "“What surprised Lady Quillon most was how little anyone mentioned winning.” (cleft)",
+      "kind": "fact",
+      "notes": {
+       "that heavy rain cancelled the whole parade": "The parade drifted past; rain didn't cancel it.",
+       "that no guests came to the picnic at all": "Guests were there laughing. The surprise was the lack of winning talk.",
+       "that Nimbus restarted the old quarrel mid-tart": "Nimbus agreed shyly; there was no new quarrel."
+      }
+     }
+    }
+   ],
+   "final": {
+    "q": "An “alliance” is closest in meaning to…",
+    "options": [
+     "a friendly team-up between people",
+     "a loudly ranked list of kite heights",
+     "a single cloudberry left on a plate",
+     "a storm scheduled for Friday night"
+    ],
+    "answer": 0,
+    "explain": "Lady Quillon means a friendly team-up — jam and turn-taking beat another speech.",
+    "kind": "vocab",
+    "notes": {
+     "a loudly ranked list of kite heights": "Ranking kites is the opposite of an alliance.",
+     "a single cloudberry left on a plate": "A tart helps, but alliance is the team-up itself.",
+     "a storm scheduled for Friday night": "No storm here; alliance means people joining kindly."
+    }
+   }
   }
  ]
 }
