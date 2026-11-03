@@ -1,7 +1,7 @@
 /* 🔢 Number Kingdom topics, Grades 9–12 (Singapore Secondary 3–4, JC 1–2 / Years 10–13). */
 (function () {
 const M = (typeof module !== "undefined" && module.exports) ? require("./math-gen.js") : window.MathGen;
-const { Q, num, mcq, mcqWhy, numWhy, T, topic, PASTEL, INK, LINE, esc, cardSvg, axes, xTicks, yUnit, xUnit, f1, xy, mid, vat, vdir, toDeg, sinD, cosD, tanD, rotPt, angSweep, angWedge, angText, rightPath, figCard, figEdge, figLab, figLens, figDot, figVtx, table, rd, fmt, fdp, fracTex, fracStr, poly, lin, paren, sgn, pm, sum, asc, median, freqTotals } = M._internal;
+const { Q, num, mcq, mcqWhy, numWhy, T, topic, PASTEL, INK, LINE, esc, svgBox, cardSvg, axes, xTicks, yUnit, xUnit, f1, xy, mid, vat, vdir, toDeg, sinD, cosD, tanD, rotPt, angSweep, angWedge, angText, rightPath, figCard, figEdge, figLab, figLens, figDot, figVtx, table, rd, fmt, fdp, fracTex, fracStr, poly, lin, paren, sgn, pm, sum, asc, median, freqTotals, gcd, simp, coef, NAMES, sqrtTex, surdTex, simpRad } = M._internal;
 const sf3 = v => +(+v.toFixed(12)).toPrecision(3);
 const tol3 = v => Math.max(1e-9, Math.pow(10, Math.floor(Math.log10(Math.abs(v) || 1)) - 2) * 0.51);
 const V2 = v => `\\begin{pmatrix} ${v[0]} \\\\ ${v[1]} \\end{pmatrix}`, V3 = v => `\\begin{pmatrix} ${v[0]} \\\\ ${v[1]} \\\\ ${v[2]} \\end{pmatrix}`;
@@ -36,6 +36,189 @@ topic(9, "stdform", "Standard Form Stars", "🌌", "Numbers in standard form", r
   const a = r.int(2, 4), b = r.int(1, 2), p = r.int(2, 7), q = r.int(2, 7), right = `${a * b} \\times 10^{${p + q}}`;
   return mcq(r, `Calculate ${T(`(${a} \\times 10^{${p}}) \\times (${b} \\times 10^{${q}})`)}`, T(right), [`${a * b} \\times 10^{${p * q}}`, `${a + b} \\times 10^{${p + q}}`, `${a * b} \\times 10^{${p + q + 1}}`, `${a * b} \\times 10^{${p + q - 1}}`].filter(w => w !== right).map(T), "Multiply the numbers, add the powers of 10.", [`$${a} \\times ${b} = ${a * b}$`, `$10^{${p}} \\times 10^{${q}} = 10^{${p + q}}$`]);
 });
+
+/* ---------- 🌿 Root Garden (MOE Sec 3 surds): simplify √(a²·n) and k√(a²·n), multiply √a·√b then simplify, add/subtract
+   like surds p√n ± q√n, expand (√a ± √b)(√a ∓ √b) and (√a + √b)², rationalise a denominator (1/√a, k/√a, k/(a√b), and
+   the conjugate k/(√a ± √b)), and "which expression is equivalent" MCQs. Answers that stay as a surd use mcqWhy; ones that
+   land on a plain number use numWhy. The packing picture for a simplify question shows an a×a grid of pastel tiles of area n
+   (so √(a²n) = a√n); tiles carry class rtile + data-r / data-c, the big square class rpack + data-a / data-n / data-N. */
+const SQFREE = [2, 3, 5, 6, 7, 10, 11, 13, 14, 15];
+const ROOT_CTX = [
+  { id: "bean", title: "Magic bean stalks", who: "Jack", spot: "the magic-bean garden" },
+  { id: "crystal", title: "Crystal root cave", who: "Fairy Pip", spot: "the crystal-root cave" },
+  { id: "orchard", title: "Fairy orchard plots", who: "Sumi the star fairy", spot: "the fairy orchard" },
+  { id: "pumpkin", title: "Pumpkin-patch squares", who: "Cinderella", spot: "the pumpkin patch" },
+  { id: "garden", title: "Root Garden beds", who: "Princess Mira", spot: "Root Garden" }
+];
+// a×a pastel tiles of area n: total area N = a²·n, so √N = a√n. Readable data-* for the test.
+const svgRootPack = (a, n, N) => {
+  const S = a <= 4 ? 28 : a <= 6 ? 22 : 16, pad = 18, gap = 3, W = pad * 2 + a * S + (a - 1) * gap, H = W + 22;
+  let tiles = ""; for (let r = 0; r < a; r++) for (let c = 0; c < a; c++) {
+    const x = pad + c * (S + gap), y = pad + 18 + r * (S + gap), fill = PASTEL[(r * a + c) % PASTEL.length];
+    tiles += `<rect class="rtile" data-r="${r}" data-c="${c}" x="${x}" y="${y}" width="${S}" height="${S}" rx="5" fill="${fill}" stroke="${LINE}" stroke-width="1.4"/>`;
+    if (S >= 20) tiles += `<text x="${x + S / 2}" y="${y + S / 2 + 4}" font-size="11" text-anchor="middle" font-weight="800" fill="${INK}">${n}</text>`;
+  }
+  const body = `<rect class="rpack" data-a="${a}" data-n="${n}" data-N="${N}" x="${pad - 6}" y="${pad + 12}" width="${a * S + (a - 1) * gap + 12}" height="${a * S + (a - 1) * gap + 12}" rx="10" fill="#FFFDF8" stroke="${INK}" stroke-width="2"/>` + tiles
+    + `<text x="${W / 2}" y="16" font-size="12" text-anchor="middle" font-weight="900" fill="${INK}">${a} × ${a} tiles of area ${n}</text>`
+    + `<text x="${W / 2}" y="${H - 4}" font-size="11" text-anchor="middle" font-weight="800" fill="#c2457a">total ${N} → √${N} = ${a}√${n}</text>`;
+  return svgBox(body, `square tiles showing root ${N}`, W, H, `0 0 ${W} ${H}`, "mpic chart surd");
+};
+const ROOT = {
+  // simplify √(a²·n) → a√n (with a packing picture when a is small enough)
+  simp: r => { const n = r.pick(SQFREE), a = r.int(2, 8), N = a * a * n, ctx = r.pick(ROOT_CTX);
+    const right = T(surdTex(a, n)), pic = a <= 6 ? svgRootPack(a, n, N) : "";
+    const wrong = [
+      [T(surdTex(a * a, n)), `That multiplies by ${a} twice. Pull √(${a}²) out once: √(${a}² × ${n}) = ${a}√${n}.`],
+      [T(surdTex(N, 1)), `${N} is the number under the root before simplifying. Factor a perfect square first.`],
+      [T(surdTex(a, N)), `The ${n} stays under the root; only the perfect-square factor ${a * a} comes out.`],
+      [T(surdTex(2 * a, n)), `√(${a * a}) is ${a}, not ${2 * a}. Check: ${a}² = ${a * a}.`],
+      [T(sqrtTex(N)), `Leave it in surd form: pull the square factor ${a * a} out of √${N}.`]
+    ];
+    return { k: "simp", mc: true, ctx, a, n, N, right, rightWhy: `Right: ${N} = ${a * a} × ${n}, and √(${a * a}) = ${a}, so √${N} = ${a}√${n}.`, wrong,
+      q: `${ctx.who} counts ${N} crystal seeds in ${ctx.spot}. Simplify ${T(sqrtTex(N))}.`, hint: `Find the biggest square number that divides ${N}, then pull its root out.`,
+      steps: [`$${N} = ${a}^2 \\times ${n}$`, `$\\sqrt{${N}} = \\sqrt{${a}^2 \\times ${n}} = ${a}${sqrtTex(n)}$`], pic, data: { a, n, N } }; },
+  // simplify k√(a²·n) → (k·a)√n
+  simpK: r => { const n = r.pick(SQFREE.filter(x => x <= 10)), a = r.int(2, 5), k = r.int(2, 6), N = a * a * n, out = k * a, ctx = r.pick(ROOT_CTX);
+    const right = T(surdTex(out, n));
+    const wrong = [
+      [T(surdTex(k, N)), `Simplify inside the root first: √(${a}² × ${n}) = ${a}√${n}, then multiply by ${k}.`],
+      [T(surdTex(k * a * a, n)), `Only √(${a}²) = ${a} comes out, not ${a * a}. Then ${k} × ${a} = ${out}.`],
+      [T(surdTex(k + a, n)), `Multiply the outside number by ${a}: ${k} × ${a} = ${out}, do not add.`],
+      [T(surdTex(out, N)), `The ${n} stays under the root after simplifying.`],
+      [T(surdTex(a, n)), `Do not drop the outside ${k}. ${k} × ${a}√${n} = ${out}√${n}.`]
+    ];
+    return { k: "simpK", mc: true, ctx, a, n, N, kk: k, out, right, rightWhy: `Right: √(${a}² × ${n}) = ${a}√${n}, so ${k} × ${a}√${n} = ${out}√${n}.`, wrong,
+      q: `A fairy orchard plot is labelled ${T(`${k}${sqrtTex(N)}`)}. Simplify it.`, hint: `Simplify √${N} first, then multiply by ${k}.`,
+      steps: [`$\\sqrt{${N}} = \\sqrt{${a}^2 \\times ${n}} = ${a}${sqrtTex(n)}$`, `$${k} \\times ${a}${sqrtTex(n)} = ${out}${sqrtTex(n)}$`], data: { a, n, N, k, out } }; },
+  // √a · √b → √(ab) then simplify
+  mul: r => { let a, b, A, m, g; do { a = r.pick(SQFREE); b = r.pick(SQFREE.filter(x => x !== a)); [A, m] = simpRad(a * b); } while (A === 1);
+    const ctx = r.pick(ROOT_CTX), right = T(surdTex(A, m)), prod = a * b;
+    const wrong = [
+      [T(sqrtTex(prod)), `Keep going: ${prod} has a square factor ${A * A}, so √${prod} = ${A}√${m}.`],
+      [T(surdTex(A * A, m)), `√(${A}² × ${m}) pulls out ${A}, not ${A * A}.`],
+      [T(surdTex(a + b, 1)), `Multiply under one root: √${a} × √${b} = √(${a}×${b}), do not add.`],
+      [T(surdTex(A, prod)), `After simplifying, only the square-free part ${m} stays under the root.`],
+      [T(surdTex(2 * A, m)), `The square factor of ${prod} is ${A * A}, whose root is ${A}.`]
+    ];
+    return { k: "mul", mc: true, ctx, a, b, A, m, prod, right, rightWhy: `Right: √${a} × √${b} = √${prod}, and ${prod} = ${A * A} × ${m}, so the product is ${A}√${m}.`, wrong,
+      q: `${ctx.who} multiplies two root labels in ${ctx.spot}: ${T(`${sqrtTex(a)} \\times ${sqrtTex(b)}`)}. Simplify the product.`, hint: "√a × √b = √(ab). Then pull out any square factor.",
+      steps: [`$\\sqrt{${a}} \\times \\sqrt{${b}} = \\sqrt{${prod}}$`, `$${prod} = ${A}^2 \\times ${m}$`, `$\\sqrt{${prod}} = ${A}${sqrtTex(m)}$`], data: { a, b, A, m, prod } }; },
+  // p√n ± q√n → (p±q)√n
+  add: r => { const n = r.pick(SQFREE), p = r.int(2, 9), q = r.int(1, 8); if (p === q && r.chance(.5)) return ROOT.add(r);
+    const sub = r.chance(.45) && p > q, out = sub ? p - q : p + q, ctx = r.pick(ROOT_CTX), op = sub ? "-" : "+", right = T(surdTex(out, n));
+    const wrong = [
+      [T(surdTex(p + q, 2 * n)), `The roots stay √${n}. Add or subtract the numbers in front only.`],
+      [T(surdTex(sub ? p + q : Math.abs(p - q), n)), sub ? `This is a subtraction: ${p} − ${q} = ${out}, not ${p + q}.` : `This is an addition: ${p} + ${q} = ${out}, not ${Math.abs(p - q)}.`],
+      [T(surdTex(out, n * n)), `√${n} ± √${n} still leaves √${n}, not √(${n}²).`],
+      [T(String(out)), `Keep the √${n}: like surds add as (${p} ${op} ${q})√${n} = ${out}√${n}.`],
+      [T(surdTex(p * q, n)), `Add or subtract the coefficients; do not multiply ${p} by ${q}.`]
+    ];
+    return { k: "add", mc: true, ctx, p, q, n, out, sub, right, rightWhy: `Right: like surds share √${n}, so ${p}√${n} ${op} ${q}√${n} = (${p} ${op} ${q})√${n} = ${out}√${n}.`, wrong,
+      q: `On a Root Garden bed, ${ctx.who} combines ${T(`${surdTex(p, n)} ${op} ${surdTex(q, n)}`)}. Simplify.`, hint: "Like surds (same number under the root) add or subtract their front numbers.",
+      steps: [`$${surdTex(p, n)} ${op} ${surdTex(q, n)} = (${p} ${op} ${q})${sqrtTex(n)}$`, `$= ${out}${sqrtTex(n)}$`], data: { p, q, n, out, sub } }; },
+  // (√a ± √b)(√a ∓ √b) → a − b  (typed integer)
+  conj: r => { let a, b; do { a = r.pick([2, 3, 5, 6, 7, 8, 10, 11, 12, 13]); b = r.pick([2, 3, 5, 6, 7, 8, 10]); } while (a <= b);
+    const ctx = r.pick(ROOT_CTX), v = a - b, sign = r.chance(.5);
+    const L = sign ? `(${sqrtTex(a)} + ${sqrtTex(b)})(${sqrtTex(a)} - ${sqrtTex(b)})` : `(${sqrtTex(a)} - ${sqrtTex(b)})(${sqrtTex(a)} + ${sqrtTex(b)})`;
+    return { k: "conj", mc: false, ctx, a, b, v, q: `${ctx.who} expands the crystal-root brackets ${T(L)}. What number does it equal?`,
+      hint: "Difference of squares: (x + y)(x − y) = x² − y², with x = √a and y = √b.",
+      steps: [`$(\\sqrt{${a}})^2 - (\\sqrt{${b}})^2 = ${a} - ${b}$`, `$= ${v}$`],
+      slips: [[a + b, `${a + b} would be a + b. Difference of squares subtracts: ${a} − ${b} = ${v}.`], [a * b, `Do not multiply ${a} by ${b}. Expand as (√${a})² − (√${b})².`], [v + 2 * Math.min(a, b), "The middle terms +√(ab) and −√(ab) cancel; only a − b is left."], [Math.abs(b - a) === v ? a : Math.abs(b - a), `Keep the order: a − b = ${a} − ${b} = ${v}.`]].filter((s, i, arr) => s[0] !== v && arr.findIndex(t => t[0] === s[0]) === i),
+      data: { a, b, v } }; },
+  // (√a + √b)² → a + b + 2√(ab)
+  sq: r => { let a, b, g; do { a = r.pick([2, 3, 5, 6, 7, 8, 10]); b = r.pick([2, 3, 5, 6, 7, 8, 10].filter(x => x !== a)); g = gcd(a, b); } while (a * b > 60);
+    const [A, m] = simpRad(a * b), mid = 2 * A, ctx = r.pick(ROOT_CTX), sum = a + b;
+    // write a + 2√(ab) + b, with 2√(ab) simplified if possible
+    const midTex = surdTex(mid, m), right = T(`${sum} + ${midTex}`);
+    const wrong = [
+      [T(`${sum} + ${surdTex(2, a * b)}`), a * b !== m ? `Simplify √(${a}×${b}) = √${a * b} = ${A}√${m}, so the middle term is ${mid}√${m}.` : `The middle term is 2√(${a}×${b}) = 2√${a * b}.`],
+      [T(`${sum}`), `Do not drop the middle term 2√(${a}×${b}). (x + y)² = x² + 2xy + y².`],
+      [T(`${sum} + ${surdTex(A, m)}`), `The middle term needs the 2: 2 × √(${a}×${b}) = $${midTex}$.`],
+      [T(`${a * a + b * b} + ${midTex}`), `(√${a})² is ${a}, not ${a * a}. Use x² + 2xy + y² with x = √${a}.`],
+      [T(`${sum} - ${midTex}`), `Squaring (√${a} + √${b}) adds the middle term; it does not subtract.`]
+    ];
+    return { k: "sq", mc: true, ctx, a, b, A, m, mid, sum, right, rightWhy: `Right: (√${a} + √${b})² = ${a} + 2√(${a}×${b}) + ${b} = ${sum} + $${midTex}$.`, wrong,
+      q: `Expand ${T(`(${sqrtTex(a)} + ${sqrtTex(b)})^2`)} and simplify.`, hint: "(x + y)² = x² + 2xy + y². Here x = √a and y = √b.",
+      steps: [`$(\\sqrt{${a}})^2 + 2\\sqrt{${a}}\\sqrt{${b}} + (\\sqrt{${b}})^2$`, `$= ${a} + 2\\sqrt{${a * b}} + ${b}$`, A > 1 ? `$= ${sum} + ${midTex}$` : `$= ${sum} + ${midTex}$`], data: { a, b, A, m, mid, sum } }; },
+  // rationalise 1/√a or k/√a → (k√a)/a
+  rat1: r => { const a = r.pick([2, 3, 5, 6, 7, 10, 11, 13]), k = r.chance(.55) ? r.int(2, 9) : 1, ctx = r.pick(ROOT_CTX);
+    const [num, den] = simp(k, a), right = den === 1 ? T(surdTex(num, a)) : T(`\\frac{${surdTex(num, a)}}{${den}}`);
+    const rawNum = k, rawDen = a;
+    const wrong = [
+      [T(`\\frac{${surdTex(rawNum, a)}}{${a * a}}`), `Multiply top and bottom by √${a}: the bottom becomes ${a}, not ${a * a}.`],
+      [T(surdTex(rawNum, a)), den === 1 ? `Keep the denominator ${a} after rationalising, unless it cancels.` : `After multiplying, divide by ${a}: the answer is a fraction.`],
+      [T(`\\frac{${rawNum}}{${surdTex(1, a)}}`), `The question already looks like that. Multiply top and bottom by √${a} to clear the root from the bottom.`],
+      [T(`\\frac{${surdTex(rawNum * a, 1)}}{${a}}`), `√${a} × √${a} = ${a} on the bottom; the top keeps a √${a}, it does not become ${rawNum * a}.`],
+      [T(`\\frac{${surdTex(1, a)}}{${rawNum}}`), `The ${rawNum === 1 ? "1" : rawNum} stays on top; multiply top and bottom by √${a}.`]
+    ].filter(([o]) => o !== right);
+    return { k: "rat1", mc: true, ctx, a, kk: k, num, den, right, rightWhy: `Right: multiply top and bottom by √${a}, so ${k === 1 ? "1" : k}/√${a} becomes ${num === 1 && den === 1 ? `√${a}` : den === 1 ? `${num}√${a}` : `(${num}√${a})/${den}`}.`, wrong,
+      q: `Rationalise the denominator of ${T(k === 1 ? `\\frac{1}{${sqrtTex(a)}}` : `\\frac{${k}}{${sqrtTex(a)}}`)}.`, hint: `Multiply the top and the bottom by √${a}.`,
+      steps: [`$\\frac{${k}}{\\sqrt{${a}}} \\times \\frac{\\sqrt{${a}}}{\\sqrt{${a}}} = \\frac{${k}${sqrtTex(a)}}{${a}}$`].concat(den !== a || num !== k ? [`Simplify the fraction: $${right.slice(1, -1)}$`] : []), data: { a, k, num, den } }; },
+  // rationalise k/(c√b) → (k√b)/(c·b)
+  ratC: r => { const b = r.pick([2, 3, 5, 6, 7, 10]), c = r.int(2, 5), k = r.int(1, 8), ctx = r.pick(ROOT_CTX);
+    const [num, den] = simp(k, c * b), right = den === 1 ? T(surdTex(num, b)) : T(`\\frac{${surdTex(num, b)}}{${den}}`);
+    const wrong = [
+      [T(`\\frac{${surdTex(k, b)}}{${c}}`), `The bottom also picks up a factor ${b} from √${b} × √${b}, so divide by ${c * b}.`],
+      [T(`\\frac{${surdTex(k, b)}}{${c * b * b}}`), `√${b} × √${b} = ${b}, so the bottom is ${c} × ${b} = ${c * b}.`],
+      [T(`\\frac{${k}}{${surdTex(c, b)}}`), `That is the unsimplified form. Multiply top and bottom by √${b}.`],
+      [T(`\\frac{${surdTex(k * c, b)}}{${c * b}}`), `Only multiply top and bottom by √${b}; do not multiply the top by ${c}.`],
+      [T(surdTex(k, b)), `Keep the denominator ${c * b} (then simplify if you can).`]
+    ].filter(([o]) => o !== right);
+    return { k: "ratC", mc: true, ctx, b, c, kk: k, num, den, right, rightWhy: `Right: multiply top and bottom by √${b}. The bottom becomes ${c} × ${b} = ${c * b}, so the fraction simplifies to the answer shown.`, wrong,
+      q: `Rationalise the denominator of ${T(`\\frac{${k}}{${c}${sqrtTex(b)}}`)}.`, hint: `Multiply top and bottom by √${b}.`,
+      steps: [`$\\frac{${k}}{${c}\\sqrt{${b}}} \\times \\frac{\\sqrt{${b}}}{\\sqrt{${b}}} = \\frac{${k}${sqrtTex(b)}}{${c * b}}$`].concat([[num, den].toString() !== [k, c * b].toString() ? `Simplify: $${right.slice(1, -1)}$` : null].filter(Boolean)), data: { b, c, k, num, den } }; },
+  // rationalise k/(√a ± √b) with conjugate
+  ratConj: r => { let a, b; do { a = r.pick([3, 5, 6, 7, 8, 10, 11, 13]); b = r.pick([2, 3, 5, 6, 7].filter(x => x < a)); } while (!b);
+    const d = a - b, k = d * r.int(1, 4), ctx = r.pick(ROOT_CTX), plus = r.chance(.5), co = k / d;
+    // k/(√a+√b) * (√a-√b)/(√a-√b) = k(√a-√b)/(a-b)
+    // or k/(√a-√b) * (√a+√b)/(√a+√b) = k(√a+√b)/(a-b)
+    const topSign = plus ? "-" : "+", // conjugate flips the middle sign
+      topTex = co === 1 ? `${sqrtTex(a)} ${topSign} ${sqrtTex(b)}` : co === -1 ? `-(${sqrtTex(a)} ${topSign === "-" ? "-" : "+"} ${sqrtTex(b)})` : `${coef(co)}(${sqrtTex(a)} ${topSign} ${sqrtTex(b)})`;
+    // When co is integer, answer is co(√a ∓ √b) or expanded co√a ∓ co√b
+    const right = T(co === 1 && topSign === "-" ? `${sqrtTex(a)} - ${sqrtTex(b)}` : co === 1 && topSign === "+" ? `${sqrtTex(a)} + ${sqrtTex(b)}` : `${coef(co)}(${sqrtTex(a)} ${topSign} ${sqrtTex(b)})`);
+    const bot = plus ? `${sqrtTex(a)} + ${sqrtTex(b)}` : `${sqrtTex(a)} - ${sqrtTex(b)}`;
+    const conj = plus ? `${sqrtTex(a)} - ${sqrtTex(b)}` : `${sqrtTex(a)} + ${sqrtTex(b)}`;
+    const wrong = [
+      [T(`${coef(k)}(${sqrtTex(a)} ${topSign} ${sqrtTex(b)})`), `Divide by a − b = ${d} as well: the conjugate multiplies to ${d}.`],
+      [T(`${coef(co)}(${sqrtTex(a)} ${plus ? "+" : "-"} ${sqrtTex(b)})`), `Use the conjugate (flip the sign in the middle), not the same brackets again.`],
+      [T(`\\frac{${k}}{${d}}`), `The top keeps the conjugate surd $${conj}$; only the bottom becomes the integer ${d}.`],
+      [T(`${coef(co)}(${sqrtTex(b)} ${topSign} ${sqrtTex(a)})`), `Keep √${a} first: the conjugate is $${conj}$.`],
+      [T(String(co)), `The answer is still a surd: ${right.slice(1, -1)}.`]
+    ].filter(([o]) => o !== right);
+    return { k: "ratConj", mc: true, ctx, a, b, kk: k, d, co, plus, right, rightWhy: `Right: multiply top and bottom by the flipped brackets (the conjugate). The bottom becomes ${a} − ${b} = ${d}, and the top keeps that conjugate surd${co === 1 ? '' : ', then divide by ' + d}.`, wrong,
+      q: `Rationalise the denominator of ${T(`\\frac{${k}}{${bot}}`)}.`, hint: `Multiply top and bottom by the conjugate $${conj}$.`,
+      steps: [`$\\frac{${k}}{${bot}} \\times \\frac{${conj}}{${conj}} = \\frac{${k}(${conj})}{${a} - ${b}}$`, `$= \\frac{${k}(${conj})}{${d}} = ${right.slice(1, -1)}$`], data: { a, b, k, d, co, plus } }; },
+  // which expression equals a given surd
+  which: r => { const n = r.pick(SQFREE), a = r.int(2, 7), N = a * a * n, ctx = r.pick(ROOT_CTX), form = r.pick(["simp", "mul", "add"]);
+    let right, rightWhy, wrong, q, steps, hint, data;
+    if (form === "simp") {
+      right = T(surdTex(a, n)); q = `Which expression equals ${T(sqrtTex(N))}?`; hint = `Factor ${N} as a square times a square-free number.`;
+      rightWhy = `Right: ${N} = ${a}² × ${n}, so √${N} = ${a}√${n}.`;
+      wrong = [[T(surdTex(a * a, n)), `√(${a}²) is ${a}, so the front number is ${a}, not ${a * a}.`], [T(surdTex(a, N)), `Only ${n} stays under the root after the square factor comes out.`], [T(sqrtTex(N / a)), `Pull out √(${a}²) = ${a} from √${N}, leaving √${n}.`], [T(surdTex(2 * a, n)), `${a}² = ${a * a} divides ${N}; its root is ${a}.`]];
+      steps = [`$${N} = ${a}^2 \\times ${n}$`, `$\\sqrt{${N}} = ${a}${sqrtTex(n)}$`]; data = { form, a, n, N };
+    } else if (form === "mul") {
+      const b = r.pick(SQFREE.filter(x => x !== n)); const [A, m] = simpRad(n * b); if (A === 1) return ROOT.which(r);
+      right = T(surdTex(A, m)); q = `Which expression equals ${T(`${sqrtTex(n)} \\times ${sqrtTex(b)}`)}?`; hint = "Multiply under one root, then simplify.";
+      rightWhy = `Right: √${n} × √${b} = √${n * b} = ${A}√${m}.`;
+      wrong = [[T(sqrtTex(n * b)), `Simplify further: ${n * b} = ${A}² × ${m}.`], [T(surdTex(n + b, 1)), `Multiply the insides, do not add ${n} and ${b}.`], [T(surdTex(A * A, m)), `The front number is √(${A}²) = ${A}.`], [T(surdTex(A, n * b)), `After simplifying, only ${m} stays under the root.`]];
+      steps = [`$\\sqrt{${n}}\\times\\sqrt{${b}} = \\sqrt{${n * b}}$`, `$= ${A}${sqrtTex(m)}$`]; data = { form, a: n, b, A, m };
+    } else {
+      const p = r.int(3, 9), qn = r.int(1, p - 1), out = p + qn;
+      right = T(surdTex(out, n)); q = `Which expression equals ${T(`${surdTex(p, n)} + ${surdTex(qn, n)}`)}?`; hint = "Add the front numbers of like surds.";
+      rightWhy = `Right: ${p}√${n} + ${qn}√${n} = (${p} + ${qn})√${n} = ${out}√${n}.`;
+      wrong = [[T(surdTex(p + qn, 2 * n)), `The root stays √${n}; only the fronts add.`], [T(surdTex(p * qn, n)), `Add ${p} and ${qn}, do not multiply them.`], [T(String(out)), `Keep √${n} on the answer.`], [T(surdTex(Math.abs(p - qn), n)), `This is an addition, so ${p} + ${qn} = ${out}.`]];
+      steps = [`$${p}${sqrtTex(n)} + ${qn}${sqrtTex(n)} = ${out}${sqrtTex(n)}$`]; data = { form, p, q: qn, n, out };
+    }
+    return { k: "which", mc: true, ctx, right, rightWhy, wrong, q: `${ctx.who} checks a Root Garden label. ${q}`, hint, steps, data }; }
+};
+const ROOT_KINDS = ["simp", "simp", "simpK", "mul", "mul", "add", "add", "conj", "conj", "sq", "rat1", "rat1", "ratC", "ratConj", "which", "which"];
+const rootQ = (r, kind) => {
+  const z = ROOT[kind](r), ctx = z.ctx, uid = `surd|${z.k}|${JSON.stringify(z.data)}`;
+  const extra = { uid, pic: z.pic || "", data: Object.assign({ surd: z.k, ctx: ctx.id }, z.data) };
+  if (z.mc) return mcqWhy(r, z.q, z.right, z.rightWhy, z.wrong, z.hint, z.steps, extra);
+  return numWhy(z.q, z.v, z.hint, z.steps, z.slips, extra);
+};
+topic(9, "surds", "Root Garden", "🌿", "Simplify, multiply and rationalise surds", r => rootQ(r, r.pick(ROOT_KINDS)));
 topic(9, "trig", "SOH-CAH-TOA Tower", "🗼", "Trigonometry in right triangles", r => {
   const ang = r.int(15, 75), side = r.int(3, 20), t = r.int(0, 3);
   if (t === 3) { const o = r.int(2, 15), a2 = r.int(2, 15), th = toDeg(Math.atan(o / a2)); return num(`In a right-angled triangle the side opposite θ is ${o} cm and the side adjacent to θ is ${a2} cm. Find θ in degrees (1 d.p.).`, rd(th, 1), "tan θ = opposite ÷ adjacent", [`$\\tan\\theta = \\frac{${o}}{${a2}}$`, `$\\theta = \\tan^{-1}\\left(\\frac{${o}}{${a2}}\\right) \\approx ${rd(th, 1).toFixed(1)}^\\circ$`], { a: rd(th, 1).toFixed(1), keys: ["."], tol: 0.051, data: { o, a2, t } }); }
@@ -199,7 +382,7 @@ topic(9, "bearings", "Lighthouse Lookout", "🚢", "Bearings, angles of elevatio
 topic(9, "coord", "Treasure-Map Coordinates", "🗺️", "Distance and midpoint", r => {
   const x1 = r.int(-8, 8), y1 = r.int(-8, 8);
   if (r.chance(.5)) { const tr = r.pick([[3, 4, 5], [5, 12, 13], [6, 8, 10], [8, 6, 10], [4, 3, 5], [12, 5, 13]]), x2 = x1 + r.pick([1, -1]) * tr[0], y2 = y1 + r.pick([1, -1]) * tr[1];
-    return num(`Find the distance between ${T(`(${x1}, ${y1})`)} and ${T(`(${x2}, ${y2})`)}.`, tr[2], "d = √((x₂ − x₁)² + (y₂ − y₁)²)", [`$d = \\sqrt{${paren(x2 - x1)}^2 + ${paren(y2 - y1)}^2} = \\sqrt{${tr[2] * tr[2]}} = ${tr[2]}$`], { data: { x1, y1, x2, y2 } }); }
+    return num(`Find the distance between ${T(`(${x1}, ${y1})`)} and ${T(`(${x2}, ${y2})`)}.`, tr[2], "d = √((x₂ − x₁)² + (y₂ − y₁)²)", [`$d = ${sqrtTex(`${paren(x2 - x1)}^2 + ${paren(y2 - y1)}^2`)} = ${sqrtTex(tr[2] * tr[2])} = ${tr[2]}$`], { data: { x1, y1, x2, y2 } }); }
   const x2 = x1 + 2 * r.int(-5, 5), y2 = y1 + 2 * r.int(-5, 5), mx = (x1 + x2) / 2, my = (y1 + y2) / 2;
   return Q({ q: `Find the midpoint of ${T(`(${x1}, ${y1})`)} and ${T(`(${x2}, ${y2})`)}. (type x, y)`, kind: "pair", val: [mx, my], a: `${mx}, ${my}`, keys: ["-", ","], hint: "Average the x's, average the y's.", steps: [`$x = \\frac{${x1} + ${paren(x2)}}{2} = ${mx}$`, `$y = \\frac{${y1} + ${paren(y2)}}{2} = ${my}$`], data: { x1, y1, x2, y2 } });
 });
@@ -802,7 +985,7 @@ topic(10, "sector", "Slice of the Moon", "🌙", "Arc length and sector area", r
   return num(`A slice of moon-cake is a sector with radius ${R} cm and angle ${th}°. Find its ${area ? "area in cm²" : "arc length in cm"} (2 d.p.).`, rd(v, 2), area ? "Sector area = (θ/360) × πr²" : "Arc length = (θ/360) × 2πr", [area ? `$\\frac{${th}}{360} \\times \\pi \\times ${R}^2 \\approx ${fdp(v, 2)}$` : `$\\frac{${th}}{360} \\times 2\\pi \\times ${R} \\approx ${fdp(v, 2)}$`], { a: fdp(v, 2), keys: ["."], tol: 0.0051, data: { R, th, area } });
 });
 topic(10, "vectors", "Arrow Vectors", "➡️", "Column vectors and magnitude", r => {
-  if (r.chance(.5)) { const tr = r.pick([[3, 4, 5], [6, 8, 10], [5, 12, 13], [8, 15, 17]]), v = [tr[0] * r.pick([1, -1]), tr[1] * r.pick([1, -1])]; return num(`Find the magnitude of ${T(V2(v))}.`, tr[2], "|v| = √(x² + y²)", [`$\\sqrt{${paren(v[0])}^2 + ${paren(v[1])}^2} = \\sqrt{${tr[2] * tr[2]}} = ${tr[2]}$`], { data: { v } }); }
+  if (r.chance(.5)) { const tr = r.pick([[3, 4, 5], [6, 8, 10], [5, 12, 13], [8, 15, 17]]), v = [tr[0] * r.pick([1, -1]), tr[1] * r.pick([1, -1])]; return num(`Find the magnitude of ${T(V2(v))}.`, tr[2], "|v| = √(x² + y²)", [`$${sqrtTex(`${paren(v[0])}^2 + ${paren(v[1])}^2`)} = ${sqrtTex(tr[2] * tr[2])} = ${tr[2]}$`], { data: { v } }); }
   const a = [r.int(-6, 6), r.int(-6, 6)], b = [r.int(-6, 6), r.int(-6, 6)], k = r.int(2, 3), res = [k * a[0] + b[0], k * a[1] + b[1]];
   return Q({ q: `${T(`\\mathbf{a} = ${V2(a)},\\ \\mathbf{b} = ${V2(b)}`)}. Find ${T(`${k}\\mathbf{a} + \\mathbf{b}`)} (type top, bottom).`, kind: "pair", val: res, a: res.join(", "), keys: ["-", ","], hint: `Multiply each part of a by ${k}, then add b part by part.`, steps: [`$${k}\\mathbf{a} = ${V2([k * a[0], k * a[1]])}$`, `$${k}\\mathbf{a} + \\mathbf{b} = ${V2(res)}$`], data: { a, b, k } });
 });
@@ -897,7 +1080,7 @@ topic(12, "binom", "Binomial Bakery", "🥐", "Binomial probabilities (3 s.f.)",
 const Z = (x, y) => `${x}${y < 0 ? " - " : " + "}${Math.abs(y) === 1 ? "" : Math.abs(y)}i`;
 topic(12, "complex", "Complex Crystal Ball", "🔮", "Complex numbers", r => {
   const a = r.int(-6, 6), b = r.nz(-6, 6), c = r.int(-5, 5), d = r.nz(-5, 5), t = r.int(0, 2);
-  if (t === 0) { const tr = r.pick([[3, 4, 5], [5, 12, 13], [6, 8, 10], [8, 15, 17]]), x = tr[0] * r.pick([1, -1]), y = tr[1] * r.pick([1, -1]); return num(`Find ${T(`|${Z(x, y)}|`)}.`, tr[2], "|a + bi| = √(a² + b²)", [`$\\sqrt{${paren(x)}^2 + ${paren(y)}^2} = ${tr[2]}$`], { data: { x, y, t } }); }
+  if (t === 0) { const tr = r.pick([[3, 4, 5], [5, 12, 13], [6, 8, 10], [8, 15, 17]]), x = tr[0] * r.pick([1, -1]), y = tr[1] * r.pick([1, -1]); return num(`Find ${T(`|${Z(x, y)}|`)}.`, tr[2], "|a + bi| = √(a² + b²)", [`$${sqrtTex(`${paren(x)}^2 + ${paren(y)}^2`)} = ${tr[2]}$`], { data: { x, y, t } }); }
   if (t === 1) return Q({ q: `Calculate ${T(`(${Z(a, b)})(${Z(c, d)})`)}. Type the real part, then the imaginary part (like 7, -3).`, kind: "pair", val: [a * c - b * d, a * d + b * c], a: `${a * c - b * d}, ${a * d + b * c}`, keys: ["-", ","], hint: "Expand like brackets and remember i² = −1.",
     steps: [`$= ${a * c}${sgn(a * d)}${Math.abs(a * d)}i${sgn(b * c)}${Math.abs(b * c)}i${sgn(b * d)}${Math.abs(b * d)}i^2$`, `$= ${Z(a * c - b * d, a * d + b * c)}$`], data: { a, b, c, d, t } });
   const B = -2 * a, C2 = a * a + b * b;
