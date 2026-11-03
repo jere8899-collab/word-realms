@@ -352,6 +352,73 @@ const svgWave = (title, a, b, kind, d = 0, opts = {}) => {
       return s;
     } }));
 };
+/* straight-line kit (Straight-Line Street): y = mx + c on the shared svgPlane / plotFrame.
+   svgStraight(title, m, c, opts?) → path class=lineeq with data-m/c, marks class=ldot (data-n/x/y).
+   opts.small → 150×120 match thumbnails; optional marks for y-intercept / labelled point / x-intercept.
+   Window keeps the origin visible (same origin-keeping idea as svgParabola). Parabola / wave / travel stay byte-identical. */
+const svgStraight = (title, m, c, opts = {}) => {
+  let xmin = opts.xmin, xmax = opts.xmax, ymin = opts.ymin, ymax = opts.ymax;
+  const marks = opts.marks || [];
+  const markYs = marks.map(mk => mk.y), markXs = marks.map(mk => mk.x);
+  // default window: include origin, y-intercept, a couple of lattice samples, and any marks
+  if (xmin == null || xmax == null) {
+    const xs = [0];
+    if (Math.abs(m) > 1e-12) xs.push(-c / m);
+    // sample x where the line is likely near lattice points
+    for (let x = -4; x <= 4; x++) xs.push(x);
+    for (const x of markXs) xs.push(x);
+    let lo = Math.floor(Math.min(...xs) - 1), hi = Math.ceil(Math.max(...xs) + 1);
+    if (hi - lo < 6) { const mid = (lo + hi) / 2; lo = Math.floor(mid - 3); hi = Math.ceil(mid + 3); }
+    xmin = xmin ?? Math.max(-8, lo); xmax = xmax ?? Math.min(8, hi);
+    if (xmax - xmin < 4) { xmin = Math.max(-8, xmin - 1); xmax = Math.min(8, xmax + 1); }
+  }
+  if (ymin == null || ymax == null) {
+    const ySamples = [c, 0].concat(markYs);
+    for (let i = 0; i <= 12; i++) { const x = xmin + (xmax - xmin) * i / 12; ySamples.push(m * x + c); }
+    const lo = Math.min(...ySamples), hi = Math.max(...ySamples);
+    const pad = Math.max(1, Math.ceil((hi - lo) * .12 + .01));
+    ymin = ymin ?? Math.floor(lo) - pad; ymax = ymax ?? Math.ceil(hi) + pad;
+    if (ymax - ymin < 4) { const mid = (ymin + ymax) / 2; ymin = Math.floor(mid - 2); ymax = Math.ceil(mid + 2); }
+  }
+  // always show the origin when it sits near the interesting region; keep marks inside the window
+  if (xmin > 0) xmin = 0; if (xmax < 0) xmax = 0; if (ymin > 0) ymin = 0; if (ymax < 0) ymax = 0;
+  for (const x of markXs) { if (x < xmin) xmin = Math.floor(x) - 1; if (x > xmax) xmax = Math.ceil(x) + 1; }
+  for (const y of markYs) { if (y < ymin) ymin = Math.floor(y) - 1; if (y > ymax) ymax = Math.ceil(y) + 1; }
+  const small = !!opts.small;
+  const xstep = opts.xstep || (xmax - xmin > 10 ? 2 : 1);
+  const ystep = opts.ystep || (ymax - ymin > 12 ? Math.ceil((ymax - ymin) / 8) : ymax - ymin > 8 ? 2 : 1);
+  return svgPlane(title, Object.assign({}, opts, { xmin, xmax, ymin, ymax, xstep, ystep,
+    w: small ? 150 : (opts.w || 300), h: small ? 120 : (opts.h || 226), ty: small ? 14 : 18,
+    cls: opts.cls || "mpic chart lineeq", label: opts.label || "linear graph",
+    draw: (X, Y, box) => {
+      const { xmin: xLo, xmax: xHi, ymin: yLo, ymax: yHi } = box;
+      // clip the infinite line to the visible window (find endpoints on the border)
+      const pts = [];
+      const push = (x, y) => { if (x >= xLo - 1e-9 && x <= xHi + 1e-9 && y >= yLo - 1e-9 && y <= yHi + 1e-9) pts.push([x, y]); };
+      // intersections with the four edges
+      push(xLo, m * xLo + c); push(xHi, m * xHi + c);
+      if (Math.abs(m) > 1e-12) { push((yLo - c) / m, yLo); push((yHi - c) / m, yHi); }
+      // dedupe near-duplicates then take the two extremes along x (or y if vertical-ish)
+      const uniq = [];
+      for (const p of pts) if (!uniq.some(q => Math.abs(q[0] - p[0]) < 1e-6 && Math.abs(q[1] - p[1]) < 1e-6)) uniq.push(p);
+      uniq.sort((a, b) => a[0] - b[0] || a[1] - b[1]);
+      let d = "";
+      if (uniq.length >= 2) {
+        const a = uniq[0], b = uniq[uniq.length - 1];
+        d = "M" + xy([X(a[0]), Y(a[1])]) + " L" + xy([X(b[0]), Y(b[1])]);
+      } else if (uniq.length === 1) {
+        d = "M" + xy([X(uniq[0][0]), Y(uniq[0][1])]) + " L" + xy([X(uniq[0][0]), Y(uniq[0][1])]);
+      }
+      const stroke = opts.stroke || (m >= 0 ? "#7ec8e3" : "#ff8fa3");
+      let s = `<path class="lineeq" data-m="${fmt(m)}" data-c="${fmt(c)}" d="${d}" fill="none" stroke="${stroke}" stroke-width="${small ? 2.2 : 3}" stroke-linejoin="round" stroke-linecap="round"/>`;
+      for (const mk of marks) {
+        const px = X(mk.x), py = Y(mk.y), lab = mk.lab != null ? mk.lab : mk.n;
+        s += `<circle class="ldot" data-n="${esc(mk.n)}" data-x="${fmt(mk.x)}" data-y="${fmt(mk.y)}" cx="${px}" cy="${py}" r="${small ? 3 : 4}" fill="#fff" stroke="#ff6f91" stroke-width="2"/>`;
+        if (lab && !small) s += `<text class="llab" data-n="${esc(mk.n)}" x="${f1(px + (mk.dx || 0))}" y="${f1(py + (mk.dy || -8))}" font-size="11" text-anchor="middle" font-weight="900" fill="${INK}" paint-order="stroke" stroke="#FFFDF8" stroke-width="3">${esc(lab)}</text>`;
+      }
+      return s;
+    } }));
+};
 const svgBars = (title, unit, cats, vals, max, step) => {
   const x0 = 36, x1 = 290, top = 38, bot = 170, [grid, y] = axes(x0, x1, top, bot, max, step), w = (x1 - x0) / cats.length;
   const bars = cats.map((c, i) => { const bx = +(x0 + w * i + w * 0.2).toFixed(1), bw = +(w * 0.6).toFixed(1), cx = +(x0 + w * (i + 0.5)).toFixed(1);
@@ -464,7 +531,7 @@ M.longMulSteps = (a, b) => { const bs = String(b).split("").reverse(); const out
 /* ====================== TOPICS ====================== */
 const TOPICS = [];
 const topic = (grade, id, name, icon, desc, gen, opt = {}) => TOPICS.push(Object.assign({ grade, id: `g${grade}.${id}`, name, icon, desc, gen }, opt));
-M._internal = { Q, num, mcq, mcqWhy, numWhy, T, NAMES, THINGS, COUNT_EMOJI, PASTEL, INK, LINE, esc, svgBox, cardSvg, tickAttr, xTicks, yUnit, xUnit, cellKey, figKey, hasCell, nearCells, gridPaper, gridSheet, gridCell, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, axes, svgBars, svgLine, svgPieChart, svgGeo, fitBox, toRad, toDeg, sinD, cosD, tanD, rotPt, dirPt, f1, xy, mid, vat, vdir, angSweep, angWedge, angText, rightPath, figCard, figShape, figEdge, figLab, figLens, figDot, figVtx, figRight, coin, emojiRows, table, colAdd, colSub, topic, TOPICS, gcd, lcm, rd, fmt, fdp, money, simp, fracTex, fracStr, mixedTex, sgn, poly, lin, paren, pm, undo, coef, ord, sum, asc, median, freqTotals, sqrtTex, surdTex, simpRad, matTex, matSvg, PLOT_BOX, plotFrame, svgPlane, svgParabola, ampPeriod, svgWave };
+M._internal = { Q, num, mcq, mcqWhy, numWhy, T, NAMES, THINGS, COUNT_EMOJI, PASTEL, INK, LINE, esc, svgBox, cardSvg, tickAttr, xTicks, yUnit, xUnit, cellKey, figKey, hasCell, nearCells, gridPaper, gridSheet, gridCell, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, axes, svgBars, svgLine, svgPieChart, svgGeo, fitBox, toRad, toDeg, sinD, cosD, tanD, rotPt, dirPt, f1, xy, mid, vat, vdir, angSweep, angWedge, angText, rightPath, figCard, figShape, figEdge, figLab, figLens, figDot, figVtx, figRight, coin, emojiRows, table, colAdd, colSub, topic, TOPICS, gcd, lcm, rd, fmt, fdp, money, simp, fracTex, fracStr, mixedTex, sgn, poly, lin, paren, pm, undo, coef, ord, sum, asc, median, freqTotals, sqrtTex, surdTex, simpRad, matTex, matSvg, PLOT_BOX, plotFrame, svgPlane, svgParabola, ampPeriod, svgWave, svgStraight };
 M.TOPICS = TOPICS;
 M.topic = id => TOPICS.find(t => t.id === id);
 M.gradeTopics = g => TOPICS.filter(t => t.grade === g);

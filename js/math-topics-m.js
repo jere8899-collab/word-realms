@@ -1,7 +1,7 @@
 /* 🔢 Number Kingdom topics, Grades 5–8 (Singapore Primary 5–6, Secondary 1–2). */
 (function () {
 const M = (typeof module !== "undefined" && module.exports) ? require("./math-gen.js") : window.MathGen;
-const { Q, num, mcq, mcqWhy, numWhy, T, topic, PASTEL, INK, LINE, esc, svgBox, fitBox, cellKey, figKey, hasCell, nearCells, gridSheet, svgPieChart, svgGeo, cardSvg, sinD, cosD, tanD, rotPt, dirPt, f1, xy, mid, vdir, angSweep, angWedge, angText, figCard, figShape, figEdge, figLab, figRight, gcd, lcm, rd, fmt, fdp, simp, fracTex, fracStr, mixedTex, poly, lin, paren, pm, undo, coef, ord, sum, asc, median } = M._internal;
+const { Q, num, mcq, mcqWhy, numWhy, T, topic, PASTEL, INK, LINE, esc, svgBox, fitBox, cellKey, figKey, hasCell, nearCells, gridSheet, svgPieChart, svgGeo, cardSvg, sinD, cosD, tanD, rotPt, dirPt, f1, xy, mid, vdir, angSweep, angWedge, angText, figCard, figShape, figEdge, figLab, figRight, gcd, lcm, rd, fmt, fdp, simp, fracTex, fracStr, mixedTex, poly, lin, paren, pm, undo, coef, ord, sum, asc, median, svgStraight } = M._internal;
 
 /* ---------- Grade 5 (Primary 5) ---------- */
 topic(5, "fracmul", "Fraction Spells", "✨", "Multiply fractions", r => {
@@ -873,6 +873,443 @@ topic(8, "gradient", "Gradient Hills", "⛰️", "Gradient and straight lines", 
   if (t === 1) return num(`The line ${T(`y = ${lin(m, c)}`)} meets the y-axis at (0, c). What is c?`, c, "In y = mx + c, c is the y-intercept.", [`Put x = 0: y = ${c}`], { keys: ["-"] });
   return num(`On the line ${T(`y = ${lin(m, c)}`)}, what is y when ${T(`x = ${x}`)}?`, m * x + c, "Substitute the x value.", [`$y = ${m}(${x}) ${pm(c)} = ${m * x + c}$`], { keys: ["-"], data: { m, c, x } });
 });
+
+/* ---------- 📏 Straight-Line Street (MOE Sec 2 linear graphs): gradient, intercepts, match equation ↔
+   pastel SVG, find the equation from two points, evaluate a point, parallel / perpendicular gradients,
+   and kid word problems (hill roads, rainbow paths, kite string, fairy tram, pumpkin-coach ramp,
+   sports-day run, beanstalk stick, lantern bridge). Pictures use the shared svgStraight kit in
+   math-gen.js (class=lineeq data-m/c, marks class=ldot). Gradient Hills stays text-only and byte-identical. */
+const LINE_CTX = [
+  { id: "hill", title: "Hill road", who: "Fairy Pip", spot: "Gradient Hills", thing: "hill road", of: "the road" },
+  { id: "rainbow", title: "Rainbow path", who: "Sumi the star fairy", spot: "the rainbow path", thing: "rainbow path", of: "the path" },
+  { id: "kite", title: "Kite string", who: "Jack", spot: "the kite field", thing: "kite string", of: "the kite string" },
+  { id: "tram", title: "Fairy tram", who: "Princess Mira", spot: "the fairy tram track", thing: "tram track", of: "the tram track" },
+  { id: "coach", title: "Pumpkin-coach ramp", who: "Cinderella", spot: "the palace ramp", thing: "pumpkin-coach ramp", of: "the ramp" },
+  { id: "sports", title: "Sports-day run", who: "Little Red", spot: "sports day", thing: "running graph", of: "the run" },
+  { id: "bean", title: "Beanstalk stick", who: "Jack", spot: "the giant beanstalk", thing: "measuring stick", of: "the stick" },
+  { id: "lantern", title: "Lantern bridge", who: "Rapunzel", spot: "the lantern bridge", thing: "bridge slope", of: "the bridge" }
+];
+// nice y = mx + c with m in {±1,±2,±3,±1/2,±3/2} and integer c so graphs land on lattice points
+const niceLine = r => {
+  const m = r.pick([-3, -2, -1.5, -1, -0.5, 0.5, 1, 1.5, 2, 3]);
+  const c = r.int(-5, 5);
+  const xint = Math.abs(m) > 1e-12 ? -c / m : null;
+  return { m, c, xint };
+};
+const lineEqTex = (m, c) => {
+  const half = { [-1.5]: "-\\frac{3}{2}", [-0.5]: "-\\frac{1}{2}", [0.5]: "\\frac{1}{2}", [1.5]: "\\frac{3}{2}" };
+  let front = half[m];
+  if (front == null) front = m === 1 ? "" : m === -1 ? "-" : fmt(m);
+  const mx = front + "x";
+  if (c === 0) return `y = ${mx}`;
+  return `y = ${mx} ${c < 0 ? "-" : "+"} ${Math.abs(c)}`;
+};
+const lineEqShow = (m, c) => T(lineEqTex(m, c));
+const lineMarks = (z, which, extra = []) => {
+  const mks = [];
+  if (which.includes("y")) mks.push({ n: "Y", x: 0, y: z.c, lab: `(0, ${fmt(z.c)})`, dx: 18, dy: 0 });
+  if (which.includes("x") && z.xint != null && Math.abs(z.m) > 1e-12)
+    mks.push({ n: "X", x: z.xint, y: 0, lab: `(${fmt(z.xint)}, 0)`, dy: 14 });
+  for (const e of extra) mks.push(e);
+  return mks;
+};
+const linePic = (z, ctx, which = ["y"], o = {}, extra = []) =>
+  svgStraight(ctx.title, z.m, z.c, Object.assign({ marks: lineMarks(z, which, extra) }, o));
+const twoLattice = (z, r) => {
+  const xs = [];
+  for (let x = -4; x <= 4; x++) {
+    const y = z.m * x + z.c;
+    if (Math.abs(y * 2 - Math.round(y * 2)) < 1e-9 && Math.abs(y) <= 8) xs.push(x);
+  }
+  if (xs.length < 2) return [{ x: 0, y: z.c }, { x: 2, y: z.m * 2 + z.c }];
+  const shuffled = r.shuffle(xs.slice());
+  let x1 = shuffled[0], x2 = shuffled.find(x => x !== x1) ?? (x1 + 1);
+  if (x1 > x2) [x1, x2] = [x2, x1];
+  return [{ x: x1, y: z.m * x1 + z.c }, { x: x2, y: z.m * x2 + z.c }];
+};
+// pad wrong MCQ options up to 3 unique strings with filler notes
+const padWrong = (right, cand, fillers) => {
+  const wrong = []; const seen = new Set([String(right)]);
+  for (const [o, n] of cand.concat(fillers)) {
+    const s = String(o);
+    if (seen.has(s) || !n || n.length < 20) continue;
+    seen.add(s); wrong.push([s, n]);
+    if (wrong.length >= 3) break;
+  }
+  return wrong;
+};
+const padSlips = (ans, slips, fillers) => {
+  const keep = []; const seen = new Set([String(ans)]);
+  for (const [v, n] of slips.concat(fillers)) {
+    const s = String(v);
+    if (seen.has(s) || !n || n.length < 20) continue;
+    // numeric equality for numWhy
+    if (Math.abs(+v - +ans) < 1e-9) continue;
+    seen.add(s); keep.push([v, n]);
+    if (keep.length >= 4) break;
+  }
+  return keep;
+};
+const LINEQ = {
+  grad: r => {
+    const z = niceLine(r), ctx = r.pick(LINE_CTX), pts = twoLattice(z, r), mc = r.chance(.55);
+    const [A, B] = pts, rise = B.y - A.y, run = B.x - A.x;
+    const extra = [
+      { n: "A", x: A.x, y: A.y, lab: `A(${fmt(A.x)}, ${fmt(A.y)})`, dy: A.y >= 0 ? -8 : 14 },
+      { n: "B", x: B.x, y: B.y, lab: `B(${fmt(B.x)}, ${fmt(B.y)})`, dy: B.y >= 0 ? -8 : 14 }
+    ];
+    const pic = linePic(z, ctx, [], {}, extra);
+    const q = `${ctx.who} draws ${ctx.of} through A(${fmt(A.x)}, ${fmt(A.y)}) and B(${fmt(B.x)}, ${fmt(B.y)}). What is the gradient?`;
+    const hint = "Gradient = rise ÷ run = (y₂ − y₁) ÷ (x₂ − x₁).";
+    const steps = [`$m = \\dfrac{${fmt(B.y)} - ${paren(A.y)}}{${fmt(B.x)} - ${paren(A.x)}} = \\dfrac{${fmt(rise)}}{${fmt(run)}} = ${fmt(z.m)}$`];
+    const right = String(fmt(z.m));
+    const rightWhy = "Right: count how far up or down the line goes between the two marked points, then divide by how far across — that steepness is the gradient.";
+    const fillers = [[fmt(z.m + 2), "Count the squares carefully between the two marked points, then divide rise by run."],
+      [fmt(z.m - 2), "Keep the same order when you subtract the coordinates, then divide."],
+      [fmt(3), "Gradient is rise ÷ run between the two marked points — try that divide again."],
+      [fmt(-3), "Watch which way the line slopes when you work out rise ÷ run."]];
+    if (mc) {
+      const cand = [
+        [fmt(-z.m), "You swapped the sign. Rise over run keeps the signs of both subtractions."],
+        [fmt(rise), "That is only the rise. Divide by the run to get the gradient."],
+        [fmt(run), "That is the run (change in x). Gradient is rise ÷ run."],
+        [fmt(z.c), "That is the y-intercept. Gradient is how steep the line is: rise ÷ run."],
+        [fmt(z.m === 1 ? 2 : z.m + (z.m > 0 ? 1 : -1)), "Count the squares carefully between A and B, then divide rise by run."]
+      ];
+      return { k: "grad", mc: true, ctx, z, right, rightWhy, wrong: padWrong(right, cand, fillers), q, hint, steps, pic,
+        data: { m: z.m, c: z.c, x1: A.x, y1: A.y, x2: B.x, y2: B.y } };
+    }
+    return { k: "grad", mc: false, ctx, z, x: z.m, q, hint, steps, pic,
+      data: { m: z.m, c: z.c, x1: A.x, y1: A.y, x2: B.x, y2: B.y },
+      slips: padSlips(z.m, [
+        [-z.m, "Watch the sign: (y₂ − y₁) ÷ (x₂ − x₁) keeps both subtractions in the same order."],
+        [rise, "That is only the rise. Divide by the run to get the gradient."],
+        [run, "That is the run (change in x). Gradient is rise ÷ run."],
+        [z.c, "That is the y-intercept. Gradient is rise ÷ run between the two points."]
+      ], [[z.m + 1, "Count the squares between the marked points carefully, then divide."],
+        [z.m - 1, "Keep rise over run — do not flip the fraction or the order."]]) };
+  },
+  yint: r => {
+    const z = niceLine(r), ctx = r.pick(LINE_CTX), mc = r.chance(.5), pic = linePic(z, ctx, ["y"]);
+    const q = `${ctx.who} sketches ${lineEqShow(z.m, z.c)} for ${ctx.of} at ${ctx.spot}. What is the y-intercept?`;
+    const hint = "In y = mx + c, the y-intercept is c — where the line meets the y-axis (x = 0).";
+    const steps = [`Put $x = 0$: $y = ${fmt(z.c)}$`, `So the line crosses the y-axis at $(0,\\ ${fmt(z.c)})$.`];
+    const right = String(fmt(z.c));
+    const rightWhy = "Right: putting x equal to zero wipes out the mx term, leaving only the constant — that is where the line meets the y-axis.";
+    const fillers = [[fmt(z.c + 3), "Read the constant term at the end of y = mx + c carefully."],
+      [fmt(z.c - 3), "Do not adjust the constant — read it straight from the equation."],
+      ["4", "The y-intercept is the constant term c, not a random nearby number."],
+      ["-4", "Watch the sign of the constant term at the end of the equation."]];
+    if (mc) {
+      const cand = [
+        [fmt(z.m), "That is the gradient m. The y-intercept is the constant term c."],
+        [fmt(z.xint != null ? z.xint : z.c + 1), z.xint != null ? "That is the x-intercept. The y-intercept is where x = 0." : "Read c from the end of y = mx + c."],
+        [fmt(z.c === 0 ? 1 : -z.c), z.c === 0 ? "When x = 0 this line gives y = 0, so the intercept is zero." : "Watch the sign of the constant term."],
+        [fmt(z.c + 2), "That adds two to the constant. Read c straight from the end of the equation."]
+      ];
+      return { k: "yint", mc: true, ctx, z, right, rightWhy, wrong: padWrong(right, cand, fillers), q, hint, steps, pic, data: { m: z.m, c: z.c } };
+    }
+    return { k: "yint", mc: false, ctx, z, x: z.c, q, hint, steps, pic, data: { m: z.m, c: z.c },
+      slips: padSlips(z.c, [
+        [z.m, "That is the gradient. The y-intercept is the constant term when x = 0."],
+        [z.xint != null && Math.abs(z.xint - z.c) > 1e-9 ? z.xint : (z.c === 0 ? 1 : -z.c),
+          z.xint != null && Math.abs(z.xint - z.c) > 1e-9 ? "That is the x-intercept. The y-intercept is the constant c." : "Check the sign of the constant term in the equation."],
+        [z.c + 1, "Read c straight from the end of the equation — do not add one."],
+        [z.c - 2, "Do not adjust the constant. When x = 0, y equals c."]
+      ], [[7, "The y-intercept is the constant at the end of y = mx + c."],
+        [-7, "Watch the sign — read the constant carefully from the equation."]]) };
+  },
+  xint: r => {
+    // force neat half/integer x-intercepts: pick m and c so -c/m is neat
+    const m = r.pick([-3, -2, -1, -0.5, 0.5, 1, 2, 3]);
+    const neatX = r.pick([-4, -3, -2, -1, -0.5, 0.5, 1, 2, 3, 4].filter(x => Math.abs(m * x) <= 5 && Math.abs(m * x - Math.round(m * x)) < 1e-9));
+    const c = -m * neatX; // so xint = neatX, and c is integer/half
+    const z = { m, c, xint: neatX };
+    const ctx = r.pick(LINE_CTX), mc = r.chance(.5), pic = linePic(z, ctx, ["x", "y"]);
+    const q = `The graph shows ${ctx.of} as ${lineEqShow(z.m, z.c)}. Where does it meet the x-axis? (the x-intercept)`;
+    const hint = "Set y = 0 and solve for x: 0 = mx + c → x = −c / m.";
+    const steps = [`$0 = ${fmt(z.m)}x ${pm(z.c)}$`, `$x = \\dfrac{${fmt(-z.c)}}{${fmt(z.m)}} = ${fmt(z.xint)}$`, `So the x-intercept is ${fmt(z.xint)}.`];
+    const right = String(fmt(z.xint));
+    const rightWhy = "Right: the line meets the x-axis where the height is zero, so divide the opposite of the constant by the gradient.";
+    const fillers = [[fmt(z.xint + 2), "Solve 0 = mx + c carefully for x."],
+      [fmt(z.xint - 2), "Keep the signs when you rearrange 0 = mx + c."],
+      ["3", "The x-intercept comes from setting y to zero, then solving for x."],
+      ["-3", "Watch the sign when you divide −c by the gradient."]];
+    if (mc) {
+      const cand = [
+        [fmt(z.c), "That is the y-intercept. For the x-intercept set y = 0 and solve for x."],
+        [fmt(-z.xint), "Check the signs: x = −c / m, not the opposite of that."],
+        [fmt(z.m), "That is the gradient. The x-intercept is −c ÷ m."],
+        [fmt(z.c / z.m), "You forgot the minus: x = −c / m, not c / m."]
+      ];
+      return { k: "xint", mc: true, ctx, z, right, rightWhy, wrong: padWrong(right, cand, fillers), q, hint, steps, pic,
+        data: { m: z.m, c: z.c, xint: z.xint } };
+    }
+    return { k: "xint", mc: false, ctx, z, x: z.xint, q, hint, steps, pic, data: { m: z.m, c: z.c, xint: z.xint },
+      slips: padSlips(z.xint, [
+        [z.c, "That is the y-intercept. Set y = 0 to find the x-intercept."],
+        [-z.xint, "Watch the sign: x = −c / m keeps both signs in the divide."],
+        [z.c / z.m, "Remember the minus: x = −c / m, not c / m."],
+        [z.m, "That is the gradient. The x-intercept is found by setting y = 0."]
+      ], [[5, "Solve 0 = mx + c for x — that is the x-intercept."],
+        [-5, "Keep the signs when you rearrange and divide."]]) };
+  },
+  match: r => {
+    const z = niceLine(r), ctx = r.pick(LINE_CTX);
+    const key = g => `${fmt(g.m)}|${fmt(g.c)}`;
+    const mk = (m, c) => ({ m, c, xint: Math.abs(m) > 1e-12 ? -c / m : null });
+    const graphs = [z];
+    const seen = new Set([key(z)]);
+    const candidates = [
+      mk(-z.m, z.c),
+      mk(z.m, z.c === 0 ? 2 : -z.c),
+      mk(z.m === 1 ? 2 : z.m === -1 ? -2 : (z.m > 0 ? 1 : -1), z.c),
+      mk(z.m, z.c + (z.c >= 0 ? 2 : -2)),
+      mk(z.m === 0.5 ? 1.5 : 0.5 * Math.sign(z.m) || 0.5, z.c),
+      mk(-z.m, -z.c),
+      mk(z.m === 2 ? 3 : 2 * Math.sign(z.m) || 2, z.c),
+      mk(z.m, 4),
+      mk(z.m, -4)
+    ];
+    for (const g of r.shuffle(candidates)) if (!seen.has(key(g)) && graphs.length < 4) { seen.add(key(g)); graphs.push(g); }
+    while (graphs.length < 4) {
+      const g = niceLine(r); if (!seen.has(key(g))) { seen.add(key(g)); graphs.push(g); }
+    }
+    const ids = ["g1", "g2", "g3", "g4"], order = r.shuffle([0, 1, 2, 3]), rightId = ids[order.indexOf(0)];
+    const optPics = {};
+    order.forEach((gi, i) => {
+      const g = graphs[gi];
+      optPics[ids[i]] = svgStraight(" ", g.m, g.c, { small: true, marks: [{ n: "Y", x: 0, y: g.c, lab: "" }] });
+    });
+    const wrong = ids.filter(id => id !== rightId).map(id => {
+      const g = graphs[order[ids.indexOf(id)]];
+      return [id, `That graph has gradient ${fmt(g.m)} and y-intercept ${fmt(g.c)}. Match the steepness and where it crosses the y-axis.`];
+    });
+    return { k: "match", mc: true, ctx, z, right: rightId,
+      rightWhy: "Right: this line matches the given steepness and crosses the y-axis at the same place as the equation.",
+      wrong, q: `Which graph shows ${lineEqShow(z.m, z.c)} for ${ctx.of}?`,
+      hint: "Check the steepness (sign and size of m) and where it crosses the y-axis (c).",
+      steps: [`Gradient $m = ${fmt(z.m)}$ → ${z.m > 0 ? "slopes up" : "slopes down"}`, `Y-intercept $c = ${fmt(z.c)}$ → crosses at $(0,\\ ${fmt(z.c)})$`, `Pick the graph that matches both.`],
+      pic: "", optPics, data: { m: z.m, c: z.c, order: order.map(i => key(graphs[i])) } };
+  },
+  eq: r => {
+    const z = niceLine(r), ctx = r.pick(LINE_CTX), pts = twoLattice(z, r);
+    const [A, B] = pts;
+    const extra = [
+      { n: "A", x: A.x, y: A.y, lab: `A(${fmt(A.x)}, ${fmt(A.y)})`, dy: A.y >= 0 ? -8 : 14 },
+      { n: "B", x: B.x, y: B.y, lab: `B(${fmt(B.x)}, ${fmt(B.y)})`, dy: B.y >= 0 ? -8 : 14 }
+    ];
+    const pic = linePic(z, ctx, ["y"], {}, extra);
+    const right = lineEqShow(z.m, z.c);
+    const q = `${ctx.who} marks A(${fmt(A.x)}, ${fmt(A.y)}) and B(${fmt(B.x)}, ${fmt(B.y)}) on ${ctx.of}. What is the equation of the line?`;
+    const hint = "Find the gradient m = rise ÷ run, then use y = mx + c with a known point (or read c from the y-intercept).";
+    const steps = [
+      `$m = \\dfrac{${fmt(B.y)} - ${paren(A.y)}}{${fmt(B.x)} - ${paren(A.x)}} = ${fmt(z.m)}$`,
+      `Using $(0,\\ ${fmt(z.c)})$ (or substitute a point): $c = ${fmt(z.c)}$`,
+      `Equation: $${lineEqTex(z.m, z.c)}$`
+    ];
+    const alts = [
+      lineEqShow(-z.m, z.c),
+      lineEqShow(z.m, z.c === 0 ? 2 : -z.c),
+      lineEqShow(z.m === 1 ? 2 : (z.m === -1 ? -2 : (Math.abs(z.m) === 0.5 ? Math.sign(z.m) * 1.5 : Math.sign(z.m) || 1)), z.c),
+      lineEqShow(z.m, z.c + (z.c >= 0 ? 1 : -1)),
+      lineEqShow(z.m === 2 ? 3 : 2 * Math.sign(z.m) || 2, z.c),
+      lineEqShow(z.m, 4),
+      lineEqShow(z.m, -4),
+      T(`x = ${lin(z.m, z.c)}`)
+    ];
+    const notes = [
+      "The gradient keeps the sign of rise ÷ run — do not flip it.",
+      "The y-intercept is where the line meets the y-axis — keep that sign.",
+      "The steepness between A and B is rise ÷ run. Count the squares again.",
+      "Read c from the y-intercept on the graph, or substitute a marked point.",
+      "Check how steep the line is between the two marked points.",
+      "The constant term is the y-intercept, not a random nearby number.",
+      "Watch the sign of the constant where the line meets the y-axis.",
+      "A non-vertical straight line is written y = mx + c, not x = …."
+    ];
+    const wrong = []; const seen = new Set([right]);
+    alts.forEach((o, i) => { if (!seen.has(o)) { seen.add(o); wrong.push([o, notes[i]]); } });
+    return { k: "eq", mc: true, ctx, z, right,
+      rightWhy: "Right: the steepness between the two marked points gives the gradient, and the line meets the y-axis at the constant term.",
+      wrong: wrong.slice(0, 3), q, hint, steps, pic,
+      data: { m: z.m, c: z.c, x1: A.x, y1: A.y, x2: B.x, y2: B.y } };
+  },
+  point: r => {
+    const z = niceLine(r), ctx = r.pick(LINE_CTX), askY = r.chance(.65);
+    let x = r.int(-4, 4);
+    const y = z.m * x + z.c;
+    let targetY = y, targetX = x;
+    if (!askY) {
+      const ys = [];
+      for (let xx = -4; xx <= 4; xx++) {
+        const yy = z.m * xx + z.c;
+        if (Math.abs(yy * 2 - Math.round(yy * 2)) < 1e-9) ys.push({ x: xx, y: yy });
+      }
+      const pick = r.pick(ys.length ? ys : [{ x, y }]);
+      targetX = pick.x; targetY = pick.y;
+    }
+    const extra = askY
+      ? [{ n: "P", x, y, lab: `P(${fmt(x)}, ?)`, dy: y >= 0 ? -8 : 14 }]
+      : [{ n: "P", x: targetX, y: targetY, lab: `P(?, ${fmt(targetY)})`, dy: targetY >= 0 ? -8 : 14 }];
+    const pic = linePic(z, ctx, ["y"], {}, extra);
+    if (askY) {
+      const ans = y;
+      return { k: "point", mc: false, ctx, z, x: ans,
+        q: `On the line ${lineEqShow(z.m, z.c)} for ${ctx.of}, what is y when x = ${fmt(x)}?`,
+        hint: "Substitute the x value into y = mx + c.",
+        steps: [`$y = ${fmt(z.m)}(${fmt(x)}) ${pm(z.c)} = ${fmt(ans)}$`],
+        pic, data: { m: z.m, c: z.c, px: x, py: ans, ask: "y" },
+        slips: padSlips(ans, [
+          [z.m * x, "You forgot to add the intercept. Remember y = mx + c."],
+          [z.m + z.c, "Substitute the x value fully: multiply first, then add c."],
+          [ans === 0 ? 1 : -ans, "Check the signs when you multiply the gradient by x."],
+          [z.c, "That is only the y-intercept. Substitute x into the whole equation."]
+        ], [[ans + 3, "Multiply the gradient by x, then add the constant carefully."],
+          [ans - 3, "Keep every sign when you substitute into y = mx + c."]]) };
+    }
+    const ans = targetX;
+    return { k: "point", mc: false, ctx, z, x: ans,
+      q: `On the line ${lineEqShow(z.m, z.c)} for ${ctx.of}, what is x when y = ${fmt(targetY)}?`,
+      hint: "Set y equal to the given value and solve for x: x = (y − c) / m.",
+      steps: [`$${fmt(targetY)} = ${fmt(z.m)}x ${pm(z.c)}$`, `${fmt(z.m)}x = ${fmt(targetY - z.c)}`, `$x = ${fmt(ans)}$`],
+      pic, data: { m: z.m, c: z.c, px: ans, py: targetY, ask: "x" },
+      slips: padSlips(ans, [
+        [targetY - z.c, "You forgot to divide by the gradient after subtracting the intercept."],
+        [(targetY + z.c) / z.m, "Use x = (y − c) / m, subtracting c before you divide."],
+        [ans === 0 ? 1 : -ans, "Watch the signs when you rearrange the equation."],
+        [z.c, "That is the y-intercept, not the x-value on the line."]
+      ], [[ans + 2, "Solve for x carefully: subtract c, then divide by the gradient."],
+        [ans - 2, "Keep the order: (y − c) divided by m."]]) };
+  },
+  parallel: r => {
+    const z = niceLine(r), ctx = r.pick(LINE_CTX), pic = linePic(z, ctx, ["y"]);
+    const right = String(fmt(z.m));
+    const q = `${ctx.who}'s friend draws a second path with the same steepness as ${lineEqShow(z.m, z.c)} (a parallel line). What is its gradient?`;
+    const hint = "Parallel lines have the same gradient — the same steepness.";
+    const steps = [`Parallel ⇒ same gradient`, `So $m = ${fmt(z.m)}$`];
+    const rightWhy = "Right: parallel lines share the same steepness, so they keep the same gradient as the first line.";
+    const cand = [
+      [fmt(-z.m), "That slopes the other way. Parallel lines keep the same gradient, including the sign."],
+      [fmt(z.m === 0 ? 1 : rd(-1 / z.m, 4)), "That is the negative reciprocal — used for perpendicular lines, not parallel ones."],
+      [fmt(z.c), "That is the y-intercept of the first line. Parallel only cares about the gradient."],
+      [fmt(z.m + (z.m >= 0 ? 1 : -1)), "Same steepness means exactly the same gradient, not one step steeper."]
+    ];
+    const fillers = [["2", "Parallel means the same steepness as the first line — copy its gradient."],
+      ["-2", "Keep the sign of the first line's gradient for a parallel path."],
+      ["0.5", "Parallel lines match the first gradient exactly, not a different slope."]];
+    return { k: "parallel", mc: true, ctx, z, right, rightWhy, wrong: padWrong(right, cand, fillers), q, hint, steps, pic,
+      data: { m: z.m, c: z.c, kind: "parallel" } };
+  },
+  perp: r => {
+    const m = r.pick([-2, -1, -0.5, 0.5, 1, 2]);
+    const c = r.int(-4, 4);
+    const z = { m, c, xint: Math.abs(m) > 1e-12 ? -c / m : null };
+    const pm_ = rd(-1 / m, 4);
+    const snap = v => Math.abs(v - 0.5) < 1e-9 ? 0.5 : Math.abs(v + 0.5) < 1e-9 ? -0.5 : Math.abs(v - Math.round(v)) < 1e-9 ? Math.round(v) : v;
+    const perpG = snap(pm_);
+    const ctx = r.pick(LINE_CTX), pic = linePic(z, ctx, ["y"]);
+    const right = String(fmt(perpG));
+    const q = `A fairy path meets ${lineEqShow(z.m, z.c)} at a right angle (perpendicular). What is the gradient of the new path?`;
+    const hint = "Perpendicular gradients multiply to −1: the new gradient is the negative reciprocal of m.";
+    const steps = [`Perpendicular ⇒ $m_1 \\times m_2 = -1$`, `$m_2 = -\\dfrac{1}{${fmt(z.m)}} = ${fmt(perpG)}$`];
+    const rightWhy = "Right: lines that meet at a right angle have gradients that multiply to negative one, so take the negative reciprocal of the first gradient.";
+    const cand = [
+      [fmt(z.m), "That is the same gradient (parallel). Perpendicular needs the negative reciprocal."],
+      [fmt(-z.m), "Flipping the sign alone is not enough unless the size is one. Use −1 ÷ m."],
+      [fmt(1 / z.m), "You forgot the minus: the reciprocal must also change sign."],
+      [fmt(z.c), "That is the y-intercept. Perpendicular only changes the gradient."]
+    ];
+    const fillers = [["3", "Use the negative reciprocal of the first gradient for a right-angle path."],
+      ["-3", "Perpendicular means −1 divided by the first gradient."],
+      ["0", "A horizontal line is perpendicular only to a vertical one — use −1 ÷ m."]];
+    return { k: "perp", mc: true, ctx, z, right, rightWhy, wrong: padWrong(right, cand, fillers), q, hint, steps, pic,
+      data: { m: z.m, c: z.c, perp: perpG, kind: "perp" } };
+  },
+  word: r => {
+    const kind = r.pick(["ramp", "ramp", "speed", "speed", "path"]);
+    const ctx = r.pick(LINE_CTX);
+    if (kind === "ramp") {
+      const m = r.pick([0.5, 1, 1.5, 2, 2.5, 3]), dist = r.pick([2, 4, 6, 8, 10]), height = m * dist;
+      const z = { m, c: 0, xint: 0 };
+      const pic = svgStraight(ctx.title, m, 0, { xmin: 0, xmax: Math.max(10, dist + 1), ymin: 0, ymax: Math.max(8, height + 1),
+        marks: [{ n: "P", x: dist, y: height, lab: `(${dist} m, ?)`, dy: -8 }], xName: "m along", yName: "height" });
+      if (r.chance(.4)) {
+        return { k: "word", mc: false, ctx, z, x: m,
+          q: `A ${ctx.thing} rises steadily. After ${dist} m along the ground it is ${fmt(height)} m high. What is the gradient of the ramp?`,
+          hint: "Gradient = rise ÷ run. Here the run is the ground distance and the rise is the height.",
+          steps: [`$m = \\dfrac{${fmt(height)}}{${dist}} = ${fmt(m)}$`],
+          pic, data: { m, c: 0, dist, height, word: "ramp-grad" },
+          slips: padSlips(m, [
+            [height, "That is the height. Divide by the ground distance to get the gradient."],
+            [dist / height, "You flipped the fraction. Gradient is rise ÷ run = height ÷ distance."],
+            [m + 1, "Divide carefully: height ÷ ground distance."],
+            [height - dist, "Do not subtract. Gradient is a divide: rise ÷ run."]
+          ], [[0.25, "Use height ÷ ground distance for the ramp's gradient."],
+            [4, "Check the divide: rise over run for this ramp."]]) };
+      }
+      return { k: "word", mc: false, ctx, z, x: height,
+        q: `A ${ctx.thing} has gradient ${fmt(m)} and starts on the ground. How high is it, in metres, after ${dist} m along the ground?`,
+        hint: "Height = gradient × ground distance (the line is y = mx with c = 0).",
+        steps: [`$y = ${fmt(m)} \\times ${dist} = ${fmt(height)}$ m`],
+        pic, data: { m, c: 0, dist, height, word: "ramp-h" },
+        slips: padSlips(height, [
+          [m + dist, "Multiply, do not add: height = gradient × distance."],
+          [dist, "That is only the ground distance. Multiply by the gradient."],
+          [m, "That is the gradient. Multiply by the ground distance to get the height."],
+          [height / 2, "Use the full ground distance, not half of it."]
+        ], [[height + 3, "Multiply gradient by distance carefully for the height."],
+          [1, "A ramp with this gradient rises more than one metre over that distance."]]) };
+    }
+    if (kind === "speed") {
+      const speed = r.pick([2, 3, 4, 5, 6]), t = r.pick([2, 3, 4, 5]), c = r.chance(.4) ? r.pick([2, 4, 5, 6]) : 0;
+      const dist = speed * t + c;
+      const z = { m: speed, c, xint: c === 0 ? 0 : -c / speed };
+      const pic = svgStraight("Sports-day run", speed, c, { xmin: 0, xmax: Math.max(6, t + 1), ymin: 0, ymax: Math.max(20, dist + 2),
+        marks: [{ n: "P", x: t, y: dist, lab: `(${t} s, ?)`, dy: -8 }], xName: "time (s)", yName: "m" });
+      const whoShort = ctx.who.split(" ")[0];
+      return { k: "word", mc: false, ctx, z, x: dist,
+        q: `On sports day ${ctx.who} runs at a steady ${speed} m/s${c ? ` after a ${c} m head start` : ""}. The distance–time graph is a straight line. How far has ${whoShort} run after ${t} seconds, in metres?`,
+        hint: c ? `Distance = speed × time + head start: y = ${speed}x + ${c}.` : "Distance = speed × time on a straight-line graph through the origin.",
+        steps: c ? [`$y = ${speed} \\times ${t} + ${c} = ${dist}$ m`] : [`$y = ${speed} \\times ${t} = ${dist}$ m`],
+        pic, data: { m: speed, c, t, dist, word: "speed" },
+        slips: padSlips(dist, [
+          [speed * t, c ? "You forgot the head start. Add it after multiplying speed by time." : "Multiply speed by time carefully for the distance."],
+          [speed + t + c, "Multiply speed by time" + (c ? ", then add the head start" : "") + "; do not add the speed and the time."],
+          [t, "That is only the time. Multiply by the speed to get the distance."],
+          [speed, "That is the speed. Multiply by the time to get the distance."]
+        ], [[dist + 5, "Use distance = speed × time" + (c ? " + head start" : "") + "."],
+          [1, "After several seconds at this speed the distance is more than one metre."]]) };
+    }
+    const m = r.pick([0.5, 1, 1.5, 2]), c = r.pick([0, 1, 2]), x = r.pick([2, 4, 6, 8]), y = m * x + c;
+    const z = { m, c, xint: Math.abs(m) > 1e-12 ? -c / m : null };
+    const pic = svgStraight(ctx.title, m, c, { xmin: 0, xmax: Math.max(8, x + 1), ymin: 0, ymax: Math.max(8, y + 1),
+      marks: [{ n: "P", x, y, lab: `(?, ${fmt(y)})`, dy: -8 }], xName: "steps", yName: "height" });
+    const ofCap = ctx.of.replace(/^the /, "The ");
+    return { k: "word", mc: false, ctx, z, x,
+      q: `${ofCap} follows ${lineEqShow(m, c)} (height in metres). At what step-number is the height ${fmt(y)} m?`,
+      hint: "Set y equal to the height and solve for x.",
+      steps: [`$${fmt(y)} = ${fmt(m)}x ${pm(c)}$`, `$x = ${fmt(x)}$`],
+      pic, data: { m, c, px: x, py: y, word: "path" },
+      slips: padSlips(x, [
+        [y - c, "You forgot to divide by the gradient after subtracting the intercept."],
+        [(y + c) / m, "Subtract c first: x = (y − c) / m."],
+        [y, "That is the height, not the step-number."],
+        [m, "That is the gradient. Solve for x on the line."]
+      ], [[x + 3, "Solve for the step-number carefully from the height equation."],
+        [x - 3 === 0 ? x + 1 : x - 3, "Keep (height − intercept) ÷ gradient for the step-number."]]) };
+  }
+};
+const LINE_KINDS = ["grad", "grad", "yint", "yint", "xint", "match", "match", "eq", "eq", "point", "point", "parallel", "perp", "word", "word"];
+const lineQ = (r, kind) => {
+  const z = LINEQ[kind](r), ctx = z.ctx, uid = `lingraph|${z.k}|${JSON.stringify(z.data)}`;
+  const extra = { uid, pic: z.pic || "", data: Object.assign({ lingraph: z.k, ctx: ctx.id }, z.data) };
+  if (z.optPics) extra.optPics = z.optPics;
+  if (z.mc) return mcqWhy(r, z.q, z.right, z.rightWhy, z.wrong, z.hint, z.steps, extra);
+  return numWhy(z.q, z.x, z.hint, z.steps, z.slips, Object.assign({ keys: ["-", ".", "/"] }, extra));
+};
+topic(8, "lingraph", "Straight-Line Street", "📏", "Linear graphs: gradient, intercepts, match equation to pastel SVG", r => lineQ(r, r.pick(LINE_KINDS)));
+
 topic(8, "proportion", "Proportion Potions", "🫖", "Direct and inverse proportion", r => {
   if (r.chance(.5)) { const k = r.int(2, 12), x1 = r.int(2, 10), x2 = r.int(11, 25); return num(`y is directly proportional to x. When x = ${x1}, y = ${k * x1}. Find y when x = ${x2}.`, k * x2, "Direct: y = kx. Find k first.", [`$k = ${k * x1} \\div ${x1} = ${k}$`, `$y = ${k} \\times ${x2} = ${k * x2}$`]); }
   const w = r.int(2, 8), d = r.pick([12, 24, 36, 48, 60]), w2 = r.pick([2, 3, 4, 6, 8, 12].filter(x => x !== w));
