@@ -1,7 +1,7 @@
 /* 🔢 Number Kingdom topics, Grades 9–12 (Singapore Secondary 3–4, JC 1–2 / Years 10–13). */
 (function () {
 const M = (typeof module !== "undefined" && module.exports) ? require("./math-gen.js") : window.MathGen;
-const { Q, num, mcq, mcqWhy, numWhy, T, topic, PASTEL, INK, LINE, esc, svgBox, cardSvg, axes, xTicks, yUnit, xUnit, f1, xy, mid, vat, vdir, toDeg, sinD, cosD, tanD, rotPt, angSweep, angWedge, angText, rightPath, figCard, figEdge, figLab, figLens, figDot, figVtx, table, rd, fmt, fdp, fracTex, fracStr, poly, lin, paren, sgn, pm, sum, asc, median, freqTotals, gcd, simp, coef, NAMES, sqrtTex, surdTex, simpRad, matTex, matSvg, PLOT_BOX, plotFrame, svgPlane, svgParabola } = M._internal;
+const { Q, num, mcq, mcqWhy, numWhy, T, topic, PASTEL, INK, LINE, esc, svgBox, cardSvg, axes, xTicks, yUnit, xUnit, f1, xy, mid, vat, vdir, toDeg, sinD, cosD, tanD, rotPt, angSweep, angWedge, angText, rightPath, figCard, figEdge, figLab, figLens, figDot, figVtx, table, rd, fmt, fdp, fracTex, fracStr, poly, lin, paren, sgn, pm, sum, asc, median, freqTotals, gcd, simp, coef, NAMES, sqrtTex, surdTex, simpRad, matTex, matSvg, PLOT_BOX, plotFrame, svgPlane, svgParabola, ampPeriod, svgWave } = M._internal;
 const sf3 = v => +(+v.toFixed(12)).toPrecision(3);
 const tol3 = v => Math.max(1e-9, Math.pow(10, Math.floor(Math.log10(Math.abs(v) || 1)) - 2) * 0.51);
 const V2 = v => matTex([[v[0]], [v[1]]]), V3 = v => matTex([[v[0]], [v[1]], [v[2]]]);
@@ -961,6 +961,281 @@ topic(10, "sinecos", "Sine & Cosine Castle", "🏯", "Non-right triangles (1 d.p
   const A = r.int(30, 80), B = r.int(30, 150 - A), a = r.int(5, 15), b = a * sinD(B) / sinD(A);
   return num(`In triangle ABC, angle A = ${A}°, angle B = ${B}° and a = ${a} cm. Find b (1 d.p.).`, rd(b, 1), "Sine rule: a / sin A = b / sin B", [`$b = \\frac{${a}\\sin ${B}^\\circ}{\\sin ${A}^\\circ}$`, `$b \\approx ${rd(b, 1).toFixed(1)}$ cm`], { a: rd(b, 1).toFixed(1), keys: ["."], tol: 0.051, data: { A, B, a, rule: "sin" } });
 });
+
+/* ---------- 🌊 Wave Pier (MOE Sec 3/4 A-Math / E-Math trigonometric graphs): amplitude |a|, period 360°/|b|
+   (degrees, matching Sine & Cosine Castle), max/min with a vertical shift d, match equation ↔ pastel SVG wave,
+   read a marked point / y-intercept / crest from the drawn graph, and kid word problems (Ferris wheel height,
+   fairy pier tide, swinging lantern, pumpkin-coach wave road). Pictures use the shared svgWave kit in
+   math-gen.js (class=wave data-a/b/kind/d, marks class=wdot). Parabola + travel stay byte-identical. */
+const WAVE_CTX = [
+  { id: "ferris", title: "Ferris wheel", who: "Fairy Pip", spot: "the carnival Ferris wheel", thing: "Ferris-wheel seat", of: "the seat", unit: "m" },
+  { id: "tide", title: "Tide Pier", who: "Princess Mira", spot: "Wave Pier", thing: "tide height", of: "the tide", unit: "m" },
+  { id: "lantern", title: "Lantern Swing", who: "Sumi the star fairy", spot: "the lantern swing", thing: "swinging lantern", of: "the lantern", unit: "m" },
+  { id: "pier", title: "Wave Pier", who: "Jack", spot: "Wave Pier", thing: "pier wave", of: "the wave", unit: "m" },
+  { id: "ribbon", title: "Rainbow Ribbon", who: "Rapunzel", spot: "the rainbow ribbon road", thing: "ribbon wave", of: "the ribbon", unit: "cm" },
+  { id: "coach", title: "Pumpkin-coach road", who: "Cinderella", spot: "the wavy palace road", thing: "pumpkin-coach path", of: "the coach", unit: "m" }
+];
+// nice y = a sin(bx)+d or a cos(bx)+d with integer a, friendly b, mild d (degrees)
+const niceWave = r => {
+  const a = r.pick([-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]);
+  const b = r.pick([1, 1, 2, 2, 3, 0.5, 0.5]);
+  const kind = r.pick(["sin", "sin", "cos"]);
+  const d = r.chance(.55) ? r.pick([-3, -2, -1, 1, 2, 3]) : 0;
+  const { amp, period } = ampPeriod(a, b);
+  const max = d + amp, min = d - amp;
+  return { a, b, kind, d, amp, period, max, min };
+};
+const waveFnTex = (a, b, kind, d) => {
+  const front = a === 1 ? "" : a === -1 ? "-" : String(a);
+  const arg = b === 1 ? "x" : b === 0.5 ? "\\frac{1}{2}x" : `${fmt(b)}x`;
+  const core = `${front}\\${kind} ${arg}`;
+  if (d === 0) return `y = ${core}`;
+  return `y = ${core} ${d < 0 ? "-" : "+"} ${fmt(Math.abs(d))}`;
+};
+const waveEqShow = z => T(waveFnTex(z.a, z.b, z.kind, z.d));
+const waveY = (z, x) => (z.kind === "cos" ? z.a * cosD(z.b * x) : z.a * sinD(z.b * x)) + z.d;
+const waveMarks = (z, which) => {
+  const m = [], per = z.period;
+  if (which.includes("max")) {
+    // crest: for a>0 sin at 90/b; for a<0 sin crest is at 270/b; cos a>0 at 0
+    let x;
+    if (z.kind === "sin") x = (z.a >= 0 ? 90 : 270) / Math.abs(z.b);
+    else x = (z.a >= 0 ? 0 : 180) / Math.abs(z.b);
+    if (x > per) x = x % per;
+    m.push({ n: "M", x, y: z.max, lab: `(${fmt(x)}°, ${fmt(z.max)})`, dy: -8 });
+  }
+  if (which.includes("min")) {
+    let x;
+    if (z.kind === "sin") x = (z.a >= 0 ? 270 : 90) / Math.abs(z.b);
+    else x = (z.a >= 0 ? 180 : 0) / Math.abs(z.b);
+    if (x > per) x = x % per;
+    m.push({ n: "N", x, y: z.min, lab: `(${fmt(x)}°, ${fmt(z.min)})`, dy: 14 });
+  }
+  if (which.includes("y")) m.push({ n: "Y", x: 0, y: waveY(z, 0), lab: `(0, ${fmt(waveY(z, 0))})`, dx: 18, dy: 0 });
+  if (which.includes("mid")) {
+    const x = z.kind === "sin" ? 0 : (90 / Math.abs(z.b));
+    m.push({ n: "P", x, y: waveY(z, x), lab: `(${fmt(x)}°, ${fmt(waveY(z, x))})`, dy: waveY(z, x) >= z.d ? -8 : 14 });
+  }
+  return m;
+};
+const wavePic = (z, ctx, which = ["max"], o = {}) => svgWave(ctx.title, z.a, z.b, z.kind, z.d, Object.assign({ marks: waveMarks(z, which), periods: z.period <= 360 ? 1 : 1 }, o));
+const WAVE = {
+  amp: r => { const z = niceWave(r), ctx = r.pick(WAVE_CTX), mc = r.chance(.5), pic = wavePic(z, ctx, ["max", "min"]);
+    const q = `${ctx.who} sketches ${waveEqShow(z)} for ${ctx.of} at ${ctx.spot}. What is the amplitude?`;
+    const hint = "Amplitude is |a|, the absolute value of the number in front of sin or cos — how far the wave rises above its middle line.";
+    const steps = [`$y = ${waveFnTex(z.a, z.b, z.kind, z.d)}$`, `Amplitude = $|a| = |${z.a}| = ${z.amp}$`];
+    if (mc) {
+      const right = String(z.amp);
+      const cand = [
+        [String(z.a === z.amp ? -z.a || 1 : z.a), `Amplitude is the absolute value |a|. Drop the sign: |${z.a}|.`],
+        [String(z.period), `That is the period (how long one full wave takes). Amplitude is the height of the wave, |a|.`],
+        [String(z.max), `That is the greatest y-value. Amplitude is how far up from the middle line: |a|.`],
+        [String(z.d === 0 ? z.amp + 1 : Math.abs(z.d)), z.d === 0 ? `That adds one to the amplitude. Read |a| straight from the front of sin/cos.` : `That is the vertical shift |d|. Amplitude ignores the shift.`],
+        [String(2 * z.amp), `That is the full peak-to-trough height. Amplitude is only half of that: |a|.`],
+        [String(z.b === 1 ? 2 : Math.abs(z.b)), `That comes from b (which controls the period). Amplitude is |a|.`]
+      ];
+      const wrong = []; const seen = new Set([right]);
+      for (const [o, n] of cand) if (!seen.has(String(o))) { seen.add(String(o)); wrong.push([String(o), n]); }
+      return { k: "amp", mc: true, ctx, z, x: z.amp, right, rightWhy: `Right: amplitude is how far the crest sits above the middle line — take the absolute value of the coefficient in front of ${z.kind}.`, wrong, q, hint, steps, pic, data: { a: z.a, b: z.b, kind: z.kind, d: z.d, amp: z.amp, period: z.period } };
+    }
+    return { k: "amp", mc: false, ctx, z, x: z.amp, q, hint, steps, pic, data: { a: z.a, b: z.b, kind: z.kind, d: z.d, amp: z.amp, period: z.period },
+      slips: [[z.a === z.amp ? (z.a === 0 ? 1 : -z.a) : z.a, `Keep the absolute value: amplitude is |${z.a}| = ${z.amp}, never negative.`],
+        [z.period, `That is the period ${z.period}°. Amplitude is the wave height |a| = ${z.amp}.`],
+        [2 * z.amp, `Peak to trough is 2|a|. Amplitude itself is only |a| = ${z.amp}.`],
+        [z.max, `That is the maximum y-value. Amplitude is |a| = ${z.amp}, measured from the middle.`]] }; },
+  period: r => { const z = niceWave(r), ctx = r.pick(WAVE_CTX), pic = wavePic(z, ctx, ["max"]);
+    const q = `The path of ${ctx.of} follows ${waveEqShow(z)}. Find the period in degrees.`;
+    const hint = "Period = 360° ÷ |b|. One full wave finishes when the angle inside sin/cos has grown by 360°.";
+    const steps = [`Inside ${z.kind} the coefficient of x is $b = ${fmt(z.b)}$`, `Period $= \\dfrac{360^\\circ}{|b|} = \\dfrac{360}{${fmt(Math.abs(z.b))}} = ${fmt(z.period)}^\\circ$`];
+    const right = String(z.period);
+    const cand = [
+      [String(z.amp), `That is the amplitude. Period is how many degrees one full wave takes: 360 ÷ |b|.`],
+      [String(360 * Math.abs(z.b)), `You multiplied instead of dividing. Period = 360 ÷ |b| = ${fmt(z.period)}°.`],
+      [String(z.b === 0.5 ? 180 : 180 / Math.abs(z.b) === z.period ? 360 : Math.round(180 / Math.abs(z.b))), `Halving (or doubling) by mistake. Use a full turn: 360 ÷ |b|.`],
+      [String(z.max), `That is a y-value on the graph. Period is read from b, along the x-axis.`],
+      [String(z.period === 360 ? 180 : 360), z.period === 360 ? `When |b| = 1 the period is a full turn, 360°, not half.` : `When |b| ≠ 1 the period is not a plain full turn. Divide 360 by |b|.`],
+      [String(2 * Math.PI / Math.abs(z.b)), `That would be the period in radians. These graphs use degrees: 360 ÷ |b|.`]
+    ];
+    const wrong = []; const seen = new Set([right]);
+    for (const [o, n] of cand) {
+      const s = String(+o === +o ? (Number.isInteger(+o) ? String(+o) : fmt(+o)) : o);
+      // keep numeric strings tidy
+      const opt = String(Number(o) === z.period ? z.period + 90 : (Number.isFinite(+o) ? (Number.isInteger(+o) ? String(+o) : fmt(+o)) : o));
+      if (!seen.has(opt) && opt !== right) { seen.add(opt); wrong.push([opt, n]); }
+    }
+    return { k: "period", mc: true, ctx, z, x: z.period, right, rightWhy: `Right: one full wave needs the angle inside ${z.kind} to grow by a full turn, so divide a full circle (in degrees) by the absolute value of b.`, wrong, q, hint, steps, pic,
+      data: { a: z.a, b: z.b, kind: z.kind, d: z.d, amp: z.amp, period: z.period } }; },
+  maxmin: r => { const z = niceWave(r), ctx = r.pick(WAVE_CTX), ask = r.pick(["max", "min", "max", "both"]), pic = wavePic(z, ctx, ask === "min" ? ["min"] : ask === "max" ? ["max"] : ["max", "min"]);
+    if (ask === "both") {
+      const ans = `${fmt(z.max)}, ${fmt(z.min)}`;
+      const slips = [
+        [`${fmt(z.min)}, ${fmt(z.max)}`, "Those are swapped. Type the greatest value first, then the least."],
+        [`${fmt(z.amp)}, ${fmt(-z.amp)}`, `That forgets the vertical shift d = ${z.d}. Max = d + |a|, min = d − |a|.`],
+        [`${fmt(z.max)}, ${fmt(z.d)}`, `The least value is the middle line minus the amplitude, not the middle itself.`],
+        [`${fmt(z.d)}, ${fmt(z.min)}`, `The greatest value is the middle line plus the amplitude, not the middle itself.`],
+        [`${fmt(z.max + 1)}, ${fmt(z.min)}`, `The maximum is off by one. Max = d + |a| = ${fmt(z.max)}.`],
+        [`${fmt(z.max)}, ${fmt(z.min - 1)}`, `The minimum is off by one. Min = d − |a| = ${fmt(z.min)}.`]
+      ];
+      const clean = [], seen = new Set([ans]);
+      for (const [v, n] of slips) { if (!seen.has(v) && n && n.length >= 20) { seen.add(v); clean.push([v, n]); } }
+      return { k: "range", mc: false, pair: true, ctx, z, x: z.max, y: z.min, a: ans,
+        q: `Find the maximum and minimum values of ${waveEqShow(z)} (type max, min like 5, -1).`,
+        hint: "Max = d + |a|, min = d − |a|.",
+        steps: [`$|a| = ${z.amp}$, vertical shift $d = ${z.d}$`, `Maximum $= d + |a| = ${fmt(z.max)}$`, `Minimum $= d - |a| = ${fmt(z.min)}$`],
+        pic, data: { a: z.a, b: z.b, kind: z.kind, d: z.d, amp: z.amp, period: z.period, max: z.max, min: z.min },
+        slips: clean }; }
+    const want = ask === "max" ? z.max : z.min;
+    const label = ask === "max" ? "maximum" : "minimum";
+    const slips = [
+      [ask === "max" ? z.min : z.max, `That is the ${ask === "max" ? "minimum" : "maximum"}. The ${label} is d ${ask === "max" ? "+" : "−"} |a| = ${fmt(want)}.`],
+      [z.amp, `That is only the amplitude. ${ask === "max" ? "Add" : "Subtract"} it ${ask === "max" ? "to" : "from"} the shift d = ${z.d}.`],
+      [z.d, `That is the middle line. The ${label} sits |a| away from it.`],
+      [z.d + z.a, z.a >= 0 && ask === "max" ? `Close — but write it as d+|a|. Here that is ${fmt(want)}.` : `Use |a|, not a with its sign: ${label} = ${fmt(want)}.`],
+      [want === 0 ? 1 : -want, `Check the sign carefully: the ${label} is ${fmt(want)}.`]
+    ].filter(([v]) => v !== want);
+    return { k: ask, mc: false, ctx, z, x: want,
+      q: `${ctx.who} graphs ${waveEqShow(z)} for ${ctx.of}. What is the ${label} value of y?`,
+      hint: `${ask === "max" ? "Maximum" : "Minimum"} = d ${ask === "max" ? "+" : "−"} |a|.`,
+      steps: [`$|a| = ${z.amp}$, $d = ${z.d}$`, `${label[0].toUpperCase() + label.slice(1)} $= ${z.d} ${ask === "max" ? "+" : "-"} ${z.amp} = ${fmt(want)}$`],
+      pic, data: { a: z.a, b: z.b, kind: z.kind, d: z.d, amp: z.amp, period: z.period, max: z.max, min: z.min }, slips }; },
+  match: r => { const z = niceWave(r), ctx = r.pick(WAVE_CTX);
+    const key = g => `${g.a}|${g.b}|${g.kind}|${g.d}`;
+    const mk = (a, b, kind, d) => { const { amp, period } = ampPeriod(a, b); return { a, b, kind, d, amp, period, max: d + amp, min: d - amp }; };
+    const graphs = [z];
+    const seen = new Set([key(z)]);
+    const candidates = [
+      mk(-z.a, z.b, z.kind, z.d),
+      mk(z.a, z.b === 1 ? 2 : 1, z.kind, z.d),
+      mk(z.a, z.b, z.kind === "sin" ? "cos" : "sin", z.d),
+      mk(z.a, z.b, z.kind, z.d === 0 ? r.pick([-2, 2]) : 0),
+      mk(z.a === 1 ? 2 : 1, z.b, z.kind, z.d),
+      mk(z.a, z.b === 0.5 ? 2 : 0.5, z.kind, z.d)
+    ];
+    for (const g of r.shuffle(candidates)) if (!seen.has(key(g)) && graphs.length < 4) { seen.add(key(g)); graphs.push(g); }
+    while (graphs.length < 4) {
+      const g = niceWave(r); if (!seen.has(key(g))) { seen.add(key(g)); graphs.push(g); }
+    }
+    const ids = ["g1", "g2", "g3", "g4"], order = r.shuffle([0, 1, 2, 3]), rightId = ids[order.indexOf(0)];
+    const optPics = {};
+    order.forEach((gi, i) => { const g = graphs[gi]; optPics[ids[i]] = svgWave(" ", g.a, g.b, g.kind, g.d, { small: true, marks: [{ n: "M", x: (g.kind === "sin" ? (g.a >= 0 ? 90 : 270) : (g.a >= 0 ? 0 : 180)) / Math.abs(g.b), y: g.max, lab: "" }] }); });
+    const wrong = ids.filter(id => id !== rightId).map(id => {
+      const g = graphs[order[ids.indexOf(id)]];
+      return [id, `That wave has a = ${g.a}, b = ${fmt(g.b)}, ${g.kind}, shift ${g.d}. Match a = ${z.a}, b = ${fmt(z.b)}, ${z.kind}, and d = ${z.d}.`];
+    });
+    return { k: "match", mc: true, ctx, z, right: rightId, rightWhy: `Right: this wave matches the amplitude, the period from b, whether it starts like ${z.kind}, and the vertical shift of the given equation.`, wrong,
+      q: `Which graph shows ${waveEqShow(z)} for ${ctx.of}?`,
+      hint: "Check amplitude (height), period (how stretched), sin vs cos (shape at x = 0), and any up/down shift.",
+      steps: [`$|a| = ${z.amp}$ → height ${z.amp}`, `Period $= ${fmt(z.period)}^\\circ$ from $b = ${fmt(z.b)}$`, `${z.kind} with shift $d = ${z.d}$`, `Pick the graph that matches all four.`],
+      pic: "", optPics, data: { a: z.a, b: z.b, kind: z.kind, d: z.d, amp: z.amp, period: z.period, order: order.map(i => key(graphs[i])) } }; },
+  read: r => { const z = niceWave(r), ctx = r.pick(WAVE_CTX), mode = r.pick(["yint", "yint", "crest", "point"]);
+    if (mode === "yint") {
+      const y0 = waveY(z, 0), pic = wavePic(z, ctx, ["y", "max"]);
+      const slips = [
+        [z.d, `That is the middle line d. At x = 0 the ${z.kind} value is ${z.kind === "sin" ? "0" : "1"}, so y = ${fmt(y0)}.`],
+        [z.max, `That is the crest. The y-intercept is where the curve meets the y-axis (x = 0).`],
+        [z.amp, `That is the amplitude. Substitute x = 0 into the equation.`],
+        [z.min, `That is the trough. The y-intercept is the height when x = 0.`],
+        [y0 === 0 ? 1 : -y0, `Check the sign at x = 0: y = ${fmt(y0)}.`],
+        [y0 + 1, `Read carefully at x = 0: substitute into the equation to get ${fmt(y0)}.`],
+        [y0 - 1, `A slip of 1. At x = 0 the curve meets the y-axis at ${fmt(y0)}.`]
+      ].filter(([v]) => v !== y0);
+      return { k: "yint", mc: false, ctx, z, x: y0,
+        q: `The graph shows ${ctx.of} at ${ctx.spot}. What is the y-intercept?`,
+        hint: "The y-intercept is the value of y when x = 0. Read it off the axis or substitute into the equation.",
+        steps: [`At $x = 0$: $y = ${z.a}\\${z.kind} 0 ${z.d ? (z.d < 0 ? `- ${Math.abs(z.d)}` : `+ ${z.d}`) : ""} = ${fmt(y0)}$`, `So the graph meets the y-axis at $(0,\\ ${fmt(y0)})$.`],
+        pic, data: { a: z.a, b: z.b, kind: z.kind, d: z.d, amp: z.amp, period: z.period, y0 }, slips }; }
+    if (mode === "crest") {
+      const pic = wavePic(z, ctx, ["max"]);
+      const slips = [
+        [z.min, `That is the trough (lowest point). The crest is the highest y-value, ${fmt(z.max)}.`],
+        [z.amp, `That is only the amplitude. The crest sits at d + |a| = ${fmt(z.max)}.`],
+        [z.d, `That is the middle of the wave. The crest is |a| above it.`],
+        [z.max === 0 ? 1 : -z.max, `The crest height is ${fmt(z.max)} — check the sign.`],
+        [z.max + 1, `Off by one. The crest is d + |a| = ${fmt(z.max)}.`],
+        [z.max - 1 === z.d ? z.max + 2 : z.max - 1, `Read the marked crest carefully: it is ${fmt(z.max)}.`]
+      ].filter(([v]) => v !== z.max);
+      return { k: "crest", mc: false, ctx, z, x: z.max,
+        q: `Read the greatest y-value (the crest) marked on the graph of ${ctx.of}.`,
+        hint: "The crest is the highest point on the wave: d + |a|.",
+        steps: [`Crest $= d + |a| = ${z.d} + ${z.amp} = ${fmt(z.max)}$`],
+        pic, data: { a: z.a, b: z.b, kind: z.kind, d: z.d, amp: z.amp, period: z.period, max: z.max }, slips }; }
+    // marked point: often the first positive peak or a nice angle
+    let x = z.kind === "sin" ? (90 / Math.abs(z.b)) : (z.a >= 0 ? 0 : 180 / Math.abs(z.b));
+    if (x === 0) x = 90 / Math.abs(z.b);
+    const y = waveY(z, x);
+    const pic = svgWave(ctx.title, z.a, z.b, z.kind, z.d, { marks: [{ n: "P", x, y, lab: `P(${fmt(x)}°, ?)` }], periods: 1 });
+    const slips = [
+      [z.max, `That is the crest height, but point P is at x = ${fmt(x)}°. Substitute carefully.`],
+      [z.d, `That is the middle line. At x = ${fmt(x)}°, y = ${fmt(y)}.`],
+      [waveY(z, 0), `That is the y-intercept (x = 0). Point P sits at x = ${fmt(x)}°.`],
+      [z.min, `That is the trough. Point P is marked at x = ${fmt(x)}°, where y = ${fmt(y)}.`],
+      [y === 0 ? 1 : rd(-y, 4), `Check the sign of ${z.kind} at ${fmt(x)}°.`],
+      [rd(y + 1, 4), `Close, but off by one. Substitute x = ${fmt(x)}° into the equation.`],
+      [rd(y - 1, 4), `A slip of 1. The height at P is ${fmt(y)}.`]
+    ].filter(([v]) => Math.abs(v - y) > 1e-9);
+    return { k: "point", mc: false, ctx, z, x: y,
+      q: `Point P is marked on the graph of ${ctx.of}. What is the y-coordinate of P?`,
+      hint: `Read x = ${fmt(x)}° from the label, then find y from the equation or the height on the axis.`,
+      steps: [`$x = ${fmt(x)}^\\circ$`, `$y = ${z.a}\\${z.kind}(${fmt(z.b)}\\times${fmt(x)}) ${z.d ? (z.d < 0 ? `- ${Math.abs(z.d)}` : `+ ${z.d}`) : ""} = ${fmt(y)}$`],
+      pic, data: { a: z.a, b: z.b, kind: z.kind, d: z.d, amp: z.amp, period: z.period, px: x, py: y }, slips }; },
+  word: r => {
+    // force a>0 and d so height stays positive for kid contexts
+    let z, guard = 0;
+    do { z = niceWave(r); z = Object.assign({}, z, { a: Math.abs(z.a) || 2 }); Object.assign(z, ampPeriod(z.a, z.b), { max: z.d + Math.abs(z.a), min: z.d - Math.abs(z.a) }); z.amp = Math.abs(z.a);
+      if (z.min < 0) { z.d = Math.abs(z.a) + r.int(1, 3); z.max = z.d + z.amp; z.min = z.d - z.amp; }
+      guard++;
+    } while ((z.min < 0 || z.amp < 1) && guard < 30);
+    const ctx = r.pick(WAVE_CTX.filter(c => c.id !== "ribbon").concat(WAVE_CTX[4])), ask = r.pick(["amp", "period", "max", "amp", "max"]);
+    const pic = wavePic(z, ctx, ask === "period" ? ["max"] : ["max", "min"]);
+    const eq = waveEqShow(z);
+    if (ask === "amp") {
+      const slips = [
+        [2 * z.amp, `That is the full up-and-down span. Amplitude is the distance from the middle to a crest: ${z.amp} ${ctx.unit}.`],
+        [z.max, `That is the greatest height. Amplitude is how far the wave rises above its middle line.`],
+        [z.period, `That is the period in degrees, not a height.`],
+        [z.d, `That is the middle height. Amplitude is |a| = ${z.amp} ${ctx.unit}.`]
+      ].filter(([v]) => v !== z.amp);
+      return { k: "word-amp", mc: false, ctx, z, x: z.amp,
+        q: `${ctx.who} models ${ctx.of} at ${ctx.spot} with ${eq} (${ctx.unit}). How many ${ctx.unit} is the amplitude?`,
+        hint: "Amplitude is |a|, the height of the wave above its middle line.",
+        steps: [`Amplitude $= |a| = ${z.amp}$ ${ctx.unit}`],
+        pic, data: { a: z.a, b: z.b, kind: z.kind, d: z.d, amp: z.amp, period: z.period, max: z.max, min: z.min }, slips }; }
+    if (ask === "period") {
+      const slips = [
+        [z.amp, `That is the amplitude in ${ctx.unit}. Period is 360 ÷ |b| degrees.`],
+        [360 * Math.abs(z.b), `Multiply was upside down. Period = 360 ÷ |b| = ${fmt(z.period)}°.`],
+        [z.period === 360 ? 180 : 360, `Use 360 ÷ |b| = ${fmt(z.period)}°, not a guess of a half or full turn.`],
+        [z.max, `That is a height. Period is how many degrees one full wave takes.`]
+      ].filter(([v]) => v !== z.period);
+      return { k: "word-period", mc: false, ctx, z, x: z.period,
+        q: `At ${ctx.spot}, ${ctx.of} follows ${eq}. How many degrees is one full period?`,
+        hint: "Period = 360° ÷ |b|.",
+        steps: [`Period $= 360 \\div ${fmt(Math.abs(z.b))} = ${fmt(z.period)}^\\circ$`],
+        pic, data: { a: z.a, b: z.b, kind: z.kind, d: z.d, amp: z.amp, period: z.period, max: z.max, min: z.min }, slips }; }
+    const slips = [
+      [z.amp, `That is only the amplitude. The greatest height is the middle plus the amplitude: ${fmt(z.max)} ${ctx.unit}.`],
+      [z.min, `That is the lowest height. The question asks for the greatest.`],
+      [z.d, `That is the middle height. Add the amplitude to reach the crest.`],
+      [z.max + z.amp, `That adds the amplitude twice. Crest = d + |a| = ${fmt(z.max)}.`]
+    ].filter(([v]) => v !== z.max);
+    return { k: "word-max", mc: false, ctx, z, x: z.max,
+      q: `${ctx.who} watches ${ctx.of} follow ${eq} (${ctx.unit}). What is the greatest height, in ${ctx.unit}?`,
+      hint: "Greatest height = d + |a|.",
+      steps: [`$d = ${z.d}$, $|a| = ${z.amp}$`, `Greatest height $= ${z.d} + ${z.amp} = ${fmt(z.max)}$ ${ctx.unit}`],
+      pic, data: { a: z.a, b: z.b, kind: z.kind, d: z.d, amp: z.amp, period: z.period, max: z.max, min: z.min }, slips };
+  }
+};
+const WAVE_KINDS = ["amp", "amp", "period", "period", "maxmin", "maxmin", "maxmin", "match", "match", "read", "read", "word", "word", "word"];
+const waveQ = (r, kind) => {
+  const z = WAVE[kind](r), ctx = z.ctx, uid = `triggraph|${z.k}|${JSON.stringify(z.data)}`;
+  const extra = { uid, pic: z.pic || "", data: Object.assign({ triggraph: z.k, ctx: ctx.id }, z.data) };
+  if (z.optPics) extra.optPics = z.optPics;
+  if (z.mc) return mcqWhy(r, z.q, z.right, z.rightWhy, z.wrong, z.hint, z.steps, extra);
+  if (z.pair) return Q(Object.assign({ q: z.q, kind: "pair", val: [z.x, z.y], a: z.a, keys: ["-", ","], hint: z.hint, steps: z.steps, slips: z.slips }, extra));
+  return numWhy(z.q, z.x, z.hint, z.steps, z.slips, Object.assign({ keys: ["-", "."] }, extra));
+};
+topic(10, "triggraph", "Wave Pier", "🌊", "Sine and cosine graphs: amplitude, period, max/min and matching", r => waveQ(r, r.pick(WAVE_KINDS)));
+
 topic(10, "prob2", "Two-Draw Treasure", "💰", "Combined probability", r => {
   const g = r.int(2, 7), s = r.int(2, 7), n = g + s, repl = r.chance(.5), both = r.pick(["gold", "silver"]), k = both === "gold" ? g : s;
   const n1 = repl ? k * k : k * (k - 1), den = repl ? n * n : n * (n - 1);

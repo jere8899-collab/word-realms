@@ -300,6 +300,58 @@ const svgParabola = (title, a, b, c, opts = {}) => {
       return s;
     } }));
 };
+/* wave / trig-graph kit (Wave Pier): amplitude & period helper, then svgWave on the shared svgPlane.
+   ampPeriod(a,b,{deg?}) → { amp:|a|, period: 360/|b| in degrees (default) or 2π/|b| in radians }.
+   svgWave(title, a, b, kind, d, opts?) → one/two periods of y = a sin(bx)+d or a cos(bx)+d (x in degrees),
+   path class=wave with data-a/b/kind/d, marks class=wdot (data-n/x/y). Parabola + travel stay byte-identical. */
+const ampPeriod = (a, b, o = {}) => {
+  const amp = Math.abs(a), bb = Math.abs(b) || 1;
+  return { amp, period: o.deg === false ? 2 * Math.PI / bb : 360 / bb };
+};
+const svgWave = (title, a, b, kind, d = 0, opts = {}) => {
+  const kn = kind === "cos" ? "cos" : "sin";
+  const { amp, period } = ampPeriod(a, b);
+  const periods = opts.periods != null ? opts.periods : 1;
+  let xmin = opts.xmin, xmax = opts.xmax, ymin = opts.ymin, ymax = opts.ymax;
+  if (xmin == null) xmin = 0;
+  if (xmax == null) xmax = period * periods;
+  const markYs = (opts.marks || []).map(m => m.y), markXs = (opts.marks || []).map(m => m.x);
+  if (ymin == null || ymax == null) {
+    const lo = Math.min(d - amp, ...markYs, -1), hi = Math.max(d + amp, ...markYs, 1);
+    const pad = Math.max(1, Math.ceil((hi - lo) * .15 + .01));
+    ymin = ymin ?? Math.floor(lo) - pad; ymax = ymax ?? Math.ceil(hi) + pad;
+    if (ymax - ymin < 4) { const m = (ymin + ymax) / 2; ymin = Math.floor(m - 2); ymax = Math.ceil(m + 2); }
+  }
+  if (xmin > 0) xmin = 0; if (ymin > 0) ymin = 0; if (ymax < 0) ymax = 0;
+  for (const x of markXs) { if (x < xmin) xmin = Math.floor(x) - 1; if (x > xmax) xmax = Math.ceil(x) + 1; }
+  for (const y of markYs) { if (y < ymin) ymin = Math.floor(y) - 1; if (y > ymax) ymax = Math.ceil(y) + 1; }
+  const marks = opts.marks || [], small = !!opts.small;
+  // tick every 90° (or half-period for short windows); y by 1 or 2
+  const xspan = xmax - xmin, yspan = ymax - ymin;
+  const xstep = opts.xstep || (xspan > 720 ? 180 : xspan > 360 ? 90 : xspan > 180 ? 45 : 90);
+  const ystep = opts.ystep || (yspan > 12 ? Math.ceil(yspan / 8) : yspan > 8 ? 2 : 1);
+  const yAt = x => (kn === "cos" ? a * cosD(b * x) : a * sinD(b * x)) + d;
+  return svgPlane(title, Object.assign({}, opts, { xmin, xmax, ymin, ymax, xstep, ystep,
+    w: small ? 150 : (opts.w || 300), h: small ? 120 : (opts.h || 226), ty: small ? 14 : 18,
+    cls: opts.cls || "mpic chart wave", label: opts.label || "trigonometric graph",
+    xName: opts.xName || "x (°)", yName: opts.yName || "y",
+    draw: (X, Y) => {
+      const N = small ? 36 : 72; let path = "", started = false;
+      for (let i = 0; i <= N; i++) {
+        const x = xmin + (xmax - xmin) * i / N, y = yAt(x);
+        if (y < ymin - .6 || y > ymax + .6) { started = false; continue; }
+        path += (started ? " L" : (path ? " M" : "M")) + xy([X(x), Y(y)]); started = true;
+      }
+      const stroke = opts.stroke || (kn === "cos" ? "#a78bfa" : "#7ec8e3");
+      let s = `<path class="wave" data-a="${a}" data-b="${b}" data-kind="${kn}" data-d="${d}" d="${path}" fill="none" stroke="${stroke}" stroke-width="${small ? 2.2 : 3}" stroke-linejoin="round" stroke-linecap="round"/>`;
+      for (const m of marks) {
+        const px = X(m.x), py = Y(m.y), lab = m.lab != null ? m.lab : m.n;
+        s += `<circle class="wdot" data-n="${esc(m.n)}" data-x="${fmt(m.x)}" data-y="${fmt(m.y)}" cx="${px}" cy="${py}" r="${small ? 3 : 4}" fill="#fff" stroke="#ff6f91" stroke-width="2"/>`;
+        if (lab && !small) s += `<text class="wlab" data-n="${esc(m.n)}" x="${f1(px + (m.dx || 0))}" y="${f1(py + (m.dy || -8))}" font-size="11" text-anchor="middle" font-weight="900" fill="${INK}" paint-order="stroke" stroke="#FFFDF8" stroke-width="3">${esc(lab)}</text>`;
+      }
+      return s;
+    } }));
+};
 const svgBars = (title, unit, cats, vals, max, step) => {
   const x0 = 36, x1 = 290, top = 38, bot = 170, [grid, y] = axes(x0, x1, top, bot, max, step), w = (x1 - x0) / cats.length;
   const bars = cats.map((c, i) => { const bx = +(x0 + w * i + w * 0.2).toFixed(1), bw = +(w * 0.6).toFixed(1), cx = +(x0 + w * (i + 0.5)).toFixed(1);
@@ -412,7 +464,7 @@ M.longMulSteps = (a, b) => { const bs = String(b).split("").reverse(); const out
 /* ====================== TOPICS ====================== */
 const TOPICS = [];
 const topic = (grade, id, name, icon, desc, gen, opt = {}) => TOPICS.push(Object.assign({ grade, id: `g${grade}.${id}`, name, icon, desc, gen }, opt));
-M._internal = { Q, num, mcq, mcqWhy, numWhy, T, NAMES, THINGS, COUNT_EMOJI, PASTEL, INK, LINE, esc, svgBox, cardSvg, tickAttr, xTicks, yUnit, xUnit, cellKey, figKey, hasCell, nearCells, gridPaper, gridSheet, gridCell, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, axes, svgBars, svgLine, svgPieChart, svgGeo, fitBox, toRad, toDeg, sinD, cosD, tanD, rotPt, dirPt, f1, xy, mid, vat, vdir, angSweep, angWedge, angText, rightPath, figCard, figShape, figEdge, figLab, figLens, figDot, figVtx, figRight, coin, emojiRows, table, colAdd, colSub, topic, TOPICS, gcd, lcm, rd, fmt, fdp, money, simp, fracTex, fracStr, mixedTex, sgn, poly, lin, paren, pm, undo, coef, ord, sum, asc, median, freqTotals, sqrtTex, surdTex, simpRad, matTex, matSvg, PLOT_BOX, plotFrame, svgPlane, svgParabola };
+M._internal = { Q, num, mcq, mcqWhy, numWhy, T, NAMES, THINGS, COUNT_EMOJI, PASTEL, INK, LINE, esc, svgBox, cardSvg, tickAttr, xTicks, yUnit, xUnit, cellKey, figKey, hasCell, nearCells, gridPaper, gridSheet, gridCell, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, axes, svgBars, svgLine, svgPieChart, svgGeo, fitBox, toRad, toDeg, sinD, cosD, tanD, rotPt, dirPt, f1, xy, mid, vat, vdir, angSweep, angWedge, angText, rightPath, figCard, figShape, figEdge, figLab, figLens, figDot, figVtx, figRight, coin, emojiRows, table, colAdd, colSub, topic, TOPICS, gcd, lcm, rd, fmt, fdp, money, simp, fracTex, fracStr, mixedTex, sgn, poly, lin, paren, pm, undo, coef, ord, sum, asc, median, freqTotals, sqrtTex, surdTex, simpRad, matTex, matSvg, PLOT_BOX, plotFrame, svgPlane, svgParabola, ampPeriod, svgWave };
 M.TOPICS = TOPICS;
 M.topic = id => TOPICS.find(t => t.id === id);
 M.gradeTopics = g => TOPICS.filter(t => t.grade === g);
