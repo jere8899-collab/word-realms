@@ -600,6 +600,110 @@
      "paint a bright thank-you sign above a door": "That's Crumb's sign, not ushering."
     }
    }
+  },
+  {
+   "title": "Dawn Encore",
+   "focus": "past continuous · past perfect · present perfect · first conditional · should",
+   "img": "story_b1_7",
+   "pages": [
+    {
+     "text": "Before the next soft sunrise Pip had already saved the front-row blanket seats again. When {hero} and {pet} arrived with warm scarves, the little fireflies were [[tuning|gently getting ready so a sound is right]] glow-chimes for a dawn encore. Pip was hovering softly, half host and half listener.",
+     "q": {
+      "q": "What were the young fireflies doing when {hero} arrived?",
+      "options": [
+       "tuning glow-chimes for a dawn encore",
+       "mending a torn pink lantern from last week",
+       "queuing for jam tarts in Candy Village",
+       "ringing a fog bell over a silent lake"
+      ],
+      "answer": 0,
+      "explain": "“When {hero} and {pet} arrived… the little fireflies were tuning glow-chimes for a dawn encore.”",
+      "kind": "grammar",
+      "notes": {
+       "mending a torn pink lantern from last week": "Lantern mending was an earlier chapter. This morning they were tuning for an encore.",
+       "queuing for jam tarts in Candy Village": "Jam tarts belong to Candy Village. Here they prepared the dawn encore.",
+       "ringing a fog bell over a silent lake": "The fog bell is another realm's tale. Here they tuned glow-chimes."
+      }
+     }
+    },
+    {
+     "text": "“I've never hosted an encore at dawn,” Pip whispered. “If the bird guests keep the seats warm, we should hear the softest chorus twice.” {pet} had folded the biggest scarf into a quiet nest. While Pip was welcoming latecomers, the sky began to [[blush|turn soft pink with early light]] — a gentle clock, not a problem.",
+     "q": {
+      "q": "What should help them hear the softest chorus twice?",
+      "options": [
+       "keeping the seats warm for the bird guests",
+       "baking louder tarts under the oak",
+       "opening a brand-new bakery at dawn",
+       "racing kites above the blankets"
+      ],
+      "answer": 0,
+      "explain": "“If the bird guests keep the seats warm, we should hear the softest chorus twice.” First conditional.",
+      "kind": "grammar",
+      "notes": {
+       "baking louder tarts under the oak": "Warm saved seats, not louder tarts, help them hear the encore.",
+       "opening a brand-new bakery at dawn": "No bakery opens under the oak. Pip wants warm ready seats.",
+       "racing kites above the blankets": "They are listening for birds, not racing kites. Soft seats help."
+      }
+     }
+    },
+    {
+     "text": "The encore began as the light rose. Soft notes drifted above the blankets twice, and even travellers who had only stopped for dew now settled in. {pet}'s pebbles kept a quiet beat, and the youngest firefly — who had ushered shy listeners before — now [[guided|showed the way kindly]] two sleepy bird guests into the saved seats.",
+     "q": {
+      "q": "How did the youngest firefly help at the encore?",
+      "options": [
+       "guided two sleepy bird guests into the saved seats",
+       "hid every soft blanket under a mushroom",
+       "sent all the travellers home at once",
+       "argued about whose kite flew highest"
+      ],
+      "answer": 0,
+      "explain": "“The youngest firefly… now guided two sleepy bird guests into the saved seats.”",
+      "kind": "fact",
+      "notes": {
+       "hid every soft blanket under a mushroom": "Blankets stayed open for guests. The youngest guided bird guests.",
+       "sent all the travellers home at once": "Travellers settled in to listen. The youngest guided bird guests.",
+       "argued about whose kite flew highest": "Kite arguments were at Cloud Castle. Here the youngest guided listeners."
+      }
+     }
+    },
+    {
+     "text": "Afterwards Pip hovered beside the scarf nest. “You've brought quiet three times now. If you visit the next soft dawn, we should save you these seats again.” Since that morning, the oak has become a favourite stop for early music. “You should leave the scarves until the [[chorus|a group of voices or birds singing together]] fades,” Pip added. “The grass holds the glow a little longer that way.”",
+     "q": {
+      "q": "Why might travellers favour the oak at dawn now?",
+      "options": [
+       "it has become a favourite stop for early music",
+       "Crumb sells jam tarts from the oak branches",
+       "a lighthouse shutter needs careful latching there",
+       "Lady Quillon ranks every kite under it nightly"
+      ],
+      "answer": 0,
+      "explain": "“Since that morning, the oak has become a favourite stop for early music.”",
+      "kind": "infer",
+      "notes": {
+       "Crumb sells jam tarts from the oak branches": "Tarts are in Candy Village. Here travellers stop for the dawn encore.",
+       "a lighthouse shutter needs careful latching there": "The shutter was at the lighthouse. Here they stop under the oak.",
+       "Lady Quillon ranks every kite under it nightly": "Kite ranking was at Cloud Castle. Here the oak hosts the chorus."
+      }
+     }
+    }
+   ],
+   "final": {
+    "q": "To “guide” someone is to…",
+    "options": [
+     "show the way kindly",
+     "hide a soft blanket under a mushroom forever",
+     "ring a deep bell across a foggy lake",
+     "paint a bright thank-you sign above a door"
+    ],
+    "answer": 0,
+    "explain": "Guide = show the way kindly — like the youngest firefly with the bird guests.",
+    "kind": "vocab",
+    "notes": {
+     "hide a soft blanket under a mushroom forever": "Hiding isn't guiding.",
+     "ring a deep bell across a foggy lake": "That's the fog-bell story.",
+     "paint a bright thank-you sign above a door": "That's Crumb's sign, not guiding."
+    }
+   }
   }
  ]
 }

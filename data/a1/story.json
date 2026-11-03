@@ -600,6 +600,110 @@
      "a hard seed still inside a parcel": "The acorn was the seed; the sprout is the new plant."
     }
    }
+  },
+  {
+   "title": "The Soft Watering Day",
+   "focus": "present simple · there is / there are · can · like",
+   "img": "story_a1_7",
+   "pages": [
+    {
+     "text": "The next soft morning {hero} walks to the oak again. There is a little [[watering can|a small can for giving plants water]] by the moss. The sprout has two soft leaves now. {pet} can see a tiny drop of water on one leaf. “We like watering day,” says {hero}.",
+     "q": {
+      "q": "What can {pet} see on one leaf?",
+      "options": [
+       "a tiny drop of water",
+       "a hard school book",
+       "a cold blue boat",
+       "a loud drum from town"
+      ],
+      "answer": 0,
+      "explain": "“{pet} can see a tiny drop of water on one leaf.”",
+      "kind": "fact",
+      "notes": {
+       "a hard school book": "There is no school book on the leaf. There is a tiny drop of water.",
+       "a cold blue boat": "There is no boat. There is a tiny drop of water on one leaf.",
+       "a loud drum from town": "There is no drum. {pet} can see a tiny drop of water."
+      }
+     }
+    },
+    {
+     "text": "There are three friends under the oak: {hero}, {pet}, and the white rabbit. The rabbit can tip the watering can. {hero} can hold the sprout steady. They like the [[gentle|soft and kind, not rough]] water on the earth. “Not too much,” smiles the rabbit.",
+     "q": {
+      "q": "Who tips the watering can?",
+      "options": [
+       "the white rabbit",
+       "Crumb from the candy bakery",
+       "a lost sock by the river",
+       "a loud kite from the castle"
+      ],
+      "answer": 0,
+      "explain": "“The rabbit can tip the watering can.”",
+      "kind": "fact",
+      "notes": {
+       "Crumb from the candy bakery": "Crumb is in Candy Village. The rabbit tips the can under the oak.",
+       "a lost sock by the river": "No sock tips water. The white rabbit tips the watering can.",
+       "a loud kite from the castle": "Kites are far away. The rabbit tips the watering can."
+      }
+     }
+    },
+    {
+     "text": "There is a soft pink ribbon on the oak and a green sprout in the moss. {pet} likes to sit close. The friends can sing a tiny thank-you song. The sprout looks happy in the sun. Oak day feels [[cosy|warm, soft and safe]] again.",
+     "q": {
+      "q": "What do the friends sing?",
+      "options": [
+       "a tiny thank-you song",
+       "a hard school test song",
+       "a loud storm song",
+       "a cold river song"
+      ],
+      "answer": 0,
+      "explain": "“The friends can sing a tiny thank-you song.”",
+      "kind": "fact",
+      "notes": {
+       "a hard school test song": "They thank the sprout. It is not a school test song.",
+       "a loud storm song": "Oak day is soft and quiet. They do not sing a storm song.",
+       "a cold river song": "They are under the oak, not at a river. They sing a thank-you song."
+      }
+     }
+    },
+    {
+     "text": "The sun is warm. There are little leaf friends near the sprout — soft green shapes in the moss. {hero} can name them Leaf and Dot. “We can come and water again,” says {hero}. The rabbit likes that [[plan|something you want to do next]]. Everyone is happy.",
+     "q": {
+      "q": "What can {hero} name the little leaf friends?",
+      "options": [
+       "Leaf and Dot",
+       "Boat and Drum",
+       "Cake and Balloon",
+       "Bell and Fog"
+      ],
+      "answer": 0,
+      "explain": "“{hero} can name them Leaf and Dot.”",
+      "kind": "infer",
+      "notes": {
+       "Boat and Drum": "There is no boat or drum. The leaf friends are Leaf and Dot.",
+       "Cake and Balloon": "Cake and balloons are in Candy Village. Here the names are Leaf and Dot.",
+       "Bell and Fog": "Bell and fog are another realm. Here {hero} names Leaf and Dot."
+      }
+     }
+    }
+   ],
+   "final": {
+    "q": "“Gentle” water is…",
+    "options": [
+     "soft and kind, not rough",
+     "a hard seed still in a parcel",
+     "a cold cup of honey tea",
+     "a thin thank-you ribbon"
+    ],
+    "answer": 0,
+    "explain": "Gentle means soft and kind, not rough — like the little water on the sprout.",
+    "kind": "vocab",
+    "notes": {
+     "a hard seed still in a parcel": "A seed is not gentle water.",
+     "a cold cup of honey tea": "Tea is not gentle water.",
+     "a thin thank-you ribbon": "A ribbon is not water."
+    }
+   }
   }
  ]
 }

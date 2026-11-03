@@ -600,6 +600,110 @@
      "the loudest bell by the door": "Bells can be loud; fairest describes equal shares."
     }
    }
+  },
+  {
+   "title": "Crumb's Helper Medals",
+   "focus": "past simple · comparatives and superlatives · going to",
+   "img": "story_a2_7",
+   "pages": [
+    {
+     "text": "The morning after the sharing tray, Crumb kept another promise. He baked the softest crumb cake in Candy Village — softer than any tart from festival week, and sweeter than yesterday's pink cups. “I'm going to give [[helper|someone who gives kind help]] medals today,” he said, and Mrs Toffee lined up tiny soft ribbons.",
+     "q": {
+      "q": "What is Crumb going to give today?",
+      "options": [
+       "helper medals",
+       "harder stone cakes than last year",
+       "bigger balloons than the festival",
+       "a tiny locked oven door"
+      ],
+      "answer": 0,
+      "explain": "“I'm going to give helper medals today.” Going to = his plan.",
+      "kind": "grammar",
+      "notes": {
+       "harder stone cakes than last year": "He plans soft medals for helpers, not hard stone cakes.",
+       "bigger balloons than the festival": "Balloons were festival week. Today he plans helper medals.",
+       "a tiny locked oven door": "The oven door stays open. He plans medals for helpers."
+      }
+     }
+    },
+    {
+     "text": "He cut cake slices that were smaller than party pieces so every sweeper could take one. The medals looked [[kinder|showing more care for others]] than any shop window prize because each one said Thank you in soft icing. Helpers gathered by the thank-you sign.",
+     "q": {
+      "q": "Why did the medals look kinder than shop prizes?",
+      "options": [
+       "Each one said Thank you in soft icing.",
+       "They looked flatter and sadder than stone.",
+       "They flew away on a festival balloon.",
+       "Mrs Toffee locked every helper outside."
+      ],
+      "answer": 0,
+      "explain": "“Each one said Thank you in soft icing” — kind words look kinder than flashy prizes.",
+      "kind": "fact",
+      "notes": {
+       "They looked flatter and sadder than stone.": "Kinder means more caring, not flatter. Soft thank-you icing made them kind.",
+       "They flew away on a festival balloon.": "No balloon carried the medals. Soft icing made them look kinder.",
+       "Mrs Toffee locked every helper outside.": "Helpers were welcomed. Soft thank-you icing made the medals look kinder."
+      }
+     }
+    },
+    {
+     "text": "{hero} and {pet} arrived early again. The queue was quieter than the tart rush because everyone was waiting for a fair turn. Crumb's cheeks went pink with pride. “Yesterday's tray was fair,” he said. “Today's medals are the [[softest|most soft of all]] thank-you yet.”",
+     "q": {
+      "q": "Why was the queue quieter than the tart rush?",
+      "options": [
+       "Everyone was waiting for a fair turn.",
+       "Crumb had closed the bakery forever that morning.",
+       "Mrs Toffee sent every helper straight home.",
+       "A storm had washed all the icing away."
+      ],
+      "answer": 0,
+      "explain": "Everyone waited for a fair turn — quieter than a rush.",
+      "kind": "fact",
+      "notes": {
+       "Crumb had closed the bakery forever that morning.": "The bakery stayed open. Helpers waited for fair turns.",
+       "Mrs Toffee sent every helper straight home.": "Mrs Toffee lined up ribbons; she didn't send them home.",
+       "A storm had washed all the icing away.": "There is no storm. The quiet came from waiting fairly."
+      }
+     }
+    },
+    {
+     "text": "Crumb pinned a soft ribbon medal on each sweeper's jacket. “Thank you, helpers,” he said in the softest voice. “Tomorrow I'm going to bake an even [[gentler|more soft and kind]] crumb cake for anyone who swept twice.” The children cheered louder than the bakery bell, and {pet} sniffed a pink slice happily.",
+     "q": {
+      "q": "What is Crumb going to do tomorrow?",
+      "options": [
+       "bake a gentler crumb cake for double sweepers",
+       "squash the sharing tray on purpose again",
+       "fly higher than the tallest candy tree",
+       "hide the soft spoon forever in flour"
+      ],
+      "answer": 0,
+      "explain": "“Tomorrow I'm going to bake an even gentler crumb cake for anyone who swept twice.”",
+      "kind": "grammar",
+      "notes": {
+       "squash the sharing tray on purpose again": "Squashing was an old accident. Tomorrow he plans a gentler cake.",
+       "fly higher than the tallest candy tree": "Flying was festival week. Tomorrow he plans a gentler cake.",
+       "hide the soft spoon forever in flour": "He likes the soft spoon. His plan is a gentler cake for helpers."
+      }
+     }
+    }
+   ],
+   "final": {
+    "q": "A “helper” is…",
+    "options": [
+     "someone who gives kind help",
+     "the hardest cake in the village",
+     "the flattest pancake on the shelf",
+     "the loudest bell by the door"
+    ],
+    "answer": 0,
+    "explain": "A helper is someone who gives kind help — like the sweepers Crumb thanked with medals.",
+    "kind": "vocab",
+    "notes": {
+     "the hardest cake in the village": "Helper is about kind people, not hard cakes.",
+     "the flattest pancake on the shelf": "Flat pancakes aren't helpers.",
+     "the loudest bell by the door": "Bells can be loud; helper means a kind person who helps."
+    }
+   }
   }
  ]
 }

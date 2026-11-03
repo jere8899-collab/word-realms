@@ -254,7 +254,8 @@ for lvl, items in WRITING.items():
 # data/<level>/story.json = { id, level, chapters: [chapter 1 (tools/c_stories.py), then extras from STORY_MORE_MODS] }.
 # Extra-chapter modules (tools/<name>.py) each expose MORE = {level: [chapter, …]}. Same pattern as R20_WAVES:
 # list module names once, import once; append the next wave's module name to grow the shelf.
-STORY_MORE_NAMES = ("c_stories2", "c_stories3", "c_stories4", "c_stories5", "c_stories6")  # chapters 2…N; append next wave here
+# Module names for chapters 2…N (one chapter each). Append the next wave (e.g. "c_stories7") here; STORY_CHAPTERS follows.
+STORY_MORE_NAMES = ("c_stories2", "c_stories3", "c_stories4", "c_stories5", "c_stories6", "c_stories7")
 STORY_MORE_MODS = tuple(importlib.import_module(m) for m in STORY_MORE_NAMES)
 STORY_PAGES = 4  # illustrated pages per chapter; the final word-check sits after the last page
 STORY_CHAPTERS = 1 + len(STORY_MORE_NAMES)  # chapter 1 from c_stories.py + one chapter per MORE module

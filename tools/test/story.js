@@ -23,17 +23,19 @@ const SAVE = JSON.stringify({ v: 1, name: 'Jeremy', avatar: 'avatar_mage', start
     await page.waitForFunction(() => window.WR && WR.realms && document.querySelector('.topbar'), null, { timeout: 20000 }); await page.waitForTimeout(300);
     return page;
   }
-  const MIN_CHAPTERS = 6;   // shelf grows with each Storybook wave (chapter 1 + extras); bump when a new c_storiesN ships
+  const MIN_CHAPTERS = 7;   // shelf grows with each Storybook wave (chapter 1 + extras); bump when a new c_storiesN ships
   const clean = async p => { await p.evaluate(() => document.querySelectorAll('.confetti,.toast').forEach(e => e.remove())); await p.waitForTimeout(250); };
   const finishChapter = async p => { for (let i = 0; i < 5; i++) { await answer(p, true); await p.locator('#storyNext').click(); await p.waitForTimeout(120); } await p.waitForSelector('.story-done'); };
   // After finishing chapter (n-1), open the shelf and assert chapter n unlocks (1-based n ≥ 3). Titles/pics are A1's.
-  const A1_UNLOCK = [
-    null, null, null,  // 0..2 unused (ch1/ch2 have their own checks)
-    { title: "The Bunny's Tea Party", pic: 'story_a1_3', shot: 'story_10_shelf_ch3', pageShot: 'story_11_ch3_page' },
-    { title: 'The Star Path Home', pic: 'story_a1_4', shot: 'story_12_shelf_ch4', pageShot: 'story_13_ch4_page' },
-    { title: 'The Thank-You Acorn', pic: 'story_a1_5', shot: 'story_14_shelf_ch5', pageShot: 'story_15_ch5_page' },
-    { title: 'The Little Sprout', pic: 'story_a1_6', shot: 'story_16_shelf_ch6', pageShot: 'story_17_ch6_page' },
-  ];
+  // A1 chapters 3…N: keyed by 1-based chapter number (ch1/ch2 have their own checks above).
+  // shot/pageShot names: story_NN_shelf_chN / story_NN_chN_page — extend when MIN_CHAPTERS grows.
+  const A1_UNLOCK = {
+    3: { title: "The Bunny's Tea Party", pic: 'story_a1_3', shot: 'story_10_shelf_ch3', pageShot: 'story_11_ch3_page' },
+    4: { title: 'The Star Path Home', pic: 'story_a1_4', shot: 'story_12_shelf_ch4', pageShot: 'story_13_ch4_page' },
+    5: { title: 'The Thank-You Acorn', pic: 'story_a1_5', shot: 'story_14_shelf_ch5', pageShot: 'story_15_ch5_page' },
+    6: { title: 'The Little Sprout', pic: 'story_a1_6', shot: 'story_16_shelf_ch6', pageShot: 'story_17_ch6_page' },
+    7: { title: 'The Soft Watering Day', pic: 'story_a1_7', shot: 'story_18_shelf_ch7', pageShot: 'story_19_ch7_page' },
+  };
   const assertUnlock = async (p, n) => {
     const u = A1_UNLOCK[n]; assert(u, 'A1_UNLOCK has chapter ' + n);
     await p.evaluate(() => WR.openStoryShelf('a1')); await p.waitForSelector('.shelf-ch');
