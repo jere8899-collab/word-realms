@@ -1,7 +1,7 @@
 /* 🔢 Number Kingdom topics, Grades 9–12 (Singapore Secondary 3–4, JC 1–2 / Years 10–13). */
 (function () {
 const M = (typeof module !== "undefined" && module.exports) ? require("./math-gen.js") : window.MathGen;
-const { Q, num, mcq, mcqWhy, numWhy, T, topic, PASTEL, INK, LINE, esc, svgBox, cardSvg, axes, xTicks, yUnit, xUnit, f1, xy, mid, vat, vdir, toDeg, sinD, cosD, tanD, rotPt, angSweep, angWedge, angText, rightPath, figCard, figEdge, figLab, figLens, figDot, figVtx, table, rd, fmt, fdp, fracTex, fracStr, poly, lin, paren, sgn, pm, sum, asc, median, freqTotals, gcd, simp, coef, NAMES, sqrtTex, surdTex, simpRad, matTex, matSvg } = M._internal;
+const { Q, num, mcq, mcqWhy, numWhy, T, topic, PASTEL, INK, LINE, esc, svgBox, cardSvg, axes, xTicks, yUnit, xUnit, f1, xy, mid, vat, vdir, toDeg, sinD, cosD, tanD, rotPt, angSweep, angWedge, angText, rightPath, figCard, figEdge, figLab, figLens, figDot, figVtx, table, rd, fmt, fdp, fracTex, fracStr, poly, lin, paren, sgn, pm, sum, asc, median, freqTotals, gcd, simp, coef, NAMES, sqrtTex, surdTex, simpRad, matTex, matSvg, PLOT_BOX, plotFrame, svgPlane, svgParabola } = M._internal;
 const sf3 = v => +(+v.toFixed(12)).toPrecision(3);
 const tol3 = v => Math.max(1e-9, Math.pow(10, Math.floor(Math.log10(Math.abs(v) || 1)) - 2) * 0.51);
 const V2 = v => matTex([[v[0]], [v[1]]]), V3 = v => matTex([[v[0]], [v[1]], [v[2]]]);
@@ -16,6 +16,250 @@ topic(9, "quad", "Quadratic Quarry", "💠", "Solve by factorising (type both: 2
   return Q({ q: `Solve ${T(`${e} = 0`)} (type all solutions, like 2, -3)`, kind: "set", val: roots, a: roots.join(", "), keys: ["-", ","], hint: `Find two numbers that multiply to ${C} and add to ${B}.`,
     steps: [`$${e} = (${lin(1, -p)})(${lin(1, -q)}) = 0$`, p === q ? `Repeated root: $x = ${p}$` : `So $x = ${p}$ or $x = ${q}$`], data: { a: 1, b: B, c: C } });
 });
+
+/* ---------- 🎢 Parabola Park (MOE Sec 3 E-Math quadratic graphs): y-intercept, axis of symmetry, turning point
+   (max/min from sign of a), roots from a factorised form or a drawn graph, match equation ↔ pastel SVG graph,
+   complete the square → y = a(x−h)²+k, and kid word problems (fountain jets, kite arcs, rainbow bridges,
+   pumpkin-coach ramps). Pictures use the shared svgParabola / svgPlane kit in math-gen.js (class=parabola
+   data-a/b/c, marks class=pdot). Travel graphs now share plotFrame for the cream chart box (byte-identical). */
+const PARA_CTX = [
+  { id: "fountain", title: "Fountain jet", who: "Fairy Pip", spot: "the park fountain", thing: "fountain jet", of: "the jet" },
+  { id: "kite", title: "Kite arc", who: "Jack", spot: "Parabola Park", thing: "kite string arc", of: "the kite" },
+  { id: "ball", title: "Ball throw", who: "Princess Mira", spot: "the sports field", thing: "thrown ball", of: "the ball" },
+  { id: "bridge", title: "Rainbow bridge", who: "Sumi the star fairy", spot: "the rainbow bridge", thing: "rainbow bridge", of: "the bridge" },
+  { id: "coach", title: "Pumpkin-coach ramp", who: "Cinderella", spot: "the palace ramp", thing: "pumpkin-coach path", of: "the coach" },
+  { id: "park", title: "Parabola Park", who: "Little Red", spot: "Parabola Park", thing: "park path", of: "the path" }
+];
+// nice ax²+bx+c with integer a∈{±1,±2,±3} and distinct integer roots p,q
+const niceQuad = r => {
+  const a = r.pick([-3, -2, -1, 1, 2, 3]);
+  let p = r.int(-4, 4), q = r.int(-4, 4), guard = 0;
+  while ((p === q || Math.abs(p) > 4 || Math.abs(q) > 4) && guard++ < 12) { p = r.int(-4, 4); q = r.int(-4, 4); }
+  if (p === q) q = p + r.pick([-3, -2, -1, 1, 2, 3]);
+  const B = -a * (p + q) || 0, C = a * p * q || 0, h = (p + q) / 2, k = a * (h - p) * (h - q) || 0;
+  return { a, b: B, c: C, p, q, h, k, roots: [p, q].slice().sort((x, y) => x - y) };
+};
+const eqTex = (a, b, c) => poly([[a, 2], [b, 1], [c, 0]]);
+const tpForm = (a, h, k) => {
+  const inside = h === 0 ? "x" : h > 0 ? `(x - ${fmt(h)})` : `(x + ${fmt(-h)})`;
+  const front = a === 1 ? "" : a === -1 ? "-" : String(a);
+  return k === 0 ? `y = ${front}${inside}^{2}` : `y = ${front}${inside}^{2} ${k < 0 ? "-" : "+"} ${fmt(Math.abs(k))}`;
+};
+const paraMarks = (z, which) => {
+  const m = [];
+  if (which.includes("tp")) m.push({ n: "T", x: z.h, y: z.k, lab: `(${fmt(z.h)}, ${fmt(z.k)})`, dy: z.a > 0 ? 14 : -8 });
+  if (which.includes("y")) m.push({ n: "Y", x: 0, y: z.c, lab: `(0, ${fmt(z.c)})`, dx: Math.abs(z.c - z.k) < 1e-9 ? 18 : 0, dy: Math.abs(z.c - z.k) < 1e-9 ? 0 : (z.c > 0 ? -8 : 14) });
+  if (which.includes("roots")) z.roots.forEach((x, i) => m.push({ n: "R" + (i + 1), x, y: 0, lab: `(${fmt(x)}, 0)`, dy: 14 }));
+  return m;
+};
+const paraPic = (z, ctx, which = ["tp"], o = {}) => svgParabola(ctx.title, z.a, z.b, z.c, Object.assign({ marks: paraMarks(z, which) }, o));
+const fmtPair = (x, y) => `${fmt(x)}, ${fmt(y)}`;
+const uniqSlips = (ans, slips, isSet) => {
+  const keep = [], seen = new Set();
+  for (const [v, note] of slips) {
+    const key = String(v);
+    if (seen.has(key) || !note || note.length < 20) continue;
+    if (isSet) {
+      const split = s => String(s).replace(/[()]/g, "").split(/\s*,\s*/).map(Number).filter(n => !isNaN(n)).sort((a, b) => a - b).join(",");
+      if (split(v) === split(ans)) continue;
+    } else if (String(v) === String(ans)) continue;
+    seen.add(key); keep.push([v, note]);
+  }
+  return keep;
+};
+const PARA = {
+  yint: r => { const z = niceQuad(r), ctx = r.pick(PARA_CTX), mc = r.chance(.45), pic = paraPic(z, ctx, ["y"]);
+    const q = `${ctx.who} sketches ${T(`y = ${eqTex(z.a, z.b, z.c)}`)} for ${ctx.of} at ${ctx.spot}. What is the y-intercept?`;
+    const hint = "The y-intercept is the value of y when x = 0: just the constant term c.";
+    const steps = [`Put $x = 0$: $y = ${z.c}$`, `So the graph crosses the y-axis at $(0,\\ ${z.c})$.`];
+    if (mc) {
+      const right = String(z.c);
+      const cand = [
+        [String(z.a), `That is the coefficient of x² (a = ${z.a}). The y-intercept is the constant term.`],
+        [String(z.b), `That is the coefficient of x. Put x = 0: every x-term vanishes, leaving only the constant.`],
+        [String(z.h), `That is the axis of symmetry. The y-intercept is where x = 0.`],
+        [String(z.k), `That is the y-coordinate of the turning point, not where the curve meets the y-axis.`],
+        [String(z.c === 0 ? 1 : -z.c), z.c === 0 ? `When x = 0 this curve gives y = 0, so the intercept is 0, not 1.` : `Watch the sign of the constant term.`],
+        [String(z.p), `That is a root on the x-axis. The y-intercept is the constant term of the equation.`],
+        [String(z.c + 2), `That adds 2 to the constant. Read c straight from the end of the equation.`],
+        [String(z.c - 2), `That subtracts 2 from the constant. Read c straight from the end of the equation.`],
+        [String(z.q), `That is the other root. The y-intercept is the constant term.`]
+      ];
+      const wrong = []; const seen = new Set([right]);
+      for (const [o, n] of cand) if (!seen.has(o)) { seen.add(o); wrong.push([o, n]); }
+      return { k: "yint", mc: true, ctx, z, x: z.c, right, rightWhy: z.c === 0 ? `Right: putting x equal to zero wipes out every x-term, so only the constant at the end of the equation is left — here the curve meets the y-axis at the origin.` : `Right: putting x = 0 wipes out every x-term, so only the constant at the end of the equation is left — that is where the curve meets the y-axis.`, wrong, q, hint, steps, pic, data: { a: z.a, b: z.b, c: z.c } };
+    }
+    return { k: "yint", mc: false, ctx, z, x: z.c, q, hint, steps, pic, data: { a: z.a, b: z.b, c: z.c },
+      slips: [[z.a, `That is a, the coefficient of x². The y-intercept is the constant term: y = ${z.c} when x = 0.`],
+        [z.b, `That is b. Put x = 0 in y = ${eqTex(z.a, z.b, z.c)} to leave just ${z.c}.`],
+        [z.k, `That is the turning-point height. The y-intercept is c = ${z.c}.`],
+        [z.c === 0 ? 1 : -z.c, z.c === 0 ? `When x = 0 this curve gives y = 0, so the intercept is 0.` : `Check the sign of the constant term: it is ${z.c}.`]] }; },
+  axis: r => { const z = niceQuad(r), ctx = r.pick(PARA_CTX), pic = paraPic(z, ctx, ["tp"]);
+    const q = `The path of ${ctx.of} follows ${T(`y = ${eqTex(z.a, z.b, z.c)}`)}. Find the equation of the axis of symmetry.`;
+    const right = T(`x = ${fmt(z.h)}`);
+    const cand = [
+      [T(`x = ${fmt(z.h === 0 ? 2 : -z.h)}`), z.h === 0 ? `The axis is the midline between the roots, so x = 0 here — not x = 2.` : `The formula is x = −b/(2a). Here −b/(2a) = ${fmt(z.h)}, not ${fmt(-z.h)}.`],
+      [T(`y = ${fmt(z.h)}`), `The axis of a vertical parabola is a vertical line, so it is written x = …, not y = ….`,],
+      [T(`x = ${fmt(z.h === 0 ? 1 : z.k)}`), z.h === 0 ? `x = 1 is not halfway between the roots. The midline is x = 0.` : `That mixes up the turning-point y-value with the axis. The axis is x = ${fmt(z.h)}.`],
+      [T(`x = ${fmt(z.c === z.h ? z.c + 1 : z.c)}`), `The constant c is the y-intercept, not the axis. The axis is x = −b/(2a) = ${fmt(z.h)}.`],
+      [T(`x = ${fmt(z.p)}`), `That is one of the roots. The axis sits halfway between the two roots, at x = ${fmt(z.h)}.`]
+    ];
+    const wrong = []; const seen = new Set([right]);
+    for (const [o, n] of cand) if (!seen.has(o)) { seen.add(o); wrong.push([o, n]); }
+    return { k: "axis", mc: true, ctx, z, x: z.h, right, rightWhy: `Right: the axis is the vertical line x = −b/(2a) = −(${z.b})/(2×${paren(z.a)}) = ${fmt(z.h)}, straight through the turning point.`, wrong,
+      q, hint: "Axis of symmetry: x = −b/(2a). It goes straight through the turning point.",
+      steps: [`$x = -\\frac{b}{2a} = -\\frac{${z.b}}{2\\times${paren(z.a)}} = ${fmt(z.h)}$`, `So the axis of symmetry is $x = ${fmt(z.h)}$.`], pic, data: { a: z.a, b: z.b, c: z.c, h: z.h, k: z.k } }; },
+  turn: r => { const z = niceQuad(r), ctx = r.pick(PARA_CTX), ask = r.pick(["coord", "coord", "maxmin"]), pic = paraPic(z, ctx, ["tp"]);
+    if (ask === "maxmin") {
+      const isMin = z.a > 0, right = isMin ? "minimum" : "maximum";
+      const wrong = [
+        [isMin ? "maximum" : "minimum", `Look at a: here a = ${z.a} ${isMin ? "> 0, so the parabola opens upwards and the turning point is the lowest point" : "< 0, so the parabola opens downwards and the turning point is the highest point"}.`],
+        ["neither — it is a point of inflection", "A quadratic never has a point of inflection; its turning point is always the highest or the lowest point on the curve."],
+        ["both a highest and a lowest point", "One parabola has only one turning point, so that point is either the highest or the lowest, not both."]
+      ];
+      return { k: "maxmin", mc: true, ctx, z, right, rightWhy: isMin
+        ? `Right: a = ${z.a} is positive, so the curve opens upwards and the turning point is the lowest point on the graph.`
+        : `Right: a = ${z.a} is negative, so the curve opens downwards and the turning point is the highest point on the graph.`, wrong,
+        q: `${ctx.who} graphs ${T(`y = ${eqTex(z.a, z.b, z.c)}`)} for ${ctx.of}. Is the turning point a maximum or a minimum?`,
+        hint: "If a > 0 the parabola opens up (lowest point). If a < 0 it opens down (highest point).",
+        steps: [`$a = ${z.a}$ ${isMin ? "> 0 → opens upwards" : "< 0 → opens downwards"}`, `So the turning point is a ${right}.`], pic, data: { a: z.a, b: z.b, c: z.c, h: z.h, k: z.k, kind: "maxmin" } };
+    }
+    const ans = fmtPair(z.h, z.k);
+    const slips = uniqSlips(ans, [
+      [fmtPair(z.k, z.h), "Those coordinates are swapped. The axis gives x first, then y = f(x)."],
+      [fmtPair(z.h === 0 ? 1 : -z.h, z.k), `The x-coordinate is −b/(2a) = ${fmt(z.h)}. Check the sign carefully.`],
+      [fmtPair(z.h, z.c), `y = ${z.c} is the y-intercept. Substitute x = ${fmt(z.h)} into the equation to get y = ${fmt(z.k)}.`],
+      [fmtPair(z.p, 0), `That is a root on the x-axis. The turning point sits at (${fmt(z.h)}, ${fmt(z.k)}).`],
+      [fmtPair(0, z.k), `The axis is at x = ${fmt(z.h)}, not always at x = 0.`]
+    ], false);
+    return { k: "turn", mc: false, pair: true, ctx, z, x: z.h, y: z.k, a: ans,
+      q: `Find the turning point of ${T(`y = ${eqTex(z.a, z.b, z.c)}`)} (type x, y like 2, -3).`,
+      hint: "The x-coordinate is −b/(2a). Then substitute into the equation to find y.",
+      steps: [`$x = -\\frac{b}{2a} = ${fmt(z.h)}$`, `$y = ${eqTex(z.a, z.b, z.c)}$ at $x = ${fmt(z.h)}$ gives $y = ${fmt(z.k)}$`, `Turning point: $(${fmt(z.h)},\\ ${fmt(z.k)})$.`],
+      pic, data: { a: z.a, b: z.b, c: z.c, h: z.h, k: z.k }, slips }; },
+  roots: r => { const z = niceQuad(r), ctx = r.pick(PARA_CTX), fromGraph = r.chance(.4);
+    const ans = z.roots.join(", "), pic = paraPic(z, ctx, ["roots", "tp"]);
+    const slips = uniqSlips(ans, [
+      [String(z.roots[0]), "A quadratic has two roots (counting a repeat twice). Type both numbers."],
+      [fmtPair(z.h, z.k), "That is the turning point. Roots are the x-intercepts where y = 0."],
+      [String(z.c), `That is the y-intercept. Roots sit on the x-axis at x = ${z.roots.join(" and ")}.`],
+      [`${z.roots[0] + (z.roots[0] === z.roots[1] - 1 ? -1 : 1)}, ${z.roots[1]}`, "Check each marked x-intercept on the axis carefully."],
+      [`${-z.p}, ${-z.q}`, `From (x − p) = 0 you get x = p, so keep the signs: ${z.p} and ${z.q}.`]
+    ], true);
+    if (fromGraph) {
+      return { k: "roots-graph", mc: false, set: true, ctx, z, val: z.roots.slice(), a: ans,
+        q: `The graph shows ${ctx.of} at ${ctx.spot}. Read off the roots (x-intercepts). Type both, like 2, -3.`,
+        hint: "Roots are where the curve crosses the x-axis (y = 0).",
+        steps: [`The curve meets the x-axis at $x = ${fmt(z.roots[0])}$ and $x = ${fmt(z.roots[1])}$.`, `So the roots are ${z.roots.join(" and ")}.`],
+        pic, data: { a: z.a, b: z.b, c: z.c, roots: z.roots, from: "graph" }, slips };
+    }
+    const fact = z.a === 1 ? `(${lin(1, -z.p)})(${lin(1, -z.q)})` : `${coef(z.a)}(${lin(1, -z.p)})(${lin(1, -z.q)})`;
+    return { k: "roots-fact", mc: false, set: true, ctx, z, val: z.roots.slice(), a: ans,
+      q: `${ctx.who} factorises the path as ${T(`y = ${fact}`)}. Find the roots (type both, like 2, -3).`,
+      hint: "Set each bracket equal to 0.",
+      steps: [`$${lin(1, -z.p)} = 0$ → $x = ${z.p}$`, `$${lin(1, -z.q)} = 0$ → $x = ${z.q}$`, `Roots: ${z.roots.join(" and ")}.`],
+      pic, data: { a: z.a, b: z.b, c: z.c, roots: z.roots, p: z.p, q: z.q, from: "fact" }, slips }; },
+  match: r => { const z = niceQuad(r), ctx = r.pick(PARA_CTX);
+    const key = g => `${g.a}|${g.b}|${g.c}`;
+    const mk = (p, q, a) => { const B = -a * (p + q), C = a * p * q, h = (p + q) / 2, kk = a * (h - p) * (h - q); return { a, b: B, c: C, h, k: kk, p, q, roots: [p, q] }; };
+    const graphs = [z];
+    const seen = new Set([key(z)]);
+    const candidates = [
+      mk(z.p, z.q, -z.a),
+      mk(z.p + 1, z.q + 1, z.a),
+      mk(z.p - 1, z.q - 1, z.a),
+      mk(z.p, z.q, z.a === 1 ? 2 : z.a === -1 ? -2 : (z.a > 0 ? 1 : -1)),
+      mk(-z.p, -z.q, z.a),
+      mk(z.q, z.p + r.pick([-3, -2, 2, 3]), z.a)
+    ];
+    for (const g of r.shuffle(candidates)) if (!seen.has(key(g)) && graphs.length < 4) { seen.add(key(g)); graphs.push(g); }
+    while (graphs.length < 4) {
+      const g = niceQuad(r); if (!seen.has(key(g))) { seen.add(key(g)); graphs.push(g); }
+    }
+    const ids = ["g1", "g2", "g3", "g4"], order = r.shuffle([0, 1, 2, 3]), rightId = ids[order.indexOf(0)];
+    const optPics = {};
+    order.forEach((gi, i) => { optPics[ids[i]] = svgParabola(" ", graphs[gi].a, graphs[gi].b, graphs[gi].c, { small: true, marks: [{ n: "T", x: graphs[gi].h, y: graphs[gi].k, lab: "" }] }); });
+    const wrong = ids.filter(id => id !== rightId).map(id => {
+      const g = graphs[order[ids.indexOf(id)]];
+      return [id, `That graph has a = ${g.a} and turning point (${fmt(g.h)}, ${fmt(g.k)}). Match a = ${z.a}, the axis x = ${fmt(z.h)}, and whether it opens up or down.`];
+    });
+    return { k: "match", mc: true, ctx, z, right: rightId, rightWhy: `Right: this curve opens ${z.a > 0 ? "upwards" : "downwards"} (a = ${z.a}) with turning point (${fmt(z.h)}, ${fmt(z.k)}), matching the given equation.`, wrong,
+      q: `Which graph shows ${T(`y = ${eqTex(z.a, z.b, z.c)}`)} for ${ctx.of}?`,
+      hint: "Check whether it opens up or down (sign of a), then check the turning point and the y-intercept.",
+      steps: [`$a = ${z.a}$ → opens ${z.a > 0 ? "up" : "down"}`, `Turning point $(${fmt(z.h)},\\ ${fmt(z.k)})$, y-intercept $(0,\\ ${z.c})$`, `Pick the graph that matches all three.`],
+      pic: "", optPics, data: { a: z.a, b: z.b, c: z.c, h: z.h, k: z.k, order: order.map(i => key(graphs[i])) } }; },
+  square: r => { // prefer h ≠ 0 so the completed-square form is visually distinct
+    let z = niceQuad(r), guard = 0; while (z.h === 0 && guard++ < 20) z = niceQuad(r);
+    const ctx = r.pick(PARA_CTX), pic = paraPic(z, ctx, ["tp"]);
+    const right = T(tpForm(z.a, z.h, z.k));
+    const alts = [
+      tpForm(z.a, -z.h, z.k),
+      tpForm(-z.a, z.h, z.k),
+      tpForm(z.a, z.h, -z.k === z.k ? z.k + 1 : -z.k),
+      tpForm(z.a, z.h + (z.h >= 0 ? 1 : -1), z.k),
+      `y = ${eqTex(z.a, z.b, z.c)}`
+    ];
+    const notes = [
+      `Completing the square gives (x − (−b/2a)), and −b/2a = ${fmt(z.h)}, so keep that sign inside the bracket.`,
+      `Keep a = ${z.a} in front of the squared bracket; do not flip its sign.`,
+      `The constant after completing the square is k = ${fmt(z.k)}, the turning-point height.`,
+      `The shift inside the bracket is h = ${fmt(z.h)}, the axis of symmetry.`,
+      `That is the original expanded form. Rewrite it as a(x − h)² + k.`
+    ];
+    const wrong = []; const seen = new Set([right]);
+    alts.forEach((form, i) => { const o = T(form); if (!seen.has(o)) { seen.add(o); wrong.push([o, notes[i]]); } });
+    return { k: "square", mc: true, ctx, z, right, rightWhy: `Right: completing the square (or reading the turning point) rewrites the curve with axis x = ${fmt(z.h)} and height ${fmt(z.k)}.`, wrong,
+      q: `Complete the square for ${T(`y = ${eqTex(z.a, z.b, z.c)}`)}. Which is the turning-point form?`,
+      hint: "y = a(x − h)² + k, where h = −b/(2a) and k is the y-value there.",
+      steps: [`$h = -\\frac{b}{2a} = ${fmt(z.h)}$`, `$k = ${fmt(z.k)}$`, `So $y = ${tpForm(z.a, z.h, z.k)}$.`], pic, data: { a: z.a, b: z.b, c: z.c, h: z.h, k: z.k } }; },
+  word: r => {
+    let z = niceQuad(r), guard = 0;
+    while (!(z.a < 0 && z.k > 0 && z.roots[0] !== z.roots[1]) && guard++ < 40) z = niceQuad(r);
+    if (z.a > 0) z = { a: -Math.abs(z.a), b: Math.abs(z.a) * (z.p + z.q), c: -Math.abs(z.a) * z.p * z.q, p: z.p, q: z.q, h: z.h, k: Math.abs(z.a) * (z.h - z.p) * (z.p - z.h), roots: z.roots };
+    // recompute k from a,p,q to be safe
+    z = (() => { const a = -Math.abs(z.a), p = z.p, q = z.q, B = -a * (p + q), C = a * p * q, h = (p + q) / 2, k = a * (h - p) * (h - q); return { a, b: B, c: C, p, q, h, k, roots: [p, q].slice().sort((x, y) => x - y) }; })();
+    if (z.k <= 0) { const lift = Math.ceil(1 - z.k); z = Object.assign({}, z, { c: z.c + lift, k: z.k + lift }); }
+    const ctx = r.pick(PARA_CTX), width = Math.abs(z.p - z.q);
+    const askW = ctx.id === "bridge" || r.chance(.35);
+    const pic = paraPic(z, ctx, askW ? ["roots", "tp"] : ["tp"]);
+    if (askW) {
+      const slips = uniqSlips(String(width), [
+        [width / 2, `That is only half the span (from the axis to one root). The full width is ${width} m.`],
+        [z.k, `That is the greatest height, ${fmt(z.k)} m. The question asks for the width on the ground.`],
+        [Math.abs(z.roots[0]) || Math.abs(z.roots[1]) || 1, `Use both roots: |${z.roots[1]} − ${z.roots[0]}| = ${width}.`],
+        [z.h === 0 ? width + 1 : z.h, z.h === 0 ? `The width is the full distance between the roots: ${width} m.` : `That is the axis x = ${fmt(z.h)}, not the width.`],
+        [width + 1, `Subtract the roots carefully: |${z.roots[1]} − ${z.roots[0]}| = ${width}.`]
+      ], false).map(([v, n]) => [+v, n]);
+      return { k: "width", mc: false, ctx, z, x: width,
+        q: `A ${ctx.thing} follows ${T(`y = ${eqTex(z.a, z.b, z.c)}`)} metres, with y the height above the ground. How wide is it on the ground, between the two roots, in metres?`,
+        hint: "Find the roots, then subtract: width = |root₁ − root₂|.",
+        steps: [`Roots where y = 0: $x = ${z.roots[0]}$ and $x = ${z.roots[1]}$`, `Width = |${z.roots[1]} − ${z.roots[0]}| = ${width} m`],
+        pic, data: { a: z.a, b: z.b, c: z.c, h: z.h, k: z.k, roots: z.roots, width }, slips };
+    }
+    const slips = uniqSlips(String(z.k), [
+      [z.h === z.k ? z.h + 1 : z.h, `That is the x-coordinate of the turning point (when it happens). The height is y = ${fmt(z.k)} m.`],
+      [z.c === z.k ? z.c + 1 : z.c, `That is the height at x = 0, not the maximum.`],
+      [width, `That is the width between the roots. The greatest height is ${fmt(z.k)} m.`],
+      [z.k === 0 ? 1 : -z.k, `Height is positive here: the maximum is ${fmt(z.k)} m.`]
+    ], false).map(([v, n]) => [+v, n]);
+    return { k: "height", mc: false, ctx, z, x: z.k,
+      q: `${ctx.who} watches ${ctx.of} follow ${T(`y = ${eqTex(z.a, z.b, z.c)}`)} metres (y = height). What is the greatest height, in metres?`,
+      hint: "The greatest height is the y-coordinate of the turning point (since a < 0).",
+      steps: [`$a = ${z.a} < 0$, so the turning point is a maximum`, `$x = -\\frac{b}{2a} = ${fmt(z.h)}$, $y = ${fmt(z.k)}$`, `Greatest height = ${fmt(z.k)} m`],
+      pic, data: { a: z.a, b: z.b, c: z.c, h: z.h, k: z.k, roots: z.roots }, slips };
+  }
+};
+const PARA_KINDS = ["yint", "yint", "axis", "axis", "turn", "turn", "turn", "roots", "roots", "match", "match", "square", "square", "word", "word"];
+const paraQ = (r, kind) => {
+  const z = PARA[kind](r), ctx = z.ctx, uid = `quadgraph|${z.k}|${JSON.stringify(z.data)}`;
+  const extra = { uid, pic: z.pic || "", data: Object.assign({ quadgraph: z.k, ctx: ctx.id }, z.data) };
+  if (z.optPics) extra.optPics = z.optPics;
+  if (z.mc) return mcqWhy(r, z.q, z.right, z.rightWhy, z.wrong, z.hint, z.steps, extra);
+  if (z.pair) return Q(Object.assign({ q: z.q, kind: "pair", val: [z.x, z.y], a: z.a, keys: ["-", ","], hint: z.hint, steps: z.steps, slips: z.slips }, extra));
+  if (z.set) return Q(Object.assign({ q: z.q, kind: "set", val: z.val, a: z.a, keys: ["-", ","], hint: z.hint, steps: z.steps, slips: z.slips }, extra));
+  return numWhy(z.q, z.x, z.hint, z.steps, z.slips, Object.assign({ keys: ["-", "."] }, extra));
+};
+topic(9, "quadgraph", "Parabola Park", "🎢", "Quadratic graphs: intercepts, turning points and matching curves", r => paraQ(r, r.pick(PARA_KINDS)));
 topic(9, "simul", "Twin Potions", "👯", "Simultaneous equations (type x, y)", r => {
   const x = r.int(-6, 8), y = r.int(-6, 8); let a = r.nz(-5, 5), b = r.nz(-5, 5), c = r.nz(-5, 5), d = r.nz(-5, 5); while (a * d - b * c === 0) d = r.nz(-5, 5);
   const e1 = a * x + b * y, e2 = c * x + d * y, L = (p, q) => `${poly([[p, 1]], "x")} ${q < 0 ? "-" : "+"} ${poly([[Math.abs(q), 1]], "y")}`;
@@ -866,9 +1110,9 @@ const LET = "ABCD";
 const isNice = v => Math.abs(rd(v, 2) - v) < 1e-9;
 // a travel graph (stage bubbles sit above flat stages and under sloping ones, clear of the axes): corners pts = [[t, y]] on a grid of xstep × ystep; vName = "V" draws an unlabelled speed axis with only the
 // top speed marked V (Royal "find V" questions)
-const svgTravel = (g) => { const x0 = 48, x1 = 282, top = 42, bot = 178, X = t => f1(x0 + t / g.xmax * (x1 - x0));
+const svgTravel = (g) => { const { x0, x1, top, bot, X, Y: Yf } = plotFrame(0, g.xmax, 0, g.ymax, PLOT_BOX);
   let grid, Y;
-  if (g.vName) { Y = v => f1(bot - (bot - top) * v / g.ymax); grid = `<line x1="${x0}" y1="${bot}" x2="${x1}" y2="${bot}" stroke="#b9a6cc" stroke-width="2"/><text class="yt" data-v="0" x="${x0 - 5}" y="${bot + 3.5}" font-size="10" text-anchor="end" font-weight="800" fill="${INK}">0</text>` +
+  if (g.vName) { Y = Yf; grid = `<line x1="${x0}" y1="${bot}" x2="${x1}" y2="${bot}" stroke="#b9a6cc" stroke-width="2"/><text class="yt" data-v="0" x="${x0 - 5}" y="${bot + 3.5}" font-size="10" text-anchor="end" font-weight="800" fill="${INK}">0</text>` +
       `<line class="tgv" x1="${x0}" y1="${Y(g.vAt)}" x2="${x1}" y2="${Y(g.vAt)}" stroke="#c9b3ff" stroke-width="1.4" stroke-dasharray="4 3"/><text x="${x0 - 6}" y="${Y(g.vAt) + 4.5}" font-size="13" text-anchor="end" font-weight="900" font-style="italic" font-family="Georgia, serif" fill="#ff4f81">${g.vName}</text>`; }
   else [grid, Y] = axes(x0, x1, top, bot, g.ymax, g.ystep, "yt");
   const ticks = []; for (let t = 0; t <= g.xmax + 1e-9; t += g.xstep) ticks.push([X(t), fmt(t), fmt(t)]);

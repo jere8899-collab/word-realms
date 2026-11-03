@@ -202,7 +202,104 @@ const xTicks = (ticks, top, bot, grid, dy, cls = "") => ticks.map(([x, label, v]
 const yUnit = unit => `<text x="8" y="31" font-size="9" font-weight="800" fill="${LINE}">${esc(unit)}</text>`;
 const xUnit = (x, y, unit) => `<text x="${x}" y="${y}" font-size="9.5" text-anchor="middle" font-weight="800" fill="${LINE}">${esc(unit)}</text>`;
 const chartBox = (title, unit, body, label) => cardSvg(300, 210, title, 17, `${yUnit(unit)}${body}`, label);
-// bar graph: cats [{ name, e }], vals, scale max + step
+/* coordinate-plane / parabola kit (Parabola Park; travel graphs reuse plotFrame for the same cream chart box).
+   plotFrame(xmin,xmax,ymin,ymax, box?) → { x0,x1,top,bot, X,Y } mapping maths coords into the card (y up).
+   svgPlane(title, opts) → cream card with bipolar labelled axes, optional grid, and opts.draw(X,Y,box) body.
+   svgParabola(title, a,b,c, opts?) → plots y=ax²+bx+c as class=parabola path (data-a/b/c), optional marks for the
+   turning point / roots / y-intercept (class=pdot data-n data-x data-y). axes()/xTicks()/svgBars/svgLine stay untouched. */
+const PLOT_BOX = { x0: 48, x1: 282, top: 42, bot: 178 };
+const plotFrame = (xmin, xmax, ymin, ymax, box = PLOT_BOX) => {
+  const { x0, x1, top, bot } = box;
+  const X = v => f1(x0 + (v - xmin) / (xmax - xmin || 1) * (x1 - x0));
+  const Y = v => f1(bot - (v - ymin) / (ymax - ymin || 1) * (bot - top));
+  return { x0, x1, top, bot, X, Y };
+};
+const svgPlane = (title, opts = {}) => {
+  const xmin = opts.xmin ?? -5, xmax = opts.xmax ?? 5, ymin = opts.ymin ?? -5, ymax = opts.ymax ?? 5;
+  const xstep = opts.xstep || 1, ystep = opts.ystep || 1, box = opts.box || PLOT_BOX;
+  const { x0, x1, top, bot, X, Y } = plotFrame(xmin, xmax, ymin, ymax, box);
+  const ox = X(0), oy = Y(0), showGrid = opts.grid !== false;
+  let grid = "";
+  if (showGrid) {
+    for (let x = xmin; x <= xmax + 1e-9; x += xstep) if (Math.abs(x) > 1e-9) grid += `<line x1="${X(x)}" y1="${top}" x2="${X(x)}" y2="${bot}" stroke="#F3ECFA" stroke-width="1"/>`;
+    for (let y = ymin; y <= ymax + 1e-9; y += ystep) if (Math.abs(y) > 1e-9) grid += `<line x1="${x0}" y1="${Y(y)}" x2="${x1}" y2="${Y(y)}" stroke="#F3ECFA" stroke-width="1"/>`;
+  }
+  // bipolar axes through the origin when it is on the plot, else along the near edge
+  const ax = (ox >= x0 - .5 && ox <= x1 + .5) ? ox : (xmin >= 0 ? x0 : x1);
+  const ay = (oy >= top - .5 && oy <= bot + .5) ? oy : (ymin >= 0 ? bot : top);
+  grid += `<line class="paxis" data-which="y" x1="${ax}" y1="${top}" x2="${ax}" y2="${bot}" stroke="#b9a6cc" stroke-width="2"/>`;
+  grid += `<line class="paxis" data-which="x" x1="${x0}" y1="${ay}" x2="${x1}" y2="${ay}" stroke="#b9a6cc" stroke-width="2"/>`;
+  let ticks = "";
+  for (let x = xmin; x <= xmax + 1e-9; x += xstep) {
+    const px = X(x), onY = Math.abs(x) < 1e-9;
+    ticks += `<line x1="${px}" y1="${ay - 4}" x2="${px}" y2="${ay + 4}" stroke="#b9a6cc" stroke-width="1.5"/>`;
+    if (!onY) ticks += `<text class="xt" data-v="${fmt(x)}" x="${px}" y="${f1(ay + 14)}" font-size="9.5" text-anchor="middle" font-weight="800" fill="${INK}">${fmt(x)}</text>`;
+  }
+  for (let y = ymin; y <= ymax + 1e-9; y += ystep) {
+    const py = Y(y), onX = Math.abs(y) < 1e-9;
+    ticks += `<line x1="${ax - 4}" y1="${py}" x2="${ax + 4}" y2="${py}" stroke="#b9a6cc" stroke-width="1.5"/>`;
+    if (!onX) ticks += `<text class="yt" data-v="${fmt(y)}" x="${f1(ax - 6)}" y="${f1(py + 3.5)}" font-size="10" text-anchor="end" font-weight="800" fill="${INK}">${fmt(y)}</text>`;
+  }
+  // origin "0" once, tucked under the axes cross
+  ticks += `<text class="xt yt" data-v="0" x="${f1(ax - 6)}" y="${f1(ay + 14)}" font-size="9.5" text-anchor="end" font-weight="800" fill="${INK}">0</text>`;
+  const xlab = opts.xName || "x", ylab = opts.yName || "y";
+  const names = `<text x="${f1(x1 - 2)}" y="${f1(ay - 6)}" font-size="11" text-anchor="end" font-weight="900" font-style="italic" font-family="Georgia, serif" fill="${LINE}">${esc(xlab)}</text>`
+    + `<text x="${f1(ax + 8)}" y="${f1(top + 10)}" font-size="11" font-weight="900" font-style="italic" font-family="Georgia, serif" fill="${LINE}">${esc(ylab)}</text>`;
+  const body = typeof opts.draw === "function" ? opts.draw(X, Y, { x0, x1, top, bot, ax, ay, xmin, xmax, ymin, ymax }) : (opts.body || "");
+  const W = opts.w || 300, H = opts.h || 226, cls = opts.cls || "mpic chart plane";
+  return cardSvg(W, H, title, opts.ty || 18, grid + ticks + names + body, opts.label || "coordinate plane", cls);
+};
+// sample y=ax²+bx+c across [xmin,xmax]; clip to the visible y-range; marks = [{ n, x, y, lab? }]
+const svgParabola = (title, a, b, c, opts = {}) => {
+  const h0 = -b / (2 * a), k0 = a * h0 * h0 + b * h0 + c;
+  const disc = b * b - 4 * a * c;
+  const roots0 = disc >= -1e-12 ? [(-b - Math.sqrt(Math.max(0, disc))) / (2 * a), (-b + Math.sqrt(Math.max(0, disc))) / (2 * a)] : [];
+  let xmin = opts.xmin, xmax = opts.xmax, ymin = opts.ymin, ymax = opts.ymax;
+  if (xmin == null || xmax == null) {
+    const xs = [0, h0].concat(roots0);
+    let lo = Math.floor(Math.min(...xs) - 1), hi = Math.ceil(Math.max(...xs) + 1);
+    if (hi - lo < 6) { const m = (lo + hi) / 2; lo = Math.floor(m - 3); hi = Math.ceil(m + 3); }
+    xmin = xmin ?? Math.max(-8, lo); xmax = xmax ?? Math.min(8, hi);
+    if (xmax - xmin < 4) { xmin = Math.max(-8, xmin - 1); xmax = Math.min(8, xmax + 1); }
+  }
+  const markYs = (opts.marks || []).map(m => m.y), markXs = (opts.marks || []).map(m => m.x);
+  if (ymin == null || ymax == null) {
+    const ySamples = [c, k0].concat(markYs);
+    for (let i = 0; i <= 24; i++) { const x = xmin + (xmax - xmin) * i / 24; ySamples.push(a * x * x + b * x + c); }
+    const lo = Math.min(...ySamples), hi = Math.max(...ySamples);
+    const pad = Math.max(1, Math.ceil((hi - lo) * .12 + .01));
+    ymin = ymin ?? Math.floor(lo) - pad; ymax = ymax ?? Math.ceil(hi) + pad;
+    if (ymax - ymin < 4) { const m = (ymin + ymax) / 2; ymin = Math.floor(m - 2); ymax = Math.ceil(m + 2); }
+  }
+  if (xmin == null || xmax == null) { /* already set above */ }
+  // always show the origin when it sits near the interesting region; keep marks inside the window
+  if (xmin > 0) xmin = 0; if (xmax < 0) xmax = 0; if (ymin > 0) ymin = 0; if (ymax < 0) ymax = 0;
+  for (const x of markXs) { if (x < xmin) xmin = Math.floor(x) - 1; if (x > xmax) xmax = Math.ceil(x) + 1; }
+  for (const y of markYs) { if (y < ymin) ymin = Math.floor(y) - 1; if (y > ymax) ymax = Math.ceil(y) + 1; }
+  const marks = opts.marks || [];
+  const small = !!opts.small;
+  const xstep = opts.xstep || (xmax - xmin > 10 ? 2 : 1), ystep = opts.ystep || (ymax - ymin > 12 ? Math.ceil((ymax - ymin) / 8) : ymax - ymin > 8 ? 2 : 1);
+  return svgPlane(title, Object.assign({}, opts, { xmin, xmax, ymin, ymax, xstep, ystep,
+    w: small ? 150 : (opts.w || 300), h: small ? 120 : (opts.h || 226), ty: small ? 14 : 18, cls: opts.cls || "mpic chart parabola",
+    label: opts.label || "parabola graph",
+    draw: (X, Y) => {
+      const N = small ? 24 : 48; let d = "", started = false;
+      for (let i = 0; i <= N; i++) {
+        const x = xmin + (xmax - xmin) * i / N, y = a * x * x + b * x + c;
+        if (y < ymin - .6 || y > ymax + .6) { started = false; continue; }
+        d += (started ? " L" : (d ? " M" : "M")) + xy([X(x), Y(y)]); started = true;
+      }
+      const stroke = opts.stroke || (a > 0 ? "#7ec8e3" : "#ff8fa3");
+      let s = `<path class="parabola" data-a="${a}" data-b="${b}" data-c="${c}" d="${d}" fill="none" stroke="${stroke}" stroke-width="${small ? 2.2 : 3}" stroke-linejoin="round" stroke-linecap="round"/>`;
+      for (const m of marks) {
+        /* marks stay visible: window was expanded to fit them */
+        const px = X(m.x), py = Y(m.y), lab = m.lab != null ? m.lab : m.n;
+        s += `<circle class="pdot" data-n="${esc(m.n)}" data-x="${fmt(m.x)}" data-y="${fmt(m.y)}" cx="${px}" cy="${py}" r="${small ? 3 : 4}" fill="#fff" stroke="#ff6f91" stroke-width="2"/>`;
+        if (lab && !small) s += `<text class="plab" data-n="${esc(m.n)}" x="${f1(px + (m.dx || 0))}" y="${f1(py + (m.dy || -8))}" font-size="11" text-anchor="middle" font-weight="900" fill="${INK}" paint-order="stroke" stroke="#FFFDF8" stroke-width="3">${esc(lab)}</text>`;
+      }
+      return s;
+    } }));
+};
 const svgBars = (title, unit, cats, vals, max, step) => {
   const x0 = 36, x1 = 290, top = 38, bot = 170, [grid, y] = axes(x0, x1, top, bot, max, step), w = (x1 - x0) / cats.length;
   const bars = cats.map((c, i) => { const bx = +(x0 + w * i + w * 0.2).toFixed(1), bw = +(w * 0.6).toFixed(1), cx = +(x0 + w * (i + 0.5)).toFixed(1);
@@ -315,7 +412,7 @@ M.longMulSteps = (a, b) => { const bs = String(b).split("").reverse(); const out
 /* ====================== TOPICS ====================== */
 const TOPICS = [];
 const topic = (grade, id, name, icon, desc, gen, opt = {}) => TOPICS.push(Object.assign({ grade, id: `g${grade}.${id}`, name, icon, desc, gen }, opt));
-M._internal = { Q, num, mcq, mcqWhy, numWhy, T, NAMES, THINGS, COUNT_EMOJI, PASTEL, INK, LINE, esc, svgBox, cardSvg, tickAttr, xTicks, yUnit, xUnit, cellKey, figKey, hasCell, nearCells, gridPaper, gridSheet, gridCell, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, axes, svgBars, svgLine, svgPieChart, svgGeo, fitBox, toRad, toDeg, sinD, cosD, tanD, rotPt, dirPt, f1, xy, mid, vat, vdir, angSweep, angWedge, angText, rightPath, figCard, figShape, figEdge, figLab, figLens, figDot, figVtx, figRight, coin, emojiRows, table, colAdd, colSub, topic, TOPICS, gcd, lcm, rd, fmt, fdp, money, simp, fracTex, fracStr, mixedTex, sgn, poly, lin, paren, pm, undo, coef, ord, sum, asc, median, freqTotals, sqrtTex, surdTex, simpRad, matTex, matSvg };
+M._internal = { Q, num, mcq, mcqWhy, numWhy, T, NAMES, THINGS, COUNT_EMOJI, PASTEL, INK, LINE, esc, svgBox, cardSvg, tickAttr, xTicks, yUnit, xUnit, cellKey, figKey, hasCell, nearCells, gridPaper, gridSheet, gridCell, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, axes, svgBars, svgLine, svgPieChart, svgGeo, fitBox, toRad, toDeg, sinD, cosD, tanD, rotPt, dirPt, f1, xy, mid, vat, vdir, angSweep, angWedge, angText, rightPath, figCard, figShape, figEdge, figLab, figLens, figDot, figVtx, figRight, coin, emojiRows, table, colAdd, colSub, topic, TOPICS, gcd, lcm, rd, fmt, fdp, money, simp, fracTex, fracStr, mixedTex, sgn, poly, lin, paren, pm, undo, coef, ord, sum, asc, median, freqTotals, sqrtTex, surdTex, simpRad, matTex, matSvg, PLOT_BOX, plotFrame, svgPlane, svgParabola };
 M.TOPICS = TOPICS;
 M.topic = id => TOPICS.find(t => t.id === id);
 M.gradeTopics = g => TOPICS.filter(t => t.grade === g);

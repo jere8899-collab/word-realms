@@ -143,7 +143,7 @@
 .opts.mpicopts{grid-template-columns:repeat(2,minmax(0,1fr))}
 .opt.mpicopt{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:8px;text-align:center;min-height:96px}
 .opt.mpicopt .k{margin:0;align-self:flex-start}
-.opt.mpicopt .mpic.symgrid,.opt.mpicopt .mpic.netpic{width:100%;max-width:150px}
+.opt.mpicopt .mpic.symgrid,.opt.mpicopt .mpic.netpic,.opt.mpicopt .mpic.chart.parabola,.opt.mpicopt .mpic.chart.plane{width:100%;max-width:150px}
 .mansPic{display:inline-block;vertical-align:middle;width:110px;margin:0 4px}.mansPic .mpic{width:100%;height:auto}
 /* 🕰️ Clock Workshop (js/math-clock.js) */
 .mclock .mviz-svg.mv-clock{max-width:230px!important}
