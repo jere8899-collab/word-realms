@@ -23,9 +23,28 @@ const SAVE = JSON.stringify({ v: 1, name: 'Jeremy', avatar: 'avatar_mage', start
     await page.waitForFunction(() => window.WR && WR.realms && document.querySelector('.topbar'), null, { timeout: 20000 }); await page.waitForTimeout(300);
     return page;
   }
-  const MIN_CHAPTERS = 5;   // shelf grows with each Storybook wave (chapter 1 + extras)
+  const MIN_CHAPTERS = 6;   // shelf grows with each Storybook wave (chapter 1 + extras); bump when a new c_storiesN ships
   const clean = async p => { await p.evaluate(() => document.querySelectorAll('.confetti,.toast').forEach(e => e.remove())); await p.waitForTimeout(250); };
   const finishChapter = async p => { for (let i = 0; i < 5; i++) { await answer(p, true); await p.locator('#storyNext').click(); await p.waitForTimeout(120); } await p.waitForSelector('.story-done'); };
+  // After finishing chapter (n-1), open the shelf and assert chapter n unlocks (1-based n ≥ 3). Titles/pics are A1's.
+  const A1_UNLOCK = [
+    null, null, null,  // 0..2 unused (ch1/ch2 have their own checks)
+    { title: "The Bunny's Tea Party", pic: 'story_a1_3', shot: 'story_10_shelf_ch3', pageShot: 'story_11_ch3_page' },
+    { title: 'The Star Path Home', pic: 'story_a1_4', shot: 'story_12_shelf_ch4', pageShot: 'story_13_ch4_page' },
+    { title: 'The Thank-You Acorn', pic: 'story_a1_5', shot: 'story_14_shelf_ch5', pageShot: 'story_15_ch5_page' },
+    { title: 'The Little Sprout', pic: 'story_a1_6', shot: 'story_16_shelf_ch6', pageShot: 'story_17_ch6_page' },
+  ];
+  const assertUnlock = async (p, n) => {
+    const u = A1_UNLOCK[n]; assert(u, 'A1_UNLOCK has chapter ' + n);
+    await p.evaluate(() => WR.openStoryShelf('a1')); await p.waitForSelector('.shelf-ch');
+    assert(await p.locator('.shelf-ch').count() >= MIN_CHAPTERS, 'shelf lists chapter ' + n + '+');
+    assert(await p.locator('.shelf-ch:not(.locked)').count() === n, 'after chapter ' + (n - 1) + ', chapter ' + n + ' opens on the shelf');
+    await clean(p); await p.screenshot({ path: OUT + u.shot + '.png' });
+    await p.locator('.shelf-ch').nth(n - 1).click(); await p.waitForSelector('.story-text');
+    assert((await p.locator('.story-head').innerText()).includes(u.title), 'chapter ' + n + ' title loads');
+    assert(await p.evaluate(pic => new RegExp(pic).test(document.querySelector('.story-pic img').src), u.pic), 'chapter ' + n + ' has its own picture');
+    await clean(p); await p.screenshot({ path: OUT + u.pageShot + '.png', fullPage: true });
+  };
   const answer = async (p, right) => {
     const target = await p.evaluate(async right => {
       const lv = document.querySelector('.story-head .lvl-badge').textContent.toLowerCase(), head = document.querySelector('.story-head .title').textContent;
@@ -106,37 +125,11 @@ const SAVE = JSON.stringify({ v: 1, name: 'Jeremy', avatar: 'avatar_mage', start
   assert(s3.d && s3.d.crowns === 2 && s3.stars - st2 === 4 + 3 + 4 && s3.pages === 1, 'chapter 2 saves as a1.2, pays full first-read stars, and is not a Starlight page');
   assert(/Chapter 2 finished/.test(await page.locator('.story-done h2').innerText()), 'chapter 2 has its own finish screen');
   await clean(page); await page.screenshot({ path: OUT + 'story_09_ch2_done.png', fullPage: true });
-  // 📖 chapter 3: locked until chapter 2 is done; opens next; own picture
-  await page.evaluate(() => WR.openStoryShelf('a1')); await page.waitForSelector('.shelf-ch');
-  assert(await page.locator('.shelf-ch').count() >= MIN_CHAPTERS, 'shelf lists chapter 3+');
-  assert(await page.locator('.shelf-ch:not(.locked)').count() === 3, 'after chapter 2, chapter 3 opens on the shelf');
-  await clean(page); await page.screenshot({ path: OUT + 'story_10_shelf_ch3.png' });
-  await page.locator('.shelf-ch').nth(2).click(); await page.waitForSelector('.story-text');
-  assert((await page.locator('.story-head').innerText()).includes("The Bunny's Tea Party"), 'chapter 3 title loads');
-  assert(await page.evaluate(() => /story_a1_3/.test(document.querySelector('.story-pic img').src)), 'chapter 3 has its own picture');
-  await clean(page); await page.screenshot({ path: OUT + 'story_11_ch3_page.png', fullPage: true });
-  // finish chapter 3 so chapter 4 unlocks
-  await finishChapter(page);
-  // 📖 chapter 4: locked until chapter 3 is done; opens next; own picture
-  await page.evaluate(() => WR.openStoryShelf('a1')); await page.waitForSelector('.shelf-ch');
-  assert(await page.locator('.shelf-ch').count() >= MIN_CHAPTERS, 'shelf lists chapter 4+');
-  assert(await page.locator('.shelf-ch:not(.locked)').count() === 4, 'after chapter 3, chapter 4 opens on the shelf');
-  await clean(page); await page.screenshot({ path: OUT + 'story_12_shelf_ch4.png' });
-  await page.locator('.shelf-ch').nth(3).click(); await page.waitForSelector('.story-text');
-  assert((await page.locator('.story-head').innerText()).includes('The Star Path Home'), 'chapter 4 title loads');
-  assert(await page.evaluate(() => /story_a1_4/.test(document.querySelector('.story-pic img').src)), 'chapter 4 has its own picture');
-  await clean(page); await page.screenshot({ path: OUT + 'story_13_ch4_page.png', fullPage: true });
-  // finish chapter 4 so chapter 5 unlocks
-  await finishChapter(page);
-  // 📖 chapter 5: locked until chapter 4 is done; opens next; own picture
-  await page.evaluate(() => WR.openStoryShelf('a1')); await page.waitForSelector('.shelf-ch');
-  assert(await page.locator('.shelf-ch').count() >= MIN_CHAPTERS, 'shelf lists chapter 5');
-  assert(await page.locator('.shelf-ch:not(.locked)').count() === 5, 'after chapter 4, chapter 5 opens on the shelf');
-  await clean(page); await page.screenshot({ path: OUT + 'story_14_shelf_ch5.png' });
-  await page.locator('.shelf-ch').nth(4).click(); await page.waitForSelector('.story-text');
-  assert((await page.locator('.story-head').innerText()).includes('The Thank-You Acorn'), 'chapter 5 title loads');
-  assert(await page.evaluate(() => /story_a1_5/.test(document.querySelector('.story-pic img').src)), 'chapter 5 has its own picture');
-  await clean(page); await page.screenshot({ path: OUT + 'story_15_ch5_page.png', fullPage: true });
+  // 📖 chapters 3…MIN_CHAPTERS: each opens after finishing the previous (titles/pics in A1_UNLOCK)
+  for (let n = 3; n <= MIN_CHAPTERS; n++) {
+    await assertUnlock(page, n);
+    if (n < MIN_CHAPTERS) await finishChapter(page);  // finish so the next chapter unlocks
+  }
   // every level has a shelf of chapters, each with notes on every wrong option
   const lv = await page.evaluate(async () => { const out = {}; for (const r of WR.realms) { const b = await WR.loadStory(r.id); out[r.id] = [b.chapters.length, b.chapters.slice(1).every(c => [...c.pages.map(p => p.q), c.final].every(q => Object.keys(q.notes || {}).length === 3))]; } return out; });
   assert(Object.values(lv).every(([n, ok]) => n >= MIN_CHAPTERS && ok), 'every level has ' + MIN_CHAPTERS + '+ chapters and chapters 2+ have why-not notes ' + JSON.stringify(lv));

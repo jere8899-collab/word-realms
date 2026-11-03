@@ -496,6 +496,110 @@
      "loud enough to wake the whole shelf": "The stamp was soft; impeccable isn't about volume."
     }
    }
+  },
+  {
+   "title": "The Soft Stamp Shelf",
+   "focus": "irony/understatement · idiom · implied meaning",
+   "img": "story_c2_6",
+   "pages": [
+    {
+     "text": "With Listener to Rain on Quiet Roofs stamped and drying, the Starlight Library should, by any reasonable measure, have asked for a brass band. It did not. Instead a second soft shelf was cleared for quiet stamps alone, as if the building itself had requested an encore of [[stillness|calm with almost no movement or noise]]. “A modest filing system,” Vellum noted, which, after three centuries of plot, was putting it mildly.",
+     "q": {
+      "q": "What is Vellum's tone about the soft stamp shelf?",
+      "options": [
+       "dry understatement after too much noise",
+       "wild excitement about a huge brass band",
+       "terror that the whole roof will collapse",
+       "boredom so deep he leaves the whole library"
+      ],
+      "answer": 0,
+      "explain": "Calling a quiet stamp shelf “a modest filing system” after centuries of chaos is classic dry understatement.",
+      "kind": "infer",
+      "notes": {
+       "wild excitement about a huge brass band": "He notes it quietly; this is not brass-band excitement.",
+       "terror that the whole roof will collapse": "He calls it modest — tired irony, not terror.",
+       "boredom so deep he leaves the whole library": "He stays to organise stamps; he isn't walking out."
+      }
+     }
+    },
+    {
+     "text": "{hero} returned to the sunny window seat. Characters who had rested between covers stayed put, and the only new sound was soft stamps finding their shelf. In the margin of the same poetry chapbook someone had added, in the same tiny hand: “We are [[in good company|with kind friends OR, here, among other quiet listeners]] — kindly.” It was hard not to smile twice.",
+     "q": {
+      "q": "The scribble about being “in good company — kindly” implies that…",
+      "options": [
+       "the characters enjoy joining a gentle listener club as a peaceful joke",
+       "a librarian was carefully counting every chair for stock",
+       "Vellum had banned all poetry from the library forever",
+       "the poetry book wanted to start a very loud parade"
+      ],
+      "answer": 0,
+      "explain": "After asking for rest, the characters turn the idiom into a gentle club joke they accept.",
+      "kind": "infer",
+      "notes": {
+       "a librarian was carefully counting every chair for stock": "The voices asked for quiet; this is their playful peaceful note, not stock-taking.",
+       "Vellum had banned all poetry from the library forever": "Vellum filed soft stamps; he didn't ban poetry.",
+       "the poetry book wanted to start a very loud parade": "A quiet stamp shelf is the opposite of a loud parade."
+      }
+     }
+    },
+    {
+     "text": "It occurred to {hero} that the library's gentlest victories sounded the same: not with a flourish, but with someone finally letting the room be quiet. Vellum, slightly less [[wary|careful because you expect trouble]] than before, even labelled a small card “Listener Club — soft stamps only.” Nobody interrupted. The shelf did not murmur. The atlas stayed shut.",
+     "q": {
+      "q": "What pattern does {hero} notice about the library's gentlest victories?",
+      "options": [
+       "they came when someone let the room stay quiet",
+       "they came only when every single book was burned",
+       "they came when the fog bell rang across a silent lake",
+       "they came when colourful kites tangled over a picnic"
+      ],
+      "answer": 0,
+      "explain": "Letting the room be quiet finished the dramas; {hero} notices that pattern again with the soft stamp shelf.",
+      "kind": "infer",
+      "notes": {
+       "they came only when every single book was burned": "Nothing was burned. Quiet was the turning point.",
+       "they came when the fog bell rang across a silent lake": "The fog bell is another realm's story.",
+       "they came when colourful kites tangled over a picnic": "Kite tangles were at Cloud Castle, not this pattern."
+      }
+     }
+    },
+    {
+     "text": "When the last soft stamp found its place, Vellum added a third tiny mark beside the others: Founder of the Soft Stamp Shelf. “Three hundred years of plot,” he murmured, “and the club was simply… listening.” {pet}, having slept through half the soft thuds on the Returns cushion, woke only for the final stamp — timing that was, Vellum noted dryly, still [[impeccable|perfectly well timed]].",
+     "q": {
+      "q": "Why is Vellum's remark about “the club was simply listening” ironic?",
+      "options": [
+       "A huge saga's follow-up was only ordinary quiet listening.",
+       "He had planned a bright brass-band finale all along.",
+       "The characters demanded much louder plots forever.",
+       "The stamp card was secretly a long cookery recipe."
+      ],
+      "answer": 0,
+      "explain": "Centuries of dramatic noise, followed by ordinary listening: enormous fuss, tiny ordinary wish — again.",
+      "kind": "infer",
+      "notes": {
+       "He had planned a bright brass-band finale all along.": "He welcomed quiet listening, not a brass band.",
+       "The characters demanded much louder plots forever.": "They asked for rest and soft stamps, not louder plots.",
+       "The stamp card was secretly a long cookery recipe.": "It's a listener stamp shelf, not a recipe."
+      }
+     }
+    }
+   ],
+   "final": {
+    "q": "If timing is “impeccable”, it is…",
+    "options": [
+     "perfectly well timed",
+     "hopelessly late and messy",
+     "written in a secret code",
+     "loud enough to wake the whole shelf"
+    ],
+    "answer": 0,
+    "explain": "Impeccable = perfectly well timed — like {pet} waking exactly for the final soft stamp.",
+    "kind": "vocab",
+    "notes": {
+     "hopelessly late and messy": "The opposite of late and messy.",
+     "written in a secret code": "Impeccable is about quality of timing, not a code.",
+     "loud enough to wake the whole shelf": "The stamp was soft; impeccable isn't about volume."
+    }
+   }
   }
  ]
 }

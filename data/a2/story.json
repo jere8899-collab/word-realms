@@ -496,6 +496,110 @@
      "the loudest bell by the door": "Bells can be loud; clearest describes easy-to-read letters."
     }
    }
+  },
+  {
+   "title": "The Sharing Tray",
+   "focus": "past simple · comparatives and superlatives · going to",
+   "img": "story_a2_6",
+   "pages": [
+    {
+     "text": "The morning after the thank-you sign, Crumb kept his newest promise. He baked a tray wider than yesterday's jam board and softer than any tart from festival week. “I'm going to fill the [[fairest|most equal and kind]] sharing tray in Candy Village,” he said, and Mrs Toffee lined up little cups.",
+     "q": {
+      "q": "What is Crumb going to fill?",
+      "options": [
+       "the fairest sharing tray",
+       "a harder cake of stone than last year",
+       "a bigger balloon than the whole festival",
+       "a tiny door for the oven alone"
+      ],
+      "answer": 0,
+      "explain": "“I'm going to fill the fairest sharing tray in Candy Village.” Going to = his plan.",
+      "kind": "grammar",
+      "notes": {
+       "a harder cake of stone than last year": "He plans a fair sharing tray, not a hard stone cake.",
+       "a bigger balloon than the whole festival": "Balloons were festival week. Today he plans a sharing tray.",
+       "a tiny door for the oven alone": "The oven door is already there. He plans a sharing tray for helpers."
+      }
+     }
+    },
+    {
+     "text": "He cut tarts that were smaller than party slices so every helper could take one. This time his claws stayed neat. The tray looked [[kinder|showing more care for others]] than any window display on the street because every cup held the same soft pink icing.",
+     "q": {
+      "q": "Why did the tray look kinder than the shop windows?",
+      "options": [
+       "Every cup held the same soft pink icing.",
+       "It looked flatter and sadder than stone.",
+       "It flew away on a festival balloon.",
+       "Mrs Toffee locked every helper outside."
+      ],
+      "answer": 0,
+      "explain": "“Every cup held the same soft pink icing” — equal shares look kinder.",
+      "kind": "fact",
+      "notes": {
+       "It looked flatter and sadder than stone.": "Kinder means more caring, not flatter. Equal icing made it kind.",
+       "It flew away on a festival balloon.": "No balloon carried the tray. Equal cups made it look kinder.",
+       "Mrs Toffee locked every helper outside.": "Helpers were welcomed in. Equal icing made the tray look kinder."
+      }
+     }
+    },
+    {
+     "text": "{hero} and {pet} arrived early again. Helpers gathered, and the queue was quieter than the tart rush because everyone was [[waiting|staying ready until it was their turn]] for a fair turn. Crumb's cheeks went pink with pride, not with flour.",
+     "q": {
+      "q": "Why was the queue quieter than the tart rush?",
+      "options": [
+       "Everyone was waiting for a fair turn.",
+       "Crumb had closed the bakery forever that morning.",
+       "Mrs Toffee sent every helper straight home.",
+       "A storm had washed all the icing away."
+      ],
+      "answer": 0,
+      "explain": "“The queue was quieter… because everyone was waiting for a fair turn.”",
+      "kind": "fact",
+      "notes": {
+       "Crumb had closed the bakery forever that morning.": "The bakery stayed open. Helpers waited for fair turns.",
+       "Mrs Toffee sent every helper straight home.": "Mrs Toffee lined up cups; she didn't send them home.",
+       "A storm had washed all the icing away.": "There is no storm. The quiet came from waiting fairly."
+      }
+     }
+    },
+    {
+     "text": "Crumb set the tray by the tiny door under the thank-you sign. “Thank you, helpers,” he said in the softest voice. “Tomorrow I'm going to bake an even [[gentler|softer and kinder]] crumb cake for anyone who swept.” The children cheered louder than the bakery bell, and {pet} sniffed a pink cup happily.",
+     "q": {
+      "q": "What is Crumb going to do tomorrow?",
+      "options": [
+       "bake a gentler crumb cake for sweepers",
+       "squash the sharing tray on purpose again",
+       "fly higher than the tallest candy tree",
+       "hide the soft spoon forever in flour"
+      ],
+      "answer": 0,
+      "explain": "“Tomorrow I'm going to bake an even gentler crumb cake for anyone who swept.”",
+      "kind": "grammar",
+      "notes": {
+       "squash the sharing tray on purpose again": "Squashing was an old accident. Tomorrow he plans a gentler cake.",
+       "fly higher than the tallest candy tree": "Flying was festival week. Tomorrow he plans a gentler cake.",
+       "hide the soft spoon forever in flour": "He likes the soft spoon. His plan is a gentler cake for sweepers."
+      }
+     }
+    }
+   ],
+   "final": {
+    "q": "If a tray is the “fairest”, it is…",
+    "options": [
+     "the most equal and kind of all",
+     "the hardest cake in the village",
+     "the flattest pancake on the shelf",
+     "the loudest bell by the door"
+    ],
+    "answer": 0,
+    "explain": "Fairest = most equal and kind — Crumb's sharing tray with matching cups.",
+    "kind": "vocab",
+    "notes": {
+     "the hardest cake in the village": "Fair is about equal kindness, not hard cakes.",
+     "the flattest pancake on the shelf": "Flat was the old squashed tray. Fair means equal and kind.",
+     "the loudest bell by the door": "Bells can be loud; fairest describes equal shares."
+    }
+   }
   }
  ]
 }

@@ -496,6 +496,110 @@
      "tied into a perfect brand-new knot": "A knot isn't what prompt means here."
     }
    }
+  },
+  {
+   "title": "The Rail Philosopher",
+   "focus": "past perfect · passive · third conditional · should have",
+   "img": "story_b2_6",
+   "pages": [
+    {
+     "text": "By a calm Tuesday evening the fog had thinned to silver threads. The fog bell had been tested at dusk, yet Glimmerfin wanted quiet company on the rail. Mog — newly titled Rail Philosopher as well as Fog Listener — was [[perched|sitting up high in a steady spot]] on the warmest post, thinking slow thoughts between soft blinks.",
+     "q": {
+      "q": "Where was Mog perched?",
+      "options": [
+       "on the warmest post on the rail",
+       "inside Crumb's tiny bakery oven",
+       "under Pip's oak with a blanket",
+       "at Lady Quillon's kite picnic"
+      ],
+      "answer": 0,
+      "explain": "“Mog… was perched on the warmest post.”",
+      "kind": "fact",
+      "notes": {
+       "inside Crumb's tiny bakery oven": "The bakery is Candy Village. Mog is on the lighthouse rail.",
+       "under Pip's oak with a blanket": "Blankets under the oak are Pip's tale. Mog is on the rail.",
+       "at Lady Quillon's kite picnic": "The picnic is Cloud Castle. Mog philosophises on the rail."
+      }
+     }
+    },
+    {
+     "text": "A fishing skiff had been waved safely past the rocks the day before, but its captain admitted the spare lantern had been left unlit. “If Mog hadn't blinked twice at that first silver thread,” the keeper muttered, “we might have trusted the clear sky alone.” {hero} smiled; the blink had been [[measured|careful and not rushed]], almost scholarly.",
+     "q": {
+      "q": "What does “If Mog hadn't blinked twice…” tell us?",
+      "options": [
+       "Mog did blink, so they didn't trust the clear sky alone.",
+       "Mog slept through every silver thread and never blinked.",
+       "The fog bell will be invented tomorrow for the first time.",
+       "Crumb blinked twice instead of Mog."
+      ],
+      "answer": 0,
+      "explain": "Third conditional: the blink DID happen, so trusting-the-clear-sky-alone did NOT.",
+      "kind": "grammar",
+      "notes": {
+       "Mog slept through every silver thread and never blinked.": "The keeper is glad Mog blinked — the opposite of sleeping through.",
+       "The fog bell will be invented tomorrow for the first time.": "This is about a past blink, not inventing the bell tomorrow.",
+       "Crumb blinked twice instead of Mog.": "Mog is the Rail Philosopher. Crumb is in the bakery."
+      }
+     }
+    },
+    {
+     "text": "Together they walked the shore. Driftwood had been stacked into a low seat for evening thoughts, and a soft towel had been [[smoothed|made flat and neat by gentle hands]] across it for calm naps between watches. Fishing boats, already warned once by the deep tone, tipped their hats toward the rail. Glimmerfin exhaled; the grey lake was brightening again.",
+     "q": {
+      "q": "What was the soft towel for?",
+      "options": [
+       "calm naps between Mog's watches",
+       "painting Crumb's thank-you sign",
+       "wrapping a picnic cloudberry tart",
+       "mending a torn pink lantern"
+      ],
+      "answer": 0,
+      "explain": "“A soft towel had been smoothed across it for calm naps between watches.”",
+      "kind": "fact",
+      "notes": {
+       "painting Crumb's thank-you sign": "The sign is Crumb's story. The towel is for Mog's calm naps.",
+       "wrapping a picnic cloudberry tart": "Cloudberry tarts are at Cloud Castle. The towel is for naps.",
+       "mending a torn pink lantern": "Lanterns were Pip's tale. The towel is for Mog's calm naps."
+      }
+     }
+    },
+    {
+     "text": "Afterwards the keeper said they should have given Mog both titles years ago, joke or not. Rail Philosopher stayed beside Fog Listener — with naps still allowed whenever the sun returned — and a calm evening rule was whispered: think first, blink twice, then rest. “If the towel hadn't been soft,” {hero} laughed, “even a Rail Philosopher might have [[protested|said something was wrong or unfair]].” Mog blinked once, as if filing the joke under Evening Thoughts.",
+     "q": {
+      "q": "What is gentle about Mog's evening rule?",
+      "options": [
+       "Think first, blink twice, then rest — with naps still allowed.",
+       "Mog must swim to every boat in every fog.",
+       "Mog asked to captain the fishing fleet.",
+       "The titles forbid Mog from ever blinking."
+      ],
+      "answer": 0,
+      "explain": "“Rail Philosopher stayed… with naps still allowed” and the whispered calm evening rule.",
+      "kind": "infer",
+      "notes": {
+       "Mog must swim to every boat in every fog.": "Mog stays on the island with joke-titles, nap rights, and slow thoughts.",
+       "Mog asked to captain the fishing fleet.": "Mog didn't ask for captain. The keeper keeps the titles light.",
+       "The titles forbid Mog from ever blinking.": "Blinking is fine; naps and thinking are still allowed."
+      }
+     }
+    }
+   ],
+   "final": {
+    "q": "“Measured” means…",
+    "options": [
+     "careful and not rushed",
+     "painted a bright new gold colour",
+     "soaked completely in cold lake water",
+     "tied into a perfect brand-new knot"
+    ],
+    "answer": 0,
+    "explain": "Measured = careful and not rushed — like Mog's almost scholarly blink.",
+    "kind": "vocab",
+    "notes": {
+     "painted a bright new gold colour": "Measured is about careful timing, not paint.",
+     "soaked completely in cold lake water": "Wet isn't the same as measured.",
+     "tied into a perfect brand-new knot": "A knot isn't what measured means here."
+    }
+   }
   }
  ]
 }

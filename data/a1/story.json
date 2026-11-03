@@ -496,6 +496,110 @@
      "a warm cup of honey tea": "Tea isn't an acorn."
     }
    }
+  },
+  {
+   "title": "The Little Sprout",
+   "focus": "present simple · there is / there are · can · like",
+   "img": "story_a1_6",
+   "pages": [
+    {
+     "text": "A few soft days later {hero} walks back to the oak. There is a tiny green [[sprout|a very small new plant]] in the moss. {pet} can see two little leaves. “We like this sprout,” says {hero}. “It can grow.”",
+     "q": {
+      "q": "What do they see in the moss?",
+      "options": [
+       "a tiny green sprout",
+       "a cold cup of honey tea",
+       "a big blue boat",
+       "a hard school book"
+      ],
+      "answer": 0,
+      "explain": "“There is a tiny green sprout in the moss.”",
+      "kind": "fact",
+      "notes": {
+       "a cold cup of honey tea": "Tea is not in the moss. There is a tiny green sprout.",
+       "a big blue boat": "There is no boat. There is a tiny green sprout.",
+       "a hard school book": "There is no school book. There is a tiny green sprout."
+      }
+     }
+    },
+    {
+     "text": "There is a small watering can by the rabbit's bag. {hero} can tip a little water on the earth. {pet} can smell the wet moss. The white rabbit hops over. It likes the [[gentle|soft and kind, not rough]] water. “Not too much,” it says with a smile.",
+     "q": {
+      "q": "What does {hero} do with the watering can?",
+      "options": [
+       "tips a little water on the earth",
+       "fills a boat with cold tea",
+       "hides the ribbons in a cave",
+       "paints a hard school book"
+      ],
+      "answer": 0,
+      "explain": "“{hero} can tip a little water on the earth.”",
+      "kind": "fact",
+      "notes": {
+       "fills a boat with cold tea": "There is no boat of tea. They water the sprout gently.",
+       "hides the ribbons in a cave": "The ribbons stay on the oak. They water the sprout.",
+       "paints a hard school book": "There is no school book. They tip a little water on the earth."
+      }
+     }
+    },
+    {
+     "text": "There are three friends under the oak now: {hero}, {pet}, and the rabbit. They can sit on soft moss. They like to share a quiet oak day. The rabbit brings a tiny [[picnic|a small outdoor meal]] of carrot sticks. “We can thank the sprout too,” laughs {hero}.",
+     "q": {
+      "q": "Who sits under the oak together?",
+      "options": [
+       "{hero}, {pet}, and the rabbit",
+       "only a loud drum from town",
+       "a lost sock and a cold river",
+       "Crumb from the candy bakery"
+      ],
+      "answer": 0,
+      "explain": "“There are three friends under the oak now: {hero}, {pet}, and the rabbit.”",
+      "kind": "fact",
+      "notes": {
+       "only a loud drum from town": "There is no drum picnic. The three friends sit together.",
+       "a lost sock and a cold river": "No sock or river joins them. The three friends sit under the oak.",
+       "Crumb from the candy bakery": "Crumb is in Candy Village. Here the rabbit shares the oak day."
+      }
+     }
+    },
+    {
+     "text": "The sun is warm. There is a ribbon on the oak and a sprout in the moss. {pet} likes the quiet. “We can come again,” says {hero}. The rabbit is happy. It is not shy. Oak day feels [[cosy|warm, soft and safe]].",
+     "q": {
+      "q": "How does oak day feel?",
+      "options": [
+       "cosy and quiet",
+       "angry and loud",
+       "lost in a dark cave",
+       "asleep in a cold river"
+      ],
+      "answer": 0,
+      "explain": "Oak day feels cosy; they like the quiet warm sun.",
+      "kind": "infer",
+      "notes": {
+       "angry and loud": "They smile together. The story does not say it is angry.",
+       "lost in a dark cave": "They are under the oak, not lost in a cave.",
+       "asleep in a cold river": "Nobody is asleep in a river. Oak day feels cosy."
+      }
+     }
+    }
+   ],
+   "final": {
+    "q": "A “sprout” is…",
+    "options": [
+     "a very small new plant",
+     "a thin thank-you ribbon for tying gifts",
+     "a warm cup of honey tea",
+     "a hard seed still inside a parcel"
+    ],
+    "answer": 0,
+    "explain": "A sprout is a very small new plant — the tiny green leaves above the planted acorn.",
+    "kind": "vocab",
+    "notes": {
+     "a thin thank-you ribbon for tying gifts": "That's a ribbon.",
+     "a warm cup of honey tea": "Tea isn't a sprout.",
+     "a hard seed still inside a parcel": "The acorn was the seed; the sprout is the new plant."
+    }
+   }
   }
  ]
 }
