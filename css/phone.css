@@ -107,7 +107,7 @@ input[type=range].slider::-moz-range-thumb{width:22px;height:22px;border-radius:
 .set-row{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:48px;cursor:pointer;font-weight:800}
 .set-row input[type=checkbox]{width:26px;height:26px;accent-color:#B98BFF;flex:none}
 .stage-chip,.plot button{min-height:40px}
-.gloss,.gl-hint{min-height:0}
+.gloss,.gl-hint{min-height:44px}   /* N9: a real 44 px tap box (css/style.css) */
 
 /* ---------- T6: onboarding steps that fit one phone screen ---------- */
 .onb-dots{display:flex;gap:6px;justify-content:center;margin:2px 0 8px}

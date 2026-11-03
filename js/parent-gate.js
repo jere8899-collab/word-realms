@@ -152,7 +152,21 @@ WR.openAbout = async (rid = "a1") => {
     bg.querySelector("#abDone").onclick = close;
   });
 };
-WR.openGrownups = () => gate(() => {
+/* 🔐 N8 (REVIEW-2026-11-02): without a PIN the grown-up check is a question an older child could work out, so the FIRST visit
+   to 👪 Grown-ups starts with a friendly "Set a PIN" card. "Set a PIN" → the grown-up check → choose the PIN → Grown-ups;
+   "Not now" → the usual check. Shown once (state.parent.pinAsked); once a PIN exists every gate asks for it. */
+const GU_WHY = { why: "Grown-up settings: PIN and Teacher mode." };
+WR.openGrownups = () => {
+  if (!pinOffer()) return gate(showGrownups, GU_WHY);
+  WR.state.parent = Object.assign({}, WR.state.parent, { pinAsked: true }); WR.save();
+  WR.modal(`<div class="pin-intro" id="pinIntro"><div class="lock">🔐</div><h2>Set a PIN so only grown-ups can open this</h2>
+    <p style="font-weight:700">A 4-digit grown-up PIN keeps the Learning Report, Teacher mode, Reset and the Shop's cash items for grown-ups only. You can change it any time here.</p>
+    <div class="row" style="justify-content:center"><button class="btn ghost small" id="piLater">Not now</button><button class="btn mint" id="piSet">🔢 Set a PIN</button></div></div>`, (bg, close) => {
+    bg.querySelector("#piLater").onclick = () => { close(); gate(showGrownups, GU_WHY); };
+    bg.querySelector("#piSet").onclick = () => { close(); gate(() => pinSetup({ done: showGrownups, skip: showGrownups }), { why: "First, a quick grown-up check. Then choose your PIN." }); };
+  });
+};
+const showGrownups = () => {
   const s = WR.state;
   WR.modal(`<h2>👪 Grown-ups</h2>
     <p class="muted" style="font-weight:700;margin-top:0">These settings stay open for 5 minutes, then the grown-up check comes back.</p>
@@ -177,7 +191,7 @@ WR.openGrownups = () => gate(() => {
     const un = bg.querySelector("#guUndo"); if (un) un.onclick = () => { if (WR.restoreBackup()) { close(); WR.toast("↩️ The adventure is back, just as it was!", 2500); WR.restart && WR.restart(); } };
     bg.querySelector("#guDone").onclick = () => { close(); if (WR.current && WR.current() === "home") WR.screens.home(); };
   });
-}, { why: "Grown-up settings: PIN and Teacher mode." });
+};
 
 /* ---------- 🧹 Reset progress (R2): only behind the gate, typed RESET, this device only, with a 7-day backup + Undo ---------- */
 WR.resetDialog = () => {

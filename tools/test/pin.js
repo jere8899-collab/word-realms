@@ -33,7 +33,7 @@ const SAVE = { v: 1, name: 'Mia', avatar: 'avatar_girl', startLevel: 'a1', stars
   ok(qs.every(([q]) => !/times|sum|plus/.test(q)), 'no times-table questions any more');
   const dq = qs.find(([q]) => /digits of/.test(q));
   if (dq) { const [, o, d] = [null, ...dq[0].match(/the (\d)\w\w, (\d)\w\w and (\d)\w\w digits of (\d) (\d) (\d) (\d)/).slice(1, 8).reduce((a, x, i) => { (i < 3 ? a[0] : a[1]).push(+x); return a; }, [[], []])]; ok(o.map(i => d[i - 1]).join('') === dq[1], `digit puzzle answer is right (${dq[0]} → ${dq[1]})`); }
-  await page.evaluate(() => WR.openGrownups()); await page.waitForSelector('.pgate');
+  await page.evaluate(() => WR.parentGate(() => WR.openGrownups())); await page.waitForSelector('.pgate');   // (Grown-ups itself starts with the N8 PIN card: n8pin.js)
   const a = await page.evaluate(() => WR.parentGate._answer());
   for (const d of a) await page.click(`.pgate [data-d="${d}"]`);
   ok(/hold/i.test(await page.textContent('#pgHold')), 'the gate says to press and hold ✓');

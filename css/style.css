@@ -653,6 +653,7 @@ img.acc-prev{width:72px;height:72px;object-fit:contain;display:block;margin:4px 
 .pg-holdtip{margin:.3em 0 0;font-size:.8rem;font-weight:800}
 .pg-digits{letter-spacing:.3em;white-space:nowrap}
 .pin-setup .lock{font-size:2rem}
+.pin-intro{text-align:center}.pin-intro .lock{font-size:2.4rem}.pin-intro h2{font-size:1.2rem;margin:.3em 0}   /* N8 */
 /* R8: "Ready? 3-2-1" after a timed round was paused */
 .ready-go{position:fixed;inset:0;z-index:95;display:grid;place-items:center;background:rgba(255,240,250,.72);backdrop-filter:blur(3px);font-weight:900;font-size:clamp(2.4rem,12vw,4.5rem);line-height:1;color:#9a6bc4;text-shadow:0 4px 0 #fff;pointer-events:none;animation:fadeIn .2s}
 
@@ -693,11 +694,13 @@ img.acc-prev{width:72px;height:72px;object-fit:contain;display:block;margin:4px 
 /* 📚 R16 grown-up notes */
 .gu-notes{max-height:55vh;overflow:auto;margin:8px 0}.gu-note{padding:8px 10px;border-radius:12px;background:#F7F2FF;margin-bottom:8px}.gu-note p{margin:.25em 0 0;font-size:.86rem;font-weight:600;line-height:1.35}
 /* ☁️ R12: the white cloud on a pale chip was nearly invisible: a lilac outline around the chip and around the cloud (≥ 3:1) */
-.cloud-chip{border:2px solid #8A72BD}
-.cloud-chip .wr-icon{filter:drop-shadow(1px 0 0 #6E58A8) drop-shadow(-1px 0 0 #6E58A8) drop-shadow(0 1px 0 #6E58A8) drop-shadow(0 -1px 0 #6E58A8)}
-/* 👆 R13: glossary words get a 44 px tall invisible tap area without touching the line height */
-.gloss,.gl-hint{position:relative}
-.gloss::after,.gl-hint::after{content:"";position:absolute;left:-6px;right:-6px;top:50%;height:44px;transform:translateY(-50%)}
+/* N6 (REVIEW-2026-11-02): lighter — a thin 1.5 px ring (still 3.5:1) on a chip exactly as tall as the ⭐ chip, and a darker
+   outline on the cloud itself carries the contrast */
+.cloud-chip{border:0;box-shadow:inset 0 0 0 1.5px #8A72BD,var(--shadow)}   /* (a box-shadow ring: browsers round a 1.5 px border down to 1 px) */
+.cloud-chip .wr-icon{filter:drop-shadow(1px 0 0 #5E4A99) drop-shadow(-1px 0 0 #5E4A99) drop-shadow(0 1px 0 #5E4A99) drop-shadow(0 -1px 0 #5E4A99)}
+/* 👆 R13 → N9: glossary words have a REAL 44 px tall tap box (so audits and every browser see it, unlike the old invisible
+   ::after): 8 px of padding above and below, cancelled by the same negative margin, so the line height doesn't change */
+.gloss,.gl-hint{position:relative;padding:8px 3px;margin:-8px -3px;min-height:44px;box-sizing:border-box;vertical-align:baseline}
 /* 📚 Storybook chapter shelf (js/story.js) */
 .shelf-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;margin-top:14px}
 .shelf-ch{display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;cursor:pointer;border:none;font:inherit;background:linear-gradient(150deg,#FFF7E0,#FFE9F1 60%,#EDE6FF);padding:12px}
