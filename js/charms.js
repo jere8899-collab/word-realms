@@ -114,6 +114,7 @@ const before0 = c => !(c.b >= 1);   // catching a new word is first learning: no
 function grade(lvl, word, ok) {
   const k = keyOf(lvl, word), now = Date.now(), cs = st().cards, c = cs[k] = cs[k] || { b: 0, d: now, r: 0, w: 0 };
   const before = c.b, rec = { s: c.b, d: c.d, t: before0(c) ? undefined : c.t, n: c.n != null ? c.n : (c.r || 0) + (c.w || 0), r: c.r, w: c.w };
+  WR.Review.kept(rec, ok, now);   // 🧠 first answer after 25+ days counts in the Report
   const res = WR.Review.step(rec, ok, now, { floor: c.b >= 1 ? 1 : 0, wrongDays: 0 });   // wrong: back to 🌙, due at once
   if (ok && before === 0 && res.moved) c.at = now;
   c.b = Math.min(MASTER, rec.s); c.d = rec.d; c.t = rec.t; c.n = rec.n; c.r = rec.r; c.w = rec.w;

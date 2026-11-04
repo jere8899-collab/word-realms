@@ -35,6 +35,7 @@ MR.grade = () => MW.st().grade || MR.sgGrade() || 1;
 MR.finished = (id, score, now = Date.now()) => {
   if (!isTopic(id)) return null;
   const all = items(), k = KEY(id), rec = all[k];
+  RV.kept(rec, score >= CONFIG.pass, now);   // 🧠 a topic round after 25+ days = one answer for that topic
   if (score >= CONFIG.pass) { const r = all[k] = rec || {}; const res = RV.step(r, true, now); WR.save(); return res; }
   if (rec && rec.n) { const res = RV.step(rec, false, now); WR.save(); return res; }
   return null;
@@ -43,6 +44,7 @@ MR.finished = (id, score, now = Date.now()) => {
 // Returns the review-star key when the record moved up.
 MR.answer = (q, ok, now = Date.now()) => {
   const rec = q && MR.rec(q.topic); if (!rec || !rec.n) return null;
+  RV.kept(rec, ok, now);
   const res = RV.step(rec, ok, now); WR.save();
   return ok && res.moved ? KEY(q.topic) + "#" + rec.n : null;
 };

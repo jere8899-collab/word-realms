@@ -54,6 +54,7 @@ const Garden = WR.Garden = {
   grade(id, ok) {
     const m = st().mistakes.find(x => x.id === id); if (!m) return null;
     const now = Date.now(), rec = { s: m.box || 0, d: m.due, t: m.t || m.at, n: m.n || 1, l: m.l != null ? m.l : 0, r: m.r, w: m.w };
+    WR.Review.kept(rec, ok, now);                                  // 🧠 first watering after 25+ days counts in the Report
     const res = WR.Review.step(rec, ok, now, { wrongDays: 0 });   // a wrong answer: a seed again, thirsty now
     m.box = rec.s; m.due = rec.d; m.t = rec.t; m.n = rec.n; m.l = rec.l; m.r = rec.r; m.w = rec.w;
     let bloomed = false;
