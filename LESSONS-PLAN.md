@@ -1,6 +1,6 @@
 # Word Realms: Interactive Lessons plan (📜 Learn)
 
-**Phase 1 (plan + engine + pilot): ✅ done (commit 1d135e5, 2026-11-04).** EN-2 + MA-2 ✅ (DEPLOY_HASH). The 2-hourly routine may now take the next batch (§5: EN-3, then MA-3).
+**Phase 1 (plan + engine + pilot): ✅ done (commit 1d135e5, 2026-11-04).** EN-2 + MA-2 ✅ (f4ee083). The 2-hourly routine may now take the next batch (§5: EN-3, then MA-3).
 
 > Checkpoint 2026-11-04 15:20 SGT (takeover of two interrupted runs): EN-2's 7 hook pictures were Pillow cut-out composites and MA-2's 5 were copies of lesson_m_g2_add; all 12 repainted with GenerateImage and installed. `lesson_build.speak()` now reads \$1.25 as "1 dollar and 25 cents" and 10¢ coin as "10 cent coin" (14 lines re-recorded, af_heart). lessons.js 150/150; full suite 91/91 (doubletap flaked once on server load, passes on rerun). Screens: screenshots/lessons_en2_*.png, lessons_ma2_*.png.
 >
@@ -559,8 +559,8 @@ Each **routine turn builds one batch of ~5 lessons**, alternating English and ma
 | Phase 1 | plan, engine `js/learn.js`, scroll shelf, hint links, Grown-ups card, save block, tests | ✅ | 1d135e5 |
 | Pilot EN | en.a1.an, en.a1.be, en.a1.plural, en.a1.place, en.a1.qwords | ✅ | 1d135e5 |
 | Pilot MA | m.g2.place, m.g2.add, m.g2.times, m.g2.share, m.g2.frac | ✅ | 1d135e5 |
-| EN-2 | A1 rest: have, can, s3, thereis, this, poss, do | ✅ (hook art repainted with GenerateImage 2026-11-04; Pillow composites removed) | DEPLOY_HASH |
-| MA-2 | G2 rest: sub, money, time, picgraph, story (+ widgets rename, money, clock, picgraph, bar) | ✅ (5 GenerateImage hooks; narrator money words fixed) | DEPLOY_HASH |
+| EN-2 | A1 rest: have, can, s3, thereis, this, poss, do | ✅ (hook art repainted with GenerateImage 2026-11-04; Pillow composites removed) | f4ee083 |
+| MA-2 | G2 rest: sub, money, time, picgraph, story (+ widgets rename, money, clock, picgraph, bar) | ✅ (5 GenerateImage hooks; narrator money words fixed) | f4ee083 |
 | EN-3 | A1 rest: ing, waswere, place2, timeprep, feel, detail, listennum, keyword | ⏳ | |
 | MA-3 | G1 all (9) | ⏳ | |
 | EN-4… | A2 (19), then B1, B2, C1, C2 | ⏳ | |
