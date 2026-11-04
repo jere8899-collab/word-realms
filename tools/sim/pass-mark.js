@@ -3,7 +3,7 @@
 // Rules compared:
 //   before: best-ever ≥ 0.6 (5 of 8) on 3 of the 4 skills, never re-checked
 //   after:  ≥ WR.PASS.mark (0.85 → 7 of 8) on all 4 skills, each confirmed by a later-day check of PASS.checkN questions
-//           scored on the same mark (4 of 4 at 0.85 … see CHECK)
+//           with PASS.checkNeed right (BRIEF-T4B: 4 of 4; the BRIEF-T4 rule 3 of 4 shown for comparison)
 // "Tries": T lesson tries per skill to pass, then T check tries (each on a later day) to confirm.
 // Run: node tools/sim/pass-mark.js [level=a1] [N=20000]
 const fs = require('fs'), lvl = process.argv[2] || 'a1', N = +(process.argv[3] || 20000);
@@ -21,7 +21,7 @@ const pct = x => (x * 100).toFixed(1) + '%';
 const out = { level: lvl, N, rows: [] };
 for (const k of [0.4, 0.6, 0.8, 0.9]) {
   const row = { knows: k, before3: pct(before(k, 3)) };
-  for (const [name, cn, cm] of [['check 4 q at 0.85 (4/4)', 4, 0.85], ['check 4 q at 0.75 (3/4)', 4, 0.75]]) {
+  for (const [name, cn, cm] of [['now: check 4 of 4', 4, 1], ['was: check 3 of 4', 4, 0.75]]) {
     row[name] = { tries3: pct(after(k, 3, 0.85, cn, cm)), tries4: pct(after(k, 4, 0.85, cn, cm)), tries5: pct(after(k, 5, 0.85, cn, cm)) }; }
   out.rows.push(row);
 }

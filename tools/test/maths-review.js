@@ -42,7 +42,10 @@ const SAVE = extra => Object.assign({ v: 1, name: 'Rae', avatar: 'avatar_mage', 
   // ---------- 1. one config, inside the review config ----------
   let page = await open(ctx, SAVE({ math: { grade: 4 } }));
   const cfg = await page.evaluate(() => ({ m: WR.Review.CONFIG.math, gaps: WR.Review.CONFIG.gaps }));
-  assert(cfg.m.mix === 5 && cfg.m.pass === 0.6 && cfg.gaps.join() === '3,10,30,90', 'maths review lives in the one review config: 5-question mix, the 0.6 topic pass mark, gaps 3/10/30/90');
+  assert(cfg.m.mix === 5 && cfg.m.pass === 0.85 && cfg.m.pass === (await page.evaluate(() => WR.PASS.mark)) && cfg.m.oldPass === 0.6 && cfg.gaps.join() === '3,10,30,90', 'maths review lives in the one review config: 5-question mix, the shared 85% pass mark (WR.PASS.mark; the old 0.6 only for moving older saves), gaps 3/10/30/90');
+  const fin = await page.evaluate(() => { const t = MathGen.gradeTopics(4).filter(t => !t.extra).map(t => t.id).slice(-2); const a = WR.MathReview.finished(t[0], 6 / 8), b = WR.MathReview.finished(t[1], 7 / 8);
+    const r = [WR.MathReview.rec(t[0]), WR.MathReview.rec(t[1])]; delete WR.Review.items()['math:' + t[0]]; delete WR.Review.items()['math:' + t[1]]; WR.save(); return { a, b: !!b, r0: !!r[0], r1: !!(r[1] && r[1].n) }; });
+  assert(!fin.a && !fin.r0 && fin.b && fin.r1, 'Daily Mix "finished" = the 85% mark: 6 of 8 (75%) is not finished, 7 of 8 is (BRIEF-T4B)');
 
   // ---------- 2. single-topic rounds stay for first learning; finishing one starts its review record ----------
   const g4 = await page.evaluate(() => MathGen.gradeTopics(4).filter(t => !t.extra && t.id !== 'g3.clock').map(t => t.id));

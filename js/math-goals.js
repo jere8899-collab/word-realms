@@ -2,16 +2,20 @@
    • Sticker Book pages: "Number Kingdom" (9 maths stickers) and "Grade Guardians" (one per guardian), worked out from the save
      and paid exactly like the English pages (+2⭐ each, +10⭐ for a full page; js/collect.js C.addPages / C.check).
    • 🛡️ Grade Guardians: one friendly boss per two grades (G1–2 … G11–12, following the Singapore MOE stages P1–2, P3–4, P5–6,
-     Sec 1–2, Sec 3–4, JC 1–2). A guardian wakes once 4 topics in its two grades are passed (60%+). The fight is 10 questions
+     Sec 1–2, Sec 3–4, JC 1–2). A guardian wakes once 4 topics in its two grades are passed (WR.PASS.mark, 85%+). The fight is 10 questions
      made by the normal generators for those two grades (5 topics from each), no timer, hints and 🧮 Model Magic as usual;
-     7 sparkle hits win (1 per first-try answer, ½ for a second try). First win: +15⭐ and that guardian's sticker.
+     About 9 of 10 sparkle hits win (WR.passCount of the questions; 1 per first-try answer, ½ for a second try). First win: +15⭐ and that guardian's sticker.
    • The hub shows the next maths goal and the guardian cards.
    Save (inside wordRealms.save.v1, so it cloud-syncs): math.bosses = { g12: { won, best, tries, at } }, stickers.got.math / .guard. */
 (function () {
 const WR = window.WR, MG = window.MathGen, MW = WR.Math, C = WR.Collect, esc = WR.esc;
 if (!MW || !C) return;
 const G = WR.MathGoals = {};
-const NEED_TOPICS = 4, NEED_HITS = 7, PASS = 0.6;
+const NEED_TOPICS = 4, PASS = WR.PASS.mark, OLD_PASS = 0.6;   // BRIEF-T4B: the shared pass mark (was 60%+ and 7 of 10 hits)
+// 🧳 a guardian awake under the old 60% rule stays awake (state.keep.guard, worked out once; merged in cloud + two tabs by WR.mergePass)
+const keep = () => { WR.ensureKeep(); const k = WR.state.keep; k.guard = Array.isArray(k.guard) ? k.guard : [];
+  if (!k.gmig) { G.GUARDIANS.forEach(gd => { if (countTopics(gd).filter(t => (MW.st().topics[t.id] || {}).best >= OLD_PASS).length >= NEED_TOPICS && !k.guard.includes(gd.id)) k.guard.push(gd.id); }); k.gmig = 1; WR.save(); }
+  return k.guard; };
 G.GUARDIANS = [
   { id: "g12", grades: [1, 2], stage: "Primary 1–2", name: "Bramble the Button Bear", face: "🧸", art: "mboss_bramble", line: "Hello, little counter! Can you add up all my buttons?" },
   { id: "g34", grades: [3, 4], stage: "Primary 3–4", name: "Professor Hootsworth", face: "🦉", art: "mboss_hootsworth", line: "Hoo-hoo! Times tables and fractions, let's see what you know!" },
@@ -21,7 +25,7 @@ G.GUARDIANS = [
   { id: "g1112", grades: [11, 12], stage: "JC 1–2", name: "Lumina the Calculus Unicorn", face: "🦄", art: "mboss_lumina", line: "Sparkle! Let's ride the curves of calculus together!" }
 ].map(g => Object.assign(g, { band: `${g.grades[0]}–${g.grades[1]}` }));
 const byId = id => G.GUARDIANS.find(g => g.id === id);
-const lockToast = gd => WR.toast(`🔒 Pass ${NEED_TOPICS} Grade ${gd.band} topics to wake ${gd.name}!`, 2400);
+const lockToast = gd => WR.toast(`🔒 Pass ${NEED_TOPICS} Grade ${gd.band} topics (${WR.pct()}%+) to wake ${gd.name}!`, 2400);
 G.forGrade = grade => G.GUARDIANS.find(g => g.grades.includes(grade || 1));
 const rec = id => { const b = MW.st().bosses; return b[id] = b[id] || { won: false, best: 0, tries: 0 }; };
 const won = id => !!(MW.st().bosses[id] || {}).won;
@@ -30,7 +34,7 @@ const bandTopics = gd => gd.grades.flatMap(g => MG.gradeTopics(g));
 const countTopics = gd => bandTopics(gd).concat(MG.TOPICS.filter(t => t.was && gd.grades.includes(t.was) && !gd.grades.includes(t.grade)));
 const topicPassed = t => (MW.st().topics[t.id] || {}).best >= PASS;
 G.passed = gd => countTopics(gd).filter(topicPassed).length;
-G.ready = gd => G.passed(gd) >= NEED_TOPICS;
+G.ready = gd => G.passed(gd) >= NEED_TOPICS || won(gd.id) || keep().includes(gd.id);
 // art: the painted portrait when it exists (assets/ui/mboss_<name>.png via tools/boss_art.py), else painted Sumi wearing the guardian's badge
 G.art = (gd, cls = "rb-art") => WR.asset(gd.art) ? WR.img(gd.art, cls) : `<span class="${cls} gfb">${MW.mascot()}<i>${gd.face}</i></span>`;
 
@@ -40,7 +44,8 @@ G.start = id => {
   const gd = byId(id); if (!gd) return;
   if (!G.ready(gd) && !WR.state.settings.unlockAll) return lockToast(gd);
   const r = rec(id); r.tries++; WR.save();
-  MW.startLesson({ grade: gd.grades[0], items: G.items(gd), key: "guard." + id, title: `🛡️ ${gd.name}`, guardian: Object.assign({ need: NEED_HITS }, gd),
+  const items = G.items(gd);
+  MW.startLesson({ grade: gd.grades[0], items, key: "guard." + id, title: `🛡️ ${gd.name}`, guardian: Object.assign({ need: WR.passCount(items.length) }, gd),   // about 9 of 10
     replay: () => G.start(id),
     onFinish: res => { const r = rec(id); r.best = Math.max(r.best || 0, res.score); if (res.won) C.winBoss(r, gd.name, "a Guardian sticker"); WR.save(); C.check(); } });
 };
@@ -76,7 +81,7 @@ G.nextGoal = () => {
   const awake = [here].concat(G.GUARDIANS).find(gd => G.ready(gd) && !won(gd.id));
   if (awake) return { icon: awake.face, text: `${awake.name} is awake! Win the fight for +15⭐ and a Guardian sticker`, pct: 100, btn: "⚔️ Challenge", go: () => G.start(awake.id), kind: "fight", id: awake.id };
   if (!won(here.id)) { const p = G.passed(here), t = firstUnpassed(here), left = NEED_TOPICS - p;
-    return { icon: "🛡️", text: `Pass ${left} more Grade ${here.band} topic${left > 1 ? "s" : ""} (60%+) to wake ${here.name}`, pct: p / NEED_TOPICS * 100, btn: `▶ ${t.icon} ${t.name}`, go: () => MW.startLesson({ topic: t.id }), kind: "wake", id: here.id }; }
+    return { icon: "🛡️", text: `Pass ${left} more Grade ${here.band} topic${left > 1 ? "s" : ""} (${WR.pct()}%+) to wake ${here.name}`, pct: p / NEED_TOPICS * 100, btn: `▶ ${t.icon} ${t.name}`, go: () => MW.startLesson({ topic: t.id }), kind: "wake", id: here.id }; }
   const got = C.got("math"), st = G.STICKERS.find(s => !got.includes(s.id));
   if (st) { const pr = st.prog ? st.prog() : null;
     return { icon: st.icon, text: `Next sticker: ${st.name}. ${st.how}${pr ? ` (${pr[0]}/${pr[1]})` : ""}`, pct: pr ? pr[0] / pr[1] * 100 : 0, btn: "🏷️ Sticker Book", go: () => WR.go("stickers", "math"), kind: "sticker", id: st.id }; }
@@ -98,7 +103,7 @@ WR.screens.math = (...a) => {
   hero.insertAdjacentHTML("afterend", goalHTML(ng));
   WR.$("#mathGoalGo").onclick = e => { e.stopPropagation(); ng.go(); };
   const n = G.GUARDIANS.filter(g => won(g.id)).length;
-  hub.insertAdjacentHTML("beforeend", `<h2 id="guardHead">🛡️ Grade Guardians <span class="pill">${n}/${G.GUARDIANS.length} beaten</span></h2><p class="muted" style="font-weight:700;margin-top:0">A friendly guardian watches every two grades. Pass ${NEED_TOPICS} topics in their grades to wake them, then win a 10-question fight (no timer) for +15⭐ and a sticker!</p><div class="guards">${G.GUARDIANS.map(guardCard).join("")}</div>`);
+  hub.insertAdjacentHTML("beforeend", `<h2 id="guardHead">🛡️ Grade Guardians <span class="pill">${n}/${G.GUARDIANS.length} beaten</span></h2><p class="muted" style="font-weight:700;margin-top:0">A friendly guardian watches every two grades. Pass ${NEED_TOPICS} topics in their grades (${WR.pct()}%+) to wake them, then win a 10-question fight (no timer) for +15⭐ and a sticker!</p><div class="guards">${G.GUARDIANS.map(guardCard).join("")}</div>`);
   hub.querySelectorAll("[data-gb]").forEach(c => c.onclick = () => G.ready(byId(c.dataset.gb)) ? G.start(c.dataset.gb) : lockToast(byId(c.dataset.gb)));
 };
 })();

@@ -17,7 +17,7 @@ PS.rowHTML = rid => {
   const wait = S().filter(k => WR.skillPassed(rid, k.id) && !WR.skillConfirmed(rid, k.id) && !ready.includes(k));
   if (!ready.length && !polish.length && !wait.length) return "";
   const btn = (k, kind) => `<button class="btn ${kind === "check" ? "mint" : "ghost"} pass-btn" data-pcheck="${k.id}" data-kind="${kind}">${kind === "check" ? `✨ Check ${k.icon} ${esc(k.name)}` : `Polish me ✨ ${k.icon} ${esc(k.name)}`}</button>`;
-  return `<div class="card pass-row" id="passRow">${ready.length ? `<div class="pass-line"><b>✨ Crown check time!</b> <small>${P.checkN} quick questions show your skill is still shining.</small></div>` : ""}
+  return `<div class="card pass-row" id="passRow">${ready.length ? `<div class="pass-line"><b>✨ Crown check time!</b> <small>${P.checkN} quick questions (${WR.checkCount(P.checkN) === P.checkN ? "all" : WR.checkCount(P.checkN)} right) show your skill is still shining.</small></div>` : ""}
     ${polish.length && !ready.length ? `<div class="pass-line"><b>✨ Some crowns would love a polish</b> <small>Your crowns stay yours. A quick round keeps them sparkly.</small></div>` : ""}
     <div class="pass-btns">${ready.map(k => btn(k, "check")).join("")}${polish.map(k => btn(k, "polish")).join("")}</div>
     ${wait.length ? `<div class="pass-line muted"><small>🌙 ${wait.map(k => `${k.icon} ${esc(k.name)}`).join(", ")}: passed! ${wait.length > 1 ? "Their checks open" : "Its check opens"} on another day.</small></div>` : ""}</div>`;
@@ -32,10 +32,10 @@ PS.startCheck = async (rid, k, polish) => {
 };
 // result lines for lesson.js finish(): returns { title, line } for a check, else a line for a skill lesson
 PS.checkResult = (o, res) => {
-  const sk = S().find(x => x.id === o.skill) || { name: o.skill, icon: "✨" }, need = WR.passCount(o.n);
+  const sk = S().find(x => x.id === o.skill) || { name: o.skill, icon: "✨" }, need = WR.checkCount(o.n);
   if (res.confirmed) return { title: "Crown confirmed! 💎", line: `You showed ${sk.icon} ${esc(sk.name)} again on a new day, so it really sticks. ${nextRealmLine(o.rid)}` };
   if (res.good) return { title: o.polish ? "Sparkly again! ✨" : "Still shining! ✨", line: `${o.right} of ${o.n} right. Your ${sk.icon} ${esc(sk.name)} crown is polished.` };
-  return { title: "Nearly there! 🌱", line: `${o.right} of ${o.n} this time (${need} shows it's ready). Your crown stays yours. Let's check again tomorrow 🌙` };
+  return { title: "Nearly there! 🌱", line: `${o.right} of ${o.n} this time (${need === o.n ? "all " + need : need} right shows it's ready). Your crown stays yours. Let's check again tomorrow 🌙` };
 };
 const nextRealmLine = rid => { const i = WR.realms.findIndex(r => r.id === rid), nx = WR.realms[i + 1]; if (!nx) return "";
   const c = WR.realmProgress(rid).confirmed; return c >= P.skills ? `${nx.emoji} ${esc(nx.name)} is open! 🎉` : `${P.skills - c} more to confirm for ${nx.emoji} ${esc(nx.name)}.`; };

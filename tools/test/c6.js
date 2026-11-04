@@ -4,7 +4,7 @@ const BASE = (process.env.BASE || 'http://127.0.0.1:18642/').replace(/\/?$/, '/'
 let fails = 0, passes = 0; const ok = (c, m) => { if (!c) { fails++; console.error('FAIL', m); process.exitCode = 1; } else { passes++; console.log('ok', m); } };
 const SAVE = () => ({ v: 1, name: 'Sticker Sam', avatar: 'avatar_girl', startLevel: 'a1', stars: 10, totalCorrect: 40, lessonsDone: 6,
   pet: { species: 'pet_bunny', name: 'Puffbun', xp: 200, happiness: 80, hunger: 30, lastTick: Date.now() },
-  progress: { a1: { grammar: { best: 0.95, plays: 2 }, vocab: { best: 0.7, plays: 1 }, reading: { best: 0.65, plays: 1 } } },
+  progress: { a1: { grammar: { best: 0.95, plays: 2 }, vocab: { best: 0.875, plays: 1 }, reading: { best: 0.875, plays: 1 } } },
   stories: { done: { a1: { best: 1, crowns: 3, plays: 1 } }, words: [], reads: 1 },
   owned: [], equipped: {}, settings: { rate: 1, sound: false }, mistakes: [] });
 (async () => {

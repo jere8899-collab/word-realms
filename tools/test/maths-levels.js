@@ -72,7 +72,7 @@ const OLD = { v: 1, stars: 300, gems: 0, xp: 0, avatar: { name: 'Tester', look: 
     g56: WR.MathGoals.passed(WR.MathGoals.GUARDIANS.find(g => g.id === 'g56')), ready: WR.MathGoals.ready(WR.MathGoals.GUARDIANS.find(g => g.id === 'g56')), g4: WR.Math.gradeCrowns(4).have, g7: WR.Math.gradeCrowns(7).have }));
   ok(c.nets === 3 && c.pie >= 2 && c.speed === 3 && c.ratio === 3, `an old save keeps its crowns on moved topics (nets ${c.nets}, pie ${c.pie}, speed ${c.speed}, ratio ${c.ratio})`);
   ok(c.g4 >= 5 && c.g7 >= 3, `the crowns now show in the new grades (Grade 4: ${c.g4}, Grade 7: ${c.g7})`);
-  ok(c.g56 >= 5 && c.ready, `Captain Ottilie (P5–6 guardian) still counts the moved topics and stays awake (${c.g56} passed)`);
+  ok(c.g56 === 4 && c.ready, `Captain Ottilie (P5–6 guardian) still counts the moved topics (the 4 at 85%+: nets, pie, speed, ratio) and stays awake (${c.g56} passed; awake under the old 60% rule, kept)`);   // BRIEF-T4B: passed = 85%+
   const sv = await p.evaluate(() => JSON.parse(localStorage.getItem('wordRealms.save.v1')).math.topics);
   ok(sv['g6.nets'].best === 1 && sv['g5.ratio'].best === 1 && !Object.keys(sv).some(k => /^g4\.nets|^g4\.piechart|^g6\.ratio/.test(k)), 'the save is untouched: no renamed ids, no copies');
   await ctx.close();

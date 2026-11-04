@@ -22,7 +22,7 @@ const best = (rid, k) => { const p = (WR.state.progress[rid] || {})[k]; return p
 const STICKERS = [
   { id: "first", icon: "👣", name: "First Steps", how: "Play any lesson here", test: rid => Object.keys(WR.state.progress[rid] || {}).length > 0 },
   ...[["grammar", "🧩", "Grammar Star", "Grammar"], ["vocab", "🔤", "Word Wizard", "Vocabulary"], ["reading", "📖", "Bookworm", "Reading"], ["listening", "🎧", "Sharp Ears", "Listening"]]
-    .map(([id, icon, name, skill]) => ({ id, icon, name, how: `Score 60%+ in ${skill}`, test: rid => best(rid, id) >= 0.6 })),
+    .map(([id, icon, name, skill]) => ({ id, icon, name, how: `Score ${WR.pct()}%+ in ${skill}`, test: rid => WR.skillPassed(rid, id) })),   // BRIEF-T4B: the shared pass mark (was 60%); earned stickers stay in stickers.got
   { id: "crown3", icon: "👑", name: "Triple Crown", how: "Get 3 crowns in any lesson here", test: rid => WR.SKILLS.some(k => best(rid, k.id) >= 0.9) },
   { id: "story", icon: "📜", name: "Story Keeper", how: "Read this realm's Storybook chapter", test: rid => !!(WR.state.stories && WR.state.stories.done && WR.state.stories.done[rid]) },
   { id: "boss", icon: "🏆", name: "Boss Badge", how: "Beat the realm boss", test: rid => !!(WR.state.bosses && WR.state.bosses[rid] && WR.state.bosses[rid].won) }

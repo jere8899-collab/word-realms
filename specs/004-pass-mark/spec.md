@@ -23,3 +23,10 @@ A 40%-knowledge child passes within 3 tries < 15% of the time and an 80% child c
 
 ## Needs Jeremy
 The check uses the same 0.85 mark rounded to whole questions = 3 of 4. A 4-of-4 check would drop the 80% child to ~48% within 3 tries.
+
+## BRIEF-T4B follow-ups (Jeremy, 2026-11-04)
+- The ✨ crown check needs **4 of 4**: its own value `WR.PASS.checkNeed = 4` next to `mark: 0.85` (`WR.checkCount`, `WR.checkPasses`). 3 of 4 → "Nearly there! … all 4 right shows it's ready. Your crown stays yours."
+- The realm boss still wakes at **3** skills passed (`WR.PASS.boss`).
+- Grade Guardians (wake: 4 topics at 85%+; fight: `WR.passCount(10)` = 9 sparkle hits), the maths Daily Mix "finished" mark (`RV.CONFIG.math.pass = WR.PASS.mark`) and the 4 realm skill stickers ("Score 85%+ in …") all read the shared mark.
+- Old saves keep everything: guardians awake under the 60% rule stay awake (`state.keep.guard`, worked out once, `keep.gmig`; unioned by `WR.mergePass`), earned stickers stay in `stickers.got`, topics already on the review schedule stay usable, and the one-time move of older topics onto the schedule keeps the old 0.6 (`CONFIG.math.oldPass`).
+- Test: `tools/test/t4b.js`. Sim: `specs/004-pass-mark/sim-t4b-*.json`.
