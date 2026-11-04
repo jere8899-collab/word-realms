@@ -43,5 +43,5 @@
 - [x] T051 `tools/test/charms.js` and `tools/test/garden.js`: their "a day passes" helpers also move the last answer back 21 h (the new 20 h rule); garden.js stops when every plant has bloomed (bloomed plants are due again now)
 - [x] T052 After numbers (brief-table.js, pass-chance.js) → analyze.md
 - [x] T053 Full suite green (93 suites; cloud.js flake re-run singly ✅; garden.js updated for the 20 h rule)
-- [ ] T054 build_data.py + build_sw.py, sync to deploy, commit, merge to main, push, live 200
-- [ ] T055 BRIEF-T2 row → ✅ with the commit; report in the brief's 4-part format
+- [x] T054 build_data.py + build_sw.py, sync to deploy, commit db38453, merge to main, push, live 200
+- [x] T055 BRIEF-T2 row → ✅ with the commit; report in the brief's 4-part format
