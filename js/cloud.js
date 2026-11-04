@@ -117,6 +117,7 @@ const samePlayer = () => !!(C.user && meta().user === C.user.id);
 const keepEarn = other => { if (other && samePlayer()) { WR.state.earn = WR.mergeEarn(WR.state.earn, other.earn);
   WR.state.clock = WR.mergeClock(WR.state.clock, other.clock);   // R22/N1: the later game day wins, capped at the server date
   if (WR.Review) WR.state.review = WR.Review.merge(WR.state.review, other.review);   // 🔁 BRIEF-T2: per item, the later answer wins
+  WR.mergePass(WR.state, other);   // 🏁 BRIEF-T4: kept realms/bosses and every skill's pass + confirmation survive the sync
   rawSave(); } };
 C.apply = (data, at) => {
   const prev = WR.state;

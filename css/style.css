@@ -711,3 +711,11 @@ img.acc-prev{width:72px;height:72px;object-fit:contain;display:block;margin:4px 
 .shelf-ch.locked{cursor:default;opacity:.62}.shelf-ch.locked .shelf-pic img{filter:grayscale(.85) blur(2px)}
 .story-fb .why-not{margin-top:8px;padding:8px 10px;border-radius:12px;background:rgba(255,255,255,.7);font-weight:600;line-height:1.4}
 @media (max-width:600px){.shelf-grid{grid-template-columns:1fr 1fr;gap:10px}.shelf-ch{padding:8px}.shelf-ch .shelf-title{font-size:.82rem}}
+/* 🏁 BRIEF-T4 crown checks, Polish me, help after two tries (js/pass.js) */
+.pass-row{margin:0 0 12px;padding:12px 14px;background:linear-gradient(150deg,#FFF7D6,#F3EDFF 60%,#E8FFF4)}
+.pass-row .pass-line{margin:2px 0 6px;line-height:1.3}.pass-row .pass-line small{display:block;font-weight:700;color:var(--muted,#8a7aa6)}
+.pass-btns{display:flex;flex-wrap:wrap;gap:8px}.pass-btn{min-height:44px;white-space:normal;text-align:left;max-width:100%}
+.pass-badge{font-size:.95rem;margin-left:4px}
+.pass-note{font-weight:700;color:var(--muted,#8a7aa6);margin:.4em 0}.pass-note.good{color:#4a8a6a}
+.help-card{margin:10px auto;max-width:520px;text-align:center;display:flex;flex-direction:column;gap:6px;background:#FFF4FA}
+.help-card small{font-weight:700;color:var(--muted,#8a7aa6)}.help-btns{justify-content:center;gap:8px;flex-wrap:wrap}.help-btns .btn{min-height:44px;white-space:normal}

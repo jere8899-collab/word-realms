@@ -111,13 +111,16 @@ WR.continueTarget = () => {
   if (!WR.realms) return null;
   const s = WR.state, start = Math.max(0, WR.realms.findIndex(r => r.id === s.startLevel));
   let idx = -1;
-  for (let i = start; i < WR.realms.length; i++) { if (!WR.isUnlocked(i)) break; if (WR.realmProgress(WR.realms[i].id).passed < WR.PASS.skills) { idx = i; break; } }
-  if (idx < 0) for (let i = WR.realms.length - 1; i >= start; i--) if (WR.isUnlocked(i) && WR.realmProgress(WR.realms[i].id).passed < 4) { idx = i; break; }
+  for (let i = start; i < WR.realms.length; i++) { if (!WR.isUnlocked(i)) break; if (WR.realmProgress(WR.realms[i].id).confirmed < WR.PASS.skills) { idx = i; break; } }
+  if (idx < 0) for (let i = WR.realms.length - 1; i >= start; i--) if (WR.isUnlocked(i) && WR.realmProgress(WR.realms[i].id).confirmed < 4) { idx = i; break; }
   if (idx < 0) idx = WR.realms.length - 1;
-  const realm = WR.realms[idx], pr = WR.realmProgress(realm.id), skill = WR.nextSkill ? WR.nextSkill(realm.id) : WR.SKILLS[0];
-  const plays = (pr.p[skill.id] && pr.p[skill.id].plays) || 0, nx = WR.realms[idx + 1], need = WR.PASS.skills - pr.passed;
-  const goal = nx && need > 0 ? `${need} more skill${need > 1 ? "s" : ""} to open ${nx.name} ${nx.emoji}` : nx ? `${nx.name} ${nx.emoji} is open! Collect all 4 skill crowns here too 👑` : pr.passed < 4 ? `${4 - pr.passed} more skill${4 - pr.passed > 1 ? "s" : ""} to master the last realm 👑` : "Every realm is yours! Keep polishing your crowns 👑";
-  return { realm, skill, lesson: plays + 1, goal };
+  const realm = WR.realms[idx], pr = WR.realmProgress(realm.id);
+  // ✨ BRIEF-T4: a crown check that is ready comes first; else the next skill not yet passed (unplayed first, then weakest)
+  const ready = WR.SKILLS.find(k => WR.checkReady(realm.id, k.id)), todo = WR.SKILLS.filter(k => !WR.skillPassed(realm.id, k.id));
+  const skill = ready || (WR.nextSkill ? (todo.length ? WR.nextSkill(realm.id, null, todo) : WR.nextSkill(realm.id)) : WR.SKILLS[0]);
+  const plays = (pr.p[skill.id] && pr.p[skill.id].plays) || 0, nx = WR.realms[idx + 1], need = WR.PASS.skills - pr.confirmed;
+  const goal = ready ? `✨ Quick crown check: ${skill.icon} ${skill.name}` : nx && need > 0 ? `${need} skill${need > 1 ? "s" : ""} 💎 to open ${nx.name} ${nx.emoji}` : nx ? `${nx.name} ${nx.emoji} is open! Keep your crowns shining here too 👑` : pr.confirmed < 4 ? `${4 - pr.confirmed} more skill${4 - pr.confirmed > 1 ? "s" : ""} to master the last realm 👑` : "Every realm is yours! Keep polishing your crowns 👑";
+  return { realm, skill, lesson: plays + 1, goal, check: !!ready };
 };
 // friendly "what's waiting" line for a skill tile (T15: instead of "30 in bank")
 WR.waitingText = (rid, k) => {
@@ -153,8 +156,8 @@ WR.screens.home = () => {
   WR.ensureDaily();
   const s = WR.state, sgTrack = !!WR.SG && WR.SG.track() === "sg", due = WR.Garden ? WR.Garden.dueCount() : 0;
   // ▶ Continue: { head, sub, go } from the fairy realms or, on the Singapore track, from js/sg-english.js
-  const ct = !sgTrack && WR.continueTarget(), cont = sgTrack ? WR.SG.continueTarget() : ct && { head: `${ct.realm.emoji} ${ct.realm.level} ${WR.esc(ct.skill.name)} <span style="font-weight:700">(lesson ${ct.lesson})</span>`, sub: WR.esc(ct.goal),
-    go: () => WR.startLesson({ realm: ct.realm.id, skill: ct.skill.id, key: ct.skill.id, title: `${ct.skill.name} · ${ct.realm.modeName}` }) };
+  const ct = !sgTrack && WR.continueTarget(), cont = sgTrack ? WR.SG.continueTarget() : ct && { head: `${ct.realm.emoji} ${ct.realm.level} ${WR.esc(ct.skill.name)} <span style="font-weight:700">${ct.check ? "(crown check ✨)" : `(lesson ${ct.lesson})`}</span>`, sub: WR.esc(ct.goal),
+    go: () => ct.check ? WR.Pass.startCheck(ct.realm.id, ct.skill.id) : WR.startLesson({ realm: ct.realm.id, skill: ct.skill.id, key: ct.skill.id, title: `${ct.skill.name} · ${ct.realm.modeName}` }) };
   const qDone = s.daily.quests.filter(q => q.claimed).length, qReady = s.daily.quests.some(q => !q.claimed && q.progress >= WR.questDef(q.id).goal);
   WR.view(`<div class="fade-in"><div class="card homehead"><div class="av-big">${WR.avatarHTML(110)}${WR.Rewards && WR.Rewards.chest().ready ? `<button class="chip av-badge gift-ready" id="giftPill" aria-label="Open today's free gift" title="Today's free gift">🎁</button>` : `<button class="chip av-badge" id="wardPill" aria-label="Wardrobe" title="Wardrobe">👗</button>`}</div>
     <div><h1 style="margin:0">Hello, <span class="hero-nm">${WR.userText(s.name)}</span>! 🌸 <button class="chip hero-edit" id="heroEditHome" aria-label="Change my hero name" title="Change my hero name">✏️</button></h1><div class="muted" style="font-weight:800">${WR.userText(s.pet.name)} says: “${WR.esc(WR._welcome || WR.petMood())}”</div>
@@ -166,7 +169,7 @@ WR.screens.home = () => {
         const un = WR.isUnlocked(i), pr = WR.realmProgress(r.id);
         return `<div class="card realm-node ${un ? "" : "locked"}" data-r="${r.id}" data-i="${i}">${WR.img(r.bg, "thumb", "", true)}
           <div><div><span class="lvl-badge">${r.level}</span><b>${r.emoji} ${r.name}${un ? "" : " 🔒"}</b></div><div class="muted" style="font-size:.85rem;font-weight:700">${r.modeName}</div>
-          <div class="prog"><i style="width:${pr.passed / 4 * 100}%"></i></div><div class="muted" style="font-size:.75rem;font-weight:800">${pr.passed}/4 skills passed</div></div>
+          <div class="prog"><i style="width:${pr.confirmed / 4 * 100}%"></i></div><div class="muted" style="font-size:.75rem;font-weight:800">${pr.confirmed}/4 confirmed 💎${pr.passed > pr.confirmed ? ` · ${pr.passed - pr.confirmed} to check` : ""}</div></div>
           </div>`; }).join("")}</div>`}
       ${WR.Math ? `<div class="card math-node" id="mathNode" style="margin-top:14px">${WR.img("bg_math", "thumb", "", true)}<div style="flex:1"><div><span class="lvl-badge">G1–12</span><b>🔢 Number Kingdom</b></div><div class="muted" style="font-size:.85rem;font-weight:700">Maths quests + 🗼 Times-Table Tower</div><div class="muted" style="font-size:.75rem;font-weight:800">👑 ${WR.Math.totalCrowns()} crowns · 🌟 ${WR.Math.mastered()}/132 facts${s.math && s.math.grade ? ` · Grade ${s.math.grade}` : ""}</div></div></div>` : ""}</div>
       <div><div class="home-mini"><button class="card mini-chip${qReady ? " ready" : ""}" id="questsMini"><span class="mi">🎯</span><span><b>${qDone}/${s.daily.quests.length} quests</b><small>${qReady ? "🎁 Prize to claim!" : "Today's quests"}</small></span></button>
@@ -175,7 +178,7 @@ WR.screens.home = () => {
       ${WR.charmsNudge ? WR.charmsNudge() : ""}
       </div></div></div>`);
   document.querySelectorAll(".realm-node").forEach(n => n.onclick = () => {
-    if (n.classList.contains("locked")) { const prev = WR.realms[+n.dataset.i - 1]; return WR.toast(`🔒 Pass ${WR.PASS.skills} of 4 skills in ${prev.name} to unlock!`, 2400); }
+    if (n.classList.contains("locked")) { const prev = WR.realms[+n.dataset.i - 1]; return WR.toast(`🔒 Pass all 4 skills in ${prev.name} (about 7 of 8), then confirm each with a quick check on another day 💎`, 3200); }
     WR.go("realm", n.dataset.r);
   });
   WR.$("#questsMini").onclick = () => WR.go("quests");
@@ -250,15 +253,16 @@ const skillCard = (rid, k, status) => `<div class="card skill-card" data-k="${k.
 WR.screens.realm = rid => {
   const r = WR.realmById(rid), seen = WR.bonusSeenInit(); lastDoor = null;
   const status = k => { const p = (WR.state.progress[rid] || {})[k], w = WR.waitingText(rid, k);
-    return p ? `<div class="crowns">${tileCrowns(rid, k)}${/^🎁/.test(w) ? ` <span class="waiting-tag">${w.replace(/ lessons? waiting!/, " new")}</span>` : ""}</div>` : `<div class="waiting-tag">${w}</div>`; };
+    return p ? `<div class="crowns">${tileCrowns(rid, k)}${WR.Pass ? WR.Pass.badge(rid, k) : ""}${/^🎁/.test(w) ? ` <span class="waiting-tag">${w.replace(/ lessons? waiting!/, " new")}</span>` : ""}</div>` : `<div class="waiting-tag">${w}</div>`; };
   WR.view(`<div class="fade-in realm-screen"><div class="realm-hero">${WR.img(r.bg, "bg")}<div class="ov"><span class="lvl-badge">${r.level}</span><b class="title" style="font-size:1.5rem">${r.emoji} ${r.name}</b>
     <p style="margin:.3em 0;font-weight:700">${WR.esc(r.blurb)}</p><span class="pill">Game mode: ${r.modeName}</span></div></div>
     <div class="row realm-top" style="margin:12px 0"><button class="btn ghost small" id="backMap">← Map</button>${WR.Learn ? WR.Learn.bagPill("realmBag") : ""}</div>
-    <h2 class="realm-sec">🧭 Today's path</h2>
+    <h2 class="realm-sec">🧭 Today's path</h2>${WR.Pass ? WR.Pass.rowHTML(rid) : ""}
     <div class="grid g4 path-grid">${WR.SKILLS.map(k => skillCard(rid, k, status(k.id))).join("")}</div>
     <h2 class="realm-sec" id="bonusHead">🎁 Bonus games</h2>
     <div class="door-row" id="doorRow">${DOORS.map(d => doorTile(rid, d, seen)).join("")}</div></div>`);
   WR.$("#backMap").onclick = () => WR.go("home");
+  if (WR.Pass) WR.Pass.bindRow(rid);
   if (WR.Learn) { WR.Learn.bindChips(WR.$("#main"), { screen: "realm", arg: rid }); const bp = WR.$("#realmBag"); if (bp) bp.onclick = () => WR.go("scrolls", { screen: "realm", arg: rid }); }
   // only the skill cards: the bottom tab bar buttons also carry data-k and must keep their own handler
   WR.$("#main").querySelectorAll(".skill-card[data-k]").forEach(c => c.onclick = () => { const k = WR.SKILLS.find(x => x.id === c.dataset.k); if (!k) return; WR.startLesson({ realm: rid, skill: k.id, key: k.id, title: `${k.name} · ${r.modeName}` }); });
