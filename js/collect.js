@@ -1,6 +1,6 @@
 /* 🏆 C6 (review 2026-10-30): things to aim for between lessons.
    • Sticker Book: 8 stickers per English realm, worked out from the save (so they sync with the Cloud Castle), +2⭐ each, +10⭐ for a full page.
-   • Realm Bosses: a cute painted boss at the end of every realm, unlocked once 3 of 4 skills are passed (the same rule that opens the next realm).
+   • Realm Bosses: a cute painted boss at the end of every realm, awake once 3 of 4 skills are passed at the pass mark (WR.PASS.boss; no later-day check: a fun fight, not a gate).
    • Pet goal on the map: the next evolution ("Lv 5 → Bloom Puffbun with an aura") with an XP bar.
    • Weekly Events: one themed challenge a week (Mon–Sun, the player's own clock), +20⭐ and an event sticker.
    Save: state.stickers = { got: { a1: [ids], events: [ids], math: [ids], guard: [ids] }, full: [page ids] }, state.bosses = { a1: { won, best, tries, at } }, state.weekly = { wk, id, progress, claimed }. */
@@ -114,7 +114,7 @@ C.bossCard = o => `<div class="card rboss ${o.cls || ""} ${o.ready ? "" : "locke
     <div class="muted" style="font-size:.86rem;font-weight:700">${o.ready ? `“${WR.esc(o.line)}”` : `🔒 ${WR.esc(o.lock)}`}</div>
     ${o.ready ? `<button class="btn small ${o.won ? "ghost" : "mint"}"${o.goId ? ` id="${o.goId}"` : ""}>${o.won ? "↻ Rematch" : "⚔️ Challenge"}</button>` : `<div class="prog"><i style="width:${o.pct}%"></i></div>`}</div></div>`;
 /* ---------- realm bosses ---------- */
-C.bossReady = rid => WR.realmProgress(rid).passed >= 3;
+C.bossReady = rid => WR.realmProgress(rid).passed >= WR.PASS.boss || ((WR.state.keep || {}).boss || []).includes(rid);   // awake before BRIEF-T4: stays awake
 C.startBoss = async rid => {
   const r = WR.realmById(rid), b = RB[rid]; if (!r || !b) return;
   const parts = await Promise.all([["grammar", 3], ["vocab", 3], ["listening", 2], ["reading", 2]].map(([k, n]) => WR.buildItems(rid, k, n).then(xs => xs.slice(0, n)).catch(() => [])));
@@ -131,7 +131,7 @@ C.startBoss = async rid => {
 const bossCard = rid => {
   const b = RB[rid]; if (!b) return "";
   const pr = WR.realmProgress(rid).passed;
-  return C.bossCard({ art: b.art, name: b.name, line: b.line, ready: C.bossReady(rid), won: ((WR.state.bosses || {})[rid] || {}).won, lock: `Pass 3 of 4 skills to challenge the boss (${pr}/3)`, pct: Math.min(3, pr) / 3 * 100, id: "rbossCard", goId: "rbossGo" });
+  return C.bossCard({ art: b.art, name: b.name, line: b.line, ready: C.bossReady(rid), won: ((WR.state.bosses || {})[rid] || {}).won, lock: `Pass ${WR.PASS.boss} of 4 skills (about 7 of 8) to challenge the boss (${pr}/${WR.PASS.boss})`, pct: Math.min(WR.PASS.boss, pr) / WR.PASS.boss * 100, id: "rbossCard", goId: "rbossGo" });
 };
 /* ---------- pet goal ---------- */
 C.petGoal = () => {
@@ -172,7 +172,7 @@ WR.screens.realm = rid => {
   if (got.length) WR.$("#main .realm-screen").insertAdjacentHTML("beforeend", `<div class="card row sticker-row" id="realmStickers" role="button" tabindex="0"><span style="font-size:1.6rem">🏷️</span><div style="flex:1"><b>Sticker page: ${got.length}/${STICKERS.length}</b><div class="muted" style="font-size:.82rem;font-weight:700">${STICKERS.map(st => WR.icon(st.icon, got.includes(st.id) ? "" : "dim", got.includes(st.id) ? undefined : "not earned yet")).join(" ")}</div></div><span class="btn small ghost">Open →</span></div>`);
   const go = WR.$("#rbossGo"), card = WR.$("#rbossCard");
   if (go) go.onclick = e => { e.stopPropagation(); C.startBoss(rid); };
-  if (card) card.onclick = () => C.bossReady(rid) ? C.startBoss(rid) : WR.toast(`🔒 Pass 3 of 4 skills in ${WR.realmById(rid).name} to wake the boss!`, 2400);
+  if (card) card.onclick = () => C.bossReady(rid) ? C.startBoss(rid) : WR.toast(`🔒 Pass ${WR.PASS.boss} of 4 skills in ${WR.realmById(rid).name} to wake the boss!`, 2400);
   const rs = WR.$("#realmStickers"); if (rs) rs.onclick = () => WR.go("stickers", rid);
 };
 })();

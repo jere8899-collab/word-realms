@@ -435,7 +435,9 @@ function finish(lost) {
   const n = beat ? L.i + 1 : L.items.length, score = L.correct / n, crowns = WR.crowns(score);   // a boss beaten early is scored on the questions asked
   const bonus = crowns * 2 + (beat ? 5 : 0);
   L.starsEarned += WR.awardStars("lesson", L.review ? "garden" : L.realm.id + "/" + (L.key || L.skill || L.mode), bonus, { kind: "round", tally: L });
-  if (L.key) WR.recordLesson(L.realm.id, L.key, score);
+  const rec = L.key && !L.check ? WR.recordLesson(L.realm.id, L.key, score, n) : null;
+  // ✨ BRIEF-T4: a crown check / polish round confirms (or polishes) the skill instead of recording a lesson
+  const chk = L.check && WR.Pass ? WR.Pass.checkResult(Object.assign({ right: L.correct, n }, L.check), WR.recordCheck(L.check.rid, L.check.skill, score, n)) : null;
   if (L.skill === "listening") WR.questEvent("listen1");
   if (L.skill === "reading") WR.questEvent("read1");
   if (L.special) WR.questEvent("special1");
@@ -446,36 +448,40 @@ function finish(lost) {
   WR.save(); WR.renderTop();
   const won = beat && !lost;
   const title = lost ? (L.mode === "dragon" ? "The candles went out… 🕯️" : `${WR.esc(curBoss().name)} escaped! ${L.boss ? "💨" : "🌊"}`) :
-    beat ? "Boss defeated! ⚔️✨" : crowns === 3 ? "Perfect! 👑" : crowns >= 1 ? "Well done! 🌟" : "Keep practising! 🌱";
+    beat ? "Boss defeated! ⚔️✨" : chk ? chk.title : crowns === 3 ? "Perfect! 👑" : crowns >= 1 ? "Well done! 🌟" : "Keep practising! 🌱";
   // ➡️ T8: one clear next step (the next unplayed, else weakest, skill in this realm), with Play again / Back as secondaries
-  const nx = L.review ? null : WR.nextSkill(L.realm.id, L.skill);
-  // 📜 a weak result (< 60%) offers the first lesson on this skill not yet passed (a soft nudge: practice never locks)
-  const nudge = WR.Learn && !L.review && L.skill && score < 0.6 ? WR.Learn.nudgeHTML(WR.Learn.nudgeFor(WR.Learn.forSkill(L.realm.id, L.skill))) : "";
+  const nx = L.review || L.check ? null : WR.nextSkill(L.realm.id, L.skill);
+  // 📜 a result below the pass mark offers the first lesson on this skill not yet passed (a soft nudge: practice never locks)
+  const skillRound = !L.review && WR.Pass && WR.SKILLS.some(k => k.id === (L.check ? L.check.skill : L.key));
+  const help = skillRound && !WR.passes(score, n) ? WR.Pass.helpHTML(L.realm.id, L.check ? L.check.skill : L.key) : "";   // 🫶 after 2 tries in a row
+  const nudge = !help && WR.Learn && !L.review && !L.check && L.skill && !WR.passes(score, n) ? WR.Learn.nudgeHTML(WR.Learn.nudgeFor(WR.Learn.forSkill(L.realm.id, L.skill))) : "";
   const mainBtn = L.review ? `<button class="btn mint" id="nextStep">Back to the garden 🌷</button>`
     : nx ? `<button class="btn mint" id="nextStep">Next: ${nx.icon} ${WR.esc(nx.name)} →</button>` : `<button class="btn mint" id="nextStep">Back to ${WR.esc(L.realm.name)} →</button>`;
   WR.view(`<div class="card result fade-in"><h1>${title}</h1>${WR.starNote()}
-    <div class="big">${"👑".repeat(crowns)}${"<span style='opacity:.2'>👑</span>".repeat(3 - crowns)}</div>
+    ${chk ? `<div class="big">${chk.title.includes("💎") ? "💎" : "✨"}</div><p class="pass-note good" style="font-weight:800">${chk.line}</p>` : `<div class="big">${"👑".repeat(crowns)}${"<span style='opacity:.2'>👑</span>".repeat(3 - crowns)}</div>`}
     <h2>${L.correct} / ${n} correct</h2>
     <p class="muted" style="font-weight:800">⭐ ${L.starsEarned} stars earned · best combo ${L.maxCombo} ${newStreak ? `· 🔥 streak ${WR.state.streak.count} day${WR.state.streak.count > 1 ? "s" : ""}!` : ""}</p>
     <div class="next-row">${mainBtn}<div class="sec"><button class="btn ghost small" id="again">↻ Play again</button>${L.review || !nx ? "" : `<button class="btn ghost small" id="back">← ${WR.esc(L.realm.name)}</button>`}</div></div>
-    ${nudge}<div class="petbox bounce" style="margin:10px auto">${WR.petHTML()}</div>
+    ${help}${nudge}<div class="petbox bounce" style="margin:10px auto">${WR.petHTML()}</div>
     <div class="bubble">${lv ? (lv.evolved ? `I evolved into ${WR.petInfo().stages[WR.petStage(lv.level)]}! 🌟` : `I reached level ${lv.level}! 🎉`) : crowns >= 2 ? "That was so fun! 💖" : "Let's try again together! 🫶"}</div>
     ${L.review ? `<p class="muted" style="font-weight:800">🌸 ${L.bloomed || 0} flower${L.bloomed === 1 ? "" : "s"} fully bloomed${L.bloomed ? ` (+${L.bloomed * 2}⭐)` : ""} · ${WR.Garden.dueCount()} still thirsty</p>` : ""}
-    ${score < 0.6 && L.key ? `<p class="muted">Score 60% or more to count this skill towards unlocking the next realm.</p>` : ""}</div>`);
+    ${rec && WR.Pass ? WR.Pass.lessonLine(L.realm.id, L.key, score, n, rec) : ""}</div>`);
   if (crowns >= 2 || lv) WR.confetti(); WR.sfx(lv ? "level" : "good");
   const opts = L;
   if (opts.onFinish) opts.onFinish({ won, lost: !!lost, score, crowns });   // 🏆 C6 hook (realm bosses, stickers)
   if (opts.nextLabel) WR.$("#nextStep").textContent = opts.nextLabel;
-  WR.$("#again").onclick = () => opts.replay ? opts.replay() : WR.startLesson({ realm: opts.realm.id, skill: opts.skill, key: opts.key, title: opts.title });
+  if (opts.check) WR.$("#again").remove();   // one check a day: no "play again"
+  if (WR.$("#again")) WR.$("#again").onclick = () => opts.replay ? opts.replay() : WR.startLesson({ realm: opts.realm.id, skill: opts.skill, key: opts.key, title: opts.title });
   const bk = WR.$("#back"); if (bk) bk.onclick = () => leave(opts);
   if (nudge) WR.Learn.bindNudge({ screen: "realm", arg: opts.realm.id });
+  if (help) WR.Pass.bindHelp(opts.realm.id, opts.check ? opts.check.skill : opts.key);
   WR.$("#nextStep").onclick = () => opts.onNext ? opts.onNext() : nx && !opts.review ? WR.startLesson({ realm: opts.realm.id, skill: nx.id, key: nx.id, title: `${nx.name} · ${opts.realm.modeName}` }) : leave(opts);
   if (lv && lv.evolved) setTimeout(() => WR.modal(`<h2>✨ Evolution! ✨</h2><div class="petbox cheer" style="width:180px;height:180px;margin:auto">${WR.petHTML()}</div><p><b>${WR.userText(WR.state.pet.name)}</b> became <b>${WR.petInfo().stages[WR.petStage(lv.level)]}</b>!</p><button class="btn" onclick="this.closest('.modal-bg').remove()">Hooray!</button>`), 600);
 }
 // the next core skill to play in a realm: first one never played, else the weakest (lowest best score); never the one just played
-WR.nextSkill = (rid, justPlayed) => {
+WR.nextSkill = (rid, justPlayed, among = WR.SKILLS) => {
   const p = (WR.state.progress[rid] || {});
-  const cands = WR.SKILLS.filter(k => k.id !== justPlayed);
+  const cands = among.filter(k => k.id !== justPlayed);
   const fresh = cands.find(k => !p[k.id]); if (fresh) return fresh;
   return cands.slice().sort((a, b) => (p[a.id].best - p[b.id].best) || (p[a.id].plays - p[b.id].plays))[0] || null;
 };

@@ -696,23 +696,81 @@ WR.bumpStreak = () => {
 };
 WR.streakAlive = () => { const s = WR.state.streak; return s.last && WR.dayDiff(s.last, WR.today()) <= 1 ? s.count : 0; };
 
-/* ---------- progress & unlocks ---------- */
-WR.realmProgress = rid => {
-  const p = WR.state.progress[rid] || {};
-  const passed = SKILLS.filter(k => p[k.id] && p[k.id].best >= 0.6).length;
-  return { passed, p };
-};
+/* ---------- progress & unlocks (BRIEF-T4: a pass means something) ----------
+   A skill is passed at about 7 of 8 (`mark`, rounded to the nearest whole question: 7/8, 6/7, 5/6, 3/4). The next realm needs
+   all 4 skills passed AND each confirmed on a later game day by a short crown check (`checkN` questions, the same mark, one
+   check a day). A crown not checked for `polishDays` asks for a gentle "Polish me ✨" (the crown always stays). After
+   `helpAfter` tries in a row that didn't pass, the result offers the Learn lesson and an easier path (js/pass.js).
+   Realms open (and bosses awake) under the old rule stay that way for good (`state.keep`). */
+const PASS = WR.PASS = { mark: 0.85, skills: 4, boss: 3, checkN: 4, polishDays: 30, helpAfter: 2 };
+WR.passCount = n => Math.max(1, Math.round(PASS.mark * n));                // right answers needed out of n
+WR.passes = (score, n = 8) => score * n + 1e-9 >= WR.passCount(n);
+WR.skillRec = (rid, k) => (WR.state.progress[rid] || {})[k] || null;
+WR.skillPassed = (rid, k) => { const p = WR.skillRec(rid, k); return !!p && (!!p.pass || p.best >= PASS.mark); };   // (older plays: best ≥ mark)
+WR.skillConfirmed = (rid, k) => { const p = WR.skillRec(rid, k); return !!p && !!p.ok; };
+const dayOf = t => t ? WR.dayKey(t) : null;
+const passDayOf = p => p.passDay || dayOf(p.pass || p.last) || "";   // an older record with no time counts as an earlier day
+// the check is ready on any game day after the pass (one a day)
+WR.checkReady = (rid, k) => { const p = WR.skillRec(rid, k), d = WR.today(); return !!p && WR.skillPassed(rid, k) && !p.ok && passDayOf(p) < d && p.chkDay !== d; };
+// a crown (≥ 1) whose last good result (lesson at the mark, check or polish) is polishDays old or more
+WR.lastGoodDay = p => [p.polDay, p.okDay, p.goodDay, p.passDay].filter(Boolean).sort().pop() || dayOf(p.last);
+WR.needsPolish = (rid, k) => { const p = WR.skillRec(rid, k); if (!p || WR.crowns(p.best || 0) < 1) return false;
+  const g = WR.lastGoodDay(p); return !!g && WR.dayDiff(g, WR.today()) >= PASS.polishDays && p.chkDay !== WR.today(); };
+WR.realmProgress = rid => { ensureKeep(); return { passed: SKILLS.filter(k => WR.skillPassed(rid, k.id)).length, confirmed: SKILLS.filter(k => WR.skillConfirmed(rid, k.id)).length, p: WR.state.progress[rid] || {} }; };
+// 🧳 older saves: what the old rule (best ≥ 60% on 3 of 4) had opened stays open; computed once, when the realm list is known
+const OLD = { mark: 0.6, skills: 3 };
+const oldPassed = (s, rid) => SKILLS.filter(k => ((s.progress[rid] || {})[k.id] || {}).best >= OLD.mark).length;
+function ensureKeep() {
+  const s = WR.state; if (!s || !WR.realms) return;
+  if (!s.keep || typeof s.keep !== "object") s.keep = { open: [], boss: [] };
+  s.keep.open = Array.isArray(s.keep.open) ? s.keep.open : []; s.keep.boss = Array.isArray(s.keep.boss) ? s.keep.boss : [];
+  if (s.passMig) return;
+  WR.realms.forEach((r, i) => { if (i && oldPassed(s, WR.realms[i - 1].id) >= OLD.skills && !s.keep.open.includes(r.id)) s.keep.open.push(r.id);
+    if (oldPassed(s, r.id) >= OLD.skills && !s.keep.boss.includes(r.id)) s.keep.boss.push(r.id); });
+  s.passMig = 1; WR.save();
+}
+WR.ensureKeep = ensureKeep;
 WR.isUnlocked = idx => {
   if (WR.state.settings.unlockAll) return true;
   const startIdx = WR.realms.findIndex(r => r.id === WR.state.startLevel);
   if (idx <= Math.max(0, startIdx)) return true;
-  return WR.realmProgress(WR.realms[idx - 1].id).passed >= 3;
+  ensureKeep(); if (WR.state.keep.open.includes(WR.realms[idx].id)) return true;   // opened before: open for good
+  return WR.realmProgress(WR.realms[idx - 1].id).confirmed >= PASS.skills;
 };
-WR.recordLesson = (rid, key, score) => {
+const isSkill = k => SKILLS.some(x => x.id === k);
+// n: questions in the round (the pass is "about 7 of 8" of what was asked)
+WR.recordLesson = (rid, key, score, n = 8) => {
   const s = WR.state; s.progress[rid] = s.progress[rid] || {};
   const prev = s.progress[rid][key] || { best: 0, plays: 0 };
   prev.best = Math.max(prev.best, score); prev.plays++; prev.last = Date.now();
+  if (isSkill(key)) { const day = WR.today();
+    if (WR.passes(score, n)) { prev.goodDay = day; prev.fails = 0; if (!prev.pass) { prev.pass = Date.now(); prev.passDay = day; } }
+    else if (!prev.pass && !(prev.best >= PASS.mark)) prev.fails = (prev.fails || 0) + 1; }
   s.progress[rid][key] = prev; s.lessonsDone++; WR.save();
+  return prev;
+};
+// a crown check (or polish round): right ≥ the mark confirms a pass made on an earlier day; returns { good, confirmed }
+WR.recordCheck = (rid, k, score, n = PASS.checkN) => {
+  const p = WR.skillRec(rid, k); if (!p) return { good: false, confirmed: false };
+  const day = WR.today(), good = WR.passes(score, n), could = WR.skillPassed(rid, k) && !p.ok && passDayOf(p) < day;
+  p.chkDay = day;
+  let confirmed = false;
+  if (good) { p.polDay = day; p.cfails = 0; if (could) { p.ok = Date.now(); p.okDay = day; confirmed = true; } }
+  else p.cfails = (p.cfails || 0) + 1;
+  WR.save(); return { good, confirmed };
+};
+WR.triesInARow = (rid, k) => { const p = WR.skillRec(rid, k) || {}; return Math.max(p.fails || 0, p.cfails || 0); };
+// ☁️ two saves of the same player: kept realms/bosses are unioned; a skill's pass and confirmation are never lost
+const PASS_FIELDS = ["pass", "passDay", "ok", "okDay", "goodDay", "polDay"];
+WR.mergePass = (a, b) => {
+  if (!a || !b) return a;
+  a.keep = a.keep || { open: [], boss: [] };
+  if (b.keep) for (const f of ["open", "boss"]) a.keep[f] = [...new Set([...(a.keep[f] || []), ...(b.keep[f] || [])])];
+  for (const [rid, sk] of Object.entries(b.progress || {})) for (const [k, q] of Object.entries(sk || {})) {
+    if (!isSkill(k) || !q) continue; const r = ((a.progress = a.progress || {})[rid] = a.progress[rid] || {});
+    const m = r[k]; if (!m) continue;
+    for (const f of PASS_FIELDS) if (q[f] && (!m[f] || (f === "pass" || f === "passDay" ? q[f] < m[f] : q[f] > m[f]))) m[f] = q[f]; }
+  return a;
 };
 // every English skill a lesson, Mistake Garden plant or report row can name (core four + bonus skills, loaded later)
 WR.allSkills = () => SKILLS.concat(WR.SPEAKING || [], WR.WRITING || [], WR.STORY || [], WR.PHONICS || [], WR.CHARMS || [], WR.gapGames.map(g => g.info));
