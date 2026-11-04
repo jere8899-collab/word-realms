@@ -78,6 +78,10 @@ const sgn = (c, first) => c < 0 ? (first ? "-" : " - ") : (first ? "" : " + ");
 const poly = (terms, v = "x") => { let s = "", first = true; for (const [c, p] of terms) { if (!c) continue; const a = Math.abs(c);
   const co = (a === 1 && p !== 0) ? "" : fmt(a); s += sgn(c, first) + co + (p === 0 ? "" : p === 1 ? v : `${v}^{${p}}`); first = false; } return s || "0"; };
 const lin = (a, b, v = "x") => poly([[a, 1], [b, 0]], v);
+/* polynomial calculus kit (Derivative Dragons / Hilltop Stationary / Lantern Tangent Trail):
+   diffPoly(terms) → derivative terms (bring power down, drop constants); evalPoly(terms, x) → value. */
+const diffPoly = terms => terms.filter(([, p]) => p > 0).map(([c, p]) => [c * p, p - 1]);
+const evalPoly = (terms, x) => terms.reduce((s, [c, p]) => s + c * Math.pow(x, p), 0);
 const paren = x => x < 0 ? `(${x})` : String(x);
 // signed terms for worked steps: pm(-3) → "- 3", pm(3) → "+ 3"; undo(b) is the move that cancels "+ b" ("- b"; "- 0" for 0)
 const pm = n => `${n < 0 ? "-" : "+"} ${Math.abs(n)}`;
@@ -419,6 +423,132 @@ const svgStraight = (title, m, c, opts = {}) => {
       return s;
     } }));
 };
+/* polycurve / tangent kit (Lantern Tangent Trail): general polynomial on the shared svgPlane.
+   svgCurve(title, terms, opts?) → path class=polycurve with data-terms (JSON), marks class=cdot (data-n/x/y).
+   svgTangent(title, terms, x0, opts?) → curve + tangent segment class=tline (data-m/c/x0) and contact mark.
+   opts.small → 150×120 match thumbnails. Parabola / wave / straight stay byte-identical. */
+const termsKey = terms => JSON.stringify(terms);
+const yPoly = (terms, x) => evalPoly(terms, x);
+const svgCurve = (title, terms, opts = {}) => {
+  const marks = opts.marks || [];
+  const markYs = marks.map(m => m.y), markXs = marks.map(m => m.x);
+  let xmin = opts.xmin, xmax = opts.xmax, ymin = opts.ymin, ymax = opts.ymax;
+  if (xmin == null || xmax == null) {
+    const xs = [0].concat(markXs);
+    // sample a few lattice x so the default window covers the interesting bend
+    for (let x = -4; x <= 4; x++) xs.push(x);
+    let lo = Math.floor(Math.min(...xs) - 1), hi = Math.ceil(Math.max(...xs) + 1);
+    if (hi - lo < 6) { const mid = (lo + hi) / 2; lo = Math.floor(mid - 3); hi = Math.ceil(mid + 3); }
+    xmin = xmin ?? Math.max(-8, lo); xmax = xmax ?? Math.min(8, hi);
+    if (xmax - xmin < 4) { xmin = Math.max(-8, xmin - 1); xmax = Math.min(8, xmax + 1); }
+  }
+  if (ymin == null || ymax == null) {
+    const ySamples = [0].concat(markYs);
+    for (let i = 0; i <= 24; i++) { const x = xmin + (xmax - xmin) * i / 24; ySamples.push(yPoly(terms, x)); }
+    const lo = Math.min(...ySamples), hi = Math.max(...ySamples);
+    const pad = Math.max(1, Math.ceil((hi - lo) * .12 + .01));
+    ymin = ymin ?? Math.floor(lo) - pad; ymax = ymax ?? Math.ceil(hi) + pad;
+    if (ymax - ymin < 4) { const mid = (ymin + ymax) / 2; ymin = Math.floor(mid - 2); ymax = Math.ceil(mid + 2); }
+  }
+  if (xmin > 0) xmin = 0; if (xmax < 0) xmax = 0; if (ymin > 0) ymin = 0; if (ymax < 0) ymax = 0;
+  for (const x of markXs) { if (x < xmin) xmin = Math.floor(x) - 1; if (x > xmax) xmax = Math.ceil(x) + 1; }
+  for (const y of markYs) { if (y < ymin) ymin = Math.floor(y) - 1; if (y > ymax) ymax = Math.ceil(y) + 1; }
+  const small = !!opts.small;
+  const xstep = opts.xstep || (xmax - xmin > 10 ? 2 : 1);
+  const ystep = opts.ystep || (ymax - ymin > 12 ? Math.ceil((ymax - ymin) / 8) : ymax - ymin > 8 ? 2 : 1);
+  return svgPlane(title, Object.assign({}, opts, { xmin, xmax, ymin, ymax, xstep, ystep,
+    w: small ? 150 : (opts.w || 300), h: small ? 120 : (opts.h || 226), ty: small ? 14 : 18,
+    cls: opts.cls || "mpic chart polycurve", label: opts.label || "curve graph",
+    draw: (X, Y) => {
+      const N = small ? 24 : 48; let d = "", started = false;
+      for (let i = 0; i <= N; i++) {
+        const x = xmin + (xmax - xmin) * i / N, y = yPoly(terms, x);
+        if (y < ymin - .6 || y > ymax + .6) { started = false; continue; }
+        d += (started ? " L" : (d ? " M" : "M")) + xy([X(x), Y(y)]); started = true;
+      }
+      const stroke = opts.stroke || "#a78bfa";
+      let s = `<path class="polycurve" data-terms="${esc(termsKey(terms))}" d="${d}" fill="none" stroke="${stroke}" stroke-width="${small ? 2.2 : 3}" stroke-linejoin="round" stroke-linecap="round"/>`;
+      for (const m of marks) {
+        const px = X(m.x), py = Y(m.y), lab = m.lab != null ? m.lab : m.n;
+        s += `<circle class="cdot" data-n="${esc(m.n)}" data-x="${fmt(m.x)}" data-y="${fmt(m.y)}" cx="${px}" cy="${py}" r="${small ? 3 : 4}" fill="#fff" stroke="#ff6f91" stroke-width="2"/>`;
+        if (lab && !small) s += `<text class="clab" data-n="${esc(m.n)}" x="${f1(px + (m.dx || 0))}" y="${f1(py + (m.dy || -8))}" font-size="11" text-anchor="middle" font-weight="900" fill="${INK}" paint-order="stroke" stroke="#FFFDF8" stroke-width="3">${esc(lab)}</text>`;
+      }
+      return s;
+    } }));
+};
+const svgTangent = (title, terms, x0, opts = {}) => {
+  const dTerms = diffPoly(terms);
+  const m = yPoly(dTerms, x0), y0 = yPoly(terms, x0), c = y0 - m * x0;
+  const marks = (opts.marks || []).slice();
+  if (!opts.noContact) {
+    const has = marks.some(mk => Math.abs(mk.x - x0) < 1e-9 && Math.abs(mk.y - y0) < 1e-9);
+    if (!has) marks.push({ n: opts.contactN || "P", x: x0, y: y0, lab: opts.contactLab != null ? opts.contactLab : `P(${fmt(x0)}, ${fmt(y0)})`, dy: y0 >= 0 ? -8 : 14 });
+  }
+  const markYs = marks.map(mk => mk.y), markXs = marks.map(mk => mk.x);
+  let xmin = opts.xmin, xmax = opts.xmax, ymin = opts.ymin, ymax = opts.ymax;
+  if (xmin == null || xmax == null) {
+    const xs = [0, x0].concat(markXs);
+    for (let x = -4; x <= 4; x++) xs.push(x);
+    let lo = Math.floor(Math.min(...xs) - 1), hi = Math.ceil(Math.max(...xs) + 1);
+    if (hi - lo < 6) { const mid = (lo + hi) / 2; lo = Math.floor(mid - 3); hi = Math.ceil(mid + 3); }
+    xmin = xmin ?? Math.max(-8, lo); xmax = xmax ?? Math.min(8, hi);
+    if (xmax - xmin < 4) { xmin = Math.max(-8, xmin - 1); xmax = Math.min(8, xmax + 1); }
+  }
+  if (ymin == null || ymax == null) {
+    const ySamples = [0, y0, c].concat(markYs);
+    for (let i = 0; i <= 24; i++) {
+      const x = xmin + (xmax - xmin) * i / 24;
+      ySamples.push(yPoly(terms, x), m * x + c);
+    }
+    const lo = Math.min(...ySamples), hi = Math.max(...ySamples);
+    const pad = Math.max(1, Math.ceil((hi - lo) * .12 + .01));
+    ymin = ymin ?? Math.floor(lo) - pad; ymax = ymax ?? Math.ceil(hi) + pad;
+    if (ymax - ymin < 4) { const mid = (ymin + ymax) / 2; ymin = Math.floor(mid - 2); ymax = Math.ceil(mid + 2); }
+  }
+  if (xmin > 0) xmin = 0; if (xmax < 0) xmax = 0; if (ymin > 0) ymin = 0; if (ymax < 0) ymax = 0;
+  for (const x of markXs) { if (x < xmin) xmin = Math.floor(x) - 1; if (x > xmax) xmax = Math.ceil(x) + 1; }
+  for (const y of markYs) { if (y < ymin) ymin = Math.floor(y) - 1; if (y > ymax) ymax = Math.ceil(y) + 1; }
+  const small = !!opts.small;
+  const xstep = opts.xstep || (xmax - xmin > 10 ? 2 : 1);
+  const ystep = opts.ystep || (ymax - ymin > 12 ? Math.ceil((ymax - ymin) / 8) : ymax - ymin > 8 ? 2 : 1);
+  return svgPlane(title, Object.assign({}, opts, { xmin, xmax, ymin, ymax, xstep, ystep,
+    w: small ? 150 : (opts.w || 300), h: small ? 120 : (opts.h || 226), ty: small ? 14 : 18,
+    cls: opts.cls || "mpic chart tangent", label: opts.label || "curve with tangent",
+    draw: (X, Y, box) => {
+      const { xmin: xLo, xmax: xHi, ymin: yLo, ymax: yHi } = box;
+      const N = small ? 24 : 48; let d = "", started = false;
+      for (let i = 0; i <= N; i++) {
+        const x = xLo + (xHi - xLo) * i / N, y = yPoly(terms, x);
+        if (y < yLo - .6 || y > yHi + .6) { started = false; continue; }
+        d += (started ? " L" : (d ? " M" : "M")) + xy([X(x), Y(y)]); started = true;
+      }
+      const stroke = opts.stroke || "#a78bfa";
+      let s = `<path class="polycurve" data-terms="${esc(termsKey(terms))}" d="${d}" fill="none" stroke="${stroke}" stroke-width="${small ? 2.2 : 3}" stroke-linejoin="round" stroke-linecap="round"/>`;
+      // clip the tangent line to the visible window (same edge-intersection idea as svgStraight)
+      const pts = [];
+      const push = (x, y) => { if (x >= xLo - 1e-9 && x <= xHi + 1e-9 && y >= yLo - 1e-9 && y <= yHi + 1e-9) pts.push([x, y]); };
+      push(xLo, m * xLo + c); push(xHi, m * xHi + c);
+      if (Math.abs(m) > 1e-12) { push((yLo - c) / m, yLo); push((yHi - c) / m, yHi); }
+      const uniq = [];
+      for (const p of pts) if (!uniq.some(q => Math.abs(q[0] - p[0]) < 1e-6 && Math.abs(q[1] - p[1]) < 1e-6)) uniq.push(p);
+      uniq.sort((a, b) => a[0] - b[0] || a[1] - b[1]);
+      let td = "";
+      if (uniq.length >= 2) {
+        const a = uniq[0], b = uniq[uniq.length - 1];
+        td = "M" + xy([X(a[0]), Y(a[1])]) + " L" + xy([X(b[0]), Y(b[1])]);
+      } else if (uniq.length === 1) {
+        td = "M" + xy([X(uniq[0][0]), Y(uniq[0][1])]) + " L" + xy([X(uniq[0][0]), Y(uniq[0][1])]);
+      }
+      const tStroke = opts.tStroke || (m >= 0 ? "#7ec8e3" : "#ff8fa3");
+      s += `<path class="tline" data-m="${fmt(m)}" data-c="${fmt(c)}" data-x0="${fmt(x0)}" d="${td}" fill="none" stroke="${tStroke}" stroke-width="${small ? 1.8 : 2.4}" stroke-dasharray="${small ? "4 3" : "6 4"}" stroke-linejoin="round" stroke-linecap="round"/>`;
+      for (const mk of marks) {
+        const px = X(mk.x), py = Y(mk.y), lab = mk.lab != null ? mk.lab : mk.n;
+        s += `<circle class="cdot" data-n="${esc(mk.n)}" data-x="${fmt(mk.x)}" data-y="${fmt(mk.y)}" cx="${px}" cy="${py}" r="${small ? 3 : 4}" fill="#fff" stroke="#ff6f91" stroke-width="2"/>`;
+        if (lab && !small) s += `<text class="clab" data-n="${esc(mk.n)}" x="${f1(px + (mk.dx || 0))}" y="${f1(py + (mk.dy || -8))}" font-size="11" text-anchor="middle" font-weight="900" fill="${INK}" paint-order="stroke" stroke="#FFFDF8" stroke-width="3">${esc(lab)}</text>`;
+      }
+      return s;
+    } }));
+};
 const svgBars = (title, unit, cats, vals, max, step) => {
   const x0 = 36, x1 = 290, top = 38, bot = 170, [grid, y] = axes(x0, x1, top, bot, max, step), w = (x1 - x0) / cats.length;
   const bars = cats.map((c, i) => { const bx = +(x0 + w * i + w * 0.2).toFixed(1), bw = +(w * 0.6).toFixed(1), cx = +(x0 + w * (i + 0.5)).toFixed(1);
@@ -531,7 +661,7 @@ M.longMulSteps = (a, b) => { const bs = String(b).split("").reverse(); const out
 /* ====================== TOPICS ====================== */
 const TOPICS = [];
 const topic = (grade, id, name, icon, desc, gen, opt = {}) => TOPICS.push(Object.assign({ grade, id: `g${grade}.${id}`, name, icon, desc, gen }, opt));
-M._internal = { Q, num, mcq, mcqWhy, numWhy, T, NAMES, THINGS, COUNT_EMOJI, PASTEL, INK, LINE, esc, svgBox, cardSvg, tickAttr, xTicks, yUnit, xUnit, cellKey, figKey, hasCell, nearCells, gridPaper, gridSheet, gridCell, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, axes, svgBars, svgLine, svgPieChart, svgGeo, fitBox, toRad, toDeg, sinD, cosD, tanD, rotPt, dirPt, f1, xy, mid, vat, vdir, angSweep, angWedge, angText, rightPath, figCard, figShape, figEdge, figLab, figLens, figDot, figVtx, figRight, coin, emojiRows, table, colAdd, colSub, topic, TOPICS, gcd, lcm, rd, fmt, fdp, money, simp, fracTex, fracStr, mixedTex, sgn, poly, lin, paren, pm, undo, coef, ord, sum, asc, median, freqTotals, sqrtTex, surdTex, simpRad, matTex, matSvg, PLOT_BOX, plotFrame, svgPlane, svgParabola, ampPeriod, svgWave, svgStraight };
+M._internal = { Q, num, mcq, mcqWhy, numWhy, T, NAMES, THINGS, COUNT_EMOJI, PASTEL, INK, LINE, esc, svgBox, cardSvg, tickAttr, xTicks, yUnit, xUnit, cellKey, figKey, hasCell, nearCells, gridPaper, gridSheet, gridCell, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, axes, svgBars, svgLine, svgPieChart, svgGeo, fitBox, toRad, toDeg, sinD, cosD, tanD, rotPt, dirPt, f1, xy, mid, vat, vdir, angSweep, angWedge, angText, rightPath, figCard, figShape, figEdge, figLab, figLens, figDot, figVtx, figRight, coin, emojiRows, table, colAdd, colSub, topic, TOPICS, gcd, lcm, rd, fmt, fdp, money, simp, fracTex, fracStr, mixedTex, sgn, poly, lin, paren, pm, undo, coef, ord, sum, asc, median, freqTotals, sqrtTex, surdTex, simpRad, matTex, matSvg, PLOT_BOX, plotFrame, svgPlane, svgParabola, ampPeriod, svgWave, svgStraight, diffPoly, evalPoly, svgCurve, svgTangent };
 M.TOPICS = TOPICS;
 M.topic = id => TOPICS.find(t => t.id === id);
 M.gradeTopics = g => TOPICS.filter(t => t.grade === g);

@@ -1,7 +1,7 @@
 /* 🔢 Number Kingdom topics, Grades 9–12 (Singapore Secondary 3–4, JC 1–2 / Years 10–13). */
 (function () {
 const M = (typeof module !== "undefined" && module.exports) ? require("./math-gen.js") : window.MathGen;
-const { Q, num, mcq, mcqWhy, numWhy, T, topic, PASTEL, INK, LINE, esc, svgBox, cardSvg, axes, xTicks, yUnit, xUnit, f1, xy, mid, vat, vdir, toDeg, sinD, cosD, tanD, rotPt, angSweep, angWedge, angText, rightPath, figCard, figEdge, figLab, figLens, figDot, figVtx, table, rd, fmt, fdp, fracTex, fracStr, poly, lin, paren, sgn, pm, sum, asc, median, freqTotals, gcd, simp, coef, NAMES, sqrtTex, surdTex, simpRad, matTex, matSvg, PLOT_BOX, plotFrame, svgPlane, svgParabola, ampPeriod, svgWave } = M._internal;
+const { Q, num, mcq, mcqWhy, numWhy, T, topic, PASTEL, INK, LINE, esc, svgBox, cardSvg, axes, xTicks, yUnit, xUnit, f1, xy, mid, vat, vdir, toDeg, sinD, cosD, tanD, rotPt, angSweep, angWedge, angText, rightPath, figCard, figEdge, figLab, figLens, figDot, figVtx, table, rd, fmt, fdp, fracTex, fracStr, poly, lin, paren, sgn, pm, sum, asc, median, freqTotals, gcd, simp, coef, NAMES, sqrtTex, surdTex, simpRad, matTex, matSvg, PLOT_BOX, plotFrame, svgPlane, svgParabola, ampPeriod, svgWave, svgStraight, diffPoly, evalPoly, svgCurve, svgTangent } = M._internal;
 const sf3 = v => +(+v.toFixed(12)).toPrecision(3);
 const tol3 = v => Math.max(1e-9, Math.pow(10, Math.floor(Math.log10(Math.abs(v) || 1)) - 2) * 0.51);
 const V2 = v => matTex([[v[0]], [v[1]]]), V3 = v => matTex([[v[0]], [v[1]], [v[2]]]);
@@ -1690,17 +1690,418 @@ topic(11, "explog", "Log Lagoon", "🪷", "Exponentials and logarithms", r => {
 });
 topic(11, "diff", "Derivative Dragons", "🐲", "Differentiate polynomials", r => {
   const deg = r.int(2, 4), cs = Array.from({ length: deg + 1 }, (_, i) => i === 0 ? r.nz(-4, 5) : r.int(-6, 6)), x0 = r.int(-3, 3);
-  const terms = cs.map((c, i) => [c, deg - i]), d = terms.filter(([, p]) => p > 0).map(([c, p]) => [c * p, p - 1]), val = d.reduce((s, [c, p]) => s + c * Math.pow(x0, p), 0);
+  const terms = cs.map((c, i) => [c, deg - i]), d = diffPoly(terms), val = evalPoly(d, x0);
   if (r.chance(.5)) return num(`Find the gradient of ${T(`y = ${poly(terms)}`)} at ${T(`x = ${x0}`)}.`, val, "Differentiate (bring the power down, reduce it by 1), then substitute.", [`$\\frac{dy}{dx} = ${poly(d)}$`, `At $x = ${x0}$: $\\frac{dy}{dx} = ${val}$`], { keys: ["-"], data: { terms, x0 } });
   const right = poly(d), wrong = [poly(terms.filter(([, p]) => p > 0).map(([c, p]) => [c, p - 1])), poly(terms.map(([c, p]) => [c * p, p])), poly(d.map(([c, p]) => [c, p + 1])), poly(terms.filter(([, p]) => p > 0).map(([c, p]) => [c * (p - 1), p - 1])), poly(d.map(([c, p]) => [-c, p]))].filter(w => w !== right);
   return mcq(r, `Differentiate ${T(`y = ${poly(terms)}`)}`, T(`\\frac{dy}{dx} = ${right}`), wrong.map(w => T(`\\frac{dy}{dx} = ${w}`)), "d/dx (a xⁿ) = n a xⁿ⁻¹; constants disappear.", terms.filter(([c]) => c).map(([c, p]) => `$${poly([[c, p]])} \\to ${p ? poly([[c * p, p - 1]]) : "0"}$`), { data: { terms } });
 });
 topic(11, "stationary", "Hilltop Stationary Points", "🏔️", "Where the gradient is zero", r => {
   if (r.chance(.5)) { const a = r.nz(-3, 3), h = r.int(-6, 6), k = r.int(-9, 9), b = -2 * a * h, c = a * h * h + k;
-    return num(`Find the x-coordinate of the stationary point of ${T(`y = ${poly([[a, 2], [b, 1], [c, 0]])}`)}.`, h, "Set dy/dx = 0.", [`$\\frac{dy}{dx} = ${poly([[2 * a, 1], [b, 0]])} = 0$`, `$x = ${h}$`], { keys: ["-"], data: { terms: [[a, 2], [b, 1], [c, 0]] } }); }
+    const termsQ = [[a, 2], [b, 1], [c, 0]], dQ = diffPoly(termsQ);
+    return num(`Find the x-coordinate of the stationary point of ${T(`y = ${poly(termsQ)}`)}.`, h, "Set dy/dx = 0.", [`$\\frac{dy}{dx} = ${poly(dQ)} = 0$`, `$x = ${h}$`], { keys: ["-"], data: { terms: termsQ } }); }
   const p = r.int(-4, 4), q = r.int(p + 1, 5), B = -3 * (p + q), C = 6 * p * q; // y = 2x³ − 3(p+q)x² + 6pq·x → y' = 6(x − p)(x − q)
-  return Q({ q: `Find the x-coordinates of the stationary points of ${T(`y = ${poly([[2, 3], [B, 2], [C, 1]])}`)} (type both).`, kind: "set", val: [p, q], a: `${p}, ${q}`, keys: ["-", ","], hint: "Differentiate, set to 0, factorise.", steps: [`$\\frac{dy}{dx} = ${poly([[6, 2], [2 * B, 1], [C, 0]])} = 6(${lin(1, -p)})(${lin(1, -q)})$`, `$x = ${p}$ or $x = ${q}$`], data: { terms: [[2, 3], [B, 2], [C, 1]] } });
+  const termsC = [[2, 3], [B, 2], [C, 1]], dC = diffPoly(termsC);
+  return Q({ q: `Find the x-coordinates of the stationary points of ${T(`y = ${poly(termsC)}`)} (type both).`, kind: "set", val: [p, q], a: `${p}, ${q}`, keys: ["-", ","], hint: "Differentiate, set to 0, factorise.", steps: [`$\\frac{dy}{dx} = ${poly(dC)} = 6(${lin(1, -p)})(${lin(1, -q)})$`, `$x = ${p}$ or $x = ${q}$`], data: { terms: termsC } });
 });
+/* ---------- 🏮 Lantern Tangent Trail (MOE JC1 / H1–H2 calculus applications): gradient on a curve,
+   equation of the tangent / normal at a point, match curve+tangent pictures, increasing/decreasing,
+   contact-point checks, and kid word problems (lantern trails, hill roads, kite strings, rainbow arcs,
+   pumpkin-coach ramps, beanstalk climbs, fairy tram tracks, sports-day runs). Pictures use the shared
+   svgCurve / svgTangent kit in math-gen.js (path class=polycurve data-terms, tangent class=tline
+   data-m/c/x0, marks class=cdot). Derivative Dragons + Hilltop Stationary share diffPoly (byte-identical). */
+const TANG_CTX = [
+  { id: "lantern", title: "Lantern trail", who: "Rapunzel", spot: "the lantern trail", thing: "lantern trail", of: "the trail" },
+  { id: "hill", title: "Hill road", who: "Fairy Pip", spot: "the hill road", thing: "hill road", of: "the road" },
+  { id: "kite", title: "Kite string", who: "Jack", spot: "the kite field", thing: "kite string", of: "the kite string" },
+  { id: "rainbow", title: "Rainbow arc", who: "Sumi the star fairy", spot: "the rainbow arc", thing: "rainbow arc", of: "the arc" },
+  { id: "coach", title: "Pumpkin-coach ramp", who: "Cinderella", spot: "the palace ramp", thing: "pumpkin-coach ramp", of: "the ramp" },
+  { id: "bean", title: "Beanstalk climb", who: "Jack", spot: "the giant beanstalk", thing: "beanstalk climb", of: "the climb" },
+  { id: "tram", title: "Fairy tram track", who: "Princess Mira", spot: "the fairy tram track", thing: "tram track", of: "the track" },
+  { id: "sports", title: "Sports-day hill", who: "Little Red", spot: "sports day", thing: "sports-day hill", of: "the hill" }
+];
+const niceTang = r => {
+  if (r.chance(.72)) {
+    const a = r.pick([-2, -1, 1, 2]), b = r.int(-4, 4), c = r.int(-5, 5);
+    return { terms: [[a, 2], [b, 1], [c, 0]], deg: 2 };
+  }
+  const a = r.pick([-1, 1]), b = r.int(-2, 2), c = r.int(-3, 3), d = r.int(-3, 3);
+  return { terms: [[a, 3], [b, 2], [c, 1], [d, 0]], deg: 3 };
+};
+const tangAt = (terms, x0) => {
+  const d = diffPoly(terms), m = evalPoly(d, x0), y0 = evalPoly(terms, x0), c = y0 - m * x0;
+  return { d, m, y0, c, x0 };
+};
+const pickX0 = (r, terms, { nonzero = false } = {}) => {
+  const xs = r.shuffle([-3, -2, -1, 0, 1, 2, 3]);
+  for (const x0 of xs) {
+    const t = tangAt(terms, x0);
+    const mOk = Math.abs(t.m * 2 - Math.round(t.m * 2)) < 1e-9;
+    const yOk = Math.abs(t.y0 * 2 - Math.round(t.y0 * 2)) < 1e-9;
+    if (mOk && yOk && (!nonzero || Math.abs(t.m) > 1e-9)) return Object.assign({ terms }, t);
+  }
+  const a = r.pick([1, 2, -1, -2]), b = r.pick([-3, -2, -1, 1, 2, 3]), c = r.int(-4, 4), x0 = r.pick([-2, -1, 1, 2]);
+  const terms2 = [[a, 2], [b, 1], [c, 0]];
+  return Object.assign({ terms: terms2 }, tangAt(terms2, x0));
+};
+const eqLineTex = (m, c) => {
+  const half = { [-1.5]: "-\\frac{3}{2}", [-0.5]: "-\\frac{1}{2}", [0.5]: "\\frac{1}{2}", [1.5]: "\\frac{3}{2}" };
+  let front = half[m];
+  if (front == null) front = m === 0 ? null : m === 1 ? "" : m === -1 ? "-" : fmt(m);
+  if (m === 0) return c === 0 ? "y = 0" : `y = ${fmt(c)}`;
+  const mx = front + "x";
+  if (c === 0) return `y = ${mx}`;
+  return `y = ${mx} ${c < 0 ? "-" : "+"} ${Math.abs(c)}`;
+};
+const eqLineShow = (m, c) => T(eqLineTex(m, c));
+const tangPadWrong = (right, cand, fillers) => {
+  const wrong = []; const seen = new Set([String(right)]);
+  for (const [o, n] of cand.concat(fillers)) {
+    const s = String(o);
+    if (seen.has(s) || !n || n.length < 20) continue;
+    seen.add(s); wrong.push([s, n]);
+    if (wrong.length >= 3) break;
+  }
+  return wrong;
+};
+const tangPadSlips = (ans, slips, fillers) => {
+  const keep = []; const seen = new Set([String(ans)]);
+  for (const [v, n] of slips.concat(fillers)) {
+    const s = String(v);
+    if (seen.has(s) || !n || n.length < 20) continue;
+    if (Math.abs(+v - +ans) < 1e-9) continue;
+    seen.add(s); keep.push([v, n]);
+    if (keep.length >= 4) break;
+  }
+  return keep;
+};
+const tangPic = (z, ctx, { tangent = true, marks } = {}, o = {}) => {
+  const mks = marks || [{ n: "P", x: z.x0, y: z.y0, lab: `P(${fmt(z.x0)}, ${fmt(z.y0)})`, dy: z.y0 >= 0 ? -8 : 14 }];
+  if (tangent) return svgTangent(ctx.title, z.terms, z.x0, Object.assign({ marks: mks, noContact: true }, o));
+  return svgCurve(ctx.title, z.terms, Object.assign({ marks: mks }, o));
+};
+const TANG = {
+  grad: r => {
+    const z = pickX0(r, niceTang(r).terms), ctx = r.pick(TANG_CTX), mc = r.chance(.55);
+    const pic = tangPic(z, ctx, { tangent: false });
+    const q = `${ctx.who} follows ${T(`y = ${poly(z.terms)}`)} along ${ctx.of}. What is the gradient at ${T(`x = ${z.x0}`)}?`;
+    const hint = "Differentiate (bring the power down), then substitute the x-value.";
+    const steps = [`$\\frac{dy}{dx} = ${poly(z.d)}$`, `At $x = ${z.x0}$: $\\frac{dy}{dx} = ${fmt(z.m)}$`];
+    const right = String(fmt(z.m));
+    const rightWhy = "Right: differentiate the curve first, then put in the given x — that value of dy/dx is the steepness at the marked point.";
+    const fillers = [[fmt(z.m + 2), "Differentiate carefully, then substitute the given x-value."],
+      [fmt(z.m - 2), "Keep every sign when you bring the powers down and substitute."],
+      [fmt(3), "The gradient is dy/dx at that x, not a random nearby number."],
+      [fmt(-3), "Watch the sign of the derivative after you substitute."]];
+    if (mc) {
+      const cand = [
+        [fmt(z.y0), "That is the y-value on the curve. The gradient is dy/dx at that x."],
+        [fmt(-z.m), "Watch the sign after you differentiate and substitute."],
+        [fmt(evalPoly(z.terms, z.x0 + 1) - z.y0), "That is a rise between nearby points, not the exact derivative."],
+        [fmt(z.m === 0 ? 1 : (z.d[0] ? z.d[0][0] : 1)), "That looks at a coefficient, not the full derivative at this x."]
+      ];
+      return { k: "grad", mc: true, ctx, z, right, rightWhy, wrong: tangPadWrong(right, cand, fillers), q, hint, steps, pic,
+        data: { terms: z.terms, x0: z.x0, y0: z.y0, m: z.m, c: z.c } };
+    }
+    return { k: "grad", mc: false, ctx, z, x: z.m, q, hint, steps, pic,
+      data: { terms: z.terms, x0: z.x0, y0: z.y0, m: z.m, c: z.c },
+      slips: tangPadSlips(z.m, [
+        [z.y0, "That is the height on the curve. The gradient is the derivative at that x."],
+        [-z.m, "Check the sign after you differentiate and substitute."],
+        [z.m === 0 ? 2 : 0, z.m === 0 ? "Here the derivative really is zero at that point — the curve is flat." : "Substitute into the full derivative, not a guess of zero."],
+        [evalPoly(z.terms, z.x0 + 1) - z.y0, "Use the derivative formula, not a rough rise between nearby points."]
+      ], [[z.m + 1, "Bring each power down carefully, then put in the x-value."],
+        [z.m - 1, "Keep every term of the derivative when you substitute."]]) };
+  },
+  tangenteq: r => {
+    const z = pickX0(r, niceTang(r).terms), ctx = r.pick(TANG_CTX);
+    const pic = tangPic(z, ctx, { tangent: true });
+    const right = eqLineShow(z.m, z.c);
+    const q = `${ctx.who} marks P(${fmt(z.x0)}, ${fmt(z.y0)}) on ${T(`y = ${poly(z.terms)}`)} for ${ctx.of}. What is the equation of the tangent at P?`;
+    const hint = "Find m = dy/dx at x₀, then use y − y₀ = m(x − x₀), or rearrange to y = mx + c.";
+    const steps = [
+      `$\\frac{dy}{dx} = ${poly(z.d)}$; at $x = ${z.x0}$: $m = ${fmt(z.m)}$`,
+      `$y - ${paren(z.y0)} = ${fmt(z.m)}(x - ${paren(z.x0)})$`,
+      `So $${eqLineTex(z.m, z.c)}$`
+    ];
+    const rightWhy = "Right: the tangent shares the curve's gradient at P and passes through P, so its equation is the straight line with that steepness through the marked point.";
+    const alts = [
+      eqLineShow(-z.m, z.c),
+      eqLineShow(z.m, z.y0),
+      eqLineShow(z.m, z.c === 0 ? 2 : -z.c),
+      eqLineShow(z.m === 0 ? 1 : 0, z.c),
+      eqLineShow(z.m + (z.m >= 0 ? 1 : -1), z.c),
+      eqLineShow(z.m, z.c + 2),
+      T(`y - ${paren(z.y0)} = ${fmt(-z.m)}(x - ${paren(z.x0)})`)
+    ];
+    const notes = [
+      "The tangent keeps the same sign of dy/dx at P — do not flip the gradient.",
+      "The constant in y = mx + c is y₀ − m x₀, not the y-coordinate alone.",
+      "Keep the intercept that makes the line pass through P.",
+      "Use the derivative at P for the gradient — a horizontal guess only works when dy/dx is zero.",
+      "Differentiate carefully; the steepness at P is exactly dy/dx there.",
+      "Rearrange y − y₀ = m(x − x₀) carefully to read off the constant.",
+      "The tangent uses +m, the same gradient as the curve at P — not the opposite."
+    ];
+    const wrong = []; const seen = new Set([right]);
+    alts.forEach((o, i) => { if (!seen.has(o) && notes[i] && notes[i].length >= 20) { seen.add(o); wrong.push([o, notes[i]]); } });
+    return { k: "tangenteq", mc: true, ctx, z, right, rightWhy, wrong: wrong.slice(0, 3), q, hint, steps, pic,
+      data: { terms: z.terms, x0: z.x0, y0: z.y0, m: z.m, c: z.c } };
+  },
+  normaleq: r => {
+    // prefer neat tangent gradients so −1/m stays a clean half/integer
+    let z = null;
+    for (let t = 0; t < 24 && !z; t++) {
+      const cand = pickX0(r, niceTang(r).terms, { nonzero: true });
+      const niceM = [-3, -2, -1.5, -1, -0.5, 0.5, 1, 1.5, 2, 3].some(v => Math.abs(cand.m - v) < 1e-9);
+      if (niceM) z = cand;
+    }
+    if (!z) { const terms = [[1, 2], [0, 1], [1, 0]]; z = Object.assign({ terms }, tangAt(terms, 1)); } // m=2 at x=1
+    const ctx = r.pick(TANG_CTX);
+    const nm = -1 / z.m;
+    const snap = v => { const r2 = Math.round(v * 2) / 2; return Math.abs(v - r2) < 1e-9 ? r2 : (Math.abs(v * 3 - Math.round(v * 3)) < 1e-9 ? Math.round(v * 3) / 3 : rd(v, 4)); };
+    const nGrad = snap(nm);
+    const nC = z.y0 - nGrad * z.x0;
+    const nCsnap = snap(nC);
+    const nc = Math.abs(nCsnap - nC) < 1e-6 ? nCsnap : rd(nC, 4);
+    const pic = tangPic(z, ctx, { tangent: true });
+    const right = eqLineShow(nGrad, nc);
+    const q = `A fairy path meets ${T(`y = ${poly(z.terms)}`)} at P(${fmt(z.x0)}, ${fmt(z.y0)}) at a right angle (the normal). What is the equation of the normal?`;
+    const hint = "Normal gradient = −1/m, where m is the tangent gradient at P. Then use the point–slope form through P.";
+    const steps = [
+      `$m_{tan} = ${fmt(z.m)}$ at $x = ${z.x0}$`,
+      `$m_{norm} = -\\frac{1}{${fmt(z.m)}} = ${fmt(nGrad)}$`,
+      `$y - ${paren(z.y0)} = ${fmt(nGrad)}(x - ${paren(z.x0)})$ → $${eqLineTex(nGrad, nc)}$`
+    ];
+    const rightWhy = "Right: the normal is perpendicular to the tangent, so its gradient is the negative reciprocal of dy/dx at P, and the line still goes through P.";
+    const alts = [
+      eqLineShow(z.m, z.c),
+      eqLineShow(-z.m, z.c),
+      eqLineShow(1 / z.m, z.y0 - (1 / z.m) * z.x0),
+      eqLineShow(nGrad, z.c),
+      eqLineShow(nGrad, nc === 0 ? 2 : -nc),
+      eqLineShow(0, z.y0)
+    ];
+    const notes = [
+      "That is the tangent. The normal uses the negative reciprocal of the tangent gradient.",
+      "Flipping the sign alone is not enough unless |m| = 1. Use −1 ÷ m.",
+      "You forgot the minus: the reciprocal must also change sign for a right angle.",
+      "The normal keeps gradient −1/m, but its intercept is set by passing through P.",
+      "Keep the constant that makes the normal pass through the contact point P.",
+      "A horizontal normal only appears when the tangent is vertical — use −1 ÷ m here."
+    ];
+    const wrong = []; const seen = new Set([right]);
+    alts.forEach((o, i) => { const s = String(o); if (!seen.has(s) && notes[i] && notes[i].length >= 20) { seen.add(s); wrong.push([s, notes[i]]); } });
+    return { k: "normaleq", mc: true, ctx, z, right, rightWhy, wrong: wrong.slice(0, 3), q, hint, steps, pic,
+      data: { terms: z.terms, x0: z.x0, y0: z.y0, m: z.m, c: z.c, nm: nGrad, nc } };
+  },
+  match: r => {
+    const z = pickX0(r, niceTang(r).terms), ctx = r.pick(TANG_CTX);
+    const key = g => `${JSON.stringify(g.terms)}|${g.x0}`;
+    const mk = (terms, x0) => Object.assign({ terms }, tangAt(terms, x0));
+    const graphs = [z];
+    const seen = new Set([key(z)]);
+    const a0 = z.terms[0][0];
+    const candidates = [
+      mk(z.terms, z.x0 === 0 ? 1 : -z.x0),
+      mk(z.terms.map(([c, p]) => [-c, p]), z.x0),
+      mk(z.terms.length <= 3
+        ? [[a0 === 1 ? 2 : (a0 === -1 ? -2 : Math.sign(a0) || 1), 2], [z.terms[1][0], 1], [z.terms[2][0], 0]]
+        : [[a0, 3], [0, 2], [z.terms[2] ? z.terms[2][0] : 1, 1], [z.terms[3] ? z.terms[3][0] : 0, 0]], z.x0),
+      mk([[1, 2], [0, 1], [0, 0]], 1),
+      mk([[-1, 2], [0, 1], [4, 0]], 0),
+      mk([[1, 3], [0, 2], [-3, 1], [0, 0]], 1),
+      mk([[2, 2], [-4, 1], [1, 0]], 2)
+    ];
+    for (const g of r.shuffle(candidates)) {
+      if (!seen.has(key(g)) && Number.isFinite(g.m) && graphs.length < 4) { seen.add(key(g)); graphs.push(g); }
+    }
+    while (graphs.length < 4) {
+      const g = pickX0(r, niceTang(r).terms);
+      if (!seen.has(key(g))) { seen.add(key(g)); graphs.push(g); }
+    }
+    const ids = ["g1", "g2", "g3", "g4"], order = r.shuffle([0, 1, 2, 3]), rightId = ids[order.indexOf(0)];
+    const optPics = {};
+    order.forEach((gi, i) => {
+      const g = graphs[gi];
+      optPics[ids[i]] = svgTangent(" ", g.terms, g.x0, { small: true, marks: [{ n: "P", x: g.x0, y: g.y0, lab: "" }], noContact: true });
+    });
+    const wrong = ids.filter(id => id !== rightId).map(id => {
+      const g = graphs[order[ids.indexOf(id)]];
+      return [id, `That picture touches at (${fmt(g.x0)}, ${fmt(g.y0)}) with steepness ${fmt(g.m)} on $y = ${poly(g.terms)}$. Match the given curve and P.`];
+    });
+    return { k: "match", mc: true, ctx, z, right: rightId,
+      rightWhy: "Right: this picture shows the given curve with its tangent touching at the same point P and with the matching steepness.",
+      wrong, q: `Which picture shows ${T(`y = ${poly(z.terms)}`)} with its tangent at P(${fmt(z.x0)}, ${fmt(z.y0)})?`,
+      hint: "Match the shape of the curve and where the dashed tangent touches it.",
+      steps: [`Curve $y = ${poly(z.terms)}$`, `At $x = ${z.x0}$: $m = ${fmt(z.m)}$, point $(${fmt(z.x0)},\ ${fmt(z.y0)})$`, "Pick the picture where the dashed line touches there."],
+      pic: "", optPics, data: { terms: z.terms, x0: z.x0, y0: z.y0, m: z.m, c: z.c, order: order.map(i => key(graphs[i])) } };
+  },
+  incdec: r => {
+    const z0 = pickX0(r, niceTang(r).terms), ctx = r.pick(TANG_CTX);
+    const ask = r.pick(["sign", "sign", "find"]);
+    if (ask === "sign") {
+      const z = z0;
+      const pic = tangPic(z, ctx, { tangent: false });
+      const increasing = z.m > 0, flat = Math.abs(z.m) < 1e-9;
+      const right = flat ? "neither — the gradient is zero" : increasing ? "increasing" : "decreasing";
+      const q = `Along ${ctx.of}, ${T(`y = ${poly(z.terms)}`)}. Is the curve increasing or decreasing at ${T(`x = ${z.x0}`)}?`;
+      const hint = "Look at the sign of dy/dx: positive → increasing, negative → decreasing, zero → flat (stationary).";
+      const steps = [`$\\frac{dy}{dx} = ${poly(z.d)}$`, `At $x = ${z.x0}$: $\\frac{dy}{dx} = ${fmt(z.m)}$`, flat ? "Gradient zero → neither increasing nor decreasing here." : `So the curve is ${right} there.`];
+      const rightWhy = flat
+        ? "Right: dy/dx is zero at that x, so the curve is briefly flat — not climbing and not falling there."
+        : increasing
+          ? "Right: dy/dx is positive at that x, so as x grows the curve is climbing."
+          : "Right: dy/dx is negative at that x, so as x grows the curve is falling.";
+      const cand = [
+        [increasing && !flat ? "decreasing" : "increasing", flat ? "When the gradient is zero the curve is flat, not climbing." : `Check the sign of dy/dx = ${fmt(z.m)} at that x.`],
+        [flat ? "increasing" : "neither — the gradient is zero", flat ? "Gradient zero means flat, so pick the neither option." : "The gradient is not zero here — read the sign of dy/dx."],
+        ["cannot tell without a sketch", "You can tell from the sign of dy/dx alone — no sketch needed."]
+      ];
+      const fillers = [["decreasing", "Use the sign of the derivative at the given x."],
+        ["increasing", "Positive dy/dx means increasing; negative means decreasing."]];
+      return { k: "incdec", mc: true, ctx, z, right, rightWhy, wrong: tangPadWrong(right, cand, fillers), q, hint, steps, pic,
+        data: { terms: z.terms, x0: z.x0, y0: z.y0, m: z.m, c: z.c, ask: "sign" } };
+    }
+    let terms = z0.terms, d = diffPoly(terms);
+    if (terms.length > 3 || terms[0][0] < 0) {
+      const a = r.pick([1, 2]), b = r.int(-3, 3), c = r.int(-4, 4);
+      terms = [[a, 2], [b, 1], [c, 0]]; d = diffPoly(terms);
+    }
+    const candidates = [-2, -1, 0, 1, 2, 3, 4].filter(x => evalPoly(d, x) > 1e-9);
+    const xPos = candidates.length ? r.pick(candidates) : 3;
+    const zz = Object.assign({ terms }, tangAt(terms, xPos));
+    const pic = tangPic(zz, ctx, { tangent: false });
+    const right = String(fmt(xPos));
+    const q = `On ${ctx.of}, ${T(`y = ${poly(terms)}`)}. Which x-value has a positive gradient?`;
+    const hint = "Compute dy/dx, then test which listed x makes it positive.";
+    const steps = [`$\\frac{dy}{dx} = ${poly(d)}$`, `At $x = ${xPos}$: $\\frac{dy}{dx} = ${fmt(evalPoly(d, xPos))} > 0$`];
+    const rightWhy = "Right: substitute that x into dy/dx and you get a positive value, so the curve is climbing there.";
+    const negXs = [-3, -2, -1, 0, 1, 2, 3].filter(x => evalPoly(d, x) <= 0 && x !== xPos);
+    const cand = negXs.slice(0, 3).map(x => [String(fmt(x)), `At x = ${fmt(x)}, dy/dx = ${fmt(evalPoly(d, x))}, which is not positive.`]);
+    const fillers = [["-4", "Test the derivative at that x — you need dy/dx > 0."],
+      ["5", "Check the sign of dy/dx carefully for each option."]];
+    return { k: "incdec", mc: true, ctx, z: zz, right, rightWhy, wrong: tangPadWrong(right, cand, fillers), q, hint, steps, pic,
+      data: { terms, x0: xPos, y0: zz.y0, m: zz.m, c: zz.c, ask: "find" } };
+  },
+  point: r => {
+    const z = pickX0(r, niceTang(r).terms), ctx = r.pick(TANG_CTX);
+    const ask = r.pick(["x", "y", "on"]);
+    const pic = tangPic(z, ctx, { tangent: true });
+    if (ask === "y") {
+      const ans = z.y0;
+      return { k: "point", mc: false, ctx, z, x: ans,
+        q: `The tangent to ${T(`y = ${poly(z.terms)}`)} at x = ${fmt(z.x0)} is ${eqLineShow(z.m, z.c)}. What is the y-coordinate of the contact point?`,
+        hint: "The contact point lies on the curve: substitute x into y = poly.",
+        steps: [`$y = ${poly(z.terms)}$ at $x = ${z.x0}$`, `$y = ${fmt(ans)}$`],
+        pic, data: { terms: z.terms, x0: z.x0, y0: z.y0, m: z.m, c: z.c, ask: "y" },
+        slips: tangPadSlips(ans, [
+          [z.c, "That is the tangent's y-intercept, not necessarily the contact y."],
+          [z.m, "That is the gradient. The contact y is the curve's value at x₀."],
+          [ans === 0 ? 1 : -ans, "Substitute carefully into the curve (watch the signs)."],
+          [z.x0, "That is the x-coordinate of the contact point, not y."]
+        ], [[ans + 2, "Put x₀ into the curve equation to get the contact height."],
+          [ans - 2, "Keep every term when you evaluate the polynomial at x₀."]]) };
+    }
+    if (ask === "x") {
+      const ans = z.x0;
+      return { k: "point", mc: false, ctx, z, x: ans,
+        q: `A tangent to ${T(`y = ${poly(z.terms)}`)} has equation ${eqLineShow(z.m, z.c)} and touches the curve at y = ${fmt(z.y0)}. What is the contact x?`,
+        hint: "The contact point is on both the curve and the tangent. Try the x that makes the curve equal y₀ and matches the gradient.",
+        steps: [`Contact height $y = ${fmt(z.y0)}$`, `With tangent gradient $m = ${fmt(z.m)}$, the touch is at $x = ${fmt(ans)}$`],
+        pic, data: { terms: z.terms, x0: z.x0, y0: z.y0, m: z.m, c: z.c, ask: "x" },
+        slips: tangPadSlips(ans, [
+          [z.y0, "That is the contact y, not x."],
+          [z.c, "That is the tangent intercept, not the contact x."],
+          [ans === 0 ? 1 : -ans, "Check which x on the curve has this y and this tangent gradient."],
+          [z.m, "That is the gradient, not the contact x."]
+        ], [[ans + 1, "Find the x where the curve meets this tangent."],
+          [ans - 1, "Match both the height and the gradient at the contact."]]) };
+    }
+    const on = r.chance(.55);
+    let px, py;
+    if (on) {
+      const xs = [-3, -2, -1, 0, 1, 2, 3].filter(x => x !== z.x0);
+      px = r.pick(xs); py = z.m * px + z.c;
+      if (Math.abs(py * 2 - Math.round(py * 2)) > 1e-9) { px = z.x0 + (z.x0 >= 0 ? -1 : 1); py = z.m * px + z.c; }
+    } else {
+      px = z.x0 + r.pick([-2, -1, 1, 2]); py = z.y0 + r.pick([-3, -2, 2, 3]);
+      if (Math.abs(py - (z.m * px + z.c)) < 1e-9) py += 1;
+    }
+    const right = on ? "yes" : "no";
+    const q = `The tangent at P(${fmt(z.x0)}, ${fmt(z.y0)}) to ${T(`y = ${poly(z.terms)}`)} is ${eqLineShow(z.m, z.c)}. Does the point (${fmt(px)}, ${fmt(py)}) lie on that tangent?`;
+    const hint = "Substitute the point into the tangent equation (or check whether y equals mx + c).";
+    const steps = [`Tangent: $${eqLineTex(z.m, z.c)}$`, `At $x = ${fmt(px)}$: $y = ${fmt(z.m)}(${fmt(px)}) ${z.c < 0 ? "-" : "+"} ${Math.abs(z.c)} = ${fmt(z.m * px + z.c)}$`, on ? `Matches ${fmt(py)} → yes, it lies on the tangent.` : `That is not ${fmt(py)} → no.`];
+    const rightWhy = on
+      ? "Right: substituting that x into the tangent equation yields exactly that y, so the point sits on the tangent line."
+      : "Right: substituting that x into the tangent equation yields a different y, so the point misses the tangent line.";
+    const wrong = [
+      [on ? "no" : "yes", on ? "Check again: substitute x into y = mx + c — it does match." : "Substitute carefully into the tangent; the y values do not match."],
+      ["cannot tell", "You can tell by substituting the point into the tangent equation."],
+      ["only if it is also on the curve", "The question asks about the tangent line, not about a second intersection with the curve."]
+    ];
+    return { k: "point", mc: true, ctx, z, right, rightWhy, wrong, q, hint, steps, pic,
+      data: { terms: z.terms, x0: z.x0, y0: z.y0, m: z.m, c: z.c, ask: "on", px, py, on } };
+  },
+  story: r => {
+    const kind = r.pick(["grad", "grad", "tang", "rate"]);
+    const ctx = r.pick(TANG_CTX);
+    const z = pickX0(r, niceTang(r).terms, { nonzero: kind === "tang" });
+    const pic = tangPic(z, ctx, { tangent: kind === "tang" });
+    if (kind === "grad" || kind === "rate") {
+      const who = ctx.who.split(" ")[0];
+      const q = kind === "rate"
+        ? `On ${ctx.of}, height follows ${T(`y = ${poly(z.terms)}`)} metres with x in steps. How fast is the height changing (gradient) at step ${fmt(z.x0)}?`
+        : `${ctx.who} walks ${ctx.of} shaped like ${T(`y = ${poly(z.terms)}`)}. What is the steepness (gradient) at x = ${fmt(z.x0)}?`;
+      return { k: "story", mc: false, ctx, z, x: z.m, q,
+        hint: "Differentiate the height equation, then substitute the given x.",
+        steps: [`$\\frac{dy}{dx} = ${poly(z.d)}$`, `At $x = ${z.x0}$: gradient $= ${fmt(z.m)}$`],
+        pic, data: { terms: z.terms, x0: z.x0, y0: z.y0, m: z.m, c: z.c, word: kind },
+        slips: tangPadSlips(z.m, [
+          [z.y0, `That is the height at that step (${who}'s height), not how fast it is changing.`],
+          [-z.m, "Watch the sign of the derivative after you substitute."],
+          [z.x0, "That is the step number, not the gradient."],
+          [z.c, "That mixes in a tangent intercept. Use dy/dx at the given x."]
+        ], [[z.m + 1, "Bring each power down carefully, then substitute."],
+          [z.m - 1, "Keep every term of the derivative when you substitute."]]) };
+    }
+    const right = eqLineShow(z.m, z.c);
+    const q = `${ctx.who} wants a straight fairy-guide rail that just touches ${ctx.of} ${T(`y = ${poly(z.terms)}`)} at x = ${fmt(z.x0)}. Which equation is that tangent rail?`;
+    const hint = "Find the gradient at x₀, then write the line through the contact point.";
+    const steps = [
+      `$m = ${fmt(z.m)}$ at $x = ${z.x0}$ (contact $y = ${fmt(z.y0)}$)`,
+      `Rail: $${eqLineTex(z.m, z.c)}$`
+    ];
+    const rightWhy = "Right: the guide rail must match the steepness of the curve at the touch point and pass through that point.";
+    const alts = [
+      eqLineShow(-z.m, z.c),
+      eqLineShow(z.m, z.y0),
+      eqLineShow(z.m, z.c === 0 ? 1 : -z.c),
+      eqLineShow(0, z.y0),
+      eqLineShow(z.m + 1, z.c)
+    ];
+    const notes = [
+      "Keep the sign of dy/dx for the rail's gradient.",
+      "The constant is y₀ − m x₀, not the contact height alone.",
+      "Rearrange the point–slope form carefully to get the intercept.",
+      "A flat rail only fits when the curve itself is flat at that x.",
+      "Use the exact derivative at the contact — not one step steeper."
+    ];
+    const wrong = []; const seen = new Set([right]);
+    alts.forEach((o, i) => { if (!seen.has(o)) { seen.add(o); wrong.push([o, notes[i]]); } });
+    return { k: "story", mc: true, ctx, z, right, rightWhy, wrong: wrong.slice(0, 3), q, hint, steps, pic,
+      data: { terms: z.terms, x0: z.x0, y0: z.y0, m: z.m, c: z.c, word: "tang" } };
+  }
+};
+const TANG_KINDS = ["grad", "grad", "tangenteq", "tangenteq", "normaleq", "match", "match", "incdec", "incdec", "point", "point", "story", "story"];
+const tangQ = (r, kind) => {
+  const z = TANG[kind](r), ctx = z.ctx, uid = `tangent|${z.k}|${JSON.stringify(z.data)}`;
+  const extra = { uid, pic: z.pic || "", data: Object.assign({ tangent: z.k, ctx: ctx.id }, z.data) };
+  if (z.optPics) extra.optPics = z.optPics;
+  if (z.mc) return mcqWhy(r, z.q, z.right, z.rightWhy, z.wrong, z.hint, z.steps, extra);
+  return numWhy(z.q, z.x, z.hint, z.steps, z.slips, Object.assign({ keys: ["-", ".", "/"] }, extra));
+};
+topic(11, "tangent", "Lantern Tangent Trail", "🏮", "Tangents, normals and gradients on curves", r => tangQ(r, r.pick(TANG_KINDS)));
+
 topic(11, "ap", "Arithmetic Avenue", "🪜", "Arithmetic progressions", r => {
   const a = r.int(-10, 20), d = r.nz(-5, 8), n = r.int(6, 30);
   if (r.chance(.5)) return num(`An arithmetic sequence starts ${a}, ${a + d}, ${a + 2 * d}, … Find the ${n}th term.`, a + (n - 1) * d, "uₙ = a + (n − 1)d", [`$a = ${a},\\ d = ${d}$`, `$u_{${n}} = ${a} + ${n - 1}(${d}) = ${a + (n - 1) * d}$`], { keys: ["-"], data: { a, d, n, f: "term" } });
