@@ -36,12 +36,13 @@
 ## Phase 6: Polish
 - [x] T050 README table + notes; Grade Guardian texts; tests nets/graphs/clock/… updated for new grades
 - [x] T051 `tools/test/maths-levels.js`; run every suite (cloud, lightart, parentgate, pwa one at a time); 320/360/375 + landscape
-- [ ] T052 build_sw.py, commit on branch, merge to main, push, live 200; REVIEW row → ✅ with commit
+- [x] T052 build_sw.py, commit on branch, merge to main, push, live 200; REVIEW row → ✅ with commit
 
 ## Checkpoint (2026-11-04 15:39 SGT)
 - T001–T050 done in the source tree; cleanup commit 2f57195 on `brief/t1-maths-levels` (deploy repo).
 - T051: full suite run 1: 89/91 pass; doubletap.js and phonics.js timed out under load (re-run singly next).
-- Next: re-run the 2 flakes, sync to deploy, build_sw.py, feature commit, merge, push, live 200, REVIEW row ✅.
+- doubletap.js 54/54 and phonics.js 48/48 pass when re-run singly → 91/91 suites pass.
+- Feature commit 5e73379, merged to main, pushed; REVIEW row BRIEF-T1 ✅.
 
 ## Dependencies
 T004 blocks every code task. T010–T013 before T020+. T040–T042 parallel. T051 after all code. T052 last.
