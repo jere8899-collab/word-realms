@@ -328,6 +328,7 @@ function settings() {
     <label class="set-row"><span>🔊 Sound effects</span><input type="checkbox" id="snd" ${s.settings.sound ? "checked" : ""}></label>
     <label class="set-row"><span>🎙️ Recorded storyteller voice <small class="muted" style="display:block;font-size:.72rem">off = this device's own voice</small></span><input type="checkbox" id="recV" ${s.settings.voice !== "device" ? "checked" : ""}></label>
     <label class="set-row"><span>🐾 Cute pet voice</span><input type="checkbox" id="petV" ${s.settings.petVoice !== false ? "checked" : ""}></label>
+    <label class="set-row"><span>🎲 Maths Daily Mix <small class="muted" style="display:block;font-size:.72rem">5 mixed review questions a day</small></span><input type="checkbox" id="dMix" ${s.settings.dailyMix !== false ? "checked" : ""}></label>
     <div class="set-row" style="cursor:default"><span>🗣️ Listening speed</span><input type="range" class="slider" id="rt" min="0.5" max="1.3" step="0.1" value="${s.settings.rate}" aria-label="Listening speed"></div>
     ${WR.offline && navigator.serviceWorker ? `<div class="set-row" style="cursor:default"><span>📲 Offline play <small class="muted" id="offState" style="display:block;font-size:.72rem">pictures load as you play</small></span><button class="btn small ghost" id="offBtn">Download</button></div>` : ""}
     <div class="row" style="justify-content:center;margin-top:16px"><button class="btn ghost small grownups-btn" id="guBtn">👪 Grown-ups</button><button class="btn ghost small" id="test">🔈 Test voice</button><button class="btn ghost small" id="testPet">🐾 Hear my pet</button><button class="btn ghost small" id="plRe">🪞 Placement quiz</button>${WR.Cloud ? '<button class="btn ghost small" id="ccSet">🏰 Cloud save</button>' : ""}<button class="btn small" id="cls">Done</button></div>`, (bg, close) => {
@@ -338,6 +339,7 @@ function settings() {
     bg.querySelector("#testPet").onclick = () => WR.say("Hi! I'm so happy to see you!", { character: "pet_" + ((s.pet && s.pet.species) || "") });   // preview, even when chatter is off
     bg.querySelector("#recV").onchange = e => { s.settings.voice = e.target.checked ? "recorded" : "device"; WR.save(); };
     bg.querySelector("#petV").onchange = e => { s.settings.petVoice = e.target.checked; WR.save(); };
+    bg.querySelector("#dMix").onchange = e => { s.settings.dailyMix = e.target.checked; WR.save(); };
     bg.querySelector("#cls").onclick = close;
     // 📲 R17: everything for offline play, only when a grown-up/child asks (the first visit stays light)
     const ob = bg.querySelector("#offBtn"), os = bg.querySelector("#offState");

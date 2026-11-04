@@ -95,6 +95,7 @@ WR.screens.math = arg => {
     <div class="row" style="gap:6px"><span class="pill">👑 ${MW.totalCrowns()} crowns</span><span class="pill" style="background:var(--mint)">🗼 ${MW.mastered()}/132 facts mastered</span><span class="pill" style="background:var(--butter)">✨ Maths level ${MW.level()}</span></div></div></div>
     <div class="row" style="margin:12px 0;justify-content:space-between"><b class="title" style="font-size:1.1rem">Choose your grade</b><span class="row" style="gap:6px">${WR.Learn ? WR.Learn.bagPill("mathBag") : ""}<button class="btn ghost small" id="mPlace">🔮 Find my grade</button></span></div>
     <div class="gchips">${chips}</div>
+    ${MR() ? MR().cardHTML() : ""}
     ${!g ? `<div class="card center start-grade"><h2>Where should your maths journey begin? ✨</h2><p class="muted" style="font-weight:700">Tap your grade above, or let Sumi find it with a quick 3-minute quiz.</p><button class="btn mint" id="mPlace2">🔮 Ask Sumi to find my grade</button><details class="grownup-note"><summary>👪 For grown-ups</summary>Singapore: P1–P6 = Grades 1–6, Sec 1–4 = Grades 7–10, JC 1–2 = Grades 11–12.</details></div>` : ""}
     <div class="card row tower-card" id="toDojo">${tower()}<div style="flex:1"><b class="title" style="font-size:1.25rem">🗼 Times-Table Tower</b><div class="muted" style="font-weight:700;font-size:.9rem">Multiplication & division dojo: tables 2–12, 60-second sprints, a mastery grid and long multiplication & division floors.</div>
       <div class="row" style="margin-top:6px;gap:6px"><span class="pill">⚡ best sprint ${m.dojo.best || 0}</span>${MW.dueFacts() ? `<span class="pill" style="background:#FFE3EF">🔁 ${MW.dueFacts()} facts to review</span>` : ""}</div></div><span class="btn small">Climb →</span></div>
@@ -106,6 +107,7 @@ WR.screens.math = arg => {
   WR.$("#toDojo").onclick = () => WR.go("dojo");
   const ck = WR.$("#toClock"); if (ck) ck.onclick = () => WR.go("clock");
   const mx = WR.$("#mMixed"); if (mx) mx.onclick = () => MW.startLesson({ grade: g });
+  const dm = WR.$("#mixBtn"); if (dm) dm.onclick = () => MR().start();   // 🎲 Daily Mix (js/math-review.js)
   WR.$("#mPlace").onclick = () => MW.placement();
   const p2 = WR.$("#mPlace2"); if (p2) p2.onclick = () => MW.placement();
   WR.navActive("math");
@@ -152,12 +154,19 @@ const bindPad = MW.bindPad = (onSubmit, onType) => {
 
 /* ---------- topic lessons ---------- */
 let L = null;
+const MR = () => WR.MathReview;   // 🔁 js/math-review.js (loads later): Daily Mix, the maths review schedule, maths plants
+
+const LESSON = 8;   // questions in a maths round
+// n questions with different question texts from make(seed), on a fresh seed run
+const distinct = (n, make) => { const out = [], seen = new Set(); let s = MG.seed();
+  while (out.length < n) { s = (Math.imul(s, 1103515245) + 12345) >>> 0; const q = make(s); if (!seen.has(q.q)) { seen.add(q.q); out.push(q); } } return out; };
+// the questions of a round: given items, a Tower challenge, one topic, or a grade's topics mixed (each topic at most twice)
 MW.buildItems = o => {
   if (o.items) return o.items;
-  if (o.challenge) { const out = [], seen = new Set(); let s = MG.seed(); while (out.length < 8) { s = (Math.imul(s, 1103515245) + 12345) >>> 0; const q = MG.makeChallenge(o.challenge, s); if (!seen.has(q.q)) { seen.add(q.q); out.push(q); } } return out; }
-  if (o.topic) return MG.batch(o.topic, 8);
-  const ts = MG.gradeTopics(o.grade), pick = WR.shuffle(ts.concat(WR.shuffle(ts))).slice(0, 8);
-  return pick.map(t => MG.batch(t.id, 1)[0]);
+  if (o.challenge) return distinct(LESSON, s => MG.makeChallenge(o.challenge, s));
+  if (o.topic) return MG.batch(o.topic, LESSON);
+  const ts = MG.gradeTopics(o.grade);
+  return WR.shuffle(ts.concat(WR.shuffle(ts))).slice(0, LESSON).map(t => MG.batch(t.id, 1)[0]);
 };
 MW.startLesson = o => {
   MW.loadKatex();
@@ -280,10 +289,11 @@ function submit(val, btn) {
   const q = L.items[L.i], res = MG.check(q, val);
   if (res.empty) return WR.toast("Type your answer first ✏️", 1800, { now: true });
   if (res.bad) return WR.toast(BAD_INPUT[q.kind] || BAD_INPUT.num, 2400, { now: true });
-  const s = WR.state, m = MW.st(); L.tries++;
+  const s = WR.state, m = MW.st(), qk = q.topic || L.key; L.tries++;
   if (res.ok) {
-    L.done = true; const pts = L.tries === 1 ? 1 : 0.5; L.pts += pts; L.res[L.i] = pts; L.correct++; WR.countAnswer(true, "m:" + (q.topic || L.key)); m.correct = (m.correct || 0) + 1; m.answered = (m.answered || 0) + 1;
-    if (L.tries === 1) { L.combo++; L.maxCombo = Math.max(L.maxCombo, L.combo); let gain = 1; if (L.combo % 3 === 0) gain++; L.starsEarned += WR.awardStars("m", q.uid || (q.topic || L.key) + "|" + q.q + "|" + q.a, gain, { tally: L, quiet: true }); if (L.combo === 5) WR.questEvent("combo5"); } else L.combo = 0;
+    L.done = true; const pts = L.tries === 1 ? 1 : 0.5; L.pts += pts; L.res[L.i] = pts; L.correct++; WR.countAnswer(true, "m:" + qk); m.correct = (m.correct || 0) + 1; m.answered = (m.answered || 0) + 1;
+    if (L.tries === 1) { L.combo++; L.maxCombo = Math.max(L.maxCombo, L.combo); let gain = 1; if (L.combo % 3 === 0) gain++; L.starsEarned += WR.awardStars("m", q.uid || qk + "|" + q.q + "|" + q.a, gain, { tally: L, quiet: true }); if (L.combo === 5) WR.questEvent("combo5"); } else L.combo = 0;
+    if (MR()) L.starsEarned += MR().onAnswer(q, L.tries === 1 ? "first" : "second", L);
     WR.questEvent("correct10"); WR.sfx("good"); if (btn) btn.classList.add("right");
     if (L.vizUsed) { m.modelSolved = (m.modelSolved || 0) + 1; WR.questEvent("model1"); }
     if (L.vizOpen) showViz(true);
@@ -297,7 +307,8 @@ function submit(val, btn) {
     showMsg("bad", `💭 Not quite — have another go!${whyLine(MG.whyNote(q, val), "🤔")}<div style="margin-top:4px">💡 ${MW.html(q.hint)}</div>${scrollLink(q)}${L.viz ? `<div class="muted" style="margin-top:2px;font-weight:800">${look().help}</div>` : ""}`);
     if (L.viz && !L.vizOpen) showViz();
   } else {
-    L.done = true; L.res[L.i] = 0; WR.countAnswer(false, "m:" + (q.topic || L.key)); m.answered = (m.answered || 0) + 1; WR.sfx("bad");
+    L.done = true; L.res[L.i] = 0; WR.countAnswer(false, "m:" + qk); m.answered = (m.answered || 0) + 1; WR.sfx("bad");
+    if (MR()) MR().onAnswer(q, "miss", L);   // 🌷 planted in the Mistake Garden (a fresh question on the topic comes back)
     if (btn) btn.classList.add("wrong");
     MW.lockOpts(q, true);
     MW.lockInput();
@@ -316,7 +327,8 @@ function finish() {
   if (!L) return;
   const o = L, n = o.items.length, score = o.pts / n, crowns = WR.crowns(score), m = MW.st();
   const before = MW.crownsFor(o.key), bonus = crowns * 2, gd = o.guardian, won = !!gd && o.pts >= gd.need; o.starsEarned += WR.awardStars("math", gd ? "guardian/" + (gd.id || gd.name) : o.key, bonus, { kind: "round", tally: o });
-  if (gd) { m.lessons = (m.lessons || 0) + 1; WR.state.lessonsDone++; } else MW.record(o.key, score);   // a guardian fight is not a topic, so it never changes topic crowns
+  if (gd || o.kind) { m.lessons = (m.lessons || 0) + 1; WR.state.lessonsDone++; } else MW.record(o.key, score);   // a guardian fight, a Daily Mix or a garden round is not a topic, so it never changes topic crowns
+  if (MR()) o.starsEarned += MR().onFinish(o, score);   // 🔁 a finished topic joins the review schedule
   m.xp = (m.xp || 0) + o.correct * 5 + 10;
   WR.questEvent("math1"); if (crowns === 3) WR.questEvent("perfect1");
   const streak = WR.activityDone(), lv = WR.petGainXP(o.correct * 6 + 10); WR.save(); WR.renderTop();
@@ -327,12 +339,12 @@ function finish() {
   WR.view(`<div class="card result fade-in">${art}<h1>${head}</h1>${WR.starNote()}<div class="big">${crownRow(crowns)}</div>
     <h2>${o.correct} / ${n} solved${o.pts < o.correct ? ` <small class="muted">(${o.items.filter((_, k) => o.res[k] === 0.5).length} on the second try)</small>` : ""}</h2>
     <p class="muted" style="font-weight:800">⭐ ${o.starsEarned} stars earned · best combo ${o.maxCombo} · ✨ +${o.correct * 5 + 10} maths XP${streak ? ` · 🔥 streak ${WR.state.streak.count}` : ""}${crowns > before && !gd ? " · 🎉 new best!" : ""}</p>${gd && !won ? `<p class="muted" style="font-weight:800">You needed ${gd.need} sparkle hits and got ${o.pts}. Practise a few Grade ${esc(gd.band)} topics and try again! 🫶</p>` : ""}
-    ${nudge}<div class="petbox bounce" style="margin:10px auto">${WR.petHTML()}</div><div class="bubble">${lv ? `I reached level ${lv.level}! 🎉` : crowns >= 2 ? "Maths is magic with you! 💖" : "Let's try again together! 🫶"}</div>
-    <div class="row" style="justify-content:center;margin-top:16px"><button class="btn" id="again">↻ Play again</button><button class="btn mint" id="back">${won ? "🏷️ Open my Sticker Book" : o.challenge ? "Back to the Tower 🗼" : "Back to the Number Kingdom"}</button></div></div>`);
+    ${nudge}${o.kind === "garden" ? `<p class="muted" style="font-weight:800">🌸 ${o.bloomed || 0} flower${o.bloomed === 1 ? "" : "s"} fully bloomed${o.bloomed ? ` (+${o.bloomed * 2}⭐)` : ""} · ${WR.Garden.dueCount()} still thirsty</p>` : ""}<div class="petbox bounce" style="margin:10px auto">${WR.petHTML()}</div><div class="bubble">${lv ? `I reached level ${lv.level}! 🎉` : crowns >= 2 ? "Maths is magic with you! 💖" : "Let's try again together! 🫶"}</div>
+    <div class="row" style="justify-content:center;margin-top:16px"><button class="btn" id="again">↻ Play again</button><button class="btn mint" id="back">${won ? "🏷️ Open my Sticker Book" : o.challenge ? "Back to the Tower 🗼" : o.back === "review" ? "Back to the garden 🌷" : "Back to the Number Kingdom"}</button></div></div>`);
   if (crowns >= 2 || lv || won) WR.confetti(); WR.sfx(lv ? "level" : "good");
   if (o.onFinish) o.onFinish({ won, score, pts: o.pts, crowns });   // 🛡️ guardian hook (rewards, stickers)
   WR.$("#again").onclick = () => o.replay ? o.replay() : MW.startLesson({ topic: o.topic, grade: o.grade, challenge: o.challenge });
-  WR.$("#back").onclick = () => won ? WR.go("stickers", "guard") : o.challenge ? WR.go("dojo") : WR.go("math");
+  WR.$("#back").onclick = () => won ? WR.go("stickers", "guard") : o.challenge ? WR.go("dojo") : WR.go(o.back || "math");
   if (nudge) WR.Learn.bindNudge({ screen: "math" });
 }
 MW._dbg = () => L && L.items[L.i];

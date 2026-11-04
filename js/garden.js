@@ -77,12 +77,12 @@ const Garden = WR.Garden = {
   // items for a watering round: most-missed and most-overdue first, mixed with a little randomness
   roundItems(n = PER_ROUND) {
     const now = Date.now();
-    const due = st().mistakes.filter(m => isDue(m, now)).map(m => ({ m, w: (m.misses || 1) * 2 + (now - m.due) / DAY + Math.random() * 2 }))
+    const due = st().mistakes.filter(m => isDue(m, now) && m.type !== "math").map(m => ({ m, w: (m.misses || 1) * 2 + (now - m.due) / DAY + Math.random() * 2 }))
       .sort((a, b) => b.w - a.w).slice(0, n).map(x => x.m);
     return WR.shuffle(due).map(itemOf);
   },
   water() {
-    const items = Garden.roundItems(); if (!items.length) return WR.toast("🌤️ Nothing is thirsty right now!");
+    const items = Garden.roundItems(); if (!items.length) return Garden.mathDue && Garden.mathDue() ? Garden.waterMath() : WR.toast("🌤️ Nothing is thirsty right now!");   // 🔢 only number plants: their round
     const ids = new Set(items.map(i => i._mid)), tally = {};
     st().mistakes.forEach(m => { if (ids.has(m.id)) tally[m.realm] = (tally[m.realm] || 0) + 1; });
     const realm = Object.keys(tally).sort((a, b) => tally[b] - tally[a])[0] || "a1";
@@ -100,29 +100,31 @@ function when(ts) {
 WR.screens.review = () => {
   const s = st(); const all = s.mistakes, act = all.filter(m => !m.bloomed), bl = all.filter(m => m.bloomed);
   const due = Garden.dueCount(), nd = Garden.nextDue();
-  const lvl = WR.levelOf, skillIco = k => WR.skillInfo(k).icon;
+  const meta = m => m.type === "math" ? { lvl: "G" + (m.grade || ""), ico: "🔢", skill: "maths" } : { lvl: WR.levelOf(m.realm), ico: WR.skillInfo(m.skill).icon, skill: m.skill };   // the level pill + skill icon of a plant
+  const mdue = Garden.mathDue ? Garden.mathDue() : 0, wdue = due - mdue;   // 🔢 number plants are watered in a maths round (js/math-review.js)
   const sorted = act.concat(bl.filter(m => isDue(m))).sort((a, b) => (isDue(b) - isDue(a)) || (a.legacy - b.legacy) || a.due - b.due);
   const counts = STAGES.map((_, i) => act.filter(m => (m.box || 0) === i).length);
   const plot = m => { const g = Garden.stageOf(m); return `<button class="plot ${isDue(m) ? "thirsty" : ""} ${m.legacy ? "legacy" : ""}" data-id="${m.id}">
-      <span class="plant">${g.e}</span><span class="pl-meta"><span class="pill">${lvl(m.realm)}</span> ${skillIco(m.skill)}</span>
+      <span class="plant">${g.e}</span><span class="pl-meta"><span class="pill">${meta(m).lvl}</span> ${meta(m).ico}</span>
       <span class="pl-q">${WR.esc(m.q.length > 60 ? m.q.slice(0, 58) + "…" : m.q)}</span>
       <span class="pl-due">${m.legacy ? "tip card 📜" : g.n + " · " + when(m.due)}</span></button>`; };
   WR.view(`<div class="fade-in"><h1>🌷 Mistake Garden</h1>
     <div class="card garden-head"><div class="petbox ${due ? "bounce" : ""}" style="width:120px;height:120px">${WR.petHTML()}</div>
       <div style="flex:1"><h2 style="margin:0">${due ? `${due} plant${due > 1 ? "s are" : " is"} thirsty! 💧` : act.length ? "Your garden is happy 🌤️" : "An empty garden, ready for seeds 🌱"}</h2>
       <p class="muted" style="font-weight:700;margin:.3em 0">Every mistake is planted as a seed. Answer it right on later days and it grows 🌰→🌱→🌿→🌷→🌸, and each time it rests longer. Bloomed flowers still pop back now and then for a drink. Slip up and it goes back to a seed, so the tricky ones come back more often.</p>
-      <div class="row"><button class="btn mint" id="waterBtn" ${due ? "" : "disabled"}>💧 Water the garden${due ? ` (${Math.min(due, PER_ROUND)})` : ""}</button>
+      <div class="row"><button class="btn mint" id="waterBtn" ${due ? "" : "disabled"}>💧 Water the garden${wdue ? ` (${Math.min(wdue, PER_ROUND)})` : mdue ? ` (${Math.min(mdue, PER_ROUND)})` : ""}</button>${wdue && mdue ? `<button class="btn" id="waterMath">🔢 Number plants (${Math.min(mdue, PER_ROUND)})</button>` : ""}
       ${!due && nd ? `<span class="pill">Next plant gets thirsty ${when(nd)}</span>` : ""}<span class="pill" style="background:var(--butter)">🌸 ${s.garden.bloomed} bloomed · +2⭐ each</span></div></div></div>
     ${sorted.length ? `<div class="stage-row">${STAGES.map((g, i) => `<div class="stage-chip"><span>${g.e}</span><b>${counts[i]}</b><small>${g.n}</small></div>`).join("")}<div class="stage-chip bloom"><span>🌸</span><b>${bl.length}</b><small>Bloomed</small></div></div>
       <div class="garden-bed">${sorted.map(plot).join("")}</div>` : `<div class="card center"><div style="font-size:3rem">🌷</div><h2>No mistakes yet!</h2><p class="muted">Play some lessons. Anything you miss gets planted here so you can grow it into knowledge.</p></div>`}
     ${bl.length ? `<h2>💐 Your bouquet</h2><div class="bouquet card">${bl.slice(0, 40).map(m => `<button class="bq" data-id="${m.id}" title="${WR.esc(m.q)}">🌸</button>`).join("")}${bl.length > 40 ? `<span class="muted">+${bl.length - 40} more</span>` : ""}</div>` : ""}</div>`);
   const wb = WR.$("#waterBtn"); if (wb) wb.onclick = () => Garden.water();
+  const wm = WR.$("#waterMath"); if (wm) wm.onclick = () => Garden.waterMath();
   document.querySelectorAll("[data-id]").forEach(b => b.onclick = () => {
     const m = s.mistakes.find(x => x.id === b.dataset.id); if (!m) return; const g = Garden.stageOf(m);
-    WR.modal(`<h2>${g.e} ${g.n}</h2><span class="pill">${lvl(m.realm)} · ${skillIco(m.skill)} ${WR.esc(m.skill)}</span>
+    WR.modal(`<h2>${g.e} ${g.n}</h2><span class="pill">${meta(m).lvl} · ${meta(m).ico} ${WR.esc(meta(m).skill)}</span>
       ${m.passage ? WR.passageHTML(m.passage, { style: "text-align:left;max-height:180px;overflow:auto" }) : ""}
-      <p style="font-weight:800">${WR.esc(m.q)}</p>${m.said ? `<div class="transcript">🎧 “${WR.esc(m.said)}” <button class="btn ghost small" id="sayBtn">🔊</button></div>` : ""}
-      <div style="margin-top:6px">✅ <b>${WR.esc(m.correct)}</b></div><div class="muted" style="font-weight:700;text-align:left">💡 ${WR.esc(m.explain)}</div>
+      <p style="font-weight:800">${WR.esc(m.q)}</p>${m.type === "math" ? `<p class="muted" style="font-weight:700;text-align:left">Missed: ${WR.Math ? WR.Math.html(m.missed || "") : WR.esc(m.missed || "")}</p><p class="muted" style="font-weight:700;text-align:left">🔢 Next time Sumi asks a new question on this topic, with new numbers.</p>` : ""}${m.said ? `<div class="transcript">🎧 “${WR.esc(m.said)}” <button class="btn ghost small" id="sayBtn">🔊</button></div>` : ""}
+      ${m.correct != null ? `<div style="margin-top:6px">✅ <b>${m.type === "math" && WR.Math ? WR.Math.html(m.correct) : WR.esc(m.correct)}</b></div>` : ""}<div class="muted" style="font-weight:700;text-align:left">💡 ${WR.esc(m.explain)}</div>
       <p class="muted" style="font-size:.8rem">Missed ${m.misses || 1}× · ${m.bloomed ? "fully grown! It comes back for a drink " + when(m.due) : m.legacy ? "an old tip card (from before the garden could quiz you)" : "next watering " + when(m.due)}</p>
       <button class="btn small" id="okBtn">Got it</button>`, (bg, close) => {
       const sb = bg.querySelector("#sayBtn"); if (sb) sb.onclick = () => WR.say(m.said);
