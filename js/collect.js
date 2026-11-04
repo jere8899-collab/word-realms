@@ -21,10 +21,8 @@ const gotIn = rid => ensure().stickers.got[rid] || [];
 const best = (rid, k) => { const p = (WR.state.progress[rid] || {})[k]; return p ? p.best : null; };
 const STICKERS = [
   { id: "first", icon: "👣", name: "First Steps", how: "Play any lesson here", test: rid => Object.keys(WR.state.progress[rid] || {}).length > 0 },
-  { id: "grammar", icon: "🧩", name: "Grammar Star", how: "Score 60%+ in Grammar", test: rid => best(rid, "grammar") >= 0.6 },
-  { id: "vocab", icon: "🔤", name: "Word Wizard", how: "Score 60%+ in Vocabulary", test: rid => best(rid, "vocab") >= 0.6 },
-  { id: "reading", icon: "📖", name: "Bookworm", how: "Score 60%+ in Reading", test: rid => best(rid, "reading") >= 0.6 },
-  { id: "listening", icon: "🎧", name: "Sharp Ears", how: "Score 60%+ in Listening", test: rid => best(rid, "listening") >= 0.6 },
+  ...[["grammar", "🧩", "Grammar Star", "Grammar"], ["vocab", "🔤", "Word Wizard", "Vocabulary"], ["reading", "📖", "Bookworm", "Reading"], ["listening", "🎧", "Sharp Ears", "Listening"]]
+    .map(([id, icon, name, skill]) => ({ id, icon, name, how: `Score 60%+ in ${skill}`, test: rid => best(rid, id) >= 0.6 })),
   { id: "crown3", icon: "👑", name: "Triple Crown", how: "Get 3 crowns in any lesson here", test: rid => WR.SKILLS.some(k => best(rid, k.id) >= 0.9) },
   { id: "story", icon: "📜", name: "Story Keeper", how: "Read this realm's Storybook chapter", test: rid => !!(WR.state.stories && WR.state.stories.done && WR.state.stories.done[rid]) },
   { id: "boss", icon: "🏆", name: "Boss Badge", how: "Beat the realm boss", test: rid => !!(WR.state.bosses && WR.state.bosses[rid] && WR.state.bosses[rid].won) }
