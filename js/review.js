@@ -21,7 +21,10 @@ const CONFIG = {
   // skills where a tag names a rule or a skill (past simple, listening for numbers, reading for a reason): a review asks a
   // *different* item on that skill, and a right answer also counts for the other items on it that are due. Vocabulary
   // (and the Singapore games) review the item itself: knowing "banana" doesn't review "apple".
-  rule: ["grammar", "listening", "reading"]
+  rule: ["grammar", "listening", "reading"],
+  // a busy word bank: vocabulary reviews the word itself, so when at least `overdue` words are waiting, a lesson takes one
+  // more review (4 new + 4 review, still 8 questions). Word Charms answers also count as the review of the same word.
+  busy: { skills: ["vocab"], overdue: 8, perLesson: 4 }
 };
 const RV = WR.Review = { CONFIG, DAY, HOUR };
 RV.gapDays = s => s <= 0 ? CONFIG.wrong : s <= CONFIG.gaps.length ? CONFIG.gaps[s - 1] : CONFIG.rest;
@@ -68,6 +71,9 @@ RV.answer = (it, ok, now = Date.now()) => {
 RV.reward = (key, o = {}) => key ? WR.awardStars("review", key, CONFIG.star, Object.assign({ kind: "review", quiet: true }, o)) : 0;
 // due lesson records in one bank, most overdue first (garden-owned ones are reviewed in the garden)
 RV.due = (scope, now = Date.now()) => Object.entries(RV.items()).filter(([k, r]) => r.n && !r.g && r.d <= now && k.startsWith(scope + ":")).sort((a, b) => a[1].d - b[1].d);
+// review slots for one bank's next lesson: 3, or 4 when a busy bank has many words waiting
+RV.slots = (scope, now = Date.now()) => { const b = CONFIG.busy, sk = String(scope).split("/")[1];
+  return b.skills.includes(sk) && RV.due(scope, now).length >= b.overdue ? b.perLesson : CONFIG.perLesson; };
 RV.dueCount = (now = Date.now()) => Object.values(RV.items()).filter(r => r.n && !r.g && r.d <= now).length;
 RV.isRule = key => CONFIG.rule.includes(String(key).split(":")[0].split("/")[1]);
 const resting = (r, now) => r && (r.g || r.d > now);      // has its own later date (or lives in the garden)
@@ -111,6 +117,21 @@ RV.pickPassage = (scope, passages, n = CONFIG.perLesson, o = {}) => {
   // keep the text's own question order
   const keep = new Set(order.map(([k]) => k));
   return { passage: best.p, items: best.qs.filter(([k]) => keep.has(k)).map(([k, q]) => Object.assign(WR.normalize(q, best.p), { _rk: k, _sk: q.sk || scope }, dueKeys.has(k) ? { _rv: { for: k, same: true } } : {})) };
+};
+/* 🔮 a graded Word Charms answer counts as the review of that word in the level's vocabulary bank: every vocab record whose
+   item asks for the word (its right answer, or the word quoted in the question) moves on the same rule (same 20 h gap).
+   Words the child hasn't met in a lesson yet have no record, so nothing is created. Returns the number of records moved. */
+const wordIdx = {};
+const wordsOf = async lvl => wordIdx[lvl] || (wordIdx[lvl] = WR.bank(lvl, "vocab").then(bank => { const m = new Map();
+  const add = (w, k) => { w = String(w || "").toLowerCase().trim(); if (!w) return; if (!m.has(w)) m.set(w, []); m.get(w).push(k); };
+  for (const q of bank) { const k = RV.key(lvl + "/vocab", q); add(q.options && Number.isInteger(q.answer) ? q.options[q.answer] : q.answer, k);
+    for (const x of String(q.q || "").matchAll(/[“"‘']([A-Za-z][A-Za-z' -]{0,30})[”"’']/g)) add(x[1], k); }
+  return m; }).catch(() => new Map()));
+RV.creditWord = async (lvl, word, ok, now = Date.now()) => {
+  const keys = (await wordsOf(lvl)).get(String(word).toLowerCase().trim()) || [], items = RV.items(); let moved = 0;
+  for (const k of new Set(keys)) { const r = items[k]; if (!r || !r.n || r.g) continue; if (RV.step(r, ok, now).moved) moved++; }
+  if (keys.length) WR.save();
+  return moved;
 };
 // ☁️ two saves of the same player (cloud load): per record, the one answered last wins; nothing is lost from either
 RV.merge = (a, b) => {

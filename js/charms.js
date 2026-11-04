@@ -118,6 +118,7 @@ function grade(lvl, word, ok) {
   if (ok && before === 0 && res.moved) c.at = now;
   c.b = Math.min(MASTER, rec.s); c.d = rec.d; c.t = rec.t; c.n = rec.n; c.r = rec.r; c.w = rec.w;
   WR.save();
+  if (WR.Review) WR.Review.creditWord(lvl, word, ok, now);   // 🔁 the same word's vocabulary review record (js/review.js)
   return { b: c.b, up: c.b > before, mastered: c.b >= MASTER && before < MASTER, moved: res.moved, pay: ok && res.moved && before >= 1 ? "c:" + k + "#" + c.n : null };
 }
 

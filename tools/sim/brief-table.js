@@ -19,6 +19,7 @@ const BASE = process.env.BASE || 'http://127.0.0.1:18642', DAY = 864e5;
       pet: { species: 'pet_fox', name: 'Mochi', xp: 0, happiness: 80, hunger: 20, skin: null, lastTick: Date.now() },
       streak: { count: 0, last: null }, progress: {}, owned: [], equipped: {}, settings: { rate: .9, sound: false, unlockAll: true }, mistakes: [], lessonsDone: 0 })); });
     await page.reload({ waitUntil: 'networkidle' }); await page.waitForFunction(() => window.WR && WR.realms);
+    if (process.env.BUSY) await page.evaluate(b => { const [o, p] = b.split(','); Object.assign(WR.Review.CONFIG.busy, { overdue: +o, perLesson: +p }); }, process.env.BUSY);   // what-if: BUSY=overdue,slots
   };
   // one "lesson": build items like WR.startLesson does, answer every one (right unless wrong(it)), record like answer() does
   const lessonFn = () => { window.__lesson = async (rid, skill, wrongKeys = []) => {
@@ -28,7 +29,8 @@ const BASE = process.env.BASE || 'http://127.0.0.1:18642', DAY = 864e5;
     return out; }; };
   const res = { base: BASE, engine: null };
   // ---------- A: when does an item answered right come back? ----------
-  for (const [rid, skill] of [['a1', 'grammar'], ['a1', 'vocab'], ['a1', 'reading']]) {
+  for (const [rid, skill0] of [['a1', 'grammar'], ['a1', 'vocab'], ['a1', 'vocab+charms'], ['a1', 'reading']]) {
+    const skill = skill0.split('+')[0], charms = skill0.includes('charms');
     // A1: lessons in a row on one day
     await fresh(); await page.evaluate(lessonFn); res.engine = await page.evaluate(() => WR.Review ? 'review.js' : 'freshPick only');
     const L = []; for (let i = 0; i < 40; i++) L.push(await page.evaluate(([r, s]) => __lesson(r, s), [rid, skill]));
@@ -40,6 +42,9 @@ const BASE = process.env.BASE || 'http://127.0.0.1:18642', DAY = 864e5;
     const seen = {}, days = []; res._h = {};
     for (let d = 0; d < 200; d++) {
       const ls = await page.evaluate(([r, s]) => __lesson(r, s), [rid, skill]);
+      if (charms) await page.evaluate(async r => {   // …and one Word Charms round a day: the due charms + up to 4 new words, all right
+        const ws = await WR.bank(r, 'words'), cs = WR.Charms.st().cards, due = ws.filter(w => WR.Charms.isDue(cs[r + ':' + w.w])), fresh = ws.filter(w => !cs[r + ':' + w.w]).slice(0, 4);
+        for (const w of due.slice(0, 8).concat(fresh).slice(0, 8)) { WR.Charms.grade(r, w.w, true); await WR.Review.creditWord(r, w.w, true); } }, rid);
       ls.forEach(x => { const k = x.for || x.k; (seen[k] = seen[k] || []).push(d); });
       days.push(ls); if (d === 0) res._k0 = ls.map(x => x.k);
       const st = await page.evaluate(ks => WR.Review ? ks.map(k => (WR.Review.items()[k] || {}).s || 0) : [], res._k0); st.forEach((v, i) => { const h = (res._h = res._h || {})[i] = res._h[i] || [0]; if (v > h[0]) { h[0] = v; h.push(d); } });
@@ -51,7 +56,7 @@ const BASE = process.env.BASE || 'http://127.0.0.1:18642', DAY = 864e5;
     days.slice(0, 6).forEach(ls => { ls.forEach(x => { total++; if (asked.has(x.for || x.k)) earlier++; }); ls.forEach(x => asked.add(x.for || x.k)); });
     // with review on: every 8th day lessons hold how many reviews?
     const revShare = days.map(ls => ls.filter(x => x.rv).length);
-    res[rid + '/' + skill] = { lessonsUntilBack_sameDay: { min: back[0], median: back[back.length >> 1], max: back[back.length - 1], n: back.length },
+    res[rid + '/' + skill0] = { lessonsUntilBack_sameDay: { min: back[0], median: back[back.length >> 1], max: back[back.length - 1], n: back.length },
       daysSeen_firstLessonItems: track.slice(0, 3).map(t => t.slice(0, 7)), firstReturnDay: (t => t.sort((a, b) => a - b)[t.length >> 1])(track.map(t => t[1] ?? null).filter(x => x != null)),
       earlierItemsIn6Lessons: `${earlier} of ${total}`, recordStepDays_firstLessonItems: Object.values(res._h || {}).map(h => h.slice(1)), reviewsPerLesson_days0to15: revShare.slice(0, 16), lessonSizes_days0to15: days.slice(0, 16).map(l => l.length) };
   }

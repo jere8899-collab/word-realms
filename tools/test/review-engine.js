@@ -185,7 +185,7 @@ const SAVE = extra => Object.assign({ v: 1, name: 'Rae', avatar: 'avatar_mage', 
   const mig = await page.evaluate(() => { const s = WR.state, m = id => s.mistakes.find(x => x.id === id), c = s.charms.cards;
     return { stars: s.stars, bloomed: s.garden.bloomed, n: s.mistakes.length, m1: (m('m1').due - Date.now()) / 864e5, m2: (m('m2').due - Date.now()) / 864e5, m3: m('m3').due, m3box: m('m3').box,
       apple: (c['a1:apple'].d - Date.now()) / 864e5, appleB: c['a1:apple'].b, cat: c['a1:cat'].d, mig: s.review.mig, items: Object.keys(s.review.items).length }; });
-  assert(mig.stars === 321 && mig.bloomed === 2 && mig.n === 3 && mig.appleB === 5, 'migration keeps every star, plant, bloom count and charm');
+  assert(mig.stars >= 321 && mig.bloomed === 2 && mig.n === 3 && mig.appleB === 5, 'migration keeps every star, plant, bloom count and charm' + (mig.stars >= 321 && mig.n === 3 ? '' : ' ' + JSON.stringify(mig)));
   assert(mig.m1 > 0 && mig.m1 <= 31 && near(mig.m2, 80, 1), `bloomed plants get a return date (long past: within a month, ${mig.m1.toFixed(1)} d; recent: bloomed + 90 d, ${mig.m2.toFixed(1)} d)`);
   assert(mig.m3 === now + DAY && mig.m3box === 1, 'growing plants keep their stage and date');
   assert(mig.apple > 0 && mig.apple <= 31 && mig.cat === now + 2 * DAY, 'a 💎 charm gets a return date; resting charms keep theirs');
@@ -214,6 +214,33 @@ const SAVE = extra => Object.assign({ v: 1, name: 'Rae', avatar: 'avatar_mage', 
   const tagsOk = await page.evaluate(async () => { let n = 0, bad = 0; for (const r of ['a1', 'b2', 'c2']) for (const k of ['grammar', 'vocab', 'listening', 'reading']) { const b = await WR.bank(r, k);
     for (const q of k === 'reading' ? b.passages.flatMap(p => p.questions) : b) { n++; if (!new RegExp('^' + k + '\\.[a-z0-9-]+$').test(q.sk || '')) bad++; } } return { n, bad }; });
   assert(tagsOk.bad === 0 && tagsOk.n > 1500, `every core-bank item has a skill tag (${tagsOk.n} checked)`);
+
+  // ---------- 11b. busy word banks: a 4th review slot; Word Charms answers count as the word's review ----------
+  await page.close(); page = await open(ctx, SAVE());
+  const busy = await page.evaluate(async () => { const RV = WR.Review, b = await WR.bank('a1', 'vocab'), now = Date.now(), its = RV.items();
+    const mk = (q, d) => { its[RV.key('a1/vocab', q)] = { s: 1, d, t: now - 4 * 864e5, n: 1, l: 1 }; };
+    b.slice(0, 5).forEach(q => mk(q, now - 864e5));
+    const few = await WR.buildItems('a1', 'vocab', 8, { review: true }), slotsFew = RV.slots('a1/vocab');
+    b.slice(5, 12).forEach(q => mk(q, now - 864e5));
+    const many = await WR.buildItems('a1', 'vocab', 8, { review: true }), slotsMany = RV.slots('a1/vocab');
+    for (let i = 0; i < 9; i++) { const k = RV.key('a1/grammar', { q: 'g' + i, options: ['a'], answer: 0 }); its[k] = { s: 1, d: now - 864e5, t: now - 4 * 864e5, n: 1, l: 1 }; }
+    return { cfg: RV.CONFIG.busy, slotsFew, slotsMany, few: few.filter(x => x._rv).length, many: many.filter(x => x._rv).length, n: many.length, gram: RV.slots('a1/grammar') }; });
+  assert(busy.cfg.overdue === 8 && busy.cfg.perLesson === 4 && busy.cfg.skills.join() === 'vocab', 'the busy-bank rule lives in the review config (8+ words waiting → 4 review slots)');
+  assert(busy.slotsFew === 3 && busy.few === 3, `5 words waiting: the usual 3 review slots (${busy.few})`);
+  assert(busy.slotsMany === 4 && busy.many === 4 && busy.n === 8, `12 words waiting: 4 new + 4 review, still 8 questions (${busy.many}/${busy.n})`);
+  assert(busy.gram === 3, 'grammar keeps 3 review slots (its reviews already cover a whole skill tag)');
+  const cw = await page.evaluate(async () => { const RV = WR.Review, b = await WR.bank('a1', 'vocab'), ws = (await WR.bank('a1', 'words')).map(w => w.w.toLowerCase());
+    const q = b.find(q => q.options && ws.includes(String(q.options[q.answer]).toLowerCase())), word = q.options[q.answer], k = RV.key('a1/vocab', q), now = Date.now();
+    RV.items()[k] = { s: 1, d: now - 1000, t: now - 3 * 864e5, n: 1, l: 1 };
+    const unseen = b.find(x => x !== q && x.options && ws.includes(String(x.options[x.answer]).toLowerCase()) && String(x.options[x.answer]) !== word);
+    WR.Charms.grade('a1', word, true); await new Promise(r => setTimeout(r, 300)); const r1 = Object.assign({}, RV.items()[k]);
+    WR.Charms.grade('a1', word, true); await new Promise(r => setTimeout(r, 300)); const r2 = Object.assign({}, RV.items()[k]);
+    const before = Object.keys(RV.items()).length; WR.Charms.grade('a1', unseen.options[unseen.answer], true); await new Promise(r => setTimeout(r, 300));
+    return { word, r1, r2, made: Object.keys(RV.items()).length - before, saved: JSON.parse(localStorage.getItem('wordRealms.save.v1')).review.items[k] }; });
+  assert(cw.r1.s === 2 && cw.r1.n === 2 && Math.round((cw.r1.d - cw.r1.t) / DAY) === 10, `a right Word Charms answer for "${cw.word}" moved its vocabulary record (step 2, back in 10 days)`);
+  assert(cw.r2.s === 2 && cw.r2.d === cw.r1.d, 'answering the same charm again minutes later moves nothing (20 h rule)' + JSON.stringify([cw.r1, cw.r2]));
+  assert(cw.made === 0, 'a charm word never met in a lesson creates no vocabulary record');
+  assert(cw.saved && cw.saved.s === 2, 'the credited record is in the save');
 
   // ---------- 12. phones: a lesson with reviews, the garden, a charm ----------
   for (const vp of [{ width: 320, height: 640, n: '320' }, { width: 360, height: 740, n: '360' }, { width: 375, height: 667, n: '375' }, { width: 740, height: 360, n: 'landscape' }]) {

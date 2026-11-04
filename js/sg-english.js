@@ -161,7 +161,8 @@ async function fromBanks(l, skill, n, bucket, filter = () => true, rev = false) 
   const out = [], banks = [];
   for (const [rid] of split(l, n)) banks.push([rid, (await WR.bank(rid, skill)).filter(q => playable(q) && filter(q))]);
   const revs = [];
-  if (RVOK(rev)) for (const [rid, bank] of banks) revs.push(...WR.Review.pick(`${rid}/${skill}`, bank, Math.min(perLesson(), n) - revs.length, { bucket: `${bucket}/${rid}` }));
+  const slots = RVOK(rev) ? Math.min(n, Math.max(...banks.map(([rid]) => WR.Review.slots(`${rid}/${skill}`)))) : 0;
+  if (RVOK(rev)) for (const [rid, bank] of banks) revs.push(...WR.Review.pick(`${rid}/${skill}`, bank, slots - revs.length, { bucket: `${bucket}/${rid}` }));
   const skipOf = rid => { const pre = `${rid}/${skill}:`, ks = revs.flatMap(it => [it._rk, it._rv.for]).filter(k => k.startsWith(pre)).map(k => k.slice(pre.length)); return ks.length ? new Set(ks) : null; };
   for (const [rid, k] of split(l, n - revs.length)) { if (!k) continue; const bank = banks.find(b => b[0] === rid)[1];
     out.push(...WR.freshPick(`${bucket}/${rid}`, bank, k, skipOf(rid)).map(q => tag(WR.normalize(q), `${rid}/${skill}`, q))); }
