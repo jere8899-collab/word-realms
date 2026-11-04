@@ -171,3 +171,8 @@
 .ws-big{font-family:"Baloo 2",system-ui,sans-serif;font-size:2rem;font-weight:900;color:#6d4f86;background:#FFF4C2;border:3px solid #FFB8D1;border-radius:18px;padding:2px 18px}
 .ws-words{font-size:1.15rem;font-weight:900;color:#e0607a}.ws-24{font-weight:800;color:var(--ink2)}.ws-24 b{font-size:1.2rem;color:#6d4f86}
 .ws-ap .btn{min-height:44px}.ws-tips ul{margin:.3em 0 0 1.1em;padding:0;font-weight:700;font-size:.9rem}.ws-tips li{margin:2px 0}
+/* 🎲 Daily Mix (js/math-review.js): a card on the Number Kingdom hub */
+.mix-card{margin:10px 0 6px;gap:12px;align-items:center;flex-wrap:wrap;background:linear-gradient(150deg,#F3EDFF,#E8FFF4 60%,#FFF7D6)}
+.mix-card .mix-ico{font-size:2.2rem;line-height:1}
+.mix-card #mixBtn{min-height:44px;min-width:44px}
+@media (max-width:420px){.mix-card{gap:8px}.mix-card #mixBtn{flex:1 1 100%}}

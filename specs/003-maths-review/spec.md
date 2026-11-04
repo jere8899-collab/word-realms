@@ -8,10 +8,10 @@
 
 ## What the child gets
 1. **Finished topics come back.** A topic round at the Grade Guardians' pass mark (60%) puts the topic on the Task 2 schedule (3 → 10 → 30 → 90 days, then about every 180). Single-topic rounds stay as they are for first learning.
-2. **🎲 Daily Mix**, on by default, inside the Number Kingdom (a card under the grade chips, and a 🎲 chip on the home map's maths door; no new realm tile). About 5 questions in mixed order: due topics first, at least one earlier-grade topic, recent topics; never two neighbours on one topic when there is a choice. A grown-up can turn it off in ⚙️ Settings.
+2. **🎲 Daily Mix**, on by default, inside the Number Kingdom (a card under the grade chips; no new realm tile). About 5 questions in mixed order: due topics first, at least one earlier-grade topic, recent topics; never two neighbours on one topic when there is a choice. A grown-up can turn it off in ⚙️ Settings.
 3. **Maths mistakes grow in the Mistake Garden.** A question missed twice plants (or re-plants) one 🔢 plant for its topic. Watering asks a **fresh question on the same topic with new numbers**, never the missed one, on the same 20 h rule as the garden.
 4. **Small capped review stars**, as Task 2 (1⭐ when a review moves a topic up, `EARN.review` 10/day, inside the 150 cap).
-5. **Singapore path**: a child on the Singapore track with no maths grade chosen gets a mix built around their Singapore level (P4 → Grade 4, Sec 1 → Grade 7, JC 1 → Grade 11); the chip shows on the Singapore home map too.
+5. **Singapore path**: a child on the Singapore track with no maths grade chosen gets a mix built around their Singapore level (P4 → Grade 4, Sec 1 → Grade 7, JC 1 → Grade 11). The home map's 🔢 door leads to it on both tracks. (A 🎲 chip inside the home door was tried and removed: it made the home page taller than the 2.5-screen budget and caught taps meant for the door.)
 
 ## Done when (brief)
 Every finished topic returns in Daily Mix, earlier-grade topics appear, and the mix works on the Singapore path.
