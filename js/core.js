@@ -249,7 +249,7 @@ function freshState() {
    keys: "<level>/<skill>" for English (a2/grammar … a2/speaking, a2/writing, a2/story), "m:<topic>" for maths
    (m:g3.times, m:dojo.tower), "garden" for Mistake Garden rounds. */
 const LOG_DAYS = 60, GAP_MS = 3 * 60e3, FIRST_S = 20;
-const freshReport = () => ({ days: {}, tally: {}, at: 0 });
+const freshReport = () => ({ days: {}, tally: {}, at: 0, kept: [0, 0] });   // kept: [right, wrong] first answers after 25+ days (Task 5)
 // ⭐ anti-farm record, see WR.awardStars (economy section)
 const freshEarn = () => ({ day: "", practice: 0, review: 0, rounds: {}, got: {} });
 const earnHash = k => { let h = 2166136261; k = String(k); for (let i = 0; i < k.length; i++) h = Math.imul(h ^ k.charCodeAt(i), 16777619); return (h >>> 0).toString(36); };
@@ -307,6 +307,9 @@ function logDay() {
   const ks = Object.keys(r.days); if (ks.length > LOG_DAYS) ks.sort().slice(0, ks.length - LOG_DAYS).forEach(k => delete r.days[k]);
   return day;
 }
+// 🧠 one first-answer-after-a-long-gap (js/review.js RV.kept): all-time [right, wrong] + today's line in the 60-day log
+WR.keptAnswer = ok => { const r = WR.state.report, d = WR.dayKey(); r.kept = Array.isArray(r.kept) ? r.kept : [0, 0]; r.kept[ok ? 0 : 1]++;
+  const day = r.days[d] = r.days[d] || { s: 0, l: 0, k: {} }; day.kept = day.kept || [0, 0]; day.kept[ok ? 0 : 1]++; };
 // one right/wrong answer for the report (today + all time); no star or total changes
 WR.tally = (key, ok) => {
   const r = WR.state.report, day = logDay(); if (!key) return;
@@ -346,7 +349,7 @@ function migrate(s, raw = s) {
   if (!raw.review || typeof raw.review !== "object") s.review.mig = 0;   // 🔁 an older save: js/review.js migrates its garden and charms once
   s.math = WR.fixMath(s.math);
   if (!raw.report || typeof raw.report !== "object") s.report = seedReport(s);
-  s.report.days = s.report.days || {}; s.report.tally = s.report.tally || {}; s.report.at = s.report.at || 0;
+  s.report.days = s.report.days || {}; s.report.tally = s.report.tally || {}; s.report.at = s.report.at || 0; if (!Array.isArray(s.report.kept)) s.report.kept = [0, 0];   // 🧠 older saves start the retention count at zero
   // ⭐ anti-farm record (WR.awardStars); an older save counts the English items it has already been served as known
   // 👗 layered looks: the old single outfit becomes the hero's item in its slot; pets gain looks, love and a stable
   if (!raw.looks || typeof raw.looks !== "object") { s.looks = {}; const o = s.equipped && s.equipped.outfit, it = o && WR.shop && WR.shop.outfits.find(x => x.id === o); if (o) s.looks[it ? it.slot : (OLD_SLOT[o] || "head")] = o; }

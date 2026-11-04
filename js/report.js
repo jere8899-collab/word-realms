@@ -10,6 +10,7 @@ const WR = window.WR, esc = WR.esc, MG = window.MathGen;
 const ENG0 = ["grammar", "vocab", "reading", "listening", "speaking", "writing", "story", "phonics", "words"];
 const ENG = () => ENG0.concat(WR.gapGames.map(g => g.id));
 const OPTIONAL = sk => ["phonics", "words"].includes(sk) || WR.gapGames.some(g => g.id === sk);   // rows shown only once something was played (Phonics Path, Word Charms, the gap games)
+const KEPT = { min: 10 };   // 🧠 answers needed before "Remembered after 30 days" shows a figure (gap: WR.Review.CONFIG.keptDays)
 const MIN_N = 3;                                    // answers needed before a spot can be called "weak"
 const pct = v => Math.round(v * 100);
 const acc = t => t && t[0] + t[1] ? t[0] / (t[0] + t[1]) : null;
@@ -44,7 +45,7 @@ function chart(range) {
   const useMin = bars.some(b => b.s > 0), val = b => useMin ? Math.round(b.s / 60) : b.l, top = Math.max(1, ...bars.map(val));
   return { useMin, bars: bars.map(b => ({ ...b, v: val(b), h: Math.round(val(b) / top * 100) })) };
 }
-WR.Report = {};
+WR.Report = { KEPT };
 WR.Report.data = (range = "week") => {
   const s = WR.state, r = s.report, T = tallies(range), wk = range === "week";
   const week = daysBack(7).map(d => r.days[WR.dayKey(d)]).filter(x => x && (x.l || Object.keys(x.k || {}).length));
@@ -71,6 +72,8 @@ WR.Report.data = (range = "week") => {
   });
   const maths = Object.values(grades).sort((a, b) => a.g - b.g).map(G => ({ ...G, a: acc(G.t), n: G.t[0] + G.t[1], topics: G.topics.sort((a, b) => b.n - a.n || (a.best || 0) - (b.best || 0)) }));
   return { range, name: s.name || "your child", days: wk ? week.length : logDays.length, capped: logDays.length >= WR.LOG_DAYS, est: !!r.seeded,
+    allAcc: acc([s.totalCorrect || 0, Math.max(0, (s.totalAnswered || 0) - (s.totalCorrect || 0))]),
+    kept: (() => { const k = Array.isArray(r.kept) ? r.kept : [0, 0], n = k[0] + k[1]; return { n, right: k[0], a: n >= KEPT.min ? k[0] / n : null }; })(),
     streak: WR.streakAlive(), lessons, mins: Math.round(secs / 60), acc: acc(tot), answers: tot[0] + tot[1], chart: chart(range),
     english, maths, weak: WR.Report.weak(range, T), since: s.created };
 };
@@ -142,10 +145,16 @@ WR.Report.tips = d => {
 
 /* ---------- screen ---------- */
 const cellHTML = c => !c ? `<td class="rp-na">·</td>` : c.a != null ? `<td class="rp-c ${tone(c.a)}"><b>${pct(c.a)}%</b><small>${c.n}</small></td>` : `<td class="rp-c best ${tone(c.best)}" title="best score"><b>${pct(c.best)}%</b><small>best</small></td>`;
+const stat = (ico, big, small) => `<div class="rp-stat"><span class="ico">${ico}</span><b>${big}</b><small>${small}</small></div>`;
+// 🧠 Remembered after 30 days, beside % right (all time: a 30-day gap rarely fits in one week)
+const keptHTML = d => { const k = d.kept, ok = k.a != null;
+  return `<div class="card rp-card rp-kept" id="rpKept"><div class="rp-kept-row">
+      <div class="rp-kc"><span class="ico">🎯</span><b>${d.allAcc != null ? pct(d.allAcc) + "%" : "–"}</b><small>right, every answer (all time)</small></div>
+      <div class="rp-kc ${ok ? tone(k.a) : "none"}"><span class="ico">🧠</span><b>${ok ? pct(k.a) + "%" : "–"}</b><small>${ok ? `remembered after 30 days (${k.n} answers)` : `remembered after 30 days: not enough data yet (${k.n} of ${KEPT.min})`}</small></div></div>
+    <p class="muted rp-note">Both figures here are all time. “% right” counts every answer. “Remembered after 30 days” only counts the first answer to something last seen 25 or more days ago, so it shows what has really stuck.</p></div>`; };
 const barRow = (t, v) => `<div class="rp-topic"><span class="nm">${esc(t)}</span>${v}</div>`;
 WR.Report.html = d => {
   const ch = d.chart, wk = d.range === "week";
-  const stat = (ico, big, small) => `<div class="rp-stat"><span class="ico">${ico}</span><b>${big}</b><small>${small}</small></div>`;
   const eng = d.english.levels.length ? `<div class="rp-scroll"><table class="rp-table"><thead><tr><th></th>${d.english.levels.map(l => `<th>${l.level}</th>`).join("")}</tr></thead>
       <tbody>${d.english.rows.map(r => `<tr><th title="${esc(r.sk.name)}"><span class="ico">${r.sk.icon}</span>${esc(r.sk.name === "Vocabulary" ? "Vocab" : r.sk.name)}</th>${r.cells.map(cellHTML).join("")}</tr>`).join("")}</tbody></table></div>
       <p class="rp-key muted"><span class="rp-dot hi"></span>85%+ <span class="rp-dot mid"></span>60–84% <span class="rp-dot lo"></span>under 60% · small number = answers${wk ? "" : " · “best” = best lesson score saved before the report started"}</p>`
@@ -162,6 +171,7 @@ WR.Report.html = d => {
     <div class="rp-tabs" role="tablist"><button data-range="week" class="${wk ? "on" : ""}" role="tab" aria-selected="${wk}">Last 7 days</button><button data-range="all" class="${wk ? "" : "on"}" role="tab" aria-selected="${!wk}">All time</button></div>
     <div class="rp-stats">${stat("📅", wk ? `${d.days}/7` : d.days, wk ? "days played" : `day${d.days === 1 ? "" : "s"} played${d.capped ? " (60-day log)" : ""}`)}${stat("🔥", d.streak, "day streak")}
       ${stat("📚", d.lessons, "lessons")}${stat("🎯", d.acc != null ? pct(d.acc) + "%" : "–", d.answers ? `right (${d.answers} answers)` : "right")}</div>
+    ${keptHTML(d)}
     <div class="card rp-card"><h2>${d.chart.useMin ? "⏱️ Minutes" : "📚 Lessons"} ${wk ? "each day" : "each week"}</h2>
       <div class="rp-chart" role="img" aria-label="${esc(ch.bars.map(b => `${b.full}: ${b.v} ${ch.useMin ? "minutes" : "lessons"}`).join(", "))}">${ch.bars.map(b => `<div class="rp-bar" title="${esc(b.full)}: ${b.v} ${ch.useMin ? "min" : "lessons"} · ${b.l} lesson${b.l === 1 ? "" : "s"}"><span class="tr"><span class="v">${b.v || ""}</span><i style="height:${Math.max(b.v ? 5 : 2, Math.round(b.h * 0.86))}%"></i></span><span class="d">${esc(b.lab)}</span></div>`).join("")}</div>
       <p class="muted rp-note">${ch.useMin ? `About ${d.mins} minute${d.mins === 1 ? "" : "s"} of play ${wk ? "this week" : "logged"} (counted from answer times).` : "Minutes appear once new lessons are played; earlier days show lessons."}${d.est ? " Days before the report started are rebuilt from saved progress." : ""}</p></div>

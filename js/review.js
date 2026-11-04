@@ -17,6 +17,7 @@ const CONFIG = {
   minGapH: 20,             // hours: a right answer only moves an item up if its last answer was at least this long ago
   early: 0.1,              // …and only when due, or within the last tenth of its gap
   lesson: 8, perLesson: 3, // a lesson: up to 3 due reviews + new items to 8 (otherwise 8 new); no reviews in boss rounds
+  keptDays: 25,            // 🧠 Learning Report "Remembered after 30 days": the first answer to an item after a gap of this many days (AGENT-BRIEF Task 5)
   star: 1,                 // ⭐ for a right review answer that moved its item up (daily cap: WR.EARN.review, inside the 150 cap)
   // skills where a tag names a rule or a skill (past simple, listening for numbers, reading for a reason): a review asks a
   // *different* item on that skill, and a right answer also counts for the other items on it that are due. Vocabulary
@@ -27,6 +28,9 @@ const CONFIG = {
   busy: { skills: ["vocab"], overdue: 8, perLesson: 4 }
 };
 const RV = WR.Review = { CONFIG, DAY, HOUR };
+// 🧠 one child answer to this record: if its last answer was keptDays+ ago, it is the first answer after a long gap and counts
+// for "Remembered after 30 days" (WR.keptAnswer). Call BEFORE RV.step (which moves t). Not for records moved by another answer.
+RV.kept = (rec, ok, now = Date.now()) => { if (!rec || !rec.n || !rec.t || now - rec.t < CONFIG.keptDays * DAY) return false; WR.keptAnswer && WR.keptAnswer(ok); return true; };
 RV.gapDays = s => s <= 0 ? CONFIG.wrong : s <= CONFIG.gaps.length ? CONFIG.gaps[s - 1] : CONFIG.rest;
 // ⏱️ the one rule, for every schedule. rec { s, d, t, l, n, r, w } is changed in place.
 // o.floor: lowest step a wrong answer drops to (a caught charm stays caught); o.wrongDays: how soon a wrong item is due again
@@ -56,6 +60,8 @@ RV.tag = (it, scope, q, p) => Object.assign(it, { _rk: RV.key(scope, q, p), _sk:
 RV.answer = (it, ok, now = Date.now()) => {
   if (!it || !it._rk) return null;
   const items = RV.items(), rec = items[it._rk] = items[it._rk] || {};
+  const stand = it._rv && it._rv.for && it._rv.for !== it._rk;   // a stand-in is the review of the item it stands in for
+  RV.kept(stand ? items[it._rv.for] : rec, ok, now);
   const own = RV.step(rec, ok, now); if (it._sk) rec.sk = it._sk;
   if (!ok) rec.g = 1;                                       // the Mistake Garden owns it from now on (js/lesson.js plants it)
   let main = own, covered = 0;
