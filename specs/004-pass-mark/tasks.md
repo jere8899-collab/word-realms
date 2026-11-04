@@ -6,7 +6,7 @@
 - [x] T05 js/pass.js UI + lesson.js / main.js / collect.js wiring
 - [x] T06 tools/test/pass-mark.js (fake clock + server-date override, phones, t4_*.png)
 - [x] T07 Full suite after the final change; deploy; live 200
-- [ ] T08 Live tap-through at 360×740 (t4_live_*.png), score, BRIEF-T4 ✅, report
+- [x] T08 Live tap-through at 360×740 (t4_live_*.png), score, BRIEF-T4 ✅, report
 
 ## Checkpoint notes
 - pass-mark.js green (43 checks after adding the "no Play again on a check" assert); fixes found by it: `#again.hidden` was overridden by `.btn` CSS → the button is now removed on checks; help Learn button says "📜 Learn: …".
@@ -14,3 +14,4 @@
 - Full run 2 interrupted; full run 3 started after the final change.
 - Full run 3: c6/review 320 px still over (map line + crown-check goal wrapped) and an old record with no time never got its check → fixed (`passDayOf` → ""), shorter lines; pass-mark.js 44 green; full run 4 started.
 - Full run 4: 95/95 (doubletap flaked under load, 54/54 singly; cloud/lightart/parentgate/pwa serial, green). Deploying.
+- Live (sw c8ff47ff3ec2): hand-tap check at 360×740 20/20, no console errors, screenshots screenshots/t4_live_*.png (14). BRIEF-T4 ✅.
