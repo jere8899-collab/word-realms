@@ -16,7 +16,12 @@ const LAST = 4;   // pages per chapter; the word check comes after the last page
 const st = () => WR.block("stories");
 WR.storyState = st;
 const petName = () => (WR.state.pet && WR.state.pet.name) || (WR.petInfo() || {}).name || "your pet";
-const fill = t => String(t).replace(/\{hero\}/g, WR.state.name || "our hero").replace(/\{pet\}/g, petName());
+/* 🎙️ STORY-VOICES: every story sentence is narrated by the recorded af_heart narrator, so the text can only hold words that
+   were recorded. The hero is "our hero" and the pet is its species' storybook name (Puffbun, Mochi Fox, Minty, …; 8 choices,
+   each recorded by tools/build_voice.py, which applies this same rule: STORY_PETS / story_fill there). A typed name can't be
+   pre-recorded, and reading it with the device voice mixed two voices inside one page. */
+const storyPet = () => (WR.petInfo() || {}).name || "Puffbun";
+const fill = t => String(t).replace(/(^|[.!?…]["”’]?\s+|[“"‘])\{hero\}/g, "$1Our hero").replace(/\{hero\}/g, "our hero").replace(/\{pet\}/g, storyPet());
 const plain = t => fill(t).replace(GL, "$1");
 const sentences = t => plain(t).match(/[^.!?]+[.!?]+[”’"]?\s*|[^.!?]+$/g).map(x => x.trim()).filter(Boolean);
 WR.Story = { fill, plain, sentences };
@@ -81,7 +86,7 @@ function render() {
   if (!last) {
     WR.$("#readAll").onclick = () => readAll(WR.state.settings.rate);
     WR.$("#readSlow").onclick = () => readAll(0.65);
-    document.querySelectorAll(".sent").forEach(s => s.onclick = e => { if (e.target.closest(".gloss")) return; hl(+s.dataset.i); WR.say(s.textContent, { onend: () => hl(-1) }); });
+    document.querySelectorAll(".sent").forEach(s => s.onclick = e => { if (e.target.closest(".gloss")) return; S.tok = (S.tok || 0) + 1; hl(+s.dataset.i); WR.say(s.textContent, { onend: () => hl(-1) }); });
     document.querySelectorAll(".gloss").forEach(b => b.onclick = e => { e.stopPropagation(); gloss(b); });
   }
   document.querySelectorAll(".opt").forEach(b => b.onclick = () => choose(b, q, opts));
@@ -106,7 +111,7 @@ function gloss(b) {
   (WR.$("#storyText") || b).insertAdjacentElement("afterend", pop);
   pop.querySelector("[data-say]").onclick = e => { e.stopPropagation(); WR.say(w + ". " + g); };
   pop.onclick = e => { e.stopPropagation(); pop.remove(); };
-  b.classList.add("seen"); WR.say(w);
+  b.classList.add("seen"); if (S) S.tok = (S.tok || 0) + 1; hl(-1); WR.say(w);
 }
 function choose(btn, q, opts) {
   if (S.answers[S.page]) return;
@@ -161,7 +166,7 @@ function finish() {
 // WR.go("story", "a1") reads chapter 1; WR.go("story", { rid, n }) reads chapter n (shelf = came from the chapter shelf)
 WR.screens.story = async arg => {
   const { rid, n = 1, shelf = false } = typeof arg === "string" ? { rid: arg } : arg;
-  const book = await WR.loadStory(rid), ch = book.chapters[n - 1] || book.chapters[0];
+  const [book] = await Promise.all([WR.loadStory(rid), WR.Voice && WR.Voice.more("story")]), ch = book.chapters[n - 1] || book.chapters[0];
   S = { realm: WR.realmById(rid), book, ch, n: book.chapters.indexOf(ch) + 1, shelf, num: WR.realms.findIndex(x => x.id === rid) + 1, page: 0, correct: 0, answers: {}, opts: {} };
   render();
 };
@@ -183,7 +188,7 @@ WR.screens.storyShelf = async rid => {
   document.querySelectorAll(".shelf-ch:not(.locked)").forEach(b => b.onclick = () => WR.startStory(rid, +b.dataset.n));
 };
 WR.openStoryShelf = rid => WR.go("storyShelf", rid);
-WR.stopStory = () => { if (S) { S.tok = -1; } document.querySelectorAll(".gloss-pop").forEach(x => x.remove()); };
+WR.stopStory = () => { if (S) { S.tok = -1; } WR.Voice && WR.Voice.stop(); document.querySelectorAll(".gloss-pop").forEach(x => x.remove()); };
 WR.openStorybook = () => {
   const d = st().done;
   WR.modal(`<h2 style="margin-top:0">📜 The Starlight Storybook</h2><p class="muted" style="font-weight:700">The wind scattered its six pages across the realms. Read each chapter to bring a page home.</p>

@@ -1,14 +1,142 @@
 {
- "_doc": "ONE table for every voice in the game. 'kokoro' = how tools/build_voice.py records the MP3s (Kokoro TTS, kokoro-onnx, Apache-2.0); 'web' = the gentle Web Speech fallback when no recording exists or the device voice is chosen in Settings. Change a profile here, re-run python3 tools/build_voice.py (only missing files are made: the file name is a hash of profile + text).",
- "profiles": {
-  "narrator": { "kokoro": { "voice": "af_heart", "speed": 1.0 }, "web": { "pitch": 1.05, "rate": 1.0 }, "note": "lessons, listening, dictation, stories: af_heart UNMODIFIED (no pitch shift, speed 1.0) so learners hear natural English" },
-  "narrator2": { "kokoro": { "voice": "am_michael", "speed": 1.0 }, "web": { "pitch": 0.9, "rate": 1.0, "male": true }, "note": "the second speaker in dialogues" },
-  "pet": { "kokoro": { "blend": { "af_bella": 0.6, "af_sky": 0.4 }, "speed": 0.9, "semitones": 5, "formant": "shifted" }, "web": { "pitch": 1.5, "rate": 0.92 }, "note": "bubbly Puffbun: pet chatter only" },
-  "guardian": { "kokoro": { "voice": "bm_george", "speed": 0.95 }, "web": { "pitch": 0.8, "rate": 0.95, "male": true }, "note": "grade guardians / bosses (friendly, deeper)" }
- },
- "characters": { "narrator": "narrator", "pet": "pet", "pet_bunny": "pet", "pet_fox": "pet", "pet_dragon": "pet", "pet_owl": "pet", "pet_kitty": "pet", "pet_panda": "pet", "pet_unicorn": "pet", "pet_penguin": "pet", "guardian": "guardian", "boss": "guardian" },
- "webPitchBySpecies": { "pet_dragon": -0.1, "pet_owl": -0.15, "pet_panda": -0.1, "pet_kitty": 0.1, "pet_unicorn": 0.05 },
- "webPrefer": ["Samantha", "Google UK English Female", "Microsoft Aria", "Microsoft Jenny", "Microsoft Libby", "Microsoft Sonia", "Karen", "Moira", "Serena", "Kate", "Martha", "Tessa"],
- "bitrate": "64k",
- "slowRate": 0.8
+  "_doc": "ONE table for every voice in the game. 'kokoro' = how tools/build_voice.py records the MP3s (Kokoro TTS, kokoro-onnx, Apache-2.0); 'web' = the gentle Web Speech fallback when no recording exists or the device voice is chosen in Settings. Change a profile here, re-run python3 tools/build_voice.py (only missing files are made: the file name is a hash of profile + text).",
+  "profiles": {
+    "narrator": {
+      "kokoro": {
+        "voice": "af_heart",
+        "speed": 1.0
+      },
+      "web": {
+        "pitch": 1.05,
+        "rate": 1.0
+      },
+      "note": "lessons, listening, dictation, stories: af_heart UNMODIFIED (no pitch shift, speed 1.0) so learners hear natural English"
+    },
+    "narrator2": {
+      "kokoro": {
+        "voice": "am_michael",
+        "speed": 1.0
+      },
+      "web": {
+        "pitch": 0.9,
+        "rate": 1.0,
+        "male": true
+      },
+      "note": "the second speaker in dialogues"
+    },
+    "pet": {
+      "kokoro": {
+        "blend": {
+          "af_bella": 0.6,
+          "af_sky": 0.4
+        },
+        "speed": 0.9,
+        "semitones": 5,
+        "formant": "shifted"
+      },
+      "web": {
+        "pitch": 1.5,
+        "rate": 0.92
+      },
+      "note": "bubbly Puffbun: pet chatter only"
+    },
+    "guardian": {
+      "kokoro": {
+        "voice": "bm_george",
+        "speed": 0.95
+      },
+      "web": {
+        "pitch": 0.8,
+        "rate": 0.95,
+        "male": true
+      },
+      "note": "grade guardians / bosses (friendly, deeper)"
+    }
+  },
+  "characters": {
+    "narrator": "narrator",
+    "pet": "pet",
+    "pet_bunny": "pet",
+    "pet_fox": "pet",
+    "pet_dragon": "pet",
+    "pet_owl": "pet",
+    "pet_kitty": "pet",
+    "pet_panda": "pet",
+    "pet_unicorn": "pet",
+    "pet_penguin": "pet",
+    "guardian": "guardian",
+    "boss": "guardian"
+  },
+  "webPitchBySpecies": {
+    "pet_dragon": -0.1,
+    "pet_owl": -0.15,
+    "pet_panda": -0.1,
+    "pet_kitty": 0.1,
+    "pet_unicorn": 0.05
+  },
+  "webPrefer": [
+    "Samantha",
+    "Google UK English Female",
+    "Microsoft Aria",
+    "Microsoft Jenny",
+    "Microsoft Libby",
+    "Microsoft Sonia",
+    "Karen",
+    "Moira",
+    "Serena",
+    "Kate",
+    "Martha",
+    "Tessa"
+  ],
+  "bitrate": "64k",
+  "slowRate": 0.8,
+  "sayAs": {
+    "_doc": "how Kokoro should SAY a word or phrase it reads wrongly (the text on screen is unchanged; tools/build_voice.py records the spoken form, the file name includes it, the STORY-VOICES ledger keeps it). Found by tools/story_voice_audit.py and the heteronym phoneme check. Comma-pause keys (e.g. \"looked down\" → \"looked, down\") make a lost ending or a swallowed short word clear; each key is widened until it matches only the line(s) it fixes.",
+    "Mochi": "Moh-chee",
+    "a tear in it": "a tare in it",
+    "around the tear": "around the tare",
+    "our hero read the last page": "our hero red the last page",
+    "even read aloud": "even red aloud",
+    "that read Listener Club": "that red Listener Club",
+    "Bao likes strawberries": "Bao likes, strawberries",
+    "Sprinkle likes strawberries": "Sprinkle likes, strawberries",
+    "hero and Puffbun wave": "hero and, Puffbun wave",
+    "hero and Bao wave": "hero and, Bao wave",
+    "hero and Pip wave": "hero and, Pip wave",
+    "looked down": "looked, down",
+    "first tart": "first, tart",
+    "Village,” it said": "Village,” it, said",
+    "Puffbun sniffed": "Puffbun, sniffed",
+    "Pip sighed": "Pip, sighed",
+    "circles stayed": "circles, stayed",
+    "person, not a": "person, not, a",
+    "hero spliced": "hero, spliced",
+    "joined two": "joined, two",
+    "quick and": "quick, and",
+    "walked the": "walked, the",
+    "Returned to": "Returned, to",
+    "gardens sparkle": "gardens, sparkle",
+    "gardens sparkled": "gardens, sparkled",
+    "as sitting": "as, sitting",
+    "float had": "float, had",
+    "dragon sighed": "dragon, sighed",
+    "a brass": "a, brass",
+    "anyone who swept": "anyone who, swept",
+    "glow-chimes": "glow chimes"
+  },
+  "sayAsPhonemes": {
+    "_doc": "a phrase whose Kokoro phonemes need one sound swapped (no spelling gives it): phrase → [[from, to], …]",
+    "finally content": [
+      [
+        "kˈɑːntɛnt",
+        "kəntˈɛnt"
+      ]
+    ]
+  },
+  "sayAsWhole": {
+    "_doc": "exact whole-line fixes (a lone glossary word or a short line Kokoro reads unclearly): applied before sayAs, only when the line IS this text",
+    "laughed": "laughed.",
+    "dawn": "dawn.",
+    "said our hero.": "said, our hero."
+  }
 }
