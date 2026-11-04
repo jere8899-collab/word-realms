@@ -1,36 +1,41 @@
 /* 🔮 Word Charms (English follow-up, 31 Oct): a spaced-repetition word deck for every realm. Each CEFR level has 40
    kid-friendly words from its Cambridge vocabulary band (tools/c_words.py → data/<level>/words.json: word, part of
    speech, child-friendly meaning, example sentence). A word is a charm: 👀 meet it, ✨ catch it (answer a question about
-   it), then polish it on later days so it glows brighter: 🔮 new → 🌙 1 day → ⭐ 3 days → 🌟 7 days → 🌠 14 days → 💎 mastered.
-   A wrong answer sends the charm back to 🌙 (due again at once) and it is asked once more, unmarked, at the end of the round.
+   it), then polish it on later days so it glows brighter: 🔮 new → 🌙 → ⭐ → 🌟 → 🌠 → 💎 mastered, on the one review schedule
+   (js/review.js, BRIEF-T2): back after 3, 10, 30 and 90 days, then a 💎 comes back for a polish now and then (CONFIG.rest).
+   A polish only counts after a real gap (~20 h, CONFIG.minGapH). A wrong answer sends the charm back to 🌙 (due again at once)
+   and it is asked once more, unmarked, at the end of the round.
    The card type follows how well the word is known: 🔎 pick the word for a meaning → 🧩 fill the gap in the example (first
    letter shown) → 🐝 hear it and spell it with letter tiles → 💭 pick the meaning of the word → gap / spell mixed.
    Rounds: up to 8 questions — due charms first (most overdue first), then up to 4 new words. Practice rounds (when
    everything is resting) are unmarked. Every word, meaning and example has a narrator recording (tools/build_voice.py).
    Stars (anti-farm, WR.awardStars): 1⭐ the first time a charm reaches each glow (so at most 5 per word, ever), +3⭐ when it
-   is mastered, a small round bonus (replays pay less); practice pays none. Answers go through WR.countAnswer
+   is mastered, a small round bonus (replays pay less); practice pays none. A polish that pays no glow star (the glow was
+   reached before) pays the small, capped review star (WR.Review.reward). Answers go through WR.countAnswer
    ("<level>/words" in the Learning Report), the round end through WR.activityDone.
-   Save: WR.state.charms = { cards: { "a1:apple": { b: box 0–5, d: due time, r: right, w: wrong, at: first caught } },
+   Save: WR.state.charms = { cards: { "a1:apple": { b: box 0–5, d: due time, r: right, w: wrong, at: first caught, t: last graded answer, n: graded answers } },
    rounds, lvl: last level opened } inside wordRealms.save.v1 (cloud-synced; older saves gain an empty deck). */
 (function () {
 const WR = window.WR, esc = WR.esc;
 WR.CHARMS = { id: "words", name: "Word Charms", icon: "🔮", desc: "Catch and polish new words" };
 const DAY = 864e5, ROUND = 8, NEW_MAX = 4, MASTER = 5;
 const STAGES = [
-  { e: "🔮", n: "New", wait: 0 },
-  { e: "🌙", n: "Moon charm", wait: 1 },
-  { e: "⭐", n: "Star charm", wait: 3 },
-  { e: "🌟", n: "Bright charm", wait: 7 },
-  { e: "🌠", n: "Shooting-star charm", wait: 14 },
-  { e: "💎", n: "Mastered", wait: 0 }
+  { e: "🔮", n: "New" },
+  { e: "🌙", n: "Moon charm" },
+  { e: "⭐", n: "Star charm" },
+  { e: "🌟", n: "Bright charm" },
+  { e: "🌠", n: "Shooting-star charm" },
+  { e: "💎", n: "Mastered" }
 ];
+STAGES.forEach((g, i) => Object.defineProperty(g, "wait", { get: () => i ? WR.Review.gapDays(i) : 0, enumerable: true }));   // days, from the one config
 const TYPES = { pick: "🔎 Find the word", gap: "🧩 Fill the gap", spell: "🐝 Spell it", mean: "💭 What does it mean?" };
 const LEVELS = ["a1", "a2", "b1", "b2", "c1", "c2"];
 const st = () => WR.block("charms");
 const keyOf = (lvl, w) => lvl + ":" + w;
 const card = (lvl, w) => st().cards[keyOf(lvl, w)];
 const learned = c => !!c && c.b >= 1;
-const isDue = (c, now = Date.now()) => learned(c) && c.b < MASTER && c.d <= now;
+const glow = b => STAGES[Math.max(0, Math.min(MASTER, b || 0))];   // a box → its look (🔮 … 💎)
+const isDue = (c, now = Date.now()) => learned(c) && c.d <= now;   // 💎 too, when its rare polish is due
 const lvlName = lvl => lvl.toUpperCase();
 const words = lvl => WR.data[lvl + "/words"] || [];
 const load = lvl => WR.bank(lvl, "words");
@@ -47,7 +52,7 @@ function counts(lvl) {
   }
   return out;
 }
-const nextDue = lvl => { const ds = Object.entries(st().cards).filter(([k, c]) => (!lvl || k.startsWith(lvl + ":")) && learned(c) && c.b < MASTER).map(([, c]) => c.d).sort((a, b) => a - b); return ds[0] || null; };
+const nextDue = lvl => { const ds = Object.entries(st().cards).filter(([k, c]) => (!lvl || k.startsWith(lvl + ":")) && learned(c)).map(([, c]) => c.d).sort((a, b) => a - b); return ds[0] || null; };
 function when(ts) {
   const d = ts - Date.now(); if (d <= 0) return "now";
   const h = Math.round(d / 36e5); if (h < 23) return `in ${Math.max(1, h)}h`;
@@ -104,14 +109,16 @@ function makeRound(lvl, practice) {
     .forEach(q => plan.push(Object.assign(q, { kind: "quiz", graded: true })));
   return plan;
 }
-// one graded answer → the charm's new box; returns { b, up, mastered }
+const before0 = c => !(c.b >= 1);   // catching a new word is first learning: no minimum gap
+// one graded answer → the charm's new box, on the one review rule (WR.Review.step); returns { b, up, mastered, moved, pay }
 function grade(lvl, word, ok) {
   const k = keyOf(lvl, word), now = Date.now(), cs = st().cards, c = cs[k] = cs[k] || { b: 0, d: now, r: 0, w: 0 };
-  const before = c.b;
-  if (ok) { c.r++; c.b = Math.min(MASTER, c.b + 1); if (before === 0) c.at = now; c.d = now + STAGES[c.b].wait * DAY; }
-  else { c.w++; c.b = c.b >= 1 ? 1 : 0; c.d = now; }
+  const before = c.b, rec = { s: c.b, d: c.d, t: before0(c) ? undefined : c.t, n: c.n != null ? c.n : (c.r || 0) + (c.w || 0), r: c.r, w: c.w };
+  const res = WR.Review.step(rec, ok, now, { floor: c.b >= 1 ? 1 : 0, wrongDays: 0 });   // wrong: back to 🌙, due at once
+  if (ok && before === 0 && res.moved) c.at = now;
+  c.b = Math.min(MASTER, rec.s); c.d = rec.d; c.t = rec.t; c.n = rec.n; c.r = rec.r; c.w = rec.w;
   WR.save();
-  return { b: c.b, up: c.b > before, mastered: c.b >= MASTER && before < MASTER };
+  return { b: c.b, up: c.b > before, mastered: c.b >= MASTER && before < MASTER, moved: res.moved, pay: ok && res.moved && before >= 1 ? "c:" + k + "#" + c.n : null };
 }
 
 /* ---------- entry points: realm tile, map nudge ---------- */
@@ -146,7 +153,7 @@ function hub(rid) {
   const newLeft = list.filter(w => !learned(card(rid, w.w))).length, canPlay = c.due > 0 || newLeft > 0;
   const btn = c.due ? `✨ Polish ${Math.min(c.due, ROUND)} charm${c.due > 1 ? "s" : ""}${c.due < ROUND && newLeft ? " + catch new ones" : ""}` : newLeft ? `✨ Catch ${Math.min(NEW_MAX, newLeft)} new charm${Math.min(NEW_MAX, newLeft) > 1 ? "s" : ""}` : "";
   const charm = w => { const k = card(rid, w.w), b = k ? k.b : -1;
-    return learned(k) ? `<button class="ch-charm b${b}${isDue(k) ? " due" : ""}" data-w="${esc(w.w)}" aria-label="${esc(w.w)}, ${STAGES[b].n}"><span class="ch-gem">${STAGES[b].e}</span><span class="ch-word">${esc(w.w)}</span></button>`
+    return learned(k) ? `<button class="ch-charm b${b}${isDue(k) ? " due" : ""}" data-w="${esc(w.w)}" aria-label="${esc(w.w)}, ${glow(b).n}"><span class="ch-gem">${glow(b).e}</span><span class="ch-word">${esc(w.w)}</span></button>`
       : `<button class="ch-charm mystery" data-w="${esc(w.w)}" aria-label="A charm you haven't caught yet"><span class="ch-gem">🔮</span><span class="ch-word">?</span></button>`; };
   WR.view(`<div class="fade-in ch-hub"><div class="row lesson-top" style="margin:6px 0 8px"><button class="btn ghost small" id="chBack">← ${esc(realm.name)}</button><b class="title">🔮 Word Charms</b></div>
     ${WR.levelTabs(rid, l => counts(l).due)}
@@ -165,10 +172,10 @@ function hub(rid) {
   document.querySelectorAll(".ch-charm").forEach(b => b.onclick = () => {
     const w = list.find(x => x.w === b.dataset.w), k = card(rid, w.w);
     if (!learned(k)) return WR.toast("🔮 Catch this charm in a round to see its word!", 2200);
-    const g = STAGES[k.b];
+    const g = glow(k.b);
     WR.modal(`<div class="ch-modal"><div class="ch-big">${g.e}</div><h2 style="margin:.1em 0">${esc(w.w)} <button class="btn ghost small" id="chSayW" aria-label="Hear the word">🔊</button></h2><span class="pill">${esc(w.pos)} · ${g.n}</span>
       <p class="ch-def">${esc(w.def)}</p><p class="ch-ex">“${hl(w.ex, w.w)}” <button class="btn ghost small" id="chSayE" aria-label="Hear the example">🔊</button></p>
-      <p class="muted" style="font-size:.8rem;font-weight:800">${k.b >= MASTER ? "💎 Mastered! It will shine forever." : `Next polish ${when(k.d)}`} · ✅ ${k.r} · 💭 ${k.w}</p><button class="btn small" id="chOk">Got it</button></div>`, (bg, close) => {
+      <p class="muted" style="font-size:.8rem;font-weight:800">${k.b >= MASTER ? `💎 Mastered! Next sparkle check ${when(k.d)}.` : `Next polish ${when(k.d)}`} · ✅ ${k.r} · 💭 ${k.w}</p><button class="btn small" id="chOk">Got it</button></div>`, (bg, close) => {
       bg.querySelector("#chSayW").onclick = () => WR.say(w.w);
       bg.querySelector("#chSayE").onclick = () => WR.say(w.ex);
       bg.querySelector("#chOk").onclick = close;
@@ -193,7 +200,7 @@ WR.screens.charmsRound = ({ lvl, practice }) => {
 };
 function progress() { const quiz = S.plan.filter(p => p.kind === "quiz").length, done = S.plan.slice(0, S.n).filter(p => p.kind === "quiz").length; return { quiz, done }; }
 function render(auto) {
-  const p = S.plan[S.n], pr = progress(), c = card(S.lvl, p.w.w), stage = STAGES[c ? Math.min(MASTER, c.b) : 0];
+  const p = S.plan[S.n], pr = progress(), c = card(S.lvl, p.w.w), stage = glow(c && c.b);
   WR.view(`<div class="fade-in ch-round"><div class="row lesson-top" style="justify-content:space-between;margin:6px 0 8px"><button class="btn ghost small" id="chQuit">← Leave</button><div class="ph-progress"><div class="prog"><i style="width:${S.n / S.plan.length * 100}%"></i></div><b>${S.n + 1}/${S.plan.length}</b></div></div>
     <div class="card ch-card"><div class="ph-head"><span class="lvl-badge">${lvlName(S.lvl)}</span><b>${p.kind === "meet" ? "👀 Meet a new charm" : TYPES[p.type]}</b>${S.practice ? '<span class="pill">🎲 practice</span>' : p.retry ? '<span class="pill">🔁 once more</span>' : `<span class="pill ch-stage">${stage.e} ${stage.n}</span>`}</div>
       ${p.kind === "meet" ? meetHTML(p) : quizHTML(p)}<div id="chFb"></div></div></div>`);
@@ -257,9 +264,12 @@ function choose(val, btn) {
     const g = grade(S.lvl, p.w.w, ok);
     if (ok) {
       if (g.b === 1) S.caught++; else S.polished++;
-      const got = WR.awardStars("charm", `${S.lvl}/${p.w.w}/b${g.b}`, 1, { kind: "item", tally: S, quiet: true }); S.stars += got;
+      const got = g.up ? WR.awardStars("charm", `${S.lvl}/${p.w.w}/b${g.b}`, 1, { kind: "item", tally: S, quiet: true }) : 0; S.stars += got;
+      if (!got && g.pay) S.stars += WR.Review.reward(g.pay);   // 🔁 a polish on a glow reached before: the small, capped review ⭐
       if (g.mastered) { S.mastered++; S.stars += WR.awardStars("charmMaster", keyOf(S.lvl, p.w.w), 3, { kind: "fresh", quiet: true }); }
-      note = g.mastered ? "💎 Mastered! This charm will shine forever." : `${STAGES[g.b].e} It's a ${STAGES[g.b].n} now. See you ${when(card(S.lvl, p.w.w).d)}!`;
+      const next = when(card(S.lvl, p.w.w).d);
+      note = g.mastered ? `💎 Mastered! It will pop back for a polish now and then (next ${next}).` : !g.moved ? `${glow(g.b).e} Well remembered! It counts as a polish again ${next}.`
+        : g.b >= MASTER ? `💎 Still shining! See you ${next}.` : `${glow(g.b).e} It's a ${glow(g.b).n} now. See you ${next}!`;
     } else note = "🌙 We'll polish this one again soon.";
   }
   if (!ok && !S.practice && !p.retry) S.plan.push(Object.assign({}, p, { retry: true, graded: false, options: p.options && WR.shuffle(p.options), pool: p.pool && WR.shuffle(p.pool) }));

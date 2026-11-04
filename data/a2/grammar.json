@@ -3,49 +3,57 @@
   "type": "order",
   "q": "Build the sentence in the candy shop!",
   "answer": "She went to the market yesterday.",
-  "explain": "Past simple: subject + went + place + time."
+  "explain": "Past simple: subject + went + place + time.",
+  "sk": "grammar.past-simple"
  },
  {
   "type": "order",
   "q": "Build the sentence in the candy shop!",
   "answer": "We are going to bake a cake.",
-  "explain": "'be going to' + verb for plans."
+  "explain": "'be going to' + verb for plans.",
+  "sk": "grammar.future"
  },
  {
   "type": "order",
   "q": "Build the sentence in the candy shop!",
   "answer": "Have you ever eaten candy floss?",
-  "explain": "Present perfect question: Have + you + ever + past participle."
+  "explain": "Present perfect question: Have + you + ever + past participle.",
+  "sk": "grammar.perfect-present"
  },
  {
   "type": "order",
   "q": "Build the sentence in the candy shop!",
   "answer": "The bakery is bigger than the sweet shop.",
-  "explain": "Comparative: bigger than."
+  "explain": "Comparative: bigger than.",
+  "sk": "grammar.comparison"
  },
  {
   "type": "order",
   "q": "Build the sentence in the candy shop!",
   "answer": "I was walking home when it started to rain.",
-  "explain": "Past continuous (was walking) interrupted by past simple (started)."
+  "explain": "Past continuous (was walking) interrupted by past simple (started).",
+  "sk": "grammar.continuous-past"
  },
  {
   "type": "order",
   "q": "Build the sentence in the candy shop!",
   "answer": "You mustn't eat sweets before dinner.",
-  "explain": "'mustn't' = it is not allowed."
+  "explain": "'mustn't' = it is not allowed.",
+  "sk": "grammar.word-order"
  },
  {
   "type": "order",
   "q": "Build the sentence in the candy shop!",
   "answer": "There isn't much sugar in the jar.",
-  "explain": "'much' with uncountable nouns like sugar."
+  "explain": "'much' with uncountable nouns like sugar.",
+  "sk": "grammar.quantifier"
  },
  {
   "type": "order",
   "q": "Build the sentence in the candy shop!",
   "answer": "He has lived here since 2020.",
-  "explain": "Present perfect + since + a point in time."
+  "explain": "Present perfect + since + a point in time.",
+  "sk": "grammar.perfect-present"
  },
  {
   "type": "mcq",
@@ -62,7 +70,8 @@
    "go": "Go is the present.",
    "have gone": "Have gone can't go with a finished time like 'last night'.",
    "goes": "Goes is present, for he/she/it."
-  }
+  },
+  "sk": "grammar.past-simple"
  },
  {
   "type": "mcq",
@@ -79,7 +88,8 @@
    "more sweet": "More is for long adjectives: more beautiful. Sweet is short.",
    "sweetest": "Sweetest compares three or more: the sweetest.",
    "sweet": "With 'than' we need the comparative form."
-  }
+  },
+  "sk": "grammar.comparison"
  },
  {
   "type": "mcq",
@@ -96,7 +106,8 @@
    "much": "How much is for things we can't count: How much milk?",
    "lot": "Lot needs 'a lot of', and doesn't follow 'how'.",
    "any": "Any is not used after 'how'."
-  }
+  },
+  "sk": "grammar.quantifier"
  },
  {
   "type": "mcq",
@@ -113,7 +124,8 @@
    "are waiting": "Are waiting is the present.",
    "wait": "Wait is the present simple.",
    "have waited": "Have waited doesn't fit a finished past story."
-  }
+  },
+  "sk": "grammar.continuous-past"
  },
  {
   "type": "mcq",
@@ -130,7 +142,8 @@
    "since": "Since needs a starting point: since 2023.",
    "from": "From needs 'to': from 2020 to 2023.",
    "during": "During means inside a period: during the summer."
-  }
+  },
+  "sk": "grammar.perfect-present"
  },
  {
   "type": "mcq",
@@ -147,7 +160,8 @@
    "mustn't": "Mustn't means it is not allowed. Wearing a coat isn't wrong!",
    "have to": "Have to means it IS necessary, but it's warm.",
    "must": "Must also means it is necessary."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -164,7 +178,8 @@
    "goodest": "Goodest isn't a word. Good is irregular.",
    "better": "Better compares two things.",
    "most good": "Most good isn't used. Say best."
-  }
+  },
+  "sk": "grammar.comparison"
  },
  {
   "type": "mcq",
@@ -181,7 +196,8 @@
    "visited": "Did already shows the past, so no -ed.",
    "visiting": "No -ing after did.",
    "visits": "No -s after did."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -198,31 +214,36 @@
    "would": "Would is for unreal situations: If I had wings, I would fly.",
    "are": "Are can't go before 'stay' like this.",
    "did": "Did is past."
-  }
+  },
+  "sk": "grammar.conditional-1"
  },
  {
   "type": "order",
   "q": "Build the sentence in the candy shop!",
   "answer": "I have never seen a real dragon.",
-  "explain": "Present perfect + never: I have never seen…"
+  "explain": "Present perfect + never: I have never seen…",
+  "sk": "grammar.perfect-present"
  },
  {
   "type": "order",
   "q": "Build the sentence in the candy shop!",
   "answer": "Could you pass me the sugar, please?",
-  "explain": "Polite request: Could you + verb…, please?"
+  "explain": "Polite request: Could you + verb…, please?",
+  "sk": "grammar.word-order"
  },
  {
   "type": "order",
   "q": "Build the sentence in the candy shop!",
   "answer": "There isn't any milk in the fridge.",
-  "explain": "Negative with uncountable nouns: there isn't any…"
+  "explain": "Negative with uncountable nouns: there isn't any…",
+  "sk": "grammar.quantifier"
  },
  {
   "type": "order",
   "q": "Build the sentence in the candy shop!",
   "answer": "My brother is good at drawing.",
-  "explain": "good at + -ing."
+  "explain": "good at + -ing.",
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mcq",
@@ -239,7 +260,8 @@
    "did": "Did doesn't go with 'eaten'.",
    "am": "Am doesn't go with 'eaten'.",
    "was": "Was eaten would mean the slices ate you!"
-  }
+  },
+  "sk": "grammar.perfect-present"
  },
  {
   "type": "mcq",
@@ -256,7 +278,8 @@
    "use to": "After 'I' in the past it's used to, with a d.",
    "was used": "Was used means someone used you.",
    "am used to": "Am used to means 'I'm comfortable with' now."
-  }
+  },
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mcq",
@@ -273,7 +296,8 @@
    "some": "Some is mostly in positive sentences: There is some bread.",
    "many": "Many is for countable plurals: many apples.",
    "a": "A is for one countable thing. Bread is uncountable."
-  }
+  },
+  "sk": "grammar.quantifier"
  },
  {
   "type": "mcq",
@@ -290,7 +314,8 @@
    "more fast": "Fast is short, so no 'more'.",
    "fastest": "Fastest compares three or more.",
    "most fast": "Most fast isn't used. Say fastest."
-  }
+  },
+  "sk": "grammar.comparison"
  },
  {
   "type": "mcq",
@@ -307,7 +332,8 @@
    "will to": "We say 'will rain', never 'will to'.",
    "goes to": "Goes to is a movement: He goes to school.",
    "is raining to": "Is raining to isn't English."
-  }
+  },
+  "sk": "grammar.future"
  },
  {
   "type": "mcq",
@@ -324,7 +350,8 @@
    "had": "Had would mean the shower came after the call.",
    "have had": "Have had is present perfect, not a story.",
    "am having": "Am having is now."
-  }
+  },
+  "sk": "grammar.continuous-past"
  },
  {
   "type": "mcq",
@@ -341,7 +368,8 @@
    "mustn't": "Mustn't means it's not allowed. Going isn't wrong!",
    "haven't": "Haven't needs a past participle: haven't gone.",
    "can't to": "We say 'can't go', with no 'to'."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -358,7 +386,8 @@
    "which": "Which is for things and animals.",
    "where": "Where is for places.",
    "what": "What isn't used to join a person to a sentence."
-  }
+  },
+  "sk": "grammar.relative"
  },
  {
   "type": "mcq",
@@ -375,7 +404,8 @@
    "enough": "Enough comes after the adjective: old enough.",
    "very much": "Very much doesn't go before an adjective.",
    "so much": "So much doesn't go before an adjective."
-  }
+  },
+  "sk": "grammar.comparison"
  },
  {
   "type": "mcq",
@@ -392,7 +422,8 @@
    "already": "Already usually goes in the middle of a positive sentence.",
    "still": "Still is for something that hasn't stopped.",
    "ever": "Ever asks 'at any time in your life'."
-  }
+  },
+  "sk": "grammar.perfect-present"
  },
  {
   "type": "mcq",
@@ -409,7 +440,8 @@
    "build": "Build is present; 'yesterday' needs the past.",
    "builded": "Build is irregular: built, not builded.",
    "are building": "Are building is happening now, not yesterday."
-  }
+  },
+  "sk": "grammar.past-simple"
  },
  {
   "type": "mcq",
@@ -426,7 +458,8 @@
    "forget": "Forget is present.",
    "forgets": "Forgets is present, for every day.",
    "forgetted": "Forget is irregular: forgot."
-  }
+  },
+  "sk": "grammar.past-simple"
  },
  {
   "type": "mcq",
@@ -443,7 +476,8 @@
    "Do": "Do is for the present.",
    "Were": "Were goes with -ing or an adjective: Were you happy?",
    "Have": "Have you seen…? doesn't fit 'this morning' with 'see'."
-  }
+  },
+  "sk": "grammar.past-simple"
  },
  {
   "type": "mcq",
@@ -460,7 +494,8 @@
    "knew": "After didn't, use the plain verb, not the past.",
    "knows": "No -s after didn't.",
    "knowing": "No -ing after didn't."
-  }
+  },
+  "sk": "grammar.past-simple"
  },
  {
   "type": "mcq",
@@ -477,7 +512,8 @@
    "sleeped": "Sleep is irregular: slept.",
    "sleeps": "Sleeps is present.",
    "sleep": "Sleep is present."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -494,7 +530,8 @@
    "stay": "Stay is present.",
    "staied": "Stay keeps the y: stayed.",
    "were stay": "Were stay mixes two forms."
-  }
+  },
+  "sk": "grammar.past-simple"
  },
  {
   "type": "mcq",
@@ -511,7 +548,8 @@
    "drawed": "Draw is irregular: drew.",
    "draws": "Draws is present.",
    "drawn": "Drawn needs has/have: has drawn."
-  }
+  },
+  "sk": "grammar.past-simple"
  },
  {
   "type": "mcq",
@@ -528,7 +566,8 @@
    "do": "Do is present.",
    "were": "Were doesn't go with 'go'.",
    "are": "Are is present."
-  }
+  },
+  "sk": "grammar.past-simple"
  },
  {
   "type": "mcq",
@@ -545,7 +584,8 @@
    "did": "Did shows a finished action, not one in progress at 8 p.m.",
    "am doing": "Am doing is now.",
    "were doing": "Were goes with you/we/they, not I."
-  }
+  },
+  "sk": "grammar.continuous-past"
  },
  {
   "type": "mcq",
@@ -562,7 +602,8 @@
    "played": "Played is a finished action; 'while' needs the longer one in progress.",
    "was playing": "Was is for I/he/she/it; we → were.",
    "are playing": "Are playing is now."
-  }
+  },
+  "sk": "grammar.continuous-past"
  },
  {
   "type": "mcq",
@@ -579,7 +620,8 @@
    "was hooting": "The short action that interrupts uses the past simple.",
    "hoots": "Hoots is present.",
    "hoot": "Hoot is present."
-  }
+  },
+  "sk": "grammar.continuous-past"
  },
  {
   "type": "mcq",
@@ -596,7 +638,8 @@
    "ever": "Ever is for questions: Have you ever…?",
    "already": "Already means it has happened.",
    "yet": "Yet goes at the end in questions or negatives."
-  }
+  },
+  "sk": "grammar.perfect-present"
  },
  {
   "type": "mcq",
@@ -613,7 +656,8 @@
    "never": "Never is for statements: I've never…",
    "yet": "Yet goes at the end of a sentence.",
    "since": "Since needs a start time: since Monday."
-  }
+  },
+  "sk": "grammar.perfect-present"
  },
  {
   "type": "mcq",
@@ -630,7 +674,8 @@
    "yet": "Yet goes at the end in questions and negatives.",
    "ever": "Ever is for questions about experience.",
    "for": "For needs a time: for two hours."
-  }
+  },
+  "sk": "grammar.perfect-present"
  },
  {
   "type": "mcq",
@@ -647,7 +692,8 @@
    "for": "For needs a length of time: for five years.",
    "from": "From needs 'to': from 2019 to 2022.",
    "ago": "Ago goes with the past simple: five years ago."
-  }
+  },
+  "sk": "grammar.perfect-present"
  },
  {
   "type": "mcq",
@@ -664,7 +710,8 @@
    "since": "Since needs a start point: since 2024.",
    "ago": "Ago goes with the past simple.",
    "during": "During needs a noun: during the holiday."
-  }
+  },
+  "sk": "grammar.perfect-present"
  },
  {
   "type": "mcq",
@@ -681,7 +728,8 @@
    "already": "Already is for things that have happened.",
    "just": "Just means a moment ago.",
    "ever": "Ever is for questions about experience."
-  }
+  },
+  "sk": "grammar.perfect-present"
  },
  {
   "type": "mcq",
@@ -698,7 +746,8 @@
    "has broke": "The participle is broken, not broke.",
    "have broken": "He/she/it → has, not have.",
    "is breaking": "Is breaking means it's happening now."
-  }
+  },
+  "sk": "grammar.perfect-present"
  },
  {
   "type": "mcq",
@@ -715,7 +764,8 @@
    "will to": "Will doesn't take 'to'.",
    "go to": "We need 'going to'.",
    "goes to": "Goes to isn't a future form."
-  }
+  },
+  "sk": "grammar.future"
  },
  {
   "type": "mcq",
@@ -732,7 +782,8 @@
    "'m going": "Going to is for plans made before.",
    "close": "We need 'll before close.",
    "am": "Am doesn't make an offer here."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -749,7 +800,8 @@
    "will to": "Will doesn't take to.",
    "go": "Go is present.",
    "visited": "Visited is past."
-  }
+  },
+  "sk": "grammar.future"
  },
  {
   "type": "mcq",
@@ -766,7 +818,8 @@
    "do": "Do asks about habits.",
    "did": "Did asks about the past.",
    "will to": "Will doesn't take to."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -783,7 +836,8 @@
    "is": "Is be isn't right.",
    "going": "Going needs is + to.",
    "does": "Does doesn't go with be."
-  }
+  },
+  "sk": "grammar.future"
  },
  {
   "type": "mcq",
@@ -800,7 +854,8 @@
    "more fast": "Short adjectives take -er, not more.",
    "fastest": "Fastest is for the top of a group.",
    "fast": "We need the -er form before than."
-  }
+  },
+  "sk": "grammar.comparison"
  },
  {
   "type": "mcq",
@@ -817,7 +872,8 @@
    "funnier": "Funnier compares two.",
    "most funny": "Two-syllable -y adjectives take -iest.",
    "funnyest": "Change y to i: funniest."
-  }
+  },
+  "sk": "grammar.comparison"
  },
  {
   "type": "mcq",
@@ -834,7 +890,8 @@
    "comfortabler": "Long adjectives don't take -er.",
    "most comfortable": "Most is for the top of a group.",
    "comfortable": "We need more … than."
-  }
+  },
+  "sk": "grammar.comparison"
  },
  {
   "type": "mcq",
@@ -851,7 +908,8 @@
    "more cold": "Short adjectives use -er.",
    "coldest": "Coldest compares more than two.",
    "the colder": "No 'the' with a comparative + than."
-  }
+  },
+  "sk": "grammar.comparison"
  },
  {
   "type": "mcq",
@@ -868,7 +926,8 @@
    "as hard than": "As goes with as, not than.",
    "harder as": "Harder goes with than.",
    "so hard than": "We say as… as."
-  }
+  },
+  "sk": "grammar.comparison"
  },
  {
   "type": "mcq",
@@ -885,7 +944,8 @@
    "gooder": "Good is irregular: better.",
    "more good": "We don't say more good.",
    "best": "Best is for the top of a group."
-  }
+  },
+  "sk": "grammar.comparison"
  },
  {
   "type": "mcq",
@@ -902,7 +962,8 @@
    "baddest": "Bad is irregular: worst.",
    "worse": "Worse compares two.",
    "most bad": "We don't say most bad."
-  }
+  },
+  "sk": "grammar.comparison"
  },
  {
   "type": "mcq",
@@ -919,7 +980,8 @@
    "the bigger": "The bigger compares two.",
    "biggest": "Superlatives need 'the'.",
    "the most big": "Short adjectives take -est."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -936,7 +998,8 @@
    "many": "Many is for countable things: many cups.",
    "a few": "A few is for countable things.",
    "lots": "Lots needs 'of': lots of juice."
-  }
+  },
+  "sk": "grammar.quantifier"
  },
  {
   "type": "mcq",
@@ -953,7 +1016,8 @@
    "much": "Much is for uncountable things.",
    "lot": "Lot needs a: a lot of.",
    "any": "Any doesn't go after how."
-  }
+  },
+  "sk": "grammar.quantifier"
  },
  {
   "type": "mcq",
@@ -970,7 +1034,8 @@
    "a little": "A little is for uncountable things.",
    "much": "Much is for uncountable things.",
    "a lot": "A lot needs 'of', and three isn't a lot."
-  }
+  },
+  "sk": "grammar.quantifier"
  },
  {
   "type": "mcq",
@@ -987,7 +1052,8 @@
    "a few": "A few is for countable things.",
    "many": "Many is for countable things.",
    "several": "Several is for countable things."
-  }
+  },
+  "sk": "grammar.quantifier"
  },
  {
   "type": "mcq",
@@ -1004,7 +1070,8 @@
    "some": "Some is usually for positive sentences and offers.",
    "a": "A isn't used with cheese (uncountable).",
    "many": "Many is for countable things."
-  }
+  },
+  "sk": "grammar.quantifier"
  },
  {
   "type": "mcq",
@@ -1021,7 +1088,8 @@
    "any": "Any is for questions that aren't offers, and negatives.",
    "a": "A is for one thing.",
    "much": "Much is for uncountable things."
-  }
+  },
+  "sk": "grammar.quantifier"
  },
  {
   "type": "mcq",
@@ -1038,7 +1106,8 @@
    "don't have to": "Don't have to = it's not necessary, but OK.",
    "needn't": "Needn't = not necessary.",
    "can": "Can means it's allowed, the opposite."
-  }
+  },
+  "sk": "grammar.modal"
  },
  {
   "type": "mcq",
@@ -1055,7 +1124,8 @@
    "mustn't": "Mustn't means it isn't allowed.",
    "can't": "Can't means you aren't able or allowed.",
    "shouldn't": "Shouldn't means it's a bad idea."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -1072,7 +1142,8 @@
    "must to": "Must doesn't take to.",
    "would": "Would isn't advice here.",
    "can't": "Can't is the opposite of advice."
-  }
+  },
+  "sk": "grammar.modal"
  },
  {
   "type": "mcq",
@@ -1089,7 +1160,8 @@
    "Must": "Must I…? asks if it's necessary.",
    "Should": "Should I…? asks for advice.",
    "Will I": "Will I…? asks about the future."
-  }
+  },
+  "sk": "grammar.modal"
  },
  {
   "type": "mcq",
@@ -1106,7 +1178,8 @@
    "can't": "Can't is present.",
    "mustn't": "Mustn't is about rules.",
    "shouldn't": "Shouldn't is about advice."
-  }
+  },
+  "sk": "grammar.modal"
  },
  {
   "type": "mcq",
@@ -1123,7 +1196,8 @@
    "has to": "Has to is for he/she/it.",
    "must to": "Must doesn't take to.",
    "can to": "Can doesn't take to."
-  }
+  },
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mcq",
@@ -1140,7 +1214,8 @@
    "to dance": "Enjoy isn't followed by to.",
    "dance": "We need the -ing form.",
    "danced": "Danced is past."
-  }
+  },
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mcq",
@@ -1157,7 +1232,8 @@
    "visiting": "Want isn't followed by -ing.",
    "visit": "We need to before the verb.",
    "visited": "Visited is past."
-  }
+  },
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mcq",
@@ -1174,7 +1250,8 @@
    "tell": "After 'at' use -ing.",
    "to tell": "No 'to' after at.",
    "tells": "Tells is present."
-  }
+  },
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mcq",
@@ -1191,7 +1268,8 @@
    "talk": "We need -ing after stop.",
    "to talk": "Stop to talk means you stop in order to talk.",
    "talked": "Talked is past."
-  }
+  },
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mcq",
@@ -1208,7 +1286,8 @@
    "baking": "Decide isn't followed by -ing.",
    "bake": "We need to before bake.",
    "baked": "Baked is past."
-  }
+  },
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mcq",
@@ -1225,7 +1304,8 @@
    "who": "Who is usually for people.",
    "where": "Where is for places.",
    "what": "What isn't used like this."
-  }
+  },
+  "sk": "grammar.question"
  },
  {
   "type": "mcq",
@@ -1242,7 +1322,8 @@
    "which": "Which needs 'in': which we had our picnic in.",
    "who": "Who is for people.",
    "when": "When is for times."
-  }
+  },
+  "sk": "grammar.relative"
  },
  {
   "type": "mcq",
@@ -1259,7 +1340,8 @@
    "which": "Which is for things and animals.",
    "where": "Where is for places.",
    "whose": "Whose shows owning."
-  }
+  },
+  "sk": "grammar.relative"
  },
  {
   "type": "mcq",
@@ -1276,7 +1358,8 @@
    "in": "We say good at, not good in.",
    "on": "On isn't used with good.",
    "for": "Good for means healthy."
-  }
+  },
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mcq",
@@ -1293,7 +1376,8 @@
    "from": "We don't say afraid from.",
    "at": "At isn't used with afraid.",
    "with": "With isn't used with afraid."
-  }
+  },
+  "sk": "grammar.preposition"
  },
  {
   "type": "mcq",
@@ -1310,7 +1394,8 @@
    "on": "On needs 'the': on the bus.",
    "with": "With isn't used with transport.",
    "in": "In needs 'the' or a car: in the car."
-  }
+  },
+  "sk": "grammar.preposition"
  },
  {
   "type": "mcq",
@@ -1327,7 +1412,8 @@
    "in": "In is for months alone: in May.",
    "at": "At is for times.",
    "by": "By means 'not later than'."
-  }
+  },
+  "sk": "grammar.preposition"
  },
  {
   "type": "mcq",
@@ -1344,7 +1430,8 @@
    "in": "In the weekend isn't usual in British English.",
    "on in": "Don't use two prepositions.",
    "by the": "By the weekend means 'before it ends'."
-  }
+  },
+  "sk": "grammar.preposition"
  },
  {
   "type": "mcq",
@@ -1361,7 +1448,8 @@
    "a": "We use the, not a, with instruments.",
    "(no word)": "We need 'the' here.",
    "an": "Piano starts with p, so not an."
-  }
+  },
+  "sk": "grammar.article"
  },
  {
   "type": "mcq",
@@ -1378,7 +1466,8 @@
    "the": "Go to the school is for visiting the building.",
    "a": "A school means any school.",
    "an": "An is before a vowel sound."
-  }
+  },
+  "sk": "grammar.article"
  },
  {
   "type": "mcq",
@@ -1395,7 +1484,8 @@
    "slow": "Slow is an adjective; we need slowly after walked.",
    "slower": "Slower compares.",
    "slowest": "Slowest compares more than two."
-  }
+  },
+  "sk": "grammar.word-order"
  },
  {
   "type": "mcq",
@@ -1412,7 +1502,8 @@
    "beautiful": "Beautiful describes a noun.",
    "beauty": "Beauty is a noun.",
    "more beautiful": "More beautiful compares."
-  }
+  },
+  "sk": "grammar.word-order"
  },
  {
   "type": "mcq",
@@ -1429,7 +1520,8 @@
    "good": "Good describes a noun: a good test.",
    "nice": "Nice is an adjective.",
    "fine": "Fine is an adjective here."
-  }
+  },
+  "sk": "grammar.word-order"
  },
  {
   "type": "mcq",
@@ -1446,7 +1538,8 @@
    "never": "Never means not at any time, but you love broccoli.",
    "rarely": "Rarely means not often.",
    "hardly": "Hardly means almost not."
-  }
+  },
+  "sk": "grammar.word-order"
  },
  {
   "type": "mcq",
@@ -1463,7 +1556,8 @@
    "do": "The tag must be negative here.",
    "aren't": "Like uses do, not be.",
    "doesn't": "You → don't, not doesn't."
-  }
+  },
+  "sk": "grammar.present-simple"
  },
  {
   "type": "mcq",
@@ -1480,7 +1574,8 @@
    "isn't": "The tag must be positive here.",
    "does": "Is raining uses be, not do.",
    "doesn't": "Be, not do, and positive."
-  }
+  },
+  "sk": "grammar.be"
  },
  {
   "type": "mcq",
@@ -1497,7 +1592,8 @@
    "What": "What asks about a thing.",
    "Who": "Who asks about a person.",
    "Which": "Which asks for a choice."
-  }
+  },
+  "sk": "grammar.question"
  },
  {
   "type": "mcq",
@@ -1514,7 +1610,8 @@
    "Who": "Who asks about a person.",
    "Who's": "Who's = who is.",
    "Which's": "Which's isn't a word."
-  }
+  },
+  "sk": "grammar.relative"
  },
  {
   "type": "mcq",
@@ -1531,7 +1628,8 @@
    "How much": "How much asks about amount or price.",
    "When time": "When time isn't English.",
    "How long": "How long asks about time length."
-  }
+  },
+  "sk": "grammar.question"
  },
  {
   "type": "mcq",
@@ -1548,7 +1646,8 @@
    "your": "Your goes before a noun.",
    "you": "You isn't possessive.",
    "your's": "No apostrophe: yours."
-  }
+  },
+  "sk": "grammar.pronoun-possessive"
  },
  {
   "type": "mcq",
@@ -1565,7 +1664,8 @@
    "there": "There is a place.",
    "they're": "They're = they are.",
    "theirs": "Theirs stands alone."
-  }
+  },
+  "sk": "grammar.pronoun-possessive"
  },
  {
   "type": "mcq",
@@ -1582,7 +1682,8 @@
    "you": "You doesn't give the meaning 'on your own'.",
    "yours": "Yours means belonging to you.",
    "your": "Your needs a noun."
-  }
+  },
+  "sk": "grammar.pronoun-possessive"
  },
  {
   "type": "mcq",
@@ -1599,7 +1700,8 @@
    "it's": "It's = it is.",
    "his's": "His's isn't a word.",
    "it": "It isn't possessive."
-  }
+  },
+  "sk": "grammar.pronoun-possessive"
  },
  {
   "type": "mcq",
@@ -1616,7 +1718,8 @@
    "melt": "It → melts with -s.",
    "will melted": "Will melted mixes forms.",
    "melting": "Melting needs is."
-  }
+  },
+  "sk": "grammar.conditional-1"
  },
  {
   "type": "mcq",
@@ -1633,7 +1736,8 @@
    "would": "Would is for imaginary situations.",
    "did": "Did is past.",
    "are": "Are play isn't right."
-  }
+  },
+  "sk": "grammar.conditional-1"
  },
  {
   "type": "mcq",
@@ -1650,7 +1754,8 @@
    "because": "Because gives a reason, not a contrast.",
    "so": "So gives a result.",
    "or": "Or gives a choice."
-  }
+  },
+  "sk": "grammar.linker"
  },
  {
   "type": "mcq",
@@ -1667,7 +1772,8 @@
    "but": "But shows a contrast.",
    "so": "So gives a result, not a reason.",
    "although": "Although shows a surprise contrast."
-  }
+  },
+  "sk": "grammar.linker"
  },
  {
   "type": "mcq",
@@ -1684,7 +1790,8 @@
    "because": "Because gives a reason.",
    "but": "But shows a contrast.",
    "if": "If is for conditions."
-  }
+  },
+  "sk": "grammar.linker"
  },
  {
   "type": "mcq",
@@ -1701,7 +1808,8 @@
    "since": "Since needs a past start point.",
    "during": "During needs a noun.",
    "for": "For needs a length of time."
-  }
+  },
+  "sk": "grammar.preposition"
  },
  {
   "type": "mcq",
@@ -1718,7 +1826,8 @@
    "after": "After would mean brushing in bed!",
    "while": "While means at the same time.",
    "since": "Since needs a past start point."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -1735,7 +1844,8 @@
    "was": "Was would mean it's finished, but since shows it's still true.",
    "is": "Is doesn't go with since.",
    "goes": "Goes doesn't go with in Japan since."
-  }
+  },
+  "sk": "grammar.perfect-present"
  },
  {
   "type": "mistake",
@@ -1750,7 +1860,8 @@
   ],
   "wrong": 2,
   "fix": "went",
-  "explain": "Yesterday = past: go → went."
+  "explain": "Yesterday = past: go → went.",
+  "sk": "grammar.past-simple"
  },
  {
   "type": "mistake",
@@ -1763,7 +1874,8 @@
   ],
   "wrong": 1,
   "fix": "doesn't",
-  "explain": "He/she/it: doesn't. She doesn't like spiders."
+  "explain": "He/she/it: doesn't. She doesn't like spiders.",
+  "sk": "grammar.present-simple"
  },
  {
   "type": "mistake",
@@ -1778,7 +1890,8 @@
   ],
   "wrong": 3,
   "fix": "taller",
-  "explain": "Comparing two people: short adjectives add -er + than: taller than."
+  "explain": "Comparing two people: short adjectives add -er + than: taller than.",
+  "sk": "grammar.comparison"
  },
  {
   "type": "mistake",
@@ -1794,7 +1907,8 @@
   ],
   "wrong": 2,
   "fix": "many",
-  "explain": "Many for things you can count: many books."
+  "explain": "Many for things you can count: many books.",
+  "sk": "grammar.quantifier"
  },
  {
   "type": "mistake",
@@ -1810,7 +1924,8 @@
   ],
   "wrong": 1,
   "fix": "were",
-  "explain": "We/you/they + were."
+  "explain": "We/you/they + were.",
+  "sk": "grammar.be"
  },
  {
   "type": "mistake",
@@ -1826,7 +1941,8 @@
   ],
   "wrong": 4,
   "fix": "visit",
-  "explain": "going to + verb (no -ing): going to visit."
+  "explain": "going to + verb (no -ing): going to visit.",
+  "sk": "grammar.future"
  },
  {
   "type": "gaps",
@@ -1842,7 +1958,8 @@
    "watch",
    "eat"
   ],
-  "explain": "Last weekend = past: watched, ate."
+  "explain": "Last weekend = past: watched, ate.",
+  "sk": "grammar.past-simple"
  },
  {
   "type": "gaps",
@@ -1858,7 +1975,8 @@
    "their",
    "some"
   ],
-  "explain": "Is there any…? / There isn't any…"
+  "explain": "Is there any…? / There isn't any…",
+  "sk": "grammar.other"
  },
  {
   "type": "gaps",
@@ -1874,7 +1992,8 @@
    "tallest",
    "more tall"
   ],
-  "explain": "taller than; as tall as."
+  "explain": "taller than; as tall as.",
+  "sk": "grammar.comparison"
  },
  {
   "type": "gaps",
@@ -1890,25 +2009,29 @@
    "make",
    "during"
   ],
-  "explain": "We do homework; after dinner."
+  "explain": "We do homework; after dinner.",
+  "sk": "grammar.present-simple"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "We went to the beach last summer.",
-  "explain": "Past simple: went (go) + when: last summer."
+  "explain": "Past simple: went (go) + when: last summer.",
+  "sk": "grammar.past-simple"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "My sister is taller than me.",
-  "explain": "Comparative: taller than."
+  "explain": "Comparative: taller than.",
+  "sk": "grammar.comparison"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "Are you going to visit your grandma?",
-  "explain": "going to for plans: Are you going to visit…?"
+  "explain": "going to for plans: Are you going to visit…?",
+  "sk": "grammar.future"
  },
  {
   "type": "mistake",
@@ -1926,7 +2049,8 @@
   ],
   "wrong": 3,
   "fix": "swam",
-  "explain": "Last summer = past, so swim becomes swam."
+  "explain": "Last summer = past, so swim becomes swam.",
+  "sk": "grammar.past-simple"
  },
  {
   "type": "mistake",
@@ -1941,7 +2065,8 @@
   ],
   "wrong": 3,
   "fix": "most",
-  "explain": "With three or more things, use the most: the most exciting game."
+  "explain": "With three or more things, use the most: the most exciting game.",
+  "sk": "grammar.comparison"
  },
  {
   "type": "mistake",
@@ -1955,7 +2080,8 @@
   ],
   "wrong": 2,
   "fix": "go",
-  "explain": "After didn't, use the plain verb: She didn't go."
+  "explain": "After didn't, use the plain verb: She didn't go.",
+  "sk": "grammar.other"
  },
  {
   "type": "mistake",
@@ -1971,7 +2097,8 @@
   ],
   "wrong": 4,
   "fix": "play",
-  "explain": "be going to + the plain verb: I am going to play tennis."
+  "explain": "be going to + the plain verb: I am going to play tennis.",
+  "sk": "grammar.future"
  },
  {
   "type": "gaps",
@@ -1987,7 +2114,8 @@
    "make",
    "is"
   ],
-  "explain": "Last weekend = past: made, was."
+  "explain": "Last weekend = past: made, was.",
+  "sk": "grammar.past-simple"
  },
  {
   "type": "gaps",
@@ -2003,7 +2131,8 @@
    "fast",
    "more fast"
   ],
-  "explain": "Two things: faster than; the top of all: the fastest."
+  "explain": "Two things: faster than; the top of all: the fastest.",
+  "sk": "grammar.comparison"
  },
  {
   "type": "gaps",
@@ -2019,7 +2148,8 @@
    "shouldn't",
    "must"
   ],
-  "explain": "should = good idea; mustn't = don't do it."
+  "explain": "should = good idea; mustn't = don't do it.",
+  "sk": "grammar.modal"
  },
  {
   "type": "gaps",
@@ -2035,6 +2165,7 @@
    "many",
    "any"
   ],
-  "explain": "much with milk (can't count); some eggs in a yes sentence."
+  "explain": "much with milk (can't count); some eggs in a yes sentence.",
+  "sk": "grammar.quantifier"
  }
 ]

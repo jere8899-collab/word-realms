@@ -59,7 +59,7 @@ async function answer(page, right) {
         const all = b.runs.flat();
         ok(b.runs.every(r => r.length === 10 && new Set(r.map(x => x[1])).size === 10), `guardian ${b.id}: every fight has 10 questions from 10 different topics`);
         ok(all.every(x => b.grades.includes(x[0])) && b.runs.every(r => b.grades.every(g => r.filter(x => x[0] === g).length === 5)), `guardian ${b.id}: questions only from Grades ${b.grades.join('–')} (5 from each)`);
-        ok(new Set(all.map(x => x[1])).size === M.gradeTopics(b.grades[0]).length + M.gradeTopics(b.grades[1]).length, `guardian ${b.id}: over 40 fights every topic of both grades turns up`);
+        ok(new Set(all.map(x => x[1])).size === M.gradeTopics(b.grades[0]).filter(t => !t.extra).length + M.gradeTopics(b.grades[1]).filter(t => !t.extra).length, `guardian ${b.id}: over 40 fights every core topic of both grades turns up (✨ Extra topics stay out)`);
         if (b.grades[1] <= 6) ok(all.some(x => x[2]), `guardian ${b.id}: 🧮 Model Magic applies to some of its questions`);
       }
     }

@@ -56,29 +56,40 @@ WR.sayHTML = say => String(say || "").split("|").map(l => { const m = l.match(/^
 WR.itemKey = it => { const t = (it.title || "") + "|" + (it.say || "") + "|" + (it.q || "") + "|" + (it.pic || "") + "|" + (it.options ? it.options[it.answer] : it.answer || "") +
     (it.words ? "|" + it.words.join(" ") : "") + (it.text ? "|" + it.text : "") + (it.art ? "|" + it.art : "");
   let h = 5381; for (let i = 0; i < t.length; i++) h = ((h << 5) + h + t.charCodeAt(i)) | 0; return (h >>> 0).toString(36); };
-WR.freshPick = (bucket, pool, n) => {
+// skip: items to leave out of this pick (e.g. ones already in the lesson as reviews); they still count as part of the bank
+WR.freshPick = (bucket, pool, n, skip = null) => {
   const s = WR.state; s.seen = s.seen || {};
-  const keys = new Set(pool.map(WR.itemKey));
+  const keyOf = new Map(pool.map(it => [it, WR.itemKey(it)])), keys = new Set(keyOf.values());
   let seen = (s.seen[bucket] || []).filter(k => keys.has(k));          // drop keys of items that no longer exist
-  const seenSet = new Set(seen);
-  const fresh = WR.shuffle(pool.filter(it => !seenSet.has(WR.itemKey(it))));
   const order = new Map(seen.map((k, i) => [k, i]));
-  const old = pool.filter(it => seenSet.has(WR.itemKey(it))).sort((a, b) => order.get(WR.itemKey(a)) - order.get(WR.itemKey(b))); // oldest first
+  const cand = skip ? pool.filter(it => !skip.has(keyOf.get(it))) : pool;
+  const fresh = WR.shuffle(cand.filter(it => !order.has(keyOf.get(it))));
+  const old = cand.filter(it => order.has(keyOf.get(it))).sort((a, b) => order.get(keyOf.get(a)) - order.get(keyOf.get(b))); // oldest first
   const pick = fresh.concat(old).slice(0, Math.min(n, pool.length));
-  const picked = pick.map(WR.itemKey);
-  seen = seen.filter(k => !picked.includes(k)).concat(picked);
+  const picked = new Set(pick.map(it => keyOf.get(it)));
+  seen = seen.filter(k => !picked.has(k)).concat([...picked]);
   if (pool.length - seen.length < n) seen = seen.slice(Math.max(0, seen.length - Math.max(0, pool.length - n))); // keep a full lesson of unseen items available
   s.seen[bucket] = seen; WR.save();
   return WR.shuffle(pick);
 };
-WR.buildItems = async (rid, skill, n = 8) => {
-  const bank = await WR.bank(rid, skill);
+// 📖 a reading bank's passages (classic-only tests keep just the passages and questions they can drive)
+const readingPool = bank => classicOnly() ? bank.passages.filter(p => p.questions.some(playable)).map(p => ({ ...p, questions: p.questions.filter(playable) })) : bank.passages;
+const tagged = (scope, p) => q => WR.Review ? WR.Review.tag(normalize(q, p), scope, q, p) : normalize(q, p);
+const passageQs = scope => p => p.questions.map(tagged(scope, p));
+/* 🔁 o.review: up to 3 due reviews (js/review.js) + new items to n; otherwise n new. Reading: one review passage + one new one.
+   Every item carries its review key (_rk) and skill tag (_sk), so js/lesson.js answer() records it. */
+WR.buildItems = async (rid, skill, n = 8, o = {}) => {
+  const bank = await WR.bank(rid, skill), scope = `${rid}/${skill}`, RV = o.review && n >= 6 && WR.Review;
   if (skill === "reading") {
-    const ps = WR.freshPick(`${rid}/reading`, classicOnly() ? bank.passages.filter(p => p.questions.some(playable)).map(p => ({ ...p, questions: p.questions.filter(playable) })) : bank.passages, 2);
-    if (n < 6) return ps.slice(0, 1).flatMap(p => p.questions.map(q => normalize(q, p))).slice(0, n);
-    return ps.flatMap(p => p.questions.map(q => normalize(q, p)));
+    const pool = readingPool(bank), rev = RV ? RV.pickPassage(scope, pool, RV.CONFIG.perLesson, { bucket: scope }) : null;
+    const ps = WR.freshPick(scope, pool, rev ? 1 : 2, rev ? new Set([WR.itemKey(rev.passage)]) : null);
+    if (n < 6) return ps.slice(0, 1).flatMap(passageQs(scope)).slice(0, n);
+    return ps.flatMap(passageQs(scope)).concat(rev ? rev.items : []);
   }
-  return WR.freshPick(`${rid}/${skill}`, bank.filter(playable), n).map(q => normalize(q));
+  const pool = bank.filter(playable), rev = RV ? RV.pick(scope, pool, Math.min(RV.CONFIG.perLesson, n), { bucket: scope }) : [];
+  const skip = rev.length ? new Set(rev.map(it => it._rk.slice(scope.length + 1)).concat(rev.map(it => it._rv.for.slice(scope.length + 1)))) : null;
+  const fresh = WR.freshPick(scope, pool, n - rev.length, skip).map(q => tagged(scope)(q));
+  return rev.length ? WR.shuffle(fresh.concat(rev)) : fresh;
 };
 WR.normalize = normalize;
 WR.playable = playable;   // 🦁 js/sg-english.js builds its rounds from the same banks
@@ -101,7 +112,8 @@ function clearTimer() { if (timerId) { clearInterval(timerId); timerId = null; }
 WR.startLesson = async (opts) => {
   clearTimer(); WR.Voice.stop();
   const realm = WR.realmById(opts.realm);
-  const items = opts.items || await WR.buildItems(opts.realm, opts.skill);
+  // 🔁 normal lessons mix in due reviews; boss rounds never do (they bring their own items; opts.boss / skill "boss" guard it too)
+  const items = opts.items || await WR.buildItems(opts.realm, opts.skill, 8, { review: !opts.boss && opts.skill !== "boss" && !opts.noReview });
   L = { ...opts, realm, items, mode: opts.mode || realm.mode, i: 0, correct: 0, combo: 0, maxCombo: 0, starsEarned: 0,
         hearts: 3, bossHP: 100, meter: 50, lit: 0, jar: [], answered: false };
   WR.navActive && WR.navActive("map");
@@ -384,9 +396,11 @@ WR._whyNot = whyNot;
 function answer(ok, it, extra = "") {
   L.answered = true; clearTimer();
   const s = WR.state; WR.countAnswer(ok, L.review ? "garden" : L.realm.id + "/" + (L.skill || "mixed"));
+  const rv = !L.review && WR.Review ? WR.Review.answer(it, ok) : null;   // 🔁 every lesson answer, right or wrong, updates its review record
   if (ok) {
     L.correct++; L.combo++; L.maxCombo = Math.max(L.maxCombo, L.combo);
     let gain = 1; if (L.combo % 3 === 0) gain++; L.starsEarned += WR.awardStars("en", WR.itemKey(it), gain, { tally: L, quiet: true });
+    if (rv && rv.pay) L.starsEarned += WR.Review.reward(rv.pay);   // 🔁 a small, capped ⭐ for a review that moved its item up
     WR.questEvent("correct10"); if (L.combo === 5) WR.questEvent("combo5");
     L.lit++; L.jar.push(["🍬", "🍭", "🧁", "🍩", "🍫", "🍡"][L.jar.length % 6]);
     L.bossHP = Math.max(0, L.bossHP - Math.ceil(100 / L.items.length) - (L.combo >= 3 ? 4 : 0));
@@ -396,7 +410,8 @@ function answer(ok, it, extra = "") {
     L.meter = Math.max(0, L.meter - 8); WR.sfx("bad");
     if (!L.review) WR.Garden.plant(it, L.realm.id, L.skill);
   }
-  if (L.review && it._mid && WR.Garden) { const g = WR.Garden.grade(it._mid, ok); if (g) L.bloomed = (L.bloomed || 0) + (g.bloomed ? 1 : 0); }
+  if (L.review && it._mid && WR.Garden) { const g = WR.Garden.grade(it._mid, ok); if (g) { L.bloomed = (L.bloomed || 0) + (g.bloomed ? 1 : 0);
+    if (g.pay && WR.Review) L.starsEarned += WR.Review.reward(g.pay); } }   // 🔁 a plant that grew after a real gap: the capped review ⭐
   WR.save(); WR.renderTop();
   const hudEl = document.querySelector(".hud"); if (hudEl) hudEl.innerHTML = hud();
   if (ok && WR.$("#bossFace")) WR.$("#bossFace").classList.add("hit");

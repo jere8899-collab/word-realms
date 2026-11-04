@@ -14,7 +14,8 @@
    "you should touch": "Normal order isn't allowed.",
    "touch you should": "The word order is scrambled.",
    "should touch you": "'Should touch you' changes the meaning."
-  }
+  },
+  "sk": "grammar.inversion"
  },
  {
   "type": "mcq",
@@ -31,7 +32,8 @@
    "the dragon's roar was": "Normal order isn't allowed.",
    "did the dragon roar": "Did roar doesn't follow an adjective.",
    "the roar was": "Normal order again."
-  }
+  },
+  "sk": "grammar.inversion"
  },
  {
   "type": "mcq",
@@ -48,7 +50,8 @@
    "Had": "Had it not been for is the past version.",
    "Was": "Was isn't used in this inversion.",
    "If": "If needs 'were': If it were not for."
-  }
+  },
+  "sk": "grammar.be"
  },
  {
   "type": "mcq",
@@ -65,7 +68,8 @@
    "though": "Though doesn't follow much.",
    "while": "While doesn't follow much.",
    "that": "That doesn't fit."
-  }
+  },
+  "sk": "grammar.linker"
  },
  {
   "type": "mcq",
@@ -82,7 +86,8 @@
    "though": "Though isn't used here.",
    "so": "So isn't used here.",
    "how": "How isn't used here."
-  }
+  },
+  "sk": "grammar.linker"
  },
  {
   "type": "mcq",
@@ -99,7 +104,8 @@
    "the": "The needs 'the answer to which'.",
    "of which": "Of which needs 'the answer of which'.",
    "which its": "Which its is not English."
-  }
+  },
+  "sk": "grammar.relative"
  },
  {
   "type": "mcq",
@@ -116,7 +122,8 @@
    "was watched": "Was watched is passive.",
    "watches": "Watches is present.",
    "has watched": "Has watched is present perfect."
-  }
+  },
+  "sk": "grammar.perfect-continuous"
  },
  {
   "type": "mcq",
@@ -133,7 +140,8 @@
    "is": "Is isn't subjunctive.",
    "will be": "Will be isn't used here.",
    "was": "Was isn't subjunctive."
-  }
+  },
+  "sk": "grammar.subjunctive"
  },
  {
   "type": "mcq",
@@ -150,7 +158,8 @@
    "spoke": "Spoke is active: a word can't speak.",
    "did speak": "Did speak is active.",
    "spoken": "Spoken alone needs 'was'."
-  }
+  },
+  "sk": "grammar.passive"
  },
  {
   "type": "mcq",
@@ -167,7 +176,8 @@
    "more intrigued": "Needs 'the'.",
    "the most intrigued": "Superlative is wrong here.",
    "intrigued more": "Word order is wrong."
-  }
+  },
+  "sk": "grammar.comparison"
  },
  {
   "type": "mcq",
@@ -184,7 +194,8 @@
    "when": "When goes with hardly/scarcely.",
    "then": "Then isn't used.",
    "that": "That isn't used."
-  }
+  },
+  "sk": "grammar.inversion"
  },
  {
   "type": "mcq",
@@ -201,7 +212,8 @@
    "awakens": "No -s after should.",
    "awakened": "No -ed after should.",
    "to awaken": "No 'to' after should."
-  }
+  },
+  "sk": "grammar.modal"
  },
  {
   "type": "mcq",
@@ -218,7 +230,8 @@
    "owns": "Owns suggests it's true.",
    "would own": "Would own isn't used here.",
    "has owned": "Has owned changes the meaning."
-  }
+  },
+  "sk": "grammar.past-simple"
  },
  {
   "type": "mcq",
@@ -235,7 +248,8 @@
    "might": "Might isn't the fixed phrase.",
    "can": "Can isn't the fixed phrase.",
    "will": "Will isn't the fixed phrase."
-  }
+  },
+  "sk": "grammar.fixed-phrase"
  },
  {
   "type": "mcq",
@@ -252,7 +266,8 @@
    "one can grasp": "Normal order isn't allowed.",
    "one grasps": "Normal order again.",
    "grasp one": "Scrambled order."
-  }
+  },
+  "sk": "grammar.inversion"
  },
  {
   "type": "mcq",
@@ -269,7 +284,8 @@
    "he had turned": "Normal order isn't allowed.",
    "did he turn": "Did turn isn't used with 'when' here.",
    "he turned": "Normal order again."
-  }
+  },
+  "sk": "grammar.inversion"
  },
  {
   "type": "mcq",
@@ -286,7 +302,8 @@
    "the scholars had seen": "Normal order isn't allowed.",
    "have seen the scholars": "Wrong order and tense.",
    "the scholars saw": "Normal order."
-  }
+  },
+  "sk": "grammar.inversion"
  },
  {
   "type": "mcq",
@@ -303,7 +320,8 @@
    "might": "Might isn't the fixed phrase.",
    "will": "Will isn't the fixed phrase.",
    "can": "Can isn't the fixed phrase."
-  }
+  },
+  "sk": "grammar.fixed-phrase"
  },
  {
   "type": "mcq",
@@ -320,7 +338,8 @@
    "wasn't being": "Wasn't being is continuous and odd.",
    "isn't": "Isn't is present.",
    "won't be": "Won't be is future."
-  }
+  },
+  "sk": "grammar.perfect-past"
  },
  {
   "type": "mcq",
@@ -337,7 +356,8 @@
    "Baffled": "Baffled describes a person.",
    "Bafflingly": "An adverb can't start this pattern.",
    "However baffling": "However baffling needs 'it was' without though."
-  }
+  },
+  "sk": "grammar.linker"
  },
  {
   "type": "mcq",
@@ -354,7 +374,8 @@
    "resigned": "Resigned is past.",
    "to resign": "No 'to' after would sooner.",
    "have resigned to": "Have resigned to is wrong."
-  }
+  },
+  "sk": "grammar.wish-prefer"
  },
  {
   "type": "mcq",
@@ -371,7 +392,8 @@
    "never": "Never makes no sense here.",
    "yet": "Yet doesn't fit.",
    "still": "Still doesn't fit."
-  }
+  },
+  "sk": "grammar.perfect-present"
  },
  {
   "type": "mcq",
@@ -388,7 +410,8 @@
    "she was": "Normal order isn't allowed.",
    "she had": "Had doesn't go with engrossed here.",
    "did she": "Did doesn't go with an adjective."
-  }
+  },
+  "sk": "grammar.inversion"
  },
  {
   "type": "mcq",
@@ -405,7 +428,8 @@
    "is": "Is isn't subjunctive.",
    "will be": "Will be isn't used.",
    "was": "Was isn't subjunctive."
-  }
+  },
+  "sk": "grammar.subjunctive"
  },
  {
   "type": "mcq",
@@ -422,7 +446,8 @@
    "minded": "Minded is past.",
    "am minding": "Am minding is odd.",
    "would mind it": "Would mind it doesn't fit."
-  }
+  },
+  "sk": "grammar.fixed-phrase"
  },
  {
   "type": "mcq",
@@ -439,7 +464,8 @@
    "If": "If needs 'had': If the archivist had not.",
    "Should": "Should is for future.",
    "Did": "Did isn't used here."
-  }
+  },
+  "sk": "grammar.past-simple"
  },
  {
   "type": "mcq",
@@ -456,7 +482,8 @@
    "off": "Off isn't used.",
    "away": "Away isn't used.",
    "beyond": "Beyond isn't used."
-  }
+  },
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mcq",
@@ -473,7 +500,8 @@
    "had": "Had needs a past participle.",
    "was": "Was doesn't go with know.",
    "would": "Would changes the meaning."
-  }
+  },
+  "sk": "grammar.inversion"
  },
  {
   "type": "mcq",
@@ -490,7 +518,8 @@
    "was being": "Was being is continuous.",
    "has": "Has needs 'been'.",
    "does": "Does doesn't go with revealed."
-  }
+  },
+  "sk": "grammar.passive"
  },
  {
   "type": "mcq",
@@ -507,7 +536,8 @@
    "were": "Were is plural.",
    "had": "Had doesn't fit.",
    "did": "Did doesn't fit."
-  }
+  },
+  "sk": "grammar.inversion"
  },
  {
   "type": "mcq",
@@ -524,7 +554,8 @@
    "you will find": "After nowhere at the start we invert.",
    "you find": "Present simple would need do: do you find.",
    "found you": "Found you puts the main verb first, which isn't inversion."
-  }
+  },
+  "sk": "grammar.inversion"
  },
  {
   "type": "mcq",
@@ -541,7 +572,8 @@
    "the door will open": "After only if, the main clause is inverted.",
    "the door opens": "We need inversion: will the door open.",
    "opens the door": "The main verb can't come before the subject here."
-  }
+  },
+  "sk": "grammar.inversion"
  },
  {
   "type": "mcq",
@@ -558,7 +590,8 @@
    "it is revealed": "After not until we invert: is it.",
    "it reveals": "It reveals would be active; the secret is revealed.",
    "reveals it": "The main verb can't come first."
-  }
+  },
+  "sk": "grammar.inversion"
  },
  {
   "type": "mcq",
@@ -575,7 +608,8 @@
    "we are": "After in no way we invert.",
    "we're not": "In no way is already negative, so no not.",
    "aren't we": "Aren't adds a second negative."
-  }
+  },
+  "sk": "grammar.inversion"
  },
  {
   "type": "mcq",
@@ -592,7 +626,8 @@
    "have": "Have gone would need a participle after have, and the word order differs.",
    "were being": "Were being isn't used in this fixed pattern.",
    "did": "Did can't go with gone."
-  }
+  },
+  "sk": "grammar.inversion"
  },
  {
   "type": "mcq",
@@ -609,7 +644,8 @@
    "creeping the apprentice": "Creeping is not a full verb, so the sentence has no main verb.",
    "did creep the apprentice": "Did is not used with this kind of inversion.",
    "crept did the apprentice": "Crept did isn't English."
-  }
+  },
+  "sk": "grammar.inversion"
  },
  {
   "type": "mcq",
@@ -626,7 +662,8 @@
    "come": "The subject is singular: the moment comes.",
    "is coming it": "Is coming it adds an extra pronoun.",
    "it comes": "It comes would need 'Here it comes', with a pronoun only."
-  }
+  },
+  "sk": "grammar.present-simple"
  },
  {
   "type": "mcq",
@@ -643,7 +680,8 @@
    "although it": "Although can't follow the adjective like this.",
    "though if": "Though if isn't English.",
    "as if it": "As if means 'in a way that suggests'."
-  }
+  },
+  "sk": "grammar.linker"
  },
  {
   "type": "mcq",
@@ -660,7 +698,8 @@
    "though": "Though isn't used in this fixed phrase.",
    "so": "So isn't used in this fixed phrase.",
    "if": "If isn't used in this fixed phrase."
-  }
+  },
+  "sk": "grammar.linker"
  },
  {
   "type": "mcq",
@@ -677,7 +716,8 @@
    "Was": "Was isn't used in formal inversion.",
    "Should": "Should + subject is followed by the base form, not to.",
    "Had": "Had + subject needs a past participle."
-  }
+  },
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mcq",
@@ -694,7 +734,8 @@
    "Were": "Were it not for is present: Were it not for you, I'd fail.",
    "If": "If would need had: If it had not been for.",
    "Should": "Should it not been isn't a form."
-  }
+  },
+  "sk": "grammar.past-simple"
  },
  {
   "type": "mcq",
@@ -711,7 +752,8 @@
    "had": "Had doesn't fit this pattern.",
    "did": "Did doesn't fit this pattern.",
    "made": "Made doesn't fit this pattern."
-  }
+  },
+  "sk": "grammar.so-such"
  },
  {
   "type": "mcq",
@@ -728,7 +770,8 @@
    "Being": "Being doesn't introduce this formula.",
    "Was": "Was would need whether.",
    "Were it": "Were it repeats it."
-  }
+  },
+  "sk": "grammar.subjunctive"
  },
  {
   "type": "mcq",
@@ -745,7 +788,8 @@
    "is": "Is isn't used in this fixed phrase.",
    "being": "Being isn't used in this fixed phrase.",
    "was": "Was isn't used in this fixed phrase."
-  }
+  },
+  "sk": "grammar.subjunctive"
  },
  {
   "type": "mcq",
@@ -762,7 +806,8 @@
    "lives": "No -s in the subjunctive.",
    "living": "Living isn't the formula.",
    "lived": "Lived is past."
-  }
+  },
+  "sk": "grammar.wish-prefer"
  },
  {
   "type": "mcq",
@@ -779,7 +824,8 @@
    "is": "Is isn't used in this fixed phrase.",
    "been": "Been isn't used here.",
    "being": "Being isn't used here."
-  }
+  },
+  "sk": "grammar.subjunctive"
  },
  {
   "type": "mcq",
@@ -796,7 +842,8 @@
    "returns": "No -s in the subjunctive.",
    "returned": "Returned is past.",
    "would return": "Would return isn't the subjunctive form."
-  }
+  },
+  "sk": "grammar.subjunctive"
  },
  {
   "type": "mcq",
@@ -813,7 +860,8 @@
    "am": "Am is present indicative.",
    "would be": "Would be doesn't follow would that.",
    "be": "Be is the mandative subjunctive, not used here."
-  }
+  },
+  "sk": "grammar.wish-prefer"
  },
  {
   "type": "mcq",
@@ -830,7 +878,8 @@
    "wakes": "No -s after lest in the subjunctive.",
    "would wake up to": "Would wake up to adds extra words that don't fit.",
    "to wake": "No to after lest."
-  }
+  },
+  "sk": "grammar.fixed-phrase"
  },
  {
   "type": "mcq",
@@ -847,7 +896,8 @@
    "has ignored": "Has ignored is real present perfect.",
    "ignores": "Ignores is a real present fact.",
    "would ignore": "Would ignore doesn't follow as if here."
-  }
+  },
+  "sk": "grammar.perfect-past"
  },
  {
   "type": "mcq",
@@ -864,7 +914,8 @@
    "saying": "Saying isn't used here.",
    "said": "Said isn't used here.",
    "say": "We need to."
-  }
+  },
+  "sk": "grammar.perfect-present"
  },
  {
   "type": "mcq",
@@ -881,7 +932,8 @@
    "it": "It doesn't replace a clause here.",
    "that": "That doesn't follow hope in short answers.",
    "yes": "Yes isn't used after hope."
-  }
+  },
+  "sk": "grammar.linker"
  },
  {
   "type": "mcq",
@@ -898,7 +950,8 @@
    "yes": "Yes isn't used after I'm afraid.",
    "it": "It isn't used in this short answer.",
    "that": "That isn't used here."
-  }
+  },
+  "sk": "grammar.linker"
  },
  {
   "type": "mcq",
@@ -915,7 +968,8 @@
    "so does": "The first verb uses can, so the auxiliary is can, not does.",
    "neither can": "Neither is for negatives.",
    "can so": "Can so isn't the right order."
-  }
+  },
+  "sk": "grammar.inversion"
  },
  {
   "type": "mcq",
@@ -932,7 +986,8 @@
    "the wizard didn't too": "Too isn't used with negatives: we say either.",
    "so did the wizard": "So is for positive statements.",
    "neither the wizard did": "After neither we invert: neither did the wizard."
-  }
+  },
+  "sk": "grammar.inversion"
  },
  {
   "type": "mcq",
@@ -949,7 +1004,8 @@
    "it": "It isn't needed after like here.",
    "so": "So isn't used after like.",
    "that": "That doesn't fit."
-  }
+  },
+  "sk": "grammar.preposition"
  },
  {
   "type": "mcq",
@@ -966,7 +1022,8 @@
    "than": "Than doesn't follow so much in this pattern.",
    "but": "But doesn't fit this pattern.",
    "like": "Like isn't used here."
-  }
+  },
+  "sk": "grammar.comparison"
  },
  {
   "type": "mcq",
@@ -983,7 +1040,8 @@
    "as much as": "As much as would mean equally.",
    "so many as": "So many as isn't English.",
    "even as": "Even as means while."
-  }
+  },
+  "sk": "grammar.fixed-phrase"
  },
  {
   "type": "mcq",
@@ -1000,7 +1058,8 @@
    "not to say": "Not to say means 'or even'.",
    "rather than": "Rather than shows preference.",
    "never mind to": "Never mind is used without to."
-  }
+  },
+  "sk": "grammar.fixed-phrase"
  },
  {
   "type": "mcq",
@@ -1017,7 +1076,8 @@
    "every": "Every doesn't fit this fixed phrase.",
    "whole": "Whole needs the: the whole.",
    "much": "Much isn't used here."
-  }
+  },
+  "sk": "grammar.linker"
  },
  {
   "type": "mcq",
@@ -1034,7 +1094,8 @@
    "about": "What about is a suggestion.",
    "for": "What for asks why.",
    "by": "What by isn't a phrase."
-  }
+  },
+  "sk": "grammar.preposition"
  },
  {
   "type": "mcq",
@@ -1051,7 +1112,8 @@
    "harder": "We need the before harder.",
    "the hardest": "Hardest is superlative.",
    "more hard": "Hard takes -er, and we need the."
-  }
+  },
+  "sk": "grammar.comparison"
  },
  {
   "type": "mcq",
@@ -1068,7 +1130,8 @@
    "less": "No less means equally true, the opposite.",
    "better": "No better compares quality.",
    "rather": "No rather isn't English."
-  }
+  },
+  "sk": "grammar.perfect-present"
  },
  {
   "type": "mcq",
@@ -1085,7 +1148,8 @@
    "piece": "Every piece isn't the phrase.",
    "way": "Every way isn't used before as.",
    "much": "Every much isn't English."
-  }
+  },
+  "sk": "grammar.perfect-present"
  },
  {
   "type": "mcq",
@@ -1102,7 +1166,8 @@
    "which": "Which needs a noun or clause before it, not after the comma here.",
    "like": "Like isn't used in this fixed phrase.",
    "what": "What can't start this clause."
-  }
+  },
+  "sk": "grammar.comparison"
  },
  {
   "type": "mcq",
@@ -1119,7 +1184,8 @@
    "so": "So it were isn't English.",
    "though": "Though it were isn't the fixed phrase.",
    "like": "Like it were isn't the fixed phrase."
-  }
+  },
+  "sk": "grammar.comparison"
  },
  {
   "type": "mcq",
@@ -1136,7 +1202,8 @@
    "will observe": "Will observe doesn't show duration up to then.",
    "will be observing": "Will be observing is in progress, without the duration up to that point.",
    "have been observing": "Have been observing ends now, not at a future point."
-  }
+  },
+  "sk": "grammar.perfect-continuous"
  },
  {
   "type": "mcq",
@@ -1153,7 +1220,8 @@
    "hope to": "Hope to needs a verb: hope to borrow.",
    "have hoped": "Have hoped sounds as if the hope has ended.",
    "had hope": "Had hope isn't a verb form."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -1170,7 +1238,8 @@
    "due for": "Due for is followed by a noun.",
    "close": "Close is followed by to + noun or -ing, not an infinitive.",
    "near": "Near isn't followed by to-infinitive."
-  }
+  },
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mcq",
@@ -1187,7 +1256,8 @@
    "has heeded": "Has heeded is present perfect.",
    "heeds": "Heeds is present.",
    "was heeded": "Was heeded is passive and needs a different subject."
-  }
+  },
+  "sk": "grammar.perfect-past"
  },
  {
   "type": "mcq",
@@ -1204,7 +1274,8 @@
    "can't": "Can't have means you're sure it didn't happen.",
    "needn't": "Needn't have means it wasn't necessary.",
    "should": "Should have means it was expected but didn't happen."
-  }
+  },
+  "sk": "grammar.perfect-continuous"
  },
  {
   "type": "mcq",
@@ -1221,7 +1292,8 @@
    "would avoid": "Would avoid is present/future.",
    "had avoided": "Had avoided belongs in the if-clause.",
    "avoided": "Avoided is a real past fact."
-  }
+  },
+  "sk": "grammar.conditional-3"
  },
  {
   "type": "mcq",
@@ -1238,7 +1310,8 @@
    "to hit": "After of we use -ing.",
    "hits": "Hits needs a subject and that.",
    "will hit": "Will hit needs that: that it will hit."
-  }
+  },
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mcq",
@@ -1255,7 +1328,8 @@
    "willing": "Willing is an adjective.",
    "will": "Will is a different noun (determination).",
    "willingly": "Willingly is an adverb."
-  }
+  },
+  "sk": "grammar.present-simple"
  },
  {
   "type": "mcq",
@@ -1272,7 +1346,8 @@
    "thought": "Thought is a noun or past verb.",
    "thoughtfully": "Thoughtfully is an adverb.",
    "thinking": "Thinking is a verb form."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -1289,7 +1364,8 @@
    "improbable": "Improbable isn't used with to-infinitive like this.",
    "impossible to": "Impossible to repeats to.",
    "doubtful": "Doubtful is followed by that or whether."
-  }
+  },
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mcq",
@@ -1306,7 +1382,8 @@
    "despite": "Despite needs a noun.",
    "however": "However would need to come first: however brave.",
    "even": "Even needs though or if."
-  }
+  },
+  "sk": "grammar.linker"
  },
  {
   "type": "mcq",
@@ -1323,7 +1400,8 @@
    "Whatever": "Whatever is for things.",
    "Whichever": "Whichever is a choice between options.",
    "Although": "Although needs a full clause."
-  }
+  },
+  "sk": "grammar.linker"
  },
  {
   "type": "mcq",
@@ -1340,7 +1418,8 @@
    "Whatever": "Whatever is for things.",
    "Anyone": "Anyone would need who: anyone who opens.",
    "Who": "Who alone can't be the subject like this in modern English."
-  }
+  },
+  "sk": "grammar.comparison"
  },
  {
   "type": "mcq",
@@ -1357,7 +1436,8 @@
    "whoever": "Whoever is for people.",
    "however": "However is for manner or degree.",
    "whenever": "Whenever is for time."
-  }
+  },
+  "sk": "grammar.comparison"
  },
  {
   "type": "mcq",
@@ -1374,7 +1454,8 @@
    "one only": "One only isn't natural English.",
    "lonely": "Lonely is about feelings.",
    "sole of": "Sole of isn't English."
-  }
+  },
+  "sk": "grammar.quantifier"
  },
  {
   "type": "mcq",
@@ -1391,7 +1472,8 @@
    "Every of": "Every can't be followed by of.",
    "Each": "Each needs of the: each of the apprentices.",
    "Whole": "Whole needs the before it and a singular noun."
-  }
+  },
+  "sk": "grammar.quantifier"
  },
  {
   "type": "mcq",
@@ -1408,7 +1490,8 @@
    "pretty much": "Pretty much little isn't English.",
    "valuable": "Valuable doesn't go before little.",
    "rare": "Rare doesn't go before little."
-  }
+  },
+  "sk": "grammar.present-simple"
  },
  {
   "type": "mcq",
@@ -1425,7 +1508,8 @@
    "many": "Many isn't used here.",
    "very": "Very the same isn't English.",
    "lot": "Lot isn't used here."
-  }
+  },
+  "sk": "grammar.quantifier"
  },
  {
   "type": "mcq",
@@ -1442,7 +1526,8 @@
    "don't mix": "Present tense doesn't follow would rather + person.",
    "not mix": "We need did: didn't mix.",
    "not to mix": "No to here."
-  }
+  },
+  "sk": "grammar.wish-prefer"
  },
  {
   "type": "mcq",
@@ -1459,7 +1544,8 @@
    "say": "The passive needs to.",
    "saying that": "Saying that repeats that.",
    "said": "Said is past."
-  }
+  },
+  "sk": "grammar.passive"
  },
  {
   "type": "mcq",
@@ -1476,7 +1562,8 @@
    "to be": "Resent isn't followed by to-infinitive.",
    "be": "We need -ing.",
    "been": "Been needs have."
-  }
+  },
+  "sk": "grammar.passive"
  },
  {
   "type": "mcq",
@@ -1493,7 +1580,8 @@
    "having designed": "Reputed is followed by to-infinitive.",
    "to design": "To design is about now or general habits.",
    "designed": "Designed alone doesn't follow is reputed."
-  }
+  },
+  "sk": "grammar.passive"
  },
  {
   "type": "mcq",
@@ -1510,7 +1598,8 @@
    "to wonder at": "To wonder at means to admire.",
    "wondered": "Wondered is past.",
    "wonder": "Wonder needs -ing here."
-  }
+  },
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mcq",
@@ -1527,7 +1616,8 @@
    "tell": "We need -ing.",
    "to tell of": "To tell of isn't the pattern.",
    "told": "Told is past."
-  }
+  },
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mcq",
@@ -1544,7 +1634,8 @@
    "more": "More than would say it was more of the potion than the spell.",
    "instead": "Instead needs of.",
    "other": "Other than means except."
-  }
+  },
+  "sk": "grammar.comparison"
  },
  {
   "type": "mcq",
@@ -1561,7 +1652,8 @@
    "the wizard had spoken": "After no sooner we invert.",
    "did the wizard speak": "Did with no sooner is rare; the pattern uses had.",
    "spoke the wizard": "Spoke the wizard isn't the pattern."
-  }
+  },
+  "sk": "grammar.inversion"
  },
  {
   "type": "mcq",
@@ -1578,7 +1670,8 @@
    "whose of": "Whose of isn't English.",
    "which": "Which alone doesn't show possession here.",
    "that": "That can't follow a comma."
-  }
+  },
+  "sk": "grammar.relative"
  },
  {
   "type": "mcq",
@@ -1595,7 +1688,8 @@
    "neither of them": "Neither of them would make a run-on sentence.",
    "none of which": "None is for more than two.",
    "both which": "Both which is missing of."
-  }
+  },
+  "sk": "grammar.relative"
  },
  {
   "type": "mcq",
@@ -1612,7 +1706,8 @@
    "who's": "Who's = who is.",
    "of whom": "Of whom would need different word order: the talent of whom.",
    "that her": "That her isn't grammatical."
-  }
+  },
+  "sk": "grammar.relative"
  },
  {
   "type": "mcq",
@@ -1629,7 +1724,8 @@
    "replaces": "Present simple doesn't follow it's high time + subject.",
    "replace": "The base form isn't used here.",
    "had replaced": "Past perfect isn't used after it's high time."
-  }
+  },
+  "sk": "grammar.wish-prefer"
  },
  {
   "type": "mcq",
@@ -1646,7 +1742,8 @@
    "staying": "No -ing after would as soon.",
    "to stay": "No to after would as soon.",
    "stayed": "Stayed is past."
-  }
+  },
+  "sk": "grammar.wish-prefer"
  },
  {
   "type": "mcq",
@@ -1663,7 +1760,8 @@
    "a half": "A half chance isn't the fixed phrase.",
    "half of": "Half of chance isn't English.",
    "the half": "The half chance isn't the fixed phrase."
-  }
+  },
+  "sk": "grammar.fixed-phrase"
  },
  {
   "type": "mcq",
@@ -1680,7 +1778,8 @@
    "was": "Was would need caring.",
    "had": "Had would need cared.",
    "has": "Has would need cared and is present."
-  }
+  },
+  "sk": "grammar.past-simple"
  },
  {
   "type": "mcq",
@@ -1697,7 +1796,8 @@
    "they could solve": "After only by we invert.",
    "they solved": "Past simple would need did they solve.",
    "solved they": "The main verb can't come before the subject here."
-  }
+  },
+  "sk": "grammar.inversion"
  },
  {
   "type": "mcq",
@@ -1714,7 +1814,8 @@
    "enchanted": "Enchanted describes how someone felt, not the music.",
    "enchantment": "Enchantment is a noun.",
    "enchant": "Enchant is a verb."
-  }
+  },
+  "sk": "grammar.inversion"
  },
  {
   "type": "mcq",
@@ -1731,7 +1832,8 @@
    "unless": "Unless would need a different clause: unless it is performed…",
    "whereas": "Whereas shows contrast.",
    "lest": "Lest means 'so that … not', which doesn't fit 'it will backfire'."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -1748,7 +1850,8 @@
    "During": "During needs a noun.",
    "Meanwhile": "Meanwhile is an adverb, not a conjunction.",
    "By the time that": "By the time that suggests something finished earlier."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -1765,7 +1868,8 @@
    "did": "Did you ask isn't a conditional form.",
    "if": "If would need had: if you had asked.",
    "should": "Should is for future possibilities."
-  }
+  },
+  "sk": "grammar.conditional-3"
  },
  {
   "type": "mcq",
@@ -1782,37 +1886,43 @@
    "matter": "The subject it needs -s.",
    "mattered of": "Mattered of isn't English.",
    "is mattering": "Matter isn't used in the continuous here."
-  }
+  },
+  "sk": "grammar.present-simple"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "Under no circumstances should the dragon be woken.",
-  "explain": "Under no circumstances + should + subject."
+  "explain": "Under no circumstances + should + subject.",
+  "sk": "grammar.modal"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "Try as he might, he could not open the door.",
-  "explain": "Try as he might = however hard he tried."
+  "explain": "Try as he might = however hard he tried.",
+  "sk": "grammar.linker"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "So vast was the library that we got lost.",
-  "explain": "So + adjective + was + subject + that."
+  "explain": "So + adjective + was + subject + that.",
+  "sk": "grammar.so-such"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "Be that as it may, the quest must go on.",
-  "explain": "Be that as it may = even so."
+  "explain": "Be that as it may = even so.",
+  "sk": "grammar.word-order"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "Not a single page had the apprentice skipped.",
-  "explain": "Negative object + inversion."
+  "explain": "Negative object + inversion.",
+  "sk": "grammar.inversion"
  },
  {
   "type": "mistake",
@@ -1831,7 +1941,8 @@
   ],
   "wrong": 6,
   "fix": "when",
-  "explain": "Scarcely had… when (No sooner had… than)."
+  "explain": "Scarcely had… when (No sooner had… than).",
+  "sk": "grammar.inversion"
  },
  {
   "type": "mistake",
@@ -1849,7 +1960,8 @@
   ],
   "wrong": 8,
   "fix": "anything",
-  "explain": "No double negatives: couldn't hear anything."
+  "explain": "No double negatives: couldn't hear anything.",
+  "sk": "grammar.other"
  },
  {
   "type": "mistake",
@@ -1866,7 +1978,8 @@
   ],
   "wrong": 5,
   "fix": "more",
-  "explain": "The + comparative…, the + comparative: the more…, the more…"
+  "explain": "The + comparative…, the + comparative: the more…, the more…",
+  "sk": "grammar.comparison"
  },
  {
   "type": "mistake",
@@ -1882,7 +1995,8 @@
   ],
   "wrong": 1,
   "fix": "from",
-  "explain": "Far from + -ing = not at all."
+  "explain": "Far from + -ing = not at all.",
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mistake",
@@ -1901,7 +2015,8 @@
   ],
   "wrong": 6,
   "fix": "be",
-  "explain": "imperative that + subjunctive be."
+  "explain": "imperative that + subjunctive be.",
+  "sk": "grammar.subjunctive"
  },
  {
   "type": "mistake",
@@ -1917,7 +2032,8 @@
   ],
   "wrong": 2,
   "fix": "may",
-  "explain": "Fixed phrase: come what may."
+  "explain": "Fixed phrase: come what may.",
+  "sk": "grammar.fixed-phrase"
  },
  {
   "type": "gaps",
@@ -1933,7 +2049,8 @@
    "Baffled",
    "deceptive"
   ],
-  "explain": "Adjective + though + it was; adverb before an adjective."
+  "explain": "Adjective + though + it was; adverb before an adjective.",
+  "sk": "grammar.be"
  },
  {
   "type": "gaps",
@@ -1949,7 +2066,8 @@
    "among",
    "may"
   ],
-  "explain": "read between the lines; Only by… can one…"
+  "explain": "read between the lines; Only by… can one…",
+  "sk": "grammar.preposition"
  },
  {
   "type": "gaps",
@@ -1965,7 +2083,8 @@
    "minded",
    "headline"
   ],
-  "explain": "Not that I mind (fixed); deadline = last day."
+  "explain": "Not that I mind (fixed); deadline = last day.",
+  "sk": "grammar.fixed-phrase"
  },
  {
   "type": "gaps",
@@ -1981,43 +2100,50 @@
    "off",
    "beyond"
   ],
-  "explain": "far from (not at all); without any sign."
+  "explain": "far from (not at all); without any sign.",
+  "sk": "grammar.preposition"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "Never before had the village seen such snow.",
-  "explain": "Never before + inversion: had the village seen."
+  "explain": "Never before + inversion: had the village seen.",
+  "sk": "grammar.inversion"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "So tired was she that she fell asleep instantly.",
-  "explain": "So + adjective + inversion … that."
+  "explain": "So + adjective + inversion … that.",
+  "sk": "grammar.inversion"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "Were the river to flood, the bridge would close.",
-  "explain": "Were … to + verb: a formal, unlikely condition."
+  "explain": "Were … to + verb: a formal, unlikely condition.",
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "Little did they realise how famous she'd become.",
-  "explain": "Little did … + plain verb: they didn't realise at all."
+  "explain": "Little did … + plain verb: they didn't realise at all.",
+  "sk": "grammar.inversion"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "Such was the noise that nobody heard the bell.",
-  "explain": "Such was the + noun + that…"
+  "explain": "Such was the + noun + that…",
+  "sk": "grammar.word-order"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "All I want is five more minutes.",
-  "explain": "All-cleft: All I want is…"
+  "explain": "All-cleft: All I want is…",
+  "sk": "grammar.other"
  },
  {
   "type": "mistake",
@@ -2036,7 +2162,8 @@
   ],
   "wrong": 2,
   "fix": "was",
-  "explain": "Last night is the past: So loud was the music that we left."
+  "explain": "Last night is the past: So loud was the music that we left.",
+  "sk": "grammar.be"
  },
  {
   "type": "mistake",
@@ -2051,7 +2178,8 @@
   ],
   "wrong": 3,
   "fix": "ask,",
-  "explain": "Were … to + plain verb: Were he to ask."
+  "explain": "Were … to + plain verb: Were he to ask.",
+  "sk": "grammar.other"
  },
  {
   "type": "mistake",
@@ -2067,7 +2195,8 @@
   ],
   "wrong": 4,
   "fix": "complain",
-  "explain": "After did use the plain verb: Not once did she complain."
+  "explain": "After did use the plain verb: Not once did she complain.",
+  "sk": "grammar.other"
  },
  {
   "type": "mistake",
@@ -2084,7 +2213,8 @@
   ],
   "wrong": 1,
   "fix": "was",
-  "explain": "The queue is one thing: Such was the queue that we gave up."
+  "explain": "The queue is one thing: Such was the queue that we gave up.",
+  "sk": "grammar.be"
  },
  {
   "type": "mistake",
@@ -2100,7 +2230,8 @@
   ],
   "wrong": 5,
   "fix": "touch",
-  "explain": "After should use the plain verb: On no account should you touch it."
+  "explain": "After should use the plain verb: On no account should you touch it.",
+  "sk": "grammar.modal"
  },
  {
   "type": "mistake",
@@ -2116,7 +2247,8 @@
   ],
   "wrong": 2,
   "fix": "working",
-  "explain": "by + -ing: Only by working together can we win."
+  "explain": "by + -ing: Only by working together can we win.",
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mistake",
@@ -2133,7 +2265,8 @@
   ],
   "wrong": 3,
   "fix": "might,",
-  "explain": "Try as he might (past): he couldn't open it."
+  "explain": "Try as he might (past): he couldn't open it.",
+  "sk": "grammar.other"
  },
  {
   "type": "gaps",
@@ -2149,7 +2282,8 @@
    "So",
    "as"
   ],
-  "explain": "Such was + noun … that."
+  "explain": "Such was + noun … that.",
+  "sk": "grammar.other"
  },
  {
   "type": "gaps",
@@ -2165,7 +2299,8 @@
    "Were",
    "would"
   ],
-  "explain": "Should the weather improve = If it improves; will go ahead."
+  "explain": "Should the weather improve = If it improves; will go ahead.",
+  "sk": "grammar.modal"
  },
  {
   "type": "gaps",
@@ -2181,7 +2316,8 @@
    "had",
    "considered"
   ],
-  "explain": "At no point did + subject + plain verb: did the coach consider."
+  "explain": "At no point did + subject + plain verb: did the coach consider.",
+  "sk": "grammar.past-simple"
  },
  {
   "type": "gaps",
@@ -2197,7 +2333,8 @@
    "though it",
    "was landed"
   ],
-  "explain": "Adjective + as + clause = although; he landed (got) the lead."
+  "explain": "Adjective + as + clause = although; he landed (got) the lead.",
+  "sk": "grammar.linker"
  },
  {
   "type": "gaps",
@@ -2213,7 +2350,8 @@
    "had",
    "what"
   ],
-  "explain": "Only when … + inversion (did we notice); how late it was."
+  "explain": "Only when … + inversion (did we notice); how late it was.",
+  "sk": "grammar.inversion"
  },
  {
   "type": "gaps",
@@ -2229,7 +2367,8 @@
    "has",
    "than"
   ],
-  "explain": "Hardly had … when: the second thing happened at once."
+  "explain": "Hardly had … when: the second thing happened at once.",
+  "sk": "grammar.inversion"
  },
  {
   "type": "gaps",
@@ -2245,6 +2384,7 @@
    "nor",
    "go"
   ],
-  "explain": "Be it A or B = whether it's A or B; the festival goes on."
+  "explain": "Be it A or B = whether it's A or B; the festival goes on.",
+  "sk": "grammar.linker"
  }
 ]

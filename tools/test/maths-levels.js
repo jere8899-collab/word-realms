@@ -17,7 +17,12 @@ const bad = Object.entries(AT).filter(([id, g]) => !M.topic(id) || M.topic(id).g
 ok(!bad.length, `every checked topic sits at its MOE level ${bad.map(([id, g]) => id + '→' + (M.topic(id) || {}).grade + ' (want ' + g + ')')}`);
 const MOVED = { 'g6.nets': 6, 'g6.piechart': 6, 'g5.ratio': 5, 'g5.average': 5, 'g6.speed': 6 };
 ok(Object.entries(MOVED).every(([id, was]) => M.topic(id).was === was), 'moved topics keep their old id and remember the grade they came from (t.was)');
-ok(M.TOPICS.length === 133 && new Set(M.TOPICS.map(t => t.id)).size === 133, `133 topics, all ids unique (${M.TOPICS.length})`);
+ok(M.TOPICS.length === 134 && new Set(M.TOPICS.map(t => t.id)).size === 134, `134 topics (133 syllabus + 1 extra), all ids unique (${M.TOPICS.length})`);
+{ const c = M.topic('g4.compass'), qs = Array.from({ length: 2500 }, (_, s) => M.make('g4.compass', s + 1)), probs = [];
+  for (const q of qs) { if (/NaN|undefined|Infinity/.test(JSON.stringify(q)) || !M.check(q, q.a).ok || !q.steps.length) probs.push('bad ' + q.a); if (q.kind === 'mcq' && (q.options.length < 3 || q.options.some(o => !q.why || !q.why[o]))) probs.push('why'); if (q.slips) for (const [v] of q.slips) if (M.check(q, String(v)).ok) probs.push('slip'); }
+  ok(c && c.extra && c.grade === 4 && /not core/i.test(c.desc), 'Compass Quest is a Grade 4 topic clearly labelled ✨ Extra (enrichment, not core syllabus)');
+  ok(!probs.length && ['map', 'map2', 'turn', 'angle'].every(k => qs.some(q => q.data.compass === k)) && new Set(qs.filter(q => q.data.dir != null).map(q => q.data.dir)).size === 8, `compass: 2500 questions sound with why-not notes, all 8 directions, maps, 45° turns and angles ${[...new Set(probs)].slice(0, 3)}`);
+  ok(qs.filter(q => q.data.compass === 'map').every(q => { const m = [...q.pic.matchAll(/class="cmark" data-name="([^"]+)" data-x="(\d)" data-y="(\d)"/g)], name = q.q.match(/Which direction is the (.+)\?/)[1], hit = m.find(x => x[1] === name), dx = +hit[2] - 1, dy = +hit[3] - 1, want = ({ '0,-1': 'north', '1,-1': 'north-east', '1,0': 'east', '1,1': 'south-east', '0,1': 'south', '-1,1': 'south-west', '-1,0': 'west', '-1,-1': 'north-west' })[dx + ',' + dy]; return want === q.a; }), 'every map answer matches where the place is drawn (north is up)'); }
 ok(M.GRADES.every(x => { const g = M.gradeTopics(x.g); return g.length >= 6 && g[g.length - 1].story && g.filter(t => t.story).length === 1; }), 'every grade still ends with its one word-problem topic');
 ok(M.gradeTopics(6).every(t => t.id !== 'g6.speed') && !M.gradeTopics(5).some(t => /ratio|average/.test(t.id)), 'speed is no longer in primary; ratio and average are no longer in Grade 5');
 ok(M.topic('g5.rate').grade === 5, 'rate stays in Primary 5');
@@ -76,7 +81,7 @@ const OLD = { v: 1, stars: 300, gems: 0, xp: 0, avatar: { name: 'Tester', look: 
   const seedOf = (id, pred) => { for (let s = 1; s < 6000; s++) { const q = M.make(id, s); if (q.data && pred(q)) return s; } };
   const LIST = [['g1.length', seedOf('g1.length', q => q.data.len === 'compare')], ['g2.measure', seedOf('g2.measure', q => q.data.bal === 'read')], ['g2.solids', seedOf('g2.solids', q => q.optPics)],
     ['g3.angles', seedOf('g3.angles', q => q.data.angle === 'compare')], ['g3.area', seedOf('g3.area', q => q.data.area === 'count')], ['g4.angles', seedOf('g4.angles', q => q.data.prot)],
-    ['g2.money', seedOf('g2.money', q => q.data.money === 'count')], ['g4.area', seedOf('g4.area', q => q.data.comp === 'area')]];
+    ['g2.money', seedOf('g2.money', q => q.data.money === 'count')], ['g4.area', seedOf('g4.area', q => q.data.comp === 'area')], ['g4.compass', seedOf('g4.compass', q => q.data.compass === 'map2')]];
   for (const [w, h, tag] of [[320, 640, '320'], [360, 740, '360'], [375, 667, '375'], [740, 360, 'land']]) {
     const cx = await b.newContext({ viewport: { width: w, height: h }, deviceScaleFactor: 2, isMobile: true, hasTouch: true }); await cx.route(/supabase\.co/, r => r.abort());
     const q2 = await cx.newPage(); q2.on('pageerror', e => errors.push(e.message));
@@ -89,7 +94,7 @@ const OLD = { v: 1, stars: 300, gems: 0, xp: 0, avatar: { name: 'Tester', look: 
       const minTap = await q2.evaluate(() => Math.min(...[...document.querySelectorAll('.qcard button, .mopts .opt')].filter(e => e.offsetParent).map(e => e.getBoundingClientRect().height)));
       ok(Math.round(minTap) >= 44, `${t}: tap targets at least 44 px (${minTap.toFixed(1)})`);
       if (q.kind !== 'mcq') ok(await q2.evaluate(() => { const e = document.querySelector('#mans'); return !!e && e.getAttribute('autocomplete') === 'off' && e.getAttribute('spellcheck') === 'false'; }), `${t}: the typing box has autocorrect off (WR.noAssist)`);
-      if (i === 0 || i === 5 || (tag === '360' && i === 1)) await q2.locator('.qcard').screenshot({ path: OUT + `t1_${tag}_${LIST[i][0].replace('.', '_')}.png` });
+      if (i === 0 || i === 5 || i === 8 || (tag === '360' && i === 1)) await q2.locator('.qcard').screenshot({ path: OUT + `t1_${tag}_${LIST[i][0].replace('.', '_')}.png` });
       if (q.kind === 'mcq') await q2.locator(`.mopts .opt[data-k="${q.options.indexOf(q.a)}"]`).click(); else { await q2.fill('#mans', q.a); await q2.click('#mcheck'); }
       await q2.waitForTimeout(250);
       ok(await q2.evaluate(() => /correct|got it/i.test(document.querySelector('.qcard').innerText)), `${t}: the right answer is marked right`);
@@ -98,7 +103,10 @@ const OLD = { v: 1, stars: 300, gems: 0, xp: 0, avatar: { name: 'Tester', look: 
     if (tag === '375') { await q2.evaluate(() => { WR.state.math.grade = 2; WR.go('math'); }); await q2.waitForTimeout(400); await q2.evaluate(() => { const b = [...document.querySelectorAll('[data-g]')].find(x => x.dataset.g === '2'); b && b.click(); }); await q2.waitForTimeout(400);
       ok(await q2.locator('[data-t="g2.measure"]').count() === 1 && await q2.locator('[data-t="g2.solids"]').count() === 1, 'the Grade 2 hub lists Honey-Pot Measures and Toy-Box Shapes');
       ok(await q2.evaluate(() => ['g2.measure', 'g2.solids', 'g2.money'].every(id => { const e = document.querySelector(`[data-t="${id}"]`); return e && !!e.querySelector('img.wr-icon, svg, .wr-icon'); })), 'their hub cards show painted icons');
-      await q2.locator('[data-t="g2.measure"]').scrollIntoViewIfNeeded(); await q2.screenshot({ path: OUT + 't1_hub_grade2.png' }); }
+      await q2.locator('[data-t="g2.measure"]').scrollIntoViewIfNeeded(); await q2.screenshot({ path: OUT + 't1_hub_grade2.png' });
+      await q2.evaluate(() => { const b = [...document.querySelectorAll('[data-g]')].find(x => x.dataset.g === '4'); b && b.click(); }); await q2.waitForTimeout(400);
+      ok(await q2.evaluate(() => { const e = document.querySelector('[data-t="g4.compass"] .mextra'); return !!e && /Extra/.test(e.textContent) && !document.querySelector('[data-t="g4.angles"] .mextra'); }), 'the Grade 4 hub labels Compass Quest ✨ Extra (and only it)');
+      await q2.locator('[data-t="g4.compass"]').scrollIntoViewIfNeeded(); await q2.screenshot({ path: OUT + 't1_hub_compass_extra.png' }); }
     await cx.close();
   }
   ok(!errors.length, `no page errors ${errors.slice(0, 3)}`);

@@ -75,7 +75,8 @@ const MOB = { deviceScaleFactor: 2, isMobile: true, hasTouch: true };
     }
     return seen;
   }
-  const makeDue = (page, lvl) => page.evaluate(lvl => { for (const [k, c] of Object.entries(WR.state.charms.cards)) if (k.startsWith(lvl + ':') && c.b >= 1 && c.b < 5) c.d = Date.now() - 1000; WR.save(); }, lvl);
+  // a "day" passes: due now, and the last polish was a real gap ago (BRIEF-T2: a polish only counts after ≥ 20 h)
+  const makeDue = (page, lvl) => page.evaluate(lvl => { for (const [k, c] of Object.entries(WR.state.charms.cards)) if (k.startsWith(lvl + ':') && c.b >= 1 && c.b < 5) { c.d = Date.now() - 1000; if (c.t) c.t = Date.now() - 21 * 36e5; } WR.save(); }, lvl);
 
   /* 1. migration, tile, hub */
   const page = await open({ width: 375, height: 667 }, OLD);

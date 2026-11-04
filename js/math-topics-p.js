@@ -969,6 +969,45 @@ const lineVals = (r, L, step, top) => { // rising series for growth, a hill shap
     const rises = out.slice(1).map((x, i) => x - out[i]), best = Math.max(...rises);
     if (Math.max(...out) <= top && rises.filter(x => x === best).length === 1 && new Set(out).size >= 4) return out.map(x => x * step); }
 };
+/* ---------- 🪁 EXTRA (enrichment, not in the MOE 2021 primary syllabus): the 8-point compass and turns in 45° steps ----------
+   A 3 × 3 fairy map: one landmark in the middle and eight around it, so every direction between two places is one of the 8 points. */
+const DIR8 = ["north", "north-east", "east", "south-east", "south", "south-west", "west", "north-west"], D8 = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
+const D8XY = [[1, 0], [2, 0], [2, 1], [2, 2], [1, 2], [0, 2], [0, 1], [0, 0]]; // map cell of each direction from the middle [1, 1]
+const PLACES = [["castle", "🏰"], ["well", "🪣"], ["tower", "🗼"], ["cottage", "🍄"], ["bakery", "🧁"], ["pond", "🦆"], ["windmill", "🌻"], ["library", "📚"], ["fountain", "⛲"], ["bridge", "🌉"], ["tent", "⛺"], ["beehive", "🐝"]];
+const svgCompassMap = (marks, o = {}) => { const S = 64, ox = 46, oy = 30, W = ox + 3 * S + 14, H = oy + 3 * S + 12;
+  let g = `<rect x="1" y="1" width="${W - 2}" height="${H - 2}" rx="12" fill="#FFFDF8" stroke="#F1E3F7" stroke-width="2"/><rect x="${ox}" y="${oy}" width="${3 * S}" height="${3 * S}" rx="10" fill="#EEF9EA" stroke="${LINE}" stroke-width="1.4"/>`;
+  for (let i = 1; i < 3; i++) g += `<line x1="${ox + i * S}" y1="${oy}" x2="${ox + i * S}" y2="${oy + 3 * S}" stroke="#D6EBD0" stroke-dasharray="3 3"/><line x1="${ox}" y1="${oy + i * S}" x2="${ox + 3 * S}" y2="${oy + i * S}" stroke="#D6EBD0" stroke-dasharray="3 3"/>`;
+  // a small compass rose in the corner: only N is written (children work the others out)
+  g += `<g transform="translate(22,${oy + 22})"><circle r="16" fill="#FFF1C9" stroke="${INK}" stroke-width="1.4"/><path d="M0,-14 L4,0 L0,14 L-4,0 Z" fill="#FFB8D1" stroke="${INK}" stroke-width="1"/><path d="M-14,0 L0,-3 L14,0 L0,3 Z" fill="#BDE7FF" stroke="${INK}" stroke-width="1"/><text y="-19" font-size="11" text-anchor="middle" font-weight="900" fill="${INK}">N</text></g>`;
+  for (const m of marks) { const [x, y] = m.at, cx = ox + x * S + S / 2, cy = oy + y * S + S / 2;
+    g += `<text class="cmark" data-name="${esc(m.name)}" data-x="${x}" data-y="${y}" x="${cx}" y="${cy + 6}" font-size="26" text-anchor="middle">${m.e}</text><text x="${cx}" y="${cy + 24}" font-size="9.5" text-anchor="middle" font-weight="900" fill="${INK}">${esc(m.name)}</text>`;
+    if (m.you) g += `<circle cx="${cx}" cy="${cy}" r="27" fill="none" stroke="#ff6f91" stroke-width="2.4" stroke-dasharray="5 4"/>`; }
+  return svgBox(g, "a fairy map with a compass", W, H, `0 0 ${W} ${H}`, "mpic chart compasspic"); };
+topic(4, "compass", "Compass Quest", "🪁", "Enrichment, not core syllabus: 8 compass directions and turns", r => {
+  const t = r.int(0, 3);
+  if (t === 0 || t === 1) { // the map: direction of one place from another
+    const pl = r.shuffle(PLACES).slice(0, 9), k = r.int(0, 7), marks = pl.map((p, i) => ({ name: p[0], e: p[1], at: i < 8 ? D8XY[i] : [1, 1] }));
+    if (t === 1) { // between two outside places in a straight line through the middle, or next to each other
+      const a = r.int(0, 7), b = (a + r.pick([1, 2, 4, 6, 7])) % 8, [ax, ay] = D8XY[a], [bx, by] = D8XY[b], dx = Math.sign(bx - ax), dy = Math.sign(by - ay);
+      const dir = D8XY.findIndex(([x, y]) => x - 1 === dx && y - 1 === dy); marks[a].you = true;
+      return mcqWhy(r, `On the fairy map, which direction is the ${pl[b][0]} from the ${pl[a][0]}?`, DIR8[dir], `From the ${pl[a][0]}, the ${pl[b][0]} lies ${DIR8[dir]}.`,
+        [[DIR8[(dir + 4) % 8], `That is the way from the ${pl[b][0]} back to the ${pl[a][0]} — start at the ${pl[a][0]} (circled).`], [DIR8[(dir + 1) % 8], "Close, but turn back one step: check up/down and left/right separately."], [DIR8[(dir + 7) % 8], "Close, but one step the other way: check up/down and left/right separately."]],
+        "North is up the map. Start at the circled place and look towards the other one.", [`From the ${pl[a][0]}, go ${dy < 0 ? "up (north)" : dy > 0 ? "down (south)" : "neither up nor down"} and ${dx > 0 ? "right (east)" : dx < 0 ? "left (west)" : "neither left nor right"}.`, `That is ${DIR8[dir]}.`],
+        { pic: svgCompassMap(marks), data: { compass: "map2", dir } }); }
+    marks[8].you = true;
+    return mcqWhy(r, `Pip stands at the ${pl[8][0]} in the middle of the map. Which direction is the ${pl[k][0]}?`, DIR8[k], `North is up, so the ${pl[k][0]} is ${DIR8[k]} of the ${pl[8][0]}.`,
+      [[DIR8[(k + 4) % 8], "That is the opposite direction."], [DIR8[(k + 1) % 8], "One step too far round clockwise."], [DIR8[(k + 7) % 8], "One step too far round anticlockwise."], [DIR8[(k + 2) % 8], "That is a quarter turn away."]],
+      "North is up the map, east is to the right. Corners are north-east, south-east, south-west and north-west.", [`The ${pl[k][0]} is ${D8XY[k][1] === 0 ? "up" : D8XY[k][1] === 2 ? "down" : "level"}${D8XY[k][0] === 2 ? " and right" : D8XY[k][0] === 0 ? " and left" : ""}.`, `So it is ${DIR8[k]}.`],
+      { pic: svgCompassMap(marks), data: { compass: "map", dir: k } }); }
+  if (t === 2) { const s = r.int(0, 7), n = r.pick([1, 2, 3, 4, 6]), cw = r.chance(.5), e = (s + (cw ? n : 8 - n)) % 8, wrongWay = (s + (cw ? 8 - n : n)) % 8, deg = n * 45;
+    const say = r.chance(.5) ? `${deg}°` : { 1: "an eighth of a turn", 2: "a quarter turn", 3: "three eighths of a turn", 4: "a half turn", 6: "three quarters of a turn" }[n];
+    return mcqWhy(r, `The Snow Queen faces ${DIR8[s]}. She turns ${say} ${cw ? "clockwise" : "anticlockwise"}. Which way does she face now?`, DIR8[e], `Each 45° (an eighth of a turn) is one step on the 8-point compass: ${n} step${n > 1 ? "s" : ""} ${cw ? "clockwise" : "anticlockwise"} from ${DIR8[s]}.`,
+      [[DIR8[wrongWay], `You turned the other way. ${cw ? "Clockwise goes N → NE → E" : "Anticlockwise goes N → NW → W"}.`], [DIR8[(e + 1) % 8], "Count the 45° steps again."], [DIR8[(e + 7) % 8], "Count the 45° steps again."]],
+      "On the 8-point compass, each step is 45°. Clockwise: N, NE, E, SE, S, SW, W, NW.", [`${say} = ${n} step${n > 1 ? "s" : ""} of 45°`, `${D8[s]} → ${Array.from({ length: n }, (_, i) => D8[(s + (cw ? i + 1 : 8 - i - 1) ) % 8]).join(" → ")}`], { data: { compass: "turn", s, n, cw } }); }
+  const a = r.int(0, 7), n = r.int(1, 4), b = (a + n) % 8, ang = n * 45;
+  return numWhy(`What is the smaller angle between ${DIR8[a]} and ${DIR8[b]}? (in °)`, ang, "Count the compass steps between them; each step is 45°.", [`${D8[a]} to ${D8[b]} is ${n} step${n > 1 ? "s" : ""}.`, `${n} × 45° = ${ang}°`],
+    [[360 - ang, "That is the bigger angle, the long way round. Count the shorter way."], [n * 90, "Each step on the 8-point compass is 45°, not 90°."], [n, "Count the steps in degrees: each step is 45°."]], { data: { compass: "angle", a, n } });
+}, { extra: true });
 topic(4, "linegraph", "Line Graph Lighthouse", "📈", "Read tables and line graphs", r => {
   const t = r.int(0, 4);
   if (t === 4) { // a table with one missing number (MOE P4 tables)

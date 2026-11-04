@@ -15,7 +15,8 @@
    "on the table": "You heard: “The cat is under the table.” So it's “under the table”, not “on the table”.",
    "next to the bed": "You heard: “The cat is under the table.” So it's “under the table”, not “next to the bed”.",
    "in the box": "You heard: “The cat is under the table.” So it's “under the table”, not “in the box”."
-  }
+  },
+  "sk": "listening.place"
  },
  {
   "type": "listen",
@@ -33,7 +34,8 @@
    "two": "“two” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "three": "“three” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "none": "“none” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -51,7 +53,8 @@
    "ANA": "You heard: “My name is Anna.” So it's “ANNA”, not “ANA”.",
    "HANNA": "You heard: “My name is Anna.” So it's “ANNA”, not “HANNA”.",
    "ANNE": "You heard: “My name is Anna.” So it's “ANNA”, not “ANNE”."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -69,7 +72,8 @@
    "3:00": "“3:00” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "2:30": "“2:30” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "4:30": "“4:30” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -87,7 +91,8 @@
    "an apple": "You heard: “I'd like a banana, please.” So it's “a banana”, not “an apple”.",
    "an orange": "You heard: “I'd like a banana, please.” So it's “a banana”, not “an orange”.",
    "a cake": "You heard: “I'd like a banana, please.” So it's “a banana”, not “a cake”."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -105,7 +110,8 @@
    "8:50": "“8:50” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "7:15": "“7:15” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "9:15": "“9:15” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -123,7 +129,8 @@
    "blue": "You heard: “My favourite colour is green.” So it's “green”, not “blue”.",
    "red": "You heard: “My favourite colour is green.” So it's “green”, not “red”.",
    "yellow": "You heard: “My favourite colour is green.” So it's “green”, not “yellow”."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -141,7 +148,8 @@
    "12": "“12” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "7": "“7” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "9": "“9” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -159,7 +167,8 @@
    "sunny": "You heard: “It is cold and snowy today.” So it's “snowy”, not “sunny”.",
    "hot": "You heard: “It is cold and snowy today.” So it's “snowy”, not “hot”.",
    "rainy": "You heard: “It is cold and snowy today.” So it's “snowy”, not “rainy”."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -177,7 +186,8 @@
    "40": "“40” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "4": "“4” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "41": "“41” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -195,7 +205,8 @@
    "teacher": "You heard: “My dad is a doctor.” So it's “doctor”, not “teacher”.",
    "cook": "You heard: “My dad is a doctor.” So it's “doctor”, not “cook”.",
    "farmer": "You heard: “My dad is a doctor.” So it's “doctor”, not “farmer”."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -213,7 +224,8 @@
    "behind the school": "You heard: “The shop is next to the park.” So it's “next to the park”, not “behind the school”.",
    "in the park": "You heard: “The shop is next to the park.” So it's “next to the park”, not “in the park”.",
    "opposite the bank": "You heard: “The shop is next to the park.” So it's “next to the park”, not “opposite the bank”."
-  }
+  },
+  "sk": "listening.place"
  },
  {
   "type": "listen",
@@ -231,7 +243,8 @@
    "on Sundays": "You heard: “I play tennis on Saturdays.” So it's “on Saturdays”, not “on Sundays”.",
    "on Mondays": "You heard: “I play tennis on Saturdays.” So it's “on Saturdays”, not “on Mondays”.",
    "every day": "You heard: “I play tennis on Saturdays.” So it's “on Saturdays”, not “every day”."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -249,7 +262,8 @@
    "water": "You heard: “Can I have a glass of milk, please?” So it's “milk”, not “water”.",
    "juice": "You heard: “Can I have a glass of milk, please?” So it's “milk”, not “juice”.",
    "tea": "You heard: “Can I have a glass of milk, please?” So it's “milk”, not “tea”."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -267,7 +281,8 @@
    "097 321": "“097 321” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "079 312": "“079 312” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "709 321": "“709 321” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -285,7 +300,8 @@
    "in the winter": "You heard: “We go swimming in the summer.” So it's “in the summer”, not “in the winter”.",
    "in the spring": "You heard: “We go swimming in the summer.” So it's “in the summer”, not “in the spring”.",
    "in the autumn": "You heard: “We go swimming in the summer.” So it's “in the summer”, not “in the autumn”."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -303,7 +319,8 @@
    "blue": "You heard: “I've got a red bag and a blue pencil case.” So it's “red”, not “blue”.",
    "green": "You heard: “I've got a red bag and a blue pencil case.” So it's “red”, not “green”.",
    "yellow": "You heard: “I've got a red bag and a blue pencil case.” So it's “red”, not “yellow”."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -321,7 +338,8 @@
    "black": "You heard: “She's white and very small.” So it's “white”, not “black”.",
    "brown": "You heard: “She's white and very small.” So it's “white”, not “brown”.",
    "grey": "You heard: “She's white and very small.” So it's “white”, not “grey”."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -339,7 +357,8 @@
    "by car": "You heard: “I go to school by bus every day.” So it's “by bus”, not “by car”.",
    "on foot": "You heard: “I go to school by bus every day.” So it's “by bus”, not “on foot”.",
    "by bike": "You heard: “I go to school by bus every day.” So it's “by bus”, not “by bike”."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -357,7 +376,8 @@
    "three": "You heard: “There are four people in my family: my mum, my dad, my brother and me.” So it's “four”, not “three”.",
    "five": "You heard: “There are four people in my family: my mum, my dad, my brother and me.” So it's “four”, not “five”.",
    "two": "You heard: “There are four people in my family: my mum, my dad, my brother and me.” So it's “four”, not “two”."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -375,7 +395,8 @@
    "12:13": "“12:13” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "2:30": "“2:30” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "11:30": "“11:30” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -393,7 +414,8 @@
    "carrots": "You heard: “I don't like carrots, but I love potatoes.” So it's “potatoes”, not “carrots”.",
    "tomatoes": "You heard: “I don't like carrots, but I love potatoes.” So it's “potatoes”, not “tomatoes”.",
    "peas": "You heard: “I don't like carrots, but I love potatoes.” So it's “potatoes”, not “peas”."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -411,7 +433,8 @@
    "on Wednesday": "“on Wednesday” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "on Tuesday": "“on Tuesday” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "on Friday": "“on Friday” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -429,7 +452,8 @@
    "the window": "You heard: “Please sit down and close the door.” So it's “the door”, not “the window”.",
    "your book": "You heard: “Please sit down and close the door.” So it's “the door”, not “your book”.",
    "your eyes": "You heard: “Please sit down and close the door.” So it's “the door”, not “your eyes”."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -447,7 +471,8 @@
    "sleeping": "You heard: “He's reading the newspaper.” So it's “reading”, not “sleeping”.",
    "cooking": "You heard: “He's reading the newspaper.” So it's “reading”, not “cooking”.",
    "walking": "You heard: “He's reading the newspaper.” So it's “reading”, not “walking”."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -465,7 +490,8 @@
    "three pounds": "You heard: “These apples are one pound for three.” So it's “one pound”, not “three pounds”.",
    "thirty pence": "You heard: “These apples are one pound for three.” So it's “one pound”, not “thirty pence”.",
    "two pounds": "You heard: “These apples are one pound for three.” So it's “one pound”, not “two pounds”."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -483,7 +509,8 @@
    "brown": "You heard: “Lily has long brown hair and green eyes.” So it's “green”, not “brown”.",
    "blue": "You heard: “Lily has long brown hair and green eyes.” So it's “green”, not “blue”.",
    "grey": "You heard: “Lily has long brown hair and green eyes.” So it's “green”, not “grey”."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -501,7 +528,8 @@
    "downstairs": "You heard: “The toilets are upstairs, next to the café.” So it's “upstairs”, not “downstairs”.",
    "outside": "You heard: “The toilets are upstairs, next to the café.” So it's “upstairs”, not “outside”.",
    "in the café": "You heard: “The toilets are upstairs, next to the café.” So it's “upstairs”, not “in the café”."
-  }
+  },
+  "sk": "listening.place"
  },
  {
   "type": "listen",
@@ -519,7 +547,8 @@
    "black and white": "The rabbit isn't black.",
    "all brown": "It's brown AND white.",
    "grey": "Grey wasn't said. You heard: “My rabbit is brown and white.”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -537,7 +566,8 @@
    "two": "Two wasn't said. You heard: “I've got three pencils in my bag.”",
    "four": "Four wasn't said. You heard: “I've got three pencils in my bag.”",
    "five": "Five wasn't said. You heard: “I've got three pencils in my bag.”"
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -555,7 +585,8 @@
    "in the garden": "The garden wasn't said. You heard: “Sam is in the kitchen.”",
    "in the bedroom": "The bedroom wasn't said. You heard: “Sam is in the kitchen.”",
    "at school": "He's at home, in the kitchen."
-  }
+  },
+  "sk": "listening.place"
  },
  {
   "type": "listen",
@@ -573,7 +604,8 @@
    "rainy": "Rain wasn't said. You heard: “It's sunny today.”",
    "snowy": "Snow wasn't said. You heard: “It's sunny today.”",
    "windy": "Wind wasn't said. You heard: “It's sunny today.”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -591,7 +623,8 @@
    "in March": "March wasn't said. You heard: “My birthday is in May.”",
    "in June": "June wasn't said. You heard: “My birthday is in May.”",
    "in July": "July wasn't said. You heard: “My birthday is in May.”"
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -609,7 +642,8 @@
    "on the chair": "On is different from under.",
    "under the table": "It's the chair, not the table.",
    "in the box": "The box wasn't said. You heard: “The red ball is under the chair.”"
-  }
+  },
+  "sk": "listening.place"
  },
  {
   "type": "listen",
@@ -627,7 +661,8 @@
    "running": "The speaker doesn't like running.",
    "dancing": "Dancing wasn't said. You heard: “I like swimming, but I don't like running.”",
    "football": "Football wasn't said. You heard: “I like swimming, but I don't like running.”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -645,7 +680,8 @@
    "four": "Four wasn't said. You heard: “There are five ducks on the pond.”",
    "six": "Six wasn't said. You heard: “There are five ducks on the pond.”",
    "nine": "Nine wasn't said. You heard: “There are five ducks on the pond.”"
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -663,7 +699,8 @@
    "six": "Six is the sister's age.",
    "seven": "Seven wasn't said. You heard: “My brother is nine.”",
    "ten": "Ten wasn't said. You heard: “My brother is nine.”"
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -681,7 +718,8 @@
    "a hat": "A hat wasn't said. You heard: “Please put your coat on.”",
    "shoes": "Shoes weren't said. You heard: “Please put your coat on.”",
    "gloves": "Gloves weren't said. You heard: “Please put your coat on.”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -699,7 +737,8 @@
    "on Monday": "Monday is English.",
    "on Tuesday": "Tuesday wasn't said. You heard: “We have English on Monday and music on Friday.”",
    "on Sunday": "Sunday wasn't said. You heard: “We have English on Monday and music on Friday.”"
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -717,7 +756,8 @@
    "eating": "Eating wasn't said. You heard: “The baby is sleeping.”",
    "crying": "Crying wasn't said. You heard: “The baby is sleeping.”",
    "playing": "Playing wasn't said. You heard: “The baby is sleeping.”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -735,7 +775,8 @@
    "chocolate": "Chocolate wasn't said. You heard: “Strawberry!”",
    "banana": "Banana wasn't said. You heard: “Strawberry!”",
    "lemon": "Lemon wasn't said. You heard: “Strawberry!”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -753,7 +794,8 @@
    "purple stars": "The bag is purple; the stars are yellow.",
    "yellow moons": "Moons weren't said. You heard: “My school bag is purple with yellow stars.”",
    "red hearts": "Hearts weren't said. You heard: “My school bag is purple with yellow stars.”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -771,7 +813,8 @@
    "11:00": "Eleven wasn't said.",
    "6:00": "Six wasn't said.",
    "7:30": "O'clock means :00, not half past."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -789,7 +832,8 @@
    "one": "One is the dog.",
    "three": "Three wasn't said. You heard: “Tom has got a dog and two cats.”",
    "none": "He has two cats."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -807,7 +851,8 @@
    "on the house": "The house wasn't said. You heard: “It's in the tree.”",
    "in the sky": "The sky wasn't said. You heard: “It's in the tree.”",
    "on the car": "The car wasn't said. You heard: “It's in the tree.”"
-  }
+  },
+  "sk": "listening.place"
  },
  {
   "type": "listen",
@@ -825,7 +870,8 @@
    "pasta": "Pasta wasn't said. You heard: “My favourite food is pizza.”",
    "chicken": "Chicken wasn't said. You heard: “My favourite food is pizza.”",
    "rice": "Rice wasn't said. You heard: “My favourite food is pizza.”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -843,7 +889,8 @@
    "a teacher": "Mum is the teacher.",
    "a doctor": "Doctor wasn't said. You heard: “Dad is a cook.”",
    "a farmer": "Farmer wasn't said. You heard: “Dad is a cook.”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -861,7 +908,8 @@
    "the door": "The door wasn't said. You heard: “Close the window, please.”",
    "the book": "The book wasn't said. You heard: “Close the window, please.”",
    "your eyes": "Eyes weren't said. You heard: “Close the window, please.”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -879,7 +927,8 @@
    "a drink": "A drink is for thirsty.",
    "a sandwich": "A sandwich wasn't said. You heard: “Can I have an apple?”",
    "a banana": "A banana wasn't said. You heard: “Can I have an apple?”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -897,7 +946,8 @@
    "£50": "Fifty is 50: listen to the end of the word.",
    "£5": "Five is 5.",
    "£13": "Thirteen is 13."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -915,7 +965,8 @@
    "in the city": "The city wasn't said. You heard: “Grandma lives in a little house by the sea.”",
    "on a farm": "A farm wasn't said. You heard: “Grandma lives in a little house by the sea.”",
    "in a flat": "A flat wasn't said. You heard: “Grandma lives in a little house by the sea.”"
-  }
+  },
+  "sk": "listening.place"
  },
  {
   "type": "listen",
@@ -933,7 +984,8 @@
    "ride a bike": "She CAN ride a bike.",
    "sing": "Singing wasn't said. You heard: “Lily can ride a bike, but she can't swim.”",
    "read": "Reading wasn't said. You heard: “Lily can ride a bike, but she can't swim.”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -951,7 +1003,8 @@
    "before school": "Before is the opposite.",
    "at lunchtime": "Lunchtime wasn't said. You heard: “Let's play football after school.”",
    "on Sunday": "Sunday wasn't said. You heard: “Let's play football after school.”"
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -970,7 +1023,8 @@
    "under the bed": "On, not under.",
    "on the chair": "The chair wasn't said. You heard: “Mum: It's on your bed.”",
    "in the bag": "The bag wasn't said. You heard: “Mum: It's on your bed.”"
-  }
+  },
+  "sk": "listening.place"
  },
  {
   "type": "listen",
@@ -989,7 +1043,8 @@
    "a rabbit": "A rabbit wasn't said. You heard: “He's a hamster.”",
    "a dog": "A dog wasn't said. You heard: “He's a hamster.”",
    "a fish": "A fish wasn't said. You heard: “He's a hamster.”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1008,7 +1063,8 @@
    "oranges": "He likes oranges; he loves grapes.",
    "apples": "Apples weren't said. You heard: “And I love grapes!”",
    "pears": "Pears weren't said. You heard: “And I love grapes!”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1027,7 +1083,8 @@
    "eight": "Sam said eight first, then changed it.",
    "ten": "Ten wasn't said. You heard: “No, nine!”",
    "seven": "Seven wasn't said. You heard: “No, nine!”"
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1046,7 +1103,8 @@
    "pink and purple": "Purple wasn't said. You heard: “Lily: It's pink and orange.”",
    "red and orange": "Red wasn't said. You heard: “Lily: It's pink and orange.”",
    "all pink": "It's two colours."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1064,7 +1122,8 @@
    "red": "Red is the brother's bike.",
    "blue": "Blue wasn't said. You heard: “I've got a green bike.”",
    "yellow": "Yellow wasn't said. You heard: “I've got a green bike.”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1082,7 +1141,8 @@
    "under the sofa": "On, not under.",
    "on the bed": "The bed wasn't said. You heard: “The cat is sleeping on the sofa.”",
    "in the garden": "The garden wasn't said. You heard: “The cat is sleeping on the sofa.”"
-  }
+  },
+  "sk": "listening.place"
  },
  {
   "type": "listen",
@@ -1100,7 +1160,8 @@
    "at nine": "Nine is maths.",
    "at eleven": "Eleven wasn't said. You heard: “We've got maths at nine and art at ten.”",
    "at two": "Two wasn't said. You heard: “We've got maths at nine and art at ten.”"
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1118,7 +1179,8 @@
    "blue": "Blue was a mistake; the speaker changed it.",
    "pink": "Pink wasn't said. You heard: “No, sorry, it's purple!”",
    "green": "Green wasn't said. You heard: “No, sorry, it's purple!”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1136,7 +1198,8 @@
    "£13": "Thirteen is 13.",
    "£30": "Thirty is 30.",
    "£2": "Two wasn't said."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1154,7 +1217,8 @@
    "four": "Four was before giving one away.",
    "five": "Five would be one more, not one less.",
    "one": "One is the sweet the friend got."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1172,7 +1236,8 @@
    "12:00": "Twelve wasn't said.",
    "10:00": "Ten wasn't said.",
    "2:30": "O'clock means :00, not half past."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1190,7 +1255,8 @@
    "the dog": "The dog is big.",
    "the house": "A house wasn't said. You heard: “My dog is big, but my cat is very small.”",
    "the bird": "A bird wasn't said. You heard: “My dog is big, but my cat is very small.”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1208,7 +1274,8 @@
    "in the bag": "The bag wasn't said. You heard: “Put the books on the table, please.”",
    "under the table": "On, not under.",
    "on the chair": "The chair wasn't said. You heard: “Put the books on the table, please.”"
-  }
+  },
+  "sk": "listening.place"
  },
  {
   "type": "listen",
@@ -1226,7 +1293,8 @@
    "yellow": "Yellow is the T-shirt.",
    "red": "Red wasn't said. You heard: “I'm wearing a yellow T-shirt and blue shorts.”",
    "white": "White wasn't said. You heard: “I'm wearing a yellow T-shirt and blue shorts.”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1244,7 +1312,8 @@
    "two": "Two wasn't said. You heard: “There are ten children in the pool.”",
    "twelve": "Twelve is 12.",
    "six": "Six wasn't said. You heard: “There are ten children in the pool.”"
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1262,7 +1331,8 @@
    "on Monday": "Monday wasn't said. You heard: “I go swimming on Wednesday.”",
    "on Thursday": "Thursday wasn't said. You heard: “I go swimming on Wednesday.”",
    "on Saturday": "Saturday wasn't said. You heard: “I go swimming on Wednesday.”"
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1280,7 +1350,8 @@
    "black hair and glasses": "His hair is white, not black.",
    "white hair and a hat": "A hat wasn't said. You heard: “He has got white hair and glasses.”",
    "a beard and glasses": "A beard wasn't said. You heard: “He has got white hair and glasses.”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1298,7 +1369,8 @@
    "in the sea": "The sea wasn't said. You heard: “The fox lives in the forest.”",
    "in a house": "A house wasn't said. You heard: “The fox lives in the forest.”",
    "on a farm": "A farm wasn't said. You heard: “The fox lives in the forest.”"
-  }
+  },
+  "sk": "listening.place"
  },
  {
   "type": "listen",
@@ -1316,7 +1388,8 @@
    "milk": "The speaker doesn't want milk.",
    "juice": "Juice wasn't said. You heard: “Can I have water, please?”",
    "tea": "Tea wasn't said. You heard: “Can I have water, please?”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1335,7 +1408,8 @@
    "blue": "Jo asked about blue, but Ken said no.",
    "brown": "Brown wasn't said. You heard: “Ken: No, it's black.”",
    "grey": "Grey wasn't said. You heard: “Ken: No, it's black.”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1354,7 +1428,8 @@
    "one": "One wasn't said. You heard: “Ali: Two, please.”",
    "three": "Three wasn't said. You heard: “Ali: Two, please.”",
    "ten": "Ten wasn't said. You heard: “Ali: Two, please.”"
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1373,7 +1448,8 @@
    "in front of the door": "Behind, not in front of.",
    "under the bed": "The bed wasn't said. You heard: “Dad: She's behind the door.”",
    "on the table": "The table wasn't said. You heard: “Dad: She's behind the door.”"
-  }
+  },
+  "sk": "listening.place"
  },
  {
   "type": "listen",
@@ -1392,7 +1468,8 @@
    "page six": "Six was the teacher's mistake.",
    "page eight": "Eight wasn't said. You heard: “Teacher: Sorry, page seven!”",
    "page eleven": "Eleven wasn't said. You heard: “Teacher: Sorry, page seven!”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1411,7 +1488,8 @@
    "cats": "Ivy doesn't like cats.",
    "birds": "Birds weren't said. You heard: “I like dogs.”",
    "fish": "Fish weren't said. You heard: “I like dogs.”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1430,7 +1508,8 @@
    "yellow": "Yellow wasn't said. You heard: “Leo: Orange!”",
    "green": "Green wasn't said. You heard: “Leo: Orange!”",
    "red": "Red wasn't said. You heard: “Leo: Orange!”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1449,7 +1528,8 @@
    "ten": "Ten is the brother.",
    "fourteen": "Fourteen wasn't said. You heard: “Ben: She's four.”",
    "nine": "Nine wasn't said. You heard: “Ben: She's four.”"
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1468,7 +1548,8 @@
    "only swim": "She can dance too.",
    "only dance": "She can swim too.",
    "sing and dance": "Singing wasn't said. You heard: “Pip: Can you swim?”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1487,7 +1568,8 @@
    "in the car": "The car wasn't said. You heard: “Mia: They're in your coat.”",
    "on the table": "The table wasn't said. You heard: “Mia: They're in your coat.”",
    "in the bag": "The bag wasn't said. You heard: “Mia: They're in your coat.”"
-  }
+  },
+  "sk": "listening.place"
  },
  {
   "type": "listen",
@@ -1506,91 +1588,104 @@
    "cold": "Raj says no, it isn't cold.",
    "rainy": "Rain wasn't said. You heard: “Raj: No, it's hot!”",
    "snowy": "Snow wasn't said. You heard: “Raj: No, it's hot!”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "I like my red hat.",
   "answer": "I like my red hat.",
-  "explain": "I like + my red hat."
+  "explain": "I like + my red hat.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "The dog can run.",
   "answer": "The dog can run.",
-  "explain": "The dog + can run."
+  "explain": "The dog + can run.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "We have two cats.",
   "answer": "We have two cats.",
-  "explain": "We have + two cats: cats with -s."
+  "explain": "We have + two cats: cats with -s.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "It is a big tree.",
   "answer": "It is a big tree.",
-  "explain": "It is + a big tree."
+  "explain": "It is + a big tree.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "My mum is happy.",
   "answer": "My mum is happy.",
-  "explain": "My mum + is happy."
+  "explain": "My mum + is happy.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "Look at the moon.",
   "answer": "Look at the moon.",
-  "explain": "Look at + the moon."
+  "explain": "Look at + the moon.",
+  "sk": "listening.dictation"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "She has a pink bag.",
   "answer": "She has a pink bag.",
-  "explain": "She has + a pink bag."
+  "explain": "She has + a pink bag.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "I can see a bird.",
   "answer": "I can see a bird.",
-  "explain": "I can see + what."
+  "explain": "I can see + what.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "The fish is in the water.",
   "answer": "The fish is in the water.",
-  "explain": "The fish + is + where."
+  "explain": "The fish + is + where.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "We play in the park.",
   "answer": "We play in the park.",
-  "explain": "We play + where."
+  "explain": "We play + where.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "Is your cat black?",
   "answer": "Is your cat black?",
-  "explain": "Is + your cat + colour?"
+  "explain": "Is + your cat + colour?",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "My bike is new.",
   "answer": "My bike is new.",
-  "explain": "My bike + is new."
+  "explain": "My bike + is new.",
+  "sk": "listening.build"
  },
  {
   "type": "listen",
@@ -1608,7 +1703,8 @@
    "two": "Two is the brothers.",
    "three": "Three is all of them together.",
    "none": "The speaker has got one sister."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1626,7 +1722,8 @@
    "in June": "June is the sister's birthday.",
    "in March": "March wasn't said. You heard: “My birthday is in May.”",
    "in July": "July wasn't said. You heard: “My birthday is in May.”"
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1644,7 +1741,8 @@
    "green": "Green is the wings.",
    "blue": "Blue wasn't said. You heard: “The dragon has got big green wings and a small red tail.”",
    "yellow": "Yellow wasn't said. You heard: “The dragon has got big green wings and a small red tail.”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1662,7 +1760,8 @@
    "cheese": "Cheese was first, then the speaker changed.",
    "fish": "Fish wasn't said. You heard: “No, wait, an egg sandwich, please!”",
    "chicken": "Chicken wasn't said. You heard: “No, wait, an egg sandwich, please!”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1680,7 +1779,8 @@
    "five": "Five is only the ducks on the pond.",
    "two": "Two is only the ducks in the grass.",
    "three": "Three isn't 5 + 2."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1698,7 +1798,8 @@
    "on Tuesday": "Tuesday is tennis.",
    "on Thursday": "Thursday wasn't said. You heard: “I play tennis on Tuesday and football on Friday.”",
    "on Sunday": "Sunday wasn't said. You heard: “I play tennis on Tuesday and football on Friday.”"
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1716,7 +1817,8 @@
    "7:00": "Seven wasn't said.",
    "6:30": "O'clock means :00, not half past.",
    "8:00": "Eight wasn't said."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1734,7 +1836,8 @@
    "white": "White is the unicorn.",
    "purple": "Purple wasn't said. You heard: “The unicorn is white, and the fairy is pink.”",
    "blue": "Blue wasn't said. You heard: “The unicorn is white, and the fairy is pink.”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1753,7 +1856,8 @@
    "a book and a ball": "A ball wasn't said. You heard: “Leo: My lunch and a book.”",
    "his lunch and a pen": "A pen wasn't said. You heard: “Leo: My lunch and a book.”",
    "only a book": "His lunch is there too."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1772,7 +1876,8 @@
    "under the tree": "In the tree, not under it.",
    "in the house": "The house wasn't said. You heard: “Ruby: She's in the tree!”",
    "in the car": "The car wasn't said. You heard: “Ruby: She's in the tree!”"
-  }
+  },
+  "sk": "listening.place"
  },
  {
   "type": "listen",
@@ -1791,7 +1896,8 @@
    "six": "Six wasn't said. You heard: “Omar: Eight!”",
    "four": "Four wasn't said. You heard: “Omar: Eight!”",
    "ten": "Ten wasn't said. You heard: “Omar: Eight!”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1810,91 +1916,104 @@
    "an apple": "Sam says no to the apple.",
    "an orange": "An orange wasn't said. You heard: “I want a banana.”",
    "a pear": "A pear wasn't said. You heard: “I want a banana.”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "My cat likes fish.",
   "answer": "My cat likes fish.",
-  "explain": "My cat + likes fish: likes with -s."
+  "explain": "My cat + likes fish: likes with -s.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "I can see three stars.",
   "answer": "I can see three stars.",
-  "explain": "I can see + three stars: stars with -s."
+  "explain": "I can see + three stars: stars with -s.",
+  "sk": "listening.dictation"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "The dragon is very big.",
   "answer": "The dragon is very big.",
-  "explain": "The dragon + is + very big."
+  "explain": "The dragon + is + very big.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "Can you ride a bike?",
   "answer": "Can you ride a bike?",
-  "explain": "Can + you + ride a bike?"
+  "explain": "Can + you + ride a bike?",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "I like red apples.",
   "answer": "I like red apples.",
-  "explain": "I + like + what."
+  "explain": "I + like + what.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "My dog is very big.",
   "answer": "My dog is very big.",
-  "explain": "My dog + is + very big."
+  "explain": "My dog + is + very big.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "We go to the park on Sunday.",
   "answer": "We go to the park on Sunday.",
-  "explain": "We go + where + when."
+  "explain": "We go + where + when.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "Can you see the boat?",
   "answer": "Can you see the boat?",
-  "explain": "Can you + verb…?"
+  "explain": "Can you + verb…?",
+  "sk": "listening.build"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "I have a cat.",
   "answer": "I have a cat.",
-  "explain": "I have a cat."
+  "explain": "I have a cat.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "The sun is hot.",
   "answer": "The sun is hot.",
-  "explain": "The sun is hot."
+  "explain": "The sun is hot.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "She likes cake.",
   "answer": "She likes cake.",
-  "explain": "She likes cake: likes with -s."
+  "explain": "She likes cake: likes with -s.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "My bike is blue.",
   "answer": "My bike is blue.",
-  "explain": "My bike is blue."
+  "explain": "My bike is blue.",
+  "sk": "listening.dictation"
  },
  {
   "type": "listen",
@@ -1913,7 +2032,8 @@
    "red": "“red” is in the recording too, but not as the answer. You heard: “Tom: No, my bag is blue.” So it's “blue”.",
    "green": "You heard: “Tom: No, my bag is blue.” So it's “blue”, not “green”.",
    "pink": "You heard: “Tom: No, my bag is blue.” So it's “blue”, not “pink”."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1932,7 +2052,8 @@
    "ten": "“ten” is in the recording too, but not as the answer. You heard: “Lily: He's eight.” So it's “eight”.",
    "six": "You heard: “Lily: He's eight.” So it's “eight”, not “six”.",
    "nine": "You heard: “Lily: He's eight.” So it's “eight”, not “nine”."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1951,7 +2072,8 @@
    "an apple": "“an apple” is in the recording too, but not as the answer. You heard: “Can I have a banana?” So it's “a banana”.",
    "a cake": "You heard: “Can I have a banana?” So it's “a banana”, not “a cake”.",
    "some milk": "You heard: “Can I have a banana?” So it's “a banana”, not “some milk”."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1970,69 +2092,79 @@
    "on the bed": "You heard: “Leo: She's under the bed!” So it's “under the bed”, not “on the bed”.",
    "in the garden": "You heard: “Leo: She's under the bed!” So it's “under the bed”, not “in the garden”.",
    "on the table": "You heard: “Leo: She's under the bed!” So it's “under the bed”, not “on the table”."
-  }
+  },
+  "sk": "listening.place"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "I like red apples.",
   "answer": "I like red apples.",
-  "explain": "I like + red apples."
+  "explain": "I like + red apples.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "My cat is very small.",
   "answer": "My cat is very small.",
-  "explain": "My cat + is + very small."
+  "explain": "My cat + is + very small.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "We play in the park.",
   "answer": "We play in the park.",
-  "explain": "We play + in the park."
+  "explain": "We play + in the park.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "The bus is yellow.",
   "answer": "The bus is yellow.",
-  "explain": "The bus + is + yellow."
+  "explain": "The bus + is + yellow.",
+  "sk": "listening.dictation"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "My kite is in the tree.",
   "answer": "My kite is in the tree.",
-  "explain": "My kite + is + in the tree (where it is)."
+  "explain": "My kite + is + in the tree (where it is).",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "Can you see the bird?",
   "answer": "Can you see the bird?",
-  "explain": "Can you see + the bird? It is a question."
+  "explain": "Can you see + the bird? It is a question.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "My dad cooks dinner.",
   "answer": "My dad cooks dinner.",
-  "explain": "My dad + cooks + dinner."
+  "explain": "My dad + cooks + dinner.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "The dog is in the garden.",
   "answer": "The dog is in the garden.",
-  "explain": "The dog + is + in the garden."
+  "explain": "The dog + is + in the garden.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "I have two brothers.",
   "answer": "I have two brothers.",
-  "explain": "I + have + two brothers."
+  "explain": "I + have + two brothers.",
+  "sk": "listening.build"
  }
 ]

@@ -153,22 +153,44 @@ SG.resultHTML = (it, val, r) => {
 const playable = q => WR.playable ? WR.playable(q) : true;
 const split = (l, n) => { const w = Object.entries(l.cefr), tot = w.reduce((a, [, x]) => a + x, 0); let left = n;
   return w.map(([rid, x], i) => { const k = i === w.length - 1 ? left : Math.round(n * x / tot); left -= k; return [rid, Math.max(0, k)]; }); };
-async function fromBanks(l, skill, n, bucket, filter = () => true) {
-  const out = [];
-  for (const [rid, k] of split(l, n)) { if (!k) continue; const bank = (await WR.bank(rid, skill)).filter(q => playable(q) && filter(q)); out.push(...WR.freshPick(`${bucket}/${rid}`, bank, k).map(q => WR.normalize(q))); }
-  return WR.shuffle(out);
+/* 🔁 rev: mix in up to 3 due reviews (js/review.js) from the same realm banks, keyed like realm lessons ("<rid>/<skill>"),
+   so a sentence learned here or in a realm is one record; the rest of the round is new. */
+const RVOK = rev => rev && WR.Review;
+const perLesson = () => WR.Review.CONFIG.perLesson;
+async function fromBanks(l, skill, n, bucket, filter = () => true, rev = false) {
+  const out = [], banks = [];
+  for (const [rid] of split(l, n)) banks.push([rid, (await WR.bank(rid, skill)).filter(q => playable(q) && filter(q))]);
+  const revs = [];
+  if (RVOK(rev)) for (const [rid, bank] of banks) revs.push(...WR.Review.pick(`${rid}/${skill}`, bank, Math.min(perLesson(), n) - revs.length, { bucket: `${bucket}/${rid}` }));
+  const skipOf = rid => { const pre = `${rid}/${skill}:`, ks = revs.flatMap(it => [it._rk, it._rv.for]).filter(k => k.startsWith(pre)).map(k => k.slice(pre.length)); return ks.length ? new Set(ks) : null; };
+  for (const [rid, k] of split(l, n - revs.length)) { if (!k) continue; const bank = banks.find(b => b[0] === rid)[1];
+    out.push(...WR.freshPick(`${bucket}/${rid}`, bank, k, skipOf(rid)).map(q => tag(WR.normalize(q), `${rid}/${skill}`, q))); }
+  return WR.shuffle(out.concat(revs));
 }
-const passageItems = (bucket, ps, n) => WR.freshPick(bucket, ps, n).flatMap(p => p.questions.filter(playable).map(q => WR.normalize(q, p)));
-SG.items = async (lv, c, n = 8) => {
-  const l = SG.level(lv), C = COMP[c], b = `sg-${lv}/${c}`;
-  if (C.bank === "reading") { const ps = (await Promise.all(Object.keys(l.cefr).map(r => WR.bank(r, "reading")))).flatMap(x => x.passages).filter(p => p.questions.some(playable)); return passageItems(b, ps, 2); }
-  if (C.bank) return fromBanks(l, C.bank, n, b);
+const tag = (it, scope, q, p) => WR.Review ? WR.Review.tag(it, scope, q, p) : it;
+// passages: scopeOf(p) names each passage's bank (a realm's reading bank, or this level's own game)
+const passageItems = (bucket, ps, n, scopeOf, rev = false) => {
+  const r = RVOK(rev) && n >= 2 ? [...new Set(ps.map(scopeOf))].map(sc => WR.Review.pickPassage(sc, ps.filter(p => scopeOf(p) === sc), perLesson(), { bucket })).find(Boolean) : null;
+  const fresh = WR.freshPick(bucket, ps, r ? n - 1 : n, r ? new Set([WR.itemKey(r.passage)]) : null);
+  return fresh.flatMap(p => p.questions.filter(playable).map(q => tag(WR.normalize(q, p), scopeOf(p), q, p))).concat(r ? r.items.filter(it => playable(it._raw || it)) : []);
+};
+SG.items = async (lv, c, n = 8, o = {}) => {
+  const l = SG.level(lv), C = COMP[c], b = `sg-${lv}/${c}`, rev = !!o.review;
+  if (C.bank === "reading") {
+    const sc = new Map(), ps = (await Promise.all(Object.keys(l.cefr).map(r => WR.bank(r, "reading").then(x => { x.passages.forEach(p => sc.set(p, r + "/reading")); return x.passages; })))).flat().filter(p => p.questions.some(playable));
+    return passageItems(b, ps, 2, p => sc.get(p), rev);
+  }
+  if (C.bank) return fromBanks(l, C.bank, n, b, undefined, rev);
   const d = await WR.bank("sg", lv);
-  if (c === "synth") return WR.freshPick(b, d.synth.filter(playable), n).map(q => WR.normalize(q));
+  if (c === "synth") {
+    const pool = d.synth.filter(playable), rs = RVOK(rev) ? WR.Review.pick(b, pool, Math.min(perLesson(), n), { bucket: b }) : [];
+    const skip = rs.length ? new Set(rs.flatMap(it => [it._rk, it._rv.for]).map(k => k.slice(b.length + 1))) : null;
+    return WR.shuffle(WR.freshPick(b, pool, n - rs.length, skip).map(q => tag(WR.normalize(q), b, q)).concat(rs));
+  }
   const ps = d[c].passages, upper = l.stage !== "primary";
-  const mine = ps.length ? passageItems(b, ps, c === "edit" && upper ? 1 : 2) : [];
+  const mine = ps.length ? passageItems(b, ps, c === "edit" && upper ? 1 : 2, () => b, rev && !(c === "edit" && upper)) : [];
   // 🔍 secondary and up: a short text to edit, then find-the-mistake sentences from the matching realms (JC / Grown-up: sentences only)
-  return c === "edit" && upper ? mine.concat(await fromBanks(l, "grammar", Math.max(4, n - mine.length), b + "/mistake", q => q.type === "mistake")) : mine;
+  return c === "edit" && upper ? mine.concat(await fromBanks(l, "grammar", Math.max(4, n - mine.length), b + "/mistake", q => q.type === "mistake", rev)) : mine;
 };
 // 🎲 mixed practice: a little of every game the level has (questions from one text stay together)
 const MIX = [["grammar", 2], ["vocab", 2], ["edit", 2], ["synth", 2], ["ccloze", 2], ["listening", 1]];
@@ -183,7 +205,7 @@ const nextGame = (l, after) => { const g = SG.quizGames(l), i = g.indexOf(after)
   return rest.find(c => !SG.best(l.id, c)) || null; };
 SG.start = async (lv, c) => {
   const l = SG.level(lv), mix = c === "mix", C = mix ? { icon: "🎲", name: "Mixed practice" } : COMP[c];
-  const items = mix ? await SG.mixItems(lv) : await SG.items(lv, c);
+  const items = mix ? await SG.mixItems(lv) : await SG.items(lv, c, 8, { review: true });   // 🎲 mixed practice is already a mix: no extra reviews
   if (!items.length) return WR.toast("🌱 More games are coming to this level soon!", 2400);
   const nx = nextGame(l, c);
   WR.startLesson({ realm: "sg-" + lv, skill: c, items, title: `${C.icon} ${C.name}`, onQuit: () => WR.go("sg", lv), replay: () => SG.start(lv, c),

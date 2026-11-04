@@ -251,7 +251,7 @@ function freshState() {
 const LOG_DAYS = 60, GAP_MS = 3 * 60e3, FIRST_S = 20;
 const freshReport = () => ({ days: {}, tally: {}, at: 0 });
 // ⭐ anti-farm record, see WR.awardStars (economy section)
-const freshEarn = () => ({ day: "", practice: 0, rounds: {}, got: {} });
+const freshEarn = () => ({ day: "", practice: 0, review: 0, rounds: {}, got: {} });
 const earnHash = k => { let h = 2166136261; k = String(k); for (let i = 0; i < k.length; i++) h = Math.imul(h ^ k.charCodeAt(i), 16777619); return (h >>> 0).toString(36); };
 /* 🎒 Bonus-activity save blocks: ONE table for the shape of each bonus module's block in wordRealms.save.v1. It is used by
    freshState(), migrate() (older saves gain the block; a partial one is completed) and WR.block(name), each module's accessor,
@@ -271,6 +271,8 @@ const BLOCKS = {
   stories: { fresh: () => ({ done: {}, words: {}, reads: 0 }), maps: ["done", "words"], crowned: true },
   phonics: { fresh: () => ({ done: {}, rounds: 0, taps: 0 }), maps: ["done"], crowned: true },
   charms: { fresh: () => ({ cards: {}, rounds: 0, lvl: null }), maps: ["cards"] },
+  // 🔁 one review schedule for English (js/review.js): per item { s, d, t, l, n, r, w, sk, g }; mig = older saves migrated
+  review: { fresh: () => ({ items: {}, mig: 1 }), maps: ["items"] },
   swap: gapBlock(),
   forge: gapBlock(),
   cloze: gapBlock(),
@@ -341,6 +343,7 @@ function migrate(s, raw = s) {
   s.settings = Object.assign({ rate: 0.9, sound: true, unlockAll: false }, s.settings || {});
   s.progress = s.progress || {}; s.mistakes = s.mistakes || [];
   for (const k in BLOCKS) fixBlock(s, k);
+  if (!raw.review || typeof raw.review !== "object") s.review.mig = 0;   // 🔁 an older save: js/review.js migrates its garden and charms once
   s.math = WR.fixMath(s.math);
   if (!raw.report || typeof raw.report !== "object") s.report = seedReport(s);
   s.report.days = s.report.days || {}; s.report.tally = s.report.tally || {}; s.report.at = s.report.at || 0;
@@ -583,25 +586,25 @@ WR.petGainXP = n => {
    kind "bonus" — quests, weekly prizes, stickers, boss first wins, streak gifts, milestones: always full, no cap.
    state.earn = { day, practice, rounds: { "<source>:<key>": plays today }, got: { hash: 1 } } cloud-syncs with the save;
    js/cloud.js merges it on every cloud load (WR.mergeEarn) so switching saves can't reset it. */
-const EARN = { cap: 150, replay: [1, 0.5, 0.25, 0] };
+const EARN = { cap: 150, replay: [1, 0.5, 0.25, 0], review: 10 };   // review: ⭐ a day from review answers (inside the cap)
 WR.EARN = EARN;
 WR.earnHash = earnHash;
 WR.earn = () => {
   const s = WR.state, d = WR.today(); s.earn = Object.assign(freshEarn(), s.earn || {});
   const e = s.earn; e.got = e.got || {}; e.rounds = e.rounds || {};
-  if (e.day !== d) { e.day = d; e.practice = 0; e.rounds = {}; }
+  if (e.day !== d) { e.day = d; e.practice = 0; e.review = 0; e.rounds = {}; }
   return e;
 };
 // keep the stricter of two earn records (same day: highest counters; got: union) — used when a cloud save replaces this one
 WR.mergeEarn = (a, b) => {
   a = a || {}; b = b || {}; const out = freshEarn(); out.got = Object.assign({}, a.got || {}, b.got || {});
   const day = [a.day || "", b.day || ""].sort().pop(); out.day = day;
-  for (const x of [a, b]) if (x.day === day) { out.practice = Math.max(out.practice, x.practice || 0); for (const k in x.rounds || {}) out.rounds[k] = Math.max(out.rounds[k] || 0, x.rounds[k]); }
+  for (const x of [a, b]) if (x.day === day) { out.practice = Math.max(out.practice, x.practice || 0); out.review = Math.max(out.review, x.review || 0); for (const k in x.rounds || {}) out.rounds[k] = Math.max(out.rounds[k] || 0, x.rounds[k]); }
   return out;
 };
 let cut = null;   // stars held back since the last WR.starNote(): { n, why: "known" | "replay" | "cap" }
 const holdBack = (n, why) => { if (n <= 0) return; cut = cut || { n: 0, why }; cut.n += n; if (why === "cap" || cut.why === "known") cut.why = why === "cap" ? "cap" : why === "replay" ? cut.why : why; };
-// o: { kind: "item"|"round"|"fresh"|"bonus", why: toast text, tally: round object (counts new/old items), quiet }
+// o: { kind: "item"|"round"|"review"|"fresh"|"bonus", why: toast text, tally: round object (counts new/old items), quiet }
 WR.awardStars = (source, key, n, o = {}) => {
   const kind = o.kind || "item", e = WR.earn(), want = Math.max(0, Math.round(n || 0)), t = o.tally;
   let give = want;
@@ -614,10 +617,13 @@ WR.awardStars = (source, key, n, o = {}) => {
     const plays = e.rounds[k] || 0; e.rounds[k] = plays + 1;
     if (!fresh) { const f = EARN.replay[Math.min(plays, EARN.replay.length - 1)];
       const g = f >= 1 ? give : f > 0 ? Math.min(give, Math.max(1, Math.floor(give * f))) : 0; holdBack(give - g, "replay"); give = g; }
+  } else if (kind === "review") {   // 🔁 a review answer that moved its item up (js/review.js): once per key, EARN.review a day
+    const h = earnHash("review:" + key); if (e.got[h]) { holdBack(give, "known"); give = 0; } e.got[h] = 1;
+    const room = Math.max(0, EARN.review - (e.review || 0)); if (give > room) { holdBack(give - room, "cap"); give = room; } e.review = (e.review || 0) + give;
   } else if (kind === "fresh" && key != null) {
     const h = earnHash("fresh:" + source + ":" + key); if (e.got[h]) give = 0; e.got[h] = 1;
   }
-  if (kind === "item" || kind === "round") { const room = Math.max(0, EARN.cap - e.practice); if (give > room) { holdBack(give - room, "cap"); give = room; } e.practice += give; }
+  if (kind === "item" || kind === "round" || kind === "review") { const room = Math.max(0, EARN.cap - e.practice); if (give > room) { holdBack(give - room, "cap"); give = room; } e.practice += give; }
   if (give) WR.state.stars += give;
   WR.save(); WR.renderTop && WR.renderTop();
   if (give && o.why) WR.toast(`+${give} ⭐ ${o.why}`);

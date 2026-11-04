@@ -57,6 +57,8 @@ const assert = (c, m) => { if (!c) throw new Error('ASSERT ' + m); console.log('
     }
     await page.waitForSelector('.result');
   }
+  // BRIEF-T2: a plant only grows after a real gap (≥ 20 h since its last answer), so the first watering happens "the next day"
+  await page.evaluate(() => { WR.state.mistakes.forEach(m => m.t = Date.now() - 21 * 36e5); WR.save(); });
   await page.waitForTimeout(200);
   await waterRound();
   const boxes1 = await page.evaluate(() => WR.state.mistakes.filter(m => m.box === 1).length);
@@ -65,7 +67,7 @@ const assert = (c, m) => { if (!c) throw new Error('ASSERT ' + m); console.log('
   // simulate time passing until everything blooms: push due dates into the past
   let rounds = 0;
   for (let k = 0; k < 30; k++) {
-    const due = await page.evaluate(() => { WR.state.mistakes.forEach(m => m.due = Date.now() - 1000); WR.save(); return WR.Garden.dueCount(); });
+    const due = await page.evaluate(() => { WR.state.mistakes.forEach(m => { if (!m.bloomed) { m.due = Date.now() - 1000; m.t = Date.now() - 21 * 36e5; } }); WR.save(); return WR.state.mistakes.filter(m => !m.bloomed && !m.legacy).length ? WR.Garden.dueCount() : 0; });
     if (!due) break;
     await page.evaluate(() => WR.go('review')); await page.waitForTimeout(150);
     await waterRound(); rounds++;
@@ -75,7 +77,7 @@ const assert = (c, m) => { if (!c) throw new Error('ASSERT ' + m); console.log('
   console.log(JSON.stringify(end), 'rounds', rounds);
   assert(end.active === 0 && end.bloomed === g.n - 1, 'every seed bloomed');
   // a miss resets to seed
-  await page.evaluate(() => { const m = WR.state.mistakes.find(x => x.bloomed && x.type === 'mcq'); m.bloomed = false; m.box = 2; m.due = Date.now() - 1; WR.save(); });
+  await page.evaluate(() => { const m = WR.state.mistakes.find(x => x.bloomed && x.type === 'mcq'); m.bloomed = false; m.box = 2; m.due = Date.now() - 1; m.t = Date.now() - 21 * 36e5; WR.save(); });
   await page.evaluate(() => WR.go('review')); await page.waitForTimeout(150);
   await waterRound(false);
   assert(await page.evaluate(() => WR.state.mistakes.some(m => !m.bloomed && !m.legacy && m.box === 0)), 'wrong answer resets plant to seed');
