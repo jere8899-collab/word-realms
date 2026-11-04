@@ -1,0 +1,772 @@
+{
+ "pack": "m-g2",
+ "lessons": [
+  {
+   "id": "m.g2.place",
+   "title": "Hundreds, tens and ones",
+   "icon": "🏰",
+   "at": {
+    "topic": "g2.place"
+   },
+   "art": "lesson_m_g2_place",
+   "art_alt": "The castle guard waits by stacks of hundred, ten and one blocks",
+   "hook": {
+    "text": "The Place Value Castle gate opens with a magic number. Tonight the guard needs 243 blocks. Carrying 243 single blocks would take all night! Can you use the big blocks?",
+    "say": "The Place Value Castle gate opens with a magic number. Tonight the guard needs 243 blocks. Carrying 243 single blocks would take all night! Can you use the big blocks?"
+   },
+   "discover": {
+    "kind": "pv",
+    "targets": [
+     243,
+     306
+    ],
+    "text": "Build the number with castle blocks. Drag a block onto the mat or tap it. Tap ➖ to take one back.",
+    "hint": "Start with the biggest blocks. How many hundreds? Then tens, then ones.",
+    "say": "Build the number with castle blocks. Drag a block onto the mat or tap it. Tap ➖ to take one back."
+   },
+   "rule": {
+    "text": "In 243, the 2 means 2 hundreds, the 4 means 4 tens and the 3 means 3 ones. 200 + 40 + 3 = 243. A zero means none: 306 has no tens.",
+    "examples": [
+     "243 = 2 hundreds + 4 tens + 3 ones",
+     "306 = 3 hundreds + 0 tens + 6 ones",
+     "Each place holds 0 to 9. Ten ones make a ten; ten tens make a hundred."
+    ],
+    "say": "In 243, the 2 means 2 hundreds, the 4 means 4 tens and the 3 means 3 ones. 200 plus 40 plus 3 equals 243. A zero means none: 306 has no tens.",
+    "sayEx": [
+     "243 equals 2 hundreds plus 4 tens plus 3 ones",
+     "306 equals 3 hundreds plus 0 tens plus 6 ones",
+     "Each place holds 0 to 9. Ten ones make a ten; ten tens make a hundred."
+    ]
+   },
+   "check": [
+    {
+     "q": "What is the digit 5 worth in 352?",
+     "options": [
+      "50",
+      "5",
+      "500"
+     ],
+     "answer": 0,
+     "notes": {
+      "5": "5 is the digit, but it sits in the tens place, so it is worth 5 tens = 50.",
+      "500": "500 would be 5 hundreds. In 352 the hundreds digit is 3."
+     },
+     "explain": "352 = 3 hundreds, 5 tens, 2 ones. The 5 is worth 5 tens = 50.",
+     "say": "What is the digit 5 worth in 352?"
+    },
+    {
+     "q": "4 hundreds, 0 tens and 7 ones make…",
+     "options": [
+      "407",
+      "470",
+      "47"
+     ],
+     "answer": 0,
+     "notes": {
+      "470": "470 has 7 tens and 0 ones. We need 0 tens and 7 ones: 407.",
+      "47": "47 has no hundreds. We need 4 hundreds: 407."
+     },
+     "explain": "Write a 0 for the empty tens place: 4 0 7 = 407.",
+     "say": "4 hundreds, 0 tens and 7 ones make…"
+    },
+    {
+     "q": "Which number is 600 + 20 + 9?",
+     "options": [
+      "629",
+      "6209",
+      "692"
+     ],
+     "answer": 0,
+     "notes": {
+      "6209": "Don't write 600, 20 and 9 side by side! 6 hundreds, 2 tens, 9 ones = 629.",
+      "692": "692 swaps the tens and ones: it has 9 tens and 2 ones."
+     },
+     "explain": "6 hundreds, 2 tens and 9 ones: 629.",
+     "say": "Which number is 600 plus 20 plus 9?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way. Think of money! A \\$100 note, \\$10 notes and \\$1 coins. \\$243 is two \\$100 notes, four \\$10 notes and three \\$1 coins. The digits tell you how many of each.",
+    "examples": [
+     "\\$243 = 2 × \\$100 + 4 × \\$10 + 3 × \\$1",
+     "\\$125 = one \\$100, two \\$10, five \\$1"
+    ],
+    "discover": {
+     "kind": "pv",
+     "targets": [
+      125
+     ],
+     "text": "Build 125 with the blocks, like one \\$100 note, two \\$10 notes and five \\$1 coins.",
+     "hint": "1 hundred, 2 tens, 5 ones.",
+     "say": "Build 125 with the blocks, like one 100 dollar note, two 10 dollar notes and five 1 dollar coins."
+    },
+    "say": "Here's another way. Think of money! A 100 dollar note, 10 dollar notes and 1 dollar coins. 243 dollars is two 100 dollar notes, four 10 dollar notes and three 1 dollar coins. The digits tell you how many of each."
+   },
+   "check2": [
+    {
+     "q": "In 718, what is the digit 1 worth?",
+     "options": [
+      "10",
+      "1",
+      "100"
+     ],
+     "answer": 0,
+     "notes": {
+      "1": "The 1 sits in the tens place, so it is worth 1 ten = 10.",
+      "100": "100 would be the hundreds place. In 718 the hundreds digit is 7."
+     },
+     "explain": "718 = 7 hundreds, 1 ten, 8 ones. The 1 is worth 10.",
+     "say": "In 718, what is the digit 1 worth?"
+    },
+    {
+     "q": "2 hundreds and 5 ones make…",
+     "options": [
+      "205",
+      "250",
+      "25"
+     ],
+     "answer": 0,
+     "notes": {
+      "250": "250 has 5 tens. We need 0 tens and 5 ones: 205.",
+      "25": "25 has no hundreds. We need 2 hundreds: 205."
+     },
+     "explain": "No tens, so write 0 in the tens place: 205.",
+     "say": "2 hundreds and 5 ones make…"
+    },
+    {
+     "q": "Which number is 300 + 40 + 8?",
+     "options": [
+      "348",
+      "3408",
+      "384"
+     ],
+     "answer": 0,
+     "notes": {
+      "3408": "Don't write the parts side by side. 3 hundreds, 4 tens, 8 ones = 348.",
+      "384": "384 swaps the tens and ones."
+     },
+     "explain": "3 hundreds, 4 tens, 8 ones: 348.",
+     "say": "Which number is 300 plus 40 plus 8?"
+    }
+   ],
+   "grown": "👪 MOE P2 Whole Numbers: numbers to 1000, place value (hundreds, tens, ones), number notation and expanded form.",
+   "pack": "m-g2"
+  },
+  {
+   "id": "m.g2.add",
+   "title": "Adding with regrouping",
+   "icon": "🍬",
+   "at": {
+    "topic": "g2.add"
+   },
+   "art": "lesson_m_g2_add",
+   "art_alt": "The candy fairy beside a full gumdrop jar and bags of ten",
+   "hook": {
+    "text": "Gumdrop the candy fairy has 28 gumdrops and gets 15 more. Her ones jar can only hold 9 loose gumdrops. What happens when it gets too full?",
+    "say": "Gumdrop the candy fairy has 28 gumdrops and gets 15 more. Her ones jar can only hold 9 loose gumdrops. What happens when it gets too full?"
+   },
+   "discover": {
+    "kind": "regroup",
+    "a": 28,
+    "b": 15,
+    "text": "Move the new gumdrops into the ones jar. Drag them or tap them. When the jar has 10, bundle them into a ten-bag!",
+    "hint": "10 loose gumdrops can become 1 ten-bag. Tap 🎀 Bundle when the jar has 10.",
+    "say": "Move the new gumdrops into the ones jar. Drag them or tap them. When the jar has 10, bundle them into a ten-bag!"
+   },
+   "rule": {
+    "text": "Add the ones first: 8 + 5 = 13 ones. Ten ones make 1 ten, so write 3 and carry 1 ten. Then add the tens: 2 + 1 + 1 = 4 tens. So 28 + 15 = 43.",
+    "examples": [
+     "28 + 15 = 43 (8 + 5 = 13: write 3, carry 1)",
+     "36 + 7: 6 + 7 = 13 → 43"
+    ],
+    "say": "Add the ones first: 8 plus 5 equals 13 ones. Ten ones make 1 ten, so write 3 and carry 1 ten. Then add the tens: 2 plus 1 plus 1 equals 4 tens. So 28 plus 15 equals 43.",
+    "sayEx": [
+     "28 plus 15 equals 43 (8 plus 5 equals 13: write 3, carry 1)",
+     "36 plus 7: 6 plus 7 equals 13, 43"
+    ]
+   },
+   "check": [
+    {
+     "q": "36 + 7 = ?",
+     "options": [
+      "43",
+      "33",
+      "313"
+     ],
+     "answer": 0,
+     "notes": {
+      "33": "6 + 7 = 13 ones. Carry the 1 ten: 3 tens + 1 ten = 4 tens, so 43.",
+      "313": "13 ones is 1 ten and 3 ones. Carry the ten instead of writing 13: 43."
+     },
+     "explain": "6 + 7 = 13 → write 3, carry 1 ten → 3 + 1 = 4 tens → 43.",
+     "say": "36 plus 7 equals what?"
+    },
+    {
+     "q": "In 47 + 25, the ones make 7 + 5 = 12. What do we write in the ones place?",
+     "options": [
+      "2",
+      "12",
+      "1"
+     ],
+     "answer": 0,
+     "notes": {
+      "12": "Only one digit fits in the ones place. 12 = 1 ten and 2 ones: write 2, carry 1.",
+      "1": "The 1 is the ten we carry to the tens. The ones digit is 2."
+     },
+     "explain": "12 ones = 1 ten + 2 ones: write 2, carry 1. (47 + 25 = 72)",
+     "say": "In 47 plus 25, the ones make 7 plus 5 equals 12. What do we write in the ones place?"
+    },
+    {
+     "q": "154 + 38 = ?",
+     "options": [
+      "192",
+      "182",
+      "1812"
+     ],
+     "answer": 0,
+     "notes": {
+      "182": "4 + 8 = 12: write 2 and carry 1 ten. 5 + 3 + 1 = 9 tens. So 192.",
+      "1812": "Don't write 12 in the ones place; carry the 1 ten: 192."
+     },
+     "explain": "Ones 4 + 8 = 12 → 2, carry 1. Tens 5 + 3 + 1 = 9. Hundreds 1. Answer 192.",
+     "say": "154 plus 38 equals what?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way: make a friendly ten! 28 is close to 30. Take 2 gumdrops from the 15 to make 30. Now 13 are left. 30 + 13 = 43. Same answer!",
+    "examples": [
+     "28 + 15 → 30 + 13 = 43",
+     "19 + 6 → 20 + 5 = 25"
+    ],
+    "discover": {
+     "kind": "regroup",
+     "a": 19,
+     "b": 6,
+     "text": "Fill the jar to make a friendly ten, then bundle it!",
+     "hint": "The jar has 9. One more makes 10, then bundle!",
+     "say": "Fill the jar to make a friendly ten, then bundle it!"
+    },
+    "say": "Here's another way: make a friendly ten! 28 is close to 30. Take 2 gumdrops from the 15 to make 30. Now 13 are left. 30 plus 13 equals 43. Same answer!"
+   },
+   "check2": [
+    {
+     "q": "18 + 5 = ?",
+     "options": [
+      "23",
+      "13",
+      "113"
+     ],
+     "answer": 0,
+     "notes": {
+      "13": "8 + 5 = 13 ones. Carry the 1 ten: 1 + 1 = 2 tens, so 23.",
+      "113": "13 ones = 1 ten and 3 ones. Carry the ten: 23."
+     },
+     "explain": "18 + 2 = 20 (a friendly ten), then 20 + 3 = 23.",
+     "say": "18 plus 5 equals what?"
+    },
+    {
+     "q": "29 + 14 = ?",
+     "options": [
+      "43",
+      "33",
+      "313"
+     ],
+     "answer": 0,
+     "notes": {
+      "33": "9 + 4 = 13: write 3, carry 1. 2 + 1 + 1 = 4 tens: 43.",
+      "313": "Carry the ten instead of writing 13: 43."
+     },
+     "explain": "29 + 1 = 30, then 30 + 13 = 43.",
+     "say": "29 plus 14 equals what?"
+    },
+    {
+     "q": "In 65 + 28, how many tens are there after carrying?",
+     "options": [
+      "9",
+      "8",
+      "13"
+     ],
+     "answer": 0,
+     "notes": {
+      "8": "6 + 2 = 8 tens, plus the 1 ten carried from 5 + 8 = 13: 9 tens.",
+      "13": "13 is the ones sum. Tens: 6 + 2 + 1 = 9."
+     },
+     "explain": "5 + 8 = 13 → carry 1. Tens: 6 + 2 + 1 = 9. (65 + 28 = 93)",
+     "say": "In 65 plus 28, how many tens are there after carrying?"
+    }
+   ],
+   "grown": "👪 MOE P2 Addition within 1000 with regrouping (carrying), with the 'make ten' mental strategy.",
+   "pack": "m-g2"
+  },
+  {
+   "id": "m.g2.times",
+   "title": "Times means equal groups",
+   "icon": "🍄",
+   "at": {
+    "topic": "g2.times"
+   },
+   "art": "lesson_m_g2_times",
+   "art_alt": "Fairies dance around three mushroom fairy rings",
+   "hook": {
+    "text": "Tonight is the fairy dance! Every fairy ring needs the same number of mushrooms, or the magic won't work. Can you build the rings?",
+    "say": "Tonight is the fairy dance! Every fairy ring needs the same number of mushrooms, or the magic won't work. Can you build the rings?"
+   },
+   "discover": {
+    "kind": "groups",
+    "rings": 3,
+    "each": 4,
+    "item": "🍄",
+    "text": "Make 3 fairy rings with 4 mushrooms in each. Drag a mushroom into a ring, or tap a ring to add one.",
+    "hint": "Every ring gets the same: 4 mushrooms each.",
+    "say": "Make 3 fairy rings with 4 mushrooms in each. Drag a mushroom into a ring, or tap a ring to add one."
+   },
+   "rule": {
+    "text": "3 groups of 4 is 4 + 4 + 4 = 12. We write it 3 × 4 = 12. The first number tells how many groups; the second tells how many in each group.",
+    "examples": [
+     "3 × 4 = 4 + 4 + 4 = 12",
+     "2 × 5 = 5 + 5 = 10",
+     "Count in 4s: 4, 8, 12"
+    ],
+    "say": "3 groups of 4 is 4 plus 4 plus 4 equals 12. We write it 3 times 4 equals 12. The first number tells how many groups; the second tells how many in each group.",
+    "sayEx": [
+     "3 times 4 equals 4 plus 4 plus 4 equals 12",
+     "2 times 5 equals 5 plus 5 equals 10",
+     "Count in 4s: 4, 8, 12"
+    ]
+   },
+   "check": [
+    {
+     "q": "5 groups of 2 = ?",
+     "options": [
+      "5 × 2 = 10",
+      "5 + 2 = 7",
+      "5 × 2 = 7"
+     ],
+     "answer": 0,
+     "notes": {
+      "5 + 2 = 7": "That adds one 5 and one 2. 5 groups of 2 is 2 + 2 + 2 + 2 + 2 = 10.",
+      "5 × 2 = 7": "5 × 2 means 5 groups of 2: 2, 4, 6, 8, 10. That's 10."
+     },
+     "explain": "5 groups of 2: 2, 4, 6, 8, 10. So 5 × 2 = 10.",
+     "say": "5 groups of 2 equals what?"
+    },
+    {
+     "q": "Which one shows 3 × 5?",
+     "options": [
+      "3 bags with 5 sweets in each",
+      "5 bags with 5 sweets in each",
+      "3 bags with 3 sweets in each"
+     ],
+     "answer": 0,
+     "notes": {
+      "5 bags with 5 sweets in each": "That is 5 groups of 5 = 5 × 5. We need 3 groups.",
+      "3 bags with 3 sweets in each": "That is 3 × 3. We need 5 in each group."
+     },
+     "explain": "3 × 5 means 3 groups with 5 in each.",
+     "say": "Which one shows 3 times 5?"
+    },
+    {
+     "q": "4 fairy rings have 10 mushrooms each. How many mushrooms?",
+     "options": [
+      "40",
+      "14",
+      "410"
+     ],
+     "answer": 0,
+     "notes": {
+      "14": "That's 4 + 10. We need 4 groups of 10: 10, 20, 30, 40.",
+      "410": "4 × 10 is 4 tens, which is 40."
+     },
+     "explain": "4 groups of 10: 10, 20, 30, 40. So 4 × 10 = 40.",
+     "say": "4 fairy rings have 10 mushrooms each. How many mushrooms?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way: skip-count! Hop along a number line in jumps of the same size. 3 jumps of 4: 4… 8… 12! The number of jumps is the number of groups.",
+    "examples": [
+     "3 jumps of 4: 0 → 4 → 8 → 12",
+     "2 jumps of 5: 0 → 5 → 10"
+    ],
+    "discover": {
+     "kind": "groups",
+     "rings": 2,
+     "each": 5,
+     "item": "🍄",
+     "text": "Build 2 rings of 5 and count in 5s!",
+     "hint": "Each ring gets 5. Count: 5, 10.",
+     "say": "Build 2 rings of 5 and count in 5s!"
+    },
+    "say": "Here's another way: skip-count! Hop along a number line in jumps of the same size. 3 jumps of 4: 4… 8… 12! The number of jumps is the number of groups."
+   },
+   "check2": [
+    {
+     "q": "2 groups of 3 = ?",
+     "options": [
+      "2 × 3 = 6",
+      "2 + 3 = 5",
+      "2 × 3 = 5"
+     ],
+     "answer": 0,
+     "notes": {
+      "2 + 3 = 5": "That adds 2 and 3. 2 groups of 3 is 3 + 3 = 6.",
+      "2 × 3 = 5": "2 × 3 means 2 groups of 3: 3, 6. That's 6."
+     },
+     "explain": "2 groups of 3: 3 + 3 = 6.",
+     "say": "2 groups of 3 equals what?"
+    },
+    {
+     "q": "Which means 4 × 2?",
+     "options": [
+      "4 groups of 2",
+      "2 groups of 2",
+      "4 groups of 4"
+     ],
+     "answer": 0,
+     "notes": {
+      "2 groups of 2": "That is 2 × 2. We need 4 groups.",
+      "4 groups of 4": "That is 4 × 4. We need 2 in each group."
+     },
+     "explain": "4 × 2 means 4 groups of 2.",
+     "say": "Which means 4 times 2?"
+    },
+    {
+     "q": "3 plates have 5 cakes each. How many cakes?",
+     "options": [
+      "15",
+      "8",
+      "35"
+     ],
+     "answer": 0,
+     "notes": {
+      "8": "That's 3 + 5. We need 3 groups of 5: 5, 10, 15.",
+      "35": "3 × 5 is 3 fives: 5, 10, 15."
+     },
+     "explain": "Count in 5s three times: 5, 10, 15.",
+     "say": "3 plates have 5 cakes each. How many cakes?"
+    }
+   ],
+   "grown": "👪 MOE P2 Multiplication: the concept of multiplication as equal groups (number of groups × number in each group), multiplication tables of 2, 3, 4, 5 and 10.",
+   "pack": "m-g2"
+  },
+  {
+   "id": "m.g2.share",
+   "title": "Sharing fairly",
+   "icon": "🍪",
+   "at": {
+    "topic": "g2.share"
+   },
+   "art": "lesson_m_g2_share",
+   "art_alt": "Crumb the baker dragon brings cookies to four bear cubs",
+   "hook": {
+    "text": "Crumb the little baker dragon baked 12 cookies for four bear cubs. If one cub gets more than the others, there will be grumbles! Can you share them fairly?",
+    "say": "Crumb the little baker dragon baked 12 cookies for four bear cubs. If one cub gets more than the others, there will be grumbles! Can you share them fairly?"
+   },
+   "discover": {
+    "kind": "share",
+    "total": 12,
+    "plates": 4,
+    "item": "🍪",
+    "text": "Share the cookies so every plate gets the same. Drag a cookie to a plate, tap a plate, or tap Deal one each.",
+    "hint": "Give one cookie to each plate, then go round again until they're all gone.",
+    "say": "Share the cookies so every plate gets the same. Drag a cookie to a plate, tap a plate, or tap Deal one each."
+   },
+   "rule": {
+    "text": "Sharing equally is dividing. 12 cookies shared among 4 plates is 3 each. We write 12 ÷ 4 = 3. Check with times: 4 × 3 = 12.",
+    "examples": [
+     "12 ÷ 4 = 3 (4 × 3 = 12)",
+     "10 ÷ 2 = 5 (2 × 5 = 10)",
+     "15 ÷ 3 = 5 (3 × 5 = 15)"
+    ],
+    "say": "Sharing equally is dividing. 12 cookies shared among 4 plates is 3 each. We write 12 divided by 4 equals 3. Check with times: 4 times 3 equals 12.",
+    "sayEx": [
+     "12 divided by 4 equals 3 (4 times 3 equals 12)",
+     "10 divided by 2 equals 5 (2 times 5 equals 10)",
+     "15 divided by 3 equals 5 (3 times 5 equals 15)"
+    ]
+   },
+   "check": [
+    {
+     "q": "12 stickers are shared equally between 2 children. How many does each child get?",
+     "options": [
+      "6",
+      "10",
+      "14"
+     ],
+     "answer": 0,
+     "notes": {
+      "10": "That's 12 − 2. Sharing means splitting into 2 equal groups: 6 and 6.",
+      "14": "Sharing makes each share smaller, not bigger. 12 ÷ 2 = 6."
+     },
+     "explain": "12 ÷ 2 = 6, because 2 × 6 = 12.",
+     "say": "12 stickers are shared equally between 2 children. How many does each child get?"
+    },
+    {
+     "q": "20 ÷ 5 = ?",
+     "options": [
+      "4",
+      "5",
+      "15"
+     ],
+     "answer": 0,
+     "notes": {
+      "5": "5 is the number of groups. Each group gets 4, because 5 × 4 = 20.",
+      "15": "That is 20 − 5. Sharing 20 into 5 equal groups gives 4."
+     },
+     "explain": "5 × 4 = 20, so 20 ÷ 5 = 4.",
+     "say": "20 divided by 5 equals what?"
+    },
+    {
+     "q": "10 cupcakes are put on plates, 2 on each plate. How many plates are needed?",
+     "options": [
+      "5",
+      "2",
+      "8"
+     ],
+     "answer": 0,
+     "notes": {
+      "2": "2 is how many go on each plate. Count the groups of 2 in 10: 5 plates.",
+      "8": "That's 10 − 2. Groups of 2: 2, 4, 6, 8, 10 → 5 plates."
+     },
+     "explain": "10 ÷ 2 = 5 plates (2, 4, 6, 8, 10).",
+     "say": "10 cupcakes are put on plates, 2 on each plate. How many plates are needed?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way: use times tables backwards! 12 ÷ 4 asks: 4 times what makes 12? 4 × 3 = 12, so each cub gets 3.",
+    "examples": [
+     "12 ÷ 4 → 4 × ? = 12 → 3",
+     "8 ÷ 2 → 2 × ? = 8 → 4"
+    ],
+    "discover": {
+     "kind": "share",
+     "total": 8,
+     "plates": 2,
+     "item": "🍪",
+     "text": "Share 8 cookies between 2 plates. Then think: 2 times what makes 8?",
+     "hint": "Deal one each until they're gone.",
+     "say": "Share 8 cookies between 2 plates. Then think: 2 times what makes 8?"
+    },
+    "say": "Here's another way: use times tables backwards! 12 divided by 4 asks: 4 times what makes 12? 4 times 3 equals 12, so each cub gets 3."
+   },
+   "check2": [
+    {
+     "q": "8 apples are shared equally among 4 friends. How many does each friend get?",
+     "options": [
+      "2",
+      "4",
+      "12"
+     ],
+     "answer": 0,
+     "notes": {
+      "4": "4 is the number of friends. 4 × 2 = 8, so each gets 2.",
+      "12": "That's 8 + 4. Sharing makes smaller shares: 8 ÷ 4 = 2."
+     },
+     "explain": "4 × 2 = 8, so 8 ÷ 4 = 2.",
+     "say": "8 apples are shared equally among 4 friends. How many does each friend get?"
+    },
+    {
+     "q": "30 ÷ 10 = ?",
+     "options": [
+      "3",
+      "10",
+      "20"
+     ],
+     "answer": 0,
+     "notes": {
+      "10": "10 is the number of groups. 10 × 3 = 30, so each gets 3.",
+      "20": "That's 30 − 10. 30 ÷ 10 = 3."
+     },
+     "explain": "10 × 3 = 30, so 30 ÷ 10 = 3.",
+     "say": "30 divided by 10 equals what?"
+    },
+    {
+     "q": "18 ÷ 3 = ?",
+     "options": [
+      "6",
+      "15",
+      "21"
+     ],
+     "answer": 0,
+     "notes": {
+      "15": "That's 18 − 3. Think: 3 × ? = 18. 3 × 6 = 18.",
+      "21": "That's 18 + 3. Dividing makes it smaller: 18 ÷ 3 = 6."
+     },
+     "explain": "3 × 6 = 18, so 18 ÷ 3 = 6.",
+     "say": "18 divided by 3 equals what?"
+    }
+   ],
+   "grown": "👪 MOE P2 Division: sharing equally and grouping, division as the inverse of multiplication (tables 2, 3, 4, 5, 10).",
+   "pack": "m-g2"
+  },
+  {
+   "id": "m.g2.frac",
+   "title": "Halves, thirds and quarters",
+   "icon": "🍕",
+   "at": {
+    "topic": "g2.frac"
+   },
+   "art": "lesson_m_g2_frac",
+   "art_alt": "The star fairy cuts a party pizza for her friends",
+   "hook": {
+    "text": "The star fairy is cutting a party pizza for her friends. If the slices aren't the same size, someone gets a tiny piece! How do we cut it fairly?",
+    "say": "The star fairy is cutting a party pizza for her friends. If the slices aren't the same size, someone gets a tiny piece! How do we cut it fairly?"
+   },
+   "discover": {
+    "kind": "frac",
+    "text": "Slide to cut the pizza into equal slices, then tap the slices to colour them.",
+    "hint": "Quarters means 4 equal parts. Thirds means 3 equal parts.",
+    "stages": [
+     {
+      "shape": "pizza",
+      "parts": 4,
+      "shade": 1,
+      "text": "Cut the pizza into quarters (4 equal slices), then colour 1 slice.",
+      "say": "Cut the pizza into quarters (4 equal slices), then colour 1 slice."
+     },
+     {
+      "shape": "bar",
+      "parts": 3,
+      "shade": 2,
+      "text": "Now cut the chocolate bar into thirds (3 equal parts) and colour 2 parts.",
+      "say": "Now cut the chocolate bar into thirds (3 equal parts) and colour 2 parts."
+     }
+    ],
+    "say": "Slide to cut the pizza into equal slices, then tap the slices to colour them."
+   },
+   "rule": {
+    "text": "2 equal parts are halves, 3 equal parts are thirds, and 4 equal parts are quarters. In $\\frac{1}{4}$, the bottom number tells how many equal parts there are; the top number tells how many we take.",
+    "say": "2 equal parts are halves, 3 equal parts are thirds, and 4 equal parts are quarters. In the fraction one over four, the bottom number, four, tells how many equal parts there are. The top number, one, tells how many we take.",
+    "examples": [
+     "one half = $\\frac{1}{2}$",
+     "one third = $\\frac{1}{3}$",
+     "one quarter = $\\frac{1}{4}$ · two thirds = $\\frac{2}{3}$"
+    ],
+    "sayEx": [
+     "one half equals one half",
+     "one third equals one third",
+     "one quarter equals one quarter , two thirds equals two thirds"
+    ]
+   },
+   "check": [
+    {
+     "q": "A cake is cut into 4 equal pieces. One piece is…",
+     "options": [
+      "one quarter ($\\frac{1}{4}$)",
+      "one half ($\\frac{1}{2}$)",
+      "one third ($\\frac{1}{3}$)"
+     ],
+     "answer": 0,
+     "notes": {
+      "one half ($\\frac{1}{2}$)": "A half is one of 2 equal parts. This cake has 4 equal parts: a quarter.",
+      "one third ($\\frac{1}{3}$)": "A third is one of 3 equal parts. This cake has 4: a quarter."
+     },
+     "explain": "4 equal parts → each is one quarter, $\\frac{1}{4}$.",
+     "say": "A cake is cut into 4 equal pieces. One piece is…"
+    },
+    {
+     "q": "Which shows halves?",
+     "options": [
+      "a sandwich cut into 2 equal parts",
+      "a sandwich cut into 2 parts, one big and one small",
+      "a sandwich cut into 3 equal parts"
+     ],
+     "answer": 0,
+     "notes": {
+      "a sandwich cut into 2 parts, one big and one small": "Halves must be EQUAL. A big part and a small part are not halves.",
+      "a sandwich cut into 3 equal parts": "3 equal parts are thirds, not halves."
+     },
+     "explain": "Halves = 2 EQUAL parts.",
+     "say": "Which shows halves?"
+    },
+    {
+     "q": "A bar has 3 equal parts and 2 parts are coloured. What fraction is coloured?",
+     "options": [
+      "$\\frac{2}{3}$",
+      "$\\frac{1}{3}$",
+      "$\\frac{3}{2}$"
+     ],
+     "answer": 0,
+     "notes": {
+      "$\\frac{1}{3}$": "$\\frac{1}{3}$ is one part. Two parts are coloured: $\\frac{2}{3}$.",
+      "$\\frac{3}{2}$": "The bottom number is how many equal parts in all (3). The top is how many are coloured (2): $\\frac{2}{3}$."
+     },
+     "explain": "2 of 3 equal parts: $\\frac{2}{3}$.",
+     "say": "A bar has 3 equal parts and 2 parts are coloured. What fraction is coloured?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way: fold paper! Fold a strip in half once and you get 2 equal parts. Fold it in half again and you get 4 equal parts. The more equal parts, the smaller each part is.",
+    "examples": [
+     "fold once → 2 halves ($\\frac{1}{2}$ each)",
+     "fold twice → 4 quarters ($\\frac{1}{4}$ each)",
+     "$\\frac{1}{2}$ is bigger than $\\frac{1}{4}$"
+    ],
+    "discover": {
+     "kind": "frac",
+     "text": "Fold the paper strip in half, then colour one half.",
+     "hint": "Halves means 2 equal parts.",
+     "stages": [
+      {
+       "shape": "bar",
+       "parts": 2,
+       "shade": 1,
+       "text": "Cut the strip into halves (2 equal parts) and colour 1 part.",
+       "say": "Cut the strip into halves (2 equal parts) and colour 1 part."
+      }
+     ],
+     "say": "Fold the paper strip in half, then colour one half."
+    },
+    "say": "Here's another way: fold paper! Fold a strip in half once and you get 2 equal parts. Fold it in half again and you get 4 equal parts. The more equal parts, the smaller each part is."
+   },
+   "check2": [
+    {
+     "q": "A pizza is cut into 3 equal slices. One slice is…",
+     "options": [
+      "one third ($\\frac{1}{3}$)",
+      "one quarter ($\\frac{1}{4}$)",
+      "one half ($\\frac{1}{2}$)"
+     ],
+     "answer": 0,
+     "notes": {
+      "one quarter ($\\frac{1}{4}$)": "A quarter is one of 4 equal parts. This pizza has 3: a third.",
+      "one half ($\\frac{1}{2}$)": "A half is one of 2 equal parts. This pizza has 3: a third."
+     },
+     "explain": "3 equal parts → each is one third, $\\frac{1}{3}$.",
+     "say": "A pizza is cut into 3 equal slices. One slice is…"
+    },
+    {
+     "q": "Which is bigger: $\\frac{1}{2}$ or $\\frac{1}{4}$ of the same pizza?",
+     "options": [
+      "$\\frac{1}{2}$",
+      "$\\frac{1}{4}$",
+      "they are the same"
+     ],
+     "answer": 0,
+     "notes": {
+      "$\\frac{1}{4}$": "Cutting into 4 makes smaller slices than cutting into 2. A half is bigger.",
+      "they are the same": "Fold once for halves, twice for quarters: quarters are smaller. $\\frac{1}{2}$ is bigger."
+     },
+     "explain": "Fewer equal parts → bigger parts. $\\frac{1}{2}$ is bigger than $\\frac{1}{4}$.",
+     "say": "Which is bigger: one half or one quarter of the same pizza?"
+    },
+    {
+     "q": "A bar has 4 equal parts and 3 are coloured. What fraction is coloured?",
+     "options": [
+      "$\\frac{3}{4}$",
+      "$\\frac{1}{4}$",
+      "$\\frac{4}{3}$"
+     ],
+     "answer": 0,
+     "notes": {
+      "$\\frac{1}{4}$": "$\\frac{1}{4}$ is one part. Three parts are coloured: $\\frac{3}{4}$.",
+      "$\\frac{4}{3}$": "The bottom number is the parts in all (4), the top is the coloured parts (3): $\\frac{3}{4}$."
+     },
+     "explain": "3 of 4 equal parts: $\\frac{3}{4}$.",
+     "say": "A bar has 4 equal parts and 3 are coloured. What fraction is coloured?"
+    }
+   ],
+   "grown": "👪 MOE P2 Fractions: fraction of a whole (halves, thirds, quarters), equal parts, notation, comparing unit fractions.",
+   "pack": "m-g2"
+  }
+ ]
+}

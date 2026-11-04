@@ -1,5 +1,561 @@
-# Word Realms — Interactive Lessons plan
+# Word Realms: Interactive Lessons plan (📜 Learn)
 
-**Phase 1 (plan + engine + pilot): 🔧 in progress** — the 2-hourly routine stays idle while this line shows 🔧.
+**Phase 1 (plan + engine + pilot): 🔧 in progress.** The 2-hourly routine stays idle while this line shows 🔧.
 
-(Full plan being written.)
+> Checkpoint 2026-11-04 08:55 SGT: engine `js/learn.js` + `css/learn.css`, 10 pilot lessons (data/lessons), 10 GenerateImage hook pictures, all lines recorded (af_heart), `tools/test/lessons.js` 109/109 pass. Full suite green after fixing homeshort / icons / n3n5layout / realmpath / tappable / lightart regressions (corner badge, painted 🎒 icon, no home pill on phones). Deploying.
+
+Jeremy asked for this on 2026-11-04 (t40u, then "Build the pilot track for all, take your time and do it slowly but thoroughly"). He wants proper lessons before practice, so children are taught a little first and then practise right away. The lessons should be fun, hands-on and intriguing, and they should cover **every track**:
+- English CEFR A1–C2
+- 🦁 Singapore English P1 → Grown-up
+- Maths Grades 1–12 (MOE)
+
+---
+
+## 1. What a lesson is (the design every batch follows)
+
+A lesson takes **2–3 minutes** and teaches **one idea**. It has seven steps, run by the shared engine `js/learn.js`:
+
+| # | Step | What happens | Rules |
+|---|---|---|---|
+| 1 | 🎬 **Story hook** | A painted chibi scene from the realm, plus one line about a small problem. Example: "Crumb's bakery sign says *a apple pie*!" The narrator reads it. | One short paragraph. Use a realm character (Puffbun, Hoot, Crumb, Sumi, Gumdrop, Mog…). Use the painted art `assets/lessons/<art>.jpg` (made with GenerateImage only). |
+| 2 | 🖐️ **Discover** | Hands-on. The child drags, taps or builds something **within the first 30 s**, *before* being told the rule. | One widget from the kit below. Every drag also works by tap. Targets are at least 44 px. It must fit 320–412 px phones. Wrong moves bounce back with a gentle why line. After 2 misses the widget's hint shows. |
+| 3 | 💡 **Rule reveal** | "You found it!" Then the rule in one or two child sentences, plus 2–4 examples. | Use child words, not grammar jargon (jargon goes in the 👪 grown-up note). The narrator reads it. |
+| 4 | ✏️ **Your turn** | 3 quick questions, one try each. | Every wrong option has its own **why-not note** (validated). Every question has a short explanation. |
+| 5 | 🌈 **Re-teach** | Shown only if the child got fewer than 2 of 3. The same idea is explained **a different way** (another picture, a trick, a mini widget), then 3 **new** questions. | A different explanation, not the same text again. The mini widget is optional but recommended. |
+| 6 | 📜 **Scroll** | The lesson becomes a **Lesson Scroll** in the 🎒 Backpack, to reopen any time. It shows the rule, examples, art, 🔊 Hear it and ▶ Replay. | The scroll is saved even if the child struggled (it's a revision note). |
+| 7 | ⭐ **Reward + next** | **+5⭐ the first time the child passes** (2 or more of 3, on either try). Replays pay **0⭐**, with a kind note. Then "▶ Practise now" opens the matching practice round. | `WR.awardStars("learn", id + "/pass", 5, { kind: "fresh" })` pays once ever. Check answers never pay item stars. |
+
+**Where lessons sit.** Lessons sit *inside* the existing nodes, never as new home tiles.
+- Each English skill card in a realm (Grammar, Vocabulary, Reading, Listening) gets a round **📜** badge in its top corner (46 px, a ✨ / n/3 / ✓ dot; it adds no height, so the 4 skills still fit the first phone screen). With one lesson it opens it; with several it opens a small list.
+- Each maths topic card gets a 📜 Learn chip too.
+- The 🎒 Backpack (Lesson Scrolls shelf) opens from a 🎒 n/10 pill on the realm screen and the Number Kingdom hub, from the end of every lesson, and from a home greeting pill on screens 600 px and wider (phones keep their 2 short home pills, N4). The 🎒 icon is a GenerateImage painting cut out like the other icons (`tools/icons/sheets/backpack.jpg` → `assets/icons/backpack.webp`).
+
+**Soft nudge, no hard lock (decision).** Practice rounds stay playable without the lesson, for three reasons:
+- Older and returning players, and children placed by the Magic Mirror, already know much of the content.
+- Locking would also break every existing save and the Continue card.
+
+The nudges are:
+- a glowing ✨ "New" on the Learn chip;
+- on a practice result under 60%, a "📜 Learn it in 2 minutes" button, if that skill or topic has an unfinished lesson;
+- the hint links below.
+
+**Hint links.**
+- **Maths:** the 💡 Hint panel (and the hint shown after a first wrong answer) carries a "📜 Scroll: <title>" button for the topic's lesson.
+- **English:** questions that match a lesson's `match` rule get a small 📜 button in the question card's corner (not in boss or dragon timer rounds), and a scroll link under the why-not note.
+- Either way, the scroll opens as a pop-up, so the round is not lost.
+
+**Grown-ups.** ⚙️ → 👪 Grown-ups → 📊 Learning Report has a **📜 Lessons** card. It shows each lesson's status:
+- ✅ learned (best check n/3)
+- 🔁 learned after the second explanation
+- 🧩 still tricky (failed both checks; sit together)
+- ○ not started
+
+The Grown-ups pop-up shows a one-line summary.
+
+**Save (cloud-synced).** The progress lives in `wordRealms.save.v1` → `state.learn`, a `BLOCKS` entry in `js/core.js`. It is crowned, so it counts in the Cloud Castle progress score:
+```
+learn = { done: { "en.a1.an": { crowns: 0–3, best: 0–3, pass: bool, tries, reteach: times re-taught, stuck: bool, at, first,
+                                first1: passed without the re-teach the first time it was passed } },
+          opened: { "en.a1.an": n }, rounds: n }
+```
+A lesson's first finish counts once in `lessonsDone` and today's log (`WR.activityDone(true)`); replays only keep the streak (`WR.activityDone(false)`). Check answers go to the report tally as `learn:<id>` (no stars, no `totalAnswered`).
+
+**Phase 1 build notes (how the engine is wired).**
+- `js/learn.js` (`WR.Learn`, loaded before `js/main.js`) wraps `WR.init` to load `data/lessons/index.json`; packs load on first open. Screens: `learn` (a focus screen in `js/ux.js`, so the tab bar hides and Back asks "Leave this lesson?") and `scrolls` (the 🎒 Backpack). `WR.stopLearn` is in main.js `STOPS`.
+- Chips: `WR.Learn.chipHTML(list)` inside `skillCard()` (main.js) and `topicCard()` (math.js), both small clean-up helpers that replaced inline markup; `WR.Learn.bindChips(root, back)` (the chip stops the card's own tap).
+- Hint links: `WR.Learn.forItem(rid, item)` (English, by `match`), `WR.Learn.forTopic(topic)` (maths); `WR.Learn.scrollBtn(lesson)`; any `[data-scroll]` button opens the scroll modal (one capturing listener).
+- Nudge: `WR.Learn.nudgeHTML(WR.Learn.nudgeFor(list))` on lesson.js / math.js results under 60%.
+- Grown-ups: `WR.Learn.grownLine()` in the Grown-ups pop-up; the report draws every function in `WR.reportCards` (new hook in js/report.js) and lessons register `WR.Learn.reportCard`.
+- One list of "finished round" selectors, `WR.ROUND_DONE` (core.js), now feeds both the held-toast rule and the Back button (`.ln-done` added).
+- Narration: each step auto-reads its line when sound is on (`settings.sound`), and every line has a 🔊 button; the spots and fraction widgets read each task as it comes. `tools/build_voice.py` also records `rule.sayEx` (the examples).
+- Test hooks: `WR.Learn._S()` (the running lesson), `WR.Learn.KIT` (the widgets).
+
+---
+
+## 2. Content format (for batches)
+
+Lesson content is written in Python modules `tools/lessons/<pack>.py`, each exporting `LESSONS = [...]`.
+- `tools/lesson_build.py` validates every lesson and writes `data/lessons/<pack>.json` and `data/lessons/index.json`.
+- `tools/build_data.py` runs `tools/lesson_build.py`.
+- Packs: `en-a1`, `en-a2` … `en-c2`, `sg-p1` … `sg-adult`, `m-g1` … `m-g12`.
+
+```python
+dict(id="en.a1.an", title="a or an?", icon="🍎", at=dict(realm="a1", skill="grammar"),   # maths: at=dict(topic="g2.place")
+     match=[dict(opts=["a", "an"])],               # English hint links: all these words among the options, or dict(re="…", field="q|explain")
+     art="lesson_en_a1_an", art_alt="…",
+     hook=dict(text="…"),                          # narrator reads text (say = text unless given)
+     discover=dict(kind="sort", text="…", hint="…", …widget fields…),
+     rule=dict(text="…", examples=["…", "…"]),
+     check=[dict(q="…", text="(optional mini story)", options=[…3], answer=0, notes={wrong option: why}, explain="…") ×3],
+     reteach=dict(text="…", examples=[…], discover=dict(kind=…)),   # discover optional
+     check2=[… ×3 new questions],
+     grown="👪 note: the grammar term / MOE code for grown-ups")
+```
+**The validator (`tools/lesson_build.py`) fails the build if:**
+- there is no hook, discover, rule, reteach, or exactly 3 check and 3 check2 questions;
+- options are duplicated, or the answer is out of range;
+- any wrong option has no note, or any question has no explanation;
+- the widget fields don't match the widget kind;
+- the art file is missing (`assets/web/<art>.webp`; flagged placeholders are not allowed in a deploy);
+- `at` names an unknown realm/skill or maths topic;
+- an id is duplicated.
+
+**Widget kit (`js/learn.js`, all drag + tap):**
+
+| kind | fields | good for |
+|---|---|---|
+| `sort` | `bins:[{id,label,icon}]`, `items:[{t, bin, icon?, why?}]` | a/an, am/is/are, question words, countable/uncountable, formal/informal, odd/even, shapes |
+| `fill` | `tiles:[…]`, `items:[{s:"I ___ Puffbun.", a:"am", why}]` | verb forms, prepositions, connectors, tenses (drag the tile into the gap) |
+| `suffix` | `stamp:"s"`, `items:[{pre:"3", base:"cat", need:true, why}]` | plural -s, past -ed (drag -ed onto verbs), -er/-est, prefixes un-/re-, word formation |
+| `spots` | `scene:"table"\|"bed"`, `token`, `tasks:[{word:"on", say:"Put Puffbun ON the table."}]` | prepositions of place; later left/right, directions, maps |
+| `pv` | `targets:[243, 306]` | place value (H/T/O), later thousands; tap or drag a block onto the mat, ➖ takes one back |
+| `regroup` | `a:28, b:15` | adding with carrying (10 ones → 1 ten), later subtraction by renaming |
+| `groups` | `rings:3, each:4, item:"🍄"` | multiplication as equal groups, arrays, skip counting |
+| `share` | `total:15, plates:3, item:"🍪"` | division by sharing / grouping, remainders (later) |
+| `frac` | `stages:[{shape:"pizza"\|"bar", parts:4, shade:1}]` | fractions of a whole, equivalent fractions (later), unit fractions |
+
+New widgets may be added to the kit when a topic needs one, for example a number line, balance, clock hands, a graph builder or angle turns. Each needs a tap alternative, at least 44 px targets, and the 320 px audit in `tools/test/lessons.js`.
+
+**Narration.** Every `text` and `say` is a narrator line that `tools/build_voice.py` records with Kokoro **af_heart** (`/workspace/kvenv/bin/python tools/build_voice.py`, models in `/workspace/kmodels`). It walks `data/*/*.json`, so lesson packs are found automatically. If no MP3 exists or the device is offline, `WR.say` falls back to the device voice. Each step has a 🔊 button, and each step auto-reads when sound is on (a lesson always starts from a tap, so iPhones allow it).
+
+**Art.** Each lesson has one painted hook picture: GenerateImage, cute anime/chibi pastel, 4:3, no text in the picture. Never Pillow composites, never Higgsfield credits. Install it with
+`python3 tools/install_story_img.py --dir lessons <art_id>=<generated.png>` → `assets/lessons/<id>.jpg` (960×720) + `assets/web/<id>.webp`.
+
+---
+
+## 3. Every lesson, per track (the to-do list)
+
+Ids: `en.<level>.<slug>`, `sg.<level>.<slug>`, `m.<topic id>`. ✅ = live. In the original document each lesson was a bullet point: `id` title — the discovery widget or idea.
+
+### 🏰 English CEFR (fairy realms)
+
+*~12 lessons per level, attached to the skill node.*
+
+**A1 · Meadow of First Words (Pre-A1 Starters / A1 Movers)**
+
+Grammar:
+- ✅ `en.a1.an` a or an? (sort)
+- ✅ `en.a1.be` am, is, are (fill)
+- ✅ `en.a1.plural` one cat, two cats (suffix -s)
+- `en.a1.have` have / has (sort by subject)
+- `en.a1.can` can / can't + plain verb (fill)
+- `en.a1.s3` he plays, I play: the -s on verbs (suffix)
+- `en.a1.thereis` there is / there are (sort by picture count)
+- `en.a1.this` this/that/these/those (spots: near or far)
+- `en.a1.poss` my, your, his, her (sort by owner)
+- `en.a1.do` Do / Does questions (fill)
+- `en.a1.ing` happening now: is + -ing (suffix -ing)
+- `en.a1.waswere` was / were for yesterday (fill)
+
+Vocabulary:
+- ✅ `en.a1.place` in, on, under (spots)
+- `en.a1.place2` next to, behind, in front of (spots)
+- `en.a1.timeprep` at 7 o'clock, on Sunday, in May (sort)
+- `en.a1.feel` feelings words (sort pictures)
+
+Reading:
+- ✅ `en.a1.qwords` Who? Where? What? (sort)
+- `en.a1.detail` find the number or colour in the story (tap the word)
+
+Listening:
+- `en.a1.listennum` listen for numbers and names (spelling)
+- `en.a1.keyword` listen for the key word (tap the picture you hear)
+
+**A2 · Candy Village (A2 Key / Flyers)**
+
+Grammar:
+- `en.a2.ed` past -ed (suffix: drag -ed onto verbs, including the double letter in stopped)
+- `en.a2.irreg` went, ate, saw (sort regular / special)
+- `en.a2.comp` bigger / more beautiful (suffix -er or "more")
+- `en.a2.super` the biggest (suffix -est)
+- `en.a2.goingto` going to for plans (fill)
+- `en.a2.will` will for promises and guesses (sort)
+- `en.a2.someany` some / any (sort)
+- `en.a2.muchmany` much / many and countable/uncountable (sort)
+- `en.a2.freq` always … never (order on a line)
+- `en.a2.must` must / have to / mustn't (sort signs)
+- `en.a2.should` advice with should (fill)
+- `en.a2.objpron` me, him, them (fill)
+- `en.a2.poss_s` Mia's bag (suffix 's)
+- `en.a2.link` and / but / so / because (fill)
+
+Vocabulary:
+- `en.a2.makedo` make / do (sort)
+- `en.a2.shop` shop & food words (sort)
+
+Reading:
+- `en.a2.sequence` first, then, finally (order)
+- `en.a2.pronref` who is "she"? (tap the person)
+
+Listening:
+- `en.a2.prices` times & prices among distractors
+
+**B1 · Whispering Forest (B1 Preliminary)**
+
+Grammar:
+- `en.b1.ppever` present perfect: ever / never / just / already / yet (fill)
+- `en.b1.ppvsps` have done vs did (sort time words)
+- `en.b1.pastcont` was doing when … happened (timeline)
+- `en.b1.cond1` if + present, will (fill)
+- `en.b1.cond2` if I were … (sort real/imagined)
+- `en.b1.passive` the cake was eaten (fill)
+- `en.b1.relative` who / which / that (sort)
+- `en.b1.reported` she said that … (fill: backshift)
+- `en.b1.geninf` enjoy doing / want to do (sort)
+- `en.b1.usedto` used to (fill)
+- `en.b1.deduce` must / might / can't be (sort by sureness)
+- `en.b1.tooenough` too / enough (fill)
+
+Vocabulary:
+- `en.b1.phrasal` look after, give up (sort)
+- `en.b1.wordform` -ful / -less / un- (suffix)
+- `en.b1.linkers` however / although (fill)
+
+Reading:
+- `en.b1.mainidea` main idea vs detail
+- `en.b1.feelings` inference: how does she feel?
+
+Listening:
+- `en.b1.opinion` attitude words
+
+**B2 · Crystal Lake (B2 First)**
+
+Grammar:
+- `en.b2.cond3` third & mixed conditionals (timeline)
+- `en.b2.wish` wish / if only (sort now/past)
+- `en.b2.passrep` it is said that … (fill)
+- `en.b2.nondef` non-defining relative clauses: commas (stamp commas)
+- `en.b2.repq` reported questions (fill word order)
+- `en.b2.futperf` will have done / will be doing (timeline)
+- `en.b2.pastperf` past perfect in stories (order)
+- `en.b2.causative` have something done (sort)
+- `en.b2.modalperf` should have / could have (fill)
+- `en.b2.articles` a / the / no article (sort)
+
+Vocabulary:
+- `en.b2.colloc` collocations (match)
+- `en.b2.wordfam` word families (suffix)
+- `en.b2.deppre` dependent prepositions (fill)
+
+Reading:
+- `en.b2.cohesion` gapped-text clues: pronouns & linkers
+- `en.b2.paraphrase` the same meaning, new words
+
+Listening:
+- `en.b2.listenpara` hear the paraphrase
+
+**C1 · Cloud Castle (C1 Advanced; kid-friendly topics)**
+
+Grammar:
+- `en.c1.inversion` Never have I … (build)
+- `en.c1.cleft` What I need is … (build)
+- `en.c1.participle` Having finished, … (fill)
+- `en.c1.hedging` seems to / tends to (sort sure/unsure)
+- `en.c1.emphasis` I do like it (fill)
+- `en.c1.ellipsis` so do I / I hope so (fill)
+- `en.c1.nominal` decide → decision (suffix)
+- `en.c1.noif` Should you need help … (build)
+
+Vocabulary:
+- `en.c1.idioms` kid-friendly idioms (match picture)
+- `en.c1.register` formal vs friendly (sort)
+- `en.c1.collstrength` strong collocations (match)
+
+Reading:
+- `en.c1.attitude` the writer's attitude
+- `en.c1.implied` implied meaning
+
+Listening:
+- `en.c1.purpose` the speaker's purpose
+
+**C2 · Starlight Library (C2 Proficiency; kid-friendly topics)**
+
+Grammar:
+- `en.c2.fronting` fronting & subtle inversion (build)
+- `en.c2.subjunctive` It is vital that he be … (fill)
+- `en.c2.concession` Much as I … / Try as she might (build)
+- `en.c2.nominalgroups` long noun groups (build)
+
+Vocabulary:
+- `en.c2.nuance` near-synonyms (sort by shade)
+- `en.c2.connotation` positive/negative connotation (sort)
+- `en.c2.phrasal2` idiomatic phrasal verbs (match)
+
+Reading:
+- `en.c2.tone` tone & irony
+- `en.c2.argument` how an argument is built
+
+Listening:
+- `en.c2.implied` implied attitude
+
+### 🦁 Singapore School English (MOE EL Syllabus 2020; PSLE 0001, O-Level 1184, GP 8881)
+
+These lessons attach to the level hub as a "📜 Learn" row, which is still a hub section, not a home tile. A Singapore lesson that teaches the same point as a CEFR lesson **reuses** it (`same="en.a1.an"`) rather than duplicating it. The hub lists it and the scroll is shared.
+
+**P1:**
+- `sg.p1.an` → reuses `en.a1.an`
+- `sg.p1.plural` → reuses `en.a1.plural`
+- `sg.p1.caps` capital letters & full stops (stamp)
+- `sg.p1.pron` I / he / she / they (sort)
+- `sg.p1.past` yesterday words (suffix -ed, simple)
+
+**P2:**
+- `sg.p2.ing` → reuses `en.a1.ing`
+- `sg.p2.link` and / but / because (fill)
+- `sg.p2.qwords` → reuses `en.a1.qwords`
+- `sg.p2.adj` describing words (build)
+- `sg.p2.place` → reuses `en.a1.place`
+
+**P3:**
+- `sg.p3.sva` one / many: subject-verb agreement (sort)
+- `sg.p3.irreg` → reuses `en.a2.irreg`
+- `sg.p3.posspron` mine / yours / theirs (fill)
+- `sg.p3.synth1` Join It Up with and / because (build)
+- `sg.p3.evidence` comprehension: find the proof line (tap the line)
+
+**P4:**
+- `sg.p4.tense` keep the tense the same (spot & fix)
+- `sg.p4.who` who / which (fill)
+- `sg.p4.toosothat` too … to / so … that (build)
+- `sg.p4.quant` a few / a little / many (sort)
+- `sg.p4.vocabctx` word meaning from context
+- `sg.p4.order` sequencing events
+
+**P5:**
+- `sg.p5.svahard` each / every / either … or / neither … nor (sort)
+- `sg.p5.passive` passive voice (build)
+- `sg.p5.reported` reported speech (fill)
+- `sg.p5.unless` unless / if … not (build)
+- `sg.p5.notonly` not only … but also (build)
+- `sg.p5.despite` despite / in spite of / although (build)
+- `sg.p5.gcloze` grammar-cloze strategy: read the whole sentence, check the word box (fill)
+- `sg.p5.oe` open-ended answers in full sentences
+- `sg.p5.infer` inference + evidence
+
+**P6 (PSLE):**
+- `sg.p6.synthbig` the synthesis & transformation toolkit: no sooner … than, hardly … when, whose, provided that (build)
+- `sg.p6.vcloze` vocab cloze collocations (fill)
+- `sg.p6.visual` visual text: purpose, audience, features (tap the clue)
+- `sg.p6.pac` situational writing: Purpose, Audience, Context (sort)
+- `sg.p6.plot` continuous writing: a plot with a problem (order)
+- `sg.p6.oetypes` OE question types: literal / inferential / true-false with reason (sort)
+
+**Sec 1–2:**
+- `sg.s1.editing` editing: tense, SVA, prepositions (spot & fix)
+- `sg.s1.keypoints` summary: key point vs example (sort)
+- `sg.s1.paraphrase` paraphrasing (build)
+- `sg.s1.narrative` narrative techniques: show, don't tell (sort)
+- `sg.s2.persuade` visual text persuasion techniques (tap)
+- `sg.s2.purpose` the writer's purpose
+- `sg.s2.figurative` figurative language (match)
+
+**Sec 3–4/5 (O-Level):**
+- `sg.s3.situational` formal email/report/speech: PAC + tone (sort register)
+- `sg.s3.argue` argumentative structure (order)
+- `sg.s3.wordeffect` the effect of word choice
+- `sg.s3.summary` the 80-word summary: key points, own words, no examples (sort/build)
+- `sg.s4.sbc` spoken interaction with PEEL (order)
+- `sg.s4.readaloud` reading aloud: pausing & emphasis (tap the pauses)
+- `sg.s4.notes` listening note-taking
+
+**JC 1–2 (GP; mature but respectful topics):**
+- `sg.jc1.thesis` thesis & topic sentences (sort)
+- `sg.jc1.peel` PEEL paragraph (order)
+- `sg.jc1.counter` counter-argument & rebuttal (build)
+- `sg.jc1.qualify` qualifiers vs absolutes (sort)
+- `sg.jc1.evidence` evaluating evidence (sort strong/weak)
+- `sg.jc2.literal` literal vs inferential questions (sort)
+- `sg.jc2.summary` GP summary from the text (build)
+- `sg.jc2.aq` application question structure (order)
+- `sg.jc2.tone` tone & attitude (sort)
+- `sg.jc2.fallacy` spotting weak reasoning (sort)
+
+**Grown-up:**
+- `sg.adult.register` workplace email register (sort)
+- `sg.adult.concise` concise writing (build)
+- `sg.adult.singlish` Standard English vs Singlish features, respectful and situational (sort)
+- `sg.adult.meeting` meeting language (fill)
+- `sg.adult.present` persuasive presentation openers (order)
+- `sg.adult.news` reading news critically (sort fact/opinion)
+
+### 🔢 Maths (MOE; one lesson per topic, id `m.<topic id>`)
+
+**Grade 1 (P1):**
+- `m.g1.count` counting to 20: tap to count, then the last number says how many (groups)
+- `m.g1.add20` adding: make 10 first (regroup within 20)
+- `m.g1.sub20` taking away: cross out / count back (share-style take-away)
+- `m.g1.bonds` number bonds: split 10 into two parts (sort into the two parts)
+- `m.g1.shapes` sides & corners (tap to count)
+- `m.g1.money` coins in cents (pv with coins)
+- `m.g1.time` o'clock & half past (clock hands)
+- `m.g1.picgraph` picture graph: one picture = one (build a graph)
+- `m.g1.story` word problems: find the action word (sort add/take)
+
+**Grade 2 (P2):**
+- ✅ `m.g2.place` hundreds, tens and ones (pv)
+- ✅ `m.g2.add` adding with regrouping (regroup)
+- ✅ `m.g2.times` times means equal groups (groups)
+- ✅ `m.g2.share` sharing fairly (share)
+- ✅ `m.g2.frac` halves, thirds and quarters (frac)
+- `m.g2.sub` subtracting with renaming (regroup backwards)
+- `m.g2.money` dollars and cents (pv money)
+- `m.g2.time` five-minute clock (clock)
+- `m.g2.picgraph` picture graph with a key (build)
+- `m.g2.story` two-step problems: bar model
+
+**Grade 3 (P3):**
+- `m.g3.times` 6–9 times-table tricks (groups/arrays)
+- `m.g3.divrem` remainders: left over (share with leftovers)
+- `m.g3.add4` 4-digit regrouping (pv)
+- `m.g3.mul` multiply by one digit (area blocks)
+- `m.g3.eqfrac` equivalent fractions (frac stages: fold)
+- `m.g3.measure` units of length, mass and volume (sort)
+- `m.g3.duration` how long? (number line)
+- `m.g3.clock` 24-hour clock (sort)
+- `m.g3.perim` perimeter: walk the fence (tap the edges)
+- `m.g3.lines` parallel / perpendicular (sort)
+- `m.g3.bargraph` bar graph scale (build)
+- `m.g3.story` ×/÷ stories: bar model
+
+**Grade 4 (P4):**
+- `m.g4.longmul` long multiplication (area model)
+- `m.g4.longdiv` long division (share in steps)
+- `m.g4.factors` factors & multiples (arrays)
+- `m.g4.fracadd` adding fractions: like / unlike (frac bars)
+- `m.g4.fracset` a fraction of a set (groups)
+- `m.g4.decimal` tenths & hundredths (pv decimals)
+- `m.g4.round` rounding: the number line hill
+- `m.g4.area` area by counting squares
+- `m.g4.angles` turns & angles (angle turn)
+- `m.g4.symmetry` mirror lines (fold)
+- `m.g4.linegraph` line graphs (build)
+- `m.g4.story` story problems with the bar model
+
+**Grade 5 (P5):**
+- `m.g5.fracmul` fraction × fraction (area grid)
+- `m.g5.dec10` × ÷ 10, 100, 1000 (place-value slide)
+- `m.g5.percent` percent as out of 100 (100-grid)
+- `m.g5.ratio` ratio recipes (groups)
+- `m.g5.triangle` area of a triangle: half a rectangle
+- `m.g5.angles` angles on a line / at a point (sort)
+- `m.g5.volume` cubes in a box (build)
+- `m.g5.average` average: level the towers (share)
+- `m.g5.order` order of operations (order)
+- `m.g5.rate` rates (groups)
+- `m.g5.story` word problems with units
+
+**Grade 6 (P6):**
+- `m.g6.fracdiv` dividing fractions: how many fit? (frac bars)
+- `m.g6.pctchange` percentage change (bars)
+- `m.g6.share` sharing in a ratio (bar units)
+- `m.g6.circle` circumference & area: unroll the circle
+- `m.g6.algebra` letters stand for numbers (balance)
+- `m.g6.speed` distance-speed-time triangle (sort)
+- `m.g6.nets` nets: fold the box
+- `m.g6.piechart` pie charts (frac)
+- `m.g6.story` PSLE-style heuristics: units & parts
+
+**Grade 7 (Sec 1):**
+- `m.g7.integers` negative numbers on the number line
+- `m.g7.hcf` prime factor trees (build)
+- `m.g7.simplify` like terms (sort)
+- `m.g7.expand` expanding brackets: area model
+- `m.g7.lineq` balance equations (balance)
+- `m.g7.angles` angle facts with parallel lines (sort)
+- `m.g7.mensur` composite areas (split)
+- `m.g7.pct` percentage multipliers
+- `m.g7.pattern` the nth term (build)
+- `m.g7.story` setting up equations
+
+**Grade 8 (Sec 2):**
+- `m.g8.expand2` double brackets: grid
+- `m.g8.factorise` factorising: reverse the grid
+- `m.g8.pyth` Pythagoras with squares on the sides
+- `m.g8.similar` scale factor (slider)
+- `m.g8.solids` volume of cones & spheres
+- `m.g8.gradient` gradient: rise over run (drag points)
+- `m.g8.lingraph` y = mx + c sliders
+- `m.g8.proportion` direct / inverse proportion (sort)
+- `m.g8.stats` mean, median & mode (sort)
+- `m.g8.prob` probability from 0 to 1 (spinner)
+- `m.g8.fraceq` fraction equations (balance)
+- `m.g8.story` problem solving
+
+**Grade 9 (Sec 3):**
+- `m.g9.quad` factorising quadratics (grid)
+- `m.g9.quadgraph` parabola sliders
+- `m.g9.simul` simultaneous equations (two balances)
+- `m.g9.indices` index laws (sort)
+- `m.g9.stdform` standard form (pv slide)
+- `m.g9.surds` surds: simplest form (factor tree)
+- `m.g9.trig` SOH-CAH-TOA (label the sides)
+- `m.g9.bearings` bearings: clockwise from north
+- `m.g9.coord` coordinate geometry (drag points)
+- `m.g9.circles` circle properties (tap angles)
+- `m.g9.ineq` inequalities on a number line
+- `m.g9.sets` Venn diagrams (sort)
+- `m.g9.story` problem solving
+
+**Grade 10 (Sec 4):**
+- `m.g10.quadf` the quadratic formula
+- `m.g10.sinecos` sine & cosine rules (sort which rule)
+- `m.g10.triggraph` amplitude & period sliders
+- `m.g10.prob2` two-draw tree diagrams (build)
+- `m.g10.freq` frequency tables
+- `m.g10.spread` range & IQR (box plot)
+- `m.g10.travel` travel graphs (drag)
+- `m.g10.sector` arc & sector (frac of circle)
+- `m.g10.vectors` vectors: arrows (drag)
+- `m.g10.matrices` matrix multiplication (row × column)
+- `m.g10.interest` simple vs compound interest
+- `m.g10.story` problem solving
+
+**Grade 11 (JC 1):**
+- `m.g11.func` functions as machines
+- `m.g11.explog` logs undo powers
+- `m.g11.diff` gradient of a curve (tangent slider)
+- `m.g11.stationary` stationary points
+- `m.g11.tangent` tangent & normal
+- `m.g11.ap` arithmetic sequences
+- `m.g11.gp` geometric sequences
+- `m.g11.vec3` 3D vectors
+- `m.g11.story` modelling
+
+**Grade 12 (JC 2):**
+- `m.g12.integ` integration as area under (rectangles)
+- `m.g12.chain` the chain rule
+- `m.g12.area` area between curves
+- `m.g12.binom` binomial expansion (Pascal)
+- `m.g12.complex` complex numbers on the plane
+- `m.g12.sigma` sigma notation
+- `m.g12.expcalc` e^x and ln x
+- `m.g12.story` modelling
+
+---
+
+## 4. Batches (who does what, in this order)
+
+Each **routine turn builds one batch of ~5 lessons**, alternating English and maths like the rest of the routine. For each batch:
+1. Clean up any code the batch touches (behaviour identical, tested).
+2. Write the content in `tools/lessons/<pack>.py`, using this plan's list and order.
+3. Paint each hook picture with **GenerateImage** (cute anime/chibi pastel, 4:3, no text). Install it with `tools/install_story_img.py --dir lessons`. Never ship placeholders or composites.
+4. Run `python3 tools/lesson_build.py` (the validator). Record the voice: `/workspace/kvenv/bin/python tools/build_voice.py`.
+5. Run `node tools/test/lessons.js` and raise its `MIN_LESSONS`. Then run the full suite: cloud, lightart, parentgate and pwa one at a time; cloud.js and skins.js are known flakes.
+6. Take screenshots with `SHOT=1 node tools/test/lessons.js` → `screenshots/lessons_*.png`.
+7. Deploy (build_sw → pull → copy → commit → push → live 200), then tick ✅ in §3 and in the progress table below.
+8. If a topic needs a new widget, add it to the kit first. Give it a tap alternative and add it to the phone-width audit in lessons.js.
+
+## 5. Progress
+
+| Batch | Lessons | Status | Commit |
+|---|---|---|---|
+| Phase 1 | plan, engine `js/learn.js`, scroll shelf, hint links, Grown-ups card, save block, tests | 🔧 in progress | – |
+| Pilot EN | en.a1.an, en.a1.be, en.a1.plural, en.a1.place, en.a1.qwords | 🔧 | – |
+| Pilot MA | m.g2.place, m.g2.add, m.g2.times, m.g2.share, m.g2.frac | 🔧 | – |
+| EN-2 | A1 rest: have, can, s3, thereis, this, poss, do | ⏳ next English turn | |
+| MA-2 | G2 rest: sub, money, time, picgraph, story | ⏳ next maths turn | |
+| EN-3 | A1 rest: ing, waswere, place2, timeprep, feel, detail, listennum, keyword | ⏳ | |
+| MA-3 | G1 all (9) | ⏳ | |
+| EN-4… | A2 (19), then B1, B2, C1, C2 | ⏳ | |
+| MA-4… | G3, G4 … G12 (one grade per 2 turns) | ⏳ | |
+| SG-1… | SG hub "📜 Learn" row (engine: `at=dict(sg="p1")`, `same=`) then P1 → Grown-up | ⏳ after A2 | |

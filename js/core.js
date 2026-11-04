@@ -276,7 +276,9 @@ const BLOCKS = {
   cloze: gapBlock(),
   marks: gapBlock(),
   // 🦁 Singapore School English (js/sg-english.js): which English track the map shows, the chosen school level, best result per game
-  sg: { fresh: () => ({ track: "cefr", level: null, done: {}, rounds: 0 }), maps: ["done"], crowned: true }
+  sg: { fresh: () => ({ track: "cefr", level: null, done: {}, rounds: 0 }), maps: ["done"], crowned: true },
+  // 📜 Lessons (js/learn.js): per lesson { crowns, best, pass, tries, reteach, stuck, at, first, first1 }, times each was opened
+  learn: { fresh: () => ({ done: {}, opened: {}, rounds: 0 }), maps: ["done", "opened"], crowned: true }
 };
 const freshBlocks = () => Object.fromEntries(Object.entries(BLOCKS).map(([k, b]) => [k, b.fresh()]));
 const fixBlock = (s, k) => { const b = BLOCKS[k], v = s[k]; s[k] = Object.assign(b.fresh(), v && typeof v === "object" ? v : {}); for (const m of b.maps) s[k][m] = s[k][m] || {}; return s[k]; };
@@ -441,7 +443,9 @@ WR.readyGo = done => {
    shown on the next screen without a question (the result screen, the map…), so a pop-up never covers an answer, the
    question or a name. Hints the child needs right now pass { now: true }. js/ux.js calls WR.flushToasts after each screen. */
 const heldToasts = [];
-WR.questionOnScreen = () => document.body.classList.contains("wr-focus") && !document.querySelector(".result, .ch-done, .ph-done, .story-done, .sw-done");
+// a finished round's screen (results of lessons, charms, phonics, stories, gap games, 📜 Lessons): no question on screen
+WR.ROUND_DONE = ".result, .ch-done, .ph-done, .story-done, .sw-done, .ln-done";
+WR.questionOnScreen = () => document.body.classList.contains("wr-focus") && !document.querySelector(WR.ROUND_DONE);
 WR.flushToasts = () => { if (WR.questionOnScreen()) return; heldToasts.splice(0, 2).forEach((t, i) => setTimeout(() => WR.toast(t[0], t[1], { now: true }), i * 700)); heldToasts.length = 0; };
 WR.toast = (msg, ms = 1800, opts = {}) => {
   if (!opts.now && WR.questionOnScreen()) { if (!heldToasts.some(t => t[0] === msg)) heldToasts.push([msg, ms]); return; }

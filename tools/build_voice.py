@@ -26,6 +26,7 @@ def lines():
         if isinstance(o, dict):
             for k, v in o.items():
                 if k == "say" and isinstance(v, str): add("narrator", v)
+                elif k == "sayEx" and isinstance(v, list): [add("narrator", x) for x in v if isinstance(x, str)]   # 📜 lesson rule examples
                 else: walk(v)
         elif isinstance(o, list): [walk(x) for x in o]
     for f in sorted(glob.glob("data/*/*.json")):

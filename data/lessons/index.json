@@ -1,0 +1,164 @@
+{
+ "lessons": [
+  {
+   "id": "en.a1.an",
+   "pack": "en-a1",
+   "title": "a or an?",
+   "icon": "🍎",
+   "at": {
+    "realm": "a1",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_a1_an",
+   "match": [
+    {
+     "opts": [
+      "a",
+      "an"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "en.a1.be",
+   "pack": "en-a1",
+   "title": "am, is, are",
+   "icon": "🏷️",
+   "at": {
+    "realm": "a1",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_a1_be",
+   "match": [
+    {
+     "opts": [
+      "am",
+      "is"
+     ]
+    },
+    {
+     "opts": [
+      "am",
+      "are"
+     ]
+    },
+    {
+     "opts": [
+      "is",
+      "are",
+      "am"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "en.a1.plural",
+   "pack": "en-a1",
+   "title": "One cat, two cats",
+   "icon": "🐱",
+   "at": {
+    "realm": "a1",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_a1_plural",
+   "match": [
+    {
+     "re": "plural|more than one|add -?s\\b",
+     "field": "explain"
+    }
+   ]
+  },
+  {
+   "id": "en.a1.place",
+   "pack": "en-a1",
+   "title": "in, on, under",
+   "icon": "📦",
+   "at": {
+    "realm": "a1",
+    "skill": "vocab"
+   },
+   "art": "lesson_en_a1_place",
+   "match": [
+    {
+     "re": "\\binside\\b|on top|touching the top|\\bbelow\\b|under means",
+     "field": "explain"
+    }
+   ]
+  },
+  {
+   "id": "en.a1.qwords",
+   "pack": "en-a1",
+   "title": "Who? Where? What?",
+   "icon": "❓",
+   "at": {
+    "realm": "a1",
+    "skill": "reading"
+   },
+   "art": "lesson_en_a1_qwords",
+   "match": [
+    {
+     "re": "^(Who|Where|What)\\b",
+     "field": "q"
+    },
+    {
+     "opts": [
+      "who",
+      "where",
+      "what"
+     ],
+     "need": 2
+    }
+   ]
+  },
+  {
+   "id": "m.g2.place",
+   "pack": "m-g2",
+   "title": "Hundreds, tens and ones",
+   "icon": "🏰",
+   "at": {
+    "topic": "g2.place"
+   },
+   "art": "lesson_m_g2_place"
+  },
+  {
+   "id": "m.g2.add",
+   "pack": "m-g2",
+   "title": "Adding with regrouping",
+   "icon": "🍬",
+   "at": {
+    "topic": "g2.add"
+   },
+   "art": "lesson_m_g2_add"
+  },
+  {
+   "id": "m.g2.times",
+   "pack": "m-g2",
+   "title": "Times means equal groups",
+   "icon": "🍄",
+   "at": {
+    "topic": "g2.times"
+   },
+   "art": "lesson_m_g2_times"
+  },
+  {
+   "id": "m.g2.share",
+   "pack": "m-g2",
+   "title": "Sharing fairly",
+   "icon": "🍪",
+   "at": {
+    "topic": "g2.share"
+   },
+   "art": "lesson_m_g2_share"
+  },
+  {
+   "id": "m.g2.frac",
+   "pack": "m-g2",
+   "title": "Halves, thirds and quarters",
+   "icon": "🍕",
+   "at": {
+    "topic": "g2.frac"
+   },
+   "art": "lesson_m_g2_frac"
+  }
+ ]
+}

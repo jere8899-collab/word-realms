@@ -1,0 +1,1201 @@
+{
+ "pack": "en-a1",
+ "lessons": [
+  {
+   "id": "en.a1.an",
+   "title": "a or an?",
+   "icon": "🍎",
+   "at": {
+    "realm": "a1",
+    "skill": "grammar"
+   },
+   "match": [
+    {
+     "opts": [
+      "a",
+      "an"
+     ]
+    }
+   ],
+   "art": "lesson_en_a1_an",
+   "art_alt": "Crumb the little baker dragon looks up at the bakery sign",
+   "hook": {
+    "text": "Oh no! Crumb the little baker dragon wrote a new bakery sign: “a apple pie”. Say it out loud. It sounds bumpy! Can you help Crumb fix it?",
+    "say": "Oh no! Crumb the little baker dragon wrote a new bakery sign: “a apple pie”. Say it out loud. It sounds bumpy! Can you help Crumb fix it?"
+   },
+   "discover": {
+    "kind": "sort",
+    "text": "Which little word goes in front? Drag each treat into the a basket or the an basket.",
+    "hint": "Say it out loud: “an apple” slides smoothly, but “a apple” bumps.",
+    "bins": [
+     {
+      "id": "a",
+      "label": "a",
+      "icon": "🧺"
+     },
+     {
+      "id": "an",
+      "label": "an",
+      "icon": "🧺"
+     }
+    ],
+    "items": [
+     {
+      "t": "apple",
+      "icon": "🍎",
+      "bin": "an",
+      "why": "Apple starts with a. Say “an apple”."
+     },
+     {
+      "t": "cake",
+      "icon": "🎂",
+      "bin": "a",
+      "why": "Cake starts with c. Say “a cake”."
+     },
+     {
+      "t": "egg",
+      "icon": "🥚",
+      "bin": "an",
+      "why": "Egg starts with e. Say “an egg”."
+     },
+     {
+      "t": "cookie",
+      "icon": "🍪",
+      "bin": "a",
+      "why": "Cookie starts with c. Say “a cookie”."
+     },
+     {
+      "t": "orange",
+      "icon": "🍊",
+      "bin": "an",
+      "why": "Orange starts with o. Say “an orange”."
+     },
+     {
+      "t": "banana",
+      "icon": "🍌",
+      "bin": "a",
+      "why": "Banana starts with b. Say “a banana”."
+     },
+     {
+      "t": "ice cream",
+      "icon": "🍦",
+      "bin": "an",
+      "why": "Ice cream starts with i. Say “an ice cream”."
+     },
+     {
+      "t": "bun",
+      "icon": "🥯",
+      "bin": "a",
+      "why": "Bun starts with b. Say “a bun”."
+     }
+    ],
+    "say": "Which little word goes in front? Drag each treat into the a basket or the an basket."
+   },
+   "rule": {
+    "text": "Use an before words that start with a, e, i, o or u. Use a before all the other letters.",
+    "examples": [
+     "an apple · an egg · an ice cream",
+     "a cake · a cookie · a banana"
+    ],
+    "say": "Use an before words that start with a, e, i, o or u. Use a before all the other letters.",
+    "sayEx": [
+     "an apple , an egg , an ice cream",
+     "a cake , a cookie , a banana"
+    ]
+   },
+   "check": [
+    {
+     "q": "Crumb bakes ___ egg tart.",
+     "options": [
+      "an",
+      "a",
+      "two"
+     ],
+     "answer": 0,
+     "notes": {
+      "a": "Egg starts with e, so we say an egg, not a egg.",
+      "two": "Two means more than one, so it would be two egg tarts. Here there is one tart."
+     },
+     "explain": "Egg starts with e, so it takes an: an egg tart.",
+     "say": "Crumb bakes blank egg tart."
+    },
+    {
+     "q": "I have ___ banana.",
+     "options": [
+      "a",
+      "an",
+      "some"
+     ],
+     "answer": 0,
+     "notes": {
+      "an": "Banana starts with b, not a, e, i, o or u, so we say a banana.",
+      "some": "Some is for lots of things. One banana takes a."
+     },
+     "explain": "Banana starts with b, so it takes a: a banana.",
+     "say": "I have blank banana."
+    },
+    {
+     "q": "Which sign is right?",
+     "options": [
+      "an orange cake",
+      "a orange cake",
+      "an cake"
+     ],
+     "answer": 0,
+     "notes": {
+      "a orange cake": "Orange starts with o, so it takes an: an orange cake.",
+      "an cake": "Cake starts with c, so we say a cake. Here the word after an is orange."
+     },
+     "explain": "The word right after the little word decides. Orange starts with o, so: an orange cake.",
+     "say": "Which sign is right?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way to check. Say both out loud and listen to your mouth. “a apple” makes your mouth stop and bump. “an apple” slides smoothly. The little n is a bridge to words that start with a, e, i, o or u!",
+    "examples": [
+     "an owl 🦉 (o)",
+     "an umbrella ☂️ (u)",
+     "a dog 🐶 (d)",
+     "a hat 🎩 (h)"
+    ],
+    "discover": {
+     "kind": "sort",
+     "text": "Try the bridge trick! Drag each word to a or an.",
+     "hint": "Does it start with a, e, i, o or u? Then it needs the n bridge: an.",
+     "bins": [
+      {
+       "id": "a",
+       "label": "a",
+       "icon": "🧺"
+      },
+      {
+       "id": "an",
+       "label": "an",
+       "icon": "🧺"
+      }
+     ],
+     "items": [
+      {
+       "t": "owl",
+       "icon": "🦉",
+       "bin": "an",
+       "why": "Owl starts with o: an owl."
+      },
+      {
+       "t": "dog",
+       "icon": "🐶",
+       "bin": "a",
+       "why": "Dog starts with d: a dog."
+      },
+      {
+       "t": "umbrella",
+       "icon": "☂️",
+       "bin": "an",
+       "why": "Umbrella starts with u: an umbrella."
+      },
+      {
+       "t": "hat",
+       "icon": "🎩",
+       "bin": "a",
+       "why": "Hat starts with h: a hat."
+      }
+     ],
+     "say": "Try the bridge trick! Drag each word to a or an."
+    },
+    "say": "Here's another way to check. Say both out loud and listen to your mouth. “a apple” makes your mouth stop and bump. “an apple” slides smoothly. The little n is a bridge to words that start with a, e, i, o or u!"
+   },
+   "check2": [
+    {
+     "q": "Look! ___ owl!",
+     "options": [
+      "An",
+      "A",
+      "Two"
+     ],
+     "answer": 0,
+     "notes": {
+      "A": "Owl starts with o, so we need the n bridge: An owl!",
+      "Two": "Two means more than one, so it would be two owls. Here there is one owl."
+     },
+     "explain": "Owl starts with o, so: An owl!",
+     "say": "Look! blank owl!"
+    },
+    {
+     "q": "She has ___ umbrella.",
+     "options": [
+      "an",
+      "a",
+      "some"
+     ],
+     "answer": 0,
+     "notes": {
+      "a": "Umbrella starts with u, so it takes an: an umbrella.",
+      "some": "Some is for lots of things. One umbrella takes an."
+     },
+     "explain": "Umbrella starts with u, so: an umbrella.",
+     "say": "She has blank umbrella."
+    },
+    {
+     "q": "Which is right?",
+     "options": [
+      "a dog",
+      "an dog",
+      "a owl"
+     ],
+     "answer": 0,
+     "notes": {
+      "an dog": "Dog starts with d, so no n bridge: a dog.",
+      "a owl": "Owl starts with o, so it needs an: an owl."
+     },
+     "explain": "Dog starts with d, so: a dog.",
+     "say": "Which is right?"
+    }
+   ],
+   "grown": "👪 Indefinite articles a / an (Cambridge Pre-A1 Starters). Taught by first letter at A1; the 'vowel sound' refinement (an hour, a unicorn) comes at A2.",
+   "pack": "en-a1"
+  },
+  {
+   "id": "en.a1.be",
+   "title": "am, is, are",
+   "icon": "🏷️",
+   "at": {
+    "realm": "a1",
+    "skill": "grammar"
+   },
+   "match": [
+    {
+     "opts": [
+      "am",
+      "is"
+     ]
+    },
+    {
+     "opts": [
+      "am",
+      "are"
+     ]
+    },
+    {
+     "opts": [
+      "is",
+      "are",
+      "am"
+     ]
+    }
+   ],
+   "art": "lesson_en_a1_be",
+   "art_alt": "Puffbun hands out name badges in the meadow",
+   "hook": {
+    "text": "It's Name Badge Day in the meadow! Puffbun wrote everyone's badge, but a little word is missing in each one. Can you finish them?",
+    "say": "It's Name Badge Day in the meadow! Puffbun wrote everyone's badge, but a little word is missing in each one. Can you finish them?"
+   },
+   "discover": {
+    "kind": "fill",
+    "text": "Drag the right little word into the gap. You can also tap a word.",
+    "hint": "I always goes with am. One person or thing goes with is. You, we and they go with are.",
+    "tiles": [
+     "am",
+     "is",
+     "are"
+    ],
+    "items": [
+     {
+      "s": "I ___ Puffbun.",
+      "a": "am",
+      "why": "With I we always say am: I am Puffbun."
+     },
+     {
+      "s": "She ___ Lily.",
+      "a": "is",
+      "why": "She is one person, so we say is: She is Lily."
+     },
+     {
+      "s": "They ___ friends.",
+      "a": "are",
+      "why": "They is more than one, so we say are: They are friends."
+     },
+     {
+      "s": "It ___ a frog.",
+      "a": "is",
+      "why": "It is one thing, so we say is: It is a frog."
+     },
+     {
+      "s": "We ___ happy.",
+      "a": "are",
+      "why": "With we we say are: We are happy."
+     },
+     {
+      "s": "You ___ kind.",
+      "a": "are",
+      "why": "With you we say are: You are kind."
+     }
+    ],
+    "say": "Drag the right little word into the gap. You can also tap a word."
+   },
+   "rule": {
+    "text": "I goes with am. He, she and it go with is. You, we and they go with are.",
+    "examples": [
+     "I am Lily.",
+     "She is my friend. It is a frog.",
+     "We are happy. They are friends."
+    ],
+    "say": "I goes with am. He, she and it go with is. You, we and they go with are.",
+    "sayEx": [
+     "I am Lily.",
+     "She is my friend. It is a frog.",
+     "We are happy. They are friends."
+    ]
+   },
+   "check": [
+    {
+     "q": "Tom and Mia ___ in the garden.",
+     "options": [
+      "are",
+      "is",
+      "am"
+     ],
+     "answer": 0,
+     "notes": {
+      "is": "Tom and Mia are two people, like they, so we use are.",
+      "am": "Am only goes with I."
+     },
+     "explain": "Two people are like they, so: Tom and Mia are in the garden.",
+     "say": "Tom and Mia blank in the garden."
+    },
+    {
+     "q": "I ___ seven.",
+     "options": [
+      "am",
+      "is",
+      "are"
+     ],
+     "answer": 0,
+     "notes": {
+      "is": "With I we always use am: I am seven.",
+      "are": "Are goes with you, we and they. With I, use am."
+     },
+     "explain": "I always goes with am: I am seven.",
+     "say": "I blank seven."
+    },
+    {
+     "q": "The cat ___ sleepy.",
+     "options": [
+      "is",
+      "are",
+      "am"
+     ],
+     "answer": 0,
+     "notes": {
+      "are": "One cat is like it, so we use is.",
+      "am": "Am is only for I."
+     },
+     "explain": "One cat is like it, so: The cat is sleepy.",
+     "say": "The cat blank sleepy."
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way. Swap the name for a little word first! Tom becomes he, so it's is. Tom and Mia become they, so it's are. Me becomes I, so it's am.",
+    "examples": [
+     "Tom → he → Tom is tall.",
+     "Tom and Mia → they → They are tall.",
+     "me → I → I am tall."
+    ],
+    "discover": {
+     "kind": "sort",
+     "text": "Swap and sort! Drag each word to am, is or are.",
+     "hint": "Swap it for I, he, she, it, we or they first.",
+     "bins": [
+      {
+       "id": "am",
+       "label": "am",
+       "icon": "🙋"
+      },
+      {
+       "id": "is",
+       "label": "is",
+       "icon": "☝️"
+      },
+      {
+       "id": "are",
+       "label": "are",
+       "icon": "👥"
+      }
+     ],
+     "items": [
+      {
+       "t": "I",
+       "icon": "🙋",
+       "bin": "am",
+       "why": "I always takes am."
+      },
+      {
+       "t": "my dog",
+       "icon": "🐶",
+       "bin": "is",
+       "why": "My dog is one, like it: is."
+      },
+      {
+       "t": "Sam",
+       "icon": "👦",
+       "bin": "is",
+       "why": "Sam is one person, like he: is."
+      },
+      {
+       "t": "we",
+       "icon": "👫",
+       "bin": "are",
+       "why": "We takes are."
+      },
+      {
+       "t": "the birds",
+       "icon": "🐦",
+       "bin": "are",
+       "why": "The birds are more than one, like they: are."
+      },
+      {
+       "t": "you",
+       "icon": "🫵",
+       "bin": "are",
+       "why": "You takes are."
+      }
+     ],
+     "say": "Swap and sort! Drag each word to am, is or are."
+    },
+    "say": "Here's another way. Swap the name for a little word first! Tom becomes he, so it's is. Tom and Mia become they, so it's are. Me becomes I, so it's am."
+   },
+   "check2": [
+    {
+     "q": "My mum ___ a teacher.",
+     "options": [
+      "is",
+      "are",
+      "am"
+     ],
+     "answer": 0,
+     "notes": {
+      "are": "My mum is one person, like she, so we use is.",
+      "am": "Am only goes with I."
+     },
+     "explain": "My mum is like she, so: My mum is a teacher.",
+     "say": "My mum blank a teacher."
+    },
+    {
+     "q": "We ___ at school.",
+     "options": [
+      "are",
+      "is",
+      "am"
+     ],
+     "answer": 0,
+     "notes": {
+      "is": "We means more than one person, so we use are.",
+      "am": "Am only goes with I. We takes are."
+     },
+     "explain": "We goes with are: We are at school.",
+     "say": "We blank at school."
+    },
+    {
+     "q": "___ you happy?",
+     "options": [
+      "Are",
+      "Is",
+      "Am"
+     ],
+     "answer": 0,
+     "notes": {
+      "Is": "Is goes with he, she and it. You takes are.",
+      "Am": "Am only goes with I. You takes are."
+     },
+     "explain": "You goes with are, so the question is: Are you happy?",
+     "say": "blank you happy?"
+    }
+   ],
+   "grown": "👪 The verb to be in the present: am / is / are (Pre-A1 Starters), via subject pronoun substitution.",
+   "pack": "en-a1"
+  },
+  {
+   "id": "en.a1.plural",
+   "title": "One cat, two cats",
+   "icon": "🐱",
+   "at": {
+    "realm": "a1",
+    "skill": "grammar"
+   },
+   "match": [
+    {
+     "re": "plural|more than one|add -?s\\b",
+     "field": "explain"
+    }
+   ],
+   "art": "lesson_en_a1_plural",
+   "art_alt": "Hoot the owl counts animals in the meadow",
+   "hook": {
+    "text": "Hoot the owl is counting the animals for the picnic list. But the list looks funny: three cat, two dog… Something is missing at the end of the words!",
+    "say": "Hoot the owl is counting the animals for the picnic list. But the list looks funny: three cat, two dog… Something is missing at the end of the words!"
+   },
+   "discover": {
+    "kind": "suffix",
+    "stamp": "s",
+    "text": "Drag the s stamp onto the words that need it. You can also tap a word to stamp it.",
+    "hint": "Look at the number. Only one? No s. Two or more? Add s!",
+    "items": [
+     {
+      "pre": "3",
+      "base": "cat",
+      "need": true,
+      "why": "Three is more than one: cats."
+     },
+     {
+      "pre": "1",
+      "base": "frog",
+      "need": false,
+      "why": "Just one frog, so no s!"
+     },
+     {
+      "pre": "2",
+      "base": "dog",
+      "need": true,
+      "why": "Two is more than one: dogs."
+     },
+     {
+      "pre": "4",
+      "base": "bird",
+      "need": true,
+      "why": "Four is more than one: birds."
+     },
+     {
+      "pre": "1",
+      "base": "bee",
+      "need": false,
+      "why": "Just one bee, so no s!"
+     },
+     {
+      "pre": "5",
+      "base": "apple",
+      "need": true,
+      "why": "Five is more than one: apples."
+     }
+    ],
+    "say": "Drag the s stamp onto the words that need it. You can also tap a word to stamp it."
+   },
+   "rule": {
+    "text": "One thing: no s, like one cat. More than one: add s, like two cats and three dogs.",
+    "examples": [
+     "one cat → two cats",
+     "one apple → five apples",
+     "A few special words change instead: one foot → two feet."
+    ],
+    "say": "One thing: no s, like one cat. More than one: add s, like two cats and three dogs.",
+    "sayEx": [
+     "one cat, two cats",
+     "one apple, five apples",
+     "A few special words change instead: one foot, two feet."
+    ]
+   },
+   "check": [
+    {
+     "q": "I can see three ___.",
+     "options": [
+      "birds",
+      "bird",
+      "a bird"
+     ],
+     "answer": 0,
+     "notes": {
+      "bird": "Three is more than one, so add s: birds.",
+      "a bird": "A bird means one bird, but the sentence says three."
+     },
+     "explain": "Three is more than one, so: three birds.",
+     "say": "I can see three blank."
+    },
+    {
+     "q": "There is one ___ on the bed.",
+     "options": [
+      "cat",
+      "cats",
+      "two cats"
+     ],
+     "answer": 0,
+     "notes": {
+      "cats": "One cat, so no s for just one.",
+      "two cats": "The sentence says one, not two."
+     },
+     "explain": "Just one, so no s: one cat.",
+     "say": "There is one blank on the bed."
+    },
+    {
+     "q": "Which is right?",
+     "options": [
+      "four apples",
+      "four apple",
+      "a apples"
+     ],
+     "answer": 0,
+     "notes": {
+      "four apple": "Four is more than one, so it needs s: apples.",
+      "a apples": "A means one, so it can't go with apples. Say an apple, or four apples."
+     },
+     "explain": "Four is more than one, so: four apples.",
+     "say": "Which is right?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way. Count on your fingers! One finger up? No s. Two or more fingers up? Add s, like a little snake going sss: cats, dogs, birds!",
+    "examples": [
+     "☝️ one hat",
+     "✌️ two hats",
+     "🖐️ five stars"
+    ],
+    "discover": {
+     "kind": "suffix",
+     "stamp": "s",
+     "text": "Finger check! Stamp s only where there's more than one.",
+     "hint": "One finger? No s. Two or more? Stamp the s!",
+     "items": [
+      {
+       "pre": "2",
+       "base": "hat",
+       "need": true,
+       "why": "Two fingers up: hats."
+      },
+      {
+       "pre": "1",
+       "base": "sun",
+       "need": false,
+       "why": "One finger up: just one sun, no s."
+      },
+      {
+       "pre": "6",
+       "base": "star",
+       "need": true,
+       "why": "Six is more than one: stars."
+      },
+      {
+       "pre": "1",
+       "base": "ball",
+       "need": false,
+       "why": "One finger up: just one ball, no s."
+      }
+     ],
+     "say": "Finger check! Stamp s only where there's more than one."
+    },
+    "say": "Here's another way. Count on your fingers! One finger up? No s. Two or more fingers up? Add s, like a little snake going sss: cats, dogs, birds!"
+   },
+   "check2": [
+    {
+     "q": "Look at the two ___!",
+     "options": [
+      "ducks",
+      "duck",
+      "a duck"
+     ],
+     "answer": 0,
+     "notes": {
+      "duck": "Two is more than one, so add s: ducks.",
+      "a duck": "A duck means one, but the sentence says two."
+     },
+     "explain": "Two is more than one: two ducks.",
+     "say": "Look at the two blank!"
+    },
+    {
+     "q": "I have one ___.",
+     "options": [
+      "pencil",
+      "pencils",
+      "two pencils"
+     ],
+     "answer": 0,
+     "notes": {
+      "pencils": "Just one, so no s: one pencil.",
+      "two pencils": "The sentence says one, not two."
+     },
+     "explain": "Just one: one pencil.",
+     "say": "I have one blank."
+    },
+    {
+     "q": "Which is right?",
+     "options": [
+      "five cakes",
+      "five cake",
+      "a cakes"
+     ],
+     "answer": 0,
+     "notes": {
+      "five cake": "Five is more than one, so it needs s: cakes.",
+      "a cakes": "A means one, so say a cake, or five cakes."
+     },
+     "explain": "Five is more than one: five cakes.",
+     "say": "Which is right?"
+    }
+   ],
+   "grown": "👪 Regular plural nouns with -s (Pre-A1 Starters). Irregular plurals (feet, mice, children) are only mentioned here; they get their own lesson later.",
+   "pack": "en-a1"
+  },
+  {
+   "id": "en.a1.place",
+   "title": "in, on, under",
+   "icon": "📦",
+   "at": {
+    "realm": "a1",
+    "skill": "vocab"
+   },
+   "match": [
+    {
+     "re": "\\binside\\b|on top|touching the top|\\bbelow\\b|under means",
+     "field": "explain"
+    }
+   ],
+   "art": "lesson_en_a1_place",
+   "art_alt": "Puffbun hides under the table while Lily counts",
+   "hook": {
+    "text": "Puffbun loves hide-and-seek! Lily is counting to ten. Can you hide Puffbun in the places the words say?",
+    "say": "Puffbun loves hide-and-seek! Lily is counting to ten. Can you hide Puffbun in the places the words say?"
+   },
+   "discover": {
+    "kind": "spots",
+    "scene": "table",
+    "token": "pet_bunny",
+    "text": "Drag Puffbun to the right place. You can also tap the place.",
+    "hint": "On is on top. Under is below. In is inside.",
+    "tasks": [
+     {
+      "word": "on",
+      "text": "Put Puffbun ON the table.",
+      "say": "Put Puffbun ON the table."
+     },
+     {
+      "word": "under",
+      "text": "Now put Puffbun UNDER the table.",
+      "say": "Now put Puffbun UNDER the table."
+     },
+     {
+      "word": "in",
+      "text": "Now put Puffbun IN the basket.",
+      "say": "Now put Puffbun IN the basket."
+     }
+    ],
+    "say": "Drag Puffbun to the right place. You can also tap the place."
+   },
+   "rule": {
+    "text": "In means inside. On means on top. Under means below.",
+    "examples": [
+     "The bunny is in the basket.",
+     "The cup is on the table.",
+     "The ball is under the bed."
+    ],
+    "say": "In means inside. On means on top. Under means below.",
+    "sayEx": [
+     "The bunny is in the basket.",
+     "The cup is on the table.",
+     "The ball is under the bed."
+    ]
+   },
+   "check": [
+    {
+     "q": "The ball is inside the box. The ball is ___ the box.",
+     "options": [
+      "in",
+      "on",
+      "under"
+     ],
+     "answer": 0,
+     "notes": {
+      "on": "On means on top. Inside is in.",
+      "under": "Under means below. Inside is in."
+     },
+     "explain": "Inside something is in: in the box.",
+     "say": "The ball is inside the box. The ball is blank the box."
+    },
+    {
+     "q": "The cat is sitting on top of the bed. The cat is ___ the bed.",
+     "options": [
+      "on",
+      "in",
+      "under"
+     ],
+     "answer": 0,
+     "notes": {
+      "in": "In means inside. On top is on.",
+      "under": "Under means below. On top is on."
+     },
+     "explain": "On top of something is on: on the bed.",
+     "say": "The cat is sitting on top of the bed. The cat is blank the bed."
+    },
+    {
+     "q": "The shoes are below the chair. The shoes are ___ the chair.",
+     "options": [
+      "under",
+      "on",
+      "in"
+     ],
+     "answer": 0,
+     "notes": {
+      "on": "On means on top. Below is under.",
+      "in": "In means inside. Below is under."
+     },
+     "explain": "Below something is under: under the chair.",
+     "say": "The shoes are below the chair. The shoes are blank the chair."
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way. Use your hands! Make a little cup with one hand. Put a finger inside the cup: in. Put a finger on top of your hand: on. Put a finger below your hand: under.",
+    "examples": [
+     "🤲 a finger inside = in",
+     "🖐️ a finger on top = on",
+     "👇 a finger below = under"
+    ],
+    "discover": {
+     "kind": "spots",
+     "scene": "bed",
+     "token": "pet_bunny",
+     "text": "Hide Puffbun again! Drag or tap the place.",
+     "hint": "In is inside the toy box. On is on top of the bed. Under is below the bed.",
+     "tasks": [
+      {
+       "word": "under",
+       "text": "Put Puffbun UNDER the bed.",
+       "say": "Put Puffbun UNDER the bed."
+      },
+      {
+       "word": "in",
+       "text": "Put Puffbun IN the toy box.",
+       "say": "Put Puffbun IN the toy box."
+      },
+      {
+       "word": "on",
+       "text": "Put Puffbun ON the bed.",
+       "say": "Put Puffbun ON the bed."
+      }
+     ],
+     "say": "Hide Puffbun again! Drag or tap the place."
+    },
+    "say": "Here's another way. Use your hands! Make a little cup with one hand. Put a finger inside the cup: in. Put a finger on top of your hand: on. Put a finger below your hand: under."
+   },
+   "check2": [
+    {
+     "q": "The fish swims inside the water. The fish is ___ the water.",
+     "options": [
+      "in",
+      "on",
+      "under"
+     ],
+     "answer": 0,
+     "notes": {
+      "on": "On means on top. The fish is inside the water, so it's in.",
+      "under": "Under means below. The fish is inside the water: in."
+     },
+     "explain": "Inside the water: in the water.",
+     "say": "The fish swims inside the water. The fish is blank the water."
+    },
+    {
+     "q": "My hat is on top of my head. My hat is ___ my head.",
+     "options": [
+      "on",
+      "in",
+      "under"
+     ],
+     "answer": 0,
+     "notes": {
+      "in": "In means inside. A hat sits on top: on.",
+      "under": "Under means below. A hat sits on top: on."
+     },
+     "explain": "On top of my head: on my head.",
+     "say": "My hat is on top of my head. My hat is blank my head."
+    },
+    {
+     "q": "The dog is hiding below the table. The dog is ___ the table.",
+     "options": [
+      "under",
+      "on",
+      "in"
+     ],
+     "answer": 0,
+     "notes": {
+      "on": "On means on top. Below is under.",
+      "in": "In means inside. Below is under."
+     },
+     "explain": "Below the table: under the table.",
+     "say": "The dog is hiding below the table. The dog is blank the table."
+    }
+   ],
+   "grown": "👪 Prepositions of place in / on / under (Pre-A1 Starters). Next to, behind, in front of and between come in the next A1 batch.",
+   "pack": "en-a1"
+  },
+  {
+   "id": "en.a1.qwords",
+   "title": "Who? Where? What?",
+   "icon": "❓",
+   "at": {
+    "realm": "a1",
+    "skill": "reading"
+   },
+   "match": [
+    {
+     "re": "^(Who|Where|What)\\b",
+     "field": "q"
+    },
+    {
+     "opts": [
+      "who",
+      "where",
+      "what"
+     ],
+     "need": 2
+    }
+   ],
+   "art": "lesson_en_a1_qwords",
+   "art_alt": "Hoot the owl opens a letter full of question bubbles",
+   "hook": {
+    "text": "Hoot found a story letter, but all the answers fell out and got mixed up! The question words can tell us what kind of answer to look for.",
+    "say": "Hoot found a story letter, but all the answers fell out and got mixed up! The question words can tell us what kind of answer to look for."
+   },
+   "discover": {
+    "kind": "sort",
+    "text": "Drag each answer to the question it fits: Who, Where or What?",
+    "hint": "Who is a person or an animal. Where is a place. What is a thing.",
+    "bins": [
+     {
+      "id": "who",
+      "label": "Who?",
+      "icon": "🧑"
+     },
+     {
+      "id": "where",
+      "label": "Where?",
+      "icon": "📍"
+     },
+     {
+      "id": "what",
+      "label": "What?",
+      "icon": "🎁"
+     }
+    ],
+    "items": [
+     {
+      "t": "Mrs Lee",
+      "icon": "👩‍🏫",
+      "bin": "who",
+      "why": "Mrs Lee is a person, so she answers Who?"
+     },
+     {
+      "t": "in the park",
+      "icon": "🌳",
+      "bin": "where",
+      "why": "In the park is a place, so it answers Where?"
+     },
+     {
+      "t": "a red ball",
+      "icon": "🔴",
+      "bin": "what",
+      "why": "A red ball is a thing, so it answers What?"
+     },
+     {
+      "t": "my grandma",
+      "icon": "👵",
+      "bin": "who",
+      "why": "My grandma is a person: Who?"
+     },
+     {
+      "t": "at school",
+      "icon": "🏫",
+      "bin": "where",
+      "why": "At school is a place: Where?"
+     },
+     {
+      "t": "a cake",
+      "icon": "🎂",
+      "bin": "what",
+      "why": "A cake is a thing: What?"
+     },
+     {
+      "t": "under the tree",
+      "icon": "🌲",
+      "bin": "where",
+      "why": "Under the tree is a place: Where?"
+     },
+     {
+      "t": "Puffbun",
+      "icon": "🐰",
+      "bin": "who",
+      "why": "Puffbun is an animal friend: Who?"
+     }
+    ],
+    "say": "Drag each answer to the question it fits: Who, Where or What?"
+   },
+   "rule": {
+    "text": "Who asks about a person or an animal. Where asks about a place. What asks about a thing. Find the question word first, then look for that kind of answer in the story!",
+    "examples": [
+     "Who is at the door? Grandma.",
+     "Where is the cat? On the bed.",
+     "What is in the bag? A book."
+    ],
+    "say": "Who asks about a person or an animal. Where asks about a place. What asks about a thing. Find the question word first, then look for that kind of answer in the story!",
+    "sayEx": [
+     "Who is at the door? Grandma.",
+     "Where is the cat? On the bed.",
+     "What is in the bag? A book."
+    ]
+   },
+   "check": [
+    {
+     "text": "Mia has a kite. She flies it in the park with her dad.",
+     "q": "Where does Mia fly the kite?",
+     "options": [
+      "in the park",
+      "her dad",
+      "a kite"
+     ],
+     "answer": 0,
+     "notes": {
+      "her dad": "Her dad is a person. That answers Who?, not Where?",
+      "a kite": "A kite is a thing. That answers What?, not Where?"
+     },
+     "explain": "Where asks for a place. The story says: in the park.",
+     "say": "Mia has a kite. She flies it in the park with her dad. Where does Mia fly the kite?"
+    },
+    {
+     "text": "Mia has a kite. She flies it in the park with her dad.",
+     "q": "Who flies the kite with Mia?",
+     "options": [
+      "her dad",
+      "in the park",
+      "a kite"
+     ],
+     "answer": 0,
+     "notes": {
+      "in the park": "In the park is a place. That answers Where?, not Who?",
+      "a kite": "A kite is a thing. That answers What?, not Who?"
+     },
+     "explain": "Who asks for a person. The story says: with her dad.",
+     "say": "Mia has a kite. She flies it in the park with her dad. Who flies the kite with Mia?"
+    },
+    {
+     "text": "Mia has a kite. She flies it in the park with her dad.",
+     "q": "What does Mia have?",
+     "options": [
+      "a kite",
+      "in the park",
+      "her dad"
+     ],
+     "answer": 0,
+     "notes": {
+      "in the park": "In the park is a place. That answers Where?",
+      "her dad": "Her dad is a person. That answers Who?"
+     },
+     "explain": "What asks for a thing. The story says: Mia has a kite.",
+     "say": "Mia has a kite. She flies it in the park with her dad. What does Mia have?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way. Each question word is a treasure map! Who points to people and animals. Where points to places, and place answers often start with in, on, at or under. What points to things.",
+    "examples": [
+     "Who? → 🧑 people and animals",
+     "Where? → 📍 in…, on…, at…, under…",
+     "What? → 🎁 things"
+    ],
+    "discover": {
+     "kind": "sort",
+     "text": "Follow the treasure map! Drag each answer to its question.",
+     "hint": "Does it start with in, on or at? Then it's a place: Where?",
+     "bins": [
+      {
+       "id": "who",
+       "label": "Who?",
+       "icon": "🧑"
+      },
+      {
+       "id": "where",
+       "label": "Where?",
+       "icon": "📍"
+      },
+      {
+       "id": "what",
+       "label": "What?",
+       "icon": "🎁"
+      }
+     ],
+     "items": [
+      {
+       "t": "Grandpa",
+       "icon": "👴",
+       "bin": "who",
+       "why": "Grandpa is a person: Who?"
+      },
+      {
+       "t": "on the bus",
+       "icon": "🚌",
+       "bin": "where",
+       "why": "On the bus starts with on, a place: Where?"
+      },
+      {
+       "t": "a sandwich",
+       "icon": "🥪",
+       "bin": "what",
+       "why": "A sandwich is a thing: What?"
+      },
+      {
+       "t": "at home",
+       "icon": "🏠",
+       "bin": "where",
+       "why": "At home starts with at, a place: Where?"
+      }
+     ],
+     "say": "Follow the treasure map! Drag each answer to its question."
+    },
+    "say": "Here's another way. Each question word is a treasure map! Who points to people and animals. Where points to places, and place answers often start with in, on, at or under. What points to things."
+   },
+   "check2": [
+    {
+     "text": "Sam and his cat sit on the sofa. They eat popcorn.",
+     "q": "Who sits with Sam?",
+     "options": [
+      "his cat",
+      "on the sofa",
+      "popcorn"
+     ],
+     "answer": 0,
+     "notes": {
+      "on the sofa": "On the sofa is a place. That answers Where?",
+      "popcorn": "Popcorn is a thing. That answers What?"
+     },
+     "explain": "Who asks for a person or animal: his cat.",
+     "say": "Sam and his cat sit on the sofa. They eat popcorn. Who sits with Sam?"
+    },
+    {
+     "text": "Sam and his cat sit on the sofa. They eat popcorn.",
+     "q": "Where do they sit?",
+     "options": [
+      "on the sofa",
+      "his cat",
+      "popcorn"
+     ],
+     "answer": 0,
+     "notes": {
+      "his cat": "His cat is an animal. That answers Who?",
+      "popcorn": "Popcorn is a thing. That answers What?"
+     },
+     "explain": "Where asks for a place: on the sofa.",
+     "say": "Sam and his cat sit on the sofa. They eat popcorn. Where do they sit?"
+    },
+    {
+     "text": "Sam and his cat sit on the sofa. They eat popcorn.",
+     "q": "What do they eat?",
+     "options": [
+      "popcorn",
+      "on the sofa",
+      "his cat"
+     ],
+     "answer": 0,
+     "notes": {
+      "on the sofa": "On the sofa is a place. That answers Where?",
+      "his cat": "His cat is an animal. That answers Who?"
+     },
+     "explain": "What asks for a thing: popcorn.",
+     "say": "Sam and his cat sit on the sofa. They eat popcorn. What do they eat?"
+    }
+   ],
+   "grown": "👪 Wh- question words (Pre-A1 Starters) as a reading strategy: identify the question word, then scan for that type of answer (person / place / thing).",
+   "pack": "en-a1"
+  }
+ ]
+}

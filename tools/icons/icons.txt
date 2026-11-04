@@ -335,3 +335,4 @@
 📕|red-book|a closed red book
 🌲|pine|a pine tree
 ⚠|warning|a yellow warning triangle
+🎒|backpack|a pink school backpack with a lesson scroll peeking out (lesson scroll shelf)

@@ -26,7 +26,7 @@ function renderNav() {
 }
 // every running activity is stopped when the screen changes (each module defines its own WR.stopX)
 // (the gap games of js/gap-round.js are stopped through WR.gapGames)
-const STOPS = ["stopLesson", "stopSpeaking", "stopWriting", "stopStory", "stopPlacement", "stopMath", "stopPhonics", "stopCharms"];
+const STOPS = ["stopLesson", "stopSpeaking", "stopWriting", "stopStory", "stopPlacement", "stopMath", "stopPhonics", "stopCharms", "stopLearn"];
 /* ↩️ The "back" of a realm activity (Echo Well, Story Quill, Storybook, gap games, lessons…) goes to WR.toRealm(rid): the
    realm, or the hub that opened it. WR.from = { screen, arg, label } is set by a hub that borrows a realm's activity (the
    🦁 Singapore levels hub opens Echo Well / Story Quill of the matching realm) and is cleared by any other screen change. */
@@ -147,7 +147,8 @@ const helloPills = s => { const phone = innerWidth < 600, pg = WR.STORY ? WR.sto
   const pill = (cls, id, full, short) => `<span class="pill ${cls}"${id ? ` id="${id}" aria-label="${full}"` : ""}>${phone && short ? short : full}</span>`;
   return [phone ? "" : pill("", "", `✅ ${s.totalCorrect} correct answers`),
     WR.STORY ? pill("book-pill", "bookPill", `📜 Storybook ${pg}/6 pages`, `📜 Story ${pg}/6`) : "",
-    pill("mirror-pill", "mirrorPill", lv ? `🪞 Mirror says ${lv}` : "🪞 Find my level", lv ? `🪞 Level ${lv}` : "🪞 Find level")].join(""); };
+    pill("mirror-pill", "mirrorPill", lv ? `🪞 Mirror says ${lv}` : "🪞 Find my level", lv ? `🪞 Level ${lv}` : "🪞 Find level"),
+    WR.Learn && WR.Learn.all().length && !phone ? pill("bag-pill", "bagPill", `🎒 Lesson scrolls ${WR.Learn.earned()}/${WR.Learn.all().length}`, `🎒 ${WR.Learn.earned()}/${WR.Learn.all().length}`) : ""].join(""); };
 WR.screens.home = () => {
   WR.ensureDaily();
   const s = WR.state, sgTrack = !!WR.SG && WR.SG.track() === "sg", due = WR.Garden ? WR.Garden.dueCount() : 0;
@@ -188,6 +189,7 @@ WR.screens.home = () => {
   if (sgTrack) WR.SG.bindMap();
   WR.$("#mirrorPill").onclick = () => WR.retakePlacement();
   const bp = WR.$("#bookPill"); if (bp) bp.onclick = () => WR.openStorybook();
+  const bag = WR.$("#bagPill"); if (bag) bag.onclick = () => WR.go("scrolls", { screen: "home" });
   const wp = WR.$("#wardPill"); if (wp) wp.onclick = e => { e.stopPropagation(); WR.go("wardrobe"); }; const gp = WR.$("#giftPill"); if (gp) gp.onclick = e => { e.stopPropagation(); WR.go("wardrobe", "rewards"); };
 };
 
@@ -243,18 +245,21 @@ const doorTile = (rid, d, seen) => { const all = doorGames(rid, d.id), open = al
   const status = open.length ? `<div class="waiting-tag">${open.length}/${all.length} game${all.length > 1 ? "s" : ""} open</div>` : `<div class="waiting-tag">🔒 ${left} more lesson${left > 1 ? "s" : ""}</div>`;
   return all.length ? `<div class="card skill-card door-tile door-${d.id}${open.length ? "" : " locked"}" data-door="${d.id}" role="button" tabindex="0">${fresh ? '<span class="bonus-tag new-tag">New!</span>' : ""}<span class="ico">${d.icon}</span><h3>${d.name}</h3>
     <div class="muted door-desc">${d.desc}</div>${status}</div>` : ""; };
+// 🧭 one skill on Today's path: tap = practise; its 📜 Learn chip (js/learn.js) opens the lesson(s) taught in front of it
+const skillCard = (rid, k, status) => `<div class="card skill-card" data-k="${k.id}"><span class="ico">${k.icon}</span><h3>${k.name}</h3><div class="muted" style="font-size:.85rem;font-weight:700">${k.desc}</div>${status}${WR.Learn ? WR.Learn.chipHTML(WR.Learn.forSkill(rid, k.id), { corner: true }) : ""}</div>`;
 WR.screens.realm = rid => {
   const r = WR.realmById(rid), seen = WR.bonusSeenInit(); lastDoor = null;
   const status = k => { const p = (WR.state.progress[rid] || {})[k], w = WR.waitingText(rid, k);
     return p ? `<div class="crowns">${tileCrowns(rid, k)}${/^🎁/.test(w) ? ` <span class="waiting-tag">${w.replace(/ lessons? waiting!/, " new")}</span>` : ""}</div>` : `<div class="waiting-tag">${w}</div>`; };
   WR.view(`<div class="fade-in realm-screen"><div class="realm-hero">${WR.img(r.bg, "bg")}<div class="ov"><span class="lvl-badge">${r.level}</span><b class="title" style="font-size:1.5rem">${r.emoji} ${r.name}</b>
     <p style="margin:.3em 0;font-weight:700">${WR.esc(r.blurb)}</p><span class="pill">Game mode: ${r.modeName}</span></div></div>
-    <div class="row realm-top" style="margin:12px 0"><button class="btn ghost small" id="backMap">← Map</button></div>
+    <div class="row realm-top" style="margin:12px 0"><button class="btn ghost small" id="backMap">← Map</button>${WR.Learn ? WR.Learn.bagPill("realmBag") : ""}</div>
     <h2 class="realm-sec">🧭 Today's path</h2>
-    <div class="grid g4 path-grid">${WR.SKILLS.map(k => `<div class="card skill-card" data-k="${k.id}"><span class="ico">${k.icon}</span><h3>${k.name}</h3><div class="muted" style="font-size:.85rem;font-weight:700">${k.desc}</div>${status(k.id)}</div>`).join("")}</div>
+    <div class="grid g4 path-grid">${WR.SKILLS.map(k => skillCard(rid, k, status(k.id))).join("")}</div>
     <h2 class="realm-sec" id="bonusHead">🎁 Bonus games</h2>
     <div class="door-row" id="doorRow">${DOORS.map(d => doorTile(rid, d, seen)).join("")}</div></div>`);
   WR.$("#backMap").onclick = () => WR.go("home");
+  if (WR.Learn) { WR.Learn.bindChips(WR.$("#main"), { screen: "realm", arg: rid }); const bp = WR.$("#realmBag"); if (bp) bp.onclick = () => WR.go("scrolls", { screen: "realm", arg: rid }); }
   // only the skill cards: the bottom tab bar buttons also carry data-k and must keep their own handler
   WR.$("#main").querySelectorAll(".skill-card[data-k]").forEach(c => c.onclick = () => { const k = WR.SKILLS.find(x => x.id === c.dataset.k); if (!k) return; WR.startLesson({ realm: rid, skill: k.id, key: k.id, title: `${k.name} · ${r.modeName}` }); });
   document.querySelectorAll("#doorRow [data-door]").forEach(el => el.onclick = () => { const d = el.dataset.door;

@@ -7,6 +7,7 @@ Writes:
 Usage:
   python3 tools/install_story_img.py <id> <png-or-jpg-path>
   python3 tools/install_story_img.py --batch id1=path1 id2=path2 …
+  python3 tools/install_story_img.py --dir lessons --batch id=path …   (📜 lesson hook art → assets/lessons/<id>.jpg)
 
 Never Higgsfield. Match existing chapter-3 files (story_a1_3.jpg) for size/format.
 """
@@ -21,18 +22,18 @@ SIZE = (960, 720)
 JPG_Q, WEBP_Q = 88, 80
 
 
-def install(img_id: str, src: str) -> tuple[str, str]:
-    """Convert src → assets/stories/<id>.jpg + assets/web/<id>.webp. Returns the two paths."""
+def install(img_id: str, src: str, folder: str = STORIES) -> tuple[str, str]:
+    """Convert src → assets/<folder>/<id>.jpg + assets/web/<id>.webp. Returns the two paths."""
     if not img_id or "/" in img_id or "\\" in img_id or ".." in img_id:
         raise SystemExit(f"bad id: {img_id!r}")
     if not os.path.isfile(src):
         raise SystemExit(f"missing source: {src}")
-    os.makedirs(STORIES, exist_ok=True)
+    os.makedirs(folder, exist_ok=True)
     os.makedirs(WEB, exist_ok=True)
     im = Image.open(src).convert("RGB")
     if im.size != SIZE:
         im = im.resize(SIZE, Image.LANCZOS)
-    jpg = os.path.join(STORIES, f"{img_id}.jpg")
+    jpg = os.path.join(folder, f"{img_id}.jpg")
     webp = os.path.join(WEB, f"{img_id}.webp")
     im.save(jpg, "JPEG", quality=JPG_Q, optimize=True)
     im.save(webp, "WEBP", quality=WEBP_Q, method=6)
@@ -40,6 +41,11 @@ def install(img_id: str, src: str) -> tuple[str, str]:
 
 
 def main(argv: list[str]) -> None:
+    folder = STORIES
+    if len(argv) >= 2 and argv[0] == "--dir":
+        if argv[1] not in ("stories", "lessons"):
+            raise SystemExit(f"--dir must be stories or lessons, got {argv[1]!r}")
+        folder = os.path.join(ROOT, "assets", argv[1]); argv = argv[2:]
     if len(argv) >= 2 and argv[0] == "--batch":
         pairs = []
         for spec in argv[1:]:
@@ -52,7 +58,7 @@ def main(argv: list[str]) -> None:
     else:
         raise SystemExit(__doc__)
     for img_id, src in pairs:
-        jpg, webp = install(img_id, src)
+        jpg, webp = install(img_id, src, folder)
         print(f"{img_id}: {os.path.getsize(jpg)} B jpg, {os.path.getsize(webp)} B webp ← {src}")
 
 

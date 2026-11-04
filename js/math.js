@@ -81,16 +81,19 @@ const mascot = MW.mascot = (cls = "") => `<img class="sumi ${cls}" src="assets/w
 const tower = MW.tower = (cls = "") => `<img class="tower-art ${cls}" src="assets/web/times_tower.webp" onerror="this.onerror=null;this.src='assets/ui/times_tower.png'" alt="The Times-Table Tower">`;
 
 /* ---------- 🔢 the Number Kingdom hub ---------- */
+// 🔢 one topic card on the hub: tap = practise; its 📜 Learn chip (js/learn.js) opens the lesson taught in front of it
+const topicCard = (t, p) => `<div class="card skill-card mtopic ${t.story ? "story" : ""}" data-t="${t.id}"><span class="ico">${t.icon}</span><h3>${esc(t.name)}</h3><div class="muted" style="font-size:.82rem;font-weight:700">${esc(t.desc)}</div><div class="crowns">${p ? crownRow(MW.crownsFor(t.id)) : '<span class="muted" style="font-size:.8rem">not played</span>'}</div>${p ? `<div class="muted" style="font-size:.72rem">best ${Math.round(p.best * 100)}% · played ${p.plays}×</div>` : '<div class="muted" style="font-size:.72rem">endless questions</div>'}${WR.Learn ? WR.Learn.chipHTML(WR.Learn.forTopic(t.id)) : ""}</div>`;
+const lessonOf = q => WR.Learn ? WR.Learn.forTopic(q.topic || (L && L.topic))[0] || null : null;   // 📜 the lesson behind a question's topic
 WR.screens.math = arg => {
   MW.loadKatex();
   const m = MW.st(); if (typeof arg === "number") { m.grade = arg; WR.save(); }
   const g = m.grade, gi = g && gradeInfo(g), gc = g && MW.gradeCrowns(g);
   const chips = MG.GRADES.map(x => { const c = MW.gradeCrowns(x.g); return `<button class="gchip ${x.g === g ? "sel" : ""}" data-g="${x.g}"><b>${x.emoji} G${x.g}</b><small>${x.sg.replace("Primary ", "P").replace("Secondary ", "Sec ")}</small><i style="width:${c.have / c.max * 100}%"></i></button>`; }).join("");
-  const topics = g ? MG.gradeTopics(g).map(t => { const c = MW.crownsFor(t.id), p = m.topics[t.id]; return `<div class="card skill-card mtopic ${t.story ? "story" : ""}" data-t="${t.id}"><span class="ico">${t.icon}</span><h3>${esc(t.name)}</h3><div class="muted" style="font-size:.82rem;font-weight:700">${esc(t.desc)}</div><div class="crowns">${p ? crownRow(c) : '<span class="muted" style="font-size:.8rem">not played</span>'}</div>${p ? `<div class="muted" style="font-size:.72rem">best ${Math.round(p.best * 100)}% · played ${p.plays}×</div>` : '<div class="muted" style="font-size:.72rem">endless questions</div>'}</div>`; }).join("") : "";
+  const topics = g ? MG.gradeTopics(g).map(t => topicCard(t, m.topics[t.id])).join("") : "";
   WR.view(`<div class="fade-in math-hub"><div class="realm-hero math-hero">${WR.img("bg_math", "bg")}${mascot("hero-sumi")}<div class="ov"><span class="lvl-badge">Grades 1–12</span><b class="title" style="font-size:1.5rem">🔢 Number Kingdom</b>
     <p style="margin:.3em 0;font-weight:700">Sumi the star fairy guards a kingdom of numbers. Every grade is a new land, from counting stars in Button Meadow to calculus at the Calculus Crown.</p>
     <div class="row" style="gap:6px"><span class="pill">👑 ${MW.totalCrowns()} crowns</span><span class="pill" style="background:var(--mint)">🗼 ${MW.mastered()}/132 facts mastered</span><span class="pill" style="background:var(--butter)">✨ Maths level ${MW.level()}</span></div></div></div>
-    <div class="row" style="margin:12px 0;justify-content:space-between"><b class="title" style="font-size:1.1rem">Choose your grade</b><button class="btn ghost small" id="mPlace">🔮 Find my grade</button></div>
+    <div class="row" style="margin:12px 0;justify-content:space-between"><b class="title" style="font-size:1.1rem">Choose your grade</b><span class="row" style="gap:6px">${WR.Learn ? WR.Learn.bagPill("mathBag") : ""}<button class="btn ghost small" id="mPlace">🔮 Find my grade</button></span></div>
     <div class="gchips">${chips}</div>
     ${!g ? `<div class="card center start-grade"><h2>Where should your maths journey begin? ✨</h2><p class="muted" style="font-weight:700">Tap your grade above, or let Sumi find it with a quick 3-minute quiz.</p><button class="btn mint" id="mPlace2">🔮 Ask Sumi to find my grade</button><details class="grownup-note"><summary>👪 For grown-ups</summary>Singapore: P1–P6 = Grades 1–6, Sec 1–4 = Grades 7–10, JC 1–2 = Grades 11–12.</details></div>` : ""}
     <div class="card row tower-card" id="toDojo">${tower()}<div style="flex:1"><b class="title" style="font-size:1.25rem">🗼 Times-Table Tower</b><div class="muted" style="font-weight:700;font-size:.9rem">Multiplication & division dojo: tables 2–12, 60-second sprints, a mastery grid and long multiplication & division floors.</div>
@@ -99,6 +102,7 @@ WR.screens.math = arg => {
     ${g && g <= 3 && MW.Clock ? MW.Clock.card() : ""}<div class="grid g4">${topics}</div>` : ""}</div>`);
   document.querySelectorAll(".gchip").forEach(b => b.onclick = () => { m.grade = +b.dataset.g; WR.save(); WR.sfx("tap"); WR.screens.math(); });
   document.querySelectorAll("[data-t]").forEach(c => c.onclick = () => MW.startLesson({ topic: c.dataset.t }));
+  if (WR.Learn) { WR.Learn.bindChips(WR.$("#main"), { screen: "math" }); const bp = WR.$("#mathBag"); if (bp) bp.onclick = () => WR.go("scrolls", { screen: "math" }); }
   WR.$("#toDojo").onclick = () => WR.go("dojo");
   const ck = WR.$("#toClock"); if (ck) ck.onclick = () => WR.go("clock");
   const mx = WR.$("#mMixed"); if (mx) mx.onclick = () => MW.startLesson({ grade: g });
@@ -187,7 +191,7 @@ function render() {
       <div class="lstats" id="lstats">${WR.statsHTML([["⭐", L.starsEarned, "earned"], ["🔥", L.combo, "combo"]])}</div></div></div>`);
   const vb = WR.$("#vizBtn"); if (vb) vb.onclick = () => { if (L.vizOpen && !L.done) { L.vizOpen = false; WR.$("#mviz").innerHTML = ""; vb.textContent = vizLabel(); } else showViz(); };
   WR.$("#quitBtn").onclick = () => { const o = L; L = null; o.challenge ? WR.go("dojo") : WR.go("math"); };
-  WR.$("#hintBtn").onclick = () => { if (L.done) return; showMsg("hint", `💡 ${MW.html(q.hint)}`); };
+  WR.$("#hintBtn").onclick = () => { if (L.done) return; showMsg("hint", `💡 ${MW.html(q.hint)}${scrollLink(q)}`); };
   if (q.kind === "mcq") MW.onOpts(q, (o, b) => submit(o, b));
   else MW.bindInput(q, v => submit(v));
 }
@@ -254,6 +258,8 @@ function showViz(reveal) {
   if (live) tool.bind(v, L);
 }
 MW.redrawViz = () => showViz();
+// 📜 under a hint: the lesson scroll for this topic (opens over the question; not in guardian fights)
+const scrollLink = q => { const l = !L.guardian && lessonOf(q); return l ? `<div class="ln-hintlink">${WR.Learn.scrollBtn(l)}</div>` : ""; };
 function showMsg(cls, html) { const e = WR.$("#mexplain"); if (e) e.innerHTML = `<div class="explain ${cls === "hint" ? "" : cls}" style="${cls === "hint" ? "background:#FFF7D6" : ""}">${html}</div>`; }
 function petReact(ok) {
   const box = WR.$("#lpet"), bub = WR.$("#lbubble"); if (!box) return;
@@ -288,7 +294,7 @@ function submit(val, btn) {
   } else if (L.tries === 1) {
     WR.sfx("bad"); L.combo = 0; if (btn) { btn.classList.add("wrong"); btn.disabled = true; }
     const inp = WR.$("#mans") || WR.$("#main .csetter .cface"); if (inp) { inp.classList.add("shake"); setTimeout(() => inp.classList.remove("shake"), 450); inp.select && inp.select(); }
-    showMsg("bad", `💭 Not quite — have another go!${whyLine(MG.whyNote(q, val), "🤔")}<div style="margin-top:4px">💡 ${MW.html(q.hint)}</div>${L.viz ? `<div class="muted" style="margin-top:2px;font-weight:800">${look().help}</div>` : ""}`);
+    showMsg("bad", `💭 Not quite — have another go!${whyLine(MG.whyNote(q, val), "🤔")}<div style="margin-top:4px">💡 ${MW.html(q.hint)}</div>${scrollLink(q)}${L.viz ? `<div class="muted" style="margin-top:2px;font-weight:800">${look().help}</div>` : ""}`);
     if (L.viz && !L.vizOpen) showViz();
   } else {
     L.done = true; L.res[L.i] = 0; WR.countAnswer(false, "m:" + (q.topic || L.key)); m.answered = (m.answered || 0) + 1; WR.sfx("bad");
@@ -317,15 +323,17 @@ function finish() {
   L = null;
   const head = gd ? (won ? `${esc(gd.name)} is beaten! 🛡️✨` : `${esc(gd.name)} flew off to practise! 💨`) : crowns === 3 ? "Perfect! 👑" : crowns >= 1 ? "Well done! 🌟" : "Keep practising! 🌱";
   const art = gd && WR.asset(gd.art) ? WR.img(gd.art, "res-sumi gres") : mascot("res-sumi");
+  const nudge = WR.Learn && o.topic && !gd && score < 0.6 ? WR.Learn.nudgeHTML(WR.Learn.nudgeFor(WR.Learn.forTopic(o.topic))) : "";   // 📜 a weak topic offers its lesson
   WR.view(`<div class="card result fade-in">${art}<h1>${head}</h1>${WR.starNote()}<div class="big">${crownRow(crowns)}</div>
     <h2>${o.correct} / ${n} solved${o.pts < o.correct ? ` <small class="muted">(${o.items.filter((_, k) => o.res[k] === 0.5).length} on the second try)</small>` : ""}</h2>
     <p class="muted" style="font-weight:800">⭐ ${o.starsEarned} stars earned · best combo ${o.maxCombo} · ✨ +${o.correct * 5 + 10} maths XP${streak ? ` · 🔥 streak ${WR.state.streak.count}` : ""}${crowns > before && !gd ? " · 🎉 new best!" : ""}</p>${gd && !won ? `<p class="muted" style="font-weight:800">You needed ${gd.need} sparkle hits and got ${o.pts}. Practise a few Grade ${esc(gd.band)} topics and try again! 🫶</p>` : ""}
-    <div class="petbox bounce" style="margin:10px auto">${WR.petHTML()}</div><div class="bubble">${lv ? `I reached level ${lv.level}! 🎉` : crowns >= 2 ? "Maths is magic with you! 💖" : "Let's try again together! 🫶"}</div>
+    ${nudge}<div class="petbox bounce" style="margin:10px auto">${WR.petHTML()}</div><div class="bubble">${lv ? `I reached level ${lv.level}! 🎉` : crowns >= 2 ? "Maths is magic with you! 💖" : "Let's try again together! 🫶"}</div>
     <div class="row" style="justify-content:center;margin-top:16px"><button class="btn" id="again">↻ Play again</button><button class="btn mint" id="back">${won ? "🏷️ Open my Sticker Book" : o.challenge ? "Back to the Tower 🗼" : "Back to the Number Kingdom"}</button></div></div>`);
   if (crowns >= 2 || lv || won) WR.confetti(); WR.sfx(lv ? "level" : "good");
   if (o.onFinish) o.onFinish({ won, score, pts: o.pts, crowns });   // 🛡️ guardian hook (rewards, stickers)
   WR.$("#again").onclick = () => o.replay ? o.replay() : MW.startLesson({ topic: o.topic, grade: o.grade, challenge: o.challenge });
   WR.$("#back").onclick = () => won ? WR.go("stickers", "guard") : o.challenge ? WR.go("dojo") : WR.go("math");
+  if (nudge) WR.Learn.bindNudge({ screen: "math" });
 }
 MW._dbg = () => L && L.items[L.i];
 MW.lesson = () => L;

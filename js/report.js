@@ -168,6 +168,7 @@ WR.Report.html = d => {
     <div class="card rp-card"><h2>🎯 Practise next</h2>${weak}</div>
     <div class="card rp-card"><h2>📖 English by skill and level</h2>${eng}</div>
     <div class="card rp-card"><h2>🔢 Maths by grade and topic</h2>${math}</div>
+    ${(WR.reportCards || []).map(f => f(d)).join("")}
     <div class="card rp-card rp-tips"><h2>💡 Tips for grown-ups</h2><ul>${WR.Report.tips(d).map(t => `<li>${t}</li>`).join("")}</ul></div>
     <p class="muted rp-foot">Saved with this adventure (and the ☁️ Cloud Castle when logged in). Only the newest 60 days are kept day by day.</p>
     <div class="row rp-actions"><button class="btn ghost small" id="rpBack">← Grown-ups</button><button class="btn small" id="rpDone">Done</button></div></div>`;

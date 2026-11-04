@@ -130,8 +130,12 @@ function flavour(it) {
   if (L.mode === "boss") return `<div class="muted" style="font-weight:800">⚔️ ${L.noTimer ? "Answer right to strike" : "Answer fast to strike"} ${WR.esc(curBoss().name)}!</div>`;
   return "";
 }
+// 📜 the lesson that teaches this item's idea (js/learn.js), for a corner button and a link under a wrong answer's note;
+// none in boss / dragon rounds (a timer or candles are running) or Mistake Garden reviews
+const lessonFor = it => WR.Learn && !L.review && L.mode !== "boss" && L.mode !== "dragon" ? WR.Learn.forItem(L.realm.id, it) : null;
 function qBody(it) {
-  let h = flavour(it);
+  const ls = lessonFor(it);
+  let h = (ls ? `<div class="ltools">${WR.Learn.scrollBtn(ls, "corner")}</div>` : "") + flavour(it);
   // 📜 T9: on phones the story shows in full on its first question; on the next questions of the same story a sticky
   // "📜 Story" chip opens it in a bottom sheet, so the question and answers stay together on screen
   if (it.passage) {
@@ -402,7 +406,7 @@ function answer(ok, it, extra = "") {
   const lost = (L.mode === "boss" || L.mode === "dragon") && L.hearts === 0;
   const wn = whyNot(ok, it);   // R19: a True/False note already quotes the line, so the rule line isn't repeated under it
   const last = L.i >= L.items.length - 1 || lost || ((L.mode === "boss" || L.mode === "dragon") && L.bossHP <= 0);
-  WR.$("#explain").innerHTML = `<div class="explain ${ok ? "good" : "bad"}">${ok ? "✅ Correct!" : "💭 Not quite."} ${extra}${wn}${wn && it.type === "tf" ? "" : `<div class="why-rule" style="font-weight:700;margin-top:4px">💡 ${WR.esc(it.explain)}</div>`}${transcript}</div>
+  WR.$("#explain").innerHTML = `<div class="explain ${ok ? "good" : "bad"}">${ok ? "✅ Correct!" : "💭 Not quite."} ${extra}${wn}${wn && it.type === "tf" ? "" : `<div class="why-rule" style="font-weight:700;margin-top:4px">💡 ${WR.esc(it.explain)}</div>`}${!ok && lessonFor(it) ? `<div class="ln-hintlink">${WR.Learn.scrollBtn(lessonFor(it))}</div>` : ""}${transcript}</div>
     <div class="row" style="margin-top:12px;justify-content:flex-end"><button class="btn ${ok ? "mint" : ""}" id="nextBtn">${last ? "See results ✨" : "Next →"}</button></div>`;
   const rp = WR.$("#replay"); if (rp) rp.onclick = () => WR.say(it.say);
   const hf = WR.$("#hearFull"); if (hf) hf.onclick = () => WR.say(it.type === "typed" ? it.full : it.passage ? it.passage.say : it.say);
@@ -430,6 +434,8 @@ function finish(lost) {
     beat ? "Boss defeated! ⚔️✨" : crowns === 3 ? "Perfect! 👑" : crowns >= 1 ? "Well done! 🌟" : "Keep practising! 🌱";
   // ➡️ T8: one clear next step (the next unplayed, else weakest, skill in this realm), with Play again / Back as secondaries
   const nx = L.review ? null : WR.nextSkill(L.realm.id, L.skill);
+  // 📜 a weak result (< 60%) offers the first lesson on this skill not yet passed (a soft nudge: practice never locks)
+  const nudge = WR.Learn && !L.review && L.skill && score < 0.6 ? WR.Learn.nudgeHTML(WR.Learn.nudgeFor(WR.Learn.forSkill(L.realm.id, L.skill))) : "";
   const mainBtn = L.review ? `<button class="btn mint" id="nextStep">Back to the garden 🌷</button>`
     : nx ? `<button class="btn mint" id="nextStep">Next: ${nx.icon} ${WR.esc(nx.name)} →</button>` : `<button class="btn mint" id="nextStep">Back to ${WR.esc(L.realm.name)} →</button>`;
   WR.view(`<div class="card result fade-in"><h1>${title}</h1>${WR.starNote()}
@@ -437,7 +443,7 @@ function finish(lost) {
     <h2>${L.correct} / ${n} correct</h2>
     <p class="muted" style="font-weight:800">⭐ ${L.starsEarned} stars earned · best combo ${L.maxCombo} ${newStreak ? `· 🔥 streak ${WR.state.streak.count} day${WR.state.streak.count > 1 ? "s" : ""}!` : ""}</p>
     <div class="next-row">${mainBtn}<div class="sec"><button class="btn ghost small" id="again">↻ Play again</button>${L.review || !nx ? "" : `<button class="btn ghost small" id="back">← ${WR.esc(L.realm.name)}</button>`}</div></div>
-    <div class="petbox bounce" style="margin:10px auto">${WR.petHTML()}</div>
+    ${nudge}<div class="petbox bounce" style="margin:10px auto">${WR.petHTML()}</div>
     <div class="bubble">${lv ? (lv.evolved ? `I evolved into ${WR.petInfo().stages[WR.petStage(lv.level)]}! 🌟` : `I reached level ${lv.level}! 🎉`) : crowns >= 2 ? "That was so fun! 💖" : "Let's try again together! 🫶"}</div>
     ${L.review ? `<p class="muted" style="font-weight:800">🌸 ${L.bloomed || 0} flower${L.bloomed === 1 ? "" : "s"} fully bloomed${L.bloomed ? ` (+${L.bloomed * 2}⭐)` : ""} · ${WR.Garden.dueCount()} still thirsty</p>` : ""}
     ${score < 0.6 && L.key ? `<p class="muted">Score 60% or more to count this skill towards unlocking the next realm.</p>` : ""}</div>`);
@@ -447,6 +453,7 @@ function finish(lost) {
   if (opts.nextLabel) WR.$("#nextStep").textContent = opts.nextLabel;
   WR.$("#again").onclick = () => opts.replay ? opts.replay() : WR.startLesson({ realm: opts.realm.id, skill: opts.skill, key: opts.key, title: opts.title });
   const bk = WR.$("#back"); if (bk) bk.onclick = () => leave(opts);
+  if (nudge) WR.Learn.bindNudge({ screen: "realm", arg: opts.realm.id });
   WR.$("#nextStep").onclick = () => opts.onNext ? opts.onNext() : nx && !opts.review ? WR.startLesson({ realm: opts.realm.id, skill: nx.id, key: nx.id, title: `${nx.name} · ${opts.realm.modeName}` }) : leave(opts);
   if (lv && lv.evolved) setTimeout(() => WR.modal(`<h2>✨ Evolution! ✨</h2><div class="petbox cheer" style="width:180px;height:180px;margin:auto">${WR.petHTML()}</div><p><b>${WR.userText(WR.state.pet.name)}</b> became <b>${WR.petInfo().stages[WR.petStage(lv.level)]}</b>!</p><button class="btn" onclick="this.closest('.modal-bg').remove()">Hooray!</button>`), 600);
 }

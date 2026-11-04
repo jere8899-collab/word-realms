@@ -8,7 +8,7 @@
 (function () {
 const WR = window.WR;
 const body = document.body;
-const FOCUS_SCREENS = /^(story|phonicsRound|charmsRound)$/;
+const FOCUS_SCREENS = /^(story|phonicsRound|charmsRound|learn)$/;   // learn: a 📜 Lesson (js/learn.js)
 const isFocus = s => FOCUS_SCREENS.test(s) || WR.gapGames.some(g => g.round === s);   // + every gap game's round (js/gap-round.js)
 WR.setFocus = on => body.classList.toggle("wr-focus", !!on);
 const wrap = (obj, name, before) => { const f = obj && obj[name]; if (typeof f !== "function" || f._ux) return; const g = function (...a) { before && before(...a); return f.apply(this, a); }; g._ux = true; obj[name] = g; };
@@ -56,7 +56,7 @@ if (window.visualViewport) {
    Back: closes an open pop-up → else in a round asks "Leave this lesson? Your stars so far are kept" → else goes to the
    previous screen (realm → map, Times-Table Tower → Maths …) → on the map it leaves the app as usual. */
 const trail = [];                                   // non-round screens since the map: [{ screen, arg }]
-const ROUND_DONE = ".result, .ch-done, .ph-done, .story-done, .sw-done";
+const ROUND_DONE = WR.ROUND_DONE;   // js/core.js: one list for the toasts and the Back button
 let popping = false;
 const trapOn = () => !!(history.state && history.state.wrTrap);
 const setTrap = () => { if (!trapOn()) try { history.pushState({ wrTrap: 1 }, ""); } catch (e) { } };

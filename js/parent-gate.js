@@ -171,7 +171,7 @@ const showGrownups = () => {
   WR.modal(`<h2>👪 Grown-ups</h2>
     <p class="muted" style="font-weight:700;margin-top:0">These settings stay open for 5 minutes, then the grown-up check comes back.</p>
     ${WR.screens.report ? `<button class="btn mint gu-report" id="guReport">📊 Learning Report<small>days played, skills, weak spots &amp; tips</small></button>` : ""}
-    <div class="row" style="justify-content:center;margin:6px 0"><button class="btn small ghost" id="guAbout">📚 What the games teach</button></div>
+    ${WR.Learn ? WR.Learn.grownLine() : ""}<div class="row" style="justify-content:center;margin:6px 0"><button class="btn small ghost" id="guAbout">📚 What the games teach</button></div>
     <label class="set-row"><span>🗝️ Teacher mode (open every realm)</span><input type="checkbox" id="guUl" ${s.settings.unlockAll ? "checked" : ""}></label>
     <div class="set-row" style="cursor:default"><span>🔢 Grown-up PIN <small class="muted" id="guPinState">${hasPin() ? "· on" : "· off (cash items stay locked)"}</small></span></div>
     <div class="row" style="justify-content:center"><input class="input" id="guPin" inputmode="numeric" pattern="[0-9]*" maxlength="4" placeholder="4 digits" style="max-width:130px;text-align:center;letter-spacing:6px" autocomplete="off">
