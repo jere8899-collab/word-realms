@@ -660,6 +660,8 @@ M.longMulSteps = (a, b) => { const bs = String(b).split("").reverse(); const out
 
 /* ====================== TOPICS ====================== */
 const TOPICS = [];
+// opt.id keeps an old id when a topic moves to another grade (saves, crowns and stickers are keyed by id), and opt.was
+// records the grade it came from (Grade Guardians keep counting it there). Read a topic's grade from t.grade, never from its id.
 const topic = (grade, id, name, icon, desc, gen, opt = {}) => TOPICS.push(Object.assign({ grade, id: `g${grade}.${id}`, name, icon, desc, gen }, opt));
 M._internal = { Q, num, mcq, mcqWhy, numWhy, T, NAMES, THINGS, COUNT_EMOJI, PASTEL, INK, LINE, esc, svgBox, cardSvg, tickAttr, xTicks, yUnit, xUnit, cellKey, figKey, hasCell, nearCells, gridPaper, gridSheet, gridCell, svgClock, pad2, hm, clockWords, h24, ampm, dur, SHAPES, svgShape, svgPie, picto, axes, svgBars, svgLine, svgPieChart, svgGeo, fitBox, toRad, toDeg, sinD, cosD, tanD, rotPt, dirPt, f1, xy, mid, vat, vdir, angSweep, angWedge, angText, rightPath, figCard, figShape, figEdge, figLab, figLens, figDot, figVtx, figRight, coin, emojiRows, table, colAdd, colSub, topic, TOPICS, gcd, lcm, rd, fmt, fdp, money, simp, fracTex, fracStr, mixedTex, sgn, poly, lin, paren, pm, undo, coef, ord, sum, asc, median, freqTotals, sqrtTex, surdTex, simpRad, matTex, matSvg, PLOT_BOX, plotFrame, svgPlane, svgParabola, ampPeriod, svgWave, svgStraight, diffPoly, evalPoly, svgCurve, svgTangent };
 M.TOPICS = TOPICS;

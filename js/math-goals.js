@@ -25,7 +25,9 @@ G.forGrade = grade => G.GUARDIANS.find(g => g.grades.includes(grade || 1));
 const rec = id => { const b = MW.st().bosses; return b[id] = b[id] || { won: false, best: 0, tries: 0 }; };
 const won = id => !!(MW.st().bosses[id] || {}).won;
 const bandTopics = gd => gd.grades.flatMap(g => MG.gradeTopics(g));
-G.passed = gd => bandTopics(gd).filter(t => (MW.st().topics[t.id] || {}).best >= PASS).length;
+// a topic that moved to another band (t.was, e.g. nets from Grade 6 to Grade 4) still counts where it was, so a guardian never falls asleep again
+const countTopics = gd => bandTopics(gd).concat(MG.TOPICS.filter(t => t.was && gd.grades.includes(t.was) && !gd.grades.includes(t.grade)));
+G.passed = gd => countTopics(gd).filter(t => (MW.st().topics[t.id] || {}).best >= PASS).length;
 G.ready = gd => G.passed(gd) >= NEED_TOPICS;
 // art: the painted portrait when it exists (assets/ui/mboss_<name>.png via tools/boss_art.py), else painted Sumi wearing the guardian's badge
 G.art = (gd, cls = "rb-art") => WR.asset(gd.art) ? WR.img(gd.art, cls) : `<span class="${cls} gfb">${MW.mascot()}<i>${gd.face}</i></span>`;

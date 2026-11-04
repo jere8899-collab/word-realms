@@ -13,7 +13,7 @@ const ID = 'g3.lines';
 const t = M.topic(ID);
 ok(t && t.grade === 3 && t.name === 'Train-Track Lines', `🚇 Train-Track Lines is a Grade 3 topic (${t && t.desc})`);
 ok(M.TOPICS.length >= 112, `it is one of ${M.TOPICS.length} maths topics (112 when it was added)`);
-{ const g = M.gradeTopics(3).map(x => x.id); ok(g.indexOf(ID) === g.indexOf('g3.perim') + 1 && g[g.length - 2] === 'g3.bargraph' && g[g.length - 1] === 'g3.story', 'it sits after Fence the Garden, before the bar graphs and word problems'); }
+{ const g = M.gradeTopics(3).map(x => x.id); ok(g.indexOf(ID) === g.indexOf('g3.angles') + 1 && g.indexOf('g3.angles') === g.indexOf('g3.area') + 1 && g.indexOf('g3.area') === g.indexOf('g3.perim') + 1 && g[g.length - 2] === 'g3.bargraph' && g[g.length - 1] === 'g3.story', 'it sits after Fence the Garden, Square-Tile Patio and Fan Angles, before the bar graphs and word problems'); }
 // read back from the SVG: grid units are (px − pad) / S
 const S = 16, PAD = 12, U = v => (v - PAD) / S;
 const segsOf = svg => [...svg.matchAll(/class="rl" x1="([\d.]+)" y1="([\d.]+)" x2="([\d.]+)" y2="([\d.]+)"/g)].map(m => [[U(+m[1]), U(+m[2])], [U(+m[3]), U(+m[4])]]);

@@ -33,9 +33,9 @@ const solidOf = faces => { const tri = faces.filter(f => f.length === 3).length,
 
 /* ---------- 1. generators (Node) ---------- */
 const t = M.topic(ID);
-ok(t && t.grade === 6 && t.name === 'Snip & Fold Nets', `✂️ Snip & Fold Nets is a Grade 6 topic (${t && t.desc})`);
+ok(t && t.grade === 4 && t.was === 6 && t.name === 'Snip & Fold Nets', `✂️ Snip & Fold Nets is a Grade 4 topic (MOE P4 nets; id g6.nets kept from Grade 6) (${t && t.desc})`);
 ok(M.TOPICS.length >= 111, `${M.TOPICS.length} maths topics (111 when Snip & Fold Nets was added)`);
-{ const g = M.gradeTopics(6).map(x => x.id); ok(g.indexOf(ID) === g.indexOf('g6.speed') + 1 && g[g.length - 2] === 'g6.piechart' && g[g.length - 1] === 'g6.story', 'it sits after Speedy Broomsticks; Pie Chart Picnic and the word problems stay last'); }
+{ const g = M.gradeTopics(4).map(x => x.id); ok(g.indexOf(ID) === g.indexOf('g4.symmetry') + 1 && g[g.length - 2] === 'g6.piechart' && g[g.length - 1] === 'g4.story', 'it sits after Mirror Pond; Pie Chart Picnic and the word problems stay last'); }
 ok(M.nets.HEXOS.length === 35 && M.nets.CUBE_NETS.length === 11, `there are 35 hexominoes and exactly 11 cube nets (${M.nets.HEXOS.length} / ${M.nets.CUBE_NETS.length})`);
 ok(M.nets.HEXOS.every(h => !!M.nets.foldCube(h) === isNet(h)), 'the game\'s dice-rolling fold agrees with an independent 3D-rotation fold on all 35 hexominoes');
 const kinds = {}, bad = [], wrong = [];
@@ -121,10 +121,10 @@ const fits = page => page.evaluate(() => document.documentElement.scrollWidth <=
       // replaying the same question pays less (anti-farm: first-correct only)
       const st = await p.evaluate(s => { const q = MathGen.make('g6.nets', s), k = q.uid || 'g6.nets|' + q.q; const a = WR.awardStars('m', k + '|t', 1), b = WR.awardStars('m', k + '|t', 1); return [a, b]; }, list[0]).catch(() => null);
       if (st) ok(st[0] >= st[1], `a replayed net pays no more than the first time (${st})`);
-      await p.evaluate(() => WR.go('math')); await p.waitForTimeout(300); await p.evaluate(() => { const b = [...document.querySelectorAll('[data-g]')].find(x => x.dataset.g === '6'); b && b.click(); }); await p.waitForTimeout(400);
-      ok(await p.locator('[data-t="g6.nets"]').count() === 1, 'the Grade 6 hub lists Snip & Fold Nets');
+      await p.evaluate(() => WR.go('math')); await p.waitForTimeout(300); await p.evaluate(() => { const b = [...document.querySelectorAll('[data-g]')].find(x => x.dataset.g === '4'); b && b.click(); }); await p.waitForTimeout(400);
+      ok(await p.locator('[data-t="g6.nets"]').count() === 1, 'the Grade 4 hub lists Snip & Fold Nets');
       ok(await p.evaluate(() => { const e = document.querySelector('[data-t="g6.nets"]'); return !/\p{Extended_Pictographic}/u.test(e.innerText) && !!e.querySelector('img.wr-icon, svg, .wr-icon'); }), 'its hub card shows a painted icon, not an emoji');
-      await p.locator('[data-t="g6.nets"]').scrollIntoViewIfNeeded(); await p.screenshot({ path: OUT + 'nets_06_hub_grade6.png' });
+      await p.locator('[data-t="g6.nets"]').scrollIntoViewIfNeeded(); await p.screenshot({ path: OUT + 'nets_06_hub_grade4.png' });
     }
     ok(!errors.length, `${w}px: no page errors ${errors.slice(0, 2)}`);
     await ctx.close();

@@ -26,6 +26,8 @@ LN.full = async id => { const i = LN.get(id); if (!i) return null; const pk = aw
 const st = () => WR.block("learn");
 LN.rec = id => st().done[id] || null;
 LN.isMath = l => !!(l && l.at && l.at.topic);
+// a maths lesson's grade comes from its topic (ids such as g6.nets keep their old grade number after a topic moves)
+const gradeOf = l => { const t = window.MathGen && MathGen.topic(l.at.topic); return t ? t.grade : +String(l.at.topic).replace(/^g(\d+).*/, "$1"); };
 // English lessons belong to a CEFR realm; a Singapore level borrows the lessons of its matching realm (js/sg-english.js)
 const mainRealm = rid => { const sg = WR.SG && WR.SG.level && WR.SG.level(String(rid).replace(/^sg-/, "")); return sg && sg.main ? sg.main : rid; };
 LN.forSkill = (rid, skill) => IDX.filter(x => x.at.realm === mainRealm(rid) && x.at.skill === skill);
@@ -647,7 +649,7 @@ LN.bindNudge = back => { const b = WR.$("#lnNudge"); if (b) b.onclick = () => LN
 
 /* ---------- 🎒 the Backpack: every Lesson Scroll, earned or waiting ---------- */
 const groupsOf = () => { const g = []; const add = (key, label, l) => { let x = g.find(y => y.key === key); if (!x) g.push(x = { key, label, list: [] }); x.list.push(l); };
-  IDX.forEach(l => { if (LN.isMath(l)) { const gr = +String(l.at.topic).replace(/^g(\d+).*/, "$1"); add("m" + gr, `🔢 Maths · Grade ${gr}`, l); }
+  IDX.forEach(l => { if (LN.isMath(l)) { const gr = gradeOf(l); add("m" + gr, `🔢 Maths · Grade ${gr}`, l); }
     else { const r = WR.realmById(l.at.realm); add("e" + l.at.realm, `${r ? r.emoji : "🏰"} English · ${r ? r.level + " " + r.name : l.at.realm}`, l); } });
   return g; };
 WR.screens.scrolls = back => {
@@ -669,7 +671,7 @@ LN.grownLine = () => { if (!IDX.length) return ""; const c = LN.summary();
 LN.reportCard = () => { if (!IDX.length) return "";
   return `<div class="card rp-card ln-report"><h3>📜 Lessons</h3><p class="muted" style="font-weight:700;margin:.2em 0 .5em">Short story lessons in front of the practice. ✅ learned first time · 🔁 after a second explanation · 🧩 still tricky · ○ not started</p>
     <table class="ln-rtab"><tbody>${IDX.map(l => { const [ic, why] = LN.statusOf(l.id), r = LN.rec(l.id);
-      return `<tr><td aria-label="${why}">${ic}</td><td><b>${esc(l.title)}</b><small>${LN.isMath(l) ? "Maths " + esc(l.at.topic.replace(/^g(\d+)\..*/, "G$1")) : "English " + esc(String(l.at.realm).toUpperCase())}</small></td><td>${r ? `${r.best}/3 · ${r.tries}×` : ""}</td></tr>`; }).join("")}</tbody></table></div>`; };
+      return `<tr><td aria-label="${why}">${ic}</td><td><b>${esc(l.title)}</b><small>${LN.isMath(l) ? "Maths " + "G" + gradeOf(l) : "English " + esc(String(l.at.realm).toUpperCase())}</small></td><td>${r ? `${r.best}/3 · ${r.tries}×` : ""}</td></tr>`; }).join("")}</tbody></table></div>`; };
 // 👪 the report screen draws every registered extra card (js/report.js WR.reportCards)
 (WR.reportCards = WR.reportCards || []).push(LN.reportCard);
 })();

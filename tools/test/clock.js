@@ -71,7 +71,7 @@ for (const id of ['g1.time', 'g2.time', 'g3.duration', 'g3.clock']) for (let s =
   if ([a, r, mid].some(z => !z.startsWith('<svg') || /NaN|undefined|Infinity/.test(z))) tbad.push(id + ' svg');
   if (sp.mode === 'read') { const [ha, ma] = handsOf(r.replace(/<g transform="translate\(16,16\)">/, '')).map(angleAt); if (C.hm(hourOf(ha, Math.round(ma / 6) % 60), Math.round(ma / 6) % 60) !== C.hm(q.data.h, q.data.m)) tbad.push(id + ' read hands ' + q.a);
     const counted = [...r.matchAll(/fill="#e0607a"[^>]*>(\d+)<\/text>/g)].map(m => +m[1]); if (counted.length !== Math.floor(sp.m / 5) || (counted.length && counted[counted.length - 1] !== Math.floor(sp.m / 5) * 5)) tbad.push(id + ' count labels ' + counted + ' for ' + sp.m);
-    if ((id === 'g3.clock') !== (sp.step === 1)) tbad.push(id + ' step'); }
+    if ((id === 'g3.clock' || (id === 'g2.time' && sp.m % 5 > 0)) !== (sp.step === 1)) tbad.push(id + ' step'); }
   if (sp.mode === 'wind' && id === 'g3.duration') { const end = q.q.match(/ends at (\d+:\d\d)/)[1], ct = V.clockTime(sp, { reveal: true }); if (C.hm(ct.h, ct.m) !== end || sp.goal !== q.val || !sp.end || !/stroke-dasharray="3 3"/.test(a) || /stroke-dasharray="3 3"/.test(r)) tbad.push('duration wind ' + q.q); }
 }
 ok(!tbad.length && tcov['g1.time read'] && tcov['g2.time read'] && tcov['g3.duration wind'] && tcov['g3.clock read'] && tcov['g3.clock wind'], `Clock Workshop models: count-the-minutes on every G1/G2 clock and G3 clock pictures, wind-the-hands on G3 durations / end / start times ${JSON.stringify(tcov)} ${tbad.slice(0, 3)}`);
