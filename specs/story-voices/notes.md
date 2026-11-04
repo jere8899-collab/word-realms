@@ -81,3 +81,8 @@ Paused first: BRIEF-T4B / BRIEF-T5 had no edits or commits (only reading); no �
 - Chose to KEEP the 'our hero' / storybook-pet MP3s as the fallback (no extra code: same fill rule; a pet with its default name still gets MP3s).
 - story-voices.js: typed-name lines must have no MP3 (device voice), every other line its MP3 + ledger; Read to me order with device lines, no overlap, line-start gaps logged. story.js expects the typed name.
 - STORY-NAMES tests: story.js all passed; story-voices.js 32/32 (181 typed-name lines device, 520 lines MP3). Full suite sn started.
+
+## Checkpoint 2026-11-05 ~02:40 SGT: STORY-NAMES ✅
+- Full suite "sn" 96/96 (art16, doubletap, story-voices timed out under 4-way load; each passed run singly: 14/14, 54/54, 33/33).
+- Commit 4bfc539 (STORY-NAMES) on brief/t4b-followups, merged to main as 3893490 with the highlight fix d8ace31 and BRIEF-T4B; live sw wr-fbb830d4966c.
+- Live 360x740 (/workspace/sn/live.js, log /workspace/sn/live.log): 9/9. A1 ch1 p1: 1 DEVICE "This is Zephyrine." 2 DEVICE "Zephyrine has a little pet called Sir Wobbles." 3–5 MP3 narrator_cb34e885955a / dbc0da91196f / bdcbea0f5c25. Gaps between MP3 starts are each line's length; headless device lines end at once, so the real device→MP3 gap needs a phone listen.

@@ -8,3 +8,7 @@
 - Stickers: skill stickers test WR.skillPassed (85%), label 'Score 85%+ in …'; earned stickers stay (stickers.got).
 - Tests: new t4b.js 17/17; pass-mark.js, mathgoals.js, maths-review.js, c6.js updated (seeds at 87.5%, 3 of 4 → Nearly there, then 4 of 4 → confirmed).
 - Sim (20,000 children, within 3 / 4 / 5 tries): A1 40% 0/0/0 · 60% 0.7/2.7/6.7 · 80% 48.8/71.6/85.9 · 90% 91.0/97.5/99.3 (3-of-4 rule: 80% child 80.8/92.5/97.4). A2, B1 within 1 point. specs/004-pass-mark/sim-t4b-*.json
+
+## Checkpoint 2026-11-05 ~02:45 SGT: BRIEF-T4B ✅
+- Commits de0d3b2 (cleanup) and f5a04de (feature), merged 3893490 and live. Full suite 96/96.
+- Live 360x740 (/workspace/t4blive/live.js): 12/12. 3 of 4 → "Nearly there! 3 of 4 this time (all 4 right shows it's ready). Your crown stays yours. Let's check again tomorrow"; 4 of 4 next day → "Crown confirmed! 💎"; Bramble fight 1/10, ⚔️ 0/9; Daily Mix 5 questions; no console errors. Screenshots t4b_live_*.png.
