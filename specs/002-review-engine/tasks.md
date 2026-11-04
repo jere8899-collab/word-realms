@@ -45,3 +45,21 @@
 - [x] T053 Full suite green (93 suites; cloud.js flake re-run singly ✅; garden.js updated for the 20 h rule)
 - [x] T054 build_data.py + build_sw.py, sync to deploy, commit db38453, merge to main, push, live 200
 - [x] T055 BRIEF-T2 row → ✅ with the commit; report in the brief's 4-part format
+
+## Follow-up (Jeremy, 2026-11-04 17:11 SGT): vocabulary reviews come back late
+
+Decisions: keep 3/10/30/90 as gaps between reviews; vocabulary gets both (a) and (b).
+
+- [x] F01 (a) `CONFIG.busy = { skills: ["vocab"], overdue: 8, perLesson: 4 }` + `RV.slots(scope)`: a vocabulary bank with ≥ 8 words waiting takes 4 review slots (4 new + 4 review, still 8). Used by `WR.buildItems` and the Singapore `fromBanks`.
+- [x] F02 (b) `RV.creditWord(lvl, word, ok)`: a graded Word Charms answer steps every existing vocab record of that level whose item asks for the word (right answer, or the word quoted in the question); same `RV.step` (20 h + due rule); no record is created for words never met in a lesson. Called from `WR.Charms.grade`.
+- [x] F03 Tests: review-engine.js §11b (config, 3 vs 4 slots, grammar stays 3, charm credit moves step 1→2, a repeat minutes later moves nothing, unseen words make no record, saved). The migration check now allows stars to grow (a daily gift on load), never shrink.
+- [x] F04 Re-measured (`tools/sim/brief-table.js`, one A1 vocabulary lesson a day; new row `a1/vocab+charms` adds one Word Charms round a day; `BUSY=overdue,slots` for what-ifs):
+
+| A1 vocabulary, day of review 1 / 2 / 3 / 4 (median) | 1 | 2 | 3 | 4 |
+|---|---|---|---|---|
+| Before (3 slots) | 4 | 23.5 | 55.5 | 137 |
+| (a) 4 slots when ≥ 8 waiting | 3.5 | 17 | 52 | 134.5 |
+| (a) + (b) a Word Charms round a day | 3.5 | 15 | 49 | 132 |
+| what-if: 5 slots when ≥ 8 waiting (not built) | 3 | 14 | 49 | 133.5 |
+
+Only ~17 of the 128 A1 vocabulary items ask for one of the 40 charm words, so (b) helps those words most (best item: day 12).

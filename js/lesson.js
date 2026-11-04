@@ -86,7 +86,7 @@ WR.buildItems = async (rid, skill, n = 8, o = {}) => {
     if (n < 6) return ps.slice(0, 1).flatMap(passageQs(scope)).slice(0, n);
     return ps.flatMap(passageQs(scope)).concat(rev ? rev.items : []);
   }
-  const pool = bank.filter(playable), rev = RV ? RV.pick(scope, pool, Math.min(RV.CONFIG.perLesson, n), { bucket: scope }) : [];
+  const pool = bank.filter(playable), rev = RV ? RV.pick(scope, pool, Math.min(RV.slots(scope), n), { bucket: scope }) : [];
   const skip = rev.length ? new Set(rev.map(it => it._rk.slice(scope.length + 1)).concat(rev.map(it => it._rv.for.slice(scope.length + 1)))) : null;
   const fresh = WR.freshPick(scope, pool, n - rev.length, skip).map(q => tagged(scope)(q));
   return rev.length ? WR.shuffle(fresh.concat(rev)) : fresh;
