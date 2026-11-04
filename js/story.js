@@ -15,13 +15,16 @@ const LAST = 4;   // pages per chapter; the word check comes after the last page
 
 const st = () => WR.block("stories");
 WR.storyState = st;
-const petName = () => (WR.state.pet && WR.state.pet.name) || (WR.petInfo() || {}).name || "your pet";
-/* 🎙️ STORY-VOICES: every story sentence is narrated by the recorded af_heart narrator, so the text can only hold words that
-   were recorded. The hero is "our hero" and the pet is its species' storybook name (Puffbun, Mochi Fox, Minty, …; 8 choices,
-   each recorded by tools/build_voice.py, which applies this same rule: STORY_PETS / story_fill there). A typed name can't be
-   pre-recorded, and reading it with the device voice mixed two voices inside one page. */
+/* 🎙️ STORY-NAMES (Jeremy, 2026-11-05): the story uses the child's own typed hero and pet names. Lines with a typed name can't be
+   pre-recorded, so the device voice reads just those lines (through the same guarded player: never on top of an MP3, and
+   answering, turning the page, tapping a word or leaving stops it). Every other line plays its af_heart MP3. Fallbacks, also
+   recorded (tools/build_voice.py STORY_PETS / story_fill): no hero name → "our hero"; a pet still called by its species'
+   storybook name (Puffbun, Mochi Fox, Minty, …) → that name, recorded too. */
 const storyPet = () => (WR.petInfo() || {}).name || "Puffbun";
-const fill = t => String(t).replace(/(^|[.!?…]["”’]?\s+|[“"‘])\{hero\}/g, "$1Our hero").replace(/\{hero\}/g, "our hero").replace(/\{pet\}/g, storyPet());
+const heroName = () => String(WR.state.name || "").trim();
+const petTyped = () => String((WR.state.pet && WR.state.pet.name) || "").trim() || storyPet();
+const fill = t => { const h = heroName(), s = String(t);
+  return (h ? s.replace(/\{hero\}/g, () => h) : s.replace(/(^|[.!?…]["”’]?\s+|[“"‘])\{hero\}/g, "$1Our hero").replace(/\{hero\}/g, "our hero")).replace(/\{pet\}/g, () => petTyped()); };   // functions: a typed "$&" stays as typed
 const plain = t => fill(t).replace(GL, "$1");
 const sentences = t => plain(t).match(/[^.!?]+[.!?]+[”’"]?\s*|[^.!?]+$/g).map(x => x.trim()).filter(Boolean);
 WR.Story = { fill, plain, sentences };
@@ -154,7 +157,7 @@ function finish() {
     <div class="story-pic">${pic(ch.img)}</div>
     ${tale}<p class="muted" style="font-weight:800;margin:0">Chapter ${n}: ${WR.esc(ch.title)}</p>
     <div class="fb-crowns">${WR.crownRow(crowns)}</div>
-    <p><b>${S.correct}/${LAST + 1}</b> questions right${stars ? ` · <b>+${stars} ⭐</b>` : " · stars already collected (new crowns still pay)"}${lv ? ` · ${WR.esc(petName())} reached Lv ${lv.level}!` : ""}</p>
+    <p><b>${S.correct}/${LAST + 1}</b> questions right${stars ? ` · <b>+${stars} ⭐</b>` : " · stars already collected (new crowns still pay)"}${lv ? ` · ${WR.esc(petTyped())} reached Lv ${lv.level}!` : ""}</p>
     ${shelf}
     <div class="row" style="justify-content:center"><button class="btn ghost" id="again">📖 Read again</button>${total > 1 ? `<button class="btn ghost" id="toShelf">📚 All chapters</button>` : ""}${nextCh ? `<button class="btn" id="nextCh">Chapter ${nextCh} →</button>` : `<button class="btn" id="toRealm">Back to ${WR.esc(r.name)}</button>`}</div></div></div>`);
   WR.$("#again").onclick = () => WR.startStory(rid, n);

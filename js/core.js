@@ -698,13 +698,17 @@ WR.streakAlive = () => { const s = WR.state.streak; return s.last && WR.dayDiff(
 
 /* ---------- progress & unlocks (BRIEF-T4: a pass means something) ----------
    A skill is passed at about 7 of 8 (`mark`, rounded to the nearest whole question: 7/8, 6/7, 5/6, 3/4). The next realm needs
-   all 4 skills passed AND each confirmed on a later game day by a short crown check (`checkN` questions, the same mark, one
-   check a day). A crown not checked for `polishDays` asks for a gentle "Polish me ✨" (the crown always stays). After
+   all 4 skills passed AND each confirmed on a later game day by a short crown check (`checkN` questions, `checkNeed` of them
+   right: 4 of 4, one check a day). Grade Guardians, the maths Daily Mix "finished" mark and the realm stickers use the same `mark`. A crown not checked for `polishDays` asks for a gentle "Polish me ✨" (the crown always stays). After
    `helpAfter` tries in a row that didn't pass, the result offers the Learn lesson and an easier path (js/pass.js).
    Realms open (and bosses awake) under the old rule stay that way for good (`state.keep`). */
-const PASS = WR.PASS = { mark: 0.85, skills: 4, boss: 3, checkN: 4, polishDays: 30, helpAfter: 2 };
+const PASS = WR.PASS = { mark: 0.85, skills: 4, boss: 3, checkN: 4, checkNeed: 4, polishDays: 30, helpAfter: 2 };   // checkNeed: right answers in a crown check (BRIEF-T4B: 4 of 4)
 WR.passCount = n => Math.max(1, Math.round(PASS.mark * n));                // right answers needed out of n
 WR.passes = (score, n = 8) => score * n + 1e-9 >= WR.passCount(n);
+WR.pct = () => Math.round(PASS.mark * 100);                                // "85%" for labels
+// a crown check: checkNeed of checkN right (a shorter check, when a bank is small, keeps the same share)
+WR.checkCount = n => Math.min(n, Math.max(1, Math.round(PASS.checkNeed / PASS.checkN * n)));
+WR.checkPasses = (score, n = PASS.checkN) => score * n + 1e-9 >= WR.checkCount(n);
 WR.skillRec = (rid, k) => (WR.state.progress[rid] || {})[k] || null;
 WR.skillPassed = (rid, k) => { const p = WR.skillRec(rid, k); return !!p && (!!p.pass || p.best >= PASS.mark); };   // (older plays: best ≥ mark)
 WR.skillConfirmed = (rid, k) => { const p = WR.skillRec(rid, k); return !!p && !!p.ok; };
@@ -752,7 +756,7 @@ WR.recordLesson = (rid, key, score, n = 8) => {
 // a crown check (or polish round): right ≥ the mark confirms a pass made on an earlier day; returns { good, confirmed }
 WR.recordCheck = (rid, k, score, n = PASS.checkN) => {
   const p = WR.skillRec(rid, k); if (!p) return { good: false, confirmed: false };
-  const day = WR.today(), good = WR.passes(score, n), could = WR.skillPassed(rid, k) && !p.ok && passDayOf(p) < day;
+  const day = WR.today(), good = WR.checkPasses(score, n), could = WR.skillPassed(rid, k) && !p.ok && passDayOf(p) < day;
   p.chkDay = day;
   let confirmed = false;
   if (good) { p.polDay = day; p.cfails = 0; if (could) { p.ok = Date.now(); p.okDay = day; confirmed = true; } }
@@ -765,7 +769,7 @@ const PASS_FIELDS = ["pass", "passDay", "ok", "okDay", "goodDay", "polDay"];
 WR.mergePass = (a, b) => {
   if (!a || !b) return a;
   a.keep = a.keep || { open: [], boss: [] };
-  if (b.keep) for (const f of ["open", "boss"]) a.keep[f] = [...new Set([...(a.keep[f] || []), ...(b.keep[f] || [])])];
+  if (b.keep) for (const f of ["open", "boss", "guard"]) a.keep[f] = [...new Set([...(a.keep[f] || []), ...(b.keep[f] || [])])];
   for (const [rid, sk] of Object.entries(b.progress || {})) for (const [k, q] of Object.entries(sk || {})) {
     if (!isSkill(k) || !q) continue; const r = ((a.progress = a.progress || {})[rid] = a.progress[rid] || {});
     const m = r[k]; if (!m) continue;

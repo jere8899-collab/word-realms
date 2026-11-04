@@ -1,5 +1,5 @@
 /* 🔁 Maths on the one review schedule (js/review.js, BRIEF-T3).
-   - A topic the child has finished (a topic round at the Grade Guardians' pass mark, CONFIG.math.pass) gets one record,
+   - A topic the child has finished (a topic round at the shared pass mark WR.PASS.mark, 85%: CONFIG.math.pass) gets one record,
      state.review.items["math:<topic id>"], on the same 3 / 10 / 30 / 90-day rule as English (then about every 180 days).
    - 🎲 Daily Mix: about 5 questions in mixed order from due topics, recent topics and at least one earlier-grade topic,
      with no two neighbours from the same topic when there is a choice. On by default, a card inside the Number Kingdom hub
@@ -12,7 +12,8 @@
 const WR = window.WR, MG = window.MathGen, MW = WR.Math, RV = WR.Review;
 if (!WR || !MG || !MW || !RV) return;
 const CONFIG = RV.CONFIG.math = {
-  pass: 0.6,          // a topic is "finished" at the Grade Guardians' pass mark (js/math-goals.js PASS)
+  pass: WR.PASS.mark, // a topic is "finished" at the shared pass mark (BRIEF-T4B; was 0.6)
+  oldPass: 0.6,       // what counted as finished before: the one-time move onto the schedule (MR.migrate) keeps using it
   mix: 5,             // questions in a Daily Mix
   due: 4,             // at most this many slots for due topics (one is kept for an earlier grade)
   recentDays: 14      // "recent" topics: played in the last two weeks
@@ -52,7 +53,7 @@ MR.dueCount = now => MR.due(now).length;
 // ---------- 🎲 Daily Mix ----------
 const topicsOf = () => MW.st().topics;
 const finished = id => ((topicsOf()[id] || {}).best || 0) >= CONFIG.pass;
-const usable = t => !t.extra || finished(t.id);     // ✨ extra topics only once the child chose to learn them
+const usable = t => !t.extra || finished(t.id) || !!MR.rec(t.id);     // ✨ extra topics only once the child chose to learn them (one already on the schedule stays)
 // the topics of one mix (n slots, a topic may repeat when there are fewer than n to choose from)
 MR.mixTopics = (now = Date.now(), n = CONFIG.mix) => {
   const g = MR.grade(), tp = topicsOf(), out = [], add = id => { if (id && !out.includes(id) && out.length < n) out.push(id); };
@@ -163,7 +164,7 @@ MR.migrate = s => {
   const rv = s.review = s.review && typeof s.review === "object" ? s.review : { items: {} }; rv.items = rv.items || {};
   if (rv.mmig >= 1) return s;
   const now = Date.now(); let i = 0;
-  Object.entries(s.math.topics).filter(([id, p]) => isTopic(id) && p && (p.best || 0) >= CONFIG.pass).sort((a, b) => (a[1].last || 0) - (b[1].last || 0))
+  Object.entries(s.math.topics).filter(([id, p]) => isTopic(id) && p && (p.best || 0) >= CONFIG.oldPass).sort((a, b) => (a[1].last || 0) - (b[1].last || 0))
     .forEach(([id, p]) => { const k = KEY(id); if (rv.items[k]) return; const t = p.last || now, back = t + RV.gapDays(1) * DAY;
       rv.items[k] = { s: 1, d: back > now ? back : now + (1 + (i++ % 7)) * DAY, t, n: 1, l: 1, r: 1 }; });
   rv.mmig = 1; return s;

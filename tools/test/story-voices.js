@@ -11,8 +11,8 @@ const LV = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2'];
 // file name = profile + FNV-1a of "profile|text" + sha1 (tools/build_voice.py fname): the file a line maps to was recorded for THAT text
 const crypto = require('crypto');
 const fname = (p, t, said = t) => { const s = p + '|' + t + (said !== t ? '|' + said : ''); let h = 2166136261; for (const c of s) { h ^= c.codePointAt(0); h = Math.imul(h, 16777619) >>> 0; if (c.codePointAt(0) > 0xffff) { /* python iterates code points too */ } } return `${p}_${h.toString(16).padStart(8, '0')}${crypto.createHash('sha1').update(s).digest('hex').slice(0, 4)}.mp3`; };
-const SAVE = species => ({ v: 1, name: 'Zephyrine', avatar: 'avatar_mage', startLevel: 'a1', stars: 40, totalCorrect: 0, totalAnswered: 0,
-  pet: { species, name: 'Sir Wobbles', xp: 0, happiness: 80, hunger: 20, skin: null, lastTick: Date.now() }, streak: { count: 1, last: null },
+const SAVE = (species, petName = 'Sir Wobbles') => ({ v: 1, name: 'Zephyrine', avatar: 'avatar_mage', startLevel: 'a1', stars: 40, totalCorrect: 0, totalAnswered: 0,
+  pet: { species, name: petName, xp: 0, happiness: 80, hunger: 20, skin: null, lastTick: Date.now() }, streak: { count: 1, last: null },
   progress: {}, owned: [], equipped: {}, settings: { rate: 1.1, sound: false, unlockAll: true, petVoice: false }, mistakes: [], lessonsDone: 0 });
 (async () => {
   const browser = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox', '--autoplay-policy=no-user-gesture-required'] });
@@ -30,16 +30,18 @@ const SAVE = species => ({ v: 1, name: 'Zephyrine', avatar: 'avatar_mage', start
     window.__sounding = () => [...els].filter(e => !e.paused).length + (window.speechSynthesis && speechSynthesis.speaking ? 1 : 0);
   });
   const errs = [];
-  const open = async species => { const page = await ctx.newPage(); page.on('pageerror', e => errs.push(e.message));
-    await page.goto(BASE + 'manifest.webmanifest'); await page.evaluate(s => { localStorage.clear(); localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)); }, SAVE(species));
+  const open = async (species, petName) => { const page = await ctx.newPage(); page.on('pageerror', e => errs.push(e.message));
+    await page.goto(BASE + 'manifest.webmanifest'); await page.evaluate(s => { localStorage.clear(); localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)); }, SAVE(species, petName));
     await page.goto(BASE + 'index.html'); await page.waitForFunction(() => window.WR && WR.Voice && WR.Story && WR.realms); await WR_LOADED(page); return page; };
   const WR_LOADED = async page => { await page.evaluate(() => WR.Voice.load()); await page.waitForTimeout(1200); await shut(page); };
   const shut = page => page.evaluate(() => document.querySelectorAll('.modal-bg').forEach(m => m.remove()));
 
-  // 1. every line on every page of every chapter, for two pet species: recorded, the file was made for that exact text, no names that can't be recorded
-  const seen = new Map(); let pages = 0, chapters = 0;
-  for (const species of ['pet_fox', 'pet_penguin']) {
-    const page = await open(species);
+  // 1. every line on every page of every chapter, for two pets: the typed hero name "Zephyrine" both times; the fox keeps its
+  // storybook name (Mochi Fox: recorded), the penguin is typed "Sir Wobbles". STORY-NAMES: only lines with a typed name may use
+  // the device voice; every other line has its own af_heart MP3, made for that exact text.
+  const seen = new Map(), named = new Map(); let pages = 0, chapters = 0; const TYPED = /Zephyrine|Sir Wobbles/;
+  for (const [species, petName] of [['pet_fox', 'Mochi Fox'], ['pet_penguin', 'Sir Wobbles']]) {
+    const page = await open(species, petName);
     const pet = await page.evaluate(() => WR.petInfo().name);
     for (const rid of LV) {
       const nch = await page.evaluate(r => WR.loadStory(r).then(d => d.chapters.length), rid);
@@ -50,18 +52,20 @@ const SAVE = species => ({ v: 1, name: 'Zephyrine', avatar: 'avatar_mage', start
           await page.waitForSelector('#storyText .sent');
           const ls = await page.evaluate(() => [...document.querySelectorAll('#storyText .sent')].map(s => ({ t: WR.Voice.norm(s.textContent), f: WR.Voice.fileFor(s.textContent) })));
           pages++;
-          for (const l of ls) seen.set(l.t, { f: l.f, where: `${rid}.${n}.${pi + 1}`, pet });
+          for (const l of ls) (TYPED.test(l.t) ? named : seen).set(l.t, { f: l.f, where: `${rid}.${n}.${pi + 1}`, pet });
           await shut(page); await page.click('.story-q .opt'); await page.waitForSelector('#storyNext'); await page.click('#storyNext');
         }
       }
     }
     const shown = await page.evaluate(() => document.body.innerText);
-    ok(!/Zephyrine|Sir Wobbles/.test([...seen.keys()].join(' ')), `${species}: story text uses "our hero" and the storybook pet name (${pet}), never a typed name that has no recording`);
+    const all = [...seen.keys(), ...named.keys()].join(' ');
+    ok(/Zephyrine/.test(all) && all.includes(petName) && !/\b[Oo]ur hero\b/.test(all), `${species}: the story uses the typed hero name and the pet's name (${petName}), not "our hero"`);
     await page.close();
   }
-  const lines = [...seen.entries()], miss = lines.filter(([, v]) => !v.f);
+  const lines = [...seen.entries()], miss = lines.filter(([, v]) => !v.f), namedRec = [...named.entries()].filter(([, v]) => v.f);
+  ok(named.size > 100 && namedRec.length === 0, `lines with a typed name (${named.size}) have no recording, so only they use the device voice (recorded by mistake: ${namedRec.length})`);
   ok(chapters === 84 && pages === 336, `read every page: 6 realms × 7 chapters × 4 pages × 2 pets (${chapters} chapters, ${pages} pages)`);
-  ok(miss.length === 0, `all ${lines.length} story lines have a recording (missing: ${miss.slice(0, 3).map(([t, v]) => v.where + ' “' + t + '”').join(' / ') || 'none'})`);
+  ok(miss.length === 0, `all ${lines.length} story lines without a typed name have a recording (missing: ${miss.slice(0, 3).map(([t, v]) => v.where + ' “' + t + '”').join(' / ') || 'none'})`);
   const VCF = JSON.parse(fs.readFileSync(ROOT + '/data/voices.json', 'utf8')), VC0 = VCF.sayAs || {}, PH0 = VCF.sayAsPhonemes || {}, WH0 = VCF.sayAsWhole || {};
   const esc = k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const say0 = t => { const w = Object.entries(VC0).filter(([k]) => !k.startsWith('_')).reduce((a, [k, v]) => a.replace(new RegExp('\\b' + esc(k) + '\\b', 'g'), v), (t !== '_doc' && Object.prototype.hasOwnProperty.call(WH0, t)) ? WH0[t] : t);
@@ -106,36 +110,43 @@ const SAVE = species => ({ v: 1, name: 'Zephyrine', avatar: 'avatar_mage', start
     ok(bad.length === 0, `every story MP3 is mono 24 kHz MP3 at a natural pace (1.0–5.2 words/s; off: ${bad.slice(0, 3).join(' / ') || 'none'})`);
   }
 
-  // 2. playback: 🔊 Read to me plays each sentence from its MP3, one after another, one element, nothing overlapping, no device voice
+  // 2. playback: 🔊 Read to me plays each sentence in order: its MP3, or (a line with a typed name only) the device voice; one element, nothing overlapping
   const page = await open('pet_bunny');
+  const fb = await page.evaluate(() => { const n = WR.state.name, p = WR.state.pet.name; WR.state.name = ''; WR.state.pet.name = '';
+    const a = WR.Story.fill('{hero} meets {pet}. Hello, {hero}!'); WR.state.name = n; WR.state.pet.name = p; return { a, b: WR.Story.fill('{hero} and {pet}'), f: WR.Voice.fileFor(a.split('. ')[0] + '.') }; });
+  ok(fb.a === 'Our hero meets Puffbun. Hello, our hero!' && fb.b === 'Zephyrine and Sir Wobbles', `no typed names: the recorded fallback "our hero" + the storybook pet name; typed: the child's names (${fb.a} | ${fb.b})`);
   const readPage = async (rid, n, label) => {
     await shut(page); await page.evaluate(([r, n]) => WR.go('story', { rid: r, n }), [rid, n]); await page.waitForSelector('#readAll');
-    const want = await page.evaluate(() => [...document.querySelectorAll('#storyText .sent')].map(s => WR.Voice.fileFor(s.textContent)));
+    const want = await page.evaluate(() => [...document.querySelectorAll('#storyText .sent')].map(s => WR.Voice.fileFor(s.textContent) || 'DEVICE:' + WR.Voice.norm(s.textContent)));
     await page.evaluate(() => { window.__plays = []; }); await page.tap('#readAll');
     await page.waitForFunction(k => window.__plays.length >= k && !window.__sounding(), want.length, { timeout: 120000, polling: 250 });
     await page.waitForTimeout(1200);
     const log = await page.evaluate(() => window.__plays);
     console.log(`   ${label}: ` + log.map(p => p.kind === 'mp3' ? p.src.split('/').pop() : 'DEVICE:' + p.text).join(', '));
-    ok(log.length === want.length && log.every((p, i) => p.kind === 'mp3' && p.src === want[i]), `${label}: Read to me played all ${want.length} sentences in order, each from its af_heart MP3 (${log.length} plays)`);
-    ok(log.every(p => p.kind === 'mp3' && !p.others && !p.speech), `${label}: never two voices at once, never the device voice (${log.filter(p => p.kind !== 'mp3').length} device lines)`);
-    ok(new Set(log.map(p => p.el)).size === 1, `${label}: one audio element re-used for every line (phones allow it to keep playing after the first tap)`);
+    const dev = want.filter(w => w.startsWith('DEVICE:'));
+    ok(log.length === want.length && log.every((p, i) => p.kind === 'mp3' ? p.src === want[i] : 'DEVICE:' + p.text.replace(/\s+/g, ' ').trim() === want[i]), `${label}: Read to me played all ${want.length} sentences in order: af_heart MP3s, the device voice only for the ${dev.length} line(s) with a typed name (${log.length} plays)`);
+    ok(log.every(p => !p.others && !p.speech) && log.filter(p => p.kind === 'device').every(p => TYPED.test(p.text)), `${label}: never two voices at once; the device voice only on typed-name lines (${log.filter(p => p.kind !== 'mp3').length} device lines)`);
+    const gaps = log.slice(1).map((p, i) => Math.round(p.t - log[i].t));
+    if (dev.length) console.log(`   ${label} line starts (ms after the previous start): ${gaps.join(', ')}`);
+    ok(new Set(log.filter(p => p.kind === 'mp3').map(p => p.el)).size <= 1, `${label}: one audio element re-used for every line (phones allow it to keep playing after the first tap)`);
   };
   await readPage('a1', 1, 'A1 ch 1 p 1');
   await readPage('c2', 7, 'C2 ch 7 p 1');
   // 3. stops: answer (page re-renders), turn the page, leave → silence, and the chain never restarts
   const plays = () => page.evaluate(() => window.__plays.map(p => p.kind === 'mp3' ? p.src.split('/').pop() : 'DEVICE').join(', '));
-  const startRead = async () => { await page.evaluate(() => { window.__plays = []; }); await page.tap('#readAll'); await page.waitForFunction(() => window.__plays.length >= 1 && window.__sounding()); await page.waitForTimeout(400); };
+  // waits until an MP3 line is sounding (a typed-name device line can end at once on a test machine with no system voice); returns the plays so far
+  let n0 = 0; const startRead = async () => { await page.evaluate(() => { window.__plays = []; }); await page.tap('#readAll'); await page.waitForFunction(() => window.__plays.some(p => p.kind === 'mp3') && window.__sounding()); await page.waitForTimeout(400); n0 = await page.evaluate(() => window.__plays.length); return n0; };
   await page.evaluate(() => WR.go('story', { rid: 'b1', n: 2 })); await page.waitForSelector('#readAll');
   await startRead(); await page.tap('.story-q .opt'); await page.waitForTimeout(150);
   let after = await page.evaluate(() => window.__sounding()); await page.waitForTimeout(5000);
   let more = await page.evaluate(() => window.__plays.length);
-  ok(after === 0 && more === 1, `answering the question stops Read to me at once and it doesn't carry on (${after} sounding, ${more} plays: ${await plays()})`);
+  ok(after === 0 && more === n0, `answering the question stops Read to me at once and it doesn't carry on (${after} sounding, ${more} plays: ${await plays()})`);
   await startRead(); await page.tap('#storyNext'); await page.waitForTimeout(150);
   after = await page.evaluate(() => window.__sounding()); await page.waitForTimeout(4000); more = await page.evaluate(() => window.__plays.length);
-  ok(after === 0 && more === 1, `turning the page stops the reading (${after} sounding, ${more} plays)`);
+  ok(after === 0 && more === n0, `turning the page stops the reading (${after} sounding, ${more} plays)`);
   await startRead(); await page.tap('#storyQuit'); await page.waitForTimeout(150);
   after = await page.evaluate(() => window.__sounding()); await page.waitForTimeout(4000); more = await page.evaluate(() => window.__plays.length);
-  ok(after === 0 && more === 1, `leaving the story stops the reading (${after} sounding, ${more} plays)`);
+  ok(after === 0 && more === n0, `leaving the story stops the reading (${after} sounding, ${more} plays)`);
   // 4. tapping a sentence while Read to me is going: only that sentence, the chain stops
   await page.evaluate(() => WR.go('story', { rid: 'a2', n: 3 })); await page.waitForSelector('#readAll');
   await startRead(); const last = await page.evaluate(() => { const s = [...document.querySelectorAll('#storyText .sent')].pop(); return WR.Voice.fileFor(s.textContent); });
@@ -143,13 +154,16 @@ const SAVE = species => ({ v: 1, name: 'Zephyrine', avatar: 'avatar_mage', start
   await page.tap('#storyText .sent:last-child');
   await page.waitForFunction(() => !window.__sounding(), null, { timeout: 30000, polling: 200 }); await page.waitForTimeout(2500);
   let log = await page.evaluate(() => window.__plays);
-  ok(log.length === 2 && log[1].src === last && log.every(p => !p.others && p.kind === 'mp3'), `tapping a sentence mid-read plays just that sentence and the read-aloud stops (${log.length} plays)`);
+  ok(log.length === n0 + 1 && (last ? log[n0].kind === 'mp3' && log[n0].src === last : log[n0].kind === 'device') && log.every(p => !p.others && !p.speech), `tapping a sentence mid-read plays just that sentence and the read-aloud stops (${log.length} plays)`);
   // 5. a dotted word: its own recording, and it stops the read-aloud
   const gl = await page.evaluate(async () => { await WR.go('story', { rid: 'a1', n: 1 }); return !!document.querySelector('#storyText .gloss'); });
   await page.waitForSelector('#readAll');
   if (gl) { await startRead(); await page.tap('#storyText .gloss'); await page.waitForFunction(() => !window.__sounding(), null, { timeout: 20000, polling: 200 }); await page.waitForTimeout(2500);
     log = await page.evaluate(() => window.__plays);
-    ok(log.length === 2 && log.every(p => p.kind === 'mp3' && !p.others), `a dotted word plays its own recording and stops the read-aloud (${log.length} plays)`); }
+    ok(log.length === n0 + 1 && log[n0].kind === 'mp3' && log.every(p => !p.others && !p.speech), `a dotted word plays its own recording and stops the read-aloud (${log.length} plays)`);
+    // the sentence holding the dotted word must not stay lit (a phone keeps :hover after a tap)
+    const lit = await page.evaluate(() => [...document.querySelectorAll('#storyText .sent')].filter(s => s.classList.contains('reading') || !/rgba\(0, 0, 0, 0\)|transparent/.test(getComputedStyle(s).backgroundColor)).map(s => s.textContent.slice(0, 30)));
+    ok(lit.length === 0, `after a dotted-word tap no sentence stays highlighted (lit: ${lit.join(' / ') || 'none'})`); }
   // 6. "Device voice" in Settings: only the device voice, never both
   await page.evaluate(() => { WR.state.settings.voice = 'device'; WR.save(); window.__plays = []; WR.go('story', { rid: 'a1', n: 2 }); }); await page.waitForSelector('#readAll');
   await page.tap('#storyText .sent'); await page.waitForTimeout(1500);

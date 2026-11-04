@@ -72,3 +72,12 @@ Paused first: BRIEF-T4B / BRIEF-T5 had no edits or commits (only reading); no �
 
 ## Checkpoint — step 6 live tap check 33/33 (360x740, A1 ch1 / B1 ch3 / C2 ch7): Read to me, sentence tap, dotted word (meadow / hovering / stillness), answer, page turn mid-line, close — MP3 only, no device voice, no overlap, one element, no console errors. 15 screenshots storyv_live_*.png. Nit: after a dotted-word tap its sentence keeps a light highlight (visual only).
 ## Checkpoint — step 7 STORY-VOICES ✅ (commit 0538ad6 / merge b65744d). BRIEF-T4B / BRIEF-T5 ⏸️ paused.
+
+## Step 0 (2026-11-05) dotted-word highlight: cause = sticky :hover on touch phones (the .reading class was already cleared). Fix: .sent:hover only inside @media (hover:hover). Check added to story-voices.js.
+- story-voices.js with the new check: story-voices: 30 passed, 0 failed
+
+## STORY-NAMES (2026-11-05, Jeremy: typed names even if the phone voice reads those lines)
+- js/story.js fill: {hero} → typed name (fallback 'our hero'), {pet} → typed pet name (fallback the species storybook name); function replacements so a typed '$&' stays literal; petName() merged into petTyped().
+- Chose to KEEP the 'our hero' / storybook-pet MP3s as the fallback (no extra code: same fill rule; a pet with its default name still gets MP3s).
+- story-voices.js: typed-name lines must have no MP3 (device voice), every other line its MP3 + ledger; Read to me order with device lines, no overlap, line-start gaps logged. story.js expects the typed name.
+- STORY-NAMES tests: story.js all passed; story-voices.js 32/32 (181 typed-name lines device, 520 lines MP3). Full suite sn started.

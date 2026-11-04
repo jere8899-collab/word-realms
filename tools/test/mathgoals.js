@@ -18,7 +18,7 @@ const SAVE = () => ({ v: 1, name: 'Number Nia', avatar: 'avatar_girl', startLeve
   pet: { species: 'pet_bunny', name: 'Puffbun', xp: 120, happiness: 80, hunger: 30, lastTick: Date.now() },
   progress: {}, owned: [], equipped: {}, settings: { rate: 1, sound: false }, mistakes: [],
   math: { grade: 1, placed: 1, xp: 300, correct: 40, answered: 45, lessons: 5, models: 6, modelSolved: 5,
-    topics: { 'g1.count': { best: 1, plays: 2, last: 1 }, 'g1.add20': { best: 0.75, plays: 1, last: 1 }, 'g2.add': { best: 0.625, plays: 1, last: 1 }, 'g1.sub20': { best: 0.5, plays: 1, last: 1 } },
+    topics: { 'g1.count': { best: 1, plays: 2, last: 1 }, 'g1.add20': { best: 0.875, plays: 1, last: 1 }, 'g2.add': { best: 0.875, plays: 1, last: 1 }, 'g1.sub20': { best: 0.5, plays: 1, last: 1 } },   // BRIEF-T4B: passed = 85%+
     facts: facts(12), dojo: { tables: [2, 3], op: 'x', best: 9, sprints: 1, practice: 2, history: [] } } });
 // every <img> under sel has finished loading a real picture (not broken), returns [{ src, w }]
 const imgsLoaded = (page, sel) => page.evaluate(async sel => { const ims = [...document.querySelectorAll(sel)];
@@ -79,7 +79,7 @@ async function answer(page, right) {
     // hub: goal card + 6 guardian cards
     await page.evaluate(() => WR.go('math')); await page.waitForSelector('#mathGoal');
     const hub = await page.evaluate(() => ({ goal: document.querySelector('#mathGoal').innerText, cards: document.querySelectorAll('.guards .gcard').length, locked: document.querySelectorAll('.guards .gcard.locked').length, here: (document.querySelector('.gcard.here') || {}).dataset, ov: document.documentElement.scrollWidth - innerWidth, btn: document.querySelector('#mathGoalGo').innerText }));
-    ok(/Pass 1 more Grade 1–2 topic \(60%\+\) to wake Bramble/.test(hub.goal), `${tag} hub: next maths goal (${hub.goal.replace(/\n/g, ' ')})`);
+    ok(/Pass 1 more Grade 1–2 topic \(85%\+\) to wake Bramble/.test(hub.goal), `${tag} hub: next maths goal (${hub.goal.replace(/\n/g, ' ')})`);
     ok(hub.cards === 6 && hub.locked === 6 && hub.here && hub.here.gb === 'g12', `${tag} hub: 6 Grade Guardian cards, all asleep, the Grade 1–2 one marked as yours`);
     ok(hub.ov <= 0, `${tag} hub: no sideways overflow`);
     // 🎨 painted Grade Guardian portraits (assets/ui/mboss_*.png → assets/web/mboss_*.webp), not the Sumi fallback
@@ -110,7 +110,7 @@ async function answer(page, right) {
     const s1 = await page.evaluate(() => WR.state.stars);
     await page.click('#mathGoalGo'); await page.waitForSelector('#bossFace');
     const f = await page.evaluate(() => ({ n: document.querySelector('.qnum').textContent, hud: document.querySelector('#gstrip').innerText + document.querySelector('.hud').innerText, timer: !!document.querySelector('.timer, #timerBar'), img: !!document.querySelector('#bossFace img'), nav: getComputedStyle(document.querySelector('#navbar')).display }));
-    ok(/\/10$/.test(f.n) && /Bramble/.test(f.hud) && /0\/7/.test(f.hud) && !f.timer && f.img, `${tag} fight: 10 questions, guardian portrait + sparkle bar, no timer ${JSON.stringify(f)}`);
+    ok(/\/10$/.test(f.n) && /Bramble/.test(f.hud) && /0\/9/.test(f.hud) && !f.timer && f.img, `${tag} fight: 10 questions, 9 sparkle hits to win (85%), guardian portrait + sparkle bar, no timer ${JSON.stringify(f)}`);
     const fImg = await imgsLoaded(page, '#bossFace img');
     ok(fImg.length === 1 && fImg[0].ok && /mboss_bramble\.webp/.test(fImg[0].src) && !(await page.$('#bossFace .sumi')), `${tag} fight: Bramble's painted portrait loads in the sparkle bar (${fImg.map(i => i.src.split('/').pop() + ' ' + i.w + 'px')})`);
     await page.waitForTimeout(500); await page.screenshot({ path: OUT + `mathgoals_${shot}_fight.png` });

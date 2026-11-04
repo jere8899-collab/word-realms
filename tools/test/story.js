@@ -70,7 +70,7 @@ const SAVE = JSON.stringify({ v: 1, name: 'Jeremy', avatar: 'avatar_mage', start
   await clean(page); await page.screenshot({ path: OUT + 'story_01b_shelf.png' });
   await page.locator('.shelf-ch').first().click(); await page.waitForSelector('.story-text');
   const txt = await page.locator('#storyText').innerText();
-  assert(/[Oo]ur hero/.test(txt) && !txt.includes('Jeremy') && txt.includes('Puffbun') && !/\[\[|\{hero\}|\{pet\}/.test(txt), 'page text says "our hero" and the storybook pet name (both recorded; STORY-VOICES), no raw markup');
+  assert(txt.includes('Jeremy') && !/[Oo]ur hero/.test(txt) && txt.includes('Puffbun') && !/\[\[|\{hero\}|\{pet\}/.test(txt), 'page text uses the typed hero name (STORY-NAMES) and the pet name, no raw markup');
   assert(await page.locator('.gloss').count() >= 1 && await page.locator('.sent').count() >= 3, 'sentences and glossary words are tappable');
   await page.locator('.gloss').first().click(); await page.waitForSelector('.gloss-pop');
   assert(await page.evaluate(() => WR.state.stories.words.meadow === 'a1'), 'tapping “meadow” shows its meaning and saves it to the word list');

@@ -1,0 +1,62 @@
+{
+ "level": "a1",
+ "N": 20000,
+ "rows": [
+  {
+   "knows": 0.4,
+   "before3": "82.7%",
+   "now: check 4 of 4": {
+    "tries3": "0.0%",
+    "tries4": "0.0%",
+    "tries5": "0.0%"
+   },
+   "was: check 3 of 4": {
+    "tries3": "0.0%",
+    "tries4": "0.0%",
+    "tries5": "0.1%"
+   }
+  },
+  {
+   "knows": 0.6,
+   "before3": "99.9%",
+   "now: check 4 of 4": {
+    "tries3": "0.7%",
+    "tries4": "2.7%",
+    "tries5": "6.7%"
+   },
+   "was: check 3 of 4": {
+    "tries3": "6.7%",
+    "tries4": "15.1%",
+    "tries5": "26.1%"
+   }
+  },
+  {
+   "knows": 0.8,
+   "before3": "100.0%",
+   "now: check 4 of 4": {
+    "tries3": "48.8%",
+    "tries4": "71.6%",
+    "tries5": "85.9%"
+   },
+   "was: check 3 of 4": {
+    "tries3": "80.8%",
+    "tries4": "92.5%",
+    "tries5": "97.4%"
+   }
+  },
+  {
+   "knows": 0.9,
+   "before3": "100.0%",
+   "now: check 4 of 4": {
+    "tries3": "91.0%",
+    "tries4": "97.5%",
+    "tries5": "99.3%"
+   },
+   "was: check 3 of 4": {
+    "tries3": "99.2%",
+    "tries4": "99.9%",
+    "tries5": "100.0%"
+   }
+  }
+ ]
+}
