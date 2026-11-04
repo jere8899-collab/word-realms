@@ -12,7 +12,7 @@ const IDS = ['g1.picgraph', 'g2.picgraph', 'g3.bargraph', 'g4.linegraph', 'g6.pi
 
 /* ---------- 1. generators (Node) ---------- */
 ok(IDS.every(id => M.topic(id)), 'five graph topics are on the map: ' + IDS.map(id => `${M.topic(id).icon} ${M.topic(id).name}`).join(', '));
-ok(IDS.every(id => { const g = M.gradeTopics(M.topic(id).grade); return g[g.length - 1].story && g.indexOf(M.topic(id)) === g.length - 2; }), 'each sits just before its grade\'s word-problem topic');
+ok(IDS.every(id => { const g = M.gradeTopics(M.topic(id).grade), i = g.indexOf(M.topic(id)); return g[g.length - 1].story && (i === g.length - 2 || (id === 'g4.linegraph' && i === g.length - 3 && g[g.length - 2].id === 'g6.piechart')); }), 'each sits just before its grade\'s word-problem topic (Grade 4: line graphs, then pie charts)');
 const kinds = {}, bad = [], wrong = [], leak = [], scale = [], words = [];
 const sum = a => a.reduce((x, y) => x + y, 0);
 for (const id of IDS) for (let s = 1; s <= 2000; s++) {
@@ -56,7 +56,9 @@ ok(!words.length, 'kid-friendly topics only');
 ok([...kinds['g4.linegraph']].some(k => k.includes('table')) && [...kinds['g4.linegraph']].some(k => k.includes('line')), `Grade 4 mixes tables and line graphs (${[...kinds['g4.linegraph']]})`);
 ok(IDS.every(id => [...kinds[id]].some(k => k.startsWith('mcq')) && [...kinds[id]].some(k => k.startsWith('num'))), 'every graph topic mixes typed answers and multiple choice');
 ok(IDS.every(id => { const r = M.batch(id, 8, 99); return r.length === 8 && new Set(r.map(q => q.q + q.a)).size === 8; }), 'a lesson of 8 has no repeats');
-{ const pies = Array.from({ length: 400 }, (_, s) => M.make('g6.piechart', s + 1)); ok(pies.some(q => q.data.pct) && pies.some(q => !q.data.pct) && pies.some(q => /fraction like/.test(q.q)) && pies.some(q => q.a.endsWith('%')), 'pie charts use both fractions (1/6, 3/8, 5/12…) and percentages'); }
+{ const pies = Array.from({ length: 400 }, (_, s) => M.make('g6.piechart', s + 1)), pp = Array.from({ length: 800 }, (_, s) => M.make('g5.percent', s + 1)).filter(q => q.data && q.data.graph === 'pie');
+  ok(M.topic('g6.piechart').grade === 4 && pies.every(q => !q.data.pct) && pies.some(q => /fraction like/.test(q.q)), 'Grade 4 pie charts (MOE P4) use fractions only (1/6, 3/8, 5/12…)');
+  ok(pp.length > 100 && pp.every(q => q.data.pct) && pp.some(q => q.a.endsWith('%')), `percentage pie charts moved to Grade 5 Percent Potions (${pp.length} of 800)`); }
 
 /* ---------- 2. phone ---------- */
 const SAVE = { v: 1, name: 'Jeremy', avatar: 'avatar_mage', startLevel: 'a1', stars: 100, totalCorrect: 40, totalAnswered: 50,
