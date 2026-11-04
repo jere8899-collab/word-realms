@@ -67,3 +67,8 @@ Paused first: BRIEF-T4B / BRIEF-T5 had no edits or commits (only reading); no �
 ## Checkpoint — REVIEW back to 🔧 ('audio fixed locally, deploy pending'); full suite sv4: 93/96 first pass, maths-review + skins pass singly (timeouts under load); story-voices re-run singly
 
 ## Checkpoint — step 4 full suite 96/96 (maths-review, skins, story-voices were load timeouts; each passes alone)
+
+## Checkpoint — step 5 deployed: commit 0538ad6, merge b65744d on main (sw 397c96322764); brief docs removed from the deploy checkout + .git/info/exclude; 23 orphan MP3s git rm'd
+
+## Checkpoint — step 6 live tap check 33/33 (360x740, A1 ch1 / B1 ch3 / C2 ch7): Read to me, sentence tap, dotted word (meadow / hovering / stillness), answer, page turn mid-line, close — MP3 only, no device voice, no overlap, one element, no console errors. 15 screenshots storyv_live_*.png. Nit: after a dotted-word tap its sentence keeps a light highlight (visual only).
+## Checkpoint — step 7 STORY-VOICES ✅ (commit 0538ad6 / merge b65744d). BRIEF-T4B / BRIEF-T5 ⏸️ paused.
