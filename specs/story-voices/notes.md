@@ -75,3 +75,9 @@ Paused first: BRIEF-T4B / BRIEF-T5 had no edits or commits (only reading); no �
 
 ## Step 0 (2026-11-05) dotted-word highlight: cause = sticky :hover on touch phones (the .reading class was already cleared). Fix: .sent:hover only inside @media (hover:hover). Check added to story-voices.js.
 - story-voices.js with the new check: story-voices: 30 passed, 0 failed
+
+## STORY-NAMES (2026-11-05, Jeremy: typed names even if the phone voice reads those lines)
+- js/story.js fill: {hero} → typed name (fallback 'our hero'), {pet} → typed pet name (fallback the species storybook name); function replacements so a typed '$&' stays literal; petName() merged into petTyped().
+- Chose to KEEP the 'our hero' / storybook-pet MP3s as the fallback (no extra code: same fill rule; a pet with its default name still gets MP3s).
+- story-voices.js: typed-name lines must have no MP3 (device voice), every other line its MP3 + ledger; Read to me order with device lines, no overlap, line-start gaps logged. story.js expects the typed name.
+- STORY-NAMES tests: story.js all passed; story-voices.js 32/32 (181 typed-name lines device, 520 lines MP3). Full suite sn started.
