@@ -149,7 +149,10 @@ const SAVE = species => ({ v: 1, name: 'Zephyrine', avatar: 'avatar_mage', start
   await page.waitForSelector('#readAll');
   if (gl) { await startRead(); await page.tap('#storyText .gloss'); await page.waitForFunction(() => !window.__sounding(), null, { timeout: 20000, polling: 200 }); await page.waitForTimeout(2500);
     log = await page.evaluate(() => window.__plays);
-    ok(log.length === 2 && log.every(p => p.kind === 'mp3' && !p.others), `a dotted word plays its own recording and stops the read-aloud (${log.length} plays)`); }
+    ok(log.length === 2 && log.every(p => p.kind === 'mp3' && !p.others), `a dotted word plays its own recording and stops the read-aloud (${log.length} plays)`);
+    // the sentence holding the dotted word must not stay lit (a phone keeps :hover after a tap)
+    const lit = await page.evaluate(() => [...document.querySelectorAll('#storyText .sent')].filter(s => s.classList.contains('reading') || !/rgba\(0, 0, 0, 0\)|transparent/.test(getComputedStyle(s).backgroundColor)).map(s => s.textContent.slice(0, 30)));
+    ok(lit.length === 0, `after a dotted-word tap no sentence stays highlighted (lit: ${lit.join(' / ') || 'none'})`); }
   // 6. "Device voice" in Settings: only the device voice, never both
   await page.evaluate(() => { WR.state.settings.voice = 'device'; WR.save(); window.__plays = []; WR.go('story', { rid: 'a1', n: 2 }); }); await page.waitForSelector('#readAll');
   await page.tap('#storyText .sent'); await page.waitForTimeout(1500);

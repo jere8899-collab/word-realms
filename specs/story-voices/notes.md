@@ -72,3 +72,6 @@ Paused first: BRIEF-T4B / BRIEF-T5 had no edits or commits (only reading); no �
 
 ## Checkpoint — step 6 live tap check 33/33 (360x740, A1 ch1 / B1 ch3 / C2 ch7): Read to me, sentence tap, dotted word (meadow / hovering / stillness), answer, page turn mid-line, close — MP3 only, no device voice, no overlap, one element, no console errors. 15 screenshots storyv_live_*.png. Nit: after a dotted-word tap its sentence keeps a light highlight (visual only).
 ## Checkpoint — step 7 STORY-VOICES ✅ (commit 0538ad6 / merge b65744d). BRIEF-T4B / BRIEF-T5 ⏸️ paused.
+
+## Step 0 (2026-11-05) dotted-word highlight: cause = sticky :hover on touch phones (the .reading class was already cleared). Fix: .sent:hover only inside @media (hover:hover). Check added to story-voices.js.
+- story-voices.js with the new check: story-voices: 30 passed, 0 failed
