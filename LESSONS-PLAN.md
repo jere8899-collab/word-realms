@@ -1,8 +1,8 @@
 # Word Realms: Interactive Lessons plan (📜 Learn)
 
-**Phase 1 (plan + engine + pilot): 🔧 in progress.** The 2-hourly routine stays idle while this line shows 🔧.
+**Phase 1 (plan + engine + pilot): ✅ done (commit 1d135e5, 2026-11-04).** The 2-hourly routine may now take the next batch (§4, §5: EN-2 then MA-2).
 
-> Checkpoint 2026-11-04 08:55 SGT: engine `js/learn.js` + `css/learn.css`, 10 pilot lessons (data/lessons), 10 GenerateImage hook pictures, all lines recorded (af_heart), `tools/test/lessons.js` 109/109 pass. Full suite green after fixing homeshort / icons / n3n5layout / realmpath / tappable / lightart regressions (corner badge, painted 🎒 icon, no home pill on phones). Deploying.
+> Checkpoint 2026-11-04 08:55 SGT: engine `js/learn.js` + `css/learn.css`, 10 pilot lessons (data/lessons), 10 GenerateImage hook pictures, all lines recorded (af_heart), `tools/test/lessons.js` 109/109 pass. Full suite green after fixing homeshort / icons / n3n5layout / realmpath / tappable / lightart regressions (corner badge, painted 🎒 icon, no home pill on phones). Deployed as 1d135e5.
 
 Jeremy asked for this on 2026-11-04 (t40u, then "Build the pilot track for all, take your time and do it slowly but thoroughly"). He wants proper lessons before practice, so children are taught a little first and then practise right away. The lessons should be fun, hands-on and intriguing, and they should cover **every track**:
 - English CEFR A1–C2
@@ -549,9 +549,9 @@ Each **routine turn builds one batch of ~5 lessons**, alternating English and ma
 
 | Batch | Lessons | Status | Commit |
 |---|---|---|---|
-| Phase 1 | plan, engine `js/learn.js`, scroll shelf, hint links, Grown-ups card, save block, tests | 🔧 in progress | – |
-| Pilot EN | en.a1.an, en.a1.be, en.a1.plural, en.a1.place, en.a1.qwords | 🔧 | – |
-| Pilot MA | m.g2.place, m.g2.add, m.g2.times, m.g2.share, m.g2.frac | 🔧 | – |
+| Phase 1 | plan, engine `js/learn.js`, scroll shelf, hint links, Grown-ups card, save block, tests | ✅ | 1d135e5 |
+| Pilot EN | en.a1.an, en.a1.be, en.a1.plural, en.a1.place, en.a1.qwords | ✅ | 1d135e5 |
+| Pilot MA | m.g2.place, m.g2.add, m.g2.times, m.g2.share, m.g2.frac | ✅ | 1d135e5 |
 | EN-2 | A1 rest: have, can, s3, thereis, this, poss, do | ⏳ next English turn | |
 | MA-2 | G2 rest: sub, money, time, picgraph, story | ⏳ next maths turn | |
 | EN-3 | A1 rest: ing, waswere, place2, timeprep, feel, detail, listennum, keyword | ⏳ | |
