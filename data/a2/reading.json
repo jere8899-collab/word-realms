@@ -19,7 +19,8 @@
       "to the school hall": "“to the school hall” is in the story too, but not as the answer. The story says: “: please bring your cake to the bakery by 12 o'clock.” So it's “to the bakery”.",
       "to the village square": "“to the village square” is in the story too, but not as the answer. The story says: “: please bring your cake to the bakery by 12 o'clock.” So it's “to the bakery”.",
       "to the judges' table": "The story says: “: please bring your cake to the bakery by 12 o'clock.” So it's “to the bakery”, not “to the judges' table”."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -36,7 +37,8 @@
       "entry to the fair": "“entry to the fair” is in the story too, but not as the answer. The story says: “Face painting for children: £2.” So it's “face painting”.",
       "the cake competition": "“the cake competition” is in the story too, but not as the answer. The story says: “Face painting for children: £2.” So it's “face painting”.",
       "the music": "The story says: “Face painting for children: £2.” So it's “face painting”, not “the music”."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -53,7 +55,8 @@
       "The fair is cancelled.": "The story says: “If it rains, the fair will move to the school hall.” So it's “The fair moves to the school hall.”, not “The fair is cancelled.”",
       "The fair moves to next Saturday.": "The story says: “If it rains, the fair will move to the school hall.” So it's “The fair moves to the school hall.”, not “The fair moves to next Saturday.”",
       "The fair starts later.": "The story says: “If it rains, the fair will move to the school hall.” So it's “The fair moves to the school hall.”, not “The fair starts later.”"
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -76,7 +79,8 @@
       "She has homework.": "The story says: “I'd love to come, but I have a piano lesson until five.” So it's “She has a piano lesson.”, not “She has homework.”",
       "Her brother is ill.": "The story says: “I'd love to come, but I have a piano lesson until five.” So it's “She has a piano lesson.”, not “Her brother is ill.”",
       "She doesn't know the address.": "The story says: “I'd love to come, but I have a piano lesson until five.” So it's “She has a piano lesson.”, not “She doesn't know the address.”"
-     }
+     },
+     "sk": "reading.reason"
     },
     {
      "type": "mcq",
@@ -93,7 +97,8 @@
       "if she can bring food": "The story says: “Also, my brother wants to know if he can come too.” So it's “if her brother can come”, not “if she can bring food”.",
       "what time the party ends": "The story says: “Also, my brother wants to know if he can come too.” So it's “if her brother can come”, not “what time the party ends”.",
       "where the party is": "“where the party is” is in the story too, but not as the answer. The story says: “Also, my brother wants to know if he can come too.” So it's “if her brother can come”."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -110,7 +115,8 @@
       "Her brother is older than her.": "The story says: “He doesn't know many people here because we only moved last month.” So it's “They moved recently.”, not “Her brother is older than her.”",
       "They have a piano shop.": "The story says: “He doesn't know many people here because we only moved last month.” So it's “They moved recently.”, not “They have a piano shop.”",
       "They live next to Leo.": "The story says: “He doesn't know many people here because we only moved last month.” So it's “They moved recently.”, not “They live next to Leo.”"
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -133,7 +139,8 @@
       "gingerbread houses": "The story says: “At first he only sold bread, but one winter he made gingerbread houses for the village children.” So it's “only bread”, not “gingerbread houses”.",
       "sweets": "“sweets” is in the story too, but not as the answer. The story says: “At first he only sold bread, but one winter he made gingerbread houses for the village children.” So it's “only bread”.",
       "birthday cakes": "The story says: “At first he only sold bread, but one winter he made gingerbread houses for the village children.” So it's “only bread”, not “birthday cakes”."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -150,7 +157,8 @@
       "Mr Crumb": "“Mr Crumb” is in the story too, but not as the answer. The story says: “Now his granddaughter Poppy helps him.” So it's “Poppy”.",
       "the village children": "“the village children” is in the story too, but not as the answer. The story says: “Now his granddaughter Poppy helps him.” So it's “Poppy”.",
       "his daughter": "The story says: “Now his granddaughter Poppy helps him.” So it's “Poppy”, not “his daughter”."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -167,7 +175,8 @@
       "He needs the money.": "The story says: “He says he will never stop working because he loves seeing children smile.” So it's “He loves seeing children smile.”, not “He needs the money.”",
       "Poppy is too young.": "The story says: “He says he will never stop working because he loves seeing children smile.” So it's “He loves seeing children smile.”, not “Poppy is too young.”",
       "The town needs bread.": "The story says: “He says he will never stop working because he loves seeing children smile.” So it's “He loves seeing children smile.”, not “The town needs bread.”"
-     }
+     },
+     "sk": "reading.reason"
     }
    ]
   },
@@ -190,7 +199,8 @@
       "two": "“two” doesn't answer the question. Find the line in the story that does, and read it again.",
       "one": "“one” doesn't answer the question. Find the line in the story that does, and read it again.",
       "lots": "“lots” doesn't answer the question. Find the line in the story that does, and read it again."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -207,7 +217,8 @@
       "To cook the fish.": "“To cook the fish.” is in the story too, but not as the answer. The story says: “In the evening it got very cold, so we made a fire and cooked sausages.” So it's “It was very cold.”",
       "To dry the tent.": "The story says: “In the evening it got very cold, so we made a fire and cooked sausages.” So it's “It was very cold.”, not “To dry the tent.”",
       "To see in the dark.": "The story says: “In the evening it got very cold, so we made a fire and cooked sausages.” So it's “It was very cold.”, not “To see in the dark.”"
-     }
+     },
+     "sk": "reading.reason"
     },
     {
      "type": "mcq",
@@ -224,7 +235,8 @@
       "They went fishing again.": "The story says: “On Sunday morning it rained heavily and our tent got wet.” So it's “It rained and the tent got wet.”, not “They went fishing again.”",
       "They lost the car keys.": "The story says: “On Sunday morning it rained heavily and our tent got wet.” So it's “It rained and the tent got wet.”, not “They lost the car keys.”",
       "They stayed another night.": "The story says: “On Sunday morning it rained heavily and our tent got wet.” So it's “It rained and the tent got wet.”, not “They stayed another night.”"
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -247,7 +259,8 @@
       "grey": "The story says: “LOST: small grey kitten wearing a blue collar with a bell.” So it's “blue”, not “grey”.",
       "red": "The story says: “LOST: small grey kitten wearing a blue collar with a bell.” So it's “blue”, not “red”.",
       "green": "The story says: “LOST: small grey kitten wearing a blue collar with a bell.” So it's “blue”, not “green”."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -264,7 +277,8 @@
       "in the park": "The story says: “Last seen near the library on Tuesday evening.” So it's “near the library”, not “in the park”.",
       "at school": "The story says: “Last seen near the library on Tuesday evening.” So it's “near the library”, not “at school”.",
       "in Jack's garden": "The story says: “Last seen near the library on Tuesday evening.” So it's “near the library”, not “in Jack's garden”."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -281,7 +295,8 @@
       "friendly": "The story says: “She is very shy and may hide under cars.” So it's “shy”, not “friendly”.",
       "noisy": "The story says: “She is very shy and may hide under cars.” So it's “shy”, not “noisy”.",
       "brave": "The story says: “She is very shy and may hide under cars.” So it's “shy”, not “brave”."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -304,7 +319,8 @@
       "three hours": "“three hours” doesn't answer the question. Find the line in the story that does, and read it again.",
       "nine hours": "“nine hours” doesn't answer the question. Find the line in the story that does, and read it again.",
       "all day and night": "“all day and night” doesn't answer the question. Find the line in the story that does, and read it again."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -321,7 +337,8 @@
       "the very good pay": "The story says: “The pay isn't great, but Mrs Plum lets me take home any broken lollipops!” So it's “taking home broken lollipops”, not “the very good pay”.",
       "finishing work early": "The story says: “The pay isn't great, but Mrs Plum lets me take home any broken lollipops!” So it's “taking home broken lollipops”, not “finishing work early”.",
       "the quiet afternoons": "The story says: “The pay isn't great, but Mrs Plum lets me take home any broken lollipops!” So it's “taking home broken lollipops”, not “the quiet afternoons”."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -338,7 +355,8 @@
       "Kit gave away free sweets.": "The story says: “Last Saturday it was really busy because of the village fair.” So it's “There was a fair.”, not “Kit gave away free sweets.”",
       "Mrs Plum was ill.": "The story says: “Last Saturday it was really busy because of the village fair.” So it's “There was a fair.”, not “Mrs Plum was ill.”",
       "It was a holiday.": "The story says: “Last Saturday it was really busy because of the village fair.” So it's “There was a fair.”, not “It was a holiday.”"
-     }
+     },
+     "sk": "reading.reason"
     }
    ]
   },
@@ -361,7 +379,8 @@
       "one hour": "“one hour” is in the story too, but not as the answer. The story says: “The trip takes 40 minutes.” So it's “40 minutes”.",
       "four hours": "The story says: “The trip takes 40 minutes.” So it's “40 minutes”, not “four hours”.",
       "seven hours": "The story says: “The trip takes 40 minutes.” So it's “40 minutes”, not “seven hours”."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -378,7 +397,8 @@
       "on the train": "The story says: “You can buy tickets at the station or on the train, but it's cheaper online.” So it's “online”, not “on the train”.",
       "at the station": "The story says: “You can buy tickets at the station or on the train, but it's cheaper online.” So it's “online”, not “at the station”.",
       "at the sweet shop": "The story says: “You can buy tickets at the station or on the train, but it's cheaper online.” So it's “online”, not “at the sweet shop”."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -395,7 +415,8 @@
       "buy their dog a child's ticket": "The story says: “Dogs are welcome, but please keep them on a lead.” So it's “keep their dog on a lead”, not “buy their dog a child's ticket”.",
       "leave their dog at the station": "The story says: “Dogs are welcome, but please keep them on a lead.” So it's “keep their dog on a lead”, not “leave their dog at the station”.",
       "sit at the back of the train": "The story says: “Dogs are welcome, but please keep them on a lead.” So it's “keep their dog on a lead”, not “sit at the back of the train”."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -418,7 +439,8 @@
       "on Tuesday morning": "Evening, not morning.",
       "on Thursday": "Thursday isn't in the notice.",
       "last weekend": "The weekend isn't in the notice."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -435,7 +457,8 @@
       "she's white with a grey tail": "It's the other way round: grey with a white tail.",
       "she has a blue collar": "Her collar is pink.",
       "she's very big and fluffy": "She's a kitten, so small."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -452,7 +475,8 @@
       "phone Ana": "The notice asks you to phone Ana.",
       "tell a grown-up": "Telling a grown-up is fine.",
       "look at her collar": "Looking is fine; chasing isn't."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -469,7 +493,8 @@
       "a new kitten": "She wants her kitten back, not to give one.",
       "a pink collar": "The collar is Pepper's.",
       "a little bell": "The bell is on Pepper's collar."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -492,7 +517,8 @@
       "climbed a hill": "The hill is tomorrow.",
       "had a picnic": "The picnic is tomorrow.",
       "made pancakes": "Pancakes are Mum's, at home."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -509,7 +535,8 @@
       "he was scared": "He says it was funny.",
       "he was hurt": "'I wasn't hurt.'",
       "he was angry": "He laughed about it."
-     }
+     },
+     "sk": "reading.feeling"
     },
     {
      "type": "mcq",
@@ -526,7 +553,8 @@
       "it's the best ever": "OK isn't 'the best'.",
       "it's terrible": "OK isn't terrible.",
       "he hasn't tried it": "He has eaten it."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -543,7 +571,8 @@
       "tomorrow": "Tomorrow is the hill walk.",
       "on Sunday": "Sunday isn't in the email.",
       "next week": "Next week isn't in the email."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -566,7 +595,8 @@
       "next to the library": "The library got books, but the garden isn't next to it.",
       "in the park": "The park isn't in the text. The story says: “Last spring, Class 4B started a garden behind the school.”",
       "on the roof": "The roof isn't in the text. The story says: “Last spring, Class 4B started a garden behind the school.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -583,7 +613,8 @@
       "every day": "Only on Fridays.",
       "twice a week": "Only one day a week.",
       "once a month": "Every Friday is more than once a month."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -600,7 +631,8 @@
       "they were blue": "Colour isn't in the text.",
       "they all died": "They grew well.",
       "a teacher planted them": "Class 4B planted them."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -617,7 +649,8 @@
       "more seeds": "Seeds aren't in the text. The story says: “The class sold their tomatoes at the summer fair and used the money to buy books for the library.”",
       "a new garden": "They already had a garden.",
       "ice cream": "Ice cream isn't in the text. The story says: “The class sold their tomatoes at the summer fair and used the money to buy books for the library.”"
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -640,7 +673,8 @@
       "Leo": "Leo loves Robo but didn't build him.",
       "a shop": "He wasn't bought.",
       "Leo's teacher": "No teacher is in the text."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -657,7 +691,8 @@
       "cook dinner": "Cooking isn't on the list.",
       "drive a car": "Driving isn't on the list.",
       "fly": "Flying isn't on the list."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -674,7 +709,8 @@
       "Robo broke a cup": "He carries cups; nothing broke.",
       "Robo got lost": "He didn't get lost.",
       "Robo stopped working": "He still works."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -691,7 +727,8 @@
       "he's scared of him": "He isn't scared.",
       "he's bored of him": "He isn't bored.",
       "he wants a new one": "He thinks Robo is the best."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -714,7 +751,8 @@
       "animals": "Animals aren't the theme.",
       "chocolate": "Chocolate isn't the theme.",
       "castles": "Castles aren't the theme."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -731,7 +769,8 @@
       "seven hours": "Seven is the number of layers.",
       "one hour": "One hour isn't in the text. The story says: “It took her five hours!”",
       "two days": "Two days isn't in the text. The story says: “It took her five hours!”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -748,7 +787,8 @@
       "they were eaten": "Nobody ate them.",
       "they won": "Mrs Plum won.",
       "they fell on the floor": "Falling isn't in the text."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -765,7 +805,8 @@
       "Mia": "The judges loved Mia's cake, but she didn't win.",
       "Tom": "Tom burnt his first cookies.",
       "the judges": "The judges chose the winner."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -788,7 +829,8 @@
       "thirty minutes": "Half an hour is too short.",
       "two hours": "Two hours is too long.",
       "all afternoon": "It ends at 4.30."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -805,7 +847,8 @@
       "at the front desk": "You join at the front desk, but meet in the Blue Room.",
       "in a classroom": "A classroom isn't mentioned. The story says: “Join the Starlight Library Club!”",
       "in the park": "The park isn't mentioned. The story says: “Join the Starlight Library Club!”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -822,7 +865,8 @@
       "money": "The club is free.",
       "a story they wrote": "They read a story together; they don't bring one.",
       "a bookmark": "They make bookmarks there."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -839,7 +883,8 @@
       "a six-year-old": "Six is under 8.",
       "a thirteen-year-old": "Thirteen is over 11.",
       "any parent": "It's for children only."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -856,7 +901,8 @@
       "send an email": "Email isn't mentioned. The story says: “To join, speak to Miss Rose at the front desk before Friday.”",
       "pay at the desk": "It's free.",
       "write a story": "Writing isn't needed."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -879,7 +925,8 @@
       "under the bushes": "He looked under the bushes.",
       "behind the shed": "He looked behind the shed.",
       "in the pond": "He even looked in the pond."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -896,7 +943,8 @@
       "his sister": "He found out about his sister later.",
       "his best friend": "A friend isn't mentioned. The story says: “He was sure his neighbour's dog, Buster, had taken it.”",
       "a bird": "A bird isn't mentioned. The story says: “He was sure his neighbour's dog, Buster, had taken it.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -913,7 +961,8 @@
       "one day": "It was gone from Monday.",
       "a week": "It came back on Thursday.",
       "a month": "Far too long."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -930,7 +979,8 @@
       "to keep it safe": "Keeping it safe isn't the reason.",
       "to stop the dog": "The dog wasn't involved.",
       "she wanted it": "It was a joke."
-     }
+     },
+     "sk": "reading.reason"
     },
     {
      "type": "mcq",
@@ -947,7 +997,8 @@
       "he found the ball": "The sister showed the ball.",
       "it was his birthday": "A birthday isn't mentioned.",
       "he did a clever trick": "No trick is mentioned."
-     }
+     },
+     "sk": "reading.reason"
     }
    ]
   },
@@ -970,7 +1021,8 @@
       "to invite Grandma": "She doesn't invite her.",
       "to ask for a telescope": "She already has the telescope.",
       "to say she is ill": "She isn't ill."
-     }
+     },
+     "sk": "reading.reason"
     },
     {
      "type": "mcq",
@@ -987,7 +1039,8 @@
       "it was too bright": "It was night.",
       "the telescope was broken": "The telescope worked later.",
       "Dad had it": "They used it together."
-     }
+     },
+     "sk": "reading.reason"
     },
     {
      "type": "mcq",
@@ -1004,7 +1057,8 @@
       "its colour": "She saw grey spots, but colour wasn't the surprise.",
       "it was moving": "Moving isn't mentioned.",
       "it was very, very small": "It was bigger, not small."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1021,7 +1075,8 @@
       "go to the moon": "They'll look, not go.",
       "buy a new telescope": "They have one.",
       "visit Grandma": "A visit isn't mentioned."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1038,7 +1093,8 @@
       "her grandma": "Grandma gave it.",
       "her brother": "A brother isn't mentioned. The story says: “Last night Dad and I took it into the garden.”",
       "her teacher": "A teacher isn't mentioned. The story says: “Last night Dad and I took it into the garden.”"
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -1061,7 +1117,8 @@
       "he was hungry": "Hunger isn't the reason.",
       "his teacher asked him": "No teacher is mentioned.",
       "it was Pancake Day": "It was a birthday."
-     }
+     },
+     "sk": "reading.reason"
     },
     {
      "type": "mcq",
@@ -1078,7 +1135,8 @@
       "he burnt them": "They 'looked perfect'.",
       "he dropped them": "Dropping isn't mentioned.",
       "he had no eggs at all": "He used eggs."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1095,7 +1153,8 @@
       "burnt": "They looked perfect.",
       "too small": "Size isn't mentioned.",
       "strange": "They looked perfect; they tasted strange."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1112,7 +1171,8 @@
       "she was angry": "She laughed.",
       "she cried": "She laughed, not cried.",
       "she didn't notice": "She tasted them."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1129,7 +1189,8 @@
       "they went to a café": "A café isn't mentioned. The story says: “Then they made a new batch together.”",
       "Marco went to bed": "Bed isn't mentioned. The story says: “Then they made a new batch together.”",
       "Mum cooked alone": "Together, not alone."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -1152,7 +1213,8 @@
       "excited": "She was nervous, not excited.",
       "bored": "Bored isn't mentioned.",
       "angry": "Angry isn't mentioned."
-     }
+     },
+     "sk": "reading.feeling"
     },
     {
      "type": "mcq",
@@ -1169,7 +1231,8 @@
       "it's older": "Age isn't mentioned.",
       "it's smaller": "It's bigger.",
       "it's nearer": "Distance isn't mentioned."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1186,7 +1249,8 @@
       "she was late": "Late isn't mentioned.",
       "she fell over": "Falling isn't mentioned.",
       "she lost her bag": "Her bag isn't mentioned."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1203,7 +1267,8 @@
       "they live on the same street": "Where they live isn't mentioned.",
       "they are cousins": "They just met.",
       "they sit in the same class": "They sat together at lunch."
-     }
+     },
+     "sk": "reading.reason"
     },
     {
      "type": "mcq",
@@ -1220,7 +1285,8 @@
       "funny and loud": "Funny isn't mentioned. The story says: “My new teacher, Mr Diaz, is strict but kind.”",
       "young and shy": "Young and shy aren't mentioned. The story says: “My new teacher, Mr Diaz, is strict but kind.”",
       "unkind": "He's kind."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -1243,7 +1309,8 @@
       "above the pool": "It's in the pool, not above it.",
       "in the zoo shop": "The shop isn't mentioned.",
       "in the penguins' house": "It's in the pool."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1260,7 +1327,8 @@
       "at night": "Night isn't mentioned. The story says: “Every day, thousands of children around the world watch the penguins at Frostbay Zoo on a webcam.”",
       "early in the morning": "11 a.m. isn't early morning.",
       "when they sleep": "Sleeping isn't mentioned. The story says: “Every day, thousands of children around the world watch the penguins at Frostbay Zoo on a webcam.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1277,7 +1345,8 @@
       "one": "There are two times.",
       "three": "Only two are given.",
       "four": "Only two are given."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1294,7 +1363,8 @@
       "a penguin escaped": "Escaping isn't mentioned. The story says: “Last month, a baby penguin was born.”",
       "the camera broke": "The camera still works.",
       "the zoo closed": "The zoo is open."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1311,7 +1381,8 @@
       "the zookeeper": "The keeper asked viewers.",
       "the baby's mother": "Penguins can't vote!",
       "a teacher at a school": "A teacher isn't mentioned. The story says: “Every day, thousands of children around the world watch the penguins at Frostbay Zoo on a webcam.”"
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -1334,7 +1405,8 @@
       "he's ill": "Illness isn't mentioned.",
       "he has no money": "Money isn't mentioned.",
       "the film is sold out": "The 8 o'clock show is sold out."
-     }
+     },
+     "sk": "reading.reason"
     },
     {
      "type": "mcq",
@@ -1351,7 +1423,8 @@
       "it's too late": "Lateness isn't the reason.",
       "Jay is busy": "Jay suggests another time.",
       "the cinema is closed that night": "It's open, just full."
-     }
+     },
+     "sk": "reading.reason"
     },
     {
      "type": "mcq",
@@ -1368,7 +1441,8 @@
       "today at six": "Sam can't go at 6.",
       "today at eight": "8 is sold out.",
       "tomorrow at eight": "The new time is 5."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1385,7 +1459,8 @@
       "the tickets": "Jay buys the tickets.",
       "drinks": "Drinks aren't mentioned. The story says: “I'll bring the popcorn.”",
       "his homework": "Homework isn't for the cinema."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1402,7 +1477,8 @@
       "at the cinema": "Online, not at the cinema.",
       "from Sam's mum": "Sam's mum isn't buying.",
       "by phone": "Phone isn't mentioned."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -1425,7 +1501,8 @@
       "she was angry": "Angry isn't mentioned.",
       "she ate their bread": "She helped with bread.",
       "she was noisy": "Noise isn't mentioned."
-     }
+     },
+     "sk": "reading.reason"
     },
     {
      "type": "mcq",
@@ -1442,7 +1519,8 @@
       "there was no flour": "Flour isn't mentioned. The story says: “One winter, the village ovens stopped working and nobody could bake bread.”",
       "it was too hot": "It was winter.",
       "Toffee left": "She came to help."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1459,7 +1537,8 @@
       "she baked the bread": "She lit the ovens; the villagers baked.",
       "she bought new ovens": "Buying isn't mentioned. The story says: “Toffee flew down and gently breathed fire into every oven.”",
       "she brought wood": "Wood isn't mentioned. The story says: “Toffee flew down and gently breathed fire into every oven.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1476,7 +1555,8 @@
       "with a party just once": "Every year, not once.",
       "with gold": "Gold isn't mentioned. The story says: “After that, the villagers made her a giant honey cake every year.”",
       "with a new cave": "A cave isn't mentioned. The story says: “After that, the villagers made her a giant honey cake every year.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1493,7 +1573,8 @@
       "Toffee bakes cakes": "The villagers bake the cake.",
       "the ovens are fixed": "That was long ago.",
       "Toffee flies away": "She stays and gives rides."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -1516,7 +1597,8 @@
       "children under 8": "Eight is the youngest age.",
       "anyone over 12": "Twelve is the oldest age.",
       "only scientists": "Scientists aren't in the poster."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1533,7 +1615,8 @@
       "three hours": "3 is the finish time, not the hours.",
       "seven hours": "7 is a date (7 August).",
       "nine hours": "9 is the start time."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1550,7 +1633,8 @@
       "build a model rocket": "Building a model rocket is on the list.",
       "wear a space helmet": "Trying on a helmet is on the list.",
       "see a film": "Watching a film is on the list."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1567,7 +1651,8 @@
       "a space helmet": "The centre has the helmet.",
       "a model rocket": "They build the rocket at camp.",
       "their own film": "The film is in the star dome."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1584,7 +1669,8 @@
       "20 July": "Before the 20th means the 20th is too late.",
       "3 August": "3 August is when the camp starts.",
       "7 August": "7 August is the last day of camp."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -1607,7 +1693,8 @@
       "Jamie let him out": "Jamie only found him later.",
       "the cage broke": "Nothing broke; the door wasn't closed.",
       "he bit through the lock": "There was no lock then; it came later."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1624,7 +1711,8 @@
       "under the desks": "They looked under the desks.",
       "behind the bookshelf": "They looked behind the bookshelf.",
       "inside the bins": "They looked inside the bins."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1641,7 +1729,8 @@
       "on Thursday evening": "They couldn't find him on Thursday.",
       "last Thursday": "Thursday is when he escaped.",
       "a week later": "It was the next morning."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1658,7 +1747,8 @@
       "Nibbles bit him": "The story doesn't say Nibbles bit him.",
       "he lost his bag": "His bag was there; he opened it.",
       "Mrs Patel shouted at him": "Mrs Patel doesn't shout in the story."
-     }
+     },
+     "sk": "reading.reason"
     },
     {
      "type": "mcq",
@@ -1675,7 +1765,8 @@
       "there's a new hamster": "Nibbles is still the class hamster.",
       "Nibbles lives with Jamie": "Nibbles was only in Jamie's bag for one night.",
       "bags must stay outside": "Bags aren't in any new rule."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -1698,7 +1789,8 @@
       "her grandpa": "Grandpa is who she's writing to.",
       "her class": "Her class isn't in the email.",
       "her mum": "Mum isn't in the email."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1715,7 +1807,8 @@
       "it was smaller than their house": "It was bigger, not smaller.",
       "it was only a toy": "It was a real skeleton.",
       "it could move": "Moving isn't in the email."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1732,7 +1825,8 @@
       "the T. rex": "The T. rex was big, but it wasn't her favourite.",
       "the flying reptile show": "They didn't see the show.",
       "the gift shop": "A gift shop isn't in the email."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1749,7 +1843,8 @@
       "it was cancelled": "It wasn't cancelled; it was full.",
       "it was next month": "Next month is when they'll go back.",
       "Dad didn't want to": "Dad isn't the reason."
-     }
+     },
+     "sk": "reading.reason"
     },
     {
      "type": "mcq",
@@ -1766,7 +1861,8 @@
       "a dinosaur tooth": "She found a tooth in the dig pit; she didn't buy it.",
       "a fake bone": "The bones were in the dig pit.",
       "a museum ticket": "A ticket isn't in the email."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -1789,7 +1885,8 @@
       "before the game": "The game had started.",
       "at half-time": "Half-time was later.",
       "at the end": "The end was much later."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1806,7 +1903,8 @@
       "Foxes 2, Bears 0": "The Bears were winning, not the Foxes.",
       "Foxes 3, Bears 2": "That's the final score.",
       "nobody had scored": "The Bears had two goals."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1823,7 +1921,8 @@
       "a Blue Bears player": "She plays for 'our' team, the Foxes.",
       "the coach": "She's a player, not the coach.",
       "the referee": "A referee isn't in the story. The story says: “Then our goalkeeper, Lucy, had an idea: 'Let's pass the ball more and run less!”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1840,7 +1939,8 @@
       "to run faster": "She said 'run less'.",
       "to stop the game": "She didn't want to stop.",
       "to change the goalkeeper": "Changing players isn't in the story. The story says: “Then our goalkeeper, Lucy, had an idea: 'Let's pass the ball more and run less!”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1857,7 +1957,8 @@
       "the Blue Bears": "The Bears had only two goals.",
       "nobody: it was a draw": "3–2 isn't a draw.",
       "the game didn't finish": "They played the second half."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -1880,7 +1981,8 @@
       "she heard a noise": "A noise isn't in the diary.",
       "Mum called her": "Mum told her facts later.",
       "the cat was outside": "The cat isn't outside in the diary."
-     }
+     },
+     "sk": "reading.reason"
     },
     {
      "type": "mcq",
@@ -1897,7 +1999,8 @@
       "drinking milk": "Milk makes hedgehogs ill; it wasn't drinking it.",
       "sleeping in a box": "The box house is for tomorrow.",
       "playing with the cat": "The cat isn't in this part."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1914,7 +2017,8 @@
       "they can find milk": "Milk is bad for them.",
       "they like the moon": "The moon isn't in the diary.",
       "cats are asleep": "Cats aren't the reason given."
-     }
+     },
+     "sk": "reading.reason"
     },
     {
      "type": "mcq",
@@ -1931,7 +2035,8 @@
       "buy more cat food": "Cat food isn't the plan.",
       "give it some milk": "'We mustn't give them milk.'",
       "take it to the vet": "A vet isn't in the diary."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -1954,7 +2059,8 @@
       "at least four": "'Only four' is the most, not the least.",
       "five": "Five is too many.",
       "as many as you like": "There is a limit of four."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1971,7 +2077,8 @@
       "it's messy": "Mess isn't the reason given.",
       "it costs money": "Money isn't in the rules.",
       "drinks are better": "Drinks are OK, but that isn't the reason."
-     }
+     },
+     "sk": "reading.reason"
     },
     {
      "type": "mcq",
@@ -1988,7 +2095,8 @@
       "every day after lunch": "Only two days, not every day.",
       "on Wednesday mornings": "After lunch, not in the morning.",
       "only on Saturdays": "Wednesdays too."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -2005,7 +2113,8 @@
       "bring a drink": "Drinks are OK, but not a must.",
       "build a ladder": "The ladder is already there.",
       "take their shoes home": "Shoes come off, but they don't go home."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -2028,7 +2137,8 @@
       "in a forest": "A forest isn't in the story. The story says: “Blaze was a young dragon who lived in a cave on Cloud Mountain.”",
       "in a castle on a cloud": "Cloud is the mountain's name; there's no castle.",
       "near the sea": "The sea isn't in the story. The story says: “Blaze was a young dragon who lived in a cave on Cloud Mountain.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -2045,7 +2155,8 @@
       "he couldn't make fire": "He made a fire every night.",
       "he had no friends": "Friends aren't the problem.",
       "he was too big for the cave": "Size isn't in the story. The story says: “All the other dragons slept in the dark cave, but Blaze was too scared.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -2062,7 +2173,8 @@
       "the fire was too hot": "Heat isn't in the story. The story says: “Every night he made a small fire to light the cave, and the smoke woke everyone up.”",
       "Blaze snored": "Snoring isn't in the story. The story says: “Every night he made a small fire to light the cave, and the smoke woke everyone up.”",
       "Glim was too bright": "Glim helped; she came later."
-     }
+     },
+     "sk": "reading.reason"
     },
     {
      "type": "mcq",
@@ -2079,7 +2191,8 @@
       "it's very hot": "Heat isn't in the story. The story says: “Every night he made a small fire to light the cave, and the smoke woke everyone up.”",
       "it's bigger than a fire": "Size isn't in the story. The story says: “Every night he made a small fire to light the cave, and the smoke woke everyone up.”",
       "it's red": "Colour isn't in the story. The story says: “Every night he made a small fire to light the cave, and the smoke woke everyone up.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -2096,7 +2209,8 @@
       "Blaze still can't sleep": "He sleeps well now.",
       "Glim lives in another cave": "Glim is his light, in his cave.",
       "the cave is always smoky": "Glim makes no smoke."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -2119,7 +2233,8 @@
       "a real pet": "Only some children brought real pets.",
       "a prize": "Prizes were given, not brought.",
       "a parrot": "Only Omar brought a parrot."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -2136,7 +2251,8 @@
       "a tortoise": "The tortoise was calm, not funny.",
       "Hana's mum": "Hana's mum wasn't there.",
       "the teacher's joke": "The teacher didn't tell a joke."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -2153,7 +2269,8 @@
       "14": "Fourteen isn't forty.",
       "4": "Four isn't forty.",
       "younger than Hana's mum": "He is older than Hana's mum."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -2170,7 +2287,8 @@
       "the funniest pet": "The parrot was the funniest.",
       "the oldest pet": "He is the oldest, but that wasn't the prize.",
       "the best photo": "Photos didn't get prizes."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -2193,7 +2311,8 @@
       "to a café": "The café was at the station.",
       "to Jack's school": "School isn't in the story.",
       "to the beach": "The beach isn't in the story."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -2210,7 +2329,8 @@
       "in the café": "The woman found it in the café.",
       "on the train": "They weren't on the train yet.",
       "on platform 6": "They ran to platform 6 later."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -2227,7 +2347,8 @@
       "Jack's mum": "Mum didn't find it.",
       "the train driver": "A driver isn't in the story. The story says: “Then a woman from the café came over.”",
       "Jack": "Jack couldn't find it."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -2244,7 +2365,8 @@
       "in his backpack": "It wasn't in his backpack.",
       "on the train": "They weren't on the train yet.",
       "in Mum's pocket": "Mum's pocket isn't in the story."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -2261,7 +2383,8 @@
       "no, it left without them": "They caught it.",
       "yes, they were early": "'Just in time' isn't early.",
       "no, they took a bus": "A bus isn't in the story."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -2278,7 +2401,8 @@
       "They ate lunch outside.",
       "They bought postcards."
      ],
-     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+     "explain": "Read the text again and follow the time words: first, then, after, at the end.",
+     "sk": "reading.sequence"
     },
     {
      "type": "tf",
@@ -2292,7 +2416,8 @@
      "notes": {
       "False": "The story says: “They travelled by bus and the journey took an hour.” So it is true."
      },
-     "line": "They travelled by bus and the journey took an hour."
+     "line": "They travelled by bus and the journey took an hour.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2306,7 +2431,8 @@
      "notes": {
       "True": "Look again: “It felt rough, like sandpaper.” Rough is the opposite of smooth."
      },
-     "line": "It felt rough, like sandpaper."
+     "line": "It felt rough, like sandpaper.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2320,14 +2446,16 @@
      "notes": {
       "False": "The story says: “Jack was a bit scared, but the sharks just swam slowly.” So it is true. A bit scared = a little afraid."
      },
-     "line": "Jack was a bit scared, but the sharks just swam slowly."
+     "line": "Jack was a bit scared, but the sharks just swam slowly.",
+     "sk": "reading.tf"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “very, very big”.",
      "line": "First, they saw a huge tank full of sharks.",
      "answer": "huge",
-     "explain": "“huge” means very, very big: “First, they saw a huge tank full of sharks.”"
+     "explain": "“huge” means very, very big: “First, they saw a huge tank full of sharks.”",
+     "sk": "reading.word-meaning"
     }
    ]
   },
@@ -2344,7 +2472,8 @@
       "Little green shoots appeared.",
       "Nina sent a photo to her mum."
      ],
-     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+     "explain": "Read the text again and follow the time words: first, then, after, at the end.",
+     "sk": "reading.sequence"
     },
     {
      "type": "tf",
@@ -2358,7 +2487,8 @@
      "notes": {
       "True": "Look again: “She watered them every evening.” She watered them in the evening."
      },
-     "line": "She watered them every evening."
+     "line": "She watered them every evening.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2372,7 +2502,8 @@
      "notes": {
       "False": "The story says: “By August, her sunflowers were taller than Grandpa!” So it is true."
      },
-     "line": "By August, her sunflowers were taller than Grandpa!"
+     "line": "By August, her sunflowers were taller than Grandpa!",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2386,14 +2517,16 @@
      "notes": {
       "True": "Look again: “Every summer, Nina stays with her grandpa in the countryside.” She stays in the countryside."
      },
-     "line": "Every summer, Nina stays with her grandpa in the countryside."
+     "line": "Every summer, Nina stays with her grandpa in the countryside.",
+     "sk": "reading.tf"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “sad because something wasn't as good as you hoped”.",
      "line": "At first nothing happened, and she was disappointed.",
      "answer": "disappointed",
-     "explain": "“disappointed” means sad because something wasn't as good as you hoped: “At first nothing happened, and she was disappointed.”"
+     "explain": "“disappointed” means sad because something wasn't as good as you hoped: “At first nothing happened, and she was disappointed.”",
+     "sk": "reading.word-meaning"
     }
    ]
   },
@@ -2410,7 +2543,8 @@
       "I carried them to school.",
       "We sold all the cupcakes."
      ],
-     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+     "explain": "Read the text again and follow the time words: first, then, after, at the end.",
+     "sk": "reading.sequence"
     },
     {
      "type": "tf",
@@ -2424,7 +2558,8 @@
      "notes": {
       "False": "The story says: “Our school wanted to buy new books for the library, so we had a bake sale.” So it is true."
      },
-     "line": "Our school wanted to buy new books for the library, so we had a bake sale."
+     "line": "Our school wanted to buy new books for the library, so we had a bake sale.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2438,7 +2573,8 @@
      "notes": {
       "True": "Look again: “On Thursday evening, Dad and I made thirty cupcakes.” We made them the evening before, on Thursday."
      },
-     "line": "On Thursday evening, Dad and I made thirty cupcakes."
+     "line": "On Thursday evening, Dad and I made thirty cupcakes.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2452,14 +2588,16 @@
      "notes": {
       "True": "Look again: “People loved the cupcakes and we sold all of them in ten minutes!” They were gone in ten minutes."
      },
-     "line": "People loved the cupcakes and we sold all of them in ten minutes!"
+     "line": "People loved the cupcakes and we sold all of them in ten minutes!",
+     "sk": "reading.tf"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “the sweet sugary layer on top of a cake”.",
      "line": "We put pink icing and sprinkles on top.",
      "answer": "icing",
-     "explain": "“icing” means the sweet sugary layer on top of a cake: “We put pink icing and sprinkles on top.”"
+     "explain": "“icing” means the sweet sugary layer on top of a cake: “We put pink icing and sprinkles on top.”",
+     "sk": "reading.word-meaning"
     }
    ]
   },
@@ -2476,7 +2614,8 @@
       "Dad hung a rope ladder.",
       "They slept in the treehouse."
      ],
-     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+     "explain": "Read the text again and follow the time words: first, then, after, at the end.",
+     "sk": "reading.sequence"
     },
     {
      "type": "tf",
@@ -2490,7 +2629,8 @@
      "notes": {
       "True": "Look again: “Dad cut the wood and Omar painted it green.” He painted it green."
      },
-     "line": "Dad cut the wood and Omar painted it green."
+     "line": "Dad cut the wood and Omar painted it green.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2504,7 +2644,8 @@
      "notes": {
       "False": "The story says: “It took three weekends.” So it is true."
      },
-     "line": "It took three weekends."
+     "line": "It took three weekends.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2518,14 +2659,16 @@
      "notes": {
       "True": "Look again: “Omar didn't sleep much because an owl hooted all night!” The owl kept him awake."
      },
-     "line": "Omar didn't sleep much because an owl hooted all night!"
+     "line": "Omar didn't sleep much because an owl hooted all night!",
+     "sk": "reading.tf"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “a small electric light you carry”.",
      "line": "Dad said yes, so they took sleeping bags and a torch.",
      "answer": "torch",
-     "explain": "“torch” means a small electric light you carry: “Dad said yes, so they took sleeping bags and a torch.”"
+     "explain": "“torch” means a small electric light you carry: “Dad said yes, so they took sleeping bags and a torch.”",
+     "sk": "reading.word-meaning"
     }
    ]
   },
@@ -2542,7 +2685,8 @@
       "We cycled to the lake.",
       "Dad read us a story."
      ],
-     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+     "explain": "Read the text again and follow the time words: first, then, after, at the end.",
+     "sk": "reading.sequence"
     },
     {
      "type": "tf",
@@ -2556,7 +2700,8 @@
      "notes": {
       "True": "Look again: “In the evening Dad read us a story.” There was no TV that day."
      },
-     "line": "In the evening Dad read us a story."
+     "line": "In the evening Dad read us a story.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2570,7 +2715,8 @@
      "notes": {
       "False": "The story says: “But then Mum found an old board game in the cupboard.” So it is true."
      },
-     "line": "But then Mum found an old board game in the cupboard."
+     "line": "But then Mum found an old board game in the cupboard.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2584,14 +2730,16 @@
      "notes": {
       "False": "The story says: “My sister said it was the best Sunday ever.” So it is true. The best Sunday ever = she really enjoyed it."
      },
-     "line": "My sister said it was the best Sunday ever."
+     "line": "My sister said it was the best Sunday ever.",
+     "sk": "reading.tf"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “said she was unhappy about something”.",
      "line": "At breakfast my sister complained,",
      "answer": "complained",
-     "explain": "“complained” means said she was unhappy about something: “At breakfast my sister complained,”"
+     "explain": "“complained” means said she was unhappy about something: “At breakfast my sister complained,”",
+     "sk": "reading.word-meaning"
     }
    ]
   },
@@ -2608,7 +2756,8 @@
       "Leo scored a goal.",
       "The players got medals."
      ],
-     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+     "explain": "Read the text again and follow the time words: first, then, after, at the end.",
+     "sk": "reading.sequence"
     },
     {
      "type": "tf",
@@ -2622,7 +2771,8 @@
      "notes": {
       "True": "Look again: “In the second half, Maya scored with her left foot.” She used her left foot."
      },
-     "line": "In the second half, Maya scored with her left foot."
+     "line": "In the second half, Maya scored with her left foot.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2636,7 +2786,8 @@
      "notes": {
       "False": "The story says: “The Tigers won 2–1!” So it is true."
      },
-     "line": "The Tigers won 2–1!"
+     "line": "The Tigers won 2–1!",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2650,14 +2801,16 @@
      "notes": {
       "False": "The story says: “Then, two minutes before the end, Leo headed the ball into the net.” So it is true. Two minutes before the end = near the end."
      },
-     "line": "Then, two minutes before the end, Leo headed the ball into the net."
+     "line": "Then, two minutes before the end, Leo headed the ball into the net.",
+     "sk": "reading.tf"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “the person who trains a sports team”.",
      "line": "The coach told them,",
      "answer": "coach",
-     "explain": "“coach” means the person who trains a sports team: “The coach told them,”"
+     "explain": "“coach” means the person who trains a sports team: “The coach told them,”",
+     "sk": "reading.word-meaning"
     }
    ]
   },
@@ -2674,7 +2827,8 @@
       "Ella and her friend hid.",
       "They found Biscuit the cat."
      ],
-     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+     "explain": "Read the text again and follow the time words: first, then, after, at the end.",
+     "sk": "reading.sequence"
     },
     {
      "type": "tf",
@@ -2688,7 +2842,8 @@
      "notes": {
       "False": "The story says: “All the animal books were on the floor!” So it is true."
      },
-     "line": "All the animal books were on the floor!"
+     "line": "All the animal books were on the floor!",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2702,7 +2857,8 @@
      "notes": {
       "True": "Look again: “So Ella and her friend hid behind a shelf after school.” She hid with her friend."
      },
-     "line": "So Ella and her friend hid behind a shelf after school."
+     "line": "So Ella and her friend hid behind a shelf after school.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2716,14 +2872,16 @@
      "notes": {
       "True": "Look again: “He jumped onto the shelf to sleep in the warm sunshine and pushed the books off.” He wanted to sleep in the sun."
      },
-     "line": "He jumped onto the shelf to sleep in the warm sunshine and pushed the books off."
+     "line": "He jumped onto the shelf to sleep in the warm sunshine and pushed the books off.",
+     "sk": "reading.tf"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “unusual or surprising”.",
      "line": "she noticed something strange.",
      "answer": "strange",
-     "explain": "“strange” means unusual or surprising: “she noticed something strange.”"
+     "explain": "“strange” means unusual or surprising: “she noticed something strange.”",
+     "sk": "reading.word-meaning"
     }
    ]
   },
@@ -2740,7 +2898,8 @@
       "Kai began to glide.",
       "Kai skated round the rink alone."
      ],
-     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+     "explain": "Read the text again and follow the time words: first, then, after, at the end.",
+     "sk": "reading.sequence"
     },
     {
      "type": "tf",
@@ -2754,7 +2913,8 @@
      "notes": {
       "True": "Look again: “He was nervous because he couldn't stand up at first.” At first he couldn't even stand up."
      },
-     "line": "He was nervous because he couldn't stand up at first."
+     "line": "He was nervous because he couldn't stand up at first.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2768,7 +2928,8 @@
      "notes": {
       "False": "The story says: “His cousin Lily held his hand and showed him how to bend his knees.” So it is true."
      },
-     "line": "His cousin Lily held his hand and showed him how to bend his knees."
+     "line": "His cousin Lily held his hand and showed him how to bend his knees.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2782,14 +2943,16 @@
      "notes": {
       "True": "Look again: “Now he goes every Saturday.” He goes on Saturdays."
      },
-     "line": "Now he goes every Saturday."
+     "line": "Now he goes every Saturday.",
+     "sk": "reading.tf"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “the ice area where people skate”.",
      "line": "he could skate all the way round the rink without help.",
      "answer": "rink",
-     "explain": "“rink” means the ice area where people skate: “he could skate all the way round the rink without help.”"
+     "explain": "“rink” means the ice area where people skate: “he could skate all the way round the rink without help.”",
+     "sk": "reading.word-meaning"
     }
    ]
   },
@@ -2806,7 +2969,8 @@
       "The children gave her treats.",
       "Daisy started wagging her tail."
      ],
-     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+     "explain": "Read the text again and follow the time words: first, then, after, at the end.",
+     "sk": "reading.sequence"
     },
     {
      "type": "tf",
@@ -2820,7 +2984,8 @@
      "notes": {
       "False": "The story says: “Her name is Daisy and she is three years old.” So it is true."
      },
-     "line": "Her name is Daisy and she is three years old."
+     "line": "Her name is Daisy and she is three years old.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2834,21 +2999,24 @@
      "notes": {
       "True": "Look again: “At first Daisy was very shy.” She was shy at first."
      },
-     "line": "At first Daisy was very shy."
+     "line": "At first Daisy was very shy.",
+     "sk": "reading.tf"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “took an animal home to be part of the family”.",
      "line": "Last month the Patel family adopted a dog from an animal shelter.",
      "answer": "adopted",
-     "explain": "“adopted” means took an animal home to be part of the family: “Last month the Patel family adopted a dog from an animal shelter.”"
+     "explain": "“adopted” means took an animal home to be part of the family: “Last month the Patel family adopted a dog from an animal shelter.”",
+     "sk": "reading.word-meaning"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “able to wait calmly”.",
      "line": "The children were patient.",
      "answer": "patient",
-     "explain": "“patient” means able to wait calmly: “The children were patient.”"
+     "explain": "“patient” means able to wait calmly: “The children were patient.”",
+     "sk": "reading.word-meaning"
     }
    ]
   }

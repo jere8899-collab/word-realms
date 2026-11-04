@@ -14,7 +14,8 @@
    "have": "Have is for real possibilities (first conditional), but this is a wish-like 'if'.",
    "would have": "Would never goes in the if-part.",
    "will have": "Will have is a future form; it doesn't fit an unreal 'if'."
-  }
+  },
+  "sk": "grammar.conditional-2"
  },
  {
   "type": "mcq",
@@ -31,7 +32,8 @@
    "repairs": "Repairs is active: the path would be doing the repairing.",
    "is repairing": "Is repairing is active and about now, not every spring.",
    "has repair": "Has repair isn't a correct form."
-  }
+  },
+  "sk": "grammar.passive"
  },
  {
   "type": "mcq",
@@ -48,7 +50,8 @@
    "live": "Live doesn't move back after 'asked'.",
    "do live": "No 'do' in a reported question.",
    "am living": "Am living is present and doesn't move back."
-  }
+  },
+  "sk": "grammar.reported"
  },
  {
   "type": "mcq",
@@ -65,7 +68,8 @@
    "get": "After 'used to' meaning 'familiar', we need -ing, not the plain verb.",
    "got": "Got is past; it can't follow 'to' here.",
    "be getting": "Be getting isn't used after 'used to'."
-  }
+  },
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mcq",
@@ -82,7 +86,8 @@
    "has already flown away": "Has flown is present perfect; the story is in the past.",
    "already flies away": "Flies is present.",
    "was already fly away": "Was fly isn't a correct form."
-  }
+  },
+  "sk": "grammar.perfect-past"
  },
  {
   "type": "mcq",
@@ -99,7 +104,8 @@
    "must": "Must have is a guess about the past, not advice.",
    "can": "Can have isn't used like this.",
    "will": "Will have is future."
-  }
+  },
+  "sk": "grammar.perfect-present"
  },
  {
   "type": "mcq",
@@ -116,7 +122,8 @@
    "that": "That can't be used after a comma.",
    "who": "Who is for people.",
    "what": "What doesn't join clauses like this."
-  }
+  },
+  "sk": "grammar.relative"
  },
  {
   "type": "mcq",
@@ -133,7 +140,8 @@
    "since": "Since needs a start point: since 3 o'clock.",
    "during": "During needs a noun: during the film.",
    "while": "While needs a clause: while I was waiting."
-  }
+  },
+  "sk": "grammar.perfect-present"
  },
  {
   "type": "mcq",
@@ -150,7 +158,8 @@
    "to take": "Suggest isn't followed by 'to + verb'.",
    "take": "The plain verb can't follow suggest.",
    "took": "Took is past and doesn't fit."
-  }
+  },
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mcq",
@@ -167,7 +176,8 @@
    "miss": "The result part needs will.",
    "won't miss": "Won't miss gives the opposite meaning.",
    "would miss": "Would is for unreal situations."
-  }
+  },
+  "sk": "grammar.conditional-1"
  },
  {
   "type": "mcq",
@@ -184,7 +194,8 @@
    "can't": "Can't = I'm sure it's NOT true, but the lights suggest she IS home.",
    "mustn't": "Mustn't means not allowed.",
    "needn't": "Needn't means not necessary."
-  }
+  },
+  "sk": "grammar.modal"
  },
  {
   "type": "mcq",
@@ -201,7 +212,8 @@
    "can": "Can is present real, not a wish.",
    "will": "Will isn't used for an ability wish.",
    "would can": "Would can is never correct."
-  }
+  },
+  "sk": "grammar.wish-prefer"
  },
  {
   "type": "mcq",
@@ -218,7 +230,8 @@
    "ever have": "Ever goes after have, not before it.",
    "had never": "Had never is past perfect and the meaning is wrong.",
    "did ever": "Did ever isn't used with a superlative like this."
-  }
+  },
+  "sk": "grammar.perfect-present"
  },
  {
   "type": "mcq",
@@ -235,7 +248,8 @@
    "to go": "No 'to' after had better.",
    "going": "No -ing after had better.",
    "went": "Went is past."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -252,7 +266,8 @@
    "or": "Or goes with either: either Tom or Sara.",
    "and": "And goes with both.",
    "but": "But doesn't pair with neither."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -269,7 +284,8 @@
    "such": "Such needs a noun: such an old map.",
    "too": "Too goes with 'to': too old to read.",
    "very": "Very can't be followed by 'that' to show a result."
-  }
+  },
+  "sk": "grammar.so-such"
  },
  {
   "type": "mcq",
@@ -286,7 +302,8 @@
    "will rain": "No will in the if-part.",
    "rained": "Rained is for unreal second conditionals.",
    "would rain": "Would isn't used in the if-part."
-  }
+  },
+  "sk": "grammar.conditional-1"
  },
  {
   "type": "mcq",
@@ -303,7 +320,8 @@
    "has been delivered": "Has been is present perfect, not a past story.",
    "was delivering": "Was delivering is active: the letter can't deliver.",
    "had delivered": "Had delivered is active: the letter delivered something?"
-  }
+  },
+  "sk": "grammar.passive"
  },
  {
   "type": "mcq",
@@ -320,7 +338,8 @@
    "has seen": "Has seen doesn't move back after 'told'.",
    "sees": "Sees is present.",
    "was see": "Was see is not a correct form."
-  }
+  },
+  "sk": "grammar.reported"
  },
  {
   "type": "mcq",
@@ -337,7 +356,8 @@
    "to": "Think to isn't used like this.",
    "for": "Think for isn't used like this.",
    "at": "Think at isn't used."
-  }
+  },
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mcq",
@@ -354,7 +374,8 @@
    "mustn't": "Mustn't = not allowed, but you can if you want.",
    "haven't to": "Haven't to isn't correct English.",
    "shouldn't to": "Shouldn't is followed by the plain verb, not 'to'."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -371,7 +392,8 @@
    "which": "Which would need 'in': which my grandmother was born in.",
    "who": "Who is for people.",
    "what": "What doesn't join clauses."
-  }
+  },
+  "sk": "grammar.relative"
  },
  {
   "type": "mcq",
@@ -388,7 +410,8 @@
    "for": "For needs a length of time: for six years.",
    "from": "From needs 'to' or 'until'.",
    "during": "During needs a noun."
-  }
+  },
+  "sk": "grammar.perfect-present"
  },
  {
   "type": "mcq",
@@ -405,7 +428,8 @@
    "to stay": "No 'to' after would rather.",
    "staying": "No -ing after would rather.",
    "stayed": "Stayed is used when another person follows: I'd rather you stayed."
-  }
+  },
+  "sk": "grammar.wish-prefer"
  },
  {
   "type": "mcq",
@@ -422,7 +446,8 @@
    "so": "So goes before an adjective alone: so amazing.",
    "too": "Too doesn't go with 'that'.",
    "very": "Very can't start a 'that' result."
-  }
+  },
+  "sk": "grammar.so-such"
  },
  {
   "type": "mcq",
@@ -439,7 +464,8 @@
    "buying": "Afford isn't followed by -ing.",
    "buy": "We need 'to' before the verb.",
    "bought": "Bought is past."
-  }
+  },
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mcq",
@@ -456,7 +482,8 @@
    "walked": "Walked is a short finished action; 'while' wants a longer one.",
    "have walked": "Have walked doesn't fit a past story.",
    "am walking": "Am walking is now."
-  }
+  },
+  "sk": "grammar.continuous-past"
  },
  {
   "type": "mcq",
@@ -473,7 +500,8 @@
    "does the shop close": "No 'does' inside an indirect question.",
    "closes the shop": "Verb before subject is question order, wrong here.",
    "the shop does close": "The 'does' isn't needed."
-  }
+  },
+  "sk": "grammar.reported"
  },
  {
   "type": "mcq",
@@ -490,7 +518,8 @@
    "mustn't": "Mustn't = not allowed, not a deduction.",
    "needn't": "Needn't = not necessary.",
    "shouldn't": "Shouldn't is advice."
-  }
+  },
+  "sk": "grammar.modal"
  },
  {
   "type": "mcq",
@@ -507,7 +536,8 @@
    "unless": "Unless = if not, the opposite meaning.",
    "even though": "Even though shows contrast.",
    "in case": "In case = to be ready for something that might happen."
-  }
+  },
+  "sk": "grammar.conditional-1"
  },
  {
   "type": "mcq",
@@ -524,7 +554,8 @@
    "have": "Have is for real possibilities (first conditional).",
    "would have": "Would goes in the other half, not after if.",
    "will have": "Will is for real future situations."
-  }
+  },
+  "sk": "grammar.conditional-2"
  },
  {
   "type": "mcq",
@@ -541,7 +572,8 @@
    "will finish": "We don't use will after if here.",
    "finished": "Finished makes it imaginary; this is a real plan.",
    "would finish": "Would is for imaginary situations."
-  }
+  },
+  "sk": "grammar.conditional-1"
  },
  {
   "type": "mcq",
@@ -558,7 +590,8 @@
    "win": "Win would make it a real possibility (first conditional).",
    "will win": "No will after if.",
    "had won": "Had won is for the past (third conditional)."
-  }
+  },
+  "sk": "grammar.conditional-2"
  },
  {
   "type": "mcq",
@@ -575,7 +608,8 @@
    "will": "Will doesn't match 'If I were you'.",
    "am": "Am doesn't go with apologise.",
    "did": "Did is past."
-  }
+  },
+  "sk": "grammar.conditional-2"
  },
  {
   "type": "mcq",
@@ -592,7 +626,8 @@
    "unless": "Unless means if not.",
    "even though": "Even though shows contrast.",
    "in case of": "In case of needs a noun."
-  }
+  },
+  "sk": "grammar.conditional-1"
  },
  {
   "type": "mcq",
@@ -609,7 +644,8 @@
    "unless": "Unless means if not.",
    "so that it": "So that it needs a purpose verb: so that you stay warm.",
    "if not": "If not doesn't fit here."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -626,7 +662,8 @@
    "if": "If would mean the opposite.",
    "when": "When doesn't give the condition.",
    "as soon as": "As soon as is about time."
-  }
+  },
+  "sk": "grammar.conditional-1"
  },
  {
   "type": "mcq",
@@ -643,7 +680,8 @@
    "will get": "No will after as soon as.",
    "got": "Got is past.",
    "am getting": "Am getting is now."
-  }
+  },
+  "sk": "grammar.future"
  },
  {
   "type": "mcq",
@@ -660,7 +698,8 @@
    "performs": "Performs is active; the play doesn't perform itself.",
    "is performing": "Is performing is active, now.",
    "has perform": "Has perform is wrong: has performed."
-  }
+  },
+  "sk": "grammar.passive"
  },
  {
   "type": "mcq",
@@ -677,7 +716,8 @@
    "opened": "Opened (active) needs a person who opened it.",
    "is opened": "Is opened is present.",
    "has been open": "Has been open isn't for 'last month'."
-  }
+  },
+  "sk": "grammar.passive"
  },
  {
   "type": "mcq",
@@ -694,7 +734,8 @@
    "made": "Made alone makes the cookies the doers.",
    "was made": "Cookies are plural, so were.",
    "were make": "We need the participle made."
-  }
+  },
+  "sk": "grammar.passive"
  },
  {
   "type": "mcq",
@@ -711,7 +752,8 @@
    "will build": "Will build needs a builder as the subject.",
    "is built": "Is built is present.",
    "has built": "Has built is active present perfect."
-  }
+  },
+  "sk": "grammar.passive"
  },
  {
   "type": "mcq",
@@ -728,7 +770,8 @@
    "has stolen": "Has stolen means the bike stole something.",
    "is stealing": "Is stealing is active.",
    "stole": "Stole is active."
-  }
+  },
+  "sk": "grammar.passive"
  },
  {
   "type": "mcq",
@@ -745,7 +788,8 @@
    "speaks": "Speaks makes English the speaker.",
    "is speaking": "Is speaking is active.",
    "spoke": "Spoke is past active."
-  }
+  },
+  "sk": "grammar.passive"
  },
  {
   "type": "mcq",
@@ -762,7 +806,8 @@
    "is being": "Is being isn't used with tired here.",
    "were": "She → was, not were.",
    "be": "Be needs a form."
-  }
+  },
+  "sk": "grammar.reported"
  },
  {
   "type": "mcq",
@@ -779,7 +824,8 @@
    "has left": "Has left doesn't change back in reported speech.",
    "leaves": "Leaves is present.",
    "is leaving": "Is leaving is now."
-  }
+  },
+  "sk": "grammar.reported"
  },
  {
   "type": "mcq",
@@ -796,7 +842,8 @@
    "that": "That is for statements.",
    "do": "No do in reported questions.",
    "what": "What is for wh- questions."
-  }
+  },
+  "sk": "grammar.reported"
  },
  {
   "type": "mcq",
@@ -813,7 +860,8 @@
    "tidy": "We need to before tidy.",
    "tidying": "Tell isn't followed by -ing.",
    "that tidy": "That tidy isn't right."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -830,7 +878,8 @@
    "did come": "No did in reported questions.",
    "do come": "No do and no present.",
    "come from": "From is already at the end."
-  }
+  },
+  "sk": "grammar.reported"
  },
  {
   "type": "mcq",
@@ -847,7 +896,8 @@
    "will": "Will usually changes to would.",
    "can": "Can changes to could.",
    "is": "Is doesn't go with come."
-  }
+  },
+  "sk": "grammar.reported"
  },
  {
   "type": "mcq",
@@ -864,7 +914,8 @@
    "ran": "Ran is a finished past action with no link to now.",
    "am running": "Am running is now, not 'for an hour' up to now.",
    "had run": "Had run is before another past time."
-  }
+  },
+  "sk": "grammar.perfect-continuous"
  },
  {
   "type": "mcq",
@@ -881,7 +932,8 @@
    "are you waiting": "Are you waiting doesn't go with how long here.",
    "did you wait": "Did you wait is finished.",
    "you wait": "A question needs an auxiliary."
-  }
+  },
+  "sk": "grammar.perfect-continuous"
  },
  {
   "type": "mcq",
@@ -898,7 +950,8 @@
    "already started": "Past simple doesn't show it happened first.",
    "has already started": "Has started is present perfect, not past.",
    "was already start": "Was start isn't a form."
-  }
+  },
+  "sk": "grammar.perfect-past"
  },
  {
   "type": "mcq",
@@ -915,7 +968,8 @@
    "has forgotten": "Has forgotten is present perfect.",
    "forgets": "Forgets is present.",
    "was forgetting": "Was forgetting isn't natural here."
-  }
+  },
+  "sk": "grammar.perfect-past"
  },
  {
   "type": "mcq",
@@ -932,7 +986,8 @@
    "have been studying": "Have been is up to now, not up to a past moment.",
    "am studying": "Am studying is now.",
    "study": "Study is present simple."
-  }
+  },
+  "sk": "grammar.perfect-continuous"
  },
  {
   "type": "mcq",
@@ -949,7 +1004,8 @@
    "use to": "Use to is only after did: didn't use to.",
    "am used to": "Am used to + -ing means 'familiar with'.",
    "was used": "Was used is passive."
-  }
+  },
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mcq",
@@ -966,7 +1022,8 @@
    "live": "After 'used to' (be) we need -ing.",
    "lived": "Lived is past.",
    "to live": "To live is for 'used to' habits, not be used to."
-  }
+  },
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mcq",
@@ -983,7 +1040,8 @@
    "used to": "After did, use the base form: use to.",
    "using to": "Using to isn't a form.",
    "uses to": "Uses to isn't a form."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -1000,7 +1058,8 @@
    "wear": "We need -ing after to here.",
    "wore": "Wore is past.",
    "be wearing": "Be wearing isn't right after to here."
-  }
+  },
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mcq",
@@ -1017,7 +1076,8 @@
    "to get": "Remember to get = not forget to do it (future).",
    "get": "We need -ing.",
    "got": "Got is past."
-  }
+  },
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mcq",
@@ -1034,7 +1094,8 @@
    "feeding": "Remember feeding = recall a past memory.",
    "feed": "We need to before feed.",
    "fed": "Fed is past."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -1051,7 +1112,8 @@
    "having": "Stop having = he finished drinking.",
    "have": "We need to.",
    "had": "Had is past."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -1068,7 +1130,8 @@
    "see": "After 'to' here, use -ing.",
    "seen": "Seen needs have.",
    "be see": "Be see isn't a form."
-  }
+  },
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mcq",
@@ -1085,7 +1148,8 @@
    "to laugh": "Can't help is followed by -ing.",
    "laugh": "We need -ing.",
    "laughed": "Laughed is past."
-  }
+  },
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mcq",
@@ -1102,7 +1166,8 @@
    "to go": "Worth is followed by -ing.",
    "go": "We need -ing.",
    "went": "Went is past."
-  }
+  },
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mcq",
@@ -1119,7 +1184,8 @@
    "finishing": "Manage isn't followed by -ing.",
    "finish": "We need to.",
    "finished": "Finished is past."
-  }
+  },
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mcq",
@@ -1136,7 +1202,8 @@
    "to open": "Mind is followed by -ing.",
    "open": "We need -ing.",
    "opened": "Opened is past."
-  }
+  },
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mcq",
@@ -1153,7 +1220,8 @@
    "to stay": "Let doesn't take to.",
    "staying": "Let doesn't take -ing.",
    "stayed": "Stayed is past."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -1170,7 +1238,8 @@
    "to read": "Active make doesn't take to.",
    "reading": "Make doesn't take -ing.",
    "reads": "No -s after us."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -1187,7 +1256,8 @@
    "who": "Who would need 'his bike'.",
    "which": "Which is for things.",
    "who's": "Who's = who is."
-  }
+  },
+  "sk": "grammar.relative"
  },
  {
   "type": "mcq",
@@ -1204,7 +1274,8 @@
    "which": "Which would need 'on': on which.",
    "where": "Where is for places.",
    "who": "Who is for people."
-  }
+  },
+  "sk": "grammar.relative"
  },
  {
   "type": "mcq",
@@ -1221,7 +1292,8 @@
    "that": "That can't be used after a comma.",
    "which": "Which is for things.",
    "whose": "Whose shows owning."
-  }
+  },
+  "sk": "grammar.relative"
  },
  {
   "type": "mcq",
@@ -1238,7 +1310,8 @@
    "what": "What isn't a relative pronoun here.",
    "who": "Who is for people.",
    "where": "Where is for places."
-  }
+  },
+  "sk": "grammar.relative"
  },
  {
   "type": "mcq",
@@ -1255,7 +1328,8 @@
    "can't": "Can't = I'm sure it isn't true.",
    "mustn't": "Mustn't = not allowed.",
    "shouldn't": "Shouldn't is advice."
-  }
+  },
+  "sk": "grammar.modal"
  },
  {
   "type": "mcq",
@@ -1272,7 +1346,8 @@
    "must": "Must means you're sure it is.",
    "should": "Should is for advice or expectation.",
    "has to": "Has to is about rules."
-  }
+  },
+  "sk": "grammar.modal"
  },
  {
   "type": "mcq",
@@ -1289,7 +1364,8 @@
    "must": "Must means you're sure.",
    "can't": "Can't means you're sure she isn't.",
    "has to": "Has to is about rules."
-  }
+  },
+  "sk": "grammar.modal"
  },
  {
   "type": "mcq",
@@ -1306,7 +1382,8 @@
    "should": "Should have = it was a good idea, but it didn't happen.",
    "can": "We don't use can have for a past deduction; use could have.",
    "would": "Would have is for conditionals."
-  }
+  },
+  "sk": "grammar.perfect-present"
  },
  {
   "type": "mcq",
@@ -1323,7 +1400,8 @@
    "don't have to": "Don't have to means not necessary.",
    "might": "Might is possibility.",
    "needn't": "Needn't means not necessary."
-  }
+  },
+  "sk": "grammar.modal"
  },
  {
   "type": "mcq",
@@ -1340,7 +1418,8 @@
    "mustn't": "Mustn't means it's not allowed.",
    "must": "Must would tell you to worry.",
    "have": "Have needs to."
-  }
+  },
+  "sk": "grammar.modal"
  },
  {
   "type": "mcq",
@@ -1357,7 +1436,8 @@
    "am": "Wish isn't followed by the present.",
    "will be": "Wish isn't followed by will.",
    "be": "Be needs a form."
-  }
+  },
+  "sk": "grammar.wish-prefer"
  },
  {
   "type": "mcq",
@@ -1374,7 +1454,8 @@
    "didn't eat": "Didn't eat is for a present wish.",
    "don't eat": "Don't eat is present.",
    "won't eat": "Won't is future."
-  }
+  },
+  "sk": "grammar.wish-prefer"
  },
  {
   "type": "mcq",
@@ -1391,7 +1472,8 @@
    "will": "Wish isn't followed by will.",
    "did": "Did isn't used with 'stop' here.",
    "had": "Had would need a past participle."
-  }
+  },
+  "sk": "grammar.wish-prefer"
  },
  {
   "type": "mcq",
@@ -1408,7 +1490,8 @@
    "Because": "Because gives a reason.",
    "Despite": "Despite needs a noun or -ing.",
    "So": "So gives a result."
-  }
+  },
+  "sk": "grammar.linker"
  },
  {
   "type": "mcq",
@@ -1425,7 +1508,8 @@
    "Although": "Although needs a clause: although it rained.",
    "Even": "Even needs though.",
    "However": "However starts a new sentence."
-  }
+  },
+  "sk": "grammar.linker"
  },
  {
   "type": "mcq",
@@ -1442,7 +1526,8 @@
    "Although": "Although joins two clauses in one sentence.",
    "Despite": "Despite needs a noun.",
    "Because": "Because gives a reason."
-  }
+  },
+  "sk": "grammar.linker"
  },
  {
   "type": "mcq",
@@ -1459,7 +1544,8 @@
    "because of": "Because of needs a noun.",
    "in order": "In order needs to: in order to win.",
    "such": "Such needs a noun."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -1476,7 +1562,8 @@
    "so that not": "So that needs a full clause: so that I didn't…",
    "in order not": "In order not needs to.",
    "for not": "For not isn't English."
-  }
+  },
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mcq",
@@ -1493,7 +1580,8 @@
    "Until": "Until means up to that time.",
    "Since": "Since needs a past start point.",
    "Unless": "Unless means if not."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -1510,7 +1598,8 @@
    "too": "Too goes at the end: her brother is too.",
    "neither": "Neither is for negatives.",
    "also": "Also doesn't go there."
-  }
+  },
+  "sk": "grammar.inversion"
  },
  {
   "type": "mcq",
@@ -1527,7 +1616,8 @@
    "So": "So is for positive sentences.",
    "Too": "Too goes at the end: Me too.",
    "Either": "Either goes at the end: I don't either."
-  }
+  },
+  "sk": "grammar.inversion"
  },
  {
   "type": "mcq",
@@ -1544,7 +1634,8 @@
    "are the toilets": "Don't put the verb first in an indirect question.",
    "the toilets is": "Toilets are plural.",
    "is the toilets": "Wrong order and singular."
-  }
+  },
+  "sk": "grammar.reported"
  },
  {
   "type": "mcq",
@@ -1561,7 +1652,8 @@
    "does the film start": "No does in indirect questions.",
    "starts the film": "Verb before subject is wrong here.",
    "the film start": "The film → starts with -s."
-  }
+  },
+  "sk": "grammar.reported"
  },
  {
   "type": "mcq",
@@ -1578,7 +1670,8 @@
    "did break": "Did isn't used when who is the subject.",
    "did broke": "Did + broke is wrong.",
    "breaked": "Break is irregular: broke."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -1595,7 +1688,8 @@
    "No": "No needs a noun directly: no friends.",
    "Any": "Any is for questions.",
    "Nobody": "Nobody isn't followed by of."
-  }
+  },
+  "sk": "grammar.quantifier"
  },
  {
   "type": "mcq",
@@ -1612,7 +1706,8 @@
    "such many": "We don't say such many.",
    "so much": "Much is for uncountable things.",
    "too much": "Too much is for uncountable things."
-  }
+  },
+  "sk": "grammar.quantifier"
  },
  {
   "type": "mcq",
@@ -1629,7 +1724,8 @@
    "so": "So goes with an adjective alone: so good.",
    "too": "Too means more than enough.",
    "very": "Very doesn't go with 'a good game that'."
-  }
+  },
+  "sk": "grammar.so-such"
  },
  {
   "type": "mcq",
@@ -1646,7 +1742,8 @@
    "many": "Many is for countable things.",
    "few": "Few is for countable things.",
    "a lot": "A lot needs of."
-  }
+  },
+  "sk": "grammar.quantifier"
  },
  {
   "type": "mcq",
@@ -1663,7 +1760,8 @@
    "is": "Both means two, so are.",
    "be": "Be needs a form.",
    "was being": "Was being is singular and odd here."
-  }
+  },
+  "sk": "grammar.quantifier"
  },
  {
   "type": "mcq",
@@ -1680,7 +1778,8 @@
    "have": "Each takes a singular verb.",
    "are having": "Are is plural.",
    "having": "Having needs a verb before it."
-  }
+  },
+  "sk": "grammar.present-simple"
  },
  {
   "type": "mcq",
@@ -1697,7 +1796,8 @@
    "visit": "Present simple is for timetables, not personal plans.",
    "will visiting": "Will visiting isn't a form.",
    "visited": "Visited is past."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -1714,7 +1814,8 @@
    "is leave": "Is leave isn't a form.",
    "left": "Left is past.",
    "leaving": "Leaving needs is."
-  }
+  },
+  "sk": "grammar.present-simple"
  },
  {
   "type": "mcq",
@@ -1731,7 +1832,8 @@
    "will lie down": "Will lie down is a single action, not in progress.",
    "lie": "Lie is present.",
    "are lain": "Are lain isn't a form."
-  }
+  },
+  "sk": "grammar.future"
  },
  {
   "type": "mcq",
@@ -1748,7 +1850,8 @@
    "will read": "Will read doesn't show it's finished by June.",
    "have read": "Have read is up to now.",
    "am reading": "Am reading is now."
-  }
+  },
+  "sk": "grammar.future"
  },
  {
   "type": "mcq",
@@ -1765,7 +1868,8 @@
    "went": "Went is for finished times like last month.",
    "was": "Was doesn't go with 'to the dentist' here.",
    "am going": "Am going is future."
-  }
+  },
+  "sk": "grammar.perfect-present"
  },
  {
   "type": "mcq",
@@ -1782,37 +1886,43 @@
    "have lost": "Present perfect doesn't go with yesterday.",
    "had been losing": "That form doesn't fit a single action.",
    "lose": "Lose is present."
-  }
+  },
+  "sk": "grammar.past-simple"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "I have been learning English for three years.",
-  "explain": "have been + -ing + for + time."
+  "explain": "have been + -ing + for + time.",
+  "sk": "grammar.perfect-continuous"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "If it rains, we will stay at home.",
-  "explain": "If + present, will + verb."
+  "explain": "If + present, will + verb.",
+  "sk": "grammar.conditional-1"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "The book was written by a famous author.",
-  "explain": "Passive: was + past participle + by."
+  "explain": "Passive: was + past participle + by.",
+  "sk": "grammar.passive"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "She asked me where I lived.",
-  "explain": "Reported question: no question order."
+  "explain": "Reported question: no question order.",
+  "sk": "grammar.reported"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "We used to play in the garden.",
-  "explain": "used to + verb for past habits."
+  "explain": "used to + verb for past habits.",
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mistake",
@@ -1827,7 +1937,8 @@
   ],
   "wrong": 3,
   "fix": "for",
-  "explain": "for + a length of time (three years); since + a starting point (since 2020)."
+  "explain": "for + a length of time (three years); since + a starting point (since 2020).",
+  "sk": "grammar.perfect-present"
  },
  {
   "type": "mistake",
@@ -1842,7 +1953,8 @@
   ],
   "wrong": 4,
   "fix": "at",
-  "explain": "good at + a subject or activity."
+  "explain": "good at + a subject or activity.",
+  "sk": "grammar.preposition"
  },
  {
   "type": "mistake",
@@ -1855,7 +1967,8 @@
   ],
   "wrong": 2,
   "fix": "in",
-  "explain": "interested in."
+  "explain": "interested in.",
+  "sk": "grammar.preposition"
  },
  {
   "type": "mistake",
@@ -1870,7 +1983,8 @@
   ],
   "wrong": 1,
   "fix": "said",
-  "explain": "say that / tell someone that."
+  "explain": "say that / tell someone that.",
+  "sk": "grammar.past-simple"
  },
  {
   "type": "mistake",
@@ -1885,7 +1999,8 @@
   ],
   "wrong": 4,
   "fix": "seeing",
-  "explain": "look forward to + -ing."
+  "explain": "look forward to + -ing.",
+  "sk": "grammar.gerund-infinitive"
  },
  {
   "type": "mistake",
@@ -1902,7 +2017,8 @@
   ],
   "wrong": 4,
   "fix": "who",
-  "explain": "who for people."
+  "explain": "who for people.",
+  "sk": "grammar.relative"
  },
  {
   "type": "gaps",
@@ -1918,7 +2034,8 @@
    "from",
    "during"
   ],
-  "explain": "since + a point in time; for + a length of time."
+  "explain": "since + a point in time; for + a length of time.",
+  "sk": "grammar.perfect-present"
  },
  {
   "type": "gaps",
@@ -1934,7 +2051,8 @@
    "such",
    "too"
   ],
-  "explain": "so + adjective + that; very early."
+  "explain": "so + adjective + that; very early.",
+  "sk": "grammar.so-such"
  },
  {
   "type": "gaps",
@@ -1950,7 +2068,8 @@
    "mustn't",
    "should to"
   ],
-  "explain": "must = rule; can = it's allowed."
+  "explain": "must = rule; can = it's allowed.",
+  "sk": "grammar.modal"
  },
  {
   "type": "gaps",
@@ -1966,43 +2085,50 @@
    "were",
    "find"
   ],
-  "explain": "Past continuous for the background, past simple for the event."
+  "explain": "Past continuous for the background, past simple for the event.",
+  "sk": "grammar.continuous-past"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "I was reading when the lights went out.",
-  "explain": "Past continuous (was reading) + past simple interruption (went out)."
+  "explain": "Past continuous (was reading) + past simple interruption (went out).",
+  "sk": "grammar.continuous-past"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "Have you ever tried climbing?",
-  "explain": "Present perfect for experience: Have you ever tried…?"
+  "explain": "Present perfect for experience: Have you ever tried…?",
+  "sk": "grammar.perfect-present"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "If it rains, we will stay inside.",
-  "explain": "First conditional: If + present, will + verb."
+  "explain": "First conditional: If + present, will + verb.",
+  "sk": "grammar.conditional-1"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "You should have told me earlier.",
-  "explain": "should have + past participle = a past mistake."
+  "explain": "should have + past participle = a past mistake.",
+  "sk": "grammar.perfect-present"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "The cake was made by my grandad.",
-  "explain": "Passive: was made by."
+  "explain": "Passive: was made by.",
+  "sk": "grammar.passive"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "She has lived here since 2019.",
-  "explain": "Present perfect + since + a point in time."
+  "explain": "Present perfect + since + a point in time.",
+  "sk": "grammar.perfect-present"
  },
  {
   "type": "mistake",
@@ -2017,7 +2143,8 @@
   ],
   "wrong": 2,
   "fix": "seen",
-  "explain": "have + past participle: I have seen (not saw) that film twice."
+  "explain": "have + past participle: I have seen (not saw) that film twice.",
+  "sk": "grammar.perfect-present"
  },
  {
   "type": "mistake",
@@ -2032,7 +2159,8 @@
   ],
   "wrong": 5,
   "fix": "melts.",
-  "explain": "A fact that is always true: If + present, present: If you heat ice, it melts."
+  "explain": "A fact that is always true: If + present, present: If you heat ice, it melts.",
+  "sk": "grammar.conditional-1"
  },
  {
   "type": "mistake",
@@ -2048,7 +2176,8 @@
   ],
   "wrong": 2,
   "fix": "playing",
-  "explain": "Past continuous: were + -ing: We were playing."
+  "explain": "Past continuous: were + -ing: We were playing.",
+  "sk": "grammar.continuous-past"
  },
  {
   "type": "mistake",
@@ -2062,7 +2191,8 @@
   ],
   "wrong": 3,
   "fix": "since",
-  "explain": "since + a point in time (2018); for + a length of time (five years)."
+  "explain": "since + a point in time (2018); for + a length of time (five years).",
+  "sk": "grammar.perfect-present"
  },
  {
   "type": "mistake",
@@ -2077,7 +2207,8 @@
   ],
   "wrong": 3,
   "fix": "built",
-  "explain": "Passive: was + past participle: was built."
+  "explain": "Passive: was + past participle: was built.",
+  "sk": "grammar.passive"
  },
  {
   "type": "mistake",
@@ -2091,7 +2222,8 @@
   ],
   "wrong": 4,
   "fix": "shout.",
-  "explain": "After have to / don't have to, use the plain verb: shout."
+  "explain": "After have to / don't have to, use the plain verb: shout.",
+  "sk": "grammar.other"
  },
  {
   "type": "mistake",
@@ -2106,7 +2238,8 @@
   ],
   "wrong": 4,
   "fix": "was",
-  "explain": "Reported speech moves back in time: he said he was tired."
+  "explain": "Reported speech moves back in time: he said he was tired.",
+  "sk": "grammar.reported"
  },
  {
   "type": "gaps",
@@ -2122,7 +2255,8 @@
    "did",
    "was calling"
   ],
-  "explain": "Long action (was doing) interrupted by a short one (called)."
+  "explain": "Long action (was doing) interrupted by a short one (called).",
+  "sk": "grammar.continuous-past"
  },
  {
   "type": "gaps",
@@ -2138,7 +2272,8 @@
    "visit",
    "had visited"
   ],
-  "explain": "Experience up to now: have visited; a finished time: visited in 2021."
+  "explain": "Experience up to now: have visited; a finished time: visited in 2021.",
+  "sk": "grammar.past-simple"
  },
  {
   "type": "gaps",
@@ -2154,7 +2289,8 @@
    "will study",
    "would"
   ],
-  "explain": "First conditional: If + present, will + verb."
+  "explain": "First conditional: If + present, will + verb.",
+  "sk": "grammar.conditional-1"
  },
  {
   "type": "gaps",
@@ -2170,7 +2306,8 @@
    "sort",
    "carry"
   ],
-  "explain": "Passive present: are + past participle."
+  "explain": "Passive present: are + past participle.",
+  "sk": "grammar.passive"
  },
  {
   "type": "gaps",
@@ -2186,7 +2323,8 @@
    "mustn't",
    "shouldn't"
   ],
-  "explain": "don't have to = not necessary; should = a good idea."
+  "explain": "don't have to = not necessary; should = a good idea.",
+  "sk": "grammar.modal"
  },
  {
   "type": "gaps",
@@ -2202,7 +2340,8 @@
    "is",
    "wants"
   ],
-  "explain": "Reported speech moves back: am → was, want → wanted."
+  "explain": "Reported speech moves back: am → was, want → wanted.",
+  "sk": "grammar.reported"
  },
  {
   "type": "gaps",
@@ -2218,6 +2357,7 @@
    "during",
    "from"
   ],
-  "explain": "for + a length of time; since + a starting point."
+  "explain": "for + a length of time; since + a starting point.",
+  "sk": "grammar.perfect-present"
  }
 ]

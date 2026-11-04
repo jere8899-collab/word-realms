@@ -19,7 +19,8 @@
       "blue": "The story says: “My house has a red door and two windows.” So it's “red”, not “blue”.",
       "white": "“white” is in the story too, but not as the answer. The story says: “My house has a red door and two windows.” So it's “red”.",
       "green": "The story says: “My house has a red door and two windows.” So it's “red”, not “green”."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -36,7 +37,8 @@
       "a dog": "The story says: “I have a cat.” So it's “a cat”, not “a dog”.",
       "a rabbit": "The story says: “I have a cat.” So it's “a cat”, not “a rabbit”.",
       "a bird": "The story says: “I have a cat.” So it's “a cat”, not “a bird”."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -53,7 +55,8 @@
       "under the door": "The story says: “Every morning, Button sleeps in the sun.” So it's “in the sun”, not “under the door”.",
       "in the river": "The story says: “Every morning, Button sleeps in the sun.” So it's “in the sun”, not “in the river”.",
       "at school": "The story says: “Every morning, Button sleeps in the sun.” So it's “in the sun”, not “at school”."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -76,7 +79,8 @@
       "at school": "The story says: “Dear Mum, I am at Ben's house.” So it's “at Ben's house”, not “at school”.",
       "at home": "“at home” is in the story too, but not as the answer. The story says: “Dear Mum, I am at Ben's house.” So it's “at Ben's house”.",
       "at the shop": "The story says: “Dear Mum, I am at Ben's house.” So it's “at Ben's house”, not “at the shop”."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -93,7 +97,8 @@
       "at five o'clock": "The story says: “I will be home at six o'clock.” So it's “at six o'clock”, not “at five o'clock”.",
       "at seven o'clock": "The story says: “I will be home at six o'clock.” So it's “at six o'clock”, not “at seven o'clock”.",
       "at eight o'clock": "The story says: “I will be home at six o'clock.” So it's “at six o'clock”, not “at eight o'clock”."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -110,7 +115,8 @@
       "pasta": "The story says: “Please don't make pasta for me — Ben's mum has pizza for us!” So it's “pizza”, not “pasta”.",
       "soup": "The story says: “Please don't make pasta for me — Ben's mum has pizza for us!” So it's “pizza”, not “soup”.",
       "cake": "The story says: “Please don't make pasta for me — Ben's mum has pizza for us!” So it's “pizza”, not “cake”."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -133,7 +139,8 @@
       "Monday": "“Monday” is in the story too, but not as the answer. The story says: “Closed on Sunday.” So it's “Sunday”.",
       "Saturday": "“Saturday” is in the story too, but not as the answer. The story says: “Closed on Sunday.” So it's “Sunday”.",
       "Friday": "The story says: “Closed on Sunday.” So it's “Sunday”, not “Friday”."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -150,7 +157,8 @@
       "fish": "“fish” is in the story too, but not as the answer. The story says: “Today: rabbit food is half price!” So it's “rabbit food”.",
       "cat toys": "The story says: “Today: rabbit food is half price!” So it's “rabbit food”, not “cat toys”.",
       "dog beds": "The story says: “Today: rabbit food is half price!” So it's “rabbit food”, not “dog beds”."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -167,7 +175,8 @@
       "£5": "“£5” is in the story too, but not as the answer. The story says: “Small fish: £3 each.” So it's “£3”.",
       "£9": "“£9” is in the story too, but not as the answer. The story says: “Small fish: £3 each.” So it's “£3”.",
       "£1": "The story says: “Small fish: £3 each.” So it's “£3”, not “£1”."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -190,7 +199,8 @@
       "by bike": "The story says: “He goes to school by bus.” So it's “by bus”, not “by bike”.",
       "on foot": "The story says: “He goes to school by bus.” So it's “by bus”, not “on foot”.",
       "by car": "The story says: “He goes to school by bus.” So it's “by bus”, not “by car”."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -207,7 +217,8 @@
       "milk": "The story says: “He eats eggs and drinks orange juice.” So it's “orange juice”, not “milk”.",
       "tea": "The story says: “He eats eggs and drinks orange juice.” So it's “orange juice”, not “tea”.",
       "water": "The story says: “He eats eggs and drinks orange juice.” So it's “orange juice”, not “water”."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -224,7 +235,8 @@
       "at seven": "“at seven” is in the story too, but not as the answer. The story says: “In the evening, he reads a book and goes to bed at nine.” So it's “at nine”.",
       "at eight": "The story says: “In the evening, he reads a book and goes to bed at nine.” So it's “at nine”, not “at eight”.",
       "at ten": "The story says: “In the evening, he reads a book and goes to bed at nine.” So it's “at nine”, not “at ten”."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -247,7 +259,8 @@
       "cold and rainy": "The story says: “The weather is hot and sunny.” So it's “hot and sunny”, not “cold and rainy”.",
       "windy": "The story says: “The weather is hot and sunny.” So it's “hot and sunny”, not “windy”.",
       "snowy": "The story says: “The weather is hot and sunny.” So it's “hot and sunny”, not “snowy”."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -264,7 +277,8 @@
       "swimming": "The story says: “My sister likes making sandcastles.” So it's “making sandcastles”, not “swimming”.",
       "reading": "The story says: “My sister likes making sandcastles.” So it's “making sandcastles”, not “reading”.",
       "sleeping": "The story says: “My sister likes making sandcastles.” So it's “making sandcastles”, not “sleeping”."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -281,7 +295,8 @@
       "the sea": "“the sea” is in the story too, but not as the answer. The story says: “The food is good, but the hotel is very small.” So it's “the hotel”.",
       "the beach": "“the beach” is in the story too, but not as the answer. The story says: “The food is good, but the hotel is very small.” So it's “the hotel”.",
       "the food": "The story says: “The food is good, but the hotel is very small.” So it's “the hotel”, not “the food”."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -304,7 +319,8 @@
       "to the shop": "The story says: “Puffbun and Mia go to the park.” So it's “to the park”, not “to the shop”.",
       "to school": "The story says: “Puffbun and Mia go to the park.” So it's “to the park”, not “to school”.",
       "to the beach": "The story says: “Puffbun and Mia go to the park.” So it's “to the park”, not “to the beach”."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -321,7 +337,8 @@
       "apples": "“apples” doesn't answer the question. Find the line in the story that does, and read it again.",
       "juice": "“juice” doesn't answer the question. Find the line in the story that does, and read it again.",
       "sandwiches": "“sandwiches” doesn't answer the question. Find the line in the story that does, and read it again."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -338,7 +355,8 @@
       "sings": "“sings” is in the story too, but not as the answer. The story says: “Puffbun is happy and sleeps in the sun.” So it's “sleeps”.",
       "eats bread": "The story says: “Puffbun is happy and sleeps in the sun.” So it's “sleeps”, not “eats bread”.",
       "runs": "The story says: “Puffbun is happy and sleeps in the sun.” So it's “sleeps”, not “runs”."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -361,7 +379,8 @@
       "one": "The story says: “You can take two books home.” So it's “two”, not “one”.",
       "three": "The story says: “You can take two books home.” So it's “two”, not “three”.",
       "five": "“five” is in the story too, but not as the answer. The story says: “You can take two books home.” So it's “two”."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -378,7 +397,8 @@
       "Monday": "“Monday” is in the story too, but not as the answer. The story says: “It is closed on Sunday.” So it's “Sunday”.",
       "Saturday": "“Saturday” is in the story too, but not as the answer. The story says: “It is closed on Sunday.” So it's “Sunday”.",
       "Friday": "The story says: “It is closed on Sunday.” So it's “Sunday”, not “Friday”."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -395,7 +415,8 @@
       "read": "The story says: “Don't eat or drink here.” So it's “eat”, not “read”.",
       "sit": "The story says: “Don't eat or drink here.” So it's “eat”, not “sit”.",
       "take books": "“take books” is in the story too, but not as the answer. The story says: “Don't eat or drink here.” So it's “eat”."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -418,7 +439,8 @@
       "white": "Only one ear is white.",
       "red": "Red is his basket.",
       "black": "Black isn't in the story. The story says: “He is brown with one white ear.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -435,7 +457,8 @@
       "in the garden with Mia": "He runs in the garden; he doesn't sleep there.",
       "on Mia's bed": "Mia's bed isn't in the story. The story says: “He sleeps in a red basket in the kitchen.”",
       "in a box by the door": "A box isn't in the story. The story says: “He sleeps in a red basket in the kitchen.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -452,7 +475,8 @@
       "cats and birds": "Cats and birds aren't in the story. The story says: “Pip likes balls and bones.”",
       "milk and cake": "Milk and cake aren't in the story. The story says: “Pip likes balls and bones.”",
       "shoes and socks": "Shoes and socks aren't in the story. The story says: “Pip likes balls and bones.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -469,7 +493,8 @@
       "every night": "Morning, not night.",
       "on Sundays": "Every morning, not only Sundays.",
       "after lunch": "Lunch isn't in the story. The story says: “Every morning, Pip runs in the garden with Mia.”"
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -492,7 +517,8 @@
       "twelve": "Twelve is 12; the story says twenty.",
       "two": "Two isn't the number.",
       "thirty": "Thirty is 30."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -509,7 +535,8 @@
       "short and quiet": "He is tall, not short.",
       "old and sad": "Old and sad aren't in the story. The story says: “He is tall and funny.”",
       "young and angry": "Angry isn't in the story. The story says: “He is tall and funny.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -526,7 +553,8 @@
       "by the door": "The door isn't in the story. The story says: “There is a fish tank by the window.”",
       "on the teacher's desk": "The desk isn't where it is.",
       "under the board": "The board is a different thing."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -543,7 +571,8 @@
       "Sunny and Mr Ong": "Mr Ong is the teacher.",
       "Bubbles and Pip": "Pip isn't in this story.",
       "Orange and Sunny": "Orange is their colour."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -566,7 +595,8 @@
       "a banana": "A banana isn't in her box.",
       "some grapes": "Grapes aren't in her box.",
       "an orange": "An orange isn't in her box."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -583,7 +613,8 @@
       "juice": "Juice isn't in the story. The story says: “She has a bottle of water too.”",
       "milk": "Milk isn't in the story. The story says: “She has a bottle of water too.”",
       "tea": "Tea isn't in the story. The story says: “She has a bottle of water too.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -600,7 +631,8 @@
       "a sandwich": "She has a sandwich.",
       "carrots": "She has carrots.",
       "water": "She has water."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -617,7 +649,8 @@
       "Mia": "Mia isn't in this story.",
       "her mum": "Her mum isn't in the story. The story says: “Lily eats lunch with her friend Zara at twelve o'clock.”",
       "Mr Ong": "Mr Ong isn't in this story."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -640,7 +673,8 @@
       "cold and rainy": "It's hot, not cold.",
       "very windy": "Wind isn't in the story. The story says: “It is hot and sunny.”",
       "snowy": "Snow isn't in the story. The story says: “It is hot and sunny.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -657,7 +691,8 @@
       "a kite": "A kite isn't in the story. The story says: “Ben makes a big sandcastle.”",
       "a cake": "A cake isn't in the story. The story says: “Ben makes a big sandcastle.”",
       "a boat": "A boat isn't in the story. The story says: “Ben makes a big sandcastle.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -674,7 +709,8 @@
       "sleeps": "Sleeping isn't in the story. The story says: “Dad reads a book under an umbrella.”",
       "eats ice cream": "They eat ice cream later.",
       "swims": "They swim in the sea, not under the umbrella."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -691,7 +727,8 @@
       "at two o'clock": "Two isn't the time.",
       "in the morning": "Morning isn't the time.",
       "at night": "They go home at four, before night."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -714,7 +751,8 @@
       "four": "Four isn't her age.",
       "six": "Six isn't her age.",
       "ten": "Ten isn't her age."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -731,7 +769,8 @@
       "red": "Red isn't in the story. The story says: “Minty is a little green dragon.”",
       "blue": "Blue isn't in the story. The story says: “Minty is a little green dragon.”",
       "pink": "Pink isn't in the story. The story says: “Minty is a little green dragon.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -748,7 +787,8 @@
       "a cat, a dog and a fish": "Those animals aren't at the party.",
       "three big dragons": "Minty is the only dragon.",
       "her teacher and her mum": "No grown-ups are in the story."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -765,7 +805,8 @@
       "with a cup of water": "Water isn't in the story. The story says: “She blows them out with a tiny puff of smoke!”",
       "with her big wings": "Her wings aren't in the story. The story says: “She blows them out with a tiny puff of smoke!”",
       "with a little fan": "A fan isn't in the story. The story says: “She blows them out with a tiny puff of smoke!”"
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -788,7 +829,8 @@
       "brown": "Brown isn't in the story. The story says: “Bun is a white bunny.”",
       "orange": "Orange is the carrot.",
       "grey": "Grey isn't in the story. The story says: “Bun is a white bunny.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -805,7 +847,8 @@
       "in a big house": "Her house is small.",
       "in the forest": "The forest isn't in the story. The story says: “She lives in a small house in the garden.”",
       "in a box": "A box isn't in the story. The story says: “She lives in a small house in the garden.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -822,7 +865,8 @@
       "Bun is hungry": "Hunger isn't the problem.",
       "Fox is sad": "Fox helps; he isn't sad.",
       "the carrot is bad": "The carrot is fine; they eat it."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -839,7 +883,8 @@
       "Owl": "Owl isn't in this story.",
       "Mia": "Mia isn't in this story.",
       "her mum": "Her mum isn't in this story."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -856,7 +901,8 @@
       "for breakfast": "Breakfast isn't in the story. The story says: “Then they eat it for dinner.”",
       "for lunch": "Lunch isn't in the story. The story says: “Then they eat it for dinner.”",
       "the next day": "They eat it that day."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -879,7 +925,8 @@
       "Bop": "Bop isn't his name.",
       "Robo": "Robo isn't in this story.",
       "Blue": "Blue is a colour."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -896,7 +943,8 @@
       "silver and red": "Red isn't in the story. The story says: “He is silver and blue.”",
       "black and blue": "Black isn't in the story. The story says: “He is silver and blue.”",
       "all blue": "He is two colours."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -913,7 +961,8 @@
       "two": "Two is his eyes.",
       "three": "Three isn't in the story. The story says: “He has two big eyes and four small wheels.”",
       "six": "Six isn't in the story. The story says: “He has two big eyes and four small wheels.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -930,7 +979,8 @@
       "walk": "He can walk.",
       "talk": "He can talk.",
       "move": "He has wheels, so he moves."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -947,7 +997,8 @@
       "before school": "After, not before.",
       "at night": "Night isn't in the story. The story says: “I play with Beep after school.”",
       "on Monday only": "Every day after school, not one day."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -970,7 +1021,8 @@
       "Sunday": "Sunday isn't in the story. The story says: “It is Saturday.”",
       "Friday": "Friday isn't in the story. The story says: “It is Saturday.”",
       "Monday": "Monday isn't in the story. The story says: “It is Saturday.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -987,7 +1039,8 @@
       "the park is closed": "A closed park isn't in the story.",
       "she is ill": "She isn't ill.",
       "Mum is busy": "Mum plays with her."
-     }
+     },
+     "sk": "reading.reason"
     },
     {
      "type": "mcq",
@@ -1004,7 +1057,8 @@
       "in the garden": "It's raining outside.",
       "in the park": "They can't go to the park.",
       "in the kitchen": "The kitchen isn't in the story. The story says: “They make a tent in the living room with blankets and chairs.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1021,7 +1075,8 @@
       "pizza": "Pizza isn't in the story. The story says: “They read books in the tent and eat popcorn.”",
       "cake": "Cake isn't in the story. The story says: “They read books in the tent and eat popcorn.”",
       "apples": "Apples aren't in the story. The story says: “They read books in the tent and eat popcorn.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1038,7 +1093,8 @@
       "sad": "She is sad at the start.",
       "cold": "Cold is the weather.",
       "tired": "Tired isn't in the story. The story says: “Now Ella is happy!”"
-     }
+     },
+     "sk": "reading.feeling"
     }
    ]
   },
@@ -1061,7 +1117,8 @@
       "in a house": "A house isn't in the story. The story says: “He goes to Night School in the big tree.”",
       "in the sky": "They fly in the sky, but school is in the tree.",
       "by the river": "A river isn't in the story. The story says: “He goes to Night School in the big tree.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1078,7 +1135,8 @@
       "at 8 a.m.": "a.m. is the morning; this is night.",
       "at 9 p.m.": "Nine isn't the time.",
       "at noon": "Noon is the middle of the day."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1095,7 +1153,8 @@
       "Hoo's mum": "His mum isn't in the story. The story says: “Hoo's teacher is Mrs Feather.”",
       "Hoo's friend": "His friend is Twit.",
       "a star": "They count stars."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1112,7 +1171,8 @@
       "to swim and sing": "Swimming isn't in the story. The story says: “In class, the owls learn to fly and count stars.”",
       "to read and write": "Reading isn't in the story. The story says: “In class, the owls learn to fly and count stars.”",
       "to run and jump": "Running isn't in the story. The story says: “In class, the owls learn to fly and count stars.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1129,7 +1189,8 @@
       "Mrs Feather": "She's the teacher.",
       "his brother": "A brother isn't in the story. The story says: “Hoo's best friend is Twit.”",
       "nobody": "He sits with Twit."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -1152,7 +1213,8 @@
       "Leo's": "Leo is visiting.",
       "Leo's dad's": "His dad isn't in the story. The story says: “Today Leo is at his uncle's farm.”",
       "a teacher's": "A teacher isn't in the story. The story says: “Today Leo is at his uncle's farm.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1169,7 +1231,8 @@
       "brown": "Brown isn't in the story. The story says: “The cows are black and white.”",
       "red and white": "Red is the tractor.",
       "all black": "They are two colours."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1186,7 +1249,8 @@
       "rides the tractor": "The tractor is in the afternoon.",
       "milks the cows": "Milking isn't in the story. The story says: “Leo feeds the chickens in the morning.”",
       "sleeps": "Sleeping isn't in the story. The story says: “Leo feeds the chickens in the morning.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1203,7 +1267,8 @@
       "two": "Two isn't the number.",
       "seven": "Seven isn't the number.",
       "ten": "Ten isn't the number."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1220,7 +1285,8 @@
       "a horse": "A horse isn't in the story. The story says: “In the afternoon, he rides on a big red tractor with his uncle.”",
       "a bike": "A bike isn't in the story. The story says: “In the afternoon, he rides on a big red tractor with his uncle.”",
       "a cow": "He feeds animals but rides the tractor."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -1243,7 +1309,8 @@
       "pink flowers": "The shoes are pink; the flowers are yellow.",
       "yellow stars": "Stars aren't in the story. The story says: “They are pink with yellow flowers.”",
       "red hearts": "Hearts aren't in the story. The story says: “They are pink with yellow flowers.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1260,7 +1327,8 @@
       "she lost her shoes": "Losing shoes isn't in the story.",
       "it's Christmas": "Christmas isn't in the story.",
       "her shoes are dirty": "Dirty isn't in the story."
-     }
+     },
+     "sk": "reading.reason"
     },
     {
      "type": "mcq",
@@ -1277,7 +1345,8 @@
       "they are too big": "Small, not big.",
       "they are broken": "Broken isn't in the story. The story says: “Zara's old shoes are too small.”",
       "they are wet": "Wet isn't in the story. The story says: “Zara's old shoes are too small.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1294,7 +1363,8 @@
       "to the park": "The park isn't in the story. The story says: “She wears her new shoes to school.”",
       "to a party": "A party isn't in the story. The story says: “She wears her new shoes to school.”",
       "to bed": "Bed isn't in the story. The story says: “She wears her new shoes to school.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1311,7 +1381,8 @@
       "the shoes are too pink": "They like the colour.",
       "the shoes are old": "The shoes are new.",
       "the shoes are small": "The OLD shoes are small."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -1334,7 +1405,8 @@
       "fire": "She doesn't like fire.",
       "rain": "Rain isn't in the story. The story says: “She likes flowers!”",
       "fish": "Fish aren't in the story. The story says: “She likes flowers!”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1351,7 +1423,8 @@
       "by the sea": "The sea isn't in the story. The story says: “Ember has a big garden on a hill.”",
       "in a cave": "A cave isn't in the story. The story says: “Ember has a big garden on a hill.”",
       "in the town": "A town isn't in the story. The story says: “Ember has a big garden on a hill.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1368,7 +1441,8 @@
       "blue": "The other flowers are blue.",
       "yellow": "Yellow isn't said for roses.",
       "pink": "Pink isn't in the story. The story says: “There are red roses, blue flowers and tall sunflowers.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1385,7 +1459,8 @@
       "picks the flowers": "Picking isn't in the story. The story says: “Every day she gives the flowers water.”",
       "sleeps on the hill": "Sleeping isn't in the story. The story says: “Every day she gives the flowers water.”",
       "makes a fire": "She doesn't like fire."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1402,7 +1477,8 @@
       "roses": "Roses aren't her favourite.",
       "blue flowers": "Blue flowers aren't her favourite.",
       "all the same": "She has one favourite."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -1425,7 +1501,8 @@
       "Ben": "Ben is second.",
       "the teacher": "The teacher doesn't run.",
       "nobody": "Amy is first."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1442,7 +1519,8 @@
       "first": "Amy is first.",
       "third": "Third isn't in the story. The story says: “Amy is first and Ben is second.”",
       "last": "He is second."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1459,7 +1537,8 @@
       "a cup": "A cup isn't in the story. The story says: “He wins a gold star!”",
       "a silver star": "The star is gold.",
       "a book": "A book isn't in the story. The story says: “He wins a gold star!”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1476,7 +1555,8 @@
       "the race": "He's second in the race.",
       "a song": "Singing isn't in the story. The story says: “Then Ben jumps very far.”",
       "a picture": "A picture isn't in the story. The story says: “Then Ben jumps very far.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1493,7 +1573,8 @@
       "water": "Water isn't in the story. The story says: “After the races, all the children have orange juice in the sun.”",
       "milk": "Milk isn't in the story. The story says: “After the races, all the children have orange juice in the sun.”",
       "apple juice": "The juice is orange."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -1516,7 +1597,8 @@
       "green": "Green is the plant in her bowl.",
       "white and gold": "White isn't in the story. The story says: “She is orange and very small.”",
       "red": "Red isn't in the story. The story says: “She is orange and very small.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1533,7 +1615,8 @@
       "on the kitchen floor": "The kitchen isn't in the story. The story says: “Goldie lives in a round bowl on Tom's desk.”",
       "in the garden": "The garden isn't in the story. The story says: “Goldie lives in a round bowl on Tom's desk.”",
       "under Tom's bed": "The bed isn't in the story. The story says: “Goldie lives in a round bowl on Tom's desk.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1550,7 +1633,8 @@
       "once": "She eats in the morning and at night: that's two.",
       "three times": "Morning and night is two, not three.",
       "four times": "Four isn't in the story."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1567,7 +1651,8 @@
       "Tom": "Tom gives her food; Dad cleans.",
       "Tom's mum": "Mum isn't in the story. The story says: “On Sundays, Tom's dad cleans the bowl.”",
       "Tom's sister": "A sister isn't in the story. The story says: “On Sundays, Tom's dad cleans the bowl.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1584,7 +1669,8 @@
       "a toy castle": "A castle isn't in the story. The story says: “Goldie likes the little green plant in her bowl.”",
       "big stones": "Stones aren't in the story. The story says: “Goldie likes the little green plant in her bowl.”",
       "the cat": "A cat isn't in the story. The story says: “Goldie likes the little green plant in her bowl.”"
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -1607,7 +1693,8 @@
       "her mum": "Her mum isn't in the story. The story says: “Today she is on the Moon with her robot, Zip.”",
       "a space dog": "A dog isn't in the story. The story says: “Today she is on the Moon with her robot, Zip.”",
       "two astronauts": "Rosa is the only astronaut."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1624,7 +1711,8 @@
       "an apple": "An apple isn't in the story. The story says: “Rosa has a sandwich and a banana.”",
       "a sandwich": "She has a sandwich, but it isn't fruit.",
       "some grapes": "Grapes aren't in the story. The story says: “Rosa has a sandwich and a banana.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1641,7 +1729,8 @@
       "water": "Water isn't in the story. The story says: “He drinks oil!”",
       "milk": "Milk isn't in the story. The story says: “He drinks oil!”",
       "orange juice": "Juice isn't in the story. The story says: “He drinks oil!”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1658,7 +1747,8 @@
       "blue and white": "Blue and white is the Earth.",
       "yellow": "Yellow isn't in the story. The story says: “The Moon is grey and very quiet.”",
       "black": "Black isn't in the story. The story says: “The Moon is grey and very quiet.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1675,7 +1765,8 @@
       "sad": "She is happy, not sad.",
       "tired": "Tired isn't in the story. The story says: “She is very happy.”",
       "scared": "Scared isn't in the story. The story says: “She is very happy.”"
-     }
+     },
+     "sk": "reading.feeling"
     }
    ]
   },
@@ -1698,7 +1789,8 @@
       "a red bird": "A bird isn't in the story. The story says: “It is a big yellow fish with a long tail.”",
       "a long green snake": "It has a long tail, but it isn't a snake.",
       "a blue fish": "The fish is yellow, not blue."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1715,7 +1807,8 @@
       "on Sunday": "Sunday isn't in the story. The story says: “On Saturday, Milo and his sister Ana go to the hill.”",
       "after school on Friday": "Friday isn't in the story. The story says: “On Saturday, Milo and his sister Ana go to the hill.”",
       "on Monday": "Monday isn't in the story. The story says: “On Saturday, Milo and his sister Ana go to the hill.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1732,7 +1825,8 @@
       "rainy": "Rain isn't in the story. The story says: “It is windy.”",
       "hot and sunny": "Sun isn't in the story. The story says: “It is windy.”",
       "snowy": "Snow isn't in the story. The story says: “It is windy.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1749,7 +1843,8 @@
       "into the sea": "The sea isn't in the story. The story says: “Then it goes into a tree.”",
       "onto a roof": "A roof isn't in the story. The story says: “Then it goes into a tree.”",
       "under the hill": "It goes up high, not under the hill."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1766,7 +1861,8 @@
       "Milo": "Milo says thank you; he doesn't get it.",
       "Milo's dad": "Dad isn't in the story. The story says: “On Saturday, Milo and his sister Ana go to the hill.”",
       "a tall man": "Ana is tall, but she isn't a man."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -1789,7 +1885,8 @@
       "Sunday": "Sunday isn't in the story. The story says: “It is Monday morning.”",
       "Friday": "Friday isn't in the story. The story says: “It is Monday morning.”",
       "Saturday": "Saturday isn't in the story. The story says: “It is Monday morning.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1806,7 +1903,8 @@
       "hats": "They put on hats.",
       "coats": "They put on coats.",
       "boots": "They put on boots."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1823,7 +1921,8 @@
       "a button": "Buttons are his eyes.",
       "a banana": "A banana isn't in the story. The story says: “He has a carrot nose and two black buttons for eyes.”",
       "a stone": "A stone isn't in the story. The story says: “He has a carrot nose and two black buttons for eyes.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1840,7 +1939,8 @@
       "in the garden": "The garden is where they make the snowman.",
       "at school": "There is no school today.",
       "in the bedroom": "The bedroom isn't in the story. The story says: “Then they drink hot chocolate in the kitchen.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1857,7 +1957,8 @@
       "Kim's dad": "Dad isn't in the story. The story says: “Kim and her brother Sam put on their hats, coats and boots.”",
       "the snowman": "The snowman has no name.",
       "Kim's friend from school": "Sam is her brother, not a school friend."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -1880,7 +1981,8 @@
       "seven": "Seven isn't in the story. The story says: “She is eight, like me.”",
       "nine": "Nine isn't in the story. The story says: “She is eight, like me.”",
       "eighteen": "Eighteen isn't eight."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1897,7 +1999,8 @@
       "swim": "Nina can't swim.",
       "sing": "Singing isn't in the story. The story says: “Nina can't swim, but she can dance very well.”",
       "draw": "Drawing isn't in the story. The story says: “Nina can't swim, but she can dance very well.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1914,7 +2017,8 @@
       "brown": "Brown is her eyes.",
       "white": "White is Snowball.",
       "yellow": "Yellow isn't in the story. The story says: “She has short black hair and big brown eyes.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1931,7 +2035,8 @@
       "carrots": "Carrots aren't in the story. The story says: “Snowball is white and fluffy, and he loves lettuce.”",
       "apples": "Apples aren't in the story. The story says: “Snowball is white and fluffy, and he loves lettuce.”",
       "cake": "Cake isn't in the story. The story says: “Snowball is white and fluffy, and he loves lettuce.”"
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -1954,7 +2059,8 @@
       "pink": "Pink isn't in the story. The story says: “Spark is a tiny purple dragon.”",
       "green": "Green isn't in the story. The story says: “Spark is a tiny purple dragon.”",
       "red": "Red isn't in the story. The story says: “Spark is a tiny purple dragon.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1971,7 +2077,8 @@
       "a purple dragon": "Spark is the purple dragon.",
       "a unicorn": "Pearl is the unicorn.",
       "Spark's mum": "His mum isn't in the story. The story says: “His teacher is Miss Fern.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1988,7 +2095,8 @@
       "four": "Four is the dragons.",
       "ten": "Ten is all the pupils.",
       "two": "Two isn't in the story. The story says: “There are ten pupils in his class: four dragons, three unicorns and three elves.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -2005,7 +2113,8 @@
       "they count to ten": "Counting is in the morning.",
       "they play football": "Football isn't in the story. The story says: “After lunch they learn to fly!”",
       "they go home": "Going home isn't in the story. The story says: “After lunch they learn to fly!”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -2022,7 +2131,8 @@
       "Miss Fern": "Miss Fern is the teacher; Pearl helps.",
       "an elf": "The elves don't help in the story.",
       "a big dragon": "Pearl is a unicorn, not a dragon."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -2045,7 +2155,8 @@
       "pink": "Pink is her dress.",
       "green": "Green isn't in the story. The story says: “She has blue wings and a long pink dress.”",
       "white": "White isn't in the story. The story says: “She has blue wings and a long pink dress.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -2062,7 +2173,8 @@
       "she can't fly": "Flying isn't the problem.",
       "her dress is dirty": "Her dress is fine.",
       "her cat is lost": "The cat isn't lost; it's sleeping."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -2079,7 +2191,8 @@
       "in the kitchen": "The kitchen is the second place.",
       "in the garden": "The garden isn't in the story. The story says: “She looks under her bed.”",
       "under the table": "The table isn't in the story. The story says: “She looks under her bed.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -2096,7 +2209,8 @@
       "under the bed": "'No shoes' under the bed.",
       "in the kitchen": "'No shoes' in the kitchen.",
       "on her feet": "She can't find them, so they aren't on her feet."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -2119,7 +2233,8 @@
       "in a forest": "A forest isn't in the story. The story says: “He lives at the zoo.”",
       "on a farm": "A farm isn't in the story. The story says: “He lives at the zoo.”",
       "in Mr Tan's house": "Mr Tan works at the zoo; Bo doesn't live in his house."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -2136,7 +2251,8 @@
       "cold water": "He sits in the cold water and he's happy.",
       "bamboo": "He eats bamboo.",
       "the children": "The children laugh; Bo doesn't mind them."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -2153,7 +2269,8 @@
       "a boy at the zoo": "He's a zoo keeper, not a boy.",
       "Bo's panda friend": "He isn't a panda.",
       "a teacher": "A teacher isn't in the story. The story says: “In summer, the zoo keeper, Mr Tan, fills a small pool with cold water.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -2170,7 +2287,8 @@
       "fish": "Fish aren't in the story. The story says: “Bo sits in the pool and eats bamboo.”",
       "ice cream": "Ice cream isn't in the story. The story says: “Bo sits in the pool and eats bamboo.”",
       "apples": "Apples aren't in the story. The story says: “Bo sits in the pool and eats bamboo.”"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -2187,7 +2305,8 @@
       "swim with Bo": "Only Bo is in the pool.",
       "feed Bo bamboo": "Bo eats bamboo, but the children don't give it.",
       "jump in the pool": "Only Bo sits in the pool."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -2210,7 +2329,8 @@
       "his mum": "Mum isn't in the story.",
       "his grandpa": "It's his grandma, not his grandpa.",
       "his friend": "A friend isn't in the story."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -2227,7 +2347,8 @@
       "£8": "£8 is the car.",
       "£3": "£3 is the ball.",
       "£2": "£2 is the yo-yo."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -2244,7 +2365,8 @@
       "it is red": "He likes red; colour isn't the problem.",
       "it is broken": "Broken isn't in the story.",
       "Grandma says no": "Grandma doesn't say no in the story."
-     }
+     },
+     "sk": "reading.reason"
     },
     {
      "type": "mcq",
@@ -2261,7 +2383,8 @@
       "a red car": "The car is too much money.",
       "a ball and a car": "He doesn't buy the car.",
       "two yo-yos": "He buys one yo-yo and one ball."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -2278,7 +2401,8 @@
       "£1": "£3 + £2 = £5, so nothing is left.",
       "£5": "£5 is what he had before.",
       "£2": "£2 is the yo-yo."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -2295,7 +2419,8 @@
       "Pip plays with a ball.",
       "They run home in the rain."
      ],
-     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+     "explain": "Read the text again and follow the time words: first, then, after, at the end.",
+     "sk": "reading.sequence"
     },
     {
      "type": "tf",
@@ -2309,7 +2434,8 @@
      "notes": {
       "True": "Look again: “On Saturday he goes to the park with his mum.” He goes with his mum, not his dad."
      },
-     "line": "On Saturday he goes to the park with his mum."
+     "line": "On Saturday he goes to the park with his mum.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2323,7 +2449,8 @@
      "notes": {
       "False": "The story says: “They eat sandwiches and red apples.” So it is true."
      },
-     "line": "They eat sandwiches and red apples."
+     "line": "They eat sandwiches and red apples.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2337,14 +2464,16 @@
      "notes": {
       "True": "Look again: “Pip is wet but happy.” He is happy, not sad."
      },
-     "line": "Pip is wet but happy."
+     "line": "Pip is wet but happy.",
+     "sk": "reading.tf"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “a bag or box for carrying food”.",
      "line": "Then Mum opens the basket.",
      "answer": "basket",
-     "explain": "“basket” means a bag or box for carrying food: “Then Mum opens the basket.”"
+     "explain": "“basket” means a bag or box for carrying food: “Then Mum opens the basket.”",
+     "sk": "reading.word-meaning"
     }
    ]
   },
@@ -2361,7 +2490,8 @@
       "Lola cleans the tank.",
       "The water is clean."
      ],
-     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+     "explain": "Read the text again and follow the time words: first, then, after, at the end.",
+     "sk": "reading.sequence"
     },
     {
      "type": "tf",
@@ -2375,7 +2505,8 @@
      "notes": {
       "False": "The story says: “It is a small orange fish.” So it is true."
      },
-     "line": "It is a small orange fish."
+     "line": "It is a small orange fish.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2389,7 +2520,8 @@
      "notes": {
       "True": "Look again: “On Sunday, Lola cleans the tank with her brother.” She cleans it with her brother."
      },
-     "line": "On Sunday, Lola cleans the tank with her brother."
+     "line": "On Sunday, Lola cleans the tank with her brother.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2403,14 +2535,16 @@
      "notes": {
       "True": "Look again: “It is a small orange fish.” Bubbles is small."
      },
-     "line": "It is a small orange fish."
+     "line": "It is a small orange fish.",
+     "sk": "reading.tf"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “the glass box where a fish lives”.",
      "line": "On Sunday, Lola cleans the tank with her brother.",
      "answer": "tank",
-     "explain": "“tank” means the glass box where a fish lives: “On Sunday, Lola cleans the tank with her brother.”"
+     "explain": "“tank” means the glass box where a fish lives: “On Sunday, Lola cleans the tank with her brother.”",
+     "sk": "reading.word-meaning"
     }
    ]
   },
@@ -2427,7 +2561,8 @@
       "They make a snowman.",
       "They drink hot chocolate."
      ],
-     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+     "explain": "Read the text again and follow the time words: first, then, after, at the end.",
+     "sk": "reading.sequence"
     },
     {
      "type": "tf",
@@ -2441,7 +2576,8 @@
      "notes": {
       "True": "Look again: “There is no school today.” It's a snow day, so there is no school."
      },
-     "line": "There is no school today."
+     "line": "There is no school today.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2455,21 +2591,24 @@
      "notes": {
       "False": "The story says: “It has a carrot nose.” So it is true."
      },
-     "line": "It has a carrot nose."
+     "line": "It has a carrot nose.",
+     "sk": "reading.tf"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “something warm you wear round your neck”.",
      "line": "Ben puts on his hat, his scarf and his boots.",
      "answer": "scarf",
-     "explain": "“scarf” means something warm you wear round your neck: “Ben puts on his hat, his scarf and his boots.”"
+     "explain": "“scarf” means something warm you wear round your neck: “Ben puts on his hat, his scarf and his boots.”",
+     "sk": "reading.word-meaning"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “out of the house”.",
      "line": "He goes outside with his sister Amy.",
      "answer": "outside",
-     "explain": "“outside” means out of the house: “He goes outside with his sister Amy.”"
+     "explain": "“outside” means out of the house: “He goes outside with his sister Amy.”",
+     "sk": "reading.word-meaning"
     }
    ]
   },
@@ -2486,7 +2625,8 @@
       "Mia opens her presents.",
       "The family eats cake."
      ],
-     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+     "explain": "Read the text again and follow the time words: first, then, after, at the end.",
+     "sk": "reading.sequence"
     },
     {
      "type": "tf",
@@ -2500,7 +2640,8 @@
      "notes": {
       "True": "Look again: “She is eight.” Mia is eight, not nine."
      },
-     "line": "She is eight."
+     "line": "She is eight.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2514,7 +2655,8 @@
      "notes": {
       "False": "The story says: “She gets a book and a purple bike.” So it is true."
      },
-     "line": "She gets a book and a purple bike."
+     "line": "She gets a book and a purple bike.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2528,14 +2670,16 @@
      "notes": {
       "True": "Look again: “In the evening, the family eats a big chocolate cake.” It's a chocolate cake."
      },
-     "line": "In the evening, the family eats a big chocolate cake."
+     "line": "In the evening, the family eats a big chocolate cake.",
+     "sk": "reading.tf"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “things people give you on your birthday”.",
      "line": "After school, Mia opens her presents.",
      "answer": "presents",
-     "explain": "“presents” means things people give you on your birthday: “After school, Mia opens her presents.”"
+     "explain": "“presents” means things people give you on your birthday: “After school, Mia opens her presents.”",
+     "sk": "reading.word-meaning"
     }
    ]
   },
@@ -2552,7 +2696,8 @@
       "Sam puts up a poster.",
       "A girl comes for her kitten."
      ],
-     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+     "explain": "Read the text again and follow the time words: first, then, after, at the end.",
+     "sk": "reading.sequence"
     },
     {
      "type": "tf",
@@ -2566,7 +2711,8 @@
      "notes": {
       "False": "The story says: “It is a little grey kitten under a bush.” So it is true."
      },
-     "line": "It is a little grey kitten under a bush."
+     "line": "It is a little grey kitten under a bush.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2580,21 +2726,24 @@
      "notes": {
       "True": "Look again: “It is a little grey kitten under a bush.” The kitten is grey."
      },
-     "line": "It is a little grey kitten under a bush."
+     "line": "It is a little grey kitten under a bush.",
+     "sk": "reading.tf"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “wanting food”.",
      "line": "The kitten is cold and hungry.",
      "answer": "hungry",
-     "explain": "“hungry” means wanting food: “The kitten is cold and hungry.”"
+     "explain": "“hungry” means wanting food: “The kitten is cold and hungry.”",
+     "sk": "reading.word-meaning"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “a big paper sign for a wall”.",
      "line": "Then he puts a poster on the wall:",
      "answer": "poster",
-     "explain": "“poster” means a big paper sign for a wall: “Then he puts a poster on the wall:”"
+     "explain": "“poster” means a big paper sign for a wall: “Then he puts a poster on the wall:”",
+     "sk": "reading.word-meaning"
     }
    ]
   },
@@ -2611,7 +2760,8 @@
       "We eat lunch on the grass.",
       "Mr Green gives us eggs."
      ],
-     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+     "explain": "Read the text again and follow the time words: first, then, after, at the end.",
+     "sk": "reading.sequence"
     },
     {
      "type": "tf",
@@ -2625,7 +2775,8 @@
      "notes": {
       "True": "Look again: “The farmer's name is Mr Green.” His name is Mr Green."
      },
-     "line": "The farmer's name is Mr Green."
+     "line": "The farmer's name is Mr Green.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2639,7 +2790,8 @@
      "notes": {
       "False": "The story says: “It is only two days old!” So it is true."
      },
-     "line": "It is only two days old!"
+     "line": "It is only two days old!",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2653,14 +2805,16 @@
      "notes": {
       "True": "Look again: “At twelve o'clock we eat lunch on the grass.” We eat outside, on the grass."
      },
-     "line": "At twelve o'clock we eat lunch on the grass."
+     "line": "At twelve o'clock we eat lunch on the grass.",
+     "sk": "reading.tf"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “birds that give us eggs”.",
      "line": "He has cows, pigs and lots of hens.",
      "answer": "hens",
-     "explain": "“hens” means birds that give us eggs: “He has cows, pigs and lots of hens.”"
+     "explain": "“hens” means birds that give us eggs: “He has cows, pigs and lots of hens.”",
+     "sk": "reading.word-meaning"
     }
    ]
   },
@@ -2677,7 +2831,8 @@
       "They paint a rainbow.",
       "They put it on the fridge."
      ],
-     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+     "explain": "Read the text again and follow the time words: first, then, after, at the end.",
+     "sk": "reading.sequence"
     },
     {
      "type": "tf",
@@ -2691,7 +2846,8 @@
      "notes": {
       "True": "Look again: “Leo can't play football in the park.” It rains, so he can't play."
      },
-     "line": "Leo can't play football in the park."
+     "line": "Leo can't play football in the park.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2705,21 +2861,24 @@
      "notes": {
       "False": "The story says: “She has a box of paints.” So it is true."
      },
-     "line": "She has a box of paints."
+     "line": "She has a box of paints.",
+     "sk": "reading.tf"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “with nothing fun to do”.",
      "line": "He is bored.",
      "answer": "bored",
-     "explain": "“bored” means with nothing fun to do: “He is bored.”"
+     "explain": "“bored” means with nothing fun to do: “He is bored.”",
+     "sk": "reading.word-meaning"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “the cold cupboard in the kitchen”.",
      "line": "They put it on the fridge.",
      "answer": "fridge",
-     "explain": "“fridge” means the cold cupboard in the kitchen: “They put it on the fridge.”"
+     "explain": "“fridge” means the cold cupboard in the kitchen: “They put it on the fridge.”",
+     "sk": "reading.word-meaning"
     }
    ]
   },
@@ -2736,7 +2895,8 @@
       "Zoe puts in new batteries.",
       "Zip dances again."
      ],
-     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+     "explain": "Read the text again and follow the time words: first, then, after, at the end.",
+     "sk": "reading.sequence"
     },
     {
      "type": "tf",
@@ -2750,7 +2910,8 @@
      "notes": {
       "False": "The story says: “It can walk, talk and dance.” So it is true."
      },
-     "line": "It can walk, talk and dance."
+     "line": "It can walk, talk and dance.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2764,7 +2925,8 @@
      "notes": {
       "True": "Look again: “It is silver and blue.” Zip is silver and blue."
      },
-     "line": "It is silver and blue."
+     "line": "It is silver and blue.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2778,14 +2940,16 @@
      "notes": {
       "True": "Look again: “Her mum looks at the robot.” Mum helps, and Zoe puts in the batteries."
      },
-     "line": "Her mum looks at the robot."
+     "line": "Her mum looks at the robot.",
+     "sk": "reading.tf"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “small things that give a toy power”.",
      "line": "It needs new batteries,",
      "answer": "batteries",
-     "explain": "“batteries” means small things that give a toy power: “It needs new batteries,”"
+     "explain": "“batteries” means small things that give a toy power: “It needs new batteries,”",
+     "sk": "reading.word-meaning"
     }
    ]
   },
@@ -2802,7 +2966,8 @@
       "Tom says he is swimming.",
       "They have a hot shower."
      ],
-     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+     "explain": "Read the text again and follow the time words: first, then, after, at the end.",
+     "sk": "reading.sequence"
     },
     {
      "type": "tf",
@@ -2816,7 +2981,8 @@
      "notes": {
       "False": "The story says: “Every Wednesday, Ana goes to the pool.” So it is true."
      },
-     "line": "Every Wednesday, Ana goes to the pool."
+     "line": "Every Wednesday, Ana goes to the pool.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2830,7 +2996,8 @@
      "notes": {
       "True": "Look again: “Her little brother Tom can't swim yet.” Ana swims well; Tom is still learning."
      },
-     "line": "Her little brother Tom can't swim yet."
+     "line": "Her little brother Tom can't swim yet.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2844,14 +3011,16 @@
      "notes": {
       "True": "Look again: “After swimming, they have a hot shower and eat a banana.” They eat a banana."
      },
-     "line": "After swimming, they have a hot shower and eat a banana."
+     "line": "After swimming, they have a hot shower and eat a banana.",
+     "sk": "reading.tf"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “a thing that helps you stay on top of the water”.",
      "line": "He holds a float and kicks his legs.",
      "answer": "float",
-     "explain": "“float” means a thing that helps you stay on top of the water: “He holds a float and kicks his legs.”"
+     "explain": "“float” means a thing that helps you stay on top of the water: “He holds a float and kicks his legs.”",
+     "sk": "reading.word-meaning"
     }
    ]
   }

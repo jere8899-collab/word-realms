@@ -14,7 +14,8 @@
    "is": "Is goes with he, she or it: She is a student.",
    "are": "Are goes with you, we and they: You are a student.",
    "be": "Be needs a helper word first: I can be a student."
-  }
+  },
+  "sk": "grammar.present-simple"
  },
  {
   "type": "mcq",
@@ -31,7 +32,8 @@
    "have": "Have goes with I, you, we and they: I have two brothers.",
    "haves": "There is no word 'haves'. The -s form of have is has.",
    "having": "Having needs is/are first, and we don't use it for family."
-  }
+  },
+  "sk": "grammar.present-simple"
  },
  {
   "type": "mcq",
@@ -48,7 +50,8 @@
    "is": "Is is for one person or thing: He is from Spain.",
    "am": "Am only goes with I: I am from Spain.",
    "be": "Be needs a helper word: They will be in Spain."
-  }
+  },
+  "sk": "grammar.be"
  },
  {
   "type": "mcq",
@@ -65,7 +68,8 @@
    "a": "A goes before a consonant sound: a banana. Apple starts with a vowel.",
    "two": "Two needs a plural word: two apples.",
    "many": "Many needs a plural word too: many apples."
-  }
+  },
+  "sk": "grammar.article"
  },
  {
   "type": "mcq",
@@ -82,7 +86,8 @@
    "Who": "Who asks about a person: Who is she? – My sister.",
    "Where": "Where asks about a place: Where is your bag?",
    "When": "When asks about a time: When is your birthday?"
-  }
+  },
+  "sk": "grammar.question"
  },
  {
   "type": "mcq",
@@ -99,7 +104,8 @@
    "doesn't": "Doesn't is for he, she, it: She doesn't like coffee.",
    "not": "We can't say 'I not like'. We need don't.",
    "no": "No goes before a noun: I have no coffee."
-  }
+  },
+  "sk": "grammar.present-simple"
  },
  {
   "type": "mcq",
@@ -116,7 +122,8 @@
    "play": "Play is for I, you, we, they: We play football.",
    "playing": "Playing needs is: He is playing now.",
    "is play": "We don't say 'is play'. Every Sunday = present simple: plays."
-  }
+  },
+  "sk": "grammar.plural"
  },
  {
   "type": "mcq",
@@ -133,7 +140,8 @@
    "is": "There is is for one thing: There is one cat.",
    "am": "Am only goes with I.",
    "be": "Be needs a helper word: There will be three cats."
-  }
+  },
+  "sk": "grammar.there-be"
  },
  {
   "type": "mcq",
@@ -150,7 +158,8 @@
    "at": "At is for a point or place: at school, at the door.",
    "to": "To shows movement: I go to the park.",
    "from": "From shows where something starts: a letter from Gran."
-  }
+  },
+  "sk": "grammar.preposition"
  },
  {
   "type": "mcq",
@@ -167,7 +176,8 @@
    "swims": "No -s after can: we say 'Can he swim?', not 'swims'.",
    "swimming": "No -ing after can: 'Can you swimming?' is wrong.",
    "to swim": "No 'to' after can: 'Can you to swim?' is wrong."
-  }
+  },
+  "sk": "grammar.modal"
  },
  {
   "type": "mcq",
@@ -184,7 +194,8 @@
    "shoe": "Shoe is just one. These needs more than one: shoes.",
    "shoeses": "Shoe takes just -s: shoes, not 'shoeses'.",
    "a shoe": "A shoe is one shoe. These needs a plural."
-  }
+  },
+  "sk": "grammar.plural"
  },
  {
   "type": "mcq",
@@ -201,7 +212,8 @@
    "Does": "Does is for he, she, it: Does she like ice cream?",
    "Are": "Are goes with adjectives or -ing: Are you happy?",
    "Is": "Is goes with he/she/it: Is it cold?"
-  }
+  },
+  "sk": "grammar.present-simple"
  },
  {
   "type": "mcq",
@@ -218,7 +230,8 @@
    "on": "On is for days and dates: on Monday, on 5th May.",
    "at": "At is for clock times: at six o'clock.",
    "to": "To shows movement, not time."
-  }
+  },
+  "sk": "grammar.preposition"
  },
  {
   "type": "mcq",
@@ -235,7 +248,8 @@
    "sleep": "Sleep is for I/you/we/they and for habits, not now.",
    "sleeps": "Sleeps is for habits: The baby sleeps a lot.",
    "are sleeping": "Are is for more than one. One baby takes is."
-  }
+  },
+  "sk": "grammar.continuous-present"
  },
  {
   "type": "mcq",
@@ -252,7 +266,8 @@
    "She": "She is for a girl or woman.",
    "It": "It is for a thing or an animal.",
    "They": "They is for more than one person."
-  }
+  },
+  "sk": "grammar.pronoun-possessive"
  },
  {
   "type": "mcq",
@@ -269,7 +284,8 @@
    "was": "Was is for I, he, she, it: I was at home.",
    "are": "Are is now, not yesterday.",
    "is": "Is is now and for one person."
-  }
+  },
+  "sk": "grammar.past-simple"
  },
  {
   "type": "mcq",
@@ -286,7 +302,8 @@
    "What": "What asks about a thing: What is this?",
    "Who": "Who asks about a person: Who is that?",
    "How": "How asks about the way or feelings: How are you?"
-  }
+  },
+  "sk": "grammar.question"
  },
  {
   "type": "mcq",
@@ -303,7 +320,8 @@
    "don't": "Don't is for I, you, we, they.",
    "isn't": "Isn't goes with adjectives: She isn't happy. Like is a verb.",
    "not": "We can't say 'She not like'. We need doesn't."
-  }
+  },
+  "sk": "grammar.present-simple"
  },
  {
   "type": "mcq",
@@ -320,7 +338,8 @@
    "a": "A is for consonant sounds: a bag, a hat.",
    "some": "Some is for 'more than one' or 'a bit of': some milk.",
    "two": "Two needs a plural: two umbrellas."
-  }
+  },
+  "sk": "grammar.article"
  },
  {
   "type": "mcq",
@@ -337,7 +356,8 @@
    "on": "On is on the top. Then you could see the cat!",
    "at": "At is for a place point: at the door.",
    "of": "Of is not used for where things are."
-  }
+  },
+  "sk": "grammar.preposition"
  },
  {
   "type": "mcq",
@@ -354,7 +374,8 @@
    "How many": "How many asks about a number of things.",
    "How old": "How old asks about age.",
    "What day": "What day asks about Monday, Tuesday..."
-  }
+  },
+  "sk": "grammar.question"
  },
  {
   "type": "mcq",
@@ -371,7 +392,8 @@
    "watch": "Watch is for habits: They watch TV every day.",
    "watches": "Watches is for he/she/it habits.",
    "is watching": "Is is for one person. They needs are."
-  }
+  },
+  "sk": "grammar.continuous-present"
  },
  {
   "type": "mcq",
@@ -388,7 +410,8 @@
    "in": "In is for months and years: in May.",
    "on": "On is for days: on Friday.",
    "to": "To shows movement, not a time."
-  }
+  },
+  "sk": "grammar.preposition"
  },
  {
   "type": "mcq",
@@ -405,7 +428,8 @@
    "Her": "Her is for a girl: my sister and her name.",
    "He": "He is the person, not 'belonging to him'. We need his.",
    "Its": "Its is for a thing or an animal."
-  }
+  },
+  "sk": "grammar.pronoun-possessive"
  },
  {
   "type": "mcq",
@@ -422,7 +446,8 @@
    "many": "How many is for counting things.",
    "much": "How much is for amounts and prices.",
    "big": "How big asks about size, not age."
-  }
+  },
+  "sk": "grammar.question"
  },
  {
   "type": "mcq",
@@ -439,7 +464,8 @@
    "are": "Are is for more than one: There are two dragons.",
    "am": "Am only goes with I.",
    "be": "Be needs a helper word first."
-  }
+  },
+  "sk": "grammar.there-be"
  },
  {
   "type": "mcq",
@@ -456,7 +482,8 @@
    "writes": "No -s after can.",
    "writing": "No -ing after can.",
    "to write": "No 'to' after can."
-  }
+  },
+  "sk": "grammar.modal"
  },
  {
   "type": "mcq",
@@ -473,7 +500,8 @@
    "Do": "Do is for I, you, we, they.",
    "Is": "Is goes with adjectives or -ing, not 'have'.",
    "Has": "Has is not used to start this question. Say 'Does she have'."
-  }
+  },
+  "sk": "grammar.present-simple"
  },
  {
   "type": "mcq",
@@ -490,7 +518,8 @@
    "is": "Is is for one: That is my pencil.",
    "am": "Am only goes with I.",
    "be": "Be needs a helper word."
-  }
+  },
+  "sk": "grammar.be"
  },
  {
   "type": "mcq",
@@ -507,7 +536,8 @@
    "but": "But shows a surprise or difference: tired, but he played.",
    "because": "Because gives the reason, not the result: He went to bed because he was tired.",
    "or": "Or gives a choice: tea or milk?"
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -524,7 +554,8 @@
    "has": "Has is for he/she/it.",
    "am": "Am is for 'I am…', not for owning things.",
    "is": "Is is for he/she/it, and not for owning."
-  }
+  },
+  "sk": "grammar.present-simple"
  },
  {
   "type": "mcq",
@@ -541,7 +572,8 @@
    "am": "Am goes only with I.",
    "are": "Are goes with you/we/they.",
    "be": "Be needs a form: is."
-  }
+  },
+  "sk": "grammar.present-simple"
  },
  {
   "type": "mcq",
@@ -558,7 +590,8 @@
    "is": "Is is for one person or thing.",
    "am": "Am goes only with I.",
    "be": "Be needs a form: are."
-  }
+  },
+  "sk": "grammar.be"
  },
  {
   "type": "mcq",
@@ -575,7 +608,8 @@
    "Does": "Does is for he/she/it.",
    "Are": "Are goes with an adjective or -ing, not 'like'.",
    "Is": "Is is for he/she/it with an adjective."
-  }
+  },
+  "sk": "grammar.present-simple"
  },
  {
   "type": "mcq",
@@ -592,7 +626,8 @@
    "Do": "Do is for I/you/we/they.",
    "Is": "Is doesn't go with 'play' here.",
    "Are": "Are is for you/we/they."
-  }
+  },
+  "sk": "grammar.present-simple"
  },
  {
   "type": "mcq",
@@ -609,7 +644,8 @@
    "rides": "No -s after can.",
    "riding": "No -ing after can.",
    "to ride": "No 'to' after can."
-  }
+  },
+  "sk": "grammar.modal"
  },
  {
   "type": "mcq",
@@ -626,7 +662,8 @@
    "toy": "Toy is just one.",
    "toyes": "Toy takes just -s.",
    "a toy": "A toy is one; we need three."
-  }
+  },
+  "sk": "grammar.plural"
  },
  {
   "type": "mcq",
@@ -643,7 +680,8 @@
    "a": "A + elephant needs 'an', and here we point at one we see.",
    "an the": "Don't use two little words together.",
    "these": "These is for more than one."
-  }
+  },
+  "sk": "grammar.article"
  },
  {
   "type": "mcq",
@@ -660,7 +698,8 @@
    "a": "Orange starts with o, so an.",
    "two": "Two needs a plural: two oranges.",
    "some": "Some isn't used with one orange."
-  }
+  },
+  "sk": "grammar.article"
  },
  {
   "type": "mcq",
@@ -677,7 +716,8 @@
    "me": "Me is an object: Help me.",
    "I": "I is a subject: I am.",
    "mine": "Mine doesn't go before a noun."
-  }
+  },
+  "sk": "grammar.pronoun-possessive"
  },
  {
   "type": "mcq",
@@ -694,7 +734,8 @@
    "She": "She is for a girl.",
    "It": "It is for a thing or animal.",
    "His": "His shows owning: his bag."
-  }
+  },
+  "sk": "grammar.pronoun-possessive"
  },
  {
   "type": "mcq",
@@ -711,7 +752,8 @@
    "at": "At is for a place or time: at school.",
    "of": "Of shows a part: a cup of tea.",
    "to": "To shows direction: go to school."
-  }
+  },
+  "sk": "grammar.preposition"
  },
  {
   "type": "mcq",
@@ -728,7 +770,8 @@
    "on": "On is for days: on Monday.",
    "at": "At is for clock times: at 3 o'clock.",
    "of": "Of doesn't go with seasons here."
-  }
+  },
+  "sk": "grammar.preposition"
  },
  {
   "type": "mcq",
@@ -745,7 +788,8 @@
    "in": "In is for months: in May.",
    "at": "At is for times: at six.",
    "to": "To shows direction."
-  }
+  },
+  "sk": "grammar.preposition"
  },
  {
   "type": "mcq",
@@ -762,7 +806,8 @@
    "in": "In is for months and seasons.",
    "on": "On is for days.",
    "to": "To isn't used with start times."
-  }
+  },
+  "sk": "grammar.preposition"
  },
  {
   "type": "mcq",
@@ -779,7 +824,8 @@
    "drink": "Add -s for he.",
    "drinking": "Drinking needs 'is'.",
    "is drink": "Is drink mixes two forms."
-  }
+  },
+  "sk": "grammar.present-simple"
  },
  {
   "type": "mcq",
@@ -796,7 +842,8 @@
    "can": "Can means you are able to.",
    "am not": "Am not doesn't go with swim.",
    "don't can": "Don't can is never right."
-  }
+  },
+  "sk": "grammar.modal"
  },
  {
   "type": "mcq",
@@ -813,7 +860,8 @@
    "What": "What asks about a thing.",
    "Where": "Where asks about a place.",
    "How": "How asks about the way or feeling."
-  }
+  },
+  "sk": "grammar.question"
  },
  {
   "type": "mcq",
@@ -830,7 +878,8 @@
    "Who": "Who asks about a person.",
    "What": "What asks about a thing.",
    "When": "When asks about time."
-  }
+  },
+  "sk": "grammar.question"
  },
  {
   "type": "mcq",
@@ -847,7 +896,8 @@
    "What": "We don't say 'What old'.",
    "Who": "Who asks about a person.",
    "Where": "Where asks about a place."
-  }
+  },
+  "sk": "grammar.question"
  },
  {
   "type": "mcq",
@@ -864,7 +914,8 @@
    "is": "Is is for one: This is my shoe.",
    "am": "Am goes only with I.",
    "be": "Be needs a form: are."
-  }
+  },
+  "sk": "grammar.be"
  },
  {
   "type": "mcq",
@@ -881,7 +932,8 @@
    "opens": "No -s in instructions.",
    "opening": "No -ing here.",
    "to open": "No 'to' here."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -898,7 +950,8 @@
    "likes": "No -s after don't.",
    "liking": "No -ing after don't.",
    "to like": "No 'to' after don't."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -915,7 +968,8 @@
    "has": "No -s after doesn't.",
    "having": "No -ing after doesn't.",
    "haves": "Haves is not a word."
-  }
+  },
+  "sk": "grammar.present-simple"
  },
  {
   "type": "mcq",
@@ -932,7 +986,8 @@
    "she": "She is a subject: She is tall.",
    "hers": "Hers stands alone: It's hers.",
    "he": "He is a boy, and a subject."
-  }
+  },
+  "sk": "grammar.pronoun-possessive"
  },
  {
   "type": "mcq",
@@ -949,7 +1004,8 @@
    "hunger": "Hunger is a noun.",
    "thirsty": "Thirsty means you want a drink.",
    "sleep": "Sleep is a verb/noun; say sleepy."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -966,7 +1022,8 @@
    "goes": "No -s after let's.",
    "going": "No -ing after let's.",
    "to go": "No 'to' after let's."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -983,7 +1040,8 @@
    "are": "Are is for more than one.",
    "am": "Am goes only with I.",
    "be": "Be needs a form: is."
-  }
+  },
+  "sk": "grammar.there-be"
  },
  {
   "type": "mcq",
@@ -1000,7 +1058,8 @@
    "is": "Is is for one.",
    "am": "Am goes only with I.",
    "has": "Has doesn't go with there."
-  }
+  },
+  "sk": "grammar.there-be"
  },
  {
   "type": "mcq",
@@ -1017,7 +1076,8 @@
    "foots": "Foot is special: not foots.",
    "foot": "Foot is just one.",
    "feets": "Feet is already plural."
-  }
+  },
+  "sk": "grammar.plural"
  },
  {
   "type": "mcq",
@@ -1034,7 +1094,8 @@
    "is": "Is is for one child.",
    "am": "Am goes only with I.",
    "be": "Be needs a form: are."
-  }
+  },
+  "sk": "grammar.plural"
  },
  {
   "type": "mcq",
@@ -1051,7 +1112,8 @@
    "are": "Are is for you/we/they.",
    "am": "Am goes only with I.",
    "have": "Have is for owning things."
-  }
+  },
+  "sk": "grammar.be"
  },
  {
   "type": "mcq",
@@ -1068,7 +1130,8 @@
    "helps": "No -s after can.",
    "helping": "No -ing after can.",
    "to help": "No 'to' after can."
-  }
+  },
+  "sk": "grammar.modal"
  },
  {
   "type": "mcq",
@@ -1085,7 +1148,8 @@
    "sun": "Sun is the thing in the sky; the weather word is sunny.",
    "rain": "Rain is a noun; say rainy, and the beach isn't fun then.",
    "snowy": "Snowy weather isn't for the beach."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -1102,7 +1166,8 @@
    "brushes": "-es is for he/she/it.",
    "brushing": "Brushing needs 'am'.",
    "am brush": "Am brush mixes two forms."
-  }
+  },
+  "sk": "grammar.present-simple"
  },
  {
   "type": "mcq",
@@ -1119,7 +1184,8 @@
    "he": "He is a subject, not after a verb.",
    "his": "His shows owning: his ball.",
    "her": "Her is for a girl."
-  }
+  },
+  "sk": "grammar.pronoun-possessive"
  },
  {
   "type": "mcq",
@@ -1136,7 +1202,8 @@
    "a": "A is for one thing.",
    "an": "An is for one thing.",
    "one": "One needs a singular: one apple."
-  }
+  },
+  "sk": "grammar.plural"
  },
  {
   "type": "mcq",
@@ -1153,7 +1220,8 @@
    "is": "Is is for one person.",
    "am": "Am is only for I alone.",
    "be": "Be needs a form: are."
-  }
+  },
+  "sk": "grammar.be"
  },
  {
   "type": "mcq",
@@ -1170,7 +1238,8 @@
    "is": "Is is for he/she/it.",
    "do": "Do doesn't go with -ing.",
    "does": "Does doesn't go with -ing."
-  }
+  },
+  "sk": "grammar.question"
  },
  {
   "type": "mcq",
@@ -1187,7 +1256,8 @@
    "draw": "After is we need -ing.",
    "draws": "Draws is for every day, not now.",
    "drawed": "Drawed isn't a word."
-  }
+  },
+  "sk": "grammar.continuous-present"
  },
  {
   "type": "mcq",
@@ -1204,7 +1274,8 @@
    "have": "Have is for I/you/we/they.",
    "is": "Is doesn't show owning.",
    "are": "Are is for you/we/they."
-  }
+  },
+  "sk": "grammar.present-simple"
  },
  {
   "type": "mcq",
@@ -1221,7 +1292,8 @@
    "has": "Has is for he/she/it.",
    "is": "Is got isn't right.",
    "are": "Are got isn't right."
-  }
+  },
+  "sk": "grammar.present-simple"
  },
  {
   "type": "mcq",
@@ -1238,7 +1310,8 @@
    "Have": "Have is for I/you/we/they.",
    "Is": "Is doesn't go with 'got' here.",
    "Does": "Does needs 'have': Does she have…?"
-  }
+  },
+  "sk": "grammar.present-simple"
  },
  {
   "type": "mcq",
@@ -1255,7 +1328,8 @@
    "child": "Child is just one.",
    "childs": "Childs isn't a word.",
    "childrens": "Children is already plural."
-  }
+  },
+  "sk": "grammar.plural"
  },
  {
   "type": "mcq",
@@ -1272,7 +1346,8 @@
    "fishs": "Fish doesn't take -s here.",
    "fishes": "Fishes is rare; kids' English says fish.",
    "a fish": "A fish is only one."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -1289,7 +1364,8 @@
    "a chocolate": "No 'a' before a flavour.",
    "chocolates": "Chocolates are sweets, not a flavour.",
    "an chocolate": "An is wrong before ch."
-  }
+  },
+  "sk": "grammar.article"
  },
  {
   "type": "mcq",
@@ -1306,7 +1382,8 @@
    "is": "Is is for one thing.",
    "am": "Am goes only with I.",
    "be": "Be needs a form: are."
-  }
+  },
+  "sk": "grammar.plural"
  },
  {
   "type": "mcq",
@@ -1323,7 +1400,8 @@
    "is": "Is is for he/she/it.",
    "are": "Are is for you/we/they.",
    "have": "In English we don't 'have' an age."
-  }
+  },
+  "sk": "grammar.be"
  },
  {
   "type": "mcq",
@@ -1340,7 +1418,8 @@
    "aren't": "Aren't is for they/you/we.",
    "not": "Not needs is: it isn't.",
    "doesn't": "Doesn't goes with Does questions."
-  }
+  },
+  "sk": "grammar.question"
  },
  {
   "type": "mcq",
@@ -1357,7 +1436,8 @@
    "am": "Am answers 'Are you…?'.",
    "like": "We don't repeat the verb in short answers.",
    "does": "Does is for he/she/it."
-  }
+  },
+  "sk": "grammar.question"
  },
  {
   "type": "mcq",
@@ -1374,7 +1454,8 @@
    "do": "Do answers 'Do you…?'.",
    "am": "Am answers 'Are you…?'.",
    "swim": "We don't repeat the verb."
-  }
+  },
+  "sk": "grammar.question"
  },
  {
   "type": "mcq",
@@ -1391,7 +1472,8 @@
    "Who": "Who asks about a person.",
    "What": "What asks about a thing.",
    "Where": "Where asks about a place."
-  }
+  },
+  "sk": "grammar.question"
  },
  {
   "type": "mcq",
@@ -1408,7 +1490,8 @@
    "When time": "We don't say 'When time'.",
    "How time": "We don't say 'How time'.",
    "Which": "Which needs a choice."
-  }
+  },
+  "sk": "grammar.question"
  },
  {
   "type": "mcq",
@@ -1425,7 +1508,8 @@
    "Who": "Who asks about a person.",
    "How": "How doesn't go with colour.",
    "Where": "Where asks about a place."
-  }
+  },
+  "sk": "grammar.question"
  },
  {
   "type": "mcq",
@@ -1442,7 +1526,8 @@
    "in": "In = inside.",
    "at": "At is for places like at school.",
    "of": "Of shows a part."
-  }
+  },
+  "sk": "grammar.preposition"
  },
  {
   "type": "mcq",
@@ -1459,7 +1544,8 @@
    "on top": "On top needs 'of'.",
    "in front": "In front needs 'of'.",
    "between": "Between needs two things."
-  }
+  },
+  "sk": "grammar.preposition"
  },
  {
   "type": "mcq",
@@ -1476,7 +1562,8 @@
    "next": "Next needs 'to'.",
    "under": "Under means below.",
    "behind of": "We say behind, not behind of."
-  }
+  },
+  "sk": "grammar.preposition"
  },
  {
   "type": "mcq",
@@ -1493,7 +1580,8 @@
    "watches": "Watches is for every day, not now.",
    "watch": "Watch needs is + -ing for now.",
    "watching": "Watching needs is."
-  }
+  },
+  "sk": "grammar.continuous-present"
  },
  {
   "type": "mcq",
@@ -1510,7 +1598,8 @@
    "walks": "-s is for he/she/it.",
    "am walk": "Am walk mixes forms.",
    "walking": "Walking needs am."
-  }
+  },
+  "sk": "grammar.present-simple"
  },
  {
   "type": "mcq",
@@ -1527,7 +1616,8 @@
    "rains": "Rains is for usually, not now.",
    "rain": "Rain needs is + -ing.",
    "raining": "Raining needs is."
-  }
+  },
+  "sk": "grammar.continuous-present"
  },
  {
   "type": "mcq",
@@ -1544,7 +1634,8 @@
    "like": "Add -s for one cat.",
    "liking": "Liking needs is, and we don't use it for likes.",
    "is like": "Is like isn't right."
-  }
+  },
+  "sk": "grammar.present-simple"
  },
  {
   "type": "mcq",
@@ -1561,7 +1652,8 @@
    "has": "Has is for he/she/it.",
    "having": "Having needs are.",
    "are": "Are doesn't go with a lesson."
-  }
+  },
+  "sk": "grammar.present-simple"
  },
  {
   "type": "mcq",
@@ -1578,7 +1670,8 @@
    "a red": "No 'a' before an adjective alone.",
    "reds": "Adjectives don't take -s.",
    "redly": "Redly isn't a word."
-  }
+  },
+  "sk": "grammar.past-simple"
  },
  {
   "type": "mcq",
@@ -1595,7 +1688,8 @@
    "cat black": "The adjective goes first in English.",
    "blacks cat": "Adjectives don't take -s.",
    "cat blacks": "Wrong order and -s."
-  }
+  },
+  "sk": "grammar.word-order"
  },
  {
   "type": "mcq",
@@ -1612,7 +1706,8 @@
    "runs": "No -s after can.",
    "running": "No -ing after can.",
    "ran": "Ran is past; after can use run."
-  }
+  },
+  "sk": "grammar.modal"
  },
  {
   "type": "mcq",
@@ -1629,7 +1724,8 @@
    "Washes": "No -es in instructions.",
    "Washing": "No -ing in instructions.",
    "To wash": "No 'to' at the start."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -1646,7 +1742,8 @@
    "shouts": "No -s after don't.",
    "shouting": "No -ing after don't.",
    "to shout": "No 'to' after don't."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -1663,7 +1760,8 @@
    "tall": "Tall needs -er before than.",
    "more tall": "More is for long adjectives.",
    "tallest": "Tallest is for three or more."
-  }
+  },
+  "sk": "grammar.other"
  },
  {
   "type": "mcq",
@@ -1680,7 +1778,8 @@
    "he": "He is a subject.",
    "him": "Him is after a verb.",
    "her": "Her is for a girl."
-  }
+  },
+  "sk": "grammar.pronoun-possessive"
  },
  {
   "type": "mcq",
@@ -1697,7 +1796,8 @@
    "have": "Have is for I/you/we/they.",
    "is": "Is doesn't show owning.",
    "are": "Are is for more than one."
-  }
+  },
+  "sk": "grammar.present-simple"
  },
  {
   "type": "mcq",
@@ -1714,7 +1814,8 @@
    "sing": "Sing is for usually.",
    "is singing": "Is is for one bird.",
    "singing": "Singing needs are."
-  }
+  },
+  "sk": "grammar.continuous-present"
  },
  {
   "type": "mcq",
@@ -1731,7 +1832,8 @@
    "doesn't": "Doesn't is for he/she/it.",
    "not": "Not needs don't before like.",
    "am not": "Am not doesn't go with like."
-  }
+  },
+  "sk": "grammar.present-simple"
  },
  {
   "type": "mcq",
@@ -1748,7 +1850,8 @@
    "Do": "Do doesn't go with an adjective.",
    "Is": "Is is for he/she/it.",
    "Am": "Am is for I."
-  }
+  },
+  "sk": "grammar.be"
  },
  {
   "type": "mcq",
@@ -1765,43 +1868,50 @@
    "live": "Add -s for one person.",
    "living": "Living needs is.",
    "is live": "Is live mixes two forms."
-  }
+  },
+  "sk": "grammar.present-simple"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "I have a red bike.",
-  "explain": "Who + verb + what: I have a red bike."
+  "explain": "Who + verb + what: I have a red bike.",
+  "sk": "grammar.word-order"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "She is my best friend.",
-  "explain": "She + is + who she is."
+  "explain": "She + is + who she is.",
+  "sk": "grammar.be"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "We play in the park.",
-  "explain": "We + play + where."
+  "explain": "We + play + where.",
+  "sk": "grammar.word-order"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "The cat is under the table.",
-  "explain": "Thing + is + where it is."
+  "explain": "Thing + is + where it is.",
+  "sk": "grammar.be"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "Do you like ice cream?",
-  "explain": "Questions start with Do: Do you like…?"
+  "explain": "Questions start with Do: Do you like…?",
+  "sk": "grammar.word-order"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "He can swim very well.",
-  "explain": "can + verb: He can swim."
+  "explain": "can + verb: He can swim.",
+  "sk": "grammar.modal"
  },
  {
   "type": "mistake",
@@ -1814,7 +1924,8 @@
   ],
   "wrong": 1,
   "fix": "has",
-  "explain": "With he/she/it we say has: She has a cat."
+  "explain": "With he/she/it we say has: She has a cat.",
+  "sk": "grammar.present-simple"
  },
  {
   "type": "mistake",
@@ -1828,7 +1939,8 @@
   ],
   "wrong": 1,
   "fix": "am",
-  "explain": "With I we say am: I am seven."
+  "explain": "With I we say am: I am seven.",
+  "sk": "grammar.be"
  },
  {
   "type": "mistake",
@@ -1841,7 +1953,8 @@
   ],
   "wrong": 1,
   "fix": "are",
-  "explain": "With they/we/you we say are: They are my friends."
+  "explain": "With they/we/you we say are: They are my friends.",
+  "sk": "grammar.be"
  },
  {
   "type": "mistake",
@@ -1853,7 +1966,8 @@
   ],
   "wrong": 1,
   "fix": "likes",
-  "explain": "With he/she/it add -s: He likes pizza."
+  "explain": "With he/she/it add -s: He likes pizza.",
+  "sk": "grammar.plural"
  },
  {
   "type": "mistake",
@@ -1866,7 +1980,8 @@
   ],
   "wrong": 3,
   "fix": "cats.",
-  "explain": "More than one: add -s. One cat, two cats."
+  "explain": "More than one: add -s. One cat, two cats.",
+  "sk": "grammar.plural"
  },
  {
   "type": "mistake",
@@ -1879,7 +1994,8 @@
   ],
   "wrong": 2,
   "fix": "a",
-  "explain": "Use an before a, e, i, o, u sounds; dog starts with d, so a dog."
+  "explain": "Use an before a, e, i, o, u sounds; dog starts with d, so a dog.",
+  "sk": "grammar.article"
  },
  {
   "type": "gaps",
@@ -1895,7 +2011,8 @@
    "has",
    "am"
   ],
-  "explain": "I have; she is."
+  "explain": "I have; she is.",
+  "sk": "grammar.present-simple"
  },
  {
   "type": "gaps",
@@ -1911,7 +2028,8 @@
    "are",
    "have"
   ],
-  "explain": "There is one dog; it has a tail."
+  "explain": "There is one dog; it has a tail.",
+  "sk": "grammar.there-be"
  },
  {
   "type": "gaps",
@@ -1927,7 +2045,8 @@
    "goes",
    "in"
   ],
-  "explain": "We go (no -s); travel by bus."
+  "explain": "We go (no -s); travel by bus.",
+  "sk": "grammar.present-simple"
  },
  {
   "type": "gaps",
@@ -1943,49 +2062,57 @@
    "drink",
    "on"
   ],
-  "explain": "She drinks (+s); in the morning."
+  "explain": "She drinks (+s); in the morning.",
+  "sk": "grammar.present-simple"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "My dog likes long walks.",
-  "explain": "Who + likes + what: My dog likes long walks."
+  "explain": "Who + likes + what: My dog likes long walks.",
+  "sk": "grammar.word-order"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "We are in the garden.",
-  "explain": "We + are + where: We are in the garden."
+  "explain": "We + are + where: We are in the garden.",
+  "sk": "grammar.be"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "Is your sister at school?",
-  "explain": "Questions with be start with Is/Are: Is your sister at school?"
+  "explain": "Questions with be start with Is/Are: Is your sister at school?",
+  "sk": "grammar.word-order"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "I can see a big rainbow.",
-  "explain": "I + can + see + what: I can see a big rainbow."
+  "explain": "I + can + see + what: I can see a big rainbow.",
+  "sk": "grammar.modal"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "They have a yellow kite.",
-  "explain": "They + have + what: They have a yellow kite."
+  "explain": "They + have + what: They have a yellow kite.",
+  "sk": "grammar.word-order"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "Where is my blue pencil?",
-  "explain": "Where + is + the thing: Where is my blue pencil?"
+  "explain": "Where + is + the thing: Where is my blue pencil?",
+  "sk": "grammar.be"
  },
  {
   "type": "order",
   "q": "Build the sentence.",
   "answer": "The birds sing in the morning.",
-  "explain": "Who + do what + when: The birds sing in the morning."
+  "explain": "Who + do what + when: The birds sing in the morning.",
+  "sk": "grammar.word-order"
  },
  {
   "type": "mistake",
@@ -2002,7 +2129,8 @@
   ],
   "wrong": 1,
   "fix": "am",
-  "explain": "With I we say am: I am in the same class."
+  "explain": "With I we say am: I am in the same class.",
+  "sk": "grammar.be"
  },
  {
   "type": "mistake",
@@ -2015,7 +2143,8 @@
   ],
   "wrong": 2,
   "fix": "plays",
-  "explain": "With he/she/it (my brother) add -s: My brother plays football."
+  "explain": "With he/she/it (my brother) add -s: My brother plays football.",
+  "sk": "grammar.plural"
  },
  {
   "type": "mistake",
@@ -2028,7 +2157,8 @@
   ],
   "wrong": 3,
   "fix": "apples.",
-  "explain": "More than one apple: add -s. Three apples."
+  "explain": "More than one apple: add -s. Three apples.",
+  "sk": "grammar.plural"
  },
  {
   "type": "mistake",
@@ -2040,7 +2170,8 @@
   ],
   "wrong": 2,
   "fix": "swim?",
-  "explain": "After can, use the plain verb: Can you swim?"
+  "explain": "After can, use the plain verb: Can you swim?",
+  "sk": "grammar.modal"
  },
  {
   "type": "mistake",
@@ -2053,7 +2184,8 @@
   ],
   "wrong": 1,
   "fix": "doesn't",
-  "explain": "With he/she/it say doesn't: She doesn't like milk."
+  "explain": "With he/she/it say doesn't: She doesn't like milk.",
+  "sk": "grammar.present-simple"
  },
  {
   "type": "mistake",
@@ -2066,7 +2198,8 @@
   ],
   "wrong": 2,
   "fix": "an",
-  "explain": "Orange starts with an o sound, so we say an orange."
+  "explain": "Orange starts with an o sound, so we say an orange.",
+  "sk": "grammar.article"
  },
  {
   "type": "gaps",
@@ -2082,7 +2215,8 @@
    "are",
    "She"
   ],
-  "explain": "This is (one thing); her name (the cat's name)."
+  "explain": "This is (one thing); her name (the cat's name).",
+  "sk": "grammar.be"
  },
  {
   "type": "gaps",
@@ -2098,7 +2232,8 @@
    "has",
    "are"
   ],
-  "explain": "I have got; it is."
+  "explain": "I have got; it is.",
+  "sk": "grammar.present-simple"
  },
  {
   "type": "gaps",
@@ -2114,7 +2249,8 @@
    "goes",
    "meet"
   ],
-  "explain": "We go (no -s); my mum meets (he/she adds -s)."
+  "explain": "We go (no -s); my mum meets (he/she adds -s).",
+  "sk": "grammar.present-simple"
  },
  {
   "type": "gaps",
@@ -2130,7 +2266,8 @@
    "am",
    "be"
   ],
-  "explain": "There is + one thing; there are + more than one."
+  "explain": "There is + one thing; there are + more than one.",
+  "sk": "grammar.there-be"
  },
  {
   "type": "gaps",
@@ -2146,7 +2283,8 @@
    "Does",
    "am"
   ],
-  "explain": "Do you…? Yes, I do."
+  "explain": "Do you…? Yes, I do.",
+  "sk": "grammar.present-simple"
  },
  {
   "type": "gaps",
@@ -2162,6 +2300,7 @@
    "on",
    "in"
   ],
-  "explain": "Look at something; behind the clouds = the clouds are in front of it."
+  "explain": "Look at something; behind the clouds = the clouds are in front of it.",
+  "sk": "grammar.preposition"
  }
 ]

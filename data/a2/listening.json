@@ -15,7 +15,8 @@
    "first street on the left": "You heard: “— Go straight on and take the second street on the left.” So it's “two streets along, on the left”, not “first street on the left”.",
    "second street on the right": "You heard: “— Go straight on and take the second street on the left.” So it's “two streets along, on the left”, not “second street on the right”.",
    "straight on only": "You heard: “— Go straight on and take the second street on the left.” So it's “two streets along, on the left”, not “straight on only”."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -33,7 +34,8 @@
    "9:30": "“9:30” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "10:00": "“10:00” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "12:00": "“12:00” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -51,7 +53,8 @@
    "on foot": "“on foot” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "by bus": "“by bus” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "by car": "“by car” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -69,7 +72,8 @@
    "£40": "“£40” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "£15": "“£15” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "£45": "“£45” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -87,7 +91,8 @@
    "7:15": "“7:15” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "7:45": "“7:45” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "6:15": "“6:15” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -105,7 +110,8 @@
    "cheese": "You heard: “I'd like a cheese sandwich and a cup of tea, but no sugar, thanks.” So it's “sugar”, not “cheese”.",
    "tea": "You heard: “I'd like a cheese sandwich and a cup of tea, but no sugar, thanks.” So it's “sugar”, not “tea”.",
    "a sandwich": "You heard: “I'd like a cheese sandwich and a cup of tea, but no sugar, thanks.” So it's “sugar”, not “a sandwich”."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -123,7 +129,8 @@
    "the sister": "You heard: “My sister is taller than me, but my brother is the tallest in the family.” So it's “the brother”, not “the sister”.",
    "the speaker": "You heard: “My sister is taller than me, but my brother is the tallest in the family.” So it's “the brother”, not “the speaker”.",
    "the mother": "You heard: “My sister is taller than me, but my brother is the tallest in the family.” So it's “the brother”, not “the mother”."
-  }
+  },
+  "sk": "listening.person"
  },
  {
   "type": "listen",
@@ -141,7 +148,8 @@
    "cloudy": "“cloudy” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "rainy": "“rainy” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "snowy": "“snowy” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -159,7 +167,8 @@
    "Paris": "You heard: “I've been to Paris twice, but I've never been to Rome.” So it's “Rome”, not “Paris”.",
    "London": "You heard: “I've been to Paris twice, but I've never been to Rome.” So it's “Rome”, not “London”.",
    "Madrid": "You heard: “I've been to Paris twice, but I've never been to Rome.” So it's “Rome”, not “Madrid”."
-  }
+  },
+  "sk": "listening.place"
  },
  {
   "type": "listen",
@@ -177,7 +186,8 @@
    "4 minutes": "You heard: “It's running ten minutes late.” So it's “10 minutes”, not “4 minutes”.",
    "14 minutes": "You heard: “It's running ten minutes late.” So it's “10 minutes”, not “14 minutes”.",
    "40 minutes": "You heard: “It's running ten minutes late.” So it's “10 minutes”, not “40 minutes”."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -195,7 +205,8 @@
    "eggs": "“eggs” is in the recording too, but not as the answer. You heard: “We've got enough bread.” So it's “bread”.",
    "milk": "“milk” is in the recording too, but not as the answer. You heard: “We've got enough bread.” So it's “bread”.",
    "butter": "You heard: “We've got enough bread.” So it's “bread”, not “butter”."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -213,7 +224,8 @@
    "Friday 21st": "You heard: “The party is on Saturday the twenty-first, not Friday.” So it's “Saturday 21st”, not “Friday 21st”.",
    "Saturday 1st": "You heard: “The party is on Saturday the twenty-first, not Friday.” So it's “Saturday 21st”, not “Saturday 1st”.",
    "Friday 20th": "You heard: “The party is on Saturday the twenty-first, not Friday.” So it's “Saturday 21st”, not “Friday 20th”."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -231,7 +243,8 @@
    "homework": "You heard: “I've got a terrible headache.” So it's “a headache”, not “homework”.",
    "a sore leg": "You heard: “I've got a terrible headache.” So it's “a headache”, not “a sore leg”.",
    "the rain": "You heard: “I've got a terrible headache.” So it's “a headache”, not “the rain”."
-  }
+  },
+  "sk": "listening.reason"
  },
  {
   "type": "listen",
@@ -249,7 +262,8 @@
    "the kitchen": "You heard: “My new flat has two bedrooms, a small kitchen and a lovely balcony.” So it's “the balcony”, not “the kitchen”.",
    "the bedrooms": "You heard: “My new flat has two bedrooms, a small kitchen and a lovely balcony.” So it's “the balcony”, not “the bedrooms”.",
    "the garden": "You heard: “My new flat has two bedrooms, a small kitchen and a lovely balcony.” So it's “the balcony”, not “the garden”."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -267,7 +281,8 @@
    "for a holiday": "You heard: “The swimming pool is closed on Mondays for cleaning.” So it's “so it can be cleaned”, not “for a holiday”.",
    "for repairs": "You heard: “The swimming pool is closed on Mondays for cleaning.” So it's “so it can be cleaned”, not “for repairs”.",
    "for a competition": "You heard: “The swimming pool is closed on Mondays for cleaning.” So it's “so it can be cleaned”, not “for a competition”."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -285,7 +300,8 @@
    "three weeks": "“three weeks” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "two days": "“two days” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "three days": "“three days” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -303,7 +319,8 @@
    "chicken": "“chicken” is in the recording too, but not as the answer. You heard: “Oh, and no onions.” So it's “onions”.",
    "salad": "“salad” is in the recording too, but not as the answer. You heard: “Oh, and no onions.” So it's “onions”.",
    "bread": "You heard: “Oh, and no onions.” So it's “onions”, not “bread”."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -321,7 +338,8 @@
    "7:45": "“7:45” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "7:15": "“7:15” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "8:00": "“8:00” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -339,7 +357,8 @@
    "London": "You heard: “My cousin lives in Manchester, but she's moving to London next month.” So it's “Manchester”, not “London”.",
    "Liverpool": "You heard: “My cousin lives in Manchester, but she's moving to London next month.” So it's “Manchester”, not “Liverpool”.",
    "Leeds": "You heard: “My cousin lives in Manchester, but she's moving to London next month.” So it's “Manchester”, not “Leeds”."
-  }
+  },
+  "sk": "listening.place"
  },
  {
   "type": "listen",
@@ -357,7 +376,8 @@
    "She's feeling ill.": "You heard: “I'd love to come, but I've got a piano lesson on Thursday.” So it's “She has a piano lesson.”, not “She's feeling ill.”",
    "She has to babysit.": "You heard: “I'd love to come, but I've got a piano lesson on Thursday.” So it's “She has a piano lesson.”, not “She has to babysit.”",
    "She doesn't want to.": "You heard: “I'd love to come, but I've got a piano lesson on Thursday.” So it's “She has a piano lesson.”, not “She doesn't want to.”"
-  }
+  },
+  "sk": "listening.reason"
  },
  {
   "type": "listen",
@@ -375,7 +395,8 @@
    "next to the library": "You heard: “The bank's opposite the library.” So it's “across from the library”, not “next to the library”.",
    "behind the library": "You heard: “The bank's opposite the library.” So it's “across from the library”, not “behind the library”.",
    "on the first left": "You heard: “The bank's opposite the library.” So it's “across from the library”, not “on the first left”."
-  }
+  },
+  "sk": "listening.place"
  },
  {
   "type": "listen",
@@ -393,7 +414,8 @@
    "went skating outside": "You heard: “It was so cold at the weekend that we stayed in and played board games.” So it's “played games at home”, not “went skating outside”.",
    "visited friends": "You heard: “It was so cold at the weekend that we stayed in and played board games.” So it's “played games at home”, not “visited friends”.",
    "went shopping": "You heard: “It was so cold at the weekend that we stayed in and played board games.” So it's “played games at home”, not “went shopping”."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -411,7 +433,8 @@
    "by plane": "“by plane” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "by train": "“by train” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "by boat": "“by boat” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -429,7 +452,8 @@
    "£20": "“£20” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "£25": "“£25” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "£5": "“£5” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -447,7 +471,8 @@
    "his dad": "You heard: “It was a birthday present from my uncle.” So it's “his uncle”, not “his dad”.",
    "his grandad": "You heard: “It was a birthday present from my uncle.” So it's “his uncle”, not “his grandad”.",
    "his brother": "You heard: “It was a birthday present from my uncle.” So it's “his uncle”, not “his brother”."
-  }
+  },
+  "sk": "listening.person"
  },
  {
   "type": "listen",
@@ -465,7 +490,8 @@
    "The bus is already late.": "You heard: “The next bus isn't for another forty minutes.” So it's “The next bus is much later.”, not “The bus is already late.”",
    "It's going to rain soon.": "You heard: “The next bus isn't for another forty minutes.” So it's “The next bus is much later.”, not “It's going to rain soon.”",
    "The shop is closing.": "You heard: “The next bus isn't for another forty minutes.” So it's “The next bus is much later.”, not “The shop is closing.”"
-  }
+  },
+  "sk": "listening.reason"
  },
  {
   "type": "listen",
@@ -483,7 +509,8 @@
    "He overslept.": "“He overslept.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "His car broke down.": "“His car broke down.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "He got lost.": "“He got lost.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.reason"
  },
  {
   "type": "listen",
@@ -501,7 +528,8 @@
    "in the lake": "You heard: “You can't swim in the lake today because the water's too cold, but the pool is open.” So it's “in the pool”, not “in the lake”.",
    "in the sea": "You heard: “You can't swim in the lake today because the water's too cold, but the pool is open.” So it's “in the pool”, not “in the sea”.",
    "in the river": "You heard: “You can't swim in the lake today because the water's too cold, but the pool is open.” So it's “in the pool”, not “in the river”."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -519,7 +547,8 @@
    "on foot": "Walking is usual, but not today.",
    "by bus": "The bus wasn't mentioned.",
    "by bike": "A bike wasn't mentioned."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -537,7 +566,8 @@
    "at nine": "Nine is the other days.",
    "at eleven": "Eleven wasn't said. You heard: “The swimming pool opens at nine, but on Sundays it doesn't open until ten.”",
    "it's closed": "It does open, just later."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -555,7 +585,8 @@
    "in the park": "They wanted a picnic, but it was too windy.",
    "at a café": "A café wasn't mentioned. You heard: “We wanted to have a picnic, but it was too windy, so we ate at home.”",
    "on the beach": "A beach wasn't mentioned. You heard: “We wanted to have a picnic, but it was too windy, so we ate at home.”"
-  }
+  },
+  "sk": "listening.place"
  },
  {
   "type": "listen",
@@ -573,7 +604,8 @@
    "the brother": "He's older than the speaker, but not the oldest.",
    "the speaker": "The speaker is the youngest.",
    "they are the same age": "They're different ages."
-  }
+  },
+  "sk": "listening.person"
  },
  {
   "type": "listen",
@@ -591,7 +623,8 @@
    "six pounds": "Six pounds is for adults.",
    "three pounds": "Three pounds wasn't said.",
    "one pound": "One pound wasn't said."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -609,7 +642,8 @@
    "only milk": "Eggs were added at the end.",
    "only eggs": "Milk was asked first.",
    "bread and eggs": "Bread wasn't mentioned. You heard: “Can you buy some milk on the way home?”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -627,7 +661,8 @@
    "a short spotty one": "It's long and stripy.",
    "a long plain one": "Plain means no stripes.",
    "a short stripy one": "It's long, not short."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -645,7 +680,8 @@
    "6:45": "6:45 is when the film starts.",
    "7:15": "7:15 wasn't said.",
    "6:15": "6:15 wasn't said."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -663,7 +699,8 @@
    "the blue dress": "The blue one got juice on it.",
    "jeans": "Jeans weren't mentioned. You heard: “I was going to wear my blue dress, but I spilt juice on it, so I'm wearing the green one.”",
    "a red dress": "Red wasn't mentioned. You heard: “I was going to wear my blue dress, but I spilt juice on it, so I'm wearing the green one.”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -681,7 +718,8 @@
    "their usual teacher": "The usual teacher is ill.",
    "the head teacher": "The head teacher wasn't mentioned. You heard: “Our teacher is ill today, so Mr Patel is teaching us.”",
    "nobody": "Mr Patel is teaching."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -699,7 +737,8 @@
    "the first building on the left": "It's the second, on the right.",
    "next to the bakery": "You turn at the bakery; the library isn't next to it.",
    "opposite the bakery, on the left": "It's on the right."
-  }
+  },
+  "sk": "listening.place"
  },
  {
   "type": "listen",
@@ -717,7 +756,8 @@
    "£12": "£12 is for one ticket.",
    "£20": "£20 isn't 2 × 12.",
    "£14": "£14 isn't 2 × 12."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -735,7 +775,8 @@
    "the bus was broken": "Nothing was broken.",
    "they got up late": "Getting up late wasn't said. You heard: “I missed the bus and had to wait twenty minutes for the next one.”",
    "the traffic was bad": "Traffic wasn't mentioned. You heard: “I missed the bus and had to wait twenty minutes for the next one.”"
-  }
+  },
+  "sk": "listening.reason"
  },
  {
   "type": "listen",
@@ -753,7 +794,8 @@
    "the chicken": "They don't eat meat.",
    "chicken soup": "Chicken soup has meat.",
    "nothing": "They want soup."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -771,7 +813,8 @@
    "on Thursday": "Thursday was the old day.",
    "on Wednesday": "Wednesday wasn't said. You heard: “Oh no, wait, it's been moved to Friday.”",
    "it's cancelled": "It was moved, not cancelled."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -790,7 +833,8 @@
    "go to the park": "The park comes later.",
    "have dinner": "Dinner wasn't mentioned. You heard: “Max: I'd love to, but I have to finish my homework first.”",
    "phone Lucy": "Phoning wasn't mentioned. You heard: “Max: I'd love to, but I have to finish my homework first.”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -809,7 +853,8 @@
    "all black": "She has white paws.",
    "white with black feet": "It's the other way round.",
    "grey": "Grey wasn't mentioned. You heard: “Ella: Is your cat black?”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -828,7 +873,8 @@
    "it was too difficult": "He said it was easier.",
    "he didn't finish": "He finished early.",
    "he forgot it": "He did the test."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -847,7 +893,8 @@
    "the beach": "The beach was too expensive.",
    "a big city": "A city wasn't mentioned. You heard: “Ben: We went to the mountains.”",
    "his grandma's": "Grandma wasn't mentioned. You heard: “Ben: We went to the mountains.”"
-  }
+  },
+  "sk": "listening.place"
  },
  {
   "type": "listen",
@@ -866,7 +913,8 @@
    "on Saturday": "Saturday is dance class.",
    "after school": "After school wasn't offered.",
    "tomorrow": "Tomorrow wasn't said. You heard: “What about Sunday?”"
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -884,7 +932,8 @@
    "bread": "Bread is sold there.",
    "cakes": "Cakes are sold there.",
    "biscuits": "Biscuits are sold there."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -902,7 +951,8 @@
    "£30": "£30 is what they have.",
    "£50": "£50 is the price.",
    "£80": "£80 is both added together."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -920,7 +970,8 @@
    "on Tuesday": "Tuesday is the usual day.",
    "on Thursday": "Thursday wasn't said.",
    "there is no practice": "Practice is moved, not cancelled."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -938,7 +989,8 @@
    "a football": "Football wasn't mentioned.",
    "a raincoat": "A raincoat wasn't mentioned.",
    "your lunch": "Lunch wasn't the thing to bring."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -956,7 +1008,8 @@
    "she's busy": "Being busy wasn't the reason.",
    "she's on holiday": "A holiday wasn't mentioned. You heard: “My cousin can't come to the party because she's got a cold.”",
    "she forgot": "She didn't forget."
-  }
+  },
+  "sk": "listening.reason"
  },
  {
   "type": "listen",
@@ -974,7 +1027,8 @@
    "platform 2": "Two is the wrong one on the board.",
    "platform 14": "Fourteen wasn't said. You heard: “The train to London leaves from platform four, not platform two as it says on the board.”",
    "platform 3": "Three wasn't said. You heard: “The train to London leaves from platform four, not platform two as it says on the board.”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -992,7 +1046,8 @@
    "four": "Four is what they have.",
    "six": "Six is the total needed.",
    "eight": "Eight wasn't said. You heard: “Can you get two more?”"
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1010,7 +1065,8 @@
    "it's the wrong colour": "Colour wasn't mentioned.",
    "it's too expensive": "Price wasn't mentioned.",
    "it's dirty": "Dirty wasn't mentioned."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1028,7 +1084,8 @@
    "outside the cinema": "Outside was the first idea.",
    "at the bus stop": "The bus stop wasn't mentioned. You heard: “I'll meet you outside the cinema.”",
    "at home": "Home wasn't mentioned. You heard: “I'll meet you outside the cinema.”"
-  }
+  },
+  "sk": "listening.place"
  },
  {
   "type": "listen",
@@ -1046,7 +1103,8 @@
    "eating biscuits": "Biscuit is his name, not his food.",
    "sleeping": "Sleeping wasn't mentioned. You heard: “He's three, and he loves chasing balls.”",
    "swimming": "Swimming wasn't mentioned. You heard: “He's three, and he loves chasing balls.”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1064,7 +1122,8 @@
    "8:10": "8:10 is the usual time.",
    "8:15": "8:15 is just the number fifteen, not the new time.",
    "8:50": "8:50 is far too late."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1082,7 +1141,8 @@
    "three": "Three forgets the banana, added at the end.",
    "two": "Two is just the sandwiches.",
    "five": "Five is one too many."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1100,7 +1160,8 @@
    "near the school": "They walk to school together, but she lives next door.",
    "in another town": "Another town wasn't said.",
    "in the same house": "Next door is a different house."
-  }
+  },
+  "sk": "listening.place"
  },
  {
   "type": "listen",
@@ -1118,7 +1179,8 @@
    "at six": "Six is the winter time.",
    "at seven": "Seven wasn't said. You heard: “The park closes at six in winter and at nine in summer.”",
    "it doesn't close": "It does close."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1136,7 +1198,8 @@
    "on Monday": "Monday is piano.",
    "on Wednesday": "Wednesday is swimming.",
    "on Tuesday": "Tuesday wasn't mentioned. You heard: “I've got piano on Monday, swimming on Wednesday and nothing on Friday.”"
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1154,7 +1217,8 @@
    "it's dark": "Darkness wasn't mentioned.",
    "the chairs are broken": "Nothing is broken.",
    "visitors are coming": "Visitors weren't mentioned."
-  }
+  },
+  "sk": "listening.reason"
  },
  {
   "type": "listen",
@@ -1172,7 +1236,8 @@
    "£12": "£12 was the old price.",
    "£2": "£2 isn't half of £12.",
    "£24": "£24 is double, not half."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1190,7 +1255,8 @@
    "they are ill": "Illness wasn't mentioned. You heard: “We're visiting my grandma that weekend.”",
    "they don't like parties": "They said sorry, so they'd like to come.",
    "they forgot": "They didn't forget; they remembered to say sorry."
-  }
+  },
+  "sk": "listening.reason"
  },
  {
   "type": "listen",
@@ -1208,7 +1274,8 @@
    "four hours": "Four is the start time.",
    "seven hours": "Seven is the end time.",
    "two hours": "Two hours is too short."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1226,7 +1293,8 @@
    "boots": "Boots are too hot today.",
    "trainers": "Trainers weren't mentioned.",
    "wellies": "Wellies are for rain."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1244,7 +1312,8 @@
    "on the ground floor": "The ground floor is the bottom floor.",
    "inside the library": "It's next to the library, not in it.",
    "opposite the library": "Opposite isn't next to."
-  }
+  },
+  "sk": "listening.place"
  },
  {
   "type": "listen",
@@ -1262,7 +1331,8 @@
    "pizza": "Pizza was the first idea.",
    "burgers": "Burgers weren't mentioned. You heard: “What about pasta?”",
    "soup": "Soup wasn't mentioned. You heard: “What about pasta?”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1281,7 +1351,8 @@
    "at 9:30": "9:30 is when the zoo opens.",
    "at 9:00": "9:00 wasn't said.",
    "at 10:30": "10:30 wasn't said."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1300,7 +1371,8 @@
    "Kai's": "Kai's jumper has a hood.",
    "Ben's": "Ben is asking, so it's not his.",
    "nobody's": "It belongs to Sam."
-  }
+  },
+  "sk": "listening.person"
  },
  {
   "type": "listen",
@@ -1319,7 +1391,8 @@
    "only fed the fish": "She cleaned the tank too.",
    "forgot the fish": "She did remember.",
    "bought a new fish": "Buying wasn't mentioned. You heard: “Lia: Yes, and I cleaned the tank too.”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1338,7 +1411,8 @@
    "by bus": "Leo suggested the bus, but Amy said walk.",
    "by bike": "A bike wasn't mentioned. You heard: “Let's walk.”",
    "by car": "A car wasn't mentioned. You heard: “Let's walk.”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1357,7 +1431,8 @@
    "£4.50": "£4.50 is the whole cake.",
    "£4": "£4 wasn't said.",
    "£2.50": "£2.50 wasn't said."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1376,7 +1451,8 @@
    "play in goal": "He won't play at all.",
    "stay at home": "He's still coming.",
    "be the coach": "Coaching wasn't mentioned. You heard: “Raj: I've hurt my knee, so I'll just watch.”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1395,7 +1471,8 @@
    "3rd June": "The third is his brother's.",
    "30th June": "Thirtieth wasn't said. You heard: “Max: The third of June.”",
    "13th July": "The month is June."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1414,7 +1491,8 @@
    "more soup": "She said no to soup.",
    "nothing at all": "She does want cake.",
    "some bread": "Bread wasn't mentioned."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1433,7 +1511,8 @@
    "she was hurt": "Being hurt wasn't mentioned.",
    "she was cold": "Cold wasn't mentioned.",
    "she was lost in a tree": "She was under a car, not in a tree."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1452,7 +1531,8 @@
    "Ivy": "Ivy needs hers now.",
    "the teacher": "The teacher wasn't mentioned. You heard: “Ask Tom, he's got two.”",
    "nobody": "Tom has a spare one."
-  }
+  },
+  "sk": "listening.person"
  },
  {
   "type": "listen",
@@ -1471,7 +1551,8 @@
    "five minutes": "Five is the closing hour, not the minutes left.",
    "forty-five minutes": "Forty-five minutes is too long.",
    "an hour": "An hour is too long."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1490,7 +1571,8 @@
    "on Friday": "Friday was the old day.",
    "on Tuesday": "Tuesday wasn't said. You heard: “Teacher: Bring your project on Monday.”",
    "today": "Today wasn't said. You heard: “Teacher: Bring your project on Monday.”"
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1509,91 +1591,104 @@
    "inside the bank": "It's past the bank, not in it.",
    "behind the bank": "Behind wasn't said. You heard: “Go past the bank and it's on the corner.”",
    "very far away": "'Not really' far."
-  }
+  },
+  "sk": "listening.place"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "We went to the beach on Sunday.",
   "answer": "We went to the beach on Sunday.",
-  "explain": "Past simple: went."
+  "explain": "Past simple: went.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "My brother is taller than me.",
   "answer": "My brother is taller than me.",
-  "explain": "Comparative: taller than."
+  "explain": "Comparative: taller than.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "Can you help me with my homework?",
   "answer": "Can you help me with my homework?",
-  "explain": "Can you + help…?"
+  "explain": "Can you + help…?",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "There isn't any milk in the fridge.",
   "answer": "There isn't any milk in the fridge.",
-  "explain": "There isn't any + uncountable noun."
+  "explain": "There isn't any + uncountable noun.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "I'm going to visit my cousin.",
   "answer": "I'm going to visit my cousin.",
-  "explain": "Going to for plans."
+  "explain": "Going to for plans.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "She doesn't like cold weather.",
   "answer": "She doesn't like cold weather.",
-  "explain": "She doesn't + like."
+  "explain": "She doesn't + like.",
+  "sk": "listening.dictation"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "We didn't go out because it rained.",
   "answer": "We didn't go out because it rained.",
-  "explain": "Because joins the reason."
+  "explain": "Because joins the reason.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "My cat is sleeping on the sofa.",
   "answer": "My cat is sleeping on the sofa.",
-  "explain": "is + -ing for now."
+  "explain": "is + -ing for now.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "How much are these shoes?",
   "answer": "How much are these shoes?",
-  "explain": "How much + are + these shoes?"
+  "explain": "How much + are + these shoes?",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "I have never seen a whale.",
   "answer": "I have never seen a whale.",
-  "explain": "Have + never + seen."
+  "explain": "Have + never + seen.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "Let's meet outside the cinema.",
   "answer": "Let's meet outside the cinema.",
-  "explain": "Let's + verb + place."
+  "explain": "Let's + verb + place.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "He usually walks to school.",
   "answer": "He usually walks to school.",
-  "explain": "Usually goes before the verb."
+  "explain": "Usually goes before the verb.",
+  "sk": "listening.build"
  },
  {
   "type": "listen",
@@ -1611,7 +1706,8 @@
    "30 minutes": "Half past is a time, not the length.",
    "an hour": "4:30 to 5:30 would be an hour.",
    "15 minutes": "Quarter past is a time, not the length."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1629,7 +1725,8 @@
    "the red dress": "The red dress is too small now.",
    "a small red skirt": "She talks about dresses, not a skirt.",
    "the dress she wore last year": "Last year wasn't mentioned. You heard: “I was going to wear my red dress to the party, but it's too small now, so I'm wearing the blue one.”"
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1647,7 +1744,8 @@
    "three": "Three is what they have.",
    "five": "Five is how many people.",
    "eight": "Eight is 3 + 5, not what they need."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1665,7 +1763,8 @@
    "the school shoes were too small": "Size wasn't the problem.",
    "it was sports day": "Sports day wasn't mentioned. You heard: “Our new puppy chewed my school shoes, so I wore my trainers today.”",
    "the puppy likes trainers": "The puppy chewed the shoes, not the trainers."
-  }
+  },
+  "sk": "listening.reason"
  },
  {
   "type": "listen",
@@ -1683,7 +1782,8 @@
    "at nine": "Nine is when the zoo opens.",
    "at ten": "Ten wasn't said. You heard: “The zoo opens at nine, but the penguin feeding isn't until eleven.”",
    "at twelve": "Twelve wasn't said. You heard: “The zoo opens at nine, but the penguin feeding isn't until eleven.”"
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1701,7 +1801,8 @@
    "downstairs": "Up, not down.",
    "inside the gift shop": "Next to the gift shop, not inside it.",
    "outside the building": "Outside wasn't said."
-  }
+  },
+  "sk": "listening.place"
  },
  {
   "type": "listen",
@@ -1719,7 +1820,8 @@
    "on Friday": "Friday is when it returns, not when to come.",
    "right now": "It's out now.",
    "next month": "Next month wasn't said."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1737,7 +1839,8 @@
    "at five": "Five is the usual time, not today.",
    "at half past four": "Half past wasn't said.",
    "it's cancelled": "It's moved, not cancelled."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1756,7 +1859,8 @@
    "play football": "Dan says it's too hot for football.",
    "stay at home": "Staying home wasn't said. You heard: “Let's go swimming instead.”",
    "play in the sun": "It's too hot for the sun."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1775,7 +1879,8 @@
    "feed the fish": "The fish come after his homework.",
    "play a game": "A game wasn't mentioned.",
    "have dinner": "Dinner wasn't mentioned."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1794,7 +1899,8 @@
    "the castle": "The castle was boring.",
    "nothing at all": "He enjoyed the picnic.",
    "the bus ride": "The bus wasn't mentioned."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1813,77 +1919,88 @@
    "Ben": "Ben's bike is broken.",
    "nobody": "Sara has two bikes.",
    "Ben's brother": "Ben's brother wasn't mentioned. You heard: “Ask Sara.”"
-  }
+  },
+  "sk": "listening.person"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "We're going to have a picnic on Saturday.",
   "answer": "We're going to have a picnic on Saturday.",
-  "explain": "Going to for plans."
+  "explain": "Going to for plans.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "My brother was born in December.",
   "answer": "My brother was born in December.",
-  "explain": "Past: was born + in + month."
+  "explain": "Past: was born + in + month.",
+  "sk": "listening.dictation"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "The kitten is smaller than the puppy.",
   "answer": "The kitten is smaller than the puppy.",
-  "explain": "Comparative: smaller than."
+  "explain": "Comparative: smaller than.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "Did you see the dragon yesterday?",
   "answer": "Did you see the dragon yesterday?",
-  "explain": "Did + you + see + when?"
+  "explain": "Did + you + see + when?",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "We are going to the beach tomorrow.",
   "answer": "We are going to the beach tomorrow.",
-  "explain": "be going to + verb + place + time."
+  "explain": "be going to + verb + place + time.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "She didn't finish her homework.",
   "answer": "She didn't finish her homework.",
-  "explain": "didn't + verb."
+  "explain": "didn't + verb.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "How many brothers have you got?",
   "answer": "How many brothers have you got?",
-  "explain": "How many + plural + have you got?"
+  "explain": "How many + plural + have you got?",
+  "sk": "listening.build"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "I usually walk to school.",
   "answer": "I usually walk to school.",
-  "explain": "usually goes before the verb."
+  "explain": "usually goes before the verb.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "They went to the cinema last night.",
   "answer": "They went to the cinema last night.",
-  "explain": "went = past of go."
+  "explain": "went = past of go.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "Can I have some water, please?",
   "answer": "Can I have some water, please?",
-  "explain": "Can I have…, please?"
+  "explain": "Can I have…, please?",
+  "sk": "listening.dictation"
  },
  {
   "type": "listen",
@@ -1902,7 +2019,8 @@
    "at four o'clock": "You heard: “How about half past five?” So it's “at half past five”, not “at four o'clock”.",
    "at five o'clock": "You heard: “How about half past five?” So it's “at half past five”, not “at five o'clock”.",
    "at half past four": "“at half past four” is in the recording too, but not as the answer. You heard: “How about half past five?” So it's “at half past five”."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1921,7 +2039,8 @@
    "£6": "“£6” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "£2": "“£2” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "£10": "“£10” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1940,7 +2059,8 @@
    "the red one": "“the red one” is in the recording too, but not as the answer. You heard: “Tom: OK, I'll take the green one.” So it's “the green one”.",
    "a blue one": "You heard: “Tom: OK, I'll take the green one.” So it's “the green one”, not “a blue one”.",
    "both of them": "You heard: “Tom: OK, I'll take the green one.” So it's “the green one”, not “both of them”."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1959,91 +2079,104 @@
    "in May": "“in May” is in the recording too, but not as the answer. You heard: “Omar: No, it's in June.” So it's “in June”.",
    "in July": "You heard: “Omar: No, it's in June.” So it's “in June”, not “in July”.",
    "in March": "You heard: “Omar: No, it's in June.” So it's “in June”, not “in March”."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "We visited the museum on Saturday.",
   "answer": "We visited the museum on Saturday.",
-  "explain": "We visited + the museum + on Saturday (past)."
+  "explain": "We visited + the museum + on Saturday (past).",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "It was colder than yesterday.",
   "answer": "It was colder than yesterday.",
-  "explain": "It was + colder than + yesterday."
+  "explain": "It was + colder than + yesterday.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "Are you going to the party?",
   "answer": "Are you going to the party?",
-  "explain": "Are you going + to the party? A question."
+  "explain": "Are you going + to the party? A question.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "My brother forgot his lunch.",
   "answer": "My brother forgot his lunch.",
-  "explain": "My brother + forgot (forget) + his lunch."
+  "explain": "My brother + forgot (forget) + his lunch.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "The film starts at half past six.",
   "answer": "The film starts at half past six.",
-  "explain": "The film starts + at half past six (6:30)."
+  "explain": "The film starts + at half past six (6:30).",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "She has never been to London.",
   "answer": "She has never been to London.",
-  "explain": "She has never been + to London."
+  "explain": "She has never been + to London.",
+  "sk": "listening.dictation"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "I'm going to learn the guitar.",
   "answer": "I'm going to learn the guitar.",
-  "explain": "I'm going to + learn + the guitar."
+  "explain": "I'm going to + learn + the guitar.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "We should take an umbrella.",
   "answer": "We should take an umbrella.",
-  "explain": "We should + take + an umbrella."
+  "explain": "We should + take + an umbrella.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "The lake was frozen last winter.",
   "answer": "The lake was frozen last winter.",
-  "explain": "The lake + was frozen + last winter."
+  "explain": "The lake + was frozen + last winter.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "Which bus goes to the station?",
   "answer": "Which bus goes to the station?",
-  "explain": "Which bus + goes + to the station?"
+  "explain": "Which bus + goes + to the station?",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "He was the fastest runner in the race.",
   "answer": "He was the fastest runner in the race.",
-  "explain": "He was + the fastest runner + in the race."
+  "explain": "He was + the fastest runner + in the race.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "Could you open the window, please?",
   "answer": "Could you open the window, please?",
-  "explain": "Could you + open the window + please?"
+  "explain": "Could you + open the window + please?",
+  "sk": "listening.build"
  },
  {
   "type": "listen",
@@ -2061,7 +2194,8 @@
    "at three": "“at three” is in the recording too, but not as the answer. You heard: “It's at four.” So it's “at four”.",
    "at half past three": "You heard: “It's at four.” So it's “at four”, not “at half past three”.",
    "at two": "You heard: “It's at four.” So it's “at four”, not “at two”."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -2079,7 +2213,8 @@
    "four": "“four” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "two": "“two” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "eight": "“eight” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -2097,6 +2232,7 @@
    "blue": "You heard: “I wanted the blue cap, but they only had green, so I got the green one.” So it's “green”, not “blue”.",
    "red": "You heard: “I wanted the blue cap, but they only had green, so I got the green one.” So it's “green”, not “red”.",
    "black": "You heard: “I wanted the blue cap, but they only had green, so I got the green one.” So it's “green”, not “black”."
-  }
+  },
+  "sk": "listening.detail"
  }
 ]

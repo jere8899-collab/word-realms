@@ -19,7 +19,8 @@
       "memories": "“memories” doesn't answer the question. Find the line in the story that does, and read it again.",
       "candlelight": "“candlelight” doesn't answer the question. Find the line in the story that does, and read it again.",
       "time": "“time” doesn't answer the question. Find the line in the story that does, and read it again."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -36,7 +37,8 @@
       "her life only": "“her life only” doesn't answer the question. Find the line in the story that does, and read it again.",
       "her friendship with the dragon": "“her friendship with the dragon” doesn't answer the question. Find the line in the story that does, and read it again.",
       "nothing important": "“nothing important” doesn't answer the question. Find the line in the story that does, and read it again."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -53,7 +55,8 @@
       "It was furious.": "“It was furious.” doesn't answer the question. Find the line in the story that does, and read it again.",
       "It was disappointed.": "“It was disappointed.” doesn't answer the question. Find the line in the story that does, and read it again.",
       "It was frightened.": "“It was frightened.” doesn't answer the question. Find the line in the story that does, and read it again."
-     }
+     },
+     "sk": "reading.inference"
     }
    ]
   },
@@ -76,7 +79,8 @@
       "Bridges are too expensive a metaphor to use.": "“Bridges are too expensive a metaphor to use.” doesn't answer the question. Find the line in the story that does, and read it again.",
       "Translators have always disliked bridge imagery.": "“Translators have always disliked bridge imagery.” doesn't answer the question. Find the line in the story that does, and read it again.",
       "It is an old-fashioned image no longer in use.": "“It is an old-fashioned image no longer in use.” doesn't answer the question. Find the line in the story that does, and read it again."
-     }
+     },
+     "sk": "reading.reason"
     },
     {
      "type": "mcq",
@@ -93,7 +97,8 @@
       "the speed at which a skilled translator works": "“the speed at which a skilled translator works” doesn't answer the question. Find the line in the story that does, and read it again.",
       "the danger of translating across rough water": "“the danger of translating across rough water” doesn't answer the question. Find the line in the story that does, and read it again.",
       "the high cost of travelling between languages": "“the high cost of travelling between languages” doesn't answer the question. Find the line in the story that does, and read it again."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -110,7 +115,8 @@
       "angry and polemical": "“angry and polemical” doesn't answer the question. Find the line in the story that does, and read it again.",
       "light and humorous": "“light and humorous” doesn't answer the question. Find the line in the story that does, and read it again.",
       "wistful and nostalgic": "“wistful and nostalgic” doesn't answer the question. Find the line in the story that does, and read it again."
-     }
+     },
+     "sk": "reading.feeling"
     }
    ]
   },
@@ -133,7 +139,8 @@
       "It is perfectly accurate.": "“It is perfectly accurate.” doesn't answer the question. Find the line in the story that does, and read it again.",
       "It is offensive.": "“It is offensive.” doesn't answer the question. Find the line in the story that does, and read it again.",
       "It is too complex.": "“It is too complex.” doesn't answer the question. Find the line in the story that does, and read it again."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -150,7 +157,8 @@
       "raw, painful and genuine": "“raw, painful and genuine” doesn't answer the question. Find the line in the story that does, and read it again.",
       "dull and repetitive": "“dull and repetitive” doesn't answer the question. Find the line in the story that does, and read it again.",
       "shocking and scandalous": "“shocking and scandalous” doesn't answer the question. Find the line in the story that does, and read it again."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -167,7 +175,8 @@
       "honest, but clumsily written": "“honest, but clumsily written” doesn't answer the question. Find the line in the story that does, and read it again.",
       "a complete failure on every level": "“a complete failure on every level” doesn't answer the question. Find the line in the story that does, and read it again.",
       "a perfect novel without any flaws": "“a perfect novel without any flaws” doesn't answer the question. Find the line in the story that does, and read it again."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -190,7 +199,8 @@
       "from lending printed books to running computer games": "“from lending printed books to running computer games” doesn't answer the question. Find the line in the story that does, and read it again.",
       "from offering free services to charging for them": "“from offering free services to charging for them” doesn't answer the question. Find the line in the story that does, and read it again.",
       "from serving the public to serving private clients": "“from serving the public to serving private clients” doesn't answer the question. Find the line in the story that does, and read it again."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -207,7 +217,8 @@
       "very old and in poor physical condition": "“very old and in poor physical condition” doesn't answer the question. Find the line in the story that does, and read it again.",
       "expensive and difficult to obtain": "“expensive and difficult to obtain” doesn't answer the question. Find the line in the story that does, and read it again.",
       "written by famous and respected authors": "“written by famous and respected authors” doesn't answer the question. Find the line in the story that does, and read it again."
-     }
+     },
+     "sk": "reading.word-meaning"
     },
     {
      "type": "mcq",
@@ -224,7 +235,8 @@
       "Libraries are closing faster than ever before.": "“Libraries are closing faster than ever before.” doesn't answer the question. Find the line in the story that does, and read it again.",
       "People simply don't read printed books any more.": "“People simply don't read printed books any more.” doesn't answer the question. Find the line in the story that does, and read it again.",
       "Librarians are not trained to judge information.": "“Librarians are not trained to judge information.” doesn't answer the question. Find the line in the story that does, and read it again."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -247,7 +259,8 @@
       "a definite yes": "“a definite yes” doesn't answer the question. Find the line in the story that does, and read it again.",
       "she needed more information": "“she needed more information” doesn't answer the question. Find the line in the story that does, and read it again.",
       "she was busy": "“she was busy” doesn't answer the question. Find the line in the story that does, and read it again."
-     }
+     },
+     "sk": "reading.word-meaning"
     },
     {
      "type": "mcq",
@@ -264,7 +277,8 @@
       "her habit of always talking about the weather first": "“her habit of always talking about the weather first” doesn't answer the question. Find the line in the story that does, and read it again.",
       "how loudly or softly she usually spoke at dinner": "“how loudly or softly she usually spoke at dinner” doesn't answer the question. Find the line in the story that does, and read it again.",
       "the travel plans she made for the family each year": "“the travel plans she made for the family each year” doesn't answer the question. Find the line in the story that does, and read it again."
-     }
+     },
+     "sk": "reading.word-meaning"
     },
     {
      "type": "mcq",
@@ -281,7 +295,8 @@
       "She spoke too quietly for anyone to hear her.": "“She spoke too quietly for anyone to hear her.” doesn't answer the question. Find the line in the story that does, and read it again.",
       "They had never met or known their grandfather.": "“They had never met or known their grandfather.” doesn't answer the question. Find the line in the story that does, and read it again.",
       "She was obviously joking, but nobody laughed.": "“She was obviously joking, but nobody laughed.” doesn't answer the question. Find the line in the story that does, and read it again."
-     }
+     },
+     "sk": "reading.reason"
     }
    ]
   },
@@ -304,7 +319,8 @@
       "He lacked the patience to continue.": "“He lacked the patience to continue.” doesn't answer the question. Find the line in the story that does, and read it again.",
       "The council withdrew its funding.": "“The council withdrew its funding.” doesn't answer the question. Find the line in the story that does, and read it again.",
       "He found the old index full of errors.": "“He found the old index full of errors.” doesn't answer the question. Find the line in the story that does, and read it again."
-     }
+     },
+     "sk": "reading.reason"
     },
     {
      "type": "mcq",
@@ -321,7 +337,8 @@
       "How careless earlier librarians were": "“How careless earlier librarians were” doesn't answer the question. Find the line in the story that does, and read it again.",
       "How science replaced mythology": "“How science replaced mythology” doesn't answer the question. Find the line in the story that does, and read it again.",
       "How books are physically moved around": "“How books are physically moved around” doesn't answer the question. Find the line in the story that does, and read it again."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -338,7 +355,8 @@
       "It should be left to machines in future.": "“It should be left to machines in future.” doesn't answer the question. Find the line in the story that does, and read it again.",
       "It is the least important job in a library.": "“It is the least important job in a library.” doesn't answer the question. Find the line in the story that does, and read it again.",
       "It is easy once the shelves are organised.": "“It is easy once the shelves are organised.” doesn't answer the question. Find the line in the story that does, and read it again."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -361,7 +379,8 @@
       "that puns cannot be translated": "“that puns cannot be translated” doesn't answer the question. Find the line in the story that does, and read it again.",
       "that writers dislike translators": "“that writers dislike translators” doesn't answer the question. Find the line in the story that does, and read it again.",
       "that Italian is hard to translate": "“that Italian is hard to translate” doesn't answer the question. Find the line in the story that does, and read it again."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -378,7 +397,8 @@
       "keeps every sound and rhythm intact": "“keeps every sound and rhythm intact” doesn't answer the question. Find the line in the story that does, and read it again.",
       "rewrites the poem in her own style": "“rewrites the poem in her own style” doesn't answer the question. Find the line in the story that does, and read it again.",
       "refuses to translate poetry at all": "“refuses to translate poetry at all” doesn't answer the question. Find the line in the story that does, and read it again."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -395,7 +415,8 @@
       "Translations are usually better than originals.": "“Translations are usually better than originals.” doesn't answer the question. Find the line in the story that does, and read it again.",
       "Original authors should translate their own work.": "“Original authors should translate their own work.” doesn't answer the question. Find the line in the story that does, and read it again.",
       "Readers prefer translations to original texts.": "“Readers prefer translations to original texts.” doesn't answer the question. Find the line in the story that does, and read it again."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -418,7 +439,8 @@
       "she was amused": "'Aghast' isn't amused.",
       "she was unsurprised": "Nobody had told her, so she was surprised.",
       "she was bored": "She was far from bored."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -435,7 +457,8 @@
       "he was equally shocked": "He was calm, unlike Ilse.",
       "he was angry with Ilse": "No anger is shown.",
       "he had caused the change": "Nothing says he caused it."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -452,7 +475,8 @@
       "the books must be read in order": "Order isn't mentioned.",
       "visitors should not search the shelves": "It's advice, not a rule for visitors.",
       "the library dislikes poetry": "Poetry isn't the point."
-     }
+     },
+     "sk": "reading.word-meaning"
     },
     {
      "type": "mcq",
@@ -469,7 +493,8 @@
       "it never happened": "It did happen.",
       "it happened only once": "It happened repeatedly.",
       "it happened every single time": "It's not always."
-     }
+     },
+     "sk": "reading.inference"
     },
     {
      "type": "mcq",
@@ -486,7 +511,8 @@
       "the library is falling apart": "Nothing suggests collapse.",
       "Ilse wants to leave her job": "She is coming to understand it.",
       "the building is badly designed": "Design isn't criticised."
-     }
+     },
+     "sk": "reading.inference"
     }
    ]
   },
@@ -509,7 +535,8 @@
       "being wrong is always painful": "The writer says pleasure follows.",
       "most people enjoy being wrong": "It's 'rarely acknowledged'.",
       "nobody has ever been wrong": "The text is about being wrong."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -526,7 +553,8 @@
       "the writer's main conclusion": "The conclusion comes at the end.",
       "a scientific fact": "It isn't a scientific fact.",
       "a personal story": "No story follows."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -543,7 +571,8 @@
       "a feeling of shame": "The sting fades.",
       "a desire to argue": "Arguing isn't mentioned.",
       "a wish to forget": "Forgetting isn't mentioned."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -560,7 +589,8 @@
       "they avoid experiments that might fail": "They seek it out.",
       "they hide their mistakes": "Hiding is the opposite.",
       "they blame others for errors": "Blaming isn't mentioned."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -577,7 +607,8 @@
       "it makes people more popular": "Popularity isn't mentioned.",
       "it helps people win arguments": "Winning isn't the point.",
       "it is required at school": "School rules aren't mentioned."
-     }
+     },
+     "sk": "reading.feeling"
     }
    ]
   },
@@ -600,7 +631,8 @@
       "he left it to the town": "It went to an apprentice.",
       "he had no apprentices": "He had three.",
       "he left nothing at all": "He left the workshop."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -617,7 +649,8 @@
       "they refused to try": "They set to work at once.",
       "they asked Dora for help": "No help was asked.",
       "they studied the clock for a week": "That was Dora."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -634,7 +667,8 @@
       "she worked through the night": "Night work isn't mentioned.",
       "she bought new parts": "Parts aren't mentioned.",
       "she copied the others": "She did the opposite."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -651,7 +685,8 @@
       "rust in the gears": "The hands 'had not seized'.",
       "a broken spring": "Nothing was broken.",
       "damage from a storm": "Storms aren't mentioned."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -668,7 +703,8 @@
       "to stop the clock forever": "He wanted someone to find it.",
       "to test his son's strength": "His son wasn't tested.",
       "to punish the town": "Punishment isn't suggested."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -691,7 +727,8 @@
       "robots can now feel pain": "Machines 'almost certainly cannot' suffer.",
       "robots have asked for rights": "Robots asking isn't mentioned.",
       "adults are kinder to robots than to pets": "Adults treat them roughly."
-     }
+     },
+     "sk": "reading.reason"
     },
     {
      "type": "mcq",
@@ -708,7 +745,8 @@
       "whether robots can suffer": "That is explicitly not the issue.",
       "how expensive robots are": "Cost isn't mentioned.",
       "whether robots are intelligent": "Intelligence isn't the focus."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -725,7 +763,8 @@
       "the robot would be damaged": "It's 'not for the robot's sake'.",
       "the robot might fight back": "Fighting back isn't mentioned.",
       "it is against the law": "Law isn't mentioned."
-     }
+     },
+     "sk": "reading.reason"
     },
     {
      "type": "mcq",
@@ -742,7 +781,8 @@
       "robots and humans benefit equally": "Only humans benefit, in this argument.",
       "robots matter more than humans": "The opposite is said.",
       "humans should stop making robots": "Stopping production isn't suggested."
-     }
+     },
+     "sk": "reading.word-meaning"
     },
     {
      "type": "mcq",
@@ -759,7 +799,8 @@
       "robots are too expensive for children": "Cost isn't mentioned.",
       "children should not have pets": "Pets aren't criticised.",
       "philosophers know nothing about robots": "Expertise isn't questioned."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -782,7 +823,8 @@
       "a simple code of a few signals": "'Not a simple code.'",
       "a type of birdsong": "It's human language.",
       "a shepherds' song": "It's a language, not a song."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -799,7 +841,8 @@
       "to call their sheep": "They communicated with each other.",
       "to keep secrets from visitors": "Secrecy isn't mentioned.",
       "to entertain tourists": "Tourists aren't mentioned."
-     }
+     },
+     "sk": "reading.reason"
     },
     {
      "type": "mcq",
@@ -816,7 +859,8 @@
       "spoken by most islanders": "Few people used it.",
       "taught in every school": "School teaching came in 1999.",
       "already completely extinct": "It was still alive."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -833,7 +877,8 @@
       "the decision was later reversed": "It wasn't reversed.",
       "nobody agreed with it": "Agreement isn't discussed.",
       "it happened by accident": "It was a deliberate decision."
-     }
+     },
+     "sk": "reading.reason"
     },
     {
      "type": "mcq",
@@ -850,7 +895,8 @@
       "whether UNESCO will recognise it": "UNESCO already has.",
       "whether children enjoy learning it": "Enjoyment isn't questioned.",
       "whether it is really a language": "It's called a language throughout."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -873,7 +919,8 @@
       "they had always wanted to": "'Under duress' means unwillingly.",
       "their friends were members": "Friends aren't mentioned.",
       "they wanted to win prizes": "Prizes aren't mentioned."
-     }
+     },
+     "sk": "reading.reason"
     },
     {
      "type": "mcq",
@@ -890,7 +937,8 @@
       "having to speak in public": "Public speaking isn't the surprise.",
       "losing every debate": "Losing isn't mentioned.",
       "the club meeting every day": "It met weekly."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -907,7 +955,8 @@
       "genuinely supported the idea": "They found it indefensible.",
       "refused to debate it": "They did debate it.",
       "won the debate easily": "Winning isn't mentioned."
-     }
+     },
+     "sk": "reading.feeling"
     },
     {
      "type": "mcq",
@@ -924,7 +973,8 @@
       "they started to agree with everyone": "'If not agree with' = understanding, not agreement.",
       "they lost interest in arguing": "They still argue.",
       "they became less confident": "Confidence isn't discussed."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -941,7 +991,8 @@
       "debating is a waste of time": "They found it valuable.",
       "you should never change your mind": "They did change how they think.",
       "homework should be doubled": "That was a debating position only."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -964,7 +1015,8 @@
       "they are always accurate": "The point is that they select, not that they're accurate.",
       "they are works of art": "'Not pictures' — arguments.",
       "they cause arguments between people": "'Arguments' here means points of view, not quarrels."
-     }
+     },
+     "sk": "reading.word-meaning"
     },
     {
      "type": "mcq",
@@ -981,7 +1033,8 @@
       "as completely wrong": "She didn't reject it.",
       "as deeply important": "Its weight came later.",
       "as a family secret": "Secrecy isn't mentioned."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -998,7 +1051,8 @@
       "when her father died": "Death isn't mentioned.",
       "when she read about maps": "Reading isn't mentioned.",
       "when she got lost in the forest": "Getting lost isn't mentioned."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1015,7 +1069,8 @@
       "because badgers are dangerous": "Danger isn't mentioned.",
       "because it was her favourite place": "Preference isn't mentioned.",
       "because her father asked her to draw it": "Her father didn't ask."
-     }
+     },
+     "sk": "reading.reason"
     },
     {
      "type": "mcq",
@@ -1032,7 +1087,8 @@
       "maps should be read in silence": "It's not about silence.",
       "Mira worked very quietly": "It describes the choices, not Mira.",
       "readers ignore most maps": "Readers are guided, not ignoring."
-     }
+     },
+     "sk": "reading.inference"
     }
    ]
   },
@@ -1055,7 +1111,8 @@
       "unfinished drafts": "That's the writer's surprising point.",
       "famous architects": "Architects are one example.",
       "short pieces": "Length isn't mentioned."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1072,7 +1129,8 @@
       "as perfectionists": "Perfectionism is a separate point.",
       "as failures": "Their works are called masterpieces.",
       "as people who worked together": "They didn't work together."
-     }
+     },
+     "sk": "reading.reason"
     },
     {
      "type": "mcq",
@@ -1089,7 +1147,8 @@
       "it disappoints them": "Its incompleteness is 'part of their power'.",
       "it confuses them": "Confusion isn't mentioned.",
       "it bores them": "Boredom isn't mentioned."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1106,7 +1165,8 @@
       "professional musicians": "Musicians are just an example.",
       "art critics": "Critics aren't addressed.",
       "people who never start projects": "The lesson is about not finishing, not not starting."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1123,7 +1183,8 @@
       "drafts are better than finished work": "Not a general claim.",
       "projects should always be finished alone": "Others may finish it.",
       "nobody should share unfinished work": "The opposite is advised."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -1146,7 +1207,8 @@
       "it never existed": "He said it could be found.",
       "he had stolen it": "Stealing isn't claimed.",
       "it came back in autumn": "Autumn isn't mentioned."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1163,7 +1225,8 @@
       "in the garden": "The garden isn't mentioned.",
       "at the clockmaker's": "A clockmaker isn't mentioned.",
       "in the town library": "The library isn't mentioned."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1180,7 +1243,8 @@
       "under a floorboard": "They searched there, but didn't find it.",
       "in a book": "They searched books, but the note was in the watch.",
       "in the grandfather clock": "They searched the clock too."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1197,7 +1261,8 @@
       "where the hour was hidden": "It didn't give a location.",
       "that he had lied to them": "It reframes, not confesses a lie.",
       "that the hour was in the clock": "No location is given."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1214,7 +1279,8 @@
       "they had failed to solve a crime": "There was no crime.",
       "they had visited too often": "Frequency isn't the point.",
       "they had never really searched": "They searched for years."
-     }
+     },
+     "sk": "reading.word-meaning"
     }
    ]
   },
@@ -1237,7 +1303,8 @@
       "parrots are always unhappy": "Not all parrots are described.",
       "feathers grow back quickly": "Regrowth isn't mentioned.",
       "cages are always cruel": "That's not the claim."
-     }
+     },
+     "sk": "reading.inference"
     },
     {
      "type": "mcq",
@@ -1254,7 +1321,8 @@
       "it has already been proven": "The text says it's difficult.",
       "it doesn't matter": "It does matter.",
       "proof isn't needed": "Studies try to prove it."
-     }
+     },
+     "sk": "reading.word-meaning"
     },
     {
      "type": "mcq",
@@ -1271,7 +1339,8 @@
       "slept more deeply": "They lay awake, not asleep.",
       "avoided new objects": "The opposite.",
       "became more aggressive": "Aggression isn't mentioned."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1288,7 +1357,8 @@
       "it shows they liked unpleasant things": "They wanted stimulation, not unpleasantness itself.",
       "it proves the cages were dirty": "Dirt isn't mentioned.",
       "it shows they were afraid": "Fear isn't the point."
-     }
+     },
+     "sk": "reading.reason"
     },
     {
      "type": "mcq",
@@ -1305,7 +1375,8 @@
       "all zoos should close": "Closure isn't suggested.",
       "pets don't get bored": "Pets are included.",
       "farms are better than zoos": "No comparison is made."
-     }
+     },
+     "sk": "reading.inference"
     }
    ]
   },
@@ -1328,7 +1399,8 @@
       "challenge our opinions": "That's what serendipity tries to add.",
       "find new friends for us": "Friends aren't mentioned.",
       "stop us using screens": "Screen time isn't mentioned."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1345,7 +1417,8 @@
       "we become more curious": "The opposite.",
       "we stop listening to music": "The playlist shrinks, but she still listens.",
       "we read more widely": "The opposite."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1362,7 +1435,8 @@
       "they give us false information": "'Not that algorithms lie.'",
       "they praise our taste openly": "It's not open praise.",
       "they make us feel guilty": "Guilt isn't mentioned."
-     }
+     },
+     "sk": "reading.word-meaning"
     },
     {
      "type": "mcq",
@@ -1379,7 +1453,8 @@
       "a new type of algorithm error": "It's deliberate, not an error.",
       "a music genre": "It isn't a genre.",
       "a way to block adverts": "Adverts aren't mentioned."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1396,7 +1471,8 @@
       "whether algorithms will improve": "Improvement isn't the question.",
       "whether designers will be paid": "Payment isn't mentioned.",
       "whether music will survive": "Music's survival isn't questioned."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -1419,7 +1495,8 @@
       "as a scientific project": "The science came later.",
       "as a worrying obsession": "Worry isn't mentioned.",
       "as a school assignment": "School isn't mentioned."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1436,7 +1513,8 @@
       "it was very short": "It was daily for years.",
       "it was secret": "It was posted online.",
       "it was written in a hurry": "The opposite of careful."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1453,7 +1531,8 @@
       "a university sign": "The university came later.",
       "a tree by the glacier": "A tree isn't mentioned.",
       "a GPS device": "GPS isn't mentioned."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1470,7 +1549,8 @@
       "it used better cameras": "Cameras aren't compared.",
       "it was older than theirs": "Age isn't the point.",
       "it was written in Icelandic": "Language isn't mentioned."
-     }
+     },
+     "sk": "reading.reason"
     },
     {
      "type": "mcq",
@@ -1487,7 +1567,8 @@
       "she no longer cares about it": "She clearly still cares.",
       "she hopes it will grow back soon": "Growth isn't suggested.",
       "she wants to leave the area": "Leaving isn't mentioned."
-     }
+     },
+     "sk": "reading.inference"
     }
    ]
   },
@@ -1510,7 +1591,8 @@
       "deeply moving to everyone who heard it": "The story suggests it moved no one in the end.",
       "badly made": "It worked flawlessly.",
       "tired and off-key": "'Never tired, never sang off-key.'"
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1527,7 +1609,8 @@
       "the bird was weighed carefully": "It's not literal measuring.",
       "the old bird was better in every way": "The new bird was better on measured points.",
       "the emperor loved measuring things": "The emperor's hobbies aren't described."
-     }
+     },
+     "sk": "reading.inference"
     },
     {
      "type": "mcq",
@@ -1544,7 +1627,8 @@
       "it was put in a cage": "No cage is mentioned.",
       "it learnt the twelve melodies": "That's the clockwork bird's repertoire.",
       "it was given to the forest by the emperor": "It flew back on its own."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1561,7 +1645,8 @@
       "the real nightingale's sudden return to the palace": "The bird doesn't come back in this passage.",
       "a visitor's complaint": "No visitor appears.",
       "a broken melody": "It stopped completely; it didn't play wrongly."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1578,7 +1663,8 @@
       "the cold of winter versus the warmth of summer": "Winter is only the setting.",
       "the forest versus the palace": "Places aren't the main contrast.",
       "loud songs versus quiet ones": "Volume isn't discussed."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -1601,7 +1687,8 @@
       "games became much shorter and simpler to finish": "Length isn't mentioned.",
       "people stopped playing alone": "It felt like a 'conversation', but they still played alone.",
       "games became easier to win": "Difficulty isn't mentioned."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1618,7 +1705,8 @@
       "dangerously sharp on both sides": "It's figurative, not about blades.",
       "completely harmful": "There's a positive side too.",
       "affecting two players": "It isn't about the number of players."
-     }
+     },
+     "sk": "reading.word-meaning"
     },
     {
      "type": "mcq",
@@ -1635,7 +1723,8 @@
       "far more realistic and colourful graphics": "Graphics aren't mentioned.",
       "more money for players": "Money isn't mentioned.",
       "friendlier arcades": "Arcades aren't described."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1652,7 +1741,8 @@
       "the game itself was badly designed and dull": "The game was 'perfectly pleasant'.",
       "players get bored quickly": "They quit because of the score, not boredom.",
       "records are easy to beat": "The record was out of reach."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1669,7 +1759,8 @@
       "high-score tables were never actually popular with players": "It was 'quietly influential'.",
       "games became too difficult": "Difficulty isn't the irony.",
       "players forgot their initials": "Initials are just a detail."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -1692,7 +1783,8 @@
       "he encouraged it": "'Deplored' means the opposite.",
       "he did not know about it": "It describes his known attitude.",
       "he found it amusing": "'Deplored' is strong disapproval."
-     }
+     },
+     "sk": "reading.feeling"
     },
     {
      "type": "mcq",
@@ -1709,7 +1801,8 @@
       "a full answer": "'Not an answer.'",
       "an apology": "No apology is mentioned.",
       "a warning to stop": "It encouraged more writing."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1726,7 +1819,8 @@
       "it agreed with everything Ilse wrote in the margins": "It's the opposite.",
       "it stopped replying": "The correspondence continued.",
       "it lost interest quickly": "It went on 'over the following weeks'."
-     }
+     },
+     "sk": "reading.inference"
     },
     {
      "type": "mcq",
@@ -1743,7 +1837,8 @@
       "the answers to her questions": "The book never answered.",
       "a reward from the library": "No reward is mentioned.",
       "a new job": "She stays an apprentice."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1760,7 +1855,8 @@
       "Ilse would be punished for writing in the books": "He 'merely smiled'.",
       "the book was dangerous": "He seems pleased.",
       "he had forgotten about it": "He remembers it clearly."
-     }
+     },
+     "sk": "reading.inference"
     }
    ]
   },
@@ -1783,7 +1879,8 @@
       "classical concerts performed by large orchestras": "Pop, not classical.",
       "bird calls": "Birds aren't mentioned.",
       "human speech": "Speech isn't the comparison."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1800,7 +1897,8 @@
       "each male sings his own completely different tune all year": "They sing 'broadly the same song'.",
       "the song never changes": "It is 'constantly evolving'.",
       "only one male sings": "All males sing."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1817,7 +1915,8 @@
       "westward, very fast": "East, over two years.",
       "all at once": "Group by group, not at once.",
       "from island to Australia": "It spread from Australia."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1834,7 +1933,8 @@
       "they know exactly why and have proved it in experiments": "It 'remains unclear'.",
       "they have no ideas at all": "They have 'one intriguing possibility'.",
       "they think it's random": "Randomness isn't suggested."
-     }
+     },
+     "sk": "reading.reason"
     },
     {
      "type": "mcq",
@@ -1851,7 +1951,8 @@
       "to criticise children": "It isn't critical.",
       "to prove the theory": "An analogy doesn't prove anything.",
       "to describe whale behaviour exactly": "It's a comparison, not a description."
-     }
+     },
+     "sk": "reading.reason"
     }
    ]
   },
@@ -1874,7 +1975,8 @@
       "by a brilliant sacrifice": "That's explicitly ruled out.",
       "by running out of time": "Time isn't mentioned.",
       "by a draw": "Someone won."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1891,7 +1993,8 @@
       "after the game": "She saw it at once.",
       "when the commentators said so": "She noticed it herself.",
       "in the thirtieth move": "It was the thirtieth minute, not move."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1908,7 +2011,8 @@
       "they refuse to play again": "Not playing again isn't mentioned.",
       "they analyse games afterwards": "That's what made Leila unusual.",
       "they congratulate warmly": "That's Leila, not most players."
-     }
+     },
+     "sk": "reading.inference"
     },
     {
      "type": "mcq",
@@ -1925,7 +2029,8 @@
       "her own winning move": "She praised his idea.",
       "a rule her opponent broke": "No rule was broken.",
       "a mistake by the commentators' board": "The board isn't mentioned."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1942,7 +2047,8 @@
       "she deserved to win and was unlucky to lose the final": "The writer praises how she lost.",
       "champions are always rare": "'Rarer' compares her to champions.",
       "she will win next time": "The future isn't mentioned."
-     }
+     },
+     "sk": "reading.inference"
     }
    ]
   },
@@ -1965,7 +2071,8 @@
       "a scientific fact that the writer fully agrees with": "The writer goes on to question it.",
       "a joke about brains": "It's an argument, not a joke.",
       "a description of the maze": "The maze comes later."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1982,7 +2089,8 @@
       "as having a tiny but very efficient brain": "'No nervous system whatsoever.'",
       "as many separate cells": "'A single, sprawling cell.'",
       "as beautiful and bright": "Bright, yes, but 'unappetising'."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -1999,7 +2107,8 @@
       "the mould preferred Tokyo": "The oats just marked cities.",
       "railway engineers had copied the mould's design": "The engineers came first, over decades.",
       "the railway was badly designed": "It matched the railway, suggesting it's good."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -2016,7 +2125,8 @@
       "to criticise slow engineers": "It's a contrast, not criticism.",
       "to show how old the mould is": "The mould's age isn't given.",
       "to describe the length of the experiment": "The experiment's length isn't given."
-     }
+     },
+     "sk": "reading.reason"
     },
     {
      "type": "mcq",
@@ -2033,7 +2143,8 @@
       "the slime mould is truly thinking, just like an animal with a brain": "The writer says it does not mean that.",
       "brains are unnecessary": "That's too strong a claim.",
       "the experiment was flawed": "The experiment is called 'famous', not flawed."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -2056,7 +2167,8 @@
       "grateful": "She didn't want him there.",
       "curious": "There's no interest in him at first.",
       "indifferent": "She clearly had strong feelings."
-     }
+     },
+     "sk": "reading.feeling"
     },
     {
      "type": "mcq",
@@ -2073,7 +2185,8 @@
       "he had volunteered eagerly for the job at the lighthouse": "He 'had not asked'.",
       "Maren had invited him": "She didn't want him.",
       "he was lost": "He was sent, not lost."
-     }
+     },
+     "sk": "reading.inference"
     },
     {
      "type": "mcq",
@@ -2090,7 +2203,8 @@
       "the generator was repaired": "It was failing.",
       "the fishing boat sank": "The light was lit to save it.",
       "Maren lit the lamp alone": "Her hands were shaking too badly."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -2107,7 +2221,8 @@
       "Maren's growing forgetfulness in her old age": "It's a deliberate choice 'from that night on'.",
       "a safety rule": "No rule is mentioned.",
       "Tobias's fear of the dark": "It's about her attitude, not his fear."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -2130,7 +2245,8 @@
       "completely worthless": "'There is nothing wrong with this.'",
       "the best kind of science": "The writer prefers other projects.",
       "too difficult for students": "Difficulty isn't the issue."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -2147,7 +2263,8 @@
       "a surprising discovery that changed the student's mind": "'Do indeed' shows it was expected.",
       "a project that failed": "It worked as expected.",
       "the writer's own project": "It's a general example."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -2164,7 +2281,8 @@
       "they both won prizes at the science fair": "'Neither won a prize.'",
       "they were about plants": "Ants and ice aren't plants.",
       "they proved a hypothesis": "They ended in bafflement."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -2181,7 +2299,8 @@
       "the student was stubborn and refused to give up": "It describes the ice, not the student.",
       "the freezer was broken": "Nothing suggests a fault.",
       "the ice melted slowly": "They froze faster."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -2198,7 +2317,8 @@
       "science fair prizes should be abolished completely": "Prizes aren't attacked directly.",
       "students should study plants": "Plants are the weaker example.",
       "fairs are a waste of time": "The writer values the right projects."
-     }
+     },
+     "sk": "reading.detail"
     }
    ]
   },
@@ -2221,7 +2341,8 @@
       "from a famous author": "No author named it.",
       "from a butler who joined": "The butler is a character.",
       "from a school competition": "No competition is mentioned."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -2238,7 +2359,8 @@
       "he was rude to everyone": "He was 'cheerful, helpful'.",
       "he told the story badly": "His storytelling wasn't the clue.",
       "he disappeared in chapter three": "Chapter three is when they became suspicious."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -2255,7 +2377,8 @@
       "surprised every reader": "Half had suspected it.",
       "punished the butler": "The meaning is about the readers.",
       "confused the group": "It settled the argument."
-     }
+     },
+     "sk": "reading.word-meaning"
     },
     {
      "type": "mcq",
@@ -2272,7 +2395,8 @@
       "the twist itself": "'Not the twist itself.'",
       "the butler's motives": "Motives aren't discussed.",
       "who had guessed first": "Guessing first isn't mentioned."
-     }
+     },
+     "sk": "reading.detail"
     },
     {
      "type": "mcq",
@@ -2289,7 +2413,8 @@
       "bitter": "They enjoy it.",
       "anxious": "There's no worry.",
       "formal and serious": "It's playful."
-     }
+     },
+     "sk": "reading.feeling"
     }
    ]
   },
@@ -2305,7 +2430,8 @@
       "The sound engineer founded the archive.",
       "Teenage volunteers began sending recordings."
      ],
-     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+     "explain": "Read the text again and follow the time words: first, then, after, at the end.",
+     "sk": "reading.sequence"
     },
     {
      "type": "tf",
@@ -2321,7 +2447,8 @@
       "True": "Look again: “Volunteers, many of them teenagers armed with nothing more sophisticated than a smartphone, now contribute recordings” Many recordings come from volunteers with phones.",
       "Not given": "The text does talk about this: “Volunteers, many of them teenagers armed with nothing more sophisticated than a smartphone, now contribute recordings” Many recordings come from volunteers with phones."
      },
-     "line": "Volunteers, many of them teenagers armed with nothing more sophisticated than a smartphone, now contribute recordings"
+     "line": "Volunteers, many of them teenagers armed with nothing more sophisticated than a smartphone, now contribute recordings",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2337,7 +2464,8 @@
       "False": "The text says: “who have occasionally rediscovered animals thought to be lost by comparing new field recordings with the archive's catalogue.” So it is true.",
       "Not given": "The text says: “who have occasionally rediscovered animals thought to be lost by comparing new field recordings with the archive's catalogue.” So it is true."
      },
-     "line": "who have occasionally rediscovered animals thought to be lost by comparing new field recordings with the archive's catalogue."
+     "line": "who have occasionally rediscovered animals thought to be lost by comparing new field recordings with the archive's catalogue.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2352,21 +2480,24 @@
      "notes": {
       "True": "The text never says this. Composers use the collection, but nothing is said about payment.",
       "False": "The text never says this. Composers use the collection, but nothing is said about payment."
-     }
+     },
+     "sk": "reading.tf"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “constantly thinking about one thing”.",
      "line": "a retired sound engineer who became preoccupied with what he called 'acoustic extinction'.",
      "answer": "preoccupied",
-     "explain": "“preoccupied” means constantly thinking about one thing: “a retired sound engineer who became preoccupied with what he called 'acoustic extinction'.”"
+     "explain": "“preoccupied” means constantly thinking about one thing: “a retired sound engineer who became preoccupied with what he called 'acoustic extinction'.”",
+     "sk": "reading.word-meaning"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “sad in a quiet, thoughtful way”.",
      "line": "Far from being a melancholy museum,",
      "answer": "melancholy",
-     "explain": "“melancholy” means sad in a quiet, thoughtful way: “Far from being a melancholy museum,”"
+     "explain": "“melancholy” means sad in a quiet, thoughtful way: “Far from being a melancholy museum,”",
+     "sk": "reading.word-meaning"
     }
    ]
   },
@@ -2383,7 +2514,8 @@
       "The British navy prepared an ambush.",
       "Official records were declassified."
      ],
-     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+     "explain": "Read the text again and follow the time words: first, then, after, at the end.",
+     "sk": "reading.sequence"
     },
     {
      "type": "tf",
@@ -2399,7 +2531,8 @@
       "True": "Look again: “the code-breakers of Bletchley Park included not only famous mathematicians but also hundreds of young people,” Hundreds of young people worked there too.",
       "Not given": "The text does talk about this: “the code-breakers of Bletchley Park included not only famous mathematicians but also hundreds of young people,” Hundreds of young people worked there too."
      },
-     "line": "the code-breakers of Bletchley Park included not only famous mathematicians but also hundreds of young people,"
+     "line": "the code-breakers of Bletchley Park included not only famous mathematicians but also hundreds of young people,",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2415,7 +2548,8 @@
       "False": "The text says: “for decades even her own family had no idea of her contribution.” So it is true.",
       "Not given": "The text says: “for decades even her own family had no idea of her contribution.” So it is true."
      },
-     "line": "for decades even her own family had no idea of her contribution."
+     "line": "for decades even her own family had no idea of her contribution.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2430,21 +2564,24 @@
      "notes": {
       "True": "The text never says this. The text doesn't tell us what she did after the war.",
       "False": "The text never says this. The text doesn't tell us what she did after the war."
-     }
+     },
+     "sk": "reading.tf"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “with great care and effort over every detail”.",
      "line": "Painstakingly testing possible letter combinations by hand,",
      "answer": "painstakingly",
-     "explain": "“painstakingly” means with great care and effort over every detail: “Painstakingly testing possible letter combinations by hand,”"
+     "explain": "“painstakingly” means with great care and effort over every detail: “Painstakingly testing possible letter combinations by hand,”",
+     "sk": "reading.word-meaning"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “made public after being kept secret”.",
      "line": "Only when official records were declassified in the 1970s",
      "answer": "declassified",
-     "explain": "“declassified” means made public after being kept secret: “Only when official records were declassified in the 1970s”"
+     "explain": "“declassified” means made public after being kept secret: “Only when official records were declassified in the 1970s”",
+     "sk": "reading.word-meaning"
     }
    ]
   },
@@ -2461,7 +2598,8 @@
       "They are rehydrated.",
       "They revive."
      ],
-     "explain": "A tun forms when things dry out, and water brings the animal back."
+     "explain": "A tun forms when things dry out, and water brings the animal back.",
+     "sk": "reading.sequence"
     },
     {
      "type": "tf",
@@ -2477,7 +2615,8 @@
       "True": "Look again: “Barely half a millimetre long,” Half a millimetre is tiny.",
       "Not given": "The text does talk about this: “Barely half a millimetre long,” Half a millimetre is tiny."
      },
-     "line": "Barely half a millimetre long,"
+     "line": "Barely half a millimetre long,",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2493,7 +2632,8 @@
       "False": "The text says: “many revived once they were rehydrated back on Earth.” So it is true.",
       "Not given": "The text says: “many revived once they were rehydrated back on Earth.” So it is true."
      },
-     "line": "many revived once they were rehydrated back on Earth."
+     "line": "many revived once they were rehydrated back on Earth.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2508,21 +2648,24 @@
      "notes": {
       "True": "The text never says this. The text describes what they survive, not how long they live.",
       "False": "The text never says this. The text describes what they survive, not how long they live."
-     }
+     },
+     "sk": "reading.tf"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “able to recover quickly from difficult conditions”.",
      "line": "are arguably the most resilient animals on Earth.",
      "answer": "resilient",
-     "explain": "“resilient” means able to recover quickly from difficult conditions: “are arguably the most resilient animals on Earth.”"
+     "explain": "“resilient” means able to recover quickly from difficult conditions: “are arguably the most resilient animals on Earth.”",
+     "sk": "reading.word-meaning"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “survive something difficult or painful”.",
      "line": "In this state they can endure temperatures close to absolute zero,",
      "answer": "endure",
-     "explain": "“endure” means survive something difficult or painful: “In this state they can endure temperatures close to absolute zero,”"
+     "explain": "“endure” means survive something difficult or painful: “In this state they can endure temperatures close to absolute zero,”",
+     "sk": "reading.word-meaning"
     }
    ]
   },
@@ -2539,7 +2682,8 @@
       "A researcher had trouble with his bookmarks.",
       "Sticky notes went on sale."
      ],
-     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+     "explain": "Read the text again and follow the time words: first, then, after, at the end.",
+     "sk": "reading.sequence"
     },
     {
      "type": "tf",
@@ -2555,7 +2699,8 @@
       "False": "The text says: “a scientist trying to develop a super-strong glue produced one so weak” So it is true.",
       "Not given": "The text says: “a scientist trying to develop a super-strong glue produced one so weak” So it is true."
      },
-     "line": "a scientist trying to develop a super-strong glue produced one so weak"
+     "line": "a scientist trying to develop a super-strong glue produced one so weak",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2571,7 +2716,8 @@
       "True": "Look again: “Dismissed by colleagues as a failure,” They called it a failure.",
       "Not given": "The text does talk about this: “Dismissed by colleagues as a failure,” They called it a failure."
      },
-     "line": "Dismissed by colleagues as a failure,"
+     "line": "Dismissed by colleagues as a failure,",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2586,14 +2732,16 @@
      "notes": {
       "True": "The text never says this. The text never says where either researcher worked.",
       "False": "The text never says this. The text never says where either researcher worked."
-     }
+     },
+     "sk": "reading.tf"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “stayed unused and neglected”.",
      "line": "the formula languished in a drawer for years",
      "answer": "languished",
-     "explain": "“languished” means stayed unused and neglected: “the formula languished in a drawer for years”"
+     "explain": "“languished” means stayed unused and neglected: “the formula languished in a drawer for years”",
+     "sk": "reading.word-meaning"
     }
    ]
   },
@@ -2609,7 +2757,8 @@
       "Research showed the songs were more complex.",
       "Scientists started using AI to analyse recordings."
      ],
-     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+     "explain": "Read the text again and follow the time words: first, then, after, at the end.",
+     "sk": "reading.sequence"
     },
     {
      "type": "tf",
@@ -2625,7 +2774,8 @@
       "True": "Look again: “all the males in a population sing roughly the same song,” They sing roughly the same song.",
       "Not given": "The text does talk about this: “all the males in a population sing roughly the same song,” They sing roughly the same song."
      },
-     "line": "all the males in a population sing roughly the same song,"
+     "line": "all the males in a population sing roughly the same song,",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2641,7 +2791,8 @@
       "False": "The text says: “from Australia to French Polynesia, within two years,” So it is true.",
       "Not given": "The text says: “from Australia to French Polynesia, within two years,” So it is true."
      },
-     "line": "from Australia to French Polynesia, within two years,"
+     "line": "from Australia to French Polynesia, within two years,",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2656,14 +2807,16 @@
      "notes": {
       "True": "The text never says this. The text only talks about the males' songs.",
       "False": "The text never says this. The text only talks about the males' songs."
-     }
+     },
+     "sk": "reading.tf"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “having many complicated parts or details”.",
      "line": "suggests something far more intricate.",
      "answer": "intricate",
-     "explain": "“intricate” means having many complicated parts or details: “suggests something far more intricate.”"
+     "explain": "“intricate” means having many complicated parts or details: “suggests something far more intricate.”",
+     "sk": "reading.word-meaning"
     }
    ]
   },
@@ -2679,7 +2832,8 @@
       "Language nests were set up.",
       "The language began to revive."
      ],
-     "explain": "Read the text again and follow the time words: first, then, after, at the end."
+     "explain": "Read the text again and follow the time words: first, then, after, at the end.",
+     "sk": "reading.sequence"
     },
     {
      "type": "tf",
@@ -2695,7 +2849,8 @@
       "False": "The text says: “linguists estimate that around half could vanish by the end of this century.” So it is true. The end of this century is 2100.",
       "Not given": "The text says: “linguists estimate that around half could vanish by the end of this century.” So it is true. The end of this century is 2100."
      },
-     "line": "linguists estimate that around half could vanish by the end of this century."
+     "line": "linguists estimate that around half could vanish by the end of this century.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2711,7 +2866,8 @@
       "True": "Look again: “proving that technology can preserve heritage as well as threaten it.” It says technology can help as well as harm.",
       "Not given": "The text does talk about this: “proving that technology can preserve heritage as well as threaten it.” It says technology can help as well as harm."
      },
-     "line": "proving that technology can preserve heritage as well as threaten it."
+     "line": "proving that technology can preserve heritage as well as threaten it.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2726,21 +2882,24 @@
      "notes": {
       "True": "The text never says this. The language was revived, but the text gives no figures about how many children speak it.",
       "False": "The text never says this. The language was revived, but the text gives no figures about how many children speak it."
-     }
+     },
+     "sk": "reading.tf"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “hopeless and depressing”.",
      "line": "Yet the picture is not entirely bleak.",
      "answer": "bleak",
-     "explain": "“bleak” means hopeless and depressing: “Yet the picture is not entirely bleak.”"
+     "explain": "“bleak” means hopeless and depressing: “Yet the picture is not entirely bleak.”",
+     "sk": "reading.word-meaning"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “completely surrounded by something, so you learn it naturally”.",
      "line": "where children are immersed in Māori all day,",
      "answer": "immersed",
-     "explain": "“immersed” means completely surrounded by something, so you learn it naturally: “where children are immersed in Māori all day,”"
+     "explain": "“immersed” means completely surrounded by something, so you learn it naturally: “where children are immersed in Māori all day,”",
+     "sk": "reading.word-meaning"
     }
    ]
   },
@@ -2767,7 +2926,8 @@
       "Rethinking the purpose": "Paragraph 4: it argues the key question is what homework is for.",
       "Homework around the world": "This heading is the extra one. No countries are compared; the text looks at the debate, research and school experiments."
      },
-     "explain": "Read the first and last sentence of each paragraph: they usually say what the whole paragraph is about."
+     "explain": "Read the first and last sentence of each paragraph: they usually say what the whole paragraph is about.",
+     "sk": "reading.headings"
     },
     {
      "type": "tf",
@@ -2783,7 +2943,8 @@
       "True": "Look again: “but the benefits level off after about two hours a night.” The benefits stop rising after about two hours.",
       "Not given": "The text does talk about this: “but the benefits level off after about two hours a night.” The benefits stop rising after about two hours."
      },
-     "line": "but the benefits level off after about two hours a night."
+     "line": "but the benefits level off after about two hours a night.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2799,14 +2960,16 @@
       "False": "The text says: “although some parents worried about a lack of structure.” So it is true.",
       "Not given": "The text says: “although some parents worried about a lack of structure.” So it is true."
      },
-     "line": "although some parents worried about a lack of structure."
+     "line": "although some parents worried about a lack of structure.",
+     "sk": "reading.tf"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “absolutely necessary”.",
      "line": "Supporters regard it as indispensable for consolidating what has been taught in class,",
      "answer": "indispensable",
-     "explain": "“indispensable” means absolutely necessary: “Supporters regard it as indispensable for consolidating what has been taught in class,”"
+     "explain": "“indispensable” means absolutely necessary: “Supporters regard it as indispensable for consolidating what has been taught in class,”",
+     "sk": "reading.word-meaning"
     }
    ]
   },
@@ -2833,7 +2996,8 @@
       "Danger from a warming world": "Paragraph 4: it is about the threat that melting sea ice poses.",
       "What penguins eat in the ocean": "This heading is the extra one. Food in the sea is barely mentioned; no paragraph is about the penguins' diet."
      },
-     "explain": "Read the first and last sentence of each paragraph: they usually say what the whole paragraph is about."
+     "explain": "Read the first and last sentence of each paragraph: they usually say what the whole paragraph is about.",
+     "sk": "reading.headings"
     },
     {
      "type": "tf",
@@ -2849,7 +3013,8 @@
       "True": "Look again: “the female transfers it to the male's feet and returns to the ocean to feed.” The male looks after the egg.",
       "Not given": "The text does talk about this: “the female transfers it to the male's feet and returns to the ocean to feed.” The male looks after the egg."
      },
-     "line": "the female transfers it to the male's feet and returns to the ocean to feed."
+     "line": "the female transfers it to the male's feet and returns to the ocean to feed.",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2865,7 +3030,8 @@
       "False": "The text says: “so that those on the freezing edge gradually move towards the warm centre,” So it is true. Shuffling means each bird takes a turn on the edge.",
       "Not given": "The text says: “so that those on the freezing edge gradually move towards the warm centre,” So it is true. Shuffling means each bird takes a turn on the edge."
      },
-     "line": "so that those on the freezing edge gradually move towards the warm centre,"
+     "line": "so that those on the freezing edge gradually move towards the warm centre,",
+     "sk": "reading.tf"
     },
     {
      "type": "tf",
@@ -2880,14 +3046,16 @@
      "notes": {
       "True": "The text never says this. We learn why the ground is chosen, but not whether it stays the same each year.",
       "False": "The text never says this. We learn why the ground is chosen, but not whether it stays the same each year."
-     }
+     },
+     "sk": "reading.tf"
     },
     {
      "type": "findword",
      "q": "Tap the word that means “crowd closely together”.",
      "line": "the males huddle together in tightly packed groups of thousands.",
      "answer": "huddle",
-     "explain": "“huddle” means crowd closely together: “the males huddle together in tightly packed groups of thousands.”"
+     "explain": "“huddle” means crowd closely together: “the males huddle together in tightly packed groups of thousands.”",
+     "sk": "reading.word-meaning"
     }
    ]
   }

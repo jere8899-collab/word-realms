@@ -14,7 +14,8 @@
    "sword": "Sword isn't the idiom.",
    "grudge": "You can hold a grudge, but you bury the hatchet.",
    "daggers": "Daggers appear in 'look daggers at', not here."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -31,7 +32,8 @@
    "tied": "Tied isn't the idiom.",
    "pulled": "Pull strings = use influence.",
    "dangling": "Dangling isn't the idiom."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -48,7 +50,8 @@
    "blue": "Blue isn't the idiom.",
    "white": "White lie is a different idiom.",
    "golden": "Golden isn't the idiom."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -65,7 +68,8 @@
    "knife": "Knife isn't the idiom.",
    "sword": "Sword isn't the idiom.",
    "stone": "Stone isn't the idiom."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -82,7 +86,8 @@
    "doom": "Doom isn't the idiom.",
    "drown": "Drown isn't the idiom.",
    "dim": "Dim isn't the idiom."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -99,7 +104,8 @@
    "held": "Held isn't the idiom.",
    "stitched": "Stitched is literal sewing.",
    "tied": "Tied isn't the idiom."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -116,7 +122,8 @@
    "unequivocal": "Unequivocal is the opposite: totally clear.",
    "eloquent": "Eloquent = speaking beautifully.",
    "egregious": "Egregious = shockingly bad."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -133,7 +140,8 @@
    "mundane": "Mundane = ordinary.",
    "candid": "Candid = honest and open.",
    "lucid": "Lucid = very clear."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -150,7 +158,8 @@
    "brevity": "Brevity = shortness.",
    "candour": "Candour = honesty.",
    "understatement": "Understatement = saying less than is true."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -167,7 +176,8 @@
    "celebrate a birthday with friends": "It isn't about birthdays; it's an idiom.",
    "be greedy whenever you go to parties": "It isn't about greed at parties.",
    "share everything fairly with others": "Sharing fairly is nearly the opposite."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -184,7 +194,8 @@
    "desserts are the most important course": "It isn't really about dessert.",
    "cooking well takes years of practice": "It isn't about practice.",
    "you should never eat too fast at dinner": "It isn't about eating speed."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -201,7 +212,8 @@
    "blunt": "Blunt = direct, not hidden.",
    "bland": "Bland = dull, no flavour.",
    "benign": "Benign = kind and harmless."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -218,7 +230,8 @@
    "make a lot of noise in a storm": "It isn't about storms.",
    "ruin the weather for their picnic": "It isn't about weather.",
    "borrow their ideas without asking": "Borrowing ideas is close, but the idiom is about attention."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -235,7 +248,8 @@
    "impetuous": "Impetuous = acting without thinking.",
    "irascible": "Irascible = easily angered.",
    "temperamental": "Temperamental = moods change quickly."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -252,7 +266,8 @@
    "blatant": "Blatant = very obvious; 'yet' signals a contrast with small.",
    "glaring": "Glaring = very obvious.",
    "stark": "Stark = very clear and obvious."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -269,7 +284,8 @@
    "is won very easily against a weak enemy": "An easy win is the opposite.",
    "is won by cheating or breaking the rules": "Cheating isn't the meaning.",
    "ends a long war that both sides wanted over": "It isn't about ending a war."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -286,7 +302,8 @@
    "run faster": "It isn't about running.",
    "stop a hunt": "It isn't about hunting.",
    "edit a film scene": "It came from films, but means get to the point."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -303,7 +320,8 @@
    "scalding": "Scalding = burning hot liquid.",
    "scouring": "Scouring = scrubbing hard.",
    "scrawling": "Scrawling = messy writing."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -320,7 +338,8 @@
    "enigmatic": "Enigmatic = mysterious.",
    "endemic": "Endemic = found only in one place.",
    "emphatic": "Emphatic = said with force."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -337,7 +356,8 @@
    "refuse to talk about a problem": "Refusing to talk is avoiding, the opposite.",
    "attack someone's argument": "It isn't about attacking.",
    "delay a difficult choice": "Delaying is the opposite."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -354,7 +374,8 @@
    "self-righteous": "Self-righteous = sure you're morally better.",
    "self-evident": "Self-evident = obvious.",
    "self-serving": "Self-serving = only helping yourself, not hiding ambition."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -371,7 +392,8 @@
    "exhaustive": "Exhaustive = covering everything.",
    "excessive": "Excessive = too much.",
    "explicit": "Explicit = clearly stated."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -388,7 +410,8 @@
    "hyperbole": "Hyperbole = exaggeration.",
    "hypothesis": "A hypothesis is an idea to test.",
    "hysteria": "Hysteria = wild emotion."
-  }
+  },
+  "sk": "vocab.other"
  },
  {
   "type": "mcq",
@@ -405,7 +428,8 @@
    "is done in secret": "Secret isn't the meaning.",
    "is easily forgotten": "Forgettable isn't the meaning.",
    "brings great wealth": "Wealth isn't the meaning."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -422,7 +446,8 @@
    "melee": "Melee = a confused fight.",
    "malady": "Malady = an illness.",
    "malaise": "Malaise = a general unease."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -439,7 +464,8 @@
    "fixture": "Fixture is a noun.",
    "fixed": "Fixed is an adjective/past form.",
    "fixative": "Fixative is a noun (glue/spray)."
-  }
+  },
+  "sk": "vocab.other"
  },
  {
   "type": "mcq",
@@ -456,7 +482,8 @@
    "deeply embarrassed": "Embarrassed isn't the meaning.",
    "completely exhausted": "Exhausted isn't the meaning.",
    "secretly pleased": "Pleased isn't the meaning."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -473,7 +500,8 @@
    "incorrigible": "Incorrigible = can't be corrected.",
    "inexorable": "Inexorable = impossible to stop.",
    "indefatigable": "Indefatigable = never tired."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -490,7 +518,8 @@
    "lend money to a friend": "It isn't about lending money.",
    "move quickly past a problem": "It isn't about moving past problems.",
    "win an argument unfairly": "It isn't about arguments."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -507,7 +536,8 @@
    "standing out": "Standing out is a verb phrase, not an adjective before a noun.",
    "upstanding": "Upstanding = honest (for people).",
    "outstretched": "Outstretched = stretched out (arms)."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -524,7 +554,8 @@
    "peremptory": "Peremptory = bossy, expecting obedience.",
    "perpetual": "Perpetual = never ending.",
    "pertinent": "Pertinent = relevant."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -541,7 +572,8 @@
    "candid": "Candid = honest and open.",
    "callow": "Callow = young and inexperienced.",
    "cordial": "Cordial = warm and friendly."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -558,7 +590,8 @@
    "cunning": "Cunning = clever at tricking.",
    "venerable": "Venerable = respected because of age.",
    "vigilant": "Vigilant = watchful."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -575,7 +608,8 @@
    "vulnerable": "Vulnerable = easily hurt.",
    "venomous": "Venomous = producing poison.",
    "vehement": "Vehement = showing strong feeling."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -592,7 +626,8 @@
    "venerable": "Venerable = respected for age.",
    "invincible": "Invincible = impossible to defeat, the opposite.",
    "vigilant": "Vigilant = watchful."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -609,7 +644,8 @@
    "vigorous": "Vigorous = strong and energetic.",
    "vehement": "Vehement = expressing strong feelings.",
    "vacant": "Vacant = empty."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -626,7 +662,8 @@
    "vague": "Vague = unclear.",
    "vigilant": "Vigilant = watchful.",
    "vacant": "Vacant = empty or blank."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -643,7 +680,8 @@
    "lucid": "Lucid = clear, the opposite.",
    "meticulous": "Meticulous = very careful and precise.",
    "concise": "Concise = short and clear."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -660,7 +698,8 @@
    "verbose": "Verbose = using too many words.",
    "loquacious": "Loquacious = very talkative.",
    "rambling": "Rambling = long and wandering."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -677,7 +716,8 @@
    "laconic": "Laconic = using few words.",
    "taciturn": "Taciturn = saying very little.",
    "reticent": "Reticent = unwilling to share thoughts."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -694,7 +734,8 @@
    "talkative": "Talkative is the opposite.",
    "gregarious": "Gregarious = loving company.",
    "garrulous": "Garrulous = talking too much about unimportant things."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -711,7 +752,8 @@
    "solitary": "Solitary = living alone.",
    "taciturn": "Taciturn = quiet.",
    "reclusive": "Reclusive = avoiding other people."
-  }
+  },
+  "sk": "vocab.odd-one"
  },
  {
   "type": "mcq",
@@ -728,7 +770,8 @@
    "gregarious": "Gregarious = sociable.",
    "renowned": "Renowned = famous.",
    "resplendent": "Resplendent = dazzlingly beautiful."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -745,7 +788,8 @@
    "reclusive": "Reclusive = avoiding people.",
    "repugnant": "Repugnant = disgusting.",
    "redundant": "Redundant = no longer needed."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -762,7 +806,8 @@
    "resplendent": "Resplendent = splendid.",
    "relevant": "Relevant would mean connected, which reverses the point.",
    "repetitive": "Repetitive = repeating many times."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -779,7 +824,8 @@
    "uncanny": "Uncanny = strange and mysterious.",
    "unkempt": "Unkempt = untidy in appearance.",
    "unwitting": "Unwitting = not knowing."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -796,7 +842,8 @@
    "uncouth": "Uncouth = rude.",
    "unkempt": "Unkempt = untidy.",
    "uncalled-for": "Uncalled-for = unfair and unnecessary."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -813,7 +860,8 @@
    "uncanny": "Uncanny = strangely mysterious.",
    "unwitting": "Unwitting = unaware.",
    "uncouth": "Uncouth = rude."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -830,7 +878,8 @@
    "unkempt": "Unkempt = untidy.",
    "unruly": "Unruly = hard to control.",
    "unerring": "Unerring = always accurate."
-  }
+  },
+  "sk": "vocab.odd-one"
  },
  {
   "type": "mcq",
@@ -847,7 +896,8 @@
    "unwitting": "Unwitting = unaware.",
    "uneven": "Uneven = not level or equal.",
    "unruly": "Unruly = hard to control."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -864,7 +914,8 @@
    "unerring": "Unerring = always accurate.",
    "unanimous": "Unanimous = with everyone agreeing.",
    "unassuming": "Unassuming = modest."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -881,7 +932,8 @@
    "unruly": "Unruly = hard to control.",
    "ostentatious": "Ostentatious = showing off.",
    "pompous": "Pompous = self-important."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -898,7 +950,8 @@
    "unassuming": "Unassuming = modest.",
    "austere": "Austere = plain and simple.",
    "frugal": "Frugal = careful with money."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -915,7 +968,8 @@
    "ostentatious": "Ostentatious = showy.",
    "lavish": "Lavish = rich and generous.",
    "opulent": "Opulent = luxurious."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -932,7 +986,8 @@
    "profligate": "Profligate = wasteful.",
    "prodigal": "Prodigal = spending wastefully.",
    "prolific": "Prolific = producing a lot."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -949,7 +1004,8 @@
    "provident": "Provident = planning for the future.",
    "prodigious": "Prodigious = remarkably impressive or large, not about quantity of works.",
    "profound": "Profound = very deep."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -966,7 +1022,8 @@
    "prolific": "Prolific = producing a lot.",
    "profligate": "Profligate = wasteful.",
    "prosaic": "Prosaic = ordinary and dull."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -983,7 +1040,8 @@
    "prodigious": "Prodigious = remarkably impressive.",
    "poetic": "Poetic is the opposite.",
    "provocative": "Provocative = causing a strong reaction."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1000,7 +1058,8 @@
    "bewail": "Bewail = express sorrow about.",
    "bequeath": "Bequeath = leave in a will.",
    "berate": "Berate = scold angrily."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1017,7 +1076,8 @@
    "beguiled": "Beguiled = charmed.",
    "bequeathed": "Bequeathed = left in a will.",
    "belittled to": "Belittle doesn't take to."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1034,7 +1094,8 @@
    "berated": "Berated = scolded.",
    "bewildered": "Bewildered = confused.",
    "besieged": "Besieged = surrounded and attacked."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1051,7 +1112,8 @@
    "bequeath": "Bequeath = leave in a will.",
    "bolster": "Bolster = support, the opposite.",
    "bewitch": "Bewitch = enchant."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -1068,7 +1130,8 @@
    "belittled": "Belittled = made seem unimportant.",
    "undermined": "Undermined = weakened.",
    "curtailed": "Curtailed = cut short."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1085,7 +1148,8 @@
    "underline": "Underline = emphasise.",
    "underpin": "Underpin = support from below.",
    "understate": "Understate = make seem smaller than it is."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1102,7 +1166,8 @@
    "undermines": "Undermines = weakens.",
    "understates": "Understates = makes seem smaller.",
    "underestimates": "Underestimates = guesses too low."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1119,7 +1184,8 @@
    "curated": "Curated = selected for a collection.",
    "cultivated": "Cultivated = grew.",
    "corroborated": "Corroborated = confirmed."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1136,7 +1202,8 @@
    "curtailed": "Curtailed = cut short.",
    "contradicted": "Contradicted = said the opposite.",
    "concocted": "Concocted = invented."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1153,7 +1220,8 @@
    "corroborated": "Corroborated = confirmed.",
    "conceded": "Conceded = admitted.",
    "confiscated": "Confiscated = took away as punishment."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1170,7 +1238,8 @@
    "concocted": "Concocted = invented.",
    "consolidated": "Consolidated = made stronger or combined.",
    "convened": "Convened = called a meeting."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -1187,7 +1256,8 @@
    "confiscated": "Confiscated = took away.",
    "conveyed": "Conveyed = communicated or carried.",
    "conversed": "Conversed = talked, and isn't used with a meeting as object."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1204,7 +1274,8 @@
    "convened": "Convened = called together.",
    "conceived": "Conceived = imagined or created.",
    "conferred": "Conferred = gave an honour, or discussed."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1221,7 +1292,8 @@
    "conveyed": "Conveyed = communicated.",
    "confided": "Confided = told a secret.",
    "confronted": "Confronted = faced."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1238,7 +1310,8 @@
    "perforated": "Perforated = made holes in.",
    "perpetrated": "Perpetrated = committed a crime.",
    "perused": "Perused = read carefully."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1255,7 +1328,8 @@
    "permeated": "Permeated = spread through.",
    "persevered": "Persevered = kept trying; it needs with or in.",
    "perplexed": "Perplexed = confused someone."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1272,7 +1346,8 @@
    "perused": "Perused = read carefully.",
    "persisted": "Persisted = continued; it doesn't take an object.",
    "perpetuated": "Perpetuated = made something continue."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1289,7 +1364,8 @@
    "perplex": "Perplex = confuse.",
    "perforate": "Perforate = make holes in.",
    "permeate": "Permeate = spread through."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -1306,7 +1382,8 @@
    "gasp": "A gasp is a sudden breath of surprise.",
    "groan": "A groan expresses pain or annoyance.",
    "wail": "A wail is a long cry of grief."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1323,7 +1400,8 @@
    "sighed": "Sighed suggests relief or tiredness.",
    "mumbled": "Mumbled = spoke unclearly.",
    "snorted": "Snorted = made a rude nose sound."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -1340,7 +1418,8 @@
    "glanced": "Glance = a quick look.",
    "glimpsed": "Glimpse = see very briefly.",
    "peeked through": "Peek through needs something to look through."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1357,7 +1436,8 @@
    "gazed": "Gazed = looked for a long time.",
    "stared": "Stared = looked fixedly for a long time.",
    "scrutinised": "Scrutinised = examined closely."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1374,7 +1454,8 @@
    "glimpsed": "Glimpsed = saw briefly.",
    "glanced": "Glanced = looked quickly.",
    "skimmed": "Skimmed = read quickly."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1391,7 +1472,8 @@
    "hurtled": "Hurtled = moved very fast.",
    "plunged": "Plunged = fell suddenly.",
    "surged": "Surged = rushed forward powerfully."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1408,7 +1490,8 @@
    "meandered": "Meandered = wandered slowly.",
    "ambled": "Ambled = walked slowly.",
    "sauntered": "Sauntered = walked in a relaxed way."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1425,7 +1508,8 @@
    "hurtled": "Hurtled = moved too fast.",
    "scurried": "Scurried = ran with quick small steps, nervously.",
    "stumbled": "Stumbled = nearly fell."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1442,7 +1526,8 @@
    "sauntered": "Sauntered = walked confidently and slowly.",
    "strolled": "Strolled = walked slowly for pleasure.",
    "lumbered": "Lumbered = moved heavily and clumsily."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1459,7 +1544,8 @@
    "scurried": "Scurried = quick small steps.",
    "tiptoed": "Tiptoed = walked very quietly.",
    "darted": "Darted = moved suddenly and fast."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1476,7 +1562,8 @@
    "stroll": "Stroll isn't the fixed idiom.",
    "picnic": "No picnic is a different idiom with the same meaning, but not 'in the park'.",
    "run": "Run isn't the idiom."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1493,7 +1580,8 @@
    "box": "Box isn't used in this idiom.",
    "nest": "Nest isn't used in this idiom.",
    "bag": "Bag isn't used in this idiom."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1510,7 +1598,8 @@
    "age": "Age isn't the fixed idiom.",
    "clock": "Clock isn't the idiom.",
    "days": "Days isn't the idiom."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1527,7 +1616,8 @@
    "mouse": "Mouse isn't used in this idiom.",
    "skunk": "Skunk isn't used in this idiom.",
    "fox": "Fox isn't used in this idiom."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1544,7 +1634,8 @@
    "bag": "Holding the bag is the American version; this is the British idiom.",
    "book": "Book isn't used in this idiom.",
    "candle": "Candle is in 'can't hold a candle to', a different idiom."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1561,7 +1652,8 @@
    "torch": "Torch is in 'carry a torch for', a different idiom.",
    "light": "Light isn't used in this idiom.",
    "lamp": "Lamp isn't used in this idiom."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1578,7 +1670,8 @@
    "slice": "Slice isn't used in this idiom.",
    "step": "Step above isn't the idiom.",
    "notch up": "Notch up = achieve; 'a notch above' exists, but not 'a notch up above'."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1595,7 +1688,8 @@
    "fell over": "Fell over isn't the idiom.",
    "rolled": "Rolled isn't the idiom.",
    "spun": "Spun isn't the idiom."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1612,7 +1706,8 @@
    "title": "Title isn't the proverb.",
    "spine": "Spine isn't the proverb.",
    "page": "Page isn't the proverb."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1629,7 +1724,8 @@
    "face": "Face isn't used in this idiom.",
    "nose": "Nose isn't used in this idiom.",
    "ear": "Ear isn't used in this idiom."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1646,7 +1742,8 @@
    "water": "Bad water isn't the idiom.",
    "air": "Bad air isn't the idiom.",
    "feeling to": "Bad feeling exists, but not 'bad feeling to'."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1663,7 +1760,8 @@
    "eye": "Eye isn't used in this idiom.",
    "heart": "Heart isn't used in this idiom.",
    "hand": "Hand isn't used in this idiom."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1680,7 +1778,8 @@
    "end": "Get to the end means finish, not focus.",
    "fact": "Fact isn't used here.",
    "bottom of": "Get to the bottom of = find the truth."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1697,7 +1796,8 @@
    "base": "Base isn't used in this idiom.",
    "root of": "The of is already there, so root of repeats it.",
    "floor": "Floor isn't used in this idiom."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1714,7 +1814,8 @@
    "sky": "Sky isn't used in this idiom.",
    "clouds": "Clouds is in 'head in the clouds', a different idiom.",
    "wind": "Wind isn't used in this idiom."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1731,7 +1832,8 @@
    "air": "Up in the air means undecided, a different idiom.",
    "stars": "Stars isn't used in this idiom.",
    "sky": "Sky isn't used in this idiom."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1748,7 +1850,8 @@
    "request": "Tall request isn't the idiom.",
    "task": "Tall task isn't the idiom.",
    "demand": "Tall demand isn't the idiom."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1765,7 +1868,8 @@
    "sheep": "Sheep isn't used in this idiom.",
    "birds": "Birds isn't used in this idiom.",
    "horses": "Horses isn't used in this idiom."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1782,7 +1886,8 @@
    "pernicious": "Pernicious = harmful in a slow, hidden way.",
    "perilous to": "Perilous to isn't the collocation.",
    "precarious of": "Precarious of isn't English."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1799,7 +1904,8 @@
    "parlous": "Parlous = in a bad state, used with 'state'.",
    "propitious": "Propitious = favourable, the opposite.",
    "precocious": "Precocious = advanced for one's age."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -1816,7 +1922,8 @@
    "pernicious": "Pernicious = harmful.",
    "precarious": "Precarious = unstable.",
    "portentous": "Portentous = ominous or pompous."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1833,7 +1940,8 @@
    "propitious": "Propitious = favourable.",
    "precarious": "Precarious = unstable.",
    "preposterous": "Preposterous = ridiculous."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1850,7 +1958,8 @@
    "precocious": "Precocious = advanced for one's age.",
    "precious": "Precious = valuable.",
    "precise": "Precise = exact."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1867,7 +1976,8 @@
    "precarious": "Precarious = unstable.",
    "propitious": "Propitious = favourable.",
    "prosperous": "Prosperous = successful and wealthy."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1884,7 +1994,8 @@
    "prodigal": "Prodigal = wasteful.",
    "prolix": "Prolix = using too many words.",
    "protracted": "Protracted = lasting too long."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1901,7 +2012,8 @@
    "prodigious": "Prodigious = amazingly great.",
    "prolific": "Prolific = producing a lot.",
    "protruding": "Protruding = sticking out."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1918,7 +2030,8 @@
    "sincere": "Sincere = honest.",
    "sinuous": "Sinuous = curving and graceful.",
    "singular": "Singular = unusual, or single."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1935,7 +2048,8 @@
    "sinister": "Sinister = evil-seeming.",
    "stilted": "Stilted = stiff and unnatural.",
    "stocky": "Stocky = short and solid."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1952,7 +2066,8 @@
    "sinuous": "Sinuous = smooth and curving.",
    "fluent": "Fluent is the opposite.",
    "lyrical": "Lyrical = beautifully expressive."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1969,7 +2084,8 @@
    "equality": "Equality = being equal.",
    "equivalence": "Equivalence = being equal in value.",
    "equator": "Equator = the line around Earth's middle."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1986,7 +2102,8 @@
    "authority": "Authority = power to control.",
    "authorship of": "Authorship of repeats of.",
    "authentication of": "Authentication of repeats of."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -2003,7 +2120,8 @@
    "semblance": "Semblance = an outward appearance, often false.",
    "assembly": "Assembly = a gathering.",
    "resemble": "Resemble is the verb."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -2020,7 +2138,8 @@
    "resemblance": "Resemblance = similarity between two things.",
    "assembly": "Assembly = a gathering.",
    "simulation": "Simulation = imitation of a process."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -2037,7 +2156,8 @@
    "diploma": "Diploma = a certificate.",
    "diplomat": "Diplomat is the person.",
    "diplomatic": "Diplomatic is an adjective."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -2054,7 +2174,8 @@
    "slight": "Slight = small; it sounds the same but is spelled differently.",
    "slate": "Slate = a type of rock.",
    "sleigh": "Sleigh = a sledge pulled by animals."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -2071,7 +2192,8 @@
    "highness": "Highness is a royal title.",
    "highest": "Highest is an adjective.",
    "heightening": "Heightening = making stronger."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -2088,7 +2210,8 @@
    "elegance": "Elegance = style and grace.",
    "eloquent": "Eloquent is an adjective.",
    "elocution of": "Elocution of needs a noun after it."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -2105,259 +2228,302 @@
    "fortune": "Fortune = luck or wealth.",
    "fortress": "Fortress = a castle.",
    "fortnight": "Fortnight = two weeks."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "spell",
   "q": "Spell the word: to make someone feel calm and less angry",
   "answer": "placate",
-  "explain": "He placated his sister with chocolate."
+  "explain": "He placated his sister with chocolate.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: extremely careful and exact",
   "answer": "punctilious",
-  "explain": "The judge was punctilious about the rules."
+  "explain": "The judge was punctilious about the rules.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: lasting for a very short time; also a sweet-smelling mayfly",
   "answer": "ephemeral",
-  "explain": "Fame on social media is often ephemeral."
+  "explain": "Fame on social media is often ephemeral.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: showing great attention to detail; perfect in every way",
   "answer": "impeccable",
-  "explain": "Her manners were impeccable."
+  "explain": "Her manners were impeccable.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: to make something worse, especially a problem",
   "answer": "exacerbate",
-  "explain": "Shouting only exacerbated the argument."
+  "explain": "Shouting only exacerbated the argument.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: talking a lot",
   "answer": "loquacious",
-  "explain": "Our loquacious guide never stopped talking."
+  "explain": "Our loquacious guide never stopped talking.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: cleverly making something seem true when it isn't",
   "answer": "specious",
-  "explain": "His specious excuse fooled nobody."
+  "explain": "His specious excuse fooled nobody.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: to praise someone very highly",
   "answer": "extol",
-  "explain": "Critics extolled the young director's film."
+  "explain": "Critics extolled the young director's film.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: unwilling to spend money",
   "answer": "frugal",
-  "explain": "My grandad is frugal; he reuses wrapping paper."
+  "explain": "My grandad is frugal; he reuses wrapping paper.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: a situation that seems impossible because it contains two opposite facts",
   "answer": "paradox",
-  "explain": "It's a paradox: the more you rush, the slower you get."
+  "explain": "It's a paradox: the more you rush, the slower you get.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: using few words",
   "answer": "terse",
-  "explain": "Her terse reply showed she was annoyed."
+  "explain": "Her terse reply showed she was annoyed.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: to cancel a law or rule",
   "answer": "revoke",
-  "explain": "The club revoked his membership."
+  "explain": "The club revoked his membership.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: a strong, sometimes unreasonable dislike",
   "answer": "antipathy",
-  "explain": "She has an antipathy to early mornings."
+  "explain": "She has an antipathy to early mornings.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: able to use both hands equally well",
   "answer": "ambidextrous",
-  "explain": "The ambidextrous goalkeeper caught with either hand."
+  "explain": "The ambidextrous goalkeeper caught with either hand.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: to move back and forth between two choices",
   "answer": "vacillate",
-  "explain": "He vacillated between pizza and pasta."
+  "explain": "He vacillated between pizza and pasta.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: noisy and lively, often in an annoying way",
   "answer": "boisterous",
-  "explain": "The boisterous puppies knocked over the bowl."
+  "explain": "The boisterous puppies knocked over the bowl.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: to make something less severe",
   "answer": "mitigate",
-  "explain": "Planting trees can mitigate flooding."
+  "explain": "Planting trees can mitigate flooding.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: the quality of being very generous and forgiving",
   "answer": "magnanimity",
-  "explain": "She accepted defeat with magnanimity."
+  "explain": "She accepted defeat with magnanimity.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: easily angered",
   "answer": "irascible",
-  "explain": "The irascible old wizard shouted at the crows."
+  "explain": "The irascible old wizard shouted at the crows.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: a person who is new and inexperienced",
   "answer": "novice",
-  "explain": "As a novice, she fell off the board a lot."
+  "explain": "As a novice, she fell off the board a lot.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: to remove a difficulty or problem",
   "answer": "obviate",
-  "explain": "A map would obviate the need to ask for directions."
+  "explain": "A map would obviate the need to ask for directions.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: extremely happy",
   "answer": "euphoric",
-  "explain": "The fans were euphoric after the final."
+  "explain": "The fans were euphoric after the final.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: secret and often dishonest",
   "answer": "clandestine",
-  "explain": "The clandestine midnight feast was a huge success."
+  "explain": "The clandestine midnight feast was a huge success.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: showing deep respect",
   "answer": "reverent",
-  "explain": "The crowd fell into a reverent silence."
+  "explain": "The crowd fell into a reverent silence.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: to spread quickly in many directions",
   "answer": "proliferate",
-  "explain": "Weeds proliferated in the empty garden."
+  "explain": "Weeds proliferated in the empty garden.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: calm and peaceful",
   "answer": "serene",
-  "explain": "The lake looked serene at dawn."
+  "explain": "The lake looked serene at dawn.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: to examine something very closely",
   "answer": "scrutinise",
-  "explain": "The teacher scrutinised my answer."
+  "explain": "The teacher scrutinised my answer.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: done without thinking, as a reflex",
   "answer": "instinctive",
-  "explain": "Ducking was an instinctive reaction."
+  "explain": "Ducking was an instinctive reaction.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: having or showing great knowledge from reading",
   "answer": "erudite",
-  "explain": "The erudite professor quoted three poets."
+  "explain": "The erudite professor quoted three poets.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: not paying attention; careless",
   "answer": "heedless",
-  "explain": "Heedless of the warning, he climbed the wall."
+  "explain": "Heedless of the warning, he climbed the wall.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: to steal something, usually small",
   "answer": "pilfer",
-  "explain": "The seagull pilfered my chips!"
+  "explain": "The seagull pilfered my chips!",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: filled with hope; positive about the future",
   "answer": "sanguine",
-  "explain": "The coach was sanguine about our chances."
+  "explain": "The coach was sanguine about our chances.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: a feeling of extreme tiredness and lack of energy",
   "answer": "lethargy",
-  "explain": "Too much screen time can cause lethargy."
+  "explain": "Too much screen time can cause lethargy.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: to state the opposite of what someone said",
   "answer": "contradict",
-  "explain": "Don't contradict your sister in front of guests."
+  "explain": "Don't contradict your sister in front of guests.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: too confident, in a rude way",
   "answer": "brash",
-  "explain": "The brash newcomer claimed he'd beat everyone."
+  "explain": "The brash newcomer claimed he'd beat everyone.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: clear and easy to understand",
   "answer": "lucid",
-  "explain": "Her explanation was lucid and short."
+  "explain": "Her explanation was lucid and short.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: an unexpected piece of good luck",
   "answer": "windfall",
-  "explain": "Finding £20 was a real windfall."
+  "explain": "Finding £20 was a real windfall.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: to hesitate because of doubts",
   "answer": "balk",
-  "explain": "The horse balked at the high fence."
+  "explain": "The horse balked at the high fence.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: lacking flavour or interest",
   "answer": "insipid",
-  "explain": "The soup was insipid without salt."
+  "explain": "The soup was insipid without salt.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: a person who stays out of sight and watches",
   "answer": "lurker",
-  "explain": "The lurker read every post but never wrote one."
+  "explain": "The lurker read every post but never wrote one.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: to cause a feeling or memory",
   "answer": "evoke",
-  "explain": "The smell evoked memories of summer."
+  "explain": "The smell evoked memories of summer.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: perfectly suitable for a particular situation",
   "answer": "apt",
-  "explain": "Her joke was apt and kind."
+  "explain": "Her joke was apt and kind.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "picq",
@@ -2380,7 +2546,8 @@
    "a face with little hearts around it": "The hearts show someone smitten, not embarrassed.",
    "a face laughing with its eyes shut": "A full, open laugh is carefree, not sheepish.",
    "a boy with a frown and wobbly mouth": "This frown is anxious about what might happen, not embarrassed about what did."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2403,7 +2570,8 @@
    "a face with a small, gentle smile": "A gentle smile is content, but far from smitten.",
    "a face with a hand on its chin": "A hand on the chin is pensive, weighing something up.",
    "a face with a finger on its lips": "A finger on the lips is about keeping quiet, not adoration."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2426,7 +2594,8 @@
    "a grey rock": "A rock is about as long-lasting as anything gets.",
    "a snowy mountain": "Mountains stand for millions of years.",
    "a tall pine tree": "A pine tree can live for centuries."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2449,7 +2618,8 @@
    "a grey koala": "Koalas sleep up to twenty hours a day: hardly industrious!",
    "a grey seal": "Seals spend lots of time lazing on rocks.",
    "a green turtle": "Turtles are known for being slow and steady, not busy."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2472,7 +2642,8 @@
    "a drink cup with a straw": "A cup with a straw is used once and thrown away.",
    "a folded newspaper": "A newspaper is old news by tomorrow.",
    "a purple crayon": "A crayon gets used up. Nobody passes one down for generations."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2495,7 +2666,8 @@
    "a smiling sunflower": "A sunflower in full bloom has already finished growing.",
    "a bunch of flowers": "Cut flowers won't grow again. They're past growing, not resting.",
    "a little orange flame": "A flame is active and burning, the opposite of dormant."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2518,7 +2690,8 @@
    "a face laughing with its eyes shut": "Laughing is spontaneous, not deep in thought.",
    "big Z Z Z letters": "Asleep isn't thinking at all.",
    "a face with little hearts around it": "Hearts show adoration, not quiet reflection."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2541,7 +2714,8 @@
    "a blue ice cube": "Ice is cold and gives out no light of its own.",
    "a water droplet": "A droplet may sparkle, but it only reflects light.",
    "a crescent moon": "The Moon only reflects sunlight. It isn't hot or glowing itself."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2564,7 +2738,8 @@
    "a child in a white space suit": "An astronaut explores space, not the ocean.",
    "a hero in a fluffy blue coat": "A snow coat is for icy land, and it would be soaked in seconds.",
    "a boy in a green coat": "This boy is dressed for meadows and fields."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2587,7 +2762,8 @@
    "a green lizard": "A lizard grows bigger but keeps the same shape.",
    "a friendly snake": "A snake sheds its skin, but it stays a snake.",
    "a green turtle": "A turtle hatches as a tiny turtle and simply grows."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2610,7 +2786,8 @@
    "a calendar page": "A calendar records dates, but it doesn't show time draining away.",
    "a round gold compass": "A compass is an emblem of direction, not time.",
    "a gold balance scale": "Scales are the emblem of fairness and justice."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2633,7 +2810,8 @@
    "a red brick": "A brick is blocky, so air would push hard against it.",
    "a cardboard box": "Flat sides make a box drag through the air.",
    "a little purple teapot": "A teapot is round and lumpy, far from streamlined."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2656,7 +2834,8 @@
    "a boy jumping high, a present flying": "This boy is leaping for joy. He is anything but sad.",
    "a girl holding up a gold trophy": "This girl is proudly holding her trophy.",
    "a girl hugging a kitten": "This girl is cuddling a kitten with a big smile, so she isn't alone or sad."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2679,7 +2858,8 @@
    "a girl resting her chin on her hand at a desk": "This girl is bored. Nothing has impressed her.",
    "a girl yawning, leaning on a heavy backpack": "This girl is far too tired to wonder at anything.",
    "a girl stomping by a knocked-over block tower": "This girl is stomping with anger, not filled with wonder."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2702,7 +2882,8 @@
    "a boy peeking out from behind a door": "This boy is hiding shyly. He isn't sure he wants to come out.",
    "a girl yawning, leaning on a heavy backpack": "This girl has stopped to rest. She has given up for now.",
    "a girl scratching her head over a map": "This girl is confused about which way to go, so she isn't firm about anything yet."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2725,7 +2906,8 @@
    "a boy on a little stage, hand at his mouth": "This boy is nervous before his show. Nothing embarrassing has happened yet.",
    "a boy gazing up at a shooting star": "This boy is amazed by a shooting star.",
    "a boy laughing as he hugs a puppy": "This boy is laughing with his puppy, not ashamed."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2748,6 +2930,7 @@
    "a girl looking down at a dropped ice cream": "This girl is sad about her ice cream, not angry.",
    "a girl scratching her head over a map": "This girl is confused by her map.",
    "a boy sitting all alone on a bench": "This boy is sad and alone, not angry."
-  }
+  },
+  "sk": "vocab.picture"
  }
 ]

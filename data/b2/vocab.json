@@ -14,7 +14,8 @@
    "affect": "Affect is a verb; we need a noun.",
    "result": "A result doesn't go with 'on everyone'.",
    "consequence": "Consequence takes 'of', not 'have a ... on'."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -31,7 +32,8 @@
    "out": "Pay out = give money.",
    "back": "Pay back = return money.",
    "up": "Pay up = pay money you owe."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -48,7 +50,8 @@
    "overwhelmed": "Overwhelmed describes a person's feeling.",
    "overdone": "Overdone = cooked too long or exaggerated.",
    "overcome": "Overcome is a verb: overcome a problem."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -65,7 +68,8 @@
    "look up": "Look up = find in a book or online.",
    "bring up": "Bring up = mention or raise a child.",
    "turn up": "Turn up = arrive."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -82,7 +86,8 @@
    "liable": "Liable to = likely to do something bad.",
    "prone": "Prone to = often affected by (illness, mistakes).",
    "keen": "Keen to = wants to, not certain."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -99,7 +104,8 @@
    "strongly": "Strongly goes with recommend or believe.",
    "hardly": "Hardly means almost not.",
    "deeply": "Deeply goes with feelings."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -116,7 +122,8 @@
    "power": "Come into power is for governments.",
    "practice": "Put into practice is the phrase with practice.",
    "play": "Come into play = start to matter."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -133,7 +140,8 @@
    "broke": "Break out = escape or start suddenly.",
    "fell": "Fall out = argue.",
    "gave": "Give out = stop working or hand out."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -150,7 +158,8 @@
    "say": "Say the difference isn't the phrase.",
    "speak": "Speak the difference isn't English.",
    "know": "Know the difference means understand it, not notice it."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -167,7 +176,8 @@
    "made": "Make the blame isn't English.",
    "did": "Do the blame isn't English.",
    "put": "Put the blame on = blame someone else."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -184,7 +194,8 @@
    "raise": "Raise is mostly a verb (raise your hand).",
    "arise": "Arise is a verb = appear.",
    "rouse": "Rouse is a verb = wake up."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -201,7 +212,8 @@
    "of": "Of isn't used with reputation like this.",
    "about": "About isn't used.",
    "with": "With isn't used."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -218,7 +230,8 @@
    "sky high": "Sky high = very high (prices).",
    "stone cold": "Stone cold = completely cold.",
    "brand new": "Brand new = completely new."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -235,7 +248,8 @@
    "overtake": "Overtake = pass a car.",
    "overlook": "Overlook = not notice.",
    "overdo": "Overdo = do too much."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -252,7 +266,8 @@
    "determining": "Determining is a verb form.",
    "determination": "Determination is a noun.",
    "determine": "Determine is a verb."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -269,7 +284,8 @@
    "hesitant": "Hesitant is similar to reluctant.",
    "unwilling": "Unwilling means the same as reluctant.",
    "doubtful": "Doubtful means not sure."
-  }
+  },
+  "sk": "vocab.other"
  },
  {
   "type": "mcq",
@@ -286,7 +302,8 @@
    "arrive": "Arrive needs 'at': arrive at a compromise.",
    "get": "Get a compromise isn't the usual phrase.",
    "do": "Do a compromise isn't English."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -303,7 +320,8 @@
    "lighten": "Lighten is for loads or colours.",
    "soften": "Soften is for materials or attitudes.",
    "loosen": "Loosen is for knots or belts."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -320,7 +338,8 @@
    "succeeded": "Succeed needs 'in + -ing'.",
    "achieved": "Achieve takes a noun: achieve a goal.",
    "accomplished": "Accomplish takes a noun too."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -337,7 +356,8 @@
    "compulsive": "Compulsive = can't stop doing it.",
    "competing": "Competing = trying to win against others.",
    "compulsory": "Compulsory = you must do it."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -354,7 +374,8 @@
    "cut out of": "Cut out of isn't used with costs.",
    "cut off from": "Cut off from = separated.",
    "cut up with": "Cut up with isn't a phrase here."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -371,7 +392,8 @@
    "sharp": "Sharp = clever or pointed.",
    "strong": "Strong isn't used with reader this way.",
    "heavy": "Heavy reader isn't the phrase (heavy eater is)."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -388,7 +410,8 @@
    "on": "On appointment isn't the phrase.",
    "at": "At appointment isn't used.",
    "under": "Under appointment isn't used."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -405,7 +428,8 @@
    "on": "On consultation isn't the phrase.",
    "by": "By consultation isn't usual.",
    "at": "At consultation isn't used."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -422,7 +446,8 @@
    "entitled": "Entitled to = have a right to.",
    "enrolled": "Enrolled in = joined a course.",
    "endorsed": "Endorsed = publicly supported."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -439,7 +464,8 @@
    "excelled": "Excel = be very good at (no object like this).",
    "exaggerated": "Exaggerate = make bigger than true.",
    "expanded": "Expand = grow larger."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -456,7 +482,8 @@
    "strongly likely": "Strongly likely isn't a collocation.",
    "deeply likely": "Deeply likely isn't a collocation.",
    "greatly likely": "Greatly likely isn't a collocation."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -473,7 +500,8 @@
    "adapted": "Adapt = change to suit.",
    "adjusted": "Adjust = change a little.",
    "admitted": "Admit = say something is true."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -490,7 +518,8 @@
    "aggravate": "Aggravate = make worse.",
    "accumulate": "Accumulate = collect over time.",
    "allocate": "Allocate = give out for a purpose."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -507,7 +536,8 @@
    "fundamental": "Fundamental is an adjective; we need an adverb.",
    "fundamentalist": "Fundamentalist is a person or belief.",
    "fundament": "Fundament isn't the word needed."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -524,7 +554,8 @@
    "got over": "Get over = recover from.",
    "got across": "Get across = make understood.",
    "got by": "Get by = manage with little."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -541,7 +572,8 @@
    "call up": "Call up = phone, or pick someone for a team.",
    "call for": "Call for = need or demand.",
    "call in": "Call in = visit briefly, or ask an expert to come."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -558,7 +590,8 @@
    "figure in": "Figure in = include in a calculation.",
    "make up": "Make up = invent.",
    "look up": "Look up = find in a book or online."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -575,7 +608,8 @@
    "came across": "Come across = find by chance.",
    "came down with": "Come down with = start to have an illness.",
    "came round to": "Come round to = finally agree with."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -592,7 +626,8 @@
    "came up with": "Come up with = think of an idea.",
    "came over": "Come over = visit.",
    "came along": "Come along = go somewhere with someone."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -609,7 +644,8 @@
    "give in": "Give in = finally agree after arguing.",
    "give out": "Give out = hand to many people.",
    "give away": "Give away = give for free, or reveal a secret."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -626,7 +662,8 @@
    "gave up": "Give up = stop trying.",
    "gave off": "Give off = produce a smell or light.",
    "gave back": "Give back = return."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -643,7 +680,8 @@
    "give out": "Give out = hand out to many people.",
    "give in": "Give in = surrender or agree.",
    "give up": "Give up = stop trying."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -660,7 +698,8 @@
    "look up to": "Look up to = admire.",
    "look down on": "Look down on = think you're better than.",
    "look forward to": "Look forward to = be excited about something coming."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -677,7 +716,8 @@
    "look into": "Look into = investigate.",
    "look out for": "Look out for = watch carefully for.",
    "look over": "Look over = check quickly."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -694,7 +734,8 @@
    "put off": "Put off = postpone.",
    "put down": "Put down = place on a surface, or criticise.",
    "put out": "Put out = stop a fire."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -711,7 +752,8 @@
    "bring about": "Bring about = cause something to happen.",
    "bring back": "Bring back = return, or make you remember.",
    "bring round": "Bring round = wake someone up, or persuade."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -728,7 +770,8 @@
    "brought up": "Bring up = mention, or raise a child.",
    "brought out": "Bring out = release a product.",
    "brought on": "Bring on = cause something bad, like an illness."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -745,7 +788,8 @@
    "bring about": "Bring about = cause a change.",
    "bring up": "Bring up = mention a topic.",
    "bring in": "Bring in = introduce a rule."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -762,7 +806,8 @@
    "bring out": "Bring out = release a product.",
    "bring up": "Bring up = mention.",
    "bring off": "Bring off = succeed at something difficult."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -779,7 +824,8 @@
    "took up": "Take up = start a hobby.",
    "took over": "Take over = take control.",
    "took on": "Take on = accept work, or employ."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -796,7 +842,8 @@
    "took off": "Take off = remove, or leave the ground.",
    "took in": "Take in = understand, or trick.",
    "took after": "Take after = be like a parent."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -813,7 +860,8 @@
    "take up": "Take up = start a hobby.",
    "take on": "Take on = accept work.",
    "take apart": "Take apart = separate into pieces."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -830,7 +878,8 @@
    "set up": "Set up = start or prepare.",
    "set in": "Set in = begin and continue (bad weather).",
    "set back": "Set back = delay progress."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -847,7 +896,8 @@
    "set off": "Set off = start a journey.",
    "set out": "Set out = start a journey with a goal.",
    "set about": "Set about = start doing a task."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -864,7 +914,8 @@
    "set up": "Set up = start or prepare.",
    "set aside": "Set aside = keep for later.",
    "set off": "Set off = start a journey, or make an alarm ring."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -881,7 +932,8 @@
    "fell through": "Fall through = fail to happen (a plan).",
    "fell for": "Fall for = be tricked by, or fall in love with.",
    "fell behind": "Fall behind = not keep up."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -898,7 +950,8 @@
    "fell out": "Fall out = argue.",
    "fell apart": "Fall apart = break into pieces.",
    "fell over": "Fall over = trip and fall down."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -915,7 +968,8 @@
    "fell out": "Fall out = argue.",
    "fell for": "Fall for = be tricked, or fall in love.",
    "fell back": "Fall back = move backwards, or rely on."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -932,7 +986,8 @@
    "fell behind": "Fall behind = not keep up.",
    "fell through": "Fall through = fail to happen.",
    "fell out": "Fall out = argue."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -949,7 +1004,8 @@
    "draw on": "Draw on = use knowledge or experience.",
    "draw back": "Draw back = move away.",
    "draw in": "Draw in = get dark earlier (days)."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -966,7 +1022,8 @@
    "turn up": "Turn up would make it louder.",
    "turn over": "Turn over = flip.",
    "turn out": "Turn out = have a result."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -983,7 +1040,8 @@
    "turned up": "Turn up = arrive.",
    "turned into": "Turn into = change into.",
    "turned over": "Turn over = flip."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -1000,7 +1058,8 @@
    "looking up to": "Look up to = admire.",
    "looking out for": "Look out for = watch for.",
    "looking into": "Look into = investigate."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1017,7 +1076,8 @@
    "backed down": "Back down = stop arguing and accept defeat.",
    "backed out": "Back out = stop being part of a plan.",
    "backed off": "Back off = move away."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -1034,7 +1094,8 @@
    "backed up": "Back up = support.",
    "backed down": "Back down = admit you were wrong.",
    "backed into": "Back into = hit while reversing."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -1051,7 +1112,8 @@
    "made out": "Make out = see with difficulty.",
    "did up": "Do up = fasten, or decorate.",
    "took out": "Take out = remove."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -1068,7 +1130,8 @@
    "made": "We don't say make damage.",
    "did up": "Do up = fasten or decorate.",
    "brought up": "Bring up = mention."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -1085,7 +1148,8 @@
    "make": "We don't say make your best.",
    "give": "Give your best is possible in sport, but do your best is the fixed phrase.",
    "take": "We don't say take your best."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1102,7 +1166,8 @@
    "follow up": "Follow up = do more about something later.",
    "keep up": "Keep up = continue, or stay level.",
    "hold": "We don't say hold the rules."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1119,7 +1184,8 @@
    "hold": "We don't say hold a secret.",
    "save": "We don't say save a secret.",
    "take": "We don't say take a secret."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1136,7 +1202,8 @@
    "made": "We don't say made a great time.",
    "did": "We don't say did a great time.",
    "spent": "Spend time, but not spend a great time."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -1153,7 +1220,8 @@
    "did": "We don't say did a promise.",
    "gave out": "Give out = hand to many people.",
    "took": "We don't say took a promise."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -1170,7 +1238,8 @@
    "made up": "Make up = invent.",
    "said": "Say isn't used with speech.",
    "told": "Tell is used with stories and jokes."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -1187,7 +1256,8 @@
    "said": "We don't say said a joke.",
    "spoke": "Speak is for languages.",
    "talked": "Talk needs about."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1204,7 +1274,8 @@
    "did": "We don't say did progress.",
    "had": "We don't say had progress.",
    "took": "We don't say took progress."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -1221,7 +1292,8 @@
    "make": "We don't say make a break here.",
    "do": "We don't say do a break.",
    "give": "Give is used for 'give me a break' (stop annoying me)."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -1238,7 +1310,8 @@
    "did": "We don't say did an effort.",
    "took": "We don't say took an effort.",
    "had": "We don't say had an effort."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -1255,7 +1328,8 @@
    "large": "Large is about size, not a setback.",
    "tall": "Tall is for height.",
    "wide": "Wide is for width."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -1272,7 +1346,8 @@
    "strong": "Strong goes with wind, not rain.",
    "big": "We don't say big rain.",
    "hard": "Hard rain is less natural than heavy rain."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -1289,7 +1364,8 @@
    "heavy": "Heavy goes with rain, not wind.",
    "powerful": "Powerful wind is possible but less usual than strong.",
    "thick": "Thick goes with fog."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -1306,7 +1382,8 @@
    "strong": "Strong goes with wind.",
    "heavy": "Heavy goes with rain and snow.",
    "fat": "Fat isn't used for fog."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1323,7 +1400,8 @@
    "inventor": "Inventor is the person.",
    "inventive": "Inventive is an adjective.",
    "invent": "Invent is the verb."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1340,7 +1418,8 @@
    "imaginary": "Imaginary = not real: an imaginary friend.",
    "imagination": "Imagination is a noun.",
    "imaginable": "Imaginable = possible to imagine."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1357,7 +1436,8 @@
    "imaginative": "Imaginative = creative.",
    "imagined": "Imagined is a past form, less natural here.",
    "imagining": "Imagining is a verb form."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1374,7 +1454,8 @@
    "appearing": "Appearing is a verb form.",
    "appearence": "Appearence is misspelled: appearance.",
    "apparent": "Apparent is an adjective."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1391,7 +1472,8 @@
    "danger": "Danger is a noun.",
    "endangered": "Endangered = at risk of dying out.",
    "dangerously": "Dangerously is an adverb."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1408,7 +1490,8 @@
    "dangerous": "Dangerous = could hurt you.",
    "endangering": "Endangering = putting something in danger.",
    "danger": "Danger is a noun."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1425,7 +1508,8 @@
    "determined": "Determined is an adjective.",
    "determine": "Determine is a verb.",
    "determinedly": "Determinedly is an adverb."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1442,7 +1526,8 @@
    "disbelieving": "Disbelieving describes the person who doesn't believe.",
    "believable": "Believable means the opposite.",
    "unbelief": "Unbelief is a noun."
-  }
+  },
+  "sk": "vocab.word-form"
  },
  {
   "type": "mcq",
@@ -1459,7 +1544,8 @@
    "unappropriate": "Unappropriate isn't a word.",
    "disappropriate": "Disappropriate isn't a word.",
    "inappropriately": "Inappropriately is an adverb."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1476,7 +1562,8 @@
    "unagree": "Unagree isn't a word.",
    "misagree": "Misagree isn't a word.",
    "inagree": "Inagree isn't a word."
-  }
+  },
+  "sk": "vocab.word-form"
  },
  {
   "type": "mcq",
@@ -1493,7 +1580,8 @@
    "disunderstood": "Disunderstood isn't a word.",
    "ununderstood": "Ununderstood isn't a word.",
    "overunderstood": "Overunderstood isn't a word."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1510,7 +1598,8 @@
    "helpless": "Helpless = not able to help yourself.",
    "helping": "Helping is a verb form or noun.",
    "helped": "Helped is past."
-  }
+  },
+  "sk": "vocab.word-form"
  },
  {
   "type": "mcq",
@@ -1527,7 +1616,8 @@
    "defensive": "Defensive = ready to protect yourself.",
    "defended": "Defended means someone protected it.",
    "defenceful": "Defenceful isn't a word."
-  }
+  },
+  "sk": "vocab.word-form"
  },
  {
   "type": "mcq",
@@ -1544,7 +1634,8 @@
    "skilful": "Skilful is an adjective.",
    "skill": "Skill is a noun.",
    "skilled": "Skilled is an adjective."
-  }
+  },
+  "sk": "vocab.word-form"
  },
  {
   "type": "mcq",
@@ -1561,7 +1652,8 @@
    "end": "The end is when it finishes, not its purpose.",
    "finish": "The finish is the last part of a race.",
    "result": "The result is what happens at the end, not the purpose."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1578,7 +1670,8 @@
    "effects": "Effect is usually a noun: a good effect.",
    "infects": "Infect = pass on a disease.",
    "reflects": "Reflect = send back light, or think deeply."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1595,7 +1688,8 @@
    "affect": "Affect is usually a verb.",
    "affection": "Affection = love.",
    "efficiency": "Efficiency = working well without waste."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1612,7 +1706,8 @@
    "impressed": "Impressed is how we felt.",
    "impression": "Impression is a noun.",
    "impressing": "Impressing is a verb form."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1629,7 +1724,8 @@
    "interesting": "Interesting describes the thing.",
    "interest": "Interest is a noun or verb.",
    "interestingly": "Interestingly is an adverb."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1646,7 +1742,8 @@
    "careless": "Careless means the opposite.",
    "caring": "Caring = kind and helpful.",
    "cared": "Cared is past."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1663,7 +1760,8 @@
    "earned": "You earn money.",
    "beat": "You beat a person or team.",
    "gained": "You gain experience or weight."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1680,7 +1778,8 @@
    "measure": "Measure is a verb or tool.",
    "amount": "Amount is for uncountable things.",
    "large": "Large is an adjective."
-  }
+  },
+  "sk": "vocab.other"
  },
  {
   "type": "mcq",
@@ -1697,7 +1796,8 @@
    "notice of": "Notice of isn't English.",
    "recognise": "Recognise = know someone/something you've seen before.",
    "remark": "Remark = say."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1714,7 +1814,8 @@
    "realise": "Realise is for facts, not faces.",
    "remember of": "Remember of isn't English.",
    "know about": "Know about = have information about."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1731,7 +1832,8 @@
    "rise": "Rise = go up by itself; it isn't used with an object.",
    "raise": "Raise = lift something up.",
    "lift": "Lift = pick something up."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1748,7 +1850,8 @@
    "rise": "Rise has no object: The sun rises.",
    "arise": "Arise = happen (a problem).",
    "grow": "Grow = get bigger."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1765,7 +1868,8 @@
    "raises": "Raise needs an object.",
    "arouses": "Arouse = cause a feeling.",
    "lifts": "Lift needs an object."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1782,7 +1886,8 @@
    "explain": "Explain needs to: explain to me.",
    "say": "Say doesn't take a person directly.",
    "learn": "Learn is what the student does."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1799,7 +1904,8 @@
    "bread": "Bread isn't part of this idiom.",
    "pie": "Pie is in 'easy as pie', not 'a piece of'.",
    "toast": "Toast isn't part of this idiom."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1816,7 +1922,8 @@
    "rain": "Rain isn't part of this idiom.",
    "clouds": "Clouds isn't part of this idiom.",
    "sky": "Sky isn't part of this idiom."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1833,7 +1940,8 @@
    "ship": "Ship isn't used in this idiom.",
    "car": "Car isn't used in this idiom.",
    "house": "House isn't used in this idiom."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1850,7 +1958,8 @@
    "closed": "Closed isn't used in this idiom.",
    "tight": "Tight isn't used in this idiom.",
    "folded": "Folded isn't used in this idiom."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1867,7 +1976,8 @@
    "hand": "Hand isn't used in this idiom.",
    "throat": "Throat isn't used in this idiom.",
    "head": "Head isn't used in this idiom."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1884,7 +1994,8 @@
    "step": "Step in the dark isn't the idiom.",
    "jump": "Jump in the dark isn't the idiom.",
    "walk": "Walk in the dark isn't the idiom."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1901,7 +2012,8 @@
    "peas": "Peas isn't part of this idiom.",
    "milk": "Milk isn't part of this idiom.",
    "secrets": "Secrets is the meaning, not the idiom's word."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1918,7 +2030,8 @@
    "hammer": "The hammer hits the nail; it isn't the object.",
    "point": "Point isn't used in this idiom.",
    "spot": "Spot is in 'hit the spot' (be just right), a different idiom."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1935,7 +2048,8 @@
    "coffee": "Coffee isn't used in this idiom.",
    "milk": "Milk isn't used in this idiom.",
    "juice": "Juice isn't used in this idiom."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1952,7 +2066,8 @@
    "running into": "Run into = meet by chance.",
    "going over": "Go over = check again.",
    "looking at": "Look at the clock just means check the time."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1969,7 +2084,8 @@
    "hair": "Hair isn't used in this idiom.",
    "face": "Face isn't used in this idiom.",
    "ears": "Ears isn't used in this idiom."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1986,7 +2102,8 @@
    "made": "Made isn't part of this idiom.",
    "tried": "Tried isn't part of this idiom.",
    "learnt": "Learnt isn't part of this idiom."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -2003,7 +2120,8 @@
    "cap off": "Cap off isn't used in this phrase.",
    "end": "End isn't used in this phrase.",
    "finish": "Finish isn't used in this phrase."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -2020,7 +2138,8 @@
    "fish": "Fish isn't used in this simile.",
    "horse": "Horse is in 'eat like a horse', a different idiom.",
    "flower": "Flower isn't used in this simile."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -2037,7 +2156,8 @@
    "sea": "Sea isn't used in this idiom.",
    "river": "River isn't used in this idiom.",
    "tank": "Tank isn't used in this idiom."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -2054,7 +2174,8 @@
    "lip": "Bite your lip is similar but used for holding back feelings, not words.",
    "teeth": "Bite your teeth isn't English.",
    "nails": "Bite your nails = be nervous."
-  }
+  },
+  "sk": "vocab.idiom"
  },
  {
   "type": "mcq",
@@ -2071,7 +2192,8 @@
    "tree": "Tree isn't used in this idiom.",
    "garden": "Garden isn't used in this idiom.",
    "field": "Field isn't used in this idiom."
-  }
+  },
+  "sk": "vocab.idiom"
  },
  {
   "type": "mcq",
@@ -2088,7 +2210,8 @@
    "heart": "Heart isn't used in this idiom.",
    "face": "Face isn't used in this idiom.",
    "hand": "Hand isn't used in this idiom."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -2105,259 +2228,302 @@
    "lose": "Lose is a verb.",
    "loss out": "Loss out isn't English.",
    "spend": "Spend is a verb."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "spell",
   "q": "Spell the word: to make a problem less serious",
   "answer": "ease",
-  "explain": "A cold drink can ease a sore throat."
+  "explain": "A cold drink can ease a sore throat.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: a person who owns or runs a business",
   "answer": "entrepreneur",
-  "explain": "The young entrepreneur sells her own phone cases."
+  "explain": "The young entrepreneur sells her own phone cases.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: able to bend easily without breaking",
   "answer": "flexible",
-  "explain": "Gymnasts are very flexible."
+  "explain": "Gymnasts are very flexible.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: to make something impossible or difficult",
   "answer": "hinder",
-  "explain": "The fog hindered the rescue team."
+  "explain": "The fog hindered the rescue team.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: happening every year",
   "answer": "annual",
-  "explain": "The annual school fair is in June."
+  "explain": "The annual school fair is in June.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: the ability to keep going even when things are hard",
   "answer": "perseverance",
-  "explain": "Learning the violin takes perseverance."
+  "explain": "Learning the violin takes perseverance.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: easy to see or understand",
   "answer": "obvious",
-  "explain": "The answer was obvious once she explained it."
+  "explain": "The answer was obvious once she explained it.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: to look at something carefully to find out more",
   "answer": "examine",
-  "explain": "The vet examined the dog's paw."
+  "explain": "The vet examined the dog's paw.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: the surroundings where people, animals and plants live",
   "answer": "environment",
-  "explain": "We must protect the environment."
+  "explain": "We must protect the environment.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: a feeling of not being sure",
   "answer": "doubt",
-  "explain": "I have no doubt she'll win."
+  "explain": "I have no doubt she'll win.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: extremely tired",
   "answer": "drained",
-  "explain": "After the exams I felt completely drained."
+  "explain": "After the exams I felt completely drained.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: to give help, money or time for free",
   "answer": "volunteer",
-  "explain": "We volunteer at the animal shelter."
+  "explain": "We volunteer at the animal shelter.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: a strong wish to know or learn something",
   "answer": "curiosity",
-  "explain": "Her curiosity led her to open the old box."
+  "explain": "Her curiosity led her to open the old box.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: polite and kind to people",
   "answer": "considerate",
-  "explain": "It was considerate of you to wait for me."
+  "explain": "It was considerate of you to wait for me.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: to think that something is true without proof",
   "answer": "assume",
-  "explain": "Don't assume the test will be easy."
+  "explain": "Don't assume the test will be easy.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: a small amount of something",
   "answer": "fraction",
-  "explain": "Only a fraction of the cake was left."
+  "explain": "Only a fraction of the cake was left.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: not willing to change your mind",
   "answer": "stubborn",
-  "explain": "My little brother is so stubborn!"
+  "explain": "My little brother is so stubborn!",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: to say you will definitely do something",
   "answer": "promise",
-  "explain": "I promise I'll be back by six."
+  "explain": "I promise I'll be back by six.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: the feeling of being proud of yourself",
   "answer": "pride",
-  "explain": "She felt a lot of pride after the race."
+  "explain": "She felt a lot of pride after the race.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: an amount that is more than enough",
   "answer": "plenty",
-  "explain": "There is plenty of food for everyone."
+  "explain": "There is plenty of food for everyone.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: to change something slightly to improve it",
   "answer": "adjust",
-  "explain": "Adjust your seat before you start."
+  "explain": "Adjust your seat before you start.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: a person who is very good at something",
   "answer": "expert",
-  "explain": "She's an expert on dinosaurs."
+  "explain": "She's an expert on dinosaurs.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: to give a reason for something you did",
   "answer": "justify",
-  "explain": "Can you justify your answer?"
+  "explain": "Can you justify your answer?",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: the last part of a story",
   "answer": "ending",
-  "explain": "The ending of the book was a big surprise."
+  "explain": "The ending of the book was a big surprise.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: having a lot of power or strength",
   "answer": "mighty",
-  "explain": "The mighty river flooded the valley."
+  "explain": "The mighty river flooded the valley.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: to keep away from something",
   "answer": "avoid",
-  "explain": "Avoid the busy roads on your bike."
+  "explain": "Avoid the busy roads on your bike.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: not real; existing only in the imagination",
   "answer": "fictional",
-  "explain": "Hogwarts is a fictional school."
+  "explain": "Hogwarts is a fictional school.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: a feeling of fear about what might happen",
   "answer": "anxiety",
-  "explain": "Deep breaths can help with anxiety."
+  "explain": "Deep breaths can help with anxiety.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: to make a sound to show you like something, with your hands",
   "answer": "applaud",
-  "explain": "The audience applauded loudly."
+  "explain": "The audience applauded loudly.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: a person you live next to",
   "answer": "neighbour",
-  "explain": "Our neighbour feeds our cat when we're away."
+  "explain": "Our neighbour feeds our cat when we're away.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: to be different from",
   "answer": "differ",
-  "explain": "The twins differ in many ways."
+  "explain": "The twins differ in many ways.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: very dirty",
   "answer": "filthy",
-  "explain": "My boots were filthy after the hike."
+  "explain": "My boots were filthy after the hike.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: a short holiday",
   "answer": "break",
-  "explain": "We had a short break by the sea."
+  "explain": "We had a short break by the sea.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: the scientific study of living things",
   "answer": "biology",
-  "explain": "In biology we learned about cells."
+  "explain": "In biology we learned about cells.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: the money you pay to travel on a bus or train",
   "answer": "fare",
-  "explain": "The bus fare is two pounds."
+  "explain": "The bus fare is two pounds.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: a feeling of being alone and sad",
   "answer": "loneliness",
-  "explain": "Pets can help with loneliness."
+  "explain": "Pets can help with loneliness.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: to put things in order",
   "answer": "organise",
-  "explain": "Let's organise the books by colour."
+  "explain": "Let's organise the books by colour.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: easily hurt or upset",
   "answer": "sensitive",
-  "explain": "He's sensitive about his new haircut."
+  "explain": "He's sensitive about his new haircut.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: to grow or develop well",
   "answer": "thrive",
-  "explain": "Tomatoes thrive in sunny gardens."
+  "explain": "Tomatoes thrive in sunny gardens.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: to recognise someone or something you've seen before",
   "answer": "identify",
-  "explain": "Can you identify this bird?"
+  "explain": "Can you identify this bird?",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: a place where people can see old objects and art",
   "answer": "gallery",
-  "explain": "The gallery has paintings by Monet."
+  "explain": "The gallery has paintings by Monet.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: the people who make decisions in a team, or the act of guiding them",
   "answer": "leadership",
-  "explain": "Our captain shows great leadership."
+  "explain": "Our captain shows great leadership.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "picq",
@@ -2380,7 +2546,8 @@
    "a strong arm showing its muscle": "A flexed muscle shows strength and energy, the opposite of exhausted.",
    "two friends dancing together": "These friends are dancing happily. They still have plenty of energy.",
    "a boy running fast": "He's sprinting, so he isn't worn out yet."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2403,7 +2570,8 @@
    "a boy with a frown and wobbly mouth": "This boy looks anxious. Serene means free from worry.",
    "a boy running fast": "Rushing along isn't serene. Serene is still and unhurried.",
    "a face laughing with its eyes shut": "Laughing is cheerful and lively. Serene is a quieter, peaceful feeling."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2426,7 +2594,8 @@
    "a purple crystal ball": "A crystal ball belongs to fortune-tellers in stories. Detectives look at real evidence.",
    "a pink megaphone": "A megaphone makes a voice louder. It doesn't help you examine clues.",
    "a round gold compass": "A compass shows direction. It won't make a tiny clue easier to see."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2449,7 +2618,8 @@
    "a cat crying big tears": "This cat is crying because it's sad. Overjoyed tears come with a huge smile.",
    "a boy with a frown and wobbly mouth": "This boy is anxious, not delighted.",
    "a face with a small, gentle smile": "This face is only a little pleased. Overjoyed is much, much happier."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2472,7 +2642,8 @@
    "a mermaid with a shiny tail": "A mermaid breathes underwater, but water isn't the same as having no air at all.",
    "a hero in a fluffy blue coat": "A winter coat keeps you warm, but you'd still need air to breathe.",
    "a boy in shiny armour with a sword": "Armour protects you from swords, not from having no air."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2495,7 +2666,8 @@
    "three blocks showing 1 2 3": "These are toy number blocks for learning, not an ancient counting tool.",
    "an hourglass with sand": "An hourglass is old too, but it measures time instead of counting.",
    "a gold balance scale": "A balance scale is ancient as well, but it compares weights rather than counting."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2518,7 +2690,8 @@
    "a pair of pink headphones": "Headphones help one person listen. They don't make her voice louder.",
    "a purple flute": "A flute plays music, but it won't carry her instructions.",
    "a phone with a crossed-out sign": "That sign means “phones off”, so it won't help anyone hear her."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2541,7 +2714,8 @@
    "a stripy bee": "Bees collect nectar in the daytime and rest at night.",
    "a yellow chick": "Chicks are awake in the day and sleep at night.",
    "a purple butterfly": "Butterflies fly in the warm sunshine, not in the dark."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2564,7 +2738,8 @@
    "a girl in a pumpkin dress": "Pumpkins are for Halloween in October, not Lunar New Year.",
    "a hero in a fluffy blue coat": "A fluffy snow coat suits a winter holiday, but it isn't a Lunar New Year outfit.",
    "a boy in a T-shirt and shorts": "Beach clothes are for summer holidays, not a New Year festival."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2587,7 +2762,8 @@
    "a yellow triangle with a !": "A warning sign means danger, not luck.",
    "a purple spider web": "A web is where a spider catches flies. It isn't a lucky symbol.",
    "a heavy purple chain": "A chain usually stands for being stuck or trapped, not luck."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2610,7 +2786,8 @@
    "a red brick": "A brick is solid, so you can't see through it.",
    "a wooden log": "Wood blocks the light. A log isn't transparent.",
    "a cardboard box": "Cardboard hides what's inside, so it's not transparent."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2633,7 +2810,8 @@
    "a fuzzy green ball": "In tennis you hit the ball over a net with a racket.",
    "a black and white ball": "In football you kick the ball into a goal.",
    "a long racket and a white shuttle": "Badminton uses a net and rackets, not a hoop."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2656,7 +2834,8 @@
    "a boy climbing a hill to reach a flag": "This boy is still climbing hard, fists clenched. He has plenty of energy left.",
    "a boy jumping high, a present flying": "This boy is jumping high. Nobody exhausted could jump like that.",
    "a face laughing with its eyes shut": "This face is laughing, full of fun, not worn out."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2679,7 +2858,8 @@
    "a child sitting cross-legged, eyes closed": "This child is relaxed and peaceful. Nothing is annoying her.",
    "a girl holding up a gold trophy": "This girl's plan worked. She won the trophy!",
    "a boy laughing as he hugs a puppy": "This boy is laughing with his puppy. Nothing is going wrong."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2702,7 +2882,8 @@
    "a girl yawning, leaning on a heavy backpack": "This girl is too tired to go on. She is resting, not pushing on.",
    "a girl resting her chin on her hand at a desk": "This girl is bored at her desk. She isn't trying to reach anything.",
    "a boy peeking out from behind a door": "This boy is hiding shyly behind a door, not working towards a goal."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2725,7 +2906,8 @@
    "a boy sitting all alone on a bench": "This boy is sitting alone and looks sad.",
    "a girl scratching her head over a map": "This girl is scratching her head over a map. She is confused, not delighted.",
    "a girl stomping by a knocked-over block tower": "This girl is stomping by her broken tower. She is angry."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2748,6 +2930,7 @@
    "a girl resting her chin on her hand at a desk": "This girl is bored. Nothing surprising is happening.",
    "a boy on a little stage, hand at his mouth": "This boy is nervous on the stage. He is worried, not filled with wonder.",
    "a face with a hand on its chin": "This face is thinking quietly, not looking at something wonderful."
-  }
+  },
+  "sk": "vocab.picture"
  }
 ]

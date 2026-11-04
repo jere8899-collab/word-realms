@@ -177,6 +177,12 @@ def check_fair(name, items):
     if not mc: return
     longest = sum(1 for q in mc if (L := [len(o) for o in q["options"]])[q["answer"]] == max(L) and L.count(max(L)) == 1)
     assert longest / len(mc) <= FAIR_MAX, f"{name}: right answer is the longest option in {longest}/{len(mc)} items (max {FAIR_MAX:.0%})"
+# ---- 🏷️ AGENT-BRIEF Task 2: a skill tag on every core-bank item (js/review.js serves a different item on the same skill) ----
+from skill_tags import CORE as TAG_SKILLS, add_tags, check_tags
+TAGS = {}
+for lvl, skills in D.items():
+    for sk in TAG_SKILLS:
+        if sk in skills: TAGS[f"{lvl}/{sk}"] = add_tags(sk, _items(sk, skills[sk]))
 for lvl, skills in D.items():
     os.makedirs(f"{ROOT}/{lvl}", exist_ok=True)
     for sk, val in skills.items():
@@ -192,6 +198,9 @@ for lvl, skills in D.items():
             if q["type"] == "listen" and "|" in q["say"]: _check_c2(q)  # every two-voice recording is a well-formed dialogue
         counts[f"{lvl}/{sk}"] = n; tot += n
         check_fair(f"{lvl}/{sk}", items)
+        if sk in TAG_SKILLS: check_tags(f"{lvl}/{sk}", sk, items)
+_tg = [(k, len(c), c.get(k.split('/')[1] + '.other', 0), sum(c.values())) for k, c in TAGS.items()]
+print("skill tags:", sum(t[1] for t in _tg), "tags over", len(_tg), "banks; untagged-ish (.other):", sum(t[2] for t in _tg), "of", sum(t[3] for t in _tg))
 # ---- Echo Well speaking prompts (bonus skill; not part of the 3-of-4 unlock rule) ----
 WORDS = {"a1": (3, 8), "a2": (5, 12), "b1": (7, 15), "b2": (9, 18), "c1": (9, 22), "c2": (10, 30)}
 MINW = {"b1": 5, "b2": 6, "c1": 7, "c2": 8}

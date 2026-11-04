@@ -15,7 +15,8 @@
    "mildly disappointed": "“mildly disappointed” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "completely indifferent": "“completely indifferent” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "annoyed it was so long": "“annoyed it was so long” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.attitude"
  },
  {
   "type": "listen",
@@ -33,7 +34,8 @@
    "He forgot it was happening.": "“He forgot it was happening.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "He was ill and stayed at home.": "“He was ill and stayed at home.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "He decided he didn't want to go.": "“He decided he didn't want to go.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.reason"
  },
  {
   "type": "listen",
@@ -51,7 +53,8 @@
    "the job itself, which bores him": "“the job itself, which bores him” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "his colleagues at the office": "“his colleagues at the office” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "the salary he is being paid": "“the salary he is being paid” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -69,7 +72,8 @@
    "Friday": "“Friday” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "Thursday": "“Thursday” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "Monday next week": "“Monday next week” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -87,7 +91,8 @@
    "Sales rose by 15%.": "“Sales rose by 15%.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "Sales stayed the same.": "“Sales stayed the same.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "Sales fell sharply.": "“Sales fell sharply.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -105,7 +110,8 @@
    "certain": "“certain” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "regretful": "“regretful” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "angry": "“angry” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.attitude"
  },
  {
   "type": "listen",
@@ -123,7 +129,8 @@
    "The library should close as soon as possible.": "“The library should close as soon as possible.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "Residents are to blame for the closure.": "“Residents are to blame for the closure.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "The council made the right decision quickly.": "“The council made the right decision quickly.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.attitude"
  },
  {
   "type": "listen",
@@ -141,7 +148,8 @@
    "a table for tomorrow night": "“a table for tomorrow night” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "a seat at another restaurant": "“a seat at another restaurant” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "a discount on a later booking": "“a discount on a later booking” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -159,7 +167,8 @@
    "about £30": "“about £30” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "about £3,000": "“about £3,000” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "about £130": "“about £130” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -177,7 +186,8 @@
    "She isn't intelligent.": "“She isn't intelligent.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "She is lazy.": "“She is lazy.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "She works too slowly.": "“She works too slowly.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -195,7 +205,8 @@
    "take a plane home instead": "“take a plane home instead” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "wait at the port until morning": "“wait at the port until morning” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "catch the train back tonight": "“catch the train back tonight” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -213,7 +224,8 @@
    "He disagrees.": "“He disagrees.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "He isn't sure.": "“He isn't sure.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "He has changed his mind.": "“He has changed his mind.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -231,7 +243,8 @@
    "praising the report": "“praising the report” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "ordering the report to be resent": "“ordering the report to be resent” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "refusing to help": "“refusing to help” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -249,7 +262,8 @@
    "about twelve hours": "“about twelve hours” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "about two hours": "“about two hours” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "about forty minutes": "“about forty minutes” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -267,7 +281,8 @@
    "Nobody ever wants to talk about safety.": "“Nobody ever wants to talk about safety.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "Safety is less important than speed here.": "“Safety is less important than speed here.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "He forgot to mention safety until now.": "“He forgot to mention safety until now.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -285,7 +300,8 @@
    "He doesn't want any more cake.": "“He doesn't want any more cake.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "He is too full to eat anything.": "“He is too full to eat anything.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "He doesn't really like the cake.": "“He doesn't really like the cake.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -303,7 +319,8 @@
    "Dinner is included.": "“Dinner is included.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "The ticket is cheaper.": "“The ticket is cheaper.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "Dinner was cancelled.": "“Dinner was cancelled.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -321,7 +338,8 @@
    "His work is poor.": "“His work is poor.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "He doesn't care about details.": "“He doesn't care about details.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "He works too fast.": "“He works too fast.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.attitude"
  },
  {
   "type": "listen",
@@ -339,7 +357,8 @@
    "the cost": "“the cost” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "the size": "“the size” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "the idea of a car park": "“the idea of a car park” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -357,7 +376,8 @@
    "heavy rain": "“heavy rain” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "an injury": "“an injury” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "the cold": "“the cold” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.reason"
  },
  {
   "type": "listen",
@@ -375,7 +395,8 @@
    "booking online": "“booking online” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "arriving early": "“arriving early” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "going at all": "“going at all” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -393,7 +414,8 @@
    "very strict": "“very strict” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "often absent": "“often absent” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "rather shy": "“rather shy” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -411,7 +433,8 @@
    "ending the meeting": "“ending the meeting” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "agreeing with the plan": "“agreeing with the plan” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "changing the subject": "“changing the subject” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -429,7 +452,8 @@
    "Fewer people came.": "“Fewer people came.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "Attendance stayed the same.": "“Attendance stayed the same.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "The event was closed.": "“The event was closed.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -447,7 +471,8 @@
    "enthusiastic": "“enthusiastic” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "angry": "“angry” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "indifferent": "“indifferent” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.attitude"
  },
  {
   "type": "listen",
@@ -465,7 +490,8 @@
    "He can't afford the repair.": "“He can't afford the repair.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "The repair shop is closed.": "“The repair shop is closed.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "He doesn't know how to ride.": "“He doesn't know how to ride.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -483,7 +509,8 @@
    "It will be in the gardens whatever happens.": "“It will be in the gardens whatever happens.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "The ceremony has been cancelled.": "“The ceremony has been cancelled.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "It will be held at the lake.": "“It will be held at the lake.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -501,7 +528,8 @@
    "She looks after her mother.": "“She looks after her mother.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "She disagrees with her mother.": "“She disagrees with her mother.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "She lives with her mother.": "“She lives with her mother.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -519,7 +547,8 @@
    "worried that everyone was an expert": "That was the assumption, which turned out wrong.",
    "annoyed that nobody knew anything": "'A relief' is positive, not annoyed.",
    "disappointed that it wasn't harder": "Nothing suggests they wanted it harder."
-  }
+  },
+  "sk": "listening.attitude"
  },
  {
   "type": "listen",
@@ -537,7 +566,8 @@
    "the destination and the date": "They're still going to the aquarium.",
    "only the time that the train leaves": "The transport changed too.",
    "it has been called off": "'Going ahead' means it's still on."
-  }
+  },
+  "sk": "listening.change"
  },
  {
   "type": "listen",
@@ -555,7 +585,8 @@
    "it's as good as the first one": "'Not a patch on' means much worse.",
    "it's funnier but more confusing": "'The jokes fall flat' = not funny.",
    "it's better than people say": "No comparison with others' views is made."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -573,7 +604,8 @@
    "£28": "£28 is the cake.",
    "£40": "£40 was the whole budget.",
    "£68": "£68 adds the two figures."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -591,7 +623,8 @@
    "still planning to leave": "They were going to quit, but changed their mind.",
    "unsure about backstroke": "Backstroke is what changed their mind.",
    "angry with the coach": "They seem grateful."
-  }
+  },
+  "sk": "listening.attitude"
  },
  {
   "type": "listen",
@@ -609,7 +642,8 @@
    "the 5th": "The fifth is the misprint.",
    "the 50th": "There's no 50th day.",
    "the 1st": "The 1st isn't mentioned."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -627,7 +661,8 @@
    "boring and full of notes": "The opposite of what's described.",
    "hard to follow": "'You learn without realising' suggests it's easy.",
    "dangerous at times": "Danger isn't mentioned."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -645,7 +680,8 @@
    "the museum was too crowded": "Crowds aren't mentioned.",
    "they didn't go to the museum": "They went ('dragged everyone across town').",
    "they arrived after it closed for the evening": "It was shut all day Monday."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -663,7 +699,8 @@
    "£5": "£5 is the discount.",
    "£7.50": "£7.50 is the under-twelves' price.",
    "£12": "£12 isn't a third off."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -681,7 +718,8 @@
    "they love video games": "'Could take or leave' means not keen.",
    "they don't own a bike": "They mention their bike.",
    "they play games every single day": "That isn't suggested."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -699,7 +737,8 @@
    "stormy, just as forecast": "The storms were only forecast.",
    "wet but warm": "It didn't rain.",
    "cold and windy all day": "It was hot."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -717,7 +756,8 @@
    "the food tastes awful": "'I'm not saying it's bad.'",
    "the portions are small": "Portion size isn't mentioned.",
    "it's too expensive": "Price isn't mentioned."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -736,7 +776,8 @@
    "start the poster": "It's nearly finished.",
    "send it to Mia now": "She wants it by tonight, after he finishes.",
    "print several copies": "Printing isn't mentioned."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -755,7 +796,8 @@
    "by bus": "Raj suggested the bus first, but it will be packed.",
    "on foot": "Walking isn't mentioned.",
    "by car": "A car isn't mentioned."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -774,7 +816,8 @@
    "his passing": "His passing has 'improved no end'.",
    "his fitness": "Fitness isn't mentioned.",
    "his attitude to the team": "Attitude isn't mentioned."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -793,7 +836,8 @@
    "he's always loved horror": "He used to hate horror.",
    "his friends are going to see it": "Friends aren't mentioned.",
    "it's very frightening": "It's more funny than scary."
-  }
+  },
+  "sk": "listening.reason"
  },
  {
   "type": "listen",
@@ -812,7 +856,8 @@
    "on Saturday": "Saturday he's helping his gran.",
    "next weekend": "Next weekend isn't mentioned.",
    "he can't go at all": "He can go on Sunday."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -831,7 +876,8 @@
    "difficult all the way": "The first half was a breeze.",
    "easy all the way": "He got stuck near the top.",
    "he didn't try it": "He did try it."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -850,7 +896,8 @@
    "after dinner": "That's what Kai offered, but Mum said before.",
    "tomorrow": "Tomorrow isn't mentioned.",
    "at the weekend": "The weekend isn't mentioned."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -869,7 +916,8 @@
    "£60": "£60 is what he paid.",
    "£80": "£80 was the full price.",
    "£140": "£140 adds the two."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -888,7 +936,8 @@
    "it's never allowed": "It's possible with a good reason.",
    "everyone gets an extension": "Only with a good reason.",
    "the deadline is Monday": "The deadline is Friday."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -907,7 +956,8 @@
    "by queuing at the door tonight": "Queuing tonight isn't mentioned.",
    "by buying from a friend": "A friend isn't mentioned.",
    "he can't get one at all": "Jo says 'not quite' sold out."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -926,7 +976,8 @@
    "he ran a long race": "A race isn't mentioned.",
    "he stayed up late gaming": "Gaming isn't mentioned.",
    "he has a cold": "Illness isn't mentioned."
-  }
+  },
+  "sk": "listening.reason"
  },
  {
   "type": "listen",
@@ -945,7 +996,8 @@
    "the cakes": "The cakes are amazing.",
    "the prices": "Prices aren't mentioned.",
    "the location of it": "Location isn't mentioned."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -964,7 +1016,8 @@
    "boring throughout": "She loved it later.",
    "gripping from page one": "The start was a struggle.",
    "she gave up on it halfway": "She kept reading."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -982,7 +1035,8 @@
    "the sports field is bigger": "Size isn't the reason given.",
    "the cliff was closed for repairs": "Repairs aren't mentioned.",
    "too many people came": "Crowds aren't mentioned."
-  }
+  },
+  "sk": "listening.reason"
  },
  {
   "type": "listen",
@@ -1000,7 +1054,8 @@
    "they're a natural talent": "'I wouldn't say I'm a natural.'",
    "they've stopped playing": "They play every evening.",
    "they now only play at weekends": "Every evening, not weekends."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1018,91 +1073,104 @@
    "it closed in May": "It was due to close in May, but it was extended.",
    "it has moved to a new museum": "No move is mentioned.",
    "it will open in September": "It's already open."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "If I hadn't missed the bus, I'd have been on time.",
   "answer": "If I hadn't missed the bus, I'd have been on time.",
-  "explain": "Third conditional: if + had + past participle, would have."
+  "explain": "Third conditional: if + had + past participle, would have.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "The results will be announced next week.",
   "answer": "The results will be announced next week.",
-  "explain": "Future passive: will be + announced."
+  "explain": "Future passive: will be + announced.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "She's been training for the marathon since January.",
   "answer": "She's been training for the marathon since January.",
-  "explain": "Present perfect continuous + since."
+  "explain": "Present perfect continuous + since.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "I'd rather you didn't tell anyone yet.",
   "answer": "I'd rather you didn't tell anyone yet.",
-  "explain": "I'd rather + past simple for someone else."
+  "explain": "I'd rather + past simple for someone else.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "By the time we arrived, the film had already started.",
   "answer": "By the time we arrived, the film had already started.",
-  "explain": "Past perfect: had + started."
+  "explain": "Past perfect: had + started.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "Not only did we win, but we also broke a record.",
   "answer": "Not only did we win, but we also broke a record.",
-  "explain": "Inversion after 'not only'."
+  "explain": "Inversion after 'not only'.",
+  "sk": "listening.dictation"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "The book is said to be based on a true story.",
   "answer": "The book is said to be based on a true story.",
-  "explain": "Passive report: is said to be."
+  "explain": "Passive report: is said to be.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "I wish I had practised more before the concert.",
   "answer": "I wish I had practised more before the concert.",
-  "explain": "Wish + past perfect for past regret."
+  "explain": "Wish + past perfect for past regret.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "Despite feeling nervous, she gave a brilliant speech.",
   "answer": "Despite feeling nervous, she gave a brilliant speech.",
-  "explain": "Despite + -ing."
+  "explain": "Despite + -ing.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "We should have booked the tickets earlier.",
   "answer": "We should have booked the tickets earlier.",
-  "explain": "Should have + past participle."
+  "explain": "Should have + past participle.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "Having finished his homework, he went outside.",
   "answer": "Having finished his homework, he went outside.",
-  "explain": "Perfect participle clause."
+  "explain": "Perfect participle clause.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "The more you practise, the better you get.",
   "answer": "The more you practise, the better you get.",
-  "explain": "The + comparative, the + comparative."
+  "explain": "The + comparative, the + comparative.",
+  "sk": "listening.build"
  },
  {
   "type": "listen",
@@ -1120,7 +1188,8 @@
    "£320": "£320 is this year's total.",
    "£400": "£400 would be eighty more, not less.",
    "£80": "£80 is the difference."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1138,7 +1207,8 @@
    "the music was poor": "Music isn't criticised.",
    "they ran out of money": "Money isn't mentioned.",
    "the weather was too hot": "Mud suggests rain, not heat."
-  }
+  },
+  "sk": "listening.reason"
  },
  {
   "type": "listen",
@@ -1156,7 +1226,8 @@
    "only beginners": "That's what the poster wrongly says.",
    "only advanced artists": "'Whatever their level.'",
    "only people who saw the poster": "The poster isn't a condition."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1174,7 +1245,8 @@
    "it's too expensive": "That's the brother's view.",
    "the equipment is poor": "They lend lots of equipment.",
    "they agree with the brother": "They disagree with him."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1192,7 +1264,8 @@
    "Tuesdays at four": "Tuesday is the old day.",
    "Thursdays at half three": "Half three was the old time.",
    "Tuesdays at half four": "The day and time are both wrong."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1210,7 +1283,8 @@
    "proper boots": "They wish they had.",
    "sandals": "Sandals aren't mentioned.",
    "wellies": "Wellies aren't mentioned."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1229,7 +1303,8 @@
    "no, she hates guitars": "She says 'go on then'.",
    "she isn't sure yet": "She answers clearly.",
    "yes, and to play all night": "She jokes about not playing one song all night."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1248,7 +1323,8 @@
    "not finishing the series": "He has finished.",
    "watching one a week": "The opposite of bingeing.",
    "falling asleep during it": "Sleep isn't mentioned."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1267,7 +1343,8 @@
    "Kai booked it": "He hasn't booked it.",
    "the dentist was closed": "Closure isn't mentioned.",
    "Mum booked it": "Kai will do it tomorrow."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1286,7 +1363,8 @@
    "she was sure she'd done well": "She was worried.",
    "she didn't go to it": "She took part.",
    "she didn't care about it": "She's clearly excited."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1305,7 +1383,8 @@
    "for any bus trip": "Only with more than eight trips.",
    "only for students": "Students aren't mentioned.",
    "for fewer than eight trips": "That's the opposite."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1324,63 +1403,72 @@
    "a new shop": "It isn't new.",
    "Gran": "Gran is admiring it.",
    "a market": "A market isn't mentioned."
-  }
+  },
+  "sk": "listening.place"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "The match has been called off owing to the snow.",
   "answer": "The match has been called off owing to the snow.",
-  "explain": "Called off = cancelled; owing to = because of."
+  "explain": "Called off = cancelled; owing to = because of.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "I'd have helped if you'd asked me.",
   "answer": "I'd have helped if you'd asked me.",
-  "explain": "Third conditional in speech: I'd have, you'd asked."
+  "explain": "Third conditional in speech: I'd have, you'd asked.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "She's used to getting up early for training.",
   "answer": "She's used to getting up early for training.",
-  "explain": "Be used to + -ing."
+  "explain": "Be used to + -ing.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "They had the roof repaired after the storm.",
   "answer": "They had the roof repaired after the storm.",
-  "explain": "Have something done."
+  "explain": "Have something done.",
+  "sk": "listening.dictation"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "No matter how hard I try, I can't whistle.",
   "answer": "No matter how hard I try, I can't whistle.",
-  "explain": "No matter how + adjective/adverb."
+  "explain": "No matter how + adjective/adverb.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "He apologised for being late again.",
   "answer": "He apologised for being late again.",
-  "explain": "Apologise for + -ing."
+  "explain": "Apologise for + -ing.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "The tickets, which cost ten pounds, sold out quickly.",
   "answer": "The tickets, which cost ten pounds, sold out quickly.",
-  "explain": "Non-defining relative clause with commas."
+  "explain": "Non-defining relative clause with commas.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "I'm looking forward to seeing the dolphins.",
   "answer": "I'm looking forward to seeing the dolphins.",
-  "explain": "Look forward to + -ing."
+  "explain": "Look forward to + -ing.",
+  "sk": "listening.build"
  },
  {
   "type": "listen",
@@ -1398,7 +1486,8 @@
    "2 p.m.": "Two was the plan before Leo's text.",
    "1 p.m.": "Nobody mentions one o'clock.",
    "4 p.m.": "An hour late makes it three, not four."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1416,7 +1505,8 @@
    "the terrifying atmosphere": "They expected it to be terrifying, but it wasn't.",
    "solving the puzzles alone": "They played as a team, not alone.",
    "finding the escape room": "Finding the room isn't mentioned."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1434,7 +1524,8 @@
    "the day it happens": "'It's still on Saturday.'",
    "the time it starts": "It's still in the morning.",
    "it has been cancelled": "It's moved, not cancelled."
-  }
+  },
+  "sk": "listening.change"
  },
  {
   "type": "listen",
@@ -1452,7 +1543,8 @@
    "it was as dull as most documentaries": "They say this one was an exception.",
    "they only watched half of it": "They watched it twice.",
    "it was too long to finish": "They finished it twice."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1470,7 +1562,8 @@
    "£300": "£300 is the animal shelter's share.",
    "£900": "£900 is the total raised.",
    "£1,200": "That's more than was raised."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1488,7 +1581,8 @@
    "they were sure they'd win a prize": "They almost didn't bother.",
    "all their friends entered too": "Friends aren't mentioned.",
    "they enter every single year": "They weren't going to enter at all."
-  }
+  },
+  "sk": "listening.reason"
  },
  {
   "type": "listen",
@@ -1506,7 +1600,8 @@
    "they are still lost in the forest": "They aren't — thanks to the map.",
    "they didn't take a phone with them": "They had the phone.",
    "the map on the phone was wrong": "The map worked."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1524,7 +1619,8 @@
    "the sharks are very dangerous": "Babies aren't scary, the speaker suggests.",
    "the aquarium has no sharks yet": "It has baby sharks.",
    "a shark film is showing there": "Films are only a comparison."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1543,7 +1639,8 @@
    "he doesn't like robotics": "He was planning to go.",
    "the workshop's been cancelled": "It's happening; he just can't go.",
    "the workshop is next month": "It's on Thursday and again next month."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1562,7 +1659,8 @@
    "£40": "£40 was the full price.",
    "£30": "That would be £10 off.",
    "£4": "£4 is the discount."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1581,7 +1679,8 @@
    "at the stadium": "Grace wanted that, but the tickets are expensive.",
    "at Grace's house": "'Yours' means Lucas's.",
    "in a café nearby": "A café isn't mentioned."
-  }
+  },
+  "sk": "listening.place"
  },
  {
   "type": "listen",
@@ -1600,7 +1699,8 @@
    "finish it at home first": "She wants to hear it now.",
    "read someone else's story": "She means his own story.",
    "wait until next lesson": "She says it's alright now."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1619,7 +1719,8 @@
    "he slept through his alarm": "He woke up but couldn't see.",
    "he saw dozens of meteors": "He saw nothing.",
    "he forgot to set his alarm": "He set it for two."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1638,7 +1739,8 @@
    "the time they get back": "They'll still be back by half past three.",
    "the place they're visiting": "The place isn't changed.",
    "nothing at all": "The day has changed."
-  }
+  },
+  "sk": "listening.change"
  },
  {
   "type": "listen",
@@ -1657,105 +1759,120 @@
    "Ollie forgot the sugar": "That's Zara's guess; Ollie says no.",
    "the lemons were bad": "The lemons aren't criticised.",
    "he followed a new recipe": "He didn't follow the recipe exactly."
-  }
+  },
+  "sk": "listening.reason"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "The museum is closed for repairs until further notice.",
   "answer": "The museum is closed for repairs until further notice.",
-  "explain": "Passive + until further notice."
+  "explain": "Passive + until further notice.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "We'd better leave now, or we'll miss the start.",
   "answer": "We'd better leave now, or we'll miss the start.",
-  "explain": "Had better + verb for advice."
+  "explain": "Had better + verb for advice.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "He suggested going to the aquarium instead.",
   "answer": "He suggested going to the aquarium instead.",
-  "explain": "Suggest + -ing."
+  "explain": "Suggest + -ing.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "If it rains tomorrow, the picnic will be held indoors.",
   "answer": "If it rains tomorrow, the picnic will be held indoors.",
-  "explain": "First conditional with a future passive."
+  "explain": "First conditional with a future passive.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "I've never seen such a beautiful sunset.",
   "answer": "I've never seen such a beautiful sunset.",
-  "explain": "Such + a + adjective + noun."
+  "explain": "Such + a + adjective + noun.",
+  "sk": "listening.dictation"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "She asked me whether I had finished my project.",
   "answer": "She asked me whether I had finished my project.",
-  "explain": "Reported question: asked whether + past perfect."
+  "explain": "Reported question: asked whether + past perfect.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "The game was so exciting that nobody wanted to leave.",
   "answer": "The game was so exciting that nobody wanted to leave.",
-  "explain": "So + adjective + that."
+  "explain": "So + adjective + that.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "You needn't bring any food to the party.",
   "answer": "You needn't bring any food to the party.",
-  "explain": "Needn't = it isn't necessary."
+  "explain": "Needn't = it isn't necessary.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "My bike was stolen while I was in the library.",
   "answer": "My bike was stolen while I was in the library.",
-  "explain": "Past passive + while + past continuous."
+  "explain": "Past passive + while + past continuous.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "Although it was raining, we went for a walk.",
   "answer": "Although it was raining, we went for a walk.",
-  "explain": "Although + clause for contrast."
+  "explain": "Although + clause for contrast.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "I wish I had brought my umbrella.",
   "answer": "I wish I had brought my umbrella.",
-  "explain": "wish + past perfect for a past regret."
+  "explain": "wish + past perfect for a past regret.",
+  "sk": "listening.build"
  },
  {
   "type": "order",
   "q": "Listen, then build the sentence you heard.",
   "say": "Had we left earlier, we wouldn't have missed it.",
   "answer": "Had we left earlier, we wouldn't have missed it.",
-  "explain": "Inverted third conditional."
+  "explain": "Inverted third conditional.",
+  "sk": "listening.build"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "The museum is closed for renovation until further notice.",
   "answer": "The museum is closed for renovation until further notice.",
-  "explain": "until further notice = until they tell us."
+  "explain": "until further notice = until they tell us.",
+  "sk": "listening.dictation"
  },
  {
   "type": "dictate",
   "q": "Listen and type what you hear.",
   "say": "Hardly anyone noticed that the clock had stopped.",
   "answer": "Hardly anyone noticed that the clock had stopped.",
-  "explain": "Hardly anyone = almost nobody."
+  "explain": "Hardly anyone = almost nobody.",
+  "sk": "listening.dictation"
  },
  {
   "type": "listen",
@@ -1774,7 +1891,8 @@
    "at eight": "“at eight” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "at half past eight": "“at half past eight” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "at nine": "“at nine” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1793,7 +1911,8 @@
    "drama": "“drama” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "both": "“both” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "neither": "“neither” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1812,7 +1931,8 @@
    "more examples": "“more examples” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "a shorter essay": "“a shorter essay” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "a new topic": "“a new topic” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1831,7 +1951,8 @@
    "He is very upset.": "“He is very upset.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "He is angry with Sara.": "“He is angry with Sara.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "He wants to buy tickets.": "“He wants to buy tickets.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.attitude"
  },
  {
   "type": "listen",
@@ -1850,7 +1971,8 @@
    "Don't feed the ducks at all.": "“Don't feed the ducks at all.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "Bread is fine in small amounts.": "“Bread is fine in small amounts.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "Bring your own seed.": "“Bring your own seed.” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.detail"
  },
  {
   "type": "listen",
@@ -1868,7 +1990,8 @@
    "all weekend": "“all weekend” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "only on Saturday": "“only on Saturday” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "next weekend": "“next weekend” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.number-time"
  },
  {
   "type": "listen",
@@ -1886,6 +2009,7 @@
    "£40": "“£40” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "£50": "“£50” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "£36": "“£36” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
-  }
+  },
+  "sk": "listening.number-time"
  }
 ]

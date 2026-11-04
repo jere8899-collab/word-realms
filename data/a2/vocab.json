@@ -14,7 +14,8 @@
    "pharmacy": "A pharmacy sells medicine.",
    "library": "A library lends books.",
    "bank": "A bank keeps money."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -31,7 +32,8 @@
    "hungry": "Hungry means you need food.",
    "angry": "Angry means cross, not sleepy.",
    "thirsty": "Thirsty means you need a drink."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -48,7 +50,8 @@
    "free": "Free costs nothing, even less than cheap.",
    "easy": "Easy is the opposite of difficult.",
    "heavy": "Heavy is the opposite of light."
-  }
+  },
+  "sk": "vocab.opposite"
  },
  {
   "type": "mcq",
@@ -65,7 +68,8 @@
    "chef": "A chef cooks the food in the kitchen.",
    "farmer": "A farmer grows food.",
    "pilot": "A pilot flies planes."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -82,7 +86,8 @@
    "borrow": "Borrow is what YOU do: Can I borrow some money?",
    "spend": "Spend means use money to buy things.",
    "owe": "Owe means you must pay someone back."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -99,7 +104,8 @@
    "make": "We make a cake, but we do homework.",
    "take": "Take is for photos or buses.",
    "play": "Play is for games and sports."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -116,7 +122,8 @@
    "did": "We do homework, not photos.",
    "made": "Make a photo isn't natural English.",
    "had": "Had a photo means owned one."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -133,7 +140,8 @@
    "early": "Early would make you arrive early.",
    "fast": "Fast would make you arrive early too.",
    "empty": "Empty means no people, not late."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -150,7 +158,8 @@
    "strawberry": "A strawberry is a fruit.",
    "cherry": "A cherry is a fruit.",
    "lemon": "A lemon is a fruit."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -167,7 +176,8 @@
    "sunglasses": "Sunglasses are for sunny days.",
    "swimsuit": "A swimsuit is for swimming.",
    "sandals": "Sandals are for hot days."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -184,7 +194,8 @@
    "cousin": "A cousin is your uncle's child.",
    "nephew": "A nephew is your brother's or sister's son.",
    "grandfather": "A grandfather is your mum's or dad's dad."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -201,7 +212,8 @@
    "interesting": "Interesting describes the thing: History is interesting.",
    "bored": "Bored doesn't fit 'I love old castles'.",
    "boring": "Boring describes a thing, and doesn't fit."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -218,7 +230,8 @@
    "close": "Close would make it hotter.",
    "turn": "We turn a key or a tap, not a window.",
    "break": "Break would be naughty!"
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -235,7 +248,8 @@
    "sad": "Sad makes you cry.",
    "scary": "Scary makes you afraid.",
    "boring": "Boring doesn't make you laugh."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -252,7 +266,8 @@
    "stadium": "A stadium is for sport and concerts.",
    "airport": "An airport is for planes.",
    "garage": "A garage is for cars."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -269,7 +284,8 @@
    "get on": "Get on means go into the bus.",
    "get up": "Get up means leave your bed.",
    "get in": "Get in is for cars, not buses."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -286,7 +302,8 @@
    "off": "Turn off makes it darker.",
    "up": "Turn up is for volume.",
    "down": "Turn down is for volume or an offer."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -303,7 +320,8 @@
    "hungry": "Hungry means you need food.",
    "sleepy": "Sleepy means you need sleep.",
    "angry": "Angry is a feeling, not about water."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -320,7 +338,8 @@
    "passed": "Passed isn't used with holiday like this.",
    "made": "Make a holiday isn't natural.",
    "stayed": "Stayed needs 'in': We stayed in Scotland."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -337,7 +356,8 @@
    "wash": "We wash our hands or face.",
    "clean up": "Clean up is for a messy room.",
    "comb": "We comb our hair."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -354,7 +374,8 @@
    "finishes": "A film or lesson finishes, not a shop.",
    "stops": "A bus stops; a shop closes.",
    "ends up": "End up means arrive somewhere in the end."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -371,7 +392,8 @@
    "nurse": "A nurse helps doctors with people.",
    "dentist": "A dentist looks after teeth.",
    "chemist": "A chemist sells medicine."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -388,7 +410,8 @@
    "see": "See doesn't go with 'for'.",
    "watch": "Watch is for TV or games.",
    "find": "Find doesn't go with 'for'. Find them."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -405,7 +428,8 @@
    "empty": "Empty is the opposite of full.",
    "slow": "Slow is the opposite of fast.",
    "calm down": "Calm down is a verb: Calm down, please."
-  }
+  },
+  "sk": "vocab.opposite"
  },
  {
   "type": "mcq",
@@ -422,7 +446,8 @@
    "made": "We don't make a cold.",
    "took": "We take medicine, not a cold.",
    "did": "We don't do a cold."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -439,7 +464,8 @@
    "boots": "Boots go on your feet.",
    "scarves": "Scarves go around your neck.",
    "belts": "Belts go around your waist."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -456,7 +482,8 @@
    "put": "Put on is for getting dressed, not testing in a shop.",
    "wear": "Wear doesn't go with 'on' here.",
    "dress": "Dress doesn't go with 'on this dress'."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -473,7 +500,8 @@
    "sunny": "Sunny wouldn't blow your hat away.",
    "foggy": "Foggy means you can't see far.",
    "snowing": "Snowing is a verb: It's snowing."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -490,7 +518,8 @@
    "young": "Young is the opposite.",
    "modern": "Modern is for things, not people's age.",
    "early": "Early is about time, not age."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -507,7 +536,8 @@
    "fill up": "Fill up is for a glass or a car's tank.",
    "write on": "Write on a form isn't how we say it.",
    "put in": "Put in means place inside."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -524,7 +554,8 @@
    "order": "Order is for food: I'd like to order pizza.",
    "keep": "Keep means not give away.",
    "buy": "You can't buy a restaurant table!"
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -541,7 +572,8 @@
    "bookshop": "A bookshop sells books; you don't borrow them.",
    "bakery": "A bakery sells bread.",
    "museum": "A museum shows old things."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -558,7 +590,8 @@
    "bakery": "A bakery sells bread.",
    "post office": "A post office sends letters.",
    "garage": "A garage fixes cars."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -575,7 +608,8 @@
    "police station": "The police station is for the police.",
    "pharmacy": "A pharmacy sells medicine.",
    "stadium": "A stadium is for sport."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -592,7 +626,8 @@
    "airport": "Planes leave from an airport.",
    "library": "A library is quiet, for books.",
    "hospital": "A hospital is for sick people."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -609,7 +644,8 @@
    "station": "Trains use a station.",
    "harbour": "Boats use a harbour.",
    "bus stop": "Buses stop at a bus stop."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -626,7 +662,8 @@
    "bored": "Bored means nothing interesting is happening.",
    "proud": "Proud is a good feeling about something you did.",
    "angry": "Angry means very cross."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -643,7 +680,8 @@
    "nervous": "Nervous is how you feel before the test.",
    "lonely": "Lonely means you're alone and sad.",
    "upset": "Upset means sad or worried."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -660,7 +698,8 @@
    "boring": "Boring describes the thing, not your feeling.",
    "busy": "Busy means you have lots to do.",
    "excited": "Excited means looking forward to something."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -677,7 +716,8 @@
    "bored": "Bored is how you feel.",
    "exciting": "An exciting film keeps you awake.",
    "frightened": "Frightened is how a person feels."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -694,7 +734,8 @@
    "exciting": "Exciting describes the thing (an exciting party).",
    "tired": "Tired means you need rest.",
    "worried": "Worried means you think something bad may happen."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -711,7 +752,8 @@
    "relaxed": "Relaxed means calm, not worried.",
    "proud": "Proud comes after you do well.",
    "sleepy": "Sleepy means tired."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -728,7 +770,8 @@
    "put on": "Put on is the opposite.",
    "get up": "Get up means leave your bed.",
    "turn off": "Turn off is for machines and lights."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -745,7 +788,8 @@
    "get on": "Get on is for buses and trains.",
    "give up": "Give up means stop trying.",
    "look after": "Look after means take care of."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -762,7 +806,8 @@
    "look for": "Look for means try to find.",
    "look at": "Look at means turn your eyes to.",
    "look like": "Look like means seem similar to."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -779,7 +824,8 @@
    "give back": "Give back means return something.",
    "get up": "Get up means out of bed.",
    "pick up": "Pick up means lift."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -796,7 +842,8 @@
    "take off": "Take off is for clothes.",
    "wake up": "Wake up means stop sleeping.",
    "go out": "Go out means leave the house."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -813,7 +860,8 @@
    "turn up": "Turn up makes it louder.",
    "turn into": "Turn into means become.",
    "turn around": "Turn around means face the other way."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -830,7 +878,8 @@
    "soon": "Soon means in a short time.",
    "fast": "Fast is about speed.",
    "slow": "Slow is about speed."
-  }
+  },
+  "sk": "vocab.opposite"
  },
  {
   "type": "mcq",
@@ -847,7 +896,8 @@
    "soft": "Soft is the opposite of hard.",
    "thin": "Thin is the opposite of thick or fat.",
    "easy": "Easy is the opposite of difficult."
-  }
+  },
+  "sk": "vocab.opposite"
  },
  {
   "type": "mcq",
@@ -864,7 +914,8 @@
    "hard": "Hard means difficult.",
    "simple-minded": "Simple-minded is about people, and unkind.",
    "tricky": "Tricky means difficult."
-  }
+  },
+  "sk": "vocab.opposite"
  },
  {
   "type": "mcq",
@@ -881,7 +932,8 @@
    "cold": "Cold is the opposite of hot.",
    "clean": "Clean is the opposite of dirty.",
    "warm": "Warm is about temperature."
-  }
+  },
+  "sk": "vocab.opposite"
  },
  {
   "type": "mcq",
@@ -898,7 +950,8 @@
    "loose": "Loose means not tight (spelling trap!).",
    "fail": "Fail is for tests, not games.",
    "miss": "Miss means not hit or not catch."
-  }
+  },
+  "sk": "vocab.opposite"
  },
  {
   "type": "mcq",
@@ -915,7 +968,8 @@
    "remind": "Remind means help someone remember.",
    "learn": "Learn means get new knowledge.",
    "know": "Know means have the information."
-  }
+  },
+  "sk": "vocab.opposite"
  },
  {
   "type": "mcq",
@@ -932,7 +986,8 @@
    "remember": "Remember is what you do yourself.",
    "forget": "Forget is the opposite.",
    "repeat": "Repeat means say again."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -949,7 +1004,8 @@
    "say": "Say needs 'to': say to me.",
    "look": "Look needs at.",
    "see": "See is what your eyes do."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -966,7 +1022,8 @@
    "say": "Say doesn't take a person directly.",
    "speak": "Speak is about languages or talking.",
    "talk": "Talk needs to/about."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -983,7 +1040,8 @@
    "do": "We say do homework, not do your bed.",
    "get": "Get doesn't go with bed here.",
    "put": "Put needs a place."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -1000,7 +1058,8 @@
    "make": "Make a picnic means prepare the food, but we say have a picnic.",
    "do": "Do doesn't go with picnic.",
    "take": "Take doesn't go with picnic."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -1017,7 +1076,8 @@
    "made": "We don't say make fun here; make fun of is unkind.",
    "did": "Do doesn't go with fun.",
    "got": "Got isn't used with fun."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -1034,7 +1094,8 @@
    "do": "We don't say do a noise.",
    "have": "Have doesn't go with noise.",
    "give": "Give doesn't go with noise."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -1051,7 +1112,8 @@
    "make": "Make doesn't go with washing-up.",
    "have": "Have doesn't go with washing-up.",
    "take": "Take doesn't go with washing-up."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -1068,7 +1130,8 @@
    "make": "We don't say make a photo in English.",
    "do": "Do doesn't go with photo.",
    "draw": "You draw a picture, not a photo."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -1085,7 +1148,8 @@
    "lake": "A lake is water with land all around.",
    "ocean": "An ocean is a huge sea.",
    "hill": "A hill is a small mountain."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1102,7 +1166,8 @@
    "valley": "A valley is low land between hills.",
    "island": "An island has water all around it.",
    "field": "A field is flat land with grass."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1119,7 +1184,8 @@
    "ocean": "An ocean is the water itself.",
    "desert": "A desert is dry and sandy.",
    "forest": "A forest has many trees."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1136,7 +1202,8 @@
    "dessert": "Dessert is pudding (spelling trap!).",
    "jungle": "A jungle is wet and green.",
    "beach": "A beach is next to the sea."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1153,7 +1220,8 @@
    "desert": "Desert is dry, sandy land.",
    "starter": "A starter comes first.",
    "breakfast": "Breakfast is the morning meal."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1170,7 +1238,8 @@
    "desert": "A desert is dry.",
    "village": "A village is a small town.",
    "farm": "A farm grows food."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1187,7 +1256,8 @@
    "wash": "You wash dishes, not plants.",
    "drink": "You drink water yourself.",
    "pour": "Pour needs an object: pour water on."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1204,7 +1274,8 @@
    "put": "Put needs a thing and a place.",
    "make": "Make the table means build it.",
    "do": "Do doesn't go with table."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -1221,7 +1292,8 @@
    "coin": "Coin is one piece of money.",
    "purse": "A purse holds money.",
    "price": "A price is how much something costs."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1238,7 +1310,8 @@
    "pay": "You pay for something.",
    "buy": "You buy something.",
    "spend": "You spend money."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1255,7 +1328,8 @@
    "paid": "Pay needs for: paid for sweets.",
    "cost": "Cost is for the thing: the sweets cost £2.",
    "bought": "Bought needs the thing directly, not money on."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1272,7 +1346,8 @@
    "prize": "A prize is something you win.",
    "money": "Money is what you pay with.",
    "bill": "A bill is the paper that tells you what to pay."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1289,7 +1364,8 @@
    "price": "Price is how much something costs.",
    "place-card": "A place-card shows where to sit.",
    "score": "Score is the points; you win a prize."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1306,7 +1382,8 @@
    "lift": "A lift takes you up and down.",
    "leave": "Leave means go away.",
    "light": "Light is for seeing."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1323,7 +1400,8 @@
    "strong": "Strong means powerful.",
    "street": "Street is a road.",
    "strange": "Strange means unusual."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -1340,7 +1418,8 @@
    "inside": "Inside means in it.",
    "under": "Under means below.",
    "behind of": "We say behind, not behind of."
-  }
+  },
+  "sk": "vocab.opposite"
  },
  {
   "type": "mcq",
@@ -1357,7 +1436,8 @@
    "have missed": "Miss is for buses or people you want to see.",
    "have found": "Found is the opposite: you have them again.",
    "have kept": "Kept means you still have them."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1374,7 +1454,8 @@
    "lose": "You lose things, not buses.",
    "lost": "Lost is past.",
    "leave": "Leave means go away from."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1391,7 +1472,8 @@
    "diary": "A diary is where you write your day.",
    "comic": "A comic tells a story in pictures.",
    "menu": "A menu lists food."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1408,7 +1490,8 @@
    "dairy": "Dairy is milk and cheese (spelling trap!).",
    "dictionary": "A dictionary explains words.",
    "calendar": "A calendar shows dates."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1425,7 +1508,8 @@
    "map": "A map shows places.",
    "recipe": "A recipe tells you how to cook.",
    "list": "A list is any set of things."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1442,7 +1526,8 @@
    "receipt": "A receipt is the paper after you pay.",
    "menu": "A menu is in a restaurant.",
    "report": "A report gives information."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1459,7 +1544,8 @@
    "recipe": "A recipe is for cooking.",
    "ticket": "A ticket lets you in.",
    "price": "The price is the cost."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1476,7 +1562,8 @@
    "passport": "A passport is for other countries.",
    "menu": "A menu is for food.",
    "stamp": "A stamp goes on a letter."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1493,7 +1580,8 @@
    "cough": "A cough is a noise from your throat.",
    "headache": "A headache is pain in your head.",
    "toothache": "Toothache is pain in your tooth."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1510,7 +1598,8 @@
    "sore throat": "A sore throat hurts when you swallow.",
    "earache": "Earache is in your ear.",
    "backache": "Backache is in your back."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -1527,7 +1616,8 @@
    "reader": "A reader reads books.",
    "painter": "A painter paints.",
    "builder": "A builder builds houses."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1544,7 +1634,8 @@
    "fisherman": "A fisherman catches fish.",
    "plumber": "A plumber fixes pipes.",
    "mechanic": "A mechanic fixes cars."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1561,7 +1652,8 @@
    "dentist": "A dentist looks after teeth.",
    "chef": "A chef cooks.",
    "pilot": "A pilot flies planes."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1578,7 +1670,8 @@
    "nurse": "A nurse helps doctors.",
    "vet": "A vet treats animals.",
    "barber": "A barber cuts hair."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1595,7 +1688,8 @@
    "sunny": "Sunny means bright with sun.",
    "dry": "Dry means no rain.",
    "bright": "Bright means lots of light."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1612,7 +1706,8 @@
    "breeze": "A breeze is a light wind.",
    "shower": "A shower is short, light rain.",
    "rainbow": "A rainbow comes after rain."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -1629,7 +1724,8 @@
    "weather map": "A weather map only shows the weather, it doesn't tell you.",
    "news story": "A news story is about events.",
    "calendar": "A calendar shows dates."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1646,7 +1742,8 @@
    "cupboard in the kitchen": "Kitchen cupboards hold food and plates.",
    "fridge": "A fridge keeps food cold.",
    "bookcase": "A bookcase holds books."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1663,7 +1760,8 @@
    "oven": "An oven makes food hot.",
    "sink": "A sink is for washing up.",
    "drawer": "A drawer is for small things."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1680,7 +1778,8 @@
    "fridge": "A fridge keeps things cold.",
    "freezer": "A freezer freezes things.",
    "dishwasher": "A dishwasher cleans plates."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1697,7 +1796,8 @@
    "travel": "Travel is a verb or uncountable noun.",
    "journey home": "A journey home is going back.",
    "holiday": "A holiday is time off school."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1714,7 +1814,8 @@
    "fill up": "Fill up is for petrol or a glass.",
    "wrap": "Wrap is for presents.",
    "load": "Load is for lorries and machines."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1731,7 +1832,8 @@
    "put on": "Put on is for clothes.",
    "set off": "Set off means start a journey.",
    "pick up": "Pick up means lift."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1748,7 +1850,8 @@
    "set up": "Set up means prepare something.",
    "put off": "Put off means delay.",
    "took off": "Planes take off."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -1765,7 +1868,8 @@
    "set off": "People set off; planes take off.",
    "get off": "You get off a bus.",
    "turn off": "Turn off is for lights."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1782,7 +1886,8 @@
    "fireman": "A fireman puts out fires.",
    "cleaner": "A cleaner cleans.",
    "waiter": "A waiter serves food."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1799,7 +1904,8 @@
    "try on": "Try on is for clothes.",
    "find out": "Find out means discover.",
    "work out": "Work out means exercise or solve."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1816,7 +1922,8 @@
    "look after": "Look after means take care of.",
    "try on": "Try on is for clothes.",
    "give up": "Give up means stop trying."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -1833,7 +1940,8 @@
    "make up": "Make up means invent.",
    "take off": "Take off is for clothes or planes.",
    "turn on": "Turn on is for machines."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -1850,7 +1958,8 @@
    "make out": "Make out means see with difficulty.",
    "look up": "Look up is for a dictionary.",
    "fill in": "Fill in is for forms."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -1867,7 +1976,8 @@
    "look … for": "Look for means search for something lost.",
    "look … after": "Look after means take care of.",
    "look … at": "Look at means turn your eyes to."
-  }
+  },
+  "sk": "vocab.phrasal"
  },
  {
   "type": "mcq",
@@ -1884,7 +1994,8 @@
    "selfish": "Selfish is the opposite.",
    "lazy": "Lazy means doesn't want to work.",
    "shy": "Shy means nervous with new people."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1901,235 +2012,274 @@
    "friendly": "Friendly people enjoy meeting others.",
    "brave": "Brave means not afraid of danger.",
    "rude": "Rude means not polite."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "spell",
   "q": "Spell the word: a place where you borrow books",
   "answer": "library",
-  "explain": "li-brar-y: library."
+  "explain": "li-brar-y: library.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: the day after Monday",
   "answer": "tuesday",
-  "explain": "Tuesday (u-e-s)."
+  "explain": "Tuesday (u-e-s).",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: you wear them on your eyes to see better",
   "answer": "glasses",
-  "explain": "glasses: double s."
+  "explain": "glasses: double s.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: a doctor for animals",
   "answer": "vet",
-  "explain": "vet."
+  "explain": "vet.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: the opposite of 'cheap'",
   "answer": "expensive",
-  "explain": "ex-pen-sive."
+  "explain": "ex-pen-sive.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: the meal in the middle of the day",
   "answer": "lunch",
-  "explain": "lunch."
+  "explain": "lunch.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: a very big, grey animal with a long nose",
   "answer": "elephant",
-  "explain": "el-e-phant: ph says f."
+  "explain": "el-e-phant: ph says f.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: the season after spring",
   "answer": "summer",
-  "explain": "summer: double m."
+  "explain": "summer: double m.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: a person who looks after your teeth",
   "answer": "dentist",
-  "explain": "A dentist checks and cleans your teeth."
+  "explain": "A dentist checks and cleans your teeth.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: the room where you cook",
   "answer": "kitchen",
-  "explain": "We cook food in the kitchen."
+  "explain": "We cook food in the kitchen.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: a big group of trees",
   "answer": "forest",
-  "explain": "A forest has lots and lots of trees."
+  "explain": "A forest has lots and lots of trees.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: the opposite of cheap",
   "answer": "expensive",
-  "explain": "Cheap costs a little; expensive costs a lot."
+  "explain": "Cheap costs a little; expensive costs a lot.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: you use it to take photos",
   "answer": "camera",
-  "explain": "A camera takes photos."
+  "explain": "A camera takes photos.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: the day before today",
   "answer": "yesterday",
-  "explain": "Today, yesterday, tomorrow: yesterday was the day before today."
+  "explain": "Today, yesterday, tomorrow: yesterday was the day before today.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: a place where you see animals from all over the world",
   "answer": "zoo",
-  "explain": "At the zoo you can see lions, monkeys and penguins."
+  "explain": "At the zoo you can see lions, monkeys and penguins.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: a person who flies a plane",
   "answer": "pilot",
-  "explain": "A pilot flies a plane."
+  "explain": "A pilot flies a plane.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: the season after winter",
   "answer": "spring",
-  "explain": "Winter, spring, summer, autumn: spring comes after winter."
+  "explain": "Winter, spring, summer, autumn: spring comes after winter.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: you put it on your head when it is cold",
   "answer": "hat",
-  "explain": "A hat keeps your head warm."
+  "explain": "A hat keeps your head warm.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: very, very good",
   "answer": "excellent",
-  "explain": "Excellent means very, very good."
+  "explain": "Excellent means very, very good.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: a short sleep in the day",
   "answer": "nap",
-  "explain": "Babies often have a nap after lunch."
+  "explain": "Babies often have a nap after lunch.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: a ticket to fly somewhere, and the trip itself",
   "answer": "flight",
-  "explain": "Our flight to Spain took two hours."
+  "explain": "Our flight to Spain took two hours.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: the opposite of borrow: you give something for a short time",
   "answer": "lend",
-  "explain": "I lend you my pen; you borrow my pen."
+  "explain": "I lend you my pen; you borrow my pen.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: an animal with a long neck",
   "answer": "giraffe",
-  "explain": "Giraffes have very long necks."
+  "explain": "Giraffes have very long necks.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: a person who cuts your hair",
   "answer": "hairdresser",
-  "explain": "The hairdresser gave me a short summer haircut."
+  "explain": "The hairdresser gave me a short summer haircut.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: not dangerous",
   "answer": "safe",
-  "explain": "Safe means nothing bad will happen."
+  "explain": "Safe means nothing bad will happen.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: the number after nineteen",
   "answer": "twenty",
-  "explain": "Nineteen, twenty, twenty-one."
+  "explain": "Nineteen, twenty, twenty-one.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: you wear it on your wrist to know the time",
   "answer": "watch",
-  "explain": "A watch shows the time on your wrist."
+  "explain": "A watch shows the time on your wrist.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: the feeling when you want to drink",
   "answer": "thirsty",
-  "explain": "When you are thirsty, you want a drink."
+  "explain": "When you are thirsty, you want a drink.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: a meal outside on a blanket",
   "answer": "picnic",
-  "explain": "We had a picnic in the park with sandwiches."
+  "explain": "We had a picnic in the park with sandwiches.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: a place to swim indoors",
   "answer": "pool",
-  "explain": "A swimming pool is a place to swim."
+  "explain": "A swimming pool is a place to swim.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: very tired",
   "answer": "exhausted",
-  "explain": "After the long race we were exhausted."
+  "explain": "After the long race we were exhausted.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: not loud",
   "answer": "quiet",
-  "explain": "Please be quiet in the library."
+  "explain": "Please be quiet in the library.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: the person who brings letters",
   "answer": "postman",
-  "explain": "The postman brings letters to our house."
+  "explain": "The postman brings letters to our house.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: the opposite of win",
   "answer": "lose",
-  "explain": "Win and lose are opposites."
+  "explain": "Win and lose are opposites.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: a sweet food made on your birthday",
   "answer": "cake",
-  "explain": "We eat birthday cake with candles."
+  "explain": "We eat birthday cake with candles.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: something you find funny makes you do this",
   "answer": "laugh",
-  "explain": "A funny joke makes you laugh."
+  "explain": "A funny joke makes you laugh.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: the place where planes take off",
   "answer": "airport",
-  "explain": "Planes take off and land at the airport."
+  "explain": "Planes take off and land at the airport.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: twelve o'clock in the daytime",
   "answer": "midday",
-  "explain": "Midday is twelve o'clock in the daytime, around lunchtime."
+  "explain": "Midday is twelve o'clock in the daytime, around lunchtime.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "picq",
@@ -2152,7 +2302,8 @@
    "a boy running fast": "This boy is running fast. He has lots of energy, so he isn't sleepy.",
    "a face laughing with its eyes shut": "This face is laughing at something funny. It is wide awake.",
    "a boy in a chef's hat": "This boy is ready to cook dinner, not ready for bed."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2175,7 +2326,8 @@
    "a round face with rosy cheeks": "This face is smiling happily, so it isn't worried.",
    "a child sitting cross-legged, eyes closed": "This child is sitting quietly and feels calm and peaceful.",
    "a face with little hearts around it": "The hearts show this face loves something. It feels happy, not worried."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2198,7 +2350,8 @@
    "a boy in a T-shirt and shorts": "A T-shirt and shorts are for hot, sunny days. He would be very cold!",
    "a mermaid with a shiny tail": "A mermaid lives in the sea. She isn't wearing warm clothes for snow.",
    "a girl in a red silk dress": "A thin silk dress is pretty, but it won't keep you warm in the snow."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2221,7 +2374,8 @@
    "an hourglass with sand": "An hourglass shows how much time has passed. It can't show you the way.",
    "a little purple teapot": "A teapot makes tea. It doesn't help you find the path.",
    "a calendar page": "A calendar shows the days and months, not the paths in a forest."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2244,7 +2398,8 @@
    "a building with tall columns": "That's a museum. You visit it in the day to see old things.",
    "a little shop with a heart": "That's a shop. You buy things there, but you don't sleep there.",
    "a yellow school bus": "That's a school bus. It takes you to school, not camping."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2267,7 +2422,8 @@
    "a boy in shiny armour with a sword": "A knight fights dragons in stories. He doesn't cook in a restaurant.",
    "a child in a white space suit": "An astronaut flies into space, not into a kitchen.",
    "a girl dancing in a dress": "A dancer dances on a stage. She doesn't cook the food."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2290,7 +2446,8 @@
    "an orange fox": "Look at the fox's eyes. There are no glasses on its face.",
    "a black and white panda": "The panda has black patches round its eyes, but no glasses.",
    "a grey penguin": "The penguin has big eyes, but it isn't wearing glasses."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2313,7 +2470,8 @@
    "a sun peeping out from a cloud": "The sun is coming out, so the weather is getting brighter, not rainy.",
    "a rainbow between two clouds": "A rainbow comes after the rain, when the sun shines again.",
    "a smiling yellow sun": "A bright sun means a sunny day. You won't need an umbrella."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2336,7 +2494,8 @@
    "a pink cap": "You wear a cap on your head, not on your feet.",
    "heart-shaped sunglasses": "Sunglasses go on your eyes when it's sunny.",
    "a blue bow tie": "A bow tie goes round your neck to look smart."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2359,7 +2518,8 @@
    "a yellow banana": "A banana is a fruit. It grows on a tree.",
    "a bunch of grapes": "Grapes are fruit. They grow in bunches.",
    "two red cherries": "Cherries are small, sweet fruit."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2382,7 +2542,8 @@
    "an orange ball with black lines": "That's a basketball. You throw it into a hoop.",
    "a black and white ball": "That's a football. You kick it into a goal.",
    "a fuzzy green ball": "That's a tennis ball. Tennis has a net too, but you hit a ball, not a shuttlecock."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2405,7 +2566,8 @@
    "a calendar page": "A calendar shows days, not the seconds of a race.",
    "a gold medal": "You win a medal at the end of a race, but it doesn't tell the time.",
    "a pink megaphone": "A megaphone makes your voice loud, but it doesn't time the race."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2428,7 +2590,8 @@
    "a boy in shiny armour with a sword": "A knight rides a horse and fights with a sword. He doesn't sail ships.",
    "a boy in a green vest with a bag": "This explorer walks in the forest, not across the sea.",
    "a girl in a pink apron with a whisk": "This girl is ready to bake cakes, not to sail a ship."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2451,7 +2614,8 @@
    "a boy jumping high, a present flying": "This boy is jumping high with lots of energy. He isn't tired at all.",
    "a boy laughing as he hugs a puppy": "This boy is laughing and playing with a puppy. He looks wide awake and happy.",
    "a boy gazing up at a shooting star": "This boy is looking up at a shooting star with big, wide eyes. He isn't sleepy."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2474,7 +2638,8 @@
    "a girl holding up a gold trophy": "This girl has won a trophy. She is happy and proud, not bored.",
    "a boy tangled up in kite string": "This boy is cross because the kite string is in a knot. Something is happening!",
    "a boy jumping high, a present flying": "This boy is jumping for joy. He is excited, not bored."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2497,7 +2662,8 @@
    "a girl holding up a gold trophy": "This girl is smiling with her prize. She feels happy, not afraid.",
    "a boy laughing as he hugs a puppy": "This boy is laughing with his puppy. He feels safe and happy.",
    "a child sitting cross-legged, eyes closed": "This child is sitting quietly with closed eyes. She feels calm, not afraid."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2520,7 +2686,8 @@
    "a girl looking down at a dropped ice cream": "This girl looks sad. Her ice cream fell on the ground.",
    "a girl resting her chin on her hand at a desk": "This girl looks bored at her desk. She hasn't won anything.",
    "a boy sitting all alone on a bench": "This boy is sitting alone and looks sad, not pleased with himself."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2543,7 +2710,8 @@
    "a girl hugging a kitten": "This girl is smiling and hugging a kitten. She isn't angry.",
    "a round face with rosy cheeks": "This round face is smiling. It looks happy, not angry.",
    "big Z Z Z letters": "Zzz means someone is fast asleep, not angry."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -2566,6 +2734,7 @@
    "a boy jumping high, a present flying": "This boy is jumping and waving. He isn't hiding at all.",
    "a girl holding up a gold trophy": "This girl is holding up her prize for everyone to see. She isn't shy.",
    "a face laughing with its eyes shut": "This face is laughing out loud. It isn't hiding or quiet."
-  }
+  },
+  "sk": "vocab.picture"
  }
 ]

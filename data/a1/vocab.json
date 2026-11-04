@@ -15,7 +15,8 @@
    "banana": "“banana” is something different. Look again: this is a apple.",
    "orange": "“orange” is something different. Look again: this is a apple.",
    "grape": "“grape” is something different. Look again: this is a apple."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "mcq",
@@ -33,7 +34,8 @@
    "cat": "“cat” is something different. Look again: this is a dog.",
    "horse": "“horse” is something different. Look again: this is a dog.",
    "bird": "“bird” is something different. Look again: this is a dog."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "mcq",
@@ -51,7 +53,8 @@
    "school": "“school” is something different. Look again: this is a house.",
    "shop": "“shop” is something different. Look again: this is a house.",
    "car": "“car” is something different. Look again: this is a house."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "mcq",
@@ -69,7 +72,8 @@
    "moon": "“moon” is something different. Look again: this is a sun.",
    "star": "“star” is something different. Look again: this is a sun.",
    "rain": "“rain” is something different. Look again: this is a sun."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "mcq",
@@ -87,7 +91,8 @@
    "pens": "“pens” is something different. Look again: this is a books.",
    "bags": "“bags” is something different. Look again: this is a books.",
    "desks": "“desks” is something different. Look again: this is a books."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "mcq",
@@ -105,7 +110,8 @@
    "bus": "“bus” is something different. Look again: this is a bike.",
    "train": "“train” is something different. Look again: this is a bike.",
    "car": "“car” is something different. Look again: this is a bike."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "mcq",
@@ -123,7 +129,8 @@
    "cheese": "“cheese” is something different. Look again: this is a bread.",
    "milk": "“milk” is something different. Look again: this is a bread.",
    "egg": "“egg” is something different. Look again: this is a bread."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "mcq",
@@ -141,7 +148,8 @@
    "hat": "“hat” is something different. Look again: this is a shoe.",
    "sock": "“sock” is something different. Look again: this is a shoe.",
    "coat": "“coat” is something different. Look again: this is a shoe."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "mcq",
@@ -159,7 +167,8 @@
    "frog": "“frog” is something different. Look again: this is a fish.",
    "duck": "“duck” is something different. Look again: this is a fish.",
    "cow": "“cow” is something different. Look again: this is a fish."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "mcq",
@@ -177,7 +186,8 @@
    "snowy": "“snowy” is something different. Look again: this is a rainy.",
    "windy": "“windy” is something different. Look again: this is a rainy.",
    "sunny": "“sunny” is something different. Look again: this is a rainy."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "mcq",
@@ -195,7 +205,8 @@
    "pizza": "“pizza” is something different. Look again: this is a cake.",
    "soup": "“soup” is something different. Look again: this is a cake.",
    "salad": "“salad” is something different. Look again: this is a cake."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "mcq",
@@ -212,7 +223,8 @@
    "tall": "Tall is about height: a tall tree. Its opposite is short.",
    "long": "Long is about length. Its opposite is short.",
    "old": "Old is about age. Its opposite is new or young."
-  }
+  },
+  "sk": "vocab.opposite"
  },
  {
   "type": "mcq",
@@ -229,7 +241,8 @@
    "Thursday": "Thursday comes after Wednesday.",
    "Friday": "Friday comes later in the week.",
    "Sunday": "Sunday is the last day of the week."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -247,7 +260,8 @@
    "cup": "A cup is for drinking.",
    "door": "A door is for going in and out.",
    "window": "A window is for looking out."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "mcq",
@@ -265,7 +279,8 @@
    "20": "20 is twenty.",
    "2": "2 is two.",
    "11": "11 is eleven."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "mcq",
@@ -283,7 +298,8 @@
    "doctor": "A doctor helps sick people.",
    "teacher": "A teacher works in a school.",
    "driver": "A driver drives a car or bus."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "mcq",
@@ -301,7 +317,8 @@
    "cherry": "“cherry” is something different. Look again: this is a strawberry.",
    "lemon": "“lemon” is something different. Look again: this is a strawberry.",
    "pear": "“pear” is something different. Look again: this is a strawberry."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "mcq",
@@ -319,7 +336,8 @@
    "mouse": "“mouse” is something different. Look again: this is a rabbit.",
    "hamster": "“hamster” is something different. Look again: this is a rabbit.",
    "squirrel": "“squirrel” is something different. Look again: this is a rabbit."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "mcq",
@@ -337,7 +355,8 @@
    "tree": "“tree” is something different. Look again: this is a flower.",
    "leaf": "“leaf” is something different. Look again: this is a flower.",
    "grass": "“grass” is something different. Look again: this is a flower."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "mcq",
@@ -355,7 +374,8 @@
    "kite": "“kite” is something different. Look again: this is a ball.",
    "doll": "“doll” is something different. Look again: this is a ball.",
    "robot": "“robot” is something different. Look again: this is a ball."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "mcq",
@@ -373,7 +393,8 @@
    "phone": "“phone” is something different. Look again: this is a clock.",
    "lamp": "“lamp” is something different. Look again: this is a clock.",
    "radio": "“radio” is something different. Look again: this is a clock."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "mcq",
@@ -391,7 +412,8 @@
    "jacket": "“jacket” is something different. Look again: this is a umbrella.",
    "scarf": "“scarf” is something different. Look again: this is a umbrella.",
    "glove": "“glove” is something different. Look again: this is a umbrella."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "mcq",
@@ -409,7 +431,8 @@
    "plane": "“plane” is something different. Look again: this is a boat.",
    "bus": "“bus” is something different. Look again: this is a boat.",
    "lorry": "“lorry” is something different. Look again: this is a boat."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "mcq",
@@ -426,7 +449,8 @@
    "warm": "Warm is a little hot, not the opposite.",
    "wet": "Wet is the opposite of dry.",
    "new": "New is the opposite of old."
-  }
+  },
+  "sk": "vocab.opposite"
  },
  {
   "type": "mcq",
@@ -443,7 +467,8 @@
    "shoe": "A shoe goes on your foot.",
    "sock": "A sock goes on your foot too.",
    "belt": "A belt goes around your waist."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -460,7 +485,8 @@
    "numbers": "Numbers are one, two, three...",
    "animals": "Animals are cats, dogs...",
    "days": "Days are Monday, Tuesday..."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -477,7 +503,8 @@
    "aunt": "An aunt is your mum's or dad's sister.",
    "sister": "A sister has the same mum as you.",
    "cousin": "A cousin is your aunt's or uncle's child."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -494,7 +521,8 @@
    "dinner": "Dinner is the evening meal.",
    "lunch": "Lunch is the middle of the day.",
    "supper": "Supper is a late evening meal."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -511,7 +539,8 @@
    "May": "May comes after April.",
    "Monday": "Monday is a day, not a month.",
    "Spring": "Spring is a season, not a month."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -528,7 +557,8 @@
    "doctor": "A doctor helps sick people.",
    "farmer": "A farmer works on a farm.",
    "driver": "A driver drives a car or bus."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -545,7 +575,8 @@
    "puppy": "A puppy is a baby dog.",
    "chick": "A chick is a baby bird.",
    "lamb": "A lamb is a baby sheep."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -562,7 +593,8 @@
    "kitten": "A kitten is a baby cat.",
    "calf": "A calf is a baby cow.",
    "duckling": "A duckling is a baby duck."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -579,7 +611,8 @@
    "ears": "You hear with your ears.",
    "nose": "You smell with your nose.",
    "hands": "You hold things with your hands."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -596,7 +629,8 @@
    "eyes": "You see with your eyes.",
    "mouth": "You eat and talk with your mouth.",
    "feet": "You walk with your feet."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -613,7 +647,8 @@
    "ear": "You hear with your ear.",
    "knee": "Your knee is in your leg.",
    "hair": "Hair grows on your head."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -630,7 +665,8 @@
    "woof": "A dog says woof.",
    "quack": "A duck says quack.",
    "meow": "A cat says meow."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -647,7 +683,8 @@
    "moo": "A cow says moo.",
    "baa": "A sheep says baa.",
    "oink": "A pig says oink."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -664,7 +701,8 @@
    "six": "Six comes before seven.",
    "eleven": "Eleven comes after ten.",
    "five": "Five comes before six."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -681,7 +719,8 @@
    "four": "Four is 4.",
    "six": "Six is 6.",
    "three": "Three is 3."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -698,7 +737,8 @@
    "blue": "The sky is blue.",
    "pink": "Pink is the colour of candyfloss.",
    "purple": "Purple is like grapes."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -715,7 +755,8 @@
    "green": "Grass is green.",
    "brown": "Tree trunks are brown.",
    "orange": "An orange is orange."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -732,7 +773,8 @@
    "black": "Black is the colour of night.",
    "red": "Red is like a strawberry.",
    "yellow": "Yellow is like a banana."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -749,7 +791,8 @@
    "blue": "Blue is the sky's colour.",
    "grey": "Grey is like an elephant.",
    "pink": "Pink is like a pig."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -766,7 +809,8 @@
    "uncle": "Your uncle is your mum's or dad's brother.",
    "brother": "Your brother is a boy in your family with the same parents.",
    "cousin": "Your cousin is your uncle's or aunt's child."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -783,7 +827,8 @@
    "grandma": "Your grandma is your mum's or dad's mum.",
    "sister": "Your sister has the same parents as you.",
    "niece": "A niece is your brother's or sister's daughter."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -800,7 +845,8 @@
    "breakfast": "Breakfast is in the morning.",
    "dinner": "Dinner is in the evening.",
    "bedtime": "Bedtime isn't a meal."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -817,7 +863,8 @@
    "juice": "Juice comes from fruit.",
    "water": "Water comes from the tap or rain.",
    "tea": "Tea is made from leaves."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -834,7 +881,8 @@
    "ruler": "A ruler draws straight lines.",
    "rubber": "A rubber takes away pencil marks.",
    "bag": "A bag carries your things."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -851,7 +899,8 @@
    "glue": "Glue sticks paper together.",
    "crayons": "Crayons colour pictures.",
    "a book": "You read a book."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -868,7 +917,8 @@
    "glad": "Glad means happy, not the opposite.",
    "tall": "Tall is about size.",
    "funny": "Funny makes you laugh."
-  }
+  },
+  "sk": "vocab.opposite"
  },
  {
   "type": "mcq",
@@ -885,7 +935,8 @@
    "young": "Young is for people and animals.",
    "big": "Big is about size.",
    "short": "Short is about length or height."
-  }
+  },
+  "sk": "vocab.opposite"
  },
  {
   "type": "mcq",
@@ -902,7 +953,8 @@
    "quick": "Quick means fast.",
    "loud": "Loud is about sound.",
    "long": "Long is about length."
-  }
+  },
+  "sk": "vocab.opposite"
  },
  {
   "type": "mcq",
@@ -919,7 +971,8 @@
    "empty": "Empty means nothing inside.",
    "under": "Under is a place word.",
    "clean": "Clean is the opposite of dirty."
-  }
+  },
+  "sk": "vocab.opposite"
  },
  {
   "type": "mcq",
@@ -936,7 +989,8 @@
    "on": "On is a place word: on the table.",
    "over": "Over means above.",
    "in": "In means inside."
-  }
+  },
+  "sk": "vocab.opposite"
  },
  {
   "type": "mcq",
@@ -953,7 +1007,8 @@
    "spider": "A spider has eight legs but lives on land.",
    "starfish": "A starfish usually has five arms.",
    "horse": "A horse lives on a farm."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -970,7 +1025,8 @@
    "zebra": "A zebra has black and white stripes.",
    "hippo": "A hippo is big and loves water.",
    "lion": "A lion eats meat."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -987,7 +1043,8 @@
    "mouse": "A mouse is very small.",
    "monkey": "A monkey climbs trees.",
    "parrot": "A parrot is a colourful bird."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1004,7 +1061,8 @@
    "frog": "A frog jumps and swims.",
    "snake": "A snake has no legs.",
    "goat": "A goat lives on a farm."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1021,7 +1079,8 @@
    "socks": "Socks go on your feet.",
    "boots": "Boots go on your feet.",
    "a scarf": "A scarf goes round your neck."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1038,7 +1097,8 @@
    "belt": "A belt goes round your middle.",
    "glove": "A glove goes on your hand.",
    "ring": "A ring goes on your finger."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1055,7 +1115,8 @@
    "swimsuit": "A swimsuit is for swimming.",
    "T-shirt": "A T-shirt doesn't keep the rain off.",
    "crown": "A crown is for a king or queen."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1072,7 +1133,8 @@
    "kitchen": "You cook in a kitchen.",
    "library": "You read books in a library.",
    "garden": "Flowers grow in a garden."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1089,7 +1151,8 @@
    "zoo": "You see animals at the zoo.",
    "cinema": "You watch films at the cinema.",
    "park": "You play at the park."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1106,7 +1169,8 @@
    "bakery": "A bakery sells bread.",
    "school": "You learn at school.",
    "beach": "You build sandcastles at the beach."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1123,7 +1187,8 @@
    "shop": "A shop sells things.",
    "bank": "A bank keeps money.",
    "farm": "A farm has cows, pigs and sheep."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1140,7 +1205,8 @@
    "bedroom": "You sleep in the bedroom.",
    "bathroom": "You wash in the bathroom.",
    "garage": "You keep a car in the garage."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1157,7 +1223,8 @@
    "kitchen": "You cook in the kitchen.",
    "living room": "You watch TV in the living room.",
    "garden": "Plants grow in the garden."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -1174,7 +1241,8 @@
    "lamp": "A lamp gives light.",
    "window": "You look out of a window.",
    "door": "You open a door to go in."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1191,7 +1259,8 @@
    "Thursday": "Thursday comes before Friday.",
    "Sunday": "Sunday comes after Saturday.",
    "Monday": "Monday is after Sunday."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1208,7 +1277,8 @@
    "Wednesday": "Wednesday comes after Tuesday.",
    "Sunday": "Sunday comes before Monday.",
    "Friday": "Friday is near the weekend."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1225,7 +1295,8 @@
    "winter": "Winter is cold.",
    "night": "Night is a time of day.",
    "snowy": "Snowy weather is cold, not hot."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1242,7 +1313,8 @@
    "summer": "Summer is hot.",
    "spring": "Spring is warm, with new flowers.",
    "sunny": "Sunny isn't a season."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1259,7 +1331,8 @@
    "sunny": "Sunny means lots of sun.",
    "cloudy": "Cloudy means lots of clouds.",
    "foggy": "Foggy means you can't see far."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1276,7 +1349,8 @@
    "pilot": "A pilot flies a plane.",
    "farmer": "A farmer grows food and keeps animals.",
    "chef": "A chef cooks food."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1293,7 +1367,8 @@
    "driver": "A driver drives a car or bus.",
    "nurse": "A nurse helps sick people.",
    "dancer": "A dancer dances."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1310,7 +1385,8 @@
    "police officer": "A police officer keeps people safe from crime.",
    "teacher": "A teacher works at a school.",
    "baker": "A baker makes bread."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1327,7 +1403,8 @@
    "pilot": "A pilot flies a plane.",
    "singer": "A singer sings songs.",
    "doctor": "A doctor helps sick people."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1344,7 +1421,8 @@
    "bat": "A bat is for cricket or baseball.",
    "kite": "A kite flies in the wind.",
    "doll": "A doll is a toy person."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1361,7 +1439,8 @@
    "robot": "A robot is a toy machine.",
    "puzzle": "A puzzle has pieces.",
    "teddy": "A teddy is a soft toy bear."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1378,7 +1457,8 @@
    "car": "A car isn't soft.",
    "train": "A train runs on tracks.",
    "drum": "A drum makes a loud sound."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1395,7 +1475,8 @@
    "guitar": "You pick the strings of a guitar.",
    "piano": "You press the keys of a piano.",
    "flute": "You blow into a flute."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "mcq",
@@ -1412,7 +1493,8 @@
    "drum": "A drum has no strings.",
    "trumpet": "You blow a trumpet.",
    "whistle": "You blow a whistle."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1429,7 +1511,8 @@
    "fruit": "Apples and bananas are fruit.",
    "drinks": "Milk and juice are drinks.",
    "sweets": "Sweets are made with sugar."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1446,7 +1529,8 @@
    "vegetables": "Carrots are vegetables.",
    "meat": "Chicken is meat.",
    "bread": "Bread is made from flour."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1463,7 +1547,8 @@
    "fork": "A fork is for pasta and salad.",
    "knife": "A knife cuts food.",
    "plate": "A plate holds food, but you don't eat soup with it."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1480,7 +1565,8 @@
    "plate": "A plate is flat, for food.",
    "bowl": "A bowl is for soup or cereal.",
    "pan": "A pan is for cooking."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1497,7 +1583,8 @@
    "hairbrush": "A hairbrush is for hair.",
    "towel": "A towel dries you.",
    "soap": "Soap washes your hands."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1514,7 +1601,8 @@
    "pillow": "A pillow is for your head in bed.",
    "sock": "A sock goes on your foot.",
    "map": "A map shows places."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1531,7 +1619,8 @@
    "bike": "A bike has two wheels.",
    "plane": "A plane flies.",
    "boat": "A boat floats on water."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1548,7 +1637,8 @@
    "bus": "A bus drives on the road.",
    "ship": "A ship sails on the sea.",
    "helicopter": "A helicopter flies."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1565,7 +1655,8 @@
    "toes": "Toes are on your feet.",
    "teeth": "Teeth are in your mouth.",
    "ears": "You have two ears."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1582,7 +1673,8 @@
    "five": "Five is the school days only.",
    "ten": "Ten is too many.",
    "twelve": "Twelve is the months in a year."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1599,7 +1691,8 @@
    "seven": "Seven is the days in a week.",
    "ten": "Ten is too few.",
    "four": "Four is the seasons."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1616,7 +1709,8 @@
    "noon": "Noon is the middle of the day.",
    "lunchtime": "Lunchtime is in the day.",
    "morning": "Morning is when the sun comes up."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1633,7 +1727,8 @@
    "run": "Running makes you more tired.",
    "dance": "Dancing needs energy.",
    "shout": "Shouting won't help you rest."
-  }
+  },
+  "sk": "vocab.meaning"
  },
  {
   "type": "mcq",
@@ -1650,91 +1745,104 @@
    "sandwich": "A sandwich is for when you're hungry.",
    "pillow": "A pillow is for sleeping.",
    "pencil": "A pencil is for writing."
-  }
+  },
+  "sk": "vocab.collocation"
  },
  {
   "type": "spell",
   "q": "Spell the word.",
   "art": "word_apple",
   "answer": "apple",
-  "explain": "a-p-p-l-e: two p's."
+  "explain": "a-p-p-l-e: two p's.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word.",
   "art": "word_dog",
   "answer": "dog",
-  "explain": "d-o-g."
+  "explain": "d-o-g.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word.",
   "art": "word_house",
   "answer": "house",
-  "explain": "h-o-u-s-e: ends with a silent e."
+  "explain": "h-o-u-s-e: ends with a silent e.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word.",
   "art": "word_sun",
   "answer": "sun",
-  "explain": "s-u-n."
+  "explain": "s-u-n.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word.",
   "art": "word_bike",
   "answer": "bike",
-  "explain": "b-i-k-e: the e at the end makes the i say its name."
+  "explain": "b-i-k-e: the e at the end makes the i say its name.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word.",
   "art": "word_fish",
   "answer": "fish",
-  "explain": "sh makes one sound: f-i-sh."
+  "explain": "sh makes one sound: f-i-sh.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word.",
   "art": "word_cake",
   "answer": "cake",
-  "explain": "c-a-k-e: silent e at the end."
+  "explain": "c-a-k-e: silent e at the end.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word.",
   "art": "word_cat",
   "answer": "cat",
-  "explain": "c-a-t."
+  "explain": "c-a-t.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word.",
   "art": "word_bed",
   "answer": "bed",
-  "explain": "b-e-d."
+  "explain": "b-e-d.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word.",
   "art": "word_ball",
   "answer": "ball",
-  "explain": "b-a-l-l: two l's."
+  "explain": "b-a-l-l: two l's.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word.",
   "art": "word_clock",
   "answer": "clock",
-  "explain": "ck together at the end: c-l-o-c-k."
+  "explain": "ck together at the end: c-l-o-c-k.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word.",
   "art": "word_boat",
   "answer": "boat",
-  "explain": "oa says 'oh': b-oa-t."
+  "explain": "oa says 'oh': b-oa-t.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "picq",
@@ -1751,7 +1859,8 @@
    "dog": "That picture is a dog. A cat says 'meow'.",
    "rabbit": "That picture is a rabbit. A cat says 'meow'.",
    "fish": "That picture is a fish. A cat says 'meow'."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -1768,7 +1877,8 @@
    "house": "That picture is a house. You sleep in a bed.",
    "boat": "That picture is a boat. You sleep in a bed.",
    "clock": "That picture is a clock. You sleep in a bed."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -1785,7 +1895,8 @@
    "sun": "That picture is a sun. A clock tells the time.",
    "ball": "That picture is a ball. A clock tells the time.",
    "umbrella": "That picture is a umbrella. A clock tells the time."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -1802,7 +1913,8 @@
    "umbrella": "That picture is a umbrella. A shoe goes on your foot.",
    "bike": "That picture is a bike. A shoe goes on your foot.",
    "bread": "That picture is a bread. A shoe goes on your foot."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -1819,7 +1931,8 @@
    "dog": "That picture is a dog. A fish swims.",
    "cat": "That picture is a cat. A fish swims.",
    "rabbit": "That picture is a rabbit. A fish swims."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -1836,7 +1949,8 @@
    "bed": "That picture is a bed. You ride a bike.",
    "boat": "That picture is a boat. You ride a bike.",
    "house": "That picture is a house. You ride a bike."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -1853,7 +1967,8 @@
    "shoe": "That picture is a shoe. An umbrella keeps you dry.",
    "clock": "That picture is a clock. An umbrella keeps you dry.",
    "apple": "That picture is a apple. An umbrella keeps you dry."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -1870,7 +1985,8 @@
    "cat": "That picture is a cat. A dog says 'woof'.",
    "fish": "That picture is a fish. A dog says 'woof'.",
    "rabbit": "That picture is a rabbit. A dog says 'woof'."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -1887,7 +2003,8 @@
    "bread": "That picture is a bread. A birthday cake has candles.",
    "apple": "That picture is a apple. A birthday cake has candles.",
    "flower": "That picture is a flower. A birthday cake has candles."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -1904,7 +2021,8 @@
    "bike": "That picture is a bike. A boat floats.",
    "ball": "That picture is a ball. A boat floats.",
    "bed": "That picture is a bed. A boat floats."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -1921,7 +2039,8 @@
    "apple": "That picture is a apple. A strawberry has seeds on the outside.",
    "flower": "That picture is a flower. A strawberry has seeds on the outside.",
    "cake": "That picture is a cake. A strawberry has seeds on the outside."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "picq",
@@ -1938,54 +2057,63 @@
    "flower": "That picture is a flower. The sun is in the sky in the day.",
    "ball": "That picture is a ball. The sun is in the sky in the day.",
    "clock": "That picture is a clock. The sun is in the sky in the day."
-  }
+  },
+  "sk": "vocab.picture"
  },
  {
   "type": "spell",
   "q": "Spell the word: the opposite of hot",
   "answer": "cold",
-  "explain": "Hot and cold are opposites: ice is cold."
+  "explain": "Hot and cold are opposites: ice is cold.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: you brush them every morning and night",
   "answer": "teeth",
-  "explain": "We brush our teeth: one tooth, two teeth."
+  "explain": "We brush our teeth: one tooth, two teeth.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: a baby cat",
   "answer": "kitten",
-  "explain": "A kitten is a baby cat."
+  "explain": "A kitten is a baby cat.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: the colour of grass",
   "answer": "green",
-  "explain": "Grass and leaves are green."
+  "explain": "Grass and leaves are green.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: you sleep in it",
   "answer": "bed",
-  "explain": "At night we sleep in a bed."
+  "explain": "At night we sleep in a bed.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: the meal you eat in the morning",
   "answer": "breakfast",
-  "explain": "Breakfast is the first meal of the day."
+  "explain": "Breakfast is the first meal of the day.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: it shines in the sky at night",
   "answer": "moon",
-  "explain": "The moon shines at night; the sun shines in the day."
+  "explain": "The moon shines at night; the sun shines in the day.",
+  "sk": "vocab.spelling"
  },
  {
   "type": "spell",
   "q": "Spell the word: you wear them on your feet",
   "answer": "shoes",
-  "explain": "Shoes go on your feet."
+  "explain": "Shoes go on your feet.",
+  "sk": "vocab.spelling"
  }
 ]
