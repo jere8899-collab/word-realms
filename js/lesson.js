@@ -450,7 +450,7 @@ function finish(lost) {
   // ➡️ T8: one clear next step (the next unplayed, else weakest, skill in this realm), with Play again / Back as secondaries
   const nx = L.review ? null : WR.nextSkill(L.realm.id, L.skill);
   // 📜 a weak result (< 60%) offers the first lesson on this skill not yet passed (a soft nudge: practice never locks)
-  const nudge = WR.Learn && !L.review && L.skill && score < 0.6 ? WR.Learn.nudgeHTML(WR.Learn.nudgeFor(WR.Learn.forSkill(L.realm.id, L.skill))) : "";
+  const nudge = WR.Learn && !L.review && L.skill && score < WR.PASS.mark ? WR.Learn.nudgeHTML(WR.Learn.nudgeFor(WR.Learn.forSkill(L.realm.id, L.skill))) : "";
   const mainBtn = L.review ? `<button class="btn mint" id="nextStep">Back to the garden 🌷</button>`
     : nx ? `<button class="btn mint" id="nextStep">Next: ${nx.icon} ${WR.esc(nx.name)} →</button>` : `<button class="btn mint" id="nextStep">Back to ${WR.esc(L.realm.name)} →</button>`;
   WR.view(`<div class="card result fade-in"><h1>${title}</h1>${WR.starNote()}
@@ -461,7 +461,7 @@ function finish(lost) {
     ${nudge}<div class="petbox bounce" style="margin:10px auto">${WR.petHTML()}</div>
     <div class="bubble">${lv ? (lv.evolved ? `I evolved into ${WR.petInfo().stages[WR.petStage(lv.level)]}! 🌟` : `I reached level ${lv.level}! 🎉`) : crowns >= 2 ? "That was so fun! 💖" : "Let's try again together! 🫶"}</div>
     ${L.review ? `<p class="muted" style="font-weight:800">🌸 ${L.bloomed || 0} flower${L.bloomed === 1 ? "" : "s"} fully bloomed${L.bloomed ? ` (+${L.bloomed * 2}⭐)` : ""} · ${WR.Garden.dueCount()} still thirsty</p>` : ""}
-    ${score < 0.6 && L.key ? `<p class="muted">Score 60% or more to count this skill towards unlocking the next realm.</p>` : ""}</div>`);
+    ${score < WR.PASS.mark && L.key ? `<p class="muted">Score ${Math.round(WR.PASS.mark * 100)}% or more to count this skill towards unlocking the next realm.</p>` : ""}</div>`);
   if (crowns >= 2 || lv) WR.confetti(); WR.sfx(lv ? "level" : "good");
   const opts = L;
   if (opts.onFinish) opts.onFinish({ won, lost: !!lost, score, crowns });   // 🏆 C6 hook (realm bosses, stickers)

@@ -111,11 +111,11 @@ WR.continueTarget = () => {
   if (!WR.realms) return null;
   const s = WR.state, start = Math.max(0, WR.realms.findIndex(r => r.id === s.startLevel));
   let idx = -1;
-  for (let i = start; i < WR.realms.length; i++) { if (!WR.isUnlocked(i)) break; if (WR.realmProgress(WR.realms[i].id).passed < 3) { idx = i; break; } }
+  for (let i = start; i < WR.realms.length; i++) { if (!WR.isUnlocked(i)) break; if (WR.realmProgress(WR.realms[i].id).passed < WR.PASS.skills) { idx = i; break; } }
   if (idx < 0) for (let i = WR.realms.length - 1; i >= start; i--) if (WR.isUnlocked(i) && WR.realmProgress(WR.realms[i].id).passed < 4) { idx = i; break; }
   if (idx < 0) idx = WR.realms.length - 1;
   const realm = WR.realms[idx], pr = WR.realmProgress(realm.id), skill = WR.nextSkill ? WR.nextSkill(realm.id) : WR.SKILLS[0];
-  const plays = (pr.p[skill.id] && pr.p[skill.id].plays) || 0, nx = WR.realms[idx + 1], need = 3 - pr.passed;
+  const plays = (pr.p[skill.id] && pr.p[skill.id].plays) || 0, nx = WR.realms[idx + 1], need = WR.PASS.skills - pr.passed;
   const goal = nx && need > 0 ? `${need} more skill${need > 1 ? "s" : ""} to open ${nx.name} ${nx.emoji}` : nx ? `${nx.name} ${nx.emoji} is open! Collect all 4 skill crowns here too 👑` : pr.passed < 4 ? `${4 - pr.passed} more skill${4 - pr.passed > 1 ? "s" : ""} to master the last realm 👑` : "Every realm is yours! Keep polishing your crowns 👑";
   return { realm, skill, lesson: plays + 1, goal };
 };
@@ -175,7 +175,7 @@ WR.screens.home = () => {
       ${WR.charmsNudge ? WR.charmsNudge() : ""}
       </div></div></div>`);
   document.querySelectorAll(".realm-node").forEach(n => n.onclick = () => {
-    if (n.classList.contains("locked")) { const prev = WR.realms[+n.dataset.i - 1]; return WR.toast(`🔒 Pass 3 of 4 skills in ${prev.name} to unlock!`, 2400); }
+    if (n.classList.contains("locked")) { const prev = WR.realms[+n.dataset.i - 1]; return WR.toast(`🔒 Pass ${WR.PASS.skills} of 4 skills in ${prev.name} to unlock!`, 2400); }
     WR.go("realm", n.dataset.r);
   });
   WR.$("#questsMini").onclick = () => WR.go("quests");

@@ -697,16 +697,16 @@ WR.bumpStreak = () => {
 WR.streakAlive = () => { const s = WR.state.streak; return s.last && WR.dayDiff(s.last, WR.today()) <= 1 ? s.count : 0; };
 
 /* ---------- progress & unlocks ---------- */
-WR.realmProgress = rid => {
-  const p = WR.state.progress[rid] || {};
-  const passed = SKILLS.filter(k => p[k.id] && p[k.id].best >= 0.6).length;
-  return { passed, p };
-};
+// one place for the pass rule: a skill is passed at `mark`; the next realm (and the realm boss) needs `skills` of the 4 passed
+const PASS = WR.PASS = { mark: 0.6, skills: 3 };
+WR.skillRec = (rid, k) => (WR.state.progress[rid] || {})[k] || null;
+WR.skillPassed = (rid, k) => { const p = WR.skillRec(rid, k); return !!p && p.best >= PASS.mark; };
+WR.realmProgress = rid => ({ passed: SKILLS.filter(k => WR.skillPassed(rid, k.id)).length, p: WR.state.progress[rid] || {} });
 WR.isUnlocked = idx => {
   if (WR.state.settings.unlockAll) return true;
   const startIdx = WR.realms.findIndex(r => r.id === WR.state.startLevel);
   if (idx <= Math.max(0, startIdx)) return true;
-  return WR.realmProgress(WR.realms[idx - 1].id).passed >= 3;
+  return WR.realmProgress(WR.realms[idx - 1].id).passed >= PASS.skills;
 };
 WR.recordLesson = (rid, key, score) => {
   const s = WR.state; s.progress[rid] = s.progress[rid] || {};
