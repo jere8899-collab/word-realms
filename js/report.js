@@ -142,10 +142,10 @@ WR.Report.tips = d => {
 
 /* ---------- screen ---------- */
 const cellHTML = c => !c ? `<td class="rp-na">·</td>` : c.a != null ? `<td class="rp-c ${tone(c.a)}"><b>${pct(c.a)}%</b><small>${c.n}</small></td>` : `<td class="rp-c best ${tone(c.best)}" title="best score"><b>${pct(c.best)}%</b><small>best</small></td>`;
+const stat = (ico, big, small) => `<div class="rp-stat"><span class="ico">${ico}</span><b>${big}</b><small>${small}</small></div>`;
 const barRow = (t, v) => `<div class="rp-topic"><span class="nm">${esc(t)}</span>${v}</div>`;
 WR.Report.html = d => {
   const ch = d.chart, wk = d.range === "week";
-  const stat = (ico, big, small) => `<div class="rp-stat"><span class="ico">${ico}</span><b>${big}</b><small>${small}</small></div>`;
   const eng = d.english.levels.length ? `<div class="rp-scroll"><table class="rp-table"><thead><tr><th></th>${d.english.levels.map(l => `<th>${l.level}</th>`).join("")}</tr></thead>
       <tbody>${d.english.rows.map(r => `<tr><th title="${esc(r.sk.name)}"><span class="ico">${r.sk.icon}</span>${esc(r.sk.name === "Vocabulary" ? "Vocab" : r.sk.name)}</th>${r.cells.map(cellHTML).join("")}</tr>`).join("")}</tbody></table></div>
       <p class="rp-key muted"><span class="rp-dot hi"></span>85%+ <span class="rp-dot mid"></span>60–84% <span class="rp-dot lo"></span>under 60% · small number = answers${wk ? "" : " · “best” = best lesson score saved before the report started"}</p>`

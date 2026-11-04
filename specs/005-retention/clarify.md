@@ -1,0 +1,1 @@
+## clarify (2026-11-05): no question for Jeremy needed — the brief fixes the 25-day gap, the 10-answer minimum and the parent gate. Choices made here (listed as decisions in the report): all-time window; a maths topic round counts as one answer for that topic; cover/stand-in moves don't count.
