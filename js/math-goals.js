@@ -33,7 +33,7 @@ G.ready = gd => G.passed(gd) >= NEED_TOPICS;
 G.art = (gd, cls = "rb-art") => WR.asset(gd.art) ? WR.img(gd.art, cls) : `<span class="${cls} gfb">${MW.mascot()}<i>${gd.face}</i></span>`;
 
 /* ---------- the fight ---------- */
-G.items = gd => WR.shuffle(gd.grades.flatMap(g => WR.shuffle(MG.gradeTopics(g)).slice(0, 5))).map(t => MG.batch(t.id, 1)[0]).filter(Boolean);
+G.items = gd => WR.shuffle(gd.grades.flatMap(g => WR.shuffle(MG.gradeTopics(g).filter(t => !t.extra)).slice(0, 5))).map(t => MG.batch(t.id, 1)[0]).filter(Boolean);
 G.start = id => {
   const gd = byId(id); if (!gd) return;
   if (!G.ready(gd) && !WR.state.settings.unlockAll) return WR.toast(`🔒 Pass ${NEED_TOPICS} Grade ${gd.band} topics to wake ${gd.name}!`, 2400);

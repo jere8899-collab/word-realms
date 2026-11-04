@@ -46,3 +46,7 @@
 
 ## Dependencies
 T004 blocks every code task. T010–T013 before T020+. T040–T042 parallel. T051 after all code. T052 last.
+
+## Follow-ups decided by Jeremy (2026-11-04 15:46 SGT)
+- [x] T060 Compass directions back as a G4 ✨ Extra topic (`g4.compass`, enrichment, not core syllabus; out of guardian fights) — own commit.
+- [ ] **Task 12 (later): move misplaced secondary topics** (research.md §D: g8.gradient, g8.lingraph, g8.fraceq → Sec 1; g9.quad, g9.simul, g9.trig → Sec 2; g9.surds, g10.triggraph are A-Math only; JC not checked). Not started — waits for its own brief task.
