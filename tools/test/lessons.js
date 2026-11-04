@@ -1,4 +1,4 @@
-// 📜 Lessons (LESSONS-PLAN.md, js/learn.js): the shared lesson engine and the pilot (A1 English + Grade 2 maths).
+// 📜 Lessons (LESSONS-PLAN.md, js/learn.js): the shared lesson engine and A1 English (pilot + EN-2) + Grade 2 maths pilot.
 //   node tools/test/lessons.js        (SHOT=1 saves screenshots/lessons_*.png at 390 px)
 // Covers: every pilot lesson played start → scroll by TAP; drag (pointer) on sort / place value / spots; the re-teach path
 // (a different explanation, NEW questions, why-not notes); stars once ever (anti-farm); a lesson failed twice still
@@ -9,7 +9,7 @@
 const { chromium } = require('playwright-core');
 const BASE = (process.env.BASE || 'http://127.0.0.1:18642/').replace(/\/?$/, '/');
 const OUT = '/workspace/cefr-quest/screenshots/';
-const MIN_LESSONS = 10;
+const MIN_LESSONS = 22;
 let fails = 0, passes = 0;
 const ok = (c, m) => { if (!c) { fails++; console.error('FAIL', m); process.exitCode = 1; } else { passes++; console.log('ok', m); } };
 const today = () => { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
@@ -37,6 +37,33 @@ const HELPERS = () => {
     if (w.kind === 'share') for (let g = 0; g < 20 && root.querySelector('.lw-pile [data-src]'); g++) tap(root.querySelector('.lw-deal'));
     if (w.kind === 'frac') for (const s of w.stages) { for (let k = 1; k < s.parts; k++) tap(root.querySelector('.fr-d[data-d="1"]')); tap(root.querySelector('.fr-cut'));
       for (let k = 0; k < s.shade; k++) root.querySelectorAll('.fp')[k].dispatchEvent(new MouseEvent('click', { bubbles: true })); await sleep(1300); }
+    if (w.kind === 'rename') {
+      for (let g = 0; g < 50; g++) {
+        const u = root.querySelector('.rg-unbundle'); if (u && !u.hidden && !u.disabled) { tap(u); await sleep(20); continue; }
+        const oneBtn = root.querySelector('.rg-take-one'), tenBtn = root.querySelector('.rg-take-ten');
+        if (!oneBtn || !tenBtn) break;
+        const left = (root.querySelector('.lw-count') || {}).textContent || '';
+        if (!/still take/.test(left)) break;
+        const need = left.split('still take')[1] || '';
+        if (/\d+ one/.test(need) && !oneBtn.disabled) { tap(oneBtn); continue; }
+        if (/\d+ ten/.test(need) && !tenBtn.disabled) { tap(tenBtn); continue; }
+        break;
+      }
+    }
+    if (w.kind === 'money') for (const n of w.targets) { for (const v of [100, 10, 1]) for (let k = 0; k < Math.floor(n % (v * 10) / v); k++) tap(root.querySelector(`.lw-block[data-v="${v}"]`)); await sleep(1000); }
+    if (w.kind === 'clock') for (const want of w.targets) {
+      for (let g = 0; g < 80; g++) {
+        const lab = (root.querySelector('.lw-count') || {}).textContent || '';
+        const mm = lab.match(/(\d+):(\d+)/); if (!mm) break;
+        const h = +mm[1], min = +mm[2];
+        if (h === want.h && min === want.m) break;
+        if (h !== want.h) { tap(root.querySelector('[data-k="h+"]')); continue; }
+        tap(root.querySelector('[data-k="m+"]'));
+      }
+      await sleep(1000);
+    }
+    if (w.kind === 'picgraph') for (let k = 0; k < w.cats.length; k++) for (let n = 0; n < w.cats[k].n; n++) tap(root.querySelector(`.pg-add[data-add="${k}"]`));
+    if (w.kind === 'bar') { tap(root.querySelector('[data-src][data-v="sold"]')); tap(root.querySelector('[data-p="sold"]')); tap(root.querySelector('[data-src][data-v="add"]')); tap(root.querySelector('[data-p="add"]')); }
     await sleep(50); return !$('#lnGo').hidden;
   };
   // answer the 3 checks: pattern like [true, false, true] (true = the right option)
@@ -153,12 +180,25 @@ const HELPERS = () => {
   await toDiscover('en.a1.place');
   await drag('#lnW .lw-token', '#lnW .sp-on');
   ok(await page.evaluate(() => !!document.querySelector('#lnW .sp-on .lw-token')), 'spots: dragging Puffbun onto the table puts it ON the table');
+  await toDiscover('en.a1.this');
+  await drag('#lnW .lw-token', '#lnW .sp-near');
+  ok(await page.evaluate(() => !!document.querySelector('#lnW .sp-near .lw-token') && !!document.querySelector('.sc-nearfar')), 'spots nearfar: dragging Hoot onto NEAR works');
   await toDiscover('m.g2.times');
   await drag('#lnW .lw-pile [data-src]', '#lnW .lw-ring[data-k="1"]');
   ok(await page.evaluate(() => document.querySelectorAll('#lnW .lw-ring[data-k="1"] .lw-got span').length) === 1, 'groups: dragging a mushroom into a ring adds it');
+  await toDiscover('m.g2.sub');
+  ok(await page.evaluate(() => !!document.querySelector('.rg-unbundle') && !document.querySelector('.rg-unbundle').hidden), 'rename: Unbundle shows when ones are not enough');
+  await page.click('#lnW .rg-unbundle');
+  ok(await page.evaluate(() => +document.querySelector('.lw-count').textContent.match(/(\d+) ones/)[1] >= 10), 'rename: unbundling a ten adds 10 ones');
+  await toDiscover('m.g2.time');
+  await page.click('#lnW [data-k="m+"]'); await page.click('#lnW [data-k="m+"]'); await page.click('#lnW [data-k="m+"]'); await page.click('#lnW [data-k="m+"]'); await page.click('#lnW [data-k="m+"]');
+  ok(await page.evaluate(() => /3:25|Hands say 12:25/.test(document.querySelector('.lw-count').textContent) || document.querySelector('.lw-count').textContent.includes(':25')), 'clock: five 5-min taps move the long hand to :25');
   if (process.env.SHOT) { await toDiscover('en.a1.an'); await page.evaluate(() => { const c = document.querySelectorAll('#lnW .lw-pool [data-src]'); const it = WR.Learn._S().L.discover.items; [0, 1].forEach(j => { c[j].click(); document.querySelector(`#lnW [data-b="${it[+c[j].dataset.k].bin}"]`).click(); }); c[2].click(); });
     await page.waitForTimeout(250); await page.screenshot({ path: OUT + 'lessons_discover.png' });
-    await toDiscover('m.g2.add'); await page.evaluate(() => { for (let k = 0; k < 2; k++) document.querySelector('#lnW .rg-one').click(); }); await page.waitForTimeout(250); await page.screenshot({ path: OUT + 'lessons_discover_maths.png' }); }
+    await toDiscover('m.g2.add'); await page.evaluate(() => { for (let k = 0; k < 2; k++) document.querySelector('#lnW .rg-one').click(); }); await page.waitForTimeout(250); await page.screenshot({ path: OUT + 'lessons_discover_maths.png' });
+    await toDiscover('en.a1.this'); await page.waitForTimeout(250); await page.screenshot({ path: OUT + 'lessons_discover_nearfar.png' });
+    await toDiscover('m.g2.sub'); await page.waitForTimeout(250); await page.screenshot({ path: OUT + 'lessons_discover_rename.png' });
+    await toDiscover('m.g2.time'); await page.waitForTimeout(250); await page.screenshot({ path: OUT + 'lessons_discover_clock.png' }); }
   ok(!page.errs.length, 'no page errors while dragging: ' + page.errs.join(' | '));
   await ctx.close();
 
@@ -168,10 +208,10 @@ const HELPERS = () => {
   if (process.env.SHOT) { await page.evaluate(() => document.querySelector('.path-grid').scrollIntoView({ block: 'start' })); await page.waitForTimeout(400); await page.screenshot({ path: OUT + 'lessons_realm_chips.png' });
     await page.evaluate(() => WR.Learn.open('m.g2.times')); await page.waitForTimeout(600); await page.screenshot({ path: OUT + 'lessons_hook.png' }); await page.evaluate(() => WR.go('realm', 'a1')); }
   const chips = await page.evaluate(() => [...document.querySelectorAll('.skill-card[data-k]')].map(c => ({ k: c.dataset.k, chip: c.querySelector('.learn-chip') ? c.querySelector('.learn-chip').getAttribute('aria-label') : '' })));
-  ok(chips.find(c => c.k === 'grammar').chip.includes('3 lessons') && chips.find(c => c.k === 'vocab').chip.includes('1 lesson') && !chips.find(c => c.k === 'listening').chip, `the Learn chip sits inside the skill cards (${chips.map(c => c.k + ':' + c.chip.trim()).join(' · ')})`);
+  ok(chips.find(c => c.k === 'grammar').chip.includes('10 lessons') && chips.find(c => c.k === 'vocab').chip.includes('1 lesson') && !chips.find(c => c.k === 'listening').chip, `the Learn chip sits inside the skill cards (${chips.map(c => c.k + ':' + c.chip.trim()).join(' · ')})`);
   ok(await page.evaluate(() => document.querySelectorAll('.path-grid > .skill-card').length === WR.SKILLS.length), 'no new tiles on Today\'s path');
   await page.click('.skill-card[data-k="grammar"] .learn-chip'); await page.waitForSelector('.ln-pick-row');
-  ok(await page.evaluate(() => document.querySelectorAll('.ln-pick-row').length === 3 && WR.current() === 'realm'), 'a skill with 3 lessons opens a list (and does not start the practice round)');
+  ok(await page.evaluate(() => document.querySelectorAll('.ln-pick-row').length === 10 && WR.current() === 'realm'), 'a skill with 10 lessons opens a list (and does not start the practice round)');
   await page.click('.ln-pick-row[data-id="en.a1.plural"]'); await page.waitForSelector('.ln-card');
   ok(await page.evaluate(() => WR.current() === 'learn' && WR.Learn._S().id === 'en.a1.plural' && document.body.classList.contains('wr-focus')), 'the list opens that lesson in focus mode');
   await page.click('#lnQuit'); await page.waitForTimeout(100);

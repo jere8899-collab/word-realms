@@ -1,7 +1,9 @@
 # Word Realms: Interactive Lessons plan (📜 Learn)
 
-**Phase 1 (plan + engine + pilot): ✅ done (commit 1d135e5, 2026-11-04).** The 2-hourly routine may now take the next batch (§4, §5: EN-2 then MA-2).
+**Phase 1 (plan + engine + pilot): ✅ done (commit 1d135e5, 2026-11-04).** EN-2 + MA-2 ✅ (DEPLOY_HASH). The 2-hourly routine may now take the next batch (§5: EN-3, then MA-3).
 
+> Checkpoint 2026-11-04 15:20 SGT (takeover of two interrupted runs): EN-2's 7 hook pictures were Pillow cut-out composites and MA-2's 5 were copies of lesson_m_g2_add; all 12 repainted with GenerateImage and installed. `lesson_build.speak()` now reads \$1.25 as "1 dollar and 25 cents" and 10¢ coin as "10 cent coin" (14 lines re-recorded, af_heart). lessons.js 150/150; full suite 91/91 (doubletap flaked once on server load, passes on rerun). Screens: screenshots/lessons_en2_*.png, lessons_ma2_*.png.
+>
 > Checkpoint 2026-11-04 08:55 SGT: engine `js/learn.js` + `css/learn.css`, 10 pilot lessons (data/lessons), 10 GenerateImage hook pictures, all lines recorded (af_heart), `tools/test/lessons.js` 109/109 pass. Full suite green after fixing homeshort / icons / n3n5layout / realmpath / tappable / lightart regressions (corner badge, painted 🎒 icon, no home pill on phones). Deployed as 1d135e5.
 
 Jeremy asked for this on 2026-11-04 (t40u, then "Build the pilot track for all, take your time and do it slowly but thoroughly"). He wants proper lessons before practice, so children are taught a little first and then practise right away. The lessons should be fun, hands-on and intriguing, and they should cover **every track**:
@@ -107,12 +109,17 @@ dict(id="en.a1.an", title="a or an?", icon="🍎", at=dict(realm="a1", skill="gr
 | `sort` | `bins:[{id,label,icon}]`, `items:[{t, bin, icon?, why?}]` | a/an, am/is/are, question words, countable/uncountable, formal/informal, odd/even, shapes |
 | `fill` | `tiles:[…]`, `items:[{s:"I ___ Puffbun.", a:"am", why}]` | verb forms, prepositions, connectors, tenses (drag the tile into the gap) |
 | `suffix` | `stamp:"s"`, `items:[{pre:"3", base:"cat", need:true, why}]` | plural -s, past -ed (drag -ed onto verbs), -er/-est, prefixes un-/re-, word formation |
-| `spots` | `scene:"table"\|"bed"`, `token`, `tasks:[{word:"on", say:"Put Puffbun ON the table."}]` | prepositions of place; later left/right, directions, maps |
+| `spots` | `scene:"table"\|"bed"\|"nearfar"`, `token`, `tasks:[{word:"on"|"near", text:"…"}]` | prepositions of place; this/that near or far; later left/right, maps |
 | `pv` | `targets:[243, 306]` | place value (H/T/O), later thousands; tap or drag a block onto the mat, ➖ takes one back |
 | `regroup` | `a:28, b:15` | adding with carrying (10 ones → 1 ten), later subtraction by renaming |
 | `groups` | `rings:3, each:4, item:"🍄"` | multiplication as equal groups, arrays, skip counting |
 | `share` | `total:15, plates:3, item:"🍪"` | division by sharing / grouping, remainders (later) |
 | `frac` | `stages:[{shape:"pizza"\|"bar", parts:4, shade:1}]` | fractions of a whole, equivalent fractions (later), unit fractions |
+| `rename` | `a:32, b:15` | subtracting with renaming (unbundle a ten → 10 ones, then take away) |
+| `money` | `targets:[125, 240]` | dollars & cents (cents totals; $1 / 10¢ / 1¢ coins) |
+| `clock` | `targets:[{h:3, m:25}]` | five-minute analogue clock (set the hands) |
+| `picgraph` | `cats:[{label, n}], key:5, item` | picture graph with a key (tap to add pictures) |
+| `bar` | `start:50, sold:20, add:15` | Singapore bar model for two-step take-away then add |
 
 New widgets may be added to the kit when a topic needs one, for example a number line, balance, clock hands, a graph builder or angle turns. Each needs a tap alternative, at least 44 px targets, and the 320 px audit in `tools/test/lessons.js`.
 
@@ -137,13 +144,13 @@ Grammar:
 - ✅ `en.a1.an` a or an? (sort)
 - ✅ `en.a1.be` am, is, are (fill)
 - ✅ `en.a1.plural` one cat, two cats (suffix -s)
-- `en.a1.have` have / has (sort by subject)
-- `en.a1.can` can / can't + plain verb (fill)
-- `en.a1.s3` he plays, I play: the -s on verbs (suffix)
-- `en.a1.thereis` there is / there are (sort by picture count)
-- `en.a1.this` this/that/these/those (spots: near or far)
-- `en.a1.poss` my, your, his, her (sort by owner)
-- `en.a1.do` Do / Does questions (fill)
+- ✅ `en.a1.have` have / has (sort by subject)
+- ✅ `en.a1.can` can / can't + plain verb (fill)
+- ✅ `en.a1.s3` he plays, I play: the -s on verbs (suffix)
+- ✅ `en.a1.thereis` there is / there are (sort by picture count)
+- ✅ `en.a1.this` this/that/these/those (spots: near or far)
+- ✅ `en.a1.poss` my, your, his, her (sort by owner)
+- ✅ `en.a1.do` Do / Does questions (fill)
 - `en.a1.ing` happening now: is + -ing (suffix -ing)
 - `en.a1.waswere` was / were for yesterday (fill)
 
@@ -397,11 +404,11 @@ These lessons attach to the level hub as a "📜 Learn" row, which is still a hu
 - ✅ `m.g2.times` times means equal groups (groups)
 - ✅ `m.g2.share` sharing fairly (share)
 - ✅ `m.g2.frac` halves, thirds and quarters (frac)
-- `m.g2.sub` subtracting with renaming (regroup backwards)
-- `m.g2.money` dollars and cents (pv money)
-- `m.g2.time` five-minute clock (clock)
-- `m.g2.picgraph` picture graph with a key (build)
-- `m.g2.story` two-step problems: bar model
+- ✅ `m.g2.sub` subtracting with renaming (regroup backwards)
+- ✅ `m.g2.money` dollars and cents (pv money)
+- ✅ `m.g2.time` five-minute clock (clock)
+- ✅ `m.g2.picgraph` picture graph with a key (build)
+- ✅ `m.g2.story` two-step problems: bar model
 
 **Grade 3 (P3):**
 - `m.g3.times` 6–9 times-table tricks (groups/arrays)
@@ -552,8 +559,8 @@ Each **routine turn builds one batch of ~5 lessons**, alternating English and ma
 | Phase 1 | plan, engine `js/learn.js`, scroll shelf, hint links, Grown-ups card, save block, tests | ✅ | 1d135e5 |
 | Pilot EN | en.a1.an, en.a1.be, en.a1.plural, en.a1.place, en.a1.qwords | ✅ | 1d135e5 |
 | Pilot MA | m.g2.place, m.g2.add, m.g2.times, m.g2.share, m.g2.frac | ✅ | 1d135e5 |
-| EN-2 | A1 rest: have, can, s3, thereis, this, poss, do | ⏳ next English turn | |
-| MA-2 | G2 rest: sub, money, time, picgraph, story | ⏳ next maths turn | |
+| EN-2 | A1 rest: have, can, s3, thereis, this, poss, do | ✅ (hook art repainted with GenerateImage 2026-11-04; Pillow composites removed) | DEPLOY_HASH |
+| MA-2 | G2 rest: sub, money, time, picgraph, story (+ widgets rename, money, clock, picgraph, bar) | ✅ (5 GenerateImage hooks; narrator money words fixed) | DEPLOY_HASH |
 | EN-3 | A1 rest: ing, waswere, place2, timeprep, feel, detail, listennum, keyword | ⏳ | |
 | MA-3 | G1 all (9) | ⏳ | |
 | EN-4… | A2 (19), then B1, B2, C1, C2 | ⏳ | |

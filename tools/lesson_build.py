@@ -10,22 +10,28 @@ OUT = os.path.join(ROOT, "data", "lessons")
 SKILLS = {"grammar", "vocab", "reading", "listening"}
 WIDGETS = {   # kind → required fields (LESSONS-PLAN.md §2 widget kit; js/learn.js KIT)
     "sort": ["bins", "items"], "fill": ["tiles", "items"], "suffix": ["stamp", "items"], "spots": ["scene", "tasks"],
-    "pv": ["targets"], "regroup": ["a", "b"], "groups": ["rings", "each"], "share": ["total", "plates"], "frac": ["stages"]}
-SCENES = {"table": {"on", "under", "in"}, "bed": {"on", "under", "in"}}
+    "pv": ["targets"], "regroup": ["a", "b"], "groups": ["rings", "each"], "share": ["total", "plates"], "frac": ["stages"],
+    "rename": ["a", "b"], "money": ["targets"], "clock": ["targets"], "picgraph": ["cats", "key"], "bar": ["start", "sold", "add"]}
+SCENES = {"table": {"on", "under", "in"}, "bed": {"on", "under", "in"}, "nearfar": {"near", "far"}}
 NUMW = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight"}
 DEN = {2: ("half", "halves"), 3: ("third", "thirds"), 4: ("quarter", "quarters"), 5: ("fifth", "fifths"), 6: ("sixth", "sixths"), 8: ("eighth", "eighths")}
 def frac_words(a, b):
     a, b = int(a), int(b)
     if b in DEN and a in NUMW: return f"{NUMW[a]} {DEN[b][0] if a == 1 else DEN[b][1]}"
     return f"{a} out of {b}"
+def dollars(n): return f"{int(n)} dollar{'' if int(n) == 1 else 's'}"
 def speak(t):
     """the narrator's version of a line: TeX fractions → words, money, maths symbols, emoji dropped by build_voice's norm()"""
     t = re.sub(r"\$\\frac\{(\d+)\}\{(\d+)\}\$", lambda m: frac_words(m.group(1), m.group(2)), str(t))
     t = t.replace("\n", " ")
+    t = re.sub(r"\\\$(\d+)\.(\d\d)", lambda m: dollars(m.group(1)) + ("" if m.group(2) == "00" else f" and {int(m.group(2))} cent{'' if int(m.group(2)) == 1 else 's'}"), t)
     t = re.sub(r"\\\$(\d+) (note|coin)", r"\1 dollar \2", t)
-    t = re.sub(r"\\\$(\d+)", r"\1 dollars", t)
+    t = re.sub(r"\\\$(\d+)", lambda m: dollars(m.group(1)), t)
     t = t.replace("$", "")
     t = re.sub(r"=\s*\?", "equals what?", t)
+    t = re.sub(r"(\d+)¢ (coin)", r"\1 cent \2", t)
+    t = re.sub(r"\b1¢", "1 cent", t)
+    t = re.sub(r"(\d+)¢", r"\1 cents", t)
     t = t.replace("×", " times ").replace("÷", " divided by ").replace(" = ", " equals ").replace(" + ", " plus ").replace(" − ", " minus ").replace(" → ", ", ")
     t = t.replace("___", "blank").replace("·", ",").replace("\n", " ")
     return re.sub(r"\s+", " ", t).strip()
@@ -65,6 +71,19 @@ def check_widget(lid, w, where):
     if k == "frac":
         for st in w["stages"]:
             if st["shape"] not in ("pizza", "bar") or not (2 <= st["parts"] <= 8) or not (1 <= st["shade"] < st["parts"]) or not st.get("text"): fail(lid, f"{where}: frac stage {st}")
+    if k == "rename" and not ((w["a"] % 10) < (w["b"] % 10) and w["a"] > w["b"] and w["a"] < 100): fail(lid, f"{where}: rename needs ones that need borrowing and a < 100")
+    if k == "money":
+        if not w["targets"] or not all(isinstance(n, int) and 1 <= n <= 999 for n in w["targets"]): fail(lid, f"{where}: money targets are cents 1–999")
+    if k == "clock":
+        for t_ in w["targets"]:
+            if not isinstance(t_, dict) or not (1 <= t_.get("h", 0) <= 12) or t_.get("m", -1) not in range(0, 60, 5): fail(lid, f"{where}: clock target {t_} needs h 1–12 and m in 5-min steps")
+    if k == "picgraph":
+        if w["key"] not in (1, 2, 5, 10): fail(lid, f"{where}: picgraph key must be 1, 2, 5 or 10")
+        if not (2 <= len(w["cats"]) <= 5): fail(lid, f"{where}: picgraph needs 2–5 categories")
+        for c in w["cats"]:
+            if not c.get("label") or not (1 <= c.get("n", 0) <= 8): fail(lid, f"{where}: picgraph cat {c}")
+    if k == "bar":
+        if not (10 <= w["start"] <= 99 and 1 <= w["sold"] < w["start"] and 1 <= w["add"] <= 40): fail(lid, f"{where}: bar start/sold/add out of kid range")
 def say_widget(w):
     w["say"] = speak(w["text"])
     for t in w.get("tasks", []): t["say"] = speak(t["text"])

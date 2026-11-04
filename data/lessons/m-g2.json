@@ -767,6 +767,791 @@
    ],
    "grown": "👪 MOE P2 Fractions: fraction of a whole (halves, thirds, quarters), equal parts, notation, comparing unit fractions.",
    "pack": "m-g2"
+  },
+  {
+   "id": "m.g2.sub",
+   "title": "Subtracting with renaming",
+   "icon": "🌉",
+   "at": {
+    "topic": "g2.sub"
+   },
+   "art": "lesson_m_g2_sub",
+   "art_alt": "Gumdrop unbundles a ten-bag of gumdrops on a candy bridge",
+   "hook": {
+    "text": "Gumdrop the candy fairy has 32 gumdrops on the candy bridge. A hungry duck takes 15. She only has 2 loose ones in her jar! How can she give the duck 5 ones?",
+    "say": "Gumdrop the candy fairy has 32 gumdrops on the candy bridge. A hungry duck takes 15. She only has 2 loose ones in her jar! How can she give the duck 5 ones?"
+   },
+   "discover": {
+    "kind": "rename",
+    "a": 32,
+    "b": 15,
+    "text": "Take away 15 gumdrops. If the ones jar hasn't enough, tap 🎀 Unbundle to open a ten-bag into 10 ones. Then tap ➖ one or ➖ ten.",
+    "hint": "2 ones aren't enough for 5. Unbundle one ten-bag first, then take ones, then tens.",
+    "say": "Take away 15 gumdrops. If the ones jar hasn't enough, tap 🎀 Unbundle to open a ten-bag into 10 ones. Then tap ➖ one or ➖ ten."
+   },
+   "rule": {
+    "text": "When the ones aren't enough, rename a ten as 10 ones. 32 is 3 tens and 2 ones. Unbundle: 2 tens and 12 ones. Take 5 ones → 7 ones left. Take 1 ten → 1 ten left. So 32 − 15 = 17.",
+    "examples": [
+     "32 − 15 = 17 (rename 3 tens 2 ones → 2 tens 12 ones)",
+     "41 − 23: rename → 3 tens 11 ones, then take 3 ones and 2 tens → 18"
+    ],
+    "say": "When the ones aren't enough, rename a ten as 10 ones. 32 is 3 tens and 2 ones. Unbundle: 2 tens and 12 ones. Take 5 ones, 7 ones left. Take 1 ten, 1 ten left. So 32 minus 15 equals 17.",
+    "sayEx": [
+     "32 minus 15 equals 17 (rename 3 tens 2 ones, 2 tens 12 ones)",
+     "41 minus 23: rename, 3 tens 11 ones, then take 3 ones and 2 tens, 18"
+    ]
+   },
+   "check": [
+    {
+     "q": "52 − 18 = ?",
+     "options": [
+      "34",
+      "44",
+      "36"
+     ],
+     "answer": 0,
+     "notes": {
+      "44": "Ones: 2 is smaller than 8, so rename. 12 − 8 = 4 ones, and tens become 4 − 1 = 3. Answer 34.",
+      "36": "After renaming, ones are 12 − 8 = 4, not 6. Tens: 4 − 1 = 3 → 34."
+     },
+     "explain": "Rename: 4 tens 12 ones. 12 − 8 = 4, 4 − 1 = 3 tens → 34.",
+     "say": "52 minus 18 equals what?"
+    },
+    {
+     "q": "In 40 − 16, we rename because…",
+     "options": [
+      "0 ones are not enough to take 6",
+      "4 tens are not enough",
+      "40 is even"
+     ],
+     "answer": 0,
+     "notes": {
+      "4 tens are not enough": "We have plenty of tens. The problem is the ones place: 0 < 6.",
+      "40 is even": "Being even doesn't decide renaming. We rename when the top ones digit is smaller."
+     },
+     "explain": "0 ones < 6 ones, so open one ten: 3 tens and 10 ones, then subtract.",
+     "say": "In 40 minus 16, we rename because…"
+    },
+    {
+     "q": "After renaming 61 − 27, how many ones are on top?",
+     "options": [
+      "11",
+      "1",
+      "7"
+     ],
+     "answer": 0,
+     "notes": {
+      "1": "That was the ones digit before renaming. We borrow 1 ten → 11 ones.",
+      "7": "7 is what we take away. After renaming the top ones become 11."
+     },
+     "explain": "61 → 5 tens and 11 ones. Then 11 − 7 = 4 ones, 5 − 2 = 3 tens → 34.",
+     "say": "After renaming 61 minus 27, how many ones are on top?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way: count up! From 15 up to 32. 15 → 20 is 5, 20 → 32 is 12. 5 + 12 = 17. Same answer, and you can check: 17 + 15 = 32.",
+    "examples": [
+     "32 − 15 → count up 15 to 32 = 17",
+     "Check: 17 + 15 = 32"
+    ],
+    "discover": {
+     "kind": "rename",
+     "a": 41,
+     "b": 23,
+     "text": "Take away 23. Unbundle if the ones jar needs more!",
+     "hint": "1 one is less than 3. Unbundle a ten first.",
+     "say": "Take away 23. Unbundle if the ones jar needs more!"
+    },
+    "say": "Here's another way: count up! From 15 up to 32. 15, 20 is 5, 20, 32 is 12. 5 plus 12 equals 17. Same answer, and you can check: 17 plus 15 equals 32."
+   },
+   "check2": [
+    {
+     "q": "70 − 34 = ?",
+     "options": [
+      "36",
+      "46",
+      "44"
+     ],
+     "answer": 0,
+     "notes": {
+      "46": "Rename: 6 tens 10 ones. 10 − 4 = 6 ones, 6 − 3 = 3 tens → 36.",
+      "44": "Ones after renaming: 10 − 4 = 6, not 4. Tens: 6 − 3 = 3 → 36."
+     },
+     "explain": "Rename 7 tens 0 ones → 6 tens 10 ones. 10 − 4 = 6, 6 − 3 = 3 → 36.",
+     "say": "70 minus 34 equals what?"
+    },
+    {
+     "q": "25 − 9 = ?",
+     "options": [
+      "16",
+      "26",
+      "14"
+     ],
+     "answer": 0,
+     "notes": {
+      "26": "Taking away makes a smaller number. Rename: 1 ten 15 ones. 15 − 9 = 6, 1 ten left → 16.",
+      "14": "15 − 9 = 6 ones, not 4. Answer 16."
+     },
+     "explain": "Rename: 1 ten and 15 ones. 15 − 9 = 6 → 16.",
+     "say": "25 minus 9 equals what?"
+    },
+    {
+     "q": "In 53 − 28, after renaming, the tens digit on top is…",
+     "options": [
+      "4",
+      "5",
+      "2"
+     ],
+     "answer": 0,
+     "notes": {
+      "5": "We borrowed one of those tens, so 5 becomes 4.",
+      "2": "2 is what we take away from the tens. Top tens after renaming: 4."
+     },
+     "explain": "53 → 4 tens and 13 ones. Then 13 − 8 = 5, 4 − 2 = 2 → 25.",
+     "say": "In 53 minus 28, after renaming, the tens digit on top is…"
+    }
+   ],
+   "grown": "👪 MOE P2 Subtraction within 1000 with renaming (regrouping / borrowing), and checking by addition.",
+   "pack": "m-g2"
+  },
+  {
+   "id": "m.g2.money",
+   "title": "Dollars and cents",
+   "icon": "💰",
+   "at": {
+    "topic": "g2.money"
+   },
+   "art": "lesson_m_g2_money",
+   "art_alt": "Crumb counting dollar coins and cents at the bakery till",
+   "hook": {
+    "text": "Crumb the baker dragon's till needs \\$1.25 for a jam tart. He has shiny \\$1 coins, 10¢ coins and 1¢ coins. Can you count them onto the mat?",
+    "say": "Crumb the baker dragon's till needs 1 dollar and 25 cents for a jam tart. He has shiny 1 dollar coins, 10 cent coins and 1 cent coins. Can you count them onto the mat?"
+   },
+   "discover": {
+    "kind": "money",
+    "targets": [
+     125,
+     240
+    ],
+    "text": "Build each price with coins. Drag a coin onto the till or tap it. Tap ➖ to take one back.",
+    "hint": "Start with the biggest coins. How many \\$1? Then 10¢, then 1¢.",
+    "say": "Build each price with coins. Drag a coin onto the till or tap it. Tap ➖ to take one back."
+   },
+   "rule": {
+    "text": "Money uses place value too! \\$1 is 100 cents, a 10¢ coin is 10 cents, and a 1¢ coin is 1 cent. \\$1.25 = 1 × \\$1 + 2 × 10¢ + 5 × 1¢. The dot separates dollars from cents.",
+    "say": "Money uses place value too! One dollar is 100 cents, a 10 cent coin is 10 cents, and a 1 cent coin is 1 cent. One dollar 25 is 1 dollar, 2 ten-cent coins and 5 one-cent coins. The dot separates dollars from cents.",
+    "examples": [
+     "\\$1.25 = 1 × \\$1 + 2 × 10¢ + 5 × 1¢",
+     "\\$2.40 = 2 × \\$1 + 4 × 10¢",
+     "100 cents = \\$1"
+    ],
+    "sayEx": [
+     "1 dollar and 25 cents equals 1 times 1 dollar plus 2 times 10 cents plus 5 times 1 cent",
+     "2 dollars and 40 cents equals 2 times 1 dollar plus 4 times 10 cents",
+     "100 cents equals 1 dollar"
+    ]
+   },
+   "check": [
+    {
+     "q": "How many cents is \\$1.30?",
+     "options": [
+      "130",
+      "13",
+      "103"
+     ],
+     "answer": 0,
+     "notes": {
+      "13": "\\$1.30 is 1 dollar and 30 cents = 100 + 30 = 130 cents.",
+      "103": "The 3 is in the ones-of-cents place after a 0: 30 cents, not 3. 100 + 30 = 130."
+     },
+     "explain": "\\$1 = 100 cents, plus 30 cents = 130 cents.",
+     "say": "How many cents is 1 dollar and 30 cents?"
+    },
+    {
+     "q": "3 × \\$1 + 2 × 10¢ + 4 × 1¢ = ?",
+     "options": [
+      "\\$3.24",
+      "\\$3.42",
+      "\\$2.34"
+     ],
+     "answer": 0,
+     "notes": {
+      "\\$3.42": "2 × 10¢ = 20¢ and 4 × 1¢ = 4¢ → 24¢, not 42¢. So \\$3.24.",
+      "\\$2.34": "We have three \\$1 coins: \\$3, plus 24¢ → \\$3.24."
+     },
+     "explain": "\\$3 + 20¢ + 4¢ = \\$3.24.",
+     "say": "3 times 1 dollar plus 2 times 10 cents plus 4 times 1 cent equals what?"
+    },
+    {
+     "q": "A bun costs 80¢. Which coins make exactly 80¢?",
+     "options": [
+      "8 × 10¢",
+      "8 × 1¢",
+      "1 × \\$1"
+     ],
+     "answer": 0,
+     "notes": {
+      "8 × 1¢": "That is only 8 cents. We need 80 cents: eight 10¢ coins.",
+      "1 × \\$1": "\\$1 is 100 cents — 20 cents too much."
+     },
+     "explain": "8 × 10¢ = 80¢.",
+     "say": "A bun costs 80 cents. Which coins make exactly 80 cents?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way: think in cents first, then write the dollars. 240 cents = 2 dollars and 40 cents, written \\$2.40. The last two digits are always the cents!",
+    "examples": [
+     "240 cents = \\$2.40",
+     "105 cents = \\$1.05",
+     "Always 2 digits after the dot"
+    ],
+    "discover": {
+     "kind": "money",
+     "targets": [
+      105
+     ],
+     "text": "Build \\$1.05 with the coins.",
+     "hint": "1 × \\$1 and 5 × 1¢. No 10¢ coins.",
+     "say": "Build 1 dollar and 5 cents with the coins."
+    },
+    "say": "Here's another way: think in cents first, then write the dollars. 240 cents equals 2 dollars and 40 cents, written 2 dollars and 40 cents. The last two digits are always the cents!"
+   },
+   "check2": [
+    {
+     "q": "\\$2.15 is how many cents?",
+     "options": [
+      "215",
+      "21.5",
+      "2015"
+     ],
+     "answer": 0,
+     "notes": {
+      "21.5": "Don't treat the dot like a decimal you divide by. \\$2.15 = 215 cents.",
+      "2015": "Just join 2 and 15 with the cents: 200 + 15 = 215."
+     },
+     "explain": "2 × 100 + 15 = 215 cents.",
+     "say": "2 dollars and 15 cents is how many cents?"
+    },
+    {
+     "q": "1 × \\$1 + 5 × 10¢ + 0 × 1¢ = ?",
+     "options": [
+      "\\$1.50",
+      "\\$1.05",
+      "\\$5.10"
+     ],
+     "answer": 0,
+     "notes": {
+      "\\$1.05": "5 × 10¢ = 50¢, not 5¢. Write 50 after the dot: \\$1.50.",
+      "\\$5.10": "We have one \\$1 and five 10¢ = \\$1.50."
+     },
+     "explain": "\\$1 + 50¢ = \\$1.50.",
+     "say": "1 times 1 dollar plus 5 times 10 cents plus 0 times 1 cent equals what?"
+    },
+    {
+     "q": "Which is more money?",
+     "options": [
+      "\\$1.20",
+      "99¢",
+      "12¢"
+     ],
+     "answer": 0,
+     "notes": {
+      "99¢": "99¢ is less than 100¢. \\$1.20 = 120 cents.",
+      "12¢": "12 cents is much smaller than \\$1.20."
+     },
+     "explain": "\\$1.20 = 120 cents > 99 cents.",
+     "say": "Which is more money?"
+    }
+   ],
+   "grown": "👪 MOE P2 Money: dollars and cents, counting and making amounts, the decimal-point notation for money.",
+   "pack": "m-g2"
+  },
+  {
+   "id": "m.g2.time",
+   "title": "Five-minute clock",
+   "icon": "⏰",
+   "at": {
+    "topic": "g2.time"
+   },
+   "art": "lesson_m_g2_time",
+   "art_alt": "A pastel fairy clock tower with a big round clock in soft evening light",
+   "hook": {
+    "text": "The fairy clock tower stopped at the wrong time! The lantern parade starts at 3:25. Can you move the hands to the right place?",
+    "say": "The fairy clock tower stopped at the wrong time! The lantern parade starts at 3:25. Can you move the hands to the right place?"
+   },
+   "discover": {
+    "kind": "clock",
+    "targets": [
+     {
+      "h": 3,
+      "m": 25
+     },
+     {
+      "h": 4,
+      "m": 40
+     }
+    ],
+    "text": "Set the clock. Tap 5 min ⏩ to move the long hand, and hour ⏩ for the short hand. You can also tap a number on the clock face for the minutes.",
+    "hint": "Count the long hand in fives: each number is 5 more minutes. 5 numbers past 12 → 25 minutes.",
+    "say": "Set the clock. Tap 5 min ⏩ to move the long hand, and hour ⏩ for the short hand. You can also tap a number on the clock face for the minutes."
+   },
+   "rule": {
+    "text": "The long hand counts minutes in fives. On 1 → 5 minutes, on 2 → 10, on 5 → 25, on 8 → 40. The short hand points near the hour. So long hand on 5 and short hand just past 3 means 3:25.",
+    "examples": [
+     "long hand on 5 → :25",
+     "long hand on 8 → :40",
+     "long hand on 12 → o'clock"
+    ],
+    "say": "The long hand counts minutes in fives. On 1, 5 minutes, on 2, 10, on 5, 25, on 8, 40. The short hand points near the hour. So long hand on 5 and short hand just past 3 means 3:25.",
+    "sayEx": [
+     "long hand on 5, :25",
+     "long hand on 8, :40",
+     "long hand on 12, o'clock"
+    ]
+   },
+   "check": [
+    {
+     "q": "The long hand points to 4. How many minutes?",
+     "options": [
+      "20",
+      "4",
+      "40"
+     ],
+     "answer": 0,
+     "notes": {
+      "4": "The number 4 is not 4 minutes. Count in fives: 5, 10, 15, 20.",
+      "40": "40 minutes is the long hand on 8 (8 × 5 = 40). On 4 → 20."
+     },
+     "explain": "4 × 5 = 20 minutes.",
+     "say": "The long hand points to 4. How many minutes?"
+    },
+    {
+     "q": "What time is it when the short hand is just past 2 and the long hand is on 6?",
+     "options": [
+      "2:30",
+      "6:10",
+      "2:06"
+     ],
+     "answer": 0,
+     "notes": {
+      "6:10": "The short hand shows the hour (2). The long hand on 6 → 30 minutes: 2:30.",
+      "2:06": "Long hand on 6 is half past, 30 minutes — not 6 minutes."
+     },
+     "explain": "Long hand on 6 = 30 minutes. Short hand past 2 → 2:30.",
+     "say": "What time is it when the short hand is just past 2 and the long hand is on 6?"
+    },
+    {
+     "q": "The long hand on 9 means…",
+     "options": [
+      "45 minutes",
+      "9 minutes",
+      "90 minutes"
+     ],
+     "answer": 0,
+     "notes": {
+      "9 minutes": "Count in fives: 9 × 5 = 45 minutes.",
+      "90 minutes": "A clock only goes to 60 minutes. 9 × 5 = 45."
+     },
+     "explain": "9 × 5 = 45 minutes (quarter to the next hour).",
+     "say": "The long hand on 9 means…"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way: skip-count from the 12! Whisper 5, 10, 15, 20… as you pass each number with the long hand. Stop when you reach the number it points to.",
+    "examples": [
+     "to the 3: 5, 10, 15 → :15",
+     "to the 7: 5…35 → :35"
+    ],
+    "discover": {
+     "kind": "clock",
+     "targets": [
+      {
+       "h": 7,
+       "m": 15
+      }
+     ],
+     "text": "Set the clock to 7:15. Count in fives to the 3!",
+     "hint": "Long hand on 3 → 15 minutes. Short hand just past 7.",
+     "say": "Set the clock to 7:15. Count in fives to the 3!"
+    },
+    "say": "Here's another way: skip-count from the 12! Whisper 5, 10, 15, 20… as you pass each number with the long hand. Stop when you reach the number it points to."
+   },
+   "check2": [
+    {
+     "q": "Long hand on 2 means…",
+     "options": [
+      "10 minutes",
+      "2 minutes",
+      "20 minutes"
+     ],
+     "answer": 0,
+     "notes": {
+      "2 minutes": "Each number is worth 5 minutes: 2 × 5 = 10.",
+      "20 minutes": "20 is the long hand on 4. On 2 → 10 minutes."
+     },
+     "explain": "2 × 5 = 10 minutes.",
+     "say": "Long hand on 2 means…"
+    },
+    {
+     "q": "Which time has the long hand on 8?",
+     "options": [
+      "4:40",
+      "4:08",
+      "8:20"
+     ],
+     "answer": 0,
+     "notes": {
+      "4:08": "08 minutes would be just past the 1, not on 8. On 8 → 40 minutes.",
+      "8:20": "That would be short hand near 8 and long hand on 4. We need long hand on 8 → :40."
+     },
+     "explain": "8 × 5 = 40, so times like 4:40.",
+     "say": "Which time has the long hand on 8?"
+    },
+    {
+     "q": "Half past 5 is…",
+     "options": [
+      "5:30",
+      "5:15",
+      "6:30"
+     ],
+     "answer": 0,
+     "notes": {
+      "5:15": "Quarter past is :15 (long hand on 3). Half past is :30 (long hand on 6).",
+      "6:30": "Half past 5 is still in the 5 o'clock hour: 5:30."
+     },
+     "explain": "Half past = 30 minutes = long hand on 6 → 5:30.",
+     "say": "Half past 5 is…"
+    }
+   ],
+   "grown": "👪 MOE P2 Time: telling time to 5 minutes, hour and minute hands, o'clock / half past / quarter past and to.",
+   "pack": "m-g2"
+  },
+  {
+   "id": "m.g2.picgraph",
+   "title": "Picture graphs with a key",
+   "icon": "🎏",
+   "at": {
+    "topic": "g2.picgraph"
+   },
+   "art": "lesson_m_g2_picgraph",
+   "art_alt": "Festival parade with sticker pictures lining up in pastel rows",
+   "hook": {
+    "text": "The Picture Graph Parade is lining up stickers for each float! But the key says each sticker stands for 5 friends — not 1. Can you build the graph so the counts are right?",
+    "say": "The Picture Graph Parade is lining up stickers for each float! But the key says each sticker stands for 5 friends — not 1. Can you build the graph so the counts are right?"
+   },
+   "discover": {
+    "kind": "picgraph",
+    "key": 5,
+    "item": "🎈",
+    "cats": [
+     {
+      "id": "roses",
+      "label": "Roses",
+      "n": 3
+     },
+     {
+      "id": "stars",
+      "label": "Stars",
+      "n": 2
+     },
+     {
+      "id": "moons",
+      "label": "Moons",
+      "n": 4
+     }
+    ],
+    "text": "Tap ➕ (or the row) to add a balloon sticker. Each 🎈 = 5. Match the numbers: Roses 15, Stars 10, Moons 20.",
+    "hint": "Roses need 15 ÷ 5 = 3 stickers. Stars 10 ÷ 5 = 2. Moons 20 ÷ 5 = 4.",
+    "say": "Tap ➕ (or the row) to add a balloon sticker. Each 🎈 equals 5. Match the numbers: Roses 15, Stars 10, Moons 20."
+   },
+   "rule": {
+    "text": "In a picture graph with a key, one picture can stand for more than one. If each picture = 5, then 3 pictures mean 3 × 5 = 15. Always read the key first!",
+    "examples": [
+     "key: each 🎈 = 5 → 3 balloons = 15",
+     "key: each ⭐ = 2 → 4 stars = 8",
+     "Count pictures, then multiply by the key"
+    ],
+    "say": "In a picture graph with a key, one picture can stand for more than one. If each picture equals 5, then 3 pictures mean 3 times 5 equals 15. Always read the key first!",
+    "sayEx": [
+     "key: each 🎈 equals 5, 3 balloons equals 15",
+     "key: each ⭐ equals 2, 4 stars equals 8",
+     "Count pictures, then multiply by the key"
+    ]
+   },
+   "check": [
+    {
+     "q": "Key: each 🧁 = 2. A row has 4 cupcakes. How many?",
+     "options": [
+      "8",
+      "4",
+      "6"
+     ],
+     "answer": 0,
+     "notes": {
+      "4": "4 is the number of pictures. Multiply by the key: 4 × 2 = 8.",
+      "6": "4 × 2 = 8, not 6."
+     },
+     "explain": "4 pictures × 2 = 8.",
+     "say": "Key: each 🧁 equals 2. A row has 4 cupcakes. How many?"
+    },
+    {
+     "q": "Key: each 🌸 = 10. We need to show 30 flowers. How many pictures?",
+     "options": [
+      "3",
+      "10",
+      "30"
+     ],
+     "answer": 0,
+     "notes": {
+      "10": "10 is the key, not the number of pictures. 30 ÷ 10 = 3 pictures.",
+      "30": "That would be if each picture = 1. With key 10: 30 ÷ 10 = 3."
+     },
+     "explain": "30 ÷ 10 = 3 pictures.",
+     "say": "Key: each 🌸 equals 10. We need to show 30 flowers. How many pictures?"
+    },
+    {
+     "q": "Why do picture graphs use a key?",
+     "options": [
+      "so one picture can stand for many",
+      "to make the pictures prettier",
+      "so we never multiply"
+     ],
+     "answer": 0,
+     "notes": {
+      "to make the pictures prettier": "Cute pictures are fun, but the key's job is to tell you the scale.",
+      "so we never multiply": "You do multiply (or divide)! The key tells you by how much."
+     },
+     "explain": "The key tells you the scale: each picture = 2, 5 or 10…",
+     "say": "Why do picture graphs use a key?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way: think of skip-counting! If each sticker = 5, whisper 5, 10, 15 as you place the 1st, 2nd, 3rd sticker. Stop when you reach the number you need.",
+    "examples": [
+     "key 5: 5, 10, 15 → three stickers",
+     "key 2: 2, 4, 6, 8 → four stickers"
+    ],
+    "discover": {
+     "kind": "picgraph",
+     "key": 2,
+     "item": "⭐",
+     "cats": [
+      {
+       "id": "a",
+       "label": "Apples",
+       "n": 4
+      },
+      {
+       "id": "b",
+       "label": "Bells",
+       "n": 3
+      }
+     ],
+     "text": "Each ⭐ = 2. Build Apples = 8 and Bells = 6.",
+     "hint": "8 ÷ 2 = 4 stars. 6 ÷ 2 = 3 stars.",
+     "say": "Each ⭐ equals 2. Build Apples equals 8 and Bells equals 6."
+    },
+    "say": "Here's another way: think of skip-counting! If each sticker equals 5, whisper 5, 10, 15 as you place the 1st, 2nd, 3rd sticker. Stop when you reach the number you need."
+   },
+   "check2": [
+    {
+     "q": "Key: each 🎀 = 5. 2 ribbons show…",
+     "options": [
+      "10",
+      "2",
+      "5"
+     ],
+     "answer": 0,
+     "notes": {
+      "2": "2 is how many pictures. 2 × 5 = 10.",
+      "5": "5 is the key for one picture. Two pictures → 10."
+     },
+     "explain": "2 × 5 = 10.",
+     "say": "Key: each 🎀 equals 5. 2 ribbons show…"
+    },
+    {
+     "q": "Key: each 🐸 = 10. How many pictures for 40 frogs?",
+     "options": [
+      "4",
+      "10",
+      "40"
+     ],
+     "answer": 0,
+     "notes": {
+      "10": "40 ÷ 10 = 4 pictures, not 10.",
+      "40": "That would be one-to-one. Key 10 → 40 ÷ 10 = 4."
+     },
+     "explain": "40 ÷ 10 = 4 pictures.",
+     "say": "Key: each 🐸 equals 10. How many pictures for 40 frogs?"
+    },
+    {
+     "q": "A graph key says each picture = 1. Then 6 pictures mean…",
+     "options": [
+      "6",
+      "12",
+      "1"
+     ],
+     "answer": 0,
+     "notes": {
+      "12": "Only if the key were 2. Key 1 means each picture is one: 6.",
+      "1": "1 is the key, not the total. 6 pictures × 1 = 6."
+     },
+     "explain": "Key 1 → 6 × 1 = 6.",
+     "say": "A graph key says each picture equals 1. Then 6 pictures mean…"
+    }
+   ],
+   "grown": "👪 MOE P2 Data Analysis: picture graphs with scales of 1, 2, 5 or 10; reading and building graphs.",
+   "pack": "m-g2"
+  },
+  {
+   "id": "m.g2.story",
+   "title": "Two-step bar stories",
+   "icon": "📜",
+   "at": {
+    "topic": "g2.story"
+   },
+   "art": "lesson_m_g2_story",
+   "art_alt": "Gingerbread baker with two trays of cookies, sold and fresh",
+   "hook": {
+    "text": "The Gingerbread Baker baked 50 cookies. He sold 20, then baked 15 more. The bar model can show both steps — take away, then add. Can you label it?",
+    "say": "The Gingerbread Baker baked 50 cookies. He sold 20, then baked 15 more. The bar model can show both steps — take away, then add. Can you label it?"
+   },
+   "discover": {
+    "kind": "bar",
+    "start": 50,
+    "sold": 20,
+    "add": 15,
+    "text": "Drag or tap “sold 20” onto the sold part, then “+ 15” onto the new part.",
+    "hint": "Do the take-away first. Then join the new batch on the end of the bar.",
+    "say": "Drag or tap “sold 20” onto the sold part, then “+ 15” onto the new part."
+   },
+   "rule": {
+    "text": "A two-step story needs two moves. First: 50 − 20 = 30 left. Second: 30 + 15 = 45 now. The bar shows the sold chunk, the left chunk, and the new chunk joined on.",
+    "examples": [
+     "50 − 20 = 30",
+     "30 + 15 = 45",
+     "Check: sold + left = start, left + new = now"
+    ],
+    "say": "A two-step story needs two moves. First: 50 minus 20 equals 30 left. Second: 30 plus 15 equals 45 now. The bar shows the sold chunk, the left chunk, and the new chunk joined on.",
+    "sayEx": [
+     "50 minus 20 equals 30",
+     "30 plus 15 equals 45",
+     "Check: sold plus left equals start, left plus new equals now"
+    ]
+   },
+   "check": [
+    {
+     "q": "Mia had 40 stickers, gave away 12, then got 8 more. How many now?",
+     "options": [
+      "36",
+      "28",
+      "48"
+     ],
+     "answer": 0,
+     "notes": {
+      "28": "That's only the first step (40 − 12). Then add 8: 28 + 8 = 36.",
+      "48": "That's 40 + 8 without giving any away. Do both steps: 40 − 12 + 8 = 36."
+     },
+     "explain": "40 − 12 = 28, then 28 + 8 = 36.",
+     "say": "Mia had 40 stickers, gave away 12, then got 8 more. How many now?"
+    },
+    {
+     "q": "In a bar model for “sold then baked more”, the first part you mark is…",
+     "options": [
+      "the sold (take-away) part",
+      "the new batch only",
+      "the answer only"
+     ],
+     "answer": 0,
+     "notes": {
+      "the new batch only": "Add comes second. Mark the sold take-away first so “left” is clear.",
+      "the answer only": "The bar helps you find the answer; you build the parts first."
+     },
+     "explain": "Take away first, then join the new part.",
+     "say": "In a bar model for “sold then baked more”, the first part you mark is…"
+    },
+    {
+     "q": "A baker baked 35 buns, sold 10, baked 6 more. How many now?",
+     "options": [
+      "31",
+      "25",
+      "41"
+     ],
+     "answer": 0,
+     "notes": {
+      "25": "That's 35 − 10 only. Add the 6: 25 + 6 = 31.",
+      "41": "That's 35 + 6 without selling. 35 − 10 + 6 = 31."
+     },
+     "explain": "35 − 10 = 25, then 25 + 6 = 31.",
+     "say": "A baker baked 35 buns, sold 10, baked 6 more. How many now?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way: write a number sentence with two signs. Start − sold + new = now. Fill the numbers, then work left to right.",
+    "examples": [
+     "50 − 20 + 15 = 45",
+     "40 − 12 + 8 = 36"
+    ],
+    "discover": {
+     "kind": "bar",
+     "start": 40,
+     "sold": 12,
+     "add": 8,
+     "text": "Label the bar: sold 12, then + 8.",
+     "hint": "Take away 12 first, then add 8.",
+     "say": "Label the bar: sold 12, then plus 8."
+    },
+    "say": "Here's another way: write a number sentence with two signs. Start minus sold plus new equals now. Fill the numbers, then work left to right."
+   },
+   "check2": [
+    {
+     "q": "Sam had 28 marbles, lost 9, then found 5. How many now?",
+     "options": [
+      "24",
+      "19",
+      "33"
+     ],
+     "answer": 0,
+     "notes": {
+      "19": "28 − 9 = 19 is only step one. Then 19 + 5 = 24.",
+      "33": "That's 28 + 5 without losing any. 28 − 9 + 5 = 24."
+     },
+     "explain": "28 − 9 = 19, then 19 + 5 = 24.",
+     "say": "Sam had 28 marbles, lost 9, then found 5. How many now?"
+    },
+    {
+     "q": "Which number sentence matches: baked 60, sold 25, baked 10 more?",
+     "options": [
+      "60 − 25 + 10",
+      "60 + 25 − 10",
+      "60 − 25 − 10"
+     ],
+     "answer": 0,
+     "notes": {
+      "60 + 25 − 10": "Sold means take away, not add. New batch is + 10.",
+      "60 − 25 − 10": "The new batch is added, not taken away."
+     },
+     "explain": "Start − sold + new → 60 − 25 + 10 (= 45).",
+     "say": "Which number sentence matches: baked 60, sold 25, baked 10 more?"
+    },
+    {
+     "q": "After 18 − 7 + 4, what is the answer?",
+     "options": [
+      "15",
+      "11",
+      "25"
+     ],
+     "answer": 0,
+     "notes": {
+      "11": "That's 18 − 7 only. Then + 4 → 15.",
+      "25": "That's 18 + 7. Work left to right: 18 − 7 = 11, + 4 = 15."
+     },
+     "explain": "18 − 7 = 11, then 11 + 4 = 15.",
+     "say": "After 18 minus 7 plus 4, what is the answer?"
+    }
+   ],
+   "grown": "👪 MOE P2 Word problems: two-step problems involving addition and subtraction; bar models (Singapore model method).",
+   "pack": "m-g2"
   }
  ]
 }

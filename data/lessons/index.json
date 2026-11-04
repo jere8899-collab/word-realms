@@ -111,6 +111,155 @@
    ]
   },
   {
+   "id": "en.a1.have",
+   "pack": "en-a1",
+   "title": "have / has",
+   "icon": "🧺",
+   "at": {
+    "realm": "a1",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_a1_have",
+   "match": [
+    {
+     "opts": [
+      "have",
+      "has"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "en.a1.can",
+   "pack": "en-a1",
+   "title": "can / can't",
+   "icon": "🦸",
+   "at": {
+    "realm": "a1",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_a1_can",
+   "match": [
+    {
+     "opts": [
+      "can",
+      "can't"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "en.a1.s3",
+   "pack": "en-a1",
+   "title": "he plays, I play",
+   "icon": "⚽",
+   "at": {
+    "realm": "a1",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_a1_s3",
+   "match": [
+    {
+     "re": "add -?s\\b|he / she / it|third.?person",
+     "field": "explain"
+    }
+   ]
+  },
+  {
+   "id": "en.a1.thereis",
+   "pack": "en-a1",
+   "title": "there is / there are",
+   "icon": "🔎",
+   "at": {
+    "realm": "a1",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_a1_thereis",
+   "match": [
+    {
+     "opts": [
+      "there is",
+      "there are"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "en.a1.this",
+   "pack": "en-a1",
+   "title": "this, that, these, those",
+   "icon": "👉",
+   "at": {
+    "realm": "a1",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_a1_this",
+   "match": [
+    {
+     "opts": [
+      "this",
+      "that"
+     ]
+    },
+    {
+     "opts": [
+      "these",
+      "those"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "en.a1.poss",
+   "pack": "en-a1",
+   "title": "my, your, his, her",
+   "icon": "🎀",
+   "at": {
+    "realm": "a1",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_a1_poss",
+   "match": [
+    {
+     "opts": [
+      "my",
+      "your"
+     ]
+    },
+    {
+     "opts": [
+      "his",
+      "her"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "en.a1.do",
+   "pack": "en-a1",
+   "title": "Do / Does questions",
+   "icon": "❓",
+   "at": {
+    "realm": "a1",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_a1_do",
+   "match": [
+    {
+     "opts": [
+      "Do",
+      "Does"
+     ]
+    },
+    {
+     "opts": [
+      "do",
+      "does"
+     ]
+    }
+   ]
+  },
+  {
    "id": "m.g2.place",
    "pack": "m-g2",
    "title": "Hundreds, tens and ones",
@@ -159,6 +308,56 @@
     "topic": "g2.frac"
    },
    "art": "lesson_m_g2_frac"
+  },
+  {
+   "id": "m.g2.sub",
+   "pack": "m-g2",
+   "title": "Subtracting with renaming",
+   "icon": "🌉",
+   "at": {
+    "topic": "g2.sub"
+   },
+   "art": "lesson_m_g2_sub"
+  },
+  {
+   "id": "m.g2.money",
+   "pack": "m-g2",
+   "title": "Dollars and cents",
+   "icon": "💰",
+   "at": {
+    "topic": "g2.money"
+   },
+   "art": "lesson_m_g2_money"
+  },
+  {
+   "id": "m.g2.time",
+   "pack": "m-g2",
+   "title": "Five-minute clock",
+   "icon": "⏰",
+   "at": {
+    "topic": "g2.time"
+   },
+   "art": "lesson_m_g2_time"
+  },
+  {
+   "id": "m.g2.picgraph",
+   "pack": "m-g2",
+   "title": "Picture graphs with a key",
+   "icon": "🎏",
+   "at": {
+    "topic": "g2.picgraph"
+   },
+   "art": "lesson_m_g2_picgraph"
+  },
+  {
+   "id": "m.g2.story",
+   "pack": "m-g2",
+   "title": "Two-step bar stories",
+   "icon": "📜",
+   "at": {
+    "topic": "g2.story"
+   },
+   "art": "lesson_m_g2_story"
   }
  ]
 }

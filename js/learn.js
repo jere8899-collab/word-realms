@@ -129,12 +129,15 @@ KIT.suffix = {
       if (!left) { root.querySelectorAll(".lw-word:not(.placed)").forEach(x => { x.classList.add("no-s"); x.disabled = true; }); api.done(); } };
     dragTap(root, { onDrop: (src, word) => stampOn(word), onTapTarget: stampOn });
   } };
-// 🧸 place a token on/under/in a little scene (drawn in CSS: a table + basket, or a bed + toy box)
+// 🧸 place a token on a little scene (CSS: table+basket, bed+toy box, or near/far meadow)
 const SCENE = {
   table: { draw: `<div class="sc-table-top"></div><div class="sc-leg l"></div><div class="sc-leg r"></div><div class="sc-basket"></div>`,
     spots: { on: "the table top", under: "under the table", in: "inside the basket" } },
   bed: { draw: `<div class="sc-bed-head"></div><div class="sc-bed"></div><div class="sc-bed-leg l"></div><div class="sc-bed-leg r"></div><div class="sc-box"></div>`,
-    spots: { on: "the top of the bed", under: "under the bed", in: "inside the toy box" } } };
+    spots: { on: "the top of the bed", under: "under the bed", in: "inside the toy box" } },
+  // near / far for this/that/these/those (EN-2); table/bed stay byte-identical above
+  nearfar: { draw: `<div class="sc-far-hill"></div><div class="sc-far-tree l"></div><div class="sc-far-tree r"></div><div class="sc-near-rug"></div><div class="sc-near-toys"></div>`,
+    spots: { near: "near you", far: "far away" } } };
 KIT.spots = {
   html: w => { const s = SCENE[w.scene];
     return `<div class="lw-task" aria-live="polite"></div><div class="lw-scene sc-${w.scene}">${s.draw}${Object.entries(s.spots).map(([k, lab]) => `<button class="lw-spot sp-${k}" data-tgt data-w="${k}" aria-label="${lab}"><span aria-hidden="true">✨</span></button>`).join("")}
@@ -146,7 +149,7 @@ KIT.spots = {
     const put = spot => { const t = w.tasks[i], k = spot.dataset.w;
       if (k !== t.word) return api.miss(`That is ${k.toUpperCase()}! ${t.text}`, spot);
       spot.appendChild(tok); tok.classList.add("in-spot"); api.good(`✅ ${k.toUpperCase()}!`); i++;
-      if (i >= w.tasks.length) { tok.disabled = true; scene.classList.add("all-done"); task.textContent = "🎉 You did all three!"; api.done(); }
+      if (i >= w.tasks.length) { tok.disabled = true; scene.classList.add("all-done"); task.textContent = "🎉 You did them all!"; api.done(); }
       else { show(); const next = w.tasks[i].say; setTimeout(() => api.sayLine && api.sayLine(next), 500); } };
     dragTap(root, { onDrop: (src, spot) => put(spot), onTapTarget: put });
   } };
@@ -173,10 +176,15 @@ KIT.pv = {
     dragTap(root, { instant: () => mat, onDrop: src => add(+src.dataset.v) });
     root.querySelectorAll(".pv-minus").forEach(b => b.onclick = e => { e.stopPropagation(); const v = +b.dataset.minus; if (n[v]) { n[v]--; paint(); check(); } });
   } };
+// 🍬 shared tens/ones paint for regroup (add) and rename (subtract)
+const RG_BAG = "🎀", RG_ONE = "🍬";
+const rgBagsHTML = n => `<span class="rg-bag" aria-hidden="true">${RG_BAG}</span>`.repeat(n);
+const rgSlotsHTML = ones => { const n = Math.max(10, ones); return Array.from({ length: n }, (_, k) => `<i class="${k < ones ? "on" : ""}">${k < ones ? RG_ONE : ""}</i>`).join(""); };
+const rgShelfHTML = () => `<div class="lw-rg"><div class="rg-tens" data-tgt data-z="tens" role="button" tabindex="0" aria-label="the tens shelf"><small>tens (bags of 10)</small><div class="rg-bags"></div></div>
+    <div class="rg-jar" data-tgt data-z="ones" role="button" tabindex="0" aria-label="the ones jar"><small>ones jar</small><div class="rg-slots"></div></div></div>`;
 // 🍬 adding with regrouping: loose ones go in a 10-slot jar; 10 in the jar bundle into a ten-bag
 KIT.regroup = {
-  html: () => `<div class="lw-rg"><div class="rg-tens" data-tgt data-z="tens" role="button" tabindex="0" aria-label="the tens shelf"><small>tens (bags of 10)</small><div class="rg-bags"></div></div>
-    <div class="rg-jar" data-tgt data-z="ones" role="button" tabindex="0" aria-label="the ones jar"><small>ones jar</small><div class="rg-slots"></div></div></div>
+  html: () => `${rgShelfHTML()}
     <div class="rg-new"><small>new gumdrops to put away:</small><div class="rg-pile"></div></div>
     <button class="btn peach rg-bundle" hidden>🎀 Bundle 10 into a ten-bag</button>
     <div class="lw-count" aria-live="polite"></div>`,
@@ -184,9 +192,9 @@ KIT.regroup = {
     const S = { tens: Math.floor(w.a / 10), ones: w.a % 10, inT: Math.floor(w.b / 10), inO: w.b % 10 };
     const pile = root.querySelector(".rg-pile"), bundle = root.querySelector(".rg-bundle"), jar = root.querySelector(".rg-jar"), shelf = root.querySelector(".rg-tens");
     const paint = () => {
-      root.querySelector(".rg-bags").innerHTML = '<span class="rg-bag" aria-hidden="true">🎀</span>'.repeat(S.tens);
-      root.querySelector(".rg-slots").innerHTML = Array.from({ length: 10 }, (_, k) => `<i class="${k < S.ones ? "on" : ""}">${k < S.ones ? "🍬" : ""}</i>`).join("");
-      pile.innerHTML = '<button class="lw-chip rg-ten" data-src data-t="ten" aria-label="a bag of ten">🎀 10</button>'.repeat(S.inT) + '<button class="lw-chip rg-one" data-src data-t="one" aria-label="one gumdrop">🍬</button>'.repeat(S.inO);
+      root.querySelector(".rg-bags").innerHTML = rgBagsHTML(S.tens);
+      root.querySelector(".rg-slots").innerHTML = rgSlotsHTML(S.ones);
+      pile.innerHTML = `<button class="lw-chip rg-ten" data-src data-t="ten" aria-label="a bag of ten">${RG_BAG} 10</button>`.repeat(S.inT) + `<button class="lw-chip rg-one" data-src data-t="one" aria-label="one gumdrop">${RG_ONE}</button>`.repeat(S.inO);
       bundle.hidden = S.ones < 10; jar.classList.toggle("full", S.ones >= 10);
       root.querySelector(".lw-count").textContent = `${S.tens} tens + ${S.ones} ones = ${S.tens * 10 + S.ones}`;
       if (!S.inT && !S.inO && S.ones < 10) { pile.innerHTML = `<b class="rg-sum">${w.a} + ${w.b} = ${w.a + w.b}</b>`; api.done(`✅ ${S.tens} tens and ${S.ones} ones make ${w.a + w.b}!`); }
@@ -269,6 +277,193 @@ KIT.frac = {
     stage.addEventListener("keydown", e => { const p = e.target.closest(".fp"); if (p && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); tapPart(p); } });
     start(); api.sayLine && setTimeout(() => api.sayLine(w.stages[0].say), 0);
   } };
+
+// 🌉 subtracting with renaming: when ones aren't enough, unbundle a ten → 10 ones, then take away
+KIT.rename = {
+  html: () => `${rgShelfHTML()}
+    <div class="rg-new"><small>take away these gumdrops:</small><div class="rg-need" aria-live="polite"></div></div>
+    <button class="btn peach rg-unbundle" hidden>🎀 Unbundle 1 ten → 10 ones</button>
+    <div class="rg-take-row"><button class="btn ghost small rg-take-one" data-take="one" aria-label="take away one gumdrop">➖ one 🍬</button>
+      <button class="btn ghost small rg-take-ten" data-take="ten" aria-label="take away one ten-bag">➖ ten 🎀</button></div>
+    <div class="lw-count" aria-live="polite"></div>`,
+  bind(root, w, api) {
+    const needT = Math.floor(w.b / 10), needO = w.b % 10;
+    const S = { tens: Math.floor(w.a / 10), ones: w.a % 10, leftT: needT, leftO: needO };
+    const unb = root.querySelector(".rg-unbundle"), jar = root.querySelector(".rg-jar"), shelf = root.querySelector(".rg-tens");
+    const paint = () => {
+      root.querySelector(".rg-bags").innerHTML = rgBagsHTML(S.tens);
+      root.querySelector(".rg-slots").innerHTML = rgSlotsHTML(S.ones);
+      root.querySelector(".rg-need").innerHTML = (S.leftT ? `<span class="lw-chip rg-ten">${RG_BAG} ×${S.leftT}</span>` : "") + (S.leftO ? `<span class="lw-chip rg-one">${RG_ONE} ×${S.leftO}</span>` : "") + (!S.leftT && !S.leftO ? `<b class="rg-sum">${w.a} − ${w.b} = ${w.a - w.b}</b>` : "");
+      const must = S.leftO > S.ones && S.tens > 0;
+      unb.hidden = !must; jar.classList.toggle("full", must); jar.classList.toggle("wide", S.ones > 10);
+      root.querySelector(".lw-count").textContent = `${S.tens} tens + ${S.ones} ones = ${S.tens * 10 + S.ones}` + (S.leftT || S.leftO ? ` · still take ${S.leftT ? S.leftT + " ten" + (S.leftT > 1 ? "s" : "") : ""}${S.leftT && S.leftO ? " and " : ""}${S.leftO ? S.leftO + " one" + (S.leftO > 1 ? "s" : "") : ""}` : "");
+      root.querySelector(".rg-take-one").disabled = !S.leftO;
+      root.querySelector(".rg-take-ten").disabled = !S.leftT;
+      if (!S.leftT && !S.leftO) { root.querySelectorAll(".rg-take-one, .rg-take-ten, .rg-unbundle").forEach(b => b.disabled = true); api.done(`✅ ${w.a} − ${w.b} = ${w.a - w.b}!`); }
+    };
+    const take = kind => {
+      if (kind === "one") {
+        if (!S.leftO) return api.miss("You already took all the ones you need!", jar);
+        if (S.ones < 1) return api.miss("No ones left in the jar! Unbundle a ten-bag first 🎀", jar);
+        S.ones--; S.leftO--; WR.sfx("tap"); api.good("➖ one gumdrop");
+      } else {
+        if (!S.leftT) return api.miss("You already took all the tens you need!", shelf);
+        if (S.tens < 1) return api.miss("No ten-bags left!", shelf);
+        S.tens--; S.leftT--; WR.sfx("tap"); api.good("➖ one ten-bag");
+      }
+      paint();
+    };
+    // drag a bag/one chip from the shelf/jar onto a "take" button isn't needed — big tap buttons (and tap shelf/jar)
+    root.querySelector(".rg-take-one").onclick = () => take("one");
+    root.querySelector(".rg-take-ten").onclick = () => take("ten");
+    // also allow tapping the jar (ones) / shelf (tens) as the take target
+    dragTap(root, { onTapTarget: z => take(z.dataset.z === "ones" ? "one" : "ten"),
+      nothing: () => api.say("Tap ➖ one or ➖ ten to take gumdrops away 👆") });
+    unb.onclick = () => { if (S.tens < 1) return api.miss("No ten-bags left to unbundle!", shelf);
+      if (S.ones >= 10 && S.leftO <= S.ones) return api.miss("You already have enough ones!", jar);
+      S.tens--; S.ones += 10; WR.sfx("good"); api.good("✨ 1 ten → 10 ones!"); paint(); };
+    paint();
+    if (S.leftO > S.ones) api.say("Hmm, not enough ones. Unbundle a ten-bag first!");
+  } };
+// 💰 dollars & cents: build an amount with $1 / 10¢ / 1¢ coins (pv-style)
+const COINS = [[100, "$1", "dollar", "d"], [10, "10¢", "ten-cent", "t"], [1, "1¢", "one-cent", "c"]];
+const moneyFmt = c => `$${(c / 100).toFixed(2)}`;
+KIT.money = {
+  html: () => `<div class="lw-target" aria-live="polite"></div>
+    <div class="lw-mat money-mat" data-tgt aria-label="the till mat">${COINS.map(([v, lab, name, c]) => `<div class="pv-col pv-${c}"><small class="pv-name">${lab}</small><div class="pv-blocks" data-col="${v}"></div><b class="pv-n" data-n="${v}">0</b><button class="btn ghost small pv-minus" data-minus="${v}" aria-label="take one ${name} coin back">➖</button></div>`).join("")}</div>
+    <div class="lw-src">${COINS.map(([v, lab, name, c]) => `<button class="lw-block pv-${c}" data-src data-v="${v}" aria-label="add a ${name} coin"><i></i>${lab}</button>`).join("")}</div>
+    <div class="lw-count" aria-live="polite"></div>`,
+  bind(root, w, api) {
+    let i = 0; const n = { 100: 0, 10: 0, 1: 0 }, mat = root.querySelector(".lw-mat");
+    const total = () => n[100] * 100 + n[10] * 10 + n[1];
+    const paint = () => { for (const [v] of COINS) { const col = root.querySelector(`[data-col="${v}"]`);
+      col.innerHTML = v === 100 ? "<i class='coin-d'></i>".repeat(n[v]) : v === 10 ? "<i class='coin-t'></i>".repeat(n[v]) : "<i class='coin-c'></i>".repeat(n[v]);
+      root.querySelector(`[data-n="${v}"]`).textContent = n[v]; }
+      root.querySelector(".lw-count").textContent = `${n[100]} × $1 + ${n[10]} × 10¢ + ${n[1]} × 1¢ = ${moneyFmt(total())}`; };
+    const show = () => { root.querySelector(".lw-target").innerHTML = `Make <b>${moneyFmt(w.targets[i])}</b>`; Object.assign(n, { 100: 0, 10: 0, 1: 0 }); paint(); };
+    show();
+    const check = () => { const want = w.targets[i];
+      if (total() !== want) { if (total() > want) api.say(`That's ${moneyFmt(total())}, more than ${moneyFmt(want)}. Tap ➖ to take a coin back.`); return; }
+      api.good(`✅ ${moneyFmt(want)}!`); i++;
+      if (i >= w.targets.length) { root.querySelectorAll("[data-src], .pv-minus").forEach(b => b.disabled = true); api.done(); } else setTimeout(show, 900); };
+    const add = v => { if (n[v] >= 9) return api.miss(v === 100 ? "That's plenty of dollars!" : v === 10 ? "10 of the 10¢ coins make $1. Use a $1 coin instead!" : "10 of the 1¢ coins make 10¢. Use a 10¢ coin instead!", mat);
+      n[v]++; WR.sfx("tap"); paint(); check(); };
+    dragTap(root, { instant: () => mat, onDrop: src => add(+src.dataset.v) });
+    root.querySelectorAll(".pv-minus").forEach(b => b.onclick = e => { e.stopPropagation(); const v = +b.dataset.minus; if (n[v]) { n[v]--; paint(); check(); } });
+  } };
+// ⏰ five-minute clock: set the hands (long hand in 5-min steps)
+const clockSVG = (h, m) => {
+  const cx = 100, cy = 100, r = 88;
+  const ticks = Array.from({ length: 12 }, (_, k) => { const a = -Math.PI / 2 + k * Math.PI / 6, x1 = cx + (r - 4) * Math.cos(a), y1 = cy + (r - 4) * Math.sin(a), x2 = cx + (r - 14) * Math.cos(a), y2 = cy + (r - 14) * Math.sin(a);
+    return `<line x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" stroke="#C99A6B" stroke-width="3" stroke-linecap="round"/>`; }).join("");
+  const nums = Array.from({ length: 12 }, (_, k) => { const n = k === 0 ? 12 : k, a = -Math.PI / 2 + k * Math.PI / 6, x = cx + (r - 28) * Math.cos(a), y = cy + (r - 28) * Math.sin(a);
+    return `<text x="${x.toFixed(1)}" y="${y.toFixed(1)}" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="800" fill="#6d4f86">${n}</text>`; }).join("");
+  // minute hand angle: 0 at 12, full circle = 60 min; hour hand: also moves with minutes
+  const ma = -Math.PI / 2 + (m / 60) * 2 * Math.PI, ha = -Math.PI / 2 + ((h % 12) / 12 + m / 60 / 12) * 2 * Math.PI;
+  const hand = (a, len, w, cls) => `<line class="${cls}" x1="${cx}" y1="${cy}" x2="${(cx + len * Math.cos(a)).toFixed(1)}" y2="${(cy + len * Math.sin(a)).toFixed(1)}" stroke-width="${w}" stroke-linecap="round"/>`;
+  return `<svg class="ck-svg" viewBox="0 0 200 200" role="img" aria-label="clock showing ${h}:${String(m).padStart(2, "0")}">${`<circle cx="${cx}" cy="${cy}" r="${r}" fill="#FFF8E7" stroke="#F3D9A8" stroke-width="6"/>`}${ticks}${nums}${hand(ha, 48, 5, "ck-h")}${hand(ma, 68, 3.5, "ck-m")}<circle cx="${cx}" cy="${cy}" r="5" fill="#FF6F91"/></svg>`;
+};
+const hmStr = (h, m) => `${h}:${String(m).padStart(2, "0")}`;
+KIT.clock = {
+  html: () => `<div class="lw-target" aria-live="polite"></div><div class="ck-stage"></div>
+    <div class="ck-ctl"><button class="btn ghost ck-btn" data-k="h-" aria-label="hour back">⏪ hour</button><button class="btn ghost ck-btn" data-k="h+" aria-label="hour forward">hour ⏩</button>
+      <button class="btn peach ck-btn" data-k="m-" aria-label="five minutes back">⏪ 5 min</button><button class="btn peach ck-btn" data-k="m+" aria-label="five minutes forward">5 min ⏩</button></div>
+    <div class="lw-count" aria-live="polite"></div>`,
+  bind(root, w, api) {
+    let i = 0, h = 12, m = 0;
+    const stage = root.querySelector(".ck-stage");
+    const paint = () => { stage.innerHTML = clockSVG(h, m); root.querySelector(".lw-count").textContent = `Hands say ${hmStr(h, m)}`; };
+    const show = () => { const t = w.targets[i]; root.querySelector(".lw-target").innerHTML = `Set the clock to <b>${hmStr(t.h, t.m)}</b>`; h = 12; m = 0; paint(); };
+    const check = () => { const t = w.targets[i]; if (h !== t.h || m !== t.m) return;
+      api.good(`✅ ${hmStr(t.h, t.m)}!`); i++;
+      if (i >= w.targets.length) { root.querySelectorAll(".ck-btn").forEach(b => b.disabled = true); api.done(); } else setTimeout(show, 900); };
+    root.querySelectorAll(".ck-btn").forEach(b => b.onclick = () => {
+      const k = b.dataset.k;
+      if (k === "h+") h = h % 12 + 1; else if (k === "h-") h = h === 1 ? 12 : h - 1;
+      else if (k === "m+") { m = (m + 5) % 60; if (m === 0) h = h % 12 + 1; }
+      else if (k === "m-") { if (m === 0) { m = 55; h = h === 1 ? 12 : h - 1; } else m -= 5; }
+      WR.sfx("tap"); paint(); check();
+    });
+    // tap a hour number on the face to jump the long hand (5-min marks = hour numerals)
+    stage.addEventListener("click", e => {
+      const svg = stage.querySelector("svg"); if (!svg) return;
+      const pt = svg.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY;
+      const ctm = svg.getScreenCTM(); if (!ctm) return; const loc = pt.matrixTransform(ctm.inverse());
+      const dx = loc.x - 100, dy = loc.y - 100, dist = Math.hypot(dx, dy);
+      if (dist < 35 || dist > 95) return;
+      let ang = Math.atan2(dy, dx) + Math.PI / 2; if (ang < 0) ang += 2 * Math.PI;
+      const slot = Math.round(ang / (2 * Math.PI) * 12) % 12; // 0=12, 1=1, …
+      m = slot * 5; WR.sfx("tap"); paint(); check();
+    });
+    show();
+  } };
+// 🎏 picture graph with a key: tap a row to add/remove pictures until each matches
+KIT.picgraph = {
+  html: w => `<div class="lw-target" aria-live="polite">Key: each ${w.item || "⭐"} = <b>${w.key}</b></div>
+    <div class="pg-rows">${w.cats.map((c, k) => `<div class="pg-row" data-k="${k}"><span class="pg-name">${esc(c.label)}</span>
+      <div class="pg-pics" data-pics="${k}" role="list"></div>
+      <div class="pg-btns"><button class="btn ghost small pg-add" data-add="${k}" aria-label="add a picture to ${esc(c.label)}">➕</button>
+        <button class="btn ghost small pg-sub" data-sub="${k}" aria-label="take one picture from ${esc(c.label)}">➖</button></div>
+      <b class="pg-n" data-n="${k}">0</b></div>`).join("")}</div>
+    <div class="lw-count" aria-live="polite"></div>`,
+  bind(root, w, api) {
+    const got = w.cats.map(() => 0), item = w.item || "⭐";
+    const paint = () => { w.cats.forEach((c, k) => {
+      root.querySelector(`[data-pics="${k}"]`).innerHTML = `<span aria-hidden="true">${item}</span>`.repeat(got[k]);
+      root.querySelector(`[data-n="${k}"]`).textContent = got[k] * w.key;
+      root.querySelector(`.pg-row[data-k="${k}"]`).classList.toggle("ok", got[k] === c.n);
+    });
+      root.querySelector(".lw-count").textContent = got.every((g, k) => g === w.cats[k].n) ? "🎉 Graph matches the key!" : "Tap ➕ / ➖ so each row matches."; };
+    const doneCheck = () => { paint(); if (got.every((g, k) => g === w.cats[k].n)) { root.querySelectorAll(".pg-add, .pg-sub").forEach(b => b.disabled = true); api.done(`✅ Each ${item} = ${w.key}. Graph complete!`); } };
+    root.querySelectorAll(".pg-add").forEach(b => b.onclick = () => { const k = +b.dataset.add; if (got[k] >= 8) return api.miss("That's plenty for this row!", root.querySelector(`.pg-row[data-k="${k}"]`));
+      got[k]++; WR.sfx("tap"); if (got[k] === w.cats[k].n) api.good(`✅ ${w.cats[k].label}: ${got[k]} × ${w.key} = ${got[k] * w.key}`); doneCheck(); });
+    root.querySelectorAll(".pg-sub").forEach(b => b.onclick = () => { const k = +b.dataset.sub; if (!got[k]) return; got[k]--; WR.sfx("tap"); doneCheck(); });
+    // tap the row itself to add (big target)
+    root.querySelectorAll(".pg-row").forEach(row => row.addEventListener("click", e => { if (e.target.closest("button")) return; root.querySelector(`.pg-add[data-add="${row.dataset.k}"]`).click(); }));
+    paint();
+  } };
+// 📜 Singapore bar model: shade the take-away, then join the add (two-step story)
+KIT.bar = {
+  html: w => `<div class="lw-task" aria-live="polite"></div>
+    <div class="bm-wrap"><div class="bm-bar" role="img" aria-label="bar model"><div class="bm-part sold" data-tgt data-p="sold" role="button" tabindex="0" aria-label="sold part"><span>sold?</span></div><div class="bm-part left" data-p="left"><span>left</span></div><div class="bm-part add" data-tgt data-p="add" role="button" tabindex="0" aria-label="new batch"><span>+ ?</span></div></div>
+      <div class="bm-braces"><span class="bm-br start">start ${w.start}</span><span class="bm-br now">now ?</span></div></div>
+    <div class="bm-pool"><button class="lw-chip" data-src data-v="sold" aria-label="sold ${w.sold}">sold ${w.sold}</button>
+      <button class="lw-chip" data-src data-v="add" aria-label="baked ${w.add} more">+ ${w.add}</button></div>
+    <div class="lw-count" aria-live="polite"></div>`,
+  bind(root, w, api) {
+    const placed = { sold: false, add: false };
+    const ans = w.start - w.sold + w.add;
+    root.querySelector(".lw-task").innerHTML = `👉 ${esc(w.text || `First mark the ${w.sold} sold, then join the ${w.add} new ones.`)}`;
+    const paint = () => {
+      const sold = root.querySelector(".bm-part.sold"), add = root.querySelector(".bm-part.add"), left = root.querySelector(".bm-part.left");
+      const tot = w.start + (placed.add ? w.add : 0);
+      // widths proportional
+      sold.style.flex = String(w.sold); left.style.flex = String(w.start - w.sold); add.style.flex = String(w.add);
+      sold.classList.toggle("on", placed.sold); add.classList.toggle("on", placed.add);
+      sold.querySelector("span").textContent = placed.sold ? `sold ${w.sold}` : "sold?";
+      left.querySelector("span").textContent = placed.sold ? `${w.start - w.sold}` : "left";
+      add.querySelector("span").textContent = placed.add ? `+ ${w.add}` : "+ ?";
+      add.style.opacity = placed.sold || placed.add ? "1" : ".45";
+      root.querySelector(".bm-br.now").textContent = placed.sold && placed.add ? `now ${ans}` : "now ?";
+      root.querySelector(".lw-count").textContent = placed.sold && placed.add ? `${w.start} − ${w.sold} + ${w.add} = ${ans}` : "Drag or tap a chip onto its bar part.";
+    };
+    const put = (kind, part) => {
+      if (kind !== part.dataset.p) return api.miss(kind === "sold" ? "Sold cookies go on the sold part of the bar." : "New cookies join on the + part.", part);
+      if (kind === "add" && !placed.sold) return api.miss("Do the take-away first! Mark the sold part, then add.", part);
+      if (placed[kind]) return;
+      placed[kind] = true; WR.sfx("good");
+      const src = root.querySelector(`[data-src][data-v="${kind}"]`); if (src) { src.disabled = true; src.removeAttribute("data-src"); src.classList.add("placed"); }
+      api.good(kind === "sold" ? `✅ Sold ${w.sold}. Left: ${w.start - w.sold}.` : `✅ Plus ${w.add}. Now ${ans}!`);
+      paint();
+      if (placed.sold && placed.add) api.done(`✅ ${w.start} − ${w.sold} + ${w.add} = ${ans}`);
+    };
+    dragTap(root, { onDrop: (src, part) => put(src.dataset.v, part),
+      onTapTarget: part => { const kind = part.dataset.p; const src = root.querySelector(`[data-src][data-v="${kind}"]`); if (src) put(kind, part); else api.say("Tap a chip first 👆"); },
+      nothing: () => api.say("Tap a chip, then its place on the bar 👆") });
+    // also: tap a chip then auto-target via instant? skip — two-step tap is fine
+    paint();
+  } };
+
 LN.KIT = KIT;
 
 /* ---------- the lesson screen ---------- */
