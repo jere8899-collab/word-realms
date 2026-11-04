@@ -100,11 +100,11 @@ function when(ts) {
 WR.screens.review = () => {
   const s = st(); const all = s.mistakes, act = all.filter(m => !m.bloomed), bl = all.filter(m => m.bloomed);
   const due = Garden.dueCount(), nd = Garden.nextDue();
-  const lvl = WR.levelOf, skillIco = k => WR.skillInfo(k).icon;
+  const meta = m => ({ lvl: WR.levelOf(m.realm), ico: WR.skillInfo(m.skill).icon, skill: m.skill });   // the level pill + skill icon of a plant
   const sorted = act.concat(bl.filter(m => isDue(m))).sort((a, b) => (isDue(b) - isDue(a)) || (a.legacy - b.legacy) || a.due - b.due);
   const counts = STAGES.map((_, i) => act.filter(m => (m.box || 0) === i).length);
   const plot = m => { const g = Garden.stageOf(m); return `<button class="plot ${isDue(m) ? "thirsty" : ""} ${m.legacy ? "legacy" : ""}" data-id="${m.id}">
-      <span class="plant">${g.e}</span><span class="pl-meta"><span class="pill">${lvl(m.realm)}</span> ${skillIco(m.skill)}</span>
+      <span class="plant">${g.e}</span><span class="pl-meta"><span class="pill">${meta(m).lvl}</span> ${meta(m).ico}</span>
       <span class="pl-q">${WR.esc(m.q.length > 60 ? m.q.slice(0, 58) + "…" : m.q)}</span>
       <span class="pl-due">${m.legacy ? "tip card 📜" : g.n + " · " + when(m.due)}</span></button>`; };
   WR.view(`<div class="fade-in"><h1>🌷 Mistake Garden</h1>
@@ -119,7 +119,7 @@ WR.screens.review = () => {
   const wb = WR.$("#waterBtn"); if (wb) wb.onclick = () => Garden.water();
   document.querySelectorAll("[data-id]").forEach(b => b.onclick = () => {
     const m = s.mistakes.find(x => x.id === b.dataset.id); if (!m) return; const g = Garden.stageOf(m);
-    WR.modal(`<h2>${g.e} ${g.n}</h2><span class="pill">${lvl(m.realm)} · ${skillIco(m.skill)} ${WR.esc(m.skill)}</span>
+    WR.modal(`<h2>${g.e} ${g.n}</h2><span class="pill">${meta(m).lvl} · ${meta(m).ico} ${WR.esc(meta(m).skill)}</span>
       ${m.passage ? WR.passageHTML(m.passage, { style: "text-align:left;max-height:180px;overflow:auto" }) : ""}
       <p style="font-weight:800">${WR.esc(m.q)}</p>${m.said ? `<div class="transcript">🎧 “${WR.esc(m.said)}” <button class="btn ghost small" id="sayBtn">🔊</button></div>` : ""}
       <div style="margin-top:6px">✅ <b>${WR.esc(m.correct)}</b></div><div class="muted" style="font-weight:700;text-align:left">💡 ${WR.esc(m.explain)}</div>

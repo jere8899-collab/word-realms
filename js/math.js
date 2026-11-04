@@ -152,12 +152,17 @@ const bindPad = MW.bindPad = (onSubmit, onType) => {
 
 /* ---------- topic lessons ---------- */
 let L = null;
+const LESSON = 8;   // questions in a maths round
+// n questions with different question texts from make(seed), on a fresh seed run
+const distinct = (n, make) => { const out = [], seen = new Set(); let s = MG.seed();
+  while (out.length < n) { s = (Math.imul(s, 1103515245) + 12345) >>> 0; const q = make(s); if (!seen.has(q.q)) { seen.add(q.q); out.push(q); } } return out; };
+// the questions of a round: given items, a Tower challenge, one topic, or a grade's topics mixed (each topic at most twice)
 MW.buildItems = o => {
   if (o.items) return o.items;
-  if (o.challenge) { const out = [], seen = new Set(); let s = MG.seed(); while (out.length < 8) { s = (Math.imul(s, 1103515245) + 12345) >>> 0; const q = MG.makeChallenge(o.challenge, s); if (!seen.has(q.q)) { seen.add(q.q); out.push(q); } } return out; }
-  if (o.topic) return MG.batch(o.topic, 8);
-  const ts = MG.gradeTopics(o.grade), pick = WR.shuffle(ts.concat(WR.shuffle(ts))).slice(0, 8);
-  return pick.map(t => MG.batch(t.id, 1)[0]);
+  if (o.challenge) return distinct(LESSON, s => MG.makeChallenge(o.challenge, s));
+  if (o.topic) return MG.batch(o.topic, LESSON);
+  const ts = MG.gradeTopics(o.grade);
+  return WR.shuffle(ts.concat(WR.shuffle(ts))).slice(0, LESSON).map(t => MG.batch(t.id, 1)[0]);
 };
 MW.startLesson = o => {
   MW.loadKatex();
@@ -280,10 +285,10 @@ function submit(val, btn) {
   const q = L.items[L.i], res = MG.check(q, val);
   if (res.empty) return WR.toast("Type your answer first ✏️", 1800, { now: true });
   if (res.bad) return WR.toast(BAD_INPUT[q.kind] || BAD_INPUT.num, 2400, { now: true });
-  const s = WR.state, m = MW.st(); L.tries++;
+  const s = WR.state, m = MW.st(), qk = q.topic || L.key; L.tries++;
   if (res.ok) {
-    L.done = true; const pts = L.tries === 1 ? 1 : 0.5; L.pts += pts; L.res[L.i] = pts; L.correct++; WR.countAnswer(true, "m:" + (q.topic || L.key)); m.correct = (m.correct || 0) + 1; m.answered = (m.answered || 0) + 1;
-    if (L.tries === 1) { L.combo++; L.maxCombo = Math.max(L.maxCombo, L.combo); let gain = 1; if (L.combo % 3 === 0) gain++; L.starsEarned += WR.awardStars("m", q.uid || (q.topic || L.key) + "|" + q.q + "|" + q.a, gain, { tally: L, quiet: true }); if (L.combo === 5) WR.questEvent("combo5"); } else L.combo = 0;
+    L.done = true; const pts = L.tries === 1 ? 1 : 0.5; L.pts += pts; L.res[L.i] = pts; L.correct++; WR.countAnswer(true, "m:" + qk); m.correct = (m.correct || 0) + 1; m.answered = (m.answered || 0) + 1;
+    if (L.tries === 1) { L.combo++; L.maxCombo = Math.max(L.maxCombo, L.combo); let gain = 1; if (L.combo % 3 === 0) gain++; L.starsEarned += WR.awardStars("m", q.uid || qk + "|" + q.q + "|" + q.a, gain, { tally: L, quiet: true }); if (L.combo === 5) WR.questEvent("combo5"); } else L.combo = 0;
     WR.questEvent("correct10"); WR.sfx("good"); if (btn) btn.classList.add("right");
     if (L.vizUsed) { m.modelSolved = (m.modelSolved || 0) + 1; WR.questEvent("model1"); }
     if (L.vizOpen) showViz(true);
@@ -297,7 +302,7 @@ function submit(val, btn) {
     showMsg("bad", `💭 Not quite — have another go!${whyLine(MG.whyNote(q, val), "🤔")}<div style="margin-top:4px">💡 ${MW.html(q.hint)}</div>${scrollLink(q)}${L.viz ? `<div class="muted" style="margin-top:2px;font-weight:800">${look().help}</div>` : ""}`);
     if (L.viz && !L.vizOpen) showViz();
   } else {
-    L.done = true; L.res[L.i] = 0; WR.countAnswer(false, "m:" + (q.topic || L.key)); m.answered = (m.answered || 0) + 1; WR.sfx("bad");
+    L.done = true; L.res[L.i] = 0; WR.countAnswer(false, "m:" + qk); m.answered = (m.answered || 0) + 1; WR.sfx("bad");
     if (btn) btn.classList.add("wrong");
     MW.lockOpts(q, true);
     MW.lockInput();
