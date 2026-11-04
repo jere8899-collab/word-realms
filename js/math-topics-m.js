@@ -225,6 +225,7 @@ const whyNot = cells => has2x2(cells) ? "It has 4 squares in a 2 × 2 block: tho
   : longRow(cells) >= 5 ? `It has ${longRow(cells)} squares in a row: the 5th square in a row folds back onto the 1st.` : "When you fold it, two squares land on the same face, and one face of the cube is left open.";
 const LETTERS = "ABCDEF";
 const cap = s => s[0].toUpperCase() + s.slice(1);
+const netsAgain = r => M.topic("g6.nets").gen(r); // draw again when a random net leaves too few choices
 topic(6, "nets", "Snip & Fold Nets", "✂️", "Nets of cubes, cuboids, prisms and pyramids", r => {
   const t = r.int(0, 5), [who0, what] = r.pick(NET_WHO), who = cap(who0), fill = r.pick(PASTEL.slice(0, 4)), opt = (c, x) => svgNet(c, Object.assign({ fill, small: true }, x));
   if (t === 0) { // pick the net of a cube
@@ -254,7 +255,7 @@ topic(6, "nets", "Snip & Fold Nets", "✂️", "Nets of cubes, cuboids, prisms a
     const shift = cells => cells.map(([a, b]) => [a + 1, b + 1]), base = shift(net.filter(c => c !== gone)), spots = nearCells(base, 99, 99);
     const good = spots.filter(c => foldCube(base.concat([c]))), bad = r.shuffle(spots.filter(c => !foldCube(base.concat([c]))));
     const rightC = r.pick(good), chosen = [rightC].concat(bad.slice(0, 3));
-    if (chosen.length < 3) return M.topic("g6.nets").gen(r);
+    if (chosen.length < 3) return netsAgain(r);
     const all = base.concat(chosen), x0 = Math.min(...all.map(c => c[0])), y0 = Math.min(...all.map(c => c[1])), W = Math.max(...all.map(c => c[0])) - x0 + 1, H = Math.max(...all.map(c => c[1])) - y0 + 1;
     const ids = ["n1", "n2", "n3", "n4"], optPics = {}, place = { W, H, ox: -x0, oy: -y0 };
     chosen.forEach((c, i) => { optPics[ids[i]] = opt(base.concat([c]), Object.assign({ extra: c }, place)); });
