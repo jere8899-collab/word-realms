@@ -30,6 +30,7 @@ const st = () => WR.block("charms");
 const keyOf = (lvl, w) => lvl + ":" + w;
 const card = (lvl, w) => st().cards[keyOf(lvl, w)];
 const learned = c => !!c && c.b >= 1;
+const glow = b => STAGES[Math.max(0, Math.min(MASTER, b || 0))];   // a box → its look (🔮 … 💎)
 const isDue = (c, now = Date.now()) => learned(c) && c.b < MASTER && c.d <= now;
 const lvlName = lvl => lvl.toUpperCase();
 const words = lvl => WR.data[lvl + "/words"] || [];
@@ -146,7 +147,7 @@ function hub(rid) {
   const newLeft = list.filter(w => !learned(card(rid, w.w))).length, canPlay = c.due > 0 || newLeft > 0;
   const btn = c.due ? `✨ Polish ${Math.min(c.due, ROUND)} charm${c.due > 1 ? "s" : ""}${c.due < ROUND && newLeft ? " + catch new ones" : ""}` : newLeft ? `✨ Catch ${Math.min(NEW_MAX, newLeft)} new charm${Math.min(NEW_MAX, newLeft) > 1 ? "s" : ""}` : "";
   const charm = w => { const k = card(rid, w.w), b = k ? k.b : -1;
-    return learned(k) ? `<button class="ch-charm b${b}${isDue(k) ? " due" : ""}" data-w="${esc(w.w)}" aria-label="${esc(w.w)}, ${STAGES[b].n}"><span class="ch-gem">${STAGES[b].e}</span><span class="ch-word">${esc(w.w)}</span></button>`
+    return learned(k) ? `<button class="ch-charm b${b}${isDue(k) ? " due" : ""}" data-w="${esc(w.w)}" aria-label="${esc(w.w)}, ${glow(b).n}"><span class="ch-gem">${glow(b).e}</span><span class="ch-word">${esc(w.w)}</span></button>`
       : `<button class="ch-charm mystery" data-w="${esc(w.w)}" aria-label="A charm you haven't caught yet"><span class="ch-gem">🔮</span><span class="ch-word">?</span></button>`; };
   WR.view(`<div class="fade-in ch-hub"><div class="row lesson-top" style="margin:6px 0 8px"><button class="btn ghost small" id="chBack">← ${esc(realm.name)}</button><b class="title">🔮 Word Charms</b></div>
     ${WR.levelTabs(rid, l => counts(l).due)}
@@ -165,7 +166,7 @@ function hub(rid) {
   document.querySelectorAll(".ch-charm").forEach(b => b.onclick = () => {
     const w = list.find(x => x.w === b.dataset.w), k = card(rid, w.w);
     if (!learned(k)) return WR.toast("🔮 Catch this charm in a round to see its word!", 2200);
-    const g = STAGES[k.b];
+    const g = glow(k.b);
     WR.modal(`<div class="ch-modal"><div class="ch-big">${g.e}</div><h2 style="margin:.1em 0">${esc(w.w)} <button class="btn ghost small" id="chSayW" aria-label="Hear the word">🔊</button></h2><span class="pill">${esc(w.pos)} · ${g.n}</span>
       <p class="ch-def">${esc(w.def)}</p><p class="ch-ex">“${hl(w.ex, w.w)}” <button class="btn ghost small" id="chSayE" aria-label="Hear the example">🔊</button></p>
       <p class="muted" style="font-size:.8rem;font-weight:800">${k.b >= MASTER ? "💎 Mastered! It will shine forever." : `Next polish ${when(k.d)}`} · ✅ ${k.r} · 💭 ${k.w}</p><button class="btn small" id="chOk">Got it</button></div>`, (bg, close) => {
@@ -193,7 +194,7 @@ WR.screens.charmsRound = ({ lvl, practice }) => {
 };
 function progress() { const quiz = S.plan.filter(p => p.kind === "quiz").length, done = S.plan.slice(0, S.n).filter(p => p.kind === "quiz").length; return { quiz, done }; }
 function render(auto) {
-  const p = S.plan[S.n], pr = progress(), c = card(S.lvl, p.w.w), stage = STAGES[c ? Math.min(MASTER, c.b) : 0];
+  const p = S.plan[S.n], pr = progress(), c = card(S.lvl, p.w.w), stage = glow(c && c.b);
   WR.view(`<div class="fade-in ch-round"><div class="row lesson-top" style="justify-content:space-between;margin:6px 0 8px"><button class="btn ghost small" id="chQuit">← Leave</button><div class="ph-progress"><div class="prog"><i style="width:${S.n / S.plan.length * 100}%"></i></div><b>${S.n + 1}/${S.plan.length}</b></div></div>
     <div class="card ch-card"><div class="ph-head"><span class="lvl-badge">${lvlName(S.lvl)}</span><b>${p.kind === "meet" ? "👀 Meet a new charm" : TYPES[p.type]}</b>${S.practice ? '<span class="pill">🎲 practice</span>' : p.retry ? '<span class="pill">🔁 once more</span>' : `<span class="pill ch-stage">${stage.e} ${stage.n}</span>`}</div>
       ${p.kind === "meet" ? meetHTML(p) : quizHTML(p)}<div id="chFb"></div></div></div>`);
@@ -259,7 +260,7 @@ function choose(val, btn) {
       if (g.b === 1) S.caught++; else S.polished++;
       const got = WR.awardStars("charm", `${S.lvl}/${p.w.w}/b${g.b}`, 1, { kind: "item", tally: S, quiet: true }); S.stars += got;
       if (g.mastered) { S.mastered++; S.stars += WR.awardStars("charmMaster", keyOf(S.lvl, p.w.w), 3, { kind: "fresh", quiet: true }); }
-      note = g.mastered ? "💎 Mastered! This charm will shine forever." : `${STAGES[g.b].e} It's a ${STAGES[g.b].n} now. See you ${when(card(S.lvl, p.w.w).d)}!`;
+      note = g.mastered ? "💎 Mastered! This charm will shine forever." : `${glow(g.b).e} It's a ${glow(g.b).n} now. See you ${when(card(S.lvl, p.w.w).d)}!`;
     } else note = "🌙 We'll polish this one again soon.";
   }
   if (!ok && !S.practice && !p.retry) S.plan.push(Object.assign({}, p, { retry: true, graded: false, options: p.options && WR.shuffle(p.options), pool: p.pool && WR.shuffle(p.pool) }));

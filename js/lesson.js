@@ -58,25 +58,26 @@ WR.itemKey = it => { const t = (it.title || "") + "|" + (it.say || "") + "|" + (
   let h = 5381; for (let i = 0; i < t.length; i++) h = ((h << 5) + h + t.charCodeAt(i)) | 0; return (h >>> 0).toString(36); };
 WR.freshPick = (bucket, pool, n) => {
   const s = WR.state; s.seen = s.seen || {};
-  const keys = new Set(pool.map(WR.itemKey));
+  const keyOf = new Map(pool.map(it => [it, WR.itemKey(it)])), keys = new Set(keyOf.values());
   let seen = (s.seen[bucket] || []).filter(k => keys.has(k));          // drop keys of items that no longer exist
-  const seenSet = new Set(seen);
-  const fresh = WR.shuffle(pool.filter(it => !seenSet.has(WR.itemKey(it))));
   const order = new Map(seen.map((k, i) => [k, i]));
-  const old = pool.filter(it => seenSet.has(WR.itemKey(it))).sort((a, b) => order.get(WR.itemKey(a)) - order.get(WR.itemKey(b))); // oldest first
+  const fresh = WR.shuffle(pool.filter(it => !order.has(keyOf.get(it))));
+  const old = pool.filter(it => order.has(keyOf.get(it))).sort((a, b) => order.get(keyOf.get(a)) - order.get(keyOf.get(b))); // oldest first
   const pick = fresh.concat(old).slice(0, Math.min(n, pool.length));
-  const picked = pick.map(WR.itemKey);
-  seen = seen.filter(k => !picked.includes(k)).concat(picked);
+  const picked = new Set(pick.map(it => keyOf.get(it)));
+  seen = seen.filter(k => !picked.has(k)).concat([...picked]);
   if (pool.length - seen.length < n) seen = seen.slice(Math.max(0, seen.length - Math.max(0, pool.length - n))); // keep a full lesson of unseen items available
   s.seen[bucket] = seen; WR.save();
   return WR.shuffle(pick);
 };
+// 📖 a reading bank's passages (classic-only tests keep just the passages and questions they can drive)
+const readingPool = bank => classicOnly() ? bank.passages.filter(p => p.questions.some(playable)).map(p => ({ ...p, questions: p.questions.filter(playable) })) : bank.passages;
+const passageQs = p => p.questions.map(q => normalize(q, p));
 WR.buildItems = async (rid, skill, n = 8) => {
   const bank = await WR.bank(rid, skill);
   if (skill === "reading") {
-    const ps = WR.freshPick(`${rid}/reading`, classicOnly() ? bank.passages.filter(p => p.questions.some(playable)).map(p => ({ ...p, questions: p.questions.filter(playable) })) : bank.passages, 2);
-    if (n < 6) return ps.slice(0, 1).flatMap(p => p.questions.map(q => normalize(q, p))).slice(0, n);
-    return ps.flatMap(p => p.questions.map(q => normalize(q, p)));
+    const ps = WR.freshPick(`${rid}/reading`, readingPool(bank), 2);
+    return n < 6 ? ps.slice(0, 1).flatMap(passageQs).slice(0, n) : ps.flatMap(passageQs);
   }
   return WR.freshPick(`${rid}/${skill}`, bank.filter(playable), n).map(q => normalize(q));
 };

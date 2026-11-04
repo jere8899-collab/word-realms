@@ -156,7 +156,7 @@ No build step and no dependencies. (It must be served over http so the JSON data
 ## 🔢 Number Kingdom (maths, Grade 1 → Grade 12)
 Open it from the **🔢 Maths** tab or the Number Kingdom card above the realm map. Files: `js/math-gen.js` (seeded generators, answer checker, spaced repetition), `js/math-topics-p.js` (G1–4), `js/math-topics-m.js` (G5–8), `js/math-topics-h.js` (G9–12), `js/math.js` (hub, lessons, numpad, KaTeX), `js/math-dojo.js` (Times-Table Tower, mastery grid, grade finder) and `css/math.css`.
 
-* **Grades** follow the Singapore MOE syllabus (P1–P6 = Grade 1–6, Sec 1–4 = Grade 7–10, JC1–2 / H2 = Grade 11–12), with plain names so they make sense anywhere. There are 133 topics, and every grade has a fairytale **word problem** topic. Primary topics were checked line by line against the [2021 Primary Mathematics syllabus (updated Oct 2025)](https://www.moe.gov.sg/api/media/92bff26d-b2b4-4535-b868-b8415c744b91/2021-Primary-Mathematics-Syllabus-P1-to-P6-Updated-October-2025.pdf) on 2026-11-04 (BRIEF-T1, `specs/001-maths-topic-levels/`):
+* **Grades** follow the Singapore MOE syllabus (P1–P6 = Grade 1–6, Sec 1–4 = Grade 7–10, JC1–2 / H2 = Grade 11–12), with plain names so they make sense anywhere. There are 134 topics (133 syllabus topics + 1 ✨ Extra), and every grade has a fairytale **word problem** topic. Primary topics were checked line by line against the [2021 Primary Mathematics syllabus (updated Oct 2025)](https://www.moe.gov.sg/api/media/92bff26d-b2b4-4535-b868-b8415c744b91/2021-Primary-Mathematics-Syllabus-P1-to-P6-Updated-October-2025.pdf) on 2026-11-04 (BRIEF-T1, `specs/001-maths-topic-levels/`):
 
 | Grade | Land | Topics |
 |---|---|---|

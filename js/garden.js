@@ -23,6 +23,13 @@ function st() {
 const active = () => st().mistakes.filter(m => !m.bloomed);
 const isDue = (m, now = Date.now()) => !m.bloomed && !m.legacy && m.due <= now;
 
+// a plant back as a lesson item: items with _raw are rebuilt in full (with their passage); older ones from what was saved
+const itemOf = m => m.raw ? { ...WR.normalize(m.raw, m.passage || undefined), _mid: m.id } : m.type === "order"
+  ? { type: "order", q: m.q, answer: m.correct, explain: m.explain, _mid: m.id }
+  : { type: m.type, q: m.q, say: m.say, pic: m.pic, passage: m.passage, options: WR.shuffle(m.options), correct: m.correct, explain: m.explain, notes: m.notes || null, _mid: m.id };
+// keep the newest; drop the oldest bloomed first, then the oldest active
+const trim = list => { while (list.length > MAX_ACTIVE) { const bi = list.map(m => m.bloomed).lastIndexOf(true); list.splice(bi >= 0 ? bi : list.length - 1, 1); } };
+
 const Garden = WR.Garden = {
   STAGES,
   plant(it, realm, skill) {
@@ -36,11 +43,7 @@ const Garden = WR.Garden = {
       options: it.options ? it.options.slice() : null, correct, explain: it.explain, notes: it.notes || null, raw: it._raw || null,
       at: Date.now(), due: Date.now(), box: 0, misses: (prev ? prev.misses || 1 : 0) + 1, bloomed: false
     });
-    // keep the newest; drop the oldest bloomed first, then the oldest active
-    while (s.mistakes.length > MAX_ACTIVE) {
-      const bi = s.mistakes.map(m => m.bloomed).lastIndexOf(true);
-      s.mistakes.splice(bi >= 0 ? bi : s.mistakes.length - 1, 1);
-    }
+    trim(s.mistakes);
     WR.save(); Garden.badge();
   },
   grade(id, ok) {
@@ -69,9 +72,7 @@ const Garden = WR.Garden = {
     const now = Date.now();
     const due = active().filter(m => isDue(m, now)).map(m => ({ m, w: (m.misses || 1) * 2 + (now - m.due) / DAY + Math.random() * 2 }))
       .sort((a, b) => b.w - a.w).slice(0, n).map(x => x.m);
-    return WR.shuffle(due).map(m => m.raw ? { ...WR.normalize(m.raw, m.passage || undefined), _mid: m.id } : m.type === "order"
-      ? { type: "order", q: m.q, answer: m.correct, explain: m.explain, _mid: m.id }
-      : { type: m.type, q: m.q, say: m.say, pic: m.pic, passage: m.passage, options: WR.shuffle(m.options), correct: m.correct, explain: m.explain, notes: m.notes || null, _mid: m.id });
+    return WR.shuffle(due).map(itemOf);
   },
   water() {
     const items = Garden.roundItems(); if (!items.length) return WR.toast("🌤️ Nothing is thirsty right now!");
