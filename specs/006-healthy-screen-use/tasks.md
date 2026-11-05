@@ -38,3 +38,5 @@
 - 🔧 rows added (b120f77). Patch /workspace/t6b/apply.py pre-tested on cq-pre6 (health.js 34/34), applied to the source tree.
 - Live script /workspace/t6blive/live.js dry run 23/23. sw rebuilt; full suite "t6b" started.
 - Full suite "t6b" (100): all pass; doubletap + lessons passed on re-run alone; cloud.js failed twice (once on a non-A–D first question, once on the Supabase reload timing): made it classic-A–D-only (test-only change), then it passed in full. Deploying.
+- Checkpoint: T6B committed 1a0abf4 (+ test c07cae5), merged 095ba81, pushed. Next: live check.
+- T6B ✅: caption fix 3f201e8 (live wr-01177cf620b9), live 23/23 again.
