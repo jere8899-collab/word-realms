@@ -12,6 +12,7 @@ const ENG = () => ENG0.concat(WR.gapGames.map(g => g.id));
 const OPTIONAL = sk => ["phonics", "words"].includes(sk) || WR.gapGames.some(g => g.id === sk);   // rows shown only once something was played (Phonics Path, Word Charms, the gap games)
 const KEPT = { min: 10 };   // 🧠 answers needed before "Remembered after 30 days" shows a figure (gap: WR.Review.CONFIG.keptDays)
 const MIN_N = 3;                                    // answers needed before a spot can be called "weak"
+const LOW = 0.6;                                    // a "low" score in the weak-spot list
 const pct = v => Math.round(v * 100);
 const acc = t => t && t[0] + t[1] ? t[0] / (t[0] + t[1]) : null;
 const add = (a, b) => [a[0] + b[0], a[1] + b[1]];
@@ -82,13 +83,14 @@ WR.Report.data = (range = "week") => {
 WR.Report.weak = (range, T = tallies(range)) => {
   const s = WR.state, score = {}, info = {};
   const bump = (k, w, why) => { if (!actionFor(k)) return; score[k] = (score[k] || 0) + w; (info[k] = info[k] || []).push(why); };
-  Object.entries(T).forEach(([k, t]) => { const a = acc(t), n = t[0] + t[1]; if (n >= MIN_N && a < 0.85) bump(k, t[1] * (1 - a) + (a < 0.6 ? 2 : 0), `${t[0]} of ${n} right`); });
+  const lowBest = (k, x) => { if (x && x.best < LOW && !T[k]) bump(k, (LOW - x.best) * 10, `best score ${pct(x.best)}%`); };   // a best score saved before the report
+  Object.entries(T).forEach(([k, t]) => { const a = acc(t), n = t[0] + t[1]; if (n >= MIN_N && a < 0.85) bump(k, t[1] * (1 - a) + (a < LOW ? 2 : 0), `${t[0]} of ${n} right`); });
   const plants = {};
   (s.mistakes || []).forEach(m => { if (!m.bloomed && m.realm && m.skill) { const k = m.realm + "/" + m.skill; plants[k] = (plants[k] || 0) + 1; } });
   Object.entries(plants).forEach(([k, n]) => bump(k, n * 1.5, `${n} plant${n > 1 ? "s" : ""} in the Mistake Garden`));
   if (range !== "week") {
-    Object.entries(s.progress || {}).forEach(([rid, p]) => Object.entries(p || {}).forEach(([sk, x]) => { const k = rid + "/" + sk; if (x && x.best < 0.6 && !T[k]) bump(k, (0.6 - x.best) * 10, `best score ${pct(x.best)}%`); }));
-    Object.entries(s.math.topics || {}).forEach(([id, x]) => { const k = "m:" + id; if (x && x.best < 0.6 && !T[k]) bump(k, (0.6 - x.best) * 10, `best score ${pct(x.best)}%`); });
+    Object.entries(s.progress || {}).forEach(([rid, p]) => Object.entries(p || {}).forEach(([sk, x]) => lowBest(rid + "/" + sk, x)));
+    Object.entries(s.math.topics || {}).forEach(([id, x]) => lowBest("m:" + id, x));
   }
   return Object.keys(score).sort((a, b) => score[b] - score[a]).slice(0, 3).map(k => ({ key: k, label: labelFor(k), why: info[k].join(" · ") }));
 };
