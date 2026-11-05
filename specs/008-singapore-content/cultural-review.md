@@ -9,6 +9,7 @@ Please review every new item below before calling the festival coverage cultural
 - **p5 / Spot & Fix / Our National Day Concert**
 - **p6 / Spot & Fix / Hari Raya with Grandma**
 - **s1 / Spot & Fix / Getting Ready for Deepavali**
+- **s2 / Spot & Fix / Chinese New Year Visiting**
 - **s2 / Spot & Fix / Our Hari Raya Open House**
 - **s3 / Spot & Fix / A Christmas Party for Everyone**
 - **s4 / Spot & Fix / Food from Our Homes**
@@ -32,6 +33,7 @@ Please review every new item below before calling the festival coverage cultural
 - **p2**: My flat is in an HDB block. My flat is on the tenth floor.
 - **p2**: I ate lunch at the school canteen. I ate lunch with my friends.
 - **p2**: Ali plays football. Ali plays football for his CCA.
+- **p4**: We visited Grandpa on Chinese New Year. We brought him mandarin oranges.
 - **p4**: The void deck is quiet in the morning. The void deck is busy in the evening.
 - **p4**: Mei Ling lives near the MRT station. Mei Ling walks to the MRT station every day.
 - **p5**: Aisyah's family celebrates Hari Raya. Aisyah's family visits her grandparents.
@@ -42,13 +44,16 @@ Please review every new item below before calling the festival coverage cultural
 - **s1**: Priya made a kolam at her doorway. Priya made a kolam for Deepavali.
 - **s2**: Nurul wore her baju kurung. Nurul wore her baju kurung on Hari Raya.
 - **s2**: Our class sang National Day songs. Our class sang National Day songs during assembly.
+- **s3**: Wei Jie's family cleaned their flat. Chinese New Year was coming.
 - **s3**: The CCA fair was held in the school hall. Many pupils signed up for a CCA.
 - **s3**: The MRT was crowded this morning. I could not find a seat.
 - **s4**: The void-deck party was organised by the residents' committee. Everyone was invited.
 - **s4**: The Deepavali bazaar was colourful. The Deepavali bazaar was full of music.
+- **jc1**: The reunion dinner was at Grandma's flat. The reunion dinner was on the eve of Chinese New Year.
 - **jc1**: The hawker centre was renovated last year. The hawker centre is cleaner now.
 - **jc1**: The CCA open house starts at three. The CCA open house ends at five.
 - **jc2**: The National Day rally was broadcast live. Many families watched it at home.
 - **jc2**: The MRT line was extended last year. More residents can travel to the city easily.
+- **adult**: My neighbours gave us pineapple tarts. They gave them to us for Chinese New Year.
 - **adult**: The kopitiam opens at six in the morning. The kopitiam is already busy by seven.
 - **adult**: The community centre hosts a Hari Raya open house. Everyone in the neighbourhood is welcome.
