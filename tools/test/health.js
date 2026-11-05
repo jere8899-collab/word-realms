@@ -91,6 +91,13 @@ const SAVE = extra => Object.assign({ v: 1, name: 'Mei', avatar: 'avatar_girl', 
   ok(await vis(page, '.pgate') && !(await page.$('#guLimit')), 'the playtime setting sits behind the grown-up gate');
   await gatePass(page); await page.waitForSelector('#guLimit');
   await page.$eval('#guHealth', e => e.scrollIntoView({ block: 'center' })); await page.waitForTimeout(900); await page.screenshot({ path: OUT + 't6_grownups_360.png' });
+  // BRIEF-T6B: each health row = title + picker on one line, the caption on its own full-width line below (360 and 320 px)
+  const rowsOk = () => page.evaluate(() => [...document.querySelectorAll('#guHealth .hr-row')].map(r => { const t = r.querySelector('.hr-t').getBoundingClientRect(), s = r.querySelector('.gu-sel').getBoundingClientRect(), c = r.querySelector('.hr-c').getBoundingClientRect(), lh = parseFloat(getComputedStyle(r.querySelector('.hr-t')).lineHeight) || 24;
+    return t.height < lh * 1.6 && c.top >= s.bottom - 2 && c.width >= r.getBoundingClientRect().width - 2 && Math.round(t.top + t.height / 2 - (s.top + s.height / 2)) ** 2 < 100 && s.height >= 44; }));
+  let ro = await rowsOk(); ok(ro.length === 2 && ro.every(Boolean), `360 px: ⏳ Daily playtime and 🌙 Bedtime each sit on one line beside their picker (≥ 44 px), caption on its own line below (${ro})`);
+  await page.setViewportSize({ width: 320, height: 640 }); await page.waitForTimeout(400); await page.$eval('#guHealth', e => e.scrollIntoView({ block: 'center' })); await page.waitForTimeout(300);
+  ro = await rowsOk(); ok(ro.length === 2 && ro.every(Boolean) && await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `320 px: the same tidy rows, no sideways scroll (${ro})`);
+  await page.screenshot({ path: OUT + 't6b_grownups_320.png' }); await page.setViewportSize({ width: 360, height: 740 }); await page.waitForTimeout(300);
   ok(await page.evaluate(() => { const m = document.querySelector('#guLimit').closest('.modal'); return !m || +getComputedStyle(m).opacity === 1; }), 'the Grown-ups panel is fully shown (not mid-fade) for the screenshot');
   const opts = await page.$$eval('#guLimit option', o => o.map(x => x.textContent));
   ok(opts.join() === 'Off,30 min,45 min,60 min,90 min,120 min', `options: ${opts.join(', ')}`);
@@ -119,15 +126,15 @@ const SAVE = extra => Object.assign({ v: 1, name: 'Mei', avatar: 'avatar_girl', 
   ok(await page.evaluate(() => WR.HEALTH.restReason() === 'limit'), 'and after those 15 minutes the limit applies again');
   await ctx.close();
 
-  // 5. bedtime 8:00 pm: rests from 7:00 pm to 5 am
+  // 5. bedtime 8:00 pm: rests from 8:00 pm to 5 am (BRIEF-T6B: from the bedtime itself)
   const at = h => { const d = new Date(); d.setHours(h, 30, 0, 0); return +d; };
-  ({ ctx, page } = await open(SAVE({ settings: { rate: 1, sound: false, health: { limit: 0, bed: '20:00', until: 0 } } }), at(19)));
-  r = await page.evaluate(() => { const D = new Date(Date.now()); const f = h => { const x = new Date(D); x.setHours(h, 30, 0, 0); return WR.HEALTH.restReason(+x); }; return [f(18), f(19), f(23), f(2), f(6)]; });
-  ok(r.join() === ',bed,bed,bed,', `bedtime 8:00 pm: 6:30 pm free, 7:30 pm / 11:30 pm / 2:30 am rest, 6:30 am free (${r.map(x => x || '-')})`);
+  ({ ctx, page } = await open(SAVE({ settings: { rate: 1, sound: false, health: { limit: 0, bed: '20:00', until: 0 } } }), at(20)));
+  r = await page.evaluate(() => { const D = new Date(Date.now()); const f = h => { const x = new Date(D); x.setHours(h, 30, 0, 0); return WR.HEALTH.restReason(+x); }; const e = new Date(D); e.setHours(19, 59, 0, 0); const g = new Date(D); g.setHours(20, 0, 0, 0); return [f(18), f(19), WR.HEALTH.restReason(+e), WR.HEALTH.restReason(+g), f(20), f(23), f(2), f(6)]; });
+  ok(r.join() === ',,,bed,bed,bed,bed,', `bedtime 8:00 pm: 6:30 / 7:30 / 7:59 pm free, 8:00 / 8:30 / 11:30 pm / 2:30 am rest, 6:30 am free (${r.map(x => x || '-')})`);
   await shut(page); await page.evaluate(() => WR.go('realm', 'a1')); await page.waitForSelector('.path-grid'); await shut(page);
   await page.tap('.path-grid .skill-card[data-k="vocab"] h3'); await page.waitForSelector('#restCard');
   const bt = await txt(page, '#restCard');
-  ok(/wind down for bed/.test(bt) && /8:00 pm/.test(bt) && !(await page.$('.opt')), `7:30 pm: "Time to wind down for bed 🌙 Bedtime is at 8:00 pm…"`);
+  ok(/wind down for bed/.test(bt) && /8:00 pm/.test(bt) && !(await page.$('.opt')), `8:30 pm: "Time to wind down for bed 🌙 Bedtime is at 8:00 pm…"`);
   await page.screenshot({ path: OUT + 't6_rest_bed_360.png' });
   await ctx.close();
 

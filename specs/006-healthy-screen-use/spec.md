@@ -26,3 +26,7 @@ A child returning after 7 days sees a happy pet; the parent limit works and is g
 
 ## Not changed (ask-first list)
 The limit's default stays OFF; streaks stay. No new home tiles. No new child data beyond the save.
+
+## BRIEF-T6B (Jeremy 2026-11-05 12:02)
+- Bedtime: screens rest from the bedtime itself (not an hour before) until 5 am (`WR.HEALTH.windDownMin` 0). Kept: the limit only stops new rounds; one streak rest day a week; the MOH note.
+- Grown-ups: ⏳ Daily playtime / 🌙 Bedtime title and picker on one line, the caption on its own full-width line below (320 and 360 px).
