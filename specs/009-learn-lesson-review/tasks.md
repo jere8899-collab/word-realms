@@ -14,3 +14,5 @@
 - Budget trim commit aceae98; lightload BYTES 1999921; learn-review 18/18; lessons 176. Suite t9b running.
 
 - Suite t9c: DONE. Flakes lessons/phonics/shots/lightart passed alone. learn-review 18; lightload 9/9 (1999921). Merging next.
+
+- Merged and pushed; awaiting live wr-48ec6fc96e89. Trees sync next.
