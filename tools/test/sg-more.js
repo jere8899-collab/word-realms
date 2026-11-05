@@ -16,7 +16,7 @@ const FESTIVALS = ['chinese new year','hari raya','deepavali','christmas','racia
     for (const f of FESTIVALS) mentions[f] += text.split(f).length - 1;
     for (const p of d.edit.passages) for (const q of p.questions) ok(q.answers.every(a => a.toLowerCase().replace(/[^a-z']/g,'') !== q.wrong.toLowerCase().replace(/[^a-z']/g,'')), `${p.id} #${q.n}: the wrong spelling differs from the answer`);
   }
-  ok(total === 433, `Singapore track now has 433 scored questions (was 356; got ${total})`);
+  ok(total === 436, `Singapore track now has 436 scored questions (was 356; got ${total})`);
   for (const f of FESTIVALS) ok(mentions[f] > 0, `${f} appears (${mentions[f]} mentions)`);
   const browser = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args:['--no-sandbox'] });
   const ctx = await browser.newContext({ viewport:{width:375,height:740}, isMobile:true, hasTouch:true });
