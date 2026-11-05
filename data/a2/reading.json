@@ -260,7 +260,8 @@
       "red": "The story says: “LOST: small grey kitten wearing a blue collar with a bell.” So it's “blue”, not “red”.",
       "green": "The story says: “LOST: small grey kitten wearing a blue collar with a bell.” So it's “blue”, not “green”."
      },
-     "sk": "reading.detail"
+     "sk": "reading.detail",
+     "recall": 1
     },
     {
      "type": "mcq",
@@ -398,7 +399,8 @@
       "at the station": "The story says: “You can buy tickets at the station or on the train, but it's cheaper online.” So it's “online”, not “at the station”.",
       "at the sweet shop": "The story says: “You can buy tickets at the station or on the train, but it's cheaper online.” So it's “online”, not “at the sweet shop”."
      },
-     "sk": "reading.detail"
+     "sk": "reading.detail",
+     "recall": 1
     },
     {
      "type": "mcq",
@@ -770,7 +772,8 @@
       "one hour": "One hour isn't in the text. The story says: “It took her five hours!”",
       "two days": "Two days isn't in the text. The story says: “It took her five hours!”"
      },
-     "sk": "reading.detail"
+     "sk": "reading.detail",
+     "recall": 1
     },
     {
      "type": "mcq",
@@ -1286,7 +1289,8 @@
       "young and shy": "Young and shy aren't mentioned. The story says: “My new teacher, Mr Diaz, is strict but kind.”",
       "unkind": "He's kind."
      },
-     "sk": "reading.detail"
+     "sk": "reading.detail",
+     "recall": 1
     }
    ]
   },

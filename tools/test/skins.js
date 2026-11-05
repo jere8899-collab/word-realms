@@ -14,7 +14,7 @@ const save = x => Object.assign({ v: 1, name: 'Jeremy', avatar: 'hero_knight', s
   settings: { rate: .9, sound: false, unlockAll: true }, mistakes: [] }, x || {});
 (async () => {
   const browser = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox'] });
-  let ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
+  let ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true }); await ctx.addInitScript(() => { window.__WR_NO_RECALL = true; });   // ✍️ BRIEF-T7: this test isn't about type-it-first questions
   await ctx.route(/supabase\.co|cdn\.jsdelivr\.net/, r => r.abort());
   let page = await ctx.newPage(); const errs = []; page.on('pageerror', e => errs.push(e.message));
   const load = async s => { await page.goto(BASE + 'index.html'); await page.evaluate(s => { localStorage.clear(); localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)); }, s); await page.reload({ waitUntil: 'networkidle' }); await page.waitForSelector('.realm-node'); };
@@ -88,7 +88,7 @@ const save = x => Object.assign({ v: 1, name: 'Jeremy', avatar: 'hero_knight', s
   await page.evaluate(() => WR.go('wardrobe', 'rewards')); await page.waitForSelector('.chest-card'); await page.waitForTimeout(300);
   await page.screenshot({ path: OUT + 'skins_rewards.png' });
   // ---- old save: the emoji outfit becomes a layer, earned looks arrive quietly, balance untouched
-  await ctx.close(); ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true }); await ctx.route(/supabase\.co|cdn\.jsdelivr\.net/, r => r.abort());
+  await ctx.close(); ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true }); await ctx.addInitScript(() => { window.__WR_NO_RECALL = true; });   // ✍️ BRIEF-T7: this test isn't about type-it-first questions await ctx.route(/supabase\.co|cdn\.jsdelivr\.net/, r => r.abort());
   page = await ctx.newPage(); page.on('pageerror', e => errs.push(e.message));   // fresh device: the old page can't re-save on unload
   await load(save({ stars: 77, totalCorrect: 1200, avatar: 'avatar_girl', owned: ['o_crown'], equipped: { outfit: 'o_crown', petskin: null, theme: null }, looks: undefined, rewards: undefined, pet: { species: 'pet_fox', name: 'Mochi', xp: 900, happiness: 80, hunger: 20, skin: null, lastTick: Date.now() } }));
   const mg = await page.evaluate(() => ({ looks: WR.state.looks, stars: WR.state.stars, owned: WR.state.owned, got: WR.state.rewards.got.length, crown: !!document.querySelector('.av-wrap image.layer[data-id="o_crown"]'), royal: (document.querySelector('.petwrap') || {}).dataset && document.querySelector('.petwrap').dataset.art }));

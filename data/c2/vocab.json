@@ -15,7 +15,8 @@
    "grudge": "You can hold a grudge, but you bury the hatchet.",
    "daggers": "Daggers appear in 'look daggers at', not here."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -87,7 +88,8 @@
    "drown": "Drown isn't the idiom.",
    "dim": "Dim isn't the idiom."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -159,7 +161,8 @@
    "candour": "Candour = honesty.",
    "understatement": "Understatement = saying less than is true."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -249,7 +252,8 @@
    "irascible": "Irascible = easily angered.",
    "temperamental": "Temperamental = moods change quickly."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -339,7 +343,8 @@
    "endemic": "Endemic = found only in one place.",
    "emphatic": "Emphatic = said with force."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -429,7 +434,8 @@
    "is easily forgotten": "Forgettable isn't the meaning.",
    "brings great wealth": "Wealth isn't the meaning."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -447,7 +453,8 @@
    "malady": "Malady = an illness.",
    "malaise": "Malaise = a general unease."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -555,7 +562,8 @@
    "perpetual": "Perpetual = never ending.",
    "pertinent": "Pertinent = relevant."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -609,7 +617,8 @@
    "venomous": "Venomous = producing poison.",
    "vehement": "Vehement = showing strong feeling."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -645,7 +654,8 @@
    "vehement": "Vehement = expressing strong feelings.",
    "vacant": "Vacant = empty."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -663,7 +673,8 @@
    "vigilant": "Vigilant = watchful.",
    "vacant": "Vacant = empty or blank."
   },
-  "sk": "vocab.collocation"
+  "sk": "vocab.collocation",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -735,7 +746,8 @@
    "gregarious": "Gregarious = loving company.",
    "garrulous": "Garrulous = talking too much about unimportant things."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -753,7 +765,8 @@
    "taciturn": "Taciturn = quiet.",
    "reclusive": "Reclusive = avoiding other people."
   },
-  "sk": "vocab.odd-one"
+  "sk": "vocab.odd-one",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -771,7 +784,8 @@
    "renowned": "Renowned = famous.",
    "resplendent": "Resplendent = dazzlingly beautiful."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -825,7 +839,8 @@
    "unkempt": "Unkempt = untidy in appearance.",
    "unwitting": "Unwitting = not knowing."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -843,7 +858,8 @@
    "unkempt": "Unkempt = untidy.",
    "uncalled-for": "Uncalled-for = unfair and unnecessary."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -897,7 +913,8 @@
    "uneven": "Uneven = not level or equal.",
    "unruly": "Unruly = hard to control."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -933,7 +950,8 @@
    "ostentatious": "Ostentatious = showing off.",
    "pompous": "Pompous = self-important."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -969,7 +987,8 @@
    "lavish": "Lavish = rich and generous.",
    "opulent": "Opulent = luxurious."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1005,7 +1024,8 @@
    "prodigious": "Prodigious = remarkably impressive or large, not about quantity of works.",
    "profound": "Profound = very deep."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1023,7 +1043,8 @@
    "profligate": "Profligate = wasteful.",
    "prosaic": "Prosaic = ordinary and dull."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1095,7 +1116,8 @@
    "bewildered": "Bewildered = confused.",
    "besieged": "Besieged = surrounded and attacked."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1131,7 +1153,8 @@
    "undermined": "Undermined = weakened.",
    "curtailed": "Curtailed = cut short."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1149,7 +1172,8 @@
    "underpin": "Underpin = support from below.",
    "understate": "Understate = make seem smaller than it is."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1167,7 +1191,8 @@
    "understates": "Understates = makes seem smaller.",
    "underestimates": "Underestimates = guesses too low."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1185,7 +1210,8 @@
    "cultivated": "Cultivated = grew.",
    "corroborated": "Corroborated = confirmed."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1257,7 +1283,8 @@
    "conveyed": "Conveyed = communicated or carried.",
    "conversed": "Conversed = talked, and isn't used with a meeting as object."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1275,7 +1302,8 @@
    "conceived": "Conceived = imagined or created.",
    "conferred": "Conferred = gave an honour, or discussed."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1329,7 +1357,8 @@
    "persevered": "Persevered = kept trying; it needs with or in.",
    "perplexed": "Perplexed = confused someone."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1347,7 +1376,8 @@
    "persisted": "Persisted = continued; it doesn't take an object.",
    "perpetuated": "Perpetuated = made something continue."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1419,7 +1449,8 @@
    "glimpsed": "Glimpse = see very briefly.",
    "peeked through": "Peek through needs something to look through."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1509,7 +1540,8 @@
    "scurried": "Scurried = ran with quick small steps, nervously.",
    "stumbled": "Stumbled = nearly fell."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1545,7 +1577,8 @@
    "tiptoed": "Tiptoed = walked very quietly.",
    "darted": "Darted = moved suddenly and fast."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1581,7 +1614,8 @@
    "nest": "Nest isn't used in this idiom.",
    "bag": "Bag isn't used in this idiom."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1635,7 +1669,8 @@
    "book": "Book isn't used in this idiom.",
    "candle": "Candle is in 'can't hold a candle to', a different idiom."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1707,7 +1742,8 @@
    "spine": "Spine isn't the proverb.",
    "page": "Page isn't the proverb."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1725,7 +1761,8 @@
    "nose": "Nose isn't used in this idiom.",
    "ear": "Ear isn't used in this idiom."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1869,7 +1906,8 @@
    "birds": "Birds isn't used in this idiom.",
    "horses": "Horses isn't used in this idiom."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1887,7 +1925,8 @@
    "perilous to": "Perilous to isn't the collocation.",
    "precarious of": "Precarious of isn't English."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1905,7 +1944,8 @@
    "propitious": "Propitious = favourable, the opposite.",
    "precocious": "Precocious = advanced for one's age."
   },
-  "sk": "vocab.collocation"
+  "sk": "vocab.collocation",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1941,7 +1981,8 @@
    "precarious": "Precarious = unstable.",
    "preposterous": "Preposterous = ridiculous."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -2013,7 +2054,8 @@
    "prolific": "Prolific = producing a lot.",
    "protruding": "Protruding = sticking out."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -2049,7 +2091,8 @@
    "stilted": "Stilted = stiff and unnatural.",
    "stocky": "Stocky = short and solid."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -2085,7 +2128,8 @@
    "equivalence": "Equivalence = being equal in value.",
    "equator": "Equator = the line around Earth's middle."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -2103,7 +2147,8 @@
    "authorship of": "Authorship of repeats of.",
    "authentication of": "Authentication of repeats of."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -2157,7 +2202,8 @@
    "diplomat": "Diplomat is the person.",
    "diplomatic": "Diplomatic is an adjective."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -2193,7 +2239,8 @@
    "highest": "Highest is an adjective.",
    "heightening": "Heightening = making stronger."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -2211,7 +2258,8 @@
    "eloquent": "Eloquent is an adjective.",
    "elocution of": "Elocution of needs a noun after it."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",

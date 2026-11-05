@@ -183,6 +183,12 @@ TAGS = {}
 for lvl, skills in D.items():
     for sk in TAG_SKILLS:
         if sk in skills: TAGS[f"{lvl}/{sk}"] = add_tags(sk, _items(sk, skills[sk]))
+# ---- ✍️ AGENT-BRIEF Task 7: "type it first" on a share of each level's core items (fewer for the youngest), then the report ----
+from recall_mark import mark_recall, check_recall
+RECALL = mark_recall(D)
+print("type it first (BRIEF-T7):", {l: f"{n}/{w}" for l, (n, w, _) in RECALL.items()})
+RECALL_SHARE = check_recall(D)
+json.dump(RECALL_SHARE, open(f"{ROOT}/recall.json", "w"), ensure_ascii=False, indent=1)   # read by tools/test/recall.js
 for lvl, skills in D.items():
     os.makedirs(f"{ROOT}/{lvl}", exist_ok=True)
     for sk, val in skills.items():

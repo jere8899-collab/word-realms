@@ -39,7 +39,7 @@ function normalize(item, passage) {
   if (NEWTYPES.has(item.type)) return { ...item, passage, _raw: item,
     correct: item.type === "mistake" ? `${item.words[item.wrong]} → ${item.fix}` : item.type === "gaps" ? fillGaps(item.text, item.answers) : item.answer };
   const base = { q: item.q, say: item.say, pic: item.pic, passage, dialogue: item.dialogue,
-    options: WR.shuffle(item.options), correct: item.options[item.answer], explain: item.explain, notes: item.notes };
+    options: WR.shuffle(item.options), correct: item.options[item.answer], explain: item.explain, notes: item.notes, recall: item.recall };   // ✍️ recall: type it first (js/recall.js)
   // 🖼️ picture choice: options are labels; `art` maps a label to its picture (A1: the label is the painted word itself).
   // It keeps _raw like the other new types, so the Mistake Garden re-asks it with its pictures.
   if (item.type === "picq") return { type: "picq", ...base, art: item.art, _raw: item };
@@ -149,6 +149,7 @@ const lessonFor = it => WR.Learn && !L.review && L.mode !== "boss" && L.mode !==
 const optsHTML = (it, attrs = "") => `<div class="opts"${attrs}>${it.options.map((o, k) => `<button class="opt" data-k="${k}"><span class="k">${"ABCD"[k]}</span>${WR.esc(o)}</button>`).join("")}</div>`;
 const bindOpts = it => document.querySelectorAll(".opt").forEach(b => b.onclick = () => pick(b, it));
 function qBody(it) {
+  it._rc = !!(WR.Recall && WR.Recall.on(it, L));   // ✍️ BRIEF-T7: type it first, then the choices
   const ls = lessonFor(it);
   let h = (ls ? `<div class="ltools">${WR.Learn.scrollBtn(ls, "corner")}</div>` : "") + flavour(it);
   // 📜 T9: on phones the story shows in full on its first question; on the next questions of the same story a sticky
@@ -200,6 +201,8 @@ function qBody(it) {
     h += WR.SG ? WR.SG.cardHTML(it) : "";
   } else if (it.type === "picq") {
     h += `<div class="opts picgrid">${it.options.map((o, k) => `<button class="opt picopt" data-k="${k}" aria-label="${WR.esc(o)}">${WR.picImg(it.art ? it.art[o] : o)}</button>`).join("")}</div>`;
+  } else if (it._rc) {
+    h += WR.Recall.html(it, optsHTML);
   } else {
     h += optsHTML(it);
   }
@@ -223,6 +226,7 @@ function render() {
   else if (it.type === "gaps") bindGaps(it);
   else if (it.type === "dictate") bindDictate(it);
   else if (SG_TYPES.has(it.type)) bindTyped(it);
+  else if (it._rc) bindRecall(it);
   else bindOpts(it);
   if (WR.$("#playBtn")) bindListen(it);
   const sc = WR.$("#storyChip"); if (sc) sc.onclick = () => storySheet(it.passage);
@@ -347,6 +351,28 @@ function bindDictate(it) {
     inp.disabled = true; btn.disabled = true; inp.classList.add(ok ? "right" : "wrong");
     const marked = want.map((w, i) => `<span class="dw ${normText(w) === got[i] ? "ok" : "no"}">${WR.esc(w)}</span>`).join(" ");
     answer(ok, it, ok ? "" : `<div class="dict-check">${marked}</div><div class="muted" style="font-size:.85rem">Green words you got right; pink ones to practise.</div>`);
+  };
+}
+// ✍️ BRIEF-T7 type it first: right → "You remembered it!"; one letter off → one kind nudge (not a try); a miss or
+// "🤔 Show choices" → the usual choices appear and the question carries on as before (a right pick still counts as right)
+function bindRecall(it) {
+  const inp = WR.$("#recIn"), btn = WR.$("#checkBtn"), show = WR.$("#recShow"); let nudged = false;
+  WR.noAssist(inp);
+  inp.oninput = () => { btn.disabled = !inp.value.trim() || L.answered; };
+  inp.onkeydown = e => { if (e.key === "Enter" && !btn.disabled) { e.preventDefault(); btn.click(); } };
+  const reveal = why => {
+    it._typed = why; inp.disabled = true; btn.hidden = true; show.hidden = true; WR.$("#recCard").classList.add("tried");
+    const m = WR.$("#recMsg"); m.hidden = false; m.textContent = why === "miss" ? "Nice try! Now pick it from the choices ✨" : "That's okay! Pick it from the choices ✨";
+    const o = WR.$("#recOpts"); o.hidden = false; bindOpts(it);
+    o.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  };
+  show.onclick = () => { if (!L.answered) reveal("shown"); };
+  btn.onclick = () => {
+    if (L.answered) return; const r = WR.Recall.mark(inp.value, it);
+    if (r === "empty") return;
+    if (r === "close" && !nudged) { nudged = true; const m = WR.$("#recMsg"); m.hidden = false; m.textContent = "So close! Check one letter ✏️"; inp.focus(); return; }
+    if (r === "right") { it._typed = "right"; inp.disabled = true; btn.disabled = true; show.hidden = true; inp.classList.add("right"); answer(true, it, "✍️ You remembered it!"); return; }
+    reveal("miss");
   };
 }
 // 🦁 typed answers: WR.SG.mark() says right / wrong (with a why-not note) or gives a friendly nudge that is not a try

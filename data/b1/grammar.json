@@ -15,7 +15,8 @@
    "would have": "Would never goes in the if-part.",
    "will have": "Will have is a future form; it doesn't fit an unreal 'if'."
   },
-  "sk": "grammar.conditional-2"
+  "sk": "grammar.conditional-2",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -51,7 +52,8 @@
    "do live": "No 'do' in a reported question.",
    "am living": "Am living is present and doesn't move back."
   },
-  "sk": "grammar.reported"
+  "sk": "grammar.reported",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -141,7 +143,8 @@
    "during": "During needs a noun: during the film.",
    "while": "While needs a clause: while I was waiting."
   },
-  "sk": "grammar.perfect-present"
+  "sk": "grammar.perfect-present",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -195,7 +198,8 @@
    "mustn't": "Mustn't means not allowed.",
    "needn't": "Needn't means not necessary."
   },
-  "sk": "grammar.modal"
+  "sk": "grammar.modal",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -213,7 +217,8 @@
    "will": "Will isn't used for an ability wish.",
    "would can": "Would can is never correct."
   },
-  "sk": "grammar.wish-prefer"
+  "sk": "grammar.wish-prefer",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -249,7 +254,8 @@
    "going": "No -ing after had better.",
    "went": "Went is past."
   },
-  "sk": "grammar.other"
+  "sk": "grammar.other",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -267,7 +273,8 @@
    "and": "And goes with both.",
    "but": "But doesn't pair with neither."
   },
-  "sk": "grammar.other"
+  "sk": "grammar.other",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -303,7 +310,8 @@
    "rained": "Rained is for unreal second conditionals.",
    "would rain": "Would isn't used in the if-part."
   },
-  "sk": "grammar.conditional-1"
+  "sk": "grammar.conditional-1",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -321,7 +329,8 @@
    "was delivering": "Was delivering is active: the letter can't deliver.",
    "had delivered": "Had delivered is active: the letter delivered something?"
   },
-  "sk": "grammar.passive"
+  "sk": "grammar.passive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -339,7 +348,8 @@
    "sees": "Sees is present.",
    "was see": "Was see is not a correct form."
   },
-  "sk": "grammar.reported"
+  "sk": "grammar.reported",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -375,7 +385,8 @@
    "haven't to": "Haven't to isn't correct English.",
    "shouldn't to": "Shouldn't is followed by the plain verb, not 'to'."
   },
-  "sk": "grammar.other"
+  "sk": "grammar.other",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -447,7 +458,8 @@
    "too": "Too doesn't go with 'that'.",
    "very": "Very can't start a 'that' result."
   },
-  "sk": "grammar.so-such"
+  "sk": "grammar.so-such",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -465,7 +477,8 @@
    "buy": "We need 'to' before the verb.",
    "bought": "Bought is past."
   },
-  "sk": "grammar.gerund-infinitive"
+  "sk": "grammar.gerund-infinitive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -537,7 +550,8 @@
    "even though": "Even though shows contrast.",
    "in case": "In case = to be ready for something that might happen."
   },
-  "sk": "grammar.conditional-1"
+  "sk": "grammar.conditional-1",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -555,7 +569,8 @@
    "would have": "Would goes in the other half, not after if.",
    "will have": "Will is for real future situations."
   },
-  "sk": "grammar.conditional-2"
+  "sk": "grammar.conditional-2",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -609,7 +624,8 @@
    "am": "Am doesn't go with apologise.",
    "did": "Did is past."
   },
-  "sk": "grammar.conditional-2"
+  "sk": "grammar.conditional-2",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -645,7 +661,8 @@
    "so that it": "So that it needs a purpose verb: so that you stay warm.",
    "if not": "If not doesn't fit here."
   },
-  "sk": "grammar.other"
+  "sk": "grammar.other",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -663,7 +680,8 @@
    "when": "When doesn't give the condition.",
    "as soon as": "As soon as is about time."
   },
-  "sk": "grammar.conditional-1"
+  "sk": "grammar.conditional-1",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -681,7 +699,8 @@
    "got": "Got is past.",
    "am getting": "Am getting is now."
   },
-  "sk": "grammar.future"
+  "sk": "grammar.future",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -735,7 +754,8 @@
    "was made": "Cookies are plural, so were.",
    "were make": "We need the participle made."
   },
-  "sk": "grammar.passive"
+  "sk": "grammar.passive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -771,7 +791,8 @@
    "is stealing": "Is stealing is active.",
    "stole": "Stole is active."
   },
-  "sk": "grammar.passive"
+  "sk": "grammar.passive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -789,7 +810,8 @@
    "is speaking": "Is speaking is active.",
    "spoke": "Spoke is past active."
   },
-  "sk": "grammar.passive"
+  "sk": "grammar.passive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -807,7 +829,8 @@
    "were": "She → was, not were.",
    "be": "Be needs a form."
   },
-  "sk": "grammar.reported"
+  "sk": "grammar.reported",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -825,7 +848,8 @@
    "leaves": "Leaves is present.",
    "is leaving": "Is leaving is now."
   },
-  "sk": "grammar.reported"
+  "sk": "grammar.reported",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -843,7 +867,8 @@
    "do": "No do in reported questions.",
    "what": "What is for wh- questions."
   },
-  "sk": "grammar.reported"
+  "sk": "grammar.reported",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -987,7 +1012,8 @@
    "am studying": "Am studying is now.",
    "study": "Study is present simple."
   },
-  "sk": "grammar.perfect-continuous"
+  "sk": "grammar.perfect-continuous",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1041,7 +1067,8 @@
    "using to": "Using to isn't a form.",
    "uses to": "Uses to isn't a form."
   },
-  "sk": "grammar.other"
+  "sk": "grammar.other",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1095,7 +1122,8 @@
    "feed": "We need to before feed.",
    "fed": "Fed is past."
   },
-  "sk": "grammar.other"
+  "sk": "grammar.other",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1113,7 +1141,8 @@
    "have": "We need to.",
    "had": "Had is past."
   },
-  "sk": "grammar.other"
+  "sk": "grammar.other",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1131,7 +1160,8 @@
    "seen": "Seen needs have.",
    "be see": "Be see isn't a form."
   },
-  "sk": "grammar.gerund-infinitive"
+  "sk": "grammar.gerund-infinitive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1149,7 +1179,8 @@
    "laugh": "We need -ing.",
    "laughed": "Laughed is past."
   },
-  "sk": "grammar.gerund-infinitive"
+  "sk": "grammar.gerund-infinitive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1167,7 +1198,8 @@
    "go": "We need -ing.",
    "went": "Went is past."
   },
-  "sk": "grammar.gerund-infinitive"
+  "sk": "grammar.gerund-infinitive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1203,7 +1235,8 @@
    "open": "We need -ing.",
    "opened": "Opened is past."
   },
-  "sk": "grammar.gerund-infinitive"
+  "sk": "grammar.gerund-infinitive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1275,7 +1308,8 @@
    "where": "Where is for places.",
    "who": "Who is for people."
   },
-  "sk": "grammar.relative"
+  "sk": "grammar.relative",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1293,7 +1327,8 @@
    "which": "Which is for things.",
    "whose": "Whose shows owning."
   },
-  "sk": "grammar.relative"
+  "sk": "grammar.relative",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1311,7 +1346,8 @@
    "who": "Who is for people.",
    "where": "Where is for places."
   },
-  "sk": "grammar.relative"
+  "sk": "grammar.relative",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1401,7 +1437,8 @@
    "might": "Might is possibility.",
    "needn't": "Needn't means not necessary."
   },
-  "sk": "grammar.modal"
+  "sk": "grammar.modal",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1437,7 +1474,8 @@
    "will be": "Wish isn't followed by will.",
    "be": "Be needs a form."
   },
-  "sk": "grammar.wish-prefer"
+  "sk": "grammar.wish-prefer",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1455,7 +1493,8 @@
    "don't eat": "Don't eat is present.",
    "won't eat": "Won't is future."
   },
-  "sk": "grammar.wish-prefer"
+  "sk": "grammar.wish-prefer",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1617,7 +1656,8 @@
    "Too": "Too goes at the end: Me too.",
    "Either": "Either goes at the end: I don't either."
   },
-  "sk": "grammar.inversion"
+  "sk": "grammar.inversion",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1653,7 +1693,8 @@
    "starts the film": "Verb before subject is wrong here.",
    "the film start": "The film → starts with -s."
   },
-  "sk": "grammar.reported"
+  "sk": "grammar.reported",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1743,7 +1784,8 @@
    "few": "Few is for countable things.",
    "a lot": "A lot needs of."
   },
-  "sk": "grammar.quantifier"
+  "sk": "grammar.quantifier",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1815,7 +1857,8 @@
    "left": "Left is past.",
    "leaving": "Leaving needs is."
   },
-  "sk": "grammar.present-simple"
+  "sk": "grammar.present-simple",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1851,7 +1894,8 @@
    "have read": "Have read is up to now.",
    "am reading": "Am reading is now."
   },
-  "sk": "grammar.future"
+  "sk": "grammar.future",
+  "recall": 1
  },
  {
   "type": "mcq",

@@ -168,7 +168,8 @@
    "duck": "“duck” is something different. Look again: this is a fish.",
    "cow": "“cow” is something different. Look again: this is a fish."
   },
-  "sk": "vocab.picture"
+  "sk": "vocab.picture",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -468,7 +469,8 @@
    "sock": "A sock goes on your foot too.",
    "belt": "A belt goes around your waist."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -540,7 +542,8 @@
    "Monday": "Monday is a day, not a month.",
    "Spring": "Spring is a season, not a month."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -558,7 +561,8 @@
    "farmer": "A farmer works on a farm.",
    "driver": "A driver drives a car or bus."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -720,7 +724,8 @@
    "six": "Six is 6.",
    "three": "Three is 3."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -846,7 +851,8 @@
    "dinner": "Dinner is in the evening.",
    "bedtime": "Bedtime isn't a meal."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -864,7 +870,8 @@
    "water": "Water comes from the tap or rain.",
    "tea": "Tea is made from leaves."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -900,7 +907,8 @@
    "crayons": "Crayons colour pictures.",
    "a book": "You read a book."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1188,7 +1196,8 @@
    "bank": "A bank keeps money.",
    "farm": "A farm has cows, pigs and sheep."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1260,7 +1269,8 @@
    "Sunday": "Sunday comes after Saturday.",
    "Monday": "Monday is after Sunday."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1458,7 +1468,8 @@
    "train": "A train runs on tracks.",
    "drum": "A drum makes a loud sound."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1548,7 +1559,8 @@
    "knife": "A knife cuts food.",
    "plate": "A plate holds food, but you don't eat soup with it."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1584,7 +1596,8 @@
    "towel": "A towel dries you.",
    "soap": "Soap washes your hands."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1674,7 +1687,8 @@
    "ten": "Ten is too many.",
    "twelve": "Twelve is the months in a year."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",

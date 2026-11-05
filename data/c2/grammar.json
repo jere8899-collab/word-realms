@@ -15,7 +15,8 @@
    "touch you should": "The word order is scrambled.",
    "should touch you": "'Should touch you' changes the meaning."
   },
-  "sk": "grammar.inversion"
+  "sk": "grammar.inversion",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -51,7 +52,8 @@
    "Was": "Was isn't used in this inversion.",
    "If": "If needs 'were': If it were not for."
   },
-  "sk": "grammar.be"
+  "sk": "grammar.be",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -69,7 +71,8 @@
    "while": "While doesn't follow much.",
    "that": "That doesn't fit."
   },
-  "sk": "grammar.linker"
+  "sk": "grammar.linker",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -87,7 +90,8 @@
    "so": "So isn't used here.",
    "how": "How isn't used here."
   },
-  "sk": "grammar.linker"
+  "sk": "grammar.linker",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -141,7 +145,8 @@
    "will be": "Will be isn't used here.",
    "was": "Was isn't subjunctive."
   },
-  "sk": "grammar.subjunctive"
+  "sk": "grammar.subjunctive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -195,7 +200,8 @@
    "then": "Then isn't used.",
    "that": "That isn't used."
   },
-  "sk": "grammar.inversion"
+  "sk": "grammar.inversion",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -213,7 +219,8 @@
    "awakened": "No -ed after should.",
    "to awaken": "No 'to' after should."
   },
-  "sk": "grammar.modal"
+  "sk": "grammar.modal",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -285,7 +292,8 @@
    "did he turn": "Did turn isn't used with 'when' here.",
    "he turned": "Normal order again."
   },
-  "sk": "grammar.inversion"
+  "sk": "grammar.inversion",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -393,7 +401,8 @@
    "yet": "Yet doesn't fit.",
    "still": "Still doesn't fit."
   },
-  "sk": "grammar.perfect-present"
+  "sk": "grammar.perfect-present",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -771,7 +780,8 @@
    "Was": "Was would need whether.",
    "Were it": "Were it repeats it."
   },
-  "sk": "grammar.subjunctive"
+  "sk": "grammar.subjunctive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -789,7 +799,8 @@
    "being": "Being isn't used in this fixed phrase.",
    "was": "Was isn't used in this fixed phrase."
   },
-  "sk": "grammar.subjunctive"
+  "sk": "grammar.subjunctive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -825,7 +836,8 @@
    "been": "Been isn't used here.",
    "being": "Being isn't used here."
   },
-  "sk": "grammar.subjunctive"
+  "sk": "grammar.subjunctive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -879,7 +891,8 @@
    "would wake up to": "Would wake up to adds extra words that don't fit.",
    "to wake": "No to after lest."
   },
-  "sk": "grammar.fixed-phrase"
+  "sk": "grammar.fixed-phrase",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -915,7 +928,8 @@
    "said": "Said isn't used here.",
    "say": "We need to."
   },
-  "sk": "grammar.perfect-present"
+  "sk": "grammar.perfect-present",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -951,7 +965,8 @@
    "it": "It isn't used in this short answer.",
    "that": "That isn't used here."
   },
-  "sk": "grammar.linker"
+  "sk": "grammar.linker",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1005,7 +1020,8 @@
    "so": "So isn't used after like.",
    "that": "That doesn't fit."
   },
-  "sk": "grammar.preposition"
+  "sk": "grammar.preposition",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1059,7 +1075,8 @@
    "rather than": "Rather than shows preference.",
    "never mind to": "Never mind is used without to."
   },
-  "sk": "grammar.fixed-phrase"
+  "sk": "grammar.fixed-phrase",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1077,7 +1094,8 @@
    "whole": "Whole needs the: the whole.",
    "much": "Much isn't used here."
   },
-  "sk": "grammar.linker"
+  "sk": "grammar.linker",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1095,7 +1113,8 @@
    "for": "What for asks why.",
    "by": "What by isn't a phrase."
   },
-  "sk": "grammar.preposition"
+  "sk": "grammar.preposition",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1185,7 +1204,8 @@
    "though": "Though it were isn't the fixed phrase.",
    "like": "Like it were isn't the fixed phrase."
   },
-  "sk": "grammar.comparison"
+  "sk": "grammar.comparison",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1257,7 +1277,8 @@
    "heeds": "Heeds is present.",
    "was heeded": "Was heeded is passive and needs a different subject."
   },
-  "sk": "grammar.perfect-past"
+  "sk": "grammar.perfect-past",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1275,7 +1296,8 @@
    "needn't": "Needn't have means it wasn't necessary.",
    "should": "Should have means it was expected but didn't happen."
   },
-  "sk": "grammar.perfect-continuous"
+  "sk": "grammar.perfect-continuous",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1311,7 +1333,8 @@
    "hits": "Hits needs a subject and that.",
    "will hit": "Will hit needs that: that it will hit."
   },
-  "sk": "grammar.gerund-infinitive"
+  "sk": "grammar.gerund-infinitive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1383,7 +1406,8 @@
    "however": "However would need to come first: however brave.",
    "even": "Even needs though or if."
   },
-  "sk": "grammar.linker"
+  "sk": "grammar.linker",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1455,7 +1479,8 @@
    "lonely": "Lonely is about feelings.",
    "sole of": "Sole of isn't English."
   },
-  "sk": "grammar.quantifier"
+  "sk": "grammar.quantifier",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1527,7 +1552,8 @@
    "not mix": "We need did: didn't mix.",
    "not to mix": "No to here."
   },
-  "sk": "grammar.wish-prefer"
+  "sk": "grammar.wish-prefer",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1545,7 +1571,8 @@
    "saying that": "Saying that repeats that.",
    "said": "Said is past."
   },
-  "sk": "grammar.passive"
+  "sk": "grammar.passive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1581,7 +1608,8 @@
    "to design": "To design is about now or general habits.",
    "designed": "Designed alone doesn't follow is reputed."
   },
-  "sk": "grammar.passive"
+  "sk": "grammar.passive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1599,7 +1627,8 @@
    "wondered": "Wondered is past.",
    "wonder": "Wonder needs -ing here."
   },
-  "sk": "grammar.gerund-infinitive"
+  "sk": "grammar.gerund-infinitive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1617,7 +1646,8 @@
    "to tell of": "To tell of isn't the pattern.",
    "told": "Told is past."
   },
-  "sk": "grammar.gerund-infinitive"
+  "sk": "grammar.gerund-infinitive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1635,7 +1665,8 @@
    "instead": "Instead needs of.",
    "other": "Other than means except."
   },
-  "sk": "grammar.comparison"
+  "sk": "grammar.comparison",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1671,7 +1702,8 @@
    "which": "Which alone doesn't show possession here.",
    "that": "That can't follow a comma."
   },
-  "sk": "grammar.relative"
+  "sk": "grammar.relative",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1725,7 +1757,8 @@
    "replace": "The base form isn't used here.",
    "had replaced": "Past perfect isn't used after it's high time."
   },
-  "sk": "grammar.wish-prefer"
+  "sk": "grammar.wish-prefer",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1743,7 +1776,8 @@
    "to stay": "No to after would as soon.",
    "stayed": "Stayed is past."
   },
-  "sk": "grammar.wish-prefer"
+  "sk": "grammar.wish-prefer",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1779,7 +1813,8 @@
    "had": "Had would need cared.",
    "has": "Has would need cared and is present."
   },
-  "sk": "grammar.past-simple"
+  "sk": "grammar.past-simple",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1797,7 +1832,8 @@
    "they solved": "Past simple would need did they solve.",
    "solved they": "The main verb can't come before the subject here."
   },
-  "sk": "grammar.inversion"
+  "sk": "grammar.inversion",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1851,7 +1887,8 @@
    "Meanwhile": "Meanwhile is an adverb, not a conjunction.",
    "By the time that": "By the time that suggests something finished earlier."
   },
-  "sk": "grammar.other"
+  "sk": "grammar.other",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1869,7 +1906,8 @@
    "if": "If would need had: if you had asked.",
    "should": "Should is for future possibilities."
   },
-  "sk": "grammar.conditional-3"
+  "sk": "grammar.conditional-3",
+  "recall": 1
  },
  {
   "type": "mcq",

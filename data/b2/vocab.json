@@ -15,7 +15,8 @@
    "result": "A result doesn't go with 'on everyone'.",
    "consequence": "Consequence takes 'of', not 'have a ... on'."
   },
-  "sk": "vocab.phrasal"
+  "sk": "vocab.phrasal",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -69,7 +70,8 @@
    "bring up": "Bring up = mention or raise a child.",
    "turn up": "Turn up = arrive."
   },
-  "sk": "vocab.phrasal"
+  "sk": "vocab.phrasal",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -141,7 +143,8 @@
    "fell": "Fall out = argue.",
    "gave": "Give out = stop working or hand out."
   },
-  "sk": "vocab.phrasal"
+  "sk": "vocab.phrasal",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -177,7 +180,8 @@
    "did": "Do the blame isn't English.",
    "put": "Put the blame on = blame someone else."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -213,7 +217,8 @@
    "about": "About isn't used.",
    "with": "With isn't used."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -267,7 +272,8 @@
    "determination": "Determination is a noun.",
    "determine": "Determine is a verb."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -303,7 +309,8 @@
    "get": "Get a compromise isn't the usual phrase.",
    "do": "Do a compromise isn't English."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -393,7 +400,8 @@
    "strong": "Strong isn't used with reader this way.",
    "heavy": "Heavy reader isn't the phrase (heavy eater is)."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -465,7 +473,8 @@
    "exaggerated": "Exaggerate = make bigger than true.",
    "expanded": "Expand = grow larger."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -537,7 +546,8 @@
    "fundamentalist": "Fundamentalist is a person or belief.",
    "fundament": "Fundament isn't the word needed."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -555,7 +565,8 @@
    "got across": "Get across = make understood.",
    "got by": "Get by = manage with little."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -573,7 +584,8 @@
    "call for": "Call for = need or demand.",
    "call in": "Call in = visit briefly, or ask an expert to come."
   },
-  "sk": "vocab.phrasal"
+  "sk": "vocab.phrasal",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -591,7 +603,8 @@
    "make up": "Make up = invent.",
    "look up": "Look up = find in a book or online."
   },
-  "sk": "vocab.phrasal"
+  "sk": "vocab.phrasal",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -627,7 +640,8 @@
    "came over": "Come over = visit.",
    "came along": "Come along = go somewhere with someone."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -663,7 +677,8 @@
    "gave off": "Give off = produce a smell or light.",
    "gave back": "Give back = return."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -681,7 +696,8 @@
    "give in": "Give in = surrender or agree.",
    "give up": "Give up = stop trying."
   },
-  "sk": "vocab.phrasal"
+  "sk": "vocab.phrasal",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -717,7 +733,8 @@
    "look out for": "Look out for = watch carefully for.",
    "look over": "Look over = check quickly."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -735,7 +752,8 @@
    "put down": "Put down = place on a surface, or criticise.",
    "put out": "Put out = stop a fire."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -771,7 +789,8 @@
    "brought out": "Bring out = release a product.",
    "brought on": "Bring on = cause something bad, like an illness."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -807,7 +826,8 @@
    "bring up": "Bring up = mention.",
    "bring off": "Bring off = succeed at something difficult."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -825,7 +845,8 @@
    "took over": "Take over = take control.",
    "took on": "Take on = accept work, or employ."
   },
-  "sk": "vocab.phrasal"
+  "sk": "vocab.phrasal",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -951,7 +972,8 @@
    "fell apart": "Fall apart = break into pieces.",
    "fell over": "Fall over = trip and fall down."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1023,7 +1045,8 @@
    "turn over": "Turn over = flip.",
    "turn out": "Turn out = have a result."
   },
-  "sk": "vocab.phrasal"
+  "sk": "vocab.phrasal",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1059,7 +1082,8 @@
    "looking out for": "Look out for = watch for.",
    "looking into": "Look into = investigate."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1077,7 +1101,8 @@
    "backed out": "Back out = stop being part of a plan.",
    "backed off": "Back off = move away."
   },
-  "sk": "vocab.phrasal"
+  "sk": "vocab.phrasal",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1167,7 +1192,8 @@
    "keep up": "Keep up = continue, or stay level.",
    "hold": "We don't say hold the rules."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1203,7 +1229,8 @@
    "did": "We don't say did a great time.",
    "spent": "Spend time, but not spend a great time."
   },
-  "sk": "vocab.collocation"
+  "sk": "vocab.collocation",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1221,7 +1248,8 @@
    "gave out": "Give out = hand to many people.",
    "took": "We don't say took a promise."
   },
-  "sk": "vocab.collocation"
+  "sk": "vocab.collocation",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1311,7 +1339,8 @@
    "took": "We don't say took an effort.",
    "had": "We don't say had an effort."
   },
-  "sk": "vocab.collocation"
+  "sk": "vocab.collocation",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1365,7 +1394,8 @@
    "powerful": "Powerful wind is possible but less usual than strong.",
    "thick": "Thick goes with fog."
   },
-  "sk": "vocab.collocation"
+  "sk": "vocab.collocation",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1383,7 +1413,8 @@
    "heavy": "Heavy goes with rain and snow.",
    "fat": "Fat isn't used for fog."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1419,7 +1450,8 @@
    "imagination": "Imagination is a noun.",
    "imaginable": "Imaginable = possible to imagine."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1455,7 +1487,8 @@
    "appearence": "Appearence is misspelled: appearance.",
    "apparent": "Apparent is an adjective."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1473,7 +1506,8 @@
    "endangered": "Endangered = at risk of dying out.",
    "dangerously": "Dangerously is an adverb."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1563,7 +1597,8 @@
    "misagree": "Misagree isn't a word.",
    "inagree": "Inagree isn't a word."
   },
-  "sk": "vocab.word-form"
+  "sk": "vocab.word-form",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1581,7 +1616,8 @@
    "ununderstood": "Ununderstood isn't a word.",
    "overunderstood": "Overunderstood isn't a word."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1617,7 +1653,8 @@
    "defended": "Defended means someone protected it.",
    "defenceful": "Defenceful isn't a word."
   },
-  "sk": "vocab.word-form"
+  "sk": "vocab.word-form",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1635,7 +1672,8 @@
    "skill": "Skill is a noun.",
    "skilled": "Skilled is an adjective."
   },
-  "sk": "vocab.word-form"
+  "sk": "vocab.word-form",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1797,7 +1835,8 @@
    "recognise": "Recognise = know someone/something you've seen before.",
    "remark": "Remark = say."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1815,7 +1854,8 @@
    "remember of": "Remember of isn't English.",
    "know about": "Know about = have information about."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1851,7 +1891,8 @@
    "arise": "Arise = happen (a problem).",
    "grow": "Grow = get bigger."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1887,7 +1928,8 @@
    "say": "Say doesn't take a person directly.",
    "learn": "Learn is what the student does."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1977,7 +2019,8 @@
    "throat": "Throat isn't used in this idiom.",
    "head": "Head isn't used in this idiom."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -2049,7 +2092,8 @@
    "milk": "Milk isn't used in this idiom.",
    "juice": "Juice isn't used in this idiom."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -2103,7 +2147,8 @@
    "tried": "Tried isn't part of this idiom.",
    "learnt": "Learnt isn't part of this idiom."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -2121,7 +2166,8 @@
    "end": "End isn't used in this phrase.",
    "finish": "Finish isn't used in this phrase."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -2157,7 +2203,8 @@
    "river": "River isn't used in this idiom.",
    "tank": "Tank isn't used in this idiom."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",

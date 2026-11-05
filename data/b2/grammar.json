@@ -69,7 +69,8 @@
    "take": "The plain verb can't follow deny.",
    "that take": "'That take' is ungrammatical."
   },
-  "sk": "grammar.gerund-infinitive"
+  "sk": "grammar.gerund-infinitive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -105,7 +106,8 @@
    "are going": "Are going isn't used here.",
    "will go": "Will go isn't used here."
   },
-  "sk": "grammar.wish-prefer"
+  "sk": "grammar.wish-prefer",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -285,7 +287,8 @@
    "we did realise": "We did realise has the wrong order.",
    "had realised we": "Had realised we is jumbled."
   },
-  "sk": "grammar.inversion"
+  "sk": "grammar.inversion",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -303,7 +306,8 @@
    "stuck": "Stuck is past.",
    "had stuck": "Had stuck is past perfect."
   },
-  "sk": "grammar.future"
+  "sk": "grammar.future",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -447,7 +451,8 @@
    "restoring": "Restoring is -ing.",
    "to restore": "To restore doesn't follow 'had the tower'."
   },
-  "sk": "grammar.past-simple"
+  "sk": "grammar.past-simple",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -537,7 +542,8 @@
    "will win": "Will isn't used after supposing.",
    "had won": "Had won is for the past (third conditional)."
   },
-  "sk": "grammar.conditional-2"
+  "sk": "grammar.conditional-2",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -591,7 +597,8 @@
    "would work": "Would doesn't go in the if-clause.",
    "has worked": "Has worked is present perfect."
   },
-  "sk": "grammar.conditional-3"
+  "sk": "grammar.conditional-3",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -609,7 +616,8 @@
    "would get": "No would in the if-clause.",
    "has got": "Has got is present."
   },
-  "sk": "grammar.conditional-3"
+  "sk": "grammar.conditional-3",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -681,7 +689,8 @@
    "Were": "Were I is for present imaginary situations.",
    "Should": "Should is for possible future events."
   },
-  "sk": "grammar.conditional-3"
+  "sk": "grammar.conditional-3",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -717,7 +726,8 @@
    "Provided": "Provided means only if it rains, which is odd.",
    "As long as": "As long as makes rain a requirement."
   },
-  "sk": "grammar.other"
+  "sk": "grammar.other",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -789,7 +799,8 @@
    "stopped to": "Stopped to means stopped in order to.",
    "will stop": "Will doesn't follow wish."
   },
-  "sk": "grammar.wish-prefer"
+  "sk": "grammar.wish-prefer",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -807,7 +818,8 @@
    "would have": "Would have is for past results.",
    "will have": "Will have is future."
   },
-  "sk": "grammar.wish-prefer"
+  "sk": "grammar.wish-prefer",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -843,7 +855,8 @@
    "not read": "Not read is missing did.",
    "won't read": "Won't doesn't follow I'd rather."
   },
-  "sk": "grammar.past-simple"
+  "sk": "grammar.past-simple",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -879,7 +892,8 @@
    "must have": "Must have means you're sure it did happen.",
    "couldn't": "Couldn't seen is missing have."
   },
-  "sk": "grammar.other"
+  "sk": "grammar.other",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -915,7 +929,8 @@
    "could": "Could told is missing have.",
    "had to": "Had to told isn't a form."
   },
-  "sk": "grammar.other"
+  "sk": "grammar.other",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -951,7 +966,8 @@
    "might not": "Might not doesn't match the clue of the bike.",
    "needn't": "Needn't is about necessity, not deduction."
   },
-  "sk": "grammar.modal"
+  "sk": "grammar.modal",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1077,7 +1093,8 @@
    "to paint": "To paint doesn't follow have + object here.",
    "painting": "Painting would mean the room is doing the painting."
   },
-  "sk": "grammar.past-simple"
+  "sk": "grammar.past-simple",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1185,7 +1202,8 @@
    "to eat": "Admit isn't followed by to-infinitive.",
    "eat": "Eat needs -ing."
   },
-  "sk": "grammar.gerund-infinitive"
+  "sk": "grammar.gerund-infinitive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1239,7 +1257,8 @@
    "to break": "Accuse isn't followed by to-infinitive.",
    "about breaking": "Accuse goes with of, not about."
   },
-  "sk": "grammar.gerund-infinitive"
+  "sk": "grammar.gerund-infinitive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1257,7 +1276,8 @@
    "see": "We need -ing.",
    "to have seen": "To have seen doesn't follow forget here."
   },
-  "sk": "grammar.gerund-infinitive"
+  "sk": "grammar.gerund-infinitive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1311,7 +1331,8 @@
    "give": "We need -ing.",
    "to giving": "To giving isn't a form here."
   },
-  "sk": "grammar.gerund-infinitive"
+  "sk": "grammar.gerund-infinitive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1347,7 +1368,8 @@
    "be": "We need -ing.",
    "been": "Been needs have."
   },
-  "sk": "grammar.gerund-infinitive"
+  "sk": "grammar.gerund-infinitive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1365,7 +1387,8 @@
    "got": "Got is past.",
    "to get": "Used to get (no be) is a past habit."
   },
-  "sk": "grammar.gerund-infinitive"
+  "sk": "grammar.gerund-infinitive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1437,7 +1460,8 @@
    "which": "Which is for things.",
    "who's": "Who's = who is."
   },
-  "sk": "grammar.relative"
+  "sk": "grammar.relative",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1455,7 +1479,8 @@
    "that": "That would need 'at' at the end.",
    "what": "What isn't a relative pronoun."
   },
-  "sk": "grammar.question"
+  "sk": "grammar.question",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1527,7 +1552,8 @@
    "Having open": "Having open is missing -ed: having opened.",
    "To opening": "To opening isn't a form."
   },
-  "sk": "grammar.participle"
+  "sk": "grammar.participle",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1563,7 +1589,8 @@
    "Having built": "Having built is active.",
    "To build": "To build means purpose."
   },
-  "sk": "grammar.passive"
+  "sk": "grammar.passive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1617,7 +1644,8 @@
    "won she": "Won she isn't English.",
    "she did win": "She did win is normal order."
   },
-  "sk": "grammar.inversion"
+  "sk": "grammar.inversion",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1635,7 +1663,8 @@
    "then": "Then isn't used in this pattern.",
    "that": "That doesn't follow no sooner."
   },
-  "sk": "grammar.inversion"
+  "sk": "grammar.inversion",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1671,7 +1700,8 @@
    "are lying": "Are lying would be a fixed plan, but we need in-progress.",
    "will have lain": "Will have lain = finished by then."
   },
-  "sk": "grammar.future"
+  "sk": "grammar.future",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1725,7 +1755,8 @@
    "is due": "Is due to needs to.",
    "is on": "Is on isn't a future form."
   },
-  "sk": "grammar.other"
+  "sk": "grammar.other",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1761,7 +1792,8 @@
    "However": "However starts a new sentence.",
    "Even though": "Even though needs a subject + verb: even though it was raining."
   },
-  "sk": "grammar.linker"
+  "sk": "grammar.linker",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1851,7 +1883,8 @@
    "both": "Both needs a plural noun.",
    "any of": "Any of needs the: any of the books."
   },
-  "sk": "grammar.quantifier"
+  "sk": "grammar.quantifier",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1869,7 +1902,8 @@
    "since": "Since is for a starting point.",
    "for": "For is for a period of time."
   },
-  "sk": "grammar.preposition"
+  "sk": "grammar.preposition",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1887,7 +1921,8 @@
    "since": "Since is for a starting point in the past.",
    "during": "During needs a period: during the night."
   },
-  "sk": "grammar.preposition"
+  "sk": "grammar.preposition",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1941,7 +1976,8 @@
    "unless": "Unless means if not.",
    "otherwise": "Otherwise means if not, and needs a comma clause."
   },
-  "sk": "grammar.other"
+  "sk": "grammar.other",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1959,7 +1995,8 @@
    "in case": "In case is a precaution, not a purpose.",
    "for to": "For to isn't English."
   },
-  "sk": "grammar.gerund-infinitive"
+  "sk": "grammar.gerund-infinitive",
+  "recall": 1
  },
  {
   "type": "order",

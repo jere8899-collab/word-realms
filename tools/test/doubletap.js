@@ -43,7 +43,7 @@ async function answerAny(p) {
 }
 const dbl = (p, sel) => p.evaluate(sel => { window.__c.view = 0; const b = document.querySelector(sel); b.click(); b.click(); }, sel);
 async function open(browser) {
-  const ctx = await browser.newContext({ viewport: { width: 375, height: 667 }, deviceScaleFactor: 1, isMobile: true, hasTouch: true });
+  const ctx = await browser.newContext({ viewport: { width: 375, height: 667 }, deviceScaleFactor: 1, isMobile: true, hasTouch: true }); await ctx.addInitScript(() => { window.__WR_NO_RECALL = true; });   // ✍️ BRIEF-T7: this test isn't about type-it-first questions
   await ctx.route(/supabase\.co|cdn\.jsdelivr\.net|fonts\.(googleapis|gstatic)\.com/, r => r.abort());
   await ctx.addInitScript(() => { window.SpeechRecognition = undefined; window.webkitSpeechRecognition = undefined; });
   const p = await ctx.newPage(); p.__errs = [];

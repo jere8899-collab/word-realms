@@ -38,7 +38,8 @@
       "a rabbit": "The story says: “I have a cat.” So it's “a cat”, not “a rabbit”.",
       "a bird": "The story says: “I have a cat.” So it's “a cat”, not “a bird”."
      },
-     "sk": "reading.detail"
+     "sk": "reading.detail",
+     "recall": 1
     },
     {
      "type": "mcq",
@@ -260,7 +261,8 @@
       "windy": "The story says: “The weather is hot and sunny.” So it's “hot and sunny”, not “windy”.",
       "snowy": "The story says: “The weather is hot and sunny.” So it's “hot and sunny”, not “snowy”."
      },
-     "sk": "reading.detail"
+     "sk": "reading.detail",
+     "recall": 1
     },
     {
      "type": "mcq",
@@ -650,7 +652,8 @@
       "her mum": "Her mum isn't in the story. The story says: “Lily eats lunch with her friend Zara at twelve o'clock.”",
       "Mr Ong": "Mr Ong isn't in this story."
      },
-     "sk": "reading.detail"
+     "sk": "reading.detail",
+     "recall": 1
     }
    ]
   },
@@ -674,7 +677,8 @@
       "very windy": "Wind isn't in the story. The story says: “It is hot and sunny.”",
       "snowy": "Snow isn't in the story. The story says: “It is hot and sunny.”"
      },
-     "sk": "reading.detail"
+     "sk": "reading.detail",
+     "recall": 1
     },
     {
      "type": "mcq",
@@ -830,7 +834,8 @@
       "orange": "Orange is the carrot.",
       "grey": "Grey isn't in the story. The story says: “Bun is a white bunny.”"
      },
-     "sk": "reading.detail"
+     "sk": "reading.detail",
+     "recall": 1
     },
     {
      "type": "mcq",
@@ -1076,7 +1081,8 @@
       "cake": "Cake isn't in the story. The story says: “They read books in the tent and eat popcorn.”",
       "apples": "Apples aren't in the story. The story says: “They read books in the tent and eat popcorn.”"
      },
-     "sk": "reading.detail"
+     "sk": "reading.detail",
+     "recall": 1
     },
     {
      "type": "mcq",
@@ -1094,7 +1100,8 @@
       "cold": "Cold is the weather.",
       "tired": "Tired isn't in the story. The story says: “Now Ella is happy!”"
      },
-     "sk": "reading.feeling"
+     "sk": "reading.feeling",
+     "recall": 1
     }
    ]
   },
@@ -1190,7 +1197,8 @@
       "his brother": "A brother isn't in the story. The story says: “Hoo's best friend is Twit.”",
       "nobody": "He sits with Twit."
      },
-     "sk": "reading.detail"
+     "sk": "reading.detail",
+     "recall": 1
     }
    ]
   },
@@ -2096,7 +2104,8 @@
       "ten": "Ten is all the pupils.",
       "two": "Two isn't in the story. The story says: “There are ten pupils in his class: four dragons, three unicorns and three elves.”"
      },
-     "sk": "reading.detail"
+     "sk": "reading.detail",
+     "recall": 1
     },
     {
      "type": "mcq",

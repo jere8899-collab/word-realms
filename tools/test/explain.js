@@ -20,7 +20,7 @@ for (const lvl of ['c1', 'c2']) { const r = JSON.parse(fs.readFileSync(`${D}/${l
   JSON.parse(fs.readFileSync(`${D}/${lvl}/listening.json`, 'utf8')).forEach(q => ok(!BAD2.test(q.say + ' ' + q.q), `C5 kid-friendly listening ${lvl}: ${q.say.slice(0, 50)}`)); }
 (async () => {
   const browser = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox'] });
-  const ctx = await browser.newContext({ viewport: { width: 375, height: 667 }, isMobile: true, hasTouch: true });
+  const ctx = await browser.newContext({ viewport: { width: 375, height: 667 }, isMobile: true, hasTouch: true }); await ctx.addInitScript(() => { window.__WR_NO_RECALL = true; });   // ✍️ BRIEF-T7: this test isn't about type-it-first questions
   await ctx.route(/supabase|jsdelivr|unpkg/, r => r.abort());
   const page = await ctx.newPage(); const errs = []; page.on('pageerror', e => errs.push(String(e)));
   await page.addInitScript(() => { if (!localStorage.getItem('wordRealms.save.v1')) localStorage.setItem('wordRealms.save.v1', JSON.stringify({ v: 1, name: 'Tester', avatar: 'avatar_girl', startLevel: 'a1', stars: 10, pet: { species: 'pet_bunny', name: 'Bun', xp: 0, happiness: 80, hunger: 30, lastTick: Date.now() }, progress: {}, owned: [], equipped: {}, settings: { rate: 1, sound: false, unlockAll: true }, mistakes: [], lessonsDone: 3 })); });

@@ -71,7 +71,8 @@
    "have gone": "Have gone can't go with a finished time like 'last night'.",
    "goes": "Goes is present, for he/she/it."
   },
-  "sk": "grammar.past-simple"
+  "sk": "grammar.past-simple",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -179,7 +180,8 @@
    "better": "Better compares two things.",
    "most good": "Most good isn't used. Say best."
   },
-  "sk": "grammar.comparison"
+  "sk": "grammar.comparison",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -279,7 +281,8 @@
    "was used": "Was used means someone used you.",
    "am used to": "Am used to means 'I'm comfortable with' now."
   },
-  "sk": "grammar.gerund-infinitive"
+  "sk": "grammar.gerund-infinitive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -369,7 +372,8 @@
    "haven't": "Haven't needs a past participle: haven't gone.",
    "can't to": "We say 'can't go', with no 'to'."
   },
-  "sk": "grammar.other"
+  "sk": "grammar.other",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -387,7 +391,8 @@
    "where": "Where is for places.",
    "what": "What isn't used to join a person to a sentence."
   },
-  "sk": "grammar.relative"
+  "sk": "grammar.relative",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -405,7 +410,8 @@
    "very much": "Very much doesn't go before an adjective.",
    "so much": "So much doesn't go before an adjective."
   },
-  "sk": "grammar.comparison"
+  "sk": "grammar.comparison",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -423,7 +429,8 @@
    "still": "Still is for something that hasn't stopped.",
    "ever": "Ever asks 'at any time in your life'."
   },
-  "sk": "grammar.perfect-present"
+  "sk": "grammar.perfect-present",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -441,7 +448,8 @@
    "builded": "Build is irregular: built, not builded.",
    "are building": "Are building is happening now, not yesterday."
   },
-  "sk": "grammar.past-simple"
+  "sk": "grammar.past-simple",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -495,7 +503,8 @@
    "knows": "No -s after didn't.",
    "knowing": "No -ing after didn't."
   },
-  "sk": "grammar.past-simple"
+  "sk": "grammar.past-simple",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -531,7 +540,8 @@
    "staied": "Stay keeps the y: stayed.",
    "were stay": "Were stay mixes two forms."
   },
-  "sk": "grammar.past-simple"
+  "sk": "grammar.past-simple",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -549,7 +559,8 @@
    "draws": "Draws is present.",
    "drawn": "Drawn needs has/have: has drawn."
   },
-  "sk": "grammar.past-simple"
+  "sk": "grammar.past-simple",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -657,7 +668,8 @@
    "yet": "Yet goes at the end of a sentence.",
    "since": "Since needs a start time: since Monday."
   },
-  "sk": "grammar.perfect-present"
+  "sk": "grammar.perfect-present",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -675,7 +687,8 @@
    "ever": "Ever is for questions about experience.",
    "for": "For needs a time: for two hours."
   },
-  "sk": "grammar.perfect-present"
+  "sk": "grammar.perfect-present",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -729,7 +742,8 @@
    "just": "Just means a moment ago.",
    "ever": "Ever is for questions about experience."
   },
-  "sk": "grammar.perfect-present"
+  "sk": "grammar.perfect-present",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -819,7 +833,8 @@
    "did": "Did asks about the past.",
    "will to": "Will doesn't take to."
   },
-  "sk": "grammar.other"
+  "sk": "grammar.other",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -855,7 +870,8 @@
    "fastest": "Fastest is for the top of a group.",
    "fast": "We need the -er form before than."
   },
-  "sk": "grammar.comparison"
+  "sk": "grammar.comparison",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -945,7 +961,8 @@
    "more good": "We don't say more good.",
    "best": "Best is for the top of a group."
   },
-  "sk": "grammar.comparison"
+  "sk": "grammar.comparison",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -963,7 +980,8 @@
    "worse": "Worse compares two.",
    "most bad": "We don't say most bad."
   },
-  "sk": "grammar.comparison"
+  "sk": "grammar.comparison",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1035,7 +1053,8 @@
    "much": "Much is for uncountable things.",
    "a lot": "A lot needs 'of', and three isn't a lot."
   },
-  "sk": "grammar.quantifier"
+  "sk": "grammar.quantifier",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1053,7 +1072,8 @@
    "many": "Many is for countable things.",
    "several": "Several is for countable things."
   },
-  "sk": "grammar.quantifier"
+  "sk": "grammar.quantifier",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1089,7 +1109,8 @@
    "a": "A is for one thing.",
    "much": "Much is for uncountable things."
   },
-  "sk": "grammar.quantifier"
+  "sk": "grammar.quantifier",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1107,7 +1128,8 @@
    "needn't": "Needn't = not necessary.",
    "can": "Can means it's allowed, the opposite."
   },
-  "sk": "grammar.modal"
+  "sk": "grammar.modal",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1215,7 +1237,8 @@
    "dance": "We need the -ing form.",
    "danced": "Danced is past."
   },
-  "sk": "grammar.gerund-infinitive"
+  "sk": "grammar.gerund-infinitive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1251,7 +1274,8 @@
    "to tell": "No 'to' after at.",
    "tells": "Tells is present."
   },
-  "sk": "grammar.gerund-infinitive"
+  "sk": "grammar.gerund-infinitive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1359,7 +1383,8 @@
    "on": "On isn't used with good.",
    "for": "Good for means healthy."
   },
-  "sk": "grammar.gerund-infinitive"
+  "sk": "grammar.gerund-infinitive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1449,7 +1474,8 @@
    "(no word)": "We need 'the' here.",
    "an": "Piano starts with p, so not an."
   },
-  "sk": "grammar.article"
+  "sk": "grammar.article",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1467,7 +1493,8 @@
    "a": "A school means any school.",
    "an": "An is before a vowel sound."
   },
-  "sk": "grammar.article"
+  "sk": "grammar.article",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1539,7 +1566,8 @@
    "rarely": "Rarely means not often.",
    "hardly": "Hardly means almost not."
   },
-  "sk": "grammar.word-order"
+  "sk": "grammar.word-order",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1611,7 +1639,8 @@
    "Who's": "Who's = who is.",
    "Which's": "Which's isn't a word."
   },
-  "sk": "grammar.relative"
+  "sk": "grammar.relative",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1773,7 +1802,8 @@
    "so": "So gives a result, not a reason.",
    "although": "Although shows a surprise contrast."
   },
-  "sk": "grammar.linker"
+  "sk": "grammar.linker",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1827,7 +1857,8 @@
    "while": "While means at the same time.",
    "since": "Since needs a past start point."
   },
-  "sk": "grammar.other"
+  "sk": "grammar.other",
+  "recall": 1
  },
  {
   "type": "mcq",

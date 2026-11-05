@@ -15,7 +15,8 @@
    "transparent": "Transparent = clear and honest.",
    "forthright": "Forthright = direct and honest."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -33,7 +34,8 @@
    "keep": "Keep water isn't the idiom.",
    "bear": "Bear water isn't the idiom."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -123,7 +125,8 @@
    "shake": "Shake isn't the idiom.",
    "run": "Run isn't the idiom."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -159,7 +162,8 @@
    "incessant": "Incessant = never stopping.",
    "inclusive": "Inclusive = including everyone."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -177,7 +181,8 @@
    "ceremonious": "Ceremonious = formal.",
    "unanimous": "Unanimous = everyone agrees."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -195,7 +200,8 @@
    "insight": "Insight = deep understanding.",
    "oversight": "Oversight = a mistake by not noticing."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -249,7 +255,8 @@
    "heartfelt": "Heartfelt = sincere.",
    "wholehearted": "Wholehearted = completely sincere."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -303,7 +310,8 @@
    "fuelled up": "Fuelled up isn't the phrase.",
    "flamed": "Flamed isn't used like this."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -339,7 +347,8 @@
    "stiff": "Stiff grasp isn't used.",
    "rigid": "Rigid grasp isn't used."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -357,7 +366,8 @@
    "streets": "Streets ahead means much better, not different.",
    "worlds away": "'Worlds away apart' repeats itself."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -375,7 +385,8 @@
    "pivots round": "Pivot round isn't the phrase.",
    "leans": "Lean on = depend on a person."
   },
-  "sk": "vocab.phrasal"
+  "sk": "vocab.phrasal",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -393,7 +404,8 @@
    "plagued at": "Plagued would need 'by', not 'at'.",
    "dotted": "Dotted means scattered."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -411,7 +423,8 @@
    "extrapolate": "Extrapolate = estimate from data.",
    "expedite": "Expedite = speed up."
   },
-  "sk": "vocab.collocation"
+  "sk": "vocab.collocation",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -519,7 +532,8 @@
    "married": "Married is a wedding!",
    "mired up": "Mired up isn't the phrase."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -537,7 +551,8 @@
    "floor": "Floor isn't the collocation.",
    "minimum level": "Minimum level isn't the idiom."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -645,7 +660,8 @@
    "invaluable": "Invaluable = extremely useful.",
    "indifferent": "Indifferent = not caring."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -663,7 +679,8 @@
    "invalid": "Invalid = not legally or officially acceptable.",
    "unvalued": "Unvalued = not appreciated."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -681,7 +698,8 @@
    "indignant": "Indignant = angry at unfairness.",
    "inevitable": "Inevitable = certain to happen."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -717,7 +735,8 @@
    "indigenous": "Indigenous = native to a place.",
    "indignant": "Indignant = angry at unfairness."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -735,7 +754,8 @@
    "exotic": "Exotic = from a faraway place.",
    "foreign": "Foreign = from another country, the opposite."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -879,7 +899,8 @@
    "stationary": "Stationary = not moving, used for vehicles and objects.",
    "static": "Static = not changing, or electricity."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -897,7 +918,8 @@
    "reluctant": "Reluctant = unwilling.",
    "relevant": "Relevant = connected to the topic."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -933,7 +955,8 @@
    "relevant": "Relevant = connected.",
    "reluctant": "Reluctant = unwilling."
   },
-  "sk": "vocab.phrasal"
+  "sk": "vocab.phrasal",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -987,7 +1010,8 @@
    "deployed": "Deployed = put into use (troops, equipment).",
    "depicted": "Depicted = shown in a picture."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1059,7 +1083,8 @@
    "precede": "Precede = come before.",
    "prescribe": "Prescribe = officially recommend medicine."
   },
-  "sk": "vocab.collocation"
+  "sk": "vocab.collocation",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1113,7 +1138,8 @@
    "conceive": "Conceive = imagine or form an idea.",
    "conceal": "Conceal = hide."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1131,7 +1157,8 @@
    "reveal": "Reveal = show, the opposite.",
    "expose": "Expose = make visible."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1149,7 +1176,8 @@
    "thrust": "Thrust = push suddenly.",
    "throb": "Throb = beat strongly with pain."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1203,7 +1231,8 @@
    "soared": "Soared = rose quickly.",
    "flourished": "Flourished = grew strongly."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1257,7 +1286,8 @@
    "subsided": "Subsided = became calmer.",
    "diminished": "Diminished = became smaller."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1401,7 +1431,8 @@
    "focus at": "Focus at isn't English.",
    "weight in": "Weight in isn't the collocation."
   },
-  "sk": "vocab.phrasal"
+  "sk": "vocab.phrasal",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1419,7 +1450,8 @@
    "puts": "Put doubt isn't the collocation.",
    "drops": "Drop doubt isn't English."
   },
-  "sk": "vocab.phrasal"
+  "sk": "vocab.phrasal",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1527,7 +1559,8 @@
    "expensive": "Expensive = costing a lot.",
    "extended": "Extended = made longer."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1581,7 +1614,8 @@
    "thin": "Thin margin isn't the usual collocation.",
    "tight in": "Tight in isn't English."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1599,7 +1633,8 @@
    "withhold": "Withhold = refuse to give.",
    "uphold": "Uphold = support a rule or decision."
   },
-  "sk": "vocab.collocation"
+  "sk": "vocab.collocation",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1653,7 +1688,8 @@
    "rose over": "Rise over isn't used here.",
    "rose from": "Rise from = recover from."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1689,7 +1725,8 @@
    "add to": "Add to = increase.",
    "add in": "Add in = include."
   },
-  "sk": "vocab.phrasal"
+  "sk": "vocab.phrasal",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1707,7 +1744,8 @@
    "make for": "Make for = go towards.",
    "make off": "Make off = escape quickly."
   },
-  "sk": "vocab.phrasal"
+  "sk": "vocab.phrasal",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1725,7 +1763,8 @@
    "made up": "Make up = invent.",
    "made over": "Make over = give ownership, or redecorate."
   },
-  "sk": "vocab.collocation"
+  "sk": "vocab.collocation",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1743,7 +1782,8 @@
    "up for": "Be up for = willing to do.",
    "on for": "On for isn't used this way."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1779,7 +1819,8 @@
    "bursting out": "Bursting out doesn't take with here.",
    "filling up": "Filling up with is possible but doesn't mean full of living things."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1815,7 +1856,8 @@
    "rush around": "Rush around = hurry from place to place.",
    "jump around": "Jump around = move about energetically."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1869,7 +1911,8 @@
    "bun": "Bun isn't used in this idiom.",
    "pie": "Pie isn't used in this idiom."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1905,7 +1948,8 @@
    "ducks": "Ducks isn't used in this idiom.",
    "birds": "Birds isn't used in this idiom."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1959,7 +2003,8 @@
    "outlook": "Outlook = view of the future.",
    "output": "Output = amount produced."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1995,7 +2040,8 @@
    "street": "Street isn't used in this idiom.",
    "block": "Block isn't used in this idiom."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -2067,7 +2113,8 @@
    "rest": "Rest on = depend on.",
    "nap": "Nap on isn't the idiom."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -2121,7 +2168,8 @@
    "precision": "Precision = exactness.",
    "prevention": "Prevention = stopping something, not a single action you take 'as a'."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -2157,7 +2205,8 @@
    "attending": "Attending is a verb form.",
    "attendance": "Attendance = being present."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",

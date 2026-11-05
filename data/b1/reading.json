@@ -1310,7 +1310,8 @@
       "in students' bags": "They weren't in bags.",
       "at home": "Students brought them to school."
      },
-     "sk": "reading.detail"
+     "sk": "reading.detail",
+     "recall": 1
     },
     {
      "type": "mcq",
