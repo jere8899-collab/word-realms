@@ -11,8 +11,9 @@ SKILLS = {"grammar", "vocab", "reading", "listening"}
 WIDGETS = {   # kind → required fields (LESSONS-PLAN.md §2 widget kit; js/learn.js KIT)
     "sort": ["bins", "items"], "fill": ["tiles", "items"], "suffix": ["stamp", "items"], "spots": ["scene", "tasks"],
     "pv": ["targets"], "regroup": ["a", "b"], "groups": ["rings", "each"], "share": ["total", "plates"], "frac": ["stages"],
-    "rename": ["a", "b"], "money": ["targets"], "clock": ["targets"], "picgraph": ["cats", "key"], "bar": ["start", "sold", "add"]}
-SCENES = {"table": {"on", "under", "in"}, "bed": {"on", "under", "in"}, "nearfar": {"near", "far"}}
+    "rename": ["a", "b"], "money": ["targets"], "clock": ["targets"], "picgraph": ["cats", "key"], "bar": ["start", "sold", "add"],
+    "findword": ["story", "tasks"], "spellhear": ["items"], "hearpic": ["items"]}
+SCENES = {"table": {"on", "under", "in"}, "bed": {"on", "under", "in"}, "nearfar": {"near", "far"}, "park": {"nextto", "behind", "front"}}
 NUMW = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight"}
 DEN = {2: ("half", "halves"), 3: ("third", "thirds"), 4: ("quarter", "quarters"), 5: ("fifth", "fifths"), 6: ("sixth", "sixths"), 8: ("eighth", "eighths")}
 def frac_words(a, b):
@@ -84,10 +85,35 @@ def check_widget(lid, w, where):
             if not c.get("label") or not (1 <= c.get("n", 0) <= 8): fail(lid, f"{where}: picgraph cat {c}")
     if k == "bar":
         if not (10 <= w["start"] <= 99 and 1 <= w["sold"] < w["start"] and 1 <= w["add"] <= 40): fail(lid, f"{where}: bar start/sold/add out of kid range")
+    if k == "findword":
+        if not w.get("story") or len(w["tasks"]) < 2: fail(lid, f"{where}: findword needs a story and 2+ tasks")
+        story_l = w["story"].lower()
+        for t in w["tasks"]:
+            if not t.get("q") or not t.get("word"): fail(lid, f"{where}: findword task {t}")
+            if t["word"].lower() not in story_l: fail(lid, f"{where}: findword word {t['word']!r} not in story")
+    if k == "spellhear":
+        if len(w["items"]) < 2: fail(lid, f"{where}: spellhear needs 2+ items")
+        for it in w["items"]:
+            a = it.get("answer") or ""
+            if not a or not a.isalpha() or not (2 <= len(a) <= 10): fail(lid, f"{where}: spellhear answer {a!r} (2–10 letters)")
+            if not it.get("why"): fail(lid, f"{where}: spellhear item {a!r} needs a why")
+    if k == "hearpic":
+        if len(w["items"]) < 2: fail(lid, f"{where}: hearpic needs 2+ items")
+        for it in w["items"]:
+            if not it.get("word") or not it.get("pics") or not (3 <= len(it["pics"]) <= 4): fail(lid, f"{where}: hearpic item {it.get('word')}")
+            oks = [p for p in it["pics"] if p.get("ok")]
+            if len(oks) != 1: fail(lid, f"{where}: hearpic {it['word']!r} needs exactly one ok pic")
+            for p in it["pics"]:
+                if not p.get("icon") or not p.get("label"): fail(lid, f"{where}: hearpic pic needs icon+label")
+                if not p.get("ok") and not p.get("why"): fail(lid, f"{where}: hearpic wrong pic {p.get('label')!r} needs a why")
 def say_widget(w):
     w["say"] = speak(w["text"])
-    for t in w.get("tasks", []): t["say"] = speak(t["text"])
+    for t in w.get("tasks", []): t["say"] = speak(t.get("text") or t.get("q") or "")
     for st in w.get("stages", []): st["say"] = speak(st["text"])
+    for it in w.get("items", []):
+        if isinstance(it, dict) and it.get("say"): it["say"] = speak(it["say"])
+        elif isinstance(it, dict) and it.get("answer") and w.get("kind") == "spellhear": it["say"] = speak(it.get("say") or it["answer"])
+        elif isinstance(it, dict) and it.get("word") and w.get("kind") == "hearpic": it["say"] = speak(it.get("say") or it["word"])
 def check_q(lid, q, where):
     o = q["options"]
     if len(o) < 2 or len(set(o)) != len(o): fail(lid, f"{where}: options must be 2+ and unique: {o}")

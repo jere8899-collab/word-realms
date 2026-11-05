@@ -95,6 +95,11 @@ const shake = el => { if (!el) return; el.classList.remove("ln-shake"); void el.
 /* ---------- the widget kit (LESSONS-PLAN.md §2) ----------
    each kind: html(w) and bind(root, w, api); api.good(msg) / api.miss(msg, el) (2 misses show the widget's hint) / api.done(msg) */
 const KIT = {};
+// 🔤 shuffle letters for spellhear (and any future letter-tile widgets)
+const shuffleLetters = (answer, extra = "") => {
+  const letters = (answer + extra).split("");
+  return WR.shuffle(letters.map((ch, k) => ({ ch, k })));
+};
 KIT.sort = {
   html: w => `<div class="lw-pool" aria-label="Cards to sort">${WR.shuffle(w.items.map((it, k) => ({ it, k }))).map(({ it, k }) => `<button class="lw-chip" data-src data-k="${k}">${it.icon ? `<span aria-hidden="true">${it.icon}</span> ` : ""}${esc(it.t)}</button>`).join("")}</div>
     <div class="lw-bins b${w.bins.length}">${w.bins.map(b => `<div class="lw-bin" data-tgt data-b="${esc(b.id)}" role="button" tabindex="0" aria-label="${esc(b.label)} basket"><b>${b.icon || ""} ${esc(b.label)}</b><div class="lw-in"></div></div>`).join("")}</div>`,
@@ -131,7 +136,7 @@ KIT.suffix = {
       if (!left) { root.querySelectorAll(".lw-word:not(.placed)").forEach(x => { x.classList.add("no-s"); x.disabled = true; }); api.done(); } };
     dragTap(root, { onDrop: (src, word) => stampOn(word), onTapTarget: stampOn });
   } };
-// 🧸 place a token on a little scene (CSS: table+basket, bed+toy box, or near/far meadow)
+// 🧸 place a token on a little scene (CSS: table+basket, bed+toy box, near/far meadow, or park bench)
 const SCENE = {
   table: { draw: `<div class="sc-table-top"></div><div class="sc-leg l"></div><div class="sc-leg r"></div><div class="sc-basket"></div>`,
     spots: { on: "the table top", under: "under the table", in: "inside the basket" } },
@@ -139,11 +144,15 @@ const SCENE = {
     spots: { on: "the top of the bed", under: "under the bed", in: "inside the toy box" } },
   // near / far for this/that/these/those (EN-2); table/bed stay byte-identical above
   nearfar: { draw: `<div class="sc-far-hill"></div><div class="sc-far-tree l"></div><div class="sc-far-tree r"></div><div class="sc-near-rug"></div><div class="sc-near-toys"></div>`,
-    spots: { near: "near you", far: "far away" } } };
+    spots: { near: "near you", far: "far away" } },
+  // park bench + tree for next to / behind / in front of (EN-3 place2)
+  park: { draw: `<div class="sc-park-sky"></div><div class="sc-park-tree"></div><div class="sc-park-trunk"></div><div class="sc-park-bench"></div><div class="sc-park-leg l"></div><div class="sc-park-leg r"></div>`,
+    spots: { nextto: "next to the bench", behind: "behind the tree", front: "in front of the bench" } } };
+const TOKEN_NAME = { pet_bunny: "Puffbun", pet_owl: "Hoot", pet_dragon: "Crumb", pet_fox: "Sumi", pet_kitty: "Kitty", pet_panda: "Panda", pet_penguin: "Penguin", pet_unicorn: "Unicorn" };
 KIT.spots = {
   html: w => { const s = SCENE[w.scene];
     return `<div class="lw-task" aria-live="polite"></div><div class="lw-scene sc-${w.scene}">${s.draw}${Object.entries(s.spots).map(([k, lab]) => `<button class="lw-spot sp-${k}" data-tgt data-w="${k}" aria-label="${lab}"><span aria-hidden="true">✨</span></button>`).join("")}
-      <button class="lw-token" data-src aria-label="${esc(w.token === "pet_bunny" ? "Puffbun" : "your friend")}">${WR.img(w.token, "") || "🐰"}</button></div>`; },
+      <button class="lw-token" data-src aria-label="${esc(TOKEN_NAME[w.token] || "your friend")}">${WR.img(w.token, "") || "🐰"}</button></div>`; },
   bind(root, w, api) {
     let i = 0; const task = root.querySelector(".lw-task"), tok = root.querySelector(".lw-token"), scene = root.querySelector(".lw-scene");
     const show = () => { task.innerHTML = `👉 ${esc(w.tasks[i].text)}`; };
@@ -466,6 +475,98 @@ KIT.bar = {
     paint();
   } };
 
+// 📖 find a number/colour word in a short story (tap the word)
+const bareWord = t => String(t || "").replace(/[^\p{L}\p{N}']+/gu, "").toLowerCase();
+KIT.findword = {
+  html: w => {
+    const toks = String(w.story || "").split(/(\s+)/);
+    const story = toks.map((t, k) => /^\s+$/.test(t) ? esc(t) : `<button class="lw-fword" data-tgt data-k="${k}" data-w="${esc(bareWord(t))}" aria-label="${esc(bareWord(t) || t)}">${esc(t)}</button>`).join("");
+    return `<div class="lw-task" aria-live="polite"></div><div class="lw-storybox" aria-label="the story">${story}</div>`;
+  },
+  bind(root, w, api) {
+    let i = 0; const task = root.querySelector(".lw-task");
+    const show = () => { task.innerHTML = `👉 ${esc(w.tasks[i].q)}`; root.querySelectorAll(".lw-fword").forEach(b => { b.disabled = false; b.classList.remove("right", "wrong"); }); };
+    show(); api.sayLine && setTimeout(() => api.sayLine(w.tasks[0].say || w.tasks[0].q), 0);
+    const pick = btn => {
+      const t = w.tasks[i], got = bareWord(btn.dataset.w), want = bareWord(t.word);
+      if (got !== want) {
+        btn.classList.add("wrong"); setTimeout(() => btn.classList.remove("wrong"), 450);
+        return api.miss(t.why || `Hmm, “${btn.textContent.trim()}” is not what we need. ${t.q}`, btn);
+      }
+      btn.classList.add("right"); api.good(`✅ ${t.why || ("Yes! “" + t.word + "”.")}`); i++;
+      if (i >= w.tasks.length) { root.querySelectorAll(".lw-fword").forEach(b => b.disabled = true); task.textContent = "🎉 You found them all!"; api.done(); }
+      else { setTimeout(() => { show(); api.sayLine && api.sayLine(w.tasks[i].say || w.tasks[i].q); }, 700); }
+    };
+    dragTap(root, { onTapTarget: pick, nothing: () => api.say("Tap the word in the story 👆") });
+  } };
+// 🎧 hear a number/name, spell it with letter tiles
+KIT.spellhear = {
+  html: w => `<div class="lw-task" aria-live="polite"></div>
+    <div class="row lw-hear-row"><button class="btn mint lw-replay" aria-label="Hear it again">🔊 Hear it</button></div>
+    <div class="lw-slots" aria-label="Your spelling"></div>
+    <div class="lw-letters" aria-label="Letter tiles"></div>
+    <button class="btn ghost small lw-clear" hidden>↩️ Clear</button>`,
+  bind(root, w, api) {
+    let i = 0, built = [], pool = [];
+    const task = root.querySelector(".lw-task"), slots = root.querySelector(".lw-slots"), letters = root.querySelector(".lw-letters"), clear = root.querySelector(".lw-clear"), replay = root.querySelector(".lw-replay");
+    const item = () => w.items[i];
+    const paint = () => {
+      const it = item(), n = it.answer.length;
+      slots.innerHTML = Array.from({ length: n }, (_, k) => built[k] ? `<button class="lw-chip lw-slot filled" data-tgt data-built="${k}" aria-label="letter ${built[k].ch}">${esc(built[k].ch)}</button>` : `<span class="lw-slot empty" aria-hidden="true"></span>`).join("");
+      letters.innerHTML = pool.map(t => `<button class="lw-chip lw-letter" data-src data-k="${t.k}" aria-label="letter ${esc(t.ch)}">${esc(t.ch)}</button>`).join("");
+      clear.hidden = !built.length;
+    };
+    const start = () => {
+      const it = item(); built = [];
+      const extra = it.tiles || ""; pool = shuffleLetters(it.answer, extra);
+      task.innerHTML = `👉 ${esc(w.text || "Listen, then spell the word.")}`;
+      paint(); api.sayLine && setTimeout(() => api.sayLine(it.say || it.answer), 0);
+    };
+    const check = () => {
+      const it = item(), got = built.map(t => t.ch).join("");
+      if (got.length < it.answer.length) return;
+      if (got !== it.answer) { api.miss(`Not “${got}”. Try again!`, slots); built = []; paint(); return; }
+      api.good(`✅ ${it.why || ("“" + it.answer + "”!")}`); i++;
+      if (i >= w.items.length) { root.querySelectorAll("[data-src], .lw-clear, .lw-replay").forEach(b => b.disabled = true); api.done("🎉 Great listening!"); }
+      else setTimeout(start, 900);
+    };
+    const add = src => { const it = item(); if (built.length >= it.answer.length) return;
+      const k = +src.dataset.k, ix = pool.findIndex(t => t.k === k); if (ix < 0) return;
+      built.push(pool.splice(ix, 1)[0]); WR.sfx("tap"); paint(); check(); };
+    const take = k => { if (!built[k]) return; pool.push(built.splice(k, 1)[0]); paint(); };
+    dragTap(root, { instant: () => slots, onDrop: src => add(src),
+      onTapTarget: t => { if (t.dataset.built != null) take(+t.dataset.built); },
+      nothing: () => api.say("Tap a letter tile 👆") });
+    clear.onclick = () => { pool = pool.concat(built); built = []; paint(); };
+    replay.onclick = () => api.sayLine && api.sayLine(item().say || item().answer);
+    start();
+  } };
+// 🖼️ hear a key word, tap the matching picture
+KIT.hearpic = {
+  html: w => `<div class="lw-task" aria-live="polite"></div>
+    <div class="row lw-hear-row"><button class="btn mint lw-replay" aria-label="Hear the word">🔊 Hear it</button></div>
+    <div class="lw-pics" aria-label="Pictures"></div>`,
+  bind(root, w, api) {
+    let i = 0; const task = root.querySelector(".lw-task"), pics = root.querySelector(".lw-pics"), replay = root.querySelector(".lw-replay");
+    const show = () => {
+      const it = w.items[i];
+      task.innerHTML = `👉 ${esc(it.prompt || "Tap the picture you hear.")}`;
+      pics.innerHTML = WR.shuffle(it.pics.map((p, k) => ({ p, k }))).map(({ p, k }) =>
+        `<button class="lw-pic" data-tgt data-k="${k}" aria-label="${esc(p.label || p.id)}"><span class="lw-pico" aria-hidden="true">${p.icon || "📷"}</span><small>${esc(p.label || "")}</small></button>`).join("");
+      api.sayLine && setTimeout(() => api.sayLine(it.say || it.word), 0);
+    };
+    show();
+    const pick = btn => {
+      const it = w.items[i], p = it.pics[+btn.dataset.k];
+      if (!p.ok) return api.miss(p.why || `That's the ${p.label || p.id}, not “${it.word}”.`, btn);
+      btn.classList.add("right"); api.good(`✅ ${p.why || ("Yes! “" + it.word + "”.")}`); i++;
+      if (i >= w.items.length) { pics.querySelectorAll(".lw-pic").forEach(b => b.disabled = true); api.done("🎉 Ears sharp!"); }
+      else setTimeout(show, 900);
+    };
+    dragTap(root, { onTapTarget: pick, nothing: () => api.say("Tap a picture 👆") });
+    replay.onclick = () => api.sayLine && api.sayLine(w.items[i].say || w.items[i].word);
+  } };
+
 LN.KIT = KIT;
 
 /* ---------- the lesson screen ---------- */
@@ -526,8 +627,8 @@ function show() {
   if (auto() && line && !widgetSpeaks(S)) speak(line);
   if (S.maths && WR.Math && WR.Math.upgrade) setTimeout(() => WR.Math.upgrade(WR.$("#main")), 400);
 }
-// the spots and fraction widgets read each task out themselves
-const widgetSpeaks = s => { const w = s.step === "discover" ? s.L.discover : s.step === "rdiscover" ? s.L.reteach.discover : null; return !!w && (w.kind === "spots" || w.kind === "frac"); };
+const SPEAKS = new Set(["spots", "frac", "findword", "spellhear", "hearpic"]);  // widgets that read each task/item themselves
+const widgetSpeaks = s => { const w = s.step === "discover" ? s.L.discover : s.step === "rdiscover" ? s.L.reteach.discover : null; return !!w && SPEAKS.has(w.kind); };
 function bindWidget(w, go) {
   const root = WR.$("#lnW"), msg = WR.$("#lnMsg"); let misses = 0, finished = false;
   const put = (html, cls) => { msg.innerHTML = `<div class="explain ${cls || ""}">${html}</div>`; };

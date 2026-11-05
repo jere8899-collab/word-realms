@@ -260,6 +260,205 @@
    ]
   },
   {
+   "id": "en.a1.ing",
+   "pack": "en-a1",
+   "title": "happening now",
+   "icon": "🏃",
+   "at": {
+    "realm": "a1",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_a1_ing",
+   "match": [
+    {
+     "re": "-ing|is \\w+ing|are \\w+ing|happening now",
+     "field": "explain"
+    },
+    {
+     "opts": [
+      "is running",
+      "runs",
+      "ran"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "en.a1.waswere",
+   "pack": "en-a1",
+   "title": "was / were",
+   "icon": "⏪",
+   "at": {
+    "realm": "a1",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_a1_waswere",
+   "match": [
+    {
+     "opts": [
+      "was",
+      "were"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "en.a1.place2",
+   "pack": "en-a1",
+   "title": "next to, behind, in front of",
+   "icon": "🌳",
+   "at": {
+    "realm": "a1",
+    "skill": "vocab"
+   },
+   "art": "lesson_en_a1_place2",
+   "match": [
+    {
+     "opts": [
+      "next to",
+      "behind"
+     ]
+    },
+    {
+     "opts": [
+      "behind",
+      "in front of"
+     ]
+    },
+    {
+     "re": "next to|in front of|behind the",
+     "field": "explain"
+    }
+   ]
+  },
+  {
+   "id": "en.a1.timeprep",
+   "pack": "en-a1",
+   "title": "at, on, in (time)",
+   "icon": "🗓️",
+   "at": {
+    "realm": "a1",
+    "skill": "vocab"
+   },
+   "art": "lesson_en_a1_timeprep",
+   "match": [
+    {
+     "re": "\\bat \\d|on (Monday|Sunday|Friday)|in (May|June|July|the morning)",
+     "field": "explain"
+    },
+    {
+     "opts": [
+      "at",
+      "on",
+      "in"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "en.a1.feel",
+   "pack": "en-a1",
+   "title": "feelings words",
+   "icon": "😊",
+   "at": {
+    "realm": "a1",
+    "skill": "vocab"
+   },
+   "art": "lesson_en_a1_feel",
+   "match": [
+    {
+     "opts": [
+      "happy",
+      "sad"
+     ]
+    },
+    {
+     "opts": [
+      "hungry",
+      "thirsty"
+     ]
+    },
+    {
+     "opts": [
+      "tired",
+      "scared"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "en.a1.detail",
+   "pack": "en-a1",
+   "title": "find the number or colour",
+   "icon": "🔍",
+   "at": {
+    "realm": "a1",
+    "skill": "reading"
+   },
+   "art": "lesson_en_a1_detail",
+   "match": [
+    {
+     "re": "how many|what colour|color of|red hat|three frogs|blue bag",
+     "field": "explain"
+    },
+    {
+     "opts": [
+      "red",
+      "blue",
+      "green"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "en.a1.listennum",
+   "pack": "en-a1",
+   "title": "listen for numbers and names",
+   "icon": "🔢",
+   "at": {
+    "realm": "a1",
+    "skill": "listening"
+   },
+   "art": "lesson_en_a1_listennum",
+   "match": [
+    {
+     "re": "spell|listen.*(number|name)|how do you spell",
+     "field": "explain"
+    },
+    {
+     "opts": [
+      "three",
+      "seven",
+      "Mia"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "en.a1.keyword",
+   "pack": "en-a1",
+   "title": "listen for the key word",
+   "icon": "🗝️",
+   "at": {
+    "realm": "a1",
+    "skill": "listening"
+   },
+   "art": "lesson_en_a1_keyword",
+   "match": [
+    {
+     "re": "key word|what do you hear|tap the picture|listen and choose",
+     "field": "explain"
+    },
+    {
+     "opts": [
+      "apple",
+      "cat",
+      "dog"
+     ]
+    }
+   ]
+  },
+  {
    "id": "m.g2.place",
    "pack": "m-g2",
    "title": "Hundreds, tens and ones",
