@@ -58,7 +58,7 @@ const go1 = WR.go;
 WR.go = (screen, arg) => { if (ROUND(screen)) { const why = H.restReason(); if (why) { H.restCard(why); return; } } return go1(screen, arg); };
 // 👪 the Grown-ups rows (js/parent-gate.js calls these inside the gated panel)
 H.rowsHTML = () => { const c = cfg();
-  return `<div class="health-rows" id="guHealth"><label class="set-row hr-row"><span class="hr-t">⏳ Daily playtime</span><small class="muted hr-c">Today: ${H.playedMin()} min · MOH: under 2 h a day for ages 7–12</small>
+  return `<div class="health-rows" id="guHealth"><label class="set-row hr-row"><span class="hr-t">⏳ Daily playtime</span><small class="muted hr-c">Today: ${H.playedMin()} min · MOH: under 2 h a day for <span style="white-space:nowrap">ages 7–12</span></small>
     <select class="input gu-sel" id="guLimit">${H.limits.map(m => `<option value="${m}" ${c.limit === m ? "selected" : ""}>${m ? m + " min" : "Off"}</option>`).join("")}</select></label>
     <label class="set-row hr-row"><span class="hr-t">🌙 Bedtime</span><small class="muted hr-c">Screens rest from bedtime until 5 am</small>
     <select class="input gu-sel" id="guBed">${H.beds.map(b => `<option value="${b}" ${c.bed === b ? "selected" : ""}>${b ? fmtBed(b) : "Off"}</option>`).join("")}</select></label></div>`; };
