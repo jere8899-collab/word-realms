@@ -141,7 +141,7 @@ const HELPERS = () => {
   ok(farm.d === 0 && farm.l === 0 && farm.tries === 3, `replaying a passed lesson twice pays 0⭐ and counts no new lesson (Δ⭐ ${farm.d}, tries ${farm.tries})`);
   // the save shape in localStorage (cloud-synced as part of the whole save) + the cloud score
   const sv = await page.evaluate(() => { const s = JSON.parse(localStorage.getItem('wordRealms.save.v1')); const r = s.learn.done['m.g2.add']; return { keys: Object.keys(r).sort(), opened: s.learn.opened['en.a1.an'], score: WR.Cloud.score(s), score0: WR.Cloud.score(Object.assign({}, s, { learn: { done: {}, opened: {}, rounds: 0 } })) }; });
-  ok(['at', 'best', 'crowns', 'first', 'pass', 'reteach', 'stuck', 'tries'].every(k => sv.keys.includes(k)) && sv.opened === 3, `saved per lesson: ${sv.keys.join(',')}; opened counts (${sv.opened})`);
+  ok(['at', 'best', 'crowns', 'first', 'pass', 'reteach', 'stuck', 'tries'].every(k => sv.keys.includes(k)) && ['s','d','t','n'].every(k => sv.keys.includes(k)) && sv.opened === 3, `saved per lesson: ${sv.keys.join(',')}; opened counts (${sv.opened})`);
   ok(sv.score > sv.score0, `lesson crowns add to the cloud score (${sv.score0} → ${sv.score})`);
   // 🔊 every narrated line has a recorded storyteller MP3 (tools/build_voice.py); the device voice is only the fallback
   const miss = await page.evaluate(async () => { await WR.Voice.load(); const out = [], seen = new Set();

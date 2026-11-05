@@ -419,3 +419,6 @@ body.kbd-open .toast{display:none}
 @media (max-width:359px){.lesson.lhud.lboss{grid-template-columns:minmax(0,1fr);grid-template-areas:"bar" "q"}.lesson.lhud.lboss>.side{display:none}}
 
 .rec-bank{margin-top:8px;gap:8px}.rec-bank .tile{min-height:44px}
+
+/* BRIEF-T9: Learn chip when a day-1 / day-7 recall is due */
+.learn-chip.due .ln-new{background:#fff3cd;color:#8a5a00}
