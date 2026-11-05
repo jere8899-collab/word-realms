@@ -1,10 +1,1 @@
-{
- "level": "jc2",
- "synth": [],
- "edit": {
-  "passages": []
- },
- "ccloze": {
-  "passages": []
- }
-}
+{"level":"jc2","synth":[{"type":"typed","id":"jc2.s1","title":"Join It Up","q":"Join the two sentences into one. Use “so”.","s1":"The National Day rally was broadcast live.","s2":"Many families watched it at home.","lead":"The National Day rally was broadcast live","tail":"","answers":["so many families watched it at home"],"answer":"so many families watched it at home","need":["so"],"explain":"Use 'so' for the result.","say":"The National Day rally was broadcast live. Many families watched it at home.","full":"The National Day rally was broadcast live so many families watched it at home."},{"type":"typed","id":"jc2.s2","title":"Join It Up","q":"Join the two sentences into one. Use “so”.","s1":"The MRT line was extended last year.","s2":"More residents can travel to the city easily.","lead":"The MRT line was extended last year","tail":"","answers":["so more residents can travel to the city easily"],"answer":"so more residents can travel to the city easily","need":["so"],"explain":"Use 'so' for what the change made possible.","say":"The MRT line was extended last year. More residents can travel to the city easily.","full":"The MRT line was extended last year so more residents can travel to the city easily."}],"edit":{"passages":[{"id":"jc2.e1","title":"Our National Day Ceremony","text":"On National Day, our junior college held an observance ceremony in the hall. We ⟦1|recite⟧ the pledge together and watched a performance by the dance club. It reminded us how much we ⟦2|shair⟧ as one people.","say":"On National Day, our junior college held an observance ceremony in the hall. We recited the pledge together and watched a performance by the dance club. It reminded us how much we share as one people.","questions":[{"type":"fix","n":1,"wrong":"recite","kind":"grammar","answers":["recited"],"answer":"recited","explain":"Past tense: recited.","title":"Our National Day Ceremony","q":"Fix word 1: “recite”"},{"type":"fix","n":2,"wrong":"shair","kind":"spelling","answers":["share"],"answer":"share","explain":"Share: s-h-a-r-e.","title":"Our National Day Ceremony","q":"Fix word 2: “shair”"}]}]},"ccloze":{"passages":[]}}
