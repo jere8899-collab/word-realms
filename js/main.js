@@ -137,7 +137,6 @@ const questRows = s => s.daily.quests.map(q => { const d = WR.questDef(q.id); re
     ${q.claimed ? '<span class="pill" style="background:var(--mint)">Done ✓</span>' : q.progress >= d.goal ? `<button class="btn small mint claim" data-id="${q.id}">Claim ${d.reward}⭐</button>` : `<span class="pill">${q.progress}/${d.goal} · ${d.reward}⭐</span>`}</div>`; }).join("");
 const questsCard = s => `<div class="card quests">${questRows(s)}<p class="muted" style="font-size:.8rem;font-weight:700;margin-bottom:0">New quests every day. Keep your 🔥 streak by finishing one lesson a day!</p></div>`;
 // 🐾 how the pet feels, in a few words, for the home chip
-WR.petFeel = p => p.hunger >= 60 ? "is hungry" : p.happiness < 40 ? "wants a cuddle" : p.happiness >= 80 ? "is very happy" : "is happy";
 WR.screens.quests = () => {
   WR.ensureDaily(); const s = WR.state;
   WR.view(`<div class="fade-in"><div class="row lesson-top" style="margin:6px 0 8px"><button class="btn ghost small" id="qBack">← Map</button><b class="title">🎯 Daily Quests</b></div>${questsCard(s)}</div>`);

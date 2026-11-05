@@ -561,6 +561,8 @@ WR.petMood = () => {
   if (p.happiness > 80) return "I love learning with you! 💖";
   return "Let's go on an adventure! ✨";
 };
+// how the pet feels, in a few words (the map's pet chip, js/main.js)
+WR.petFeel = p => p.hunger >= 60 ? "is hungry" : p.happiness < 40 ? "wants a cuddle" : p.happiness >= 80 ? "is very happy" : "is happy";
 WR.tickPet = () => {
   const p = WR.state.pet; if (!p) return;
   const now = Date.now(), hrs = (now - (p.lastTick || now)) / 36e5;
