@@ -33,11 +33,17 @@ const SAVE = { v: 1, name: 'Mei', avatar: 'avatar_girl', startLevel: 'a1', stars
     for (const lvl of ['a1', 'a2', 'b1', 'b2', 'c1', 'c2']) { let el = 0, mk = 0, bad = 0;
       for (const sk of ['grammar', 'vocab', 'reading', 'listening']) { const b = await WR.bank(lvl, sk);
         const pairs = sk === 'reading' ? b.passages.flatMap(p => p.questions.map(q => [q, p])) : b.map(q => [q, null]);
-        for (const [q, p] of pairs) { const e = WR.Recall.eligible(WR.normalize(q, p)); el += e; if (q.recall) { mk++; if (!e) bad++; } } }
+        for (const [q, p] of pairs) { const e = WR.Recall.eligible(WR.normalize(q, p)); el += e; if (q.recall || q.type === 'recall') { mk++; if (!e) bad++; } } }
       out[lvl] = { el, mk, bad }; } return out; });
   ok(Object.keys(js).every(l => js[l].el === share[l].eligible && js[l].mk === share[l].typeFirst && js[l].bad === 0),
     `js/recall.js and tools/build_data.py agree on every level (eligible ${Object.keys(js).map(l => l + ' ' + js[l].el).join(', ')}; every marked item is fair to type)`);
   ok(share.all.before - share.all.after >= 10, `picking share ${share.all.before}% → ${share.all.after}% (−${(share.all.before - share.all.after).toFixed(1)} points, at least 10)`);
+  // wave 2: B1+ listening and reading now have fair typed items (the words are in the recording / the passage)
+  const w2 = await page.evaluate(async () => { const out = {};
+    for (const lvl of ['b1', 'b2', 'c1', 'c2']) for (const sk of ['reading', 'listening']) { const b = await WR.bank(lvl, sk);
+      const pairs = sk === 'reading' ? b.passages.flatMap(p => p.questions.map(q => [q, p])) : b.map(q => [q, null]);
+      out[lvl + '/' + sk] = pairs.filter(([q, p]) => q.recall || q.type === 'recall').length; } return out; });
+  ok(Object.keys(w2).every(k => w2[k] >= 8), `wave 2: every B1–C2 reading and listening bank has 8+ type-it-first items (${Object.entries(w2).map(([k, v]) => k + ' ' + v).join(', ')})`);
   ok(share.a1.before - share.a1.after < share.b1.before - share.b1.after, `fewer typed answers for the youngest: A1 −${(share.a1.before - share.a1.after).toFixed(1)}, B1 −${(share.b1.before - share.b1.after).toFixed(1)} points`);
   // 2. marking
   const m = await page.evaluate(() => { const it = c => ({ correct: c }); const k = (v, c) => WR.Recall.mark(v, it(c));
@@ -58,7 +64,17 @@ const SAVE = { v: 1, name: 'Mei', avatar: 'avatar_girl', startLevel: 'a1', stars
     ac: ['autocomplete', 'autocorrect', 'autocapitalize', 'spellcheck'].map(a => document.querySelector('#recIn').getAttribute(a)).join(','), c: WR._cur().correct }));
   ok(st.opts === 0 && /Type it first!/.test(await txt(page, '#recCard')) && st.hint.startsWith(st.c[0]), `question 1: choices hidden, "✍️ Type it first!" with the hint "${st.hint}"`);
   ok(/off/.test(st.ac) && /false/.test(st.ac), `the typing box has no autocorrect or suggestions (${st.ac})`);
+  // 🌱 BRIEF-T7B: a word bank for A1/A2 (the first-letter hint stays); tapping a word types it
+  const bank = await page.$$eval('#recBank .tile', bs => bs.map(b => b.textContent));
+  ok(bank.length === 4 && bank.includes(st.c), `A1: a word bank of 4 words including the answer (${bank.join(', ')})`);
+  await page.tap('#recBank .tile'); const typed = await page.$eval('#recIn', e => e.value);
+  ok(typed.length > 0, `tapping "${typed}" in the word bank types it (the hint stays)`); await page.fill('#recIn', '');
+  ok(await page.evaluate(() => { const it = WR.normalize({ type: 'mcq', q: 'I ___ a student.', options: ['am', 'is', 'are', 'be'], answer: 0 });
+      return WR.Recall.bank(it, { realm: { id: 'a1' } }) && WR.Recall.bank(it, { realm: { id: 'a2' } }) && !WR.Recall.bank(it, { realm: { id: 'b1' } }); }), 'the word bank is for A1 and A2 only');
+  ok(await page.evaluate(() => { const it = WR.normalize({ type: 'recall', q: 'A ___', options: ['cat', 'dog'], answer: 0 }); window.__WR_NO_RECALL = true; const off = WR.normalize({ type: 'recall', q: 'A ___', options: ['cat', 'dog'], answer: 0 }); delete window.__WR_NO_RECALL; return it.recall === 1 && off.recall === 0; }), 'the wave-2 producing type respects the classic / no-recall test opt-out');
+  ok(await page.evaluate(async () => { const b = await WR.bank('a1', 'reading'); const p = b.passages.find(p => p.questions.some(q => q.recall)); if (!p) return false; const it = WR.normalize(p.questions.find(q => q.recall), p); return !!it.passage && WR.Recall.bank(it, { realm: { id: 'a1' } }); }), 'A1 reading passages have the word bank too');
   await page.screenshot({ path: OUT + 't7_type_first_360.png' });
+  await page.screenshot({ path: OUT + 't7b_wordbank_360.png' });
   const stars0 = await page.evaluate(() => WR.state.stars);
   await page.tap('#recIn'); await page.keyboard.type(st.c.toUpperCase() + '!'); await page.tap('#checkBtn'); await page.waitForSelector('#nextBtn');
   ok(/Correct!/.test(await txt(page, '#explain')) && /You remembered it!/.test(await txt(page, '#explain')) && await page.evaluate(s => WR.state.stars > s, stars0), `typed "${st.c.toUpperCase()}!" → "✅ Correct! ✍️ You remembered it!" and a star`);

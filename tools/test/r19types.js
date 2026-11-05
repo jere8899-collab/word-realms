@@ -8,7 +8,7 @@ const BASE = (process.env.BASE || 'http://127.0.0.1:18642/').replace(/\/?$/, '/'
 let fails = 0, passes = 0; const ok = (c, m) => { if (!c) { fails++; console.error('FAIL', m); process.exitCode = 1; } else { passes++; console.log('ok', m); } };
 const D = path.join(__dirname, '..', '..', 'data'), SHOTS = path.join(__dirname, '..', '..', 'screenshots');
 const bank = (l, s) => { const d = JSON.parse(fs.readFileSync(`${D}/${l}/${s}.json`, 'utf8')); const a = Array.isArray(d) ? d : d.passages || []; return a.flatMap(x => x.questions || [x]); };
-const NEW = new Set(['order', 'spell', 'mistake', 'gaps', 'dictate', 'picq', 'events', 'tf', 'heading', 'findword']);
+const NEW = new Set(['order', 'spell', 'mistake', 'gaps', 'dictate', 'picq', 'events', 'tf', 'heading', 'findword', 'recall']);
 const LV = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2'];
 for (const l of LV) for (const s of ['grammar', 'vocab', 'listening']) {
   const all = bank(l, s), n = all.filter(q => NEW.has(q.type || 'mcq')).length, pct = n / all.length;

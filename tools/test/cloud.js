@@ -139,8 +139,11 @@ const waitStatus = (page, st, t = 15000) => page.waitForFunction(s => WR.Cloud &
   await A.page.click('#ccOnb'); await submit(A.page, user, pass); await A.page.waitForSelector('.cc-name', { timeout: 20000 });
   ok(await stars(A.page) === 92, 'device A sees device B\'s 92 stars after clearing storage and logging in');
   await A.page.click('#ccDone');
+  // BRIEF-T7B: let A finish its own login push first, so its synced stamp is strictly before B's next write. Without this,
+  // A's push and B's +3 can land on the same updated_at, and on reload A's own push wins and overwrites B's stars.
+  await waitStatus(A.page, 'saved', 15000); await A.page.waitForFunction(() => { try { return !JSON.parse(localStorage.getItem('wordRealms.cloud.v1') || '{}').dirty; } catch (e) { return false; } }, null, { timeout: 15000 });
   await B.page.evaluate(() => WR.addStars(3)); await waitStatus(B.page, 'saved', 15000);
-  await A.page.reload({ waitUntil: 'networkidle' }); await waitStatus(A.page, 'saved', 20000);
+  await A.page.reload({ waitUntil: 'networkidle' }); await A.page.waitForFunction(() => WR.Cloud && WR.Cloud.resumeResult, null, { timeout: 30000 });   // BRIEF-T7B: 'saved' alone can be A's own debounced push, not the pull
   ok(await stars(A.page) === 95, 'reload on A pulls the newer save from B (no clobbering)');
   // A is now synced, makes a change while B also changed -> push must not blindly overwrite B's newer row
   await B.page.evaluate(() => WR.addStars(1)); await waitStatus(B.page, 'saved', 15000); // cloud 96, A still thinks 95 is latest

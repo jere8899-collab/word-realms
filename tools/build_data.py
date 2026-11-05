@@ -183,6 +183,27 @@ TAGS = {}
 for lvl, skills in D.items():
     for sk in TAG_SKILLS:
         if sk in skills: TAGS[f"{lvl}/{sk}"] = add_tags(sk, _items(sk, skills[sk]))
+# ---- ✍️ BRIEF-T7B wave 2: extra recall questions on existing passages / recordings (added after the notes, before the
+# tags, so the tags and the counts cover them; nothing existing is rewritten, so every old item key stays the same) ----
+from recall_extra import W as RECALL_W
+for lvl, skills in RECALL_W.items():
+    for sk, rows in skills.items():
+        for src, gaped, ans, wrong, why in rows:
+            q = {"type": "recall", "q": gaped, "options": [ans] + list(wrong), "answer": 0, "explain": why}
+            # no per-option notes: the sentence itself is the clue, and repeating it 4 times costs download size
+            if sk == "reading":
+                line = gaped.replace("___", ans).replace("…", "").strip()
+                ps = [p for p in D[lvl][sk]["passages"] if p["title"] == src and line in p["text"].replace("…", "")]   # two passages can share a title
+                assert len(ps) == 1, (lvl, src, len(ps))
+                q["sk"] = next((o.get("sk") for o in ps[0]["questions"] if o.get("sk")), None)
+                ps[0]["questions"].append(q)
+            else:
+                hits = [o for o in D[lvl][sk] if src in o.get("say", "")]
+                assert hits, (lvl, src)
+                q["say"] = hits[0]["say"]; q["sk"] = hits[0].get("sk")
+                assert gaped.replace("___", ans).replace("…", "").strip() in q["say"].replace("…", ""), (lvl, src, gaped)
+                D[lvl][sk].append(q)
+print("BRIEF-T7B wave-2 recall items:", sum(len(r) for s in RECALL_W.values() for r in s.values()))
 # ---- ✍️ AGENT-BRIEF Task 7: "type it first" on a share of each level's core items (fewer for the youngest), then the report ----
 from recall_mark import mark_recall, check_recall
 RECALL = mark_recall(D)
@@ -192,7 +213,7 @@ json.dump(RECALL_SHARE, open(f"{ROOT}/recall.json", "w"), ensure_ascii=False, in
 for lvl, skills in D.items():
     os.makedirs(f"{ROOT}/{lvl}", exist_ok=True)
     for sk, val in skills.items():
-        json.dump(val, open(f"{ROOT}/{lvl}/{sk}.json", "w"), ensure_ascii=False, indent=1)
+        json.dump(val, open(f"{ROOT}/{lvl}/{sk}.json", "w"), ensure_ascii=False, separators=(",", ":"))
         items = _items(sk, val); n = len(items)
         assert n >= 15, (lvl, sk, n)
         keys = [_key(q) for q in items]

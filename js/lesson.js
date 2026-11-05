@@ -43,6 +43,9 @@ function normalize(item, passage) {
   // 🖼️ picture choice: options are labels; `art` maps a label to its picture (A1: the label is the painted word itself).
   // It keeps _raw like the other new types, so the Mistake Garden re-asks it with its pictures.
   if (item.type === "picq") return { type: "picq", ...base, art: item.art, _raw: item };
+  // ✍️ BRIEF-T7B wave 2: a "recall" item is a producing question (type the word from the text / recording). It plays like
+  // the classic item but always type-it-first, so it isn't one more multiple-choice item in the bank counts.
+  if (item.type === "recall") return { ...(item.say ? { type: "listen" } : { type: "mcq" }), ...base, recall: window.__WR_CLASSIC_ONLY || window.__WR_NO_RECALL ? 0 : 1, _raw: item };
   return { type: item.type === "listen" ? "listen" : "mcq", ...base };
 }
 // R18: every browser (automated ones too) gets every question type; a test that only drives the classic multiple-choice
@@ -202,7 +205,7 @@ function qBody(it) {
   } else if (it.type === "picq") {
     h += `<div class="opts picgrid">${it.options.map((o, k) => `<button class="opt picopt" data-k="${k}" aria-label="${WR.esc(o)}">${WR.picImg(it.art ? it.art[o] : o)}</button>`).join("")}</div>`;
   } else if (it._rc) {
-    h += WR.Recall.html(it, optsHTML);
+    h += WR.Recall.html(it, optsHTML, WR.Recall.bank(it, L) ? WR.shuffle(it.options.slice()) : null);
   } else {
     h += optsHTML(it);
   }
@@ -360,8 +363,11 @@ function bindRecall(it) {
   WR.noAssist(inp);
   inp.oninput = () => { btn.disabled = !inp.value.trim() || L.answered; };
   inp.onkeydown = e => { if (e.key === "Enter" && !btn.disabled) { e.preventDefault(); btn.click(); } };
+  const bk = WR.$("#recBank");
+  if (bk) bk.querySelectorAll(".tile").forEach(b => b.onclick = () => { if (L.answered || inp.disabled) return;
+    const w = b.textContent; inp.value = inp.value.trim() ? inp.value.trim() + " " + w : w; inp.dispatchEvent(new Event("input")); WR.sfx("tap"); inp.focus(); });
   const reveal = why => {
-    it._typed = why; inp.disabled = true; btn.hidden = true; show.hidden = true; WR.$("#recCard").classList.add("tried");
+    it._typed = why; inp.disabled = true; btn.hidden = true; show.hidden = true; if (bk) bk.querySelectorAll(".tile").forEach(b => b.disabled = true); WR.$("#recCard").classList.add("tried");
     const m = WR.$("#recMsg"); m.hidden = false; m.textContent = why === "miss" ? "Nice try! Now pick it from the choices ✨" : "That's okay! Pick it from the choices ✨";
     const o = WR.$("#recOpts"); o.hidden = false; bindOpts(it);
     o.scrollIntoView({ behavior: "smooth", block: "nearest" });
