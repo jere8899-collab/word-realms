@@ -1,0 +1,3 @@
+- "Recall check" = a short re-ask of the lesson idea (the existing check widgets / a compact 3-question set), not a full re-teach.
+- Gaps: use `WR.Review` config (Task 2): about 1 day then 7 days for lessons (map onto the 3/10/30/90 ladder by adding lesson-specific first gaps, or a dedicated lesson schedule that still lives in review.js).
+- No new top-level tile: surface due lesson recalls on the skill/topic Learn chip and/or as a soft nudge.

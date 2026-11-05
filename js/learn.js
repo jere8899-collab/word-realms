@@ -1,18 +1,10 @@
-/* 📜 Lessons (LESSONS-PLAN.md): short story-led lessons that sit in front of a skill node (English realm skill cards) or a
-   maths topic card. One idea, 2–3 minutes:
-     hook (a painted story) → discover (a hands-on widget: drag OR tap, the rule is NOT shown yet) → the rule ("you found it!")
-     → 3 quick checks (a why-not note for every wrong option) → passed (2+/3) ? the Scroll : a re-teach (a different
-     explanation + its own widget) → 3 NEW checks → the Scroll either way.
-   Content: data/lessons/<pack>.json written by tools/lesson_build.py from tools/lessons/*.py (validated there);
-   data/lessons/index.json lists every lesson ({ id, pack, title, icon, at: { realm, skill } | { topic }, art, match }).
-   Save: WR.block("learn") = { done: { id: { crowns, best, pass, tries, reteach, stuck, at, first } }, opened: { id: n }, rounds }
-   (inside wordRealms.save.v1, so it cloud-syncs with the whole save; crowns count in the cloud score like other blocks).
-   Stars: +5⭐ once ever for a lesson's first pass (kind "fresh", key "<id>/pass"); replays and check answers pay 0⭐.
-   Practice is never locked: a lesson is a soft nudge (a ✨ New chip, a "Learn it" button on a weak result, 📜 hint links). */
+/* 📜 Lessons: hook→discover→rule→3 checks→scroll (or re-teach). data/lessons + index.json.
+   learn.done[id] + BRIEF-T9 s/d day-1/day-7 recall; +5⭐ first pass; practice unlocked. */
 (function () {
 const WR = window.WR, esc = s => WR.esc(s);
 const LN = WR.Learn = {};
 const PASS = 2, STARS = 5;           // 2 of 3 checks right passes; the first pass ever pays 5⭐
+LN.RECALL = { gaps: [1, 7], rest: 30, day: 864e5 };
 let IDX = [], loading = null; const PACKS = {};
 /* ---------- the index (loaded with the game data, so chips can show at once) ---------- */
 LN.loadIndex = () => loading || (loading = fetch("data/lessons/index.json").then(r => r.ok ? r.json() : { lessons: [] })
@@ -25,6 +17,12 @@ LN.pack = async p => PACKS[p] || (PACKS[p] = await fetch(`data/lessons/${p}.json
 LN.full = async id => { const i = LN.get(id); if (!i) return null; const pk = await LN.pack(i.pack); return (pk.lessons || []).find(x => x.id === id) || null; };
 const st = () => WR.block("learn");
 LN.rec = id => st().done[id] || null;
+LN.isDue = (id, now = Date.now()) => { const r = LN.rec(id); return !!(r && r.pass && r.d && r.d <= now); };
+LN.dueList = (now = Date.now()) => IDX.filter(l => LN.isDue(l.id, now));
+LN.schedulePass = (r, now = Date.now()) => { r.n = (r.n || 0) + 1; r.t = now; if (r.s == null) { r.s = 0; r.d = now + LN.RECALL.gaps[0] * LN.RECALL.day; } return r; };
+LN.scheduleRecall = (r, ok, now = Date.now()) => { r.n = (r.n || 0) + 1; r.t = now;
+  if (ok) { r.s = (r.s || 0) + 1; r.d = now + (r.s < LN.RECALL.gaps.length ? LN.RECALL.gaps[r.s] : LN.RECALL.rest) * LN.RECALL.day; }
+  else { r.s = 0; r.d = now + LN.RECALL.gaps[0] * LN.RECALL.day; } return r; };
 LN.isMath = l => !!(l && l.at && l.at.topic);
 // a maths lesson's grade comes from its topic (ids such as g6.nets keep their old grade number after a topic moves)
 const gradeOf = l => { const t = window.MathGen && MathGen.topic(l.at.topic); return t ? t.grade : +String(l.at.topic).replace(/^g(\d+).*/, "$1"); };
@@ -575,14 +573,13 @@ const STEPS = [["hook", "Story"], ["discover", "Try it"], ["rule", "The rule"], 
 const dotOf = step => ({ hook: 0, discover: 1, rule: 2, check: 3, reteach: 2, rdiscover: 1, done: 4 }[step]);
 const dots = step => `<div class="ln-dots" aria-label="Step ${dotOf(step) + 1} of 5: ${STEPS[dotOf(step)][1]}">${STEPS.map(([k, l], j) => `<span class="${j < dotOf(step) ? "was" : j === dotOf(step) ? "on" : ""}"><i></i><small>${l}</small></span>`).join("")}</div>`;
 LN.open = async (id, o = {}) => {
-  const L = await LN.full(id); if (!L) return WR.toast("📜 This lesson is coming soon!");
-  WR.go("learn", { id, L, back: o.back || null });
+  const L = await LN.full(id); if (!L) return WR.toast("📜 Coming soon!");
+  WR.go("learn", { id, L, back: o.back || null, recall: o.recall === true || (o.recall !== false && LN.isDue(id)) });
 };
 WR.screens.learn = arg => {
-  const L = arg.L, maths = LN.isMath(L);
-  S = { id: arg.id, L, maths, back: arg.back, step: "hook", round: 1, i: 0, right: 0, retaught: false, misses: 0, picked: [] };
-  if (maths && WR.Math) WR.Math.loadKatex();
-  LN.openCount(L.id); show();
+  const L = arg.L, maths = LN.isMath(L), recall = !!arg.recall;
+  S = { id: arg.id, L, maths, back: arg.back, recall, step: recall ? "check" : "hook", round: 1, i: 0, right: 0, retaught: false, misses: 0, picked: [] };
+  if (maths && WR.Math) WR.Math.loadKatex(); LN.openCount(L.id); show();
 };
 const leave = () => { const b = S && S.back; WR.Voice.stop(); S = null; if (b) WR.go(b.screen, b.arg); else WR.go("scrolls"); };
 const frame = (body, cls = "") => `<div class="lesson-bg ln-bg"></div><div class="ln fade-in ${cls}">
@@ -608,7 +605,7 @@ function show() {
       <div class="ln-next"><button class="btn mint" id="lnGo">${L.reteach.discover ? "🖐️ Show me →" : "✏️ Try 3 new ones →"}</button></div>`; line = L.reteach.say;
   } else if (S.step === "check") {
     const q = (S.round === 1 ? L.check : L.check2)[S.i]; S.q = q; S.opts = WR.shuffle(q.options);
-    body = `<div class="ln-qnum">${S.round === 2 ? "🌈 New try · " : ""}Question ${S.i + 1} of 3</div>
+    body = `${S.recall && !S.i && S.round === 1 ? `<div class="ln-qnum">🔁 Recall · day ${((LN.rec(S.id) || {}).s || 0) ? "7" : "1"}</div>` : ""}<div class="ln-qnum">${S.round === 2 ? "🌈 New try · " : ""}Question ${S.i + 1} of 3</div>
       ${q.text ? `<div class="ln-story">${tx(q.text, m)}</div>` : ""}<div class="ln-line">${hear("lnHear")}<p class="ln-q">${tx(q.q, m)}</p></div>
       <div class="opts ln-opts">${S.opts.map((o, k) => `<button class="opt" data-k="${k}"><span class="k">${"ABC"[k]}</span>${tx(o, m)}</button>`).join("")}</div><div id="lnFb" aria-live="polite"></div>`;
     line = q.say;
@@ -660,7 +657,7 @@ function bindCheck() {
     if (S.maths && WR.Math && WR.Math.upgrade) WR.Math.upgrade(WR.$("#lnFb"));
     WR.tapOnce(WR.$("#lnNext"), () => { WR.Voice.stop(); S.answered = false;
       if (!last) { S.i++; return show(); }
-      if (S.round === 1 && S.right < PASS) { S.retaught = true; S.round1 = S.right; S.step = "reteach"; return show(); }
+      if (S.round === 1 && S.right < PASS && !S.recall) { S.retaught = true; S.round1 = S.right; S.step = "reteach"; return show(); }
       finish(); });
     WR.$("#lnNext").scrollIntoView({ behavior: "smooth", block: "nearest" });
   });
@@ -672,6 +669,7 @@ function finish() {
   if (S.retaught) r.reteach++;
   if (passed && !r.pass) r.first1 = firstTry;          // passed without the re-teach the first time it was passed
   r.pass = r.pass || passed; r.stuck = !r.pass; r.at = Date.now(); r.first = r.first || r.at;
+  if (S.recall) LN.scheduleRecall(r, passed, r.at); else if (passed) LN.schedulePass(r, r.at);
   d.done[L.id] = r; d.rounds = (d.rounds || 0) + 1;
   let stars = 0; if (passed) stars = WR.awardStars("learn", L.id + "/pass", STARS, { kind: "fresh", quiet: true });
   if (!prev) WR.state.lessonsDone = (WR.state.lessonsDone || 0) + 1;
@@ -679,7 +677,8 @@ function finish() {
   WR.save(); WR.renderTop();
   S.step = "done";
   const crowns = crownsFor(S.right);
-  const head = passed ? (firstTry ? "You learned it! 🌟" : "You got it the second way! 🌈") : "Good try! Your scroll is saved 🫶";
+  const head = S.recall ? (passed ? "Still with you! 🔁🌟" : "We'll try again soon 🫶")
+    : (passed ? (firstTry ? "You learned it! 🌟" : "You got it the second way! 🌈") : "Good try! Your scroll is saved 🫶");
   WR.view(frame(`<div class="ln-done">
     <h1>${head}</h1>
     <div class="ln-scroll" role="img" aria-label="Lesson scroll: ${esc(L.title)}">${artImg(L, "ln-scroll-art")}<b>${L.icon} ${esc(L.title)}</b><p>${tx(L.rule.text, S.maths)}</p></div>
@@ -726,25 +725,27 @@ LN.openScroll = async (id, o = {}) => {
 document.addEventListener("click", e => { const b = e.target.closest("[data-scroll]"); if (!b) return; e.preventDefault(); e.stopPropagation(); WR.sfx("tap"); LN.openScroll(b.dataset.scroll, { inRound: true }); }, true);
 LN.scrollBtn = (l, cls = "") => l ? `<button class="btn ghost small ln-link ${cls}" data-scroll="${l.id}" aria-label="Lesson scroll: ${esc(l.title)}">📜 ${cls.includes("corner") ? "" : `Scroll: ${esc(l.title)}`}</button>` : "";
 
+
+LN.recLabel = r => !r ? "✨ New" : r.pass ? "👑".repeat(r.crowns || 1) : "🧩 try again";
 /* ---------- 📜 Learn chips on skill / topic cards, and the soft nudge ---------- */
 // chip(list, back): one lesson → it opens; several → a little list sheet. "✨ New" until the first lesson there is done.
 // o.corner: a round 📜 badge in the card's top corner (realm skill cards: it adds no height, so the 4 skills still fit
 // the first phone screen); otherwise a full-width "📜 Learn" chip at the bottom of the card (maths topic cards)
 LN.chipHTML = (list, o = {}) => { if (!list || !list.length) return "";
-  const done = list.filter(l => LN.rec(l.id)).length, all = done === list.length;
-  // short enough for a 2-column card on a 320 px phone: "📜 Learn ✨" (new) · "📜 Learn 1/3" · "📜 Learn ✓"
-  return `<button class="learn-chip${o.corner ? " corner" : ""}${done ? "" : " new"}${all ? " all" : ""}" data-learn="${list.map(l => l.id).join(",")}" aria-label="Learn: ${list.length} lesson${list.length > 1 ? "s" : ""}, ${done ? done + " done" : "new"}">📜${o.corner ? "" : " Learn"}<span class="ln-new">${list.length > 1 && done ? `${done}/${list.length}` : all ? "✓" : "✨"}</span></button>`; };
+  const done = list.filter(l => LN.rec(l.id)).length, all = done === list.length, due = list.some(l => LN.isDue(l.id));
+  const badge = due ? "🔁" : (list.length > 1 && done ? `${done}/${list.length}` : all ? "✓" : "✨");
+  return `<button class="learn-chip${o.corner ? " corner" : ""}${done ? "" : " new"}${all ? " all" : ""}${due ? " due" : ""}" data-learn="${list.map(l => l.id).join(",")}" aria-label="Learn: ${list.length} lesson${list.length > 1 ? "s" : ""}, ${due ? "recall due" : done ? done + " done" : "new"}">📜${o.corner ? "" : " Learn"}<span class="ln-new">${badge}</span></button>`; };
 LN.bindChips = (root, back) => (root || document).querySelectorAll(".learn-chip[data-learn]").forEach(c => c.onclick = e => {
   e.stopPropagation(); WR.sfx("tap"); const ids = c.dataset.learn.split(",");
   if (ids.length === 1) return LN.open(ids[0], { back });
   LN.pickSheet(ids, back); });
 LN.pickSheet = (ids, back) => WR.modal(`<h2>📜 Lessons here</h2><div class="ln-pick">${ids.map(id => { const l = LN.get(id), r = LN.rec(id);
-    return `<button class="card ln-pick-row" data-id="${id}"><span class="ico">${l.icon}</span><b>${esc(l.title)}</b><span class="ln-st">${r ? (r.pass ? "👑".repeat(r.crowns || 1) : "🧩 try again") : "✨ New"}</span></button>`; }).join("")}</div>
+    return `<button class="card ln-pick-row" data-id="${id}"><span class="ico">${l.icon}</span><b>${esc(l.title)}</b><span class="ln-st">${LN.isDue(id) ? "🔁" : LN.recLabel(r)}</span></button>`; }).join("")}</div>
     <button class="btn ghost small" id="pkClose" style="margin-top:10px">Close</button>`, (bg, close) => {
     bg.querySelectorAll(".ln-pick-row").forEach(b => b.onclick = () => { close(); LN.open(b.dataset.id, { back }); });
     bg.querySelector("#pkClose").onclick = close; });
 // a practice result under the pass mark (WR.PASS.mark, BRIEF-T5B) offers the first lesson there not yet passed
-LN.nudgeFor = list => (list || []).find(l => !(LN.rec(l.id) || {}).pass) || null;
+LN.nudgeFor = list => (list || []).find(l => LN.isDue(l.id)) || (list || []).find(l => !(LN.rec(l.id) || {}).pass) || null;
 LN.nudgeHTML = l => l ? `<div class="card ln-nudge"><span class="ico">📜</span><div><b>Want a quick lesson?</b><small>${l.icon} ${esc(l.title)} · 2 minutes</small></div><button class="btn small mint" id="lnNudge" data-id="${l.id}">Learn it →</button></div>` : "";
 LN.bindNudge = back => { const b = WR.$("#lnNudge"); if (b) b.onclick = () => LN.open(b.dataset.id, { back }); };
 
