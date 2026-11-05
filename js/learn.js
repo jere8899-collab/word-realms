@@ -726,6 +726,8 @@ LN.openScroll = async (id, o = {}) => {
 document.addEventListener("click", e => { const b = e.target.closest("[data-scroll]"); if (!b) return; e.preventDefault(); e.stopPropagation(); WR.sfx("tap"); LN.openScroll(b.dataset.scroll, { inRound: true }); }, true);
 LN.scrollBtn = (l, cls = "") => l ? `<button class="btn ghost small ln-link ${cls}" data-scroll="${l.id}" aria-label="Lesson scroll: ${esc(l.title)}">📜 ${cls.includes("corner") ? "" : `Scroll: ${esc(l.title)}`}</button>` : "";
 
+
+LN.recLabel = r => !r ? "✨ New" : r.pass ? "👑".repeat(r.crowns || 1) : "🧩 try again";   // 🧹 BRIEF-T9 cleanup: one label for the pick sheet and the backpack
 /* ---------- 📜 Learn chips on skill / topic cards, and the soft nudge ---------- */
 // chip(list, back): one lesson → it opens; several → a little list sheet. "✨ New" until the first lesson there is done.
 // o.corner: a round 📜 badge in the card's top corner (realm skill cards: it adds no height, so the 4 skills still fit
@@ -739,7 +741,7 @@ LN.bindChips = (root, back) => (root || document).querySelectorAll(".learn-chip[
   if (ids.length === 1) return LN.open(ids[0], { back });
   LN.pickSheet(ids, back); });
 LN.pickSheet = (ids, back) => WR.modal(`<h2>📜 Lessons here</h2><div class="ln-pick">${ids.map(id => { const l = LN.get(id), r = LN.rec(id);
-    return `<button class="card ln-pick-row" data-id="${id}"><span class="ico">${l.icon}</span><b>${esc(l.title)}</b><span class="ln-st">${r ? (r.pass ? "👑".repeat(r.crowns || 1) : "🧩 try again") : "✨ New"}</span></button>`; }).join("")}</div>
+    return `<button class="card ln-pick-row" data-id="${id}"><span class="ico">${l.icon}</span><b>${esc(l.title)}</b><span class="ln-st">${LN.recLabel(r)}</span></button>`; }).join("")}</div>
     <button class="btn ghost small" id="pkClose" style="margin-top:10px">Close</button>`, (bg, close) => {
     bg.querySelectorAll(".ln-pick-row").forEach(b => b.onclick = () => { close(); LN.open(b.dataset.id, { back }); });
     bg.querySelector("#pkClose").onclick = close; });
