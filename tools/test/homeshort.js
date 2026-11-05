@@ -7,7 +7,7 @@ let fails = 0, passes = 0;
 const ok = (c, m) => { if (!c) { fails++; console.error('FAIL', m); process.exitCode = 1; } else { passes++; console.log('ok', m); } };
 const today = () => { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
 const SAVE = (x = {}) => ({ v: 1, name: 'Mia', avatar: 'avatar_girl', startLevel: 'a1', stars: 40, totalCorrect: 12, totalAnswered: 14,
-  pet: { species: 'pet_bunny', name: 'Puffbun', xp: 30, happiness: 70, hunger: 75, skin: null, lastTick: Date.now() },
+  pet: { species: 'pet_bunny', name: 'Puffbun', xp: 30, happiness: 70, hunger: 75, skin: null, lastTick: Date.now() }, healthMig: 1,
   streak: { count: 2, last: today() }, progress: { a1: { grammar: { best: .8, plays: 1 } } }, owned: [], equipped: { outfit: null, petskin: null, theme: null },
   settings: { rate: .9, sound: false }, mistakes: [], lessonsDone: 2, ...x });
 (async () => {
@@ -23,7 +23,7 @@ const SAVE = (x = {}) => ({ v: 1, name: 'Mia', avatar: 'avatar_girl', startLevel
   ok(!(await page.$('#phonicsNode')), 'no Phonics card on the map (Phonics lives in the A1 realm)');
   const row = await page.evaluate(() => ({ q: (document.getElementById('questsMini') || {}).innerText || '', p: (document.getElementById('petMini') || {}).innerText || '', full: !!document.querySelector('#main .quests'), petCard: !!document.getElementById('petCard') }));
   ok(/\d\/3/.test(row.q) && /Puffbun/.test(row.p), `compact row: "${row.q.replace(/\s+/g, ' ')}" · "${row.p.replace(/\s+/g, ' ')}"`);
-  ok(/hungry/i.test(row.p), 'the pet chip says how the pet feels (hunger 75 → hungry)');
+  ok(/wants a treat/i.test(row.p) && !/hungry/i.test(row.p), 'the pet chip says how the pet feels, kindly (hunger 75 → "wants a treat"; BRIEF-T6: no guilt words)');
   ok(!row.full && !row.petCard, 'the full quest list and the pet card are no longer on the home page');
   if (process.env.SHOT) { await page.evaluate(() => document.querySelectorAll('.toast').forEach(t => t.remove())); await page.screenshot({ path: OUT + 'homeshort_01_top.png' }); await page.screenshot({ path: OUT + 'homeshort_02_full.png', fullPage: true }); }
   await page.click('#questsMini'); await page.waitForSelector('#main .quests');

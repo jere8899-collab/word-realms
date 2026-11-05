@@ -348,6 +348,8 @@ function migrate(s, raw = s) {
   for (const k in BLOCKS) fixBlock(s, k);
   if (!raw.review || typeof raw.review !== "object") s.review.mig = 0;   // 🔁 an older save: js/review.js migrates its garden and charms once
   s.math = WR.fixMath(s.math);
+  // 🌿 BRIEF-T6: an older save whose pet got hungry or sad from time away starts happy again (once; nothing earned changes)
+  if (!s.healthMig) { if (s.pet) { s.pet.hunger = Math.min(s.pet.hunger || 0, 40); s.pet.happiness = Math.max(s.pet.happiness || 0, 60); } s.healthMig = 1; }
   if (!raw.report || typeof raw.report !== "object") s.report = seedReport(s);
   s.report.days = s.report.days || {}; s.report.tally = s.report.tally || {}; s.report.at = s.report.at || 0; if (!Array.isArray(s.report.kept)) s.report.kept = [0, 0];   // 🧠 older saves start the retention count at zero
   // ⭐ anti-farm record (WR.awardStars); an older save counts the English items it has already been served as known
@@ -556,21 +558,19 @@ WR.petHTML = (cls = "", pv = {}) => {
 };
 WR.petMood = () => {
   const p = WR.state.pet; if (!p) return "";
-  if (p.hunger > 75) return "I'm sooo hungry… 🥺";
-  if (p.happiness < 30) return "Will you play with me? 🥹";
+  if (p.hunger > 75) return "A snack would be a lovely treat! 🍓";   // 🌿 BRIEF-T6: food is a treat, never guilt
+  if (p.happiness < 30) return "Let's play together! 🥰";
   if (p.happiness > 80) return "I love learning with you! 💖";
   return "Let's go on an adventure! ✨";
 };
 // how the pet feels, in a few words (the map's pet chip, js/main.js)
-WR.petFeel = p => p.hunger >= 60 ? "is hungry" : p.happiness < 40 ? "wants a cuddle" : p.happiness >= 80 ? "is very happy" : "is happy";
+WR.petFeel = p => p.hunger >= 60 ? "wants a treat" : p.happiness < 40 ? "wants a cuddle" : p.happiness >= 80 ? "is very happy" : "is happy";   // 🌿 BRIEF-T6: no guilt words
 WR.tickPet = () => {
   const p = WR.state.pet; if (!p) return;
   const now = Date.now(), hrs = (now - (p.lastTick || now)) / 36e5;
-  if (hrs > 0.05) {
-    p.hunger = Math.min(100, p.hunger + hrs * 4);
-    p.happiness = Math.max(0, p.happiness - hrs * 3);
-    p.lastTick = now; WR.save();
-  }
+  // 🌿 BRIEF-T6: time away never makes the pet hungry or sad; after a day or more it greets the child happily on the map
+  if (hrs >= 20 && !WR._welcome) WR._welcome = "Yay, you're back! I missed you 💖";
+  if (hrs > 0.05) { p.lastTick = now; WR.save(); }
 };
 WR.petGainXP = n => {
   const p = WR.state.pet; if (!p) return null;
@@ -696,10 +696,14 @@ WR.claimQuest = id => {
 WR.bumpStreak = () => {
   const s = WR.state, d = WR.today();
   if (s.streak.last === d) return false;
-  s.streak.count = (s.streak.last && WR.dayDiff(s.streak.last, d) === 1) ? s.streak.count + 1 : 1;
+  const gap = s.streak.last ? WR.dayDiff(s.streak.last, d) : 0, rest = WR.restDayFree(s.streak, d) && gap === 2;
+  s.streak.count = gap === 1 || rest ? s.streak.count + 1 : 1;
+  if (rest) { s.streak.rest = d; WR.toast("🌙 Your streak took a rest day and kept going!", 2600); }
   s.streak.last = d; WR.save(); return true;
 };
-WR.streakAlive = () => { const s = WR.state.streak; return s.last && WR.dayDiff(s.last, WR.today()) <= 1 ? s.count : 0; };
+// 🌙 BRIEF-T6: one free rest day: missing a single day doesn't end a streak, at most once in any 7 days (streak.rest = the day it was used)
+WR.restDayFree = (st, d = WR.today()) => !st.rest || WR.dayDiff(st.rest, d) >= 7;
+WR.streakAlive = () => { const s = WR.state.streak, g = s.last ? WR.dayDiff(s.last, WR.today()) : 99; return s.last && (g <= 1 || g === 2 && WR.restDayFree(s)) ? s.count : 0; };
 
 /* ---------- progress & unlocks (BRIEF-T4: a pass means something) ----------
    A skill is passed at about 7 of 8 (`mark`, rounded to the nearest whole question: 7/8, 6/7, 5/6, 3/4). The next realm needs
