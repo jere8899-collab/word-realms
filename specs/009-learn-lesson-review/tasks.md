@@ -10,3 +10,5 @@
 - T1 cleanup committed: LN.recLabel. Next: day-1/day-7 schedule + recall play.
 
 - Feature: LN.RECALL gaps [1,7]; schedulePass on teach; scheduleRecall on recall; due chip 🔁; open jumps to check; miss resets to day 1. learn-review.js 18/18; lessons.js 176/176.
+
+- Budget trim commit aceae98; lightload BYTES 1999921; learn-review 18/18; lessons 176. Suite t9b running.
