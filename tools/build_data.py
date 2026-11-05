@@ -192,7 +192,7 @@ json.dump(RECALL_SHARE, open(f"{ROOT}/recall.json", "w"), ensure_ascii=False, in
 for lvl, skills in D.items():
     os.makedirs(f"{ROOT}/{lvl}", exist_ok=True)
     for sk, val in skills.items():
-        json.dump(val, open(f"{ROOT}/{lvl}/{sk}.json", "w"), ensure_ascii=False, indent=1)
+        json.dump(val, open(f"{ROOT}/{lvl}/{sk}.json", "w"), ensure_ascii=False, separators=(",", ":"))
         items = _items(sk, val); n = len(items)
         assert n >= 15, (lvl, sk, n)
         keys = [_key(q) for q in items]
