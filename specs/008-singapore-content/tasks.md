@@ -42,3 +42,7 @@
 | 14 | Christmas mentions thinner than other festivals after budget trim | NOTE (15 vs 35–47; still present and covered at P4/P5/S3) |
 
 - Live screenshots: screenshots/t8_live_320.png, t8_live_360.png, t8_live_375.png, t8_live_landscape.png, t8_live_spotfix_*.png, t8_live_p2_synth_360.png, t8_live_p5_edit_360.png, t8_live_p6_ccloze_360.png
+
+- T8B checkpoint: JC1 polytechnic→junior college; +8 Christmas items (6 Join It Up + 2 Spot & Fix); Christmas mentions 15→57; SG 433→443; orphan long voice keys pruned (build_voice will restore still-needed); first visit ~1.995 MB. Next: Kokoro voices + tests.
+
+- Budget cleared: lightload 9/9. Final: 8 Christmas Join It Up items; Christmas 15→52; SG 433→436; JC1→junior college; voices recorded (af_heart). Suite t8b next.
