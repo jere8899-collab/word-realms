@@ -605,7 +605,8 @@
    "£40": "£40 was the whole budget.",
    "£68": "£68 adds the two figures."
   },
-  "sk": "listening.number-time"
+  "sk": "listening.number-time",
+  "recall": 1
  },
  {
   "type": "listen",

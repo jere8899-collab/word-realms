@@ -15,7 +15,8 @@
    "began": "Began is past and doesn't fit 'next term'.",
    "had begun": "Had begun is past perfect, not a result form."
   },
-  "sk": "grammar.gerund-infinitive"
+  "sk": "grammar.gerund-infinitive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -33,7 +34,8 @@
    "they did know": "'They did know' still has subject first.",
    "knew they": "'Knew they' needs did: did they know."
   },
-  "sk": "grammar.past-simple"
+  "sk": "grammar.past-simple",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -123,7 +125,8 @@
    "to hide": "No 'to' after than here.",
    "hidden": "Hidden is a past participle."
   },
-  "sk": "grammar.wish-prefer"
+  "sk": "grammar.wish-prefer",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -195,7 +198,8 @@
    "having made": "Having made doesn't follow 'is said'.",
    "that made": "That made needs 'It is said that...'."
   },
-  "sk": "grammar.passive"
+  "sk": "grammar.passive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -231,7 +235,8 @@
    "we heard": "'We heard' is normal order.",
    "heard we": "'Heard we' needs an auxiliary."
   },
-  "sk": "grammar.inversion"
+  "sk": "grammar.inversion",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -285,7 +290,8 @@
    "her argument": "We need a verb.",
    "did her argument": "Did doesn't go with an adjective here."
   },
-  "sk": "grammar.inversion"
+  "sk": "grammar.inversion",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -321,7 +327,8 @@
    "Stranger": "Stranger is comparative.",
    "How strange": "How strange is an exclamation."
   },
-  "sk": "grammar.linker"
+  "sk": "grammar.linker",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -429,7 +436,8 @@
    "Were": "Were is for present unreal.",
    "Should": "Should is for the future."
   },
-  "sk": "grammar.conditional-3"
+  "sk": "grammar.conditional-3",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -447,7 +455,8 @@
    "couldn't have agreed": "Couldn't have agreed is past.",
    "don't disagree": "Don't disagree doesn't contrast."
   },
-  "sk": "grammar.linker"
+  "sk": "grammar.linker",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -555,7 +564,8 @@
    "we saw": "Past simple needs did: did we see.",
    "did we saw": "Did is followed by the base form: see."
   },
-  "sk": "grammar.inversion"
+  "sk": "grammar.inversion",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -663,7 +673,8 @@
    "the explosion": "A verb is missing.",
    "had the explosion": "Had the explosion would need a past participle."
   },
-  "sk": "grammar.so-such"
+  "sk": "grammar.so-such",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -753,7 +764,8 @@
    "Were": "Were is for present imaginary situations.",
    "Should": "Should is for possible future events."
   },
-  "sk": "grammar.conditional-3"
+  "sk": "grammar.conditional-3",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -807,7 +819,8 @@
    "Which": "Which needs a noun before it.",
    "It": "It-clefts take the form 'It is … that'."
   },
-  "sk": "grammar.cleft"
+  "sk": "grammar.cleft",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -843,7 +856,8 @@
    "then": "Then isn't used in this pattern.",
    "which": "Which can't introduce this clause."
   },
-  "sk": "grammar.other"
+  "sk": "grammar.other",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -861,7 +875,8 @@
    "that I'm": "That I'm want isn't grammatical.",
    "which I": "Which doesn't follow all."
   },
-  "sk": "grammar.other"
+  "sk": "grammar.other",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -879,7 +894,8 @@
    "of": "Reason of isn't used here.",
    "that's": "That's would add a second verb."
   },
-  "sk": "grammar.question"
+  "sk": "grammar.question",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -915,7 +931,8 @@
    "wore": "Wore is past; the subjunctive uses the base form.",
    "to wear": "No to after that."
   },
-  "sk": "grammar.subjunctive"
+  "sk": "grammar.subjunctive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1023,7 +1040,8 @@
    "wouldn't be": "No would in the if-clause.",
    "isn't": "Isn't is a real present situation."
   },
-  "sk": "grammar.other"
+  "sk": "grammar.other",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1041,7 +1059,8 @@
    "will look after": "Will doesn't follow I'd sooner.",
    "looking after": "Looking isn't a finite verb."
   },
-  "sk": "grammar.wish-prefer"
+  "sk": "grammar.wish-prefer",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1095,7 +1114,8 @@
    "can well": "Can well isn't used.",
    "ought": "Ought needs to: ought to have."
   },
-  "sk": "grammar.perfect-present"
+  "sk": "grammar.perfect-present",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1167,7 +1187,8 @@
    "win": "We need to.",
    "for winning": "Bound for = travelling to."
   },
-  "sk": "grammar.gerund-infinitive"
+  "sk": "grammar.gerund-infinitive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1275,7 +1296,8 @@
    "To consider": "To consider doesn't start a clause like this.",
    "Consider": "Consider is an instruction."
   },
-  "sk": "grammar.other"
+  "sk": "grammar.other",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1293,7 +1315,8 @@
    "opener": "Opener is a tool.",
    "opened": "Opened is a past form."
   },
-  "sk": "grammar.other"
+  "sk": "grammar.other",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1311,7 +1334,8 @@
    "refuse": "Refuse is the verb (or rubbish!).",
    "refusement": "Refusement isn't a word."
   },
-  "sk": "grammar.other"
+  "sk": "grammar.other",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1347,7 +1371,8 @@
    "Whatever": "Whatever is for things: whatever she did.",
    "Despite": "Despite needs a noun or -ing."
   },
-  "sk": "grammar.word-order"
+  "sk": "grammar.word-order",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1365,7 +1390,8 @@
    "Albeit": "Albeit is followed by an adjective or adverb, not a noun phrase.",
    "Nonetheless": "Nonetheless is an adverb used after a full sentence."
   },
-  "sk": "grammar.linker"
+  "sk": "grammar.linker",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1383,7 +1409,8 @@
    "whereas": "Whereas compares two different things.",
    "notwithstanding": "Notwithstanding needs a noun."
   },
-  "sk": "grammar.linker"
+  "sk": "grammar.linker",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1455,7 +1482,8 @@
    "Thanks for": "Thanks for is used when thanking.",
    "Due": "Due needs to: due to."
   },
-  "sk": "grammar.other"
+  "sk": "grammar.other",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1473,7 +1501,8 @@
    "thanks for": "Thanks for is for thanking.",
    "in spite": "In spite needs of and means despite."
   },
-  "sk": "grammar.other"
+  "sk": "grammar.other",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1581,7 +1610,8 @@
    "migrated": "Migrated suggests it's finished.",
    "had migrate": "Had migrate isn't a form."
   },
-  "sk": "grammar.perfect-continuous"
+  "sk": "grammar.perfect-continuous",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1617,7 +1647,8 @@
    "too": "Too doesn't go before comparatives with than.",
    "so": "So doesn't go before comparatives with than."
   },
-  "sk": "grammar.comparison"
+  "sk": "grammar.comparison",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1671,7 +1702,8 @@
    "Each of": "Each of needs the: each of the students.",
    "Both": "Both is for two."
   },
-  "sk": "grammar.quantifier"
+  "sk": "grammar.quantifier",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1815,7 +1847,8 @@
    "to feel": "No to after can't help but.",
    "felt": "Felt is past."
   },
-  "sk": "grammar.other"
+  "sk": "grammar.other",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1833,7 +1866,8 @@
    "left": "Left is past.",
    "to leaving": "To leaving isn't a form."
   },
-  "sk": "grammar.passive"
+  "sk": "grammar.passive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1941,7 +1975,8 @@
    "that": "That doesn't follow of.",
    "whom": "Whom is for people."
   },
-  "sk": "grammar.relative"
+  "sk": "grammar.relative",
+  "recall": 1
  },
  {
   "type": "order",

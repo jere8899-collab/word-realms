@@ -1,0 +1,50 @@
+{
+ "a1": {
+  "before": 80.8,
+  "after": 72.9,
+  "items": 568,
+  "eligible": 348,
+  "typeFirst": 45
+ },
+ "a2": {
+  "before": 79.5,
+  "after": 67.5,
+  "items": 604,
+  "eligible": 241,
+  "typeFirst": 72
+ },
+ "b1": {
+  "before": 79.6,
+  "after": 65.5,
+  "items": 626,
+  "eligible": 233,
+  "typeFirst": 88
+ },
+ "b2": {
+  "before": 78.7,
+  "after": 64.8,
+  "items": 616,
+  "eligible": 231,
+  "typeFirst": 86
+ },
+ "c1": {
+  "before": 78.5,
+  "after": 64.6,
+  "items": 615,
+  "eligible": 234,
+  "typeFirst": 86
+ },
+ "c2": {
+  "before": 78.5,
+  "after": 64.5,
+  "items": 614,
+  "eligible": 215,
+  "typeFirst": 86
+ },
+ "all": {
+  "before": 79.2,
+  "after": 66.5,
+  "items": 3643,
+  "typeFirst": 463
+ }
+}

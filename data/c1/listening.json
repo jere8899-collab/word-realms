@@ -1167,7 +1167,8 @@
    "eighty minutes": "Eighty isn't mentioned.",
    "four minutes": "Four isn't mentioned."
   },
-  "sk": "listening.number-time"
+  "sk": "listening.number-time",
+  "recall": 1
  },
  {
   "type": "listen",
@@ -1186,7 +1187,8 @@
    "the colours": "Colours aren't mentioned.",
    "the price": "Price isn't mentioned."
   },
-  "sk": "listening.detail"
+  "sk": "listening.detail",
+  "recall": 1
  },
  {
   "type": "listen",

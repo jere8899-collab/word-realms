@@ -1358,7 +1358,8 @@
       "extra batteries only": "The text advises a map and compass.",
       "a tent": "A tent isn't mentioned."
      },
-     "sk": "reading.detail"
+     "sk": "reading.detail",
+     "recall": 1
     },
     {
      "type": "mcq",

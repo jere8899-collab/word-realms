@@ -130,7 +130,8 @@
    "the speaker": "You heard: “My sister is taller than me, but my brother is the tallest in the family.” So it's “the brother”, not “the speaker”.",
    "the mother": "You heard: “My sister is taller than me, but my brother is the tallest in the family.” So it's “the brother”, not “the mother”."
   },
-  "sk": "listening.person"
+  "sk": "listening.person",
+  "recall": 1
  },
  {
   "type": "listen",
@@ -168,7 +169,8 @@
    "London": "You heard: “I've been to Paris twice, but I've never been to Rome.” So it's “Rome”, not “London”.",
    "Madrid": "You heard: “I've been to Paris twice, but I've never been to Rome.” So it's “Rome”, not “Madrid”."
   },
-  "sk": "listening.place"
+  "sk": "listening.place",
+  "recall": 1
  },
  {
   "type": "listen",
@@ -320,7 +322,8 @@
    "salad": "“salad” is in the recording too, but not as the answer. You heard: “Oh, and no onions.” So it's “onions”.",
    "bread": "You heard: “Oh, and no onions.” So it's “onions”, not “bread”."
   },
-  "sk": "listening.detail"
+  "sk": "listening.detail",
+  "recall": 1
  },
  {
   "type": "listen",
@@ -605,7 +608,8 @@
    "the speaker": "The speaker is the youngest.",
    "they are the same age": "They're different ages."
   },
-  "sk": "listening.person"
+  "sk": "listening.person",
+  "recall": 1
  },
  {
   "type": "listen",
@@ -1180,7 +1184,8 @@
    "at seven": "Seven wasn't said. You heard: “The park closes at six in winter and at nine in summer.”",
    "it doesn't close": "It does close."
   },
-  "sk": "listening.number-time"
+  "sk": "listening.number-time",
+  "recall": 1
  },
  {
   "type": "listen",

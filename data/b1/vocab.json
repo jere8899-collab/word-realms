@@ -51,7 +51,8 @@
    "keep": "Keep up with = go at the same speed.",
    "make": "Make up = invent or become friends again."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -231,7 +232,8 @@
    "speak": "Speak isn't followed by 'me how'.",
    "explain": "Explain needs 'to': explain to me how."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -249,7 +251,8 @@
    "failed": "Fail is for tests.",
    "lacked": "Lack means not have enough."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -267,7 +270,8 @@
    "recalls": "Recall doesn't take 'me of'.",
    "memorises": "Memorise means learn by heart."
   },
-  "sk": "vocab.collocation"
+  "sk": "vocab.collocation",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -303,7 +307,8 @@
    "get": "Get down = come down or make sad.",
    "take": "Take down = write or remove."
   },
-  "sk": "vocab.phrasal"
+  "sk": "vocab.phrasal",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -321,7 +326,8 @@
    "victory": "A victory is for a battle or game.",
    "profit": "A profit is money earned."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -339,7 +345,8 @@
    "take up": "Take up = start a hobby.",
    "look up to": "Look up to = admire."
   },
-  "sk": "vocab.collocation"
+  "sk": "vocab.collocation",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -357,7 +364,8 @@
    "comfort": "Comfort is a noun or verb.",
    "comfortably": "Comfortably is an adverb."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -393,7 +401,8 @@
    "patient": "Patient = can wait calmly.",
    "modest": "Modest = doesn't boast."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -465,7 +474,8 @@
    "shut up": "Shut up means be quiet (rude).",
    "stuck": "Stuck means can't move."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -501,7 +511,8 @@
    "confused": "Confused = not understanding.",
    "amazed": "Amazed = very surprised."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -645,7 +656,8 @@
    "put away": "Put away = tidy into its place.",
    "put down": "Put down = place on a surface."
   },
-  "sk": "vocab.collocation"
+  "sk": "vocab.collocation",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -663,7 +675,8 @@
    "put off": "Put off = postpone.",
    "put through": "Put through = connect on the phone."
   },
-  "sk": "vocab.phrasal"
+  "sk": "vocab.phrasal",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -681,7 +694,8 @@
    "ran over": "Run over = hit with a vehicle.",
    "ran after": "Run after = chase."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -825,7 +839,8 @@
    "turned off": "Turn off = switch off.",
    "turned into": "Turn into = become."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -843,7 +858,8 @@
    "turned over": "Turn over = flip.",
    "turned out": "Turn out = have a result."
   },
-  "sk": "vocab.phrasal"
+  "sk": "vocab.phrasal",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -861,7 +877,8 @@
    "turned on": "Turn on = switch on.",
    "turned back": "Turn back = return."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -987,7 +1004,8 @@
    "earned": "You earn money.",
    "gained": "You gain weight or experience."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1005,7 +1023,8 @@
    "earned": "You earn money.",
    "succeeded": "Succeed needs in."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1041,7 +1060,8 @@
    "borrow": "Borrow needs from: borrow from him.",
    "afford": "Afford = have enough money."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1095,7 +1115,8 @@
    "examiner": "An examiner is the person who checks it.",
    "excuse": "An excuse is a reason you give."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1149,7 +1170,8 @@
    "movement": "Movement is a noun.",
    "removing": "Removing means taking away."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1167,7 +1189,8 @@
    "amazement": "Amazement is a noun.",
    "amaze": "Amaze is the verb."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1329,7 +1352,8 @@
    "arise": "Arise means appear.",
    "grow": "Grow is for size."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1455,7 +1479,8 @@
    "constructive": "Constructive is an adjective.",
    "constructor": "A constructor is a person."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1473,7 +1498,8 @@
    "voluntary": "Voluntary is an adjective.",
    "volunteer's": "Volunteer's is possessive."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1545,7 +1571,8 @@
    "rebuild": "Rebuild = build again.",
    "refill up": "Refill up repeats 'up'."
   },
-  "sk": "vocab.collocation"
+  "sk": "vocab.collocation",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1563,7 +1590,8 @@
    "fuel tank": "A fuel tank holds petrol.",
    "battery life": "Battery life is for a device."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1581,7 +1609,8 @@
    "pollute": "Pollute is the verb.",
    "polluter": "A polluter is a person or company."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1671,7 +1700,8 @@
    "username's": "Username's is possessive.",
    "keyword": "A keyword is for searching."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1707,7 +1737,8 @@
    "fan": "A fan supports a team.",
    "spectator": "A spectator watches."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1743,7 +1774,8 @@
    "won over": "Win over means persuade.",
    "made out": "Make out means see with difficulty."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1779,7 +1811,8 @@
    "discussing": "Discussing is -ing.",
    "argue": "Argue is a verb."
   },
-  "sk": "vocab.collocation"
+  "sk": "vocab.collocation",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1797,7 +1830,8 @@
    "courage": "Courage is a noun.",
    "encouraging": "Encouraging needs was."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1833,7 +1867,8 @@
    "terrible": "Terrible means very bad.",
    "terrifying": "Terrifying describes the spider."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1851,7 +1886,8 @@
    "terror": "Terror is a noun.",
    "terrifies": "Terrifies is a verb."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1905,7 +1941,8 @@
    "excursion lunch": "Excursion lunch isn't a phrase.",
    "experience": "Experience is something you live through."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1995,7 +2032,8 @@
    "mostly": "Mostly means mainly.",
    "at most": "At most means not more than."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -2049,7 +2087,8 @@
    "entry way": "An entry way is a door.",
    "ticket office": "A ticket office is where you pay."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -2067,7 +2106,8 @@
    "addresses": "We need one address.",
    "dress": "A dress is clothing."
   },
-  "sk": "vocab.meaning"
+  "sk": "vocab.meaning",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -2175,7 +2215,8 @@
    "handed over to": "Handed over to needs a person after it.",
    "handed down": "Hand down = pass to younger family."
   },
-  "sk": "vocab.phrasal"
+  "sk": "vocab.phrasal",
+  "recall": 1
  },
  {
   "type": "mcq",

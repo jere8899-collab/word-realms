@@ -35,7 +35,8 @@
    "three": "“three” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind.",
    "none": "“none” doesn't match what the speaker means. Listen again for the key words, and watch for changes of mind."
   },
-  "sk": "listening.number-time"
+  "sk": "listening.number-time",
+  "recall": 1
  },
  {
   "type": "listen",
@@ -510,7 +511,8 @@
    "blue": "You heard: “Lily has long brown hair and green eyes.” So it's “green”, not “blue”.",
    "grey": "You heard: “Lily has long brown hair and green eyes.” So it's “green”, not “grey”."
   },
-  "sk": "listening.detail"
+  "sk": "listening.detail",
+  "recall": 1
  },
  {
   "type": "listen",
@@ -529,7 +531,8 @@
    "outside": "You heard: “The toilets are upstairs, next to the café.” So it's “upstairs”, not “outside”.",
    "in the café": "You heard: “The toilets are upstairs, next to the café.” So it's “upstairs”, not “in the café”."
   },
-  "sk": "listening.place"
+  "sk": "listening.place",
+  "recall": 1
  },
  {
   "type": "listen",
@@ -719,7 +722,8 @@
    "shoes": "Shoes weren't said. You heard: “Please put your coat on.”",
    "gloves": "Gloves weren't said. You heard: “Please put your coat on.”"
   },
-  "sk": "listening.detail"
+  "sk": "listening.detail",
+  "recall": 1
  },
  {
   "type": "listen",
@@ -795,7 +799,8 @@
    "yellow moons": "Moons weren't said. You heard: “My school bag is purple with yellow stars.”",
    "red hearts": "Hearts weren't said. You heard: “My school bag is purple with yellow stars.”"
   },
-  "sk": "listening.detail"
+  "sk": "listening.detail",
+  "recall": 1
  },
  {
   "type": "listen",
@@ -852,7 +857,8 @@
    "in the sky": "The sky wasn't said. You heard: “It's in the tree.”",
    "on the car": "The car wasn't said. You heard: “It's in the tree.”"
   },
-  "sk": "listening.place"
+  "sk": "listening.place",
+  "recall": 1
  },
  {
   "type": "listen",
@@ -890,7 +896,8 @@
    "a doctor": "Doctor wasn't said. You heard: “Dad is a cook.”",
    "a farmer": "Farmer wasn't said. You heard: “Dad is a cook.”"
   },
-  "sk": "listening.detail"
+  "sk": "listening.detail",
+  "recall": 1
  },
  {
   "type": "listen",
@@ -928,7 +935,8 @@
    "a sandwich": "A sandwich wasn't said. You heard: “Can I have an apple?”",
    "a banana": "A banana wasn't said. You heard: “Can I have an apple?”"
   },
-  "sk": "listening.detail"
+  "sk": "listening.detail",
+  "recall": 1
  },
  {
   "type": "listen",
@@ -947,7 +955,8 @@
    "£5": "Five is 5.",
    "£13": "Thirteen is 13."
   },
-  "sk": "listening.number-time"
+  "sk": "listening.number-time",
+  "recall": 1
  },
  {
   "type": "listen",

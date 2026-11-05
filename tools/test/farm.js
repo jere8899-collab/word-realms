@@ -14,7 +14,7 @@ const save = extra => Object.assign({ v: 1, name: 'Jeremy', avatar: 'avatar_girl
   settings: { rate: .9, sound: false, unlockAll: true }, mistakes: [], lessonsDone: 0 }, extra || {});
 (async () => {
   const browser = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox'] });
-  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
+  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true }); await ctx.addInitScript(() => { window.__WR_NO_RECALL = true; });   // ✍️ BRIEF-T7: this test isn't about type-it-first questions
   await ctx.route(/supabase\.co|cdn\.jsdelivr\.net/, r => r.abort());
   const page = await ctx.newPage(); const errs = []; page.on('pageerror', e => errs.push(e.message));
   await page.goto(BASE + 'index.html');

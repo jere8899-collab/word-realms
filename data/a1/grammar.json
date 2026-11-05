@@ -51,7 +51,8 @@
    "am": "Am only goes with I: I am from Spain.",
    "be": "Be needs a helper word: They will be in Spain."
   },
-  "sk": "grammar.be"
+  "sk": "grammar.be",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -69,7 +70,8 @@
    "two": "Two needs a plural word: two apples.",
    "many": "Many needs a plural word too: many apples."
   },
-  "sk": "grammar.article"
+  "sk": "grammar.article",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -285,7 +287,8 @@
    "are": "Are is now, not yesterday.",
    "is": "Is is now and for one person."
   },
-  "sk": "grammar.past-simple"
+  "sk": "grammar.past-simple",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -447,7 +450,8 @@
    "much": "How much is for amounts and prices.",
    "big": "How big asks about size, not age."
   },
-  "sk": "grammar.question"
+  "sk": "grammar.question",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -537,7 +541,8 @@
    "because": "Because gives the reason, not the result: He went to bed because he was tired.",
    "or": "Or gives a choice: tea or milk?"
   },
-  "sk": "grammar.other"
+  "sk": "grammar.other",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -591,7 +596,8 @@
    "am": "Am goes only with I.",
    "be": "Be needs a form: are."
   },
-  "sk": "grammar.be"
+  "sk": "grammar.be",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -717,7 +723,8 @@
    "I": "I is a subject: I am.",
    "mine": "Mine doesn't go before a noun."
   },
-  "sk": "grammar.pronoun-possessive"
+  "sk": "grammar.pronoun-possessive",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -789,7 +796,8 @@
    "at": "At is for times: at six.",
    "to": "To shows direction."
   },
-  "sk": "grammar.preposition"
+  "sk": "grammar.preposition",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -969,7 +977,8 @@
    "having": "No -ing after doesn't.",
    "haves": "Haves is not a word."
   },
-  "sk": "grammar.present-simple"
+  "sk": "grammar.present-simple",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1113,7 +1122,8 @@
    "am": "Am goes only with I.",
    "have": "Have is for owning things."
   },
-  "sk": "grammar.be"
+  "sk": "grammar.be",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1167,7 +1177,8 @@
    "brushing": "Brushing needs 'am'.",
    "am brush": "Am brush mixes two forms."
   },
-  "sk": "grammar.present-simple"
+  "sk": "grammar.present-simple",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1491,7 +1502,8 @@
    "How time": "We don't say 'How time'.",
    "Which": "Which needs a choice."
   },
-  "sk": "grammar.question"
+  "sk": "grammar.question",
+  "recall": 1
  },
  {
   "type": "mcq",
@@ -1779,7 +1791,8 @@
    "him": "Him is after a verb.",
    "her": "Her is for a girl."
   },
-  "sk": "grammar.pronoun-possessive"
+  "sk": "grammar.pronoun-possessive",
+  "recall": 1
  },
  {
   "type": "mcq",

@@ -14,7 +14,7 @@ const dk = t => { const d = new Date(t); return d.getFullYear() + '-' + String(d
   const browser = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox'] });
   let days = 0;   // the server date override: the game day is "today + days"
   const mkctx = async (vp = { width: 1100, height: 850 }) => {
-    const ctx = await browser.newContext({ viewport: vp, hasTouch: vp.width < 600, isMobile: vp.width < 600 });
+    const ctx = await browser.newContext({ viewport: vp, hasTouch: vp.width < 600, isMobile: vp.width < 600 }); await ctx.addInitScript(() => { window.__WR_NO_RECALL = true; });   // ✍️ BRIEF-T7: this test isn't about type-it-first questions
     await ctx.addInitScript(() => { const R = Date, real = R.now.bind(R); let off = +(localStorage.getItem('__off') || 0);
       class F extends R { constructor(...a) { super(...(a.length ? a : [real() + off])); } static now() { return real() + off; } }
       window.Date = F; window.__shift = ms => { off += ms; localStorage.setItem('__off', off); }; });
