@@ -24,3 +24,4 @@
 - Cleanup first: 0e309f7 (report.js lowBest helper). Checkpoint ~11:25 SGT: feature applied in the source tree, full suite next.
 
 - Checkpoint 11:5x SGT: full suite (99, serial cloud/lightart/parentgate/pwa) all pass; doubletap flaked once, 54/54 on re-run alone. Committing on brief/t5b-followups, then deploy + live check.
+- Checkpoint: deployed (merge 9d55b5c, live wr-b5f086d28b91), live check 13/13, REVIEW BRIEF-T5B ✅. Next: Task 6.
