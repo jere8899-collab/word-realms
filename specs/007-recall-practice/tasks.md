@@ -54,3 +54,7 @@
 - maths-review.js failed once at a 360px answer click under parallel load; isolated rerun 40/40 including landscape. No app change.
 
 - Real regression caught and fixed: type:"recall" forced recall:1 even when a classic-only test had __WR_NO_RECALL; normalise now maps it to recall:0 in that mode. recall.js 31/31, skins isolated all ok. Restarted authoritative suite t7ship.
+
+- T7B commit checkpoint: cleanup 828467d; feature fcedc41 (40 files incl. generated banks/service worker). Authoritative suite t7ship is running; not merged or deployed yet.
+
+- Suite t7ship: 99/101 in the parallel run. skins.js was a test wait problem: a random A1 spelling card has no .opt. The test now uses classic-only questions (3/3 passed). lightart.js measured 609 KB against its 600 KB cap on one random lesson and passed alone. cloud.js passed in the suite plus 3 more runs in a row.
