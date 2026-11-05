@@ -33,3 +33,8 @@
 | 12 | Cleanup committed separately | PASS (8f279ca) |
 | 13 | Cloud sync / two-tab merge of settings.health verified end to end | NOT VERIFIED (save field only; not run in the cloud suite) |
 | 14 | Grown-ups panel layout polish (Daily playtime caption wraps to 2 lines; "MOH: under 2 h" hint) | PARTIAL (cosmetic; MOH hint flagged to Jeremy) |
+
+## BRIEF-T6B checkpoints
+- 🔧 rows added (b120f77). Patch /workspace/t6b/apply.py pre-tested on cq-pre6 (health.js 34/34), applied to the source tree.
+- Live script /workspace/t6blive/live.js dry run 23/23. sw rebuilt; full suite "t6b" started.
+- Full suite "t6b" (100): all pass; doubletap + lessons passed on re-run alone; cloud.js failed twice (once on a non-A–D first question, once on the Supabase reload timing): made it classic-A–D-only (test-only change), then it passed in full. Deploying.

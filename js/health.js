@@ -2,12 +2,12 @@
    • a sitting = answers with no gap longer than WR.HEALTH.sitGapMin; after breakMin minutes of one sitting, at the END of a round
      (WR.activityDone), never mid-question, the pet suggests a stretch + a drink of water, once per sitting
    • 👪 Grown-ups (behind the parent gate): an optional daily playtime (minutes of play today, the Report's own count) and an
-     optional bedtime with a wind-down hour before it. Both default OFF. When one applies, a new round doesn't start: a calm
+     optional bedtime: screens rest from the bedtime itself until 5 am (BRIEF-T6B; T6 started an hour before). Both default OFF. When one applies, a new round doesn't start: a calm
      🌙 card instead (a round already going always finishes). "👪 15 more minutes" asks the grown-up gate again.
    Settings live in state.settings.health (the save, so they sync); the sitting in state.health. */
 (function () {
 const WR = window.WR;
-const H = WR.HEALTH = { breakMin: 20, sitGapMin: 10, extraMin: 15, windDownMin: 60, morningH: 5,
+const H = WR.HEALTH = { breakMin: 20, sitGapMin: 10, extraMin: 15, windDownMin: 0, morningH: 5,
   limits: [0, 30, 45, 60, 90, 120], beds: ["", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00"] };
 const MIN = 6e4;
 // defaults filled in place (never a new object), so a reference kept across calls stays the saved one
@@ -58,11 +58,11 @@ const go1 = WR.go;
 WR.go = (screen, arg) => { if (ROUND(screen)) { const why = H.restReason(); if (why) { H.restCard(why); return; } } return go1(screen, arg); };
 // 👪 the Grown-ups rows (js/parent-gate.js calls these inside the gated panel)
 H.rowsHTML = () => { const c = cfg();
-  return `<div class="health-rows" id="guHealth"><label class="set-row"><span>⏳ Daily playtime <small class="muted" style="display:block;font-size:.72rem">today: ${H.playedMin()} min · MOH: under 2 h a day for ages 7–12</small></span>
+  return `<div class="health-rows" id="guHealth"><label class="set-row hr-row"><span class="hr-t">⏳ Daily playtime</span><small class="muted hr-c">Today: ${H.playedMin()} min · MOH: under 2 h a day for ages 7–12</small>
     <select class="input gu-sel" id="guLimit">${H.limits.map(m => `<option value="${m}" ${c.limit === m ? "selected" : ""}>${m ? m + " min" : "Off"}</option>`).join("")}</select></label>
-    <label class="set-row"><span>🌙 Bedtime <small class="muted" style="display:block;font-size:.72rem">screens rest for the hour before</small></span>
+    <label class="set-row hr-row"><span class="hr-t">🌙 Bedtime</span><small class="muted hr-c">Screens rest from bedtime until 5 am</small>
     <select class="input gu-sel" id="guBed">${H.beds.map(b => `<option value="${b}" ${c.bed === b ? "selected" : ""}>${b ? fmtBed(b) : "Off"}</option>`).join("")}</select></label></div>`; };
 H.bindRows = bg => { const c = cfg();
   bg.querySelector("#guLimit").onchange = e => { c.limit = +e.target.value; c.until = 0; WR.save(); WR.toast(c.limit ? `⏳ Daily playtime: ${c.limit} minutes` : "⏳ Daily playtime: off"); };
-  bg.querySelector("#guBed").onchange = e => { c.bed = e.target.value; c.until = 0; WR.save(); WR.toast(c.bed ? `🌙 Bedtime ${fmtBed(c.bed)}: screens rest from an hour before` : "🌙 Bedtime: off"); }; };
+  bg.querySelector("#guBed").onchange = e => { c.bed = e.target.value; c.until = 0; WR.save(); WR.toast(c.bed ? `🌙 Bedtime ${fmtBed(c.bed)}: screens rest from then until 5 am` : "🌙 Bedtime: off"); }; };
 })();
