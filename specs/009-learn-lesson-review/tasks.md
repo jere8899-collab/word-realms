@@ -1,9 +1,9 @@
 # 009 tasks
-- [ ] T1 cleanup (separate commit)
-- [ ] T2 day-1 / day-7 schedule on lesson pass
-- [ ] T3 due surface + recall play
-- [ ] T4 tests
-- [ ] T5 suite, deploy, live, self-review, REVIEW ✅
+- [x] T1 cleanup (separate commit)
+- [x] T2 day-1 / day-7 schedule on lesson pass
+- [x] T3 due surface + recall play
+- [x] T4 tests
+- [x] T5 suite, deploy, live, self-review, REVIEW ✅
 
 ## Checkpoints
 
@@ -16,3 +16,22 @@
 - Suite t9c: DONE. Flakes lessons/phonics/shots/lightart passed alone. learn-review 18; lightload 9/9 (1999921). Merging next.
 
 - Merged and pushed; awaiting live wr-48ec6fc96e89. Trees sync next.
+
+## BRIEF-T9 self-review (2026-11-05): 8.5 / 10
+| # | Check | Result |
+|---|---|---|
+| 1 | Spec Kit specs committed | PASS |
+| 2 | Cleanup commit separate (LN.recLabel) | PASS |
+| 3 | Day-1 schedule after teach pass | PASS |
+| 4 | Day-7 schedule after first recall right | PASS |
+| 5 | Miss resets to day 1 | PASS |
+| 6 | Due chip shows 🔁; open jumps to check | PASS |
+| 7 | First visit under 2 MB | PASS (1,999,921; lightload 9/9) |
+| 8 | Dedicated learn-review.js + lessons.js | PASS (18; 176 alone) |
+| 9 | Full suite + flake reruns alone | PASS (t9c; lessons/phonics/shots/lightart alone) |
+| 10 | Live 320/360/375/landscape | PASS (11/11) |
+| 11 | Trees synced after merge | PASS |
+| 12 | More P1–P6 lesson content growth | NOTE (done condition was recall schedule; content growth remains on the plan) |
+
+Live screenshots: screenshots/t9_live_320.png, t9_live_360.png, t9_live_375.png, t9_live_740.png, t9_live_recall_360.png
+Local recall: screenshots/t9_recall_320.png, t9_recall_360.png, t9_recall_375.png
