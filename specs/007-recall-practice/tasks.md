@@ -7,3 +7,4 @@
 
 ## Checkpoints
 - Spec written (specify → clarify → plan → tasks). Pre-tested on scratch cq-pre7 (:18662): recall.js 25/25.
+- [x] T1 cleanup applied (optsHTML / bindOpts in js/lesson.js, no behaviour change): explain 6482/6482, picq2 640/640, c2types 225/225.

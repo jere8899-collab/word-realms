@@ -145,6 +145,9 @@ function flavour(it) {
 // 📜 the lesson that teaches this item's idea (js/learn.js), for a corner button and a link under a wrong answer's note;
 // none in boss / dragon rounds (a timer or candles are running) or Mistake Garden reviews
 const lessonFor = it => WR.Learn && !L.review && L.mode !== "boss" && L.mode !== "dragon" ? WR.Learn.forItem(L.realm.id, it) : null;
+// the classic A–D answer buttons, and their taps
+const optsHTML = (it, attrs = "") => `<div class="opts"${attrs}>${it.options.map((o, k) => `<button class="opt" data-k="${k}"><span class="k">${"ABCD"[k]}</span>${WR.esc(o)}</button>`).join("")}</div>`;
+const bindOpts = it => document.querySelectorAll(".opt").forEach(b => b.onclick = () => pick(b, it));
 function qBody(it) {
   const ls = lessonFor(it);
   let h = (ls ? `<div class="ltools">${WR.Learn.scrollBtn(ls, "corner")}</div>` : "") + flavour(it);
@@ -198,7 +201,7 @@ function qBody(it) {
   } else if (it.type === "picq") {
     h += `<div class="opts picgrid">${it.options.map((o, k) => `<button class="opt picopt" data-k="${k}" aria-label="${WR.esc(o)}">${WR.picImg(it.art ? it.art[o] : o)}</button>`).join("")}</div>`;
   } else {
-    h += `<div class="opts">${it.options.map((o, k) => `<button class="opt" data-k="${k}"><span class="k">${"ABCD"[k]}</span>${WR.esc(o)}</button>`).join("")}</div>`;
+    h += optsHTML(it);
   }
   h += `<div id="explain"></div>`;
   return h;
@@ -220,7 +223,7 @@ function render() {
   else if (it.type === "gaps") bindGaps(it);
   else if (it.type === "dictate") bindDictate(it);
   else if (SG_TYPES.has(it.type)) bindTyped(it);
-  else document.querySelectorAll(".opt").forEach(b => b.onclick = () => pick(b, it));
+  else bindOpts(it);
   if (WR.$("#playBtn")) bindListen(it);
   const sc = WR.$("#storyChip"); if (sc) sc.onclick = () => storySheet(it.passage);
   if (L.mode === "boss" && !L.noTimer) armTimer(it);
