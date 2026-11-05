@@ -720,3 +720,7 @@ img.acc-prev{width:72px;height:72px;object-fit:contain;display:block;margin:4px 
 .pass-note{font-weight:700;color:var(--muted,#8a7aa6);margin:.4em 0}.pass-note.good{color:#4a8a6a}
 .help-card{margin:10px auto;max-width:520px;text-align:center;display:flex;flex-direction:column;gap:6px;background:#FFF4FA}
 .help-card small{font-weight:700;color:var(--muted,#8a7aa6)}.help-btns{justify-content:center;gap:8px;flex-wrap:wrap}.help-btns .btn{min-height:44px;white-space:normal}
+
+/* 🌿 BRIEF-T6 healthy screen use (js/health.js) */
+.health-card{text-align:center}.health-card h2{margin:.3em 0}.health-card .row{gap:8px;flex-wrap:wrap}.health-card .btn{min-height:44px}
+.health-rows .set-row{gap:8px}.gu-sel{max-width:120px;min-height:44px;padding:6px 8px;font-weight:800}

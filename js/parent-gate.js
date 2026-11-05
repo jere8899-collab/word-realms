@@ -172,6 +172,7 @@ const showGrownups = () => {
     <p class="muted" style="font-weight:700;margin-top:0">These settings stay open for 5 minutes, then the grown-up check comes back.</p>
     ${WR.screens.report ? `<button class="btn mint gu-report" id="guReport">📊 Learning Report<small>days played, skills, weak spots &amp; tips</small></button>` : ""}
     ${WR.Learn ? WR.Learn.grownLine() : ""}<div class="row" style="justify-content:center;margin:6px 0"><button class="btn small ghost" id="guAbout">📚 What the games teach</button></div>
+    ${WR.HEALTH ? WR.HEALTH.rowsHTML() : ""}
     <label class="set-row"><span>🗝️ Teacher mode (open every realm)</span><input type="checkbox" id="guUl" ${s.settings.unlockAll ? "checked" : ""}></label>
     <div class="set-row" style="cursor:default"><span>🔢 Grown-up PIN <small class="muted" id="guPinState">${hasPin() ? "· on" : "· off (cash items stay locked)"}</small></span></div>
     <div class="row" style="justify-content:center"><input class="input" id="guPin" inputmode="numeric" pattern="[0-9]*" maxlength="4" placeholder="4 digits" style="max-width:130px;text-align:center;letter-spacing:6px" autocomplete="off">
@@ -181,6 +182,7 @@ const showGrownups = () => {
     <p class="set-note muted">🗣️ Listening voice: ${WR.Voice.recorded() ? "recorded storyteller (falls back to " : ""}${WR.esc(window.Speech ? Speech.voiceName() : "-")}${WR.Voice.recorded() ? ")" : ""}</p>
     <div class="row gu-reset" style="justify-content:center"><button class="btn small peach" id="guReset">🧹 Reset progress on this device</button>${WR.backups().length ? `<button class="btn small ghost" id="guUndo">↩️ Undo reset <small>(${WR.esc(WR.backupDay(WR.backups()[0]))})</small></button>` : ""}</div>
     <div class="row" style="justify-content:center"><button class="btn small" id="guDone">Done</button></div>`, (bg, close) => {
+    if (WR.HEALTH) WR.HEALTH.bindRows(bg);   // 🌿 BRIEF-T6: daily playtime + bedtime (js/health.js)
     bg.querySelector("#guUl").onchange = e => { s.settings.unlockAll = e.target.checked; WR.save(); WR.toast(e.target.checked ? "🗝️ Every realm is open" : "🔒 Realms open in order again"); };
     const rp = bg.querySelector("#guReport"); if (rp) rp.onclick = () => { close(); WR.go("report", "week"); };
     bg.querySelector("#guAbout").onclick = () => { close(); const c = WR.continueTarget && WR.continueTarget(); WR.openAbout((c && c.realm && c.realm.id) || WR.state.startLevel || "a1"); };
