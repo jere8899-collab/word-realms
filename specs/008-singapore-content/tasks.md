@@ -22,3 +22,23 @@
 - Suite t8final DONE: lessons.js (375px maths bubble flake) and lightart.js (phone image KB cap flake) failed under parallel load; both passed alone. cloud.js passed in suite. Focused: sg-more 221, sgendlish 48, lightload 9, voice all passed.
 
 - Feature committed and merged to main; pushed. Awaiting live wr-15ec0be878d8 (or current sw hash).
+
+## Self-review (2026-11-05): 8.5 / 10
+| # | Check | Result |
+|---|---|---|
+| 1 | Cleanup committed separately before feature | PASS (e474119) |
+| 2 | Spec Kit specs/008-* on its own branch | PASS |
+| 3 | More local Singapore settings (hawker, MRT, HDB, void deck, canteen, CCA, kopitiam, community centre, Little India) | PASS (every level has ≥1) |
+| 4 | Fair festival coverage across CNY / Hari Raya / Deepavali / Christmas / Racial Harmony Day / National Day | PASS (all present; described by food, clothes, visits, decorations, kindness) |
+| 5 | No doctrine; names from all communities; mature topics only JC/Adult (none added) | PASS |
+| 6 | Human cultural-review list written for Jeremy | PASS (cultural-review.md) |
+| 7 | Typing boxes use WR.noAssist | PASS (live + sg-more.js) |
+| 8 | No new home/realm tiles; no new art / no Higgsfield credits | PASS |
+| 9 | Ask-first list respected (no pass-mark/crown/star/cap changes, no school-trial claims) | PASS |
+| 10 | First-visit download stays under 2 MB | PASS (1,999,999 bytes; lightload 9/9) |
+| 11 | Dedicated test + full suite | PASS (sg-more 221; suite flakes lessons/lightart passed alone) |
+| 12 | Live 320 / 360 / 375 / landscape, no sideways scroll | PASS (23/23; screenshots looked at) |
+| 13 | Voices recorded for new spoken lines (local Kokoro) | PASS (80 new narrator lines) |
+| 14 | Christmas mentions thinner than other festivals after budget trim | NOTE (15 vs 35–47; still present and covered at P4/P5/S3) |
+
+- Live screenshots: screenshots/t8_live_320.png, t8_live_360.png, t8_live_375.png, t8_live_landscape.png, t8_live_spotfix_*.png, t8_live_p2_synth_360.png, t8_live_p5_edit_360.png, t8_live_p6_ccloze_360.png
