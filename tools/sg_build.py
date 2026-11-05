@@ -12,6 +12,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from sg_synth import SYNTH
 from sg_edit import EDIT
 from sg_cloze import CLOZE
+SOURCES = (("synth", SYNTH), ("edit", EDIT), ("cloze", CLOZE))   # one source table for the three existing games
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "sg")
 LEVELS = ["p1", "p2", "p3", "p4", "p5", "p6", "s1", "s2", "s3", "s4", "jc1", "jc2", "adult"]
 # American spellings that must not appear in this track (British / Singapore spelling: colour, practise, centre …)
@@ -35,7 +36,7 @@ def build():
     os.makedirs(ROOT, exist_ok=True); counts = {}; seen = set()
     for lvl in LEVELS:
         out = {"level": lvl, "synth": [], "edit": {"passages": []}, "ccloze": {"passages": []}}
-        for k, it in enumerate(SYNTH.get(lvl, [])):
+        for k, it in enumerate(dict(SOURCES)["synth"].get(lvl, [])):
             iid = f"{lvl}.s{k + 1}"; ans = list({canon(a): a for a in reversed(it["answers"])}.values())[::-1]   # a contraction twin (didn't / did not) is the same answer
             assert ans and all(a.strip() for a in ans) and it["tip"] and len(it["tip"]) > 15, iid
             cans = [canon(a) for a in ans]; assert len(set(cans)) == len(cans), (iid, "duplicate answers")
@@ -51,7 +52,7 @@ def build():
             assert re.match(r"[A-Z]", model) and model[-1] in ".?!" and not re.search(r"\bi\b", model), (iid, "model needs capitals and a full stop", model)
             out["synth"].append({"type": "typed", "id": iid, "title": "Join It Up", "q": q, "s1": it["s1"], "s2": it["s2"], "lead": it["lead"], "tail": it["tail"],
                                  "answers": ans, "answer": ans[0], "need": it["need"], "explain": it["tip"], "say": say, "full": model})
-        for k, p in enumerate(EDIT.get(lvl, [])):
+        for k, p in enumerate(dict(SOURCES)["edit"].get(lvl, [])):
             pid, qs, n = f"{lvl}.e{k + 1}", [], [0]
             assert p["title"] not in seen, (pid, "title"); seen.add(p["title"])
             def mark(m):
@@ -64,7 +65,7 @@ def build():
             say = EDIT_RE.sub(lambda m: m.group(3).split("/")[0].strip(), p["text"])
             assert 2 <= len(qs) <= 5 and not US.search(say), (pid, len(qs), US.search(say))
             out["edit"]["passages"].append({"id": pid, "title": p["title"], "text": text, "say": say, "questions": qs})
-        for k, p in enumerate(CLOZE.get(lvl, [])):
+        for k, p in enumerate(dict(SOURCES)["cloze"].get(lvl, [])):
             pid, qs, n = f"{lvl}.c{k + 1}", [], [0]
             assert p["title"] not in seen, (pid, "title"); seen.add(p["title"])
             def gap(m):
