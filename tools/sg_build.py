@@ -12,6 +12,9 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from sg_synth import SYNTH
 from sg_edit import EDIT
 from sg_cloze import CLOZE
+from sg_more import MORE_SYNTH, MORE_EDIT, MORE_CLOZE   # 🦁 BRIEF-T8: more local settings + fairly shared festivals
+for _src, _extra in ((SYNTH, MORE_SYNTH), (EDIT, MORE_EDIT), (CLOZE, MORE_CLOZE)):
+    for _lvl, _rows in _extra.items(): _src.setdefault(_lvl, []).extend(_rows)
 SOURCES = (("synth", SYNTH), ("edit", EDIT), ("cloze", CLOZE))   # one source table for the three existing games
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "sg")
 LEVELS = ["p1", "p2", "p3", "p4", "p5", "p6", "s1", "s2", "s3", "s4", "jc1", "jc2", "adult"]
@@ -78,10 +81,25 @@ def build():
             assert 3 <= len(qs) <= 6 and not US.search(say), (pid, len(qs))
             out["ccloze"]["passages"].append({"id": pid, "title": p["title"], "text": text, "say": say, "questions": qs})
         for it in out["synth"]: assert not US.search(it["say"] + " " + it["full"]), it["id"]
-        json.dump(out, open(f"{ROOT}/{lvl}.json", "w"), ensure_ascii=False, indent=1)
+        json.dump(out, open(f"{ROOT}/{lvl}.json", "w"), ensure_ascii=False, separators=(",", ":"))   # compact: first-visit budget
         counts[f"sg/{lvl}/synth"] = len(out["synth"])
         counts[f"sg/{lvl}/edit"] = sum(len(p["questions"]) for p in out["edit"]["passages"])
         counts[f"sg/{lvl}/ccloze"] = sum(len(p["questions"]) for p in out["ccloze"]["passages"])
     return counts
+SETTINGS = ["hawker", "mrt", "hdb", "void deck", "canteen", "cca", "kopitiam", "community centre", "little india"]
+FESTIVALS = ["chinese new year", "hari raya", "deepavali", "christmas", "racial harmony", "national day"]
+def check_sg():
+    """Every level uses a local setting, and all six shared occasions appear across the track."""
+    per = {}; allf = {f: 0 for f in FESTIVALS}
+    for lvl in LEVELS:
+        t = open(f"{ROOT}/{lvl}.json").read().lower()
+        per[lvl] = {k: t.count(k) for k in SETTINGS if t.count(k)}
+        per[lvl].update({f: t.count(f) for f in FESTIVALS if t.count(f)})
+        for f in FESTIVALS: allf[f] += t.count(f)
+        assert any(k in per[lvl] for k in SETTINGS), (lvl, "no local setting")
+    missing = [f for f, n in allf.items() if n == 0]
+    assert not missing, ("a named occasion never appears", missing)
+    print("check_sg per level:", per); print("check_sg festivals:", allf)
+    return per, allf
 if __name__ == "__main__":
-    c = build(); print(c); print("SG items", sum(c.values()))
+    c = build(); print(c); print("SG items", sum(c.values())); check_sg()

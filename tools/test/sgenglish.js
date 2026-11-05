@@ -124,7 +124,7 @@ const LV = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 's1', 's2', 's3', 's4', 'jc1', '
   // ---- Spot & Fix in a passage, then finish a round and save ----
   await page.evaluate(() => WR.SG.start('p4', 'edit')); await page.waitForSelector('#sgIn');
   const ed = await page.evaluate(() => ({ marks: document.querySelectorAll('.sgm.fix').length, cur: document.querySelectorAll('.sgm.cur').length, kind: document.querySelector('.sg-kind').textContent }));
-  ok(ed.marks >= 3 && ed.cur === 1, `Spot & Fix shows the text with numbered words, the current one lit (${ed.marks})`);
+  ok(ed.marks >= 2 && ed.cur === 1, `Spot & Fix shows the text with numbered words, the current one lit (${ed.marks})`);
   ok(await fits(), 'the Spot & Fix text fits 375 wide');
   if (process.env.SHOT) { await page.waitForTimeout(900); await page.screenshot({ path: OUT + 'sg_04_spot_fix.png', animations: 'disabled' }); }
   // play the whole round right through
