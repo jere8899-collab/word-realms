@@ -20,3 +20,5 @@
 - Final content: SG 433 items; Spot & Fix passages keep the builder rule of 2–5 marks (sgenglish assertion updated to match). lightload under 2 MB. Suite t8final started.
 
 - Suite t8final DONE: lessons.js (375px maths bubble flake) and lightart.js (phone image KB cap flake) failed under parallel load; both passed alone. cloud.js passed in suite. Focused: sg-more 221, sgendlish 48, lightload 9, voice all passed.
+
+- Feature committed and merged to main; pushed. Awaiting live wr-15ec0be878d8 (or current sw hash).
