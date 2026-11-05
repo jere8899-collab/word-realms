@@ -12,3 +12,15 @@
 ## Checkpoint 2026-11-05 ~02:45 SGT: BRIEF-T4B ✅
 - Commits de0d3b2 (cleanup) and f5a04de (feature), merged 3893490 and live. Full suite 96/96.
 - Live 360x740 (/workspace/t4blive/live.js): 12/12. 3 of 4 → "Nearly there! 3 of 4 this time (all 4 right shows it's ready). Your crown stays yours. Let's check again tomorrow"; 4 of 4 next day → "Crown confirmed! 💎"; Bramble fight 1/10, ⚔️ 0/9; Daily Mix 5 questions; no console errors. Screenshots t4b_live_*.png.
+
+## BRIEF-T5B (Jeremy 2026-11-05 10:18): crown check back to 3 of 4
+- WR.PASS.checkNeed = 3 (still its own value beside mark 0.85). The 4-of-4 rule (T4B) made an 80% child pass within 3 tries only ~48%.
+- Simulation (same runs, specs/004-pass-mark/sim-t4b-*.json, "was: check 3 of 4" column = the rule now; % passing within 3/4/5 tries, 20,000 children):
+  - A1: 40% 0.0/0.0/0.1 · 60% 6.7/15.1/26.1 · 80% 80.8/92.5/97.4 · 90% 99.2/99.9/100.0
+  - A2: 40% 0.0/0.0/0.1 · 60% 6.2/15.0/25.5 · 80% 80.7/92.5/96.8 · 90% 99.1/99.9/100.0
+  - B1: 40% 0.0/0.0/0.1 · 60% 5.8/13.8/24.5 · 80% 79.6/92.5/97.2 · 90% 99.1/99.9/100.0
+- The remaining 60% uses now read WR.PASS.mark: Report colours (two tones, no red), weak spots (LOW), maths weak-topic lesson nudge, writing tally (17/20).
+  Display/nudge/tally only: no unlock, star or sticker reads them, so older saves keep everything.
+- Cleanup first: 0e309f7 (report.js lowBest helper). Checkpoint ~11:25 SGT: feature applied in the source tree, full suite next.
+
+- Checkpoint 11:5x SGT: full suite (99, serial cloud/lightart/parentgate/pwa) all pass; doubletap flaked once, 54/54 on re-run alone. Committing on brief/t5b-followups, then deploy + live check.

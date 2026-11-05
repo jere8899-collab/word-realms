@@ -12,11 +12,13 @@ const ENG = () => ENG0.concat(WR.gapGames.map(g => g.id));
 const OPTIONAL = sk => ["phonics", "words"].includes(sk) || WR.gapGames.some(g => g.id === sk);   // rows shown only once something was played (Phonics Path, Word Charms, the gap games)
 const KEPT = { min: 10 };   // 🧠 answers needed before "Remembered after 30 days" shows a figure (gap: WR.Review.CONFIG.keptDays)
 const MIN_N = 3;                                    // answers needed before a spot can be called "weak"
+const LOW = WR.PASS.mark;                           // a "low" score in the weak-spot list: under the shared pass mark (BRIEF-T5B, was 0.6)
 const pct = v => Math.round(v * 100);
 const acc = t => t && t[0] + t[1] ? t[0] / (t[0] + t[1]) : null;
 const add = (a, b) => [a[0] + b[0], a[1] + b[1]];
 const daysBack = n => Array.from({ length: n }, (_, i) => { const d = new Date(); d.setHours(12, 0, 0, 0); d.setDate(d.getDate() - (n - 1 - i)); return d; });
-const tone = v => v == null ? "" : v >= 0.85 ? "hi" : v >= 0.6 ? "mid" : "lo";
+// BRIEF-T5B: two kind colours on the shared pass mark (WR.PASS.mark): passed (mint) and still growing (butter); no red "under 60%"
+const tone = v => v == null ? "" : v >= WR.PASS.mark - 1e-9 ? "hi" : "mid";
 
 /* ---------- numbers ---------- */
 // tallies for the range: the last 7 days come from the day log, all time from the running tally
@@ -82,13 +84,14 @@ WR.Report.data = (range = "week") => {
 WR.Report.weak = (range, T = tallies(range)) => {
   const s = WR.state, score = {}, info = {};
   const bump = (k, w, why) => { if (!actionFor(k)) return; score[k] = (score[k] || 0) + w; (info[k] = info[k] || []).push(why); };
-  Object.entries(T).forEach(([k, t]) => { const a = acc(t), n = t[0] + t[1]; if (n >= MIN_N && a < 0.85) bump(k, t[1] * (1 - a) + (a < 0.6 ? 2 : 0), `${t[0]} of ${n} right`); });
+  const lowBest = (k, x) => { if (x && x.best < LOW && !T[k]) bump(k, (LOW - x.best) * 10, `best score ${pct(x.best)}%`); };   // a best score saved before the report
+  Object.entries(T).forEach(([k, t]) => { const a = acc(t), n = t[0] + t[1]; if (n >= MIN_N && a < WR.PASS.mark) bump(k, t[1] * (1 - a) + (a < LOW ? 2 : 0), `${t[0]} of ${n} right`); });
   const plants = {};
   (s.mistakes || []).forEach(m => { if (!m.bloomed && m.realm && m.skill) { const k = m.realm + "/" + m.skill; plants[k] = (plants[k] || 0) + 1; } });
   Object.entries(plants).forEach(([k, n]) => bump(k, n * 1.5, `${n} plant${n > 1 ? "s" : ""} in the Mistake Garden`));
   if (range !== "week") {
-    Object.entries(s.progress || {}).forEach(([rid, p]) => Object.entries(p || {}).forEach(([sk, x]) => { const k = rid + "/" + sk; if (x && x.best < 0.6 && !T[k]) bump(k, (0.6 - x.best) * 10, `best score ${pct(x.best)}%`); }));
-    Object.entries(s.math.topics || {}).forEach(([id, x]) => { const k = "m:" + id; if (x && x.best < 0.6 && !T[k]) bump(k, (0.6 - x.best) * 10, `best score ${pct(x.best)}%`); });
+    Object.entries(s.progress || {}).forEach(([rid, p]) => Object.entries(p || {}).forEach(([sk, x]) => lowBest(rid + "/" + sk, x)));
+    Object.entries(s.math.topics || {}).forEach(([id, x]) => lowBest("m:" + id, x));
   }
   return Object.keys(score).sort((a, b) => score[b] - score[a]).slice(0, 3).map(k => ({ key: k, label: labelFor(k), why: info[k].join(" · ") }));
 };
@@ -157,7 +160,7 @@ WR.Report.html = d => {
   const ch = d.chart, wk = d.range === "week";
   const eng = d.english.levels.length ? `<div class="rp-scroll"><table class="rp-table"><thead><tr><th></th>${d.english.levels.map(l => `<th>${l.level}</th>`).join("")}</tr></thead>
       <tbody>${d.english.rows.map(r => `<tr><th title="${esc(r.sk.name)}"><span class="ico">${r.sk.icon}</span>${esc(r.sk.name === "Vocabulary" ? "Vocab" : r.sk.name)}</th>${r.cells.map(cellHTML).join("")}</tr>`).join("")}</tbody></table></div>
-      <p class="rp-key muted"><span class="rp-dot hi"></span>85%+ <span class="rp-dot mid"></span>60–84% <span class="rp-dot lo"></span>under 60% · small number = answers${wk ? "" : " · “best” = best lesson score saved before the report started"}</p>`
+      <p class="rp-key muted"><span class="rp-dot hi"></span>${WR.pct()}%+ passed <span class="rp-dot mid"></span>under ${WR.pct()}%: still growing 🌱 · small number = answers${wk ? "" : " · “best” = best lesson score saved before the report started"}</p>`
     : `<p class="muted rp-empty">No English lessons ${wk ? "in the last 7 days" : "yet"}.</p>`;
   const meter = (a, n, best) => a != null ? `<span class="rp-meter ${tone(a)}"><i style="width:${pct(a)}%"></i></span><b class="pc">${pct(a)}%</b><small class="muted">${n}</small>`
     : best != null ? `<span class="rp-meter ${tone(best)}"><i style="width:${pct(best)}%"></i></span><b class="pc">${pct(best)}%</b><small class="muted">best</small>` : "";

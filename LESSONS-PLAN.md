@@ -2,6 +2,10 @@
 
 **Phase 1 (plan + engine + pilot): ✅ done (commit 1d135e5, 2026-11-04).** EN-2 + MA-2 ✅ (f4ee083). The 2-hourly routine may now take the next batch (§5: EN-3, then MA-3).
 
+> Checkpoint 2026-11-05 ~10:00 SGT (EN-3 complete 8/8): shipped `en.a1.detail` (findword), `en.a1.listennum` (spellhear), `en.a1.keyword` (hearpic) + the earlier 5. Three new widgets in `js/learn.js` / `css/learn.css`. All 8 EN-3 hook arts are GenerateImage paintings (Pillow stand-ins replaced). A1 English now 20/20. lessons.js + full suite green this run. Deploy commit filled in §5.
+>
+> Checkpoint 2026-11-05 04:00 SGT (EN-3 partial): shipped 5/8 — `en.a1.ing`, `en.a1.waswere`, `en.a1.place2` (new `park` spots scene: nextto/behind/front), `en.a1.timeprep`, `en.a1.feel`. Left for later: detail, listennum, keyword (need new widgets). Cleanup: TOKEN_NAME map for spots tokens; park scene wired in learn.js / learn.css / lesson_build SCENES. Art: Pillow pastel stand-ins (GenerateImage unavailable this run — NOT sprite cutouts; need GenerateImage repaint). lessons.js 167/167.
+>
 > Checkpoint 2026-11-04 15:20 SGT (takeover of two interrupted runs): EN-2's 7 hook pictures were Pillow cut-out composites and MA-2's 5 were copies of lesson_m_g2_add; all 12 repainted with GenerateImage and installed. `lesson_build.speak()` now reads \$1.25 as "1 dollar and 25 cents" and 10¢ coin as "10 cent coin" (14 lines re-recorded, af_heart). lessons.js 150/150; full suite 91/91 (doubletap flaked once on server load, passes on rerun). Screens: screenshots/lessons_en2_*.png, lessons_ma2_*.png.
 >
 > Checkpoint 2026-11-04 08:55 SGT: engine `js/learn.js` + `css/learn.css`, 10 pilot lessons (data/lessons), 10 GenerateImage hook pictures, all lines recorded (af_heart), `tools/test/lessons.js` 109/109 pass. Full suite green after fixing homeshort / icons / n3n5layout / realmpath / tappable / lightart regressions (corner badge, painted 🎒 icon, no home pill on phones). Deployed as 1d135e5.
@@ -109,7 +113,7 @@ dict(id="en.a1.an", title="a or an?", icon="🍎", at=dict(realm="a1", skill="gr
 | `sort` | `bins:[{id,label,icon}]`, `items:[{t, bin, icon?, why?}]` | a/an, am/is/are, question words, countable/uncountable, formal/informal, odd/even, shapes |
 | `fill` | `tiles:[…]`, `items:[{s:"I ___ Puffbun.", a:"am", why}]` | verb forms, prepositions, connectors, tenses (drag the tile into the gap) |
 | `suffix` | `stamp:"s"`, `items:[{pre:"3", base:"cat", need:true, why}]` | plural -s, past -ed (drag -ed onto verbs), -er/-est, prefixes un-/re-, word formation |
-| `spots` | `scene:"table"\|"bed"\|"nearfar"`, `token`, `tasks:[{word:"on"|"near", text:"…"}]` | prepositions of place; this/that near or far; later left/right, maps |
+| `spots` | `scene:"table"\|"bed"\|"nearfar"\|"park"`, `token`, `tasks:[{word:"on"|"near"|"nextto", text:"…"}]` | prepositions of place; this/that near or far; next to/behind/in front of (park); later left/right, maps |
 | `pv` | `targets:[243, 306]` | place value (H/T/O), later thousands; tap or drag a block onto the mat, ➖ takes one back |
 | `regroup` | `a:28, b:15` | adding with carrying (10 ones → 1 ten), later subtraction by renaming |
 | `groups` | `rings:3, each:4, item:"🍄"` | multiplication as equal groups, arrays, skip counting |
@@ -151,22 +155,22 @@ Grammar:
 - ✅ `en.a1.this` this/that/these/those (spots: near or far)
 - ✅ `en.a1.poss` my, your, his, her (sort by owner)
 - ✅ `en.a1.do` Do / Does questions (fill)
-- `en.a1.ing` happening now: is + -ing (suffix -ing)
-- `en.a1.waswere` was / were for yesterday (fill)
+- ✅ `en.a1.ing` happening now: is + -ing (suffix -ing)
+- ✅ `en.a1.waswere` was / were for yesterday (fill)
 
 Vocabulary:
 - ✅ `en.a1.place` in, on, under (spots)
-- `en.a1.place2` next to, behind, in front of (spots)
-- `en.a1.timeprep` at 7 o'clock, on Sunday, in May (sort)
-- `en.a1.feel` feelings words (sort pictures)
+- ✅ `en.a1.place2` next to, behind, in front of (spots)
+- ✅ `en.a1.timeprep` at 7 o'clock, on Sunday, in May (sort)
+- ✅ `en.a1.feel` feelings words (sort pictures)
 
 Reading:
 - ✅ `en.a1.qwords` Who? Where? What? (sort)
-- `en.a1.detail` find the number or colour in the story (tap the word)
+- ✅ `en.a1.detail` find the number or colour in the story (tap the word / findword)
 
 Listening:
-- `en.a1.listennum` listen for numbers and names (spelling)
-- `en.a1.keyword` listen for the key word (tap the picture you hear)
+- ✅ `en.a1.listennum` listen for numbers and names (spelling / spellhear)
+- ✅ `en.a1.keyword` listen for the key word (tap the picture you hear / hearpic)
 
 **A2 · Candy Village (A2 Key / Flyers)**
 
@@ -561,7 +565,7 @@ Each **routine turn builds one batch of ~5 lessons**, alternating English and ma
 | Pilot MA | m.g2.place, m.g2.add, m.g2.times, m.g2.share, m.g2.frac | ✅ | 1d135e5 |
 | EN-2 | A1 rest: have, can, s3, thereis, this, poss, do | ✅ (hook art repainted with GenerateImage 2026-11-04; Pillow composites removed) | f4ee083 |
 | MA-2 | G2 rest: sub, money, time, picgraph, story (+ widgets rename, money, clock, picgraph, bar) | ✅ (5 GenerateImage hooks; narrator money words fixed) | f4ee083 |
-| EN-3 | A1 rest: ing, waswere, place2, timeprep, feel, detail, listennum, keyword | ⏳ | |
+| EN-3 | A1 rest: ing, waswere, place2, timeprep, feel, detail, listennum, keyword | ✅ (3 widgets findword/spellhear/hearpic; 8 GenerateImage hooks) | PENDING_HASH |
 | MA-3 | G1 all (9) | ⏳ | |
 | EN-4… | A2 (19), then B1, B2, C1, C2 | ⏳ | |
 | MA-4… | G3, G4 … G12 (one grade per 2 turns) | ⏳ | |

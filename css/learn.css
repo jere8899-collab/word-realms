@@ -95,6 +95,14 @@
 .sc-nearfar .sc-near-rug{left:6%;width:42%;top:58%;height:28%;background:radial-gradient(ellipse at 50% 50%,#FFE4F0 0 55%,#FFD0E4 70%);border-radius:50%}
 .sc-nearfar .sc-near-toys{left:14%;width:18%;top:64%;height:10%;background:linear-gradient(90deg,#FFB8D1 0 33%,#9FD8FF 33% 66%,#FFE08A 66%);border-radius:8px;opacity:.85}
 .sc-nearfar .sp-near{left:28%;top:68%}.sc-nearfar .sp-far{left:74%;top:36%}
+/* park bench + tree (next to / behind / in front of) — 64px targets, same .lw-spot base */
+.sc-park .sc-park-sky{left:0;width:100%;top:0;height:58%;background:linear-gradient(180deg,#D6EFFF,#EEF8FF);border-radius:0}
+.sc-park .sc-park-tree{left:62%;width:28%;top:10%;height:42%;background:radial-gradient(circle at 50% 55%,#8FD18A 0 58%,#6FB86A 70%);border-radius:50%}
+.sc-park .sc-park-trunk{left:73%;width:6%;top:46%;height:18%;background:#B5865A;border-radius:4px}
+.sc-park .sc-park-bench{left:10%;width:42%;top:58%;height:10%;background:linear-gradient(180deg,#E8C48F,#C99A6B);border-radius:6px}
+.sc-park .sc-park-leg{top:68%;width:5%;height:14%;background:#A8784A;border-radius:0 0 4px 4px}
+.sc-park .sc-park-leg.l{left:14%}.sc-park .sc-park-leg.r{left:42%}
+.sc-park .sp-nextto{left:58%;top:62%}.sc-park .sp-behind{left:76%;top:28%}.sc-park .sp-front{left:32%;top:78%}
 .lw-token{position:absolute;left:50%;top:86%;transform:translate(-50%,-50%);width:64px;height:64px;padding:0;border-radius:50%;background:#fff;box-shadow:0 4px 0 #EADFF5,var(--shadow);display:grid;place-items:center;font-size:2rem;overflow:hidden}
 .lw-token img{width:100%;height:100%;object-fit:contain}
 .lw-token.in-spot{position:static;transform:none;width:56px;height:56px}
@@ -258,3 +266,26 @@
 .ln-rtab td:last-child{text-align:right;font-weight:800;color:var(--ink2);white-space:nowrap;font-size:.85rem}
 .ln-rtab small{display:block;color:var(--ink2);font-weight:700}
 .ln-grown-line{margin:4px 0 6px}
+
+/* 📖 findword: tappable words in a short story */
+.lw-storybox{background:#FFF8E7;border:2px dashed #F3D9A8;border-radius:16px;padding:12px 14px;font-weight:800;line-height:2.05;font-size:1.12rem}
+.lw-fword{display:inline;margin:0 1px;padding:4px 6px;min-height:44px;min-width:44px;border:none;border-radius:10px;background:transparent;font:inherit;font-weight:800;color:var(--ink);cursor:pointer;vertical-align:middle}
+.lw-fword:hover,.lw-fword:focus-visible{background:#F3EDFF;outline:none}
+.lw-fword.right{background:#C8F2DC;color:var(--good)}
+.lw-fword.wrong{background:#FFD0DC;animation:shake .35s}
+/* 🎧 spellhear: letter tiles after a listen */
+.lw-hear-row{justify-content:center;margin:4px 0 10px}
+.lw-hear-row .btn{min-height:48px;min-width:120px}
+.lw-slots{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;min-height:56px;margin:6px 0 10px;padding:8px;border-radius:16px;background:#F7F2FF;border:3px dashed #E2D6FF}
+.lw-slot{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:48px;border-radius:12px}
+.lw-slot.empty{min-width:44px;min-height:48px;border:2px dashed #C9B3FF;background:#fff;border-radius:12px}
+.lw-slot.filled{background:#fff;box-shadow:0 3px 0 #EADFF5}
+.lw-letters{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:4px 0 8px}
+.lw-letter{font-size:1.25rem;min-width:48px;text-transform:none}
+.lw-clear{display:block;margin:0 auto;min-height:44px}
+/* 🖼️ hearpic: hear a word, tap a picture chip */
+.lw-pics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:4px}
+.lw-pic{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:96px;padding:10px 8px;border-radius:18px;background:#fff;border:3px solid #E2D6FF;box-shadow:0 4px 0 #EADFF5;font-weight:800;color:var(--ink);cursor:pointer}
+.lw-pic .lw-pico{font-size:2.2rem;line-height:1}
+.lw-pic small{font-size:.85rem;font-weight:800;color:var(--ink2)}
+.lw-pic.right{border-color:var(--good);background:#EFFFF6}

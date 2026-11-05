@@ -702,10 +702,10 @@ WR.streakAlive = () => { const s = WR.state.streak; return s.last && WR.dayDiff(
 /* ---------- progress & unlocks (BRIEF-T4: a pass means something) ----------
    A skill is passed at about 7 of 8 (`mark`, rounded to the nearest whole question: 7/8, 6/7, 5/6, 3/4). The next realm needs
    all 4 skills passed AND each confirmed on a later game day by a short crown check (`checkN` questions, `checkNeed` of them
-   right: 4 of 4, one check a day). Grade Guardians, the maths Daily Mix "finished" mark and the realm stickers use the same `mark`. A crown not checked for `polishDays` asks for a gentle "Polish me ✨" (the crown always stays). After
+   right: 3 of 4 (BRIEF-T5B, Jeremy 2026-11-05), one check a day). Grade Guardians, the maths Daily Mix "finished" mark and the realm stickers use the same `mark`. A crown not checked for `polishDays` asks for a gentle "Polish me ✨" (the crown always stays). After
    `helpAfter` tries in a row that didn't pass, the result offers the Learn lesson and an easier path (js/pass.js).
    Realms open (and bosses awake) under the old rule stay that way for good (`state.keep`). */
-const PASS = WR.PASS = { mark: 0.85, skills: 4, boss: 3, checkN: 4, checkNeed: 4, polishDays: 30, helpAfter: 2 };   // checkNeed: right answers in a crown check (BRIEF-T4B: 4 of 4)
+const PASS = WR.PASS = { mark: 0.85, skills: 4, boss: 3, checkN: 4, checkNeed: 3, polishDays: 30, helpAfter: 2 };   // checkNeed: right answers in a crown check (BRIEF-T5B: back to 3 of 4; T4B had 4 of 4)
 WR.passCount = n => Math.max(1, Math.round(PASS.mark * n));                // right answers needed out of n
 WR.passes = (score, n = 8) => score * n + 1e-9 >= WR.passCount(n);
 WR.pct = () => Math.round(PASS.mark * 100);                                // "85%" for labels

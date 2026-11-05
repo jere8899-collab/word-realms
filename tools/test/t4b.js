@@ -1,4 +1,4 @@
-// 🏁 BRIEF-T4B (Jeremy's Task 4 follow-ups, 2026-11-04): the ✨ crown check needs 4 of 4 (its own setting, WR.PASS.checkNeed);
+// 🏁 BRIEF-T4B (Jeremy's Task 4 follow-ups, 2026-11-04): the ✨ crown check needs 3 of 4 (its own setting, WR.PASS.checkNeed; BRIEF-T5B, Jeremy 2026-11-05, was 4 of 4 in T4B);
 // the realm boss still wakes at 3 passed; Grade Guardians, the maths Daily Mix "finished" mark and the realm skill stickers use
 // the shared 85% mark (WR.PASS.mark), label text included; older saves keep every awake guardian, earned sticker and scheduled
 // topic; the kept guardians merge in the cloud copy and reach a second tab. Screenshots screenshots/t4b_*.png.
@@ -19,17 +19,17 @@ const SAVE = extra => Object.assign({ v: 1, name: 'Tess', avatar: 'avatar_girl',
     await page.goto(URL); await page.waitForFunction(() => window.WR && WR.realms && WR.MathGoals && WR.MathReview && WR.Collect); await page.waitForTimeout(600);
     await page.evaluate(() => document.querySelectorAll('.modal-bg').forEach(m => m.remove())); return page; };
 
-  // 1. one config: 85% mark, crown check 4 of 4 as its own value, boss at 3
+  // 1. one config: 85% mark, crown check 3 of 4 as its own value (BRIEF-T5B), boss at 3
   let page = await open(SAVE());
-  const cfg = await page.evaluate(() => ({ P: WR.PASS, k4: WR.checkCount(4), k2: WR.checkCount(2), c34: WR.checkPasses(3 / 4, 4), c44: WR.checkPasses(1, 4), l34: WR.passes(3 / 4, 4), pct: WR.pct(), mix: WR.Review.CONFIG.math.pass, need10: WR.passCount(10) }));
-  ok(cfg.P.mark === 0.85 && cfg.P.checkN === 4 && cfg.P.checkNeed === 4 && cfg.k4 === 4 && cfg.k2 === 2 && !cfg.c34 && cfg.c44, 'crown check: its own setting checkNeed = 4 of checkN 4 (3 of 4 is not enough; a 2-question check needs both)');
+  const cfg = await page.evaluate(() => ({ P: WR.PASS, k4: WR.checkCount(4), k2: WR.checkCount(2), c34: WR.checkPasses(3 / 4, 4), c24: WR.checkPasses(2 / 4, 4), c44: WR.checkPasses(1, 4), l34: WR.passes(3 / 4, 4), pct: WR.pct(), mix: WR.Review.CONFIG.math.pass, need10: WR.passCount(10) }));
+  ok(cfg.P.mark === 0.85 && cfg.P.checkN === 4 && cfg.P.checkNeed === 3 && cfg.k4 === 3 && cfg.k2 === 2 && cfg.c34 && !cfg.c24 && cfg.c44, 'crown check: its own setting checkNeed = 3 of checkN 4 (BRIEF-T5B; 2 of 4 is not enough; a 2-question check needs both)');
   ok(cfg.l34 && cfg.P.boss === 3, 'the lesson pass mark is unchanged (3 of 4 = 75% rounds to the 0.85 mark of a 4-item round) and the boss still wakes at 3');
   ok(cfg.pct === 85 && cfg.mix === cfg.P.mark && cfg.need10 === 9, 'Daily Mix "finished" reads the shared mark; a 10-question guardian fight needs 9 sparkle hits (85%)');
-  // the crown-check record: 3 of 4 on a later day keeps the pass + crown, confirms nothing; 4 of 4 confirms
+  // the crown-check record: 2 of 4 on a later day keeps the pass + crown, confirms nothing; 3 of 4 confirms
   const chk = await page.evaluate(() => { const y = Date.now() - 864e5 * 2; WR.state.progress.a1 = { grammar: { best: 1, plays: 1, last: y, pass: y, passDay: WR.dayKey(y) } };
-    const a = WR.recordCheck('a1', 'grammar', 3 / 4, 4), r1 = Object.assign({}, WR.skillRec('a1', 'grammar')); WR.skillRec('a1', 'grammar').chkDay = null;
-    const b = WR.recordCheck('a1', 'grammar', 1, 4); return { a, b, r1, r2: WR.skillRec('a1', 'grammar') }; });
-  ok(!chk.a.good && !chk.a.confirmed && chk.r1.pass && chk.r1.best === 1 && !chk.r1.ok && chk.b.confirmed && chk.r2.ok, 'recordCheck: 3 of 4 keeps the pass and crown but confirms nothing; 4 of 4 confirms');
+    const a = WR.recordCheck('a1', 'grammar', 2 / 4, 4), r1 = Object.assign({}, WR.skillRec('a1', 'grammar')); WR.skillRec('a1', 'grammar').chkDay = null;
+    const b = WR.recordCheck('a1', 'grammar', 3 / 4, 4); return { a, b, r1, r2: WR.skillRec('a1', 'grammar') }; });
+  ok(!chk.a.good && !chk.a.confirmed && chk.r1.pass && chk.r1.best === 1 && !chk.r1.ok && chk.b.confirmed && chk.r2.ok, 'recordCheck: 2 of 4 keeps the pass and crown but confirms nothing; 3 of 4 confirms');
   // boss: 3 of 4 skills passed at 85% wakes it
   const boss = await page.evaluate(() => { WR.state.progress.a2 = { grammar: { best: .9 }, vocab: { best: .9 }, reading: { best: .875 }, listening: { best: .5 } }; return { r: WR.Collect.bossReady('a2'), p: WR.realmProgress('a2').passed }; });
   ok(boss.r && boss.p === 3, 'the A2 boss wakes with 3 of 4 skills passed (85%+)');
