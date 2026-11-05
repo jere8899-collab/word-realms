@@ -16,6 +16,7 @@ def canon(t):
 def _has(text, c): return (" " + c + " ") in (" " + " ".join(_toks(text)) + " ")
 VOCABQ = re.compile(r"mean|opposite|word for|called|what is this|which word", re.I)
 def recall_ok(q, passage=None):
+    if q.get("type") == "recall": return True   # a wave-2 producing item (checked verbatim at build time)
     if q.get("type") not in ("mcq", "listen") or q.get("dialogue"): return False
     o, a = q.get("options"), q.get("answer")
     if not isinstance(o, list) or not isinstance(a, int) or len(o) < 3: return False
@@ -28,20 +29,20 @@ def recall_ok(q, passage=None):
 def _pairs(sk, val): return [(q, p) for p in val["passages"] for q in p["questions"]] if sk == "reading" else [(q, None) for q in val]
 def _h(q): return hashlib.md5((q.get("q", "") + "|" + q.get("say", "") + "|" + str(q.get("options"))).encode()).hexdigest()
 def mark_recall(D):
+    """every item already marked (the wave-2 extras) keeps its mark; then the per-level share on top of those"""
     out = {}
     for lvl, skills in D.items():
         if lvl not in SHARE: continue
         pairs = {sk: _pairs(sk, skills[sk]) for sk in CORE if sk in skills}
-        for ps in pairs.values():
-            for q, _ in ps: q.pop("recall", None)
+        pre = {sk: sum(1 for q, _ in ps if q.get("recall") or q.get("type") == "recall") for sk, ps in pairs.items()}
         total = sum(len(ps) for ps in pairs.values()); want = round(SHARE[lvl] * total)
-        cand = sorted(((_h(q), sk, q) for sk, ps in pairs.items() for q, p in ps if recall_ok(q, p)), key=lambda x: x[0])
+        cand = sorted(((_h(q), sk, q) for sk, ps in pairs.items() for q, p in ps if recall_ok(q, p) and not q.get("recall") and q.get("type") != "recall"), key=lambda x: x[0])
         per = {sk: 0 for sk in pairs}; n = 0
         for _, sk, q in cand:
             if n >= want: break
             if per[sk] >= SKILL_CAP * len(pairs[sk]): continue
             q["recall"] = 1; per[sk] += 1; n += 1
-        out[lvl] = (n, want, per)
+        out[lvl] = (n + sum(pre.values()), want, {sk: per[sk] + pre[sk] for sk in per})
     return out
 def check_recall(D):
     """prints the share per level and skill and returns {lvl: {before, after, items, eligible, typeFirst}} (written to data/recall.json); fails if a marked item isn't fair to type"""
@@ -52,8 +53,8 @@ def check_recall(D):
         for sk in CORE:
             if sk not in skills: continue
             ps = _pairs(sk, skills[sk])
-            for q, p in ps: assert not q.get("recall") or recall_ok(q, p), (lvl, sk, "type-it-first item isn't fair to type", q.get("q"))
-            pk = sum(q["type"] in PICK for q, _ in ps); tf = sum(1 for q, _ in ps if q.get("recall"))
+            for q, p in ps: assert not (q.get("recall") or q.get("type") == "recall") or recall_ok(q, p), (lvl, sk, "type-it-first item isn't fair to type", q.get("q"))
+            pk = sum(q["type"] in PICK for q, _ in ps); tf = sum(1 for q, _ in ps if q.get("recall") or q.get("type") == "recall")
             row.append(f"{sk} {100 * pk / len(ps):.0f}→{100 * (pk - tf) / len(ps):.0f}% ({tf} type-first)")
             b += pk; a += pk - tf; n += len(ps)
         el = sum(recall_ok(q, p) for sk in CORE if sk in skills for q, p in _pairs(sk, skills[sk]))

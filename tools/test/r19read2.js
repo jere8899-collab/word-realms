@@ -6,7 +6,7 @@ const { chromium } = require('playwright-core');
 const BASE = (process.env.BASE || 'http://127.0.0.1:18642/').replace(/\/?$/, '/');
 let fails = 0, passes = 0; const ok = (c, m) => { if (!c) { fails++; console.error('FAIL', m); process.exitCode = 1; } else { passes++; console.log('ok', m); } };
 const D = path.join(__dirname, '..', '..', 'data'), SHOTS = path.join(__dirname, '..', '..', 'screenshots');
-const NEW = new Set(['events', 'tf', 'findword', 'headings']);
+const NEW = new Set(['events', 'tf', 'findword', 'headings', 'recall']);
 const rq = l => JSON.parse(fs.readFileSync(`${D}/${l}/reading.json`, 'utf8')).passages.flatMap(p => p.questions.map(q => ({ q, p })));
 const bare = w => w.toLowerCase().replace(/[^a-z0-9'-]/g, '');
 for (const l of ['b2', 'c1', 'c2']) {

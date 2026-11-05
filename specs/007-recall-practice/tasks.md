@@ -32,3 +32,25 @@
 | 12 | JS rule and the Python rule agree on every level | PASS (data/recall.json checked in the browser) |
 | 13 | More typed answers in B1+ listening / reading | NOT DONE (few paraphrase answers are fair to type; left for wave 2) |
 | 14 | No new art needed (uses the existing pet and picture art) | PASS (nothing generated) |
+
+## BRIEF-T7B checkpoints
+- Word bank for A1/A2 (tapping a word types it), pictures kept where the item has one; wave 2: 74 extra verbatim recall items on B1–C2 (and A2) passages/recordings; picking 77.7% → 63.0%. recall.js 29/29.
+- Cloud race found: A login-push and B +3 could share one updated_at, so on reload A own push won and overwrote B. Fix in the test timeline: wait for A to finish its own push (synced, not dirty) before B writes; plus C.resumeResult so the test waits for the real pull, not just status "saved". 4/4 runs pass.
+- Fixed the knock-ons from wave 2: new items are type "recall" (a producing type, so the old non-mcq guards still hold), no redundant notes/flag, and the core banks are written compact (the first-visit budget was 2,002,275 bytes; now ~1.99 MB). recall.js 29/29, lightload 9/9, r19types/r19read2/c2types pass. Full suite "t7c" started.
+
+- Recovery checkpoint: T8 content had leaked into the running T7B suite (voice failure was 3 new SG spoken lines, not T7B). Isolated T7B again: sg_build.py restored to deployed main, SG data rebuilt, build_data/build_sw unchanged hashes (61ebdec27e60 / 0f2551922b). No routine or edit process was active.
+
+- Final T7B checkpoint: word bank now covers A1/A2 reading passages too (not only standalone questions), first-letter hint unchanged; recall.js 30/30. Final suite t7final2 is the authoritative run.
+
+## BRIEF-T7B follow-up (2026-11-05)
+- [x] A1/A2 word bank (four free choices that type into the box) on all type-first cards, including reading passages; existing item pictures and first-letter hints stay.
+- [x] Choice fallback after a miss is unchanged.
+- [x] Wave 2: 74 verbatim answer items on existing listening/reading texts (A2 10; B1–C2 16 each). Latest build report: all levels picking 77.7% → 63.0%; A1 80.8→72.9, A2 78.2→64.5, B1 77.6→61.1, B2 76.7→60.3, C1 76.5→60.1, C2 76.5→60.0.
+- [x] Cloud reload race wait: device A must finish its own login push before B writes; resumeResult proves the reload outcome. Four consecutive cloud runs passed before the final suite.
+- [x] Cleanup to be committed separately: compact core JSON (no behaviour change; keeps first visit under 2 MB).
+
+- Suite note: explain.js had one random first-item failure under 4-way parallelism (c1/vocab expected an explanation on an empty question); immediate isolated rerun 6495/6495. Skins also passed isolated after the earlier run. No app change for either.
+
+- maths-review.js failed once at a 360px answer click under parallel load; isolated rerun 40/40 including landscape. No app change.
+
+- Real regression caught and fixed: type:"recall" forced recall:1 even when a classic-only test had __WR_NO_RECALL; normalise now maps it to recall:0 in that mode. recall.js 31/31, skins isolated all ok. Restarted authoritative suite t7ship.

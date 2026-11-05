@@ -7,44 +7,44 @@
   "typeFirst": 45
  },
  "a2": {
-  "before": 79.5,
-  "after": 67.5,
-  "items": 604,
-  "eligible": 241,
-  "typeFirst": 72
- },
- "b1": {
-  "before": 79.6,
-  "after": 65.5,
-  "items": 626,
-  "eligible": 233,
-  "typeFirst": 88
- },
- "b2": {
-  "before": 78.7,
-  "after": 64.8,
-  "items": 616,
-  "eligible": 231,
-  "typeFirst": 86
- },
- "c1": {
-  "before": 78.5,
-  "after": 64.6,
-  "items": 615,
-  "eligible": 234,
-  "typeFirst": 86
- },
- "c2": {
-  "before": 78.5,
+  "before": 78.2,
   "after": 64.5,
   "items": 614,
-  "eligible": 215,
-  "typeFirst": 86
+  "eligible": 251,
+  "typeFirst": 84
+ },
+ "b1": {
+  "before": 77.6,
+  "after": 61.1,
+  "items": 642,
+  "eligible": 249,
+  "typeFirst": 106
+ },
+ "b2": {
+  "before": 76.7,
+  "after": 60.3,
+  "items": 632,
+  "eligible": 247,
+  "typeFirst": 104
+ },
+ "c1": {
+  "before": 76.5,
+  "after": 60.1,
+  "items": 631,
+  "eligible": 250,
+  "typeFirst": 104
+ },
+ "c2": {
+  "before": 76.5,
+  "after": 60.0,
+  "items": 630,
+  "eligible": 231,
+  "typeFirst": 104
  },
  "all": {
-  "before": 79.2,
-  "after": 66.5,
-  "items": 3643,
-  "typeFirst": 463
+  "before": 77.7,
+  "after": 63.0,
+  "items": 3717,
+  "typeFirst": 547
  }
 }

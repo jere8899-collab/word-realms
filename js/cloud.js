@@ -268,10 +268,11 @@ C.resume = async () => {
     const { data } = await withTimeout(c.auth.getSession());
     if (!data.session) { C.username = null; C.setStatus("guest"); return; }
     C.user = data.session.user; C.username = (C.user.user_metadata && C.user.user_metadata.username) || m.username;
-    const row = await fetchRow();
+    const row = await fetchRow(); let how = "none";
     if (row && newer(row.updated_at, m.synced)) {
-      if (!m.dirty || C.cloudWins(row.data, WR.state)) C.apply(row.data, row.updated_at); else { keepEarn(row.data); await writeRow(WR.state); }
-    } else if (m.dirty || !row) await writeRow(WR.state);
+      if (!m.dirty || C.cloudWins(row.data, WR.state)) { C.apply(row.data, row.updated_at); how = "pulled"; } else { keepEarn(row.data); await writeRow(WR.state); how = "pushed"; }
+    } else if (m.dirty || !row) { await writeRow(WR.state); how = "pushed"; }
+    C.resumeResult = how;   // did this reload actually pull the other device's save? (used by tools/test/cloud.js)
     C.setStatus("saved");
   } catch (e) { console.warn("cloud resume", e && e.message); C.setStatus("offline"); }
 };

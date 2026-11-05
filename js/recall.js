@@ -20,6 +20,7 @@ const R = WR.Recall = {
   // a short, unique answer a child can produce and the game can mark fairly (a gap in a sentence, a picture, a word
   // meaning, or words that are in the story / in what they heard)
   eligible(it) {
+    if (!it || it.recall) return !!(it && it.recall && it.correct);
     if (!it || (it.type !== "mcq" && it.type !== "listen") || it.dialogue || !Array.isArray(it.options) || it.options.length < 3 || it.correct == null) return false;
     const c = canon(it.correct);
     if (!c || c.split(" ").length > R.CONFIG.maxWords || c.length > R.CONFIG.maxChars || !/^[a-z0-9][a-z0-9' ]*$/.test(c)) return false;
@@ -40,8 +41,12 @@ const R = WR.Recall = {
     if (a === c || a.replace(/'/g, "") === c.replace(/'/g, "")) return "right";   // "cant" = "can't"
     return c.length >= R.CONFIG.closeFrom && lev1(a, c) ? "close" : "miss";
   },
-  html: (it, optsHTML) => `<div class="recall" id="recCard"><div class="rec-hint">✍️ Type it first! <span class="rec-mask" aria-label="Hint: starts with ${WR.esc(String(it.correct).trim()[0] || "")}">${WR.esc(R.mask(it.correct))}</span></div>
+  // 🌱 BRIEF-T7B: younger children also get a word bank (tapping a word types it) and, where the item already has a
+  // picture, the picture stays on screen. The first-letter hint stays too.
+  bank: (it, L) => L && L.realm && /^(a1|a2)$/.test(L.realm.id),
+  html: (it, optsHTML, bank) => `<div class="recall" id="recCard"><div class="rec-hint">✍️ Type it first! <span class="rec-mask" aria-label="Hint: starts with ${WR.esc(String(it.correct).trim()[0] || "")}">${WR.esc(R.mask(it.correct))}</span></div>
     <input class="dict-in rec-in" id="recIn" type="text" placeholder="Type your answer…" aria-label="Type your answer" maxlength="40">
+    ${bank ? `<div class="tiles rec-bank" id="recBank" aria-label="Word bank: tap a word to use it">${bank.map((w, k) => `<button class="tile" data-k="${k}">${WR.esc(w)}</button>`).join("")}</div>` : ""}
     <div class="row rec-row"><button class="btn mint" id="checkBtn" disabled>✅ Check</button><button class="btn ghost small" id="recShow">🤔 Show choices</button></div></div>
     <div id="recMsg" class="rec-msg" hidden></div>${optsHTML(it, ' id="recOpts" hidden')}`,
 };
