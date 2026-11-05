@@ -48,3 +48,19 @@
 - Budget cleared: lightload 9/9. Final: 8 Christmas Join It Up items; Christmas 15→52; SG 433→436; JC1→junior college; voices recorded (af_heart). Suite t8b next.
 
 - Merged and pushed; awaiting live wr-a84af62e909a. Trees synced after merge.
+
+## BRIEF-T8B self-review (2026-11-05): 8.5 / 10
+| # | Check | Result |
+|---|---|---|
+| 1 | ~8–10 more Christmas items (food/decorations/visits/kindness) | PASS (8 Join It Up) |
+| 2 | jc1 Polytechnic → JC setting | PASS |
+| 3 | Cultural-review list updated | PASS |
+| 4 | First visit under 2 MB | PASS (lightload 9/9) |
+| 5 | Narrator lines af_heart; voice + story-voices pass | PASS |
+| 6 | WR.noAssist; no new tiles/art; ask-first list | PASS |
+| 7 | Dedicated tests + full suite | PASS (t8b all green) |
+| 8 | Live 320/360/375/landscape | PASS (18/18) |
+| 9 | Christmas now balanced with other festivals (52 mentions) | PASS |
+| 10 | Trees synced after merge | PASS |
+
+Live screenshots: screenshots/t8b_live_320.png, t8b_live_360.png, t8b_live_375.png, t8b_live_landscape.png, t8b_live_join_360.png
