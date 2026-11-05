@@ -61,7 +61,7 @@ const dk = t => { const d = new Date(t); return d.getFullYear() + '-' + String(d
   // ---------- 1. one config ----------
   let page = await open(ctx, SAVE());
   const cfg = await page.evaluate(() => ({ P: WR.PASS, c8: WR.passCount(8), c4: WR.passCount(4), c7: WR.passCount(7), p68: WR.passes(6 / 8), p78: WR.passes(7 / 8), p34: WR.passes(3 / 4, 4), k4: WR.checkCount(4), k34: WR.checkPasses(3 / 4, 4), k44: WR.checkPasses(1, 4) }));
-  assert(cfg.P.mark === 0.85 && cfg.c8 === 7 && cfg.c4 === 3 && cfg.c7 === 6 && !cfg.p68 && cfg.p78 && cfg.p34 && cfg.P.skills === 4 && cfg.P.checkN === 4 && cfg.P.checkNeed === 4 && cfg.k4 === 4 && !cfg.k34 && cfg.k44 && cfg.P.boss === 3, 'one pass mark (0.85): 7 of 8 in a lesson; the crown check is its own setting: 4 of 4 (checkNeed); all 4 skills; boss at 3');
+  assert(cfg.P.mark === 0.85 && cfg.c8 === 7 && cfg.c4 === 3 && cfg.c7 === 6 && !cfg.p68 && cfg.p78 && cfg.p34 && cfg.P.skills === 4 && cfg.P.checkN === 4 && cfg.P.checkNeed === 3 && cfg.k4 === 3 && cfg.k34 && cfg.k44 && cfg.P.boss === 3, 'one pass mark (0.85): 7 of 8 in a lesson; the crown check is its own setting: 3 of 4 (checkNeed, BRIEF-T5B); all 4 skills; boss at 3');
 
   // ---------- 2. a lesson below the mark: kind words; after 2 tries, help (Learn lesson + easier path) ----------
   await realm(page, 'a1'); await tapSkill(page, 'grammar');
@@ -92,16 +92,16 @@ const dk = t => { const d = new Date(t); return d.getFullYear() + '-' + String(d
   await page.click('#passRow [data-pcheck="grammar"]');
   await page.waitForSelector('.opt:not([disabled]), #pool .tile, .mword, #dictIn');
   assert(/\/4$/.test(await page.evaluate(() => document.querySelector('.qnum').textContent)), 'the crown check is 4 questions');
-  await play(page, i => i !== 1);   // 3 of 4: not enough for the check now (BRIEF-T4B: 4 of 4), kindly
+  await play(page, i => i !== 1 && i !== 2);   // 2 of 4: not enough for the check (BRIEF-T5B: 3 of 4), kindly
   res = await page.evaluate(() => document.querySelector('.result').innerText);
   let g3 = await rec(page, 'grammar');
-  assert(/Nearly there/.test(res) && /all 4 right/.test(res) && /crown stays yours/.test(res) && !g3.ok && g3.pass && g3.best === 1, '3 of 4 in the check: "Nearly there", all 4 right shows it\'s ready, the crown and pass stay');
+  assert(/Nearly there/.test(res) && /3 right shows/.test(res) && /crown stays yours/.test(res) && !g3.ok && g3.pass && g3.best === 1, '2 of 4 in the check: "Nearly there", 3 right shows it\'s ready, the crown and pass stay');
   await nextDay(page); await realm(page, 'a1');
-  assert(/all right/.test(await page.evaluate(() => (document.querySelector('#passRow') || {}).innerText || '')), 'the check row says the check needs all 4 right');
+  assert(/4 quick questions \(3 right\)/.test(await page.evaluate(() => (document.querySelector('#passRow') || {}).innerText || '')), 'the check row says "4 quick questions (3 right)"');
   await page.click('#passRow [data-pcheck="grammar"]'); await page.waitForSelector('.opt:not([disabled]), #pool .tile, .mword, #dictIn');
-  await play(page, () => true);   // 4 of 4
+  await play(page, i => i !== 0);   // 3 of 4
   res = await page.evaluate(() => document.querySelector('.result').innerText);
-  assert(/Crown confirmed/.test(res), '4 of 4 on a later day: "Crown confirmed! 💎"');
+  assert(/Crown confirmed/.test(res), '3 of 4 on a later day: "Crown confirmed! 💎"');
   assert(!(await page.$('#again')), 'a check has no "Play again" (one check a day)');
   const g = await rec(page, 'grammar');
   assert(g.ok && g.okDay && g.okDay > g.passDay, 'the confirmation is saved with its day (after the pass day)');

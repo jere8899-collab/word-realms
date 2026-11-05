@@ -743,7 +743,7 @@ LN.pickSheet = (ids, back) => WR.modal(`<h2>📜 Lessons here</h2><div class="ln
     <button class="btn ghost small" id="pkClose" style="margin-top:10px">Close</button>`, (bg, close) => {
     bg.querySelectorAll(".ln-pick-row").forEach(b => b.onclick = () => { close(); LN.open(b.dataset.id, { back }); });
     bg.querySelector("#pkClose").onclick = close; });
-// a weak practice result (< 60%) offers the first lesson there not yet passed
+// a practice result under the pass mark (WR.PASS.mark, BRIEF-T5B) offers the first lesson there not yet passed
 LN.nudgeFor = list => (list || []).find(l => !(LN.rec(l.id) || {}).pass) || null;
 LN.nudgeHTML = l => l ? `<div class="card ln-nudge"><span class="ico">📜</span><div><b>Want a quick lesson?</b><small>${l.icon} ${esc(l.title)} · 2 minutes</small></div><button class="btn small mint" id="lnNudge" data-id="${l.id}">Learn it →</button></div>` : "";
 LN.bindNudge = back => { const b = WR.$("#lnNudge"); if (b) b.onclick = () => LN.open(b.dataset.id, { back }); };

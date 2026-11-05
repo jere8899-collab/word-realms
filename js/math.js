@@ -335,7 +335,7 @@ function finish() {
   L = null;
   const head = gd ? (won ? `${esc(gd.name)} is beaten! 🛡️✨` : `${esc(gd.name)} flew off to practise! 💨`) : crowns === 3 ? "Perfect! 👑" : crowns >= 1 ? "Well done! 🌟" : "Keep practising! 🌱";
   const art = gd && WR.asset(gd.art) ? WR.img(gd.art, "res-sumi gres") : mascot("res-sumi");
-  const nudge = WR.Learn && o.topic && !gd && score < 0.6 ? WR.Learn.nudgeHTML(WR.Learn.nudgeFor(WR.Learn.forTopic(o.topic))) : "";   // 📜 a weak topic offers its lesson
+  const nudge = WR.Learn && o.topic && !gd && score < WR.PASS.mark ? WR.Learn.nudgeHTML(WR.Learn.nudgeFor(WR.Learn.forTopic(o.topic))) : "";   // 📜 a weak topic offers its lesson
   WR.view(`<div class="card result fade-in">${art}<h1>${head}</h1>${WR.starNote()}<div class="big">${crownRow(crowns)}</div>
     <h2>${o.correct} / ${n} solved${o.pts < o.correct ? ` <small class="muted">(${o.items.filter((_, k) => o.res[k] === 0.5).length} on the second try)</small>` : ""}</h2>
     <p class="muted" style="font-weight:800">⭐ ${o.starsEarned} stars earned · best combo ${o.maxCombo} · ✨ +${o.correct * 5 + 10} maths XP${streak ? ` · 🔥 streak ${WR.state.streak.count}` : ""}${crowns > before && !gd && !o.kind ? " · 🎉 new best!" : ""}</p>${gd && !won ? `<p class="muted" style="font-weight:800">You needed ${gd.need} sparkle hits and got ${o.pts}. Practise a few Grade ${esc(gd.band)} topics and try again! 🫶</p>` : ""}
