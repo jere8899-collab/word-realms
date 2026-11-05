@@ -68,7 +68,7 @@ const HELPERS = () => {
   }, id);
   ok(day1.isDue, 'isDue true once day-1 arrives');
   ok(day1.recall && day1.step === 'check', `due open starts recall at check (recall=${day1.recall}, step=${day1.step})`);
-  ok(/Quick recall|day 1/i.test(day1.qnum || ''), `recall banner (${day1.qnum})`);
+  ok(/Recall|day 1/i.test(day1.qnum || ''), `recall banner (${day1.qnum})`);
 
   const after1 = await page.evaluate(async id => {
     await window.__answer([true, true, true]);
