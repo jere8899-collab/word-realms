@@ -571,7 +571,7 @@ Each **routine turn builds one batch of ~5 lessons**, alternating English and ma
 | EN-2 | A1 rest: have, can, s3, thereis, this, poss, do | ✅ (hook art repainted with GenerateImage 2026-11-04; Pillow composites removed) | f4ee083 |
 | MA-2 | G2 rest: sub, money, time, picgraph, story (+ widgets rename, money, clock, picgraph, bar) | ✅ (5 GenerateImage hooks; narrator money words fixed) | f4ee083 |
 | EN-3 | A1 rest: ing, waswere, place2, timeprep, feel, detail, listennum, keyword | ✅ (3 widgets findword/spellhear/hearpic; 8 GenerateImage hooks) | 342673e |
-| MA-3 | G1 first 5: count, add20, sub20, bonds, shapes (+ shapecount widget) | ✅ (5 GenerateImage hooks; missing-number box now read as "what number") | COMMIT_HASH |
+| MA-3 | G1 first 5: count, add20, sub20, bonds, shapes (+ shapecount widget) | ✅ (5 GenerateImage hooks; missing-number box now read as "what number") | 8e331ac |
 | MA-3b | G1 rest: money, time, picgraph, story | ⏳ next math turn | |
 | EN-4… | A2 (19), then B1, B2, C1, C2 | ⏳ | |
 | MA-4… | G3, G4 … G12 (one grade per 2 turns) | ⏳ | |
