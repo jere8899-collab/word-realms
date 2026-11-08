@@ -206,7 +206,9 @@ const nextGame = (l, after) => { const g = SG.quizGames(l), i = g.indexOf(after)
   return rest.find(c => !SG.best(l.id, c)) || null; };
 SG.start = async (lv, c) => {
   const l = SG.level(lv), mix = c === "mix", C = mix ? { icon: "🎲", name: "Mixed practice" } : COMP[c];
-  const items = mix ? await SG.mixItems(lv) : await SG.items(lv, c, 8, { review: true });   // 🎲 mixed practice is already a mix: no extra reviews
+  let items;
+  try { items = mix ? await SG.mixItems(lv) : await SG.items(lv, c, 8, { review: true }); }   // 🎲 mixed practice is already a mix: no extra reviews
+  catch (e) { if (e && e.wrMiss) return WR.noteMiss(); throw e; }
   if (!items.length) return WR.toast("🌱 More games are coming to this level soon!", 2400);
   const nx = nextGame(l, c);
   WR.startLesson({ realm: "sg-" + lv, skill: c, items, title: `${C.icon} ${C.name}`, onQuit: () => WR.go("sg", lv), replay: () => SG.start(lv, c),

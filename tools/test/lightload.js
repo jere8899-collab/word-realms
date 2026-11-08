@@ -20,7 +20,14 @@ const served = rel => { const f = path.join(ROOT, rel === '' ? 'index.html' : re
   const ctx = await browser.newContext({ viewport: { width: 375, height: 667 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
   await ctx.addInitScript(s => { if (!localStorage.getItem('wordRealms.save.v1')) localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)); }, SAVE);
   await ctx.route(/supabase\.co|cdn\.jsdelivr\.net/, r => r.abort());
-  const urls = new Set(); ctx.on('request', r => { const u = r.url(); if (u.startsWith(BASE)) urls.add(u.slice(BASE.length).split('?')[0]); });
+  const urls = new Set(); const counts = {};
+  ctx.on('request', r => {
+    const u = r.url(); if (!u.startsWith(BASE)) return;
+    // The worker's own fetch is the network half of a page request it is already handling, not a second copy.
+    let pageReq = true; try { pageReq = !!r.frame(); } catch (e) { pageReq = false; }
+    if (!pageReq) return;
+    const rel = u.slice(BASE.length).split('?')[0]; urls.add(rel); counts[rel] = (counts[rel] || 0) + 1;
+  });
   const page = await ctx.newPage(); const errs = []; page.on('pageerror', e => errs.push(e.message));
   await page.goto(BASE); await page.waitForSelector('.realm-node');
   await page.evaluate(() => navigator.serviceWorker.ready);
@@ -29,12 +36,23 @@ const served = rel => { const f = path.join(ROOT, rel === '' ? 'index.html' : re
   const list = [...urls], bytes = list.reduce((a, u) => a + served(u), 0);
   const sw = fs.readFileSync(ROOT + '/sw.js', 'utf8'), ART = JSON.parse(sw.match(/const ARTFILES = (\[.*?\]);/)[1].replace(/'/g, '"'));
   const allArt = ART.reduce((a, u) => a + served(u), 0);
-  console.log(`first visit: ${list.length} files, ${(bytes / 1e6).toFixed(2)} MB as served (all art would add ${(allArt / 1e6).toFixed(2)} MB)`);
-  ok(bytes < 2e6, `the first visit downloads ${(bytes / 1e6).toFixed(2)} MB (< 2 MB)`);
+  const wire = Object.entries(counts).reduce((a, [u, n]) => a + served(u) * n, 0);
+  const repeated = Object.entries(counts).filter(([u, n]) => n > 1 && /^(js|css)\//.test(u));
+  console.log(`first visit: ${list.length} files, ${bytes} unique bytes; ${wire} bytes counting every request (all art would add ${(allArt / 1e6).toFixed(2)} MB)`);
+  ok(bytes < 1.45e6, `the first visit's unique URLs are ${(bytes / 1e6).toFixed(2)} MB (< 1.45 MB, was 1.87 MB on main)`);
+  ok(repeated.length === 0, `each shell file is requested once (${repeated.slice(0, 3).map(([u, n]) => u + ' ×' + n).join(', ')})`);
+  ok(wire < 1.15e6, `counting every request the first visit is ${(wire / 1e6).toFixed(2)} MB (< 1.15 MB; a second shell copy would miss this)`);
+  ok(!list.includes('data/c2/reading.json') && !list.includes('data/b2/vocab.json') && !list.includes('assets/voice/manifest.json'), 'far banks and the voice lookup are not on the first visit');
+  ok(list.includes('data/realms.json') && list.includes('js/math-topics-p.js'), 'the map still loads home data and the maths crown code');
   ok(list.filter(u => u.startsWith('assets/icons/')).length < 120, `only the icons on screen are fetched (${list.filter(u => u.startsWith('assets/icons/')).length} of ${ART.filter(u => u.startsWith('assets/icons/')).length})`);
-  const caches0 = await page.evaluate(async () => { const out = {}; for (const k of await caches.keys()) out[k.replace(/-.*/, '')] = (await (await caches.open(k)).keys()).length; return out; });
-  ok(caches0.wr > 50 && caches0.wrart > 5, `shell + data precached (${caches0.wr}) and the art already shown kept (${caches0.wrart})`);
-  // visit a realm and a lesson online, then go offline
+  const caches0 = await page.evaluate(async () => {
+    const out = {}; for (const k of await caches.keys()) out[k.replace(/-.*/, '')] = (await (await caches.open(k)).keys()).length;
+    const bank = (await caches.keys()).find(k => k === 'wrdata');
+    const far = bank ? !!(await (await caches.open(bank)).match('data/c2/reading.json')) : false;
+    return { out, far };
+  });
+  ok(caches0.out.wr >= 40 && caches0.out.wrart > 5 && !caches0.far, `shell precached (${caches0.out.wr}), shown art kept (${caches0.out.wrart}), far banks not precached`);
+  // visit a realm and a lesson online, then go offline — only what was opened comes with us
   await page.reload(); await page.waitForSelector('.realm-node');
   await page.evaluate(() => WR.go('realm', 'a1')); await page.waitForSelector('.path-grid'); await page.waitForTimeout(1500);
   await page.evaluate(() => WR.startLesson({ realm: 'a1', skill: 'vocab', key: 'vocab', title: 'Words' })); await page.waitForSelector('.qtext'); await page.waitForTimeout(1500);
@@ -44,8 +62,20 @@ const served = rel => { const f = path.join(ROOT, rel === '' ? 'index.html' : re
   let b = await broken(); ok(b.length === 0, `offline: the home page opens with all its pictures (${b})`);
   await page.evaluate(() => WR.go('realm', 'a1')); await page.waitForSelector('.path-grid'); await page.waitForTimeout(1200);
   b = await broken(); ok(b.length === 0, `offline: the visited A1 realm shows all its pictures (${b})`);
-  await page.evaluate(() => WR.startLesson({ realm: 'a2', skill: 'grammar', key: 'grammar', title: 'Offline' })); await page.waitForSelector('.qtext', { timeout: 15000 });
-  ok(true, 'offline: a lesson in another realm opens (its data was precached)');
+  await page.evaluate(() => WR.startLesson({ realm: 'a1', skill: 'vocab', key: 'vocab', title: 'Words again' })); await page.waitForSelector('.qtext', { timeout: 15000 });
+  ok(true, 'offline: the lesson that was opened still opens');
+  await page.evaluate(() => WR.go('realm', 'a1')); await page.waitForSelector('.path-grid');
+  const missed = await page.evaluate(async () => {
+    await WR.startLesson({ realm: 'a2', skill: 'grammar', key: 'grammar', title: 'Not yet' });
+    return { toast: (document.querySelector('.toast') || {}).textContent || '', q: !!document.querySelector('.qtext'), stars: WR.state.stars };
+  });
+  ok(/isn't on this device yet/.test(missed.toast) && !missed.q && missed.stars === 40, `offline: an unvisited realm explains kindly and keeps the stars (${missed.toast})`);
+  await ctx.setOffline(false);
+  await page.evaluate(() => WR.startLesson({ realm: 'a2', skill: 'grammar', key: 'grammar', title: 'Now' })); await page.waitForSelector('.qtext', { timeout: 15000 });
+  await ctx.setOffline(true);
+  await page.reload(); await page.waitForSelector('.realm-node', { timeout: 15000 });
+  await page.evaluate(() => WR.startLesson({ realm: 'a2', skill: 'grammar', key: 'grammar', title: 'Saved' })); await page.waitForSelector('.qtext', { timeout: 15000 });
+  ok(true, 'offline after a reload: the other level stays, because it was opened once');
   await ctx.setOffline(false);
   // 📲 Download for offline play
   await page.evaluate(() => WR.go('home')); await page.click('#setBtn'); await page.waitForSelector('#offBtn');
@@ -53,6 +83,14 @@ const served = rel => { const f = path.join(ROOT, rel === '' ? 'index.html' : re
   await page.click('#offBtn'); await page.waitForFunction(() => /Ready for offline/.test((document.getElementById('offState') || {}).textContent || ''), null, { timeout: 60000 });
   const n = await page.evaluate(async () => { const k = (await caches.keys()).find(k => k.startsWith('wrart-')); return (await (await caches.open(k)).keys()).length; });
   ok(n >= ART.length, `after the download every picture is cached (${n}/${ART.length})`);
+  const banked = await page.evaluate(async () => !!(await (await caches.open('wrdata')).match('data/c2/vocab.json')));
+  ok(banked, 'download also saves the lesson banks');
+  await page.evaluate(() => { const m = document.querySelector('.modal-bg'); if (m) m.remove(); });
+  await ctx.setOffline(true);
+  await page.evaluate(() => WR.startLesson({ realm: 'c2', skill: 'vocab', key: 'vocab', title: 'Far' }));
+  await page.waitForSelector('.qtext', { timeout: 15000 });
+  ok(true, 'offline: a realm never opened by hand works after Download');
+  await ctx.setOffline(false);
   if (process.env.SHOT) await page.screenshot({ path: OUT + 'lightload_settings_offline.png' });
   ok(errs.length === 0, 'no page errors ' + errs.slice(0, 2));
   console.log(`\n${passes} passed, ${fails} failed`); await browser.close();

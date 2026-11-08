@@ -116,7 +116,9 @@ WR.startLesson = async (opts) => {
   clearTimer(); WR.Voice.stop();
   const realm = WR.realmById(opts.realm);
   // 🔁 normal lessons mix in due reviews; boss rounds never do (they bring their own items; opts.boss / skill "boss" guard it too)
-  const items = opts.items || await WR.buildItems(opts.realm, opts.skill, 8, { review: !opts.boss && opts.skill !== "boss" && !opts.noReview });
+  let items;
+  try { items = opts.items || await WR.buildItems(opts.realm, opts.skill, 8, { review: !opts.boss && opts.skill !== "boss" && !opts.noReview }); }
+  catch (e) { if (e && e.wrMiss) { WR.noteMiss(); return; } throw e; }
   L = { ...opts, realm, items, mode: opts.mode || realm.mode, i: 0, correct: 0, combo: 0, maxCombo: 0, starsEarned: 0,
         hearts: 3, bossHP: 100, meter: 50, lit: 0, jar: [], answered: false };
   WR.navActive && WR.navActive("map");

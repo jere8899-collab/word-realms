@@ -193,7 +193,16 @@ WR.mergeClock = (a, b) => {
 WR.clockBack = () => !!(WR.state && WR.state.clock && WR.dayKey() < WR.state.clock.day);   // the device date is behind the game day
 WR.gameDate = () => new Date(WR.today() + "T12:00:00");
 WR.dayDiff = (a, b) => Math.round((new Date(b) - new Date(a)) / 864e5);
-const fetchJSON = p => fetch(p).then(r => { if (!r.ok) throw new Error(p + " " + r.status); return r.json(); });
+const fetchJSON = p => fetch(p).then(async r => {
+  if (!r.ok) throw new Error(p + " " + r.status);
+  // Keep the file before the caller continues, so a reload with no network still has it
+  // even when this fetch was not seen by the service worker.
+  const keep = /^(data\/|assets\/voice\/manifest)/.test(p) || p === "assets/manifest.json";
+  const copy = keep ? r.clone() : null;
+  const data = await r.json();
+  if (copy) { try { const c = await caches.open("wrdata"); if (!(await c.match(p))) await c.put(p, copy); } catch (e) { } }
+  return data;
+});
 
 /* ---------- art from manifest, with placeholder fallback ---------- */
 WR.asset = id => (WR.manifest && WR.manifest.assets.find(a => a.id === id)) || null;
@@ -405,9 +414,16 @@ WR.init = async () => {
   await clock;
   WR.tickPet(); WR.ensureDaily(true); WR.applyTheme();
 };
+// a bank that isn't on the device yet (offline, or the request failed). Kind note, save untouched.
+WR.miss = e => Object.assign(e instanceof Error ? e : new Error(String(e && e.message || e)), { wrMiss: true });
+WR.noteMiss = () => WR.toast("📴 This part isn't on this device yet. Connect, and it will be saved for next time.", 2400, { now: true });
+addEventListener("unhandledrejection", ev => { if (!ev.reason || !ev.reason.wrMiss) return; ev.preventDefault(); WR.noteMiss(); });
 WR.bank = async (lvl, skill) => {
   const k = lvl + "/" + skill;
-  if (!WR.data[k]) WR.data[k] = await fetchJSON("data/" + k + ".json");
+  if (!WR.data[k]) {
+    try { WR.data[k] = await fetchJSON("data/" + k + ".json"); }
+    catch (e) { throw WR.miss(e); }
+  }
   return WR.data[k];
 };
 
