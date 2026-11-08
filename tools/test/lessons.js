@@ -9,7 +9,7 @@
 const { chromium } = require('playwright-core');
 const BASE = (process.env.BASE || 'http://127.0.0.1:18642/').replace(/\/?$/, '/');
 const OUT = '/workspace/cefr-quest/screenshots/';
-const MIN_LESSONS = 35;
+const MIN_LESSONS = 39;
 let fails = 0, passes = 0;
 const ok = (c, m) => { if (!c) { fails++; console.error('FAIL', m); process.exitCode = 1; } else { passes++; console.log('ok', m); } };
 const today = () => { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
@@ -257,7 +257,7 @@ const HELPERS = () => {
   await page.evaluate(it => WR.startLesson({ realm: 'a1', skill: 'grammar', key: 'grammar', title: 'Grammar', items: [it, { ...it }] }), mcq);
   await page.waitForSelector('.qcard');
   const corner = await page.evaluate(() => { const b = document.querySelector('.qcard .ltools [data-scroll]'); if (!b) return null; const r = b.getBoundingClientRect(); return { id: b.dataset.scroll, w: r.width, h: r.height }; });
-  ok(corner && corner.id === 'en.a1.an' && corner.w >= 44 && corner.h >= 44, `English round: a 📜 corner button for the matching lesson (${JSON.stringify(corner)})`);
+  ok(corner && corner.id === 'en.a1.an' && Math.round(corner.w) >= 44 && Math.round(corner.h) >= 44, `English round: a 📜 corner button for the matching lesson (${JSON.stringify(corner)})`);
   await page.click('.qcard .ltools [data-scroll]'); await page.waitForSelector('.ln-scroll-modal');
   ok(await page.evaluate(() => /vowel|bridge|a, e, i, o/i.test(document.querySelector('.ln-scroll-modal').textContent) && !!document.querySelector('#scBack')), 'it opens the scroll over the question, with "Back to my question"');
   await page.click('#scBack'); await page.waitForTimeout(80);

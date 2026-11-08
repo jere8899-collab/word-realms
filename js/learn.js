@@ -95,6 +95,8 @@ function dragTap(root, o) {
     addEventListener("pointermove", move, { passive: false }); addEventListener("pointerup", up); addEventListener("pointercancel", up);
   });
 }
+// a finished piece: locked, no longer draggable / droppable, shown green (sort, suffix, bar)
+const settle = (el, attr) => { el.disabled = true; el.removeAttribute(attr); el.classList.add("placed"); };
 const shake = el => { if (!el) return; el.classList.remove("ln-shake"); void el.offsetWidth; el.classList.add("ln-shake"); };
 
 /* ---------- the widget kit (LESSONS-PLAN.md §2) ----------
@@ -116,7 +118,7 @@ KIT.sort = {
     dragTap(root, { nothing: () => api.say("Tap a card first, then a basket 👆"),
       onDrop(src, bin) { const it = w.items[+src.dataset.k];
         if (it.bin !== bin.dataset.b) return api.miss(`Hmm! ${it.why}`, src);
-        src.disabled = true; src.removeAttribute("data-src"); src.classList.add("placed"); bin.querySelector(".lw-in").appendChild(src);
+        settle(src, "data-src"); bin.querySelector(".lw-in").appendChild(src);
         left--; api.good(`✅ ${it.why}`); if (!left) api.done(); } });
   } };
 KIT.fill = {
@@ -133,13 +135,16 @@ KIT.fill = {
         api.good(`✅ ${it.why}`); i++; if (i >= w.items.length) { sent.innerHTML = ""; api.done(); } else show(); } });
   } };
 KIT.suffix = {
+  // optional per word: cut = letters dropped from the end before the stamp, add = what is shown instead of the stamp
+  // (stop → stop+ped, happy → happ+ier, nice → nice+r); EN-4a. Words without them show base + stamp as before.
   html: w => `<div class="lw-stamps"><button class="lw-stamp" data-src aria-label="the ${esc(w.stamp)} stamp">🔖 -${esc(w.stamp)}</button></div>
-    <div class="lw-words">${w.items.map((it, k) => `<button class="lw-word" data-tgt data-k="${k}"><span class="n">${esc(it.pre)}</span> ${esc(it.base)}<b class="sfx"></b></button>`).join("")}</div>`,
+    <div class="lw-words">${w.items.map((it, k) => `<button class="lw-word" data-tgt data-k="${k}" data-no="${esc(w.stamp)}">${it.pre ? `<span class="n">${esc(it.pre)}</span> ` : ""}<span class="bw">${esc(it.base)}</span><b class="sfx"></b></button>`).join("")}</div>`,
   bind(root, w, api) {
     let left = w.items.filter(x => x.need).length;
     const stampOn = word => { const it = w.items[+word.dataset.k];
       if (!it.need) return api.miss(`Oops! ${it.why}`, word);
-      word.querySelector(".sfx").textContent = w.stamp; word.disabled = true; word.removeAttribute("data-tgt"); word.classList.add("placed");
+      if (it.cut) word.querySelector(".bw").textContent = it.base.slice(0, -it.cut);
+      word.querySelector(".sfx").textContent = it.add || w.stamp; settle(word, "data-tgt");
       left--; api.good(`✅ ${it.why}`);
       if (!left) { root.querySelectorAll(".lw-word:not(.placed)").forEach(x => { x.classList.add("no-s"); x.disabled = true; }); api.done(); } };
     dragTap(root, { onDrop: (src, word) => stampOn(word), onTapTarget: stampOn });
@@ -471,7 +476,7 @@ KIT.bar = {
       if (kind === "add" && !placed.sold) return api.miss("Do the take-away first! Mark the sold part, then add.", part);
       if (placed[kind]) return;
       placed[kind] = true; WR.sfx("good");
-      const src = root.querySelector(`[data-src][data-v="${kind}"]`); if (src) { src.disabled = true; src.removeAttribute("data-src"); src.classList.add("placed"); }
+      const src = root.querySelector(`[data-src][data-v="${kind}"]`); if (src) settle(src, "data-src");
       api.good(kind === "sold" ? `✅ Sold ${w.sold}. Left: ${w.start - w.sold}.` : `✅ Plus ${w.add}. Now ${ans}!`);
       paint();
       if (placed.sold && placed.add) api.done(`✅ ${w.start} − ${w.sold} + ${w.add} = ${ans}`);

@@ -1,0 +1,937 @@
+{
+ "pack": "en-a2",
+ "lessons": [
+  {
+   "id": "en.a2.ed",
+   "title": "past -ed",
+   "icon": "📔",
+   "at": {
+    "realm": "a2",
+    "skill": "grammar"
+   },
+   "match": [
+    {
+     "re": "\\bregular past|add -ed",
+     "field": "explain"
+    }
+   ],
+   "art": "lesson_en_a2_ed",
+   "art_alt": "Crumb the baker dragon writes in a diary next to a fresh cake in Candy Village",
+   "hook": {
+    "text": "Crumb the baker dragon keeps a diary. Yesterday was busy! But Crumb wrote: “Yesterday I bake a cake and I play with Puffbun.” Hmm, that sounds like today. Can you fix the diary?",
+    "say": "Crumb the baker dragon keeps a diary. Yesterday was busy! But Crumb wrote: “Yesterday I bake a cake and I play with Puffbun.” Hmm, that sounds like today. Can you fix the diary?"
+   },
+   "discover": {
+    "kind": "suffix",
+    "stamp": "ed",
+    "text": "Stamp ed on the things that happened yesterday. Not every word needs it! You can drag the stamp or tap a word.",
+    "hint": "Did it happen yesterday? Stamp ed! After can or will, the verb stays plain.",
+    "items": [
+     {
+      "pre": "I",
+      "base": "bake",
+      "need": true,
+      "add": "d",
+      "why": "Bake already ends in e, so just add d: baked."
+     },
+     {
+      "pre": "we",
+      "base": "play",
+      "need": true,
+      "why": "Yesterday: we played."
+     },
+     {
+      "pre": "I",
+      "base": "can swim",
+      "need": false,
+      "why": "After can, the verb stays plain: can swim."
+     },
+     {
+      "pre": "it",
+      "base": "stop",
+      "need": true,
+      "add": "ped",
+      "why": "Stop is short, so double the p: stopped."
+     },
+     {
+      "pre": "she",
+      "base": "jump",
+      "need": true,
+      "why": "Yesterday: she jumped."
+     },
+     {
+      "pre": "we",
+      "base": "will clean",
+      "need": false,
+      "why": "Will is for later, and the verb stays plain: will clean."
+     }
+    ],
+    "say": "Stamp ed on the things that happened yesterday. Not every word needs it! You can drag the stamp or tap a word."
+   },
+   "rule": {
+    "text": "To talk about yesterday or last week, add -ed to the doing word: play becomes played. If it ends in e, just add d: baked. Short words like stop and hop double the last letter: stopped, hopped.",
+    "examples": [
+     "Crumb baked a cake yesterday.",
+     "We played in the park.",
+     "The bus stopped at the shop."
+    ],
+    "say": "To talk about yesterday or last week, add -ed to the doing word: play becomes played. If it ends in e, just add d: baked. Short words like stop and hop double the last letter: stopped, hopped.",
+    "sayEx": [
+     "Crumb baked a cake yesterday.",
+     "We played in the park.",
+     "The bus stopped at the shop."
+    ]
+   },
+   "check": [
+    {
+     "q": "Yesterday Crumb ___ a big cake.",
+     "options": [
+      "baked",
+      "bakes",
+      "bakeed"
+     ],
+     "answer": 0,
+     "notes": {
+      "bakes": "Bakes is for every day. Yesterday needs baked.",
+      "bakeed": "Bake already ends in e. Just add d: baked."
+     },
+     "explain": "Yesterday: Crumb baked a big cake.",
+     "say": "Yesterday Crumb blank a big cake."
+    },
+    {
+     "q": "Last night the bus ___ at the candy shop.",
+     "options": [
+      "stopped",
+      "stoped",
+      "stops"
+     ],
+     "answer": 0,
+     "notes": {
+      "stoped": "Stop is a short word, so double the p: stopped.",
+      "stops": "Stops is for every day. Last night: stopped."
+     },
+     "explain": "Double the p: the bus stopped.",
+     "say": "Last night the bus blank at the candy shop."
+    },
+    {
+     "q": "Which sentence is about yesterday?",
+     "options": [
+      "We played in the park.",
+      "We play in the park.",
+      "We can played in the park."
+     ],
+     "answer": 0,
+     "notes": {
+      "We play in the park.": "Play with no -ed is for now or every day.",
+      "We can played in the park.": "After can, the verb stays plain: can play."
+     },
+     "explain": "Played has the -ed, so it already happened.",
+     "say": "Which sentence is about yesterday?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way. The -ed is a little time machine! Stick it on a doing word and the word zooms back to yesterday. Two spelling tricks: an e at the end just needs a d, and a short word like hop gets a double letter.",
+    "examples": [
+     "⏪ walk → walked",
+     "⏪ like → liked (just d)",
+     "⏪ hop → hopped (double p)"
+    ],
+    "discover": {
+     "kind": "suffix",
+     "stamp": "ed",
+     "text": "Time machine! Stamp ed to send these words back to yesterday.",
+     "hint": "Like ends in e: just d. Hop and clap are short: double the last letter.",
+     "items": [
+      {
+       "pre": "I",
+       "base": "like",
+       "need": true,
+       "add": "d",
+       "why": "Like ends in e: liked."
+      },
+      {
+       "pre": "he",
+       "base": "hop",
+       "need": true,
+       "add": "ped",
+       "why": "Short word, double the p: hopped."
+      },
+      {
+       "pre": "I",
+       "base": "can dance",
+       "need": false,
+       "why": "After can, the verb stays plain: can dance."
+      },
+      {
+       "pre": "we",
+       "base": "clap",
+       "need": true,
+       "add": "ped",
+       "why": "Short word, double the p: clapped."
+      },
+      {
+       "pre": "you",
+       "base": "look",
+       "need": true,
+       "why": "Yesterday: you looked."
+      }
+     ],
+     "say": "Time machine! Stamp ed to send these words back to yesterday."
+    },
+    "say": "Here's another way. The -ed is a little time machine! Stick it on a doing word and the word zooms back to yesterday. Two spelling tricks: an e at the end just needs a d, and a short word like hop gets a double letter."
+   },
+   "check2": [
+    {
+     "q": "Last week we ___ our room.",
+     "options": [
+      "cleaned",
+      "cleaning",
+      "clean"
+     ],
+     "answer": 0,
+     "notes": {
+      "cleaning": "Cleaning needs is or was in front of it. Last week: cleaned.",
+      "clean": "Clean is for now. Last week: cleaned."
+     },
+     "explain": "Last week is finished: we cleaned our room.",
+     "say": "Last week we blank our room."
+    },
+    {
+     "q": "Puffbun ___ over the fence yesterday.",
+     "options": [
+      "hopped",
+      "hoped",
+      "hops"
+     ],
+     "answer": 0,
+     "notes": {
+      "hoped": "Hoped comes from hope, which means to wish! For hop, double the p: hopped.",
+      "hops": "Hops is for every day. Yesterday: hopped."
+     },
+     "explain": "Hop is short, so double the p: hopped.",
+     "say": "Puffbun blank over the fence yesterday."
+    },
+    {
+     "q": "Which word is spelled right?",
+     "options": [
+      "liked",
+      "likeed",
+      "likked"
+     ],
+     "answer": 0,
+     "notes": {
+      "likeed": "Like already ends in e. Just add d: liked.",
+      "likked": "Like ends in e, so no double letter. Just add d: liked."
+     },
+     "explain": "Like ends in e, so just add d: liked.",
+     "say": "Which word is spelled right?"
+    }
+   ],
+   "grown": "👪 Past simple, regular verbs (A2 Key). Spelling: final -e → add -d (baked); consonant doubling after a short stressed vowel (stop → stopped); can / will + bare infinitive as the contrast. -y → -ied (cry → cried) and the /t/ /d/ /ɪd/ endings are met in practice, not taught here.",
+   "pack": "en-a2"
+  },
+  {
+   "id": "en.a2.irreg",
+   "title": "went, ate, saw",
+   "icon": "✨",
+   "at": {
+    "realm": "a2",
+    "skill": "grammar"
+   },
+   "match": [
+    {
+     "re": "irregular past|past simple.*irregular|go → went|went \\(go\\)|\\+ went \\+",
+     "field": "explain"
+    }
+   ],
+   "art": "lesson_en_a2_irreg",
+   "art_alt": "Hoot the owl reads a funny diary page while Sumi the fox giggles in a candy shop",
+   "hook": {
+    "text": "Hoot stamped -ed on EVERY word in the diary: “I goed to the shop and I eated a lollipop!” Sumi giggles. That sounds funny! Some words don't want a stamp. Let's find them.",
+    "say": "Hoot stamped -ed on EVERY word in the diary: “I goed to the shop and I eated a lollipop!” Sumi giggles. That sounds funny! Some words don't want a stamp. Let's find them."
+   },
+   "discover": {
+    "kind": "sort",
+    "text": "Sort the yesterday words. Does the word just add -ed, or does it change into a new word? Drag each card or tap it, then tap a basket.",
+    "hint": "Look at the end. Played has -ed. Went is a whole new word!",
+    "bins": [
+     {
+      "id": "ed",
+      "label": "adds -ed",
+      "icon": "🔖"
+     },
+     {
+      "id": "new",
+      "label": "new word",
+      "icon": "✨"
+     }
+    ],
+    "items": [
+     {
+      "t": "play → played",
+      "bin": "ed",
+      "why": "Play just adds -ed: played."
+     },
+     {
+      "t": "go → went",
+      "bin": "new",
+      "why": "Go changes into a new word: went."
+     },
+     {
+      "t": "eat → ate",
+      "bin": "new",
+      "why": "Eat changes into a new word: ate."
+     },
+     {
+      "t": "jump → jumped",
+      "bin": "ed",
+      "why": "Jump just adds -ed: jumped."
+     },
+     {
+      "t": "see → saw",
+      "bin": "new",
+      "why": "See changes into a new word: saw."
+     },
+     {
+      "t": "cook → cooked",
+      "bin": "ed",
+      "why": "Cook just adds -ed: cooked."
+     },
+     {
+      "t": "have → had",
+      "bin": "new",
+      "why": "Have changes into a new word: had."
+     },
+     {
+      "t": "walk → walked",
+      "bin": "ed",
+      "why": "Walk just adds -ed: walked."
+     }
+    ],
+    "say": "Sort the yesterday words. Does the word just add -ed, or does it change into a new word? Drag each card or tap it, then tap a basket."
+   },
+   "rule": {
+    "text": "Most doing words add -ed for yesterday. But some special words change into a new word: go becomes went, eat becomes ate, see becomes saw, have becomes had. We learn these by heart, like the names of friends!",
+    "examples": [
+     "Yesterday I went to the shop.",
+     "Hoot ate a lollipop.",
+     "We saw a rainbow."
+    ],
+    "say": "Most doing words add -ed for yesterday. But some special words change into a new word: go becomes went, eat becomes ate, see becomes saw, have becomes had. We learn these by heart, like the names of friends!",
+    "sayEx": [
+     "Yesterday I went to the shop.",
+     "Hoot ate a lollipop.",
+     "We saw a rainbow."
+    ]
+   },
+   "check": [
+    {
+     "q": "Yesterday we ___ to the beach.",
+     "options": [
+      "went",
+      "goed",
+      "go"
+     ],
+     "answer": 0,
+     "notes": {
+      "goed": "Go is a special word. Goed isn't a word: say went.",
+      "go": "Go is for now. Yesterday: went."
+     },
+     "explain": "Go is special: yesterday we went.",
+     "say": "Yesterday we blank to the beach."
+    },
+    {
+     "q": "Last night Sumi ___ three cookies.",
+     "options": [
+      "ate",
+      "eated",
+      "eats"
+     ],
+     "answer": 0,
+     "notes": {
+      "eated": "Eat is a special word. Eated isn't a word: say ate.",
+      "eats": "Eats is for every day. Last night: ate."
+     },
+     "explain": "Eat is special: Sumi ate three cookies.",
+     "say": "Last night Sumi blank three cookies."
+    },
+    {
+     "q": "Which sentence is right?",
+     "options": [
+      "I saw a big cat yesterday.",
+      "I seed a big cat yesterday.",
+      "I see a big cat yesterday."
+     ],
+     "answer": 0,
+     "notes": {
+      "I seed a big cat yesterday.": "See is a special word. Seed isn't its past: say saw.",
+      "I see a big cat yesterday.": "See is for now. Yesterday: saw."
+     },
+     "explain": "See is special: I saw a big cat.",
+     "say": "Which sentence is right?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way. Say the special words like a little song: go, went. Eat, ate. See, saw. Have, had. Come, came. If a word with -ed sounds silly, like goed or eated, it's a special word!",
+    "examples": [
+     "🎵 go – went",
+     "🎵 eat – ate",
+     "🎵 come – came"
+    ],
+    "discover": {
+     "kind": "fill",
+     "text": "Sing it, then drag the special word into each gap. You can also tap a word.",
+     "hint": "go → went, eat → ate, see → saw, come → came.",
+     "tiles": [
+      "went",
+      "ate",
+      "saw",
+      "came"
+     ],
+     "items": [
+      {
+       "s": "Yesterday I ___ to school.",
+       "a": "went",
+       "why": "Go is special: went."
+      },
+      {
+       "s": "We ___ pizza last night.",
+       "a": "ate",
+       "why": "Eat is special: ate."
+      },
+      {
+       "s": "I ___ a shooting star.",
+       "a": "saw",
+       "why": "See is special: saw."
+      },
+      {
+       "s": "Grandma ___ to my party.",
+       "a": "came",
+       "why": "Come is special: came."
+      }
+     ],
+     "say": "Sing it, then drag the special word into each gap. You can also tap a word."
+    },
+    "say": "Here's another way. Say the special words like a little song: go, went. Eat, ate. See, saw. Have, had. Come, came. If a word with -ed sounds silly, like goed or eated, it's a special word!"
+   },
+   "check2": [
+    {
+     "q": "Hoot ___ a new hat last week.",
+     "options": [
+      "had",
+      "haved",
+      "has"
+     ],
+     "answer": 0,
+     "notes": {
+      "haved": "Have is a special word. Haved isn't a word: say had.",
+      "has": "Has is for now. Last week: had."
+     },
+     "explain": "Have is special: Hoot had a new hat.",
+     "say": "Hoot blank a new hat last week."
+    },
+    {
+     "q": "Grandma ___ to visit us last Sunday.",
+     "options": [
+      "came",
+      "comed",
+      "comes"
+     ],
+     "answer": 0,
+     "notes": {
+      "comed": "Come is a special word. Comed isn't a word: say came.",
+      "comes": "Comes is for every week. Last Sunday: came."
+     },
+     "explain": "Come is special: Grandma came last Sunday.",
+     "say": "Grandma blank to visit us last Sunday."
+    },
+    {
+     "q": "Which past word just adds -ed?",
+     "options": [
+      "played",
+      "went",
+      "ate"
+     ],
+     "answer": 0,
+     "notes": {
+      "went": "Went is a new word for go. It has no -ed.",
+      "ate": "Ate is a new word for eat. It has no -ed."
+     },
+     "explain": "Play just adds -ed: played.",
+     "say": "Which past word just adds -ed?"
+    }
+   ],
+   "grown": "👪 Past simple, irregular verbs (A2 Key list: go/went, eat/ate, see/saw, have/had, come/came). Saying goed or eated is a normal stage of learning: praise the try, then say the right form back.",
+   "pack": "en-a2"
+  },
+  {
+   "id": "en.a2.comp",
+   "title": "bigger, more beautiful",
+   "icon": "⚖️",
+   "at": {
+    "realm": "a2",
+    "skill": "grammar"
+   },
+   "match": [
+    {
+     "re": "comparative|-er to compare|-er \\+ than|→ \\w+er than|→ \\w+er\\. Example:.* than|more \\+ adjective \\+ than|good → better",
+     "field": "explain"
+    }
+   ],
+   "art": "lesson_en_a2_comp",
+   "art_alt": "Puffbun and Sumi race along a candy path while Crumb holds two cakes, one small and one big",
+   "hook": {
+    "text": "It's race day in Candy Village! Puffbun is fast. Sumi is even faster! Then Crumb shows two cakes. One is beautiful, and the other is… beautifuller? That sounds silly! How do we compare two things?",
+    "say": "It's race day in Candy Village! Puffbun is fast. Sumi is even faster! Then Crumb shows two cakes. One is beautiful, and the other is… beautifuller? That sounds silly! How do we compare two things?"
+   },
+   "discover": {
+    "kind": "suffix",
+    "stamp": "er",
+    "text": "Stamp er on the short words. Long words use more instead! Drag the stamp or tap a word.",
+    "hint": "Clap the word. One clap (tall, big) → er. Lots of claps (beau-ti-ful) → no stamp.",
+    "items": [
+     {
+      "pre": "",
+      "base": "tall",
+      "need": true,
+      "why": "Tall is short: taller."
+     },
+     {
+      "pre": "",
+      "base": "big",
+      "need": true,
+      "add": "ger",
+      "why": "Big is short, so double the g: bigger."
+     },
+     {
+      "pre": "more",
+      "base": "beautiful",
+      "need": false,
+      "why": "Beautiful is long, so it uses more: more beautiful."
+     },
+     {
+      "pre": "",
+      "base": "nice",
+      "need": true,
+      "add": "r",
+      "why": "Nice ends in e, so just add r: nicer."
+     },
+     {
+      "pre": "",
+      "base": "small",
+      "need": true,
+      "why": "Small is short: smaller."
+     },
+     {
+      "pre": "more",
+      "base": "expensive",
+      "need": false,
+      "why": "Expensive is long, so it uses more: more expensive."
+     }
+    ],
+    "say": "Stamp er on the short words. Long words use more instead! Drag the stamp or tap a word."
+   },
+   "rule": {
+    "text": "To compare two things, short words add -er: tall becomes taller, big becomes bigger, nice becomes nicer. Long words use more: more beautiful. Then add than: Sumi is faster than Puffbun.",
+    "examples": [
+     "Sumi is faster than Puffbun.",
+     "A lion is bigger than a cat.",
+     "This cake is more beautiful than that one."
+    ],
+    "say": "To compare two things, short words add -er: tall becomes taller, big becomes bigger, nice becomes nicer. Long words use more: more beautiful. Then add than: Sumi is faster than Puffbun.",
+    "sayEx": [
+     "Sumi is faster than Puffbun.",
+     "A lion is bigger than a cat.",
+     "This cake is more beautiful than that one."
+    ]
+   },
+   "check": [
+    {
+     "q": "A lion is ___ than a cat.",
+     "options": [
+      "bigger",
+      "more big",
+      "biggest"
+     ],
+     "answer": 0,
+     "notes": {
+      "more big": "Big is short, so it takes -er: bigger.",
+      "biggest": "Biggest is for the top one of a group. Two animals: bigger than."
+     },
+     "explain": "Big is short: a lion is bigger than a cat.",
+     "say": "A lion is blank than a cat."
+    },
+    {
+     "q": "This dress is ___ than that one.",
+     "options": [
+      "more beautiful",
+      "beautifuller",
+      "beautifullest"
+     ],
+     "answer": 0,
+     "notes": {
+      "beautifuller": "Beautiful is long, so no -er. Say more beautiful.",
+      "beautifullest": "That isn't a word. For two things: more beautiful than."
+     },
+     "explain": "Beautiful is long: more beautiful than.",
+     "say": "This dress is blank than that one."
+    },
+    {
+     "q": "Which sentence is right?",
+     "options": [
+      "Sumi is faster than Puffbun.",
+      "Sumi is more fast than Puffbun.",
+      "Sumi is faster that Puffbun."
+     ],
+     "answer": 0,
+     "notes": {
+      "Sumi is more fast than Puffbun.": "Fast is short, so it takes -er: faster.",
+      "Sumi is faster that Puffbun.": "To compare, use than, not that."
+     },
+     "explain": "Short word + -er + than: faster than.",
+     "say": "Which sentence is right?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way. Clap the word! One clap, like fast or hot, gets -er. Words that end in y, like happy, change the y to i: happier. Lots of claps, like dan-ger-ous, get more in front. And one special word: good becomes better!",
+    "examples": [
+     "👏 fast → faster",
+     "🙂 happy → happier",
+     "👏👏👏 dangerous → more dangerous",
+     "⭐ good → better"
+    ],
+    "discover": {
+     "kind": "suffix",
+     "stamp": "er",
+     "text": "Clap and stamp! Stamp er on the words that take it.",
+     "hint": "Happy and funny: y becomes i. Hot: double the t. Long words: no stamp.",
+     "items": [
+      {
+       "pre": "",
+       "base": "happy",
+       "need": true,
+       "cut": 1,
+       "add": "ier",
+       "why": "Happy ends in y: happier."
+      },
+      {
+       "pre": "",
+       "base": "hot",
+       "need": true,
+       "add": "ter",
+       "why": "Hot is short, so double the t: hotter."
+      },
+      {
+       "pre": "more",
+       "base": "dangerous",
+       "need": false,
+       "why": "Dangerous is long, so it uses more: more dangerous."
+      },
+      {
+       "pre": "",
+       "base": "funny",
+       "need": true,
+       "cut": 1,
+       "add": "ier",
+       "why": "Funny ends in y: funnier."
+      },
+      {
+       "pre": "more",
+       "base": "interesting",
+       "need": false,
+       "why": "Interesting is long, so it uses more: more interesting."
+      }
+     ],
+     "say": "Clap and stamp! Stamp er on the words that take it."
+    },
+    "say": "Here's another way. Clap the word! One clap, like fast or hot, gets -er. Words that end in y, like happy, change the y to i: happier. Lots of claps, like dan-ger-ous, get more in front. And one special word: good becomes better!"
+   },
+   "check2": [
+    {
+     "q": "Today is ___ than yesterday.",
+     "options": [
+      "hotter",
+      "hoter",
+      "more hot"
+     ],
+     "answer": 0,
+     "notes": {
+      "hoter": "Hot is short, so double the t: hotter.",
+      "more hot": "Hot is short, so it takes -er: hotter."
+     },
+     "explain": "Double the t: today is hotter.",
+     "say": "Today is blank than yesterday."
+    },
+    {
+     "q": "My cat is ___ than my dog.",
+     "options": [
+      "happier",
+      "happyer",
+      "more happy"
+     ],
+     "answer": 0,
+     "notes": {
+      "happyer": "Happy ends in y. Change y to i, then -er: happier.",
+      "more happy": "We usually say happier, because happy ends in y."
+     },
+     "explain": "y becomes i: happier than.",
+     "say": "My cat is blank than my dog."
+    },
+    {
+     "q": "My new book is ___ than my old one.",
+     "options": [
+      "more interesting",
+      "interestinger",
+      "interesting"
+     ],
+     "answer": 0,
+     "notes": {
+      "interestinger": "Interesting is long, so no -er. Say more interesting.",
+      "interesting": "We are comparing two books, so we need more … than."
+     },
+     "explain": "Long word: more interesting than.",
+     "say": "My new book is blank than my old one."
+    }
+   ],
+   "grown": "👪 Comparative adjectives (A2 Key): one syllable + -er (doubling big → bigger, -e → -r), two syllables ending in -y → -ier, longer adjectives more + adjective, followed by than. Irregular good → better is introduced; bad → worse is met in practice.",
+   "pack": "en-a2"
+  },
+  {
+   "id": "en.a2.super",
+   "title": "the biggest",
+   "icon": "🏆",
+   "at": {
+    "realm": "a2",
+    "skill": "grammar"
+   },
+   "match": [
+    {
+     "re": "superlative|-est\\b|the top|→ best",
+     "field": "explain"
+    }
+   ],
+   "art": "lesson_en_a2_super",
+   "art_alt": "Crumb the baker dragon at a cake show with three cakes in a row, the tallest one wearing a gold ribbon",
+   "hook": {
+    "text": "It's the Candy Village Cake Show! Crumb baked three cakes: a big one, a bigger one, and one that is bigger than ALL the others. What should the gold ribbon say?",
+    "say": "It's the Candy Village Cake Show! Crumb baked three cakes: a big one, a bigger one, and one that is bigger than ALL the others. What should the gold ribbon say?"
+   },
+   "discover": {
+    "kind": "suffix",
+    "stamp": "est",
+    "text": "Make the gold ribbons! Stamp est on the short words. Long words use the most instead. Drag the stamp or tap a word.",
+    "hint": "Short word → the + est. Long word (lots of claps) → no stamp, say the most.",
+    "items": [
+     {
+      "pre": "the",
+      "base": "tall",
+      "need": true,
+      "why": "The number one: the tallest."
+     },
+     {
+      "pre": "the",
+      "base": "big",
+      "need": true,
+      "add": "gest",
+      "why": "Big is short, so double the g: the biggest."
+     },
+     {
+      "pre": "the most",
+      "base": "delicious",
+      "need": false,
+      "why": "Delicious is long, so it uses the most: the most delicious."
+     },
+     {
+      "pre": "the",
+      "base": "nice",
+      "need": true,
+      "add": "st",
+      "why": "Nice ends in e, so just add st: the nicest."
+     },
+     {
+      "pre": "the",
+      "base": "small",
+      "need": true,
+      "why": "The number one: the smallest."
+     },
+     {
+      "pre": "the most",
+      "base": "beautiful",
+      "need": false,
+      "why": "Beautiful is long, so it uses the most: the most beautiful."
+     }
+    ],
+    "say": "Make the gold ribbons! Stamp est on the short words. Long words use the most instead. Drag the stamp or tap a word."
+   },
+   "rule": {
+    "text": "To pick the number one in a group, use the and add -est: the tallest, the biggest, the nicest. Long words use the most: the most beautiful.",
+    "examples": [
+     "This is the biggest cake.",
+     "Sumi is the fastest fox.",
+     "It's the most delicious cake in the show!"
+    ],
+    "say": "To pick the number one in a group, use the and add -est: the tallest, the biggest, the nicest. Long words use the most: the most beautiful.",
+    "sayEx": [
+     "This is the biggest cake.",
+     "Sumi is the fastest fox.",
+     "It's the most delicious cake in the show!"
+    ]
+   },
+   "check": [
+    {
+     "q": "Sumi is the ___ fox in Candy Village.",
+     "options": [
+      "fastest",
+      "faster",
+      "most fast"
+     ],
+     "answer": 0,
+     "notes": {
+      "faster": "Faster compares only two. The number one of all: the fastest.",
+      "most fast": "Fast is short, so it takes -est: the fastest."
+     },
+     "explain": "The number one: the fastest fox.",
+     "say": "Sumi is the blank fox in Candy Village."
+    },
+    {
+     "q": "This is the ___ cake in the shop!",
+     "options": [
+      "most delicious",
+      "deliciousest",
+      "more delicious"
+     ],
+     "answer": 0,
+     "notes": {
+      "deliciousest": "Delicious is long, so no -est. Say the most delicious.",
+      "more delicious": "More is for two things. The number one: the most delicious."
+     },
+     "explain": "Long word: the most delicious.",
+     "say": "This is the blank cake in the shop!"
+    },
+    {
+     "q": "Which sentence is right?",
+     "options": [
+      "Puffbun is the smallest bunny.",
+      "Puffbun is smallest bunny.",
+      "Puffbun is the most small bunny."
+     ],
+     "answer": 0,
+     "notes": {
+      "Puffbun is smallest bunny.": "Don't forget the: the smallest.",
+      "Puffbun is the most small bunny.": "Small is short, so it takes -est: the smallest."
+     },
+     "explain": "the + short word + est: the smallest.",
+     "say": "Which sentence is right?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way. Think of a prize podium with steps. Step one: tall. Step two, comparing two: taller. The top step, the winner of everyone: the tallest. The top step always has the. And good is special: good, better, the best!",
+    "examples": [
+     "🥉 tall → 🥈 taller → 🥇 the tallest",
+     "🥉 funny → 🥈 funnier → 🥇 the funniest",
+     "🥉 good → 🥈 better → 🥇 the best"
+    ],
+    "discover": {
+     "kind": "sort",
+     "text": "Two things or the top of all? Drag each card into its step, or tap a card and then a step.",
+     "hint": "Than means two things. The … -est means the winner of everyone.",
+     "bins": [
+      {
+       "id": "two",
+       "label": "two things",
+       "icon": "🥈"
+      },
+      {
+       "id": "top",
+       "label": "top of all",
+       "icon": "🥇"
+      }
+     ],
+     "items": [
+      {
+       "t": "taller than me",
+       "bin": "two",
+       "why": "Than compares two: taller than."
+      },
+      {
+       "t": "the tallest in class",
+       "bin": "top",
+       "why": "The number one in class: the tallest."
+      },
+      {
+       "t": "bigger than a cat",
+       "bin": "two",
+       "why": "Than compares two: bigger than."
+      },
+      {
+       "t": "the biggest of all",
+       "bin": "top",
+       "why": "Of all means the winner: the biggest."
+      },
+      {
+       "t": "the best",
+       "bin": "top",
+       "why": "Good, better, the best: the top."
+      },
+      {
+       "t": "better than before",
+       "bin": "two",
+       "why": "Than compares two: better than."
+      }
+     ],
+     "say": "Two things or the top of all? Drag each card into its step, or tap a card and then a step."
+    },
+    "say": "Here's another way. Think of a prize podium with steps. Step one: tall. Step two, comparing two: taller. The top step, the winner of everyone: the tallest. The top step always has the. And good is special: good, better, the best!"
+   },
+   "check2": [
+    {
+     "q": "It's 35 degrees! This is the ___ day of the year.",
+     "options": [
+      "hottest",
+      "hotest",
+      "most hot"
+     ],
+     "answer": 0,
+     "notes": {
+      "hotest": "Hot is short, so double the t: hottest.",
+      "most hot": "Hot is short, so it takes -est: the hottest."
+     },
+     "explain": "Double the t: the hottest day.",
+     "say": "It's 35 degrees! This is the blank day of the year."
+    },
+    {
+     "q": "We laughed and laughed. That was the ___ film ever!",
+     "options": [
+      "funniest",
+      "funnyest",
+      "most funny"
+     ],
+     "answer": 0,
+     "notes": {
+      "funnyest": "Funny ends in y. Change y to i, then -est: funniest.",
+      "most funny": "We usually say the funniest, because funny ends in y."
+     },
+     "explain": "y becomes i: the funniest film.",
+     "say": "We laughed and laughed. That was the blank film ever!"
+    },
+    {
+     "q": "Hoot got 10 out of 10. That's the ___ score!",
+     "options": [
+      "best",
+      "goodest",
+      "most good"
+     ],
+     "answer": 0,
+     "notes": {
+      "goodest": "Good is special: good, better, the best.",
+      "most good": "Good is special. We never say most good: the best."
+     },
+     "explain": "Good is special: the best score.",
+     "say": "Hoot got 10 out of 10. That's the blank score!"
+    }
+   ],
+   "grown": "👪 Superlative adjectives (A2 Key): the + adjective + -est / the most + longer adjective; spelling as for comparatives (biggest, nicest, funniest); irregular good → best. Usually followed by in / of (the tallest in the class).",
+   "pack": "en-a2"
+  }
+ ]
+}

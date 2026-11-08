@@ -71,7 +71,7 @@
 .lw-word .sfx{color:#FF6F91}
 .lw-word.placed{border-color:var(--good);background:#EFFFF6}
 .lw-word.no-s{border-color:#E2D6FF;opacity:.85}
-.lw-word.no-s::after{content:" ✓ no s";font-size:.75rem;color:var(--ink2)}
+.lw-word.no-s::after{content:" ✓ no " attr(data-no);font-size:.75rem;color:var(--ink2)}
 /* scenes: on / under / in */
 .lw-task{font-weight:900;font-size:1.1rem;text-align:center;margin-bottom:8px}
 .lw-scene{position:relative;height:240px;border-radius:18px;background:linear-gradient(180deg,#EEF6FF 0 72%,#FFE9D6 72%);overflow:hidden;max-width:420px;margin:0 auto}
