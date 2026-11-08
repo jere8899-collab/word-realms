@@ -289,7 +289,7 @@ function submit(val, btn) {
   const q = L.items[L.i], res = MG.check(q, val);
   if (res.empty) return WR.toast("Type your answer first ✏️", 1800, { now: true });
   if (res.bad) return WR.toast(BAD_INPUT[q.kind] || BAD_INPUT.num, 2400, { now: true });
-  const s = WR.state, m = MW.st(), qk = q.topic || L.key; L.tries++;
+  const m = MW.st(), qk = q.topic || L.key; L.tries++;
   if (res.ok) {
     L.done = true; const pts = L.tries === 1 ? 1 : 0.5; L.pts += pts; L.res[L.i] = pts; L.correct++; WR.countAnswer(true, "m:" + qk); m.correct = (m.correct || 0) + 1; m.answered = (m.answered || 0) + 1;
     if (L.tries === 1) { L.combo++; L.maxCombo = Math.max(L.maxCombo, L.combo); let gain = 1; if (L.combo % 3 === 0) gain++; L.starsEarned += WR.awardStars("m", q.uid || qk + "|" + q.q + "|" + q.a, gain, { tally: L, quiet: true }); if (L.combo === 5) WR.questEvent("combo5"); } else L.combo = 0;
