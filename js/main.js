@@ -328,8 +328,8 @@ function bindOfflineRow(bg) {
   const ob = bg.querySelector("#offBtn"), os = bg.querySelector("#offState");
   if (!ob) return;
   const ready = () => { os.textContent = "✅ Ready for offline play"; ob.textContent = "Done"; ob.disabled = true; };
-  WR.offline.status().then(d => { if (d && d.ready) ready(); else if (d && WR.offline.lite()) os.textContent = "on mobile data: pictures load as you play"; });
-  ob.onclick = () => { ob.disabled = true; ob.textContent = "…"; WR.offline.download(d => { if (!d.ready && d.total) os.textContent = `Downloading pictures… ${d.done}/${d.total}`; }).then(d => d ? ready() : (ob.disabled = false, ob.textContent = "Download")); };
+  WR.offline.status().then(d => { if (d && d.ready) ready(); else if (d && WR.offline.lite()) os.textContent = "on mobile data: stories and pictures load as you play"; });
+  ob.onclick = () => { ob.disabled = true; ob.textContent = "…"; WR.offline.download(d => { if (!d.ready && d.total) os.textContent = `Saving stories and pictures… ${d.done}/${d.total}`; }).then(d => d ? ready() : (ob.disabled = false, ob.textContent = "Download")); };
 }
 
 /* ---------------- settings ---------------- */
@@ -342,7 +342,7 @@ function settings() {
     <label class="set-row"><span>🐾 Cute pet voice</span><input type="checkbox" id="petV" ${s.settings.petVoice !== false ? "checked" : ""}></label>
     <label class="set-row"><span>🎲 Maths Daily Mix <small class="muted" style="display:block;font-size:.72rem">5 mixed review questions a day</small></span><input type="checkbox" id="dMix" ${s.settings.dailyMix !== false ? "checked" : ""}></label>
     <div class="set-row" style="cursor:default"><span>🗣️ Listening speed</span><input type="range" class="slider" id="rt" min="0.5" max="1.3" step="0.1" value="${s.settings.rate}" aria-label="Listening speed"></div>
-    ${WR.offline && navigator.serviceWorker ? `<div class="set-row" style="cursor:default"><span>📲 Offline play <small class="muted" id="offState" style="display:block;font-size:.72rem">pictures load as you play</small></span><button class="btn small ghost" id="offBtn">Download</button></div>` : ""}
+    ${WR.offline && navigator.serviceWorker ? `<div class="set-row" style="cursor:default"><span>📲 Offline play <small class="muted" id="offState" style="display:block;font-size:.72rem">stories and pictures load as you play</small></span><button class="btn small ghost" id="offBtn">Download</button></div>` : ""}
     <div class="row" style="justify-content:center;margin-top:16px"><button class="btn ghost small grownups-btn" id="guBtn">👪 Grown-ups</button><button class="btn ghost small" id="test">🔈 Test voice</button><button class="btn ghost small" id="testPet">🐾 Hear my pet</button><button class="btn ghost small" id="plRe">🪞 Placement quiz</button>${WR.Cloud ? '<button class="btn ghost small" id="ccSet">🏰 Cloud save</button>' : ""}<button class="btn small" id="cls">Done</button></div>`, (bg, close) => {
     bg.querySelector("#snd").onchange = e => { s.settings.sound = e.target.checked; WR.save(); };
     bg.querySelector("#rt").oninput = e => { s.settings.rate = +e.target.value; WR.save(); };

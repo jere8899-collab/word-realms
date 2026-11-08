@@ -5,7 +5,9 @@
       voice (js/speech.js), gently tuned per character from data/voices.json (pets a little higher and slower).
    Listening, dictation and stories always use the narrator profile (af_heart, unmodified), so learners hear clear,
    natural English; the cute pet voice is only for pet chatter, and pets only chatter when "Cute pet voices" is on.
-   MP3s are NOT precached by the service worker: each one is cached the first time it plays (sw.js runtime cache). */
+   MP3s are NOT precached by the service worker: each one is cached the first time it plays (sw.js runtime cache).
+   The lookup file (manifest.json) is loaded on the first spoken line, not with the map, so the first visit stays small.
+   A line with no recording, or no lookup on the device yet, uses the device voice. */
 (function () {
 const WR = window.WR;
 const EMOJI = /[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE0F}\u{200D}\u{2B50}\u{2B06}\u{2190}-\u{21FF}\u{2300}-\u{23FF}]/gu;
@@ -63,5 +65,4 @@ WR.say = (text, o = {}) => {
 };
 // 🐾 pet chatter — only when cute pet voices are on (Settings), never during a lesson question
 WR.petSay = text => { if (settings().petVoice === false) return; WR.say(text, { character: "pet_" + ((WR.state.pet && WR.state.pet.species) || "") }); };
-V.load();
 })();
