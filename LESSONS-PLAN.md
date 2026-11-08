@@ -2,6 +2,11 @@
 
 **Phase 1 (plan + engine + pilot): ✅ done (commit 1d135e5, 2026-11-04).** EN-2 + MA-2 ✅ (f4ee083). The 2-hourly routine may now take the next batch (§5: EN-3, then MA-3).
 
+> Checkpoint 2026-11-08 ~12:50 SGT: the 2026-11-05 run stopped before committing, so the first 5 G1 lessons were not live until now. Shipped with a narrator fix (□ → "what number" in `speak()`), the 512 px app icon moved out of the first-visit precache (lightload 2.01 → 1.87 MB) and lightart counting each picture once. Next math turn: MA-3b.
+> Checkpoint 2026-11-05 ~18:20 SGT (MA-3 first 5 built): GenerateImage hooks installed for count/add20/sub20/bonds/shapes; pack renamed `tools/lessons/m_g1.py`; 35 lessons in index; narrator voice recorded (76 new af_heart lines); shapecount widget shipped earlier. Remaining G1: money/time/picgraph/story.
+>
+> Checkpoint 2026-11-05 ~18:10 SGT (MA-3 blocked on art): scoped cleanup in `js/learn.js` (`later` / `saySoon` helpers for multi-stage widgets). New kit widget `shapecount` (tap sides/corners; CSS + lesson_build validation + lessons.js `__solve`). Draft pack `tools/lessons/_m_g1.py` has all 5 G1 lessons (count/add20/sub20/bonds/shapes) ready to rename to `m_g1.py`. **GenerateImage unavailable** this run (cursor tool missing) — STOP art, no Pillow/Higgsfield stand-ins, no deploy. EN-3 commit filled: 342673e. Left: paint 5 hooks → install → rename pack → voice → tests → deploy; then the other 4 G1 lessons (money/time/picgraph/story).
+>
 > Checkpoint 2026-11-05 ~10:00 SGT (EN-3 complete 8/8): shipped `en.a1.detail` (findword), `en.a1.listennum` (spellhear), `en.a1.keyword` (hearpic) + the earlier 5. Three new widgets in `js/learn.js` / `css/learn.css`. All 8 EN-3 hook arts are GenerateImage paintings (Pillow stand-ins replaced). A1 English now 20/20. lessons.js + full suite green this run. Deploy commit filled in §5.
 >
 > Checkpoint 2026-11-05 04:00 SGT (EN-3 partial): shipped 5/8 — `en.a1.ing`, `en.a1.waswere`, `en.a1.place2` (new `park` spots scene: nextto/behind/front), `en.a1.timeprep`, `en.a1.feel`. Left for later: detail, listennum, keyword (need new widgets). Cleanup: TOKEN_NAME map for spots tokens; park scene wired in learn.js / learn.css / lesson_build SCENES. Art: Pillow pastel stand-ins (GenerateImage unavailable this run — NOT sprite cutouts; need GenerateImage repaint). lessons.js 167/167.
@@ -392,11 +397,11 @@ These lessons attach to the level hub as a "📜 Learn" row, which is still a hu
 ### 🔢 Maths (MOE; one lesson per topic, id `m.<topic id>`)
 
 **Grade 1 (P1):**
-- `m.g1.count` counting to 20: tap to count, then the last number says how many (groups)
-- `m.g1.add20` adding: make 10 first (regroup within 20)
-- `m.g1.sub20` taking away: cross out / count back (share-style take-away)
-- `m.g1.bonds` number bonds: split 10 into two parts (sort into the two parts)
-- `m.g1.shapes` sides & corners (tap to count)
+- ✅ `m.g1.count` counting to 20: tap to count, then the last number says how many (groups)
+- ✅ `m.g1.add20` adding: make 10 first (regroup within 20)
+- ✅ `m.g1.sub20` taking away with renaming (rename)
+- ✅ `m.g1.bonds` number bonds: split 10 into two parts (sort into the two parts)
+- ✅ `m.g1.shapes` sides & corners (new `shapecount` widget)
 - `m.g1.money` coins in cents (pv with coins)
 - `m.g1.time` o'clock & half past (clock hands)
 - `m.g1.picgraph` picture graph: one picture = one (build a graph)
@@ -565,8 +570,9 @@ Each **routine turn builds one batch of ~5 lessons**, alternating English and ma
 | Pilot MA | m.g2.place, m.g2.add, m.g2.times, m.g2.share, m.g2.frac | ✅ | 1d135e5 |
 | EN-2 | A1 rest: have, can, s3, thereis, this, poss, do | ✅ (hook art repainted with GenerateImage 2026-11-04; Pillow composites removed) | f4ee083 |
 | MA-2 | G2 rest: sub, money, time, picgraph, story (+ widgets rename, money, clock, picgraph, bar) | ✅ (5 GenerateImage hooks; narrator money words fixed) | f4ee083 |
-| EN-3 | A1 rest: ing, waswere, place2, timeprep, feel, detail, listennum, keyword | ✅ (3 widgets findword/spellhear/hearpic; 8 GenerateImage hooks) | PENDING_HASH |
-| MA-3 | G1 all (9) | ⏳ | |
+| EN-3 | A1 rest: ing, waswere, place2, timeprep, feel, detail, listennum, keyword | ✅ (3 widgets findword/spellhear/hearpic; 8 GenerateImage hooks) | 342673e |
+| MA-3 | G1 first 5: count, add20, sub20, bonds, shapes (+ shapecount widget) | ✅ (5 GenerateImage hooks; missing-number box now read as "what number") | COMMIT_HASH |
+| MA-3b | G1 rest: money, time, picgraph, story | ⏳ next math turn | |
 | EN-4… | A2 (19), then B1, B2, C1, C2 | ⏳ | |
 | MA-4… | G3, G4 … G12 (one grade per 2 turns) | ⏳ | |
 | SG-1… | SG hub "📜 Learn" row (engine: `at=dict(sg="p1")`, `same=`) then P1 → Grown-up | ⏳ after A2 | |

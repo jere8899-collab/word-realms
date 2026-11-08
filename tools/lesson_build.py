@@ -12,7 +12,8 @@ WIDGETS = {   # kind → required fields (LESSONS-PLAN.md §2 widget kit; js/lea
     "sort": ["bins", "items"], "fill": ["tiles", "items"], "suffix": ["stamp", "items"], "spots": ["scene", "tasks"],
     "pv": ["targets"], "regroup": ["a", "b"], "groups": ["rings", "each"], "share": ["total", "plates"], "frac": ["stages"],
     "rename": ["a", "b"], "money": ["targets"], "clock": ["targets"], "picgraph": ["cats", "key"], "bar": ["start", "sold", "add"],
-    "findword": ["story", "tasks"], "spellhear": ["items"], "hearpic": ["items"]}
+    "findword": ["story", "tasks"], "spellhear": ["items"], "hearpic": ["items"],
+    "shapecount": ["stages"]}
 SCENES = {"table": {"on", "under", "in"}, "bed": {"on", "under", "in"}, "nearfar": {"near", "far"}, "park": {"nextto", "behind", "front"}}
 NUMW = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight"}
 DEN = {2: ("half", "halves"), 3: ("third", "thirds"), 4: ("quarter", "quarters"), 5: ("fifth", "fifths"), 6: ("sixth", "sixths"), 8: ("eighth", "eighths")}
@@ -34,6 +35,7 @@ def speak(t):
     t = re.sub(r"\b1¢", "1 cent", t)
     t = re.sub(r"(\d+)¢", r"\1 cents", t)
     t = t.replace("×", " times ").replace("÷", " divided by ").replace(" = ", " equals ").replace(" + ", " plus ").replace(" − ", " minus ").replace(" → ", ", ")
+    t = t.replace("□", "what number")   # a missing-number box is read as a question, never as a symbol
     t = t.replace("___", "blank").replace("·", ",").replace("\n", " ")
     return re.sub(r"\s+", " ", t).strip()
 def topics():
@@ -106,6 +108,14 @@ def check_widget(lid, w, where):
             for p in it["pics"]:
                 if not p.get("icon") or not p.get("label"): fail(lid, f"{where}: hearpic pic needs icon+label")
                 if not p.get("ok") and not p.get("why"): fail(lid, f"{where}: hearpic wrong pic {p.get('label')!r} needs a why")
+    if k == "shapecount":
+        SH = {"triangle": (3, 3), "square": (4, 4), "rectangle": (4, 4), "pentagon": (5, 5), "hexagon": (6, 6)}
+        if len(w["stages"]) < 1: fail(lid, f"{where}: shapecount needs 1+ stages")
+        for st in w["stages"]:
+            if st.get("shape") not in SH or st.get("count") not in ("sides", "corners") or not st.get("text"):
+                fail(lid, f"{where}: shapecount stage {st}")
+            want = SH[st["shape"]][0 if st["count"] == "sides" else 1]
+            if st.get("n") != want: fail(lid, f"{where}: shapecount {st['shape']} {st['count']} must be n={want}")
 def say_widget(w):
     w["say"] = speak(w["text"])
     for t in w.get("tasks", []): t["say"] = speak(t.get("text") or t.get("q") or "")

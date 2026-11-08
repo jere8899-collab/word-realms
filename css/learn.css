@@ -289,3 +289,13 @@
 .lw-pic .lw-pico{font-size:2.2rem;line-height:1}
 .lw-pic small{font-size:.85rem;font-weight:800;color:var(--ink2)}
 .lw-pic.right{border-color:var(--good);background:#EFFFF6}
+
+/* 🔷 shapecount: tap sides or corners on a pastel shape */
+.sc-stage{display:flex;justify-content:center;margin:6px 0}
+.sc-svg{width:min(240px,78vw);max-width:280px;touch-action:manipulation}
+.sc-hit{fill:rgba(255,255,255,.55);stroke:#5A3E72;stroke-width:2;cursor:pointer}
+.sc-hit.on{fill:#7ED9A6;stroke:#2F8F5B}
+.sc-edge{stroke:#5A3E72;stroke-width:6;stroke-linecap:round;pointer-events:none;opacity:.35}
+.sc-count{text-align:center;font-weight:800;margin-top:4px;font-size:1.05rem}
+
+.sc-hit.done{pointer-events:none;opacity:.85}

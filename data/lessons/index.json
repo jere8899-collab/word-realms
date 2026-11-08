@@ -459,6 +459,56 @@
    ]
   },
   {
+   "id": "m.g1.count",
+   "pack": "m-g1",
+   "title": "Counting to 20",
+   "icon": "⭐",
+   "at": {
+    "topic": "g1.count"
+   },
+   "art": "lesson_m_g1_count"
+  },
+  {
+   "id": "m.g1.add20",
+   "pack": "m-g1",
+   "title": "Make 10 first",
+   "icon": "🍎",
+   "at": {
+    "topic": "g1.add20"
+   },
+   "art": "lesson_m_g1_add20"
+  },
+  {
+   "id": "m.g1.sub20",
+   "pack": "m-g1",
+   "title": "Taking away with renaming",
+   "icon": "🍄",
+   "at": {
+    "topic": "g1.sub20"
+   },
+   "art": "lesson_m_g1_sub20"
+  },
+  {
+   "id": "m.g1.bonds",
+   "pack": "m-g1",
+   "title": "Number bonds to 10",
+   "icon": "🔗",
+   "at": {
+    "topic": "g1.bonds"
+   },
+   "art": "lesson_m_g1_bonds"
+  },
+  {
+   "id": "m.g1.shapes",
+   "pack": "m-g1",
+   "title": "Sides and corners",
+   "icon": "🔷",
+   "at": {
+    "topic": "g1.shapes"
+   },
+   "art": "lesson_m_g1_shapes"
+  },
+  {
    "id": "m.g2.place",
    "pack": "m-g2",
    "title": "Hundreds, tens and ones",

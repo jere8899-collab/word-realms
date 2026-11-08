@@ -93,6 +93,9 @@ const shake = el => { if (!el) return; el.classList.remove("ln-shake"); void el.
 /* ---------- the widget kit (LESSONS-PLAN.md §2) ----------
    each kind: html(w) and bind(root, w, api); api.good(msg) / api.miss(msg, el) (2 misses show the widget's hint) / api.done(msg) */
 const KIT = {};
+// shared: schedule the next stage only if the widget is still on screen
+const later = (root, ms, fn) => setTimeout(() => { if (root.isConnected) fn(); }, ms);
+const saySoon = (api, line) => { if (api.sayLine && line) setTimeout(() => api.sayLine(line), 0); };
 // 🔤 shuffle letters for spellhear (and any future letter-tile widgets)
 const shuffleLetters = (answer, extra = "") => {
   const letters = (answer + extra).split("");
@@ -281,10 +284,10 @@ KIT.frac = {
       shaded.has(k) ? shaded.delete(k) : shaded.add(k); WR.sfx("tap"); draw();
       if (shaded.size > s.shade) return api.say(`That's ${shaded.size} coloured — too many! Tap one again to un-colour it.`);
       if (shaded.size === s.shade) { phase = "done"; api.good(`✅ ${WR.Math ? WR.Math.html(`$\\frac{${s.shade}}{${s.parts}}$`) : s.shade + "/" + s.parts} — ${s.shade} of ${s.parts} equal parts!`, true); i++;
-        if (i >= w.stages.length) api.done(); else { const at = i; setTimeout(() => { if (i !== at || !root.isConnected) return; start(); api.sayLine && api.sayLine(w.stages[at].say); }, 1200); } } };
+        if (i >= w.stages.length) api.done(); else later(root, 1200, () => { start(); api.sayLine && api.sayLine(w.stages[i].say); }); } };
     stage.addEventListener("click", e => { const p = e.target.closest(".fp"); if (p) tapPart(p); });
     stage.addEventListener("keydown", e => { const p = e.target.closest(".fp"); if (p && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); tapPart(p); } });
-    start(); api.sayLine && setTimeout(() => api.sayLine(w.stages[0].say), 0);
+    start(); saySoon(api, w.stages[0].say);
   } };
 
 // 🌉 subtracting with renaming: when ones aren't enough, unbundle a ten → 10 ones, then take away
@@ -484,7 +487,7 @@ KIT.findword = {
   bind(root, w, api) {
     let i = 0; const task = root.querySelector(".lw-task");
     const show = () => { task.innerHTML = `👉 ${esc(w.tasks[i].q)}`; root.querySelectorAll(".lw-fword").forEach(b => { b.disabled = false; b.classList.remove("right", "wrong"); }); };
-    show(); api.sayLine && setTimeout(() => api.sayLine(w.tasks[0].say || w.tasks[0].q), 0);
+    show(); saySoon(api, w.tasks[0].say || w.tasks[0].q);
     const pick = btn => {
       const t = w.tasks[i], got = bareWord(btn.dataset.w), want = bareWord(t.word);
       if (got !== want) {
@@ -493,7 +496,7 @@ KIT.findword = {
       }
       btn.classList.add("right"); api.good(`✅ ${t.why || ("Yes! “" + t.word + "”.")}`); i++;
       if (i >= w.tasks.length) { root.querySelectorAll(".lw-fword").forEach(b => b.disabled = true); task.textContent = "🎉 You found them all!"; api.done(); }
-      else { setTimeout(() => { show(); api.sayLine && api.sayLine(w.tasks[i].say || w.tasks[i].q); }, 700); }
+      else later(root, 700, () => { show(); api.sayLine && api.sayLine(w.tasks[i].say || w.tasks[i].q); });
     };
     dragTap(root, { onTapTarget: pick, nothing: () => api.say("Tap the word in the story 👆") });
   } };
@@ -518,7 +521,7 @@ KIT.spellhear = {
       const it = item(); built = [];
       const extra = it.tiles || ""; pool = shuffleLetters(it.answer, extra);
       task.innerHTML = `👉 ${esc(w.text || "Listen, then spell the word.")}`;
-      paint(); api.sayLine && setTimeout(() => api.sayLine(it.say || it.answer), 0);
+      paint(); saySoon(api, it.say || it.answer);
     };
     const check = () => {
       const it = item(), got = built.map(t => t.ch).join("");
@@ -526,7 +529,7 @@ KIT.spellhear = {
       if (got !== it.answer) { api.miss(`Not “${got}”. Try again!`, slots); built = []; paint(); return; }
       api.good(`✅ ${it.why || ("“" + it.answer + "”!")}`); i++;
       if (i >= w.items.length) { root.querySelectorAll("[data-src], .lw-clear, .lw-replay").forEach(b => b.disabled = true); api.done("🎉 Great listening!"); }
-      else setTimeout(start, 900);
+      else later(root, 900, start);
     };
     const add = src => { const it = item(); if (built.length >= it.answer.length) return;
       const k = +src.dataset.k, ix = pool.findIndex(t => t.k === k); if (ix < 0) return;
@@ -551,7 +554,7 @@ KIT.hearpic = {
       task.innerHTML = `👉 ${esc(it.prompt || "Tap the picture you hear.")}`;
       pics.innerHTML = WR.shuffle(it.pics.map((p, k) => ({ p, k }))).map(({ p, k }) =>
         `<button class="lw-pic" data-tgt data-k="${k}" aria-label="${esc(p.label || p.id)}"><span class="lw-pico" aria-hidden="true">${p.icon || "📷"}</span><small>${esc(p.label || "")}</small></button>`).join("");
-      api.sayLine && setTimeout(() => api.sayLine(it.say || it.word), 0);
+      saySoon(api, it.say || it.word);
     };
     show();
     const pick = btn => {
@@ -559,10 +562,60 @@ KIT.hearpic = {
       if (!p.ok) return api.miss(p.why || `That's the ${p.label || p.id}, not “${it.word}”.`, btn);
       btn.classList.add("right"); api.good(`✅ ${p.why || ("Yes! “" + it.word + "”.")}`); i++;
       if (i >= w.items.length) { pics.querySelectorAll(".lw-pic").forEach(b => b.disabled = true); api.done("🎉 Ears sharp!"); }
-      else setTimeout(show, 900);
+      else later(root, 900, show);
     };
     dragTap(root, { onTapTarget: pick, nothing: () => api.say("Tap a picture 👆") });
     replay.onclick = () => api.sayLine && api.sayLine(w.items[i].say || w.items[i].word);
+  } };
+
+
+// 🔷 sides & corners: tap each side or corner on a pastel shape to count
+const SHAPE_PTS = {
+  triangle: [[60, 14], [108, 100], [12, 100]],
+  square: [[18, 18], [102, 18], [102, 102], [18, 102]],
+  rectangle: [[8, 32], [112, 32], [112, 90], [8, 90]],
+  pentagon: [[60, 10], [110, 44], [92, 104], [28, 104], [10, 44]],
+  hexagon: [[36, 12], [84, 12], [110, 60], [84, 108], [36, 108], [10, 60]]
+};
+const SHAPE_FILL = { triangle: "#FFD6E0", square: "#C8F2DC", rectangle: "#D6EEFF", pentagon: "#E2D6FF", hexagon: "#FFF4C2" };
+const shapeSVG = (shape, mode) => {
+  const pts = SHAPE_PTS[shape], fill = SHAPE_FILL[shape] || "#C8F2DC", n = pts.length;
+  const poly = pts.map(p => p.join(",")).join(" ");
+  let hits = "";
+  if (mode === "corners") {
+    hits = pts.map((p, k) => `<circle class="sc-hit sc-corner" data-tgt data-i="${k}" cx="${p[0]}" cy="${p[1]}" r="14" role="button" tabindex="0" aria-label="corner ${k + 1}"/>`).join("");
+  } else {
+    hits = pts.map((p, k) => {
+      const q = pts[(k + 1) % n], mx = (p[0] + q[0]) / 2, my = (p[1] + q[1]) / 2;
+      return `<line class="sc-edge" x1="${p[0]}" y1="${p[1]}" x2="${q[0]}" y2="${q[1]}" aria-hidden="true"/>
+        <circle class="sc-hit sc-side" data-tgt data-i="${k}" cx="${mx}" cy="${my}" r="16" role="button" tabindex="0" aria-label="side ${k + 1}"/>`;
+    }).join("");
+  }
+  return `<svg class="sc-svg" viewBox="0 0 120 120" role="img" aria-label="${shape}"><polygon class="sc-poly" points="${poly}" fill="${fill}" stroke="#5A3E72" stroke-width="3" stroke-linejoin="round"/>${hits}</svg>`;
+};
+KIT.shapecount = {
+  html: () => `<div class="lw-task" aria-live="polite"></div><div class="sc-stage"></div><div class="lw-count sc-count" aria-live="polite"></div>`,
+  bind(root, w, api) {
+    let i = 0, lit = new Set();
+    const stage = root.querySelector(".sc-stage"), task = root.querySelector(".lw-task"), count = root.querySelector(".sc-count");
+    const paint = () => {
+      const s = w.stages[i]; lit = new Set();
+      task.innerHTML = `👉 ${esc(s.text)}`;
+      stage.innerHTML = shapeSVG(s.shape, s.count);
+      count.textContent = `Counted: 0 / ${s.n}`;
+    };
+    const tap = btn => {
+      const s = w.stages[i], k = +btn.dataset.i;
+      if (lit.has(k)) return api.say("You already counted that one! Tap a new " + (s.count === "sides" ? "side" : "corner") + " 👆");
+      lit.add(k); btn.classList.add("on"); WR.sfx("tap");
+      count.textContent = `Counted: ${lit.size} / ${s.n}`;
+      if (lit.size < s.n) return;
+      api.good(`✅ A ${s.shape} has ${s.n} ${s.count}!`); i++;
+      if (i >= w.stages.length) { stage.querySelectorAll(".sc-hit").forEach(b => { b.classList.add("done"); b.removeAttribute("data-tgt"); }); api.done("🎉 Sides and corners counted!"); }
+      else later(root, 900, () => { paint(); api.sayLine && api.sayLine(w.stages[i].say); });
+    };
+    paint(); saySoon(api, w.stages[0].say);
+    dragTap(root, { onTapTarget: tap, nothing: () => api.say("Tap each " + (w.stages[i].count === "sides" ? "side" : "corner") + " to count 👆") });
   } };
 
 LN.KIT = KIT;
@@ -624,7 +677,7 @@ function show() {
   if (auto() && line && !widgetSpeaks(S)) speak(line);
   if (S.maths && WR.Math && WR.Math.upgrade) setTimeout(() => WR.Math.upgrade(WR.$("#main")), 400);
 }
-const SPEAKS = new Set(["spots", "frac", "findword", "spellhear", "hearpic"]);  // widgets that read each task/item themselves
+const SPEAKS = new Set(["spots", "frac", "findword", "spellhear", "hearpic", "shapecount"]);  // widgets that read each task/item themselves
 const widgetSpeaks = s => { const w = s.step === "discover" ? s.L.discover : s.step === "rdiscover" ? s.L.reteach.discover : null; return !!w && SPEAKS.has(w.kind); };
 function bindWidget(w, go) {
   const root = WR.$("#lnW"), msg = WR.$("#lnMsg"); let misses = 0, finished = false;

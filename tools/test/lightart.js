@@ -28,7 +28,7 @@ async function run(browser, vp, label, opts = {}) {
   if (opts.shot) await page.screenshot({ path: OUT + `lightart_${label}_lesson.png` });
   const broken = await page.evaluate(() => [...document.images].filter(i => i.complete && i.naturalWidth === 0 && i.getAttribute('src')).map(i => i.getAttribute('src')));
   const bg = await page.evaluate(() => getComputedStyle(document.querySelector('.lesson-bg')).backgroundImage);
-  const bytes = imgs.reduce((a, b) => a + b.n, 0);
+  const seen = new Set(), bytes = imgs.reduce((a, b) => seen.has(b.u) ? a : (seen.add(b.u), a + b.n), 0);   // a picture shown twice is downloaded once
   await ctx.close();
   return { errors, imgs, bytes, broken, bg };
 }

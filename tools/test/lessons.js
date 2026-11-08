@@ -1,4 +1,4 @@
-// 📜 Lessons (LESSONS-PLAN.md, js/learn.js): the shared lesson engine and A1 English (pilot + EN-2) + Grade 2 maths pilot.
+// 📜 Lessons (LESSONS-PLAN.md, js/learn.js): A1 English + Grade 2 maths (+ MA-3 G1 when art lands). Widget kit includes shapecount.
 //   node tools/test/lessons.js        (SHOT=1 saves screenshots/lessons_*.png at 390 px)
 // Covers: every pilot lesson played start → scroll by TAP; drag (pointer) on sort / place value / spots; the re-teach path
 // (a different explanation, NEW questions, why-not notes); stars once ever (anti-farm); a lesson failed twice still
@@ -9,7 +9,7 @@
 const { chromium } = require('playwright-core');
 const BASE = (process.env.BASE || 'http://127.0.0.1:18642/').replace(/\/?$/, '/');
 const OUT = '/workspace/cefr-quest/screenshots/';
-const MIN_LESSONS = 30;
+const MIN_LESSONS = 35;
 let fails = 0, passes = 0;
 const ok = (c, m) => { if (!c) { fails++; console.error('FAIL', m); process.exitCode = 1; } else { passes++; console.log('ok', m); } };
 const today = () => { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
@@ -23,7 +23,7 @@ const PROFILES = [[320, 658], [360, 780], [375, 667], [390, 844], [412, 915]];
 const HELPERS = () => {
   const sleep = ms => new Promise(r => setTimeout(r, ms));
   const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
-  const tap = el => { if (!el) throw new Error('nothing to tap'); el.click(); };
+  const tap = el => { if (!el) throw new Error('nothing to tap'); if (typeof el.click === 'function') el.click(); else el.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window })); };
   // solve the step's widget by TAPS only, exactly like a child who knows the answers
   window.__solve = async () => {
     const S = WR.Learn._S(), w = S.step === 'discover' ? S.L.discover : S.L.reteach.discover, root = $('#lnW');
@@ -83,6 +83,14 @@ const HELPERS = () => {
       const lab = it.pics[ok].label;
       const btn = $$('#lnW .lw-pic').find(b => (b.getAttribute('aria-label') || '') === lab || (b.querySelector('small') || {}).textContent === lab);
       if (!btn) throw new Error('hearpic: no pic for ' + lab); tap(btn); await sleep(950);
+    }
+    if (w.kind === 'shapecount') for (const s of w.stages) {
+      for (let k = 0; k < s.n; k++) {
+        const b = $$('#lnW .sc-hit').find(x => +x.dataset.i === k && !x.classList.contains('on'));
+        if (!b) throw new Error('shapecount: missing hit ' + k + ' for ' + s.shape);
+        tap(b); await sleep(20);
+      }
+      await sleep(950);
     }
     await sleep(50); return !$('#lnGo').hidden;
   };

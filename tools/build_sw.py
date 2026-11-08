@@ -12,13 +12,14 @@ html = open("index.html").read()
 # ⚙️ "📲 Download for offline play" fetches the rest (FULL) on request.
 shell = ["./", "index.html", "manifest.webmanifest", "assets/manifest.json"]
 shell += re.findall(r'(?:src|href)="((?:js|css)/[^"]+)"', html)
-shell += ["assets/ui/icon-192.png", "assets/ui/icon-512.png"]
+shell += ["assets/ui/icon-192.png"]   # the 512 install icon (139 KB) waits in the art cache: the phone only asks for it when installing
 data = []
 for dp, _, fs in os.walk("data"):
     data += [os.path.join(dp, f) for f in sorted(fs) if f.endswith(".json")]
 data.sort()
 art = ["assets/web/" + f for f in sorted(os.listdir("assets/web")) if f.endswith(".webp") and not f.endswith("_1280.webp")]
 art += ["assets/icons/" + f for f in sorted(os.listdir("assets/icons")) if f.endswith(".webp")]   # painted UI icons (js/icons.js)
+art += ["assets/ui/icon-512.png"]
 art += ["assets/acc/" + f for f in sorted(os.listdir("assets/acc")) if f.endswith(".webp")]       # accessory layers (js/core.js WR.layerSVG)
 shell, data, art = (list(dict.fromkeys(x)) for x in (shell, data, art))
 def digest(fl):
