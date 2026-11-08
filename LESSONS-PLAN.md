@@ -2,7 +2,7 @@
 
 **Phase 1 (plan + engine + pilot): ✅ done (commit 1d135e5, 2026-11-04).** EN-2 + MA-2 ✅ (f4ee083). The 2-hourly routine may now take the next batch (§5: EN-3, then MA-3).
 
-> Checkpoint 2026-11-08 ~18:10 SGT: MA-3b in progress (m.g1.money / time / picgraph / story). Cleanup done (stale m_g1.py DRAFT header; shared nextTarget() for money+clock; coin class letter + shared coin CSS). Four GenerateImage hooks ready to install. Not live yet.
+> Checkpoint 2026-11-08 ~18:50 SGT: MA-3b is live (ce08a78, build wr-db8c8c28cbc4): m.g1.money, m.g1.time, m.g1.picgraph, m.g1.story; 43 lessons. GenerateImage hooks installed. Cleanup: rewrote the stale m_g1.py DRAFT header; extracted nextTarget() for money+clock; money paint uses the COINS class letter; shared coin CSS variables. Optional cents display (w.cents) so G1 shows 25¢ while G2 still shows $1.25. lessons.js 215/215. Next English turn: EN-4b (goingto, will, someany, …).
 >
 > Checkpoint 2026-11-08 ~16:45 SGT: EN-4a is live (cb42f3a, build wr-b3eff5f448a6): en.a2.ed, en.a2.irreg, en.a2.comp, en.a2.super; 39 lessons. It was merged onto origin/main so Storybook Nova and the lighter first visit stay (js/learn.js 3-way merge; voice manifest +52 narrator lines, none dropped). lessons.js 203/203 (one sub-pixel 43.99 px flake on the 📜 corner button, now rounded in the test). Since the first-visit loader waits for the service worker, review-engine, petlayers, tangent, circles, lightart and learn-review can race on a cold page (WR not ready yet). They fail the same way on origin/main and pass with the worker wait skipped, so the test harness needs a "wait for WR" fix. Next English turn: the rest of A2 (goingto, will, someany, …). Next math turn: still MA-3b.
 >
@@ -408,10 +408,10 @@ These lessons attach to the level hub as a "📜 Learn" row, which is still a hu
 - ✅ `m.g1.sub20` taking away with renaming (rename)
 - ✅ `m.g1.bonds` number bonds: split 10 into two parts (sort into the two parts)
 - ✅ `m.g1.shapes` sides & corners (new `shapecount` widget)
-- `m.g1.money` coins in cents (pv with coins)
-- `m.g1.time` o'clock & half past (clock hands)
-- `m.g1.picgraph` picture graph: one picture = one (build a graph)
-- `m.g1.story` word problems: find the action word (sort add/take)
+- ✅ `m.g1.money` coins in cents (money widget; count in ¢)
+- ✅ `m.g1.time` o'clock & half past (clock hands; gentle 5-minute intro)
+- ✅ `m.g1.picgraph` picture graph: one picture = one (build a graph)
+- ✅ `m.g1.story` word problems: find the action word (sort add/take/how many more)
 
 **Grade 2 (P2):**
 - ✅ `m.g2.place` hundreds, tens and ones (pv)
@@ -578,7 +578,7 @@ Each **routine turn builds one batch of ~5 lessons**, alternating English and ma
 | MA-2 | G2 rest: sub, money, time, picgraph, story (+ widgets rename, money, clock, picgraph, bar) | ✅ (5 GenerateImage hooks; narrator money words fixed) | f4ee083 |
 | EN-3 | A1 rest: ing, waswere, place2, timeprep, feel, detail, listennum, keyword | ✅ (3 widgets findword/spellhear/hearpic; 8 GenerateImage hooks) | 342673e |
 | MA-3 | G1 first 5: count, add20, sub20, bonds, shapes (+ shapecount widget) | ✅ (5 GenerateImage hooks; missing-number box now read as "what number") | 8e331ac |
-| MA-3b | G1 rest: money, time, picgraph, story | 🔧 writing pack + art | |
+| MA-3b | G1 rest: money, time, picgraph, story | ✅ (4 GenerateImage hooks; money widget can show cents) | ce08a78 |
 | EN-4a | A2 first: ed, irreg, comp, super (+ suffix cut/add, settle() cleanup) | ✅ (4 GenerateImage hooks; merged onto the Nova + lighter-first-visit main) | cb42f3a |
 | EN-4… | A2 (19), then B1, B2, C1, C2 | ⏳ | |
 | MA-4… | G3, G4 … G12 (one grade per 2 turns) | ⏳ | |
