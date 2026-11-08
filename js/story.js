@@ -23,8 +23,10 @@ WR.storyState = st;
 const storyPet = () => (WR.petInfo() || {}).name || "Puffbun";
 const heroName = () => String(WR.state.name || "").trim();
 const petTyped = () => String((WR.state.pet && WR.state.pet.name) || "").trim() || storyPet();
-const fill = t => { const h = heroName(), s = String(t);
-  return (h ? s.replace(/\{hero\}/g, () => h) : s.replace(/(^|[.!?…]["”’]?\s+|[“"‘])\{hero\}/g, "$1Our hero").replace(/\{hero\}/g, "our hero")).replace(/\{pet\}/g, () => petTyped()); };   // functions: a typed "$&" stays as typed
+// Only the {hero} and {pet} tokens are filled. A function replacement keeps a typed "$&" as typed.
+const fillHero = (s, name) => name ? s.replace(/\{hero\}/g, () => name)
+  : s.replace(/(^|[.!?…]["”’]?\s+|[“"‘])\{hero\}/g, "$1Our hero").replace(/\{hero\}/g, "our hero");
+const fill = t => fillHero(String(t), heroName()).replace(/\{pet\}/g, () => petTyped());
 const plain = t => fill(t).replace(GL, "$1");
 const sentences = t => plain(t).match(/[^.!?]+[.!?]+[”’"]?\s*|[^.!?]+$/g).map(x => x.trim()).filter(Boolean);
 WR.Story = { fill, plain, sentences };
