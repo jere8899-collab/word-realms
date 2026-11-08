@@ -63,6 +63,8 @@ def check_widget(lid, w, where):
         if not any(it["need"] for it in w["items"]) or all(it["need"] for it in w["items"]): fail(lid, f"{where}: suffix needs words with AND without the stamp")
         for it in w["items"]:
             if not it.get("why"): fail(lid, f"{where}: suffix item {it} needs a why")
+            if "add" in it and not (isinstance(it["add"], str) and it["add"].isalpha()): fail(lid, f"{where}: suffix add {it['add']!r} must be letters")
+            if "cut" in it and not (isinstance(it["cut"], int) and 1 <= it["cut"] < len(it["base"]) and it.get("add")): fail(lid, f"{where}: suffix cut needs 1 ≤ cut < len(base) and an add")
     if k == "spots":
         if w["scene"] not in SCENES: fail(lid, f"{where}: unknown scene {w['scene']}")
         for t in w["tasks"]:

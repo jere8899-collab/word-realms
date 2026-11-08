@@ -459,6 +459,74 @@
    ]
   },
   {
+   "id": "en.a2.ed",
+   "pack": "en-a2",
+   "title": "past -ed",
+   "icon": "📔",
+   "at": {
+    "realm": "a2",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_a2_ed",
+   "match": [
+    {
+     "re": "\\bregular past|add -ed",
+     "field": "explain"
+    }
+   ]
+  },
+  {
+   "id": "en.a2.irreg",
+   "pack": "en-a2",
+   "title": "went, ate, saw",
+   "icon": "✨",
+   "at": {
+    "realm": "a2",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_a2_irreg",
+   "match": [
+    {
+     "re": "irregular past|past simple.*irregular|go → went|went \\(go\\)|\\+ went \\+",
+     "field": "explain"
+    }
+   ]
+  },
+  {
+   "id": "en.a2.comp",
+   "pack": "en-a2",
+   "title": "bigger, more beautiful",
+   "icon": "⚖️",
+   "at": {
+    "realm": "a2",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_a2_comp",
+   "match": [
+    {
+     "re": "comparative|-er to compare|-er \\+ than|→ \\w+er than|→ \\w+er\\. Example:.* than|more \\+ adjective \\+ than|good → better",
+     "field": "explain"
+    }
+   ]
+  },
+  {
+   "id": "en.a2.super",
+   "pack": "en-a2",
+   "title": "the biggest",
+   "icon": "🏆",
+   "at": {
+    "realm": "a2",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_a2_super",
+   "match": [
+    {
+     "re": "superlative|-est\\b|the top|→ best",
+     "field": "explain"
+    }
+   ]
+  },
+  {
    "id": "m.g1.count",
    "pack": "m-g1",
    "title": "Counting to 20",

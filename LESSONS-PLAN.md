@@ -2,6 +2,10 @@
 
 **Phase 1 (plan + engine + pilot): ✅ done (commit 1d135e5, 2026-11-04).** EN-2 + MA-2 ✅ (f4ee083). The 2-hourly routine may now take the next batch (§5: EN-3, then MA-3).
 
+> Checkpoint 2026-11-08 ~16:45 SGT: EN-4a is live (cb42f3a, build wr-b3eff5f448a6): en.a2.ed, en.a2.irreg, en.a2.comp, en.a2.super; 39 lessons. It was merged onto origin/main so Storybook Nova and the lighter first visit stay (js/learn.js 3-way merge; voice manifest +52 narrator lines, none dropped). lessons.js 203/203 (one sub-pixel 43.99 px flake on the 📜 corner button, now rounded in the test). Since the first-visit loader waits for the service worker, review-engine, petlayers, tangent, circles, lightart and learn-review can race on a cold page (WR not ready yet). They fail the same way on origin/main and pass with the worker wait skipped, so the test harness needs a "wait for WR" fix. Next English turn: the rest of A2 (goingto, will, someany, …). Next math turn: still MA-3b.
+>
+> Checkpoint 2026-11-08 ~14:45 SGT (EN-4a blocked on art): **GenerateImage unavailable** this run (cursor tool missing; only Higgsfield, which is not allowed), so no hook art and no deploy. Done: draft pack `tools/lessons/_en_a2.py` (en.a2.ed, en.a2.irreg, en.a2.comp, en.a2.super; hint-link `match` regexes checked against data/a2 explains). `KIT.suffix` gained optional per-word `cut`/`add` (stop → stop+ped, happy → happ+ier, nice → nice+r), validated in lesson_build; the finished "no stamp" label now names the stamp (✓ no ing / ed / er; plural still "✓ no s"). Cleanup: `settle()` helper replaces 3 copies of the lock-a-placed-piece code (sort, suffix, bar). Tested in a scratch copy with throwaway test art: lessons.js 203/203 (39 lessons, 320–412 audit, every line has an MP3 after build_voice), re-teach path for all 4 passes; screens `screenshots/lessons_en4a_*.png`. Working copy full suite 100/102 first pass; rename passed on rerun; lessons.js "maths round: pet bubble … no sideways scroll" fails at a random width (375/390 px) on the LIVE code too, so it was already flaky and is not caused by this change. js/learn.js, css/learn.css, tools/lesson_build.py and the draft are in the working copy only, so the deploy checkout differs on purpose. Left: paint 4 hooks (lesson_en_a2_ed/irreg/comp/super) → install → rename `_en_a2.py` → `en_a2.py` → build_voice (≈54 lines) → raise MIN_LESSONS to 39 → tests → deploy.
+>
 > Checkpoint 2026-11-08 ~12:50 SGT: the 2026-11-05 run stopped before committing, so the first 5 G1 lessons were not live until now. Shipped with a narrator fix (□ → "what number" in `speak()`), the 512 px app icon moved out of the first-visit precache (lightload 2.01 → 1.87 MB) and lightart counting each picture once. Next math turn: MA-3b.
 > Checkpoint 2026-11-05 ~18:20 SGT (MA-3 first 5 built): GenerateImage hooks installed for count/add20/sub20/bonds/shapes; pack renamed `tools/lessons/m_g1.py`; 35 lessons in index; narrator voice recorded (76 new af_heart lines); shapecount widget shipped earlier. Remaining G1: money/time/picgraph/story.
 >
@@ -180,10 +184,10 @@ Listening:
 **A2 · Candy Village (A2 Key / Flyers)**
 
 Grammar:
-- `en.a2.ed` past -ed (suffix: drag -ed onto verbs, including the double letter in stopped)
-- `en.a2.irreg` went, ate, saw (sort regular / special)
-- `en.a2.comp` bigger / more beautiful (suffix -er or "more")
-- `en.a2.super` the biggest (suffix -est)
+- ✅ `en.a2.ed` past -ed (suffix: drag -ed onto verbs, including the double letter in stopped)
+- ✅ `en.a2.irreg` went, ate, saw (sort regular / special)
+- ✅ `en.a2.comp` bigger / more beautiful (suffix -er or "more")
+- ✅ `en.a2.super` the biggest (suffix -est)
 - `en.a2.goingto` going to for plans (fill)
 - `en.a2.will` will for promises and guesses (sort)
 - `en.a2.someany` some / any (sort)
@@ -573,6 +577,7 @@ Each **routine turn builds one batch of ~5 lessons**, alternating English and ma
 | EN-3 | A1 rest: ing, waswere, place2, timeprep, feel, detail, listennum, keyword | ✅ (3 widgets findword/spellhear/hearpic; 8 GenerateImage hooks) | 342673e |
 | MA-3 | G1 first 5: count, add20, sub20, bonds, shapes (+ shapecount widget) | ✅ (5 GenerateImage hooks; missing-number box now read as "what number") | 8e331ac |
 | MA-3b | G1 rest: money, time, picgraph, story | ⏳ next math turn | |
+| EN-4a | A2 first: ed, irreg, comp, super (+ suffix cut/add, settle() cleanup) | ✅ (4 GenerateImage hooks; merged onto the Nova + lighter-first-visit main) | cb42f3a |
 | EN-4… | A2 (19), then B1, B2, C1, C2 | ⏳ | |
 | MA-4… | G3, G4 … G12 (one grade per 2 turns) | ⏳ | |
 | SG-1… | SG hub "📜 Learn" row (engine: `at=dict(sg="p1")`, `same=`) then P1 → Grown-up | ⏳ after A2 | |
