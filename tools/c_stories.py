@@ -1,5 +1,5 @@
 # 📜 Storybook Chapters (2026-10-30): one illustrated chapter per realm, together one continuous tale,
-# "The Starlight Storybook". {hero} and {pet} are filled in at runtime with the learner's hero and pet names.
+# "The Starlight Storybook". {hero} is always Nova. {pet} is that species' storybook name (not a renamed pet).
 # Glossary words are marked [[word|meaning]]. In every question the FIRST option is correct (shuffled at runtime).
 # kind: fact (find it in the text), infer (read between the lines), vocab (word in context), grammar (structure in context).
 P = lambda text, q, opts, explain, kind: {"text": text, "q": {"q": q, "options": opts, "answer": 0, "explain": explain, "kind": kind}}

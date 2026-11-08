@@ -56,7 +56,7 @@ If a bank cannot be fetched, the child stays on a working screen, sees a short k
 ## Edge Cases
 
 - Save-Data / cellular: install still does not pull every bank. The home JSON (realms, shop, anchors, counts, lesson index) is small and is kept so the map can open offline.
-- The voice lookup file (`assets/voice/manifest.json`) loads on the first spoken line, not with the map. Recordings are unchanged. If that lookup is not on the device yet, the device voice speaks that line, which is the existing fallback.
+- The voice lookup file (`assets/voice/manifest.json`) loads on the first spoken line, not with the map. Recordings are unchanged. If that lookup is not on the device yet, the device voice speaks that line, which is the existing fallback. A Storybook sentence does not use that fallback: it waits for the same af_heart recording, or asks the child to try again (`specs/011-story-nova/`).
 - Supabase is never cached. No service-role key is read.
 - No new home tile. Typing fields keep `WR.noAssist`.
 - Task 10 (thinking skills) and Task 11 are out of scope.
