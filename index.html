@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<script>if (navigator.serviceWorker && !window.__WR_NO_SW) navigator.serviceWorker.register("sw.js");</script>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#FFE9F1">
 <title>Word Realms — A Fairytale English &amp; Maths Quest (CEFR A1–C2, Grades 1–12)</title>
@@ -31,6 +32,7 @@
 <script data-shell="js/icons.js"></script>
 <script data-shell="js/cloud.js"></script>
 <script data-shell="js/recall.js"></script>
+<script data-shell="js/think.js"></script>
 <script data-shell="js/lesson.js"></script>
 <script data-shell="js/specials.js"></script>
 <script data-shell="js/parent-gate.js"></script>
@@ -67,30 +69,16 @@
 <script data-shell="js/offline.js"></script>
 <script data-shell="js/ux.js"></script>
 <script data-shell="js/health.js"></script>
-<!-- Load each shell file once, after the worker is in charge, so that one response is the cached copy.
-     A script or stylesheet response cannot be stored later, and fetching it again downloads it twice. -->
+<!-- The shell tags are written while the page is still parsing, so the load event waits for them
+     and each file is requested once. The head already asked the worker to take charge, so that
+     one request is the cached copy whenever the worker is ready in time. -->
 <script>
 (function () {
-  const nodes = () => [...document.querySelectorAll("[data-shell]")];
-  let started = false;
-  const start = () => {
-    if (started) return; started = true;
-    const css = [], js = [];
-    nodes().forEach(n => { const u = n.getAttribute("data-shell"); (u.endsWith(".css") ? css : js).push(u); });
-    let left = css.length;
-    const scripts = () => js.forEach(u => { const s = document.createElement("script"); s.src = u; s.async = false; document.body.appendChild(s); });
-    if (!left) { scripts(); return; }
-    css.forEach(u => {
-      const link = document.createElement("link"); link.rel = "stylesheet"; link.href = u;
-      link.onload = link.onerror = () => { if (--left === 0) scripts(); };
-      document.head.appendChild(link);
-    });
-  };
-  const sw = navigator.serviceWorker;
-  if (!sw || window.__WR_NO_SW || sw.controller) { start(); return; }
-  const giveUp = setTimeout(start, 4000);
-  sw.addEventListener("controllerchange", () => { clearTimeout(giveUp); start(); });
-  sw.register("sw.js").catch(() => { clearTimeout(giveUp); start(); });
+  const urls = [...document.querySelectorAll("[data-shell]")].map(n => n.getAttribute("data-shell"));
+  const tags = urls.filter(u => u.endsWith(".css")).map(u => '<link rel="stylesheet" href="' + u + '">').join("")
+    + urls.filter(u => !u.endsWith(".css")).map(u => '<script defer src="' + u + '"><\/script>').join("");
+  document.write(tags);
+  if (navigator.serviceWorker && !window.__WR_NO_SW && !navigator.serviceWorker.controller) navigator.serviceWorker.register("sw.js");
 })();
 </script>
 </body>

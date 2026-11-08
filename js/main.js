@@ -383,6 +383,8 @@ WR.restart = () => {
   else start();
 };
 async function boot() {
+  // The shell can call a screen while the data is still loading. #main has to exist first.
+  if (app && !document.getElementById("main")) app.innerHTML = `<div id="top"></div><div id="main"></div>`;
   try { await WR.init(); }
   catch (e) { app.innerHTML = `<div class="card center" style="margin-top:40px"><h2>😿 Couldn't load the game data</h2><p>Run it from a web server: <code>python3 -m http.server</code> in the game folder, then open <code>http://localhost:8000</code>.</p><pre>${WR.esc(e.message)}</pre></div>`; return; }
   if (!WR.state.pet || !WR.state.name) { app.innerHTML = `<div id="top"></div><div id="main"></div>`; onboarding(); }

@@ -16,7 +16,7 @@ async function run(browser, vp, label, opts = {}) {
   const errors = [], imgs = [];
   page.on('pageerror', e => errors.push(e.message));
   page.on('console', m => { if (m.type() === 'error' && !/Failed to load resource/.test(m.text())) errors.push(m.text()); });
-  if (opts.blockWeb) await page.route('**/assets/web/**', r => r.abort());
+  if (opts.blockWeb) await ctx.route('**/assets/web/**', r => r.abort());
   page.on('response', async r => { const u = r.url(); if (/\.(png|jpe?g|webp|svg)$/.test(u)) { let n = 0; try { n = (await r.body()).length; } catch (e) {} imgs.push({ u: u.replace(/.*18642\//, ''), n }); } });
   await page.goto(URL); await page.evaluate(s => localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)), save());
   await page.reload({ waitUntil: 'networkidle' }); await page.waitForTimeout(500);

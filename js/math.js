@@ -174,6 +174,7 @@ MW.startLesson = o => {
   const grade = t ? t.grade : ch ? ch.grade : o.grade;
   L = Object.assign({ i: 0, pts: 0, correct: 0, combo: 0, maxCombo: 0, starsEarned: 0, tries: 0 }, o, { grade, items: MW.buildItems(o),
     key: o.key || o.topic || (o.challenge ? "dojo." + o.challenge : `g${grade}.mixed`), title: o.title || (t ? `${t.icon} ${t.name}` : ch ? `${ch.icon} ${ch.name}` : `🎲 Grade ${grade} mixed practice`) });
+  if (WR.Think) WR.Think.mark(L);   // 🧠 a rare why / strategy prompt; guardian fights and the Tower are left alone
   WR.navActive("math"); render();
 };
 // 🛡️ Grade Guardian fights (js/math-goals.js): o.guardian = { name, face, art, need }. Every point (1 first try, ½ second try)
@@ -193,7 +194,7 @@ function render() {
   WR.view(`<div class="lesson-bg" style="background-image:${WR.bgCss("bg_math")}"></div>
     <div class="row" style="margin:6px 0 8px"><button class="btn ghost small" id="quitBtn">← Leave</button><b class="title">🔢 ${esc(L.title)}</b></div>
     ${L.guardian ? `<div class="card gstrip" id="gstrip">${guardMeter()}</div>` : ""}<div class="card hud">${hud()}</div>
-    <div class="lesson mlesson fade-in"><div class="card qcard mq">${toolsHTML()}${MW.qHead(q)}<div id="mviz"></div>
+    <div class="lesson mlesson fade-in"><div class="card qcard mq">${toolsHTML()}${WR.Think ? WR.Think.bar(q) : ""}${MW.qHead(q)}<div id="mviz"></div>
       ${q.kind === "mcq" ? MW.optsHTML(q) : MW.inputHTML(q, L.grade)}
       <div id="mexplain"></div></div>
       <div class="card side"><div class="petbox" id="lpet">${WR.petHTML()}</div><div class="bubble" id="lbubble">${esc(L.i === 0 ? "Let's solve it together! ✨" : WR.petMood())}</div>
@@ -203,6 +204,7 @@ function render() {
   WR.$("#hintBtn").onclick = () => { if (L.done) return; showMsg("hint", `💡 ${MW.html(q.hint)}${scrollLink(q)}`); };
   if (q.kind === "mcq") MW.onOpts(q, (o, b) => submit(o, b));
   else MW.bindInput(q, v => submit(v));
+  if (WR.Think) WR.Think.bind(q);
 }
 /* 🧮 Model Magic: a Singapore-style picture model (bar model, number line, ten frames, arrays, sharing groups, blocks,
    fraction bars) or, for Grade 6–8 equations, a ⚖️ balance scale. Interactive kinds have a tool: its opt() feeds the
@@ -289,7 +291,7 @@ function submit(val, btn) {
   const q = L.items[L.i], res = MG.check(q, val);
   if (res.empty) return WR.toast("Type your answer first ✏️", 1800, { now: true });
   if (res.bad) return WR.toast(BAD_INPUT[q.kind] || BAD_INPUT.num, 2400, { now: true });
-  const s = WR.state, m = MW.st(), qk = q.topic || L.key; L.tries++;
+  const m = MW.st(), qk = q.topic || L.key; L.tries++;
   if (res.ok) {
     L.done = true; const pts = L.tries === 1 ? 1 : 0.5; L.pts += pts; L.res[L.i] = pts; L.correct++; WR.countAnswer(true, "m:" + qk); m.correct = (m.correct || 0) + 1; m.answered = (m.answered || 0) + 1;
     if (L.tries === 1) { L.combo++; L.maxCombo = Math.max(L.maxCombo, L.combo); let gain = 1; if (L.combo % 3 === 0) gain++; L.starsEarned += WR.awardStars("m", q.uid || qk + "|" + q.q + "|" + q.a, gain, { tally: L, quiet: true }); if (L.combo === 5) WR.questEvent("combo5"); } else L.combo = 0;
@@ -300,7 +302,7 @@ function submit(val, btn) {
     const inp = WR.$("#mans"); if (inp) inp.classList.add("ok"); MW.lockInput();
     if (q.set) MW.Clock.solved(q, L.tries);
     MW.lockOpts(q);
-    showMsg("good", `✅ ${L.tries === 1 ? "Correct!" : "Got it on the second try!"} ${MW.ansHTML(q)}${whyLine(rightWhy(q), "💡")}${work(q, "fold", L.tries > 1)}${nextBtn(true)}`);
+    showMsg("good", `✅ ${L.tries === 1 ? "Correct!" : "Got it on the second try!"} ${MW.ansHTML(q)}${whyLine(rightWhy(q), "💡")}${work(q, "fold", L.tries > 1)}${thinkTail(q, true)}${nextBtn(true)}`);
   } else if (L.tries === 1) {
     WR.sfx("bad"); L.combo = 0; if (btn) { btn.classList.add("wrong"); btn.disabled = true; }
     const inp = WR.$("#mans") || WR.$("#main .csetter .cface"); if (inp) { inp.classList.add("shake"); setTimeout(() => inp.classList.remove("shake"), 450); inp.select && inp.select(); }
@@ -313,14 +315,16 @@ function submit(val, btn) {
     MW.lockOpts(q, true);
     MW.lockInput();
     if (L.viz) showViz(true);
-    showMsg("bad", `💭 The answer is ${MW.ansHTML(q)}.${whyLine(MG.whyNote(q, val), "🤔")}${whyLine(rightWhy(q), "💡")}${work(q, "shown")}${nextBtn(false)}`);
+    showMsg("bad", `💭 The answer is ${MW.ansHTML(q)}.${whyLine(MG.whyNote(q, val), "🤔")}${whyLine(rightWhy(q), "💡")}${work(q, "shown")}${thinkTail(q, false)}${nextBtn(false)}`);
   }
+  if (WR.Think && L.done) WR.Think.bindWhy(q, WR.$("#mexplain"));
   WR.save(); WR.renderTop(); petReact(res.ok);
   const h = document.querySelector(".hud"); if (h && L.done) { const i = L.i; L.i++; h.innerHTML = hud(); L.i = i; }
   const gs = WR.$("#gstrip"); if (gs && L.done) { gs.innerHTML = guardMeter(); if (res.ok) WR.$("#bossFace").classList.add("hit"); }
   WR.setStats([["⭐", L.starsEarned, "earned"], ["🔥", L.combo, "combo"]]);
   const nb = WR.$("#mnext"); if (nb) { WR.tapOnce(nb, () => { if (!L) return; if (L.i >= L.items.length - 1) finish(); else { L.i++; render(); } }); nb.scrollIntoView({ behavior: "smooth", block: "nearest" }); if (!coarse()) nb.focus({ preventScroll: true }); }
 }
+const thinkTail = (q, right) => WR.Think && L.done ? WR.Think.recordSure(q, right) + WR.Think.whyHTML(q) : "";
 const nextBtn = ok => `<div class="row" style="margin-top:10px;justify-content:flex-end"><button class="btn ${ok ? "mint" : ""}" id="mnext">${L.i >= L.items.length - 1 ? "See results ✨" : "Next →"}</button></div>`;
 MW.record = (key, score) => { const m = MW.st(), p = m.topics[key] || { best: 0, plays: 0 }; p.best = Math.max(p.best, score); p.plays++; p.last = Date.now(); m.topics[key] = p; m.lessons = (m.lessons || 0) + 1; WR.state.lessonsDone++; WR.save(); };
 function finish() {
