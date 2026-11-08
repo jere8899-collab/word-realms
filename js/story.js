@@ -33,11 +33,8 @@ WR.Story = { fill, plain, sentences };
 const KID_FOCUS = { a1: "<i>there is</i>, <i>there are</i> and <i>can</i>", a2: "telling what happened, and <i>bigger</i>, <i>better</i>", b1: "what was happening, and <i>if … will</i>",
   b2: "what had happened, and <i>should have</i>", c1: "surprising word orders and gentle opinions", c2: "reading between the lines" };
 WR.addGrownNote && WR.addGrownNote("story", "📜 Story", rid => WR.loadStory(rid).then(d => `Storybook for ${rid.toUpperCase()}: ${d.chapters.length} chapters, opened in order. Language focus: ${d.chapters[0].focus || "-"}. Five reading questions per chapter with a reason for every answer.`));
-WR.loadStory = async lvl => {
-  const k = lvl + "/story";
-  if (!WR.data[k]) WR.data[k] = await fetch("data/" + k + ".json").then(r => { if (!r.ok) throw new Error(k); return r.json(); });
-  return WR.data[k];
-};
+// the same loader as every other bank (WR.data cache + one fetch), so a chapter and a lesson can't each keep a copy
+WR.loadStory = lvl => WR.bank(lvl, "story");
 // one chapter's picture: the light WebP with the original JPG as a fallback
 const pic = (img, alt = "") => `<img src="assets/web/${img}.webp" onerror="this.onerror=null;this.src='assets/stories/${img}.jpg'" alt="${alt}">`;
 const chKey = (rid, n) => n > 1 ? rid + "." + n : rid;          // save key of chapter n

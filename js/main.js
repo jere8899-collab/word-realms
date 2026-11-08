@@ -323,6 +323,15 @@ WR.openRename = () => {
   });
 };
 
+// 📲 R17: everything for offline play, only when a grown-up/child asks (the first visit stays light)
+function bindOfflineRow(bg) {
+  const ob = bg.querySelector("#offBtn"), os = bg.querySelector("#offState");
+  if (!ob) return;
+  const ready = () => { os.textContent = "✅ Ready for offline play"; ob.textContent = "Done"; ob.disabled = true; };
+  WR.offline.status().then(d => { if (d && d.ready) ready(); else if (d && WR.offline.lite()) os.textContent = "on mobile data: pictures load as you play"; });
+  ob.onclick = () => { ob.disabled = true; ob.textContent = "…"; WR.offline.download(d => { if (!d.ready && d.total) os.textContent = `Downloading pictures… ${d.done}/${d.total}`; }).then(d => d ? ready() : (ob.disabled = false, ob.textContent = "Download")); };
+}
+
 /* ---------------- settings ---------------- */
 function settings() {
   const s = WR.state;
@@ -344,13 +353,7 @@ function settings() {
     bg.querySelector("#petV").onchange = e => { s.settings.petVoice = e.target.checked; WR.save(); };
     bg.querySelector("#dMix").onchange = e => { s.settings.dailyMix = e.target.checked; WR.save(); };
     bg.querySelector("#cls").onclick = close;
-    // 📲 R17: everything for offline play, only when a grown-up/child asks (the first visit stays light)
-    const ob = bg.querySelector("#offBtn"), os = bg.querySelector("#offState");
-    if (ob) {
-      const ready = () => { os.textContent = "✅ Ready for offline play"; ob.textContent = "Done"; ob.disabled = true; };
-      WR.offline.status().then(d => { if (d && d.ready) ready(); else if (d && WR.offline.lite()) os.textContent = "on mobile data: pictures load as you play"; });
-      ob.onclick = () => { ob.disabled = true; ob.textContent = "…"; WR.offline.download(d => { if (!d.ready && d.total) os.textContent = `Downloading pictures… ${d.done}/${d.total}`; }).then(d => d ? ready() : (ob.disabled = false, ob.textContent = "Download")); };
-    }
+    bindOfflineRow(bg);
     bg.querySelector("#heroEdit").onclick = () => { close(); WR.openRename(); };
     bg.querySelector("#plRe").onclick = () => { close(); WR.retakePlacement(); };
     const cs = bg.querySelector("#ccSet"); if (cs) cs.onclick = () => { close(); WR.Cloud.open(); };
