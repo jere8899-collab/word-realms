@@ -121,6 +121,7 @@ WR.startLesson = async (opts) => {
   catch (e) { if (e && e.wrMiss) { WR.noteMiss(); return; } throw e; }
   L = { ...opts, realm, items, mode: opts.mode || realm.mode, i: 0, correct: 0, combo: 0, maxCombo: 0, starsEarned: 0,
         hearts: 3, bossHP: 100, meter: 50, lit: 0, jar: [], answered: false };
+  if (WR.Think) WR.Think.mark(L);   // 🧠 a rare why / how-sure prompt, never in a boss or a crown check
   WR.navActive && WR.navActive("map");
   render();
 };
@@ -176,6 +177,7 @@ function qBody(it) {
   if (it.pic) h += `<div class="qpic">${it.pic}</div>`;
   if (it.art) h += `<div class="qpic qart">${WR.img(it.art).replace(/alt="[^"]*"/, 'alt="Picture: spell this word"')}</div>`;
   h += `<div class="qtext">${WR.esc(it.q)}</div>`;
+  if (WR.Think) h += WR.Think.bar(it);
   if (TILES[it.type]) {
     const T = TILES[it.type], words = tilesOf(it), ls = T.list ? " events" : "";
     let sh = WR.shuffle(words); let guard = 0; while (sh.join(T.sep) === it.answer && guard++ < 10) sh = WR.shuffle(words);
@@ -234,6 +236,7 @@ function render() {
   else if (it._rc) bindRecall(it);
   else bindOpts(it);
   if (WR.$("#playBtn")) bindListen(it);
+  if (WR.Think) WR.Think.bind(it);
   const sc = WR.$("#storyChip"); if (sc) sc.onclick = () => storySheet(it.passage);
   if (L.mode === "boss" && !L.noTimer) armTimer(it);
 }
@@ -455,11 +458,13 @@ function answer(ok, it, extra = "") {
   petReact(ok);
   WR.setStats([["⭐", L.starsEarned, "earned"], ["🔥", L.combo, "combo"]]);
   const transcript = it.say && !SG_TYPES.has(it.type) ? `<div class="transcript"><div>🎧 “${WR.sayHTML(it.say)}”</div><button class="btn ghost small" id="replay">🔁 Replay</button></div>` : "";
+  const think = WR.Think ? WR.Think.recordSure(it, ok) + WR.Think.whyHTML(it) : "";
   const lost = (L.mode === "boss" || L.mode === "dragon") && L.hearts === 0;
   const wn = whyNot(ok, it);   // R19: a True/False note already quotes the line, so the rule line isn't repeated under it
   const last = L.i >= L.items.length - 1 || lost || ((L.mode === "boss" || L.mode === "dragon") && L.bossHP <= 0);
-  WR.$("#explain").innerHTML = `<div class="explain ${ok ? "good" : "bad"}">${ok ? "✅ Correct!" : "💭 Not quite."} ${extra}${wn}${wn && it.type === "tf" ? "" : `<div class="why-rule" style="font-weight:700;margin-top:4px">💡 ${WR.esc(it.explain)}</div>`}${!ok && lessonFor(it) ? `<div class="ln-hintlink">${WR.Learn.scrollBtn(lessonFor(it))}</div>` : ""}${transcript}</div>
+  WR.$("#explain").innerHTML = `<div class="explain ${ok ? "good" : "bad"}">${ok ? "✅ Correct!" : "💭 Not quite."} ${extra}${wn}${wn && it.type === "tf" ? "" : `<div class="why-rule" style="font-weight:700;margin-top:4px">💡 ${WR.esc(it.explain)}</div>`}${!ok && lessonFor(it) ? `<div class="ln-hintlink">${WR.Learn.scrollBtn(lessonFor(it))}</div>` : ""}${transcript}${think}</div>
     <div class="row" style="margin-top:12px;justify-content:flex-end"><button class="btn ${ok ? "mint" : ""}" id="nextBtn">${last ? "See results ✨" : "Next →"}</button></div>`;
+  if (WR.Think) WR.Think.bindWhy(it, WR.$("#explain"));
   const rp = WR.$("#replay"); if (rp) rp.onclick = () => WR.say(it.say);
   const hf = WR.$("#hearFull"); if (hf) hf.onclick = () => WR.say(it.type === "typed" ? it.full : it.passage ? it.passage.say : it.say);
   WR.tapOnce(WR.$("#nextBtn"), () => { WR.Voice.stop(); if (last) finish(lost); else { L.i++; render(); } });
