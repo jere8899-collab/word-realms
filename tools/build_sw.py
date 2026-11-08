@@ -12,7 +12,7 @@ html = open("index.html").read()
 # Install: the app shell, plus the few JSON files the map needs so a reload with no network still opens.
 # Lesson banks are not in this list (they were, and the first visit sat against a 2 MB ceiling).
 shell = ["./", "index.html", "manifest.webmanifest", "assets/manifest.json"]
-shell += re.findall(r'(?:src|href)="((?:js|css)/[^"]+)"', html)
+shell += re.findall(r'data-shell="((?:js|css)/[^"]+)"', html)
 shell += ["assets/ui/icon-192.png"]   # the 512 install icon waits in the art cache until the phone installs
 core = [f for f in [
     "data/realms.json", "data/shop.json", "data/anchors.json", "data/counts.json", "data/lessons/index.json",
@@ -64,8 +64,8 @@ const keepData = async () => {{
   return n;
 }};
 self.addEventListener("install", e => {{
-  // The page copies the shell and the home JSON out of the HTTP cache (js/offline.js). Doing it here
-  // would download every one of those files a second time: cache.add() from a worker does not reuse it.
+  // The page waits until this worker is in charge, then loads the shell once. This handler must not
+  // fetch it again: cache.add() does not reuse a response the page already received.
   e.waitUntil(self.skipWaiting());
 }});
 self.addEventListener("activate", e => {{

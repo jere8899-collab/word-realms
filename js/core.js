@@ -197,7 +197,7 @@ const fetchJSON = p => fetch(p).then(async r => {
   if (!r.ok) throw new Error(p + " " + r.status);
   // Keep the file before the caller continues, so a reload with no network still has it
   // even when this fetch was not seen by the service worker.
-  const keep = /^(data\/|assets\/voice\/manifest)/.test(p);
+  const keep = /^(data\/|assets\/voice\/manifest)/.test(p) || p === "assets/manifest.json";
   const copy = keep ? r.clone() : null;
   const data = await r.json();
   if (copy) { try { const c = await caches.open("wrdata"); if (!(await c.match(p))) await c.put(p, copy); } catch (e) { } }
