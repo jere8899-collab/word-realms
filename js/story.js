@@ -31,11 +31,8 @@ WR.Story = { fill, plain, sentences, hero: STORY_HERO, petName: storyPet };
 const KID_FOCUS = { a1: "<i>there is</i>, <i>there are</i> and <i>can</i>", a2: "telling what happened, and <i>bigger</i>, <i>better</i>", b1: "what was happening, and <i>if … will</i>",
   b2: "what had happened, and <i>should have</i>", c1: "surprising word orders and gentle opinions", c2: "reading between the lines" };
 WR.addGrownNote && WR.addGrownNote("story", "📜 Story", rid => WR.loadStory(rid).then(d => `Storybook for ${rid.toUpperCase()}: ${d.chapters.length} chapters, opened in order. Language focus: ${d.chapters[0].focus || "-"}. Five reading questions per chapter with a reason for every answer.`));
-WR.loadStory = async lvl => {
-  const k = lvl + "/story";
-  if (!WR.data[k]) WR.data[k] = await fetch("data/" + k + ".json").then(r => { if (!r.ok) throw new Error(k); return r.json(); });
-  return WR.data[k];
-};
+// the same loader as every other bank (WR.data cache + one fetch), so a chapter and a lesson can't each keep a copy
+WR.loadStory = lvl => WR.bank(lvl, "story");
 // one chapter's picture: the light WebP with the original JPG as a fallback
 const pic = (img, alt = "") => `<img src="assets/web/${img}.webp" onerror="this.onerror=null;this.src='assets/stories/${img}.jpg'" alt="${alt}">`;
 const chKey = (rid, n) => n > 1 ? rid + "." + n : rid;          // save key of chapter n
@@ -167,14 +164,19 @@ function finish() {
 // WR.go("story", "a1") reads chapter 1; WR.go("story", { rid, n }) reads chapter n (shelf = came from the chapter shelf)
 WR.screens.story = async arg => {
   const { rid, n = 1, shelf = false } = typeof arg === "string" ? { rid: arg } : arg;
-  const [book] = await Promise.all([WR.loadStory(rid), WR.Voice && WR.Voice.more("story")]), ch = book.chapters[n - 1] || book.chapters[0];
+  let book;
+  try { [book] = await Promise.all([WR.loadStory(rid), WR.Voice && WR.Voice.more("story")]); }
+  catch (e) { if (e && e.wrMiss) { WR.noteMiss(); return WR.toRealm(rid); } throw e; }
+  const ch = book.chapters[n - 1] || book.chapters[0];
   S = { realm: WR.realmById(rid), book, ch, n: book.chapters.indexOf(ch) + 1, shelf, num: WR.realms.findIndex(x => x.id === rid) + 1, page: 0, correct: 0, answers: {}, opts: {} };
   render();
 };
 WR.startStory = (rid, n = 1) => WR.go("story", n > 1 ? { rid, n, shelf: true } : rid);
 // 📚 the realm's chapter shelf: every chapter with its picture, crowns, and a lock until the one before is read
 WR.screens.storyShelf = async rid => {
-  const r = WR.realmById(rid), book = await WR.loadStory(rid);
+  const r = WR.realmById(rid); let book;
+  try { book = await WR.loadStory(rid); }
+  catch (e) { if (e && e.wrMiss) { WR.noteMiss(); return WR.toRealm(rid); } throw e; }
   if (WR.current() !== "storyShelf") return;
   const total = book.chapters.length, read = chRead(rid);
   WR.view(`<div class="fade-in story-shelf"><div class="row" style="justify-content:space-between;margin:6px 0 10px">

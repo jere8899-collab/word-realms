@@ -1,8 +1,9 @@
-/* 📲 R17: lighter first visit. The service worker (sw.js, built by tools/build_sw.py) precaches only the app shell and the
-   lesson data; art and icons are cached the first time they are shown. This file:
-     • after the first screen, asks the worker to keep the art that screen already showed (it loaded before the worker
-       was in charge) plus the current realm's picture, unless the phone is on Save-Data / cellular;
-     • WR.offline.download(onProgress) fetches every picture for full offline play (⚙️ Settings → 📲 Download for offline play);
+/* 📲 Lighter first visit. Lesson banks are not downloaded with the map; they are saved in wrdata when opened
+   (and kept across updates). This file fills the cache the map needs, then registers sw.js
+   (built by tools/build_sw.py). A <script> response cannot be reused by fetch(), so the shell is read
+   once more into the cache — the same second read the old install precache did. Banks are not in that list. This file:
+     • keeps the shell, the home JSON, and the art already on screen;
+     • WR.offline.download(onProgress) fetches every picture and every bank (⚙️ Settings → Download);
      • WR.offline.status() → Promise<{ have, total, ready }>. */
 (function () {
 const WR = window.WR, sw = navigator.serviceWorker;
@@ -13,17 +14,44 @@ const ask = (msg, until) => !sw ? Promise.resolve(null) : sw.ready.then(r => new
   const on = e => { const d = e.data || {}; if (d.type !== "offline") return; if (msg.onProgress) msg.onProgress(d); if (until(d)) { sw.removeEventListener("message", on); res(d); } };
   sw.addEventListener("message", on); const { onProgress, ...m } = msg; r.active.postMessage(m);
 }));
+// Fill the caches from here. A worker's cache.add() cannot see the page's HTTP cache either.
+let named = null;
+const names = () => named || (named = fetch("sw.js", { cache: "no-cache" }).then(r => r.text()).then(text => ({
+  version: (text.match(/const VERSION = "(wr-[0-9a-f]{12})"/) || [])[1],
+  art: (text.match(/const ART = "(wrart-[0-9a-f]+)"/) || [])[1]
+})).catch(() => ({})));
+const putCache = async (name, list) => {
+  if (!name) return;
+  const c = await caches.open(name);
+  await Promise.all([...new Set(list)].filter(Boolean).map(async u => {
+    if (await c.match(u)) return;
+    try {
+      const res = await fetch(u, { cache: "force-cache" });
+      if (res && res.ok) await c.put(u, res.clone());
+    } catch (e) { }
+  }));
+};
 WR.offline = {
   lite,
-  warm() {
+  async warm() {
     if (!sw) return;
-    const shown = performance.getEntriesByType("resource").map(e => rel(e.name)).filter(u => /^assets\/(web|icons|acc)\//.test(u));
-    const c = WR.continueTarget && WR.continueTarget(), rid = (c && c.realm && c.realm.id) || (WR.state && WR.state.startLevel) || "a1";
-    const extra = lite() ? [] : [`assets/web/bg_${rid}_720.webp`, `assets/web/story_${rid}.webp`];
-    sw.ready.then(r => r.active && r.active.postMessage({ type: "warm", urls: [...new Set(shown.concat(extra))] }));
+    const { version, art } = await names();
+    const urls = performance.getEntriesByType("resource").map(e => rel(e.name)).concat(performance.getEntriesByType("navigation").map(e => rel(e.name)));
+    const shell = urls.filter(u => /^(js|css)\//.test(u) || u === "index.html" || u === "manifest.webmanifest" || u === "assets/manifest.json" || u === "assets/ui/icon-192.png");
+    const data = urls.filter(u => /^data\/.+\.json$/.test(u) || /^assets\/voice\/manifest[^/]*\.json$/.test(u));
+    const shown = urls.filter(u => /^assets\/(web|icons|acc|ui)\//.test(u));
+    await Promise.all([
+      putCache(version, shell.concat(["index.html"])),
+      putCache("wrdata", data),
+      putCache(art, shown)
+    ]);
   },
   download: onProgress => ask({ type: "download", onProgress }, d => d.ready),
   status: () => ask({ type: "status" }, () => true)
 };
-if (sw) addEventListener("load", () => setTimeout(() => WR.offline.warm(), 2500));
+// Register after the first fill, so the worker does not start a third read of the same files.
+// The later warm picks up pictures that finished after the first copy.
+if (sw && !window.__WR_NO_SW) addEventListener("load", () => {
+  WR.offline.warm().then(() => sw.register("sw.js").catch(() => {})).then(() => setTimeout(() => WR.offline.warm(), 2000));
+});
 })();

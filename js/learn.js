@@ -13,7 +13,14 @@ const init0 = WR.init;
 WR.init = async (...a) => { const p = LN.loadIndex(); const r = await init0(...a); await p; return r; };
 LN.all = () => IDX.slice();
 LN.get = id => IDX.find(x => x.id === id) || null;
-LN.pack = async p => PACKS[p] || (PACKS[p] = await fetch(`data/lessons/${p}.json`).then(r => { if (!r.ok) throw new Error("lesson pack " + p); return r.json(); }));
+LN.pack = async p => {
+  if (PACKS[p]) return PACKS[p];
+  try {
+    const r = await fetch(`data/lessons/${p}.json`);
+    if (!r.ok) throw WR.miss(new Error("lesson pack " + p));
+    return PACKS[p] = await r.json();
+  } catch (e) { throw e && e.wrMiss ? e : WR.miss(e); }
+};
 LN.full = async id => { const i = LN.get(id); if (!i) return null; const pk = await LN.pack(i.pack); return (pk.lessons || []).find(x => x.id === id) || null; };
 const st = () => WR.block("learn");
 LN.rec = id => st().done[id] || null;
@@ -626,7 +633,8 @@ const STEPS = [["hook", "Story"], ["discover", "Try it"], ["rule", "The rule"], 
 const dotOf = step => ({ hook: 0, discover: 1, rule: 2, check: 3, reteach: 2, rdiscover: 1, done: 4 }[step]);
 const dots = step => `<div class="ln-dots" aria-label="Step ${dotOf(step) + 1} of 5: ${STEPS[dotOf(step)][1]}">${STEPS.map(([k, l], j) => `<span class="${j < dotOf(step) ? "was" : j === dotOf(step) ? "on" : ""}"><i></i><small>${l}</small></span>`).join("")}</div>`;
 LN.open = async (id, o = {}) => {
-  const L = await LN.full(id); if (!L) return WR.toast("📜 Coming soon!");
+  let L; try { L = await LN.full(id); } catch (e) { if (e && e.wrMiss) return WR.noteMiss(); throw e; }
+  if (!L) return WR.toast("📜 Coming soon!");
   WR.go("learn", { id, L, back: o.back || null, recall: o.recall === true || (o.recall !== false && LN.isDue(id)) });
 };
 WR.screens.learn = arg => {
