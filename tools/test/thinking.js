@@ -64,6 +64,8 @@ const mcq = (extra = {}) => Object.assign({ type: 'mcq', q: 'A cat sits ___ the 
   // How sure, then a reload.
   await page.evaluate(() => WR.startLesson({ realm: 'a1', skill: 'vocab', key: 'vocab', title: 'Sure', items: [Object.assign({ type: 'mcq', q: 'A cat sits ___ the mat.', options: ['on', 'under', 'beside', 'into'], correct: 'on', explain: 'On is for a surface.', _sk: 'a1/vocab', _rv: { for: 'demo' }, _think: 'sure' })] }));
   await page.waitForSelector('.think-gate');
+  const optional = await page.evaluate(() => { const b = document.querySelector('.opt'); return !!b && !b.disabled; });
+  ok(optional, 'the thinking prompt is optional; the answer can be tapped without it');
   const stars0 = await page.evaluate(() => WR.state.stars);
   await page.click('.think-btn[data-th="sure"]');
   const stars1 = await page.evaluate(() => WR.state.stars);
@@ -102,6 +104,23 @@ const mcq = (extra = {}) => Object.assign({ type: 'mcq', q: 'A cat sits ___ the 
   const heur = await page.evaluate(() => ({ text: document.querySelector('.think-gate').innerText, stars: WR.state.stars }));
   ok(/Sketch the parts/.test(heur.text) && heur.stars === s2, 'picking "draw a model" names the strategy and pays nothing');
   await page.screenshot({ path: path.join(OUT, 'thinking_375_heur.png') });
+
+  // A corrected second try still counts as the sure feeling matching.
+  const second = await page.evaluate(() => {
+    const q = MathGen.make('g1.add20', 4); q._think = 'sure';
+    WR.Math.startLesson({ topic: 'g1.add20', items: [q], title: 'Second try' });
+    return { a: String(q.a), wrong: String(Number(q.a) + 3) };
+  });
+  await page.waitForSelector('[data-think="sure"]');
+  const beforeSure = await page.evaluate(() => Object.assign({}, WR.state.think));
+  await page.click('.think-btn[data-th="sure"]');
+  await page.fill('#mans', second.wrong);
+  await page.click('#mcheck');
+  await page.fill('#mans', second.a);
+  await page.click('#mcheck');
+  await page.waitForSelector('#mnext');
+  const afterSure = await page.evaluate(() => ({ t: WR.state.think, text: document.body.innerText }));
+  ok(afterSure.t.sure === beforeSure.sure + 1 && afterSure.t.sureRight === beforeSure.sureRight + 1 && /felt sure, and you were right/.test(afterSure.text), `a corrected second try still counts as sure and right (${afterSure.t.sureRight}/${afterSure.t.sure})`);
 
   for (const v of [{ w: 320, h: 700, name: '320' }, { w: 360, h: 740, name: '360' }, { w: 700, h: 360, name: 'land' }]) {
     const o = await open({ width: v.w, height: v.h });
