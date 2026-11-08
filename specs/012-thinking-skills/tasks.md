@@ -5,5 +5,5 @@
 - [x] `js/think.js` plus lesson and maths hooks
 - [x] Save block and cloud merge
 - [x] Dedicated test, phone sizes, save/reload
-- [ ] Full suite, with cloud, lightart, parentgate, and pwa run one at a time
-- [ ] Not live. REVIEW stays in progress until Jeremy approves a release
+- [x] Full suite. cloud, lightart, parentgate, and pwa were not run in parallel. A few phone tests raced the shell and passed on their own after the page waits for its scripts.
+- [x] Not live. REVIEW stays 🔧 until Jeremy approves a release
