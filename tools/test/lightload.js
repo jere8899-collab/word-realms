@@ -20,7 +20,14 @@ const served = rel => { const f = path.join(ROOT, rel === '' ? 'index.html' : re
   const ctx = await browser.newContext({ viewport: { width: 375, height: 667 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
   await ctx.addInitScript(s => { if (!localStorage.getItem('wordRealms.save.v1')) localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)); }, SAVE);
   await ctx.route(/supabase\.co|cdn\.jsdelivr\.net/, r => r.abort());
-  const urls = new Set(); ctx.on('request', r => { const u = r.url(); if (u.startsWith(BASE)) urls.add(u.slice(BASE.length).split('?')[0]); });
+  const urls = new Set(); const counts = {};
+  ctx.on('request', r => {
+    const u = r.url(); if (!u.startsWith(BASE)) return;
+    // The worker's own fetch is the network half of a page request it is already handling, not a second copy.
+    let pageReq = true; try { pageReq = !!r.frame(); } catch (e) { pageReq = false; }
+    if (!pageReq) return;
+    const rel = u.slice(BASE.length).split('?')[0]; urls.add(rel); counts[rel] = (counts[rel] || 0) + 1;
+  });
   const page = await ctx.newPage(); const errs = []; page.on('pageerror', e => errs.push(e.message));
   await page.goto(BASE); await page.waitForSelector('.realm-node');
   await page.evaluate(() => navigator.serviceWorker.ready);
@@ -29,8 +36,12 @@ const served = rel => { const f = path.join(ROOT, rel === '' ? 'index.html' : re
   const list = [...urls], bytes = list.reduce((a, u) => a + served(u), 0);
   const sw = fs.readFileSync(ROOT + '/sw.js', 'utf8'), ART = JSON.parse(sw.match(/const ARTFILES = (\[.*?\]);/)[1].replace(/'/g, '"'));
   const allArt = ART.reduce((a, u) => a + served(u), 0);
-  console.log(`first visit: ${list.length} files, ${bytes} bytes as served (all art would add ${(allArt / 1e6).toFixed(2)} MB)`);
-  ok(bytes < 1.45e6, `the first visit downloads ${(bytes / 1e6).toFixed(2)} MB (< 1.45 MB, was 1.87 MB on main)`);
+  const wire = Object.entries(counts).reduce((a, [u, n]) => a + served(u) * n, 0);
+  const repeated = Object.entries(counts).filter(([u, n]) => n > 1 && /^(js|css)\//.test(u));
+  console.log(`first visit: ${list.length} files, ${bytes} unique bytes; ${wire} bytes counting every request (all art would add ${(allArt / 1e6).toFixed(2)} MB)`);
+  ok(bytes < 1.45e6, `the first visit's unique URLs are ${(bytes / 1e6).toFixed(2)} MB (< 1.45 MB, was 1.87 MB on main)`);
+  ok(repeated.length === 0, `each shell file is requested once (${repeated.slice(0, 3).map(([u, n]) => u + ' ×' + n).join(', ')})`);
+  ok(wire < 1.15e6, `counting every request the first visit is ${(wire / 1e6).toFixed(2)} MB (< 1.15 MB; a second shell copy would miss this)`);
   ok(!list.includes('data/c2/reading.json') && !list.includes('data/b2/vocab.json') && !list.includes('assets/voice/manifest.json'), 'far banks and the voice lookup are not on the first visit');
   ok(list.includes('data/realms.json') && list.includes('js/math-topics-p.js'), 'the map still loads home data and the maths crown code');
   ok(list.filter(u => u.startsWith('assets/icons/')).length < 120, `only the icons on screen are fetched (${list.filter(u => u.startsWith('assets/icons/')).length} of ${ART.filter(u => u.startsWith('assets/icons/')).length})`);

@@ -12,61 +12,86 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <link rel="icon" type="image/webp" href="assets/icons/blossom.webp">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/math.css">
-<link rel="stylesheet" href="css/sg.css">
-<link rel="stylesheet" href="css/learn.css">
-<link rel="stylesheet" href="css/phone.css">
+<link data-shell="css/style.css">
+<link data-shell="css/math.css">
+<link data-shell="css/sg.css">
+<link data-shell="css/learn.css">
+<link data-shell="css/phone.css">
 </head>
 <body>
 <div class="sparkles"></div>
 <div id="app"><div class="center" style="padding:80px 0"><div style="font-size:3rem"><img class="wr-icon" src="assets/icons/sparkles.webp" alt=""></div><h2>Opening the storybook…</h2></div></div>
 <nav class="navbar" id="navbar" style="display:none"></nav>
-<script defer src="js/payments.js"></script>
-<script defer src="js/speech.js"></script>
-<script defer src="js/core.js"></script>
-<script defer src="js/review.js"></script>
-<script defer src="js/voice.js"></script>
-<script defer src="js/icon-registry.js"></script>
-<script defer src="js/icons.js"></script>
-<script defer src="js/cloud.js"></script>
-<script defer src="js/recall.js"></script>
-<script defer src="js/lesson.js"></script>
-<script defer src="js/specials.js"></script>
-<script defer src="js/parent-gate.js"></script>
-<script defer src="js/pet-shop.js"></script>
-<script defer src="js/wardrobe.js"></script>
-<script defer src="js/garden.js"></script>
-<script defer src="js/speaking.js"></script>
-<script defer src="js/writing.js"></script>
-<script defer src="js/story.js"></script>
-<script defer src="js/placement.js"></script>
-<script defer src="js/math-gen.js"></script>
-<script defer src="js/math-topics-p.js"></script>
-<script defer src="js/math-topics-m.js"></script>
-<script defer src="js/math-topics-h.js"></script>
-<script defer src="js/math-viz.js"></script>
-<script defer src="js/math.js"></script>
-<script defer src="js/math-dojo.js"></script>
-<script defer src="js/math-clock.js"></script>
-<script defer src="js/learn.js"></script>
-<script defer src="js/main.js"></script>
-<script defer src="js/pass.js"></script>
-<script defer src="js/sg-english.js"></script>
-<script defer src="js/collect.js"></script>
-<script defer src="js/math-goals.js"></script>
-<script defer src="js/math-review.js"></script>
-<script defer src="js/report.js"></script>
-<script defer src="js/phonics.js"></script>
-<script defer src="js/charms.js"></script>
-<script defer src="js/gap-round.js"></script>
-<script defer src="js/swap.js"></script>
-<script defer src="js/forge.js"></script>
-<script defer src="js/cloze.js"></script>
-<script defer src="js/marks.js"></script>
-<script defer src="js/offline.js"></script>
-<script defer src="js/ux.js"></script>
-<script defer src="js/health.js"></script>
-<!-- The service worker is registered from js/offline.js, after the shell has been copied into the cache. -->
+<script data-shell="js/payments.js"></script>
+<script data-shell="js/speech.js"></script>
+<script data-shell="js/core.js"></script>
+<script data-shell="js/review.js"></script>
+<script data-shell="js/voice.js"></script>
+<script data-shell="js/icon-registry.js"></script>
+<script data-shell="js/icons.js"></script>
+<script data-shell="js/cloud.js"></script>
+<script data-shell="js/recall.js"></script>
+<script data-shell="js/lesson.js"></script>
+<script data-shell="js/specials.js"></script>
+<script data-shell="js/parent-gate.js"></script>
+<script data-shell="js/pet-shop.js"></script>
+<script data-shell="js/wardrobe.js"></script>
+<script data-shell="js/garden.js"></script>
+<script data-shell="js/speaking.js"></script>
+<script data-shell="js/writing.js"></script>
+<script data-shell="js/story.js"></script>
+<script data-shell="js/placement.js"></script>
+<script data-shell="js/math-gen.js"></script>
+<script data-shell="js/math-topics-p.js"></script>
+<script data-shell="js/math-topics-m.js"></script>
+<script data-shell="js/math-topics-h.js"></script>
+<script data-shell="js/math-viz.js"></script>
+<script data-shell="js/math.js"></script>
+<script data-shell="js/math-dojo.js"></script>
+<script data-shell="js/math-clock.js"></script>
+<script data-shell="js/learn.js"></script>
+<script data-shell="js/main.js"></script>
+<script data-shell="js/pass.js"></script>
+<script data-shell="js/sg-english.js"></script>
+<script data-shell="js/collect.js"></script>
+<script data-shell="js/math-goals.js"></script>
+<script data-shell="js/math-review.js"></script>
+<script data-shell="js/report.js"></script>
+<script data-shell="js/phonics.js"></script>
+<script data-shell="js/charms.js"></script>
+<script data-shell="js/gap-round.js"></script>
+<script data-shell="js/swap.js"></script>
+<script data-shell="js/forge.js"></script>
+<script data-shell="js/cloze.js"></script>
+<script data-shell="js/marks.js"></script>
+<script data-shell="js/offline.js"></script>
+<script data-shell="js/ux.js"></script>
+<script data-shell="js/health.js"></script>
+<!-- Load each shell file once, after the worker is in charge, so that one response is the cached copy.
+     A script or stylesheet response cannot be stored later, and fetching it again downloads it twice. -->
+<script>
+(function () {
+  const nodes = () => [...document.querySelectorAll("[data-shell]")];
+  let started = false;
+  const start = () => {
+    if (started) return; started = true;
+    const css = [], js = [];
+    nodes().forEach(n => { const u = n.getAttribute("data-shell"); (u.endsWith(".css") ? css : js).push(u); });
+    let left = css.length;
+    const scripts = () => js.forEach(u => { const s = document.createElement("script"); s.src = u; s.async = false; document.body.appendChild(s); });
+    if (!left) { scripts(); return; }
+    css.forEach(u => {
+      const link = document.createElement("link"); link.rel = "stylesheet"; link.href = u;
+      link.onload = link.onerror = () => { if (--left === 0) scripts(); };
+      document.head.appendChild(link);
+    });
+  };
+  const sw = navigator.serviceWorker;
+  if (!sw || window.__WR_NO_SW || sw.controller) { start(); return; }
+  const giveUp = setTimeout(start, 4000);
+  sw.addEventListener("controllerchange", () => { clearTimeout(giveUp); start(); });
+  sw.register("sw.js").catch(() => { clearTimeout(giveUp); start(); });
+})();
+</script>
 </body>
 </html>

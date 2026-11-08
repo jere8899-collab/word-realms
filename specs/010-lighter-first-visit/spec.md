@@ -33,7 +33,7 @@ A child opens Word Realms for the first time. The map appears. The phone does no
 **Acceptance Scenarios**:
 
 1. **Given** a new save, **When** the map finishes loading, **Then** the first visit is under 1.45 MB by the lightload count and does not request other realms' lesson banks.
-2. **Given** the same visit, **When** the shell files load, **Then** the service worker does not ask the network for a second full copy of them (`cache: "no-cache"` on install).
+2. **Given** the same visit, **When** the shell files load, **Then** each `js/` and `css/` file is requested once. The worker stores that response. Install does not fetch the shell again, and the page does not fetch it again to fill the cache.
 
 ### User Story 2 - Another level, then offline (Priority: P1)
 
@@ -70,6 +70,7 @@ If a bank cannot be fetched, the child stays on a working screen, sees a short k
 ## Done when
 
 - First-visit unique bytes are substantially below 1,870,825, with far banks absent.
+- Counting every request (a repeated shell file counts again) stays close to that unique total. The unique total alone is not the cold-start transfer.
 - A visited level works offline after reload. An unvisited level fails kindly.
 - Download still fills art and banks. Old precached banks survive into `wrdata`.
 - `tools/test/lightload.js`, `tools/test/pwa.js`, and `tools/test/firstload.js` cover this.
