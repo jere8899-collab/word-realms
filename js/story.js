@@ -84,7 +84,7 @@ function render() {
   if (!last) {
     WR.$("#readAll").onclick = () => readAll(WR.state.settings.rate);
     WR.$("#readSlow").onclick = () => readAll(0.65);
-    document.querySelectorAll(".sent").forEach(s => s.onclick = e => { if (e.target.closest(".gloss")) return; S.tok = (S.tok || 0) + 1; hl(+s.dataset.i); WR.say(s.textContent, { onend: () => hl(-1) }); });
+    document.querySelectorAll(".sent").forEach(s => s.onclick = e => { if (e.target.closest(".gloss")) return; S.tok = (S.tok || 0) + 1; hl(+s.dataset.i); WR.say(s.textContent, { narrate: true, onend: () => hl(-1), onmiss: () => hl(-1) }); });
     document.querySelectorAll(".gloss").forEach(b => b.onclick = e => { e.stopPropagation(); gloss(b); });
   }
   document.querySelectorAll(".opt").forEach(b => b.onclick = () => choose(b, q, opts));
@@ -97,7 +97,7 @@ function hl(i) { document.querySelectorAll(".sent").forEach(s => s.classList.tog
 function readAll(rate) {
   const ss = [...document.querySelectorAll(".sent")]; let i = 0; const tok = S.tok = (S.tok || 0) + 1;
   st().reads++; WR.save();
-  const step = () => { if (!S || S.tok !== tok) return; if (i >= ss.length) return hl(-1); hl(i); WR.say(ss[i].textContent, { rate, onend: () => { i++; step(); } }); };
+  const step = () => { if (!S || S.tok !== tok) return; if (i >= ss.length) return hl(-1); hl(i); WR.say(ss[i].textContent, { rate, narrate: true, onend: () => { i++; step(); }, onmiss: () => { if (S && S.tok === tok) hl(-1); } }); };
   step();
 }
 function gloss(b) {
@@ -107,9 +107,9 @@ function gloss(b) {
   const pop = document.createElement("div"); pop.className = "gloss-pop";
   pop.innerHTML = `<b>${WR.esc(w)}</b> <button class="btn ghost small" data-say="1">🔊</button><div>${WR.esc(g)}</div>${isNew ? '<div class="muted" style="font-size:.72rem;font-weight:800">✨ Added to your word list</div>' : ""}`;
   (WR.$("#storyText") || b).insertAdjacentElement("afterend", pop);
-  pop.querySelector("[data-say]").onclick = e => { e.stopPropagation(); WR.say(w + ". " + g); };
+  pop.querySelector("[data-say]").onclick = e => { e.stopPropagation(); WR.say(w + ". " + g, { word: true }); };
   pop.onclick = e => { e.stopPropagation(); pop.remove(); };
-  b.classList.add("seen"); if (S) S.tok = (S.tok || 0) + 1; hl(-1); WR.say(w);
+  b.classList.add("seen"); if (S) S.tok = (S.tok || 0) + 1; hl(-1); WR.say(w, { word: true });
 }
 function choose(btn, q, opts) {
   if (S.answers[S.page]) return;
@@ -165,8 +165,10 @@ function finish() {
 WR.screens.story = async arg => {
   const { rid, n = 1, shelf = false } = typeof arg === "string" ? { rid: arg } : arg;
   let book;
-  try { [book] = await Promise.all([WR.loadStory(rid), WR.Voice && WR.Voice.more("story")]); }
+  try { book = await WR.loadStory(rid); }
   catch (e) { if (e && e.wrMiss) { WR.noteMiss(); return WR.toRealm(rid); } throw e; }
+  // Start the story lookup, but do not hold the page for it. A sentence tap waits for the same recording.
+  if (WR.Voice) WR.Voice.more("story").catch(() => {});
   const ch = book.chapters[n - 1] || book.chapters[0];
   S = { realm: WR.realmById(rid), book, ch, n: book.chapters.indexOf(ch) + 1, shelf, num: WR.realms.findIndex(x => x.id === rid) + 1, page: 0, correct: 0, answers: {}, opts: {} };
   render();
