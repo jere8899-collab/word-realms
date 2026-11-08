@@ -105,6 +105,13 @@ const KIT = {};
 // shared: schedule the next stage only if the widget is still on screen
 const later = (root, ms, fn) => setTimeout(() => { if (root.isConnected) fn(); }, ms);
 const saySoon = (api, line) => { if (api.sayLine && line) setTimeout(() => api.sayLine(line), 0); };
+// money and clock walk a list of targets: cheer, then the next one or done
+const nextTarget = (root, api, i, n, sel, show) => {
+  const j = i + 1;
+  if (j >= n) { root.querySelectorAll(sel).forEach(b => b.disabled = true); api.done(); }
+  else setTimeout(show, 900);
+  return j;
+};
 // 🔤 shuffle letters for spellhear (and any future letter-tile widgets)
 const shuffleLetters = (answer, extra = "") => {
   const letters = (answer + extra).split("");
@@ -351,7 +358,7 @@ KIT.rename = {
   } };
 // 💰 dollars & cents: build an amount with $1 / 10¢ / 1¢ coins (pv-style)
 const COINS = [[100, "$1", "dollar", "d"], [10, "10¢", "ten-cent", "t"], [1, "1¢", "one-cent", "c"]];
-const moneyFmt = c => `$${(c / 100).toFixed(2)}`;
+const moneyFmt = (c, asCents) => asCents ? `${c}¢` : `$${(c / 100).toFixed(2)}`;
 KIT.money = {
   html: () => `<div class="lw-target" aria-live="polite"></div>
     <div class="lw-mat money-mat" data-tgt aria-label="the till mat">${COINS.map(([v, lab, name, c]) => `<div class="pv-col pv-${c}"><small class="pv-name">${lab}</small><div class="pv-blocks" data-col="${v}"></div><b class="pv-n" data-n="${v}">0</b><button class="btn ghost small pv-minus" data-minus="${v}" aria-label="take one ${name} coin back">➖</button></div>`).join("")}</div>
@@ -360,16 +367,17 @@ KIT.money = {
   bind(root, w, api) {
     let i = 0; const n = { 100: 0, 10: 0, 1: 0 }, mat = root.querySelector(".lw-mat");
     const total = () => n[100] * 100 + n[10] * 10 + n[1];
-    const paint = () => { for (const [v] of COINS) { const col = root.querySelector(`[data-col="${v}"]`);
-      col.innerHTML = v === 100 ? "<i class='coin-d'></i>".repeat(n[v]) : v === 10 ? "<i class='coin-t'></i>".repeat(n[v]) : "<i class='coin-c'></i>".repeat(n[v]);
+    const fmt = c => moneyFmt(c, w.cents);
+    const paint = () => { for (const [v, lab, name, cls] of COINS) { const col = root.querySelector(`[data-col="${v}"]`);
+      col.innerHTML = `<i class='coin-${cls}'></i>`.repeat(n[v]);
       root.querySelector(`[data-n="${v}"]`).textContent = n[v]; }
-      root.querySelector(".lw-count").textContent = `${n[100]} × $1 + ${n[10]} × 10¢ + ${n[1]} × 1¢ = ${moneyFmt(total())}`; };
-    const show = () => { root.querySelector(".lw-target").innerHTML = `Make <b>${moneyFmt(w.targets[i])}</b>`; Object.assign(n, { 100: 0, 10: 0, 1: 0 }); paint(); };
+      root.querySelector(".lw-count").textContent = `${n[100]} × $1 + ${n[10]} × 10¢ + ${n[1]} × 1¢ = ${fmt(total())}`; };
+    const show = () => { root.querySelector(".lw-target").innerHTML = `Make <b>${fmt(w.targets[i])}</b>`; Object.assign(n, { 100: 0, 10: 0, 1: 0 }); paint(); };
     show();
     const check = () => { const want = w.targets[i];
-      if (total() !== want) { if (total() > want) api.say(`That's ${moneyFmt(total())}, more than ${moneyFmt(want)}. Tap ➖ to take a coin back.`); return; }
-      api.good(`✅ ${moneyFmt(want)}!`); i++;
-      if (i >= w.targets.length) { root.querySelectorAll("[data-src], .pv-minus").forEach(b => b.disabled = true); api.done(); } else setTimeout(show, 900); };
+      if (total() !== want) { if (total() > want) api.say(`That's ${fmt(total())}, more than ${fmt(want)}. Tap ➖ to take a coin back.`); return; }
+      api.good(`✅ ${fmt(want)}!`);
+      i = nextTarget(root, api, i, w.targets.length, "[data-src], .pv-minus", show); };
     const add = v => { if (n[v] >= 9) return api.miss(v === 100 ? "That's plenty of dollars!" : v === 10 ? "10 of the 10¢ coins make $1. Use a $1 coin instead!" : "10 of the 1¢ coins make 10¢. Use a 10¢ coin instead!", mat);
       n[v]++; WR.sfx("tap"); paint(); check(); };
     dragTap(root, { instant: () => mat, onDrop: src => add(+src.dataset.v) });
@@ -399,8 +407,8 @@ KIT.clock = {
     const paint = () => { stage.innerHTML = clockSVG(h, m); root.querySelector(".lw-count").textContent = `Hands say ${hmStr(h, m)}`; };
     const show = () => { const t = w.targets[i]; root.querySelector(".lw-target").innerHTML = `Set the clock to <b>${hmStr(t.h, t.m)}</b>`; h = 12; m = 0; paint(); };
     const check = () => { const t = w.targets[i]; if (h !== t.h || m !== t.m) return;
-      api.good(`✅ ${hmStr(t.h, t.m)}!`); i++;
-      if (i >= w.targets.length) { root.querySelectorAll(".ck-btn").forEach(b => b.disabled = true); api.done(); } else setTimeout(show, 900); };
+      api.good(`✅ ${hmStr(t.h, t.m)}!`);
+      i = nextTarget(root, api, i, w.targets.length, ".ck-btn", show); };
     root.querySelectorAll(".ck-btn").forEach(b => b.onclick = () => {
       const k = b.dataset.k;
       if (k === "h+") h = h % 12 + 1; else if (k === "h-") h = h === 1 ? 12 : h - 1;

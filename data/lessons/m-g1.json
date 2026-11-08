@@ -918,6 +918,735 @@
    ],
    "grown": "👪 MOE P1 Geometry: identify, name, describe and classify 2D shapes (triangle, square, rectangle, circle, and often pentagon/hexagon) by sides and corners/vertices.",
    "pack": "m-g1"
+  },
+  {
+   "id": "m.g1.money",
+   "title": "Counting coins",
+   "icon": "🪙",
+   "at": {
+    "topic": "g1.money"
+   },
+   "art": "lesson_m_g1_money",
+   "art_alt": "Crumb the baker dragon counts shiny coins into a soft lilac purse",
+   "hook": {
+    "text": "Crumb the baker dragon's lilac purse is jingling! A jam drop costs 25 cents. He has 10¢ coins and 1¢ coins, but he is not sure how to count them. Can you help him make 25 cents?",
+    "say": "Crumb the baker dragon's lilac purse is jingling! A jam drop costs 25 cents. He has 10 cent coins and 1 cent coins, but he is not sure how to count them. Can you help him make 25 cents?"
+   },
+   "discover": {
+    "kind": "money",
+    "targets": [
+     25,
+     43
+    ],
+    "cents": true,
+    "text": "Make 25¢, then 43¢. Start with the 10¢ coins, then add 1¢ coins. Drag a coin onto the mat or tap it. Tap ➖ to take one back.",
+    "hint": "Start with the biggest coins. A 10¢ coin is ten cents. Count on: 10, 20, then the 1¢ coins.",
+    "say": "Make 25 cents, then 43 cents. Start with the 10 cent coins, then add 1 cent coins. Drag a coin onto the mat or tap it. Tap ➖ to take one back."
+   },
+   "rule": {
+    "text": "Start with the biggest coins and count on. A 10¢ coin is ten cents. A 1¢ coin is one cent. Two 10¢ and five 1¢: say 10, 20, then 21, 22, 23, 24, 25 — that's 25 cents. One hundred cents make \\$1, but we count in cents first.",
+    "examples": [
+     "2 × 10¢ + 5 × 1¢ = 25¢",
+     "4 × 10¢ + 3 × 1¢ = 43¢",
+     "100 cents = \\$1"
+    ],
+    "say": "Start with the biggest coins and count on. A 10 cent coin is ten cents. A 1 cent coin is one cent. Two 10 cents and five 1 cent: say 10, 20, then 21, 22, 23, 24, 25 — that's 25 cents. One hundred cents make 1 dollar, but we count in cents first.",
+    "sayEx": [
+     "2 times 10 cents plus 5 times 1 cent equals 25 cents",
+     "4 times 10 cents plus 3 times 1 cent equals 43 cents",
+     "100 cents equals 1 dollar"
+    ]
+   },
+   "check": [
+    {
+     "q": "Crumb puts down three 10¢ coins. How many cents is that?",
+     "options": [
+      "30 cents",
+      "3 cents",
+      "13 cents"
+     ],
+     "answer": 0,
+     "notes": {
+      "3 cents": "Each 10¢ coin is ten cents, not one cent. Count 10, 20, 30.",
+      "13 cents": "Don't write 1 and 3 next to each other. Three tens: 10 + 10 + 10 = 30 cents."
+     },
+     "explain": "Three 10¢ coins: 10, 20, 30. That is 30 cents.",
+     "say": "Crumb puts down three 10 cent coins. How many cents is that?"
+    },
+    {
+     "q": "A 20¢ coin and a 5¢ coin sit in the purse. How many cents altogether?",
+     "options": [
+      "25 cents",
+      "205 cents",
+      "20 cents"
+     ],
+     "answer": 0,
+     "notes": {
+      "205 cents": "Don't write 20 and 5 side by side. Add the values: 20 + 5 = 25 cents.",
+      "20 cents": "Don't stop at the first coin. Count on after 20: 20, then 25."
+     },
+     "explain": "Start with the bigger coin: 20, then count on 5 more → 25 cents.",
+     "say": "A 20 cent coin and a 5 cent coin sit in the purse. How many cents altogether?"
+    },
+    {
+     "q": "Crumb has 3 cents and finds 5 more cents. How many cents now?",
+     "options": [
+      "8 cents",
+      "35 cents",
+      "3 cents"
+     ],
+     "answer": 0,
+     "notes": {
+      "35 cents": "Don't write 3 and 5 side by side. 3 + 5 = 8 cents.",
+      "3 cents": "That's only the first amount. Count on the 5 more: 3 + 5 = 8."
+     },
+     "explain": "3 plus 5 is 8 cents, not 35.",
+     "say": "Crumb has 3 cents and finds 5 more cents. How many cents now?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way: say the cents out loud as you place each coin! First the tens: 10, 20, 30… Then count on the ones: 31, 32, 33. Try making 15 cents that way.",
+    "examples": [
+     "10, then 11, 12, 13, 14, 15 → 15¢",
+     "Five 10¢ coins: 10, 20, 30, 40, 50 → 50¢"
+    ],
+    "discover": {
+     "kind": "money",
+     "targets": [
+      15
+     ],
+     "cents": true,
+     "text": "Make 15¢. Start with one 10¢ coin, then five 1¢ coins.",
+     "hint": "10, then count on: 11, 12, 13, 14, 15.",
+     "say": "Make 15 cents. Start with one 10 cent coin, then five 1 cent coins."
+    },
+    "say": "Here's another way: say the cents out loud as you place each coin! First the tens: 10, 20, 30… Then count on the ones: 31, 32, 33. Try making 15 cents that way."
+   },
+   "check2": [
+    {
+     "q": "Four 10¢ coins. How many cents?",
+     "options": [
+      "40 cents",
+      "4 cents",
+      "14 cents"
+     ],
+     "answer": 0,
+     "notes": {
+      "4 cents": "Each coin is 10 cents, not 1 cent. 10 + 10 + 10 + 10 = 40.",
+      "14 cents": "Don't write 1 and 4 together. Four tens make 40 cents."
+     },
+     "explain": "Count in tens: 10, 20, 30, 40.",
+     "say": "Four 10 cent coins. How many cents?"
+    },
+    {
+     "q": "One 10¢ coin and six 1¢ coins. How many cents?",
+     "options": [
+      "16 cents",
+      "7 cents",
+      "106 cents"
+     ],
+     "answer": 0,
+     "notes": {
+      "7 cents": "That's 1 + 6 coins, not their values. 10 + 6 = 16 cents.",
+      "106 cents": "Don't write 10 and 6 side by side. 10 + 6 = 16 cents."
+     },
+     "explain": "Start with 10, then count on six ones: 16 cents.",
+     "say": "One 10 cent coin and six 1 cent coins. How many cents?"
+    },
+    {
+     "q": "Two 20¢ coins and one 10¢ coin. How many cents?",
+     "options": [
+      "50 cents",
+      "20 cents",
+      "2010 cents"
+     ],
+     "answer": 0,
+     "notes": {
+      "20 cents": "Don't stop at the first coin. Count on: 20, 40, then 50.",
+      "2010 cents": "Don't write the numbers next to each other. 20 + 20 + 10 = 50 cents."
+     },
+     "explain": "20, then 40, then 50 cents.",
+     "say": "Two 20 cent coins and one 10 cent coin. How many cents?"
+    }
+   ],
+   "grown": "👪 MOE P1 Money: counting and making amounts in cents (5¢, 10¢, 20¢, 50¢ and 1-dollar coins); 100 cents = 1 dollar is introduced lightly. Decimal dollars-and-cents notation (1 dollar 25 cents) is a Primary 2 idea.",
+   "pack": "m-g1"
+  },
+  {
+   "id": "m.g1.time",
+   "title": "O'clock and half past",
+   "icon": "🕰️",
+   "at": {
+    "topic": "g1.time"
+   },
+   "art": "lesson_m_g1_time",
+   "art_alt": "Puffbun the bunny waits beside a pastel cake-like clock tower",
+   "hook": {
+    "text": "Puffbun the bunny is waiting at the fairy clock tower. The carrot picnic starts at 3 o'clock! The two hands look so alike. Can you set the clock so Puffbun is not late?",
+    "say": "Puffbun the bunny is waiting at the fairy clock tower. The carrot picnic starts at 3 o'clock! The two hands look so alike. Can you set the clock so Puffbun is not late?"
+   },
+   "discover": {
+    "kind": "clock",
+    "targets": [
+     {
+      "h": 3,
+      "m": 0
+     },
+     {
+      "h": 4,
+      "m": 30
+     }
+    ],
+    "text": "Set the clock to 3 o'clock, then to half past 4. Tap hour ⏩ to move the short hand, and 5 min ⏩ to move the long hand. You can also tap a mark on the clock face for the minutes.",
+    "hint": "O'clock means the long hand points to 12. Half past means the long hand points to 6.",
+    "say": "Set the clock to 3 o'clock, then to half past 4. Tap hour ⏩ to move the short hand, and 5 min ⏩ to move the long hand. You can also tap a mark on the clock face for the minutes."
+   },
+   "rule": {
+    "text": "The short hand shows the hour. The long hand shows the minutes. When the long hand points to 12, it is o'clock. When it points to 6, it is half past — and the short hand sits halfway to the next hour.",
+    "examples": [
+     "long hand on 12 → 3 o'clock (3:00)",
+     "long hand on 6 → half past 4 (4:30)",
+     "the long hand also counts in fives: on 1 → 5 minutes, on 3 → 15 minutes"
+    ],
+    "say": "The short hand shows the hour. The long hand shows the minutes. When the long hand points to 12, it is o'clock. When it points to 6, it is half past — and the short hand sits halfway to the next hour.",
+    "sayEx": [
+     "long hand on 12, 3 o'clock (3:00)",
+     "long hand on 6, half past 4 (4:30)",
+     "the long hand also counts in fives: on 1, 5 minutes, on 3, 15 minutes"
+    ]
+   },
+   "check": [
+    {
+     "q": "The short hand points to 3 and the long hand points to 12. What time is it?",
+     "options": [
+      "3 o'clock",
+      "12 o'clock",
+      "3:12"
+     ],
+     "answer": 0,
+     "notes": {
+      "12 o'clock": "The long hand on 12 means the minutes are 0 — it is o'clock. The short hand shows the hour: 3.",
+      "3:12": "The 12 is where the long hand rests for o'clock, not 12 minutes. It is 3 o'clock."
+     },
+     "explain": "Short hand on 3, long hand on 12 → 3 o'clock.",
+     "say": "The short hand points to 3 and the long hand points to 12. What time is it?"
+    },
+    {
+     "q": "The long hand points to 6. How many minutes is that?",
+     "options": [
+      "30 minutes",
+      "6 minutes",
+      "60 minutes"
+     ],
+     "answer": 0,
+     "notes": {
+      "6 minutes": "The number 6 is not 6 minutes. The long hand on 6 means half past — 30 minutes.",
+      "60 minutes": "A clock only goes to 60 minutes at the next o'clock (the 12). On 6 it is halfway: 30 minutes."
+     },
+     "explain": "Halfway around the clock is 30 minutes: half past.",
+     "say": "The long hand points to 6. How many minutes is that?"
+    },
+    {
+     "q": "Half past 5 is…",
+     "options": [
+      "5:30",
+      "6:30",
+      "5:06"
+     ],
+     "answer": 0,
+     "notes": {
+      "6:30": "Half past 5 is still in the 5 o'clock hour: 5:30. The short hand is halfway to 6, but the hour is still 5.",
+      "5:06": "The long hand on 6 is 30 minutes, not 6 minutes."
+     },
+     "explain": "Half past 5 means 30 minutes past 5: 5:30.",
+     "say": "Half past 5 is…"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way: the long hand also counts in fives! Start at 12 and whisper 5, 10, 15… as you pass each number. On 1 → 5 minutes, on 3 → 15 minutes, on 6 → 30 minutes — that's half past!",
+    "examples": [
+     "to the 1: 5 minutes",
+     "to the 3: 5, 10, 15 → :15",
+     "to the 6: 5…30 → half past"
+    ],
+    "discover": {
+     "kind": "clock",
+     "targets": [
+      {
+       "h": 2,
+       "m": 15
+      }
+     ],
+     "text": "Set the clock to 2:15. Count the long hand in fives to the 3: 5, 10, 15!",
+     "hint": "Long hand on 3 → 15 minutes. Short hand just past 2.",
+     "say": "Set the clock to 2:15. Count the long hand in fives to the 3: 5, 10, 15!"
+    },
+    "say": "Here's another way: the long hand also counts in fives! Start at 12 and whisper 5, 10, 15… as you pass each number. On 1, 5 minutes, on 3, 15 minutes, on 6, 30 minutes — that's half past!"
+   },
+   "check2": [
+    {
+     "q": "The long hand points to 1. How many minutes?",
+     "options": [
+      "5 minutes",
+      "1 minute",
+      "10 minutes"
+     ],
+     "answer": 0,
+     "notes": {
+      "1 minute": "Each number the long hand passes is worth 5 minutes, not 1. On 1 → 5 minutes.",
+      "10 minutes": "10 minutes is the long hand on 2. On 1 → 5 minutes."
+     },
+     "explain": "Count in fives: the first number after 12 is 5 minutes.",
+     "say": "The long hand points to 1. How many minutes?"
+    },
+    {
+     "q": "The short hand is just past 8 and the long hand is on 6. What time is it?",
+     "options": [
+      "half past 8",
+      "half past 6",
+      "8 o'clock"
+     ],
+     "answer": 0,
+     "notes": {
+      "half past 6": "The long hand on 6 means half past, but the short hand shows the hour: 8. So it is half past 8.",
+      "8 o'clock": "O'clock needs the long hand on 12. On 6 it is half past 8."
+     },
+     "explain": "Long hand on 6 → half past. Short hand past 8 → half past 8 (8:30).",
+     "say": "The short hand is just past 8 and the long hand is on 6. What time is it?"
+    },
+    {
+     "q": "The long hand on 3 means…",
+     "options": [
+      "15 minutes",
+      "3 minutes",
+      "30 minutes"
+     ],
+     "answer": 0,
+     "notes": {
+      "3 minutes": "Count in fives, not by the number itself: 5, 10, 15.",
+      "30 minutes": "30 minutes is the long hand on 6 (half past). On 3 → 15 minutes."
+     },
+     "explain": "Count in fives to the 3: 5, 10, 15 minutes.",
+     "say": "The long hand on 3 means…"
+    }
+   ],
+   "grown": "👪 MOE P1 Time: telling time to the hour and half hour (o'clock and half past); reading clock hands; 5-minute times are introduced so practice matches the live Clock Tower topic. Counting the minute hand in fives in depth is a Primary 2 focus.",
+   "pack": "m-g1"
+  },
+  {
+   "id": "m.g1.picgraph",
+   "title": "One picture is one",
+   "icon": "🖼️",
+   "at": {
+    "topic": "g1.picgraph"
+   },
+   "art": "lesson_m_g1_picgraph",
+   "art_alt": "Princess Mira places flower and star stickers in three neat rows",
+   "hook": {
+    "text": "Princess Mira is making a sticker graph of the garden party! Each flower sticker stands for one friend. The rows are Cakes, Pies and Tarts — but they are still empty. Can you line the stickers up?",
+    "say": "Princess Mira is making a sticker graph of the garden party! Each flower sticker stands for one friend. The rows are Cakes, Pies and Tarts — but they are still empty. Can you line the stickers up?"
+   },
+   "discover": {
+    "kind": "picgraph",
+    "key": 1,
+    "item": "🌸",
+    "cats": [
+     {
+      "id": "cakes",
+      "label": "Cakes",
+      "n": 4
+     },
+     {
+      "id": "pies",
+      "label": "Pies",
+      "n": 2
+     },
+     {
+      "id": "tarts",
+      "label": "Tarts",
+      "n": 5
+     }
+    ],
+    "text": "Tap ➕ (or the row) to add a flower sticker. Each 🌸 stands for 1 friend. Match the numbers: Cakes 4, Pies 2, Tarts 5.",
+    "hint": "Count the pictures in each row. Cakes need 4 stickers, Pies need 2, Tarts need 5.",
+    "say": "Tap ➕ (or the row) to add a flower sticker. Each 🌸 stands for 1 friend. Match the numbers: Cakes 4, Pies 2, Tarts 5."
+   },
+   "rule": {
+    "text": "On this picture graph, each picture stands for one thing. Count the pictures in the row — the last number you say is how many. Read the label first so you count the right row!",
+    "examples": [
+     "4 flower stickers in Cakes → 4 friends like cake",
+     "each picture = 1",
+     "always read the row's name first"
+    ],
+    "say": "On this picture graph, each picture stands for one thing. Count the pictures in the row — the last number you say is how many. Read the label first so you count the right row!",
+    "sayEx": [
+     "4 flower stickers in Cakes, 4 friends like cake",
+     "each picture equals 1",
+     "always read the row's name first"
+    ]
+   },
+   "check": [
+    {
+     "q": "Each picture = 1. The Cakes row has 4 pictures. How many friends like cake?",
+     "options": [
+      "4",
+      "1",
+      "8"
+     ],
+     "answer": 0,
+     "notes": {
+      "1": "1 is what each picture stands for (the key), not how many friends. Four pictures mean 4.",
+      "8": "Don't multiply as if each picture stood for 2. Here each picture is one: 4."
+     },
+     "explain": "Count the four pictures: 1, 2, 3, 4. Each one is one friend.",
+     "say": "Each picture equals 1. The Cakes row has 4 pictures. How many friends like cake?"
+    },
+    {
+     "q": "A graph shows Stars ★★★★★ and Moons ★★. How many chose Stars?",
+     "options": [
+      "5",
+      "2",
+      "7"
+     ],
+     "answer": 0,
+     "notes": {
+      "2": "That's the Moons row. Read the label: Stars has 5 pictures.",
+      "7": "That's Stars and Moons added together. The question asked only for Stars."
+     },
+     "explain": "Read the Stars label and count those pictures: 5.",
+     "say": "A graph shows Stars ★★★★★ and Moons ★★. How many chose Stars?"
+    },
+    {
+     "q": "The key says each picture = 1. A row has 6 pictures. How many does that row show?",
+     "options": [
+      "6",
+      "12",
+      "1"
+     ],
+     "answer": 0,
+     "notes": {
+      "12": "That would be if each picture stood for 2. The key is 1, so 6 pictures mean 6.",
+      "1": "1 is the key, not the total. Six pictures mean 6."
+     },
+     "explain": "Each picture is one, so 6 pictures show 6.",
+     "say": "The key says each picture equals 1. A row has 6 pictures. How many does that row show?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way: point to each picture and count like toys on a shelf — 1, 2, 3… The last number is how many. You do not multiply, because each picture is just one. Try a new graph!",
+    "examples": [
+     "point: 1, 2, 3 → that row shows 3",
+     "the key 1 is not the answer — it tells you each picture is one"
+    ],
+    "discover": {
+     "kind": "picgraph",
+     "key": 1,
+     "item": "⭐",
+     "cats": [
+      {
+       "id": "apples",
+       "label": "Apples",
+       "n": 3
+      },
+      {
+       "id": "bells",
+       "label": "Bells",
+       "n": 6
+      }
+     ],
+     "text": "Each ⭐ = 1. Build Apples = 3 and Bells = 6.",
+     "hint": "Apples need 3 stars. Bells need 6 stars. Count them one by one.",
+     "say": "Each ⭐ equals 1. Build Apples equals 3 and Bells equals 6."
+    },
+    "say": "Here's another way: point to each picture and count like toys on a shelf — 1, 2, 3… The last number is how many. You do not multiply, because each picture is just one. Try a new graph!"
+   },
+   "check2": [
+    {
+     "q": "The Frogs row has 3 pictures. Each picture = 1. How many frogs?",
+     "options": [
+      "3",
+      "1",
+      "6"
+     ],
+     "answer": 0,
+     "notes": {
+      "1": "1 is the key, not the number of frogs. Three pictures mean 3 frogs.",
+      "6": "Don't multiply. Each picture is one, so 3 pictures mean 3."
+     },
+     "explain": "Count the frog pictures: 1, 2, 3.",
+     "say": "The Frogs row has 3 pictures. Each picture equals 1. How many frogs?"
+    },
+    {
+     "q": "Bells has 2 pictures and Apples has 7. How many chose Apples?",
+     "options": [
+      "7",
+      "2",
+      "9"
+     ],
+     "answer": 0,
+     "notes": {
+      "2": "That's the Bells row. Read the Apples label: 7 pictures.",
+      "9": "That's 7 + 2. The question asked only for Apples."
+     },
+     "explain": "Read the Apples row and count: 7.",
+     "say": "Bells has 2 pictures and Apples has 7. How many chose Apples?"
+    },
+    {
+     "q": "Why do we read the labels on a picture graph?",
+     "options": [
+      "so we count the right row",
+      "to make the pictures prettier",
+      "so we can multiply"
+     ],
+     "answer": 0,
+     "notes": {
+      "to make the pictures prettier": "Pretty pictures are fun, but the label's job is to tell you which row you are counting.",
+      "so we can multiply": "On this graph each picture is one — we count, we do not multiply."
+     },
+     "explain": "The label names the row, so you count the pictures for the right thing.",
+     "say": "Why do we read the labels on a picture graph?"
+    }
+   ],
+   "grown": "👪 MOE P1 Data Analysis: picture graphs where 1 picture represents 1 item; reading and completing a picture graph. Scales of 2, 5 or 10 come in Primary 2.",
+   "pack": "m-g1"
+  },
+  {
+   "id": "m.g1.story",
+   "title": "Add or take away",
+   "icon": "📜",
+   "at": {
+    "topic": "g1.story"
+   },
+   "art": "lesson_m_g1_story",
+   "art_alt": "Gumdrop reads a picture book next to a duck and a basket of mushrooms",
+   "hook": {
+    "text": "Gumdrop is reading a picture book about a duck and a basket of mushrooms! Sometimes the duck picks more, sometimes she eats some. Gumdrop cannot tell when to add and when to take away. Can you find the action words?",
+    "say": "Gumdrop is reading a picture book about a duck and a basket of mushrooms! Sometimes the duck picks more, sometimes she eats some. Gumdrop cannot tell when to add and when to take away. Can you find the action words?"
+   },
+   "discover": {
+    "kind": "sort",
+    "text": "Sort each story bit into Add, Take away, or How many more. Tap a card, then its basket.",
+    "hint": "Altogether / and … more → add. Ate / gave away / left → take away. How many more → find the difference.",
+    "bins": [
+     {
+      "id": "add",
+      "label": "Add",
+      "icon": "➕"
+     },
+     {
+      "id": "take",
+      "label": "Take away",
+      "icon": "➖"
+     },
+     {
+      "id": "more",
+      "label": "How many more",
+      "icon": "↔️"
+     }
+    ],
+    "items": [
+     {
+      "t": "and 3 more",
+      "bin": "add",
+      "why": "'And … more' means join the groups: add."
+     },
+     {
+      "t": "altogether",
+      "bin": "add",
+      "why": "Altogether means put them together: add."
+     },
+     {
+      "t": "ate 4",
+      "bin": "take",
+      "why": "Ate means some are gone: take away."
+     },
+     {
+      "t": "how many left?",
+      "bin": "take",
+      "why": "'Left' means what remains after some go: take away."
+     },
+     {
+      "t": "gave away",
+      "bin": "take",
+      "why": "Gave away means some leave: take away."
+     },
+     {
+      "t": "how many more?",
+      "bin": "more",
+      "why": "'How many more' means find the difference: take the smaller from the bigger."
+     }
+    ],
+    "say": "Sort each story bit into Add, Take away, or How many more. Tap a card, then its basket."
+   },
+   "rule": {
+    "text": "Look for the action in the story! Words like 'more', 'picks … and … more', and 'altogether' mean add. Words like 'ate', 'gave away', and 'left' mean take away. 'How many more' means find the difference — take the smaller number from the bigger one.",
+    "examples": [
+     "picks 4 and 3 more → 4 + 3",
+     "ate 2, how many left? → take away",
+     "how many more? → find the difference"
+    ],
+    "say": "Look for the action in the story! Words like 'more', 'picks … and … more', and 'altogether' mean add. Words like 'ate', 'gave away', and 'left' mean take away. 'How many more' means find the difference — take the smaller number from the bigger one.",
+    "sayEx": [
+     "picks 4 and 3 more, 4 plus 3",
+     "ate 2, how many left?, take away",
+     "how many more?, find the difference"
+    ]
+   },
+   "check": [
+    {
+     "q": "Gumdrop picks 6 mushrooms, then 5 more. How many now?",
+     "options": [
+      "11",
+      "6",
+      "1"
+     ],
+     "answer": 0,
+     "notes": {
+      "6": "That's only the first number. She picked 5 more too: 6 + 5 = 11.",
+      "1": "That's 6 − 5. 'More' means add, not take away."
+     },
+     "explain": "Picks 6 and 5 more means add: 6 + 5 = 11.",
+     "say": "Gumdrop picks 6 mushrooms, then 5 more. How many now?"
+    },
+    {
+     "q": "There were 14 gumdrops. The duck ate 5. How many are left?",
+     "options": [
+      "9",
+      "19",
+      "14"
+     ],
+     "answer": 0,
+     "notes": {
+      "19": "That's 14 + 5. 'Ate' and 'left' mean take away: 14 − 5 = 9.",
+      "14": "That's only the starting number. The duck ate 5, so take 5 away."
+     },
+     "explain": "Ate 5 from 14: 14 − 5 = 9 left.",
+     "say": "There were 14 gumdrops. The duck ate 5. How many are left?"
+    },
+    {
+     "q": "Puffbun has 7 carrots. Crumb has 12. How many more does Crumb have?",
+     "options": [
+      "5",
+      "19",
+      "12"
+     ],
+     "answer": 0,
+     "notes": {
+      "19": "That's 7 + 12. 'How many more' means find the difference: 12 − 7 = 5.",
+      "12": "That's how many Crumb has, not how many more. Compare: 12 − 7 = 5."
+     },
+     "explain": "How many more → take the smaller from the bigger: 12 − 7 = 5.",
+     "say": "Puffbun has 7 carrots. Crumb has 12. How many more does Crumb have?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way: circle the action word first! Then decide — are things joining (add), leaving (take away), or are we comparing two amounts (how many more)? Try sorting a new set of story bits.",
+    "examples": [
+     "circle 'altogether' → add",
+     "circle 'gave away' → take away",
+     "circle 'how many more' → difference"
+    ],
+    "discover": {
+     "kind": "sort",
+     "text": "Sort these new story bits the same way.",
+     "hint": "Joining words go in Add. Leaving words go in Take away. Comparing 'how many more' has its own basket.",
+     "bins": [
+      {
+       "id": "add",
+       "label": "Add",
+       "icon": "➕"
+      },
+      {
+       "id": "take",
+       "label": "Take away",
+       "icon": "➖"
+      },
+      {
+       "id": "more",
+       "label": "How many more",
+       "icon": "↔️"
+      }
+     ],
+     "items": [
+      {
+       "t": "picks 2 more",
+       "bin": "add",
+       "why": "'Picks … more' means add them on."
+      },
+      {
+       "t": "how many in all?",
+       "bin": "add",
+       "why": "'In all' is like altogether: add."
+      },
+      {
+       "t": "ate 3",
+       "bin": "take",
+       "why": "Ate means take away."
+      },
+      {
+       "t": "gave 5 away",
+       "bin": "take",
+       "why": "Gave away means take away."
+      },
+      {
+       "t": "how many more?",
+       "bin": "more",
+       "why": "'How many more' means find the difference."
+      }
+     ],
+     "say": "Sort these new story bits the same way."
+    },
+    "say": "Here's another way: circle the action word first! Then decide — are things joining (add), leaving (take away), or are we comparing two amounts (how many more)? Try sorting a new set of story bits."
+   },
+   "check2": [
+    {
+     "q": "Hoot found 8 berries and 6 more. How many altogether?",
+     "options": [
+      "14",
+      "8",
+      "2"
+     ],
+     "answer": 0,
+     "notes": {
+      "8": "That's only the first number. He found 6 more too: 8 + 6 = 14.",
+      "2": "That's 8 − 6. 'More' and 'altogether' mean add."
+     },
+     "explain": "8 and 6 more altogether: 8 + 6 = 14.",
+     "say": "Hoot found 8 berries and 6 more. How many altogether?"
+    },
+    {
+     "q": "Sumi had 15 stars and gave 7 away. How many are left?",
+     "options": [
+      "8",
+      "22",
+      "15"
+     ],
+     "answer": 0,
+     "notes": {
+      "22": "That's 15 + 7. 'Gave away' and 'left' mean take away: 15 − 7 = 8.",
+      "15": "That's only the starting number. She gave 7 away, so take 7 away."
+     },
+     "explain": "15 − 7 = 8 stars left.",
+     "say": "Sumi had 15 stars and gave 7 away. How many are left?"
+    },
+    {
+     "q": "Mira has 9 stickers. Pip has 4. How many more does Mira have?",
+     "options": [
+      "5",
+      "13",
+      "9"
+     ],
+     "answer": 0,
+     "notes": {
+      "13": "That's 9 + 4. 'How many more' means find the difference: 9 − 4 = 5.",
+      "9": "That's how many Mira has, not how many more than Pip. 9 − 4 = 5."
+     },
+     "explain": "Compare the two amounts: 9 − 4 = 5 more.",
+     "say": "Mira has 9 stickers. Pip has 4. How many more does Mira have?"
+    }
+   ],
+   "grown": "👪 MOE P1 Word Problems: one-step addition and subtraction within 20; identifying the operation from the action in the story (altogether/add, left/take away, how many more/difference). Bar models for two-step stories come in Primary 2.",
+   "pack": "m-g1"
   }
  ]
 }

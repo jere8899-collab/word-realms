@@ -173,10 +173,11 @@
 .rg-need{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:4px;min-height:48px;align-items:center}
 .rg-jar.wide .rg-slots{grid-template-columns:repeat(5,1fr)}
 .rg-unbundle{display:flex;margin:6px auto 0;min-height:48px}
-/* money coins on the till mat */
-.money-mat .pv-d .pv-blocks i.coin-d,.lw-block.pv-d i{width:28px;height:28px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#FFE08A,#F5C84C 55%,#E0A830);box-shadow:inset 0 0 0 2px #E8C45A}
-.money-mat .pv-t .pv-blocks i.coin-t,.lw-block.pv-t i{width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#D8EEFF,#9FD8FF 55%,#7CB8E0);box-shadow:inset 0 0 0 2px #8EC8F0}
-.money-mat .pv-c .pv-blocks i.coin-c,.lw-block.pv-c i{width:14px;height:14px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#E8F8EE,#7EE0B8 55%,#5CB890);box-shadow:inset 0 0 0 1px #6CC8A0}
+/* money coins on the till mat — shared round-coin look, then each size and colour */
+.money-mat .pv-blocks i[class^="coin-"],.lw-block.pv-d i,.lw-block.pv-t i,.lw-block.pv-c i{border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--coin-hi),var(--coin-mid) 55%,var(--coin-lo))}
+.money-mat .pv-d .pv-blocks i.coin-d,.lw-block.pv-d i{width:28px;height:28px;--coin-hi:#FFE08A;--coin-mid:#F5C84C;--coin-lo:#E0A830;box-shadow:inset 0 0 0 2px #E8C45A}
+.money-mat .pv-t .pv-blocks i.coin-t,.lw-block.pv-t i{width:22px;height:22px;--coin-hi:#D8EEFF;--coin-mid:#9FD8FF;--coin-lo:#7CB8E0;box-shadow:inset 0 0 0 2px #8EC8F0}
+.money-mat .pv-c .pv-blocks i.coin-c,.lw-block.pv-c i{width:14px;height:14px;--coin-hi:#E8F8EE;--coin-mid:#7EE0B8;--coin-lo:#5CB890;box-shadow:inset 0 0 0 1px #6CC8A0}
 .lw-block.pv-d,.lw-block.pv-t,.lw-block.pv-c{background:#fff}
 /* five-minute clock */
 .ck-stage{display:flex;justify-content:center;margin:6px 0}

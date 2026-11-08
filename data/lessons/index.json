@@ -577,6 +577,46 @@
    "art": "lesson_m_g1_shapes"
   },
   {
+   "id": "m.g1.money",
+   "pack": "m-g1",
+   "title": "Counting coins",
+   "icon": "🪙",
+   "at": {
+    "topic": "g1.money"
+   },
+   "art": "lesson_m_g1_money"
+  },
+  {
+   "id": "m.g1.time",
+   "pack": "m-g1",
+   "title": "O'clock and half past",
+   "icon": "🕰️",
+   "at": {
+    "topic": "g1.time"
+   },
+   "art": "lesson_m_g1_time"
+  },
+  {
+   "id": "m.g1.picgraph",
+   "pack": "m-g1",
+   "title": "One picture is one",
+   "icon": "🖼️",
+   "at": {
+    "topic": "g1.picgraph"
+   },
+   "art": "lesson_m_g1_picgraph"
+  },
+  {
+   "id": "m.g1.story",
+   "pack": "m-g1",
+   "title": "Add or take away",
+   "icon": "📜",
+   "at": {
+    "topic": "g1.story"
+   },
+   "art": "lesson_m_g1_story"
+  },
+  {
    "id": "m.g2.place",
    "pack": "m-g2",
    "title": "Hundreds, tens and ones",
