@@ -112,13 +112,12 @@ const nextTarget = (root, api, i, n, sel, show) => {
   else setTimeout(show, 900);
   return j;
 };
+// shuffle a list but keep each entry's original index k (sort cards, hearpic pictures, spellhear letters)
+const shuffled = list => WR.shuffle(list.map((x, k) => ({ x, k })));
 // 🔤 shuffle letters for spellhear (and any future letter-tile widgets)
-const shuffleLetters = (answer, extra = "") => {
-  const letters = (answer + extra).split("");
-  return WR.shuffle(letters.map((ch, k) => ({ ch, k })));
-};
+const shuffleLetters = (answer, extra = "") => shuffled((answer + extra).split("")).map(({ x, k }) => ({ ch: x, k }));
 KIT.sort = {
-  html: w => `<div class="lw-pool" aria-label="Cards to sort">${WR.shuffle(w.items.map((it, k) => ({ it, k }))).map(({ it, k }) => `<button class="lw-chip" data-src data-k="${k}">${it.icon ? `<span aria-hidden="true">${it.icon}</span> ` : ""}${esc(it.t)}</button>`).join("")}</div>
+  html: w => `<div class="lw-pool" aria-label="Cards to sort">${shuffled(w.items).map(({ x: it, k }) => `<button class="lw-chip" data-src data-k="${k}">${it.icon ? `<span aria-hidden="true">${it.icon}</span> ` : ""}${esc(it.t)}</button>`).join("")}</div>
     <div class="lw-bins b${w.bins.length}">${w.bins.map(b => `<div class="lw-bin" data-tgt data-b="${esc(b.id)}" role="button" tabindex="0" aria-label="${esc(b.label)} basket"><b>${b.icon || ""} ${esc(b.label)}</b><div class="lw-in"></div></div>`).join("")}</div>`,
   bind(root, w, api) {
     let left = w.items.length;
@@ -572,7 +571,7 @@ KIT.hearpic = {
     const show = () => {
       const it = w.items[i];
       task.innerHTML = `👉 ${esc(it.prompt || "Tap the picture you hear.")}`;
-      pics.innerHTML = WR.shuffle(it.pics.map((p, k) => ({ p, k }))).map(({ p, k }) =>
+      pics.innerHTML = shuffled(it.pics).map(({ x: p, k }) =>
         `<button class="lw-pic" data-tgt data-k="${k}" aria-label="${esc(p.label || p.id)}"><span class="lw-pico" aria-hidden="true">${p.icon || "📷"}</span><small>${esc(p.label || "")}</small></button>`).join("");
       saySoon(api, it.say || it.word);
     };

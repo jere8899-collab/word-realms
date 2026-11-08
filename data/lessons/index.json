@@ -527,6 +527,86 @@
    ]
   },
   {
+   "id": "en.a2.goingto",
+   "pack": "en-a2",
+   "title": "going to: plans",
+   "icon": "🗓️",
+   "at": {
+    "realm": "a2",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_a2_goingto",
+   "match": [
+    {
+     "re": "going to (for|=|\\+)|be going to|going to \\+ verb",
+     "field": "explain"
+    }
+   ]
+  },
+  {
+   "id": "en.a2.will",
+   "pack": "en-a2",
+   "title": "will: promises and guesses",
+   "icon": "🔮",
+   "at": {
+    "realm": "a2",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_a2_will",
+   "match": [
+    {
+     "re": "I think \\+ will|Will \\('ll\\)|will \\+ verb|will for",
+     "field": "explain"
+    }
+   ]
+  },
+  {
+   "id": "en.a2.someany",
+   "pack": "en-a2",
+   "title": "some or any?",
+   "icon": "🧺",
+   "at": {
+    "realm": "a2",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_a2_someany",
+   "match": [
+    {
+     "opts": [
+      "some",
+      "any"
+     ]
+    },
+    {
+     "re": "any in questions|Some in offers|There isn't any|Is there any…|some eggs in a yes",
+     "field": "explain"
+    }
+   ]
+  },
+  {
+   "id": "en.a2.muchmany",
+   "pack": "en-a2",
+   "title": "much or many?",
+   "icon": "🍬",
+   "at": {
+    "realm": "a2",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_a2_muchmany",
+   "match": [
+    {
+     "opts": [
+      "much",
+      "many"
+     ]
+    },
+    {
+     "re": "How many is|How many \\+|'much' with|Much for things|Many for things|much with milk",
+     "field": "explain"
+    }
+   ]
+  },
+  {
    "id": "m.g1.count",
    "pack": "m-g1",
    "title": "Counting to 20",
