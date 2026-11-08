@@ -527,6 +527,86 @@
    ]
   },
   {
+   "id": "en.a2.goingto",
+   "pack": "en-a2",
+   "title": "going to: plans",
+   "icon": "🗓️",
+   "at": {
+    "realm": "a2",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_a2_goingto",
+   "match": [
+    {
+     "re": "going to (for|=|\\+)|be going to|going to \\+ verb",
+     "field": "explain"
+    }
+   ]
+  },
+  {
+   "id": "en.a2.will",
+   "pack": "en-a2",
+   "title": "will: promises and guesses",
+   "icon": "🔮",
+   "at": {
+    "realm": "a2",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_a2_will",
+   "match": [
+    {
+     "re": "I think \\+ will|Will \\('ll\\)|will \\+ verb|will for",
+     "field": "explain"
+    }
+   ]
+  },
+  {
+   "id": "en.a2.someany",
+   "pack": "en-a2",
+   "title": "some or any?",
+   "icon": "🧺",
+   "at": {
+    "realm": "a2",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_a2_someany",
+   "match": [
+    {
+     "opts": [
+      "some",
+      "any"
+     ]
+    },
+    {
+     "re": "any in questions|Some in offers|There isn't any|Is there any…|some eggs in a yes",
+     "field": "explain"
+    }
+   ]
+  },
+  {
+   "id": "en.a2.muchmany",
+   "pack": "en-a2",
+   "title": "much or many?",
+   "icon": "🍬",
+   "at": {
+    "realm": "a2",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_a2_muchmany",
+   "match": [
+    {
+     "opts": [
+      "much",
+      "many"
+     ]
+    },
+    {
+     "re": "How many is|How many \\+|'much' with|Much for things|Many for things|much with milk",
+     "field": "explain"
+    }
+   ]
+  },
+  {
    "id": "m.g1.count",
    "pack": "m-g1",
    "title": "Counting to 20",
@@ -575,6 +655,46 @@
     "topic": "g1.shapes"
    },
    "art": "lesson_m_g1_shapes"
+  },
+  {
+   "id": "m.g1.money",
+   "pack": "m-g1",
+   "title": "Counting coins",
+   "icon": "🪙",
+   "at": {
+    "topic": "g1.money"
+   },
+   "art": "lesson_m_g1_money"
+  },
+  {
+   "id": "m.g1.time",
+   "pack": "m-g1",
+   "title": "O'clock and half past",
+   "icon": "🕰️",
+   "at": {
+    "topic": "g1.time"
+   },
+   "art": "lesson_m_g1_time"
+  },
+  {
+   "id": "m.g1.picgraph",
+   "pack": "m-g1",
+   "title": "One picture is one",
+   "icon": "🖼️",
+   "at": {
+    "topic": "g1.picgraph"
+   },
+   "art": "lesson_m_g1_picgraph"
+  },
+  {
+   "id": "m.g1.story",
+   "pack": "m-g1",
+   "title": "Add or take away",
+   "icon": "📜",
+   "at": {
+    "topic": "g1.story"
+   },
+   "art": "lesson_m_g1_story"
   },
   {
    "id": "m.g2.place",

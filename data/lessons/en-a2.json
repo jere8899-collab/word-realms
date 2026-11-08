@@ -932,6 +932,930 @@
    ],
    "grown": "👪 Superlative adjectives (A2 Key): the + adjective + -est / the most + longer adjective; spelling as for comparatives (biggest, nicest, funniest); irregular good → best. Usually followed by in / of (the tallest in the class).",
    "pack": "en-a2"
+  },
+  {
+   "id": "en.a2.goingto",
+   "title": "going to: plans",
+   "icon": "🗓️",
+   "at": {
+    "realm": "a2",
+    "skill": "grammar"
+   },
+   "match": [
+    {
+     "re": "going to (for|=|\\+)|be going to|going to \\+ verb",
+     "field": "explain"
+    }
+   ],
+   "art": "lesson_en_a2_goingto",
+   "art_alt": "Gumdrop pins drawings of a cake, balloons and music onto a party plan board while Puffbun holds a balloon",
+   "hook": {
+    "text": "Gumdrop is planning a party for Saturday! She made a plan board, but the words fell off. “I ___ bake a cake. Puffbun ___ bring balloons.” Can you put the plan back together?",
+    "say": "Gumdrop is planning a party for Saturday! She made a plan board, but the words fell off. “I blank bake a cake. Puffbun blank bring balloons.” Can you put the plan back together?"
+   },
+   "discover": {
+    "kind": "fill",
+    "text": "Drag the right plan words into each gap, or tap a tile. Look at who is doing it!",
+    "hint": "I → am going to. He, she, it, one name → is going to. We, they, two names → are going to.",
+    "tiles": [
+     "am going to",
+     "is going to",
+     "are going to"
+    ],
+    "items": [
+     {
+      "s": "I ___ bake a cake.",
+      "a": "am going to",
+      "why": "I goes with am: I am going to bake."
+     },
+     {
+      "s": "Puffbun ___ bring balloons.",
+      "a": "is going to",
+      "why": "One friend goes with is: Puffbun is going to bring balloons."
+     },
+     {
+      "s": "We ___ dance all day.",
+      "a": "are going to",
+      "why": "We goes with are: we are going to dance."
+     },
+     {
+      "s": "Crumb ___ make lemonade.",
+      "a": "is going to",
+      "why": "One friend goes with is: Crumb is going to make lemonade."
+     },
+     {
+      "s": "Hoot and Sumi ___ sing a song.",
+      "a": "are going to",
+      "why": "Two friends go with are: they are going to sing."
+     }
+    ],
+    "say": "Drag the right plan words into each gap, or tap a tile. Look at who is doing it!"
+   },
+   "rule": {
+    "text": "When you have a plan for later, say am, is or are, then going to, then the plain doing word. I am going to bake. She is going to swim. They are going to play. We often say it short: I'm going to.",
+    "examples": [
+     "I'm going to visit Grandma on Sunday.",
+     "Puffbun is going to bring balloons.",
+     "We are going to have a party!"
+    ],
+    "say": "When you have a plan for later, say am, is or are, then going to, then the plain doing word. I am going to bake. She is going to swim. They are going to play. We often say it short: I'm going to.",
+    "sayEx": [
+     "I'm going to visit Grandma on Sunday.",
+     "Puffbun is going to bring balloons.",
+     "We are going to have a party!"
+    ]
+   },
+   "check": [
+    {
+     "q": "Tomorrow I ___ visit my grandma.",
+     "options": [
+      "am going to",
+      "going to",
+      "am going"
+     ],
+     "answer": 0,
+     "notes": {
+      "going to": "It needs am in front: I am going to visit.",
+      "am going": "Don't forget to: I am going to visit."
+     },
+     "explain": "A plan: I am going to visit my grandma.",
+     "say": "Tomorrow I blank visit my grandma."
+    },
+    {
+     "q": "Sumi ___ play football on Saturday.",
+     "options": [
+      "is going to",
+      "are going to",
+      "is going to plays"
+     ],
+     "answer": 0,
+     "notes": {
+      "are going to": "Sumi is one friend, so use is: Sumi is going to play.",
+      "is going to plays": "After going to, the doing word stays plain: play, not plays."
+     },
+     "explain": "One friend + is going to + plain word: Sumi is going to play.",
+     "say": "Sumi blank play football on Saturday."
+    },
+    {
+     "q": "Which sentence is a plan for tomorrow?",
+     "options": [
+      "We are going to swim tomorrow.",
+      "We are going to swam tomorrow.",
+      "We going to swim tomorrow."
+     ],
+     "answer": 0,
+     "notes": {
+      "We are going to swam tomorrow.": "Swam is for yesterday. After going to, use the plain word: swim.",
+      "We going to swim tomorrow.": "A piece is missing! We need are: we are going to swim."
+     },
+     "explain": "All three pieces are there: are + going to + swim.",
+     "say": "Which sentence is a plan for tomorrow?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way. A plan is like a little train with three carriages. Carriage one: am, is or are. Carriage two: going to. Carriage three: the plain doing word, like swim or play. If a carriage is missing, the train can't go! We also use going to when we can see something is about to happen: Look at those clouds. It's going to rain!",
+    "examples": [
+     "🚂 I + am + going to + read",
+     "🚂 She + is + going to + swim",
+     "☁️ Look at those clouds! It's going to rain."
+    ],
+    "discover": {
+     "kind": "sort",
+     "text": "Check each plan train. Is it ready to go, or does it need fixing? Drag each card or tap it, then tap a box.",
+     "hint": "Look for all three carriages: am / is / are, then going to, then a plain word like play.",
+     "bins": [
+      {
+       "id": "ok",
+       "label": "ready to go",
+       "icon": "🚂"
+      },
+      {
+       "id": "fix",
+       "label": "needs fixing",
+       "icon": "🔧"
+      }
+     ],
+     "items": [
+      {
+       "t": "I am going to read.",
+       "bin": "ok",
+       "why": "All three carriages: am + going to + read."
+      },
+      {
+       "t": "She going to swim.",
+       "bin": "fix",
+       "why": "Carriage one is missing: she is going to swim."
+      },
+      {
+       "t": "They are going to play.",
+       "bin": "ok",
+       "why": "All three carriages: are + going to + play."
+      },
+      {
+       "t": "He is going to ate.",
+       "bin": "fix",
+       "why": "The last word must be plain: he is going to eat."
+      },
+      {
+       "t": "We are going to cook.",
+       "bin": "ok",
+       "why": "All three carriages: are + going to + cook."
+      },
+      {
+       "t": "I is going to sing.",
+       "bin": "fix",
+       "why": "I goes with am: I am going to sing."
+      }
+     ],
+     "say": "Check each plan train. Is it ready to go, or does it need fixing? Drag each card or tap it, then tap a box."
+    },
+    "say": "Here's another way. A plan is like a little train with three carriages. Carriage one: am, is or are. Carriage two: going to. Carriage three: the plain doing word, like swim or play. If a carriage is missing, the train can't go! We also use going to when we can see something is about to happen: Look at those clouds. It's going to rain!"
+   },
+   "check2": [
+    {
+     "q": "Look at those dark clouds! It ___ rain.",
+     "options": [
+      "is going to",
+      "are going to",
+      "going to"
+     ],
+     "answer": 0,
+     "notes": {
+      "are going to": "It is one thing, so use is: it is going to rain.",
+      "going to": "A carriage is missing! It needs is: it is going to rain."
+     },
+     "explain": "We can see the clouds, so it is going to rain.",
+     "say": "Look at those dark clouds! It blank rain."
+    },
+    {
+     "q": "My brothers ___ watch a film tonight.",
+     "options": [
+      "are going to",
+      "is going to",
+      "am going to"
+     ],
+     "answer": 0,
+     "notes": {
+      "is going to": "Brothers means more than one, so use are.",
+      "am going to": "Am only goes with I. My brothers are going to watch."
+     },
+     "explain": "More than one person: my brothers are going to watch a film.",
+     "say": "My brothers blank watch a film tonight."
+    },
+    {
+     "q": "What ___ you going to do on Sunday?",
+     "options": [
+      "are",
+      "is",
+      "do"
+     ],
+     "answer": 0,
+     "notes": {
+      "is": "You goes with are: what are you going to do?",
+      "do": "Going to questions use am, is or are, not do: what are you going to do?"
+     },
+     "explain": "In a question, are jumps to the front: What are you going to do?",
+     "say": "What blank you going to do on Sunday?"
+    }
+   ],
+   "grown": "👪 be going to + bare infinitive for plans and intentions (A2 Key), plus predictions from present evidence (Look at those clouds!). Contrast with will (next lesson): going to = decided before; will = promises, offers and guesses. Watch for the missing auxiliary (She going to…), the commonest error.",
+   "pack": "en-a2"
+  },
+  {
+   "id": "en.a2.will",
+   "title": "will: promises and guesses",
+   "icon": "🔮",
+   "at": {
+    "realm": "a2",
+    "skill": "grammar"
+   },
+   "match": [
+    {
+     "re": "I think \\+ will|Will \\('ll\\)|will \\+ verb|will for",
+     "field": "explain"
+    }
+   ],
+   "art": "lesson_en_a2_will",
+   "art_alt": "Hoot looks into a pink candy crystal ball while Sumi offers Puffbun a new ice-cream cone",
+   "hook": {
+    "text": "At the Candy Village market, Hoot looks into a candy crystal ball: “I think it will be sunny tomorrow!” Then Puffbun drops her ice cream. Sumi says: “Don't cry. I'll buy you a new one!” They both used will. But they mean different things. Can you sort them?",
+    "say": "At the Candy Village market, Hoot looks into a candy crystal ball: “I think it will be sunny tomorrow!” Then Puffbun drops her ice cream. Sumi says: “Don't cry. I'll buy you a new one!” They both used will. But they mean different things. Can you sort them?"
+   },
+   "discover": {
+    "kind": "sort",
+    "text": "Is it a promise or a kind offer, or is it a guess about later? Drag each card or tap it, then tap a basket.",
+    "hint": "A promise or offer means: I'll do it for you. A guess often has I think, maybe or probably.",
+    "bins": [
+     {
+      "id": "promise",
+      "label": "promise or offer",
+      "icon": "🤝"
+     },
+     {
+      "id": "guess",
+      "label": "guess",
+      "icon": "🔮"
+     }
+    ],
+    "items": [
+     {
+      "t": "I'll buy you a new one!",
+      "bin": "promise",
+      "why": "Sumi offers to do something kind: a promise or offer."
+     },
+     {
+      "t": "I think it will be sunny.",
+      "bin": "guess",
+      "why": "I think tells us it's a guess."
+     },
+     {
+      "t": "I won't tell anyone. I promise!",
+      "bin": "promise",
+      "why": "I promise tells us: it's a promise."
+     },
+     {
+      "t": "Maybe Sumi will win the race.",
+      "bin": "guess",
+      "why": "Maybe tells us it's a guess."
+     },
+     {
+      "t": "I'll carry your bag for you.",
+      "bin": "promise",
+      "why": "A kind offer to help: I'll carry it."
+     },
+     {
+      "t": "You'll probably love this cake.",
+      "bin": "guess",
+      "why": "Probably tells us it's a guess."
+     }
+    ],
+    "say": "Is it a promise or a kind offer, or is it a guess about later? Drag each card or tap it, then tap a basket."
+   },
+   "rule": {
+    "text": "Will helps us talk about later. We use it to make a promise or a kind offer: I'll help you! And we use it to guess: I think it will rain. After will, the doing word stays plain. Will not is won't. I will is often I'll.",
+    "examples": [
+     "I'll help you with your bag.",
+     "I won't forget, I promise!",
+     "I think Puffbun will win."
+    ],
+    "say": "Will helps us talk about later. We use it to make a promise or a kind offer: I'll help you! And we use it to guess: I think it will rain. After will, the doing word stays plain. Will not is won't. I will is often I'll.",
+    "sayEx": [
+     "I'll help you with your bag.",
+     "I won't forget, I promise!",
+     "I think Puffbun will win."
+    ]
+   },
+   "check": [
+    {
+     "q": "Don't worry, I ___ help you with your homework.",
+     "options": [
+      "will",
+      "wills",
+      "am will"
+     ],
+     "answer": 0,
+     "notes": {
+      "wills": "Will never takes -s: I will, she will, we will.",
+      "am will": "Will doesn't need am. Just say I will help."
+     },
+     "explain": "A kind offer: I will help you.",
+     "say": "Don't worry, I blank help you with your homework."
+    },
+    {
+     "q": "I think Puffbun will ___ the race.",
+     "options": [
+      "win",
+      "wins",
+      "won"
+     ],
+     "answer": 0,
+     "notes": {
+      "wins": "After will, the doing word stays plain: will win.",
+      "won": "Won is for yesterday. After will, use the plain word: win."
+     },
+     "explain": "A guess: will + plain word, will win.",
+     "say": "I think Puffbun will blank the race."
+    },
+    {
+     "q": "Which one is a promise?",
+     "options": [
+      "I won't forget your birthday!",
+      "I think it will snow.",
+      "Maybe the bus will be late."
+     ],
+     "answer": 0,
+     "notes": {
+      "I think it will snow.": "I think shows it's a guess about the weather, not a promise.",
+      "Maybe the bus will be late.": "Maybe shows it's a guess, not a promise."
+     },
+     "explain": "I won't forget means I promise to remember.",
+     "say": "Which one is a promise?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way. Will is a word that never changes. I will, you will, she will, they will: no s, no am, no is. The word after it stays plain. Put your hand on your heart for a promise. Look into a crystal ball for a guess. When you say no, will not becomes won't.",
+    "examples": [
+     "🤝 I'll call you later, I promise.",
+     "🔮 Maybe it will rain.",
+     "🙅 She won't be late."
+    ],
+    "discover": {
+     "kind": "fill",
+     "text": "Will or won't? Drag the right word into each gap, or tap it.",
+     "hint": "Won't means will not. Read the whole sentence first!",
+     "tiles": [
+      "will",
+      "won't"
+     ],
+     "items": [
+      {
+       "s": "I ___ tell your secret. I promise!",
+       "a": "won't",
+       "why": "Keeping a secret means you will NOT tell: won't."
+      },
+      {
+       "s": "I think it ___ be sunny tomorrow.",
+       "a": "will",
+       "why": "A happy guess: it will be sunny."
+      },
+      {
+       "s": "Hoot is sick, so he ___ come to school.",
+       "a": "won't",
+       "why": "He is sick, so he will NOT come: won't."
+      },
+      {
+       "s": "Your bag looks heavy. I ___ carry it.",
+       "a": "will",
+       "why": "A kind offer: I will carry it."
+      }
+     ],
+     "say": "Will or won't? Drag the right word into each gap, or tap it."
+    },
+    "say": "Here's another way. Will is a word that never changes. I will, you will, she will, they will: no s, no am, no is. The word after it stays plain. Put your hand on your heart for a promise. Look into a crystal ball for a guess. When you say no, will not becomes won't."
+   },
+   "check2": [
+    {
+     "q": "My sister ___ be ten next year.",
+     "options": [
+      "will",
+      "wills",
+      "is will"
+     ],
+     "answer": 0,
+     "notes": {
+      "wills": "Will never takes -s, even after my sister.",
+      "is will": "Will doesn't need is. Just say she will be."
+     },
+     "explain": "Will never changes: my sister will be ten.",
+     "say": "My sister blank be ten next year."
+    },
+    {
+     "q": "Sumi doesn't like chocolate. I think she ___ eat the cake.",
+     "options": [
+      "won't",
+      "will",
+      "doesn't will"
+     ],
+     "answer": 0,
+     "notes": {
+      "will": "She doesn't like chocolate, so the guess is no: she won't eat it.",
+      "doesn't will": "We never put doesn't with will. Will not is won't."
+     },
+     "explain": "A no guess: she won't (will not) eat the cake.",
+     "say": "Sumi doesn't like chocolate. I think she blank eat the cake."
+    },
+    {
+     "q": "Puffbun says, “I'm thirsty!” Which is a kind offer?",
+     "options": [
+      "I'll get you some water.",
+      "I get you some water.",
+      "I will to get you some water."
+     ],
+     "answer": 0,
+     "notes": {
+      "I get you some water.": "For an offer, add will: I'll get you some water.",
+      "I will to get you some water.": "No to after will: I will get, not I will to get."
+     },
+     "explain": "I'll (I will) + get: a kind offer.",
+     "say": "Puffbun says, “I'm thirsty!” Which is a kind offer?"
+    }
+   ],
+   "grown": "👪 will + bare infinitive for promises, offers, spontaneous decisions and predictions with I think / maybe / probably (A2 Key); won't = will not. Contrast with be going to (plans, evidence). Common errors: wills, will to, am will.",
+   "pack": "en-a2"
+  },
+  {
+   "id": "en.a2.someany",
+   "title": "some or any?",
+   "icon": "🧺",
+   "at": {
+    "realm": "a2",
+    "skill": "grammar"
+   },
+   "match": [
+    {
+     "opts": [
+      "some",
+      "any"
+     ]
+    },
+    {
+     "re": "any in questions|Some in offers|There isn't any|Is there any…|some eggs in a yes",
+     "field": "explain"
+    }
+   ],
+   "art": "lesson_en_a2_someany",
+   "art_alt": "Crumb the baker dragon looks into a cupboard with a basket of eggs, an empty shelf and an empty flour sack",
+   "hook": {
+    "text": "Crumb wants to bake cookies. He opens the cupboard and talks to himself: “There are some eggs. But is there any flour? Oh no, there isn't any sugar!” Some or any? Let's find out when to use each one.",
+    "say": "Crumb wants to bake cookies. He opens the cupboard and talks to himself: “There are some eggs. But is there any flour? Oh no, there isn't any sugar!” Some or any? Let's find out when to use each one."
+   },
+   "discover": {
+    "kind": "sort",
+    "text": "Which word fits the gap: some or any? Drag each card or tap it, then tap a basket.",
+    "hint": "Look at the end of the sentence. A question mark or a not word (isn't, aren't, don't) → any. A yes sentence → some.",
+    "bins": [
+     {
+      "id": "some",
+      "label": "some",
+      "icon": "🧺"
+     },
+     {
+      "id": "any",
+      "label": "any",
+      "icon": "❓"
+     }
+    ],
+    "items": [
+     {
+      "t": "There are ___ eggs.",
+      "bin": "some",
+      "why": "A yes sentence: there are some eggs."
+     },
+     {
+      "t": "Is there ___ flour?",
+      "bin": "any",
+      "why": "A question: is there any flour?"
+     },
+     {
+      "t": "There isn't ___ sugar.",
+      "bin": "any",
+      "why": "A not sentence (isn't): there isn't any sugar."
+     },
+     {
+      "t": "I have ___ butter.",
+      "bin": "some",
+      "why": "A yes sentence: I have some butter."
+     },
+     {
+      "t": "Are there ___ cherries?",
+      "bin": "any",
+      "why": "A question: are there any cherries?"
+     },
+     {
+      "t": "We don't have ___ milk.",
+      "bin": "any",
+      "why": "A not sentence (don't): we don't have any milk."
+     }
+    ],
+    "say": "Which word fits the gap: some or any? Drag each card or tap it, then tap a basket."
+   },
+   "rule": {
+    "text": "Use some in yes sentences: There are some eggs. Use any in questions and not sentences: Is there any flour? There isn't any sugar. One more thing: when you offer something or ask for it nicely, use some: Would you like some cake?",
+    "examples": [
+     "There are some eggs in the cupboard.",
+     "Is there any flour?",
+     "Would you like some juice?"
+    ],
+    "say": "Use some in yes sentences: There are some eggs. Use any in questions and not sentences: Is there any flour? There isn't any sugar. One more thing: when you offer something or ask for it nicely, use some: Would you like some cake?",
+    "sayEx": [
+     "There are some eggs in the cupboard.",
+     "Is there any flour?",
+     "Would you like some juice?"
+    ]
+   },
+   "check": [
+    {
+     "q": "There are ___ apples in the basket.",
+     "options": [
+      "some",
+      "any",
+      "a"
+     ],
+     "answer": 0,
+     "notes": {
+      "any": "This is a yes sentence, so use some.",
+      "a": "A is for one thing. Apples means more than one: some apples."
+     },
+     "explain": "A yes sentence: there are some apples.",
+     "say": "There are blank apples in the basket."
+    },
+    {
+     "q": "We don't have ___ bread.",
+     "options": [
+      "any",
+      "some",
+      "a"
+     ],
+     "answer": 0,
+     "notes": {
+      "some": "Don't makes it a not sentence, so use any.",
+      "a": "We don't say a bread. In a not sentence: any bread."
+     },
+     "explain": "A not sentence (don't): we don't have any bread.",
+     "say": "We don't have blank bread."
+    },
+    {
+     "q": "Which sentence is right?",
+     "options": [
+      "There aren't any sweets left.",
+      "There aren't some sweets left.",
+      "There isn't any sweets left."
+     ],
+     "answer": 0,
+     "notes": {
+      "There aren't some sweets left.": "Aren't makes it a not sentence, so use any.",
+      "There isn't any sweets left.": "Sweets means more than one, so use aren't."
+     },
+     "explain": "Not sentence + more than one: there aren't any sweets.",
+     "say": "Which sentence is right?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way. Some is a sunny yes word. Any is a curious word: it loves question marks and not words like isn't and don't. So look for a question mark or a not word. If you find one, use any. But when you ask nicely or offer, like Can I have… or Would you like…, use some.",
+    "examples": [
+     "☀️ I've got some pencils.",
+     "❓ Have you got any pets?",
+     "🙅 There aren't any cars.",
+     "🙏 Can I have some water, please?"
+    ],
+    "discover": {
+     "kind": "fill",
+     "text": "Some or any? Drag the word into each gap, or tap it.",
+     "hint": "A question mark or a not word → any. Yes sentences and asking nicely → some.",
+     "tiles": [
+      "some",
+      "any"
+     ],
+     "items": [
+      {
+       "s": "There aren't ___ pencils in my bag.",
+       "a": "any",
+       "why": "Aren't is a not word: any pencils."
+      },
+      {
+       "s": "Can I have ___ water, please?",
+       "a": "some",
+       "why": "Asking nicely with please: some water."
+      },
+      {
+       "s": "Have you got ___ pets?",
+       "a": "any",
+       "why": "A question: any pets?"
+      },
+      {
+       "s": "Mum bought ___ grapes.",
+       "a": "some",
+       "why": "A yes sentence: some grapes."
+      }
+     ],
+     "say": "Some or any? Drag the word into each gap, or tap it."
+    },
+    "say": "Here's another way. Some is a sunny yes word. Any is a curious word: it loves question marks and not words like isn't and don't. So look for a question mark or a not word. If you find one, use any. But when you ask nicely or offer, like Can I have… or Would you like…, use some."
+   },
+   "check2": [
+    {
+     "q": "Hoot hasn't got ___ brothers.",
+     "options": [
+      "any",
+      "some",
+      "a"
+     ],
+     "answer": 0,
+     "notes": {
+      "some": "Hasn't makes it a not sentence, so use any.",
+      "a": "Brothers means more than one, so not a."
+     },
+     "explain": "A not sentence (hasn't): any brothers.",
+     "say": "Hoot hasn't got blank brothers."
+    },
+    {
+     "q": "I'm hungry. Can I have ___ biscuits, please?",
+     "options": [
+      "some",
+      "any",
+      "a"
+     ],
+     "answer": 0,
+     "notes": {
+      "any": "When we ask for something nicely, we use some.",
+      "a": "Biscuits means more than one, so not a."
+     },
+     "explain": "Asking nicely: can I have some biscuits?",
+     "say": "I'm hungry. Can I have blank biscuits, please?"
+    },
+    {
+     "q": "Are there ___ ducks in the pond?",
+     "options": [
+      "any",
+      "a",
+      "much"
+     ],
+     "answer": 0,
+     "notes": {
+      "a": "Ducks means more than one, so not a.",
+      "much": "We can count ducks, so much doesn't fit. Questions use any."
+     },
+     "explain": "A question: are there any ducks?",
+     "say": "Are there blank ducks in the pond?"
+    }
+   ],
+   "grown": "👪 some / any with plural countable and uncountable nouns (A2 Key): some in affirmatives, offers and requests (Would you like some…? Can I have some…?); any in questions and negatives. The something/anything family comes later.",
+   "pack": "en-a2"
+  },
+  {
+   "id": "en.a2.muchmany",
+   "title": "much or many?",
+   "icon": "🍬",
+   "at": {
+    "realm": "a2",
+    "skill": "grammar"
+   },
+   "match": [
+    {
+     "opts": [
+      "much",
+      "many"
+     ]
+    },
+    {
+     "re": "How many is|How many \\+|'much' with|Much for things|Many for things|much with milk",
+     "field": "explain"
+    }
+   ],
+   "art": "lesson_en_a2_muchmany",
+   "art_alt": "Sumi stands at her candy shop counter with a jar of sweets and a jug of strawberry milk while Puffbun points at the jar",
+   "hook": {
+    "text": "Sumi opens her candy shop. Puffbun asks: “How many sweets can I have?” Gumdrop asks: “How much milk is in the jug?” Why many for sweets, but much for milk? Let's sort the shop!",
+    "say": "Sumi opens her candy shop. Puffbun asks: “How many sweets can I have?” Gumdrop asks: “How much milk is in the jug?” Why many for sweets, but much for milk? Let's sort the shop!"
+   },
+   "discover": {
+    "kind": "sort",
+    "text": "Can you count it one by one? Drag each card into the right jar, or tap a card and then a jar.",
+    "hint": "Try saying a number in front: three sweets works! Three milks? No, milk is poured, not counted.",
+    "bins": [
+     {
+      "id": "many",
+      "label": "can count: many",
+      "icon": "🔢"
+     },
+     {
+      "id": "much",
+      "label": "can't count: much",
+      "icon": "💧"
+     }
+    ],
+    "items": [
+     {
+      "t": "sweets",
+      "icon": "🍬",
+      "bin": "many",
+      "why": "You can count sweets: one, two, three. How many sweets?"
+     },
+     {
+      "t": "milk",
+      "icon": "🥛",
+      "bin": "much",
+      "why": "You pour milk, you can't count it one by one. How much milk?"
+     },
+     {
+      "t": "apples",
+      "icon": "🍎",
+      "bin": "many",
+      "why": "You can count apples. How many apples?"
+     },
+     {
+      "t": "water",
+      "icon": "💧",
+      "bin": "much",
+      "why": "Water can't be counted one by one. How much water?"
+     },
+     {
+      "t": "cookies",
+      "icon": "🍪",
+      "bin": "many",
+      "why": "You can count cookies. How many cookies?"
+     },
+     {
+      "t": "sugar",
+      "bin": "much",
+      "why": "Sugar is too tiny to count one by one. How much sugar?"
+     },
+     {
+      "t": "eggs",
+      "icon": "🥚",
+      "bin": "many",
+      "why": "You can count eggs. How many eggs?"
+     },
+     {
+      "t": "rice",
+      "icon": "🍚",
+      "bin": "much",
+      "why": "Rice grains are too tiny to count. How much rice?"
+     }
+    ],
+    "say": "Can you count it one by one? Drag each card into the right jar, or tap a card and then a jar."
+   },
+   "rule": {
+    "text": "Things you can count one by one, like sweets and apples, use many: How many sweets? Things you can't count, like milk, water, sugar and rice, use much: How much milk? We use much and many mostly in questions and not sentences.",
+    "examples": [
+     "How many sweets are in the jar?",
+     "How much milk is in the jug?",
+     "There isn't much sugar."
+    ],
+    "say": "Things you can count one by one, like sweets and apples, use many: How many sweets? Things you can't count, like milk, water, sugar and rice, use much: How much milk? We use much and many mostly in questions and not sentences.",
+    "sayEx": [
+     "How many sweets are in the jar?",
+     "How much milk is in the jug?",
+     "There isn't much sugar."
+    ]
+   },
+   "check": [
+    {
+     "q": "How ___ apples do you want?",
+     "options": [
+      "many",
+      "much",
+      "lot"
+     ],
+     "answer": 0,
+     "notes": {
+      "much": "You can count apples, so use many.",
+      "lot": "We don't say how lot. Things you can count: how many."
+     },
+     "explain": "We can count apples: how many apples?",
+     "say": "How blank apples do you want?"
+    },
+    {
+     "q": "How ___ milk is in the jug?",
+     "options": [
+      "much",
+      "many",
+      "lot"
+     ],
+     "answer": 0,
+     "notes": {
+      "many": "You can't count milk one by one, so use much.",
+      "lot": "We don't say how lot. Things you can't count: how much."
+     },
+     "explain": "We can't count milk: how much milk?",
+     "say": "How blank milk is in the jug?"
+    },
+    {
+     "q": "Which sentence is right?",
+     "options": [
+      "There isn't much water.",
+      "There isn't many water.",
+      "There aren't much water."
+     ],
+     "answer": 0,
+     "notes": {
+      "There isn't many water.": "Water can't be counted, so use much, not many.",
+      "There aren't much water.": "Water is one big amount, so use isn't, not aren't."
+     },
+     "explain": "Water can't be counted: there isn't much water.",
+     "say": "Which sentence is right?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way: the number test. Put a number in front of the word. Three cookies? Yes! So it's many. Three milks? That sounds funny. We say three glasses of milk. So milk is much. Many goes with the s words you can count. Much goes with things you pour, scoop or sprinkle.",
+    "examples": [
+     "🔢 three cookies → How many cookies?",
+     "🥛 a glass of milk → How much milk?",
+     "⏰ I haven't got much time."
+    ],
+    "discover": {
+     "kind": "fill",
+     "text": "Much or many? Try the number test, then drag the word into each gap, or tap it.",
+     "hint": "Can you say three in front? Yes → many. No → much.",
+     "tiles": [
+      "much",
+      "many"
+     ],
+     "items": [
+      {
+       "s": "How ___ cars can you see?",
+       "a": "many",
+       "why": "Three cars works: how many cars?"
+      },
+      {
+       "s": "How ___ rice do we need?",
+       "a": "much",
+       "why": "Three rices sounds funny: how much rice?"
+      },
+      {
+       "s": "I haven't got ___ time.",
+       "a": "much",
+       "why": "We can't count time one by one: much time."
+      },
+      {
+       "s": "There aren't ___ chairs.",
+       "a": "many",
+       "why": "Three chairs works: not many chairs."
+      }
+     ],
+     "say": "Much or many? Try the number test, then drag the word into each gap, or tap it."
+    },
+    "say": "Here's another way: the number test. Put a number in front of the word. Three cookies? Yes! So it's many. Three milks? That sounds funny. We say three glasses of milk. So milk is much. Many goes with the s words you can count. Much goes with things you pour, scoop or sprinkle."
+   },
+   "check2": [
+    {
+     "q": "How ___ eggs do we need for the cake?",
+     "options": [
+      "many",
+      "much",
+      "lot"
+     ],
+     "answer": 0,
+     "notes": {
+      "much": "You can count eggs, so use many.",
+      "lot": "We don't say how lot. Things you can count: how many."
+     },
+     "explain": "Three eggs works: how many eggs?",
+     "say": "How blank eggs do we need for the cake?"
+    },
+    {
+     "q": "We haven't got ___ sugar.",
+     "options": [
+      "much",
+      "many",
+      "a"
+     ],
+     "answer": 0,
+     "notes": {
+      "many": "Sugar can't be counted one by one, so use much.",
+      "a": "We don't say a sugar here. Not much sugar."
+     },
+     "explain": "Sugar can't be counted: we haven't got much sugar.",
+     "say": "We haven't got blank sugar."
+    },
+    {
+     "q": "Which one can you count one by one?",
+     "options": [
+      "cookies",
+      "water",
+      "juice"
+     ],
+     "answer": 0,
+     "notes": {
+      "water": "You pour water. You can't count it one by one.",
+      "juice": "You pour juice. You can't count it one by one."
+     },
+     "explain": "One cookie, two cookies: you can count cookies.",
+     "say": "Which one can you count one by one?"
+    }
+   ],
+   "grown": "👪 Countable vs uncountable nouns with much / many and How much / How many? (A2 Key). In affirmatives English prefers a lot of / lots of (lots of milk, lots of sweets); much and many are mostly used in questions and negatives. How much is it? for prices is met in the shopping lesson.",
+   "pack": "en-a2"
   }
  ]
 }
