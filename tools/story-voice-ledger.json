@@ -18966,6 +18966,4050 @@
 "stories": [
 "c2.7"
 ]
+},
+"a95dea5494d2": {
+"text": "This is Nova.",
+"file": "narrator_ef511bf84bb4.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "This is Nova.",
+"mp3": "c45024cf7427",
+"check": "pass",
+"heard": "This is Nova.",
+"heard_by": "small.en",
+"stories": [
+"a1.1"
+]
+},
+"e717827f54b8": {
+"text": "Nova has a little pet called Puffbun.",
+"file": "narrator_290823270fdd.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova has a little pet called Puffbun.",
+"mp3": "812df216bc37",
+"check": "pass",
+"heard": "Nova has a little pet called Puff Bun.",
+"heard_by": "small.en",
+"stories": [
+"a1.1"
+]
+},
+"10e64c972ce4": {
+"text": "Nova has a little pet called Mochi Fox.",
+"file": "narrator_91687fc2eeb6.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova has a little pet called Moh-chee Fox.",
+"mp3": "91a6e22958fb",
+"check": "pass",
+"heard": "Nova has a little pet called Mochi Fox.",
+"heard_by": "small.en",
+"stories": [
+"a1.1"
+]
+},
+"1fb2199ebb58": {
+"text": "Nova has a little pet called Minty.",
+"file": "narrator_23d450629fff.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova has a little pet called Minty.",
+"mp3": "0df7cb320c21",
+"check": "pass",
+"heard": "Nova has a little pet  called Minty.",
+"heard_by": "small.en",
+"stories": [
+"a1.1"
+]
+},
+"2dd44b6758ab": {
+"text": "Nova has a little pet called Hoot.",
+"file": "narrator_09fcb3ef94b0.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova has a little pet called Hoot.",
+"mp3": "08675d9dd560",
+"check": "pass",
+"heard": "Nova has a little pet called Hoot.",
+"heard_by": "medium.en",
+"stories": [
+"a1.1"
+]
+},
+"20743de838ce": {
+"text": "Nova has a little pet called Lulu.",
+"file": "narrator_8f49a069d171.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova has a little pet called Lulu.",
+"mp3": "864acbf5f418",
+"check": "pass",
+"heard": "Nova has a little pet called Lulu.",
+"heard_by": "small.en",
+"stories": [
+"a1.1"
+]
+},
+"fd0a09ffb61b": {
+"text": "Nova has a little pet called Bao.",
+"file": "narrator_bcbca27ddfef.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova has a little pet called Bao.",
+"mp3": "2bbe432e5a19",
+"check": "pass",
+"heard": "Nova has a little pet called Bao.",
+"heard_by": "medium.en",
+"stories": [
+"a1.1"
+]
+},
+"ad7409ee4d88": {
+"text": "Nova has a little pet called Sprinkle.",
+"file": "narrator_131a56978a4e.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova has a little pet called Sprinkle.",
+"mp3": "4595d05817f6",
+"check": "pass",
+"heard": "Nova has a little pet called Sprinkle.",
+"heard_by": "small.en",
+"stories": [
+"a1.1"
+]
+},
+"aefb93c72589": {
+"text": "Nova has a little pet called Pip.",
+"file": "narrator_18a2cd608fda.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova has a little pet called Pip.",
+"mp3": "1e73dd0257ba",
+"check": "pass",
+"heard": "Nova has a little pet called Pip.",
+"heard_by": "small.en",
+"stories": [
+"a1.1"
+]
+},
+"0f1c7569b480": {
+"text": "In the morning, Nova sees an old book on the grass.",
+"file": "narrator_36a216671824.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "In the morning, Nova sees an old book on the grass.",
+"mp3": "04fe7d17d48d",
+"check": "pass",
+"heard": "In the morning, Nova sees an old book on the grass.",
+"heard_by": "small.en",
+"stories": [
+"a1.1"
+]
+},
+"30d804f865e9": {
+"text": "Nova looks at Puffbun.",
+"file": "narrator_fac8ad23704c.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova looks at Puffbun.",
+"mp3": "79d9c7951e5b",
+"check": "pass",
+"heard": "Nova looks at Puffbun.",
+"heard_by": "medium.en",
+"stories": [
+"a1.1"
+]
+},
+"74cdf9f176cc": {
+"text": "says Nova.",
+"file": "narrator_6e9d5e44742f.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "says Nova.",
+"mp3": "3d3a1c0c1e90",
+"check": "pass",
+"heard": "says Nova.",
+"heard_by": "small.en",
+"stories": [
+"a1.1",
+"a1.2"
+]
+},
+"a524f7c49d53": {
+"text": "Nova looks at Mochi Fox.",
+"file": "narrator_9d76799eea94.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova looks at Moh-chee Fox.",
+"mp3": "a021771b4a35",
+"check": "pass",
+"heard": "Nova looks at Mochi Fox.",
+"heard_by": "small.en",
+"stories": [
+"a1.1"
+]
+},
+"28384d7ff898": {
+"text": "Nova looks at Minty.",
+"file": "narrator_cb4ecdaeaabb.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova looks at Minty.",
+"mp3": "c0f752351cee",
+"check": "pass",
+"heard": "Nova looks at Minty.",
+"heard_by": "small.en",
+"stories": [
+"a1.1"
+]
+},
+"580a9e37b0a6": {
+"text": "Nova looks at Hoot.",
+"file": "narrator_6dd1d8a3eac1.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova looks at Hoot.",
+"mp3": "8ffb2b52522b",
+"check": "pass",
+"heard": "Nova looks at Hoot.",
+"heard_by": "small.en",
+"stories": [
+"a1.1"
+]
+},
+"0b41bf652268": {
+"text": "Nova looks at Lulu.",
+"file": "narrator_48c0c225da5c.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova looks at Lulu.",
+"mp3": "d3e9d14a78a4",
+"check": "pass",
+"heard": "Nova looks at Lulu.",
+"heard_by": "small.en",
+"stories": [
+"a1.1"
+]
+},
+"b9ab7a004b1f": {
+"text": "Nova looks at Bao.",
+"file": "narrator_d0b10289ca20.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova looks at Bao.",
+"mp3": "7db1327a483c",
+"check": "pass",
+"heard": "Nova looks at Bao.",
+"heard_by": "small.en",
+"stories": [
+"a1.1"
+]
+},
+"f9fb712776ef": {
+"text": "Nova looks at Sprinkle.",
+"file": "narrator_51ea506b9f65.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova looks at Sprinkle.",
+"mp3": "ef6961481304",
+"check": "pass",
+"heard": "Nova looks at Sprinkle.",
+"heard_by": "small.en",
+"stories": [
+"a1.1"
+]
+},
+"2b57ee3cecd0": {
+"text": "Nova looks at Pip.",
+"file": "narrator_757726e409ac.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova looks at Pip.",
+"mp3": "cf2fa9eca633",
+"check": "pass",
+"heard": "Nova looks at Pip.",
+"heard_by": "small.en",
+"stories": [
+"a1.1"
+]
+},
+"411344f01497": {
+"text": "Today Nova and Puffbun have a picnic in the meadow.",
+"file": "narrator_a534ced232bf.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Today Nova and Puffbun have a picnic in the meadow.",
+"mp3": "4ebe7d74e4a9",
+"check": "pass",
+"heard": "Today Nova and Puffbun have a picnic in the meadow.",
+"heard_by": "small.en",
+"stories": [
+"a1.2"
+]
+},
+"bd5d93f3e0e6": {
+"text": "Today Nova and Mochi Fox have a picnic in the meadow.",
+"file": "narrator_27415c4683f3.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Today Nova and Moh-chee Fox have a picnic in the meadow.",
+"mp3": "424ef56f142f",
+"check": "pass",
+"heard": "Today Nova and Mochi Fox have a picnic in the meadow.",
+"heard_by": "small.en",
+"stories": [
+"a1.2"
+]
+},
+"93ad9f662c33": {
+"text": "Today Nova and Minty have a picnic in the meadow.",
+"file": "narrator_c7ed6f8ff010.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Today Nova and Minty have a picnic in the meadow.",
+"mp3": "b8eace90d7c8",
+"check": "pass",
+"heard": "Today Nova and Minty have a picnic in the meadow.",
+"heard_by": "small.en",
+"stories": [
+"a1.2"
+]
+},
+"21dc20c4b2da": {
+"text": "Today Nova and Hoot have a picnic in the meadow.",
+"file": "narrator_132df8042a32.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Today Nova and Hoot have a picnic in the meadow.",
+"mp3": "b310fa0794b5",
+"check": "pass",
+"heard": "Today Nova and Hoot have a picnic in the meadow.",
+"heard_by": "small.en",
+"stories": [
+"a1.2"
+]
+},
+"6d8a8785fbdd": {
+"text": "Today Nova and Lulu have a picnic in the meadow.",
+"file": "narrator_03812c4a053e.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Today Nova and Lulu have a picnic in the meadow.",
+"mp3": "6659798acc19",
+"check": "pass",
+"heard": "Today Nova and Lulu have a picnic in the meadow.",
+"heard_by": "small.en",
+"stories": [
+"a1.2"
+]
+},
+"d7e224dca1bc": {
+"text": "Today Nova and Bao have a picnic in the meadow.",
+"file": "narrator_b69dd1440dcf.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Today Nova and Bao have a picnic in the meadow.",
+"mp3": "1a0bd643fefe",
+"check": "pass",
+"heard": "Today Nova and Bao have a picnic in the meadow.",
+"heard_by": "small.en",
+"stories": [
+"a1.2"
+]
+},
+"509e4abb4891": {
+"text": "Today Nova and Sprinkle have a picnic in the meadow.",
+"file": "narrator_f9d76e74edf1.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Today Nova and Sprinkle have a picnic in the meadow.",
+"mp3": "f2c92ec0bcf0",
+"check": "pass",
+"heard": "Today Nova and Sprinkle have a picnic in the meadow.",
+"heard_by": "medium.en",
+"stories": [
+"a1.2"
+]
+},
+"88d4fcc42147": {
+"text": "Today Nova and Pip have a picnic in the meadow.",
+"file": "narrator_a51a6c797142.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Today Nova and Pip have a picnic in the meadow.",
+"mp3": "6d73666170c8",
+"check": "pass",
+"heard": "Today Nova and Pip have a picnic in the meadow.",
+"heard_by": "small.en",
+"stories": [
+"a1.2"
+]
+},
+"920a440f1a2e": {
+"text": "Then Nova sees a little white rabbit in the tall grass.",
+"file": "narrator_3c524c2eb8c8.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Then Nova sees a little white rabbit in the tall grass.",
+"mp3": "b0487ce9267e",
+"check": "pass",
+"heard": "Then Nova sees a little white rabbit in the tall grass.",
+"heard_by": "small.en",
+"stories": [
+"a1.2"
+]
+},
+"d3c8d68090f2": {
+"text": "“Hello, little rabbit,” says Nova.",
+"file": "narrator_51c30ce1c7dd.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "“Hello, little rabbit,” says Nova.",
+"mp3": "9b1c914f6526",
+"check": "pass",
+"heard": "Hello, little rabbit, says Nova.",
+"heard_by": "small.en",
+"stories": [
+"a1.2"
+]
+},
+"9e369049c823": {
+"text": "Nova, Puffbun and the rabbit run under a big tree.",
+"file": "narrator_d87f353412f0.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova, Puffbun and the rabbit run under a big tree.",
+"mp3": "f1704111793f",
+"check": "pass",
+"heard": "Nova, Puffbun and the rabbit run under a big tree.",
+"heard_by": "small.en",
+"stories": [
+"a1.2"
+]
+},
+"ad6af5065948": {
+"text": "Nova, Mochi Fox and the rabbit run under a big tree.",
+"file": "narrator_b6eca7ecdd1e.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova, Moh-chee Fox and the rabbit run under a big tree.",
+"mp3": "c9c786ce0794",
+"check": "pass",
+"heard": "Nova, mochi fox and the rabbit run under a big tree.",
+"heard_by": "small.en",
+"stories": [
+"a1.2"
+]
+},
+"875151ec248d": {
+"text": "Nova, Minty and the rabbit run under a big tree.",
+"file": "narrator_c4fb63ed3eae.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova, Minty and the rabbit run under a big tree.",
+"mp3": "b431e550c6d5",
+"check": "pass",
+"heard": "Nova, Minty and the rabbit run under a big tree.",
+"heard_by": "small.en",
+"stories": [
+"a1.2"
+]
+},
+"c3edd81af40d": {
+"text": "Nova, Hoot and the rabbit run under a big tree.",
+"file": "narrator_07c706021c2b.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova, Hoot and the rabbit run under a big tree.",
+"mp3": "211eea8abfe2",
+"check": "pass",
+"heard": "Nova, Hoot and the Rabbit run under a big tree.",
+"heard_by": "small.en",
+"stories": [
+"a1.2"
+]
+},
+"32de2e9ddfc4": {
+"text": "Nova, Lulu and the rabbit run under a big tree.",
+"file": "narrator_cef00c10e580.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova, Lulu and the rabbit run under a big tree.",
+"mp3": "af3db6096cc7",
+"check": "pass",
+"heard": "Nova, Lulu and the rabbit run under a big tree.",
+"heard_by": "small.en",
+"stories": [
+"a1.2"
+]
+},
+"facd1efd5c26": {
+"text": "Nova, Bao and the rabbit run under a big tree.",
+"file": "narrator_5d167c26cdcb.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova, Bao and the rabbit run under a big tree.",
+"mp3": "ac5bb44c0b2e",
+"check": "pass",
+"heard": "Nova, bow and the rabbit, run under a big tree.",
+"heard_by": "small.en",
+"stories": [
+"a1.2"
+]
+},
+"32733578b7a4": {
+"text": "Nova, Sprinkle and the rabbit run under a big tree.",
+"file": "narrator_a1ba32e2da03.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova, Sprinkle and the rabbit run under a big tree.",
+"mp3": "d2d893b03990",
+"check": "pass",
+"heard": "Nova, Sprinkle and the Rabbit run under a big tree.",
+"heard_by": "small.en",
+"stories": [
+"a1.2"
+]
+},
+"631c2afa6c30": {
+"text": "Nova, Pip and the rabbit run under a big tree.",
+"file": "narrator_6df3d90b59aa.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova, Pip and the rabbit run under a big tree.",
+"mp3": "5793cd439cf2",
+"check": "pass",
+"heard": "Nova, Pip and the rabbit run under a big tree.",
+"heard_by": "small.en",
+"stories": [
+"a1.2"
+]
+},
+"b34b41f6fc3b": {
+"text": "Nova and Puffbun follow.",
+"file": "narrator_342bcbc61b7d.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Puffbun follow.",
+"mp3": "36b359290f0b",
+"check": "pass",
+"heard": "Nova and Puffbun follow.",
+"heard_by": "medium.en",
+"stories": [
+"a1.3"
+]
+},
+"ff55c0fbc16c": {
+"text": "Nova and Mochi Fox follow.",
+"file": "narrator_d39d6246f0d3.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Moh-chee Fox follow.",
+"mp3": "9583714d3c2d",
+"check": "pass",
+"heard": "Nova and Mochi Fox follow.",
+"heard_by": "small.en",
+"stories": [
+"a1.3"
+]
+},
+"5427d07c6d87": {
+"text": "Nova and Minty follow.",
+"file": "narrator_42765139acb6.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Minty follow.",
+"mp3": "0903c08ec9a0",
+"check": "pass",
+"heard": "Nova and Minty Follow.",
+"heard_by": "small.en",
+"stories": [
+"a1.3"
+]
+},
+"0bedcb5d6fcd": {
+"text": "Nova and Hoot follow.",
+"file": "narrator_ffbb09ee85bd.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Hoot follow.",
+"mp3": "6adbf8a48cdf",
+"check": "pass",
+"heard": "Nova and Hoot Follow.",
+"heard_by": "small.en",
+"stories": [
+"a1.3"
+]
+},
+"5750376f73b2": {
+"text": "Nova and Lulu follow.",
+"file": "narrator_14f78e249146.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Lulu follow.",
+"mp3": "2eb409f47f1b",
+"check": "pass",
+"heard": "Nova and Leeloo follow.",
+"heard_by": "small.en",
+"stories": [
+"a1.3"
+]
+},
+"17229cbe0913": {
+"text": "Nova and Bao follow.",
+"file": "narrator_be245f905b50.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Bao follow.",
+"mp3": "a454db254822",
+"check": "pass",
+"heard": "Nova and bow follow.",
+"heard_by": "small.en",
+"stories": [
+"a1.3"
+]
+},
+"0edb0be012d1": {
+"text": "Nova and Sprinkle follow.",
+"file": "narrator_fe61a776a972.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Sprinkle follow.",
+"mp3": "3103162fc4ce",
+"check": "pass",
+"heard": "Nova and Sprinkle Follow.",
+"heard_by": "small.en",
+"stories": [
+"a1.3"
+]
+},
+"c1123f9060e7": {
+"text": "Nova and Pip follow.",
+"file": "narrator_075824d30222.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Pip follow.",
+"mp3": "e22535639074",
+"check": "pass",
+"heard": "Nova and Pip follow.",
+"heard_by": "small.en",
+"stories": [
+"a1.3"
+]
+},
+"5a2de8c276f9": {
+"text": "Nova likes the daisy flowers.",
+"file": "narrator_2f888ecfd2a0.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova likes the daisy flowers.",
+"mp3": "b1a183d7e47e",
+"check": "pass",
+"heard": "Nova likes the daisy flowers.",
+"heard_by": "small.en",
+"stories": [
+"a1.3"
+]
+},
+"3e16e4c0d27e": {
+"text": "“Thank you,” says Nova.",
+"file": "narrator_7c74eef09f99.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "“Thank you,” says Nova.",
+"mp3": "1d77349b1a7c",
+"check": "pass",
+"heard": "Thank you, says Nova.",
+"heard_by": "small.en",
+"stories": [
+"a1.3",
+"a1.4"
+]
+},
+"e05ab4f88ca6": {
+"text": "After the tea party the white rabbit walks with Nova and Puffbun.",
+"file": "narrator_20cce1a04231.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "After the tea party the white rabbit walks with Nova and Puffbun.",
+"mp3": "889ec94df3d7",
+"check": "pass",
+"heard": "After the tea party, the white rabbit walks with Nova and Puffbun.",
+"heard_by": "small.en",
+"stories": [
+"a1.4"
+]
+},
+"027f059ce93f": {
+"text": "After the tea party the white rabbit walks with Nova and Mochi Fox.",
+"file": "narrator_8f6fcb4ec3c7.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "After the tea party the white rabbit walks with Nova and Moh-chee Fox.",
+"mp3": "d805cc29a1b4",
+"check": "pass",
+"heard": "After the tea party, the white rabbit walks with Nova and Mochi Fox.",
+"heard_by": "small.en",
+"stories": [
+"a1.4"
+]
+},
+"a519e587c556": {
+"text": "After the tea party the white rabbit walks with Nova and Minty.",
+"file": "narrator_d5320cf901d8.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "After the tea party the white rabbit walks with Nova and Minty.",
+"mp3": "9ade00d50f89",
+"check": "pass",
+"heard": "After the tea party, the white rabbit walks with Nova and Minty.",
+"heard_by": "small.en",
+"stories": [
+"a1.4"
+]
+},
+"1b23489dc754": {
+"text": "After the tea party the white rabbit walks with Nova and Hoot.",
+"file": "narrator_b4850f3af282.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "After the tea party the white rabbit walks with Nova and Hoot.",
+"mp3": "dc04368dfdcf",
+"check": "pass",
+"heard": "After the tea party, the white rabbit walks with Nova and Hoot.",
+"heard_by": "small.en",
+"stories": [
+"a1.4"
+]
+},
+"1406c2d23d49": {
+"text": "After the tea party the white rabbit walks with Nova and Lulu.",
+"file": "narrator_2a5564d4a8cd.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "After the tea party the white rabbit walks with Nova and Lulu.",
+"mp3": "e684ae4f142d",
+"check": "pass",
+"heard": "After the tea party, the white rabbit walks with Nova and Lulu.",
+"heard_by": "small.en",
+"stories": [
+"a1.4"
+]
+},
+"01d62eb6b309": {
+"text": "After the tea party the white rabbit walks with Nova and Bao.",
+"file": "narrator_cbaca96e2db3.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "After the tea party the white rabbit walks with Nova and Bao.",
+"mp3": "5f76f131dbb2",
+"check": "pass",
+"heard": "After the tea party, the white rabbit walks with Nova and Bao.",
+"heard_by": "small.en",
+"stories": [
+"a1.4"
+]
+},
+"611af2ef9c9c": {
+"text": "After the tea party the white rabbit walks with Nova and Sprinkle.",
+"file": "narrator_c8f4030af080.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "After the tea party the white rabbit walks with Nova and Sprinkle.",
+"mp3": "1954337c60c3",
+"check": "pass",
+"heard": "After the tea party, the white rabbit walks with Nova and Sprinkle.",
+"heard_by": "small.en",
+"stories": [
+"a1.4"
+]
+},
+"3454abdb47ef": {
+"text": "After the tea party the white rabbit walks with Nova and Pip.",
+"file": "narrator_1f6a0fcb644a.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "After the tea party the white rabbit walks with Nova and Pip.",
+"mp3": "d75dceb60d9c",
+"check": "pass",
+"heard": "After the tea party, the white rabbit walks with Nova and Pip.",
+"heard_by": "small.en",
+"stories": [
+"a1.4"
+]
+},
+"c08c781961bd": {
+"text": "The rabbit gives Nova a little parcel.",
+"file": "narrator_46c5cb753171.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "The rabbit gives Nova a little parcel.",
+"mp3": "a627d54dedbf",
+"check": "pass",
+"heard": "The rabbit gives Nova a little parcel.",
+"heard_by": "small.en",
+"stories": [
+"a1.4"
+]
+},
+"4c88fa123605": {
+"text": "Nova likes the gift.",
+"file": "narrator_21ecc9857802.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova likes the gift.",
+"mp3": "57ad9d085f01",
+"check": "pass",
+"heard": "Nova likes the gift.",
+"heard_by": "small.en",
+"stories": [
+"a1.4"
+]
+},
+"ba1853d8cab5": {
+"text": "Nova and Puffbun wave too.",
+"file": "narrator_4dfb61068bd9.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and, Puffbun wave too.",
+"mp3": "df2bc8cfcf05",
+"check": "pass",
+"heard": "Nova and Puffman Wave 2.",
+"heard_by": "small.en",
+"stories": [
+"a1.4"
+]
+},
+"acd0e8ed3afb": {
+"text": "Nova and Mochi Fox wave too.",
+"file": "narrator_42d3ef869ce6.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Moh-chee Fox wave too.",
+"mp3": "7861cd32283c",
+"check": "pass",
+"heard": "Nova and Mochi Fox wave 2.",
+"heard_by": "small.en",
+"stories": [
+"a1.4"
+]
+},
+"9d84bf84b90d": {
+"text": "Nova and Minty wave too.",
+"file": "narrator_e3815fe756e3.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Minty wave too.",
+"mp3": "e2e9066f7f29",
+"check": "pass",
+"heard": "Nova and Minty Wave 2.",
+"heard_by": "small.en",
+"stories": [
+"a1.4"
+]
+},
+"3b809a4113ae": {
+"text": "Nova and Hoot wave too.",
+"file": "narrator_e7db0104d052.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Hoot wave too.",
+"mp3": "83d3cfac70b0",
+"check": "pass",
+"heard": "Nova and Hoot Wave 2.",
+"heard_by": "small.en",
+"stories": [
+"a1.4"
+]
+},
+"e53374e9705e": {
+"text": "Nova and Lulu wave too.",
+"file": "narrator_d7c72712b07e.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Lulu wave too.",
+"mp3": "2c142314324c",
+"check": "pass",
+"heard": "Nova and Lulu wave too.",
+"heard_by": "small.en",
+"stories": [
+"a1.4"
+]
+},
+"a37467e34dce": {
+"text": "Nova and Bao wave too.",
+"file": "narrator_bc49696e843f.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and, Bao wave too.",
+"mp3": "54f8e27570ed",
+"check": "pass",
+"heard": "Nova and Bow Wave 2.",
+"heard_by": "small.en",
+"stories": [
+"a1.4"
+]
+},
+"245b4d733bce": {
+"text": "Nova and Sprinkle wave too.",
+"file": "narrator_0075c4cc9ff1.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Sprinkle wave too.",
+"mp3": "c24ccb36430f",
+"check": "pass",
+"heard": "Nova and Sprinkle Wave 2.",
+"heard_by": "small.en",
+"stories": [
+"a1.4"
+]
+},
+"978c6206dd22": {
+"text": "Nova and Pip wave too.",
+"file": "narrator_5b2ddd22449a.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and, Pip wave too.",
+"mp3": "c3716082bca6",
+"check": "pass",
+"heard": "Nova and Pip Wave 2.",
+"heard_by": "small.en",
+"stories": [
+"a1.4"
+]
+},
+"4300a5f56e3b": {
+"text": "The next morning Nova opens the little parcel.",
+"file": "narrator_404129d1818f.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "The next morning Nova opens the little parcel.",
+"mp3": "256651aa3dd0",
+"check": "pass",
+"heard": "The next morning Nova opens the little parcel.",
+"heard_by": "small.en",
+"stories": [
+"a1.5"
+]
+},
+"6f25a2d23660": {
+"text": "“We like this gift,” says Nova.",
+"file": "narrator_cf0396723516.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "“We like this gift,” says Nova.",
+"mp3": "184cedb7eb4a",
+"check": "pass",
+"heard": "We like this gift, says Nova.",
+"heard_by": "small.en",
+"stories": [
+"a1.5"
+]
+},
+"d3db460eac7a": {
+"text": "Nova can dig a tiny hole.",
+"file": "narrator_839ed0cb3c48.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova can dig a tiny hole.",
+"mp3": "005f37b46530",
+"check": "pass",
+"heard": "Nova can dig a tiny hole.",
+"heard_by": "small.en",
+"stories": [
+"a1.5"
+]
+},
+"57725efe717f": {
+"text": "“Grow well,” whispers Nova.",
+"file": "narrator_2ed514bd3930.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "“Grow well,” whispers Nova.",
+"mp3": "1f208f919003",
+"check": "pass",
+"heard": "Grow well, whispers Nova.",
+"heard_by": "small.en",
+"stories": [
+"a1.5"
+]
+},
+"eb6ea691de21": {
+"text": "Nova can wear one too.",
+"file": "narrator_a263d84dc7b4.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova can wear one too.",
+"mp3": "632f120cdea3",
+"check": "pass",
+"heard": "Nova can wear one too.",
+"heard_by": "small.en",
+"stories": [
+"a1.5"
+]
+},
+"7f07b120a7d8": {
+"text": "“Thank you for the star path and the parcel,” says Nova.",
+"file": "narrator_80f4e1748940.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "“Thank you for the star path and the parcel,” says Nova.",
+"mp3": "f14c9adc4cf6",
+"check": "pass",
+"heard": "Thank you for the star path and the parcel, says Nova.",
+"heard_by": "small.en",
+"stories": [
+"a1.5"
+]
+},
+"d855fdec24f9": {
+"text": "A few soft days later Nova walks back to the oak.",
+"file": "narrator_76cff5a833a3.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "A few soft days later Nova walks back to the oak.",
+"mp3": "b236545cc771",
+"check": "pass",
+"heard": "A few soft days later, Nova walks back to the oak.",
+"heard_by": "small.en",
+"stories": [
+"a1.6"
+]
+},
+"e3997e87fa88": {
+"text": "“We like this sprout,” says Nova.",
+"file": "narrator_fd0bb8c34665.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "“We like this sprout,” says Nova.",
+"mp3": "b47cb1b0754b",
+"check": "pass",
+"heard": "We like this sprout, says Nova.",
+"heard_by": "small.en",
+"stories": [
+"a1.6"
+]
+},
+"2425f069439c": {
+"text": "Nova can tip a little water on the earth.",
+"file": "narrator_9a9d6cbd94cb.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova can tip a little water on the earth.",
+"mp3": "2dde74e0fc33",
+"check": "pass",
+"heard": "NOVA can tip a little water on the Earth.",
+"heard_by": "small.en",
+"stories": [
+"a1.6"
+]
+},
+"85156a4afd61": {
+"text": "There are three friends under the oak now: Nova, Puffbun, and the rabbit.",
+"file": "narrator_9744e89866b6.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "There are three friends, under the oak now: Nova, Puffbun, and the rabbit.",
+"mp3": "81ab72cdf536",
+"check": "pass",
+"heard": "There are three friends under the oak now, Nova, Puffbun, and the Rabbit.",
+"heard_by": "small.en",
+"stories": [
+"a1.6"
+]
+},
+"b14883de491d": {
+"text": "“We can thank the sprout too,” laughs Nova.",
+"file": "narrator_918e61372cdf.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "“We can thank the sprout too,” laughs Nova.",
+"mp3": "7f5a9d5cad70",
+"check": "pass",
+"heard": "We can thank the Sprout too, Laughs Nova.",
+"heard_by": "small.en",
+"stories": [
+"a1.6"
+]
+},
+"e17463f6cdc1": {
+"text": "There are three friends under the oak now: Nova, Mochi Fox, and the rabbit.",
+"file": "narrator_3acb4af444d2.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "There are three friends, under the oak now: Nova, Moh-chee Fox, and the rabbit.",
+"mp3": "71316e952728",
+"check": "pass",
+"heard": "There are three friends under the oak now, Nova, Mochi, Fox, and the Rabbit.",
+"heard_by": "small.en",
+"stories": [
+"a1.6"
+]
+},
+"dd84f0edb7a5": {
+"text": "There are three friends under the oak now: Nova, Minty, and the rabbit.",
+"file": "narrator_4a91926220bb.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "There are three friends, under the oak now: Nova, Minty, and the rabbit.",
+"mp3": "5edf51668ed1",
+"check": "pass",
+"heard": "There are three friends under the oak now, Nova Minty and the Rabbit.",
+"heard_by": "small.en",
+"stories": [
+"a1.6"
+]
+},
+"4cce93b5a136": {
+"text": "There are three friends under the oak now: Nova, Hoot, and the rabbit.",
+"file": "narrator_8c226fdeb30a.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "There are three friends, under the oak now: Nova, Hoot, and the rabbit.",
+"mp3": "21f2b65b39c4",
+"check": "pass",
+"heard": "There are three friends under the oak now, Nova, Hoot, and the Rabbit.",
+"heard_by": "small.en",
+"stories": [
+"a1.6"
+]
+},
+"78620394bd82": {
+"text": "There are three friends under the oak now: Nova, Lulu, and the rabbit.",
+"file": "narrator_2df3d6ae42c3.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "There are three friends, under the oak now: Nova, Lulu, and the rabbit.",
+"mp3": "b777c183749c",
+"check": "pass",
+"heard": "There are three friends under the oak now, Nova, Lulu, and the rabbit.",
+"heard_by": "small.en",
+"stories": [
+"a1.6"
+]
+},
+"bf5cbb5051a3": {
+"text": "There are three friends under the oak now: Nova, Bao, and the rabbit.",
+"file": "narrator_041fa62ce060.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "There are three friends, under the oak now: Nova, Bao, and the rabbit.",
+"mp3": "a8ceaa2ba30d",
+"check": "pass",
+"heard": "There are three friends under the oak now, Nova, Bow, and the Rabbit.",
+"heard_by": "small.en",
+"stories": [
+"a1.6"
+]
+},
+"e83d16307090": {
+"text": "There are three friends under the oak now: Nova, Sprinkle, and the rabbit.",
+"file": "narrator_bcf264d64582.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "There are three friends, under the oak now: Nova, Sprinkle, and the rabbit.",
+"mp3": "e5c1d2d0c6fa",
+"check": "pass",
+"heard": "There are three friends under the oak now, Nova, Sprinkle, and the Rabbit.",
+"heard_by": "small.en",
+"stories": [
+"a1.6"
+]
+},
+"3f32d8a741d8": {
+"text": "There are three friends under the oak now: Nova, Pip, and the rabbit.",
+"file": "narrator_53d99c0a5681.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "There are three friends, under the oak now: Nova, Pip, and the rabbit.",
+"mp3": "e2e24911a0e2",
+"check": "pass",
+"heard": "There are three friends under the oak now, Nova, Pip, and the rabbit.",
+"heard_by": "small.en",
+"stories": [
+"a1.6"
+]
+},
+"29a023f9158c": {
+"text": "“We can come again,” says Nova.",
+"file": "narrator_731e7cb731f2.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "“We can come again,” says Nova.",
+"mp3": "1cd156a3c489",
+"check": "pass",
+"heard": "We can come again, says Nova.",
+"heard_by": "small.en",
+"stories": [
+"a1.6"
+]
+},
+"c8bc9cff69d3": {
+"text": "The next soft morning Nova walks to the oak again.",
+"file": "narrator_c074dfc70615.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "The next soft morning Nova walks to the oak again.",
+"mp3": "4df332a0319e",
+"check": "pass",
+"heard": "The next soft morning, Nova walks to the oak again.",
+"heard_by": "small.en",
+"stories": [
+"a1.7"
+]
+},
+"d35ccd1656bd": {
+"text": "“We like watering day,” says Nova.",
+"file": "narrator_15fa68f3d99d.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "“We like watering day,” says Nova.",
+"mp3": "973e613e5c45",
+"check": "pass",
+"heard": "We like watering day, says Nova.",
+"heard_by": "small.en",
+"stories": [
+"a1.7"
+]
+},
+"ebdedaac45d6": {
+"text": "There are three friends under the oak: Nova, Puffbun, and the white rabbit.",
+"file": "narrator_10c6637e6083.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "There are three friends, under the oak: Nova, Puffbun, and the white rabbit.",
+"mp3": "c794f4a7beeb",
+"check": "pass",
+"heard": "There are three friends under the oak—Nova, Puffbun, and the White Rabbit.",
+"heard_by": "small.en",
+"stories": [
+"a1.7"
+]
+},
+"f82b300dc0b1": {
+"text": "Nova can hold the sprout steady.",
+"file": "narrator_dbc5cdbb55bb.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova can hold the sprout steady.",
+"mp3": "e4dd48885e25",
+"check": "pass",
+"heard": "Nova can hold the sprout steady.",
+"heard_by": "small.en",
+"stories": [
+"a1.7"
+]
+},
+"96a045777fd5": {
+"text": "There are three friends under the oak: Nova, Mochi Fox, and the white rabbit.",
+"file": "narrator_95e4bfe4f065.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "There are three friends, under the oak: Nova, Moh-chee Fox, and the white rabbit.",
+"mp3": "52f496b21297",
+"check": "pass",
+"heard": "There are three friends under the oak, Nova, Mochi Fox, and the White Rabbit.",
+"heard_by": "small.en",
+"stories": [
+"a1.7"
+]
+},
+"7bc7adef1d9d": {
+"text": "There are three friends under the oak: Nova, Minty, and the white rabbit.",
+"file": "narrator_32c16f0409f0.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "There are three friends, under the oak: Nova, Minty, and the white rabbit.",
+"mp3": "65b32195a134",
+"check": "pass",
+"heard": "There are three friends under the oak, Nova Minty and the White Rabbit.",
+"heard_by": "small.en",
+"stories": [
+"a1.7"
+]
+},
+"6fcbaa741aa9": {
+"text": "There are three friends under the oak: Nova, Hoot, and the white rabbit.",
+"file": "narrator_6badbd6ad5e1.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "There are three friends, under the oak: Nova, Hoot, and the white rabbit.",
+"mp3": "cb70b8ad3563",
+"check": "pass",
+"heard": "There are three friends under the oak, Nova, Hoot, and the White Rabbit.",
+"heard_by": "small.en",
+"stories": [
+"a1.7"
+]
+},
+"4ee14924d52f": {
+"text": "There are three friends under the oak: Nova, Lulu, and the white rabbit.",
+"file": "narrator_63d824b2a9d9.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "There are three friends, under the oak: Nova, Lulu, and the white rabbit.",
+"mp3": "f53efb2df479",
+"check": "pass",
+"heard": "There are three friends under the oak, Nova, Lulu, and the White Rabbit.",
+"heard_by": "small.en",
+"stories": [
+"a1.7"
+]
+},
+"037b8793216c": {
+"text": "There are three friends under the oak: Nova, Bao, and the white rabbit.",
+"file": "narrator_676aaccaa719.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "There are three friends, under the oak: Nova, Bao, and the white rabbit.",
+"mp3": "7ccb3dcb06ed",
+"check": "pass",
+"heard": "There are three friends under the oak, Nova Bao and the White Rabbit.",
+"heard_by": "medium.en",
+"stories": [
+"a1.7"
+]
+},
+"3af5540ef7d0": {
+"text": "There are three friends under the oak: Nova, Sprinkle, and the white rabbit.",
+"file": "narrator_1a8fb8a22c6a.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "There are three friends, under the oak: Nova, Sprinkle, and the white rabbit.",
+"mp3": "1e4c1e56f03d",
+"check": "pass",
+"heard": "There are three friends under the oak, Nova, Sprinkle, and the White Rabbit.",
+"heard_by": "small.en",
+"stories": [
+"a1.7"
+]
+},
+"3f04e35775a6": {
+"text": "There are three friends under the oak: Nova, Pip, and the white rabbit.",
+"file": "narrator_d63a1d000ccc.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "There are three friends, under the oak: Nova, Pip, and the white rabbit.",
+"mp3": "89bc98d1705c",
+"check": "pass",
+"heard": "There are three friends under the oak, Nova, Pip, and the White Rabbit.",
+"heard_by": "small.en",
+"stories": [
+"a1.7"
+]
+},
+"60d47921a03a": {
+"text": "Nova can name them Leaf and Dot.",
+"file": "narrator_c189565776b9.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova can name them Leaf and Dot.",
+"mp3": "c42934961bdc",
+"check": "pass",
+"heard": "Nova can name them Leaf and Dot.",
+"heard_by": "small.en",
+"stories": [
+"a1.7"
+]
+},
+"92d1aa58f12e": {
+"text": "“We can come and water again,” says Nova.",
+"file": "narrator_0bc25139da35.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "“We can come and water again,” says Nova.",
+"mp3": "8724745c4979",
+"check": "pass",
+"heard": "We can come and water again, says Nova.",
+"heard_by": "small.en",
+"stories": [
+"a1.7"
+]
+},
+"23b8eaa542fc": {
+"text": "The next day, Nova and Puffbun walked to Candy Village.",
+"file": "narrator_97ae75410a17.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "The next day, Nova and Puffbun walked to Candy Village.",
+"mp3": "7d2c0a6714c0",
+"check": "pass",
+"heard": "The next day, Nova and Puffbun walked to Candy Village.",
+"heard_by": "small.en",
+"stories": [
+"a2.1"
+]
+},
+"88a78c0fe8cd": {
+"text": "The next day, Nova and Mochi Fox walked to Candy Village.",
+"file": "narrator_e65dce4af329.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "The next day, Nova and Moh-chee Fox walked to Candy Village.",
+"mp3": "07f8fc3631a0",
+"check": "pass",
+"heard": "The next day, Nova and Mochi Fox walked to Candy Village.",
+"heard_by": "small.en",
+"stories": [
+"a2.1"
+]
+},
+"3291b8bc21d8": {
+"text": "The next day, Nova and Minty walked to Candy Village.",
+"file": "narrator_39551744d97f.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "The next day, Nova and Minty walked to Candy Village.",
+"mp3": "0338940c70be",
+"check": "pass",
+"heard": "The next day, Nova and Minty walked to Candy Village.",
+"heard_by": "small.en",
+"stories": [
+"a2.1"
+]
+},
+"027d1eb1a7f2": {
+"text": "The next day, Nova and Hoot walked to Candy Village.",
+"file": "narrator_841bdf55f7f3.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "The next day, Nova and Hoot walked to Candy Village.",
+"mp3": "74346a5d53d8",
+"check": "pass",
+"heard": "The next day, Nova and Hoot walked to Candy Village.",
+"heard_by": "small.en",
+"stories": [
+"a2.1"
+]
+},
+"fe2dc29d035f": {
+"text": "The next day, Nova and Lulu walked to Candy Village.",
+"file": "narrator_aa6620e3aea3.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "The next day, Nova and Lulu walked to Candy Village.",
+"mp3": "60d51db3b90f",
+"check": "pass",
+"heard": "The next day, Nova and Lulu walked to Candy Village.",
+"heard_by": "medium.en",
+"stories": [
+"a2.1"
+]
+},
+"7074a46dbf0f": {
+"text": "The next day, Nova and Bao walked to Candy Village.",
+"file": "narrator_5362b4d3c98d.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "The next day, Nova and Bao walked to Candy Village.",
+"mp3": "3b86f5356f3a",
+"check": "pass",
+"heard": "The next day, Nova and Bao walked to Candy Village.",
+"heard_by": "small.en",
+"stories": [
+"a2.1"
+]
+},
+"38001c2fa118": {
+"text": "The next day, Nova and Sprinkle walked to Candy Village.",
+"file": "narrator_edfa9f15a039.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "The next day, Nova and Sprinkle walked to Candy Village.",
+"mp3": "0acb4c7019f8",
+"check": "pass",
+"heard": "The next day, Nova and Sprinkle walked to Candy Village.",
+"heard_by": "small.en",
+"stories": [
+"a2.1"
+]
+},
+"cc5afd539850": {
+"text": "The next day, Nova and Pip walked to Candy Village.",
+"file": "narrator_56f434d22387.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "The next day, Nova and Pip walked to Candy Village.",
+"mp3": "aaf7795725d6",
+"check": "pass",
+"heard": "The next day, Nova and Pip walked to Candy Village.",
+"heard_by": "small.en",
+"stories": [
+"a2.1"
+]
+},
+"e02dc8a96642": {
+"text": "Nova looked down.",
+"file": "narrator_80b1fc0ca532.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova looked, down.",
+"mp3": "bc7ecf718b37",
+"check": "pass",
+"heard": "Nova looked down.",
+"heard_by": "small.en",
+"stories": [
+"a2.1"
+]
+},
+"5529013956b4": {
+"text": "Nova put the page in the book.",
+"file": "narrator_d3787d24e81b.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova put the page in the book.",
+"mp3": "14de193e0e91",
+"check": "pass",
+"heard": "Nova put the page in the book.",
+"heard_by": "small.en",
+"stories": [
+"a2.1"
+]
+},
+"df2b5bb144c3": {
+"text": "Mrs Toffee gave Nova the biggest balloon of all.",
+"file": "narrator_2f7976a3d2d3.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Mrs Toffee gave Nova the biggest balloon of all.",
+"mp3": "487b25473a25",
+"check": "pass",
+"heard": "Mrs. Toffee gave Nova the biggest balloon of all.",
+"heard_by": "small.en",
+"stories": [
+"a2.2"
+]
+},
+"c4c59788ca50": {
+"text": "The balloon slipped out of Nova's hand and flew up into the tallest tree in the village, the old candy-cane tree.",
+"file": "narrator_0fe504447f28.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "The balloon slipped out of Nova's hand and flew up into the tallest tree in the village, the old candy-cane tree.",
+"mp3": "8e92616c98bb",
+"check": "pass",
+"heard": "The balloon slipped out of Nova's hand and flew up into the tallest tree in the village,  the old candy cane tree.",
+"heard_by": "small.en",
+"stories": [
+"a2.2"
+]
+},
+"7a47dc9f49eb": {
+"text": "Nova tried to climb it, but the trunk was too sticky.",
+"file": "narrator_59cf37dfb509.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova tried to climb it, but the trunk was too sticky.",
+"mp3": "cb3b2b2ef42c",
+"check": "pass",
+"heard": "Nova tried to climb it, but the trunk was too sticky.",
+"heard_by": "small.en",
+"stories": [
+"a2.2"
+]
+},
+"6a0af3721604": {
+"text": "said Nova.",
+"file": "narrator_afeebf36e3fb.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "said, Nova.",
+"mp3": "25066f0943ad",
+"check": "pass",
+"heard": "said Nova.",
+"heard_by": "small.en",
+"stories": [
+"a2.2",
+"a2.3"
+]
+},
+"619f7031119a": {
+"text": "Nova and Puffbun knocked on the little door.",
+"file": "narrator_8310659a11e3.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Puffbun knocked on the little door.",
+"mp3": "974e50febb05",
+"check": "pass",
+"heard": "Nova and Puffbun knocked on the little door.",
+"heard_by": "small.en",
+"stories": [
+"a2.3"
+]
+},
+"263bdc5fdaaf": {
+"text": "Nova and Mochi Fox knocked on the little door.",
+"file": "narrator_ec0f8b727002.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Moh-chee Fox knocked on the little door.",
+"mp3": "8efd54790568",
+"check": "pass",
+"heard": "Nova and Mochi Fox knocked on the little door.",
+"heard_by": "small.en",
+"stories": [
+"a2.3"
+]
+},
+"4742c8ae263b": {
+"text": "Nova and Minty knocked on the little door.",
+"file": "narrator_f841e9112793.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Minty knocked on the little door.",
+"mp3": "46aa0978926e",
+"check": "pass",
+"heard": "Nova and Minty knocked on the little door.",
+"heard_by": "small.en",
+"stories": [
+"a2.3"
+]
+},
+"62821e690a52": {
+"text": "Nova and Hoot knocked on the little door.",
+"file": "narrator_b04208e2b5ca.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Hoot knocked on the little door.",
+"mp3": "cd7a650732d6",
+"check": "pass",
+"heard": "Nova and Hoot knocked on the little door.",
+"heard_by": "small.en",
+"stories": [
+"a2.3"
+]
+},
+"7f86842ef24b": {
+"text": "Nova and Lulu knocked on the little door.",
+"file": "narrator_aa8061e00c88.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Lulu knocked on the little door.",
+"mp3": "666386a8205b",
+"check": "pass",
+"heard": "Nova and Lulu knocked on the little door.",
+"heard_by": "small.en",
+"stories": [
+"a2.3"
+]
+},
+"daa70bfb10b1": {
+"text": "Nova and Bao knocked on the little door.",
+"file": "narrator_db4ea2bcd8e1.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Bao knocked on the little door.",
+"mp3": "8d1c2171eddb",
+"check": "pass",
+"heard": "Nova and Bao knocked on the little door.",
+"heard_by": "small.en",
+"stories": [
+"a2.3"
+]
+},
+"b8fbf92104ab": {
+"text": "Nova and Sprinkle knocked on the little door.",
+"file": "narrator_d80961aadbf7.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Sprinkle knocked on the little door.",
+"mp3": "2a885482d5df",
+"check": "pass",
+"heard": "Nova and Sprinkle knocked on the little door.",
+"heard_by": "small.en",
+"stories": [
+"a2.3"
+]
+},
+"c9a1683ad42f": {
+"text": "Nova and Pip knocked on the little door.",
+"file": "narrator_f0888e0bef2d.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Pip knocked on the little door.",
+"mp3": "c04d8701f906",
+"check": "pass",
+"heard": "Nova and Pip knocked on the little door.",
+"heard_by": "small.en",
+"stories": [
+"a2.3"
+]
+},
+"a3f499019133": {
+"text": "Nova and Puffbun arrived early.",
+"file": "narrator_69b945819494.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Puffbun arrived early.",
+"mp3": "edaa2d9fe59b",
+"check": "pass",
+"heard": "Nova and Puffman arrived early.",
+"heard_by": "small.en",
+"stories": [
+"a2.4"
+]
+},
+"d3cd6bba8897": {
+"text": "Nova and Mochi Fox arrived early.",
+"file": "narrator_9c18439235ec.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Moh-chee Fox arrived early.",
+"mp3": "9b9a638ae285",
+"check": "pass",
+"heard": "Nova and Mochi Fox arrived early.",
+"heard_by": "small.en",
+"stories": [
+"a2.4"
+]
+},
+"a6399b63d226": {
+"text": "Nova and Minty arrived early.",
+"file": "narrator_9897c6547245.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Minty arrived early.",
+"mp3": "1dde63fddab0",
+"check": "pass",
+"heard": "Nova and Minty arrived early.",
+"heard_by": "small.en",
+"stories": [
+"a2.4"
+]
+},
+"2abbb9366d4d": {
+"text": "Nova and Hoot arrived early.",
+"file": "narrator_9edd1d89245a.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Hoot arrived early.",
+"mp3": "9f9fc471eb98",
+"check": "pass",
+"heard": "Nova and Hoot arrived early.",
+"heard_by": "small.en",
+"stories": [
+"a2.4"
+]
+},
+"64267d6ee030": {
+"text": "Nova and Lulu arrived early.",
+"file": "narrator_269cffd30d99.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Lulu arrived early.",
+"mp3": "2ac65fb07e65",
+"check": "pass",
+"heard": "Nova and Lulu arrived early.",
+"heard_by": "small.en",
+"stories": [
+"a2.4"
+]
+},
+"adc650d3a2fb": {
+"text": "Nova and Bao arrived early.",
+"file": "narrator_90d4984f27bf.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Bao arrived early.",
+"mp3": "a6eb768a57ee",
+"check": "pass",
+"heard": "Nova and Bao arrived early.",
+"heard_by": "small.en",
+"stories": [
+"a2.4"
+]
+},
+"5f33c07931cf": {
+"text": "Nova and Sprinkle arrived early.",
+"file": "narrator_ba731c51a56a.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Sprinkle arrived early.",
+"mp3": "30297b663829",
+"check": "pass",
+"heard": "Nova and Sprinkle arrived early.",
+"heard_by": "small.en",
+"stories": [
+"a2.4"
+]
+},
+"84e333d50f87": {
+"text": "Nova and Pip arrived early.",
+"file": "narrator_ab3f29424774.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Pip arrived early.",
+"mp3": "f3cbfe917c22",
+"check": "pass",
+"heard": "Nova and Pip arrived early.",
+"heard_by": "small.en",
+"stories": [
+"a2.4"
+]
+},
+"e9c7508b87e3": {
+"text": "Crumb gave the first tart to Nova and a jam crumb to Puffbun.",
+"file": "narrator_5b5d152a8637.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Crumb gave the first, tart, to Nova and a jam crumb to Puffbun.",
+"mp3": "1429589b23a8",
+"check": "pass",
+"heard": "Crumb gave the first, tart to Nova, and a jam crumb to Puffbun.",
+"heard_by": "small.en",
+"stories": [
+"a2.4"
+]
+},
+"5c90952594ab": {
+"text": "Crumb gave the first tart to Nova and a jam crumb to Mochi Fox.",
+"file": "narrator_fac9fad4dd51.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Crumb gave the first, tart, to Nova and a jam crumb to Moh-chee Fox.",
+"mp3": "9eeda3bfe30b",
+"check": "pass",
+"heard": "Crumb gave the first, tart to Nova, and a jam crumb to Mochi Fox.",
+"heard_by": "medium.en",
+"stories": [
+"a2.4"
+]
+},
+"2d716225f608": {
+"text": "Crumb gave the first tart to Nova and a jam crumb to Minty.",
+"file": "narrator_1bfd649ac10a.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Crumb gave the first, tart, to Nova and a jam crumb to Minty.",
+"mp3": "278d71523c42",
+"check": "pass",
+"heard": "Crumb gave the first, tart to nova and a jam crumb to minty.",
+"heard_by": "small.en",
+"stories": [
+"a2.4"
+]
+},
+"59a1e85fb7d2": {
+"text": "Crumb gave the first tart to Nova and a jam crumb to Hoot.",
+"file": "narrator_cb4623d8a194.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Crumb gave the first, tart, to Nova and a jam crumb to Hoot.",
+"mp3": "cf176c18e4ac",
+"check": "pass",
+"heard": "Crumb gave the first, tart to nova, and a jam crumb to hoot.",
+"heard_by": "small.en",
+"stories": [
+"a2.4"
+]
+},
+"0ba1a9feab1f": {
+"text": "Crumb gave the first tart to Nova and a jam crumb to Lulu.",
+"file": "narrator_919ee7386d74.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Crumb gave the first, tart, to Nova and a jam crumb to Lulu.",
+"mp3": "f637fbd4f35e",
+"check": "pass",
+"heard": "Crumb gave the first, tart to Nova and a jam crumb to Lulu.",
+"heard_by": "medium.en",
+"stories": [
+"a2.4"
+]
+},
+"365fd9087290": {
+"text": "Crumb gave the first tart to Nova and a jam crumb to Bao.",
+"file": "narrator_c4284e969e7f.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Crumb gave the first, tart, to Nova and a jam crumb to Bao.",
+"mp3": "bf40d1d41714",
+"check": "pass",
+"heard": "Crumb gave the first, tart to nova, and a jam crumb to bow.",
+"heard_by": "small.en",
+"stories": [
+"a2.4"
+]
+},
+"422b47550b45": {
+"text": "Crumb gave the first tart to Nova and a jam crumb to Sprinkle.",
+"file": "narrator_4be180e06b5c.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Crumb gave the first, tart, to Nova and a jam crumb to Sprinkle.",
+"mp3": "1b9d4b51e705",
+"check": "pass",
+"heard": "Crumb gave the first, tart to Nova, and a jam crumb to sprinkle.",
+"heard_by": "small.en",
+"stories": [
+"a2.4"
+]
+},
+"c6feab991b01": {
+"text": "Crumb gave the first tart to Nova and a jam crumb to Pip.",
+"file": "narrator_f33b3db685ae.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Crumb gave the first, tart, to Nova and a jam crumb to Pip.",
+"mp3": "2078d741a157",
+"check": "pass",
+"heard": "Crumb gave the first, tart to Nova, and a jam crumb to Pip.",
+"heard_by": "small.en",
+"stories": [
+"a2.4"
+]
+},
+"0e19e492bf10": {
+"text": "Nova and Puffbun arrived early again.",
+"file": "narrator_38a68fb93948.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Puffbun arrived early again.",
+"mp3": "863757819300",
+"check": "pass",
+"heard": "Nova and Puffman arrived early again.",
+"heard_by": "small.en",
+"stories": [
+"a2.5",
+"a2.6",
+"a2.7"
+]
+},
+"c878ab03ac14": {
+"text": "Nova and Mochi Fox arrived early again.",
+"file": "narrator_9acd1eaa9207.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Moh-chee Fox arrived early again.",
+"mp3": "f294c3af1666",
+"check": "pass",
+"heard": "Nova and Mochi Fox arrived early again.",
+"heard_by": "small.en",
+"stories": [
+"a2.5",
+"a2.6",
+"a2.7"
+]
+},
+"e611c9b36117": {
+"text": "Nova and Minty arrived early again.",
+"file": "narrator_fcba25e05b66.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Minty arrived early again.",
+"mp3": "08713208bcb1",
+"check": "pass",
+"heard": "Nova and Minty arrived early again.",
+"heard_by": "small.en",
+"stories": [
+"a2.5",
+"a2.6",
+"a2.7"
+]
+},
+"ec37602bd9d7": {
+"text": "Nova and Hoot arrived early again.",
+"file": "narrator_a177dc618451.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Hoot arrived early again.",
+"mp3": "d21ad2fd97af",
+"check": "pass",
+"heard": "Nova and Hoot arrived early again.",
+"heard_by": "small.en",
+"stories": [
+"a2.5",
+"a2.6",
+"a2.7"
+]
+},
+"c35c667d7f86": {
+"text": "Nova and Lulu arrived early again.",
+"file": "narrator_d967781bfdb8.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Lulu arrived early again.",
+"mp3": "1167eef638ec",
+"check": "pass",
+"heard": "Nova and Lulu arrived early again.",
+"heard_by": "small.en",
+"stories": [
+"a2.5",
+"a2.6",
+"a2.7"
+]
+},
+"97b91986dce8": {
+"text": "Nova and Bao arrived early again.",
+"file": "narrator_fde1c4777020.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Bao arrived early again.",
+"mp3": "ee970fee9b39",
+"check": "pass",
+"heard": "Nova and Bao arrived early again.",
+"heard_by": "small.en",
+"stories": [
+"a2.5",
+"a2.6",
+"a2.7"
+]
+},
+"14cd769d94b9": {
+"text": "Nova and Sprinkle arrived early again.",
+"file": "narrator_0b8ffd49c14e.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Sprinkle arrived early again.",
+"mp3": "5343dce5ab7a",
+"check": "pass",
+"heard": "Nova and Sprinkle arrived early again.",
+"heard_by": "small.en",
+"stories": [
+"a2.5",
+"a2.6",
+"a2.7"
+]
+},
+"9a0ae45c2ad8": {
+"text": "Nova and Pip arrived early again.",
+"file": "narrator_a4608a5e4336.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova and Pip arrived early again.",
+"mp3": "45be99a16cf3",
+"check": "pass",
+"heard": "Nova and Pip arrived early again.",
+"heard_by": "small.en",
+"stories": [
+"a2.5",
+"a2.6",
+"a2.7"
+]
+},
+"7152f7f1c84d": {
+"text": "It was getting dark when Nova and Puffbun reached the Whispering Forest.",
+"file": "narrator_5de029618796.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "It was getting dark when Nova and Puffbun reached the Whispering Forest.",
+"mp3": "1c0895233937",
+"check": "pass",
+"heard": "It was getting dark when Nova and Puffbun reached the Whispering Forest.",
+"heard_by": "small.en",
+"stories": [
+"b1.1"
+]
+},
+"e338d9b4ad6e": {
+"text": "Puffbun stayed close to Nova, which was unusual, because Puffbun is normally very brave.",
+"file": "narrator_f5779d7cd367.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Puffbun stayed close to Nova, which was unusual, because Puffbun is normally very brave.",
+"mp3": "e31182e781c9",
+"check": "pass",
+"heard": "Puffbun stayed close to Nova, which was unusual because Puffbun is normally very brave.",
+"heard_by": "small.en",
+"stories": [
+"b1.1"
+]
+},
+"9432d33aab77": {
+"text": "It was getting dark when Nova and Mochi Fox reached the Whispering Forest.",
+"file": "narrator_cff3cece0168.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "It was getting dark when Nova and Moh-chee Fox reached the Whispering Forest.",
+"mp3": "349a85cb8624",
+"check": "pass",
+"heard": "It was getting dark when Nova and Mochi Fox reached the Whispering Forest.",
+"heard_by": "small.en",
+"stories": [
+"b1.1"
+]
+},
+"7f43cc2aaf30": {
+"text": "Mochi Fox stayed close to Nova, which was unusual, because Mochi Fox is normally very brave.",
+"file": "narrator_35c5d4e66009.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Moh-chee Fox stayed close to Nova, which was unusual, because Moh-chee Fox is normally very brave.",
+"mp3": "5159016a51d2",
+"check": "pass",
+"heard": "Mochi Fox stayed close to Nova, which was unusual because Mochi Fox is normally very brave.",
+"heard_by": "medium.en",
+"stories": [
+"b1.1"
+]
+},
+"e4429dec3e6d": {
+"text": "It was getting dark when Nova and Minty reached the Whispering Forest.",
+"file": "narrator_fa296364bc46.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "It was getting dark when Nova and Minty reached the Whispering Forest.",
+"mp3": "785ab55831f9",
+"check": "pass",
+"heard": "It was getting dark when Nova and Minty reached the Whispering Forest.",
+"heard_by": "small.en",
+"stories": [
+"b1.1"
+]
+},
+"e86d984964d2": {
+"text": "Minty stayed close to Nova, which was unusual, because Minty is normally very brave.",
+"file": "narrator_be9781a6c5aa.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Minty stayed close to Nova, which was unusual, because Minty is normally very brave.",
+"mp3": "858bdc099b77",
+"check": "pass",
+"heard": "Minty stayed close to Nova, which was unusual, because Minty is normally very brave.",
+"heard_by": "small.en",
+"stories": [
+"b1.1"
+]
+},
+"90cd9d6c90de": {
+"text": "It was getting dark when Nova and Hoot reached the Whispering Forest.",
+"file": "narrator_4f2291c1d6d8.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "It was getting dark when Nova and Hoot reached the Whispering Forest.",
+"mp3": "d98b87c8c361",
+"check": "pass",
+"heard": "It was getting dark when Nova and Hoot reached the Whispering Forest.",
+"heard_by": "small.en",
+"stories": [
+"b1.1"
+]
+},
+"5ad507a9a571": {
+"text": "Hoot stayed close to Nova, which was unusual, because Hoot is normally very brave.",
+"file": "narrator_6dc89b74a66b.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Hoot stayed close to Nova, which was unusual, because Hoot is normally very brave.",
+"mp3": "d1d397a7f6cb",
+"check": "pass",
+"heard": "Hoot stayed close to Nova, which was unusual because Hoot is normally very brave.",
+"heard_by": "small.en",
+"stories": [
+"b1.1"
+]
+},
+"7c35e3440ecd": {
+"text": "It was getting dark when Nova and Lulu reached the Whispering Forest.",
+"file": "narrator_845e382f67be.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "It was getting dark when Nova and Lulu reached the Whispering Forest.",
+"mp3": "41ce399de041",
+"check": "pass",
+"heard": "It was getting dark when Nova and Lulu reached the Whispering Forest.",
+"heard_by": "small.en",
+"stories": [
+"b1.1"
+]
+},
+"6b82d406e45c": {
+"text": "Lulu stayed close to Nova, which was unusual, because Lulu is normally very brave.",
+"file": "narrator_f99cab1c0f42.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Lulu stayed close to Nova, which was unusual, because Lulu is normally very brave.",
+"mp3": "63087da2aaab",
+"check": "pass",
+"heard": "Lulu stayed close to Nova, which was unusual because Lulu is normally very brave.",
+"heard_by": "small.en",
+"stories": [
+"b1.1"
+]
+},
+"3c2077ecc794": {
+"text": "It was getting dark when Nova and Bao reached the Whispering Forest.",
+"file": "narrator_3235577bf1c3.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "It was getting dark when Nova and Bao reached the Whispering Forest.",
+"mp3": "0086937615b3",
+"check": "pass",
+"heard": "It was getting dark when Nova and Bao reached the Whispering Forest.",
+"heard_by": "small.en",
+"stories": [
+"b1.1"
+]
+},
+"e4005f5ef283": {
+"text": "Bao stayed close to Nova, which was unusual, because Bao is normally very brave.",
+"file": "narrator_073d31202ee4.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Bao stayed close to Nova, which was unusual, because Bao is normally very brave.",
+"mp3": "a94e081d1711",
+"check": "pass",
+"heard": "Bao stayed close to Nova, which was unusual, because Bao is normally very brave.",
+"heard_by": "small.en",
+"stories": [
+"b1.1"
+]
+},
+"6c80225ea12d": {
+"text": "It was getting dark when Nova and Sprinkle reached the Whispering Forest.",
+"file": "narrator_e96dc1b9a88f.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "It was getting dark when Nova and Sprinkle reached the Whispering Forest.",
+"mp3": "f21b457a2185",
+"check": "pass",
+"heard": "It was getting dark when Nova and Sprinkle reached the whispering forest.",
+"heard_by": "small.en",
+"stories": [
+"b1.1"
+]
+},
+"a15e5d54117e": {
+"text": "Sprinkle stayed close to Nova, which was unusual, because Sprinkle is normally very brave.",
+"file": "narrator_21e6cf34d2fd.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Sprinkle stayed close to Nova, which was unusual, because Sprinkle is normally very brave.",
+"mp3": "6b7fb1178e0d",
+"check": "pass",
+"heard": "Sprinkle stayed close to Nova, which was unusual, because Sprinkle is normally very brave.",
+"heard_by": "small.en",
+"stories": [
+"b1.1"
+]
+},
+"5db099c9471b": {
+"text": "It was getting dark when Nova and Pip reached the Whispering Forest.",
+"file": "narrator_2a44e9b62995.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "It was getting dark when Nova and Pip reached the Whispering Forest.",
+"mp3": "305177008172",
+"check": "pass",
+"heard": "It was getting dark when Nova and Pip reached the whispering forest.",
+"heard_by": "small.en",
+"stories": [
+"b1.1"
+]
+},
+"8ca932528c9e": {
+"text": "Pip stayed close to Nova, which was unusual, because Pip is normally very brave.",
+"file": "narrator_2109d8ce238f.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Pip stayed close to Nova, which was unusual, because Pip is normally very brave.",
+"mp3": "9fe9ccd6a5c7",
+"check": "pass",
+"heard": "Pip stayed close to Nova, which was unusual, because Pip is normally very brave.",
+"heard_by": "small.en",
+"stories": [
+"b1.1"
+]
+},
+"2d5e62a1711d": {
+"text": "While they were deciding, a firefly landed on Nova's hand.",
+"file": "narrator_22bb26bd5e09.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "While they were deciding, a firefly landed on Nova's hand.",
+"mp3": "c6f21f6805f6",
+"check": "pass",
+"heard": "While they were deciding, a firefly landed on Nova's hand.",
+"heard_by": "small.en",
+"stories": [
+"b1.1"
+]
+},
+"f84827a82c82": {
+"text": "Nova thought for a moment and then smiled.",
+"file": "narrator_e0d9d389f466.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova thought for a moment and then smiled.",
+"mp3": "d07522b3673e",
+"check": "pass",
+"heard": "Nova thought for a moment and then smiled.",
+"heard_by": "small.en",
+"stories": [
+"b1.1"
+]
+},
+"581bebbbfa38": {
+"text": "As they walked out of the forest, Nova noticed that the trees had stopped whispering.",
+"file": "narrator_44cd50f68ce2.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "As they walked out of the forest, Nova noticed that the trees had stopped whispering.",
+"mp3": "3bb030a01135",
+"check": "pass",
+"heard": "As they walked out of the forest, Nova noticed that the trees had stopped whispering.",
+"heard_by": "small.en",
+"stories": [
+"b1.1"
+]
+},
+"5ae13b561e5a": {
+"text": "Every summer, the creatures of the Whispering Forest hold a Lantern Festival, and this year the owl had invited Nova and Puffbun as special guests.",
+"file": "narrator_1adce71c6f5d.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Every summer, the creatures of the Whispering Forest hold a Lantern Festival, and this year the owl had invited Nova and Puffbun as special guests.",
+"mp3": "734f057bfc40",
+"check": "pass",
+"heard": "Every summer, the creatures of the Whispering Forest hold a lantern festival, and this  year the owl had invited Nova and Puffbun as special guests.",
+"heard_by": "small.en",
+"stories": [
+"b1.2"
+]
+},
+"292486987f02": {
+"text": "Every summer, the creatures of the Whispering Forest hold a Lantern Festival, and this year the owl had invited Nova and Mochi Fox as special guests.",
+"file": "narrator_3c432e6a5a59.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Every summer, the creatures of the Whispering Forest hold a Lantern Festival, and this year the owl had invited Nova and Moh-chee Fox as special guests.",
+"mp3": "3716bd2b54f8",
+"check": "pass",
+"heard": "Every summer, the creatures of the Whispering Forest hold a lantern festival, and this year  the owl had invited Nova and Mochi Fox as special guests.",
+"heard_by": "small.en",
+"stories": [
+"b1.2"
+]
+},
+"65a0480d7cda": {
+"text": "Every summer, the creatures of the Whispering Forest hold a Lantern Festival, and this year the owl had invited Nova and Minty as special guests.",
+"file": "narrator_8874791116cf.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Every summer, the creatures of the Whispering Forest hold a Lantern Festival, and this year the owl had invited Nova and Minty as special guests.",
+"mp3": "dbd2e98be7df",
+"check": "pass",
+"heard": "Every summer, the creatures of the Whispering Forest hold a lantern festival, and this year  the owl had invited Nova and Minty as special guests.",
+"heard_by": "small.en",
+"stories": [
+"b1.2"
+]
+},
+"1e1bdf25063b": {
+"text": "Every summer, the creatures of the Whispering Forest hold a Lantern Festival, and this year the owl had invited Nova and Hoot as special guests.",
+"file": "narrator_443333dea23e.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Every summer, the creatures of the Whispering Forest hold a Lantern Festival, and this year the owl had invited Nova and Hoot as special guests.",
+"mp3": "dd590f442117",
+"check": "pass",
+"heard": "Every summer, the creatures of the Whispering Forest hold a lantern festival, and this year  the owl had invited Nova and Hoot as special guests.",
+"heard_by": "small.en",
+"stories": [
+"b1.2"
+]
+},
+"c6e87553aca9": {
+"text": "Every summer, the creatures of the Whispering Forest hold a Lantern Festival, and this year the owl had invited Nova and Lulu as special guests.",
+"file": "narrator_0e8b40306226.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Every summer, the creatures of the Whispering Forest hold a Lantern Festival, and this year the owl had invited Nova and Lulu as special guests.",
+"mp3": "efb7355284f2",
+"check": "pass",
+"heard": "Every summer, the creatures of the Whispering Forest hold a lantern festival, and this year  the owl had invited Nova and Lulu as special guests.",
+"heard_by": "small.en",
+"stories": [
+"b1.2"
+]
+},
+"7a246d4e58a9": {
+"text": "Every summer, the creatures of the Whispering Forest hold a Lantern Festival, and this year the owl had invited Nova and Bao as special guests.",
+"file": "narrator_e780d87270a4.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Every summer, the creatures of the Whispering Forest hold a Lantern Festival, and this year the owl had invited Nova and Bao as special guests.",
+"mp3": "ff5403ad1525",
+"check": "pass",
+"heard": "Every summer, the creatures of the Whispering Forest hold a lantern festival, and this year  the owl had invited Nova and Bao as special guests.",
+"heard_by": "small.en",
+"stories": [
+"b1.2"
+]
+},
+"f6967bd0f915": {
+"text": "Every summer, the creatures of the Whispering Forest hold a Lantern Festival, and this year the owl had invited Nova and Sprinkle as special guests.",
+"file": "narrator_d75a6f7ea81a.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Every summer, the creatures of the Whispering Forest hold a Lantern Festival, and this year the owl had invited Nova and Sprinkle as special guests.",
+"mp3": "f1f6db827597",
+"check": "pass",
+"heard": "Every summer, the creatures of the Whispering Forest hold a lantern festival, and this year  the owl had invited Nova and Sprinkle as special guests.",
+"heard_by": "small.en",
+"stories": [
+"b1.2"
+]
+},
+"73319b6b8c0f": {
+"text": "Every summer, the creatures of the Whispering Forest hold a Lantern Festival, and this year the owl had invited Nova and Pip as special guests.",
+"file": "narrator_2dfa461b5ae9.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Every summer, the creatures of the Whispering Forest hold a Lantern Festival, and this year the owl had invited Nova and Pip as special guests.",
+"mp3": "9a0adaa09cf1",
+"check": "pass",
+"heard": "Every summer, the creatures of the Whispering Forest hold a lantern festival, and this year  the owl had invited Nova and Pip as special guests.",
+"heard_by": "small.en",
+"stories": [
+"b1.2"
+]
+},
+"9d15137744b4": {
+"text": "Nova looked at the sky.",
+"file": "narrator_afac69578862.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova looked at the sky.",
+"mp3": "aebde535338d",
+"check": "pass",
+"heard": "Nova looked at the sky.",
+"heard_by": "small.en",
+"stories": [
+"b1.2"
+]
+},
+"1477c49a5552": {
+"text": "“Don't worry,” said Nova.",
+"file": "narrator_f60fab057c17.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "“Don't worry,” said Nova.",
+"mp3": "b7b81b7e5f23",
+"check": "pass",
+"heard": "Don't worry,\" said Nova.",
+"heard_by": "small.en",
+"stories": [
+"b1.2"
+]
+},
+"91bef7c7c96e": {
+"text": "Puffbun found a long pink ribbon in Nova's bag, and together they tied it carefully around the tear.",
+"file": "narrator_d26482f0cbb5.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Puffbun found a long pink ribbon in Nova's bag, and together they tied it carefully around the tare.",
+"mp3": "83147481143b",
+"check": "pass",
+"heard": "Puff Bun found a long pink ribbon in Nova's bag, and together they tied it carefully around  the tear.",
+"heard_by": "small.en",
+"stories": [
+"b1.2"
+]
+},
+"5e29999627e5": {
+"text": "Mochi Fox found a long pink ribbon in Nova's bag, and together they tied it carefully around the tear.",
+"file": "narrator_afe9d26ec2a1.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Moh-chee Fox found a long pink ribbon in Nova's bag, and together they tied it carefully around the tare.",
+"mp3": "85c5784524d7",
+"check": "pass",
+"heard": "Mochi Fox found a long pink ribbon in Nova's bag, and together they tied it carefully around  the tear.",
+"heard_by": "small.en",
+"stories": [
+"b1.2"
+]
+},
+"d9bf09f69357": {
+"text": "Minty found a long pink ribbon in Nova's bag, and together they tied it carefully around the tear.",
+"file": "narrator_0a18853a4ccf.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Minty found a long pink ribbon in Nova's bag, and together they tied it carefully around the tare.",
+"mp3": "d8978792e308",
+"check": "pass",
+"heard": "Minty found a long pink ribbon in Nova's bag, and together they tied it carefully around  the tear.",
+"heard_by": "small.en",
+"stories": [
+"b1.2"
+]
+},
+"b25e3a8f149c": {
+"text": "Hoot found a long pink ribbon in Nova's bag, and together they tied it carefully around the tear.",
+"file": "narrator_6a94c3d2c53c.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Hoot found a long pink ribbon in Nova's bag, and together they tied it carefully around the tare.",
+"mp3": "1e6a94a63e38",
+"check": "pass",
+"heard": "Hoot found a long pink ribbon in Nova's bag, and together they tied it carefully around  the tear.",
+"heard_by": "small.en",
+"stories": [
+"b1.2"
+]
+},
+"38988a4a8e43": {
+"text": "Lulu found a long pink ribbon in Nova's bag, and together they tied it carefully around the tear.",
+"file": "narrator_8ffecd3a143a.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Lulu found a long pink ribbon in Nova's bag, and together they tied it carefully around the tare.",
+"mp3": "a8e05d03feef",
+"check": "pass",
+"heard": "Lulu found a long pink ribbon in Nova's bag, and together they tied it carefully around  the tear.",
+"heard_by": "small.en",
+"stories": [
+"b1.2"
+]
+},
+"560d562f68d8": {
+"text": "Bao found a long pink ribbon in Nova's bag, and together they tied it carefully around the tear.",
+"file": "narrator_b8e9cb3404d9.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Bao found a long pink ribbon in Nova's bag, and together they tied it carefully around the tare.",
+"mp3": "6181a8a84e1e",
+"check": "pass",
+"heard": "Bao found a long pink ribbon in Nova's bag, and together they tied it carefully around  the tear.",
+"heard_by": "small.en",
+"stories": [
+"b1.2"
+]
+},
+"05ee3ed580ec": {
+"text": "Sprinkle found a long pink ribbon in Nova's bag, and together they tied it carefully around the tear.",
+"file": "narrator_15a17cc2c6db.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Sprinkle found a long pink ribbon in Nova's bag, and together they tied it carefully around the tare.",
+"mp3": "8a69ec74294e",
+"check": "pass",
+"heard": "Sprinkle found a long pink ribbon in Nova's bag, and together they tied it carefully around  the tear.",
+"heard_by": "small.en",
+"stories": [
+"b1.2"
+]
+},
+"b67b3ab99dfd": {
+"text": "Pip found a long pink ribbon in Nova's bag, and together they tied it carefully around the tear.",
+"file": "narrator_7537677a56e2.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Pip found a long pink ribbon in Nova's bag, and together they tied it carefully around the tare.",
+"mp3": "45f441461f12",
+"check": "pass",
+"heard": "Pip found a long pink ribbon in Nova's bag, and together they tied it carefully around  the tear.",
+"heard_by": "small.en",
+"stories": [
+"b1.2"
+]
+},
+"ada86774e767": {
+"text": "A week after the Lantern Festival, Pip asked Nova and Puffbun to come back to the Whispering Forest.",
+"file": "narrator_3772ae3f6bae.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "A week after the Lantern Festival, Pip asked Nova and Puffbun to come back to the Whispering Forest.",
+"mp3": "8debb45950df",
+"check": "pass",
+"heard": "A week after the Lantern Festival, Pip asked Nova and Puffbun to come back to the Whispering  Forest.",
+"heard_by": "small.en",
+"stories": [
+"b1.3"
+]
+},
+"a64e9629822e": {
+"text": "When Nova arrived, Pip was hovering above the oak, looking nervous.",
+"file": "narrator_1417153995be.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova arrived, Pip was hovering above the oak, looking nervous.",
+"mp3": "4c0c217033c8",
+"check": "pass",
+"heard": "When Nova arrived, Pip was hovering above the oak, looking nervous.",
+"heard_by": "small.en",
+"stories": [
+"b1.3"
+]
+},
+"04bf2d5c8a83": {
+"text": "A week after the Lantern Festival, Pip asked Nova and Mochi Fox to come back to the Whispering Forest.",
+"file": "narrator_ee3330ccc521.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "A week after the Lantern Festival, Pip asked Nova and Moh-chee Fox to come back to the Whispering Forest.",
+"mp3": "c4e046dcdb92",
+"check": "pass",
+"heard": "A week after the Lantern Festival, Pip asked Nova and Mochi Fox to come back to the Whispering  Forest.",
+"heard_by": "small.en",
+"stories": [
+"b1.3"
+]
+},
+"1d63e13938c2": {
+"text": "A week after the Lantern Festival, Pip asked Nova and Minty to come back to the Whispering Forest.",
+"file": "narrator_119e3062ef0a.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "A week after the Lantern Festival, Pip asked Nova and Minty to come back to the Whispering Forest.",
+"mp3": "977907f98117",
+"check": "pass",
+"heard": "A week after the Lantern Festival, Pip asked Nova and Minty to come back to the Whispering  Forest.",
+"heard_by": "small.en",
+"stories": [
+"b1.3"
+]
+},
+"0e474f68522a": {
+"text": "A week after the Lantern Festival, Pip asked Nova and Hoot to come back to the Whispering Forest.",
+"file": "narrator_0b9c6af50d14.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "A week after the Lantern Festival, Pip asked Nova and Hoot to come back to the Whispering Forest.",
+"mp3": "b64b392fe04e",
+"check": "pass",
+"heard": "A week after the Lantern Festival, Pip asked Nova and Hoot to come back to the Whispering  Forest.",
+"heard_by": "small.en",
+"stories": [
+"b1.3"
+]
+},
+"e06382a00f49": {
+"text": "A week after the Lantern Festival, Pip asked Nova and Lulu to come back to the Whispering Forest.",
+"file": "narrator_b1d869771adb.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "A week after the Lantern Festival, Pip asked Nova and Lulu to come back to the Whispering Forest.",
+"mp3": "b91e6871fd73",
+"check": "pass",
+"heard": "A  week after the Lantern Festival, Pip asked Nova and Lulu to come back to the Whispering  Forest.",
+"heard_by": "medium.en",
+"stories": [
+"b1.3"
+]
+},
+"49786979f4dc": {
+"text": "A week after the Lantern Festival, Pip asked Nova and Bao to come back to the Whispering Forest.",
+"file": "narrator_6f3fda65d2ae.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "A week after the Lantern Festival, Pip asked Nova and Bao to come back to the Whispering Forest.",
+"mp3": "24197c267e2b",
+"check": "pass",
+"heard": "A week after the Lantern Festival, Pip asked Nova and Bao to come back to the Whispering  Forest.",
+"heard_by": "small.en",
+"stories": [
+"b1.3"
+]
+},
+"0f0866f728cb": {
+"text": "A week after the Lantern Festival, Pip asked Nova and Sprinkle to come back to the Whispering Forest.",
+"file": "narrator_e00c15f567d6.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "A week after the Lantern Festival, Pip asked Nova and Sprinkle to come back to the Whispering Forest.",
+"mp3": "180959ba7c99",
+"check": "pass",
+"heard": "A week after the Lantern Festival, Pip asked Nova and Sprinkle to come back to the Whispering  Forest.",
+"heard_by": "small.en",
+"stories": [
+"b1.3"
+]
+},
+"c045fed62965": {
+"text": "A week after the Lantern Festival, Pip asked Nova and Pip to come back to the Whispering Forest.",
+"file": "narrator_aab8cde88ab2.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "A week after the Lantern Festival, Pip asked Nova and Pip to come back to the Whispering Forest.",
+"mp3": "83b006c812fd",
+"check": "pass",
+"heard": "A week after the Lantern Festival, Pip asked Nova and Pip to come back to the Whispering  Forest.",
+"heard_by": "small.en",
+"stories": [
+"b1.3"
+]
+},
+"ceb212b1cdfb": {
+"text": "“You should start with a slow circle,” Nova suggested.",
+"file": "narrator_e5457184f6ed.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "“You should start with a slow circle,” Nova suggested.",
+"mp3": "e2d675ea00d1",
+"check": "pass",
+"heard": "You should start with a slow circle, Nova suggested.",
+"heard_by": "small.en",
+"stories": [
+"b1.3"
+]
+},
+"929200efc29f": {
+"text": "“You should come whenever you can,” Pip told Nova.",
+"file": "narrator_555d29a6406d.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "“You should come whenever you can,” Pip told Nova.",
+"mp3": "d05ee70280eb",
+"check": "pass",
+"heard": "You should come whenever you can, Pip told Nova.",
+"heard_by": "small.en",
+"stories": [
+"b1.3"
+]
+},
+"6651d5cdc083": {
+"text": "When Nova and Puffbun arrived, the little ones were practising the slow circle under the oak.",
+"file": "narrator_24c6c77da3fc.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova and Puffbun arrived, the little ones were practising the slow circle under the oak.",
+"mp3": "4b6488b24652",
+"check": "pass",
+"heard": "When Nova and Puffbun arrived, the little ones were practicing the slow circle under the oak.",
+"heard_by": "medium.en",
+"stories": [
+"b1.4"
+]
+},
+"be37673aa50a": {
+"text": "When Nova and Mochi Fox arrived, the little ones were practising the slow circle under the oak.",
+"file": "narrator_eb2794d22d38.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova and Moh-chee Fox arrived, the little ones were practising the slow circle under the oak.",
+"mp3": "de833bb3fbe2",
+"check": "pass",
+"heard": "When Nova and Mochi Fox arrived, the little ones were practicing the slow circle under  the oak.",
+"heard_by": "small.en",
+"stories": [
+"b1.4"
+]
+},
+"1643d0aafdd9": {
+"text": "When Nova and Minty arrived, the little ones were practising the slow circle under the oak.",
+"file": "narrator_af67db0665bc.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova and Minty arrived, the little ones were practising the slow circle under the oak.",
+"mp3": "c0f987aa1f67",
+"check": "pass",
+"heard": "When Nova and Minty arrived, the little ones were practicing  the slow circle under the oak.",
+"heard_by": "small.en",
+"stories": [
+"b1.4"
+]
+},
+"0f6c587ee772": {
+"text": "When Nova and Hoot arrived, the little ones were practising the slow circle under the oak.",
+"file": "narrator_651d8435c5cd.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova and Hoot arrived, the little ones were practising the slow circle under the oak.",
+"mp3": "f73bbbdca98f",
+"check": "pass",
+"heard": "When Nova and Hoot arrived,  the little ones were practicing the slow circle  under the oak.",
+"heard_by": "small.en",
+"stories": [
+"b1.4"
+]
+},
+"0c837aa39d1c": {
+"text": "When Nova and Lulu arrived, the little ones were practising the slow circle under the oak.",
+"file": "narrator_00108cef1ecb.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova and Lulu arrived, the little ones were practising the slow circle under the oak.",
+"mp3": "10fae1e39256",
+"check": "pass",
+"heard": "When Nova and Lulu arrived, the little ones were practicing the slow circle under the  oak.",
+"heard_by": "small.en",
+"stories": [
+"b1.4"
+]
+},
+"f5c4dc627cb8": {
+"text": "When Nova and Bao arrived, the little ones were practising the slow circle under the oak.",
+"file": "narrator_ff89995b4ab4.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova and Bao arrived, the little ones were practising the slow circle under the oak.",
+"mp3": "d56935e422d4",
+"check": "pass",
+"heard": "When Nova and Bao arrived, the little ones were practicing the slow circle under the oak.",
+"heard_by": "medium.en",
+"stories": [
+"b1.4"
+]
+},
+"db075b12acd9": {
+"text": "When Nova and Sprinkle arrived, the little ones were practising the slow circle under the oak.",
+"file": "narrator_d5fc70ed2890.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova and Sprinkle arrived, the little ones were practising the slow circle under the oak.",
+"mp3": "728bb4ebf834",
+"check": "pass",
+"heard": "When Nova and Sprinkle arrived, the little ones were practicing the slow circle under  the oak.",
+"heard_by": "small.en",
+"stories": [
+"b1.4"
+]
+},
+"74bccc95d933": {
+"text": "When Nova and Pip arrived, the little ones were practising the slow circle under the oak.",
+"file": "narrator_ccfb879470ec.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova and Pip arrived, the little ones were practising the slow circle under the oak.",
+"mp3": "7632b7a6e019",
+"check": "pass",
+"heard": "When Nova and Pip arrived, the little ones were practicing the slow circle under the  oak.",
+"heard_by": "small.en",
+"stories": [
+"b1.4"
+]
+},
+"a6e6e32a48b8": {
+"text": "Afterwards Pip hovered beside Nova.",
+"file": "narrator_836d6d4b4405.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Afterwards Pip hovered beside Nova.",
+"mp3": "80eece7ed708",
+"check": "pass",
+"heard": "Afterwards, Pip hovered beside Nova.",
+"heard_by": "small.en",
+"stories": [
+"b1.4"
+]
+},
+"05dc9a4058de": {
+"text": "When Nova and Puffbun arrived with the promised blankets, the little fireflies were unrolling glow-scarves for the seats.",
+"file": "narrator_943c548acfa2.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova and Puffbun arrived with the promised blankets. The little fireflies were unrolling glow-scarves for the seats.",
+"mp3": "f5925b50e2ca",
+"check": "pass",
+"heard": "When Nova and Puffbun arrived with the promised blankets, the little fireflies were unrolling  glow scarves for the seats.",
+"heard_by": "small.en",
+"stories": [
+"b1.5"
+]
+},
+"e325fcdb7479": {
+"text": "When Nova and Mochi Fox arrived with the promised blankets, the little fireflies were unrolling glow-scarves for the seats.",
+"file": "narrator_0b7a35923817.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova and Moh-chee Fox arrived with the promised blankets. The little fireflies were unrolling glow-scarves for the seats.",
+"mp3": "8fddae1bdf69",
+"check": "pass",
+"heard": "When Nova and Mochi Fox arrived with the promised blankets, the little fireflies were unrolling  glow scarves for the seats.",
+"heard_by": "small.en",
+"stories": [
+"b1.5"
+]
+},
+"8497ca77118a": {
+"text": "When Nova and Minty arrived with the promised blankets, the little fireflies were unrolling glow-scarves for the seats.",
+"file": "narrator_9222effac628.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova and Minty arrived with the promised blankets. The little fireflies were unrolling glow-scarves for the seats.",
+"mp3": "947e94a82de6",
+"check": "pass",
+"heard": "When Nova and Minty arrived with the promised blankets, the little fireflies were unrolling  glow scarves for the seats.",
+"heard_by": "small.en",
+"stories": [
+"b1.5"
+]
+},
+"07e127f7d4ce": {
+"text": "When Nova and Hoot arrived with the promised blankets, the little fireflies were unrolling glow-scarves for the seats.",
+"file": "narrator_af3f1af61162.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova and Hoot arrived with the promised blankets. The little fireflies were unrolling glow-scarves for the seats.",
+"mp3": "2815c6b3a4e9",
+"check": "pass",
+"heard": "When Nova and Hoot arrived with the promised blankets,  the little fireflies were unrolling  glow scarves for the seats.",
+"heard_by": "small.en",
+"stories": [
+"b1.5"
+]
+},
+"4acce2c4d912": {
+"text": "When Nova and Lulu arrived with the promised blankets, the little fireflies were unrolling glow-scarves for the seats.",
+"file": "narrator_37abb05ef39b.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova and Lulu arrived with the promised blankets. The little fireflies were unrolling glow-scarves for the seats.",
+"mp3": "e4e47d4a108e",
+"check": "pass",
+"heard": "When Nova and Lulu arrived with the promised blankets,  the little fireflies were unrolling  glow scarves for the seats.",
+"heard_by": "small.en",
+"stories": [
+"b1.5"
+]
+},
+"4e415828019a": {
+"text": "When Nova and Bao arrived with the promised blankets, the little fireflies were unrolling glow-scarves for the seats.",
+"file": "narrator_fb1ca3762108.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova and Bao arrived with the promised blankets. The little fireflies were unrolling glow-scarves for the seats.",
+"mp3": "e603fbe34989",
+"check": "pass",
+"heard": "When Nova and Bao arrived with the promised blankets,  the little fireflies were unrolling  glow scarves for the seats.",
+"heard_by": "small.en",
+"stories": [
+"b1.5"
+]
+},
+"eb164ad8bec8": {
+"text": "When Nova and Sprinkle arrived with the promised blankets, the little fireflies were unrolling glow-scarves for the seats.",
+"file": "narrator_dddd15be5afc.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova and Sprinkle arrived with the promised blankets. The little fireflies were unrolling glow-scarves for the seats.",
+"mp3": "2461a9094003",
+"check": "pass",
+"heard": "When Nova and Sprinkle arrived with the promised blankets, the little fireflies were unrolling  glow scarves for the seats.",
+"heard_by": "small.en",
+"stories": [
+"b1.5"
+]
+},
+"e34bb8b65883": {
+"text": "When Nova and Pip arrived with the promised blankets, the little fireflies were unrolling glow-scarves for the seats.",
+"file": "narrator_1daeb5cac643.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova and Pip arrived with the promised blankets. The little fireflies were unrolling glow-scarves for the seats.",
+"mp3": "ee203df08eec",
+"check": "pass",
+"heard": "When Nova and Pip arrived with the promised blankets,  the little fireflies were unrolling  glow scarves for the seats.",
+"heard_by": "small.en",
+"stories": [
+"b1.5"
+]
+},
+"de8784183b30": {
+"text": "When Nova and Puffbun arrived with warm scarves, the little fireflies were tuning tiny glow-chimes for the dawn chorus.",
+"file": "narrator_79c7c3d536f2.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova and Puffbun arrived with warm scarves, the little fireflies were tuning tiny glow chimes for the dawn chorus.",
+"mp3": "b809d39e274a",
+"check": "pass",
+"heard": "When Nova and Puffbun arrived with warm scarves, the little fireflies were tuning tiny glow  chimes for the dawn chorus.",
+"heard_by": "small.en",
+"stories": [
+"b1.6"
+]
+},
+"f662845a43ce": {
+"text": "When Nova and Mochi Fox arrived with warm scarves, the little fireflies were tuning tiny glow-chimes for the dawn chorus.",
+"file": "narrator_8d5c57b70c7f.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova and Moh-chee Fox arrived with warm scarves, the little fireflies were tuning tiny glow chimes for the dawn chorus.",
+"mp3": "e32739928bca",
+"check": "pass",
+"heard": "When Nova and Mochi Fox arrived with warm scarves, the little fireflies were tuning  tiny glow chimes for the dawn chorus.",
+"heard_by": "small.en",
+"stories": [
+"b1.6"
+]
+},
+"4892acfa4889": {
+"text": "When Nova and Minty arrived with warm scarves, the little fireflies were tuning tiny glow-chimes for the dawn chorus.",
+"file": "narrator_0ce0a5955504.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova and Minty arrived with warm scarves, the little fireflies were tuning tiny glow chimes for the dawn chorus.",
+"mp3": "23f46ca1ed01",
+"check": "pass",
+"heard": "When Nova and Minty arrived with warm scarves, the little fireflies were tuning tiny glow  chimes for the dawn chorus.",
+"heard_by": "medium.en",
+"stories": [
+"b1.6"
+]
+},
+"bd712d49578c": {
+"text": "When Nova and Hoot arrived with warm scarves, the little fireflies were tuning tiny glow-chimes for the dawn chorus.",
+"file": "narrator_54821013d063.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova and Hoot arrived with warm scarves, the little fireflies were tuning tiny glow chimes for the dawn chorus.",
+"mp3": "21a50e2723de",
+"check": "pass",
+"heard": "When Nova and Hoot arrived with warm scarves, the little fireflies were tuning tiny glow  chimes for the dawn chorus.",
+"heard_by": "small.en",
+"stories": [
+"b1.6"
+]
+},
+"71c831239468": {
+"text": "When Nova and Lulu arrived with warm scarves, the little fireflies were tuning tiny glow-chimes for the dawn chorus.",
+"file": "narrator_bad8c623a2be.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova and Lulu arrived with warm scarves, the little fireflies were tuning tiny glow chimes for the dawn chorus.",
+"mp3": "8ec7164a3501",
+"check": "pass",
+"heard": "When Nova and Lulu arrived with warm scarves, the little fireflies were tuning tiny glow  chimes for the dawn chorus.",
+"heard_by": "small.en",
+"stories": [
+"b1.6"
+]
+},
+"66119866eff5": {
+"text": "When Nova and Bao arrived with warm scarves, the little fireflies were tuning tiny glow-chimes for the dawn chorus.",
+"file": "narrator_2cbff231922b.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova and Bao arrived with warm scarves, the little fireflies were tuning tiny glow chimes for the dawn chorus.",
+"mp3": "fbe3fac96343",
+"check": "pass",
+"heard": "When Nova and Bao arrived with warm scarves, the little fireflies were tuning tiny glow  chimes for the dawn chorus.",
+"heard_by": "small.en",
+"stories": [
+"b1.6"
+]
+},
+"efc312d458dd": {
+"text": "When Nova and Sprinkle arrived with warm scarves, the little fireflies were tuning tiny glow-chimes for the dawn chorus.",
+"file": "narrator_f0a8835b45ba.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova and Sprinkle arrived with warm scarves, the little fireflies were tuning tiny glow chimes for the dawn chorus.",
+"mp3": "98d9a19312d1",
+"check": "pass",
+"heard": "When Nova and Sprinkle arrived with warm scarves,  the little fireflies were tuning tiny glow chimes  for the dawn chorus.",
+"heard_by": "small.en",
+"stories": [
+"b1.6"
+]
+},
+"57c0647f1ad6": {
+"text": "When Nova and Pip arrived with warm scarves, the little fireflies were tuning tiny glow-chimes for the dawn chorus.",
+"file": "narrator_eaa2b6e96365.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova and Pip arrived with warm scarves, the little fireflies were tuning tiny glow chimes for the dawn chorus.",
+"mp3": "1db5deb00858",
+"check": "pass",
+"heard": "When Nova and Pip arrived with warm scarves, the little fireflies were tuning tiny glow  chimes for the dawn chorus.",
+"heard_by": "small.en",
+"stories": [
+"b1.6"
+]
+},
+"50c2f6a8d67f": {
+"text": "When Nova and Puffbun arrived with warm scarves, the little fireflies were tuning glow-chimes for a dawn encore.",
+"file": "narrator_c6fb186701c3.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova and Puffbun arrived with warm scarves, the little fireflies were tuning glow chimes for a dawn encore.",
+"mp3": "fb7eee53ddaa",
+"check": "pass",
+"heard": "When Nova and Puffbun arrived with warm scarves, the little fireflies were tuning glow chimes  for a dawn encore.",
+"heard_by": "small.en",
+"stories": [
+"b1.7"
+]
+},
+"754674abab1e": {
+"text": "When Nova and Mochi Fox arrived with warm scarves, the little fireflies were tuning glow-chimes for a dawn encore.",
+"file": "narrator_5fd2ecabe6b0.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova and Moh-chee Fox arrived with warm scarves, the little fireflies were tuning glow chimes for a dawn encore.",
+"mp3": "173fea1472c3",
+"check": "pass",
+"heard": "When Nova and Mochi Fox arrived with warm scarves,  the little fireflies were tuning glow chimes  for a dawn encore.",
+"heard_by": "small.en",
+"stories": [
+"b1.7"
+]
+},
+"6478abedd1b3": {
+"text": "When Nova and Minty arrived with warm scarves, the little fireflies were tuning glow-chimes for a dawn encore.",
+"file": "narrator_8d0c799118a2.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova and Minty arrived with warm scarves, the little fireflies were tuning glow chimes for a dawn encore.",
+"mp3": "b5085c5b8230",
+"check": "pass",
+"heard": "When Nova and Minty arrived with warm scarves,  the little fireflies were tuning glow chimes  for a dawn encore.",
+"heard_by": "small.en",
+"stories": [
+"b1.7"
+]
+},
+"1615e746e019": {
+"text": "When Nova and Hoot arrived with warm scarves, the little fireflies were tuning glow-chimes for a dawn encore.",
+"file": "narrator_fbe21ed54b62.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova and Hoot arrived with warm scarves, the little fireflies were tuning glow chimes for a dawn encore.",
+"mp3": "60909b41579b",
+"check": "pass",
+"heard": "When Nova and Hoot arrived with warm scarves, the little fireflies were tuning glow chimes  for a dawn encore.",
+"heard_by": "small.en",
+"stories": [
+"b1.7"
+]
+},
+"cb495e91b3ef": {
+"text": "When Nova and Lulu arrived with warm scarves, the little fireflies were tuning glow-chimes for a dawn encore.",
+"file": "narrator_6eba590d2719.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova and Lulu arrived with warm scarves, the little fireflies were tuning glow chimes for a dawn encore.",
+"mp3": "d0f9a6de803c",
+"check": "pass",
+"heard": "When Nova and Lulu arrived with warm scarves, the little fireflies were tuning glow chimes  for a dawn encore.",
+"heard_by": "small.en",
+"stories": [
+"b1.7"
+]
+},
+"c5f49991343f": {
+"text": "When Nova and Bao arrived with warm scarves, the little fireflies were tuning glow-chimes for a dawn encore.",
+"file": "narrator_475a9d53aae9.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova and Bao arrived with warm scarves, the little fireflies were tuning glow chimes for a dawn encore.",
+"mp3": "01ba662e8372",
+"check": "pass",
+"heard": "When Nova and Bao arrived with warm scarves,  the little fireflies were tuning glow chimes  for a dawn encore.",
+"heard_by": "small.en",
+"stories": [
+"b1.7"
+]
+},
+"03413b7e14fe": {
+"text": "When Nova and Sprinkle arrived with warm scarves, the little fireflies were tuning glow-chimes for a dawn encore.",
+"file": "narrator_3d0d71ed87bf.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova and Sprinkle arrived with warm scarves, the little fireflies were tuning glow chimes for a dawn encore.",
+"mp3": "9a2233638e6a",
+"check": "pass",
+"heard": "When Nova and Sprinkle arrived with warm scarves,  the little fireflies were tuning glow chimes  for a dawn encore.",
+"heard_by": "small.en",
+"stories": [
+"b1.7"
+]
+},
+"b0524ad0b9b6": {
+"text": "When Nova and Pip arrived with warm scarves, the little fireflies were tuning glow-chimes for a dawn encore.",
+"file": "narrator_c3f4b6495d72.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova and Pip arrived with warm scarves, the little fireflies were tuning glow chimes for a dawn encore.",
+"mp3": "78d5609abd2e",
+"check": "pass",
+"heard": "When Nova and Pip arrived with warm scarves, the little fireflies were tuning glow chimes  for a dawn encore.",
+"heard_by": "small.en",
+"stories": [
+"b1.7"
+]
+},
+"e9f940f2fb51": {
+"text": "Crystal Lake was said to have the clearest water in all the realms, yet when Nova and Puffbun arrived, it was grey and still.",
+"file": "narrator_d4b4f46a1f05.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Crystal Lake was said to have the clearest water in all the realms. Yet when Nova and Puffbun arrived, it was grey and still.",
+"mp3": "e2ed2058e39b",
+"check": "pass",
+"heard": "Crystal Lake was said to have the clearest water in all the realms.  Yet when Nova and Puff Bun arrived, it was gray and still.",
+"heard_by": "small.en",
+"stories": [
+"b2.1"
+]
+},
+"f615a1064cb7": {
+"text": "Crystal Lake was said to have the clearest water in all the realms, yet when Nova and Mochi Fox arrived, it was grey and still.",
+"file": "narrator_9169560ee3d9.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Crystal Lake was said to have the clearest water in all the realms. Yet when Nova and Moh-chee Fox arrived, it was grey and still.",
+"mp3": "b1a861c553f7",
+"check": "pass",
+"heard": "Crystal Lake was said to have the clearest water in all the realms.  Yet when Nova and Mochi Fox arrived, it was gray and still.",
+"heard_by": "small.en",
+"stories": [
+"b2.1"
+]
+},
+"fd248878dd6d": {
+"text": "Crystal Lake was said to have the clearest water in all the realms, yet when Nova and Minty arrived, it was grey and still.",
+"file": "narrator_1b4f359a8480.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Crystal Lake was said to have the clearest water in all the realms. Yet when Nova and Minty arrived, it was grey and still.",
+"mp3": "c4e021cabf88",
+"check": "pass",
+"heard": "Crystal Lake was said to have the clearest water in all the realms, yet when Nova and  Minty arrived, it was gray and still.",
+"heard_by": "small.en",
+"stories": [
+"b2.1"
+]
+},
+"17ad5e99ab6a": {
+"text": "Crystal Lake was said to have the clearest water in all the realms, yet when Nova and Hoot arrived, it was grey and still.",
+"file": "narrator_edaee4c250b6.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Crystal Lake was said to have the clearest water in all the realms. Yet when Nova and Hoot arrived, it was grey and still.",
+"mp3": "512fc6ae2167",
+"check": "pass",
+"heard": "Crystal Lake was said to have the clearest water in all the realms.  Yet when Nova and Hoot arrived, it was gray and still.",
+"heard_by": "medium.en",
+"stories": [
+"b2.1"
+]
+},
+"df9ab61bfb65": {
+"text": "Crystal Lake was said to have the clearest water in all the realms, yet when Nova and Lulu arrived, it was grey and still.",
+"file": "narrator_ffd0309a0bbb.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Crystal Lake was said to have the clearest water in all the realms. Yet when Nova and Lulu arrived, it was grey and still.",
+"mp3": "da1b0665d557",
+"check": "pass",
+"heard": "Crystal Lake was said to have the clearest water in all the realms.  Yet when Nova and Lulu arrived, it was gray and still.",
+"heard_by": "small.en",
+"stories": [
+"b2.1"
+]
+},
+"8812eab0d7ef": {
+"text": "Crystal Lake was said to have the clearest water in all the realms, yet when Nova and Bao arrived, it was grey and still.",
+"file": "narrator_838c5cfe8164.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Crystal Lake was said to have the clearest water in all the realms. Yet when Nova and Bao arrived, it was grey and still.",
+"mp3": "bc33c2edf456",
+"check": "pass",
+"heard": "Crystal Lake was said to have the clearest water in all the realms.  Yet when Nova and Bao arrived, it was gray and still.",
+"heard_by": "small.en",
+"stories": [
+"b2.1"
+]
+},
+"99365b1b2c44": {
+"text": "Crystal Lake was said to have the clearest water in all the realms, yet when Nova and Sprinkle arrived, it was grey and still.",
+"file": "narrator_1799b9825ab1.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Crystal Lake was said to have the clearest water in all the realms. Yet when Nova and Sprinkle arrived, it was grey and still.",
+"mp3": "f3026e923cb7",
+"check": "pass",
+"heard": "Crystal Lake was said to have the clearest water in all the realms. Yet when Nova and  Sprinkle arrived, it was gray and still.",
+"heard_by": "small.en",
+"stories": [
+"b2.1"
+]
+},
+"410648d6df12": {
+"text": "Crystal Lake was said to have the clearest water in all the realms, yet when Nova and Pip arrived, it was grey and still.",
+"file": "narrator_dead317e9c35.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Crystal Lake was said to have the clearest water in all the realms. Yet when Nova and Pip arrived, it was grey and still.",
+"mp3": "58f80d39f417",
+"check": "pass",
+"heard": "Crystal Lake was said to have the clearest water in all the realms.  Yet when Nova and Pip arrived, it was gray and still.",
+"heard_by": "small.en",
+"stories": [
+"b2.1"
+]
+},
+"90a76a3aa409": {
+"text": "Nova borrowed a small boat and rowed out to the middle.",
+"file": "narrator_7a38f7c37f01.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova borrowed a small boat and rowed out to the middle.",
+"mp3": "5b6189fbc445",
+"check": "pass",
+"heard": "Nova borrowed a small boat and rode out to the middle.",
+"heard_by": "small.en",
+"stories": [
+"b2.1"
+]
+},
+"02cfd2b2ae80": {
+"text": "“If I could swim like a fish,” Nova muttered, “I'd have that page by now.”",
+"file": "narrator_a5991da2b0c3.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "“If I could swim like a fish,” Nova muttered, “I'd have that page by now.”",
+"mp3": "da9749537fed",
+"check": "pass",
+"heard": "If I could swim like a fish, Nova muttered, I'd have that page by now.",
+"heard_by": "small.en",
+"stories": [
+"b2.1"
+]
+},
+"0f0c67628af9": {
+"text": "A few days after the lake had turned blue again, Glimmerfin surfaced beside Nova's boat with an unusual request.",
+"file": "narrator_72498dcdc954.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "A few days after the lake had turned blue again, Glimmerfin surfaced beside Nova's boat with an unusual request.",
+"mp3": "2ad2ca001bfa",
+"check": "pass",
+"heard": "A few days after the lake had turned blue again, Glimmerfin surfaced beside Nova's  boat with an unusual request.",
+"heard_by": "small.en",
+"stories": [
+"b2.2"
+]
+},
+"40d14609bf70": {
+"text": "Nova frowned.",
+"file": "narrator_30de09dbb72d.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova frowned.",
+"mp3": "d2b1c5377242",
+"check": "pass",
+"heard": "Nova Frowned",
+"heard_by": "small.en",
+"stories": [
+"b2.2"
+]
+},
+"4ea0d412c57f": {
+"text": "Nova climbed the spiral stairs, polished the glass and relit the lamp.",
+"file": "narrator_fbbd5b1b0367.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova climbed the spiral stairs, polished the glass and relit the lamp.",
+"mp3": "9df544dd3a51",
+"check": "pass",
+"heard": "Nova climbed the spiral stairs, polished the glass, and relit the lamp.",
+"heard_by": "small.en",
+"stories": [
+"b2.2"
+]
+},
+"48cafd65630e": {
+"text": "When Nova's boat reached the island, the beam was steady — but Mog was nowhere to be seen.",
+"file": "narrator_13eb9f33bdf1.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When Nova's boat reached the island, the beam was steady — but Mog was nowhere to be seen.",
+"mp3": "9341d0adc68d",
+"check": "pass",
+"heard": "When Nova's boat reached the island, the beam was steady, but Mog was nowhere to be seen.",
+"heard_by": "small.en",
+"stories": [
+"b2.3"
+]
+},
+"b362b4b1e1d9": {
+"text": "Nova climbed up, latched the shutter, and climbed down again.",
+"file": "narrator_32d2653b381a.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova climbed up, latched the shutter, and climbed down again.",
+"mp3": "4c685174c5f8",
+"check": "pass",
+"heard": "Nova climbed up, latched the shutter, and climbed down again.",
+"heard_by": "small.en",
+"stories": [
+"b2.3"
+]
+},
+"6a520bd8e1c8": {
+"text": "“If Mog hadn't stared at that shutter,” Nova laughed, “we might never have noticed it.”",
+"file": "narrator_fcf99800dda0.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "“If Mog hadn't stared at that shutter,” Nova laughed, “we might never have noticed it.”",
+"mp3": "e0d1435e1866",
+"check": "pass",
+"heard": "If Mogg hadn't stared at that shutter, Nova laughed, we might never have noticed it.",
+"heard_by": "small.en",
+"stories": [
+"b2.3"
+]
+},
+"22f196ef3006": {
+"text": "Nova climbed the tower.",
+"file": "narrator_b81e5c92bb17.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova climbed the tower.",
+"mp3": "041486fee5bb",
+"check": "pass",
+"heard": "Nova climbed the tower.",
+"heard_by": "small.en",
+"stories": [
+"b2.4"
+]
+},
+"25ad4e490d12": {
+"text": "Nova spliced the rope, and together with Glimmerfin they rang the fog bell until the sound rolled across the water.",
+"file": "narrator_a041ecb68578.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova, spliced the rope, and together with Glimmerfin they rang the fog bell until the sound rolled across the water.",
+"mp3": "db8ab87cd137",
+"check": "pass",
+"heard": "Nova spliced the rope, and together with Glimmerfin they rang the fog bell until the sound rolled  across the water.",
+"heard_by": "small.en",
+"stories": [
+"b2.4"
+]
+},
+"2b5c5757cffc": {
+"text": "“If Mog hadn't sat up on that rail,” Nova smiled, “we might have waited too long.”",
+"file": "narrator_281f39165a7c.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "“If Mog hadn't sat up on that rail,” Nova smiled, “we might have waited too long.”",
+"mp3": "365bf6e18132",
+"check": "pass",
+"heard": "If Mog hadn't sat up on that rail, Nova smiled, we might have waited too long.",
+"heard_by": "small.en",
+"stories": [
+"b2.4"
+]
+},
+"339ce5d98204": {
+"text": "Nova smiled; the twitch had been prompt, almost professional.",
+"file": "narrator_0921b85b4cbb.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova smiled; the twitch had been prompt, almost professional.",
+"mp3": "d9e550f1ce8a",
+"check": "pass",
+"heard": "Nova smiled.  The twitch had been prompt, almost professional.",
+"heard_by": "medium.en",
+"stories": [
+"b2.5"
+]
+},
+"9ce929568f35": {
+"text": "“If the towel hadn't been soft,” Nova laughed, “even a Fog Listener might have complained.”",
+"file": "narrator_39a916174181.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "“If the towel hadn't been soft,” Nova laughed, “even a Fog Listener might have complained.”",
+"mp3": "27cc611b0b46",
+"check": "pass",
+"heard": "If the towel hadn't been soft, Nova laughed, even a fog listener might have complained.",
+"heard_by": "small.en",
+"stories": [
+"b2.5"
+]
+},
+"e35823a5c732": {
+"text": "Nova smiled; the blink had been measured, almost scholarly.",
+"file": "narrator_2e95a9847142.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova smiled; the blink had been measured, almost scholarly.",
+"mp3": "9cdd10c88db8",
+"check": "pass",
+"heard": "Nova smiled, the blink had been measured almost scholarly.",
+"heard_by": "medium.en",
+"stories": [
+"b2.6",
+"b2.7"
+]
+},
+"646777c8e1d1": {
+"text": "“If the towel hadn't been soft,” Nova laughed, “even a Rail Philosopher might have protested.”",
+"file": "narrator_90b7260a1ad1.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "“If the towel hadn't been soft,” Nova laughed, “even a Rail Philosopher might have protested.”",
+"mp3": "731ab2584755",
+"check": "pass",
+"heard": "If the towel hadn't been soft, Nova laughed, even a rail philosopher might have protested.",
+"heard_by": "small.en",
+"stories": [
+"b2.6",
+"b2.7"
+]
+},
+"351516ceda9a": {
+"text": "On arrival, Nova learnt that the fifth page had been confiscated by the council, who were now debating whether a mere visitor could be trusted with it.",
+"file": "narrator_2488c6875cc0.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "On arrival, Nova learnt that the fifth page had been confiscated by the council, who were now debating whether a mere visitor could be trusted with it.",
+"mp3": "bdf1d6c40f5c",
+"check": "pass",
+"heard": "On arrival, Nova learnt that the fifth page had been confiscated by the council, who were  now debating whether a mere visitor could be trusted with it.",
+"heard_by": "small.en",
+"stories": [
+"c1.1"
+]
+},
+"5e5523476104": {
+"text": "Nova chose not to answer the jibe directly.",
+"file": "narrator_14ea51731bb2.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova chose not to answer the jibe directly.",
+"mp3": "a7dd09282b39",
+"check": "pass",
+"heard": "Nova chose not to answer the jibe directly.",
+"heard_by": "small.en",
+"stories": [
+"c1.1"
+]
+},
+"fa38bff6e2a7": {
+"text": "“What matters,” Nova replied, “is not who reads the Storybook, but whether its stories are shared.",
+"file": "narrator_b92c0e11d3f8.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "“What matters,” Nova replied, “is not who reads the Storybook, but whether its stories are shared.",
+"mp3": "4ca66c0332d5",
+"check": "pass",
+"heard": "What matters, Nova replied, is not who reads the storybook, but whether its stories are  shared.",
+"heard_by": "small.en",
+"stories": [
+"c1.1"
+]
+},
+"62da8f42e0d8": {
+"text": "As Nova left, Lady Quillon fell into step beside them.",
+"file": "narrator_74e86eca4a5f.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "As Nova left, Lady Quillon fell into step beside them.",
+"mp3": "085eb8745e6e",
+"check": "pass",
+"heard": "As Nova left, Lady Quillen fell into step beside them.",
+"heard_by": "small.en",
+"stories": [
+"c1.1"
+]
+},
+"7c9ce3a4b83d": {
+"text": "Lady Quillon, now Nova's firm friend, asked Nova to help settle the matter.",
+"file": "narrator_f3d9275bf856.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Lady Quillon, now Nova's firm friend, asked Nova to help settle the matter.",
+"mp3": "cbfd229dc3db",
+"check": "pass",
+"heard": "Lady Quillen, now Nova's firm friend, asked Nova to help settle the matter.",
+"heard_by": "small.en",
+"stories": [
+"c1.2"
+]
+},
+"15aa1e4d0ab9": {
+"text": "Nova listened carefully and then asked a question nobody had thought of: “When exactly are the kites flown?”",
+"file": "narrator_1801a113e7e5.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova listened carefully and then asked a question nobody had thought of: “When exactly are the kites flown?”",
+"mp3": "02f95da9c4c0",
+"check": "pass",
+"heard": "Nova listened carefully, and then asked a question nobody had thought of—when exactly  are the kites flown?",
+"heard_by": "small.en",
+"stories": [
+"c1.2"
+]
+},
+"0345e0c89de3": {
+"text": "“So perhaps,” Nova suggested, “it might be possible to have a little rain at dawn, and sunshine after lunch?”",
+"file": "narrator_2046fd20d7d5.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "“So perhaps,” Nova suggested, “it might be possible to have a little rain at dawn, and sunshine after lunch?”",
+"mp3": "665469d8e210",
+"check": "pass",
+"heard": "So perhaps, Nova suggested, it might be possible to have a little rain at dawn and sunshine  after lunch.",
+"heard_by": "small.en",
+"stories": [
+"c1.2"
+]
+},
+"b6a97d028a10": {
+"text": "Lady Quillon asked Nova to walk the kite field before the guests arrived.",
+"file": "narrator_cd1e0af85d72.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Lady Quillon asked Nova to walk the kite field before the guests arrived.",
+"mp3": "92a43840ba45",
+"check": "pass",
+"heard": "Lady Quillen asked Nova to walk the kite field before the guests arrived.",
+"heard_by": "small.en",
+"stories": [
+"c1.3"
+]
+},
+"ac9cc53889ff": {
+"text": "Nova cleared their throat and pointed at the picnic rugs.",
+"file": "narrator_47e0f371d724.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova cleared their throat and pointed at the picnic rugs.",
+"mp3": "ffb17c13145a",
+"check": "pass",
+"heard": "Nova cleared their throat and pointed at the picnic rugs.",
+"heard_by": "small.en",
+"stories": [
+"c1.3"
+]
+},
+"85dc3fb8dcb7": {
+"text": "Nova suggested — gently, with a string of hedges — that the kites might be flown in turns after three o'clock, so nobody's string would tangle.",
+"file": "narrator_8f7a3d8aacb1.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova suggested — gently, with a string of hedges — that the kites might be flown in turns after three o'clock, so nobody's string would tangle.",
+"mp3": "325cc8cfec95",
+"check": "pass",
+"heard": "Nova suggested, gently, with a string of hedges, that the kites might be flown in turns  after three o'clock, so nobody's string would tangle.",
+"heard_by": "small.en",
+"stories": [
+"c1.3"
+]
+},
+"9253f8c618b9": {
+"text": "“It would seem,” she told Nova with a small smile, “that lunch is a more powerful diplomacy than any speech I had prepared.”",
+"file": "narrator_a428783cceab.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "“It would seem,” she told Nova with a small smile, “that lunch is a more powerful diplomacy than any speech I had prepared.”",
+"mp3": "f49446918ba9",
+"check": "pass",
+"heard": "It would seem, she told Nova with a small smile, that lunch is a more powerful diplomacy  than any speech I had prepared.",
+"heard_by": "small.en",
+"stories": [
+"c1.3"
+]
+},
+"c0e7503fa619": {
+"text": "After the kite afternoon she invited Nimbus, Sola, the visiting sprites, and Nova to a cloud-side picnic where even the cloud-roses seemed to lean in and listen.",
+"file": "narrator_e7f40007395b.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "After the kite afternoon she invited Nimbus, Sola, the visiting sprites, and Nova to a cloud-side picnic where even the cloud-roses seemed to lean in and listen.",
+"mp3": "8c604b5756ee",
+"check": "pass",
+"heard": "After the kite afternoon, she invited Nimbus, Sola, the visiting sprites, and Nova to a  cloud-side picnic, where even the cloud roses seemed to lean in and listen.",
+"heard_by": "small.en",
+"stories": [
+"c1.4"
+]
+},
+"9c463163ac70": {
+"text": "Nova steered the talk toward the tart's jam instead.",
+"file": "narrator_d119910255eb.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova steered the talk toward the tart's jam instead.",
+"mp3": "21034bf51e12",
+"check": "pass",
+"heard": "Nova steered the talk toward the tarts jam instead.",
+"heard_by": "medium.en",
+"stories": [
+"c1.4"
+]
+},
+"f4b62e786315": {
+"text": "What Nova suggested — softly, with a string of hedges — was that each guest might name one kind thing another guest had done, rather than whose kite had flown highest.",
+"file": "narrator_dde5db2d9761.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "What Nova suggested — softly, with a string of hedges — was that each guest might name one kind thing another guest had done, rather than whose kite had flown highest.",
+"mp3": "3befad037d23",
+"check": "pass",
+"heard": "What Nova suggested, softly, with a string of hedges, was that each guest might name  one kind thing another guest had done, rather than whose kite had flown highest.",
+"heard_by": "small.en",
+"stories": [
+"c1.4"
+]
+},
+"acee8775a517": {
+"text": "“It would appear,” she told Nova with that same small smile, “that jam and turn-taking are a sturdier alliance than any speech I keep rewriting.”",
+"file": "narrator_e5ceed26d960.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "“It would appear,” she told Nova with that same small smile, “that jam and turn-taking are a sturdier alliance than any speech I keep rewriting.”",
+"mp3": "7c17d547c659",
+"check": "pass",
+"heard": "It would appear, she told Nova with that same small smile, that jam and turn-taking are  a sturdier alliance than any speech I keep rewriting.",
+"heard_by": "small.en",
+"stories": [
+"c1.4"
+]
+},
+"067f71152f06": {
+"text": "Nova steered the talk toward whose promise might help a neighbour.",
+"file": "narrator_571077ad2469.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova steered the talk toward whose promise might help a neighbour.",
+"mp3": "9f7e4b9f7223",
+"check": "pass",
+"heard": "Nova steered the talk toward whose promise might help a neighbor.",
+"heard_by": "small.en",
+"stories": [
+"c1.5"
+]
+},
+"9e058e56e94c": {
+"text": "What Nova suggested — softly, with a string of hedges — was that each promise name a kindness for someone else, rather than a taller flight.",
+"file": "narrator_6295f28a63f2.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "What Nova suggested — softly, with a string of hedges — was that each promise name a kindness for someone else, rather than a taller flight.",
+"mp3": "94152f075be5",
+"check": "pass",
+"heard": "What Nova suggested, softly, with a string of hedges, was that each promise name a kindness  for someone else, rather than a taller flight.",
+"heard_by": "small.en",
+"stories": [
+"c1.5"
+]
+},
+"b9f12735e8b7": {
+"text": "“It would appear,” she told Nova with that same small smile, “that jam, turn-taking, and written promises are a sturdier alliance than any speech I keep rewriting.”",
+"file": "narrator_bf9ba1f5435c.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "“It would appear,” she told Nova with that same small smile, “that jam, turn-taking, and written promises are a sturdier alliance than any speech I keep rewriting.”",
+"mp3": "d12f47fa2fe4",
+"check": "pass",
+"heard": "It would appear, she told Nova with that same small smile, that jam, turn-taking and written  promises are a sturdier alliance than any speech I keep rewriting.",
+"heard_by": "small.en",
+"stories": [
+"c1.5"
+]
+},
+"694ff04ff3c9": {
+"text": "Nova steered the talk toward whose promise might already have helped a neighbour.",
+"file": "narrator_54b84e48bdf0.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova steered the talk toward whose promise might already have helped a neighbour.",
+"mp3": "7246ab2a8393",
+"check": "pass",
+"heard": "Nova steered the talk toward whose promise might already have helped a neighbor.",
+"heard_by": "small.en",
+"stories": [
+"c1.6",
+"c1.7"
+]
+},
+"40ffa8917ed0": {
+"text": "What Nova suggested — softly, with a string of hedges — was that each guest name one kindness already done, rather than a taller flight.",
+"file": "narrator_8268e9c2be5b.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "What Nova suggested — softly, with a string of hedges — was that each guest name one kindness already done, rather than a taller flight.",
+"mp3": "8941d553016d",
+"check": "pass",
+"heard": "What Nova suggested, softly, with a string of hedges, was that each guest name one kindness  already done, rather than a taller flight.",
+"heard_by": "small.en",
+"stories": [
+"c1.6",
+"c1.7"
+]
+},
+"941a03e2fef2": {
+"text": "“It would appear,” she told Nova with that same small smile, “that jam, turn-taking, and kept promises are a sturdier alliance than any speech I keep rewriting.”",
+"file": "narrator_131cde7c1c26.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "“It would appear,” she told Nova with that same small smile, “that jam, turn-taking, and kept promises are a sturdier alliance than any speech I keep rewriting.”",
+"mp3": "b889c9119220",
+"check": "pass",
+"heard": "It would appear, she told Nova with that same small smile, that jam,  turn-taking, and kept promises are a sturdier alliance than any speech I keep  rewriting.",
+"heard_by": "medium.en",
+"stories": [
+"c1.6"
+]
+},
+"b269f6068946": {
+"text": "“It would appear,” she told Nova with that same small smile, “that jam, turn-taking, and kept promises are a sturdier soft alliance than any speech I keep rewriting — a parade without scores.”",
+"file": "narrator_179e4d972371.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "“It would appear,” she told Nova with that same small smile, “that jam, turn-taking, and kept promises are a sturdier soft alliance than any speech I keep rewriting — a parade without scores.”",
+"mp3": "ec2046c8f36a",
+"check": "pass",
+"heard": "It would appear,\" she told Nova with that same small smile, that jam, turn-taking and  kept promises are a sturdier soft alliance than any speech I keep rewriting, a parade  without scores.",
+"heard_by": "small.en",
+"stories": [
+"c1.7"
+]
+},
+"a33cc8135b99": {
+"text": "Nova sat down and laid the five pages side by side.",
+"file": "narrator_7f58c6d37eb9.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova sat down and laid the five pages side by side.",
+"mp3": "59b7b835c722",
+"check": "pass",
+"heard": "Nova sat down and laid the five pages side by side.",
+"heard_by": "medium.en",
+"stories": [
+"c2.1"
+]
+},
+"ad0496ace530": {
+"text": "It dawned on Nova that not one page had been won by force.",
+"file": "narrator_4aeb723b4c4e.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "It dawned on Nova that not one page had been won by force.",
+"mp3": "9f3c93fc20a0",
+"check": "pass",
+"heard": "It dawned on Nova that not one page had been won by force.",
+"heard_by": "small.en",
+"stories": [
+"c2.1"
+]
+},
+"6cfd1c338332": {
+"text": "“Kindness, patience and wit,” Nova said aloud.",
+"file": "narrator_1528e5ceef7b.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "“Kindness, patience and wit,” Nova said aloud.",
+"mp3": "fec5f855ed0d",
+"check": "pass",
+"heard": "Kindness, patience, and wit, Nova said aloud.",
+"heard_by": "small.en",
+"stories": [
+"c2.1"
+]
+},
+"80fc7e0d34aa": {
+"text": "There was a rustle high above, and a page fluttered down like a falling leaf, settling in Nova's hands.",
+"file": "narrator_ea81b5c4d50a.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "There was a rustle high above, and a page fluttered down like a falling leaf, settling in Nova's hands.",
+"mp3": "851570ab08d3",
+"check": "pass",
+"heard": "There was a rustle high above, and a page fluttered down like a falling leaf, settling  in Nova's hands.",
+"heard_by": "small.en",
+"stories": [
+"c2.1"
+]
+},
+"5e236455e9e5": {
+"text": "Nova opened the book at random.",
+"file": "narrator_49cff1797337.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova opened the book at random.",
+"mp3": "1db078f32441",
+"check": "pass",
+"heard": "Nova opened the book at random.",
+"heard_by": "small.en",
+"stories": [
+"c2.2"
+]
+},
+"841885837374": {
+"text": "It struck Nova that no one had ever asked the characters what ending they would like.",
+"file": "narrator_07d2360e2e9a.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "It struck Nova that no one had ever asked the characters what ending they would like.",
+"mp3": "17bcfe74ea36",
+"check": "pass",
+"heard": "It struck Nova that no one had ever asked the characters what ending they would like.",
+"heard_by": "medium.en",
+"stories": [
+"c2.2"
+]
+},
+"6036c08880b6": {
+"text": "So, with Vellum's blessing, Nova read the last page aloud and then asked, quite politely, what they wanted.",
+"file": "narrator_ba0282d7d16f.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "So, with Vellum's blessing, Nova red the last page aloud and then asked, quite politely, what they wanted.",
+"mp3": "ff40b24014bd",
+"check": "pass",
+"heard": "So, with Vellum's blessing, Nova read the last page aloud and then asked, quite politely,  what they wanted.",
+"heard_by": "small.en",
+"stories": [
+"c2.2"
+]
+},
+"09a2209ff1cb": {
+"text": "Nova wrote the picnic onto the last page in careful handwriting: the princess, the twice-retired villain and the teapot, sharing sandwiches on a hill.",
+"file": "narrator_fa7808d11aa0.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova wrote the picnic onto the last page in careful handwriting: the princess, the twice-retired villain and the teapot, sharing sandwiches on a hill.",
+"mp3": "b9fa33d9281e",
+"check": "pass",
+"heard": "Nova wrote the picnic onto the last page in careful handwriting.  The princess, the twice-retired villain and the teapot, sharing sandwiches on a hill.",
+"heard_by": "small.en",
+"stories": [
+"c2.2"
+]
+},
+"18834c0383fd": {
+"text": "Nova pressed an ear to the wood.",
+"file": "narrator_44b6edf277ec.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova pressed an ear to the wood.",
+"mp3": "273bd9b72d02",
+"check": "pass",
+"heard": "Nova pressed an ear to the wood.",
+"heard_by": "small.en",
+"stories": [
+"c2.3"
+]
+},
+"181b44a644db": {
+"text": "It occurred to Nova, not for the first time in this library, that unfinished characters — like the endless novel's exhausted cast — might simply need to be asked.",
+"file": "narrator_0c8dc0d64532.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "It occurred to Nova, not for the first time in this library, that unfinished characters — like the endless novel's exhausted cast — might simply need to be asked.",
+"mp3": "d7b1cbd7154b",
+"check": "pass",
+"heard": "It occurred to Nova, not for the first time in this library, that unfinished characters,  like the endless novel's exhausted cast, might simply need to be asked.",
+"heard_by": "small.en",
+"stories": [
+"c2.3"
+]
+},
+"1416da437296": {
+"text": "With Vellum's slightly wary blessing, Nova tapped the shelf and enquired, quite politely, what would help.",
+"file": "narrator_8801bdc88a25.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "With Vellum's slightly wary blessing, Nova tapped the shelf and enquired, quite politely, what would help.",
+"mp3": "dd3481fee3ca",
+"check": "pass",
+"heard": "With Vellum's slightly wary blessing, Nova tapped the shelf and  inquired, quite politely, what would help?",
+"heard_by": "medium.en",
+"stories": [
+"c2.3"
+]
+},
+"9e2822a8c589": {
+"text": "Nova wrote a single contents page listing every half-told tale under the heading “To Be Continued — Quietly”, slid it into the atlas, and closed the cover.",
+"file": "narrator_ea644a3f7700.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova wrote a single contents page listing every half-told tale under the heading “To Be Continued — Quietly”, slid it into the atlas, and closed the cover.",
+"mp3": "01cb3fb96bd9",
+"check": "pass",
+"heard": "Nova wrote a single contents page listing every half-told tale under the heading, to  be continued quietly, slid it into the atlas, and closed the cover.",
+"heard_by": "medium.en",
+"stories": [
+"c2.3"
+]
+},
+"0a9c3b67279f": {
+"text": "Nova chose a sunny window seat.",
+"file": "narrator_9c6705bfc8fb.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova chose a sunny window seat.",
+"mp3": "f7a58a094e99",
+"check": "pass",
+"heard": "Nova chose a sunny window seat.",
+"heard_by": "small.en",
+"stories": [
+"c2.4"
+]
+},
+"841da66f5255": {
+"text": "It occurred to Nova that the library's greatest dramas had ended the same way: not with a flourish, but with someone finally asking what was needed.",
+"file": "narrator_595e8c1f1fb4.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "It occurred to Nova that the library's greatest dramas had ended the same way: not with a flourish, but with someone finally asking what was needed.",
+"mp3": "58290486f20a",
+"check": "pass",
+"heard": "It occurred to Nova that the library's greatest dramas had ended the same way.  Not with a flourish, but with someone finally asking what was needed.",
+"heard_by": "small.en",
+"stories": [
+"c2.4"
+]
+},
+"770cfc33bc01": {
+"text": "When the hour closed, Vellum stamped a small card for Nova: Guest of the Quiet Hour.",
+"file": "narrator_994ae7fd6f7a.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "When the hour closed, Vellum stamped a small card for Nova: Guest of the Quiet Hour.",
+"mp3": "b6b00a9554f9",
+"check": "pass",
+"heard": "When the hour closed, Vellum stamped a small card for Nova, guest of the quiet hour.",
+"heard_by": "small.en",
+"stories": [
+"c2.4"
+]
+},
+"f542c5f941ad": {
+"text": "Nova returned to the sunny-now-speckled window seat.",
+"file": "narrator_7fe3b168682f.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova returned to the sunny-now-speckled window seat.",
+"mp3": "cbc34d96f309",
+"check": "pass",
+"heard": "Nova returned to the sunny-now speckled window seat.",
+"heard_by": "small.en",
+"stories": [
+"c2.5"
+]
+},
+"857a6c14170d": {
+"text": "It occurred to Nova that the library's gentlest victories sounded the same: not with a flourish, but with someone finally letting the room be quiet.",
+"file": "narrator_9fcd2cf1f035.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "It occurred to Nova that the library's gentlest victories sounded the same: not with a flourish, but with someone finally letting the room be quiet.",
+"mp3": "46c5190c6438",
+"check": "pass",
+"heard": "It occurred to Nova that the library's gentlest victories sounded the same,  not with a flourish, but with someone finally letting the room be quiet.",
+"heard_by": "medium.en",
+"stories": [
+"c2.5",
+"c2.6",
+"c2.7"
+]
+},
+"8806b39be198": {
+"text": "Nova returned to the sunny window seat.",
+"file": "narrator_b713a5cf60f9.mp3",
+"voice": "af_heart",
+"speed": 1.0,
+"said": "Nova returned to the sunny window seat.",
+"mp3": "9f698eb6acfe",
+"check": "pass",
+"heard": "Nova returned to the sunny window seat.",
+"heard_by": "small.en",
+"stories": [
+"c2.6",
+"c2.7"
+]
 }
 }
 }

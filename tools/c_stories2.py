@@ -1,6 +1,6 @@
 # 📜 Storybook chapter 2 per level (R20 Storybook wave 1, 2026-11-03): each realm's tale carries on after its first page.
 # Same shape as tools/c_stories.py, plus hand-written "why not" notes: N = the three wrong options' notes, in order.
-# The FIRST option is always correct (shuffled at runtime). {hero} and {pet} are filled in at runtime.
+# The FIRST option is always correct (shuffled at runtime). {hero} is Nova; {pet} is the storybook pet name.
 def P(text, q, opts, explain, notes, kind):
     return {"text": text, "q": Q(q, opts, explain, notes, kind)}
 def Q(q, opts, explain, notes, kind="vocab"):

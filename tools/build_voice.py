@@ -1,6 +1,6 @@
 """🎙️ Pre-record the game's voice lines with Kokoro TTS (kokoro-onnx, Apache-2.0) → assets/voice/*.mp3 + assets/voice/manifest.json.
 Run with the Kokoro venv:   /workspace/kvenv/bin/python tools/build_voice.py      (models in /workspace/kmodels)
- • Lines: every listening/lesson `say`, Echo Well texts and models, Word Charms words/meanings/examples, every story sentence (with {hero} → "our hero" and {pet} → each
+ • Lines: every listening/lesson `say`, Echo Well texts and models, Word Charms words/meanings/examples, every story sentence (with {hero} → "Nova" and {pet} → each
    storybook pet name, as js/story.js shows them) and glossary word, fixed UI lines and pet chatter.
  • Voices come from ONE table, data/voices.json (narrator = af_heart unmodified; pet = "bubbly Puffbun").
  • File name = <profile>_<hash of profile + text>.mp3, so only missing files are recorded; MP3 mono, data/voices.json bitrate.
@@ -9,7 +9,8 @@ import glob, hashlib, json, os, re, subprocess, sys, tempfile
 from concurrent.futures import ProcessPoolExecutor
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."); os.chdir(ROOT)
 CFG = json.load(open("data/voices.json")); OUT = "assets/voice"; os.makedirs(OUT, exist_ok=True)
-MODEL, VOICES = "/workspace/kmodels/kokoro-v1.0.onnx", "/workspace/kmodels/voices-v1.0.bin"
+MODEL = os.environ.get("KOKORO_MODEL", "/workspace/kmodels/kokoro-v1.0.onnx")
+VOICES = os.environ.get("KOKORO_VOICES", "/workspace/kmodels/voices-v1.0.bin")
 EMOJI = re.compile("[\U0001F000-\U0001FAFF\u2600-\u27BF\uFE0F\u200D\u2B50\u2B06\u2190-\u21FF\u2300-\u23FF]")
 def norm(t): return re.sub(r"\s+", " ", EMOJI.sub("", str(t))).strip()
 SAY_AS = {k: v for k, v in CFG.get("sayAs", {}).items() if not k.startswith("_")}
@@ -28,10 +29,10 @@ def fname(profile, text):  # FNV-1a 32 (same as js/voice.js) + a short sha1 so c
 # 🔀 Spell Swap: sentence 1 · ⚒️ Word Forge and 🌉 Word Bridges: the gapped sentence read with "blank" · 🧚 Punctuation Pixies: the sentence without its missing mark
 GAP_EXTRA = {"swap": "a", "forge": "ask", "cloze": "ask", "marks": "ask"}
 GL = re.compile(r"\[\[([^|\]]+)\|([^\]]+)\]\]")
-# 📜 stories (STORY-VOICES): the same rule as js/story.js fill(): {hero} → "our hero" ("Our hero" starting a sentence or quote),
-# {pet} → the pet species' storybook name from js/core.js PETS, so every sentence a child can see has an af_heart recording
+# 📜 stories: the same rule as js/story.js fill(): {hero} → "Nova" (always, not the child's name),
+# {pet} → the pet species' storybook name from js/core.js PETS (not a renamed pet)
 STORY_PETS = re.findall(r'\{ id: "pet_\w+", species: "\w+", name: "([^"]+)"', open("js/core.js").read())
-def story_fill(t, pet): return re.sub(r"\{hero\}", "our hero", re.sub(r'(^|[.!?…]["”’]?\s+|[“"‘])\{hero\}', r"\1Our hero", t)).replace("{pet}", pet)
+def story_fill(t, pet): return t.replace("{hero}", "Nova").replace("{pet}", pet)
 def story_sentences(t): return re.findall(r'(?:[^.!?\[]|\[\[[^\]]*\]\])+[.!?]+[”’"]?\s*|(?:[^.!?\[]|\[\[[^\]]*\]\])+$', t)
 def lines():
     out = {}   # (profile, text) → True, or "story" when only the Storybook says it (those go to manifest-story.json, loaded with the story)

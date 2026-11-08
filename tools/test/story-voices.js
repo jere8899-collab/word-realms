@@ -36,13 +36,13 @@ const SAVE = (species, petName = 'Sir Wobbles') => ({ v: 1, name: 'Zephyrine', a
   const WR_LOADED = async page => { await page.evaluate(() => WR.Voice.load()); await page.waitForTimeout(1200); await shut(page); };
   const shut = page => page.evaluate(() => document.querySelectorAll('.modal-bg').forEach(m => m.remove()));
 
-  // 1. every line on every page of every chapter, for two pets: the typed hero name "Zephyrine" both times; the fox keeps its
-  // storybook name (Mochi Fox: recorded), the penguin is typed "Sir Wobbles". STORY-NAMES: only lines with a typed name may use
-  // the device voice; every other line has its own af_heart MP3, made for that exact text.
-  const seen = new Map(), named = new Map(); let pages = 0, chapters = 0; const TYPED = /Zephyrine|Sir Wobbles/;
-  for (const [species, petName] of [['pet_fox', 'Mochi Fox'], ['pet_penguin', 'Sir Wobbles']]) {
-    const page = await open(species, petName);
-    const pet = await page.evaluate(() => WR.petInfo().name);
+  // 1. every line on every page of every chapter, for two pets. The saved hero is "Zephyrine" and the pet is renamed
+  // "Sir Wobbles", but the story always says Nova and that species' storybook pet (Mochi Fox / Pip). Every line is an af_heart MP3.
+  const seen = new Map(); let pages = 0, chapters = 0;
+  for (const [species, storyPet, typedPet] of [['pet_fox', 'Mochi Fox', 'Sir Wobbles'], ['pet_penguin', 'Pip', 'Sir Wobbles']]) {
+    const page = await open(species, typedPet);
+    const pet = await page.evaluate(() => WR.Story.petName());
+    ok(pet === storyPet, `${species}: the story pet is ${storyPet}, not the renamed pet`);
     for (const rid of LV) {
       const nch = await page.evaluate(r => WR.loadStory(r).then(d => d.chapters.length), rid);
       for (let n = 1; n <= nch; n++) {
@@ -52,20 +52,20 @@ const SAVE = (species, petName = 'Sir Wobbles') => ({ v: 1, name: 'Zephyrine', a
           await page.waitForSelector('#storyText .sent');
           const ls = await page.evaluate(() => [...document.querySelectorAll('#storyText .sent')].map(s => ({ t: WR.Voice.norm(s.textContent), f: WR.Voice.fileFor(s.textContent) })));
           pages++;
-          for (const l of ls) (TYPED.test(l.t) ? named : seen).set(l.t, { f: l.f, where: `${rid}.${n}.${pi + 1}`, pet });
+          for (const l of ls) seen.set(l.t, { f: l.f, where: `${rid}.${n}.${pi + 1}`, pet });
           await shut(page); await page.click('.story-q .opt'); await page.waitForSelector('#storyNext'); await page.click('#storyNext');
         }
       }
     }
-    const shown = await page.evaluate(() => document.body.innerText);
-    const all = [...seen.keys(), ...named.keys()].join(' ');
-    ok(/Zephyrine/.test(all) && all.includes(petName) && !/\b[Oo]ur hero\b/.test(all), `${species}: the story uses the typed hero name and the pet's name (${petName}), not "our hero"`);
+    const kept = await page.evaluate(() => ({ name: WR.state.name, pet: WR.state.pet.name }));
+    const all = [...seen.keys()].join(' ');
+    ok(/Nova/.test(all) && all.includes(storyPet) && !/Zephyrine|Sir Wobbles|\b[Oo]ur hero\b/.test(all), `${species}: the story says Nova and ${storyPet}, not the typed names`);
+    ok(kept.name === 'Zephyrine' && kept.pet === typedPet, `${species}: the save still has the typed hero and pet (${kept.name}, ${kept.pet})`);
     await page.close();
   }
-  const lines = [...seen.entries()], miss = lines.filter(([, v]) => !v.f), namedRec = [...named.entries()].filter(([, v]) => v.f);
-  ok(named.size > 100 && namedRec.length === 0, `lines with a typed name (${named.size}) have no recording, so only they use the device voice (recorded by mistake: ${namedRec.length})`);
+  const lines = [...seen.entries()], miss = lines.filter(([, v]) => !v.f);
+  ok(miss.length === 0, `every story sentence has a recording (missing: ${miss.slice(0, 3).map(([t, v]) => v.where + ' “' + t + '”').join(' / ') || 'none'})`);
   ok(chapters === 84 && pages === 336, `read every page: 6 realms × 7 chapters × 4 pages × 2 pets (${chapters} chapters, ${pages} pages)`);
-  ok(miss.length === 0, `all ${lines.length} story lines without a typed name have a recording (missing: ${miss.slice(0, 3).map(([t, v]) => v.where + ' “' + t + '”').join(' / ') || 'none'})`);
   const VCF = JSON.parse(fs.readFileSync(ROOT + '/data/voices.json', 'utf8')), VC0 = VCF.sayAs || {}, PH0 = VCF.sayAsPhonemes || {}, WH0 = VCF.sayAsWhole || {};
   const esc = k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const say0 = t => { const w = Object.entries(VC0).filter(([k]) => !k.startsWith('_')).reduce((a, [k, v]) => a.replace(new RegExp('\\b' + esc(k) + '\\b', 'g'), v), (t !== '_doc' && Object.prototype.hasOwnProperty.call(WH0, t)) ? WH0[t] : t);
@@ -110,11 +110,20 @@ const SAVE = (species, petName = 'Sir Wobbles') => ({ v: 1, name: 'Zephyrine', a
     ok(bad.length === 0, `every story MP3 is mono 24 kHz MP3 at a natural pace (1.0–5.2 words/s; off: ${bad.slice(0, 3).join(' / ') || 'none'})`);
   }
 
-  // 2. playback: 🔊 Read to me plays each sentence in order: its MP3, or (a line with a typed name only) the device voice; one element, nothing overlapping
+  // 2. playback: 🔊 Read to me plays each sentence as its af_heart MP3; one element, nothing overlapping.
+  // A blank name, or a name that is also an ordinary word ("the" / "page"), still only fills {hero} and {pet}.
   const page = await open('pet_bunny');
-  const fb = await page.evaluate(() => { const n = WR.state.name, p = WR.state.pet.name; WR.state.name = ''; WR.state.pet.name = '';
-    const a = WR.Story.fill('{hero} meets {pet}. Hello, {hero}!'); WR.state.name = n; WR.state.pet.name = p; return { a, b: WR.Story.fill('{hero} and {pet}'), f: WR.Voice.fileFor(a.split('. ')[0] + '.') }; });
-  ok(fb.a === 'Our hero meets Puffbun. Hello, our hero!' && fb.b === 'Zephyrine and Sir Wobbles', `no typed names: the recorded fallback "our hero" + the storybook pet name; typed: the child's names (${fb.a} | ${fb.b})`);
+  const fb = await page.evaluate(() => {
+    const saved = { name: WR.state.name, pet: WR.state.pet.name };
+    const typed = WR.Story.fill('{hero} meets {pet}. Hello, {hero}!');
+    WR.state.name = ''; WR.state.pet.name = '';
+    const blank = WR.Story.fill('{hero} and {pet}');
+    WR.state.name = 'the'; WR.state.pet.name = 'page';
+    const trap = WR.Story.fill('The page says {hero} found the {pet}.');
+    WR.state.name = saved.name; WR.state.pet.name = saved.pet;
+    return { typed, blank, trap, saved };
+  });
+  ok(fb.typed === 'Nova meets Puffbun. Hello, Nova!' && fb.blank === 'Nova and Puffbun' && fb.trap === 'The page says Nova found the Puffbun.' && fb.saved.name === 'Zephyrine' && fb.saved.pet === 'Sir Wobbles', `Nova and the storybook pet, even if the save is blank or the name is an ordinary word (${fb.typed} | ${fb.blank} | ${fb.trap})`);
   const readPage = async (rid, n, label) => {
     await shut(page); await page.evaluate(([r, n]) => WR.go('story', { rid: r, n }), [rid, n]); await page.waitForSelector('#readAll');
     const want = await page.evaluate(() => [...document.querySelectorAll('#storyText .sent')].map(s => WR.Voice.fileFor(s.textContent) || 'DEVICE:' + WR.Voice.norm(s.textContent)));
@@ -124,8 +133,8 @@ const SAVE = (species, petName = 'Sir Wobbles') => ({ v: 1, name: 'Zephyrine', a
     const log = await page.evaluate(() => window.__plays);
     console.log(`   ${label}: ` + log.map(p => p.kind === 'mp3' ? p.src.split('/').pop() : 'DEVICE:' + p.text).join(', '));
     const dev = want.filter(w => w.startsWith('DEVICE:'));
-    ok(log.length === want.length && log.every((p, i) => p.kind === 'mp3' ? p.src === want[i] : 'DEVICE:' + p.text.replace(/\s+/g, ' ').trim() === want[i]), `${label}: Read to me played all ${want.length} sentences in order: af_heart MP3s, the device voice only for the ${dev.length} line(s) with a typed name (${log.length} plays)`);
-    ok(log.every(p => !p.others && !p.speech) && log.filter(p => p.kind === 'device').every(p => TYPED.test(p.text)), `${label}: never two voices at once; the device voice only on typed-name lines (${log.filter(p => p.kind !== 'mp3').length} device lines)`);
+    ok(log.length === want.length && log.every((p, i) => p.kind === 'mp3' && p.src === want[i]), `${label}: Read to me played all ${want.length} sentences as af_heart MP3s, in order (${log.length} plays)`);
+    ok(dev.length === 0 && log.every(p => p.kind === 'mp3' && !p.others && !p.speech), `${label}: no device voice and never two voices at once`);
     const gaps = log.slice(1).map((p, i) => Math.round(p.t - log[i].t));
     if (dev.length) console.log(`   ${label} line starts (ms after the previous start): ${gaps.join(', ')}`);
     ok(new Set(log.filter(p => p.kind === 'mp3').map(p => p.el)).size <= 1, `${label}: one audio element re-used for every line (phones allow it to keep playing after the first tap)`);
