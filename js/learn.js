@@ -240,10 +240,11 @@ KIT.regroup = {
     paint();
   } };
 // 🍄 equal groups (times) and 🍪 fair sharing (division): rings/plates are targets; items come from a pile
-const groupHTML = (w, n, cls, label) => `<div class="lw-pile" aria-label="${label}">${Array.from({ length: n }, () => `<button class="lw-chip lw-item" data-src aria-label="${esc(w.item)}">${w.item}</button>`).join("")}</div>`;
+const itemChip = w => `<button class="lw-chip lw-item" data-src aria-label="${esc(w.item)}">${w.item}</button>`;
+const groupHTML = (w, n, label) => `<div class="lw-pile" aria-label="${label}">${itemChip(w).repeat(n)}</div>`;
 KIT.groups = {
   html: w => `<div class="lw-rings r${w.rings}">${Array.from({ length: w.rings }, (_, k) => `<div class="lw-ring" data-tgt data-k="${k}" role="button" tabindex="0" aria-label="ring ${k + 1}"><div class="lw-got"></div><b class="lw-tot"></b></div>`).join("")}</div>
-    ${groupHTML(w, w.rings * w.each, "", "mushrooms to place")}`,
+    ${groupHTML(w, w.rings * w.each, "mushrooms to place")}`,
   bind(root, w, api) {
     const got = Array(w.rings).fill(0), pile = root.querySelector(".lw-pile");
     const add = ring => { const k = +ring.dataset.k, src = pile.querySelector("[data-src]"); if (!src) return;
@@ -256,21 +257,26 @@ KIT.groups = {
   } };
 KIT.share = {
   html: w => `<div class="lw-plates p${w.plates}">${Array.from({ length: w.plates }, (_, k) => `<div class="lw-plate" data-tgt data-k="${k}" role="button" tabindex="0" aria-label="plate ${k + 1}"><div class="lw-got"></div><button class="btn ghost small lw-back" data-back="${k}" aria-label="take one back from plate ${k + 1}" disabled>↩️</button></div>`).join("")}</div>
-    <div class="row lw-deal-row"><button class="btn ghost small lw-deal">🃏 Deal one each</button></div>${groupHTML(w, w.total, "", "cookies to share")}`,
+    <div class="row lw-deal-row"><button class="btn ghost small lw-deal">🃏 Deal one each</button></div>${groupHTML(w, w.total, "cookies to share")}`,
   bind(root, w, api) {
-    const got = Array(w.plates).fill(0), pile = root.querySelector(".lw-pile"), each = w.total / w.plates;
+    // MA-4a: a total that doesn't divide evenly leaves rem items in the pile ("left over"); rem 0 plays exactly as before
+    const got = Array(w.plates).fill(0), pile = root.querySelector(".lw-pile"), each = Math.floor(w.total / w.plates), rem = w.total % w.plates;
     const paint = () => root.querySelectorAll(".lw-plate").forEach((p, k) => { p.querySelector(".lw-got").innerHTML = `<span>${w.item}</span>`.repeat(got[k]); p.querySelector(".lw-back").disabled = !got[k]; });
     const left = () => pile.querySelectorAll("[data-src]").length;
     const after = () => { paint();
-      if (left()) { const lo = Math.min(...got), hi = Math.max(...got); if (hi - lo >= 2) api.say("Hmm, one plate has lots more. Is that fair? 🤔"); return; }
-      if (got.every(g => g === each)) { root.querySelectorAll(".lw-plate").forEach(p => p.classList.add("fair")); root.querySelectorAll(".lw-back, .lw-deal").forEach(b => b.disabled = true);
-        api.done(`✅ ${w.total} shared by ${w.plates} = ${each} each. Fair!`); }
-      else api.miss("Not fair yet! Some plates have more. Tap ↩️ to take one back.", root.querySelector(".lw-plates")); };
+      if (left() > rem) { const lo = Math.min(...got), hi = Math.max(...got); if (hi - lo >= 2) api.say("Hmm, one plate has lots more. Is that fair? 🤔"); return; }
+      if (left() === rem && got.every(g => g === each)) { root.querySelectorAll(".lw-plate").forEach(p => p.classList.add("fair")); root.querySelectorAll(".lw-back, .lw-deal").forEach(b => b.disabled = true);
+        if (!rem) return api.done(`✅ ${w.total} shared by ${w.plates} = ${each} each. Fair!`);
+        pile.querySelectorAll("[data-src]").forEach(b => b.disabled = true); pile.classList.add("leftover");
+        return api.done(`✅ ${w.total} shared by ${w.plates} = ${each} each, and ${rem} left over!`); }
+      api.miss("Not fair yet! Some plates have more. Tap ↩️ to take one back.", root.querySelector(".lw-plates")); };
     const give = k => { const src = pile.querySelector("[data-src]"); if (!src) return; src.remove(); got[k]++; WR.sfx("tap"); };
     dragTap(root, { onDrop: (src, plate) => { give(+plate.dataset.k); after(); }, onTapTarget: plate => { give(+plate.dataset.k); after(); } });
-    root.querySelector(".lw-deal").onclick = () => { for (let k = 0; k < w.plates && left(); k++) give(k); after(); };
+    root.querySelector(".lw-deal").onclick = () => {
+      if (rem && left() < w.plates) return api.say(`Only ${left()} left. That's not enough for one more each!`);
+      for (let k = 0; k < w.plates && left(); k++) give(k); after(); };
     root.querySelectorAll(".lw-back").forEach(b => b.onclick = e => { e.stopPropagation(); const k = +b.dataset.back; if (!got[k]) return; got[k]--;
-      pile.insertAdjacentHTML("beforeend", `<button class="lw-chip lw-item" data-src aria-label="${esc(w.item)}">${w.item}</button>`); paint(); });
+      pile.insertAdjacentHTML("beforeend", itemChip(w)); paint(); });
   } };
 // 🍕 fractions: choose how many equal parts (slider or ➖/➕), ✂️ cut, then tap parts to colour them
 const fracSVG = (shape, parts) => {

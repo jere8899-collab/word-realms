@@ -795,6 +795,56 @@
     "topic": "g2.story"
    },
    "art": "lesson_m_g2_story"
+  },
+  {
+   "id": "m.g3.times",
+   "pack": "m-g3",
+   "title": "6, 7, 8 and 9 times tables",
+   "icon": "🍎",
+   "at": {
+    "topic": "g3.times"
+   },
+   "art": "lesson_m_g3_times"
+  },
+  {
+   "id": "m.g3.divrem",
+   "pack": "m-g3",
+   "title": "Remainders: what's left over",
+   "icon": "🧺",
+   "at": {
+    "topic": "g3.divrem"
+   },
+   "art": "lesson_m_g3_divrem"
+  },
+  {
+   "id": "m.g3.add4",
+   "pack": "m-g3",
+   "title": "Adding 4-digit numbers",
+   "icon": "🌈",
+   "at": {
+    "topic": "g3.add4"
+   },
+   "art": "lesson_m_g3_add4"
+  },
+  {
+   "id": "m.g3.mul",
+   "pack": "m-g3",
+   "title": "Multiply by one digit",
+   "icon": "🌳",
+   "at": {
+    "topic": "g3.mul"
+   },
+   "art": "lesson_m_g3_mul"
+  },
+  {
+   "id": "m.g3.eqfrac",
+   "pack": "m-g3",
+   "title": "Equivalent fractions",
+   "icon": "🥧",
+   "at": {
+    "topic": "g3.eqfrac"
+   },
+   "art": "lesson_m_g3_eqfrac"
   }
  ]
 }

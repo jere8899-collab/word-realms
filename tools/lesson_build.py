@@ -35,6 +35,7 @@ def speak(t):
     t = re.sub(r"\b1¢", "1 cent", t)
     t = re.sub(r"(\d+)¢", r"\1 cents", t)
     t = t.replace("×", " times ").replace("÷", " divided by ").replace(" = ", " equals ").replace(" + ", " plus ").replace(" − ", " minus ").replace(" → ", ", ")
+    t = re.sub(r"(\d) r (\d)", r"\1 remainder \2", t)   # 14 ÷ 3 = 4 r 2 → "4 remainder 2" (MA-4a)
     t = t.replace("□", "what number")   # a missing-number box is read as a question, never as a symbol
     t = t.replace("___", "blank").replace("·", ",").replace("\n", " ")
     return re.sub(r"\s+", " ", t).strip()
@@ -71,8 +72,13 @@ def check_widget(lid, w, where):
             if t["word"] not in SCENES[w["scene"]] or not t.get("text"): fail(lid, f"{where}: spots task {t}")
     if k == "pv" and not all(isinstance(n, int) and 1 <= n <= 999 for n in w["targets"]): fail(lid, f"{where}: pv targets 1–999")
     if k == "regroup" and not ((w["a"] % 10) + (w["b"] % 10) >= 10 and w["a"] + w["b"] < 100): fail(lid, f"{where}: regroup needs ones that cross 10 and a sum under 100")
-    if k == "groups" and not (2 <= w["rings"] <= 5 and 2 <= w["each"] <= 6): fail(lid, f"{where}: groups 2–5 rings of 2–6")
-    if k == "share" and not (2 <= w["plates"] <= 5 and w["total"] % w["plates"] == 0 and w["total"] <= 24): fail(lid, f"{where}: share total must divide evenly (≤ 24)")
+    # MA-4a: 6–9 times tables need rings of up to 9 (kept to 30 items so the pile stays tappable)
+    if k == "groups" and not (2 <= w["rings"] <= 5 and 2 <= w["each"] <= 9 and w["rings"] * w["each"] <= 30): fail(lid, f"{where}: groups 2–5 rings of 2–9 (≤ 30 items)")
+    # share divides evenly unless rem=True (MA-4a remainders): then it must leave 1+ over, and each plate gets 1+
+    if k == "share":
+        r = w["total"] % w["plates"]
+        if not (2 <= w["plates"] <= 5 and w["total"] <= 24 and w["total"] >= w["plates"]): fail(lid, f"{where}: share 2–5 plates, total ≤ 24")
+        if bool(w.get("rem")) != bool(r): fail(lid, f"{where}: share total must divide evenly, or set rem=True for a remainder")
     if k == "frac":
         for st in w["stages"]:
             if st["shape"] not in ("pizza", "bar") or not (2 <= st["parts"] <= 8) or not (1 <= st["shade"] < st["parts"]) or not st.get("text"): fail(lid, f"{where}: frac stage {st}")
