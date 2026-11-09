@@ -13,7 +13,7 @@ WIDGETS = {   # kind → required fields (LESSONS-PLAN.md §2 widget kit; js/lea
     "pv": ["targets"], "regroup": ["a", "b"], "groups": ["rings", "each"], "share": ["total", "plates"], "frac": ["stages"],
     "rename": ["a", "b"], "money": ["targets"], "clock": ["targets"], "picgraph": ["cats", "key"], "bar": ["start", "sold", "add"],
     "findword": ["story", "tasks"], "spellhear": ["items"], "hearpic": ["items"],
-    "shapecount": ["stages"]}
+    "shapecount": ["stages"], "line": ["ends", "items"]}
 SCENES = {"table": {"on", "under", "in"}, "bed": {"on", "under", "in"}, "nearfar": {"near", "far"}, "park": {"nextto", "behind", "front"}}
 NUMW = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight"}
 DEN = {2: ("half", "halves"), 3: ("third", "thirds"), 4: ("quarter", "quarters"), 5: ("fifth", "fifths"), 6: ("sixth", "sixths"), 8: ("eighth", "eighths")}
@@ -43,6 +43,10 @@ def topics():
     js = "const M=require('./js/math-gen.js');['p','m','h'].forEach(x=>require('./js/math-topics-'+x+'.js'));console.log(JSON.stringify(M.TOPICS.map(t=>t.id)))"
     return set(json.loads(subprocess.run(["node", "-e", js], cwd=ROOT, capture_output=True, text=True, check=True).stdout))
 def fail(lid, msg): raise SystemExit(f"📜 lesson {lid}: {msg}")
+def need_why(lid, where, kind, items, key):
+    """every card / gap / word of a widget carries its own why line (sort, fill, suffix, spellhear, line)"""
+    for it in items:
+        if not it.get("why"): fail(lid, f"{where}: {kind} item {it.get(key)!r} needs a why")
 def check_widget(lid, w, where):
     k = w.get("kind")
     if k not in WIDGETS: fail(lid, f"{where}: unknown widget kind {k!r}")
@@ -54,16 +58,18 @@ def check_widget(lid, w, where):
         ids = {b["id"] for b in w["bins"]}
         if not 2 <= len(ids) <= 3: fail(lid, f"{where}: sort needs 2–3 bins")
         if len(w["items"]) < 4: fail(lid, f"{where}: sort needs 4+ items")
+        need_why(lid, where, k, w["items"], "t")
         for it in w["items"]:
-            if it["bin"] not in ids or not it.get("why"): fail(lid, f"{where}: sort item {it} needs a known bin and a why")
+            if it["bin"] not in ids: fail(lid, f"{where}: sort item {it} needs a known bin")
         if {it["bin"] for it in w["items"]} != ids: fail(lid, f"{where}: every bin needs at least one item")
     if k == "fill":
+        need_why(lid, where, k, w["items"], "s")
         for it in w["items"]:
-            if it["s"].count("___") != 1 or it["a"] not in w["tiles"] or not it.get("why"): fail(lid, f"{where}: fill item {it}")
+            if it["s"].count("___") != 1 or it["a"] not in w["tiles"]: fail(lid, f"{where}: fill item {it}")
     if k == "suffix":
         if not any(it["need"] for it in w["items"]) or all(it["need"] for it in w["items"]): fail(lid, f"{where}: suffix needs words with AND without the stamp")
+        need_why(lid, where, k, w["items"], "base")
         for it in w["items"]:
-            if not it.get("why"): fail(lid, f"{where}: suffix item {it} needs a why")
             if "add" in it and not (isinstance(it["add"], str) and it["add"].isalpha()): fail(lid, f"{where}: suffix add {it['add']!r} must be letters")
             if "cut" in it and not (isinstance(it["cut"], int) and 1 <= it["cut"] < len(it["base"]) and it.get("add")): fail(lid, f"{where}: suffix cut needs 1 ≤ cut < len(base) and an add")
     if k == "spots":
@@ -106,7 +112,7 @@ def check_widget(lid, w, where):
         for it in w["items"]:
             a = it.get("answer") or ""
             if not a or not a.isalpha() or not (2 <= len(a) <= 10): fail(lid, f"{where}: spellhear answer {a!r} (2–10 letters)")
-            if not it.get("why"): fail(lid, f"{where}: spellhear item {a!r} needs a why")
+        need_why(lid, where, k, w["items"], "answer")
     if k == "hearpic":
         if len(w["items"]) < 2: fail(lid, f"{where}: hearpic needs 2+ items")
         for it in w["items"]:
@@ -124,6 +130,14 @@ def check_widget(lid, w, where):
                 fail(lid, f"{where}: shapecount stage {st}")
             want = SH[st["shape"]][0 if st["count"] == "sides" else 1]
             if st.get("n") != want: fail(lid, f"{where}: shapecount {st['shape']} {st['count']} must be n={want}")
+    if k == "line":   # EN-4c: order on a line, items listed top end → bottom end
+        if not (isinstance(w["ends"], list) and len(w["ends"]) == 2 and all(w["ends"])): fail(lid, f"{where}: line needs 2 end labels")
+        if not 3 <= len(w["items"]) <= 6 or len({it["t"] for it in w["items"]}) != len(w["items"]): fail(lid, f"{where}: line needs 3–6 different words")
+        need_why(lid, where, k, w["items"], "t")
+        if w.get("of"):
+            ns = [it.get("n") for it in w["items"]]
+            if not all(isinstance(n, int) and 0 <= n <= w["of"] <= 10 for n in ns) or ns != sorted(ns, reverse=True) or len(set(ns)) != len(ns):
+                fail(lid, f"{where}: line n must count down from top to bottom (0–of, of ≤ 10): {ns}")
 def say_widget(w):
     w["say"] = speak(w["text"])
     for t in w.get("tasks", []): t["say"] = speak(t.get("text") or t.get("q") or "")

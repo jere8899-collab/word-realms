@@ -97,6 +97,8 @@ function dragTap(root, o) {
 }
 // a finished piece: locked, no longer draggable / droppable, shown green (sort, suffix, bar)
 const settle = (el, attr) => { el.disabled = true; el.removeAttribute(attr); el.classList.add("placed"); };
+// a card that found its home: lock it inside, cheer with its why, and finish when none are left (sort, line)
+const land = (api, src, into, why, left) => { settle(src, "data-src"); into.appendChild(src); api.good(`✅ ${why}`); if (!left) api.done(); };
 const shake = el => { if (!el) return; el.classList.remove("ln-shake"); void el.offsetWidth; el.classList.add("ln-shake"); };
 
 /* ---------- the widget kit (LESSONS-PLAN.md §2) ----------
@@ -124,8 +126,22 @@ KIT.sort = {
     dragTap(root, { nothing: () => api.say("Tap a card first, then a basket 👆"),
       onDrop(src, bin) { const it = w.items[+src.dataset.k];
         if (it.bin !== bin.dataset.b) return api.miss(`Hmm! ${it.why}`, src);
-        settle(src, "data-src"); bin.querySelector(".lw-in").appendChild(src);
-        left--; api.good(`✅ ${it.why}`); if (!left) api.done(); } });
+        land(api, src, bin.querySelector(".lw-in"), it.why, --left); } });
+  } };
+// 📏 order on a line (EN-4c freq; later sequence / timelines): put each word on its step, top end → bottom end.
+// items are listed in the right order; with w.of each step shows it.n of w.of stars (7 days a week), else it.mark or its number
+const rungMark = (w, it, k) => w.of ? `${"<i class=on>★</i>".repeat(it.n)}${"<i>★</i>".repeat(w.of - it.n)}` : esc(it.mark || String(k + 1));
+const rungLabel = (w, it, k) => w.of ? `${it.n} of ${w.of}${w.unit ? " " + w.unit : ""}` : it.mark || `step ${k + 1}`;
+KIT.line = {
+  html: w => `<div class="lw-pool" aria-label="Words to put on the line">${shuffled(w.items).map(({ x: it, k }) => `<button class="lw-chip" data-src data-k="${k}">${esc(it.t)}</button>`).join("")}</div>
+    <div class="lw-ladder"><div class="lw-end">▲ ${esc(w.ends[0])}</div><ol class="lw-rungs">${w.items.map((it, k) => `<li class="lw-rung" data-tgt data-k="${k}" role="button" tabindex="0" aria-label="the step for ${esc(rungLabel(w, it, k))}"><span class="lw-mark" aria-hidden="true">${rungMark(w, it, k)}</span><span class="lw-in"></span></li>`).join("")}</ol><div class="lw-end">▼ ${esc(w.ends[1])}</div></div>`,
+  bind(root, w, api) {
+    let left = w.items.length;
+    dragTap(root, { nothing: () => api.say("Tap a word first, then a step on the line 👆"),
+      onDrop(src, rung) { const k = +src.dataset.k, it = w.items[k];
+        if (+rung.dataset.k !== k) return api.miss(`Not that step! ${it.why}`, src);
+        rung.removeAttribute("data-tgt"); rung.setAttribute("aria-disabled", "true"); rung.classList.add("done");
+        land(api, src, rung.querySelector(".lw-in"), it.why, --left); } });
   } };
 KIT.fill = {
   html: w => `<ol class="lw-lines" aria-label="Sentences you finished"></ol><div class="lw-sent" aria-live="polite"></div>

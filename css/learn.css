@@ -58,6 +58,17 @@
 .lw-bin{min-height:110px;border-radius:18px;background:linear-gradient(180deg,#FFF4C2,#FFE9D6);border:3px dashed #F3CFA0;padding:6px;text-align:center;cursor:pointer;min-width:0}
 .lw-bin b{display:block;font-size:1.15rem;font-family:"Baloo 2",Nunito,sans-serif}
 .lw-in{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;margin-top:4px}
+/* 📏 order on a line (EN-4c): a ladder of steps from one end to the other */
+.lw-ladder{max-width:420px;margin:0 auto}
+.lw-end{font-weight:900;text-align:center;font-size:.95rem;color:var(--ink2);margin:4px 0}
+.lw-rungs{list-style:none;margin:0;padding:0 0 0 16px;position:relative;display:grid;gap:6px}
+.lw-rungs::before{content:"";position:absolute;left:3px;top:8px;bottom:8px;width:7px;border-radius:7px;background:linear-gradient(180deg,#FFC94D,#E2D6FF)}
+.lw-rung{display:flex;align-items:center;gap:8px;min-height:54px;padding:4px 8px;border-radius:16px;background:#FFF8E7;border:3px dashed #F3CFA0;cursor:pointer;min-width:0}
+.lw-rung.done{border-style:solid;border-color:var(--good);background:#EFFFF6;cursor:default}
+.lw-mark{flex:0 0 auto;white-space:nowrap;font-size:1rem;letter-spacing:-1px;font-weight:900;color:var(--ink2)}
+.lw-mark i{font-style:normal;color:#E6DDF0}
+.lw-mark i.on{color:#FFB300}
+.lw-rung .lw-in{flex:1;justify-content:flex-start;margin:0;min-width:0}
 /* fill the gap */
 .lw-lines{margin:0 0 6px;padding-left:1.4em;font-weight:800;color:var(--ink2)}
 .lw-lines b{color:var(--good)}

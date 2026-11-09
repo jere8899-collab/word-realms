@@ -607,6 +607,112 @@
    ]
   },
   {
+   "id": "en.a2.freq",
+   "pack": "en-a2",
+   "title": "always … never",
+   "icon": "📅",
+   "at": {
+    "realm": "a2",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_a2_freq",
+   "match": [
+    {
+     "opts": [
+      "always",
+      "never"
+     ]
+    },
+    {
+     "re": "[Ff]requency adverb|How often asks|[Uu]sually goes before",
+     "field": "explain"
+    }
+   ]
+  },
+  {
+   "id": "en.a2.must",
+   "pack": "en-a2",
+   "title": "must, have to, mustn't",
+   "icon": "🚸",
+   "at": {
+    "realm": "a2",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_a2_must",
+   "match": [
+    {
+     "opts": [
+      "mustn't",
+      "don't have to"
+     ]
+    },
+    {
+     "re": "mustn't|don't have to|it's necessary|have to \\+ verb",
+     "field": "explain"
+    }
+   ]
+  },
+  {
+   "id": "en.a2.should",
+   "pack": "en-a2",
+   "title": "should: good advice",
+   "icon": "💡",
+   "at": {
+    "realm": "a2",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_a2_should",
+   "match": [
+    {
+     "opts": [
+      "should",
+      "shouldn't"
+     ]
+    },
+    {
+     "re": "[Ss]hould \\+ (verb|take)|for advice|should = good idea",
+     "field": "explain"
+    }
+   ]
+  },
+  {
+   "id": "en.a2.objpron",
+   "pack": "en-a2",
+   "title": "me, him, her, them",
+   "icon": "🎁",
+   "at": {
+    "realm": "a2",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_a2_objpron",
+   "match": [
+    {
+     "opts": [
+      "me",
+      "him",
+      "them"
+     ],
+     "need": 2
+    },
+    {
+     "opts": [
+      "him",
+      "he"
+     ]
+    },
+    {
+     "opts": [
+      "them",
+      "they"
+     ]
+    },
+    {
+     "re": "object pronoun|object word",
+     "field": "explain"
+    }
+   ]
+  },
+  {
    "id": "m.g1.count",
    "pack": "m-g1",
    "title": "Counting to 20",

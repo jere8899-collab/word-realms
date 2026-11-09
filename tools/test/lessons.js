@@ -1,6 +1,6 @@
-// 📜 Lessons (LESSONS-PLAN.md, js/learn.js): A1 English + Grade 2 maths (+ MA-3 G1 when art lands). Widget kit includes shapecount.
+// 📜 Lessons (LESSONS-PLAN.md, js/learn.js): A1 English + Grade 2 maths (+ MA-3 G1 when art lands). Widget kit includes shapecount and line (EN-4c).
 //   node tools/test/lessons.js        (SHOT=1 saves screenshots/lessons_*.png at 390 px)
-// Covers: every pilot lesson played start → scroll by TAP; drag (pointer) on sort / place value / spots; the re-teach path
+// Covers: every pilot lesson played start → scroll by TAP; drag (pointer) on sort / place value / spots / line; the re-teach path
 // (a different explanation, NEW questions, why-not notes); stars once ever (anti-farm); a lesson failed twice still
 // leaves its scroll; the save shape inside wordRealms.save.v1 (cloud whole-save sync + score) and old saves migrating;
 // 📜 hint links in English and maths practice (not in boss rounds); the weak-result nudge; Learn chips inside the skill /
@@ -9,7 +9,7 @@
 const { chromium } = require('playwright-core');
 const BASE = (process.env.BASE || 'http://127.0.0.1:18642/').replace(/\/?$/, '/');
 const OUT = '/workspace/cefr-quest/screenshots/';
-const MIN_LESSONS = 52;
+const MIN_LESSONS = 56;
 let fails = 0, passes = 0;
 const ok = (c, m) => { if (!c) { fails++; console.error('FAIL', m); process.exitCode = 1; } else { passes++; console.log('ok', m); } };
 const today = () => { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
@@ -28,6 +28,7 @@ const HELPERS = () => {
   window.__solve = async () => {
     const S = WR.Learn._S(), w = S.step === 'discover' ? S.L.discover : S.L.reteach.discover, root = $('#lnW');
     if (w.kind === 'sort') for (const c of $$('#lnW .lw-pool [data-src]')) { tap(c); tap(root.querySelector(`[data-b="${w.items[+c.dataset.k].bin}"]`)); }
+    if (w.kind === 'line') for (const c of $$('#lnW .lw-pool [data-src]')) { tap(c); tap(root.querySelector(`.lw-rung[data-k="${c.dataset.k}"]`)); }
     if (w.kind === 'fill') for (const it of w.items) tap(root.querySelector(`[data-t="${it.a}"]`));
     if (w.kind === 'suffix') w.items.forEach((it, k) => { if (it.need) tap(root.querySelector(`.lw-word[data-k="${k}"]`)); });
     if (w.kind === 'spots') for (const t of w.tasks) tap(root.querySelector(`.sp-${t.word}`));
@@ -185,7 +186,7 @@ const HELPERS = () => {
   ok(!page.errs.length, 'no page errors on the re-teach path: ' + page.errs.join(' | '));
   await ctx.close();
 
-  // ---- real drags (pointer events) on sort, place value, spots, groups ----
+  // ---- real drags (pointer events) on sort, place value, spots, groups, line ----
   ({ ctx, page } = await fresh());
   const drag = async (from, to) => { const a = await page.$(from), b = await page.$(to); const ra = await a.boundingBox(), rb = await b.boundingBox();
     await page.mouse.move(ra.x + ra.width / 2, ra.y + ra.height / 2); await page.mouse.down();
@@ -224,13 +225,23 @@ const HELPERS = () => {
   await toDiscover('m.g2.time');
   await page.click('#lnW [data-k="m+"]'); await page.click('#lnW [data-k="m+"]'); await page.click('#lnW [data-k="m+"]'); await page.click('#lnW [data-k="m+"]'); await page.click('#lnW [data-k="m+"]');
   ok(await page.evaluate(() => /3:25|Hands say 12:25/.test(document.querySelector('.lw-count').textContent) || document.querySelector('.lw-count').textContent.includes(':25')), 'clock: five 5-min taps move the long hand to :25');
+  // 📏 line (EN-4c freq): a wrong step bounces the word back with its why; dragging each word onto its step finishes
+  await toDiscover('en.a2.freq');
+  const lw = await page.evaluate(() => WR.Learn._S().L.discover.items.length);
+  for (let k = 0; k < lw; k++) {
+    if (k === 0) { await drag('#lnW .lw-pool [data-k="0"]', '#lnW .lw-rung[data-k="4"]');
+      ok(await page.evaluate(() => !!document.querySelector('#lnW .lw-pool [data-k="0"]') && /Not that step/.test(document.querySelector('#lnMsg').textContent)), 'line: a word dragged to the wrong step stays in the pool and the why shows'); }
+    await page.evaluate(k => document.querySelector(`#lnW .lw-pool [data-k="${k}"]`).scrollIntoView({ block: 'center' }), k);
+    await drag(`#lnW .lw-pool [data-k="${k}"]`, `#lnW .lw-rung[data-k="${k}"]`); }
+  ok(await page.evaluate(() => document.querySelectorAll('#lnW .lw-rung.done .lw-chip').length === 5 && !document.querySelector('#lnW .lw-pool [data-src]') && !document.querySelector('#lnGo').hidden), 'line: every word dragged onto its step finishes the discovery');
   if (process.env.SHOT) { await toDiscover('en.a1.an'); await page.evaluate(() => { const c = document.querySelectorAll('#lnW .lw-pool [data-src]'); const it = WR.Learn._S().L.discover.items; [0, 1].forEach(j => { c[j].click(); document.querySelector(`#lnW [data-b="${it[+c[j].dataset.k].bin}"]`).click(); }); c[2].click(); });
     await page.waitForTimeout(250); await page.screenshot({ path: OUT + 'lessons_discover.png' });
     await toDiscover('m.g2.add'); await page.evaluate(() => { for (let k = 0; k < 2; k++) document.querySelector('#lnW .rg-one').click(); }); await page.waitForTimeout(250); await page.screenshot({ path: OUT + 'lessons_discover_maths.png' });
     await toDiscover('en.a1.this'); await page.waitForTimeout(250); await page.screenshot({ path: OUT + 'lessons_discover_nearfar.png' });
     await toDiscover('en.a1.place2'); await page.waitForTimeout(250); await page.screenshot({ path: OUT + 'lessons_discover_park.png' });
     await toDiscover('m.g2.sub'); await page.waitForTimeout(250); await page.screenshot({ path: OUT + 'lessons_discover_rename.png' });
-    await toDiscover('m.g2.time'); await page.waitForTimeout(250); await page.screenshot({ path: OUT + 'lessons_discover_clock.png' }); }
+    await toDiscover('m.g2.time'); await page.waitForTimeout(250); await page.screenshot({ path: OUT + 'lessons_discover_clock.png' });
+    await toDiscover('en.a2.freq'); await page.evaluate(() => { const c = document.querySelector('#lnW .lw-pool [data-k="0"]'); c.click(); document.querySelector('#lnW .lw-rung[data-k="0"]').click(); }); await page.waitForTimeout(250); await page.screenshot({ path: OUT + 'lessons_discover_line.png' }); }
   ok(!page.errs.length, 'no page errors while dragging: ' + page.errs.join(' | '));
   await ctx.close();
 

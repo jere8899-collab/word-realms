@@ -2,6 +2,8 @@
 
 **Phase 1 (plan + engine + pilot): ✅ done (commit 1d135e5, 2026-11-04).** EN-2 + MA-2 ✅ (f4ee083). The 2-hourly routine may now take the next batch (§5: EN-3, then MA-3).
 
+> Checkpoint 2026-11-09 ~22:15 SGT: EN-4c is live (COMMIT_EN4C, build wr-07ee1db8582b): en.a2.freq (new KIT.line ladder: put always/usually/often/sometimes/never on steps of 7/6/4/2/0 stars; re-teach "juice glass" + fill by days), en.a2.must (sort playground signs must/mustn't; re-teach traffic lights + fill has to/mustn't/don't have to), en.a2.should (fill should/shouldn't for Puffbun's cold; re-teach "whispered tip" + sort right/needs fixing), en.a2.objpron (fill me/him/her/them for Gumdrop's presents; re-teach "twins" + sort right/needs fixing); 56 lessons. 4 GenerateImage hooks (painted by the parent run) installed with install_story_img.py --dir lessons --batch. New widget `line`: tap or drag, 54 px steps, in the lessons.js tap/drag tests and the 320–412 px audit; lesson_build validates ends, 3–6 words and counting-down stars. Cleanup kept (behaviour identical, lesson JSON byte-identical before the new content): `land()` in js/learn.js (sort + line), `need_why()` in lesson_build (sort, fill, suffix, spellhear, line). 54 new af_heart lines (the freq hook was re-recorded once after a wording fix). lessons.js 256/256 (MIN_LESSONS 56); EN-4c check 320/360/375/412 px + landscape ALL OK. Full suite 104: all pass alone except learn-review, which fails the same way on origin/main 66c42ae (known first-visit race). No a2 practice item uses object pronouns yet, so objpron's hint links wait for future items. Next English turn: EN-4d (poss_s, link, makedo, shop).
+
 > Checkpoint 2026-11-09 ~15:35 SGT: MA-4a is live (cae1432, build wr-b5a94a37c218): m.g3.times (groups 3×7), m.g3.divrem (share 14÷3 with a dashed "left over" pile; 🃏 Deal says "not enough for one more each"), m.g3.add4 (fill, column method), m.g3.mul (fill, split), m.g3.eqfrac (frac bar 1/2=2/4=4/8); 52 lessons. 5 GenerateImage hooks painted by the parent run (this executor had no GenerateImage) and installed with install_story_img.py --dir lessons --batch; add4/mul alt text matched to the art. Cleanup kept: `itemChip()` in js/learn.js (behaviour identical); lesson_build reads `4 r 2` as "4 remainder 2", validates groups and share rem. 75 af_heart lines from the stash (build_voice: 0 to record). lessons.js 242/242 (MIN_LESSONS 52); full suite 102/106 first pass, maths-review/toasts/story-voices pass alone; learn-review fails the same way on origin/main b929910 (known first-visit race). MA-4a check 320/360/412 px local + live ALL OK (live 61/61, no console errors). Next maths turn: MA-4b (rest of G3).
 
 > Checkpoint 2026-11-08 ~22:00 SGT: EN-4b is live (d06b436, build wr-09ef709bb3a9): en.a2.goingto (fill; re-teach sort "plan train"), en.a2.will (sort promise/guess; re-teach fill will/won't), en.a2.someany (sort; re-teach fill), en.a2.muchmany (sort; re-teach fill "number test"); 47 lessons. 4 GenerateImage hooks installed with install_story_img.py --dir lessons --batch (replaces the 20:40 ⏸️ art block). Draft _en_a2b.py merged into en_a2.py and deleted. Cleanup kept: `shuffled()` helper in js/learn.js (sort cards, hearpic pictures, spellhear letters; behaviour identical); en_a2.py header rewritten. 54 af_heart lines (build_voice: 0 to record). lessons.js 227/227 (MIN_LESSONS 47); en4b check 320/360/412 px local + live ALL OK; story-voices 36/36. Known SW/WR first-visit flakes fail the same on origin/main e757c70 (learn-review, maths-levels, petlayers, triggraph, lightart; review-engine passes on some runs). origin/main had not moved, so no 3-way merge was needed. Next English turn: EN-4c (freq, must, should, objpron). Next maths turn: MA-4a (G3 first: times, divrem, add4, mul, eqfrac).
@@ -139,6 +141,7 @@ dict(id="en.a1.an", title="a or an?", icon="🍎", at=dict(realm="a1", skill="gr
 | `clock` | `targets:[{h:3, m:25}]` | five-minute analogue clock (set the hands) |
 | `picgraph` | `cats:[{label, n}], key:5, item` | picture graph with a key (tap to add pictures) |
 | `bar` | `start:50, sold:20, add:15` | Singapore bar model for two-step take-away then add |
+| `line` | `ends:[top, bottom]`, `items:[{t, why, n?}]` listed top → bottom; `of:7, unit` shows n of 7 stars per step (else `mark`) | order on a line: how often (always … never); later first/then/finally, timelines |
 
 New widgets may be added to the kit when a topic needs one, for example a number line, balance, clock hands, a graph builder or angle turns. Each needs a tap alternative, at least 44 px targets, and the 320 px audit in `tools/test/lessons.js`.
 
@@ -198,10 +201,10 @@ Grammar:
 - ✅ `en.a2.will` will for promises and guesses (sort)
 - ✅ `en.a2.someany` some / any (sort)
 - ✅ `en.a2.muchmany` much / many and countable/uncountable (sort)
-- `en.a2.freq` always … never (order on a line)
-- `en.a2.must` must / have to / mustn't (sort signs)
-- `en.a2.should` advice with should (fill)
-- `en.a2.objpron` me, him, them (fill)
+- ✅ `en.a2.freq` always … never (order on a line: new `line` ladder widget, days out of 7)
+- ✅ `en.a2.must` must / have to / mustn't (sort signs)
+- ✅ `en.a2.should` advice with should (fill)
+- ✅ `en.a2.objpron` me, him, her, them (fill)
 - `en.a2.poss_s` Mia's bag (suffix 's)
 - `en.a2.link` and / but / so / because (fill)
 
@@ -586,6 +589,7 @@ Each **routine turn builds one batch of ~5 lessons**, alternating English and ma
 | EN-4a | A2 first: ed, irreg, comp, super (+ suffix cut/add, settle() cleanup) | ✅ (4 GenerateImage hooks; merged onto the Nova + lighter-first-visit main) | cb42f3a |
 | EN-4b | A2 next: goingto, will, someany, muchmany (+ shuffled() cleanup) | ✅ (4 GenerateImage hooks) | d06b436 |
 | MA-4a | G3 first: times, divrem, add4, mul, eqfrac | ✅ (5 GenerateImage hooks; share widget shows left-overs; itemChip() cleanup) | cae1432 |
+| EN-4c | A2 next: freq, must, should, objpron (+ `line` widget; land() + need_why() cleanup) | ✅ (4 GenerateImage hooks) | COMMIT_EN4C |
 | EN-4… | A2 (19), then B1, B2, C1, C2 | ⏳ | |
 | MA-4… | G3, G4 … G12 (one grade per 2 turns) | ⏳ | |
 | SG-1… | SG hub "📜 Learn" row (engine: `at=dict(sg="p1")`, `same=`) then P1 → Grown-up | ⏳ after A2 | |
