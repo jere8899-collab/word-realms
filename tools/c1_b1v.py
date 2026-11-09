@@ -30,7 +30,7 @@ B1V = [
  m("Our team ___ the match 3–1.", "won", ["beat", "earned", "gained"], "You win a match/game; you beat a team.", ["Beat needs a team: we beat them.", "You earn money.", "You gain weight or experience."]),
  m("We ___ the other team 3–1.", "beat", ["won", "earned", "succeeded"], "Beat + opponent; win + game.", ["Win + match, not a team.", "You earn money.", "Succeed needs in."]),
  m("I'm saving up to ___ a new skateboard.", "afford", ["earn", "owe", "lend"], "Afford = have enough money for.", ["Earn = get money for work.", "Owe = need to pay back.", "Lend = give for a short time."]),
- m("I ___ my brother £2. I'll pay him back tomorrow.", "owe", ["lend", "borrow", "afford"], "Owe = have to pay back.", ["Lend means you give it.", "Borrow needs from: borrow from him.", "Afford = have enough money."]),
+ m("I ___ my brother $2. I'll pay him back tomorrow.", "owe", ["lend", "borrow", "afford"], "Owe = have to pay back.", ["Lend means you give it.", "Borrow needs from: borrow from him.", "Afford = have enough money."]),
  m("Can I ___ your ruler? I'll give it back.", "borrow", ["lend", "owe", "loan you"], "Borrow = take for a short time; lend = give for a short time.", ["Lend is what the owner does.", "Owe = need to pay back.", "Loan you would mean giving your ruler away."]),
  m("She ___ pocket money by washing the car.", "earns", ["wins", "gains", "spends"], "Earn money for work.", ["Win is for prizes and games.", "Gain is for weight or experience.", "Spend is the opposite."]),
  # confusables
@@ -89,7 +89,7 @@ B1V = [
  m("I ___ forgot my lines in the play, but I remembered just in time!", "almost", ["most", "mostly", "at most"], "Almost = nearly.", ["Most is a quantity.", "Mostly means mainly.", "At most means not more than."]),
  m("There was a ___ of the new film in the newspaper.", "review", ["revision", "view", "preview's"], "A review gives an opinion about a film or book.", ["Revision is studying again.", "A view is what you see.", "Preview's is possessive."]),
  m("I'm doing ___ for my exams.", "revision", ["review", "revisions", "revise"], "British English: do revision = study for exams.", ["A review is an opinion.", "Revision is usually uncountable here.", "Revise is the verb."]),
- m("The ___ to the castle costs £5.", "entrance fee", ["exit fee", "entry way", "ticket office"], "Entrance fee = money to go in.", ["You don't pay to leave.", "An entry way is a door.", "A ticket office is where you pay."]),
+ m("The ___ to the castle costs $5.", "entrance fee", ["exit fee", "entry way", "ticket office"], "Entrance fee = money to go in.", ["You don't pay to leave.", "An entry way is a door.", "A ticket office is where you pay."]),
  m("Please write your ___ here so we can post the prize.", "address", ["adress", "addresses", "dress"], "Address: two d's, two s's.", ["Spelling trap: two d's.", "We need one address.", "A dress is clothing."]),
  m("I ___ my mum with the cooking.", "helped", ["assisted to", "served", "supported for"], "Help someone with something.", ["Assisted to is wrong.", "Serve = give food to.", "Supported for is wrong."]),
  m("Could you ___ the dishes, please?", "dry", ["dried", "drying", "dryer"], "Could you + base verb?", ["Dried is past.", "Drying needs be.", "A dryer is a machine."]),

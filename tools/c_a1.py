@@ -45,10 +45,10 @@ A1 = {
   ("Where is Sam now?", ["at Ben's house","at school","at home","at the shop"], "'I am at Ben's house.'"),
   ("When will Sam be home?", ["at six o'clock","at five o'clock","at seven o'clock","at eight o'clock"], "'I will be home at six o'clock.'"),
   ("What will Sam eat?", ["pizza","pasta","soup","cake"], "Ben's mum has pizza for them.")]),
- passage("Meadow Pet Shop", "Meadow Pet Shop. Open Monday to Saturday, 9 a.m. to 5 p.m. Closed on Sunday. Today: rabbit food is half price! Small fish: £3 each.", [
+ passage("Meadow Pet Shop", "Meadow Pet Shop. Open Monday to Saturday, 9 a.m. to 5 p.m. Closed on Sunday. Today: rabbit food is half price! Small fish: $3 each.", [
   ("When is the shop closed?", ["Sunday","Monday","Saturday","Friday"], "'Closed on Sunday.'"),
   ("What is cheap today?", ["rabbit food","fish","cat toys","dog beds"], "'Rabbit food is half price.'"),
-  ("How much is a small fish?", ["£3","£5","£9","£1"], "'Small fish: £3 each.'")]),
+  ("How much is a small fish?", ["$3","$5","$9","$1"], "'Small fish: $3 each.'")]),
  passage("Tom's Day", "Tom gets up at seven o'clock. He eats eggs and drinks orange juice. He goes to school by bus. After school, he plays football with his friends. In the evening, he reads a book and goes to bed at nine.", [
   ("How does Tom go to school?", ["by bus","by bike","on foot","by car"], "'He goes to school by bus.'"),
   ("What does Tom drink?", ["orange juice","milk","tea","water"], "'He drinks orange juice.'"),

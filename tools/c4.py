@@ -28,10 +28,10 @@ C4NEW = {
  "b1": [
   {"type": "listen", "say": "Let's meet at the main entrance. Actually, no, the side door is closer to the car park.", "q": "Where will they meet?", "options": ["by the side door", "at the main entrance", "in the car park", "at the back gate"], "answer": 0, "explain": "'Actually, no' = a change of mind: the side door."},
   {"type": "listen", "say": "The film's at quarter past seven, so let's meet fifteen minutes before.", "q": "What time will they meet?", "options": ["at seven", "at quarter past seven", "at half past seven", "at quarter to seven"], "answer": 0, "explain": "7:15 minus 15 minutes = 7:00."},
-  {"type": "listen", "say": "Tickets are usually ten pounds, but children get half price, and there are two of us kids.", "q": "How much do the two children pay in total?", "options": ["£10", "£20", "£5", "£15"], "answer": 0, "explain": "Half price = £5 each; two children = £10."},
+  {"type": "listen", "say": "Tickets are usually ten dollars, but children get half price, and there are two of us kids.", "q": "How much do the two children pay in total?", "options": ["$10", "$20", "$5", "$15"], "answer": 0, "explain": "Half price = $5 each; two children = $10."},
  ],
  "b2": [
   {"type": "listen", "say": "I'd planned to revise all weekend, but my cousin's visiting on Saturday, so I'll squeeze it all into Sunday.", "q": "When will the speaker revise?", "options": ["only on Sunday", "all weekend", "only on Saturday", "next weekend"], "answer": 0, "explain": "Saturday is taken by the visit, so it's 'squeezed into Sunday'."},
-  {"type": "listen", "say": "The trip was meant to cost forty pounds, but the coach company added a ten percent fuel charge.", "q": "How much does the trip cost now?", "options": ["£44", "£40", "£50", "£36"], "answer": 0, "explain": "10% of £40 = £4, so £44."},
+  {"type": "listen", "say": "The trip was meant to cost forty dollars, but the coach company added a ten percent fuel charge.", "q": "How much does the trip cost now?", "options": ["$44", "$40", "$50", "$36"], "answer": 0, "explain": "10% of $40 = $4, so $44."},
  ],
 }

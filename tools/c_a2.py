@@ -39,9 +39,9 @@ A2 = {
  mcq("Turn ___ the light, please. It's dark.", ["on","off","up","down"], "When it's dark, turn ON the light."),
 ],
 "reading": {"passages": [
- passage("Candy Village Summer Fair", "Candy Village Summer Fair — Saturday 14th July, 10 a.m. to 4 p.m., in the village square. Cake competition at 2 p.m.: please bring your cake to the bakery by 12 o'clock. Face painting for children: £2. Entry is free! If it rains, the fair will move to the school hall.", [
+ passage("Candy Village Summer Fair", "Candy Village Summer Fair — Saturday 14th July, 10 a.m. to 4 p.m., in the village square. Cake competition at 2 p.m.: please bring your cake to the bakery by 12 o'clock. Face painting for children: $2. Entry is free! If it rains, the fair will move to the school hall.", [
   ("Where must you take your cake before the competition?", ["to the bakery","to the school hall","to the village square","to the judges' table"], "'Please bring your cake to the bakery by 12 o'clock.'"),
-  ("What do you have to pay for?", ["face painting","entry to the fair","the cake competition","the music"], "Face painting costs £2; entry is free."),
+  ("What do you have to pay for?", ["face painting","entry to the fair","the cake competition","the music"], "Face painting costs $2; entry is free."),
   ("What happens if it rains?", ["The fair moves to the school hall.","The fair is cancelled.","The fair moves to next Saturday.","The fair starts later."], "'If it rains, the fair will move to the school hall.'")]),
  passage("An Email from Ella", "Hi Leo, Thanks for inviting me to your birthday party on Friday. I'd love to come, but I have a piano lesson until five. Can I arrive at about half past five? Also, my brother wants to know if he can come too. He doesn't know many people here because we only moved last month. See you soon, Ella", [
   ("Why will Ella be late?", ["She has a piano lesson.","She has homework.","Her brother is ill.","She doesn't know the address."], "'I have a piano lesson until five.'"),
@@ -64,7 +64,7 @@ A2 = {
  listen("Excuse me, how do I get to the station? — Go straight on and take the second street on the left.", "How do you get to the station?", ["second street on the left","first street on the left","second street on the right","straight on only"], "'Take the second street on the left.'"),
  listen("The museum opens at nine thirty, but the café doesn't open until eleven.", "When does the café open?", ["11:00","9:30","10:00","12:00"], "The café opens at eleven; the museum at 9:30."),
  listen("I usually walk to school, but today I'm going by bike because I'm late.", "How is the speaker going to school today?", ["by bike","on foot","by bus","by car"], "Usually walks, but TODAY by bike."),
- listen("These shoes were forty pounds, but in the sale they're only twenty-five.", "How much are the shoes now?", ["£25","£40","£15","£45"], "Now they cost twenty-five pounds."),
+ listen("These shoes were forty dollars, but in the sale they're only twenty-five.", "How much are the shoes now?", ["$25","$40","$15","$45"], "Now they cost twenty-five dollars."),
  listen("Let's meet outside the cinema at quarter to seven.", "What time will they meet?", ["6:45","7:15","7:45","6:15"], "Quarter to seven = 6:45."),
  listen("I'd like a cheese sandwich and a cup of tea, but no sugar, thanks.", "What does the speaker NOT want?", ["sugar","cheese","tea","a sandwich"], "'No sugar, thanks.'"),
  listen("My sister is taller than me, but my brother is the tallest in the family.", "Who is the tallest?", ["the brother","the sister","the speaker","the mother"], "'My brother is the tallest.'"),

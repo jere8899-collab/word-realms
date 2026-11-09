@@ -54,7 +54,7 @@ W1A = {
  listen("Today is Wednesday. Tomorrow we have music.", "When do they have music?", ["on Thursday","on Wednesday","on Tuesday","on Friday"], "Tomorrow after Wednesday is Thursday."),
  listen("Please sit down and close the door.", "What must you close?", ["the door","the window","your book","your eyes"], "'Close the door.'"),
  listen("My grandpa is in the garden. He's reading the newspaper.", "What is grandpa doing?", ["reading","sleeping","cooking","walking"], "'He's reading the newspaper.'"),
- listen("These apples are one pound for three.", "How much are three apples?", ["one pound","three pounds","thirty pence","two pounds"], "'One pound for three.'"),
+ listen("These apples are one dollar for three.", "How much are three apples?", ["one dollar","three dollars","thirty cents","two dollars"], "'One dollar for three.'"),
  listen("Lily has long brown hair and green eyes.", "What colour are Lily's eyes?", ["green","brown","blue","grey"], "'Green eyes.' Her hair is brown."),
  listen("The toilets are upstairs, next to the café.", "Where are the toilets?", ["upstairs","downstairs","outside","in the café"], "'The toilets are upstairs.'"),
 ],
@@ -97,7 +97,7 @@ W1A = {
   ("How long does Kit work on Saturdays?", ["six hours","three hours","nine hours","all day and night"], "From nine to three = six hours."),
   ("What does Kit like about the job?", ["taking home broken lollipops","the very good pay","finishing work early","the quiet afternoons"], "'Mrs Plum lets me take home any broken lollipops!'"),
   ("Why was the shop busy last Saturday?", ["There was a fair.","Kit gave away free sweets.","Mrs Plum was ill.","It was a holiday."], "'…because of the village fair.'")]),
- passage("Ride the Candy Train", "The Candy Train goes around Candy Village every hour from 10 a.m. to 5 p.m. The trip takes 40 minutes. Tickets cost £4 for adults and £2 for children. Children under three travel free. You can buy tickets at the station or on the train, but it's cheaper online. Dogs are welcome, but please keep them on a lead.", [
+ passage("Ride the Candy Train", "The Candy Train goes around Candy Village every hour from 10 a.m. to 5 p.m. The trip takes 40 minutes. Tickets cost $4 for adults and $2 for children. Children under three travel free. You can buy tickets at the station or on the train, but it's cheaper online. Dogs are welcome, but please keep them on a lead.", [
   ("How long is one trip?", ["40 minutes","one hour","four hours","seven hours"], "'The trip takes 40 minutes.'"),
   ("Where are tickets cheapest?", ["online","on the train","at the station","at the sweet shop"], "'…it's cheaper online.'"),
   ("What must dog owners do?", ["keep their dog on a lead","buy their dog a child's ticket","leave their dog at the station","sit at the back of the train"], "'…please keep them on a lead.'")]),
@@ -110,7 +110,7 @@ W1A = {
  listen("Go straight on and take the second turning on the left. The bank's opposite the library.", "Where is the bank?", ["opposite the library","next to the library","behind the library","on the first left"], "'Opposite the library.'"),
  listen("It was so cold at the weekend that we stayed in and played board games.", "What did they do at the weekend?", ["played games at home","went skating outside","visited friends","went shopping"], "They stayed in and played board games."),
  listen("Last year I went to Spain by plane, but this year we're driving to France.", "How will they travel this year?", ["by car","by plane","by train","by boat"], "'Driving' = by car."),
- listen("The red jumper is twenty pounds, and the blue one is five pounds cheaper.", "How much is the blue jumper?", ["£15","£20","£25","£5"], "£20 − £5 = £15."),
+ listen("The red jumper is twenty dollars, and the blue one is five dollars cheaper.", "How much is the blue jumper?", ["$15","$20","$25","$5"], "$20 − $5 = $15."),
  listen("I've had this bike for two years. It was a birthday present from my uncle.", "Who gave the speaker the bike?", ["his uncle","his dad","his grandad","his brother"], "'…a present from my uncle.'"),
  listen("Hurry up! The next bus isn't for another forty minutes.", "Why should they hurry?", ["The next bus is much later.","The bus is already late.","It's going to rain soon.","The shop is closing."], "If they miss this bus, they'll wait 40 minutes."),
  listen("Sorry I'm late. There was an accident on the motorway.", "Why was the speaker late?", ["There was an accident.","He overslept.","His car broke down.","He got lost."], "'There was an accident on the motorway.'"),
