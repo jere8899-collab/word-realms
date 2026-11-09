@@ -2,7 +2,7 @@
 
 **Phase 1 (plan + engine + pilot): ✅ done (commit 1d135e5, 2026-11-04).** EN-2 + MA-2 ✅ (f4ee083). The 2-hourly routine may now take the next batch (§5: EN-3, then MA-3).
 
-> Checkpoint 2026-11-09 ~15:05 SGT (MA-4a blocked on art): **GenerateImage unavailable** this run (GetDynamicTools: not in the cursor namespace; only Higgsfield, which is not allowed), so no hook art and no deploy. Reviewed and kept the 8:53 run's work: draft `tools/lessons/_m_g3.py` (m.g3.times groups 3×7, divrem share 14÷3 rem, add4 fill column method, mul fill split, eqfrac frac bar 1/2=2/4=4/8; every sum and why-not note re-checked), `itemChip()` cleanup in js/learn.js (behaviour identical), share `rem` support (left-overs stay in a dashed "left over" pile; 🃏 Deal says "not enough for one more each"), lesson_build (`4 r 2` read as "4 remainder 2"; groups 2–9 each ≤ 30 items; share rem=True validation), learn.css leftover style. Tested in a scratch copy with throwaway art: validator 52 lessons OK; lessons.js 242/242 (MIN_LESSONS 52; all 5 g3 lessons played by tap, +5⭐ once; 320–412 px audit clean); extra check: 14÷3 share ends 4/4/4 + 2 left over, 3×7 rings fit at 320 px, no page errors. Voice: 75 af_heart lines already recorded and stashed in `/workspace/_ma4a_stash/voice/` (copy them into assets/voice AFTER renaming the pack, then build_voice records 0). Left: paint 5 hooks (lesson_m_g3_times/divrem/add4/mul/eqfrac) → install_story_img.py --dir lessons --batch → rename pack → voice → MIN_LESSONS 52 → full suite → deploy.
+> Checkpoint 2026-11-09 ~16:00 SGT: MA-4a is live (cae1432, build wr-b5a94a37c218): m.g3.times (groups 3×7), m.g3.divrem (share 14÷3 with a dashed "left over" pile; 🃏 Deal says "not enough for one more each"), m.g3.add4 (fill, column method), m.g3.mul (fill, split), m.g3.eqfrac (frac bar 1/2=2/4=4/8); 52 lessons. 5 GenerateImage hooks painted by the parent run (this executor had no GenerateImage) and installed with install_story_img.py --dir lessons --batch; add4/mul alt text matched to the art. Cleanup kept: `itemChip()` in js/learn.js (behaviour identical); lesson_build reads `4 r 2` as "4 remainder 2", validates groups and share rem. 75 af_heart lines from the stash (build_voice: 0 to record). lessons.js 242/242 (MIN_LESSONS 52); full suite 102/106 first pass, maths-review/toasts/story-voices pass alone; learn-review fails the same way on origin/main b929910 (known first-visit race). MA-4a check 320/360/412 px local + live ALL OK (live 61/61, no console errors). Next maths turn: MA-4b (rest of G3).
 
 > Checkpoint 2026-11-08 ~22:00 SGT: EN-4b is live (d06b436, build wr-09ef709bb3a9): en.a2.goingto (fill; re-teach sort "plan train"), en.a2.will (sort promise/guess; re-teach fill will/won't), en.a2.someany (sort; re-teach fill), en.a2.muchmany (sort; re-teach fill "number test"); 47 lessons. 4 GenerateImage hooks installed with install_story_img.py --dir lessons --batch (replaces the 20:40 ⏸️ art block). Draft _en_a2b.py merged into en_a2.py and deleted. Cleanup kept: `shuffled()` helper in js/learn.js (sort cards, hearpic pictures, spellhear letters; behaviour identical); en_a2.py header rewritten. 54 af_heart lines (build_voice: 0 to record). lessons.js 227/227 (MIN_LESSONS 47); en4b check 320/360/412 px local + live ALL OK; story-voices 36/36. Known SW/WR first-visit flakes fail the same on origin/main e757c70 (learn-review, maths-levels, petlayers, triggraph, lightart; review-engine passes on some runs). origin/main had not moved, so no 3-way merge was needed. Next English turn: EN-4c (freq, must, should, objpron). Next maths turn: MA-4a (G3 first: times, divrem, add4, mul, eqfrac).
 
@@ -430,11 +430,11 @@ These lessons attach to the level hub as a "📜 Learn" row, which is still a hu
 - ✅ `m.g2.story` two-step problems: bar model
 
 **Grade 3 (P3):**
-- `m.g3.times` 6–9 times-table tricks (groups/arrays)
-- `m.g3.divrem` remainders: left over (share with leftovers)
-- `m.g3.add4` 4-digit regrouping (pv)
-- `m.g3.mul` multiply by one digit (area blocks)
-- `m.g3.eqfrac` equivalent fractions (frac stages: fold)
+- ✅ `m.g3.times` 6–9 times-table tricks (groups/arrays)
+- ✅ `m.g3.divrem` remainders: left over (share with leftovers)
+- ✅ `m.g3.add4` 4-digit regrouping (pv)
+- ✅ `m.g3.mul` multiply by one digit (area blocks)
+- ✅ `m.g3.eqfrac` equivalent fractions (frac stages: fold)
 - `m.g3.measure` units of length, mass and volume (sort)
 - `m.g3.duration` how long? (number line)
 - `m.g3.clock` 24-hour clock (sort)
@@ -585,7 +585,7 @@ Each **routine turn builds one batch of ~5 lessons**, alternating English and ma
 | MA-3b | G1 rest: money, time, picgraph, story | ✅ (4 GenerateImage hooks; money widget can show cents) | ce08a78 |
 | EN-4a | A2 first: ed, irreg, comp, super (+ suffix cut/add, settle() cleanup) | ✅ (4 GenerateImage hooks; merged onto the Nova + lighter-first-visit main) | cb42f3a |
 | EN-4b | A2 next: goingto, will, someany, muchmany (+ shuffled() cleanup) | ✅ (4 GenerateImage hooks) | d06b436 |
-| MA-4a | G3 first: times, divrem, add4, mul, eqfrac | 🔧 2026-11-09 publishing: 5 GenerateImage hooks installed (painted by the parent run), pack renamed m_g3.py, voice 0 to record, MIN_LESSONS 52, suite passed | |
+| MA-4a | G3 first: times, divrem, add4, mul, eqfrac | ✅ (5 GenerateImage hooks; share widget shows left-overs; itemChip() cleanup) | cae1432 |
 | EN-4… | A2 (19), then B1, B2, C1, C2 | ⏳ | |
 | MA-4… | G3, G4 … G12 (one grade per 2 turns) | ⏳ | |
 | SG-1… | SG hub "📜 Learn" row (engine: `at=dict(sg="p1")`, `same=`) then P1 → Grown-up | ⏳ after A2 | |
