@@ -227,6 +227,11 @@ WR.bonusOpen = data => { const s = WR.state; return !!(s.settings.unlockAll || (
 WR.bonusSeenInit = () => { const s = WR.state; if (!Array.isArray(s.bonusSeen)) s.bonusSeen = ["sp", ...BONUS.map(b => b.data)].filter(d => (s.lessonsDone || 0) >= WR.bonusAt(d)); return s.bonusSeen; };
 // the gap games (js/gap-round.js) add their own row when they load: Spell Swap, Word Forge, … (row.door, default "write")
 WR.addBonus = row => BONUS.push(Object.assign({ door: "write" }, row));
+// 🌳 Beyond the screen. The tile is registered with the shell so the Play door paints once.
+// js/beyond.js itself stays off the first visit and loads when the tile or the Report opens.
+WR.addBonus({ data: "beyond", door: "play",
+  open: rid => WR.lazy("js/beyond.js").then(() => WR.Beyond.open(WR.Beyond.byId(rid).id === rid ? rid : WR.Beyond.current())),
+  tile: () => WR.bonusTile({ cls: "beyond-tile", data: "beyond", ico: '<span class="ico">🌳</span>', title: "Beyond the screen", desc: "Paper, posters and play together", crowns: WR.crownCell(null), tag: "Off the phone" }) });
 const DOORS = WR.DOORS = [
   { id: "say", icon: "🎤", name: "Say it", desc: "Speak and sound out" },
   { id: "write", icon: "✍️", name: "Write it", desc: "Write, swap and fix words" },
@@ -276,8 +281,6 @@ WR.screens.door = ({ rid, door }) => {
   WR.view(`<div class="fade-in realm-screen door-screen"><div class="row lesson-top" style="margin:6px 0 8px"><button class="btn ghost small" id="doorBack">← ${WR.esc(r.name)}</button><b class="title">${d.icon} ${d.name}</b></div>
     <div class="bonus-row door-games" id="bonusRow">${open.map(g => seen.includes(g.data) ? g.html : newBadge(g.html)).join("")}${locked ? `<div class="card bonus-more" aria-label="More games open as you play"><span class="ico">🔒</span><b>${locked} more</b><small>open as you play</small></div>` : ""}</div></div>`);
   WR.$("#doorBack").onclick = () => WR.go("realm", rid);
-  // 🌳 Beyond the screen sits inside Play. The module is fetched the first time this door opens.
-  if (d.id === "play" && !WR.Beyond) WR.lazy("js/beyond.js").then(() => { if (WR.$("#doorBack") && !WR.$("[data-beyond]")) WR.screens.door({ rid, door }); });
   const tapped = x => { if (!seen.includes(x)) { seen.push(x); WR.save(); } };
   open.forEach(g => { const el = WR.$(`#bonusRow [data-${g.data}]`); if (el) el.onclick = () => { tapped(g.data); g.open(); }; });
   const more = WR.$(".bonus-more"); if (more) more.onclick = () => WR.toast("🎁 Finish lessons on Today's path to open more games here!", 2400);

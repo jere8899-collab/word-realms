@@ -147,6 +147,7 @@ const SAVE = { v: 1, name: 'Mei', avatar: 'avatar_girl', startLevel: 'a1', stars
   if (await page.$('.pgate')) { const a = await page.evaluate(() => WR.parentGate._answer()); for (const d of a) await page.click(`.pgate [data-d="${d}"]`); await page.click('#pgOk'); }
   await page.waitForSelector('#thirstLine', { timeout: 15000 });
   ok((await page.innerText('#thirstN')).trim() === '3', 'the report lists the stars lost this week');
+  await page.locator('#thirstLine').scrollIntoViewIfNeeded();
   await page.screenshot({ path: OUT + 'garden_360_report.png' });
 
   const B = await ctx.newPage();

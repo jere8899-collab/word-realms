@@ -214,7 +214,5 @@ WR.Beyond = {
   open(id, kind) { WR._beyondId = id; WR.go("beyond", { id, kind: kind || "hub" }); }
 };
 (WR.reportCards = WR.reportCards || []).push(() => WR.Beyond.card());
-WR.addBonus({ data: "beyond", door: "play", open: rid => { WR._beyondId = rid && PACKS.some(p => p.id === rid) ? rid : current(); WR.go("beyond", { id: WR._beyondId }); },
-  tile: () => WR.bonusTile({ cls: "beyond-tile", data: "beyond", ico: '<span class="ico">🌳</span>', title: "Beyond the screen", desc: "Paper, posters and play together", crowns: WR.crownCell(null), tag: "Off the phone" }) });
 WR.screens.beyond = arg => { WR._beyondId = (arg && arg.id) || current(); paint(arg && arg.id ? arg : { id: WR._beyondId }); };
 })();
