@@ -93,7 +93,7 @@ if (!document.getElementById("beyondCss")) {
 .by-lv{display:block;width:100%;box-sizing:border-box;margin:6px 0}
 .by-sheet{background:#fffef8;border-radius:18px;padding:14px;overflow-wrap:anywhere}
 .by-line{height:28px;border-bottom:1px solid #e4d4f5;margin:8px 0}
-.by-slot{width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;background:linear-gradient(160deg,#fff,#ffe0ec);margin:0 auto 8px}
+.by-pic{display:block;width:100%;height:auto;border-radius:18px;margin:0 0 12px}
 .by-poster{border-radius:22px;padding:16px;background:linear-gradient(165deg,#fff6fb,#e7f7ff);border:3px solid #fff;text-align:center}
 .by-info{display:flex;flex-direction:column;gap:8px}
 .by-step{display:flex;gap:8px;align-items:center;background:#fff;border-radius:14px;padding:8px}
@@ -121,10 +121,15 @@ function confirm(id, kind) {
     WR.go("beyond", { id, kind });
   }, { why: "A grown-up confirms this away-from-the-screen task." });
 }
+const PIC = { read: "beyond_paper", poster: "beyond_poster", info: "beyond_infographic", advert: "beyond_hawker", play: "beyond_play" };
+function pic(slot, alt) {
+  const id = PIC[slot];
+  return `<img class="by-pic" data-slot="${slot}" src="assets/web/${id}.webp" alt="${esc(alt)}" decoding="async" onerror="this.onerror=null;this.src='assets/lessons/${id}.jpg'">`;
+}
 function sheet(p) {
   const o = p.off;
   return `<article class="by-sheet" id="printSheet"><p class="muted">${esc(p.label)} · on paper</p><h2>${esc(o.title)}</h2>
-    <div class="by-slot" data-slot="read" aria-hidden="true">📖</div>
+    ${pic("read", "Nova and Puffbun reading a paper book")}
     <p>${esc(o.story)}</p>
     <h3>Write your answers</h3>
     ${o.lines.map(q => `<p><b>${esc(q)}</b></p><div class="by-line"></div><div class="by-line"></div>`).join("")}
@@ -139,7 +144,7 @@ function viewHTML(p) {
     ? `<div class="by-info">${v.points.map((t, i) => `<div class="by-step"><b>${i + 1}</b><span>${esc(t)}</span></div>`).join("")}</div>`
     : `<ul>${v.points.map(t => `<li>${esc(t)}</li>`).join("")}</ul>`;
   const cls = v.kind === "advert" ? "by-advert" : "by-poster";
-  return `<div class="${cls}" id="viewCard"><div class="by-slot" data-slot="${slot}" aria-hidden="true">${v.kind === "advert" ? "🏷️" : v.kind === "info" ? "📊" : "🪧"}</div>
+  return `<div class="${cls}" id="viewCard">${pic(slot, v.title)}
     <h2>${esc(v.title)}</h2>${price}<p>${esc(v.lead)}</p>${body}</div>`;
 }
 function paint(arg) {
@@ -180,10 +185,11 @@ function chip(p) {
 let round = null;
 function playHTML(p) {
   round = round && round.id === p.id ? round : { id: p.id, i: 0, phase: "pass", score: 0 };
+  const art = pic("play", "A parent and a child sharing one phone");
   const t = p.play.turns[round.i];
-  if (!t) return `<h2>🤝 ${esc(p.play.title)}</h2><p>You finished the round together. Score ${round.score} of ${p.play.turns.length}. Nothing was saved except a grown-up's star confirm, if you tap it.</p><button class="btn by-ready" id="byAgain">Play again</button><div class="row">${`<button class="btn mint by-ready" id="byConfirm">👪 We did this · up to ${STAR}⭐</button>`}</div>`;
-  if (round.phase === "pass") return `<h2>Pass the phone</h2><p>Hand the phone to the <b>${esc(t.who)}</b>. No new account, and the answers are not stored.</p><button class="btn mint by-ready" id="byReady">${esc(t.who)} is ready</button>`;
-  return `<h2>${esc(t.who)}</h2><p style="font-weight:800">${esc(t.q)}</p><div class="by-choices">${t.choices.map((c, n) => `<button class="btn by-choice" data-n="${n}">${esc(c)}</button>`).join("")}</div>`;
+  if (!t) return `${art}<h2>🤝 ${esc(p.play.title)}</h2><p>You finished the round together. Score ${round.score} of ${p.play.turns.length}. Nothing was saved except a grown-up's star confirm, if you tap it.</p><button class="btn by-ready" id="byAgain">Play again</button><div class="row">${`<button class="btn mint by-ready" id="byConfirm">👪 We did this · up to ${STAR}⭐</button>`}</div>`;
+  if (round.phase === "pass") return `${art}<h2>Pass the phone</h2><p>Hand the phone to the <b>${esc(t.who)}</b>. No new account, and the answers are not stored.</p><button class="btn mint by-ready" id="byReady">${esc(t.who)} is ready</button>`;
+  return `${art}<h2>${esc(t.who)}</h2><p style="font-weight:800">${esc(t.q)}</p><div class="by-choices">${t.choices.map((c, n) => `<button class="btn by-choice" data-n="${n}">${esc(c)}</button>`).join("")}</div>`;
 }
 function bindPlay(p) {
   const ready = WR.$("#byReady"), again = WR.$("#byAgain");

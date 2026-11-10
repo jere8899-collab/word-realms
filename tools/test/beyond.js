@@ -52,7 +52,7 @@ const SAVE = { v: 1, name: 'Mei', avatar: 'avatar_girl', startLevel: 'a1', stars
 
   {
     const page = await open({ width: 360, height: 740 });
-    ok(!page.reqs.some(u => /\/js\/beyond\.js/.test(u)), 'the home screen does not download beyond.js');
+    ok(!page.reqs.some(u => /\/js\/beyond\.js|beyond_(paper|poster|infographic|hawker|play)\./.test(u)), 'the home screen does not download beyond.js or its pictures');
     await page.evaluate(() => WR.go('report', 'week'));
     await page.waitForSelector('.pgate'); await pass(page);
     await page.waitForSelector('#beyondCard', { timeout: 15000 });
@@ -85,6 +85,8 @@ const SAVE = { v: 1, name: 'Mei', avatar: 'avatar_girl', startLevel: 'a1', stars
     await page.evaluate(() => WR.Beyond.open('p3', 'view'));
     await page.waitForSelector('#viewCard');
     ok(/S\$3/.test(await page.innerText('#viewCard')), 'the Primary 3 advert shows S$3');
+    await page.waitForFunction(() => { const im = document.querySelector('#viewCard .by-pic'); return im && im.complete && im.naturalWidth === 960; });
+    ok(await page.evaluate(() => { const im = document.querySelector('#viewCard .by-pic'), h = document.querySelector('#viewCard h2').getBoundingClientRect(), r = im.getBoundingClientRect(); return /beyond_hawker\.webp/.test(im.currentSrc || im.src) && r.bottom <= h.top + 1 && getComputedStyle(im).opacity === '1'; }), 'the hawker picture sits above the words, full size, faces not cropped by the frame');
     await solid(page, '#beyond');
     await page.evaluate(() => document.querySelectorAll('.toast').forEach(e => e.remove()));
     await page.screenshot({ path: OUT + 'beyond_360_view.png' });
