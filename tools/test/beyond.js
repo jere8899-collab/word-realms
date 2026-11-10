@@ -28,6 +28,18 @@ const SAVE = { v: 1, name: 'Mei', avatar: 'avatar_girl', startLevel: 'a1', stars
     return page;
   }
   const pass = async page => { if (!(await page.$('.pgate'))) return; const a = await page.evaluate(() => WR.parentGate._answer()); for (const d of a) await page.click(`.pgate [data-d="${d}"]`); await page.click('#pgOk'); };
+  // .fade-in runs for 0.35s from opacity 0. A shot in that window looks washed out; the settled screen is opacity 1.
+  const solid = async (page, sel) => {
+    await page.waitForSelector(sel);
+    await page.evaluate(sel => new Promise(resolve => {
+      const el = document.querySelector(sel);
+      let done = false; const finish = () => { if (!done) { done = true; resolve(); } };
+      el.addEventListener('animationend', e => { if (e.target === el) finish(); });
+      setTimeout(finish, 1000);
+    }), sel);
+    const style = await page.evaluate(sel => { const cs = getComputedStyle(document.querySelector(sel)); return { opacity: cs.opacity, filter: cs.filter }; }, sel);
+    ok(style.opacity === '1' && (style.filter === 'none' || style.filter === ''), `${sel} is fully opaque after the fade (${style.opacity}, ${style.filter})`);
+  };
   const fit = (page, min = 44) => page.evaluate(min => {
     const bad = [];
     for (const el of document.querySelectorAll('#main button, #beyond button, #printSheet button')) {
@@ -52,6 +64,7 @@ const SAVE = { v: 1, name: 'Mei', avatar: 'avatar_girl', startLevel: 'a1', stars
       const priced = packs.filter(p => p.view.price);
       return priced.every(p => /^(S\$|Free)/.test(p.view.price)) && packs.filter(p => p.track === 'sg' && p.view.kind === 'advert').every(p => /^S\$/.test(p.view.price)) && !/£|pounds/.test(blob);
     }), 'money on a viewing task is Singapore dollars, never pounds');
+    await solid(page, '#report');
     await page.screenshot({ path: OUT + 'beyond_360_report.png', fullPage: true });
     await page.click('#beyondCard .by-lv[data-lv="a1"]');
     await page.waitForSelector('#printSheet');
@@ -61,6 +74,7 @@ const SAVE = { v: 1, name: 'Mei', avatar: 'avatar_girl', startLevel: 'a1', stars
     await page.evaluate(() => { window.print = () => window.__printed(); });
     await page.click('#byPrint');
     ok(printed === 1, 'Print calls window.print once');
+    await solid(page, '#beyond');
     await page.locator('#printSheet').screenshot({ path: OUT + 'beyond_360_print.png' });
     const stars0 = await page.evaluate(() => WR.state.stars);
     await page.click('#byConfirm'); await pass(page); await page.waitForSelector('#beyond');
@@ -71,6 +85,8 @@ const SAVE = { v: 1, name: 'Mei', avatar: 'avatar_girl', startLevel: 'a1', stars
     await page.evaluate(() => WR.Beyond.open('p3', 'view'));
     await page.waitForSelector('#viewCard');
     ok(/S\$3/.test(await page.innerText('#viewCard')), 'the Primary 3 advert shows S$3');
+    await solid(page, '#beyond');
+    await page.evaluate(() => document.querySelectorAll('.toast').forEach(e => e.remove()));
     await page.screenshot({ path: OUT + 'beyond_360_view.png' });
     await page.evaluate(() => { WR.earn().practice = 150; WR.Beyond.open('p1', 'paper'); });
     await page.waitForSelector('#byConfirm');
@@ -79,8 +95,13 @@ const SAVE = { v: 1, name: 'Mei', avatar: 'avatar_girl', startLevel: 'a1', stars
     ok(await page.evaluate(held => WR.state.stars === held && !(WR.state.beyond && WR.state.beyond.done['p1:paper']), held), 'a full practice cap does not mark the task done');
     await page.evaluate(() => { WR.earn().practice = 0; WR.Beyond.open('a1', 'play'); });
     await page.waitForSelector('#byReady');
+    await page.click('#byReady');
+    await page.waitForSelector('.by-choice');
+    await solid(page, '#beyond');
+    await page.evaluate(() => document.querySelectorAll('.toast').forEach(e => e.remove()));
     await page.screenshot({ path: OUT + 'beyond_360_play.png' });
-    for (let i = 0; i < 3; i++) { await page.click('#byReady'); await page.waitForSelector('.by-choice'); await page.locator('.by-choice').nth(0).click(); }
+    await page.locator('.by-choice').nth(0).click();
+    for (let i = 1; i < 3; i++) { await page.click('#byReady'); await page.waitForSelector('.by-choice'); await page.locator('.by-choice').nth(0).click(); }
     await page.waitForSelector('#byAgain');
     ok(await page.evaluate(() => { const s = WR.state; return s.name === 'Mei' && !s.sibling && !s.partner && !(s.beyond && s.beyond.answers); }), 'play together stores no second name and no answers');
     ok(page.errs.length === 0, 'no page errors ' + page.errs.slice(0, 2).join(' | '));

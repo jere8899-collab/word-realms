@@ -141,12 +141,35 @@ const SAVE = { v: 1, name: 'Mei', avatar: 'avatar_girl', startLevel: 'a1', stars
   await page.waitForSelector('#thirstNote');
   ok(/3 plants got thirsty: -3/.test(await page.innerText('#thirstNote')), 'the garden notice names the plants and the stars');
   ok(/within about 10 hour/.test(await page.innerText('#thirstSoon')), 'the heads-up is on the garden');
+  await page.evaluate(sel => new Promise(resolve => {
+    const el = document.querySelector(sel);
+    let done = false; const finish = () => { if (!done) { done = true; resolve(); } };
+    el.addEventListener('animationend', e => { if (e.target === el) finish(); });
+    setTimeout(finish, 1000);
+  }), '.fade-in');
+  const noticeStyle = await page.evaluate(() => { const cs = getComputedStyle(document.querySelector('.fade-in')); return { opacity: cs.opacity, filter: cs.filter }; });
+  ok(noticeStyle.opacity === '1' && (noticeStyle.filter === 'none' || noticeStyle.filter === ''), `the garden notice is fully opaque after the fade (${noticeStyle.opacity})`);
   await page.evaluate(() => document.querySelectorAll('.toast').forEach(e => e.remove()));
   await page.screenshot({ path: OUT + 'garden_360_notice.png' });
+  await page.setViewportSize({ width: 320, height: 740 });
+  const at320 = await page.evaluate(() => {
+    const n = document.querySelector('#thirstNote'), r = n.getBoundingClientRect(), cs = getComputedStyle(n);
+    return { text: n.innerText.replace(/\s+/g, ' '), opacity: getComputedStyle(document.querySelector('.fade-in')).opacity, size: parseFloat(cs.fontSize), left: r.left, right: r.right, w: innerWidth };
+  });
+  ok(at320.opacity === '1' && at320.size >= 14 && at320.left >= -1 && at320.right <= at320.w + 1 && /3 plants got thirsty: -3/.test(at320.text) && /water them to stop it/.test(at320.text), `the notice is readable at 320 px (${at320.size}px, ${Math.round(at320.right)}/${at320.w})`);
+  await page.setViewportSize({ width: 360, height: 740 });
   await page.evaluate(() => WR.go('report', 'week'));
   if (await page.$('.pgate')) { const a = await page.evaluate(() => WR.parentGate._answer()); for (const d of a) await page.click(`.pgate [data-d="${d}"]`); await page.click('#pgOk'); }
   await page.waitForSelector('#thirstLine', { timeout: 15000 });
   ok((await page.innerText('#thirstN')).trim() === '3', 'the report lists the stars lost this week');
+  await page.evaluate(sel => new Promise(resolve => {
+    const el = document.querySelector(sel);
+    let done = false; const finish = () => { if (!done) { done = true; resolve(); } };
+    el.addEventListener('animationend', e => { if (e.target === el) finish(); });
+    setTimeout(finish, 1000);
+  }), '#report');
+  const reportStyle = await page.evaluate(() => { const cs = getComputedStyle(document.querySelector('#report')); return { opacity: cs.opacity, filter: cs.filter }; });
+  ok(reportStyle.opacity === '1' && (reportStyle.filter === 'none' || reportStyle.filter === ''), `the report line is fully opaque after the fade (${reportStyle.opacity})`);
   await page.locator('#thirstLine').scrollIntoViewIfNeeded();
   await page.screenshot({ path: OUT + 'garden_360_report.png' });
 
