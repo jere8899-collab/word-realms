@@ -70,7 +70,7 @@ const SAVE = (x = {}) => ({ v: 1, name: 'Mia', avatar: 'avatar_girl', startLevel
   await load(SAVE({ lessonsDone: 40 }));
   r = await info(); ok(r.bonus.length >= 10 && !r.doors.some(d => d.isNew) && Object.values(r.news).every(n => n === 0), `a long-time player sees all ${r.bonus.length} bonus games, no New! flood`);
   ok(r.choices <= 8, `still at most 4 skills + 3 doors + boss on the realm screen (${r.choices})`);
-  ok(JSON.stringify(r.games) === JSON.stringify({ say: ['Speaking', 'Phonics'], write: ['Writing', 'Spell Swap', 'Word Forge', 'Word Bridges', 'Punctuation Pixies'], play: [r.games.play[0], 'Story', 'Word Charms'] }), 'the doors hold the right games ' + JSON.stringify(r.games));
+  ok(JSON.stringify(r.games) === JSON.stringify({ say: ['Speaking', 'Phonics'], write: ['Writing', 'Spell Swap', 'Word Forge', 'Word Bridges', 'Punctuation Pixies'], play: [r.games.play[0], 'Story', 'Word Charms', 'Beyond the screen'] }), 'the doors hold the right games ' + JSON.stringify(r.games));
   await load(SAVE({ settings: { rate: .9, sound: false, unlockAll: true } }));
   r = await info(); ok(r.bonus.length >= 10, 'Grown-ups "open every realm" opens every bonus game');
   for (const w of [320, 375]) { await page.setViewportSize({ width: w, height: 667 }); await page.evaluate(() => WR.go('realm', 'a1')); await page.waitForTimeout(300);

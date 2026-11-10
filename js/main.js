@@ -227,11 +227,6 @@ WR.bonusOpen = data => { const s = WR.state; return !!(s.settings.unlockAll || (
 WR.bonusSeenInit = () => { const s = WR.state; if (!Array.isArray(s.bonusSeen)) s.bonusSeen = ["sp", ...BONUS.map(b => b.data)].filter(d => (s.lessonsDone || 0) >= WR.bonusAt(d)); return s.bonusSeen; };
 // the gap games (js/gap-round.js) add their own row when they load: Spell Swap, Word Forge, … (row.door, default "write")
 WR.addBonus = row => BONUS.push(Object.assign({ door: "write" }, row));
-// 🌳 Beyond the screen. The tile is registered with the shell so the Play door paints once.
-// js/beyond.js itself stays off the first visit and loads when the tile or the Report opens.
-WR.addBonus({ data: "beyond", door: "play",
-  open: rid => WR.lazy("js/beyond.js").then(() => WR.Beyond.open(WR.Beyond.byId(rid).id === rid ? rid : WR.Beyond.current())),
-  tile: () => WR.bonusTile({ cls: "beyond-tile", data: "beyond", ico: '<span class="ico">🌳</span>', title: "Beyond the screen", desc: "Paper, posters and play together", crowns: WR.crownCell(null), tag: "Off the phone" }) });
 const DOORS = WR.DOORS = [
   { id: "say", icon: "🎤", name: "Say it", desc: "Speak and sound out" },
   { id: "write", icon: "✍️", name: "Write it", desc: "Write, swap and fix words" },
@@ -392,6 +387,8 @@ async function boot() {
   if (app && !document.getElementById("main")) app.innerHTML = `<div id="top"></div><div id="main"></div>`;
   try { await WR.init(); }
   catch (e) { app.innerHTML = `<div class="card center" style="margin-top:40px"><h2>😿 Couldn't load the game data</h2><p>Run it from a web server: <code>python3 -m http.server</code> in the game folder, then open <code>http://localhost:8000</code>.</p><pre>${WR.esc(e.message)}</pre></div>`; return; }
+  // A lesson can open while the banks are still loading. Don't send that screen back to the map.
+  if (current !== "home") { WR.renderTop(); const n = WR.$("#navbar"); if (n) n.style.display = "flex"; return; }
   if (!WR.state.pet || !WR.state.name) { app.innerHTML = `<div id="top"></div><div id="main"></div>`; onboarding(); }
   else start();
 }

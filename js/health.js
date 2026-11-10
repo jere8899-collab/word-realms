@@ -66,3 +66,8 @@ H.bindRows = bg => { const c = cfg();
   bg.querySelector("#guLimit").onchange = e => { c.limit = +e.target.value; c.until = 0; WR.save(); WR.toast(c.limit ? `⏳ Daily playtime: ${c.limit} minutes` : "⏳ Daily playtime: off"); };
   bg.querySelector("#guBed").onchange = e => { c.bed = e.target.value; c.until = 0; WR.save(); WR.toast(c.bed ? `🌙 Bedtime ${fmtBed(c.bed)}: screens rest from then until 5 am` : "🌙 Bedtime: off"); }; };
 })();
+// 🌳 Beyond the screen joins Play after every other bonus game, so their unlock counts stay put.
+// The module itself loads on tap. This file is last, so the tile is in the first paint.
+WR.addBonus({ data: "beyond", door: "play",
+  open: rid => WR.lazy("js/beyond.js").then(() => WR.Beyond.open(WR.Beyond.byId(rid).id === rid ? rid : WR.Beyond.current())),
+  tile: () => WR.bonusTile({ cls: "beyond-tile", data: "beyond", ico: '<span class="ico">🌳</span>', title: "Beyond the screen", desc: "Paper, posters and play together", crowns: WR.crownCell(null), tag: "Off the phone" }) });

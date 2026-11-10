@@ -61,8 +61,7 @@ const SAVE = { v: 1, name: 'Mei', avatar: 'avatar_girl', startLevel: 'a1', stars
     await page.evaluate(() => { window.print = () => window.__printed(); });
     await page.click('#byPrint');
     ok(printed === 1, 'Print calls window.print once');
-    await page.evaluate(() => window.scrollTo(0, 0));
-    await page.screenshot({ path: OUT + 'beyond_360_print.png', fullPage: true });
+    await page.locator('#printSheet').screenshot({ path: OUT + 'beyond_360_print.png' });
     const stars0 = await page.evaluate(() => WR.state.stars);
     await page.click('#byConfirm'); await pass(page); await page.waitForSelector('#beyond');
     ok(await page.evaluate(() => WR.state.stars) === stars0 + 2, 'a grown-up confirm pays 2 stars');
