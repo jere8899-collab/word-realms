@@ -23,7 +23,6 @@ function st() {
   s.mistakes.forEach(m => { if (!m.id) { m.id = "old_" + hash((m.q || "") + "|" + (m.correct || "")); m.box = m.box || 0; m.due = m.due || m.at || Date.now(); if (!m.options && m.type !== "order") m.legacy = true; } });
   return s;
 }
-const active = () => st().mistakes.filter(m => !m.bloomed);
 const isDue = (m, now = Date.now()) => !m.legacy && m.due <= now;   // bloomed plants too, when their rare visit is due
 
 // a plant back as a lesson item: items with _raw are rebuilt in full (with their passage); older ones from what was saved
@@ -52,8 +51,10 @@ const Garden = WR.Garden = {
   },
   // one watering answer, on the one review rule (WR.Review.step): returns { bloomed: newly bloomed, box, moved, pay }
   grade(id, ok) {
+    const now = Date.now();
+    Garden.settle(now);                                            // charge thirsty days up to the drink, then the schedule moves
     const m = st().mistakes.find(x => x.id === id); if (!m) return null;
-    const now = Date.now(), rec = { s: m.box || 0, d: m.due, t: m.t || m.at, n: m.n || 1, l: m.l != null ? m.l : 0, r: m.r, w: m.w };
+    const rec = { s: m.box || 0, d: m.due, t: m.t || m.at, n: m.n || 1, l: m.l != null ? m.l : 0, r: m.r, w: m.w };
     WR.Review.kept(rec, ok, now);                                  // 🧠 first watering after 25+ days counts in the Report
     const res = WR.Review.step(rec, ok, now, { wrongDays: 0 });   // a wrong answer: a seed again, thirsty now
     m.box = rec.s; m.due = rec.d; m.t = rec.t; m.n = rec.n; m.l = rec.l; m.r = rec.r; m.w = rec.w;
@@ -97,6 +98,120 @@ function when(ts) {
   return `in ${days} day${days > 1 ? "s" : ""}`;
 }
 
+/* 🌷 Thirst (Task 11). The clock starts when a plant is ready to water (its due time), not when the
+   mistake was made, and not before garden.thirstAt (the update), so an old save is not back-charged.
+   One star after 24 hours of unpaused thirsty time, then one more star per further full day. No daily
+   cap. The star balance stops at 0. Pets, skins and items are never touched.
+   Paused time is the union of: the calendar day in streak.rest; each night from settings.health.bed
+   until 05:00 when a bedtime is set (a grown-up's extra minutes are cut back out); and recorded
+   daily-limit stops in garden.stops, from the moment the app notices play is stopped until play is
+   allowed or the next local midnight. Limit pauses exist only while a daily limit is on. */
+const HOUR = 36e5;
+const gstore = () => { const g = st().garden; g.thirst = g.thirst || { taken: 0, weekKey: "", weekN: 0, notice: null }; g.stops = g.stops || []; return g; };
+const dayStart = ts => { const d = new Date(ts); d.setHours(0, 0, 0, 0); return d.getTime(); };
+const mondayKey = ts => { const d = new Date(ts); d.setHours(12, 0, 0, 0); d.setDate(d.getDate() - ((d.getDay() + 6) % 7)); return WR.dayKey(d.getTime()); };
+const mergeIv = list => { const out = []; list.filter(x => x[1] > x[0]).sort((a, b) => a[0] - b[0]).forEach(iv => { const last = out[out.length - 1]; if (!last || iv[0] > last[1]) out.push([iv[0], iv[1]]); else last[1] = Math.max(last[1], iv[1]); }); return out; };
+const cutHole = (list, hole) => { if (!hole) return list; const [hs, he] = hole, out = []; list.forEach(([a, b]) => { if (he <= a || hs >= b) out.push([a, b]); else { if (hs > a) out.push([a, hs]); if (he < b) out.push([he, b]); } }); return out; };
+Garden.pausedMs = (from, to, state = WR.state) => {
+  if (!(to > from) || !state) return 0;
+  const iv = [], add = (a, b) => { const s = Math.max(from, a), e = Math.min(to, b); if (e > s) iv.push([s, e]); };
+  const rest = state.streak && state.streak.rest;
+  if (typeof rest === "string" && /^\d{4}-\d\d-\d\d$/.test(rest)) { const p = rest.split("-").map(Number), start = new Date(p[0], p[1] - 1, p[2]).getTime(); add(start, start + DAY); }
+  const h = (state.settings && state.settings.health) || {};
+  if (h.bed && /^\d{1,2}:\d{2}$/.test(h.bed)) {
+    const [hh, mm] = h.bed.split(":").map(Number), bedMin = hh * 60 + mm, morning = ((WR.HEALTH && WR.HEALTH.morningH) || 5) * 60;
+    for (let t = dayStart(from) - DAY; t < to; t += DAY) add(t + bedMin * 60000, t + DAY + morning * 60000);
+  }
+  ((state.garden && state.garden.stops) || []).forEach(x => { if (x && x.s && (!x.why || x.why === "limit") && (((state.settings || {}).health || {}).limit > 0)) add(x.s, x.e || to); });
+  let merged = mergeIv(iv);
+  if (h.until) merged = cutHole(merged, [h.until - ((WR.HEALTH && WR.HEALTH.extraMin) || 15) * 60000, h.until]);
+  return merged.reduce((n, [a, b]) => n + (b - a), 0);
+};
+Garden.plan = (m, now, state = WR.state) => {
+  const epoch = (state.garden && state.garden.thirstAt) || now;
+  if (!m || m.legacy || !(typeof m.due === "number") || m.due > now) return { ready: false, owed: 0, paid: 0 };
+  const prev = m.thirst && m.thirst.due === m.due ? m.thirst : null;
+  const from = prev ? prev.from : Math.max(m.due, epoch);
+  const elapsed = Math.max(0, now - from - Garden.pausedMs(from, now, state));
+  return { ready: true, owed: Math.floor(elapsed / DAY), paid: prev ? (prev.paid || 0) : 0, from, due: m.due };
+};
+const trackLimit = now => {
+  const g = gstore(), h = (WR.state.settings && WR.state.settings.health) || {};
+  const stopped = h.limit > 0 && WR.HEALTH && WR.HEALTH.restReason(now) === "limit";
+  g.stops.forEach(x => { if (x && x.why === "limit" && !x.e && now >= dayStart(x.s) + DAY) x.e = dayStart(x.s) + DAY; });
+  if (!stopped) g.stops.forEach(x => { if (x && x.why === "limit" && !x.e) x.e = now; });
+  else if (!g.stops.some(x => x && x.why === "limit" && !x.e)) g.stops.push({ why: "limit", s: now, e: 0 });
+};
+const adoptAhead = () => {
+  try {
+    const disk = JSON.parse(localStorage.getItem("wordRealms.save.v1") || "null");
+    const dt = disk && disk.garden && disk.garden.thirst && disk.garden.thirst.taken || 0;
+    const mt = WR.state.garden && WR.state.garden.thirst && WR.state.garden.thirst.taken || 0;
+    if (disk && disk.v === 1 && dt > mt) { WR.state = WR.load(); return true; }
+  } catch (e) { /* keep the copy already in memory */ }
+  return false;
+};
+Garden.soon = (now = Date.now()) => {
+  const s = st(); let n = 0, leftMin = Infinity;
+  s.mistakes.forEach(m => {
+    const p = Garden.plan(m, now, s); if (!p.ready) return;
+    const into = Math.max(0, now - p.from - Garden.pausedMs(p.from, now, s)) % DAY, left = into === 0 ? DAY : DAY - into;
+    if (left <= 12 * HOUR) { n++; leftMin = Math.min(leftMin, left); }
+  });
+  return n ? { n, hours: Math.max(1, Math.round(leftMin / HOUR)) } : null;
+};
+Garden.settle = (now = Date.now()) => {
+  if (!WR.state) return { take: 0, plants: 0 };
+  if (adoptAhead()) return Garden.settle(now);
+  const s = st(), g = gstore(), first = !g.thirstAt;
+  if (!g.thirstAt) g.thirstAt = now;
+  const before = JSON.stringify(g.stops);
+  trackLimit(now);
+  let take = 0; const who = [];
+  s.mistakes.slice().sort((a, b) => String(a.id).localeCompare(String(b.id))).forEach(m => {
+    const p = Garden.plan(m, now, s);
+    if (!p.ready) { if (m.thirst) delete m.thirst; return; }
+    const got = Math.min(Math.max(0, p.owed - p.paid), Math.max(0, (s.stars || 0) - take));
+    m.thirst = { due: p.due, from: p.from, paid: p.paid + got };
+    if (got) { take += got; who.push(m.id); }
+  });
+  if (take) {
+    s.stars -= take; g.thirst.taken = (g.thirst.taken || 0) + take;
+    const wk = mondayKey(now);
+    if (g.thirst.weekKey !== wk) { g.thirst.weekKey = wk; g.thirst.weekN = 0; }
+    g.thirst.weekN = (g.thirst.weekN || 0) + take;
+    g.thirst.notice = { n: take, plants: who.length, at: now };
+    WR.toast && WR.toast(`🌷 ${who.length} plant${who.length > 1 ? "s" : ""} got thirsty: -${take}⭐ — water them to stop it`, 3200);
+  }
+  if (take || before !== JSON.stringify(g.stops)) WR.save();
+  return { take, plants: who.length };
+};
+Garden.merge = (state, other) => {
+  if (!state || !other) return state;
+  state.garden = Object.assign({ bloomed: 0, rounds: 0 }, state.garden);
+  const gs = state.garden, go = other.garden || {}, had = (gs.thirst && gs.thirst.taken) || 0, ot = (go.thirst && go.thirst.taken) || 0, taken = Math.max(had, ot);
+  const weekKey = [gs.thirst && gs.thirst.weekKey, go.thirst && go.thirst.weekKey].filter(Boolean).sort().pop() || "";
+  const weekN = Math.max(gs.thirst && gs.thirst.weekKey === weekKey ? gs.thirst.weekN || 0 : 0, go.thirst && go.thirst.weekKey === weekKey ? go.thirst.weekN || 0 : 0);
+  if (gs.thirstAt || go.thirstAt) gs.thirstAt = Math.min(gs.thirstAt || Infinity, go.thirstAt || Infinity);
+  gs.thirst = Object.assign({ taken: 0, weekKey: "", weekN: 0, notice: null }, gs.thirst, go.thirst, { taken, weekKey, weekN });
+  if (taken > had) state.stars = Math.max(0, (state.stars || 0) - (taken - had));
+  const byId = {}; (other.mistakes || []).forEach(m => { if (m && m.id) byId[m.id] = m; });
+  (state.mistakes || []).forEach(m => {
+    const o = byId[m.id]; if (!o || !o.thirst) return;
+    if (!m.thirst || m.thirst.due !== o.thirst.due) { if ((o.thirst.paid || 0) >= ((m.thirst && m.thirst.paid) || 0)) m.thirst = Object.assign({}, o.thirst); }
+    else m.thirst.paid = Math.max(m.thirst.paid || 0, o.thirst.paid || 0);
+  });
+  const seen = new Set();
+  gs.stops = (gs.stops || []).concat(go.stops || []).filter(x => { if (!x || !x.s) return false; const k = (x.why || "") + ":" + x.s; if (seen.has(k)) return false; seen.add(k); return true; });
+  return state;
+};
+Garden.reportLine = d => {
+  const t = (WR.state.garden && WR.state.garden.thirst) || {}, all = d && d.range === "all", wk = mondayKey(Date.now());
+  const n = all ? (t.taken || 0) : (t.weekKey === wk ? t.weekN || 0 : 0);
+  return `<div class="card rp-card" id="thirstLine"><h2>🌷 Thirsty plants</h2><p>Stars lost ${all ? "in all" : "this week"}: <b id="thirstN">${n}</b>. A plant costs 1 star after it has been ready to water for 24 hours, then 1 more each full day. Watering stops it. Stars never go below 0.</p></div>`;
+};
+(WR.reportCards = WR.reportCards || []).push(d => Garden.reportLine(d));
+
 /* ---------------- screen ---------------- */
 WR.screens.review = () => {
   const s = st(); const all = s.mistakes, act = all.filter(m => !m.bloomed), bl = all.filter(m => m.bloomed);
@@ -109,7 +224,10 @@ WR.screens.review = () => {
       <span class="plant">${g.e}</span><span class="pl-meta"><span class="pill">${meta(m).lvl}</span> ${meta(m).ico}</span>
       <span class="pl-q">${WR.esc(m.q.length > 60 ? m.q.slice(0, 58) + "…" : m.q)}</span>
       <span class="pl-due">${m.legacy ? "tip card 📜" : g.n + " · " + when(m.due)}</span></button>`; };
+  const soon = Garden.soon(), note = s.garden.thirst && s.garden.thirst.notice;
   WR.view(`<div class="fade-in"><h1>🌷 Mistake Garden</h1>
+    ${note ? `<div class="card" id="thirstNote">🌷 ${note.plants} plant${note.plants > 1 ? "s" : ""} got thirsty: -${note.n}⭐ — water them to stop it</div>` : ""}
+    ${soon ? `<p class="muted" id="thirstSoon" style="font-weight:800">🌷 ${soon.n} plant${soon.n > 1 ? "s" : ""} will start costing a star within about ${soon.hours} hour${soon.hours > 1 ? "s" : ""}. A drink stops it.</p>` : ""}
     <div class="card garden-head"><div class="petbox ${due ? "bounce" : ""}" style="width:120px;height:120px">${WR.petHTML()}</div>
       <div style="flex:1"><h2 style="margin:0">${due ? `${due} plant${due > 1 ? "s are" : " is"} thirsty! 💧` : act.length ? "Your garden is happy 🌤️" : "An empty garden, ready for seeds 🌱"}</h2>
       <p class="muted" style="font-weight:700;margin:.3em 0">Every mistake is planted as a seed. Answer it right on later days and it grows 🌰→🌱→🌿→🌷→🌸, and each time it rests longer. Bloomed flowers still pop back now and then for a drink. Slip up and it goes back to a seed, so the tricky ones come back more often.</p>
@@ -134,4 +252,10 @@ WR.screens.review = () => {
   });
   Garden.badge();
 };
+if (WR.init && !WR.init._thirst) {
+  const init0 = WR.init;
+  WR.init = async function () { const r = await init0.apply(this, arguments); try { Garden.settle(); } catch (e) { /* a clock problem must not block the map */ } return r; };
+  WR.init._thirst = 1;
+}
+document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible" && WR.state && WR.state.pet) Garden.settle(); });
 })();

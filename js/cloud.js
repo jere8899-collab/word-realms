@@ -118,6 +118,7 @@ const keepEarn = other => { if (other && samePlayer()) { WR.state.earn = WR.merg
   WR.state.clock = WR.mergeClock(WR.state.clock, other.clock);   // R22/N1: the later game day wins, capped at the server date
   if (WR.Review) WR.state.review = WR.Review.merge(WR.state.review, other.review);   // 🔁 BRIEF-T2: per item, the later answer wins
   if (WR.Think && (WR.state.think || other.think)) WR.state.think = WR.Think.merge(WR.state.think, other.think);   // 🧠 the richer confidence note survives a sync
+  if (WR.Garden && WR.Garden.merge) WR.Garden.merge(WR.state, other);   // 🌷 the higher thirst charge wins, and it is not taken twice
   WR.mergePass(WR.state, other);   // 🏁 BRIEF-T4: kept realms/bosses and every skill's pass + confirmation survive the sync
   rawSave(); } };
 C.apply = (data, at) => {
