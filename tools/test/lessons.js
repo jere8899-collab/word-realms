@@ -1,4 +1,4 @@
-// 📜 Lessons (LESSONS-PLAN.md, js/learn.js): A1 English + Grade 2 maths (+ MA-3 G1 when art lands). Widget kit includes shapecount and line (EN-4c).
+// 📜 Lessons (LESSONS-PLAN.md, js/learn.js): A1 English + Grade 2 maths (+ MA-3 G1 when art lands). Widget kit includes shapecount, line (EN-4c) and fence (MA-4b).
 //   node tools/test/lessons.js        (SHOT=1 saves screenshots/lessons_*.png at 390 px)
 // Covers: every pilot lesson played start → scroll by TAP; drag (pointer) on sort / place value / spots / line; the re-teach path
 // (a different explanation, NEW questions, why-not notes); stars once ever (anti-farm); a lesson failed twice still
@@ -9,7 +9,7 @@
 const { chromium } = require('playwright-core');
 const BASE = (process.env.BASE || 'http://127.0.0.1:18642/').replace(/\/?$/, '/');
 const OUT = '/workspace/cefr-quest/screenshots/';
-const MIN_LESSONS = 56;
+const MIN_LESSONS = 60;
 let fails = 0, passes = 0;
 const ok = (c, m) => { if (!c) { fails++; console.error('FAIL', m); process.exitCode = 1; } else { passes++; console.log('ok', m); } };
 const today = () => { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
@@ -91,6 +91,11 @@ const HELPERS = () => {
         if (!b) throw new Error('shapecount: missing hit ' + k + ' for ' + s.shape);
         tap(b); await sleep(20);
       }
+      await sleep(950);
+    }
+    if (w.kind === 'fence') for (const s of w.stages) {
+      const sides = $$('#lnW .fn-side:not(.on)'); if (sides.length !== s.pts.length) throw new Error('fence: ' + sides.length + ' sides for ' + s.pts.length + ' corners');
+      for (const b of sides) { tap(b); await sleep(20); }
       await sleep(950);
     }
     await sleep(50); return !$('#lnGo').hidden;
@@ -234,6 +239,21 @@ const HELPERS = () => {
     await page.evaluate(k => document.querySelector(`#lnW .lw-pool [data-k="${k}"]`).scrollIntoView({ block: 'center' }), k);
     await drag(`#lnW .lw-pool [data-k="${k}"]`, `#lnW .lw-rung[data-k="${k}"]`); }
   ok(await page.evaluate(() => document.querySelectorAll('#lnW .lw-rung.done .lw-chip').length === 5 && !document.querySelector('#lnW .lw-pool [data-src]') && !document.querySelector('#lnGo').hidden), 'line: every word dragged onto its step finishes the discovery');
+  // 🌷 fence (MA-4b perimeter): a real tap on a side walks it; the inside of the garden and a side walked twice are gentle misses
+  await toDiscover('m.g3.perim');
+  await page.click('#lnW .fn-side[data-i="0"]');
+  ok(await page.evaluate(() => document.querySelector('#lnW .fn-side[data-i="0"]').classList.contains('on') && /Fence walked: 6 = 6 m/.test(document.querySelector('.fn-sum').textContent)), 'fence: tapping a side walks it and the running sum shows 6 m');
+  await page.click('#lnW .fn-side[data-i="0"]');
+  ok(await page.evaluate(() => /already walked/.test(document.querySelector('#lnMsg').textContent) && /= 6 m/.test(document.querySelector('.fn-sum').textContent)), 'fence: tapping a walked side again is a miss and is not counted twice');
+  await page.evaluate(() => document.querySelector('#lnW .fn-in').dispatchEvent(new MouseEvent('click', { bubbles: true })));
+  ok(await page.evaluate(() => /inside of the garden/.test(document.querySelector('#lnMsg').textContent)), 'fence: tapping inside the garden explains that perimeter is the edge');
+  ok(await page.evaluate(() => /Start at one corner/.test((document.querySelector('#lnMsg .ln-hint') || {}).textContent || '')), 'fence: after 2 misses the hint shows');
+  for (const k of [1, 2, 3]) await page.click(`#lnW .fn-side[data-i="${k}"]`);
+  ok(await page.evaluate(() => /6 \+ 4 \+ 6 \+ 4 = 20 m/.test(document.querySelector('.fn-sum').textContent)), 'fence: 4 sides tapped add up to the 20 m perimeter');
+  await page.waitForTimeout(1100);
+  ok(await page.evaluate(() => document.querySelectorAll('#lnW .fn-side').length === 6 && document.querySelector('#lnGo').hidden), 'fence: the next garden (6 sides) appears and the lesson waits for it');
+  for (let k = 0; k < 6; k++) await page.click(`#lnW .fn-side[data-i="${k}"]`);
+  ok(await page.evaluate(() => /= 24 m/.test(document.querySelector('.fn-sum').textContent) && !document.querySelector('#lnGo').hidden && !document.querySelector('#lnW [data-tgt]')), 'fence: all 6 sides of the cut-corner garden make 24 m and finish the discovery');
   if (process.env.SHOT) { await toDiscover('en.a1.an'); await page.evaluate(() => { const c = document.querySelectorAll('#lnW .lw-pool [data-src]'); const it = WR.Learn._S().L.discover.items; [0, 1].forEach(j => { c[j].click(); document.querySelector(`#lnW [data-b="${it[+c[j].dataset.k].bin}"]`).click(); }); c[2].click(); });
     await page.waitForTimeout(250); await page.screenshot({ path: OUT + 'lessons_discover.png' });
     await toDiscover('m.g2.add'); await page.evaluate(() => { for (let k = 0; k < 2; k++) document.querySelector('#lnW .rg-one').click(); }); await page.waitForTimeout(250); await page.screenshot({ path: OUT + 'lessons_discover_maths.png' });
@@ -241,7 +261,8 @@ const HELPERS = () => {
     await toDiscover('en.a1.place2'); await page.waitForTimeout(250); await page.screenshot({ path: OUT + 'lessons_discover_park.png' });
     await toDiscover('m.g2.sub'); await page.waitForTimeout(250); await page.screenshot({ path: OUT + 'lessons_discover_rename.png' });
     await toDiscover('m.g2.time'); await page.waitForTimeout(250); await page.screenshot({ path: OUT + 'lessons_discover_clock.png' });
-    await toDiscover('en.a2.freq'); await page.evaluate(() => { const c = document.querySelector('#lnW .lw-pool [data-k="0"]'); c.click(); document.querySelector('#lnW .lw-rung[data-k="0"]').click(); }); await page.waitForTimeout(250); await page.screenshot({ path: OUT + 'lessons_discover_line.png' }); }
+    await toDiscover('en.a2.freq'); await page.evaluate(() => { const c = document.querySelector('#lnW .lw-pool [data-k="0"]'); c.click(); document.querySelector('#lnW .lw-rung[data-k="0"]').click(); }); await page.waitForTimeout(250); await page.screenshot({ path: OUT + 'lessons_discover_line.png' });
+    await toDiscover('m.g3.perim'); await page.evaluate(() => { document.querySelector('#lnW .fn-side[data-i="0"]').click(); document.querySelector('#lnW .fn-side[data-i="1"]').click(); }); await page.waitForTimeout(250); await page.screenshot({ path: OUT + 'lessons_discover_fence.png' }); }
   ok(!page.errs.length, 'no page errors while dragging: ' + page.errs.join(' | '));
   await ctx.close();
 

@@ -13,7 +13,7 @@ WIDGETS = {   # kind → required fields (LESSONS-PLAN.md §2 widget kit; js/lea
     "pv": ["targets"], "regroup": ["a", "b"], "groups": ["rings", "each"], "share": ["total", "plates"], "frac": ["stages"],
     "rename": ["a", "b"], "money": ["targets"], "clock": ["targets"], "picgraph": ["cats", "key"], "bar": ["start", "sold", "add"],
     "findword": ["story", "tasks"], "spellhear": ["items"], "hearpic": ["items"],
-    "shapecount": ["stages"], "line": ["ends", "items"]}
+    "shapecount": ["stages"], "line": ["ends", "items"], "fence": ["stages"]}
 SCENES = {"table": {"on", "under", "in"}, "bed": {"on", "under", "in"}, "nearfar": {"near", "far"}, "park": {"nextto", "behind", "front"}}
 NUMW = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight"}
 DEN = {2: ("half", "halves"), 3: ("third", "thirds"), 4: ("quarter", "quarters"), 5: ("fifth", "fifths"), 6: ("sixth", "sixths"), 8: ("eighth", "eighths")}
@@ -22,6 +22,18 @@ def frac_words(a, b):
     if b in DEN and a in NUMW: return f"{NUMW[a]} {DEN[b][0] if a == 1 else DEN[b][1]}"
     return f"{a} out of {b}"
 def dollars(n): return f"{int(n)} dollar{'' if int(n) == 1 else 's'}"
+UNIT_W = {"mℓ": "millilitre", "ℓ": "litre", "kg": "kilogram", "km": "kilometre", "cm": "centimetre", "g": "gram", "m": "metre", "h": "hour", "min": "minute"}
+def units(t):
+    """MA-4b: 2 m 35 cm → 2 metres 35 centimetres (1 kg → 1 kilogram); only right after a number, so words like "a.m." stay
+    (the clock widget's "5 min ⏩" button name is read as written)"""
+    t = re.sub(r"(?<![\d.:])(\d+) (mℓ|ℓ|kg|km|cm|g|m|h|min)(?![\wℓ]|\.\w| ⏩)", lambda m: f"{m.group(1)} {UNIT_W[m.group(2)]}{'' if m.group(1) == '1' else 's'}", t)
+    t = re.sub(r" \((?:mℓ|ℓ|kg|cm|g|m)\)", "", t)   # "metres (m)": the unit's name is already said
+    return t.replace("mℓ", "millilitres").replace("ℓ", "litres")
+def clock24(t):
+    """MA-4b: 24-hour times are read like a station clock: 07:15 → oh 7 15, 00:10 → zero zero 10, 18:00 → 18 hundred"""
+    t = re.sub(r"(?<![\d:])(1[3-9]|2[0-3]):00(?!\d)", r"\1 hundred", t)
+    t = re.sub(r"(?<![\d:])00:(\d\d)(?!\d)", lambda m: "zero zero " + ("hundred" if m.group(1) == "00" else str(int(m.group(1))) if m.group(1)[0] != "0" else "oh " + m.group(1)[1]), t)
+    return re.sub(r"(?<![\d:])0(\d):(\d\d)(?!\d)", lambda m: f"oh {m.group(1)} " + ("hundred" if m.group(2) == "00" else m.group(2) if m.group(2)[0] != "0" else "oh " + m.group(2)[1]), t)
 def speak(t):
     """the narrator's version of a line: TeX fractions → words, money, maths symbols, emoji dropped by build_voice's norm()"""
     t = re.sub(r"\$\\frac\{(\d+)\}\{(\d+)\}\$", lambda m: frac_words(m.group(1), m.group(2)), str(t))
@@ -30,12 +42,14 @@ def speak(t):
     t = re.sub(r"\\\$(\d+) (note|coin)", r"\1 dollar \2", t)
     t = re.sub(r"\\\$(\d+)", lambda m: dollars(m.group(1)), t)
     t = t.replace("$", "")
+    t = re.sub(r"=\s*\?\s+(minutes|cm|g|mℓ)(?!\w)", lambda m: "equals how many " + {"cm": "centimetres", "g": "grams", "mℓ": "millilitres"}.get(m.group(1), m.group(1)) + "?", t)   # 3 m 40 cm = ? cm (MA-4b)
     t = re.sub(r"=\s*\?", "equals what?", t)
     t = re.sub(r"(\d+)¢ (coin)", r"\1 cent \2", t)
     t = re.sub(r"\b1¢", "1 cent", t)
     t = re.sub(r"(\d+)¢", r"\1 cents", t)
     t = t.replace("×", " times ").replace("÷", " divided by ").replace(" = ", " equals ").replace(" + ", " plus ").replace(" − ", " minus ").replace(" → ", ", ")
     t = re.sub(r"(\d) r (\d)", r"\1 remainder \2", t)   # 14 ÷ 3 = 4 r 2 → "4 remainder 2" (MA-4a)
+    t = clock24(units(t))
     t = t.replace("□", "what number")   # a missing-number box is read as a question, never as a symbol
     t = t.replace("___", "blank").replace("·", ",").replace("\n", " ")
     return re.sub(r"\s+", " ", t).strip()
@@ -138,6 +152,19 @@ def check_widget(lid, w, where):
             ns = [it.get("n") for it in w["items"]]
             if not all(isinstance(n, int) and 0 <= n <= w["of"] <= 10 for n in ns) or ns != sorted(ns, reverse=True) or len(set(ns)) != len(ns):
                 fail(lid, f"{where}: line n must count down from top to bottom (0–of, of ≤ 10): {ns}")
+    if k == "fence":   # MA-4b perimeter: a garden whose corners are listed in order around it, from (0, 0); every side is straight across or down
+        for st in w["stages"]:
+            p = st.get("pts") or []
+            if st.get("unit") not in ("cm", "m") or not st.get("text") or not 4 <= len(p) <= 8 or len(p) % 2: fail(lid, f"{where}: fence stage needs cm/m, a text and 4–8 corners")
+            if not all(isinstance(v, int) and v >= 0 for q in p for v in q) or min(q[0] for q in p) or min(q[1] for q in p): fail(lid, f"{where}: fence corners are whole numbers starting at 0")
+            W, H = max(q[0] for q in p), max(q[1] for q in p)
+            if not 1 <= H <= W <= 12: fail(lid, f"{where}: fence gardens are drawn wide (height ≤ width ≤ 12)")
+            sides = [(p[(j + 1) % len(p)][0] - q[0], p[(j + 1) % len(p)][1] - q[1]) for j, q in enumerate(p)]
+            for j, (dx, dy) in enumerate(sides):
+                if (dx == 0) == (dy == 0): fail(lid, f"{where}: fence side {j + 1} must go straight across or straight down")
+                if (dx == 0) == (sides[j - 1][0] == 0): fail(lid, f"{where}: fence sides {j} and {j + 1} turn no corner (merge them)")
+                if 5 * (abs(dx) + abs(dy)) < W: fail(lid, f"{where}: fence side {j + 1} is too short to tap (≥ width ÷ 5)")
+            if st.get("n") != sum(abs(dx) + abs(dy) for dx, dy in sides): fail(lid, f"{where}: fence n must be the perimeter")
 def say_widget(w):
     w["say"] = speak(w["text"])
     for t in w.get("tasks", []): t["say"] = speak(t.get("text") or t.get("q") or "")

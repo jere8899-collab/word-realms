@@ -951,6 +951,46 @@
     "topic": "g3.eqfrac"
    },
    "art": "lesson_m_g3_eqfrac"
+  },
+  {
+   "id": "m.g3.measure",
+   "pack": "m-g3",
+   "title": "Length, mass and volume",
+   "icon": "📏",
+   "at": {
+    "topic": "g3.measure"
+   },
+   "art": "lesson_m_g3_measure"
+  },
+  {
+   "id": "m.g3.duration",
+   "pack": "m-g3",
+   "title": "How long does it take?",
+   "icon": "⏳",
+   "at": {
+    "topic": "g3.duration"
+   },
+   "art": "lesson_m_g3_duration"
+  },
+  {
+   "id": "m.g3.clock",
+   "pack": "m-g3",
+   "title": "The 24-hour clock",
+   "icon": "🚂",
+   "at": {
+    "topic": "g3.clock"
+   },
+   "art": "lesson_m_g3_clock"
+  },
+  {
+   "id": "m.g3.perim",
+   "pack": "m-g3",
+   "title": "Perimeter: walk the fence",
+   "icon": "🌷",
+   "at": {
+    "topic": "g3.perim"
+   },
+   "art": "lesson_m_g3_perim"
   }
  ]
 }

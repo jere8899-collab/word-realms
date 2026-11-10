@@ -438,10 +438,10 @@ These lessons attach to the level hub as a "📜 Learn" row, which is still a hu
 - ✅ `m.g3.add4` 4-digit regrouping (pv)
 - ✅ `m.g3.mul` multiply by one digit (area blocks)
 - ✅ `m.g3.eqfrac` equivalent fractions (frac stages: fold)
-- `m.g3.measure` units of length, mass and volume (sort)
-- `m.g3.duration` how long? (number line)
-- `m.g3.clock` 24-hour clock (sort)
-- `m.g3.perim` perimeter: walk the fence (tap the edges)
+- ✅ `m.g3.measure` units of length, mass and volume (sort)
+- ✅ `m.g3.duration` how long? (number line)
+- ✅ `m.g3.clock` 24-hour clock (sort)
+- ✅ `m.g3.perim` perimeter: walk the fence (tap the edges)
 - `m.g3.lines` parallel / perpendicular (sort)
 - `m.g3.bargraph` bar graph scale (build)
 - `m.g3.story` ×/÷ stories: bar model
@@ -590,6 +590,7 @@ Each **routine turn builds one batch of ~5 lessons**, alternating English and ma
 | EN-4b | A2 next: goingto, will, someany, muchmany (+ shuffled() cleanup) | ✅ (4 GenerateImage hooks) | d06b436 |
 | MA-4a | G3 first: times, divrem, add4, mul, eqfrac | ✅ (5 GenerateImage hooks; share widget shows left-overs; itemChip() cleanup) | cae1432 |
 | EN-4c | A2 next: freq, must, should, objpron (+ `line` widget; land() + need_why() cleanup) | ✅ (4 GenerateImage hooks) | a0d2c05 |
+| MA-4b | G3 next: measure, duration, clock, perim (+ `fence` widget; tapStages() cleanup) | ✅ (4 GenerateImage hooks; narrator reads metric units, h/min and 24-hour times) | PENDING_HASH |
 | EN-4… | A2 (19), then B1, B2, C1, C2 | ⏳ | |
 | MA-4… | G3, G4 … G12 (one grade per 2 turns) | ⏳ | |
 | SG-1… | SG hub "📜 Learn" row (engine: `at=dict(sg="p1")`, `same=`) then P1 → Grown-up | ⏳ after A2 | |

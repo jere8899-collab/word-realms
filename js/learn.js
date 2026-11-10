@@ -610,6 +610,16 @@ KIT.hearpic = {
   } };
 
 
+// 🪜 tap-through stages (shapecount, fence): paint stage i and say it; finish() cheers, then paints the next stage after a beat,
+// or locks the widget and ends it after the last one
+const tapStages = (root, w, api, o) => {
+  let i = 0;
+  const finish = (good, doneMsg) => { api.good(good); i++;
+    if (i >= w.stages.length) { o.lock(); api.done(doneMsg); }
+    else later(root, 900, () => { o.paint(w.stages[i]); api.sayLine && api.sayLine(w.stages[i].say); }); };
+  o.paint(w.stages[0]); saySoon(api, w.stages[0].say);
+  return { stage: () => w.stages[i], finish };
+};
 // 🔷 sides & corners: tap each side or corner on a pastel shape to count
 const SHAPE_PTS = {
   triangle: [[60, 14], [108, 100], [12, 100]],
@@ -637,26 +647,54 @@ const shapeSVG = (shape, mode) => {
 KIT.shapecount = {
   html: () => `<div class="lw-task" aria-live="polite"></div><div class="sc-stage"></div><div class="lw-count sc-count" aria-live="polite"></div>`,
   bind(root, w, api) {
-    let i = 0, lit = new Set();
+    let lit = new Set();
     const stage = root.querySelector(".sc-stage"), task = root.querySelector(".lw-task"), count = root.querySelector(".sc-count");
-    const paint = () => {
-      const s = w.stages[i]; lit = new Set();
-      task.innerHTML = `👉 ${esc(s.text)}`;
-      stage.innerHTML = shapeSVG(s.shape, s.count);
-      count.textContent = `Counted: 0 / ${s.n}`;
-    };
+    const run = tapStages(root, w, api, {
+      paint: s => { lit = new Set(); task.innerHTML = `👉 ${esc(s.text)}`; stage.innerHTML = shapeSVG(s.shape, s.count); count.textContent = `Counted: 0 / ${s.n}`; },
+      lock: () => stage.querySelectorAll(".sc-hit").forEach(b => { b.classList.add("done"); b.removeAttribute("data-tgt"); }) });
     const tap = btn => {
-      const s = w.stages[i], k = +btn.dataset.i;
+      const s = run.stage(), k = +btn.dataset.i;
       if (lit.has(k)) return api.say("You already counted that one! Tap a new " + (s.count === "sides" ? "side" : "corner") + " 👆");
       lit.add(k); btn.classList.add("on"); WR.sfx("tap");
       count.textContent = `Counted: ${lit.size} / ${s.n}`;
       if (lit.size < s.n) return;
-      api.good(`✅ A ${s.shape} has ${s.n} ${s.count}!`); i++;
-      if (i >= w.stages.length) { stage.querySelectorAll(".sc-hit").forEach(b => { b.classList.add("done"); b.removeAttribute("data-tgt"); }); api.done("🎉 Sides and corners counted!"); }
-      else later(root, 900, () => { paint(); api.sayLine && api.sayLine(w.stages[i].say); });
+      run.finish(`✅ A ${s.shape} has ${s.n} ${s.count}!`, "🎉 Sides and corners counted!");
     };
-    paint(); saySoon(api, w.stages[0].say);
-    dragTap(root, { onTapTarget: tap, nothing: () => api.say("Tap each " + (w.stages[i].count === "sides" ? "side" : "corner") + " to count 👆") });
+    dragTap(root, { onTapTarget: tap, nothing: () => api.say("Tap each " + (run.stage().count === "sides" ? "side" : "corner") + " to count 👆") });
+  } };
+
+// 🌷 walk the fence (MA-4b perimeter): tap every side of a garden once; the running sum builds the perimeter.
+// a stage lists the corners in order from (0, 0) (tools/lesson_build.py checks every side is straight and big enough to tap);
+// the garden shrinks on short landscape screens (45vh tall) but never below 220 px wide
+const fenceSides = pts => pts.map((p, k) => { const q = pts[(k + 1) % pts.length];
+  return { x: (p[0] + q[0]) / 2, y: (p[1] + q[1]) / 2, len: Math.abs(q[0] - p[0]) + Math.abs(q[1] - p[1]), across: p[1] === q[1] }; });
+const fenceHTML = s => {
+  const W = Math.max(...s.pts.map(p => p[0])), H = Math.max(...s.pts.map(p => p[1])), pc = (v, d) => +(100 * v / d).toFixed(3) + "%";
+  const sides = fenceSides(s.pts).map((e, k) => `<button class="fn-side ${e.across ? "across" : "down"}" data-tgt data-i="${k}" aria-label="fence side ${e.len} ${s.unit}"
+    style="left:${pc(e.x, W)};top:${pc(e.y, H)};${e.across ? "width" : "height"}:max(44px, calc(${pc(e.len, e.across ? W : H)} - 14px))"><span>${e.len} ${s.unit}</span></button>`).join("");
+  return `<div class="fn-fig" style="aspect-ratio:${W} / ${H};width:min(100%, max(220px, calc(45vh * ${W} / ${H})))"><svg class="fn-svg" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-hidden="true">
+    <polygon class="fn-in" data-tgt data-in="1" points="${s.pts.map(p => p.join(",")).join(" ")}"/></svg><span class="fn-veg" aria-hidden="true">🥕🥬</span>${sides}</div>`;
+};
+KIT.fence = {
+  html: () => `<div class="lw-task" aria-live="polite"></div><div class="fn-wrap"></div><div class="lw-count fn-sum" aria-live="polite"></div>`,
+  bind(root, w, api) {
+    let walked = [];
+    const wrap = root.querySelector(".fn-wrap"), task = root.querySelector(".lw-task"), sum = root.querySelector(".fn-sum");
+    const run = tapStages(root, w, api, {
+      paint: s => { walked = []; task.innerHTML = `👉 ${esc(s.text)}`; wrap.innerHTML = fenceHTML(s); sum.textContent = `Fence walked: 0 ${s.unit}`; },
+      lock: () => wrap.querySelectorAll("[data-tgt]").forEach(b => { b.removeAttribute("data-tgt"); if (b.tagName === "BUTTON") b.disabled = true; }) });
+    const tap = t => {
+      const s = run.stage();
+      if (t.dataset.in) return api.miss("That's the inside of the garden! The perimeter is the fence all the way around the edge. Tap a side of the fence.", wrap);
+      const k = +t.dataset.i, E = fenceSides(s.pts);
+      if (walked.includes(k)) return api.miss("Mog already walked that side! Count each side only once. Tap a side that isn't green yet.", t);
+      walked.push(k); t.classList.add("on"); WR.sfx("tap");
+      const parts = walked.map(j => E[j].len), got = parts.reduce((a, b) => a + b, 0);
+      sum.textContent = `Fence walked: ${parts.join(" + ")} = ${got} ${s.unit}`;
+      if (walked.length < E.length) return;
+      run.finish(`✅ All the way around: the perimeter is ${got} ${s.unit}!`, "🎉 You walked the whole fence!");
+    };
+    dragTap(root, { onTapTarget: tap, nothing: () => api.say("Tap each side of the fence 👆") });
   } };
 
 LN.KIT = KIT;
