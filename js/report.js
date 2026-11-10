@@ -198,11 +198,18 @@ WR.screens.report = r => {
     WR.$("#rpUnlock").onclick = ask; WR.$("#rpHome").onclick = () => WR.go("home"); ask();
     return;
   }
-  WR.view(WR.Report.html(WR.Report.data(range)));
-  document.querySelectorAll(".rp-tabs [data-range]").forEach(b => b.onclick = () => WR.go("report", b.dataset.range));
-  document.querySelectorAll(".rp-go").forEach(b => b.onclick = () => WR.Report.practise(b.dataset.key));
-  WR.$("#rpBack").onclick = () => WR.openGrownups();
-  WR.$("#rpDone").onclick = () => WR.go("home");
+  const draw = () => {
+    WR.view(WR.Report.html(WR.Report.data(range)));
+    document.querySelectorAll(".rp-tabs [data-range]").forEach(b => b.onclick = () => WR.go("report", b.dataset.range));
+    document.querySelectorAll(".rp-go").forEach(b => b.onclick = () => WR.Report.practise(b.dataset.key));
+    document.querySelectorAll(".by-lv").forEach(b => b.onclick = () => WR.Beyond && WR.Beyond.open(b.dataset.lv, "paper"));
+    WR.$("#rpBack").onclick = () => WR.openGrownups();
+    WR.$("#rpDone").onclick = () => WR.go("home");
+  };
+  // The suggestion list lives in js/beyond.js, which the home screen does not download.
+  if (WR.Beyond) { draw(); return; }
+  WR.view(`<div class="card center" id="reportWait"><h2>Opening the report…</h2></div>`);
+  WR.lazy("js/beyond.js").then(() => WR.Beyond.ready).then(draw).catch(draw);
 };
 WR.openReport = () => WR.parentGate(() => WR.go("report", "week"), { why: "The Learning Report is for grown-ups." });
 })();

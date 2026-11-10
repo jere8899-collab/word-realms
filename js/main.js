@@ -276,6 +276,8 @@ WR.screens.door = ({ rid, door }) => {
   WR.view(`<div class="fade-in realm-screen door-screen"><div class="row lesson-top" style="margin:6px 0 8px"><button class="btn ghost small" id="doorBack">← ${WR.esc(r.name)}</button><b class="title">${d.icon} ${d.name}</b></div>
     <div class="bonus-row door-games" id="bonusRow">${open.map(g => seen.includes(g.data) ? g.html : newBadge(g.html)).join("")}${locked ? `<div class="card bonus-more" aria-label="More games open as you play"><span class="ico">🔒</span><b>${locked} more</b><small>open as you play</small></div>` : ""}</div></div>`);
   WR.$("#doorBack").onclick = () => WR.go("realm", rid);
+  // 🌳 Beyond the screen sits inside Play. The module is fetched the first time this door opens.
+  if (d.id === "play" && !WR.Beyond) WR.lazy("js/beyond.js").then(() => { if (WR.$("#doorBack") && !WR.$("[data-beyond]")) WR.screens.door({ rid, door }); });
   const tapped = x => { if (!seen.includes(x)) { seen.push(x); WR.save(); } };
   open.forEach(g => { const el = WR.$(`#bonusRow [data-${g.data}]`); if (el) el.onclick = () => { tapped(g.data); g.open(); }; });
   const more = WR.$(".bonus-more"); if (more) more.onclick = () => WR.toast("🎁 Finish lessons on Today's path to open more games here!", 2400);

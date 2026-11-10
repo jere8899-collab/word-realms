@@ -289,12 +289,25 @@ const BLOCKS = {
   // 🦁 Singapore School English (js/sg-english.js): which English track the map shows, the chosen school level, best result per game
   sg: { fresh: () => ({ track: "cefr", level: null, done: {}, rounds: 0 }), maps: ["done"], crowned: true },
   // 📜 Lessons (js/learn.js): per lesson { crowns, best, pass, tries, reteach, stuck, at, first, first1 }, times each was opened
-  learn: { fresh: () => ({ done: {}, opened: {}, rounds: 0 }), maps: ["done", "opened"], crowned: true }
+  learn: { fresh: () => ({ done: {}, opened: {}, rounds: 0 }), maps: ["done", "opened"], crowned: true },
+  // 🌳 Beyond the screen (js/beyond.js, loaded on use): grown-up confirmations { "<level>:<kind>": { at, stars } }
+  beyond: { fresh: () => ({ done: {} }), maps: ["done"] }
 };
 const freshBlocks = () => Object.fromEntries(Object.entries(BLOCKS).map(([k, b]) => [k, b.fresh()]));
 const fixBlock = (s, k) => { const b = BLOCKS[k], v = s[k]; s[k] = Object.assign(b.fresh(), v && typeof v === "object" ? v : {}); for (const m of b.maps) s[k][m] = s[k][m] || {}; return s[k]; };
 WR.BLOCKS = BLOCKS;
 WR.block = k => fixBlock(WR.state, k);
+// A file that is not part of the first visit. One request, shared if several screens ask.
+WR.lazy = src => {
+  WR._lazy = WR._lazy || {};
+  if (WR._lazy[src]) return WR._lazy[src];
+  WR._lazy[src] = new Promise((res, rej) => {
+    const s = document.createElement("script");
+    s.src = src; s.async = true; s.onload = () => res(); s.onerror = () => rej(new Error(src));
+    document.head.appendChild(s);
+  });
+  return WR._lazy[src];
+};
 WR.freshCharms = BLOCKS.charms.fresh; WR.freshPhonics = BLOCKS.phonics.fresh;
 WR.LOG_DAYS = LOG_DAYS;
 // an older save gains a log rebuilt from the dates it already has (last play of each skill/topic, story chapters, sprints, streak)
