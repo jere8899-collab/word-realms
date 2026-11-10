@@ -23,7 +23,6 @@ function st() {
   s.mistakes.forEach(m => { if (!m.id) { m.id = "old_" + hash((m.q || "") + "|" + (m.correct || "")); m.box = m.box || 0; m.due = m.due || m.at || Date.now(); if (!m.options && m.type !== "order") m.legacy = true; } });
   return s;
 }
-const active = () => st().mistakes.filter(m => !m.bloomed);
 const isDue = (m, now = Date.now()) => !m.legacy && m.due <= now;   // bloomed plants too, when their rare visit is due
 
 // a plant back as a lesson item: items with _raw are rebuilt in full (with their passage); older ones from what was saved

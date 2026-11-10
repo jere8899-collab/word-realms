@@ -11,6 +11,8 @@ const ENG0 = ["grammar", "vocab", "reading", "listening", "speaking", "writing",
 const ENG = () => ENG0.concat(WR.gapGames.map(g => g.id));
 const OPTIONAL = sk => ["phonics", "words"].includes(sk) || WR.gapGames.some(g => g.id === sk);   // rows shown only once something was played (Phonics Path, Word Charms, the gap games)
 const KEPT = { min: 10 };   // 🧠 answers needed before "Remembered after 30 days" shows a figure (gap: WR.Review.CONFIG.keptDays)
+const WEEK = 7;                                     // the "last 7 days" range
+const WEAK_N = 3;                                   // how many spots "Practise next" lists
 const MIN_N = 3;                                    // answers needed before a spot can be called "weak"
 const LOW = WR.PASS.mark;                           // a "low" score in the weak-spot list: under the shared pass mark (BRIEF-T5B, was 0.6)
 const pct = v => Math.round(v * 100);
@@ -26,7 +28,7 @@ function tallies(range) {
   const r = WR.state.report;
   if (range !== "week") return r.tally;
   const out = {};
-  daysBack(7).forEach(d => { const day = r.days[WR.dayKey(d)]; if (day) for (const k in day.k) out[k] = add(out[k] || [0, 0], day.k[k]); });
+  daysBack(WEEK).forEach(d => { const day = r.days[WR.dayKey(d)]; if (day) for (const k in day.k) out[k] = add(out[k] || [0, 0], day.k[k]); });
   return out;
 }
 // best scores saved before the report existed (all-time view only)
@@ -42,15 +44,15 @@ const sumAll = T => Object.values(T).reduce(add, [0, 0]);
 function chart(range) {
   const r = WR.state.report;
   let bars;
-  if (range === "week") bars = daysBack(7).map(d => { const x = r.days[WR.dayKey(d)] || { s: 0, l: 0 }; return { lab: d.toLocaleDateString("en-GB", { weekday: "short" }).slice(0, 2), full: d.toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "short" }), s: x.s, l: x.l }; });
-  else bars = daysBack(56).reduce((w, d, i) => { const x = r.days[WR.dayKey(d)] || { s: 0, l: 0 }, b = w[Math.floor(i / 7)] = w[Math.floor(i / 7)] || { s: 0, l: 0, lab: d.getDate() + "/" + (d.getMonth() + 1), full: "Week of " + d.toLocaleDateString("en-GB", { day: "numeric", month: "short" }) }; b.s += x.s; b.l += x.l; return w; }, []);
+  if (range === "week") bars = daysBack(WEEK).map(d => { const x = r.days[WR.dayKey(d)] || { s: 0, l: 0 }; return { lab: d.toLocaleDateString("en-GB", { weekday: "short" }).slice(0, 2), full: d.toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "short" }), s: x.s, l: x.l }; });
+  else bars = daysBack(WEEK * 8).reduce((w, d, i) => { const x = r.days[WR.dayKey(d)] || { s: 0, l: 0 }, b = w[Math.floor(i / WEEK)] = w[Math.floor(i / WEEK)] || { s: 0, l: 0, lab: d.getDate() + "/" + (d.getMonth() + 1), full: "Week of " + d.toLocaleDateString("en-GB", { day: "numeric", month: "short" }) }; b.s += x.s; b.l += x.l; return w; }, []);
   const useMin = bars.some(b => b.s > 0), val = b => useMin ? Math.round(b.s / 60) : b.l, top = Math.max(1, ...bars.map(val));
   return { useMin, bars: bars.map(b => ({ ...b, v: val(b), h: Math.round(val(b) / top * 100) })) };
 }
 WR.Report = { KEPT };
 WR.Report.data = (range = "week") => {
   const s = WR.state, r = s.report, T = tallies(range), wk = range === "week";
-  const week = daysBack(7).map(d => r.days[WR.dayKey(d)]).filter(x => x && (x.l || Object.keys(x.k || {}).length));
+  const week = daysBack(WEEK).map(d => r.days[WR.dayKey(d)]).filter(x => x && (x.l || Object.keys(x.k || {}).length));
   const logDays = Object.values(r.days).filter(x => x.l || Object.keys(x.k || {}).length);
   const tot = wk ? sumAll(T) : [s.totalCorrect || 0, Math.max(0, (s.totalAnswered || 0) - (s.totalCorrect || 0))];
   const lessons = wk ? week.reduce((a, x) => a + (x.l || 0), 0) : s.lessonsDone || 0;
@@ -93,7 +95,7 @@ WR.Report.weak = (range, T = tallies(range)) => {
     Object.entries(s.progress || {}).forEach(([rid, p]) => Object.entries(p || {}).forEach(([sk, x]) => lowBest(rid + "/" + sk, x)));
     Object.entries(s.math.topics || {}).forEach(([id, x]) => lowBest("m:" + id, x));
   }
-  return Object.keys(score).sort((a, b) => score[b] - score[a]).slice(0, 3).map(k => ({ key: k, label: labelFor(k), why: info[k].join(" · ") }));
+  return Object.keys(score).sort((a, b) => score[b] - score[a]).slice(0, WEAK_N).map(k => ({ key: k, label: labelFor(k), why: info[k].join(" · ") }));
 };
 function labelFor(k) {
   if (k.startsWith("m:")) {
