@@ -53,8 +53,30 @@ No new art was painted. Slots a later picture could fill:
 4. A chibi hawker table.
 5. Two chibi figures passing one phone.
 
+## Garden thirst
+
+Approved with Task 11 on 2026-11-10. A Mistake Garden plant can cost stars if it stays ready to water.
+
+- The clock starts when the plant is **ready** (`due` is in the past), not when the mistake was made.
+- After 24 hours of that thirsty time, it costs 1 star, then 1 more star for each further full day. There is no daily cap.
+- The star balance never goes below 0. Pets, skins and other owned items are not taken.
+- Watering, or any new due time in the future, ends that clock.
+- Each plant stores `thirst: { due, from, paid }` on the mistake, inside `wordRealms.save.v1`. `paid` is how many of those days have already cost a star. A reload, a second tab, or a cloud merge keeps the higher `paid` and the higher `garden.thirst.taken`, and does not subtract twice.
+- An old save sets `garden.thirstAt` to the first open after the update. Thirsty time before that is ignored, so the first load does not back-charge.
+
+### Paused time
+
+Thirsty time is wall-clock time minus the union of these pauses. Overlaps are counted once.
+
+1. **Streak rest day.** If `streak.rest` is a `YYYY-MM-DD`, that whole local calendar day (midnight to the next midnight) is paused. That is the day the streak already treated as rest.
+2. **Bedtime.** Only if `settings.health.bed` is set. Every night from that clock time until 05:00 the next morning is paused. The nights are rebuilt from the clock, so they still count while the app was closed. A grown-up's "15 more minutes" (`settings.health.until`, 15 minutes ending at that timestamp) is cut out of the pause. Those minutes count as thirsty time again, because play was allowed.
+3. **Daily time limit.** Only if `settings.health.limit` is greater than 0. The game does not remember the minute the limit was hit on earlier days. When the app notices that play is stopped for the limit, it stores `{ why: "limit", s, e }` in `garden.stops`. The pause runs from `s` until play is allowed, or until the next local midnight if the app was closed, because the limit resets each game day. Time before the app noticed is not paused.
+
+The gentle notice is `🌷 N plants got thirsty: -N⭐ — water them to stop it`. A plant whose next star is within 12 hours shows a heads-up. The Report lists stars lost this week.
+
 ## Out of scope
 
 - A new home tile.
 - Real payments, school data collection, or a second account.
+- Taking pets, skins or other items when stars run out.
 - Task 12.
