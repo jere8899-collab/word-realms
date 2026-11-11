@@ -3,7 +3,7 @@
      and paid exactly like the English pages (+2⭐ each, +10⭐ for a full page; js/collect.js C.addPages / C.check).
    • 🛡️ Grade Guardians: one friendly boss per two grades (G1–2 … G11–12, following the Singapore MOE stages P1–2, P3–4, P5–6,
      Sec 1–2, Sec 3–4, JC 1–2). A guardian wakes once 4 topics in its two grades are passed (WR.PASS.mark, 85%+). The fight is 10 questions
-     made by the normal generators for those two grades (5 topics from each), no timer, hints and 🧮 Model Magic as usual;
+     made by the normal generators for those two grades (5 core topics from each; a short grade is topped up from the other), no timer, hints and 🧮 Model Magic as usual;
      About 9 of 10 sparkle hits win (WR.passCount of the questions; 1 per first-try answer, ½ for a second try). First win: +15⭐ and that guardian's sticker.
    • The hub shows the next maths goal and the guardian cards.
    Save (inside wordRealms.save.v1, so it cloud-syncs): math.bosses = { g12: { won, best, tries, at } }, stickers.got.math / .guard. */
@@ -20,8 +20,8 @@ G.GUARDIANS = [
   { id: "g12", grades: [1, 2], stage: "Primary 1–2", name: "Bramble the Button Bear", face: "🧸", art: "mboss_bramble", line: "Hello, little counter! Can you add up all my buttons?" },
   { id: "g34", grades: [3, 4], stage: "Primary 3–4", name: "Professor Hootsworth", face: "🦉", art: "mboss_hootsworth", line: "Hoo-hoo! Times tables and fractions, let's see what you know!" },
   { id: "g56", grades: [5, 6], stage: "Primary 5–6", name: "Captain Ottilie the Otter", face: "🦦", art: "mboss_ottilie", line: "Ahoy! Decimals, percentages and ratios ahead!" },
-  { id: "g78", grades: [7, 8], stage: "Secondary 1–2", name: "Sage Shellby the Turtle", face: "🐢", art: "mboss_shellby", line: "Slow and steady solves every equation." },
-  { id: "g910", grades: [9, 10], stage: "Secondary 3–4", name: "Quartzy the Crystal Golem", face: "💎", art: "mboss_quartzy", line: "Crunch-crunch! Can you crack my quadratic riddles?" },
+  { id: "g78", grades: [7, 8], stage: "Secondary 1–2", name: "Sage Shellby the Turtle", face: "🐢", art: "mboss_shellby", line: "Slow and steady: straight lines, triangles and a first quadratic." },
+  { id: "g910", grades: [9, 10], stage: "Secondary 3–4", name: "Quartzy the Crystal Golem", face: "💎", art: "mboss_quartzy", line: "Crunch-crunch! Curves, circles and a few bonus puzzles." },
   { id: "g1112", grades: [11, 12], stage: "JC 1–2", name: "Lumina the Calculus Unicorn", face: "🦄", art: "mboss_lumina", line: "Sparkle! Let's ride the curves of calculus together!" }
 ].map(g => Object.assign(g, { band: `${g.grades[0]}–${g.grades[1]}` }));
 const byId = id => G.GUARDIANS.find(g => g.id === id);
@@ -39,7 +39,15 @@ G.ready = gd => G.passed(gd) >= NEED_TOPICS || won(gd.id) || keep().includes(gd.
 G.art = (gd, cls = "rb-art") => WR.asset(gd.art) ? WR.img(gd.art, cls) : `<span class="${cls} gfb">${MW.mascot()}<i>${gd.face}</i></span>`;
 
 /* ---------- the fight ---------- */
-G.items = gd => WR.shuffle(gd.grades.flatMap(g => WR.shuffle(MG.gradeTopics(g).filter(t => !t.extra)).slice(0, 5))).map(t => MG.batch(t.id, 1)[0]).filter(Boolean);
+// 5 core topics from each grade. ✨ Extra topics stay out. If one grade has fewer than 5 core topics,
+// the other grade's spare core topics make the fight up to 10.
+G.items = gd => {
+  const pools = gd.grades.map(g => WR.shuffle(MG.gradeTopics(g).filter(t => !t.extra)));
+  const take = pools.map(p => Math.min(5, p.length));
+  let need = 10 - take.reduce((a, n) => a + n, 0);
+  for (let i = 0; need > 0 && i < pools.length; i++) { const add = Math.min(need, pools[i].length - take[i]); take[i] += add; need -= add; }
+  return WR.shuffle(pools.flatMap((p, i) => p.slice(0, take[i]))).map(t => MG.batch(t.id, 1)[0]).filter(Boolean);
+};
 G.start = id => {
   const gd = byId(id); if (!gd) return;
   if (!G.ready(gd) && !WR.state.settings.unlockAll) return lockToast(gd);

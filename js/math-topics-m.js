@@ -735,19 +735,20 @@ topic(8, "solids", "Ice-Cream Cone Café", "🍦", "Volume and surface area of p
   const k = r.pick(["pyrV", "pyrV", "pyrSA", "pyrSA", "coneV", "coneV", "coneSA", "coneSA", "sphV", "sphV", "sphSA", "sphSA", "compo", "compo", "rev", "rev"]);
   return SOL[k](r);
 });
-topic(8, "gradient", "Gradient Hills", "⛰️", "Gradient and straight lines", r => {
+topic(7, "gradient", "Gradient Hills", "⛰️", "Gradient and straight lines", r => {
   const t = r.int(0, 2);
   if (t === 0) { const x1 = r.int(-6, 6), y1 = r.int(-6, 6), dx = r.nz(-5, 5) * 2, m = r.nz(-8, 8) / 2, x2 = x1 + dx, y2 = y1 + m * dx; return num(`Find the gradient of the line through ${T(`(${x1}, ${y1})`)} and ${T(`(${x2}, ${y2})`)}.`, m, "Gradient = rise ÷ run = (y₂ − y₁) ÷ (x₂ − x₁).", [`$m = \\frac{${y2} - ${paren(y1)}}{${x2} - ${paren(x1)}} = \\frac{${y2 - y1}}{${dx}} = ${fmt(m)}$`], { keys: ["-", ".", "/"], data: { x1, y1, x2, y2 } }); }
   const m = r.nz(-6, 6), c = r.int(-10, 10), x = r.int(-5, 5);
   if (t === 1) return num(`The line ${T(`y = ${lin(m, c)}`)} meets the y-axis at (0, c). What is c?`, c, "In y = mx + c, c is the y-intercept.", [`Put x = 0: y = ${c}`], { keys: ["-"] });
   return num(`On the line ${T(`y = ${lin(m, c)}`)}, what is y when ${T(`x = ${x}`)}?`, m * x + c, "Substitute the x value.", [`$y = ${m}(${x}) ${pm(c)} = ${m * x + c}$`], { keys: ["-"], data: { m, c, x } });
-});
+}, { id: "g8.gradient", was: 8 });
 
-/* ---------- 📏 Straight-Line Street (MOE Sec 2 linear graphs): gradient, intercepts, match equation ↔
-   pastel SVG, find the equation from two points, evaluate a point, parallel / perpendicular gradients,
-   and kid word problems (hill roads, rainbow paths, kite string, fairy tram, pumpkin-coach ramp,
+/* ---------- 📏 Straight-Line Street (MOE Sec 1 linear graphs, N6.3–6.5): gradient, intercepts, match equation ↔
+   pastel SVG, find the equation from two points, evaluate a point, and kid word problems (hill roads,
+   rainbow paths, kite string, fairy tram, pumpkin-coach ramp,
    sports-day run, beanstalk stick, lantern bridge). Pictures use the shared svgStraight kit in
-   math-gen.js (class=lineeq data-m/c, marks class=ldot). Gradient Hills stays text-only and byte-identical. */
+   math-gen.js (class=lineeq data-m/c, marks class=ldot). Gradient Hills stays text-only and byte-identical.
+   Parallel and perpendicular gradients (m1 × m2 = −1) are Right-Angle Paths, an Additional Mathematics extra. */
 const LINE_CTX = [
   { id: "hill", title: "Hill road", who: "Fairy Pip", spot: "Gradient Hills", thing: "hill road", of: "the road" },
   { id: "rainbow", title: "Rainbow path", who: "Sumi the star fairy", spot: "the rainbow path", thing: "rainbow path", of: "the path" },
@@ -1169,7 +1170,8 @@ const LINEQ = {
         [x - 3 === 0 ? x + 1 : x - 3, "Keep (height − intercept) ÷ gradient for the step-number."]]) };
   }
 };
-const LINE_KINDS = ["grad", "grad", "yint", "yint", "xint", "match", "match", "eq", "eq", "point", "point", "parallel", "perp", "word", "word"];
+const LINE_KINDS = ["grad", "grad", "yint", "yint", "xint", "match", "match", "eq", "eq", "point", "point", "word", "word"];
+const PERP_KINDS = ["parallel", "perp"];
 const lineQ = (r, kind) => {
   const z = LINEQ[kind](r), ctx = z.ctx, uid = `lingraph|${z.k}|${JSON.stringify(z.data)}`;
   const extra = { uid, pic: z.pic || "", data: Object.assign({ lingraph: z.k, ctx: ctx.id }, z.data) };
@@ -1177,7 +1179,8 @@ const lineQ = (r, kind) => {
   if (z.mc) return mcqWhy(r, z.q, z.right, z.rightWhy, z.wrong, z.hint, z.steps, extra);
   return numWhy(z.q, z.x, z.hint, z.steps, z.slips, Object.assign({ keys: ["-", ".", "/"] }, extra));
 };
-topic(8, "lingraph", "Straight-Line Street", "📏", "Linear graphs: gradient, intercepts, match equation to pastel SVG", r => lineQ(r, r.pick(LINE_KINDS)));
+topic(7, "lingraph", "Straight-Line Street", "📏", "Linear graphs: gradient, intercepts, match equation to pastel SVG", r => lineQ(r, r.pick(LINE_KINDS)), { id: "g8.lingraph", was: 8 });
+topic(9, "perpline", "Right-Angle Paths", "🪄", "Bonus: parallel paths share a steepness, and right-angle paths multiply to −1", r => lineQ(r, r.pick(PERP_KINDS)), { extra: "amath" });
 
 topic(8, "proportion", "Proportion Potions", "🫖", "Direct and inverse proportion", r => {
   if (r.chance(.5)) { const k = r.int(2, 12), x1 = r.int(2, 10), x2 = r.int(11, 25); return num(`y is directly proportional to x. When x = ${x1}, y = ${k * x1}. Find y when x = ${x2}.`, k * x2, "Direct: y = kx. Find k first.", [`$k = ${k * x1} \\div ${x1} = ${k}$`, `$y = ${k} \\times ${x2} = ${k * x2}$`]); }
@@ -1197,10 +1200,10 @@ topic(8, "prob", "Wishing-Well Probability", "🎲", "Simple probability as a fr
   const cols = [["red", r.int(1, 9)], ["blue", r.int(1, 9)], ["gold", r.int(1, 6)]], tot = cols.reduce((a, c) => a + c[1], 0), c = r.pick(cols), not = r.chance(.3), k = not ? tot - c[1] : c[1];
   return Q({ q: `A wishing well has ${cols.map(([n, k]) => `${k} ${n}`).join(", ")} marbles. One is picked at random. What is the probability it is ${not ? "NOT " : ""}${c[0]}? (fraction)`, val: k / tot, a: fracStr(k, tot), keys: ["/"], hint: "Probability = favourable outcomes ÷ total outcomes.", steps: [`Total = ${tot}`, `${not ? "Not " + c[0] : c[0]}: ${k}`, `$P = ${fracTex(k, tot)}$`] });
 });
-topic(8, "fraceq", "Fraction Equations", "🪶", "Equations with fractions", r => {
+topic(7, "fraceq", "Fraction Equations", "🪶", "Equations with fractions", r => {
   const a = r.int(2, 6), x = a * r.int(-5, 8), b = r.nz(-9, 9), c = x / a + b;
   return num(`Solve ${T(`\\frac{x}{${a}} ${pm(b)} = ${c}`)}`, x, `Undo the ${b < 0 ? "−" : "+"} first, then multiply by ${a}.`, [`$\\frac{x}{${a}} = ${c - b}$`, `$x = ${c - b} \\times ${a} = ${x}$`], { keys: ["-"], data: { a, b, c } });
-});
+}, { id: "g8.fraceq", was: 8 });
 topic(8, "story", "Royal Challenges", "📜", "Sec 2 problem solving", r => {
   const s = r.int(4, 9), b = r.int(2, s - 1), ns = r.int(3, 12), nb = r.int(3, 12), N = ns + nb, cost = s * ns + b * nb;
   return num(`Silver keys cost $${s} and bronze keys cost $${b}. The dwarfs buy ${N} keys for $${cost}. How many silver keys did they buy?`, ns, "Let x be the silver keys; then there are (" + N + " − x) bronze keys.", [`$${s}x + ${b}(${N} - x) = ${cost}$`, `$${s - b}x = ${cost - b * N}$`, `$x = ${ns}$`], { data: { s, b, N, cost } });

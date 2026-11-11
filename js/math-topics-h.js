@@ -7,7 +7,7 @@ const tol3 = v => Math.max(1e-9, Math.pow(10, Math.floor(Math.log10(Math.abs(v) 
 const V2 = v => matTex([[v[0]], [v[1]]]), V3 = v => matTex([[v[0]], [v[1]], [v[2]]]);
 
 /* ---------- Grade 9 (Secondary 3) ---------- */
-topic(9, "quad", "Quadratic Quarry", "💠", "Solve by factorising (type both: 2, -3)", r => {
+topic(8, "quad", "Quadratic Quarry", "💠", "Solve by factorising (type both: 2, -3)", r => {
   const p = r.int(-9, 9), q = r.int(-9, 9);
   if (r.chance(.2)) { const P = r.nz(-4, 4) * 2 + 1; // (2x − P)(x − q) = 0 → x = P/2 or q
     const B = -(2 * q + P), C = P * q, e = poly([[2, 2], [B, 1], [C, 0]]), roots = [P / 2, q];
@@ -15,7 +15,7 @@ topic(9, "quad", "Quadratic Quarry", "💠", "Solve by factorising (type both: 2
   const B = -(p + q), C = p * q, e = poly([[1, 2], [B, 1], [C, 0]]), roots = p === q ? [p] : [p, q];
   return Q({ q: `Solve ${T(`${e} = 0`)} (type all solutions, like 2, -3)`, kind: "set", val: roots, a: roots.join(", "), keys: ["-", ","], hint: `Find two numbers that multiply to ${C} and add to ${B}.`,
     steps: [`$${e} = (${lin(1, -p)})(${lin(1, -q)}) = 0$`, p === q ? `Repeated root: $x = ${p}$` : `So $x = ${p}$ or $x = ${q}$`], data: { a: 1, b: B, c: C } });
-});
+}, { id: "g9.quad", was: 9 });
 
 /* ---------- 🎢 Parabola Park (MOE Sec 3 E-Math quadratic graphs): y-intercept, axis of symmetry, turning point
    (max/min from sign of a), roots from a factorised form or a drawn graph, match equation ↔ pastel SVG graph,
@@ -260,12 +260,12 @@ const paraQ = (r, kind) => {
   return numWhy(z.q, z.x, z.hint, z.steps, z.slips, Object.assign({ keys: ["-", "."] }, extra));
 };
 topic(9, "quadgraph", "Parabola Park", "🎢", "Quadratic graphs: intercepts, turning points and matching curves", r => paraQ(r, r.pick(PARA_KINDS)));
-topic(9, "simul", "Twin Potions", "👯", "Simultaneous equations (type x, y)", r => {
+topic(8, "simul", "Twin Potions", "👯", "Simultaneous equations (type x, y)", r => {
   const x = r.int(-6, 8), y = r.int(-6, 8); let a = r.nz(-5, 5), b = r.nz(-5, 5), c = r.nz(-5, 5), d = r.nz(-5, 5); while (a * d - b * c === 0) d = r.nz(-5, 5);
   const e1 = a * x + b * y, e2 = c * x + d * y, L = (p, q) => `${poly([[p, 1]], "x")} ${q < 0 ? "-" : "+"} ${poly([[Math.abs(q), 1]], "y")}`;
   return Q({ q: `Solve: ${T(`${L(a, b)} = ${e1}`)} and ${T(`${L(c, d)} = ${e2}`)} (type x, y like 3, -2)`, kind: "pair", val: [x, y], a: `${x}, ${y}`, keys: ["-", ","],
     hint: "Make the x coefficients match, then subtract the equations to eliminate x.", steps: [`Multiply the first equation by ${paren(c)} and the second by ${paren(a)}.`, `Subtract: $${a * d - b * c}y = ${a * e2 - c * e1}$ → $y = ${y}$`, `Substitute back: $x = ${x}$`], data: { a, b, c, d, e1, e2 } });
-});
+}, { id: "g9.simul", was: 9 });
 topic(9, "indices", "Index Incantations", "⚡", "Laws of indices", r => {
   const t = r.int(0, 3), m = r.int(2, 9), n = r.int(2, 9), b = r.pick(["a", "x", "y", "p"]);
   if (t === 0) return num(`${T(`${b}^{${m}} \\times ${b}^{${n}} = ${b}^{k}`)}. Find k.`, m + n, "Multiplying → add the powers.", [`$${b}^{${m}+${n}} = ${b}^{${m + n}}$`]);
@@ -462,13 +462,13 @@ const rootQ = (r, kind) => {
   if (z.mc) return mcqWhy(r, z.q, z.right, z.rightWhy, z.wrong, z.hint, z.steps, extra);
   return numWhy(z.q, z.v, z.hint, z.steps, z.slips, extra);
 };
-topic(9, "surds", "Root Garden", "🌿", "Simplify, multiply and rationalise surds", r => rootQ(r, r.pick(ROOT_KINDS)));
-topic(9, "trig", "SOH-CAH-TOA Tower", "🗼", "Trigonometry in right triangles", r => {
+topic(9, "surds", "Root Garden", "🌿", "Bonus from Additional Mathematics: simplify, multiply and rationalise surds", r => rootQ(r, r.pick(ROOT_KINDS)), { extra: "amath" });
+topic(8, "trig", "SOH-CAH-TOA Tower", "🗼", "Trigonometry in right triangles", r => {
   const ang = r.int(15, 75), side = r.int(3, 20), t = r.int(0, 3);
   if (t === 3) { const o = r.int(2, 15), a2 = r.int(2, 15), th = toDeg(Math.atan(o / a2)); return num(`In a right-angled triangle the side opposite θ is ${o} cm and the side adjacent to θ is ${a2} cm. Find θ in degrees (1 d.p.).`, rd(th, 1), "tan θ = opposite ÷ adjacent", [`$\\tan\\theta = \\frac{${o}}{${a2}}$`, `$\\theta = \\tan^{-1}\\left(\\frac{${o}}{${a2}}\\right) \\approx ${rd(th, 1).toFixed(1)}^\\circ$`], { a: rd(th, 1).toFixed(1), keys: ["."], tol: 0.051, data: { o, a2, t } }); }
   const [fn, given, want, v, form] = [["\\sin", "hypotenuse", "opposite", side * sinD(ang), `\\text{opp} = ${side}\\sin ${ang}^\\circ`], ["\\cos", "hypotenuse", "adjacent to", side * cosD(ang), `\\text{adj} = ${side}\\cos ${ang}^\\circ`], ["\\tan", "adjacent side", "opposite", side * tanD(ang), `\\text{opp} = ${side}\\tan ${ang}^\\circ`]][t];
   return num(`A right-angled triangle has an angle of ${ang}° and the ${given} is ${side} cm. Find the side ${want} the ${ang}° angle (1 d.p.).`, rd(v, 1), `Use ${fn === "\\sin" ? "SOH" : fn === "\\cos" ? "CAH" : "TOA"}.`, [`$${form}$`, `$\\approx ${rd(v, 1).toFixed(1)}$ cm`], { a: rd(v, 1).toFixed(1), keys: ["."], tol: 0.051, data: { ang, side, t } });
-});
+}, { id: "g9.trig", was: 9 });
 /* ---------- 🚢 Lighthouse Lookout (MOE Sec 3 trigonometry applications: three-figure bearings from North, the compass points
    as bearings, reading a bearing off a map, the bearing back (θ ± 180°), the angle between two bearings, sailing a distance on a
    bearing (how far east / north / south: d sin θ, d cos θ), the bearing after sailing two legs (tan⁻¹), angles of elevation
@@ -1234,7 +1234,7 @@ const waveQ = (r, kind) => {
   if (z.pair) return Q(Object.assign({ q: z.q, kind: "pair", val: [z.x, z.y], a: z.a, keys: ["-", ","], hint: z.hint, steps: z.steps, slips: z.slips }, extra));
   return numWhy(z.q, z.x, z.hint, z.steps, z.slips, Object.assign({ keys: ["-", "."] }, extra));
 };
-topic(10, "triggraph", "Wave Pier", "🌊", "Sine and cosine graphs: amplitude, period, max/min and matching", r => waveQ(r, r.pick(WAVE_KINDS)));
+topic(10, "triggraph", "Wave Pier", "🌊", "Bonus from Additional Mathematics: sine and cosine graphs, amplitude, period, max and min", r => waveQ(r, r.pick(WAVE_KINDS)), { extra: "amath" });
 
 topic(10, "prob2", "Two-Draw Treasure", "💰", "Combined probability", r => {
   const g = r.int(2, 7), s = r.int(2, 7), n = g + s, repl = r.chance(.5), both = r.pick(["gold", "silver"]), k = both === "gold" ? g : s;
@@ -1680,21 +1680,21 @@ topic(11, "func", "Function Fountains", "⛲", "Composite and inverse functions"
   if (t === 1) return num(`${T(f)} and ${T(g)}. Find ${T(`gf(${k})`)}.`, (a * k + b) ** 2 + c, "gf(x) means apply f first, then g.", [`$f(${k}) = ${a * k + b}$`, `$g(${a * k + b}) = ${paren(a * k + b)}^2 ${pm(c)} = ${(a * k + b) ** 2 + c}$`], { keys: ["-"], data: { a, b, c, k, t } });
   const y = a * k + b; return num(`${T(f)}. Find ${T(`f^{-1}(${y})`)}.`, k, `Solve f(x) = ${y} for x.`, [`$${lin(a, b)} = ${y}$`, `$x = \\frac{${y} - ${paren(b)}}{${a}} = ${k}$`], { keys: ["-"], data: { a, b, c, k, t } });
 });
-topic(11, "explog", "Log Lagoon", "🪷", "Exponentials and logarithms", r => {
+topic(11, "explog", "Log Lagoon", "🪷", "Bonus from Additional Mathematics: exponentials and logarithms", r => {
   const t = r.int(0, 3), base = r.pick([2, 3, 5, 10]), k = r.int(-2, 5);
   if (t === 0) { const P = Math.pow(base, k), Ptex = k < 0 ? `\\frac{1}{${Math.pow(base, -k)}}` : String(P); return num(`Solve ${T(`${base}^{x} = ${Ptex}`)}`, k, `Write ${T(Ptex)} as a power of ${base}.`, [`$${Ptex} = ${base}^{${k}}$`, `$x = ${k}$`], { keys: ["-"], data: { base, k, t } }); }
   if (t === 1) { const m = r.int(1, 5), n = r.int(1, 5); return num(`Evaluate ${T(`\\log_{${base}} ${Math.pow(base, m)} + \\log_{${base}} ${Math.pow(base, n)}`)}`, m + n, "Evaluate each log separately (or use log a + log b = log ab).", [`$\\log_{${base}} ${Math.pow(base, m)} = ${m}$, $\\log_{${base}} ${Math.pow(base, n)} = ${n}$`, `Sum = ${m + n}`], { data: { base, m, n, t } }); }
   if (t === 2) { const B = r.pick([2, 3, 5, 7]); let N = r.int(3, 60); while (Number.isInteger(+(Math.log(N) / Math.log(B)).toFixed(9))) N++; const v = Math.log(N) / Math.log(B);
     return num(`Solve ${T(`${B}^{x} = ${N}`)}, giving x to 3 s.f.`, sf3(v), "Take logs: x = ln N ÷ ln B.", [`$x = \\frac{\\ln ${N}}{\\ln ${B}} \\approx ${sf3(v)}$`], { a: String(sf3(v)), keys: ["."], tol: tol3(v), data: { B, N, t } }); }
   const p = r.int(2, 5), q = r.int(2, 4); return num(`Given ${T(`\\log_{a} x = ${p}`)}, find ${T(`\\log_{a} x^{${q}}`)}.`, p * q, "log(xⁿ) = n log x", [`$\\log_a x^{${q}} = ${q} \\log_a x = ${q} \\times ${p} = ${p * q}$`]);
-});
-topic(11, "diff", "Derivative Dragons", "🐲", "Differentiate polynomials", r => {
+}, { extra: "amath" });
+topic(11, "diff", "Derivative Dragons", "🐲", "Bonus from Additional Mathematics: differentiate polynomials", r => {
   const deg = r.int(2, 4), cs = Array.from({ length: deg + 1 }, (_, i) => i === 0 ? r.nz(-4, 5) : r.int(-6, 6)), x0 = r.int(-3, 3);
   const terms = cs.map((c, i) => [c, deg - i]), d = diffPoly(terms), val = evalPoly(d, x0);
   if (r.chance(.5)) return num(`Find the gradient of ${T(`y = ${poly(terms)}`)} at ${T(`x = ${x0}`)}.`, val, "Differentiate (bring the power down, reduce it by 1), then substitute.", [`$\\frac{dy}{dx} = ${poly(d)}$`, `At $x = ${x0}$: $\\frac{dy}{dx} = ${val}$`], { keys: ["-"], data: { terms, x0 } });
   const right = poly(d), wrong = [poly(terms.filter(([, p]) => p > 0).map(([c, p]) => [c, p - 1])), poly(terms.map(([c, p]) => [c * p, p])), poly(d.map(([c, p]) => [c, p + 1])), poly(terms.filter(([, p]) => p > 0).map(([c, p]) => [c * (p - 1), p - 1])), poly(d.map(([c, p]) => [-c, p]))].filter(w => w !== right);
   return mcq(r, `Differentiate ${T(`y = ${poly(terms)}`)}`, T(`\\frac{dy}{dx} = ${right}`), wrong.map(w => T(`\\frac{dy}{dx} = ${w}`)), "d/dx (a xⁿ) = n a xⁿ⁻¹; constants disappear.", terms.filter(([c]) => c).map(([c, p]) => `$${poly([[c, p]])} \\to ${p ? poly([[c * p, p - 1]]) : "0"}$`), { data: { terms } });
-});
+}, { extra: "amath" });
 topic(11, "stationary", "Hilltop Stationary Points", "🏔️", "Where the gradient is zero", r => {
   if (r.chance(.5)) { const a = r.nz(-3, 3), h = r.int(-6, 6), k = r.int(-9, 9), b = -2 * a * h, c = a * h * h + k;
     const termsQ = [[a, 2], [b, 1], [c, 0]], dQ = diffPoly(termsQ);
@@ -2100,20 +2100,20 @@ const tangQ = (r, kind) => {
   if (z.mc) return mcqWhy(r, z.q, z.right, z.rightWhy, z.wrong, z.hint, z.steps, extra);
   return numWhy(z.q, z.x, z.hint, z.steps, z.slips, Object.assign({ keys: ["-", ".", "/"] }, extra));
 };
-topic(11, "tangent", "Lantern Tangent Trail", "🏮", "Tangents, normals and gradients on curves", r => tangQ(r, r.pick(TANG_KINDS)));
+topic(11, "tangent", "Lantern Tangent Trail", "🏮", "Bonus from Additional Mathematics: tangents, normals and gradients on curves", r => tangQ(r, r.pick(TANG_KINDS)), { extra: "amath" });
 
-topic(11, "ap", "Arithmetic Avenue", "🪜", "Arithmetic progressions", r => {
+topic(11, "ap", "Arithmetic Avenue", "🪜", "Bonus from Additional Mathematics: arithmetic progressions", r => {
   const a = r.int(-10, 20), d = r.nz(-5, 8), n = r.int(6, 30);
   if (r.chance(.5)) return num(`An arithmetic sequence starts ${a}, ${a + d}, ${a + 2 * d}, … Find the ${n}th term.`, a + (n - 1) * d, "uₙ = a + (n − 1)d", [`$a = ${a},\\ d = ${d}$`, `$u_{${n}} = ${a} + ${n - 1}(${d}) = ${a + (n - 1) * d}$`], { keys: ["-"], data: { a, d, n, f: "term" } });
   return num(`Find the sum of the first ${n} terms of ${a}, ${a + d}, ${a + 2 * d}, …`, n / 2 * (2 * a + (n - 1) * d), "Sₙ = n/2 [2a + (n − 1)d]", [`$S_{${n}} = \\frac{${n}}{2}[2(${a}) + ${n - 1}(${d})] = ${n / 2 * (2 * a + (n - 1) * d)}$`], { keys: ["-"], data: { a, d, n, f: "sum" } });
-});
-topic(11, "gp", "Geometric Garden", "🌻", "Geometric progressions", r => {
+}, { extra: "amath" });
+topic(11, "gp", "Geometric Garden", "🌻", "Bonus from Additional Mathematics: geometric progressions", r => {
   const t = r.int(0, 2);
   if (t === 0) { const a = r.int(1, 6), q = r.pick([2, 3, -2]), n = r.int(4, 8); return num(`A geometric sequence starts ${a}, ${a * q}, ${a * q * q}, … Find the ${n}th term.`, a * Math.pow(q, n - 1), "uₙ = a rⁿ⁻¹", [`$r = ${q}$`, `$u_{${n}} = ${a} \\times ${paren(q)}^{${n - 1}} = ${a * Math.pow(q, n - 1)}$`], { keys: ["-"], data: { a, q, n, t } }); }
   if (t === 1) { const a = r.int(1, 5), q = r.pick([2, 3]), n = r.int(4, 8); return num(`Find the sum of the first ${n} terms of ${a}, ${a * q}, ${a * q * q}, …`, a * (Math.pow(q, n) - 1) / (q - 1), "Sₙ = a(rⁿ − 1) ÷ (r − 1)", [`$S_{${n}} = \\frac{${a}(${q}^{${n}} - 1)}{${q} - 1} = ${a * (Math.pow(q, n) - 1) / (q - 1)}$`], { data: { a, q, n, t } }); }
   const a = r.int(2, 24), [pn, pd] = r.pick([[1, 2], [1, 3], [2, 3], [1, 4], [3, 4], [-1, 2], [2, 5]]);
   return Q({ q: `A magic beanstalk grows ${a} m on day 1, and each day it grows ${T(fracTex(pn, pd))} as much as the day before. Find the sum to infinity ${T("S_\\infty")} (fraction or decimal).`, val: a / (1 - pn / pd), a: fracStr(a * pd, pd - pn), keys: ["/", ".", "-"], hint: "S∞ = a ÷ (1 − r), valid when |r| < 1.", steps: [`$S_\\infty = \\frac{${a}}{1 - ${pn < 0 ? `\\left(${fracTex(pn, pd)}\\right)` : fracTex(pn, pd)}} = ${fracTex(a * pd, pd - pn)}$`], data: { a, pn, pd, t } });
-});
+}, { extra: "amath" });
 topic(11, "vec3", "Star Vectors", "🌠", "3D vectors: dot product, magnitude, angle", r => {
   const a = [r.int(-5, 5), r.int(-5, 5), r.nz(-5, 5)], b = [r.nz(-5, 5), r.int(-5, 5), r.int(-5, 5)];
   const dot = a[0] * b[0] + a[1] * b[1] + a[2] * b[2], ma = Math.hypot(...a), mb = Math.hypot(...b), t = r.int(0, 2), sq = v => v[0] ** 2 + v[1] ** 2 + v[2] ** 2;
@@ -2133,7 +2133,7 @@ topic(12, "integ", "Integral Island", "🏝️", "Definite integrals of polynomi
   const a = r.int(-2, 1), b = r.int(a + 1, 3), F = x => terms.reduce((s, [c, p]) => s + c * Math.pow(x, p + 1) / (p + 1), 0), v = F(b) - F(a);
   return num(`Evaluate ${T(`\\int_{${a}}^{${b}} \\left(${poly(terms)}\\right)\\,dx`)}`, rd(v, 9), "Integrate (raise the power by 1, divide by the new power), then F(upper) − F(lower).", [`$\\left[${poly(terms.map(([c, p]) => [c / (p + 1), p + 1]))}\\right]_{${a}}^{${b}}$`, `$= ${fmt(F(b))} - ${paren(+fmt(F(a)))} = ${fmt(v)}$`], { keys: ["-", ".", "/"], tol: 1e-6, data: { terms, a, b } });
 });
-topic(12, "chain", "Chain-Rule Charms", "⛓️", "Chain and product rule at a point", r => {
+topic(12, "chain", "Chain-Rule Charms", "⛓️", "Bonus from Additional Mathematics: chain and product rule at a point", r => {
   const t = r.int(0, 2);
   if (t === 0) { const a = r.nz(-3, 3), b = r.int(-4, 4), n = r.int(2, 5), x0 = r.int(-2, 2), v = n * a * Math.pow(a * x0 + b, n - 1);
     return num(`Given ${T(`y = (${lin(a, b)})^{${n}}`)}, find ${T("\\frac{dy}{dx}")} at ${T(`x = ${x0}`)}.`, v, "Chain rule: d/dx (ax + b)ⁿ = n(ax + b)ⁿ⁻¹ × a", [`$\\frac{dy}{dx} = ${n}(${lin(a, b)})^{${n - 1}} \\times ${paren(a)}$`, `At $x = ${x0}$: $${n} \\times ${paren(a * x0 + b)}^{${n - 1}} \\times ${paren(a)} = ${v}$`], { keys: ["-"], data: { a, b, n, x0, t } }); }
@@ -2142,7 +2142,7 @@ topic(12, "chain", "Chain-Rule Charms", "⛓️", "Chain and product rule at a p
     return num(`Given ${T(`y = x^{${m}}e^{${k}x}`)}, find ${T("\\frac{dy}{dx}")} at ${T("x = 1")} (3 s.f.).`, sf3(val), "Product rule: u'v + uv'", [`$\\frac{dy}{dx} = e^{${k}x}(${m === 1 ? "1" : m + "x^{" + (m - 1) + "}"} + ${paren(k)}x^{${m}})$`, `At x = 1: $e^{${k}}(${m} + ${paren(k)}) \\approx ${sf3(val)}$`], { a: String(sf3(val)), keys: ["-", "."], tol: tol3(val), data: { k, m, t } }); }
   const a = r.pick([1, 2, 3, 4]), [x0, xt] = r.pick([[0, "0"], [Math.PI / 6, "\\frac{\\pi}{6}"], [Math.PI / 4, "\\frac{\\pi}{4}"], [Math.PI / 3, "\\frac{\\pi}{3}"], [Math.PI / 2, "\\frac{\\pi}{2}"]]), val = +(a * Math.cos(a * x0)).toFixed(12), A = a === 1 ? "" : a;
   return num(`Given ${T(`y = \\sin ${A}x`)}, find ${T("\\frac{dy}{dx}")} at ${T(`x = ${xt}`)} (3 s.f.).`, val === 0 ? 0 : sf3(val), "d/dx sin(ax) = a cos(ax)", [`$\\frac{dy}{dx} = ${A}\\cos ${A}x$`, `$= ${a}\\cos\\left(${A}${A ? "\\cdot" : ""}${xt}\\right) \\approx ${val === 0 ? 0 : sf3(val)}$`], { a: String(val === 0 ? 0 : sf3(val)), keys: ["-", "."], tol: Math.max(0.0051, tol3(val)), data: { a, x0, t } });
-});
+}, { extra: "amath" });
 topic(12, "area", "Area Under the Rainbow", "🌈", "Area between a curve and the x-axis", r => {
   const p = r.int(-4, 2), q = r.int(p + 1, 5), A = Math.pow(q - p, 3) / 6, e = poly([[-1, 2], [p + q, 1], [-p * q, 0]]); // y = −(x − p)(x − q)
   return Q({ q: `The rainbow follows ${T(`y = ${e}`)}. Find the area between the curve and the x-axis (fraction or 3 s.f.).`, val: A, a: fracStr(Math.pow(q - p, 3), 6), keys: ["/", "."], tol: tol3(A),
@@ -2180,4 +2180,18 @@ topic(12, "story", "Royal Challenges", "📜", "Optimisation in the kingdom", r 
   const P = r.int(2, 15) * 4;
   return num(`The royal gardener has ${P} m of fencing for a rectangular rose bed against the castle wall (the wall is one side, so only 3 sides need fence). What is the largest possible area in m²?`, P * P / 8, "Let the width be x; area A = x(P − 2x). Differentiate and set to 0.", [`$A = x(${P} - 2x) = ${P}x - 2x^2$`, `$\\frac{dA}{dx} = ${P} - 4x = 0 \\Rightarrow x = ${P / 4}$`, `$A = ${P / 4} \\times ${P / 2} = ${P * P / 8}$ m²`], { data: { P } });
 }, { story: true });
+
+/* Task 12: word problems stay last in every grade, and Right-Angle Paths sits with the other Additional Mathematics extra. */
+{
+  const T = M.TOPICS;
+  const pi = T.findIndex(t => t.id === "g9.perpline"), si = T.findIndex(t => t.id === "g9.surds");
+  if (pi >= 0 && si >= 0 && pi !== si + 1) { const [moved] = T.splice(pi, 1); T.splice(T.findIndex(t => t.id === "g9.surds") + 1, 0, moved); }
+  for (const g of [...new Set(T.map(t => t.grade))]) {
+    const idxs = []; T.forEach((t, i) => { if (t.grade === g) idxs.push(i); });
+    const slice = idxs.map(i => T[i]);
+    const next = slice.filter(t => !t.story).concat(slice.filter(t => t.story));
+    idxs.forEach((i, k) => { T[i] = next[k]; });
+  }
+}
+
 })();

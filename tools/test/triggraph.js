@@ -1,4 +1,4 @@
-// 🌊 Wave Pier: MOE Sec 3/4 A-Math / E-Math trigonometric graphs — amplitude |a|, period 360°/|b|
+// 🌊 Wave Pier: Additional Mathematics extra (not core G3 maths) — amplitude |a|, period 360°/|b|
 // (degrees), max/min with vertical shift d, match equation ↔ pastel SVG wave, read a marked point /
 // y-intercept / crest from the graph, and kid word problems (Ferris wheel / Tide Pier / lantern).
 // Node checks recompute every answer from q.data (and from the SVG: class=wave data-a/b/kind/d,
@@ -16,7 +16,7 @@ const { plotFrame, svgPlane, svgParabola, svgWave, ampPeriod, PLOT_BOX, axes, fm
 
 /* ---------- 1. generators (Node) ---------- */
 const t = M.topic(ID);
-ok(t && t.grade === 10 && t.name === 'Wave Pier' && t.icon === '🌊', `🌊 Wave Pier is a Grade 10 (Sec 3/4) topic (${t && t.desc})`);
+ok(t && t.grade === 10 && t.extra === 'amath' && t.name === 'Wave Pier' && t.icon === '🌊', `🌊 Wave Pier is a Grade 10 Additional Mathematics extra (${t && t.desc})`);
 ok(M.TOPICS.length >= 125, `it is one of ${M.TOPICS.length} maths topics (125 when it was added)`);
 { const g = M.gradeTopics(10).map(x => x.id), i = g.indexOf(ID);
   ok(g[i - 1] === 'g10.sinecos' && g[i + 1] === 'g10.prob2', 'it sits after Sine & Cosine Castle, before Two-Draw Treasure: ' + g.join(' ')); }

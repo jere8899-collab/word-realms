@@ -15,9 +15,9 @@ const { sqrtTex, surdTex, simpRad, gcd, simp } = M._internal;
 
 /* ---------- 1. generators (Node) ---------- */
 const t = M.topic(ID);
-ok(t && t.grade === 9 && t.name === 'Root Garden' && t.icon === '🌿', `🌿 Root Garden is a Grade 9 (Sec 3) topic (${t && t.desc})`);
+ok(t && t.grade === 9 && t.extra === 'amath' && t.name === 'Root Garden' && t.icon === '🌿', `🌿 Root Garden is a Grade 9 Additional Mathematics extra (${t && t.desc})`);
 ok(M.TOPICS.length >= 122, `it is one of ${M.TOPICS.length} maths topics (122 when it was added)`);
-{ const g = M.gradeTopics(9).map(x => x.id), i = g.indexOf(ID); ok(g[i - 1] === 'g9.stdform' && g[i + 1] === 'g9.trig', 'it sits after Standard Form Stars (number-form strand), before SOH-CAH-TOA Tower: ' + g.join(' ')); }
+{ const g = M.gradeTopics(9).map(x => x.id), i = g.indexOf(ID); ok(g[i - 1] === 'g9.stdform' && g[i + 1] === 'g9.perpline', 'it sits after Standard Form Stars, before Right-Angle Paths (both Additional Mathematics extras): ' + g.join(' ')); }
 // the clean-up: shared radical kit (sqrtTex, surdTex, simpRad) lives in math-gen.js and is used by Root Garden and by
 // distance / magnitude worked steps (no leftover hand-rolled \\sqrt{…} builders for those)
 { const I = M._internal, gen = fs.readFileSync(ROOT + '/js/math-gen.js', 'utf8'), h = fs.readFileSync(ROOT + '/js/math-topics-h.js', 'utf8');

@@ -49,4 +49,4 @@ T004 blocks every code task. T010–T013 before T020+. T040–T042 parallel. T05
 
 ## Follow-ups decided by Jeremy (2026-11-04 15:46 SGT)
 - [x] T060 Compass directions back as a G4 ✨ Extra topic (`g4.compass`, enrichment, not core syllabus; out of guardian fights) — own commit.
-- [ ] **Task 12 (later): move misplaced secondary topics** (research.md §D: g8.gradient, g8.lingraph, g8.fraceq → Sec 1; g9.quad, g9.simul, g9.trig → Sec 2; g9.surds, g10.triggraph are A-Math only; JC not checked). Not started — waits for its own brief task.
+- [x] **Task 12: move misplaced secondary topics** (research.md §C and §D: g8.gradient, g8.lingraph, g8.fraceq → Grade 7; parallel/perpendicular gradients split out as g9.perpline, an ✨ Extra; g9.quad, g9.simul, g9.trig → Grade 8; g9.surds and g10.triggraph labelled ✨ Extra. JC checked against SEAB H2 Mathematics 9758 and left in place). Ids kept. Test: `tools/test/secondary-levels.js`.

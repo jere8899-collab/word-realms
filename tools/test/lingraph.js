@@ -1,6 +1,6 @@
-// 📏 Straight-Line Street: MOE Sec 2 linear graphs — gradient, y-/x-intercepts, match equation ↔
-// pastel SVG, find the equation from two points, evaluate a point, parallel / perpendicular
-// gradients, and kid word problems (hill road / rainbow path / kite string / fairy tram /
+// 📏 Straight-Line Street: MOE Sec 1 linear graphs — gradient, y-/x-intercepts, match equation ↔
+// pastel SVG, find the equation from two points, evaluate a point, and kid word problems
+// (hill road / rainbow path / kite string / fairy tram /
 // pumpkin-coach ramp / sports-day / beanstalk / lantern bridge). Node checks recompute every
 // answer from q.data (and from the SVG: class=lineeq data-m/c, marks class=ldot). Cleanup: shared
 // svgStraight kit in math-gen.js; Gradient Hills / Parabola / Wave / Travel stay byte-identical.
@@ -16,10 +16,10 @@ const { plotFrame, svgPlane, svgParabola, svgWave, svgStraight, PLOT_BOX, axes, 
 
 /* ---------- 1. generators (Node) ---------- */
 const t = M.topic(ID);
-ok(t && t.grade === 8 && t.name === 'Straight-Line Street' && t.icon === '📏', `📏 Straight-Line Street is a Grade 8 (Sec 2) topic (${t && t.desc})`);
+ok(t && t.grade === 7 && t.was === 8 && t.name === 'Straight-Line Street' && t.icon === '📏', `📏 Straight-Line Street is a Grade 7 (Sec 1) topic, id kept (${t && t.desc})`);
 ok(M.TOPICS.length >= 126, `it is one of ${M.TOPICS.length} maths topics (126 when it was added)`);
-{ const g = M.gradeTopics(8).map(x => x.id), i = g.indexOf(ID);
-  ok(g[i - 1] === 'g8.gradient' && g[i + 1] === 'g8.proportion', 'it sits after Gradient Hills, before Proportion Potions: ' + g.join(' ')); }
+{ const g = M.gradeTopics(7).map(x => x.id), i = g.indexOf(ID);
+  ok(g[i - 1] === 'g8.gradient' && g[i + 1] === 'g8.fraceq' && g[g.length - 1] === 'g7.story', 'it sits after Gradient Hills, before Fraction Equations, on the Grade 7 map: ' + g.join(' ')); }
 // the clean-up: shared svgStraight kit; parabola / wave / axes stay byte-identical
 { const I = M._internal, gen = fs.readFileSync(ROOT + '/js/math-gen.js', 'utf8'), m = fs.readFileSync(ROOT + '/js/math-topics-m.js', 'utf8');
   ok(typeof I.svgStraight === 'function' && typeof I.svgParabola === 'function' && typeof I.svgWave === 'function'
@@ -131,8 +131,9 @@ ok(!bad.length, `${N.toLocaleString()} Straight-Line Street questions pass the c
 ok(!notes.length, `every option has its own why / why-not note (the right one in other words, starting with Right) and typed questions name at least two usual slips ${[...new Set(notes)].slice(0, 3)}`);
 ok(!wrong.length, `every answer is worked out again from q.data ${[...new Set(wrong)].slice(0, 4)}`);
 ok(!scale.length, `every line picture matches data-m/c and match ships 4 optPics ${[...new Set(scale)].slice(0, 4)}`);
-const NEED = ['grad', 'yint', 'xint', 'match', 'eq', 'point', 'parallel', 'perp', 'word'];
+const NEED = ['grad', 'yint', 'xint', 'match', 'eq', 'point', 'word'];
 ok(NEED.every(k => kinds[k] > 40), 'all question kinds appear: ' + JSON.stringify(kinds));
+ok(!kinds.parallel && !kinds.perp, 'parallel and perpendicular gradients are not in this Sec 1 topic');
 { const qs = Array.from({ length: 3000 }, (_, s) => M.make(ID, s + 1));
   ok(qs.every(q => !/minister|politic|election|war\b|kill|blood|weapon|gun|knife|salary|income|bet\b|gambl|beer|wine|crash|accident/i.test(q.q + JSON.stringify(q.why || ''))), 'kid / teen themes only');
   ok(qs.every(q => q.uid && /^lingraph\|/.test(q.uid)), 'every question has a uid (anti-farm)');
@@ -163,7 +164,6 @@ const whyText = p => p.evaluate(() => [...document.querySelectorAll('#mexplain .
       seed(q => D(q).lingraph === 'xint' && q.kind === 'mcq'),
       seed(q => D(q).lingraph === 'eq'),
       seed(q => D(q).lingraph === 'point'),
-      seed(q => D(q).lingraph === 'parallel'),
       seed(q => D(q).lingraph === 'word')
     ];
     ok(list.every(Number.isInteger), `${w}px: a seed was found for every kind of question`);
@@ -201,8 +201,8 @@ const whyText = p => p.evaluate(() => [...document.querySelectorAll('#mexplain .
     if (w === 375) {
       const st = await p.evaluate(s => { const q = MathGen.make('g8.lingraph', s), k = q.uid || 'g8.lingraph|' + q.q; const a = WR.awardStars('m', k + '|t', 1), b = WR.awardStars('m', k + '|t', 1); return [a, b]; }, list[1]).catch(() => null);
       ok(st && st[0] >= 1 && st[1] < st[0], `a replayed question pays less than the first time (${st})`);
-      await p.evaluate(() => WR.go('math')); await p.waitForTimeout(300); await p.evaluate(() => { const b = [...document.querySelectorAll('[data-g]')].find(x => x.dataset.g === '8'); b && b.click(); }); await p.waitForTimeout(400);
-      ok(await p.locator('[data-t="g8.lingraph"]').count() === 1, 'the Grade 8 hub lists Straight-Line Street');
+      await p.evaluate(() => WR.go('math')); await p.waitForTimeout(300); await p.evaluate(() => { const b = [...document.querySelectorAll('[data-g]')].find(x => x.dataset.g === '7'); b && b.click(); }); await p.waitForTimeout(400);
+      ok(await p.locator('[data-t="g8.lingraph"]').count() === 1, 'the Grade 7 hub lists Straight-Line Street');
       ok(await p.evaluate(() => { const e = document.querySelector('[data-t="g8.lingraph"]'); return !/\p{Extended_Pictographic}/u.test(e.innerText) && !!e.querySelector('img.wr-icon'); }), 'its hub card shows the painted ruler icon, not an emoji');
       await p.locator('[data-t="g8.lingraph"]').scrollIntoViewIfNeeded(); await p.screenshot({ path: OUT + 'lingraph_05_hub_grade8.png' });
     }

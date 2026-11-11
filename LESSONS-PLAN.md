@@ -498,6 +498,9 @@ These lessons attach to the level hub as a "📜 Learn" row, which is still a hu
 - `m.g7.mensur` composite areas (split)
 - `m.g7.pct` percentage multipliers
 - `m.g7.pattern` the nth term (build)
+- `m.g8.gradient` gradient: rise over run (drag points) — taught in Grade 7; lesson id kept
+- `m.g8.lingraph` y = mx + c sliders — taught in Grade 7; lesson id kept
+- `m.g8.fraceq` fraction equations (balance) — taught in Grade 7; lesson id kept
 - `m.g7.story` setting up equations
 
 **Grade 8 (Sec 2):**
@@ -506,22 +509,20 @@ These lessons attach to the level hub as a "📜 Learn" row, which is still a hu
 - `m.g8.pyth` Pythagoras with squares on the sides
 - `m.g8.similar` scale factor (slider)
 - `m.g8.solids` volume of cones & spheres
-- `m.g8.gradient` gradient: rise over run (drag points)
-- `m.g8.lingraph` y = mx + c sliders
 - `m.g8.proportion` direct / inverse proportion (sort)
 - `m.g8.stats` mean, median & mode (sort)
 - `m.g8.prob` probability from 0 to 1 (spinner)
-- `m.g8.fraceq` fraction equations (balance)
+- `m.g9.quad` factorising quadratics (grid) — taught in Grade 8; lesson id kept
+- `m.g9.simul` simultaneous equations (two balances) — taught in Grade 8; lesson id kept
+- `m.g9.trig` SOH-CAH-TOA (label the sides) — taught in Grade 8; lesson id kept
 - `m.g8.story` problem solving
 
 **Grade 9 (Sec 3):**
-- `m.g9.quad` factorising quadratics (grid)
 - `m.g9.quadgraph` parabola sliders
-- `m.g9.simul` simultaneous equations (two balances)
 - `m.g9.indices` index laws (sort)
 - `m.g9.stdform` standard form (pv slide)
-- `m.g9.surds` surds: simplest form (factor tree)
-- `m.g9.trig` SOH-CAH-TOA (label the sides)
+- `m.g9.surds` surds: simplest form (factor tree) — ✨ Extra, Additional Mathematics; lesson id kept
+- `m.g9.perpline` parallel and perpendicular gradients — ✨ Extra, Additional Mathematics
 - `m.g9.bearings` bearings: clockwise from north
 - `m.g9.coord` coordinate geometry (drag points)
 - `m.g9.circles` circle properties (tap angles)
@@ -532,7 +533,7 @@ These lessons attach to the level hub as a "📜 Learn" row, which is still a hu
 **Grade 10 (Sec 4):**
 - `m.g10.quadf` the quadratic formula
 - `m.g10.sinecos` sine & cosine rules (sort which rule)
-- `m.g10.triggraph` amplitude & period sliders
+- `m.g10.triggraph` amplitude & period sliders — ✨ Extra, Additional Mathematics; lesson id kept
 - `m.g10.prob2` two-draw tree diagrams (build)
 - `m.g10.freq` frequency tables
 - `m.g10.spread` range & IQR (box plot)
@@ -545,18 +546,18 @@ These lessons attach to the level hub as a "📜 Learn" row, which is still a hu
 
 **Grade 11 (JC 1):**
 - `m.g11.func` functions as machines
-- `m.g11.explog` logs undo powers
-- `m.g11.diff` gradient of a curve (tangent slider)
+- `m.g11.explog` logs undo powers — ✨ Extra, Additional Mathematics; lesson id kept
+- `m.g11.diff` gradient of a curve (tangent slider) — ✨ Extra, Additional Mathematics; lesson id kept
 - `m.g11.stationary` stationary points
-- `m.g11.tangent` tangent & normal
-- `m.g11.ap` arithmetic sequences
-- `m.g11.gp` geometric sequences
+- `m.g11.tangent` tangent & normal — ✨ Extra, Additional Mathematics; lesson id kept
+- `m.g11.ap` arithmetic sequences — ✨ Extra, Additional Mathematics; lesson id kept
+- `m.g11.gp` geometric sequences — ✨ Extra, Additional Mathematics; lesson id kept
 - `m.g11.vec3` 3D vectors
 - `m.g11.story` modelling
 
 **Grade 12 (JC 2):**
 - `m.g12.integ` integration as area under (rectangles)
-- `m.g12.chain` the chain rule
+- `m.g12.chain` the chain rule — ✨ Extra, Additional Mathematics; lesson id kept
 - `m.g12.area` area between curves
 - `m.g12.binom` binomial expansion (Pascal)
 - `m.g12.complex` complex numbers on the plane

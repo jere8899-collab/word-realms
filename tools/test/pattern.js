@@ -14,7 +14,7 @@ const ID = 'g7.pattern';
 const t = M.topic(ID);
 ok(t && t.grade === 7 && t.name === 'Sparkle Sequences' && t.icon === '✨', `✨ Sparkle Sequences is a Grade 7 topic (${t && t.desc})`);
 ok(M.TOPICS.length >= 113, `it is one of ${M.TOPICS.length} maths topics (113 when it was added)`);
-{ const g = M.gradeTopics(7).map(x => x.id); ok(g[g.length - 1] === 'g7.story' && g[g.length - 2] === ID && g.indexOf('g7.pct') === g.length - 3, 'it sits after Percentage Puzzles, right before the word problems: ' + g.join(' ')); }
+{ const g = M.gradeTopics(7).map(x => x.id); ok(g[g.length - 1] === 'g7.story' && g[g.indexOf('g7.pct') + 1] === ID && g[g.indexOf(ID) + 1] === 'g8.gradient', 'it sits after Percentage Puzzles; Gradient Hills (now Grade 7) comes next, and the word problems stay last: ' + g.join(' ')); }
 // read back the sequence from the question: the first $a, b, c, …, \ldots$
 const seqOf = q => { const m = q.q.match(/\$(-?\d+(?:, -?\d+)+), \\ldots\$/); return m ? m[1].split(', ').map(Number) : null; };
 // a rule "an + b" / "-n - 4" / "n + 3" / "5" back to [a, b]

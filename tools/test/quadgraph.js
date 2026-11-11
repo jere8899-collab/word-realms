@@ -18,7 +18,7 @@ const t = M.topic(ID);
 ok(t && t.grade === 9 && t.name === 'Parabola Park' && t.icon === '🎢', `🎢 Parabola Park is a Grade 9 (Sec 3) topic (${t && t.desc})`);
 ok(M.TOPICS.length >= 124, `it is one of ${M.TOPICS.length} maths topics (124 when it was added)`);
 { const g = M.gradeTopics(9).map(x => x.id), i = g.indexOf(ID);
-  ok(g[i - 1] === 'g9.quad' && g[i + 1] === 'g9.simul', 'it sits after Quadratic Quarry, before Twin Potions: ' + g.join(' ')); }
+  ok(!g[i - 1] && g[i + 1] === 'g9.indices', 'Quadratic Quarry and Twin Potions moved to Grade 8, so Parabola Park leads Grade 9: ' + g.join(' ')); }
 // the clean-up: shared plane / parabola kit; travel reuses plotFrame with byte-identical X/Y maps
 { const I = M._internal, gen = fs.readFileSync(ROOT + '/js/math-gen.js', 'utf8'), h = fs.readFileSync(ROOT + '/js/math-topics-h.js', 'utf8');
   ok(typeof I.plotFrame === 'function' && typeof I.svgPlane === 'function' && typeof I.svgParabola === 'function'
