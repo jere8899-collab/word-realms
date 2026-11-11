@@ -546,18 +546,18 @@ These lessons attach to the level hub as a "📜 Learn" row, which is still a hu
 
 **Grade 11 (JC 1):**
 - `m.g11.func` functions as machines
-- `m.g11.explog` logs undo powers
-- `m.g11.diff` gradient of a curve (tangent slider)
+- `m.g11.explog` logs undo powers — ✨ Extra, Additional Mathematics; lesson id kept
+- `m.g11.diff` gradient of a curve (tangent slider) — ✨ Extra, Additional Mathematics; lesson id kept
 - `m.g11.stationary` stationary points
-- `m.g11.tangent` tangent & normal
-- `m.g11.ap` arithmetic sequences
-- `m.g11.gp` geometric sequences
+- `m.g11.tangent` tangent & normal — ✨ Extra, Additional Mathematics; lesson id kept
+- `m.g11.ap` arithmetic sequences — ✨ Extra, Additional Mathematics; lesson id kept
+- `m.g11.gp` geometric sequences — ✨ Extra, Additional Mathematics; lesson id kept
 - `m.g11.vec3` 3D vectors
 - `m.g11.story` modelling
 
 **Grade 12 (JC 2):**
 - `m.g12.integ` integration as area under (rectangles)
-- `m.g12.chain` the chain rule
+- `m.g12.chain` the chain rule — ✨ Extra, Additional Mathematics; lesson id kept
 - `m.g12.area` area between curves
 - `m.g12.binom` binomial expansion (Pascal)
 - `m.g12.complex` complex numbers on the plane

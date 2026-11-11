@@ -17,7 +17,10 @@ const AT = {
 const WAS = { 'g8.gradient': 8, 'g8.lingraph': 8, 'g8.fraceq': 8, 'g9.quad': 9, 'g9.simul': 9, 'g9.trig': 9 };
 ok(Object.entries(AT).every(([id, g]) => M.topic(id) && M.topic(id).grade === g), 'every Task 12 topic sits at its new grade: ' + Object.keys(AT).map(id => id + '→' + (M.topic(id) || {}).grade).join(' '));
 ok(Object.entries(WAS).every(([id, was]) => M.topic(id).id === id && M.topic(id).was === was), 'moved topics keep their old id and remember the grade they came from');
-ok(['g9.surds', 'g10.triggraph', 'g9.perpline'].every(id => M.topic(id).extra === 'amath') && M.topic('g4.compass').extra === true, 'surds, wave graphs and right-angle paths are A-Math extras; Compass Quest stays a plain Extra');
+const AMATH = ['g9.surds', 'g10.triggraph', 'g9.perpline', 'g11.explog', 'g11.diff', 'g11.tangent', 'g11.ap', 'g11.gp', 'g12.chain'];
+ok(AMATH.every(id => M.topic(id).extra === 'amath' && M.topic(id).id === id) && M.topic('g4.compass').extra === true, 'A-Math topics wear extra:"amath" and keep their ids; Compass Quest stays a plain Extra');
+ok(['g11.explog', 'g11.diff', 'g11.tangent', 'g11.ap', 'g11.gp'].every(id => M.topic(id).grade === 11 && !M.topic(id).was) && M.topic('g12.chain').grade === 12 && !M.topic('g12.chain').was, 'the six JC A-Math topics stay in their grades');
+ok(['g11.func', 'g11.stationary', 'g11.vec3', 'g12.integ', 'g12.area', 'g12.binom', 'g12.complex', 'g12.sigma', 'g12.expcalc'].every(id => !M.topic(id).extra), 'the other JC topics stay core H2 maths');
 ok(M.TOPICS.length === 135 && new Set(M.TOPICS.map(t => t.id)).size === 135, `135 topics, all ids unique (${M.TOPICS.length})`);
 ok(M.GRADES.every(x => { const g = M.gradeTopics(x.g); return g.length && g[g.length - 1].story && g.filter(t => t.story).length === 1; }), 'every grade still ends with its one word-problem topic');
 { const g7 = M.gradeTopics(7).map(t => t.id), g8 = M.gradeTopics(8).map(t => t.id);
@@ -37,17 +40,16 @@ const OLD = { v: 1, name: 'Mei', stars: 40, gems: 2, xp: 20, avatar: { name: 'Me
   settings: { rate: .9, sound: false, unlockAll: true }, mistakes: [], lessonsDone: 8,
   stickers: { got: { math: ['first'], guard: [] } },
   pet: { species: 'pet_bunny', name: 'Puffbun', xp: 40, happiness: 80, hunger: 20, skin: null, lastTick: Date.now() },
-  math: { grade: 8, topics: Object.assign({ 'g9.surds': { best: .9, plays: 2 }, 'g10.triggraph': { best: 1, plays: 2 } }, Object.fromEntries(MOVED.map(id => [id, { best: 1, plays: 4 }]))), correct: 40, answered: 50, lessons: 9 } };
+  math: { grade: 8, topics: Object.assign({ 'g9.surds': { best: .9, plays: 2 }, 'g10.triggraph': { best: 1, plays: 2 } }, Object.fromEntries(MOVED.concat(['g11.explog', 'g11.diff', 'g11.tangent', 'g11.ap', 'g11.gp', 'g12.chain']).map(id => [id, { best: 1, plays: 4 }]))), correct: 40, answered: 50, lessons: 9 } };
 
 (async () => {
   const b = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox'] });
   const ctx = await b.newContext({ viewport: { width: 360, height: 740 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
   await ctx.route(/supabase\.co/, r => r.abort());
+  await ctx.addInitScript(s => { localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)); }, OLD);
   const p = await ctx.newPage(), errors = [];
   p.on('pageerror', e => errors.push(e.message));
-  await p.goto(URL);
-  await p.evaluate(s => { localStorage.clear(); localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)); }, OLD);
-  await p.reload({ waitUntil: 'networkidle' });
+  await p.goto(URL, { waitUntil: 'networkidle' });
   await p.waitForTimeout(800);
   const c = await p.evaluate(ids => {
     const crowns = Object.fromEntries(ids.map(id => [id, WR.Math.crownsFor(id)]));
@@ -55,15 +57,17 @@ const OLD = { v: 1, name: 'Mei', stars: 40, gems: 2, xp: 20, avatar: { name: 'Me
     const g7 = MathGen.gradeTopics(7).map(t => t.id), g8 = MathGen.gradeTopics(8).map(t => t.id);
     const shell = WR.MathGoals.GUARDIANS.find(g => g.id === 'g78');
     const quartz = WR.MathGoals.GUARDIANS.find(g => g.id === 'g910');
+    const lumina = WR.MathGoals.GUARDIANS.find(g => g.id === 'g1112');
     return { crowns, stars: save.stars, owned: save.owned, unlocked: save.unlocked, name: save.name, pet: save.pet && save.pet.name,
-      topics: save.math.topics, g7, g8, shell: WR.MathGoals.passed(shell), quartz: WR.MathGoals.passed(quartz),
+      topics: save.math.topics, g7, g8, shell: WR.MathGoals.passed(shell), quartz: WR.MathGoals.passed(quartz), lumina: WR.MathGoals.passed(lumina),
       stickers: save.stickers && save.stickers.got && save.stickers.got.math };
-  }, MOVED.concat(['g9.surds', 'g10.triggraph']));
-  ok(MOVED.every(id => c.crowns[id] === 3) && c.crowns['g9.surds'] >= 2 && c.crowns['g10.triggraph'] === 3, `old crowns stay on the same ids (${JSON.stringify(c.crowns)})`);
+  }, MOVED.concat(['g9.surds', 'g10.triggraph', 'g11.explog', 'g11.diff', 'g11.tangent', 'g11.ap', 'g11.gp', 'g12.chain']));
+  const JC = ['g11.explog', 'g11.diff', 'g11.tangent', 'g11.ap', 'g11.gp', 'g12.chain'];
+  ok(MOVED.every(id => c.crowns[id] === 3) && c.crowns['g9.surds'] >= 2 && c.crowns['g10.triggraph'] === 3 && JC.every(id => c.crowns[id] === 3), `old crowns stay on the same ids (${JSON.stringify(c.crowns)})`);
   ok(c.stars >= 40 && c.owned.includes('hat_star') && c.unlocked.includes('a2') && c.name === 'Mei' && c.pet === 'Puffbun', `nothing earned was taken away (stars ${c.stars}, hat, unlocks, name, pet)`);
   ok(MOVED.every(id => c.topics[id] && c.topics[id].best === 1) && !Object.keys(c.topics).some(k => /^g7\.(gradient|lingraph|fraceq)|^g8\.(quad|simul|trig)/.test(k)), 'the save is untouched: no renamed ids and no copies');
   ok(c.stickers && c.stickers.includes('first'), 'the Number Kingdom sticker stays');
-  ok(c.g7.includes('g8.gradient') && c.g8.includes('g9.quad') && c.shell >= 6 && c.quartz >= 3, `guardians still count the moved topics (Shellby ${c.shell}, Quartzy ${c.quartz})`);
+  ok(c.g7.includes('g8.gradient') && c.g8.includes('g9.quad') && c.shell >= 6 && c.quartz >= 3 && c.lumina >= 6, `guardians still count the moved topics and the JC extras (Shellby ${c.shell}, Quartzy ${c.quartz}, Lumina ${c.lumina})`);
 
   const show = async (grade, ids) => {
     await p.evaluate(g => WR.go('math', g), grade);
@@ -90,6 +94,10 @@ const OLD = { v: 1, name: 'Mei', stars: 40, gems: 2, xp: 20, avatar: { name: 'Me
   ok(await p.evaluate(() => ['g9.surds', 'g9.perpline'].every(id => /Extra/.test((document.querySelector(`[data-t="${id}"] .mextra`) || {}).textContent || ''))), 'both Grade 9 A-Math topics wear the ✨ Extra badge');
   ok(await show(10, ['g10.triggraph']), 'Grade 10 still lists Wave Pier');
   ok(await p.evaluate(() => /Extra/.test((document.querySelector('[data-t="g10.triggraph"] .mextra') || {}).textContent || '') && !document.querySelector('[data-t="g10.sinecos"] .mextra')), 'Wave Pier is Extra; Sine & Cosine Castle stays core');
+  ok(await show(11, ['g11.explog', 'g11.diff', 'g11.tangent', 'g11.ap', 'g11.gp', 'g11.func']), 'Grade 11 still lists the JC topics');
+  ok(await p.evaluate(() => ['g11.explog', 'g11.diff', 'g11.tangent', 'g11.ap', 'g11.gp'].every(id => /Extra/.test((document.querySelector(`[data-t="${id}"] .mextra`) || {}).textContent || '')) && !document.querySelector('[data-t="g11.func"] .mextra') && !document.querySelector('[data-t="g11.stationary"] .mextra')), 'five Grade 11 A-Math topics wear ✨ Extra; functions and stationary points stay core');
+  ok(await show(12, ['g12.chain', 'g12.integ']), 'Grade 12 still lists Chain-Rule Charms');
+  ok(await p.evaluate(() => /Extra/.test((document.querySelector('[data-t="g12.chain"] .mextra') || {}).textContent || '') && !document.querySelector('[data-t="g12.integ"] .mextra')), 'Chain-Rule Charms is Extra; Integral Island stays core');
   await ctx.close();
 
   for (const [w, h, tag] of [[320, 640, '320'], [360, 740, '360'], [375, 667, '375']]) {

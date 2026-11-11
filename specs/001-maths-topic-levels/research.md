@@ -141,21 +141,21 @@ Guessed direct SEAB PDF paths (`9758_y26_sy.pdf`, `9758_y25_sy.pdf`) returned 40
 | Id | What the game asks | 9758 (2026) | Decision |
 |---|---|---|---|
 | func | Composite and inverse functions | 1.1 Functions | Keep in Grade 11. Clearly H2. |
-| explog | Exponentials and logarithms | Assumed from O-Level Additional Mathematics, and used all through H2 calculus | Not clearly in the wrong grade. Left as the JC on-ramp. Jeremy can badge it ✨ Extra instead. |
-| diff | Differentiate polynomials | 5.1 Differentiation (also O-Level A-Math) | Keep in Grade 11. A fair start to JC calculus. |
-| stationary | Where the gradient is zero | 5.1 stationary points | Keep in Grade 11. |
-| tangent | Tangents and normals | 5.1 tangents and normals | Keep in Grade 11. |
-| ap | Arithmetic progressions | 2.1 Sequences and series | Keep in Grade 11. Also A-Math, but it is in H2. |
-| gp | Geometric progressions, including a sum to infinity | 2.1 | Keep in Grade 11. |
+| explog | Exponentials and logarithms | Assumed from O-Level Additional Mathematics, and used all through H2 calculus | ✨ Extra (Additional Mathematics). Grade 11 and id `g11.explog` kept. Jeremy, 2026-11-11. |
+| diff | Differentiate polynomials | 5.1 Differentiation (also O-Level A-Math) | ✨ Extra (Additional Mathematics). Grade 11 and id `g11.diff` kept. Jeremy, 2026-11-11. |
+| stationary | Where the gradient is zero | 5.1 stationary points | Keep in Grade 11. Clearly H2, not the A-Math badge. |
+| tangent | Tangents and normals | 5.1 tangents and normals | ✨ Extra (Additional Mathematics). Grade 11 and id `g11.tangent` kept. Jeremy, 2026-11-11. |
+| ap | Arithmetic progressions | 2.1 Sequences and series | ✨ Extra (Additional Mathematics). Grade 11 and id `g11.ap` kept. Jeremy, 2026-11-11. |
+| gp | Geometric progressions, including a sum to infinity | 2.1 | ✨ Extra (Additional Mathematics). Grade 11 and id `g11.gp` kept. Jeremy, 2026-11-11. |
 | vec3 | 3D dot product, magnitude, angle | 3.1–3.2 | Keep in Grade 11. Lines, planes and the vector product are in 3.2–3.3 and are not in this topic (a later addition, not a small move). |
 | integ | Definite integrals of polynomials | 5.4 Definite integrals | Keep in Grade 12. |
-| chain | Chain and product rule at a point | H2 differentiation techniques (also A-Math) | Keep in Grade 12. Basic differentiation stays in Grade 11; that split is not clearly wrong. |
+| chain | Chain and product rule at a point | H2 differentiation techniques (also A-Math) | ✨ Extra (Additional Mathematics). Grade 12 and id `g12.chain` kept. Jeremy, 2026-11-11. |
 | area | Area between a curve and the x-axis | 5.4 area under a curve | Keep in Grade 12. Volumes of revolution are in 5.4 and are not in this topic (a later addition). |
 | binom | Binomial probabilities | 6.2 Binomial distribution | Keep in Grade 12. |
 | complex | Cartesian form, modulus, multiply, complex roots | Section 4. Polar and exponential form are excluded, and this topic does not teach them | Keep in Grade 12. |
 | sigma | Σ of r, r² and a linear term | 2.1 sums of series | Keep in Grade 12. AP and GP stay in Grade 11; that split is not clearly wrong. |
 | expcalc | Derivatives and integrals with e and ln | H2 calculus of exponential and log functions | Keep in Grade 12. |
 
-No JC topic was both clearly in the wrong grade and a small fix, so none of them moved.
+No JC topic moved to another grade. On 2026-11-11 Jeremy asked for the ✨ Extra badge on the six that are also O-Level Additional Mathematics: `g11.explog`, `g11.diff`, `g11.ap`, `g11.gp`, `g11.tangent` and `g12.chain`. Ids, grades, crowns and Grade Guardians stay as they were. The badge is the same one Root Garden uses.
 
 H2 section 6 also includes the normal distribution, sampling, hypothesis testing, and correlation. The game does not teach those. Adding them would be new topics, so it is left as a decision for Jeremy.
