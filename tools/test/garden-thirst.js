@@ -104,6 +104,15 @@ const SAVE = { v: 1, name: 'Mei', avatar: 'avatar_girl', startLevel: 'a1', stars
     G.merge(WR.state, disk);
     const merged = G.settle(noon);
     out.sync = { once: once.take, twice: twice.take, mergedStars: WR.state.stars, mergedTake: merged.take, diskStars: disk.stars };
+    // A reload settles with the real clock. Pin each paid day to exactly 24h before that clock,
+    // so a later calendar date cannot charge another day. Stars and taken stay as they are.
+    const real = Date.now();
+    WR.state.mistakes.forEach(m => {
+      if (!m.thirst) return;
+      m.due = real - DAY;
+      m.thirst.due = m.due;
+      m.thirst.from = real - DAY;
+    });
     WR.save();
 
     return out;
