@@ -85,6 +85,7 @@ def check_widget(lid, w, where):
         need_why(lid, where, k, w["items"], "base")
         for it in w["items"]:
             if "add" in it and not (isinstance(it["add"], str) and it["add"].isalpha()): fail(lid, f"{where}: suffix add {it['add']!r} must be letters")
+            if "post" in it and not (isinstance(it["post"], str) and it["post"].strip()): fail(lid, f"{where}: suffix post must be words after the stamp")
             if "cut" in it and not (isinstance(it["cut"], int) and 1 <= it["cut"] < len(it["base"]) and it.get("add")): fail(lid, f"{where}: suffix cut needs 1 ≤ cut < len(base) and an add")
     if k == "spots":
         if w["scene"] not in SCENES: fail(lid, f"{where}: unknown scene {w['scene']}")

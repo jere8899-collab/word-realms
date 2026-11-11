@@ -57,6 +57,8 @@
 .lw-bins.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
 .lw-bin{min-height:110px;border-radius:18px;background:linear-gradient(180deg,#FFF4C2,#FFE9D6);border:3px dashed #F3CFA0;padding:6px;text-align:center;cursor:pointer;min-width:0}
 .lw-bin b{display:block;font-size:1.15rem;font-family:"Baloo 2",Nunito,sans-serif}
+/* 3 baskets in a row are narrow (63 px inside at 320 px): the painted icon sits on its own line so the label can use the whole width (EN-4d: vegetables, bakery; also hungry, What?, length) */
+.lw-bins.b3 .lw-bin b .nowrap{white-space:normal}.lw-bins.b3 .lw-bin b .wr-icon{display:block;margin:0 auto 2px}
 .lw-in{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;margin-top:4px}
 /* 📏 order on a line (EN-4c): a ladder of steps from one end to the other */
 .lw-ladder{max-width:420px;margin:0 auto}
@@ -80,6 +82,8 @@
 .lw-word{min-height:56px;border-radius:16px;background:#fff;font-weight:800;font-size:1.15rem;color:var(--ink);box-shadow:0 4px 0 #EADFF5,var(--shadow);border:3px solid transparent}
 .lw-word .n{display:inline-grid;place-items:center;min-width:30px;height:30px;border-radius:50%;background:var(--lav);font-size:.95rem}
 .lw-word .sfx{color:#FF6F91}
+.lw-words.wide{grid-template-columns:minmax(0,1fr)}   /* EN-4d: owner + 's + thing (Mia's bag) needs the whole row */
+.lw-word .pt{color:var(--ink2)}
 .lw-word.placed{border-color:var(--good);background:#EFFFF6}
 .lw-word.no-s{border-color:#E2D6FF;opacity:.85}
 .lw-word.no-s::after{content:" ✓ no " attr(data-no);font-size:.75rem;color:var(--ink2)}

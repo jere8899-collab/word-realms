@@ -1,4 +1,4 @@
-// 📜 Lessons (LESSONS-PLAN.md, js/learn.js): A1 English + Grade 2 maths (+ MA-3 G1 when art lands). Widget kit includes shapecount, line (EN-4c) and fence (MA-4b).
+// 📜 Lessons (LESSONS-PLAN.md, js/learn.js): A1 English + Grade 2 maths (+ MA-3 G1 when art lands). Widget kit includes shapecount, line (EN-4c), fence (MA-4b) and the suffix post field (EN-4d: Mia + 's + bag).
 //   node tools/test/lessons.js        (SHOT=1 saves screenshots/lessons_*.png at 390 px)
 // Covers: every pilot lesson played start → scroll by TAP; drag (pointer) on sort / place value / spots / line; the re-teach path
 // (a different explanation, NEW questions, why-not notes); stars once ever (anti-farm); a lesson failed twice still
@@ -9,7 +9,7 @@
 const { chromium } = require('playwright-core');
 const BASE = (process.env.BASE || 'http://127.0.0.1:18642/').replace(/\/?$/, '/');
 const OUT = '/workspace/cefr-quest/screenshots/';
-const MIN_LESSONS = 60;
+const MIN_LESSONS = 64;
 let fails = 0, passes = 0;
 const ok = (c, m) => { if (!c) { fails++; console.error('FAIL', m); process.exitCode = 1; } else { passes++; console.log('ok', m); } };
 const today = () => { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
@@ -127,8 +127,13 @@ const HELPERS = () => {
     await ctx.route(/supabase\.co|cdn\.jsdelivr\.net/, r => r.abort());
     await ctx.addInitScript(HELPERS); await ctx.addInitScript(() => { window.__WR_CLASSIC_ONLY = true; window.__WR_TEST = { holdMs: 0, pinOffer: false }; window.speechSynthesis && (window.speechSynthesis.speak = () => {}); });
     const page = await ctx.newPage(); page.errs = []; page.on('pageerror', e => page.errs.push(e.message)); page.on('dialog', d => d.dismiss());
-    await page.goto(BASE + 'index.html'); await page.evaluate(s => localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)), save);
-    await page.reload(); await page.waitForSelector('.realm-node');
+    await page.goto(BASE + 'index.html');
+    // known first-visit race (also on origin/main, ~1 in 10 cold pages): the first boot can write its blank save over the seeded one,
+    // so the reload shows the name screen. Seed again and reload (up to 3 tries) instead of failing the whole run.
+    for (let t = 0; ; t++) {
+      await page.evaluate(s => localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)), save); await page.reload();
+      try { await page.waitForSelector('.realm-node', { timeout: t < 2 ? 15000 : 30000 }); break; } catch (e) { if (t >= 2) throw e; }
+    }
     await page.evaluate(() => { const f = WR.awardStars; window.__learnStars = 0; WR.awardStars = (src, key, n, o) => { const got = f(src, key, n, o); if (src === 'learn') window.__learnStars += got; return got; }; });
     return { ctx, page };
   };
@@ -345,7 +350,9 @@ const HELPERS = () => {
       if (e.closest('#navbar')) return;
       if (r.width < 43.5 || r.height < 43.5) small.push((e.id || e.className || e.tagName) + ` ${Math.round(r.width)}×${Math.round(r.height)}`);
       if (r.left < -0.5 || r.right > innerWidth + 0.5) out.push(e.id || e.className);
-      if (e.matches('.learn-chip:not(.corner), .lw-chip, .lw-word, .opt, .bag-pill') && e.scrollWidth > e.clientWidth + 1) small.push('squeezed ' + e.className + ` (${e.scrollWidth}>${e.clientWidth})`); });
+      if (e.matches('.learn-chip:not(.corner), .lw-chip, .lw-word, .opt, .bag-pill') && e.scrollWidth > e.clientWidth + 1) small.push('squeezed ' + e.className + ` (${e.scrollWidth}>${e.clientWidth})`);
+      // EN-4d: a long one-word basket label ("vegetables") ran out of a 3-basket row
+      const lab = e.matches('.lw-bin') && e.querySelector('b'); if (lab && lab.scrollWidth > lab.clientWidth + 1) small.push(`squeezed basket label ${lab.textContent.trim()} (${lab.scrollWidth}>${lab.clientWidth})`); });
     return { sw, small, out };
   };
   for (const [W, H] of PROFILES) {

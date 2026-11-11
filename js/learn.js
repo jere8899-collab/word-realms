@@ -48,7 +48,8 @@ const hit = (m, it) => {
 LN.forItem = (rid, it) => { if (!it) return null; const r = mainRealm(rid); return IDX.find(x => x.at.realm === r && (x.match || []).some(m => hit(m, it))) || null; };
 
 /* ---------- small helpers ---------- */
-const tx = (s, maths) => maths && WR.Math ? WR.Math.html(s) : esc(s).replace(/\n/g, "<br>");
+// English lines may write a price as \$2.50 in the pack source (\\$2.50) so the narrator says "2 dollars and 50 cents" (tools/lesson_build.py speak); show it as $2.50
+const tx = (s, maths) => maths && WR.Math ? WR.Math.html(s) : esc(s).replace(/\\\$/g, "$").replace(/\n/g, "<br>");
 const artImg = (L, cls = "ln-art") => L.art ? `<img class="${cls}" src="assets/web/${L.art}.webp" alt="${esc(L.art_alt || L.title)}" decoding="async" onerror="this.onerror=null;this.src='assets/lessons/${L.art}.jpg'">` : "";
 const auto = () => WR.state.settings.sound !== false && WR.state.settings.narrate !== false;
 const speak = line => { if (line) WR.say(line); };
@@ -156,11 +157,16 @@ KIT.fill = {
         lines.insertAdjacentHTML("beforeend", `<li>${esc(it.s).replace("___", `<b>${esc(it.a)}</b>`)}</li>`);
         api.good(`✅ ${it.why}`); i++; if (i >= w.items.length) { sent.innerHTML = ""; api.done(); } else show(); } });
   } };
+// one word button of the suffix widget: the small grey word in front (pre), the word, an empty slot for the stamp,
+// and (EN-4d) an optional thing after it (post: Mia + 's + bag)
+const stampWord = (w, it, k) => `<button class="lw-word" data-tgt data-k="${k}" data-no="${esc(w.stamp)}">${it.pre ? `<span class="n">${esc(it.pre)}</span> ` : ""}<span class="bw">${esc(it.base)}</span><b class="sfx"></b>${it.post ? ` <span class="pt">${esc(it.post)}</span>` : ""}</button>`;
+// the stamp's face: -s, -ed, -er … but 's (EN-4d possessive) has no dash
+const stampFace = st => (/^'/.test(st) ? "" : "-") + st;
 KIT.suffix = {
   // optional per word: cut = letters dropped from the end before the stamp, add = what is shown instead of the stamp
   // (stop → stop+ped, happy → happ+ier, nice → nice+r); EN-4a. Words without them show base + stamp as before.
-  html: w => `<div class="lw-stamps"><button class="lw-stamp" data-src aria-label="the ${esc(w.stamp)} stamp">🔖 -${esc(w.stamp)}</button></div>
-    <div class="lw-words">${w.items.map((it, k) => `<button class="lw-word" data-tgt data-k="${k}" data-no="${esc(w.stamp)}">${it.pre ? `<span class="n">${esc(it.pre)}</span> ` : ""}<span class="bw">${esc(it.base)}</span><b class="sfx"></b></button>`).join("")}</div>`,
+  html: w => `<div class="lw-stamps"><button class="lw-stamp" data-src aria-label="the ${esc(w.stamp)} stamp">🔖 ${esc(stampFace(w.stamp))}</button></div>
+    <div class="lw-words${w.items.some(it => it.post) ? " wide" : ""}">${w.items.map((it, k) => stampWord(w, it, k)).join("")}</div>`,
   bind(root, w, api) {
     let left = w.items.filter(x => x.need).length;
     const stampOn = word => { const it = w.items[+word.dataset.k];

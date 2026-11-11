@@ -713,6 +713,82 @@
    ]
   },
   {
+   "id": "en.a2.poss_s",
+   "pack": "en-a2",
+   "title": "Mia's bag: 's",
+   "icon": "🎒",
+   "at": {
+    "realm": "a2",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_a2_poss_s",
+   "match": [
+    {
+     "re": "Whose asks who owns|That's \\w+'s",
+     "field": "explain"
+    }
+   ]
+  },
+  {
+   "id": "en.a2.link",
+   "pack": "en-a2",
+   "title": "and, but, so, because",
+   "icon": "🔗",
+   "at": {
+    "realm": "a2",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_a2_link",
+   "match": [
+    {
+     "opts": [
+      "but",
+      "because",
+      "so"
+     ],
+     "need": 2
+    },
+    {
+     "re": "[Bb]ut shows a contrast|[Bb]ecause gives the reason|[Ss]o gives the result|[Bb]ecause joins",
+     "field": "explain"
+    }
+   ]
+  },
+  {
+   "id": "en.a2.makedo",
+   "pack": "en-a2",
+   "title": "make or do?",
+   "icon": "🧁",
+   "at": {
+    "realm": "a2",
+    "skill": "vocab"
+   },
+   "art": "lesson_en_a2_makedo",
+   "match": [
+    {
+     "re": "Collocation: (make|do) |We say do homework",
+     "field": "explain"
+    }
+   ]
+  },
+  {
+   "id": "en.a2.shop",
+   "pack": "en-a2",
+   "title": "shop & food words",
+   "icon": "🛒",
+   "at": {
+    "realm": "a2",
+    "skill": "vocab"
+   },
+   "art": "lesson_en_a2_shop",
+   "match": [
+    {
+     "re": "bakery makes and sells|is a vegetable",
+     "field": "explain"
+    }
+   ]
+  },
+  {
    "id": "m.g1.count",
    "pack": "m-g1",
    "title": "Counting to 20",

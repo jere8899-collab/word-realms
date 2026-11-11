@@ -3,7 +3,8 @@
 //   node tools/test/garden-thirst.js
 const { chromium } = require('playwright-core');
 const BASE = (process.env.BASE || 'http://127.0.0.1:18642/').replace(/\/?$/, '/');
-const OUT = '/opt/cursor/artifacts/';
+// the cloud agent keeps its pictures in /opt/cursor/artifacts; on the box they go to screenshots/ (that folder is missing here)
+const OUT = require('fs').existsSync('/opt/cursor/artifacts') ? '/opt/cursor/artifacts/' : require('path').join(__dirname, '../../screenshots/');
 let fails = 0, passes = 0;
 const ok = (c, m) => { if (!c) { fails++; console.error('FAIL', m); process.exitCode = 1; } else { passes++; console.log('ok', m); } };
 const DAY = 864e5, HOUR = 36e5;

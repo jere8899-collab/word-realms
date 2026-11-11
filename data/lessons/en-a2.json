@@ -2807,6 +2807,1011 @@
    ],
    "grown": "👪 Subject vs object personal pronouns (A2 Key): I/me, he/him, she/her, we/us, they/them (you and it stay the same); object pronouns after verbs and prepositions (to me, with them). Common errors: Me and him went…, give it to I, and mixing with possessives (his, their), which the A1 'my, your, his, her' lesson covers.",
    "pack": "en-a2"
+  },
+  {
+   "id": "en.a2.poss_s",
+   "title": "Mia's bag: 's",
+   "icon": "🎒",
+   "at": {
+    "realm": "a2",
+    "skill": "grammar"
+   },
+   "match": [
+    {
+     "re": "Whose asks who owns|That's \\w+'s",
+     "field": "explain"
+    }
+   ],
+   "art": "lesson_en_a2_poss_s",
+   "art_alt": "Mia, a girl with brown pigtails, stands behind a lost-and-found stall with a pink heart backpack, a chef hat, a blue scarf and a little gold crown on the table, while Sumi the fox and Puffbun, a white fluffy pet, both in chef hats, help her",
+   "hook": {
+    "text": "Mia runs the lost-and-found stall in Candy Village. On her table there's a pink heart backpack, a chef hat, a blue scarf and a little gold crown. Sumi and Puffbun want to give everything back. “The pink backpack is mine!” says Mia. The labels just need one tiny stamp. Whose things are they?",
+    "say": "Mia runs the lost-and-found stall in Candy Village. On her table there's a pink heart backpack, a chef hat, a blue scarf and a little gold crown. Sumi and Puffbun want to give everything back. “The pink backpack is mine!” says Mia. The labels just need one tiny stamp. Whose things are they?"
+   },
+   "discover": {
+    "kind": "suffix",
+    "stamp": "'s",
+    "text": "Stamp 's on the owner when the thing belongs to them. Not every label needs it! Drag the stamp or tap a name.",
+    "hint": "Is there a thing right after the name that belongs to them, like bag or crown? Stamp 's. If the name is doing something, no stamp.",
+    "items": [
+     {
+      "base": "Mia",
+      "post": "bag",
+      "need": true,
+      "why": "The bag belongs to Mia: Mia's bag."
+     },
+     {
+      "base": "Crumb",
+      "post": "chef hat",
+      "need": true,
+      "why": "The chef hat belongs to Crumb: Crumb's chef hat."
+     },
+     {
+      "base": "Puffbun",
+      "post": "found a scarf",
+      "need": false,
+      "why": "Puffbun is doing the finding here. Nothing after her name belongs to her, so no 's."
+     },
+     {
+      "base": "the queen",
+      "post": "crown",
+      "need": true,
+      "why": "The crown belongs to the queen: the queen's crown."
+     },
+     {
+      "base": "Hoot",
+      "post": "scarf",
+      "need": true,
+      "why": "The blue scarf belongs to Hoot: Hoot's scarf."
+     },
+     {
+      "base": "Sumi",
+      "post": "says thank you",
+      "need": false,
+      "why": "Sumi is saying thank you. Nothing belongs to her here, so no 's."
+     }
+    ],
+    "say": "Stamp 's on the owner when the thing belongs to them. Not every label needs it! Drag the stamp or tap a name."
+   },
+   "rule": {
+    "text": "When something belongs to someone, put 's on the owner, then say the thing: Mia's bag, Hoot's scarf. The owner comes first and the thing comes after. If nothing belongs to them, there's no 's: Puffbun found a scarf. To ask who the owner is, say whose: Whose crown is this?",
+    "examples": [
+     "This is Mia's bag.",
+     "Hoot's scarf is blue.",
+     "Whose crown is it? It's the queen's."
+    ],
+    "say": "When something belongs to someone, put 's on the owner, then say the thing: Mia's bag, Hoot's scarf. The owner comes first and the thing comes after. If nothing belongs to them, there's no 's: Puffbun found a scarf. To ask who the owner is, say whose: Whose crown is this?",
+    "sayEx": [
+     "This is Mia's bag.",
+     "Hoot's scarf is blue.",
+     "Whose crown is it? It's the queen's."
+    ]
+   },
+   "check": [
+    {
+     "q": "The pink backpack belongs to Mia. It's ___ backpack.",
+     "options": [
+      "Mia's",
+      "Mias",
+      "Mia"
+     ],
+     "answer": 0,
+     "notes": {
+      "Mias": "Don't forget the little mark before the s: Mia's.",
+      "Mia": "We need 's to show it belongs to her: Mia's backpack."
+     },
+     "explain": "It belongs to Mia, so: Mia's backpack.",
+     "say": "The pink backpack belongs to Mia. It's blank backpack."
+    },
+    {
+     "q": "Which sentence is right?",
+     "options": [
+      "That is Crumb's hat.",
+      "That is hat Crumb's.",
+      "That is Crumb hat."
+     ],
+     "answer": 0,
+     "notes": {
+      "That is hat Crumb's.": "The owner comes first, then the thing: Crumb's hat.",
+      "That is Crumb hat.": "Add 's to show the hat belongs to Crumb: Crumb's hat."
+     },
+     "explain": "Owner + 's + thing: Crumb's hat.",
+     "say": "Which sentence is right?"
+    },
+    {
+     "q": "Whose crown is it? — It's ___.",
+     "options": [
+      "the queen's",
+      "the queens",
+      "queen's the"
+     ],
+     "answer": 0,
+     "notes": {
+      "the queens": "Queens with no mark means more than one queen. For her crown: the queen's.",
+      "queen's the": "The words are mixed up. Say: the queen's."
+     },
+     "explain": "It belongs to the queen: it's the queen's.",
+     "say": "Whose crown is it? — It's blank."
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way. The 's is like a little name tag with a string. It ties the owner to their thing. First say the owner, then add 's, then say the thing: Crumb's cake. Not sure who the owner is? Ask whose: Whose cake is it? It's Crumb's!",
+    "examples": [
+     "🏷️ Crumb + 's + cake → Crumb's cake",
+     "❓ Whose hat is it? It's Sumi's.",
+     "🐶 my dog's bowl"
+    ],
+    "discover": {
+     "kind": "sort",
+     "text": "Check each name tag. Does it sound right, or does it need fixing? Drag each card or tap it, then tap a box.",
+     "hint": "Look for the owner, then 's, then the thing. The little mark must be there.",
+     "bins": [
+      {
+       "id": "ok",
+       "label": "sounds right",
+       "icon": "👍"
+      },
+      {
+       "id": "fix",
+       "label": "needs fixing",
+       "icon": "🔧"
+      }
+     ],
+     "items": [
+      {
+       "t": "This is Crumb's cake.",
+       "bin": "ok",
+       "why": "Owner + 's + thing: Crumb's cake."
+      },
+      {
+       "t": "This is Crumbs cake.",
+       "bin": "fix",
+       "why": "The little mark is missing: Crumb's cake."
+      },
+      {
+       "t": "Puffbun's ears are long.",
+       "bin": "ok",
+       "why": "The ears belong to Puffbun: Puffbun's ears."
+      },
+      {
+       "t": "Mia bag is pink.",
+       "bin": "fix",
+       "why": "We need 's to show it's hers: Mia's bag."
+      },
+      {
+       "t": "Whose scarf is this?",
+       "bin": "ok",
+       "why": "Whose asks who the owner is."
+      },
+      {
+       "t": "That is book Sumi's.",
+       "bin": "fix",
+       "why": "The owner comes first: Sumi's book."
+      }
+     ],
+     "say": "Check each name tag. Does it sound right, or does it need fixing? Drag each card or tap it, then tap a box."
+    },
+    "say": "Here's another way. The 's is like a little name tag with a string. It ties the owner to their thing. First say the owner, then add 's, then say the thing: Crumb's cake. Not sure who the owner is? Ask whose: Whose cake is it? It's Crumb's!"
+   },
+   "check2": [
+    {
+     "q": "Crumb baked this cake. It's ___ cake.",
+     "options": [
+      "Crumb's",
+      "Crumbs",
+      "Crumb"
+     ],
+     "answer": 0,
+     "notes": {
+      "Crumbs": "Don't forget the little mark before the s: Crumb's.",
+      "Crumb": "We need 's to show it's his: Crumb's cake."
+     },
+     "explain": "It's his cake: Crumb's cake.",
+     "say": "Crumb baked this cake. It's blank cake."
+    },
+    {
+     "q": "___ scarf is this? — It's Hoot's.",
+     "options": [
+      "Whose",
+      "Who",
+      "Who's"
+     ],
+     "answer": 0,
+     "notes": {
+      "Who": "Who asks about a person. To ask about the owner of a thing, say whose.",
+      "Who's": "Who's means who is. To ask about the owner, say whose."
+     },
+     "explain": "Whose asks who the owner is: Whose scarf is this?",
+     "say": "blank scarf is this? — It's Hoot's."
+    },
+    {
+     "q": "Which one means the bowl belongs to the dog?",
+     "options": [
+      "the dog's bowl",
+      "the dogs bowl",
+      "the bowl dog's"
+     ],
+     "answer": 0,
+     "notes": {
+      "the dogs bowl": "The little mark is missing. Dogs alone means more than one dog.",
+      "the bowl dog's": "The owner comes first, then the thing: the dog's bowl."
+     },
+     "explain": "Owner + 's + thing: the dog's bowl.",
+     "say": "Which one means the bowl belongs to the dog?"
+    }
+   ],
+   "grown": "👪 Possessive 's with names and singular nouns (A2 Key): Mia's bag, the queen's crown; Whose…? questions. The plural possessive (the girls' bags) and children's come later. Don't confuse it with the short form he's = he is, or with its (no apostrophe), which practice items cover.",
+   "pack": "en-a2"
+  },
+  {
+   "id": "en.a2.link",
+   "title": "and, but, so, because",
+   "icon": "🔗",
+   "at": {
+    "realm": "a2",
+    "skill": "grammar"
+   },
+   "match": [
+    {
+     "opts": [
+      "but",
+      "because",
+      "so"
+     ],
+     "need": 2
+    },
+    {
+     "re": "[Bb]ut shows a contrast|[Bb]ecause gives the reason|[Ss]o gives the result|[Bb]ecause joins",
+     "field": "explain"
+    }
+   ],
+   "art": "lesson_en_a2_link",
+   "art_alt": "A sunny Candy Village picnic with sandwiches and a basket on a pink checked blanket; a small grey rain cloud floats above, Puffbun, a white fluffy pet in a chef hat, opens a pink umbrella, and Sumi the fox runs over with another pink umbrella",
+   "hook": {
+    "text": "It's picnic day in Candy Village! The sun is shining, but a little rain cloud is floating over the blanket. Puffbun opens her pink umbrella, and Sumi runs over with another one. Puffbun wrote a postcard about the day, but the little joining words fell out! Can you put them back?",
+    "say": "It's picnic day in Candy Village! The sun is shining, but a little rain cloud is floating over the blanket. Puffbun opens her pink umbrella, and Sumi runs over with another one. Puffbun wrote a postcard about the day, but the little joining words fell out! Can you put them back?"
+   },
+   "discover": {
+    "kind": "fill",
+    "text": "Drag the right joining word into each gap, or tap it. Read the whole sentence first!",
+    "hint": "One more thing → and. A surprise or a change → but. What happened next → so. The reason why → because.",
+    "tiles": [
+     "and",
+     "but",
+     "so",
+     "because"
+    ],
+    "items": [
+     {
+      "s": "We had sandwiches ___ juice.",
+      "a": "and",
+      "why": "And adds one more thing: sandwiches and juice."
+     },
+     {
+      "s": "It was sunny, ___ then a little cloud came.",
+      "a": "but",
+      "why": "But shows a change: it was sunny, but a cloud came."
+     },
+     {
+      "s": "It started to rain, ___ Puffbun opened her umbrella.",
+      "a": "so",
+      "why": "So tells what happened next: it rained, so she opened her umbrella."
+     },
+     {
+      "s": "Sumi ran over ___ she wanted to help.",
+      "a": "because",
+      "why": "Because tells the reason why Sumi ran: she wanted to help."
+     },
+     {
+      "s": "Puffbun stayed dry, ___ the sandwiches got wet!",
+      "a": "but",
+      "why": "But shows a surprise: Puffbun was dry, but the sandwiches got wet."
+     }
+    ],
+    "say": "Drag the right joining word into each gap, or tap it. Read the whole sentence first!"
+   },
+   "rule": {
+    "text": "Joining words glue two ideas together. And adds one more thing: sandwiches and juice. But shows a change or a surprise: It was sunny, but it rained. So tells what happened next, the result: It rained, so we opened our umbrellas. Because tells the reason why: We opened our umbrellas because it rained.",
+    "examples": [
+     "We had sandwiches and juice.",
+     "It was sunny, but a cloud came.",
+     "It rained, so we opened our umbrellas.",
+     "Sumi ran because she wanted to help."
+    ],
+    "say": "Joining words glue two ideas together. And adds one more thing: sandwiches and juice. But shows a change or a surprise: It was sunny, but it rained. So tells what happened next, the result: It rained, so we opened our umbrellas. Because tells the reason why: We opened our umbrellas because it rained.",
+    "sayEx": [
+     "We had sandwiches and juice.",
+     "It was sunny, but a cloud came.",
+     "It rained, so we opened our umbrellas.",
+     "Sumi ran because she wanted to help."
+    ]
+   },
+   "check": [
+    {
+     "q": "Sumi wanted to fly her kite, ___ there was no wind.",
+     "options": [
+      "but",
+      "so",
+      "because"
+     ],
+     "answer": 0,
+     "notes": {
+      "so": "So tells a result. No wind is not what happens because she wanted a kite. The ideas clash, so: but.",
+      "because": "Because gives a reason. No wind is not the reason she wanted a kite. The ideas clash: but."
+     },
+     "explain": "She wanted to, but she couldn't: the ideas clash, so use but.",
+     "say": "Sumi wanted to fly her kite, blank there was no wind."
+    },
+    {
+     "q": "Puffbun was hungry, ___ she ate a sandwich.",
+     "options": [
+      "so",
+      "because",
+      "but"
+     ],
+     "answer": 0,
+     "notes": {
+      "because": "Because would mean she was hungry since she ate. First hungry, then eating: so.",
+      "but": "But is for a surprise. Eating when you're hungry is no surprise!"
+     },
+     "explain": "Hungry first, then the result: so she ate a sandwich.",
+     "say": "Puffbun was hungry, blank she ate a sandwich."
+    },
+    {
+     "q": "Which sentence gives a reason?",
+     "options": [
+      "We took umbrellas because it was raining.",
+      "We took umbrellas and it was cold.",
+      "We took umbrellas but we didn't open them."
+     ],
+     "answer": 0,
+     "notes": {
+      "We took umbrellas and it was cold.": "And just adds one more thing. It doesn't tell us why.",
+      "We took umbrellas but we didn't open them.": "But shows a surprise, not a reason."
+     },
+     "explain": "Because tells the reason why: it was raining.",
+     "say": "Which sentence gives a reason?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way. Ask a little question! Is it one more thing? Use and. Is it a surprise or a change? Use but. What happened next? Use so. Why? Use because. So and because are like opposite arrows: so points forward to what happened next, and because points back to the reason.",
+    "examples": [
+     "➕ cake and milk",
+     "🔄 tiny but strong",
+     "➡️ I was tired, so I slept.",
+     "⬅️ I slept because I was tired."
+    ],
+    "discover": {
+     "kind": "sort",
+     "text": "Which arrow fits the gap? Drag each card or tap it, then tap a box.",
+     "hint": "Does the gap lead to what happened next? → so. Does it lead to the reason why? → because.",
+     "bins": [
+      {
+       "id": "so",
+       "label": "so: what happened next",
+       "icon": "➡️"
+      },
+      {
+       "id": "because",
+       "label": "because: the reason why",
+       "icon": "⬅️"
+      }
+     ],
+     "items": [
+      {
+       "t": "It was cold, ___ I wore a coat.",
+       "bin": "so",
+       "why": "Cold first, then what happened next: so I wore a coat."
+      },
+      {
+       "t": "I wore a coat ___ it was cold.",
+       "bin": "because",
+       "why": "Why did I wear a coat? Because it was cold."
+      },
+      {
+       "t": "Crumb was sleepy, ___ he went to bed.",
+       "bin": "so",
+       "why": "Sleepy first, then what happened next: so he went to bed."
+      },
+      {
+       "t": "Crumb went to bed ___ he was sleepy.",
+       "bin": "because",
+       "why": "Why did he go to bed? Because he was sleepy."
+      },
+      {
+       "t": "The shop was closed, ___ we went home.",
+       "bin": "so",
+       "why": "Closed first, then what happened next: so we went home."
+      },
+      {
+       "t": "We went home ___ the shop was closed.",
+       "bin": "because",
+       "why": "Why did we go home? Because the shop was closed."
+      }
+     ],
+     "say": "Which arrow fits the gap? Drag each card or tap it, then tap a box."
+    },
+    "say": "Here's another way. Ask a little question! Is it one more thing? Use and. Is it a surprise or a change? Use but. What happened next? Use so. Why? Use because. So and because are like opposite arrows: so points forward to what happened next, and because points back to the reason."
+   },
+   "check2": [
+    {
+     "q": "I like apples ___ bananas.",
+     "options": [
+      "and",
+      "but",
+      "because"
+     ],
+     "answer": 0,
+     "notes": {
+      "but": "But is for something different. Liking both is the same idea: and.",
+      "because": "Because gives a reason. Bananas aren't the reason: and."
+     },
+     "explain": "One more thing I like: apples and bananas.",
+     "say": "I like apples blank bananas."
+    },
+    {
+     "q": "We stayed inside ___ it was too hot.",
+     "options": [
+      "because",
+      "so",
+      "and"
+     ],
+     "answer": 0,
+     "notes": {
+      "so": "So would mean staying inside made it hot! We want the reason: because.",
+      "and": "And just adds. We want the reason why: because."
+     },
+     "explain": "Why did we stay inside? Because it was too hot.",
+     "say": "We stayed inside blank it was too hot."
+    },
+    {
+     "q": "The cake was very small, ___ it was really yummy!",
+     "options": [
+      "but",
+      "so",
+      "because"
+     ],
+     "answer": 0,
+     "notes": {
+      "so": "Being small doesn't make a cake yummy. It's a surprise: but.",
+      "because": "Being yummy isn't the reason it's small. It's a surprise: but."
+     },
+     "explain": "Small, but yummy: a nice surprise, so use but.",
+     "say": "The cake was very small, blank it was really yummy!"
+    }
+   ],
+   "grown": "👪 Linking words (A2 Key): and, but, so join two ideas; because gives the reason. So (result) and because (reason) are the classic mix-up: I was tired, so I slept / I slept because I was tired. A comma usually comes before but and so. Or, when and although come later.",
+   "pack": "en-a2"
+  },
+  {
+   "id": "en.a2.makedo",
+   "title": "make or do?",
+   "icon": "🧁",
+   "at": {
+    "realm": "a2",
+    "skill": "vocab"
+   },
+   "match": [
+    {
+     "re": "Collocation: (make|do) |We say do homework",
+     "field": "explain"
+    }
+   ],
+   "art": "lesson_en_a2_makedo",
+   "art_alt": "In a bakery kitchen, Crumb the pink baker dragon stirs a bowl of batter next to a strawberry cake, Gumdrop, a mint gumdrop pet with a leaf on top, does the washing-up at the sink, and Sumi the fox does homework in a notebook",
+   "hook": {
+    "text": "It's a busy afternoon in Crumb's bakery kitchen. Crumb is stirring a big bowl of batter next to a strawberry cake. Gumdrop is doing the washing-up at the sink, and Sumi is doing her homework in a notebook. Crumb says: “I make cakes!” Gumdrop says: “I do the washing-up!” Why make for one and do for the other? Let's sort them.",
+    "say": "It's a busy afternoon in Crumb's bakery kitchen. Crumb is stirring a big bowl of batter next to a strawberry cake. Gumdrop is doing the washing-up at the sink, and Sumi is doing her homework in a notebook. Crumb says: “I make cakes!” Gumdrop says: “I do the washing-up!” Why make for one and do for the other? Let's sort them."
+   },
+   "discover": {
+    "kind": "sort",
+    "text": "Make or do? Drag each card into the right bowl, or tap a card and then a bowl.",
+    "hint": "Make: something new is there at the end, like a cake, a mess or a noise. Do: a job or a task, like homework.",
+    "bins": [
+     {
+      "id": "make",
+      "label": "make",
+      "icon": "🧁"
+     },
+     {
+      "id": "do",
+      "label": "do",
+      "icon": "✅"
+     }
+    ],
+    "items": [
+     {
+      "t": "a cake",
+      "icon": "🎂",
+      "bin": "make",
+      "why": "At the end there's a new cake: make a cake."
+     },
+     {
+      "t": "homework",
+      "icon": "📓",
+      "bin": "do",
+      "why": "Homework is a task to finish: do homework."
+     },
+     {
+      "t": "the washing-up",
+      "icon": "🫧",
+      "bin": "do",
+      "why": "Washing up is a job: do the washing-up."
+     },
+     {
+      "t": "a mess",
+      "bin": "make",
+      "why": "At the end there's a mess! Make a mess."
+     },
+     {
+      "t": "a noise",
+      "icon": "🔔",
+      "bin": "make",
+      "why": "You make a sound: make a noise."
+     },
+     {
+      "t": "the shopping",
+      "icon": "🛒",
+      "bin": "do",
+      "why": "Shopping is a job on the list: do the shopping."
+     },
+     {
+      "t": "a card",
+      "icon": "💌",
+      "bin": "make",
+      "why": "You make a new card for a friend: make a card."
+     },
+     {
+      "t": "a test",
+      "icon": "📝",
+      "bin": "do",
+      "why": "A test is a task at school: do a test."
+     }
+    ],
+    "say": "Make or do? Drag each card into the right bowl, or tap a card and then a bowl."
+   },
+   "rule": {
+    "text": "Use make when you create something, when there's something new at the end: make a cake, make a card, make a mess, make a noise. Use do for jobs, tasks and work: do homework, do the washing-up, do the shopping. A few you just learn by heart: make your bed and make a mistake.",
+    "examples": [
+     "Crumb makes a strawberry cake.",
+     "Gumdrop does the washing-up.",
+     "Sumi does her homework.",
+     "I make my bed every morning."
+    ],
+    "say": "Use make when you create something, when there's something new at the end: make a cake, make a card, make a mess, make a noise. Use do for jobs, tasks and work: do homework, do the washing-up, do the shopping. A few you just learn by heart: make your bed and make a mistake.",
+    "sayEx": [
+     "Crumb makes a strawberry cake.",
+     "Gumdrop does the washing-up.",
+     "Sumi does her homework.",
+     "I make my bed every morning."
+    ]
+   },
+   "check": [
+    {
+     "q": "Gumdrop, please ___ the washing-up.",
+     "options": [
+      "do",
+      "make",
+      "play"
+     ],
+     "answer": 0,
+     "notes": {
+      "make": "Washing up is a job, so we say do.",
+      "play": "We don't play the washing-up! It's a job: do."
+     },
+     "explain": "A job: do the washing-up.",
+     "say": "Gumdrop, please blank the washing-up."
+    },
+    {
+     "q": "Crumb is going to ___ a strawberry cake.",
+     "options": [
+      "make",
+      "do",
+      "take"
+     ],
+     "answer": 0,
+     "notes": {
+      "do": "A cake is something new you create, so we say make.",
+      "take": "Take means carry something. To create a cake: make."
+     },
+     "explain": "Something new at the end: make a cake.",
+     "say": "Crumb is going to blank a strawberry cake."
+    },
+    {
+     "q": "Which sentence is right?",
+     "options": [
+      "I do my homework after school.",
+      "I make my homework after school.",
+      "I do my bed every morning."
+     ],
+     "answer": 0,
+     "notes": {
+      "I make my homework after school.": "Homework is a task, so we say do homework.",
+      "I do my bed every morning.": "Bed is one to learn by heart: we make our bed."
+     },
+     "explain": "Homework is a task: do my homework.",
+     "say": "Which sentence is right?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way. Ask yourself: at the end, can I see it, hold it or hear it? A cake, a card, a sandwich, a noise: that's make! Is it a job on a to-do list? Homework, the shopping, a test: that's do! And two to learn by heart: make your bed, make a mistake.",
+    "examples": [
+     "🤲 make a sandwich, make a card",
+     "📋 do the shopping, do a test",
+     "🛏️ make your bed",
+     "🙈 make a mistake"
+    ],
+    "discover": {
+     "kind": "fill",
+     "text": "Can you hold it at the end, or is it a job? Drag make or do into each gap, or tap it.",
+     "hint": "Something new at the end → make. A job or task → do. Bed and mistake → make.",
+     "tiles": [
+      "make",
+      "do"
+     ],
+     "items": [
+      {
+       "s": "Let's ___ a birthday card for Hoot.",
+       "a": "make",
+       "why": "A new card at the end: make a card."
+      },
+      {
+       "s": "Can you ___ the shopping with me?",
+       "a": "do",
+       "why": "Shopping is a job: do the shopping."
+      },
+      {
+       "s": "Everyone can ___ a mistake. That's OK!",
+       "a": "make",
+       "why": "Learn it by heart: make a mistake."
+      },
+      {
+       "s": "We ___ a spelling test on Fridays.",
+       "a": "do",
+       "why": "A test is a task: do a test."
+      },
+      {
+       "s": "Let's ___ sandwiches for the picnic!",
+       "a": "make",
+       "why": "New sandwiches at the end: make sandwiches."
+      }
+     ],
+     "say": "Can you hold it at the end, or is it a job? Drag make or do into each gap, or tap it."
+    },
+    "say": "Here's another way. Ask yourself: at the end, can I see it, hold it or hear it? A cake, a card, a sandwich, a noise: that's make! Is it a job on a to-do list? Homework, the shopping, a test: that's do! And two to learn by heart: make your bed, make a mistake."
+   },
+   "check2": [
+    {
+     "q": "Puffbun, please ___ your bed.",
+     "options": [
+      "make",
+      "do",
+      "have"
+     ],
+     "answer": 0,
+     "notes": {
+      "do": "Bed is one to learn by heart: make your bed.",
+      "have": "We don't say have your bed here. It's make your bed."
+     },
+     "explain": "Learn it by heart: make your bed.",
+     "say": "Puffbun, please blank your bed."
+    },
+    {
+     "q": "Sumi ___ her homework every evening.",
+     "options": [
+      "does",
+      "makes",
+      "plays"
+     ],
+     "answer": 0,
+     "notes": {
+      "makes": "Homework is a task, so it's do. With she: does.",
+      "plays": "Homework isn't a game! It's a task: does her homework."
+     },
+     "explain": "A task: Sumi does her homework (do becomes does with she).",
+     "say": "Sumi blank her homework every evening."
+    },
+    {
+     "q": "Which one is a job, so it goes with do?",
+     "options": [
+      "the shopping",
+      "a sandwich",
+      "a noise"
+     ],
+     "answer": 0,
+     "notes": {
+      "a sandwich": "At the end you can hold a sandwich, so it's make a sandwich.",
+      "a noise": "You can hear a noise at the end, so it's make a noise."
+     },
+     "explain": "Shopping is a job: do the shopping.",
+     "say": "Which one is a job, so it goes with do?"
+    }
+   ],
+   "grown": "👪 make / do collocations (A2 Key vocabulary): make = create or produce (a cake, a card, a mess, a noise), plus fixed phrases make your bed / make a mistake; do = tasks, jobs and work (homework, the washing-up, the shopping, a test). Have a picnic and take a photo are other common pairs met in practice.",
+   "pack": "en-a2"
+  },
+  {
+   "id": "en.a2.shop",
+   "title": "shop & food words",
+   "icon": "🛒",
+   "at": {
+    "realm": "a2",
+    "skill": "vocab"
+   },
+   "match": [
+    {
+     "re": "bakery makes and sells|is a vegetable",
+     "field": "explain"
+    }
+   ],
+   "art": "lesson_en_a2_shop",
+   "art_alt": "Crumb the pink baker dragon in a chef hat runs a market stall with apples, bananas, carrots, bread, bottles of milk, eggs and cheese, while Puffbun, a white fluffy pet in a chef hat, comes shopping with a basket and a pink coin purse",
+   "hook": {
+    "text": "Puffbun is going shopping at Crumb's market stall! She has her basket and her pink coin purse. Crumb sells apples, bananas, carrots, bread, milk, eggs and cheese. Puffbun's shopping list is all mixed up. Can you help her sort the food into groups, like a real shop does?",
+    "say": "Puffbun is going shopping at Crumb's market stall! She has her basket and her pink coin purse. Crumb sells apples, bananas, carrots, bread, milk, eggs and cheese. Puffbun's shopping list is all mixed up. Can you help her sort the food into groups, like a real shop does?"
+   },
+   "discover": {
+    "kind": "sort",
+    "text": "Fruit, vegetables or bakery? Drag each card into the right basket, or tap a card and then a basket.",
+    "hint": "Fruit is usually sweet, like a snack. Vegetables are plants we often cook. A bakery bakes things in an oven.",
+    "bins": [
+     {
+      "id": "fruit",
+      "label": "fruit",
+      "icon": "🍎"
+     },
+     {
+      "id": "veg",
+      "label": "vege­tables",
+      "icon": "🥕"
+     },
+     {
+      "id": "bake",
+      "label": "bakery",
+      "icon": "🍞"
+     }
+    ],
+    "items": [
+     {
+      "t": "apples",
+      "icon": "🍎",
+      "bin": "fruit",
+      "why": "Apples are sweet fruit."
+     },
+     {
+      "t": "carrots",
+      "icon": "🥕",
+      "bin": "veg",
+      "why": "Carrots are vegetables. They grow in the ground."
+     },
+     {
+      "t": "bread",
+      "icon": "🍞",
+      "bin": "bake",
+      "why": "Bread is baked in an oven: bakery."
+     },
+     {
+      "t": "bananas",
+      "icon": "🍌",
+      "bin": "fruit",
+      "why": "Bananas are sweet fruit."
+     },
+     {
+      "t": "potatoes",
+      "icon": "🥔",
+      "bin": "veg",
+      "why": "Potatoes are vegetables. We cook them."
+     },
+     {
+      "t": "buns",
+      "bin": "bake",
+      "why": "Buns are baked in an oven: bakery."
+     },
+     {
+      "t": "grapes",
+      "icon": "🍇",
+      "bin": "fruit",
+      "why": "Grapes are sweet fruit."
+     },
+     {
+      "t": "broccoli",
+      "icon": "🥦",
+      "bin": "veg",
+      "why": "Broccoli is a green vegetable."
+     }
+    ],
+    "say": "Fruit, vegetables or bakery? Drag each card into the right basket, or tap a card and then a basket."
+   },
+   "rule": {
+    "text": "Food words come in groups. Fruit is usually sweet: apples, bananas, grapes. Vegetables are plants we often cook or put in a salad: carrots, potatoes, broccoli. A bakery sells bread, buns and cakes. At the shop, ask nicely: Can I have three apples, please? To ask the price, say: How much is it? or How much are they? Crumb answers in dollars and cents: They're \\$2.50.",
+    "examples": [
+     "Can I have three apples, please?",
+     "How much are the bananas?",
+     "They're \\$2.50.",
+     "I buy bread at the bakery."
+    ],
+    "say": "Food words come in groups. Fruit is usually sweet: apples, bananas, grapes. Vegetables are plants we often cook or put in a salad: carrots, potatoes, broccoli. A bakery sells bread, buns and cakes. At the shop, ask nicely: Can I have three apples, please? To ask the price, say: How much is it? or How much are they? Crumb answers in dollars and cents: They're 2 dollars and 50 cents.",
+    "sayEx": [
+     "Can I have three apples, please?",
+     "How much are the bananas?",
+     "They're 2 dollars and 50 cents.",
+     "I buy bread at the bakery."
+    ]
+   },
+   "check": [
+    {
+     "q": "Which one is a fruit?",
+     "options": [
+      "a banana",
+      "a carrot",
+      "a bun"
+     ],
+     "answer": 0,
+     "notes": {
+      "a carrot": "A carrot is a vegetable. It grows in the ground.",
+      "a bun": "A bun is baked in an oven. It's from the bakery."
+     },
+     "explain": "A banana is a sweet fruit.",
+     "say": "Which one is a fruit?"
+    },
+    {
+     "q": "You can buy bread and buns at a ___.",
+     "options": [
+      "bakery",
+      "library",
+      "bank"
+     ],
+     "answer": 0,
+     "notes": {
+      "library": "A library lends books. It doesn't sell bread.",
+      "bank": "A bank keeps money safe. It doesn't sell bread."
+     },
+     "explain": "A bakery bakes and sells bread and buns.",
+     "say": "You can buy bread and buns at a blank."
+    },
+    {
+     "q": "Puffbun wants apples. What does she say to Crumb?",
+     "options": [
+      "Can I have four apples, please?",
+      "Can I have four apple, please?",
+      "Give me apple."
+     ],
+     "answer": 0,
+     "notes": {
+      "Can I have four apple, please?": "Four means more than one, so it needs an s: four apples.",
+      "Give me apple.": "That isn't polite, and apple needs a word like some or four. Ask nicely: Can I have…, please?"
+     },
+     "explain": "Ask nicely, with an s for more than one: Can I have four apples, please?",
+     "say": "Puffbun wants apples. What does she say to Crumb?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way. Think about where the food comes from! Fruit like mangoes and oranges grows on trees and bushes. Many vegetables, like carrots, potatoes and onions, grow in the ground. Milk and cheese come from cows, and eggs come from hens. When you pay, Crumb tells you the price in dollars and cents: That's \\$3.50, please.",
+    "examples": [
+     "🌳 trees: mangoes, oranges",
+     "🌱 in the ground: carrots, potatoes, onions",
+     "🐄 cows: milk, cheese · 🐔 hens: eggs",
+     "💵 That's \\$3.50, please."
+    ],
+    "discover": {
+     "kind": "sort",
+     "text": "Where does it come from? Drag each card or tap it, then tap a box.",
+     "hint": "Fruit grows on trees. Carrots, potatoes and onions grow in the ground. Milk, cheese and eggs come from animals.",
+     "bins": [
+      {
+       "id": "tree",
+       "label": "grows on a tree",
+       "icon": "🌳"
+      },
+      {
+       "id": "ground",
+       "label": "grows in the ground",
+       "icon": "🌱"
+      },
+      {
+       "id": "farm",
+       "label": "from a cow or hen",
+       "icon": "🐄"
+      }
+     ],
+     "items": [
+      {
+       "t": "mangoes",
+       "icon": "🥭",
+       "bin": "tree",
+       "why": "Mangoes grow on trees. They're fruit."
+      },
+      {
+       "t": "oranges",
+       "icon": "🍊",
+       "bin": "tree",
+       "why": "Oranges grow on trees. They're fruit."
+      },
+      {
+       "t": "potatoes",
+       "icon": "🥔",
+       "bin": "ground",
+       "why": "Potatoes grow under the ground. They're vegetables."
+      },
+      {
+       "t": "onions",
+       "icon": "🧅",
+       "bin": "ground",
+       "why": "Onions grow in the ground. They're vegetables."
+      },
+      {
+       "t": "milk",
+       "icon": "🥛",
+       "bin": "farm",
+       "why": "Milk comes from cows."
+      },
+      {
+       "t": "eggs",
+       "icon": "🥚",
+       "bin": "farm",
+       "why": "Eggs come from hens."
+      },
+      {
+       "t": "cheese",
+       "icon": "🧀",
+       "bin": "farm",
+       "why": "Cheese is made from cow's milk."
+      }
+     ],
+     "say": "Where does it come from? Drag each card or tap it, then tap a box."
+    },
+    "say": "Here's another way. Think about where the food comes from! Fruit like mangoes and oranges grows on trees and bushes. Many vegetables, like carrots, potatoes and onions, grow in the ground. Milk and cheese come from cows, and eggs come from hens. When you pay, Crumb tells you the price in dollars and cents: That's 3 dollars and 50 cents, please."
+   },
+   "check2": [
+    {
+     "q": "Which one is a vegetable?",
+     "options": [
+      "a potato",
+      "a mango",
+      "cheese"
+     ],
+     "answer": 0,
+     "notes": {
+      "a mango": "A mango grows on a tree and is sweet. It's a fruit.",
+      "cheese": "Cheese is made from milk. It isn't a plant."
+     },
+     "explain": "A potato is a vegetable. It grows in the ground.",
+     "say": "Which one is a vegetable?"
+    },
+    {
+     "q": "Eggs come from ___.",
+     "options": [
+      "hens",
+      "cows",
+      "trees"
+     ],
+     "answer": 0,
+     "notes": {
+      "cows": "Cows give us milk, not eggs.",
+      "trees": "Trees give us fruit, like mangoes. Eggs come from hens."
+     },
+     "explain": "Hens lay eggs.",
+     "say": "Eggs come from blank."
+    },
+    {
+     "text": "Puffbun picks up some bananas.",
+     "q": "Which question asks the price?",
+     "options": [
+      "How much are the bananas?",
+      "How many are the bananas?",
+      "What are the bananas?"
+     ],
+     "answer": 0,
+     "notes": {
+      "How many are the bananas?": "How many asks for a number of things, not money.",
+      "What are the bananas?": "What asks what something is. To ask the price, say how much."
+     },
+     "explain": "How much asks the price. Crumb says: They're \\$3.",
+     "say": "Puffbun picks up some bananas. Which question asks the price?"
+    }
+   ],
+   "grown": "👪 Food and shopping words (A2 Key topics: food and drink, shopping): fruit, vegetables, bakery; Can I have…, please? and How much is it / are they? Prices are in Singapore dollars and cents ($2.50 = two dollars fifty). Some 'vegetables' (tomatoes) are fruit to a scientist, so the lesson keeps to clear examples. Reading prices among other numbers comes in the listening lesson en.a2.prices.",
+   "pack": "en-a2"
   }
  ]
 }

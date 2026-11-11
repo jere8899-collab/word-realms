@@ -2,6 +2,8 @@
 
 **Phase 1 (plan + engine + pilot): ✅ done (commit 1d135e5, 2026-11-04).** EN-2 + MA-2 ✅ (f4ee083). The 2-hourly routine may now take the next batch (§5: EN-3, then MA-3).
 
+> Checkpoint 2026-11-10 ~21:45 SGT: EN-4d is live (PENDING_HASH): en.a2.poss_s (suffix stamp 's on the owner, with the thing after it via the new optional `post` field: Mia + 's + bag; re-teach "name tag" + sort right/needs fixing), en.a2.link (fill and/but/so/because on Puffbun's picnic postcard; re-teach "opposite arrows" + sort so/because), en.a2.makedo (sort make/do in Crumb's kitchen; re-teach "can you hold it at the end?" + fill), en.a2.shop (sort fruit/vegetables/bakery at Crumb's market stall; re-teach "where does it come from?" tree/ground/cow-or-hen; How much…? with prices in Singapore dollars, written \\$2.50 in the pack and shown as $2.50); 64 lessons. 4 GenerateImage hooks (painted by the parent run) installed with install_story_img.py --dir lessons --batch. Cleanup kept (behaviour identical: lesson JSON byte-identical and every old suffix widget renders the same HTML before the new content; lessons.js 275/275): `stampWord()` in js/learn.js. Fix found by this run: in 3-basket rows a painted icon was glued to a long one-word label (vegetables, bakery; also the old hungry, What?, length, Take away), so the label ran out of the basket at 320–412 px; the icon now sits on its own line, "vegetables" has a soft hyphen, and the lessons.js phone audit now checks basket labels. lessons.js fresh() reseeds and reloads when the known first-visit race shows the name screen (it happens about 1 in 10 cold pages on origin/main too). Hint links: poss_s ← Whose…? items, link ← but/because/so items, makedo ← make/do collocations (not have a picnic / take a photo), shop ← bakery and vegetable items. 57 af_heart lines. lessons.js 287/287 (MIN_LESSONS 64); EN-4d check 320/360/375/412 px + landscape ALL OK. Next English turn: EN-4e (en.a2.sequence, en.a2.pronref, en.a2.prices). Next maths turn: unchanged (rest of G3, then G4).
+
 > Checkpoint 2026-11-10 ~15:45 SGT: MA-4b is live (606b2ab, build wr-b24e75f707b3): m.g3.measure, m.g3.duration, m.g3.clock, m.g3.perim (new `fence` widget; tapStages() cleanup); 60 lessons. Built by the 9 AM run, which stopped before publishing; this run re-tested and published it. lessons.js 275/275; full suite passes except learn-review (known first-visit race); mathgoals and rename flaked in the parallel run and pass alone. Next maths turn: the rest of G3 (m.g3.lines and any unticked G3 rows), then G4. Next English turn: EN-4d (poss_s, link, makedo, shop).
 
 > Checkpoint 2026-11-09 ~22:15 SGT: EN-4c is live (a0d2c05, build wr-07ee1db8582b): en.a2.freq (new KIT.line ladder: put always/usually/often/sometimes/never on steps of 7/6/4/2/0 stars; re-teach "juice glass" + fill by days), en.a2.must (sort playground signs must/mustn't; re-teach traffic lights + fill has to/mustn't/don't have to), en.a2.should (fill should/shouldn't for Puffbun's cold; re-teach "whispered tip" + sort right/needs fixing), en.a2.objpron (fill me/him/her/them for Gumdrop's presents; re-teach "twins" + sort right/needs fixing); 56 lessons. 4 GenerateImage hooks (painted by the parent run) installed with install_story_img.py --dir lessons --batch. New widget `line`: tap or drag, 54 px steps, in the lessons.js tap/drag tests and the 320–412 px audit; lesson_build validates ends, 3–6 words and counting-down stars. Cleanup kept (behaviour identical, lesson JSON byte-identical before the new content): `land()` in js/learn.js (sort + line), `need_why()` in lesson_build (sort, fill, suffix, spellhear, line). 54 new af_heart lines (the freq hook was re-recorded once after a wording fix). lessons.js 256/256 (MIN_LESSONS 56); EN-4c check 320/360/375/412 px + landscape ALL OK. Full suite 104: all pass alone except learn-review, which fails the same way on origin/main 66c42ae (known first-visit race). No a2 practice item uses object pronouns yet, so objpron's hint links wait for future items. Next English turn: EN-4d (poss_s, link, makedo, shop).
@@ -131,7 +133,7 @@ dict(id="en.a1.an", title="a or an?", icon="🍎", at=dict(realm="a1", skill="gr
 |---|---|---|
 | `sort` | `bins:[{id,label,icon}]`, `items:[{t, bin, icon?, why?}]` | a/an, am/is/are, question words, countable/uncountable, formal/informal, odd/even, shapes |
 | `fill` | `tiles:[…]`, `items:[{s:"I ___ Puffbun.", a:"am", why}]` | verb forms, prepositions, connectors, tenses (drag the tile into the gap) |
-| `suffix` | `stamp:"s"`, `items:[{pre:"3", base:"cat", need:true, why}]` | plural -s, past -ed (drag -ed onto verbs), -er/-est, prefixes un-/re-, word formation |
+| `suffix` | `stamp:"s"`, `items:[{pre:"3", base:"cat", need:true, why, cut?, add?, post?}]` (post = words after the stamp: Mia + 's + bag) | plural -s, past -ed (drag -ed onto verbs), -er/-est, prefixes un-/re-, word formation |
 | `spots` | `scene:"table"\|"bed"\|"nearfar"\|"park"`, `token`, `tasks:[{word:"on"|"near"|"nextto", text:"…"}]` | prepositions of place; this/that near or far; next to/behind/in front of (park); later left/right, maps |
 | `pv` | `targets:[243, 306]` | place value (H/T/O), later thousands; tap or drag a block onto the mat, ➖ takes one back |
 | `regroup` | `a:28, b:15` | adding with carrying (10 ones → 1 ten), later subtraction by renaming |
@@ -207,12 +209,12 @@ Grammar:
 - ✅ `en.a2.must` must / have to / mustn't (sort signs)
 - ✅ `en.a2.should` advice with should (fill)
 - ✅ `en.a2.objpron` me, him, her, them (fill)
-- `en.a2.poss_s` Mia's bag (suffix 's)
-- `en.a2.link` and / but / so / because (fill)
+- ✅ `en.a2.poss_s` Mia's bag (suffix 's, with the thing after the owner: Mia + 's + bag)
+- ✅ `en.a2.link` and / but / so / because (fill)
 
 Vocabulary:
-- `en.a2.makedo` make / do (sort)
-- `en.a2.shop` shop & food words (sort)
+- ✅ `en.a2.makedo` make / do (sort)
+- ✅ `en.a2.shop` shop & food words (sort; prices in Singapore dollars and cents)
 
 Reading:
 - `en.a2.sequence` first, then, finally (order)
@@ -593,6 +595,7 @@ Each **routine turn builds one batch of ~5 lessons**, alternating English and ma
 | MA-4a | G3 first: times, divrem, add4, mul, eqfrac | ✅ (5 GenerateImage hooks; share widget shows left-overs; itemChip() cleanup) | cae1432 |
 | EN-4c | A2 next: freq, must, should, objpron (+ `line` widget; land() + need_why() cleanup) | ✅ (4 GenerateImage hooks) | a0d2c05 |
 | MA-4b | G3 next: measure, duration, clock, perim (+ `fence` widget; tapStages() cleanup) | ✅ (4 GenerateImage hooks; narrator reads metric units, h/min and 24-hour times) | 606b2ab |
-| EN-4… | A2 (19), then B1, B2, C1, C2 | ⏳ | |
+| EN-4d | A2 next: poss_s, link, makedo, shop (+ suffix `post`, stampWord() cleanup, 3-basket labels fit) | ✅ (4 GenerateImage hooks) | PENDING_HASH |
+| EN-4… | A2 rest (sequence, pronref, prices), then B1, B2, C1, C2 | ⏳ | |
 | MA-4… | G3, G4 … G12 (one grade per 2 turns) | ⏳ | |
 | SG-1… | SG hub "📜 Learn" row (engine: `at=dict(sg="p1")`, `same=`) then P1 → Grown-up | ⏳ after A2 | |
