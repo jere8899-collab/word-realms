@@ -20,8 +20,8 @@ G.GUARDIANS = [
   { id: "g12", grades: [1, 2], stage: "Primary 1–2", name: "Bramble the Button Bear", face: "🧸", art: "mboss_bramble", line: "Hello, little counter! Can you add up all my buttons?" },
   { id: "g34", grades: [3, 4], stage: "Primary 3–4", name: "Professor Hootsworth", face: "🦉", art: "mboss_hootsworth", line: "Hoo-hoo! Times tables and fractions, let's see what you know!" },
   { id: "g56", grades: [5, 6], stage: "Primary 5–6", name: "Captain Ottilie the Otter", face: "🦦", art: "mboss_ottilie", line: "Ahoy! Decimals, percentages and ratios ahead!" },
-  { id: "g78", grades: [7, 8], stage: "Secondary 1–2", name: "Sage Shellby the Turtle", face: "🐢", art: "mboss_shellby", line: "Slow and steady solves every equation." },
-  { id: "g910", grades: [9, 10], stage: "Secondary 3–4", name: "Quartzy the Crystal Golem", face: "💎", art: "mboss_quartzy", line: "Crunch-crunch! Can you crack my quadratic riddles?" },
+  { id: "g78", grades: [7, 8], stage: "Secondary 1–2", name: "Sage Shellby the Turtle", face: "🐢", art: "mboss_shellby", line: "Slow and steady: straight lines, triangles and a first quadratic." },
+  { id: "g910", grades: [9, 10], stage: "Secondary 3–4", name: "Quartzy the Crystal Golem", face: "💎", art: "mboss_quartzy", line: "Crunch-crunch! Curves, circles and a few bonus puzzles." },
   { id: "g1112", grades: [11, 12], stage: "JC 1–2", name: "Lumina the Calculus Unicorn", face: "🦄", art: "mboss_lumina", line: "Sparkle! Let's ride the curves of calculus together!" }
 ].map(g => Object.assign(g, { band: `${g.grades[0]}–${g.grades[1]}` }));
 const byId = id => G.GUARDIANS.find(g => g.id === id);

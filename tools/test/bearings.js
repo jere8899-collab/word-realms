@@ -19,7 +19,7 @@ const ID = 'g9.bearings';
 const t = M.topic(ID);
 ok(t && t.grade === 9 && t.name === 'Lighthouse Lookout' && t.icon === '🚢', `🚢 Lighthouse Lookout is a Grade 9 (Sec 3) topic (${t && t.desc})`);
 ok(M.TOPICS.length >= 118, `it is one of ${M.TOPICS.length} maths topics (118 when it was added)`);
-{ const g = M.gradeTopics(9).map(x => x.id), i = g.indexOf(ID); ok(g[i - 1] === 'g9.trig' && g[g.length - 1] === 'g9.story', 'it sits right after SOH-CAH-TOA Tower (trigonometry): ' + g.join(' ')); }
+{ const g = M.gradeTopics(9).map(x => x.id), i = g.indexOf(ID); ok(g[i - 1] === 'g9.perpline' && g[g.length - 1] === 'g9.story', 'SOH-CAH-TOA moved to Grade 8, so it sits after Right-Angle Paths: ' + g.join(' ')); }
 // the clean-up: one degree-trig kit and one side-label helper, and no topic keeps its own degree → radian code
 { const I = M._internal; ok(I.toRad(180) === Math.PI && I.toDeg(Math.PI) === 180 && Math.abs(I.sinD(30) - .5) < 1e-12 && Math.abs(I.cosD(60) - .5) < 1e-12 && Math.abs(I.tanD(45) - 1) < 1e-12 && I.rotPt([1, 0], 90).every((v, i) => Math.abs(v - [0, 1][i]) < 1e-12), 'the shared degree-trig kit (toRad, toDeg, sinD, cosD, tanD, rotPt) works');
   const src = ['h', 'm'].map(x => fs.readFileSync(ROOT + `/js/math-topics-${x}.js`, 'utf8')).join('\n'), n = (src.match(/Math\.PI \/ 180|180 \/ Math\.PI/g) || []).length;

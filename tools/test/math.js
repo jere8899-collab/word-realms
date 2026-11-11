@@ -224,7 +224,7 @@ async function answerCurrent(page, right, phone) {
   const d = await open(b, false);
   await d.click('#navbar button[data-k="math"]'); await d.waitForTimeout(300);
   ok(await d.locator('.math-hub').count() === 1, 'desktop: the Maths tab opens the Number Kingdom');
-  await d.click('.gchip[data-g="9"]'); await d.click('[data-t="g9.quad"]'); await d.waitForTimeout(300);
+  await d.click('.gchip[data-g="8"]'); await d.click('[data-t="g9.quad"]'); await d.waitForTimeout(300);
   ok(await d.evaluate(() => document.activeElement && document.activeElement.id === 'mans') && await d.locator('#mans').getAttribute('inputmode') !== 'none', 'desktop: the answer box is focused for keyboard typing');
   const q9 = await d.evaluate(() => WR.Math._dbg());
   await d.keyboard.type(q9.val.slice().reverse().join(', ')); await d.keyboard.press('Enter'); await d.waitForTimeout(150);

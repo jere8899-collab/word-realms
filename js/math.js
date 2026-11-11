@@ -82,7 +82,12 @@ const tower = MW.tower = (cls = "") => `<img class="tower-art ${cls}" src="asset
 
 /* ---------- 🔢 the Number Kingdom hub ---------- */
 // 🔢 one topic card on the hub: tap = practise; its 📜 Learn chip (js/learn.js) opens the lesson taught in front of it
-const extraMark = t => t.extra ? `<span class="mextra" title="Enrichment: not in the MOE syllabus">✨ Extra</span>` : "";
+const extraMark = t => {
+  if (!t.extra) return "";
+  const amath = t.extra === "amath";
+  const title = amath ? "Additional Mathematics: a bonus topic, not everyday secondary maths" : "Enrichment: not in the MOE syllabus";
+  return `<span class="mextra" title="${esc(title)}">✨ Extra</span>`;
+};
 const topicCard = (t, p) => `<div class="card skill-card mtopic ${t.story ? "story" : ""}" data-t="${t.id}"><span class="ico">${t.icon}</span>${extraMark(t)}<h3>${esc(t.name)}</h3><div class="muted" style="font-size:.82rem;font-weight:700">${esc(t.desc)}</div><div class="crowns">${p ? crownRow(MW.crownsFor(t.id)) : '<span class="muted" style="font-size:.8rem">not played</span>'}</div>${p ? `<div class="muted" style="font-size:.72rem">best ${Math.round(p.best * 100)}% · played ${p.plays}×</div>` : '<div class="muted" style="font-size:.72rem">endless questions</div>'}${WR.Learn ? WR.Learn.chipHTML(WR.Learn.forTopic(t.id)) : ""}</div>`;
 const lessonOf = q => WR.Learn ? WR.Learn.forTopic(q.topic || (L && L.topic))[0] || null : null;   // 📜 the lesson behind a question's topic
 WR.screens.math = arg => {

@@ -107,4 +107,55 @@ Legend: ✅ matches level · ⬇ content belongs to an earlier level (revision, 
 | 10 | triggraph | ⚠️ sine/cosine graphs are Additional Mathematics, not G3 Maths |
 | 11–12 (JC) | func, explog, diff, stationary, tangent, ap, gp, vec3, integ, chain, area, binom, complex, sigma, expcalc | not checked line by line (no JC syllabus fetched). explog, diff, stationary, tangent, AP/GP are also O-Level Additional Maths |
 
-None of the secondary findings is moved in Task 1 except speed (decision for Jeremy, see the report).
+None of the secondary findings is moved in Task 1 except speed (decision for Jeremy, see the report). Task 12 applies the secondary rows below; the JC check is section D.
+
+## D. Task 12 — secondary moves, and the H2 (9758) check
+
+Checked 2026-11-11. Secondary moves follow section C (MOE 2020 G3 Mathematics: Grade 7 = Sec 1 … Grade 10 = Sec 4). Topic ids stay the same, with `was` set to the old grade, so crowns in `wordRealms.save.v1` stay on the id and the old Grade Guardian still counts a topic that left its band.
+
+| Id | Before | After |
+|---|---|---|
+| g8.gradient | Grade 8, core | Grade 7 (Sec 1), core. Id kept. |
+| g8.lingraph | Grade 8, core, including parallel and perpendicular gradients | Grade 7 (Sec 1), core. Parallel and perpendicular questions removed from this topic. Id kept. |
+| g8.fraceq | Grade 8, core | Grade 7 (Sec 1), core. Id kept. |
+| g9.quad | Grade 9, core (solve by factorising) | Grade 8 (Sec 2), core. Id kept. |
+| g9.simul | Grade 9, core | Grade 8 (Sec 2), core. Id kept. |
+| g9.trig | Grade 9, core (SOH-CAH-TOA) | Grade 8 (Sec 2), core. Id kept. |
+| g9.surds | Grade 9, core | Grade 9, ✨ Extra, Additional Mathematics. Id kept. |
+| g10.triggraph | Grade 10, core | Grade 10, ✨ Extra, Additional Mathematics. Id kept. |
+| g9.perpline (new) | the parallel / perpendicular part lived inside g8.lingraph | Grade 9, ✨ Extra, Additional Mathematics. Questions kept (m₁ × m₂ = −1). |
+
+`g8.gradient` itself never asked the perpendicular rule. That rule was inside Straight-Line Street (`g8.lingraph`), so it was split out of there rather than deleted.
+
+### JC topics against SEAB H2 Mathematics (9758)
+
+SEAB lists **H2 Mathematics as subject 9758** for the 2026 GCE A-Level (school-candidates page, updated 28 August 2026): <https://www.seab.gov.sg/gce-a-level/a-level-syllabuses-examined-for-school-candidates-2026/>.
+
+The content check used two published syllabuses that agree on the six strands (Functions and graphs, Sequences and series, Vectors, Complex numbers, Calculus, Probability and statistics):
+
+- MOE post-secondary H2 Mathematics syllabus: <https://www.moe.gov.sg/media/files/post-secondary/syllabuses/maths/138f79cf-ec8a-4c4f-a532-b04823e09031.pdf>
+- A copy titled "Singapore-Cambridge H2 Level 9758 Mathematics syllabus for examination in 2026": <https://sterlingeducation.sg/resources/downloads/h2-math-syllabus-9758-2026.pdf>
+
+Guessed direct SEAB PDF paths (`9758_y26_sy.pdf`, `9758_y25_sy.pdf`) returned 404, so the line-by-line notes below follow those two documents, not a file downloaded from seab.gov.sg itself.
+
+| Id | What the game asks | 9758 (2026) | Decision |
+|---|---|---|---|
+| func | Composite and inverse functions | 1.1 Functions | Keep in Grade 11. Clearly H2. |
+| explog | Exponentials and logarithms | Assumed from O-Level Additional Mathematics, and used all through H2 calculus | Not clearly in the wrong grade. Left as the JC on-ramp. Jeremy can badge it ✨ Extra instead. |
+| diff | Differentiate polynomials | 5.1 Differentiation (also O-Level A-Math) | Keep in Grade 11. A fair start to JC calculus. |
+| stationary | Where the gradient is zero | 5.1 stationary points | Keep in Grade 11. |
+| tangent | Tangents and normals | 5.1 tangents and normals | Keep in Grade 11. |
+| ap | Arithmetic progressions | 2.1 Sequences and series | Keep in Grade 11. Also A-Math, but it is in H2. |
+| gp | Geometric progressions, including a sum to infinity | 2.1 | Keep in Grade 11. |
+| vec3 | 3D dot product, magnitude, angle | 3.1–3.2 | Keep in Grade 11. Lines, planes and the vector product are in 3.2–3.3 and are not in this topic (a later addition, not a small move). |
+| integ | Definite integrals of polynomials | 5.4 Definite integrals | Keep in Grade 12. |
+| chain | Chain and product rule at a point | H2 differentiation techniques (also A-Math) | Keep in Grade 12. Basic differentiation stays in Grade 11; that split is not clearly wrong. |
+| area | Area between a curve and the x-axis | 5.4 area under a curve | Keep in Grade 12. Volumes of revolution are in 5.4 and are not in this topic (a later addition). |
+| binom | Binomial probabilities | 6.2 Binomial distribution | Keep in Grade 12. |
+| complex | Cartesian form, modulus, multiply, complex roots | Section 4. Polar and exponential form are excluded, and this topic does not teach them | Keep in Grade 12. |
+| sigma | Σ of r, r² and a linear term | 2.1 sums of series | Keep in Grade 12. AP and GP stay in Grade 11; that split is not clearly wrong. |
+| expcalc | Derivatives and integrals with e and ln | H2 calculus of exponential and log functions | Keep in Grade 12. |
+
+No JC topic was both clearly in the wrong grade and a small fix, so none of them moved.
+
+H2 section 6 also includes the normal distribution, sampling, hypothesis testing, and correlation. The game does not teach those. Adding them would be new topics, so it is left as a decision for Jeremy.

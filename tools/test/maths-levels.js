@@ -17,7 +17,7 @@ const bad = Object.entries(AT).filter(([id, g]) => !M.topic(id) || M.topic(id).g
 ok(!bad.length, `every checked topic sits at its MOE level ${bad.map(([id, g]) => id + '→' + (M.topic(id) || {}).grade + ' (want ' + g + ')')}`);
 const MOVED = { 'g6.nets': 6, 'g6.piechart': 6, 'g5.ratio': 5, 'g5.average': 5, 'g6.speed': 6 };
 ok(Object.entries(MOVED).every(([id, was]) => M.topic(id).was === was), 'moved topics keep their old id and remember the grade they came from (t.was)');
-ok(M.TOPICS.length === 134 && new Set(M.TOPICS.map(t => t.id)).size === 134, `134 topics (133 syllabus + 1 extra), all ids unique (${M.TOPICS.length})`);
+ok(M.TOPICS.length === 135 && new Set(M.TOPICS.map(t => t.id)).size === 135, `135 topics (131 core + 4 extras), all ids unique (${M.TOPICS.length})`);
 { const c = M.topic('g4.compass'), qs = Array.from({ length: 2500 }, (_, s) => M.make('g4.compass', s + 1)), probs = [];
   for (const q of qs) { if (/NaN|undefined|Infinity/.test(JSON.stringify(q)) || !M.check(q, q.a).ok || !q.steps.length) probs.push('bad ' + q.a); if (q.kind === 'mcq' && (q.options.length < 3 || q.options.some(o => !q.why || !q.why[o]))) probs.push('why'); if (q.slips) for (const [v] of q.slips) if (M.check(q, String(v)).ok) probs.push('slip'); }
   ok(c && c.extra && c.grade === 4 && /not core/i.test(c.desc), 'Compass Quest is a Grade 4 topic clearly labelled ✨ Extra (enrichment, not core syllabus)');

@@ -17,7 +17,7 @@ const ID = 'g8.solids';
 const t = M.topic(ID);
 ok(t && t.grade === 8 && t.name === 'Ice-Cream Cone Café' && t.icon === '🍦', `🍦 Ice-Cream Cone Café is a Grade 8 (Sec 2) topic (${t && t.desc})`);
 ok(M.TOPICS.length >= 119, `it is one of ${M.TOPICS.length} maths topics (119 when it was added)`);
-{ const g = M.gradeTopics(8).map(x => x.id), i = g.indexOf(ID); ok(g[i - 1] === 'g8.similar' && g[i + 1] === 'g8.gradient' && g[g.length - 1] === 'g8.story', 'it sits after Scale-Model Studio (geometry), before Gradient Hills: ' + g.join(' ')); }
+{ const g = M.gradeTopics(8).map(x => x.id), i = g.indexOf(ID); ok(g[i - 1] === 'g8.similar' && g[i + 1] === 'g8.proportion' && g[g.length - 1] === 'g8.story', 'it sits after Scale-Model Studio (geometry), before Proportion Potions (Gradient Hills moved to Grade 7): ' + g.join(' ')); }
 const labs = svg => [...(svg || '').matchAll(/class="mlab" data-t="([^"]+)"/g)].map(m => m[1]);
 const polys = svg => [...(svg || '').matchAll(/<polygon points="([^"]+)"/g)].map(m => m[1].split(' ').map(p => p.split(',').map(Number)));
 const lines = (svg, cls) => [...(svg || '').matchAll(new RegExp(`<line class="${cls}" x1="([\\d.-]+)" y1="([\\d.-]+)" x2="([\\d.-]+)" y2="([\\d.-]+)"`, 'g'))].map(m => [[+m[1], +m[2]], [+m[3], +m[4]]]);
