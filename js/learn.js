@@ -274,13 +274,14 @@ KIT.groups = {
   html: w => `<div class="lw-rings r${w.rings}">${Array.from({ length: w.rings }, (_, k) => `<div class="lw-ring" data-tgt data-k="${k}" role="button" tabindex="0" aria-label="ring ${k + 1}"><div class="lw-got"></div><b class="lw-tot"></b></div>`).join("")}</div>
     ${groupHTML(w, w.rings * w.each, "mushrooms to place")}`,
   bind(root, w, api) {
-    const got = Array(w.rings).fill(0), pile = root.querySelector(".lw-pile");
+    // MA-5a cleanup: the skip-count totals (4, 8, 12) are worked out once and shared by the ring labels and the done line
+    const got = Array(w.rings).fill(0), pile = root.querySelector(".lw-pile"), runs = Array.from({ length: w.rings }, (_, j) => (j + 1) * w.each);
     const add = ring => { const k = +ring.dataset.k, src = pile.querySelector("[data-src]"); if (!src) return;
       if (got[k] >= w.each) return api.miss(`This ring has ${w.each} — it's full! Every ring gets the same.`, ring);
       src.remove(); got[k]++; ring.querySelector(".lw-got").insertAdjacentHTML("beforeend", `<span>${w.item}</span>`); WR.sfx("tap");
       if (got[k] === w.each) ring.classList.add("full");
-      if (!pile.querySelector("[data-src]")) { root.querySelectorAll(".lw-ring").forEach((r, j) => r.querySelector(".lw-tot").textContent = (j + 1) * w.each);
-        api.done(`✅ ${Array.from({ length: w.rings }, (_, j) => (j + 1) * w.each).join(", ")}! ${w.rings} groups of ${w.each} = ${w.rings * w.each}`); } };
+      if (!pile.querySelector("[data-src]")) { root.querySelectorAll(".lw-ring").forEach((r, j) => r.querySelector(".lw-tot").textContent = runs[j]);
+        api.done(`✅ ${runs.join(", ")}! ${w.rings} groups of ${w.each} = ${w.rings * w.each}`); } };
     dragTap(root, { onDrop: (src, ring) => add(ring), onTapTarget: add });
   } };
 KIT.share = {

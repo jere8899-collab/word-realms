@@ -2,6 +2,8 @@
 
 **Phase 1 (plan + engine + pilot): ✅ done (commit 1d135e5, 2026-11-04).** EN-2 + MA-2 ✅ (f4ee083). The 2-hourly routine may now take the next batch (§5: EN-3, then MA-3).
 
+> Checkpoint 2026-11-12 ~21:35 SGT: MA-5a is built, not published (PENDING_HASH): the first Grade 4 (P4) Abacus Orchard lessons. m.g4.factors (groups: 12 apples in 3 rows of 4 → factors, multiples and factor pairs; re-teach "the no-leftovers test" + sort factor / not a factor of 12), m.g4.fracset (share 12 cupcakes onto 4 plates → ¼ and ¾ of 12; re-teach the bar model + fill thirds of 15), m.g4.round (sort balls on the number-line hill between the 40 and 50 cottages, halfway rolls up; re-teach "the neighbour digit" + fill to the nearest 100). New pack tools/lessons/m_g4.py (m-g4). No new widget. Cleanup kept: KIT.groups works out its skip-count totals once (`runs`), shared by the ring labels and the done line (behaviour identical). 3 GenerateImage hooks (painted by the parent run, no text) installed with install_story_img.py --dir lessons --batch. Hint links come from the g4.factors / g4.fracset / g4.round practice topics. 76 lessons; build_voice 5704 lines (40 new af_heart), 0 to record. lessons.js 332/332 (MIN_LESSONS 76, 320–412 px audit). Next maths turn: MA-5b (rest of G4: longmul, longdiv, fracadd, decimal …). Next English turn: EN-5b.
+
 > Checkpoint 2026-11-12 ~15:20 SGT: EN-5a is live (2a9eda2, build wr-fa89d4195a66; Pages run 43174148981 succeeded, lesson_en_b1_ppever.jpg returns 200 live): the first B1 Whispering Forest lessons. en.b1.ppever (fill ever/never/just/already/yet in Lily's explorer book; re-teach "the clock that points at now" + sort right/needs fixing), en.b1.ppvsps (sort time words: finished time → did, up to now → have done; re-teach "closed box / open box" + fill went/have been/baked/has baked, Singapore places), en.b1.pastcont (the `line` ladder as a timeline: Lily was reading … when Puffbun jumped out; re-teach "movie and pop-up" + fill). New pack tools/lessons/en_b1.py (en-b1, found by lesson_build's glob like en_a2). 3 GenerateImage hooks (painted by the parent run, no text) installed with install_story_img.py --dir lessons --batch (960×720 jpg + webp). Hint links: ppever ← "present perfect with ever / for experience" items, ppvsps ← "present perfect for a period / past simple with a finished time", pastcont ← "past continuous" items (grammar + listening). Cleanup kept: `cardPool()` helper in js/learn.js (the shuffled card pile shared by sort and line; HTML byte-identical for all 42 existing sort/line widgets). 73 lessons; build_voice 5662 lines (41 new af_heart), 0 to record. lessons.js 323/323 (MIN_LESSONS 73, 320–412 px audit); EN-5a re-teach/check2/why-not/scroll check 320/360/375/390/412 px + landscape ALL OK. Full suite 108: all pass (firstload, c2types, icons, mathbubble, maths-review, pin, tinybits timed out in the parallel run and passed alone; cloud, lightart, parentgate, pwa run one at a time). Next English turn: EN-5b (cond1, cond2, passive, relative). Next maths turn: G4.
 
 > Checkpoint 2026-11-12 ~09:45 SGT: EN-4e + MA-4c are live (2886e1d, build wr-b1bcfbd14af3; Pages run 43133628298 succeeded, new hook art returns 200 live). Built by the 2026-11-11 3 PM (EN-4e) and 9 PM (MA-4c) runs, which stopped before committing; this run re-tested and published them. EN-4e: en.a2.sequence (first/then/finally on the `line` ladder), en.a2.pronref (who is "she"? findword), en.a2.prices (hear times and S$ prices, hearpic). MA-4c: m.g3.lines (sort parallel/perpendicular with drawn line pairs, `pic` on sort cards, validated by lesson_build), m.g3.bargraph (new `bargraph` widget: bars on a scale of 2/5/10), m.g3.story (new `units` bar-model widget for × and ÷ stories). Cleanup kept: `lockAll()` helper in js/learn.js (replaces repeated disable-all-buttons code; place value now uses nextTarget()). 6 GenerateImage hooks (checked: no stray text). 70 lessons; build_voice 5621 lines, 0 to record. lessons.js 314/314 (MIN_LESSONS 70, 320–412 px audit). Full suite 108: all pass (garden, doubletap, mathbubble, review-engine, rename, shots, smallphones flaked in the parallel run and passed alone; story-voices timed out in parallel and passed alone 36/36). Next English turn: B1 (A2 list done). Next maths turn: G4.
@@ -457,11 +459,11 @@ These lessons attach to the level hub as a "📜 Learn" row, which is still a hu
 **Grade 4 (P4):**
 - `m.g4.longmul` long multiplication (area model)
 - `m.g4.longdiv` long division (share in steps)
-- `m.g4.factors` factors & multiples (arrays)
+- ✅ `m.g4.factors` factors & multiples (arrays)
 - `m.g4.fracadd` adding fractions: like / unlike (frac bars)
-- `m.g4.fracset` a fraction of a set (groups)
+- ✅ `m.g4.fracset` a fraction of a set (groups)
 - `m.g4.decimal` tenths & hundredths (pv decimals)
-- `m.g4.round` rounding: the number line hill
+- ✅ `m.g4.round` rounding: the number line hill
 - `m.g4.area` area by counting squares
 - `m.g4.angles` turns & angles (angle turn)
 - `m.g4.symmetry` mirror lines (fold)
@@ -604,6 +606,7 @@ Each **routine turn builds one batch of ~5 lessons**, alternating English and ma
 | EN-4e | A2 last: sequence, pronref, prices | ✅ (3 GenerateImage hooks) | 2886e1d |
 | MA-4c | G3 last: lines, bargraph, story (+ `bargraph` and `units` widgets; lockAll() cleanup) | ✅ (3 GenerateImage hooks) | 2886e1d |
 | EN-5a | B1 first: ppever, ppvsps, pastcont (+ cardPool() cleanup) | ✅ (3 GenerateImage hooks) | 2a9eda2 |
+| MA-5a | G4 first: factors, fracset, round (groups/share/sort/fill, no new widget; groups `runs` cleanup) | built, not published (PENDING_HASH) (3 GenerateImage hooks) | PENDING_HASH |
 | EN-5… | B1 rest, then B2, C1, C2 | ⏳ | |
 | MA-4… | G3, G4 … G12 (one grade per 2 turns) | ⏳ | |
 | SG-1… | SG hub "📜 Learn" row (engine: `at=dict(sg="p1")`, `same=`) then P1 → Grown-up | ⏳ after A2 | |
