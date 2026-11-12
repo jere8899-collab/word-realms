@@ -175,7 +175,10 @@ const attach = root => {
   const hold = document.createElement("div"); hold.innerHTML = html;
   const panel = hold.firstElementChild;
   const row = root.querySelector(".next-row") || root.querySelector(".row");
-  if (row) row.before(panel); else root.appendChild(panel);
+  // A short landscape screen keeps the original next button on screen. Taller phones see Next adventure first.
+  if (row && window.innerHeight >= 500) row.before(panel);
+  else if (row) row.after(panel);
+  else root.appendChild(panel);
   const go = panel.querySelector("#againNext");
   if (go) go.onclick = e => { e.preventDefault(); e.stopPropagation(); goNext(); };
 };
@@ -217,14 +220,6 @@ if (WR.HEALTH && WR.HEALTH.rowsHTML) {
   const rows0 = WR.HEALTH.rowsHTML;
   WR.HEALTH.rowsHTML = function () { return rows0.apply(this, arguments) + `<p class="muted again-grown">Play-again is an egg, one little daily quest, and a weekly sticker. Missing a day does no harm. A rest day still counts.</p>`; };
 }
-const home0 = WR.screens.home;
-if (home0) WR.screens.home = function () {
-  const r = home0.apply(this, arguments);
-  const small = document.querySelector("#petMini small");
-  const a = bag();
-  if (small && a) small.insertAdjacentText("beforeend", ` · egg ${a.egg.fill}/${NEED}`);
-  return r;
-};
 const quests0 = WR.screens.quests;
 if (quests0) WR.screens.quests = function () {
   const r = quests0.apply(this, arguments);
