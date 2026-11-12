@@ -123,8 +123,10 @@ const shuffled = list => WR.shuffle(list.map((x, k) => ({ x, k })));
 const shuffleLetters = (answer, extra = "") => shuffled((answer + extra).split("")).map(({ x, k }) => ({ ch: x, k }));
 // MA-4c: a sort card may carry a drawn pair of lines (pic: two segments [x1, y1, x2, y2] on a 40 × 40 square), e.g. parallel / perpendicular
 const linePic = segs => `<svg class="lw-lpic" viewBox="0 0 40 40" aria-hidden="true">${segs.map(([a, b, c, d]) => `<line x1="${a}" y1="${b}" x2="${c}" y2="${d}"/>`).join("")}</svg>`;
+// the shuffled pile of cards a child drags or taps into place (sort baskets, line steps); data-k keeps each card's index
+const cardPool = (label, items, face = it => esc(it.t)) => `<div class="lw-pool" aria-label="${label}">${shuffled(items).map(({ x: it, k }) => `<button class="lw-chip" data-src data-k="${k}">${face(it)}</button>`).join("")}</div>`;
 KIT.sort = {
-  html: w => `<div class="lw-pool" aria-label="Cards to sort">${shuffled(w.items).map(({ x: it, k }) => `<button class="lw-chip" data-src data-k="${k}">${it.pic ? linePic(it.pic) : ""}${it.icon ? `<span aria-hidden="true">${it.icon}</span> ` : ""}${esc(it.t)}</button>`).join("")}</div>
+  html: w => `${cardPool("Cards to sort", w.items, it => `${it.pic ? linePic(it.pic) : ""}${it.icon ? `<span aria-hidden="true">${it.icon}</span> ` : ""}${esc(it.t)}`)}
     <div class="lw-bins b${w.bins.length}">${w.bins.map(b => `<div class="lw-bin" data-tgt data-b="${esc(b.id)}" role="button" tabindex="0" aria-label="${esc(b.label)} basket"><b>${b.icon || ""} ${esc(b.label)}</b><div class="lw-in"></div></div>`).join("")}</div>`,
   bind(root, w, api) {
     let left = w.items.length;
@@ -138,7 +140,7 @@ KIT.sort = {
 const rungMark = (w, it, k) => w.of ? `${"<i class=on>★</i>".repeat(it.n)}${"<i>★</i>".repeat(w.of - it.n)}` : esc(it.mark || String(k + 1));
 const rungLabel = (w, it, k) => w.of ? `${it.n} of ${w.of}${w.unit ? " " + w.unit : ""}` : it.mark || `step ${k + 1}`;
 KIT.line = {
-  html: w => `<div class="lw-pool" aria-label="Words to put on the line">${shuffled(w.items).map(({ x: it, k }) => `<button class="lw-chip" data-src data-k="${k}">${esc(it.t)}</button>`).join("")}</div>
+  html: w => `${cardPool("Words to put on the line", w.items)}
     <div class="lw-ladder"><div class="lw-end">▲ ${esc(w.ends[0])}</div><ol class="lw-rungs">${w.items.map((it, k) => `<li class="lw-rung" data-tgt data-k="${k}" role="button" tabindex="0" aria-label="the step for ${esc(rungLabel(w, it, k))}"><span class="lw-mark" aria-hidden="true">${rungMark(w, it, k)}</span><span class="lw-in"></span></li>`).join("")}</ol><div class="lw-end">▼ ${esc(w.ends[1])}</div></div>`,
   bind(root, w, api) {
     let left = w.items.length;

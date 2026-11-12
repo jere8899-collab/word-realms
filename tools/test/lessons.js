@@ -1,4 +1,4 @@
-// 📜 Lessons (LESSONS-PLAN.md, js/learn.js): A1 English + Grade 2 maths (+ MA-3 G1 when art lands). Widget kit includes shapecount, line (EN-4c), fence (MA-4b) and the suffix post field (EN-4d: Mia + 's + bag); EN-4e reuses line (first/then/finally), findword (tap the person) and hearpic (times and S$ prices); MA-4c adds bargraph (a scale), units (the × ÷ bar model) and drawn line pairs on sort cards.
+// 📜 Lessons (LESSONS-PLAN.md, js/learn.js): A1 English + Grade 2 maths (+ MA-3 G1 when art lands). Widget kit includes shapecount, line (EN-4c), fence (MA-4b) and the suffix post field (EN-4d: Mia + 's + bag); EN-4e reuses line (first/then/finally), findword (tap the person) and hearpic (times and S$ prices); MA-4c adds bargraph (a scale), units (the × ÷ bar model) and drawn line pairs on sort cards. EN-5a (first B1) reuses fill, sort and the line ladder as a timeline.
 //   node tools/test/lessons.js        (SHOT=1 saves screenshots/lessons_*.png at 390 px)
 // Covers: every pilot lesson played start → scroll by TAP; drag (pointer) on sort / place value / spots / line; the re-teach path
 // (a different explanation, NEW questions, why-not notes); stars once ever (anti-farm); a lesson failed twice still
@@ -9,7 +9,7 @@
 const { chromium } = require('playwright-core');
 const BASE = (process.env.BASE || 'http://127.0.0.1:18642/').replace(/\/?$/, '/');
 const OUT = '/workspace/cefr-quest/screenshots/';
-const MIN_LESSONS = 70;
+const MIN_LESSONS = 73;
 let fails = 0, passes = 0;
 const ok = (c, m) => { if (!c) { fails++; console.error('FAIL', m); process.exitCode = 1; } else { passes++; console.log('ok', m); } };
 const today = () => { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };

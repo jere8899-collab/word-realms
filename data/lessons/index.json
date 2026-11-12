@@ -843,6 +843,57 @@
    ]
   },
   {
+   "id": "en.b1.ppever",
+   "pack": "en-b1",
+   "title": "ever, never, just, already, yet",
+   "icon": "🍄",
+   "at": {
+    "realm": "b1",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_b1_ppever",
+   "match": [
+    {
+     "re": "present perfect (with ever|for experience)",
+     "field": "explain"
+    }
+   ]
+  },
+  {
+   "id": "en.b1.ppvsps",
+   "pack": "en-b1",
+   "title": "have done or did?",
+   "icon": "🗓️",
+   "at": {
+    "realm": "b1",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_b1_ppvsps",
+   "match": [
+    {
+     "re": "present perfect for a period|past simple with a finished time",
+     "field": "explain"
+    }
+   ]
+  },
+  {
+   "id": "en.b1.pastcont",
+   "pack": "en-b1",
+   "title": "was doing when …",
+   "icon": "🌧️",
+   "at": {
+    "realm": "b1",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_b1_pastcont",
+   "match": [
+    {
+     "re": "past continuous",
+     "field": "explain"
+    }
+   ]
+  },
+  {
    "id": "m.g1.count",
    "pack": "m-g1",
    "title": "Counting to 20",
