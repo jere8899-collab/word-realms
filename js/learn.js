@@ -108,10 +108,12 @@ const KIT = {};
 // shared: schedule the next stage only if the widget is still on screen
 const later = (root, ms, fn) => setTimeout(() => { if (root.isConnected) fn(); }, ms);
 const saySoon = (api, line) => { if (api.sayLine && line) setTimeout(() => api.sayLine(line), 0); };
-// money and clock walk a list of targets: cheer, then the next one or done
+// a finished widget: switch off all its buttons that match sel
+const lockAll = (root, sel) => root.querySelectorAll(sel).forEach(b => b.disabled = true);
+// place value, money and clock walk a list of targets: cheer, then the next one or done
 const nextTarget = (root, api, i, n, sel, show) => {
   const j = i + 1;
-  if (j >= n) { root.querySelectorAll(sel).forEach(b => b.disabled = true); api.done(); }
+  if (j >= n) { lockAll(root, sel); api.done(); }
   else setTimeout(show, 900);
   return j;
 };
@@ -119,8 +121,10 @@ const nextTarget = (root, api, i, n, sel, show) => {
 const shuffled = list => WR.shuffle(list.map((x, k) => ({ x, k })));
 // 🔤 shuffle letters for spellhear (and any future letter-tile widgets)
 const shuffleLetters = (answer, extra = "") => shuffled((answer + extra).split("")).map(({ x, k }) => ({ ch: x, k }));
+// MA-4c: a sort card may carry a drawn pair of lines (pic: two segments [x1, y1, x2, y2] on a 40 × 40 square), e.g. parallel / perpendicular
+const linePic = segs => `<svg class="lw-lpic" viewBox="0 0 40 40" aria-hidden="true">${segs.map(([a, b, c, d]) => `<line x1="${a}" y1="${b}" x2="${c}" y2="${d}"/>`).join("")}</svg>`;
 KIT.sort = {
-  html: w => `<div class="lw-pool" aria-label="Cards to sort">${shuffled(w.items).map(({ x: it, k }) => `<button class="lw-chip" data-src data-k="${k}">${it.icon ? `<span aria-hidden="true">${it.icon}</span> ` : ""}${esc(it.t)}</button>`).join("")}</div>
+  html: w => `<div class="lw-pool" aria-label="Cards to sort">${shuffled(w.items).map(({ x: it, k }) => `<button class="lw-chip" data-src data-k="${k}">${it.pic ? linePic(it.pic) : ""}${it.icon ? `<span aria-hidden="true">${it.icon}</span> ` : ""}${esc(it.t)}</button>`).join("")}</div>
     <div class="lw-bins b${w.bins.length}">${w.bins.map(b => `<div class="lw-bin" data-tgt data-b="${esc(b.id)}" role="button" tabindex="0" aria-label="${esc(b.label)} basket"><b>${b.icon || ""} ${esc(b.label)}</b><div class="lw-in"></div></div>`).join("")}</div>`,
   bind(root, w, api) {
     let left = w.items.length;
@@ -221,8 +225,8 @@ KIT.pv = {
     show();
     const check = () => { const want = w.targets[i];
       if (total() !== want) { if (total() > want) api.say(`That's ${total()}, more than ${want}. Tap ➖ to take one back.`); return; }
-      api.good(`✅ ${want} = ${n[100]} hundreds, ${n[10]} tens and ${n[1]} ones!`); i++;
-      if (i >= w.targets.length) { root.querySelectorAll("[data-src], .pv-minus").forEach(b => b.disabled = true); api.done(); } else setTimeout(show, 900); };
+      api.good(`✅ ${want} = ${n[100]} hundreds, ${n[10]} tens and ${n[1]} ones!`);
+      i = nextTarget(root, api, i, w.targets.length, "[data-src], .pv-minus", show); };
     const add = v => { if (n[v] >= 9) return api.miss(v === 100 ? "That's plenty of hundreds!" : `10 ${v === 1 ? "ones make 1 ten" : "tens make 1 hundred"}! Use a bigger block instead.`, mat);
       n[v]++; WR.sfx("tap"); paint(); check(); };
     dragTap(root, { instant: () => mat, onDrop: src => add(+src.dataset.v) });
@@ -287,9 +291,9 @@ KIT.share = {
     const left = () => pile.querySelectorAll("[data-src]").length;
     const after = () => { paint();
       if (left() > rem) { const lo = Math.min(...got), hi = Math.max(...got); if (hi - lo >= 2) api.say("Hmm, one plate has lots more. Is that fair? 🤔"); return; }
-      if (left() === rem && got.every(g => g === each)) { root.querySelectorAll(".lw-plate").forEach(p => p.classList.add("fair")); root.querySelectorAll(".lw-back, .lw-deal").forEach(b => b.disabled = true);
+      if (left() === rem && got.every(g => g === each)) { root.querySelectorAll(".lw-plate").forEach(p => p.classList.add("fair")); lockAll(root, ".lw-back, .lw-deal");
         if (!rem) return api.done(`✅ ${w.total} shared by ${w.plates} = ${each} each. Fair!`);
-        pile.querySelectorAll("[data-src]").forEach(b => b.disabled = true); pile.classList.add("leftover");
+        lockAll(pile, "[data-src]"); pile.classList.add("leftover");
         return api.done(`✅ ${w.total} shared by ${w.plates} = ${each} each, and ${rem} left over!`); }
       api.miss("Not fair yet! Some plates have more. Tap ↩️ to take one back.", root.querySelector(".lw-plates")); };
     const give = k => { const src = pile.querySelector("[data-src]"); if (!src) return; src.remove(); got[k]++; WR.sfx("tap"); };
@@ -357,7 +361,7 @@ KIT.rename = {
       root.querySelector(".lw-count").textContent = `${S.tens} tens + ${S.ones} ones = ${S.tens * 10 + S.ones}` + (S.leftT || S.leftO ? ` · still take ${S.leftT ? S.leftT + " ten" + (S.leftT > 1 ? "s" : "") : ""}${S.leftT && S.leftO ? " and " : ""}${S.leftO ? S.leftO + " one" + (S.leftO > 1 ? "s" : "") : ""}` : "");
       root.querySelector(".rg-take-one").disabled = !S.leftO;
       root.querySelector(".rg-take-ten").disabled = !S.leftT;
-      if (!S.leftT && !S.leftO) { root.querySelectorAll(".rg-take-one, .rg-take-ten, .rg-unbundle").forEach(b => b.disabled = true); api.done(`✅ ${w.a} − ${w.b} = ${w.a - w.b}!`); }
+      if (!S.leftT && !S.leftO) { lockAll(root, ".rg-take-one, .rg-take-ten, .rg-unbundle"); api.done(`✅ ${w.a} − ${w.b} = ${w.a - w.b}!`); }
     };
     const take = kind => {
       if (kind === "one") {
@@ -473,7 +477,7 @@ KIT.picgraph = {
       root.querySelector(`.pg-row[data-k="${k}"]`).classList.toggle("ok", got[k] === c.n);
     });
       root.querySelector(".lw-count").textContent = got.every((g, k) => g === w.cats[k].n) ? "🎉 Graph matches the key!" : "Tap ➕ / ➖ so each row matches."; };
-    const doneCheck = () => { paint(); if (got.every((g, k) => g === w.cats[k].n)) { root.querySelectorAll(".pg-add, .pg-sub").forEach(b => b.disabled = true); api.done(`✅ Each ${item} = ${w.key}. Graph complete!`); } };
+    const doneCheck = () => { paint(); if (got.every((g, k) => g === w.cats[k].n)) { lockAll(root, ".pg-add, .pg-sub"); api.done(`✅ Each ${item} = ${w.key}. Graph complete!`); } };
     root.querySelectorAll(".pg-add").forEach(b => b.onclick = () => { const k = +b.dataset.add; if (got[k] >= 8) return api.miss("That's plenty for this row!", root.querySelector(`.pg-row[data-k="${k}"]`));
       got[k]++; WR.sfx("tap"); if (got[k] === w.cats[k].n) api.good(`✅ ${w.cats[k].label}: ${got[k]} × ${w.key} = ${got[k] * w.key}`); doneCheck(); });
     root.querySelectorAll(".pg-sub").forEach(b => b.onclick = () => { const k = +b.dataset.sub; if (!got[k]) return; got[k]--; WR.sfx("tap"); doneCheck(); });
@@ -495,7 +499,6 @@ KIT.bar = {
     root.querySelector(".lw-task").innerHTML = `👉 ${esc(w.text || `First mark the ${w.sold} sold, then join the ${w.add} new ones.`)}`;
     const paint = () => {
       const sold = root.querySelector(".bm-part.sold"), add = root.querySelector(".bm-part.add"), left = root.querySelector(".bm-part.left");
-      const tot = w.start + (placed.add ? w.add : 0);
       // widths proportional
       sold.style.flex = String(w.sold); left.style.flex = String(w.start - w.sold); add.style.flex = String(w.add);
       sold.classList.toggle("on", placed.sold); add.classList.toggle("on", placed.add);
@@ -519,8 +522,72 @@ KIT.bar = {
     dragTap(root, { onDrop: (src, part) => put(src.dataset.v, part),
       onTapTarget: part => { const kind = part.dataset.p; const src = root.querySelector(`[data-src][data-v="${kind}"]`); if (src) put(kind, part); else api.say("Tap a chip first 👆"); },
       nothing: () => api.say("Tap a chip, then its place on the bar 👆") });
-    // also: tap a chip then auto-target via instant? skip — two-step tap is fine
     paint();
+  } };
+
+// 📊 bar graph with a scale (MA-4c): raise each bar to its number, where every line up the side counts w.scale (not 1).
+// tap ➕ / ➖ under a bar, or tap the bar's column at a height (the tap version of dragging the top of the bar)
+KIT.bargraph = {
+  html: w => { const steps = w.max / w.scale, cols = `style="grid-template-columns:repeat(${w.bars.length},minmax(0,1fr))"`;
+    return `<div class="lw-target" aria-live="polite">Each line = <b>${w.scale}</b> ${esc(w.unit)}</div>
+    <div class="bg-data">${w.bars.map(b => `<span class="bg-want bg-${esc(b.color)}">${esc(b.label)}: <b>${b.n}</b></span>`).join("")}</div>
+    <div class="bg-chart" style="--steps:${steps}"><div class="bg-axis" aria-hidden="true">${Array.from({ length: steps + 1 }, (_, k) => `<span style="bottom:calc(${k} * var(--bg-step))">${k * w.scale}</span>`).join("")}</div>
+      <div class="bg-plot" ${cols}>${w.bars.map((b, k) => `<div class="bg-col" data-col="${k}" role="button" tabindex="0" aria-label="the ${esc(b.label)} bar: tap a height"><div class="bg-bar bg-${esc(b.color)}" style="height:0"><b></b></div></div>`).join("")}</div>
+      <i></i><div class="bg-names" ${cols}>${w.bars.map(b => `<span>${esc(b.label)}</span>`).join("")}</div>
+      <i></i><div class="bg-ctl" ${cols}>${w.bars.map((b, k) => `<div><button class="btn ghost small bg-add" data-add="${k}" aria-label="the ${esc(b.label)} bar one line taller">➕</button><button class="btn ghost small bg-sub" data-sub="${k}" aria-label="the ${esc(b.label)} bar one line shorter">➖</button></div>`).join("")}</div></div>
+    <div class="lw-count" aria-live="polite"></div>`; },
+  bind(root, w, api) {
+    const steps = w.max / w.scale, got = w.bars.map(() => 0); let finished = false;
+    const lines = n => `${n} line${n === 1 ? "" : "s"}`;
+    const paint = () => w.bars.forEach((b, k) => { const bar = root.querySelector(`[data-col="${k}"] .bg-bar`), ok = got[k] * w.scale === b.n;
+      bar.style.height = `calc(${got[k]} * var(--bg-step))`; bar.classList.toggle("ok", ok); bar.querySelector("b").textContent = ok ? b.n : ""; });
+    const set = (k, n) => { if (finished) return; n = Math.max(0, Math.min(steps, n)); if (n === got[k]) return;
+      got[k] = n; WR.sfx("tap"); paint(); const b = w.bars[k], v = n * w.scale;
+      root.querySelector(".lw-count").textContent = `${b.label}: ${lines(n)} × ${w.scale} = ${v}`;
+      if (v > b.n) return api.miss(`That's ${v}, past ${b.n}! Each line counts ${w.scale}, so ${b.label} needs ${lines(b.n / w.scale)}. Tap ➖.`, root.querySelector(`[data-col="${k}"]`));
+      if (v === b.n) api.good(`✅ ${b.label}: ${lines(n)} × ${w.scale} = ${b.n} ${w.unit}`);
+      if (got.every((g, j) => g * w.scale === w.bars[j].n)) { finished = true; lockAll(root, ".bg-add, .bg-sub");
+        root.querySelectorAll(".bg-col").forEach(c => c.setAttribute("aria-disabled", "true")); api.done(`✅ Every bar matches! Each line counts ${w.scale} ${w.unit}.`); } };
+    root.querySelectorAll(".bg-add").forEach(b => b.onclick = () => set(+b.dataset.add, got[+b.dataset.add] + 1));
+    root.querySelectorAll(".bg-sub").forEach(b => b.onclick = () => set(+b.dataset.sub, got[+b.dataset.sub] - 1));
+    root.querySelectorAll(".bg-col").forEach(c => { const k = +c.dataset.col;
+      c.addEventListener("click", e => { const r = c.getBoundingClientRect();
+        if (!e.detail || !r.height) return set(k, got[k] + 1);      // a keyboard press: one line taller
+        set(k, Math.ceil((r.bottom - e.clientY) / (r.height / steps) - 0.25)); });
+      c.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); set(k, got[k] + 1); } }); });
+    paint();
+  } };
+// 🧺 bar model for × and ÷ stories (MA-4c): build the bar from equal boxes, ✅ check it, then pick the number sentence that matches.
+// a stage's ask: "total" (n boxes of each → how many in all?), "groups" (boxes of each until the bar makes n × each → how many boxes?)
+// or "each" (cut the total n × each into n equal boxes → how many in each?)
+KIT.units = {
+  html: () => `<div class="lw-task" aria-live="polite"></div><div class="um-wrap"></div>
+    <div class="um-ctl"><button class="btn ghost um-d" data-d="-1" aria-label="one box fewer">➖</button><b class="um-n" aria-live="polite"></b><button class="btn ghost um-d" data-d="1" aria-label="one box more">➕</button></div>
+    <div class="row um-row"><button class="btn mint um-check">✅ Check my bar</button></div>
+    <div class="um-ops" aria-label="Number sentences"></div>`,
+  bind(root, w, api) {
+    let k = 1, phase = "build";
+    const wrap = root.querySelector(".um-wrap"), ctl = root.querySelector(".um-ctl"), chk = root.querySelector(".um-check"), ops = root.querySelector(".um-ops"), task = root.querySelector(".lw-task");
+    const draw = s => { const tot = s.n * s.each, done = phase === "done", whole = s.ask !== "groups";
+      const boxes = Array.from({ length: k }, () => `<span class="um-box"${whole ? "" : ` style="flex:0 0 ${(100 * s.each / tot).toFixed(3)}%"`}>${s.ask === "each" && !done ? "?" : s.each}</span>`).join("");
+      const top = s.ask === "total" && !done ? `? ${s.unit} in all` : `${tot} ${s.unit}${s.ask === "total" ? " in all" : ""}`;
+      wrap.innerHTML = `<div class="um-top"><span>${esc(top)}</span></div><div class="um-bar${whole ? "" : " grow"}" role="img" aria-label="bar model: ${k} box${k > 1 ? "es" : ""}">${boxes}</div>`;
+      root.querySelector(".um-n").textContent = s.ask === "groups" ? `${k} × ${s.each} = ${k * s.each}` : `${k} box${k > 1 ? "es" : ""}`; };
+    const run = tapStages(root, w, api, {
+      paint: s => { k = 1; phase = "build"; task.innerHTML = `👉 ${esc(s.item || "")} ${esc(s.text)}`; ctl.hidden = false; chk.hidden = false; ops.innerHTML = ""; draw(s); },
+      lock: () => lockAll(root, "button") });
+    root.querySelectorAll(".um-d").forEach(b => b.onclick = () => { if (phase !== "build") return; const s = run.stage(), d = +b.dataset.d;
+      if (k + d < 1) return; if (k + d > 10) return api.miss("That's lots of boxes! " + s.why, wrap);
+      k += d; WR.sfx("tap"); draw(s); });
+    chk.onclick = () => { if (phase !== "build") return; const s = run.stage();
+      if (k !== s.n) return api.miss(s.ask === "groups" && k * s.each > s.n * s.each ? `That's ${k * s.each}, more than ${s.n * s.each}! ${s.why}` : `Not yet! ${s.why}`, wrap);
+      phase = "pick"; ctl.hidden = true; chk.hidden = true; WR.sfx("good");
+      ops.innerHTML = `<p class="um-ask">Which number sentence matches your bar?</p>` + shuffled(s.ops).map(({ x: o, k: j }) => `<button class="lw-chip um-op" data-op="${j}">${esc(o.t)}</button>`).join("");
+      api.say("✅ Your bar is ready! Now tap the number sentence that matches it."); };
+    ops.addEventListener("click", e => { const b = e.target.closest(".um-op"); if (!b || phase !== "pick") return; const s = run.stage(), o = s.ops[+b.dataset.op];
+      if (!o.ok) return api.miss(`Not “${o.t}”. ${o.why}`, b);
+      phase = "done"; b.classList.add("right"); lockAll(ops, ".um-op"); draw(s);
+      run.finish(`✅ ${o.t}`, `🎉 ${o.t}! The bar model shows it.`); });
   } };
 
 // 📖 find a number/colour word in a short story (tap the word)
@@ -542,7 +609,7 @@ KIT.findword = {
         return api.miss(t.why || `Hmm, “${btn.textContent.trim()}” is not what we need. ${t.q}`, btn);
       }
       btn.classList.add("right"); api.good(`✅ ${t.why || ("Yes! “" + t.word + "”.")}`); i++;
-      if (i >= w.tasks.length) { root.querySelectorAll(".lw-fword").forEach(b => b.disabled = true); task.textContent = "🎉 You found them all!"; api.done(); }
+      if (i >= w.tasks.length) { lockAll(root, ".lw-fword"); task.textContent = "🎉 You found them all!"; api.done(); }
       else later(root, 700, () => { show(); api.sayLine && api.sayLine(w.tasks[i].say || w.tasks[i].q); });
     };
     dragTap(root, { onTapTarget: pick, nothing: () => api.say("Tap the word in the story 👆") });
@@ -575,7 +642,7 @@ KIT.spellhear = {
       if (got.length < it.answer.length) return;
       if (got !== it.answer) { api.miss(`Not “${got}”. Try again!`, slots); built = []; paint(); return; }
       api.good(`✅ ${it.why || ("“" + it.answer + "”!")}`); i++;
-      if (i >= w.items.length) { root.querySelectorAll("[data-src], .lw-clear, .lw-replay").forEach(b => b.disabled = true); api.done("🎉 Great listening!"); }
+      if (i >= w.items.length) { lockAll(root, "[data-src], .lw-clear, .lw-replay"); api.done("🎉 Great listening!"); }
       else later(root, 900, start);
     };
     const add = src => { const it = item(); if (built.length >= it.answer.length) return;
@@ -608,7 +675,7 @@ KIT.hearpic = {
       const it = w.items[i], p = it.pics[+btn.dataset.k];
       if (!p.ok) return api.miss(p.why || `That's the ${p.label || p.id}, not “${it.word}”.`, btn);
       btn.classList.add("right"); api.good(`✅ ${p.why || ("Yes! “" + it.word + "”.")}`); i++;
-      if (i >= w.items.length) { pics.querySelectorAll(".lw-pic").forEach(b => b.disabled = true); api.done("🎉 Ears sharp!"); }
+      if (i >= w.items.length) { lockAll(pics, ".lw-pic"); api.done("🎉 Ears sharp!"); }
       else later(root, 900, show);
     };
     dragTap(root, { onTapTarget: pick, nothing: () => api.say("Tap a picture 👆") });
@@ -763,7 +830,7 @@ function show() {
   if (auto() && line && !widgetSpeaks(S)) speak(line);
   if (S.maths && WR.Math && WR.Math.upgrade) setTimeout(() => WR.Math.upgrade(WR.$("#main")), 400);
 }
-const SPEAKS = new Set(["spots", "frac", "findword", "spellhear", "hearpic", "shapecount"]);  // widgets that read each task/item themselves
+const SPEAKS = new Set(["spots", "frac", "findword", "spellhear", "hearpic", "shapecount", "units"]);  // widgets that read each task/item themselves
 const widgetSpeaks = s => { const w = s.step === "discover" ? s.L.discover : s.step === "rdiscover" ? s.L.reteach.discover : null; return !!w && SPEAKS.has(w.kind); };
 function bindWidget(w, go) {
   const root = WR.$("#lnW"), msg = WR.$("#lnMsg"); let misses = 0, finished = false;

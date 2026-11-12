@@ -13,7 +13,8 @@ WIDGETS = {   # kind → required fields (LESSONS-PLAN.md §2 widget kit; js/lea
     "pv": ["targets"], "regroup": ["a", "b"], "groups": ["rings", "each"], "share": ["total", "plates"], "frac": ["stages"],
     "rename": ["a", "b"], "money": ["targets"], "clock": ["targets"], "picgraph": ["cats", "key"], "bar": ["start", "sold", "add"],
     "findword": ["story", "tasks"], "spellhear": ["items"], "hearpic": ["items"],
-    "shapecount": ["stages"], "line": ["ends", "items"], "fence": ["stages"]}
+    "shapecount": ["stages"], "line": ["ends", "items"], "fence": ["stages"],
+    "bargraph": ["scale", "max", "unit", "bars"], "units": ["stages"]}
 SCENES = {"table": {"on", "under", "in"}, "bed": {"on", "under", "in"}, "nearfar": {"near", "far"}, "park": {"nextto", "behind", "front"}}
 NUMW = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight"}
 DEN = {2: ("half", "halves"), 3: ("third", "thirds"), 4: ("quarter", "quarters"), 5: ("fifth", "fifths"), 6: ("sixth", "sixths"), 8: ("eighth", "eighths")}
@@ -51,7 +52,7 @@ def speak(t):
     t = re.sub(r"(\d) r (\d)", r"\1 remainder \2", t)   # 14 ÷ 3 = 4 r 2 → "4 remainder 2" (MA-4a)
     t = clock24(units(t))
     t = t.replace("□", "what number")   # a missing-number box is read as a question, never as a symbol
-    t = t.replace("___", "blank").replace("·", ",").replace("\n", " ")
+    t = t.replace("___", "blank").replace("·", ",")
     return re.sub(r"\s+", " ", t).strip()
 def topics():
     js = "const M=require('./js/math-gen.js');['p','m','h'].forEach(x=>require('./js/math-topics-'+x+'.js'));console.log(JSON.stringify(M.TOPICS.map(t=>t.id)))"
@@ -61,6 +62,16 @@ def need_why(lid, where, kind, items, key):
     """every card / gap / word of a widget carries its own why line (sort, fill, suffix, spellhear, line)"""
     for it in items:
         if not it.get("why"): fail(lid, f"{where}: {kind} item {it.get(key)!r} needs a why")
+def relate(p):
+    """two drawn segments (MA-4c lines): parallel, perpendicular or neither, from their directions"""
+    (a, b, c, d), (e, f, g, h) = p; u, v = (c - a, d - b), (g - e, h - f)
+    return "par" if u[0] * v[1] - u[1] * v[0] == 0 else "perp" if u[0] * v[0] + u[1] * v[1] == 0 else "neither"
+def check_pic(lid, where, it, ids):
+    p = it["pic"]
+    if not (isinstance(p, list) and len(p) == 2 and all(isinstance(q, list) and len(q) == 4 and all(isinstance(v, int) and 0 <= v <= 40 for v in q) for q in p)):
+        fail(lid, f"{where}: sort pic {it['t']!r} must be 2 segments [x1, y1, x2, y2] on a 0–40 square")
+    if ids <= {"par", "perp", "neither"} and relate(p) != it["bin"]: fail(lid, f"{where}: the drawn lines of {it['t']!r} are {relate(p)}, not {it['bin']}")
+EQ = re.compile(r"^(\d+) ([×÷+−]) (\d+) = (\d+)$")
 def check_widget(lid, w, where):
     k = w.get("kind")
     if k not in WIDGETS: fail(lid, f"{where}: unknown widget kind {k!r}")
@@ -76,6 +87,8 @@ def check_widget(lid, w, where):
         for it in w["items"]:
             if it["bin"] not in ids: fail(lid, f"{where}: sort item {it} needs a known bin")
         if {it["bin"] for it in w["items"]} != ids: fail(lid, f"{where}: every bin needs at least one item")
+        for it in w["items"]:
+            if "pic" in it: check_pic(lid, where, it, ids)
     if k == "fill":
         need_why(lid, where, k, w["items"], "s")
         for it in w["items"]:
@@ -166,14 +179,36 @@ def check_widget(lid, w, where):
                 if (dx == 0) == (sides[j - 1][0] == 0): fail(lid, f"{where}: fence sides {j} and {j + 1} turn no corner (merge them)")
                 if 5 * (abs(dx) + abs(dy)) < W: fail(lid, f"{where}: fence side {j + 1} is too short to tap (≥ width ÷ 5)")
             if st.get("n") != sum(abs(dx) + abs(dy) for dx, dy in sides): fail(lid, f"{where}: fence n must be the perimeter")
+    if k == "bargraph":   # MA-4c: bars rise in steps of the scale; every bar's number sits on a line of the scale
+        sc, mx = w["scale"], w["max"]
+        if sc not in (2, 5, 10) or mx % sc or not 4 <= mx // sc <= 10: fail(lid, f"{where}: bargraph scale 2/5/10 with 4–10 lines up to max")
+        if not 2 <= len(w["bars"]) <= 4: fail(lid, f"{where}: bargraph needs 2–4 bars (they must fit a 320 px phone)")
+        for b in w["bars"]:
+            if not b.get("label") or b.get("color") not in ("pink", "mint", "lemon", "lilac") or not (isinstance(b.get("n"), int) and 0 < b["n"] <= mx and b["n"] % sc == 0):
+                fail(lid, f"{where}: bargraph bar {b} needs a label, a pastel colour and a number on the scale")
+    if k == "units":   # MA-4c bar model: n boxes of each; the one right number sentence must give the asked number
+        if not 1 <= len(w["stages"]) <= 3: fail(lid, f"{where}: units needs 1–3 stages")
+        for st in w["stages"]:
+            n, e = st.get("n"), st.get("each")
+            if st.get("ask") not in ("total", "groups", "each") or not (isinstance(n, int) and 2 <= n <= 6) or not (isinstance(e, int) and 2 <= e <= 10) or not st.get("text") or not st.get("why") or not st.get("unit"):
+                fail(lid, f"{where}: units stage needs ask total/groups/each, n 2–6, each 2–10, a text, a why and a unit")
+            ops = st.get("ops") or []
+            if len(ops) != 3 or len({o["t"] for o in ops}) != 3 or sum(bool(o.get("ok")) for o in ops) != 1 or any(not o.get("ok") and not o.get("why") for o in ops):
+                fail(lid, f"{where}: units needs 3 different number sentences, one ok and a why on each wrong one")
+            m = EQ.match(next(o["t"] for o in ops if o.get("ok")))
+            want = {"total": ("×", n * e), "groups": ("÷", n), "each": ("÷", e)}[st["ask"]]
+            if not m or m.group(2) != want[0] or int(m.group(4)) != want[1] or (m.group(2) == "×" and int(m.group(1)) * int(m.group(3)) != want[1]) or (m.group(2) == "÷" and (int(m.group(1)) != n * e or int(m.group(1)) != int(m.group(3)) * int(m.group(4)))):
+                fail(lid, f"{where}: units right sentence must be {want[0]} giving {want[1]}")
 def say_widget(w):
     w["say"] = speak(w["text"])
     for t in w.get("tasks", []): t["say"] = speak(t.get("text") or t.get("q") or "")
     for st in w.get("stages", []): st["say"] = speak(st["text"])
+    # an item's own say wins; a spellhear / hearpic item without one is read as its answer / word
+    fallback = {"spellhear": "answer", "hearpic": "word"}.get(w.get("kind"))
     for it in w.get("items", []):
-        if isinstance(it, dict) and it.get("say"): it["say"] = speak(it["say"])
-        elif isinstance(it, dict) and it.get("answer") and w.get("kind") == "spellhear": it["say"] = speak(it.get("say") or it["answer"])
-        elif isinstance(it, dict) and it.get("word") and w.get("kind") == "hearpic": it["say"] = speak(it.get("say") or it["word"])
+        if not isinstance(it, dict): continue
+        line = it.get("say") or (fallback and it.get(fallback))
+        if line: it["say"] = speak(line)
 def check_q(lid, q, where):
     o = q["options"]
     if len(o) < 2 or len(set(o)) != len(o): fail(lid, f"{where}: options must be 2+ and unique: {o}")

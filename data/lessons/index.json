@@ -789,6 +789,60 @@
    ]
   },
   {
+   "id": "en.a2.sequence",
+   "pack": "en-a2",
+   "title": "first, then, finally",
+   "icon": "🍰",
+   "at": {
+    "realm": "a2",
+    "skill": "reading"
+   },
+   "art": "lesson_en_a2_sequence",
+   "match": [
+    {
+     "re": "follow the time words|[Pp]ut what happened in order",
+     "field": "explain"
+    }
+   ]
+  },
+  {
+   "id": "en.a2.pronref",
+   "pack": "en-a2",
+   "title": "who is “she”?",
+   "icon": "👉",
+   "at": {
+    "realm": "a2",
+    "skill": "reading"
+   },
+   "art": "lesson_en_a2_pronref",
+   "match": [
+    {
+     "re": "'(She|He|They) \\(",
+     "field": "explain"
+    },
+    {
+     "re": "^Who (is|are) [“\\\"](she|he|they)[”\\\"]",
+     "field": "q"
+    }
+   ]
+  },
+  {
+   "id": "en.a2.prices",
+   "pack": "en-a2",
+   "title": "times & prices",
+   "icon": "🎟️",
+   "at": {
+    "realm": "a2",
+    "skill": "listening"
+   },
+   "art": "lesson_en_a2_prices",
+   "match": [
+    {
+     "re": "^(When|What time|How much)\\b.*(\\$\\d|half past|[Qq]uarter (to|past)|\\b(ten|twenty) past\\b|o'clock|\\d:\\d\\d)"
+    }
+   ]
+  },
+  {
    "id": "m.g1.count",
    "pack": "m-g1",
    "title": "Counting to 20",
@@ -1067,6 +1121,36 @@
     "topic": "g3.perim"
    },
    "art": "lesson_m_g3_perim"
+  },
+  {
+   "id": "m.g3.lines",
+   "pack": "m-g3",
+   "title": "Parallel and perpendicular lines",
+   "icon": "🛤️",
+   "at": {
+    "topic": "g3.lines"
+   },
+   "art": "lesson_m_g3_lines"
+  },
+  {
+   "id": "m.g3.bargraph",
+   "pack": "m-g3",
+   "title": "Bar graphs with a scale",
+   "icon": "📊",
+   "at": {
+    "topic": "g3.bargraph"
+   },
+   "art": "lesson_m_g3_bargraph"
+  },
+  {
+   "id": "m.g3.story",
+   "pack": "m-g3",
+   "title": "× and ÷ stories: the bar model",
+   "icon": "🧺",
+   "at": {
+    "topic": "g3.story"
+   },
+   "art": "lesson_m_g3_story"
   }
  ]
 }

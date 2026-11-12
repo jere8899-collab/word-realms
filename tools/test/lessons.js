@@ -1,4 +1,4 @@
-// 📜 Lessons (LESSONS-PLAN.md, js/learn.js): A1 English + Grade 2 maths (+ MA-3 G1 when art lands). Widget kit includes shapecount, line (EN-4c), fence (MA-4b) and the suffix post field (EN-4d: Mia + 's + bag).
+// 📜 Lessons (LESSONS-PLAN.md, js/learn.js): A1 English + Grade 2 maths (+ MA-3 G1 when art lands). Widget kit includes shapecount, line (EN-4c), fence (MA-4b) and the suffix post field (EN-4d: Mia + 's + bag); EN-4e reuses line (first/then/finally), findword (tap the person) and hearpic (times and S$ prices); MA-4c adds bargraph (a scale), units (the × ÷ bar model) and drawn line pairs on sort cards.
 //   node tools/test/lessons.js        (SHOT=1 saves screenshots/lessons_*.png at 390 px)
 // Covers: every pilot lesson played start → scroll by TAP; drag (pointer) on sort / place value / spots / line; the re-teach path
 // (a different explanation, NEW questions, why-not notes); stars once ever (anti-farm); a lesson failed twice still
@@ -9,7 +9,7 @@
 const { chromium } = require('playwright-core');
 const BASE = (process.env.BASE || 'http://127.0.0.1:18642/').replace(/\/?$/, '/');
 const OUT = '/workspace/cefr-quest/screenshots/';
-const MIN_LESSONS = 64;
+const MIN_LESSONS = 70;
 let fails = 0, passes = 0;
 const ok = (c, m) => { if (!c) { fails++; console.error('FAIL', m); process.exitCode = 1; } else { passes++; console.log('ok', m); } };
 const today = () => { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
@@ -92,6 +92,11 @@ const HELPERS = () => {
         tap(b); await sleep(20);
       }
       await sleep(950);
+    }
+    if (w.kind === 'bargraph') w.bars.forEach((b, k) => { for (let n = 0; n < b.n / w.scale; n++) tap(root.querySelector(`.bg-add[data-add="${k}"]`)); });
+    if (w.kind === 'units') for (const s of w.stages) {
+      for (let k = 1; k < s.n; k++) tap(root.querySelector('.um-d[data-d="1"]'));
+      tap(root.querySelector('.um-check')); tap(root.querySelector(`.um-op[data-op="${s.ops.findIndex(o => o.ok)}"]`)); await sleep(950);
     }
     if (w.kind === 'fence') for (const s of w.stages) {
       const sides = $$('#lnW .fn-side:not(.on)'); if (sides.length !== s.pts.length) throw new Error('fence: ' + sides.length + ' sides for ' + s.pts.length + ' corners');
@@ -259,6 +264,38 @@ const HELPERS = () => {
   ok(await page.evaluate(() => document.querySelectorAll('#lnW .fn-side').length === 6 && document.querySelector('#lnGo').hidden), 'fence: the next garden (6 sides) appears and the lesson waits for it');
   for (let k = 0; k < 6; k++) await page.click(`#lnW .fn-side[data-i="${k}"]`);
   ok(await page.evaluate(() => /= 24 m/.test(document.querySelector('.fn-sum').textContent) && !document.querySelector('#lnGo').hidden && !document.querySelector('#lnW [data-tgt]')), 'fence: all 6 sides of the cut-corner garden make 24 m and finish the discovery');
+  // 🛤️ MA-4c lines: every card carries its drawn pair of lines
+  await toDiscover('m.g3.lines');
+  ok(await page.evaluate(() => [...document.querySelectorAll('#lnW .lw-pool .lw-chip')].every(c => c.querySelectorAll('svg.lw-lpic line').length === 2)), 'lines: each sort card shows its two drawn lines');
+  // 📊 bargraph (MA-4c): a real tap on a column sets the bar to that line; going past the number is a miss that names the scale
+  await toDiscover('m.g3.bargraph');
+  const col = await page.$('#lnW [data-col="0"]'); const cb = await col.boundingBox();
+  await page.mouse.click(cb.x + cb.width / 2, cb.y + cb.height - cb.height * 4 / 8 + 3);   // the 4th line (of 8) on the pink column
+  ok(await page.evaluate(() => /pink: 4 lines × 5 = 20/.test(document.querySelector('#lnW .lw-count').textContent) && document.querySelector('[data-col="0"] .bg-bar').classList.contains('ok')), 'bargraph: tapping the pink column at the 4th line makes 4 lines × 5 = 20');
+  await page.click('#lnW .bg-add[data-add="0"]');
+  ok(await page.evaluate(() => /past 20! Each line counts 5/.test(document.querySelector('#lnMsg').textContent)), 'bargraph: going past the number is a gentle miss that names the scale');
+  await page.click('#lnW .bg-sub[data-sub="0"]');
+  for (const [k, n] of [[1, 6], [2, 8], [3, 5]]) for (let j = 0; j < n; j++) await page.click(`#lnW .bg-add[data-add="${k}"]`);
+  ok(await page.evaluate(() => !document.querySelector('#lnGo').hidden && [...document.querySelectorAll('#lnW .bg-add')].every(b => b.disabled)), 'bargraph: all four bars on the scale finish the discovery');
+  // 🧺 units (MA-4c): a bar with the wrong number of boxes and a wrong number sentence are misses with their why
+  await toDiscover('m.g3.story');
+  await page.click('#lnW .um-check');
+  ok(await page.evaluate(() => /5 equal boxes of 6/.test(document.querySelector('#lnMsg').textContent) && !document.querySelector('#lnW .um-op')), 'units: checking a 1-box bar explains it needs 5 boxes');
+  for (let j = 0; j < 4; j++) await page.click('#lnW .um-d[data-d="1"]');
+  await page.click('#lnW .um-check');
+  const umOps = await page.evaluate(() => WR.Learn._S().L.discover.stages[0].ops);
+  await page.click(`#lnW .um-op[data-op="${umOps.findIndex(o => !o.ok)}"]`);
+  ok(await page.evaluate(() => /Not “/.test(document.querySelector('#lnMsg').textContent) && document.querySelectorAll('#lnW .um-box').length === 5), 'units: 5 boxes, then a wrong number sentence shows its why');
+  await page.click(`#lnW .um-op[data-op="${umOps.findIndex(o => o.ok)}"]`);
+  ok(await page.evaluate(() => /30 apples in all/.test(document.querySelector('#lnW .um-top').textContent)), 'units: the right sentence fills the bar: 30 apples in all');
+  await page.waitForTimeout(1100);
+  for (let j = 0; j < 5; j++) await page.click('#lnW .um-d[data-d="1"]');
+  await page.click('#lnW .um-check');
+  ok(await page.evaluate(() => /more than 24/.test(document.querySelector('#lnMsg').textContent)), 'units: boxes of 6 past 24 say "more than 24"');
+  await page.click('#lnW .um-d[data-d="-1"]'); await page.click('#lnW .um-d[data-d="-1"]'); await page.click('#lnW .um-check');
+  const umOps2 = await page.evaluate(() => WR.Learn._S().L.discover.stages[1].ops);
+  await page.click(`#lnW .um-op[data-op="${umOps2.findIndex(o => o.ok)}"]`);
+  ok(await page.evaluate(() => !document.querySelector('#lnGo').hidden), 'units: 4 boxes of 6 make 24, and 24 ÷ 6 = 4 finishes the discovery');
   if (process.env.SHOT) { await toDiscover('en.a1.an'); await page.evaluate(() => { const c = document.querySelectorAll('#lnW .lw-pool [data-src]'); const it = WR.Learn._S().L.discover.items; [0, 1].forEach(j => { c[j].click(); document.querySelector(`#lnW [data-b="${it[+c[j].dataset.k].bin}"]`).click(); }); c[2].click(); });
     await page.waitForTimeout(250); await page.screenshot({ path: OUT + 'lessons_discover.png' });
     await toDiscover('m.g2.add'); await page.evaluate(() => { for (let k = 0; k < 2; k++) document.querySelector('#lnW .rg-one').click(); }); await page.waitForTimeout(250); await page.screenshot({ path: OUT + 'lessons_discover_maths.png' });
@@ -352,7 +389,15 @@ const HELPERS = () => {
       if (r.left < -0.5 || r.right > innerWidth + 0.5) out.push(e.id || e.className);
       if (e.matches('.learn-chip:not(.corner), .lw-chip, .lw-word, .opt, .bag-pill') && e.scrollWidth > e.clientWidth + 1) small.push('squeezed ' + e.className + ` (${e.scrollWidth}>${e.clientWidth})`);
       // EN-4d: a long one-word basket label ("vegetables") ran out of a 3-basket row
-      const lab = e.matches('.lw-bin') && e.querySelector('b'); if (lab && lab.scrollWidth > lab.clientWidth + 1) small.push(`squeezed basket label ${lab.textContent.trim()} (${lab.scrollWidth}>${lab.clientWidth})`); });
+      const lab = e.matches('.lw-bin') && e.querySelector('b'); if (lab && lab.scrollWidth > lab.clientWidth + 1) small.push(`squeezed basket label ${lab.textContent.trim()} (${lab.scrollWidth}>${lab.clientWidth})`);
+      // EN-4e: a time / price label on a hearpic card (11:10, $2.50) and a whole recipe step on a line rung must not be cut off
+      const pl = e.matches('.lw-pic') && e.querySelector('small'); if (pl && (pl.scrollWidth > pl.clientWidth + 1 || pl.getBoundingClientRect().right > r.right + 0.5)) small.push(`squeezed picture label ${pl.textContent.trim()}`); });
+    // MA-4c: bar names under a bar graph, and the bar model's top label, must not be cut off
+    document.querySelectorAll('#main .bg-names span').forEach(n => { if (n.scrollWidth > n.clientWidth + 1) small.push('squeezed bar name ' + n.textContent); });
+    document.querySelectorAll('#main .bg-chart, #main .um-wrap').forEach(c => { const q = c.getBoundingClientRect(); if (q.right > innerWidth + 0.5 || c.scrollWidth > c.clientWidth + 1) small.push('cut off ' + c.className); });
+    // a placed step stays inside its rung (placed rungs are no longer targets, so check them on their own)
+    document.querySelectorAll('#main .lw-rung').forEach(g => { const r = g.getBoundingClientRect();
+      if ([...g.querySelectorAll('.lw-chip')].some(c => { const q = c.getBoundingClientRect(); return q.right > r.right + 0.5 || q.left < r.left - 0.5 || c.scrollWidth > c.clientWidth + 1; })) small.push('squeezed step on a line rung ' + g.textContent.trim()); });
     return { sw, small, out };
   };
   for (const [W, H] of PROFILES) {

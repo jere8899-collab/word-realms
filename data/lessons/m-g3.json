@@ -906,10 +906,10 @@
     "topic": "g3.measure"
    },
    "art": "lesson_m_g3_measure",
-   "art_alt": "Crumb the lilac baker dragon in a chef hat measures a wooden board with a ruler, with a sack of flour on a balance scale and a jug of apple juice beside her",
+   "art_alt": "Crumb the lilac baker dragon in a chef hat measures a wooden board with a ruler, with a sack of flour on a balance scale and a jug of apple juice beside him",
    "hook": {
-    "text": "Crumb the baker dragon is getting ready to bake. She measures a wooden board with a ruler, weighs a sack of flour on the scale, and pours apple juice from a jug. But her recipe cards got all mixed up! Can you help her sort them?",
-    "say": "Crumb the baker dragon is getting ready to bake. She measures a wooden board with a ruler, weighs a sack of flour on the scale, and pours apple juice from a jug. But her recipe cards got all mixed up! Can you help her sort them?"
+    "text": "Crumb the baker dragon is getting ready to bake. He measures a wooden board with a ruler, weighs a sack of flour on the scale, and pours apple juice from a jug. But his recipe cards got all mixed up! Can you help him sort them?",
+    "say": "Crumb the baker dragon is getting ready to bake. He measures a wooden board with a ruler, weighs a sack of flour on the scale, and pours apple juice from a jug. But his recipe cards got all mixed up! Can you help him sort them?"
    },
    "discover": {
     "kind": "sort",
@@ -1792,6 +1792,758 @@
     }
    ],
    "grown": "👪 MOE P3 Area and Perimeter: perimeter as the total length around a figure; perimeter of rectilinear figures, rectangles and squares in cm and m (length and breadth). Finding a missing side from the perimeter is Primary 4.",
+   "pack": "m-g3"
+  },
+  {
+   "id": "m.g3.lines",
+   "title": "Parallel and perpendicular lines",
+   "icon": "🛤️",
+   "at": {
+    "topic": "g3.lines"
+   },
+   "art": "lesson_m_g3_lines",
+   "art_alt": "Hoot the brown owl in a blue conductor cap stands beside two straight train rails in the apple orchard, where two wooden plank paths cross at a square corner",
+   "hook": {
+    "text": "Hoot the owl is the conductor of the Orchard Express! The two rails of his train track run side by side and never touch. Nearby, two wooden plank paths cross and make a perfect square corner. Hoot wants to check every pair of lines in the orchard. Can you help him sort them?",
+    "say": "Hoot the owl is the conductor of the Orchard Express! The two rails of his train track run side by side and never touch. Nearby, two wooden plank paths cross and make a perfect square corner. Hoot wants to check every pair of lines in the orchard. Can you help him sort them?"
+   },
+   "discover": {
+    "kind": "sort",
+    "bins": [
+     {
+      "id": "par",
+      "label": "parallel",
+      "icon": "🛤️"
+     },
+     {
+      "id": "perp",
+      "label": "per­pen­dic­u­lar",
+      "icon": "📐"
+     },
+     {
+      "id": "neither",
+      "label": "neither",
+      "icon": "🤔"
+     }
+    ],
+    "items": [
+     {
+      "t": "train rails",
+      "pic": [
+       [
+        4,
+        14,
+        36,
+        14
+       ],
+       [
+        4,
+        27,
+        36,
+        27
+       ]
+      ],
+      "bin": "par",
+      "why": "The two rails go the same way and stay the same distance apart. They never meet: parallel!"
+     },
+     {
+      "t": "slanted stripes",
+      "pic": [
+       [
+        6,
+        30,
+        22,
+        6
+       ],
+       [
+        18,
+        36,
+        34,
+        12
+       ]
+      ],
+      "bin": "par",
+      "why": "They lean, but they lean the same way and the gap never changes. Slanted lines can be parallel too!"
+     },
+     {
+      "t": "window cross",
+      "pic": [
+       [
+        4,
+        20,
+        36,
+        20
+       ],
+       [
+        20,
+        4,
+        20,
+        36
+       ]
+      ],
+      "bin": "perp",
+      "why": "The lines cross and make 4 square corners: perpendicular."
+     },
+     {
+      "t": "tilted corner",
+      "pic": [
+       [
+        16,
+        32,
+        36,
+        20
+       ],
+       [
+        16,
+        32,
+        4,
+        12
+       ]
+      ],
+      "bin": "perp",
+      "why": "Tilt your head: it is still a square corner, just turned. Perpendicular!"
+     },
+     {
+      "t": "open scissors",
+      "pic": [
+       [
+        4,
+        12,
+        36,
+        28
+       ],
+       [
+        4,
+        28,
+        36,
+        12
+       ]
+      ],
+      "bin": "neither",
+      "why": "These lines cross, but the corners are not square. Not parallel and not perpendicular: neither."
+     },
+     {
+      "t": "tent roof",
+      "pic": [
+       [
+        6,
+        34,
+        20,
+        6
+       ],
+       [
+        20,
+        6,
+        34,
+        34
+       ]
+      ],
+      "bin": "neither",
+      "why": "These lines meet at a sharp point, not a square corner, so they are neither."
+     },
+     {
+      "t": "leaning poles",
+      "pic": [
+       [
+        8,
+        6,
+        14,
+        34
+       ],
+       [
+        32,
+        6,
+        26,
+        34
+       ]
+      ],
+      "bin": "neither",
+      "why": "They don't touch yet, but they lean towards each other. Make them longer and they would meet, so they are not parallel: neither."
+     }
+    ],
+    "text": "Parallel lines run side by side like Hoot's rails. Perpendicular lines meet at a square corner like the plank paths. Look at each pair of lines and sort it. Drag a card into a basket, or tap a card and then a basket.",
+    "hint": "Parallel lines go the same way and never meet, even if you make them longer. Perpendicular lines meet or cross at a square corner. Any other pair is neither.",
+    "say": "Parallel lines run side by side like Hoot's rails. Perpendicular lines meet at a square corner like the plank paths. Look at each pair of lines and sort it. Drag a card into a basket, or tap a card and then a basket."
+   },
+   "rule": {
+    "text": "Parallel lines go the same way and stay the same distance apart. They never meet, even if you make them longer, like train rails. Perpendicular lines meet or cross at a right angle, a square corner, like the corner of a page. If two lines are not parallel and do not make a square corner, they are neither. Slanted or tilted lines can still be parallel or perpendicular!",
+    "examples": [
+     "train rails, the two sides of a ladder: parallel",
+     "the corner of a book, the letter T: perpendicular",
+     "open scissors, the letter V: neither"
+    ],
+    "say": "Parallel lines go the same way and stay the same distance apart. They never meet, even if you make them longer, like train rails. Perpendicular lines meet or cross at a right angle, a square corner, like the corner of a page. If two lines are not parallel and do not make a square corner, they are neither. Slanted or tilted lines can still be parallel or perpendicular!",
+    "sayEx": [
+     "train rails, the two sides of a ladder: parallel",
+     "the corner of a book, the letter T: perpendicular",
+     "open scissors, the letter V: neither"
+    ]
+   },
+   "check": [
+    {
+     "q": "Which letter has two lines that are parallel?",
+     "options": [
+      "H",
+      "V",
+      "L"
+     ],
+     "answer": 0,
+     "notes": {
+      "V": "The two lines of V meet at the bottom, so they are not parallel.",
+      "L": "L's two lines meet at a square corner. That makes them perpendicular, not parallel."
+     },
+     "explain": "The two tall lines of H go the same way and never meet: they are parallel.",
+     "say": "Which letter has two lines that are parallel?"
+    },
+    {
+     "q": "Hoot draws two lines that cross. All 4 corners are square corners. The lines are…",
+     "options": [
+      "perpendicular",
+      "parallel",
+      "neither"
+     ],
+     "answer": 0,
+     "notes": {
+      "parallel": "Parallel lines never meet, but these lines cross.",
+      "neither": "Square corners are right angles, and lines that cross at right angles are perpendicular."
+     },
+     "explain": "Lines that meet or cross at a right angle (a square corner) are perpendicular.",
+     "say": "Hoot draws two lines that cross. All 4 corners are square corners. The lines are…"
+    },
+    {
+     "q": "Two slanted lines lean the same way and are always the same distance apart. What are they?",
+     "options": [
+      "parallel",
+      "perpendicular",
+      "neither, because they are slanted"
+     ],
+     "answer": 0,
+     "notes": {
+      "perpendicular": "Perpendicular lines meet at a square corner. These lines never meet.",
+      "neither, because they are slanted": "Slanted lines can still be parallel! They go the same way and never meet."
+     },
+     "explain": "Same way, same gap, never meeting: they are parallel, even when they slant.",
+     "say": "Two slanted lines lean the same way and are always the same distance apart. What are they?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way: use two tests! The corner test: fold a piece of paper twice to make a square corner, a right angle. If it fits exactly where two lines meet, they are perpendicular. The train test: imagine a little train running along one line. If the other line always stays the same distance away, like a second rail, the lines are parallel.",
+    "examples": [
+     "corner test: a square corner fits → perpendicular",
+     "train test: always the same gap → parallel",
+     "neither test works → neither"
+    ],
+    "discover": {
+     "kind": "sort",
+     "bins": [
+      {
+       "id": "par",
+       "label": "parallel",
+       "icon": "🛤️"
+      },
+      {
+       "id": "perp",
+       "label": "per­pen­dic­u­lar",
+       "icon": "📐"
+      }
+     ],
+     "items": [
+      {
+       "t": "the long edges of a ruler",
+       "icon": "📏",
+       "bin": "par",
+       "why": "They go the same way and the gap never changes: parallel."
+      },
+      {
+       "t": "the top and side of a book",
+       "icon": "📖",
+       "bin": "perp",
+       "why": "They meet at a square corner: perpendicular."
+      },
+      {
+       "t": "the two sides of a ladder",
+       "icon": "🪜",
+       "bin": "par",
+       "why": "The two sides of a ladder stay the same distance apart all the way up: parallel."
+      },
+      {
+       "t": "clock hands at 3 o'clock",
+       "icon": "🕒",
+       "bin": "perp",
+       "why": "At 3 o'clock the two hands make a square corner: perpendicular."
+      },
+      {
+       "t": "two zebra-crossing stripes",
+       "icon": "🦓",
+       "bin": "par",
+       "why": "The stripes go the same way and never meet: parallel."
+      }
+     ],
+     "text": "Sort these things from around Abacus Orchard. Use the corner test and the train test! Drag each card into a basket, or tap a card and then a basket.",
+     "hint": "Does a square corner fit where they meet? Perpendicular. Do they never meet, with the same gap all along? Parallel.",
+     "say": "Sort these things from around Abacus Orchard. Use the corner test and the train test! Drag each card into a basket, or tap a card and then a basket."
+    },
+    "say": "Here's another way: use two tests! The corner test: fold a piece of paper twice to make a square corner, a right angle. If it fits exactly where two lines meet, they are perpendicular. The train test: imagine a little train running along one line. If the other line always stays the same distance away, like a second rail, the lines are parallel."
+   },
+   "check2": [
+    {
+     "q": "The top edge and the bottom edge of a door are…",
+     "options": [
+      "parallel",
+      "perpendicular",
+      "neither"
+     ],
+     "answer": 0,
+     "notes": {
+      "perpendicular": "The top and bottom edges never meet. Perpendicular lines meet at a square corner.",
+      "neither": "They go the same way and stay the same distance apart, so they are parallel."
+     },
+     "explain": "The top and bottom edges go the same way and never meet: parallel.",
+     "say": "The top edge and the bottom edge of a door are…"
+    },
+    {
+     "q": "How can you check if two lines are perpendicular?",
+     "options": [
+      "Fit a square corner of paper where they meet",
+      "Measure how long the lines are",
+      "Check that they are the same colour"
+     ],
+     "answer": 0,
+     "notes": {
+      "Measure how long the lines are": "Long or short lines can both be perpendicular. What matters is the square corner where they meet.",
+      "Check that they are the same colour": "Colour doesn't matter. Look for a square corner, a right angle."
+     },
+     "explain": "Perpendicular lines meet at a right angle, so a square corner of paper fits exactly.",
+     "say": "How can you check if two lines are perpendicular?"
+    },
+    {
+     "q": "Two lines meet at a sharp, pointy corner, like the letter V. What are they?",
+     "options": [
+      "neither",
+      "parallel",
+      "perpendicular"
+     ],
+     "answer": 0,
+     "notes": {
+      "parallel": "Parallel lines never meet, but these lines do.",
+      "perpendicular": "A V corner is pointier than a square corner, so the lines are not perpendicular."
+     },
+     "explain": "They meet, but not at a right angle, so they are neither parallel nor perpendicular.",
+     "say": "Two lines meet at a sharp, pointy corner, like the letter V. What are they?"
+    }
+   ],
+   "grown": "👪 MOE P3 Geometry: perpendicular and parallel lines; identifying them in figures and around us (including slanted and tilted pairs) and checking with a right angle (a set square or folded paper). Pairs that are neither are included so children compare instead of guessing. Drawing them on square grids is in the practice round.",
+   "pack": "m-g3"
+  },
+  {
+   "id": "m.g3.bargraph",
+   "title": "Bar graphs with a scale",
+   "icon": "📊",
+   "at": {
+    "topic": "g3.bargraph"
+   },
+   "art": "lesson_m_g3_bargraph",
+   "art_alt": "Sumi the orange fox girl holds a clipboard beside four block towers of different heights, pink, mint, lemon and lilac, each with a basket of red apples in front",
+   "hook": {
+    "text": "Sumi the fox counted the apples picked from four trees in Abacus Orchard: the pink, mint, lemon and lilac trees. She built a block tower beside each basket to show them. But there are far too many apples to draw one by one! Can a bar graph with a scale help Sumi?",
+    "say": "Sumi the fox counted the apples picked from four trees in Abacus Orchard: the pink, mint, lemon and lilac trees. She built a block tower beside each basket to show them. But there are far too many apples to draw one by one! Can a bar graph with a scale help Sumi?"
+   },
+   "discover": {
+    "kind": "bargraph",
+    "scale": 5,
+    "max": 40,
+    "unit": "apples",
+    "bars": [
+     {
+      "label": "pink",
+      "n": 20,
+      "color": "pink"
+     },
+     {
+      "label": "mint",
+      "n": 30,
+      "color": "mint"
+     },
+     {
+      "label": "lemon",
+      "n": 40,
+      "color": "lemon"
+     },
+     {
+      "label": "lilac",
+      "n": 25,
+      "color": "lilac"
+     }
+    ],
+    "text": "On this graph, each line up the side counts 5 apples, not 1! Make each bar as tall as its number. Tap ➕ or ➖ under a bar, or tap the bar's column at the right height.",
+    "hint": "Count up the side in 5s: 5, 10, 15, 20. Stop each bar at its own number.",
+    "say": "On this graph, each line up the side counts 5 apples, not 1! Make each bar as tall as its number. Tap ➕ or ➖ under a bar, or tap the bar's column at the right height."
+   },
+   "rule": {
+    "text": "A bar graph shows numbers as bars. The numbers up the side are the scale. On Sumi's graph each line counts 5, so we count up in 5s: 5, 10, 15, 20. To read a bar, follow its top across to the scale. The taller the bar, the more there are. A bar that stops halfway between two lines shows the number halfway between them.",
+    "examples": [
+     "a scale of 5: count 5, 10, 15, 20, 25 …",
+     "lemon is the tallest: 40 apples, the most",
+     "lemon has 20 more apples than pink: 40 − 20 = 20"
+    ],
+    "say": "A bar graph shows numbers as bars. The numbers up the side are the scale. On Sumi's graph each line counts 5, so we count up in 5s: 5, 10, 15, 20. To read a bar, follow its top across to the scale. The taller the bar, the more there are. A bar that stops halfway between two lines shows the number halfway between them.",
+    "sayEx": [
+     "a scale of 5: count 5, 10, 15, 20, 25 …",
+     "lemon is the tallest: 40 apples, the most",
+     "lemon has 20 more apples than pink: 40 minus 20 equals 20"
+    ]
+   },
+   "check": [
+    {
+     "q": "On a bar graph, the scale goes up in 5s: 0, 5, 10, 15, 20 … A bar reaches the 3rd line. What number does it show?",
+     "options": [
+      "15",
+      "3",
+      "8"
+     ],
+     "answer": 0,
+     "notes": {
+      "3": "3 is how many lines up, but each line counts 5. Count 5, 10, 15: the bar shows 15.",
+      "8": "8 is 3 + 5. Count up in 5s three times: 5, 10, 15."
+     },
+     "explain": "Each line is 5 more: 5, 10, 15. So the bar shows 15.",
+     "say": "On a bar graph, the scale goes up in 5s: 0, 5, 10, 15, 20 … A bar reaches the 3rd line. What number does it show?"
+    },
+    {
+     "q": "On Sumi's graph, the lemon bar shows 40 apples and the pink bar shows 20. How many more apples did the lemon tree give?",
+     "options": [
+      "20",
+      "60",
+      "2"
+     ],
+     "answer": 0,
+     "notes": {
+      "60": "60 is 40 + 20, both trees together. How many more means take away: 40 − 20 = 20.",
+      "2": "The lemon bar is twice as tall, but the question asks how many more apples: 40 − 20 = 20."
+     },
+     "explain": "40 − 20 = 20, so the lemon tree gave 20 more apples.",
+     "say": "On Sumi's graph, the lemon bar shows 40 apples and the pink bar shows 20. How many more apples did the lemon tree give?"
+    },
+    {
+     "q": "A bar graph's scale goes 0, 10, 20, 30, 40. A bar stops exactly halfway between 20 and 30. What number does it show?",
+     "options": [
+      "25",
+      "21",
+      "50"
+     ],
+     "answer": 0,
+     "notes": {
+      "21": "21 is just 1 more than 20. Halfway between 20 and 30 is 25.",
+      "50": "50 is past the top of this scale! Halfway between 20 and 30 is 25."
+     },
+     "explain": "Halfway between 20 and 30 is 25.",
+     "say": "A bar graph's scale goes 0, 10, 20, 30, 40. A bar stops exactly halfway between 20 and 30. What number does it show?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way: think of the scale as a ladder. Every rung up adds the same number, like climbing the 5 times table. To read a bar, climb from 0 to the top of the bar, counting in the scale's steps. Another graph can use a different step, like 2 or 10, so always read the scale first!",
+    "examples": [
+     "steps of 2: 2, 4, 6, 8, 10",
+     "steps of 10: 10, 20, 30, 40",
+     "read the scale first, then climb!"
+    ],
+    "discover": {
+     "kind": "bargraph",
+     "scale": 2,
+     "max": 14,
+     "unit": "apples",
+     "bars": [
+      {
+       "label": "Hoot",
+       "n": 8,
+       "color": "pink"
+      },
+      {
+       "label": "Mog",
+       "n": 12,
+       "color": "mint"
+      },
+      {
+       "label": "Puffbun",
+       "n": 6,
+       "color": "lilac"
+      }
+     ],
+     "text": "This graph climbs in 2s! Hoot picked 8 apples, Mog picked 12 and Puffbun picked 6. Make each bar match.",
+     "hint": "Count up the side in 2s: 2, 4, 6, 8. Stop each bar at its own number.",
+     "say": "This graph climbs in 2s! Hoot picked 8 apples, Mog picked 12 and Puffbun picked 6. Make each bar match."
+    },
+    "say": "Here's another way: think of the scale as a ladder. Every rung up adds the same number, like climbing the 5 times table. To read a bar, climb from 0 to the top of the bar, counting in the scale's steps. Another graph can use a different step, like 2 or 10, so always read the scale first!"
+   },
+   "check2": [
+    {
+     "q": "A bar graph's scale goes up in 2s. A bar reaches the 4th line. What number does it show?",
+     "options": [
+      "8",
+      "4",
+      "6"
+     ],
+     "answer": 0,
+     "notes": {
+      "4": "4 is how many lines up, but each line counts 2: 2, 4, 6, 8.",
+      "6": "6 is only the 3rd line. One more step up: 8."
+     },
+     "explain": "Count in 2s: 2, 4, 6, 8. The 4th line is 8.",
+     "say": "A bar graph's scale goes up in 2s. A bar reaches the 4th line. What number does it show?"
+    },
+    {
+     "q": "On a bar graph, Mog's bar shows 12 apples and Puffbun's bar shows 6 apples. Which sentence is true?",
+     "options": [
+      "Mog picked 6 more apples than Puffbun.",
+      "Puffbun picked more apples than Mog.",
+      "Mog and Puffbun picked the same."
+     ],
+     "answer": 0,
+     "notes": {
+      "Puffbun picked more apples than Mog.": "Puffbun's bar is shorter: 6 is fewer than 12.",
+      "Mog and Puffbun picked the same.": "The bars are different heights: 12 and 6 are not the same."
+     },
+     "explain": "12 − 6 = 6, so Mog picked 6 more apples than Puffbun.",
+     "say": "On a bar graph, Mog's bar shows 12 apples and Puffbun's bar shows 6 apples. Which sentence is true?"
+    },
+    {
+     "q": "Why do bar graphs use a scale, like counting in 5s or 10s?",
+     "options": [
+      "So big numbers fit on a small graph",
+      "So the bars look prettier",
+      "So every bar is the same height"
+     ],
+     "answer": 0,
+     "notes": {
+      "So the bars look prettier": "Colours can be pretty, but the scale is for counting: big numbers fit without a giant graph.",
+      "So every bar is the same height": "Bars are different heights to show different numbers. The scale just makes each step count more."
+     },
+     "explain": "With each line counting 5 or 10, big numbers like 40 fit on a small graph.",
+     "say": "Why do bar graphs use a scale, like counting in 5s or 10s?"
+    }
+   ],
+   "grown": "👪 MOE P3 Statistics: reading and interpreting bar graphs with scales (in 2s, 5s or 10s), including a bar that stops halfway between two lines; answering how many more / fewer from a bar graph. The discovery builds the bars on the scale; the practice round reads them.",
+   "pack": "m-g3"
+  },
+  {
+   "id": "m.g3.story",
+   "title": "× and ÷ stories: the bar model",
+   "icon": "🧺",
+   "at": {
+    "topic": "g3.story"
+   },
+   "art": "lesson_m_g3_story",
+   "art_alt": "Crumb the green baker dragon in a chef hat packs red apples into a row of five small baskets on a wooden table while Mog the grey cat watches, with a bigger basket of apples under the table",
+   "hook": {
+    "text": "Crumb the baker dragon is packing apples for the orchard market. He puts 6 apples in each small basket, and there are 5 small baskets on the table. Mog the cat asks: how many apples is that? And the big basket under the table is full of apples too. How many small baskets can those fill?",
+    "say": "Crumb the baker dragon is packing apples for the orchard market. He puts 6 apples in each small basket, and there are 5 small baskets on the table. Mog the cat asks: how many apples is that? And the big basket under the table is full of apples too. How many small baskets can those fill?"
+   },
+   "discover": {
+    "kind": "units",
+    "text": "Draw a bar model: one equal box for each basket. Then pick the number sentence that matches your bar.",
+    "hint": "Use one box for each basket. Every box holds the same number of apples. Then ask: am I finding the total, or splitting a total into equal groups?",
+    "stages": [
+     {
+      "ask": "total",
+      "n": 5,
+      "each": 6,
+      "item": "🍎",
+      "unit": "apples",
+      "text": "5 baskets with 6 apples in each. Build the bar: tap ➕ to add one box for each basket, then tap ✅ Check my bar.",
+      "why": "Crumb has 5 baskets, so the bar needs 5 equal boxes of 6.",
+      "ops": [
+       {
+        "t": "5 × 6 = 30",
+        "ok": true
+       },
+       {
+        "t": "5 + 6 = 11",
+        "why": "5 + 6 just adds the baskets to one basket. There are 5 equal groups of 6, so we multiply."
+       },
+       {
+        "t": "30 ÷ 5 = 6",
+        "why": "We already know each basket has 6. To find the total of equal groups, multiply: 5 × 6."
+       }
+      ],
+      "say": "5 baskets with 6 apples in each. Build the bar: tap ➕ to add one box for each basket, then tap ✅ Check my bar."
+     },
+     {
+      "ask": "groups",
+      "n": 4,
+      "each": 6,
+      "item": "🍎",
+      "unit": "apples",
+      "text": "The big basket has 24 apples. Crumb puts 6 apples in each small basket. Add boxes of 6 until the bar makes 24, then tap ✅ Check my bar.",
+      "why": "Keep adding boxes of 6 until the bar makes 24 apples: 6, 12, 18, 24.",
+      "ops": [
+       {
+        "t": "24 ÷ 6 = 4",
+        "ok": true
+       },
+       {
+        "t": "24 × 6 = 144",
+        "why": "144 is far more apples than Crumb has! We split 24 into groups of 6, so we divide."
+       },
+       {
+        "t": "24 − 6 = 18",
+        "why": "Taking away 6 once only fills one basket. Keep making groups of 6: 24 ÷ 6 = 4."
+       }
+      ],
+      "say": "The big basket has 24 apples. Crumb puts 6 apples in each small basket. Add boxes of 6 until the bar makes 24, then tap ✅ Check my bar."
+     }
+    ],
+    "say": "Draw a bar model: one equal box for each basket. Then pick the number sentence that matches your bar."
+   },
+   "rule": {
+    "text": "A bar model helps with times and sharing stories. Draw one bar and cut it into equal boxes, one box for each group. If you know how many boxes and how many are in each box, multiply to find the total. If you know the total, divide: by the number in each box to find how many boxes, or by the number of boxes to find how many go in each.",
+    "examples": [
+     "5 baskets of 6: 5 × 6 = 30 apples",
+     "24 apples, 6 in each basket: 24 ÷ 6 = 4 baskets",
+     "30 apples shared into 5 baskets: 30 ÷ 5 = 6 in each"
+    ],
+    "say": "A bar model helps with times and sharing stories. Draw one bar and cut it into equal boxes, one box for each group. If you know how many boxes and how many are in each box, multiply to find the total. If you know the total, divide: by the number in each box to find how many boxes, or by the number of boxes to find how many go in each.",
+    "sayEx": [
+     "5 baskets of 6: 5 times 6 equals 30 apples",
+     "24 apples, 6 in each basket: 24 divided by 6 equals 4 baskets",
+     "30 apples shared into 5 baskets: 30 divided by 5 equals 6 in each"
+    ]
+   },
+   "check": [
+    {
+     "q": "Mog has 4 bags. Each bag has 8 fish treats. How many treats are there altogether?",
+     "options": [
+      "32",
+      "12",
+      "2"
+     ],
+     "answer": 0,
+     "notes": {
+      "12": "12 is 4 + 8. There are 4 equal groups of 8, so multiply: 4 × 8 = 32.",
+      "2": "2 is 8 ÷ 4. We know each bag and want the total, so multiply: 4 × 8 = 32."
+     },
+     "explain": "The bar has 4 boxes of 8: 4 × 8 = 32 treats.",
+     "say": "Mog has 4 bags. Each bag has 8 fish treats. How many treats are there altogether?"
+    },
+    {
+     "q": "Crumb bakes 35 muffins. He puts 5 muffins in each box. How many boxes does he fill?",
+     "options": [
+      "7",
+      "175",
+      "30"
+     ],
+     "answer": 0,
+     "notes": {
+      "175": "175 is 35 × 5, far more muffins than Crumb baked! Split 35 into groups of 5: 35 ÷ 5 = 7.",
+      "30": "30 is 35 − 5, just one box taken away. Keep making groups of 5: 35 ÷ 5 = 7."
+     },
+     "explain": "35 ÷ 5 = 7, so Crumb fills 7 boxes.",
+     "say": "Crumb bakes 35 muffins. He puts 5 muffins in each box. How many boxes does he fill?"
+    },
+    {
+     "q": "Sumi shares 27 stickers equally among 3 friends. How many stickers does each friend get?",
+     "options": [
+      "9",
+      "24",
+      "81"
+     ],
+     "answer": 0,
+     "notes": {
+      "24": "24 is 27 − 3. Sharing equally means dividing: 27 ÷ 3 = 9.",
+      "81": "81 is 27 × 3. Sharing makes each part smaller: 27 ÷ 3 = 9."
+     },
+     "explain": "Cut the bar of 27 into 3 equal boxes: 27 ÷ 3 = 9 stickers each.",
+     "say": "Sumi shares 27 stickers equally among 3 friends. How many stickers does each friend get?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way: ask yourself two questions. First: do I know the total yet? If not, I am finding the total of equal groups, so I multiply. Second: if I do know the total, am I finding how many groups, or how many in each group? Either way, I divide. Put the numbers you know on the bar, and the box with the question mark shows what to find.",
+    "examples": [
+     "no total yet → multiply: groups × each",
+     "total known, find the groups → total ÷ each",
+     "total known, find each → total ÷ groups"
+    ],
+    "discover": {
+     "kind": "units",
+     "text": "Now share! Cut the bar into equal boxes, then pick the number sentence.",
+     "hint": "One box for each basket. Sharing a total equally means dividing.",
+     "stages": [
+      {
+       "ask": "each",
+       "n": 5,
+       "each": 6,
+       "item": "🍎",
+       "unit": "apples",
+       "text": "Crumb shares 30 apples equally into 5 baskets. Tap ➕ to cut the bar into 5 equal boxes, then tap ✅ Check my bar.",
+       "why": "Crumb has 5 baskets, so cut the bar into 5 equal boxes.",
+       "ops": [
+        {
+         "t": "30 ÷ 5 = 6",
+         "ok": true
+        },
+        {
+         "t": "30 × 5 = 150",
+         "why": "Sharing makes each part smaller, not bigger. Divide: 30 ÷ 5 = 6."
+        },
+        {
+         "t": "30 − 5 = 25",
+         "why": "Taking away 5 isn't sharing. Cut 30 into 5 equal boxes: 30 ÷ 5 = 6."
+        }
+       ],
+       "say": "Crumb shares 30 apples equally into 5 baskets. Tap ➕ to cut the bar into 5 equal boxes, then tap ✅ Check my bar."
+      }
+     ],
+     "say": "Now share! Cut the bar into equal boxes, then pick the number sentence."
+    },
+    "say": "Here's another way: ask yourself two questions. First: do I know the total yet? If not, I am finding the total of equal groups, so I multiply. Second: if I do know the total, am I finding how many groups, or how many in each group? Either way, I divide. Put the numbers you know on the bar, and the box with the question mark shows what to find."
+   },
+   "check2": [
+    {
+     "q": "A tray has 7 rows of cookies with 3 cookies in each row. How many cookies are on the tray?",
+     "options": [
+      "21",
+      "10",
+      "4"
+     ],
+     "answer": 0,
+     "notes": {
+      "10": "10 is 7 + 3. There are 7 equal rows of 3: 7 × 3 = 21.",
+      "4": "4 is 7 − 3. Equal rows mean multiply: 7 × 3 = 21."
+     },
+     "explain": "7 rows of 3: 7 × 3 = 21 cookies.",
+     "say": "A tray has 7 rows of cookies with 3 cookies in each row. How many cookies are on the tray?"
+    },
+    {
+     "q": "48 apples are packed equally into 6 bags. How many apples are in each bag?",
+     "options": [
+      "8",
+      "42",
+      "54"
+     ],
+     "answer": 0,
+     "notes": {
+      "42": "42 is 48 − 6. Packing equally into 6 bags means dividing: 48 ÷ 6 = 8.",
+      "54": "54 is 48 + 6. Divide the total by the number of bags: 48 ÷ 6 = 8."
+     },
+     "explain": "48 ÷ 6 = 8 apples in each bag.",
+     "say": "48 apples are packed equally into 6 bags. How many apples are in each bag?"
+    },
+    {
+     "q": "22 children go on a boat ride. Each boat holds 4 children. How many boats are needed so everyone gets a ride?",
+     "options": [
+      "6",
+      "5",
+      "88"
+     ],
+     "answer": 0,
+     "notes": {
+      "5": "22 ÷ 4 = 5 r 2. Five boats carry 20 children, but 2 children are left, so they need one more boat: 6.",
+      "88": "88 is 22 × 4. We put 22 children into groups of 4, so we divide: 5 r 2, and the 2 left over need one more boat: 6."
+     },
+     "explain": "22 ÷ 4 = 5 r 2. The 2 children left over need a boat too, so 6 boats.",
+     "say": "22 children go on a boat ride. Each boat holds 4 children. How many boats are needed so everyone gets a ride?"
+    }
+   ],
+   "grown": "👪 MOE P3 Whole Numbers: word problems (up to 2 steps) with multiplication and division; the Singapore bar model for equal groups: finding the total (×), the number of groups (÷ grouping) and the size of each group (÷ sharing); reading a remainder in context (one more boat for the children left over).",
    "pack": "m-g3"
   }
  ]
