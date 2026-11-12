@@ -119,6 +119,7 @@ const keepEarn = other => { if (other && samePlayer()) { WR.state.earn = WR.merg
   if (WR.Review) WR.state.review = WR.Review.merge(WR.state.review, other.review);   // 🔁 BRIEF-T2: per item, the later answer wins
   if (WR.Think && (WR.state.think || other.think)) WR.state.think = WR.Think.merge(WR.state.think, other.think);   // 🧠 the richer confidence note survives a sync
   if (WR.Garden && WR.Garden.merge) WR.Garden.merge(WR.state, other);   // 🌷 the higher thirst charge wins, and it is not taken twice
+  if (WR.Again && WR.Again.merge) WR.state.again = WR.Again.merge(WR.state.again, other.again);   // 🥚 the further egg, quest and sticker wins
   WR.mergePass(WR.state, other);   // 🏁 BRIEF-T4: kept realms/bosses and every skill's pass + confirmation survive the sync
   rawSave(); } };
 C.apply = (data, at) => {
