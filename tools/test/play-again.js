@@ -22,6 +22,7 @@ const SAVE = { v: 1, name: 'Mei', stars: 40, gems: 0, xp: 0, avatar: { name: 'Me
     return { ctx, p, errors };
   };
   const logic = await open(360, 740);
+  ok(await logic.p.evaluate(() => !document.querySelector('img[src*="again_"]')), 'the first screen does not fetch the egg or the stickers');
   const egg = await logic.p.evaluate(() => {
     const before = { stars: WR.state.stars, hat: WR.state.owned.includes('hat_star'), name: WR.state.name };
     const bare = JSON.parse(localStorage.getItem('wordRealms.save.v1')); delete bare.again; localStorage.setItem('wordRealms.save.v1', JSON.stringify(bare));
@@ -71,17 +72,32 @@ const SAVE = { v: 1, name: 'Mei', stars: 40, gems: 0, xp: 0, avatar: { name: 'Me
       const spark = await ui.p.locator('.combo-spark').count();
       ok(spark === 1, 'the third correct answer in a row shows a sparkle');
     }
-    await ui.p.click('#mnext'); await ui.p.waitForSelector('#againNext'); await ui.p.waitForTimeout(400);
+    await ui.p.click('#mnext'); await ui.p.waitForSelector('#againNext');
+    await ui.p.waitForFunction(() => { const im = document.querySelector('.egg-pic'); return im && im.naturalWidth >= 960; });
     const fit = await ui.p.evaluate(() => {
       const go = document.querySelector('#againNext').getBoundingClientRect();
-      const egg = document.querySelector('.egg-shell');
-      return { wide: document.documentElement.scrollWidth <= innerWidth + 1, h: go.height, egg: !!egg, text: document.querySelector('#againNext').textContent, harsh: /hurry|last chance|you failed|lost your|or else/i.test(document.body.innerText) };
+      const im = document.querySelector('.egg-pic');
+      return { wide: document.documentElement.scrollWidth <= innerWidth + 1, h: go.height, egg: im && im.naturalWidth, src: im && im.getAttribute('src'), text: document.querySelector('#againNext').textContent, harsh: /hurry|last chance|you failed|lost your|or else/i.test(document.body.innerText) };
     });
-    ok(fit.wide && fit.h >= 44 && fit.egg && /Next adventure/.test(fit.text) && !fit.harsh, `${w}px result: Next adventure is ${fit.h.toFixed(0)}px, the egg shows, no sideways scroll`);
+    ok(fit.wide && fit.h >= 44 && fit.egg >= 960 && /again_egg\.webp/.test(fit.src) && /Next adventure/.test(fit.text) && !fit.harsh, `${w}px result: Next adventure is ${fit.h.toFixed(0)}px, the painted egg is ${fit.egg}px wide, no sideways scroll`);
+    await ui.p.evaluate(() => document.querySelectorAll('.combo-spark, .toast').forEach(e => e.remove()));
     if (w === 360) await ui.p.screenshot({ path: OUT + 't13_result_360.png', fullPage: true });
     if (w === 320) await ui.p.screenshot({ path: OUT + 't13_result_320.png' });
     await ui.ctx.close();
   }
+
+  const hatch = await open(360, 740);
+  await hatch.p.evaluate(() => {
+    WR.state.again = { rounds: 2, egg: { fill: 2, hatched: 0 }, tricks: ['hop'], stickers: [], lastPrize: null, lastTrick: null, quest: { day: WR.today(), id: 'rounds', n: 3, goal: 3, done: true }, week: { key: '', days: {}, got: false, sticker: null } };
+    WR.Again.onRound();
+    WR._roundCtx = { kind: 'math', crowns: 3, score: 1, grade: 1 };
+    WR.view('<div class="card result fade-in"><h1>Well done! 🌟</h1><p class="muted">3 / 3 correct</p><div class="next-row"><button class="btn mint" id="nextStep">Next</button></div></div>');
+  });
+  await hatch.p.waitForFunction(() => { const s = document.querySelector('.sticker-pic'), e = document.querySelector('.egg-pic'); return s && e && s.naturalWidth >= 512 && e.naturalWidth >= 960 && /again_egg_open/.test(e.getAttribute('src')); });
+  ok(await hatch.p.evaluate(() => /Hatched: Ribbon Chick/.test(document.body.innerText) && /again_sticker_ribbon\.webp/.test(document.querySelector('.sticker-pic').getAttribute('src'))), 'a hatch shows the painted Ribbon Chick sticker and the open egg');
+  await hatch.p.evaluate(() => document.querySelectorAll('.toast').forEach(e => e.remove()));
+  await hatch.p.screenshot({ path: OUT + 't13_hatch_360.png', fullPage: true });
+  await hatch.ctx.close();
 
   const bye = await open(360, 740);
   await bye.p.evaluate(() => {

@@ -46,6 +46,8 @@ const weekKey = day => {
 };
 const petName = () => WR.state && WR.state.pet && WR.state.pet.name ? WR.state.pet.name : "Your pet";
 const prizeById = id => PRIZES.concat(WEEKS).find(p => p.id === id);
+const artOf = id => id.indexOf("egg_") === 0 ? "again_sticker_" + id.slice(4) : id.indexOf("week_") === 0 ? "again_" + id : id;
+const pic = (id, alt, cls) => `<img class="${cls}" src="assets/web/${id}.webp" alt="${esc(alt)}" decoding="async" onerror="this.onerror=null;this.src='assets/lessons/${id}.jpg'">`;
 A.NEED = NEED;
 A.PRIZES = PRIZES;
 A.state = bag;
@@ -160,14 +162,14 @@ const panelHTML = () => {
   const days = Object.keys(a.week.days || {}).length;
   return `<div id="againPanel">
     <p class="again-cheer">${esc(cheer())}${trick && a.rounds === TRICKS.find(t => t.id === trick.id).at ? ` ${esc(petName())} learned the ${esc(trick.name)}.` : ""}</p>
-    <div class="egg-row">${eggArt(a)}<div><b>Mystery egg</b><div class="muted">${a.egg.fill} of ${NEED}${prize ? ` · Hatched: ${esc(prize.name)}` : ""}</div></div></div>
+    <div class="egg-row">${eggArt(a)}<div><b>Mystery egg</b><div class="muted">${a.egg.fill} of ${NEED}</div>${prize ? `<div class="hatch-line">${pic(artOf(prize.id), prize.name, "sticker-pic")}<span>Hatched: ${esc(prize.name)}</span></div>` : ""}</div></div>
     <div class="again-bar" aria-label="${esc(bar.label)}"><i style="width:${Math.max(0, Math.min(100, bar.pct))}%"></i></div>
     <div class="muted again-bar-l">${esc(bar.label)}</div>
     <button class="btn mint again-go" id="againNext" type="button">Next adventure</button>
-    <p class="again-q">${q.done ? "Little quest done for today. A new one waits tomorrow." : `${esc(questLabel(q))} · ${q.n}/${q.goal}`}${a.week.got ? " · This week's sticker is yours." : ` · Week sticker ${days}/5`}</p>
+    <p class="again-q">${q.done ? "Little quest done for today. A new one waits tomorrow" : `${esc(questLabel(q))} · ${q.n}/${q.goal}`}${a.week.got ? " · This week's sticker is yours" : ` · Week sticker ${days}/5`}</p>
   </div>`;
 };
-const eggArt = a => `<div class="egg-shell" data-fill="${a.egg.fill}" aria-hidden="true"><i style="height:${Math.round((a.egg.fill / NEED) * 70)}%"></i></div>`;
+const eggArt = a => { const open = (a.egg.hatched || 0) > 0 && !(a.egg.fill > 0); const id = open ? "again_egg_open" : "again_egg"; return `<div class="egg-shell" data-fill="${a.egg.fill}">${pic(id, open ? "A hatched mystery egg" : "A mystery egg", "egg-pic")}</div>`; };
 A.panelHTML = panelHTML;
 const attach = root => {
   if (!root || root.querySelector("#againPanel")) return;
@@ -213,7 +215,7 @@ if (WR.HEALTH && WR.HEALTH.restCard) {
     const q = ensureQuest(a);
     const line = `${esc(petName())} waves. Your egg is ${a.egg.fill} of ${NEED} full. Tomorrow's little quest: ${esc(questLabel(q))}. Rest days count, and missing a day does no harm.`;
     const para = card.querySelector("p");
-    if (para) para.insertAdjacentHTML("afterend", `<p class="again-bye">${line}</p>`);
+    if (para) para.insertAdjacentHTML("afterend", `<div class="again-bye">${eggArt(a)}<p>${line}</p></div>`);
   };
 }
 if (WR.HEALTH && WR.HEALTH.rowsHTML) {

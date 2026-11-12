@@ -727,8 +727,11 @@ img.acc-prev{width:72px;height:72px;object-fit:contain;display:block;margin:4px 
 #againPanel{margin:8px 0 12px;text-align:center}
 .again-go{min-height:48px;width:100%;max-width:420px;font-size:1.15rem;margin:8px auto}
 .egg-row,.again-pet{display:flex;gap:10px;align-items:center;justify-content:center;margin:6px 0}
-.egg-shell{position:relative;width:54px;height:68px;border-radius:50% 50% 48% 48% / 58% 58% 42% 42%;background:linear-gradient(180deg,#fffdf8,#ffe7c2);border:3px solid #fff;box-shadow:0 4px 0 #f3d9a8, inset 0 -8px 0 rgba(255,180,190,.35);overflow:hidden;flex:none}
-.egg-shell i{position:absolute;left:8px;right:8px;bottom:6px;border-radius:40%;background:linear-gradient(180deg,#ffd6ea,#ffb7d5)}
+.egg-shell{width:120px;height:90px;border-radius:18px;overflow:hidden;border:3px solid #fff;box-shadow:0 4px 0 #f3d9a8;background:#fff8ee;flex:none}
+.egg-pic{display:block;width:100%;height:100%;object-fit:cover}
+.hatch-line{display:flex;gap:8px;align-items:center;justify-content:center;margin-top:6px;font-weight:800}
+.sticker-pic{width:72px;height:72px;border-radius:18px;object-fit:cover;border:3px solid #fff;box-shadow:0 3px 0 #f3d9a8;flex:none}
+.again-bye{display:flex;flex-direction:column;align-items:center;gap:8px;font-weight:800}
 .again-bar{height:12px;border-radius:999px;background:#fff;border:2px solid #ffe7c2;overflow:hidden;margin:6px auto;max-width:420px}
 .again-bar i{display:block;height:100%;background:linear-gradient(90deg,#ffd6ea,#b9e6ff)}
 .combo-spark{position:fixed;left:50%;top:28%;transform:translate(-50%,-50%);z-index:80;pointer-events:none;background:#fff;border-radius:999px;padding:8px 14px;font-weight:900;box-shadow:0 8px 0 rgba(243,217,168,.8);animation:pop .8s ease}
