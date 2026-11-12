@@ -723,6 +723,19 @@ img.acc-prev{width:72px;height:72px;object-fit:contain;display:block;margin:4px 
 
 /* 🌿 BRIEF-T6 healthy screen use (js/health.js) */
 .health-card{text-align:center}.health-card h2{margin:.3em 0}.health-card .row{gap:8px;flex-wrap:wrap}.health-card .btn{min-height:44px}
+.again-bye,.again-grown,.again-q,.again-cheer,.again-bar-l{font-weight:800}
+#againPanel{margin:8px 0 12px;text-align:center}
+.again-go{min-height:48px;width:100%;max-width:420px;font-size:1.15rem;margin:8px auto}
+.egg-row,.again-pet{display:flex;gap:10px;align-items:center;justify-content:center;margin:6px 0}
+.egg-shell{width:120px;height:90px;border-radius:18px;overflow:hidden;border:3px solid #fff;box-shadow:0 4px 0 #f3d9a8;background:#fff8ee;flex:none}
+.egg-pic{display:block;width:100%;height:100%;object-fit:cover}
+.hatch-line{display:flex;gap:8px;align-items:center;justify-content:center;margin-top:6px;font-weight:800}
+.sticker-pic{width:72px;height:72px;border-radius:18px;object-fit:cover;border:3px solid #fff;box-shadow:0 3px 0 #f3d9a8;flex:none}
+.again-bye{display:flex;flex-direction:column;align-items:center;gap:8px;font-weight:800}
+.again-bar{height:12px;border-radius:999px;background:#fff;border:2px solid #ffe7c2;overflow:hidden;margin:6px auto;max-width:420px}
+.again-bar i{display:block;height:100%;background:linear-gradient(90deg,#ffd6ea,#b9e6ff)}
+.combo-spark{position:fixed;left:50%;top:28%;transform:translate(-50%,-50%);z-index:80;pointer-events:none;background:#fff;border-radius:999px;padding:8px 14px;font-weight:900;box-shadow:0 8px 0 rgba(243,217,168,.8);animation:pop .8s ease}
+.again-pet{position:absolute;left:14px;bottom:18px;background:rgba(255,255,255,.88);border-radius:18px;padding:6px 10px;z-index:5;pointer-events:none}
 .health-rows .set-row{gap:8px}.hr-row{flex-wrap:wrap;row-gap:0;align-items:center}.hr-row .hr-t{flex:1 1 0;min-width:0;white-space:nowrap;text-align:left}.hr-row .gu-sel{flex:none;width:104px;font-size:.92rem;padding:6px 4px 6px 8px}.hr-row .hr-c{order:3;flex:1 0 100%;text-align:left;font-size:.76rem;font-weight:700;line-height:1.3;margin:-2px 0 4px}.gu-sel{max-width:120px;min-height:44px;padding:6px 8px;font-weight:800}
 
 /* 🧠 Task 10 thinking prompts (js/think.js): one extra tap inside the question, not a new screen */

@@ -300,7 +300,7 @@ function submit(val, btn) {
   const m = MW.st(), qk = q.topic || L.key; L.tries++;
   if (res.ok) {
     L.done = true; const pts = L.tries === 1 ? 1 : 0.5; L.pts += pts; L.res[L.i] = pts; L.correct++; WR.countAnswer(true, "m:" + qk); m.correct = (m.correct || 0) + 1; m.answered = (m.answered || 0) + 1;
-    if (L.tries === 1) { L.combo++; L.maxCombo = Math.max(L.maxCombo, L.combo); let gain = 1; if (L.combo % 3 === 0) gain++; L.starsEarned += WR.awardStars("m", q.uid || qk + "|" + q.q + "|" + q.a, gain, { tally: L, quiet: true }); if (L.combo === 5) WR.questEvent("combo5"); } else L.combo = 0;
+    if (L.tries === 1) { L.combo++; L.maxCombo = Math.max(L.maxCombo, L.combo); let gain = 1; if (L.combo % 3 === 0) { gain++; WR.Again && WR.Again.spark(L.combo); } L.starsEarned += WR.awardStars("m", q.uid || qk + "|" + q.q + "|" + q.a, gain, { tally: L, quiet: true }); if (L.combo === 5) WR.questEvent("combo5"); } else L.combo = 0;
     if (MR()) L.starsEarned += MR().onAnswer(q, L.tries === 1 ? "first" : "second", L);
     WR.questEvent("correct10"); WR.sfx("good"); if (btn) btn.classList.add("right");
     if (L.vizUsed) { m.modelSolved = (m.modelSolved || 0) + 1; WR.questEvent("model1"); }
@@ -346,6 +346,7 @@ function finish() {
   const head = gd ? (won ? `${esc(gd.name)} is beaten! 🛡️✨` : `${esc(gd.name)} flew off to practise! 💨`) : crowns === 3 ? "Perfect! 👑" : crowns >= 1 ? "Well done! 🌟" : "Keep practising! 🌱";
   const art = gd && WR.asset(gd.art) ? WR.img(gd.art, "res-sumi gres") : mascot("res-sumi");
   const nudge = WR.Learn && o.topic && !gd && score < WR.PASS.mark ? WR.Learn.nudgeHTML(WR.Learn.nudgeFor(WR.Learn.forTopic(o.topic))) : "";   // 📜 a weak topic offers its lesson
+  WR._roundCtx = { kind: "math", crowns, score, topic: o.topic, grade: o.grade || (WR.state.math && WR.state.math.grade) };
   WR.view(`<div class="card result fade-in">${art}<h1>${head}</h1>${WR.starNote()}<div class="big">${crownRow(crowns)}</div>
     <h2>${o.correct} / ${n} solved${o.pts < o.correct ? ` <small class="muted">(${o.items.filter((_, k) => o.res[k] === 0.5).length} on the second try)</small>` : ""}</h2>
     <p class="muted" style="font-weight:800">⭐ ${o.starsEarned} stars earned · best combo ${o.maxCombo} · ✨ +${o.correct * 5 + 10} maths XP${streak ? ` · 🔥 streak ${WR.state.streak.count}` : ""}${crowns > before && !gd && !o.kind ? " · 🎉 new best!" : ""}</p>${gd && !won ? `<p class="muted" style="font-weight:800">You needed ${gd.need} sparkle hits and got ${o.pts}. Practise a few Grade ${esc(gd.band)} topics and try again! 🫶</p>` : ""}

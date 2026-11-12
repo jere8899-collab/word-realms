@@ -439,7 +439,7 @@ function answer(ok, it, extra = "") {
   const rv = !L.review && WR.Review ? WR.Review.answer(it, ok) : null;   // 🔁 every lesson answer, right or wrong, updates its review record
   if (ok) {
     L.correct++; L.combo++; L.maxCombo = Math.max(L.maxCombo, L.combo);
-    let gain = 1; if (L.combo % 3 === 0) gain++; L.starsEarned += WR.awardStars("en", WR.itemKey(it), gain, { tally: L, quiet: true });
+    let gain = 1; if (L.combo % 3 === 0) { gain++; if (WR.Again) WR.Again.spark(L.combo); } L.starsEarned += WR.awardStars("en", WR.itemKey(it), gain, { tally: L, quiet: true });
     if (rv && rv.pay) L.starsEarned += WR.Review.reward(rv.pay);   // 🔁 a small, capped ⭐ for a review that moved its item up
     WR.questEvent("correct10"); if (L.combo === 5) WR.questEvent("combo5");
     L.lit++; L.jar.push(["🍬", "🍭", "🧁", "🍩", "🍫", "🍡"][L.jar.length % 6]);
@@ -499,6 +499,7 @@ function finish(lost) {
   const nudge = !help && WR.Learn && !L.review && !L.check && L.skill && !WR.passes(score, n) ? WR.Learn.nudgeHTML(WR.Learn.nudgeFor(WR.Learn.forSkill(L.realm.id, L.skill))) : "";
   const mainBtn = L.review ? `<button class="btn mint" id="nextStep">Back to the garden 🌷</button>`
     : nx ? `<button class="btn mint" id="nextStep">Next: ${nx.icon} ${WR.esc(nx.name)} →</button>` : `<button class="btn mint" id="nextStep">Back to ${WR.esc(L.realm.name)} →</button>`;
+  WR._roundCtx = { kind: "en", crowns, score };
   WR.view(`<div class="card result fade-in"><h1>${title}</h1>${WR.starNote()}
     ${chk ? `<div class="big">${chk.title.includes("💎") ? "💎" : "✨"}</div><p class="pass-note good" style="font-weight:800">${chk.line}</p>` : `<div class="big">${"👑".repeat(crowns)}${"<span style='opacity:.2'>👑</span>".repeat(3 - crowns)}</div>`}
     <h2>${L.correct} / ${n} correct</h2>

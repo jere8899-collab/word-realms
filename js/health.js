@@ -43,11 +43,17 @@ WR.activityDone = (...a) => { const r = done0.apply(WR, a), t = sit();
   if (!t.nudged && H.sittingMin() >= H.breakMin) { t.nudged = true; WR.save(); setTimeout(() => { if (!document.querySelector("#breakCard, #restCard")) H.breakCard(); }, 900); }
   return r; };
 // 🌙 the calm "rest" card instead of a new round
-H.restCard = why => WR.modal(`<div class="health-card" id="restCard">${pet()}<h2>${why === "bed" ? "Time to wind down for bed 🌙" : "That's today's playtime! 🌙"}</h2>
-    <p style="font-weight:700">${why === "bed" ? `Bedtime is at ${fmtBed(cfg().bed)}. ${WR.esc(WR.state.pet ? WR.state.pet.name : "Your pet")} is getting sleepy too 💤 A story on paper or a cuddle is perfect now.` : `You played so well today! ${WR.esc(WR.state.pet ? WR.state.pet.name : "Your pet")} is having a little nap 💤 See you tomorrow!`}</p>
+const restCopy = why => {
+  const name = WR.esc(WR.state.pet ? WR.state.pet.name : "Your pet");
+  if (why === "bed") return { h: "Time to wind down for bed 🌙", p: `Bedtime is at ${fmtBed(cfg().bed)}. ${name} is getting sleepy too 💤 A story on paper or a cuddle is perfect now.` };
+  return { h: "That's today's playtime! 🌙", p: `You played so well today! ${name} is having a little nap 💤 See you tomorrow!` };
+};
+H.restCard = why => { const copy = restCopy(why); return WR.modal(`<div class="health-card" id="restCard">${pet()}<h2>${copy.h}</h2>
+    <p style="font-weight:700">${copy.p}</p>
     <div class="row" style="justify-content:center"><button class="btn mint" id="rsOk">OK 💖</button><button class="btn ghost small" id="rsMore">👪 Grown-up: ${H.extraMin} more minutes</button></div></div>`, (bg, close) => {
   bg.querySelector("#rsOk").onclick = close;
   bg.querySelector("#rsMore").onclick = () => { close(); WR.parentGate(() => { cfg().until = Date.now() + H.extraMin * MIN; WR.save(); WR.toast(`⏳ ${H.extraMin} more minutes`, 2000); }, { why: "More playtime is a grown-up choice." }); }; });
+};
 const guard = f => function (...a) { const why = H.restReason(); if (why) { H.restCard(why); return; } return f.apply(this, a); };
 const wrap = (obj, n) => { if (obj && typeof obj[n] === "function" && !obj[n]._rest) { obj[n] = guard(obj[n]); obj[n]._rest = true; } };
 ["startLesson", "playSpecial", "startSpeaking", "startWriting", "startStory"].forEach(n => wrap(WR, n));
