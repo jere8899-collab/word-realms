@@ -46,6 +46,11 @@ Jeremy asked for this on 2026-11-04 (t40u, then "Build the pilot track for all, 
 
 ---
 
+## Quality fixes (from the 2026-11-13 review; one per routine run, no lesson batch that run)
+
+- [ ] 1. Test-harness race: older tests in tools/test/ lost their seeded save on first visit (the game's own boot save landed on top). One shared helper `tools/test/_harness.js` (`seedSave`) now waits for the game to boot, then reseeds and reloads; toasts, doubletap, pin, smallphones, icons and cloud use it, and so do 14 more tests that had the same goto-seed-reload lines (fresh, gatelock, homeshort, jargon, lightart, mathbubble, parentgate, pausetimer, r20c_shots, r20d_shots, reset, review, tinybits, twotabs). Other tests seed in their own ways and can move to the helper when next touched. The date-dependent checks in mathgoals, play-again and story were fixed in the tests (no star values changed). Built 2026-11-13 3 PM run, not yet live.
+- [ ] 2. Stars +2 on reload: the A1 first-round sticker is granted on the next load instead of at round end. Still to do (next run): find out why and grant it once at round end if it is a bug, without changing any star values.
+
 ## 1. What a lesson is (the design every batch follows)
 
 A lesson takes **2–3 minutes** and teaches **one idea**. It has seven steps, run by the shared engine `js/learn.js`:
