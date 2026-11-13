@@ -577,6 +577,22 @@ WR.avatarHTML = (size = 110, pv = {}) => {
   const s = WR.state, id = pv.avatar || s.avatar || "avatar_girl", layers = WR.heroLayers(pv.looks || s.looks);
   return `<div class="av-wrap" data-art="${id}" style="width:${size}px;height:${size}px;font-size:${size / 110}rem">${WR.layerSVG(id, layers, true)}${WR.img(id, "av")}${WR.layerSVG(id, layers)}</div>`;
 };
+/* 🐾 Idle bounce: an 8-frame sprite sheet (assets/web/<art>_idle.webp, 256 px cells, frame 0 = the still art) that
+   plays over the still picture at 8 fps (css/style.css .pet-idle). Only Hoot and Puffbun have one, and only their
+   baby/bloom art (the royal look stays still). A pet wearing anything (hat, glasses, crown…) stays still, so its
+   layers can never slip off the bouncing art. The still shows until the sheet has loaded, and always under reduced motion. */
+const PET_IDLE = { pet_owl: "assets/web/pet_owl_idle.webp", pet_bunny: "assets/web/pet_bunny_idle.webp" };
+WR.PET_IDLE = PET_IDLE;
+const idleReady = {};
+const idleLoad = art => {
+  if (idleReady[art] !== undefined) return idleReady[art];
+  if (WR.reducedMotion()) return false;                    // reduced motion: the still only, so the sheet is never downloaded
+  idleReady[art] = false;
+  const im = new Image();
+  im.onload = () => { idleReady[art] = true; document.querySelectorAll(`.petwrap.has-idle[data-art="${art}"]`).forEach(w => w.classList.add("idle-go")); };
+  im.src = PET_IDLE[art];
+  return false;
+};
 WR.petHTML = (cls = "", pv = {}) => {
   const p = pv.pet || WR.state.pet; if (!p) return "";
   const skin = p.skin && WR.shop.petskins.find(x => x.id === p.skin);
@@ -584,7 +600,9 @@ WR.petHTML = (cls = "", pv = {}) => {
   const extra = (skin && skin.sparkle ? " sparkle-skin" : "") + (skin && skin.rainbow ? " rainbow-skin" : "");
   const style = skin && skin.filter ? `filter:${skin.filter} drop-shadow(0 8px 10px rgba(122,92,143,.25))` : "";
   const scale = [0.86, 0.96, 1.04][stage], layers = WR.petLayers(p);
-  return `<div class="petwrap ${extra} ${cls}" data-art="${art}" style="position:relative;width:100%;height:100%;transform:scale(${scale})">${stage >= 1 ? '<div class="aura"></div>' : ""}${WR.layerSVG(art, layers, true)}${WR.img(art, "", style)}${WR.layerSVG(art, layers)}</div>`;
+  const idle = PET_IDLE[art] && !layers.length ? (idleLoad(art) ? " has-idle idle-go" : " has-idle") : "";
+  const sprite = idle ? `<span class="pet-idle-box" aria-hidden="true"><span class="pet-idle" style="background-image:url('${PET_IDLE[art]}');${style}"></span></span>` : "";
+  return `<div class="petwrap ${extra}${idle} ${cls}" data-art="${art}" style="position:relative;width:100%;height:100%;transform:scale(${scale})">${stage >= 1 ? '<div class="aura"></div>' : ""}${WR.layerSVG(art, layers, true)}${WR.img(art, "", style)}${sprite}${WR.layerSVG(art, layers)}</div>`;
 };
 WR.petMood = () => {
   const p = WR.state.pet; if (!p) return "";

@@ -171,6 +171,16 @@ html{scroll-padding-bottom:calc(96px + env(safe-area-inset-bottom))}
 svg.layers image{filter:drop-shadow(0 1px 1.5px rgba(122,92,143,.25))}
 .sparkle-skin:after{content:"";position:absolute;top:10%;left:0;right:0;height:1.6rem;background:url("../assets/icons/sparkles.webp") center/contain no-repeat;animation:twinkle 1.4s infinite alternate}
 .rainbow-skin img{animation:rainbow 4s linear infinite}
+/* 🐾 idle bounce (WR.petHTML): the sheet sits square over the still art (object-fit:contain = a centred square of the
+   shorter side, 100cqmin here); it shows, and the still hides, only once the sheet has loaded and motion is allowed */
+.pet-idle-box{display:none;position:absolute;inset:0;container-type:size;pointer-events:none;z-index:1}
+.pet-idle{position:absolute;left:50%;top:50%;width:100cqmin;height:100cqmin;transform:translate(-50%,-50%);background:no-repeat 0 0/800% 100%;filter:drop-shadow(0 8px 10px rgba(122,92,143,.22));animation:petIdle 1s steps(8,jump-none) infinite}
+.rainbow-skin .pet-idle{animation:petIdle 1s steps(8,jump-none) infinite,rainbow 4s linear infinite}
+@keyframes petIdle{from{background-position:0 0}to{background-position:100% 0}}
+@supports (width:1cqmin){@media (prefers-reduced-motion:no-preference){
+  body:not(.reduce-motion) .petwrap.idle-go>.pet-idle-box{display:block}
+  body:not(.reduce-motion) .petwrap.idle-go>img{visibility:hidden}
+}}
 @keyframes rainbow{from{filter:hue-rotate(0) drop-shadow(0 8px 10px rgba(122,92,143,.25))}to{filter:hue-rotate(360deg) drop-shadow(0 8px 10px rgba(122,92,143,.25))}}
 /* shop */
 .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
