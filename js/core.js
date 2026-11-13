@@ -529,6 +529,7 @@ WR.applyTheme = () => {
 WR.petInfo = () => PETS.find(p => p.id === (WR.state.pet && WR.state.pet.species));
 WR.petLevel = xp => 1 + Math.floor(xp / 80);
 WR.petStage = lvl => lvl >= 10 ? 2 : lvl >= 5 ? 1 : 0;
+WR.petStageOf = p => WR.petStage(WR.petLevel(p.xp));   // a pet's growth stage: 0 baby, 1 bloom, 2 royal
 /* 🎩 Layered looks — ONE shared renderer for heroes and pets, everywhere (map, pet screen, wardrobe, shop, lesson
    companion, thumbnails). The base art is an <img> (WebP/PNG fallback, pet-skin filter); hats, glasses, collars, wings
    and held items are separate transparent layers in two SVG overlays (behind / in front of the art) on the same 0–100
@@ -565,9 +566,9 @@ const looksLayers = looks => SLOTS.map(sl => looks && looks[sl] && WR.accessory(
   .map(it => ({ slot: it.slot, src: WR.layerSrc(it.art), w: it.w, dy: it.dy, filter: it.filter, id: it.id, cls: "acc" }));
 WR.heroLayers = (looks = WR.state.looks) => looksLayers(looks);
 // the evolved look: <pet>_royal art when there is one
-WR.petArt = p => { const stage = WR.petStage(WR.petLevel(p.xp)), royal = p.species + "_royal"; return stage >= 2 && WR.asset && WR.asset(royal) ? royal : p.species; };
+WR.petArt = p => { const stage = WR.petStageOf(p), royal = p.species + "_royal"; return stage >= 2 && WR.asset && WR.asset(royal) ? royal : p.species; };
 WR.petLayers = p => {
-  const stage = WR.petStage(WR.petLevel(p.xp)), out = looksLayers(p.looks);
+  const stage = WR.petStageOf(p), out = looksLayers(p.looks);
   if (stage >= 2 && !(p.looks && p.looks.head)) out.push({ slot: "head", src: WR.iconSrc("👑"), cls: "petcrown", w: 0.8 });   // the evolved pet's crown, unless it wears a hat
   return out;
 };
@@ -579,7 +580,7 @@ WR.avatarHTML = (size = 110, pv = {}) => {
 WR.petHTML = (cls = "", pv = {}) => {
   const p = pv.pet || WR.state.pet; if (!p) return "";
   const skin = p.skin && WR.shop.petskins.find(x => x.id === p.skin);
-  const stage = WR.petStage(WR.petLevel(p.xp)), art = WR.petArt(p);
+  const stage = WR.petStageOf(p), art = WR.petArt(p);
   const extra = (skin && skin.sparkle ? " sparkle-skin" : "") + (skin && skin.rainbow ? " rainbow-skin" : "");
   const style = skin && skin.filter ? `filter:${skin.filter} drop-shadow(0 8px 10px rgba(122,92,143,.25))` : "";
   const scale = [0.86, 0.96, 1.04][stage], layers = WR.petLayers(p);
