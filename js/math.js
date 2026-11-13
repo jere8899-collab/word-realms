@@ -354,6 +354,7 @@ function finish() {
     <div class="row" style="justify-content:center;margin-top:16px"><button class="btn" id="again">↻ Play again</button><button class="btn mint" id="back">${won ? "🏷️ Open my Sticker Book" : o.challenge ? "Back to the Tower 🗼" : o.back === "review" ? "Back to the garden 🌷" : "Back to the Number Kingdom"}</button></div></div>`);
   if (crowns >= 2 || lv || won) WR.confetti(); WR.sfx(lv ? "level" : "good");
   if (o.onFinish) o.onFinish({ won, score, pts: o.pts, crowns });   // 🛡️ guardian hook (rewards, stickers)
+  WR.Collect && WR.Collect.check();   // 🏷️ a sticker this round earned (e.g. First Steps) is paid now, once, not on the next map visit or reload
   WR.$("#again").onclick = () => o.replay ? o.replay() : MW.startLesson({ topic: o.topic, grade: o.grade, challenge: o.challenge });
   WR.$("#back").onclick = () => won ? WR.go("stickers", "guard") : o.challenge ? WR.go("dojo") : WR.go(o.back || "math");
   if (nudge) WR.Learn.bindNudge({ screen: "math" });

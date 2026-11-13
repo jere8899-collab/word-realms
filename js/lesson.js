@@ -513,6 +513,7 @@ function finish(lost) {
   if (crowns >= 2 || lv) WR.confetti(); WR.sfx(lv ? "level" : "good");
   const opts = L;
   if (opts.onFinish) opts.onFinish({ won, lost: !!lost, score, crowns });   // 🏆 C6 hook (realm bosses, stickers)
+  WR.Collect && WR.Collect.check();   // 🏷️ a sticker this round earned (e.g. First Steps) is paid now, once, not on the next map visit or reload
   if (opts.nextLabel) WR.$("#nextStep").textContent = opts.nextLabel;
   if (opts.check) WR.$("#again").remove();   // one check a day: no "play again"
   if (WR.$("#again")) WR.$("#again").onclick = () => opts.replay ? opts.replay() : WR.startLesson({ realm: opts.realm.id, skill: opts.skill, key: opts.key, title: opts.title });
