@@ -894,6 +894,57 @@
    ]
   },
   {
+   "id": "en.b1.cond1",
+   "pack": "en-b1",
+   "title": "if it rains, I will …",
+   "icon": "☂️",
+   "at": {
+    "realm": "b1",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_b1_cond1",
+   "match": [
+    {
+     "re": "first conditional|if \\+ present,? will",
+     "field": "explain"
+    }
+   ]
+  },
+  {
+   "id": "en.b1.cond2",
+   "pack": "en-b1",
+   "title": "if I were a bird …",
+   "icon": "💭",
+   "at": {
+    "realm": "b1",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_b1_cond2",
+   "match": [
+    {
+     "re": "second conditional|imaginary present|if I were you",
+     "field": "explain"
+    }
+   ]
+  },
+  {
+   "id": "en.b1.passive",
+   "pack": "en-b1",
+   "title": "the cake was eaten",
+   "icon": "🍰",
+   "at": {
+    "realm": "b1",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_b1_passive",
+   "match": [
+    {
+     "re": "passive",
+     "field": "explain"
+    }
+   ]
+  },
+  {
    "id": "m.g1.count",
    "pack": "m-g1",
    "title": "Counting to 20",

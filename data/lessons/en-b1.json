@@ -675,6 +675,691 @@
    ],
    "grown": "👪 Past continuous vs past simple (B1 Preliminary): was/were + -ing for the longer background action, past simple for the shorter event that interrupts it, joined with when or while. The discovery reuses the 'order on a line' ladder from en.a2.freq as a timeline (sat down → reading → jumped out → snack); the re-teach is the 'movie and pop-up' picture. Curry puff is a Singapore touch.",
    "pack": "en-b1"
+  },
+  {
+   "id": "en.b1.cond1",
+   "title": "if it rains, I will …",
+   "icon": "☂️",
+   "at": {
+    "realm": "b1",
+    "skill": "grammar"
+   },
+   "match": [
+    {
+     "re": "first conditional|if \\+ present,? will",
+     "field": "explain"
+    }
+   ],
+   "art": "lesson_en_b1_cond1",
+   "art_alt": "On a lilac path in the Whispering Forest, Lily in a green raincoat and purple rain boots looks up at grey rain clouds with a finger on her chin, holding a closed yellow umbrella, next to a wooden signpost, with Sumi the cream fox smiling from her backpack",
+   "hook": {
+    "text": "Lily is walking down the forest path with Sumi the fox in her backpack. Uh oh, grey clouds are coming! Lily holds her yellow umbrella and thinks. Maybe it will rain, maybe it won't. When something might really happen, we talk about it with if. Let's help Lily plan.",
+    "say": "Lily is walking down the forest path with Sumi the fox in her backpack. Uh oh, grey clouds are coming! Lily holds her yellow umbrella and thinks. Maybe it will rain, maybe it won't. When something might really happen, we talk about it with if. Let's help Lily plan."
+   },
+   "discover": {
+    "kind": "fill",
+    "text": "Finish Lily's plans. Drag the right words into each gap, or tap them.",
+    "hint": "The maybe-part after if uses words like rains and is. The what-happens-next part uses will.",
+    "tiles": [
+     "rains",
+     "will open",
+     "will get",
+     "is",
+     "follows"
+    ],
+    "items": [
+     {
+      "s": "If it ___, Lily will open her yellow umbrella.",
+      "a": "rains",
+      "why": "After if, use the present: if it rains. We don't say if it will rain."
+     },
+     {
+      "s": "If it rains, Lily ___ her umbrella.",
+      "a": "will open",
+      "why": "This part says what happens next, so it gets will: will open."
+     },
+     {
+      "s": "If Sumi jumps in a puddle, she ___ wet!",
+      "a": "will get",
+      "why": "Getting wet is what happens next: she will get wet."
+     },
+     {
+      "s": "If the path ___ muddy, Lily's rain boots will keep her feet dry.",
+      "a": "is",
+      "why": "The maybe-part after if uses the present: if the path is muddy."
+     },
+     {
+      "s": "If Lily ___ the signpost, she will find the way home.",
+      "a": "follows",
+      "why": "After if, use the present. Lily is one girl, so: if Lily follows."
+     }
+    ],
+    "say": "Finish Lily's plans. Drag the right words into each gap, or tap them."
+   },
+   "rule": {
+    "text": "When something might really happen, use if plus the present for the maybe-part: if it rains. Then use will plus a verb for what happens next: I will open my umbrella. Will never goes right after if. The two parts can swap places: I will open my umbrella if it rains. When the if-part comes first, put a comma after it.",
+    "examples": [
+     "If it rains, I will open my umbrella.",
+     "If Sumi is hungry, she will eat a berry.",
+     "We will get wet if we don't hurry."
+    ],
+    "say": "When something might really happen, use if plus the present for the maybe-part: if it rains. Then use will plus a verb for what happens next: I will open my umbrella. Will never goes right after if. The two parts can swap places: I will open my umbrella if it rains. When the if-part comes first, put a comma after it.",
+    "sayEx": [
+     "If it rains, I will open my umbrella.",
+     "If Sumi is hungry, she will eat a berry.",
+     "We will get wet if we don't hurry."
+    ]
+   },
+   "check": [
+    {
+     "q": "If it ___ tomorrow, we will stay at home.",
+     "options": [
+      "rains",
+      "will rain",
+      "rained"
+     ],
+     "answer": 0,
+     "notes": {
+      "will rain": "After if, we don't use will. Say: If it rains tomorrow.",
+      "rained": "Rained is for the past. Tomorrow's rain might really happen, so use the present: rains."
+     },
+     "explain": "The maybe-part after if takes the present, even for tomorrow: If it rains tomorrow.",
+     "say": "If it blank tomorrow, we will stay at home."
+    },
+    {
+     "q": "If you water the plant every day, it ___.",
+     "options": [
+      "will grow",
+      "grow",
+      "growing"
+     ],
+     "answer": 0,
+     "notes": {
+      "grow": "This part says what happens next, so it needs will: it will grow.",
+      "growing": "Growing can't stand alone here. Say what will happen: it will grow."
+     },
+     "explain": "Watering is the maybe-part, and growing is what happens next, so: it will grow.",
+     "say": "If you water the plant every day, it blank."
+    },
+    {
+     "q": "Which sentence is right?",
+     "options": [
+      "If Sumi is hungry, she will eat a berry.",
+      "If Sumi will be hungry, she will eat a berry.",
+      "If Sumi is hungry, she eat a berry."
+     ],
+     "answer": 0,
+     "notes": {
+      "If Sumi will be hungry, she will eat a berry.": "Will doesn't go right after if. Say: If Sumi is hungry.",
+      "If Sumi is hungry, she eat a berry.": "The next-part needs will: she will eat a berry."
+     },
+     "explain": "Present after if (is hungry), and will for what happens next (will eat).",
+     "say": "Which sentence is right?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way. Think of a weather card cut into two halves. The first half is the maybe: if it rains, if you are late. It uses the present, like rains or are. The second half is what happens then: will plus a verb, like will open or will miss. Will only lives on the second half, never next to if.",
+    "examples": [
+     "🌧️ maybe: If it rains, ☂️ then: I will open my umbrella.",
+     "⏰ maybe: If you are late, 🚌 then: you will miss the bus.",
+     "☀️ maybe: If it is sunny, 🏖️ then: we will go to East Coast Park."
+    ],
+    "discover": {
+     "kind": "sort",
+     "text": "Is each sentence right, or does it need fixing? Drag each card into a basket, or tap it and then a basket.",
+     "hint": "Check the if-half: no will there. Then check the other half: it needs will.",
+     "bins": [
+      {
+       "id": "ok",
+       "label": "sounds right",
+       "icon": "✅"
+      },
+      {
+       "id": "fix",
+       "label": "needs fixing",
+       "icon": "🔧"
+      }
+     ],
+     "items": [
+      {
+       "t": "If it's sunny, we will go to East Coast Park.",
+       "bin": "ok",
+       "why": "Present after if, will for what happens next. Right!"
+      },
+      {
+       "t": "If it will rain, I will stay inside.",
+       "bin": "fix",
+       "why": "No will after if. Say: If it rains, I will stay inside."
+      },
+      {
+       "t": "If you are late, you will miss the bus.",
+       "bin": "ok",
+       "why": "Are late is the maybe, will miss is what happens. Right!"
+      },
+      {
+       "t": "If he practises, he win the race.",
+       "bin": "fix",
+       "why": "The next-part needs will: If he practises, he will win the race."
+      },
+      {
+       "t": "We will have ice cream if we finish early.",
+       "bin": "ok",
+       "why": "The halves swapped places, and it's still right!"
+      },
+      {
+       "t": "If she will call, I will answer.",
+       "bin": "fix",
+       "why": "No will after if. Say: If she calls, I will answer."
+      }
+     ],
+     "say": "Is each sentence right, or does it need fixing? Drag each card into a basket, or tap it and then a basket."
+    },
+    "say": "Here's another way. Think of a weather card cut into two halves. The first half is the maybe: if it rains, if you are late. It uses the present, like rains or are. The second half is what happens then: will plus a verb, like will open or will miss. Will only lives on the second half, never next to if."
+   },
+   "check2": [
+    {
+     "q": "If we ___ now, we will catch the MRT.",
+     "options": [
+      "leave",
+      "will leave",
+      "left"
+     ],
+     "answer": 0,
+     "notes": {
+      "will leave": "Will doesn't go right after if. Say: If we leave now.",
+      "left": "Left is the past. This is a real plan for now, so use the present: leave."
+     },
+     "explain": "The if-part uses the present: If we leave now, we will catch the train.",
+     "say": "If we blank now, we will catch the MRT."
+    },
+    {
+     "q": "If you eat too much cake, you ___ a tummy ache.",
+     "options": [
+      "will get",
+      "will got",
+      "are get"
+     ],
+     "answer": 0,
+     "notes": {
+      "will got": "After will, use the plain verb: will get, not will got.",
+      "are get": "Are get isn't English. What happens next needs will: will get."
+     },
+     "explain": "The tummy ache is what happens next, so it gets will plus the plain verb: will get.",
+     "say": "If you eat too much cake, you blank a tummy ache."
+    },
+    {
+     "q": "Lily saves \\$2 every week. If she saves for five weeks, she ___ \\$10.",
+     "options": [
+      "will have",
+      "will has",
+      "has will"
+     ],
+     "answer": 0,
+     "notes": {
+      "will has": "After will, the verb stays plain, even with she: will have.",
+      "has will": "The order is will first, then the verb: will have."
+     },
+     "explain": "Saving is the maybe-part, and having ten dollars is what happens next: she will have \\$10.",
+     "say": "Lily saves 2 dollars every week. If she saves for five weeks, she blank 10 dollars."
+    }
+   ],
+   "grown": "👪 First conditional (B1 Preliminary): if + present simple, will + bare infinitive, for real and possible future situations. No will in the if-clause; the clauses can swap, with a comma when the if-clause comes first. Singapore touches: East Coast Park, the MRT and saving in Singapore dollars.",
+   "pack": "en-b1"
+  },
+  {
+   "id": "en.b1.cond2",
+   "title": "if I were a bird …",
+   "icon": "💭",
+   "at": {
+    "realm": "b1",
+    "skill": "grammar"
+   },
+   "match": [
+    {
+     "re": "second conditional|imaginary present|if I were you",
+     "field": "explain"
+    }
+   ],
+   "art": "lesson_en_b1_cond2",
+   "art_alt": "Lily sits at a mossy log in the Whispering Forest with her chin in her hands, smiling and daydreaming, next to Sumi the cream fox, while a dream bubble shows her with bird wings flying over pink and green treetops with little brown birds",
+   "hook": {
+    "text": "Lily rests her chin on a mossy log and starts to daydream. In her dream bubble she has bird wings, and she flies over the treetops with the little birds! But Lily doesn't really have wings. Some if-sentences are about things that could really happen. Others are only imagined, like a dream. Let's sort them.",
+    "say": "Lily rests her chin on a mossy log and starts to daydream. In her dream bubble she has bird wings, and she flies over the treetops with the little birds! But Lily doesn't really have wings. Some if-sentences are about things that could really happen. Others are only imagined, like a dream. Let's sort them."
+   },
+   "discover": {
+    "kind": "sort",
+    "text": "Could it really happen, or is it only a dream? Drag each card into a basket, or tap it and then a basket.",
+    "hint": "Look at the second half. Will means it could really happen. Would means it's only imagined.",
+    "bins": [
+     {
+      "id": "real",
+      "label": "could happen",
+      "icon": "🌦️"
+     },
+     {
+      "id": "dream",
+      "label": "only a dream",
+      "icon": "💭"
+     }
+    ],
+    "items": [
+     {
+      "t": "If it rains, I will open my umbrella.",
+      "bin": "real",
+      "why": "Rain can really happen: if + present, will."
+     },
+     {
+      "t": "If I had wings, I would fly.",
+      "bin": "dream",
+      "why": "Lily has no wings. It's a dream: if + had, would."
+     },
+     {
+      "t": "If Sumi is hungry, she will eat a berry.",
+      "bin": "real",
+      "why": "Sumi can really get hungry: is, will."
+     },
+     {
+      "t": "If I were a bird, I would sing all day.",
+      "bin": "dream",
+      "why": "Lily isn't a bird. It's imagined: were, would."
+     },
+     {
+      "t": "If we hurry, we will catch the bus.",
+      "bin": "real",
+      "why": "Hurrying can really happen: hurry, will."
+     },
+     {
+      "t": "If I lived in a castle, I would keep a dragon.",
+      "bin": "dream",
+      "why": "Lily doesn't live in a castle. It's a dream: lived, would."
+     }
+    ],
+    "say": "Could it really happen, or is it only a dream? Drag each card into a basket, or tap it and then a basket."
+   },
+   "rule": {
+    "text": "For things that are not true now, like a dream, use if plus a past word, like had or lived, and would plus a verb: If I had wings, I would fly. It isn't about yesterday. It's an imagined now. With I, he, she and it, we say were: If I were a bird. And If I were you, I would … is a kind way to give advice.",
+    "examples": [
+     "If I had wings, I would fly over the trees.",
+     "If I were a bird, I would sing all day.",
+     "If I were you, I would take an umbrella."
+    ],
+    "say": "For things that are not true now, like a dream, use if plus a past word, like had or lived, and would plus a verb: If I had wings, I would fly. It isn't about yesterday. It's an imagined now. With I, he, she and it, we say were: If I were a bird. And If I were you, I would … is a kind way to give advice.",
+    "sayEx": [
+     "If I had wings, I would fly over the trees.",
+     "If I were a bird, I would sing all day.",
+     "If I were you, I would take an umbrella."
+    ]
+   },
+   "check": [
+    {
+     "q": "Lily isn't a bird. If she ___ a bird, she would fly to school.",
+     "options": [
+      "were",
+      "is",
+      "will be"
+     ],
+     "answer": 0,
+     "notes": {
+      "is": "Is is for real things now. She isn't a bird, so it's imagined: if she were.",
+      "will be": "Will doesn't go after if, and this is a dream: if she were."
+     },
+     "explain": "It's only imagined, so the if-part steps back to were: If she were a bird.",
+     "say": "Lily isn't a bird. If she blank a bird, she would fly to school."
+    },
+    {
+     "q": "If I had a magic carpet, I ___ to the moon.",
+     "options": [
+      "would fly",
+      "will fly",
+      "fly"
+     ],
+     "answer": 0,
+     "notes": {
+      "will fly": "Will is for things that could really happen. A magic carpet is a dream: would fly.",
+      "fly": "The dream-part needs would: I would fly."
+     },
+     "explain": "Had a magic carpet is a dream, so the other half uses would: I would fly.",
+     "say": "If I had a magic carpet, I blank to the moon."
+    },
+    {
+     "q": "Which one is only imagined?",
+     "options": [
+      "If I lived under the sea, I would swim with the fish.",
+      "If it is sunny, we will swim.",
+      "If you are cold, I will close the window."
+     ],
+     "answer": 0,
+     "notes": {
+      "If it is sunny, we will swim.": "A sunny day can really happen. See the will?",
+      "If you are cold, I will close the window.": "Being cold can really happen, so it uses will."
+     },
+     "explain": "Nobody really lives under the sea, so it's a dream: lived, would.",
+     "say": "Which one is only imagined?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way. Think of two bubbles. A real bubble holds things that could really happen, and it uses will. A dream bubble floats above your head and holds things that are not true. Inside a dream bubble, every word takes one step back: have becomes had, am becomes were, and will becomes would.",
+    "examples": [
+     "💭 I don't have wings. → If I had wings, I would fly.",
+     "💭 I'm not a bird. → If I were a bird, I would sing.",
+     "💡 kind advice: If I were you, I would wear a jacket."
+    ],
+    "discover": {
+     "kind": "fill",
+     "text": "Fill the dream bubbles. Drag the right words into each gap, or tap them.",
+     "hint": "In a dream, have steps back to had, am steps back to were, and will steps back to would.",
+     "tiles": [
+      "had",
+      "would",
+      "were",
+      "lived"
+     ],
+     "items": [
+      {
+       "s": "If I ___ wings, I would fly over the trees.",
+       "a": "had",
+       "why": "I don't have wings, so have steps back to had."
+      },
+      {
+       "s": "If Sumi were as big as a horse, she ___ carry Lily.",
+       "a": "would",
+       "why": "It's a dream, so will steps back to would."
+      },
+      {
+       "s": "If I ___ you, I would wear a jacket.",
+       "a": "were",
+       "why": "I can't be you! For I, he, she and it in a dream, we say were."
+      },
+      {
+       "s": "If we ___ on the moon, we would jump very high.",
+       "a": "lived",
+       "why": "We don't live on the moon, so live steps back to lived."
+      }
+     ],
+     "say": "Fill the dream bubbles. Drag the right words into each gap, or tap them."
+    },
+    "say": "Here's another way. Think of two bubbles. A real bubble holds things that could really happen, and it uses will. A dream bubble floats above your head and holds things that are not true. Inside a dream bubble, every word takes one step back: have becomes had, am becomes were, and will becomes would."
+   },
+   "check2": [
+    {
+     "q": "Your friend is sad. “If I ___ you, I would say sorry to her.”",
+     "options": [
+      "were",
+      "am",
+      "would be"
+     ],
+     "answer": 0,
+     "notes": {
+      "am": "You can't really be your friend, so it's imagined: If I were you.",
+      "would be": "Would goes in the other half, not after if: If I were you."
+     },
+     "explain": "If I were you, I would … is the kind way to give advice.",
+     "say": "Your friend is sad. “If I blank you, I would say sorry to her.”"
+    },
+    {
+     "q": "Toby doesn't have a bike. If he had a bike, he ___ to school.",
+     "options": [
+      "would ride",
+      "will ride",
+      "rides"
+     ],
+     "answer": 0,
+     "notes": {
+      "will ride": "He has no bike, so it's a dream, not a plan: would ride.",
+      "rides": "Rides is for real every day. In a dream, say would ride."
+     },
+     "explain": "Toby has no bike, so it's imagined: had a bike, would ride.",
+     "say": "Toby doesn't have a bike. If he had a bike, he blank to school."
+    },
+    {
+     "q": "If Lily found \\$100, she ___ give it to a police officer.",
+     "options": [
+      "would",
+      "will",
+      "was"
+     ],
+     "answer": 0,
+     "notes": {
+      "will": "After found, the dream-part needs would, not will.",
+      "was": "Was give isn't English. The dream-part needs would + verb."
+     },
+     "explain": "Finding \\$100 is imagined, so the other half uses would: she would give it back.",
+     "say": "If Lily found 100 dollars, she blank give it to a police officer."
+    }
+   ],
+   "grown": "👪 Second conditional (B1 Preliminary): if + past simple, would + bare infinitive, for imagined or unlikely present and future situations; were for all persons (If I were …), including advice (If I were you, I would …). The discovery sorts real (first conditional) vs imagined (second conditional) by will / would.",
+   "pack": "en-b1"
+  },
+  {
+   "id": "en.b1.passive",
+   "title": "the cake was eaten",
+   "icon": "🍰",
+   "at": {
+    "realm": "b1",
+    "skill": "grammar"
+   },
+   "match": [
+    {
+     "re": "passive",
+     "field": "explain"
+    }
+   ],
+   "art": "lesson_en_b1_passive",
+   "art_alt": "On a pink checked picnic blanket in the Whispering Forest, Lily kneels with her hands on her cheeks in surprise beside an empty plate with only cake crumbs, while Puffbun the round pink bunny sits next to it with crumbs on its cheek and Sumi the fox giggles in Lily's backpack",
+   "hook": {
+    "text": "Lily and Sumi had a picnic with a big slice of cake. Lily looked away for one minute. When she looked back, the plate was empty! Only crumbs were left. Oh no, the cake was eaten! Hmm, look at Puffbun's cheek. Sumi giggles. Sometimes what happened to a thing matters more than who did it. Let's tell the story.",
+    "say": "Lily and Sumi had a picnic with a big slice of cake. Lily looked away for one minute. When she looked back, the plate was empty! Only crumbs were left. Oh no, the cake was eaten! Hmm, look at Puffbun's cheek. Sumi giggles. Sometimes what happened to a thing matters more than who did it. Let's tell the story."
+   },
+   "discover": {
+    "kind": "fill",
+    "text": "Tell the cake story. Drag the right words into each gap, or tap them.",
+    "hint": "One thing takes was or is. Many things take were or are. By tells us who did it.",
+    "tiles": [
+     "was eaten",
+     "was baked",
+     "were found",
+     "are sold",
+     "by"
+    ],
+    "items": [
+     {
+      "s": "Oh no! The cake ___!",
+      "a": "was eaten",
+      "why": "The cake didn't eat anything. Something happened to it: it was eaten."
+     },
+     {
+      "s": "The cake ___ by Crumb this morning.",
+      "a": "was baked",
+      "why": "Crumb did the baking, and the cake is one thing: was baked."
+     },
+     {
+      "s": "Crumbs ___ on Puffbun's cheek!",
+      "a": "were found",
+      "why": "Crumbs are many, so it's were: were found."
+     },
+     {
+      "s": "Cakes ___ at Crumb's bakery every day.",
+      "a": "are sold",
+      "why": "Every day is now, and cakes are many: are sold."
+     },
+     {
+      "s": "The cake was eaten ___ Puffbun!",
+      "a": "by",
+      "why": "By tells us who did it: by Puffbun."
+     }
+    ],
+    "say": "Tell the cake story. Drag the right words into each gap, or tap them."
+   },
+   "rule": {
+    "text": "In the passive, the thing that something happens to comes first. Then comes was or were for the past, or is or are for now, plus a done-word like eaten, baked or found: The cake was eaten. To say who did it, add by: The cake was eaten by Puffbun. It means the same as Puffbun ate the cake, but now the spotlight is on the cake.",
+    "examples": [
+     "Puffbun ate the cake. → The cake was eaten by Puffbun.",
+     "The cupcakes were baked this morning.",
+     "Bread is sold at the bakery."
+    ],
+    "say": "In the passive, the thing that something happens to comes first. Then comes was or were for the past, or is or are for now, plus a done-word like eaten, baked or found: The cake was eaten. To say who did it, add by: The cake was eaten by Puffbun. It means the same as Puffbun ate the cake, but now the spotlight is on the cake.",
+    "sayEx": [
+     "Puffbun ate the cake., The cake was eaten by Puffbun.",
+     "The cupcakes were baked this morning.",
+     "Bread is sold at the bakery."
+    ]
+   },
+   "check": [
+    {
+     "q": "The window ___ by the wind last night.",
+     "options": [
+      "was broken",
+      "broke",
+      "was break"
+     ],
+     "answer": 0,
+     "notes": {
+      "broke": "The window didn't break something. It had something done to it: was broken.",
+      "was break": "After was, use the done-word: broken, not break."
+     },
+     "explain": "The wind did it to the window, so: the window was broken by the wind.",
+     "say": "The window blank by the wind last night."
+    },
+    {
+     "q": "These biscuits ___ in Singapore.",
+     "options": [
+      "are made",
+      "is made",
+      "make"
+     ],
+     "answer": 0,
+     "notes": {
+      "is made": "Biscuits are many, so use are, not is: are made.",
+      "make": "The biscuits don't make anything. Somebody makes them: they are made."
+     },
+     "explain": "Many biscuits, and it's true now: they are made in Singapore.",
+     "say": "These biscuits blank in Singapore."
+    },
+    {
+     "q": "Which sentence means the same as “Hoot wrote the letter”?",
+     "options": [
+      "The letter was written by Hoot.",
+      "The letter wrote Hoot.",
+      "Hoot was written by the letter."
+     ],
+     "answer": 0,
+     "notes": {
+      "The letter wrote Hoot.": "A letter can't write! The letter comes first and then was written.",
+      "Hoot was written by the letter.": "This swaps them round. Hoot did the writing: by Hoot."
+     },
+     "explain": "The letter comes first, then was written, then by Hoot, who did it.",
+     "say": "Which sentence means the same as “Hoot wrote the letter”?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way. Think of a spotlight on a stage. In a normal sentence, the spotlight shines on the doer first: Puffbun ate the cake. In the passive, we turn the spotlight onto the thing first: The cake was eaten. The doer can stay in the dark, or come back at the end with by: by Puffbun.",
+    "examples": [
+     "🔦 doer first: Puffbun ate the cake.",
+     "🔦 thing first: The cake was eaten by Puffbun.",
+     "🔦 doer first: Lily washed the plates.",
+     "🔦 thing first: The plates were washed."
+    ],
+    "discover": {
+     "kind": "sort",
+     "text": "Where is the spotlight? On the doer first, or on the thing first? Drag each card into a basket, or tap it and then a basket.",
+     "hint": "Was, were, is or are plus a done-word means the thing comes first.",
+     "bins": [
+      {
+       "id": "doer",
+       "label": "doer first",
+       "icon": "🐰"
+      },
+      {
+       "id": "thing",
+       "label": "thing first",
+       "icon": "🍰"
+      }
+     ],
+     "items": [
+      {
+       "t": "Puffbun ate the cake.",
+       "bin": "doer",
+       "why": "Puffbun did it, and Puffbun comes first."
+      },
+      {
+       "t": "The cake was eaten.",
+       "bin": "thing",
+       "why": "The cake comes first, with was eaten."
+      },
+      {
+       "t": "Lily washed the plates.",
+       "bin": "doer",
+       "why": "Lily did the washing, and she comes first."
+      },
+      {
+       "t": "The plates were washed by Lily.",
+       "bin": "thing",
+       "why": "The plates come first, and by Lily comes at the end."
+      },
+      {
+       "t": "Sumi found a shiny stone.",
+       "bin": "doer",
+       "why": "Sumi did the finding, and Sumi comes first."
+      },
+      {
+       "t": "A shiny stone was found.",
+       "bin": "thing",
+       "why": "The stone comes first, with was found."
+      }
+     ],
+     "say": "Where is the spotlight? On the doer first, or on the thing first? Drag each card into a basket, or tap it and then a basket."
+    },
+    "say": "Here's another way. Think of a spotlight on a stage. In a normal sentence, the spotlight shines on the doer first: Puffbun ate the cake. In the passive, we turn the spotlight onto the thing first: The cake was eaten. The doer can stay in the dark, or come back at the end with by: by Puffbun."
+   },
+   "check2": [
+    {
+     "q": "After the picnic, the plates ___ by Lily.",
+     "options": [
+      "were washed",
+      "was washed",
+      "washed"
+     ],
+     "answer": 0,
+     "notes": {
+      "was washed": "Plates are many, so use were: were washed.",
+      "washed": "The plates didn't wash anything. They had it done to them: were washed."
+     },
+     "explain": "The plates come first and they are many, so: the plates were washed by Lily.",
+     "say": "After the picnic, the plates blank by Lily."
+    },
+    {
+     "q": "English ___ in many countries.",
+     "options": [
+      "is spoken",
+      "speaks",
+      "is speak"
+     ],
+     "answer": 0,
+     "notes": {
+      "speaks": "English can't speak! People speak it, so: English is spoken.",
+      "is speak": "After is, use the done-word: spoken."
+     },
+     "explain": "People speak it, and English comes first: English is spoken.",
+     "say": "English blank in many countries."
+    },
+    {
+     "q": "Put the spotlight on the fence: “Toby painted the fence.”",
+     "options": [
+      "The fence was painted by Toby.",
+      "The fence painted by Toby.",
+      "Toby was painted by the fence."
+     ],
+     "answer": 0,
+     "notes": {
+      "The fence painted by Toby.": "It needs was before the done-word: was painted.",
+      "Toby was painted by the fence.": "This swaps them round. Toby did the painting: by Toby."
+     },
+     "explain": "The fence comes first, then was painted, then by Toby at the end.",
+     "say": "Put the spotlight on the fence: “Toby painted the fence.”"
+    }
+   ],
+   "grown": "👪 Passive voice (B1 Preliminary): present and past simple passive, is/are/was/were + past participle, with an optional by-agent; used when the thing affected matters more than the doer. The re-teach sorts active (doer first) and passive (thing first) word order.",
+   "pack": "en-b1"
   }
  ]
 }
