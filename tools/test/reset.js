@@ -2,6 +2,7 @@
 // Undo, resets this device only (a logged-in device is logged out first, so the cloud copy is never overwritten), and a reset
 // never marks the cloud save dirty.   node tools/test/reset.js   (SHOT=1 → screenshots/reset_*.png)
 const { chromium } = require('playwright-core');
+const { seedSave } = require('./_harness');   // seeds the starting save without the first-visit race
 const BASE = (process.env.BASE || 'http://127.0.0.1:18642/').replace(/\/?$/, '/');
 const OUT = '/workspace/cefr-quest/screenshots/';
 let fails = 0, passes = 0;
@@ -18,8 +19,7 @@ const SAVE = { v: 1, name: 'Mia', avatar: 'avatar_girl', startLevel: 'a1', stars
   await ctx.addInitScript(() => { window.__WR_TEST = { holdMs: 0, pinOffer: false }; });   // R4: gate test hooks (never on the live site)
   const page = await ctx.newPage(); const errs = []; page.on('pageerror', e => errs.push(e.message));
   page.on('dialog', d => { errs.push('native dialog: ' + d.message()); d.dismiss(); });
-  await page.goto(BASE + 'index.html'); await page.evaluate(s => localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)), SAVE);
-  await page.reload(); await page.waitForSelector('.realm-node');
+  await seedSave(page, BASE + 'index.html', SAVE); await page.waitForSelector('.realm-node');
   const passGate = async () => { await page.waitForSelector('.pgate'); const a = await page.evaluate(() => WR.parentGate._answer()); for (const d of a) await page.click(`.pgate [data-d="${d}"]`); await page.click('#pgOk'); await page.waitForTimeout(200); };
   // 1. no Reset in the child's Settings
   await page.click('#setBtn'); await page.waitForSelector('.modal');

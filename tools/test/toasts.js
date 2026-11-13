@@ -2,6 +2,7 @@
 // celebrations (stickers, quests, gifts) wait for the result screen; urgent hints ({ now: true }) still show; in landscape
 // pop-ups sit at the top; the welcome after onboarding is the pet's speech line, not a pop-up.   node tools/test/toasts.js
 const { chromium } = require('playwright-core');
+const { seedSave } = require('./_harness');   // seeds the starting save without the first-visit race
 const BASE = (process.env.BASE || 'http://127.0.0.1:18642/').replace(/\/?$/, '/');
 const OUT = '/workspace/cefr-quest/screenshots/';
 let fails = 0, passes = 0;
@@ -23,8 +24,7 @@ const phone = async (browser, vp, extra = {}) => { const ctx = await browser.new
     const tag = vp.width + 'x' + vp.height;
     const ctx = await phone(browser, vp, { deviceScaleFactor: 2 });
     const page = await ctx.newPage(); const errs = []; page.on('pageerror', e => errs.push(e.message));
-    await page.goto(BASE + 'index.html'); await page.evaluate(s => localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)), SAVE);
-    await page.reload(); await page.waitForSelector('.realm-node');
+    await seedSave(page, BASE + 'index.html', SAVE); await page.waitForSelector('.realm-node');
     // timed B2 boss: a sticker pop-up fired mid-question waits
     await page.evaluate(async () => { const b = await WR.bank('b2', 'grammar'); const items = b.filter(q => !q.type || q.type === 'mcq').slice(0, 2).map(q => WR.normalize(q)); WR.startLesson({ realm: 'b2', skill: 'grammar', key: 'grammar', title: 'Boss', items, mode: 'boss' }); });
     await page.waitForSelector('.opt');

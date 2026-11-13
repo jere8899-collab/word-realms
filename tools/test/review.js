@@ -8,6 +8,7 @@
 // node tools/test/review.js            (SHOT=before|after saves screenshots/review_<SHOT>_<profile>_<screen>.png)
 // BASE=https://jere8899-collab.github.io/word-realms/ node tools/test/review.js   runs it against the live site
 const { chromium } = require('playwright-core');
+const { seedSave } = require('./_harness');   // seeds the starting save without the first-visit race
 const BASE = (process.env.BASE || 'http://127.0.0.1:18642/').replace(/\/?$/, '/');
 const SHOT = process.env.SHOT || '';
 const OUT = '/workspace/cefr-quest/screenshots/';
@@ -209,8 +210,7 @@ const nested = () => { const out = []; document.querySelectorAll('#main *').forE
   if (!ONLY) {
     const ctx = await browser.newContext({ viewport: { width: 375, height: 667 }, reducedMotion: 'reduce', isMobile: true, hasTouch: true }); await ctx.addInitScript(() => { window.__WR_CLASSIC_ONLY = true; });   // R18: this test drives the classic multiple-choice flow
     await ctx.route(/supabase\.co|cdn\.jsdelivr\.net/, r => r.abort());
-    const page = await ctx.newPage(); await page.goto(BASE + 'index.html');
-    await page.evaluate(s => localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)), save()); await page.reload({ waitUntil: 'networkidle' }); await page.waitForSelector('.realm-node');
+    const page = await ctx.newPage(); await seedSave(page, BASE + 'index.html', save(), { reload: { waitUntil: 'networkidle' } }); await page.waitForSelector('.realm-node');
     const n = await page.evaluate(() => { WR.confetti(30); return document.querySelectorAll('.confetti').length; });
     ok(n === 0, `reduced motion: no confetti (${n} pieces)`);
     const anim = await page.evaluate(() => getComputedStyle(document.querySelector('.sparkles')).display);

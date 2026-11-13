@@ -2,6 +2,7 @@
 // lock-out is longer (1 min → 5 min → 15 min), the time left is shown, and a grown-up's pass clears the count.
 //   node tools/test/gatelock.js   (SHOT=1 → screenshots/gatelock_*.png)
 const { chromium } = require('playwright-core');
+const { seedSave } = require('./_harness');   // seeds the starting save without the first-visit race
 const BASE = (process.env.BASE || 'http://127.0.0.1:18642/').replace(/\/?$/, '/');
 const OUT = '/workspace/cefr-quest/screenshots/';
 let fails = 0, passes = 0;
@@ -17,8 +18,7 @@ const SAVE = { v: 1, name: 'Mia', avatar: 'avatar_girl', startLevel: 'a1', stars
   await ctx.route(/supabase\.co|cdn\.jsdelivr\.net/, r => r.abort());
   await ctx.addInitScript(() => { window.__WR_TEST = { holdMs: 0, pinOffer: false }; });   // R4: gate test hooks (never on the live site)
   const page = await ctx.newPage(); const errs = []; page.on('pageerror', e => errs.push(e.message));
-  await page.goto(BASE + 'index.html'); await page.evaluate(s => localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)), SAVE);
-  await page.reload(); await page.waitForSelector('.realm-node');
+  await seedSave(page, BASE + 'index.html', SAVE); await page.waitForSelector('.realm-node');
   const openGate = async () => { await page.evaluate(() => { document.querySelectorAll('.modal-bg').forEach(m => m.remove()); WR.parentGate(() => { window.__passed = (window.__passed || 0) + 1; }, { why: 'test' }); }); await page.waitForSelector('.pgate'); };
   const typeWrong = async n => { for (let i = 0; i < n; i++) { const a = await page.evaluate(() => WR.parentGate._answer()); for (const d of String((+a + 1) % 1000)) await page.click(`.pgate [data-d="${d}"]`); await page.click('#pgOk'); await page.waitForTimeout(120); } };
   const lockText = () => page.evaluate(() => { const g = document.querySelector('.pgate'); return g && g.classList.contains('locked') ? document.getElementById('pgErr').textContent : ''; });

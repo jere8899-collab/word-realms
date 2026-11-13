@@ -1,6 +1,7 @@
 // 🧒 R16 (REVIEW-2026-11-01): no teacher jargon on children's screens (Story, Story Quill, Spell Swap & the other gap games,
 // Word Charms); the exam wording is in ⚙️ → 👪 Grown-ups → 📚 What the games teach.   node tools/test/jargon.js
 const { chromium } = require('playwright-core');
+const { seedSave } = require('./_harness');   // seeds the starting save without the first-visit race
 const BASE = (process.env.BASE || 'http://127.0.0.1:18642/').replace(/\/?$/, '/');
 const OUT = '/workspace/cefr-quest/screenshots/';
 let fails = 0, passes = 0;
@@ -17,8 +18,7 @@ const JARGON = /Cambridge|Language focus|Communicative Achievement|Organisation|
   await ctx.addInitScript(() => { window.__WR_TEST = { holdMs: 0, pinOffer: false }; });
   await ctx.route(/supabase\.co|cdn\.jsdelivr\.net/, r => r.abort());
   const page = await ctx.newPage(); const errs = []; page.on('pageerror', e => errs.push(e.message));
-  await page.goto(BASE + 'index.html'); await page.evaluate(s => localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)), SAVE);
-  await page.reload(); await page.waitForSelector('.realm-node');
+  await seedSave(page, BASE + 'index.html', SAVE); await page.waitForSelector('.realm-node');
   const check = async (label, sel, shot) => { await page.waitForSelector(sel); await page.waitForTimeout(500);
     const txt = await page.evaluate(() => document.getElementById('main').innerText); const m = txt.match(JARGON);
     ok(!m, `${label}: no teacher jargon on screen${m ? ` (found "${m[0]}")` : ''}`); if (shot && process.env.SHOT) await page.screenshot({ path: OUT + shot }); return txt; };

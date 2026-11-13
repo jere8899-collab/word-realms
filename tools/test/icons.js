@@ -3,6 +3,7 @@
 // SHOT=before|after  → screenshots/icons_<shot>_<screen>.png (390x844 phone).  BASE=… runs against another copy
 // (e.g. BASE=https://jere8899-collab.github.io/word-realms/ SHOT=before CHECK=0 for "before" shots of the live site).
 const { chromium } = require('playwright-core');
+const { seedSave } = require('./_harness');   // seeds the starting save without the first-visit race
 const BASE = (process.env.BASE || 'http://127.0.0.1:18642/').replace(/\/?$/, '/');
 const SHOT = process.env.SHOT || '', CHECK = process.env.CHECK !== '0';
 const OUT = '/workspace/cefr-quest/screenshots/';
@@ -49,8 +50,7 @@ const audit = () => {
     ok(r.icons + r.svgs > 0, `${label}: shows painted icons (${r.icons} img, ${r.svgs} svg)`);
   };
 
-  await page.goto(BASE + 'index.html'); await page.evaluate(s => { localStorage.clear(); localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)); }, save());
-  await page.reload({ waitUntil: 'networkidle' }); await page.waitForSelector('.realm-node');
+  await seedSave(page, BASE + 'index.html', save(), { clear: true, reload: { waitUntil: 'networkidle' } }); await page.waitForSelector('.realm-node');
   await screen('map', () => WR.go('home'), '.realm-node');
   await screen('realm', () => WR.go('realm', 'a1'), '[data-k="vocab"]');
   await screen('shop', () => WR.go('shop'));

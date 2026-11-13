@@ -2,6 +2,7 @@
 // sign-up → save → wipe → log-in round trip against the real Supabase project (skipped if unreachable).
 // BASE=https://jere8899-collab.github.io/word-realms/ node tools/test/cloud.js  runs it against the live site.
 const { chromium } = require('playwright-core');
+const { seedSave } = require('./_harness');   // seeds the starting save without the first-visit race
 const OUT = '/workspace/cefr-quest/screenshots/';
 const BASE = (process.env.BASE || 'http://127.0.0.1:18642/').replace(/\/?$/, '/');
 const URL = BASE + 'index.html';
@@ -22,9 +23,8 @@ async function device(browser, opts = {}) {
   page.on('console', m => { if (m.type() === 'error' && !/Failed to load resource|net::ERR/.test(m.text())) page.errors.push(m.text()); });
   if (opts.blockCdn) await ctx.route(/cdn\.jsdelivr\.net/, r => r.abort());
   if (opts.blockSupabase) await ctx.route(/supabase\.co/, r => r.abort());
-  await page.goto(URL);
-  if (opts.seed) { await page.evaluate(s => localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)), opts.seed); }
-  await page.reload({ waitUntil: 'networkidle' });
+  if (opts.seed) await seedSave(page, URL, opts.seed, { reload: { waitUntil: 'networkidle' } });
+  else { await page.goto(URL); await page.reload({ waitUntil: 'networkidle' }); }
   return { ctx, page };
 }
 const stars = p => p.evaluate(() => WR.state.stars);

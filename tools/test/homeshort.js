@@ -1,6 +1,7 @@
 // 🏠 R15 (REVIEW-2026-11-01): the home page is at most ~2.5 screens tall on 375×667, Phonics is only the A1 bonus tile,
 // and Daily Quests + the pet fold into one compact row that opens their own screens.   node tools/test/homeshort.js
 const { chromium } = require('playwright-core');
+const { seedSave } = require('./_harness');   // seeds the starting save without the first-visit race
 const BASE = (process.env.BASE || 'http://127.0.0.1:18642/').replace(/\/?$/, '/');
 const OUT = '/workspace/cefr-quest/screenshots/';
 let fails = 0, passes = 0;
@@ -15,8 +16,7 @@ const SAVE = (x = {}) => ({ v: 1, name: 'Mia', avatar: 'avatar_girl', startLevel
   const ctx = await browser.newContext({ viewport: { width: 375, height: 667 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
   await ctx.route(/supabase\.co|cdn\.jsdelivr\.net/, r => r.abort());
   const page = await ctx.newPage(); const errs = []; page.on('pageerror', e => errs.push(e.message));
-  await page.goto(BASE + 'index.html'); await page.evaluate(s => localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)), SAVE());
-  await page.reload(); await page.waitForSelector('.realm-node'); await page.waitForTimeout(800);
+  await seedSave(page, BASE + 'index.html', SAVE()); await page.waitForSelector('.realm-node'); await page.waitForTimeout(800);
   const h = await page.evaluate(() => document.documentElement.scrollHeight);
   console.log('home height', h, (h / 667).toFixed(2), 'screens');
   ok(h <= 667 * 2.5, `home page is ${(h / 667).toFixed(2)} screens tall on 375×667 (≤ 2.5)`);

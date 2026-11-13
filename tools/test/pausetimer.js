@@ -1,6 +1,7 @@
 // ⏸️ R8 (REVIEW-2026-11-01): hiding the app during the timed B2 boss (or the Times-Table sprint) leaves the timer where it
 // was, for any length of time; coming back shows "Ready? 3-2-1" and then the timer carries on.   node tools/test/pausetimer.js
 const { chromium } = require('playwright-core');
+const { seedSave } = require('./_harness');   // seeds the starting save without the first-visit race
 const BASE = (process.env.BASE || 'http://127.0.0.1:18642/').replace(/\/?$/, '/');
 const OUT = '/workspace/cefr-quest/screenshots/';
 let fails = 0, passes = 0;
@@ -16,8 +17,7 @@ const HIDE = hidden => { Object.defineProperty(document, 'hidden', { get: () => 
   const ctx = await browser.newContext({ viewport: { width: 375, height: 667 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
   await ctx.route(/supabase\.co|cdn\.jsdelivr\.net/, r => r.abort());
   const page = await ctx.newPage(); const errs = []; page.on('pageerror', e => errs.push(e.message));
-  await page.goto(BASE + 'index.html'); await page.evaluate(s => localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)), SAVE);
-  await page.reload(); await page.waitForSelector('.realm-node');
+  await seedSave(page, BASE + 'index.html', SAVE); await page.waitForSelector('.realm-node');
   await page.evaluate(async () => { const b = await WR.bank('b2', 'grammar'); const items = b.filter(q => !q.type || q.type === 'mcq').slice(0, 3).map(q => WR.normalize(q)); WR.startLesson({ realm: 'b2', skill: 'grammar', key: 'grammar', title: 'Boss', items, mode: 'boss' }); });
   await page.waitForSelector('#timerBar'); await page.waitForTimeout(1500);
   const w = () => page.evaluate(() => parseFloat(document.getElementById('timerBar').style.width) || 100);

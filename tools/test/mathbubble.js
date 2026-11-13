@@ -4,6 +4,7 @@
 // At 320/360/375/390/412 px, with a long pet line: the bubble shows and is ≥ 120 px wide, Hint + Model are on screen,
 // ≥ 44 px and really tappable, nothing scrolls sideways, the header stays slim; English lesson / speaking / writing pet cards too.
 const { chromium } = require('playwright-core');
+const { seedSave } = require('./_harness');   // seeds the starting save without the first-visit race
 const BASE = (process.env.BASE || 'http://127.0.0.1:18642/').replace(/\/?$/, '/');
 const OUT = '/workspace/cefr-quest/screenshots/';
 let fails = 0, passes = 0;
@@ -33,8 +34,7 @@ const petCard = () => {
     const ctx = await browser.newContext({ viewport: { width: W, height: H }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
     await ctx.route(/supabase\.co|cdn\.jsdelivr\.net/, r => r.abort());
     const page = await ctx.newPage(); const errs = []; page.on('pageerror', e => errs.push(e.message));
-    await page.goto(BASE + 'index.html'); await page.evaluate(s => localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)), SAVE);
-    await page.reload(); await page.waitForSelector('.realm-node');
+    await seedSave(page, BASE + 'index.html', SAVE); await page.waitForSelector('.realm-node');
     // a Grade 2 mixed round whose first question has a 🧮 Model button (both pills showing is the worst case)
     let viz = false;
     for (let k = 0; k < 40 && !viz; k++) { await page.evaluate(() => WR.Math.startLesson({ grade: 2 })); await page.waitForSelector('#hintBtn'); viz = !!(await page.$('#vizBtn')); }

@@ -1,5 +1,6 @@
 // Content Wave 1 + fresh-first rotation: bank sizes, no repeats until the bank is used up, reading rotation, screenshots.
 const { chromium } = require('playwright-core');
+const { seedSave } = require('./_harness');   // seeds the starting save without the first-visit race
 const OUT = '/workspace/cefr-quest/screenshots/';
 const ok = (c, m) => { if (!c) { console.log('FAIL - ' + m); process.exitCode = 1; } else console.log('ok - ' + m); };
 const SAVE = { v: 1, name: 'Jeremy', avatar: 'avatar_mage', startLevel: 'a1', stars: 142, totalCorrect: 57, totalAnswered: 70,
@@ -10,9 +11,7 @@ const SAVE = { v: 1, name: 'Jeremy', avatar: 'avatar_mage', startLevel: 'a1', st
   const page = await (await b.newContext({ viewport: { width: 1200, height: 860 } })).newPage();
   const errors = []; page.on('pageerror', e => errors.push(e.message)); page.on('console', m => { if (m.type() === 'error' && !/font|ERR_/.test(m.text())) errors.push(m.text()); });
   // R18: no flag needed any more: rotation covers the whole bank, new C2 types included
-  await page.goto('http://127.0.0.1:18642/index.html');
-  await page.evaluate(s => localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)), SAVE);
-  await page.reload({ waitUntil: 'networkidle' }); await page.waitForTimeout(600);
+  await seedSave(page, 'http://127.0.0.1:18642/index.html', SAVE, { reload: { waitUntil: 'networkidle' } }); await page.waitForTimeout(600);
 
   const counts = await page.evaluate(() => fetch('data/counts.json').then(r => r.json()));
   ok(counts.questions >= 650, `question bank grew to ${counts.questions}`);

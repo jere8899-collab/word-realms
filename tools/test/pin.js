@@ -3,6 +3,7 @@
 // offers to set a PIN (Skip allowed); cash then takes only the PIN; an old unsalted PIN still works and is upgraded.
 //   node tools/test/pin.js   (SHOT=1 → screenshots/pin_*.png)
 const { chromium } = require('playwright-core');
+const { seedSave } = require('./_harness');   // seeds the starting save without the first-visit race
 const BASE = (process.env.BASE || 'http://127.0.0.1:18642/').replace(/\/?$/, '/');
 const OUT = '/workspace/cefr-quest/screenshots/';
 let fails = 0, passes = 0;
@@ -19,8 +20,7 @@ const SAVE = { v: 1, name: 'Mia', avatar: 'avatar_girl', startLevel: 'a1', stars
     await ctx.route(/supabase\.co|cdn\.jsdelivr\.net/, r => r.abort());
     if (init) await ctx.addInitScript(init);
     const page = await ctx.newPage(); page.errs = []; page.on('pageerror', e => page.errs.push(e.message));
-    await page.goto(BASE + 'index.html'); await page.evaluate(s => localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)), save);
-    await page.reload(); await page.waitForSelector('.realm-node'); return page;
+    await seedSave(page, BASE + 'index.html', save); await page.waitForSelector('.realm-node'); return page;
   };
   // 1. live-like: no hooks
   const live = await open(null);

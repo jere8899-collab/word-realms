@@ -1,5 +1,6 @@
 // 📱 Light art: phones get small WebP art, desktops the 1280 px WebP, and the PNG/SVG fallbacks still work.
 const { chromium } = require('playwright-core');
+const { seedSave } = require('./_harness');   // seeds the starting save without the first-visit race
 const OUT = '/workspace/cefr-quest/screenshots/';
 const URL = 'http://127.0.0.1:18642/index.html';
 const ok = (c, m) => { if (!c) { console.error('FAIL', m); process.exitCode = 1; } else console.log('ok', m); };
@@ -18,8 +19,7 @@ async function run(browser, vp, label, opts = {}) {
   page.on('console', m => { if (m.type() === 'error' && !/Failed to load resource/.test(m.text())) errors.push(m.text()); });
   if (opts.blockWeb) await ctx.route('**/assets/web/**', r => r.abort());
   page.on('response', async r => { const u = r.url(); if (/\.(png|jpe?g|webp|svg)$/.test(u)) { let n = 0; try { n = (await r.body()).length; } catch (e) {} imgs.push({ u: u.replace(/.*18642\//, ''), n }); } });
-  await page.goto(URL); await page.evaluate(s => localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)), save());
-  await page.reload({ waitUntil: 'networkidle' }); await page.waitForTimeout(500);
+  await seedSave(page, URL, save(), { reload: { waitUntil: 'networkidle' } }); await page.waitForTimeout(500);
   await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight)); await page.waitForTimeout(700);
   await page.evaluate(() => window.scrollTo(0, 0)); await page.waitForTimeout(200);
   if (opts.shot) await page.screenshot({ path: OUT + `lightart_${label}_map.png` });

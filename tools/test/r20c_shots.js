@@ -1,6 +1,7 @@
 // 📸 R20 wave 3 screenshots: a new C1 Echo Well free-answer prompt and a new B2 Story Quill task with its model answer (3 crowns).
 // Run: node tools/test/r20c_shots.js (game served on :18642)
 const { chromium } = require('playwright-core');
+const { seedSave } = require('./_harness');   // seeds the starting save without the first-visit race
 const BASE = (process.env.BASE || 'http://127.0.0.1:18642/').replace(/\/?$/, '/'), OUT = '/workspace/cefr-quest/screenshots/';
 let fails = 0; const ok = (c, m) => { if (!c) { fails++; console.error('FAIL', m); process.exitCode = 1; } else console.log('ok', m); };
 const today = () => { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
@@ -14,8 +15,7 @@ const SAVE = { v: 1, name: 'Mia', avatar: 'avatar_girl', startLevel: 'b2', stars
   await ctx.addInitScript(() => { window.__WR_TEST = { holdMs: 0, pinOffer: false }; });
   await ctx.route(/supabase\.co|cdn\.jsdelivr\.net/, r => r.abort());
   const page = await ctx.newPage(); const errs = []; page.on('pageerror', e => errs.push(e.message));
-  await page.goto(BASE + 'index.html'); await page.evaluate(s => localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)), SAVE);
-  await page.reload(); await page.waitForSelector('.realm-node');
+  await seedSave(page, BASE + 'index.html', SAVE); await page.waitForSelector('.realm-node');
   const clean = async () => { await page.evaluate(() => document.querySelectorAll('.confetti,.toast').forEach(e => e.remove())); await page.waitForTimeout(300); };
   // 🎤 C1 free-answer prompt (wave 3)
   await page.evaluate(async () => { const b = await WR.bank('c1', 'speaking'); WR.startSpeaking('c1', { items: [b.find(x => x.id === 'c1-sp33')] }); });

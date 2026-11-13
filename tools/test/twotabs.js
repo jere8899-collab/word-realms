@@ -3,6 +3,7 @@
 // lesson running in B keeps its progress and adds to A's, and a reset in one tab sends the other to onboarding.
 //   node tools/test/twotabs.js
 const { chromium } = require('playwright-core');
+const { seedSave } = require('./_harness');   // seeds the starting save without the first-visit race
 const BASE = (process.env.BASE || 'http://127.0.0.1:18642/').replace(/\/?$/, '/');
 let fails = 0, passes = 0;
 const ok = (c, m) => { if (!c) { fails++; console.error('FAIL', m); process.exitCode = 1; } else { passes++; console.log('ok', m); } };
@@ -17,8 +18,7 @@ const SAVE = { v: 1, name: 'Mia', avatar: 'avatar_girl', startLevel: 'a1', stars
   await ctx.route(/supabase\.co|cdn\.jsdelivr\.net/, r => r.abort());
   const errs = [];
   const B = await ctx.newPage(); B.on('pageerror', e => errs.push(e.message));
-  await B.goto(BASE + 'index.html'); await B.evaluate(s => localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)), SAVE);
-  await B.reload(); await B.waitForSelector('.realm-node');
+  await seedSave(B, BASE + 'index.html', SAVE); await B.waitForSelector('.realm-node');
   const A = await ctx.newPage(); A.on('pageerror', e => errs.push(e.message));
   await A.goto(BASE + 'index.html'); await A.waitForSelector('.realm-node');
   const s0 = await A.evaluate(() => WR.state.stars);

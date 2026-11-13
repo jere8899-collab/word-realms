@@ -116,7 +116,9 @@ const SAVE = JSON.stringify({ v: 1, name: 'Jeremy', avatar: 'avatar_mage', start
   const t2 = await page.locator('#storyText').innerText();
   assert((await page.locator('.story-head').innerText()).includes('Picnic in the Meadow') && t2.includes('Puffbun') && !/\[\[|\{/.test(t2), 'chapter 2 reads with the pet name filled in');
   assert(await page.evaluate(() => /story_a1_2/.test(document.querySelector('.story-pic img').src)), 'chapter 2 has its own picture');
-  const st2 = await page.evaluate(() => WR.state.stars);
+  // the Task 13 little quest ("finish 3 rounds", every other day) would add +2 on today's 3rd round: mark it done so the check
+  // counts only the chapter's own stars, on any date
+  const st2 = await page.evaluate(() => { WR.Again.state(); WR.state.again.quest = { day: WR.today(), id: 'rounds', n: 3, goal: 3, done: true }; WR.save(); return WR.state.stars; });
   await answer(page, false);
   const wn = await page.locator('.story-fb .why-not').innerText();
   assert(/Why not/.test(wn) && wn.includes('Puffbun') && !/\{/.test(wn), 'a wrong pick shows its hand-written why-not note');

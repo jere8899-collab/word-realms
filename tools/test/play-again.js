@@ -37,7 +37,9 @@ const SAVE = { v: 1, name: 'Mei', stars: 40, gems: 0, xp: 0, avatar: { name: 'Me
     WR.state.again.quest = { day: WR.today(), id: 'rounds', n: 2, goal: 3, done: false };
     const blocked = WR.Again.onRound();
     const capped = WR.state.stars === stars3;
-    const mon = (() => { const d = new Date(); d.setDate(d.getDate() - ((d.getDay() + 6) % 7)); return d; })();
+    // last week's Monday: a week that cannot already hold today's "play" day from the rounds above (on a Friday, the rest day
+    // was today and stayed "play"), so the check works on any date
+    const mon = (() => { const d = new Date(); d.setDate(d.getDate() - ((d.getDay() + 6) % 7) - 7); return d; })();
     for (let i = 0; i < 5; i++) { const t = new Date(mon); t.setDate(mon.getDate() + i); WR.Again.markDay(WR.dayKey(t.getTime()), i === 4 ? 'rest' : 'play'); }
     const week = WR.Again.state();
     return { before, migrated, star0, steps: steps.map(s => s && s.fill), hatched: a.egg.hatched, stickers: a.stickers.slice(), tricks: a.tricks.slice(), stars3, capped, blockedFill: blocked.fill, weekGot: week.week.got, weekSticker: week.week.sticker, restDay: Object.values(week.week.days).includes('rest') };

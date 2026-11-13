@@ -3,6 +3,7 @@
 // Teacher mode and Cloud Castle "Log out & clear device" are gated; children see no prices; the gate fits 375×667 and 320×658
 // with the number pad visible; no console errors.   node tools/test/parentgate.js   (SHOT=1 saves screenshots/parentgate_*.png)
 const { chromium } = require('playwright-core');
+const { seedSave } = require('./_harness');   // seeds the starting save without the first-visit race
 const BASE = (process.env.BASE || 'http://127.0.0.1:18642/').replace(/\/?$/, '/');
 const OUT = '/workspace/cefr-quest/screenshots/';
 let fails = 0, passes = 0;
@@ -23,8 +24,7 @@ const MOB = { deviceScaleFactor: 2, isMobile: true, hasTouch: true };
     const page = await ctx.newPage(); const errs = [];
     page.on('pageerror', e => errs.push(e.message));
     page.on('console', m => { if (m.type() === 'error' && !/Failed to load resource|ERR_FAILED|cloud library|supabase/i.test(m.text())) errs.push(m.text()); });
-    await page.goto(BASE + 'index.html'); await page.evaluate(s => localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)), save());
-    await page.reload({ waitUntil: 'networkidle' }); await page.waitForSelector('.realm-node');
+    await seedSave(page, BASE + 'index.html', save(), { reload: { waitUntil: 'networkidle' } }); await page.waitForSelector('.realm-node');
     // spy on the payment stub
     await page.evaluate(() => { window.__buys = []; const p = PaymentHook.purchase.bind(PaymentHook); PaymentHook.purchase = async it => { window.__buys.push(it.id); return p(it); }; });
     const type = async s => { for (const d of s) await page.click(`.pgate [data-d="${d}"]`); };

@@ -3,6 +3,7 @@
 // same button (the worst case: a stale button). We count WR.view() calls (one per new screen) and finish() payouts
 // (WR.activityDone / WR.petGainXP calls).   node tools/test/doubletap.js   (game served on :18642)
 const { chromium } = require('playwright-core');
+const { seedSave } = require('./_harness');   // seeds the starting save without the first-visit race
 const BASE = (process.env.BASE || 'http://127.0.0.1:18642/').replace(/\/?$/, '/');
 let fails = 0, passes = 0;
 const ok = (c, m) => { if (!c) { fails++; console.error('FAIL', m); process.exitCode = 1; } else { passes++; console.log('ok', m); } };
@@ -49,8 +50,7 @@ async function open(browser) {
   await ctx.route(/supabase\.co|cdn\.jsdelivr\.net|fonts\.(googleapis|gstatic)\.com/, r => r.abort());
   const p = await ctx.newPage(); p.__errs = [];
   p.on('pageerror', e => p.__errs.push(e.message));
-  await p.goto(BASE + 'index.html'); await p.evaluate(s => localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)), SAVE());
-  await p.reload(); await p.waitForFunction(() => window.WR && WR.realms && document.querySelector('.topbar'), null, { timeout: 20000 });
+  await seedSave(p, BASE + 'index.html', SAVE()); await p.waitForFunction(() => window.WR && WR.realms && document.querySelector('.topbar'), null, { timeout: 20000 });
   await p.evaluate(SPY); return p;
 }
 // play a whole round with double taps on every advance; returns { steps, views[], acts, xps }

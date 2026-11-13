@@ -156,7 +156,9 @@ async function answer(page, right) {
     ok(/Rematch/.test(await page.textContent('.gcard[data-gb="g12"] .btn')), `${tag} beaten guardian offers a rematch`);
     const goal2 = await page.textContent('#mathGoal'); ok(!/Bramble/.test(goal2), `${tag} next goal moves on after the win (${goal2.trim().replace(/\s+/g, ' ').slice(0, 90)})`);
     await page.click('.gcard[data-gb="g12"] .btn'); await page.waitForSelector('#bossFace');
-    const s2 = await page.evaluate(() => WR.state.stars);
+    // the Task 13 little quest ("finish 3 rounds", every other day) would add +2 on today's 3rd round: mark it done so the check
+    // counts only what the rematch itself pays, on any date
+    const s2 = await page.evaluate(() => { WR.Again.state(); WR.state.again.quest = { day: WR.today(), id: 'rounds', n: 3, goal: 3, done: true }; WR.save(); return WR.state.stars; });
     for (let i = 0; i < 10; i++) { await answer(page, false); await answer(page, false); await page.click('#mnext'); await page.waitForTimeout(40); }
     await page.waitForSelector('.result');
     const lost = await page.evaluate(() => ({ h: document.querySelector('.result h1').innerText, stars: WR.state.stars, rec: WR.state.math.bosses.g12 }));

@@ -1,6 +1,7 @@
 // R12 + R13 (REVIEW-2026-11-01), N6 + N9 (REVIEW-2026-11-02: a thin ring on a chip as tall as its neighbours; a REAL ≥ 44 px glossary tap box): the ☁️ Cloud chip is visible (≥ 3:1 outline on the chip and the cloud), and story glossary
 // words have a ≥ 40 px tall tap area with the line height unchanged.   node tools/test/tinybits.js   (SHOT=1)
 const { chromium } = require('playwright-core');
+const { seedSave } = require('./_harness');   // seeds the starting save without the first-visit race
 const BASE = (process.env.BASE || 'http://127.0.0.1:18642/').replace(/\/?$/, '/');
 const OUT = '/workspace/cefr-quest/screenshots/';
 let fails = 0, passes = 0;
@@ -17,8 +18,7 @@ const PROFILES = [['se1', 320, 568], ['se', 375, 667], ['pixel', 393, 851], ['pr
     const ctx = await browser.newContext({ viewport: { width: W, height: H }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
     await ctx.route(/supabase\.co|cdn\.jsdelivr\.net/, r => r.abort());
     const page = await ctx.newPage(); const errs = []; page.on('pageerror', e => errs.push(e.message));
-    await page.goto(BASE + 'index.html'); await page.evaluate(s => localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)), SAVE);
-    await page.reload(); await page.waitForSelector('#cloudChip .wr-icon, #cloudChip'); await page.waitForTimeout(600);
+    await seedSave(page, BASE + 'index.html', SAVE); await page.waitForSelector('#cloudChip .wr-icon, #cloudChip'); await page.waitForTimeout(600);
     // R12: contrast of the chip outline and the cloud's outline against the chip background
     const c = await page.evaluate(() => {
       const lum = s => { const m = s.match(/[\d.]+/g).map(Number).slice(0, 3).map(v => { v /= 255; return v <= .03928 ? v / 12.92 : Math.pow((v + .055) / 1.055, 2.4); }); return .2126 * m[0] + .7152 * m[1] + .0722 * m[2]; };

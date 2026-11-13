@@ -3,6 +3,7 @@
 //  R10 lesson HUD chips sit on one line each, no stray "·", bubble ≥13 px or hidden (<340 px), at 320–430 px
 //  R11 no painted icon starts a line on its own, no button text wraps (7 profiles)
 const { chromium } = require('playwright-core');
+const { seedSave } = require('./_harness');   // seeds the starting save without the first-visit race
 const BASE = (process.env.BASE || 'http://127.0.0.1:18642/').replace(/\/?$/, '/');
 const OUT = '/workspace/cefr-quest/screenshots/';
 const ONLY = (process.env.ONLY || 'R9,R10,R11').split(',');
@@ -20,8 +21,7 @@ const PROFILES = [['se1', 320, 568], ['zfold', 344, 882], ['galaxyA', 360, 780],
     const ctx = await browser.newContext({ viewport: { width: W, height: H }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
     await ctx.route(/supabase\.co|cdn\.jsdelivr\.net/, r => r.abort());
     const page = await ctx.newPage(); const errs = []; page.on('pageerror', e => errs.push(e.message));
-    await page.goto(BASE + 'index.html'); await page.evaluate(s => localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)), SAVE);
-    await page.reload(); await page.waitForSelector('.realm-node');
+    await seedSave(page, BASE + 'index.html', SAVE); await page.waitForSelector('.realm-node');
     if (ONLY.includes('R9') && W <= 375) {
       for (let rep = 0; rep < 6; rep++) {
         await page.evaluate(() => WR.playSpecial('a1')); await page.waitForSelector('.mcard'); await page.waitForTimeout(500);
@@ -93,8 +93,7 @@ const PROFILES = [['se1', 320, 568], ['zfold', 344, 882], ['galaxyA', 360, 780],
       };
       const big = W === 375 || W === 320;
       // locked realm cards on home
-      await page.evaluate(s => { localStorage.setItem('wordRealms.save.v1', JSON.stringify({ ...s, settings: { ...s.settings, unlockAll: false } })); }, SAVE);
-      await page.reload(); await page.waitForSelector('.realm-node');
+      await seedSave(page, BASE + 'index.html', { ...SAVE, settings: { ...SAVE.settings, unlockAll: false } }); await page.waitForSelector('.realm-node');
       await page.evaluate(() => { const n = [...document.querySelectorAll('.realm-node.locked')].pop(); n && n.scrollIntoView({ block: 'center' }); });
       await scan('home', big);
       await page.evaluate(() => WR.go('charms', 'a1')); await page.waitForSelector('.ch-how'); await scan('charms', big);
