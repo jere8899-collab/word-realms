@@ -3,6 +3,9 @@ EN-5a: ppever (fill ever/never/just/already/yet), ppvsps (sort time words: finis
 pastcont (the line ladder as a timeline: the long "was …ing" action is already going on when the short event happens).
 Every hook picture is a GenerateImage painting installed with tools/install_story_img.py --dir lessons --batch <art_id>=<png>."""
 PACK = "en-b1"
+# how-to-play endings shared by the widget prompts (one wording for every sort / fill in this pack)
+SORT_HOW = "Drag each card into a basket, or tap it and then a basket."
+FILL_HOW = "Drag the right words into each gap, or tap them."
 LESSONS = [
 dict(id="en.b1.ppever", title="ever, never, just, already, yet", icon="🍄", at=dict(realm="b1", skill="grammar"),
   match=[dict(re=r"present perfect (with ever|for experience)", field="explain")],
@@ -30,7 +33,7 @@ dict(id="en.b1.ppever", title="ever, never, just, already, yet", icon="🍄", at
       explain="Just sits between have and the done-word: I have just finished, a moment ago.")],
   reteach=dict(text="Here's another way. Imagine a clock that points at right now. Just is one tick ago. Already is earlier than you expected. Yet is still waiting for it, so it comes at the end. Ever looks back over your whole life in a question. Never says zero times in your whole life. And the little words sit after have or has, except yet, which waits at the end.",
     examples=["⏱️ one tick ago → I have just eaten.", "🏃 earlier than expected → She has already left.", "⏳ still waiting → Has he come yet?", "🌍 your whole life → Have you ever flown? I have never flown."],
-    discover=dict(kind="sort", text="Is each sentence right, or does it need fixing? Drag each card into a basket, or tap it and then a basket.",
+    discover=dict(kind="sort", text="Is each sentence right, or does it need fixing? " + SORT_HOW,
       hint="Ever is for questions. Yet goes at the end. Just and already sit after have or has.",
       bins=[dict(id="ok", label="sounds right", icon="✅"), dict(id="fix", label="needs fixing", icon="🔧")],
       items=[dict(t="Have you ever been to the zoo?", bin="ok", why="A question about your life: Have you ever …? Right!"),
@@ -55,7 +58,7 @@ dict(id="en.b1.ppvsps", title="have done or did?", icon="🗓️", at=dict(realm
   match=[dict(re=r"present perfect for a period|past simple with a finished time", field="explain")],
   art="lesson_en_b1_ppvsps", art_alt="In a sunny glade of the Whispering Forest, Toby in a green cloak sits on a mossy log between a closed old diary with a pressed flower on it and an open treasure box full of sparkles, while Hoot the owl watches",
   hook=dict(text="Toby and Hoot keep two kinds of memories. The old diary is closed: it holds days that are over, like yesterday. The sparkly treasure box is still open: it keeps filling up with things from up to now, like this week. Which memories go where? The time words tell us: did it, or have done it? Let's sort them."),
-  discover=dict(kind="sort", text="Sort the time words. Is the time finished and over, or does it reach up to now? Drag each card into a basket, or tap it and then a basket.",
+  discover=dict(kind="sort", text="Sort the time words. Is the time finished and over, or does it reach up to now? " + SORT_HOW,
     hint="Ask: is this time over? Yesterday and last week are over. This week and so far are still going on.",
     bins=[dict(id="did", label="finished time: did", icon="📕"), dict(id="have", label="up to now: have done", icon="🧰")],
     items=[dict(t="yesterday", bin="did", why="Yesterday is over: I saw a deer yesterday."),
@@ -80,7 +83,7 @@ dict(id="en.b1.ppvsps", title="have done or did?", icon="🗓️", at=dict(realm
       explain="Two days ago is a finished time, so use the past: I lost my hat.")],
   reteach=dict(text="Here's another way. Think of two kinds of boxes, like Toby's diary and his treasure box. A closed box is a time that is over: yesterday, last week, in 2020. Put the past inside it: I went, I saw. An open box is a time that is still open, up to now: this week, so far, ever, yet. Put have or has inside it: I have been, I have seen. If you can say the exact finished time, the box is closed!",
     examples=["📦 closed box: I saw a rainbow yesterday.", "📬 open box: I have seen two rainbows this week.", "📦 closed box: She went to Malaysia in 2023.", "📬 open box: Have you ever been to Malaysia?"],
-    discover=dict(kind="fill", text="Closed box or open box? Drag the right words into each gap, or tap them.",
+    discover=dict(kind="fill", text="Closed box or open box? " + FILL_HOW,
       hint="Last Sunday and yesterday are closed boxes: went, baked. So far and this week are open: have been, has baked.",
       tiles=["went", "have been", "baked", "has baked"],
       items=[dict(s="I ___ to Sentosa last Sunday.", a="went", why="Last Sunday is a closed box: I went."),
@@ -124,7 +127,7 @@ dict(id="en.b1.pastcont", title="was doing when …", icon="🌧️", at=dict(re
       explain="The long thing gets was + -ing (was sleeping), and the short thing gets the past (rang).")],
   reteach=dict(text="Here's another way. Think of a movie. The long thing is the movie that is playing: Lily was reading, the rain was falling. Then a pop-up suddenly appears on the screen: Puffbun jumped out! The movie that keeps playing gets was or were plus -ing. The quick pop-up gets the past, like jumped, rang or fell.",
     examples=["🎬 the movie: Hoot was reading …", "💥 the pop-up: … when the lamp went out.", "🎬 the movie: They were singing …", "💥 the pop-up: … when the bell rang."],
-    discover=dict(kind="fill", text="Movie or pop-up? Drag the right words into each gap, or tap them.",
+    discover=dict(kind="fill", text="Movie or pop-up? " + FILL_HOW,
       hint="The long movie gets was or were + -ing. The quick pop-up gets the past.",
       tiles=["was reading", "started", "were playing", "rang"],
       items=[dict(s="I ___ when the lights went out.", a="was reading", why="Reading was the movie going on: was reading."),
