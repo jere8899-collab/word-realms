@@ -494,8 +494,9 @@ function finish(lost) {
   // ➡️ T8: one clear next step (the next unplayed, else weakest, skill in this realm), with Play again / Back as secondaries
   const nx = L.review || L.check ? null : WR.nextSkill(L.realm.id, L.skill);
   // 📜 a result below the pass mark offers the first lesson on this skill not yet passed (a soft nudge: practice never locks)
-  const skillRound = !L.review && WR.Pass && WR.SKILLS.some(k => k.id === (L.check ? L.check.skill : L.key));
-  const help = skillRound && !WR.passes(score, n) ? WR.Pass.helpHTML(L.realm.id, L.check ? L.check.skill : L.key) : "";   // 🫶 after 2 tries in a row
+  const passSkill = L.check ? L.check.skill : L.key;   // the skill this round's pass mark is about
+  const skillRound = !L.review && WR.Pass && WR.SKILLS.some(k => k.id === passSkill);
+  const help = skillRound && !WR.passes(score, n) ? WR.Pass.helpHTML(L.realm.id, passSkill) : "";   // 🫶 after 2 tries in a row
   const nudge = !help && WR.Learn && !L.review && !L.check && L.skill && !WR.passes(score, n) ? WR.Learn.nudgeHTML(WR.Learn.nudgeFor(WR.Learn.forSkill(L.realm.id, L.skill))) : "";
   const mainBtn = L.review ? `<button class="btn mint" id="nextStep">Back to the garden 🌷</button>`
     : nx ? `<button class="btn mint" id="nextStep">Next: ${nx.icon} ${WR.esc(nx.name)} →</button>` : `<button class="btn mint" id="nextStep">Back to ${WR.esc(L.realm.name)} →</button>`;
@@ -517,7 +518,7 @@ function finish(lost) {
   if (WR.$("#again")) WR.$("#again").onclick = () => opts.replay ? opts.replay() : WR.startLesson({ realm: opts.realm.id, skill: opts.skill, key: opts.key, title: opts.title });
   const bk = WR.$("#back"); if (bk) bk.onclick = () => leave(opts);
   if (nudge) WR.Learn.bindNudge({ screen: "realm", arg: opts.realm.id });
-  if (help) WR.Pass.bindHelp(opts.realm.id, opts.check ? opts.check.skill : opts.key);
+  if (help) WR.Pass.bindHelp(opts.realm.id, passSkill);
   WR.$("#nextStep").onclick = () => opts.onNext ? opts.onNext() : nx && !opts.review ? WR.startLesson({ realm: opts.realm.id, skill: nx.id, key: nx.id, title: `${nx.name} · ${opts.realm.modeName}` }) : leave(opts);
   if (lv && lv.evolved) setTimeout(() => WR.modal(`<h2>✨ Evolution! ✨</h2><div class="petbox cheer" style="width:180px;height:180px;margin:auto">${WR.petHTML()}</div><p><b>${WR.userText(WR.state.pet.name)}</b> became <b>${WR.petInfo().stages[WR.petStage(lv.level)]}</b>!</p><button class="btn" onclick="this.closest('.modal-bg').remove()">Hooray!</button>`), 600);
 }
