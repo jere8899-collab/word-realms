@@ -49,8 +49,7 @@ const audit = () => {
     ok(r.icons + r.svgs > 0, `${label}: shows painted icons (${r.icons} img, ${r.svgs} svg)`);
   };
 
-  await page.goto(BASE + 'index.html'); await page.evaluate(() => localStorage.clear());
-  await page.evaluate(s => localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)), save());
+  await page.goto(BASE + 'index.html'); await page.evaluate(s => { localStorage.clear(); localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)); }, save());
   await page.reload({ waitUntil: 'networkidle' }); await page.waitForSelector('.realm-node');
   await screen('map', () => WR.go('home'), '.realm-node');
   await screen('realm', () => WR.go('realm', 'a1'), '[data-k="vocab"]');

@@ -14,12 +14,14 @@ const SAVE = { v: 1, name: 'Mia', avatar: 'avatar_girl', startLevel: 'c2', stars
 const overlap = (page, sel) => page.evaluate(sel => { const ts = [...document.querySelectorAll('.toast')].map(t => t.getBoundingClientRect());
   return [...document.querySelectorAll(sel)].filter(e => { const rg = document.createRange(); rg.selectNodeContents(e); const r = /^H\d$/.test(e.tagName) ? rg.getBoundingClientRect() : e.getBoundingClientRect();   // a heading: its text, not its full-width box
     return ts.some(t => t.left < r.right && t.right > r.left && t.top < r.bottom && t.bottom > r.top); }).map(e => e.textContent.trim().slice(0, 20)); }, sel);
+// a phone-sized context with the cloud and CDN cut off (the same set-up for every case below)
+const phone = async (browser, vp, extra = {}) => { const ctx = await browser.newContext({ viewport: vp, isMobile: true, hasTouch: true, ...extra });
+  await ctx.route(/supabase\.co|cdn\.jsdelivr\.net/, r => r.abort()); return ctx; };
 (async () => {
   const browser = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox'] });
   for (const vp of [{ width: 375, height: 667 }, { width: 844, height: 390 }, { width: 360, height: 780 }]) {
     const tag = vp.width + 'x' + vp.height;
-    const ctx = await browser.newContext({ viewport: vp, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
-    await ctx.route(/supabase\.co|cdn\.jsdelivr\.net/, r => r.abort());
+    const ctx = await phone(browser, vp, { deviceScaleFactor: 2 });
     const page = await ctx.newPage(); const errs = []; page.on('pageerror', e => errs.push(e.message));
     await page.goto(BASE + 'index.html'); await page.evaluate(s => localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)), SAVE);
     await page.reload(); await page.waitForSelector('.realm-node');
@@ -46,8 +48,7 @@ const overlap = (page, sel) => page.evaluate(sel => { const ts = [...document.qu
     await ctx.close();
   }
   // onboarding: the welcome is the pet's line, not a pop-up over the name
-  const ctx = await browser.newContext({ viewport: { width: 844, height: 390 }, isMobile: true, hasTouch: true });
-  await ctx.route(/supabase\.co|cdn\.jsdelivr\.net/, r => r.abort());
+  const ctx = await phone(browser, { width: 844, height: 390 });
   const p = await ctx.newPage(); await p.goto(BASE + 'index.html'); await p.evaluate(() => localStorage.clear()); await p.reload();
   await p.waitForSelector('#nm'); await p.fill('#nm', 'Mia'); await p.click('#n1'); await p.click('#n2'); await p.waitForSelector('#go'); await p.click('#go');
   await p.waitForSelector('.realm-node'); await p.waitForTimeout(150);

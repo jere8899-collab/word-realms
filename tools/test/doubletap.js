@@ -43,9 +43,10 @@ async function answerAny(p) {
 }
 const dbl = (p, sel) => p.evaluate(sel => { window.__c.view = 0; const b = document.querySelector(sel); b.click(); b.click(); }, sel);
 async function open(browser) {
-  const ctx = await browser.newContext({ viewport: { width: 375, height: 667 }, deviceScaleFactor: 1, isMobile: true, hasTouch: true }); await ctx.addInitScript(() => { window.__WR_NO_RECALL = true; });   // ✍️ BRIEF-T7: this test isn't about type-it-first questions
+  const ctx = await browser.newContext({ viewport: { width: 375, height: 667 }, deviceScaleFactor: 1, isMobile: true, hasTouch: true }); 
+  // ✍️ BRIEF-T7: this test isn't about type-it-first questions; no speech recognition
+  await ctx.addInitScript(() => { window.__WR_NO_RECALL = true; window.SpeechRecognition = undefined; window.webkitSpeechRecognition = undefined; });
   await ctx.route(/supabase\.co|cdn\.jsdelivr\.net|fonts\.(googleapis|gstatic)\.com/, r => r.abort());
-  await ctx.addInitScript(() => { window.SpeechRecognition = undefined; window.webkitSpeechRecognition = undefined; });
   const p = await ctx.newPage(); p.__errs = [];
   p.on('pageerror', e => p.__errs.push(e.message));
   await p.goto(BASE + 'index.html'); await p.evaluate(s => localStorage.setItem('wordRealms.save.v1', JSON.stringify(s)), SAVE());
