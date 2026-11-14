@@ -1360,6 +1360,714 @@
    ],
    "grown": "👪 Passive voice (B1 Preliminary): present and past simple passive, is/are/was/were + past participle, with an optional by-agent; used when the thing affected matters more than the doer. The re-teach sorts active (doer first) and passive (thing first) word order.",
    "pack": "en-b1"
+  },
+  {
+   "id": "en.b1.relative",
+   "title": "who, which, that",
+   "icon": "🪧",
+   "at": {
+    "realm": "b1",
+    "skill": "grammar"
+   },
+   "match": [
+    {
+     "re": "relative clause|who for people|which for things|non-defining clause",
+     "field": "explain"
+    }
+   ],
+   "art": "lesson_en_b1_relative",
+   "art_alt": "In a sunny lavender forest, Lily in a yellow raincoat and purple boots points at a wooden picture board with five ribboned pictures: a fox, an owl with round glasses, a bunny holding a carrot, a mushroom and a small treasure chest, while Sumi the little fox peeks out of her backpack",
+   "hook": {
+    "text": "Lily has found a picture board in the Whispering Forest! There is a fox, an owl with round glasses, a bunny with a carrot, a spotty mushroom and a little treasure chest. Lily points and says: Look at the owl who wears glasses! And the chest which holds treasure! Little joining words like who and which tell us which one we mean. Let's sort them.",
+    "say": "Lily has found a picture board in the Whispering Forest! There is a fox, an owl with round glasses, a bunny with a carrot, a spotty mushroom and a little treasure chest. Lily points and says: Look at the owl who wears glasses! And the chest which holds treasure! Little joining words like who and which tell us which one we mean. Let's sort them."
+   },
+   "discover": {
+    "kind": "sort",
+    "text": "Is it a someone or a something? Pick the joining word for each picture. Drag each card into a basket, or tap it and then a basket.",
+    "hint": "Someones are people and forest friends who talk, like Hoot and Sumi: use who. Somethings are things: use which.",
+    "bins": [
+     {
+      "id": "who",
+      "label": "someone: who",
+      "icon": "🧒"
+     },
+     {
+      "id": "which",
+      "label": "something: which",
+      "icon": "📦"
+     }
+    ],
+    "items": [
+     {
+      "t": "the owl … wears round glasses",
+      "bin": "who",
+      "why": "The owl is a forest friend who talks, a someone: the owl who wears round glasses."
+     },
+     {
+      "t": "the chest … holds treasure",
+      "bin": "which",
+      "why": "A chest is a thing: the chest which holds treasure."
+     },
+     {
+      "t": "the bunny … is holding a carrot",
+      "bin": "who",
+      "why": "The bunny is a forest friend, a someone: the bunny who is holding a carrot."
+     },
+     {
+      "t": "the mushroom … has white spots",
+      "bin": "which",
+      "why": "A mushroom is a thing: the mushroom which has white spots."
+     },
+     {
+      "t": "the girl … has a yellow raincoat",
+      "bin": "who",
+      "why": "Lily is a person: the girl who has a yellow raincoat."
+     },
+     {
+      "t": "the umbrella … Lily is carrying",
+      "bin": "which",
+      "why": "An umbrella is a thing: the umbrella which Lily is carrying."
+     }
+    ],
+    "say": "Is it a someone or a something? Pick the joining word for each picture. Drag each card into a basket, or tap it and then a basket."
+   },
+   "rule": {
+    "text": "Who, which and that join two ideas and tell us which one we mean. Use who for people, and for story friends who talk, like Hoot. Use which for things. That is a helper that works for people and for things. So we can say the girl who sings, or the girl that sings, and the chest which holds treasure, or the chest that holds treasure.",
+    "examples": [
+     "Lily is the girl who has a yellow raincoat.",
+     "This is the chest which holds the treasure.",
+     "Sumi is the fox that lives in Lily's backpack.",
+     "The bus that goes to the zoo is here."
+    ],
+    "say": "Who, which and that join two ideas and tell us which one we mean. Use who for people, and for story friends who talk, like Hoot. Use which for things. That is a helper that works for people and for things. So we can say the girl who sings, or the girl that sings, and the chest which holds treasure, or the chest that holds treasure.",
+    "sayEx": [
+     "Lily is the girl who has a yellow raincoat.",
+     "This is the chest which holds the treasure.",
+     "Sumi is the fox that lives in Lily's backpack.",
+     "The bus that goes to the zoo is here."
+    ]
+   },
+   "check": [
+    {
+     "q": "Mrs Tan is the teacher ___ teaches us music.",
+     "options": [
+      "who",
+      "which",
+      "where"
+     ],
+     "answer": 0,
+     "notes": {
+      "which": "Which is for things. Mrs Tan is a person, so use who.",
+      "where": "Where is for places, like the park where we play. For a person, use who."
+     },
+     "explain": "Mrs Tan is a person, so the joining word is who: the teacher who teaches us music.",
+     "say": "Mrs Tan is the teacher blank teaches us music."
+    },
+    {
+     "q": "This is the bag ___ I got for my birthday.",
+     "options": [
+      "which",
+      "who",
+      "what"
+     ],
+     "answer": 0,
+     "notes": {
+      "who": "Who is for people. A bag is a thing, so use which.",
+      "what": "We don't say the bag what. For a thing, use which or that."
+     },
+     "explain": "A bag is a thing, so we use which: the bag which I got for my birthday.",
+     "say": "This is the bag blank I got for my birthday."
+    },
+    {
+     "q": "Which sentence is right?",
+     "options": [
+      "The boy that won the race is my cousin.",
+      "The boy which won the race is my cousin.",
+      "The boy what won the race is my cousin."
+     ],
+     "answer": 0,
+     "notes": {
+      "The boy which won the race is my cousin.": "Which is only for things. For a boy, say who or that.",
+      "The boy what won the race is my cousin.": "What can't join like this. Say the boy who or the boy that."
+     },
+     "explain": "That works for people too, so the boy that won the race is right. The boy who won the race is right as well.",
+     "say": "Which sentence is right?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way. Before you pick a joining word, do the someone test. Point at it and ask: is it a someone or a something? A someone, like a girl, a teacher or Hoot, gets who. A something, like a cake, a bus or a book, gets which. And when you're not sure, that is a friendly helper that fits both!",
+    "examples": [
+     "🧒 someone: the boy who plays the drums",
+     "📦 something: the cake which Crumb baked",
+     "🤝 both: the friend that helps me, the book that I borrowed"
+    ],
+    "discover": {
+     "kind": "sort",
+     "text": "Do the someone test. Is each one right, or does it need fixing? Drag each card into a basket, or tap it and then a basket.",
+     "hint": "Who goes with someones. Which goes with somethings. That goes with both.",
+     "bins": [
+      {
+       "id": "ok",
+       "label": "sounds right",
+       "icon": "✅"
+      },
+      {
+       "id": "fix",
+       "label": "needs fixing",
+       "icon": "🔧"
+      }
+     ],
+     "items": [
+      {
+       "t": "the boy who plays the drums",
+       "bin": "ok",
+       "why": "A boy is a someone, so who is right!"
+      },
+      {
+       "t": "the cake who Crumb baked",
+       "bin": "fix",
+       "why": "A cake is a something. Say: the cake which Crumb baked."
+      },
+      {
+       "t": "the bus which goes to Jurong",
+       "bin": "ok",
+       "why": "A bus is a something, so which is right!"
+      },
+      {
+       "t": "my friend which lives in Tampines",
+       "bin": "fix",
+       "why": "A friend is a someone. Say: my friend who lives in Tampines."
+      },
+      {
+       "t": "the book that I borrowed",
+       "bin": "ok",
+       "why": "That works for things. Right!"
+      },
+      {
+       "t": "the aunty that sells kaya toast",
+       "bin": "ok",
+       "why": "That works for people too. Right!"
+      }
+     ],
+     "say": "Do the someone test. Is each one right, or does it need fixing? Drag each card into a basket, or tap it and then a basket."
+    },
+    "say": "Here's another way. Before you pick a joining word, do the someone test. Point at it and ask: is it a someone or a something? A someone, like a girl, a teacher or Hoot, gets who. A something, like a cake, a bus or a book, gets which. And when you're not sure, that is a friendly helper that fits both!"
+   },
+   "check2": [
+    {
+     "q": "The MRT train ___ goes to Changi Airport is green.",
+     "options": [
+      "that",
+      "who",
+      "what"
+     ],
+     "answer": 0,
+     "notes": {
+      "who": "Who is for people. A train is a thing, so use that or which.",
+      "what": "We don't say the train what. Use that or which."
+     },
+     "explain": "A train is a thing, so that works: the train that goes to Changi Airport.",
+     "say": "The MRT train blank goes to Changi Airport is green."
+    },
+    {
+     "q": "Lily has a friend ___ can speak three languages.",
+     "options": [
+      "who",
+      "which",
+      "where"
+     ],
+     "answer": 0,
+     "notes": {
+      "which": "Which is for things. A friend is a someone, so use who.",
+      "where": "Where is for places. For a friend, use who."
+     },
+     "explain": "A friend is a someone, so the joining word is who: a friend who can speak three languages.",
+     "say": "Lily has a friend blank can speak three languages."
+    },
+    {
+     "q": "Which word fits BOTH gaps? “the girl ___ sings” and “the song ___ she sings”",
+     "options": [
+      "that",
+      "who",
+      "which"
+     ],
+     "answer": 0,
+     "notes": {
+      "who": "Who fits the girl, but a song is a thing, so who doesn't fit both.",
+      "which": "Which fits the song, but a girl is a person, so which doesn't fit both."
+     },
+     "explain": "That works for people and for things, so it fits both gaps.",
+     "say": "Which word fits BOTH gaps? “the girl blank sings” and “the song blank she sings”"
+    }
+   ],
+   "grown": "👪 Defining relative clauses (B1 Preliminary): who for people, which for things, that for both. Story animals who talk (Hoot, Sumi) are treated as people. The re-teach is a 'someone or something?' test with a right / needs fixing sort. Singapore touches: Jurong, Tampines, kaya toast, the MRT to Changi Airport.",
+   "pack": "en-b1"
+  },
+  {
+   "id": "en.b1.reported",
+   "title": "she said that …",
+   "icon": "💌",
+   "at": {
+    "realm": "b1",
+    "skill": "grammar"
+   },
+   "match": [
+    {
+     "re": "reported speech|^reported: |say that / tell someone that",
+     "field": "explain"
+    }
+   ],
+   "art": "lesson_en_b1_reported",
+   "art_alt": "In the Whispering Forest, a bunny in a purple scarf talks with a big empty speech bubble to Hoot the owl postman in round glasses with a satchel; Hoot flies off at the top right toward Toby, who has dark messy hair and a green scarf and walks along the path holding an envelope with a heart, under a second dotted speech bubble",
+   "hook": {
+    "text": "Bella the bunny wants to send a message to Toby, but Toby is far away. So she tells Hoot the owl postman, and Hoot flies across the forest to pass it on. But by the time Hoot arrives, Bella's words are a little bit old, so they change! Bella said: I am tired. Hoot says: She said she was tired. Let's help Hoot pass on the messages.",
+    "say": "Bella the bunny wants to send a message to Toby, but Toby is far away. So she tells Hoot the owl postman, and Hoot flies across the forest to pass it on. But by the time Hoot arrives, Bella's words are a little bit old, so they change! Bella said: I am tired. Hoot says: She said she was tired. Let's help Hoot pass on the messages."
+   },
+   "discover": {
+    "kind": "fill",
+    "text": "Help Hoot pass on Bella's messages to Toby. Drag the right words into each gap, or tap them.",
+    "hint": "Each word takes one step back into the past: am becomes was, will becomes would, can becomes could.",
+    "tiles": [
+     "was",
+     "would",
+     "liked",
+     "could",
+     "had"
+    ],
+    "items": [
+     {
+      "s": "Bella: “I am tired.” → Hoot: “She said she ___ tired.”",
+      "a": "was",
+      "why": "Am steps back to was when we pass it on: she said she was tired."
+     },
+     {
+      "s": "Bella: “I will come to your party.” → Hoot: “She said she ___ come to your party.”",
+      "a": "would",
+      "why": "Will steps back to would: she said she would come."
+     },
+     {
+      "s": "Bella: “I like your scarf.” → Hoot: “She said she ___ your scarf.”",
+      "a": "liked",
+      "why": "Like steps back to liked: she said she liked your scarf."
+     },
+     {
+      "s": "Bella: “I can bake a carrot cake.” → Hoot: “She said she ___ bake a carrot cake.”",
+      "a": "could",
+      "why": "Can steps back to could: she said she could bake a carrot cake."
+     },
+     {
+      "s": "Bella: “I have a present for you.” → Hoot: “She said she ___ a present for you.”",
+      "a": "had",
+      "why": "Have steps back to had: she said she had a present for you."
+     }
+    ],
+    "say": "Help Hoot pass on Bella's messages to Toby. Drag the right words into each gap, or tap them."
+   },
+   "rule": {
+    "text": "When we pass on what someone said, we use said, and the words take one step back into the past. Am and is become was. Are becomes were. Will becomes would. Can becomes could. Like becomes liked, and have becomes had. The person words change too: I becomes she or he. We can add that after said, or leave it out: She said that she was tired.",
+    "examples": [
+     "“I am tired.” → She said she was tired.",
+     "“I will come.” → She said she would come.",
+     "“I can swim.” → He said that he could swim."
+    ],
+    "say": "When we pass on what someone said, we use said, and the words take one step back into the past. Am and is become was. Are becomes were. Will becomes would. Can becomes could. Like becomes liked, and have becomes had. The person words change too: I becomes she or he. We can add that after said, or leave it out: She said that she was tired.",
+    "sayEx": [
+     "“I am tired.”, She said she was tired.",
+     "“I will come.”, She said she would come.",
+     "“I can swim.”, He said that he could swim."
+    ]
+   },
+   "check": [
+    {
+     "q": "Toby: “I am hungry.” → Toby said he ___ hungry.",
+     "options": [
+      "was",
+      "is",
+      "were"
+     ],
+     "answer": 0,
+     "notes": {
+      "is": "When we pass on what someone said, am steps back to was, not is.",
+      "were": "Were is for you, we and they. For he, use was."
+     },
+     "explain": "Am steps back to was, and Toby is one boy: Toby said he was hungry.",
+     "say": "Toby: “I am hungry.”, Toby said he blank hungry."
+    },
+    {
+     "q": "Lily: “I will bring the snacks.” → Lily said she ___ bring the snacks.",
+     "options": [
+      "would",
+      "will",
+      "can"
+     ],
+     "answer": 0,
+     "notes": {
+      "will": "Will steps back to would when we pass it on.",
+      "can": "Lily said will, not can. Will steps back to would."
+     },
+     "explain": "Will steps back to would: Lily said she would bring the snacks.",
+     "say": "Lily: “I will bring the snacks.”, Lily said she blank bring the snacks."
+    },
+    {
+     "q": "Which sentence passes on Sumi's words “I can ride a bike” correctly?",
+     "options": [
+      "Sumi said she could ride a bike.",
+      "Sumi said she can rode a bike.",
+      "Sumi said I could ride a bike."
+     ],
+     "answer": 0,
+     "notes": {
+      "Sumi said she can rode a bike.": "Can steps back to could, and the verb after it stays plain: could ride.",
+      "Sumi said I could ride a bike.": "I changes to she when we pass on Sumi's words."
+     },
+     "explain": "Can steps back to could, and I becomes she: Sumi said she could ride a bike.",
+     "say": "Which sentence passes on Sumi's words “I can ride a bike” correctly?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way. Think of an echo across the forest. Bella's words fly a long way with Hoot, and by the time they arrive, they have become old news. Old news always takes one step back into the past. So now words, like am, will and can, turn into then words: was, would and could. Look at each pair: first what Bella really said, then how Hoot passes it on.",
+    "examples": [
+     "🐰 “I am cold.” → 🦉 She said she was cold.",
+     "🐰 “I will help.” → 🦉 She said she would help.",
+     "🐰 “I can see a rainbow.” → 🦉 She said she could see a rainbow."
+    ],
+    "discover": {
+     "kind": "sort",
+     "text": "Is it Bella's real words, or Hoot passing them on? Drag each card into a basket, or tap it and then a basket.",
+     "hint": "Bella's real words are in speech marks and say I. Hoot's message says she said, with was, would or could.",
+     "bins": [
+      {
+       "id": "said",
+       "label": "Bella's words",
+       "icon": "🐰"
+      },
+      {
+       "id": "passed",
+       "label": "Hoot passes it on",
+       "icon": "🦉"
+      }
+     ],
+     "items": [
+      {
+       "t": "“I am hungry.”",
+       "bin": "said",
+       "why": "These are Bella's own words: I am, in speech marks."
+      },
+      {
+       "t": "She said she was hungry.",
+       "bin": "passed",
+       "why": "Hoot passes it on: am stepped back to was."
+      },
+      {
+       "t": "“I will help you.”",
+       "bin": "said",
+       "why": "Bella's own words, with will."
+      },
+      {
+       "t": "She said she would help him.",
+       "bin": "passed",
+       "why": "Hoot passes it on: will stepped back to would."
+      },
+      {
+       "t": "“I can swim.”",
+       "bin": "said",
+       "why": "Bella's own words, with can."
+      },
+      {
+       "t": "She said she could swim.",
+       "bin": "passed",
+       "why": "Hoot passes it on: can stepped back to could."
+      }
+     ],
+     "say": "Is it Bella's real words, or Hoot passing them on? Drag each card into a basket, or tap it and then a basket."
+    },
+    "say": "Here's another way. Think of an echo across the forest. Bella's words fly a long way with Hoot, and by the time they arrive, they have become old news. Old news always takes one step back into the past. So now words, like am, will and can, turn into then words: was, would and could. Look at each pair: first what Bella really said, then how Hoot passes it on."
+   },
+   "check2": [
+    {
+     "q": "Mum: “I have a surprise.” → Mum said she ___ a surprise.",
+     "options": [
+      "had",
+      "has",
+      "have"
+     ],
+     "answer": 0,
+     "notes": {
+      "has": "When we pass it on, have steps back to had, not has.",
+      "have": "Have is Mum's own word. Passed on, it steps back to had."
+     },
+     "explain": "Have steps back to had: Mum said she had a surprise.",
+     "say": "Mum: “I have a surprise.”, Mum said she blank a surprise."
+    },
+    {
+     "q": "Grandpa: “I like the hawker centre.” → Grandpa said he ___ the hawker centre.",
+     "options": [
+      "liked",
+      "likes",
+      "like"
+     ],
+     "answer": 0,
+     "notes": {
+      "likes": "Likes is a now word. Passed on, it steps back to liked.",
+      "like": "Like is Grandpa's own word. Passed on, it steps back to liked."
+     },
+     "explain": "Like steps back to liked: Grandpa said he liked the hawker centre.",
+     "say": "Grandpa: “I like the hawker centre.”, Grandpa said he blank the hawker centre."
+    },
+    {
+     "q": "Ah Ma: “I will give you \\$2 for ice cream.” → Ah Ma said she ___ give me \\$2.",
+     "options": [
+      "would",
+      "will",
+      "did"
+     ],
+     "answer": 0,
+     "notes": {
+      "will": "Will steps back to would when we pass it on.",
+      "did": "Did give means it already happened. Ah Ma said will, which steps back to would."
+     },
+     "explain": "Will steps back to would: Ah Ma said she would give me two dollars.",
+     "say": "Ah Ma: “I will give you 2 dollars for ice cream.”, Ah Ma said she blank give me 2 dollars."
+    }
+   ],
+   "grown": "👪 Reported statements (B1 Preliminary): say (that) + backshift, present → past (am/is → was, are → were, like → liked, have → had), will → would, can → could, with pronoun changes (I → he/she). The re-teach sorts direct speech and the reported version side by side. Singapore touches: the hawker centre, Ah Ma, Singapore dollars.",
+   "pack": "en-b1"
+  },
+  {
+   "id": "en.b1.geninf",
+   "title": "enjoy doing, want to do",
+   "icon": "🎠",
+   "at": {
+    "realm": "b1",
+    "skill": "grammar"
+   },
+   "match": [
+    {
+     "re": "^(suggest|afford|manage|remember|stop|can't help|think of/about) \\+",
+     "field": "explain"
+    }
+   ],
+   "art": "lesson_en_b1_geninf",
+   "art_alt": "In the Whispering Forest, Puffbun the fluffy cream puffball pet laughs on a swing with flower vines, while Lily in a yellow raincoat and purple boots looks up dreamily at a thought bubble of a rainbow hot-air balloon, with butterflies and spotty mushrooms around",
+   "hook": {
+    "text": "Puffbun is swinging on the flower swing, higher and higher. Wheee! Puffbun enjoys swinging. Lily is dreaming about a rainbow hot-air balloon. Lily wants to fly in it one day! Did you hear it? Enjoy swinging, but want to fly. Some doing-words like an -ing word after them, and some like to. Let's sort them.",
+    "say": "Puffbun is swinging on the flower swing, higher and higher. Wheee! Puffbun enjoys swinging. Lily is dreaming about a rainbow hot-air balloon. Lily wants to fly in it one day! Did you hear it? Enjoy swinging, but want to fly. Some doing-words like an -ing word after them, and some like to. Let's sort them."
+   },
+   "discover": {
+    "kind": "sort",
+    "text": "Say each word with Puffbun and Lily: Puffbun enjoys swinging, Lily wants to fly. Which way sounds right? Drag each card into a basket, or tap it and then a basket.",
+    "hint": "Try each word out loud: I ___ swinging, or I ___ to fly. Enjoy, finish and practise like -ing. Want, hope and decide like to.",
+    "bins": [
+     {
+      "id": "ing",
+      "label": "+ -ing: enjoy swinging",
+      "icon": "🎠"
+     },
+     {
+      "id": "to",
+      "label": "+ to: want to fly",
+      "icon": "🎈"
+     }
+    ],
+    "items": [
+     {
+      "t": "enjoy",
+      "bin": "ing",
+      "why": "Puffbun enjoys swinging. Enjoy is followed by -ing."
+     },
+     {
+      "t": "want",
+      "bin": "to",
+      "why": "Lily wants to fly. Want is followed by to."
+     },
+     {
+      "t": "finish",
+      "bin": "ing",
+      "why": "I finished reading my book. Finish is followed by -ing."
+     },
+     {
+      "t": "hope",
+      "bin": "to",
+      "why": "I hope to see a rainbow. Hope is followed by to."
+     },
+     {
+      "t": "practise",
+      "bin": "ing",
+      "why": "Sumi practises dancing. Practise is followed by -ing."
+     },
+     {
+      "t": "decide",
+      "bin": "to",
+      "why": "We decided to go home. Decide is followed by to."
+     },
+     {
+      "t": "keep",
+      "bin": "ing",
+      "why": "It keeps raining. Keep is followed by -ing."
+     },
+     {
+      "t": "plan",
+      "bin": "to",
+      "why": "Toby plans to visit Sentosa. Plan is followed by to."
+     }
+    ],
+    "say": "Say each word with Puffbun and Lily: Puffbun enjoys swinging, Lily wants to fly. Which way sounds right? Drag each card into a basket, or tap it and then a basket."
+   },
+   "rule": {
+    "text": "When two doing-words meet, the first one decides what the second one looks like. Some words take -ing: enjoy, finish, practise, keep and don't mind. Puffbun enjoys swinging. Other words take to: want, hope, decide, plan and need. Lily wants to fly. A trick: the to-words often look forward to something that hasn't happened yet, like a wish or a plan.",
+    "examples": [
+     "Puffbun enjoys swinging.",
+     "Lily wants to fly in a balloon.",
+     "I have finished eating.",
+     "We decided to go to the beach."
+    ],
+    "say": "When two doing-words meet, the first one decides what the second one looks like. Some words take -ing: enjoy, finish, practise, keep and don't mind. Puffbun enjoys swinging. Other words take to: want, hope, decide, plan and need. Lily wants to fly. A trick: the to-words often look forward to something that hasn't happened yet, like a wish or a plan.",
+    "sayEx": [
+     "Puffbun enjoys swinging.",
+     "Lily wants to fly in a balloon.",
+     "I have finished eating.",
+     "We decided to go to the beach."
+    ]
+   },
+   "check": [
+    {
+     "q": "Puffbun enjoys ___ on the swing.",
+     "options": [
+      "swinging",
+      "to swing",
+      "swing"
+     ],
+     "answer": 0,
+     "notes": {
+      "to swing": "Enjoy is an -ing word. We say enjoys swinging, not enjoys to swing.",
+      "swing": "After enjoy, the next word needs -ing: swinging."
+     },
+     "explain": "Enjoy is followed by -ing: Puffbun enjoys swinging.",
+     "say": "Puffbun enjoys blank on the swing."
+    },
+    {
+     "q": "Lily wants ___ in a hot-air balloon.",
+     "options": [
+      "to fly",
+      "flying",
+      "fly"
+     ],
+     "answer": 0,
+     "notes": {
+      "flying": "Want is a to-word. We say wants to fly, not wants flying.",
+      "fly": "After want, we need to: wants to fly."
+     },
+     "explain": "Want is followed by to: Lily wants to fly.",
+     "say": "Lily wants blank in a hot-air balloon."
+    },
+    {
+     "q": "Which sentence is right?",
+     "options": [
+      "Toby has finished doing his homework.",
+      "Toby has finished to do his homework.",
+      "Toby has finished do his homework."
+     ],
+     "answer": 0,
+     "notes": {
+      "Toby has finished to do his homework.": "Finish is an -ing word: finished doing.",
+      "Toby has finished do his homework.": "After finish, the next word needs -ing: finished doing."
+     },
+     "explain": "Finish is followed by -ing: Toby has finished doing his homework.",
+     "say": "Which sentence is right?"
+    }
+   ],
+   "reteach": {
+    "text": "Here's another way. Think of a time arrow. To points forward, to something that hasn't happened yet: I want to fly, I hope to win, we plan to go. The -ing words are about the doing itself, while it goes on, starts or stops: I enjoy swimming, I keep trying, I finished eating. If it's a wish or a plan, reach for to. If it's about the doing, reach for -ing.",
+    "examples": [
+     "🎯 a wish or a plan: I hope to win. We plan to go.",
+     "🎠 the doing itself: I enjoy swimming. I keep trying.",
+     "🏁 stopping the doing: I finished eating."
+    ],
+    "discover": {
+     "kind": "fill",
+     "text": "Wish or plan, or the doing itself? Drag the right words into each gap, or tap them.",
+     "hint": "Hope and decide look forward, so they take to. Practise and keep are about the doing, so they take -ing.",
+     "tiles": [
+      "playing",
+      "to visit",
+      "reading",
+      "to buy"
+     ],
+     "items": [
+      {
+       "s": "Sumi practises ___ the piano every day.",
+       "a": "playing",
+       "why": "Practise is about the doing itself: practises playing."
+      },
+      {
+       "s": "We hope ___ the River Wonders on Saturday.",
+       "a": "to visit",
+       "why": "Hope looks forward to a plan: hope to visit."
+      },
+      {
+       "s": "Grandpa keeps ___ the same comic again and again!",
+       "a": "reading",
+       "why": "Keep is about the doing going on: keeps reading."
+      },
+      {
+       "s": "Lily decided ___ a kite with her pocket money.",
+       "a": "to buy",
+       "why": "Decide looks forward to a plan: decided to buy."
+      }
+     ],
+     "say": "Wish or plan, or the doing itself? Drag the right words into each gap, or tap them."
+    },
+    "say": "Here's another way. Think of a time arrow. To points forward, to something that hasn't happened yet: I want to fly, I hope to win, we plan to go. The -ing words are about the doing itself, while it goes on, starts or stops: I enjoy swimming, I keep trying, I finished eating. If it's a wish or a plan, reach for to. If it's about the doing, reach for -ing."
+   },
+   "check2": [
+    {
+     "q": "I don't mind ___ my little brother with his puzzle.",
+     "options": [
+      "helping",
+      "to help",
+      "help"
+     ],
+     "answer": 0,
+     "notes": {
+      "to help": "Don't mind is an -ing word: don't mind helping.",
+      "help": "After mind, the next word needs -ing: helping."
+     },
+     "explain": "Mind is followed by -ing: I don't mind helping.",
+     "say": "I don't mind blank my little brother with his puzzle."
+    },
+    {
+     "q": "We decided ___ chicken rice for lunch.",
+     "options": [
+      "to have",
+      "having",
+      "have"
+     ],
+     "answer": 0,
+     "notes": {
+      "having": "Decide is a to-word: decided to have.",
+      "have": "After decide, we need to: decided to have."
+     },
+     "explain": "Decide looks forward to a plan, so it takes to: we decided to have chicken rice.",
+     "say": "We decided blank chicken rice for lunch."
+    },
+    {
+     "q": "Which word fits? “Lily ___ to go to Sentosa this weekend.”",
+     "options": [
+      "plans",
+      "enjoys",
+      "finishes"
+     ],
+     "answer": 0,
+     "notes": {
+      "enjoys": "Enjoy takes -ing, so it can't come before to go: enjoys going.",
+      "finishes": "Finish takes -ing, and you can't finish a trip before it starts!"
+     },
+     "explain": "Plan looks forward and takes to: Lily plans to go to Sentosa.",
+     "say": "Which word fits? “Lily blank to go to Sentosa this weekend.”"
+    }
+   ],
+   "grown": "👪 Verb patterns, gerund vs to-infinitive (B1 Preliminary): enjoy / finish / practise / keep / don't mind + -ing; want / hope / decide / plan / need + to-infinitive. Verbs that take both (like, love, start, remember, stop) are left for later. The re-teach uses the 'time arrow' rule of thumb (to looks forward to a wish or plan). Singapore touches: River Wonders, Sentosa, chicken rice.",
+   "pack": "en-b1"
   }
  ]
 }

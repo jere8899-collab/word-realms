@@ -945,6 +945,57 @@
    ]
   },
   {
+   "id": "en.b1.relative",
+   "pack": "en-b1",
+   "title": "who, which, that",
+   "icon": "🪧",
+   "at": {
+    "realm": "b1",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_b1_relative",
+   "match": [
+    {
+     "re": "relative clause|who for people|which for things|non-defining clause",
+     "field": "explain"
+    }
+   ]
+  },
+  {
+   "id": "en.b1.reported",
+   "pack": "en-b1",
+   "title": "she said that …",
+   "icon": "💌",
+   "at": {
+    "realm": "b1",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_b1_reported",
+   "match": [
+    {
+     "re": "reported speech|^reported: |say that / tell someone that",
+     "field": "explain"
+    }
+   ]
+  },
+  {
+   "id": "en.b1.geninf",
+   "pack": "en-b1",
+   "title": "enjoy doing, want to do",
+   "icon": "🎠",
+   "at": {
+    "realm": "b1",
+    "skill": "grammar"
+   },
+   "art": "lesson_en_b1_geninf",
+   "match": [
+    {
+     "re": "^(suggest|afford|manage|remember|stop|can't help|think of/about) \\+",
+     "field": "explain"
+    }
+   ]
+  },
+  {
    "id": "m.g1.count",
    "pack": "m-g1",
    "title": "Counting to 20",
