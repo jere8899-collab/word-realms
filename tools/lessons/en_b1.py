@@ -8,6 +8,8 @@ PACK = "en-b1"
 # how-to-play endings shared by the widget prompts (one wording for every sort / fill in this pack)
 SORT_HOW = "Drag each card into a basket, or tap it and then a basket."
 FILL_HOW = "Drag the right words into each gap, or tap them."
+# the two baskets of every "is it right, or does it need fixing?" sort in this pack
+OK_FIX_BINS = [dict(id="ok", label="sounds right", icon="✅"), dict(id="fix", label="needs fixing", icon="🔧")]
 LESSONS = [
 dict(id="en.b1.ppever", title="ever, never, just, already, yet", icon="🍄", at=dict(realm="b1", skill="grammar"),
   match=[dict(re=r"present perfect (with ever|for experience)", field="explain")],
@@ -37,7 +39,7 @@ dict(id="en.b1.ppever", title="ever, never, just, already, yet", icon="🍄", at
     examples=["⏱️ one tick ago → I have just eaten.", "🏃 earlier than expected → She has already left.", "⏳ still waiting → Has he come yet?", "🌍 your whole life → Have you ever flown? I have never flown."],
     discover=dict(kind="sort", text="Is each sentence right, or does it need fixing? " + SORT_HOW,
       hint="Ever is for questions. Yet goes at the end. Just and already sit after have or has.",
-      bins=[dict(id="ok", label="sounds right", icon="✅"), dict(id="fix", label="needs fixing", icon="🔧")],
+      bins=OK_FIX_BINS,
       items=[dict(t="Have you ever been to the zoo?", bin="ok", why="A question about your life: Have you ever …? Right!"),
              dict(t="I have ever seen snow.", bin="fix", why="Ever is for questions. Say: I have never seen snow, or Have you ever seen snow?"),
              dict(t="She has just gone out.", bin="ok", why="Just sits after has: she went out a moment ago. Right!"),
@@ -176,7 +178,7 @@ dict(id="en.b1.cond1", title="if it rains, I will …", icon="☂️", at=dict(r
     examples=["🌧️ maybe: If it rains, ☂️ then: I will open my umbrella.", "⏰ maybe: If you are late, 🚌 then: you will miss the bus.", "☀️ maybe: If it is sunny, 🏖️ then: we will go to East Coast Park."],
     discover=dict(kind="sort", text="Is each sentence right, or does it need fixing? " + SORT_HOW,
       hint="Check the if-half: no will there. Then check the other half: it needs will.",
-      bins=[dict(id="ok", label="sounds right", icon="✅"), dict(id="fix", label="needs fixing", icon="🔧")],
+      bins=OK_FIX_BINS,
       items=[dict(t="If it's sunny, we will go to East Coast Park.", bin="ok", why="Present after if, will for what happens next. Right!"),
              dict(t="If it will rain, I will stay inside.", bin="fix", why="No will after if. Say: If it rains, I will stay inside."),
              dict(t="If you are late, you will miss the bus.", bin="ok", why="Are late is the maybe, will miss is what happens. Right!"),
