@@ -4,6 +4,9 @@ share cupcakes onto plates, then fill), round (rounding to the nearest 10 and 10
 Format: LESSONS-PLAN.md §2."""
 PACK = "m-g4"
 F = lambda a, b: f"$\\frac{{{a}}}{{{b}}}$"
+# cleanup (MA-5b): the shared "how to play" endings of the fill and sort prompts, written once
+FILL_HOW = "Drag the right number into each gap, or tap it."
+SORT_HOW = lambda bin: f"Drag each card into a {bin}, or tap a card and then a {bin}."
 LESSONS = [
 dict(id="m.g4.factors", title="Factors and multiples", icon="🍎", at=dict(topic="g4.factors"),
   art="lesson_m_g4_factors", art_alt="Hoot the white owl and Sumi the fox arrange 12 red apples in 3 rows of 4 on a pink picnic blanket in the orchard",
@@ -31,7 +34,7 @@ dict(id="m.g4.factors", title="Factors and multiples", icon="🍎", at=dict(topi
              dict(t="5", bin="no", why="12 ÷ 5 = 2 r 2. Two apples are left over, so 5 is not a factor."),
              dict(t="8", bin="no", why="12 ÷ 8 = 1 r 4. Four apples are left over, so 8 is not a factor."),
              dict(t="7", bin="no", why="12 ÷ 7 = 1 r 5. Five apples are left over, so 7 is not a factor.")],
-      text="Can 12 apples make equal rows of this size, with none left over? Drag each card into a basket, or tap a card and then a basket.",
+      text="Can 12 apples make equal rows of this size, with none left over? " + SORT_HOW("basket"),
       hint="Share 12 by the number. Nothing left over means it is a factor.")),
   check2=[
     dict(q="Is 7 a factor of 21?", options=["Yes, because 3 × 7 = 21", "No, because 21 is an odd number", "No, because 7 is bigger than 3"], answer=0,
@@ -68,7 +71,7 @@ dict(id="m.g4.fracset", title="A fraction of a set", icon="🧁", at=dict(topic=
       items=[dict(s="One third of 15: 15 ÷ 3 = ___ in each box.", a="5", why="15 shared into 3 equal boxes gives 5 in each."),
              dict(s="Two thirds of 15 is 2 boxes: 2 × 5 = ___", a="10", why="2 boxes of 5 make 10."),
              dict(s="Three thirds of 15 is all 3 boxes: ___", a="15", why="3 out of 3 boxes is the whole set: 15.")],
-      text="Mog has 15 fish treats. Use the bar model to find thirds of 15. Drag the right number into each gap, or tap it.",
+      text="Mog has 15 fish treats. Use the bar model to find thirds of 15. " + FILL_HOW,
       hint="Share 15 into 3 equal boxes first. Then count how many boxes you need.")),
   check2=[
     dict(q=f"{F(1,5)} of 20 = ?", options=["4", "5", "15"], answer=0,
@@ -92,7 +95,7 @@ dict(id="m.g4.round", title="Rounding: the number-line hill", icon="⛰️", at=
            dict(t="45", bin="u50", why="45 is the very top! The rule is: halfway always rolls on, up to 50."),
            dict(t="47", bin="u50", why="47 is past the top at 45, so it rolls on to 50."),
            dict(t="49", bin="u50", why="49 is right next to the 50 cottage. It rolls on to 50.")],
-    text="Each card is a ball on the hill between 40 and 50. Where will it roll? Drag each card into a cottage, or tap a card and then a cottage.",
+    text="Each card is a ball on the hill between 40 and 50. Where will it roll? " + SORT_HOW("cottage"),
     hint="Look at the ones digit. 1, 2, 3 or 4: roll back to 40. 5, 6, 7, 8 or 9: roll on to 50."),
   rule=dict(text="Rounding to the nearest 10 means finding the closest ten. Look at the ones digit. 0, 1, 2, 3 or 4: round down to the ten before. 5, 6, 7, 8 or 9: round up to the next ten. A number exactly halfway always rounds up. To round to the nearest 100, do the same with the tens digit.",
     examples=["43 rounds to 40 (ones digit 3: round down)", "45 rounds to 50 (halfway: round up)", "362 rounds to 360 (nearest 10) · 362 rounds to 400 (nearest 100)"]),
@@ -112,7 +115,7 @@ dict(id="m.g4.round", title="Rounding: the number-line hill", icon="⛰️", at=
       items=[dict(s="349 to the nearest 100: the tens digit is 4, so ___", a="300", why="4 is less than 5, so round down to 300."),
              dict(s="351 to the nearest 100: the tens digit is 5, so ___", a="400", why="5 means round up, so 351 rounds up to 400."),
              dict(s="780 to the nearest 100: the tens digit is 8, so ___", a="800", why="8 is 5 or more, so round up to 800.")],
-      text="Round each number to the nearest 100. Look at the tens digit! Drag the right number into each gap, or tap it.",
+      text="Round each number to the nearest 100. Look at the tens digit! " + FILL_HOW,
       hint="Tens digit 0 to 4: round down. Tens digit 5 to 9: round up.")),
   check2=[
     dict(q="Round 85 to the nearest 10.", options=["90", "80", "85"], answer=0,
