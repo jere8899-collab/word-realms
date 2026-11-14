@@ -1283,6 +1283,36 @@
     "topic": "g4.round"
    },
    "art": "lesson_m_g4_round"
+  },
+  {
+   "id": "m.g4.longmul",
+   "pack": "m-g4",
+   "title": "Long multiplication: the area model",
+   "icon": "🌱",
+   "at": {
+    "topic": "g4.longmul"
+   },
+   "art": "lesson_m_g4_longmul"
+  },
+  {
+   "id": "m.g4.longdiv",
+   "pack": "m-g4",
+   "title": "Long division: share in steps",
+   "icon": "🍬",
+   "at": {
+    "topic": "g4.longdiv"
+   },
+   "art": "lesson_m_g4_longdiv"
+  },
+  {
+   "id": "m.g4.decimal",
+   "pack": "m-g4",
+   "title": "Tenths and hundredths",
+   "icon": "🍫",
+   "at": {
+    "topic": "g4.decimal"
+   },
+   "art": "lesson_m_g4_decimal"
   }
  ]
 }

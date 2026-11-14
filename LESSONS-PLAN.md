@@ -2,6 +2,8 @@
 
 **Phase 1 (plan + engine + pilot): ✅ done (commit 1d135e5, 2026-11-04).** EN-2 + MA-2 ✅ (f4ee083). The 2-hourly routine may now take the next batch (§5: EN-3, then MA-3).
 
+> Checkpoint 2026-11-14 ~09:30 SGT: MA-5b built, not published (PENDING_HASH): m.g4.longmul (fill the area model: Sumi's garden for 14 rows of 23 seedlings in 4 patches, 200 + 30 + 80 + 12 = 322; re-teach "columns with carrying" + fill 36 × 3), m.g4.longdiv (fill: share 437 sweets into 3 baskets in steps, hundreds → tens → ones with regrouping, 145 r 2; re-teach "multiply back" + fill 94 ÷ 4 = 23 r 2 and check), m.g4.decimal (fill tenths of Puffbun's chocolate bar and hundredths of the waffle, 0.1 / 0.7 / 0.01 / 0.25; re-teach Singapore money (10 cents = 0.1 of a dollar) + sort tenths / hundredths). Added to tools/lessons/m_g4.py; no new widget. Cleanup kept (4c5bcb8, its own commit): shared FILL_HOW / SORT_HOW prompt endings in m_g4.py (lesson JSON byte-identical, lessons.js 341/341 before the feature). 3 GenerateImage hooks (painted by the parent run, no text) installed with install_story_img.py --dir lessons --batch. Hint links come from the g4.longmul / g4.longdiv / g4.decimal practice topics. 82 lessons; build_voice 5786 lines (42 new af_heart), 0 to record. Next maths turn: MA-5c (rest of G4: fracadd, area, angles, symmetry, linegraph, story). Next English turn: EN-5c.
+
 > Checkpoint 2026-11-13 ~09:30 SGT: EN-5b is live (cf59da2, build wr-6557af16f69c; Pages run 43344578484 succeeded, lesson_en_b1_cond1.jpg, cond2.jpg, passive.jpg and data/lessons/en-b1.json return 200 live): en.b1.cond1 (fill if + present / will on Lily's rainy forest path; re-teach "the weather card" + sort right/needs fixing; East Coast Park, the MRT, saving S$), en.b1.cond2 (sort could really happen / only a dream by will vs would; re-teach "two bubbles" + fill had/would/were/lived; If I were you advice), en.b1.passive (fill the cake was eaten / by Puffbun; re-teach "the spotlight" + sort doer first / thing first). Added to tools/lessons/en_b1.py; no new widget, no typing boxes. Cleanup kept (ac64e7a, its own commit): shared SORT_HOW / FILL_HOW prompt endings in en_b1.py (lesson JSON byte-identical, lessons.js 332/332 before the feature). 3 GenerateImage hooks (painted by the parent run, no text) installed with install_story_img.py --dir lessons --batch. Hint links: cond1 ← "first conditional / if + present, will" (13 B1 items), cond2 ← "second conditional / imaginary present / If I were you" (4), passive ← "passive" (16). 79 lessons; build_voice 5744 lines (40 new af_heart), 0 to record. lessons.js 341/341 (MIN_LESSONS 79); screenshots/en5b_check.js 14/14 at 320/360/375/390/412 px + 740×360 and 915×412, local and live. Full suite: all pass alone except mathgoals, play-again and story, which fail the same way on the already-published main build (not caused by this batch, likely date-dependent). en.b1.relative is left for the next English turn: EN-5c. Next maths turn: MA-5b.
 
 > Checkpoint 2026-11-12 ~21:35 SGT: MA-5a is live (3b8f1ef, build wr-f0b4c41c2c16; Pages run 43227593514 succeeded, lesson_m_g4_factors.jpg and data/lessons/m-g4.json return 200 live): the first Grade 4 (P4) Abacus Orchard lessons. m.g4.factors (groups: 12 apples in 3 rows of 4 → factors, multiples and factor pairs; re-teach "the no-leftovers test" + sort factor / not a factor of 12), m.g4.fracset (share 12 cupcakes onto 4 plates → ¼ and ¾ of 12; re-teach the bar model + fill thirds of 15), m.g4.round (sort balls on the number-line hill between the 40 and 50 cottages, halfway rolls up; re-teach "the neighbour digit" + fill to the nearest 100). New pack tools/lessons/m_g4.py (m-g4). No new widget. Cleanup kept: KIT.groups works out its skip-count totals once (`runs`), shared by the ring labels and the done line (behaviour identical). 3 GenerateImage hooks (painted by the parent run, no text) installed with install_story_img.py --dir lessons --batch. Hint links come from the g4.factors / g4.fracset / g4.round practice topics. 76 lessons; build_voice 5704 lines (40 new af_heart), 0 to record. lessons.js 332/332 (MIN_LESSONS 76, 320–412 px audit); MA-5a re-teach/check2/why-not/scroll check 320/360/375/390/412 px + 740×360 and 915×412 landscape ALL OK, local and live 14/14. Full suite 108: all pass; beyond, garden, gatelock, review-engine, pwa, parentgate, pin, r20d_shots, smallphones passed on a rerun alone; toasts and doubletap kept hitting the known first-visit race (the seeded save is overwritten, the name screen shows) in their setup, and passed 21/21 and 54/54 with a seed-and-reload retry in a throwaway copy (the race also happens on an older main build: 4 of 14 cold pages). Next maths turn: MA-5b (rest of G4: longmul, longdiv, fracadd, decimal …). Next English turn: EN-5b.
@@ -464,12 +466,12 @@ These lessons attach to the level hub as a "📜 Learn" row, which is still a hu
 - `m.g3.story` ×/÷ stories: bar model
 
 **Grade 4 (P4):**
-- `m.g4.longmul` long multiplication (area model)
-- `m.g4.longdiv` long division (share in steps)
+- ✅ `m.g4.longmul` long multiplication (area model)
+- ✅ `m.g4.longdiv` long division (share in steps)
 - ✅ `m.g4.factors` factors & multiples (arrays)
 - `m.g4.fracadd` adding fractions: like / unlike (frac bars)
 - ✅ `m.g4.fracset` a fraction of a set (groups)
-- `m.g4.decimal` tenths & hundredths (pv decimals)
+- ✅ `m.g4.decimal` tenths & hundredths (pv decimals)
 - ✅ `m.g4.round` rounding: the number line hill
 - `m.g4.area` area by counting squares
 - `m.g4.angles` turns & angles (angle turn)
@@ -615,6 +617,7 @@ Each **routine turn builds one batch of ~5 lessons**, alternating English and ma
 | EN-5a | B1 first: ppever, ppvsps, pastcont (+ cardPool() cleanup) | ✅ (3 GenerateImage hooks) | 2a9eda2 |
 | MA-5a | G4 first: factors, fracset, round (groups/share/sort/fill, no new widget; groups `runs` cleanup) | ✅ (3 GenerateImage hooks) | 3b8f1ef |
 | EN-5b | B1 next: cond1, cond2, passive (fill/sort, no new widget; SORT_HOW / FILL_HOW cleanup) | ✅ (3 GenerateImage hooks) | cf59da2 |
+| MA-5b | G4 next: longmul, longdiv, decimal (fill/sort, no new widget; FILL_HOW / SORT_HOW cleanup) | 🔧 built, not published | PENDING_HASH |
 | EN-5… | B1 rest, then B2, C1, C2 | ⏳ | |
 | MA-4… | G3, G4 … G12 (one grade per 2 turns) | ⏳ | |
 | SG-1… | SG hub "📜 Learn" row (engine: `at=dict(sg="p1")`, `same=`) then P1 → Grown-up | ⏳ after A2 | |
